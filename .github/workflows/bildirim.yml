@@ -2,10 +2,9 @@
 # ANALİZ MERKEZİ — TEK İŞ AKIŞI: gözcü + okul çekimi + bildirimler
 # 30 dk: okul sitesi gözcüsü · 07:30: Okulizyon + site + tam set
 # 19:30: kritikler · Elle Run: çekim + bildirim.
-# Betikler NEREDE olursa orada çalışır: functions/ klasörü,
-# herhangi bir alt klasör (pwa-files/ vb.) veya doğrudan kökte.
-# package.json'a upload sırasında bulaşan çöp otomatik temizlenir.
-# Secret: FIREBASE_SERVICE_ACCOUNT (başka anahtar gerekmez)
+# KENDİNE YETERLİ: package.json depoda eski/bozuk/hiç yok olursa
+# doğru sürümlerle yeniden yazar; betikleri herhangi bir klasörde bulur.
+# Secret: FIREBASE_SERVICE_ACCOUNT
 # ============================================================
 name: Bildirim Motoru
 on:
@@ -30,55 +29,46 @@ jobs:
       - name: Betiklerin olduğu klasörü bul
         id: kok
         run: |
-          # 1) okulizyon-cek.js dosyasını herhangi bir derinlikte ara (node_modules hariç)
           DOSYA=$(find . -maxdepth 4 -type f -name "okulizyon-cek.js" -not -path "*/node_modules/*" | head -1)
           if [ -n "$DOSYA" ]; then
-            DIZIN=$(dirname "$DOSYA")
-            echo "dizin=$DIZIN" >> "$GITHUB_OUTPUT"
-            echo "Betikler burada: $DIZIN"
+            echo "dizin=$(dirname "$DOSYA")" >> "$GITHUB_OUTPUT"
+            echo "Betikler burada: $(dirname "$DOSYA")"
           else
             echo "dizin=YOK" >> "$GITHUB_OUTPUT"
-            echo "❌ okulizyon-cek.js hiçbir yerde bulunamadı!"
+            echo "❌ okulizyon-cek.js bulunamadı — guncelleme.zip'teki functions dosyalarını yükle"
           fi
 
       - name: Betikler yoksa dur
         if: steps.kok.outputs.dizin == 'YOK'
-        run: |
-          echo "❌ functions dosyaları (okulizyon-cek.js vb.) depoda yok."
-          echo "→ guncelleme.zip içindeki dosyaları GitHub'a yükle (functions klasörü ya da tek tek)."
-          exit 1
+        run: echo "functions dosyaları eksik"; exit 1
 
-      - name: package.json'u onar (upload çöpünü temizle)
+      - name: Bağımlılıkları kur (standart package.json — depodakine bakmaz)
         working-directory: ${{ steps.kok.outputs.dizin }}
         run: |
-          if [ ! -f package.json ]; then
-            echo '{"name":"analiz-merkezi-functions","version":"1.0.0","private":true,"dependencies":{"firebase-admin":"^12.1.0","firebase-functions":"^5.0.1","cheerio":"^1.0.0","playwright":"1.49.1","tesseract.js":"^5.1.0"}}' > package.json
-            echo "package.json yoktu → otomatik oluşturuldu ✓"
-          else
-            node -e "
-              const fs = require('fs');
-              let s = fs.readFileSync('package.json', 'utf8');
-              const i = s.lastIndexOf('}');
-              if (i > -1 && s.slice(i + 1).trim() !== '') {
-                console.log('Temizlendi: son } sonrası çöp kaldırıldı (' + s.slice(i + 1).trim().length + ' karakter)');
-                fs.writeFileSync('package.json', s.slice(0, i + 1) + '\n');
-              }
-              JSON.parse(fs.readFileSync('package.json', 'utf8'));
-              console.log('package.json geçerli ✓');
-            "
-          fi
-
-      - name: Bağımlılıklar
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: npm install --no-fund --no-audit
+          cat > package.json <<'PKJ'
+          {
+            "name": "analiz-merkezi-functions",
+            "version": "1.0.0",
+            "private": true,
+            "dependencies": {
+              "firebase-admin": "12.1.0",
+              "firebase-functions": "5.0.1",
+              "cheerio": "1.0.0",
+              "playwright": "1.49.1",
+              "tesseract.js": "5.1.0"
+            }
+          }
+          PKJ
+          npm install --no-fund --no-audit
 
       - name: Okulizyon için tarayıcı kur (sürüme birebir)
         working-directory: ${{ steps.kok.outputs.dizin }}
         env:
           PLAYWRIGHT_BROWSERS_PATH: "0"
         run: |
+          [ -d node_modules/playwright ] || npm install playwright@1.49.1 --no-save --no-fund --no-audit
           node node_modules/playwright/cli.js install chromium --with-deps
-          node -e "console.log('playwright sürümü:', require('playwright/package.json').version)"
+          node -e "console.log('playwright:', require('playwright/package.json').version, '✓')"
 
       - name: Değişiklik gözcüsü (30 dk'da bir)
         if: ${{ github.event.schedule == '*/30 * * * *' }}
