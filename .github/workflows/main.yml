@@ -1,0 +1,104 @@
+# ============================================================
+# ANALİZ MERKEZİ — TEK İŞ AKIŞI: gözcü + okul çekimi + bildirimler
+# 30 dk: okul sitesi gözcüsü · 07:30: Okulizyon + site + tam set
+# 19:30: kritikler · Elle Run: çekim + bildirim.
+# - 'functions' klasörünü HANGİ klasörde olursa bulur (pwa-files/ dahil)
+# - package.json'a upload sırasında bulaşan çöp metni otomatik temizler
+# Secret: FIREBASE_SERVICE_ACCOUNT (başka anahtar gerekmez)
+# ============================================================
+name: Bildirim Motoru
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+    - cron: "30 4 * * *"
+    - cron: "30 16 * * *"
+  workflow_dispatch:
+
+jobs:
+  bildirim-gonder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu al
+        uses: actions/checkout@v5
+
+      - name: Node.js kur
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: functions klasörünü bul (herhangi bir konumda)
+        id: kok
+        run: |
+          BULUNAN=$(find . -maxdepth 3 -type d -name functions -not -path "*/node_modules/*" | head -1)
+          if [ -n "$BULUNAN" ]; then
+            KOK=$(dirname "$BULUNAN")
+            [ "$KOK" = "." ] && KOK="."
+            echo "kok=$KOK" >> "$GITHUB_OUTPUT"
+            echo "Bulundu: $KOK/functions"
+          else
+            echo "kok=YOK" >> "$GITHUB_OUTPUT"
+            echo "❌ 'functions' klasörü hiçbir yerde yok!"
+          fi
+
+      - name: functions yoksa dur
+        if: steps.kok.outputs.kok == 'YOK'
+        run: |
+          echo "❌ 'functions' klasörü depoda yok."
+          echo "→ guncelleme.zip içindeki functions klasörünü GitHub'a yükle"
+          exit 1
+
+      - name: package.json'u onar (upload çöpünü temizle)
+        if: steps.kok.outputs.kok != 'YOK'
+        working-directory: ${{ steps.kok.outputs.kok }}/functions
+        run: |
+          node -e "
+            const fs = require('fs');
+            const p = 'package.json';
+            let s = fs.readFileSync(p, 'utf8');
+            const i = s.lastIndexOf('}');
+            if (i > -1 && s.slice(i + 1).trim() !== '') {
+              console.log('Temizlendi: son } sonrası', s.slice(i + 1).trim().length, 'karakter çöp kaldırıldı');
+              fs.writeFileSync(p, s.slice(0, i + 1) + '\n');
+            }
+            JSON.parse(fs.readFileSync(p, 'utf8')); // doğrula
+            console.log('package.json geçerli ✓');
+          "
+
+      - name: Bağımlılıklar
+        if: steps.kok.outputs.kok != 'YOK'
+        run: npm install --no-fund --no-audit
+        working-directory: ${{ steps.kok.outputs.kok }}/functions
+
+      - name: Okulizyon için tarayıcı kur (Chromium)
+        if: steps.kok.outputs.kok != 'YOK'
+        run: npx playwright install chromium --with-deps
+        working-directory: ${{ steps.kok.outputs.kok }}/functions
+
+      - name: Değişiklik gözcüsü (30 dk'da bir)
+        if: ${{ github.event.schedule == '*/30 * * * *' && steps.kok.outputs.kok != 'YOK' }}
+        run: node degisiklik-kontrol.js
+        working-directory: ${ steps.kok.outputs.kok }/functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Okulizyon çek (sabah + elle)
+        if: ${{ (github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch') && steps.kok.outputs.kok != 'YOK' }}
+        run: node okulizyon-cek.js
+        working-directory: ${ steps.kok.outputs.kok }/functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Okul sitesi (duyuru + ders programı OCR)
+        if: ${{ (github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch') && steps.kok.outputs.kok != 'YOK' }}
+        run: node okul-sitesi.js
+        working-directory: ${ steps.kok.outputs.kok }/functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Bildirimleri gönder (sabah tam / akşam kritik)
+        if: ${{ github.event.schedule != '*/30 * * * *' && steps.kok.outputs.kok != 'YOK' }}
+        run: node bildirim-gonder.js
+        working-directory: ${ steps.kok.outputs.kok }/functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          
