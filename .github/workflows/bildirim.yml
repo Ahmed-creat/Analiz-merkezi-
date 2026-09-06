@@ -26,13 +26,22 @@ jobs:
         with:
           node-version: 22
 
-      - name: Klasörü bul
+            - name: Klasörü bul (functions)
         id: kok
         run: |
-          if [ -d functions ]; then echo "kok=." >> "$GITHUB_OUTPUT"
-          elif [ -d analiz-merkezi-pwa/functions ]; then echo "kok=analiz-merkezi-pwa" >> "$GITHUB_OUTPUT"
-          else echo "kok=YOK" >> "$GITHUB_OUTPUT"; fi
-          echo "Bulunan kök: $(cat $GITHUB_OUTPUT | tail -1)"
+          if [ -d "pwa-files/functions" ]; then 
+            echo "kok=pwa-files" >> "$GITHUB_OUTPUT"
+            echo "✅ Bulunan kök: pwa-files"
+          elif [ -d "analiz-merkezi-pwa/functions" ]; then 
+            echo "kok=analiz-merkezi-pwa" >> "$GITHUB_OUTPUT"
+            echo "✅ Bulunan kök: analiz-merkezi-pwa"
+          elif [ -d "functions" ]; then 
+            echo "kok=." >> "$GITHUB_OUTPUT"
+            echo "✅ Bulunan kök: ."
+          else 
+            echo "kok=YOK" >> "$GITHUB_OUTPUT"
+            echo "❌ functions klasörü bulunamadı!"
+          fi
 
       - name: functions klasörü eksikse dur ve söyle
         if: steps.kok.outputs.kok == 'YOK'
