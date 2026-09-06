@@ -1,9 +1,10 @@
 # ============================================================
 # ANALİZ MERKEZİ — TEK İŞ AKIŞI: gözcü + okul çekimi + bildirimler
-# 30 dk: okul sitesi gözcüsü · 07:30: Okulizyon + site çekimi + tam set
-# 19:30: kritik bildirimler. Elle Run workflow: çekim + bildirim.
-# Klasör yapısını OTOMATİK algılar: dosyalar ister kökte ister
-# 'analiz-merkezi-pwa/' klasöründe yüklü olsun çalışır.
+# 30 dk: okul sitesi gözcüsü · 07:30: Okulizyon + site + tam set
+# 19:30: kritikler · Elle Run: çekim + bildirim.
+# Betikler NEREDE olursa orada çalışır: functions/ klasörü,
+# herhangi bir alt klasör (pwa-files/ vb.) veya doğrudan kökte.
+# package.json'a upload sırasında bulaşan çöp otomatik temizlenir.
 # Secret: FIREBASE_SERVICE_ACCOUNT (başka anahtar gerekmez)
 # ============================================================
 name: Bildirim Motoru
@@ -26,66 +27,85 @@ jobs:
         with:
           node-version: 22
 
-            - name: Klasörü bul (functions)
+      - name: Betiklerin olduğu klasörü bul
         id: kok
         run: |
-          if [ -d "pwa-files/functions" ]; then 
-            echo "kok=pwa-files" >> "$GITHUB_OUTPUT"
-            echo "✅ Bulunan kök: pwa-files"
-          elif [ -d "analiz-merkezi-pwa/functions" ]; then 
-            echo "kok=analiz-merkezi-pwa" >> "$GITHUB_OUTPUT"
-            echo "✅ Bulunan kök: analiz-merkezi-pwa"
-          elif [ -d "functions" ]; then 
-            echo "kok=." >> "$GITHUB_OUTPUT"
-            echo "✅ Bulunan kök: ."
-          else 
-            echo "kok=YOK" >> "$GITHUB_OUTPUT"
-            echo "❌ functions klasörü bulunamadı!"
+          # 1) okulizyon-cek.js dosyasını herhangi bir derinlikte ara (node_modules hariç)
+          DOSYA=$(find . -maxdepth 4 -type f -name "okulizyon-cek.js" -not -path "*/node_modules/*" | head -1)
+          if [ -n "$DOSYA" ]; then
+            DIZIN=$(dirname "$DOSYA")
+            echo "dizin=$DIZIN" >> "$GITHUB_OUTPUT"
+            echo "Betikler burada: $DIZIN"
+          else
+            echo "dizin=YOK" >> "$GITHUB_OUTPUT"
+            echo "❌ okulizyon-cek.js hiçbir yerde bulunamadı!"
           fi
 
-      - name: functions klasörü eksikse dur ve söyle
-        if: steps.kok.outputs.kok == 'YOK'
+      - name: Betikler yoksa dur
+        if: steps.kok.outputs.dizin == 'YOK'
         run: |
-          echo "❌ 'functions' klasörü depoda bulunamadı!"
-          echo "→ guncelleme.zip içindeki 'functions' KLASÖRÜNÜ GitHub'a yükle:"
-          echo "  Add file → Upload files → functions klasörünü sürükle → Commit"
+          echo "❌ functions dosyaları (okulizyon-cek.js vb.) depoda yok."
+          echo "→ guncelleme.zip içindeki dosyaları GitHub'a yükle (functions klasörü ya da tek tek)."
           exit 1
 
-      - name: Bağımlılıklar
-        if: steps.kok.outputs.kok != 'YOK'
-        run: npm install --no-fund --no-audit
-        working-directory: ${{ steps.kok.outputs.kok }}/functions
+      - name: package.json'u onar (upload çöpünü temizle)
+        working-directory: ${{ steps.kok.outputs.dizin }}
+        run: |
+          if [ ! -f package.json ]; then
+            echo '{"name":"analiz-merkezi-functions","version":"1.0.0","private":true,"dependencies":{"firebase-admin":"^12.1.0","firebase-functions":"^5.0.1","cheerio":"^1.0.0","playwright":"1.49.1","tesseract.js":"^5.1.0"}}' > package.json
+            echo "package.json yoktu → otomatik oluşturuldu ✓"
+          else
+            node -e "
+              const fs = require('fs');
+              let s = fs.readFileSync('package.json', 'utf8');
+              const i = s.lastIndexOf('}');
+              if (i > -1 && s.slice(i + 1).trim() !== '') {
+                console.log('Temizlendi: son } sonrası çöp kaldırıldı (' + s.slice(i + 1).trim().length + ' karakter)');
+                fs.writeFileSync('package.json', s.slice(0, i + 1) + '\n');
+              }
+              JSON.parse(fs.readFileSync('package.json', 'utf8'));
+              console.log('package.json geçerli ✓');
+            "
+          fi
 
-      - name: Okulizyon için tarayıcı kur (Chromium)
-        if: steps.kok.outputs.kok != 'YOK'
-        run: npx playwright install chromium --with-deps
-        working-directory: ${{ steps.kok.outputs.kok }}/functions
+      - name: Bağımlılıklar
+        working-directory: ${{ steps.kok.outputs.dizin }}
+        run: npm install --no-fund --no-audit
+
+      - name: Okulizyon için tarayıcı kur (sürüme birebir)
+        working-directory: ${{ steps.kok.outputs.dizin }}
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: "0"
+        run: |
+          node node_modules/playwright/cli.js install chromium --with-deps
+          node -e "console.log('playwright sürümü:', require('playwright/package.json').version)"
 
       - name: Değişiklik gözcüsü (30 dk'da bir)
-        if: ${{ github.event.schedule == '*/30 * * * *' && steps.kok.outputs.kok != 'YOK' }}
+        if: ${{ github.event.schedule == '*/30 * * * *' }}
+        working-directory: ${{ steps.kok.outputs.dizin }}
         run: node degisiklik-kontrol.js
-        working-directory: ${{ steps.kok.outputs.kok }}/functions
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Okulizyon çek (sabah + elle)
-        if: ${{ (github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch') && steps.kok.outputs.kok != 'YOK' }}
+        if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
+        working-directory: ${{ steps.kok.outputs.dizin }}
         run: node okulizyon-cek.js
-        working-directory: ${{ steps.kok.outputs.kok }}/functions
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PLAYWRIGHT_BROWSERS_PATH: "0"
 
       - name: Okul sitesi (duyuru + ders programı OCR)
-        if: ${{ (github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch') && steps.kok.outputs.kok != 'YOK' }}
+        if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
+        working-directory: ${{ steps.kok.outputs.dizin }}
         run: node okul-sitesi.js
-        working-directory: ${{ steps.kok.outputs.kok }}/functions
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Bildirimleri gönder (sabah tam / akşam kritik)
-        if: ${{ github.event.schedule != '*/30 * * * *' && steps.kok.outputs.kok != 'YOK' }}
+        if: ${{ github.event.schedule != '*/30 * * * *' }}
+        working-directory: ${{ steps.kok.outputs.dizin }}
         run: node bildirim-gonder.js
-        working-directory: ${{ steps.kok.outputs.kok }}/functions
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           
