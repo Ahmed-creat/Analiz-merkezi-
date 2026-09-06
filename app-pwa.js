@@ -396,7 +396,7 @@ function renderOkzModal() {
   html += '<div style="font-size:12px;opacity:0.75;margin-bottom:8px;">Sınav sonuçların her sabah otomatik çekilir; yanlış/boş sorular aşağıda <b>Analiz Bekliyor</b> listesine düşer.</div>';
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">';
   [["ad", "Ad Soyad", "Ahmet Yılmaz"], ["okulNo", "Okul No", "1234"], ["sinif", "Sınıf", "9"], ["ilce", "İlçe", "Şahinbey"], ["okulAdi", "Okul Adı", "Akken Anadolu Lisesi"]].forEach(f => {
-    const [k, label, ph] = f.split("|");
+    const [k, label, ph] = f;
     html += '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
   });
   html += "</div>";
@@ -427,7 +427,7 @@ function renderOkzModal() {
   if (st.duyurular && st.duyurular.length) {
     html += '<div style="font-weight:800;font-size:14.5px;margin:14px 0 6px;">🏫 Okul Duyuruları</div>';
     st.duyurular.slice(0, 6).forEach(d => {
-      html += '<a href="' + escHtml(d.url) + '" target="_blank" rel="noopener" style="display:block;font-size:12.5px;padding:7px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;">' + (d.tarih ? "<b>[" + escHtml(d.tarih) + "]</b> " : "") + escHtml(d.baslik) + "</a>";
+      html += '<a href="' + escHtml(d.url) + '" target="_blank" rel="noopener" style="display:block;font-size:12.5px;padding:7px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;">' + (d.tarih ? "<b>[" + escHtml(d.tarih) + "]</b> " : "") + escHtml(d.baslik) + (d.lesson ? ' <span style="color:#16A34A;font-weight:700;">📅 takvime eklendi</span>' : "") + "</a>";
     });
   }
   html += "</div>";
@@ -468,10 +468,38 @@ async function okzKuyrukCek() {
     const dSnap = await getDoc(doc(fbDb, "users", currentUser.uid, "okul", "duyurular"));
     if (dSnap.exists() && dSnap.data().duyurular) {
       okzStore().duyurular = dSnap.data().duyurular;
+      okzDuyurularToSchoolExams(dSnap.data().duyurular);
       saveState();
     }
   } catch (e) { console.warn("Okulizyon kuyruk okunamadı:", e); }
 }
+// Okul sitesinden gelen SINAV duyuruları → takvime otomatik okul sınavı
+function okzDuyurularToSchoolExams(duyurular) {
+  let eklenen = 0;
+  (duyurular || []).forEach(d => {
+    if (!d.lesson || !d.tarih) return; // yalnız ders+bilinen tarihli sınav duyuruları
+    const st = okzStore();
+    const key = "okulsitesi@" + d.lesson + "@" + d.tarih;
+    if (st.importedKeys.includes(key)) return;
+    if ((state.plan.schoolExams || []).some(se => se.auto && se.lesson === d.lesson && se.date === d.tarih)) { st.importedKeys.push(key); return; }
+    const kalan = typeof parseDay === "function" && typeof todayStr === "function"
+      ? Math.round((parseDay(d.tarih) - parseDay(todayStr())) / 86400000) : 7;
+    state.plan.schoolExams = state.plan.schoolExams || [];
+    state.plan.schoolExams.push({
+      id: (typeof uid === "function" ? uid() : "ok" + Date.now() + Math.random().toString(36).slice(2, 6)),
+      lesson: d.lesson, date: d.tarih, time: "", topics: [], auto: true,
+      prepDays: typeof schoolPrepDaysFor === "function" ? schoolPrepDaysFor(Math.max(1, kalan)) : [3, 1]
+    });
+    st.importedKeys.push(key);
+    eklenen++;
+    if (typeof addNotification === "function") {
+      addNotification({ title: "Takvime eklendi: " + d.lesson + " sınavı", body: parseDay(d.tarih).toLocaleDateString("tr-TR") + " — okul sitesinden alındı; hazırlık günleri sınava kalan süreye göre işlendi. Konularını Planlama'dan seçebilirsin.", kind: "exam", topicKey: key });
+    }
+  });
+  if (eklenen && typeof toast === "function") toast("Okul sitesinden " + eklenen + " sınav tarihi takvime eklendi (hazırlık günleri oranla hesaplandı).", "success");
+  return eklenen;
+}
+window.okzDuyurularToSchoolExams = okzDuyurularToSchoolExams;
 function okzAnalizKaydet() {
   const st = okzStore();
   const secimler = {};

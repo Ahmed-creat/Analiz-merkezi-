@@ -37,7 +37,15 @@ function parseDuyurular(html, baseUrl) {
       if (/\.(png|jpe?g|gif|pdf)(\?|$)/i.test(u)) programlar.push({ baslik: t, url: u });
     } else if (/(sınav|yazılı|deneme|duyur)/i.test(t)) {
       const tarih = tarihBul(t) || tarihBul($(a).parent().text());
-      duyurular.push({ baslik: t.slice(0, 200), url: u, tarih: tarih });
+      const kayit = { baslik: t.slice(0, 200), url: u, tarih: tarih };
+      // Sınav duyurusu + ders adı geçiyorsa → uygulamadaki takvime otomatik ithal için işaretle
+      if (tarih && /(yazılı|sınav)/i.test(t)) {
+        const DERSLER = { "türk dili": "Türk Dili ve Edebiyatı", "türkçe": "Türk Dili ve Edebiyatı", "edebiyat": "Türk Dili ve Edebiyatı", "matematik": "Matematik", "geometri": "Matematik", "fizik": "Fizik", "kimya": "Kimya", "biyoloji": "Biyoloji", "tarih": "Tarih", "coğrafya": "Coğrafya", "din": "Din Kültürü" };
+        const kl = t.toLowerCase();
+        const bulun = Object.keys(DERSLER).find(k => kl.includes(k));
+        if (bulunun) kayit.lesson = DERSLER[bulun];
+      }
+      duyurular.push(kayit);
     }
   });
   return { duyurular: duyurular.slice(0, 30), programlar: programlar.slice(0, 6) };
