@@ -22,7 +22,7 @@ async function girisYap(pg, okz) {
   const form = pg.locator("#gt_ogrencino_form");
   if (!(await form.count())) throw new Error("giriş formu bulunamadı (site değişmiş?)");
   // Alanları doldur
-  await pg.fill('#gt_ogrencino_form input[name="adsoyad"]', okz.ad);
+  await pg.fill('#gt_ogrencino_form input[name="adsoyad"]', String(okz.ad).toLocaleUpperCase("tr-TR")); // sitedeki gibi büyük harf
   await pg.fill('#gt_ogrencino_form input[name="ogrno"]', String(okz.okulNo));
   try { await pg.selectOption("#gt_ogrencino_sinifcombo", { label: String(okz.sinif || "9") }); } catch (e) { /* sınıf combo opsiyonel */ }
   await pg.selectOption("#gt_ogrencino_ilcombo", { label: IL_ADI });

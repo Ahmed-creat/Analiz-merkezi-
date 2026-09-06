@@ -1,3 +1,4 @@
+const PWA_SURUM = "v30.1";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + FIREBASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama: E-POSTA/ŞİFRE (kayıt + giriş + şife sıfırlama)
@@ -391,14 +392,20 @@ function renderOkzModal() {
   const s = state.settings && state.settings.okulizyon ? state.settings.okulizyon : {};
   const st = okzStore();
   let html = '<div style="width:100%;max-width:520px;max-height:86vh;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">';
-  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-weight:800;font-size:17px;">🎓 Okulizyon</div><button data-act="okzClose" style="background:none;border:0;font-size:19px;cursor:pointer;color:inherit;">✕</button></div>';
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-weight:800;font-size:17px;">🎓 Okulizyon <span style="font-size:10px;font-weight:400;opacity:0.5;">' + PWA_SURUM + '</span></div><button data-act="okzClose" style="background:none;border:0;font-size:19px;cursor:pointer;color:inherit;">✕</button></div>';
   // A) Bağlantı bilgileri
   html += '<div style="font-size:12px;opacity:0.75;margin-bottom:8px;">Sınav sonuçların her sabah otomatik çekilir; yanlış/boş sorular aşağıda <b>Analiz Bekliyor</b> listesine düşer.</div>';
+  // OKULIZYON SİTESİ GİRİŞ EKRANININ KOPYASI: AD SOYAD (büyük harf) → OKUL NO → SINIF → İL → İLÇE → OKUL (seçmeli)
+  const ILCELER = ["Şahinbey", "Şehitkamil", "Oğuzeli", "Nizip", "İslahiye", "Nurdağı", "Araban", "Yavuzeli", "Karkamış"];
+  const inp = (k, label, ph) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" autocapitalize="characters" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;' + (k === "ad" ? "text-transform:uppercase;font-weight:600;letter-spacing:0.02em;" : "") + '"></label>';
+  const sel = (k, label, opts) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<select id="okz-' + k + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + opts.map(o => '<option' + ((s[k] || opts[0]) === o ? " selected" : "") + '>' + escHtml(o) + "</option>").join("") + "</select></label>";
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">';
-  [["ad", "Ad Soyad", "Ahmet Yılmaz"], ["okulNo", "Okul No", "1234"], ["sinif", "Sınıf", "9"], ["ilce", "İlçe", "Şahinbey"], ["okulAdi", "Okul Adı", "Akken Anadolu Lisesi"]].forEach(f => {
-    const [k, label, ph] = f;
-    html += '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
-  });
+  html += inp("ad", "AD SOYAD (BÜYÜK HARF)", "AHMET YILMAZ");
+  html += inp("okulNo", "OKUL NO", "1234");
+  html += sel("sinif", "SINIF", ["9", "10", "11", "12"]);
+  html += sel("il", "İL", ["Gaziantep"]);
+  html += sel("ilce", "İLÇE", ILCELER);
+  html += sel("okulAdi", "OKUL", ["Akken Anadolu Lisesi"]);
   html += "</div>";
   html += '<button data-act="okzSaveBilgi" class="btn btn-primary w-full" style="font-weight:700;margin-bottom:14px;">Bilgileri Kaydet</button>';
   // B) ANALİZ BEKLİYOR
@@ -434,12 +441,16 @@ function renderOkzModal() {
   m.innerHTML = html;
 }
 function okzSaveBilgi() {
-  const al = k => { const el = document.getElementById("okz-" + k); return el ? el.value.trim() : ""; };
-  if (!al("ad") || !al("okulNo")) { toast("En az Ad Soyad ve Okul No gerekli.", "error"); return; }
-  if (!al("sinif")) { /* sınıf boşsa 9 kabul edilir */ }
-  state.settings.okulizyon = { ad: al("ad"), okulNo: al("okulNo"), sinif: al("sinif") || "9", ilce: al("ilce") || "Şahinbey", okulAdi: al("okulAdi") || "Akken Anadolu Lisesi" };
+  const al = k => { const el = document.getElementById("okz-" + k); return el ? (el.value || "").trim() : ""; };
+  const ad = al("ad").toLocaleUpperCase("tr-TR"); // sitedeki gibi BÜYÜK HARF
+  if (!ad || !al("okulNo")) { toast("AD SOYAD ve OKUL NO gerekli (adı büyük harf yaz).", "error"); return; }
+  state.settings.okulizyon = {
+    ad: ad, okulNo: al("okulNo"),
+    sinif: al("sinif") || "9", il: al("il") || "Gaziantep",
+    ilce: al("ilce") || "Şahinbey", okulAdi: al("okulAdi") || "Akken Anadolu Lisesi"
+  };
   saveState();
-  toast("Okulizyon bilgileri kaydedildi — çekim her sabah 07:00'de otomatik.", "success");
+  toast("Kaydedildi — çekim her sabah 07:30'da otomatik (" + ad + " · " + state.settings.okulizyon.okulAdi + ")", "success");
 }
 function okzHepsiUygula(reason) {
   document.querySelectorAll(".okz-reason").forEach(sel => { sel.value = reason; });
