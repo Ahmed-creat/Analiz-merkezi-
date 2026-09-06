@@ -1,0 +1,76 @@
+# ============================================================
+# ANALİZ MERKEZİ — TEK İŞ AKIŞI: gözcü + okul çekimi + bildirimler
+#
+# 1) */30 dk   : DEĞİŞİKLİK GÖZCÜSÜ — sayfaları hafifçe kontrol eder;
+#                değişiklik yoksa saniyeler içinde biter (kota dostu),
+#                değişiklik varsa TAM ÇEKİM + ANINDA PUSH atar
+#                ("Okulizyon'da yeni sonuç!" / "Okulundan yeni duyuru")
+# 2) 07:30     : tam Okulizyon + okul sitesi çekimi + TAM bildirim seti
+# 3) 19:30     : yalnız kritik bildirimler (çekim yok)
+# Elle "Run workflow": çekim + bildirim birlikte çalışır.
+#
+# DAKA BÜTÇESİ (özel depo ücretsiz kota: 2000 dk/ay):
+#   gözcü ~48 koşu/gün ≈ 1 dk → ~1440 dk/ay ✓ kotada kalır.
+#   Aralığı 30 dk'dan KISALTMA (*/15 → ~2880 dk/ay, kotayı aşar).
+#   Daha sık kontrol istersen: depoyu PUBLIC yap (Actions sınırsız)
+#   — kod görünür ama secret'lar (hizmet anahtarı) asla sızmaz.
+#
+# Secret'lar: FIREBASE_SERVICE_ACCOUNT (zorunlu) — başka anahtar GEREKMEZ (OCR kütüphanesi)
+# Not: çekim yapılandırması (OKULIZYON_CFG / OKUL_SITESI) boşsa adımlar
+#   kendilerini sorunsuz atlar — iş akışı yeşil kalır.
+# ============================================================
+name: Bildirim Motoru
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # değişiklik gözcüsü
+    - cron: "30 4 * * *"    # 07:30 İstanbul — çekim + tam set
+    - cron: "30 16 * * *"   # 19:30 İstanbul — kritikler
+  workflow_dispatch:
+
+jobs:
+  bildirim-gonder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu al
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Bağımlılıklar
+        run: npm install --no-fund --no-audit
+        working-directory: functions
+
+      - name: Okulizyon için tarayıcı kur (Chromium)
+        run: npx playwright install chromium --with-deps
+        working-directory: functions
+
+      - name: Değişiklik gözcüsü (30 dk'da bir)
+        if: ${{ github.event.schedule == '*/30 * * * *' }}
+        run: node degisiklik-kontrol.js
+        working-directory: functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Okulizyon çek (sabah + elle)
+        if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
+        run: node okulizyon-cek.js
+        working-directory: functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Okul sitesi (duyuru + ders programı)
+        if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
+        run: node okul-sitesi.js
+        working-directory: functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Bildirimleri gönder (sabah tam / akşam kritik)
+        if: ${{ github.event.schedule != '*/30 * * * *' }}
+        run: node bildirim-gonder.js
+        working-directory: functions
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
