@@ -63,19 +63,26 @@ async function kullaniciCek(browser, userRef, dry) {
   const pg = await ctx.newPage();
   try {
     const anaHtml = await girisYap(pg, okz);
-    // Sonuç/sınav linklerini topla (en yeni 3)
+    // İLK çekimde TÜM sonuçlar (15'e kadar), sonraki çekimlerde son 5
+    const queueSnap = await userRef.collection("okulizyon").doc("queue").get();
+    const ilkMi = !queueSnap.exists;
+    const limit = ilkMi ? 15 : 5;
     let liste = parseSinavListesi(anaHtml).filter(l => /deneme|sınav|yazılı|sonuç/i.test(l.name));
     const queue = { pulledAt: Date.now(), exams: [] };
     if (!liste.length) {
       // Giriş sonrası doğrudan sonuç tablosu çıkmış olabilir
-      const p = parseSonuclar(anaHtml, { name: "Okulizyon Sonucu", date: "", grade: state.user && state.user.grade });
+      const t1 = (anaHtml.match(/(\d{2})\.(\d{2})\.(\d{4})/) || []).slice(1, 4);
+      const p = parseSonuclar(anaHtml, { name: "Okulizyon Sonucu", date: t1.length === 3 ? t1[2] + "-" + t1[1] + "-" + t1[0] : "", grade: state.user && state.user.grade });
       queue.exams = queue.exams.concat(p.exams);
     }
-    for (const s of liste.slice(0, 3)) {
+    for (const s of liste.slice(0, limit)) {
       const u = new URL(s.href, GIRIS_URL).href;
       await pg.goto(u, { waitUntil: "domcontentloaded", timeout: 45000 }).catch(() => {});
       await pg.waitForTimeout(1200);
-      const p = parseSonuclar(await pg.content(), { name: s.name, date: "", grade: state.user && state.user.grade });
+      const sayfa = await pg.content();
+      const tarih = (s.name.match(/(\d{2})\.(\d{2})\.(\d{4})/) || sayfa.match(/(\d{2})\.(\d{2})\.(\d{4})/) || []).slice(1, 4);
+      const dateIso = tarih.length === 3 ? tarih[2] + "-" + tarih[1] + "-" + tarih[0] : "";
+      const p = parseSonuclar(sayfa, { name: s.name, date: dateIso, grade: state.user && state.user.grade });
       queue.exams = queue.exams.concat(p.exams);
     }
     await ctx.close();
@@ -122,3 +129,4 @@ if (require.main === module) {
   main().catch(e => { console.error("FATAL:", e.message); process.exit(1); });
 }
 module.exports = { GIRIS_URL, girisYap };
+    
