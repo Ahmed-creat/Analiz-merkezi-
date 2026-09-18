@@ -13,6 +13,11 @@ on:
     - cron: "30 4 * * *"
     - cron: "30 16 * * *"
   workflow_dispatch:
+    inputs:
+      test:
+        description: "TEST BİLDİRİMİ gönder (telefona anında push, beklemeyi atlar)"
+        type: boolean
+        default: false
 
 jobs:
   bildirim-gonder:
@@ -92,10 +97,11 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
-      - name: Bildirimleri gönder (sabah tam / akşam kritik)
+      - name: Bildirimleri gönder (sabah tam / akşam kritik / test)
         if: ${{ github.event.schedule != '*/30 * * * *' }}
         working-directory: ${{ steps.kok.outputs.dizin }}
         run: node bildirim-gonder.js
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          TEST: ${{ github.event.inputs.test == 'true' && '1' || '0' }}
           
