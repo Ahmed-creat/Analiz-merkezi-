@@ -36,6 +36,32 @@ async function main() {
   admin.initializeApp({ credential: admin.credential.cert(credential) });
   const db = admin.firestore();
 
+  // ---- TEST MODU: her kullanıcıya doğrudan push (bekleme/tekilleştirme yok) ----
+  if (process.env.TEST === "1") {
+    console.log("=== TEST MODU: tüm kullanıcılara anında push ===");
+    let gonderildi = 0, hata = 0;
+    for (const userRef of users) {
+      const t = await userRef.collection("meta").doc("fcm").get();
+      if (!t.exists) { console.log("  · " + userRef.id.slice(0, 6) + "… token YOK — telefonda: uygulamayı aç → Profil → Giriş Yap → bildirim izni ver"); continue; }
+      try {
+        await admin.messaging().send({
+          token: t.data().token,
+          notification: { title: "\ud83d\udd14 Test Bildirimi \u2014 Analiz Merkezi", body: "Bildirim zinciri \u00e7al\u0131\u015f\u0131yor! Bu bir test mesaj\u0131." },
+          android: { priority: "high" }
+        });
+        gonderildi++; console.log("  \u2713 g\u00f6nderildi " + userRef.id.slice(0, 6) + "\u2026");
+      } catch (e) {
+        hata++; console.log("  \u2717 " + userRef.id.slice(0, 6) + "\u2026 " + String(e.message).slice(0, 90));
+        if (String(e.code).includes("unregistered")) {
+          await userRef.collection("meta").doc("fcm").delete();
+          console.log("    \u2192 \u00f6l\u00fc token silindi: telefonda uygulamay\u0131 a\u00e7, izin ver, giri\u015Fle \u2014 yeni token kaydolur");
+        }
+      }
+    }
+    console.log("=== TEST B\u0130TT\u0130: " + gonderildi + " g\u00f6nderildi, " + hata + " hata ===");
+    process.exit(0);
+  }
+
   const saat = process.env.SAAT || (istanbulSaat() >= 17 || istanbulSaat() < 5 ? "aksam" : "sabah");
   const sadeceAksam = saat === "aksam";
   console.log("=== Analiz Merkezi bildirim turu (" + saat + (DRY ? ", KURU ÇALIŞTIRMA" : "") + ") — İstanbul " + turkiyeBugun() + " " + istanbulSaat() + ":00 ===");
@@ -51,7 +77,7 @@ async function main() {
       userRef.collection("state").doc("main").get(),
       userRef.collection("meta").doc("fcm").get()
     ]);
-    if (!stateSnap.exists || !tokenSnap.exists) { atlanan++; continue; }
+    if (!stateSnap.exists || !tokenSnap.exists) { atlanan++; console.log("  · " + uid.slice(0, 6) + "… " + (!stateSnap.exists ? "state yok" : "FCM token yok (giriş+izin gerekli)")); continue; }
     const token = tokenSnap.data().token;
     let state;
     try { state = JSON.parse(stateSnap.data().json || "{}"); } catch (e) { atlanan++; continue; }
@@ -96,3 +122,4 @@ async function main() {
 }
 
 main().catch(e => { console.error("FATAL:", e.message); process.exit(1); });
+  
