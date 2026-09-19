@@ -34,7 +34,8 @@ jobs:
       - name: Betiklerin olduğu klasörü bul
         id: kok
         run: |
-          DOSYA=$(find . -maxdepth 4 -type f -name "okulizyon-cek.js" -not -path "*/node_modules/*" | head -1)
+          # pwa-files/ içindeki TASLAK (stub) dosyalar hariç — gerçek betikler depo kökünde
+          DOSYA=$(find . -maxdepth 4 -type f -name "okulizyon-cek.js" -not -path "*/node_modules/*" -not -path "*pwa-files*" | head -1)
           if [ -n "$DOSYA" ]; then
             echo "dizin=$(dirname "$DOSYA")" >> "$GITHUB_OUTPUT"
             echo "Betikler burada: $(dirname "$DOSYA")"
@@ -66,7 +67,8 @@ jobs:
           PKJ
           npm install --no-fund --no-audit
 
-      - name: Okulizyon için tarayıcı kur (sürüme birebir)
+      - name: Okulizyon için tarayıcı kur (sürüme birebir; test koşusunda atla)
+        if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
         working-directory: ${{ steps.kok.outputs.dizin }}
         env:
           PLAYWRIGHT_BROWSERS_PATH: "0"
@@ -82,16 +84,16 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
-      - name: Okulizyon çek (sabah + elle)
-        if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
+      - name: Okulizyon çek (sabah + elle; test koşusunda atla)
+        if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
         working-directory: ${{ steps.kok.outputs.dizin }}
         run: node okulizyon-cek.js
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PLAYWRIGHT_BROWSERS_PATH: "0"
 
-      - name: Okul sitesi (duyuru + ders programı OCR)
-        if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
+      - name: Okul sitesi (duyuru + ders programı OCR; test koşusunda atla)
+        if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
         working-directory: ${{ steps.kok.outputs.dizin }}
         run: node okul-sitesi.js
         env:
