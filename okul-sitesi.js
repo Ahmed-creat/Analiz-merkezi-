@@ -1,10 +1,9 @@
 // ============================================================
-// OKUL SİTESİ ÇEKİCİ + GEMINI VISION — GitHub Actions'ta çalışır
+// OKUL SİTESİ ÇEKİCİ + OCR — GitHub Actions'ta çalışır
 // 1) Duyurular/sınav tarihleri: deterministik Cheerio tarama (AI YOK)
-// 2) Ders programı görsel/PDF: yalnız bunlar Gemini Vision API'ye
-//    gönderülür (metne dönüştürme) → JSON
+// 2) Ders programı görsel/PDF: yalnız görseller Tesseract OCR ile okunur.
 // Sonuç her kullanıcıya users/{uid}/okul/duyurular olarak yazılır.
-// Çalıştırma: FIREBASE_SERVICE_ACCOUNT + (isteğe bağlı GEMINI_API_KEY)
+// Çalıştırma: FIREBASE_SERVICE_ACCOUNT
 // ============================================================
 const cheerio = require("cheerio");
 
@@ -13,42 +12,101 @@ const OKUL_SITESI = {
   url: "https://akkentanadolulisesi.meb.k12.tr/icerikler/icerikler/listele_775116_Duyurular",  // Duyurular listesi
   ekUrl: "https://akkentanadolulisesi.meb.k12.tr/icerikler/icerikler/listele_775115_Haberler",   // Haberler listesi
   duyuruSecici: "a",          // MEB CMS: duyurular /icerikler/ bağlantıları
-  programAnahtari: /(ders\s*program|haftalık|belirtilen\s*gün)/i,
-  tarihRegex: /(\d{2})[.\/](\d{2})[.\/](\d{4})/g
+  programAnahtari: /(ders\s*program|haftalık|haftalik|belirtilen\s*gün)/i,
+  tarihRegex: /(\d{1,2})[.\/](\d{1,2})[.\/](\d{4})/g
 };
 
+const AY_MAP = {
+  "oca": "01", "ocak": "01",
+  "şub": "02", "sub": "02", "şubat": "02", "subat": "02",
+  "mar": "03", "mart": "03", "mrt": "03",
+  "nis": "04", "nisan": "04",
+  "may": "05", "mayıs": "05", "mayis": "05",
+  "haz": "06", "haziran": "06",
+  "tem": "07", "temmuz": "07",
+  "ağu": "08", "agu": "08", "ağustos": "08", "agustos": "08",
+  "eyl": "09", "eylül": "09", "eylul": "09",
+  "eki": "10", "ekim": "10",
+  "kas": "11", "kasım": "11", "kasim": "11",
+  "ara": "12", "aralık": "12", "aralik": "12"
+};
+function temiz(x) { return String(x || "").replace(/\s+/g, " ").trim(); }
+function iki(n) { return String(n).padStart(2, "0"); }
 function tarihBul(text) {
+  const s = temiz(text);
   OKUL_SITESI.tarihRegex.lastIndex = 0;
-  const m = OKUL_SITESI.tarihRegex.exec(text);
-  return m ? m[3] + "-" + m[2] + "-" + m[1] : null;
+  const m = OKUL_SITESI.tarihRegex.exec(s);
+  if (m) return m[3] + "-" + iki(m[2]) + "-" + iki(m[1]);
+  const alt = s.toLocaleLowerCase("tr-TR").replace(/ı/g, "i");
+  const m2 = alt.match(/(\d{1,2})\s*([a-zçğıöşü]{3,8})\s*(\d{4})/i);
+  if (m2) {
+    const ay = AY_MAP[m2[2]] || AY_MAP[m2[2].slice(0, 3)];
+    if (ay) return m2[3] + "-" + ay + "-" + iki(m2[1]);
+  }
+  return null;
+}
+
+function dersBul(baslik) {
+  const DERSLER = {
+    "türk dili": "Türk Dili ve Edebiyatı", "turk dili": "Türk Dili ve Edebiyatı",
+    "türkçe": "Türk Dili ve Edebiyatı", "turkce": "Türk Dili ve Edebiyatı", "edebiyat": "Türk Dili ve Edebiyatı",
+    "matematik": "Matematik", "geometri": "Matematik",
+    "fizik": "Fizik", "kimya": "Kimya", "biyoloji": "Biyoloji",
+    "tarih": "Tarih", "coğrafya": "Coğrafya", "cografya": "Coğrafya",
+    "din": "Din Kültürü", "ingilizce": "İngilizce", "almanca": "Almanca",
+    "felsefe": "Felsefe"
+  };
+  const kl = temiz(baslik).toLocaleLowerCase("tr-TR").replace(/ı/g, "i");
+  const bulun = Object.keys(DERSLER).find(k => kl.includes(k));
+  return bulun ? DERSLER[bulun] : "";
 }
 
 function parseDuyurular(html, baseUrl) {
   const $ = cheerio.load(html);
-  const duyurular = [];
-  const programlar = [];
+  const duyuruMap = new Map();
+  const programMap = new Map();
+
   $(OKUL_SITESI.duyuruSecici).each((i, a) => {
-    const t = $(a).text().replace(/\s+/g, " ").trim();
+    let t = temiz($(a).text() || $(a).attr("title") || $(a).attr("aria-label"));
     const href = $(a).attr("href") || "";
-    if (!t || t.length < 8 || !href) return;
+    if (!href) return;
     const u = (() => { try { return new URL(href, baseUrl).href; } catch (e) { return ""; } })();
     if (!u) return;
-    if (OKUL_SITESI.programAnahtari.test(t)) {
-      if (/\.(png|jpe?g|gif|pdf)(\?|$)/i.test(u)) programlar.push({ baslik: t, url: u });
-    } else if (/(sınav|yazılı|deneme|duyur)/i.test(t)) {
-      const tarih = tarihBul(t) || tarihBul($(a).parent().text());
-      const kayit = { baslik: t.slice(0, 200), url: u, tarih: tarih };
-      // Sınav duyurusu + ders adı geçiyorsa → uygulamadaki takvime otomatik ithal için işaretle
-      if (tarih && /(yazılı|sınav)/i.test(t)) {
-        const DERSLER = { "türk dili": "Türk Dili ve Edebiyatı", "türkçe": "Türk Dili ve Edebiyatı", "edebiyat": "Türk Dili ve Edebiyatı", "matematik": "Matematik", "geometri": "Matematik", "fizik": "Fizik", "kimya": "Kimya", "biyoloji": "Biyoloji", "tarih": "Tarih", "coğrafya": "Coğrafya", "din": "Din Kültürü" };
-        const kl = t.toLowerCase();
-        const bulun = Object.keys(DERSLER).find(k => kl.includes(k));
-        if (bulunun) kayit.lesson = DERSLER[bulun];
-      }
-      duyurular.push(kayit);
+
+    const ctx = temiz($(a).closest("tr, li, article, .card, .item, .duyuru, .haber").text() || $(a).parent().text());
+    if (!t || /^devamı$/i.test(t) || /^devami$/i.test(t)) {
+      // "Devamı" linklerinde başlık çoğu zaman aynı satırdaki diğer linkin title/text'idir.
+      const rowTitle = temiz($(a).closest("tr, li, article, .card, .item").find("a[title]").first().attr("title") || ctx);
+      t = rowTitle || t;
     }
+    if (!t || t.length < 8) return;
+    const isIcerik = /\/icerikler\//i.test(u);
+    const isFile = /\.(png|jpe?g|gif|webp|pdf)(\?|$)/i.test(u);
+    const programMi = OKUL_SITESI.programAnahtari.test(t + " " + ctx);
+
+    if (programMi) {
+      // Program bir makale sayfası veya doğrudan görsel/pdf olabilir. OCR yalnız doğrudan görselde denenir.
+      if (!programMap.has(u)) programMap.set(u, { baslik: t.slice(0, 200), url: u, dosya: isFile });
+      return;
+    }
+
+    // MEB liste sayfalarında gerçek içerikler /icerikler/...html bağlantılarıdır.
+    // Sınav/yazılı/duyuru kelimeleri geçmese bile okul haber/duyurusu olarak saklanır;
+    // sınav takvimine otomatik ekleme aşağıda yalnız sınav/yazılı başlıklarında yapılır.
+    if (!isIcerik && !/(sınav|sinav|yazılı|yazili|deneme|duyur)/i.test(t + " " + ctx)) return;
+    const tarih = tarihBul(t) || tarihBul(ctx);
+    const key = u;
+    const eski = duyuruMap.get(key);
+    const baslik = t.slice(0, 200);
+    if (eski && eski.baslik.length >= baslik.length) return;
+    const kayit = { baslik, url: u, tarih };
+    if (tarih && /(yazılı|yazili|sınav|sinav|deneme)/i.test(baslik)) {
+      const lesson = dersBul(baslik);
+      if (lesson) kayit.lesson = lesson;
+    }
+    duyuruMap.set(key, kayit);
   });
-  return { duyurular: duyurular.slice(0, 30), programlar: programlar.slice(0, 6) };
+  return { duyurular: Array.from(duyuruMap.values()).slice(0, 30), programlar: Array.from(programMap.values()).slice(0, 6) };
 }
 
 // Ders programı görseli → METİN: Tesseract OCR (kütüphane, API anahtari GEREKMEZ)
@@ -69,7 +127,7 @@ async function ocrCevir(url) {
   const gunler = [];
   let suAn = null;
   metin.split(/\r?\n/).forEach(line => {
-    const t = line.toLowerCase();
+    const t = line.toLocaleLowerCase("tr-TR");
     const gun = GUNLER.find(g => t.includes(g));
     if (gun && t.split(" ").length <= 4) { suAn = { gun: gun.charAt(0).toUpperCase() + gun.slice(1), dersler: [] }; gunler.push(suAn); return; }
     const m2 = line.match(/(\d{1,2})[:.](\d{2})\s+(.+)/);
@@ -101,8 +159,9 @@ async function main() {
   duyurular.slice(0, 8).forEach(d => console.log("    · [" + (d.tarih || "tarih?") + "] " + d.baslik.slice(0, 70)));
 
   let programJson = null;
-  if (programlar.length && !DRY) {
-    programJson = await ocrCevir(programlar[0].url).catch(e => { console.warn("  OCR hatası: " + e.message); return null; });
+  const dogrudanProgram = programlar.find(p => /\.(png|jpe?g|gif|webp)(\?|$)/i.test(p.url));
+  if (dogrudanProgram && !DRY) {
+    programJson = await ocrCevir(dogrudanProgram.url).catch(e => { console.warn("  OCR hatası: " + e.message); return null; });
     if (programJson) console.log("  ✓ Ders programı OCR ile okundu (" + (programJson.gunler ? programJson.gunler.length + " gün" : "ham metin") + ")");
   }
 
@@ -117,4 +176,4 @@ async function main() {
 if (require.main === module) {
   main().catch(e => { console.error("FATAL:", e.message); process.exit(1); });
 }
-module.exports = { OKUL_SITESI, parseDuyurular, tarihBul };
+module.exports = { OKUL_SITESI, parseDuyurular, tarihBul, dersBul };
