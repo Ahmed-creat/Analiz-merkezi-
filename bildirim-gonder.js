@@ -11,6 +11,18 @@ const { buildMessages } = require("./bildirim-logic");
 
 const DRY = process.env.DRY_RUN === "1";
 const KRITIK_ANAHTARLAR = ["schooleve@", "schooltoday@", "exam@1", ":memcrit"];
+const APP_ORIGIN = (process.env.APP_ORIGIN || "https://analizmerkezii.netlify.app").replace(/\/$/, "");
+const APP_URL = APP_ORIGIN + "/";
+const ICON_URL = APP_ORIGIN + "/icons/icon-192.png";
+function webpushOptions(extraData = {}) {
+  const data = Object.assign({ url: APP_URL }, extraData);
+  Object.keys(data).forEach((k) => { if (data[k] == null) delete data[k]; else data[k] = String(data[k]); });
+  return {
+    notification: { icon: ICON_URL, badge: ICON_URL },
+    fcmOptions: { link: APP_URL },
+    data
+  };
+}
 
 function istanbulSaat() {
   return Number(new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul", hour: "numeric", hour12: false }));
@@ -48,7 +60,7 @@ async function main() {
         await admin.messaging().send({
           token: t.data().token,
           notification: { title: "\ud83d\udd14 Test Bildirimi \u2014 Analiz Merkezi", body: "Bildirim zinciri \u00e7al\u0131\u015f\u0131yor! Bu bir test mesaj\u0131." },
-          webpush: { notification: { icon: "icons/icon-192.png", badge: "icons/icon-192.png" } },
+          webpush: webpushOptions({ key: "test" }),
           android: { priority: "high" }
         });
         gonderildi++; console.log("  \u2713 g\u00f6nderildi " + userRef.id.slice(0, 6) + "\u2026");
@@ -107,7 +119,7 @@ async function main() {
         await admin.messaging().send({
           token: token,
           notification: { title: m.title, body: m.body },
-          webpush: { notification: { icon: "icons/icon-192.png", badge: "icons/icon-192.png" } },
+          webpush: webpushOptions({ key: m.key, title: m.title, body: m.body }),
           android: { priority: "high" }
         });
         console.log("  ✓ " + uid.slice(0, 6) + "… ← " + m.title);

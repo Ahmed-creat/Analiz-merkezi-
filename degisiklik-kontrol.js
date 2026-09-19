@@ -10,6 +10,18 @@
 const crypto = require("crypto");
 const { execFileSync } = require("child_process");
 const { parseSinavListesi } = require("./okulizyon-parser");
+const APP_ORIGIN = (process.env.APP_ORIGIN || "https://analizmerkezii.netlify.app").replace(/\/$/, "");
+const APP_URL = APP_ORIGIN + "/";
+const ICON_URL = APP_ORIGIN + "/icons/icon-192.png";
+function webpushOptions(extraData = {}) {
+  const data = Object.assign({ url: APP_URL }, extraData);
+  Object.keys(data).forEach((k) => { if (data[k] == null) delete data[k]; else data[k] = String(data[k]); });
+  return {
+    notification: { icon: ICON_URL, badge: ICON_URL },
+    fcmOptions: { link: APP_URL },
+    data
+  };
+}
 
 function hashOf(obj) {
   return crypto.createHash("sha256").update(JSON.stringify(obj)).digest("hex").slice(0, 40);
@@ -78,7 +90,7 @@ async function main() {
   }
   for (const a of alicilar) {
     try {
-      await admin.messaging().send({ token: a.token, notification: { title: a.baslik, body: a.body }, android: { priority: "high" } });
+      await admin.messaging().send({ token: a.token, notification: { title: a.baslik, body: a.body }, webpush: webpushOptions({ title: a.baslik, body: a.body, key: a.baslik }), android: { priority: "high" } });
       console.log("  ANINDA PUSH ✓ " + a.baslik);
     } catch (e) { console.warn("  push hatası: " + e.message); }
   }

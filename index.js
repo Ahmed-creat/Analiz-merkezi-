@@ -9,6 +9,18 @@
 const { onSchedule } = require("firebase-functions/v2/scheduler");
 const admin = require("firebase-admin");
 const { buildMessages } = require("./bildirim-logic");
+const APP_ORIGIN = (process.env.APP_ORIGIN || "https://analizmerkezii.netlify.app").replace(/\/$/, "");
+const APP_URL = APP_ORIGIN + "/";
+const ICON_URL = APP_ORIGIN + "/icons/icon-192.png";
+function webpushOptions(extraData = {}) {
+  const data = Object.assign({ url: APP_URL }, extraData);
+  Object.keys(data).forEach((k) => { if (data[k] == null) delete data[k]; else data[k] = String(data[k]); });
+  return {
+    notification: { icon: ICON_URL, badge: ICON_URL },
+    fcmOptions: { link: APP_URL },
+    data
+  };
+}
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -50,7 +62,7 @@ async function bildirimleriGonder(sadeceAksam) {
         await admin.messaging().send({
           token: token,
           notification: { title: m.title, body: m.body },
-          webpush: { notification: { icon: "icons/icon-192.png", badge: "icons/icon-192.png" } },
+          webpush: webpushOptions({ key: m.key, title: m.title, body: m.body }),
           android: { priority: "high" }
         });
         gonderilen++;
