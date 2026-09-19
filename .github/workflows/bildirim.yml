@@ -18,6 +18,10 @@ on:
         description: "TEST BİLDİRİMİ gönder (telefona anında push, beklemeyi atlar)"
         type: boolean
         default: false
+      cek_only:
+        description: "Yalnız Okulizyon + okul sitesi çekimini dene (bildirim göndermez)"
+        type: boolean
+        default: false
 
 jobs:
   bildirim-gonder:
@@ -83,6 +87,7 @@ jobs:
         run: node degisiklik-kontrol.js
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          APP_ORIGIN: https://analizmerkezii.netlify.app
 
       - name: Okulizyon çek (sabah + elle; test koşusunda atla)
         if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
@@ -100,10 +105,11 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Bildirimleri gönder (sabah tam / akşam kritik / test)
-        if: ${{ github.event.schedule != '*/30 * * * *' }}
+        if: ${{ github.event.schedule != '*/30 * * * *' && github.event.inputs.cek_only != 'true' }}
         working-directory: ${{ steps.kok.outputs.dizin }}
         run: node bildirim-gonder.js
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           TEST: ${{ github.event.inputs.test == 'true' && '1' || '0' }}
+          APP_ORIGIN: https://analizmerkezii.netlify.app
           
