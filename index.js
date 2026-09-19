@@ -39,9 +39,10 @@ async function bildirimleriGonder(sadeceAksam) {
     const logRef = userRef.collection("meta").doc("notifLog");
     const logSnap = await logRef.get();
     const log = logSnap.exists ? logSnap.data() || {} : {};
-    const bugunPrefix = new Date().toISOString().slice(0, 10);
+    const bugunPrefix = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
     const yeni = {};
-    Object.keys(log).forEach(k => { if (!k.startsWith(bugunPrefix)) yeni[k.slice(0, 200)] = true; }); // eski günleri temizle
+    // Yalnız BUGÜN gönderilen anahtarları tut (aynı gün tekrar gitmesin), eski günleri temizle
+    Object.keys(log).forEach(k => { if (k.startsWith(bugunPrefix)) yeni[k.slice(0, 200)] = true; });
 
     for (const m of liste) {
       if (log[m.key]) continue;
@@ -56,7 +57,7 @@ async function bildirimleriGonder(sadeceAksam) {
         yeni[m.key] = true;
       } catch (e) {
         console.warn(uid, "gönderim hatası:", e.message);
-        if (String(e.code).includes("unregistered")) {
+        if (/not-registered|unregistered/.test(String(e.code))) {
           await userRef.collection("meta").doc("fcm").delete(); // ölü token temizliği
         }
       }

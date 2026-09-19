@@ -35,6 +35,7 @@ async function main() {
   const admin = require("firebase-admin");
   admin.initializeApp({ credential: admin.credential.cert(credential) });
   const db = admin.firestore();
+  const users = await db.collection("users").listDocuments();
 
   // ---- TEST MODU: her kullanıcıya doğrudan push (bekleme/tekilleştirme yok) ----
   if (process.env.TEST === "1") {
@@ -47,12 +48,14 @@ async function main() {
         await admin.messaging().send({
           token: t.data().token,
           notification: { title: "\ud83d\udd14 Test Bildirimi \u2014 Analiz Merkezi", body: "Bildirim zinciri \u00e7al\u0131\u015f\u0131yor! Bu bir test mesaj\u0131." },
+          webpush: { notification: { icon: "icons/icon-192.png", badge: "icons/icon-192.png" } },
           android: { priority: "high" }
         });
         gonderildi++; console.log("  \u2713 g\u00f6nderildi " + userRef.id.slice(0, 6) + "\u2026");
       } catch (e) {
         hata++; console.log("  \u2717 " + userRef.id.slice(0, 6) + "\u2026 " + String(e.message).slice(0, 90));
-        if (String(e.code).includes("unregistered")) {
+        // Gerçek FCM hata kodu: "messaging/registration-token-not-registered" ("unregistered" yazımı YOK!)
+        if (/not-registered|unregistered/.test(String(e.code))) {
           await userRef.collection("meta").doc("fcm").delete();
           console.log("    \u2192 \u00f6l\u00fc token silindi: telefonda uygulamay\u0131 a\u00e7, izin ver, giri\u015Fle \u2014 yeni token kaydolur");
         }
@@ -69,7 +72,6 @@ async function main() {
   // Firestore saati Türkiye gününe göre değerlendirilsin (buildMessages simdi=İstanbul bugünü)
   const simdi = new Date(turkiyeBugun() + "T" + String(istanbulSaat()).padStart(2, "0") + ":45:00");
 
-  const users = await db.collection("users").listDocuments();
   let gonderilen = 0, atlanan = 0;
   for (const userRef of users) {
     const uid = userRef.id;
@@ -91,7 +93,8 @@ async function main() {
     const log = logSnap.exists ? logSnap.data() || {} : {};
     const bugunPrefix = turkiyeBugun();
     const yeni = {};
-    Object.keys(log).forEach(k => { if (!k.startsWith(bugunPrefix) && yeni.size < 500) yeni[k.slice(0, 200)] = true; });
+    // Yalnız BUGÜN gönderilen anahtarları tut (aynı gün tekrar gitmesin), eski günleri temizle
+    Object.keys(log).forEach(k => { if (k.startsWith(bugunPrefix) && Object.keys(yeni).length < 500) yeni[k.slice(0, 200)] = true; });
 
     for (const m of liste) {
       if (log[m.key]) continue;
@@ -112,7 +115,7 @@ async function main() {
         yeni[m.key] = true;
       } catch (e) {
         console.warn("  ✗ " + uid.slice(0, 6) + "… " + m.title + ": " + e.message);
-        if (String(e.code).includes("unregistered")) await userRef.collection("meta").doc("fcm").delete();
+        if (/not-registered|unregistered/.test(String(e.code))) await userRef.collection("meta").doc("fcm").delete();
       }
     }
     if (!DRY) await logRef.set(yeni, { merge: false });
