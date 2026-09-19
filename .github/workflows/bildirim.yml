@@ -18,6 +18,10 @@ on:
         description: "TEST BİLDİRİMİ gönder (telefona anında push, beklemeyi atlar)"
         type: boolean
         default: false
+      cek_only:
+        description: "Yalnız Okulizyon + okul sitesi çekimini dene (bildirim göndermez)"
+        type: boolean
+        default: false
 
 jobs:
   bildirim-gonder:
@@ -101,7 +105,7 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Bildirimleri gönder (sabah tam / akşam kritik / test)
-        if: ${{ github.event.schedule != '*/30 * * * *' }}
+        if: ${{ github.event.schedule != '*/30 * * * *' && github.event.inputs.cek_only != 'true' }}
         working-directory: ${{ steps.kok.outputs.dizin }}
         run: node bildirim-gonder.js
         env:
