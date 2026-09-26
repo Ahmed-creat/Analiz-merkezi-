@@ -28,10 +28,19 @@ Bu proje `analiz-merkezi-pwa (3).zip` dosyasından çıkarılan PWA uygulamasıd
 - **icons/icon-192.png** - PWA ikon (192x192)
 - **icons/icon-512.png** - PWA ikon (512x512)
 
+## Soru Havuzlarının Eklenmesi
+
+Soru havuzları `content/soru_havuzlari/{konu_id}.json` altında tutulur. Konu başına en az 10 soru,
+alt beceri başına en az 2 soru, dört seçenek ve zorunlu `cozum` alanı gerekir.
+Yeni havuz ekledikten sonra kök dizinde `npm run validate:pools` çalıştırılmalıdır.
+Havuz bulunmayan konular bozulmuş modda mevcut deneme verisiyle çalışmaya devam eder.
+İlişki grafı `content/iliski_grafi.json` olarak açılışta doğrulanır.
+
 ## Kurulum
 
 ```bash
 npm install
+npm run validate:pools
 firebase deploy
 ```
 

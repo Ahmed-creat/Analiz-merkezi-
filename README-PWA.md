@@ -105,6 +105,18 @@ koç selamı (ritim + geri sayım) · Tekrar Zamanı Geldi (3-7-14-21-28. gün) 
 - API anahtarı GEREKMEZ (OCR kütüphanesi kullanılıyor)
 - Doğru seçicileri kesinleştirmek için: Okulizyon sonuç sayfası açıkken **Ctrl+S** ile kaydedip o HTML'i geliştiriciye ver (seçiciler birebir oturtulur — ayrıştırma zaten başlık-isimli sütun eşleme yöntemiyle şablon değişimlerine dayanıklı).
 
+## Soru Havuzlarının Eklenmesi (İçerik Aşaması)
+
+Uygulama motoru (BKT, mini testler, ilişki grafı ve tekrar kartları) soru havuzları olmadan da çalışır.
+Bu durumda onay yalnızca mevcut deneme ve soru girişi verileriyle bozulmuş modda değerlendirilir.
+Soru havuzları içerik güncellemesi olarak eklenir; kod değişikliği gerektirmez:
+
+- Konum: `content/soru_havuzlari/{konu_id}.json`
+- Konu başına en az 10 soru; her soru `alt_beceri` etiketli; alt beceri başına en az 2 soru
+- Sorular 4 seçenekli, deneme zorluğunda, tuzaksız; `cozum` alanı zorunlu
+- Her havuz dosyası eklendiğinde `npm run validate:pools` çalıştırılmalı
+- İlişki grafı: `content/iliski_grafi.json`; açılışta şema ve tutarlılık doğrulanır
+
 ## Sık sorulan
 - **Bildirimler telefon kilideyken geliyor mu?** Evet — FCM + `firebase-messaging-sw.js` arka plan bildirimi işler (config doldurulduysa).
 - **İnternet yoksa?** Uygulama tam çalışır; bulut senkronu ve giriş devre dışı kalır, veriler cihazda (localStorage) durur.

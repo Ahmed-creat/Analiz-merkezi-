@@ -12,5 +12,9 @@
     "playwright": "1.49.1",
     "tesseract.js": "^5.1.0"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "validate:pools": "node scripts/validate-pools.js",
+    "test:bkt": "node tests/bkt-engine.test.js"
+  }
 }
