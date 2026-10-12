@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u03_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u03_k01_o01",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "126 sayısının asal çarpanlarına ayrılmış biçimi hangisidir?",
+      "secenekler": [
+        "2 × 3² × 7",
+        "2 × 3 × 21",
+        "2² × 3 × 7",
+        "3² × 14"
+      ],
+      "dogru_index": 0,
+      "cozum": "126 = 2 × 63 = 2 × 3² × 7 biçiminde asal çarpanlarına ayrılır. Diğer çarpımlardan bazıları 126 etse de asal çarpanlara ayırma tamamlanmamıştır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir bileşik sayıyı asal çarpanlarına ayırırken çarpım biçiminde yazılan çarpanlar hangi özelliği taşımalıdır?",
+        "back": "Çarpanların her biri asal olmalı; bileşik çarpanlar asal sayılara ayrılmalıdır."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o02",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "84 = 2² × 3 × 7 olduğuna göre 84’ün pozitif tam sayı bölenlerinin sayısı kaçtır?",
+      "secenekler": [
+        "8",
+        "12",
+        "9",
+        "16"
+      ],
+      "dogru_index": 1,
+      "cozum": "Üslerin bir fazlası çarpılır: (2 + 1)(1 + 1)(1 + 1) = 12. Bu nedenle 84’ün 12 pozitif tam sayı böleni vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "N = pᵃ × qᵇ biçiminde asal çarpanlarına ayrılmış bir sayının pozitif tam sayı bölenlerinin sayısı nasıl hesaplanır?",
+        "back": "Pozitif bölen sayısı (a + 1) × (b + 1) olur."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o03",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "54 sayısının asal çarpanlarına ayrılmış biçimi hangisidir?",
+      "secenekler": [
+        "2 × 27",
+        "6 × 9",
+        "2 × 3³",
+        "3 × 18"
+      ],
+      "dogru_index": 2,
+      "cozum": "54 = 2 × 27 = 2 × 3³ olur. Diğer ifadeler çarpım olarak 54 verse de asal çarpanlara ayrılmış biçimde değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir sayının asal çarpanlara ayrılışındaki üsler, sayının asal çarpanları hakkında neyi gösterir?",
+        "back": "Her asal çarpanın çarpımda kaç kez yer aldığını gösterir."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o04",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "81’in 5 tane pozitif tam sayı böleni varsa kaç tane negatif tam sayı böleni vardır?",
+      "secenekler": [
+        "3",
+        "4",
+        "6",
+        "5"
+      ],
+      "dogru_index": 3,
+      "cozum": "Her pozitif bölenin işaret değiştirmiş bir negatif karşılığı vardır. Bu nedenle 81’in negatif tam sayı böleni sayısı da 5’tir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir doğal sayının pozitif ve negatif tam sayı bölenlerinin sayıları arasındaki ilişkiyi ifade et.",
+        "back": "Pozitif ve negatif tam sayı bölenlerinin sayıları eşittir; her pozitif bölenin karşılığı olan bir negatif bölen vardır."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o05",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "Aşağıdaki sayılardan hangisi 98’in pozitif tam sayı bölenidir?",
+      "secenekler": [
+        "14",
+        "8",
+        "12",
+        "15"
+      ],
+      "dogru_index": 0,
+      "cozum": "98/14=7 olduğundan 14, 98’in pozitif tam sayı bölenidir. Diğer seçenekler 98’i kalansız bölmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir toplam eşit büyüklükteki tam sayı gruplarına artıksız ayrılacaksa grup büyüklüğü toplamla nasıl ilişkilidir?",
+        "back": "Grup büyüklüğü toplamı kalansız bölmelidir; yani toplamın pozitif böleni olmalıdır."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o06",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "96’nın 1 ve kendisi dışındaki pozitif tam sayı bölenlerinin sayısı kaçtır?",
+      "secenekler": [
+        "8",
+        "10",
+        "7",
+        "9"
+      ],
+      "dogru_index": 1,
+      "cozum": "96=2⁵×3 olduğundan pozitif bölen sayısı (5+1)(1+1)=12’dir. 1 ve 96 dışındaki bölenler sayıldığında 12−2=10 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "N kişiyi eşit büyüklükte ve birden çok gruba ayırırken grup büyüklükleri için hangi bölen koşulu sağlanır?",
+        "back": "Grup büyüklüğü N’nin pozitif böleni olmalıdır; birden çok grup ve her grupta birden çok kişi isteniyorsa 1 ile N dışarıda bırakılır."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o07",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "675 sayısı 3, 5 ve 7 asal tabanlarının kuvvetleri kullanılarak yazıldığında doğru gösterim hangisidir?",
+      "secenekler": [
+        "3² × 5³ × 7⁰",
+        "3³ × 5² × 7¹",
+        "3³ × 5² × 7⁰",
+        "3⁰ × 5² × 7³"
+      ],
+      "dogru_index": 2,
+      "cozum": "675=3³×5²’dir. Sayı 7’ye bölünmediği için 7 asal tabanının üssü 0 olur; bu nedenle gösterim 3³×5²×7⁰’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir sayı 2, 3 ve 5 asal çarpanlarıyla üslü biçimde yazılırken sayıda bulunmayan asal çarpanın üssü nasıl gösterilir?",
+        "back": "Bulunmayan asal çarpanın üssü 0 olarak yazılır."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o08",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "32, 160’ın pozitif tam sayı bölenlerinden biridir. 32’ye karşılık gelen negatif tam sayı böleni hangisidir?",
+      "secenekler": [
+        "32",
+        "−20",
+        "−16",
+        "−32"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bir pozitif bölenin negatif tam sayı karşılığı işaret değiştirmiş hâlidir. 32’nin karşılığı −32’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Pozitif bölen d ile ona karşılık gelen negatif tam sayı böleni arasındaki ilişkiyi yaz.",
+        "back": "Negatif karşılık −d'dir; pozitif bölenin işaret değiştirmiş hâlidir."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o09",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "168 sayısının bir pozitif çarpan çifti hangisidir?",
+      "secenekler": [
+        "8 ve 21",
+        "7 ve 23",
+        "9 ve 16",
+        "12 ve 13"
+      ],
+      "dogru_index": 0,
+      "cozum": "8×21=168 olduğundan bu ikili 168’in pozitif çarpan çiftidir. Diğer seçeneklerdeki sayıların çarpımı 168 değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "N doğal sayısının pozitif çarpan çifti neyi ifade eder?",
+        "back": "Çarpımları N olan iki pozitif tam sayıdan oluşan çifti ifade eder. Sırasız sayımda (a, b) ile (b, a) aynı çifttir."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o10",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "79 asal sayısının pozitif tam sayı bölenlerinin sayısı kaçtır?",
+      "secenekler": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "dogru_index": 1,
+      "cozum": "79 asal olduğundan pozitif tam sayı bölenleri yalnızca 1 ve 79’dur. Bu nedenle bölen sayısı 2’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "1'den büyük asal bir doğal sayının pozitif tam sayı bölenlerinin sayısını belirt.",
+        "back": "Bir asal sayının iki pozitif tam sayı böleni vardır: 1 ve kendisi."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o11",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "27’nin 4 tane pozitif tam sayı böleni olduğuna göre tüm pozitif ve negatif tam sayı bölenlerinin toplam sayısı kaçtır?",
+      "secenekler": [
+        "12",
+        "10",
+        "8",
+        "4"
+      ],
+      "dogru_index": 2,
+      "cozum": "Pozitif ve negatif tam sayı bölenlerinin sayıları eşittir. 4 pozitif ve 4 negatif bölen bulunduğundan toplam 8 bölen vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir doğal sayının tüm tam sayı bölenlerinin sayısını, pozitif tam sayı bölenlerinin sayısından nasıl elde edersin?",
+        "back": "Negatif ve pozitif bölen sayıları eşit olduğundan pozitif bölen sayısını 2 ile çarparım."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k01_o12",
+      "alt_beceri": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "metin": "110 = 2 × 5 × 11 olduğuna göre çarpım sırası değişince aynı sayılan sırasız pozitif çarpan çiftlerinin sayısı kaçtır?",
+      "secenekler": [
+        "10",
+        "5",
+        "8",
+        "4"
+      ],
+      "dogru_index": 3,
+      "cozum": "110=2×5×11 olduğundan pozitif bölen sayısı (1+1)³=8’dir. 110 kare sayı olmadığından her pozitif bölen, kendisinden farklı bir bölenle eşleşir; sırasız çift sayısı 8/2=4’tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kare olmayan N doğal sayısının sırasız pozitif çarpan çiftlerinin sayısını, pozitif bölen sayısıyla nasıl ilişkilendirirsin?",
+        "back": "Her pozitif bölen d, N/d böleniyle eşleşir. N kare olmadığından her çiftte iki farklı bölen bulunur; sırasız pozitif çarpan çifti sayısı pozitif bölen sayısının yarısıdır."
+      },
+      "kazanim": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u03_k01_o01:flashcard",
+      "front": "Bir bileşik sayıyı asal çarpanlarına ayırırken çarpım biçiminde yazılan çarpanlar hangi özelliği taşımalıdır?",
+      "back": "Çarpanların her biri asal olmalı; bileşik çarpanlar asal sayılara ayrılmalıdır."
+    },
+    {
+      "id": "mat_10_u03_k01_o02:flashcard",
+      "front": "N = pᵃ × qᵇ biçiminde asal çarpanlarına ayrılmış bir sayının pozitif tam sayı bölenlerinin sayısı nasıl hesaplanır?",
+      "back": "Pozitif bölen sayısı (a + 1) × (b + 1) olur."
+    },
+    {
+      "id": "mat_10_u03_k01_o03:flashcard",
+      "front": "Bir sayının asal çarpanlara ayrılışındaki üsler, sayının asal çarpanları hakkında neyi gösterir?",
+      "back": "Her asal çarpanın çarpımda kaç kez yer aldığını gösterir."
+    },
+    {
+      "id": "mat_10_u03_k01_o04:flashcard",
+      "front": "Bir doğal sayının pozitif ve negatif tam sayı bölenlerinin sayıları arasındaki ilişkiyi ifade et.",
+      "back": "Pozitif ve negatif tam sayı bölenlerinin sayıları eşittir; her pozitif bölenin karşılığı olan bir negatif bölen vardır."
+    },
+    {
+      "id": "mat_10_u03_k01_o05:flashcard",
+      "front": "Bir toplam eşit büyüklükteki tam sayı gruplarına artıksız ayrılacaksa grup büyüklüğü toplamla nasıl ilişkilidir?",
+      "back": "Grup büyüklüğü toplamı kalansız bölmelidir; yani toplamın pozitif böleni olmalıdır."
+    },
+    {
+      "id": "mat_10_u03_k01_o06:flashcard",
+      "front": "N kişiyi eşit büyüklükte ve birden çok gruba ayırırken grup büyüklükleri için hangi bölen koşulu sağlanır?",
+      "back": "Grup büyüklüğü N’nin pozitif böleni olmalıdır; birden çok grup ve her grupta birden çok kişi isteniyorsa 1 ile N dışarıda bırakılır."
+    },
+    {
+      "id": "mat_10_u03_k01_o07:flashcard",
+      "front": "Bir sayı 2, 3 ve 5 asal çarpanlarıyla üslü biçimde yazılırken sayıda bulunmayan asal çarpanın üssü nasıl gösterilir?",
+      "back": "Bulunmayan asal çarpanın üssü 0 olarak yazılır."
+    },
+    {
+      "id": "mat_10_u03_k01_o08:flashcard",
+      "front": "Pozitif bölen d ile ona karşılık gelen negatif tam sayı böleni arasındaki ilişkiyi yaz.",
+      "back": "Negatif karşılık −d'dir; pozitif bölenin işaret değiştirmiş hâlidir."
+    },
+    {
+      "id": "mat_10_u03_k01_o09:flashcard",
+      "front": "N doğal sayısının pozitif çarpan çifti neyi ifade eder?",
+      "back": "Çarpımları N olan iki pozitif tam sayıdan oluşan çifti ifade eder. Sırasız sayımda (a, b) ile (b, a) aynı çifttir."
+    },
+    {
+      "id": "mat_10_u03_k01_o10:flashcard",
+      "front": "1'den büyük asal bir doğal sayının pozitif tam sayı bölenlerinin sayısını belirt.",
+      "back": "Bir asal sayının iki pozitif tam sayı böleni vardır: 1 ve kendisi."
+    },
+    {
+      "id": "mat_10_u03_k01_o11:flashcard",
+      "front": "Bir doğal sayının tüm tam sayı bölenlerinin sayısını, pozitif tam sayı bölenlerinin sayısından nasıl elde edersin?",
+      "back": "Negatif ve pozitif bölen sayıları eşit olduğundan pozitif bölen sayısını 2 ile çarparım."
+    },
+    {
+      "id": "mat_10_u03_k01_o12:flashcard",
+      "front": "Kare olmayan N doğal sayısının sırasız pozitif çarpan çiftlerinin sayısını, pozitif bölen sayısıyla nasıl ilişkilendirirsin?",
+      "back": "Her pozitif bölen d, N/d böleniyle eşleşir. N kare olmadığından her çiftte iki farklı bölen bulunur; sırasız pozitif çarpan çifti sayısı pozitif bölen sayısının yarısıdır."
+    }
+  ],
+  "baslik": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
+  "topic_key": "Matematik > 3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler"
+}

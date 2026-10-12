@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u07_k02",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u07_k02_o01",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "A ve S olayları için P(A)=1/5, P(S|A)=4/5 ve P(S|A değil)=1/4’tür. S olayının gerçekleştiği biliniyorsa A olayının olasılığı kaçtır?",
+      "secenekler": [
+        "4/9",
+        "1/5",
+        "4/25",
+        "5/9"
+      ],
+      "dogru_index": 0,
+      "cozum": "P(A ve S)=1/5·4/5=4/25; P(A değil ve S)=4/5·1/4=5/25 olur. S olasılığı 9/25 olduğundan P(A|S)=(4/25)/(9/25)=4/9’dur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bayes teoremi olasılık hesabında hangi tür yeni bilgiyi dikkate alarak olasılığı günceller?",
+        "back": "Bir olayın gerçekleştiğine ilişkin koşullu bilgiyi dikkate alarak o olayın olasılığını günceller."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o02",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir bulmaca oyununda eş olasılıklı 100 harita üretiliyor. Bunların 40’ında gizli geçit, gizli geçitli haritaların 18’inde ise hazine bulunuyor. Gizli geçitli bir harita seçildiğine göre hazine bulunma olasılığı kaçtır?",
+      "secenekler": [
+        "4/13",
+        "9/20",
+        "3/5",
+        "1/5"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gizli geçit koşulu örnek uzayı 40 haritaya indirger. Bunların 18’inde hazine olduğundan koşullu olasılık 18/40=9/20’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eş olasılıklı çıktılarda P(A|B) koşullu olasılığını çıktı sayılarıyla nasıl hesaplarsın?",
+        "back": "Hem A hem B olayını sağlayan çıktı sayısını, B olayını sağlayan çıktı sayısına bölersin."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o03",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir video platformu oturumlarının %30’u mobilden, %70’i masaüstünden gerçekleşiyor. Önbellek isabeti mobil oturumlarda 2/3, masaüstü oturumlarda 1/2 olasılıkla görülüyor. Önbellek isabeti olduğu bilinen bir oturumun mobil olma olasılığı kaçtır?",
+      "secenekler": [
+        "2/7",
+        "1/2",
+        "4/11",
+        "3/5"
+      ],
+      "dogru_index": 2,
+      "cozum": "100 oturum varsayılırsa mobilde 30×2/3=20, masaüstünde 70×1/2=35 isabet olur. İsabetli 55 oturumun 20’si mobil olduğundan olasılık 20/55=4/11’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir sonuç farklı gruplarda farklı oranlarda oluşuyorsa, grupların ağırlıklarını kullanarak sonucun gerçekleşenleri içindeki bir grubun payı nasıl bulunur?",
+        "back": "İstenen grubun payı ile o gruptaki gerçekleşme oranını çarpıp, sonucun tüm gruplardaki ağırlıklı toplamına bölersin."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o04",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "A ve B olayları için P(A)=2/5, P(B|A)=3/4 ve P(B|A değil)=1/2’dir. B gerçekleştiğine göre A’nın gerçekleşmiş olma olasılığı kaçtır?",
+      "secenekler": [
+        "3/4",
+        "1/4",
+        "2/5",
+        "1/2"
+      ],
+      "dogru_index": 3,
+      "cozum": "P(A ve B)=2/5·3/4=3/10; P(A değil ve B)=3/5·1/2=3/10 olur. B’nin toplam olasılığı 3/5 olduğundan P(A|B)=(3/10)/(3/5)=1/2’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(B|A) ve P(B|A değil) biliniyorsa, B gözlendikten sonra A olayının olasılığını hangi bağıntı verir?",
+        "back": "P(A|B)=P(A)P(B|A)/[P(A)P(B|A)+P(A değil)P(B|A değil)]."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o05",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir ses arşivindeki 250 kaydın %24’ünde belirli bir kuş ötüşü duyuluyor. Otomatik kesitleyici, ötüşün bulunduğu kayıtların %80’ini doğru biçimde ayırıyor. Kaç ötüş içeren kayıt ayrılır?",
+      "secenekler": [
+        "48",
+        "60",
+        "80",
+        "120"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ötüş içeren kayıt sayısı 250×0,24=60’tır. Kesitleyici bunların %80’ini ayırdığından 60×0,80=48 kayıt ayrılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "N öğenin P(A) oranı A olayını sağlıyor ve A grubunun P(B|A) oranı B olayını da sağlıyorsa, A ve B’yi birlikte sağlayan öğe sayısı nasıl bulunur?",
+        "back": "N×P(A)×P(B|A) çarpımı alınır; bu, A sayısı ile A içindeki B oranını çarpmaya eşittir."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o06",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir kelime oyunu yanıt havuzundaki sözcükler eş olasılıkla seçiliyor ve yanıtların 1/4’ü coğrafi addır. “Bay” ipucu coğrafi adlarda 3/4, diğer sözcüklerde 1/5 olasılıkla görülüyor. İpucu görüldüğüne göre yanıtın coğrafi ad olma olasılığı kaçtır?",
+      "secenekler": [
+        "2/3",
+        "5/9",
+        "3/4",
+        "4/9"
+      ],
+      "dogru_index": 1,
+      "cozum": "Coğrafi ad ve ipucu birlikte olasılığı (1/4)(3/4)=3/16, diğer sözcük ve ipucu olasılığı (3/4)(1/5)=3/20’dir. İpucu olasılığı 27/80 olduğundan posterior olasılık (3/16)/(27/80)=5/9’dur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "B olayını sağlayan bir çıktı seçildiğinde, çıktının A grubundan gelme olasılığını grup sıklıkları ve oranlarıyla nasıl hesaplarsın?",
+        "back": "A grubundaki B çıktısı sayısını, tüm gruplardaki B çıktılarının toplamına bölersin; bu P(A|B)’dir."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o07",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir yazılım ekibi otomatik denemelerin %55’ini S sürümünde, %45’ini T sürümünde çalıştırıyor. Gecikme uyarısı S sürümünde %40, T sürümünde %20 olasılıkla görülüyor. Uyarı görülen bir denemenin S sürümünde çalışmış olma olasılığı kaçtır?",
+      "secenekler": [
+        "3/5",
+        "1/2",
+        "22/31",
+        "2/3"
+      ],
+      "dogru_index": 2,
+      "cozum": "S sürümündeki uyarı oranı 0,55×0,40=0,22, T sürümündeki uyarı oranı 0,45×0,20=0,09’dur. Toplam uyarı oranı 0,31 olduğundan istenen olasılık 0,22/0,31=22/31’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir iki yönlü sıklık tablosunda gruplara göre B olayını sağlayan sayıları bulmak için grup büyüklüğü ile hangi oran çarpılır?",
+        "back": "İlgili grubun B olayını sağlama oranı ile çarpılır."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o08",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir çevrim içi içerik hizmetindeki hesapların 1/2’si Başlangıç, 1/3’ü Standart, 1/6’sı Aile planındadır. Yeni bölüm bildirimi bu planlarda sırasıyla 1/4, 1/2 ve 1/3 olasılıkla açılıyor. Bildirimi açan hesabın Standart planda olma olasılığı kaçtır?",
+      "secenekler": [
+        "1/3",
+        "2/5",
+        "1/2",
+        "12/25"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bildirimin toplam olasılığı (1/2)(1/4)+(1/3)(1/2)+(1/6)(1/3)=25/72’dir. Standart plandan gelen bildirim olasılığı 1/6 olduğundan posterior olasılık (1/6)/(25/72)=12/25’tir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birden fazla ayrık gruptan gelen sonuç E gözlendiğinde, seçilen B grubundan gelme olasılığını hangi Bayes bağıntısıyla hesaplarsın?",
+        "back": "P(B|E)=P(B)P(E|B)/Σᵢ[P(Gᵢ)P(E|Gᵢ)] biçiminde bulunur."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o09",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir topluluk kampanyasına 400 kişi kaydolmuştur. Kayıtlıların %30’u sabah vardiyasını seçmiştir. Hatırlatma mesajını sabah vardiyasını seçenlerin %50’si, diğerlerinin %20’si onaylıyor. Kaç kişi mesajı onaylar?",
+      "secenekler": [
+        "116 kişi",
+        "104 kişi",
+        "120 kişi",
+        "80 kişi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sabah vardiyasında 400×0,30=120 kişi vardır; bunların 60’ı mesajı onaylar. Diğer 280 kişinin 56’sı onayladığından toplam 116 onay gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Grup i’nin büyüklüğü Nᵢ ve bu grupta B olayının görülme oranı rᵢ ise B’yi sağlayan toplam öğe sayısı nasıl bulunur?",
+        "back": "Her grup için Nᵢrᵢ hesaplanır ve sonuçlar toplanır: ΣᵢNᵢrᵢ."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o10",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir çevrim içi sipariş platformundaki siparişlerin %20’si A, %35’i B ve %45’i C deposundan gönderiliyor. Zamanında teslim olma oranları sırasıyla %90, %80 ve %70 ise rastgele seçilen bir siparişin zamanında teslim olma olasılığı kaçtır?",
+      "secenekler": [
+        "75%",
+        "77,5%",
+        "80%",
+        "82,5%"
+      ],
+      "dogru_index": 1,
+      "cozum": "Toplam olasılık, her deponun payı ile o depodaki zamanında teslim oranının çarpımlarının toplamıdır: %20·%90+%35·%80+%45·%70=%18+%28+%31,5=%77,5.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ayrık Gᵢ grupları tüm örnek uzayı oluşturuyorsa E olayının toplam olasılığı nasıl hesaplanır?",
+        "back": "P(E)=ΣᵢP(Gᵢ)P(E|Gᵢ)."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o11",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir yazım denetimi programı, önceden belirlenmiş 75 yazım hatasının %88’ini işaretliyor. Programın kaç hatayı işaretlemediği bulunur?",
+      "secenekler": [
+        "66",
+        "12",
+        "9",
+        "8"
+      ],
+      "dogru_index": 2,
+      "cozum": "İşaretlenmeyen hata oranı %100−%88=%12’dir. 75×0,12=9 hata işaretlenmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "B koşulu altında A olayının gerçekleşmeme olasılığını nasıl ifade edersin?",
+        "back": "P(A değil | B)=1−P(A|B)."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u07_k02_o12",
+      "alt_beceri": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "metin": "Bir dosya eşleştirme filtresine verilen çiftlerin %30’u yinelenmiştir. Filtre yinelenenlerin %75’inde uyarı verir, benzersiz çiftlerin %10’unda ise yanlış uyarı verir. Uyarı çıkmadığına göre çiftin benzersiz olma olasılığı kaçtır?",
+      "secenekler": [
+        "3/5",
+        "5/7",
+        "42/45",
+        "42/47"
+      ],
+      "dogru_index": 3,
+      "cozum": "Uyarısız benzersiz çiftlerin oranı 0,70×0,90=0,63, uyarısız yinelenmiş çiftlerin oranı 0,30×0,25=0,075’tir. Uyarı çıkmayan çiftler içindeki benzersiz oranı 0,63/(0,63+0,075)=42/47’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "B koşulu gerçekleştiğinde A’nın koşullu olasılığını iki olayın olasılıklarıyla nasıl ifade edersin?",
+        "back": "P(A|B)=P(A ve B)/P(B), P(B)>0."
+      },
+      "kazanim": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u07_k02_o01:flashcard",
+      "front": "Bayes teoremi olasılık hesabında hangi tür yeni bilgiyi dikkate alarak olasılığı günceller?",
+      "back": "Bir olayın gerçekleştiğine ilişkin koşullu bilgiyi dikkate alarak o olayın olasılığını günceller."
+    },
+    {
+      "id": "mat_10_u07_k02_o02:flashcard",
+      "front": "Eş olasılıklı çıktılarda P(A|B) koşullu olasılığını çıktı sayılarıyla nasıl hesaplarsın?",
+      "back": "Hem A hem B olayını sağlayan çıktı sayısını, B olayını sağlayan çıktı sayısına bölersin."
+    },
+    {
+      "id": "mat_10_u07_k02_o03:flashcard",
+      "front": "Bir sonuç farklı gruplarda farklı oranlarda oluşuyorsa, grupların ağırlıklarını kullanarak sonucun gerçekleşenleri içindeki bir grubun payı nasıl bulunur?",
+      "back": "İstenen grubun payı ile o gruptaki gerçekleşme oranını çarpıp, sonucun tüm gruplardaki ağırlıklı toplamına bölersin."
+    },
+    {
+      "id": "mat_10_u07_k02_o04:flashcard",
+      "front": "P(B|A) ve P(B|A değil) biliniyorsa, B gözlendikten sonra A olayının olasılığını hangi bağıntı verir?",
+      "back": "P(A|B)=P(A)P(B|A)/[P(A)P(B|A)+P(A değil)P(B|A değil)]."
+    },
+    {
+      "id": "mat_10_u07_k02_o05:flashcard",
+      "front": "N öğenin P(A) oranı A olayını sağlıyor ve A grubunun P(B|A) oranı B olayını da sağlıyorsa, A ve B’yi birlikte sağlayan öğe sayısı nasıl bulunur?",
+      "back": "N×P(A)×P(B|A) çarpımı alınır; bu, A sayısı ile A içindeki B oranını çarpmaya eşittir."
+    },
+    {
+      "id": "mat_10_u07_k02_o06:flashcard",
+      "front": "B olayını sağlayan bir çıktı seçildiğinde, çıktının A grubundan gelme olasılığını grup sıklıkları ve oranlarıyla nasıl hesaplarsın?",
+      "back": "A grubundaki B çıktısı sayısını, tüm gruplardaki B çıktılarının toplamına bölersin; bu P(A|B)’dir."
+    },
+    {
+      "id": "mat_10_u07_k02_o07:flashcard",
+      "front": "Bir iki yönlü sıklık tablosunda gruplara göre B olayını sağlayan sayıları bulmak için grup büyüklüğü ile hangi oran çarpılır?",
+      "back": "İlgili grubun B olayını sağlama oranı ile çarpılır."
+    },
+    {
+      "id": "mat_10_u07_k02_o08:flashcard",
+      "front": "Birden fazla ayrık gruptan gelen sonuç E gözlendiğinde, seçilen B grubundan gelme olasılığını hangi Bayes bağıntısıyla hesaplarsın?",
+      "back": "P(B|E)=P(B)P(E|B)/Σᵢ[P(Gᵢ)P(E|Gᵢ)] biçiminde bulunur."
+    },
+    {
+      "id": "mat_10_u07_k02_o09:flashcard",
+      "front": "Grup i’nin büyüklüğü Nᵢ ve bu grupta B olayının görülme oranı rᵢ ise B’yi sağlayan toplam öğe sayısı nasıl bulunur?",
+      "back": "Her grup için Nᵢrᵢ hesaplanır ve sonuçlar toplanır: ΣᵢNᵢrᵢ."
+    },
+    {
+      "id": "mat_10_u07_k02_o10:flashcard",
+      "front": "Ayrık Gᵢ grupları tüm örnek uzayı oluşturuyorsa E olayının toplam olasılığı nasıl hesaplanır?",
+      "back": "P(E)=ΣᵢP(Gᵢ)P(E|Gᵢ)."
+    },
+    {
+      "id": "mat_10_u07_k02_o11:flashcard",
+      "front": "B koşulu altında A olayının gerçekleşmeme olasılığını nasıl ifade edersin?",
+      "back": "P(A değil | B)=1−P(A|B)."
+    },
+    {
+      "id": "mat_10_u07_k02_o12:flashcard",
+      "front": "B koşulu gerçekleştiğinde A’nın koşullu olasılığını iki olayın olasılıklarıyla nasıl ifade edersin?",
+      "back": "P(A|B)=P(A ve B)/P(B), P(B)>0."
+    }
+  ],
+  "baslik": "7.2 Bayes Teoremi",
+  "topic_key": "Matematik > 7.2 Bayes Teoremi"
+}

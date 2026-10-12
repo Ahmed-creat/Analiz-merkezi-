@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u04_k02",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u04_k02_o01",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Bir uzay aracındaki radyo vericisi, yörüngedeki başka bir araca veri sinyali gönderiyor. Sinyalin boşlukta ilerleyebilmesini hangi özellik açıklar?",
+      "secenekler": [
+        "Radyo sinyali elektromanyetik dalgadır ve boşlukta yayılabilir.",
+        "Radyo sinyali mekanik dalgadır; boşlukta ilerlemek için hava gerekir.",
+        "Bütün dalgalar boşlukta aynı hızla yayılır.",
+        "Sinyalin ilerlemesi için araçların birbirine dokunması gerekir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Radyo dalgaları elektromanyetik dalgalardır. Elektromanyetik dalgalar maddesel ortama ihtiyaç duymadan boşlukta ilerleyebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir dalganın yayılması için maddesel ortam gerekip gerekmediğine bakarak dalgaları nasıl ayırt edersin?",
+        "back": "Mekanik dalgalar maddesel ortam gerektirir; elektromanyetik dalgalar hem boşlukta hem de maddesel ortamda yayılabilir."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o02",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Yatay gerilmiş bir kumaş şeridin bir ucuna kısa bir yukarı yönlü hareket veriliyor. Şerit üzerindeki işaretli nokta düşey yönde titreşirken bozulma şerit boyunca yatay ilerliyor. Dalga nasıl sınıflandırılır?",
+      "secenekler": [
+        "Boyuna; titreşim ve ilerleme doğrultuları paraleldir.",
+        "Enine; titreşim doğrultusu ilerleme doğrultusuna diktir.",
+        "Elektromanyetik; maddesel ortamda ilerleyemez.",
+        "Hem mekanik hem elektromanyetik dalgadır."
+      ],
+      "dogru_index": 1,
+      "cozum": "İşaretli noktanın titreşimi düşey, dalganın ilerlemesi yatay olduğundan doğrultular diktir; bu enine dalgadır. Şerit maddesel ortam olduğundan dalga mekaniktir. Diğer seçenekler bu doğrultu ilişkisini yanlış verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir dalgayı enine ya da boyuna olarak sınıflandırırken hangi iki doğrultuyu karşılaştırırsın?",
+        "back": "Titreşim doğrultusu ile dalganın ilerleme doğrultusunu karşılaştırırsın; dikse enine, paralelse boyuna dalgadır."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o03",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Elastik bir yüzeyde ilerleyen mekanik dalganın işaretli noktaları hem ilerleme doğrultusuna paralel hem de dik yönde hareket ediyor. Hangi sınıflandırma uygundur?",
+      "secenekler": [
+        "Yalnızca enine dalga",
+        "Yalnızca boyuna dalga",
+        "Hem enine hem boyuna bileşen gösteren mekanik dalga",
+        "Boşlukta yayılan elektromanyetik dalga"
+      ],
+      "dogru_index": 2,
+      "cozum": "Noktaların titreşiminde hem paralel hem dik bileşenler bulunduğundan iki titreşim özelliği birlikte görülür. Elastik yüzey maddesel ortam olduğundan dalga mekaniktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir mekanik dalga hem enine hem boyuna özellik gösteriyorsa taneciklerin titreşimi hakkında ne söylenebilir?",
+        "back": "Tanecikler hem dalganın ilerleme doğrultusuna dik hem de paralel bileşenler içeren bir titreşim yapar; bu nedenle iki sınıflandırma özelliği birlikte görülür."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o04",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Bir çelik taşıyıcı boyunca yayılan titreşim ile uzay boşluğundan geçen bir mikrodalga sinyali sırasıyla nasıl sınıflandırılır?",
+      "secenekler": [
+        "Elektromanyetik ve mekanik",
+        "İkisi de elektromanyetik",
+        "İkisi de mekanik",
+        "Mekanik ve elektromanyetik"
+      ],
+      "dogru_index": 3,
+      "cozum": "Çelikte ilerleyen titreşim, maddesel ortama ihtiyaç duyan mekanik dalgadır. Mikrodalga elektromanyetik dalgadır ve boşlukta yayılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik dalgaların ilerleyebilmesi için ortamla ilgili hangi koşul gerekir?",
+        "back": "Enerji aktarımı için katı, sıvı, gaz ya da plazma gibi maddesel bir ortam gerekir; mekanik dalgalar boşlukta ilerleyemez."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o05",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Bir uzay sondasından yayılan kızılötesi ölçüm sinyali, aradaki boşluğu geçerek alıcıya ulaşıyor. Bu gözlemin nedeni hangisidir?",
+      "secenekler": [
+        "Elektromanyetik dalgaların boşlukta da yayılabilmesi",
+        "Kızılötesi dalgaların ses dalgası olması",
+        "Boşluğun dalgalar için katı ortam oluşturması",
+        "Işığın yalnızca atmosferde ilerleyebilmesi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kızılötesi ışınım elektromanyetik dalgadır. Elektromanyetik dalgalar boşlukta da yayılabildiği için sinyal sondadan alıcıya ulaşabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektromanyetik dalgaların oluşumu ve boşluktaki yayılması hakkında nasıl bir açıklama yaparsın?",
+        "back": "Yüklü parçacıkların ivmeli hareketleriyle oluşurlar; maddesel ortama ihtiyaç duymadan boşlukta da yayılabilirler."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o06",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Bir algılayıcı, elektromanyetik spektrumun en kısa dalga boylu ve en yüksek enerjili ucundaki ışınımı ölçmek üzere tasarlanıyor. Hangi dalga türüne duyarlı olmalıdır?",
+      "secenekler": [
+        "Radyo dalgası",
+        "Gama ışını",
+        "Görünür ışık",
+        "X ışını"
+      ],
+      "dogru_index": 1,
+      "cozum": "Elektromanyetik spektrumda dalga boyu küçüldükçe enerji artar; gama ışınları en yüksek enerjili ve en kısa dalga boylu uçta yer alır. Diğer seçenekler spektrumda daha düşük enerjiye sahiptir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektromanyetik spektrumda dalga boyu küçüldükçe enerji nasıl değişir?",
+        "back": "Enerji artar; frekans da radyo dalgalarından gama ışınlarına doğru artar."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o07",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Boşlukta ilerleyen A ve B elektromanyetik dalgalarının dalga boyları sırasıyla 2 cm ve 6 cm’dir. Yayılma hızları aynı olduğuna göre frekansları nasıl karşılaştırılır?",
+      "secenekler": [
+        "B dalgasının frekansı A’nınkinin üç katıdır.",
+        "İki dalganın frekansı eşittir.",
+        "A dalgasının frekansı B’ninkinin üç katıdır.",
+        "Dalga boyu ile frekans arasında ilişki yoktur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Elektromanyetik dalgalar boşlukta aynı hızla yayılır ve c = f·λ bağıntısını sağlar. λA, λB’nin üçte biri olduğundan fA, fB’nin üç katıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boşlukta ilerleyen elektromanyetik dalganın dalga boyu ile frekansı arasında nasıl bir ilişki vardır?",
+        "back": "c = f·λ bağıntısında c sabit olduğundan dalga boyu küçüldükçe frekans artar; dalga boyu ve frekans ters orantılıdır."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o08",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Bir gıda paketleme hattında ambalaj yüzeylerindeki mikroorganizmaları azaltmak için ışınım temelli bir yöntem seçiliyor. Bakterileri öldürüp yüzeyi dezenfekte edebilen dalga türü hangisidir?",
+      "secenekler": [
+        "Radyo dalgaları",
+        "Kızılötesi ışınlar",
+        "Mikrodalgalar",
+        "Morötesi (UV) ışınlar"
+      ],
+      "dogru_index": 3,
+      "cozum": "Morötesi ışınlar bakterileri öldürme ve yüzeyleri dezenfekte etme özelliğinden dolayı bu amaçla kullanılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Morötesi ışınların görünür ışığa göre dalga boyu ve enerjisi nasıldır?",
+        "back": "Morötesi ışınların dalga boyu görünür ışıktan daha kısa, enerjisi daha yüksektir; bakterileri öldürüp cisimleri dezenfekte edebilirler."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o09",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Bir optik algılayıcı, insan gözünün seçebildiği bir renk ışığını ölçüyor. Bu ışık elektromanyetik spektrumun hangi bölgesindedir?",
+      "secenekler": [
+        "Görünür bölge",
+        "Radyo dalgaları",
+        "X ışınları",
+        "Gama ışınları"
+      ],
+      "dogru_index": 0,
+      "cozum": "İnsan gözünün algıladığı renk ışıkları elektromanyetik spektrumun görünür bölgesinde yer alır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İnsan gözünün algıladığı elektromanyetik dalga bölgesini nasıl tanımlarsın?",
+        "back": "Görünür bölge, insan gözünün algılayabildiği elektromanyetik dalga aralığıdır; bu bölgede renkler farklı dalga boylarıyla ilişkilidir."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k02_o10",
+      "alt_beceri": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "metin": "Bir depodaki uyarı kornasının sesi havada yayılıyor. Havadaki ses dalgası için doğru sınıflandırma hangisidir?",
+      "secenekler": [
+        "Elektromanyetik ve enine",
+        "Mekanik ve boyuna",
+        "Mekanik ve enine",
+        "Elektromanyetik ve boyuna"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ses yayılmak için hava gibi maddesel ortam gerektirdiğinden mekaniktir. Havadaki ses titreşimleri yayılma doğrultusuna paralel olduğundan boyunadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Havadaki ses dalgasını hem enerji gereksinimi hem titreşim doğrultusu bakımından nasıl açıklarsın?",
+        "back": "Mekanik dalgadır, çünkü maddesel ortamda yayılır; havadaki ses boyuna dalgadır, çünkü titreşim ilerleme doğrultusuna paraleldir."
+      },
+      "kazanim": "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u04_k02_o01:flashcard",
+      "front": "Bir dalganın yayılması için maddesel ortam gerekip gerekmediğine bakarak dalgaları nasıl ayırt edersin?",
+      "back": "Mekanik dalgalar maddesel ortam gerektirir; elektromanyetik dalgalar hem boşlukta hem de maddesel ortamda yayılabilir."
+    },
+    {
+      "id": "fizik_10_u04_k02_o02:flashcard",
+      "front": "Bir dalgayı enine ya da boyuna olarak sınıflandırırken hangi iki doğrultuyu karşılaştırırsın?",
+      "back": "Titreşim doğrultusu ile dalganın ilerleme doğrultusunu karşılaştırırsın; dikse enine, paralelse boyuna dalgadır."
+    },
+    {
+      "id": "fizik_10_u04_k02_o03:flashcard",
+      "front": "Bir mekanik dalga hem enine hem boyuna özellik gösteriyorsa taneciklerin titreşimi hakkında ne söylenebilir?",
+      "back": "Tanecikler hem dalganın ilerleme doğrultusuna dik hem de paralel bileşenler içeren bir titreşim yapar; bu nedenle iki sınıflandırma özelliği birlikte görülür."
+    },
+    {
+      "id": "fizik_10_u04_k02_o04:flashcard",
+      "front": "Mekanik dalgaların ilerleyebilmesi için ortamla ilgili hangi koşul gerekir?",
+      "back": "Enerji aktarımı için katı, sıvı, gaz ya da plazma gibi maddesel bir ortam gerekir; mekanik dalgalar boşlukta ilerleyemez."
+    },
+    {
+      "id": "fizik_10_u04_k02_o05:flashcard",
+      "front": "Elektromanyetik dalgaların oluşumu ve boşluktaki yayılması hakkında nasıl bir açıklama yaparsın?",
+      "back": "Yüklü parçacıkların ivmeli hareketleriyle oluşurlar; maddesel ortama ihtiyaç duymadan boşlukta da yayılabilirler."
+    },
+    {
+      "id": "fizik_10_u04_k02_o06:flashcard",
+      "front": "Elektromanyetik spektrumda dalga boyu küçüldükçe enerji nasıl değişir?",
+      "back": "Enerji artar; frekans da radyo dalgalarından gama ışınlarına doğru artar."
+    },
+    {
+      "id": "fizik_10_u04_k02_o07:flashcard",
+      "front": "Boşlukta ilerleyen elektromanyetik dalganın dalga boyu ile frekansı arasında nasıl bir ilişki vardır?",
+      "back": "c = f·λ bağıntısında c sabit olduğundan dalga boyu küçüldükçe frekans artar; dalga boyu ve frekans ters orantılıdır."
+    },
+    {
+      "id": "fizik_10_u04_k02_o08:flashcard",
+      "front": "Morötesi ışınların görünür ışığa göre dalga boyu ve enerjisi nasıldır?",
+      "back": "Morötesi ışınların dalga boyu görünür ışıktan daha kısa, enerjisi daha yüksektir; bakterileri öldürüp cisimleri dezenfekte edebilirler."
+    },
+    {
+      "id": "fizik_10_u04_k02_o09:flashcard",
+      "front": "İnsan gözünün algıladığı elektromanyetik dalga bölgesini nasıl tanımlarsın?",
+      "back": "Görünür bölge, insan gözünün algılayabildiği elektromanyetik dalga aralığıdır; bu bölgede renkler farklı dalga boylarıyla ilişkilidir."
+    },
+    {
+      "id": "fizik_10_u04_k02_o10:flashcard",
+      "front": "Havadaki ses dalgasını hem enerji gereksinimi hem titreşim doğrultusu bakımından nasıl açıklarsın?",
+      "back": "Mekanik dalgadır, çünkü maddesel ortamda yayılır; havadaki ses boyuna dalgadır, çünkü titreşim ilerleme doğrultusuna paraleldir."
+    }
+  ],
+  "baslik": "4.2 Dalgaların Sınıflandırılması",
+  "topic_key": "Fizik > 4.2 Dalgaların Sınıflandırılması"
+}

@@ -8,7 +8,7 @@ if (!fs.existsSync(dir)) {
   console.log("Soru havuzu dizini yok; havuzsuz bozulmuş mod geçerli.");
   process.exit(0);
 }
-const files = fs.readdirSync(dir).filter(f => f.endsWith(".json"));
+const files = fs.readdirSync(dir).filter(f => f.endsWith(".json") && f !== "index.json");
 if (!files.length) {
   console.log("Soru havuzu bulunamadı; havuzsuz bozulmuş mod geçerli.");
   process.exit(0);

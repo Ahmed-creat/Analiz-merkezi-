@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u02_k02",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u02_k02_o01",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Elektrikle çalışan bir su pompasının çalışma sürecindeki temel enerji dönüşümünü ve çevreye aktarılabilecek enerji biçimlerini hangi seçenek doğru verir?",
+      "secenekler": [
+        "Elektrik → mekanik; bir miktar ısı ve ses",
+        "Kimyasal → ışık; bir miktar nükleer",
+        "Ses → elektrik; bir miktar kimyasal",
+        "Isı → nükleer; bir miktar mekanik"
+      ],
+      "dogru_index": 0,
+      "cozum": "Pompanın elektrik motoru elektrik enerjisini mekanik enerjiye dönüştürerek suyu hareket ettirir. Çalışma sırasında enerjinin bir bölümü ısı ve ses olarak çevreye aktarılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrikle çalışan bir su pompasında başlıca enerji dönüşümü nedir?",
+        "back": "Elektrik enerjisi pompayı çalıştıran mekanik enerjiye dönüşür; enerjinin bir bölümü ısı ve ses olarak çevreye aktarılabilir."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o02",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Bir akustik ölçüm odasında eş zamanlı iki mikrofon, ses kaynağından sırasıyla 18 m ve 54 m uzağa yerleştiriliyor. İlk ses sinyali hangi mikrofonda önce kaydedilir?",
+      "secenekler": [
+        "54 m uzaktaki; uzaklık arttıkça ses hızlanır.",
+        "18 m uzaktaki; ses daha kısa yol alır.",
+        "İkisinde aynı anda; ses anında yayılır.",
+        "54 m uzaktaki; mikrofon sesi kaynağa geri taşır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Aynı ortamda sesin yayılma hızı sabittir. Kaynağa 18 m uzaklıktaki mikrofon, daha kısa yol nedeniyle sesi önce kaydeder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı ortamda sesin kaynaktan alıcıya ulaşma süresi, alıcı uzaklığı arttıkça nasıl değişir?",
+        "back": "Ses sonlu hızla yayıldığından, alıcı uzaklaştıkça sesin katetmesi gereken yol ve ulaşma süresi artar."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o03",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Bir kıyı gözlem şamandırasında dalgaların yukarı-aşağı hareketi bir mekanizmayı döndürerek küçük bir jeneratörü çalıştırıyor. Jeneratörde hangi enerji dönüşümü gerçekleşir?",
+      "secenekler": [
+        "Elektrik → mekanik",
+        "Işık → elektrik",
+        "Mekanik → elektrik",
+        "Kimyasal → ışık"
+      ],
+      "dogru_index": 2,
+      "cozum": "Dalgaların oluşturduğu hareket jeneratöre mekanik enerji sağlar. Jeneratör bu mekanik enerjiyi elektrik enerjisine dönüştürür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir elektrik jeneratöründe mekanik enerji temel olarak hangi enerji biçimine dönüştürülür?",
+        "back": "Jeneratör, mekanik (kinetik) enerjiyi elektrik enerjisine dönüştürür."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o04",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Ilık bir seramik parça soğuk bir metal algılayıcıyla temas ettiriliyor. Dışarıdan enerji aktarımı olmadan ilk anda ısı hangi yönde geçer?",
+      "secenekler": [
+        "Metal algılayıcıdan seramiğe",
+        "Isı aktarımı olmaz.",
+        "Her iki yönde eşit miktarda aynı anda",
+        "Ilık seramikten soğuk metal algılayıcıya"
+      ],
+      "dogru_index": 3,
+      "cozum": "Isı, sıcaklığı daha yüksek olan seramikten sıcaklığı daha düşük olan metal algılayıcıya aktarılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Isı hangi durumda maddeler arasında aktarılır ve SI birimi nedir?",
+        "back": "Sıcaklıkları farklı maddeler arasında enerji alışverişiyle aktarılır; SI birimi jouledür (J)."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o05",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Bir otomatik geçiş sayacındaki ışığa duyarlı algılayıcı aydınlatıldığında elektrik sinyali üretiyor. Algılayıcıda hangi enerji dönüşümü gerçekleşir?",
+      "secenekler": [
+        "Işık enerjisi elektrik enerjisine",
+        "Elektrik enerjisi ışık enerjisine",
+        "Kimyasal enerji mekanik enerjiye",
+        "Ses enerjisi ısı enerjisine"
+      ],
+      "dogru_index": 0,
+      "cozum": "Işığa duyarlı algılayıcı aldığı ışık enerjisini elektriksel sinyale dönüştürür; dönüşüm ışık enerjisinden elektrik enerjisine doğrudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aydınlatılan bir fotosensör elektriksel sinyal üretiyorsa enerji hangi biçimden hangi biçime dönüşmüştür?",
+        "back": "Işık enerjisi elektrik enerjisine dönüşmüştür."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o06",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Şarj edilebilir hücreyle çalışan bir otomatik vana açıldığında, depolanan enerjiden vana kolunun hareketine uzanan temel dönüşüm sırası hangisidir?",
+      "secenekler": [
+        "Işık → elektrik → kimyasal",
+        "Kimyasal → elektrik → mekanik",
+        "Ses → mekanik → nükleer",
+        "Isı → kimyasal → ışık"
+      ],
+      "dogru_index": 1,
+      "cozum": "Hücrede depolanan kimyasal enerji önce elektrik enerjisine, sonra vananın hareketini sağlayan mekanik enerjiye dönüşür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Şarj edilebilir bir hücrede depolanan enerji hangi türdedir ve bir aygıtı çalıştırırken hangi enerjiye dönüşebilir?",
+        "back": "Depolanan enerji kimyasaldır; kullanım sırasında elektrik enerjisine, ardından aygıtın ışık, ses veya hareket enerjisine dönüşebilir."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o07",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Bir iletken telin uçları arasına potansiyel fark uygulanıyor. Elektrik enerjisinin ortaya çıkmasını sağlayan süreç hangisidir?",
+      "secenekler": [
+        "Moleküllerin yalnızca ses üretmesi",
+        "Çekirdeklerin birleşmesi",
+        "Serbest yüklerin iletken içindeki hareketi",
+        "Isının soğuktan sıcağa kendiliğinden akması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Potansiyel fark, iletkendeki serbest elektronların ve iyonların hareket etmesini sağlar; elektrik enerjisi bu hareketle ilişkilidir. Nükleer tepkimeler elektrik enerjisinin doğrudan tanımı değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İletken telde elektrik enerjisi hangi nedenle ortaya çıkar?",
+        "back": "Potansiyel farkın etkisiyle serbest elektron ve iyonların hareketi sonucunda ortaya çıkar."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o08",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Bir cismin mekanik enerjisini oluşturan kinetik ve yer çekimi potansiyel enerjileri hangi özellikleriyle ilişkilidir?",
+      "secenekler": [
+        "Yalnızca sıcaklığıyla",
+        "Hızı ve düşey konumuyla",
+        "Elektrik yükü ve rengiyle",
+        "Yalnızca kütlesiyle"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kinetik enerji cismin hareketine, yani hızına; yer çekimi potansiyel enerjisi ise bulunduğu düşey konuma bağlıdır. Mekanik enerji bu iki enerji türünün toplamıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik enerji hangi iki enerji türünün toplamıdır?",
+        "back": "Kinetik enerji ile potansiyel enerjinin toplamıdır."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o09",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Sesin boşlukta yayılmamasını en iyi açıklayan ifade hangisidir?",
+      "secenekler": [
+        "Sesin yayılabilmesi için maddesel ortam gerekir; boşlukta titreşimi iletecek tanecik bulunmaz.",
+        "Zil titreşmediği için ses oluşmamıştır.",
+        "Ses yalnızca sıvılarda yayılır.",
+        "Ses enerjisi ışığa dönüştüğü için duyulmaz."
+      ],
+      "dogru_index": 0,
+      "cozum": "Ses mekanik dalgadır; yayılması sırasında ortam tanecikleri titreşerek enerjiyi birbirine aktarır. Boşlukta bu aktarımı sağlayacak maddesel tanecikler bulunmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ses yayılırken ortam tanecikleri ve enerji nasıl hareket eder?",
+        "back": "Tanecikler titreşir; enerji tanecikten taneciğe aktarılır, tanecikler ortam boyunca net olarak taşınmaz."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k02_o10",
+      "alt_beceri": "enerji biçimlerini karşılaştırabilmeniz,",
+      "metin": "Mekanik, kimyasal ve ışık enerjilerinin ortak özelliği aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "Yalnızca katılarda bulunmaları",
+        "Birbirine dönüşememeleri",
+        "Her durumda aynı kaynaktan elde edilmeleri",
+        "Joule ile ifade edilebilmeleri ve başka enerji biçimlerine dönüşebilmeleri"
+      ],
+      "dogru_index": 3,
+      "cozum": "Enerji biçimlerinin birimi jouledür ve enerji biçimleri birbirine dönüştürülebilir; dönüşümde kayıplar da görülebilir. Kaynak ve uygulama alanları ise biçimden biçime değişir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Farklı enerji biçimlerinin ortak özelliklerinden üçünü sıralar mısın?",
+        "back": "Bir kaynağa ihtiyaç duyar, birbirine dönüşebilir ve birimleri jouledür; dönüşümlerde çevreye enerji aktarımı/kayıp olabilir."
+      },
+      "kazanim": "enerji biçimlerini karşılaştırabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u02_k02_o01:flashcard",
+      "front": "Elektrikle çalışan bir su pompasında başlıca enerji dönüşümü nedir?",
+      "back": "Elektrik enerjisi pompayı çalıştıran mekanik enerjiye dönüşür; enerjinin bir bölümü ısı ve ses olarak çevreye aktarılabilir."
+    },
+    {
+      "id": "fizik_10_u02_k02_o02:flashcard",
+      "front": "Aynı ortamda sesin kaynaktan alıcıya ulaşma süresi, alıcı uzaklığı arttıkça nasıl değişir?",
+      "back": "Ses sonlu hızla yayıldığından, alıcı uzaklaştıkça sesin katetmesi gereken yol ve ulaşma süresi artar."
+    },
+    {
+      "id": "fizik_10_u02_k02_o03:flashcard",
+      "front": "Bir elektrik jeneratöründe mekanik enerji temel olarak hangi enerji biçimine dönüştürülür?",
+      "back": "Jeneratör, mekanik (kinetik) enerjiyi elektrik enerjisine dönüştürür."
+    },
+    {
+      "id": "fizik_10_u02_k02_o04:flashcard",
+      "front": "Isı hangi durumda maddeler arasında aktarılır ve SI birimi nedir?",
+      "back": "Sıcaklıkları farklı maddeler arasında enerji alışverişiyle aktarılır; SI birimi jouledür (J)."
+    },
+    {
+      "id": "fizik_10_u02_k02_o05:flashcard",
+      "front": "Aydınlatılan bir fotosensör elektriksel sinyal üretiyorsa enerji hangi biçimden hangi biçime dönüşmüştür?",
+      "back": "Işık enerjisi elektrik enerjisine dönüşmüştür."
+    },
+    {
+      "id": "fizik_10_u02_k02_o06:flashcard",
+      "front": "Şarj edilebilir bir hücrede depolanan enerji hangi türdedir ve bir aygıtı çalıştırırken hangi enerjiye dönüşebilir?",
+      "back": "Depolanan enerji kimyasaldır; kullanım sırasında elektrik enerjisine, ardından aygıtın ışık, ses veya hareket enerjisine dönüşebilir."
+    },
+    {
+      "id": "fizik_10_u02_k02_o07:flashcard",
+      "front": "İletken telde elektrik enerjisi hangi nedenle ortaya çıkar?",
+      "back": "Potansiyel farkın etkisiyle serbest elektron ve iyonların hareketi sonucunda ortaya çıkar."
+    },
+    {
+      "id": "fizik_10_u02_k02_o08:flashcard",
+      "front": "Mekanik enerji hangi iki enerji türünün toplamıdır?",
+      "back": "Kinetik enerji ile potansiyel enerjinin toplamıdır."
+    },
+    {
+      "id": "fizik_10_u02_k02_o09:flashcard",
+      "front": "Ses yayılırken ortam tanecikleri ve enerji nasıl hareket eder?",
+      "back": "Tanecikler titreşir; enerji tanecikten taneciğe aktarılır, tanecikler ortam boyunca net olarak taşınmaz."
+    },
+    {
+      "id": "fizik_10_u02_k02_o10:flashcard",
+      "front": "Farklı enerji biçimlerinin ortak özelliklerinden üçünü sıralar mısın?",
+      "back": "Bir kaynağa ihtiyaç duyar, birbirine dönüşebilir ve birimleri jouledür; dönüşümlerde çevreye enerji aktarımı/kayıp olabilir."
+    }
+  ],
+  "baslik": "2.2 Enerji Biçimleri",
+  "topic_key": "Fizik > 2.2 Enerji Biçimleri"
+}

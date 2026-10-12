@@ -42,6 +42,7 @@ alt beceri başına en az 2 soru, dört seçenek ve zorunlu `cozum` alanı gerek
 Yeni havuz ekledikten sonra kök dizinde `npm run validate:pools` çalıştırılmalıdır.
 Havuz bulunmayan konular bozulmuş modda mevcut deneme verisiyle çalışmaya devam eder.
 İlişki grafı `content/iliski_grafi.json` olarak açılışta doğrulanır.
+Depoya alınan 9 ders havuzunda 152 konu ve 1.756 soru bulunur; `index.json` manifestiyle yüklenir.
 
 ## Kurulum
 

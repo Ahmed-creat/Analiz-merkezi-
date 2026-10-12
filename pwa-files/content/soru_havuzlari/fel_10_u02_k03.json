@@ -1,0 +1,242 @@
+{
+  "konu_id": "fel_10_u02_k03",
+  "sinif": 10,
+  "ders": "Felsefe",
+  "kaynak_dosya": "10. Sınıf felsefe json.zip",
+  "sorular": [
+    {
+      "soru_id": "fel_10_u02_k03_o01",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir öğrenci, iddiasını desteklemek için gerekçelerini belirleyip bunları bir sonuca bağlıyor. Bu süreç hangi kavramla adlandırılır?",
+      "secenekler": [
+        "Argümantasyon",
+        "Analoji",
+        "Özdeşlik",
+        "Doğruluk"
+      ],
+      "dogru_index": 0,
+      "cozum": "Argümanların oluşturulup sunulması argümantasyon sürecidir. Analoji ise bu süreçte kullanılabilecek belirli bir akıl yürütme türüdür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Argümantasyon nedir?",
+        "back": "Bir argümanı kurma ve sunma sürecidir."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o02",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir konuşmada ana iddia, onu destekleyen gerekçeler ve konuyla ilgisiz bir ek bilgi bulunuyor. Standart biçim kurarken önce ne yapılmalıdır?",
+      "secenekler": [
+        "Tüm cümleleri tek satırda birleştirmek",
+        "Gerekçeleri sonuçtan ayırıp ilgisiz ifadeyi çıkarmak",
+        "Sonucu öncül olarak yazmak",
+        "İddianın doğruluğunu baştan varsaymak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Standartlaştırmada önce öncüller sonuçtan ayrılır, ilgisiz ifadeler elenir. Böylece argümanın yapısı açıkça görülebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Günlük dildeki bir argümanı standart biçime dönüştürmenin ilk adımını yazın.",
+        "back": "Öncülleri sonuçtan ayırmak ve öncüllerle sonuçla ilgisi olmayan ifadeleri elemek."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o03",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir raporda sonuç cümlesinden önce iddiaya dayanak oluşturan iki gerekçe sıralanıyor. Bu gerekçelere ne ad verilir?",
+      "secenekler": [
+        "Sonuç",
+        "Başlık",
+        "Öncül",
+        "İlgisiz ifade"
+      ],
+      "dogru_index": 2,
+      "cozum": "Argümanda sonucu desteklemek için öne sürülen gerekçeler öncüllerdir. Sonuç, bu öncüllerle kanıtlanmaya çalışılan önermedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir argümanda öncüllerin işlevi nedir?",
+        "back": "Sonucu desteklemek için öne sürülen gerekçelerdir."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o04",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir tartışmada gerekçelerin ardından 'öyleyse' sözüyle ifade edilen ana iddia hangi parçadır?",
+      "secenekler": [
+        "Öncül",
+        "Örnek",
+        "Konu dışı ifade",
+        "Sonuç"
+      ],
+      "dogru_index": 3,
+      "cozum": "Öncüllerden hareketle kanıtlanmaya çalışılan iddia sonuçtur. Öncüller ise bu iddiayı destekleyen gerekçelerdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir argümanda sonuç neyi ifade eder?",
+        "back": "Öncül ya da öncüllerle kanıtlanmaya çalışılan önermeyi."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o05",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir öğrenci, gerekçeleri ayrı satırlara yazıp altına bir çizgi çiziyor ve iddiayı çizginin altına yerleştiriyor. Hangi işlemi yapmıştır?",
+      "secenekler": [
+        "Argümanı standart biçimde gösterme",
+        "Bir önermeyi doğrulama",
+        "Bir kavramı tanımlama",
+        "Bir safsatayı çoğaltma"
+      ],
+      "dogru_index": 0,
+      "cozum": "Standart biçimde öncüller alt alta yazılır; çizginin altına sonuç yerleştirilir. Bu düzen, çıkarımın yapısını açık eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Argüman standart biçimde nasıl gösterilir?",
+        "back": "Öncüller alt alta yazılır, altlarına ayırıcı çizgi konur ve çizginin altına sonuç yazılır."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o06",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir değerlendirme kurulu, uzun bir konuşmadaki dayanakların iddiayı gerçekten destekleyip desteklemediğini incelemek istiyor. Hangi işlem bunu kolaylaştırır?",
+      "secenekler": [
+        "İlgisiz ifadeleri eklemek",
+        "Argümanı standart forma dönüştürmek",
+        "Bütün cümleleri görüş olarak sınıflandırmak",
+        "Sonuç cümlesini gizlemek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Standart form, argümandaki öncülleri ve sonucu görünür kılar; ilgisiz sözleri ayıklamaya yardım eder. Böylece çıkarım değerlendirilebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Argümanları standart forma dönüştürmek neden yararlıdır?",
+        "back": "Öncül ve sonucu ayırarak çıkarım yapısını ve gerekçelerin sonuca katkısını açık hâle getirir."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o07",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir konuşmacı, sonucunu destekleyen iki gerekçenin yanına toplantının yapıldığı saati de ekliyor. Standartlaştırmada hangi bilgi çıkarılır?",
+      "secenekler": [
+        "Sonucu destekleyen ilk gerekçe",
+        "Sonucu destekleyen ikinci gerekçe",
+        "Argümanla ilgisiz saat bilgisi",
+        "Öncüllerden çıkan sonuç"
+      ],
+      "dogru_index": 2,
+      "cozum": "Toplantı saati argümanın öncül ya da sonucu değilse standart forma alınmaz. Sonucu destekleyen gerekçeler ise korunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Argümanı çözümlerken hangi ifadeler elenmelidir?",
+        "back": "Öncüller ve sonuçla ilgisi bulunmayan ifadeler."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o08",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir metindeki iki ifade savı gerekçelendiriyor, son ifade ise 'bu nedenle' ile ana iddiayı bildiriyor. Son cümlenin argümandaki işlevi nedir?",
+      "secenekler": [
+        "Öncül olmak",
+        "Konu dışı ayrıntı olmak",
+        "Yalnızca örnek olmak",
+        "Sonuç olmak"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ana iddia, öncüllerin desteklediği sonuçtur. 'Bu nedenle' gibi bağlaçlar sonucu gösterebilir; yine de işlev içerikten belirlenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sözlü anlatımdaki bir gerekçenin öncül mü yoksa sonuç mu olduğunu nasıl ayırt edersiniz?",
+        "back": "Gerekçenin başka bir iddiayı destekleyip desteklemediğine bakılır; destekleyen ifade öncül, kanıtlanmaya çalışılan iddia sonuçtur."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o09",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kurul, kararını iki ayrı gerekçeye dayandırıyor ve bu gerekçelerden ortak bir iddiaya ulaşıyor. Argümanın yapısı nasıl tanımlanır?",
+      "secenekler": [
+        "Birden çok öncül ve bir sonuç",
+        "Yalnızca sonuçtan oluşan yapı",
+        "İki sonuç ve hiç öncül olmayan yapı",
+        "Sadece konu dışı ifadelerden oluşan yapı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Bir argüman bir ya da birden çok öncül içerebilir. Bu gerekçeler, kanıtlanmaya çalışılan sonucu destekler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir argümanda birden fazla öncül bulunabilir mi?",
+        "back": "Evet. Sonucu desteklemek için birden çok gerekçe birlikte kullanılabilir."
+      }
+    },
+    {
+      "soru_id": "fel_10_u02_k03_o10",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir çalışma notunda 'Her kayıtlı katılımcı onay formu verir. Derya kayıtlı katılımcıdır. Öyleyse Derya onay formu verir.' deniyor. Hangi ifade sonuçtur?",
+      "secenekler": [
+        "Her kayıtlı katılımcının onay formu vermesi",
+        "Derya'nın onay formu vermesi",
+        "Derya'nın kayıtlı katılımcı olması",
+        "Notun yazıldığı gün"
+      ],
+      "dogru_index": 1,
+      "cozum": "İlk iki ifade gerekçeleri, son ifade ise bu gerekçelerden çıkan iddiayı bildirir. Bu nedenle son cümle sonuçtur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Standart formda bir argüman örneği kurarken öncül-sonuç düzeni nasıl korunur?",
+        "back": "Önce gerekçeler açık önermeler olarak yazılır, ardından bunlardan çıkarılan iddia sonuç olarak belirtilir."
+      }
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fel_10_u02_k03_o01:flashcard",
+      "front": "Argümantasyon nedir?",
+      "back": "Bir argümanı kurma ve sunma sürecidir."
+    },
+    {
+      "id": "fel_10_u02_k03_o02:flashcard",
+      "front": "Günlük dildeki bir argümanı standart biçime dönüştürmenin ilk adımını yazın.",
+      "back": "Öncülleri sonuçtan ayırmak ve öncüllerle sonuçla ilgisi olmayan ifadeleri elemek."
+    },
+    {
+      "id": "fel_10_u02_k03_o03:flashcard",
+      "front": "Bir argümanda öncüllerin işlevi nedir?",
+      "back": "Sonucu desteklemek için öne sürülen gerekçelerdir."
+    },
+    {
+      "id": "fel_10_u02_k03_o04:flashcard",
+      "front": "Bir argümanda sonuç neyi ifade eder?",
+      "back": "Öncül ya da öncüllerle kanıtlanmaya çalışılan önermeyi."
+    },
+    {
+      "id": "fel_10_u02_k03_o05:flashcard",
+      "front": "Argüman standart biçimde nasıl gösterilir?",
+      "back": "Öncüller alt alta yazılır, altlarına ayırıcı çizgi konur ve çizginin altına sonuç yazılır."
+    },
+    {
+      "id": "fel_10_u02_k03_o06:flashcard",
+      "front": "Argümanları standart forma dönüştürmek neden yararlıdır?",
+      "back": "Öncül ve sonucu ayırarak çıkarım yapısını ve gerekçelerin sonuca katkısını açık hâle getirir."
+    },
+    {
+      "id": "fel_10_u02_k03_o07:flashcard",
+      "front": "Argümanı çözümlerken hangi ifadeler elenmelidir?",
+      "back": "Öncüller ve sonuçla ilgisi bulunmayan ifadeler."
+    },
+    {
+      "id": "fel_10_u02_k03_o08:flashcard",
+      "front": "Sözlü anlatımdaki bir gerekçenin öncül mü yoksa sonuç mu olduğunu nasıl ayırt edersiniz?",
+      "back": "Gerekçenin başka bir iddiayı destekleyip desteklemediğine bakılır; destekleyen ifade öncül, kanıtlanmaya çalışılan iddia sonuçtur."
+    },
+    {
+      "id": "fel_10_u02_k03_o09:flashcard",
+      "front": "Bir argümanda birden fazla öncül bulunabilir mi?",
+      "back": "Evet. Sonucu desteklemek için birden çok gerekçe birlikte kullanılabilir."
+    },
+    {
+      "id": "fel_10_u02_k03_o10:flashcard",
+      "front": "Standart formda bir argüman örneği kurarken öncül-sonuç düzeni nasıl korunur?",
+      "back": "Önce gerekçeler açık önermeler olarak yazılır, ardından bunlardan çıkarılan iddia sonuç olarak belirtilir."
+    }
+  ],
+  "baslik": "2.3 Argümantasyonun Yapısı",
+  "topic_key": "Felsefe > 2.3 Argümantasyonun Yapısı"
+}

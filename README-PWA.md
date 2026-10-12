@@ -116,6 +116,7 @@ Soru havuzları içerik güncellemesi olarak eklenir; kod değişikliği gerekti
 - Sorular 4 seçenekli, deneme zorluğunda, tuzaksız; `cozum` alanı zorunlu
 - Her havuz dosyası eklendiğinde `npm run validate:pools` çalıştırılmalı
 - İlişki grafı: `content/iliski_grafi.json`; açılışta şema ve tutarlılık doğrulanır
+- Depoya alınan 9 ders havuzu: `content/soru_havuzlari/` altında 152 konu dosyası ve 1.756 soru bulunur; `index.json` manifesti ve açılışta havuz yükleme doğrulaması kullanılır
 
 ## 10. Sınıf Deneme Soru Dağılımı
 

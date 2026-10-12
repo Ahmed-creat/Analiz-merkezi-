@@ -123,6 +123,8 @@
     if (!correct && weight == null) return { ignored: true, reason: "gözlem sayılmayan neden" };
     const entry = getEntry(key, true);
     if (data.graph_topic_id || data.graphTopicId) entry.graph_topic_id = data.graph_topic_id || data.graphTopicId;
+    if (data.pool_id || data.poolId) entry.pool_id = data.pool_id || data.poolId;
+    else if (!entry.pool_id) entry.pool_id = resolvePoolId(key);
     if (!correct && entry.onay_durumu === "ONAYLANDI") entry.onay_durumu = "RISKLI";
     const nextFull = observedFromEntry(entry, correct, source, reason);
     entry.L = clamp(correct ? nextFull : entry.L + (nextFull - entry.L) * weight, 0.01, 0.99);
@@ -151,7 +153,8 @@
         neden: item.neden || item.reason,
         kaynak: item.kaynak || source,
         tarih: item.tarih || item.date || TODAY(),
-        graph_topic_id: item.graph_topic_id || item.graphTopicId
+        graph_topic_id: item.graph_topic_id || item.graphTopicId,
+        pool_id: item.pool_id || item.poolId
       });
       s.bkt_processed_records[id] = 1;
       if (!result.ignored) count++;
@@ -338,6 +341,28 @@
   }
 
   const poolCache = {};
+  let poolManifest = null;
+  let poolManifestPromise = null;
+  function loadPoolManifest() {
+    if (poolManifestPromise) return poolManifestPromise;
+    poolManifestPromise = fetch("content/soru_havuzlari/index.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(data => {
+      poolManifest = data && Array.isArray(data.havuzlar) ? data : { havuzlar: [] };
+      return poolManifest;
+    }).catch(() => { poolManifest = { havuzlar: [] }; return poolManifest; });
+    return poolManifestPromise;
+  }
+  function resolvePoolId(topicKey) {
+    if (!poolManifest || !Array.isArray(poolManifest.havuzlar)) return null;
+    const raw = String(topicKey || "");
+    const direct = poolManifest.havuzlar.find(p => p.topic_key === raw);
+    if (direct) return direct.konu_id;
+    const lesson = raw.split(" > ")[0];
+    const topic = raw.split(" > ").slice(1).join(" > ");
+    const sameLesson = poolManifest.havuzlar.filter(p => !lesson || p.ders === lesson);
+    const normalized = normalizeReason(topic).toLocaleLowerCase("tr-TR");
+    const exact = sameLesson.find(p => p.baslik && normalizeReason(p.baslik).toLocaleLowerCase("tr-TR") === normalized);
+    return exact ? exact.konu_id : null;
+  }
   function loadPool(topicId) {
     if (!topicId) return Promise.resolve(null);
     if (poolCache[topicId]) return poolCache[topicId];
@@ -379,7 +404,7 @@
       const reason = modal.querySelector('[data-bkt-reason="' + i + '"]');
       if (reason && reason.value) reasons[i] = reason.value;
     }
-    const result = submitMiniTest({ konu_id: modal._bktTopicKey, questions: questions, answers: answers, reasons: reasons });
+    const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: questions, answers: answers, reasons: reasons });
     const msg = modal.querySelector("#bkt-test-message");
     if (!result.ok) { if (msg) msg.textContent = result.reason === "reason_required" ? "Yanlış cevapların nedenini seç." : "Tüm soruları işaretle."; return; }
     if (msg) msg.textContent = result.result.passed ? "Öğrenme Onaylandı." : "Bu konuyu yeniden çalışalım; yeni test daha sonra açılacak.";
@@ -399,7 +424,12 @@
     let correct = 0;
     questions.forEach((q, i) => { if (Number(answers[i]) === Number(q.dogru_index)) correct++; });
     questions.forEach((q, i) => {
-      observe({ konu_id: data.konu_id || data.topicKey, dogru_mu: Number(answers[i]) === Number(q.dogru_index), neden: reasons[i], kaynak: "mini_test", tarih: TODAY() });
+      const isCorrect = Number(answers[i]) === Number(q.dogru_index);
+      observe({ konu_id: data.konu_id || data.topicKey, pool_id: data.pool_id || data.poolId, dogru_mu: isCorrect, neden: reasons[i], kaynak: "mini_test", tarih: TODAY() });
+      if (!isCorrect && reasons[i]) {
+        const card = q.flashcard || { front: q.metin, back: q.cozum };
+        addErrorCard({ topicKey: data.konu_id || data.topicKey, front: card.front, back: card.back, reason: reasons[i] });
+      }
     });
     const result = validateLearningTest(data.konu_id || data.topicKey, correct, questions.length);
     result.correct = correct; result.total = questions.length;
@@ -411,6 +441,7 @@
     if (ratio >= 0.80 && entry.L >= 0.85) {
       entry.onay_durumu = "ONAYLANDI";
       createCardsOnApproval(key);
+      if (entry.pool_id) loadPool(entry.pool_id).then(pool => { if (pool) createCardsOnApproval(key, pool); });
       applyGraphCredits(entry.graph_topic_id || key);
     } else {
       entry.onay_durumu = ratio < 0.80 ? "ONARIM" : "OGRENIYOR";
@@ -418,14 +449,17 @@
     return { passed: ratio >= 0.80 && entry.L >= 0.85, ratio: ratio, status: statusFor(entry) };
   }
 
-  function createCardsOnApproval(key) {
+  function createCardsOnApproval(key, pool) {
     const s = ensureStore();
-    if (!s || s.flashcards.cards.some(c => c.topicKey === key && c.standard)) return;
-    // İçerik kaynağı yoksa uydurma bilgi üretilmez. Havuz/konu verisi kart
-    // sağlayana kadar yalnızca yapı hazırlanır; hata kartları çözüm alanından gelir.
+    if (!s) return;
     const topic = (s.topics && s.topics[key]) || {};
-    (Array.isArray(topic.flashcards) ? topic.flashcards : []).slice(0, 8).forEach(function (card, i) {
-      s.flashcards.cards.push({ id: "std:" + key + ":" + i, topicKey: key, standard: true, front: card.front, back: card.back, due: TODAY(), unknownStreak: 0 });
+    const sourceCards = pool && Array.isArray(pool.flashcards) ? pool.flashcards : (Array.isArray(topic.flashcards) ? topic.flashcards : []);
+    sourceCards.slice(0, 8).forEach(function (card, i) {
+      const front = card.front || card.on; const back = card.back || card.arka;
+      if (!front || !back) return;
+      const id = (pool ? "pool:" + (pool.konu_id || key) : "std:" + key) + ":" + i;
+      if (s.flashcards.cards.some(c => c.id === id)) return;
+      s.flashcards.cards.push({ id: id, topicKey: key, standard: true, front: front, back: back, due: TODAY(), unknownStreak: 0 });
     });
   }
 
@@ -469,6 +503,8 @@
     loadGraph: loadGraph,
     validateGraphData: validateGraphData,
     applyGraphCredits: applyGraphCredits,
+    loadPoolManifest: loadPoolManifest,
+    listPools: function () { return poolManifest ? poolManifest.havuzlar.slice() : []; },
     rootCause: rootCause,
     applyMemorySignal: applyMemorySignal,
     validatePool: validatePool,
@@ -502,7 +538,7 @@
       if (known) html += '<div style="height:5px;background:var(--bg-canvas);border-radius:99px;margin-top:6px;overflow:hidden;"><div style="height:100%;width:' + percent + '%;background:var(--brand-blue);border-radius:99px;"></div></div>';
       const cause = e.graph_topic_id ? rootCause(e.graph_topic_id, e.hata_gecmisi || []) : null;
       if (cause) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Önce şunu sağlamlaştır: ' + safeText(cause.topicName) + '</div>';
-      const poolId = e.pool_id || e.soru_havuzu_id;
+      const poolId = e.pool_id || e.soru_havuzu_id || resolvePoolId(row.key);
       if (poolId) html += '<button type="button" class="btn btn-sm btn-ghost" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" style="margin-top:7px;">Öğrenme Testi</button>';
       html += '</div>';
     });
@@ -545,6 +581,7 @@
       if (typeof saveState === "function") saveState();
       scheduleUi();
     });
+    loadPoolManifest().then(scheduleUi);
     processNewRecords();
     loadGraph();
     scheduleUi();

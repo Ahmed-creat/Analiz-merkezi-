@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u03_k01",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u03_k01_o01",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Pille çalışan küçük bir uyarı buzzerının ses vermesi için basit devrede hangi eleman grubu bulunmalıdır?",
+      "secenekler": [
+        "Üreteç, iletken tel, kapalı anahtar ve buzzer/yük",
+        "Yalnızca üreteç ve açık anahtar",
+        "Yalnızca iletken tel ve buzzer",
+        "Üreteç olmadan açık bir iletken yol"
+      ],
+      "dogru_index": 0,
+      "cozum": "Buzzerın çalışması için enerji sağlayan üreteç, elemanları birleştiren iletken tel, devreyi tamamlayan kapalı anahtar ve yük olan buzzer gerekir. Açık anahtar devreden akım geçmesini engeller.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Basit bir elektrik devresinin çalışması için kullanılan temel elemanları ve görevlerini açıkla.",
+        "back": "Üreteç enerji/potansiyel fark sağlar, iletken tel elemanları bağlar, anahtar akışı kontrol eder, direnç elektrik enerjisini başka biçime dönüştürür."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o02",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Bir pil ve elektrikli kapı uyarıcısından oluşan devrede anahtar açık bırakılmıştır. Uyarıcının çalışmamasının doğrudan nedeni nedir?",
+      "secenekler": [
+        "Pil enerji sağlayamadığı için",
+        "Devre tamamlanmadığından akım geçmediği için",
+        "İletken tel akımı artırdığı için",
+        "Anahtar direnç oluşturmadığı için"
+      ],
+      "dogru_index": 1,
+      "cozum": "Açık anahtar devrede kesinti oluşturur. Devre tamamlanmadığı için akım geçmez ve kapı uyarıcısı çalışmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir basit devrede anahtar açıkken akım ve devrenin çalışması nasıl olur?",
+        "back": "Devre tamamlanmadığı için akım geçmez ve devre elemanı çalışmaz."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o03",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Bir pilin basit elektrik devresindeki temel işlevi nedir?",
+      "secenekler": [
+        "Devredeki akıma karşı koymak",
+        "Elektrik akımını açıp kapatmak",
+        "Potansiyel fark oluşturarak devreye enerji sağlamak",
+        "Devre elemanlarını fiziksel olarak bağlamak"
+      ],
+      "dogru_index": 2,
+      "cozum": "Pil bir üreteçtir; potansiyel fark oluşturarak akımı sağlayacak enerjiyi verir. Akımı kontrol etme anahtarın, elemanları bağlama iletken telin görevidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir devrede üretecin elektrik akımı oluşmasına katkısını açıkla.",
+        "back": "Üreteç devreye enerji sağlar ve potansiyel fark oluşturarak yük taşıyıcılarının hareket etmesini sağlar."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o04",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Hangi büyüklük-sembol-birim eşleştirmesi doğrudur?",
+      "secenekler": [
+        "Direnç — I — amper",
+        "Potansiyel fark — V — volt",
+        "Akım — R — ohm",
+        "Akım — V — volt"
+      ],
+      "dogru_index": 1,
+      "cozum": "Potansiyel fark V sembolüyle gösterilir ve birimi volttur. Akımın sembolü I, birimi amper; direncin sembolü R, birimi ohmdur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımı, potansiyel fark ve direncin sembol ve SI birimlerini nasıl eşleştirirsin?",
+        "back": "Akım I ile amper (A), potansiyel fark V ile volt (V), direnç R ile ohm (Ω) gösterilir."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o05",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Aynı maddeden ve aynı kalınlıktaki iki telden biri daha uzunsa, diğer koşullar aynıyken hangisinin direnci daha büyüktür?",
+      "secenekler": [
+        "Daha uzun olanın",
+        "Daha kısa olanın",
+        "İkisinin direnci sıfırdır.",
+        "Uzunluk direnci etkilemez."
+      ],
+      "dogru_index": 0,
+      "cozum": "İletken telin uzunluğu arttıkça direnç artar; uzun tel akıma karşı daha fazla zorluk gösterir. Kesit alanı ve madde cinsi de direnci etkiler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir iletkenin direncini belirleyen tel özelliklerini açıkla.",
+        "back": "Direnç; iletken telin uzunluğuna, kesit alanına ve yapıldığı maddenin cinsine bağlıdır."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o06",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Bir devrede iletken tel koparsa kapalı devre neden bozulur?",
+      "secenekler": [
+        "Üreteç direnç hâline gelir.",
+        "Tel akımın geçeceği bağlantı yolunu sağlar; kopması devreyi keser.",
+        "Potansiyel fark sıfırdan büyük olur.",
+        "Lamba kendiliğinden üreteç olur."
+      ],
+      "dogru_index": 1,
+      "cozum": "İletken tel devre elemanlarını birbirine bağlayan akım yoludur. Tel kopunca devre tamamlanmaz ve akım dolaşamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İletken telin elektrik devresindeki iki temel görevini belirt.",
+        "back": "Devre elemanlarını birbirine bağlar ve elektrik enerjisinin iletilmesini sağlar."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o07",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Devrede elektronların sürüklenme hızı ile elektriksel etkinin devre boyunca yayılma hızı arasındaki ilişkiyi hangi ifade doğru açıklar?",
+      "secenekler": [
+        "Her elektron devrenin tamamını bir anda dolaşır.",
+        "Devredeki enerji aktarımı için yük taşıyıcılarına gerek yoktur.",
+        "Elektriksel etki ve enerji aktarımı devre boyunca hızla yayılır; elektronlar yerel olarak hareket eder.",
+        "Dirençte enerji aktarılabilmesi için devreden akım geçmemelidir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Elektriksel etki ve enerji aktarımı iletken boyunca hızla yayılır. Metal içindeki elektronların sürüklenme hızı düşük olsa da her elektronun devrenin tamamını katetmesi gerekmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik devresi kapatıldığında akımın iletken boyunca hızlı yayılmasını elektronların sürüklenme hızıyla nasıl açıklarsın?",
+        "back": "Elektronların sürüklenme hızı düşük olsa da elektron etkileşimleri ve elektromanyetik dalgalar enerjiyi devre boyunca hızla iletir."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o08",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Bir sıcaklık algılayıcısının devresine seri koruyucu direnç ekleniyor. Bu direncin temel işlevi hangisidir?",
+      "secenekler": [
+        "Devredeki potansiyel farkı kaynağa geri göndermek",
+        "Elektrik yüklerini yok etmek",
+        "Anahtarı sürekli açık tutmak",
+        "Akıma karşı zorluk oluşturarak akımı sınırlamak"
+      ],
+      "dogru_index": 3,
+      "cozum": "Direnç, elektrik akımına karşı zorluk gösterir ve uygun seçildiğinde algılayıcıdan geçen akımı sınırlar. Dirençte elektrik enerjisinin bir bölümü ısıya dönüşebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir devreye seri bağlanan koruyucu direnç, devre akışı ve enerji dönüşümü açısından hangi işi görebilir?",
+        "back": "Akıma karşı zorluk oluşturarak akımı sınırlayabilir; elektrik enerjisinin bir bölümü dirençte ısıya dönüşebilir."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o09",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Üreteçli devrede direnç arttığında, diğer koşullar aynıyken devredeki akım üzerindeki beklenen etki nedir?",
+      "secenekler": [
+        "Akıma karşı gösterilen zorluk artar; akım azalır.",
+        "Akım mutlaka artar.",
+        "Üreteç ortadan kalkar.",
+        "İletken telin uzunluğu sıfırlanır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Direnç elektrik akımına karşı gösterilen zorluktur; potansiyel fark aynıyken direnç artışı akımı azaltır. Üreteç ve iletken telin görevleri değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Potansiyel fark sabitken bir devrenin direnci artırılırsa akım nasıl değişir?",
+        "back": "Ohm Yasası’na göre direnç artınca akım azalır."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k01_o10",
+      "alt_beceri": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "metin": "Üreteç 3 C yük başına 12 J enerji sağlıyorsa potansiyel farkı kaç V'tur?",
+      "secenekler": [
+        "36",
+        "15",
+        "9",
+        "4"
+      ],
+      "dogru_index": 3,
+      "cozum": "V = E/q = 12/3 = 4 V olur. 36, enerji ile yükü çarpmaktır; tanımda enerji yüke bölünür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Potansiyel farkın birim yük başına enerji tanımından V değerini nasıl hesaplarsın?",
+        "back": "Potansiyel fark = aktarılan enerji / yük miktarı; V = E/q."
+      },
+      "kazanim": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u03_k01_o01:flashcard",
+      "front": "Basit bir elektrik devresinin çalışması için kullanılan temel elemanları ve görevlerini açıkla.",
+      "back": "Üreteç enerji/potansiyel fark sağlar, iletken tel elemanları bağlar, anahtar akışı kontrol eder, direnç elektrik enerjisini başka biçime dönüştürür."
+    },
+    {
+      "id": "fizik_10_u03_k01_o02:flashcard",
+      "front": "Bir basit devrede anahtar açıkken akım ve devrenin çalışması nasıl olur?",
+      "back": "Devre tamamlanmadığı için akım geçmez ve devre elemanı çalışmaz."
+    },
+    {
+      "id": "fizik_10_u03_k01_o03:flashcard",
+      "front": "Bir devrede üretecin elektrik akımı oluşmasına katkısını açıkla.",
+      "back": "Üreteç devreye enerji sağlar ve potansiyel fark oluşturarak yük taşıyıcılarının hareket etmesini sağlar."
+    },
+    {
+      "id": "fizik_10_u03_k01_o04:flashcard",
+      "front": "Elektrik akımı, potansiyel fark ve direncin sembol ve SI birimlerini nasıl eşleştirirsin?",
+      "back": "Akım I ile amper (A), potansiyel fark V ile volt (V), direnç R ile ohm (Ω) gösterilir."
+    },
+    {
+      "id": "fizik_10_u03_k01_o05:flashcard",
+      "front": "Bir iletkenin direncini belirleyen tel özelliklerini açıkla.",
+      "back": "Direnç; iletken telin uzunluğuna, kesit alanına ve yapıldığı maddenin cinsine bağlıdır."
+    },
+    {
+      "id": "fizik_10_u03_k01_o06:flashcard",
+      "front": "İletken telin elektrik devresindeki iki temel görevini belirt.",
+      "back": "Devre elemanlarını birbirine bağlar ve elektrik enerjisinin iletilmesini sağlar."
+    },
+    {
+      "id": "fizik_10_u03_k01_o07:flashcard",
+      "front": "Elektrik devresi kapatıldığında akımın iletken boyunca hızlı yayılmasını elektronların sürüklenme hızıyla nasıl açıklarsın?",
+      "back": "Elektronların sürüklenme hızı düşük olsa da elektron etkileşimleri ve elektromanyetik dalgalar enerjiyi devre boyunca hızla iletir."
+    },
+    {
+      "id": "fizik_10_u03_k01_o08:flashcard",
+      "front": "Bir devreye seri bağlanan koruyucu direnç, devre akışı ve enerji dönüşümü açısından hangi işi görebilir?",
+      "back": "Akıma karşı zorluk oluşturarak akımı sınırlayabilir; elektrik enerjisinin bir bölümü dirençte ısıya dönüşebilir."
+    },
+    {
+      "id": "fizik_10_u03_k01_o09:flashcard",
+      "front": "Potansiyel fark sabitken bir devrenin direnci artırılırsa akım nasıl değişir?",
+      "back": "Ohm Yasası’na göre direnç artınca akım azalır."
+    },
+    {
+      "id": "fizik_10_u03_k01_o10:flashcard",
+      "front": "Potansiyel farkın birim yük başına enerji tanımından V değerini nasıl hesaplarsın?",
+      "back": "Potansiyel fark = aktarılan enerji / yük miktarı; V = E/q."
+    }
+  ],
+  "baslik": "3.1 Basit Elektrik Devreleri",
+  "topic_key": "Fizik > 3.1 Basit Elektrik Devreleri"
+}
