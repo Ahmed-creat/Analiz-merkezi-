@@ -117,6 +117,27 @@ Soru havuzları içerik güncellemesi olarak eklenir; kod değişikliği gerekti
 - Her havuz dosyası eklendiğinde `npm run validate:pools` çalıştırılmalı
 - İlişki grafı: `content/iliski_grafi.json`; açılışta şema ve tutarlılık doğrulanır
 
+## 10. Sınıf Deneme Soru Dağılımı
+
+10. sınıf genel deneme formatı uygulamada sınıf seçimine göre otomatik kullanılır:
+
+| Test / Ders | Soru |
+| --- | ---: |
+| Türk Dili ve Edebiyatı | 30 |
+| Tarih | 10 |
+| Coğrafya | 10 |
+| Felsefe | 5 |
+| Din Kültürü ve Ahlak Bilgisi | 5 |
+| Matematik | 30 |
+| Fizik | 10 |
+| Kimya | 10 |
+| Biyoloji | 10 |
+| **Toplam** | **120** |
+
+Süre **135 dakika** olarak uygulanır. Bu, yayın örneklerinde görülen 120 soruluk lise deneme düzeninin uygulamadaki varsayılanıdır. Yayınlar arasında Sosyal Bilimler alt dağılımında küçük farklar bulunabilir; örneğin bazı kitapçıklarda Tarih 11 ve Din Kültürü 4 sorudur. MEB ülke geneli ortak yazılıları bu formattan ayrıdır ve 2025-2026 kılavuzunda 10. sınıf Matematik ve Türk Dili ve Edebiyatı için 8 açık uçlu/kısa cevaplı soru ve 40 dakika belirtilmiştir.
+
+Araştırma referansları: [Bilgi Sarmal 10. sınıf örnek deneme](https://onyal.meb.k12.tr/meb_iys_dosyalar/07/03/974829/dosyalar/2023_10/10103601_BILGI-SARMAL-10.SINIF-1.DENEME-ORNEK-PDF.pdf), [lise deneme soru/süre tablosu](https://daltonegitim.com/tr/images/Sinav-Soru-ve-Sureleri.pdf), [MEB 2025-2026 ortak yazılı kılavuzu](https://odsgm.meb.gov.tr/www/milli-egitim-bakanligi-tarafindan-2025-2026-egitim-ogretim-yili-2-donem-1-ortak-yazili-sinavlarina-iliskin-kilavuz-yayimlandi/icerik/1555/tr).
+
 ## Sık sorulan
 - **Bildirimler telefon kilideyken geliyor mu?** Evet — FCM + `firebase-messaging-sw.js` arka plan bildirimi işler (config doldurulduysa).
 - **İnternet yoksa?** Uygulama tam çalışır; bulut senkronu ve giriş devre dışı kalır, veriler cihazda (localStorage) durur.

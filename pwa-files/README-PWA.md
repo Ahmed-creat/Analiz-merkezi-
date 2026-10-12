@@ -28,6 +28,13 @@ Bu proje `analiz-merkezi-pwa (3).zip` dosyasından çıkarılan PWA uygulamasıd
 - **icons/icon-192.png** - PWA ikon (192x192)
 - **icons/icon-512.png** - PWA ikon (512x512)
 
+## 10. Sınıf Deneme Formatı
+
+10. sınıf denemesi sınıf seçimine göre 120 soru ve 135 dakika olarak açılır:
+TDE 30; Tarih 10; Coğrafya 10; Felsefe 5; Din Kültürü 5; Matematik 30;
+Fizik, Kimya ve Biyoloji 10'ar soru. Yayınlar arasında küçük alt dağılım farkları olabilir.
+MEB ortak yazılısı bu genel deneme formatından ayrıdır.
+
 ## Soru Havuzlarının Eklenmesi
 
 Soru havuzları `content/soru_havuzlari/{konu_id}.json` altında tutulur. Konu başına en az 10 soru,
