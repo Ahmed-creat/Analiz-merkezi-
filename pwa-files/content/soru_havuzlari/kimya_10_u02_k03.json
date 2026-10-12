@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u02_k03",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u02_k03_o01",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir sera için besin çözeltisi hazırlayan teknisyen, 25 °C’ta 63 g katkı X’i tamamen çözündürmek istiyor. X’in çözünürlüğü 42 g/100 g su olduğuna göre en az kaç gram su gerekir?",
+      "secenekler": [
+        "150 g",
+        "100 g",
+        "125 g",
+        "200 g"
+      ],
+      "dogru_index": 0,
+      "cozum": "42 g X’i çözmek için 100 g su gerekiyorsa 63 g X için gereken su miktarı 63×100/42=150 g’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlük için operasyonel tanımda çözücü miktarı ve çözünebilen madde miktarı nasıl belirtilir?",
+        "back": "Belirli sıcaklık ve basınçta 100 g ya da 100 cm³ çözücüde çözünebilen maksimum madde miktarıdır."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o02",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir mineral geri kazanım tesisinde 25 °C’ta hazırlanmış 180 g doygun X çözeltisinin suyu tamamen buharlaştırılıyor ve 60 g X kalıyor. Çözeltideki suyun tamamının buharlaştığına göre X’in çözünürlüğü kaç g/100 g sudur?",
+      "secenekler": [
+        "60 g/100 g su",
+        "50 g/100 g su",
+        "40 g/100 g su",
+        "100 g/100 g su"
+      ],
+      "dogru_index": 1,
+      "cozum": "Örnekteki su kütlesi 180−60=120 g’dır. 60 g X, 120 g suda çözündüğüne göre 100 g su başına çözünen miktar 60×100/120=50 g’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "g/100 g su birimiyle verilen çözünürlük neyi ifade eder?",
+        "back": "Belirli sıcaklık ve basınçta 100 g çözücüde çözünebilen en fazla çözünen madde miktarını ifade eder."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o03",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir pigment üretim hattında 30 °C’ta toplam 210 g doygun çözelti hazırlanıyor. Pigmentin bu sıcaklıktaki çözünürlüğü 50 g/100 g su olduğuna göre çözeltide kaç gram pigment bulunur?",
+      "secenekler": [
+        "40 g",
+        "60 g",
+        "80 g",
+        "70 g"
+      ],
+      "dogru_index": 3,
+      "cozum": "50 g pigment ve 100 g su, toplam 150 g doygun çözelti oluşturur. 210 g çözelti bu miktarın 1,4 katı olduğundan pigment kütlesi 50×1,4=70 g’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Belirli koşullarda çözücüye eklenen madde miktarı çözünürlük sınırını aşarsa kapta ne gözlenebilir?",
+        "back": "Çözünebilen maksimum miktarı aşan kısım çözünmeden kalabilir ve kabın dibine çökebilir."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o04",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir proses laboratuvarında 20 °C’ta her biri 100 g su içeren doymuş Q ve R çözeltileri hazırlanıyor. Çözeltilerde sırasıyla 41 g Q ve 52 g R bulunuyorsa, hangi madde aynı miktar suda daha fazla çözünebilir?",
+      "secenekler": [
+        "Q",
+        "R",
+        "İki madde eşit miktarda çözünür.",
+        "Verilen koşullarda karşılaştırma yapılamaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Sıcaklık ve çözücü kütlesi eşit olduğundan değerler doğrudan karşılaştırılır. R’den 52 g, Q’dan 41 g çözünebildiği için R aynı miktar suda daha fazla çözünür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlüğün maddeleri tanımlamada ayırt edici özellik sayılmasının nedenini açıklayınız.",
+        "back": "Aynı koşullarda farklı maddeler farklı miktarlarda çözünebildiği için çözünürlük maddeleri ayırt etmede kullanılabilir."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o05",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir seramik üretim laboratuvarında kullanılan X katısının çözünürlüğü 18 °C’ta 34 g/100 g su, 54 °C’ta 82 g/100 g sudur. 150 g suda 54 °C’ta, 18 °C’a göre kaç gram daha fazla X çözünebilir?",
+      "secenekler": [
+        "72 g",
+        "48 g",
+        "82 g",
+        "116 g"
+      ],
+      "dogru_index": 0,
+      "cozum": "Her 100 g suda çözünürlük farkı 82−34=48 g’dır. 150 g su için fark 48×1,5=72 g olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı çözücü miktarı için iki sıcaklıktaki çözünürlük değerleri biliniyorsa daha yüksek sıcaklıkta çözünebilen ek miktar nasıl bulunur?",
+        "back": "Yüksek sıcaklıktaki çözünürlükten düşük sıcaklıktaki çözünürlük çıkarılır; sonuç aynı miktardaki çözücü için ek çözünebilen maddeyi verir."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o06",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir sera gübreleme tankında 30 °C’ta 250 g su kullanılıyor. Katkı Y’nin çözünürlüğü bu sıcaklıkta 64 g/100 g su olduğuna göre, doygun çözelti elde etmek için en fazla kaç gram Y çözünebilir?",
+      "secenekler": [
+        "64 g",
+        "82 g",
+        "160 g",
+        "146 g"
+      ],
+      "dogru_index": 2,
+      "cozum": "250 g su, 100 g suyun 2,5 katıdır. En fazla çözünebilecek Y miktarı 64×2,5=160 g’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eklenen çözünen miktarı, çözünürlük sınırını aşarsa çözeltide ne gözlenebilir?",
+        "back": "Çözücüde çözünebilen en yüksek miktar aşıldığında fazla çözünen katı çözünmeden kalabilir veya dibe çökebilir."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o07",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir kâğıt kaplama banyosunda 25 °C’ta 100 g su içinde 68 g katkı çözünmüş durumdadır. Katkının çözünürlüğü 74 g/100 g su ise doygunluğa ulaşmadan önce en fazla kaç gram daha katkı çözünebilir?",
+      "secenekler": [
+        "0 g",
+        "6 g",
+        "14 g",
+        "74 g"
+      ],
+      "dogru_index": 1,
+      "cozum": "100 g su 74 g katkı çözebilir. Banyoda 68 g çözünmüş olduğundan doygunluğa ulaşmak için 74−68=6 g daha katkı çözünebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eklenen toplam çözünen miktarı, çözünen miktar ve çözünmeden kalan katı arasında nasıl bir ilişki vardır?",
+        "back": "Eklenen miktar = çözünen miktar + çözünmeden kalan miktar. Çözünürlük hesabında çözünmeden kalan katı toplamdan çıkarılır."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o08",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir kristal üretim laboratuvarında 100 g suyla hazırlanan sıcak doymuş R çözeltisinde 55 °C’ta 82 g R çözünmüş durumdadır. R’nin 15 °C’taki çözünürlüğü 47 g/100 g su olduğuna göre, kapalı kapta soğutma sırasında yaklaşık kaç gram R kristallenir? Su kaybı olmuyor.",
+      "secenekler": [
+        "47 g",
+        "82 g",
+        "29 g",
+        "35 g"
+      ],
+      "dogru_index": 3,
+      "cozum": "100 g su, 15 °C’ta en fazla 47 g R çözebilir. Başlangıçta 82 g çözünmüş olduğundan soğuyunca 82 − 47 = 35 g R kristallenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıcak bir çözeltide çözünmüş maddenin bir kısmının soğutma sırasında kristallenmesini çözünürlük değerleriyle nasıl açıklarsınız?",
+        "back": "Daha düşük sıcaklıkta çözünebilen maksimum miktar azalırsa, aradaki fazla madde çözeltiden ayrılıp katı hâlde çöker."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o09",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir laboratuvarın sulu durulama banyosu tarifi, her 0,8 kg su için 16 g katkı P kullanılmasını gerektiriyor. Aynı oran korunursa 2,4 kg su için kaç gram P gerekir?",
+      "secenekler": [
+        "16 g",
+        "32 g",
+        "48 g",
+        "64 g"
+      ],
+      "dogru_index": 2,
+      "cozum": "2,4 kg su, 0,8 kg’ın 3 katıdır. Katkı miktarı da 3 katına çıkar: 16×3=48 g.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir çözünen miktarı, g/kg su biçiminde verildiğinde farklı kütlede su için nasıl ölçeklendirilir?",
+        "back": "Birim su başına verilen çözünen miktarı, kullanılan su kütlesiyle orantılıdır; su miktarı kaç katına çıkarsa çözünen miktarı da aynı oranda artırılır."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k03_o10",
+      "alt_beceri": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "metin": "Bir metal yüzey temizleme banyosunda 25 °C’ta 150 g suya 75 g katkı S ekleniyor. S’nin çözünürlüğü 40 g/100 g su olduğuna göre karıştırma sonunda yaklaşık kaç gram S çözünmeden kalır?",
+      "secenekler": [
+        "15 g",
+        "40 g",
+        "60 g",
+        "75 g"
+      ],
+      "dogru_index": 0,
+      "cozum": "150 g su en fazla 40×1,5=60 g S çözebilir. Eklenen 75 g’ın 60 g’ı çözünür; 75−60=15 g çözünmeden kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlük sınırı, eklenen çözünenin çözeltide kalabilecek miktarını nasıl belirler?",
+        "back": "Belirtilen koşullarda en fazla çözünürlük değerine karşılık gelen miktar çözünür; bunun üzerindeki ek miktar çözünmeden kalabilir."
+      },
+      "kazanim": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u02_k03_o01:flashcard",
+      "front": "Çözünürlük için operasyonel tanımda çözücü miktarı ve çözünebilen madde miktarı nasıl belirtilir?",
+      "back": "Belirli sıcaklık ve basınçta 100 g ya da 100 cm³ çözücüde çözünebilen maksimum madde miktarıdır."
+    },
+    {
+      "id": "kimya_10_u02_k03_o02:flashcard",
+      "front": "g/100 g su birimiyle verilen çözünürlük neyi ifade eder?",
+      "back": "Belirli sıcaklık ve basınçta 100 g çözücüde çözünebilen en fazla çözünen madde miktarını ifade eder."
+    },
+    {
+      "id": "kimya_10_u02_k03_o03:flashcard",
+      "front": "Belirli koşullarda çözücüye eklenen madde miktarı çözünürlük sınırını aşarsa kapta ne gözlenebilir?",
+      "back": "Çözünebilen maksimum miktarı aşan kısım çözünmeden kalabilir ve kabın dibine çökebilir."
+    },
+    {
+      "id": "kimya_10_u02_k03_o04:flashcard",
+      "front": "Çözünürlüğün maddeleri tanımlamada ayırt edici özellik sayılmasının nedenini açıklayınız.",
+      "back": "Aynı koşullarda farklı maddeler farklı miktarlarda çözünebildiği için çözünürlük maddeleri ayırt etmede kullanılabilir."
+    },
+    {
+      "id": "kimya_10_u02_k03_o05:flashcard",
+      "front": "Aynı çözücü miktarı için iki sıcaklıktaki çözünürlük değerleri biliniyorsa daha yüksek sıcaklıkta çözünebilen ek miktar nasıl bulunur?",
+      "back": "Yüksek sıcaklıktaki çözünürlükten düşük sıcaklıktaki çözünürlük çıkarılır; sonuç aynı miktardaki çözücü için ek çözünebilen maddeyi verir."
+    },
+    {
+      "id": "kimya_10_u02_k03_o06:flashcard",
+      "front": "Eklenen çözünen miktarı, çözünürlük sınırını aşarsa çözeltide ne gözlenebilir?",
+      "back": "Çözücüde çözünebilen en yüksek miktar aşıldığında fazla çözünen katı çözünmeden kalabilir veya dibe çökebilir."
+    },
+    {
+      "id": "kimya_10_u02_k03_o07:flashcard",
+      "front": "Eklenen toplam çözünen miktarı, çözünen miktar ve çözünmeden kalan katı arasında nasıl bir ilişki vardır?",
+      "back": "Eklenen miktar = çözünen miktar + çözünmeden kalan miktar. Çözünürlük hesabında çözünmeden kalan katı toplamdan çıkarılır."
+    },
+    {
+      "id": "kimya_10_u02_k03_o08:flashcard",
+      "front": "Sıcak bir çözeltide çözünmüş maddenin bir kısmının soğutma sırasında kristallenmesini çözünürlük değerleriyle nasıl açıklarsınız?",
+      "back": "Daha düşük sıcaklıkta çözünebilen maksimum miktar azalırsa, aradaki fazla madde çözeltiden ayrılıp katı hâlde çöker."
+    },
+    {
+      "id": "kimya_10_u02_k03_o09:flashcard",
+      "front": "Bir çözünen miktarı, g/kg su biçiminde verildiğinde farklı kütlede su için nasıl ölçeklendirilir?",
+      "back": "Birim su başına verilen çözünen miktarı, kullanılan su kütlesiyle orantılıdır; su miktarı kaç katına çıkarsa çözünen miktarı da aynı oranda artırılır."
+    },
+    {
+      "id": "kimya_10_u02_k03_o10:flashcard",
+      "front": "Çözünürlük sınırı, eklenen çözünenin çözeltide kalabilecek miktarını nasıl belirler?",
+      "back": "Belirtilen koşullarda en fazla çözünürlük değerine karşılık gelen miktar çözünür; bunun üzerindeki ek miktar çözünmeden kalabilir."
+    }
+  ],
+  "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması"
+}

@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u01_k04",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u01_k04_o01",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Bir arama-kurtarma ekibinin işaret fişeği, yatayla 30° açı yapan doğrultuda 24 m/s ilk hızla fırlatılıyor. sin30° = 1/2 ve cos30° = √3/2 olduğuna göre ilk hızın yatay ve düşey bileşenleri kaç m/s olur?",
+      "secenekler": [
+        "12√3 m/s yatay ve 12 m/s düşey",
+        "12 m/s yatay ve 12√3 m/s düşey",
+        "24 m/s yatay ve 0 m/s düşey",
+        "12 m/s yatay ve 12 m/s düşey"
+      ],
+      "dogru_index": 0,
+      "cozum": "vₓ = v·cos30° = 24·√3/2 = 12√3 m/s; vᵧ = v·sin30° = 24·1/2 = 12 m/s olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatayla α açısı yapan v hızının yatay ve düşey bileşenleri nasıl bulunur?",
+        "back": "vₓ = v·cosα ve vᵧ = v·sinα."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o02",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Yatay yönde 25 m/s hızla atılan bir cisim yere 4 s sonra ulaşıyor. Hava direnci yoksa yatay yer değiştirmesi kaç metredir?",
+      "secenekler": [
+        "75 m",
+        "100 m",
+        "50 m",
+        "25 m"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yatay hız sabit kalır: x = vₓt = 25 × 4 = 100 m. Düşey hareket, yatay doğrultudaki yer değiştirmeyi değiştirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hava direnci yokken yatay atılan cismin yatay hız bileşeni hareket boyunca nasıl değişir?",
+        "back": "Yatay doğrultuda kuvvet olmadığından yatay hız bileşeni sabit kalır."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o03",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Yatay atılan cisim için g = 10 m/s²’dir. Hava direnci yoksa 2,5 s sonra düşey hız bileşeninin büyüklüğü kaç m/s olur?",
+      "secenekler": [
+        "0 m/s",
+        "10 m/s",
+        "25 m/s",
+        "30 m/s"
+      ],
+      "dogru_index": 2,
+      "cozum": "Başlangıç düşey hızı sıfır olduğundan vᵧ = gt = 10 × 2,5 = 25 m/s olur. Yatay hız bileşeni düşey hız değişimini etkilemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatay atışta düşey hız bileşeni zamanla neden değişir?",
+        "back": "Yer çekimi ivmesi düşey yönde etki eder; düşey hız her saniye g kadar değişir."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o04",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Aynı yükseklikten, aynı düşey başlangıç hızıyla fakat farklı yatay hızlarla atılan iki cisim için (hava direnci yokken) hangisi aynıdır?",
+      "secenekler": [
+        "Yatay menzilleri",
+        "Yatay hızları",
+        "Yere düşme süreleri",
+        "Bileşke hızları her anda"
+      ],
+      "dogru_index": 2,
+      "cozum": "Düşey hareketleri aynı olduğundan yere düşme süreleri eşittir. Yatay hızları farklı olduğundan yatay menzilleri farklı olabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki boyutta atış hareketinde yatay ve düşey hareketler nasıl ele alınır?",
+        "back": "Birbirinden bağımsız incelenir; yatay hareket sabit hızlı, düşey hareket sabit ivmelidir."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o05",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "125 m yüksekliğinden yatay atılan cismin hava direnci ihmal ediliyor. g = 10 m/s² ise yere düşmesi kaç saniye sürer?",
+      "secenekler": [
+        "5 s",
+        "4,5 s",
+        "9 s",
+        "1,5 s"
+      ],
+      "dogru_index": 0,
+      "cozum": "Düşey ilk hız sıfırdır: h = ½gt². 125 = 5t² olduğundan t² = 25 ve düşme süresi 5 s bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatay atılan cismin düşme süresi hangi bileşenle belirlenir?",
+        "back": "Düşey hareketle ve atılma yüksekliğiyle belirlenir; yatay hız düşme süresini değiştirmez."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o06",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Bir noktada yatay hız bileşeni 12 m/s, düşey hız bileşeni 16 m/s olan cismin bileşke hızının büyüklüğü kaç m/s’dir?",
+      "secenekler": [
+        "28 m/s",
+        "20 m/s",
+        "16 m/s",
+        "12 m/s"
+      ],
+      "dogru_index": 1,
+      "cozum": "Dik hız bileşenleri için Pisagor bağıntısı kullanılır: v = √(12² + 16²) = √400 = 20 m/s. Bileşenleri doğrudan toplamak doğru olmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir cismin bileşke hızının büyüklüğü, dik bileşenlerinden nasıl bulunur?",
+        "back": "v = √(vₓ² + vᵧ²)."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o07",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Yatay hız bileşeni 18 m/s olan bir cisim yere 5 s’de ulaşıyor. Hava direnci yoksa yatay menzili kaç metredir?",
+      "secenekler": [
+        "43 m",
+        "80 m",
+        "13 m",
+        "90 m"
+      ],
+      "dogru_index": 3,
+      "cozum": "Menzil = vₓ × tuçuş = 18 × 5 = 90 m olur. Düşey doğrultudaki hareket uçuş süresini belirler; bu süre boyunca yatay hız değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki boyutta atılan cismin menzili nasıl hesaplanır?",
+        "back": "Yatay hız bileşeni, uçuş süresiyle çarpılır: xmenzil = vₓ·tuçuş."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o08",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Hava direnci ihmal edilen bir atışta cismin en yüksek noktadaki yatay hız bileşeni 27 m/s’dir. Bu noktadaki düşey hız bileşeni sıfır olduğuna göre bileşke hızının büyüklüğü kaç m/s’dir?",
+      "secenekler": [
+        "0 m/s",
+        "13,5 m/s",
+        "54 m/s",
+        "27 m/s"
+      ],
+      "dogru_index": 3,
+      "cozum": "En yüksek noktada düşey hız bileşeni sıfır, yatay bileşen 27 m/s olarak kalır. Bileşke hızın büyüklüğü 27 m/s’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir cisim eğik atışta en yüksek noktaya çıktığında düşey ve yatay hız bileşenleri ne olur?",
+        "back": "Düşey hız bileşeni sıfır olur; yatay hız bileşeni sabit kaldığından sıfır değildir."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o09",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Bir park fıskiyesi aynı ağızdan eşit ilk süratle iki su jeti çıkarıyor. Jetler yatayla 32° ve 58° açı yapıp çıkış yüksekliğiyle aynı seviyedeki havuza düşüyor. Hava direnci ihmal edilirse yatay erişimleri nasıl karşılaştırılır?",
+      "secenekler": [
+        "Eşittir; atış açıları birbirini 90°’ye tamamlar.",
+        "32° ile çıkan jet daha uzağa ulaşır.",
+        "58° ile çıkan jet daha uzağa ulaşır.",
+        "Yalnızca su jetlerinin havada kalma süreleri bilinirse karşılaştırılabilir."
+      ],
+      "dogru_index": 0,
+      "cozum": "32° + 58° = 90° olduğundan açılar tamamlayıcıdır. Aynı ilk sürat ve aynı atış-iniş seviyesi koşullarında menziller eşit olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı hızla, aynı seviyeden atılıp aynı seviyeye düşen cisimlerin tamamlayıcı atış açılarında menzil nasıl değişir?",
+        "back": "Birbirini 90°'ye tamamlayan iki atış açısında menzil eşit olur."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u01_k04_o10",
+      "alt_beceri": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "metin": "Bir işaret kapsülü aynı seviyeden atıldıktan 7 s sonra yine aynı seviyeye dönüyor. Hava direnci ihmal edilirse, atılıştan 2 s sonra geçtiği yükseklikten iniş sırasında hangi anda yeniden geçer?",
+      "secenekler": [
+        "3 s",
+        "5 s",
+        "4 s",
+        "7 s"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yörünge zaman bakımından tepe noktasına göre simetriktir. Bu nedenle t=2 s anındaki yükseklik iniş sırasında T−t=7−2=5 s anında yeniden geçilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı seviyeden atılıp aynı seviyeye dönen cismin aynı yükseklikten çıkış ve iniş zamanları nasıl ilişkilidir?",
+        "back": "Toplam uçuş süresi T ise, başlangıçtan itibaren t anındaki yükseklik inişte T−t anında yeniden alınır."
+      },
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u01_k04_o01:flashcard",
+      "front": "Yatayla α açısı yapan v hızının yatay ve düşey bileşenleri nasıl bulunur?",
+      "back": "vₓ = v·cosα ve vᵧ = v·sinα."
+    },
+    {
+      "id": "fizik_10_u01_k04_o02:flashcard",
+      "front": "Hava direnci yokken yatay atılan cismin yatay hız bileşeni hareket boyunca nasıl değişir?",
+      "back": "Yatay doğrultuda kuvvet olmadığından yatay hız bileşeni sabit kalır."
+    },
+    {
+      "id": "fizik_10_u01_k04_o03:flashcard",
+      "front": "Yatay atışta düşey hız bileşeni zamanla neden değişir?",
+      "back": "Yer çekimi ivmesi düşey yönde etki eder; düşey hız her saniye g kadar değişir."
+    },
+    {
+      "id": "fizik_10_u01_k04_o04:flashcard",
+      "front": "İki boyutta atış hareketinde yatay ve düşey hareketler nasıl ele alınır?",
+      "back": "Birbirinden bağımsız incelenir; yatay hareket sabit hızlı, düşey hareket sabit ivmelidir."
+    },
+    {
+      "id": "fizik_10_u01_k04_o05:flashcard",
+      "front": "Yatay atılan cismin düşme süresi hangi bileşenle belirlenir?",
+      "back": "Düşey hareketle ve atılma yüksekliğiyle belirlenir; yatay hız düşme süresini değiştirmez."
+    },
+    {
+      "id": "fizik_10_u01_k04_o06:flashcard",
+      "front": "Bir cismin bileşke hızının büyüklüğü, dik bileşenlerinden nasıl bulunur?",
+      "back": "v = √(vₓ² + vᵧ²)."
+    },
+    {
+      "id": "fizik_10_u01_k04_o07:flashcard",
+      "front": "İki boyutta atılan cismin menzili nasıl hesaplanır?",
+      "back": "Yatay hız bileşeni, uçuş süresiyle çarpılır: xmenzil = vₓ·tuçuş."
+    },
+    {
+      "id": "fizik_10_u01_k04_o08:flashcard",
+      "front": "Bir cisim eğik atışta en yüksek noktaya çıktığında düşey ve yatay hız bileşenleri ne olur?",
+      "back": "Düşey hız bileşeni sıfır olur; yatay hız bileşeni sabit kaldığından sıfır değildir."
+    },
+    {
+      "id": "fizik_10_u01_k04_o09:flashcard",
+      "front": "Aynı hızla, aynı seviyeden atılıp aynı seviyeye düşen cisimlerin tamamlayıcı atış açılarında menzil nasıl değişir?",
+      "back": "Birbirini 90°'ye tamamlayan iki atış açısında menzil eşit olur."
+    },
+    {
+      "id": "fizik_10_u01_k04_o10:flashcard",
+      "front": "Aynı seviyeden atılıp aynı seviyeye dönen cismin aynı yükseklikten çıkış ve iniş zamanları nasıl ilişkilidir?",
+      "back": "Toplam uçuş süresi T ise, başlangıçtan itibaren t anındaki yükseklik inişte T−t anında yeniden alınır."
+    }
+  ],
+  "baslik": "1.4 İki Boyutta Sabit İvmeli Hareket",
+  "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket"
+}

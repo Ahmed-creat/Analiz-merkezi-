@@ -1,0 +1,299 @@
+{
+  "konu_id": "biyo_10_u01_k02",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k02_o01",
+      "alt_beceri": "Fotosentez",
+      "metin": "Bir su kültüründeki mikroorganizmanın ışığı kullanarak CO₂ ve sudan organik madde ürettiği ölçülüyor. Besin ağındaki rolü nedir?",
+      "secenekler": [
+        "Üretici; fotosentezle organik madde oluşturur.",
+        "Tüketici; besinini başka canlılardan hazır alır.",
+        "Ayrıştırıcı; organik atıkları inorganik maddelere dönüştürür.",
+        "Cansız bileşen; metabolik etkinliği yoktur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Işık enerjisini kullanarak inorganik maddelerden organik madde üreten canlı üreticidir. Üreticiler besin ve enerji akışının başlangıcında yer alır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotosentezi, kullanılan enerji kaynağı ve sentezlenen madde açısından açıklayınız.",
+        "back": "Klorofil taşıyan canlılarda ışık enerjisi kullanılarak inorganik maddelerden organik madde sentezlenmesine fotosentez denir."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o02",
+      "alt_beceri": "Fotosentez",
+      "metin": "Bir yetiştirme tankında fotosentetik mikroorganizmaların üretimi belirgin biçimde azalıyor. Bu değişimin tüketicilere olası etkisi nedir?",
+      "secenekler": [
+        "Tüketiciler fotosentez yapmaya başlar.",
+        "Besin ve enerji akışının başlangıç kaynağı azalır.",
+        "Besin ağına aktarılan organik madde zorunlu olarak artar.",
+        "Tüketicilerin enerji gereksinimi ortadan kalkar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Fotosentetik üreticiler su ekosistemlerinde besin ve enerji akışının temelini oluşturur. Üretim azalırsa tüketicilere aktarılan organik madde de azalabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotosentezin heterotrof canlılara sağladığı temel ekolojik katkıyı belirtiniz.",
+        "back": "Fotosentez organik besin üretir; heterotrof canlıların besin ve enerji ihtiyacı doğrudan ya da dolaylı olarak bu üretime dayanır."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o03",
+      "alt_beceri": "Pigmentler",
+      "metin": "Beyaz ışık bir güvenlik filtresine tutuluyor. Filtrenin kırmızı dalga boylarını geçirip diğer görünür dalga boylarını soğurduğu biliniyorsa, filtreden çıkan ışık baskın olarak hangi renkte görünür?",
+      "secenekler": [
+        "Mavi",
+        "Mor",
+        "Kırmızı",
+        "Yeşil"
+      ],
+      "dogru_index": 2,
+      "cozum": "Filtre kırmızı dalga boylarını geçirir ve diğer görünür dalga boylarını soğurur. Bu nedenle filtreden çıkan ışık baskın olarak kırmızıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Pigmentleri ışıkla etkileşimleri bakımından açıklayınız.",
+        "back": "Pigmentler görünür ışığı soğuran maddelerdir; fotosentezde klorofilin soğurduğu ışık enerjisi kullanılır."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o04",
+      "alt_beceri": "Pigmentler",
+      "metin": "Bir fotosentetik hücreye mavi ve kırmızı ışık fotonları ulaşıyor. Mavi ışığın dalga boyu daha kısa olduğuna göre foton başına enerji bakımından hangi sonuç doğrudur?",
+      "secenekler": [
+        "Foton enerjisi dalga boyundan bağımsızdır.",
+        "Kırmızı ışık fotonları daha fazla enerji taşır; dalga boyları daha uzundur.",
+        "İki renkteki fotonlar aynı enerjiyi taşır.",
+        "Mavi ışık fotonları daha fazla enerji taşır; dalga boyları daha kısadır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Işığın dalga boyu ile taşıdığı enerji ters orantılıdır. Bu nedenle daha kısa dalga boylu mavi fotonlar kırmızı fotonlardan daha fazla enerji taşır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Işığın dalga boyu ile taşıdığı enerji arasındaki ilişkiyi yazınız.",
+        "back": "Işığın dalga boyu ile enerjisi ters orantılıdır; kısa dalga boylu ışık daha fazla enerji taşır."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o05",
+      "alt_beceri": "Işığın Kullanıldığı Tepkimeler",
+      "metin": "Işığın kullanıldığı tepkimelerde ATP ve NADPH hangi sonraki basamağa madde ve enerji sağlar?",
+      "secenekler": [
+        "Calvin döngüsünde CO₂'den organik madde sentezine",
+        "Hücre zarında mineral taşınmasına",
+        "Klorofil pigmentinin sentezlenmesine",
+        "Besinlerin sindirim kanalında emilmesine"
+      ],
+      "dogru_index": 0,
+      "cozum": "Işığın kullanıldığı tepkimelerde üretilen ATP ve NADPH, Calvin döngüsünde CO₂'nin organik maddeye dönüştürülmesinde kullanılır. Diğer seçenekler bu iki fotosentez basamağı arasındaki aktarımı açıklamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ökaryot hücrelerde ışığın kullanıldığı fotosentez tepkimelerinin yerini, suyun parçalanması ve oluşan iki taşıyıcıyla birlikte yazınız.",
+        "back": "Tepkimeler kloroplastın granumlarında gerçekleşir; su fotoliz edilir ve bu süreçte oluşan ATP ile NADPH fotosentezde kullanılır."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o06",
+      "alt_beceri": "Işığın Kullanıldığı Tepkimeler",
+      "metin": "Işığın kullanıldığı tepkimelerde klorofilin kaybettiği elektronların yerine hangi kaynaktan elektron gelir?",
+      "secenekler": [
+        "Karbondioksitin parçalanmasından",
+        "Suyun fotolizinden",
+        "Glikozun depolanmasından",
+        "NADP⁺'ın hidrolizinden"
+      ],
+      "dogru_index": 1,
+      "cozum": "Suyun fotoliziyle açığa çıkan elektronlar klorofilin kaybettiği elektronların yerini alır. Fotoliz aynı zamanda H⁺ ve oksijen oluşmasını sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Suyun ışık etkisiyle fotolizinde ortaya çıkan tanecikleri ve gazı belirtiniz.",
+        "back": "Fotolizle su elektronlara, H⁺ iyonlarına ve O₂'ye ayrılır."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o07",
+      "alt_beceri": "Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü)",
+      "metin": "Calvin döngüsünde sentezlenen organik maddelerin karbon iskeleti temel olarak hangi molekülden sağlanır?",
+      "secenekler": [
+        "Su (H₂O)",
+        "Oksijen (O₂)",
+        "Karbondioksit (CO₂)",
+        "NADPH"
+      ],
+      "dogru_index": 2,
+      "cozum": "Calvin döngüsünde CO₂ kullanılarak organik maddeler sentezlenir. ATP ve NADPH bu sentez için enerji ve indirgen güç sağlar, karbon kaynağı değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Calvin döngüsünün ökaryot hücredeki yerini ve karbon kaynağını yazınız.",
+        "back": "Calvin döngüsü kloroplastın stromasında gerçekleşir; CO₂ kullanılarak organik maddeler sentezlenir."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o08",
+      "alt_beceri": "Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü)",
+      "metin": "Calvin döngüsünde üretilen PGAL’ın bir bölümü bitkide enerji depolayan karbonhidratların yapımında kullanılıyor. PGAL’ın olası bir ürünü hangisidir?",
+      "secenekler": [
+        "Nitrat",
+        "Oksijen",
+        "Klorofil",
+        "Glikoz"
+      ],
+      "dogru_index": 3,
+      "cozum": "PGAL’ın bir bölümü glikoza dönüşebilir. Diğer bir bölümü bitkinin gereksinim duyduğu farklı organik bileşiklerin sentezine katılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Calvin döngüsünde oluşan PGAL'ın glikoz ve diğer organik bileşiklerle ilişkisini açıklayınız.",
+        "back": "PGAL'in bir kısmı glikoza dönüşür; bir kısmı da bitkinin gereksinim duyduğu diğer organik maddelerin sentezinde kullanılır."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o09",
+      "alt_beceri": "Fotosentez Hızına Etki Eden Çevresel Faktörler",
+      "metin": "Sera koşullarında ışık, su ve sıcaklık uygunken CO₂ miktarı yetersizdir. Fotosentez hızını sınırlayan etken hangisidir?",
+      "secenekler": [
+        "CO₂ miktarı",
+        "Işık şiddeti",
+        "Su miktarı",
+        "Sıcaklık"
+      ],
+      "dogru_index": 0,
+      "cozum": "Diğer koşullar uygunken miktarı yetersiz olan CO₂ minimum kuralına göre fotosentez hızını sınırlar. Işık, su ve sıcaklığın uygun olduğu bilgisi bu seçenekleri eler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotosentez hızını etkileyen faktörlerden miktarı en az olanın hızı belirlemesi kuralını açıklayınız.",
+        "back": "Minimum kuralına göre miktarı en az olan faktör fotosentez hızını sınırlar; yetersizliği süreci yavaşlatabilir veya durdurabilir."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o10",
+      "alt_beceri": "Fotosentez Hızına Etki Eden Çevresel Faktörler",
+      "metin": "Bir bitki, kendi türü için uygun olan sıcaklığın belirgin biçimde üzerine çıkarılıyor; ışık ve CO₂ yeterli kalıyor. Fotosentez hızının düşmesini en iyi hangi durum açıklar?",
+      "secenekler": [
+        "Işık şiddeti zorunlu olarak sıfırlanır.",
+        "Fotosentez enzimlerinin yapısı bozulabilir.",
+        "Klorofil CO₂’yi suya dönüştürür.",
+        "Bitkinin bütün mineralleri aniden tükenir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Fotosentez enzimlerle yürütülen tepkimeler içerir. Sıcaklığın uygun aralığın çok üzerine çıkması enzimlerin yapısını bozarak hızı düşürebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıcaklığın fotosentez için uygun aralığın belirgin biçimde üzerine çıkması fotosentez hızını nasıl etkileyebilir?",
+        "back": "Enzimlerin etkinliği azalabilir veya yapıları bozulabilir; fotosentez hızı düşebilir ya da süreç durabilir. Uygun sıcaklık aralığı bitki türüne göre değişir."
+      },
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o11",
+      "alt_beceri": "Fotosentezde Kullanılan ve Üretilen Maddeler",
+      "metin": "Fotosentez sırasında açığa çıkan O₂ gazındaki oksijen atomları temel olarak hangi girdinin parçalanmasıyla sağlanır?",
+      "secenekler": [
+        "O₂ bitkilerin köklerinden hazır alınır.",
+        "Oksijen atomlarının tamamı CO₂’den gelir.",
+        "Fotosentezde kullanılan suyun parçalanmasıyla oluşur.",
+        "O₂ glikozun hücre dışına taşınmasıyla oluşur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Işığın kullanıldığı tepkimelerde su fotolize uğrar ve O₂ oluşur. Bu nedenle fotosentezde atmosfere verilen oksijenin kaynağı sudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bitkilerde fotosentezin sadeleştirilmiş kimyasal denklemindeki temel girdileri ve ürünleri yazınız.",
+        "back": "Işık ve klorofil varlığında CO₂ ile H₂O'dan C₆H₁₂O₆ ve O₂ oluşur."
+      },
+      "kazanim": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o12",
+      "alt_beceri": "Fotosentezde Kullanılan ve Üretilen Maddeler",
+      "metin": "Işık alan bir mikrobiyal filmde bazı fotosentetik prokaryotların H₂S kullandığı ve O₂ açığa çıkarmadığı belirleniyor. Bu süreçte hangi yan ürünün oluşması beklenir?",
+      "secenekler": [
+        "Nitrat (NO₃⁻)",
+        "Oksijen (O₂)",
+        "Karbondioksit (CO₂)",
+        "Kükürt (S)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bazı fotosentetik prokaryotlar hidrojen kaynağı olarak H₂S kullanır. Bu durumda oksijen yerine elementel kükürt oluşabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bazı fotosentetik prokaryotlar su yerine hangi hidrojen kaynağını kullanabilir ve bu durumda hangi yan ürün oluşabilir?",
+        "back": "Bazı prokaryotlar H₂S kullanabilir; bu süreçte O₂ yerine kükürt oluşabilir."
+      },
+      "kazanim": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k02_o01:flashcard",
+      "front": "Fotosentezi, kullanılan enerji kaynağı ve sentezlenen madde açısından açıklayınız.",
+      "back": "Klorofil taşıyan canlılarda ışık enerjisi kullanılarak inorganik maddelerden organik madde sentezlenmesine fotosentez denir."
+    },
+    {
+      "id": "biyo_10_u01_k02_o02:flashcard",
+      "front": "Fotosentezin heterotrof canlılara sağladığı temel ekolojik katkıyı belirtiniz.",
+      "back": "Fotosentez organik besin üretir; heterotrof canlıların besin ve enerji ihtiyacı doğrudan ya da dolaylı olarak bu üretime dayanır."
+    },
+    {
+      "id": "biyo_10_u01_k02_o03:flashcard",
+      "front": "Pigmentleri ışıkla etkileşimleri bakımından açıklayınız.",
+      "back": "Pigmentler görünür ışığı soğuran maddelerdir; fotosentezde klorofilin soğurduğu ışık enerjisi kullanılır."
+    },
+    {
+      "id": "biyo_10_u01_k02_o04:flashcard",
+      "front": "Işığın dalga boyu ile taşıdığı enerji arasındaki ilişkiyi yazınız.",
+      "back": "Işığın dalga boyu ile enerjisi ters orantılıdır; kısa dalga boylu ışık daha fazla enerji taşır."
+    },
+    {
+      "id": "biyo_10_u01_k02_o05:flashcard",
+      "front": "Ökaryot hücrelerde ışığın kullanıldığı fotosentez tepkimelerinin yerini, suyun parçalanması ve oluşan iki taşıyıcıyla birlikte yazınız.",
+      "back": "Tepkimeler kloroplastın granumlarında gerçekleşir; su fotoliz edilir ve bu süreçte oluşan ATP ile NADPH fotosentezde kullanılır."
+    },
+    {
+      "id": "biyo_10_u01_k02_o06:flashcard",
+      "front": "Suyun ışık etkisiyle fotolizinde ortaya çıkan tanecikleri ve gazı belirtiniz.",
+      "back": "Fotolizle su elektronlara, H⁺ iyonlarına ve O₂'ye ayrılır."
+    },
+    {
+      "id": "biyo_10_u01_k02_o07:flashcard",
+      "front": "Calvin döngüsünün ökaryot hücredeki yerini ve karbon kaynağını yazınız.",
+      "back": "Calvin döngüsü kloroplastın stromasında gerçekleşir; CO₂ kullanılarak organik maddeler sentezlenir."
+    },
+    {
+      "id": "biyo_10_u01_k02_o08:flashcard",
+      "front": "Calvin döngüsünde oluşan PGAL'ın glikoz ve diğer organik bileşiklerle ilişkisini açıklayınız.",
+      "back": "PGAL'in bir kısmı glikoza dönüşür; bir kısmı da bitkinin gereksinim duyduğu diğer organik maddelerin sentezinde kullanılır."
+    },
+    {
+      "id": "biyo_10_u01_k02_o09:flashcard",
+      "front": "Fotosentez hızını etkileyen faktörlerden miktarı en az olanın hızı belirlemesi kuralını açıklayınız.",
+      "back": "Minimum kuralına göre miktarı en az olan faktör fotosentez hızını sınırlar; yetersizliği süreci yavaşlatabilir veya durdurabilir."
+    },
+    {
+      "id": "biyo_10_u01_k02_o10:flashcard",
+      "front": "Sıcaklığın fotosentez için uygun aralığın belirgin biçimde üzerine çıkması fotosentez hızını nasıl etkileyebilir?",
+      "back": "Enzimlerin etkinliği azalabilir veya yapıları bozulabilir; fotosentez hızı düşebilir ya da süreç durabilir. Uygun sıcaklık aralığı bitki türüne göre değişir."
+    },
+    {
+      "id": "biyo_10_u01_k02_o11:flashcard",
+      "front": "Bitkilerde fotosentezin sadeleştirilmiş kimyasal denklemindeki temel girdileri ve ürünleri yazınız.",
+      "back": "Işık ve klorofil varlığında CO₂ ile H₂O'dan C₆H₁₂O₆ ve O₂ oluşur."
+    },
+    {
+      "id": "biyo_10_u01_k02_o12:flashcard",
+      "front": "Bazı fotosentetik prokaryotlar su yerine hangi hidrojen kaynağını kullanabilir ve bu durumda hangi yan ürün oluşabilir?",
+      "back": "Bazı prokaryotlar H₂S kullanabilir; bu süreçte O₂ yerine kükürt oluşabilir."
+    }
+  ],
+  "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)"
+}

@@ -1,0 +1,251 @@
+{
+  "konu_id": "biyo_10_u01_k03",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k03_o01",
+      "alt_beceri": "Kemosentez",
+      "metin": "Işık almayan kapalı bir laboratuvar mikro-ortamında bazı prokaryotlar inorganik maddeleri oksitleyip organik besin sentezliyor. Bu süreci hangi kavram açıklar?",
+      "secenekler": [
+        "Kemosentez",
+        "Fotosentez",
+        "Fermantasyon",
+        "Hücresel sindirim"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kemosentez yapan prokaryotlar, inorganik maddelerin oksidasyonundan sağlanan kimyasal enerjiyle organik madde üretir. Süreç ışık gerektirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentezi, enerji kaynağı ve sentezlenen madde bakımından açıklayınız.",
+        "back": "Bazı prokaryotların inorganik maddeleri oksitleyerek elde ettiği kimyasal enerjiyle inorganik maddelerden organik madde sentezlemesine kemosentez denir."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o02",
+      "alt_beceri": "Kemosentez",
+      "metin": "Bir prokaryot, ışık kullanmadan NH₃'ü oksitleyip açığa çıkan enerjiden yararlanıyor. Bu enerji kaynağı hangi süreçle sağlanır?",
+      "secenekler": [
+        "Organik besinlerin sindirimi",
+        "İnorganik maddenin oksidasyonu",
+        "Klorofilin ışığı soğurması",
+        "Suyun fotosentetik fotolizi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kemosentezde NH₃ gibi inorganik maddelerin oksidasyonu kimyasal enerji açığa çıkarır. Klorofilin ışık soğurması ise fotosentezin enerji kaynağıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentetik ototroflar besin sentezlemek için kimyasal enerjiyi hangi süreçten sağlar?",
+        "back": "H₂S, H₂, NH₃, NO₂, Fe²⁺ veya kükürt gibi inorganik maddelerin oksitlenmesi enerji açığa çıkarır."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o03",
+      "alt_beceri": "Kemosentez",
+      "metin": "Bir prokaryot, H₂ gazını oksitleyerek elde ettiği enerjiyle CO₂’den organik madde sentezliyor. Bu oksidasyondan sağlanan enerji önce hangi molekülün sentezinde kullanılabilir?",
+      "secenekler": [
+        "Klorofil",
+        "Glikoz",
+        "ATP",
+        "Oksijen"
+      ],
+      "dogru_index": 2,
+      "cozum": "İnorganik maddelerin oksidasyonu sırasında açığa çıkan enerji ATP sentezlemek için kullanılır; ATP, organik madde üretiminde görev alır. Kemosentez klorofil veya ışık gerektirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentezde inorganik maddelerin oksidasyonuyla açığa çıkan enerji, organik madde sentezine aktarılmadan önce hangi molekülde tutulur?",
+        "back": "Açığa çıkan enerji ATP sentezinde kullanılır; ATP organik molekül üretimine enerji aktarır."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o04",
+      "alt_beceri": "Kemosentez",
+      "metin": "Kemosentezde organik moleküllerin karbonunu sağlayan madde ile hidrojen kaynağı hangisinde doğru eşleştirilmiştir?",
+      "secenekler": [
+        "N₂ karbon kaynağıdır; hidrojen yalnızca metandan sağlanır.",
+        "O₂ karbon kaynağıdır; hidrojen yalnızca glikozdan sağlanır.",
+        "ATP karbon kaynağıdır; hidrojen yalnızca ışıktan sağlanır.",
+        "CO₂ karbon kaynağıdır; hidrojen farklı inorganik kaynaklardan sağlanabilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Kemosentezde organik madde sentezi için CO₂ kullanılır. Hidrojen farklı inorganik kaynaklardan gelebilir; bunların oksidasyonu enerji sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentezde organik madde sentezlenirken kullanılan temel inorganik karbon ve hidrojen kaynaklarını açıklayınız.",
+        "back": "Organik madde sentezinde CO₂ ve H₂O kullanılır; hidrojeni sağlayan inorganik maddeler farklılık gösterebilir."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o05",
+      "alt_beceri": "Kemosentez",
+      "metin": "Kemoototrof canlılar ekosistemde besin ve enerji akışının başlangıcında hangi temel rolü üstlenir?",
+      "secenekler": [
+        "Üretici; inorganik maddelerin oksidasyonundan enerji sağlayıp organik madde üretir.",
+        "Tüketici; besinini yalnızca başka canlılardan hazır alır.",
+        "Ayrıştırıcı; yalnızca ölü organik maddeleri parçalar.",
+        "Cansız bileşen; enerji dönüşümü gerçekleştirmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Kemoototroflar inorganik maddelerin oksidasyonuyla enerji elde edip organik besin üretir. Bu nedenle ekosistemde üretici rolündedirler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentetik ototrofların ekosistemde besin ve enerji akışı açısından üstlendiği temel rolü açıklayınız.",
+        "back": "Kemosentetik ototroflar üreticidir; ürettikleri besinler bulundukları ekosistemde enerji akışının başlangıcını oluşturur."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o06",
+      "alt_beceri": "Kemosentez",
+      "metin": "Kemosentetik bir prokaryotun gece-gündüz ayrımı olmaksızın besin üretebilmesini en iyi açıklayan özellik hangisidir?",
+      "secenekler": [
+        "Fotosentez için ışık enerjisini depolaması",
+        "İnorganik madde oksidasyonundan enerji sağlaması",
+        "Klorofilini yalnızca geceleri kullanması",
+        "Gece fotosentez hızını artırması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kemosentez ışık ve klorofil gerektirmez; kimyasal enerji inorganik maddelerin oksidasyonundan sağlanır. Bu nedenle besin sentezi gece-gündüz fark etmeksizin gerçekleşebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentez yapan canlıların fotosentetik ototroflardan farklı olarak klorofil ve ışığa bağımlılığı nasıldır?",
+        "back": "Kemoototroflar klorofil bulundurmaz ve ışık enerjisini kullanmaz; kemosentez bu yüzden günün her saatinde gerçekleşebilir."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o07",
+      "alt_beceri": "Kemosentez",
+      "metin": "Bir redoks tepkimesinde bir madde elektron vererek ürüne dönüşüyor. Bu madde için hangi kimyasal süreç gerçekleşmiştir?",
+      "secenekler": [
+        "Fosforilasyon",
+        "İndirgenme",
+        "Oksidasyon",
+        "Fotosentez"
+      ],
+      "dogru_index": 2,
+      "cozum": "Oksidasyonda atom veya molekülden elektron ayrılır. Elektron kazanılması ise indirgenmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksidasyonu elektron alışverişi bakımından tanımlayınız.",
+        "back": "Oksidasyon, bir atom veya molekülden elektron ayrılmasını sağlayan kimyasal reaksiyondur."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o08",
+      "alt_beceri": "Kemosentez",
+      "metin": "Bir çevre izleme sensöründe, metanojen arkelerin etkin olduğu kapalı mikrobiyal düzeneğin gaz çıktısı tanımlanacak. Hangi kimyasal formül sensör kaydına yazılmalıdır?",
+      "secenekler": [
+        "Karbondioksit (CO₂)",
+        "Oksijen (O₂)",
+        "Azot (N₂)",
+        "Metan (CH₄)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Metanojen arkeler metabolik faaliyetleri sırasında metan oluşturur. Metanın kimyasal formülü CH₄ olduğundan sensör kaydında CH₄ yer almalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentez yapan metanojen arkelerin oluşturabildiği gazın kimyasal formülü nedir?",
+        "back": "Metan (CH₄)."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o09",
+      "alt_beceri": "Kemosentez",
+      "metin": "Hidrojen sülfürü oksitleyen bir kemoototrof CO₂'yi kullanarak organik madde üretiyor. Bu süreçte CO₂'nin işlevi nedir?",
+      "secenekler": [
+        "Organik maddenin karbon kaynağı olmak",
+        "Işık enerjisini soğurmak",
+        "Klorofil üretmek",
+        "Elektron taşıma sisteminin yerini almak"
+      ],
+      "dogru_index": 0,
+      "cozum": "CO₂, kemosentezde organik moleküllerin sentezi için kullanılan karbon kaynağıdır. Enerji ise CO₂'den değil, H₂S gibi inorganik maddelerin oksidasyonundan sağlanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemosentezde sentezlenen organik maddelerin karbonu hangi temel inorganik kaynaktan gelir?",
+        "back": "Kemosentezde organik madde sentezi için CO₂ kullanılır."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k03_o10",
+      "alt_beceri": "Kemosentez",
+      "metin": "Kapalı devre bir bitki yetiştirme sisteminin biyolojik filtresinde kemoototrof bakteriler organik besin üretirken, heterotrof protistler bu bakterilerle besleniyor. Protistler besin ağında hangi roldedir?",
+      "secenekler": [
+        "Üretici; organik maddeleri kendi sentezler.",
+        "Tüketici; besinini başka canlılardan alır.",
+        "Ayrıştırıcı; cansız çevre bileşenidir.",
+        "Fotosentetik ototrof; ışık enerjisini kullanır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Kemoototrof bakteriler inorganik maddelerin oksidasyonundan sağladıkları enerjiyle organik madde üreten üreticilerdir. Bunlarla beslenen heterotrof protistler tüketicidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kemoototrof bakterilerin ürettiği organik maddelerle beslenen bir heterotrof, besin ağında hangi trofik roldedir?",
+        "back": "Tüketicidir; organik maddelerini başka canlılardan hazır alır."
+      },
+      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k03_o01:flashcard",
+      "front": "Kemosentezi, enerji kaynağı ve sentezlenen madde bakımından açıklayınız.",
+      "back": "Bazı prokaryotların inorganik maddeleri oksitleyerek elde ettiği kimyasal enerjiyle inorganik maddelerden organik madde sentezlemesine kemosentez denir."
+    },
+    {
+      "id": "biyo_10_u01_k03_o02:flashcard",
+      "front": "Kemosentetik ototroflar besin sentezlemek için kimyasal enerjiyi hangi süreçten sağlar?",
+      "back": "H₂S, H₂, NH₃, NO₂, Fe²⁺ veya kükürt gibi inorganik maddelerin oksitlenmesi enerji açığa çıkarır."
+    },
+    {
+      "id": "biyo_10_u01_k03_o03:flashcard",
+      "front": "Kemosentezde inorganik maddelerin oksidasyonuyla açığa çıkan enerji, organik madde sentezine aktarılmadan önce hangi molekülde tutulur?",
+      "back": "Açığa çıkan enerji ATP sentezinde kullanılır; ATP organik molekül üretimine enerji aktarır."
+    },
+    {
+      "id": "biyo_10_u01_k03_o04:flashcard",
+      "front": "Kemosentezde organik madde sentezlenirken kullanılan temel inorganik karbon ve hidrojen kaynaklarını açıklayınız.",
+      "back": "Organik madde sentezinde CO₂ ve H₂O kullanılır; hidrojeni sağlayan inorganik maddeler farklılık gösterebilir."
+    },
+    {
+      "id": "biyo_10_u01_k03_o05:flashcard",
+      "front": "Kemosentetik ototrofların ekosistemde besin ve enerji akışı açısından üstlendiği temel rolü açıklayınız.",
+      "back": "Kemosentetik ototroflar üreticidir; ürettikleri besinler bulundukları ekosistemde enerji akışının başlangıcını oluşturur."
+    },
+    {
+      "id": "biyo_10_u01_k03_o06:flashcard",
+      "front": "Kemosentez yapan canlıların fotosentetik ototroflardan farklı olarak klorofil ve ışığa bağımlılığı nasıldır?",
+      "back": "Kemoototroflar klorofil bulundurmaz ve ışık enerjisini kullanmaz; kemosentez bu yüzden günün her saatinde gerçekleşebilir."
+    },
+    {
+      "id": "biyo_10_u01_k03_o07:flashcard",
+      "front": "Oksidasyonu elektron alışverişi bakımından tanımlayınız.",
+      "back": "Oksidasyon, bir atom veya molekülden elektron ayrılmasını sağlayan kimyasal reaksiyondur."
+    },
+    {
+      "id": "biyo_10_u01_k03_o08:flashcard",
+      "front": "Kemosentez yapan metanojen arkelerin oluşturabildiği gazın kimyasal formülü nedir?",
+      "back": "Metan (CH₄)."
+    },
+    {
+      "id": "biyo_10_u01_k03_o09:flashcard",
+      "front": "Kemosentezde sentezlenen organik maddelerin karbonu hangi temel inorganik kaynaktan gelir?",
+      "back": "Kemosentezde organik madde sentezi için CO₂ kullanılır."
+    },
+    {
+      "id": "biyo_10_u01_k03_o10:flashcard",
+      "front": "Kemoototrof bakterilerin ürettiği organik maddelerle beslenen bir heterotrof, besin ağında hangi trofik roldedir?",
+      "back": "Tüketicidir; organik maddelerini başka canlılardan hazır alır."
+    }
+  ],
+  "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)"
+}

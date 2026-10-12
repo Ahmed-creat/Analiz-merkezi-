@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u04_k03",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u04_k03_o01",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Aynı hava koşullarında aynı odada iki ses kaynağı farklı frekanslarda ses çıkarıyor. Seslerin yayılma sürati için en uygun çıkarım hangisidir?",
+      "secenekler": [
+        "Aynı ortamda yayıldıkları için süratleri aynıdır.",
+        "Frekansı büyük olanın sürati mutlaka daha büyüktür.",
+        "Frekansı küçük olanın sürati mutlaka daha büyüktür.",
+        "Ses sürati yalnızca kaynağın ses yüksekliğine bağlıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Ses dalgalarının yayılma sürati ortamın özelliklerine bağlıdır. Aynı koşullardaki aynı ortamda frekansları farklı olsa da seslerin süratleri eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir dalganın yayılma süratini açıklarken ortamın hangi fiziksel özelliklerini incelemelisin?",
+        "back": "Dalgaların sürati ortama bağlıdır; ortamın yoğunluğu, esnekliği ve sıcaklığı etkili olabilir. Etki, dalga türüne göre değişir."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o02",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Bir atölyede çalışan pompanın titreşim sesi, eşit uzunluktaki iki yoldan birinde alüminyum gövde boyunca, diğerinde havadan iletiliyor. Hangi algılayıcı önce sinyal alır?",
+      "secenekler": [
+        "Havadaki sensör; ses gazlarda daha hızlı yayılır.",
+        "Çelik taşıyıcıya bağlı sensör; ses katı ortamda havaya göre daha hızlı yayılır.",
+        "İki sensöre aynı anda; sesin sürati ortamdan bağımsızdır.",
+        "Yalnızca taşıyıcının ucundaki sensör, kaynağa baktığı için."
+      ],
+      "dogru_index": 1,
+      "cozum": "Ses katı ortamda havaya göre daha hızlı yayılır. Bu nedenle eşit uzunluktaki yollarda pompa gövdesine bağlı algılayıcı sinyali önce alır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sesin katı, sıvı ve gaz ortamlardaki yayılma süratlerini nasıl karşılaştırırsın?",
+        "back": "Ses katılarda en hızlı, gazlarda en yavaş yayılır; sıvılardaki sürati bu iki durum arasındadır."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o03",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Bir akustik laboratuvarında aynı gaz ortamında üretilen iki ses darbesi, farklı sıcaklıklardaki bölmelerden geçiriliyor. Sesin yayılma sürati hangi bölmede daha büyük olur?",
+      "secenekler": [
+        "Daha soğuk bölmede; sıcaklık arttıkça sürat azalır.",
+        "İki bölmede de kesinlikle sıfırdır.",
+        "Daha sıcak bölmede; aynı gazda sıcaklık arttıkça ses daha hızlı yayılır.",
+        "Sıcaklıkla değişmez, çünkü ses mekaniktir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Aynı gaz ortamında sıcaklık arttıkça taneciklerin titreşim enerjisi artar ve sesin yayılma sürati yükselir. Bu yüzden sıcak bölmede daha büyüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı gaz ortamında sıcaklık arttığında ses dalgasının yayılma sürati nasıl değişir?",
+        "back": "Sıcaklık arttıkça taneciklerin titreşim enerjisi artar; ses dalgaları aynı gaz ortamında daha hızlı yayılır."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o04",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Bir deniz araştırma aracı, su içindeki akustik konumlandırma sinyalini aynı uzunluktaki hava yolundan geçen ses sinyaliyle karşılaştırıyor. Hangi ortamda sesin yayılma sürati daha büyüktür?",
+      "secenekler": [
+        "Havadaki mikrofon; ses gazlarda daha hızlı yayılır.",
+        "İki sinyal aynı anda gelir, çünkü kaynağın frekansı aynıdır.",
+        "Hiçbiri; ses sıvıda yayılamaz.",
+        "Sudaki hidrofon; ses sıvı ortamda havaya göre daha hızlı yayılır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Ses sıvılarda gazlara göre daha hızlı yayılır. Bu nedenle aynı uzunluktaki yolda su içindeki akustik sinyal daha büyük yayılma süratine sahiptir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sesin sudaki yayılma sürati havadaki süratiyle nasıl karşılaştırılır?",
+        "back": "Ses sıvı ortamda genellikle gaz ortama göre daha hızlı yayılır."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o05",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Bir liman mühendisi, model dalga havuzunda aynı kaynaktan çıkan su dalgalarını 2 m ve 0,5 m derinliğindeki bölmelerde inceliyor. Dalganın yayılma sürati hangi bölmede daha büyüktür?",
+      "secenekler": [
+        "Derinliği 2 m olan bölgede",
+        "Derinliği 0,5 m olan bölgede",
+        "Her iki bölgede eşittir; derinlik etkili değildir.",
+        "Yalnızca dalga genliğinin büyük olduğu bölgede"
+      ],
+      "dogru_index": 0,
+      "cozum": "Su dalgalarının sürati derinlik arttıkça artar. Bu nedenle 2 m derinliğindeki bölmede yayılma sürati daha büyüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgaları sığ kıyıya yaklaşırken derinlik ve yayılma sürati nasıl değişir?",
+        "back": "Su derinliği azalır; su dalgalarının yayılma sürati de azalır."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o06",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Bir tünel güzergâhını inceleyen jeofizik ekibi, kontrollü bir sismik titreşimi eşit uzunluktaki bazalt ve gevşek dolgu örneklerinden geçiriyor. Sinyalin önce ulaşması hangi örnekte beklenir?",
+      "secenekler": [
+        "Gevşek kilce zengin zeminde; yumuşak ortamda dalgalar daha hızlıdır.",
+        "Bazalt örneğinde; sert kayaçta deprem dalgaları daha hızlı yayılır.",
+        "İkisine de ulaşmaz; mekanik dalga kayaçta ilerleyemez.",
+        "İkisi de aynı anda; ortamın özelliği etkisizdir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Deprem dalgaları sert kayaçlarda gevşek, yumuşak ortamlara göre daha hızlı yayılır. Bu nedenle kontrollü sismik sinyal bazalt örneğine önce ulaşır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Deprem dalgalarının kayaç ve yumuşak zeminlerdeki yayılma süratini nasıl karşılaştırırsın?",
+        "back": "Deprem dalgaları sert kayaçlarda kum veya toprak gibi yumuşak zeminlere göre daha hızlı yayılır."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o07",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Bir öğrenci, dalgaları maddesel ortam gereksinimine göre sınıflandırıyor. Ortamdaki tanecikler bulunmadığında da yayılabilen dalga türü hangisidir?",
+      "secenekler": [
+        "Elektromanyetik dalgalar yalnızca katılarda yayılır.",
+        "Uzay boşluğu sesi hızlandırır.",
+        "Elektromanyetik dalgalar boşlukta da yayılabilir.",
+        "Tüm dalgalar boşlukta ışık hızıyla ilerler."
+      ],
+      "dogru_index": 2,
+      "cozum": "Elektromanyetik dalgalar yayılmak için maddesel ortama ihtiyaç duymaz ve boşlukta yayılabilir. Mekanik dalgaların yayılması için maddesel ortam gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektromanyetik dalgaların boşluktaki yayılma sürati ile mekanik dalgaların yayılabilme koşulunu karşılaştır.",
+        "back": "Elektromanyetik dalgalar boşlukta ışık hızıyla, yaklaşık 3 × 10⁸ m/s süratle yayılır; mekanik dalgaların yayılması için maddesel ortam gerekir."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o08",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Elektromanyetik bir dalga boşluktan maddesel ortama geçiyor. Optik yoğunluğu daha büyük olan ortamda ortalama yayılma sürati için ne beklenir?",
+      "secenekler": [
+        "Işık hızından daha büyük olur.",
+        "Yoğunluktan bağımsız olarak artar.",
+        "Boşluktaki süratiyle kesinlikle aynı kalır.",
+        "Azalır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Optik yoğunluğu daha yüksek olan maddesel ortamda elektromanyetik dalganın ortalama yayılma sürati daha küçüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boşluktan optik yoğunluğu daha büyük bir maddesel ortama geçen elektromanyetik dalganın sürati nasıl değişir?",
+        "back": "Optik yoğunluğu daha büyük ortamda elektromanyetik dalganın ortalama yayılma sürati azalır."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o09",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Bir fabrika sahasının uzak ucundaki güvenlik sistemi, uyarı lambasıyla sireni aynı anda çalıştırıyor. Aynı uzaklıktaki görevli ışığı önce görüp sesi sonra duyuyor. En uygun açıklama hangisidir?",
+      "secenekler": [
+        "Işık havada sesten çok daha hızlı yayılır.",
+        "Ses dalgası boşlukta ışık hızında ilerler.",
+        "Işık yalnızca kaynağa yakın olduğunda yayılır.",
+        "Görünür ışığın hızı sesin hızından küçüktür."
+      ],
+      "dogru_index": 0,
+      "cozum": "Işık havada sesten çok daha hızlı yayılır. Bu yüzden aynı anda üretilen ışık ve ses görevliye farklı zamanlarda ulaşır; ışık önce algılanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Işık ve ses aynı anda üretildiğinde gözlemciye ulaşma sırası hangi özellik farkıyla açıklanır?",
+        "back": "Işık havada sesten çok daha hızlı yayıldığı için gözlemci ışığı önce algılayabilir."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k03_o10",
+      "alt_beceri": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "metin": "Ses dalgası için esneklik özelliği daha büyük ve yoğunluğu daha küçük bir ortamla karşılaştırma yapılıyor. Bu değişiklikler dalga süratini hangi yönde etkiler?",
+      "secenekler": [
+        "Sürati azaltır; esneklik arttıkça ses yavaşlar.",
+        "Sürati artırır; esneklik artışı ve yoğunluk azalışı sürati yükseltir.",
+        "Sürati etkilemez; ses yalnızca frekansa bağlıdır.",
+        "Sürati sıfırlar; yoğunluk azalınca ortam ortadan kalkar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Mekanik dalga sürati ortamın esnekliği arttıkça artar, yoğunluğu arttıkça azalır. Bu nedenle daha esnek ve daha az yoğun ortamda sürat daha yüksek olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik bir dalganın yayılma sürati, ortamın esnekliği ve yoğunluğu arttığında nasıl etkilenir?",
+        "back": "Ortamın esnekliği arttıkça sürat artar; yoğunluğu arttıkça sürat azalır."
+      },
+      "kazanim": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u04_k03_o01:flashcard",
+      "front": "Bir dalganın yayılma süratini açıklarken ortamın hangi fiziksel özelliklerini incelemelisin?",
+      "back": "Dalgaların sürati ortama bağlıdır; ortamın yoğunluğu, esnekliği ve sıcaklığı etkili olabilir. Etki, dalga türüne göre değişir."
+    },
+    {
+      "id": "fizik_10_u04_k03_o02:flashcard",
+      "front": "Sesin katı, sıvı ve gaz ortamlardaki yayılma süratlerini nasıl karşılaştırırsın?",
+      "back": "Ses katılarda en hızlı, gazlarda en yavaş yayılır; sıvılardaki sürati bu iki durum arasındadır."
+    },
+    {
+      "id": "fizik_10_u04_k03_o03:flashcard",
+      "front": "Aynı gaz ortamında sıcaklık arttığında ses dalgasının yayılma sürati nasıl değişir?",
+      "back": "Sıcaklık arttıkça taneciklerin titreşim enerjisi artar; ses dalgaları aynı gaz ortamında daha hızlı yayılır."
+    },
+    {
+      "id": "fizik_10_u04_k03_o04:flashcard",
+      "front": "Sesin sudaki yayılma sürati havadaki süratiyle nasıl karşılaştırılır?",
+      "back": "Ses sıvı ortamda genellikle gaz ortama göre daha hızlı yayılır."
+    },
+    {
+      "id": "fizik_10_u04_k03_o05:flashcard",
+      "front": "Su dalgaları sığ kıyıya yaklaşırken derinlik ve yayılma sürati nasıl değişir?",
+      "back": "Su derinliği azalır; su dalgalarının yayılma sürati de azalır."
+    },
+    {
+      "id": "fizik_10_u04_k03_o06:flashcard",
+      "front": "Deprem dalgalarının kayaç ve yumuşak zeminlerdeki yayılma süratini nasıl karşılaştırırsın?",
+      "back": "Deprem dalgaları sert kayaçlarda kum veya toprak gibi yumuşak zeminlere göre daha hızlı yayılır."
+    },
+    {
+      "id": "fizik_10_u04_k03_o07:flashcard",
+      "front": "Elektromanyetik dalgaların boşluktaki yayılma sürati ile mekanik dalgaların yayılabilme koşulunu karşılaştır.",
+      "back": "Elektromanyetik dalgalar boşlukta ışık hızıyla, yaklaşık 3 × 10⁸ m/s süratle yayılır; mekanik dalgaların yayılması için maddesel ortam gerekir."
+    },
+    {
+      "id": "fizik_10_u04_k03_o08:flashcard",
+      "front": "Boşluktan optik yoğunluğu daha büyük bir maddesel ortama geçen elektromanyetik dalganın sürati nasıl değişir?",
+      "back": "Optik yoğunluğu daha büyük ortamda elektromanyetik dalganın ortalama yayılma sürati azalır."
+    },
+    {
+      "id": "fizik_10_u04_k03_o09:flashcard",
+      "front": "Işık ve ses aynı anda üretildiğinde gözlemciye ulaşma sırası hangi özellik farkıyla açıklanır?",
+      "back": "Işık havada sesten çok daha hızlı yayıldığı için gözlemci ışığı önce algılayabilir."
+    },
+    {
+      "id": "fizik_10_u04_k03_o10:flashcard",
+      "front": "Mekanik bir dalganın yayılma sürati, ortamın esnekliği ve yoğunluğu arttığında nasıl etkilenir?",
+      "back": "Ortamın esnekliği arttıkça sürat artar; yoğunluğu arttıkça sürat azalır."
+    }
+  ],
+  "baslik": "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
+  "topic_key": "Fizik > 4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler"
+}

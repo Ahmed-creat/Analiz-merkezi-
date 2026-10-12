@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u03_k02",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u03_k02_o01",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "34 ve 85 sayılarının en büyük pozitif ortak böleni kaçtır?",
+      "secenekler": [
+        "17",
+        "5",
+        "15",
+        "34"
+      ],
+      "dogru_index": 0,
+      "cozum": "34=2×17 ve 85=5×17 olduğundan en büyük ortak pozitif bölen 17’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki veya daha fazla doğal sayının EBOB'u neyi ifade eder?",
+        "back": "Sayıların ortak pozitif bölenlerinin en büyüğüdür."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o02",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "29 ve 36 sayılarının en küçük pozitif ortak katı kaçtır?",
+      "secenekler": [
+        "522",
+        "1 044",
+        "756",
+        "2 088"
+      ],
+      "dogru_index": 1,
+      "cozum": "29 asal, 36=2²×3² olduğundan EKOK(29,36)=29×36=1 044 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki veya daha fazla doğal sayının EKOK'u neyi ifade eder?",
+        "back": "Sayıların pozitif ortak katlarının en küçüğüdür."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o03",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "47 ve 55 sayılarının en büyük pozitif ortak böleni kaçtır?",
+      "secenekler": [
+        "11",
+        "5",
+        "1",
+        "2"
+      ],
+      "dogru_index": 2,
+      "cozum": "47 asal bir sayıdır ve 55=5×11 biçiminde ayrılır. İki sayının ortak pozitif böleni yalnızca 1 olduğundan EBOB(47,55)=1’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aralarında asal iki doğal sayının EBOB'unu belirt.",
+        "back": "EBOB 1'dir."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o04",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "44 ve 66 sayılarının EBOB’u 22 olduğuna göre EKOK’ları kaçtır?",
+      "secenekler": [
+        "2 904",
+        "66",
+        "264",
+        "132"
+      ],
+      "dogru_index": 3,
+      "cozum": "44 × 66 = EBOB × EKOK bağıntısı kullanılır. EKOK = 44 × 66 / 22 = 132 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Pozitif iki doğal sayı A ve B ile EBOB ve EKOK arasındaki çarpım ilişkisini yaz.",
+        "back": "A × B = EBOB(A, B) × EKOK(A, B)."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o05",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "252 = 2² × 3² × 7 ve 300 = 2² × 3 × 5² olduğuna göre EBOB(252, 300) kaçtır?",
+      "secenekler": [
+        "12",
+        "6",
+        "36",
+        "420"
+      ],
+      "dogru_index": 0,
+      "cozum": "EBOB için ortak asal çarpanlar ve bunların küçük üsleri seçilir: 2² × 3 = 12. 7 ve 5 ortak asal çarpan olmadığından alınmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpanlarına ayrılmış iki sayının EBOB'u bulunurken ortak asal çarpanların üsleri nasıl seçilir?",
+        "back": "Yalnızca ortak asal çarpanlar alınır ve her birinin küçük üssü seçilir."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o06",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "27 ve 38 sayılarının en küçük pozitif ortak katı kaçtır?",
+      "secenekler": [
+        "513",
+        "1 026",
+        "342",
+        "2 052"
+      ],
+      "dogru_index": 1,
+      "cozum": "27=3³ ve 38=2×19 olduğundan ortak asal çarpanları yoktur. EKOK(27,38)=27×38=1 026 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpanlarına ayrılmış sayılarda EKOK hesaplanırken hangi asal çarpanlar ve üsler kullanılır?",
+        "back": "Görülen tüm asal çarpanların her biri için en büyük üs seçilir."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o07",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "Birbirinden farklı doğal sayıların pozitif ortak bölenlerinin en küçüğü kaçtır?",
+      "secenekler": [
+        "14",
+        "2",
+        "1",
+        "5"
+      ],
+      "dogru_index": 2,
+      "cozum": "1 her doğal sayının pozitif bölenidir ve bu sayıların ortak bölenidir. Bundan küçük pozitif tam sayı bulunmadığından en küçük pozitif ortak bölen 1’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birbirinden farklı doğal sayıların pozitif ortak bölenlerinin en küçüğü hakkında nasıl bir önerme kurulur?",
+        "back": "En küçük pozitif ortak bölen her zaman 1'dir."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o08",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "37 ve 185 sayıları için (EBOB, EKOK) sıralı ikilisi hangisidir?",
+      "secenekler": [
+        "(185, 37)",
+        "(37, 37)",
+        "(185, 185)",
+        "(37, 185)"
+      ],
+      "dogru_index": 3,
+      "cozum": "185=5×37 olduğundan 37, 185’i böler. Bu nedenle EBOB(37,185)=37 ve EKOK(37,185)=185 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sayıların biri diğerinin katı olduğunda bu iki sayının EBOB ve EKOK'unu diğer sayıyla nasıl ilişkilendirirsin?",
+        "back": "EBOB küçük sayı, EKOK büyük sayıdır."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o09",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "19, 22 ve 35 sayılarının en küçük pozitif ortak katı kaçtır?",
+      "secenekler": [
+        "14 630",
+        "7 315",
+        "2 926",
+        "29 260"
+      ],
+      "dogru_index": 0,
+      "cozum": "19, 22=2×11 ve 35=5×7 sayıları aralarında asaldır; EKOK’ları çarpımlarına eşittir: 19×22×35=14 630.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birden fazla doğal sayının en küçük pozitif ortak katını bulmak için hangi büyüklüğü belirlersin?",
+        "back": "Sayıların en küçük pozitif ortak katı olan EKOK’u belirlerim."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o10",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "31 ve 32 sayılarının en küçük pozitif ortak katı kaçtır?",
+      "secenekler": [
+        "496",
+        "992",
+        "31",
+        "1 984"
+      ],
+      "dogru_index": 1,
+      "cozum": "31 ile 32 aralarında asal olduğundan EKOK(31,32)=31×32=992 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birden çok uzunlukla boşluksuz tamamlanacak en kısa toplam uzunluğu nasıl belirlersin?",
+        "back": "Verilen uzunlukların en küçük ortak katı olan EKOK’u bulurum."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o11",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "66, 84 ve 102 sayılarının en büyük pozitif ortak böleni kaçtır?",
+      "secenekler": [
+        "12",
+        "2",
+        "6",
+        "14"
+      ],
+      "dogru_index": 2,
+      "cozum": "66=2×3×11, 84=2²×3×7 ve 102=2×3×17 olduğundan ortak asal çarpanların en küçük üsleri 2×3=6’yı verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üç sayının EBOB'unu sözlü olarak nasıl tanımlarsın?",
+        "back": "Üç sayının tamamını bölen en büyük pozitif tam sayıdır."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o12",
+      "alt_beceri": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "metin": "43 ve 44 aralarında asal olduğuna göre EKOK(43, 44) kaçtır?",
+      "secenekler": [
+        "43",
+        "44",
+        "1 849",
+        "1 892"
+      ],
+      "dogru_index": 3,
+      "cozum": "Aralarında asal iki sayının EKOK’u çarpımlarına eşittir. 43×44=1 892 olduğundan EKOK(43,44)=1 892’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aralarında asal iki pozitif sayının EKOK'unu EBOB-EKOK çarpım ilişkisiyle nasıl ifade edersin?",
+        "back": "EBOB 1 olduğundan EKOK, iki sayının çarpımına eşittir."
+      },
+      "kazanim": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u03_k02_o01:flashcard",
+      "front": "İki veya daha fazla doğal sayının EBOB'u neyi ifade eder?",
+      "back": "Sayıların ortak pozitif bölenlerinin en büyüğüdür."
+    },
+    {
+      "id": "mat_10_u03_k02_o02:flashcard",
+      "front": "İki veya daha fazla doğal sayının EKOK'u neyi ifade eder?",
+      "back": "Sayıların pozitif ortak katlarının en küçüğüdür."
+    },
+    {
+      "id": "mat_10_u03_k02_o03:flashcard",
+      "front": "Aralarında asal iki doğal sayının EBOB'unu belirt.",
+      "back": "EBOB 1'dir."
+    },
+    {
+      "id": "mat_10_u03_k02_o04:flashcard",
+      "front": "Pozitif iki doğal sayı A ve B ile EBOB ve EKOK arasındaki çarpım ilişkisini yaz.",
+      "back": "A × B = EBOB(A, B) × EKOK(A, B)."
+    },
+    {
+      "id": "mat_10_u03_k02_o05:flashcard",
+      "front": "Asal çarpanlarına ayrılmış iki sayının EBOB'u bulunurken ortak asal çarpanların üsleri nasıl seçilir?",
+      "back": "Yalnızca ortak asal çarpanlar alınır ve her birinin küçük üssü seçilir."
+    },
+    {
+      "id": "mat_10_u03_k02_o06:flashcard",
+      "front": "Asal çarpanlarına ayrılmış sayılarda EKOK hesaplanırken hangi asal çarpanlar ve üsler kullanılır?",
+      "back": "Görülen tüm asal çarpanların her biri için en büyük üs seçilir."
+    },
+    {
+      "id": "mat_10_u03_k02_o07:flashcard",
+      "front": "Birbirinden farklı doğal sayıların pozitif ortak bölenlerinin en küçüğü hakkında nasıl bir önerme kurulur?",
+      "back": "En küçük pozitif ortak bölen her zaman 1'dir."
+    },
+    {
+      "id": "mat_10_u03_k02_o08:flashcard",
+      "front": "Sayıların biri diğerinin katı olduğunda bu iki sayının EBOB ve EKOK'unu diğer sayıyla nasıl ilişkilendirirsin?",
+      "back": "EBOB küçük sayı, EKOK büyük sayıdır."
+    },
+    {
+      "id": "mat_10_u03_k02_o09:flashcard",
+      "front": "Birden fazla doğal sayının en küçük pozitif ortak katını bulmak için hangi büyüklüğü belirlersin?",
+      "back": "Sayıların en küçük pozitif ortak katı olan EKOK’u belirlerim."
+    },
+    {
+      "id": "mat_10_u03_k02_o10:flashcard",
+      "front": "Birden çok uzunlukla boşluksuz tamamlanacak en kısa toplam uzunluğu nasıl belirlersin?",
+      "back": "Verilen uzunlukların en küçük ortak katı olan EKOK’u bulurum."
+    },
+    {
+      "id": "mat_10_u03_k02_o11:flashcard",
+      "front": "Üç sayının EBOB'unu sözlü olarak nasıl tanımlarsın?",
+      "back": "Üç sayının tamamını bölen en büyük pozitif tam sayıdır."
+    },
+    {
+      "id": "mat_10_u03_k02_o12:flashcard",
+      "front": "Aralarında asal iki pozitif sayının EKOK'unu EBOB-EKOK çarpım ilişkisiyle nasıl ifade edersin?",
+      "back": "EBOB 1 olduğundan EKOK, iki sayının çarpımına eşittir."
+    }
+  ],
+  "baslik": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
+  "topic_key": "Matematik > 3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat"
+}

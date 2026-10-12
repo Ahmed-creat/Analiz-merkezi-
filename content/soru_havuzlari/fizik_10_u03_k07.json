@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u03_k07",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u03_k07_o01",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir atölye matkabının metal gövdesinde yalıtım arızası nedeniyle kaçak akım oluşuyor. Gövdenin uygun topraklama bağlantısı öncelikle ne sağlar?",
+      "secenekler": [
+        "Kaçak akımın düşük dirençli toprak hattına aktarılmasına yardımcı olur.",
+        "Matkabın çalışma gerilimini yükseltir.",
+        "Yalıtım arızasını kendi kendine onarır.",
+        "Kaçak akımı cihazın içinde depolar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Topraklama, kaçak akıma düşük dirençli bir yol sağlar ve akımın dokunan kişi yerine toprak hattından geçmesine yardımcı olur. Arızayı ortadan kaldırmaz; cihaz yine onarılmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik tesisatında topraklama nedir?",
+        "back": "Elektrik kaçağı tehlikesine karşı bir cihazın iletkenle toprağa gömülü sisteme bağlanmasıdır; fazla elektrik yükü toprağa aktarılır."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o02",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir prizin topraklama yolunun oluşturulması için hangi bağlantı gereklidir?",
+      "secenekler": [
+        "Prizin iki güç iletkenini birbirine bağlamak",
+        "Prizdeki toprak bağlantısını iletkenle toprağa gömülü çubuğa bağlamak",
+        "Prizi plastik bir kutunun içine koymak",
+        "Prizi yalnızca bir anahtara bağlamak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Topraklı priz, iletken bir kabloyla toprağa gömülü topraklama çubuğuna bağlanır. Prizin güç iletkenlerini birbirine bağlamak topraklama değildir ve tehlikelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklı priz, elektrik kaçağına karşı hangi bağlantıyı içerir?",
+        "back": "Bir iletkenle topraktaki topraklama çubuğuna bağlanır."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o03",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir endüstriyel ölçüm aygıtının metal kasasında yalıtım arızası oluşuyor. Kasa uygun biçimde topraklanmışsa kaçak akım için hangi yol sağlanır?",
+      "secenekler": [
+        "Kasaya dokunan kişi üzerinden zorunlu bir yol",
+        "Sinyal kablosu üzerinden, koruyucu topraklama olmadan",
+        "Kaçak akım için düşük dirençli koruyucu toprak hattı",
+        "Havadaki ses dalgaları üzerinden"
+      ],
+      "dogru_index": 2,
+      "cozum": "Topraklama kaçak akım için düşük dirençli bir iletken yol oluşturur ve akımın insan vücudu yerine koruyucu toprak hattından geçme olasılığını artırır. Bu, her durumda cihaza dokunmanın güvenli olduğu anlamına gelmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklama, kaçak akımın insan vücudundan geçme olasılığını nasıl azaltır?",
+        "back": "Direnci düşük toprak hattı için iletken bir yol sağlayarak kaçak akımın canlı yerine bu yoldan geçmesine yardımcı olur."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o04",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir güvenlik benzetiminde temas yolundaki potansiyel fark 84 V, eşdeğer direnç 3 500 Ω olarak modelleniyor. Ohm Yasası’na göre bu yoldan geçen akım yaklaşık kaç A olur?",
+      "secenekler": [
+        "0,24 A",
+        "0,0024 A",
+        "2,4 A",
+        "0,024 A"
+      ],
+      "dogru_index": 3,
+      "cozum": "I=V/R=84/3 500=0,024 A olur. Bu, modeldeki akım büyüklüğüdür; gerçek elektrik temasları tehlikeli olabileceğinden böyle bir durumu denemek güvenli değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gerilim ve eşdeğer direnç biliniyorsa temas yolundaki akımı nasıl hesaplarsın?",
+        "back": "Ohm Yasası kullanılır: I = V/R. Gerilim volt, direnç ohm cinsinden yazılırsa sonuç amper olur."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o05",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir güvenlik değerlendirmesinde iki elektrik teması aynı vücut yolundan ve aynı süreyle gerçekleşiyor. İlk durumda vücuttan geçen akım ikinci durumdakinden daha büyükse hangi değerlendirme daha doğrudur?",
+      "secenekler": [
+        "İlk durum daha yüksek risk taşıyabilir; akım büyüklüğü önemlidir.",
+        "İkinci durum kesinlikle daha risklidir; akım büyüklüğü etkisizdir.",
+        "İki durumun riski mutlaka aynıdır.",
+        "Akımın büyüklüğü vücut güvenliğini etkilemez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Akımın büyüklüğü, vücutta izlediği yol ve maruz kalma süresi tehlikeyi belirleyen etkenlerdir. Diğer koşullar aynıyken daha büyük akım daha yüksek risk oluşturabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımının vücutta oluşturabileceği tehlikeyi hangi etkenler belirler?",
+        "back": "Akımın büyüklüğü, vücutta izlediği yol ve maruz kalma süresi tehlikenin düzeyini etkiler."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o06",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir kıyı meteoroloji istasyonundaki yüksek metal direğe yıldırım koruma sistemi kuruluyor. Sistemin temel amacı hangisidir?",
+      "secenekler": [
+        "İstasyonun besleme gerilimini ayarlamak",
+        "Yıldırımın zararlı elektrik yüklerini kontrollü biçimde toprağa aktarmaya yardımcı olmak",
+        "Tüm elektrik akımını sürekli kesmek",
+        "Rüzgâr hızını ölçmek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yıldırım koruma sistemi, yıldırımın zararlı elektrik yüklerini iletken bir yol üzerinden toprağa aktararak yapı ve canlılara yönelik riski azaltmaya yardımcı olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paratoner hangi tehlikeye karşı kullanılır ve fazla elektrik yükünü nereye aktarır?",
+        "back": "Yıldırımın zararlı etkilerine karşı kullanılan bir topraklama sistemidir; fazla yükü iletkenle toprağa aktarır."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o07",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir meteoroloji direğinin tepesine metal bir yıldırım koruma ucu yerleştiriliyor ancak bu uç toprak hattına bağlanmıyor. Sistem neden eksik kalır?",
+      "secenekler": [
+        "Metal uç rüzgârı yavaşlatacağı için",
+        "Yüksek noktada elektrik yükü oluşamayacağı için",
+        "Topraklama bağlantısı olmadan yük için güvenli aktarım yolu tamamlanmadığı için",
+        "Topraklama yalnızca ses dalgaları için kullanıldığı için"
+      ],
+      "dogru_index": 2,
+      "cozum": "Koruma ucunun işlevini tamamlayabilmesi için fazla yükleri iletken üzerinden toprağa aktaracak bağlantı gerekir. Yalnızca metal ucun bulunması güvenli yol oluşturmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yıldırım koruma iletkeninin toprağa bağlanması neden gereklidir?",
+        "back": "Fazla elektrik yüklerinin güvenli ve düşük dirençli bir yol üzerinden toprağa aktarılmasını sağlar; yalnızca metal bir uç bulunması yeterli değildir."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o08",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir binada hem cihazlardaki elektrik kaçağı riskini hem de yıldırımın zararını azaltmak isteniyor. Hangi önlemler birlikte düşünülmelidir?",
+      "secenekler": [
+        "Yalnızca plastik priz kapağı ve daha kalın kablo",
+        "Yalnızca topraklı priz; yıldırım koruması da bütünüyle sağlanır",
+        "Paratoner yerine her odaya ek bir anahtar",
+        "Cihaz kaçaklarına karşı topraklı prizler, yıldırıma karşı uygun paratoner sistemi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Topraklı prizler elektrikli cihazlardaki olası kaçaklar için, paratoner ise yıldırımın zararlı etkileri için kullanılan farklı topraklama uygulamalarıdır. Biri diğerinin işlevini tamamen üstlenmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklı priz ile paratonerin koruma amaçları arasındaki temel fark nedir?",
+        "back": "Topraklı priz cihazlardaki olası elektrik kaçağına karşı; paratoner ise binaları yıldırımın zararlı etkilerine karşı korumaya yardımcı olur."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o09",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir ölçüm odasında metal muhafazalı analiz cihazının gövdesi toprak hattına bağlanıyor. Bu bağlantı biriken elektrik yükleri bakımından ne işe yarar?",
+      "secenekler": [
+        "Biriken statik yükleri iletken bir yol üzerinden toprağa aktarmaya yardımcı olmak",
+        "Bileşenlerin çalışma gerilimini yükseltmek",
+        "Devredeki direnci sıfırlamak",
+        "Elektrik yüklerini çalışma yüzeyinde depolamak"
+      ],
+      "dogru_index": 0,
+      "cozum": "Toprak hattı iletken ve düşük dirençli bir yol sağlar; cihazın gövdesinde birikebilecek statik yüklerin toprağa aktarılmasına yardımcı olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir metal ölçüm cihazının gövdesinde statik yük birikme olasılığı varsa, gövdeyi toprak hattına bağlamak ne sağlar?",
+        "back": "Toprak hattı, gövdedeki fazla yükün güvenli biçimde aktarılabileceği düşük dirençli iletken bir yol oluşturur."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k07_o10",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Kıyıdaki bir deniz fenerinde yıldırımın zarar riskini azaltacak koruma sistemi kuruluyor. Hangi kurulum genel ilkeye uygundur?",
+      "secenekler": [
+        "Binanın bodrumunda yalıtılmış bırakmak",
+        "Yüksek bir noktaya yerleştirip iletkenle toprağa bağlamak",
+        "Metal ucu binanın içindeki cihazlara bağlamak",
+        "Yalnızca duvara boya ile işaret koymak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yıldırım koruma ucu yapının yüksek bir noktasında bulunmalı ve iletkenle toprağa bağlanmalıdır; böylece fazla yük için kontrollü bir aktarım yolu oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yıldırım koruma sistemi bir yapıya yerleştirilirken genel olarak hangi kurulum özellikleri gerekir?",
+        "back": "Yapının yüksek bir noktasına yerleştirilmeli ve uygun iletkenle toprağa bağlanmalıdır."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u03_k07_o01:flashcard",
+      "front": "Elektrik tesisatında topraklama nedir?",
+      "back": "Elektrik kaçağı tehlikesine karşı bir cihazın iletkenle toprağa gömülü sisteme bağlanmasıdır; fazla elektrik yükü toprağa aktarılır."
+    },
+    {
+      "id": "fizik_10_u03_k07_o02:flashcard",
+      "front": "Topraklı priz, elektrik kaçağına karşı hangi bağlantıyı içerir?",
+      "back": "Bir iletkenle topraktaki topraklama çubuğuna bağlanır."
+    },
+    {
+      "id": "fizik_10_u03_k07_o03:flashcard",
+      "front": "Topraklama, kaçak akımın insan vücudundan geçme olasılığını nasıl azaltır?",
+      "back": "Direnci düşük toprak hattı için iletken bir yol sağlayarak kaçak akımın canlı yerine bu yoldan geçmesine yardımcı olur."
+    },
+    {
+      "id": "fizik_10_u03_k07_o04:flashcard",
+      "front": "Gerilim ve eşdeğer direnç biliniyorsa temas yolundaki akımı nasıl hesaplarsın?",
+      "back": "Ohm Yasası kullanılır: I = V/R. Gerilim volt, direnç ohm cinsinden yazılırsa sonuç amper olur."
+    },
+    {
+      "id": "fizik_10_u03_k07_o05:flashcard",
+      "front": "Elektrik akımının vücutta oluşturabileceği tehlikeyi hangi etkenler belirler?",
+      "back": "Akımın büyüklüğü, vücutta izlediği yol ve maruz kalma süresi tehlikenin düzeyini etkiler."
+    },
+    {
+      "id": "fizik_10_u03_k07_o06:flashcard",
+      "front": "Paratoner hangi tehlikeye karşı kullanılır ve fazla elektrik yükünü nereye aktarır?",
+      "back": "Yıldırımın zararlı etkilerine karşı kullanılan bir topraklama sistemidir; fazla yükü iletkenle toprağa aktarır."
+    },
+    {
+      "id": "fizik_10_u03_k07_o07:flashcard",
+      "front": "Yıldırım koruma iletkeninin toprağa bağlanması neden gereklidir?",
+      "back": "Fazla elektrik yüklerinin güvenli ve düşük dirençli bir yol üzerinden toprağa aktarılmasını sağlar; yalnızca metal bir uç bulunması yeterli değildir."
+    },
+    {
+      "id": "fizik_10_u03_k07_o08:flashcard",
+      "front": "Topraklı priz ile paratonerin koruma amaçları arasındaki temel fark nedir?",
+      "back": "Topraklı priz cihazlardaki olası elektrik kaçağına karşı; paratoner ise binaları yıldırımın zararlı etkilerine karşı korumaya yardımcı olur."
+    },
+    {
+      "id": "fizik_10_u03_k07_o09:flashcard",
+      "front": "Bir metal ölçüm cihazının gövdesinde statik yük birikme olasılığı varsa, gövdeyi toprak hattına bağlamak ne sağlar?",
+      "back": "Toprak hattı, gövdedeki fazla yükün güvenli biçimde aktarılabileceği düşük dirençli iletken bir yol oluşturur."
+    },
+    {
+      "id": "fizik_10_u03_k07_o10:flashcard",
+      "front": "Yıldırım koruma sistemi bir yapıya yerleştirilirken genel olarak hangi kurulum özellikleri gerekir?",
+      "back": "Yapının yüksek bir noktasına yerleştirilmeli ve uygun iletkenle toprağa bağlanmalıdır."
+    }
+  ],
+  "baslik": "3.7 Topraklamanın Önemi",
+  "topic_key": "Fizik > 3.7 Topraklamanın Önemi"
+}

@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u01_k07",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u01_k07_o01",
+      "alt_beceri": "Graham Difüzyon ve Efüzyon Yasası",
+      "metin": "Aynı sıcaklıkta U gazının mol kütlesi 10 g/mol, V gazının mol kütlesi 90 g/mol’dür. Graham Yasası’na göre hangisi daha hızlı yayılır?",
+      "secenekler": [
+        "U gazı",
+        "V gazı",
+        "İkisinin hızı eşittir.",
+        "Yalnız hacimleri bilinirse karşılaştırılabilir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Graham Yasası’na göre mol kütlesi küçük olan gaz daha hızlı yayılır. U gazının mol kütlesi V’ninkinden küçük olduğu için U daha hızlıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı sıcaklıktaki gazların Graham yasasına göre yayılma hızlarını mol kütleleri bakımından karşılaştırınız.",
+        "back": "Mol kütlesi küçük olan gaz tanecikleri, mol kütlesi büyük olan gaz taneciklerinden daha hızlı yayılır."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o02",
+      "alt_beceri": "Graham Difüzyon ve Efüzyon Yasası",
+      "metin": "Aynı gazın daha sıcak ortamda daha hızlı yayılması, taneciklerin hangi değişimiyle açıklanır?",
+      "secenekler": [
+        "Mol kütlelerinin artmasıyla",
+        "Ortalama kinetik enerjilerinin ve hızlarının artmasıyla",
+        "Tanecik boyutlarının büyümesiyle",
+        "Tanecikler arası etkileşimin kesinlikle artmasıyla"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sıcaklık arttıkça moleküllerin ortalama kinetik enerjisi artar ve hızları yükselir; bu, daha hızlı yayılmayı açıklar. Isıtma mol kütlesini değiştirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir gazın difüzyon hızını etkileyen başlıca tanecik ve ortam değişkenlerini sayınız.",
+        "back": "Difüzyon hızı sıcaklık, mol kütlesi, tanecik boyutu ve molekül yapısı gibi etmenlerden etkilenir."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o03",
+      "alt_beceri": "Graham Difüzyon ve Efüzyon Yasası",
+      "metin": "Aynı sıcaklıktaki P ve Q gazlarının mol kütleleri sırasıyla 25 g/mol ve 100 g/mol’dür. Graham Yasası’na göre hangi karşılaştırma doğrudur?",
+      "secenekler": [
+        "Q gazı P’den 2 kat hızlı yayılır.",
+        "Yayılma hızları eşittir.",
+        "P gazı Q’dan 2 kat hızlı yayılır.",
+        "Mol kütleleri hız karşılaştırmasına etki etmez."
+      ],
+      "dogru_index": 2,
+      "cozum": "Yayılma hızı mol kütlesinin kareköküyle ters orantılıdır. vP/vQ=√(100/25)=2 olduğundan P iki kat hızlı yayılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Graham yasasına göre mol kütlesi farklı iki gazın yayılma hızları nasıl karşılaştırılır?",
+        "back": "Aynı koşullarda mol kütlesi küçük olan gaz daha hızlı yayılır; hızlar mol kütlelerinin karekökleriyle ters orantılıdır."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o04",
+      "alt_beceri": "Graham Difüzyon ve Efüzyon Yasası",
+      "metin": "Bakım ekibi, aynı koşullarda çalışan iki basınçlı depodaki eşit miktarda gazın mikrokaçaklardan çıkış süresini kaydediyor. P deposundan 4,0 mmol gaz 8 s’de, Q deposundan 4,0 mmol gaz 12 s’de çıkıyor. Hangi depoda efüzyon hızı daha büyüktür?",
+      "secenekler": [
+        "Q; aynı miktar daha uzun sürede çıktığı için.",
+        "İki depoda hız eşittir; miktarlar eşit verilmiştir.",
+        "Karşılaştırılamaz; gaz miktarı ölçülemez.",
+        "P; aynı miktar daha kısa sürede çıktığı için."
+      ],
+      "dogru_index": 3,
+      "cozum": "Efüzyon hızı, belirli sürede geçen gaz miktarıyla karşılaştırılır. Eşit miktar P’den daha kısa sürede geçtiğinden P’nin efüzyon hızı daha büyüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyon hızını deneysel olarak karşılaştırmak için hangi büyüklükler ölçülebilir?",
+        "back": "Aynı hacimde gazın aynı boyuttaki açıklıktan geçme süresi ölçülebilir. Aynı miktarı daha kısa sürede geçen gazın efüzyon hızı daha büyüktür."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o05",
+      "alt_beceri": "Graham Difüzyon ve Efüzyon Yasası",
+      "metin": "Aynı mol kütlesine sahip gaz örneklerinden hangisi, diğer koşullar aynıyken daha hızlı yayılır?",
+      "secenekler": [
+        "Daha sıcak olan",
+        "Daha soğuk olan",
+        "Hacmi daha küçük olan",
+        "Basıncı daha düşük olan"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sıcaklık artışı moleküllerin ortalama kinetik enerjisini ve hızını artırır; bu nedenle daha sıcak örnek daha hızlı yayılır. Aynı mol kütlesi karşılaştırmada değişmediğinden belirleyici değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıcaklık yükseldiğinde gaz moleküllerinin yayılma hızı neden artar?",
+        "back": "Sıcaklık arttıkça moleküllerin ortalama kinetik enerjileri artar; bu nedenle hızları yükselir ve daha hızlı yayılırlar."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o06",
+      "alt_beceri": "Efüzyon ve Difüzyon",
+      "metin": "Kapalı bir ölçüm kabının bir ucuna az miktarda iz gazı veriliyor. Bir süre sonra akış olmadığı hâlde gaz diğer uçtaki sensörde de algılanıyor. Bu yayılma süreci nedir?",
+      "secenekler": [
+        "Efüzyon",
+        "Difüzyon",
+        "Çökelme",
+        "Yoğunlaşma"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gaz tanecikleri rastgele hareket ederek yüksek derişimli bölgeden diğer bölgelere karışır. Akış olmadan kabın içine yayılma difüzyondur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Difüzyon sürecini taneciklerin hareket yönü ve karışımın son durumu bakımından açıklayınız.",
+        "back": "Gaz taneciklerinin diğer gaz tanecikleriyle yavaş yavaş karışmasına difüzyon denir. Tanecikler yüksek konsantrasyonlu bölgeden düşük konsantrasyonlu bölgeye hareket eder ve eşit konsantrasyona ulaşılana kadar yayılır."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o07",
+      "alt_beceri": "Efüzyon ve Difüzyon",
+      "metin": "Bir gaz analiz cihazında, yüksek basınçlı örnek bölmesi ile düşük basınçlı ölçüm bölmesi arasında yalnızca gaz taneciklerinin geçebileceği mikroskobik bir açıklık bulunuyor. Taneciklerin bu açıklıktan geçişi hangi süreçtir?",
+      "secenekler": [
+        "Difüzyon",
+        "Yoğunlaşma",
+        "Efüzyon",
+        "Homojen karışım"
+      ],
+      "dogru_index": 2,
+      "cozum": "Gaz taneciklerinin küçük bir açıklıktan, yüksek basınçlı bölgeden düşük basınçlı bölmeye geçmesi efüzyondur. Bu, gazların geniş bir ortamda birbirine karışması olan difüzyondan farklıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyonun tanımını gazın bulunduğu kap ve geçtiği açıklık bakımından yazınız.",
+        "back": "Sıkışmış gaz taneciklerinin bulundukları kabın bir bölmesinden diğerine küçük bir delikten geçerek yayılmasına efüzyon denir."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o08",
+      "alt_beceri": "Efüzyon ve Difüzyon",
+      "metin": "Bir analiz kabında başlangıçta yoğunluğu bir bölgede yüksek olan tepkime vermeyen gaz, zamanla kabın tamamında eşit dağılıyor. Bu olay nasıl sınıflandırılır?",
+      "secenekler": [
+        "Efüzyon; basınç farkıyla küçük delikten sızma",
+        "Çökelme; katı oluşumu",
+        "Sıkıştırılma; sıvı hâle geçiş",
+        "Difüzyon; derişim farkıyla karışma"
+      ],
+      "dogru_index": 3,
+      "cozum": "Gaz tanecikleri yüksek derişimli bölgeden düşük derişimli bölgeye hareket ederek karışır. Birbiriyle karışma süreci difüzyondur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Difüzyon ile efüzyonun oluşum nedenlerini karşılaştırınız.",
+        "back": "Difüzyon konsantrasyon farklılıklarından, efüzyon ise basınç farkından kaynaklanır veya bu farklarla kolaylaşır."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o09",
+      "alt_beceri": "Efüzyon ve Difüzyon",
+      "metin": "Aynı gaz için küçük bir delikten dışarı sızma ve geniş bir odaya karışma karşılaştırılıyor. Genellikle daha hızlı gerçekleşen süreç hangisidir?",
+      "secenekler": [
+        "Efüzyon",
+        "İkisi daima aynı hızdadır.",
+        "Difüzyon",
+        "Yayılma gerçekleşmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Efüzyon, gazın küçük bir açıklıktan geçmesidir; difüzyon ise gaz taneciklerinin geniş bir alana yayılmasıdır. Bu süreçler aynı tanecik hareketiyle ilişkili olsa da farklı yayılma biçimleridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyon ve difüzyon süreçlerinin göreli hızlarını karşılaştırınız.",
+        "back": "Efüzyon genellikle difüzyondan daha hızlıdır; difüzyon gaz taneciklerinin geniş bir alana yayılmasını içerdiğinden daha uzun sürer."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o10",
+      "alt_beceri": "Efüzyon ve Difüzyon",
+      "metin": "Bir gaz kabının çıkış deliği daraltılıyor; delik gaz taneciklerinin geçebileceği kadar açık kalıyor. Efüzyon hızı nasıl etkilenir?",
+      "secenekler": [
+        "Hız artar; delik küçüldükçe tanecikler hızlanır.",
+        "Hız azalır; ancak geçişe izin veren açıklıktan efüzyon sürebilir.",
+        "Hız değişmez; delik boyutunun etkisi yoktur.",
+        "Gaz molekülleri kimyasal olarak küçülür."
+      ],
+      "dogru_index": 1,
+      "cozum": "Efüzyon hızı açıklığın boyutuna bağlıdır. Geçiş alanı daraldığında gazın dışarı çıkma hızı azalır; açıklık kapatılmadığı sürece süreç devam edebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyonun gerçekleşmesinde delik boyutunun etkisini açıklayınız.",
+        "back": "Efüzyon kapta oluşan deliğin boyutuna bağlıdır; delik çok küçükse efüzyon gerçekleşmeyebilir. Daha büyük deliklerde süreç difüzyon olarak düşünülebilir."
+      },
+      "kazanim": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u01_k07_o01:flashcard",
+      "front": "Aynı sıcaklıktaki gazların Graham yasasına göre yayılma hızlarını mol kütleleri bakımından karşılaştırınız.",
+      "back": "Mol kütlesi küçük olan gaz tanecikleri, mol kütlesi büyük olan gaz taneciklerinden daha hızlı yayılır."
+    },
+    {
+      "id": "kimya_10_u01_k07_o02:flashcard",
+      "front": "Bir gazın difüzyon hızını etkileyen başlıca tanecik ve ortam değişkenlerini sayınız.",
+      "back": "Difüzyon hızı sıcaklık, mol kütlesi, tanecik boyutu ve molekül yapısı gibi etmenlerden etkilenir."
+    },
+    {
+      "id": "kimya_10_u01_k07_o03:flashcard",
+      "front": "Graham yasasına göre mol kütlesi farklı iki gazın yayılma hızları nasıl karşılaştırılır?",
+      "back": "Aynı koşullarda mol kütlesi küçük olan gaz daha hızlı yayılır; hızlar mol kütlelerinin karekökleriyle ters orantılıdır."
+    },
+    {
+      "id": "kimya_10_u01_k07_o04:flashcard",
+      "front": "Efüzyon hızını deneysel olarak karşılaştırmak için hangi büyüklükler ölçülebilir?",
+      "back": "Aynı hacimde gazın aynı boyuttaki açıklıktan geçme süresi ölçülebilir. Aynı miktarı daha kısa sürede geçen gazın efüzyon hızı daha büyüktür."
+    },
+    {
+      "id": "kimya_10_u01_k07_o05:flashcard",
+      "front": "Sıcaklık yükseldiğinde gaz moleküllerinin yayılma hızı neden artar?",
+      "back": "Sıcaklık arttıkça moleküllerin ortalama kinetik enerjileri artar; bu nedenle hızları yükselir ve daha hızlı yayılırlar."
+    },
+    {
+      "id": "kimya_10_u01_k07_o06:flashcard",
+      "front": "Difüzyon sürecini taneciklerin hareket yönü ve karışımın son durumu bakımından açıklayınız.",
+      "back": "Gaz taneciklerinin diğer gaz tanecikleriyle yavaş yavaş karışmasına difüzyon denir. Tanecikler yüksek konsantrasyonlu bölgeden düşük konsantrasyonlu bölgeye hareket eder ve eşit konsantrasyona ulaşılana kadar yayılır."
+    },
+    {
+      "id": "kimya_10_u01_k07_o07:flashcard",
+      "front": "Efüzyonun tanımını gazın bulunduğu kap ve geçtiği açıklık bakımından yazınız.",
+      "back": "Sıkışmış gaz taneciklerinin bulundukları kabın bir bölmesinden diğerine küçük bir delikten geçerek yayılmasına efüzyon denir."
+    },
+    {
+      "id": "kimya_10_u01_k07_o08:flashcard",
+      "front": "Difüzyon ile efüzyonun oluşum nedenlerini karşılaştırınız.",
+      "back": "Difüzyon konsantrasyon farklılıklarından, efüzyon ise basınç farkından kaynaklanır veya bu farklarla kolaylaşır."
+    },
+    {
+      "id": "kimya_10_u01_k07_o09:flashcard",
+      "front": "Efüzyon ve difüzyon süreçlerinin göreli hızlarını karşılaştırınız.",
+      "back": "Efüzyon genellikle difüzyondan daha hızlıdır; difüzyon gaz taneciklerinin geniş bir alana yayılmasını içerdiğinden daha uzun sürer."
+    },
+    {
+      "id": "kimya_10_u01_k07_o10:flashcard",
+      "front": "Efüzyonun gerçekleşmesinde delik boyutunun etkisini açıklayınız.",
+      "back": "Efüzyon kapta oluşan deliğin boyutuna bağlıdır; delik çok küçükse efüzyon gerçekleşmeyebilir. Daha büyük deliklerde süreç difüzyon olarak düşünülebilir."
+    }
+  ],
+  "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Eftizyon Yasası"
+}

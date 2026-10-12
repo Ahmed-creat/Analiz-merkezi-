@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u01_k05",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u01_k05_o01",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "2Al(k) + 3Cl₂(g) → 2AlCl₃(k) tepkimesinde 2 mol Al tamamen tepkimeye girdiğinde kaç mol Cl₂ harcanır?",
+      "secenekler": [
+        "3 mol",
+        "1 mol",
+        "2 mol",
+        "6 mol"
+      ],
+      "dogru_index": 0,
+      "cozum": "Denklem katsayıları Al ile Cl₂ arasındaki mol oranının 2:3 olduğunu gösterir. 2 mol Al için 3 mol Cl₂ gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Denkleştirilmiş tepkimedeki katsayılar ile tepken ve ürünlerin mol miktarları arasındaki ilişkiyi açıklayınız.",
+        "back": "Tepkime katsayıları tepken ve ürünlerin mol oranlarını gösterir; maddelerin miktarları bu oranlara göre hesaplanır."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o02",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "2Al(k) + 3Cl₂(g) → 2AlCl₃(k) tepkimesinde Al fazlası varken 1,5 mol Cl₂ tamamen harcanırsa kaç gram AlCl₃ oluşur? (Al: 27, Cl: 35,5 g/mol)",
+      "secenekler": [
+        "89 g",
+        "133,5 g",
+        "267 g",
+        "400,5 g"
+      ],
+      "dogru_index": 1,
+      "cozum": "3 mol Cl₂’den 2 mol AlCl₃ oluştuğundan 1,5 mol Cl₂, 1 mol AlCl₃ oluşturur. M(AlCl₃)=27+3×35,5=133,5 g/mol olduğuna göre ürün kütlesi 133,5 g’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kütlelerden ürün kütlesine ulaşırken kullanılan kimyasal hesaplama basamaklarını sıralayınız.",
+        "back": "Verilen kütle mol kütlesiyle mole çevrilir; tepkime katsayılarından mol oranı bulunur ve sonuç istenen maddenin mol kütlesiyle kütleye çevrilir."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o03",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "2Al(k) + 3Cl₂(g) → 2AlCl₃(k) tepkimesinde 2 mol Al tamamen tepkimeye girdiğinde kaç mol AlCl₃ oluşur?",
+      "secenekler": [
+        "3 mol",
+        "1 mol",
+        "2 mol",
+        "6 mol"
+      ],
+      "dogru_index": 2,
+      "cozum": "Denklemde Al ile AlCl₃ katsayıları eşittir (2:2). Bu nedenle 2 mol Al tamamen tepkimeye girdiğinde 2 mol AlCl₃ oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Stokiyometri kavramını tepkimelerde hesaplanan nicelikler bakımından tanımlayınız.",
+        "back": "Stokiyometri, bir kimyasal tepkimede yer alan element ya da bileşiklerin niceliklerinin hesaplanmasıdır."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o04",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "2A + B → A₂B tepkimesinde başlangıçta 3 mol A ve 1 mol B bulunuyor. Hangi madde sınırlayıcı bileşendir?",
+      "secenekler": [
+        "A",
+        "A₂B",
+        "Hiçbiri; maddeler artansızdır.",
+        "B"
+      ],
+      "dogru_index": 3,
+      "cozum": "Denkleme göre 2 mol A için 1 mol B gerekir. 3 mol A’nın tamamı için 1,5 mol B gerekirdi; elde yalnız 1 mol B olduğundan B önce tükenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sınırlayıcı bileşeni artanlı bir tepkimedeki harcanma durumuna göre açıklayınız.",
+        "back": "Tepkenlerden biri tamamen tükenirken diğerinin artması durumunda önce tükenen madde sınırlayıcı bileşendir."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o05",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "A + 2B → AB₂ tepkimesinde 4 mol A ve 4 mol B başlatılıyor; B tamamen tükenirken A artıyor. Tepkime nasıl adlandırılır?",
+      "secenekler": [
+        "Artanlı tepkime",
+        "Artansız tepkime",
+        "Tam verimli olmayan tepkime",
+        "Tersinir tepkime"
+      ],
+      "dogru_index": 0,
+      "cozum": "Tepkenlerden biri tamamen tükenirken diğeri artıyorsa tepkime artanlıdır. Verilen durumda B tükenmiş, A artmıştır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Artansız ve artanlı tepkimeleri tepkenlerin tepkime sonundaki durumuna göre karşılaştırınız.",
+        "back": "Artansız tepkimede tepkenlerin hepsi tamamen biter. Artanlı tepkimede tepkenlerden biri tamamen tükenirken diğer tepken artar."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o06",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "2A + B → A₂B tepkimesinde 3 mol A, B fazlasıyla tepkimeye giriyor. A₂B’nin mol kütlesi 40 g/mol ise tam verimde en çok kaç gram A₂B oluşur?",
+      "secenekler": [
+        "40 g",
+        "60 g",
+        "80 g",
+        "120 g"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tepkime oranı 2 mol A’dan 1 mol A₂B oluştuğunu gösterir. 3 mol A’dan 1,5 mol A₂B elde edilir; 1,5 × 40 = 60 g teorik verimdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Teorik verimi tanımlayınız.",
+        "back": "Teorik verim, sınırlayıcı bileşenin tamamen kullanılması hâlinde oluşacak ürün miktarıdır."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o07",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "Bir tepkimede tam verimde 72 g ürün oluşması beklenirken deney sonunda 54 g ürün elde ediliyor. Gerçek verim kaç gramdır?",
+      "secenekler": [
+        "72 g",
+        "18 g",
+        "54 g",
+        "126 g"
+      ],
+      "dogru_index": 2,
+      "cozum": "Gerçek verim, deney sonunda elde edilen ürün miktarıdır. Bu tepkimede gerçek verim 54 g, 72 g ise teorik verimdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gerçek verimi teorik verimden ayıran özelliği belirtiniz.",
+        "back": "Gerçek verim, tepkime sonunda elde edilen ürünün gerçek miktarıdır; teorik verim ise sınırlayıcı bileşen tamamen kullanıldığında oluşması beklenen miktardır."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o08",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "Teorik verimi 40 g, gerçek verimi 28 g olan bir tepkimenin yüzde verimi kaçtır?",
+      "secenekler": [
+        "%30",
+        "%60",
+        "%80",
+        "%70"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yüzde verim = (gerçek verim / teorik verim) × 100 = (28/40) × 100 = %70’tir. Gerçek verim paya, teorik verim paydaya yazılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yüzde verim bağıntısını gerçek ve teorik verim cinsinden yazınız.",
+        "back": "Yüzde verim = (gerçek verim / teorik verim) × 100."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o09",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "2Fe(k) + 3Cl₂(g) → 2FeCl₃(k) tepkimesinde 11,2 g Fe, Cl₂ fazlasıyla tamamen tepkimeye giriyor. Kaç gram FeCl₃ oluşur? (Fe: 56, Cl: 35,5 g/mol)",
+      "secenekler": [
+        "32,5 g",
+        "16,25 g",
+        "65 g",
+        "162,5 g"
+      ],
+      "dogru_index": 0,
+      "cozum": "11,2 g Fe, 0,2 mol Fe eder. Denklemde Fe ile FeCl₃ mol oranı 1:1’dir; M(FeCl₃)=56+3×35,5=162,5 g/mol olduğundan 0,2 mol ürün 32,5 g’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Başlangıç kütlesinden istenen ürünün kütlesine ulaşmak için mol kütlesi ve tepkime denklemi nasıl kullanılır?",
+        "back": "Önce başlangıç kütlesi mole çevrilir; denklemin mol oranı uygulanır ve ürünün molü kütleye dönüştürülür."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k05_o10",
+      "alt_beceri": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "metin": "2Al + 3Cl₂ → 2AlCl₃ tepkimesine göre 1 mol AlCl₃ formül biriminde kaç Cl atomu bulunur? (Nₐ = 6,02 × 10²³ mol⁻¹)",
+      "secenekler": [
+        "1,204 × 10²⁴",
+        "1,806 × 10²⁴",
+        "3,01 × 10²³",
+        "6,02 × 10²³"
+      ],
+      "dogru_index": 1,
+      "cozum": "Her AlCl₃ formül biriminde 3 Cl atomu vardır. 1 mol AlCl₃, 3 mol Cl atomu yani 3×6,02×10²³ = 1,806×10²⁴ Cl atomu içerir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol sayısından tanecik sayısına geçiş bağıntısını yazınız.",
+        "back": "Tanecik sayısı N = n × Nₐ bağıntısıyla bulunur; n mol sayısı, Nₐ Avogadro sayısıdır."
+      },
+      "kazanim": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u01_k05_o01:flashcard",
+      "front": "Denkleştirilmiş tepkimedeki katsayılar ile tepken ve ürünlerin mol miktarları arasındaki ilişkiyi açıklayınız.",
+      "back": "Tepkime katsayıları tepken ve ürünlerin mol oranlarını gösterir; maddelerin miktarları bu oranlara göre hesaplanır."
+    },
+    {
+      "id": "kimya_10_u01_k05_o02:flashcard",
+      "front": "Kütlelerden ürün kütlesine ulaşırken kullanılan kimyasal hesaplama basamaklarını sıralayınız.",
+      "back": "Verilen kütle mol kütlesiyle mole çevrilir; tepkime katsayılarından mol oranı bulunur ve sonuç istenen maddenin mol kütlesiyle kütleye çevrilir."
+    },
+    {
+      "id": "kimya_10_u01_k05_o03:flashcard",
+      "front": "Stokiyometri kavramını tepkimelerde hesaplanan nicelikler bakımından tanımlayınız.",
+      "back": "Stokiyometri, bir kimyasal tepkimede yer alan element ya da bileşiklerin niceliklerinin hesaplanmasıdır."
+    },
+    {
+      "id": "kimya_10_u01_k05_o04:flashcard",
+      "front": "Sınırlayıcı bileşeni artanlı bir tepkimedeki harcanma durumuna göre açıklayınız.",
+      "back": "Tepkenlerden biri tamamen tükenirken diğerinin artması durumunda önce tükenen madde sınırlayıcı bileşendir."
+    },
+    {
+      "id": "kimya_10_u01_k05_o05:flashcard",
+      "front": "Artansız ve artanlı tepkimeleri tepkenlerin tepkime sonundaki durumuna göre karşılaştırınız.",
+      "back": "Artansız tepkimede tepkenlerin hepsi tamamen biter. Artanlı tepkimede tepkenlerden biri tamamen tükenirken diğer tepken artar."
+    },
+    {
+      "id": "kimya_10_u01_k05_o06:flashcard",
+      "front": "Teorik verimi tanımlayınız.",
+      "back": "Teorik verim, sınırlayıcı bileşenin tamamen kullanılması hâlinde oluşacak ürün miktarıdır."
+    },
+    {
+      "id": "kimya_10_u01_k05_o07:flashcard",
+      "front": "Gerçek verimi teorik verimden ayıran özelliği belirtiniz.",
+      "back": "Gerçek verim, tepkime sonunda elde edilen ürünün gerçek miktarıdır; teorik verim ise sınırlayıcı bileşen tamamen kullanıldığında oluşması beklenen miktardır."
+    },
+    {
+      "id": "kimya_10_u01_k05_o08:flashcard",
+      "front": "Yüzde verim bağıntısını gerçek ve teorik verim cinsinden yazınız.",
+      "back": "Yüzde verim = (gerçek verim / teorik verim) × 100."
+    },
+    {
+      "id": "kimya_10_u01_k05_o09:flashcard",
+      "front": "Başlangıç kütlesinden istenen ürünün kütlesine ulaşmak için mol kütlesi ve tepkime denklemi nasıl kullanılır?",
+      "back": "Önce başlangıç kütlesi mole çevrilir; denklemin mol oranı uygulanır ve ürünün molü kütleye dönüştürülür."
+    },
+    {
+      "id": "kimya_10_u01_k05_o10:flashcard",
+      "front": "Mol sayısından tanecik sayısına geçiş bağıntısını yazınız.",
+      "back": "Tanecik sayısı N = n × Nₐ bağıntısıyla bulunur; n mol sayısı, Nₐ Avogadro sayısıdır."
+    }
+  ],
+  "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar"
+}

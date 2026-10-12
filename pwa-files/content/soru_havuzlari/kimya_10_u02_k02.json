@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u02_k02",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u02_k02_o01",
+      "alt_beceri": "İyonik Çözünme",
+      "metin": "SrCl₂(k) → Sr²⁺(suda) + 2Cl⁻(suda) gösterimi hangi çözünme türünü belirtir?",
+      "secenekler": [
+        "İyonik çözünme",
+        "Moleküler çözünme",
+        "Çözücüde kimyasal dönüşüm",
+        "Gaz çözünmesi"
+      ],
+      "dogru_index": 0,
+      "cozum": "SrCl₂ çözeltide Sr²⁺ ve Cl⁻ iyonları hâlinde bulunur. İyonlarına ayrılarak çözünmesi iyonik çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İyonik çözünmeyi, çözünen taneciklerin çözeltideki durumu bakımından tanımlayınız.",
+        "back": "Bir maddenin çözücü içinde iyonlarına ayrışarak çözünmesine iyonik çözünme denir."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o02",
+      "alt_beceri": "İyonik Çözünme",
+      "metin": "Bir sera besin çözeltisinde bulunan Mg²⁺ iyonlarının çevresinde su molekülleri yöneliyor. Mg²⁺ iyonuna dönük olan su molekülünün hangi bölgesidir?",
+      "secenekler": [
+        "Kısmi pozitif yüklü hidrojen ucu",
+        "Kısmi negatif yüklü oksijen ucu",
+        "Suyun iki ucu da yönelmez",
+        "Yalnız su moleküllerinin nötr merkezi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Mg²⁺ pozitif yüklü bir katyondur. Suyun kısmi negatif yüklü oksijen ucu katyona dönük olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Suda çözünen bir tuzun katyon ve anyonları çevresinde su molekülleri nasıl yönelir?",
+        "back": "Suyun kısmi negatif yüklü oksijen ucu katyonları, kısmi pozitif yüklü hidrojen ucu anyonları sarar."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o03",
+      "alt_beceri": "İyonik Çözünme",
+      "metin": "LiBr(k) → Li⁺(suda) + Br⁻(suda) gösterimi iyonik-moleküler sınıflandırmasına göre nasıl değerlendirilir?",
+      "secenekler": [
+        "Moleküler çözünme",
+        "Kimyasal çözünme",
+        "İyonik çözünme",
+        "Çözünme gerçekleşmez"
+      ],
+      "dogru_index": 2,
+      "cozum": "LiBr suda Li⁺ ve Br⁻ iyonları hâlinde dağılmıştır. Bu gösterim iyonik çözünmeye aittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asit, baz ve tuzların suda çözünürken gösterdiği yaygın tanecik davranışını yazınız.",
+        "back": "Asitler, bazlar ve tuzlar suda genellikle iyonlarına ayrışarak çözünür."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o04",
+      "alt_beceri": "Moleküler Çözünme",
+      "metin": "Asetonun (C₃H₆O) suda çözünürken molekülleri kimliğini koruyup sıvı boyunca dağılması hangi çözünme türünü gösterir?",
+      "secenekler": [
+        "İyonik çözünme",
+        "Kimyasal çözünme",
+        "Çökelme",
+        "Moleküler çözünme"
+      ],
+      "dogru_index": 3,
+      "cozum": "Aseton molekülleri çözeltide molekül olarak kalır ve homojen biçimde dağılır. Bu olay moleküler çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Moleküler çözünmeyi, çözünen kovalent bileşiğin tanecik yapısı bakımından tanımlayınız.",
+        "back": "Kovalent bağlı bileşiklerin moleküllerinin çözücü içinde moleküler hâlde dağılıp homojen karışım oluşturmasına moleküler çözünme denir."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o05",
+      "alt_beceri": "Moleküler Çözünme",
+      "metin": "Bir parfüm üretim hattında kovalent yapılı K koku bileşiği etil asetat içinde molekül kimliğini koruyarak homojen dağılıyor. Bu süreç nasıl sınıflandırılır?",
+      "secenekler": [
+        "Moleküler çözünme",
+        "İyonik çözünme",
+        "Kimyasal tepkime",
+        "Çözünmezlik"
+      ],
+      "dogru_index": 0,
+      "cozum": "K molekülleri iyonlara ayrışmadan kimliklerini koruyup çözücü içinde homojen dağılır. Bu, moleküler çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Moleküler çözünmede çözünen moleküller ile çözücü tanecikleri arasındaki sonucu açıklayınız.",
+        "back": "Çözünen moleküller birbirinden uzaklaşarak çözücü içinde moleküler hâlde dağılır ve homojen karışım oluşur."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o06",
+      "alt_beceri": "Moleküler Çözünme",
+      "metin": "Kovalent bileşik R, suda çözünürken R molekülleri olarak kalıp sıvı boyunca dağılıyor. Bu olay nasıl sınıflandırılır?",
+      "secenekler": [
+        "İyonik çözünme",
+        "Moleküler çözünme",
+        "Kimyasal çözünme",
+        "Çökelme"
+      ],
+      "dogru_index": 1,
+      "cozum": "R molekülleri iyonlara ya da yeni maddelere dönüşmeden çözeltide dağılır. Bu, moleküler çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kovalent bağlı bir çözünen suda çözündüğünde molekül yapısı nasıl korunabilir?",
+        "back": "Moleküller kimliklerini koruyarak birbirinden uzaklaşır ve çözücü içinde dağılır. Böylece homojen bir karışım oluşabilir."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o07",
+      "alt_beceri": "Kimyasal Çözünme",
+      "metin": "Bir gaz suya verildiğinde çözücüyle etkileşip başlangıçta bulunmayan yeni iyon türleri oluşturuyor. Bu çözünme nasıl sınıflandırılır?",
+      "secenekler": [
+        "Moleküler çözünme",
+        "İyonik çözünme",
+        "Kimyasal çözünme",
+        "Fiziksel çözünme"
+      ],
+      "dogru_index": 2,
+      "cozum": "Çözünen gaz suyla etkileşerek yeni iyon türleri oluşturmuştur. Yeni kimyasal türler oluştuğu için çözünme kimyasaldır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kimyasal çözünmeyi çözünen madde ve çözücü arasında gerçekleşen değişim bakımından tanımlayınız.",
+        "back": "Bir maddenin çözücüyle kimyasal etkileşime girerek çözünmesi ve yeni madde türleri oluşturması kimyasal çözünmedir."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o08",
+      "alt_beceri": "Kimyasal Çözünme",
+      "metin": "Bir su arıtma laboratuvarında yeni bir katkı maddesi J sulu banyoya ekleniyor. Analiz, J taneciklerinin suyla etkileşip çözeltide daha önce bulunmayan K⁺ ve L⁻ iyonlarına dönüştüğünü; çözeltide değişmeden kalan J moleküllerinin bulunmadığını gösteriyor. Bu çözünme nasıl sınıflandırılır?",
+      "secenekler": [
+        "İyonik çözünme; çünkü başlangıçtaki katı iyonik yapılıdır.",
+        "Moleküler çözünme; J molekülleri kimliğini koruyarak dağılır.",
+        "Fiziksel çözünme; yeni türler oluşmasına rağmen maddenin kimliği değişmez.",
+        "Kimyasal çözünme; çözücüyle etkileşim sonucu yeni türler oluşmuştur."
+      ],
+      "dogru_index": 3,
+      "cozum": "J’nin kimyasal türü suyla etkileşim sırasında değişmiş ve çözeltide yeni iyonlar oluşmuştur. Bu nedenle olay kimyasal çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kimyasal çözünmede çözünen madde kimliğini korur mu?",
+        "back": "Hayır. Çözünen, çözücüyle kimyasal etkileşime girerek başlangıçta bulunmayan yeni madde türleri oluşturur."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o09",
+      "alt_beceri": "Fiziksel Çözünme",
+      "metin": "M molekülü S sıvısında çözünürken kimliğini koruyor ve yeni madde oluşmuyor. Bu olay nasıl sınıflandırılır?",
+      "secenekler": [
+        "Fiziksel çözünme",
+        "Kimyasal çözünme",
+        "Kimyasal tepkimeyle sentez",
+        "Çökelme"
+      ],
+      "dogru_index": 0,
+      "cozum": "M molekülünün kimyasal kimliği değişmemiş ve yeni tür oluşmamıştır. Bu nedenle olay fiziksel çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fiziksel çözünmede çözünen maddenin kimyasal türü nasıl değişir?",
+        "back": "Çözünen madde yeni bir kimyasal türe dönüşmez ve kendi kimyasal özelliğini korur. İyonik ya da moleküler olarak dağılabilir."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k02_o10",
+      "alt_beceri": "Fiziksel Çözünme",
+      "metin": "İyonik bir katı suda çözünürken mevcut iyonları çözeltiye dağılıyor ve yeni bir madde oluşmuyor. Bu olayın fiziksel çözünme olarak sınıflandırılmasını hangi özellik destekler?",
+      "secenekler": [
+        "Çözücünün kimyasal tepkimeyle yeni bileşik oluşturması",
+        "Maddenin kimyasal özelliğini koruyarak çözeltide dağılması",
+        "Gaz taneciklerinin küçük bir açıklıktan çıkması",
+        "Katının kimyasal yapısının bütünüyle farklı bir maddeye dönüşmesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fiziksel çözünmede çözünen madde kimyasal özelliğini korur; yeni bir madde oluşması gerekmez. Bir katının mevcut iyonlarının çözeltiye dağılması bu sınıflandırmayla uyumludur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İyonik veya moleküler olarak gerçekleşen bir çözünmenin fiziksel sayılmasını sağlayan ölçütü belirtiniz.",
+        "back": "Çözünen madde yeni bir kimyasal maddeye dönüşmeden kimyasal özelliğini koruyorsa çözünme fiziksel olabilir; bazı iyonik maddeler çözeltide iyonlar hâlinde dağılır."
+      },
+      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u02_k02_o01:flashcard",
+      "front": "İyonik çözünmeyi, çözünen taneciklerin çözeltideki durumu bakımından tanımlayınız.",
+      "back": "Bir maddenin çözücü içinde iyonlarına ayrışarak çözünmesine iyonik çözünme denir."
+    },
+    {
+      "id": "kimya_10_u02_k02_o02:flashcard",
+      "front": "Suda çözünen bir tuzun katyon ve anyonları çevresinde su molekülleri nasıl yönelir?",
+      "back": "Suyun kısmi negatif yüklü oksijen ucu katyonları, kısmi pozitif yüklü hidrojen ucu anyonları sarar."
+    },
+    {
+      "id": "kimya_10_u02_k02_o03:flashcard",
+      "front": "Asit, baz ve tuzların suda çözünürken gösterdiği yaygın tanecik davranışını yazınız.",
+      "back": "Asitler, bazlar ve tuzlar suda genellikle iyonlarına ayrışarak çözünür."
+    },
+    {
+      "id": "kimya_10_u02_k02_o04:flashcard",
+      "front": "Moleküler çözünmeyi, çözünen kovalent bileşiğin tanecik yapısı bakımından tanımlayınız.",
+      "back": "Kovalent bağlı bileşiklerin moleküllerinin çözücü içinde moleküler hâlde dağılıp homojen karışım oluşturmasına moleküler çözünme denir."
+    },
+    {
+      "id": "kimya_10_u02_k02_o05:flashcard",
+      "front": "Moleküler çözünmede çözünen moleküller ile çözücü tanecikleri arasındaki sonucu açıklayınız.",
+      "back": "Çözünen moleküller birbirinden uzaklaşarak çözücü içinde moleküler hâlde dağılır ve homojen karışım oluşur."
+    },
+    {
+      "id": "kimya_10_u02_k02_o06:flashcard",
+      "front": "Kovalent bağlı bir çözünen suda çözündüğünde molekül yapısı nasıl korunabilir?",
+      "back": "Moleküller kimliklerini koruyarak birbirinden uzaklaşır ve çözücü içinde dağılır. Böylece homojen bir karışım oluşabilir."
+    },
+    {
+      "id": "kimya_10_u02_k02_o07:flashcard",
+      "front": "Kimyasal çözünmeyi çözünen madde ve çözücü arasında gerçekleşen değişim bakımından tanımlayınız.",
+      "back": "Bir maddenin çözücüyle kimyasal etkileşime girerek çözünmesi ve yeni madde türleri oluşturması kimyasal çözünmedir."
+    },
+    {
+      "id": "kimya_10_u02_k02_o08:flashcard",
+      "front": "Kimyasal çözünmede çözünen madde kimliğini korur mu?",
+      "back": "Hayır. Çözünen, çözücüyle kimyasal etkileşime girerek başlangıçta bulunmayan yeni madde türleri oluşturur."
+    },
+    {
+      "id": "kimya_10_u02_k02_o09:flashcard",
+      "front": "Fiziksel çözünmede çözünen maddenin kimyasal türü nasıl değişir?",
+      "back": "Çözünen madde yeni bir kimyasal türe dönüşmez ve kendi kimyasal özelliğini korur. İyonik ya da moleküler olarak dağılabilir."
+    },
+    {
+      "id": "kimya_10_u02_k02_o10:flashcard",
+      "front": "İyonik veya moleküler olarak gerçekleşen bir çözünmenin fiziksel sayılmasını sağlayan ölçütü belirtiniz.",
+      "back": "Çözünen madde yeni bir kimyasal maddeye dönüşmeden kimyasal özelliğini koruyorsa çözünme fiziksel olabilir; bazı iyonik maddeler çözeltide iyonlar hâlinde dağılır."
+    }
+  ],
+  "topic_key": "Kimya > 2.1.1 Çözünme Süreci"
+}
