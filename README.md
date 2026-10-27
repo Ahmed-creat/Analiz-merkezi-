@@ -1,6 +1,13 @@
 # Analiz Merkezi
 
-Analiz Merkezi, deneme ve soru çözüm kayıtlarını, konu çalışma akışını, mini doğrulama testlerini ve tekrar kartlarını cihaz üzerinde saklayan çevrimdışı öncelikli PWA'dır. Firebase/FCM yapılandırılmadığında çekirdek deneme, konu, doğrulama ve yedekleme akışları çalışmaya devam eder.
+Analiz Merkezi, deneme ve soru çözüm kayıtlarını, konu çalışma akışını, mini doğrulama testlerini ve tekrar kartlarını cihaz üzerinde saklayan çevrimdışı öncelikli PWA'dır. Supabase erişilemediğinde çekirdek deneme, konu, doğrulama ve yedekleme akışları çalışmaya devam eder.
+
+## Canlı yayın
+
+- Uygulama: <https://analiz-merkezi.vercel.app>
+- Bulut: Supabase projesi `analiz-merkezi` (ref `ztgzmhfklsdlngrtennp`, eu-central-1) — Auth + Postgres (`app_states`, `fcm_tokens`, `okulizyon_kuyrugu`, `okul_duyurulari`, hepsi RLS korumalı)
+- Yayın kaynağı: bu depodaki `site/` klasörü; Vercel build'i `deploy/build.sh` ile üretilir
+- Ayrıntılar: `docs/SUPABASE-VERCEL.md`
 
 ## Soru Havuzlarının Eklenmesi (İçerik Aşaması)
 
@@ -26,4 +33,4 @@ npm run test:curriculum
 npm run test:pools
 ```
 
-PWA yayın talimatı: `docs/NETLIFY-YAYIN.md`.
+PWA yayın talimatı: `docs/SUPABASE-VERCEL.md` (Vercel + Supabase). Netlify alternatifi: `docs/NETLIFY-YAYIN.md`.
