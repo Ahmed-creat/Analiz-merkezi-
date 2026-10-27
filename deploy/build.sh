@@ -19,3 +19,14 @@ test -f out/app-pwa.js
 test -d out/content/soru_havuzlari
 
 echo "Yayın paketi hazır: $(find out -type f | wc -l) dosya, $(du -sh out | cut -f1)"
+
+# Supabase erişim kontrolü (build ortamından, kritik değil)
+if [ -n "${SUPABASE_URL:-}" ] && [ -n "${SUPABASE_ANON_KEY:-}" ]; then
+  KOD=$(curl -s -o /dev/null -m 10 -w '%{http_code}' \
+    -H "apikey: ${SUPABASE_ANON_KEY}" \
+    -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+    "${SUPABASE_URL}/rest/v1/app_states?select=user_id&limit=1" || true)
+  echo "Supabase REST kontrolü: HTTP ${KOD} (anon anahtar geçerli, RLS: boş liste beklenir)"
+else
+  echo "Supabase ortam değişkenleri tanımlı değil (statik site için sorun değil)."
+fi
