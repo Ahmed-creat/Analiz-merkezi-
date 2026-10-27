@@ -1,0 +1,299 @@
+{
+  "konu_id": "kimya_10_u01_k06",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u01_k06_o01",
+      "alt_beceri": "Gazların Kinetik Moleküler Teorisi",
+      "metin": "Gaz taneciklerinin birbirlerinden bağımsız ve sürekli hareket etmesi, gazın bulunduğu kabın tamamına yayılmasını nasıl açıklar?",
+      "secenekler": [
+        "Tanecikler her yöne hareket ederek kabı doldurur.",
+        "Tanecikler yalnızca kabın tabanında bulunur.",
+        "Tanecikler birbirine bağlı biçimde sabit durur.",
+        "Tanecikler kabın hacmini tamamen kaplamaz."
+      ],
+      "dogru_index": 0,
+      "cozum": "Kinetik moleküler teoriye göre gaz tanecikleri birbirlerinden bağımsız hareket ederek bulundukları kabı doldurur. Taneciklerin sabit kalması bu yayılmayı açıklamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kinetik moleküler teorinin gaz tanecikleriyle ilgili incelediği temel durumu açıklayınız.",
+        "back": "Gaz taneciklerinin hareketini inceleyerek gaz tanecikleri arasındaki etkileşimleri açıklayan teoriye kinetik moleküler teori denir."
+      },
+      "kazanim": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o02",
+      "alt_beceri": "Gazların Kinetik Moleküler Teorisi",
+      "metin": "Aynı sıcaklıkta bulunan ideal X ve Y gazlarının tanecikleri için kinetik moleküler teoriye göre hangi ifade doğrudur?",
+      "secenekler": [
+        "X taneciklerinin ortalama kinetik enerjisi daha büyüktür.",
+        "İki gazın taneciklerinin ortalama kinetik enerjisi eşittir.",
+        "Y taneciklerinin ortalama kinetik enerjisi sıfırdır.",
+        "Ortalama kinetik enerji gazın mol kütlesine eşittir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Kinetik moleküler teoriye göre ortalama kinetik enerji mutlak sıcaklıkla ilişkilidir. Sıcaklıkları aynı olan ideal gazların ortalama kinetik enerjileri eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz taneciklerinin ortalama kinetik enerjisi mutlak sıcaklıkla nasıl değişir; aynı sıcaklıktaki gazlar için ne söylenir?",
+        "back": "Ortalama kinetik enerji mutlak sıcaklıkla doğru orantılıdır. Aynı sıcaklıktaki gaz taneciklerinin ortalama kinetik enerjisi eşittir."
+      },
+      "kazanim": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o03",
+      "alt_beceri": "Gazların Özellikleri",
+      "metin": "Kapalı bir kaptaki gazın basıncıyla ilgili gözlem hangisiyle uyumludur?",
+      "secenekler": [
+        "Yalnızca kabın tabanına basınç uygular.",
+        "Yalnızca pistonun bulunduğu yöne basınç uygular.",
+        "Kabın her tarafına eşit basınç uygular.",
+        "Kabın çeperlerine çarpmadığı için basınç oluşturmaz."
+      ],
+      "dogru_index": 2,
+      "cozum": "Gaz tanecikleri kabın çeperlerine çarpar ve gaz kabın her tarafına eşit basınç uygular. Basınç yalnızca kabın tabanında oluşmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz basıncını tanımlayınız ve gazların kap çeperlerine uyguladığı basıncın yönünü belirtiniz.",
+        "back": "Gazların kabın çeperlerine çarparak oluşturduğu kuvvete gaz basıncı denir. Gazlar kabın her tarafına eşit basınç uygular."
+      },
+      "kazanim": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o04",
+      "alt_beceri": "Gazların Özellikleri",
+      "metin": "Kapalı bir kaba iki farklı gaz gönderiliyor. Yeterli süre sonunda bu gazların dağılımı nasıl olur?",
+      "secenekler": [
+        "Gazlar yalnızca eşit miktarlarda karışır.",
+        "Gazlar birbirinden ayrı tabakalar oluşturur.",
+        "Gazlar yalnızca kabın üst kısmında karışır.",
+        "Gazlar her oranda homojen karışabilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Gaz tanecikleri sürekli ve düzensiz hareket eder; bu nedenle gazlar birbiriyle her oranda homojen karışabilir. Eşit miktarda olmaları gerekmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gazların hacim ve şeklinin bulundukları kapla ilişkisini açıklayınız.",
+        "back": "Gazlar bulundukları kabın hacmini doldurur ve şeklini alır."
+      },
+      "kazanim": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o05",
+      "alt_beceri": "Basınç-Hacim İlişkisi (Boyle Yasası)",
+      "metin": "Sıcaklığı ve miktarı sabit bir gaz 3,0 L hacimde 1,2 atm basınç yapıyor. Hacim 2,0 L’ye düşürülürse son basınç kaç atm olur?",
+      "secenekler": [
+        "1,8 atm",
+        "0,8 atm",
+        "1,2 atm",
+        "2,4 atm"
+      ],
+      "dogru_index": 0,
+      "cozum": "Boyle Yasası’na göre basınç ve hacmin çarpımı sabittir. P₂=1,2×3,0/2,0=1,8 atm olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boyle Yasası’nda hangi değişkenler sabit tutulur ve basınç-hacim ilişkisi nasıl gösterilir?",
+        "back": "Gaz miktarı ve sıcaklık sabitken basınç ile hacim ters orantılıdır. P₁V₁ = P₂V₂ bağıntısı kullanılır."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o06",
+      "alt_beceri": "Basınç-Hacim İlişkisi (Boyle Yasası)",
+      "metin": "Sabit sıcaklık ve miktardaki bir gazın basıncı 1,2 atm iken hacmi 5,0 L’dir. Hacim 4,0 L’ye düşerse yeni basınç kaç atm olur?",
+      "secenekler": [
+        "1,2 atm",
+        "1,5 atm",
+        "0,96 atm",
+        "2,4 atm"
+      ],
+      "dogru_index": 1,
+      "cozum": "Boyle Yasası uygulanır: P₂=P₁V₁/V₂=1,2×5,0/4,0=1,5 atm. Hacim azalınca basınç artar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boyle Yasası’nda basınç üç katına çıkarılırsa sabit miktar ve sıcaklıktaki gazın hacmi nasıl değişir?",
+        "back": "Basınç ve hacim ters orantılı olduğundan hacim üçte bire iner."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o07",
+      "alt_beceri": "Sıcaklık-Hacim İlişkisi (Charles Yasası)",
+      "metin": "Basıncı sabit bir gazın hacmi 2 L, sıcaklığı 300 K’dir. Sıcaklık 450 K’ye çıkarılırsa yeni hacmi kaç litre olur?",
+      "secenekler": [
+        "2 L",
+        "2,5 L",
+        "3 L",
+        "4 L"
+      ],
+      "dogru_index": 2,
+      "cozum": "Charles Yasası’na göre V/T sabittir: 2 L / 300 K = V₂ / 450 K. Buradan V₂ = 3 L olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Charles Yasası’nda gaz miktarı ve basınç sabitken hacim ile sıcaklığın mutlak sıcaklık cinsinden ilişkisini yazınız.",
+        "back": "Sabit basınçta belirli miktardaki gazın hacmi ile mutlak sıcaklığı doğru orantılıdır; V₁/T₁ = V₂/T₂."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o08",
+      "alt_beceri": "Sıcaklık-Hacim İlişkisi (Charles Yasası)",
+      "metin": "Sabit basınçtaki bir gazın sıcaklığı 240 K’den 360 K’ye çıkarılıyor. Charles Yasası’na göre hacim nasıl değişir?",
+      "secenekler": [
+        "Yarıya iner.",
+        "Değişmez.",
+        "Üç katına çıkar.",
+        "1,5 katına çıkar."
+      ],
+      "dogru_index": 3,
+      "cozum": "Charles Yasası’na göre V/T oranı sabittir. Sıcaklık 360/240=1,5 katına çıktığından hacim de 1,5 katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz yasalarında sıcaklığı Kelvin ölçeğinde kullanmak neden gereklidir?",
+        "back": "Kelvin mutlak sıcaklık ölçeğidir ve sıfır noktası mutlak sıfırdır. Gaz yasalarındaki sıcaklık-hacim gibi orantıların doğru kurulması için mutlak sıcaklık kullanılır."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o09",
+      "alt_beceri": "Basınç-Sıcaklık İlişkisi (Gay Lusssac Yasası)",
+      "metin": "Hacmi ve gaz miktarı sabit bir kaptaki gazın mutlak sıcaklığı iki katına çıkarılıyor. Basıncı nasıl değişir?",
+      "secenekler": [
+        "İki katına çıkar.",
+        "Yarıya iner.",
+        "Değişmez.",
+        "Dört katına çıkar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Gay-Lussac Yasası’na göre sabit hacim ve miktarda basınç mutlak sıcaklıkla doğru orantılıdır. Sıcaklık iki katına çıkarsa basınç da iki katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gay-Lussac Yasası’nda gaz miktarı ve hacim sabitken basınç ile mutlak sıcaklık arasındaki ilişkiyi açıklayınız.",
+        "back": "Sabit hacimde belirli miktardaki gazın basıncı ile mutlak sıcaklığı doğru orantılıdır."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o10",
+      "alt_beceri": "Basınç-Sıcaklık İlişkisi (Gay Lusssac Yasası)",
+      "metin": "Sabit hacimdeki bir gazın basıncı 1,2 atm ve sıcaklığı 320 K’dir. Sıcaklık 400 K’ye çıkarılırsa yeni basınç kaç atm olur?",
+      "secenekler": [
+        "1,2 atm",
+        "1,5 atm",
+        "1,875 atm",
+        "0,96 atm"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gay-Lussac Yasası’na göre sabit hacimde P/T oranı değişmez. P₂=1,2×400/320=1,5 atm olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit hacim ve gaz miktarında iki farklı sıcaklıktaki basınçları ilişkilendiren Gay-Lussac bağıntısını yazınız.",
+        "back": "P₁/T₁ = P₂/T₂ bağıntısı kullanılır; sıcaklıklar kelvin cinsinden olmalıdır."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o11",
+      "alt_beceri": "Hacim-Madde Miktarı İlişkisi (Avogadro Yasası)",
+      "metin": "Aynı sıcaklık ve basınçtaki iki gaz örneğinin hacimleri eşit olduğunda tanecik miktarları nasıl karşılaştırılır?",
+      "secenekler": [
+        "A örneğinde iki kat fazladır.",
+        "B örneğinde iki kat fazladır.",
+        "Eşit sayıdadır.",
+        "Gaz türü farklı olduğundan karşılaştırılamaz."
+      ],
+      "dogru_index": 2,
+      "cozum": "Avogadro Yasası’na göre aynı sıcaklık ve basınçta eşit hacimli gaz örnekleri eşit mol, dolayısıyla eşit sayıda tanecik içerir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro Yasası’na göre aynı sıcaklık ve basınçta eşit hacimdeki gazlar için tanecik sayısı bakımından ne söylenir?",
+        "back": "Aynı sıcaklık ve basınçta farklı gazların eşit hacimleri aynı sayıda molekül içerir; tek atomlu gazlarda bu tanecikler atomdur."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o12",
+      "alt_beceri": "Hacim-Madde Miktarı İlişkisi (Avogadro Yasası)",
+      "metin": "Sabit sıcaklık ve basınçta 1,2 mol gaz 3,6 L hacim kaplıyor. 2,0 mol aynı gaz kaç litre hacim kaplar?",
+      "secenekler": [
+        "4,0 L",
+        "5,0 L",
+        "7,2 L",
+        "6,0 L"
+      ],
+      "dogru_index": 3,
+      "cozum": "Avogadro Yasası’na göre hacim mol sayısıyla doğru orantılıdır. V₂=3,6×2,0/1,2=6,0 L olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro Yasası’nda gaz miktarı ile hacim arasındaki doğru orantıyı gösteren bağıntıyı yazınız.",
+        "back": "Sabit sıcaklık ve basınçta hacim mol sayısıyla doğru orantılıdır; V₁/n₁ = V₂/n₂."
+      },
+      "kazanim": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u01_k06_o01:flashcard",
+      "front": "Kinetik moleküler teorinin gaz tanecikleriyle ilgili incelediği temel durumu açıklayınız.",
+      "back": "Gaz taneciklerinin hareketini inceleyerek gaz tanecikleri arasındaki etkileşimleri açıklayan teoriye kinetik moleküler teori denir."
+    },
+    {
+      "id": "kimya_10_u01_k06_o02:flashcard",
+      "front": "Gaz taneciklerinin ortalama kinetik enerjisi mutlak sıcaklıkla nasıl değişir; aynı sıcaklıktaki gazlar için ne söylenir?",
+      "back": "Ortalama kinetik enerji mutlak sıcaklıkla doğru orantılıdır. Aynı sıcaklıktaki gaz taneciklerinin ortalama kinetik enerjisi eşittir."
+    },
+    {
+      "id": "kimya_10_u01_k06_o03:flashcard",
+      "front": "Gaz basıncını tanımlayınız ve gazların kap çeperlerine uyguladığı basıncın yönünü belirtiniz.",
+      "back": "Gazların kabın çeperlerine çarparak oluşturduğu kuvvete gaz basıncı denir. Gazlar kabın her tarafına eşit basınç uygular."
+    },
+    {
+      "id": "kimya_10_u01_k06_o04:flashcard",
+      "front": "Gazların hacim ve şeklinin bulundukları kapla ilişkisini açıklayınız.",
+      "back": "Gazlar bulundukları kabın hacmini doldurur ve şeklini alır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o05:flashcard",
+      "front": "Boyle Yasası’nda hangi değişkenler sabit tutulur ve basınç-hacim ilişkisi nasıl gösterilir?",
+      "back": "Gaz miktarı ve sıcaklık sabitken basınç ile hacim ters orantılıdır. P₁V₁ = P₂V₂ bağıntısı kullanılır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o06:flashcard",
+      "front": "Boyle Yasası’nda basınç üç katına çıkarılırsa sabit miktar ve sıcaklıktaki gazın hacmi nasıl değişir?",
+      "back": "Basınç ve hacim ters orantılı olduğundan hacim üçte bire iner."
+    },
+    {
+      "id": "kimya_10_u01_k06_o07:flashcard",
+      "front": "Charles Yasası’nda gaz miktarı ve basınç sabitken hacim ile sıcaklığın mutlak sıcaklık cinsinden ilişkisini yazınız.",
+      "back": "Sabit basınçta belirli miktardaki gazın hacmi ile mutlak sıcaklığı doğru orantılıdır; V₁/T₁ = V₂/T₂."
+    },
+    {
+      "id": "kimya_10_u01_k06_o08:flashcard",
+      "front": "Gaz yasalarında sıcaklığı Kelvin ölçeğinde kullanmak neden gereklidir?",
+      "back": "Kelvin mutlak sıcaklık ölçeğidir ve sıfır noktası mutlak sıfırdır. Gaz yasalarındaki sıcaklık-hacim gibi orantıların doğru kurulması için mutlak sıcaklık kullanılır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o09:flashcard",
+      "front": "Gay-Lussac Yasası’nda gaz miktarı ve hacim sabitken basınç ile mutlak sıcaklık arasındaki ilişkiyi açıklayınız.",
+      "back": "Sabit hacimde belirli miktardaki gazın basıncı ile mutlak sıcaklığı doğru orantılıdır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o10:flashcard",
+      "front": "Sabit hacim ve gaz miktarında iki farklı sıcaklıktaki basınçları ilişkilendiren Gay-Lussac bağıntısını yazınız.",
+      "back": "P₁/T₁ = P₂/T₂ bağıntısı kullanılır; sıcaklıklar kelvin cinsinden olmalıdır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o11:flashcard",
+      "front": "Avogadro Yasası’na göre aynı sıcaklık ve basınçta eşit hacimdeki gazlar için tanecik sayısı bakımından ne söylenir?",
+      "back": "Aynı sıcaklık ve basınçta farklı gazların eşit hacimleri aynı sayıda molekül içerir; tek atomlu gazlarda bu tanecikler atomdur."
+    },
+    {
+      "id": "kimya_10_u01_k06_o12:flashcard",
+      "front": "Avogadro Yasası’nda gaz miktarı ile hacim arasındaki doğru orantıyı gösteren bağıntıyı yazınız.",
+      "back": "Sabit sıcaklık ve basınçta hacim mol sayısıyla doğru orantılıdır; V₁/n₁ = V₂/n₂."
+    }
+  ],
+  "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları"
+}

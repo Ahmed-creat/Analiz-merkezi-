@@ -1,0 +1,251 @@
+{
+  "konu_id": "cogr_10_u02_k01",
+  "sinif": 10,
+  "ders": "Coğrafya",
+  "kaynak_dosya": "10. Sınıf coğrafya json.zip",
+  "sorular": [
+    {
+      "soru_id": "cogr_10_u02_k01_o01",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir ekip, farklı tarihlerde elde edilen uydu görüntülerini konum bilgileriyle eşleştirerek kıyı çizgisindeki değişimi inceliyor. Bu çalışmada mekânsal bilgi teknolojilerinin hangi yönü kullanılıyor?",
+      "secenekler": [
+        "Mekânsal veriyi analiz edip görüntüleme",
+        "Yalnızca konumsuz tanıtıcı bilgi depolama",
+        "Harita ölçeğini değiştirmeden araziyi fiziksel olarak ölçme",
+        "Verileri konum bilgisi olmadan sınıflandırma"
+      ],
+      "dogru_index": 0,
+      "cozum": "Uydu görüntüleri ve konum bilgileri birlikte analiz edilerek değişim haritalanır. Konumsuz bilgi tek başına kıyı çizgisindeki mekânsal değişimi göstermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "CBS ve uzaktan algılama, mekânsal veriler üzerinde hangi temel işlemleri yapmayı sağlar?",
+        "back": "Mekânsal verilerin toplanmasını, analiz edilmesini, görüntülenmesini ve kullanılmasını sağlar."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o02",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir kent araştırma ekibi, farklı tarihlerde alınmış ısıl uydu görüntülerini karşılaştırarak en sıcak mahalleleri belirliyor ve bu alanları yüzey örtüsü verileriyle birlikte haritalıyor. Bu çalışma öncelikle hangi uygulama alanına girer?",
+      "secenekler": [
+        "Ulaşım planlaması",
+        "Çevresel analiz",
+        "Tarımsal verim değerlendirmesi",
+        "Su arzı planlaması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yüzey sıcaklığı ve örtü dağılışı çevresel göstergelerdir; bunların mekânsal karşılaştırılması çevresel analizdir. Ulaşım planlaması güzergâh ve altyapı düzenlemelerine odaklanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal bilgi teknolojileri çevresel analizlerde hangi tür değişimleri ve riskleri izlemeye yardım eder?",
+        "back": "Arazi kullanımındaki değişiklikler, ormansızlaşma ve çölleşme gibi tehditler ile doğal afet riskleri incelenebilir."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o03",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir üretici kooperatifi, meyve bahçelerinin ve soğuk hava depolarının konumlarını haritada birleştirerek hasat döneminde geçici ürün toplama noktalarını planlıyor. Bu analiz en doğrudan hangi amaca hizmet eder?",
+      "secenekler": [
+        "Afet sonrası hak sahipliği belirlemeye",
+        "Kentsel ulaşım ağı tasarlamaya",
+        "Tarımsal ürünlerin toplama ve depolama süreçlerini mekânsal olarak planlamaya",
+        "Habitat sınırlarını hukuken değiştirmeye"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bahçe, depo ve toplama noktalarının konumlarını birlikte değerlendirmek tarımsal ürünlerin hasat sonrası akışını planlamaya yardım eder. Diğer seçenekler bu üretim-lojistik amacını karşılamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal bilgi teknolojileri tarımda hangi kararların verilmesine katkı sağlayabilir?",
+        "back": "Tarım alanlarını ve bitki örtüsünü izlemeye, verimliliği değerlendirmeye ve tarımsal su kullanımını düzenlemeye katkı sağlar."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o04",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir belediye bakım ekibi, sokak aydınlatmalarındaki arızaları konumlarıyla eşleştirip hangi hatlarda önce onarım yapılacağını belirliyor. Bu kullanım en çok hangi çalışmayı destekler?",
+      "secenekler": [
+        "Biyoçeşitliliğin genetik analizini",
+        "Tarımsal ürünlerin laboratuvar sınıflandırmasını",
+        "Deniz suyunun kimyasal bileşimini ölçmeyi",
+        "Kentsel altyapı yönetimini"
+      ],
+      "dogru_index": 3,
+      "cozum": "Aydınlatma hatlarının konumu ve arıza kayıtları altyapı bakımının planlanmasına yarar. Bu, kentsel altyapı yönetimidir; laboratuvar ve genetik analizlerle ilgili değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Şehir yönetiminde CBS ve uzaktan algılamadan yararlanılan üç çalışma alanı nedir?",
+        "back": "Kentsel büyümenin izlenmesi, altyapı yönetimi ve ulaşım planlamasıdır."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o05",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir kentte yağmur suyu toplama depolarının olası konumları, çatı alanları ve mahallelerin talep dağılışıyla birlikte haritalanıyor. Bu yaklaşımın temel amacı nedir?",
+      "secenekler": [
+        "Su kaynaklarını izlemek ve arzı planlamak",
+        "Yerleşmelerin tarihî dönemlerini sıralamak",
+        "Yalnızca nüfusun yaş ortalamasını hesaplamak",
+        "Tarımsal ürünlerin genetik özelliklerini belirlemek"
+      ],
+      "dogru_index": 0,
+      "cozum": "Toplama kapasitesi ve talebin konumsal verilerle eşleştirilmesi suyun nerede biriktirilip nasıl kullanılacağını planlamaya yardımcı olur. Diğer seçenekler su arzı yönetimiyle ilgili değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su kaynakları yönetiminde mekânsal bilgi teknolojileri hangi süreçleri destekler?",
+        "back": "Su kalitesinin izlenmesini, su kaynaklarının haritalanmasını ve su arzının planlanmasını destekler."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o06",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Yeni bir çevre yolu tasarlanırken ekip, hayvan geçiş gözlemlerini ve arazi örtüsünü haritalayarak güvenli geçiş noktalarını belirliyor. Bu analiz en doğrudan hangi çalışmayı destekler?",
+      "secenekler": [
+        "Yol yapım maliyetini hesaplamayı",
+        "Doğal yaşamı ve biyoçeşitliliği korumayı",
+        "Sanayi ürünlerinin dış ticaret değerini belirlemeyi",
+        "Yerel saat farklarını ölçmeyi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Hayvanların kullandığı geçiş alanlarını belirleyip güvenli geçitler planlamak doğal yaşamı ve biyoçeşitliliği korumaya katkı sağlar. Buradaki temel amaç maliyet veya ticaret hesabı değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Habitat ve biyoçeşitliliğin mekânsal olarak izlenmesi hangi genel amaca hizmet eder?",
+        "back": "Doğal yaşamın ve biyolojik çeşitliliğin korunmasına yönelik çevre çalışmalarına katkı sağlar."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o07",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir taşkın sonrasında ekipler, etkilenen mahalleleri ve ulaşımın kesildiği yolları güncel konum verileriyle belirleyerek müdahale ekiplerini yönlendiriyor. Bu uygulama hangi alanla ilişkilidir?",
+      "secenekler": [
+        "Tarım verimliliğinin değerlendirilmesi",
+        "Su kalitesinin uzun dönemli ölçümü",
+        "Afet yönetimi ve acil müdahale",
+        "Kentsel büyümenin tarihsel sınıflandırması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Etkilenen alanları belirlemek ve müdahale ekiplerini koordine etmek afet yönetiminin parçasıdır. Tarımsal verimlilik ise ürün ve üretim koşullarının incelenmesini gerektirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet yönetiminde mekânsal bilgi teknolojileri afetin hangi evrelerinde ve ne tür işler için kullanılabilir?",
+        "back": "Afetlerin izlenmesi, oluşan zararın belirlenmesi ve acil durum müdahalesinin koordine edilmesi için kullanılabilir."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o08",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir heyelan sonrasında saha ekibi, hasar gören su borularının konumlarını yamaç ve yerleşme haritalarıyla eşleştiriyor. Bu verileri kullanmanın temel yararı nedir?",
+      "secenekler": [
+        "Onarım çalışmalarının rastgele bölgelere yönelmesini sağlamak",
+        "Sahadaki konum bilgisini değerlendirmeden karar vermek",
+        "Afet öncesi koşulları geçmişe dönük değiştirmek",
+        "Onarım önceliklerini ve saha ekiplerinin dağılımını mekânsal verilerle desteklemek"
+      ],
+      "dogru_index": 3,
+      "cozum": "Boru hasarının ve yerleşmelerin nerede bulunduğunu karşılaştırmak, hangi onarımların önce yapılacağını ve ekiplerin nereye yönlendirileceğini belirlemeye yardım eder. Konum bilgisini yok saymak ihtiyaç dağılışını göz ardı eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet sonrası sahadan toplanan konum bilgileri iyileştirme çalışmalarına nasıl katkı sağlar?",
+        "back": "Hasarlı kesimlerin ve altyapı ihtiyaçlarının dağılışı birlikte değerlendirilerek onarım öncelikleri ve ekip çalışması planlanabilir."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o09",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir belediyenin bisiklet paylaşım uygulaması, kullanıcıların başlangıç ve varış konumlarını kaydediyor. Uygulama yöneticisi bu verileri paylaşmadan önce en uygun olarak ne yapmalıdır?",
+      "secenekler": [
+        "Kişisel verilerin nasıl işlendiğini ve kimlerin erişebileceğini değerlendirip güvenlik önlemlerini uygulamak.",
+        "Konum kayıtlarını herkesin görebileceği biçimde yayımlamak.",
+        "Verinin amacını anlamadan bütün izinleri sürekli açık tutmak.",
+        "Kişisel verilerin korunmasını uygulama dışı bir konu saymak."
+      ],
+      "dogru_index": 0,
+      "cozum": "Başlangıç-varış kayıtları kullanıcıları belirlenebilir kılabileceğinden verinin kullanımı, erişimi ve güvenliği değerlendirilmelidir. Verileri gelişigüzel yayımlamak bilinçli ve güvenli kullanımla çelişir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kişisel verilerin işlendiği mekânsal bilgi uygulamaları nasıl kullanılmalıdır?",
+        "back": "Kişisel veriler içeren dijital araçlar bilinçli ve güvenli biçimde kullanılmalı; uygulamanın veri kullanımı değerlendirilmelidir."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o10",
+      "alt_beceri": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+      "metin": "Bir sağlık bölgesi, kliniklerin konumlarını, nüfus dağılışını ve ulaşım sürelerini ortak bir haritada birleştirerek hizmete erişimi güç olan mahalleleri belirliyor. Bu bütünleştirilmiş yaklaşımın başlıca katkısı nedir?",
+      "secenekler": [
+        "Her veriyi diğerlerinden bağımsız tutması",
+        "Kamu hizmetlerini konuma göre planlayıp kaynakların etkili dağıtımını desteklemesi",
+        "Sadece geçmiş nüfus sayımlarını saklaması",
+        "Sahadan gelen konum verilerini kullanılamaz hâle getirmesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Klinik, nüfus ve ulaşım verilerini birlikte incelemek erişim açığı olan mahalleleri belirleyip hizmetleri ve kaynakları uygun biçimde planlamayı sağlar. Verileri birbirinden koparmak mekânsal ilişkilerin analizini zorlaştırır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal bilgi teknolojileri kamu kurumları ve özel sektör açısından neden işlevseldir?",
+        "back": "Doğal ve beşerî kaynakların sürdürülebilir kullanımını destekleyen verileri bir araya getirerek hizmet ve planlamaya katkı sağlar."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "cogr_10_u02_k01_o01:flashcard",
+      "front": "CBS ve uzaktan algılama, mekânsal veriler üzerinde hangi temel işlemleri yapmayı sağlar?",
+      "back": "Mekânsal verilerin toplanmasını, analiz edilmesini, görüntülenmesini ve kullanılmasını sağlar."
+    },
+    {
+      "id": "cogr_10_u02_k01_o02:flashcard",
+      "front": "Mekânsal bilgi teknolojileri çevresel analizlerde hangi tür değişimleri ve riskleri izlemeye yardım eder?",
+      "back": "Arazi kullanımındaki değişiklikler, ormansızlaşma ve çölleşme gibi tehditler ile doğal afet riskleri incelenebilir."
+    },
+    {
+      "id": "cogr_10_u02_k01_o03:flashcard",
+      "front": "Mekânsal bilgi teknolojileri tarımda hangi kararların verilmesine katkı sağlayabilir?",
+      "back": "Tarım alanlarını ve bitki örtüsünü izlemeye, verimliliği değerlendirmeye ve tarımsal su kullanımını düzenlemeye katkı sağlar."
+    },
+    {
+      "id": "cogr_10_u02_k01_o04:flashcard",
+      "front": "Şehir yönetiminde CBS ve uzaktan algılamadan yararlanılan üç çalışma alanı nedir?",
+      "back": "Kentsel büyümenin izlenmesi, altyapı yönetimi ve ulaşım planlamasıdır."
+    },
+    {
+      "id": "cogr_10_u02_k01_o05:flashcard",
+      "front": "Su kaynakları yönetiminde mekânsal bilgi teknolojileri hangi süreçleri destekler?",
+      "back": "Su kalitesinin izlenmesini, su kaynaklarının haritalanmasını ve su arzının planlanmasını destekler."
+    },
+    {
+      "id": "cogr_10_u02_k01_o06:flashcard",
+      "front": "Habitat ve biyoçeşitliliğin mekânsal olarak izlenmesi hangi genel amaca hizmet eder?",
+      "back": "Doğal yaşamın ve biyolojik çeşitliliğin korunmasına yönelik çevre çalışmalarına katkı sağlar."
+    },
+    {
+      "id": "cogr_10_u02_k01_o07:flashcard",
+      "front": "Afet yönetiminde mekânsal bilgi teknolojileri afetin hangi evrelerinde ve ne tür işler için kullanılabilir?",
+      "back": "Afetlerin izlenmesi, oluşan zararın belirlenmesi ve acil durum müdahalesinin koordine edilmesi için kullanılabilir."
+    },
+    {
+      "id": "cogr_10_u02_k01_o08:flashcard",
+      "front": "Afet sonrası sahadan toplanan konum bilgileri iyileştirme çalışmalarına nasıl katkı sağlar?",
+      "back": "Hasarlı kesimlerin ve altyapı ihtiyaçlarının dağılışı birlikte değerlendirilerek onarım öncelikleri ve ekip çalışması planlanabilir."
+    },
+    {
+      "id": "cogr_10_u02_k01_o09:flashcard",
+      "front": "Kişisel verilerin işlendiği mekânsal bilgi uygulamaları nasıl kullanılmalıdır?",
+      "back": "Kişisel veriler içeren dijital araçlar bilinçli ve güvenli biçimde kullanılmalı; uygulamanın veri kullanımı değerlendirilmelidir."
+    },
+    {
+      "id": "cogr_10_u02_k01_o10:flashcard",
+      "front": "Mekânsal bilgi teknolojileri kamu kurumları ve özel sektör açısından neden işlevseldir?",
+      "back": "Doğal ve beşerî kaynakların sürdürülebilir kullanımını destekleyen verileri bir araya getirerek hizmet ve planlamaya katkı sağlar."
+    }
+  ],
+  "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları"
+}

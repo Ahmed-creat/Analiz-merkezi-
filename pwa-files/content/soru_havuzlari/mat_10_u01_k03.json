@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u01_k03",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u01_k03_o01",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Yükseklikleri eşit iki üçgenin taban uzunlukları 5 cm ve 10 cm'dir. Alanlarının oranı küçük tabanlı üçgenden büyük tabanlı üçgene doğru kaçtır?",
+      "secenekler": [
+        "1/2",
+        "1/4",
+        "2",
+        "1"
+      ],
+      "dogru_index": 0,
+      "cozum": "Yükseklikler eşit olduğundan alan oranı taban uzunlukları oranıdır: 5/10 = 1/2. 1/4, taban oranının karesini alarak bulunur; burada kare alınmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yükseklikleri eşit iki üçgenin alanları oranı, hangi taban uzunluklarının oranına eşittir?",
+        "back": "Alanların oranı, bu eşit yüksekliklere ait taban uzunluklarının oranına eşittir."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o02",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Yükseklikleri eşit iki üçgenin alanları 12 cm² ve 18 cm²'dir. İlk üçgenin tabanı 4 cm ise ikinci üçgenin tabanı kaç santimetredir?",
+      "secenekler": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "dogru_index": 1,
+      "cozum": "Eşit yüksekliklerde taban oranı alan oranına eşittir; ikinci taban 4 × (18/12) = 6 cm olur. 4 cm ilk tabanın uzunluğudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yükseklikleri eşit iki üçgende, alanları oranı biliniyorsa taban uzunlukları oranını nasıl bulursun?",
+        "back": "Taban uzunlukları oranı, alanları oranına eşittir."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o03",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Taban uzunlukları eşit iki üçgenin bu tabanlara ait yükseklikleri 3 cm ve 6 cm'dir. Alanlarının oranı ilk üçgenden ikinci üçgene doğru kaçtır?",
+      "secenekler": [
+        "1/3",
+        "2",
+        "1/2",
+        "1/4"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tabanlar eşit olduğundan alan oranı yükseklik oranına eşittir: 3/6 = 1/2. 1/4, yükseklik oranının karesidir ve kullanılmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Taban uzunlukları eşit iki üçgenin alanları oranı, hangi yüksekliklerinin oranına eşittir?",
+        "back": "Alanların oranı, eşit tabanlara ait yüksekliklerin oranına eşittir."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o04",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Tabanları eşit iki üçgenden birinin alanı 20 cm², yüksekliği 5 cm'dir. Diğerinin alanı 28 cm² ise yüksekliği kaç santimetredir?",
+      "secenekler": [
+        "5",
+        "6",
+        "8",
+        "7"
+      ],
+      "dogru_index": 3,
+      "cozum": "Tabanlar eşit olduğundan yükseklik oranı alan oranına eşittir; ikinci yükseklik 5 × (28/20) = 7 cm'dir. 5 cm ilk üçgenin yüksekliğidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Taban uzunlukları eşit iki üçgende alan ve yükseklik oranları arasındaki bağıntıyı tamamla: A₁/A₂ = ...",
+        "back": "A₁/A₂ = h₁/h₂."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o05",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir teknik çizimde iki üçgen taşıyıcı levha aynı alt kenarı kullanıyor; üst köşeleri bu kenara paralel bir kılavuz doğrusu üzerindedir. İlk levhanın alanı 24 cm² ise ikinci levhanın alanı kaç cm²’dir?",
+      "secenekler": [
+        "24",
+        "12",
+        "18",
+        "48"
+      ],
+      "dogru_index": 0,
+      "cozum": "İki levhanın ortak tabanı ve paralel doğrular arasındaki yükseklikleri aynıdır. Alanları eşit olduğundan ikinci levhanın alanı da 24 cm²’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel iki doğru arasında, aynı tabana sahip iki üçgenin alanları arasındaki ilişkiyi ifade et.",
+        "back": "Ortak tabanlı ve aynı paraleller arasında kalan üçgenlerin yükseklikleri eşit olduğundan alanları eşittir."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o06",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir sahne düzeneğinde üçgen biçimli panelin tabanı sabit kalıyor; tepe noktası tabana paralel bir ray üzerinde başka bir noktaya taşınıyor. Panelin alanı nasıl değişir?",
+      "secenekler": [
+        "İki katına çıkar.",
+        "Değişmez.",
+        "Yarısına iner.",
+        "Taban uzunluğu kadar artar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Tepe noktası tabana paralel ray üzerinde kaldığı için tabana dik uzaklık değişmez. Taban ve yükseklik sabit olduğundan üçgenin alanı değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortak tabanlı iki üçgende tepe noktası tabana paralel doğru üzerinde başka bir noktaya taşındığında alan nasıl etkilenir?",
+        "back": "Yükseklik değişmediği için alan değişmez."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o07",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir makette iki üçgen destek levhası aynı tabanı paylaşıyor ve üst köşeleri tabana paralel aynı doğru üzerinde bulunuyor. Birinci levhanın diğerinde bulunmayan kısmı 4 cm² ise ikinci levhanın diğerinde bulunmayan kısmı kaç cm²’dir?",
+      "secenekler": [
+        "2",
+        "8",
+        "4",
+        "12"
+      ],
+      "dogru_index": 2,
+      "cozum": "İki levhanın toplam alanı eşittir; ortak bölgenin alanı da aynıdır. Bu nedenle ortak olmayan parçaların alanları eşit olur ve istenen alan 4 cm²’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel doğrular arasında ortak tabana sahip iki farklı üçgenin ortak olmayan bölgelerinin alanları arasında nasıl bir ilişki vardır?",
+        "back": "Ortak olmayan bölgelerin alanları birbirine eşittir."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o08",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir pencere üreticisi aynı tabanı kullanan iki üçgen cam parçası tasarlıyor; parçaların üst köşeleri tabana paralel aynı taşıyıcı çizgi üzerindedir. Bir parçanın alanı 10 cm² ise diğerinin alanı kaç cm²’dir?",
+      "secenekler": [
+        "5",
+        "20",
+        "15",
+        "10"
+      ],
+      "dogru_index": 3,
+      "cozum": "İki cam parçasının taban uzunluğu ve tabana dik yüksekliği aynıdır. Üçgen alanları eşit olduğundan diğer parçanın alanı 10 cm²’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortak tabana sahip ve üçüncü köşeleri bu tabana paralel aynı doğru üzerinde bulunan iki üçgenin alanları arasında nasıl bir ilişki vardır?",
+        "back": "Yükseklikleri eşit olduğundan alanları eşittir."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o09",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Benzer iki üçgende karşılıklı kenarların oranı küçük üçgenden büyük üçgene doğru 3/5 ise alanların oranı büyük üçgenden küçük üçgene doğru kaçtır?",
+      "secenekler": [
+        "25/9",
+        "5/3",
+        "9/25",
+        "15/9"
+      ],
+      "dogru_index": 0,
+      "cozum": "Alan oranı, benzerlik oranının karesidir. Büyükten küçüğe kenar oranı 5/3 olduğundan alan oranı (5/3)² = 25/9 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Benzer iki üçgende alanlar oranı, benzerlik oranının hangi kuvvetine eşittir?",
+        "back": "Alanlar oranı, benzerlik oranının karesine eşittir."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o10",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir üçgenin tüm kenar uzunlukları 1,4 ile çarpılarak benzer bir üçgen elde ediliyor. Yeni üçgenin alanı başlangıç alanının kaç katıdır?",
+      "secenekler": [
+        "1,4",
+        "1,96",
+        "2,8",
+        "2,4"
+      ],
+      "dogru_index": 1,
+      "cozum": "Benzerlik oranı 1,4 olduğundan alan çarpanı 1,4² = 1,96 olur. 1,4 yalnızca kenar uzunluklarının çarpanıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir üçgenin tüm kenarları k katına çıkarılarak benzer üçgen elde edildiğinde alan kaç katına çıkar?",
+        "back": "Alan, k² katına çıkar."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o11",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Kenar uzunlukları 12 cm ve 8 cm olan bir üçgende bu kenarlar arasındaki açı 45°dir. Üçgenin alanı kaç santimetrekaredir?",
+      "secenekler": [
+        "48",
+        "24",
+        "24√2",
+        "48√2"
+      ],
+      "dogru_index": 2,
+      "cozum": "Alan = (1/2)·12·8·sin 45° = 48·(√2/2) = 24√2 cm² bulunur. 48 cm², sin 45° katsayısı kullanılmadığında elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir üçgenin a ve b kenarları ile bu kenarlar arasındaki C açısı biliniyorsa alan bağıntısını yaz.",
+        "back": "Alan = (1/2) · a · b · sin C."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k03_o12",
+      "alt_beceri": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir üçgenin 14 cm ve 6 cm uzunluğundaki kenarları arasındaki açı 45°dir. Üçgenin alanı kaç santimetrekaredir?",
+      "secenekler": [
+        "42",
+        "84",
+        "21",
+        "21√2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Alan = (1/2)·14·6·sin 45° = 42·(√2/2) = 21√2 cm² olur. 42 cm², sinüs katsayısı atlanırsa bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üçgen alanı bağıntısında iki kenar arasındaki açı hangi trigonometrik oranla kullanılır?",
+        "back": "İki kenar ile aralarındaki açının sinüsü kullanılır: Alan = (1/2) · a · b · sin C."
+      },
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u01_k03_o01:flashcard",
+      "front": "Yükseklikleri eşit iki üçgenin alanları oranı, hangi taban uzunluklarının oranına eşittir?",
+      "back": "Alanların oranı, bu eşit yüksekliklere ait taban uzunluklarının oranına eşittir."
+    },
+    {
+      "id": "mat_10_u01_k03_o02:flashcard",
+      "front": "Yükseklikleri eşit iki üçgende, alanları oranı biliniyorsa taban uzunlukları oranını nasıl bulursun?",
+      "back": "Taban uzunlukları oranı, alanları oranına eşittir."
+    },
+    {
+      "id": "mat_10_u01_k03_o03:flashcard",
+      "front": "Taban uzunlukları eşit iki üçgenin alanları oranı, hangi yüksekliklerinin oranına eşittir?",
+      "back": "Alanların oranı, eşit tabanlara ait yüksekliklerin oranına eşittir."
+    },
+    {
+      "id": "mat_10_u01_k03_o04:flashcard",
+      "front": "Taban uzunlukları eşit iki üçgende alan ve yükseklik oranları arasındaki bağıntıyı tamamla: A₁/A₂ = ...",
+      "back": "A₁/A₂ = h₁/h₂."
+    },
+    {
+      "id": "mat_10_u01_k03_o05:flashcard",
+      "front": "Paralel iki doğru arasında, aynı tabana sahip iki üçgenin alanları arasındaki ilişkiyi ifade et.",
+      "back": "Ortak tabanlı ve aynı paraleller arasında kalan üçgenlerin yükseklikleri eşit olduğundan alanları eşittir."
+    },
+    {
+      "id": "mat_10_u01_k03_o06:flashcard",
+      "front": "Ortak tabanlı iki üçgende tepe noktası tabana paralel doğru üzerinde başka bir noktaya taşındığında alan nasıl etkilenir?",
+      "back": "Yükseklik değişmediği için alan değişmez."
+    },
+    {
+      "id": "mat_10_u01_k03_o07:flashcard",
+      "front": "Paralel doğrular arasında ortak tabana sahip iki farklı üçgenin ortak olmayan bölgelerinin alanları arasında nasıl bir ilişki vardır?",
+      "back": "Ortak olmayan bölgelerin alanları birbirine eşittir."
+    },
+    {
+      "id": "mat_10_u01_k03_o08:flashcard",
+      "front": "Ortak tabana sahip ve üçüncü köşeleri bu tabana paralel aynı doğru üzerinde bulunan iki üçgenin alanları arasında nasıl bir ilişki vardır?",
+      "back": "Yükseklikleri eşit olduğundan alanları eşittir."
+    },
+    {
+      "id": "mat_10_u01_k03_o09:flashcard",
+      "front": "Benzer iki üçgende alanlar oranı, benzerlik oranının hangi kuvvetine eşittir?",
+      "back": "Alanlar oranı, benzerlik oranının karesine eşittir."
+    },
+    {
+      "id": "mat_10_u01_k03_o10:flashcard",
+      "front": "Bir üçgenin tüm kenarları k katına çıkarılarak benzer üçgen elde edildiğinde alan kaç katına çıkar?",
+      "back": "Alan, k² katına çıkar."
+    },
+    {
+      "id": "mat_10_u01_k03_o11:flashcard",
+      "front": "Bir üçgenin a ve b kenarları ile bu kenarlar arasındaki C açısı biliniyorsa alan bağıntısını yaz.",
+      "back": "Alan = (1/2) · a · b · sin C."
+    },
+    {
+      "id": "mat_10_u01_k03_o12:flashcard",
+      "front": "Üçgen alanı bağıntısında iki kenar arasındaki açı hangi trigonometrik oranla kullanılır?",
+      "back": "İki kenar ile aralarındaki açının sinüsü kullanılır: Alan = (1/2) · a · b · sin C."
+    }
+  ],
+  "baslik": "1.3 Üçgende Alan",
+  "topic_key": "Matematik > 1.3 Üçgende Alan"
+}

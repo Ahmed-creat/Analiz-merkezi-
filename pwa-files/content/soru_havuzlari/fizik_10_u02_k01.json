@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u02_k01",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u02_k01_o01",
+      "alt_beceri": "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "metin": "Bir cisim yatayda ilerlerken üzerine yalnız düşey yönde bir kuvvet uygulanıyor. Bu kuvvetin cisim üzerinde yaptığı iş nedir?",
+      "secenekler": [
+        "0 J",
+        "F·Δx",
+        "Negatif iş",
+        "Pozitif iş"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kuvvet yer değiştirmeye dik olduğundan kuvvetin yer değiştirme doğrultusunda bileşeni yoktur ve iş yapmaz. Kuvvetin büyüklüğünü tek başına kullanmak yeterli değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kuvvet ile yer değiştirme birbirine dikse kuvvetin yaptığı fiziksel iş ne olur?",
+        "back": "İş sıfırdır; yer değiştirme doğrultusundaki kuvvet bileşeni iş yapar."
+      },
+      "kazanim": "yapılan işin büyüklüğünü hesaplayabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o02",
+      "alt_beceri": "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "metin": "Bir ölçüm kızağını çeken kablo kızağı hareket yönünde 18 N kuvvetle 6 m ilerletiyor. Kablonun yaptığı iş kaç J’dür?",
+      "secenekler": [
+        "24 J",
+        "108 J",
+        "12 J",
+        "3 J"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kuvvet ve yer değiştirme aynı yönde olduğundan W=F·Δx=18·6=108 J olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kuvvet ve yer değiştirme aynı doğrultudaysa yapılan iş hangi bağıntıyla bulunur?",
+        "back": "W = F·Δx; kuvvet ve yer değiştirme büyüklükleri çarpılır."
+      },
+      "kazanim": "yapılan işin büyüklüğünü hesaplayabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o03",
+      "alt_beceri": "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "metin": "Bir kamera taşıyıcısı yatayla 60° açı yapan 8 N’lık bir kablo kuvvetiyle 5 m çekiliyor. cos60°=0,5 ise kablonun yaptığı iş kaç J’dür?",
+      "secenekler": [
+        "40 J",
+        "10 J",
+        "20 J",
+        "0 J"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yer değiştirme yönündeki kuvvet bileşeni 8·0,5=4 N’dur. W=Fₓ·Δx=4·5=20 J.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatayla α açısı yapan kuvvetin yatay yer değiştirme boyunca yaptığı işi nasıl hesaplarsın?",
+        "back": "Yatay bileşen Fₓ = F·cosα'dır; W = F·cosα·Δx."
+      },
+      "kazanim": "yapılan işin büyüklüğünü hesaplayabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o04",
+      "alt_beceri": "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "metin": "Bir deney kızağı boyunca kuvvetin yer değiştirmeye bağlı işaretli değerleri şöyledir: ilk 2 m’de +8 N, sonraki 1 m’de 0 N ve son 2 m’de −4 N. Kuvvetin kızak üzerinde yaptığı net iş kaç J’dür?",
+      "secenekler": [
+        "20 J",
+        "16 J",
+        "−8 J",
+        "8 J"
+      ],
+      "dogru_index": 3,
+      "cozum": "Net iş, her aralıktaki kuvvet-yer değiştirme çarpımlarının toplamıdır: 8×2+0×1−4×2=8 J. Son aralıktaki kuvvet ters yönde olduğundan yaptığı iş negatiftir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kuvvet değişkense kuvvet-yer değiştirme grafiğinin altında kalan alan neyi verir?",
+        "back": "Kuvvetin yaptığı işi verir; eksenin üstü pozitif, altı negatif iştir."
+      },
+      "kazanim": "yapılan işin büyüklüğünü hesaplayabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o05",
+      "alt_beceri": "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "metin": "Bir ölçüm kızağı pürüzlü yatay yüzeyde 7 m ilerlerken harekete zıt yönde 4 N sürtünme kuvvetiyle karşılaşıyor. Sürtünmenin yaptığı iş kaç J’dür?",
+      "secenekler": [
+        "−28 J",
+        "28 J",
+        "−11 J",
+        "−3 J"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sürtünme yer değiştirmeye zıt yönlüdür; bu nedenle W=−F·Δx=−4·7=−28 J olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hareket yönüne ters kuvvetin yaptığı işin işareti ve cismin hareketine etkisi nedir?",
+        "back": "Negatif iş yapar ve cismi yavaşlatır."
+      },
+      "kazanim": "yapılan işin büyüklüğünü hesaplayabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o06",
+      "alt_beceri": "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      "metin": "Bir deney arabasına net 360 J pozitif iş yapılıyor. İş-kinetik enerji teoremine göre arabanın kinetik enerjisi nasıl değişir?",
+      "secenekler": [
+        "360 J azalır.",
+        "360 J artar.",
+        "Değişmez.",
+        "Gücü 360 W olur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Net iş kinetik enerjideki değişime eşittir. Pozitif 360 J iş, arabanın kinetik enerjisinin 360 J artması demektir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Net kuvvetin yaptığı iş, cismin enerjisiyle nasıl ilişkilidir?",
+        "back": "Net iş, cismin enerji değişimine eşittir: Wnet = ΔE."
+      },
+      "kazanim": "iş, enerji ve güç arasındaki ilişkiye yönelik çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o07",
+      "alt_beceri": "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      "metin": "Bir laboratuvar aktüatörü çalışma sırasında 14 s’de 420 J enerji aktarıyor. Aktüatörün ortalama gücü kaç W’tır?",
+      "secenekler": [
+        "420 W",
+        "14 W",
+        "30 W",
+        "60 W"
+      ],
+      "dogru_index": 2,
+      "cozum": "Ortalama güç P=E/t bağıntısıyla bulunur. P=420/14=30 W olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Güç neyi ölçer ve matematiksel modeli nedir?",
+        "back": "Güç, birim zamanda yapılan iş ya da aktarılan enerjidir: P = W/t."
+      },
+      "kazanim": "güç hesapları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o08",
+      "alt_beceri": "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      "metin": "İki taşınabilir enerji depolama aygıtının her biri bataryasına 900 J enerji aktarıyor. Aygıt A bunu 3 s’de, aygıt B 6 s’de tamamlıyor. Aktarılan enerji ve ortalama güçleri nasıl karşılaştırılır?",
+      "secenekler": [
+        "A’nın aktardığı enerji daha büyük, güçleri eşittir.",
+        "Enerjileri eşit, B’nin gücü daha büyüktür.",
+        "A’nın enerjisi ve gücü daha küçüktür.",
+        "Enerjileri eşit, A’nın gücü daha büyüktür."
+      ],
+      "dogru_index": 3,
+      "cozum": "İki aygıt da 900 J aktardığı için enerji aktarımı eşittir. P=E/t olduğundan A’nın gücü 900/3=300 W, B’ninki 900/6=150 W’tır; A’nın gücü daha büyüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı işi daha kısa sürede yapan kişi için güç nasıl değişir?",
+        "back": "Güç artar; aynı iş daha kısa zamanda yapıldığı için birim zamandaki iş büyür."
+      },
+      "kazanim": "iş, enerji ve güç arasındaki ilişkiye yönelik çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o09",
+      "alt_beceri": "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      "metin": "Gücü 3,2 kW olan bir motor 5 s çalışıyor. Bu sürede aktardığı enerji kaç J olur?",
+      "secenekler": [
+        "16 000 J",
+        "3 200 J",
+        "8 000 J",
+        "64 000 J"
+      ],
+      "dogru_index": 0,
+      "cozum": "3,2 kW = 3 200 W olduğundan E = Pt = 3 200 × 5 = 16 000 J olur. Kilowatt değeri önce watt’a çevrilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit güçle çalışan bir aygıtın t sürede aktardığı enerji nasıl hesaplanır?",
+        "back": "E = P·t; güç watt, süre saniye alınırsa enerji joule olur. Güç kilowatt verilmişse önce watt’a çevrilir."
+      },
+      "kazanim": "güç hesapları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k01_o10",
+      "alt_beceri": "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      "metin": "Bir teknisyen kilitli bir kapağı kuvvetle itiyor ancak kapak hiç yer değiştirmiyor. Teknisyenin kapağa uyguladığı kuvvetin kapak üzerinde yaptığı fiziksel iş neden sıfırdır?",
+      "secenekler": [
+        "Kuvvetin yönü değiştiği için",
+        "Kapak yer değiştirmediği için",
+        "Kapağın kütlesi bilinmediği için",
+        "Kuvvet sıfır olduğu için"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fiziksel iş W=F·Δx bağıntısına bağlıdır. Kapak yer değiştirmediğinden Δx=0 ve yapılan iş sıfırdır; teknisyenin yorulması bu tanımı değiştirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fiziksel anlamda iş yapılması için kuvvetin yanında hangi koşul gerekir?",
+        "back": "Cisim kuvvet doğrultusunda yer değiştirmelidir; yer değiştirme yoksa iş yapılmaz."
+      },
+      "kazanim": "iş, enerji ve güç arasındaki ilişkiye yönelik çıkarım yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u02_k01_o01:flashcard",
+      "front": "Kuvvet ile yer değiştirme birbirine dikse kuvvetin yaptığı fiziksel iş ne olur?",
+      "back": "İş sıfırdır; yer değiştirme doğrultusundaki kuvvet bileşeni iş yapar."
+    },
+    {
+      "id": "fizik_10_u02_k01_o02:flashcard",
+      "front": "Kuvvet ve yer değiştirme aynı doğrultudaysa yapılan iş hangi bağıntıyla bulunur?",
+      "back": "W = F·Δx; kuvvet ve yer değiştirme büyüklükleri çarpılır."
+    },
+    {
+      "id": "fizik_10_u02_k01_o03:flashcard",
+      "front": "Yatayla α açısı yapan kuvvetin yatay yer değiştirme boyunca yaptığı işi nasıl hesaplarsın?",
+      "back": "Yatay bileşen Fₓ = F·cosα'dır; W = F·cosα·Δx."
+    },
+    {
+      "id": "fizik_10_u02_k01_o04:flashcard",
+      "front": "Kuvvet değişkense kuvvet-yer değiştirme grafiğinin altında kalan alan neyi verir?",
+      "back": "Kuvvetin yaptığı işi verir; eksenin üstü pozitif, altı negatif iştir."
+    },
+    {
+      "id": "fizik_10_u02_k01_o05:flashcard",
+      "front": "Hareket yönüne ters kuvvetin yaptığı işin işareti ve cismin hareketine etkisi nedir?",
+      "back": "Negatif iş yapar ve cismi yavaşlatır."
+    },
+    {
+      "id": "fizik_10_u02_k01_o06:flashcard",
+      "front": "Net kuvvetin yaptığı iş, cismin enerjisiyle nasıl ilişkilidir?",
+      "back": "Net iş, cismin enerji değişimine eşittir: Wnet = ΔE."
+    },
+    {
+      "id": "fizik_10_u02_k01_o07:flashcard",
+      "front": "Güç neyi ölçer ve matematiksel modeli nedir?",
+      "back": "Güç, birim zamanda yapılan iş ya da aktarılan enerjidir: P = W/t."
+    },
+    {
+      "id": "fizik_10_u02_k01_o08:flashcard",
+      "front": "Aynı işi daha kısa sürede yapan kişi için güç nasıl değişir?",
+      "back": "Güç artar; aynı iş daha kısa zamanda yapıldığı için birim zamandaki iş büyür."
+    },
+    {
+      "id": "fizik_10_u02_k01_o09:flashcard",
+      "front": "Sabit güçle çalışan bir aygıtın t sürede aktardığı enerji nasıl hesaplanır?",
+      "back": "E = P·t; güç watt, süre saniye alınırsa enerji joule olur. Güç kilowatt verilmişse önce watt’a çevrilir."
+    },
+    {
+      "id": "fizik_10_u02_k01_o10:flashcard",
+      "front": "Fiziksel anlamda iş yapılması için kuvvetin yanında hangi koşul gerekir?",
+      "back": "Cisim kuvvet doğrultusunda yer değiştirmelidir; yer değiştirme yoksa iş yapılmaz."
+    }
+  ],
+  "baslik": "2.1 İş, Enerji ve Güç",
+  "topic_key": "Fizik > 2.1 İş, Enerji ve Güç"
+}

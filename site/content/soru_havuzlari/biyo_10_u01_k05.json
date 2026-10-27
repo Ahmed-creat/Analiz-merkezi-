@@ -1,0 +1,299 @@
+{
+  "konu_id": "biyo_10_u01_k05",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k05_o01",
+      "alt_beceri": "Oksijenli Solunum",
+      "metin": "Bir ökaryot hücrede oksijenli solunumun ilk basamağı ve tamamlandığı yerler nasıl sıralanır?",
+      "secenekler": [
+        "Sitoplazmada başlar, mitokondride tamamlanır.",
+        "Mitokondride başlar, çekirdekte tamamlanır.",
+        "Yalnızca sitoplazmada gerçekleşir.",
+        "Yalnızca hücre zarında gerçekleşir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Ökaryotlarda oksijenli solunum sitoplazmada başlar ve mitokondride tamamlanır. Yalnızca sitoplazmada gerçekleşme ifadesi sürecin tamamını kapsamaz; hücre zarı seçeneği prokaryotların yerleşimini çağrıştırır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksijenli solunumun genel denklemini yazınız.",
+        "back": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP + ısı."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o02",
+      "alt_beceri": "Oksijenli Solunum",
+      "metin": "Bir hücrede organik besin moleküllerinin parçalanması sonucunda ATP üretiliyor. Bu olay aşağıdakilerden hangisiyle açıklanır?",
+      "secenekler": [
+        "Akciğer alveollerinde gaz değişimi",
+        "Hücresel solunum",
+        "Havanın solunum yollarında ilerlemesi",
+        "Oksijenin kandan akciğer boşluğuna geçişi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Organik besinlerin hücre içinde parçalanmasıyla ATP elde edilmesi hücresel solunumdur. Alveollerdeki gaz değişimi ve havanın solunum yollarında ilerlemesi nefes alıp verme sürecine aittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Nefes alıp verme ile hücresel solunumu gerçekleştiği olay bakımından karşılaştırınız.",
+        "back": "Nefes alıp verme solunum organlarındaki gaz değişimidir; hücresel solunum, organik besinlerin hücre içinde parçalanarak enerji elde edilmesidir."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o03",
+      "alt_beceri": "Glikoliz",
+      "metin": "Bir hücre üç glikoz molekülünü glikolizden geçiriyor. Glikoz başına net 2 ATP kazanılıyorsa toplam net kazanç kaç ATP olur?",
+      "secenekler": [
+        "4 ATP",
+        "2 ATP",
+        "6 ATP",
+        "8 ATP"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bir glikoz molekülünün glikolizinden net 2 ATP elde edilir. Üç glikoz için net kazanç 3 × 2 = 6 ATP olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Glikolizin gerçekleştiği yeri ve başlıca ürünlerini yazınız.",
+        "back": "Glikoliz sitoplazmada gerçekleşir; bir glikoz molekülü iki piruvata parçalanırken 2 NADH oluşur."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o04",
+      "alt_beceri": "Glikoliz",
+      "metin": "Glikolizin farklı enerji elde etme yollarında ortak bir basamak olmasının nedeni nedir?",
+      "secenekler": [
+        "Glikozu doğrudan su ve karbondioksite kadar parçalar.",
+        "Yalnızca ökaryotların mitokondrisinde gerçekleşir.",
+        "Sadece oksijen bulunduğunda çalışır.",
+        "Hücresel solunum ve fermantasyon gibi yolların başlangıcında ortak olarak gerçekleşir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Glikoliz hem hücresel solunumda hem de fermantasyonda ortak gerçekleşen temel bir basamaktır. Bu süreç sitoplazmada yürütülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Glikolizin hücresel enerji metabolizmasındaki ortak rolünü açıklayınız.",
+        "back": "Glikoliz, hücresel solunum ve fermantasyon gibi farklı metabolik yollarda ortak gerçekleşen temel bir basamaktır."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o05",
+      "alt_beceri": "Krebs (Sitrik Asit) Döngüsü",
+      "metin": "Bir hücre üç glikoz molekülünü tamamen işler; her glikozdan oluşan iki asetil-CoA Krebs döngüsüne birer kez katılır. Döngü toplam kaç kez gerçekleşir?",
+      "secenekler": [
+        "6 kez",
+        "2 kez",
+        "3 kez",
+        "9 kez"
+      ],
+      "dogru_index": 0,
+      "cozum": "Her glikozdan iki asetil-CoA oluştuğu için Krebs döngüsü glikoz başına iki kez döner. Üç glikoz için toplam dönüş sayısı 3 × 2 = 6’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir glikoz molekülü başına Krebs döngüsünün kaç kez gerçekleştiğini ve toplam ürünlerini yazınız.",
+        "back": "Döngü iki kez gerçekleşir; toplam 4 CO₂, 6 NADH, 2 FADH₂ ve 2 ATP oluşur."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o06",
+      "alt_beceri": "Krebs (Sitrik Asit) Döngüsü",
+      "metin": "Krebs döngüsünde asetil-CoA’nın karbonları işlenirken döngünün tekrar devam etmesini sağlayan hangi olay gerçekleşir?",
+      "secenekler": [
+        "Glikoz sitoplazmada iki piruvata ayrılır.",
+        "Dört karbonlu başlangıç bileşiği yeniden oluşur.",
+        "Oksijen suyu parçalayarak elektron verir.",
+        "Calvin döngüsünde PGAL glikoza dönüşür."
+      ],
+      "dogru_index": 1,
+      "cozum": "Asetil-CoA’dan gelen karbonlar döngüde CO₂ olarak ayrılır. Tepkimeler sonunda dört karbonlu başlangıç bileşiği yeniden oluştuğu için yeni asetil-CoA döngüye katılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ökaryot hücrelerde Krebs döngüsünün yerini ve karbon iskeletindeki değişim sırasında döngünün nasıl sürdüğünü açıklayınız.",
+        "back": "Krebs döngüsü mitokondri matriksinde gerçekleşir; CO₂ çıkışlarıyla karbon sayısı azalırken dört karbonlu bileşik yeniden oluşarak döngüyü sürdürür."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o07",
+      "alt_beceri": "ETS Evresi",
+      "metin": "Oksijenli solunumun ETS basamağında elektronları zincirin sonunda hangi madde alır?",
+      "secenekler": [
+        "Karbondioksit",
+        "Glikoz",
+        "Oksijen",
+        "Asetil-CoA"
+      ],
+      "dogru_index": 2,
+      "cozum": "Oksijen, ETS'nin son basamağında elektronları alır ve protonlarla birleşerek su oluşturur. Karbondioksit oksijenli solunumda oluşan bir üründür, son elektron alıcısı değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ökaryot ve prokaryotlarda ETS’nin gerçekleştiği yapıları ve oksijenli solunumdaki son elektron alıcısını belirtiniz.",
+        "back": "Ökaryotlarda ETS mitokondrinin iç zarında, prokaryotlarda hücre zarında gerçekleşir; oksijenli solunumda son elektron alıcısı oksijendir."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o08",
+      "alt_beceri": "ETS Evresi",
+      "metin": "ETS boyunca gerçekleşen indirgenme-yükseltgenme tepkimelerinin sonuçları hangi seçenekte birlikte verilmiştir?",
+      "secenekler": [
+        "Yalnızca glikoz sentezi",
+        "Yalnızca karbondioksit tüketimi",
+        "Piruvatın doğrudan amino aside dönüşmesi",
+        "ATP sentezi ve bir miktar ısı açığa çıkması"
+      ],
+      "dogru_index": 3,
+      "cozum": "ETS'deki elektron aktarımı sırasında ATP üretilir; enerjinin bir kısmı ısı olarak ortama verilir. Bu basamakta glikoz sentezi ya da piruvatın amino aside dönüşmesi gerçekleşmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ETS'nin elektron taşıma ve ATP üretimindeki işleyişini kısaca açıklayınız.",
+        "back": "NADH ve FADH₂'nin taşıdığı elektronlar ETS boyunca oksijene aktarılır; bu sırada ATP sentezlenir ve enerjinin bir bölümü ısı olarak açığa çıkar."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o09",
+      "alt_beceri": "Oksijensiz Solunum",
+      "metin": "Bir canlı oksijensiz ortamda solunum yapıyor; süreçte ETS çalışıyor ancak son elektron alıcısı O₂ değil. Bu solunum biçimi nedir?",
+      "secenekler": [
+        "Oksijensiz solunum",
+        "Fermantasyon",
+        "Oksijenli solunum",
+        "Fotosentez"
+      ],
+      "dogru_index": 0,
+      "cozum": "Oksijensiz solunumda ETS görev yapar, fakat son elektron alıcısı oksijen değildir. Fermantasyondan farklı olarak elektron taşıma sistemi kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksijensiz solunumu fermantasyondan ayıran temel özellik nedir?",
+        "back": "Oksijensiz solunumda ETS görev yapar; fermantasyonda ETS kullanılmaz."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o10",
+      "alt_beceri": "Oksijensiz Solunum",
+      "metin": "Son elektron alıcısı oksijen olmayan, ancak ETS kullanan bir solunum çeşidi oksijenli solunumla karşılaştırıldığında genellikle nasıl ATP üretir?",
+      "secenekler": [
+        "Her zaman aynı miktarda ATP üretir.",
+        "Daha az ATP üretir.",
+        "Hiç ATP üretmez.",
+        "Daha fazla ATP üretir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Oksijensiz solunumda ETS çalışır ancak son elektron alıcısı oksijen değildir; bu yol oksijenli solunuma göre genellikle daha az ATP sağlar. ETS’nin bulunması ATP üretildiği anlamına gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksijensiz solunumu son elektron alıcısı, ETS kullanımı ve ATP üretimi bakımından oksijenli solunumla karşılaştırınız.",
+        "back": "Oksijensiz solunumda ETS kullanılır, ancak son elektron alıcısı O₂ değildir; genellikle oksijenli solunumdan daha az ATP üretilir."
+      },
+      "kazanim": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o11",
+      "alt_beceri": "Besinlerin Hücresel Solunuma Katılma Yolları",
+      "metin": "Bir hücre, karbohidratları, yağları ve proteinleri enerji üretiminde kullanıyor; bu besin grupları solunum yoluna aynı noktadan katılmıyor. Bu farklılığı en iyi hangi özellik açıklar?",
+      "secenekler": [
+        "Besinlerin tümünün aynı moleküle dönüşmesi",
+        "Hücrelerde solunum enzimlerinin bulunmaması",
+        "Besinlerin karbon iskeletlerinin farklı ara ürünlere dönüşebilmesi",
+        "Solunumun yalnızca yağlardan enerji elde etmesi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Karbohidrat, yağ ve proteinlerin kimyasal yapıları, özellikle karbon iskeletleri, farklıdır. Bu nedenle farklı solunum ara ürünlerine dönüşerek sürece farklı noktalardan katılabilirler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Farklı besinlerin hücresel solunumun farklı basamaklarına katılmasının temel nedeni nedir?",
+        "back": "Besin gruplarının kimyasal yapıları, özellikle karbon iskeletleri, farklı olduğundan solunuma farklı basamaklardan katılırlar."
+      },
+      "kazanim": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k05_o12",
+      "alt_beceri": "Besinlerin Hücresel Solunuma Katılma Yolları",
+      "metin": "Bir hücre proteinlerin yapı taşı olan amino asitleri enerji elde etmek için kullanacak. Karbon iskeletinin solunuma katılabilmesi için öncelikle hangi işlem gerçekleşmelidir?",
+      "secenekler": [
+        "Amino grubu korunarak molekül doğrudan ETS’ye aktarılmıştır.",
+        "Karbon iskeletine yeni bir amino grubu eklenmiştir.",
+        "Amino asidin tamamı sindirilmeden doğrudan Krebs döngüsüne girmiştir.",
+        "Amino grubu uzaklaştırılmış; kalan karbon iskeleti uygun ara ürüne dönüşebilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Amino asitler hücresel solunuma katılmadan önce amino grupları uzaklaştırılır. Kalan karbon iskeleti yapısına göre uygun solunum ara ürününe dönüşebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Amino asitlerin karbon iskeletlerinin hücresel solunuma katıldığı basamak hangi özelliğe göre değişir?",
+        "back": "Karbon iskeletinin uzunluğu ve dönüşebildiği ara ürün, solunuma hangi basamaktan katılacağını belirler; iskeletler glikoliz ara ürünlerine, piruvata, asetil-CoA’ya veya Krebs döngüsü ara ürünlerine dönüşebilir."
+      },
+      "kazanim": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k05_o01:flashcard",
+      "front": "Oksijenli solunumun genel denklemini yazınız.",
+      "back": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP + ısı."
+    },
+    {
+      "id": "biyo_10_u01_k05_o02:flashcard",
+      "front": "Nefes alıp verme ile hücresel solunumu gerçekleştiği olay bakımından karşılaştırınız.",
+      "back": "Nefes alıp verme solunum organlarındaki gaz değişimidir; hücresel solunum, organik besinlerin hücre içinde parçalanarak enerji elde edilmesidir."
+    },
+    {
+      "id": "biyo_10_u01_k05_o03:flashcard",
+      "front": "Glikolizin gerçekleştiği yeri ve başlıca ürünlerini yazınız.",
+      "back": "Glikoliz sitoplazmada gerçekleşir; bir glikoz molekülü iki piruvata parçalanırken 2 NADH oluşur."
+    },
+    {
+      "id": "biyo_10_u01_k05_o04:flashcard",
+      "front": "Glikolizin hücresel enerji metabolizmasındaki ortak rolünü açıklayınız.",
+      "back": "Glikoliz, hücresel solunum ve fermantasyon gibi farklı metabolik yollarda ortak gerçekleşen temel bir basamaktır."
+    },
+    {
+      "id": "biyo_10_u01_k05_o05:flashcard",
+      "front": "Bir glikoz molekülü başına Krebs döngüsünün kaç kez gerçekleştiğini ve toplam ürünlerini yazınız.",
+      "back": "Döngü iki kez gerçekleşir; toplam 4 CO₂, 6 NADH, 2 FADH₂ ve 2 ATP oluşur."
+    },
+    {
+      "id": "biyo_10_u01_k05_o06:flashcard",
+      "front": "Ökaryot hücrelerde Krebs döngüsünün yerini ve karbon iskeletindeki değişim sırasında döngünün nasıl sürdüğünü açıklayınız.",
+      "back": "Krebs döngüsü mitokondri matriksinde gerçekleşir; CO₂ çıkışlarıyla karbon sayısı azalırken dört karbonlu bileşik yeniden oluşarak döngüyü sürdürür."
+    },
+    {
+      "id": "biyo_10_u01_k05_o07:flashcard",
+      "front": "Ökaryot ve prokaryotlarda ETS’nin gerçekleştiği yapıları ve oksijenli solunumdaki son elektron alıcısını belirtiniz.",
+      "back": "Ökaryotlarda ETS mitokondrinin iç zarında, prokaryotlarda hücre zarında gerçekleşir; oksijenli solunumda son elektron alıcısı oksijendir."
+    },
+    {
+      "id": "biyo_10_u01_k05_o08:flashcard",
+      "front": "ETS'nin elektron taşıma ve ATP üretimindeki işleyişini kısaca açıklayınız.",
+      "back": "NADH ve FADH₂'nin taşıdığı elektronlar ETS boyunca oksijene aktarılır; bu sırada ATP sentezlenir ve enerjinin bir bölümü ısı olarak açığa çıkar."
+    },
+    {
+      "id": "biyo_10_u01_k05_o09:flashcard",
+      "front": "Oksijensiz solunumu fermantasyondan ayıran temel özellik nedir?",
+      "back": "Oksijensiz solunumda ETS görev yapar; fermantasyonda ETS kullanılmaz."
+    },
+    {
+      "id": "biyo_10_u01_k05_o10:flashcard",
+      "front": "Oksijensiz solunumu son elektron alıcısı, ETS kullanımı ve ATP üretimi bakımından oksijenli solunumla karşılaştırınız.",
+      "back": "Oksijensiz solunumda ETS kullanılır, ancak son elektron alıcısı O₂ değildir; genellikle oksijenli solunumdan daha az ATP üretilir."
+    },
+    {
+      "id": "biyo_10_u01_k05_o11:flashcard",
+      "front": "Farklı besinlerin hücresel solunumun farklı basamaklarına katılmasının temel nedeni nedir?",
+      "back": "Besin gruplarının kimyasal yapıları, özellikle karbon iskeletleri, farklı olduğundan solunuma farklı basamaklardan katılırlar."
+    },
+    {
+      "id": "biyo_10_u01_k05_o12:flashcard",
+      "front": "Amino asitlerin karbon iskeletlerinin hücresel solunuma katıldığı basamak hangi özelliğe göre değişir?",
+      "back": "Karbon iskeletinin uzunluğu ve dönüşebildiği ara ürün, solunuma hangi basamaktan katılacağını belirler; iskeletler glikoliz ara ürünlerine, piruvata, asetil-CoA’ya veya Krebs döngüsü ara ürünlerine dönüşebilir."
+    }
+  ],
+  "topic_key": "Biyoloji > 1.7 Hücresel Solunum"
+}

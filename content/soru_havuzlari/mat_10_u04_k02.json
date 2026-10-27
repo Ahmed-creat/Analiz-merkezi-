@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u04_k02",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u04_k02_o01",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "g(x)=−2(x+3)²+5 fonksiyonu için g(1) kaçtır?",
+      "secenekler": [
+        "−27",
+        "−11",
+        "13",
+        "−9"
+      ],
+      "dogru_index": 0,
+      "cozum": "x=1 yazılır: g(1)=−2(1+3)²+5=−2·16+5=−27.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f(x)=x² karesel referans fonksiyonunun grafiğine ne ad verilir?",
+        "back": "Parabol denir."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o02",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "h: R→R, h(x)=−2(x−4)²+7 biçiminde tanımlanıyor. h fonksiyonunun görüntü kümesi hangisidir?",
+      "secenekler": [
+        "[7,∞)",
+        "(−∞,7]",
+        "R",
+        "(−∞,−7]"
+      ],
+      "dogru_index": 1,
+      "cozum": "(x−4)²≥0 olduğundan −2(x−4)²≤0 ve h(x)≤7 olur. x=4 için 7 elde edilir; kare ifadesi sınırsız büyüyebildiğinden daha küçük bütün değerler alınır. Görüntü kümesi (−∞,7]’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir fonksiyonun tanım kümesi neyi gösterir?",
+        "back": "Fonksiyon kuralında girdi olarak kullanılmasına izin verilen değerlerin kümesini gösterir."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o03",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "p:[−2,3]→R, p(x)=−(x−5)²+4 olarak tanımlanıyor. Bu tanım aralığında p fonksiyonunun mutlak maksimum ve minimum değerleri hangi seçenekte doğru verilmiştir?",
+      "secenekler": [
+        "Maksimum 4 (x=5), minimum −45 (x=−2)",
+        "Maksimum −45 (x=−2), minimum 0 (x=3)",
+        "Maksimum 0 (x=3), minimum −45 (x=−2)",
+        "Maksimum 0 (x=3), minimum 4 (x=5)"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tepe noktasının apsisi 5 tanım aralığının dışında ve p, [−2,3] aralığında artar. Uç değerler p(−2)=−49+4=−45 ve p(3)=−4+4=0 olduğundan minimum −45, maksimum 0’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir karesel fonksiyonun sıfırları cebirsel ve grafiksel olarak nasıl belirlenir?",
+        "back": "f(x)=0 denklemi çözülür; gerçek çözümler grafiğin x eksenini kestiği ya da teğet olduğu noktaların apsisleridir."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o04",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "Tepe noktası (−2,4) ve a katsayısı 3 olan bir karesel fonksiyonun tepe noktası biçimindeki kuralı hangisidir?",
+      "secenekler": [
+        "3(x−2)²−4",
+        "−3(x+2)²+4",
+        "3(x−2)²+4",
+        "3(x+2)²+4"
+      ],
+      "dogru_index": 3,
+      "cozum": "Tepe noktası (h,k) olan tepe noktası biçimi a(x−h)²+k’dir. h=−2, k=4 ve a=3 yazıldığında 3(x+2)²+4 elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f(x)=a(x+r)²+k biçimindeki karesel fonksiyonun tepe noktasının koordinatları nasıl yazılır?",
+        "back": "(−r,k)"
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o05",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "r(x)=−2(x+3)²+7 için bir öğrenci “r fonksiyonunun minimum değeri 7’dir.” diyor. Bu yargıyı doğru değerlendiren seçenek hangisidir?",
+      "secenekler": [
+        "Yargı yanlıştır; parabol aşağı açılır, tepe noktasında maksimum 7 değerini alır ve R’de minimumu yoktur.",
+        "Yargı doğrudur; her karesel fonksiyon tepe noktasında minimum değerini alır.",
+        "Yargı yanlıştır; fonksiyonun minimum değeri −2’dir.",
+        "Yargı doğrudur; r(x) her gerçek x için 7’den büyük veya 7’ye eşittir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Kareli ifade en az 0’dır; negatif katsayıyla çarpılınca r(x)≤7 olur. Eşitlik x=−3’te sağlanır. Fonksiyonun maksimumu 7’dir; aşağı doğru sınırsız olduğundan minimumu yoktur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f(x)=a(x+r)²+k biçiminde a>0 ve a<0 olması parabolün açılış yönü hakkında ne söyler?",
+        "back": "a>0 ise yukarı, a<0 ise aşağı açılır."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o06",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "n(x)=5(x+4)²−2 fonksiyonunun görüntü kümesi hangisidir?",
+      "secenekler": [
+        "R",
+        "[−2,∞)",
+        "[0,∞)",
+        "(−∞,−2]"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kareli ifade en az 0’dır ve x=−4’te 0 olur. Bu nedenle n(x) en küçük −2 değerinden başlayarak daha büyük tüm değerleri alır; görüntü kümesi [−2,∞)’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "a>0 için g(x)=a(x+r)²+k fonksiyonunun görüntü kümesi nasıl yazılır?",
+        "back": "[k,∞)"
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o07",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "p(x)=−4(x−6)²+9 parabolünün simetri doğrusu hangisidir?",
+      "secenekler": [
+        "x=−6",
+        "y=9",
+        "x=6",
+        "x=0"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tepe noktasının apsisi 6’dır. Parabolün simetri doğrusu tepe noktasından geçen dikey doğru olduğundan x=6’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "g(x)=a(x+r)²+k biçiminde yazıldığında parabolün simetri doğrusu hangi denklemdir?",
+        "back": "x=−r"
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o08",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "h(x)=5(x+4)²−1 fonksiyonunun azalan olduğu aralık hangisidir?",
+      "secenekler": [
+        "[−4,∞)",
+        "R",
+        "(−∞,−4)",
+        "(−∞,−4]"
+      ],
+      "dogru_index": 3,
+      "cozum": "Parabol yukarı açılır ve tepe noktasının apsisi −4’tür. Tepe noktasına kadar azaldığından azalan olduğu aralık (−∞,−4]’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "a>0 için g(x)=a(x+r)²+k fonksiyonu hangi aralıklarda azalır ve artar?",
+        "back": "Tepe noktasının apsisi −r olduğundan (−∞,−r] aralığında azalır, [−r,∞) aralığında artar."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o09",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "Bir optik ölçüm düzeneğinde hareketli merceğin x konumundaki görüntü netliği s(x)=−(1/4)(x−6)²+9, 0≤x≤12 modeliyle gösteriliyor. Bu aralıkta ulaşılabilecek en yüksek netlik puanı kaçtır?",
+      "secenekler": [
+        "9 puan",
+        "6 puan",
+        "8 puan",
+        "12 puan"
+      ],
+      "dogru_index": 0,
+      "cozum": "Parabol aşağı açılır; tepe noktası x=6’dadır ve bu değer verilen aralıktadır. Bu noktadaki s(6)=9 olduğundan en yüksek netlik puanı 9’dur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "a<0 olan f(x)=a(x+r)²+k fonksiyonunda tepe noktasının y koordinatı k, fonksiyonun hangi değerini verir?",
+        "back": "Maksimum değerini verir."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o10",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "g(x)=3x²−12x+7 ifadesinin tamkare biçimi hangisidir?",
+      "secenekler": [
+        "3(x−2)²+5",
+        "3(x−2)²−5",
+        "3(x−4)²−5",
+        "3(x+2)²−17"
+      ],
+      "dogru_index": 1,
+      "cozum": "İlk iki terimde 3 ortak çarpanı alınır: 3(x²−4x)+7=3[(x−2)²−4]+7=3(x−2)²−5.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ax²+bx+c biçimindeki bir ifadeyi tamkare biçimine dönüştürmenin temel adımı nedir?",
+        "back": "Önce x² teriminin katsayısı ortak çarpan olarak ayrılır; ardından x katsayısının yarısının karesi eklenip çıkarılarak tam kare oluşturulur ve sabit terim düzenlenir."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o11",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "f(x)=−(x−4)²+10 fonksiyonu 0≤x<9 tanım aralığında veriliyor. f fonksiyonunun görüntü kümesi hangisidir?",
+      "secenekler": [
+        "[−15,10]",
+        "(−15,10)",
+        "(−15,10]",
+        "[−6,10]"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tepe noktası x=4’te olduğundan en büyük değer 10’dur ve alınır. x=9 tanım aralığına dâhil değildir; x→9− iken f(x)→−15, dolayısıyla −15 alınmaz. Görüntü kümesi (−15,10]’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir karesel fonksiyonun sınırlı bir tanım aralığındaki görüntü kümesi belirlenirken nelere bakılır?",
+        "back": "Tepe noktasının aralıkta olup olmadığı, uç değerler ve aralığın açıklığı incelenir. Açık uçta yaklaşılan bir sınır değeri başka bir girdiyle de alınıyorsa görüntü kümesine katılır; alınmıyorsa katılmaz."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k02_o12",
+      "alt_beceri": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "metin": "Kare biçimli bir sergi platformunun kenarı 6 m’den 9 m’ye çıkarılıyor. Platformun alanı kaç katına çıkar?",
+      "secenekler": [
+        "1,5 katına",
+        "2 katına",
+        "3 katına",
+        "2,25 katına"
+      ],
+      "dogru_index": 3,
+      "cozum": "Karenin alanı kenar uzunluğunun karesiyle değişir. Alan oranı (9/6)²=(3/2)²=9/4=2,25 olduğundan alan 2,25 katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kenar uzunluğu s olan kare biçimli bir panelin alanını s cinsinden nasıl ifade edersin?",
+        "back": "A(s)=s². Kenar uzunluğu r katına çıkarsa alan r² katına çıkar."
+      },
+      "kazanim": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u04_k02_o01:flashcard",
+      "front": "f(x)=x² karesel referans fonksiyonunun grafiğine ne ad verilir?",
+      "back": "Parabol denir."
+    },
+    {
+      "id": "mat_10_u04_k02_o02:flashcard",
+      "front": "Bir fonksiyonun tanım kümesi neyi gösterir?",
+      "back": "Fonksiyon kuralında girdi olarak kullanılmasına izin verilen değerlerin kümesini gösterir."
+    },
+    {
+      "id": "mat_10_u04_k02_o03:flashcard",
+      "front": "Bir karesel fonksiyonun sıfırları cebirsel ve grafiksel olarak nasıl belirlenir?",
+      "back": "f(x)=0 denklemi çözülür; gerçek çözümler grafiğin x eksenini kestiği ya da teğet olduğu noktaların apsisleridir."
+    },
+    {
+      "id": "mat_10_u04_k02_o04:flashcard",
+      "front": "f(x)=a(x+r)²+k biçimindeki karesel fonksiyonun tepe noktasının koordinatları nasıl yazılır?",
+      "back": "(−r,k)"
+    },
+    {
+      "id": "mat_10_u04_k02_o05:flashcard",
+      "front": "f(x)=a(x+r)²+k biçiminde a>0 ve a<0 olması parabolün açılış yönü hakkında ne söyler?",
+      "back": "a>0 ise yukarı, a<0 ise aşağı açılır."
+    },
+    {
+      "id": "mat_10_u04_k02_o06:flashcard",
+      "front": "a>0 için g(x)=a(x+r)²+k fonksiyonunun görüntü kümesi nasıl yazılır?",
+      "back": "[k,∞)"
+    },
+    {
+      "id": "mat_10_u04_k02_o07:flashcard",
+      "front": "g(x)=a(x+r)²+k biçiminde yazıldığında parabolün simetri doğrusu hangi denklemdir?",
+      "back": "x=−r"
+    },
+    {
+      "id": "mat_10_u04_k02_o08:flashcard",
+      "front": "a>0 için g(x)=a(x+r)²+k fonksiyonu hangi aralıklarda azalır ve artar?",
+      "back": "Tepe noktasının apsisi −r olduğundan (−∞,−r] aralığında azalır, [−r,∞) aralığında artar."
+    },
+    {
+      "id": "mat_10_u04_k02_o09:flashcard",
+      "front": "a<0 olan f(x)=a(x+r)²+k fonksiyonunda tepe noktasının y koordinatı k, fonksiyonun hangi değerini verir?",
+      "back": "Maksimum değerini verir."
+    },
+    {
+      "id": "mat_10_u04_k02_o10:flashcard",
+      "front": "ax²+bx+c biçimindeki bir ifadeyi tamkare biçimine dönüştürmenin temel adımı nedir?",
+      "back": "Önce x² teriminin katsayısı ortak çarpan olarak ayrılır; ardından x katsayısının yarısının karesi eklenip çıkarılarak tam kare oluşturulur ve sabit terim düzenlenir."
+    },
+    {
+      "id": "mat_10_u04_k02_o11:flashcard",
+      "front": "Bir karesel fonksiyonun sınırlı bir tanım aralığındaki görüntü kümesi belirlenirken nelere bakılır?",
+      "back": "Tepe noktasının aralıkta olup olmadığı, uç değerler ve aralığın açıklığı incelenir. Açık uçta yaklaşılan bir sınır değeri başka bir girdiyle de alınıyorsa görüntü kümesine katılır; alınmıyorsa katılmaz."
+    },
+    {
+      "id": "mat_10_u04_k02_o12:flashcard",
+      "front": "Kenar uzunluğu s olan kare biçimli bir panelin alanını s cinsinden nasıl ifade edersin?",
+      "back": "A(s)=s². Kenar uzunluğu r katına çıkarsa alan r² katına çıkar."
+    }
+  ],
+  "baslik": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
+  "topic_key": "Matematik > 4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri"
+}

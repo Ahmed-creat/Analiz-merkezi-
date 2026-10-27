@@ -1,0 +1,17 @@
+{
+  "name": "Analiz Merkezi",
+  "short_name": "Analiz",
+  "description": "TYT/okul sınavları için kişisel analiz, tekrar takvimi ve çalışma motoru",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F3F7FE",
+  "theme_color": "#1D4ED8",
+  "lang": "tr",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
