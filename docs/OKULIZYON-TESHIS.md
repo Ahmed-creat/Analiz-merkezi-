@@ -35,6 +35,16 @@ kullanıcı bilgi girer
 
 Ayrıca kimse Supabase'e giriş yapmadığı için (`auth.users` = 0) uygulama tarafındaki okuma yolu RLS gereği zaten `giris-yok` durumunda kalıyor.
 
+## GÜNCELLEME (v34.4) — bu raporun "Playwright şart" sonucu geçersiz
+
+Okulizyon girişi **gizli bir AJAX API'si** kullanıyor (`/ajax/ogrencigirisarama.php`,
+`/ajax/ilceler.php`, `/ajax/kurumlar.php`, `/ajax/ogrencigiris.php`); tarayıcı
+otomasyonu gerekmiyor. Çalışan yeni kurulum, canlı kanıtlar ve kalan tek risk için:
+**[`docs/OKULIZYON-CEKICI.md`](./OKULIZYON-CEKICI.md)**.
+
+Aşağıdaki bölüm, kararın verildiği tarihteki (Playwright/Firestore dönemi) tespiti
+tarihsel kayıt olarak korur.
+
 ## Bu yöntem gerçekten işe yarıyor mu?
 
 **Fikir doğru, kurulum eksik.**

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.3-profil";
+const PWA_SURUM = "v34.4-cekici";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -253,7 +253,8 @@ function renderProfileModal() {
   html += sel("sinif", "SINIF", ["9", "10", "11", "12"]);
   html += sel("il", "İL", ["Gaziantep"]);
   html += sel("ilce", "İLÇE", ILCELER);
-  html += sel("okulAdi", "OKUL", ["Akken Anadolu Lisesi"]);
+  html += sel("okulAdi", "OKUL", ["AKKENT ANADOLU LİSESİ"]);
+  html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa)<input id="okz-sifre" type="password" autocomplete="off" value="' + escHtml(s.sifre || "") + '" placeholder="Okulizyon şifresi" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
   html += '</div>';
   html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
   html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
@@ -261,7 +262,8 @@ function renderProfileModal() {
   html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Analiz Bekliyor' + (bekleyen > 0 ? " (" + bekleyen + ")" : "") + '</button>';
   html += '</div>';
   // Çekim durumu: sessiz başarısızlık yerine açık bilgi
-  const durumRenk = !st.durum ? "#6B7280" : (st.durum.kod === "ok" ? "#16A34A" : (st.durum.kod === "giris-yok" || st.durum.kod === "bos" ? "#B45309" : "#E11D48"));
+  const OKZ_AMBER = ["giris-yok", "bos", "sifre-gerekli", "bilgi-yok", "eslesme-yok", "bekliyor"];
+  const durumRenk = !st.durum ? "#6B7280" : (st.durum.kod === "ok" ? "#16A34A" : (OKZ_AMBER.indexOf(st.durum.kod) >= 0 ? "#B45309" : "#E11D48"));
   html += '<div style="margin-top:9px;font-size:11.5px;line-height:1.45;color:' + durumRenk + ';">'
        + '<b>Son çekim:</b> '
        + (st.durum ? escHtml(okzZaman(st.durum.zaman)) + " — " + escHtml(st.durum.mesaj) : "henüz denenmedi")
@@ -523,6 +525,38 @@ function okzStore() {
   if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], pulledAt: 0, duyurular: null };
   return state.okulizyon;
 }
+// Sunucudaki çekim durumu → kullanıcıya ne yapacağını söyleyen cümle
+const OKZ_SEBEP = {
+  "sifre-gerekli": "Okulizyon bu kayıt için şifre istiyor: yukarıdaki OKULİZYON ŞİFRESİ alanını doldurup “Bilgileri Kaydet”e bas, sonra “Şimdi dene”.",
+  "eslesme-yok": "Okulizyon’da il/ilçe/okul eşleşmedi: Profil’deki il, ilçe ve okul adını kontrol et.",
+  "red": "Okulizyon bu ad-soyad + okul no ile kayıt bulamadı: bilgileri Okulizyon’a giriş yaptığın hâliyle birebir yaz.",
+  "bilgi-yok": "Ad soyad ve okul no kayıtlı değil: Okulizyon bölümündeki alanları doldurup kaydet.",
+  "sonuc-yok": "Giriş başarılı ama sonuç tablosu okunamadı; sınav sonuçları Okulizyon’da yayınlanmamış olabilir.",
+  "hata": "Sunucu hatası; birkaç dakika sonra “Şimdi dene” ile tekrar dene.",
+  "giris-yok": "Giriş yapılmadı — sınav sonuçları hesaba bağlı.",
+  "bos": "Bu hesap için henüz sunucuda çekilmiş sonuç yok."
+};
+// Tarayıcıdan gerçek çekimi tetikle (Edge Function “ben” modu) → sonra kuyruğu oku
+async function okzSunucuCek() {
+  if (!sb || !currentUser) return okzDurum("giris-yok", OKZ_SEBEP["giris-yok"]);
+  const yetki = await sb.auth.getSession().then(r => r && r.data && r.data.session).catch(() => null);
+  if (!yetki || !yetki.access_token) return okzDurum("giris-yok", "Oturum bulunamadı — tekrar giriş yap.");
+  okzDurum("bekliyor", "Okulizyon’a bağlanılıyor…");
+  try {
+    const y = await fetch(SUPABASE_CONFIG.url + "/functions/v1/okulizyon-cek", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: SUPABASE_CONFIG.anonKey, Authorization: "Bearer " + yetki.access_token },
+      body: JSON.stringify({ mod: "ben" })
+    });
+    const c = await y.json().catch(() => ({}));
+    if (!y.ok) return okzDurum("hata", "Çekici HTTP " + y.status + (c.hata ? " — " + c.hata : ""));
+    if (c.durum === "ok") toast("Okulizyon: " + (c.sinav || 0) + " sınav, " + (c.satir || 0) + " soru aktarıldı.", "success");
+    else okzDurum(c.durum || "red", (c.mesaj || "Sonuç alınamadı.") + (OKZ_SEBEP[c.durum] ? " → " + OKZ_SEBEP[c.durum] : ""));
+  } catch (e) {
+    return okzDurum("hata", "Çekici çağrılamadı: " + ((e && e.message) || e));
+  }
+  return okzKuyrukCek(true);
+}
 // Çekim sonucunu kullanıcıya görünür kıl (sessiz console.warn yerine)
 function okzDurum(kod, mesaj) {
   try {
@@ -549,7 +583,7 @@ function initOkulizyonUI() {
     if (!el) return;
     const a = el.dataset.act;
     if (a === "pwaOkz") openOkzModal();
-    else if (a === "okzSimdiCek") { toast("Okulizyon sonuçları sorgulanıyor…", "info"); okzKuyrukCek(true); }
+    else if (a === "okzSimdiCek") { toast("Okulizyon sonuçları sorgulanıyor…", "info"); okzSunucuCek(); }
     else if (a === "okzClose") closeOkzModal();
     else if (a === "okzSaveBilgi") okzSaveBilgi();
     else if (a === "okzAnalizKaydet") okzAnalizKaydet();
@@ -632,8 +666,10 @@ function okzSaveBilgi() {
   state.settings.okulizyon = {
     ad: ad, okulNo: al("okulNo"),
     sinif: al("sinif") || "9", il: al("il") || "Gaziantep",
-    ilce: al("ilce") || "Şahinbey", okulAdi: al("okulAdi") || "Akken Anadolu Lisesi"
+    ilce: al("ilce") || "Şahinbey", okulAdi: al("okulAdi") || "AKKENT ANADOLU LİSESİ"
   };
+  const sifreEl = document.getElementById("okz-sifre");
+  if (sifreEl && sifreEl.value) state.settings.okulizyon.sifre = sifreEl.value;
   saveState();
   const pm = document.getElementById("pwa-profile-modal");
   if (pm && pm.style.display === "flex") renderProfileModal();
@@ -658,11 +694,15 @@ async function okzKuyrukCek(zorla) {
   okzCekSuruyor = true;
   try {
     const { data, error } = await sb.from("okulizyon_kuyrugu")
-      .select("exams, pulled_at")
+      .select("exams, pulled_at, durum, durum_mesaji")
       .eq("user_id", currentUser.id)
       .maybeSingle();
     if (error) return okzDurum("hata", "Sunucu hatası: " + (error.message || "kuyruk okunamadı"));
-    if (!data) return okzDurum("bos", "Bu hesap için sunucuda çekilmiş sonuç yok (okulizyon_kuyrugu tablosunda kayıt bulunamadı).");
+    if (!data) return okzDurum("bos", "Bu hesap için sunucuda çekilmiş sonuç yok — «Şimdi dene» ile ilk çekimi başlat.");
+    // Sunucu "giriş yapılamadı / şifre gerekli / sonuç yok" dediyse sebebi göster
+    if (data.durum && data.durum !== "ok" && !(data.exams && data.exams.length)) {
+      return okzDurum(data.durum, (data.durum_mesaji || "Okulizyon sonucu alınamadı.") + (OKZ_SEBEP[data.durum] ? " → " + OKZ_SEBEP[data.durum] : ""));
+    }
 
     const st = okzStore();
     const pulledAt = Date.parse(data.pulled_at) || 0;

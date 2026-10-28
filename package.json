@@ -18,6 +18,7 @@
     "test:bkt": "node tests/bkt-engine.test.js",
     "test:curriculum": "node tests/curriculum.test.js",
     "test:pools": "node tests/question-pools.test.js",
-    "validate:ids": "node scripts/validate-ids.js"
+    "validate:ids": "node scripts/validate-ids.js",
+    "test:okz": "node tests/okulizyon-cekici.test.js"
   }
 }
