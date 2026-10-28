@@ -152,14 +152,14 @@ const lk = VC.izleLink(izl[0]);
 esit("Okulizyon sınav adresi bağlantı ÜRETMEZ (giriş sayfasına atıyordu)", lk, null);
 esit("adres yoksa bağlantı null", VC.izleLink({ videoVar: true }), null);
 ok("boş durumda 'izle' vaadi yok", HTML.indexOf("Bu konu için <b>henüz çözüm bağlantısı yok</b>") > 0);
-ok("video satırı uygulama içi sonuç ekranına gidiyor", HTML.indexOf('data-act="videoGit"') > 0);
+ok("video satırı detayı yerinde açıyor (döngü yok)", HTML.indexOf('data-act="soruCozum"') > 0);
 esit("Okulizyon'a çıkış bağlantısı KALMADI", HTML.indexOf("okulizyon.com"), -1);
 ok("Denemelerim'de 'Konuyu aç' düğmesi var", HTML.indexOf('data-act="konuGit"') > 0);
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v35.5", APP.indexOf('const PWA_SURUM = "v35.5-bildirim-video"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("v35-5-bildirim-video") > 0);
+ok("PWA sürümü v35.6", APP.indexOf('const PWA_SURUM = "v35.6-kok-eksik-kontrol"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("v35-6-kok-eksik-kontrol") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));
