@@ -1076,7 +1076,7 @@ select.dd-native {
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">BİLDİRİM</div>
     <button class="btn btn-ghost w-full" data-act="toggleNotifPermission" style="justify-content:flex-start;"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i> <span id="notif-perm-label">Bildirim İzni İste</span></button>
     <button class="btn btn-ghost w-full" data-act="bildirimTest" style="justify-content:flex-start;margin-top:8px;"><i data-lucide="send" style="width:16px;height:16px;"></i> Test bildirimi gönder</button>
-    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">Uygulama kapalıyken de bildirim almak için bildirimleri aç. Günde en fazla 1 bildirim gönderilir (19:00).</p>
+    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">Uygulama kapalıyken de bildirim almak için bildirimleri aç. Sabah (~07:35) günün tüm bildirimleri, akşam (~19:30) yalnız acil olanlar gelir.</p>
   </div>
   <div style="margin-top:24px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px;">YEDEKLEME</div>
@@ -2333,10 +2333,10 @@ function updateBildirimDurum() {
     let m;
     if (!d.destek) m = "Bu tarayıcı arka plan bildirimini desteklemiyor (iPhone'da \"Ana Ekrana Ekle\" gerekir).";
     else if (d.izin === "denied") m = "Bildirimler tarayıcıda engellenmiş — kilit simgesi → Bildirimler → İzin ver.";
-    else if (d.abone && d.kayitli) m = "✓ Arka plan bildirimi açık · günde en fazla 1 · 19:00";
+    else if (d.abone && d.kayitli) m = "✓ Arka plan bildirimi açık · sabah 07:35 (tümü) · akşam 19:30 (aciller)";
     else if (d.abone) m = "Abonelik var ama hesaba yazılamadı — giriş yaptığından emin ol, sonra düğmeye tekrar bas.";
     else if (d.izin === "granted") m = "İzin var, abonelik yok — \"Bildirim İzni İste\" düğmesine bas.";
-    else m = "Uygulama kapalıyken de bildirim almak için bildirimleri aç. Günde en fazla 1 bildirim (19:00).";
+    else m = "Uygulama kapalıyken de bildirim almak için bildirimleri aç. Sabah tümü, akşam aciller.";
     el.textContent = m;
   }).catch(function () {});
 }
@@ -3481,7 +3481,9 @@ function saveExam() {
   ensureDailyStreakCount();
   saveState();
   evaluateBadges();
-  if (state.settings.notifPermission !== "granted") requestNotifPermission(); // ilk kullanıcı hareketi (User Gesture)
+  // Deneme kaydı bir async zincirin sonunda olabildiği için burada izin istemek
+  // "kullanıcı hareketi yok" hatasına düşüp SESSİZCE başarısız oluyordu.
+  // İzin yalnızca Ayarlar → "Bildirim İzni İste" düğmesinden (gerçek dokunuş) istenir.
   toast("Deneme kaydedildi · Net " + exam.net + " · " + errorLogs.length + " hata kaydı işlendi — Konu Takibi listesi hazır!", "success");
   examFormOpen = false;
   renderExams(document.getElementById("main-content"));
