@@ -13,6 +13,9 @@ const path = require("path");
 
 const KOK = path.join(__dirname, "..");
 const HTML = fs.readFileSync(path.join(KOK, "site", "index.html"), "utf8");
+// v35.7: BKT motoru tek dosyada (site/bkt-engine.js). index.html içindeki
+// kopya sözdizimi hatası yüzünden hiç çalışmıyordu ve kaldırıldı.
+const ENGINE = fs.readFileSync(path.join(KOK, "site", "bkt-engine.js"), "utf8");
 const KE = require(path.join(KOK, "site", "kok-eksik.js"));
 const GRAF = JSON.parse(fs.readFileSync(path.join(KOK, "site", "content", "iliski_grafi.json"), "utf8"));
 
@@ -79,12 +82,12 @@ ok("klavye (Enter/Space) soruCozum'u açıyor", /keydown[\s\S]{0,300}data-act="s
 
 // ---------- 4) Kısa Kontrol: 5 soru + tek tek ----------
 console.log("\n== 4) Kısa Kontrol 5 soru, sırayla ==");
-ok("MINI_SORU = 5", /const MINI_SORU = 5/.test(HTML));
-ok("precheck de 5 soru (eski 3 kalmadı)", !/mode === "precheck" \? Math\.min\(3/.test(HTML));
-ok("tek soru çizen cizMiniSoru var", /function cizMiniSoru\(modal\)/.test(HTML));
-ok("ileri/geri düğmeleri var", /data-bkt-next/.test(HTML) && /data-bkt-prev/.test(HTML));
-ok("soru sayacı gösteriliyor", /Soru ' \+ \(i \+ 1\) \+ ' \/ ' \+ qs\.length/.test(HTML));
-ok("buton etiketi 5 soru", HTML.indexOf("Kısa Kontrol — 5 soru") > 0);
+ok("MINI_SORU = 5", /const MINI_SORU = 5/.test(ENGINE));
+ok("precheck de 5 soru (eski 3 kalmadı)", !/mode === "precheck" \? 3/.test(ENGINE) && !/MINI_SORU = 3/.test(ENGINE));
+ok("tek soru çizen cizMiniSoru var", /function cizMiniSoru\(modal\)/.test(ENGINE));
+ok("ileri/geri düğmeleri var", /data-bkt-next/.test(ENGINE) && /data-bkt-prev/.test(ENGINE));
+ok("soru sayacı gösteriliyor", /Soru ' \+ \(i \+ 1\) \+ ' \/ ' \+ qs\.length/.test(ENGINE));
+ok("buton etiketi 5 soru", HTML.indexOf("Kısa Kontrol — 5 soru") > 0 || /Kısa Kontrol — ' \+ MINI_SORU \+ ' soru/.test(ENGINE));
 ok("tamamlanan konuda belirgin kontrol kartı", HTML.indexOf("5 soruluk kısa kontrol seni bekliyor") > 0);
 ok("completeTopic sonunda otomatik kontrol", /function completeTopic\(key\)[\s\S]{0,2000}miniKontrolBaslat\(key\)/.test(HTML));
 
@@ -97,10 +100,10 @@ fs.readdirSync(poolDir).filter(f => f.endsWith(".json") && f !== "index.json").f
   (d.sorular || []).forEach(q => { if (q.gorsel) gorselli.push({ dosya: f, id: q.soru_id, tip: q.gorsel.tip }); });
 });
 ok("havuzlarda görselli soru var (" + gorselli.length + ")", gorselli.length >= 12);
-ok("mini testte görsel çiziliyor (GV.html)", /function miniGorsel\(q\)[\s\S]{0,300}GV\.html/.test(HTML));
-ok("çizim sırasında soru görseli ekleniyor", /h \+= miniGorsel\(q\);/.test(HTML));
-ok("sonuç ekranında da görsel var", /miniGorsel\(q\) \+ '<div class="text-muted"/.test(HTML));
-ok("görselli sorular seçimde öne alınıyor", /a\.q && a\.q\.gorsel \? 1 : 0/.test(HTML));
+ok("mini testte görsel çiziliyor (GV.html)", /function miniGorsel\(q\)[\s\S]{0,300}GV\.html/.test(ENGINE));
+ok("çizim sırasında soru görseli ekleniyor", /h \+= miniGorsel\(q\);/.test(ENGINE));
+ok("sonuç ekranında da görsel var", (ENGINE.match(/miniGorsel\(q\)/g) || []).length >= 2);
+ok("görselli sorular seçimde öne alınıyor", /a\.q && a\.q\.gorsel \? 1 : 0/.test(ENGINE));
 const GV = require(path.join(KOK, "site", "gorsel.js"));
 let cizilen = 0;
 gorselli.forEach(g => {
@@ -115,7 +118,9 @@ console.log("\n== 6) Bildirim izni ==");
 ok("deneme kaydından sonra otomatik izin isteği KALDIRILDI",
   HTML.indexOf('state.settings.notifPermission !== "granted") requestNotifPermission()') < 0);
 ok("izin yalnız düğmeden isteniyor", /case "toggleNotifPermission": requestNotifPermission\(\);/.test(HTML));
-ok("tanılama paneli var", /function bildirimTeshisPaneli\(\)/.test(HTML));
+ok("tanılama paneli KALDIRILDI (v35.7)", HTML.indexOf("function bildirimTeshisPaneli(") < 0);
+ok("test bildirimi düğmesi KALDIRILDI", HTML.indexOf('data-act="bildirimTest"') < 0);
+ok("izin verilince otomatik test bildirimi", fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8").indexOf("async function testBirKez()") > 0);
 ok("engelli durumunda adım adım çözüm yazıyor", HTML.indexOf("Tarayıcı izni bir kez 'engellendi' olarak kaydedince site kodla geri açamaz") > 0);
 ok("requestPermission await'siz (dokunuş içinde)", /sonuc = Notification\.requestPermission\(bitir\)/.test(HTML));
 

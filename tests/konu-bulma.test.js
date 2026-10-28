@@ -25,6 +25,9 @@ function esit(ad, g, b) { return ok(ad, g === b, "gelen: " + JSON.stringify(g) +
 
 const KOK = path.join(__dirname, "..");
 const HTML = fs.readFileSync(path.join(KOK, "site", "index.html"), "utf8");
+// v35.7: motor artık TEK dosyada — site/bkt-engine.js (index.html içindeki
+// kopya sözdizimi hatası yüzünden hiç çalışmıyordu, kaldırıldı).
+const ENGINE = fs.readFileSync(path.join(KOK, "site", "bkt-engine.js"), "utf8");
 const APP = fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8");
 const MANIFEST = require(path.join(KOK, "site", "content", "soru_havuzlari", "index.json"));
 const HAVUZLAR = MANIFEST.havuzlar || [];
@@ -117,24 +120,27 @@ ok("satır bazında çözüm bağlantısı var", APP.indexOf("çözüm var") > 0
 ok("bağlantı yalnız adres varsa çiziliyor", APP.indexOf("if (okzSinavUrl)") > 0);
 
 // ---------- 6) Kısa Kontrol düzeltmesi ----------
-console.log("\n== 6) Kısa Kontrol ==");
+console.log("\n== 6) Kısa Kontrol (v35.7: yalnız o konunun havuzu, 5 soru) ==");
 ok("havuz-bul.js index.html'de yükleniyor", HTML.indexOf('<script src="havuz-bul.js"></script>') > 0);
 ok("konu-anahtar.js index.html'de yükleniyor", HTML.indexOf('<script src="konu-anahtar.js"></script>') > 0);
-ok("resolvePoolId ortak bulucuyu kullanıyor", /function resolvePoolId\(topicKey\)[\s\S]{0,600}HB\.bul/.test(HTML));
-ok('"undefined" havuz kimliği geçersiz sayılıyor', HTML.indexOf('raw === "undefined"') > 0);
-// v35.4: tek kademe yetmiyordu — poolId boş/yanlışsa test hiç açılmıyordu.
-// Artık havuzuBul(): poolId → resolvePoolId(topicKey) → topicKey sırayla denenir.
-ok("openMiniTest havuzu 3 kademede arıyor", /function havuzuBul\(topicKey, poolId\)/.test(HTML) && /havuzuBul\(topicKey, poolId\)/.test(HTML));
-ok("openMiniTest her kademeyi deniyor", /function openMiniTest\(topicKey, poolId, options\)[\s\S]{0,900}havuzuBul\(topicKey, poolId\)/.test(HTML));
-ok("havuzuBul resolvePoolId'yi kullanıyor", /function havuzuBul\(topicKey, poolId\)[\s\S]{0,900}resolvePoolId\(topicKey\)/.test(HTML));
-ok("boş havuzda sessiz kalmıyor (toast)", /havuzuBul[\s\S]{0,2000}toast\(/.test(HTML));
-ok("panelde kısa kontrol precheck şartına bağlı DEĞİL", HTML.indexOf("Havuz ÇÖZÜLÜRSE düğme her zaman çıkar") > 0);
-ok("panelde precheck vurgusu korunuyor", HTML.indexOf("const precheck = !!(e.precheck_due") > 0);
+// v35.7 — KÖK DEĞİŞİKLİK: eski sürüm aynı DERS içindeki herhangi bir havuzu
+// başlık benzerliğiyle bağlıyordu (HB.bul adım 4-5) ve bulamayınca aynı dersin
+// havuzuna düşüyordu → "başka konuların soruları geliyor" şikâyeti.
+ok("motor TEK dosyada (index.html'de ikinci kopya yok)", HTML.indexOf("window.AnalizBKT =") < 0 && /window\.AnalizBKT\s*=/.test(ENGINE));
+ok("havuz eşleme kesin fonksiyonu var", ENGINE.indexOf("function havuzEsle(topicKey, havuzlar)") > 0);
+ok("benzerlik/tahmin eşlemesi KULLANILMIYOR", !/HB\.bul/.test(ENGINE) && !/__okzKonuPoolEsle/.test(ENGINE));
+ok('"undefined" havuz kimliği geçersiz sayılıyor', ENGINE.indexOf('ham === "undefined"') > 0);
+ok("openMiniTest havuzu havuzuBul ile buluyor", /function openMiniTest\(topicKey, poolId, options\)[\s\S]{0,900}havuzuBul\(topicKey, poolId\)/.test(ENGINE));
+ok("havuzuBul resolvePoolId'yi kullanıyor", /function havuzuBul\(topicKey, poolId\)[\s\S]{0,900}resolvePoolId\(topicKey\)/.test(ENGINE));
+ok("havuz yoksa sessiz kalmıyor (toast)", /havuzuBul[\s\S]{0,900}toast\(/.test(ENGINE));
+ok("kayıtlı havuz kimliği doğrulanıyor (havuzDogrula)", ENGINE.indexOf("function havuzDogrula(topicKey, id)") > 0);
+ok("panelde kısa kontrol precheck şartına bağlı DEĞİL", ENGINE.indexOf("Havuz ÇÖZÜLÜRSE düğme her zaman çıkar") > 0);
+ok("panelde precheck vurgusu korunuyor", ENGINE.indexOf("const precheck = !!(e.precheck_due") > 0);
 // v35.4: resolvePoolId IIFE İÇİNDE tanımlı; renderKnowledge dışarıda olduğu
 // için çağrı ReferenceError atıp BİLGİ BANKASI sayfasını beyaz bırakıyordu.
 // Köprü: havuzIdCoz() → window.__havuzIdCoz (IIFE içinde açılır).
-ok("konu detayında da pool_id olmadan çözülüyor", HTML.indexOf("const cozulen = kayitliHavuz || havuzIdCoz(selectedTopicKey)") > 0);
-ok("IIFE köprüsü açık (window.__havuzIdCoz)", HTML.indexOf("window.__havuzIdCoz = resolvePoolId") > 0);
+ok("konu detayında kayıtlı kimlik de doğrulanarak çözülüyor", HTML.indexOf("havuzIdCoz(selectedTopicKey, kayitliHavuz)") > 0);
+ok("IIFE köprüsü açık (window.__havuzIdCoz)", ENGINE.indexOf("window.__havuzIdCoz =") > 0);
 ok("sayfa çizimi try/catch ile korunuyor", /Bu sayfa yüklenemedi/.test(HTML));
 
 // ---------- 7) Video bağlantısı metinleri ----------
@@ -151,15 +157,18 @@ esit("kazanım metni konuya bağlanınca video listesi DOLUYOR", izl.length, 1);
 const lk = VC.izleLink(izl[0]);
 esit("Okulizyon sınav adresi bağlantı ÜRETMEZ (giriş sayfasına atıyordu)", lk, null);
 esit("adres yoksa bağlantı null", VC.izleLink({ videoVar: true }), null);
-ok("boş durumda 'izle' vaadi yok", HTML.indexOf("Bu konu için <b>henüz çözüm bağlantısı yok</b>") > 0);
-ok("video satırı detayı yerinde açıyor (döngü yok)", HTML.indexOf('data-act="soruCozum"') > 0);
+// v35.7 — kullanıcı isteği: "Yapamadığın Soruların Çözümünü İzle" adımı
+// TAMAMEN kaldırıldı (dersin tüm yanlış konularını listeliyordu).
+ok("video çözüm adımı KALDIRILDI", HTML.indexOf("function videoAdimHtml") < 0 && !/video:\s*true/.test(HTML));
+ok("adımlarda 'izle' vaadi kalmadı", HTML.indexOf("çözüm bağlantısı yok") < 0);
+ok("yol haritası 4 adım", /const ROADMAP_STEPS = \[[\s\S]{0,900}?\];/.test(HTML) && (HTML.match(/\{ title: "/g) || []).length >= 4);
 esit("Okulizyon'a çıkış bağlantısı KALMADI", HTML.indexOf("okulizyon.com"), -1);
 ok("Denemelerim'de 'Konuyu aç' düğmesi var", HTML.indexOf('data-act="konuGit"') > 0);
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v35.6", APP.indexOf('const PWA_SURUM = "v35.6-kok-eksik-kontrol"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("v35-6-kok-eksik-kontrol") > 0);
+ok("PWA sürümü v35.7", APP.indexOf('const PWA_SURUM = "v35.7-kisa-kontrol-tek-motor"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261028-v35-7-kisa-kontrol-tek-motor") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

@@ -18,6 +18,8 @@
      izinIste()     → bildirim izni + abonelik + kayıt
      abone()        → yalnız abonelik + kayıt (izin zaten verildiyse)
      testEt()       → sunucudan kendine test bildirimi
+     izinIste()     → izin verildiği ANDA bir kez otomatik test bildirimi atar
+                      (v35.7; Ayarlar'daki "test bildirimi" düğmesi kaldırıldı)
      birak()        → aboneliği sil
      durum()        → { destek, izin, abone, kayitli }
    ============================================================ */
@@ -143,6 +145,11 @@
     try {
       if (!kullanici()) return { ok: false, neden: "Önce giriş yapmalısın (bildirim hesabına bağlanır)" };
       const r = await abone(true);
+      // İzin + abonelik tamam → deneme bildirimi (tek sefer)
+      if (r && r.ok) {
+        const t = await testBirKez();
+        return Object.assign({}, r, { test: t });
+      }
       return r;
     } catch (e) {
       // Kullanıcıya teknik hata metni değil, anlaşılır cümle gösterilir
@@ -196,6 +203,24 @@
     } catch (e) { return { ok: false, neden: String(e) }; }
   }
 
+  // ---- v35.7: İZİN VERİLDİĞİ AN OTOMATİK TEST BİLDİRİMİ ----------
+  // Kullanıcı şikâyeti: "test bildirimi gelmiyor". Artık izin verilir
+  // verilmez tek seferlik deneme bildirimi gönderilir; düğme yok.
+  // Aynı cihazda bir kez gönderilir (localStorage işareti).
+  const TEST_ANAHTARI = "am_push_test_gonderildi";
+  function testGonderildiMi() {
+    try { return localStorage.getItem(TEST_ANAHTARI) === "1"; } catch (e) { return false; }
+  }
+  function testIsaretle() {
+    try { localStorage.setItem(TEST_ANAHTARI, "1"); } catch (e) { /* */ }
+  }
+  async function testBirKez() {
+    if (testGonderildiMi()) return { ok: true, atlandi: true };
+    const r = await testEt();
+    if (r && r.ok) testIsaretle();
+    return r;
+  }
+
   async function durum() {
     const d = { destek: destekVarMi(), izin: destekVarMi() ? Notification.permission : "yok", abone: false, kayitli: false };
     if (!d.destek) return d;
@@ -217,11 +242,13 @@
     try {
       if (!kullanici() || !destekVarMi()) return;
       if (Notification.permission !== "granted") return;
-      await abone(false);
+      const r = await abone(false);
+      // İzin önceden verilmiş ama test bildirimi hiç gitmemişse bir kez gönder
+      if (r && r.ok) await testBirKez();
     } catch (e) { /* sessiz */ }
   }
 
-  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, birak, durum, otomatik, buYuzdenKapali: anlasilirHata };
+  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, buYuzdenKapali: anlasilirHata, testGonderildiMi };
   // Oturum açıldığında app-pwa.js çağırır; gecikmeli de bir kez dene
   setTimeout(otomatik, 6000);
 })();

@@ -78,7 +78,11 @@ esit("grafik +12'den −12'ye", JSON.stringify(q9.gorsel.seriler[0].noktalar), J
 console.log("\n== 3) Arayüz bağlantısı ==");
 ok("gorsel.js sayfaya yükleniyor", HTML.indexOf('src="gorsel.js"') > 0);
 ok("tekrar testinde görsel basılıyor", ENGINE.indexOf("window.GV.html(q.gorsel") > 0);
-ok("sonuç ekranında görsel basılıyor", (ENGINE.match(/GV\.html\(q\.gorsel/g) || []).length >= 2);
+// Görsel, soru ekranında ve sonuç ekranında AYNI yardımcıdan basılır.
+// (Asıl kanıt: tests/kisa-kontrol.test.js — testte görselli soru açıp
+//  modal HTML'inde gerçek <svg> aranıyor.)
+ok("soru ekranında görsel basılıyor", /miniGorsel\(q\)/.test(ENGINE));
+ok("sonuç ekranında da görsel basılıyor", (ENGINE.match(/miniGorsel\(q\)/g) || []).length >= 2);
 ok("havuz doğrulaması görseli denetliyor", ENGINE.indexOf("GV.dogrula") > 0);
 ok("görsel ekleme betiği var", fs.existsSync(path.join(KOK, "scripts", "gorsel-ekle.js")));
 
@@ -121,8 +125,11 @@ ok("sınav adresi soruya taşındı", iz[0].okulizyonUrl.indexOf("okulizyon.com"
 esit("konu süzgeci çalışıyor", VC.izlenecekler(st, "Fizik > 1.2 Hareket").length, 1);
 esit("olmayan konu → boş", VC.izlenecekler(st, "Yok > Yok").length, 0);
 
-ok("Konu Takibi'nde 'çözümü izle' adımı var", HTML.indexOf("Yapamadığın Soruların Çözümünü İzle") > 0);
-ok("adım video listesini basıyor", HTML.indexOf("function videoAdimHtml") > 0);
+// v35.7 — kullanıcı isteği: video çözüm adımı TAMAMEN kaldırıldı.
+// Bu adım dersin TÜM yanlış konularını listeliyordu; istenmedi.
+ok("Konu Takibi'nde 'çözümü izle' adımı YOK", HTML.indexOf("Yapamadığın Soruların Çözümünü İzle") < 0);
+ok("video adımı üreteci (videoAdimHtml) silindi", HTML.indexOf("function videoAdimHtml") < 0);
+ok("yol haritasında video:true adımı kalmadı", !/video:\s*true/.test(HTML));
 ok("Denemelerim'de 'Yapamadığın Sorular' bölümü var", HTML.indexOf("Yapamadığın Sorular <span") > 0);
 ok("video-cozum.js sayfaya yükleniyor", HTML.indexOf('src="video-cozum.js"') > 0);
 ok("içe aktarımda video alanı taşınıyor", APP.indexOf("row.videoVar || row.video") > 0);

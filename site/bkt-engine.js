@@ -1,10 +1,22 @@
-/*
- * Analiz Merkezi — BKT / doğrulama / ilişki grafı / flashcard katmanı
- *
- * Bu dosya klasik script olarak çalışır; ana uygulamanın mevcut state ve kayıt
- * akışını kaldırmadan üzerine eklenir. Kullanıcı arayüzünde yalnızca Bölüm 9
- * terminolojisi kullanılır.
- */
+/* ============================================================
+   BKT MOTORU — site/bkt-engine.js   (TEK KAYNAK, v35.7)
+   ------------------------------------------------------------
+   Ders/konu bazlı yeterlilik (BKT), tekrar kartları, ilişki grafı,
+   soru havuzundan mini test.
+
+   v35.7'de YAPILANLAR (kullanıcı bildirimleri):
+     1) Kısa Kontrol = 5 soru, sorular TEK TEK gösterilir.
+        (Bu dosya artık tek motor: index.html içindeki kopya, fazladan
+        bir parantez yüzünden HİÇ çalışmıyordu; o yüzden eski motorun
+        tek-sayfa listesi görünüyordu.)
+     2) Havuz eşleme KESİN: yalnız çalışılan konunun havuzu açılır.
+        Benzer başlık / aynı dersin başka havuzu / tahmini eşleme YOK.
+     3) Sonuç ekranı kendiliğinden kapanmaz ("Kapat" ile çıkılır).
+
+   Tarayıcı: <script src="bkt-engine.js" defer></script>
+   Test   : tests/bkt-engine.test.js, tests/bkt-panel.test.js,
+            tests/kisa-kontrol.test.js, tests/kaynak-sozdizimi.test.js
+   ============================================================ */
 (function () {
   "use strict";
 
@@ -82,6 +94,12 @@
     if (topic && String(topic).includes(" > ")) return String(topic);
     return lesson && topic ? String(lesson) + " > " + String(topic) : String(topic || "");
   }
+  function safeText(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (c) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
+    });
+  }
+
   // Uzun kazanım cümleleri paneli boğmasın: başlık kısalır, tamamı tooltip'te
   function kisaKonu(key) {
     const metin = String(key == null ? "" : key);
@@ -89,11 +107,6 @@
     if (p < 0) return metin.length > 62 ? metin.slice(0, 59).trim() + "…" : metin;
     const ders = metin.slice(0, p), konu = metin.slice(p + 3);
     return ders + " > " + (konu.length > 54 ? konu.slice(0, 51).trim() + "…" : konu);
-  }
-  function safeText(value) {
-    return String(value == null ? "" : value).replace(/[&<>"']/g, function (c) {
-      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
-    });
   }
   function normalizeRecordReasons(record) {
     if (!record || typeof record !== "object") return;
@@ -491,7 +504,8 @@
       if (!Array.isArray(q.secenekler) || q.secenekler.length !== 4 || !Number.isInteger(q.dogru_index)) errors.push("seçenek:" + i);
       if (!q.cozum || q.zorluk !== "deneme") errors.push("çözüm/deneme zorluğu:" + i);
       if (q.alt_beceri) skillCounts[q.alt_beceri] = (skillCounts[q.alt_beceri] || 0) + 1;
-      // İsteğe bağlı görsel: varsa tanımı geçerli olmalı (yoksa sessizce kaybolurdu)
+      // İsteğe bağlı görsel: varsa tanımı geçerli olmalı (yoksa soru görselsiz
+      // kalırdı — sessiz kayıp). gorsel.js → window.GV
       if (q.gorsel && window.GV && typeof window.GV.dogrula === "function") {
         const g = window.GV.dogrula(q.gorsel);
         if (g.length) errors.push("görsel:" + i + " (" + g.join(",") + ")");
@@ -508,32 +522,101 @@
     if (poolManifestPromise) return poolManifestPromise;
     poolManifestPromise = fetch("content/soru_havuzlari/index.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(data => {
       poolManifest = data && Array.isArray(data.havuzlar) ? data : { havuzlar: [] };
-      return poolManifest;
-    }).catch(() => { poolManifest = { havuzlar: [] }; return poolManifest; });
+      // Profil penceresi için havuz özeti (app-pwa.js okur)
+      try {
+        window.__havuzBilgi = {
+          havuz: poolManifest.havuzlar.length || (data && data.havuz_sayisi) || 0,
+          soru: (data && data.soru_sayisi) || poolManifest.havuzlar.reduce((a, h) => a + (Number(h.soru_sayisi) || 0), 0)
+        };
+        const pm = document.getElementById("pwa-profile-modal");
+        if (pm && pm.style.display === "flex" && typeof window.__profilTaze === "function") window.__profilTaze();
+      } catch (e) {}
+    }).catch(() => { poolManifest = { havuzlar: [] }; return poolManifest; }).then(function (pm) {
+      // Manifest geç gelirse Bilgi Bankası havuzsuz çizilmiş olur: düğme yok.
+      // Yüklendikten sonra o sayfadaysak yeniden çiz.
+      try {
+        if (typeof currentPage !== "undefined" && currentPage === "knowledge") {
+          const host = document.getElementById("main-content");
+          if (host) { renderKnowledge(host); if (window.lucide && lucide.createIcons) lucide.createIcons(); }
+        }
+      } catch (e) { /* */ }
+      return pm;
+    });
     return poolManifestPromise;
+  }
+  // ---- HAVUZ EŞLEME: YALNIZ ÇALIŞILAN KONU -------------------------
+  // Kullanıcı şikâyeti: "Bir konuyu çalışıyorum, testte başka konuların
+  // soruları çıkıyor." Eski çözücü, aynı DERSTEKİ herhangi bir havuzu
+  // başlık benzerliğiyle bağlıyor, eşleşme bulamayınca aynı dersin
+  // havuzuna düşüyordu (havuz-bul.js'in kelime kapsama / etiket
+  // adımları). Artık yalnız BİREBİR eşleşme kabul edilir; tutmazsa
+  // null döner ve test açılmaz — başka konunun sorusu GÖSTERİLMEZ.
+  //   1) topic_key birebir aynı
+  //   2) aynı ders + konu başlığı birebir aynı (başlık yoksa topic_key'den türetilir)
+  function sadeles(x) {
+    return String(x == null ? "" : x).toLocaleLowerCase("tr-TR")
+      .replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g")
+      .replace(/ç/g, "c").replace(/ö/g, "o").replace(/ü/g, "u")
+      .replace(/â/g, "a").replace(/î/g, "i").replace(/û/g, "u")
+      .replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function konuParcasi(topicKey) {
+    const t = String(topicKey == null ? "" : topicKey);
+    const p = t.indexOf(" > ");
+    return p >= 0 ? t.slice(p + 3) : t;
+  }
+  function dersParcasi(topicKey) {
+    const t = String(topicKey == null ? "" : topicKey);
+    const p = t.indexOf(" > ");
+    return p >= 0 ? t.slice(0, p) : "";
+  }
+  function havuzBasligi(h) {
+    if (!h) return "";
+    if (h.baslik) return String(h.baslik);
+    return konuParcasi(h.topic_key);
+  }
+  // Saf fonksiyon: verilen havuz listesinde YALNIZ bu konunun havuzunu arar.
+  function havuzEsle(topicKey, havuzlar) {
+    const liste = Array.isArray(havuzlar) ? havuzlar : [];
+    const ham = String(topicKey == null ? "" : topicKey);
+    if (!ham || ham === "undefined" || ham === "null" || !liste.length) return null;
+    for (let i = 0; i < liste.length; i++) {
+      if (liste[i] && String(liste[i].topic_key) === ham) return liste[i];
+    }
+    const ders = sadeles(dersParcasi(ham));
+    const konu = konuParcasi(ham);
+    const ayniDers = liste.filter(h => h && (!ders || sadeles(h.ders) === ders));
+    for (let i = 0; i < ayniDers.length; i++) {
+      if (sadeles(havuzBasligi(ayniDers[i])) === sadeles(konu)) return ayniDers[i];
+    }
+    // NOT: "baştaki numarayı at, gerisini karşılaştır" kuralı DENENDİ ve
+    // kaldırıldı — gerçek veride tek eşleşme üretiyordu ve o da YANLIŞTI:
+    // 9. sınıf "1.4 Kur'an'dan Mesajlar" → 10. sınıfın "1.3 ..." havuzu.
+    // Kullanıcı isteği: başka konu/ders/sınıfın sorusu GÖSTERİLMEZ.
+    return null;
   }
   function resolvePoolId(topicKey) {
     if (!poolManifest || !Array.isArray(poolManifest.havuzlar)) return null;
-    const raw = String(topicKey || "");
-    const direct = poolManifest.havuzlar.find(p => p.topic_key === raw);
-    if (direct) return direct.konu_id;
-    const lesson = raw.split(" > ")[0];
-    const topic = raw.split(" > ").slice(1).join(" > ");
-    const sameLesson = poolManifest.havuzlar.filter(p => !lesson || p.ders === lesson);
-    const normalized = normalizeReason(topic).toLocaleLowerCase("tr-TR");
-    const exact = sameLesson.find(p => p.baslik && normalizeReason(p.baslik).toLocaleLowerCase("tr-TR") === normalized);
-    if (exact) return exact.konu_id;
-    // Okulizyon KAZANIM METNİ göndermiş olabilir ("Dik üçgende trigonometrik
-    // oranlar ... varsayımlarda bulunur."). app-pwa.js'deki eşleyiciye sor.
-    // Yalnız "kesin" eşleşme kabul edilir; tahminle soru havuzu bağlanmaz.
-    try {
-      if (typeof window.__okzKonuPoolEsle === "function") {
-        const id = window.__okzKonuPoolEsle(lesson, topic);
-        if (id) return id;
-      }
-    } catch (e) { /* eşleyici yoksa sessizce geç */ }
-    return null;
+    const h = havuzEsle(topicKey, poolManifest.havuzlar);
+    return h && h.konu_id ? h.konu_id : null;
   }
+  // Kayıtlı (eski sürümden kalmış olabilecek) havuz kimliği bu konuya
+  // gerçekten ait mi? Manifest yüklü değilse karar veremeyiz → geçici kabul.
+  function havuzDogrula(topicKey, id) {
+    if (!id) return false;
+    if (!poolManifest || !Array.isArray(poolManifest.havuzlar) || !poolManifest.havuzlar.length) return true;
+    const h = poolManifest.havuzlar.find(p => p && String(p.konu_id) === String(id));
+    if (!h) return false;
+    return !!havuzEsle(topicKey, [h]);
+  }
+  // Bilgi Bankası (IIFE dışı) bu köprüyü kullanır — bkz. havuzIdCoz().
+  // İkinci argüman: kayıtta yazılı (doğrulanacak) havuz kimliği.
+  window.__havuzIdCoz = function (topicKey, kayitli) {
+    const kesin = resolvePoolId(topicKey);
+    if (kesin) return kesin;
+    if (kayitli && havuzDogrula(topicKey, kayitli)) return String(kayitli);
+    return null;
+  };
   function loadPool(topicId) {
     if (!topicId) return Promise.resolve(null);
     if (poolCache[topicId]) return poolCache[topicId];
@@ -562,7 +645,17 @@
     const rows = questions.map(q => ({ q: q, log: poolLogFor(s, id, q.soru_id) }));
     const eligible = rows.filter(row => !row.log || daysBetween(row.log.son_gosterim_tarihi, today) >= 28);
     const source = eligible.length >= count ? eligible : rows;
-    source.sort((a, b) => dateValue(a.log && a.log.son_gosterim_tarihi) - dateValue(b.log && b.log.son_gosterim_tarihi));
+    // v35.6 — GÖRSELLİ SORULAR ÖNE: havuzda görsel (şema/grafik/vektör/üçgen) olan
+    // sorular hiç gösterilmiyordu ("hangi sorulara görsel eklendi, hiç görmedim").
+    // Hiç gösterilmemiş görselli soru, hiç gösterilmemiş diğerlerinden önce gelir;
+    // bir kez gösterildikten sonra tekrar 28 gün kuralına döner.
+    const gorunmemis = (row) => !row.log;
+    source.sort((a, b) => {
+      const ga = gorunmemis(a) && a.q && a.q.gorsel ? 1 : 0;
+      const gb = gorunmemis(b) && b.q && b.q.gorsel ? 1 : 0;
+      if (ga !== gb) return gb - ga;
+      return dateValue(a.log && a.log.son_gosterim_tarihi) - dateValue(b.log && b.log.son_gosterim_tarihi);
+    });
     const chosen = source.slice(0, Math.min(count, source.length));
     chosen.forEach(row => {
       const old = row.log;
@@ -602,60 +695,151 @@
     const entry = getEntry(key, true); entry.precheck_due = TODAY(); entry.pool_id = poolId || entry.pool_id || resolvePoolId(key);
     return openMiniTest(key, entry.pool_id, { mode: "precheck" });
   }
+  // v35.7 — YALNIZ BU KONUNUN HAVUZU.
+  // Eski hâli "düğmenin kimliği → çözülen kimlik → anahtarın kendisi"
+  // sırasıyla deniyordu; kayıtlı kimlik eski sürümden YANLIŞ kalmışsa
+  // başka konunun soruları açılıyordu. Artık sıra: (1) bu konunun
+  // birebir havuzu, (2) çağıranın verdiği VE doğrulanmış kimlik.
+  // Hiçbiri yoksa null → test açılmaz, uyarı gösterilir.
+  function havuzuBul(topicKey, poolId) {
+    const adaylar = [];
+    const ekle = id => { id = String(id == null ? "" : id); if (id && id !== "undefined" && id !== "null" && adaylar.indexOf(id) < 0) adaylar.push(id); };
+    ekle(resolvePoolId(topicKey));
+    if (poolId && havuzDogrula(topicKey, poolId)) ekle(poolId);
+    return adaylar.reduce(function (zincir, id) {
+      return zincir.then(function (bulunan) { return bulunan || loadPool(id); });
+    }, Promise.resolve(null));
+  }
+  // Kısa Kontrol / Öğrenme Testi — v35.6
+  //  • Her iki modda 5 soru — precheck modunda da 5 (eski sürümde daha azdı)
+  //  • Sorular TEK TEK, sırayla gösterilir (hepsi alt alta değil)
+  //  • Havuzda görsel varsa (q.gorsel) sorunun içinde çizilir (gorsel.js → GV)
+  const MINI_SORU = 5;
+  function miniBaslik(mode) { return mode === "precheck" ? "Kısa Kontrol" : "Öğrenme Testi"; }
+  function miniGorsel(q) {
+    try {
+      if (q && q.gorsel && window.GV && typeof window.GV.html === "function") return window.GV.html(q.gorsel, 320);
+    } catch (e) { /* görsel çizilemezse soru yine görünür */ }
+    return "";
+  }
+  function cizMiniSoru(modal) {
+    const qs = modal._bktQuestions || [];
+    const i = Number(modal._bktIdx) || 0;
+    const q = qs[i] || { metin: "", secenekler: [] };
+    if (!Array.isArray(modal._bktAnswers)) modal._bktAnswers = [];
+    const cevap = modal._bktAnswers[i];
+    const sonuncu = i >= qs.length - 1;
+    const oran = qs.length ? Math.round(((i + 1) / qs.length) * 100) : 0;
+    const seciliMi = (j) => String(cevap == null ? "" : cevap) === String(j);
+    let h = '<div style="width:100%;max-width:600px;max-height:92vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:18px;">';
+    h += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px;">' +
+      '<div><div style="font-weight:800;font-size:15px;">' + miniBaslik(modal._bktMode) + '</div>' +
+      '<div class="text-xs text-muted">Soru ' + (i + 1) + ' / ' + qs.length + (modal._bktKonuAdi ? " · " + safeText(modal._bktKonuAdi) : "") + '</div></div>' +
+      '<button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:22px;cursor:pointer;">×</button></div>';
+    h += '<div style="height:7px;border-radius:999px;background:var(--bg-canvas,#EEF2F9);overflow:hidden;margin-bottom:14px;"><div style="height:100%;width:' + oran + '%;background:var(--brand-blue,#2563EB);transition:width .18s;"></div></div>';
+    h += miniGorsel(q);
+    h += '<div style="font-weight:700;font-size:15px;line-height:1.5;margin:2px 0 12px;">' + safeText(q.metin) + '</div>';
+    (q.secenekler || []).forEach(function (secenek, j) {
+      const sec = seciliMi(j);
+      h += '<label style="display:flex;gap:10px;align-items:flex-start;border:1.5px solid ' + (sec ? "var(--brand-blue,#2563EB)" : "var(--border-card,#E3E9F4)") + ';background:' + (sec ? "rgba(37,99,235,.07)" : "transparent") + ';border-radius:12px;padding:12px;margin-bottom:9px;font-size:13.5px;line-height:1.45;min-height:52px;cursor:pointer;">' +
+        '<input type="radio" name="bkt-q" value="' + j + '" data-bkt-secim="' + j + '"' + (sec ? " checked" : "") + ' style="margin-top:2px;width:18px;height:18px;flex:0 0 auto;">' +
+        '<span><b style="margin-right:6px;">' + ("ABCDE".charAt(j) || (j + 1)) + ')</b>' + safeText(secenek) + '</span></label>';
+    });
+    h += '<div style="display:flex;gap:8px;margin-top:6px;">';
+    if (i > 0) h += '<button type="button" class="btn btn-ghost" data-bkt-prev style="flex:0 0 auto;min-height:48px;">Geri</button>';
+    const bos = (cevap == null || cevap === "");
+    h += '<button type="button" class="btn btn-primary" data-bkt-next style="flex:1;min-height:48px;"' + (bos ? " disabled" : "") + '>' + (sonuncu ? "Testi Bitir" : "İleri") + '</button></div>';
+    h += '<div id="bkt-test-message" class="text-xs" style="min-height:18px;margin-top:8px;"></div></div>';
+    modal.innerHTML = h;
+  }
+  function miniSonraki(modal) {
+    const qs = modal._bktQuestions || [];
+    const i = Number(modal._bktIdx) || 0;
+    const cevap = (modal._bktAnswers || [])[i];
+    const msg = modal.querySelector("#bkt-test-message");
+    if (cevap == null || cevap === "") { if (msg) msg.textContent = "Devam etmek için bir seçenek işaretle."; return; }
+    persistMiniSession(modal);
+    if (i >= qs.length - 1) { finishMiniTest(modal); return; }
+    modal._bktIdx = i + 1;
+    cizMiniSoru(modal);
+  }
+  function miniOnceki(modal) {
+    const i = Number(modal._bktIdx) || 0;
+    if (i <= 0) return;
+    persistMiniSession(modal);
+    modal._bktIdx = i - 1;
+    cizMiniSoru(modal);
+  }
   function openMiniTest(topicKey, poolId, options) {
     const opts = options || {}; const mode = opts.mode || "learning";
-    loadPool(poolId || topicKey).then(function (pool) {
-      if (!pool) return typeof toast === "function" && toast("Bu konu için henüz soru havuzu hazırlanmadı.", "info");
-      const actualPoolId = pool.konu_id || poolId; const count = mode === "precheck" ? 3 : 5; const stored = (ensureStore().mini_test_sessions || {})[topicKey];
-      const storedQuestions = stored && !stored.complete && stored.mode === mode && Array.isArray(stored.questionIds) ? stored.questionIds.map(id => pool.sorular.find(q => q.soru_id === id)).filter(Boolean) : [];
+    havuzuBul(topicKey, poolId).then(function (pool) {
+      if (!pool) return typeof toast === "function" && toast("Bu konu için soru havuzu bulunamadı — başka konunun soruları gösterilmez.", "warning");
+      // Son güvenlik kapısı: yüklenen havuz bu konunun birebir havuzu mu?
+      const kesin = resolvePoolId(topicKey);
+      if (kesin && pool.konu_id && String(pool.konu_id) !== String(kesin)) {
+        return typeof toast === "function" && toast("Bu konunun havuzu bulunamadı — başka konunun soruları gösterilmez.", "warning");
+      }
+      if (!Array.isArray(pool.sorular) || !pool.sorular.length) return typeof toast === "function" && toast("Havuz açıldı ama içinde soru yok.", "error");
+      const actualPoolId = pool.konu_id || poolId;
+      const count = Math.min(MINI_SORU, pool.sorular.length);
+      const stored = (ensureStore().mini_test_sessions || {})[topicKey];
+      const storedQuestions = stored && !stored.complete && stored.mode === mode && Array.isArray(stored.questionIds)
+        ? stored.questionIds.map(id => pool.sorular.find(q => q.soru_id === id)).filter(Boolean) : [];
       const questions = opts.questions || (storedQuestions.length === count ? storedQuestions : selectPoolQuestions(pool, actualPoolId, count));
       let modal = document.getElementById("bkt-test-modal");
-      if (!modal) { modal = document.createElement("div"); modal.id = "bkt-test-modal"; modal.style.cssText = "position:fixed;inset:0;z-index:10001;display:flex;align-items:center;justify-content:center;background:rgba(10,16,32,.62);padding:14px;"; document.body.appendChild(modal); }
-      const title = mode === "precheck" ? "Kısa Kontrol" : "Öğrenme Testi";
-      let html = '<div style="width:100%;max-width:600px;max-height:90vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><strong>' + title + ' — ' + questions.length + ' soru</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:20px;cursor:pointer;">×</button></div><p class="text-xs text-muted">Tüm soruları işaretle. Test sırasında doğru cevap gösterilmez.</p>';
-      questions.forEach(function (q, i) {
-        html += '<fieldset style="border:0;border-top:1px solid var(--border-card);padding:12px 0;margin:0;"><legend style="font-weight:700;font-size:13px;">' + (i + 1) + '. ' + safeText(q.metin) + '</legend>';
-        // Görsel soru: üçgen/grafik/vektör çizimi (varsa)
-        if (q.gorsel && window.GV && typeof window.GV.html === "function") html += window.GV.html(q.gorsel, 330);
-        (q.secenekler || []).forEach(function (option, j) { html += '<label style="display:block;font-size:12.5px;padding:5px 0;min-height:48px;"><input type="radio" name="bkt-q-' + i + '" value="' + j + '"> ' + safeText(option) + '</label>'; });
-        html += '</fieldset>';
-      });
-      html += '<div id="bkt-test-message" class="text-xs" style="min-height:18px;margin-bottom:8px;"></div><button type="button" class="btn btn-primary w-full" data-bkt-submit-test disabled style="min-height:48px;">Testi Bitir</button></div>';
-      modal.innerHTML = html; modal.style.display = "flex";
-      modal._bktQuestions = questions; modal._bktTopicKey = topicKey; modal._bktPoolId = actualPoolId; modal._bktMode = mode;
+      if (!modal) {
+        modal = document.createElement("div"); modal.id = "bkt-test-modal";
+        modal.style.cssText = "position:fixed;inset:0;z-index:10001;display:flex;align-items:center;justify-content:center;background:rgba(10,16,32,.62);padding:14px;";
+        document.body.appendChild(modal);
+      }
+      modal._bktQuestions = questions;
+      modal._bktTopicKey = topicKey;
+      modal._bktPoolId = actualPoolId;
+      modal._bktMode = mode;
+      modal._bktIdx = 0;
+      const parca = String(topicKey || "").split(" > ");
+      modal._bktKonuAdi = parca.length > 1 ? parca.slice(1).join(" > ") : String(topicKey || "");
+      // Daha önce yarım bırakılan cevaplar korunur
+      const onceki = (ensureStore().mini_test_sessions || {})[topicKey];
+      modal._bktAnswers = new Array(questions.length).fill("");
+      if (onceki && !onceki.complete && Array.isArray(onceki.answers) && onceki.answers.length === questions.length) {
+        onceki.answers.forEach((a, k) => { modal._bktAnswers[k] = a; });
+      }
+      modal.style.display = "flex";
+      cizMiniSoru(modal);
       persistMiniSession(modal);
-      const saved = (ensureStore().mini_test_sessions || {})[topicKey];
-      if (saved && Array.isArray(saved.answers)) saved.answers.forEach((answer, i) => { if (answer !== "") { const radio = modal.querySelector('input[name="bkt-q-' + i + '"][value="' + answer + '"]'); if (radio) radio.checked = true; } });
-      updateMiniSubmitState(modal);
     });
   }
   function persistMiniSession(modal) {
     const s = ensureStore(); if (!s || !modal) return;
-    const answers = (modal._bktQuestions || []).map((q, i) => { const el = modal.querySelector('input[name="bkt-q-' + i + '"]:checked'); return el ? el.value : ""; });
-    s.mini_test_sessions[modal._bktTopicKey] = { topicKey: modal._bktTopicKey, poolId: modal._bktPoolId, mode: modal._bktMode, questionIds: (modal._bktQuestions || []).map(q => q.soru_id), answers: answers, started: s.mini_test_sessions[modal._bktTopicKey]?.started || TODAY(), complete: false };
+    if (!Array.isArray(modal._bktAnswers)) modal._bktAnswers = [];
+    s.mini_test_sessions[modal._bktTopicKey] = {
+      topicKey: modal._bktTopicKey, poolId: modal._bktPoolId, mode: modal._bktMode,
+      questionIds: (modal._bktQuestions || []).map(q => q.soru_id),
+      answers: (modal._bktQuestions || []).map((q, i) => modal._bktAnswers[i] == null ? "" : modal._bktAnswers[i]),
+      started: (s.mini_test_sessions[modal._bktTopicKey] || {}).started || TODAY(), complete: false
+    };
     if (typeof saveState === "function") saveState();
   }
   function updateMiniSubmitState(modal) {
     if (!modal) return false;
-    const questions = modal._bktQuestions || []; const complete = questions.length > 0 && questions.every((q, i) => modal.querySelector('input[name="bkt-q-' + i + '"]:checked'));
-    const button = modal.querySelector("[data-bkt-submit-test]"); if (button) button.disabled = !complete;
+    const questions = modal._bktQuestions || [];
+    const cevaplar = modal._bktAnswers || [];
+    const complete = questions.length > 0 && questions.every((q, i) => cevaplar[i] != null && cevaplar[i] !== "");
+    const button = modal.querySelector("[data-bkt-next]"); if (button) button.disabled = !complete;
     return complete;
   }
-
   function closeMiniTest() { const modal = document.getElementById("bkt-test-modal"); if (modal) modal.remove(); }
   function showMiniResult(modal, draft) {
-    const questions = modal._bktQuestions || []; const wrong = draft.wrongIndexes || [];
-    let html = '<div style="width:100%;max-width:600px;max-height:90vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><strong>Sonuçlar</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:20px;">×</button></div><p class="text-sm">' + draft.correct + '/' + questions.length + ' doğru.</p>';
+    const questions = modal._bktQuestions || [];
+    const puan = questions.length ? Math.round((Number(draft.correct) / questions.length) * 100) : 0;
+    const renk = puan >= 80 ? "var(--semantic-success)" : puan >= 40 ? "var(--semantic-warning)" : "var(--semantic-error)";
+    let html = '<div style="width:100%;max-width:600px;max-height:90vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><strong>Sonuçlar</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:20px;">×</button></div>' +
+      '<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;"><b class="tabular" style="font-size:32px;color:' + renk + ';">' + draft.correct + '/' + questions.length + '</b><span class="text-sm text-muted">doğru · %' + puan + '</span></div>' +
+      '<p class="text-xs text-muted" style="margin-bottom:8px;">Yanlışların nedenini seç — kayıt buna göre işlenecek.</p>';
     questions.forEach((q, i) => {
       const ok = Number(draft.answers[i]) === Number(q.dogru_index);
-      html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b>' + (i + 1) + '. ' + (ok ? "Doğru" : "Yanlış") + '</b>';
-      if (q.gorsel && window.GV && typeof window.GV.html === "function") html += window.GV.html(q.gorsel, 300);
-      html += '<div class="text-muted" style="margin-top:4px;">Çözüm: ' + safeText(typeof q.cozum === "string" ? q.cozum : (q.cozum && q.cozum.metin) || "") + '</div>';
-      // Video çözüm varsa "izle" bağlantısı (yoksa uydurulmaz)
-      if (window.VC && typeof window.VC.soruCozumu === "function") {
-        const vz = window.VC.soruCozumu(q);
-        if (vz.video) html += '<a href="' + safeText(vz.video) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="margin-top:6px;display:inline-block;min-height:40px;">▶ Çözümü izle</a>';
-      }
+      html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b>' + (i + 1) + '. ' + (ok ? "Doğru" : "Yanlış") + '</b>' + miniGorsel(q) + '<div class="text-muted" style="margin-top:4px;">Çözüm: ' + safeText(q.cozum) + '</div>';
       if (!ok) html += '<label style="display:block;margin-top:7px;">Neden <select data-bkt-reason="' + i + '" style="min-height:48px;"><option value="">Seçiniz</option><option value="Konuyu Bilmiyordum">Konuyu bilmiyordum</option><option value="KONUEKSİKLİĞİ">Konu eksiği</option><option value="ANLAMADIM">Anlamadım</option><option value="ÇÖZÜMYOLUNUBULAMADIM">Çözüm yolunu bulamadım</option><option value="İşlem Hatası/Dikkatsizlik">İşlem hatası / dikkatsizlik</option><option value="Kodlama/Kitapçık Hatası">Kodlama / kitapçık hatası</option><option value="SÜREYETMEDİ">Süre yetmedi</option></select></label>';
       html += '</div>';
     });
@@ -663,9 +847,21 @@
     modal.innerHTML = html; modal._bktDraft = draft;
   }
   function finishMiniTest(modal) {
-    if (!updateMiniSubmitState(modal)) { const msg = modal.querySelector("#bkt-test-message"); if (msg) msg.textContent = "Testi bitirmek için tüm soruları işaretle."; return; }
+    // Tek soru gösterildiği için cevaplar DOM'dan değil modal._bktAnswers'tan okunur.
     persistMiniSession(modal);
-    const answers = (modal._bktQuestions || []).map((q, i) => modal.querySelector('input[name="bkt-q-' + i + '"]:checked').value);
+    const answers = (modal._bktQuestions || []).map((q, i) => {
+      const a = (modal._bktAnswers || [])[i];
+      return a == null ? "" : String(a);
+    });
+    const eksik = answers.some(a => a === "");
+    if (eksik) {
+      const ilk = answers.findIndex(a => a === "");
+      modal._bktIdx = ilk < 0 ? 0 : ilk;
+      cizMiniSoru(modal);
+      const msg = modal.querySelector("#bkt-test-message");
+      if (msg) msg.textContent = "Bitirmeden önce " + (ilk + 1) + ". soruyu işaretle.";
+      return;
+    }
     const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: answers, mode: modal._bktMode });
     if (result.needsReasons) showMiniResult(modal, result);
     else completeMiniTestView(modal, result);
@@ -680,9 +876,32 @@
   function completeMiniTestView(modal, result) {
     const s = ensureStore(); if (s && s.mini_test_sessions[modal._bktTopicKey]) s.mini_test_sessions[modal._bktTopicKey].complete = true;
     if (typeof saveState === "function") saveState();
-    const msg = modal.querySelector("#bkt-test-message"); if (msg) msg.textContent = modal._bktMode === "precheck" && result.result.returnToFirstStep ? "1. adıma dönüp konuyu yeniden çalışalım." : (result.result.passed ? "Öğrenme Onaylandı." : "Bu konuyu yeniden çalışalım; yeni test daha sonra açılacak.");
-    const button = modal.querySelector("[data-bkt-submit-test], [data-bkt-finalize-test]"); if (button) button.remove();
-    setTimeout(closeMiniTest, 1300);
+    // v35.6: sonuç 1.3 saniyede kayboluyordu — öğrenci skoru göremiyordu.
+    // Artık sonuç ekranı AÇIK kalır, "Kapat" ile çıkılır.
+    const dogru = Number(result.correct) || 0;
+    const toplam = Number(result.total) || (modal._bktQuestions || []).length || 0;
+    const puan = toplam ? Math.round((dogru / toplam) * 100) : 0;
+    const renk = puan >= 80 ? "var(--semantic-success)" : puan >= 40 ? "var(--semantic-warning)" : "var(--semantic-error)";
+    const baslik = modal._bktMode === "precheck" ? "Kısa Kontrol sonucu" : "Öğrenme Testi sonucu";
+    const mesaj = puan >= 80
+      ? "Konu sağlam görünüyor — tekrar takvimine devam."
+      : puan >= 40
+        ? "Yarısından çoğu doğru. Eksik kalan yerleri bir kez daha oku; yarın tekrar soracağım."
+        : "Konuyu yeniden çalışalım; yeni kontrol 2 gün sonra açılacak.";
+    let h = '<div style="width:100%;max-width:600px;max-height:92vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><strong>' + baslik + '</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:22px;">×</button></div>' +
+      '<div style="display:flex;align-items:baseline;gap:10px;margin:4px 0 6px;"><b class="tabular" style="font-size:34px;color:' + renk + ';">' + dogru + '/' + toplam + '</b><span class="text-sm text-muted">doğru · %' + puan + '</span></div>' +
+      '<p class="text-sm" style="margin-bottom:12px;line-height:1.5;">' + mesaj + '</p>';
+    (modal._bktQuestions || []).forEach(function (q, i) {
+      const cevap = (modal._bktAnswers || [])[i];
+      const ok = Number(cevap) === Number(q.dogru_index);
+      h += '<div style="border-top:1px solid var(--border-card);padding:9px 0;font-size:12.5px;">' +
+        '<b style="color:' + (ok ? "var(--semantic-success)" : "var(--semantic-error)") + ';">' + (i + 1) + '. ' + (ok ? "Doğru" : "Yanlış") + '</b>' +
+        miniGorsel(q) +
+        '<div class="text-muted" style="margin-top:3px;line-height:1.45;">' + safeText(q.cozum) + '</div></div>';
+    });
+    h += '<button type="button" data-bkt-close-test class="btn btn-primary w-full" style="min-height:48px;margin-top:12px;">Kapat</button></div>';
+    modal.innerHTML = h;
   }
   function submitMiniTest(input) {
     const data = input || {}; const questions = Array.isArray(data.questions) ? data.questions : [];
@@ -825,6 +1044,11 @@
     dueCards: dueCards,
     dailyVerificationQueue: dailyVerificationQueue,
     selectPoolQuestions: selectPoolQuestions,
+    havuzEsle: havuzEsle,
+    havuzDogrula: havuzDogrula,
+    havuzIdCoz: function (k, kayitli) { return window.__havuzIdCoz(k, kayitli); },
+    resolvePoolId: resolvePoolId,
+    MINI_SORU: MINI_SORU,
     scheduleLearningTest: scheduleLearningTest,
     queueLearningTests: queueLearningTests,
     validatePool: validatePool,
@@ -849,25 +1073,23 @@
   function renderBktPanel() {
     const s = ensureStore(); const host = document.getElementById("main-content");
     if (!s || !host || !s.user || !s.user.name) return;
-    // Bu panel YALNIZ "Konu Takibi" sayfasına aittir. Her sayfanın altında
-    // tekrarlanması kullanıcıyı yoruyordu; başka sayfada hiç basılmaz.
+    // Bu panel YALNIZ "Konu Takibi" sayfasına aittir; her sayfanın altında
+    // tekrarlanmaz. Başka sayfaya geçilince kalıntısı da kaldırılır.
     let sayfa = "";
     try { sayfa = typeof currentPage === "string" ? currentPage : ""; } catch (e) { sayfa = ""; }
     if (sayfa && sayfa !== "tracking") {
-      const eskiPanel = document.getElementById("bkt-learning-panel");
-      if (eskiPanel) eskiPanel.remove();
+      const eski = document.getElementById("bkt-learning-panel");
+      if (eski) eski.remove();
       return;
     }
     queueLearningTests();
-    // Sıralama: önce EYLEM bekleyen konular (kısa kontrol zamanı gelmiş,
-    // öğrenme testi kuyrukta), sonra onaylanmamışlar, en son onaylananlar.
-    // Böylece "konuyu çalıştım" diyen öğrenci kendi konusunu ilk sırada görür.
+    // Sıra: testi zamanı gelmiş konu → onaylı olmayan → onaylı.
+    // (Kısa kontrolü hazır konu panelin en üstünde görünür.)
+    const bugun = TODAY();
     const aciliyet = (entry) => {
-      const bugun = dateValue(TODAY());
-      const onayli = statusFor(entry) === "ONAYLANDI";
-      if (onayli) return 3;
-      if (entry.precheck_due && dateValue(entry.precheck_due) <= bugun) return 0;
-      if (entry.learning_test_due && dateValue(entry.learning_test_due) <= bugun) return 1;
+      if (statusFor(entry) === "ONAYLANDI") return 3;
+      if (entry.precheck_due && dateValue(entry.precheck_due) <= dateValue(bugun)) return 0;
+      if (entry.learning_test_due && dateValue(entry.learning_test_due) <= dateValue(bugun)) return 1;
       return 2;
     };
     const entries = Object.keys(s.bkt_state).map(key => ({ key: key, entry: s.bkt_state[key] }))
@@ -875,31 +1097,26 @@
     let panel = document.getElementById("bkt-learning-panel");
     if (!entries.length) { if (panel) panel.remove(); return; }
     if (!panel) { panel = document.createElement("section"); panel.id = "bkt-learning-panel"; panel.className = "card"; host.appendChild(panel); }
-    // Panel varsayılan KAPALI: yalnız tek satır özet görünür, sayfayı kaplamaz.
-    // Tercih localStorage'da hatırlanır; öğrenci "Ayrıntı" ile açar.
+    // Panel varsayılan olarak KAPALI gelir (sayfayı kaplamasın): yalnız tek
+    // satırlık özet görünür, öğrenci isterse açar. Tercih hatırlanır.
     let acik = false;
     try { acik = localStorage.getItem("am_bkt_panel_acik") === "1"; } catch (e) { acik = false; }
-    const aksiyon = entries.filter(function (x) {
+    const bekleyenTest = entries.filter(x => {
       const p = x.entry.pool_id || x.entry.soru_havuzu_id || resolvePoolId(x.key);
-      return p && x.entry.precheck_due && dateValue(x.entry.precheck_due) <= dateValue(TODAY());
+      return p && (x.entry.precheck_due && dateValue(x.entry.precheck_due) <= dateValue(TODAY()));
     }).length;
-    const onayli = entries.filter(function (x) { return statusFor(x.entry) === "ONAYLANDI"; }).length;
-    let html = '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">'
-      + '<div style="min-width:0;"><h3 style="margin:0;font-size:15px;">Öğrenme Durumu <span class="text-xs text-muted" style="font-weight:600;">· ' + entries.length + ' konu izleniyor</span></h3>'
-      + '<div class="text-xs text-muted" style="margin-top:2px;">'
-      + (acik ? 'Konuların yeterlilik ve tekrar göstergeleri'
-              : (aksiyon ? '<b style="color:var(--brand-blue);">' + aksiyon + ' konuda kısa kontrol hazır</b> · ' : '') + onayli + ' onaylı · satırları görmek için aç')
-      + '</div></div>'
-      + '<button class="btn btn-sm btn-ghost" data-bkt-panel="toggle" style="flex-shrink:0;min-height:40px;" aria-expanded="' + (acik ? "true" : "false") + '">' + (acik ? "Küçült" : "Ayrıntı") + '</button></div>';
-    if (!acik) { panel.innerHTML = html; return; }
-    html += '<div class="text-xs text-muted" style="margin:8px 0 10px;line-height:1.5;">Konuların yeterlilik ve tekrar göstergeleri</div>';
-    // Panelin ne gösterdiğini açıkça yaz: kullanıcı sayının ne olduğunu bilsin
-    html += '<div style="font-size:11.5px;line-height:1.5;opacity:0.78;border-left:3px solid var(--brand-blue);padding:2px 0 2px 8px;margin-bottom:10px;">'
-      + '<b>Yeterlilik</b> = bu konuyu bilme olasılığın (sorularına göre 0–100). '
-      + '<b>Hafıza</b> = tekrar kartlarının hatırlama gücü. '
-      + '<b>Durum</b> = Veri yetersiz → Gelişiyor → Pekişiyor → ONAYLANDI. '
-      + 'Test düğmesi, soru havuzundan gelecek soruları açar.'
-      + '</div><div style="display:grid;gap:7px;">';
+    const onayliSayi = entries.filter(x => statusFor(x.entry) === "ONAYLANDI").length;
+    let html = '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">' +
+      '<div style="min-width:0;"><h3 style="margin:0;font-size:15px;">Öğrenme Durumu <span class="text-xs text-muted" style="font-weight:600;">· ' + entries.length + ' konu izleniyor</span></h3>' +
+      '<div class="text-xs text-muted" style="margin-top:2px;">' +
+      (acik ? 'Konuların yeterlilik ve tekrar göstergeleri'
+            : (bekleyenTest ? '<b style="color:var(--brand-blue);">' + bekleyenTest + ' konuda kısa kontrol hazır</b> · ' : '') +
+              onayliSayi + ' onaylı · satırları görmek için aç') +
+      '</div></div>' +
+      '<button class="btn btn-sm btn-ghost" data-act="toggleBktPanel" style="flex-shrink:0;min-height:40px;" aria-expanded="' + (acik ? "true" : "false") + '">' +
+      (acik ? 'Küçült' : 'Ayrıntı') + '</button></div>';
+    if (!acik) { panel.innerHTML = html; if (window.lucide && lucide.createIcons) lucide.createIcons(); return; }
+    html += '<div class="text-xs text-muted" style="margin:8px 0 10px;line-height:1.45;">Yeterlilik = bu konuyu bilme olasılığın (0–100) · Hafıza = tekrar kartlarının gücü · Durum: Veri yetersiz → Gelişiyor → Pekişiyor → ONAYLANDI. Test düğmesi soruları yalnız bu konunun havuzundan açar.</div><div style="display:grid;gap:7px;">';
     entries.forEach(function (row) {
       const e = row.entry; const status = statusFor(e); const known = e.gozlem_sayisi >= 5; const percent = Math.round(e.L * 100);
       const cards = (s.flashcards.cards || []).filter(c => c.topicKey === row.key); const memory = cards.length ? Math.round(cards.reduce((sum, c) => sum + Number(c.memory_bar == null ? 1 : c.memory_bar), 0) / cards.length * 100) : 0;
@@ -909,14 +1126,22 @@
       const label = focusLabel(e); if (label) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Hataların şurada yoğunlaşıyor: ' + safeText(label) + '</div>';
       const cause = e.graph_topic_id ? rootCause(e.graph_topic_id, e.hata_gecmisi || []) : null;
       if (cause && !cause.stay) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Önce şunu sağlamlaştır: ' + safeText(cause.topicName) + '</div>';
-      const poolId = e.pool_id || e.soru_havuzu_id || resolvePoolId(row.key);
-      const precheck = e.precheck_due && dateValue(e.precheck_due) <= dateValue(TODAY());
+      // Havuz ÇÖZÜLÜRSE düğme her zaman çıkar. Eskiden precheck_due şartı
+      // vardı; Okulizyon'dan gelen kayıtlarda bu tarih hiç yazılmadığı için
+      // "bazı konularda kısa kontrol gelmiyor" oluyordu.
+      const poolId = window.__havuzIdCoz(row.key, e.pool_id || e.soru_havuzu_id);
+      if (poolId && e.pool_id !== poolId) e.pool_id = poolId;   // eski/yanlış kayıt düzeltilir
+      const precheck = !!(e.precheck_due && dateValue(e.precheck_due) <= dateValue(TODAY()));
       const task = s.mini_test_kuyrugu.find(x => x.topicKey === row.key && x.type === "learning" && !x.completed);
-      if (poolId && precheck) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="precheck" style="margin-top:7px;min-width:48px;min-height:48px;">Kısa Kontrol — 3 soru</button>';
-      else if (poolId && task) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="learning" style="margin-top:7px;min-width:48px;min-height:48px;">Öğrenme Testi — 5 soru</button>';
-      else if (poolId && e.learning_test_due) html += '<div class="text-xs text-muted" style="margin-top:6px;">Öğrenme testi ' + safeText(e.learning_test_due) + ' tarihinde açılacak (aralıklı tekrar).</div>';
-      else if (poolId) html += '<div class="text-xs text-muted" style="margin-top:6px;">Konuyu çalışıp "tamamlandı" işaretleyince test burada açılır.</div>';
-      else html += '<div class="text-xs" style="margin-top:6px;color:var(--semantic-warning);">Soru havuzu eşlenmedi — Profil → Okulizyon → Konu Eşlemesi\'nden bu konuyu seç.</div>';
+      if (poolId) {
+        if (!e.pool_id) e.pool_id = poolId;   // bir daha aramayalım
+        html += '<button type="button" class="btn btn-sm ' + (precheck ? "btn-primary" : "btn-ghost") + ' bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="precheck" style="margin-top:7px;min-width:48px;min-height:48px;">Kısa Kontrol — ' + MINI_SORU + ' soru</button>';
+        if (task) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="learning" style="margin-top:7px;margin-left:6px;min-width:48px;min-height:48px;">Öğrenme Testi — ' + MINI_SORU + ' soru</button>';
+      } else {
+        // v35.7 — SESSİZ KALMA YOK: havuz yoksa neden test açılmadığı yazılır.
+        // Bilerek başka konunun havuzuna düşmüyoruz (kullanıcı isteği).
+        html += '<div class="text-xs" style="margin-top:6px;line-height:1.45;color:var(--semantic-warning);">Soru havuzu eşlenmedi — bu konuyla birebir eşleşen havuz yok. Başka konunun soruları gösterilmez. Konu Eşlemesi: Profil → Okulizyon → Konu Eşlemesi.</div>';
+      }
       html += '</div>';
     });
     html += '</div>';
@@ -932,7 +1157,7 @@
 
   function scheduleUi() { clearTimeout(uiTimer); uiTimer = setTimeout(renderBktPanel, 80); }
   // app-pwa.js konu eşlemesi yaptıktan sonra paneli tazeleyebilsin
-  try { window.__bktUiTazele = scheduleUi; } catch (e) { /* */ }
+  window.__bktUiTazele = scheduleUi;
   function install() {
     if (saveWrapped) return;
     saveWrapped = true;
@@ -953,20 +1178,24 @@
     const host = document.getElementById("main-content");
     if (host && window.MutationObserver) { uiObserver = new MutationObserver(scheduleUi); uiObserver.observe(host, { childList: true }); }
     document.addEventListener("change", function (event) {
-      if (event.target.matches && event.target.matches("#bkt-test-modal input[type=radio]")) { const modal = document.getElementById("bkt-test-modal"); persistMiniSession(modal); updateMiniSubmitState(modal); }
+      if (event.target.matches && event.target.matches("#bkt-test-modal input[data-bkt-secim]")) {
+        const modal = document.getElementById("bkt-test-modal");
+        if (!modal) return;
+        const i = Number(modal._bktIdx) || 0;
+        if (!Array.isArray(modal._bktAnswers)) modal._bktAnswers = [];
+        modal._bktAnswers[i] = String(event.target.value);
+        persistMiniSession(modal);
+        // Seçimi görsel olarak da işaretle (radio'nun kendi stili yetmiyor)
+        cizMiniSoru(modal);
+      }
     });
     document.addEventListener("click", function (event) {
-      if (event.target.closest("[data-bkt-panel]")) {
-        let acik = false;
-        try { acik = localStorage.getItem("am_bkt_panel_acik") === "1"; } catch (e) { acik = false; }
-        try { localStorage.setItem("am_bkt_panel_acik", acik ? "0" : "1"); } catch (e) { /* */ }
-        renderBktPanel();
-        return;
-      }
       const testButton = event.target.closest("[data-bkt-test]");
       if (testButton) { openMiniTest(testButton.dataset.bktTest, testButton.dataset.bktPool, { mode: testButton.dataset.bktMode || "learning" }); return; }
       if (event.target.closest("[data-bkt-close-test]")) { closeMiniTest(); return; }
       if (event.target.closest("[data-bkt-submit-test]")) { const modal = document.getElementById("bkt-test-modal"); if (modal) finishMiniTest(modal); return; }
+      if (event.target.closest("[data-bkt-next]")) { const modal = document.getElementById("bkt-test-modal"); if (modal) miniSonraki(modal); return; }
+      if (event.target.closest("[data-bkt-prev]")) { const modal = document.getElementById("bkt-test-modal"); if (modal) miniOnceki(modal); return; }
       if (event.target.closest("[data-bkt-finalize-test]")) { const modal = document.getElementById("bkt-test-modal"); if (modal) completeMiniTestReasons(modal); return; }
       const button = event.target.closest("[data-bkt-card]"); if (!button) return;
       flashcardReview(button.dataset.bktCard, button.dataset.bktRating || "Bilemedi");

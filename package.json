@@ -28,10 +28,11 @@
     "test:gorsel": "node tests/gorsel-video.test.js",
     "test:yuk": "node tests/okz-yuk.test.js",
     "test:konubulma": "node tests/konu-bulma.test.js",
-    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk && npm run -s test:konubulma && npm run -s test:kokeksik && npm run -s test:bildirim",
+    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk && npm run -s test:konubulma && npm run -s test:kokeksik && npm run -s test:bildirim && npm run -s test:davranis",
     "test:konu": "node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
     "esleme:uret": "node scripts/konu-esleme-uret.js",
     "test:bildirim": "node tests/bildirim.test.js",
-    "test:kokeksik": "node tests/kok-eksik.test.js"
+    "test:kokeksik": "node tests/kok-eksik.test.js",
+    "test:davranis": "node tests/kisa-kontrol.test.js && node tests/kaynak-sozdizimi.test.js && node tests/bildirim-otomatik.test.js"
   }
 }
