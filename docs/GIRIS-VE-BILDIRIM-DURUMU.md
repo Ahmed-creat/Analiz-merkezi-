@@ -32,15 +32,23 @@ Açıldığı an ek kod gerekmez; düğme çalışır.
   (ham 400 mesajı kullanıcıya gösterilmez).
 - E-posta + şifre ile giriş/kayıt sorunsuz çalışıyor (`mailer_autoconfirm: true`).
 
-## Push bildirim — ŞU AN ÇALIŞMIYOR
+## Push bildirim — v35.5 durumu
 
-GitHub Actions (`Bildirim Motoru`) yeşil görünüyor ama **Firestore** okuyor ve
-**eski Netlify adresine** (`analizmerkezii.netlify.app`) bakıyor. Yeni uygulama
-ise FCM token'ını **Supabase `public.fcm_tokens`** tablosuna yazıyor (şu an 0 satır).
-Sonuç: uygulamayı açmadan bildirim gelmez.
+İki gönderici var, ikisi de **aynı metni** üretiyor (`bildirim-logic.js` tek kaynak):
 
-Düzeltmek için: bildirim gönderimi Supabase Edge Function + pg_cron'a taşınmalı,
-`FIREBASE_SERVICE_ACCOUNT` secret'ı Supabase'e eklenmeli.
+| Gönderici | Kanal | Durum |
+|---|---|---|
+| GitHub Actions `bildirim-gonder.js` | Firebase (FCM) | Firestore okuyor; hedef adres artık **Vercel** |
+| Supabase Edge `bildirim-gonder` v4 + pg_cron | Web Push (VAPID) | **çalışıyor**, `push_abonelikleri` dolunca gönderir |
+| Vercel cron / diğer | — | kullanılmıyor |
+
+**Kalan tek adım kullanıcıda:** uygulama içinde Ayarlar → **Bildirim İzni İste**
+dokunuşu. İzin + abonelik kaydı olmadan hiçbir kanal telefona ulaşamaz
+(`public.push_abonelikleri` şu an **0 satır**).
+
+Metinler: `coach` (her gün), `reviews`, `urgent`, `memcrit`, `forget`,
+`schooleve@…`, `schooltoday@…`, `exam@7/3/1`, `daily` — sabah hepsi, akşam yalnız
+kritikler; her anahtar günde bir kez (`public.bildirim_log`).
 
 ## Okul duyuruları — ÖLÜ
 
