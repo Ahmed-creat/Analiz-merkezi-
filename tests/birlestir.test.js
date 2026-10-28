@@ -115,6 +115,26 @@ const sonrakiIdler = m.exams.map(e => e.id);
 ok("tüm deneme kimlikleri korundu", oncekiIdler.every(id => sonrakiIdler.includes(id)), oncekiIdler.join(",") + " → " + sonrakiIdler.join(","));
 esit("kimlik tekrarı yok", new Set(sonrakiIdler).size, sonrakiIdler.length);
 
+
+// ---- 7) Boş yerel değer buluttaki kimliği silmez (gerçek olay) ----
+console.log("\n== 7) Okulizyon kimliği korunur ==");
+const kimlikli = { settings: { okulizyon: { ad: "TEST OGRENCI", okulNo: "46", sinif: "10", ilce: "Şahinbey" }, tema: "koyu" } };
+const bosYerel = { settings: { okulizyon: {}, tema: "" }, exams: [] };
+const k1 = VB.birlestir(bosYerel, kimlikli);
+esit("kimlik adı korunur", k1.settings.okulizyon.ad, "TEST OGRENCI");
+esit("kimlik okul no korunur", k1.settings.okulizyon.okulNo, "46");
+esit("ilçe korunur", k1.settings.okulizyon.ilce, "Şahinbey");
+esit("yereldeki dolu ayar kazanır", k1.settings.tema, "koyu");
+const bosDegerli = { settings: { okulizyon: { ad: "", okulNo: "" } } };
+const k2 = VB.birlestir(bosDegerli, kimlikli);
+esit("boş string kimliği ezmez", k2.settings.okulizyon.ad, "TEST OGRENCI");
+esit("boş string okul noyu ezmez", k2.settings.okulizyon.okulNo, "46");
+const doluYerel = { settings: { okulizyon: { ad: "YENI OGRENCI", okulNo: "7" } } };
+const k3 = VB.birlestir(doluYerel, kimlikli);
+esit("kullanıcı kimliği değiştirdiyse yeni değer kazanır", k3.settings.okulizyon.ad, "YENI OGRENCI");
+esit("yeni okul no kazanır", k3.settings.okulizyon.okulNo, "7");
+ok("kimlik yoksa islenen nesnesi hazırlanır", !!k2.settings.okulizyon.islenen);
+
 console.log("\n" + "─".repeat(56));
 if (kalan) {
   hatalar.forEach(x => console.log(" ✗ " + x));

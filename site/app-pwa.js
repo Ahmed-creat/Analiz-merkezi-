@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.0-gorsel-video";
+const PWA_SURUM = "v35.1-veri-koruma";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

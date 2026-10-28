@@ -26,6 +26,22 @@
   function dizi(x) { return Array.isArray(x) ? x : []; }
   function sayi(x) { const n = Number(x); return isFinite(n) ? n : 0; }
 
+  // Boş değerler ("" / null / undefined) karşı tarafı EZMESİN.
+  // Gerçek olay: Profil → Okulizyon kimliği bulutta duruyordu, uygulamanın
+  // eski bir sekmesi boş ayarla kaydedince kimlik silindi ve otomatik çekim
+  // "kimlik yok" dedi. Bu yüzden yerel değer yalnız DOLU ise kazanır.
+  function dolu(x) {
+    const r = {};
+    if (!nesne(x)) return r;
+    Object.keys(x).forEach(function (k) {
+      const v = x[k];
+      if (v === "" || v === null || v === undefined) return;
+      if (nesne(v) && !Object.keys(v).length) return;
+      r[k] = v;
+    });
+    return r;
+  }
+
   // Bir kayıt ne kadar "işlenmiş"? (daha çok bilgi taşıyan kazanır)
   function agirlik(x) {
     if (!nesne(x)) return 0;
@@ -147,9 +163,13 @@
     // Ayarlar: yerel kazanır ama bulutta olup yerelde olmayan anahtar eklenir
     cikti.settings = nesneBirlestir(y.settings, u.settings);
     if (nesne(y.settings) && nesne(u.settings)) {
-      cikti.settings = Object.assign({}, u.settings, y.settings);
-      if (nesne(u.settings.okulizyon)) {
-        cikti.settings.okulizyon = Object.assign({}, u.settings.okulizyon, nesne(y.settings.okulizyon) ? y.settings.okulizyon : {});
+      cikti.settings = Object.assign({}, u.settings, dolu(y.settings));
+      if (nesne(u.settings.okulizyon) || nesne(y.settings.okulizyon)) {
+        cikti.settings.okulizyon = Object.assign(
+          {},
+          nesne(u.settings.okulizyon) ? u.settings.okulizyon : {},
+          dolu(nesne(y.settings.okulizyon) ? y.settings.okulizyon : {})
+        );
         if (!cikti.settings.okulizyon.islenen) cikti.settings.okulizyon.islenen = {};
       }
     }
