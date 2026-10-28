@@ -11,7 +11,7 @@ const { buildMessages } = require("./bildirim-logic");
 
 const DRY = process.env.DRY_RUN === "1";
 const KRITIK_ANAHTARLAR = ["schooleve@", "schooltoday@", "exam@1", ":memcrit"];
-const APP_ORIGIN = (process.env.APP_ORIGIN || "https://analizmerkezii.netlify.app").replace(/\/$/, "");
+const APP_ORIGIN = (process.env.APP_ORIGIN || "https://analiz-merkezi.vercel.app").replace(/\/$/, "");
 const APP_URL = APP_ORIGIN + "/";
 const ICON_URL = APP_ORIGIN + "/icons/icon-192.png";
 function webpushOptions(extraData = {}) {
