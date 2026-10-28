@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.4-cekici";
+const PWA_SURUM = "v34.5-mesaj";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

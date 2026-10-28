@@ -1180,7 +1180,7 @@ select.dd-native {
 </nav>
 
 <!-- ===== KOÇLUK PANELİ (YÜZEN) ===== -->
-<button id="coach-toggle" data-act="toggleCoach" title="Koçluk Hattı"><i data-lucide="message-circle" style="width:20px;height:20px;"></i></button>
+<button id="coach-toggle" data-act="toggleCoach" title="Koçluk Hattı" aria-label="Koçluk Hattı mesajlarını aç" aria-expanded="false" aria-controls="coach-panel"><i data-lucide="message-circle" style="width:20px;height:20px;"></i></button>
 <div id="coach-panel" class="hidden">
   <div class="flex items-center justify-between" style="margin-bottom:10px;">
     <div class="text-xs font-semibold" style="color:var(--brand-blue);letter-spacing:0.05em;">KOÇLUK HATTI</div>
@@ -1962,7 +1962,7 @@ function coachMessages() {
       const mAvg = Math.round(avg(mathNets) * 100) / 100;
       msgs.push("Son 3 denemede Matematik netlerin <b>" + mAvg + "</b> seviyesinde. " + (mAvg >= 10 ? "Gümüş seviyeye yükseldin, böyle devam!" : "Temel eksikleri Modül B'den önceliklendiriyorum."));
     }
-    msgs.push("Net eğilimin: <b>" + (trend >= 0 ? "+" : "") + Math.round(trend * 100) / 100 + "</b> puán. " + (trend >= 0 ? "İvme pozitif." : "Küçük bir tekrar planı gerekiyor."));
+    msgs.push("Net eğilimin: <b>" + (trend >= 0 ? "+" : "") + Math.round(trend * 100) / 100 + "</b> puan. " + (trend >= 0 ? "İvme pozitif." : "Küçük bir tekrar planı gerekiyor."));
   } else if (st.count > 0) {
     msgs.push("En az 3 deneme girince trend analizini açarım. Şu an " + st.count + " kayıt var.");
   }
@@ -2648,7 +2648,16 @@ function renderNudge() {
 
 // ===== KOÇLUK PANELİ =====
 function toggleCoachPanel() {
-  document.getElementById("coach-panel").classList.toggle("hidden");
+  const panel = document.getElementById("coach-panel");
+  if (!panel) return;
+  const aciliyor = panel.classList.contains("hidden");
+  panel.classList.toggle("hidden");
+  const btn = document.getElementById("coach-toggle");
+  if (btn) btn.setAttribute("aria-expanded", aciliyor ? "true" : "false");
+  if (aciliyor) {
+    renderCoachPanel();                              // sistem mesajları her açılışta tazelenir
+    if (typeof window.__kocSohbetTazele === "function") window.__kocSohbetTazele();
+  }
 }
 function renderCoachPanel() {
   const box = document.getElementById("coach-messages");
@@ -5387,6 +5396,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 <script src="vendor/supabase.js"></script>
+<script src="mesaj.js"></script>
 <script type="module" src="app-pwa.js"></script>
 </body>
 </html>

@@ -1,9 +1,11 @@
 // Okulizyon çekici — Supabase Edge Function (Deno).
-// Akış okulizyon.com'un kendi JS'inden (orbimogrgiris.js) doğrulandı:
+// Akış okulizyon.com'un kendi JS'inden ve GERÇEK sayfalardan doğrulandı:
 //  POST /ajax/ogrencigirisarama.php {giristuru,adsoyad,ogrno,sinif,ilkodu,ilcekodu,kurumkodu}
 //    → {tamam,ogrid,sifrevar,yksid,...} | {tamam:false,mesaj}
-//  ogrid>0 & sifrevar → POST /ajax/ogrencigiris.php (şifre) ; ogrid=0 & yksid/lgsid>0 → oturum açık
-//  GET /app2/ogrenci/?pg=sinavsonuclari → sonuç HTML'i
+//  ogrid>0 & sifrevar → POST /ajax/ogrencigiris.php (sifre) ; ogrid=0 & yksid/lgsid>0 → oturum açık
+//  GET /app2/ogrenci/?pg=sinavsonuclari → sınav KARTLARI (tablo değil)
+//  GET /app2/ogrenci/?pg=yks&sid=…  → sınav DETAYI (soru tablosu: Soru|Video|D.C.|Ö.C.|Kazanım)
+// Modlar: probe · test · parse · ham · canli (kuru çalışma) · ben (JWT sahibi) · run (cron, tüm kullanıcılar)
 // Yazma: public.okulizyon_kuyrugu (user_id, exams, pulled_at, durum, durum_mesaji, ham_ozet)
 const TABAN = "https://okulizyon.com";
 const GIRIS = TABAN + "/app2/ogrgiris/";
@@ -25,16 +27,18 @@ class Kavanoz {
 async function http(k: Kavanoz, url: string, opt: RequestInit = {}) {
   const h = new Headers(opt.headers || {});
   h.set("User-Agent", UA);
-  if (!h.has("Accept")) h.set("Accept", "application/json, text/html, */*");
+  if (!h.has("Accept")) h.set("Accept", "text/html,application/json,*/*");
   if (k.baslik()) h.set("Cookie", k.baslik());
   const y = await fetch(url, { ...opt, headers: h, redirect: "follow" });
   k.al(y);
   return y;
 }
 const form = (o: Record<string, string>) => { const p = new URLSearchParams(); for (const [a, b] of Object.entries(o)) p.append(a, String(b ?? "")); return p.toString(); };
-const metin = (s: string) => String(s || "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+const metin = (s: string) => String(s || "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
 const kucuk = (s: string) => metin(s).toLocaleLowerCase("tr-TR");
 const sayi = (s: string) => { const n = parseInt(String(s).replace(/[^\d-]/g, ""), 10); return isNaN(n) ? 0 : n; };
+const coz = (s: string) => String(s || "").replace(/\\u([0-9a-fA-F]{4})/g, (_m, h) => String.fromCharCode(parseInt(h, 16)));
+const ondalik = (s: string) => { const n = parseFloat(String(s).replace(/\./g, "").replace(",", ".")); return isNaN(n) ? 0 : n; };
 
 // Türkçe karakter farkı gözetmeyen normalizasyon ("Şahinbey" = "SAHINBEY", ama "AKKEN" ≠ "AKKENT")
 function norm(x: string) {
@@ -66,37 +70,6 @@ function secenekler(html: string, ad: string) {
   while ((m = re.exec(ic))) { const e = metin(m[2]); if (e && m[1]) cikti[e] = m[1]; }
   return cikti;
 }
-function baglantilar(html: string) {
-  const out: { ad: string; href: string; tarih: string }[] = [], gor = new Set<string>();
-  const re = /<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(html))) {
-    const href = /href=["']([^"']+)["']/i.exec(m[1])?.[1] || "";
-    if (!href || /^javascript:/i.test(href) || href === "#") continue;
-    const kendi = metin(m[2]);
-    // Link metni sınav adı olmalı; "Profilim" gibi komşu metinler sınav sanılmasın
-    const kk = kucuk(kendi);
-    const jenerik = kk.length < 4 || /^(sonuç|sonuc|sonuçlar|sonuclar|detay|detaylar|görüntüle|goruntule|incele|gör|gor|git|buraya|tıkla|tikla|aç|ac)\b/.test(kk);
-    let ad = "";
-    if (!jenerik) {
-      if (!/(deneme|sinav|sınav|yazili|yazılı|sonuc|sonuç)/i.test(kk)) continue;
-      ad = kendi;
-    } else {
-      const cevreMetin = metin(html.slice(Math.max(0, m.index - 300), m.index + 300));
-      if (!/(deneme|sinav|sınav|yazili|yazılı|sonuc|sonuç)/i.test(kucuk(cevreMetin))) continue;
-      ad = (kendi + " " + cevreMetin).slice(0, 120);
-    }
-    ad = ad.slice(0, 200);
-    const cevre = html.slice(Math.max(0, m.index - 500), m.index);
-    if (ad.length < 3 || gor.has(href + "|" + ad)) continue;
-    gor.add(href + "|" + ad);
-    // Tarih genelde sınav adından SONRA gelir; önce sağına, sonra soluna bak
-    const sagMetin = metin(html.slice(m.index, Math.min(html.length, m.index + 400)));
-    const t = /(\d{2})[.\/](\d{2})[.\/](\d{4})/.exec(sagMetin) || /(\d{2})[.\/](\d{2})[.\/](\d{4})/.exec(cevre);
-    out.push({ ad, href: href.startsWith("http") ? href : new URL(href, TABAN).href, tarih: t ? t[3] + "-" + t[2] + "-" + t[1] : "" });
-  }
-  return out;
-}
 function tablolar(html: string) {
   const out: string[][][] = [];
   const tre = /<table\b[^>]*>([\s\S]*?)<\/table>/gi;
@@ -114,6 +87,111 @@ function tablolar(html: string) {
   }
   return out;
 }
+
+function baglantilar(html: string) {
+  const out: { ad: string; href: string; tarih: string }[] = [], gor = new Set<string>();
+  const re = /<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html))) {
+    const href = (/href=["']([^"']+)["']/i.exec(m[1])?.[1] || "").replace(/&amp;/g, "&");
+    if (!href || /^javascript:/i.test(href) || href === "#") continue;
+    const kendi = metin(m[2]);
+    const kk = kucuk(kendi);
+    const jenerik = kk.length < 4 || /^(sonuç|sonuc|sonuçlar|sonuclar|detay|detaylar|görüntüle|goruntule|incele|gör|gor|git|buraya|tıkla|tikla|aç|ac)\b/.test(kk);
+    let ad = "";
+    if (!jenerik) {
+      if (!/(deneme|sinav|sınav|yazili|yazılı|sonuc|sonuç)/i.test(kk)) continue;
+      ad = kendi;
+    } else {
+      const cevreMetin = metin(html.slice(Math.max(0, m.index - 300), m.index + 300));
+      if (!/(deneme|sinav|sınav|yazili|yazılı|sonuc|sonuç)/i.test(kucuk(cevreMetin))) continue;
+      ad = (kendi + " " + cevreMetin).slice(0, 120);
+    }
+    ad = ad.slice(0, 200);
+    const cevre = html.slice(Math.max(0, m.index - 500), m.index);
+    if (ad.length < 3 || gor.has(href + "|" + ad)) continue;
+    gor.add(href + "|" + ad);
+    const sagMetin = metin(html.slice(m.index, Math.min(html.length, m.index + 400)));
+    const t = /(\d{2})[.\/](\d{2})[.\/](\d{4})/.exec(sagMetin) || /(\d{2})[.\/](\d{2})[.\/](\d{4})/.exec(cevre);
+    out.push({ ad, href: href.startsWith("http") ? href : new URL(href, TABAN).href, tarih: t ? t[3] + "-" + t[2] + "-" + t[1] : "" });
+  }
+  return out;
+}
+
+
+// ---- 1) SONUÇ LİSTESİ: sınav kartları (gerçek yapı) ----
+// <div class="col-xl-6"> … <div class="fs-5 fw-bold text-gray-900 …">SINAV ADI</div>
+//   <div>27.10.2026</div> … title="Doğru">100 · title="Yanlış">11 · title="Net">97,25
+//   <a href="?pg=yks&sid=…">Göster</a>
+function sinavKartlari(html: string) {
+  const out: { ad: string; tarih: string; tur: string; dogru: number; yanlis: number; net: number; href: string }[] = [];
+  const parcalar = html.split(/<div class="col-xl-6">/).slice(1);
+  for (const p of parcalar) {
+    const ad = metin(/<div class="fs-5 fw-bold text-gray-900[^"]*"[^>]*>([\s\S]*?)<\/div>/.exec(p)?.[1] || "");
+    const href = (/href="(\?pg=[^"]*sid=[^"]+)"/i.exec(p)?.[1] || "").replace(/&amp;/g, "&");
+    if (!ad || !href) continue;
+    const t = /(\d{2})\.(\d{2})\.(\d{4})/.exec(p);
+    const baslikDeger = (etiket: string) => {
+      const m = new RegExp('title="' + etiket + '"[^>]*>\\s*([\\d.,]+)', "i").exec(p);
+      return m ? m[1] : "";
+    };
+    out.push({
+      ad,
+      tarih: t ? t[3] + "-" + t[2] + "-" + t[1] : "",
+      tur: /Deneme/.test(p) ? "Deneme" : "",
+      dogru: sayi(baslikDeger("Doğru")),
+      yanlis: sayi(baslikDeger("Yanlış")),
+      net: ondalik(baslikDeger("Net")),
+      href
+    });
+  }
+  return out;
+}
+
+// ---- 2) SINAV DETAYI: soru tablosu (Soru | Video | D.C. | Ö.C. | Kazanım) ----
+// D.C. = doğru cevap, Ö.C. = öğrencinin cevabı (yeşil → doğru, kırmızı → yanlış, boş → boş)
+function sinavDetay(html: string) {
+  // dersno → ders adı eşlemesi (data-testler alanı; tek tırnaklı JS biçimi de olabilir)
+  const dersler: Record<string, string> = {};
+  const testlerAttr = /data-testler="([\s\S]*?)"/.exec(html)?.[1] || "";
+  const desen = /['"]dersno['"]\s*:\s*(\d+)\s*,\s*['"]dersadi['"]\s*:\s*['"]([^'"]+)['"]/g;
+  let m: RegExpExecArray | null;
+  while ((m = desen.exec(testlerAttr))) dersler[m[1]] = coz(m[2]);
+
+  const lessons: Record<string, { d: number; w: number; e: number }> = {};
+  const rows: { qno: string; lesson: string; topic: string; status: string }[] = [];
+  const ekle = (ders: string) => { if (!lessons[ders]) lessons[ders] = { d: 0, w: 0, e: 0 }; return lessons[ders]; };
+
+  const trRe = /<tr\b[^>]*>([\s\S]*?)<\/tr>/gi;
+  let tr: RegExpExecArray | null;
+  while ((tr = trRe.exec(html))) {
+    const blok = tr[1];
+    const soruno = /data-soruno="(\d+)"/.exec(blok)?.[1] || "";
+    const dersno = /data-dersno="(\d+)"/.exec(blok)?.[1] || "";
+    if (!soruno) continue;                                  // soru satırı değil
+    const tds = [...blok.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((x) => x[1]);
+    if (tds.length < 3) continue;
+    const dc = tds[1] || "", oc = tds[2] || "", kazanim = tds[3] || "";
+    const ders = dersler[dersno] || "Genel";
+    const kayit = ekle(ders);
+    const ogrCevap = metin(oc);
+    let durum = "";
+    if (/bg-light-danger/i.test(oc)) durum = "w";            // yanlış
+    else if (/bg-light-success/i.test(oc)) durum = "d";      // doğru
+    else durum = "e";                                        // boş
+    if (durum === "d") kayit.d++;
+    else if (durum === "w") kayit.w++;
+    else kayit.e++;
+    if (durum !== "d") {
+      const konu = metin(kazanim).replace(/^\[\d+\]\s*/, "").slice(0, 300) || ("Soru " + soruno);
+      rows.push({ qno: soruno, lesson: ders, topic: konu, status: durum });
+      void dc; void ogrCevap;
+    }
+  }
+  return { lessons, rows };
+}
+
+// ---- 3) Yedek ayrıştırıcı: eski tablo düzeni (özet + detay tabloları) ----
 function ayikla(html: string, ad: string, tarih: string) {
   const lessons: Record<string, { d: number; w: number; e: number }> = {}, rows: any[] = [];
   for (const sat of tablolar(html)) {
@@ -121,7 +199,6 @@ function ayikla(html: string, ad: string, tarih: string) {
     const bul = (ks: string[]) => bas.findIndex((h) => ks.some((k) => h.includes(k)));
     const ders = bul(["ders"]);
     const konu = bul(["konu", "kazan"]), durumK = bul(["durum"]);
-    // 1) DETAY tablosu: Soru | Ders | Konu/Kazanım | Durum  (Doğru/Yanlış sütunu YOKTUR)
     if (konu >= 0 && durumK >= 0) {
       for (const s of sat.slice(1)) {
         const k = s[konu] || ""; if (!k) continue;
@@ -131,7 +208,6 @@ function ayikla(html: string, ad: string, tarih: string) {
       }
       continue;
     }
-    // 2) ÖZET tablosu: Ders | Doğru | Yanlış | Boş
     const dogru = bul(["doğru", "dogru"]), yanlis = bul(["yanlış", "yanlis"]);
     const bos = bas.findIndex((h) => h === "boş" || h === "bos");
     if (ders < 0 || dogru < 0 || yanlis < 0 || Object.keys(lessons).length > 0) continue;
@@ -191,6 +267,37 @@ async function giris(kimlik: any, k: Kavanoz): Promise<any> {
   return { durum: "red", mesaj: "Kayıt bulundu ama oturum açılamadı", ham, kodlar };
 }
 
+// ---- Oturum açmış kavanozla tüm sınavları topla (yazma yok) ----
+async function sinavlariTopla(k: Kavanoz) {
+  const y = await http(k, SONUC, { headers: { Referer: TABAN + "/app2/ogrenci/" } });
+  const html = await y.text();
+  const kartlar = sinavKartlari(html);
+  const exams: any[] = [];
+  const hatalar: string[] = [];
+  if (kartlar.length) {
+    for (const kart of kartlar.slice(0, 20)) {
+      try {
+        const url = new URL(kart.href, SONUC).href;
+        const dh = await (await http(k, url, { headers: { Referer: SONUC } })).text();
+        const d = sinavDetay(dh);
+        exams.push({
+          name: kart.ad, date: kart.tarih, tur: kart.tur || undefined,
+          toplam: { dogru: kart.dogru, yanlis: kart.yanlis, net: kart.net },
+          lessons: d.lessons, rows: d.rows
+        });
+      } catch (e) { hatalar.push(kart.ad + ": " + String(e).slice(0, 120)); }
+    }
+  } else {
+    // Yedek: eski tablo düzeni
+    const bs = baglantilar(html);
+    if (!bs.length) exams.push(ayikla(html, "Okulizyon Sonucu", ""));
+    else for (const b of bs.slice(0, 15)) {
+      try { exams.push(ayikla(await (await http(k, b.href, { headers: { Referer: SONUC } })).text(), b.ad, b.tarih)); } catch (_) { /**/ }
+    }
+  }
+  return { exams, kartSayisi: kartlar.length, htmlBoyut: html.length, hatalar };
+}
+
 const sb = (yol: string) => SURL + "/rest/v1/" + yol;
 const sbB = (ek: Record<string, string> = {}) => ({ apikey: SK, Authorization: "Bearer " + SK, "Content-Type": "application/json", ...ek });
 async function yaz(userId: string, alanlar: Record<string, unknown>) {
@@ -220,23 +327,17 @@ async function kullaniciCek(userId: string, stateJson: any): Promise<any> {
       await yaz(userId, { durum: r.durum, durum_mesaji: msj.slice(0, 400) });
       return { durum: r.durum, mesaj: msj, kodlar: r.kodlar, ham: r.ham };
     }
-    const sy = await http(k, SONUC, { headers: { Referer: TABAN + "/app2/ogrenci/" } });
-    const html = await sy.text(), bs = baglantilar(html);
-    const exams: any[] = [];
-    if (!bs.length) exams.push(ayikla(html, "Okulizyon Sonucu", ""));
-    else for (const b of bs.slice(0, 15)) {
-      try { exams.push(ayikla(await (await http(k, b.href, { headers: { Referer: SONUC } })).text(), b.ad, b.tarih)); } catch (_) { /**/ }
-    }
-    const dolu = exams.filter((e) => Object.keys(e.lessons || {}).length || (e.rows || []).length);
+    const t = await sinavlariTopla(k);
+    const dolu = t.exams.filter((e) => Object.keys(e.lessons || {}).length || (e.rows || []).length);
     const satir = dolu.reduce((a, e) => a + (e.rows || []).length, 0);
     await yaz(userId, {
       exams: dolu, durum: dolu.length ? "ok" : "sonuc-yok",
       durum_mesaji: dolu.length
-        ? dolu.length + " sınav, " + satir + " hata satırı aktarıldı."
-        : "Giriş başarılı ama sonuç tablosu okunamadı (" + bs.length + " bağlantı, HTML " + html.length + " bayt).",
-      ham_ozet: metin(html).slice(0, 1500)
+        ? dolu.length + " sınav, " + satir + " hatalı/boş soru aktarıldı."
+        : "Giriş başarılı ama sonuç bulunamadı (" + t.kartSayisi + " sınav kartı, sayfa " + t.htmlBoyut + " bayt).",
+      ham_ozet: dolu.map((e) => e.name + " · " + (e.date || "-") + " · " + Object.keys(e.lessons || {}).join(", ")).join(" | ").slice(0, 1500)
     });
-    return { durum: dolu.length ? "ok" : "sonuc-yok", sinav: dolu.length, satir, kodlar: r.kodlar };
+    return { durum: dolu.length ? "ok" : "sonuc-yok", sinav: dolu.length, satir, kart: t.kartSayisi, hatalar: t.hatalar, kodlar: r.kodlar };
   } catch (e) {
     await yaz(userId, { durum: "hata", durum_mesaji: String(e).slice(0, 400) });
     return { durum: "hata", mesaj: String(e) };
@@ -262,18 +363,35 @@ Deno.serve(async (istek) => {
       return json({ mod, sayfaKod: y.status, sayfaBoyut: html.length, ilSayisi: Object.keys(iller).length, gaziantepKodu: gz, ilceler, kurumlar, sureMs: Date.now() - t0 });
     }
     if (mod === "parse") {
-      // Yayındaki ayrıştırıcıyı verilen HTML ile sına (canlı doğrulama)
+      // Verilen HTML ile yayındaki ayrıştırıcıları sına (canlı doğrulama)
       const html = String(g.html || "");
-      const bag = baglantilar(html);
-      return json({ mod, uzunluk: html.length, sinav: ayikla(html, String(g.ad || "Test Sinavi"), String(g.tarih || "")), baglanti: bag, sureMs: Date.now() - t0 });
+      const kart = sinavKartlari(html), detay = sinavDetay(html);
+      return json({ mod, uzunluk: html.length, kartlar: kart, detay, ayikla: ayikla(html, String(g.ad || "Test"), String(g.tarih || "")), sureMs: Date.now() - t0 });
     }
     if (mod === "test") {
       const kim = g.kimlik;
       if (!kim?.ad || !kim?.okulNo) return json({ hata: "kimlik gerekli" }, 400);
       const k = new Kavanoz(), r: any = await giris(kim, k);
       if (r.durum !== "oturum") return json({ mod, giris: r, sureMs: Date.now() - t0 });
-      const y = await http(k, SONUC, { headers: { Referer: TABAN + "/app2/ogrenci/" } }), html = await y.text(), bs = baglantilar(html);
-      return json({ mod, giris: { durum: r.durum, ogrid: r.ogrid, kodlar: r.kodlar }, sonucKod: y.status, boyut: html.length, baglanti: bs.slice(0, 5), baglantiSayisi: bs.length, metin: metin(html).slice(0, 900), sureMs: Date.now() - t0 });
+      const y = await http(k, SONUC, { headers: { Referer: TABAN + "/app2/ogrenci/" } }), html = await y.text();
+      return json({ mod, giris: { durum: r.durum, ogrid: r.ogrid, kodlar: r.kodlar }, sonucKod: y.status, boyut: html.length, kartlar: sinavKartlari(html), metin: metin(html).slice(0, 1200), sureMs: Date.now() - t0 });
+    }
+    if (mod === "canli") {
+      // KURU ÇALIŞMA: giriş + toplama + ayrıştırma, veritabanına YAZMADAN
+      const kim = g.kimlik;
+      if (!kim?.ad || !kim?.okulNo) return json({ hata: "kimlik gerekli" }, 400);
+      const k = new Kavanoz(), r: any = await giris(kim, k);
+      if (r.durum !== "oturum") return json({ mod, giris: r, sureMs: Date.now() - t0 });
+      const t = await sinavlariTopla(k);
+      return json({
+        mod, giris: { durum: r.durum, kodlar: r.kodlar }, kartSayisi: t.kartSayisi, htmlBoyut: t.htmlBoyut, hatalar: t.hatalar,
+        sinavlar: t.exams.map((e) => ({
+          ad: e.name || e.name === "" ? e.name : e.name, tarih: e.date, tur: e.tur, toplam: e.toplam,
+          dersler: e.lessons, hataliSoru: (e.rows || []).length,
+          ornek: (e.rows || []).slice(0, 5)
+        })),
+        sureMs: Date.now() - t0
+      });
     }
     if (mod === "ben") {
       // Tarayıcıdaki "Şimdi dene" düğmesi: JWT sahibinin kaydını çek

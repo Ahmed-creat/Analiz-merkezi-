@@ -125,3 +125,39 @@ Yapılması gereken: Profil → Okulizyon bölümüne gerçek bilgileri girip
 - `durum:"sifre-gerekli"` → şifre alanı doldurulup tekrar denenir.
 
 Bu üç durumun hangisi olursa olsun **sebep görünür**; sessiz başarısızlık yok.
+
+## 9. GERÇEK VERİYLE UÇTAN UCA DOĞRULAMA (v6 · 28.10.2026)
+
+§8'deki açık iş **kapandı**. Gerçek öğrenci kimliğiyle (10. sınıf, Gaziantep /
+Şahinbey, AKKENT ANADOLU LİSESİ) çalıştırıldı:
+
+| Adım | Çağrı | Sonuç |
+|---|---|---|
+| 1 | `{mod:"canli", kimlik:{…}}` | `giris.kodlar = 27 / 1841 / 751187`, `kartSayisi = 1`, `hatalar = []` |
+| 2 | `{mod:"run"}` (cron zinciri) | `durum:"ok"`, 1 sınav, `satir: 20` |
+| 3 | `okulizyon_kuyrugu` okuması | `10.SINIF MAARİF İZLEME SINAVI 1 · 2026-10-27`, 20 hatalı/boş soru |
+
+Gerçek çıktı (özet):
+
+```
+toplam        100 D · 11 Y · 97,25 net            (120 soru)
+dersler       Türkçe 27/2/1 · Tarih-1 7/2/1 · Coğrafya-1 9/1/0 · Felsefe 3/2/0
+              Din Kül. 5/0/0 · Matematik-1 24/2/4 · Fizik 10/0/0 · Kimya 7/0/3 · Biyoloji 8/2/0
+ornek satır   qno 7  Türkçe  "Metni millî, manevi…"   w
+              qno 13 Türkçe  "Tamlamalar - Karma"      e
+```
+
+### v6'da düzeltilen hata (v5 → v6)
+Okulizyon, `data-testler` içinde ders adlarını **JSON kaçışlı** gömüyor
+(`T\u00fcrk\u00e7e`). v5 bu adları ham gösteriyordu; v6'da `coz()` yardımcısı
+eklendi ve ders adları `Türkçe`, `Tarih-1`… olarak okunuyor. Fikstür
+(`tests/fixtures/okulizyon-sinav-detay.html`) bilinçli olarak kaçışlı hâli korur,
+böylece gerileme testte yakalanır.
+
+### Modlar (güncel)
+`probe` · `parse {html,ad,tarih}` · `test {kimlik}` · `canli {kimlik}` (kuru
+çalışma) · **`ben`** (tarayıcıdaki "Şimdi dene": JWT sahibinin kaydını çeker) ·
+`run` (cron: tüm `app_states` taraması, DB'ye yazar).
+
+### Testler
+`npm run test:okz` → **39/39** (kart ayrıştırma + detay + kaçış çözme dahil).

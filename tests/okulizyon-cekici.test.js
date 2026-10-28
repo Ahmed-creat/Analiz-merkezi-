@@ -17,7 +17,7 @@ function yardimcilariYukle() {
   // Deno'ya özgü satırları çıkar (saf yardımcılar Deno'ya ihtiyaç duymaz)
   dilim = dilim.split("\n").filter((s) => !/Deno\.env\.get/.test(s)).join("\n");
   const js = stripTypeScriptTypes(dilim, { mode: "strip" });
-  return new Function(js + "\nreturn { norm, esle, secenekler, tablolar, ayikla, baglantilar, metin, kucuk, sayi };")();
+  return new Function(js + "\nreturn { norm, esle, secenekler, tablolar, ayikla, baglantilar, metin, kucuk, sayi, ondalik, sinavKartlari, sinavDetay };")();
 }
 
 const H = yardimcilariYukle();
@@ -87,6 +87,28 @@ ok("baglantilar: 2 sınav linki", bag.length === 2, JSON.stringify(bag.map((b) =
 ok("baglantilar: mutlak adres", bag.every((b) => b.href.startsWith("https://okulizyon.com/")), bag[0] && bag[0].href);
 ok("baglantilar: tarih DD.MM.YYYY → YYYY-MM-DD", bag[0].tarih === "2026-10-12", bag[0].tarih);
 ok("baglantilar: 'Profilim' ve javascript: atlanır", !bag.some((b) => /profil/i.test(b.ad)));
+
+// ---- 4b) GERÇEK HTML: sonuç listesi (kart düzeni) ----
+const listeHtml = fs.readFileSync(path.join(KOK, "tests/fixtures/okulizyon-sonuc-listesi.html"), "utf8");
+const kartlar = H.sinavKartlari(listeHtml);
+ok("kart: 1 sınav bulundu", kartlar.length === 1, JSON.stringify(kartlar));
+ok("kart: ad", kartlar[0] && kartlar[0].ad === "10.SINIF MAARİF İZLEME SINAVI 1", kartlar[0] && kartlar[0].ad);
+ok("kart: tarih 2026-10-27", kartlar[0] && kartlar[0].tarih === "2026-10-27", kartlar[0] && kartlar[0].tarih);
+ok("kart: doğru 100 / yanlış 11", kartlar[0] && kartlar[0].dogru === 100 && kartlar[0].yanlis === 11, JSON.stringify(kartlar[0]));
+ok("kart: net 97.25", kartlar[0] && Math.abs(kartlar[0].net - 97.25) < 0.001, kartlar[0] && kartlar[0].net);
+ok("kart: tür Deneme", kartlar[0] && kartlar[0].tur === "Deneme");
+ok("kart: sid bağlantısı &amp; düzeltilmiş", kartlar[0] && kartlar[0].href.includes("?pg=yks&sid=") && !kartlar[0].href.includes("&amp;"), kartlar[0] && kartlar[0].href);
+
+// ---- 4c) GERÇEK HTML: sınav detayı (soru tablosu) ----
+const detayHtml = fs.readFileSync(path.join(KOK, "tests/fixtures/okulizyon-sinav-detay.html"), "utf8");
+const detay = H.sinavDetay(detayHtml);
+ok("detay: 2 ders", Object.keys(detay.lessons).length === 2, JSON.stringify(detay.lessons));
+ok("detay: Türkçe d/w/e", JSON.stringify(detay.lessons["Türkçe"]) === JSON.stringify({ d: 1, w: 1, e: 0 }), JSON.stringify(detay.lessons["Türkçe"]));
+ok("detay: Matematik-1 d/w/e", JSON.stringify(detay.lessons["Matematik-1"]) === JSON.stringify({ d: 1, w: 0, e: 1 }), JSON.stringify(detay.lessons["Matematik-1"]));
+ok("detay: 2 hatalı/boş soru", detay.rows.length === 2, JSON.stringify(detay.rows));
+ok("detay: yanlış → w, kazanım [n] temizlenmiş", detay.rows[0] && detay.rows[0].status === "w" && detay.rows[0].topic.startsWith("Metni millî"), JSON.stringify(detay.rows[0]));
+ok("detay: boş → e, ders Matematik-1", detay.rows[1] && detay.rows[1].status === "e" && detay.rows[1].lesson === "Matematik-1", JSON.stringify(detay.rows[1]));
+ok("detay: qno korunur", detay.rows[0] && detay.rows[0].qno === "7" && detay.rows[1].qno === "4");
 
 // ---- 5) Metin temizleme / sayı okuma ----
 ok("metin: etiketler temizlenir", H.metin("<b>Doğru</b>&nbsp;12") === "Doğru 12", H.metin("<b>Doğru</b>&nbsp;12"));

@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261028-v34-4-cekici";
+const CACHE = "analiz-merkezi-v-20261028-v34-5-mesaj";
 const ASSETS = [
   "./",
   "./index.html",
@@ -11,6 +11,7 @@ const ASSETS = [
   "./icons/icon-512.png",
   "./firebase-config.js",
   "./supabase-config.js",
+  "./mesaj.js",
   "./vendor/supabase.js",
   "./content/iliski_grafi.json",
   "./content/soru_havuzlari/index.json",
