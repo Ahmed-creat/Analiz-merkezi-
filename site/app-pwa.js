@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.7-cekim";
+const PWA_SURUM = "v34.7b-cekim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
