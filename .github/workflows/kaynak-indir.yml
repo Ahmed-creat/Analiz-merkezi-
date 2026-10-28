@@ -1,0 +1,54 @@
+name: Kaynak indir (Drive)
+
+# Amaç: paylaşılan bir Drive dosyasını (zip) indirip GitHub Actions artifact'i olarak
+# dışa aktarmak. Sandbox Google Drive'a erişemediği için bu köprü kullanılır.
+on:
+  workflow_dispatch:
+    inputs:
+      dosya_id:
+        description: "Google Drive dosya kimliği"
+        required: true
+        default: "13v1VpRl_AYJLrC6M8JgGt143XMdcaTpG"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  indir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PyPI + gdown
+        run: python3 -m pip install --quiet --disable-pip-version-check gdown
+
+      - name: Drive dosyasını indir
+        env:
+          DOSYA_ID: ${{ inputs.dosya_id }}
+        run: |
+          mkdir -p kaynak
+          gdown --fuzzy "https://drive.google.com/uc?id=${DOSYA_ID}" -O kaynak/indirilen
+          ls -la kaynak
+          sha256sum kaynak/indirilen
+          file kaynak/indirilen || true
+
+      - name: Zip ise aç
+        run: |
+          mkdir -p kaynak/icerik
+          if unzip -tq kaynak/indirilen >/dev/null 2>&1; then
+            unzip -qo kaynak/indirilen -d kaynak/icerik
+            echo "Zip açıldı"
+          else
+            cp kaynak/indirilen kaynak/icerik/
+            echo "Zip değil, tek dosya olarak kopyalandı"
+          fi
+          find kaynak/icerik -maxdepth 3 -type f | head -60
+          echo "Toplam dosya: $(find kaynak/icerik -type f | wc -l)"
+          find kaynak/icerik -name 'app-pwa.js' -exec sh -c 'echo "--- $1"; grep -m1 "PWA_SURUM" "$1"' _ {} \;
+          find kaynak/icerik -name 'index.html' -exec sh -c 'echo "--- $1"; grep -m1 "<title>" "$1"' _ {} \;
+
+      - name: Artifact yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: drive-kaynak
+          path: kaynak
+          retention-days: 3
