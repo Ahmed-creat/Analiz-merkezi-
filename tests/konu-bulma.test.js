@@ -122,10 +122,20 @@ ok("havuz-bul.js index.html'de yükleniyor", HTML.indexOf('<script src="havuz-bu
 ok("konu-anahtar.js index.html'de yükleniyor", HTML.indexOf('<script src="konu-anahtar.js"></script>') > 0);
 ok("resolvePoolId ortak bulucuyu kullanıyor", /function resolvePoolId\(topicKey\)[\s\S]{0,600}HB\.bul/.test(HTML));
 ok('"undefined" havuz kimliği geçersiz sayılıyor', HTML.indexOf('raw === "undefined"') > 0);
-ok("openMiniTest havuzu yeniden çözüyor", /function openMiniTest\(topicKey, poolId, options\)[\s\S]{0,700}resolvePoolId\(topicKey\)/.test(HTML));
+// v35.4: tek kademe yetmiyordu — poolId boş/yanlışsa test hiç açılmıyordu.
+// Artık havuzuBul(): poolId → resolvePoolId(topicKey) → topicKey sırayla denenir.
+ok("openMiniTest havuzu 3 kademede arıyor", /function havuzuBul\(topicKey, poolId\)/.test(HTML) && /havuzuBul\(topicKey, poolId\)/.test(HTML));
+ok("openMiniTest her kademeyi deniyor", /function openMiniTest\(topicKey, poolId, options\)[\s\S]{0,900}havuzuBul\(topicKey, poolId\)/.test(HTML));
+ok("havuzuBul resolvePoolId'yi kullanıyor", /function havuzuBul\(topicKey, poolId\)[\s\S]{0,900}resolvePoolId\(topicKey\)/.test(HTML));
+ok("boş havuzda sessiz kalmıyor (toast)", /havuzuBul[\s\S]{0,2000}toast\(/.test(HTML));
 ok("panelde kısa kontrol precheck şartına bağlı DEĞİL", HTML.indexOf("Havuz ÇÖZÜLÜRSE düğme her zaman çıkar") > 0);
 ok("panelde precheck vurgusu korunuyor", HTML.indexOf("const precheck = !!(e.precheck_due") > 0);
-ok("konu detayında da pool_id olmadan çözülüyor", HTML.indexOf("const cozulen = kayitliHavuz || resolvePoolId(selectedTopicKey)") > 0);
+// v35.4: resolvePoolId IIFE İÇİNDE tanımlı; renderKnowledge dışarıda olduğu
+// için çağrı ReferenceError atıp BİLGİ BANKASI sayfasını beyaz bırakıyordu.
+// Köprü: havuzIdCoz() → window.__havuzIdCoz (IIFE içinde açılır).
+ok("konu detayında da pool_id olmadan çözülüyor", HTML.indexOf("const cozulen = kayitliHavuz || havuzIdCoz(selectedTopicKey)") > 0);
+ok("IIFE köprüsü açık (window.__havuzIdCoz)", HTML.indexOf("window.__havuzIdCoz = resolvePoolId") > 0);
+ok("sayfa çizimi try/catch ile korunuyor", /Bu sayfa yüklenemedi/.test(HTML));
 
 // ---------- 7) Video bağlantısı metinleri ----------
 console.log("\n== 7) Video bağlantısı ==");
@@ -146,8 +156,8 @@ ok("sınav düzeyinde çözüm düğmesi var", HTML.indexOf("· çözümler</a>"
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v35.3", APP.indexOf('const PWA_SURUM = "v35.3-kisa-kontrol"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("v35-3-kisa-kontrol") > 0);
+ok("PWA sürümü v35.4", APP.indexOf('const PWA_SURUM = "v35.4-bildirim-video"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("v35-4-bildirim-video") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

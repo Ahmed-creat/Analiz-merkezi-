@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.3-kisa-kontrol";
+const PWA_SURUM = "v35.4-bildirim-video";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -71,6 +71,14 @@ if ("serviceWorker" in navigator) {
     });
     hookSaveState();
     listenAuth();
+    // Köprü: site/push-bildirim.js (klasik script) modül kapsamındaki
+    // Supabase istemcisine ve oturuma buradan erişir.
+    window.__amSupabase = sb;
+    window.__amSupabaseConfig = SUPABASE_CONFIG;
+    window.__amSession = async function () {
+      try { const { data } = await sb.auth.getSession(); return (data && data.session) || null; }
+      catch (e) { return null; }
+    };
   } catch (e) {
     console.warn("Supabase başlatılamadı:", e);
   }
@@ -182,7 +190,16 @@ function openAuthModal() {
     if (hazir === false) {
       b.setAttribute("disabled", "disabled");
       b.style.opacity = "0.45"; b.style.cursor = "not-allowed";
-      if (not) not.textContent = "Google girişi bu projede henüz açık değil (Supabase → Authentication → Providers → Google). Şimdilik e-posta + şifre ile giriş yapabilirsin.";
+      if (not) {
+        // Elden gelen tek şey: ne yapılacağını TAM adresle söylemek.
+        // Google, OAuth istemcisini yalnız hesap sahibinin Google Cloud
+        // konsolundan almasına izin verir; kodla açılamıyor.
+        not.innerHTML = "Google girişi bu projede henüz açık değil. Açmak için:<br>"
+          + "1) Google Cloud → APIs & Services → Credentials → <b>OAuth client ID</b> (Web) oluştur.<br>"
+          + "2) Yetkili yönlendirme adresi: <code style='font-size:11px;'>" + SUPABASE_CONFIG.url + "/auth/v1/callback</code><br>"
+          + "3) Supabase → Authentication → Providers → Google: Client ID + Secret yapıştır, etkinleştir.<br>"
+          + "Bunlar yapılınca bu düğme kendiliğinden çalışır. Şimdilik e-posta + şifre ile giriş yapabilirsin.";
+      }
     } else {
       b.removeAttribute("disabled"); b.style.opacity = ""; b.style.cursor = "pointer";
       if (not) not.textContent = "";
@@ -420,6 +437,7 @@ function listenAuth() {
     if (event === "PASSWORD_RECOVERY") sifreYenileAkisi();
     if (event === "SIGNED_OUT" || !session) {
       currentUser = null;
+      window.currentUser = null;
       window.__bulutYuklenenKullanici = null;
       setAuthLabel(false);
       return;
@@ -433,6 +451,9 @@ async function oturumUygula(session) {
   if (!user) return;
   const yeniKullanici = !currentUser || currentUser.id !== user.id;
   currentUser = user;
+  window.currentUser = user;
+  // Bildirim izni daha önce verilmişse aboneliği tazele (sessiz)
+  setTimeout(function () { try { if (window.AmPush && window.AmPush.otomatik) window.AmPush.otomatik(); } catch (e) {} }, 1500);
   const kim = (user.email || "").split("@")[0] || "hesap";
   setAuthLabel(true, kim);
   // Giriş yapıldığı anda Okulizyon kuyruğunu dene (eskiden yalnız "internet geri geldi" olayında deniyordu)

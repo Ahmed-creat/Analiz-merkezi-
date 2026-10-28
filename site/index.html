@@ -934,6 +934,13 @@ select.dd-native {
   .cal-pill.tek { font-size: 8px; }
 }
 
+/* Video → sonuç ekranı hedefi vurgusu (geçici) */
+.video-hedef { animation: videoHedefNabiz 2.4s ease-out 1; box-shadow: 0 0 0 2px var(--brand-blue) inset; border-radius: 10px; }
+@keyframes videoHedefNabiz {
+  0% { background: rgba(37, 99, 235, 0.20); }
+  100% { background: transparent; }
+}
+
 /* ===== SINAV KAPSAMI (Planlama: sınavda olacak dersler + konular) ===== */
 .scope-lesson { margin-bottom: 12px; }
 .scope-head {
@@ -1065,7 +1072,12 @@ select.dd-native {
       <button class="btn btn-ghost w-full theme-btn" data-act="setTheme" data-theme="dark" style="flex:1;"><i data-lucide="moon" style="width:16px;height:16px;"></i> Koyu</button>
     </div>
   </div>
-  <button class="btn btn-ghost w-full" data-act="toggleNotifPermission" style="justify-content:flex-start;margin-top:8px;"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i> <span id="notif-perm-label">Bildirim İzni İste</span></button>
+  <div style="margin-top:20px;">
+    <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">BİLDİRİM</div>
+    <button class="btn btn-ghost w-full" data-act="toggleNotifPermission" style="justify-content:flex-start;"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i> <span id="notif-perm-label">Bildirim İzni İste</span></button>
+    <button class="btn btn-ghost w-full" data-act="bildirimTest" style="justify-content:flex-start;margin-top:8px;"><i data-lucide="send" style="width:16px;height:16px;"></i> Test bildirimi gönder</button>
+    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">Uygulama kapalıyken de bildirim almak için bildirimleri aç. Günde en fazla 1 bildirim gönderilir (19:00).</p>
+  </div>
   <div style="margin-top:24px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px;">YEDEKLEME</div>
     <button class="btn btn-ghost w-full" data-act="exportData" style="justify-content:flex-start;"><i data-lucide="download" style="width:16px;height:16px;"></i> Dışa Aktar (.json)</button>
@@ -2201,12 +2213,59 @@ function notifyBrowser(title, body) {
 
 function requestNotifPermission() {
   if (typeof Notification === "undefined") { toast("Bu tarayıcı bildirimleri desteklemiyor.", "warning"); return; }
-  Notification.requestPermission().then(p => {
+  // İzin kadar ÖNEMLİSİ: abonelik. İzin vermek tek başına yetmez; uç nokta
+  // sunucuya yazılmazsa uygulama kapalıyken bildirim gelmez.
+  const bitir = async function (p) {
     state.settings.notifPermission = p; saveState();
     updateNotifPermLabel();
-    toast(p === "granted" ? "Bildirim izni verildi. Tekrar saatlerinde haber vereceğim." : "Bildirim izni verilmedi; uygulama içi bildirimler devam edecek.", p === "granted" ? "success" : "warning");
-    if (p === "granted") notifyBrowser("Analiz Merkezi", "Bildirimler açıldı. Tekrar döngün artık takipte!");
-  });
+    if (p !== "granted") {
+      toast("Bildirim izni verilmedi; uygulama içi bildirimler devam edecek.", "warning");
+      return;
+    }
+    notifyBrowser("Analiz Merkezi", "Bildirimler açıldı. Tekrar döngün artık takipte!");
+    if (window.AmPush) {
+      const r = await window.AmPush.izinIste();
+      updateBildirimDurum();
+      if (r && r.ok) toast("Arka plan bildirimi açık — uygulama kapalıyken de haber vereceğim.", "success");
+      else toast((r && r.neden) || "Arka plan bildirimi kurulamadı.", "warning");
+    } else {
+      toast("Bildirim izni verildi. Tekrar saatlerinde haber vereceğim.", "success");
+    }
+  };
+  if (Notification.permission === "granted") { bitir("granted"); return; }
+  Notification.requestPermission().then(bitir);
+}
+
+// Ayarlar → BİLDİRİM durum satırı
+function updateBildirimDurum() {
+  const el = document.getElementById("bildirim-durum");
+  if (!el || !window.AmPush) return;
+  window.AmPush.durum().then(function (d) {
+    let m;
+    if (!d.destek) m = "Bu tarayıcı arka plan bildirimini desteklemiyor (iPhone'da Ana Ekrana Ekle gerekir).";
+    else if (d.izin === "denied") m = "Bildirim izni reddedilmiş — tarayıcı ayarlarından izin vermen gerekir.";
+    else if (d.abone && d.kayitli) m = "✓ Arka plan bildirimi açık · günde en fazla 1 · 19:00";
+    else if (d.abone) m = "Abonelik var, hesaba bağlanması gerekiyor — Ayarlar'dan bildirimleri kapatıp yeniden aç.";
+    else if (d.izin === "granted") m = "İzin var ama abonelik yok — 'Test bildirimi' ile kur.";
+    else m = "Uygulama kapalıyken de bildirim almak için bildirimleri aç. Günde en fazla 1 bildirim (19:00).";
+    el.textContent = m;
+  }).catch(function () {});
+}
+
+// Ayarlar → Test bildirimi (yalnız kendi cihazına)
+async function bildirimTest() {
+  if (!window.AmPush) { toast("Bildirim modülü yüklenmedi.", "warning"); return; }
+  if (!state.user || !window.currentUser) { toast("Önce giriş yap — bildirim hesabına bağlanır.", "warning"); return; }
+  const d0 = await window.AmPush.durum();
+  if (!d0.abone) {
+    const r = await window.AmPush.izinIste();
+    if (!r || !r.ok) { toast((r && r.neden) || "Bildirim kurulamadı.", "warning"); updateBildirimDurum(); return; }
+  }
+  toast("Test bildirimi gönderiliyor…", "info");
+  const r = await window.AmPush.testEt();
+  updateBildirimDurum();
+  if (r.ok) toast("Test bildirimi gönderildi — birazdan göreceksin.", "success");
+  else toast("Gönderilemedi: " + (r.neden || "bilinmeyen hata"), "warning");
 }
 
 function updateNotifPermLabel() {
@@ -2349,7 +2408,19 @@ function navigate(page) {
     library: renderLibrary, planning: renderPlanning, knowledge: renderKnowledge, questionbank: renderQuestionBank
   };
   content.innerHTML = "";
-  (renderers[page] || renderDashboard)(content);
+  // Bir renderer hata verirse sayfa BEYAZ kalmasın: kullanıcıya ne olduğunu
+  // söyle, konsola ayrıntı yaz. (Bilgi Bankası vakası: resolvePoolId kapsam
+  // hatası tüm sayfayı düşürüyordu.)
+  try {
+    (renderers[page] || renderDashboard)(content);
+  } catch (e) {
+    console.error("Sayfa çizilemedi: " + page, e);
+    content.innerHTML = '<div class="bento-card" style="border-left:4px solid var(--semantic-error);">' +
+      '<h3 style="font-size:15px;font-weight:700;margin-bottom:6px;">Bu sayfa yüklenemedi</h3>' +
+      '<div class="text-xs text-muted" style="line-height:1.5;">Ayrıntı: ' + esc(String(e && e.message ? e.message : e)) + '</div>' +
+      '<button class="btn btn-sm btn-ghost" data-nav="dashboard" style="margin-top:10px;">Ana Sayfaya Dön</button></div>';
+    if (typeof toast === "function") toast("Sayfa yüklenemedi — Ana Sayfaya dönülüyor.", "error");
+  }
   const CRUMBS = { dashboard: "Ana Sayfa", tasks: "Günlük Görevler", exams: "Denemelerim", tracking: "Konu Takibi", library: "Kitaplık", planning: "Planlama", knowledge: "Bilgi Bankası", questionbank: "Soru Bankası" };
   const crumb = document.getElementById("topbar-crumb");
   if (crumb) crumb.textContent = CRUMBS[page] || "Ana Sayfa";
@@ -2530,7 +2601,7 @@ function openConfirm(message, cb) {
 function closeConfirm() { confirmCallback = null; closeModal("confirm-modal"); }
 function executeConfirm() { if (typeof confirmCallback === "function") confirmCallback(); closeConfirm(); }
 
-function openSettings() { updateGradeButtons(); document.getElementById("settings-drawer").classList.add("open"); document.getElementById("settings-overlay").classList.add("show"); }
+function openSettings() { updateGradeButtons(); document.getElementById("settings-drawer").classList.add("open"); document.getElementById("settings-overlay").classList.add("show"); try { updateBildirimDurum(); } catch (e) {} }
 function closeSettings() { document.getElementById("settings-drawer").classList.remove("open"); document.getElementById("settings-overlay").classList.remove("show"); }
 
 function toast(msg, type) {
@@ -3011,12 +3082,12 @@ function renderExams(container) {
   // Ders Detayları — SEÇİLİ denemenin ders bazlı dökümü (satıra tıklayınca değişir)
   const sonEx = state.exams[examDetailIdx !== null ? examDetailIdx : state.exams.length - 1];
   if (sonEx) {
-    html += '<div class="bento-card" style="margin-top:20px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("table", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Ders Detayları <span class='text-xs text-muted' style='font-weight:600;'>(" + esc(sonEx.name) + ")</span></h3>";
+    html += '<div class="bento-card" id="ders-detay" style="margin-top:20px;scroll-margin-top:80px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("table", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Ders Detayları <span class='text-xs text-muted' style='font-weight:600;'>(" + esc(sonEx.name) + ")</span></h3>";
     html += '<div class="ders-tablo"><div class="dt-baslik"><span>Ders</span><span>Doğru</span><span>Yanlış</span><span>Boş</span><span>Net</span></div>';
     Object.keys(activeLessonConfig()).forEach(l => {
       const v = (sonEx.lessons || {})[l];
       const net = v ? Math.round(netOf(v.d, v.w) * 100) / 100 : "-";
-      html += '<div class="dt-satir' + (v ? "" : " bos") + '"><span>' + esc(l) + "</span><span class='d'>" + (v ? v.d : "—") + "</span><span class='w'>" + (v ? v.w : "—") + "</span><span>" + (v ? v.e : "—") + "</span><b class='tabular'>" + net + "</b></div>";
+      html += '<div class="dt-satir' + (v ? "" : " bos") + '" data-exam-ders="' + attr(l) + '" style="scroll-margin-top:80px;"><span>' + esc(l) + "</span><span class='d'>" + (v ? v.d : "—") + "</span><span class='w'>" + (v ? v.w : "—") + "</span><span>" + (v ? v.e : "—") + "</span><b class='tabular'>" + net + "</b></div>";
     });
     html += "</div></div>";
     // Yapamadığın sorular + çözümleri (Okulizyon'dan gelen video çözümler)
@@ -3027,7 +3098,7 @@ function renderExams(container) {
       html += '<div class="bento-card" style="margin-top:20px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:8px;">' + icon("play-circle", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Yapamadığın Sorular <span class='text-xs text-muted' style='font-weight:600;'>(" + cozumler.length + " soru" + (videolu ? " · " + videolu + " video çözüm" : "") + ")</span></h3>";
       html += '<div class="text-xs text-muted" style="margin-bottom:8px;line-height:1.45;">Yanlış/boş bıraktığın sorular. Video çözüm varsa izleyebilirsin; yoksa çözüm metni ya da konu adı gösterilir.</div>';
       cozumler.slice(0, 40).forEach(x => {
-        html += '<div style="display:flex;gap:8px;align-items:center;padding:6px 0;border-top:1px solid var(--border-card,#E8EEF8);font-size:12.5px;line-height:1.35;">';
+        html += '<div data-exam-soru="' + attr(x.ders + "|" + String(x.qno || "")) + '" style="display:flex;gap:8px;align-items:center;padding:6px 0;border-top:1px solid var(--border-card,#E8EEF8);font-size:12.5px;line-height:1.35;scroll-margin-top:80px;">';
         html += '<span class="tabular text-muted" style="min-width:24px;">#' + esc(String(x.qno || "")) + '</span>';
         html += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="' + attr(x.kazanim || x.konu) + '"><b>' + esc(x.ders) + '</b> · ' + esc(x.konu || x.kazanim) + '</span>';
         html += '<span class="badge ' + (x.durum === "boş" ? "badge-warn" : "badge-kritik") + '" style="flex-shrink:0;">' + esc(x.durum) + '</span>';
@@ -3044,6 +3115,34 @@ function renderExams(container) {
   ddify(container); // tüm select'ler temalı özel açılır listeye dönüşür
   bindExamForm();
   renderExamChart(); // sayfaya navigate ile gelindiğinde de grafik çizilsin
+}
+
+// ============================================================
+// VİDEO → KENDİ SONUÇ EKRANI
+// Kullanıcı: "videoya tıklanınca doğrudan bizim sonuç ekranına ve o dersin
+// olduğu konuma gidelim, videoları hızlı izleyelim." Okulizyon'a çıkmadan,
+// Denemelerim içindeki ilgili deneme + ders + soru satırına atlar ve satırı
+// vurgular. Böylece akış: Bilgi Bankası → (tek dokunuş) → soru satırı → video.
+// ============================================================
+function videoGit(examIdx, ders, qno) {
+  const i = Number(examIdx);
+  if (Number.isInteger(i) && i >= 0 && i < state.exams.length) examDetailIdx = i;
+  navigate("exams");
+  setTimeout(function () {
+    let hedef = null;
+    if (ders && qno) hedef = document.querySelector('[data-exam-soru="' + String(ders + "|" + qno).replace(/"/g, '\\"') + '"]');
+    if (!hedef && ders) {
+      const satirlar = document.querySelectorAll("[data-exam-ders]");
+      for (let k = 0; k < satirlar.length; k++) if (satirlar[k].dataset.examDers === ders) { hedef = satirlar[k]; break; }
+    }
+    if (!hedef) hedef = document.getElementById("ders-detay");
+    if (!hedef) return;
+    try { hedef.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { /* */ }
+    hedef.classList.add("video-hedef");
+    setTimeout(function () { hedef.classList.remove("video-hedef"); }, 2600);
+    // Vurgu sırasında okunur bir geri bildirim
+    if (typeof toast === "function") toast(ders ? ders + (qno ? " · soru " + qno : "") + " — sonuç ekranında" : "Sonuç ekranı", "info");
+  }, 120);
 }
 
 function examDetailSelect(idx) {
@@ -3982,9 +4081,15 @@ function videoAdimHtml(topicKey) {
     h += '<div style="display:flex;gap:8px;align-items:center;padding:5px 0;border-top:1px solid var(--border-card,#E8EEF8);font-size:12px;line-height:1.35;">';
     h += '<span class="tabular text-muted" style="min-width:22px;">#' + esc(String(x.qno || "")) + '</span>';
     h += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="' + attr(x.kazanim || x.konu) + '">' + esc(x.konu || x.kazanim || "Soru") + ' <span class="text-muted">(' + esc(x.durum) + ')</span></span>';
+    // ÖNCE BİZİM SONUÇ EKRANI: aynı denemenin ders dökümüne atlar, satırı
+    // vurgular. Video çözüm oradan tek dokunuşla açılır (kullanıcı: "videoya
+    // tıklayınca doğrudan bizim sonuç ekranına ve o dersin konumuna gidelim").
+    if (Number.isInteger(x.denemeIdx)) {
+      h += '<button class="btn btn-sm btn-ghost" data-act="videoGit" data-exam="' + attr(String(x.denemeIdx)) + '" data-ders="' + attr(x.ders) + '" data-soru="' + attr(String(x.qno || "")) + '" style="min-height:38px;flex-shrink:0;">' + icon("corner-down-right", 12) + " Sonuçta gör</button>";
+    }
     const lk = (VC && typeof VC.izleLink === "function") ? VC.izleLink(x) : null;
     if (lk) h += '<a href="' + attr(lk.href) + '" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="min-height:38px;flex-shrink:0;">' + icon("play", 12) + " " + esc(lk.etiket) + "</a>";
-    else if (x.cozum) h += '<span class="text-xs text-muted" style="max-width:44%;">' + esc(String(x.cozum).slice(0, 70)) + '</span>';
+    else if (x.cozum) h += '<span class="text-xs text-muted" style="max-width:44%;">' + esc(String(x.cozum).slice(0, 70)) + "</span>";
     h += '</div>';
   });
   if (liste.length > 8) h += '<div class="text-xs text-muted" style="margin-top:5px;">+ ' + (liste.length - 8) + ' soru daha — Denemelerim → deneme detayında tamamı var.</div>';
@@ -4003,6 +4108,21 @@ function videoAdimHtml(topicKey) {
   }
   h += "</div>";
   return h;
+}
+
+// ============================================================
+// HAVUZ KİMLİĞİ KÖPRÜSÜ
+// Asıl çözücü (resolvePoolId) uygulama IIFE'sinin İÇİNDE tanımlı.
+// Bilgi Bankası ise o IIFE'nin DIŞINDA render ediliyor. Doğrudan
+// çağrı "resolvePoolId is not defined" hatası veriyor, renderKnowledge
+// yarıda kalıyor ve sayfa BEYAZ kalıyordu (kullanıcı: "Bilgi Bankası
+// bölümü açılmıyor"). Aşağıdaki köprü her iki tarafı ayırır.
+// ============================================================
+function havuzIdCoz(topicKey) {
+  try {
+    if (typeof window.__havuzIdCoz === "function") return window.__havuzIdCoz(topicKey);
+  } catch (e) { console.warn("Havuz kimliği çözülemedi:", e); }
+  return null;
 }
 
 function renderKnowledge(container) {
@@ -4036,7 +4156,7 @@ function renderKnowledge(container) {
   html += "</div></div></div>";
 
   // Yol haritası paneli
-  html += "<div>";
+  html += '<div id="konu-paneli">';
   if (!selectedTopicKey) {
     // §8: Konu Seçin paneli — genel durum istatistikleri
     const ms = memoryStats();
@@ -4079,8 +4199,9 @@ function renderKnowledge(container) {
         (function () {
           // Kısa Kontrol, konu kaydında pool_id olmasa da ÇIKAR: havuz
           // "Ders > Konu" anahtarından çözülür (eskiden yumurta-tavuktu).
+          // NOT: köprü (havuzIdCoz) kullanılır; resolvePoolId bu kapsamda YOK.
           const kayitliHavuz = state.bkt_state && state.bkt_state[selectedTopicKey] && state.bkt_state[selectedTopicKey].pool_id;
-          const cozulen = kayitliHavuz || resolvePoolId(selectedTopicKey);
+          const cozulen = kayitliHavuz || havuzIdCoz(selectedTopicKey);
           if (!cozulen) return '';
           if (state.bkt_state && state.bkt_state[selectedTopicKey] && !state.bkt_state[selectedTopicKey].pool_id) state.bkt_state[selectedTopicKey].pool_id = cozulen;
           return '<button class="btn btn-ghost btn-sm" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(cozulen) + '" data-bkt-mode="precheck" style="min-width:48px;min-height:48px;">Kısa Kontrol — 3 soru</button>';
@@ -4118,11 +4239,19 @@ function toggleTree(lesson) { expandedLessons[lesson] = !expandedLessons[lesson]
 
 function selectKnowledgeTopic(key) {
   selectedTopicKey = key;
-  // NOT: Konu ağacı otomatik AÇILMAZ — "Çalış" ile gelindiğinde doğrudan konu
-  // paneli görünür; ağacı kullanıcı isterse kendisi açar.
+  // Kullanıcı bildirimi: "konuyu çalışmaya başlayınca soldaki liste
+  // kapanmıyor". Konu seçildiğinde müfredat ağacı KAPANIR; konu paneli
+  // ekranın tepesine gelir. Kullanıcı isterse ders başlığına basıp
+  // ağacı yeniden açar.
+  expandedLessons = {};
   if (!state.topics[key]) state.topics[key] = { step: 0, completedAt: null };
   renderKnowledge(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
+  // Mobilde konu paneli listenin altında kalmasın: panoya kaydır.
+  try {
+    const panel = document.getElementById("konu-paneli");
+    if (panel && window.innerWidth < 1024) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (e) { /* */ }
 }
 
 function completeStep(key, step) {
@@ -4457,6 +4586,59 @@ if (typeof Chart === "undefined") { window.Chart = function () { return { destro
 document.addEventListener("DOMContentLoaded", function () {
   loadState();
   checkDailyStreak();
+
+  // Derin bağlantı: #deneme=<id>&ders=<Ders>&soru=<no>
+  // Bildirimler ve dış bağlantılar doğrudan doğru denemenin doğru dersine
+  // inebilsin (video akışı: bildirim → sonuç ekranı → soru satırı).
+  try {
+    const hash = String(location.hash || "").replace(/^#/, "");
+    if (hash && hash.indexOf("=") > 0) {
+      const q = new URLSearchParams(hash);
+      const id = q.get("deneme"), ders = q.get("ders"), soru = q.get("soru");
+      if (id || ders) {
+        let idx = -1;
+        if (id) idx = state.exams.findIndex(e => String(e.id) === String(id) || e.name === String(id));
+        if (idx < 0 && /^\d+$/.test(String(id || ""))) idx = Number(id);
+        if (idx < 0 || idx >= state.exams.length) idx = state.exams.length - 1;
+        if (idx >= 0) setTimeout(function () { videoGit(idx, ders, soru); }, 300);
+      }
+      // Bildirim → konu: "#konu=Ders > Konu" → Bilgi Bankası'nda o konu açılır.
+      // Müfredat ağacında konu düğmeleri yalnız ders açıkken çizilir; bu yüzden
+      // önce dersi açıp yeniden çiziyoruz, sonra konuyu seçiyoruz.
+      const konu = q.get("konu");
+      if (konu) {
+        setTimeout(function () {
+          try {
+            const key = String(konu);
+            const parca = key.split(" > ");
+            const ders = parca.length > 1 ? parca[0].trim() : null;
+            navigate("knowledge");
+            setTimeout(function () {
+              if (ders && typeof expandedLessons === "object") {
+                expandedLessons[ders] = true;
+                if (typeof renderKnowledge === "function") renderKnowledge(document.getElementById("main-content"));
+                if (window.lucide && lucide.createIcons) lucide.createIcons();
+              }
+              setTimeout(function () {
+                let dugme = document.querySelector('[data-act="selectTopic"][data-topic="' + CSS.escape(key) + '"]');
+                if (!dugme && parca.length > 1) {
+                  const baslik = parca.slice(1).join(" > ").trim();
+                  const hepsi = document.querySelectorAll('[data-act="selectTopic"][data-topic]');
+                  for (let k = 0; k < hepsi.length; k++) {
+                    const t = hepsi[k].dataset.topic || "";
+                    if (t.split(" > ").slice(1).join(" > ").trim() === baslik) { dugme = hepsi[k]; break; }
+                  }
+                }
+                if (dugme) { dugme.click(); return; }
+                if (typeof toast === "function") toast("Bildirimdeki konu müfredatta bulunamadı: " + key, "warning");
+              }, 160);
+            }, 220);
+          } catch (e) { console.warn("Konu bağlantısı açılamadı:", e); }
+        }, 200);
+      }
+    }
+  } catch (e) { console.warn("Derin bağlantı çözülemedi:", e); }
+
   initChrome();
   initSidebarPreference();
 
@@ -4508,6 +4690,8 @@ document.addEventListener("DOMContentLoaded", function () {
       case "saveExam": saveExam(); break;
       case "deleteExam": deleteExam(el.dataset.idx); break;
       case "examDetail": examDetailSelect(Number(el.dataset.idx)); break;
+      case "videoGit": videoGit(el.dataset.exam, el.dataset.ders, el.dataset.soru); break;
+      case "bildirimTest": bildirimTest(); break;
       // Konu takibi
       case "startStudy": startStudy(el.dataset.topic); break;
       case "toggleBktPanel": {
@@ -5084,7 +5268,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const pm = document.getElementById("pwa-profile-modal");
         if (pm && pm.style.display === "flex" && typeof window.__profilTaze === "function") window.__profilTaze();
       } catch (e) {}
-    }).catch(() => { poolManifest = { havuzlar: [] }; return poolManifest; });
+    }).catch(() => { poolManifest = { havuzlar: [] }; return poolManifest; }).then(function (pm) {
+      // Manifest geç gelirse Bilgi Bankası havuzsuz çizilmiş olur: düğme yok.
+      // Yüklendikten sonra o sayfadaysak yeniden çiz.
+      try {
+        if (typeof currentPage !== "undefined" && currentPage === "knowledge") {
+          const host = document.getElementById("main-content");
+          if (host) { renderKnowledge(host); if (window.lucide && lucide.createIcons) lucide.createIcons(); }
+        }
+      } catch (e) { /* */ }
+      return pm;
+    });
     return poolManifestPromise;
   }
   function resolvePoolId(topicKey) {
@@ -5100,6 +5294,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const direct = poolManifest.havuzlar.find(p => p.topic_key === raw);
     return direct ? direct.konu_id : null;
   }
+  // Bilgi Bankası (IIFE dışı) bu köprüyü kullanır — bkz. havuzIdCoz().
+  window.__havuzIdCoz = resolvePoolId;
   function loadPool(topicId) {
     if (!topicId) return Promise.resolve(null);
     if (poolCache[topicId]) return poolCache[topicId];
@@ -5168,15 +5364,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const entry = getEntry(key, true); entry.precheck_due = TODAY(); entry.pool_id = poolId || entry.pool_id || resolvePoolId(key);
     return openMiniTest(key, entry.pool_id, { mode: "precheck" });
   }
+  // Verilen kimlik tutmazsa sırayla dene: düğmenin taşıdığı kimlik →
+  // anahtardan çözülen kimlik → anahtarın kendisi (eski biçim).
+  // Kullanıcı: "soru hâlâ gelmiyor" — tek bir kimliğe bağlı kalmıyoruz.
+  function havuzuBul(topicKey, poolId) {
+    const adaylar = [];
+    const ekle = id => { id = String(id == null ? "" : id); if (id && id !== "undefined" && id !== "null" && adaylar.indexOf(id) < 0) adaylar.push(id); };
+    ekle(poolId);
+    try { ekle(resolvePoolId(topicKey)); } catch (e) { /* */ }
+    ekle(topicKey);
+    return adaylar.reduce(function (zincir, id) {
+      return zincir.then(function (bulunan) { return bulunan || loadPool(id); });
+    }, Promise.resolve(null));
+  }
   function openMiniTest(topicKey, poolId, options) {
     const opts = options || {}; const mode = opts.mode || "learning";
-    // Düğme bazen "undefined" metni taşıyordu → 404 → "açılmıyor".
-    // Havuzu burada yeniden çözüyoruz.
-    let cozulen = poolId;
-    if (!cozulen || cozulen === "undefined" || cozulen === "null") cozulen = resolvePoolId(topicKey);
-    loadPool(cozulen || topicKey).then(function (pool) {
-      if (!pool) return typeof toast === "function" && toast("Bu konu için soru havuzu yok (konu takibi yine çalışır).", "info");
-      const actualPoolId = pool.konu_id || poolId; const count = mode === "precheck" ? 3 : 5; const stored = (ensureStore().mini_test_sessions || {})[topicKey];
+    havuzuBul(topicKey, poolId).then(function (pool) {
+      if (!pool) return typeof toast === "function" && toast("Bu konu için soru havuzu bulunamadı.", "error");
+      if (!Array.isArray(pool.sorular) || !pool.sorular.length) return typeof toast === "function" && toast("Havuz açıldı ama içinde soru yok.", "error");
+      const actualPoolId = pool.konu_id || poolId; const count = mode === "precheck" ? Math.min(3, pool.sorular.length) : Math.min(5, pool.sorular.length); const stored = (ensureStore().mini_test_sessions || {})[topicKey];
       const storedQuestions = stored && !stored.complete && stored.mode === mode && Array.isArray(stored.questionIds) ? stored.questionIds.map(id => pool.sorular.find(q => q.soru_id === id)).filter(Boolean) : [];
       const questions = opts.questions || (storedQuestions.length === count ? storedQuestions : selectPoolQuestions(pool, actualPoolId, count));
       let modal = document.getElementById("bkt-test-modal");
@@ -5525,9 +5731,13 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="veri-birlestir.js"></script>
 <script src="gorsel.js"></script>
 <script src="video-cozum.js"></script>
+<script src="push-bildirim.js"></script>
 <script src="okz-konu.js"></script>
 <script src="konu-anahtar.js"></script>
 <script src="havuz-bul.js"></script>
+<!-- BKT motoru: yeterlilik/tekrar hesabı, havuz→soru akışı, flashcard, ilişki grafı.
+     window.AnalizBKT API'sini kurar; kendi IIFE'sinde çalışır, sayfayı düşürmez. -->
+<script src="bkt-engine.js" defer></script>
 <script src="mesaj.js"></script>
 <script type="module" src="app-pwa.js"></script>
 </body>

@@ -133,7 +133,8 @@
   function izlenecekler(state, konuKey) {
     const cikti = [];
     const hedef = String(konuKey || "");
-    (Array.isArray(state && state.exams) ? state.exams : []).forEach(function (ex) {
+    const denemeler = Array.isArray(state && state.exams) ? state.exams : [];
+    denemeler.forEach(function (ex, exIdx) {
       (Array.isArray(ex && ex.errorLogs) ? ex.errorLogs : []).forEach(function (l) {
         if (!l) return;
         const ders = String(l.lesson || "");
@@ -151,6 +152,10 @@
         if (!eslesti) return;
         cikti.push({
           deneme: ex.name || "Deneme",
+          denemeId: ex.id || "",
+          // Uygulamanın KENDİ sonuç ekranında o derse atlayabilmek için
+          // sıra numarası (state.exams içindeki konum).
+          denemeIdx: exIdx,
           tarih: ex.date || (l.date || ""),
           ders: l.lesson || "",
           konu: l.topic || "",

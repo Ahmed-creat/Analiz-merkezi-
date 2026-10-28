@@ -16,6 +16,9 @@ const SONUC = TABAN + "/app2/ogrenci/?pg=sinavsonuclari";
 const UA = "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 Chrome/126 Mobile Safari/537.36";
 const SURL = Deno.env.get("SUPABASE_URL")!;
 const SK = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+// mod:"run" YALNIZ zamanlanmış cron tarafından çağrılır. Bu anahtar yoksa
+// run modu tamamen kapalıdır (anon anahtarıyla tüm öğrencileri gezme yolu kapalı).
+const CRON_SECRET = Deno.env.get("CRON_SECRET") || "";
 
 class Kavanoz {
   m = new Map<string, string>();
@@ -426,6 +429,17 @@ Deno.serve(async (istek) => {
       const tek: any[] = await sy.json().catch(() => []);
       const o = await kullaniciCek(u.id, tek[0]?.state);
       return json({ mod, ...o, sureMs: Date.now() - t0 });
+    }
+    // ---- run: yalnız cron (Authorization: Bearer CRON_SECRET) ----
+    // Eskiden bu dal HİÇBİR yetki kontrolü yapmıyordu: anon anahtarı herkese
+    // açık olduğu için "/functions/v1/okulizyon-cek {mod:run}" çağıran biri
+    // tüm app_states satırlarını gezdirebiliyordu (başka öğrencilerin
+    // denemeleri + hesap durumu). Artık kapalı.
+    const cronYetki = (istek.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "").trim();
+    const cronBaslik = istek.headers.get("x-cron-secret") || "";
+    if (!CRON_SECRET) return json({ hata: "run modu kapalı (CRON_SECRET tanımlı değil)" }, 503);
+    if (cronYetki !== CRON_SECRET && cronBaslik !== CRON_SECRET) {
+      return json({ hata: "yetkisiz — run modu yalnız zamanlanmış görevle çağrılabilir" }, 401);
     }
     const y = await fetch(sb("app_states?select=user_id,state"), { headers: sbB() });
     if (!y.ok) return json({ hata: "app_states HTTP " + y.status }, 500);

@@ -1,8 +1,10 @@
 const assert = require("assert");
 const fs = require("fs");
+const path = require("path");
 const vm = require("vm");
 
-const code = fs.readFileSync(require.resolve("../bkt-engine.js"), "utf8");
+// YAYINLANAN dosya: site/bkt-engine.js (kök kopya eskiydi, testi yanıltıyordu)
+const code = fs.readFileSync(require.resolve("../site/bkt-engine.js"), "utf8");
 const context = {
   console,
   Date,
@@ -66,3 +68,31 @@ const pool = { konu_id: "p", sorular: Array.from({ length: 10 }, (_, i) => ({
 })) };
 assert.strictEqual(BKT.validatePool(pool, "p").valid, true);
 console.log("bkt-engine: tüm kontroller başarılı");
+
+// ---- SAYFAYA GERÇEKTEN BAĞLI MI? ----
+// 2026-10-28: motor dosyası site/ altında duruyordu ama index.html onu HİÇ
+// yüklemiyordu → havuz/Kısa Kontrol akışının bir kısmı sessizce ölüydü.
+// Ayrıca bu test eskiden KÖKTEKİ eski kopyayı (bkt-engine.js) sınıyordu;
+// yayınlanan dosya site/bkt-engine.js olduğu için test artık ONU okur.
+{
+  const html = fs.readFileSync(path.join(__dirname, "..", "site", "index.html"), "utf8");
+  const sw = fs.readFileSync(path.join(__dirname, "..", "site", "sw.js"), "utf8");
+  const motor = fs.readFileSync(path.join(__dirname, "..", "site", "bkt-engine.js"), "utf8");
+
+  assert.ok(/<script[^>]+src="bkt-engine\.js"/.test(html), "index.html bkt-engine.js'i yüklemeli");
+  assert.ok(/"\.\/bkt-engine\.js"/.test(sw), "sw.js ASSETS'te bkt-engine.js olmalı");
+  assert.ok(/window\.AnalizBKT\s*=/.test(motor), "motor window.AnalizBKT kurmalı");
+
+  // Motora bağımlı olduğu KÜRESEL yardımcılar sayfada tanımlı olmalı
+  for (const ad of ["toast", "saveState", "getMemoryStrength", "daysLeftToExam", "calculatePriority", "todayStr"]) {
+    assert.ok(new RegExp("function\\s+" + ad + "\\s*\\(").test(html), "index.html " + ad + "() tanımlı olmalı");
+  }
+
+  // Yükleme sırası: motor kendi yardımcılarından SONRA gelmeli
+  const yer = html.indexOf('src="bkt-engine.js"');
+  for (const once of ["havuz-bul.js", "gorsel.js", "video-cozum.js"]) {
+    const y = html.indexOf('src="' + once + '"');
+    assert.ok(y >= 0 && y < yer, "bkt-engine.js, " + once + " sonrasında gelmeli");
+  }
+  console.log("bağlantı nöbetçisi: tüm kontroller geçti");
+}

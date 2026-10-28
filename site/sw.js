@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261028-v35-3-kisa-kontrol";
+const CACHE = "analiz-merkezi-v-20261028-v35-4-bildirim-video";
 const ASSETS = [
   "./",
   "./index.html",
@@ -19,6 +19,8 @@ const ASSETS = [
   "./veri-birlestir.js",
   "./gorsel.js",
   "./video-cozum.js",
+  "./push-bildirim.js",
+  "./bkt-engine.js",
   "./content/konu_esleme.json",
   "./vendor/supabase.js",
   "./content/iliski_grafi.json",
@@ -236,10 +238,13 @@ function bildirimSecenekleri(payload) {
   const data = payload.data || {};
   const title = n.title || data.title || payload.title || "Analiz Merkezi";
   const body = n.body || data.body || payload.body || "Yeni bildirimin var.";
-  const url = (payload.fcmOptions && payload.fcmOptions.link) || data.url || APP_URL;
+  // Web Push (bildirim-gonder) gövdesi düz JSON gönderir: {title, body, url, kind}
+  const ham = (payload.fcmOptions && payload.fcmOptions.link) || data.url || payload.url || APP_URL;
+  let url = APP_URL;
+  try { url = new URL(ham, self.location.origin).href; } catch (e) { url = APP_URL; }
   const icon = n.icon || data.icon || ICON_URL;
   const badge = n.badge || data.badge || ICON_URL;
-  const tag = data.key || payload.collapse_key || "analiz-merkezi";
+  const tag = data.key || payload.kind || payload.collapse_key || "analiz-merkezi";
   return { title, options: { body, icon, badge, tag, renotify: false, data: { url } } };
 }
 self.addEventListener("push", (event) => {
