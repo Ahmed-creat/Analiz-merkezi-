@@ -1023,6 +1023,15 @@ function okzAnalizKaydet() {
 function pwaArayuzKur() {
   try { initAuthUI(); } catch (e) { console.warn("Profil arayüzü kurulamadı:", e); }
   try { initOkulizyonUI(); } catch (e) { console.warn("Okulizyon arayüzü kurulamadı:", e); }
+  // Açılışta sonucu tazele: kullanıcı hiçbir şeye basmadan "Analiz Bekliyor" dolsun.
+  // (Yalnız oturum açıksa; giriş yoksa sessizce geç.)
+  setTimeout(function () {
+    try {
+      if (typeof state === "undefined" || !sb || !currentUser) return;
+      okzDersleriDuzelt();
+      okzKuyrukCek(false);
+    } catch (e) { /**/ }
+  }, 2500);
 }
 if (document.readyState === "loading") window.addEventListener("DOMContentLoaded", pwaArayuzKur);
 else pwaArayuzKur();
