@@ -149,3 +149,69 @@ if (kalan.length) {
   process.exit(1);
 }
 console.log("✓ tümü geçti");
+
+/* ============================================================
+   "Verileri silsem de hep Analiz Bekliyor" senaryoları
+   ------------------------------------------------------------
+   Kuyruk her çekimde sunucudan yeniden kuruluyordu; kullanıcı
+   Denemelerim'i silince sınav yeniden "yeni" sayılıyor ve kuyruk
+   hiç boşalmıyordu. Çözüm: içerik parmak izine bağlı KALICI
+   "işlendi/yoksayıldı" defteri (karar'ın 3. parametresi).
+   ============================================================ */
+(function () {
+  let g = 0, k = 0;
+  const hatalar = [];
+  function ok(ad, kosul, ayrinti) { if (kosul) { g++; } else { k++; hatalar.push(ad + (ayrinti ? " → " + ayrinti : "")); } }
+  function esit(ad, a, b) { ok(ad, a === b, "gelen " + JSON.stringify(a) + " · beklenen " + JSON.stringify(b)); }
+
+  const D = [
+    { name: "10.SINIF MAARİF İZLEME SINAVI 1", date: "2026-10-27",
+      lessons: { "Matematik-1": { d: 20, w: 2, e: 8 }, "Türkçe": { d: 19, w: 9, e: 2 } },
+      rows: [{ qno: "3", lesson: "Matematik-1", topic: "Dik üçgende ...", status: "e" }] }
+  ];
+  const DEPO = D.map(x => ({ name: "Okulizyon: " + x.name, date: x.date,
+    lessons: { "Matematik": { d: 20, w: 2, e: 8 }, "Türk Dili ve Edebiyatı": { d: 19, w: 9, e: 2 } }, errorLogs: [] }));
+  const ANAHTAR = OKZ.kararAnahtar(D[0]);
+  const HASH = OKZ.kararHash(D[0]);
+
+  // 1) Defter yokken: Denemelerim boşsa yeni
+  let r = OKZ.karar(D, [], {});
+  esit("defter yok + Denemelerim boş → yeni", r.yeni.length, 1);
+
+  // 2) Veriler silinmiş (Denemelerim boş) ama defterde var → kuyruğa GERİ GELMEZ
+  r = OKZ.karar(D, [], { [ANAHTAR]: HASH });
+  esit("veriler silinse de defterdeki sınav geri gelmez", r.yeni.length, 0);
+  esit("defterdeki sınav değişen sayılmaz", r.degisen.length, 0);
+
+  // 3) Denemelerim'deyken de defter tutarlı
+  r = OKZ.karar(D, DEPO, { [ANAHTAR]: HASH });
+  esit("Denemelerim'de + defterde → yeni değil", r.yeni.length, 0);
+  esit("Denemelerim'de + defterde → değişen değil", r.degisen.length, 0);
+  esit("geçerli anahtar yine bildirilir", r.gecerliAnahtarlar.length, 1);
+
+  // 4) Okulizyon'da sonuç DEĞİŞİRSE geri gelir (hash farklı)
+  const DEGISMIS = [Object.assign({}, D[0], { lessons: { "Matematik-1": { d: 22, w: 0, e: 8 }, "Türkçe": { d: 19, w: 9, e: 2 } } })];
+  ok("değişen sınavın hash'i farklı", OKZ.kararHash(DEGISMIS[0]) !== HASH);
+  r = OKZ.karar(DEGISMIS, [], { [ANAHTAR]: HASH });
+  esit("içerik değişince kuyruğa geri gelir", r.yeni.length, 1);
+
+  // 5) Defter anahtarı tarih duyarlı: başka tarihli sınav etkilenmez
+  const BASKA = [Object.assign({}, D[0], { date: "2026-11-10" })];
+  r = OKZ.karar(BASKA, [], { [ANAHTAR]: HASH });
+  esit("başka tarihli sınav yeni sayılır", r.yeni.length, 1);
+
+  // 6) Aynı sınav yoksa defter "nesli tükenmiş" olsa bile çökmez
+  r = OKZ.karar(D, [], null);
+  esit("defter null → normal davranır", r.yeni.length, 1);
+  r = OKZ.karar(null, null, undefined);
+  esit("boş girdi çökmez", r.yeni.length, 0);
+
+  // 7) Ham Okulizyon ders adları ile uygulama adları AYNI hash'i verir
+  esit("ham ↔ normalize hash eşit", OKZ.kararHash(D[0]), OKZ.kararHash(DEPO[0]));
+  esit("kararHash çift önek eklemez", OKZ.kararHash(DEPO[0]).indexOf("Okulizyon: Okulizyon:") < 0, true);
+  ok("kararAnahtar biçimi", ANAHTAR === "10.SINIF MAARİF İZLEME SINAVI 1|2026-10-27", ANAHTAR);
+
+  console.log("Kuyruk/yoksayma testleri — " + g + "/" + (g + k) + (k ? " ✗" : " ✓"));
+  hatalar.forEach(h => console.log("   • " + h));
+  if (k) process.exit(1);
+})();

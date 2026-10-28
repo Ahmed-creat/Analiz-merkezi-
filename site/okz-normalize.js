@@ -126,8 +126,34 @@
   // Okulizyon'dan gelen sınav listesiyle uygulamadaki denemeleri karşılaştırır.
   // "Aktarılmış" kabulü KAYIT DEFTERİNE değil, Denemelerim'de gerçekten
   // durup durmadığına dayanır: deneme silinmişse sınav yeniden "yeni" sayılır.
-  function karar(gelen, exams) {
+  // Sınavın içerik parmak izi. İki tarafı da AYNI normalizasyondan geçirir:
+  // ham Okulizyon adları ("Matematik-1") ile uygulama adları ("Matematik")
+  // aynı hash'i versin.
+  function kararHash(ex) {
+    const adi = (x) => {
+      const n = (x && x.name) || "Sınav";
+      return n.indexOf("Okulizyon: ") === 0 ? n : "Okulizyon: " + n;
+    };
+    const l = birlestir((ex && ex.lessons) || {});
+    return [adi(ex), (ex && ex.date) || "",
+      Object.keys(l).sort().map((k) => k + ":" + (Number(l[k].d) || 0) + "," + (Number(l[k].w) || 0) + "," + (Number(l[k].e) || 0)).join(";")].join("|");
+  }
+
+  // Sınav anahtarı: "ad|tarih"
+  function kararAnahtar(ex) {
+    return ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
+  }
+
+  /**
+   * gelen  : sunucudan gelen Okulizyon sınavları
+   * exams  : uygulamadaki denemeler (state.exams)
+   * islenen: { "ad|tarih": hash } — bu sınav bu içerikle zaten işlendi
+   *          ya da kullanıcı tarafından yoksayıldı. Aynı hash ise kuyruğa
+   *          GERİ KONMAZ; içerik değişirse (hash farklıysa) yeniden gelir.
+   */
+  function karar(gelen, exams, islenen) {
     const liste = Array.isArray(exams) ? exams : [];
+    const defter = islenen && typeof islenen === "object" ? islenen : {};
     // Uygulamadaki denemeler "Okulizyon: <ad>" biçiminde; çift önek ekleme
     const adi = (ex) => {
       const n = (ex && ex.name) || "Sınav";
@@ -146,15 +172,19 @@
     };
     const yeni = [], degisen = [], gecerliAnahtarlar = [];
     (Array.isArray(gelen) ? gelen : []).forEach((ex) => {
+      const anahtar = kararAnahtar(ex);
+      const h = hash(ex);
       const varOlan = bul(ex);
+      if (varOlan) gecerliAnahtarlar.push(((ex && ex.name) || "?") + "|" + ((ex && ex.date) || ""));
+      // Bu sınav bu içerikle zaten işlendi veya yoksayıldı → kuyruğa geri koyma
+      if (defter[anahtar] && defter[anahtar] === h) return;
       if (!varOlan) { yeni.push(ex); return; }
-      gecerliAnahtarlar.push(((ex && ex.name) || "?") + "|" + ((ex && ex.date) || ""));
-      if (hash(varOlan) !== hash(ex)) degisen.push({ key: ((ex.name) || "?") + "|" + (ex.date || ""), exam: ex, hash: hash(ex) });
+      if (hash(varOlan) !== h) degisen.push({ key: ((ex.name) || "?") + "|" + (ex.date || ""), exam: ex, hash: h });
     });
     return { yeni, degisen, gecerliAnahtarlar };
   }
 
-  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt, karar };
+  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt, karar, kararHash, kararAnahtar };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (kok) kok.OKZ = api;
 })(typeof window !== "undefined" ? window : globalThis);

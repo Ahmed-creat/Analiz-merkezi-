@@ -3250,6 +3250,8 @@ function deleteExam(idx) {
   const ex = state.exams[Number(idx)];
   if (!ex) return;
   openConfirm('"' + ex.name + '" denemesi ve hata kayıtları silinecek. Bu denemenin puan verileri de silinecek. Emin misin?', () => {
+    // Okulizyon kaynaklı deneme ise deftere yaz: bir daha "Analiz Bekliyor"a gelmesin
+    try { if (typeof window.__okzDenemeSilindi === "function") window.__okzDenemeSilindi(ex); } catch (e) { /* */ }
     state.exams.splice(Number(idx), 1); saveState();
     toast("Deneme silindi.", "success"); navigate("exams");
   });

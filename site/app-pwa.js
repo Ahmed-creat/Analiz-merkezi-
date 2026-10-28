@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.8-konu";
+const PWA_SURUM = "v34.9-kuyruk";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -270,6 +270,9 @@ function renderProfileModal() {
   html += sel("okulAdi", "OKUL", ["AKKENT ANADOLU LİSESİ"]);
   html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa)<input id="okz-sifre" type="password" autocomplete="off" value="' + escHtml(s.sifre || "") + '" placeholder="Okulizyon şifresi" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
   html += '</div>';
+  // Yoksayılan / işlenen sınav defteri (kalıcı)
+  const defterSayi = okzDefterSayisi();
+  html += '<div style="font-size:11px;opacity:0.7;margin-bottom:8px;line-height:1.45;">İşlenen/yoksayılan sınav: <b>' + defterSayi + '</b> — bunlar kuyruğa geri gelmez.' + (defterSayi ? ' <button data-act="okzDefteriTemizle" style="background:none;border:0;padding:0;color:#B45309;font-size:11px;text-decoration:underline;cursor:pointer;">geri al</button>' : '') + '</div>';
   html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
   html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
   html += '<button data-act="okzSimdiCek" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi dene</button>';
@@ -556,8 +559,77 @@ async function registerFCM() {
 
 // ---- 8) OKULIZYON ENTEGRASYONU (çek → Analiz Bekliyor → neden seç → kaydet) ----
 const OKZ_NEDENLER = ["Konuyu Bilmiyordum", "KONU EKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası", "SÜRE YETMEDİ", "ÇÖZÜM YOLUNU BULAMADIM"];
+// ------------------------------------------------------------
+// İŞLENDİ / YOKSAYILDI DEFTERİ
+// ------------------------------------------------------------
+// Sorun: "Analiz Bekliyor" kuyruğu her çekimde sunucudan yeniden
+// kuruluyordu. Kullanıcı verileri silince (Denemelerim → sil veya
+// "Tüm Verileri Sıfırla") sınav artık Denemelerim'de olmadığı için
+// yeniden "yeni" sayılıyor ve kuyruk hiç boşalmıyordu.
+//
+// Çözüm: içerik parmak izine (hash) bağlı kalıcı bir defter.
+//   • kullanıcı nedenleri kaydederse  → işlendi
+//   • "Yoksay" derse                  → yoksayıldı
+// Aynı sınav + aynı içerik defterde varsa kuyruğa GERİ KONMAZ.
+// Okulizyon'da sonuç değişirse hash değişir → kendiliğinden geri gelir.
+//
+// Defter hem state içinde (cihazlar arası eşitlenir) hem de ayrı bir
+// localStorage anahtarında tutulur; "Tüm Verileri Sıfırla" state'i
+// sıfırlasa bile localStorage kopyası kalır → sorular geri gelmez.
+const OKZ_DEFTER_KEY = "am_okz_islenen_v1";
+function okzDefterDisktenOku() {
+  try {
+    const ham = localStorage.getItem(OKZ_DEFTER_KEY);
+    const v = ham ? JSON.parse(ham) : null;
+    return v && typeof v === "object" && !Array.isArray(v) ? v : {};
+  } catch (e) { return {}; }
+}
+function okzDefterDiskeYaz(harita) {
+  try { localStorage.setItem(OKZ_DEFTER_KEY, JSON.stringify(harita || {})); } catch (e) { /* kota dolu olabilir */ }
+}
+// Diskteki kopya + state kopyası birleşik defter
+function okzDefter() {
+  const disk = okzDefterDisktenOku();
+  const st = okzStore();
+  if (!st.islenen || typeof st.islenen !== "object") st.islenen = {};
+  return Object.assign({}, disk, st.islenen);
+}
+function okzDefterIsaretle(anahtar, hash) {
+  if (!anahtar) return;
+  const st = okzStore();
+  if (!st.islenen || typeof st.islenen !== "object") st.islenen = {};
+  st.islenen[anahtar] = String(hash || "");
+  okzDefterDiskeYaz(Object.assign({}, okzDefterDisktenOku(), st.islenen));
+}
+function okzDefterTemizle() {
+  const st = okzStore();
+  st.islenen = {};
+  okzDefterDiskeYaz({});
+  try { saveState(); } catch (e) { /* */ }
+}
+function okzDefterSayisi() { return Object.keys(okzDefter()).length; }
+// Denemelerim'den bir Okulizyon denemesi silinirse deftere yaz:
+// "sildim" = "bir daha Analiz Bekliyor'a gelmesin". index.html → deleteExam çağırır.
+window.__okzDenemeSilindi = function (ex) {
+  try {
+    const ham = String((ex && ex.name) || "");
+    if (!/^Okulizyon:\s*/i.test(ham)) return;           // yalnız Okulizyon kaynaklı denemeler
+    const ad = ham.replace(/^Okulizyon:\s*/i, "").trim();
+    if (!ad) return;
+    const hash = (window.OKZ && typeof window.OKZ.kararHash === "function") ? window.OKZ.kararHash(ex) : "";
+    okzDefterIsaretle(ad + "|" + ((ex && ex.date) || ""), hash);
+  } catch (e) { /* sessiz */ }
+};
+
 function okzStore() {
-  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], aktarilan: {}, guncellenen: [], pulledAt: 0, duyurular: null };
+  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], aktarilan: {}, guncellenen: [], pulledAt: 0, duyurular: null, islenen: {} };
+  // Sıfırlama sonrası diskteki defteri state'e geri getir.
+  // (okzStore her çağrıda yeni nesne kurabildiği için KOŞULSUZ birleştir.)
+  if (!state.okulizyon.islenen || typeof state.okulizyon.islenen !== "object") state.okulizyon.islenen = {};
+  const diskDefter = okzDefterDisktenOku();
+  Object.keys(diskDefter).forEach(k => {
+    if (!(k in state.okulizyon.islenen)) state.okulizyon.islenen[k] = diskDefter[k];
+  });
   if (!state.okulizyon.aktarilan) state.okulizyon.aktarilan = {};
   if (!Array.isArray(state.okulizyon.guncellenen)) state.okulizyon.guncellenen = [];
   return state.okulizyon;
@@ -904,6 +976,9 @@ function initOkulizyonUI() {
     else if (a === "okzYeniden") okzYenidenAktar(el.dataset.i);
     else if (a === "okzSonucGuncelle") okzSonucuYaz(el.dataset.ad, el.dataset.tarih);
     else if (a === "okzKonuEsle") okzKonuEsleKaydet();
+    else if (a === "okzYoksay") okzYoksay([{ anahtar: el.dataset.key, hash: el.dataset.hash }]);
+    else if (a === "okzHepsiniYoksay") okzHepsiniYoksay();
+    else if (a === "okzDefteriTemizle") { okzDefterTemizle(); renderProfileModal(); toast("Yoksayılan kayıtlar geri alındı — sonraki çekimde yeniden gelir.", "info"); }
   });
   okzBadge();
   if (window.lucide && lucide.createIcons) lucide.createIcons();
@@ -998,6 +1073,38 @@ function okzYenidenAktar(i) {
   toast("Güncellendi — " + (ex.name || "sınav") + " · net " + oz.net + " · " + oz.soru + " soru.", "success");
 }
 
+// Kuyruktaki sınavları kalıcı olarak yoksay (içerik değişirse geri gelir)
+function okzYoksay(liste) {
+  let say = 0;
+  (liste || []).forEach(x => {
+    if (!x || !x.anahtar) return;
+    okzDefterIsaretle(x.anahtar, x.hash);
+    say++;
+  });
+  if (!say) return;
+  const st = okzStore();
+  const anahtarlar = (liste || []).map(x => x && x.anahtar);
+  st.pending = (st.pending || []).filter(ex => !anahtarlar.includes(okzKey(ex)));
+  try { saveState(); } catch (e) { /* */ }
+  okzBadge();
+  renderOkzModal();
+  const kalan = (st.pending || []).reduce((a, ex) => a + (ex.rows || []).length, 0);
+  if (kalan > 0) toast("Yoksayıldı. Kuyrukta " + kalan + " soru kaldı.", "info");
+  else toast("Kuyruk temizlendi — bir daha gelmeyecek.", "success");
+}
+function okzHepsiniYoksay() {
+  const st = okzStore();
+  const liste = (st.pending || []).map(ex => ({
+    anahtar: okzKey(ex),
+    hash: window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex)
+  }));
+  if (!liste.length) return toast("Yoksayılacak sınav yok.", "info");
+  const toplam = (st.pending || []).reduce((a, ex) => a + (ex.rows || []).length, 0);
+  openConfirm("Analiz Bekliyor kuyruğundaki " + toplam + " soru yoksayılacak ve bir daha gösterilmeyecek. Emin misin?", function () {
+    okzYoksay(liste);
+  });
+}
+
 function renderOkzModal() {
   const m = document.getElementById("pwa-okz-modal");
   const s = state.settings && state.settings.okulizyon ? state.settings.okulizyon : {};
@@ -1053,7 +1160,9 @@ function renderOkzModal() {
       html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:12px;padding:10px;margin-bottom:10px;">';
       html += '<div style="font-weight:700;font-size:13.5px;margin-bottom:6px;">' + escHtml(ex.name) + (ex.date ? ' <span style="opacity:0.6;font-weight:400;">· ' + escHtml(ex.date) + "</span>" : "") + "</div>";
       html += okzDersTablosu(ex.lessons);
-      html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' + OKZ_NEDENLER.slice(0, 3).map(r => '<button data-act="okzHepsi" data-reason="' + escHtml(r) + '" style="font-size:10.5px;padding:4px 8px;border-radius:99px;border:1px solid rgba(0,0,0,0.15);background:none;cursor:pointer;color:inherit;">tümü: ' + r + "</button>").join("") + "</div>";
+      html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' + OKZ_NEDENLER.slice(0, 3).map(r => '<button data-act="okzHepsi" data-reason="' + escHtml(r) + '" style="font-size:10.5px;padding:4px 8px;border-radius:99px;border:1px solid rgba(0,0,0,0.15);background:none;cursor:pointer;color:inherit;">tümü: ' + r + "</button>").join("")
+        + '<button data-act="okzYoksay" data-key="' + escHtml(okzKey(ex)) + '" data-hash="' + escHtml(window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex)) + '" style="font-size:10.5px;padding:4px 8px;border-radius:99px;border:1px solid rgba(0,0,0,0.15);background:none;cursor:pointer;color:#B45309;">bu sınavı yoksay</button>'
+        + "</div>";
       ex.rows.forEach((row, j) => {
         html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid rgba(0,0,0,0.07);">';
         html += '<span style="min-width:26px;font-size:11px;opacity:0.6;">#' + (row.qno || j + 1) + "</span>";
@@ -1064,6 +1173,8 @@ function renderOkzModal() {
       html += "</div>";
     });
     html += '<button data-act="okzAnalizKaydet" class="btn btn-primary w-full" style="font-weight:700;">Seçilenleri Deneme Olarak Kaydet</button>';
+    html += '<button data-act="okzHepsiniYoksay" class="btn btn-ghost w-full btn-sm" style="margin-top:8px;border:1px solid rgba(0,0,0,0.15);opacity:0.85;">Analiz etmeyeceğim — hepsini yoksay</button>';
+    html += '<div style="font-size:10.5px;opacity:0.6;margin-top:6px;line-height:1.45;">Yoksayılan sınav kuyruğa bir daha gelmez. Okulizyon\'da sonucu DEĞİŞİRSE kendiliğinden geri gelir. Profil → Okulizyon bölümünden geri alabilirsin.</div>';
   } else {
     html += '<div style="border:1px dashed rgba(0,0,0,0.2);border-radius:12px;padding:16px;text-align:center;font-size:13px;opacity:0.75;">Analiz bekleyen soru yok. Sınav sonuçların her sabah 07:00 otomatik çekilir.</div>';
   }
@@ -1135,8 +1246,10 @@ async function okzKuyrukCek(zorla) {
       satir: (ex.rows || []).length, toplam: ex.toplam || null
     }));
     // --- Gerçek duruma göre karar ver (kayıt defterine değil) ---
+    // Defter: daha önce işlenen/yoksayılan sınavlar kuyruğa geri konmaz
+    const defter = okzDefter();
     const K = (window.OKZ && typeof window.OKZ.karar === "function")
-      ? window.OKZ.karar(gelen, state.exams)
+      ? window.OKZ.karar(gelen, state.exams, defter)
       : { yeni: gelen, degisen: [], gecerliAnahtarlar: [] };
     const yeni = K.yeni, degisen = K.degisen, gecerliAnahtarlar = K.gecerliAnahtarlar;
     // Kayıt defterini gerçekle hizala: Denemelerim'de olmayan anahtarlar "aktarıldı" sayılmaz
@@ -1244,6 +1357,8 @@ async function okzAnalizKaydet() {
     if (!st.importedKeys.includes(anahtar)) st.importedKeys.push(anahtar);
     st.aktarilan = st.aktarilan || {};
     st.aktarilan[anahtar] = okzHash(ex);
+    // Kalıcı defter: bu sınav bu içerikle işlendi (silinse bile geri gelmez)
+    okzDefterIsaretle(anahtar, window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex));
   });
   st.pending = st.pending.filter(ex => st.importedKeys.includes(okzKey(ex)) ? false : true);
   saveState();

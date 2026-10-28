@@ -23,6 +23,8 @@
     "test:mesaj": "node tests/mesaj.test.js && node tests/mesaj-ui.test.js",
     "test:mesaj-ui": "node tests/mesaj-ui.test.js",
     "test:ders": "node tests/okz-normalize.test.js && node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
+    "test:kuyruk": "node tests/okz-kuyruk.test.js",
+    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk",
     "test:konu": "node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
     "esleme:uret": "node scripts/konu-esleme-uret.js"
   }
