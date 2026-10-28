@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.0-supabase-pools";
+const PWA_SURUM = "v34.1-profil-giris";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -80,7 +80,14 @@ if ("serviceWorker" in navigator) {
 function initAuthUI() {
   if (window.__pwaProfileHooked) return;
   window.__pwaProfileHooked = true;
-  // Giriş ve Okulizyon artık yalnız PROFİL'den yönetilir (avatar + yan menü "Profil" + mobil DAHA)
+  // Giriş ve Okulizyon artık yalnız PROFİL'den yönetilir.
+  // Giriş noktaları: yan menü "Profil & Okulizyon", kullanıcı kartı, mobil alt menü "Profil", DAHA sayfası.
+  window.__profilAc = openProfileModal;
+  const kart = document.getElementById("sidebar-user");
+  if (kart) {
+    kart.style.cursor = "pointer";
+    kart.title = "Profil — giriş, bulut yedeği ve Okulizyon bilgileri";
+  }
   const avatar = document.getElementById("sidebar-avatar");
   if (avatar) {
     avatar.style.cursor = "pointer";
@@ -93,6 +100,14 @@ function initAuthUI() {
     userName.title = "Profil";
     userName.addEventListener("click", openProfileModal);
   }
+  // index.html'de hazır gelen giriş noktaları (statik) — varsa yeniden üretme
+  ["pwa-profile-nav", "pwa-profile-more", "pwa-profile-tab", "sidebar-user"].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add("pwa-profil-giris");
+    if (!el.getAttribute("title")) el.setAttribute("title", "Profil — giriş, bulut yedeği ve Okulizyon bilgileri");
+    if (id !== "sidebar-user" && !el.dataset.act) el.dataset.act = "openProfile";
+  });
   const nav = document.getElementById("sidebar-nav");
   if (nav && !document.getElementById("pwa-profile-nav")) {
     const nb = document.createElement("button");
@@ -172,11 +187,16 @@ function buildAuthModal() {
   document.body.appendChild(m);
 }
 function openAuthModal() {
+  buildAuthModal();
   const m = document.getElementById("pwa-auth-modal");
   if (!m) return;
-  if (!cloudReady()) { cfgMissing(); return; }
   const msg = document.getElementById("pwa-auth-msg");
   if (msg) msg.textContent = "";
+  // Bulut yapılandırması eksikse pencereyi yine de aç: kullanıcı ne olduğunu görsün
+  if (!cloudReady()) {
+    authMsgYaz("Bulut bağlantısı kurulamadı — giriş şu an kullanılamıyor. site/supabase-config.js ve site/vendor/supabase.js dosyalarını kontrol et.", true);
+    try { cfgMissing(); } catch (e) {}
+  }
   m.style.display = "flex";
   setTimeout(() => { const em = document.getElementById("pwa-email"); if (em) em.focus(); }, 60);
 }
@@ -214,7 +234,8 @@ window.__profilTaze = function () { const m = document.getElementById("pwa-profi
 function renderProfileModal() {
   const m = document.getElementById("pwa-profile-modal");
   if (!m) return;
-  const s = (state.settings && state.settings.okulizyon) ? state.settings.okulizyon : {};
+  if (!state.settings) state.settings = {};
+  const s = state.settings.okulizyon ? state.settings.okulizyon : (state.settings.okulizyon = {});
   const st = okzStore();
   const bekleyen = st.pending.reduce((acc, ex) => acc + (ex.rows || []).length, 0);
   const hesapSatiri = currentUser
@@ -715,7 +736,13 @@ function okzAnalizKaydet() {
   if (window.lucide && lucide.createIcons) lucide.createIcons();
   toast(islenen ? "✓ " + islenen + " sınav işlendi (" + eklenen + " hata kaydı) — Konu Takibi ve öncelik listesi güncellendi!" : "Önce en az bir soru için neden seç.", islenen ? "success" : "error");
 }
-// Okulizyon UI'ı hazır olsun + kuyruğu çek (girişte + internet gelince)
-if (document.readyState === "loading") window.addEventListener("DOMContentLoaded", initOkulizyonUI);
-else initOkulizyonUI();
+// Profil (hesap + Okulizyon bilgileri) ve Okulizyon kuyruğu arayüzlerini kur.
+// NOT: initAuthUI burada çağrılmazsa Profil'e hiçbir yerden ulaşılamaz (giriş/Okulizyon görünmez).
+function pwaArayuzKur() {
+  try { initAuthUI(); } catch (e) { console.warn("Profil arayüzü kurulamadı:", e); }
+  try { initOkulizyonUI(); } catch (e) { console.warn("Okulizyon arayüzü kurulamadı:", e); }
+}
+if (document.readyState === "loading") window.addEventListener("DOMContentLoaded", pwaArayuzKur);
+else pwaArayuzKur();
+window.addEventListener("load", pwaArayuzKur);
 window.addEventListener("online", () => setTimeout(okzKuyrukCek, 3000));
