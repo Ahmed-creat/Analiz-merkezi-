@@ -128,7 +128,7 @@ function durumKur() {
   const { api, window, kayit } = ortam(durumKur());
   ok("fonksiyonlar dışa aktarıldı", typeof api.okzKonulariOnar === "function");
   const idx = await api.okzkYukle();
-  ok("konu_esleme.json yüklendi", !!idx && idx.N === 154, String(idx && idx.N));
+  ok("konu_esleme.json yüklendi", !!idx && idx.N === 172, String(idx && idx.N));
   ok("soru havuzu köprüsü kuruldu", typeof window.__okzKonuPoolEsle === "function");
 
   // ---------- 2) Köprü: kazanım → konu_id ----------

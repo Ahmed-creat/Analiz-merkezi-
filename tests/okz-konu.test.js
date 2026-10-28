@@ -45,7 +45,7 @@ esit("numarasiz: başlık numarası atılır", OKZK.numarasiz("1.1.3 mol kavrami
 
 // ---------- 2) İndeks ----------
 console.log("\n== 2) İndeks ==");
-esit("indeks: 154 havuz", indeks.N, 154);
+esit("indeks: 172 havuz", indeks.N, 172);
 esit("indeks: sürüm aktarılır", indeks.surum, INDEKS_VERISI.surum);
 const matKonulari = OKZK.konular("Matematik", indeks);
 ok("konular: Matematik listelenir", matKonulari.length >= 20, String(matKonulari.length));

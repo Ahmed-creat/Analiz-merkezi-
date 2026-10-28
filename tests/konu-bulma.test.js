@@ -31,7 +31,7 @@ const HAVUZLAR = MANIFEST.havuzlar || [];
 
 // ---------- 1) Manifest: baslik alanı ----------
 console.log("\n== 1) Havuz manifesti ==");
-esit("havuz sayısı 154", HAVUZLAR.length, 154);
+esit("havuz sayısı 172", HAVUZLAR.length, 172);
 ok("her havuzda baslik var", HAVUZLAR.every(h => h.baslik && String(h.baslik).trim()), HAVUZLAR.filter(h => !h.baslik).map(h => h.konu_id).slice(0, 5).join(","));
 ok("her havuzda baslik dolu", HAVUZLAR.every(h => String(h.baslik || "").trim().length > 0), HAVUZLAR.filter(h => !String(h.baslik || "").trim()).map(h => h.konu_id).slice(0,3).join(","));
 ok("Kimya havuzunda baslik dolu", !!HB.bul("Kimya > 1.1.3 Mol Kavramı", HAVUZLAR));
@@ -48,6 +48,23 @@ esit("olmayan konu → null", HB.bul("Fizik > Kuantum Dolanıklık", HAVUZLAR), 
 esit("boş anahtar → null", HB.bul("", HAVUZLAR), null);
 esit('"undefined" metni → null', HB.bul("undefined", HAVUZLAR), null);
 esit("ders uyuşmazsa null", HB.bul("Fizik > Destan", HAVUZLAR), null);
+
+// ---------- 2b) KISA KONTROL KAPSAMASI (her konuda çıkmalı) ----------
+console.log("\n== 2b) Kapsama ==");
+const { KONULAR } = require(path.join(KOK, "konular.js"));
+let konuSayisi = 0; const kapsanmayan = [];
+for (const ders of Object.keys(KONULAR["10"])) {
+  for (const konu of KONULAR["10"][ders]) {
+    konuSayisi++;
+    if (!HB.bul(ders + " > " + konu, HAVUZLAR)) kapsanmayan.push(ders + " > " + konu);
+  }
+}
+esit("10. sınıf konu sayısı 180", konuSayisi, 180);
+esit("her konuda Kısa Kontrol (havuz) var: 180/180", kapsanmayan.length, 0);
+ok("kapsanmayan konu listesi boş", kapsanmayan.length === 0, kapsanmayan.slice(0, 3).join(" | "));
+esit("etiket (alt beceri) kademesi çalışıyor",
+  (HB.bul("Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi", HAVUZLAR) || {}).konu_id,
+  "biyo_10_u02_k04");
 
 // ---------- 3) Kazanım → konu kuralları ----------
 console.log("\n== 3) Kazanım → konu (elle bakılmış kurallar) ==");
@@ -129,8 +146,8 @@ ok("sınav düzeyinde çözüm düğmesi var", HTML.indexOf("· çözümler</a>"
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v35.2", APP.indexOf('const PWA_SURUM = "v35.2-konu-bulma"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("v35-2-konu-bulma") > 0);
+ok("PWA sürümü v35.3", APP.indexOf('const PWA_SURUM = "v35.3-kisa-kontrol"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("v35-3-kisa-kontrol") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

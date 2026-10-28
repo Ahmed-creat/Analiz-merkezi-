@@ -1,0 +1,201 @@
+{
+  "konu_id": "biyo_10_u02_k05",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "kaynak_dosya": "elle yazıldı (v35.3)",
+  "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u02_k05_o01",
+      "alt_beceri": "Popülasyon Dinamiği",
+      "metin": "Bir popülasyonun birey sayısını etkileyen doğum, ölüm, göç gibi süreçlerin tümüne ne denir?",
+      "secenekler": [
+        "Popülasyon dinamiği",
+        "Komünite yapısı",
+        "Süksesyon",
+        "Taşıma kapasitesi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Popülasyon dinamiği, popülasyon büyüklüğündeki değişimleri inceler.",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o02",
+      "alt_beceri": "Popülasyon Dinamiği",
+      "metin": "Kaynakların sınırsız olduğu varsayımında popülasyon artışı hangi eğriyle gösterilir?",
+      "secenekler": [
+        "J eğrisi (üstel artış)",
+        "S eğrisi (lojistik)",
+        "Düz çizgi",
+        "Azalan eğri"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sınırsız kaynakta hızlı üstel artış J eğrisi ile gösterilir.",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o03",
+      "alt_beceri": "Popülasyon Dinamiği",
+      "metin": "Ortamın taşıma kapasitesine yaklaşan popülasyon hangi eğriyi izler?",
+      "secenekler": [
+        "S eğrisi (lojistik artış)",
+        "J eğrisi",
+        "Ters eğri",
+        "Sabit çizgi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kaynaklar sınırlı olduğundan artış yavaşlar ve S eğrisi oluşur.",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o04",
+      "alt_beceri": "Popülasyon Dinamiği",
+      "metin": "Birim alandaki birey sayısına ne denir?",
+      "secenekler": [
+        "Popülasyon yoğunluğu",
+        "Popülasyon büyüklüğü",
+        "Taşıma kapasitesi",
+        "Komünite zenginliği"
+      ],
+      "dogru_index": 0,
+      "cozum": "Yoğunluk = birey sayısı / alan ya da hacim.",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o05",
+      "alt_beceri": "Popülasyon Dinamiği",
+      "metin": "Aynı kaynağı kullanan iki türün birbirinin gelişimini olumsuz etkilediği etkileşim hangisidir?",
+      "secenekler": [
+        "Rekabet",
+        "Mutualizm",
+        "Kommensalizm",
+        "Parazitlik"
+      ],
+      "dogru_index": 0,
+      "cozum": "Rekabette iki tür de zarar görür; kaynak için yarışırlar.",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o06",
+      "alt_beceri": "Türler Arası Etkileşimler",
+      "metin": "Bir türün yararlandığı, diğerinin etkilenmediği etkileşim hangisidir?",
+      "secenekler": [
+        "Kommensalizm",
+        "Mutualizm",
+        "Rekabet",
+        "Parazitlik"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kommensalizmde yarar tek taraflıdır, diğer tür etkilenmez.",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o07",
+      "alt_beceri": "Türler Arası Etkileşimler",
+      "metin": "Her iki türün de yarar sağladığı etkileşim hangisidir?",
+      "secenekler": [
+        "Mutualizm",
+        "Parazitlik",
+        "Amensalizm",
+        "Rekabet"
+      ],
+      "dogru_index": 0,
+      "cozum": "Mutualizmde iki taraf da kazanır (ör. liken, böcek-çiçek).",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o08",
+      "alt_beceri": "Türler Arası Etkileşimler",
+      "metin": "Parazitlik ilişkisinde tarafların durumu nasıldır?",
+      "secenekler": [
+        "Biri yarar, diğeri zarar görür",
+        "İkisi de yarar görür",
+        "İkisi de zarar görür",
+        "Biri yarar, diğeri etkilenmez"
+      ],
+      "dogru_index": 0,
+      "cozum": "Parazit konakçıdan beslenir; konakçı zarar görür.",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o09",
+      "alt_beceri": "Türler Arası Etkileşimler",
+      "metin": "Av-avcı ilişkisinde avcı sayısı arttığında av sayısı ne olur?",
+      "secenekler": [
+        "Azalır, sonra salınım gösterir",
+        "Sürekli artar",
+        "Değişmez",
+        "Sıfırlanır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Avcı artışı avı azaltır; av azalınca avcı da azalır (salınım).",
+      "zorluk": "deneme"
+    },
+    {
+      "soru_id": "biyo_10_u02_k05_o10",
+      "alt_beceri": "Türler Arası Etkileşimler",
+      "metin": "Bir türün bulunması diğer türün yerleşmesini engelliyor, kendisi etkilenmiyorsa bu etkileşim nedir?",
+      "secenekler": [
+        "Amensalizm",
+        "Mutualizm",
+        "Kommensalizm",
+        "Parazitlik"
+      ],
+      "dogru_index": 0,
+      "cozum": "Amensalizmde bir tür zarar görürken diğeri etkilenmez.",
+      "zorluk": "deneme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u02_k05_o01:flashcard",
+      "front": "Popülasyon dinamiği neyi inceler?",
+      "back": "Doğum, ölüm ve göçle birey sayısındaki değişimi."
+    },
+    {
+      "id": "biyo_10_u02_k05_o02:flashcard",
+      "front": "J eğrisi neyi gösterir?",
+      "back": "Sınırsız kaynakta üstel artışı."
+    },
+    {
+      "id": "biyo_10_u02_k05_o03:flashcard",
+      "front": "S eğrisi neyi gösterir?",
+      "back": "Taşıma kapasitesine yaklaşan lojistik artışı."
+    },
+    {
+      "id": "biyo_10_u02_k05_o04:flashcard",
+      "front": "Popülasyon yoğunluğu nedir?",
+      "back": "Birim alandaki birey sayısı."
+    },
+    {
+      "id": "biyo_10_u02_k05_o05:flashcard",
+      "front": "Rekabette taraflar ne olur?",
+      "back": "İkisi de olumsuz etkilenir."
+    },
+    {
+      "id": "biyo_10_u02_k05_o06:flashcard",
+      "front": "Kommensalizm nedir?",
+      "back": "Biri yararlanır, diğeri etkilenmez."
+    },
+    {
+      "id": "biyo_10_u02_k05_o07:flashcard",
+      "front": "Mutualizm nedir?",
+      "back": "İki tür de yararlanır."
+    },
+    {
+      "id": "biyo_10_u02_k05_o08:flashcard",
+      "front": "Parazitlik nedir?",
+      "back": "Parazit yararlanır, konakçı zarar görür."
+    },
+    {
+      "id": "biyo_10_u02_k05_o09:flashcard",
+      "front": "Av-avcı salınımı nedir?",
+      "back": "Av ve avcı sayılarının birbirini izleyerek dalgalanması."
+    },
+    {
+      "id": "biyo_10_u02_k05_o10:flashcard",
+      "front": "Amensalizm nedir?",
+      "back": "Bir tür diğerini engeller, kendisi etkilenmez."
+    }
+  ]
+}

@@ -101,6 +101,23 @@
       });
       if (eslesen.length === 1) return eslesen[0];   // belirsizse null
     }
+
+    // 5) ETİKET (alt beceri) eşleşmesi: havuzun kapsadığı alt beceriler
+    // arasında bu konunun adı geçiyorsa havuz o konuyu da soruyor demektir
+    // (örn. "Atık Yönetimi" havuzu "Ekolojik Ayak İzinin Küçültülmesi"
+    // etiketini taşır). Yalnız TEK havuz eşleşirse kabul edilir.
+    var etiketli = ayniDers.filter(function (h) {
+      var et = Array.isArray(h.etiketler) ? h.etiketler : [];
+      var kn = sade(konu), knn = numarasiz(konu);
+      for (var e = 0; e < et.length; e++) {
+        var s = sade(et[e]), n = numarasiz(et[e]);
+        if (!s) continue;
+        if (s === kn || (knn && n === knn)) return true;
+        if (s.indexOf(kn) >= 0 || kn.indexOf(s) >= 0) return true;
+      }
+      return false;
+    });
+    if (etiketli.length === 1) return etiketli[0];
     return null;
   }
 

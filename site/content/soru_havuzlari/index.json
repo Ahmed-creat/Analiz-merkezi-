@@ -1,8 +1,8 @@
 {
   "sinif": 10,
   "aciklama": "10. sınıf soru havuzları; kaynak arşivindeki ogeler canonical sorular/flashcards şemasına dönüştürüldü.",
-  "havuz_sayisi": 154,
-  "soru_sayisi": 1776,
+  "havuz_sayisi": 172,
+  "soru_sayisi": 1956,
   "havuzlar": [
     {
       "konu_id": "biyo_10_u01_k01",
@@ -115,6 +115,20 @@
       "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi"
     },
     {
+      "konu_id": "biyo_10_u01_k08",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k08.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Karbonhidrat ve Yağların Katılımı",
+        "Proteinlerin Katılımı ve Ortak Yollar"
+      ],
+      "baslik": "1.8 Besinlerin Solunuma Katılma Yolları",
+      "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları"
+    },
+    {
       "konu_id": "biyo_10_u02_k01",
       "ders": "Biyoloji",
       "sinif": 10,
@@ -180,6 +194,34 @@
       ],
       "baslik": "Atık Yönetimi",
       "topic_key": "Biyoloji > 2.9 Atık Yönetimi"
+    },
+    {
+      "konu_id": "biyo_10_u02_k05",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u02_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Popülasyon Dinamiği",
+        "Türler Arası Etkileşimler"
+      ],
+      "baslik": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+      "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler"
+    },
+    {
+      "konu_id": "biyo_10_u02_k06",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u02_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Kısıtlayıcı Faktörler",
+        "İnsan Etkisi ve Sonuçları"
+      ],
+      "baslik": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+      "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar"
     },
     {
       "konu_id": "cogr_10_u01_k01",
@@ -281,6 +323,20 @@
       "baslik": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi"
     },
     {
+      "konu_id": "cogr_10_u04_k02",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u04_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Yerleşme Tipleri",
+        "Fonksiyona Göre Sınıflandırma"
+      ],
+      "baslik": "4.2 Yerleşmelerin Fonksiyonları",
+      "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları"
+    },
+    {
       "konu_id": "cogr_10_u05_k01",
       "ders": "Coğrafya",
       "sinif": 10,
@@ -292,6 +348,34 @@
       "baslik": "5.1 Ekonomik Faaliyetlerin Özellikleri"
     },
     {
+      "konu_id": "cogr_10_u05_k02",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u05_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Ekonomik Sektörler",
+        "Gelişmişlik Göstergeleri"
+      ],
+      "baslik": "5.2 Ekonomik Sektörler ve Gelişmişlik",
+      "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik"
+    },
+    {
+      "konu_id": "cogr_10_u05_k03",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u05_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Sektörlerin Payı",
+        "Bölgesel Farklılıklar"
+      ],
+      "baslik": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+      "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı"
+    },
+    {
       "konu_id": "cogr_10_u06_k01",
       "ders": "Coğrafya",
       "sinif": 10,
@@ -301,6 +385,62 @@
       "etiketler": [],
       "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
       "baslik": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri"
+    },
+    {
+      "konu_id": "cogr_10_u06_k02",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u06_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Dirençli Yerleşme",
+        "Planlama ve Yapı"
+      ],
+      "baslik": "6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
+      "topic_key": "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları"
+    },
+    {
+      "konu_id": "cogr_10_u06_k03",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u06_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Yapısal Önlemler",
+        "Yapısal Olmayan Önlemler"
+      ],
+      "baslik": "6.3 Afetlerden Korunma",
+      "topic_key": "Coğrafya > 6.3 Afetlerden Korunma"
+    },
+    {
+      "konu_id": "cogr_10_u06_k04",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u06_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Bilinç ve Hazırlık",
+        "Doğru Davranış ve Sorumluluk"
+      ],
+      "baslik": "6.4 Afet Bilinci",
+      "topic_key": "Coğrafya > 6.4 Afet Bilinci"
+    },
+    {
+      "konu_id": "cogr_10_u07_k01",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u07_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Mekân ve Kültür",
+        "Kültürel Miras ve Yayılma"
+      ],
+      "baslik": "7.1 Türk Kültürünün Mekânsal Özellikleri",
+      "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri"
     },
     {
       "konu_id": "din_10_u01_k01",
@@ -358,6 +498,34 @@
       "baslik": "2.2 Namaz ve Oruç"
     },
     {
+      "konu_id": "din_10_u02_k03",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u02_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Hac",
+        "Zekât"
+      ],
+      "baslik": "2.3 Hac ve Zekât",
+      "topic_key": "Din Kültürü > 2.3 Hac ve Zekât"
+    },
+    {
+      "konu_id": "din_10_u02_k04",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u02_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Kur'an'ın Ana Konuları",
+        "İbadet ve Ahlak Mesajları"
+      ],
+      "baslik": "2.4 Kur'an'dan Mesajlar (Ünite 2)",
+      "topic_key": "Din Kültürü > 2.4 Kur'an'dan Mesajlar (Ünite 2)"
+    },
+    {
       "konu_id": "din_10_u03_k01",
       "ders": "Din Kültürü",
       "sinif": 10,
@@ -389,6 +557,20 @@
       "etiketler": [],
       "topic_key": "Din Kültürü > 3.3 Toplumsal Ahlak",
       "baslik": "3.3 Toplumsal Ahlak"
+    },
+    {
+      "konu_id": "din_10_u03_k04",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u03_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Ahlaki İlkeler",
+        "Toplumsal Ahlak"
+      ],
+      "baslik": "3.4 Kur'an'dan Mesajlar (Ünite 3)",
+      "topic_key": "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Ünite 3)"
     },
     {
       "konu_id": "din_10_u04_k01",
@@ -1120,6 +1302,48 @@
       "topic_key": "Kimya > 2.1.5 Çözünürlük"
     },
     {
+      "konu_id": "kimya_10_u02_k06",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Sıcaklık ve Basınç Etkisi",
+        "Çözünen Türü ve Ortak İyon"
+      ],
+      "baslik": "2.1.6 Çözünürlğe Etki Eden Faktörler",
+      "topic_key": "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler"
+    },
+    {
+      "konu_id": "kimya_10_u02_k07",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k07.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Derişimine Göre Sınıflandırma",
+        "İletkenliğine ve Türüne Göre"
+      ],
+      "baslik": "2.1.7 Çözeltilerin Sınıflandırılması",
+      "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması"
+    },
+    {
+      "konu_id": "kimya_10_u02_k08",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k08.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Kaynama ve Donma Noktası",
+        "Buhar Basıncı ve Ozmotik Basınç"
+      ],
+      "baslik": "2.1.8 Koligatif Özellikler",
+      "topic_key": "Kimya > 2.1.8 Koligatif Özellikler"
+    },
+    {
       "konu_id": "kimya_10_u03_k01",
       "ders": "Kimya",
       "sinif": 10,
@@ -1404,6 +1628,20 @@
       "topic_key": "Tarih > 1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme"
     },
     {
+      "konu_id": "tarih_10_u01_k04",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u01_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Bilim ve Eğitim Kurumları",
+        "Sanat ve Kültürel Miras"
+      ],
+      "baslik": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+      "topic_key": "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat"
+    },
+    {
       "konu_id": "tarih_10_u02_k01",
       "ders": "Tarih",
       "sinif": 10,
@@ -1430,6 +1668,20 @@
       ],
       "baslik": "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi",
       "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi"
+    },
+    {
+      "konu_id": "tarih_10_u02_k05",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u02_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "İlim ve Eğitim",
+        "İrfan ve Tasavvuf"
+      ],
+      "baslik": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+      "topic_key": "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği"
     },
     {
       "konu_id": "tarih_10_u03_k01",
@@ -1750,6 +2002,17 @@
       "baslik": "Zarflar (Belirteçler)"
     },
     {
+      "konu_id": "edebiyat_10_u03_k06",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u03_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+      "baslik": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)"
+    },
+    {
       "konu_id": "edebiyat_10_u04_k01",
       "ders": "Türk Dili ve Edebiyatı",
       "sinif": 10,
@@ -1805,17 +2068,6 @@
       "baslik": "Noktalama İşaretleri"
     },
     {
-      "konu_id": "edebiyat_10_u03_k06",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u03_k06.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
-      "baslik": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)"
-    },
-    {
       "konu_id": "edebiyat_10_u04_k06",
       "ders": "Türk Dili ve Edebiyatı",
       "sinif": 10,
@@ -1827,7 +2079,7 @@
       "baslik": "Paragraf"
     }
   ],
-  "flashcard_sayisi": 1776,
+  "flashcard_sayisi": 1956,
   "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
   "kaynak_arşiv_sayisi": 9
 }

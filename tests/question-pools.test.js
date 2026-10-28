@@ -4,7 +4,7 @@ const path = require("path");
 
 const dir = path.join(__dirname, "..", "site", "content", "soru_havuzlari");
 const files = fs.readdirSync(dir).filter(name => name.endsWith(".json") && name !== "index.json");
-assert.strictEqual(files.length, 154, "9 ders havuzunda 154 konu dosyası olmalı");
+assert.strictEqual(files.length, 172, "9 ders havuzunda 172 konu dosyası olmalı");
 
 let questions = 0;
 for (const file of files) {
@@ -21,7 +21,7 @@ for (const file of files) {
 }
 
 const manifest = JSON.parse(fs.readFileSync(path.join(dir, "index.json"), "utf8"));
-assert.strictEqual(manifest.havuz_sayisi, 154);
+assert.strictEqual(manifest.havuz_sayisi, 172);
 assert.strictEqual(manifest.soru_sayisi, questions);
 assert.strictEqual(manifest.flashcard_sayisi, questions);
 console.log(`question-pools: ${files.length} havuz / ${questions} soru kontrolü başarılı`);
