@@ -51,25 +51,43 @@ Aynı sırların kopyaları `vault.decrypted_secrets` içinde:
 | user_id | `auth.users(id)` — silinince abonelikler de gider |
 | endpoint / p256dh / auth | tarayıcının verdiği push adresi ve anahtarlar |
 | aktif | varsayılan true |
-| son_gonderim | TR günü; **günde 1 bildirim** kuralı bununla uygulanır |
+| son_gonderim | son başarılı gönderim günü (bilgi amaçlı) |
 | unique (user_id, endpoint) | aynı cihaz iki kez yazılmaz |
+
+`public.bildirim_log` — **anahtar başına günlük tekilleştirme** (v35.5)
+
+| Kolon | Not |
+|---|---|
+| user_id | `auth.users(id)`, cascade |
+| anahtar | `"2026-10-28:coach"`, `"2026-10-28:exam@1"`, … |
+| gun | TR günü (`date`) |
+| PK | `(user_id, anahtar)` — aynı anahtar ikinci kez yazılamaz |
+| 3 günden eski satırlar | fonksiyon kendisi siler |
+
+RLS açık; `anon`/`authenticated` rollerinin hiçbir yetkisi yok (yalnız service role).
 
 RLS: kullanıcı **yalnız kendi** satırlarını görür/yazar/siler. `anon` rolüne hiçbir yetki verilmez.
 
 ## Zamanlanmış görev
 
 ```
-cron.job: bildirim-gunluk  →  "0 16 * * *"  (TR 19:00)
+cron.job: bildirim-sabah  →  "35 4 * * *"  (TR 07:35)
+cron.job: bildirim-aksam  →  "30 16 * * *" (TR 19:30)
    └─ public.bildirim_cron_tetikle()
         └─ net.http_post → /functions/v1/bildirim-gonder  {mod:"run"}
              x-bildirim-secret: vault'tan
 ```
 
-`mod:"run"`:
+`mod:"run"` (v35.5 — GitHub Actions ile **aynı** kural):
 - `x-bildirim-secret` yoksa/yanlışsa **401**
-- TR 08:00–22:00 dışında hiç göndermez
-- bugün gönderilmiş aboneliği atlar (`son_gonderim`)
+- TR 06:00–22:00 dışında hiç göndermez (sabah cron'u 07:35'te çalışır; eski 08 sınırı sabah bildirimini tamamen engelliyordu)
+- **sabah (TR < 14) → günün TÜM bildirimleri**, akşam (TR ≥ 14) → yalnız **kritik** anahtarlar
+  (`schooleve@`, `schooltoday@`, `exam@`, `:memcrit`)
+- anahtar bugün `bildirim_log`'da varsa **atlar** (iki cihaz aynı bildirimi iki kez almaz)
 - 404/410 dönen aboneliği **siler** (ölü uç nokta birikmez)
+- yanıtta `vardiya` (`sabah`/`aksam`) ve `kontrol` alanları döner — `kontrol`, gömülü
+  `buildMessages`'ın sabit örnek durumla ürettiği anahtarlardır (`["coach","exam@1","daily"]`).
+  Bu alan görünmüyorsa eski sürüm çalışıyor demektir.
 
 `mod:"test"`:
 - `Authorization: Bearer <kullanıcı JWT>` ister, `/auth/v1/user` ile doğrular
@@ -77,21 +95,33 @@ cron.job: bildirim-gunluk  →  "0 16 * * *"  (TR 19:00)
 
 ## Bildirim metni nasıl seçilir?
 
-Sunucu, kullanıcının `app_states.state` kaydına bakar ve **tek** anlamlı mesaj seçer:
+**Tek kaynak: `bildirim-logic.js`.** GitHub Actions göndericisi (`bildirim-gonder.js`) bu
+dosyayı doğrudan çağırır; edge fonksiyonuna ise `scripts/bildirim-derle.js` tarafından
+**gömülür**. İki yol aynı `buildMessages` çıktısını üretir — metinler ayrışamaz.
 
-1. bugün/gecikmiş konu tekrarı → "N konunun tekrar günü"
-2. kısa kontrol zamanı gelmiş konu → "N konuda kısa kontrol hazır (3 soru)"
-3. sınava ≤ 7 gün → "Sınava N gün kaldı"
-4. günlük görev eksik → "Bugünkü hedefin duruyor"
+`buildMessages` bir kullanıcı için **birden çok** mesaj üretir:
 
-Söyleyecek söz yoksa **hiç göndermez** (rahatsız etmez).
+| Anahtar | Ne zaman |
+|---|---|
+| `coach` | her gün — günaydın/iyi akşamlar + sınava kalan gün |
+| `reviews` | tekrar günü gelmiş konu varsa |
+| `urgent` | öncelik listesi doluysa |
+| `memcrit` | hafıza gücü %20 altına düşen konu |
+| `forget` | unutma indeksi yükselen konu |
+| `schooleve@…` / `schooltoday@…` | okul sınavı yarın / bugün |
+| `exam@7` / `exam@3` / `exam@1` | denemeye 7/3/1 gün |
+| `daily` | bugünün olayları + hazırlık özeti |
+
+Hepsi güne özel anahtarla (`2026-10-28:coach`) yazılır; aynı anahtar gün içinde ikinci
+kez gönderilmez. Sabah hepsi gider, akşam yalnız kritikler. Söyleyecek söz yoksa
+**hiç göndermez**.
 
 ## Derleme ve test
 
 ```bash
 node scripts/bildirim-derle.js      # index.ts'i şablon+kriptodan üret
 node scripts/bildirim-derle.js --kontrol   # güncel mi?
-npm run -s test:bildirim            # 37 kontrol: şifreleme, VAPID, yetki kapıları
+npm run -s test:bildirim            # 40 kontrol: şifreleme, VAPID, yetki kapıları, gömülü mantık
 ```
 
 Testler şifreli gövdeyi gerçekten **çözer** (tarayıcının yaptığı işin eşi) ve

@@ -22,7 +22,10 @@
      test → YALNIZ çağıranın kendi aboneliğine (JWT zorunlu)
    ============================================================ */
 
-// ---- KRİPTO (kaynak: scripts/webpush-kripto.mjs — scripts/bildirim-derle.js ile gömülür) ----
+// ---- KRİPTO (kaynak: scripts/webpush-kripto.mjs) ----
+// ---- BİLDİRİM METNİ (kaynak: bildirim-logic.js — GitHub Actions ile AYNI dosya) ----
+// Elle düzenlemeyin: iki göndericinin aynı metni üretmesi için tek kaynaktan gömülür.
+//__MANTIK__
 //__KRIPTO__
 
 const SURL = Deno.env.get("SUPABASE_URL")!;
@@ -138,6 +141,38 @@ async function durumAl(userId: string) {
   return s && typeof s === "object" ? s : null;
 }
 
+// Bildirime dokununca nereye gidilsin?
+function hedefUrl(anahtar: string) {
+  const k = String(anahtar || "");
+  if (k.includes("schooleve@") || k.includes("schooltoday@")) return "./#sayfa=planning";
+  if (k.includes(":reviews") || k.includes(":urgent") || k.includes(":memcrit") || k.includes(":forget")) return "./#sayfa=knowledge";
+  if (k.includes(":coach") || k.includes(":daily")) return "./#sayfa=dashboard";
+  if (k.includes(":exam@")) return "./#sayfa=planning";
+  return "./";
+}
+
+// Bugün hangi anahtarlar gönderildi? (iki cihaz aynı bildirimi iki kez almasın)
+async function gunlukAnahtarlar(userId: string, bugun: string): Promise<Set<string>> {
+  const kume = new Set<string>();
+  try {
+    const y = await fetch(SURL + "/rest/v1/bildirim_log?select=anahtar&user_id=eq." + userId + "&gun=eq." + bugun, { headers: sbB() });
+    const r = await y.json().catch(() => []);
+    (Array.isArray(r) ? r : []).forEach((x: any) => { if (x && x.anahtar) kume.add(String(x.anahtar)); });
+    // 3 günden eski kayıtları temizle (tablo şişmesin)
+    const eski = new Date(Date.now() - 3 * 86400000).toISOString().slice(0, 10);
+    await fetch(SURL + "/rest/v1/bildirim_log?gun=lt." + eski, { method: "DELETE", headers: { ...sbB(), Prefer: "return=minimal" } }).catch(() => {});
+  } catch (_) { /* tablo yoksa bildirim yine gider, tekilleştirme yapılmaz */ }
+  return kume;
+}
+
+async function anahtarYaz(userId: string, anahtar: string, bugun: string) {
+  await fetch(SURL + "/rest/v1/bildirim_log?on_conflict=user_id,anahtar", {
+    method: "POST",
+    headers: { ...sbB(), Prefer: "resolution=ignore-duplicates,return=minimal" },
+    body: JSON.stringify([{ user_id: userId, anahtar, gun: bugun }])
+  }).catch(() => {});
+}
+
 async function isaretle(id: string, bugun: string) {
   await fetch(SURL + "/rest/v1/push_abonelikleri?id=eq." + id, {
     method: "PATCH",
@@ -174,7 +209,7 @@ Deno.serve(async (istek) => {
     // --- TEST: yalnız çağıranın kendi aboneliği ---
     if (mod === "test") {
       const yetki = istek.headers.get("Authorization") || "";
-      if (!/^Bearer\s+/i.test(yetki)) return json({ hata: "oturum gerekli" }, 401);
+      if (!/^Bearer +/i.test(yetki)) return json({ hata: "oturum gerekli" }, 401);
       const uy = await fetch(SURL + "/auth/v1/user", { headers: { apikey: SK, Authorization: yetki } });
       const u = await uy.json().catch(() => ({}));
       if (!u || !u.id) return json({ hata: "oturum doğrulanamadı" }, 401);
@@ -198,31 +233,72 @@ Deno.serve(async (istek) => {
     const gelen = istek.headers.get("x-bildirim-secret") || "";
     if (!SECRET || gelen !== SECRET) return json({ hata: "yetkisiz (x-bildirim-secret)" }, 401);
 
-    // Sessiz saat: TR 09:00–22:00 dışında gönderme (cron zaten 19:00'da çalışır)
+    // Sessiz saat: TR 06:00–22:00 dışında gönderme.
+    // NOT: sabah vardiyası cron'u 04:35 UTC = 07:35 TR'de çalışır; eski alt sınır
+    // (08) yüzünden SABAH BİLDİRİMİ HİÇ GİTMİYORDU. Sınır 06'ya çekildi.
     const trSaat = (new Date().getUTCHours() + 3) % 24;
-    if (trSaat < 8 || trSaat >= 22) return json({ mod, atlandi: "sessiz saat", trSaat });
+    if (trSaat < 6 || trSaat >= 22) return json({ mod, atlandi: "sessiz saat", trSaat });
+
+    // SABAH / AKŞAM: GitHub Actions sürümüyle AYNI kural.
+    //   sabah (TR < 14) → günün TÜM bildirimleri
+    //   akşam (TR ≥ 14) → yalnız kritikler (okul sınavı, sınav geri sayımı, hafıza kritik)
+    const aksam = trSaat >= 14;
+    const KRITIK = ["schooleve@", "schooltoday@", "exam@", ":memcrit"];
+    const kritikMi = (k: string) => KRITIK.some((p) => String(k || "").includes(p));
+
+    // TANILAMA: gömülü bildirim mantığı (bildirim-logic.js) gerçekten çalışıyor mu?
+    // Sabit bir örnek durumla buildMessages koşar ve yalnız ANAHTARLARI döndürür.
+    // Sır gerektirir, kişisel veri içermez. Beklenen: ["coach","exam@1","daily"].
+    let kontrol: string[] = [];
+    try {
+      kontrol = buildMessages({
+        user: { name: "Test" },
+        plan: { rhythm: "Akşam", targetDate: new Date(Date.now() + 86400000).toISOString().slice(0, 10) },
+        exams: [], questions: [], memory: {}, bkt_state: {}
+      }, new Date()).map((m: any) => String(m.key).split(":").pop());
+    } catch (e) { kontrol = ["HATA: " + String(e).slice(0, 80)]; }
 
     const abonelikler_ = await abonelikler("");
     const durumlar = new Map<string, any>();
+    const gonderilmis = new Map<string, Set<string>>();
     let gonderilen = 0;
     const hatalar: any[] = [];
+
     for (const a of abonelikler_) {
-      if (a.son_gonderim === bugun) continue;              // günde en fazla 1 bildirim
       if (!aboneGecerliMi(a)) { await sil(a.id); continue; }
       // TEK kullanıcının bozuk verisi TÜM listeyi durdurmasın
       try {
         if (!durumlar.has(a.user_id)) durumlar.set(a.user_id, await durumAl(a.user_id));
-        const mesaj = mesajSec(durumlar.get(a.user_id), bugun);
-        if (!mesaj) continue;                               // söyleyecek sözü yoksa rahatsız etme
-        const r = await gonder(a, mesaj);
-        if (r.kod === 201) { gonderilen++; await isaretle(a.id, bugun); }
-        else if (r.kod === 404 || r.kod === 410) await sil(a.id);   // abonelik ölmüş
-        else hatalar.push({ id: a.id, ...r });
+        if (!gonderilmis.has(a.user_id)) gonderilmis.set(a.user_id, await gunlukAnahtarlar(a.user_id, bugun));
+        const st = durumlar.get(a.user_id);
+        if (!st) continue;
+        let mesajlar: any[] = [];
+        try { mesajlar = buildMessages(st, new Date()); } catch (e) { continue; }
+        const bugunKumesi = gonderilmis.get(a.user_id)!;
+        for (const m of mesajlar) {
+          const anahtar = String((m && m.key) || "");
+          if (!anahtar || bugunKumesi.has(anahtar)) continue;   // bugün zaten gitti
+          if (aksam && !kritikMi(anahtar)) continue;            // akşam yalnız kritik
+          const mesaj = {
+            title: String(m.title || "Analiz Merkezi"),
+            body: String(m.body || ""),
+            url: hedefUrl(anahtar),
+            kind: anahtar.split(":").pop()
+          };
+          const r = await gonder(a, mesaj);
+          if (r.kod === 201) {
+            gonderilen++;
+            bugunKumesi.add(anahtar);
+            await anahtarYaz(a.user_id, anahtar, bugun);
+          } else if (r.kod === 404 || r.kod === 410) { await sil(a.id); break; }
+          else hatalar.push({ id: a.id, anahtar, ...r });
+        }
+        if (gonderilen) await isaretle(a.id, bugun);
       } catch (e) {
         hatalar.push({ id: a.id, hata: String(e).slice(0, 160) });
       }
     }
-    return json({ mod, abonelik: abonelikler_.length, gonderilen, hatalar: hatalar.slice(0, 10), gun: bugun });
+    return json({ mod, vardiya: aksam ? "aksam" : "sabah", kontrol, abonelik: abonelikler_.length, gonderilen, hatalar: hatalar.slice(0, 10), gun: bugun });
   } catch (e) {
     return json({ hata: String(e) }, 500);
   }

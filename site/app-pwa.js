@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.4-bildirim-video";
+const PWA_SURUM = "v35.5-bildirim-video";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

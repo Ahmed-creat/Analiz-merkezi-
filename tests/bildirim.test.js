@@ -121,7 +121,11 @@ function ok(ad, kosul, ek) {
   ok("mod:test yalnız çağıranın aboneliğini okuyor", /abonelikler\("&user_id=eq\." \+ u\.id\)/.test(surucu));
   ok("yalnız test|run modları var", /geçersiz mod — test \| run/.test(surucu));
   ok("sessiz saat koruması var", /sessiz saat/.test(surucu));
-  ok("günde 1 bildirim (son_gonderim)", /son_gonderim === bugun/.test(surucu));
+  // v35.4: tek "günün bildirimi" yerine ANAHTAR başına günlük tekilleştirme.
+  ok("günlük tekilleştirme bildirim_log anahtarlarıyla", /gunlukAnahtarlar\(/.test(surucu) && /bildirim_log\?select=anahtar/.test(surucu));
+  ok("gönderilen anahtar kaydediliyor (tekrar atmaz)", /await anahtarYaz\(/.test(surucu) && /bildirim_log\?on_conflict=user_id,anahtar/.test(surucu));
+  ok("sabah tüm bildirimler, akşam yalnız kritik", /vardiya: aksam \? "aksam" : "sabah"/.test(surucu) && /KRITIK/.test(surucu));
+  ok("bildirim metinleri gömülü tek kaynaktan (buildMessages)", /function buildMessages\s*\(/.test(surucu));
   ok("ölü abonelikler siliniyor (404/410)", /410/.test(surucu) && /await sil\(a\.id\)/.test(surucu));
   ok("service role anahtarı tarayıcıya sızmıyor", !/service_role/.test(fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8")));
   ok("VAPID özel anahtarı depoda yok",

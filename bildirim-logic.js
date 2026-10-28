@@ -29,7 +29,7 @@ const RHYTHMS = [
 ];
 
 function parseDay(str) {
-  if (!str || typeof str !== "string" || !/^\d{4}-\d{2}-\d{2}/.test(str)) return null;
+  if (!str || typeof str !== "string" || !/^[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(str)) return null;
   const d = new Date(str.slice(0, 10) + "T00:00:00");
   return isNaN(d.getTime()) ? null : d;
 }

@@ -23,6 +23,9 @@ const KOK = path.join(__dirname, "..");
 const SAR = path.join(KOK, "site", "..", "supabase", "functions", "bildirim-gonder");
 const SABLON = path.join(SAR, "sablon.ts");
 const KRIPTO = path.join(KOK, "scripts", "webpush-kripto.mjs");
+// Bildirim METNİ mantığı: uygulamanın/GitHub Actions'ın kullandığı dosyanın
+// AYNISI. Böylece iki gönderici farklı bildirim üretmez.
+const MANTIK = path.join(KOK, "bildirim-logic.js");
 const CIKTI = path.join(SAR, "index.ts");
 
 function kriptoGom() {
@@ -35,14 +38,31 @@ function kriptoGom() {
   return govde.trim() + "\n";
 }
 
+function mantikGom() {
+  const kaynak = fs.readFileSync(MANTIK, "utf8");
+  // CommonJS dışa aktarımını at; fonksiyonlar üst düzeyde kalsın.
+  let govde = kaynak.replace(/^module\.exports[\s\S]*$/m, "").trim();
+  // GÖMÜLÜ dosya küçük kalsın: yalnızca TAMAMEN yorum olan satırları ve boş
+  // satırları at (satır içi yorumlara dokunmuyoruz — kod bozulmasın).
+  govde = govde.split("\n")
+    .filter((satir) => {
+      const t = satir.trim();
+      return t !== "" && !t.startsWith("//");
+    })
+    .join("\n");
+  if (!/function buildMessages\s*\(/.test(govde)) throw new Error("bildirim-logic.js içinde buildMessages yok");
+  return govde + "\n";
+}
+
 function uret() {
   const sablon = fs.readFileSync(SABLON, "utf8");
   if (!sablon.includes("//__KRIPTO__")) throw new Error("şablonda //__KRIPTO__ işareti yok");
-  const cikti =
+  if (!sablon.includes("//__MANTIK__")) throw new Error("şablonda //__MANTIK__ işareti yok");
+  let cikti =
     "// ⚠ ÜRETİLMİŞ DOSYA — elle düzenlemeyin.\n" +
-    "// Kaynak: supabase/functions/bildirim-gonder/sablon.ts + scripts/webpush-kripto.mjs\n" +
+    "// Kaynak: supabase/functions/bildirim-gonder/sablon.ts + scripts/webpush-kripto.mjs + bildirim-logic.js\n" +
     "// Derle: node scripts/bildirim-derle.js\n\n" +
-    sablon.replace("//__KRIPTO__", kriptoGom());
+    sablon.replace("//__KRIPTO__", kriptoGom()).replace("//__MANTIK__", mantikGom());
   return cikti;
 }
 

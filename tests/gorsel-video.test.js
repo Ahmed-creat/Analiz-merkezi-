@@ -92,12 +92,16 @@ esit("boş → boş", VC.normalize(""), "");
 ok("hücreden bağlantı çıkar", VC.htmlDenCikar('<td><a href="/app2/cozum/9">v</a></td>').indexOf("okulizyon.com") > 0);
 esit("hücrede bağlantı yoksa boş", VC.htmlDenCikar("<td>—</td>"), "");
 
-// Okulizyon videoyu doğrudan adresle vermiyor → "Okulizyon'da aç" mantığı
+// v35.4: Okulizyon sınav sayfası DÜĞME OLMAZ — oturum istiyor ve öğrenciyi
+// Okulizyon GİRİŞ ekranına atıyordu ("videoda hâlâ giriş sayfası açılıyor").
 const vA = VC.izleLink({ video: "https://youtu.be/x" });
-ok("doğrudan video → 'İzle'", vA && vA.etiket === "İzle", JSON.stringify(vA));
+ok("doğrudan video → 'Videoyu aç'", vA && vA.etiket === "Videoyu aç", JSON.stringify(vA));
 const vB = VC.izleLink({ videoVar: true, okulizyonUrl: "https://okulizyon.com/app2/?pg=yks&sid=1" });
-ok("düğme + sınav adresi → 'Okulizyon'da aç'", vB && vB.etiket === "Okulizyon'da aç", JSON.stringify(vB));
+esit("Okulizyon sınav adresi düğme OLMAZ (giriş sayfasına atıyordu)", vB, null);
+esit("okulizyon.com 'video' alanı da dış bağlantı olmaz", VC.izleLink({ video: "https://okulizyon.com/v/9" }), null);
 esit("ne video ne adres → bağlantı yok (uydurma yok)", VC.izleLink({ videoVar: true }), null);
+ok("doğrudan video tanıyıcı YouTube'u bilir", VC.dogrudanVideoMu("https://www.youtube.com/watch?v=1") === true);
+ok("doğrudan video tanıyıcı okulizyonu reddeder", VC.dogrudanVideoMu("https://okulizyon.com/x") === false);
 
 // ---------- 5) "Çözümü izle" akışı ----------
 console.log("\n== 5) Yapamadığın sorular ==");

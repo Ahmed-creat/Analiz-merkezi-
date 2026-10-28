@@ -17,13 +17,15 @@
    ============================================================ */
 
 const enc = new TextEncoder();
+const NUL = String.fromCharCode(0); // protokol ayırıcısı (kaçış yazmadan)
 const dec = new TextDecoder();
 
 export function b64url(bytes) {
   let s = "";
   const b = new Uint8Array(bytes);
   for (let i = 0; i < b.length; i++) s += String.fromCharCode(b[i]);
-  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  // Kaçışsız (edge fonksiyonuna gömülünce okunur kalsın): + → -, / → _
+  return btoa(s).split("+").join("-").split("/").join("_").replace(/=+$/, "");
 }
 
 export function b64urlCoz(s) {
@@ -78,16 +80,16 @@ export async function sifrele(abone, metin, rs = 4096) {
     { name: "ECDH", public: uaKey }, asCift.privateKey, 256
   ));
 
-  // IKM = HKDF(auth_secret, ecdh, "WebPush: info\0" || ua_public || as_public, 32)
-  const info = birlestir(enc.encode("WebPush: info\0"), uaPublic, asPublic);
+  // IKM = HKDF(auth_secret, ecdh, "WebPush: info" + NUL || ua_public || as_public, 32)
+  const info = birlestir(enc.encode("WebPush: info" + NUL), uaPublic, asPublic);
   const ikmAnahtar = await crypto.subtle.importKey("raw", ecdh, "HKDF", false, ["deriveBits"]);
   const ikm = new Uint8Array(await crypto.subtle.deriveBits(
     { name: "HKDF", hash: "SHA-256", salt: authSecret, info }, ikmAnahtar, 256
   ));
 
   const tuz = crypto.getRandomValues(new Uint8Array(16));
-  const cek = await hkdf(ikm, tuz, "Content-Encoding: aes128gcm\0", 16);
-  const nonce = await hkdf(ikm, tuz, "Content-Encoding: nonce\0", 12);
+  const cek = await hkdf(ikm, tuz, "Content-Encoding: aes128gcm" + NUL, 16);
+  const nonce = await hkdf(ikm, tuz, "Content-Encoding: nonce" + NUL, 12);
 
   // Son kayıt: düz metin + 0x02 ayırıcı
   const duz = birlestir(enc.encode(metin), new Uint8Array([2]));
@@ -118,14 +120,14 @@ export async function coz(aboneOzelJwk, abone, govde) {
 
   const asKey = await disAnahtar(asPublic, []);
   const ecdh = new Uint8Array(await crypto.subtle.deriveBits({ name: "ECDH", public: asKey }, uaKey, 256));
-  const info = birlestir(enc.encode("WebPush: info\0"), b64urlCoz(abone.p256dh), asPublic);
+  const info = birlestir(enc.encode("WebPush: info" + NUL), b64urlCoz(abone.p256dh), asPublic);
   const ikmAnahtar = await crypto.subtle.importKey("raw", ecdh, "HKDF", false, ["deriveBits"]);
   const ikm = new Uint8Array(await crypto.subtle.deriveBits(
     { name: "HKDF", hash: "SHA-256", salt: b64urlCoz(abone.auth), info }, ikmAnahtar, 256
   ));
 
-  const cek = await hkdf(ikm, tuz, "Content-Encoding: aes128gcm\0", 16);
-  const nonce = await hkdf(ikm, tuz, "Content-Encoding: nonce\0", 12);
+  const cek = await hkdf(ikm, tuz, "Content-Encoding: aes128gcm" + NUL, 16);
+  const nonce = await hkdf(ikm, tuz, "Content-Encoding: nonce" + NUL, 12);
   const aes = await crypto.subtle.importKey("raw", cek, "AES-GCM", false, ["decrypt"]);
   const duz = new Uint8Array(await crypto.subtle.decrypt({ name: "AES-GCM", iv: nonce }, aes, sifreli));
 

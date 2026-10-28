@@ -2211,42 +2211,131 @@ function notifyBrowser(title, body) {
   } catch (e) { /* file:// veya izin yoksa sessizce atla */ }
 }
 
+// ------------------------------------------------------------
+// BİLDİRİM İZNİ — "isteyemiyorum" şikâyeti için tam teşhis
+// Neden istenemiyor olabilir?
+//   1) iPhone/iPad Safari'de SEKME olarak açık  → iOS izin VERMEZ
+//      (yalnız "Ana Ekrana Ekle" ile kurulu uygulamada verir)
+//   2) Bildirim daha önce reddedilmiş           → tarayıcı bir daha sormaz
+//   3) Tarayıcı Notification API'sini sunmuyor  → (gizli sekme, eski tarayıcı)
+//   4) Kullanıcı dokunuşu kaybolmuş             → requestPermission bir
+//      "user gesture" içinde çağrılmalı; bu yüzden await'siz çağırıyoruz
+// ------------------------------------------------------------
+function bildirimTeshis() {
+  const ua = String(navigator.userAgent || "");
+  const ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const kurulu = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
+    navigator.standalone === true;
+  if (typeof Notification === "undefined") {
+    return {
+      kod: "api-yok",
+      metin: ios
+        ? "iPhone/iPad'de bildirim yalnız uygulama \"Ana Ekrana Ekle\" ile kurulduğunda çalışır. Safari'de sekmeyken iOS izin vermiyor (Apple kuralı)."
+        : "Bu tarayıcı bildirim API'sini sunmuyor (gizli sekme olabilir). Normal sekmede açıp tekrar dene.",
+      nasil: ios ? "Paylaş → Ana Ekrana Ekle → uygulamayı oradan aç." : "Gizli sekmeyi kapat, normal sekmede aç."
+    };
+  }
+  if (ios && !kurulu) {
+    return {
+      kod: "ios-sekme",
+      metin: "iPhone/iPad'de Safari sekmesindeyken iOS bildirim izni vermiyor. Uygulamayı Ana Ekrana ekle, oradan aç.",
+      nasil: "Safari → Paylaş → Ana Ekrana Ekle → ana ekrandaki simgeden aç → Ayarlar → Bildirim İzni İste."
+    };
+  }
+  if (Notification.permission === "denied") {
+    return {
+      kod: "engelli",
+      metin: "Bu site için bildirimler tarayıcıda ENGELLENMİŞ. Tarayıcı bir daha sormaz; izni elle açman gerekir.",
+      nasil: "Chrome/Edge: adres çubuğundaki kilit/ayar simgesi → Bildirimler → İzin ver → sayfayı yenile. iPhone: Ayarlar → Bildirimler → (uygulama) → İzin Ver."
+    };
+  }
+  return { kod: "hazir", metin: "", nasil: "" };
+}
+
 function requestNotifPermission() {
-  if (typeof Notification === "undefined") { toast("Bu tarayıcı bildirimleri desteklemiyor.", "warning"); return; }
-  // İzin kadar ÖNEMLİSİ: abonelik. İzin vermek tek başına yetmez; uç nokta
-  // sunucuya yazılmazsa uygulama kapalıyken bildirim gelmez.
-  const bitir = async function (p) {
+  const t = bildirimTeshis();
+  if (t.kod !== "hazir") {
+    // Sessiz kalmak yok: neden olmadığını ve nasıl düzeltileceğini yaz.
+    if (typeof toast === "function") toast(t.metin, "warning");
+    const el = document.getElementById("bildirim-durum");
+    if (el) el.innerHTML = "<b>" + t.metin + "</b><br>" + t.nasil;
+    return;
+  }
+  if (typeof Notification.requestPermission !== "function") {
+    const mesaj = "Bu tarayıcı izin penceresini açamıyor. Uygulamayı Ana Ekrana ekleyip oradan açmayı dene.";
+    if (typeof toast === "function") toast(mesaj, "warning");
+    const el2 = document.getElementById("bildirim-durum");
+    if (el2) el2.textContent = mesaj;
+    return;
+  }
+
+  // İzin akışı: izin + push aboneliği birlikte yürür.
+  const bitir = function (p) {
     state.settings.notifPermission = p; saveState();
     updateNotifPermLabel();
     if (p !== "granted") {
-      toast("Bildirim izni verilmedi; uygulama içi bildirimler devam edecek.", "warning");
+      const m = p === "denied"
+        ? "Bildirim izni verilmedi. Tarayıcı ayarlarından izin verebilirsin (kilit simgesi → Bildirimler)."
+        : "Bildirim izni penceresi kapandı. Tekrar denemek için bu düğmeye bas.";
+      if (typeof toast === "function") toast(m, "warning");
+      const el = document.getElementById("bildirim-durum");
+      if (el) el.textContent = m;
       return;
     }
-    notifyBrowser("Analiz Merkezi", "Bildirimler açıldı. Tekrar döngün artık takipte!");
-    if (window.AmPush) {
-      const r = await window.AmPush.izinIste();
-      updateBildirimDurum();
-      if (r && r.ok) toast("Arka plan bildirimi açık — uygulama kapalıyken de haber vereceğim.", "success");
-      else toast((r && r.neden) || "Arka plan bildirimi kurulamadı.", "warning");
-    } else {
-      toast("Bildirim izni verildi. Tekrar saatlerinde haber vereceğim.", "success");
+    // Burada izin var. Sıra abonelikte: abonelik yoksa uygulama kapalıyken
+    // bildirim GELMEZ. Kullanıcıya bunu ayrı ayrı söyle.
+    if (!window.AmPush) {
+      const m = "İzin verildi ama bildirim modülü yüklenmedi (push-bildirim.js). Sayfayı yenile.";
+      if (typeof toast === "function") toast(m, "warning");
+      return;
     }
+    window.AmPush.izinIste().then(function (r) {
+      updateBildirimDurum();
+      if (r && r.ok) { if (typeof toast === "function") toast("Arka plan bildirimi açık — uygulama kapalıyken de haber vereceğim.", "success"); }
+      else if (typeof toast === "function") toast((r && r.neden) || "Abonelik kurulamadı.", "warning");
+    }).catch(function (e) {
+      updateBildirimDurum();
+      if (typeof toast === "function") toast("Abonelik kurulamadı: " + String((e && e.message) || e), "warning");
+    });
   };
-  if (Notification.permission === "granted") { bitir("granted"); return; }
-  Notification.requestPermission().then(bitir);
+
+  // ÖNEMLİ: requestPermission'ı await'siz, dokunuşun İÇİNDE çağır.
+  // (await sonrası çağrılırsa Chrome/Safari "kullanıcı hareketi yok" der.)
+  let sonuc;
+  try {
+    sonuc = Notification.requestPermission(bitir); // eski tarayıcı: callback
+  } catch (e) {
+    // bazı tarayıcılar argümanı kabul etmez → söz (promise) biçimini dene
+    sonuc = Notification.requestPermission();
+  }
+  if (sonuc && typeof sonuc.then === "function") sonuc.then(bitir).catch(function (e) {
+    const m = "İzin istenemedi: " + String((e && (e.name || e.message)) || e);
+    if (typeof toast === "function") toast(m, "warning");
+    const el = document.getElementById("bildirim-durum");
+    if (el) el.textContent = m;
+  });
 }
 
-// Ayarlar → BİLDİRİM durum satırı
+// Ayarlar → BİLDİRİM durum satırı (her açılışta tazelenir)
 function updateBildirimDurum() {
   const el = document.getElementById("bildirim-durum");
-  if (!el || !window.AmPush) return;
+  if (!el) return;
+  const t = bildirimTeshis();
+  if (t.kod !== "hazir") {
+    el.innerHTML = "<b>" + t.metin + "</b><br>" + t.nasil;
+    return;
+  }
+  if (!window.AmPush) {
+    el.textContent = "Bildirim modülü yüklenmedi — sayfayı yenile.";
+    return;
+  }
   window.AmPush.durum().then(function (d) {
     let m;
-    if (!d.destek) m = "Bu tarayıcı arka plan bildirimini desteklemiyor (iPhone'da Ana Ekrana Ekle gerekir).";
-    else if (d.izin === "denied") m = "Bildirim izni reddedilmiş — tarayıcı ayarlarından izin vermen gerekir.";
+    if (!d.destek) m = "Bu tarayıcı arka plan bildirimini desteklemiyor (iPhone'da \"Ana Ekrana Ekle\" gerekir).";
+    else if (d.izin === "denied") m = "Bildirimler tarayıcıda engellenmiş — kilit simgesi → Bildirimler → İzin ver.";
     else if (d.abone && d.kayitli) m = "✓ Arka plan bildirimi açık · günde en fazla 1 · 19:00";
-    else if (d.abone) m = "Abonelik var, hesaba bağlanması gerekiyor — Ayarlar'dan bildirimleri kapatıp yeniden aç.";
-    else if (d.izin === "granted") m = "İzin var ama abonelik yok — 'Test bildirimi' ile kur.";
+    else if (d.abone) m = "Abonelik var ama hesaba yazılamadı — giriş yaptığından emin ol, sonra düğmeye tekrar bas.";
+    else if (d.izin === "granted") m = "İzin var, abonelik yok — \"Bildirim İzni İste\" düğmesine bas.";
     else m = "Uygulama kapalıyken de bildirim almak için bildirimleri aç. Günde en fazla 1 bildirim (19:00).";
     el.textContent = m;
   }).catch(function () {});
@@ -3102,9 +3191,11 @@ function renderExams(container) {
         html += '<span class="tabular text-muted" style="min-width:24px;">#' + esc(String(x.qno || "")) + '</span>';
         html += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="' + attr(x.kazanim || x.konu) + '"><b>' + esc(x.ders) + '</b> · ' + esc(x.konu || x.kazanim) + '</span>';
         html += '<span class="badge ' + (x.durum === "boş" ? "badge-warn" : "badge-kritik") + '" style="flex-shrink:0;">' + esc(x.durum) + '</span>';
+        // Okulizyon sınav sayfasına çıkış YOK (giriş sayfasına atıyordu).
+        // Yalnız gerçek video varsa açılır; yoksa konunun kendisine gidilir.
         const lk = (window.VC && typeof window.VC.izleLink === "function") ? window.VC.izleLink(x) : null;
-        if (lk) html += '<a href="' + attr(lk.href) + '" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="min-height:38px;flex-shrink:0;">' + icon("play", 12) + " " + esc(lk.etiket) + "</a>";
-        else if (x.cozum) html += '<span class="text-xs text-muted" style="max-width:40%;">' + esc(String(x.cozum).slice(0, 60)) + "</span>";
+        if (lk) html += '<a href="' + attr(lk.href) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="min-height:38px;flex-shrink:0;">' + icon("play", 12) + " " + esc(lk.etiket) + "</a>";
+        html += '<button class="btn btn-sm btn-ghost" data-act="konuGit" data-ders="' + attr(x.ders) + '" data-konu="' + attr(x.konu || x.kazanim || "") + '" style="min-height:38px;flex-shrink:0;">' + icon("book-open", 12) + " Konuyu aç</button>";
         html += '</div>';
       });
       html += "</div>";
@@ -3124,6 +3215,35 @@ function renderExams(container) {
 // Denemelerim içindeki ilgili deneme + ders + soru satırına atlar ve satırı
 // vurgular. Böylece akış: Bilgi Bankası → (tek dokunuş) → soru satırı → video.
 // ============================================================
+// Sonuç ekranı → Bilgi Bankası'ndaki aynı konu (ders + konu adı ile)
+function konuGit(ders, konu) {
+  const key = String(ders || "") + " > " + String(konu || "");
+  navigate("knowledge");
+  setTimeout(function () {
+    try {
+      if (typeof expandedLessons === "object" && ders) {
+        expandedLessons[ders] = true;
+        if (typeof renderKnowledge === "function") renderKnowledge(document.getElementById("main-content"));
+        if (window.lucide && lucide.createIcons) lucide.createIcons();
+      }
+      setTimeout(function () {
+        let dugme = document.querySelector('[data-act="selectTopic"][data-topic="' + CSS.escape(key) + '"]');
+        if (!dugme) {
+          const hepsi = document.querySelectorAll('[data-act="selectTopic"][data-topic]');
+          const hedefKonu = String(konu || "").trim().toLowerCase();
+          for (let i = 0; i < hepsi.length; i++) {
+            const t = String(hepsi[i].dataset.topic || "");
+            const parca = t.split(" > ");
+            if (parca.length > 1 && parca[0].trim() === ders && parca.slice(1).join(" > ").trim().toLowerCase() === hedefKonu) { dugme = hepsi[i]; break; }
+          }
+        }
+        if (dugme) dugme.click();
+        else if (typeof toast === "function") toast("Konu müfredatta bulunamadı — Bilgi Bankası'ndan seçebilirsin.", "warning");
+      }, 160);
+    } catch (e) { console.warn("Konuya gidilemedi:", e); }
+  }, 60);
+}
+
 function videoGit(examIdx, ders, qno) {
   const i = Number(examIdx);
   if (Number.isInteger(i) && i >= 0 && i < state.exams.length) examDetailIdx = i;
@@ -4071,41 +4191,34 @@ function videoAdimHtml(topicKey) {
   const liste = (VC && typeof VC.izlenecekler === "function") ? VC.izlenecekler(state, topicKey) : [];
   if (!liste.length) {
     // Elde bağlantı yokken "izle" demeyiz: ne yapılacağını açıkça yazarız.
-    return '<div class="text-xs text-muted" style="margin-top:8px;line-height:1.55;">Bu konu için <b>henüz çözüm bağlantısı yok</b>. Okulizyon\'dan sınav sonucu çekilip Denemelerim\'e işlendiğinde, yapamadığın sorular burada listelenir ve Okulizyon\'daki çözüm düğmesine götürür.</div>';
+    return '<div class="text-xs text-muted" style="margin-top:8px;line-height:1.55;">Bu konu için <b>henüz çözüm bağlantısı yok</b>. Okulizyon\'dan sınav sonucu çekilip Denemelerim\'e işlendiğinde, yapamadığın sorular burada listelenir ve <b>tek dokunuşla kendi sonuç ekranındaki</b> ilgili soruya götürür.</div>';
   }
   const videolu = liste.filter(x => x.video || x.videoVar);
-  const metinli = liste.filter(x => !x.video && x.cozum);
   let h = '<div style="margin-top:8px;border:1px solid var(--border-card,#E8EEF8);border-radius:10px;padding:9px 10px;background:var(--bg-canvas,#F6F8FC);">';
-  h += '<div class="text-xs" style="font-weight:700;margin-bottom:5px;">' + liste.length + ' yanlış/boş soru · ' + (videolu.length ? videolu.length + ' video çözüm' : 'video çözüm henüz yok') + '</div>';
+  h += '<div class="text-xs" style="font-weight:700;margin-bottom:5px;">' + liste.length + ' yanlış/boş soru · ' + (videolu.length ? videolu.length + ' videolu' : 'video çözüm henüz yok') + '</div>';
   liste.slice(0, 8).forEach(x => {
-    h += '<div style="display:flex;gap:8px;align-items:center;padding:5px 0;border-top:1px solid var(--border-card,#E8EEF8);font-size:12px;line-height:1.35;">';
+    const gidebilir = Number.isInteger(x.denemeIdx);
+    // SATIRIN TAMAMI tıklanabilir: kullanıcı "videoya tıklayınca" diyor;
+    // küçük bir düğmeyi tutturmak zorunda kalmasın.
+    const ortakVeri = gidebilir
+      ? ' data-act="videoGit" data-exam="' + attr(String(x.denemeIdx)) + '" data-ders="' + attr(x.ders) + '" data-soru="' + attr(String(x.qno || "")) + '" role="button" tabindex="0"'
+      : "";
+    h += '<div' + ortakVeri + ' style="display:flex;gap:8px;align-items:center;padding:6px 0;border-top:1px solid var(--border-card,#E8EEF8);font-size:12px;line-height:1.35;' + (gidebilir ? "cursor:pointer;" : "") + '">';
     h += '<span class="tabular text-muted" style="min-width:22px;">#' + esc(String(x.qno || "")) + '</span>';
     h += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="' + attr(x.kazanim || x.konu) + '">' + esc(x.konu || x.kazanim || "Soru") + ' <span class="text-muted">(' + esc(x.durum) + ')</span></span>';
-    // ÖNCE BİZİM SONUÇ EKRANI: aynı denemenin ders dökümüne atlar, satırı
-    // vurgular. Video çözüm oradan tek dokunuşla açılır (kullanıcı: "videoya
-    // tıklayınca doğrudan bizim sonuç ekranına ve o dersin konumuna gidelim").
-    if (Number.isInteger(x.denemeIdx)) {
-      h += '<button class="btn btn-sm btn-ghost" data-act="videoGit" data-exam="' + attr(String(x.denemeIdx)) + '" data-ders="' + attr(x.ders) + '" data-soru="' + attr(String(x.qno || "")) + '" style="min-height:38px;flex-shrink:0;">' + icon("corner-down-right", 12) + " Sonuçta gör</button>";
+    // BİRİNCİL EYLEM: bizim sonuç ekranı (Okulizyon'a çıkış YOK).
+    if (gidebilir) {
+      h += '<span class="btn btn-sm btn-primary" style="min-height:38px;flex-shrink:0;pointer-events:none;">' + icon("corner-down-right", 12) + " Sonuçta gör</span>";
     }
+    // İkincil: yalnızca GERÇEKTEN oynatılabilen video (YouTube/Vimeo/Drive).
+    // Okulizyon sınav sayfası bağlantısı ARTIK DÜĞME DEĞİL — oturum istiyor
+    // ve öğrenciyi Okulizyon GİRİŞ ekranına atıyordu.
     const lk = (VC && typeof VC.izleLink === "function") ? VC.izleLink(x) : null;
-    if (lk) h += '<a href="' + attr(lk.href) + '" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="min-height:38px;flex-shrink:0;">' + icon("play", 12) + " " + esc(lk.etiket) + "</a>";
-    else if (x.cozum) h += '<span class="text-xs text-muted" style="max-width:44%;">' + esc(String(x.cozum).slice(0, 70)) + "</span>";
+    if (lk) h += '<a href="' + attr(lk.href) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="min-height:38px;flex-shrink:0;" onclick="event.stopPropagation()">' + icon("play", 12) + " " + esc(lk.etiket) + "</a>";
     h += '</div>';
   });
   if (liste.length > 8) h += '<div class="text-xs text-muted" style="margin-top:5px;">+ ' + (liste.length - 8) + ' soru daha — Denemelerim → deneme detayında tamamı var.</div>';
-  // Okulizyon videoyu tek tek adresle vermiyor; sınav sayfasındaki "Çözüm
-  // videosu" düğmesine götürüyoruz. Bağlantı yoksa düğme çizilmez.
-  const sinavlar = [];
-  liste.forEach(x => { if (x.okulizyonUrl && !sinavlar.some(y => y.url === x.okulizyonUrl)) sinavlar.push({ url: x.okulizyonUrl, ad: x.deneme, tarih: x.tarih }); });
-  if (sinavlar.length) {
-    h += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;">';
-    sinavlar.slice(0, 3).forEach(sn => {
-      h += '<a href="' + attr(sn.url) + '" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="min-height:40px;">' + icon("play", 12) + " " + esc(String(sn.ad || "Sınav").slice(0, 26)) + " · çözümler</a>";
-    });
-    h += "</div>";
-  } else if (!videolu.length) {
-    h += '<div class="text-xs text-muted" style="margin-top:6px;line-height:1.45;">Bu sınavın Okulizyon sayfası kayıtlı değil; sınavı bir kez daha çekince bağlantı gelir.</div>';
-  }
+  h += '<div class="text-xs text-muted" style="margin-top:7px;line-height:1.45;">Satıra dokun → uygulamanın kendi sonuç ekranında o dersin/sorunun satırına gider.</div>';
   h += "</div>";
   return h;
 }
@@ -4602,6 +4715,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (idx < 0 || idx >= state.exams.length) idx = state.exams.length - 1;
         if (idx >= 0) setTimeout(function () { videoGit(idx, ders, soru); }, 300);
       }
+      // Bildirim → sayfa: "#sayfa=knowledge|planning|dashboard"
+      const sayfa = q.get("sayfa");
+      if (sayfa) {
+        const izinli = ["dashboard", "tasks", "exams", "tracking", "library", "planning", "knowledge", "questionbank"];
+        if (izinli.indexOf(sayfa) >= 0) setTimeout(function () { try { navigate(sayfa); } catch (e) {} }, 120);
+      }
       // Bildirim → konu: "#konu=Ders > Konu" → Bilgi Bankası'nda o konu açılır.
       // Müfredat ağacında konu düğmeleri yalnız ders açıkken çizilir; bu yüzden
       // önce dersi açıp yeniden çiziyoruz, sonra konuyu seçiyoruz.
@@ -4643,6 +4762,14 @@ document.addEventListener("DOMContentLoaded", function () {
   initSidebarPreference();
 
   // Olay delegasyonu — tüm tıklamalar buradan geçer
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const hedef = e.target.closest('[data-act="videoGit"]');
+    if (!hedef) return;
+    e.preventDefault();
+    videoGit(hedef.dataset.exam, hedef.dataset.ders, hedef.dataset.soru);
+  });
+
   document.addEventListener("click", function (e) {
     const nav = e.target.closest("[data-nav]");
     if (nav) { navigate(nav.dataset.nav); return; }
@@ -4691,6 +4818,7 @@ document.addEventListener("DOMContentLoaded", function () {
       case "deleteExam": deleteExam(el.dataset.idx); break;
       case "examDetail": examDetailSelect(Number(el.dataset.idx)); break;
       case "videoGit": videoGit(el.dataset.exam, el.dataset.ders, el.dataset.soru); break;
+      case "konuGit": konuGit(el.dataset.ders, el.dataset.konu); break;
       case "bildirimTest": bildirimTest(); break;
       // Konu takibi
       case "startStudy": startStudy(el.dataset.topic); break;

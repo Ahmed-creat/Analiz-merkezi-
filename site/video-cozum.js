@@ -192,17 +192,36 @@
    *   • yoksa sınav sayfası varsa    → "Okulizyon'da aç" (videoyu orada açar)
    *   • ikisi de yoksa               → null
    */
+  // Doğrudan OYNATILABİLİR video alan adları. Okulizyon'un kendi sınav
+  // sayfası buraya GİRMEZ: oturum istiyor, tıklayan öğrenciyi Okulizyon
+  // GİRİŞ SAYFASINA atıyor (kullanıcı: "videoda hâlâ direk giriş sayfasına
+  // açılıyor"). O yüzden okulizyon.com bağlantısı hiç düğme yapılmaz.
+  const DOGRUDAN_VIDEO = ["youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be",
+    "vimeo.com", "player.vimeo.com", "drive.google.com", "docs.google.com"];
+
+  function dogrudanVideoMu(url) {
+    const u = normalize(url);
+    if (!u) return false;
+    try {
+      const h = new URL(u).hostname.toLowerCase();
+      return DOGRUDAN_VIDEO.indexOf(h) >= 0;
+    } catch (e) { return false; }
+  }
+
   function izleLink(x) {
     if (!x) return null;
-    if (x.video) return { href: x.video, etiket: "İzle", disari: true };
-    if (x.videoVar && x.okulizyonUrl) return { href: x.okulizyonUrl, etiket: "Okulizyon'da aç", disari: true };
+    // Yalnızca gerçekten oynatılabilen bağlantı düğme olur.
+    if (x.video && dogrudanVideoMu(x.video)) return { href: normalize(x.video), etiket: "Videoyu aç", disari: true };
+    // Okulizyon sınav sayfası: giriş ister → düğme YOK.
     return null;
   }
 
   const VC = {
     izleLink: izleLink,
+    dogrudanVideoMu: dogrudanVideoMu,
     normalize: normalize, htmlDenCikar: htmlDenCikar, videolariIsle: videolariIsle,
-    izlenecekler: izlenecekler, soruCozumu: soruCozumu, konuTutar: konuTutar, IZINLI: IZINLI
+    izlenecekler: izlenecekler, soruCozumu: soruCozumu, konuTutar: konuTutar, IZINLI: IZINLI,
+    DOGRUDAN_VIDEO: DOGRUDAN_VIDEO
   };
   if (typeof module !== "undefined" && module.exports) module.exports = VC;
   if (kok) kok.VC = VC;
