@@ -4975,7 +4975,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (poolManifestPromise) return poolManifestPromise;
     poolManifestPromise = fetch("content/soru_havuzlari/index.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(data => {
       poolManifest = data && Array.isArray(data.havuzlar) ? data : { havuzlar: [] };
-      return poolManifest;
+      // Profil penceresi için havuz özeti (app-pwa.js okur)
+      try {
+        window.__havuzBilgi = {
+          havuz: poolManifest.havuzlar.length || (data && data.havuz_sayisi) || 0,
+          soru: (data && data.soru_sayisi) || poolManifest.havuzlar.reduce((a, h) => a + (Number(h.soru_sayisi) || 0), 0)
+        };
+        const pm = document.getElementById("pwa-profile-modal");
+        if (pm && pm.style.display === "flex" && typeof window.__profilTaze === "function") window.__profilTaze();
+      } catch (e) {}
     }).catch(() => { poolManifest = { havuzlar: [] }; return poolManifest; });
     return poolManifestPromise;
   }

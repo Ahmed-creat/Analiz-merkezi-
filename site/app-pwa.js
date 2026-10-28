@@ -1,4 +1,4 @@
-const PWA_SURUM = "v31.0-supabase";
+const PWA_SURUM = "v34.0-supabase-pools";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -78,24 +78,38 @@ if ("serviceWorker" in navigator) {
 
 // ---- 3) GİRİŞ ARAYÜZÜ (yan menü + mobil DAHA + giriş modalı) ----
 function initAuthUI() {
-  if (document.getElementById("pwa-auth-btn")) return;
-  const footer = document.querySelector(".sidebar-footer");
-  if (footer) {
-    const btn = document.createElement("button");
-    btn.id = "pwa-auth-btn";
-    btn.className = "btn btn-ghost w-full";
-    btn.style.cssText = "justify-content:flex-start;color:#fff;margin-bottom:8px;border:1px solid rgba(255,255,255,0.25);";
-    btn.dataset.act = "pwaAuth";
-    btn.innerHTML = '<i data-lucide="log-in" style="width:16px;height:16px;"></i> <span id="pwa-auth-label">Giriş Yap (E-posta)</span>';
-    footer.before(btn);
+  if (window.__pwaProfileHooked) return;
+  window.__pwaProfileHooked = true;
+  // Giriş ve Okulizyon artık yalnız PROFİL'den yönetilir (avatar + yan menü "Profil" + mobil DAHA)
+  const avatar = document.getElementById("sidebar-avatar");
+  if (avatar) {
+    avatar.style.cursor = "pointer";
+    avatar.title = "Profil — hesap ve Okulizyon";
+    avatar.addEventListener("click", openProfileModal);
+  }
+  const userName = document.getElementById("sidebar-user-name");
+  if (userName) {
+    userName.style.cursor = "pointer";
+    userName.title = "Profil";
+    userName.addEventListener("click", openProfileModal);
+  }
+  const nav = document.getElementById("sidebar-nav");
+  if (nav && !document.getElementById("pwa-profile-nav")) {
+    const nb = document.createElement("button");
+    nb.id = "pwa-profile-nav";
+    nb.className = "nav-item";
+    nb.dataset.act = "openProfile";
+    nb.innerHTML = '<i data-lucide="user-round"></i><span>Profil &amp; Okulizyon <b class="pwa-okz-badge" style="display:none;background:#E11D48;color:#fff;border-radius:99px;padding:0 6px;font-size:10px;margin-left:4px;"></b></span>';
+    nav.appendChild(nb);
   }
   const more = document.getElementById("more-sheet");
-  if (more) {
+  if (more && !document.getElementById("pwa-profile-more")) {
     const mbtn = document.createElement("button");
+    mbtn.id = "pwa-profile-more";
     mbtn.className = "ms-item";
     mbtn.style.gridColumn = "1 / -1";
-    mbtn.dataset.act = "pwaAuth";
-    mbtn.innerHTML = '<i data-lucide="log-in" style="width:18px;height:18px;color:var(--text-muted);"></i> <span>Giriş Yap / Bulut Yedek</span>';
+    mbtn.dataset.act = "openProfile";
+    mbtn.innerHTML = '<i data-lucide="user-round" style="width:18px;height:18px;color:var(--brand-blue);"></i> <span>Profil · Hesap &amp; Okulizyon <b class="pwa-okz-badge" style="display:none;background:#E11D48;color:#fff;border-radius:99px;padding:0 6px;font-size:10px;margin-left:4px;"></b></span>';
     more.appendChild(mbtn);
   }
   buildAuthModal();
@@ -116,6 +130,9 @@ function initAuthUI() {
     if (!el) return;
     const a = el.dataset.act;
     if (a === "pwaAuth") { currentUser ? doSignOut() : openAuthModal(); }
+    else if (a === "openProfile") openProfileModal();
+    else if (a === "syncNow") { if (typeof window.__supabaseSenkronizeEt === "function") { window.__supabaseSenkronizeEt(); toast("Buluta yedekleniyor…", "info"); } }
+    else if (a === "pwaProfileClose") closeProfileModal();
     else if (a === "pwaAuthClose") closeAuthModal();
     else if (a === "pwaAuthLogin") emailLogin();
     else if (a === "pwaAuthRegister") emailRegister();
@@ -165,6 +182,99 @@ function openAuthModal() {
 }
 function closeAuthModal() { const m = document.getElementById("pwa-auth-modal"); if (m) m.style.display = "none"; }
 function authMsgYaz(t, hata) { const el = document.getElementById("pwa-auth-msg"); if (el) { el.textContent = t; el.style.color = hata ? "#E11D48" : "#16A34A"; } }
+
+// ---- 3b) PROFİL PENCERESİ: hesap (Supabase) + Okulizyon bağlantısı ----
+function buildProfileModal() {
+  if (document.getElementById("pwa-profile-modal")) return;
+  const m = document.createElement("div");
+  m.id = "pwa-profile-modal";
+  m.style.cssText = "position:fixed;inset:0;z-index:9997;display:none;align-items:center;justify-content:center;background:rgba(10,16,32,0.6);padding:14px;";
+  m.addEventListener("click", (e) => { if (e.target === m) closeProfileModal(); });
+  document.body.appendChild(m);
+}
+function openProfileModal() {
+  buildAuthModal();
+  buildProfileModal();
+  renderProfileModal();
+  const m = document.getElementById("pwa-profile-modal");
+  if (m) m.style.display = "flex";
+  if (window.lucide && lucide.createIcons) lucide.createIcons();
+}
+function closeProfileModal() {
+  const m = document.getElementById("pwa-profile-modal");
+  if (m) m.style.display = "none";
+}
+function profilAvatarHarfleri() {
+  const ad = String((state && state.user && state.user.name) || (currentUser && currentUser.email) || "").trim();
+  const parcalar = ad.replace(/@.*$/, "").split(/[\s._-]+/).filter(Boolean);
+  const harf = (parcalar[0] ? parcalar[0][0] : "?") + (parcalar[1] ? parcalar[1][0] : "");
+  return harf.toLocaleUpperCase("tr-TR");
+}
+window.__profilTaze = function () { const m = document.getElementById("pwa-profile-modal"); if (m && m.style.display === "flex") renderProfileModal(); };
+function renderProfileModal() {
+  const m = document.getElementById("pwa-profile-modal");
+  if (!m) return;
+  const s = (state.settings && state.settings.okulizyon) ? state.settings.okulizyon : {};
+  const st = okzStore();
+  const bekleyen = st.pending.reduce((acc, ex) => acc + (ex.rows || []).length, 0);
+  const hesapSatiri = currentUser
+    ? '<div style="display:flex;align-items:center;gap:10px;"><div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">' + escHtml(profilAvatarHarfleri()) + '</div><div style="min-width:0;"><div style="font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(currentUser.email || "hesap") + '</div><div style="font-size:11.5px;color:#16A34A;font-weight:600;">☁ Bulut yedeği etkin (Supabase)</div></div></div>'
+    : '<div style="font-size:12.5px;opacity:0.8;">Giriş yapılmadı — veriler yalnız bu cihazda saklanıyor.</div>';
+
+  const ILCELER = ["Şahinbey", "Şehitkamil", "Oğuzeli", "Nizip", "İslahiye", "Nurdağı", "Araban", "Yavuzeli", "Karkamış"];
+  const inp = (k, label, ph) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" autocapitalize="characters" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;' + (k === "ad" ? "text-transform:uppercase;font-weight:600;" : "") + '"></label>';
+  const sel = (k, label, opts) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<select id="okz-' + k + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + opts.map(o => '<option' + ((s[k] || opts[0]) === o ? " selected" : "") + '>' + escHtml(o) + "</option>").join("") + "</select></label>";
+
+  let html = '<div style="width:100%;max-width:520px;max-height:88vh;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">';
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><div style="font-weight:800;font-size:18px;">👤 Profil <span style="font-size:10px;font-weight:400;opacity:0.5;">' + escHtml(PWA_SURUM) + '</span></div><button data-act="pwaProfileClose" style="background:none;border:0;font-size:20px;cursor:pointer;color:inherit;min-width:36px;min-height:36px;">✕</button></div>';
+
+  // A) HESAP
+  html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
+  html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:8px;">HESAP</div>';
+  html += hesapSatiri;
+  html += '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">';
+  html += currentUser
+    ? '<button data-act="pwaAuth" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Çıkış Yap</button><button data-act="syncNow" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi Yedekle</button>'
+    : '<button data-act="pwaAuth" class="btn btn-primary btn-sm">Giriş Yap / Kayıt Ol</button>';
+  html += '</div>';
+  html += '<div style="font-size:11px;opacity:0.65;margin-top:8px;">Giriş yapınca denemeler, konular ve plan cihazlar arasında Supabase üzerinden eşitlenir.</div>';
+  html += '</div>';
+
+  // B) OKULIZYON
+  html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKULIZYON BAĞLANTISI</div>' + (bekleyen > 0 ? '<span style="font-size:11px;font-weight:700;color:#E11D48;">' + bekleyen + ' soru bekliyor</span>' : '') + '</div>';
+  html += '<div style="font-size:11.5px;opacity:0.72;margin-bottom:10px;">Okulizyon\'daki bilgilerini bir kez gir; sınav sonuçların her sabah otomatik çekilir.</div>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">';
+  html += inp("ad", "AD SOYAD (BÜYÜK HARF)", "AHMET YILMAZ");
+  html += inp("okulNo", "OKUL NO", "1234");
+  html += sel("sinif", "SINIF", ["9", "10", "11", "12"]);
+  html += sel("il", "İL", ["Gaziantep"]);
+  html += sel("ilce", "İLÇE", ILCELER);
+  html += sel("okulAdi", "OKUL", ["Akken Anadolu Lisesi"]);
+  html += '</div>';
+  html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+  html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
+  html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Analiz Bekliyor' + (bekleyen > 0 ? " (" + bekleyen + ")" : "") + '</button>';
+  html += '</div>';
+  if (st.duyurular && st.duyurular.length) {
+    html += '<div style="margin-top:12px;font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKUL DUYURULARI</div>';
+    st.duyurular.slice(0, 4).forEach(d => {
+      html += '<a href="' + escHtml(d.url || "#") + '" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:6px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(d.baslik || "") + '</span><span style="opacity:0.6;white-space:nowrap;">' + escHtml(d.tarih || "") + '</span></a>';
+    });
+  }
+  html += '</div>';
+
+  // C) SORU HAVUZU / SÜRÜM
+  const havuzSayisi = (window.__havuzBilgi && window.__havuzBilgi.havuz) || 0;
+  const soruSayisi = (window.__havuzBilgi && window.__havuzBilgi.soru) || 0;
+  html += '<div style="border:1px dashed rgba(0,0,0,0.18);border-radius:14px;padding:12px;font-size:12px;opacity:0.85;">';
+  html += '<b>Soru havuzu:</b> ' + (havuzSayisi ? havuzSayisi + " havuz · " + soruSayisi + " soru" : "yükleniyor…") + '<br>';
+  html += '<b>Sürüm:</b> ' + escHtml(PWA_SURUM) + ' · <b>Bulut:</b> Supabase';
+  html += '</div>';
+
+  html += '</div>';
+  m.innerHTML = html;
+}
 
 // ---- 4) E-POSTA/ŞİFRE İŞLEMLERİ (Supabase Auth) ----
 function authAlanlari() {
@@ -225,9 +335,14 @@ async function doSignOut() {
 }
 
 function setAuthLabel(girisli, kim) {
+  const av = document.getElementById("sidebar-avatar");
+  if (av) av.innerHTML = girisli ? '<span style="font-weight:800;font-size:14px;">' + escHtml(profilAvatarHarfleri()) + '</span>' : '<i data-lucide="user" style="width:19px;height:19px;"></i>';
+  if (av && window.lucide && lucide.createIcons) lucide.createIcons();
   const lbl = document.getElementById("pwa-auth-label");
   if (!lbl) return;
   lbl.textContent = girisli ? "Çıkış (" + (kim || "hesap") + ") · ☁ bulut" : "Giriş Yap (E-posta)";
+  const pm = document.getElementById("pwa-profile-modal");
+  if (pm && pm.style.display === "flex") renderProfileModal();
 }
 
 // ---- 5) OTURUM TAKİBİ + BULUTTAN GERİ YÜKLEME (Supabase) ----
@@ -397,28 +512,11 @@ function okzStore() {
 }
 function okzKey(ex) { return (ex.name || "?") + "|" + (ex.date || ""); }
 function initOkulizyonUI() {
-  if (document.getElementById("pwa-okz-btn")) return;
-  const footer = document.querySelector(".sidebar-footer");
-  if (footer) {
-    const btn = document.createElement("button");
-    btn.id = "pwa-okz-btn";
-    btn.className = "btn btn-ghost w-full";
-    btn.style.cssText = "justify-content:flex-start;color:#fff;margin-bottom:8px;border:1px solid rgba(255,255,255,0.25);";
-    btn.dataset.act = "pwaOkz";
-    btn.innerHTML = '<i data-lucide="graduation-cap" style="width:16px;height:16px;"></i> <span id="pwa-okz-label">Okulizyon Bağlantısı</span>';
-    const authBtn = document.getElementById("pwa-auth-btn");
-    if (authBtn) authBtn.after(btn); else footer.before(btn);
-  }
-  const more = document.getElementById("more-sheet");
-  if (more) {
-    const mb = document.createElement("button");
-    mb.className = "ms-item";
-    mb.style.gridColumn = "1 / -1";
-    mb.dataset.act = "pwaOkz";
-    mb.innerHTML = '<i data-lucide="graduation-cap" style="width:18px;height:18px;color:var(--text-muted);"></i> <span>Okulizyon · Analiz Bekliyor</span>';
-    more.appendChild(mb);
-  }
+  if (window.__okzHooked) return;
+  window.__okzHooked = true;
+  // Okulizyon girişi yalnız PROFİL penceresinden; burada sadece kuyruk penceresi hazırlanır
   buildOkzModal();
+  buildProfileModal();
   document.addEventListener("click", (e) => {
     const el = e.target.closest("[data-act]");
     if (!el) return;
@@ -434,8 +532,17 @@ function initOkulizyonUI() {
 }
 function okzBadge() {
   const n = okzStore().pending.reduce((a, ex) => a + (ex.rows || []).length, 0);
-  const l = document.getElementById("pwa-okz-label");
-  if (l) l.textContent = n > 0 ? "Okulizyon · " + n + " konu Analiz Bekliyor!" : "Okulizyon Bağlantısı";
+  document.querySelectorAll(".pwa-okz-badge").forEach(b => {
+    b.style.display = n > 0 ? "inline-block" : "none";
+    b.textContent = n > 0 ? String(n) : "";
+  });
+  const avatar = document.getElementById("sidebar-avatar");
+  if (avatar) {
+    avatar.style.boxShadow = n > 0 ? "0 0 0 3px rgba(225,29,72,0.75)" : "";
+    avatar.title = n > 0 ? "Profil — " + n + " soru Analiz Bekliyor" : "Profil";
+  }
+  const pm = document.getElementById("pwa-profile-modal");
+  if (pm && pm.style.display === "flex") renderProfileModal();
 }
 function buildOkzModal() {
   if (document.getElementById("pwa-okz-modal")) return;
@@ -445,7 +552,7 @@ function buildOkzModal() {
   m.addEventListener("click", (e) => { if (e.target === m) closeOkzModal(); });
   document.body.appendChild(m);
 }
-function openOkzModal() { renderOkzModal(); const m = document.getElementById("pwa-okz-modal"); if (m) m.style.display = "flex"; }
+function openOkzModal() { buildOkzModal(); renderOkzModal(); const m = document.getElementById("pwa-okz-modal"); if (m) m.style.display = "flex"; }
 function closeOkzModal() { const m = document.getElementById("pwa-okz-modal"); if (m) m.style.display = "none"; }
 function escHtml(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 
@@ -455,21 +562,9 @@ function renderOkzModal() {
   const st = okzStore();
   let html = '<div style="width:100%;max-width:520px;max-height:86vh;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">';
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-weight:800;font-size:17px;">Okulizyon <span style="font-size:10px;font-weight:400;opacity:0.5;">' + PWA_SURUM + '</span></div><button data-act="okzClose" style="background:none;border:0;font-size:19px;cursor:pointer;color:inherit;">✕</button></div>';
-  // A) Bağlantı bilgileri
-  html += '<div style="font-size:12px;opacity:0.75;margin-bottom:8px;">Sınav sonuçların her sabah otomatik çekilir; yanlış/boş sorular aşağıda <b>Analiz Bekliyor</b> listesine düşer.</div>';
-  // OKULIZYON SİTESİ GİRİŞ EKRANININ KOPYASI: AD SOYAD (büyük harf) → OKUL NO → SINIF → İL → İLÇE → OKUL (seçmeli)
-  const ILCELER = ["Şahinbey", "Şehitkamil", "Oğuzeli", "Nizip", "İslahiye", "Nurdağı", "Araban", "Yavuzeli", "Karkamış"];
-  const inp = (k, label, ph) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" autocapitalize="characters" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;' + (k === "ad" ? "text-transform:uppercase;font-weight:600;letter-spacing:0.02em;" : "") + '"></label>';
-  const sel = (k, label, opts) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<select id="okz-' + k + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + opts.map(o => '<option' + ((s[k] || opts[0]) === o ? " selected" : "") + '>' + escHtml(o) + "</option>").join("") + "</select></label>";
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">';
-  html += inp("ad", "AD SOYAD (BÜYÜK HARF)", "AHMET YILMAZ");
-  html += inp("okulNo", "OKUL NO", "1234");
-  html += sel("sinif", "SINIF", ["9", "10", "11", "12"]);
-  html += sel("il", "İL", ["Gaziantep"]);
-  html += sel("ilce", "İLÇE", ILCELER);
-  html += sel("okulAdi", "OKUL", ["Akken Anadolu Lisesi"]);
-  html += "</div>";
-  html += '<button data-act="okzSaveBilgi" class="btn btn-primary w-full" style="font-weight:700;margin-bottom:14px;">Bilgileri Kaydet</button>';
+  // A) Bağlantı bilgileri artık PROFİL penceresinde — burada yalnız kuyruk yönetilir
+  html += '<div style="font-size:12px;opacity:0.8;margin-bottom:10px;padding:10px;border:1px dashed rgba(0,0,0,0.2);border-radius:10px;">Okulizyon bilgileri (ad, okul no, sınıf, il/ilçe, okul) <b>Profil</b> penceresinden girilir. Buradan yalnızca <b>Analiz Bekliyor</b> kuyruğunu işlersin.</div>';
+  html += '<button data-act="openProfile" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);margin-bottom:14px;">Profili Aç</button>';
   // B) ANALİZ BEKLİYOR
   const bekleyen = st.pending.filter(ex => (ex.rows || []).length);
   if (bekleyen.length) {
@@ -512,6 +607,8 @@ function okzSaveBilgi() {
     ilce: al("ilce") || "Şahinbey", okulAdi: al("okulAdi") || "Akken Anadolu Lisesi"
   };
   saveState();
+  const pm = document.getElementById("pwa-profile-modal");
+  if (pm && pm.style.display === "flex") renderProfileModal();
   toast("Kaydedildi — çekim her sabah 07:30'da otomatik (" + ad + " · " + state.settings.okulizyon.okulAdi + ")", "success");
 }
 function okzHepsiUygula(reason) {

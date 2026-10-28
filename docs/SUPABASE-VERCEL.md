@@ -9,7 +9,7 @@ Bu yayın, **en yeni PR (#3 — "Analiz Merkezi düzeltmeleri ve PWA dağıtım 
 | --- | --- |
 | Uygulama (production) | <https://analiz-merkezi.vercel.app> |
 | Vercel projesi | `analiz-merkezi` — `prj_w9G0n8W36VlZAJk5i3iUejfrEBtr` (team `ib SOFTWARE`) |
-| Son deployment | `dpl_AhbaU32c6iRm7onjqRLUQkjEG46Q` |
+| Uygulama sürümü | `PWA_SURUM = v34.0-supabase-pools` (Profil + Okulizyon + soru havuzları) |
 | Supabase projesi | `analiz-merkezi` — ref `ztgzmhfklsdlngrtennp`, bölge `eu-central-1` |
 
 > `analiz-merkezi-ib-software.vercel.app` ekip takma adı Vercel Authentication korumasındadır (giriş ister);

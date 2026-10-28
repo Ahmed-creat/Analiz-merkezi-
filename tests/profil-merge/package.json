@@ -1,0 +1,11 @@
+{
+  "name": "analiz-merkezi-profil-merge-test",
+  "private": true,
+  "description": "Profil penceresi + Okulizyon taşıma + Soru havuzu birleşiminin DOM smoke testi",
+  "scripts": {
+    "test": "node profil-merge.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}
