@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.1-profil-giris";
+const PWA_SURUM = "v34.2-profil-giris";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -213,6 +213,11 @@ function buildProfileModal() {
   document.body.appendChild(m);
 }
 function openProfileModal() {
+  // Mobilde açık kalan DAHA sayfası / yan menü çekmecesi arkada kalmasın
+  try {
+    if (typeof closeMoreSheet === "function") closeMoreSheet();
+    if (window.matchMedia && window.matchMedia("(max-width: 1023px)").matches && typeof toggleSidebar === "function") toggleSidebar(false);
+  } catch (e) {}
   buildAuthModal();
   buildProfileModal();
   renderProfileModal();
