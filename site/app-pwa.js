@@ -673,7 +673,9 @@ function okzSaveBilgi() {
   saveState();
   const pm = document.getElementById("pwa-profile-modal");
   if (pm && pm.style.display === "flex") renderProfileModal();
-  toast("Kaydedildi — çekim her sabah 07:30'da otomatik (" + ad + " · " + state.settings.okulizyon.okulAdi + ")", "success");
+  toast("Kaydedildi — şimdi Okulizyon'da aranıyor…", "info");
+  // Kaydettikten hemen sonra gerçek çekimi dene (tek dokunuşla sonuç)
+  setTimeout(function () { try { okzSunucuCek(); } catch (e) {} }, 500);
 }
 function okzHepsiUygula(reason) {
   document.querySelectorAll(".okz-reason").forEach(sel => { sel.value = reason; });
