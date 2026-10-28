@@ -167,5 +167,18 @@ böylece gerileme testte yakalanır.
 > tablosu da silindi. `okulizyon_kuyrugu` RLS ile korunuyor (herkes yalnız
 > kendi satırını okur).
 
+### Tarayıcı yolu da doğrulandı (v7, `ben` modu)
+Geçici bir hesap açılıp gerçek JWT ile çağrıldı (hesap test sonunda silindi):
+
+```
+POST /functions/v1/okulizyon-cek   {"mod":"ben"}   Authorization: Bearer <kullanıcı JWT'si>
+→ 200 · durum:"ok" · 1 sınav · 20 satır · kodlar {27, 1841, 751187} · 883 ms
+→ okulizyon_kuyrugu satırı yazıldı (durum:"ok")
+```
+
+Yani sitedeki **"Şimdi dene"** düğmesi gerçekten çekim yapıp sonucu veritabanına
+yazıyor; öğrenci Profil → Okulizyon ekranında "Analiz Bekliyor" kuyruğunu görür.
+
 ### Testler
 `npm run test:okz` → **39/39** (kart ayrıştırma + detay + kaçış çözme dahil).
+`npm run test:mesaj` → **63/63** (mesaj/Koçluk Hattı motoru + arayüz).
