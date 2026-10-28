@@ -140,7 +140,15 @@ function durumKur() {
   console.log("\n== 3) Kayıt dönüşümü ==");
   const k1 = api.okzKayitKonu("Matematik-1", "Dik üçgende trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili varsayımlarda bulunur.");
   esit("ders kanonikleşti", k1.lesson, "Matematik");
-  esit("konu ham kazanım olarak korunur (onay yok)", k1.topic, "Dik üçgende trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili varsayımlarda bulunur.");
+  // YENİ: güçlü öneri (skor ≥ 0.55 ve ikinci adayın açık ara önünde) artık
+  // otomatik uygulanır — öğrenciyi 26 satır seçmekten kurtarır.
+  esit("güçlü öneri otomatik eşlenir", k1.topic, "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler");
+  ok("otomatik eşleme işaretlenir", k1.eslendi === true);
+  // Belirsiz kazanım otomatik uygulanmaz: ham metinle saklanır (yanlış konuya
+  // bağlanmaktansa öğrencinin seçmesi daha doğru).
+  const kB = api.okzKayitKonu("Biyoloji", "fotosentez ve kemosentez süreçlerini karşılaştırır.");
+  esit("belirsiz kazanım ham metinle korunur", kB.topic, "fotosentez ve kemosentez süreçlerini karşılaştırır.");
+  ok("belirsiz kazanım eşlenmiş sayılmaz", kB.eslendi === false);
   esit("kazanım metni saklanır", typeof k1.kazanim, "string");
   const k2 = api.okzKayitKonu("Türkçe", "Yazım Kuralları");
   esit("kesin eşleşme uygulanır", k2.topic, "Yazım Kuralları");

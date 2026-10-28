@@ -135,7 +135,32 @@
         "front": "Hız-zaman grafiğinde zaman ekseninin altında kalan sabit bir doğru hangi hareket yönünü gösterir?",
         "back": "Seçilen pozitif yönün tersindeki, negatif yönlü hareketi gösterir."
       },
-      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                -6
+              ],
+              [
+                4,
+                -6
+              ],
+              [
+                8,
+                -6
+              ]
+            ]
+          }
+        ],
+        "aciklama": "Hız-zaman doğrusu eksenin altında (sabit hız, negatif yön)."
+      }
     },
     {
       "soru_id": "fizik_10_u01_k01_o08",

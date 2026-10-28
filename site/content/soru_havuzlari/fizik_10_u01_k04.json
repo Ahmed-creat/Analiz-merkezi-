@@ -21,7 +21,20 @@
         "front": "Yatayla α açısı yapan v hızının yatay ve düşey bileşenleri nasıl bulunur?",
         "back": "vₓ = v·cosα ve vᵧ = v·sinα."
       },
-      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "gorsel": {
+        "tip": "vektor",
+        "xEkseni": "x",
+        "yEkseni": "y",
+        "vektorler": [
+          {
+            "ad": "v₀ = 24 m/s",
+            "x": 21,
+            "y": 12
+          }
+        ],
+        "aciklama": "İlk hız 24 m/s, yatayla 30°."
+      }
     },
     {
       "soru_id": "fizik_10_u01_k04_o02",
@@ -116,7 +129,30 @@
         "front": "Bir cismin bileşke hızının büyüklüğü, dik bileşenlerinden nasıl bulunur?",
         "back": "v = √(vₓ² + vᵧ²)."
       },
-      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+      "kazanim": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "gorsel": {
+        "tip": "vektor",
+        "xEkseni": "vx (m/s)",
+        "yEkseni": "vy (m/s)",
+        "vektorler": [
+          {
+            "ad": "vx = 12",
+            "x": 12,
+            "y": 0
+          },
+          {
+            "ad": "vy = 16",
+            "x": 0,
+            "y": 16
+          },
+          {
+            "ad": "v",
+            "x": 12,
+            "y": 16
+          }
+        ],
+        "aciklama": "Hız bileşenleri vx = 12 m/s, vy = 16 m/s."
+      }
     },
     {
       "soru_id": "fizik_10_u01_k04_o07",

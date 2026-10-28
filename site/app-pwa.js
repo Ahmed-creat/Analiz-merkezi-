@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.10-silme";
+const PWA_SURUM = "v35.0-gorsel-video";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -458,17 +458,25 @@ async function oturumUygula(session) {
       const nQ = (uzakState.questions || []).length;
       const tarih = data.updated_at ? new Date(data.updated_at).toLocaleDateString("tr-TR") : "bilinmeyen tarih";
       if (!yerelBos) {
-        openConfirm(
-          "Bulutta " + tarih + " tarihli bir kayıt var (" + nEx + " deneme, " + nQ + " soru çözümü). Buluttaki kayıt YERELDEKİ VERİLERİN ÜZERİNE yazılsın mı?",
-          () => {
-            state = mergeDeep(freshState(), uzakState);
-            state.user.grade = state.user.grade || "9";
-            saveState();
-            navigate(currentPage);
-            if (typeof updateUserUI === "function") updateUserUI();
-            toast("Bulut kaydı yüklendi (" + nEx + " deneme).", "success");
-          }
-        );
+        // SORU SORMA YOK: iki tarafı birleştir, hiçbir kayıt kaybolmaz.
+        // (Eski davranış her girişte "üzerine yazılsın mı?" diye soruyordu.)
+        const birlestirici = (window.VB && typeof window.VB.birlestir === "function") ? window.VB : null;
+        const onceki = birlestirici ? birlestirici.ozet(state) : { deneme: 0, hata: 0 };
+        if (birlestirici) {
+          state = birlestirici.birlestir(state, uzakState);
+        } else {
+          // VB yüklenmemişse en azından bulutu kaybetme: yerel dolu olan
+          // alanları koruyarak birleştir (mergeDeep derin birleştirir).
+          state = mergeDeep(mergeDeep(freshState(), uzakState), state);
+        }
+        state.user.grade = state.user.grade || (uzakState.user && uzakState.user.grade) || "9";
+        saveState();
+        navigate(currentPage);
+        if (typeof updateUserUI === "function") updateUserUI();
+        const sonra = birlestirici ? birlestirici.ozet(state) : { deneme: nEx, hata: 0 };
+        const fark = sonra.deneme - onceki.deneme;
+        toast("☁ Bulutla birleştirildi · " + sonra.deneme + " deneme, " + sonra.hata + " hata kaydı" +
+          (fark > 0 ? " (+" + fark + " buluttan)" : "") + " — hiçbir veri silinmedi.", "success");
       } else {
         state = mergeDeep(freshState(), uzakState);
         saveState();
@@ -779,6 +787,11 @@ function okzKonuHaritasi() {
 }
 function okzHaritaAnahtar(ders, kazanim) { return String(ders || "") + "|" + String(kazanim || "").trim(); }
 // Kazanım → { konu, topicKey, kaynak } ; bulunamazsa null
+// Otomatik kabul eşiği: öneri hem ÇOK yüksek hem de ikinci adayın
+// belirgin biçimde önünde olmalı. Böylece "fotosentez" gibi bir kazanım
+// yanlışlıkla "enerji-metabolizma" konusuna bağlanmaz.
+const OKZ_OTO_ESIK = 0.55;   // en iyi adayın skoru
+const OKZ_OTO_FARK = 0.25;   // ikinci adayla fark
 function okzKonuBul(ders, kazanim) {
   if (!kazanim) return null;
   const kanon = okzDersKanonik(ders);
@@ -787,6 +800,14 @@ function okzKonuBul(ders, kazanim) {
   if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return null;
   const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
   if (r && r.guven === "kesin") return { konu: r.konu, topicKey: r.topicKey, kaynak: "kesin" };
+  // Güçlü öneri: kullanıcıyı 26 satır seçmekten kurtarır (ÖLÇÜLÜ).
+  if (typeof window.OKZK.adaylar === "function") {
+    const aday = window.OKZK.adaylar(kazanim, kanon, OKZK_IDX, 2) || [];
+    const birinci = aday[0], ikinci = aday[1];
+    if (birinci && birinci.skor >= OKZ_OTO_ESIK && (!ikinci || birinci.skor - ikinci.skor >= OKZ_OTO_FARK)) {
+      return { konu: birinci.konu, topicKey: birinci.topicKey, kaynak: "oto", skor: birinci.skor };
+    }
+  }
   return null;
 }
 // Hata kaydını uygulamanın diline çevir: ders kanonik, konu konu başlığı
@@ -865,6 +886,8 @@ function okzKonulariOnar(sessiz) {
         degisen++;
       });
     }
+    // Video bağlantılarını güvenli biçime çevir (eski kayıtlar dahil)
+    try { if (window.VC && typeof window.VC.videolariIsle === "function") window.VC.videolariIsle(state.exams); } catch (e) { /* */ }
     if (degisen) {
       try { saveState(); } catch (e) { /* */ }
       try { if (typeof navigate === "function") navigate(typeof currentPage === "string" ? currentPage : "dashboard"); } catch (e) { /* */ }
@@ -880,6 +903,7 @@ function okzEslenmemisKonular() {
   const harita = okzKonuHaritasi();
   const gorulen = Object.create(null);
   const liste = [];
+  window.__okzOtoEslenen = [];
   const ekle = (ders, kazanim) => {
     if (!ders || !kazanim) return;
     const kanon = okzDersKanonik(ders);
@@ -890,6 +914,9 @@ function okzEslenmemisKonular() {
     if (OKZK_IDX && window.OKZK) {
       const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
       if (r && r.guven === "kesin") return;
+      // Güçlü öneri varsa satır açma; kullanıcı yalnız belirsizleri görsün
+      const o = okzKonuBul(kanon, kazanim);
+      if (o && o.kaynak === "oto") { window.__okzOtoEslenen.push({ ders: kanon, kazanim: kazanim, konu: o.konu }); return; }
     }
     const oneriler = OKZK_IDX && window.OKZK ? window.OKZK.adaylar(kazanim, kanon, OKZK_IDX, 3) : [];
     liste.push({ ders: kanon, kazanim: kazanim, oneriler: oneriler });
@@ -930,21 +957,35 @@ function okzKonuEslemeHtml() {
   const eksik = okzEslenmemisKonular();
   const harita = okzKonuHaritasi();
   const elleSayi = Object.keys(harita).length;
-  let h = '<div id="okz-konu-esleme" style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
+  let h = '<details id="okz-konu-esleme" ' + (eksik.length ? 'open' : '') + ' style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;"><summary style="cursor:pointer;font-size:12.5px;font-weight:700;">Okulizyon konu eşlemesi' + (eksik.length ? ' · ' + eksik.length + ' bekliyor' : ' ✓') + '</summary>';
   h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKULİZYON KONU EŞLEMESİ</div>' + (elleSayi ? '<span style="font-size:10.5px;opacity:0.6;">' + elleSayi + ' eşleme kayıtlı</span>' : '') + '</div>';
   h += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:8px;">Okulizyon konuları <b>kazanım cümlesi</b> olarak gelir ("… varsayımlarda bulunur."), uygulama <b>konu başlığı</b> kullanır ("1.1 …"). Eşleşmeyenler ayrı konu gibi görünür ve soru havuzundan soru gelmez. Aşağıdaki eşlemeyi <b>bir kez</b> yap; sonraki çekimlerde otomatik uygulanır.</div>';
   if (!eksik.length) {
-    h += '<div style="font-size:12px;color:#16A34A;font-weight:600;">✓ Tüm konular eşlendi — soru havuzu bağlı.</div></div>';
+    h += '<div style="font-size:12px;color:#16A34A;font-weight:600;">✓ Tüm konular eşlendi — soru havuzu bağlı.</div></details>';
     return h;
   }
-  h += '<div style="font-size:11.5px;font-weight:700;color:#B45309;margin-bottom:6px;">' + eksik.length + ' kazanım bekliyor</div>';
+  const oto = Array.isArray(window.__okzOtoEslenen) ? window.__okzOtoEslenen : [];
+  if (oto.length) {
+    h += '<details style="border:1px solid rgba(22,163,74,0.35);background:rgba(22,163,74,0.06);border-radius:10px;padding:8px;margin-bottom:8px;">';
+    h += '<summary style="cursor:pointer;font-size:11.5px;font-weight:700;color:#15803D;">✓ ' + oto.length + ' kazanım otomatik eşlendi (kontrol etmek için aç)</summary>';
+    h += '<div style="margin-top:6px;display:grid;gap:4px;">' + oto.slice(0, 30).map(x =>
+      '<div style="font-size:10.5px;opacity:0.8;line-height:1.35;">' + escHtml(String(x.kazanim).slice(0, 80)) + ' → <b>' + escHtml(x.konu) + '</b></div>').join("") + '</div>';
+    h += '</details>';
+  }
+  if (!eksik.length && oto.length) {
+    h += '<div style="font-size:11px;opacity:0.7;margin-bottom:6px;">Belirsiz kazanım kalmadı — seçim yapmana gerek yok.</div>';
+  }
+  h += '<div style="font-size:11.5px;font-weight:700;color:#B45309;margin-bottom:4px;">' + eksik.length + ' kazanım bekliyor</div>';
+  h += '<div style="font-size:11px;opacity:0.7;line-height:1.45;margin-bottom:8px;">Her satır <b>hazır öneriyle</b> geliyor — tek düğmeye basman yeterli. Emin olmadığımız satırlarda “emin değilim” yazar; istersen listeden değiştir.</div>';
   let sonDers = "";
   h += '<div style="display:grid;gap:8px;">';
   eksik.forEach((x, i) => {
     const konular = OKZK_IDX && window.OKZK ? window.OKZK.konular(x.ders, OKZK_IDX) : [];
     const oneri = x.oneriler && x.oneriler[0];
+    // Öğrenciyi 26 satırlık seçimle yormamak için HER satır en iyi öneriyle
+    // hazır gelir. Emin olmadığımızda bunu açıkça yazarız; yanlışsa değiştirir.
     const guclu = oneri && oneri.skor >= OKZ_ONERI_ESIK;
-    const secili = guclu ? oneri.topicKey : "";
+    const secili = oneri ? oneri.topicKey : "";
     if (x.ders !== sonDers) {
       sonDers = x.ders;
       h += '<div style="font-size:11px;font-weight:800;opacity:0.55;margin-top:4px;">' + escHtml(x.ders) + '</div>';
@@ -955,13 +996,13 @@ function okzKonuEslemeHtml() {
     h += '<div style="font-size:11px;opacity:0.75;line-height:1.4;margin-bottom:6px;">' + escHtml(String(x.kazanim).slice(0, 140)) + '</div>';
     h += '<select data-okz-konu="' + i + '" data-okz-ders="' + escHtml(x.ders) + '" data-okz-kazanim="' + escHtml(x.kazanim) + '" style="width:100%;box-sizing:border-box;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:12.5px;">' + opts + '</select>';
     if (oneri && oneri.skor > 0) {
-      h += '<div style="font-size:10.5px;opacity:0.6;margin-top:3px;">Öneri (%' + Math.round(oneri.skor * 100) + '): ' + escHtml(oneri.konu) + (guclu ? ' — hazır seçildi' : ' — emin değilim, listeden seç') + '</div>';
+      h += '<div style="font-size:10.5px;opacity:0.6;margin-top:3px;">Öneri (%' + Math.round(oneri.skor * 100) + '): ' + escHtml(oneri.konu) + (guclu ? ' — hazır seçildi' : ' — emin değilim; yanlışsa listeden değiştir') + '</div>';
     }
     h += '</div>';
   });
   h += '</div>';
-  h += '<button data-act="okzKonuEsle" class="btn btn-primary btn-sm" style="margin-top:10px;">Seçilenleri eşle ve birleştir</button>';
-  h += '</div>';
+  h += '<button data-act="okzKonuEsle" class="btn btn-primary btn-sm" style="margin-top:10px;">Önerileri kabul et ve eşle</button>';
+  h += '</details>';
   return h;
 }
 
@@ -991,6 +1032,17 @@ function initOkulizyonUI() {
     else if (a === "okzYeniden") okzYenidenAktar(el.dataset.i);
     else if (a === "okzSonucGuncelle") okzSonucuYaz(el.dataset.ad, el.dataset.tarih);
     else if (a === "okzKonuEsle") okzKonuEsleKaydet();
+    else if (a === "okzHizliNedenSec") {
+      document.querySelectorAll(".okz-hizli-chip").forEach(c => {
+        const sec = c.dataset.reason === el.dataset.reason;
+        c.dataset.secili = sec ? "1" : "0";
+        c.style.border = "1px solid " + (sec ? "#2563EB" : "rgba(0,0,0,0.18)");
+        c.style.background = sec ? "rgba(37,99,235,0.12)" : "none";
+        c.style.fontWeight = sec ? "700" : "400";
+      });
+      window.__okzHizliNeden = el.dataset.reason;
+    }
+    else if (a === "okzHizliIsle") okzAnalizKaydet(window.__okzHizliNeden || "KONU EKSİKLİĞİ");
     else if (a === "okzYoksay") okzYoksay([{ anahtar: el.dataset.key, hash: el.dataset.hash }]);
     else if (a === "okzHepsiniYoksay") okzHepsiniYoksay();
     else if (a === "okzDefteriTemizle") { okzDefterTemizle(); renderProfileModal(); toast("Yoksayılan kayıtlar geri alındı — sonraki çekimde yeniden gelir.", "info"); }
@@ -1170,7 +1222,18 @@ function renderOkzModal() {
   const bekleyen = st.pending.filter(ex => (ex.rows || []).length);
   if (bekleyen.length) {
     html += '<div style="font-weight:800;font-size:14.5px;margin-bottom:6px;">⏳ Analiz Bekliyor (' + bekleyen.reduce((a, ex) => a + ex.rows.length, 0) + ' soru)</div>';
-    html += '<div style="font-size:11.5px;opacity:0.75;margin-bottom:8px;">Her soru için nedenini seç — kaydedince deneme olarak işlenir, öncelik listesine girer.</div>';
+    // TEK DOKUNUŞ: soru başına neden seçmek zorunda değilsin. Sınavın tamamı
+    // için bir neden seç, gerisini uygulama yapsın (konu eşlemesi otomatik).
+    html += '<div style="border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.06);border-radius:12px;padding:10px;margin-bottom:10px;">';
+    html += '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">⚡ Tek dokunuş: kuyruktaki tüm yanlış/boşlar için neden</div>';
+    html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;" id="okz-hizli-nedenler">' +
+      ["KONU EKSİKLİĞİ", "İşlem Hatası/Dikkatsizlik", "SÜRE YETMEDİ"].map((r, k) =>
+        '<button data-act="okzHizliNedenSec" data-reason="' + escHtml(r) + '" class="okz-hizli-chip" data-secili="' + (k === 0 ? "1" : "0") + '" style="font-size:11.5px;padding:7px 10px;min-height:40px;border-radius:99px;border:1px solid ' + (k === 0 ? "#2563EB" : "rgba(0,0,0,0.18)") + ';background:' + (k === 0 ? "rgba(37,99,235,0.12)" : "none") + ';color:inherit;cursor:pointer;font-weight:' + (k === 0 ? "700" : "400") + ';">' + r + '</button>').join("") +
+      '</div>';
+    html += '<button data-act="okzHizliIsle" class="btn btn-primary w-full" style="font-weight:700;">Bu nedenle tümünü işle</button>';
+    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:6px;line-height:1.4;">Tek seçim: soru başına neden seçmen gerekmez. Konular Okulizyon kazanımından otomatik eşlenir; emin olunamayanlar Profil → Okulizyon → Konu Eşlemesi bölümünde hazır öneriyle gelir.</div>';
+    html += '</div>';
+    html += '<div style="font-size:11.5px;opacity:0.75;margin-bottom:8px;">İstersen aşağıdan soru soru değiştirebilirsin (isteğe bağlı).</div>';
     bekleyen.forEach((ex, i) => {
       html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:12px;padding:10px;margin-bottom:10px;">';
       html += '<div style="font-weight:700;font-size:13.5px;margin-bottom:6px;">' + escHtml(ex.name) + (ex.date ? ' <span style="opacity:0.6;font-weight:400;">· ' + escHtml(ex.date) + "</span>" : "") + "</div>";
@@ -1334,21 +1397,26 @@ function okzDuyurularToSchoolExams(duyurular) {
   return eklenen;
 }
 window.okzDuyurularToSchoolExams = okzDuyurularToSchoolExams;
-async function okzAnalizKaydet() {
+async function okzAnalizKaydet(tekNeden) {
   // Kazanım → konu başlığı eşlemesi için indeksin yüklü olması gerekir
   await okzkYukle();
   const st = okzStore();
   const secimler = {};
-  document.querySelectorAll(".okz-reason").forEach(sel => { secimler[sel.dataset.i + ":" + sel.dataset.j] = sel.value; });
+  if (!tekNeden) document.querySelectorAll(".okz-reason").forEach(sel => { secimler[sel.dataset.i + ":" + sel.dataset.j] = sel.value; });
   let eklenen = 0, islenen = 0;
   st.pending.forEach((ex, i) => {
     const logs = [];
     (ex.rows || []).forEach((row, j) => {
-      const r = secimler[i + ":" + j];
+      const r = tekNeden || secimler[i + ":" + j];
       if (r) {
         // Ders adını uygulamanın adına çevir, kazanımı konu başlığına eşle
         const k = okzKayitKonu(row.lesson, row.topic);
-        logs.push({ qno: row.qno || j + 1, lesson: k.lesson, topic: k.topic, kazanim: k.kazanim, type: r, date: ex.date || todayStr() });
+        const log = { qno: row.qno || j + 1, lesson: k.lesson, topic: k.topic, kazanim: k.kazanim, type: r, date: ex.date || todayStr() };
+        // Video çözüm izi: Okulizyon sınav tablosunun ilk sütunu.
+        if (row.video) log.video = row.video;
+        if (row.videoVar || row.video) log.videoVar = true;
+        if (row.status === "e") log.status = "e";
+        logs.push(log);
       }
     });
     if (!logs.length) return;
@@ -1365,7 +1433,9 @@ async function okzAnalizKaydet() {
       lessons: lessons,
       errorLogs: logs,
       total: Object.keys(lessons).length ? d + w + Object.values(lessons).reduce((a, v) => a + (Number(v.e) || 0), 0) : total,
-      net: net
+      net: net,
+      // Bu sınavın Okulizyon'daki sonuç sayfası (video düğmeleri orada)
+      okulizyonUrl: ex.url || ""
     });
     eklenen += logs.length; islenen++;
     const anahtar = okzKey(ex);

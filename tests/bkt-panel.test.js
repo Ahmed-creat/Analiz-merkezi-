@@ -105,7 +105,11 @@ function ortamKur(secenek) {
     navigate: () => {},
     addNotification: () => {},
     daysLeftToExam: () => 30,
-    localStorage: { getItem: () => null, setItem: () => {} },
+    localStorage: {
+      _veri: Object.assign({}, ayar.localStorage || {}),
+      getItem(k) { return Object.prototype.hasOwnProperty.call(this._veri, k) ? this._veri[k] : null; },
+      setItem(k, v) { this._veri[k] = String(v); }
+    },
     fetch: (url) => {
       // Soru havuzu manifesti: iki konu yeter
       const manifest = {
@@ -151,9 +155,23 @@ const bkt = {
     L: 0.3, gozlem_sayisi: 2, hata_gecmisi: [], onay_durumu: "VERI_YETERSIZ", tetiklenen_krediler: []
   }
 };
-const tracking = await calistir({ sayfa: "tracking", bkt_state: bkt });
+// 1a) VARSAYILAN: kapalı, yalnız tek satır özet (sayfayı kaplamasın)
+const kapali = await calistir({ sayfa: "tracking", bkt_state: bkt });
+const kapaliPanel = panelBul(kapali.mainContent);
+ok("Konu Takibi'nde panel basıldı", !!kapaliPanel);
+if (kapaliPanel) {
+  const h = kapaliPanel.innerHTML;
+  ok("varsayılan kapalı: başlık var", h.indexOf("Öğrenme Durumu") >= 0);
+  ok("varsayılan kapalı: kaç konu izlendiği yazılı", h.indexOf("konu izleniyor") >= 0);
+  ok("varsayılan kapalı: ayrıntı düğmesi var", h.indexOf("Ayrıntı") >= 0);
+  ok("varsayılan kapalı: uzun açıklama YOK (yer kaplamaz)", h.indexOf("0–100") < 0);
+  ok("varsayılan kapalı: konu satırları basılmıyor", h.indexOf("Yeterlilik: <b>") < 0);
+}
+
+// 1b) AÇIK: ayrıntılı panel
+const tracking = await calistir({ sayfa: "tracking", bkt_state: bkt, localStorage: { am_bkt_panel_acik: "1" } });
 const panelTracking = panelBul(tracking.mainContent);
-ok("Konu Takibi'nde panel basıldı", !!panelTracking);
+ok("açıkken panel basıldı", !!panelTracking);
 if (panelTracking) {
   const h = panelTracking.innerHTML;
   ok("panel başlığı var", h.indexOf("Öğrenme Durumu") >= 0);
@@ -183,7 +201,7 @@ cok["Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İliş
   L: 0.3, gozlem_sayisi: 1, hata_gecmisi: [], onay_durumu: "VERI_YETERSIZ",
   precheck_due: "2026-10-28", study_completed_at: "2026-10-28", tetiklenen_krediler: []
 };
-const cokO = await calistir({ sayfa: "tracking", bkt_state: cok });
+const cokO = await calistir({ sayfa: "tracking", bkt_state: cok, localStorage: { am_bkt_panel_acik: "1" } });
 const cokPanel = panelBul(cokO.mainContent);
 ok("20+ kayıtta panel basıldı", !!cokPanel);
 if (cokPanel) {

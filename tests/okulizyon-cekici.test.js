@@ -17,7 +17,7 @@ function yardimcilariYukle() {
   // Deno'ya özgü satırları çıkar (saf yardımcılar Deno'ya ihtiyaç duymaz)
   dilim = dilim.split("\n").filter((s) => !/Deno\.env\.get/.test(s)).join("\n");
   const js = stripTypeScriptTypes(dilim, { mode: "strip" });
-  return new Function(js + "\nreturn { norm, esle, secenekler, tablolar, ayikla, baglantilar, metin, kucuk, sayi, ondalik, sinavKartlari, sinavDetay };")();
+  return new Function(js + "\nreturn { norm, esle, secenekler, tablolar, ayikla, baglantilar, metin, kucuk, sayi, ondalik, sinavKartlari, sinavDetay, videoBilgisi, videoAdresi };")();
 }
 
 const H = yardimcilariYukle();
@@ -109,6 +109,21 @@ ok("detay: 2 hatalı/boş soru", detay.rows.length === 2, JSON.stringify(detay.r
 ok("detay: yanlış → w, kazanım [n] temizlenmiş", detay.rows[0] && detay.rows[0].status === "w" && detay.rows[0].topic.startsWith("Metni millî"), JSON.stringify(detay.rows[0]));
 ok("detay: boş → e, ders Matematik-1", detay.rows[1] && detay.rows[1].status === "e" && detay.rows[1].lesson === "Matematik-1", JSON.stringify(detay.rows[1]));
 ok("detay: qno korunur", detay.rows[0] && detay.rows[0].qno === "7" && detay.rows[1].qno === "4");
+
+// ---- 4d) VİDEO ÇÖZÜM: düğme var ama adres yok (canlı HTML böyle) ----
+const videoHucre = detayHtml.slice(detayHtml.indexOf("video_btn") - 260, detayHtml.indexOf("video_btn") + 200);
+const vb = H.videoBilgisi(videoHucre);
+ok("video: Okulizyon düğmesi tanındı (var=true)", vb.var === true, JSON.stringify(vb));
+ok("video: javascript:void(0) ADRES olarak kabul edilmez", vb.url === "", JSON.stringify(vb));
+ok("video: boş hücre → var=false", H.videoBilgisi("<td>—</td>").var === false);
+const vbUrl = H.videoBilgisi('<a href="https://www.youtube.com/watch?v=x1">izle</a>');
+ok("video: gerçek adres varsa alınır", vbUrl.url === "https://www.youtube.com/watch?v=x1", JSON.stringify(vbUrl));
+ok("video: yabancı alan adı reddedilir", H.videoBilgisi('<a href="https://kotu-site.example/x.mp4">a</a>').url === "");
+ok("video: data-video düğmesi okunur", H.videoBilgisi('<a data-video="https://youtu.be/abc" href="javascript:void(0)">v</a>').url === "https://youtu.be/abc");
+// Satırlarda video işareti taşınıyor mu? (ilk sütun atlanmıyor)
+ok("detay: satırlarda videoVar alanı var", detay.rows.every(r => r.videoVar === true), JSON.stringify(detay.rows.map(r => !!r.videoVar)));
+// Sınav sayfası adresi sınavla birlikte saklanıyor mu?
+ok("sınav: `url` alanı kaynak kodda", /exams\.push\(\{[\s\S]{0,400}?url: url,/.test(require("fs").readFileSync(path.join(KOK, "supabase/functions/okulizyon-cek/index.ts"), "utf8")));
 
 // ---- 5) Metin temizleme / sayı okuma ----
 ok("metin: etiketler temizlenir", H.metin("<b>Doğru</b>&nbsp;12") === "Doğru 12", H.metin("<b>Doğru</b>&nbsp;12"));

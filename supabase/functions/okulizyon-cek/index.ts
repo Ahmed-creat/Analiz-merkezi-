@@ -150,6 +150,54 @@ function sinavKartlari(html: string) {
   return out;
 }
 
+// ---- 1b) VİDEO ÇÖZÜM BAĞLANTISI ----
+// Okulizyon tablosunun İLK sütunu "Video". Eski sürüm bu sütunu tamamen
+// atıyordu; öğrenci sorunun video çözümüne ulaşamıyordu.
+// Yalnız izinli alan adları kabul edilir (açık yönlendirme/XSS olmasın).
+const IZINLI_VIDEO_ALAN = [
+  "okulizyon.com", "www.okulizyon.com",
+  "youtube.com", "www.youtube.com", "youtu.be", "m.youtube.com",
+  "vimeo.com", "player.vimeo.com",
+  "drive.google.com", "docs.google.com",
+];
+function videoAdresi(ham: string): string {
+  let u = String(ham || "").trim().replace(/^['"]|['"]$/g, "");
+  if (!u || /^javascript:/i.test(u) || /^data:/i.test(u)) return "";
+  if (u.startsWith("//")) u = "https:" + u;
+  try {
+    const m = new URL(u, "https://okulizyon.com");
+    if (!/^https?:$/.test(m.protocol)) return "";
+    if (!IZINLI_VIDEO_ALAN.includes(m.hostname.toLowerCase())) return "";
+    return m.toString();
+  } catch { return ""; }
+}
+/** Video hücresi: { url, var }.
+ *  CANLI HTML'DE GÖRÜLEN DURUM (tests/fixtures/okulizyon-sinav-detay.html):
+ *  Okulizyon videoyu DOĞRUDAN bir adresle vermiyor; şu düğmeyi koyuyor:
+ *    <a href="javascript:void(0)" data-orbim-veri-table-filter="video_btn"
+ *       data-testno="1" data-dersno="101" data-soruno="7" title="Çözüm videosu">
+ *  Videoyu kendi JS'i açıyor. Bu yüzden URL uydurmuyoruz:
+ *    • gerçek bir http(s) adresi varsa onu alırız (url),
+ *    • yalnız düğme varsa var=true (uygulama "Okulizyon'da aç" der). */
+function videoBilgisi(hucre: string): { url: string; var: boolean } {
+  const h = String(hucre || "");
+  if (!h) return { url: "", var: false };
+  const dugmeVar = /video_btn|data-orbim-veri-table-filter\s*=\s*["']video|<i[^>]*fa-play|title\s*=\s*["'][^"']*[Cc]özüm video/i.test(h);
+  const adaylar: string[] = [];
+  for (const re of [
+    /<a\b[^>]*href\s*=\s*["']([^"']+)["']/gi,
+    /data-(?:video|video_url|videourl)\s*=\s*["']([^"']+)["']/gi,
+    /<iframe\b[^>]*src\s*=\s*["']([^"']+)["']/gi,
+  ]) {
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(h))) adaylar.push(m[1]);
+  }
+  for (const a of adaylar) { const u = videoAdresi(a); if (u) return { url: u, var: true }; }
+  const c = /(https?:\/\/[^\s"'<>]+)/i.exec(h);
+  const u = c ? videoAdresi(c[1]) : "";
+  return { url: u, var: dugmeVar || !!u };
+}
+
 // ---- 2) SINAV DETAYI: soru tablosu (Soru | Video | D.C. | Ö.C. | Kazanım) ----
 // D.C. = doğru cevap, Ö.C. = öğrencinin cevabı (yeşil → doğru, kırmızı → yanlış, boş → boş)
 function sinavDetay(html: string) {
@@ -161,7 +209,7 @@ function sinavDetay(html: string) {
   while ((m = desen.exec(testlerAttr))) dersler[m[1]] = coz(m[2]);
 
   const lessons: Record<string, { d: number; w: number; e: number }> = {};
-  const rows: { qno: string; lesson: string; topic: string; status: string }[] = [];
+  const rows: { qno: string; lesson: string; topic: string; status: string; video?: string; videoVar?: boolean }[] = [];
   const ekle = (ders: string) => { if (!lessons[ders]) lessons[ders] = { d: 0, w: 0, e: 0 }; return lessons[ders]; };
 
   const trRe = /<tr\b[^>]*>([\s\S]*?)<\/tr>/gi;
@@ -174,6 +222,8 @@ function sinavDetay(html: string) {
     const tds = [...blok.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((x) => x[1]);
     if (tds.length < 3) continue;
     const dc = tds[1] || "", oc = tds[2] || "", kazanim = tds[3] || "";
+    // İLK sütun video çözüm hücresi (eski sürümde tamamen atılıyordu)
+    const vb = videoBilgisi(tds[0] || "");
     const ders = dersler[dersno] || "Genel";
     const kayit = ekle(ders);
     const ogrCevap = metin(oc);
@@ -186,7 +236,11 @@ function sinavDetay(html: string) {
     else kayit.e++;
     if (durum !== "d") {
       const konu = metin(kazanim).replace(/^\[\d+\]\s*/, "").slice(0, 300) || ("Soru " + soruno);
-      rows.push({ qno: soruno, lesson: ders, topic: konu, status: durum });
+      rows.push({
+        qno: soruno, lesson: ders, topic: konu, status: durum,
+        ...(vb.url ? { video: vb.url } : {}),
+        ...(vb.var ? { videoVar: true } : {}),
+      });
       void dc; void ogrCevap;
     }
   }
@@ -284,6 +338,9 @@ async function sinavlariTopla(k: Kavanoz) {
         const d = sinavDetay(dh);
         exams.push({
           name: kart.ad, date: kart.tarih, tur: kart.tur || undefined,
+          // Öğrencinin Okulizyon'daki bu sınavın sonuç sayfası: video çözüm
+          // düğmeleri orada. Bağlantı yoksa uygulama "İzle" göstermez.
+          url: url,
           toplam: { dogru: kart.dogru, yanlis: kart.yanlis, net: kart.net },
           lessons: d.lessons, rows: d.rows
         });

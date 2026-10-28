@@ -173,7 +173,32 @@
         "front": "Hız-zaman grafiğinin eğimi ve zaman ekseniyle arasındaki alan hangi iki niceliği verir?",
         "back": "Grafiğin eğimi ivmeyi, imzalı alan ise yer değiştirmeyi verir."
       },
-      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,"
+      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                12
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                8,
+                -12
+              ]
+            ]
+          }
+        ],
+        "aciklama": "Hız-zaman grafiği: t=0'da +12 m/s, t=8 s'de −12 m/s."
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o10",
@@ -211,7 +236,32 @@
         "front": "Sabit ivmeli hareketin hız-zaman grafiği nasıl bir biçimdedir?",
         "back": "İvme sabit olduğundan hız zamanla doğrusal değişir; hız-zaman grafiği eğimli bir doğru olur."
       },
-      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,"
+      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                8
+              ],
+              [
+                6,
+                14
+              ]
+            ]
+          }
+        ],
+        "aciklama": "Hız-zaman grafiği pozitif eğimli doğru."
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o12",

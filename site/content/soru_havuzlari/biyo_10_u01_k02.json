@@ -21,7 +21,16 @@
         "front": "Fotosentezi, kullanılan enerji kaynağı ve sentezlenen madde açısından açıklayınız.",
         "back": "Klorofil taşıyan canlılarda ışık enerjisi kullanılarak inorganik maddelerden organik madde sentezlenmesine fotosentez denir."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,",
+      "gorsel": {
+        "tip": "sema",
+        "kutular": [
+          "Işık enerjisi",
+          "Fotosentez",
+          "Besin + O₂"
+        ],
+        "aciklama": "Fotosentez ışık enerjisiyle besin üretir."
+      }
     },
     {
       "soru_id": "biyo_10_u01_k02_o02",

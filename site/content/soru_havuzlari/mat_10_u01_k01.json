@@ -21,7 +21,19 @@
         "front": "Dik üçgende dar açı α için tanjant oranını karşı ve komşu dik kenarlarla yaz.",
         "back": "tan α = karşı dik kenar uzunluğu / komşu dik kenar uzunluğu."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "ucgen",
+        "dik": "C",
+        "kenarlar": {
+          "a": "7",
+          "b": "24",
+          "c": "?"
+        },
+        "aci": "α",
+        "aciKose": "A",
+        "aciklama": "Karşı dik kenar 7, komşu dik kenar 24."
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o02",
@@ -40,7 +52,20 @@
         "front": "Dik üçgende dar açı α için tan α ve cot α oranlarını kenar uzunluklarıyla yaz.",
         "back": "tan α = karşı dik kenar / komşu dik kenar; cot α = komşu dik kenar / karşı dik kenar."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "ucgen",
+        "dik": "C",
+        "kenarlar": {
+          "a": "9",
+          "b": "40",
+          "c": "?"
+        },
+        "aci": "α",
+        "aciKose": "A",
+        "not": "2. üçgen: karşı x, komşu 80 (aynı dar açı)",
+        "aciklama": "1. üçgen 9–40; 2. üçgen x–80."
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o03",
@@ -59,7 +84,19 @@
         "front": "Dar açı α için sin²α + cos²α trigonometrik özdeşliğini tamamla.",
         "back": "sin²α + cos²α = 1."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "ucgen",
+        "dik": "C",
+        "kenarlar": {
+          "a": "20",
+          "b": "?",
+          "c": "29"
+        },
+        "aci": "α",
+        "aciKose": "A",
+        "aciklama": "sin α = 20/29."
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o04",
@@ -78,7 +115,19 @@
         "front": "Dar açı α için tan α ile cot α değerlerinin çarpımını yaz.",
         "back": "tan α · cot α = 1."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "ucgen",
+        "dik": "C",
+        "kenarlar": {
+          "a": "5",
+          "b": "8",
+          "c": "?"
+        },
+        "aci": "α",
+        "aciKose": "A",
+        "aciklama": "tan α = 5/8."
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o05",
@@ -97,7 +146,19 @@
         "front": "30° ölçülü açı için sinüs, kosinüs, tanjant ve kotanjant değerlerini sırayla yaz.",
         "back": "sin 30° = 1/2, cos 30° = √3/2, tan 30° = √3/3 ve cot 30° = √3."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "ucgen",
+        "dik": "C",
+        "kenarlar": {
+          "a": "8",
+          "b": "?",
+          "c": "?"
+        },
+        "aci": "30°",
+        "aciKose": "A",
+        "aciklama": "30°'nin karşısı 8 cm."
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o06",

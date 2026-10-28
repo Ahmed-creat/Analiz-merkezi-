@@ -491,6 +491,11 @@
       if (!Array.isArray(q.secenekler) || q.secenekler.length !== 4 || !Number.isInteger(q.dogru_index)) errors.push("seçenek:" + i);
       if (!q.cozum || q.zorluk !== "deneme") errors.push("çözüm/deneme zorluğu:" + i);
       if (q.alt_beceri) skillCounts[q.alt_beceri] = (skillCounts[q.alt_beceri] || 0) + 1;
+      // İsteğe bağlı görsel: varsa tanımı geçerli olmalı (yoksa sessizce kaybolurdu)
+      if (q.gorsel && window.GV && typeof window.GV.dogrula === "function") {
+        const g = window.GV.dogrula(q.gorsel);
+        if (g.length) errors.push("görsel:" + i + " (" + g.join(",") + ")");
+      }
     });
     Object.keys(skillCounts).forEach(k => { if (skillCounts[k] < 2) errors.push("alt beceri:" + k); });
     return { valid: errors.length === 0, errors: errors };
@@ -610,6 +615,8 @@
       let html = '<div style="width:100%;max-width:600px;max-height:90vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><strong>' + title + ' — ' + questions.length + ' soru</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:20px;cursor:pointer;">×</button></div><p class="text-xs text-muted">Tüm soruları işaretle. Test sırasında doğru cevap gösterilmez.</p>';
       questions.forEach(function (q, i) {
         html += '<fieldset style="border:0;border-top:1px solid var(--border-card);padding:12px 0;margin:0;"><legend style="font-weight:700;font-size:13px;">' + (i + 1) + '. ' + safeText(q.metin) + '</legend>';
+        // Görsel soru: üçgen/grafik/vektör çizimi (varsa)
+        if (q.gorsel && window.GV && typeof window.GV.html === "function") html += window.GV.html(q.gorsel, 330);
         (q.secenekler || []).forEach(function (option, j) { html += '<label style="display:block;font-size:12.5px;padding:5px 0;min-height:48px;"><input type="radio" name="bkt-q-' + i + '" value="' + j + '"> ' + safeText(option) + '</label>'; });
         html += '</fieldset>';
       });
@@ -641,7 +648,14 @@
     let html = '<div style="width:100%;max-width:600px;max-height:90vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><strong>Sonuçlar</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:20px;">×</button></div><p class="text-sm">' + draft.correct + '/' + questions.length + ' doğru.</p>';
     questions.forEach((q, i) => {
       const ok = Number(draft.answers[i]) === Number(q.dogru_index);
-      html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b>' + (i + 1) + '. ' + (ok ? "Doğru" : "Yanlış") + '</b><div class="text-muted" style="margin-top:4px;">Çözüm: ' + safeText(q.cozum) + '</div>';
+      html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b>' + (i + 1) + '. ' + (ok ? "Doğru" : "Yanlış") + '</b>';
+      if (q.gorsel && window.GV && typeof window.GV.html === "function") html += window.GV.html(q.gorsel, 300);
+      html += '<div class="text-muted" style="margin-top:4px;">Çözüm: ' + safeText(typeof q.cozum === "string" ? q.cozum : (q.cozum && q.cozum.metin) || "") + '</div>';
+      // Video çözüm varsa "izle" bağlantısı (yoksa uydurulmaz)
+      if (window.VC && typeof window.VC.soruCozumu === "function") {
+        const vz = window.VC.soruCozumu(q);
+        if (vz.video) html += '<a href="' + safeText(vz.video) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="margin-top:6px;display:inline-block;min-height:40px;">▶ Çözümü izle</a>';
+      }
       if (!ok) html += '<label style="display:block;margin-top:7px;">Neden <select data-bkt-reason="' + i + '" style="min-height:48px;"><option value="">Seçiniz</option><option value="Konuyu Bilmiyordum">Konuyu bilmiyordum</option><option value="KONUEKSİKLİĞİ">Konu eksiği</option><option value="ANLAMADIM">Anlamadım</option><option value="ÇÖZÜMYOLUNUBULAMADIM">Çözüm yolunu bulamadım</option><option value="İşlem Hatası/Dikkatsizlik">İşlem hatası / dikkatsizlik</option><option value="Kodlama/Kitapçık Hatası">Kodlama / kitapçık hatası</option><option value="SÜREYETMEDİ">Süre yetmedi</option></select></label>';
       html += '</div>';
     });
@@ -861,7 +875,24 @@
     let panel = document.getElementById("bkt-learning-panel");
     if (!entries.length) { if (panel) panel.remove(); return; }
     if (!panel) { panel = document.createElement("section"); panel.id = "bkt-learning-panel"; panel.className = "card"; host.appendChild(panel); }
-    let html = '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px;"><div><h3 style="margin:0;font-size:16px;">Öğrenme Durumu</h3><div class="text-xs text-muted">Bu sayfa yalnız Konu Takibi\'nde görünür</div></div></div>';
+    // Panel varsayılan KAPALI: yalnız tek satır özet görünür, sayfayı kaplamaz.
+    // Tercih localStorage'da hatırlanır; öğrenci "Ayrıntı" ile açar.
+    let acik = false;
+    try { acik = localStorage.getItem("am_bkt_panel_acik") === "1"; } catch (e) { acik = false; }
+    const aksiyon = entries.filter(function (x) {
+      const p = x.entry.pool_id || x.entry.soru_havuzu_id || resolvePoolId(x.key);
+      return p && x.entry.precheck_due && dateValue(x.entry.precheck_due) <= dateValue(TODAY());
+    }).length;
+    const onayli = entries.filter(function (x) { return statusFor(x.entry) === "ONAYLANDI"; }).length;
+    let html = '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">'
+      + '<div style="min-width:0;"><h3 style="margin:0;font-size:15px;">Öğrenme Durumu <span class="text-xs text-muted" style="font-weight:600;">· ' + entries.length + ' konu izleniyor</span></h3>'
+      + '<div class="text-xs text-muted" style="margin-top:2px;">'
+      + (acik ? 'Konuların yeterlilik ve tekrar göstergeleri'
+              : (aksiyon ? '<b style="color:var(--brand-blue);">' + aksiyon + ' konuda kısa kontrol hazır</b> · ' : '') + onayli + ' onaylı · satırları görmek için aç')
+      + '</div></div>'
+      + '<button class="btn btn-sm btn-ghost" data-bkt-panel="toggle" style="flex-shrink:0;min-height:40px;" aria-expanded="' + (acik ? "true" : "false") + '">' + (acik ? "Küçült" : "Ayrıntı") + '</button></div>';
+    if (!acik) { panel.innerHTML = html; return; }
+    html += '<div class="text-xs text-muted" style="margin:8px 0 10px;line-height:1.5;">Konuların yeterlilik ve tekrar göstergeleri</div>';
     // Panelin ne gösterdiğini açıkça yaz: kullanıcı sayının ne olduğunu bilsin
     html += '<div style="font-size:11.5px;line-height:1.5;opacity:0.78;border-left:3px solid var(--brand-blue);padding:2px 0 2px 8px;margin-bottom:10px;">'
       + '<b>Yeterlilik</b> = bu konuyu bilme olasılığın (sorularına göre 0–100). '
@@ -925,6 +956,13 @@
       if (event.target.matches && event.target.matches("#bkt-test-modal input[type=radio]")) { const modal = document.getElementById("bkt-test-modal"); persistMiniSession(modal); updateMiniSubmitState(modal); }
     });
     document.addEventListener("click", function (event) {
+      if (event.target.closest("[data-bkt-panel]")) {
+        let acik = false;
+        try { acik = localStorage.getItem("am_bkt_panel_acik") === "1"; } catch (e) { acik = false; }
+        try { localStorage.setItem("am_bkt_panel_acik", acik ? "0" : "1"); } catch (e) { /* */ }
+        renderBktPanel();
+        return;
+      }
       const testButton = event.target.closest("[data-bkt-test]");
       if (testButton) { openMiniTest(testButton.dataset.bktTest, testButton.dataset.bktPool, { mode: testButton.dataset.bktMode || "learning" }); return; }
       if (event.target.closest("[data-bkt-close-test]")) { closeMiniTest(); return; }

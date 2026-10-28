@@ -24,7 +24,10 @@
     "test:mesaj-ui": "node tests/mesaj-ui.test.js",
     "test:ders": "node tests/okz-normalize.test.js && node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
     "test:kuyruk": "node tests/okz-kuyruk.test.js",
-    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk",
+    "test:birlestir": "node tests/birlestir.test.js",
+    "test:gorsel": "node tests/gorsel-video.test.js",
+    "test:yuk": "node tests/okz-yuk.test.js",
+    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk",
     "test:konu": "node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
     "esleme:uret": "node scripts/konu-esleme-uret.js"
   }

@@ -21,7 +21,16 @@
         "front": "Kütlenin korunumu kanununu, tepkime öncesi ve sonrası atomlar açısından açıklayınız.",
         "back": "Tepkimeye girenlerin toplam kütlesi ürünlerin toplam kütlesine eşittir. Tepken ve ürünlerde atomların cinsi ve sayısı korunur."
       },
-      "kazanim": "kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz,"
+      "kazanim": "kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz,",
+      "gorsel": {
+        "tip": "sema",
+        "kutular": [
+          "Tepkenler",
+          "Denkleştir",
+          "Ürünler"
+        ],
+        "aciklama": "Kütle korunumu: iki tarafta atom sayıları eşit olmalı."
+      }
     },
     {
       "soru_id": "kimya_10_u01_k04_o02",
