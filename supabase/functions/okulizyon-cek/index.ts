@@ -5,7 +5,9 @@
 //  ogrid>0 & sifrevar → POST /ajax/ogrencigiris.php (sifre) ; ogrid=0 & yksid/lgsid>0 → oturum açık
 //  GET /app2/ogrenci/?pg=sinavsonuclari → sınav KARTLARI (tablo değil)
 //  GET /app2/ogrenci/?pg=yks&sid=…  → sınav DETAYI (soru tablosu: Soru|Video|D.C.|Ö.C.|Kazanım)
-// Modlar: probe · test · parse · ham · canli (kuru çalışma) · ben (JWT sahibi) · run (cron, tüm kullanıcılar)
+// Modlar: ben (JWT sahibinin kaydı) · run (cron, tüm kullanıcılar)
+//   Geliştirme/teşhis modları (probe/parse/test/canli) doğrulama bittikten sonra KALDIRILDI:
+//   anon anahtarı herkese açık olduğu için rastgele kimlikle başka öğrencinin sonucu okunabiliyordu.
 // Yazma: public.okulizyon_kuyrugu (user_id, exams, pulled_at, durum, durum_mesaji, ham_ozet)
 const TABAN = "https://okulizyon.com";
 const GIRIS = TABAN + "/app2/ogrgiris/";
@@ -349,50 +351,13 @@ Deno.serve(async (istek) => {
   if (istek.method === "OPTIONS") return new Response("ok", { headers: cors });
   const json = (v: unknown, k = 200) => new Response(JSON.stringify(v, null, 2), { status: k, headers: { ...cors, "Content-Type": "application/json" } });
   let g: any = {}; try { g = await istek.json(); } catch { g = {}; }
-  const mod = String(g.mod || "run"), t0 = Date.now();
+  const mod = String(g.mod || ""), t0 = Date.now();
+  if (mod !== "ben" && mod !== "run") return json({ hata: "geçersiz mod — yalnız ben | run" }, 400);
   try {
-    if (mod === "probe") {
-      const k = new Kavanoz(), y = await http(k, GIRIS), html = await y.text();
-      const iller = secenekler(html, "ilkodu"), gz = esle(iller, "Gaziantep");
-      let ilceler: unknown = null, kurumlar: unknown = null;
-      try {
-        const j: any = await (await http(k, TABAN + "/ajax/ilceler.php?ilkodu=" + (gz || 27))).json();
-        ilceler = Array.isArray(j) ? j.slice(0, 3) : j;
-        if (Array.isArray(j) && j[0]?.ilcekodu) { const j2: any = await (await http(k, TABAN + "/ajax/kurumlar.php?ilcekodu=" + j[0].ilcekodu)).json(); kurumlar = Array.isArray(j2) ? j2.slice(0, 3) : j2; }
-      } catch (e) { ilceler = String(e); }
-      return json({ mod, sayfaKod: y.status, sayfaBoyut: html.length, ilSayisi: Object.keys(iller).length, gaziantepKodu: gz, ilceler, kurumlar, sureMs: Date.now() - t0 });
-    }
-    if (mod === "parse") {
-      // Verilen HTML ile yayındaki ayrıştırıcıları sına (canlı doğrulama)
-      const html = String(g.html || "");
-      const kart = sinavKartlari(html), detay = sinavDetay(html);
-      return json({ mod, uzunluk: html.length, kartlar: kart, detay, ayikla: ayikla(html, String(g.ad || "Test"), String(g.tarih || "")), sureMs: Date.now() - t0 });
-    }
-    if (mod === "test") {
-      const kim = g.kimlik;
-      if (!kim?.ad || !kim?.okulNo) return json({ hata: "kimlik gerekli" }, 400);
-      const k = new Kavanoz(), r: any = await giris(kim, k);
-      if (r.durum !== "oturum") return json({ mod, giris: r, sureMs: Date.now() - t0 });
-      const y = await http(k, SONUC, { headers: { Referer: TABAN + "/app2/ogrenci/" } }), html = await y.text();
-      return json({ mod, giris: { durum: r.durum, ogrid: r.ogrid, kodlar: r.kodlar }, sonucKod: y.status, boyut: html.length, kartlar: sinavKartlari(html), metin: metin(html).slice(0, 1200), sureMs: Date.now() - t0 });
-    }
-    if (mod === "canli") {
-      // KURU ÇALIŞMA: giriş + toplama + ayrıştırma, veritabanına YAZMADAN
-      const kim = g.kimlik;
-      if (!kim?.ad || !kim?.okulNo) return json({ hata: "kimlik gerekli" }, 400);
-      const k = new Kavanoz(), r: any = await giris(kim, k);
-      if (r.durum !== "oturum") return json({ mod, giris: r, sureMs: Date.now() - t0 });
-      const t = await sinavlariTopla(k);
-      return json({
-        mod, giris: { durum: r.durum, kodlar: r.kodlar }, kartSayisi: t.kartSayisi, htmlBoyut: t.htmlBoyut, hatalar: t.hatalar,
-        sinavlar: t.exams.map((e) => ({
-          ad: e.name || e.name === "" ? e.name : e.name, tarih: e.date, tur: e.tur, toplam: e.toplam,
-          dersler: e.lessons, hataliSoru: (e.rows || []).length,
-          ornek: (e.rows || []).slice(0, 5)
-        })),
-        sureMs: Date.now() - t0
-      });
-    }
+    // NOT: geliştirme/teşhis modları (probe, parse, test, canli) kaldırıldı.
+    // Sebep: anon anahtarı herkese açık olduğu için bu modlar rastgele bir
+    // ad-soyad + okul no ile BAŞKA öğrencinin sınav sonuçlarını döndürüyordu.
+    // Doğrulama tamamlandı; gerekirse git geçmişinden geri alınabilir.
     if (mod === "ben") {
       // Tarayıcıdaki "Şimdi dene" düğmesi: JWT sahibinin kaydını çek
       const yetki = istek.headers.get("Authorization") || "";

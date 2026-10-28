@@ -154,10 +154,18 @@ eklendi ve ders adları `Türkçe`, `Tarih-1`… olarak okunuyor. Fikstür
 (`tests/fixtures/okulizyon-sinav-detay.html`) bilinçli olarak kaçışlı hâli korur,
 böylece gerileme testte yakalanır.
 
-### Modlar (güncel)
-`probe` · `parse {html,ad,tarih}` · `test {kimlik}` · `canli {kimlik}` (kuru
-çalışma) · **`ben`** (tarayıcıdaki "Şimdi dene": JWT sahibinin kaydını çeker) ·
-`run` (cron: tüm `app_states` taraması, DB'ye yazar).
+### Modlar (güncel · v7)
+**`ben`** (tarayıcıdaki "Şimdi dene": JWT sahibinin kaydını çeker) ·
+**`run`** (cron: tüm `app_states` taraması, DB'ye yazar). Başka mod → `400`.
+
+> **Güvenlik düzeltmesi (v7):** Geliştirme modları (`probe`, `parse`, `test`,
+> `canli`) kaldırıldı. Sebep: `anon` anahtarı site kaynağında herkese açık
+> olduğu için bu modlar **rastgele bir ad-soyad + okul no ile başka bir
+> öğrencinin sınav sonuçlarını** döndürüyordu. Doğrulama tamamlandığı için
+> modlar üretimden çıkarıldı; git geçmişinden geri alınabilir.
+> `okulizyon-teshis` fonksiyonu, `kaynak_*` SQL yardımcıları ve `gecici_kaynak`
+> tablosu da silindi. `okulizyon_kuyrugu` RLS ile korunuyor (herkes yalnız
+> kendi satırını okur).
 
 ### Testler
 `npm run test:okz` → **39/39** (kart ayrıştırma + detay + kaçış çözme dahil).
