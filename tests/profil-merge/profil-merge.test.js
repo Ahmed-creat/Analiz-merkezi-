@@ -74,17 +74,20 @@ bekle("initAuthUI kendiliğinden çalıştı (__pwaProfileHooked)", window.__pwa
 bekle("initOkulizyonUI kendiliğinden çalıştı (__okzHooked)", window.__okzHooked === true);
 bekle("window.__profilAc tanımlı", typeof window.__profilAc === "function");
 
-// ---------- 1) Profil'e giriş noktaları gerçek HTML'de var mı? ----------
+// ---------- 1) Profil'e giriş noktaları: YALNIZ yan menü + alt menü ----------
 const navBtn = document.getElementById("pwa-profile-nav");
 const moreBtn = document.getElementById("pwa-profile-more");
 const tabBtn = document.getElementById("pwa-profile-tab");
 const userKart = document.getElementById("sidebar-user");
-bekle("yan menüde 'Profil & Okulizyon' sekmesi var", navBtn && /Profil/.test(navBtn.textContent));
-bekle("DAHA sayfasında Profil maddesi var", moreBtn && /Profil/.test(moreBtn.textContent));
-bekle("mobil alt menüde Profil sekmesi var", tabBtn && /Profil/.test(tabBtn.textContent));
-bekle("kullanıcı kartı tıklanabilir (cursor:pointer)", userKart && userKart.style.cursor === "pointer");
-bekle("profil sekmeleri data-act=openProfile taşıyor",
-  [navBtn, moreBtn, tabBtn].every((el) => el && el.dataset.act === "openProfile"));
+bekle("yan menüde 'Profil' sekmesi var", navBtn && navBtn.textContent.trim().startsWith("Profil"));
+bekle("sekmede 'Okulizyon' kelimesi yok (sadece Profil)", navBtn && !/Okulizyon/i.test(navBtn.textContent));
+bekle("mobil alt menüde Profil sekmesi var", tabBtn && tabBtn.textContent.trim() === "Profil");
+bekle("DAHA sayfasında Profil maddesi YOK", !moreBtn);
+bekle("kullanıcı kartı tıklanabilir değil", userKart && !userKart.dataset.act && userKart.style.cursor !== "pointer");
+bekle("avatar/isim tıklaması Profil açmıyor", !document.getElementById("sidebar-avatar").onclick);
+bekle("sadece iki giriş noktası data-act=openProfile taşıyor",
+  [navBtn, tabBtn].every((el) => el && el.dataset.act === "openProfile"));
+bekle("data-act=openProfile toplam 2 öğe", document.querySelectorAll("[data-act='openProfile']").length === 2);
 bekle("eski yan menü Giriş butonu yok", !document.getElementById("pwa-auth-btn"));
 bekle("eski yan menü Okulizyon butonu yok", !document.getElementById("pwa-okz-btn"));
 
@@ -108,7 +111,7 @@ tiklama(tabBtn);
 bekle("mobil alt menü sekmesinden açıldı", profil().style.display === "flex");
 tiklama(document.querySelector("#pwa-profile-modal [data-act='pwaProfileClose']"));
 tiklama(userKart);
-bekle("kullanıcı kartından açıldı", profil().style.display === "flex");
+bekle("kullanıcı kartına tıklayınca açılmıyor", profil().style.display === "none");
 
 // ---------- 3) Giriş (Supabase) akışı erişilebilir mi? ----------
 const girisBtn = document.querySelector("#pwa-profile-modal [data-act='pwaAuth']");
@@ -136,6 +139,17 @@ bekle("okul no kaydedildi", window.state.settings.okulizyon.okulNo === "9876");
 bekle("saveState çağrıldı", (window.__kayitSayisi || 0) > 0);
 const badge = document.querySelector("#pwa-profile-nav .pwa-okz-badge");
 bekle("yan menüdeki badge sayısı 1", badge && badge.textContent === "1" && badge.style.display === "inline-block");
+
+// ---------- 6) Çekim durumu görünür mü? (sessiz başarısızlık yok) ----------
+bekle("profilede 'Son çekim' satırı var", document.getElementById("pwa-profile-modal").innerHTML.includes("Son çekim"));
+const cekBtn = document.querySelector("#pwa-profile-modal [data-act='okzSimdiCek']");
+bekle("'Şimdi dene' butonu var", !!cekBtn);
+tiklama(cekBtn);
+await new Promise((r) => setTimeout(r, 30));
+const durumHtml = document.getElementById("pwa-profile-modal").innerHTML;
+bekle("çekim sonucu kullanıcıya yazılıyor", /bulut-yok|Supabase istemcisi|Giriş yapılmadı|Sunucu hatası/.test(durumHtml));
+bekle("durum kayda geçti (state.okulizyon.durum)", !!(window.state.okulizyon && window.state.okulizyon.durum));
+bekle("giriş sonrası otomatik çekim bağlı", /okzKuyrukCek\(true\)/.test(src));
 
 let hata = 0;
 for (const [ad, ok] of kontrol) { if (!ok) { hata++; console.log("❌ " + ad); } else console.log("✅ " + ad); }

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.2-profil-giris";
+const PWA_SURUM = "v34.3-profil";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -80,52 +80,28 @@ if ("serviceWorker" in navigator) {
 function initAuthUI() {
   if (window.__pwaProfileHooked) return;
   window.__pwaProfileHooked = true;
-  // Giriş ve Okulizyon artık yalnız PROFİL'den yönetilir.
-  // Giriş noktaları: yan menü "Profil & Okulizyon", kullanıcı kartı, mobil alt menü "Profil", DAHA sayfası.
+  // Giriş ve Okulizyon tek yerde: PROFİL penceresi.
+  // Giriş noktaları YALNIZCA iki tane: yan menü "Profil" sekmesi + mobil alt menü "Profil" sekmesi.
   window.__profilAc = openProfileModal;
-  const kart = document.getElementById("sidebar-user");
-  if (kart) {
-    kart.style.cursor = "pointer";
-    kart.title = "Profil — giriş, bulut yedeği ve Okulizyon bilgileri";
-  }
-  const avatar = document.getElementById("sidebar-avatar");
-  if (avatar) {
-    avatar.style.cursor = "pointer";
-    avatar.title = "Profil — hesap ve Okulizyon";
-    avatar.addEventListener("click", openProfileModal);
-  }
-  const userName = document.getElementById("sidebar-user-name");
-  if (userName) {
-    userName.style.cursor = "pointer";
-    userName.title = "Profil";
-    userName.addEventListener("click", openProfileModal);
-  }
-  // index.html'de hazır gelen giriş noktaları (statik) — varsa yeniden üretme
-  ["pwa-profile-nav", "pwa-profile-more", "pwa-profile-tab", "sidebar-user"].forEach(function (id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.add("pwa-profil-giris");
-    if (!el.getAttribute("title")) el.setAttribute("title", "Profil — giriş, bulut yedeği ve Okulizyon bilgileri");
-    if (id !== "sidebar-user" && !el.dataset.act) el.dataset.act = "openProfile";
-  });
   const nav = document.getElementById("sidebar-nav");
   if (nav && !document.getElementById("pwa-profile-nav")) {
     const nb = document.createElement("button");
     nb.id = "pwa-profile-nav";
-    nb.className = "nav-item";
+    nb.className = "nav-item pwa-profil-giris";
     nb.dataset.act = "openProfile";
-    nb.innerHTML = '<i data-lucide="user-round"></i><span>Profil &amp; Okulizyon <b class="pwa-okz-badge" style="display:none;background:#E11D48;color:#fff;border-radius:99px;padding:0 6px;font-size:10px;margin-left:4px;"></b></span>';
+    nb.title = "Profil";
+    nb.innerHTML = '<i data-lucide="user-round"></i><span>Profil <b class="pwa-okz-badge" style="display:none;background:#E11D48;color:#fff;border-radius:99px;padding:0 6px;font-size:10px;margin-left:4px;"></b></span>';
     nav.appendChild(nb);
   }
-  const more = document.getElementById("more-sheet");
-  if (more && !document.getElementById("pwa-profile-more")) {
-    const mbtn = document.createElement("button");
-    mbtn.id = "pwa-profile-more";
-    mbtn.className = "ms-item";
-    mbtn.style.gridColumn = "1 / -1";
-    mbtn.dataset.act = "openProfile";
-    mbtn.innerHTML = '<i data-lucide="user-round" style="width:18px;height:18px;color:var(--brand-blue);"></i> <span>Profil · Hesap &amp; Okulizyon <b class="pwa-okz-badge" style="display:none;background:#E11D48;color:#fff;border-radius:99px;padding:0 6px;font-size:10px;margin-left:4px;"></b></span>';
-    more.appendChild(mbtn);
+  const bnav = document.getElementById("bottom-nav");
+  if (bnav && !document.getElementById("pwa-profile-tab")) {
+    const tb = document.createElement("button");
+    tb.id = "pwa-profile-tab";
+    tb.className = "bottom-nav-item pwa-profil-giris";
+    tb.dataset.act = "openProfile";
+    tb.title = "Profil";
+    tb.innerHTML = '<i data-lucide="user-round"></i><span>Profil</span>';
+    bnav.appendChild(tb);
   }
   buildAuthModal();
   // Bildirim izni ayarlardan SONRADAN verilirse FCM token'ı o an kaydet
@@ -223,6 +199,7 @@ function openProfileModal() {
   renderProfileModal();
   const m = document.getElementById("pwa-profile-modal");
   if (m) m.style.display = "flex";
+  setTimeout(function () { try { okzKuyrukCek(false); } catch (e) {} }, 250);
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
 function closeProfileModal() {
@@ -280,8 +257,16 @@ function renderProfileModal() {
   html += '</div>';
   html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
   html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
+  html += '<button data-act="okzSimdiCek" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi dene</button>';
   html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Analiz Bekliyor' + (bekleyen > 0 ? " (" + bekleyen + ")" : "") + '</button>';
   html += '</div>';
+  // Çekim durumu: sessiz başarısızlık yerine açık bilgi
+  const durumRenk = !st.durum ? "#6B7280" : (st.durum.kod === "ok" ? "#16A34A" : (st.durum.kod === "giris-yok" || st.durum.kod === "bos" ? "#B45309" : "#E11D48"));
+  html += '<div style="margin-top:9px;font-size:11.5px;line-height:1.45;color:' + durumRenk + ';">'
+       + '<b>Son çekim:</b> '
+       + (st.durum ? escHtml(okzZaman(st.durum.zaman)) + " — " + escHtml(st.durum.mesaj) : "henüz denenmedi")
+       + (st.sonCekim ? '<br><span style="opacity:0.75;">Sunucudaki son çekim: ' + escHtml(okzZaman(Date.parse(st.sonCekim) || 0)) + '</span>' : "")
+       + '</div>';
   if (st.duyurular && st.duyurular.length) {
     html += '<div style="margin-top:12px;font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKUL DUYURULARI</div>';
     st.duyurular.slice(0, 4).forEach(d => {
@@ -410,6 +395,8 @@ async function oturumUygula(session) {
   currentUser = user;
   const kim = (user.email || "").split("@")[0] || "hesap";
   setAuthLabel(true, kim);
+  // Giriş yapıldığı anda Okulizyon kuyruğunu dene (eskiden yalnız "internet geri geldi" olayında deniyordu)
+  setTimeout(function () { try { if (typeof state !== "undefined") okzKuyrukCek(true); } catch (e) {} }, 1200);
   if (!yeniKullanici && window.__bulutYuklenenKullanici === user.id) return; // token yenilemede tekrar yükleme
   window.__bulutYuklenenKullanici = user.id;
   if (typeof state === "undefined") return; // state henüz hazır değil (index.html yükleniyor)
@@ -536,6 +523,20 @@ function okzStore() {
   if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], pulledAt: 0, duyurular: null };
   return state.okulizyon;
 }
+// Çekim sonucunu kullanıcıya görünür kıl (sessiz console.warn yerine)
+function okzDurum(kod, mesaj) {
+  try {
+    const st = okzStore();
+    st.durum = { kod: kod, mesaj: mesaj, zaman: Date.now() };
+    saveState();
+  } catch (e) {}
+  if (typeof window.__profilTaze === "function") window.__profilTaze();
+  return kod;
+}
+function okzZaman(ts) {
+  try { return new Date(ts).toLocaleString("tr-TR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }); }
+  catch (e) { return ""; }
+}
 function okzKey(ex) { return (ex.name || "?") + "|" + (ex.date || ""); }
 function initOkulizyonUI() {
   if (window.__okzHooked) return;
@@ -548,6 +549,7 @@ function initOkulizyonUI() {
     if (!el) return;
     const a = el.dataset.act;
     if (a === "pwaOkz") openOkzModal();
+    else if (a === "okzSimdiCek") { toast("Okulizyon sonuçları sorgulanıyor…", "info"); okzKuyrukCek(true); }
     else if (a === "okzClose") closeOkzModal();
     else if (a === "okzSaveBilgi") okzSaveBilgi();
     else if (a === "okzAnalizKaydet") okzAnalizKaydet();
@@ -640,31 +642,49 @@ function okzSaveBilgi() {
 function okzHepsiUygula(reason) {
   document.querySelectorAll(".okz-reason").forEach(sel => { sel.value = reason; });
 }
-async function okzKuyrukCek() {
-  if (!sb || !currentUser) return;
+let okzCekSuruyor = false;
+async function okzKuyrukCek(zorla) {
+  if (typeof state === "undefined") return;                 // uygulama durumu henüz hazır değil
+  if (okzCekSuruyor) return;
+  const st0 = okzStore();
+  const simdi = Date.now();
+  // Otomatik denemeler 5 dakikada bir; "Şimdi dene" her zaman çalışır
+  if (!zorla && st0.sonDeneme && simdi - st0.sonDeneme < 5 * 60 * 1000) return;
+  st0.sonDeneme = simdi;
+
+  if (!sb) return okzDurum("bulut-yok", "Supabase istemcisi yüklenmedi (vendor/supabase.js / supabase-config.js).");
+  if (!currentUser) return okzDurum("giris-yok", "Giriş yapılmadı — sınav sonuçları hesaba bağlı. Önce giriş yap.");
+
+  okzCekSuruyor = true;
   try {
     const { data, error } = await sb.from("okulizyon_kuyrugu")
       .select("exams, pulled_at")
       .eq("user_id", currentUser.id)
       .maybeSingle();
-    if (error) throw error;
-    if (data && data.exams) {
-      const q = data;
-      const st = okzStore();
-      const pulledAt = Date.parse(q.pulled_at) || 0;
-      if (pulledAt > (st.pulledAt || 0)) {
-        st.pulledAt = pulledAt;
-        const yeni = (q.exams || []).filter(ex => !st.importedKeys.includes(okzKey(ex)));
-        st.pending = yeni;
-        const n = yeni.reduce((a, ex) => a + (ex.rows || []).length, 0);
-        saveState();
-        if (n > 0) {
-          addNotification({ title: "Okulizyon: " + n + " soru Analiz Bekliyor", body: yeni.map(e => e.name).join(", ").slice(0, 140), kind: "info", topicKey: "okz@" + q.pulled_at });
-          okzBadge();
-          openConfirm("Okulizyon'dan " + n + " soru geldi (Analiz Bekliyor). Şimdi nedenlerini seçmek ister misin?", openOkzModal);
-        }
+    if (error) return okzDurum("hata", "Sunucu hatası: " + (error.message || "kuyruk okunamadı"));
+    if (!data) return okzDurum("bos", "Bu hesap için sunucuda çekilmiş sonuç yok (okulizyon_kuyrugu tablosunda kayıt bulunamadı).");
+
+    const st = okzStore();
+    const pulledAt = Date.parse(data.pulled_at) || 0;
+    st.sonCekim = data.pulled_at || null;
+    if (pulledAt > (st.pulledAt || 0)) {
+      st.pulledAt = pulledAt;
+      const yeni = (data.exams || []).filter(ex => !st.importedKeys.includes(okzKey(ex)));
+      st.pending = yeni;
+      const n = yeni.reduce((a, ex) => a + (ex.rows || []).length, 0);
+      saveState();
+      if (n > 0) {
+        addNotification({ title: "Okulizyon: " + n + " soru Analiz Bekliyor", body: yeni.map(e => e.name).join(", ").slice(0, 140), kind: "info", topicKey: "okz@" + data.pulled_at });
+        okzBadge();
+        openConfirm("Okulizyon'dan " + n + " soru geldi (Analiz Bekliyor). Şimdi nedenlerini seçmek ister misin?", openOkzModal);
+        okzDurum("ok", n + " soru Analiz Bekliyor kuyruğuna eklendi.");
+      } else {
+        okzDurum("ok", "Yeni soru yok — " + ((data.exams || []).length) + " sınav okundu.");
       }
+    } else {
+      okzDurum("ok", "Yeni sonuç yok. Son çekim: " + (data.pulled_at ? okzZaman(pulledAt) : "bilinmiyor"));
     }
+
     const { data: duyurular, error: dErr } = await sb.from("okul_duyurulari")
       .select("baslik, tarih, url, lesson")
       .order("created_at", { ascending: false })
@@ -674,7 +694,13 @@ async function okzKuyrukCek() {
       okzDuyurularToSchoolExams(duyurular);
       saveState();
     }
-  } catch (e) { console.warn("Okulizyon kuyruğu okunamadı:", e); }
+  } catch (e) {
+    okzDurum("hata", String((e && e.message) || e));
+    console.warn("Okulizyon kuyruğu okunamadı:", e);
+  } finally {
+    okzCekSuruyor = false;
+    okzBadge();
+  }
 }
 // Okul sitesinden gelen SINAV duyuruları → takvime otomatik okul sınavı
 function okzDuyurularToSchoolExams(duyurular) {
