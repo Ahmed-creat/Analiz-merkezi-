@@ -269,3 +269,22 @@ Kullanıcının birebir bozuk durumu (Denemelerim boş + importedKeys dolu) sim�
 edildi: sonuç **1 yeni sınav · 33 bekleyen satır · 9 ders · net 81,25**.
 `npm run test:ders` → **61/61** (karar/silinen deneme/değişen veri/tarih
 toleransı senaryoları dahil).
+
+## 12. v34.7b — açılışta kendiliğinden tazeleme
+
+Kullanıcı "Şimdi dene"ye basmadan da doğru durumu görsün diye `pwaArayuzKur()` içine
+2,5 saniyelik bir tazeleme eklendi:
+
+```js
+setTimeout(function () {
+  if (typeof state === "undefined" || !sb || !currentUser) return;
+  okzDersleriDuzelt();      // eski hatalı ders adlarını onarır
+  okzKuyrukCek(false);      // 5 dk'lık otomatik kilit sayesinde sunucuyu yormaz
+}, 2500);
+```
+
+- Oturum yoksa hiç çalışmaz (gereksiz ağ isteği yok).
+- `okzKuyrukCek(false)` → son denemeden 5 dakika geçmediyse çıkar; "Şimdi dene"
+  `true` ile çağırır ve her zaman çalışır.
+- Sürüm damgaları: `PWA_SURUM = "v34.7b-cekim"`, SW `CACHE = "analiz-merkezi-v-20261028-v34-7b-cekim"`.
+  Cache adı değiştiği için eski önbellek (bozuk `okz-normalize.js`) tarayıcıdan silinir.
