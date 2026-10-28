@@ -33,6 +33,7 @@
     "esleme:uret": "node scripts/konu-esleme-uret.js",
     "test:bildirim": "node tests/bildirim.test.js",
     "test:kokeksik": "node tests/kok-eksik.test.js",
-    "test:davranis": "node tests/kisa-kontrol.test.js && node tests/kaynak-sozdizimi.test.js && node tests/bildirim-otomatik.test.js"
+    "test:davranis": "node tests/kisa-kontrol.test.js && node tests/birlesik-kart.test.js && node tests/kaynak-sozdizimi.test.js && node tests/bildirim-otomatik.test.js",
+    "test:kart": "node tests/birlesik-kart.test.js"
   }
 }

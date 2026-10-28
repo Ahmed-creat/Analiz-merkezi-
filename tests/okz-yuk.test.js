@@ -30,7 +30,9 @@ const IDX = OKZK.indeksKur(require(path.join(KOK, "site", "content", "konu_eslem
 console.log("\n== 1) Tek dokunuş ==");
 ok("hızlı neden çubuğu var", APP.indexOf("okz-hizli-nedenler") > 0);
 ok("üç hazır neden düğmesi", (APP.match(/data-act=\\"okzHizliNedenSec\\"/g) || []).length === 1 || APP.indexOf('data-act="okzHizliNedenSec"') > 0);
-ok("varsayılan neden KONU EKSİKLİĞİ", /\["KONU EKSİKLİĞİ", "İşlem Hatası\/Dikkatsizlik", "SÜRE YETMEDİ"\]/.test(APP));
+// v35.8 — "Süre yetmedi" nedeni kaldırıldı; hızlı neden çubuğu geçerli nedenlerle.
+ok("hızlı nedenlerde KONUEKSİKLİĞİ var", /\["KONUEKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası\/Dikkatsizlik"\]/.test(APP));
+ok("hızlı nedenlerde 'süre yetmedi' YOK", !/SÜRE YETMEDİ|SÜREYETMEDİ/.test(APP));
 ok("tek düğme: 'Bu nedenle tümünü işle'", APP.indexOf("okzHizliIsle") > 0);
 ok("tek neden tüm satırlara uygulanıyor", /async function okzAnalizKaydet\(tekNeden\)[\s\S]{0,1600}const r = tekNeden \|\| secimler/.test(APP));
 ok("hızlı işle tek nedenle çağırıyor", /okzAnalizKaydet\(window\.__okzHizliNeden \|\| "KONU EKSİKLİĞİ"\)/.test(APP));

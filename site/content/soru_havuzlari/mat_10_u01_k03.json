@@ -21,7 +21,111 @@
         "front": "Yükseklikleri eşit iki üçgenin alanları oranı, hangi taban uzunluklarının oranına eşittir?",
         "back": "Alanların oranı, bu eşit yüksekliklere ait taban uzunluklarının oranına eşittir."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                85,
+                60
+              ],
+              "B": [
+                35,
+                225
+              ],
+              "C": [
+                135,
+                225
+              ],
+              "F": [
+                85,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "5",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "h",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "A",
+              "B": "B",
+              "C": "C",
+              "F": false
+            }
+          },
+          {
+            "noktalar": {
+              "A": [
+                272,
+                60
+              ],
+              "B": [
+                202,
+                225
+              ],
+              "C": [
+                342,
+                225
+              ],
+              "F": [
+                272,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "10",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "h",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "D",
+              "B": "E",
+              "C": "K",
+              "F": false
+            }
+          }
+        ],
+        "not": "Yükseklikler eşit (h) · tabanlar 5 ve 10 → alan oranı = taban oranı"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o02",
@@ -40,7 +144,113 @@
         "front": "Yükseklikleri eşit iki üçgende, alanları oranı biliniyorsa taban uzunlukları oranını nasıl bulursun?",
         "back": "Taban uzunlukları oranı, alanları oranına eşittir."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                85,
+                60
+              ],
+              "B": [
+                35,
+                225
+              ],
+              "C": [
+                135,
+                225
+              ],
+              "F": [
+                85,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "4",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "h",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "A",
+              "B": "B",
+              "C": "C",
+              "F": false
+            },
+            "not": "1. üçgen · alan = 12 cm²"
+          },
+          {
+            "noktalar": {
+              "A": [
+                272,
+                60
+              ],
+              "B": [
+                205,
+                225
+              ],
+              "C": [
+                340,
+                225
+              ],
+              "F": [
+                272,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "?",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "h",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "D",
+              "B": "E",
+              "C": "K",
+              "F": false
+            },
+            "not": "2. üçgen · alan = 18 cm²"
+          }
+        ],
+        "not": "Yükseklikler eşit → alanlar tabanlarla orantılı"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o03",
@@ -59,7 +269,111 @@
         "front": "Taban uzunlukları eşit iki üçgenin alanları oranı, hangi yüksekliklerinin oranına eşittir?",
         "back": "Alanların oranı, eşit tabanlara ait yüksekliklerin oranına eşittir."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                85,
+                130
+              ],
+              "B": [
+                35,
+                225
+              ],
+              "C": [
+                150,
+                225
+              ],
+              "F": [
+                85,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "a",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "3",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "A",
+              "B": "B",
+              "C": "C",
+              "F": false
+            }
+          },
+          {
+            "noktalar": {
+              "A": [
+                272,
+                55
+              ],
+              "B": [
+                202,
+                225
+              ],
+              "C": [
+                342,
+                225
+              ],
+              "F": [
+                272,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "a",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "6",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "D",
+              "B": "E",
+              "C": "K",
+              "F": false
+            }
+          }
+        ],
+        "not": "Tabanlar eşit (a) · yükseklikler 3 ve 6 → alan oranı = yükseklik oranı"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o04",
@@ -78,7 +392,113 @@
         "front": "Taban uzunlukları eşit iki üçgende alan ve yükseklik oranları arasındaki bağıntıyı tamamla: A₁/A₂ = ...",
         "back": "A₁/A₂ = h₁/h₂."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                85,
+                130
+              ],
+              "B": [
+                35,
+                225
+              ],
+              "C": [
+                150,
+                225
+              ],
+              "F": [
+                85,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "a",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "5",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "A",
+              "B": "B",
+              "C": "C",
+              "F": false
+            },
+            "not": "1. üçgen · alan = 20 cm²"
+          },
+          {
+            "noktalar": {
+              "A": [
+                272,
+                70
+              ],
+              "B": [
+                202,
+                225
+              ],
+              "C": [
+                342,
+                225
+              ],
+              "F": [
+                272,
+                225
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "a",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ],
+            "cizgiler": [
+              {
+                "a": "A",
+                "b": "F",
+                "kesikli": true,
+                "etiket": "?",
+                "kaydir": [
+                  16,
+                  0
+                ]
+              }
+            ],
+            "etiketler": {
+              "A": "D",
+              "B": "E",
+              "C": "K",
+              "F": false
+            },
+            "not": "2. üçgen · alan = 28 cm²"
+          }
+        ],
+        "not": "Tabanlar eşit → alanlar yüksekliklerle orantılı"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o05",
@@ -97,7 +517,104 @@
         "front": "Paralel iki doğru arasında, aynı tabana sahip iki üçgenin alanları arasındaki ilişkiyi ifade et.",
         "back": "Ortak tabanlı ve aynı paraleller arasında kalan üçgenlerin yükseklikleri eşit olduğundan alanları eşittir."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "B": [
+            110,
+            245
+          ],
+          "C": [
+            280,
+            245
+          ],
+          "A1": [
+            80,
+            95
+          ],
+          "A2": [
+            315,
+            95
+          ]
+        },
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                80,
+                95
+              ],
+              "B": [
+                110,
+                245
+              ],
+              "C": [
+                280,
+                245
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "ortak taban",
+                "kaydir": [
+                  0,
+                  20
+                ]
+              }
+            ],
+            "not": "1. levha: 24 cm²"
+          },
+          {
+            "noktalar": {
+              "A": [
+                315,
+                95
+              ],
+              "B": [
+                110,
+                245
+              ],
+              "C": [
+                280,
+                245
+              ],
+              "G1": [
+                62,
+                95
+              ],
+              "G2": [
+                340,
+                95
+              ]
+            },
+            "dolgu": "none",
+            "kesikli": true,
+            "cizgi": "#16A34A",
+            "etiketler": {
+              "A": "A′",
+              "B": false,
+              "C": false
+            },
+            "cizgiler": [
+              {
+                "a": "G1",
+                "b": "G2",
+                "kesikli": true,
+                "renk": "#16A34A",
+                "etiket": "tabana paralel kılavuz",
+                "kaydir": [
+                  -20,
+                  -10
+                ]
+              }
+            ]
+          }
+        ],
+        "not": "Aynı taban + paralel doğru üzerinde tepe → yükseklik eşit → alanlar EŞİT"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o06",
@@ -116,7 +633,85 @@
         "front": "Ortak tabanlı iki üçgende tepe noktası tabana paralel doğru üzerinde başka bir noktaya taşındığında alan nasıl etkilenir?",
         "back": "Yükseklik değişmediği için alan değişmez."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                120,
+                90
+              ],
+              "B": [
+                80,
+                240
+              ],
+              "C": [
+                290,
+                240
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "sabit taban",
+                "kaydir": [
+                  0,
+                  18
+                ]
+              }
+            ]
+          },
+          {
+            "noktalar": {
+              "A": [
+                250,
+                90
+              ],
+              "B": [
+                80,
+                240
+              ],
+              "C": [
+                290,
+                240
+              ],
+              "G1": [
+                60,
+                90
+              ],
+              "G2": [
+                322,
+                90
+              ]
+            },
+            "dolgu": "none",
+            "kesikli": true,
+            "cizgi": "#16A34A",
+            "etiketler": {
+              "A": "A′",
+              "B": false,
+              "C": false
+            },
+            "cizgiler": [
+              {
+                "a": "G1",
+                "b": "G2",
+                "kesikli": true,
+                "renk": "#16A34A",
+                "etiket": "ray",
+                "kaydir": [
+                  0,
+                  -10
+                ]
+              }
+            ]
+          }
+        ],
+        "not": "Tepe noktası paralel ray üzerinde gezer → yükseklik değişmez → ALAN DEĞİŞMEZ"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o07",
@@ -135,7 +730,85 @@
         "front": "Paralel doğrular arasında ortak tabana sahip iki farklı üçgenin ortak olmayan bölgelerinin alanları arasında nasıl bir ilişki vardır?",
         "back": "Ortak olmayan bölgelerin alanları birbirine eşittir."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                150,
+                80
+              ],
+              "B": [
+                70,
+                240
+              ],
+              "C": [
+                300,
+                240
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "ortak taban",
+                "kaydir": [
+                  0,
+                  20
+                ]
+              }
+            ]
+          },
+          {
+            "noktalar": {
+              "A": [
+                230,
+                80
+              ],
+              "B": [
+                70,
+                240
+              ],
+              "C": [
+                300,
+                240
+              ],
+              "G1": [
+                52,
+                80
+              ],
+              "G2": [
+                330,
+                80
+              ]
+            },
+            "dolgu": "none",
+            "kesikli": true,
+            "cizgi": "#16A34A",
+            "etiketler": {
+              "A": "A′",
+              "B": false,
+              "C": false
+            },
+            "cizgiler": [
+              {
+                "a": "G1",
+                "b": "G2",
+                "kesikli": true,
+                "renk": "#16A34A",
+                "etiket": "paralel doğru",
+                "kaydir": [
+                  -118,
+                  -10
+                ]
+              }
+            ]
+          }
+        ],
+        "not": "Üst köşeler aynı paralel doğruda → yükseklikler eşit → alanlar eşit"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o08",
@@ -154,7 +827,85 @@
         "front": "Ortak tabana sahip ve üçüncü köşeleri bu tabana paralel aynı doğru üzerinde bulunan iki üçgenin alanları arasında nasıl bir ilişki vardır?",
         "back": "Yükseklikleri eşit olduğundan alanları eşittir."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                140,
+                85
+              ],
+              "B": [
+                75,
+                240
+              ],
+              "C": [
+                305,
+                240
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "ortak taban",
+                "kaydir": [
+                  0,
+                  20
+                ]
+              }
+            ]
+          },
+          {
+            "noktalar": {
+              "A": [
+                240,
+                85
+              ],
+              "B": [
+                75,
+                240
+              ],
+              "C": [
+                305,
+                240
+              ],
+              "G1": [
+                57,
+                85
+              ],
+              "G2": [
+                335,
+                85
+              ]
+            },
+            "dolgu": "none",
+            "kesikli": true,
+            "cizgi": "#16A34A",
+            "etiketler": {
+              "A": "A′",
+              "B": false,
+              "C": false
+            },
+            "cizgiler": [
+              {
+                "a": "G1",
+                "b": "G2",
+                "kesikli": true,
+                "renk": "#16A34A",
+                "etiket": "taşıyıcı çizgi",
+                "kaydir": [
+                  124,
+                  -10
+                ]
+              }
+            ]
+          }
+        ],
+        "not": "Aynı taban + aynı paralel üzerinde tepe → alanlar eşit"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o09",
@@ -173,7 +924,77 @@
         "front": "Benzer iki üçgende alanlar oranı, benzerlik oranının hangi kuvvetine eşittir?",
         "back": "Alanlar oranı, benzerlik oranının karesine eşittir."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                85,
+                160
+              ],
+              "B": [
+                35,
+                235
+              ],
+              "C": [
+                135,
+                235
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "A",
+                "b": "B",
+                "etiket": "3k"
+              }
+            ],
+            "acilar": [
+              {
+                "kose": "A",
+                "a": "B",
+                "b": "C",
+                "etiket": "θ"
+              }
+            ],
+            "not": "küçük üçgen"
+          },
+          {
+            "noktalar": {
+              "A": [
+                266,
+                70
+              ],
+              "B": [
+                190,
+                238
+              ],
+              "C": [
+                342,
+                238
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "A",
+                "b": "B",
+                "etiket": "5k"
+              }
+            ],
+            "acilar": [
+              {
+                "kose": "A",
+                "a": "B",
+                "b": "C",
+                "etiket": "θ"
+              }
+            ],
+            "not": "büyük üçgen"
+          }
+        ],
+        "not": "Benzer üçgenlerde kenar oranı 3/5 → alan oranı (3/5)² = 9/25"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o10",
@@ -192,7 +1013,69 @@
         "front": "Bir üçgenin tüm kenarları k katına çıkarılarak benzer üçgen elde edildiğinde alan kaç katına çıkar?",
         "back": "Alan, k² katına çıkar."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "A": [
+                85,
+                165
+              ],
+              "B": [
+                35,
+                235
+              ],
+              "C": [
+                140,
+                235
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "a",
+                "kaydir": [
+                  0,
+                  16
+                ]
+              }
+            ],
+            "not": "ilk üçgen"
+          },
+          {
+            "noktalar": {
+              "A": [
+                264,
+                70
+              ],
+              "B": [
+                184,
+                238
+              ],
+              "C": [
+                340,
+                238
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "1,4a",
+                "kaydir": [
+                  0,
+                  16
+                ]
+              }
+            ],
+            "not": "1,4 kat büyütülmüş"
+          }
+        ],
+        "not": "Tüm kenarlar 1,4 ile çarpılırsa alan 1,4² = 1,96 katı olur"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o11",
@@ -211,7 +1094,50 @@
         "front": "Bir üçgenin a ve b kenarları ile bu kenarlar arasındaki C açısı biliniyorsa alan bağıntısını yaz.",
         "back": "Alan = (1/2) · a · b · sin C."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            150,
+            70
+          ],
+          "B": [
+            60,
+            240
+          ],
+          "C": [
+            340,
+            240
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "kenarlar": [
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "12"
+          },
+          {
+            "a": "A",
+            "b": "C",
+            "etiket": "8"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "45°"
+          }
+        ],
+        "not": "Alan = ½ · 12 · 8 · sin 45°"
+      }
     },
     {
       "soru_id": "mat_10_u01_k03_o12",
@@ -230,7 +1156,50 @@
         "front": "Üçgen alanı bağıntısında iki kenar arasındaki açı hangi trigonometrik oranla kullanılır?",
         "back": "İki kenar ile aralarındaki açının sinüsü kullanılır: Alan = (1/2) · a · b · sin C."
       },
-      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            150,
+            70
+          ],
+          "B": [
+            60,
+            240
+          ],
+          "C": [
+            340,
+            240
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "kenarlar": [
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "14"
+          },
+          {
+            "a": "A",
+            "b": "C",
+            "etiket": "6"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "45°"
+          }
+        ],
+        "not": "Alan = ½ · 14 · 6 · sin 45°"
+      }
     }
   ],
   "flashcards": [

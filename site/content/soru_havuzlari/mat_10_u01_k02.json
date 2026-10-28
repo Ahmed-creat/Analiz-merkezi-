@@ -21,7 +21,88 @@
         "front": "ABC üçgeninde AD, A açısının iç açıortayı ve D noktası BC üzerinde ise AB/AC oranını BD ve DC uzunluklarıyla ilişkilendir.",
         "back": "AB/AC = BD/DC. Açıortay, karşı kenarı diğer iki kenarın uzunlukları oranında böler."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            50
+          ],
+          "B": [
+            50,
+            242
+          ],
+          "C": [
+            330,
+            242
+          ],
+          "D": [
+            210,
+            242
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "kenarlar": [
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "8"
+          },
+          {
+            "a": "A",
+            "b": "C",
+            "etiket": "6"
+          },
+          {
+            "a": "B",
+            "b": "D",
+            "etiket": "4",
+            "kaydir": [
+              0,
+              18
+            ]
+          },
+          {
+            "a": "D",
+            "b": "C",
+            "etiket": "x",
+            "kaydir": [
+              0,
+              18
+            ]
+          }
+        ],
+        "cizgiler": [
+          {
+            "a": "A",
+            "b": "D",
+            "kesikli": true
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "D",
+            "etiket": ""
+          },
+          {
+            "kose": "A",
+            "a": "D",
+            "b": "C",
+            "etiket": ""
+          }
+        ],
+        "isaretli": [
+          "D"
+        ],
+        "not": "AD, A açısının iç açıortayı · AB = 8, AC = 6, BD = 4"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o02",
@@ -40,7 +121,57 @@
         "front": "Bir açıortay üzerindeki noktadan açının iki koluna indirilen dikmelerin uzunlukları arasında nasıl bir ilişki vardır?",
         "back": "Dikmelerin uzunlukları eşittir; açıortay üzerindeki nokta açının kollarına eşit uzaklıktadır."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            55,
+            240
+          ],
+          "C": [
+            325,
+            240
+          ],
+          "K": [
+            170,
+            165
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "A",
+            "b": "K",
+            "kesikli": true
+          },
+          {
+            "a": "B",
+            "b": "K",
+            "kesikli": true
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "C",
+            "a": "A",
+            "b": "B",
+            "etiket": "58°"
+          }
+        ],
+        "isaretli": [
+          "K"
+        ],
+        "not": "İç açıortaylar K'da kesişiyor · ∠AKB = ?"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o03",
@@ -59,7 +190,57 @@
         "front": "Bir üçgenin iç açıortaylarının kesişim noktasının özelliğini ve iç teğet çemberle ilişkisini söyle.",
         "back": "İç açıortaylar, üçgenin kenarlarına eşit uzaklıktaki noktada kesişir; bu nokta iç teğet çemberin merkezidir."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            60
+          ],
+          "B": [
+            80,
+            205
+          ],
+          "C": [
+            300,
+            205
+          ],
+          "P": [
+            190,
+            272
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "A",
+            "b": "P",
+            "kesikli": true,
+            "renk": "#16A34A"
+          },
+          {
+            "a": "B",
+            "b": "P",
+            "kesikli": true,
+            "renk": "#16A34A"
+          },
+          {
+            "a": "C",
+            "b": "P",
+            "kesikli": true,
+            "renk": "#16A34A"
+          }
+        ],
+        "isaretli": [
+          "P"
+        ],
+        "not": "Şematik: iki dış + bir iç açıortay tek noktada (P = dış teğet çember merkezi)"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o04",
@@ -78,7 +259,69 @@
         "front": "Bir üçgende ağırlık merkezi G, A köşesinden çizilen AD kenarortayı üzerinde ise AG ile GD uzunluklarının oranını yaz.",
         "back": "AG/GD = 2/1; ağırlık merkezi, köşeye yakın parça iki kat uzunlukta olacak şekilde kenarortayı böler."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            50
+          ],
+          "B": [
+            60,
+            242
+          ],
+          "C": [
+            320,
+            242
+          ],
+          "D": [
+            190,
+            242
+          ],
+          "G": [
+            190,
+            178
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "A",
+            "b": "D",
+            "renk": "#B45309"
+          }
+        ],
+        "kenarlar": [
+          {
+            "a": "A",
+            "b": "G",
+            "etiket": "AG = ?",
+            "kaydir": [
+              -58,
+              0
+            ]
+          },
+          {
+            "a": "G",
+            "b": "D",
+            "etiket": "GD = 7",
+            "kaydir": [
+              56,
+              0
+            ]
+          }
+        ],
+        "isaretli": [
+          "D",
+          "G"
+        ],
+        "not": "AD kenarortay, G ağırlık merkezi (AG = 2·GD)"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o05",
@@ -97,7 +340,69 @@
         "front": "Bir dik üçgende hipotenüse ait kenarortayın uzunluğu ile hipotenüsün uzunluğu arasındaki ilişkiyi yaz.",
         "back": "Hipotenüse ait kenarortayın uzunluğu, hipotenüs uzunluğunun yarısına eşittir."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            65,
+            240
+          ],
+          "A": [
+            65,
+            70
+          ],
+          "B": [
+            330,
+            240
+          ],
+          "M": [
+            197,
+            155
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "kenarlar": [
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "18",
+            "kaydir": [
+              -26,
+              -16
+            ]
+          }
+        ],
+        "etiketKaydir": {
+          "M": [
+            20,
+            18
+          ]
+        },
+        "cizgiler": [
+          {
+            "a": "C",
+            "b": "M",
+            "renk": "#B45309",
+            "etiket": "kenarortay = ?",
+            "kaydir": [
+              62,
+              10
+            ]
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "isaretli": [
+          "M"
+        ],
+        "not": "Hipotenüse ait kenarortay · M = AB'nin orta noktası"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o06",
@@ -116,7 +421,59 @@
         "front": "Bir üçgende bir köşeyi karşı kenarın orta noktasına birleştiren doğru parçasının adını yaz.",
         "back": "Bu doğru parçasına kenarortay denir."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            52
+          ],
+          "B": [
+            58,
+            242
+          ],
+          "C": [
+            322,
+            242
+          ],
+          "D": [
+            124,
+            147
+          ],
+          "E": [
+            256,
+            147
+          ],
+          "G": [
+            190,
+            179
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "C",
+            "b": "D",
+            "kesikli": true
+          },
+          {
+            "a": "B",
+            "b": "E",
+            "kesikli": true
+          }
+        ],
+        "isaretli": [
+          "D",
+          "E",
+          "G"
+        ],
+        "not": "BE ve CD kenarortay · üçüncü kenarortay da G'den geçer"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o07",
@@ -135,7 +492,56 @@
         "front": "Bir kenar orta dikmenin geçtiği noktayı ve bu doğrunun kenarla yaptığı açı ile ilişkisini belirt.",
         "back": "Kenar orta dikme, bir kenarın orta noktasından geçer ve o kenara diktir."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            70,
+            150
+          ],
+          "B": [
+            320,
+            150
+          ],
+          "D": [
+            195,
+            150
+          ],
+          "U": [
+            195,
+            48
+          ],
+          "V": [
+            195,
+            250
+          ]
+        },
+        "kenarlar": [],
+        "cizgiler": [
+          {
+            "a": "U",
+            "b": "V",
+            "etiket": "ℓ",
+            "kesikli": true,
+            "kaydir": [
+              24,
+              0
+            ]
+          }
+        ],
+        "dikler": [
+          {
+            "kose": "D",
+            "a": "A",
+            "b": "U"
+          }
+        ],
+        "isaretli": [
+          "D"
+        ],
+        "not": "D = AB'nin orta noktası · ℓ ⊥ AB"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o08",
@@ -154,7 +560,73 @@
         "front": "Bir üçgende kenar orta dikmelerin kesişim noktasının adını ve çevrel çemberle ilişkisini yaz.",
         "back": "Kenar orta dikmeler çevrel çemberin merkezinde kesişir; bu nokta üçgenin üç köşesine eşit uzaklıktadır."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            55
+          ],
+          "B": [
+            60,
+            235
+          ],
+          "C": [
+            320,
+            235
+          ],
+          "O": [
+            190,
+            192
+          ],
+          "M1": [
+            125,
+            145
+          ],
+          "M2": [
+            255,
+            145
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "M1",
+            "b": "O",
+            "kesikli": true,
+            "renk": "#16A34A"
+          },
+          {
+            "a": "M2",
+            "b": "O",
+            "kesikli": true,
+            "renk": "#16A34A"
+          }
+        ],
+        "dikler": [
+          {
+            "kose": "M1",
+            "a": "A",
+            "b": "O"
+          },
+          {
+            "kose": "M2",
+            "a": "A",
+            "b": "O"
+          }
+        ],
+        "isaretli": [
+          "O",
+          "M1",
+          "M2"
+        ],
+        "not": "Kenar orta dikmeleri O'da kesişir → O, köşelere eşit uzaklıkta"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o09",
@@ -173,7 +645,65 @@
         "front": "ABC üçgeninin çevrel çember merkezine O denildiğinde O'nun A, B ve C köşelerine uzaklıklarını eşitlik olarak yaz.",
         "back": "|OA| = |OB| = |OC| = R; bu uzunluk çevrel çemberin yarıçapıdır."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            75
+          ],
+          "B": [
+            116,
+            202
+          ],
+          "C": [
+            264,
+            202
+          ],
+          "O": [
+            190,
+            160
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cemberler": [
+          {
+            "merkez": "O",
+            "r": 85
+          }
+        ],
+        "cizgiler": [
+          {
+            "a": "O",
+            "b": "A",
+            "renk": "#B45309",
+            "etiket": "11",
+            "kaydir": [
+              -26,
+              0
+            ]
+          },
+          {
+            "a": "O",
+            "b": "C",
+            "renk": "#B45309",
+            "etiket": "?",
+            "kaydir": [
+              22,
+              8
+            ]
+          }
+        ],
+        "isaretli": [
+          "O"
+        ],
+        "not": "O = çevrel çember merkezi · OA = OB = OC"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o10",
@@ -192,7 +722,65 @@
         "front": "Bir üçgende yükseklik, bir köşe ile karşı kenar arasında nasıl çizilir?",
         "back": "Bir köşeden karşı kenara veya bu kenarın uzantısına dik çizilen doğru parçasıdır."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            175
+          ],
+          "B": [
+            70,
+            240
+          ],
+          "C": [
+            310,
+            240
+          ],
+          "H": [
+            190,
+            42
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "B",
+            "b": "H",
+            "kesikli": true,
+            "renk": "#B45309"
+          },
+          {
+            "a": "C",
+            "b": "H",
+            "kesikli": true,
+            "renk": "#B45309"
+          },
+          {
+            "a": "A",
+            "b": "H",
+            "kesikli": true,
+            "renk": "#B45309"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "geniş"
+          }
+        ],
+        "isaretli": [
+          "H"
+        ],
+        "not": "Geniş açılı üçgende yüksekliklerin kesim noktası H üçgenin DIŞINDA"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o11",
@@ -211,7 +799,48 @@
         "front": "Üçgenin üç yüksekliği tek bir ... noktasında kesişir; boşluğu tamamla.",
         "back": "Yüksekliklerin kesim noktası diklik merkezidir."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            70
+          ],
+          "B": [
+            330,
+            240
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "dikler": [
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "A",
+            "b": "C",
+            "renk": "#B45309"
+          },
+          {
+            "a": "B",
+            "b": "C",
+            "renk": "#B45309"
+          }
+        ],
+        "isaretli": [
+          "C"
+        ],
+        "not": "Dik üçgende yüksekliklerin kesim noktası H = C (dik köşe)"
+      }
     },
     {
       "soru_id": "mat_10_u01_k02_o12",
@@ -230,7 +859,66 @@
         "front": "Yüksekliklerin kesim noktasının dar, dik ve geniş açılı üçgenlerdeki konumlarını sırasıyla belirt.",
         "back": "Dar açılı üçgende içeride, dik açılı üçgende dik köşede, geniş açılı üçgende dış bölgededir."
       },
-      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+      "kazanim": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            55
+          ],
+          "B": [
+            60,
+            240
+          ],
+          "C": [
+            320,
+            240
+          ],
+          "H": [
+            190,
+            151
+          ],
+          "F1": [
+            190,
+            240
+          ],
+          "F2": [
+            262,
+            168
+          ]
+        },
+        "ucgen": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cizgiler": [
+          {
+            "a": "A",
+            "b": "F1",
+            "kesikli": true,
+            "renk": "#B45309"
+          },
+          {
+            "a": "B",
+            "b": "H",
+            "kesikli": true,
+            "renk": "#B45309"
+          },
+          {
+            "a": "C",
+            "b": "H",
+            "kesikli": true,
+            "renk": "#B45309"
+          }
+        ],
+        "isaretli": [
+          "H",
+          "F1"
+        ],
+        "not": "Dar açılı üçgende yüksekliklerin kesim noktası H üçgenin İÇİNDE"
+      }
     }
   ],
   "flashcards": [

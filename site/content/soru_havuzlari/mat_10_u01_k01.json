@@ -23,16 +23,49 @@
       },
       "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
       "gorsel": {
-        "tip": "ucgen",
-        "dik": "C",
-        "kenarlar": {
-          "a": "7",
-          "b": "24",
-          "c": "?"
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            30
+          ],
+          "B": [
+            140,
+            240
+          ]
         },
-        "aci": "α",
-        "aciKose": "A",
-        "aciklama": "Karşı dik kenar 7, komşu dik kenar 24."
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "7"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "24"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "α"
+          }
+        ],
+        "dikler": [
+          "C"
+        ]
       }
     },
     {
@@ -54,17 +87,98 @@
       },
       "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
       "gorsel": {
-        "tip": "ucgen",
-        "dik": "C",
-        "kenarlar": {
-          "a": "9",
-          "b": "40",
-          "c": "?"
-        },
-        "aci": "α",
-        "aciKose": "A",
-        "not": "2. üçgen: karşı x, komşu 80 (aynı dar açı)",
-        "aciklama": "1. üçgen 9–40; 2. üçgen x–80."
+        "tip": "geometri",
+        "sekiller": [
+          {
+            "noktalar": {
+              "C": [
+                30,
+                230
+              ],
+              "A": [
+                30,
+                95
+              ],
+              "B": [
+                150,
+                230
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "9"
+              },
+              {
+                "a": "C",
+                "b": "A",
+                "etiket": "40"
+              }
+            ],
+            "acilar": [
+              {
+                "kose": "A",
+                "a": "B",
+                "b": "C",
+                "etiket": "α"
+              }
+            ],
+            "dikler": [
+              "C"
+            ],
+            "etiketler": {
+              "A": "A",
+              "B": "B",
+              "C": "C"
+            }
+          },
+          {
+            "noktalar": {
+              "C": [
+                205,
+                230
+              ],
+              "A": [
+                205,
+                95
+              ],
+              "B": [
+                355,
+                230
+              ]
+            },
+            "kenarlar": [
+              {
+                "a": "B",
+                "b": "C",
+                "etiket": "x"
+              },
+              {
+                "a": "C",
+                "b": "A",
+                "etiket": "80"
+              }
+            ],
+            "acilar": [
+              {
+                "kose": "A",
+                "a": "B",
+                "b": "C",
+                "etiket": "α"
+              }
+            ],
+            "dikler": [
+              "C"
+            ],
+            "etiketler": {
+              "A": "A′",
+              "B": "B′",
+              "C": "C′"
+            }
+          }
+        ],
+        "not": "1. üçgen 9–40 · 2. üçgen x–80 (aynı dar açı)"
       }
     },
     {
@@ -86,16 +200,50 @@
       },
       "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
       "gorsel": {
-        "tip": "ucgen",
-        "dik": "C",
-        "kenarlar": {
-          "a": "20",
-          "b": "?",
-          "c": "29"
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            55
+          ],
+          "B": [
+            340,
+            240
+          ]
         },
-        "aci": "α",
-        "aciKose": "A",
-        "aciklama": "sin α = 20/29."
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "20"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "?"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "29"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "α"
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "not": "sin α = 20/29"
       }
     },
     {
@@ -117,16 +265,50 @@
       },
       "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
       "gorsel": {
-        "tip": "ucgen",
-        "dik": "C",
-        "kenarlar": {
-          "a": "5",
-          "b": "8",
-          "c": "?"
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            30
+          ],
+          "B": [
+            201,
+            240
+          ]
         },
-        "aci": "α",
-        "aciKose": "A",
-        "aciklama": "tan α = 5/8."
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "5"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "8"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "α"
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "not": "tan α = 5/8"
       }
     },
     {
@@ -148,16 +330,50 @@
       },
       "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
       "gorsel": {
-        "tip": "ucgen",
-        "dik": "C",
-        "kenarlar": {
-          "a": "8",
-          "b": "?",
-          "c": "?"
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            55
+          ],
+          "B": [
+            340,
+            240
+          ]
         },
-        "aci": "30°",
-        "aciKose": "A",
-        "aciklama": "30°'nin karşısı 8 cm."
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "8"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "?"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "30°"
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "not": "30°'nin karşısındaki kenar 8 cm"
       }
     },
     {
@@ -177,7 +393,59 @@
         "front": "45° ölçülü açı için sinüs, kosinüs, tanjant ve kotanjant değerlerini yaz.",
         "back": "sin 45° = cos 45° = √2/2 ve tan 45° = cot 45° = 1."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            30
+          ],
+          "B": [
+            280,
+            240
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "4"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "4"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "45°"
+          },
+          {
+            "kose": "B",
+            "a": "A",
+            "b": "C",
+            "etiket": "45°"
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "not": "ikizkenar dik üçgen: dik kenarlar 4 ve 4"
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o07",
@@ -196,7 +464,65 @@
         "front": "Dar açı x için tan x ve cot x oranlarını sin x ve cos x türünden yaz.",
         "back": "tan x = sin x / cos x ve cot x = cos x / sin x."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            50,
+            238
+          ],
+          "B": [
+            300,
+            238
+          ],
+          "C": [
+            300,
+            80
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "yatay (komşu)",
+            "kaydir": [
+              0,
+              22
+            ]
+          },
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "düşey",
+            "kaydir": [
+              40,
+              -6
+            ]
+          },
+          {
+            "a": "A",
+            "b": "C",
+            "etiket": "eğik destek"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "α"
+          }
+        ],
+        "dikler": [
+          {
+            "kose": "B",
+            "a": "A",
+            "b": "C"
+          }
+        ],
+        "not": "tan α = düşey yükselme / yatay uzaklık"
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o08",
@@ -215,7 +541,53 @@
         "front": "Hipotenüsü 1 birim olan dik üçgende dar açı x için karşı ve komşu dik kenar uzunluklarını trigonometrik oranlarla ifade et.",
         "back": "Karşı dik kenar sin x, komşu dik kenar cos x uzunluğundadır."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            30
+          ],
+          "B": [
+            140,
+            240
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "9"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "40"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "41"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "β"
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "not": "sin β = 9/41 · cos β = 40/41"
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o09",
@@ -234,7 +606,16 @@
         "front": "Birim çemberde ölçüsü θ olan açının çemberi kestiği P(x, y) noktası ile cos θ ve sin θ arasındaki ilişkiyi yaz.",
         "back": "P noktasının koordinatları (cos θ, sin θ) biçimindedir; x = cos θ ve y = sin θ."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "cember",
+        "aci": 109,
+        "yon": "ters",
+        "noktaAdi": "P",
+        "cos": "−12/37",
+        "sin": "35/37",
+        "not": "P noktası birim çember üzerinde"
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o10",
@@ -253,7 +634,16 @@
         "front": "Birim çemberin merkezini ve yarıçap uzunluğunu belirt.",
         "back": "Birim çemberin merkezi orijin, yarıçapı 1 birimdir."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "cember",
+        "aci": 50,
+        "yon": "ters",
+        "noktaAdi": "P",
+        "cos": "x",
+        "sin": "y",
+        "not": "P birim çemberde ⇔ x² + y² = 1"
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o11",
@@ -272,7 +662,15 @@
         "front": "Bir ışın orijini merkez alarak saat yönünün tersine ya da saat yönünde döndüğünde yönlü açı işaretini tamamla: ... dönüş pozitif, ... dönüş negatif.",
         "back": "Saat yönünün tersine dönüş pozitif, saat yönündeki dönüş negatif yönlü açı oluşturur."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "cember",
+        "aci": 235,
+        "yon": "saat",
+        "noktaAdi": "P",
+        "aciEtiket": "−235°",
+        "not": "saat yönünde 235° → negatif yönlü açı"
+      }
     },
     {
       "soru_id": "mat_10_u01_k01_o12",
@@ -291,7 +689,15 @@
         "front": "Saat yönünün tersine 140°lik bir dönüş yönlü açı gösteriminde nasıl yazılır?",
         "back": "Saat yönünün tersine dönüş pozitif olduğundan +140° yazılır."
       },
-      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "gorsel": {
+        "tip": "cember",
+        "aci": 137,
+        "yon": "ters",
+        "noktaAdi": "P",
+        "aciEtiket": "+137°",
+        "not": "saat yönünün tersine 137° → pozitif yönlü açı"
+      }
     }
   ],
   "flashcards": [

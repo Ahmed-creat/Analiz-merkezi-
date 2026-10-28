@@ -163,12 +163,15 @@ ok("video çözüm adımı KALDIRILDI", HTML.indexOf("function videoAdimHtml") <
 ok("adımlarda 'izle' vaadi kalmadı", HTML.indexOf("çözüm bağlantısı yok") < 0);
 ok("yol haritası 4 adım", /const ROADMAP_STEPS = \[[\s\S]{0,900}?\];/.test(HTML) && (HTML.match(/\{ title: "/g) || []).length >= 4);
 esit("Okulizyon'a çıkış bağlantısı KALMADI", HTML.indexOf("okulizyon.com"), -1);
-ok("Denemelerim'de 'Konuyu aç' düğmesi var", HTML.indexOf('data-act="konuGit"') > 0);
+// v35.8 — "Yapamadığın Sorular" bölümü kaldırıldı; "Konuyu aç" düğmesi de
+// onunla birlikte gitti. Konuya gitme işlevi (kök eksik kartı) DURUYOR.
+ok("Denemelerim'deki 'Konuyu aç' satırı kaldırıldı", HTML.indexOf('data-act="konuGit"') < 0);
+ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML.indexOf('data-act="kokeksikKonuGit"') > 0);
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v35.7", APP.indexOf('const PWA_SURUM = "v35.7-kisa-kontrol-tek-motor"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261028-v35-7-kisa-kontrol-tek-motor") > 0);
+ok("PWA sürümü v35.8", APP.indexOf('const PWA_SURUM = "v35.8-birlesik-kart-sekilli-sorular"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v35-8-birlesik-kart-sekilli-sorular") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

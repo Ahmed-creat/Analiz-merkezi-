@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.7-kisa-kontrol-tek-motor";
+const PWA_SURUM = "v35.8-birlesik-kart-sekilli-sorular";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -587,7 +587,9 @@ async function registerFCM() {
 }
 
 // ---- 8) OKULIZYON ENTEGRASYONU (çek → Analiz Bekliyor → neden seç → kaydet) ----
-const OKZ_NEDENLER = ["Konuyu Bilmiyordum", "KONU EKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası", "SÜRE YETMEDİ", "ÇÖZÜM YOLUNU BULAMADIM"];
+// v35.8 — "Süre yetmedi" nedeni kaldırıldı (yanlış ve boş için ayrı listeler
+// index.html'deki WRONG_REASONS / EMPTY_REASONS'tan gelir).
+const OKZ_NEDENLER = ["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"];
 // ------------------------------------------------------------
 // İŞLENDİ / YOKSAYILDI DEFTERİ
 // ------------------------------------------------------------
@@ -1257,7 +1259,7 @@ function renderOkzModal() {
     html += '<div style="border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.06);border-radius:12px;padding:10px;margin-bottom:10px;">';
     html += '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">⚡ Tek dokunuş: kuyruktaki tüm yanlış/boşlar için neden</div>';
     html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;" id="okz-hizli-nedenler">' +
-      ["KONU EKSİKLİĞİ", "İşlem Hatası/Dikkatsizlik", "SÜRE YETMEDİ"].map((r, k) =>
+      ["KONUEKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik"].map((r, k) =>
         '<button data-act="okzHizliNedenSec" data-reason="' + escHtml(r) + '" class="okz-hizli-chip" data-secili="' + (k === 0 ? "1" : "0") + '" style="font-size:11.5px;padding:7px 10px;min-height:40px;border-radius:99px;border:1px solid ' + (k === 0 ? "#2563EB" : "rgba(0,0,0,0.18)") + ';background:' + (k === 0 ? "rgba(37,99,235,0.12)" : "none") + ';color:inherit;cursor:pointer;font-weight:' + (k === 0 ? "700" : "400") + ';">' + r + '</button>').join("") +
       '</div>';
     html += '<button data-act="okzHizliIsle" class="btn btn-primary w-full" style="font-weight:700;">Bu nedenle tümünü işle</button>';

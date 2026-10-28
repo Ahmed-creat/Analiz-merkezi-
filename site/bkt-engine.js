@@ -22,15 +22,29 @@
 
   const PARAM = Object.freeze({ P_L0: 0.12, P_G: 0.25, P_S: 0.10 });
   const SOURCE_PT = Object.freeze({ deneme: 0.05, soru_girisi: 0.15, mini_test: 0.10 });
+  // v35.8 — "Süre yetmedi" SEÇENEĞİ TAMAMEN KALDIRILDI; yanlış ve boş için
+  // HATA NEDENLERİ AYRI listelenir (kullanıcı isteği).
   const WRONG_WEIGHT = Object.freeze({
     "KONUEKSİKLİĞİ": 1.0,
     "ANLAMADIM": 0.5,
     "ÇÖZÜMYOLUNUBULAMADIM": 0.5,
     "İşlem Hatası/Dikkatsizlik": 0.2,
-    "Kodlama/Kitapçık Hatası": null,
-    "SÜREYETMEDİ": null
+    "Kodlama/Kitapçık Hatası": null
   });
-  const EMPTY_REASONS = Object.freeze(["KONUEKSİKLİĞİ", "SÜREYETMEDİ", "ÇÖZÜMYOLUNUBULAMADIM"]);
+  // Yanlış cevap nedenleri (5)
+  const WRONG_REASONS = Object.freeze([
+    "KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM",
+    "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"
+  ]);
+  // Boş bırakma nedenleri (3) — işlem/kitapçık hatası boşta anlamsız.
+  const EMPTY_REASONS = Object.freeze(["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM"]);
+  const REASON_LABELS = Object.freeze({
+    "KONUEKSİKLİĞİ": "Konu eksiği — bilmiyordum",
+    "ANLAMADIM": "Anlamadım",
+    "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm yolunu bulamadım",
+    "İşlem Hatası/Dikkatsizlik": "İşlem hatası / dikkatsizlik",
+    "Kodlama/Kitapçık Hatası": "Kodlama / kitapçık hatası"
+  });
   const ALLOWED_SOURCES = Object.freeze(["deneme", "soru_girisi", "mini_test"]);
   const PARAM_KEYS = Object.freeze(["P_L0", "P_G", "P_S"]);
   const STATUS_TEXT = {
@@ -62,8 +76,11 @@
   const REASON_ALIASES = Object.freeze({
     "KONU EKSİKLİĞİ": "KONUEKSİKLİĞİ",
     "KONUEKSİKLİĞİ": "KONUEKSİKLİĞİ",
-    "SÜRE YETMEDİ": "SÜREYETMEDİ",
-    "SÜREYETMEDİ": "SÜREYETMEDİ",
+    // Eski kayıtlarda kalmış "süre yetmedi" değeri ARTIK SEÇENEK DEĞİL;
+    // yalnız eski veriyi okunur göstermek için tanınır (ağırlığı yok → motor
+    // bu nedeni gözlem saymaz, yanlış da olsa puanı düşürmez).
+    "SÜRE YETMEDİ": "SUREYETMEDI",
+    "SÜREYETMEDİ": "SUREYETMEDI",
     "ÇÖZÜM YOLU BULAMADIM": "ÇÖZÜMYOLUNUBULAMADIM",
     "ÇÖZÜM YOLUNU BULAMADIM": "ÇÖZÜMYOLUNUBULAMADIM",
     "ÇÖZÜM YOLUNUBULAMADIM": "ÇÖZÜMYOLUNUBULAMADIM"
@@ -75,8 +92,9 @@
   function displayReason(reason) {
     return ({
       "KONUEKSİKLİĞİ": "Konu eksiği",
-      "SÜREYETMEDİ": "Süre yetmedi",
-      "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm yolunu bulamadım"
+      "ANLAMADIM": "Anlamadım",
+      "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm yolunu bulamadım",
+      "SUREYETMEDI": "Süre yetmedi (eski kayıt)"
     })[normalizeReason(reason)] || String(reason || "");
   }
   function validateParameters(params) {
@@ -716,6 +734,28 @@
   //  • Havuzda görsel varsa (q.gorsel) sorunun içinde çizilir (gorsel.js → GV)
   const MINI_SORU = 5;
   function miniBaslik(mode) { return mode === "precheck" ? "Kısa Kontrol" : "Öğrenme Testi"; }
+  // v35.8 — SONUÇ EKRANI SORUYU DA GÖSTERİR (yalnız "cevap" değil):
+  // soru metni + varsa şekil + tüm şıklar (senin cevabın / doğru cevap) + çözüm.
+  function miniSoruTam(q, cevap) {
+    if (!q) return "";
+    const dogru = Number(q.dogru_index);
+    const verilen = (cevap == null || String(cevap) === "") ? null : Number(cevap);
+    let h = miniGorsel(q);
+    h += '<div style="font-weight:700;font-size:13px;line-height:1.5;margin:4px 0 8px;">' + safeText(q.metin) + '</div><div style="display:grid;gap:5px;">';
+    (q.secenekler || []).forEach(function (sec, j) {
+      const buDogru = j === dogru;
+      const buBenim = verilen !== null && j === verilen;
+      const kenar = buDogru ? "var(--semantic-success)" : (buBenim ? "var(--semantic-error)" : "var(--border-card)");
+      const zemin = buDogru ? "rgba(22,163,74,.08)" : (buBenim ? "rgba(239,68,68,.07)" : "transparent");
+      h += '<div style="border:1.2px solid ' + kenar + ';background:' + zemin + ';border-radius:9px;padding:7px 9px;font-size:12.5px;line-height:1.45;">' +
+        '<b style="margin-right:6px;">' + ("ABCDE".charAt(j) || (j + 1)) + ')</b>' + safeText(sec) +
+        (buDogru ? ' <b style="color:var(--semantic-success);">✓ doğru cevap</b>' : "") +
+        (buBenim ? ' <b style="color:var(--semantic-error);">← senin cevabın</b>' : "") + "</div>";
+    });
+    if (verilen === null) h += '<div class="text-xs text-muted">Bu soruyu <b>boş bıraktın</b>.</div>';
+    h += "</div>";
+    return h;
+  }
   function miniGorsel(q) {
     try {
       if (q && q.gorsel && window.GV && typeof window.GV.html === "function") return window.GV.html(q.gorsel, 320);
@@ -748,7 +788,11 @@
     h += '<div style="display:flex;gap:8px;margin-top:6px;">';
     if (i > 0) h += '<button type="button" class="btn btn-ghost" data-bkt-prev style="flex:0 0 auto;min-height:48px;">Geri</button>';
     const bos = (cevap == null || cevap === "");
-    h += '<button type="button" class="btn btn-primary" data-bkt-next style="flex:1;min-height:48px;"' + (bos ? " disabled" : "") + '>' + (sonuncu ? "Testi Bitir" : "İleri") + '</button></div>';
+    // v35.8 — BOŞ BIRAKMAK SERBEST: düğme artık kilitlenmiyor.
+    h += '<button type="button" class="btn btn-primary" data-bkt-next style="flex:1;min-height:48px;">' + (sonuncu ? "Testi Bitir" : "İleri") + '</button></div>';
+    h += '<div class="text-xs text-muted" style="margin-top:8px;line-height:1.45;">' +
+      (bos ? 'İstersen boş bırakıp geçebilirsin — sonuçta "boş" olarak sayılır ve boş için ayrı neden sorulur.'
+           : 'Cevabını değiştirebilirsin.') + '</div>';
     h += '<div id="bkt-test-message" class="text-xs" style="min-height:18px;margin-top:8px;"></div></div>';
     modal.innerHTML = h;
   }
@@ -756,8 +800,8 @@
     const qs = modal._bktQuestions || [];
     const i = Number(modal._bktIdx) || 0;
     const cevap = (modal._bktAnswers || [])[i];
-    const msg = modal.querySelector("#bkt-test-message");
-    if (cevap == null || cevap === "") { if (msg) msg.textContent = "Devam etmek için bir seçenek işaretle."; return; }
+    // v35.8 — Boş bırakmak serbest: cevapsız da ilerlenir (boş olarak sayılır).
+    if (cevap == null || cevap === "") { modal._bktAnswers[i] = ""; }
     persistMiniSession(modal);
     if (i >= qs.length - 1) { finishMiniTest(modal); return; }
     modal._bktIdx = i + 1;
@@ -824,12 +868,18 @@
   function updateMiniSubmitState(modal) {
     if (!modal) return false;
     const questions = modal._bktQuestions || [];
-    const cevaplar = modal._bktAnswers || [];
-    const complete = questions.length > 0 && questions.every((q, i) => cevaplar[i] != null && cevaplar[i] !== "");
-    const button = modal.querySelector("[data-bkt-next]"); if (button) button.disabled = !complete;
-    return complete;
+    // v35.8 — Kısa Kontrol'de boş bırakma serbest olduğu için düğme hiç kilitlenmez.
+    const button = modal.querySelector("[data-bkt-next]"); if (button) button.disabled = false;
+    return (modal._bktAnswers || []).filter(a => a != null && a !== "").length === questions.length;
   }
   function closeMiniTest() { const modal = document.getElementById("bkt-test-modal"); if (modal) modal.remove(); }
+  // Neden seçenekleri: yanlış için WRONG_REASONS, boş için EMPTY_REASONS.
+  function nedenSecenekleri(bosMu) {
+    const liste = bosMu ? EMPTY_REASONS : WRONG_REASONS;
+    return liste.map(function (r) {
+      return '<option value="' + safeText(r) + '">' + safeText(REASON_LABELS[r] || r) + "</option>";
+    }).join("");
+  }
   function showMiniResult(modal, draft) {
     const questions = modal._bktQuestions || [];
     const puan = questions.length ? Math.round((Number(draft.correct) / questions.length) * 100) : 0;
@@ -838,10 +888,17 @@
       '<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;"><b class="tabular" style="font-size:32px;color:' + renk + ';">' + draft.correct + '/' + questions.length + '</b><span class="text-sm text-muted">doğru · %' + puan + '</span></div>' +
       '<p class="text-xs text-muted" style="margin-bottom:8px;">Yanlışların nedenini seç — kayıt buna göre işlenecek.</p>';
     questions.forEach((q, i) => {
-      const ok = Number(draft.answers[i]) === Number(q.dogru_index);
-      html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b>' + (i + 1) + '. ' + (ok ? "Doğru" : "Yanlış") + '</b>' + miniGorsel(q) + '<div class="text-muted" style="margin-top:4px;">Çözüm: ' + safeText(q.cozum) + '</div>';
-      if (!ok) html += '<label style="display:block;margin-top:7px;">Neden <select data-bkt-reason="' + i + '" style="min-height:48px;"><option value="">Seçiniz</option><option value="Konuyu Bilmiyordum">Konuyu bilmiyordum</option><option value="KONUEKSİKLİĞİ">Konu eksiği</option><option value="ANLAMADIM">Anlamadım</option><option value="ÇÖZÜMYOLUNUBULAMADIM">Çözüm yolunu bulamadım</option><option value="İşlem Hatası/Dikkatsizlik">İşlem hatası / dikkatsizlik</option><option value="Kodlama/Kitapçık Hatası">Kodlama / kitapçık hatası</option><option value="SÜREYETMEDİ">Süre yetmedi</option></select></label>';
-      html += '</div>';
+      const ham = draft.answers[i];
+      const bosMu = ham == null || String(ham) === "";
+      const ok = !bosMu && Number(ham) === Number(q.dogru_index);
+      const etiket = ok ? "Doğru" : bosMu ? "Boş" : "Yanlış";
+      const renk = ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)";
+      html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b style="color:' + renk + ';">' + (i + 1) + ". " + etiket + "</b>" + miniSoruTam(q, ham) +
+        '<div class="text-muted" style="margin-top:6px;">Çözüm: ' + safeText(q.cozum) + "</div>";
+      // Yanlış ve boş için AYRI neden listesi (Süre yetmedi seçeneği yok).
+      if (!ok) html += '<label style="display:block;margin-top:7px;">' + (bosMu ? "Neden boş bıraktın?" : "Neden yanlış yaptın?") +
+        ' <select data-bkt-reason="' + i + '" data-bkt-bos="' + (bosMu ? "1" : "0") + '" style="min-height:48px;"><option value="">Seçiniz</option>' + nedenSecenekleri(bosMu) + "</select></label>";
+      html += "</div>";
     });
     html += '<div id="bkt-test-message" class="text-xs" style="min-height:18px;margin:8px 0;"></div><button type="button" class="btn btn-primary w-full" data-bkt-finalize-test style="min-height:48px;">Nedenleri Kaydet</button></div>';
     modal.innerHTML = html; modal._bktDraft = draft;
@@ -853,23 +910,24 @@
       const a = (modal._bktAnswers || [])[i];
       return a == null ? "" : String(a);
     });
-    const eksik = answers.some(a => a === "");
-    if (eksik) {
-      const ilk = answers.findIndex(a => a === "");
-      modal._bktIdx = ilk < 0 ? 0 : ilk;
-      cizMiniSoru(modal);
-      const msg = modal.querySelector("#bkt-test-message");
-      if (msg) msg.textContent = "Bitirmeden önce " + (ilk + 1) + ". soruyu işaretle.";
-      return;
-    }
+    // v35.8 — Boş bırakılan soru bitirmeyi ENGELLEMEZ ("" = boş cevap).
     const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: answers, mode: modal._bktMode });
     if (result.needsReasons) showMiniResult(modal, result);
     else completeMiniTestView(modal, result);
   }
   function completeMiniTestReasons(modal) {
     const draft = modal._bktDraft || {}; const reasons = {};
-    (draft.wrongIndexes || []).forEach(i => { const el = modal.querySelector('[data-bkt-reason="' + i + '"]'); if (el && el.value) reasons[i] = el.value; });
-    if ((draft.wrongIndexes || []).some(i => !reasons[i])) { const msg = modal.querySelector("#bkt-test-message"); if (msg) msg.textContent = "Her yanlış cevap için neden seç."; return; }
+    const gerekli = (draft.wrongIndexes || []).concat(draft.bosIndexes || []);
+    gerekli.forEach(i => {
+      const el = modal.querySelector('[data-bkt-reason="' + i + '"]');
+      if (el && el.value) reasons[i] = el.value;
+    });
+    if (gerekli.some(i => !reasons[i])) {
+      const msg = modal.querySelector("#bkt-test-message");
+      const eksikBos = (draft.bosIndexes || []).some(i => !reasons[i]);
+      if (msg) msg.textContent = eksikBos ? "Boş bıraktığın sorular için de neden seç." : "Her yanlış cevap için neden seç.";
+      return;
+    }
     const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: draft.answers, reasons: reasons, mode: modal._bktMode });
     if (result.ok) completeMiniTestView(modal, result);
   }
@@ -894,11 +952,12 @@
       '<p class="text-sm" style="margin-bottom:12px;line-height:1.5;">' + mesaj + '</p>';
     (modal._bktQuestions || []).forEach(function (q, i) {
       const cevap = (modal._bktAnswers || [])[i];
-      const ok = Number(cevap) === Number(q.dogru_index);
+      const bosMu = cevap == null || String(cevap) === "";
+      const ok = !bosMu && Number(cevap) === Number(q.dogru_index);
       h += '<div style="border-top:1px solid var(--border-card);padding:9px 0;font-size:12.5px;">' +
-        '<b style="color:' + (ok ? "var(--semantic-success)" : "var(--semantic-error)") + ';">' + (i + 1) + '. ' + (ok ? "Doğru" : "Yanlış") + '</b>' +
-        miniGorsel(q) +
-        '<div class="text-muted" style="margin-top:3px;line-height:1.45;">' + safeText(q.cozum) + '</div></div>';
+        '<b style="color:' + (ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)") + ';">' + (i + 1) + ". " + (ok ? "Doğru" : bosMu ? "Boş" : "Yanlış") + "</b>" +
+        miniSoruTam(q, cevap) +
+        '<div class="text-muted" style="margin-top:4px;line-height:1.45;">' + safeText(q.cozum) + "</div></div>";
     });
     h += '<button type="button" data-bkt-close-test class="btn btn-primary w-full" style="min-height:48px;margin-top:12px;">Kapat</button></div>';
     modal.innerHTML = h;
@@ -906,13 +965,20 @@
   function submitMiniTest(input) {
     const data = input || {}; const questions = Array.isArray(data.questions) ? data.questions : [];
     const answers = Array.isArray(data.answers) ? data.answers : [];
-    if (!questions.length || answers.length !== questions.length || answers.some(a => a == null || a === "")) return { ok: false, reason: "all_required" };
-    const reasons = data.reasons || {}; const wrongIndexes = [];
+    if (!questions.length || answers.length !== questions.length) return { ok: false, reason: "all_required" };
+    const reasons = data.reasons || {}; const wrongIndexes = []; const bosIndexes = [];
     let correct = 0;
-    questions.forEach((q, i) => { if (Number(answers[i]) === Number(q.dogru_index)) correct++; else wrongIndexes.push(i); });
-    if (wrongIndexes.length && wrongIndexes.some(i => !reasons[i])) return { ok: false, needsReasons: true, correct: correct, total: questions.length, answers: answers, wrongIndexes: wrongIndexes };
     questions.forEach((q, i) => {
-      const isCorrect = Number(answers[i]) === Number(q.dogru_index);
+      const cevap = answers[i] == null ? "" : String(answers[i]);
+      if (cevap === "") { bosIndexes.push(i); return; }          // boş = yanlış ama nedeni AYRI
+      if (Number(cevap) === Number(q.dogru_index)) correct++; else wrongIndexes.push(i);
+    });
+    const nedenGerekli = wrongIndexes.concat(bosIndexes);
+    if (nedenGerekli.length && nedenGerekli.some(i => !reasons[i])) {
+      return { ok: false, needsReasons: true, correct: correct, total: questions.length, answers: answers, wrongIndexes: wrongIndexes, bosIndexes: bosIndexes };
+    }
+    questions.forEach((q, i) => {
+      const isCorrect = answers[i] != null && String(answers[i]) !== "" && Number(answers[i]) === Number(q.dogru_index);
       observe({ konu_id: data.konu_id || data.topicKey, pool_id: data.pool_id || data.poolId, dogru_mu: isCorrect, neden: reasons[i], kaynak: "mini_test", tarih: TODAY(), alt_beceri: q.alt_beceri });
       if (!isCorrect && reasons[i]) {
         const card = q.flashcard || { front: q.metin, back: q.cozum };
@@ -1022,6 +1088,8 @@
     SOURCE_PT: SOURCE_PT,
     WRONG_WEIGHT: WRONG_WEIGHT,
     EMPTY_REASONS: EMPTY_REASONS,
+    WRONG_REASONS: WRONG_REASONS,
+    REASON_LABELS: REASON_LABELS,
     STATUS_TEXT: STATUS_TEXT,
     normalizeReason: normalizeReason,
     validateParameters: validateParameters,
@@ -1059,7 +1127,45 @@
     addErrorCard: addErrorCard,
     flashcardReview: flashcardReview,
     getState: ensureStore,
-    statusFor: statusFor
+    statusFor: statusFor,
+    // v35.8 — Konu Takibi'ndeki BİRLEŞİK kart ("Öğrenme Durumu · Hafıza Gücü")
+    // bu tek çağrıyla konunun BKT durumunu alır. Ayrı panel kaldırıldığı için
+    // aynı konu iki yerde gösterilmiyor.
+    konuDurum: function (key) {
+      const s = ensureStore();
+      if (!s || !s.bkt_state || !key) return null;
+      const e = s.bkt_state[key];
+      if (!e) return null;
+      const status = statusFor(e);
+      const known = e.gozlem_sayisi >= 5;
+      const poolId = window.__havuzIdCoz(key, e.pool_id || e.soru_havuzu_id) || null;
+      const precheck = !!(e.precheck_due && dateValue(e.precheck_due) <= dateValue(TODAY()));
+      const task = (s.mini_test_kuyrugu || []).some(function (x) { return x.topicKey === key && x.type === "learning" && !x.completed; });
+      const cause = e.graph_topic_id ? rootCause(e.graph_topic_id, e.hata_gecmisi || []) : null;
+      return {
+        key: key,
+        durum: STATUS_TEXT[status] || "Gelişiyor",
+        onayli: status === "ONAYLANDI",
+        yeterlilik: known ? Math.round(e.L * 100) : null,
+        gozlem: e.gozlem_sayisi || 0,
+        poolId: poolId,
+        precheck: precheck,
+        ogrenmeTesti: task,
+        odak: focusLabel(e) || "",
+        kok: cause && !cause.stay ? cause.topicName : ""
+      };
+    },
+    konuDurumlari: function () {
+      const out = {};
+      try {
+        Object.keys((ensureStore() || {}).bkt_state || {}).forEach(function (k) {
+          const d = API.konuDurum(k);
+          if (d) out[k] = d;
+        });
+      } catch (e) { /* */ }
+      return out;
+    },
+    paneliTazele: function () { try { renderBktPanel(); } catch (e) { /* */ } }
   };
 
   function focusLabel(entry) {
@@ -1080,6 +1186,14 @@
     if (sayfa && sayfa !== "tracking") {
       const eski = document.getElementById("bkt-learning-panel");
       if (eski) eski.remove();
+      return;
+    }
+    // v35.8 — Ayrı BKT paneli KALDIRILDI: öğrenme durumu + hafıza gücü tek
+    // kartta (Konu Takibi → "Öğrenme Durumu · Hafıza Gücü"). Kart ekrandaysa
+    // burada ikinci kez çizilmez.
+    if (document.getElementById("bkt-birlesik-kart")) {
+      const eskiKart = document.getElementById("bkt-learning-panel");
+      if (eskiKart) eskiKart.remove();
       return;
     }
     queueLearningTests();

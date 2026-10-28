@@ -67,8 +67,10 @@ esit("bozuk görsel yok", bozuk, 0);
 
 const mat = JSON.parse(fs.readFileSync(path.join(HAVUZ, "mat_10_u01_k01.json"), "utf8"));
 const q1 = mat.sorular.find(q => q.soru_id === "mat_10_u01_k01_o01");
-ok("trigonometri sorusunda üçgen var", q1 && q1.gorsel && q1.gorsel.tip === "ucgen");
-ok("üçgen kenarları soru metniyle aynı (7 ve 24)", q1.gorsel.kenarlar.a === "7" && q1.gorsel.kenarlar.b === "24");
+// v35.8 — şekiller artık "geometri" tipiyle (serbest üçgen, yardımcı elemanlar)
+ok("trigonometri sorusunda üçgen var", q1 && q1.gorsel && (q1.gorsel.tip === "geometri" || q1.gorsel.tip === "ucgen"), q1 && q1.gorsel && q1.gorsel.tip);
+const q1Kenar = (q1.gorsel.kenarlar || []).map(k => k.etiket);
+ok("üçgen kenarları soru metniyle aynı (7 ve 24)", q1Kenar.indexOf("7") >= 0 && q1Kenar.indexOf("24") >= 0, JSON.stringify(q1Kenar));
 const fiz = JSON.parse(fs.readFileSync(path.join(HAVUZ, "fizik_10_u01_k02.json"), "utf8"));
 const q9 = fiz.sorular.find(q => q.soru_id === "fizik_10_u01_k02_o09");
 ok("hız-zaman grafiği sorusunda grafik var", q9 && q9.gorsel && q9.gorsel.tip === "grafik");
@@ -114,7 +116,7 @@ const st = {
     name: "Okulizyon: Deneme 1", date: "2026-10-27", okulizyonUrl: "https://okulizyon.com/app2/?pg=yks&sid=9",
     errorLogs: [
       { qno: "3", lesson: "Matematik", topic: "1.1 Trigonometri", status: "w", type: "KONU EKSİKLİĞİ", videoVar: true },
-      { qno: "4", lesson: "Fizik", topic: "1.2 Hareket", status: "e", type: "SÜRE YETMEDİ" }
+      { qno: "4", lesson: "Fizik", topic: "1.2 Hareket", status: "e", type: "ANLAMADIM" }
     ]
   }]
 };
@@ -130,7 +132,10 @@ esit("olmayan konu → boş", VC.izlenecekler(st, "Yok > Yok").length, 0);
 ok("Konu Takibi'nde 'çözümü izle' adımı YOK", HTML.indexOf("Yapamadığın Soruların Çözümünü İzle") < 0);
 ok("video adımı üreteci (videoAdimHtml) silindi", HTML.indexOf("function videoAdimHtml") < 0);
 ok("yol haritasında video:true adımı kalmadı", !/video:\s*true/.test(HTML));
-ok("Denemelerim'de 'Yapamadığın Sorular' bölümü var", HTML.indexOf("Yapamadığın Sorular <span") > 0);
+// v35.8 — kullanıcı: "Deneme kısmında yapamadığın sorular gereksiz, zaten konu
+// takibinde var." Bölüm TAMAMEN kaldırıldı; geri gelmemesi test edilir.
+ok("Denemelerim'de 'Yapamadığın Sorular' bölümü KALDIRILDI", HTML.indexOf("Yapamadığın Sorular") < 0);
+ok("kaldırılan bölümün satır üreteci de gitti", HTML.indexOf('data-exam-soru="') < 0);
 ok("video-cozum.js sayfaya yükleniyor", HTML.indexOf('src="video-cozum.js"') > 0);
 ok("içe aktarımda video alanı taşınıyor", APP.indexOf("row.videoVar || row.video") > 0);
 ok("sınav adresi kayda yazılıyor", APP.indexOf("okulizyonUrl: ex.url") > 0);

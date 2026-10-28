@@ -21,7 +21,53 @@
         "front": "Bir ABC üçgeninde a, b ve c kenarlarını karşılarındaki açıların sinüsleriyle ilişkilendiren sinüs teoremini yaz.",
         "back": "sin A/a = sin B/b = sin C/c."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            55
+          ],
+          "B": [
+            340,
+            240
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "7"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "?"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "45°"
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "not": "A = 45°, C = 90°, a = BC = 7 cm"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o02",
@@ -40,7 +86,45 @@
         "front": "İki kenarı b ve c, aralarındaki açı A olan üçgenin alanını sinüs yardımıyla ifade et.",
         "back": "Alan = (1/2) · b · c · sin A."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "7"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "12"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "60°"
+          }
+        ],
+        "not": "İki kenar 12 ve 7, aralarındaki açı 60° → alan = ½·12·7·sin60°"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o03",
@@ -59,7 +143,51 @@
         "front": "ABC üçgeninde c kenarı ve karşısındaki C açısı biliniyorsa a kenarını sinüs teoremiyle ifade et.",
         "back": "a = c · sin A / sin C."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "?"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "12"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "60°"
+          },
+          {
+            "kose": "C",
+            "a": "A",
+            "b": "B",
+            "etiket": "45°"
+          }
+        ],
+        "not": "c = 12 cm · A = 60° · C = 45° (sinüs teoremi)"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o04",
@@ -78,7 +206,51 @@
         "front": "Sinüs teoreminden a ve b kenarlarıyla A ve B açıları arasındaki eşitliği yaz.",
         "back": "a/sin A = b/sin B."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "10"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "30°"
+          },
+          {
+            "kose": "B",
+            "a": "A",
+            "b": "C",
+            "etiket": "45°"
+          }
+        ],
+        "not": "A = 30°, B = 45°, a = 10 cm → b = ?"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o05",
@@ -97,7 +269,53 @@
         "front": "Sinüs teoreminde a kenarını, karşısındaki A açısını ve başka bir karşılıklı kenar-açı çiftini kullanarak oran bağıntısı yaz.",
         "back": "a/sin A = c/sin C."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            55
+          ],
+          "B": [
+            340,
+            240
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "8"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "?"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "60°"
+          }
+        ],
+        "dikler": [
+          "C"
+        ],
+        "not": "A = 60°, C = 90°, a = 8 cm"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o06",
@@ -116,7 +334,51 @@
         "front": "ABC üçgeninde a, b ve c kenarlarının karşılarında hangi açıların bulunduğunu sembollerle eşleştir.",
         "back": "a kenarı A açısının, b kenarı B açısının, c kenarı C açısının karşısındadır."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "12"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "60°"
+          },
+          {
+            "kose": "B",
+            "a": "A",
+            "b": "C",
+            "etiket": "45°"
+          }
+        ],
+        "not": "A = 60°, B = 45°, a = 12 cm → b = ?"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o07",
@@ -135,7 +397,50 @@
         "front": "ABC üçgeninde A açısının karşısındaki a kenarı için kosinüs teoremini yaz.",
         "back": "a² = b² + c² − 2bc · cos A."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "?"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "8"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "7"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "60°"
+          }
+        ],
+        "not": "b = 8, c = 7, aralarındaki açı A = 60° → a² = b² + c² − 2bc·cosA"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o08",
@@ -154,7 +459,50 @@
         "front": "ABC üçgeninde B açısının karşısındaki b kenarı için kosinüs teoremini yaz.",
         "back": "b² = a² + c² − 2ac · cos B."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "9"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "?"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "5"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "B",
+            "a": "A",
+            "b": "C",
+            "etiket": "60°"
+          }
+        ],
+        "not": "a = 9, c = 5, aralarındaki açı B = 60° → b = ?"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o09",
@@ -173,7 +521,50 @@
         "front": "ABC üçgeninde B açısının kosinüsünü a, b ve c kenarlarıyla ifade et.",
         "back": "cos B = (a² + c² − b²)/(2ac)."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "9"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "3√7"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "6"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "B",
+            "a": "A",
+            "b": "C",
+            "etiket": "?"
+          }
+        ],
+        "not": "a = 9, b = 3√7, c = 6 → kosinüs teoremiyle B"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o10",
@@ -192,7 +583,50 @@
         "front": "İki kenarı b ve c, aralarındaki açısı A olan üçgende a² için kosinüs teoremini yaz.",
         "back": "a² = b² + c² − 2bc · cos A."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "?"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "5"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "8"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "a": "B",
+            "b": "C",
+            "etiket": "120°"
+          }
+        ],
+        "not": "5 ve 8 kenarları arasındaki açı 120° → karşısındaki kenar ?"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o11",
@@ -211,7 +645,50 @@
         "front": "Kosinüs teoreminde C açısının kosinüsünü a, b ve c kenarlarıyla ifade et.",
         "back": "cos C = (a² + b² − c²)/(2ab)."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            190,
+            48
+          ],
+          "B": [
+            48,
+            242
+          ],
+          "C": [
+            338,
+            242
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "10"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "7"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "9"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "C",
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "not": "a = 10, b = 7, c = 9 → cos C = ?"
+      }
     },
     {
       "soru_id": "mat_10_u01_k04_o12",
@@ -230,7 +707,46 @@
         "front": "Kosinüs teoremini c kenarı ve karşısındaki C açısı için yaz.",
         "back": "c² = a² + b² − 2ab · cos C."
       },
-      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "C": [
+            70,
+            240
+          ],
+          "A": [
+            70,
+            55
+          ],
+          "B": [
+            340,
+            240
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "?"
+          },
+          {
+            "a": "C",
+            "b": "A",
+            "etiket": "9"
+          },
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "?"
+          }
+        ],
+        "acilar": [],
+        "dikler": [
+          "C"
+        ],
+        "not": "Dik açıyı çevreleyen kenarlar 7 ve 9 → hipotenüs ?"
+      }
     }
   ],
   "flashcards": [

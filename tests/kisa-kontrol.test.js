@@ -245,11 +245,18 @@ function bkt(kayit) {
     ok("sonraki sorunun metni ekranda YOK", modal.innerHTML.indexOf("soru metni 2") < 0);
     ok("görselli soruda <svg> basıldı", modal.innerHTML.indexOf("<svg") >= 0);
 
-    // --- cevapsız ilerlemeye izin verilmez ---
+    // --- v35.8: BOŞ BIRAKMAK SERBEST (kullanıcı: "boş bırakamıyoruz") ---
+    ok("boş bırakma engeli kalktı (düğme disabled değil)", !/data-bkt-next[^>]*disabled/.test(modal.innerHTML));
     dugme(o1, "[data-bkt-next]");
     await bekle(10);
-    esit("cevapsız ilerlemek engellendi (1. soruda kalır)", modal._bktIdx, 0);
-    ok("1. soru hâlâ ekranda", modal.innerHTML.indexOf("Soru 1 / 5") >= 0);
+    esit("cevapsız İLERLEDİ (2. soru)", modal._bktIdx, 1);
+    ok("ekranda Soru 2 / 5", modal.innerHTML.indexOf("Soru 2 / 5") >= 0);
+    ok("boş bırakma açıklaması yazıyor", /boş bırakıp geçebilirsin/i.test(modal.innerHTML));
+    // 1. soruya geri dön: cevap BOŞ kalmalı
+    dugme(o1, "[data-bkt-prev]");
+    await bekle(10);
+    esit("geri dönünce 1. soru", modal._bktIdx, 0);
+    esit("1. sorunun cevabı hâlâ boş", modal._bktAnswers[0] == null || modal._bktAnswers[0] === "", true);
   }
 
   // --- cevap verip ilerle ---
@@ -351,6 +358,30 @@ function bkt(kayit) {
   } else {
     ok("havuzEsle dışa açık", false);
   }
+
+  // ==========================================================
+  // 5b) v35.8 — BOŞ BIRAKMA + AYRI NEDEN LİSTELERİ (davranış)
+  // ==========================================================
+  console.log("\n== 5b) Boş bırakma ve ayrı hata nedenleri ==");
+  ok("WRONG_REASONS dışa açık", Array.isArray(API.WRONG_REASONS) && API.WRONG_REASONS.length >= 4);
+  ok("EMPTY_REASONS dışa açık", Array.isArray(API.EMPTY_REASONS) && API.EMPTY_REASONS.length >= 2);
+  ok("yanlış ve boş neden listeleri AYRI",
+    JSON.stringify(API.WRONG_REASONS) !== JSON.stringify(API.EMPTY_REASONS));
+  ok("SÜREYETMEDİ hiçbir listede YOK",
+    API.WRONG_REASONS.concat(API.EMPTY_REASONS).every(r => !/SÜRE/i.test(r)));
+  ok("boşta işlem/kitapçık nedeni yok",
+    API.EMPTY_REASONS.every(r => r !== "İşlem Hatası/Dikkatsizlik" && r !== "Kodlama/Kitapçık Hatası"));
+  // Gözlem: eski "SÜRE YETMEDİ" kaydı artık PUAN DÜŞÜRMEZ (ağırlığı yok)
+  const q2 = [
+    { metin: "1+1", secenekler: ["1", "2"], dogru_index: 1, cozum: "2" },
+    { metin: "2+2", secenekler: ["3", "4"], dogru_index: 1, cozum: "4" }
+  ];
+  const bosSonuc = API.submitMiniTest({ konu_id: "Matematik > 1.1 Trigonometri", pool_id: "mat_10_u01_k01", questions: q2, answers: ["", "1"], mode: "precheck" });
+  ok("boş cevapla test GÖNDERİLEBİLİR (all_required hatası yok)", bosSonuc.ok === true || bosSonuc.needsReasons === true, JSON.stringify(bosSonuc).slice(0, 160));
+  ok("boş cevap neden olarak işaretlendi", (bosSonuc.bosIndexes || []).indexOf(0) >= 0, JSON.stringify(bosSonuc.bosIndexes));
+  esit("boş soru doğru sayılmaz (yalnız 2. soru doğru)", bosSonuc.correct, 1);
+  const nedenli = API.submitMiniTest({ konu_id: "Matematik > 1.1 Trigonometri", pool_id: "mat_10_u01_k01", questions: q2, answers: ["", "1"], reasons: { 0: "ANLAMADIM", 1: "KONUEKSİKLİĞİ" }, mode: "precheck" });
+  ok("boş + yanlış için ayrı nedenlerle kayıt tamam", nedenli.ok === true, JSON.stringify(nedenli).slice(0, 120));
 
   // ==========================================================
   // 6) PANEL DÜĞMESİ 5 SORU DİYOR

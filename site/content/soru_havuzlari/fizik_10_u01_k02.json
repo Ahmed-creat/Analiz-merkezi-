@@ -21,7 +21,31 @@
         "front": "İvme nedir; yönü ve SI birimi nasıldır?",
         "back": "İvme, hız vektöründeki değişimin zamana oranıdır; vektöreldir ve SI birimi m/s²'dir."
       },
-      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,"
+      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                4
+              ],
+              [
+                3,
+                16
+              ],
+              [
+                6,
+                28
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o02",
@@ -40,7 +64,31 @@
         "front": "Bir cismin hız değişimi hangi iki hızın farkıyla tanımlanır?",
         "back": "Son hız vektöründen ilk hız vektörü çıkarılır: Δv = vson − vilk."
       },
-      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,"
+      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                10
+              ],
+              [
+                2,
+                7
+              ],
+              [
+                4,
+                4
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o03",
@@ -59,7 +107,31 @@
         "front": "Sabit ivmenin büyüklüğü 4 m/s² ise hızın büyüklüğü her 1 s'de nasıl değişir?",
         "back": "Hızın büyüklüğü her saniye 4 m/s artar veya azalır; değişimin yönünü ivmenin yönü belirler."
       },
-      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,"
+      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                5
+              ],
+              [
+                3,
+                11
+              ],
+              [
+                6,
+                17
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o04",
@@ -78,7 +150,31 @@
         "front": "Hız ve ivme vektörleri aynı ya da zıt yönlü olduğunda cismin sürati nasıl değişir?",
         "back": "Vektörler aynı yönlüyse cisim hızlanır; zıt yönlüyse yavaşlar."
       },
-      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,"
+      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                20
+              ],
+              [
+                2,
+                14
+              ],
+              [
+                4,
+                8
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o05",
@@ -97,7 +193,31 @@
         "front": "Hız değişimi ile ivme arasındaki bağıntı nedir?",
         "back": "a = Δv/Δt; ivme, birim zamandaki hız değişimidir."
       },
-      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,"
+      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                5
+              ],
+              [
+                3,
+                14
+              ],
+              [
+                6,
+                23
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o06",
@@ -116,7 +236,31 @@
         "front": "Bir cisim hareket ederken hızlanıyorsa ivme vektörünün hareket yönüne göre durumu nedir?",
         "back": "İvme vektörü hız vektörüyle aynı yönlüdür."
       },
-      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,"
+      "kazanim": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                -5
+              ],
+              [
+                3,
+                -14
+              ],
+              [
+                6,
+                -23
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o07",
@@ -135,7 +279,31 @@
         "front": "Sabit ivmeli harekette son hız, ilk hız ve geçen zamanla nasıl bulunur?",
         "back": "v = v₀ + a·t (başlangıç anı t = 0 alınır)."
       },
-      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,"
+      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                9
+              ],
+              [
+                6,
+                15
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o08",
@@ -154,7 +322,32 @@
         "front": "İlk hız v₀ ile başlayan, sabit ivmeli bir cismin t sürede yer değiştirmesi için kullanılan bağıntı nedir?",
         "back": "Δx = v₀·t + ½·a·t²."
       },
-      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,"
+      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                3,
+                9
+              ],
+              [
+                6,
+                18
+              ]
+            ]
+          }
+        ],
+        "alan": true
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o09",
@@ -197,7 +390,7 @@
             ]
           }
         ],
-        "aciklama": "Hız-zaman grafiği: t=0'da +12 m/s, t=8 s'de −12 m/s."
+        "alan": true
       }
     },
     {
@@ -217,7 +410,31 @@
         "front": "Pozitif yönde giden bir cisim yavaşlıyorsa ivmesinin işareti nedir?",
         "back": "İvme hareket yönüne zıt olduğundan negatiftir."
       },
-      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,"
+      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                22
+              ],
+              [
+                2,
+                16
+              ],
+              [
+                4,
+                10
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fizik_10_u01_k02_o11",
@@ -259,8 +476,7 @@
               ]
             ]
           }
-        ],
-        "aciklama": "Hız-zaman grafiği pozitif eğimli doğru."
+        ]
       }
     },
     {
@@ -280,7 +496,35 @@
         "front": "Durdurma komutu ile yavaşlatıcı etkinin başlaması arasında gecikme varsa bu aralıkta alınan yol nasıl bulunur?",
         "back": "Cisim gecikme süresince mevcut hızıyla ilerler; alınan yol x=v·t bağıntısıyla hesaplanır."
       },
-      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,"
+      "kazanim": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "x (m)",
+        "seriler": [
+          {
+            "ad": "x",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                0.1,
+                0.6
+              ],
+              [
+                0.2,
+                1.2
+              ],
+              [
+                0.3,
+                1.8
+              ]
+            ]
+          }
+        ]
+      }
     }
   ],
   "flashcards": [

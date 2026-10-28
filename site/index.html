@@ -1269,10 +1269,12 @@ function activeLessonConfig() {
 }
 
 // 4 Yalın Yanlış + 3 Yalın Boş taksonomisi (v5 şartnamesi)
-const WRONG_REASONS = ["Konuyu Bilmiyordum", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"];
-const EMPTY_REASONS = ["KONUEKSİKLİĞİ", "SÜREYETMEDİ", "ÇÖZÜMYOLUNUBULAMADIM"];
-function canonicalReason(value) { return ({"KONU EKSİKLİĞİ":"KONUEKSİKLİĞİ","SÜRE YETMEDİ":"SÜREYETMEDİ","ÇÖZÜM YOLUNU BULAMADIM":"ÇÖZÜMYOLUNUBULAMADIM"}[String(value || "").trim()] || String(value || "").trim()); }
-function reasonLabel(value) { return ({"KONUEKSİKLİĞİ":"Konu eksiği","SÜREYETMEDİ":"Süre yetmedi","ÇÖZÜMYOLUNUBULAMADIM":"Çözüm yolunu bulamadım"}[canonicalReason(value)] || value); }
+// v35.8 — Yanlış ve BOŞ için AYRI hata nedenleri; "Süre yetmedi" seçeneği
+// kullanıcı isteğiyle TAMAMEN kaldırıldı.
+const WRONG_REASONS = ["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"];
+const EMPTY_REASONS = ["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM"];
+function canonicalReason(value) { return ({"KONU EKSİKLİĞİ":"KONUEKSİKLİĞİ","KONUEKSİKLİĞİ":"KONUEKSİKLİĞİ","ÇÖZÜM YOLUNU BULAMADIM":"ÇÖZÜMYOLUNUBULAMADIM","Konuyu Bilmiyordum":"KONUEKSİKLİĞİ","SÜRE YETMEDİ":"SUREYETMEDI","SÜREYETMEDİ":"SUREYETMEDI"}[String(value || "").trim()] || String(value || "").trim()); }
+function reasonLabel(value) { return ({"KONUEKSİKLİĞİ":"Konu eksiği","ANLAMADIM":"Anlamadım","ÇÖZÜMYOLUNUBULAMADIM":"Çözüm yolunu bulamadım","İşlem Hatası/Dikkatsizlik":"İşlem hatası / dikkatsizlik","Kodlama/Kitapçık Hatası":"Kodlama / kitapçık hatası","SUREYETMEDI":"Süre yetmedi (eski kayıt)"}[canonicalReason(value)] || value); }
 
 // Hata tipi -> ağırlık (Laplace düzeltmeli Priorite formülü, v5)
 // Priorite = [1.5·DenemeBilgi + 1.0·TestBilgi + 0.5·(İşlem+Anlama)] × (1 + AYT Ağırlığı)
@@ -1282,7 +1284,6 @@ const REASON_WEIGHTS = {
   "ANLAMADIM": 0.5,
   "İşlem Hatası/Dikkatsizlik": 0.5,
   "Kodlama/Kitapçık Hatası": 0.1,
-  "SÜREYETMEDİ": 0.3,
   "ÇÖZÜMYOLUNUBULAMADIM": 0.8
 };
 
@@ -1308,13 +1309,12 @@ const EXAM_REGIMES = [
 const REASON_GROUP = {
   "Konuyu Bilmiyordum": "Konu Bilgisi Eksiği", "KONUEKSİKLİĞİ": "Konu Bilgisi Eksiği",
   "ANLAMADIM": "Anlama Güçlüğü", "İşlem Hatası/Dikkatsizlik": "İşlem Hatası",
-  "Kodlama/Kitapçık Hatası": "Kitapçık Hatası", "SÜREYETMEDİ": "Süre Yetersizliği", "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm Yolu"
+  "Kodlama/Kitapçık Hatası": "Kitapçık Hatası", "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm Yolu"
 };
 const GROUP_META = {
   "Konu Bilgisi Eksiği": { label: "Konu Bilgisi Eksiği", color: "var(--semantic-error)", bg: "var(--semantic-error-bg)" },
   "Anlama Güçlüğü": { label: "Anlama Güçlüğü", color: "var(--semantic-warning)", bg: "var(--semantic-warning-bg)" },
   "İşlem Hatası": { label: "İşlem Hatası", color: "var(--semantic-warning)", bg: "var(--semantic-warning-bg)" },
-  "Süre Yetersizliği": { label: "Süre Yetersizliği", color: "var(--memory-indigo)", bg: "var(--memory-indigo-bg)" },
   "Çözüm Yolu": { label: "Çözüm Yolu", color: "var(--memory-indigo)", bg: "var(--memory-indigo-bg)" },
   "Kitapçık Hatası": { label: "Kitapçık Hatası", color: "var(--text-muted)", bg: "var(--bg-canvas)" }
 };
@@ -1868,10 +1868,12 @@ function errorTypeDistribution() {
   }));
 }
 
-// Süre ve çözüm oranı (%)
+// Çözüm yolu eksiği oranı (%)
+// v35.8 — "Süre yetmedi" nedeni kaldırıldığı için bu oran yalnız
+// "Çözüm yolunu bulamadım" kayıtlarını sayar.
 function skyaRate() {
   let total = 0, skya = 0;
-  const t = (type) => { if (!type) return; total++; if (REASON_GROUP[canonicalReason(type)] === "Süre Yetersizliği" || REASON_GROUP[canonicalReason(type)] === "Çözüm Yolu") skya++; };
+  const t = (type) => { if (!type) return; total++; if (REASON_GROUP[canonicalReason(type)] === "Çözüm Yolu") skya++; };
   state.exams.forEach(ex => (ex.errorLogs || []).forEach(x => t(x.type)));
   state.questions.forEach(q => (q.errorLogs || []).forEach(x => t(x.type)));
   return total ? (skya / total) * 100 : 0;
@@ -1982,7 +1984,7 @@ function coachMessages() {
     msgs.push("En az 3 deneme girince trend analizini açarım. Şu an " + st.count + " kayıt var.");
   }
   const skya = skyaRate();
-  if (skya > 30) msgs.push("Süre/çözüm hata oranın <b>%" + Math.round(skya) + "</b>. Süre yönetimi için kitap okumayı arttır ve zamanlı test çöz (Kitaplık önerisine bak).");
+  if (skya > 30) msgs.push("Soruların <b>%" + Math.round(skya) + "</b>'inde çözüm yolunu bulamıyorsun. Önce çözümlü örneğe bak, sonra benzer soruyu kendin çöz (Kitaplık önerisine bak).");
   const ms = memoryStats();
   if (ms.critical > 0) msgs.push("<b>" + ms.critical + " konu</b> kritik hafıza eşiğinin (%20) altında. ACİL TEKRAR butonları Konu Takibi'nde seni bekliyor.");
   if (rs.pages === 0 && daysSince(state.user.joined) > 3) msgs.push("Kitap okumadığın için %100 odak potansiyeline ulaşamıyorsun. Günde 15 dakikayla başla.");
@@ -3162,33 +3164,180 @@ function renderExams(container) {
       html += '<div class="dt-satir' + (v ? "" : " bos") + '" data-exam-ders="' + attr(l) + '" style="scroll-margin-top:80px;"><span>' + esc(l) + "</span><span class='d'>" + (v ? v.d : "—") + "</span><span class='w'>" + (v ? v.w : "—") + "</span><span>" + (v ? v.e : "—") + "</span><b class='tabular'>" + net + "</b></div>";
     });
     html += "</div></div>";
-    // Yapamadığın sorular + çözümleri (Okulizyon'dan gelen video çözümler)
-    const cozumler = (window.VC && typeof window.VC.izlenecekler === "function")
-      ? window.VC.izlenecekler({ exams: [sonEx] }) : [];
-    if (cozumler.length) {
-      const videolu = cozumler.filter(x => x.video || x.videoVar).length;
-      html += '<div class="bento-card" style="margin-top:20px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:8px;">' + icon("play-circle", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Yapamadığın Sorular <span class='text-xs text-muted' style='font-weight:600;'>(" + cozumler.length + " soru" + (videolu ? " · " + videolu + " video çözüm" : "") + ")</span></h3>";
-      html += '<div class="text-xs text-muted" style="margin-bottom:8px;line-height:1.45;">Yanlış/boş bıraktığın sorular. Video çözüm varsa izleyebilirsin; yoksa çözüm metni ya da konu adı gösterilir.</div>';
-      cozumler.slice(0, 40).forEach(x => {
-        html += '<div data-exam-soru="' + attr(x.ders + "|" + String(x.qno || "")) + '" style="display:flex;gap:8px;align-items:center;padding:6px 0;border-top:1px solid var(--border-card,#E8EEF8);font-size:12.5px;line-height:1.35;scroll-margin-top:80px;">';
-        html += '<span class="tabular text-muted" style="min-width:24px;">#' + esc(String(x.qno || "")) + '</span>';
-        html += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="' + attr(x.kazanim || x.konu) + '"><b>' + esc(x.ders) + '</b> · ' + esc(x.konu || x.kazanim) + '</span>';
-        html += '<span class="badge ' + (x.durum === "boş" ? "badge-warn" : "badge-kritik") + '" style="flex-shrink:0;">' + esc(x.durum) + '</span>';
-        // Okulizyon sınav sayfasına çıkış YOK (giriş sayfasına atıyordu).
-        // Yalnız gerçek video varsa açılır; yoksa konunun kendisine gidilir.
-        const lk = (window.VC && typeof window.VC.izleLink === "function") ? window.VC.izleLink(x) : null;
-        if (lk) html += '<a href="' + attr(lk.href) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="min-height:38px;flex-shrink:0;">' + icon("play", 12) + " " + esc(lk.etiket) + "</a>";
-        html += '<button class="btn btn-sm btn-ghost" data-act="konuGit" data-ders="' + attr(x.ders) + '" data-konu="' + attr(x.konu || x.kazanim || "") + '" style="min-height:38px;flex-shrink:0;">' + icon("book-open", 12) + " Konuyu aç</button>";
-        html += '</div>';
-      });
-      html += "</div>";
-    }
   }
 
   container.innerHTML = html;
   ddify(container); // tüm select'ler temalı özel açılır listeye dönüşür
   bindExamForm();
   renderExamChart(); // sayfaya navigate ile gelindiğinde de grafik çizilsin
+}
+
+// ============================================================
+// ANALİZ MERKEZİ v5.1 — KONU TAKİBİ / MODÜL B (modül: ui/tracking.js)
+// Acil Çalışılacaklar + Hafıza Gücü + Kök Eksik (ders başarı grafiği Ana Sayfa'da)
+// ============================================================
+
+let urgentLimit = 10; // Acil Çalışılacaklar: varsayılan 10; buton AÇ/KAPA toggle'ı
+function moreUrgentTopics() {
+  const toplam = calculatePriority().length;
+  // liste tamamen açıksa KAPAT (10'a dön); değilse +10 daha aç
+  urgentLimit = (urgentLimit >= toplam && urgentLimit > 10) ? 10 : urgentLimit + 10;
+  renderTracking(document.getElementById("main-content"));
+  if (window.lucide && lucide.createIcons) lucide.createIcons();
+}
+let memoryLimit = 10; // Hafıza Gücü satırları: aynı AÇ/KAPA davranışı
+function moreMemoryRows() {
+  const toplam = memoryStats().rows.length;
+  memoryLimit = (memoryLimit >= toplam && memoryLimit > 10) ? 10 : memoryLimit + 10;
+  renderTracking(document.getElementById("main-content"));
+  if (window.lucide && lucide.createIcons) lucide.createIcons();
+}
+
+function renderTracking(container) {
+  const pr = calculatePriority();
+  const ms = memoryStats();
+  const roots = rootDeficitList();
+
+  let html = '<div class="top-bar" style="margin-bottom:14px;"><h2 style="font-size:20px;font-weight:700;">' + icon("radar", 22, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Konu Takibi</h2>";
+  html += '<span class="text-xs text-muted">' + pr.length + " öncelikli konu</span></div>";
+
+  // ===== ACİL ÇALIŞILACAKLAR (tam genişlik — ders başarı grafiği Ana Sayfa'da) =====
+  html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("alert-circle", 16, "vertical-align:middle;margin-right:6px;color:var(--semantic-error);") + " Acil Çalışılacaklar <span class='text-xs text-muted' style='font-weight:600;'>(Öncelik Sırası)</span></h3>";
+  if (pr.length) {
+    html += pr.slice(0, urgentLimit).map((p, i) => {
+      const s = p[2];
+      const maxScore = pr[0][1] || 1;
+      const scorePct = clamp((p[1] / maxScore) * 100, 8, 100);
+      return '<div class="acil-row">' +
+        '<span class="acil-rank">#' + (i + 1) + "</span>" +
+        '<div style="flex:1;min-width:0;">' +
+        '<div class="flex items-center gap-2" style="flex-wrap:wrap;">' +
+        '<span style="font-weight:700;font-size:13.5px;min-width:0;flex:1;">' + esc(s.topic) + "</span>" +
+        (s.kae > 0 ? '<span class="badge badge-kritik">Öncelik</span>' : "") + "</div>" +
+        '<div class="text-xs text-muted" style="margin:3px 0 5px;">' + esc(s.lesson) + " · Toplam hata: " + s.count + (s.anlamadim ? " · ANLAMADIM ×" + s.anlamadim : "") + "</div>" +
+        '<div class="progress" style="margin-bottom:6px;"><div style="width:' + scorePct + "%;background:var(--brand-gradient);\"></div></div>" +
+        '<div class="flex gap-2" style="flex-wrap:wrap;align-items:center;">' + Object.entries(s.reasons).slice(0, 3).map(([r, c]) => '<span class="badge badge-warn">' + esc(r) + " ×" + c + "</span>").join("") +
+        '<button class="btn btn-sm btn-primary" style="margin-left:auto;" data-act="startStudy" data-topic="' + attr(p[0]) + '">' + icon("play", 13) + " Çalış</button></div></div></div>";
+    }).join("");
+  } else {
+    html += '<div class="empty-state">' + icon("radar", 34) + "<div>" +
+      (state.exams.length || state.questions.length
+        ? "Kayıtlı deneme/soru var ama hata kaydı yok.<br>Denemelerim" + APRX + "nde her yanlış/boş için Konu + Neden girersen öncelik listesi oluşur."
+        : "Deneme veya soru hatası girince öncelik listesi burada oluşur.") + "</div></div>";
+  }
+  if (pr.length > urgentLimit) {
+    html += '<button class="btn btn-ghost w-full" data-act="moreUrgent" style="margin-top:8px;">' + icon("chevron-down", 14) + " Daha Fazla Göster (" + (pr.length - urgentLimit) + " konu daha)</button>";
+  } else if (urgentLimit > 10) {
+    html += '<button class="btn btn-ghost w-full" data-act="moreUrgent" style="margin-top:8px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
+  }
+  html += "</div>";
+
+
+
+
+  // ===== KÖK EKSİK (çapraz ilişkilendirme) =====
+  if (roots.length) {
+    html += '<div class="bento-card" style="margin-top:16px;border-color:rgba(239,68,68,0.3);"><h3 style="font-size:15px;font-weight:700;margin-bottom:8px;color:var(--semantic-error);">' + icon("git-branch", 16, "vertical-align:middle;margin-right:6px;") + " Kök Eksik Uyarısı (Ön Koşul)</h3>";
+    html += '<p class="text-xs text-muted" style="margin:-2px 0 8px;">Müfredat ilişki grafındaki <b>zorunlu ön koşul</b> bağlarına göre. Zayıflık konu bazlı hata kayıtlarından ölçülür.</p>';
+    html += roots.map(r =>
+      '<div class="text-sm" style="padding:8px 0;border-bottom:1px solid var(--border-card);line-height:1.5;">' + icon("corner-down-right", 13, "vertical-align:middle;") +
+      " <b>" + esc(splitKey(r.weak).topic) + "</b> (" + esc(r.root) + ") konusunda <b>" + r.hata + " hata</b> var ve bu konu <b>" + r.sayi + " konunun ön koşulu</b>: " +
+      esc(r.gosterilen.map(k => splitKey(k).topic).join(" · ")) + (r.sayi > r.gosterilen.length ? " …" : "") +
+      ". Önce buradaki eksiği kapat; bağlı konular ondan sonra sağlamlaşır.</div>"
+    ).join("") +'<div class="flex gap-2" style="margin-top:10px;flex-wrap:wrap;"><button type="button" class="btn btn-ghost btn-sm" data-act="kokeksikKonuGit" data-key="' + attr(roots[0].weak) + '">' + icon("arrow-right", 13) + " En kritik konuyu aç</button></div>" + "</div>";
+  }
+
+  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (TEK KART, v35.8) =====
+  // Kullanıcı: "Konu takibindeki öğrenme durumu ile hafıza gücü bölümünü
+  // birleştir — her iki bölümde de hafıza gücünü gösteriyor."
+  // Burada konu başına TEK satır var: durum (BKT) + yeterlilik + hafıza barı +
+  // tekrar aksiyonları + kısa kontrol düğmesi. Ayrı BKT paneli kaldırıldı.
+  const bktDurumlar = (window.AnalizBKT && typeof window.AnalizBKT.konuDurumlari === "function")
+    ? window.AnalizBKT.konuDurumlari() : {};
+  const bktAnahtar = Object.keys(bktDurumlar);
+  const hafizaAnahtar = ms.rows.map(r => r.key);
+  // Birleşik satırlar: hafıza kaydı olan konular + yalnız BKT kaydı olan konular
+  const birlesik = hafizaAnahtar.slice();
+  bktAnahtar.forEach(k => { if (birlesik.indexOf(k) < 0) birlesik.push(k); });
+  const satirlar = birlesik.map(k => {
+    const mem = ms.rows.find(r => r.key === k) || null;
+    return { key: k, lesson: splitKey(k).lesson, topic: splitKey(k).topic, mem: mem, bkt: bktDurumlar[k] || null };
+  }).sort((a, b) => {
+    const pa = a.mem ? a.mem.pct : 101, pb = b.mem ? b.mem.pct : 101;   // hafızası zayıf olan üstte
+    return pa - pb;
+  });
+
+  html += '<div class="bento-card" id="bkt-birlesik-kart" style="margin-top:16px;"><div class="flex items-center justify-between" style="margin-bottom:4px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
+  const iv = idealReviewInterval();
+  if (iv !== null) html += '<span class="text-xs text-muted">Sınav yaklaşırken aralıklar Cepeda %15 ile sıklaşır · ideal: <b>' + iv + " gün</b></span>";
+  html += "</div>";
+  html += '<div class="text-xs text-muted" style="margin:0 0 10px;line-height:1.45;">Durum = bu konuyu bilme olasılığın (Veri yetersiz → Gelişiyor → Pekişiyor → ONAYLANDI) · Hafıza = tekrar kartlarının gücü. Kısa Kontrol yalnız bu konunun havuzundan soru açar.</div>';
+  if (satirlar.length) {
+    html += '<div class="stat-grid" style="margin-bottom:14px;">' +
+      statBox("Tekrar Bekleyen", ms.waiting) +
+      statBox("Ort. Hafıza", "%" + ms.avg) +
+      statBox("Kritik (<%20)", ms.critical) +
+      statBox("Onaylı Konu", bktAnahtar.filter(k => bktDurumlar[k].onayli).length) + "</div>";
+    html += satirlar.slice(0, memoryLimit).map(sat => {
+      const r = sat.mem;
+      const b = sat.bkt;
+      const pct = r ? r.pct : null;
+      const durum = b ? b.durum : "Veri yetersiz";
+      const yeter = b && b.yeterlilik !== null ? b.yeterlilik : null;
+      let alsat = "";
+      if (r) {
+        const done = r.pct >= 90;
+        const urgent = r.pct < MEMORY_CRITICAL;
+        const btn = urgent
+          ? '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("flame", 13) + " ACİL TEKRAR ET</button>"
+          : r.due
+            ? '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>"
+            : done
+              ? '<button class="btn btn-sm btn-success" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>"
+              : '<button class="btn btn-sm btn-primary" data-act="earlyReview" data-topic="' + attr(r.key) + '">' + icon("fast-forward", 13) + " Erken Tekrar Yap</button>";
+        alsat += btn + '<button class="btn btn-sm btn-ghost" data-act="resetTopic" data-topic="' + attr(r.key) + '" style="color:var(--semantic-error);" title="Baştan Başla">' + icon("rotate-ccw", 13) + "</button>";
+      }
+      if (b && b.poolId) {
+        alsat += '<button type="button" class="btn btn-sm ' + (b.precheck ? "btn-primary" : "btn-ghost") + ' bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="precheck" style="min-width:48px;min-height:44px;">Kısa Kontrol — ' + (window.AnalizBKT && window.AnalizBKT.MINI_SORU || 5) + " soru</button>";
+        if (b.ogrenmeTesti) alsat += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="learning" style="min-width:48px;min-height:44px;">Öğrenme Testi</button>';
+      }
+      let orta = "";
+      if (pct !== null) {
+        orta += '<span class="hafiza-bar"><span style="width:' + pct + "%;background:" + memoryColor(pct) + ';"></span><b class="tabular" style="color:' + memoryColor(pct) + ';">%' + pct + "</b></span>";
+      }
+      if (yeter !== null) {
+        orta += '<span class="hafiza-bar" title="Yeterlilik (BKT)"><span style="width:' + yeter + '%;background:var(--brand-blue);"></span><b class="tabular" style="color:var(--brand-blue);">' + yeter + "%</b></span>";
+      }
+      let alt = '<div class="text-xs text-muted">' + esc(sat.lesson);
+      if (r) alt += " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki: " + fmtDate(r.next.date) + " (" + r.next.day + ". gün)" : "");
+      if (b) alt += " · " + b.gozlem + " soru izlendi";
+      alt += "</div>";
+      if (b && b.odak) alt += '<div class="text-xs" style="color:var(--brand-blue);margin-top:2px;">Hataların şurada yoğunlaşıyor: ' + esc(b.odak) + "</div>";
+      if (b && b.kok) alt += '<div class="text-xs" style="color:var(--brand-blue);margin-top:2px;">Önce şunu sağlamlaştır: ' + esc(b.kok) + "</div>";
+      if (b && !b.poolId) alt += '<div class="text-xs" style="color:var(--semantic-warning);margin-top:2px;">Soru havuzu eşlenmedi — bu konuyla birebir eşleşen havuz yok.</div>';
+      return '<div class="hafiza-row">' +
+        '<span class="hafiza-ad" style="min-width:0;flex:1;">' +
+        (pct !== null && pct < MEMORY_WARNING ? '<span class="badge badge-kritik">KRİTİK</span> ' : "") +
+        (r && r.due ? '<span class="badge badge-warn">BUGÜN</span> ' : "") +
+        '<b style="font-size:13px;">' + esc(sat.topic) + '</b> <span class="text-xs" style="color:var(--brand-blue);font-weight:700;">' + esc(durum) + "</span>" +
+        alt + "</span>" +
+        orta +
+        '<span class="flex gap-2" style="flex-shrink:0;flex-wrap:wrap;">' + alsat + "</span></div>";
+    }).join("");
+    if (satirlar.length > memoryLimit) {
+      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-down", 14) + " Daha Fazla Göster (" + (satirlar.length - memoryLimit) + " konu daha)</button>";
+    } else if (memoryLimit > 10) {
+      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
+    }
+  } else {
+    html += '<div class="empty-state">' + icon("brain", 34) + "<div>Bilgi Bankası'nda konu tamamlandıkça ya da kısa kontroller çözüldükçe durum ve hafıza barları burada belirir.</div></div>";
+  }
+  html += "</div>";
+
+  container.innerHTML = html;
+  if (window.lucide && lucide.createIcons) lucide.createIcons();
+  // Ayrı BKT paneli kaldırıldı; eski panelden kalıntı varsa temizle.
+  if (typeof window.__bktUiTazele === "function") window.__bktUiTazele();
 }
 
 // ============================================================
@@ -3239,9 +3388,10 @@ function videoGit(examIdx, ders, qno) {
   if (Number.isInteger(i) && i >= 0 && i < state.exams.length) examDetailIdx = i;
   navigate("exams");
   setTimeout(function () {
+    // v35.8 — deneme detayındaki soru listesi bölümü kaldırıldığı için soru
+    // satırı yok; doğrudan ders satırına inilir (aynı konum, aynı vurgu).
     let hedef = null;
-    if (ders && qno) hedef = document.querySelector('[data-exam-soru="' + String(ders + "|" + qno).replace(/"/g, '\\"') + '"]');
-    if (!hedef && ders) {
+    if (ders) {
       const satirlar = document.querySelectorAll("[data-exam-ders]");
       for (let k = 0; k < satirlar.length; k++) if (satirlar[k].dataset.examDers === ders) { hedef = satirlar[k]; break; }
     }
@@ -3371,7 +3521,7 @@ function updateExamErrorAreas(lesson, vals) {
       topics.map(tp => '<option value="' + attr(tp) + '">' + esc(tp) + "</option>").join("") + "</select></div>" +
       '<div style="flex:1;min-width:0;"><span class="err-label">NEDEN SEÇ</span>' +
       '<select data-err="' + attr(lesson) + ":" + i + ':type"><option value="">Neden Seç…</option>' +
-      (isWrong ? WRONG_REASONS : EMPTY_REASONS).map(r => '<option value="' + attr(r) + '">' + esc(r) + "</option>").join("") + "</select></div>" +
+      (isWrong ? WRONG_REASONS : EMPTY_REASONS).map(r => '<option value="' + attr(r) + '">' + esc(reasonLabel(r)) + "</option>").join("") + "</select></div>" +
       "</div></div>";
   }
   area.innerHTML = html;
@@ -3506,124 +3656,6 @@ function renderExamChart() {
   } catch (e) { /* grafik çizilemezse sessiz atla */ }
 }
 
-// ============================================================
-// ANALİZ MERKEZİ v5.1 — KONU TAKİBİ / MODÜL B (modül: ui/tracking.js)
-// Acil Çalışılacaklar + Hafıza Gücü + Kök Eksik (ders başarı grafiği Ana Sayfa'da)
-// ============================================================
-
-let urgentLimit = 10; // Acil Çalışılacaklar: varsayılan 10; buton AÇ/KAPA toggle'ı
-function moreUrgentTopics() {
-  const toplam = calculatePriority().length;
-  // liste tamamen açıksa KAPAT (10'a dön); değilse +10 daha aç
-  urgentLimit = (urgentLimit >= toplam && urgentLimit > 10) ? 10 : urgentLimit + 10;
-  renderTracking(document.getElementById("main-content"));
-  if (window.lucide && lucide.createIcons) lucide.createIcons();
-}
-let memoryLimit = 10; // Hafıza Gücü satırları: aynı AÇ/KAPA davranışı
-function moreMemoryRows() {
-  const toplam = memoryStats().rows.length;
-  memoryLimit = (memoryLimit >= toplam && memoryLimit > 10) ? 10 : memoryLimit + 10;
-  renderTracking(document.getElementById("main-content"));
-  if (window.lucide && lucide.createIcons) lucide.createIcons();
-}
-
-function renderTracking(container) {
-  const pr = calculatePriority();
-  const ms = memoryStats();
-  const roots = rootDeficitList();
-
-  let html = '<div class="top-bar" style="margin-bottom:14px;"><h2 style="font-size:20px;font-weight:700;">' + icon("radar", 22, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Konu Takibi</h2>";
-  html += '<span class="text-xs text-muted">' + pr.length + " öncelikli konu</span></div>";
-
-  // ===== ACİL ÇALIŞILACAKLAR (tam genişlik — ders başarı grafiği Ana Sayfa'da) =====
-  html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("alert-circle", 16, "vertical-align:middle;margin-right:6px;color:var(--semantic-error);") + " Acil Çalışılacaklar <span class='text-xs text-muted' style='font-weight:600;'>(Öncelik Sırası)</span></h3>";
-  if (pr.length) {
-    html += pr.slice(0, urgentLimit).map((p, i) => {
-      const s = p[2];
-      const maxScore = pr[0][1] || 1;
-      const scorePct = clamp((p[1] / maxScore) * 100, 8, 100);
-      return '<div class="acil-row">' +
-        '<span class="acil-rank">#' + (i + 1) + "</span>" +
-        '<div style="flex:1;min-width:0;">' +
-        '<div class="flex items-center gap-2" style="flex-wrap:wrap;">' +
-        '<span style="font-weight:700;font-size:13.5px;min-width:0;flex:1;">' + esc(s.topic) + "</span>" +
-        (s.kae > 0 ? '<span class="badge badge-kritik">Öncelik</span>' : "") + "</div>" +
-        '<div class="text-xs text-muted" style="margin:3px 0 5px;">' + esc(s.lesson) + " · Toplam hata: " + s.count + (s.anlamadim ? " · ANLAMADIM ×" + s.anlamadim : "") + "</div>" +
-        '<div class="progress" style="margin-bottom:6px;"><div style="width:' + scorePct + "%;background:var(--brand-gradient);\"></div></div>" +
-        '<div class="flex gap-2" style="flex-wrap:wrap;align-items:center;">' + Object.entries(s.reasons).slice(0, 3).map(([r, c]) => '<span class="badge badge-warn">' + esc(r) + " ×" + c + "</span>").join("") +
-        '<button class="btn btn-sm btn-primary" style="margin-left:auto;" data-act="startStudy" data-topic="' + attr(p[0]) + '">' + icon("play", 13) + " Çalış</button></div></div></div>";
-    }).join("");
-  } else {
-    html += '<div class="empty-state">' + icon("radar", 34) + "<div>" +
-      (state.exams.length || state.questions.length
-        ? "Kayıtlı deneme/soru var ama hata kaydı yok.<br>Denemelerim" + APRX + "nde her yanlış/boş için Konu + Neden girersen öncelik listesi oluşur."
-        : "Deneme veya soru hatası girince öncelik listesi burada oluşur.") + "</div></div>";
-  }
-  if (pr.length > urgentLimit) {
-    html += '<button class="btn btn-ghost w-full" data-act="moreUrgent" style="margin-top:8px;">' + icon("chevron-down", 14) + " Daha Fazla Göster (" + (pr.length - urgentLimit) + " konu daha)</button>";
-  } else if (urgentLimit > 10) {
-    html += '<button class="btn btn-ghost w-full" data-act="moreUrgent" style="margin-top:8px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
-  }
-  html += "</div>";
-
-
-
-
-  // ===== KÖK EKSİK (çapraz ilişkilendirme) =====
-  if (roots.length) {
-    html += '<div class="bento-card" style="margin-top:16px;border-color:rgba(239,68,68,0.3);"><h3 style="font-size:15px;font-weight:700;margin-bottom:8px;color:var(--semantic-error);">' + icon("git-branch", 16, "vertical-align:middle;margin-right:6px;") + " Kök Eksik Uyarısı (Ön Koşul)</h3>";
-    html += '<p class="text-xs text-muted" style="margin:-2px 0 8px;">Müfredat ilişki grafındaki <b>zorunlu ön koşul</b> bağlarına göre. Zayıflık konu bazlı hata kayıtlarından ölçülür.</p>';
-    html += roots.map(r =>
-      '<div class="text-sm" style="padding:8px 0;border-bottom:1px solid var(--border-card);line-height:1.5;">' + icon("corner-down-right", 13, "vertical-align:middle;") +
-      " <b>" + esc(splitKey(r.weak).topic) + "</b> (" + esc(r.root) + ") konusunda <b>" + r.hata + " hata</b> var ve bu konu <b>" + r.sayi + " konunun ön koşulu</b>: " +
-      esc(r.gosterilen.map(k => splitKey(k).topic).join(" · ")) + (r.sayi > r.gosterilen.length ? " …" : "") +
-      ". Önce buradaki eksiği kapat; bağlı konular ondan sonra sağlamlaşır.</div>"
-    ).join("") +'<div class="flex gap-2" style="margin-top:10px;flex-wrap:wrap;"><button type="button" class="btn btn-ghost btn-sm" data-act="kokeksikKonuGit" data-key="' + attr(roots[0].weak) + '">' + icon("arrow-right", 13) + " En kritik konuyu aç</button></div>" + "</div>";
-  }
-
-  // ===== HAFIZA GÜCÜ (§5: eğri + KPI + konu barları) =====
-  html += '<div class="bento-card" style="margin-top:16px;"><div class="flex items-center justify-between" style="margin-bottom:4px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Hafıza Gücü</h3>";
-  const iv = idealReviewInterval();
-  if (iv !== null) html += '<span class="text-xs text-muted">Sınav yaklaşırken aralıklar Cepeda %15 ile sıklaşır · ideal: <b>' + iv + " gün</b></span>";
-  html += "</div>";
-  if (ms.rows.length) {
-    html += '<div class="stat-grid" style="margin-bottom:14px;">' +
-      statBox("Tamamlanan Tekrar", ms.rows.reduce((a, r) => a + r.reviews, 0)) +
-      statBox("Tekrar Bekleyen", ms.waiting) +
-      statBox("Ort. Hafıza", "%" + ms.avg) +
-      statBox("Kritik (<%20)", ms.critical) + "</div>";
-    const gosterilen = ms.rows.slice(0, memoryLimit);
-    html += gosterilen.map(r => {
-      const done = r.pct >= 90;
-      const urgent = r.pct < MEMORY_CRITICAL;
-      const btn = urgent
-        ? '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("flame", 13) + " ACİL TEKRAR ET</button>"
-        : r.due
-          ? '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>"
-          : done
-            ? '<button class="btn btn-sm btn-success" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>"
-            : '<button class="btn btn-sm btn-primary" data-act="earlyReview" data-topic="' + attr(r.key) + '">' + icon("fast-forward", 13) + " Erken Tekrar Yap</button>";
-      return '<div class="hafiza-row">' +
-        '<span class="hafiza-ad" style="min-width:0;flex:1;">' +
-        (r.pct < MEMORY_WARNING ? '<span class="badge badge-kritik">KRİTİK</span> ' : "") + (r.due ? '<span class="badge badge-warn">BUGÜN</span> ' : "") +
-        '<b style="font-size:13px;">' + esc(r.topic) + "</b><br><span class='text-xs text-muted'>" + esc(r.lesson) + " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki: " + fmtDate(r.next.date) + " (" + r.next.day + ". gün)" : "") + "</span></span>" +
-        '<span class="hafiza-bar"><span style="width:' + r.pct + "%;background:" + memoryColor(r.pct) + ';"></span><b class="tabular" style="color:' + memoryColor(r.pct) + ';">%' + r.pct + "</b></span>" +
-        '<span class="flex gap-2" style="flex-shrink:0;">' + btn +
-        '<button class="btn btn-sm btn-ghost" data-act="resetTopic" data-topic="' + attr(r.key) + '" style="color:var(--semantic-error);" title="Baştan Başla">' + icon("rotate-ccw", 13) + "</button></span></div>";
-    }).join("");
-    if (ms.rows.length > memoryLimit) {
-      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-down", 14) + " Daha Fazla Göster (" + (ms.rows.length - memoryLimit) + " konu daha)</button>";
-    } else if (memoryLimit > 10) {
-      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
-    }
-  } else {
-    html += '<div class="empty-state">' + icon("brain", 34) + "<div>Bilgi Bankası'nda konu tamamlandıkça hafıza barları burada belirir.</div></div>";
-  }
-  html += "</div>";
-
-  container.innerHTML = html;
-}
-
 function startStudy(topicKey) {
   state.topics[topicKey] = state.topics[topicKey] || { step: 0, completedAt: null, preTest: false };
   saveState();
@@ -3660,9 +3692,9 @@ function renderLibrary(container) {
 
   // Süre ve çözüm önerisi
   if (skya > 30) {
-    html += '<div class="nudge-card" style="background:var(--memory-indigo-bg);border-color:rgba(99,102,241,0.25);">' + icon("timer", 20, "color:var(--memory-indigo);") +
-      '<div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--memory-indigo);">Çözüm Süresi Önerisi</div>' +
-      '<div style="font-size:12.5px;color:var(--text-main);">Süre/çözüm hata oranın <b>%' + Math.round(skya) + "</b> (süren yetmiyor / çözüm yolunu bulamıyorsun). <b>Kitap okumayı arttırman önerilir</b>: günde " + Math.min(state.plan.readingMinutes || 20, READING_MAX_MINUTES) + " dakika okuma + zamanlı soru pratiği.</div></div></div>";
+    html += '<div class="nudge-card" style="background:var(--memory-indigo-bg);border-color:rgba(99,102,241,0.25);">' + icon("compass", 20, "color:var(--memory-indigo);") +
+      '<div style="flex:1;"><div style="font-weight:700;font-size:14px;color:var(--memory-indigo);">Çözüm Yolu Önerisi</div>' +
+      '<div style="font-size:12.5px;color:var(--text-main);">Soruların <b>%' + Math.round(skya) + "</b>'inde çözüm yolunu bulamıyorsun. <b>Çözümlü örnek + kitap okuma iyi gelir</b>: günde " + Math.min(state.plan.readingMinutes || 20, READING_MAX_MINUTES) + " dakika okuma, ardından 1 çözümlü örnek incele.</div></div></div>";
   }
   if (anlRate > 30) {
     const suggestion = anlamadimReadingSuggestion();
@@ -4202,7 +4234,23 @@ function soruCozumDetay(examIdx, ders, qno, topicKey) {
     '<div class="text-xs text-muted">' + esc(ex ? (ex.name || "Deneme") : "Deneme") + (ex && ex.date ? " · " + esc(fmtDate(ex.date)) : "") + '</div></div>' +
     '<button type="button" data-soru-kapat style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:22px;cursor:pointer;">×</button></div>';
   if (kazanim) h += '<div style="font-size:13px;line-height:1.5;padding:10px;border-radius:10px;background:var(--bg-canvas,#F6F8FC);margin-bottom:10px;"><span class="text-xs text-muted">Kazanım:</span><br>' + esc(kazanim) + '</div>';
-  if (kayit && kayit.type) h += '<div class="text-xs text-muted" style="margin-bottom:10px;">İşaretlediğin neden: <b>' + esc(kayit.type) + '</b></div>';
+  if (kayit && kayit.type) h += '<div class="text-xs text-muted" style="margin-bottom:10px;">İşaretlediğin neden: <b>' + esc(reasonLabel(kayit.type)) + '</b></div>';
+  // v35.8 — Sonuç ekranı yalnız cevabı değil SORUYU DA gösterir: metin + şıklar
+  // + şekil (varsa). Okulizyon soru metni kaydetmiyorsa yalnız kazanım kalır.
+  if (kayit && (kayit.metin || kayit.soruMetni || kayit.secenekler || kayit.gorsel)) {
+    const metin = kayit.metin || kayit.soruMetni || "";
+    const secenekler = Array.isArray(kayit.secenekler) ? kayit.secenekler : [];
+    const dogru = kayit.dogru_index != null ? Number(kayit.dogru_index) : (kayit.dogru != null ? Number(kayit.dogru) : null);
+    h += '<div style="border:1px solid var(--border-card);border-radius:12px;padding:10px;margin-bottom:10px;background:var(--bg-canvas,#F6F8FC);">';
+    if (kayit.gorsel && window.GV && typeof window.GV.html === "function") { try { h += window.GV.html(kayit.gorsel, 300); } catch (e) { /* */ } }
+    if (metin) h += '<div style="font-weight:700;font-size:13px;line-height:1.5;margin:2px 0 8px;">' + esc(metin) + "</div>";
+    if (secenekler.length) {
+      h += '<div style="display:grid;gap:5px;">' + secenekler.map((sec, j) =>
+        '<div style="border:1.2px solid ' + (dogru === j ? "var(--semantic-success)" : "var(--border-card)") + ';background:' + (dogru === j ? "rgba(22,163,74,.08)" : "transparent") + ';border-radius:9px;padding:7px 9px;font-size:12.5px;line-height:1.45;"><b style="margin-right:6px;">' + ("ABCDE".charAt(j) || (j + 1)) + ")</b>" + esc(sec) + (dogru === j ? ' <b style="color:var(--semantic-success);">✓ doğru cevap</b>' : "") + "</div>").join("") + "</div>";
+    }
+    if (kayit.cozum) h += '<div class="text-xs text-muted" style="margin-top:8px;line-height:1.45;">Çözüm: ' + esc(kayit.cozum) + "</div>";
+    h += "</div>";
+  }
   h += '<div style="display:flex;flex-direction:column;gap:8px;">';
   // 1) BİRİNCİL: aynı konudan 5 soru — kısır döngü yok, yerinde çözüm
   h += '<button type="button" class="btn btn-primary w-full" data-soru-pratik="' + attr(String(topicKey || "")) + '" style="min-height:48px;">' + icon("pencil-line", 15) + ' Bu konudan 5 soru çöz</button>';
@@ -4617,7 +4665,7 @@ function updateQBErrors(dv, wv, ev) {
       '<div style="flex:1.4;min-width:0;"><span class="err-label">KONU SEÇ <span class="text-xs text-muted font-normal">(' + esc(lesson) + ')</span></span>' +
       '<select data-qberr="' + i + ':topic"><option value="">Konu Seç…</option>' + topicsOfLesson(lesson).map(tp => '<option value="' + attr(tp) + '"' + (prev[i + ":topic"] === tp ? " selected" : "") + ">" + esc(tp) + "</option>").join("") + "</select></div>" +
       '<div style="flex:1;min-width:0;"><span class="err-label">NEDEN SEÇ</span>' +
-      '<select data-qberr="' + i + ':type"><option value="">Neden Seç…</option>' + (isWrong ? WRONG_REASONS : EMPTY_REASONS).map(r => '<option value="' + attr(r) + '">' + esc(r) + "</option>").join("") + "</select></div>" +
+      '<select data-qberr="' + i + ':type"><option value="">Neden Seç…</option>' + (isWrong ? WRONG_REASONS : EMPTY_REASONS).map(r => '<option value="' + attr(r) + '">' + esc(reasonLabel(r)) + "</option>").join("") + "</select></div>" +
       "</div></div>";
   }
   area.innerHTML = html;
