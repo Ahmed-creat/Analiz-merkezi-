@@ -297,7 +297,10 @@ async function abonelikler(filtre: string) {
 async function durumAl(userId: string) {
   const y = await fetch(SURL + "/rest/v1/app_states?select=state&user_id=eq." + userId, { headers: sbB() });
   const r = await y.json().catch(() => []);
-  return Array.isArray(r) && r[0] ? r[0].state : null;
+  let s: any = Array.isArray(r) && r[0] ? r[0].state : null;
+  // Eski kayıtlarda state metin (text) olabilir — sessizce patlamasın
+  if (typeof s === "string") { try { s = JSON.parse(s); } catch { s = null; } }
+  return s && typeof s === "object" ? s : null;
 }
 
 async function isaretle(id: string, bugun: string) {
@@ -371,13 +374,18 @@ Deno.serve(async (istek) => {
     for (const a of abonelikler_) {
       if (a.son_gonderim === bugun) continue;              // günde en fazla 1 bildirim
       if (!aboneGecerliMi(a)) { await sil(a.id); continue; }
-      if (!durumlar.has(a.user_id)) durumlar.set(a.user_id, await durumAl(a.user_id));
-      const mesaj = mesajSec(durumlar.get(a.user_id), bugun);
-      if (!mesaj) continue;                                 // söyleyecek sözü yoksa rahatsız etme
-      const r = await gonder(a, mesaj);
-      if (r.kod === 201) { gonderilen++; await isaretle(a.id, bugun); }
-      else if (r.kod === 404 || r.kod === 410) await sil(a.id);   // abonelik ölmüş
-      else hatalar.push({ id: a.id, ...r });
+      // TEK kullanıcının bozuk verisi TÜM listeyi durdurmasın
+      try {
+        if (!durumlar.has(a.user_id)) durumlar.set(a.user_id, await durumAl(a.user_id));
+        const mesaj = mesajSec(durumlar.get(a.user_id), bugun);
+        if (!mesaj) continue;                               // söyleyecek sözü yoksa rahatsız etme
+        const r = await gonder(a, mesaj);
+        if (r.kod === 201) { gonderilen++; await isaretle(a.id, bugun); }
+        else if (r.kod === 404 || r.kod === 410) await sil(a.id);   // abonelik ölmüş
+        else hatalar.push({ id: a.id, ...r });
+      } catch (e) {
+        hatalar.push({ id: a.id, hata: String(e).slice(0, 160) });
+      }
     }
     return json({ mod, abonelik: abonelikler_.length, gonderilen, hatalar: hatalar.slice(0, 10), gun: bugun });
   } catch (e) {
