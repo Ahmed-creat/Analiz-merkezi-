@@ -182,3 +182,46 @@ yazıyor; öğrenci Profil → Okulizyon ekranında "Analiz Bekliyor" kuyruğunu
 ### Testler
 `npm run test:okz` → **39/39** (kart ayrıştırma + detay + kaçış çözme dahil).
 `npm run test:mesaj` → **63/63** (mesaj/Koçluk Hattı motoru + arayüz).
+
+## 10. GERÇEK KULLANICI GERİ BİLDİRİMİ SONRASI DÜZELTMELER (v34.6)
+
+Öğrenci gerçek hesabıyla çekti ve şunları bildirdi: *"eksik geliyor, bazı
+derslerin netleri gelmiyor, doğru/yanlış/boş olarak almalı"*.
+
+### Kök neden
+Okulizyon ders adları uygulamanın beklediği adlarla **birebir uyuşmuyordu**:
+
+| Okulizyon | Uygulama (10. sınıf) | Eşleşiyor muydu? |
+|---|---|---|
+| `Türkçe` | `Türk Dili ve Edebiyatı` | ❌ |
+| `Tarih-1` | `Tarih` | ❌ |
+| `Coğrafya-1` | `Coğrafya` | ❌ |
+| `Matematik-1` | `Matematik` | ❌ |
+| `Din Kül. ve Ahl. Bil.` | `Din Kültürü` | ❌ |
+| Felsefe · Fizik · Kimya · Biyoloji | aynı | ✅ |
+
+Yani **9 dersin yalnız 4'ü** Denemelerim / Konu Takibi / grafikte görünüyordu.
+Ayrıştırıcı doğru çalışıyordu; veri doğru çekilip **yanlış anahtarla** saklanıyordu.
+
+### Düzeltme
+- `site/okz-normalize.js`: adları gruplar (`matematik`, `tarih`, …) ve
+  uygulamanın bildiği ada çevirir; `Matematik-1` + `Matematik-2` gibi aynı
+  derse düşenleri **toplar**. Tanınmayan ders olduğu gibi kalır (veri kaybı yok).
+- Okulizyon penceresinde her sınav için **Ders | D | Y | B | Net** tablosu +
+  TOPLAM satırı gösterilir.
+- Daha önce yanlış adlarla aktarılmış kayıtlar açılışta **tek seferlik onarılır**
+  (`OKZ.duzelt`), hata kayıtlarının ders adları da düzeltilir.
+- Okulizyon cevap anahtarını değiştirirse ("verisi güncellenen sınav") uygulama
+  bunu yakalar ve **"Kaydı güncelle"** düğmesi çıkarır.
+
+### Doğrulama (gerçek 28.10 verisi)
+```
+9 ders · 91 D · 12 Y · 17 B · 120 soru · net 88   (kart: 91/12/88 ✓)
+Türkçe→TDE 27/3/0 · Matematik-1→Matematik 13/3/14 · Din→Din Kültürü 5/0/0 …
+```
+`npm run test:ders` → **45/45**.
+
+> Not: 28.10 sabahı çekilen veri (100 D / 11 Y) ile öğleden sonraki (91 D / 12 Y)
+> birbirinden farklı. İki çekim de kendi içinde tutarlı (dersler ↔ kart toplamı
+> birebir), yani ayrıştırıcı hatası değil — **Okulizyon tarafındaki sonuç
+> değişmiş**. Artık bu değişim yakalanıp kullanıcıya bildiriliyor.
