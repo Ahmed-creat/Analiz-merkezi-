@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261028-v35-1-veri-koruma";
+const CACHE = "analiz-merkezi-v-20261028-v35-2-konu-bulma";
 const ASSETS = [
   "./",
   "./index.html",
@@ -14,6 +14,8 @@ const ASSETS = [
   "./mesaj.js",
   "./okz-normalize.js",
   "./okz-konu.js",
+ "./konu-anahtar.js",
+ "./havuz-bul.js",
   "./veri-birlestir.js",
   "./gorsel.js",
   "./video-cozum.js",
@@ -79,11 +81,13 @@ const ASSETS = [
   "./content/soru_havuzlari/edebiyat_10_u03_k03.json",
   "./content/soru_havuzlari/edebiyat_10_u03_k04.json",
   "./content/soru_havuzlari/edebiyat_10_u03_k05.json",
+ "./content/soru_havuzlari/edebiyat_10_u03_k06.json",
   "./content/soru_havuzlari/edebiyat_10_u04_k01.json",
   "./content/soru_havuzlari/edebiyat_10_u04_k02.json",
   "./content/soru_havuzlari/edebiyat_10_u04_k03.json",
   "./content/soru_havuzlari/edebiyat_10_u04_k04.json",
   "./content/soru_havuzlari/edebiyat_10_u04_k05.json",
+ "./content/soru_havuzlari/edebiyat_10_u04_k06.json",
   "./content/soru_havuzlari/fel_10_u01_k01.json",
   "./content/soru_havuzlari/fel_10_u01_k02.json",
   "./content/soru_havuzlari/fel_10_u01_k03.json",

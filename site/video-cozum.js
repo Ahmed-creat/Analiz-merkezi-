@@ -95,14 +95,60 @@
    * kaynaklar: deneme hata kayıtları (video varsa), yoksa metin çözümü.
    * konuKey verilirse yalnız o konu (ör. "Matematik > 1.1 ...") süzülür.
    */
+  // Konu adları bazen kayıttan bazen kazanımdan gelir; birebir eşitlik
+  // yetmiyor (kullanıcı: "hiçbir video bağlantısı yok"). Bu yüzden konu
+  // metinleri normalize edilip BİRİBİRİNİ KAPSIYORSA da eşleşir.
+  function konuSade(x) {
+    return String(x == null ? "" : x).toLocaleLowerCase("tr-TR")
+      .replace(/[ıİ]/g, "i").replace(/[şŞ]/g, "s").replace(/[ğĞ]/g, "g")
+      .replace(/[çÇ]/g, "c").replace(/[öÖ]/g, "o").replace(/[üÜ]/g, "u")
+      .replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function konuTutar(hedef, aday) {
+    if (!hedef) return true;
+    if (hedef === aday) return true;                 // birebir
+    const a = konuSade(hedef), b = konuSade(aday);
+    if (!a || !b) return false;
+    if (a === b) return true;
+    // Biri diğerini kapsıyorsa (en az 8 karakter) aynı konu sayılır
+    if (a.length >= 8 && b.length >= 8 && (a.indexOf(b) >= 0 || b.indexOf(a) >= 0)) return true;
+    // "Ders > Konu" biçiminde ders eşitse konu kısmına bak
+    const pa = a.split(" > "), pb = b.split(" > ");
+    const ka = pa.length > 1 ? pa.slice(1).join(" > ") : "", kb = pb.length > 1 ? pb.slice(1).join(" > ") : "";
+    if (ka && kb && (ka.indexOf(kb) >= 0 || kb.indexOf(ka) >= 0)) return true;
+    // Kelime örtüşmesi: iki metin de aynı konuyu anlatıyorsa (örn. konu
+    // başlığı "Şiirde Ahenk", kazanım "şiirde ahengi sağlayan özellikler…")
+    const DURAK = { ve: 1, ile: 1, bir: 1, icin: 1, olan: 1, olarak: 1 };
+    const kel = function (x) { return x.split(" ").filter(function (w) { return w.length > 3 && !DURAK[w]; }); };
+    const w1 = kel(ka || a), w2 = kel(kb || b);
+    if (w1.length >= 2 && w2.length >= 2) {
+      let ortak = 0;
+      w1.forEach(function (w) { if (w2.indexOf(w) >= 0) ortak++; });
+      const oran = ortak / Math.min(w1.length, w2.length);
+      if (ortak >= 2 && oran >= 0.5) return true;
+    }
+    return false;
+  }
+
   function izlenecekler(state, konuKey) {
     const cikti = [];
     const hedef = String(konuKey || "");
     (Array.isArray(state && state.exams) ? state.exams : []).forEach(function (ex) {
       (Array.isArray(ex && ex.errorLogs) ? ex.errorLogs : []).forEach(function (l) {
         if (!l) return;
-        const konu = String(l.lesson || "") + " > " + String(l.topic || "");
-        if (hedef && konu !== hedef) return;
+        const ders = String(l.lesson || "");
+        const konu = ders + " > " + String(l.topic || "");
+        let eslesti = konuTutar(hedef, konu);
+        // Kayıt hâlâ ham kazanım metniyse kural tablosuyla konuya çevirip
+        // tekrar dene (kullanıcı: "konular yine kazanım olarak kaydediliyor").
+        const KA = (typeof window !== "undefined" && window.KA) ? window.KA : (typeof globalThis !== "undefined" ? globalThis.KA : null);
+        if (!eslesti && KA && typeof KA.esle === "function") {
+          try {
+            const kural = KA.esle(l.topic, ders);
+            if (kural && kural.konu) eslesti = konuTutar(hedef, ders + " > " + kural.konu);
+          } catch (e) { /* kural yoksa geç */ }
+        }
+        if (!eslesti) return;
         cikti.push({
           deneme: ex.name || "Deneme",
           tarih: ex.date || (l.date || ""),
@@ -151,7 +197,7 @@
   const VC = {
     izleLink: izleLink,
     normalize: normalize, htmlDenCikar: htmlDenCikar, videolariIsle: videolariIsle,
-    izlenecekler: izlenecekler, soruCozumu: soruCozumu, IZINLI: IZINLI
+    izlenecekler: izlenecekler, soruCozumu: soruCozumu, konuTutar: konuTutar, IZINLI: IZINLI
   };
   if (typeof module !== "undefined" && module.exports) module.exports = VC;
   if (kok) kok.VC = VC;

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.1-veri-koruma";
+const PWA_SURUM = "v35.2-konu-bulma";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -797,6 +797,15 @@ function okzKonuBul(ders, kazanim) {
   const kanon = okzDersKanonik(ders);
   const elle = okzKonuHaritasi()[okzHaritaAnahtar(kanon, kazanim)];
   if (elle) return { konu: String(elle).split(" > ").slice(1).join(" > "), topicKey: elle, kaynak: "harita" };
+  // 2) ELLE BAKILMIŞ KURAL TABLOSU (site/konu-anahtar.js)
+  // Kazanım cümlesinde konunun ayırt edici kavramı geçiyorsa ("açıortay",
+  // "mol", "ahenk"…) doğrudan konuya bağlanır. İndeks yüklenmeden de çalışır.
+  if (window.KA && typeof window.KA.esle === "function") {
+    const kural = window.KA.esle(kazanim, kanon);
+    if (kural && kural.konu) {
+      return { konu: kural.konu, topicKey: kanon + " > " + kural.konu, kaynak: "kural" };
+    }
+  }
   if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return null;
   const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
   if (r && r.guven === "kesin") return { konu: r.konu, topicKey: r.topicKey, kaynak: "kesin" };
@@ -1238,16 +1247,34 @@ function renderOkzModal() {
       html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:12px;padding:10px;margin-bottom:10px;">';
       html += '<div style="font-weight:700;font-size:13.5px;margin-bottom:6px;">' + escHtml(ex.name) + (ex.date ? ' <span style="opacity:0.6;font-weight:400;">· ' + escHtml(ex.date) + "</span>" : "") + "</div>";
       html += okzDersTablosu(ex.lessons);
+      // Okulizyon videoyu doğrudan adresle vermiyor; çözüm düğmeleri sınav
+      // sayfasında. Bağlantı yoksa düğme ÇİZİLMEZ (boş vaat yok).
+      const okzSinavUrl = (function () {
+        try { const u = window.VC && window.VC.normalize ? window.VC.normalize(ex.url || ex.okulizyonUrl || "") : String(ex.url || ""); return u; } catch (e) { return ""; }
+      })();
+      if (okzSinavUrl) {
+        html += '<a href="' + escHtml(okzSinavUrl) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="margin:2px 0 6px;display:inline-flex;gap:5px;align-items:center;min-height:38px;">▶ Okulizyon\'da sınavı ve çözümleri aç</a>';
+      }
       html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' + OKZ_NEDENLER.slice(0, 3).map(r => '<button data-act="okzHepsi" data-reason="' + escHtml(r) + '" style="font-size:10.5px;padding:4px 8px;border-radius:99px;border:1px solid rgba(0,0,0,0.15);background:none;cursor:pointer;color:inherit;">tümü: ' + r + "</button>").join("")
         + '<button data-act="okzYoksay" data-key="' + escHtml(okzKey(ex)) + '" data-hash="' + escHtml(window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex)) + '" style="font-size:10.5px;padding:4px 8px;border-radius:99px;border:1px solid rgba(0,0,0,0.15);background:none;cursor:pointer;color:#B45309;">bu sınavı yoksay</button>'
         + "</div>";
+      // Soru soru neden seçimi İSTEĞE BAĞLI ve varsayılan kapalı:
+      // 21 soruluk sınavda 21 açılır kutu göstermek öğrenciyi boğuyordu.
+      html += '<details style="margin-top:6px;"><summary style="cursor:pointer;font-size:11.5px;opacity:0.75;padding:4px 0;">Soruları tek tek düzenle (isteğe bağlı · ' + ex.rows.length + ' soru)</summary>';
       ex.rows.forEach((row, j) => {
         html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid rgba(0,0,0,0.07);">';
         html += '<span style="min-width:26px;font-size:11px;opacity:0.6;">#' + (row.qno || j + 1) + "</span>";
-        html += '<div style="flex:1;min-width:0;"><div style="font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(row.topic) + '</div><div style="font-size:10.5px;opacity:0.6;">' + escHtml(row.lesson) + " · " + (row.status === "e" ? "BOŞ" : "YANLIŞ") + "</div></div>";
+        const satirVideo = (function () {
+          try { if (window.VC && window.VC.normalize) return window.VC.normalize(row.video || ""); } catch (e) { /* */ }
+          return "";
+        })();
+        const satirLink = satirVideo || ((row.videoVar || satirVideo) && okzSinavUrl ? okzSinavUrl : "");
+        html += '<div style="flex:1;min-width:0;"><div style="font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(row.topic) + '</div><div style="font-size:10.5px;opacity:0.6;">' + escHtml(row.lesson) + " · " + (row.status === "e" ? "BOŞ" : "YANLIŞ") + (satirLink ? " · çözüm var" : "") + "</div></div>";
+        if (satirLink) html += '<a href="' + escHtml(satirLink) + '" target="_blank" rel="noopener" title="Çözümü aç" style="min-width:40px;min-height:40px;display:flex;align-items:center;justify-content:center;border-radius:9px;border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.08);color:#1D4ED8;text-decoration:none;font-size:13px;">▶</a>';
         html += '<select class="okz-reason" data-i="' + i + '" data-j="' + j + '" style="max-width:42%;padding:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.2);background:var(--bg,#F6F8FC);color:inherit;font-size:11.5px;"><option value="">Atla</option>' + OKZ_NEDENLER.map(r => '<option value="' + escHtml(r) + '">' + r + "</option>").join("") + "</select>";
         html += "</div>";
       });
+      html += "</details>";
       html += "</div>";
     });
     html += '<button data-act="okzAnalizKaydet" class="btn btn-primary w-full" style="font-weight:700;">Seçilenleri Deneme Olarak Kaydet</button>';

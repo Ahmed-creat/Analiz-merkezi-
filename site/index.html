@@ -3971,7 +3971,8 @@ function videoAdimHtml(topicKey) {
   const VC = window.VC;
   const liste = (VC && typeof VC.izlenecekler === "function") ? VC.izlenecekler(state, topicKey) : [];
   if (!liste.length) {
-    return '<div class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">Bu konuda kayıtlı yanlış/boş sorun yok. Okulizyon\'dan sınav sonucu çekildiğinde, o sınavda yapamadığın soruların <b>video çözümleri</b> burada listelenir.</div>';
+    // Elde bağlantı yokken "izle" demeyiz: ne yapılacağını açıkça yazarız.
+    return '<div class="text-xs text-muted" style="margin-top:8px;line-height:1.55;">Bu konu için <b>henüz çözüm bağlantısı yok</b>. Okulizyon\'dan sınav sonucu çekilip Denemelerim\'e işlendiğinde, yapamadığın sorular burada listelenir ve Okulizyon\'daki çözüm düğmesine götürür.</div>';
   }
   const videolu = liste.filter(x => x.video || x.videoVar);
   const metinli = liste.filter(x => !x.video && x.cozum);
@@ -3987,7 +3988,19 @@ function videoAdimHtml(topicKey) {
     h += '</div>';
   });
   if (liste.length > 8) h += '<div class="text-xs text-muted" style="margin-top:5px;">+ ' + (liste.length - 8) + ' soru daha — Denemelerim → deneme detayında tamamı var.</div>';
-  if (!videolu.length) h += '<div class="text-xs text-muted" style="margin-top:6px;line-height:1.45;">Video çözüm Okulizyon sınav tablosundan gelir; bağlantı yoksa gösterilmez.</div>';
+  // Okulizyon videoyu tek tek adresle vermiyor; sınav sayfasındaki "Çözüm
+  // videosu" düğmesine götürüyoruz. Bağlantı yoksa düğme çizilmez.
+  const sinavlar = [];
+  liste.forEach(x => { if (x.okulizyonUrl && !sinavlar.some(y => y.url === x.okulizyonUrl)) sinavlar.push({ url: x.okulizyonUrl, ad: x.deneme, tarih: x.tarih }); });
+  if (sinavlar.length) {
+    h += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;">';
+    sinavlar.slice(0, 3).forEach(sn => {
+      h += '<a href="' + attr(sn.url) + '" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="min-height:40px;">' + icon("play", 12) + " " + esc(String(sn.ad || "Sınav").slice(0, 26)) + " · çözümler</a>";
+    });
+    h += "</div>";
+  } else if (!videolu.length) {
+    h += '<div class="text-xs text-muted" style="margin-top:6px;line-height:1.45;">Bu sınavın Okulizyon sayfası kayıtlı değil; sınavı bir kez daha çekince bağlantı gelir.</div>';
+  }
   h += "</div>";
   return h;
 }
@@ -4063,7 +4076,15 @@ function renderKnowledge(container) {
         '<div class="kb-hafiza"><span class="text-xs text-muted">Yeterlilik</span>' + (bktPercent === null ? '<span class="text-xs text-muted">Birkaç soru daha çöz, seviyen netleşsin</span>' : '<div class="progress" style="flex:1;"><div style="width:' + bktPercent + '%;background:var(--brand-blue);"></div></div><b class="tabular" style="color:var(--brand-blue);font-size:16px;">%' + bktPercent + '%</b>') + '</div></div>' +
         '<div class="kb-satir tabular"><span>Tekrar: <b>' + (mem.reviewCount || 0) + '</b></span><span>Tamamlanma: <b>' + fmtDate(mem.completedAt) + "</b></span><span>Son Tekrar: <b>" + (mem.lastReview ? fmtDate(mem.lastReview) : "-") + "</b></span><span>Sıradaki: <b>" + (nr ? fmtDate(nr.date) + " (" + nr.day + ". gün)" : "-") + "</b></span></div>" +
         '<div class="flex gap-2" style="margin-top:12px;flex-wrap:wrap;">' +
-        ((state.bkt_state && state.bkt_state[selectedTopicKey] && state.bkt_state[selectedTopicKey].pool_id) ? '<button class="btn btn-ghost btn-sm" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(state.bkt_state[selectedTopicKey].pool_id) + '" data-bkt-mode="precheck" style="min-width:48px;min-height:48px;">Kısa Kontrol — 3 soru</button>' : '') +
+        (function () {
+          // Kısa Kontrol, konu kaydında pool_id olmasa da ÇIKAR: havuz
+          // "Ders > Konu" anahtarından çözülür (eskiden yumurta-tavuktu).
+          const kayitliHavuz = state.bkt_state && state.bkt_state[selectedTopicKey] && state.bkt_state[selectedTopicKey].pool_id;
+          const cozulen = kayitliHavuz || resolvePoolId(selectedTopicKey);
+          if (!cozulen) return '';
+          if (state.bkt_state && state.bkt_state[selectedTopicKey] && !state.bkt_state[selectedTopicKey].pool_id) state.bkt_state[selectedTopicKey].pool_id = cozulen;
+          return '<button class="btn btn-ghost btn-sm" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(cozulen) + '" data-bkt-mode="precheck" style="min-width:48px;min-height:48px;">Kısa Kontrol — 3 soru</button>';
+        })() +
         '<button class="btn btn-success btn-sm" data-act="reviewTopic" data-topic="' + attr(selectedTopicKey) + '">' + icon("refresh-cw", 14) + " Tekrar Ettim</button>" +
         '<button class="btn btn-primary btn-sm" data-act="earlyReview" data-topic="' + attr(selectedTopicKey) + '">' + icon("fast-forward", 14) + " Erken Tekrar</button>" +
         '<button class="btn btn-ghost btn-sm" data-act="resetTopic" data-topic="' + attr(selectedTopicKey) + '" style="color:var(--semantic-error);margin-left:auto;">' + icon("rotate-ccw", 14) + " Sıfırla</button></div></div>";
@@ -5069,14 +5090,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function resolvePoolId(topicKey) {
     if (!poolManifest || !Array.isArray(poolManifest.havuzlar)) return null;
     const raw = String(topicKey || "");
+    if (!raw || raw === "undefined" || raw === "null") return null;
+    // Önce ortak bulucu: manifest'te baslik alanı olmayan havuzlarda da
+    // topic_key'den başlık türetip eşler (Kimya, Coğrafya, TDE).
+    if (window.HB && typeof window.HB.bul === "function") {
+      const h = window.HB.bul(raw, poolManifest.havuzlar);
+      if (h && h.konu_id) return h.konu_id;
+    }
     const direct = poolManifest.havuzlar.find(p => p.topic_key === raw);
-    if (direct) return direct.konu_id;
-    const lesson = raw.split(" > ")[0];
-    const topic = raw.split(" > ").slice(1).join(" > ");
-    const sameLesson = poolManifest.havuzlar.filter(p => !lesson || p.ders === lesson);
-    const normalized = normalizeReason(topic).toLocaleLowerCase("tr-TR");
-    const exact = sameLesson.find(p => p.baslik && normalizeReason(p.baslik).toLocaleLowerCase("tr-TR") === normalized);
-    return exact ? exact.konu_id : null;
+    return direct ? direct.konu_id : null;
   }
   function loadPool(topicId) {
     if (!topicId) return Promise.resolve(null);
@@ -5148,8 +5170,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function openMiniTest(topicKey, poolId, options) {
     const opts = options || {}; const mode = opts.mode || "learning";
-    loadPool(poolId || topicKey).then(function (pool) {
-      if (!pool) return typeof toast === "function" && toast("Bu konu için henüz soru havuzu hazırlanmadı.", "info");
+    // Düğme bazen "undefined" metni taşıyordu → 404 → "açılmıyor".
+    // Havuzu burada yeniden çözüyoruz.
+    let cozulen = poolId;
+    if (!cozulen || cozulen === "undefined" || cozulen === "null") cozulen = resolvePoolId(topicKey);
+    loadPool(cozulen || topicKey).then(function (pool) {
+      if (!pool) return typeof toast === "function" && toast("Bu konu için soru havuzu yok (konu takibi yine çalışır).", "info");
       const actualPoolId = pool.konu_id || poolId; const count = mode === "precheck" ? 3 : 5; const stored = (ensureStore().mini_test_sessions || {})[topicKey];
       const storedQuestions = stored && !stored.complete && stored.mode === mode && Array.isArray(stored.questionIds) ? stored.questionIds.map(id => pool.sorular.find(q => q.soru_id === id)).filter(Boolean) : [];
       const questions = opts.questions || (storedQuestions.length === count ? storedQuestions : selectPoolQuestions(pool, actualPoolId, count));
@@ -5428,11 +5454,17 @@ document.addEventListener("DOMContentLoaded", function () {
       const label = focusLabel(e); if (label) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Hataların şurada yoğunlaşıyor: ' + safeText(label) + '</div>';
       const cause = e.graph_topic_id ? rootCause(e.graph_topic_id, e.hata_gecmisi || []) : null;
       if (cause && !cause.stay) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Önce şunu sağlamlaştır: ' + safeText(cause.topicName) + '</div>';
+      // Havuz ÇÖZÜLÜRSE düğme her zaman çıkar. Eskiden precheck_due şartı
+      // vardı; Okulizyon'dan gelen kayıtlarda bu tarih hiç yazılmadığı için
+      // "bazı konularda kısa kontrol gelmiyor" oluyordu.
       const poolId = e.pool_id || e.soru_havuzu_id || resolvePoolId(row.key);
-      const precheck = e.precheck_due && dateValue(e.precheck_due) <= dateValue(TODAY());
+      const precheck = !!(e.precheck_due && dateValue(e.precheck_due) <= dateValue(TODAY()));
       const task = s.mini_test_kuyrugu.find(x => x.topicKey === row.key && x.type === "learning" && !x.completed);
-      if (poolId && precheck) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="precheck" style="margin-top:7px;min-width:48px;min-height:48px;">Kısa Kontrol — 3 soru</button>';
-      else if (poolId && task) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="learning" style="margin-top:7px;min-width:48px;min-height:48px;">Öğrenme Testi — 5 soru</button>';
+      if (poolId) {
+        if (!e.pool_id) e.pool_id = poolId;   // bir daha aramayalım
+        html += '<button type="button" class="btn btn-sm ' + (precheck ? "btn-primary" : "btn-ghost") + ' bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="precheck" style="margin-top:7px;min-width:48px;min-height:48px;">Kısa Kontrol — 3 soru</button>';
+        if (task) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="learning" style="margin-top:7px;margin-left:6px;min-width:48px;min-height:48px;">Öğrenme Testi — 5 soru</button>';
+      }
       html += '</div>';
     });
     html += '</div>';
@@ -5494,6 +5526,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="gorsel.js"></script>
 <script src="video-cozum.js"></script>
 <script src="okz-konu.js"></script>
+<script src="konu-anahtar.js"></script>
+<script src="havuz-bul.js"></script>
 <script src="mesaj.js"></script>
 <script type="module" src="app-pwa.js"></script>
 </body>
