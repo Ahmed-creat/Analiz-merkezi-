@@ -186,11 +186,12 @@
   }
 
   /**
-   * Bir "yapamadığın soru" için izleme bağlantısı.
+   * Bir "yapamadığın soru" için DIŞ izleme bağlantısı.
    * Dönen: { href, etiket, disari } — uydurma yok:
-   *   • doğrudan video adresi varsa  → "İzle"
-   *   • yoksa sınav sayfası varsa    → "Okulizyon'da aç" (videoyu orada açar)
-   *   • ikisi de yoksa               → null
+   *   • doğrudan oynatılabilir video (youtube/vimeo/drive) → "Videoyu aç"
+   *   • Okulizyon sınav sayfası → null (oturum ister, giriş ekranına atar)
+   *   • hiçbiri yoksa           → null
+   * Uygulama içi akış için index.html'deki videoGit() kullanılır.
    */
   // Doğrudan OYNATILABİLİR video alan adları. Okulizyon'un kendi sınav
   // sayfası buraya GİRMEZ: oturum istiyor, tıklayan öğrenciyi Okulizyon
