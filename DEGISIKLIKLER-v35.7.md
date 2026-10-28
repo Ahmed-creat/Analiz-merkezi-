@@ -153,3 +153,16 @@ Açmak için: Google Cloud → OAuth client (Web) → yetkili yönlendirme
   iPhone'da yalnız "Ana Ekrana Ekle" ile kuruluysa çalışır (Apple kuralı).
 - `soruCozumDetay()` fonksiyonu kodda duruyor ama artık **hiçbir düğme onu açmıyor**
   (video adımıyla birlikte girişi kaldı).
+
+---
+
+## 7) Yayın
+
+- Commit: `2b9e3da` (branch `arena/cc4de070-analiz-merkezi`)
+- Vercel: `dpl_8WnSP6JY3DqYhx4zEQxmjDNJrLNy` → **READY / PROMOTED**, alias
+  `analiz-merkezi.vercel.app`, build 4,7 sn.
+- Canlıdan doğrulandı: `bkt-engine.js` (v35.7 başlığı, `MINI_SORU`, `havuzEsle`),
+  `sw.js` önbellek adı `analiz-merkezi-v-20261028-v35-7-kisa-kontrol-tek-motor`,
+  `push-bildirim.js` (`testBirKez`, izin sonrası otomatik deneme bildirimi).
+- Telefonda eski sürüm görünürse: uygulamayı kapat-aç ya da Ayarlar → site verilerini
+  yenile. Service worker ağ-öncelikli olduğu için çevrimiçiyken güncel dosya gelir.
