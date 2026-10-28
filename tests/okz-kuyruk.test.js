@@ -179,6 +179,19 @@ const HASH = OKZ.kararHash(SINAV);
   globalThis.__okzDenemeSilindi({ name: "Kendi denemem", date: "2026-10-01", lessons: {} });
   esit("elle girilen deneme deftere yazılmaz", o4.api.okzDefterSayisi(), 1);
 
+  // ---------- 9) "Verileri sil" = kuyruğu deftere yaz ----------
+  console.log("\n== 9) executeReset → kuyruk deftere ==");
+  const o5 = ortam2();
+  ok("__okzKuyruguDeftereYaz tanımlı", typeof globalThis.__okzKuyruguDeftereYaz === "function");
+  o5.kutu.state.okulizyon = { pending: [SINAV, Object.assign({}, SINAV, { name: "2. DENEME", date: "2026-10-20" })], importedKeys: [], aktarilan: {}, guncellenen: [] };
+  const sayi = globalThis.__okzKuyruguDeftereYaz();
+  esit("kuyruktaki 2 sınav deftere yazıldı", sayi, 2);
+  esit("kuyruk boşaltıldı", o5.kutu.state.okulizyon.pending.length, 0);
+  k = OKZ.karar([SINAV], [], o5.api.okzDefter());
+  esit("silme sonrası kuyruğa geri gelmez", k.yeni.length, 0);
+  const GELEN2 = [SINAV, Object.assign({}, SINAV, { name: "2. DENEME", date: "2026-10-20" })];
+  esit("ikisi de geri gelmez", OKZ.karar(GELEN2, [], o5.api.okzDefter()).yeni.length, 0);
+
   // ---------- Sonuç ----------
   console.log("\n" + "─".repeat(56));
   if (kalan) {

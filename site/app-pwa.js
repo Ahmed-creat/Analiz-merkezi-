@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.9-kuyruk";
+const PWA_SURUM = "v34.10-silme";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -619,6 +619,21 @@ window.__okzDenemeSilindi = function (ex) {
     const hash = (window.OKZ && typeof window.OKZ.kararHash === "function") ? window.OKZ.kararHash(ex) : "";
     okzDefterIsaretle(ad + "|" + ((ex && ex.date) || ""), hash);
   } catch (e) { /* sessiz */ }
+};
+// Kullanıcı "verileri sil" dediğinde kuyruktakilerin TAMAMINI deftere yaz.
+// Mantık: silmek = "bunu istemiyorum". Böylece bir daha "Analiz Bekliyor"a düşmez.
+// index.html → executeReset("all" | "exams") bunu çağırır.
+window.__okzKuyruguDeftereYaz = function () {
+  try {
+    const st = okzStore();
+    const liste = st.pending || [];
+    liste.forEach(ex => {
+      const h = (window.OKZ && typeof window.OKZ.kararHash === "function") ? window.OKZ.kararHash(ex) : "";
+      okzDefterIsaretle(((ex && ex.name) || "?") + "|" + ((ex && ex.date) || ""), h);
+    });
+    st.pending = [];
+    return liste.length;
+  } catch (e) { return 0; }
 };
 
 function okzStore() {

@@ -1518,6 +1518,11 @@ function confirmReset(type) {
 }
 
 function executeReset(type) {
+  // Deneme verisi silinirken Okulizyon kuyruğundakiler de kalıcı olarak kapatılır:
+  // "sildim" = "Analiz Bekliyor'a bir daha gelmesin".
+  if (type === "all" || type === "exams") {
+    try { if (typeof window.__okzKuyruguDeftereYaz === "function") window.__okzKuyruguDeftereYaz(); } catch (e) { /* */ }
+  }
   if (type === "exams") state.exams = [];
   else if (type === "questions") state.questions = [];
   else if (type === "books") state.books = [];
