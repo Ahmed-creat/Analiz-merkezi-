@@ -82,6 +82,14 @@
     if (topic && String(topic).includes(" > ")) return String(topic);
     return lesson && topic ? String(lesson) + " > " + String(topic) : String(topic || "");
   }
+  // Uzun kazanım cümleleri paneli boğmasın: başlık kısalır, tamamı tooltip'te
+  function kisaKonu(key) {
+    const metin = String(key == null ? "" : key);
+    const p = metin.indexOf(" > ");
+    if (p < 0) return metin.length > 62 ? metin.slice(0, 59).trim() + "…" : metin;
+    const ders = metin.slice(0, p), konu = metin.slice(p + 3);
+    return ders + " > " + (konu.length > 54 ? konu.slice(0, 51).trim() + "…" : konu);
+  }
   function safeText(value) {
     return String(value == null ? "" : value).replace(/[&<>"']/g, function (c) {
       return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
@@ -509,7 +517,17 @@
     const sameLesson = poolManifest.havuzlar.filter(p => !lesson || p.ders === lesson);
     const normalized = normalizeReason(topic).toLocaleLowerCase("tr-TR");
     const exact = sameLesson.find(p => p.baslik && normalizeReason(p.baslik).toLocaleLowerCase("tr-TR") === normalized);
-    return exact ? exact.konu_id : null;
+    if (exact) return exact.konu_id;
+    // Okulizyon KAZANIM METNİ göndermiş olabilir ("Dik üçgende trigonometrik
+    // oranlar ... varsayımlarda bulunur."). app-pwa.js'deki eşleyiciye sor.
+    // Yalnız "kesin" eşleşme kabul edilir; tahminle soru havuzu bağlanmaz.
+    try {
+      if (typeof window.__okzKonuPoolEsle === "function") {
+        const id = window.__okzKonuPoolEsle(lesson, topic);
+        if (id) return id;
+      }
+    } catch (e) { /* eşleyici yoksa sessizce geç */ }
+    return null;
   }
   function loadPool(topicId) {
     if (!topicId) return Promise.resolve(null);
@@ -817,17 +835,44 @@
   function renderBktPanel() {
     const s = ensureStore(); const host = document.getElementById("main-content");
     if (!s || !host || !s.user || !s.user.name) return;
+    // Bu panel YALNIZ "Konu Takibi" sayfasına aittir. Her sayfanın altında
+    // tekrarlanması kullanıcıyı yoruyordu; başka sayfada hiç basılmaz.
+    let sayfa = "";
+    try { sayfa = typeof currentPage === "string" ? currentPage : ""; } catch (e) { sayfa = ""; }
+    if (sayfa && sayfa !== "tracking") {
+      const eskiPanel = document.getElementById("bkt-learning-panel");
+      if (eskiPanel) eskiPanel.remove();
+      return;
+    }
     queueLearningTests();
+    // Sıralama: önce EYLEM bekleyen konular (kısa kontrol zamanı gelmiş,
+    // öğrenme testi kuyrukta), sonra onaylanmamışlar, en son onaylananlar.
+    // Böylece "konuyu çalıştım" diyen öğrenci kendi konusunu ilk sırada görür.
+    const aciliyet = (entry) => {
+      const bugun = dateValue(TODAY());
+      const onayli = statusFor(entry) === "ONAYLANDI";
+      if (onayli) return 3;
+      if (entry.precheck_due && dateValue(entry.precheck_due) <= bugun) return 0;
+      if (entry.learning_test_due && dateValue(entry.learning_test_due) <= bugun) return 1;
+      return 2;
+    };
     const entries = Object.keys(s.bkt_state).map(key => ({ key: key, entry: s.bkt_state[key] }))
-      .sort((a, b) => (statusFor(a.entry) === "ONAYLANDI" ? 1 : 0) - (statusFor(b.entry) === "ONAYLANDI" ? 1 : 0) || b.entry.gozlem_sayisi - a.entry.gozlem_sayisi).slice(0, 12);
+      .sort((a, b) => aciliyet(a.entry) - aciliyet(b.entry) || b.entry.gozlem_sayisi - a.entry.gozlem_sayisi).slice(0, 12);
     let panel = document.getElementById("bkt-learning-panel");
     if (!entries.length) { if (panel) panel.remove(); return; }
     if (!panel) { panel = document.createElement("section"); panel.id = "bkt-learning-panel"; panel.className = "card"; host.appendChild(panel); }
-    let html = '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;"><div><h3 style="margin:0;font-size:16px;">Öğrenme Durumu</h3><div class="text-xs text-muted">Konuların yeterlilik ve tekrar göstergeleri</div></div></div><div style="display:grid;gap:7px;">';
+    let html = '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px;"><div><h3 style="margin:0;font-size:16px;">Öğrenme Durumu</h3><div class="text-xs text-muted">Bu sayfa yalnız Konu Takibi\'nde görünür</div></div></div>';
+    // Panelin ne gösterdiğini açıkça yaz: kullanıcı sayının ne olduğunu bilsin
+    html += '<div style="font-size:11.5px;line-height:1.5;opacity:0.78;border-left:3px solid var(--brand-blue);padding:2px 0 2px 8px;margin-bottom:10px;">'
+      + '<b>Yeterlilik</b> = bu konuyu bilme olasılığın (sorularına göre 0–100). '
+      + '<b>Hafıza</b> = tekrar kartlarının hatırlama gücü. '
+      + '<b>Durum</b> = Veri yetersiz → Gelişiyor → Pekişiyor → ONAYLANDI. '
+      + 'Test düğmesi, soru havuzundan gelecek soruları açar.'
+      + '</div><div style="display:grid;gap:7px;">';
     entries.forEach(function (row) {
       const e = row.entry; const status = statusFor(e); const known = e.gozlem_sayisi >= 5; const percent = Math.round(e.L * 100);
       const cards = (s.flashcards.cards || []).filter(c => c.topicKey === row.key); const memory = cards.length ? Math.round(cards.reduce((sum, c) => sum + Number(c.memory_bar == null ? 1 : c.memory_bar), 0) / cards.length * 100) : 0;
-      html += '<div style="border:1px solid var(--border-card);border-radius:10px;padding:9px 10px;"><div style="display:flex;justify-content:space-between;gap:8px;align-items:center;"><strong style="font-size:12.5px;">' + safeText(row.key) + '</strong><span class="text-xs" style="color:var(--brand-blue);font-weight:700;">' + safeText(STATUS_TEXT[status] || "Gelişiyor") + '</span></div>';
+      html += '<div style="border:1px solid var(--border-card);border-radius:10px;padding:9px 10px;"><div style="display:flex;justify-content:space-between;gap:8px;align-items:center;"><strong style="font-size:12.5px;" title="' + safeText(row.key) + '">' + safeText(kisaKonu(row.key)) + '</strong><span class="text-xs" style="color:var(--brand-blue);font-weight:700;">' + safeText(STATUS_TEXT[status] || "Gelişiyor") + '</span></div>';
       if (known) html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;"><div><div class="text-xs">Yeterlilik: <b>' + percent + '%</b></div><div style="height:5px;background:var(--bg-canvas);border-radius:99px;overflow:hidden;"><div style="height:100%;width:' + percent + '%;background:var(--brand-blue);border-radius:99px;"></div></div></div><div><div class="text-xs">Hafıza: <b>' + memory + '%</b></div><div style="height:5px;background:var(--bg-canvas);border-radius:99px;overflow:hidden;"><div style="height:100%;width:' + memory + '%;background:var(--memory-indigo);border-radius:99px;"></div></div></div></div>';
       else html += '<div class="text-xs text-muted" style="margin-top:5px;">Birkaç soru daha çöz, seviyen netleşsin · ' + e.gozlem_sayisi + ' soru</div>';
       const label = focusLabel(e); if (label) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Hataların şurada yoğunlaşıyor: ' + safeText(label) + '</div>';
@@ -838,6 +883,9 @@
       const task = s.mini_test_kuyrugu.find(x => x.topicKey === row.key && x.type === "learning" && !x.completed);
       if (poolId && precheck) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="precheck" style="margin-top:7px;min-width:48px;min-height:48px;">Kısa Kontrol — 3 soru</button>';
       else if (poolId && task) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="learning" style="margin-top:7px;min-width:48px;min-height:48px;">Öğrenme Testi — 5 soru</button>';
+      else if (poolId && e.learning_test_due) html += '<div class="text-xs text-muted" style="margin-top:6px;">Öğrenme testi ' + safeText(e.learning_test_due) + ' tarihinde açılacak (aralıklı tekrar).</div>';
+      else if (poolId) html += '<div class="text-xs text-muted" style="margin-top:6px;">Konuyu çalışıp "tamamlandı" işaretleyince test burada açılır.</div>';
+      else html += '<div class="text-xs" style="margin-top:6px;color:var(--semantic-warning);">Soru havuzu eşlenmedi — Profil → Okulizyon → Konu Eşlemesi\'nden bu konuyu seç.</div>';
       html += '</div>';
     });
     html += '</div>';
@@ -852,6 +900,8 @@
   }
 
   function scheduleUi() { clearTimeout(uiTimer); uiTimer = setTimeout(renderBktPanel, 80); }
+  // app-pwa.js konu eşlemesi yaptıktan sonra paneli tazeleyebilsin
+  try { window.__bktUiTazele = scheduleUi; } catch (e) { /* */ }
   function install() {
     if (saveWrapped) return;
     saveWrapped = true;

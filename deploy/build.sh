@@ -17,6 +17,8 @@ cp -a "$KAYNAK/site/." out/
 test -f out/index.html
 test -f out/app-pwa.js
 test -d out/content/soru_havuzlari
+test -f out/okz-konu.js
+test -f out/content/konu_esleme.json
 
 echo "Yayın paketi hazır: $(find out -type f | wc -l) dosya, $(du -sh out | cut -f1)"
 

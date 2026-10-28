@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.7b-cekim";
+const PWA_SURUM = "v34.8-konu";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -290,6 +290,14 @@ function renderProfileModal() {
     });
   }
   html += '</div>';
+
+  // B2) OKULİZYON KONU EŞLEMESİ (kazanım → konu başlığı)
+  // Tek bir bölüm hatası Profil penceresini bozmasın
+  try { html += okzKonuEslemeHtml(); } catch (e) { console.warn("Konu eşlemesi bölümü basılamadı:", e); }
+  if (!OKZK_IDX) okzkYukle().then(() => {
+    const pm = document.getElementById("pwa-profile-modal");
+    if (pm && pm.style.display === "flex") renderProfileModal();
+  });
 
   // C) SORU HAVUZU / SÜRÜM
   const havuzSayisi = (window.__havuzBilgi && window.__havuzBilgi.havuz) || 0;
@@ -649,6 +657,227 @@ function okzDersleriDuzelt() {
     return r.degisti;
   } catch (e) { return 0; }
 }
+// ============================================================
+// OKULİZYON KAZANIM → KONU BAŞLIĞI EŞLEMESİ
+// ------------------------------------------------------------
+// Okulizyon sorunun konusunu KAZANIM METNİ olarak verir
+// ("Dik üçgende trigonometrik oranlar ... varsayımlarda bulunur.").
+// Uygulama KONU BAŞLIĞI kullanır ("1.1 Dik Üçgende ... Özdeşlikler").
+// Aynı konu iki ayrı kayıt gibi görünüyordu ve soru havuzu
+// bulunamıyordu. Eşleştirme iki seviyede yapılır:
+//   • KESİN  → otomatik uygulanır (başlık kazanımın içinde aynen var)
+//   • ÖNERİ  → öğrenci onaylar (Profil → Okulizyon → Konu Eşlemesi)
+// Emin olmadığımız eşleşme ASLA sessizce yazılmaz.
+// ============================================================
+let OKZK_IDX = null, OKZK_YUKLENIYOR = null;
+function okzkYukle() {
+  if (OKZK_IDX) return Promise.resolve(OKZK_IDX);
+  if (OKZK_YUKLENIYOR) return OKZK_YUKLENIYOR;
+  OKZK_YUKLENIYOR = fetch("content/konu_esleme.json", { cache: "no-store" })
+    .then(r => (r && r.ok ? r.json() : null))
+    .then(v => {
+      OKZK_IDX = v && window.OKZK && typeof window.OKZK.indeksKur === "function" ? window.OKZK.indeksKur(v) : null;
+      return OKZK_IDX;
+    })
+    .catch(() => { OKZK_IDX = null; return null; });
+  return OKZK_YUKLENIYOR;
+}
+function okzDersKanonik(ders) {
+  return window.OKZ && typeof window.OKZ.kanonik === "function" ? window.OKZ.kanonik(ders, okzBilinenDersler()) : ders;
+}
+function okzKonuHaritasi() {
+  const st = okzStore();
+  if (!st.konuHaritasi || typeof st.konuHaritasi !== "object") st.konuHaritasi = {};
+  return st.konuHaritasi;
+}
+function okzHaritaAnahtar(ders, kazanim) { return String(ders || "") + "|" + String(kazanim || "").trim(); }
+// Kazanım → { konu, topicKey, kaynak } ; bulunamazsa null
+function okzKonuBul(ders, kazanim) {
+  if (!kazanim) return null;
+  const kanon = okzDersKanonik(ders);
+  const elle = okzKonuHaritasi()[okzHaritaAnahtar(kanon, kazanim)];
+  if (elle) return { konu: String(elle).split(" > ").slice(1).join(" > "), topicKey: elle, kaynak: "harita" };
+  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return null;
+  const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
+  if (r && r.guven === "kesin") return { konu: r.konu, topicKey: r.topicKey, kaynak: "kesin" };
+  return null;
+}
+// Hata kaydını uygulamanın diline çevir: ders kanonik, konu konu başlığı
+function okzKayitKonu(ders, kazanim) {
+  const kanon = okzDersKanonik(ders);
+  const e = okzKonuBul(kanon, kazanim);
+  return { lesson: kanon, topic: e ? e.konu : String(kazanim || ""), kazanim: String(kazanim || ""), eslendi: !!e };
+}
+// bkt-engine'in soru havuzu bulması için köprü: KAZANIM → konu_id
+window.__okzKonuPoolEsle = function (ders, konu) {
+  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return null;
+  const r = window.OKZK.esle(konu, ders, OKZK_IDX);
+  return r && r.guven === "kesin" && r.konuId ? r.konuId : null;
+};
+
+// İki BKT kaydını birleştir (aynı konuya düşen kazanım + konu başlığı kaydı)
+function okzbktBirlestir(hedef, kaynak) {
+  if (!hedef || !kaynak || hedef === kaynak) return hedef;
+  const n1 = Number(hedef.gozlem_sayisi) || 0, n2 = Number(kaynak.gozlem_sayisi) || 0;
+  const top = n1 + n2;
+  if (top > 0) hedef.L = ((Number(hedef.L) || 0) * n1 + (Number(kaynak.L) || 0) * n2) / top;
+  hedef.gozlem_sayisi = top;
+  hedef.hata_gecmisi = (Array.isArray(hedef.hata_gecmisi) ? hedef.hata_gecmisi : [])
+    .concat(Array.isArray(kaynak.hata_gecmisi) ? kaynak.hata_gecmisi : []);
+  Object.keys(kaynak).forEach(k => { if (hedef[k] === undefined) hedef[k] = kaynak[k]; });
+  // Daha ileri bir onay durumu varsa onu koru
+  const SIRA = { VERI_YETERSIZ: 0, GELISIYOR: 1, PEKISIYOR: 2, RISKLI: 3, ONAYLANDI: 4 };
+  if ((SIRA[kaynak.onay_durumu] || 0) > (SIRA[hedef.onay_durumu] || 0)) hedef.onay_durumu = kaynak.onay_durumu;
+  return hedef;
+}
+
+// Eski kayıtları onar: ders adını kanonikleştir, kazanımı konu başlığına çevir,
+// BKT kayıtlarını birleştir. Tekrar çalıştırmak zararsızdır (idempotent).
+function okzKonulariOnar(sessiz) {
+  return okzkYukle().then(() => {
+    let degisen = 0;
+    // 1) Denemelerim'deki hata kayıtları
+    (Array.isArray(state.exams) ? state.exams : []).forEach(ex => {
+      (Array.isArray(ex && ex.errorLogs) ? ex.errorLogs : []).forEach(l => {
+        if (!l) return;
+        const eskiDers = String(l.lesson || "");
+        const kazanim = l.kazanim || l.topic;
+        if (!kazanim) return;
+        const y = okzKayitKonu(eskiDers, kazanim);
+        if (y.lesson !== eskiDers) { l.lesson = y.lesson; degisen++; }
+        if (y.eslendi && l.topic !== y.topic) { l.topic = y.topic; degisen++; }
+        // Okulizyon'un özgün kazanım metnini her zaman sakla: sonradan
+        // eşlemeyi değiştirmek veya metni göstermek için gerekli.
+        if (l.kazanim == null) l.kazanim = kazanim;
+      });
+    });
+    // 2) BKT kayıtları, kartlar, kuyruk, oturumlar
+    const s = state;
+    if (s && s.bkt_state && typeof s.bkt_state === "object") {
+      Object.keys(s.bkt_state).forEach(eski => {
+        const p = eski.indexOf(" > ");
+        if (p < 0) return;
+        const ders = eski.slice(0, p), konu = eski.slice(p + 3);
+        const kanon = okzDersKanonik(ders);
+        const e = okzKonuBul(kanon, konu);
+        // Konu eşlenemese bile DERS adı düzeltilir: "Türkçe" → "Türk Dili ve Edebiyatı".
+        // Böylece aynı dersin konuları aynı başlık altında toplanır.
+        const yeni = kanon + " > " + (e ? e.konu : konu);
+        if (yeni === eski) return;
+        if (s.bkt_state[yeni]) okzbktBirlestir(s.bkt_state[yeni], s.bkt_state[eski]);
+        else s.bkt_state[yeni] = s.bkt_state[eski];
+        delete s.bkt_state[eski];
+        (s.flashcards && Array.isArray(s.flashcards.cards) ? s.flashcards.cards : []).forEach(c => { if (c && c.topicKey === eski) c.topicKey = yeni; });
+        (Array.isArray(s.mini_test_kuyrugu) ? s.mini_test_kuyrugu : []).forEach(t => { if (t && t.topicKey === eski) t.topicKey = yeni; });
+        if (s.flashcards && s.flashcards.sessions && s.flashcards.sessions[eski]) {
+          s.flashcards.sessions[yeni] = s.flashcards.sessions[eski]; delete s.flashcards.sessions[eski];
+        }
+        if (s.mini_test_sessions && s.mini_test_sessions[eski]) {
+          s.mini_test_sessions[yeni] = s.mini_test_sessions[eski]; delete s.mini_test_sessions[eski];
+        }
+        degisen++;
+      });
+    }
+    if (degisen) {
+      try { saveState(); } catch (e) { /* */ }
+      try { if (typeof navigate === "function") navigate(typeof currentPage === "string" ? currentPage : "dashboard"); } catch (e) { /* */ }
+      try { if (typeof window.__bktUiTazele === "function") window.__bktUiTazele(); } catch (e) { /* */ }
+      if (!sessiz) toast(degisen + " konu kaydı konu başlıklarına eşlendi.", "success");
+    }
+    return degisen;
+  }).catch(() => 0);
+}
+
+// Henüz eşlenmemiş kazanımlar (Profil → Konu Eşlemesi listesi)
+function okzEslenmemisKonular() {
+  const harita = okzKonuHaritasi();
+  const gorulen = Object.create(null);
+  const liste = [];
+  const ekle = (ders, kazanim) => {
+    if (!ders || !kazanim) return;
+    const kanon = okzDersKanonik(ders);
+    const anahtar = okzHaritaAnahtar(kanon, kazanim);
+    if (gorulen[anahtar]) return;
+    gorulen[anahtar] = 1;
+    if (harita[anahtar]) return;
+    if (OKZK_IDX && window.OKZK) {
+      const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
+      if (r && r.guven === "kesin") return;
+    }
+    const oneriler = OKZK_IDX && window.OKZK ? window.OKZK.adaylar(kazanim, kanon, OKZK_IDX, 3) : [];
+    liste.push({ ders: kanon, kazanim: kazanim, oneriler: oneriler });
+  };
+  try {
+    (Array.isArray(state.exams) ? state.exams : []).forEach(ex => {
+      (Array.isArray(ex && ex.errorLogs) ? ex.errorLogs : []).forEach(l => l && ekle(l.lesson, l.kazanim || l.topic));
+    });
+  } catch (e) { /* durum hazır değilse boş liste */ }
+  return liste;
+}
+
+// Seçilen eşlemeleri kaydet: haritaya yaz + kayıtları onar
+async function okzKonuEsleKaydet() {
+  await okzkYukle();
+  const harita = okzKonuHaritasi();
+  let say = 0;
+  document.querySelectorAll("[data-okz-konu]").forEach(sel => {
+    const ders = sel.dataset.okzDers || "";
+    const kazanim = sel.dataset.okzKazanim || "";
+    const secim = sel.value;
+    if (!ders || !kazanim || !secim) return;
+    harita[okzHaritaAnahtar(ders, kazanim)] = secim;
+    say++;
+  });
+  if (!say) return toast("Hiç konu seçilmedi.", "info");
+  saveState();
+  const degisen = await okzKonulariOnar(true);
+  renderProfileModal();
+  toast(say + " eşleme kaydedildi" + (degisen ? " · " + degisen + " kayıt birleştirildi" : "") + ".", "success");
+}
+
+// Konu eşlemesi arayüzünü bas (Profil penceresi)
+// KURAL: Öneri yalnız GÜÇLÜ ise (>=0.35) hazır seçili gelir; zayıf öneri
+// kutuya yazılmaz, yanlış eşleşme kazara kaydedilmesin.
+const OKZ_ONERI_ESIK = 0.35;
+function okzKonuEslemeHtml() {
+  const eksik = okzEslenmemisKonular();
+  const harita = okzKonuHaritasi();
+  const elleSayi = Object.keys(harita).length;
+  let h = '<div id="okz-konu-esleme" style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
+  h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKULİZYON KONU EŞLEMESİ</div>' + (elleSayi ? '<span style="font-size:10.5px;opacity:0.6;">' + elleSayi + ' eşleme kayıtlı</span>' : '') + '</div>';
+  h += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:8px;">Okulizyon konuları <b>kazanım cümlesi</b> olarak gelir ("… varsayımlarda bulunur."), uygulama <b>konu başlığı</b> kullanır ("1.1 …"). Eşleşmeyenler ayrı konu gibi görünür ve soru havuzundan soru gelmez. Aşağıdaki eşlemeyi <b>bir kez</b> yap; sonraki çekimlerde otomatik uygulanır.</div>';
+  if (!eksik.length) {
+    h += '<div style="font-size:12px;color:#16A34A;font-weight:600;">✓ Tüm konular eşlendi — soru havuzu bağlı.</div></div>';
+    return h;
+  }
+  h += '<div style="font-size:11.5px;font-weight:700;color:#B45309;margin-bottom:6px;">' + eksik.length + ' kazanım bekliyor</div>';
+  let sonDers = "";
+  h += '<div style="display:grid;gap:8px;">';
+  eksik.forEach((x, i) => {
+    const konular = OKZK_IDX && window.OKZK ? window.OKZK.konular(x.ders, OKZK_IDX) : [];
+    const oneri = x.oneriler && x.oneriler[0];
+    const guclu = oneri && oneri.skor >= OKZ_ONERI_ESIK;
+    const secili = guclu ? oneri.topicKey : "";
+    if (x.ders !== sonDers) {
+      sonDers = x.ders;
+      h += '<div style="font-size:11px;font-weight:800;opacity:0.55;margin-top:4px;">' + escHtml(x.ders) + '</div>';
+    }
+    let opts = '<option value="">— konu seç —</option>';
+    opts += konular.map(k => '<option value="' + escHtml(k.topicKey) + '"' + (k.topicKey === secili ? " selected" : "") + '>' + escHtml(k.konu) + '</option>').join("");
+    h += '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:8px;">';
+    h += '<div style="font-size:11px;opacity:0.75;line-height:1.4;margin-bottom:6px;">' + escHtml(String(x.kazanim).slice(0, 140)) + '</div>';
+    h += '<select data-okz-konu="' + i + '" data-okz-ders="' + escHtml(x.ders) + '" data-okz-kazanim="' + escHtml(x.kazanim) + '" style="width:100%;box-sizing:border-box;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:12.5px;">' + opts + '</select>';
+    if (oneri && oneri.skor > 0) {
+      h += '<div style="font-size:10.5px;opacity:0.6;margin-top:3px;">Öneri (%' + Math.round(oneri.skor * 100) + '): ' + escHtml(oneri.konu) + (guclu ? ' — hazır seçildi' : ' — emin değilim, listeden seç') + '</div>';
+    }
+    h += '</div>';
+  });
+  h += '</div>';
+  h += '<button data-act="okzKonuEsle" class="btn btn-primary btn-sm" style="margin-top:10px;">Seçilenleri eşle ve birleştir</button>';
+  h += '</div>';
+  return h;
+}
+
 // Sınavın içerik parmak izi: Okulizyon verisi değişirse yakalanır
 function okzHash(ex) {
   const l = ex.lessons || {};
@@ -674,6 +903,7 @@ function initOkulizyonUI() {
     else if (a === "okzHepsi") okzHepsiUygula(el.dataset.reason);
     else if (a === "okzYeniden") okzYenidenAktar(el.dataset.i);
     else if (a === "okzSonucGuncelle") okzSonucuYaz(el.dataset.ad, el.dataset.tarih);
+    else if (a === "okzKonuEsle") okzKonuEsleKaydet();
   });
   okzBadge();
   if (window.lucide && lucide.createIcons) lucide.createIcons();
@@ -976,7 +1206,9 @@ function okzDuyurularToSchoolExams(duyurular) {
   return eklenen;
 }
 window.okzDuyurularToSchoolExams = okzDuyurularToSchoolExams;
-function okzAnalizKaydet() {
+async function okzAnalizKaydet() {
+  // Kazanım → konu başlığı eşlemesi için indeksin yüklü olması gerekir
+  await okzkYukle();
   const st = okzStore();
   const secimler = {};
   document.querySelectorAll(".okz-reason").forEach(sel => { secimler[sel.dataset.i + ":" + sel.dataset.j] = sel.value; });
@@ -985,7 +1217,11 @@ function okzAnalizKaydet() {
     const logs = [];
     (ex.rows || []).forEach((row, j) => {
       const r = secimler[i + ":" + j];
-      if (r) logs.push({ qno: row.qno || j + 1, lesson: row.lesson, topic: row.topic, type: r, date: ex.date || todayStr() });
+      if (r) {
+        // Ders adını uygulamanın adına çevir, kazanımı konu başlığına eşle
+        const k = okzKayitKonu(row.lesson, row.topic);
+        logs.push({ qno: row.qno || j + 1, lesson: k.lesson, topic: k.topic, kazanim: k.kazanim, type: r, date: ex.date || todayStr() });
+      }
     });
     if (!logs.length) return;
     const hamDersler = ex.lessons && Object.keys(ex.lessons).length ? ex.lessons : {};
@@ -1029,7 +1265,7 @@ function pwaArayuzKur() {
     try {
       if (typeof state === "undefined" || !sb || !currentUser) return;
       okzDersleriDuzelt();
-      okzKuyrukCek(false);
+      okzKonulariOnar(true).then(() => okzKuyrukCek(false));
     } catch (e) { /**/ }
   }, 2500);
 }

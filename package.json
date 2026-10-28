@@ -15,13 +15,15 @@
   "private": true,
   "scripts": {
     "validate:pools": "node scripts/validate-pools.js",
-    "test:bkt": "node tests/bkt-engine.test.js",
+    "test:bkt": "node tests/bkt-engine.test.js && node tests/bkt-panel.test.js",
     "test:curriculum": "node tests/curriculum.test.js",
     "test:pools": "node tests/question-pools.test.js",
     "validate:ids": "node scripts/validate-ids.js",
     "test:okz": "node tests/okulizyon-cekici.test.js",
     "test:mesaj": "node tests/mesaj.test.js && node tests/mesaj-ui.test.js",
     "test:mesaj-ui": "node tests/mesaj-ui.test.js",
-    "test:ders": "node tests/okz-normalize.test.js"
+    "test:ders": "node tests/okz-normalize.test.js && node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
+    "test:konu": "node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
+    "esleme:uret": "node scripts/konu-esleme-uret.js"
   }
 }
