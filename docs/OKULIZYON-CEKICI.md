@@ -225,3 +225,47 @@ Türkçe→TDE 27/3/0 · Matematik-1→Matematik 13/3/14 · Din→Din Kültürü
 > birbirinden farklı. İki çekim de kendi içinde tutarlı (dersler ↔ kart toplamı
 > birebir), yani ayrıştırıcı hatası değil — **Okulizyon tarafındaki sonuç
 > değişmiş**. Artık bu değişim yakalanıp kullanıcıya bildiriliyor.
+
+## 11. "Hep yeni soru yok diyor" — kök neden ve düzeltme (v34.7)
+
+Kullanıcı: *"Çekim çalışmıyor. Hep yeni soru yok diyor."*
+
+### Gerçek durum (veritabanından)
+```
+okulizyon_kuyrugu.pulled_at = 13:14:36 UTC   (kullanıcı tıkladığı an)
+durum = "ok" · 33 hatalı/boş soru · ilkodu 27 / ilcekodu 1841 / kurumkodu 751187
+```
+Yani **sunucu her tıklamada gerçekten okulizyon.com'a gidiyordu**. Sorun istemcideydi:
+
+```
+app_states.okulizyon = {
+  importedKeys: ["10.SINIF MAARİF İZLEME SINAVI 1|2026-10-27"],  ← "aktarıldı" damgası
+  pending: [],
+  aktarilan: {},                                                  ← hiç yazılmamış
+}
+state.exams = []                                                  ← Denemelerim BOŞ
+```
+
+Sınav bir kez aktarılmış (ya da aktarım yarıda kalmış), sonra Denemelerim'den
+silinmiş. `importedKeys` **tek yönlü bir defter** olduğu için damga hiç
+temizlenmedi → uygulama her çekimde "bunu zaten aldım" deyip sonucu attı.
+
+### Düzeltme
+1. **Karar artık gerçek duruma bakar**, kayıt defterine değil
+   (`OKZ.karar(gelen, state.exams)`): Denemelerim'de o sınav yoksa YENİ sayılır.
+   Defter (`importedKeys`) her çekimde gerçekle hizalanır (kendi kendini onarır).
+2. **Son çekilen sonuç her zaman görünür**: Okulizyon penceresinde
+   "📥 Okulizyon'dan Son Çekilen Sonuç" bölümü — sınav adı, tarih, çekim saati,
+   Ders/D/Y/B/Net tablosu, ve "Denemelerim'de kayıtlı mı?" bilgisi.
+3. **Değişiklik tespiti hash ile**: kayıtlı denemenin dersleri ile yeni çekilen
+   veri karşılaştırılır; farklıysa "Kaydı bu sonuçla güncelle" düğmesi çıkar.
+   (Eski sürümde bu, hiç yazılmamış `aktarilan` alanına bağlıydı → hiç çalışmıyordu.)
+4. Mesajlar artık ne olduğunu söylüyor: "N sınav okundu · M soru Analiz Bekliyor",
+   "N sınavın sonucu DEĞİŞMİŞ", "Her şey güncel: …" .
+5. Okulizyon penceresi açıkken sonuç **anında** tazelenir.
+
+### Doğrulama
+Kullanıcının birebir bozuk durumu (Denemelerim boş + importedKeys dolu) simüle
+edildi: sonuç **1 yeni sınav · 33 bekleyen satır · 9 ders · net 81,25**.
+`npm run test:ders` → **61/61** (karar/silinen deneme/değişen veri/tarih
+toleransı senaryoları dahil).

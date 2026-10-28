@@ -1,4 +1,4 @@
-const PWA_SURUM = "v34.6-ders";
+const PWA_SURUM = "v34.7-cekim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -594,6 +594,11 @@ function okzDurum(kod, mesaj) {
     saveState();
   } catch (e) {}
   if (typeof window.__profilTaze === "function") window.__profilTaze();
+  // Okulizyon penceresi açıksa sonucu ANINDA göster (elle yenilemeye gerek kalmasın)
+  try {
+    const m = document.getElementById("pwa-okz-modal");
+    if (m && m.style.display === "flex") renderOkzModal();
+  } catch (e) { /**/ }
   return kod;
 }
 function okzZaman(ts) {
@@ -668,6 +673,7 @@ function initOkulizyonUI() {
     else if (a === "okzAnalizKaydet") okzAnalizKaydet();
     else if (a === "okzHepsi") okzHepsiUygula(el.dataset.reason);
     else if (a === "okzYeniden") okzYenidenAktar(el.dataset.i);
+    else if (a === "okzSonucGuncelle") okzSonucuYaz(el.dataset.ad, el.dataset.tarih);
   });
   okzBadge();
   if (window.lucide && lucide.createIcons) lucide.createIcons();
@@ -716,6 +722,27 @@ function okzDersTablosu(lessons) {
   html += "</table>";
   return html;
 }
+// "Son çekilen sonuç" bölümünden tek dokunuşla kaydı güncelle
+function okzSonucuYaz(ad, tarih) {
+  const st = okzStore();
+  const sn = (st.sonSonuc || []).find(x => ("Okulizyon: " + (x.name || "Sınav")) === ad && String(x.date || "") === String(tarih || ""));
+  if (!sn) return toast("Sonuç bulunamadı — yeniden çek.", "error");
+  const lessons = window.OKZ ? window.OKZ.birlestir(sn.lessons, okzBilinenDersler()) : sn.lessons;
+  const oz = okzOzet(lessons);
+  const idx = state.exams.findIndex(e => e && e.name === ad && String(e.date || "") === String(tarih || ""));
+  if (idx >= 0) {
+    state.exams[idx] = Object.assign({}, state.exams[idx], { lessons: lessons, total: oz.soru, net: oz.net });
+  } else {
+    state.exams.push({ id: (typeof uid === "function" ? uid() : "okz" + Date.now()), name: ad, date: tarih || todayStr(), lessons: lessons, errorLogs: [], total: oz.soru, net: oz.net });
+  }
+  st.guncellenen = (st.guncellenen || []).filter(x => okzKey(x.exam) !== (sn.name + "|" + (sn.date || "")));
+  saveState();
+  renderOkzModal();
+  try { navigate(currentPage); } catch (e) { /**/ }
+  if (typeof renderExamChart === "function") renderExamChart();
+  toast("Kaydedildi — net " + oz.net + " · " + oz.soru + " soru.", "success");
+}
+
 // Okulizyon'da sonucu değişen sınavı uygulamadaki kayda yansıt
 function okzYenidenAktar(i) {
   const st = okzStore();
@@ -750,6 +777,30 @@ function renderOkzModal() {
   // A) Bağlantı bilgileri artık PROFİL penceresinde — burada yalnız kuyruk yönetilir
   html += '<div style="font-size:12px;opacity:0.8;margin-bottom:10px;padding:10px;border:1px dashed rgba(0,0,0,0.2);border-radius:10px;">Okulizyon bilgileri (ad, okul no, sınıf, il/ilçe, okul) <b>Profil</b> penceresinden girilir. Buradan yalnızca <b>Analiz Bekliyor</b> kuyruğunu işlersin.</div>';
   html += '<button data-act="openProfile" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);margin-bottom:14px;">Profili Aç</button>';
+  // A2) SON ÇEKİLEN SONUÇ — her zaman görünür (yeni olsun olmasın)
+  const sonSonuc = Array.isArray(st.sonSonuc) ? st.sonSonuc : [];
+  if (sonSonuc.length) {
+    html += '<div style="font-weight:800;font-size:14.5px;margin:2px 0 6px;">📥 Okulizyon\'dan Son Çekilen Sonuç</div>';
+    sonSonuc.slice(0, 5).forEach(sn => {
+      const ad = "Okulizyon: " + (sn.name || "Sınav");
+      const varOlan = state.exams.find(e => e && e.name === ad && String(e.date || "") === String(sn.date || ""));
+      const oz = okzOzet(sn.lessons);
+      html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:12px;padding:10px;margin-bottom:10px;">';
+      html += '<div style="font-weight:700;font-size:13.5px;">' + escHtml(sn.name || "Sınav") +
+        (sn.date ? ' <span style="opacity:0.6;font-weight:400;">· ' + escHtml(sn.date) + "</span>" : "") + "</div>";
+      html += '<div style="font-size:11px;opacity:0.7;margin-bottom:4px;">' + oz.soru + " soru · " + oz.d + " D · " + oz.w + " Y · " + oz.e + " B — çekim: " + escHtml(okzZaman(st.sonCekim ? Date.parse(st.sonCekim) : Date.now())) + "</div>";
+      html += okzDersTablosu(sn.lessons);
+      html += '<div style="font-size:11.5px;font-weight:600;color:' + (varOlan ? "#16A34A" : "#B45309") + ';">' +
+        (varOlan ? "✓ Bu sınav Denemelerim'de kayıtlı (net " + varOlan.net + ")." : "⏳ Henüz Denemelerim'e işlenmedi.") + "</div>";
+      if (varOlan && okzHash({ name: ad, date: sn.date, lessons: varOlan.lessons }) !== okzHash({ name: ad, date: sn.date, lessons: sn.lessons })) {
+        html += '<button data-act="okzSonucGuncelle" data-ad="' + escHtml(ad) + '" data-tarih="' + escHtml(sn.date) + '" class="btn btn-primary btn-sm" style="margin-top:6px;">Kaydı bu sonuçla güncelle</button>';
+      }
+      if (!varOlan && (sn.satir || 0) > 0) {
+        html += '<div style="font-size:11px;opacity:0.7;margin-top:4px;">Aşağıdaki “Analiz Bekliyor” bölümünden nedenlerini seçip işleyebilirsin.</div>';
+      }
+      html += "</div>";
+    });
+  }
   // B0) VERİSİ GÜNCELLENEN SINAVLAR (Okulizyon cevap anahtarını değiştirdiyse)
   const guncel = st.guncellenen || [];
   if (guncel.length) {
@@ -847,33 +898,38 @@ async function okzKuyrukCek(zorla) {
     const st = okzStore();
     const pulledAt = Date.parse(data.pulled_at) || 0;
     st.sonCekim = data.pulled_at || null;
-    if (pulledAt > (st.pulledAt || 0)) {
-      st.pulledAt = pulledAt;
-      const gelen = okzNormalize(data.exams || []);
-      // Daha önce aktarılmış bir sınavın verisi Okulizyon'da değişmişse yakala
-      const degisen = [];
-      gelen.forEach(ex => {
-        const k = okzKey(ex), h = okzHash(ex);
-        st.aktarilan = st.aktarilan || {};
-        if (st.importedKeys.includes(k) && st.aktarilan[k] && st.aktarilan[k] !== h) degisen.push({ key: k, exam: ex, hash: h });
-      });
-      st.guncellenen = degisen;
-      const yeni = gelen.filter(ex => !st.importedKeys.includes(okzKey(ex)));
-      st.pending = yeni;
-      okzDurum("ok", "Sunucudan " + gelen.length + " sınav okundu (" + okzZaman(Date.parse(data.pulled_at) || Date.now()) + ") · " + yeni.length + " yeni" + (degisen.length ? " · " + degisen.length + " güncellenmiş" : "") + ".");
-      const n = yeni.reduce((a, ex) => a + (ex.rows || []).length, 0);
-      saveState();
-      if (n > 0) {
-        addNotification({ title: "Okulizyon: " + n + " soru Analiz Bekliyor", body: yeni.map(e => e.name).join(", ").slice(0, 140), kind: "info", topicKey: "okz@" + data.pulled_at });
-        okzBadge();
-        openConfirm("Okulizyon'dan " + n + " soru geldi (Analiz Bekliyor). Şimdi nedenlerini seçmek ister misin?", openOkzModal);
-        okzDurum("ok", n + " soru Analiz Bekliyor kuyruğuna eklendi.");
-      } else {
-        okzDurum("ok", "Yeni soru yok — " + gelen.length + " sınav okundu. Son çekim: " + okzZaman(Date.parse(data.pulled_at) || Date.now()) +
-          (degisen.length ? " · " + degisen.length + " sınavın verisi DEĞİŞMİŞ (aşağıdan güncelleyebilirsin)." : "") + ".");
-      }
+    const gelen = okzNormalize(data.exams || []);
+    // Son çekilen sonucu HER ZAMAN sakla/göster (yeni olsun olmasın)
+    st.sonSonuc = gelen.map(ex => ({
+      name: ex.name || "", date: ex.date || "", lessons: ex.lessons || {},
+      satir: (ex.rows || []).length, toplam: ex.toplam || null
+    }));
+    // --- Gerçek duruma göre karar ver (kayıt defterine değil) ---
+    const K = (window.OKZ && typeof window.OKZ.karar === "function")
+      ? window.OKZ.karar(gelen, state.exams)
+      : { yeni: gelen, degisen: [], gecerliAnahtarlar: [] };
+    const yeni = K.yeni, degisen = K.degisen, gecerliAnahtarlar = K.gecerliAnahtarlar;
+    // Kayıt defterini gerçekle hizala: Denemelerim'de olmayan anahtarlar "aktarıldı" sayılmaz
+    st.importedKeys = (st.importedKeys || []).filter(k => gecerliAnahtarlar.includes(k));
+    gecerliAnahtarlar.forEach(k => { if (!st.importedKeys.includes(k)) st.importedKeys.push(k); });
+    st.guncellenen = degisen;
+    st.pending = yeni;
+    const n = yeni.reduce((a, ex) => a + (ex.rows || []).length, 0);
+    const guncelMi = pulledAt > (st.pulledAt || 0);
+    if (guncelMi) st.pulledAt = pulledAt;
+    saveState();
+    if (n > 0) {
+      addNotification({ title: "Okulizyon: " + n + " soru Analiz Bekliyor", body: yeni.map(e => e.name).join(", ").slice(0, 140), kind: "info", topicKey: "okz@" + data.pulled_at });
+      okzBadge();
+      if (guncelMi) openConfirm("Okulizyon'dan " + n + " soru geldi (Analiz Bekliyor). Şimdi nedenlerini seçmek ister misin?", openOkzModal);
+      okzDurum("ok", "Okulizyon'dan " + gelen.length + " sınav okundu · " + n + " hatalı/boş soru Analiz Bekliyor kuyruğunda.");
+    } else if (degisen.length) {
+      okzDurum("ok", gelen.length + " sınav okundu · " + degisen.length + " sınavın sonucu Okulizyon'da DEĞİŞMİŞ — aşağıdan güncelleyebilirsin.");
+    } else if (gelen.length) {
+      okzDurum("ok", "Her şey güncel: " + gelen.length + " sınav okundu, Denemelerim'dekilerle aynı. (Son çekim: " +
+        okzZaman(pulledAt || Date.now()) + ")");
     } else {
-      okzDurum("ok", "Yeni sonuç yok. Son çekim: " + (data.pulled_at ? okzZaman(pulledAt) : "bilinmiyor"));
+      okzDurum("sonuc-yok", "Okulizyon'a girildi ama sınav sonucu bulunamadı (son çekim: " + okzZaman(pulledAt || Date.now()) + ").");
     }
 
     const { data: duyurular, error: dErr } = await sb.from("okul_duyurulari")

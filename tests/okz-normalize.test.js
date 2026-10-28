@@ -86,6 +86,52 @@ ok("duzelt: zaten doğru kayıt tekrar sayılmaz", H.duzelt(r.exams, BILINEN).de
 ok("duzelt: boş dizi", H.duzelt([], BILINEN).degisti === 0);
 ok("duzelt: null güvenli", H.duzelt(null, BILINEN).degisti === 0);
 
+// ---- 5c) karar(): "yeni mi, aktarılmış mı, değişmiş mi?" (kayıt defterine güvenmez) ----
+const okzSinav = { name: "10.SINIF MAARİF İZLEME SINAVI 1", date: "2026-10-27", lessons: okulizyon, rows: [] };
+
+// Durum 1: HİÇ aktarılmamış → yeni
+const k1 = H.karar([okzSinav], []);
+ok("karar: Denemelerim boşsa sınav YENİ", k1.yeni.length === 1 && k1.degisen.length === 0, JSON.stringify(k1.yeni.length));
+
+// Durum 2: importedKeys'te var ama Denemelerim'de YOK (kullanıcının yaşadığı hata)
+// → karar()'a importedKeys geçmiyor; sadece gerçek denemeler. Sonuç: YENİ olmalı.
+const k2 = H.karar([okzSinav], []);
+ok("karar: silinmiş deneme tekrar YENİ sayılır (eski hata)", k2.yeni.length === 1);
+
+// Durum 3: Denemelerim'de aynısı var, veri aynı → ne yeni ne değişmiş
+const ayni = [{ name: "Okulizyon: 10.SINIF MAARİF İZLEME SINAVI 1", date: "2026-10-27", lessons: birlesik }];
+const k3 = H.karar([okzSinav], ayni);
+ok("karar: güncel kayıt → yeni değil", k3.yeni.length === 0);
+ok("karar: güncel kayıt → değişmemiş", k3.degisen.length === 0);
+ok("karar: geçerli anahtar üretildi", k3.gecerliAnahtarlar.length === 1, JSON.stringify(k3.gecerliAnahtarlar));
+
+// Durum 4: Okulizyon'da sonuç değişmiş → degisen
+const degismis = [{ name: "Okulizyon: 10.SINIF MAARİF İZLEME SINAVI 1", date: "2026-10-27", lessons: { "Türk Dili ve Edebiyatı": { d: 27, w: 3, e: 0 }, "Matematik": { d: 13, w: 3, e: 14 } } }];
+const k4 = H.karar([okzSinav], degismis);
+ok("karar: veri değişmiş → degisen 1", k4.degisen.length === 1, k4.degisen.length);
+ok("karar: değişen sınav yeni sayılmaz", k4.yeni.length === 0);
+ok("karar: degisen kaydı sınavı taşır", k4.degisen[0].exam.name.includes("MAARİF"));
+ok("karar: degisen hash dolu", typeof k4.degisen[0].hash === "string" && k4.degisen[0].hash.length > 10);
+
+// Durum 5: farklı tarihli aynı ad → ayrı sınav
+const k5 = H.karar([okzSinav], [{ name: "Okulizyon: 10.SINIF MAARİF İZLEME SINAVI 1", date: "2026-09-01", lessons: birlesik }]);
+ok("karar: tarih farklıysa YENİ", k5.yeni.length === 1 && k5.degisen.length === 0);
+
+// Durum 6: iki sınav, biri yeni biri güncel
+const k6 = H.karar([okzSinav, { name: "2. DENEME", date: "2026-10-01", lessons: { "Fizik": { d: 5, w: 1, e: 0 } } }], ayni);
+ok("karar: karışık durumda 1 yeni", k6.yeni.length === 1 && k6.yeni[0].name === "2. DENEME", JSON.stringify(k6.yeni.map(x => x.name)));
+ok("karar: karışık durumda 1 geçerli", k6.gecerliAnahtarlar.length === 1);
+
+// Durum 6b: Okulizyon tarih vermediyse yalnız ada göre eşleşsin (sonsuz tekrar olmasın)
+const k6b = H.karar([{ name: "TARİHSİZ SINAV", date: "", lessons: { "Fizik": { d: 5, w: 1, e: 0 } } }],
+  [{ name: "Okulizyon: TARİHSİZ SINAV", date: "2026-10-20", lessons: { "Fizik": { d: 5, w: 1, e: 0 } } }]);
+ok("karar: tarih boşsa ada göre eşleşir", k6b.yeni.length === 0, k6b.yeni.length);
+ok("karar: tarih boşsa geçerli anahtar üretilir", k6b.gecerliAnahtarlar.length === 1);
+
+// Durum 7: boş girdi
+ok("karar: boş gelen", H.karar([], ayni).yeni.length === 0);
+ok("karar: null gelen", H.karar(null, null).yeni.length === 0);
+
 // ---- 6) Bozuk girdi çökmez ----
 ok("boş sözlük", Object.keys(H.birlestir({}, BILINEN)).length === 0);
 ok("null sözlük", Object.keys(H.birlestir(null, BILINEN)).length === 0);

@@ -123,7 +123,38 @@
     return { exams: out, degisti };
   }
 
-  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt };
+  // Okulizyon'dan gelen sınav listesiyle uygulamadaki denemeleri karşılaştırır.
+  // "Aktarılmış" kabulü KAYIT DEFTERİNE değil, Denemelerim'de gerçekten
+  // durup durmadığına dayanır: deneme silinmişse sınav yeniden "yeni" sayılır.
+  function karar(gelen, exams) {
+    const liste = Array.isArray(exams) ? exams : [];
+    // Uygulamadaki denemeler "Okulizyon: <ad>" biçiminde; çift önek ekleme
+    const adi = (ex) => {
+      const n = (ex && ex.name) || "Sınav";
+      return n.indexOf("Okulizyon: ") === 0 ? n : "Okulizyon: " + n;
+    };
+    // Tarih boşsa (Okulizyon tarih vermediyse) yalnız ada göre eşle — yoksa
+    // aynı sınav her çekimde "yeni" sanılıp tekrar tekrar aktarılır.
+    const bul = (ex) => liste.find((e) => e && e.name === adi(ex) &&
+      (!(ex && ex.date) || !e.date || String(e.date) === String(ex.date)));
+    const hash = (ex) => {
+      // iki tarafı da aynı normalizasyondan geçir: ham Okulizyon adları
+      // ("Matematik-1") ile uygulama adları ("Matematik") aynı hash'i versin
+      const l = birlestir((ex && ex.lessons) || {});
+      return [adi(ex), (ex && ex.date) || "",
+        Object.keys(l).sort().map((k) => k + ":" + (Number(l[k].d) || 0) + "," + (Number(l[k].w) || 0) + "," + (Number(l[k].e) || 0)).join(";")].join("|");
+    };
+    const yeni = [], degisen = [], gecerliAnahtarlar = [];
+    (Array.isArray(gelen) ? gelen : []).forEach((ex) => {
+      const varOlan = bul(ex);
+      if (!varOlan) { yeni.push(ex); return; }
+      gecerliAnahtarlar.push(((ex && ex.name) || "?") + "|" + ((ex && ex.date) || ""));
+      if (hash(varOlan) !== hash(ex)) degisen.push({ key: ((ex.name) || "?") + "|" + (ex.date || ""), exam: ex, hash: hash(ex) });
+    });
+    return { yeni, degisen, gecerliAnahtarlar };
+  }
+
+  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt, karar };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (kok) kok.OKZ = api;
 })(typeof window !== "undefined" ? window : globalThis);
