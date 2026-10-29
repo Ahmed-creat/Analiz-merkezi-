@@ -280,6 +280,18 @@ düşürür" kazasını tekrar etmemek için).
 
 ---
 
+## I.1) Yayın doğrulaması
+
+| Kontrol | Sonuç |
+|---|---|
+| Commit | `76b3f29` (branch `arena/cc4de070-analiz-merkezi`) |
+| Vercel | `dpl_5mNXK6aEipYNbVfBrk8xczHwoZA3` — **READY**, alias `analiz-merkezi.vercel.app` |
+| Canlı `sw.js` | `analiz-merkezi-v-20261029-v37-takvim-kart` ✓ |
+| Canlı `kart.js` | v37 3B çevirme kodu yayında (`data-kart-cevir`, `rotateY`) ✓ |
+| pg_cron | 3 iş **postgres** rolünde, `active=true` (yetki kaldırması zamanlamayı bozmadı) ✓ |
+| Yedek tablo | RLS açık, yalnız postgres + service_role ✓ |
+| `bildirim_cron_tetikle` | yalnız postgres + service_role ✓ |
+
 ## J) Dürüst sınırlar
 
 - **Ekran görüntüsü alamıyorum:** bu ortamda tarayıcı yok (Chromium/
