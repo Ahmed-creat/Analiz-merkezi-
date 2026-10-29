@@ -1179,6 +1179,11 @@
         gozlem: e.gozlem_sayisi || 0,
         poolId: poolId,
         precheck: precheck,
+        // v37 — kullanıcı: "ne kadar çözülse de kalkmıyor". Arayüz artık
+        // "zamanı geldi mi" (precheck) ve "en son ne zaman yapıldı" bilgisini
+        // AYRI alır; test yapıldıysa kart hiç gösterilmez.
+        precheckTarih: e.precheck_due || null,
+        kisaYapildi: !!e.son_kisa_kontrol,
         kisaKontrol: { acik: kisaAcik, kalan: kisaKalan, sonTarih: e.son_kisa_kontrol || null },
         ogrenmeTesti: task,
         odak: focusLabel(e) || "",

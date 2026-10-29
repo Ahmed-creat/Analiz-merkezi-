@@ -86,9 +86,9 @@ console.log("\n== 1) Tek kart, tek satır ==");
 ok("kart kimliği bkt-birlesik-kart", cikti.indexOf('id="bkt-birlesik-kart"') >= 0);
 ok("başlık: Öğrenme Durumu · Hafıza Gücü", cikti.indexOf("Öğrenme Durumu · Hafıza Gücü") >= 0);
 ok("ayrı 'Hafıza Gücü' kartı YOK", cikti.indexOf("> Hafıza Gücü</h3>") < 0);
-ok("aynı konu iki kez basılmıyor", (cikti.match(/1\.1 Trigonometri<\/b>/g) || []).length === 1);
+ok("aynı konu iki kez basılmıyor", (cikti.match(/konu-kart-ad[^>]*>.*?1\.1 Trigonometri/g) || []).length === 1);
 ok("BKT durumu satırın içinde", cikti.indexOf("Gelişiyor") >= 0);
-ok("yeterlilik barı (BKT)", cikti.indexOf("Yeterlilik (BKT)") >= 0);
+ok("yeterlilik barı (BKT)", cikti.indexOf("Yeterlilik</span>") >= 0);
 ok("hafıza barı (%12)", cikti.indexOf("%12") >= 0);
 
 console.log("\n== 2) Aksiyonlar korunuyor ==");
@@ -99,14 +99,29 @@ ok("kısa kontrol havuzu doğru", cikti.indexOf('data-bkt-pool="mat_10_u01_k01"'
 
 console.log("\n== 3) Yalnız BKT kaydı olan konu ==");
 ok("BKT-only konu listelendi", cikti.indexOf("2.2 Hücre") >= 0);
-ok("havuzsuz konuda dürüst uyarı", cikti.indexOf("Soru havuzu eşlenmedi") >= 0);
+ok("havuzsuz konuda dürüst uyarı", /soru havuzu eşlenmedi/i.test(cikti));
+
+console.log("\n== 3b) v37 — Kısa Kontrol düğmesi yalnız zamanı gelince ==");
+{
+  // precheck=false → motor "zamanı gelmedi" diyor → düğme HİÇ çizilmez
+  const bktYok = { "Matematik > 1.1 Trigonometri": Object.assign({}, BKT["Matematik > 1.1 Trigonometri"], { precheck: false, kisaKontrol: { acik: true, kalan: 0 } }) };
+  const c1 = kart(MS, bktYok, 10);
+  ok("zamanı gelmeyince Kısa Kontrol düğmesi YOK", c1.indexOf('data-bkt-test="Matematik > 1.1 Trigonometri"') < 0);
+  // precheck=true ama dinlenme sürüyor → yine çizilmez
+  const bktKapali = { "Matematik > 1.1 Trigonometri": Object.assign({}, BKT["Matematik > 1.1 Trigonometri"], { precheck: true, kisaKontrol: { acik: false, kalan: 2 } }) };
+  const c2 = kart(MS, bktKapali, 10);
+  ok("dinlenme sürerken düğme YOK", c2.indexOf('data-bkt-mode="precheck"') < 0);
+  // zamanı geldi + dinlenme bitti → düğme var
+  const c3 = kart(MS, BKT, 10);
+  ok("zamanı gelince düğme var", c3.indexOf('data-bkt-mode="precheck"') >= 0);
+}
 
 console.log("\n== 4) Ayrı BKT paneli çizilmiyor ==");
 ok("motor birleşik kartı tanıyor", ENGINE.indexOf('getElementById("bkt-birlesik-kart")') > 0);
 ok("eski panel temizleniyor", /bkt-birlesik-kart[\s\S]{0,220}bkt-learning-panel/.test(ENGINE));
 ok("konuDurum API'si dışa açık", ENGINE.indexOf("konuDurum: function (key)") > 0);
 
-console.log("\n== 5) v36 — ders ayracı ve flashcard zorunluluğu ==");
+console.log("\n== 5) v37 — her konu kendi kartı + flashcard zorunluluğu ==");
 {
   const st = {
     flashcards: { cards: [
@@ -117,13 +132,19 @@ console.log("\n== 5) v36 — ders ayracı ve flashcard zorunluluğu ==");
     tekrarKartlari: {}
   };
   const c = kart(MS, BKT, 10, st);
-  ok("ders ayracı basıldı", c.indexOf("ders-ayrac") >= 0);
-  ok("ayraçta ders adı var", /ders-ayrac[\s\S]{0,200}Matematik/.test(c));
+  // v37 — KULLANICI: "derse göre ayırman gerek yoktu, sadece her konunun
+  // satırını ayrı kart olarak yap."
+  ok("ders ayracı KALDIRILDI", c.indexOf("ders-ayrac") < 0);
+  ok("her konu kendi kartı (konu-kart)", (c.match(/class="konu-kart"/g) || []).length === 3,
+     String((c.match(/class="konu-kart"/g) || []).length));
+  ok("kart başlığı konu adı", /konu-kart-ad[^>]*>[\s\S]{0,300}1\.1 Trigonometri/.test(c));
+  ok("mobil için ızgara ölçü (konu-metre)", c.indexOf("konu-metre") >= 0);
   ok("kart sayısı yazıldı (3)", c.indexOf("Kartları Bitir (3)") >= 0);
   ok("kart zorunlu notu", c.indexOf("kart zorunlu (3)") >= 0);
   // Kart bitmeden birincil aksiyon kart düğmesi; ikincil tekrar düğmesi kalır.
-  const anaBolum = c.slice(c.indexOf("Kartları Bitir"), c.indexOf("Kartları Bitir") + 400);
-  ok("kart düğmesi birincil (btn-primary)", anaBolum.indexOf("btn-primary") >= 0, anaBolum.slice(0, 120));
+  ok("kart düğmesi birincil (btn-primary)",
+     /class="btn btn-sm btn-primary" data-act="kartBasla"[^>]*>[\s\S]{0,80}Kartları Bitir/.test(c),
+     (c.match(/<button[^>]*kartBasla[^>]*>/) || [""])[0]);
 
   const st2 = JSON.parse(JSON.stringify(st));
   st2.tekrarKartlari["Matematik > 1.1 Trigonometri"] = { bildi: 3, bilemedi: 0, tamamlandi: BUGUN };

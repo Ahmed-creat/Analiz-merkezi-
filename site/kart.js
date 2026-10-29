@@ -272,30 +272,43 @@
       var sadeceBilemedi = Array.isArray(o.sadece) ? o.sadece.slice() : null;
       var tur = sadeceBilemedi ? sadeceBilemedi : liste;
 
+      // v37 — KLASİK FLASHCARD: karta dokununca 3B döner (CSS), ön/arka yüz
+      // üst üste durur. Çevirme iki yönlüdür: arka yüzden ön yüze de döner.
       function ciz() {
         if (i >= tur.length) return bitisCiz();
         var k = tur[i];
         var on = esc(k.front);
         var cevap = esc(k.back);
-        // GERÇEK FLASHCARD: arka yüz gizli, "Kartı çevir" ile açılır.
+        var noktalar = "";
+        for (var d = 0; d < tur.length; d++) {
+          noktalar += '<i style="display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:3px;background:' +
+            (d < i ? "var(--semantic-success,#16A34A)" : d === i ? "var(--brand-blue,#2563EB)" : "rgba(125,140,170,.35)") + ';"></i>';
+        }
         kutu.innerHTML =
           '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px;">' +
           '<div><b style="font-size:15px;">Tekrar Kartı</b>' +
           '<div style="font-size:11px;opacity:.65;">' + esc(konuAdi) + " · " + (i + 1) + " / " + tur.length +
           (k.hataKarti ? " · hata kartı" : "") + "</div></div>" +
           '<button type="button" data-kart-kapat style="min-width:44px;min-height:44px;border:0;background:none;font-size:22px;cursor:pointer;color:inherit;">×</button></div>' +
+          '<div style="margin:0 0 10px;">' + noktalar + "</div>" +
 
-          '<div class="kart-yuz" style="min-height:132px;border:1px solid var(--border-card,#E5EAF3);border-radius:14px;padding:16px;background:var(--bg-canvas,#F6F8FC);display:flex;align-items:center;justify-content:center;text-align:center;font-size:15.5px;line-height:1.55;font-weight:700;">' +
-          on + "</div>" +
+          // TIKLANABİLİR KART: data-kart-goster ön yüzde, data-kart-cevir arka yüzde.
+          '<div class="kart-sahne" data-kart-goster tabindex="0" role="button" aria-label="Kartı çevir" style="perspective:1200px;cursor:pointer;outline:none;">' +
+            '<div class="kart-ic" style="position:relative;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.3,1);transform:rotateY(' + (acik ? 180 : 0) + 'deg);min-height:176px;">' +
+              '<div class="kart-on" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;border:1px solid var(--border-card,#E5EAF3);border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#F3F6FC);font-size:16px;line-height:1.55;font-weight:700;box-shadow:0 2px 10px rgba(16,24,40,.06);">' +
+                on +
+                '<span style="position:absolute;bottom:8px;left:0;right:0;font-size:10.5px;font-weight:700;letter-spacing:.06em;opacity:.45;">DOKUN · ÇEVİR</span></div>' +
+              '<div class="kart-arka" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);overflow:auto;padding:16px;border:1px solid var(--semantic-success,#16A34A);border-radius:16px;background:linear-gradient(180deg,#F2FBF5,#E8F7EE);font-size:14.5px;line-height:1.65;box-shadow:0 2px 10px rgba(16,24,40,.06);">' +
+                '<div style="font-size:10.5px;font-weight:800;letter-spacing:.06em;opacity:.6;margin-bottom:4px;">ARKA YÜZ</div>' + cevap + "</div>" +
+            "</div></div>" +
 
           (acik
-            ? '<div class="kart-arka" style="margin-top:10px;border:1px solid var(--semantic-success,#16A34A);border-radius:14px;padding:14px;background:rgba(22,163,74,.07);font-size:14px;line-height:1.65;">' +
-              '<div style="font-size:10.5px;font-weight:800;letter-spacing:.06em;opacity:.6;margin-bottom:4px;">ARKA YÜZ</div>' + cevap + "</div>" +
-              '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">' +
-              '<button type="button" class="btn btn-sm btn-success" data-kart-puan="bildi" style="min-height:48px;">Bildim</button>' +
-              '<button type="button" class="btn btn-sm btn-danger" data-kart-puan="bilemedi" style="min-height:48px;">Bilemedim</button></div>'
+            ? '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">' +
+              '<button type="button" class="btn btn-sm btn-danger" data-kart-puan="bilemedi" style="min-height:50px;">Bilemedim</button>' +
+              '<button type="button" class="btn btn-sm btn-success" data-kart-puan="bildi" style="min-height:50px;">Bildim</button></div>' +
+              '<button type="button" class="btn btn-ghost w-full" data-kart-cevir style="margin-top:8px;min-height:42px;">Kartı geri çevir</button>'
             : '<button type="button" class="btn btn-primary w-full" data-kart-goster style="margin-top:12px;min-height:50px;">Kartı çevir</button>' +
-              '<div style="font-size:11.5px;opacity:.65;margin-top:6px;text-align:center;">Önce zihninden cevapla, sonra çevir.</div>');
+              '<div style="font-size:11.5px;opacity:.65;margin-top:6px;text-align:center;">Önce zihninden cevapla, sonra karta dokun. (Boşluk tuşu da çevirir.)</div>');
       }
 
       function bitisCiz() {
@@ -325,7 +338,8 @@
 
       modal.addEventListener("click", function (e) {
         if (e.target === modal || e.target.closest("[data-kart-kapat]")) { kapat(); return; }
-        if (e.target.closest("[data-kart-goster]")) { acik = true; ciz(); return; }
+        if (e.target.closest("[data-kart-cevir]")) { acik = false; ciz(); return; }
+        if (e.target.closest("[data-kart-goster]")) { acik = !acik; ciz(); return; }
         if (e.target.closest("[data-kart-tekrar]")) {
           tur = liste.filter(function (k) {
             return sonuc.detay.some(function (d) { return !d.bildi && d.front === k.front; });

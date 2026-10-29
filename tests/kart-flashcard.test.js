@@ -3,7 +3,7 @@
    FLASHCARD TESTİ — tests/kart-flashcard.test.js
    ------------------------------------------------------------
    Kullanıcı (v36):
-     • "kartlar flashcard olacak, gerçekten arkasına dönecek"
+     • "kartlar flashcard olacak, gerçekten arkasına dönecek" (v37: 3B çevirme)
      • "konunun tekrar edilmesi için flashcardı tamamlamak zorunlu"
      • "flashcard sayısı da raporlarda var"
      • "flashcard ile testin görevleri farklıydı, ikisi aynı yerde olamaz"
@@ -13,7 +13,7 @@
 
    Denetlenenler:
      1) Kart tavanı: en fazla 8 standart + 5 hata kartı (rapor §5.1)
-     2) Ön yüz açıkken arka yüz GİZLİ; "Kartı çevir" ile açılır
+     2) Gerçek 3B çevirme: arka yüz backface-visibility ile gizli; kart döner
      3) Yalnız iki değerlendirme düğmesi: Bildim / Bilemedim
      4) %70 eşiği: 4/5 → gün tamam; 3/5 → tamamlanmaz (rapor §5.4)
      5) Tamamlanınca hafıza barı köprüsü (__kartTamamla) çağrılır
@@ -140,8 +140,8 @@ function kartYap(topicKey, adet, hataAdet) {
     ok("standart kart 8", liste.length - hata === 8, String(liste.length - hata));
   }
 
-  // ---------- 2) GERÇEK FLASHCARD: arka yüz gizli ----------
-  console.log("\n== 2) Ön yüz açıkken arka yüz GİZLİ ==");
+  // ---------- 2) GERÇEK FLASHCARD: 3B çevirme ----------
+  console.log("\n== 2) Gerçek çevirme: 3B dönüş (rotateY) ==\n");
   {
     const st = bosState();
     st.flashcards.cards = kartYap(K, 2, 0);
@@ -152,18 +152,29 @@ function kartYap(topicKey, adet, hataAdet) {
     ok("kart penceresi açıldı", !!modal);
     const ic0 = modal.cocuklar[0].innerHTML;
     ok("ön yüz görünüyor", ic0.includes("Ön 0"), ic0.slice(0, 60));
-    ok("arka yüz GİZLİ (cevap yok)", !ic0.includes("Arka 0"));
-    ok("'ARKA YÜZ' etiketi yok", !ic0.includes("ARKA YÜZ"));
+    // İki yüz de DOM'da durur (gerçek çevirme böyle çalışır) ama arka yüz
+    // backface-visibility:hidden + rotateY(180deg) ile GÖRÜNMEZ.
+    ok("kart sahnesi var (perspective)", ic0.includes("perspective:1200px"));
+    ok("iç katman preserve-3d", ic0.includes("preserve-3d"));
+    ok("arka yüz gizli (backface-visibility)", ic0.includes("backface-visibility:hidden"));
+    ok("arka yüz 180° çevrili", /kart-arka[^>]*rotateY\(180deg\)/.test(ic0));
+    ok("kart ön yüzde (rotateY(0deg))", ic0.includes("rotateY(0deg)"));
     ok("'Kartı çevir' düğmesi var", ic0.includes("data-kart-goster"));
     ok("çevirmeden Bildim/Bilemedim YOK", !ic0.includes("data-kart-puan"));
 
     tikla(dom.dinleyiciler, modal, "data-kart-goster");
     const ic1 = modal.cocuklar[0].innerHTML;
-    ok("çevirince arka yüz açıldı", ic1.includes("Arka 0"));
-    ok("'ARKA YÜZ' etiketi göründü", ic1.includes("ARKA YÜZ"));
+    ok("çevirince kart 180° döndü", ic1.includes("rotateY(180deg)"));
+    ok("çevirince arka yüz içeriği görünür", ic1.includes("Arka 0"));
+    ok("'ARKA YÜZ' etiketi var", ic1.includes("ARKA YÜZ"));
     ok("Bildim düğmesi", ic1.includes('data-kart-puan="bildi"'));
     ok("Bilemedim düğmesi", ic1.includes('data-kart-puan="bilemedi"'));
-    ok("'Zorlandım' düğmesi YOK (rapor: iki düğme)", !ic1.includes("Zorlandım"));
+    ok("'Zorlandım' düğmesi YOK (rapor §5.1: iki düğme)", !ic1.includes("Zorlandım"));
+    // Klasik davranış: karta tekrar dokununca geri döner.
+    tikla(dom.dinleyiciler, modal, "data-kart-goster");
+    ok("karta tekrar dokununca geri döner", modal.cocuklar[0].innerHTML.includes("rotateY(0deg)"));
+    // Kartın kendisinde de çevir düğmesi var (erişilebilirlik).
+    ok("çevirmeli kartta 'geri çevir' düğmesi", ic1.includes("data-kart-cevir"));
   }
 
   // ---------- 3) %70 eşiği: 4/5 tamam, 3/5 tamam değil ----------

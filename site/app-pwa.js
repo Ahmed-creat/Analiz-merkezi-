@@ -1,4 +1,4 @@
-const PWA_SURUM = "v36-ajanda-kart";
+const PWA_SURUM = "v37-takvim-kart";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

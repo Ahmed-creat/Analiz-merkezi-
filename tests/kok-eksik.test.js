@@ -89,7 +89,12 @@ ok("ileri/geri düğmeleri var", /data-bkt-next/.test(ENGINE) && /data-bkt-prev/
 ok("soru sayacı gösteriliyor", /Soru ' \+ \(i \+ 1\) \+ ' \/ ' \+ qs\.length/.test(ENGINE));
 ok("buton etiketi 5 soru", HTML.indexOf("Kısa Kontrol — 5 soru") > 0 || /Kısa Kontrol — ' \+ MINI_SORU \+ ' soru/.test(ENGINE));
 ok("tamamlanan konuda belirgin kontrol kartı", HTML.indexOf("5 soruluk kısa kontrol seni bekliyor") > 0);
-ok("completeTopic sonunda otomatik kontrol", /function completeTopic\(key\)[\s\S]{0,2000}miniKontrolBaslat\(key\)/.test(HTML));
+// v37 — KULLANICI: "5 soru 4. adımı bitirir bitirmez zaten açılıyor" → otomatik
+// açma KALDIRILDI. Bu test artık tersini doğruluyor (davranış testi: v37-davranis).
+ok("v37: completeTopic kısa kontrolü KENDİLİĞİNDEN AÇMAZ",
+  !/function completeTopic\(key\)[\s\S]{0,1800}\n\s*miniKontrolBaslat\(key\);/.test(HTML));
+ok("v37: konu bitince nerede açılacağı söylenir", /Kısa Kontrol hazır/.test(HTML));
+ok("belirgin kontrol kartı yalnız ZAMANI gelince çizilir", /kisaDue && !kisaKapali/.test(HTML));
 
 // ---------- 5) Görseller gerçekten çiziliyor ----------
 console.log("\n== 5) Soru görselleri ==");
