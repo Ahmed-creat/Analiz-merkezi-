@@ -9,11 +9,11 @@ aşağıdaki her satır canlıya atılan isteğin gerçek yanıtıdır.
 | Alan | Değer |
 |---|---|
 | Fonksiyon | `bildirim-gonder` (`f492b4db-868f-4369-8f51-5d9ebc927ccf`) |
-| Sürüm | **8** (ACTIVE) |
+| Sürüm | **9** (ACTIVE) — 2026-10-29 13:36 UTC |
 | `verify_jwt` | `false` — kron `x-bildirim-secret` ile çağırır, JWT yok |
 | Yayın biçimi | **satır içi gövde** (import yok) |
-| Kaynak | `index.ts` (üretilmiş dosya, 36 436 bayt) |
-| Commit | `d490d23` |
+| Kaynak | `index.ts` (üretilmiş dosya, 37 424 bayt) |
+| Commit | `1ced814` (v39) |
 
 ## Neden satır içi gövde?
 
@@ -65,3 +65,24 @@ eski abonelikler eski VAPID anahtarıyla kurulmuştu ve silindi (`push_abonelikl
 = 0 satır). Site v38 yayında; uygulama açıldığında `push-bildirim.js`
 anahtar farkını görüp eski aboneliği bırakır, yenisini kurar ve bir kez
 deneme bildirimi gönderir (`AmPush.otomatik`, 6 sn sonra).
+
+## v9 — 29 Ekim 2026 (Urgency düzeltmesi)
+
+**Neden:** Cihaz aboneliği vardı, push servisi 201 dönüyordu, ama bildirim
+görünmüyordu. Kök neden: mesajlar `Urgency: low` başlığıyla gidiyordu;
+Android Doze modunda düşük öncelikli push ertelenir/sessizce düşürülür —
+FCM yine 201 döner, bu yüzden "gönderildi" görünüp ekranda hiçbir şey çıkmaz.
+
+**Değişiklik:** `Urgency: (mesaj.kind === "daily" ? "normal" : "high")`
+(test, review, sınav, memcrit → high). TTL 86400 aynı kaldı.
+
+**Ölçümler (canlıya gerçek istekler):**
+
+| # | İstek | HTTP | Yanıt |
+|---|---|---|---|
+| 60 | `{"mod":"saglik"}` | **200** | `ozelAnahtarCozuluyor:true`, `tarayiciIleAyni:true`, `imzaTarayiciIleAyni:true` |
+| 61 | `{"mod":"tekil","abonelik_id":"dbed497b…"}` (kasa sırrı ile) | **200** | `gonderilen:1`, `sonuc:[{kod:201}]` — cihazın push ucu kabul etti |
+
+61 numaralı istek, kullanıcının gerçek cihaz aboneliğine gitti; cihazda
+görünüp görünmediği **kullanıcı gözlemiyle** doğrulanmalıdır (201 = servis
+kabul etti, 201 ≠ ekranda gösterildi).
