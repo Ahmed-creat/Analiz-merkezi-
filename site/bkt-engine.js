@@ -594,6 +594,23 @@
     if (h.baslik) return String(h.baslik);
     return konuParcasi(h.topic_key);
   }
+  // v39 — ELLE DOĞRULANMIŞ EK EŞLEME (konu → havuz kimliği)
+  // Yalnız "havuz GERÇEKTEN bu konunun sorularını içeriyor" diye tek tek
+  // kontrol edilmiş satırlar burada. Uydurma eşleme yok; başka konunun
+  // sorusu gösterilmez. Gerekçe her satırın yanında yazılı.
+  const EK_ESLEME = Object.freeze({
+    // Havuzun başlığı "Besinlerin Hücresel Solunuma Katılma Yolları";
+    // konudaki tek fark "hücresel" kelimesi (4/4 anahtar kelime aynı).
+    "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları": "biyo_10_u01_k05",
+    // Havuzun etiketleri: "Komünitede Tür İçi ve Türler Arası Etkileşimler",
+    // "Popülasyon Dinamikleri", "Süksesyon" — konunun tam karşılığı.
+    "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler": "biyo_10_u02_k02",
+    // Havuz etiketi: "Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar".
+    "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar": "biyo_10_u02_k04",
+    // Havuz soruları afet direnci/afet bilinci üzerine (4/5 anahtar kelime).
+    "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları": "cogr_10_u06_k01",
+    "Coğrafya > 6.3 Afetlerden Korunma": "cogr_10_u06_k01"
+  });
   // Saf fonksiyon: verilen havuz listesinde YALNIZ bu konunun havuzunu arar.
   function havuzEsle(topicKey, havuzlar) {
     const liste = Array.isArray(havuzlar) ? havuzlar : [];
@@ -608,10 +625,33 @@
     for (let i = 0; i < ayniDers.length; i++) {
       if (sadeles(havuzBasligi(ayniDers[i])) === sadeles(konu)) return ayniDers[i];
     }
-    // NOT: "baştaki numarayı at, gerisini karşılaştır" kuralı DENENDİ ve
-    // kaldırıldı — gerçek veride tek eşleşme üretiyordu ve o da YANLIŞTI:
-    // 9. sınıf "1.4 Kur'an'dan Mesajlar" → 10. sınıfın "1.3 ..." havuzu.
-    // Kullanıcı isteği: başka konu/ders/sınıfın sorusu GÖSTERİLMEZ.
+    // v39 — KÖK NEDEN ("neden konuların soru havuzu yok sorunu geliyor"):
+    // Burada YALNIZ iki kural vardı (topic_key birebir / başlık birebir).
+    // Oysa havuz manifestinde çoğu havuzun `baslik` alanı yok ve bir havuz
+    // birden çok alt konuyu kapsıyor (ör. tarih_10_u02_k01 hem 2.1, 2.2, 2.4;
+    // biyo_10_u02_k04 hem atık yönetimi hem ekolojik sürdürülebilirlik).
+    // Bu konular havuzu OLDUĞU HÂLDE "havuz yok" görünüyordu.
+    // Çözüm: site/havuz-bul.js (HB) tek kaynak — numara/etiket kuralları
+    // orada ve yalnız TEK eşleşme kabul edilir. Ayrıca elle doğrulanmış
+    // konu→havuz tablosu (EK_ESLEME) son adım olarak denenir.
+    try {
+      if (typeof window !== "undefined" && window.HB && typeof window.HB.bul === "function") {
+        // SINIF KİLİDİ: havuz manifesti 10. sınıf. 9. sınıf konusu asla
+        // 10. sınıf havuzuna bağlanmaz (eski hata: "1.4 Kur'an'dan Mesajlar"
+        // 10. sınıfın havuzuna düşüyordu). Yalnız öğrencinin sınıfıyla
+        // aynı `sinif` etiketli havuzlar arasında aranır.
+        let sinif = "";
+        try { const st = ensureStore(); sinif = String((st && st.user && st.user.grade) || ""); } catch (e2) { sinif = ""; }
+        const uygun = sinif ? liste.filter(function (h) { return h && String(h.sinif || "") === sinif; }) : [];
+        const hb = uygun.length ? window.HB.bul(ham, uygun) : null;
+        if (hb && hb.konu_id) return hb;
+      }
+    } catch (e) { /* HB yoksa aşağıdaki elle eşlemeye düşer */ }
+    if (EK_ESLEME[ham]) {
+      const secili = liste.find(function (h) { return h && String(h.konu_id) === EK_ESLEME[ham]; });
+      if (secili) return secili;
+    }
+    // Başka konu/ders/sınıfın sorusu yine GÖSTERİLMEZ: eşleşme yoksa null.
     return null;
   }
   function resolvePoolId(topicKey) {
@@ -1294,7 +1334,7 @@
       } else {
         // v35.7 — SESSİZ KALMA YOK: havuz yoksa neden test açılmadığı yazılır.
         // Bilerek başka konunun havuzuna düşmüyoruz (kullanıcı isteği).
-        html += '<div class="text-xs" style="margin-top:6px;line-height:1.45;color:var(--semantic-warning);">Soru havuzu eşlenmedi — bu konuyla birebir eşleşen havuz yok. Başka konunun soruları gösterilmez. Konu Eşlemesi: Profil → Okulizyon → Konu Eşlemesi.</div>';
+        html += '<div class="text-xs" style="margin-top:6px;line-height:1.45;color:var(--text-muted);">Bu konunun soru havuzu henüz eklenmemiş. Başka konunun soruları gösterilmez.</div>';
       }
       html += '</div>';
     });

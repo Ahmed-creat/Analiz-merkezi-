@@ -835,7 +835,10 @@ select.dd-native {
 .neden-chip { display: inline-flex; align-items: baseline; gap: 5px; padding: 6px 12px; border-radius: var(--radius-pill); background: var(--bg-canvas); border: 1px solid var(--border-card); font-size: 12px; color: var(--text-muted); }
 .neden-chip b { color: var(--text-main); font-size: 12px; }
 /* v37 — KONU KARTI: her konu ayrı kart; mobilde değer/etiket taşmaz */
-.konu-kart { padding: 12px 13px; border: 1px solid var(--border-card); border-radius: 14px; background: var(--bg-card); margin-bottom: 10px; }
+/* v39 — kullanıcı: "hafıza gücünde bar konu ayrı bento grid kart olsun".
+   Her konu artık tek büyük kartın içinde satır değil, kendi bento kartıdır. */
+.konu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; align-items: stretch; }
+.konu-kart { padding: 12px 13px; border: 1px solid var(--border-card); border-radius: 14px; background: var(--bg-card); margin-bottom: 0; box-shadow: 0 1px 2px rgba(15,23,42,0.04); }
 .konu-kart-ust { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
 .konu-kart-ad { font-size: 13.5px; font-weight: 700; line-height: 1.35; min-width: 0; overflow-wrap: anywhere; }
 .konu-durum { font-size: 11px; font-weight: 800; white-space: nowrap; flex: 0 0 auto; }
@@ -844,6 +847,8 @@ select.dd-native {
 .konu-metre-bar { display: block; height: 7px; border-radius: 99px; background: var(--border-card); overflow: hidden; }
 .konu-metre-bar > span { display: block; height: 100%; border-radius: 99px; }
 .konu-metre-deger { font-size: 11.5px; font-weight: 800; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.konu-yeter { font-size: 11.5px; font-weight: 700; color: var(--text-muted); }
+.konu-yeter b { color: var(--brand-blue); font-variant-numeric: tabular-nums; }
 .konu-alt { font-size: 11px; color: var(--text-muted); margin-top: 7px; line-height: 1.45; overflow-wrap: anywhere; }
 .konu-eylem { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
 .konu-eylem .btn { flex: 1 1 auto; min-width: 0; white-space: nowrap; font-size: 12px; padding: 8px 10px; min-height: 38px; }
@@ -984,11 +989,19 @@ select.dd-native {
 .cal-day.today .cal-dnum { color: var(--brand-blue); }
 /* v37 — AJANDA: Google Takvim görünümü (tam genişlik renkli olay çubukları) */
 .ajanda { margin-top: 14px; }
-.aj-gun { font-size: 13.5px; font-weight: 800; margin: 14px 0 6px; color: var(--text-main); }
-.aj-event { display: flex; align-items: center; gap: 8px; padding: 11px 13px; border-radius: 9px; color: #fff; margin-bottom: 5px; cursor: pointer; line-height: 1.3; }
-.aj-event .aj-saat { font-size: 11.5px; font-weight: 800; font-variant-numeric: tabular-nums; opacity: .92; flex: 0 0 auto; }
-.aj-event .aj-ad { font-size: 13px; font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.aj-event .aj-tur { font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; opacity: .78; flex: 0 0 auto; }
+/* v39 — kullanıcı: "ajandada kullandığın renkler çok kötü".
+   Doygun koyu dolgular yerine Google Takvim'in sakin paleti:
+   açık zemin + aynı rengin koyu metni + solda kalın renk şeridi.
+   Renkler tema değişkenlerinden bağımsızdır (koyu temada da okunur). */
+.aj-kaydir { max-height: 268px; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding-right: 3px; }
+.aj-kaydir::-webkit-scrollbar { width: 5px; }
+.aj-kaydir::-webkit-scrollbar-thumb { background: var(--border-card); border-radius: 99px; }
+.aj-gun { font-size: 12.5px; font-weight: 800; letter-spacing: .01em; margin: 12px 0 6px; color: var(--text-muted); position: sticky; top: 0; background: var(--bg-card); padding: 3px 0; z-index: 1; }
+.aj-gun:first-child { margin-top: 0; }
+.aj-event { display: flex; align-items: center; gap: 8px; padding: 9px 11px; border-radius: 8px; margin-bottom: 5px; cursor: pointer; line-height: 1.3; border: 1px solid transparent; border-left-width: 4px; border-left-style: solid; }
+.aj-event .aj-saat { font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; opacity: .85; flex: 0 0 auto; }
+.aj-event .aj-ad { font-size: 12.5px; font-weight: 700; color: inherit; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.aj-event .aj-tur { font-size: 9.5px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; opacity: .62; flex: 0 0 auto; }
 @media (max-width: 420px) { .aj-event .aj-tur { display: none; } }
 .cal-pills { display: flex; flex-wrap: wrap; gap: 3px; }
 .cal-pill {
@@ -3232,14 +3245,25 @@ function gunlukGorevler() {
     });
   }
 
-  // 2) Kısa Kontrol zamanı gelmiş konu
+  // 2) 5 SORULUK TESTLER (ayrı görev — kart/tekrar ile karışmaz)
+  //    a) Kısa Kontrol: motor "zamanı geldi" diyorsa
+  //    b) Öğrenme Testi: 3. gün kuyruğa giren 5 soru
   const kisa = Object.keys(bkt).filter(k => bkt[k].precheck && bkt[k].poolId && (!bkt[k].kisaKontrol || bkt[k].kisaKontrol.acik));
   if (kisa.length) {
     liste.push({
       id: "kisa", tur: "kisa", icon: "clipboard-check", onem: 1,
       baslik: "Kısa Kontrol: " + splitKey(kisa[0]).topic,
       aciklama: "5 soru, tek tek" + (kisa.length > 1 ? " · " + kisa.length + " konu bekliyor" : " · yalnız bu konunun havuzundan"),
-      sayfa: "tracking", dugme: "Konu Takibi"
+      aksiyon: "bktTest", hedef: kisa[0], hedefPool: bkt[kisa[0]].poolId, hedefMod: "precheck", dugme: "5 soru"
+    });
+  }
+  const ogr = Object.keys(bkt).filter(k => bkt[k].ogrenmeTesti && bkt[k].poolId);
+  if (ogr.length) {
+    liste.push({
+      id: "ogrenmetesti", tur: "kisa", icon: "clipboard-list", onem: 1,
+      baslik: "Öğrenme Testi · 5 soru: " + splitKey(ogr[0]).topic,
+      aciklama: "3. gün tekrar testi" + (ogr.length > 1 ? " · " + ogr.length + " konu bekliyor" : " · yalnız bu konunun havuzundan"),
+      aksiyon: "bktTest", hedef: ogr[0], hedefPool: bkt[ogr[0]].poolId, hedefMod: "learning", dugme: "5 soru"
     });
   }
 
@@ -3315,9 +3339,17 @@ function gunlukGorevler() {
 function gorevSatirHTML(g, secenek) {
   const o = secenek || {};
   const tur = g.tur || "calis";
-  const btn = g.aksiyon
-    ? '<button class="btn btn-sm btn-primary" data-act="' + g.aksiyon + '" data-topic="' + attr(g.hedef || "") + '" style="min-height:34px;">' + icon("arrow-right", 12) + " " + esc(g.dugme || "Aç") + "</button>"
-    : '<button class="btn btn-sm btn-ghost" data-act="nav" data-page="' + attr(g.sayfa || "tasks") + '" style="min-height:34px;">' + icon("arrow-right", 12) + " " + esc(g.dugme || "Git") + "</button>";
+  // v39 — 5 soruluk test artık Konu Takibi kartında DEĞİL: ayrı bir GÖREV.
+  // Düğme doğrudan testi açar (bkt-engine'in data-bkt-test dinleyicisi).
+  let btn;
+  if (g.aksiyon === "bktTest") {
+    btn = '<button class="btn btn-sm btn-primary bkt-control" data-bkt-test="' + attr(g.hedef || "") + '" data-bkt-pool="' + attr(g.hedefPool || "") + '" data-bkt-mode="' + attr(g.hedefMod || "precheck") + '" style="min-height:34px;">' +
+      icon("play", 12) + " " + esc(g.dugme || "5 soru") + "</button>";
+  } else if (g.aksiyon) {
+    btn = '<button class="btn btn-sm btn-primary" data-act="' + g.aksiyon + '" data-topic="' + attr(g.hedef || "") + '" style="min-height:34px;">' + icon("arrow-right", 12) + " " + esc(g.dugme || "Aç") + "</button>";
+  } else {
+    btn = '<button class="btn btn-sm btn-ghost" data-act="nav" data-page="' + attr(g.sayfa || "tasks") + '" style="min-height:34px;">' + icon("arrow-right", 12) + " " + esc(g.dugme || "Git") + "</button>";
+  }
   return '<div class="gorev-row ' + tur + (o.ok ? " ok" : "") + '">' +
     '<span class="gorev-ic">' + icon(g.icon || "circle", 17) + "</span>" +
     '<div style="flex:1;min-width:0;">' +
@@ -3473,15 +3505,22 @@ function renderExams(container) {
 let urgentLimit = 5;
 function moreUrgentTopics() {
   const toplam = calculatePriority().length;
-  // liste tamamen açıksa KAPAT (5'e dön); değilse +5 daha aç
-  urgentLimit = (urgentLimit >= toplam && urgentLimit > 5) ? 5 : urgentLimit + 5;
+  // v39 — "Daha fazla göster yanlış çalışıyor": eski kod tek tıkla 5'e geri
+  // kapatıyordu, sayaç gerçek liste uzunluğunu tutmuyordu. Artık sırayla
+  // büyür (+5) ve liste bittiğinde düğme "Daha az göster"e döner.
+  urgentLimit = (urgentLimit >= toplam) ? 5 : Math.min(toplam, urgentLimit + 5);
   renderTracking(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
-let memoryLimit = 6; // Öğrenme Durumu satırları: sade görünüm için 6, "daha fazla" ile artar
+let memoryLimit = 6; // Hafıza kartları: ilk 6 kart, "daha fazla" ile +6 artar
+// v39 — KÖK NEDEN: moreMemoryRows() toplamı memoryStats().rows.length'tan
+// alıyordu; ekranda ise BKT kaydı olan konular da çiziliyor (birleşik liste).
+// İki sayı tutmadığı için "Daha fazla göster" yanlış çalışıyordu (bir tıkla
+// kapanıyor / hiç bitmiyordu). Toplam artık render sırasında yazılır.
+let hafizaKartToplam = 0;
 function moreMemoryRows() {
-  const toplam = memoryStats().rows.length;
-  memoryLimit = (memoryLimit >= toplam && memoryLimit > 6) ? 6 : memoryLimit + 6;
+  const toplam = hafizaKartToplam || memoryStats().rows.length;
+  memoryLimit = (memoryLimit >= toplam) ? 6 : Math.min(toplam, memoryLimit + 6);
   renderTracking(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
@@ -3540,10 +3579,14 @@ function renderTracking(container) {
     ).join("") +'<div class="flex gap-2" style="margin-top:10px;flex-wrap:wrap;"><button type="button" class="btn btn-ghost btn-sm" data-act="kokeksikKonuGit" data-key="' + attr(roots[0].weak) + '">' + icon("arrow-right", 13) + " En kritik konuyu aç</button></div>" + "</div>";
   }
 
-  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (TEK KART, v35.9 — SADE) =====
-  // v35.8'de bölümler birleşti; kullanıcı "çok karmaşık görünüyor" dedi.
-  // Sadeleştirme: 4 KPI kutusu → tek özet satırı; konu başına TEK başlık
-  // satırı + iki ince bar (hafıza/BKT) + en fazla birincil aksiyon.
+  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (v39 — KONU BAŞINA AYRI BENTO KART) =====
+  // Kullanıcı (v39): "hafıza gücünde bar konu ayrı bento grid kart olsun",
+  // "yeterlilik sadece yüzde olarak yaz", "sadece hafıza için yüzde çubuğu kullan",
+  // "neden iki tane flashcard düğmesi var", "neden hem flashcard hem 5 soru orda".
+  // Yapılan: her konu TEK büyük kartın satırı değil, kendi bento kartı;
+  // yalnız HAFIZA için çubuk var, YETERLİLİK sadece "%N" metni; konu kartında
+  // TEK flashcard düğmesi var ve 5 soruluk test düğmeleri buradan KALDIRILDI
+  // (5 soru = Bilgi Bankası konu kartı + Günlük Görevler satırı).
   const bktDurumlar = (window.AnalizBKT && typeof window.AnalizBKT.konuDurumlari === "function")
     ? window.AnalizBKT.konuDurumlari() : {};
   const bktAnahtar = Object.keys(bktDurumlar);
@@ -3554,81 +3597,76 @@ function renderTracking(container) {
     const mem = ms.rows.find(r => r.key === k) || null;
     return { key: k, lesson: splitKey(k).lesson, topic: splitKey(k).topic, mem: mem, bkt: bktDurumlar[k] || null };
   }).sort((a, b) => {
-    // v37 — KULLANICI: "derse göre ayırman gerek yoktu, sadece her konunun
-    // satırını ayrı kart olarak yap." Ders grubu/ayracı kaldırıldı;
-    // tek sıra ölçütü: en zayıf hafıza önce (yeterliliği olmayanlar sonda).
     const pa = a.mem ? a.mem.pct : 101, pb = b.mem ? b.mem.pct : 101;
     return pa - pb;
   });
   const onayliSay = bktAnahtar.filter(k => bktDurumlar[k].onayli).length;
+  hafizaKartToplam = satirlar.length;
 
-  html += '<div class="bento-card" id="bkt-birlesik-kart" style="margin-top:16px;"><div class="flex items-center justify-between" style="margin-bottom:2px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
+  html += '<div class="bento-card" id="hafiza-baslik-kart" style="margin-top:16px;">';
+  html += '<div class="flex items-center justify-between" style="margin-bottom:2px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
   html += '<span class="text-xs text-muted tabular">' + satirlar.length + " konu · " + ms.waiting + " tekrar bugün · ort. hafıza %" + ms.avg + (onayliSay ? " · " + onayliSay + " onaylı" : "") + "</span></div>";
-  html += '<div class="text-xs text-muted" style="margin:0 0 10px;">Her konu kendi kartında: hafıza gücü ve BKT yeterliliği iki ince çubukla. Hafıza düşükse kart/tekrar, yeterlilik düşükse Kısa Kontrol önerilir.</div>';
+  html += '<div class="text-xs text-muted" style="margin:0;">Her konu kendi kartında. Çubuk yalnız hafıza gücü içindir; yeterlilik yüzde olarak yazılır. Kartlar tekrar içindir; 5 soruluk test Bilgi Bankası konu sayfasında ve Günlük Görevler listesindedir.</div>';
+  html += "</div>";
+
   if (satirlar.length) {
+    html += '<div class="konu-grid" style="margin-top:12px;">';
     html += satirlar.slice(0, memoryLimit).map(sat => {
       const r = sat.mem;
       const b = sat.bkt;
-      // ---- FLASHCARD: sayı ve zorunluluk ----
       const kartBilgi = kartDurumHizli(sat.key);
       const kartVar = kartBilgi.sayi > 0;
       const kartTamam = kartBilgi.tamam;
       const pct = r ? r.pct : null;
       const durum = b ? b.durum : "Veri yetersiz";
-      const yeter = b && b.yeterlilik !== null ? b.yeterlilik : null;
-      const kisaKapali = !!(b && b.kisaKontrol && b.kisaKontrol.acik === false);
+      const yeter = b && b.yeterlilik !== null && b.yeterlilik !== undefined ? b.yeterlilik : null;
       const nokta = pct !== null && pct < MEMORY_CRITICAL ? "var(--semantic-error)"
         : (r && r.due) ? "var(--semantic-warning)"
           : (b && b.onayli) ? "var(--semantic-success)" : "var(--brand-blue)";
-      // tek birincil aksiyon
-      let ana = "";
-      if (kartVar && !kartTamam && r) {
-        ana = '<button class="btn btn-sm btn-primary" data-act="kartBasla" data-topic="' + attr(sat.key) + '">' + icon("layers", 13) + " Kartları Bitir (" + kartBilgi.sayi + ")</button>";
-      } else if (r) {
-        if (pct < MEMORY_CRITICAL) ana = '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("flame", 13) + " ACİL TEKRAR</button>";
-        else if (r.due) ana = '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>";
-        else if (pct >= 90) ana = '<button class="btn btn-sm btn-success" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>";
-        else ana = '<button class="btn btn-sm btn-primary" data-act="earlyReview" data-topic="' + attr(r.key) + '">' + icon("fast-forward", 13) + " Erken Tekrar</button>";
+
+      // ---- TEK flashcard düğmesi (eskiden ana + ikincil iki tane çiziliyordu) ----
+      let kartDugme = "";
+      if (kartVar) {
+        kartDugme = '<button class="btn btn-sm ' + (kartTamam ? "btn-ghost" : "btn-primary") + '" data-act="kartBasla" data-topic="' + attr(sat.key) + '" style="min-height:36px;">' +
+          icon("layers", 13) + " Kart · " + kartBilgi.sayi + (kartTamam ? " ✓" : "") + "</button>";
       }
-      let ikincil = "";
-      if (r && kartVar) ikincil += '<button type="button" class="btn btn-sm btn-ghost" data-act="kartBasla" data-topic="' + attr(r.key) + '" title="Tekrar kartları (' + kartBilgi.sayi + ' kart)">' + icon("layers", 13) + " Kart · " + kartBilgi.sayi + (kartTamam ? " ✓" : "") + "</button>";
-      // v38 — 3. GÜN ÖĞRENME TESTİ (rapor §4.1: "Gün 3 → 5 soru").
-      // Bu düğme hiçbir yerde çıkmıyordu: kuyruğu dolduran çağrı ölüydü
-      // (bkz. bkt-engine queueLearningTests) ve bu satırda düğmesi yoktu.
-      // Artık motor "zamanı geldi" dediğinde burada görünür, test bitince
-      // kuyruk kaydı completed olur ve düğme kendiliğinden kalkar.
-      if (b && b.poolId && b.ogrenmeTesti) {
-        ikincil += '<button type="button" class="btn btn-sm btn-primary bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="learning">' + icon("clipboard-list", 13) + " Öğrenme Testi · " + (window.AnalizBKT && window.AnalizBKT.MINI_SORU || 5) + "</button>";
+      // ---- tekrar aksiyonu (kart yoksa birincil olur) ----
+      let tekrarDugme = "";
+      if (r) {
+        if (pct < MEMORY_CRITICAL) tekrarDugme = '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:36px;">' + icon("flame", 13) + " ACİL TEKRAR</button>";
+        else if (r.due) tekrarDugme = '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:36px;">' + icon("check", 13) + " Tekrar Ettim</button>";
+        else tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="earlyReview" data-topic="' + attr(r.key) + '" style="min-height:36px;">' + icon("fast-forward", 13) + " Erken Tekrar</button>";
       }
-      if (b && b.poolId && b.precheck && !kisaKapali) {
-        ikincil += '<button type="button" class="btn btn-sm bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="precheck">' + icon("clipboard-check", 13) + " Kısa Kontrol · " + (window.AnalizBKT && window.AnalizBKT.MINI_SORU || 5) + "</button>";
-      }
-      if (r) ikincil += '<button class="btn btn-sm btn-ghost" data-act="resetTopic" data-topic="' + attr(r.key) + '" style="color:var(--semantic-error);" title="Baştan başla">' + icon("rotate-ccw", 12) + "</button>";
-      // ---- SATIRLAR: etiket | bar | değer (mobilde taşmaz) ----
+
+      // ---- çubuk YALNIZ hafıza; yeterlilik sadece yüzde metni ----
       let metre = "";
-      if (pct !== null) metre += '<div class="konu-metre"><span class="konu-metre-etiket">Hafıza</span><span class="konu-metre-bar"><span style="width:' + pct + "%;background:" + memoryColor(pct) + ';"></span></span><b class="konu-metre-deger" style="color:' + memoryColor(pct) + ';">%' + pct + "</b></div>";
-      if (yeter !== null) metre += '<div class="konu-metre"><span class="konu-metre-etiket">Yeterlilik</span><span class="konu-metre-bar"><span style="width:' + yeter + '%;background:var(--brand-blue);"></span></span><b class="konu-metre-deger" style="color:var(--brand-blue);">%' + yeter + "</b></div>";
+      if (pct !== null) {
+        metre += '<div class="konu-metre" style="grid-template-columns:52px minmax(0,1fr) 42px;"><span class="konu-metre-etiket">Hafıza</span><span class="konu-metre-bar"><span style="width:' + pct + "%;background:" + memoryColor(pct) + ';"></span></span><b class="konu-metre-deger" style="color:' + memoryColor(pct) + ';">%' + pct + "</b></div>";
+      } else {
+        metre += '<div class="konu-metre" style="grid-template-columns:52px minmax(0,1fr) 42px;"><span class="konu-metre-etiket">Hafıza</span><span class="konu-metre-bar"><span style="width:0%;"></span></span><b class="konu-metre-deger" style="color:var(--text-muted);">—</b></div>';
+      }
+      const yeterMetin = '<span class="konu-yeter">Yeterlilik: <b>' + (yeter !== null ? "%" + yeter : "—") + "</b></span>";
+
       let alt = esc(sat.lesson);
-      if (r) alt += " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki " + fmtDate(r.next.date) : " · tekrar gerekmiyor");
-      if (kartVar) alt += kartTamam ? " · kart ✓" : " · kart zorunlu (" + kartBilgi.sayi + ")";
-      if (b && !b.poolId) alt += " · soru havuzu eşlenmedi";
+      if (r) alt += " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki " + fmtDate(r.next.date) : "");
+      if (kartVar) alt += kartTamam ? " · kart ✓" : " · kart zorunlu";
       return '<div class="konu-kart" data-konu="' + attr(sat.key) + '">' +
-        '<div class="konu-kart-ust"><span class="konu-kart-ad"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + nokta + ';margin-right:6px;vertical-align:middle;" title="' + esc(durum) + '"></i>' + esc(sat.topic) + '</span>' +
+        '<div class="konu-kart-ust"><span class="konu-kart-ad"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + nokta + ';margin-right:6px;vertical-align:middle;" title="' + esc(durum) + '"></i>' + esc(sat.topic) + "</span>" +
         '<span class="konu-durum" style="color:' + nokta + ';">' + esc(durum) + "</span></div>" +
         metre +
-        '<div class="konu-alt">' + alt + "</div>" +
-        (ana || ikincil ? '<div class="konu-eylem">' + ana + ikincil + "</div>" : "") +
+        '<div class="flex items-center justify-between" style="gap:8px;margin-top:6px;flex-wrap:wrap;">' + yeterMetin + '<span class="text-xs text-muted" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + alt + "</span></div>" +
+        ((kartDugme || tekrarDugme) ? '<div class="konu-eylem" style="margin-top:9px;">' + kartDugme + tekrarDugme + "</div>" : "") +
         "</div>";
     }).join("");
+    html += "</div>";
     if (satirlar.length > memoryLimit) {
-      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-down", 14) + " Daha Fazla Göster (" + (satirlar.length - memoryLimit) + " konu daha)</button>";
+      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:10px;">' + icon("chevron-down", 14) + " Daha Fazla Göster (" + (satirlar.length - memoryLimit) + " konu daha)</button>";
     } else if (memoryLimit > 6) {
-      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
+      html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:10px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
     }
   } else {
-    html += '<div class="empty-state">' + icon("brain", 34) + "<div>Bilgi Bankası'nda konu tamamlandıkça ya da kısa kontroller çözüldükçe durum ve hafıza barları burada belirir.</div></div>";
+    html += '<div class="bento-card" style="margin-top:12px;"><div class="empty-state">' + icon("brain", 34) + "<div>Bilgi Bankasında konu tamamlandıkça ya da kısa kontroller çözüldükçe hafıza kartları burada belirir.</div></div></div>";
   }
-  html += "</div>";  html += "</div>";
 
   container.innerHTML = html;
   if (window.lucide && lucide.createIcons) lucide.createIcons();
@@ -4440,23 +4478,23 @@ function renderAgendaHTML(events) {
     d.setDate(d.getDate() + i);
     gunler.push(toDayStr(d));
   }
-  const TUR = { tek: "Konu tekrarı", hazirlik: "Sınava hazırlık", sinav: "Sınav", deneme: "Deneme sınavı", kisa: "Kısa kontrol", kart: "Tekrar kartları" };
-  // Sınav olayları ders bazlı farklı renk alır (görseldeki gibi): aynı gün
-  // iki farklı sınav aynı renkte görünmez.
-  const SINAV_RENK = ["#4F46E5", "#0F766E", "#B91C1C", "#7C3AED", "#0369A1", "#A16207"];
+  const TUR = { tek: "Konu tekrarı", hazirlik: "Sınava hazırlık", sinav: "Sınav", deneme: "Deneme sınavı", kisa: "Kısa kontrol", kart: "Tekrar kartları", ders: "Ders saati" };
+  // v39 — RENK PALETİ (kullanıcı: "renkler çok kötü"): her olay türü kendi
+  // DOLU rengini korur ama doygun koyu tonlar yerine açık zemin + koyu metin
+  // kullanılır; soldaki 4px şerit türün asıl rengidir. Tür ayrımı net kalır,
+  // ekran karmaşası biter. Koyu temada da okunur (sabit açık zemin).
+  const PALET = {
+    tek:      { bg: "#EEF2FF", fg: "#3730A3", serit: "#6366F1" }, // konu tekrarı — indigo
+    hazirlik: { bg: "#FFF7E6", fg: "#8A4B00", serit: "#F59E0B" }, // sınava hazırlık — amber
+    sinav:    { bg: "#FDECEC", fg: "#991B1B", serit: "#DC2626" }, // sınav — kırmızı
+    deneme:   { bg: "#F3E8FF", fg: "#6B21A8", serit: "#9333EA" }, // deneme sınavı — mor
+    kisa:     { bg: "#E6F6F8", fg: "#0F5257", serit: "#0891B2" }, // kısa kontrol — turkuaz
+    kart:     { bg: "#E9F7EF", fg: "#14532D", serit: "#16A34A" }, // tekrar kartları — yeşil
+    ders:     { bg: "#EEF1F4", fg: "#334155", serit: "#64748B" }  // ders saati — gri
+  };
   function renk(e) {
-    if (e.tip === "tek") return "#6D28D9";
-    if (e.tip === "hazirlik") return "#D97706";
-    if (e.tip === "deneme") return "#1E293B";
-    if (e.tip === "kart") return "#0E7490";
-    if (e.tip === "kisa") return "#2563EB";
-    if (e.tip === "sinav") {
-      const ad = String(e.ders || e.etiket || "");
-      let h = 0;
-      for (let i = 0; i < ad.length; i++) h = (h * 31 + ad.charCodeAt(i)) % 997;
-      return SINAV_RENK[h % SINAV_RENK.length];
-    }
-    return "#475569";
+    const p = PALET[e.tip] || PALET.ders;
+    return "background:" + p.bg + ";color:" + p.fg + ";border-color:" + p.bg + ";border-left-color:" + p.serit + ";";
   }
   function gunBasligi(ds) {
     const d = parseDay(ds);
@@ -4469,26 +4507,30 @@ function renderAgendaHTML(events) {
     if (ds === yarin) return "Yarın · " + etiket;
     return etiket;
   }
+  // v39 — KULLANICI: "ajanda 5 görevi göstersin; daha fazla göster ekleme,
+  // kendi içinde kaydırılabilir olsun." İlk 5 görev görünür yükseklikte,
+  // kalanı AYNI kutunun içinde kaydırılır. "Daha fazla göster" düğmesi YOK.
   let h = '<div class="ajanda"><div class="ajanda-baslik">' + icon("list", 15, "vertical-align:-3px;margin-right:6px;color:var(--brand-blue);") + " AJANDA" +
-    '<span class="text-xs text-muted" style="font-weight:400;margin-left:6px;">önümüzdeki 45 gün</span></div>';
-  let gunSay = 0, olaySay = 0;
+    '<span class="text-xs text-muted" style="font-weight:400;margin-left:6px;">ilk 5 görev · kaydır</span></div>';
+  let gunSay = 0, olaySay = 0, ic = "";
   gunler.forEach(ds => {
     const evs = (events[ds] || []).slice().sort((a, b) => (a.sira == null ? 9 : a.sira) - (b.sira == null ? 9 : b.sira));
-    if (!evs.length || olaySay >= 80) return;
+    if (!evs.length || olaySay >= 120) return;
     gunSay++;
-    h += '<div class="aj-gun">' + esc(gunBasligi(ds)) + "</div>";
+    ic += '<div class="aj-gun">' + esc(gunBasligi(ds)) + "</div>";
     evs.forEach(e => {
-      if (olaySay >= 80) return;
+      if (olaySay >= 120) return;
       olaySay++;
       const saat = e.saat ? '<span class="aj-saat">' + esc(e.saat) + "</span>" : "";
       const turAdi = TUR[e.tip] || "";
-      h += '<div class="aj-event" data-act="calDay" data-date="' + attr(ds) + '" style="background:' + renk(e) + ';">' +
+      ic += '<div class="aj-event" data-act="calDay" data-date="' + attr(ds) + '" style="' + renk(e) + '">' +
         saat +
         '<span class="aj-ad">' + esc(e.etiket || turAdi) + "</span>" +
         '<span class="aj-tur">' + esc(turAdi) + "</span></div>";
     });
   });
   if (!gunSay) h += '<div class="empty-state" style="padding:14px;">' + icon("calendar-plus", 26) + "<div>Önümüzdeki 45 günde planlı tekrar/sınav yok. Konu tamamlayınca tekrar günleri burada belirir.</div></div>";
+  else h += '<div class="aj-kaydir">' + ic + "</div>";
   h += "</div>";
   return h;
 }
@@ -4792,14 +4834,18 @@ function renderKnowledge(container) {
       } else if (bktKayit.onay_durumu !== "ONAYLANDI") {
         // v35.7 — düğmenin NEDEN çıkmadığı yazılır; sessiz kalmak yok.
         // Bilerek başka konunun havuzu bağlanmaz (kullanıcı isteği).
-        html += '<div class="bento-card" style="margin-bottom:16px;"><div class="flex items-center gap-2" style="margin-bottom:6px;">' + icon("info", 18, "color:var(--semantic-warning);") + '<b style="font-size:14px;">Bu konu için soru havuzu yok</b></div>' +
-          '<p class="text-xs text-muted" style="margin:0;line-height:1.5;">Bu konuyla <b>birebir eşleşen</b> soru havuzu bulunamadı. Başka konunun soruları gösterilmez. Okulizyon kazanımları eşlendikçe havuz otomatik bağlanır (Profil → Okulizyon → Konu Eşlemesi).</p></div>';
+        // v39 — kullanıcı: "neden konuların soru havuzu yok sorunu geliyor".
+        // Uyarı kartı yerine tek satır kısa not: bu gerçek bir veri eksiği,
+        // hata değil. Başka konunun sorusu yine gösterilmez.
+        html += '<div class="bento-card" style="margin-bottom:16px;padding:11px 13px;"><div class="text-xs text-muted" style="line-height:1.5;display:flex;gap:8px;align-items:flex-start;">' + icon("info", 15, "flex-shrink:0;color:var(--semantic-warning);margin-top:1px;") + '<span>Bu konunun <b>soru havuzu bu sınıf için henüz eklenmemiş</b>. Başka konunun sorusu gösterilmez; havuz eklenince test kendiliğinden açılır.</span></div></div>';
       }
       html += '<div class="bento-card" style="margin-bottom:16px;">' +
         '<div class="flex items-center gap-2" style="margin-bottom:10px;">' + icon("check-circle-2", 22, "color:var(--semantic-success);") +
         '<b style="font-size:14px;">Tamamland' + APRX + ' — hafıza takibinde</b></div>' +
         '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div class="kb-hafiza"><span class="text-xs text-muted">Hafıza</span><div class="progress" style="flex:1;"><div style="width:' + pct + "%;background:" + memoryColor(pct) + ';"></div></div><b class="tabular" style="color:' + memoryColor(pct) + '; font-size:16px;">%' + pct + "</b></div>" +
-        '<div class="kb-hafiza"><span class="text-xs text-muted">Yeterlilik</span>' + (bktPercent === null ? '<span class="text-xs text-muted">Birkaç soru daha çöz, seviyen netleşsin</span>' : '<div class="progress" style="flex:1;"><div style="width:' + bktPercent + '%;background:var(--brand-blue);"></div></div><b class="tabular" style="color:var(--brand-blue);font-size:16px;">%' + bktPercent + '%</b>') + '</div></div>' +
+        // v39 — kullanıcı: "yeterlilik sadece yüzde olarak yaz" + "sadece hafıza
+        // için yüzde çubuğu kullan". Yeterlilik artık ÇUBUKSUZ, sadece %.
+        '<div class="kb-hafiza"><span class="text-xs text-muted">Yeterlilik</span>' + (bktPercent === null ? '<span class="text-xs text-muted">Birkaç soru daha çöz, seviyen netleşsin</span>' : '<b class="tabular" style="color:var(--brand-blue);font-size:16px;margin-left:auto;">%' + bktPercent + '</b>') + '</div></div>' +
         '<div class="kb-satir tabular"><span>Tekrar: <b>' + (mem.reviewCount || 0) + '</b></span><span>Tamamlanma: <b>' + fmtDate(mem.completedAt) + "</b></span><span>Son Tekrar: <b>" + (mem.lastReview ? fmtDate(mem.lastReview) : "-") + "</b></span><span>Sıradaki: <b>" + (nr ? fmtDate(nr.date) + " (" + nr.day + ". gün)" : "-") + "</b></span></div>" +
         '<div class="flex gap-2" style="margin-top:12px;flex-wrap:wrap;">' +
         // v35.9 — Kısa Kontrol düğmesi BURADAN KALDIRILDI: aynı ekranda iki

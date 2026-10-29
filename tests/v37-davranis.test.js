@@ -96,13 +96,18 @@ function calisma(state, bugun) {
     ok("bekleyen kart kisaDue koşuluna bağlı", /kisaDue\s*&&\s*!kisaKapali/.test(blok));
     ok("kisaDue = motorun precheck'i", /const kisaDue = !!\(kisaDurum && kisaDurum\.precheck\)/.test(blok));
   }
-  // 1c) Konu Takibi satırında düğme yalnız precheck + dinlenme bitti ise
+  // 1c) v39 — 5 soruluk test KONU TAKİBİ KARTINDAN kaldırıldı (kullanıcı:
+  // "neden hem flashcard hem 5 soru orda"). Tek yeri: Günlük Görevler satırı
+  // (doğrudan testi açar) + Bilgi Bankası konu sayfası.
   {
-    const satir = HTML.slice(HTML.indexOf("if (b && b.poolId && b.precheck && !kisaKapali)"),
-      HTML.indexOf("if (b && b.poolId && b.precheck && !kisaKapali)") + 320);
-    ok("Kısa Kontrol düğmesi precheck kapısında", satir.indexOf("data-bkt-test") > 0);
-    ok("precheck yoksa düğme çizilmez (tek koşul)", (HTML.match(/data-bkt-mode="precheck"/g) || []).length <= 3,
-      String((HTML.match(/data-bkt-mode="precheck"/g) || []).length));
+    const bas = HTML.indexOf("  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (v39");
+    const son = HTML.indexOf("  container.innerHTML = html;", bas);
+    const kart = HTML.slice(bas, son);
+    ok("Konu Takibi hafıza kartında 5 soru düğmesi YOK", kart.indexOf("data-bkt-test") < 0);
+    ok("Günlük Görevlerde 5 soru görevi doğrudan testi açıyor",
+      /aksiyon: "bktTest"[\s\S]{0,200}hedefMod: "precheck"/.test(HTML));
+    ok("Öğrenme Testi (3. gün) ayrı görev", /hedefMod: "learning"/.test(HTML));
+    ok("görev satırı data-bkt-test üretiyor", /g\.aksiyon === "bktTest"[\s\S]{0,300}data-bkt-test=/.test(HTML));
   }
   // 1d) test bittiğinde sunucu tarafı durumu: precheck_due ilerliyor
   {
@@ -115,8 +120,10 @@ function calisma(state, bugun) {
   // ================= 2) ACİL ÇALIŞILACAKLAR: 5 =================
   console.log("\n== 2) Acil Çalışılacaklar: ilk 5 ==\n");
   ok("varsayılan sınır 5", /let urgentLimit = 5;/.test(HTML));
-  ok("her basışta +5 açılır", /urgentLimit = \(urgentLimit >= toplam && urgentLimit > 5\) \? 5 : urgentLimit \+ 5;/.test(HTML));
-  ok("kapatma 5'e döner", /urgentLimit > 5\) \{/.test(HTML));
+  // v39 — kullanıcı: "daha fazla göster yanlış çalışıyor". Artık sırayla
+  // büyür (+5), liste bitince kapanır; toplam gerçek liste uzunluğundan gelir.
+  ok("her basışta +5 açılır", /urgentLimit = \(urgentLimit >= toplam\) \? 5 : Math\.min\(toplam, urgentLimit \+ 5\);/.test(HTML));
+  ok("hafıza kartlarında toplam doğru sayılıyor", /let hafizaKartToplam = 0;/.test(HTML) && /hafizaKartToplam = satirlar\.length;/.test(HTML));
 
   // ================= 3) AJANDA =================
   console.log("\n== 3) Ajanda: Google Takvim görünümü, ayrı renkler ==\n");
@@ -146,12 +153,20 @@ function calisma(state, bugun) {
     const renkler = [...h.matchAll(/class="aj-event"[^>]*background:(#[0-9A-Fa-f]{6})/g)].map(m => m[1].toUpperCase());
     ok("en az 4 renkli olay çizildi", renkler.length >= 4, String(renkler.length));
     ok("tekrar rengi tek (mor)", new Set(renkler).size >= 3, renkler.join(","));
-    ok("aynı gün iki farklı sınav FARKLI renkte", (() => {
-      const blok = h.split('<div class="aj-gun">5 Kasım')[1] || "";
-      const r1 = (blok.match(/aj-event"[^>]*background:(#[0-9A-Fa-f]{6})[^>]*>[\s\S]{0,200}?Sınav: Matematik/) || [])[1];
-      const r2 = (blok.match(/aj-event"[^>]*background:(#[0-9A-Fa-f]{6})[^>]*>[\s\S]{0,200}?Sınav: S\. Peygamberimizin Hayatı/) || [])[1];
-      return !!r1 && !!r2 && r1.toUpperCase() !== r2.toUpperCase();
-    })(), "iki sınav aynı renk olmamalı");
+    // v39 — kullanıcı: "renkler çok kötü" + "her olay türü kendi dolu rengiyle".
+    // Renk artık TÜR bazlı: sınav bir renk, tekrar başka, hazırlık başka.
+    // Aynı türdeki iki sınav aynı rengi paylaşır (Google Takvim'de de böyle).
+    {
+      const sinavR = (h.match(/aj-event"[^>]*background:(#[0-9A-Fa-f]{6})[^>]*>[\s\S]{0,120}?Sınav: Matematik/) || [])[1];
+      const tekR = (h.match(/aj-event"[^>]*background:(#[0-9A-Fa-f]{6})[^>]*>[\s\S]{0,160}?Konu tekrarı/) || [])[1];
+      const hazR = (h.match(/aj-event"[^>]*background:(#[0-9A-Fa-f]{6})[^>]*>[\s\S]{0,160}?Sınava hazırlık/) || [])[1];
+      ok("sınav · tekrar · hazırlık AYRI dolgu renginde",
+        !!sinavR && !!tekR && !!hazR && new Set([sinavR.toUpperCase(), tekR.toUpperCase(), hazR.toUpperCase()]).size === 3,
+        [sinavR, tekR, hazR].join(","));
+      ok("solda tür rengi şeridi var", /border-left-color:#[0-9A-Fa-f]{6}/.test(h));
+      ok("ajanda kendi içinde kaydırılıyor", h.indexOf('class="aj-kaydir"') > 0);
+      ok("\"Daha fazla göster\" düğmesi ajandada YOK", h.indexOf("moreAgenda") < 0);
+    }
     // Google Takvim ajandası gibi: yalnız OLAYI OLAN günler başlık alır,
     // geçmiş gün gösterilmez, sıra ileri doğrudur.
     ok("ilk başlık bugünden sonraki ilk olay günü", /aj-gun">1 Kasım Paz/.test(h), (h.match(/aj-gun">[^<]*/) || [""])[0]);

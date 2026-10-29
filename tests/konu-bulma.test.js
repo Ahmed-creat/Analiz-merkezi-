@@ -128,7 +128,15 @@ ok("konu-anahtar.js index.html'de yükleniyor", HTML.indexOf('<script src="konu-
 // havuzuna düşüyordu → "başka konuların soruları geliyor" şikâyeti.
 ok("motor TEK dosyada (index.html'de ikinci kopya yok)", HTML.indexOf("window.AnalizBKT =") < 0 && /window\.AnalizBKT\s*=/.test(ENGINE));
 ok("havuz eşleme kesin fonksiyonu var", ENGINE.indexOf("function havuzEsle(topicKey, havuzlar)") > 0);
-ok("benzerlik/tahmin eşlemesi KULLANILMIYOR", !/HB\.bul/.test(ENGINE) && !/__okzKonuPoolEsle/.test(ENGINE));
+// v39 — KURAL DEĞİŞTİ (kullanıcı: "neden konuların soru havuzu yok sorunu
+// geliyor"): havuz manifestinde çoğu havuzun `baslik` alanı yok ve bir havuz
+// birden çok alt konuyu kapsıyor. Bu yüzden HB (numarasız başlık + etiket)
+// artık KULLANILIYOR; ama yalnız (a) TEK eşleşme varsa ve (b) havuzun
+// `sinif` etiketi öğrencinin sınıfıyla AYNIYSA. Böylece başka sınıfın/konunun
+// sorusu gösterilmez. Tahminî eşleme (__okzKonuPoolEsle) hâlâ yasak.
+ok("HB eşlemesi sınıf kilidiyle kullanılıyor", /HB\.bul\(ham, uygun\)/.test(ENGINE) && /String\(h\.sinif \|\| ""\) === sinif/.test(ENGINE));
+ok("tahminî eşleme (__okzKonuPoolEsle) KULLANILMIYOR", !/__okzKonuPoolEsle/.test(ENGINE));
+ok("elle ek eşleme tablosu var (EK_ESLEME)", ENGINE.indexOf("EK_ESLEME") > 0);
 ok('"undefined" havuz kimliği geçersiz sayılıyor', ENGINE.indexOf('ham === "undefined"') > 0);
 ok("openMiniTest havuzu havuzuBul ile buluyor", /function openMiniTest\(topicKey, poolId, options\)[\s\S]{0,900}havuzuBul\(topicKey, poolId\)/.test(ENGINE));
 ok("havuzuBul resolvePoolId'yi kullanıyor", /function havuzuBul\(topicKey, poolId\)[\s\S]{0,900}resolvePoolId\(topicKey\)/.test(ENGINE));
@@ -170,8 +178,8 @@ ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v38", APP.indexOf('const PWA_SURUM = "v38-bildirim-kart"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v38-bildirim-kart") > 0);
+ok("PWA sürümü v39", APP.indexOf('const PWA_SURUM = "v39-ajanda-hafiza"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v39-ajanda-hafiza") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

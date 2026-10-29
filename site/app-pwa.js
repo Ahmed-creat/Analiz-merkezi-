@@ -1,4 +1,4 @@
-const PWA_SURUM = "v38-bildirim-kart";
+const PWA_SURUM = "v39-ajanda-hafiza";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -138,6 +138,7 @@ function initAuthUI() {
     else if (a === "pwaAuthReset") resetPassword();
     else if (a === "pwaAuthGoogle") googleLogin();
     else if (a === "pushTeshis") pushTeshisYaz();
+    else if (a === "pushTestGonder") pushTestGonder();
   });
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
@@ -157,6 +158,26 @@ function pushGun(iso) {
   const p = t.split("-");
   return p.length === 3 ? p[2] + "." + p[1] + "." + p[0] : t;
 }
+// v39 — TEK DOKUNUŞ ÖLÇÜM: sunucudan bu cihaza test push'u iste.
+// Dönen kod tek başına anlamlıdır:
+//   201 = push servisi kabul etti (sorun cihaz/izin tarafında)
+//   403 = VAPID anahtar uyuşmazlığı · 404/410 = abonelik ölü · 401 = oturum yok
+async function pushTestGonder() {
+  const kutu = document.getElementById("pwa-push-test-sonuc");
+  if (kutu) kutu.innerHTML = "Gönderiliyor…";
+  try {
+    if (!window.AmPush || !window.AmPush.testEt) { if (kutu) kutu.textContent = "Bildirim modülü yüklenmedi."; return; }
+    const r = await window.AmPush.testEt();
+    const sonuc = (r && (r.sonuc || r.sonuclar)) || [];
+    const kod = sonuc.length ? sonuc.map(x => x.kod).join(", ") : (r && r.hata ? "hata" : "? ");
+    let metin = "Sunucu yanıtı: " + (r && r.hata ? "✗ " + r.hata : "kod " + kod);
+    if (r && r.gonderilen) metin += " · " + r.gonderilen + " cihaza gönderildi";
+    if (kutu) kutu.innerHTML = escHtml(metin) + "<div style=\"margin-top:4px;opacity:.75;\">Kod 201 ise push servisi kabul etti; bildirim görünmüyorsa telefonun Chrome bildirim izni/pil kısıtı kapalıdır. 403 ise anahtar uyuşmuyor, 404/410 ise abonelik ölü — sayfayı yenile, abonelik yeniden kurulur.</div>";
+  } catch (e) {
+    if (kutu) kutu.textContent = "Gönderilemedi: " + String(e).slice(0, 90);
+  }
+}
+
 async function pushTeshisYaz() {
   const kutu = document.getElementById("pwa-push-durum");
   if (!kutu) return;
@@ -385,7 +406,13 @@ function renderProfileModal() {
   // sunucudaki VAPID anahtarı tarayıcıdakiyle aynı mı. Kişisel veri yok.
   html += '<div style="border:1px dashed rgba(0,0,0,0.18);border-radius:14px;padding:12px;font-size:12px;opacity:0.85;margin-top:10px;">';
   html += '<b>Bildirim durumu</b><div id="pwa-push-durum" style="margin-top:6px;line-height:1.6;">kontrol ediliyor…</div>';
-  html += '<button type="button" data-act="pushTeshis" style="margin-top:8px;background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Yeniden kontrol et</button>';
+  html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;">';
+  html += '<button type="button" data-act="pushTeshis" style="background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Yeniden kontrol et</button>';
+  // v39 — "bildirim gelmedi" için tek dokunuşluk ölçüm: sunucu gerçekten
+  // gönderdi mi (201/404/410) ve cihaz aldı mı? Sonuç burada yazılır.
+  html += '<button type="button" data-act="pushTestGonder" style="background:#2563EB;color:#fff;border:0;border-radius:9px;padding:6px 10px;font-size:11.5px;font-weight:700;cursor:pointer;">Test bildirimi gönder</button>';
+  html += '</div>';
+  html += '<div id="pwa-push-test-sonuc" style="margin-top:6px;font-size:11.5px;line-height:1.5;"></div>';
   html += '</div>';
 
   html += '</div>';

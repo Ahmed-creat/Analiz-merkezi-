@@ -179,8 +179,11 @@ if (panelTracking) {
   ok("açıklama 0-100 ölçeğini söylüyor", h.indexOf("0–100") >= 0);
   ok("durum basamakları yazılı", h.indexOf("ONAYLANDI") >= 0);
   ok("yeterlilik yüzdesi basıldı", h.indexOf("Yeterlilik: <b>55%</b>") >= 0);
-  ok("soru havuzu eşlenmeyen konu için SEBEP yazıldı", h.indexOf("Soru havuzu eşlenmedi") >= 0);
-  ok("eşlenmeyen için eşleme yolu gösterildi", h.indexOf("Konu Eşlemesi") >= 0);
+  // v39 — kullanıcı: "neden konuların soru havuzu yok sorunu geliyor".
+  // Uyarı kartı yerine tek satır kısa not yazılır; yine sessiz kalınmaz ve
+  // başka konunun sorusunun gösterilmediği açıkça söylenir.
+  ok("soru havuzu eşlenmeyen konu için SEBEP yazıldı", h.indexOf("soru havuzu henüz eklenmemiş") >= 0);
+  ok("eşlenmeyen için başka konu sorusu gösterilmediği yazılı", h.indexOf("Başka konunun soruları gösterilmez") >= 0);
   ok("kısa kontrol düğmesi var (havuzu olan konu)", h.indexOf("Kısa Kontrol") >= 0);
 }
 

@@ -125,7 +125,11 @@ async function gonder(abone: any, mesaj: any) {
       "Content-Encoding": "aes128gcm",
       "Content-Type": "application/octet-stream",
       TTL: "86400",
-      Urgency: mesaj.kind === "review" ? "normal" : "low"
+      // v39 — KÖK NEDEN ('bildirim gelmedi'): test/tekil mesajlar
+      // Urgency:"low" ile gidiyordu. Android Doze modunda düşük öncelikli
+      // push ertelenir; FCM 201 döner, cihaz bildirimi SAATLER sonra
+      // gösterir ya da hiç göstermez. Test ve kritik mesajlar artık "high".
+      Urgency: (mesaj.kind === "daily" ? "normal" : "high")
     },
     body: govde
   });

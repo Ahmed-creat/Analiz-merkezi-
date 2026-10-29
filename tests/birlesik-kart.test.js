@@ -30,27 +30,31 @@ const hatalar = [];
 function ok(ad, kosul, ek) { if (kosul) { gecen++; return true; } kalan++; hatalar.push(ad + (ek ? " → " + ek : "")); return false; }
 
 // ---------- 1) Kartın HTML'ini gerçek kodla üret ----------
-const bas = HTML.indexOf("  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (TEK KART, v35.9 — SADE) =====");
-const son = HTML.indexOf('  html += "</div>";\n\n  container.innerHTML = html;', bas);
-ok("birleşik kart kodu bulundu", bas > 0 && son > bas);
-const blok = HTML.slice(bas, son + '  html += "</div>";'.length);
+// v39 — SÖZLEŞME DEĞİŞTİ. Kullanıcı: "hafıza gücünde bar konu ayrı bento grid
+// kart olsun", "yeterlilik sadece yüzde olarak yaz", "sadece hafıza için yüzde
+// çubuğu kullan", "neden iki tane flashcard düğmesi var", "neden hem flashcard
+// hem 5 soru orda". Bu yüzden test artık şunları kanıtlar:
+//   • her konu KENDİ bento kartında (konu-grid içinde konu-kart)
+//   • çubuk YALNIZ hafıza; yeterlilik sadece "%N" metni
+//   • konu kartında TEK flashcard düğmesi; 5 soru düğmesi YOK
+const bas = HTML.indexOf("  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (v39");
+const son = HTML.indexOf('  container.innerHTML = html;', bas);
+ok("hafıza bölümü kodu bulundu", bas > 0 && son > bas);
+let blok = HTML.slice(bas, son);
 
 const icon = (n) => "[" + n + "]";
 const esc = (x) => String(x == null ? "" : x);
 const attr = (x) => esc(x);
-const statBox = (t, v) => "<stat " + t + "=" + v + ">";
 const memoryColor = (p) => (p < 20 ? "#EF4444" : p < 40 ? "#F59E0B" : "#16A34A");
 const fmtDate = (d) => String(d);
 const splitKey = (k) => { const i = String(k).indexOf(" > "); return { lesson: String(k).slice(0, i), topic: String(k).slice(i + 3) }; };
-const idealReviewInterval = () => 3;
 const MEMORY_CRITICAL = 20, MEMORY_WARNING = 40;
+let hafizaKartToplam = 0;
 
-// v36 — kart artık gerçek `kartDurumHizli()` fonksiyonunu kullanıyor.
-// Metne bakmıyoruz: fonksiyon index.html'den çıkarılıp GERÇEKTEN çalıştırılıyor.
+// v36 — kart gerçek `kartDurumHizli()` fonksiyonunu kullanıyor.
 const kdhBas = HTML.indexOf("function kartDurumHizli");
 const kdhSon = HTML.indexOf("\n}", HTML.indexOf("return { sayi: sayi, tamam:", kdhBas)) + 2;
 ok("kartDurumHizli bulundu", kdhBas > 0 && kdhSon > kdhBas);
-// Fonksiyon `state` ve `todayStr()` kullanıyor → bağımlılıkları vererek üret.
 const kartDurumHizliUret = kdhBas > 0
   ? new Function("state", "todayStr", "return (" + HTML.slice(kdhBas, kdhSon) + ")")
   : () => (() => ({ sayi: 0, tamam: false }));
@@ -61,12 +65,12 @@ function kart(ms, bkt, limit, st) {
   const kdh = kartDurumHizliUret(durum, () => BUGUN);
   const kartDurumHizli = k => kdh(k);
   const window = { AnalizBKT: { konuDurumlari: () => bkt } };
-  const fn = new Function("html", "ms", "memoryLimit", "window", "icon", "esc", "attr", "statBox",
-    "memoryColor", "fmtDate", "splitKey", "idealReviewInterval", "MEMORY_CRITICAL", "MEMORY_WARNING",
-    "state", "todayStr", "kartDurumHizli",
-    "return (function(){\n" + blok + "\nreturn html;\n})();");
-  return fn("", ms, limit || 10, window, icon, esc, attr, statBox, memoryColor, fmtDate, splitKey,
-    idealReviewInterval, MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli);
+  const fn = new Function("html", "ms", "memoryLimit", "window", "icon", "esc", "attr",
+    "memoryColor", "fmtDate", "splitKey", "MEMORY_CRITICAL", "MEMORY_WARNING",
+    "state", "todayStr", "kartDurumHizli", "hafizaKartToplam",
+    "return (function(){\n" + blok + "\nreturn html; })();");
+  return fn("", ms, limit || 10, window, icon, esc, attr, memoryColor, fmtDate, splitKey,
+    MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli, hafizaKartToplam);
 }
 
 const MS = {
@@ -82,46 +86,27 @@ const BKT = {
 };
 const cikti = kart(MS, BKT);
 
-console.log("\n== 1) Tek kart, tek satır ==");
-ok("kart kimliği bkt-birlesik-kart", cikti.indexOf('id="bkt-birlesik-kart"') >= 0);
+console.log("\n== 1) Başlık + her konu kendi bento kartında ==");
+ok("başlık kartı var (hafiza-baslik-kart)", cikti.indexOf('id="hafiza-baslik-kart"') >= 0);
 ok("başlık: Öğrenme Durumu · Hafıza Gücü", cikti.indexOf("Öğrenme Durumu · Hafıza Gücü") >= 0);
-ok("ayrı 'Hafıza Gücü' kartı YOK", cikti.indexOf("> Hafıza Gücü</h3>") < 0);
+ok("konular bento ızgarasında", cikti.indexOf('class="konu-grid"') >= 0);
+ok("her konu ayrı konu-kart", (cikti.match(/class="konu-kart"/g) || []).length === 3,
+   String((cikti.match(/class="konu-kart"/g) || []).length));
 ok("aynı konu iki kez basılmıyor", (cikti.match(/konu-kart-ad[^>]*>.*?1\.1 Trigonometri/g) || []).length === 1);
-ok("BKT durumu satırın içinde", cikti.indexOf("Gelişiyor") >= 0);
-ok("yeterlilik barı (BKT)", cikti.indexOf("Yeterlilik</span>") >= 0);
-ok("hafıza barı (%12)", cikti.indexOf("%12") >= 0);
+ok("BKT durumu kartın içinde", cikti.indexOf("Gelişiyor") >= 0);
 
-console.log("\n== 2) Aksiyonlar korunuyor ==");
+console.log("\n== 2) Yalnız HAFIZA çubuğu, yeterlilik % metni ==");
+ok("hafıza çubuğu var (%12)", /konu-metre-etiket">Hafıza</.test(cikti) && cikti.indexOf("%12") >= 0);
+ok("yeterlilik ÇUBUĞU YOK", cikti.indexOf("konu-metre-etiket\">Yeterlilik<") < 0);
+ok("yeterlilik yüzde metni var (%62)", /Yeterlilik: <b>%62<\/b>/.test(cikti));
+ok("ikinci çubuk yok (tek konu-metre-bar / konu)", (cikti.match(/konu-metre-bar/g) || []).length === 3,
+   String((cikti.match(/konu-metre-bar/g) || []).length));
+
+console.log("\n== 3) 5 soru düğmesi konu kartında YOK ==");
+ok("5 soruluk test düğmesi konu kartında YOK", cikti.indexOf("data-bkt-test") < 0);
 ok("tekrar aksiyonu (reviewTopic)", cikti.indexOf('data-act="reviewTopic"') >= 0);
-ok("sıfırlama aksiyonu (resetTopic)", cikti.indexOf('data-act="resetTopic"') >= 0);
-ok("kısa kontrol düğmesi kartın içinde", cikti.indexOf('data-bkt-test="Matematik > 1.1 Trigonometri"') >= 0);
-ok("kısa kontrol havuzu doğru", cikti.indexOf('data-bkt-pool="mat_10_u01_k01"') >= 0);
 
-console.log("\n== 3) Yalnız BKT kaydı olan konu ==");
-ok("BKT-only konu listelendi", cikti.indexOf("2.2 Hücre") >= 0);
-ok("havuzsuz konuda dürüst uyarı", /soru havuzu eşlenmedi/i.test(cikti));
-
-console.log("\n== 3b) v37 — Kısa Kontrol düğmesi yalnız zamanı gelince ==");
-{
-  // precheck=false → motor "zamanı gelmedi" diyor → düğme HİÇ çizilmez
-  const bktYok = { "Matematik > 1.1 Trigonometri": Object.assign({}, BKT["Matematik > 1.1 Trigonometri"], { precheck: false, kisaKontrol: { acik: true, kalan: 0 } }) };
-  const c1 = kart(MS, bktYok, 10);
-  ok("zamanı gelmeyince Kısa Kontrol düğmesi YOK", c1.indexOf('data-bkt-test="Matematik > 1.1 Trigonometri"') < 0);
-  // precheck=true ama dinlenme sürüyor → yine çizilmez
-  const bktKapali = { "Matematik > 1.1 Trigonometri": Object.assign({}, BKT["Matematik > 1.1 Trigonometri"], { precheck: true, kisaKontrol: { acik: false, kalan: 2 } }) };
-  const c2 = kart(MS, bktKapali, 10);
-  ok("dinlenme sürerken düğme YOK", c2.indexOf('data-bkt-mode="precheck"') < 0);
-  // zamanı geldi + dinlenme bitti → düğme var
-  const c3 = kart(MS, BKT, 10);
-  ok("zamanı gelince düğme var", c3.indexOf('data-bkt-mode="precheck"') >= 0);
-}
-
-console.log("\n== 4) Ayrı BKT paneli çizilmiyor ==");
-ok("motor birleşik kartı tanıyor", ENGINE.indexOf('getElementById("bkt-birlesik-kart")') > 0);
-ok("eski panel temizleniyor", /bkt-birlesik-kart[\s\S]{0,220}bkt-learning-panel/.test(ENGINE));
-ok("konuDurum API'si dışa açık", ENGINE.indexOf("konuDurum: function (key)") > 0);
-
-console.log("\n== 5) v37 — her konu kendi kartı + flashcard zorunluluğu ==");
+console.log("\n== 3b) v37/v39 — kart bitince düğme durumu ==");
 {
   const st = {
     flashcards: { cards: [
@@ -132,27 +117,34 @@ console.log("\n== 5) v37 — her konu kendi kartı + flashcard zorunluluğu ==")
     tekrarKartlari: {}
   };
   const c = kart(MS, BKT, 10, st);
-  // v37 — KULLANICI: "derse göre ayırman gerek yoktu, sadece her konunun
-  // satırını ayrı kart olarak yap."
+  // v39 — eskiden aynı konuda İKİ flashcard düğmesi vardı
+  // ("Kartları Bitir (3)" + "Kart · 3"). Artık TEK düğme var.
+  ok("flashcard düğmesi TEK (data-act=kartBasla sayısı 1)",
+     (c.match(/data-act="kartBasla"/g) || []).length === 1,
+     String((c.match(/data-act="kartBasla"/g) || []).length));
+  ok("kart sayısı yazıldı (Kart · 3)", c.indexOf("Kart · 3") >= 0);
+  ok("kart zorunlu notu", c.indexOf("kart zorunlu") >= 0);
+  ok("5 soru düğmesi yine YOK", c.indexOf("data-bkt-test") < 0);
   ok("ders ayracı KALDIRILDI", c.indexOf("ders-ayrac") < 0);
-  ok("her konu kendi kartı (konu-kart)", (c.match(/class="konu-kart"/g) || []).length === 3,
-     String((c.match(/class="konu-kart"/g) || []).length));
-  ok("kart başlığı konu adı", /konu-kart-ad[^>]*>[\s\S]{0,300}1\.1 Trigonometri/.test(c));
-  ok("mobil için ızgara ölçü (konu-metre)", c.indexOf("konu-metre") >= 0);
-  ok("kart sayısı yazıldı (3)", c.indexOf("Kartları Bitir (3)") >= 0);
-  ok("kart zorunlu notu", c.indexOf("kart zorunlu (3)") >= 0);
-  // Kart bitmeden birincil aksiyon kart düğmesi; ikincil tekrar düğmesi kalır.
-  ok("kart düğmesi birincil (btn-primary)",
-     /class="btn btn-sm btn-primary" data-act="kartBasla"[^>]*>[\s\S]{0,80}Kartları Bitir/.test(c),
-     (c.match(/<button[^>]*kartBasla[^>]*>/) || [""])[0]);
-
   const st2 = JSON.parse(JSON.stringify(st));
   st2.tekrarKartlari["Matematik > 1.1 Trigonometri"] = { bildi: 3, bilemedi: 0, tamamlandi: BUGUN };
   const c2 = kart(MS, BKT, 10, st2);
   ok("tamamlanınca kart işareti ✓", c2.indexOf("Kart · 3 ✓") >= 0);
-  ok("tamamlanınca 'Kartları Bitir' kalkar", c2.indexOf("Kartları Bitir") < 0);
   ok("tamamlanınca tekrar düğmesi geri gelir", c2.indexOf('data-act="reviewTopic"') >= 0);
 }
+
+console.log("\n== 3c) Daha fazla göster sayacı ==");
+{
+  const cok = { rows: [] , waiting: 0, avg: 0, critical: 0 };
+  for (let i = 0; i < 9; i++) cok.rows.push({ key: "Matematik > K" + i, lesson: "Matematik", topic: "K" + i, pct: 50, reviews: 1, due: false, next: null });
+  const c = kart(cok, {}, 6);
+  ok("6 kart çizildi, 3 konu daha kaldı", c.indexOf("Daha Fazla Göster (3 konu daha)") >= 0);
+}
+
+console.log("\n== 4) Ayrı BKT paneli çizilmiyor ==");
+ok("motor birleşik kartı tanıyor", ENGINE.indexOf('getElementById("bkt-birlesik-kart")') > 0);
+ok("eski panel temizleniyor", /bkt-birlesik-kart[\s\S]{0,220}bkt-learning-panel/.test(ENGINE));
+ok("konuDurum API'si dışa açık", ENGINE.indexOf("konuDurum: function (key)") > 0);
 
 console.log("\n" + "─".repeat(56));
 if (kalan) { hatalar.forEach(h => console.log(" ✗ " + h)); console.log("Birleşik kart testi — " + gecen + "/" + (gecen + kalan) + " geçti"); process.exit(1); }

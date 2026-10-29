@@ -109,7 +109,11 @@ ok("sonuçta 'Kapat' düğmesi var", ENGINE.indexOf("Kapat</button>") > 0);
 // ---------- 6) HAVUZ EŞLEME KESİN ----------
 console.log("\n== 6) Havuz eşleme yalnız birebir ==");
 ok("havuzEsle tanımlı", ENGINE.indexOf("function havuzEsle(topicKey, havuzlar)") > 0);
-ok("HB.bul (benzerlik) kullanılmıyor", !/HB\.bul/.test(ENGINE));
+// v39 — kural değişti: HB artık SINIF KİLİDİYLE kullanılıyor (aynı sınıf +
+// tek eşleşme). Serbest benzerlik/tahmin hâlâ yasak: sınıf filtresi olmadan
+// HB.bul çağrısı varsa test kırılır.
+ok("HB.bul yalnız sınıf kilidiyle kullanılıyor",
+  /HB\.bul\(ham, uygun\)/.test(ENGINE) && /String\(h\.sinif \|\| ""\) === sinif/.test(ENGINE));
 ok("__okzKonuPoolEsle (tahmini eşleme) kullanılmıyor", !/__okzKonuPoolEsle/.test(ENGINE));
 ok("ders geneli fallback YOK", !/sameLesson/.test(ENGINE) && !/aynı dersin havuzuna düş/.test(ENGINE));
 
