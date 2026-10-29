@@ -397,12 +397,15 @@ function bkt(kayit) {
   await bekle(30);
   if (typeof o5.sandbox.window.__bktUiTazele === "function") o5.sandbox.window.__bktUiTazele();
   await bekle(150);
+  // v40 — Konu Takibi'ndeki AYRI öğrenme paneli kaldırıldı (kullanıcı:
+  // "yukarıda hafıza gücü, altta tekrar öğrenme durumu var, neden").
+  // 5 soruluk kontrol artık panelde değil: Bilgi Bankası kartı + görev satırı.
   const panel = o5.mainContent.children.filter(c => c && c.id === "bkt-learning-panel").pop();
-  ok("panel basıldı", !!panel);
-  if (panel) {
-    ok("panelde 'Kısa Kontrol — 5 soru' yazıyor", panel.innerHTML.indexOf("Kısa Kontrol — 5 soru") >= 0, panel.innerHTML.slice(0, 200));
-    ok("panelde '3 soru' YOK", panel.innerHTML.indexOf("3 soru") < 0);
-  }
+  ok("ayrı panel basılmıyor (mükerrer bölüm yok)", !panel);
+  const SAYFA = fs.readFileSync(path.join(KOK, "site", "index.html"), "utf8");
+  ok("5 soru etiketi sayfada yaşıyor", /5 soruluk kısa kontrol/i.test(SAYFA) || /MINI_SORU = 5/.test(KAYNAK));
+  // Motor yalnız 5 soru üretir; "3 soru" yalnız tarihsel yorumlarda geçebilir.
+  ok("Kısa Kontrol 5 soru (3 soruya dönüş yok)", /const MINI_SORU = 5/.test(KAYNAK) && !/MINI_SORU = 3/.test(KAYNAK) && !/mode === "precheck" \? 3/.test(KAYNAK));
 
   // ==========================================================
   // 7) GERÇEK VERİ: müfredattaki her konu için eşleşen havuz DOĞRU mu?

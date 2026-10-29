@@ -142,8 +142,14 @@ ok("openMiniTest havuzu havuzuBul ile buluyor", /function openMiniTest\(topicKey
 ok("havuzuBul resolvePoolId'yi kullanıyor", /function havuzuBul\(topicKey, poolId\)[\s\S]{0,900}resolvePoolId\(topicKey\)/.test(ENGINE));
 ok("havuz yoksa sessiz kalmıyor (toast)", /havuzuBul[\s\S]{0,900}toast\(/.test(ENGINE));
 ok("kayıtlı havuz kimliği doğrulanıyor (havuzDogrula)", ENGINE.indexOf("function havuzDogrula(topicKey, id)") > 0);
-ok("panelde kısa kontrol precheck şartına bağlı DEĞİL", ENGINE.indexOf("Havuz ÇÖZÜLÜRSE düğme her zaman çıkar") > 0);
-ok("panelde precheck vurgusu korunuyor", ENGINE.indexOf("const precheck = !!(e.precheck_due") > 0);
+// v40 — Konu Takibi'ndeki AYRI öğrenme paneli kaldırıldı (aynı konular iki
+// yerde görünüyordu). Kısa Kontrol düğmesi artık panelde değil; bu yüzden
+// panel gövdesine ait iki beklenti "panel gerçekten kaldırıldı" kontrolüne
+// dönüştü. Düğmenin kendisi Bilgi Bankası + Günlük Görevler'de test ediliyor.
+ok("ayrı öğrenme paneli kaldırıldı (tek yer)",
+  ENGINE.indexOf("Havuz ÇÖZÜLÜRSE düğme her zaman çıkar") < 0 &&
+  /function renderBktPanel\(\)[\s\S]{0,900}queueLearningTests\(\);/.test(ENGINE));
+ok("eski panel kalıntısı temizleniyor", /getElementById\("bkt-learning-panel"\)/.test(ENGINE));
 // v35.4: resolvePoolId IIFE İÇİNDE tanımlı; renderKnowledge dışarıda olduğu
 // için çağrı ReferenceError atıp BİLGİ BANKASI sayfasını beyaz bırakıyordu.
 // Köprü: havuzIdCoz() → window.__havuzIdCoz (IIFE içinde açılır).
@@ -178,8 +184,8 @@ ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v39", APP.indexOf('const PWA_SURUM = "v39-ajanda-hafiza"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v39-ajanda-hafiza") > 0);
+ok("PWA sürümü v40", APP.indexOf('const PWA_SURUM = "v40-realtime-renk"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v40-realtime-renk") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

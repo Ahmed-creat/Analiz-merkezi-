@@ -104,6 +104,25 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
+      # v40 — KULLANICI: "Bildirim sorununu çözemiyorsan GitHub Actions'a dön,
+      # en azından çalışıyordu." Supabase Edge fonksiyonu (Web Push + Realtime
+      # aynası) buradan da tetiklenir. Sır tanımlı değilse adım sessizce atlanır;
+      # pg_cron zaten aynı fonksiyonu günde 2 kez çağırıyor.
+      - name: Supabase Web Push + Realtime tetikle
+        if: ${{ github.event.schedule != '*/30 * * * *' && github.event.inputs.cek_only != 'true' }}
+        continue-on-error: true
+        run: |
+          if [ -z "${{ secrets.BILDIRIM_SECRET }}" ]; then
+            echo "BILDIRIM_SECRET tanımlı değil — Supabase tetiklemesi atlandı (pg_cron yolu çalışıyor)."
+            exit 0
+          fi
+          echo "→ bildirim-gonder (mod=run)"
+          curl -sS -m 60 -X POST "https://ztgzmhfklsdlngrtennp.supabase.co/functions/v1/bildirim-gonder" \
+            -H "Content-Type: application/json" \
+            -H "x-bildirim-secret: ${{ secrets.BILDIRIM_SECRET }}" \
+            -d '{"mod":"run"}' | head -c 1200
+          echo ""
+
       - name: Bildirimleri gönder (sabah tam / akşam kritik / test)
         if: ${{ github.event.schedule != '*/30 * * * *' && github.event.inputs.cek_only != 'true' }}
         working-directory: ${{ steps.kok.outputs.dizin }}

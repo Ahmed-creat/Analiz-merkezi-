@@ -20,9 +20,15 @@ document.documentElement.setAttribute("data-theme",t);})();
 :root {
   color-scheme: light;
   /* Zemin ve yüzeyler */
-  --bg-canvas: #F5F8FF;          /* Giriş sayfası görselinden alınan resmi zemin rengi */
+  /* v40 — KULLANICI: "arka plan rengi ile kartlar arasında çok fark yok,
+     ayırt edilemiyor". Zemin biraz koyulaştırıldı (#F5F8FF → #E9EEF7),
+     kart çerçevesi belirginleştirildi ve kart gölgesi güçlendirildi.
+     Beyaz kart / zemin kontrastı ~1.02:1 → ~1.12:1 (kenarlıkla birlikte
+     görünür ayrım). Marka mavisi ve metin renkleri DEĞİŞMEDİ. */
+  --bg-canvas: #E9EEF7;          /* kartların ayrışması için biraz koyu zemin */
   --bg-card: #FFFFFF;            /* Saf Beyaz Bento kartları */
-  --border-card: #E8EEF8;        /* 1px yumuşak slate çerçeve */
+  --border-card: #D3DCEA;        /* belirgin kart çerçevesi */
+  --border-strong: #B6C4D8;      /* şeritsiz kartlarda sol kenar */
   /* Tipografi metinleri (14.5:1 AAA / 5.8:1 AA) */
   --text-main: #0F172A;
   --text-muted: #64748B;
@@ -39,7 +45,7 @@ document.documentElement.setAttribute("data-theme",t);})();
   /* Boyut, radius, derinlik (tema.pdf §2) */
   --radius-card: 20px; --radius-nested: 14px; --radius-button: 16px; --radius-pill: 9999px;
   --target-size-min: 48px;
-  --shadow-bento: 0 4px 20px -2px rgba(37,99,235,0.05), 0 2px 6px -1px rgba(0,0,0,0.02);
+  --shadow-bento: 0 6px 22px -6px rgba(15,23,42,0.13), 0 2px 6px -1px rgba(15,23,42,0.06);
   /* Gelişmiş arayüz: kenar çubuğu + açılış sayfası (tema bağımlı) */
   --sidebar-bg: linear-gradient(180deg, #2575E9 0%, #2D7CEC 100%);
   --sidebar-border: transparent;
@@ -838,7 +844,11 @@ select.dd-native {
 /* v39 — kullanıcı: "hafıza gücünde bar konu ayrı bento grid kart olsun".
    Her konu artık tek büyük kartın içinde satır değil, kendi bento kartıdır. */
 .konu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; align-items: stretch; }
-.konu-kart { padding: 12px 13px; border: 1px solid var(--border-card); border-radius: 14px; background: var(--bg-card); margin-bottom: 0; box-shadow: 0 1px 2px rgba(15,23,42,0.04); }
+.konu-kart { padding: 12px 13px; border: 1px solid var(--border-card); border-radius: 14px; background: var(--bg-card); margin-bottom: 0; box-shadow: 0 2px 8px -2px rgba(15,23,42,0.14), 0 1px 2px rgba(15,23,42,0.06); }
+/* v40 — hafıza kartı: sol renk şeridi kademeye göre (yeşil→kırmızı) */
+.konu-kart[data-konu] { border-left-width: 5px; }
+.konu-renk-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 11px; color: var(--text-muted); }
+.konu-renk-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
 .konu-kart-ust { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
 .konu-kart-ad { font-size: 13.5px; font-weight: 700; line-height: 1.35; min-width: 0; overflow-wrap: anywhere; }
 .konu-durum { font-size: 11px; font-weight: 800; white-space: nowrap; flex: 0 0 auto; }
@@ -1524,12 +1534,23 @@ function icon(name, size, style) {
   return '<i data-lucide="' + name + '" style="width:' + size + 'px;height:' + size + 'px;' + (style || "") + '"></i>';
 }
 
-function memoryColor(pct) {
-  if (pct < MEMORY_CRITICAL) return "var(--semantic-error)";
-  if (pct < MEMORY_WARNING) return "var(--semantic-warning)";
-  if (pct < 75) return "var(--semantic-warning)";
-  return "var(--semantic-success)";
+// v40 — KULLANICI: "Hafıza gücünün rengi olacak. Kademelere göre yeşilden
+// kırmızıya doğru." Hafıza gücü artık 5 kademeli renk skalası kullanır:
+//   %85-100 YEŞİL · %70-84 AÇIK YEŞİL · %50-69 SARI · %30-49 TURUNCU · %0-29 KIRMIZI
+// Aynı renk hem çubukta hem yüzde metninde hem kartın sol şeridinde kullanılır.
+const HAFIZA_SKALA = [
+  { esik: 85, renk: "#16A34A", ad: "Güçlü" },
+  { esik: 70, renk: "#65A30D", ad: "İyi" },
+  { esik: 50, renk: "#CA8A04", ad: "Orta" },
+  { esik: 30, renk: "#EA580C", ad: "Zayıf" },
+  { esik: 0,  renk: "#DC2626", ad: "Kritik" }
+];
+function memoryKademe(pct) {
+  const p = Number(pct) || 0;
+  for (let i = 0; i < HAFIZA_SKALA.length; i++) if (p >= HAFIZA_SKALA[i].esik) return HAFIZA_SKALA[i];
+  return HAFIZA_SKALA[HAFIZA_SKALA.length - 1];
 }
+function memoryColor(pct) { return memoryKademe(pct).renk; }
 
 function pctBarColor(pct) {
   if (pct >= 75) return "var(--semantic-success)";
@@ -3606,7 +3627,11 @@ function renderTracking(container) {
   html += '<div class="bento-card" id="hafiza-baslik-kart" style="margin-top:16px;">';
   html += '<div class="flex items-center justify-between" style="margin-bottom:2px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
   html += '<span class="text-xs text-muted tabular">' + satirlar.length + " konu · " + ms.waiting + " tekrar bugün · ort. hafıza %" + ms.avg + (onayliSay ? " · " + onayliSay + " onaylı" : "") + "</span></div>";
-  html += '<div class="text-xs text-muted" style="margin:0;">Her konu kendi kartında. Çubuk yalnız hafıza gücü içindir; yeterlilik yüzde olarak yazılır. Kartlar tekrar içindir; 5 soruluk test Bilgi Bankası konu sayfasında ve Günlük Görevler listesindedir.</div>';
+  html += '<div class="text-xs text-muted" style="margin:0;">Her konu kendi kartında. Çubuk yalnız hafıza gücü içindir; yeterlilik yüzde olarak yazılır.</div>';
+  // v40 — renk skalasının ANLAMI ekranda yazılı olsun (yeşilden kırmızıya).
+  html += '<div class="konu-renk-legend">' + HAFIZA_SKALA.slice().reverse().map(function (k) {
+    return '<span><i style="background:' + k.renk + ';"></i>%' + (k.esik === 0 ? "0-29" : k.esik + "+") + " " + k.ad + "</span>";
+  }).join("") + "</div>";
   html += "</div>";
 
   if (satirlar.length) {
@@ -3620,22 +3645,26 @@ function renderTracking(container) {
       const pct = r ? r.pct : null;
       const durum = b ? b.durum : "Veri yetersiz";
       const yeter = b && b.yeterlilik !== null && b.yeterlilik !== undefined ? b.yeterlilik : null;
-      const nokta = pct !== null && pct < MEMORY_CRITICAL ? "var(--semantic-error)"
-        : (r && r.due) ? "var(--semantic-warning)"
-          : (b && b.onayli) ? "var(--semantic-success)" : "var(--brand-blue)";
+      // v40 — nokta rengi de aynı hafıza kademesinden gelir (tek dil).
+      const nokta = pct !== null ? memoryColor(pct)
+        : (b && b.onayli) ? "var(--semantic-success)" : "var(--brand-blue)";
 
-      // ---- TEK flashcard düğmesi (eskiden ana + ikincil iki tane çiziliyordu) ----
-      let kartDugme = "";
-      if (kartVar) {
-        kartDugme = '<button class="btn btn-sm ' + (kartTamam ? "btn-ghost" : "btn-primary") + '" data-act="kartBasla" data-topic="' + attr(sat.key) + '" style="min-height:36px;">' +
-          icon("layers", 13) + " Kart · " + kartBilgi.sayi + (kartTamam ? " ✓" : "") + "</button>";
-      }
-      // ---- tekrar aksiyonu (kart yoksa birincil olur) ----
+      // ---- v40 — TEK DÜĞME ----
+      // KULLANICI: "neden hem tekrar ettim hem de flashcard tuşu aynı anda,
+      // zaten ikisinde de soruyu açıyor. Tekrar ettim > soruları açsın. Bitti."
+      // KÖK NEDEN: iki düğme de AYNI işi yapıyordu — reviewTopic() kart varsa
+      // zaten kart turunu açıyor (index.html reviewTopic). Artık kartı olan
+      // konuda TEK düğme var: "Tekrar Ettim · N kart" → doğrudan soruları açar.
+      // Kartı olmayan konuda aynı düğme tekrarı kaydeder. Renk kademesi hafıza
+      // gücünden gelir (kırmızı = kritik).
       let tekrarDugme = "";
-      if (r) {
-        if (pct < MEMORY_CRITICAL) tekrarDugme = '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:36px;">' + icon("flame", 13) + " ACİL TEKRAR</button>";
-        else if (r.due) tekrarDugme = '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:36px;">' + icon("check", 13) + " Tekrar Ettim</button>";
-        else tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="earlyReview" data-topic="' + attr(r.key) + '" style="min-height:36px;">' + icon("fast-forward", 13) + " Erken Tekrar</button>";
+      if (kartVar) {
+        tekrarDugme = '<button class="btn btn-sm ' + (kartTamam ? "btn-ghost" : "btn-primary") + '" data-act="reviewTopic" data-topic="' + attr(sat.key) + '" style="min-height:38px;">' +
+          icon("layers", 13) + " Tekrar Ettim · " + kartBilgi.sayi + " kart" + (kartTamam ? " ✓" : "") + "</button>";
+      } else if (r) {
+        if (pct < MEMORY_CRITICAL) tekrarDugme = '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:38px;">' + icon("flame", 13) + " ACİL TEKRAR</button>";
+        else if (r.due) tekrarDugme = '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:38px;">' + icon("check", 13) + " Tekrar Ettim</button>";
+        else tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="earlyReview" data-topic="' + attr(r.key) + '" style="min-height:38px;">' + icon("fast-forward", 13) + " Erken Tekrar</button>";
       }
 
       // ---- çubuk YALNIZ hafıza; yeterlilik sadece yüzde metni ----
@@ -3650,12 +3679,21 @@ function renderTracking(container) {
       let alt = esc(sat.lesson);
       if (r) alt += " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki " + fmtDate(r.next.date) : "");
       if (kartVar) alt += kartTamam ? " · kart ✓" : " · kart zorunlu";
-      return '<div class="konu-kart" data-konu="' + attr(sat.key) + '">' +
+      // v40 — kullanıcı: "uygulamanın arka plan rengi ile kartlar arasında çok
+      // fark yok, ayırt edilemiyor" + "hafıza gücünün rengi kademelere göre
+      // yeşilden kırmızıya". Kartın solunda 4px renk şeridi + hafif renkli
+      // zemin var; şerit rengi hafıza kademesinden gelir.
+      const kademe = pct !== null ? memoryKademe(pct) : null;
+      const seritRenk = kademe ? kademe.renk : "var(--border-strong)";
+      const kartStil = kademe
+        ? "border-left:5px solid " + kademe.renk + ";background:linear-gradient(90deg," + kademe.renk + "12,var(--bg-card) 34%);"
+        : "";
+      return '<div class="konu-kart" data-konu="' + attr(sat.key) + '" style="' + kartStil + '">' +
         '<div class="konu-kart-ust"><span class="konu-kart-ad"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + nokta + ';margin-right:6px;vertical-align:middle;" title="' + esc(durum) + '"></i>' + esc(sat.topic) + "</span>" +
         '<span class="konu-durum" style="color:' + nokta + ';">' + esc(durum) + "</span></div>" +
         metre +
         '<div class="flex items-center justify-between" style="gap:8px;margin-top:6px;flex-wrap:wrap;">' + yeterMetin + '<span class="text-xs text-muted" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + alt + "</span></div>" +
-        ((kartDugme || tekrarDugme) ? '<div class="konu-eylem" style="margin-top:9px;">' + kartDugme + tekrarDugme + "</div>" : "") +
+        (tekrarDugme ? '<div class="konu-eylem" style="margin-top:9px;">' + tekrarDugme + "</div>" : "") +
         "</div>";
     }).join("");
     html += "</div>";
@@ -4831,14 +4869,13 @@ function renderKnowledge(container) {
         // onaysız konuda kalıcı olarak duruyordu; kısa kontrol çözülse bile
         // bölümden kalkmıyordu. KALDIRILDI: zamanı gelmeyen kontrol için
         // hiçbir kart çizilmez, konu satırında da iz bırakmaz.
-      } else if (bktKayit.onay_durumu !== "ONAYLANDI") {
-        // v35.7 — düğmenin NEDEN çıkmadığı yazılır; sessiz kalmak yok.
-        // Bilerek başka konunun havuzu bağlanmaz (kullanıcı isteği).
-        // v39 — kullanıcı: "neden konuların soru havuzu yok sorunu geliyor".
-        // Uyarı kartı yerine tek satır kısa not: bu gerçek bir veri eksiği,
-        // hata değil. Başka konunun sorusu yine gösterilmez.
-        html += '<div class="bento-card" style="margin-bottom:16px;padding:11px 13px;"><div class="text-xs text-muted" style="line-height:1.5;display:flex;gap:8px;align-items:flex-start;">' + icon("info", 15, "flex-shrink:0;color:var(--semantic-warning);margin-top:1px;") + '<span>Bu konunun <b>soru havuzu bu sınıf için henüz eklenmemiş</b>. Başka konunun sorusu gösterilmez; havuz eklenince test kendiliğinden açılır.</span></div></div>';
       }
+      // v40 — KULLANICI: "Kısa kontrol yok ise soru havuzu yok mu diyor. Eğer
+      // kontrol yok ise bir şey göstermesin."
+      // KÖK NEDEN: Buradaki "soru havuzu henüz eklenmemiş" notu, havuz VAR ama
+      // kontrolün ZAMANI GELMEMİŞ olsa bile çiziliyordu. Yani neredeyse her
+      // konuda "havuz yok" yazıyordu. Artık not YALNIZ havuz gerçekten yoksa
+      // (havuzKontrol boş) çizilir; havuz varsa hiçbir şey gösterilmez.
       html += '<div class="bento-card" style="margin-bottom:16px;">' +
         '<div class="flex items-center gap-2" style="margin-bottom:10px;">' + icon("check-circle-2", 22, "color:var(--semantic-success);") +
         '<b style="font-size:14px;">Tamamland' + APRX + ' — hafıza takibinde</b></div>' +

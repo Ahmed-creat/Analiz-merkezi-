@@ -144,8 +144,14 @@ async function calistir(ayar) {
 }
 
 (async function () {
-// ---------- 1) Yalnız Konu Takibi ----------
-console.log("\n== 1) Panel yalnız Konu Takibi sayfasında ==");
+// ---------- 1) AYRI PANEL KALDIRILDI (v40) ----------
+// KULLANICI: "yukarıda Hafıza Gücü/Öğrenme Durumu var, altta tekrar Öğrenme
+// Durumu var, neden?" Kök neden: birleşik kartın kimliği v39'da
+// "bkt-birlesik-kart" → "hafiza-baslik-kart" olmuş, motorun erken dönüşü
+// eski kimliğe baktığı için ESKİ panel altta ikinci kez çiziliyordu.
+// Artık Konu Takibi'nde TEK yer var: index.html'deki
+// "Öğrenme Durumu · Hafıza Gücü" bölümü. Motor ayrı panel basmaz.
+console.log("\n== 1) Tek yer: ayrı Öğrenme Durumu paneli YOK ==");
 const bkt = {
   "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler": {
     L: 0.55, gozlem_sayisi: 6, hata_gecmisi: [{ date: "2026-10-27", type: "KONUEKSİKLİĞİ" }],
@@ -155,47 +161,22 @@ const bkt = {
     L: 0.3, gozlem_sayisi: 2, hata_gecmisi: [], onay_durumu: "VERI_YETERSIZ", tetiklenen_krediler: []
   }
 };
-// 1a) VARSAYILAN: kapalı, yalnız tek satır özet (sayfayı kaplamasın)
-const kapali = await calistir({ sayfa: "tracking", bkt_state: bkt });
-const kapaliPanel = panelBul(kapali.mainContent);
-ok("Konu Takibi'nde panel basıldı", !!kapaliPanel);
-if (kapaliPanel) {
-  const h = kapaliPanel.innerHTML;
-  ok("varsayılan kapalı: başlık var", h.indexOf("Öğrenme Durumu") >= 0);
-  ok("varsayılan kapalı: kaç konu izlendiği yazılı", h.indexOf("konu izleniyor") >= 0);
-  ok("varsayılan kapalı: ayrıntı düğmesi var", h.indexOf("Ayrıntı") >= 0);
-  ok("varsayılan kapalı: uzun açıklama YOK (yer kaplamaz)", h.indexOf("0–100") < 0);
-  ok("varsayılan kapalı: konu satırları basılmıyor", h.indexOf("Yeterlilik: <b>") < 0);
+const kapali = await calistir({ sayfa: "tracking", bkt_state: bkt, localStorage: { am_bkt_panel_acik: "1" } });
+ok("Konu Takibi'nde ayrı panel BASILMIYOR", !panelBul(kapali.mainContent));
+ok("eski panel kimliği koddan silindi", KAYNAK.indexOf('id = "bkt-learning-panel"') < 0 && KAYNAK.indexOf("bkt-learning-panel") >= 0);
+ok("kuyruk yine dolduruluyor (öğrenme testi planlaması)", /queueLearningTests\(\);/.test(KAYNAK));
+{
+  const bas = KAYNAK.indexOf("function renderBktPanel()");
+  const son = KAYNAK.indexOf("function scheduleUi()", bas);
+  const govde = KAYNAK.slice(bas, son);
+  ok("panel gövdesi kısa: yalnız kuyruk + kalıntı temizliği", govde.length < 1200, String(govde.length));
+  ok("kalıntı panel siliniyor", /getElementById\("bkt-learning-panel"\)/.test(govde) && /\.remove\(\)/.test(govde));
 }
 
-// 1b) AÇIK: ayrıntılı panel
-const tracking = await calistir({ sayfa: "tracking", bkt_state: bkt, localStorage: { am_bkt_panel_acik: "1" } });
-const panelTracking = panelBul(tracking.mainContent);
-ok("açıkken panel basıldı", !!panelTracking);
-if (panelTracking) {
-  const h = panelTracking.innerHTML;
-  ok("panel başlığı var", h.indexOf("Öğrenme Durumu") >= 0);
-  ok("panel ne gösterdiğini açıklıyor", h.indexOf("Yeterlilik") >= 0 && h.indexOf("Hafıza") >= 0);
-  ok("açıklama 0-100 ölçeğini söylüyor", h.indexOf("0–100") >= 0);
-  ok("durum basamakları yazılı", h.indexOf("ONAYLANDI") >= 0);
-  ok("yeterlilik yüzdesi basıldı", h.indexOf("Yeterlilik: <b>55%</b>") >= 0);
-  // v39 — kullanıcı: "neden konuların soru havuzu yok sorunu geliyor".
-  // Uyarı kartı yerine tek satır kısa not yazılır; yine sessiz kalınmaz ve
-  // başka konunun sorusunun gösterilmediği açıkça söylenir.
-  ok("soru havuzu eşlenmeyen konu için SEBEP yazıldı", h.indexOf("soru havuzu henüz eklenmemiş") >= 0);
-  ok("eşlenmeyen için başka konu sorusu gösterilmediği yazılı", h.indexOf("Başka konunun soruları gösterilmez") >= 0);
-  ok("kısa kontrol düğmesi var (havuzu olan konu)", h.indexOf("Kısa Kontrol") >= 0);
-}
-
-const baska = await calistir({ sayfa: "exams", bkt_state: bkt });
-ok("Denemelerim sayfasında panel BASILMADI", !panelBul(baska.mainContent));
-const baska2 = await calistir({ sayfa: "dashboard", bkt_state: bkt });
-ok("Ana Sayfa'da panel basılmadı", !panelBul(baska2.mainContent));
-const baska3 = await calistir({ sayfa: "knowledge", bkt_state: bkt });
-ok("Bilgi Bankası'nda panel basılmadı", !panelBul(baska3.mainContent));
-
-// ---------- 2) Eylem bekleyen konu en üstte ----------
-console.log("\n== 2) Çalışılan konu öne çıkıyor ==");
+// ---------- 2) 20+ kayıtta da ayrı panel YOK, veri kaybolmuyor ----------
+// (v40) Panel kaldırıldığı için "panel basıldı" beklenmiyor; asıl ölçüt
+// konu verisinin motor API'sinden eksiksiz okunabilmesi.
+console.log("\n== 2) 20+ kayıt: tek kaynak, veri tam ==");
 const cok = {};
 for (let i = 0; i < 20; i++) {
   cok["Matematik > Konu " + i] = { L: 0.5, gozlem_sayisi: 50 - i, hata_gecmisi: [], onay_durumu: "GELISIYOR", tetiklenen_krediler: [] };
@@ -205,13 +186,12 @@ cok["Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İliş
   precheck_due: "2026-10-28", study_completed_at: "2026-10-28", tetiklenen_krediler: []
 };
 const cokO = await calistir({ sayfa: "tracking", bkt_state: cok, localStorage: { am_bkt_panel_acik: "1" } });
-const cokPanel = panelBul(cokO.mainContent);
-ok("20+ kayıtta panel basıldı", !!cokPanel);
-if (cokPanel) {
-  const h = cokPanel.innerHTML;
-  const ilkKonu = h.indexOf("1.2 Üçgende Yardımcı Elemanlar");
-  const digerKonu = h.indexOf("Konu 0<");
-  ok("kısa kontrol zamanı gelen konu ilk sırada", ilkKonu > 0 && (digerKonu < 0 || ilkKonu < digerKonu), "ilk: " + ilkKonu + " · diğer: " + digerKonu);
+ok("20+ kayıtta ayrı panel basılmıyor", !panelBul(cokO.mainContent));
+{
+  const durumlar = cokO.sandbox.window.AnalizBKT.konuDurumlari();
+  ok("21 konu da motordan okunuyor", Object.keys(durumlar).length === 21, String(Object.keys(durumlar).length));
+  const kisa = durumlar["Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler"];
+  ok("precheck zamanı gelen konu işaretli", !!kisa && kisa.precheck === true);
 }
 
 // ---------- 3) Boş durum ----------

@@ -45,7 +45,19 @@ let blok = HTML.slice(bas, son);
 const icon = (n) => "[" + n + "]";
 const esc = (x) => String(x == null ? "" : x);
 const attr = (x) => esc(x);
-const memoryColor = (p) => (p < 20 ? "#EF4444" : p < 40 ? "#F59E0B" : "#16A34A");
+// v40 — renk artık 5 kademeli (yeşil → kırmızı). Test gerçek tabloyu
+// index.html'den alır ki test ile ürün aynı skalyı kullansın.
+const HAFIZA_SKALA = (() => {
+  const m = HTML.match(/const HAFIZA_SKALA = (\[[\s\S]*?\]);/);
+  if (!m) throw new Error("HAFIZA_SKALA index.html'de bulunamadı");
+  return new Function("return " + m[1])();
+})();
+function memoryKademe(pct) {
+  const p = Number(pct) || 0;
+  for (let i = 0; i < HAFIZA_SKALA.length; i++) if (p >= HAFIZA_SKALA[i].esik) return HAFIZA_SKALA[i];
+  return HAFIZA_SKALA[HAFIZA_SKALA.length - 1];
+}
+const memoryColor = (p) => memoryKademe(p).renk;
 const fmtDate = (d) => String(d);
 const splitKey = (k) => { const i = String(k).indexOf(" > "); return { lesson: String(k).slice(0, i), topic: String(k).slice(i + 3) }; };
 const MEMORY_CRITICAL = 20, MEMORY_WARNING = 40;
@@ -66,10 +78,10 @@ function kart(ms, bkt, limit, st) {
   const kartDurumHizli = k => kdh(k);
   const window = { AnalizBKT: { konuDurumlari: () => bkt } };
   const fn = new Function("html", "ms", "memoryLimit", "window", "icon", "esc", "attr",
-    "memoryColor", "fmtDate", "splitKey", "MEMORY_CRITICAL", "MEMORY_WARNING",
+    "memoryColor", "memoryKademe", "HAFIZA_SKALA", "fmtDate", "splitKey", "MEMORY_CRITICAL", "MEMORY_WARNING",
     "state", "todayStr", "kartDurumHizli", "hafizaKartToplam",
     "return (function(){\n" + blok + "\nreturn html; })();");
-  return fn("", ms, limit || 10, window, icon, esc, attr, memoryColor, fmtDate, splitKey,
+  return fn("", ms, limit || 10, window, icon, esc, attr, memoryColor, memoryKademe, HAFIZA_SKALA, fmtDate, splitKey,
     MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli, hafizaKartToplam);
 }
 
@@ -119,17 +131,27 @@ console.log("\n== 3b) v37/v39 — kart bitince düğme durumu ==");
   const c = kart(MS, BKT, 10, st);
   // v39 — eskiden aynı konuda İKİ flashcard düğmesi vardı
   // ("Kartları Bitir (3)" + "Kart · 3"). Artık TEK düğme var.
-  ok("flashcard düğmesi TEK (data-act=kartBasla sayısı 1)",
-     (c.match(/data-act="kartBasla"/g) || []).length === 1,
-     String((c.match(/data-act="kartBasla"/g) || []).length));
-  ok("kart sayısı yazıldı (Kart · 3)", c.indexOf("Kart · 3") >= 0);
+  // v40 — KULLANICI: "neden hem tekrar ettim hem de flashcard tuşu aynı anda,
+  // zaten ikisinde de soruyu açıyor. Tekrar ettim > soruları açsın. Bitti."
+  // Artık kartı olan konuda TEK düğme var ve tıklanınca kartları açar
+  // (reviewTopic → AmKart). kartBasla düğmesi kartta YOK.
+  {
+    // Her kartta EN FAZLA 1 aksiyon düğmesi olmalı (eskiden 2 tane vardı).
+    const parcalar = c.split('class="konu-kart"').slice(1);
+    const fazla = parcalar.filter(p => (p.match(/data-act="(kartBasla|reviewTopic|earlyReview)"/g) || []).length > 1);
+    ok("her kartta tek aksiyon düğmesi", fazla.length === 0,
+       parcalar.map(p => (p.match(/data-act="(kartBasla|reviewTopic|earlyReview)"/g) || []).length).join(","));
+  }
+  ok("flashcard düğmesi ayrıca çizilmiyor", (c.match(/data-act="kartBasla"/g) || []).length === 0);
+  ok("düğme metni: Tekrar Ettim · 3 kart", c.indexOf("Tekrar Ettim · 3 kart") >= 0);
+  ok("düğme soruları açan aksiyona bağlı", c.indexOf('data-act="reviewTopic"') >= 0);
   ok("kart zorunlu notu", c.indexOf("kart zorunlu") >= 0);
   ok("5 soru düğmesi yine YOK", c.indexOf("data-bkt-test") < 0);
   ok("ders ayracı KALDIRILDI", c.indexOf("ders-ayrac") < 0);
   const st2 = JSON.parse(JSON.stringify(st));
   st2.tekrarKartlari["Matematik > 1.1 Trigonometri"] = { bildi: 3, bilemedi: 0, tamamlandi: BUGUN };
   const c2 = kart(MS, BKT, 10, st2);
-  ok("tamamlanınca kart işareti ✓", c2.indexOf("Kart · 3 ✓") >= 0);
+  ok("tamamlanınca kart işareti ✓", c2.indexOf("Tekrar Ettim · 3 kart ✓") >= 0);
   ok("tamamlanınca tekrar düğmesi geri gelir", c2.indexOf('data-act="reviewTopic"') >= 0);
 }
 
@@ -142,8 +164,15 @@ console.log("\n== 3c) Daha fazla göster sayacı ==");
 }
 
 console.log("\n== 4) Ayrı BKT paneli çizilmiyor ==");
-ok("motor birleşik kartı tanıyor", ENGINE.indexOf('getElementById("bkt-birlesik-kart")') > 0);
-ok("eski panel temizleniyor", /bkt-birlesik-kart[\s\S]{0,220}bkt-learning-panel/.test(ENGINE));
+// v40 — eski ayrı panel TAMAMEN kaldırıldı (aynı konular iki yerde görünüyordu).
+{
+  const bas = ENGINE.indexOf("function renderBktPanel()");
+  const son = ENGINE.indexOf("function scheduleUi()", bas);
+  const govde = ENGINE.slice(bas, son);
+  ok("panel gövdesi kaldırıldı (yalnız kuyruk + temizlik)", govde.length < 1200, String(govde.length));
+  ok("eski panel kalıntısı siliniyor", /getElementById\("bkt-learning-panel"\)/.test(govde));
+}
+ok("konuDurumlari API'si dışa açık (tek veri kaynağı)", ENGINE.indexOf("konuDurumlari: function ()") > 0);
 ok("konuDurum API'si dışa açık", ENGINE.indexOf("konuDurum: function (key)") > 0);
 
 console.log("\n" + "─".repeat(56));

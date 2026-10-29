@@ -1,4 +1,4 @@
-const PWA_SURUM = "v39-ajanda-hafiza";
+const PWA_SURUM = "v40-realtime-renk";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -71,6 +71,8 @@ if ("serviceWorker" in navigator) {
     });
     hookSaveState();
     listenAuth();
+    // v40 — oturum açıldıysa Realtime bildirim kanalını hemen kur.
+    setTimeout(function () { try { bildirimKanaliniKur(); } catch (e) { } }, 1500);
     // Köprü: site/push-bildirim.js (klasik script) modül kapsamındaki
     // Supabase istemcisine ve oturuma buradan erişir.
     window.__amSupabase = sb;
@@ -139,6 +141,8 @@ function initAuthUI() {
     else if (a === "pwaAuthGoogle") googleLogin();
     else if (a === "pushTeshis") pushTeshisYaz();
     else if (a === "pushTestGonder") pushTestGonder();
+    else if (a === "cihazBildirimTesti") cihazBildirimTesti();
+    else if (a === "realtimeBildirimKur") { bildirimKanaliniKur(); bildirimleriGetir(); toast("Realtime bildirim kanalı kuruldu.", "success"); }
   });
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
@@ -411,6 +415,10 @@ function renderProfileModal() {
   // v39 — "bildirim gelmedi" için tek dokunuşluk ölçüm: sunucu gerçekten
   // gönderdi mi (201/404/410) ve cihaz aldı mı? Sonuç burada yazılır.
   html += '<button type="button" data-act="pushTestGonder" style="background:#2563EB;color:#fff;border:0;border-radius:9px;padding:6px 10px;font-size:11.5px;font-weight:700;cursor:pointer;">Test bildirimi gönder</button>';
+  // v40 — OS kanalını push'suz ölçen test (push 201 dönse bile telefon
+  // göstermeyebiliyor; bu düğme doğrudan showNotification çağırır).
+  html += '<button type="button" data-act="cihazBildirimTesti" style="background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Bu cihazda dene</button>';
+  html += '<button type="button" data-act="realtimeBildirimKur" style="background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Realtime kanalı yenile</button>';
   html += '</div>';
   html += '<div id="pwa-push-test-sonuc" style="margin-top:6px;font-size:11.5px;line-height:1.5;"></div>';
   html += '</div>';
@@ -643,8 +651,99 @@ function hookSaveState() {
   });
 }
 
-// ---- 7) CLOUD MESSAGING (uygulama açıkken bildirim — opsiyonel) ----
-async function registerFCM() {
+// ---- 6b) REALTIME BİLDİRİM KANALI (v40) ----
+// KULLANICI: "Realtime niye kullanmıyorsun."
+// Neden Realtime: Web Push (VAPID) kanalı cihaz tarafında sessizce
+// düşebiliyor (pil tasarrufu, kanal ayarı, ölü abonelik). Realtime ise
+// doğrudan veritabanı satırıyla çalışır: satır yazıldığı ANDA uygulamaya
+// düşer, push servisinin davranışına bağlı değildir.
+// Akış: edge fonksiyonu → bildirim_log (trigger) → bildirimler tablosu
+//       → supabase.channel(postgres_changes) → bildirim + sistem bildirimi.
+let bildirimKanal = null;
+function bildirimKanaliniKur() {
+  if (!sb || !currentUser || bildirimKanal) return;
+  try {
+    bildirimKanal = sb.channel("am-bildirim-" + currentUser.id)
+      .on("postgres_changes",
+        { event: "INSERT", schema: "public", table: "bildirimler", filter: "user_id=eq." + currentUser.id },
+        (p) => { try { realtimeBildirim(p.new); } catch (e) { console.warn("realtime:", e); } })
+      .subscribe((durum) => {
+        if (durum === "SUBSCRIBED") {
+          window.__amRealtimeBildirim = true;
+          bildirimleriGetir();
+        }
+      });
+  } catch (e) { console.warn("realtime kanalı kurulamadı:", e); }
+}
+async function bildirimleriGetir() {
+  if (!sb || !currentUser) return;
+  try {
+    const { data } = await sb.from("bildirimler").select("*")
+      .eq("user_id", currentUser.id).eq("okundu", false)
+      .order("created_at", { ascending: false }).limit(5);
+    (data || []).forEach((r) => { try { realtimeBildirim(r, true); } catch (e) { } });
+  } catch (e) { /* tablo yoksa sessiz */ }
+}
+// Gelen bildirimi HEM uygulama içi listeye HEM sistem bildirimine yaz.
+function realtimeBildirim(r, sessizSistem) {
+  if (!r || !r.baslik) return;
+  const imza = "am_bildirim_" + r.id;
+  try { if (localStorage.getItem(imza)) return; localStorage.setItem(imza, "1"); } catch (e) { }
+  if (typeof addNotification === "function") {
+    addNotification({ title: r.baslik, body: r.metin || "", kind: "info", topicKey: "rt@" + r.id });
+  }
+  if (typeof toast === "function") toast(r.baslik + (r.metin ? " — " + r.metin : ""), "info");
+  if (sessizSistem) return;
+  // Sistem bildirimi: push'a bağlı değil, doğrudan servis çalışanından.
+  try {
+    if ("serviceWorker" in navigator && typeof Notification !== "undefined" && Notification.permission === "granted") {
+      navigator.serviceWorker.ready.then((kayit) =>
+        kayit.showNotification(r.baslik, {
+          body: r.metin || "", icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
+          tag: r.tur || "analiz-merkezi", data: { url: r.url || "./" }
+        })
+      ).catch(() => { });
+    }
+  } catch (e) { }
+  if (sb && r.id) { try { sb.from("bildirimler").update({ okundu: true }).eq("id", r.id).then(() => { }); } catch (e) { } }
+}
+
+// ---- 6c) CİHAZDA BİLDİRİM TESTİ (OS kanalını push'suz ölçer) ----
+// Push sunucusu "201 kabul" dese bile telefon göstermeyebilir. Bu düğme
+// doğrudan showNotification çağırır: sistem bildirimi çıkıyorsa OS kanalı
+// sağlamdır (sorun push teslimindedir); çıkmıyorsa sorun telefon/kanal
+// ayarındadır. Yalan yok: ekranda sonucu yazar.
+async function cihazBildirimTesti() {
+  const kutu = document.getElementById("pwa-push-test-sonuc");
+  const yaz = (m) => { if (kutu) kutu.innerHTML = m; };
+  try {
+    if (typeof Notification === "undefined") return yaz("Bu tarayıcı Bildirim API'sini desteklemiyor.");
+    if (Notification.permission === "default") {
+      const p = await Notification.requestPermission();
+      if (p !== "granted") return yaz("İzin verilmedi (tarayıcı izni: " + p + ").");
+    }
+    if (Notification.permission !== "granted") return yaz("Site bildirim izni kapalı: " + Notification.permission + ".");
+    if (!("serviceWorker" in navigator)) return yaz("Servis çalışanı yok — bu ortamda sistem bildirimi gösterilemez.");
+    const kayit = await navigator.serviceWorker.ready;
+    await kayit.showNotification("Cihaz bildirimi çalışıyor", {
+      body: "Bunu görüyorsan telefonun bildirim kanalı sağlam.",
+      icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: "am-cihaz-testi", data: { url: "./" }
+    });
+    yaz("Gönderildi. Bildirim görünmediyse: telefon Ayarlar → Uygulamalar → Chrome → Bildirimler ve site kanalı (Sessiz/Önemli) ayarını kontrol et.");
+  } catch (e) {
+    yaz("Hata: " + String((e && e.message) || e).slice(0, 160));
+  }
+}
+
+// ---- 7) CLOUD MESSAGING (KALDIRILDI — v40) ----
+// KÖK NEDEN ("bildirim hiç gelmiyor"): Firebase getToken(), AYNI servis
+// çalışanında push aboneliğini KENDİ VAPID anahtarıyla yeniden kuruyor ve
+// site/push-bildirim.js'in (Supabase Web Push) aboneliğini EZİYORDU.
+// Sonuç: veritabanındaki endpoint ölüyor (410) ya da sunucunun imzaladığı
+// anahtar cihazdaki abonelikle uyuşmuyordu. İki kanal aynı aboneliği
+// paylaşamaz. Web Push + Realtime yeterli olduğu için FCM kapalı.
+async function registerFCM() { return; }
+async function registerFCMEski() {
   if (!currentUser || !sb || !FCM_VAPID_KEY || !FIREBASE_CONFIG || !FIREBASE_CONFIG.apiKey) return;
   try {
     if (typeof Notification === "undefined" || Notification.permission !== "granted") return;

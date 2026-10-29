@@ -1252,100 +1252,21 @@
     return Object.keys(counts).find(label => counts[label] >= 2) || "";
   }
   function renderBktPanel() {
-    const s = ensureStore(); const host = document.getElementById("main-content");
-    if (!s || !host || !s.user || !s.user.name) return;
-    // Bu panel YALNIZ "Konu Takibi" sayfasına aittir; her sayfanın altında
-    // tekrarlanmaz. Başka sayfaya geçilince kalıntısı da kaldırılır.
-    let sayfa = "";
-    try { sayfa = typeof currentPage === "string" ? currentPage : ""; } catch (e) { sayfa = ""; }
-    if (sayfa && sayfa !== "tracking") {
-      const eski = document.getElementById("bkt-learning-panel");
-      if (eski) eski.remove();
-      return;
-    }
-    // v35.8 — Ayrı BKT paneli KALDIRILDI: öğrenme durumu + hafıza gücü tek
-    // kartta (Konu Takibi → "Öğrenme Durumu · Hafıza Gücü"). Kart ekrandaysa
-    // burada ikinci kez çizilmez.
-    // v38 — KÖK NEDEN (5 tekrar sorusu hiç gelmiyor):
-    // Kuyruğu dolduran queueLearningTests() çağrısı bu erken dönüşün ALTINDA
-    // kaldığı için Konu Takibi'nde birleşik kart varken (her zaman varken)
-    // hiç çalışmıyordu. Sonuç: 3. gün öğrenme testi kuyruğa hiç girmiyor,
-    // dolayısıyla "Öğrenme Testi — 5 soru" düğmesi hiçbir zaman çıkmıyordu.
+    const s = ensureStore();
+    if (!s) return;
+    // v40 — KULLANICI: "yukarıda Hafıza Gücü/Öğrenme Durumu var, altta tekrar
+    // Öğrenme Durumu var, neden?"
+    // KÖK NEDEN: Konu Takibi'ndeki birleşik kart v38'de `id="bkt-birlesik-kart"`
+    // taşıyordu ve buradaki erken dönüş o kimliğe bakıyordu. v39'da kart
+    // `id="hafiza-baslik-kart"` + `.konu-kart` oldu; kimlik değişince erken
+    // dönüş hiç tutmadı ve ESKİ "Öğrenme Durumu" paneli altta ikinci kez
+    // çizildi. Aynı konular iki yerde göründü.
+    // ÇÖZÜM: Ayrı panel tamamen kaldırıldı. Tek yer: Konu Takibi'ndeki
+    // "Öğrenme Durumu · Hafıza Gücü" bölümü. Burada yalnız kuyruk doldurulur
+    // (öğrenme testi planlaması bunun içinde) ve eski panel kalıntısı silinir.
     queueLearningTests();
-    if (document.getElementById("bkt-birlesik-kart")) {
-      const eskiKart = document.getElementById("bkt-learning-panel");
-      if (eskiKart) eskiKart.remove();
-      return;
-    }
-    // Sıra: testi zamanı gelmiş konu → onaylı olmayan → onaylı.
-    // (Kısa kontrolü hazır konu panelin en üstünde görünür.)
-    const bugun = TODAY();
-    const aciliyet = (entry) => {
-      if (statusFor(entry) === "ONAYLANDI") return 3;
-      if (entry.precheck_due && dateValue(entry.precheck_due) <= dateValue(bugun)) return 0;
-      if (entry.learning_test_due && dateValue(entry.learning_test_due) <= dateValue(bugun)) return 1;
-      return 2;
-    };
-    const entries = Object.keys(s.bkt_state).map(key => ({ key: key, entry: s.bkt_state[key] }))
-      .sort((a, b) => aciliyet(a.entry) - aciliyet(b.entry) || b.entry.gozlem_sayisi - a.entry.gozlem_sayisi).slice(0, 12);
-    let panel = document.getElementById("bkt-learning-panel");
-    if (!entries.length) { if (panel) panel.remove(); return; }
-    if (!panel) { panel = document.createElement("section"); panel.id = "bkt-learning-panel"; panel.className = "card"; host.appendChild(panel); }
-    // Panel varsayılan olarak KAPALI gelir (sayfayı kaplamasın): yalnız tek
-    // satırlık özet görünür, öğrenci isterse açar. Tercih hatırlanır.
-    let acik = false;
-    try { acik = localStorage.getItem("am_bkt_panel_acik") === "1"; } catch (e) { acik = false; }
-    const bekleyenTest = entries.filter(x => {
-      const p = x.entry.pool_id || x.entry.soru_havuzu_id || resolvePoolId(x.key);
-      return p && (x.entry.precheck_due && dateValue(x.entry.precheck_due) <= dateValue(TODAY()));
-    }).length;
-    const onayliSayi = entries.filter(x => statusFor(x.entry) === "ONAYLANDI").length;
-    let html = '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">' +
-      '<div style="min-width:0;"><h3 style="margin:0;font-size:15px;">Öğrenme Durumu <span class="text-xs text-muted" style="font-weight:600;">· ' + entries.length + ' konu izleniyor</span></h3>' +
-      '<div class="text-xs text-muted" style="margin-top:2px;">' +
-      (acik ? 'Konuların yeterlilik ve tekrar göstergeleri'
-            : (bekleyenTest ? '<b style="color:var(--brand-blue);">' + bekleyenTest + ' konuda kısa kontrol hazır</b> · ' : '') +
-              onayliSayi + ' onaylı · satırları görmek için aç') +
-      '</div></div>' +
-      '<button class="btn btn-sm btn-ghost" data-act="toggleBktPanel" style="flex-shrink:0;min-height:40px;" aria-expanded="' + (acik ? "true" : "false") + '">' +
-      (acik ? 'Küçült' : 'Ayrıntı') + '</button></div>';
-    if (!acik) { panel.innerHTML = html; if (window.lucide && lucide.createIcons) lucide.createIcons(); return; }
-    html += '<div class="text-xs text-muted" style="margin:8px 0 10px;line-height:1.45;">Yeterlilik = bu konuyu bilme olasılığın (0–100) · Hafıza = tekrar kartlarının gücü · Durum: Veri yetersiz → Gelişiyor → Pekişiyor → ONAYLANDI. Test düğmesi soruları yalnız bu konunun havuzundan açar.</div><div style="display:grid;gap:7px;">';
-    entries.forEach(function (row) {
-      const e = row.entry; const status = statusFor(e); const known = e.gozlem_sayisi >= 5; const percent = Math.round(e.L * 100);
-      const cards = (s.flashcards.cards || []).filter(c => c.topicKey === row.key); const memory = cards.length ? Math.round(cards.reduce((sum, c) => sum + Number(c.memory_bar == null ? 1 : c.memory_bar), 0) / cards.length * 100) : 0;
-      html += '<div style="border:1px solid var(--border-card);border-radius:10px;padding:9px 10px;"><div style="display:flex;justify-content:space-between;gap:8px;align-items:center;"><strong style="font-size:12.5px;" title="' + safeText(row.key) + '">' + safeText(kisaKonu(row.key)) + '</strong><span class="text-xs" style="color:var(--brand-blue);font-weight:700;">' + safeText(STATUS_TEXT[status] || "Gelişiyor") + '</span></div>';
-      if (known) html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;"><div><div class="text-xs">Yeterlilik: <b>' + percent + '%</b></div><div style="height:5px;background:var(--bg-canvas);border-radius:99px;overflow:hidden;"><div style="height:100%;width:' + percent + '%;background:var(--brand-blue);border-radius:99px;"></div></div></div><div><div class="text-xs">Hafıza: <b>' + memory + '%</b></div><div style="height:5px;background:var(--bg-canvas);border-radius:99px;overflow:hidden;"><div style="height:100%;width:' + memory + '%;background:var(--memory-indigo);border-radius:99px;"></div></div></div></div>';
-      else html += '<div class="text-xs text-muted" style="margin-top:5px;">Birkaç soru daha çöz, seviyen netleşsin · ' + e.gozlem_sayisi + ' soru</div>';
-      const label = focusLabel(e); if (label) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Hataların şurada yoğunlaşıyor: ' + safeText(label) + '</div>';
-      const cause = e.graph_topic_id ? rootCause(e.graph_topic_id, e.hata_gecmisi || []) : null;
-      if (cause && !cause.stay) html += '<div class="text-xs" style="margin-top:6px;color:var(--brand-blue);">Önce şunu sağlamlaştır: ' + safeText(cause.topicName) + '</div>';
-      // Havuz ÇÖZÜLÜRSE düğme her zaman çıkar. Eskiden precheck_due şartı
-      // vardı; Okulizyon'dan gelen kayıtlarda bu tarih hiç yazılmadığı için
-      // "bazı konularda kısa kontrol gelmiyor" oluyordu.
-      const poolId = window.__havuzIdCoz(row.key, e.pool_id || e.soru_havuzu_id);
-      if (poolId && e.pool_id !== poolId) e.pool_id = poolId;   // eski/yanlış kayıt düzeltilir
-      const precheck = !!(e.precheck_due && dateValue(e.precheck_due) <= dateValue(TODAY()));
-      const task = s.mini_test_kuyrugu.find(x => x.topicKey === row.key && x.type === "learning" && !x.completed);
-      if (poolId) {
-        if (!e.pool_id) e.pool_id = poolId;   // bir daha aramayalım
-        html += '<button type="button" class="btn btn-sm ' + (precheck ? "btn-primary" : "btn-ghost") + ' bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="precheck" style="margin-top:7px;min-width:48px;min-height:48px;">Kısa Kontrol — ' + MINI_SORU + ' soru</button>';
-        if (task) html += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + safeText(row.key) + '" data-bkt-pool="' + safeText(poolId) + '" data-bkt-mode="learning" style="margin-top:7px;margin-left:6px;min-width:48px;min-height:48px;">Öğrenme Testi — ' + MINI_SORU + ' soru</button>';
-      } else {
-        // v35.7 — SESSİZ KALMA YOK: havuz yoksa neden test açılmadığı yazılır.
-        // Bilerek başka konunun havuzuna düşmüyoruz (kullanıcı isteği).
-        html += '<div class="text-xs" style="margin-top:6px;line-height:1.45;color:var(--text-muted);">Bu konunun soru havuzu henüz eklenmemiş. Başka konunun soruları gösterilmez.</div>';
-      }
-      html += '</div>';
-    });
-    html += '</div>';
-    // v38 — KULLANICI: "o bölümde kart iki yerde de var. Biri mavi diğeri
-    // beyaz." Bu panelin altında ikinci bir "Tekrar Kartı" (Bildi /
-    // Zorlandım / Bilemedi) çiziliyordu; asıl flashcard penceresiyle
-    // çakışıyor ve §5.1'e aykırı üçüncü bir "Zorlandım" düğmesi gösteriyordu.
-    // KALDIRILDI: tek kart yeri AmKart penceresi (site/kart.js).
-    panel.innerHTML = html;
-    if (window.lucide && lucide.createIcons) lucide.createIcons();
+    const eskiPanel = document.getElementById("bkt-learning-panel");
+    if (eskiPanel) eskiPanel.remove();
   }
 
   function scheduleUi() { clearTimeout(uiTimer); uiTimer = setTimeout(renderBktPanel, 80); }

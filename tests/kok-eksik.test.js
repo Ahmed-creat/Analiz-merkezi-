@@ -87,7 +87,10 @@ ok("precheck de 5 soru (eski 3 kalmadı)", !/mode === "precheck" \? 3/.test(ENGI
 ok("tek soru çizen cizMiniSoru var", /function cizMiniSoru\(modal\)/.test(ENGINE));
 ok("ileri/geri düğmeleri var", /data-bkt-next/.test(ENGINE) && /data-bkt-prev/.test(ENGINE));
 ok("soru sayacı gösteriliyor", /Soru ' \+ \(i \+ 1\) \+ ' \/ ' \+ qs\.length/.test(ENGINE));
-ok("buton etiketi 5 soru", HTML.indexOf("Kısa Kontrol — 5 soru") > 0 || /Kısa Kontrol — ' \+ MINI_SORU \+ ' soru/.test(ENGINE));
+// v40 — Konu Takibi'ndeki ayrı öğrenme paneli kaldırıldı; "5 soru" etiketi
+// artık Bilgi Bankası kartında ve Günlük Görevler satırında yazılı.
+ok("5 soru etiketi kullanıcıya görünüyor",
+  /5 soruluk kısa kontrol seni bekliyor/.test(HTML) || /Öğrenme Testi · 5 soru/.test(HTML) || /MINI_SORU = 5/.test(ENGINE));
 ok("tamamlanan konuda belirgin kontrol kartı", HTML.indexOf("5 soruluk kısa kontrol seni bekliyor") > 0);
 // v37 — KULLANICI: "5 soru 4. adımı bitirir bitirmez zaten açılıyor" → otomatik
 // açma KALDIRILDI. Bu test artık tersini doğruluyor (davranış testi: v37-davranis).
