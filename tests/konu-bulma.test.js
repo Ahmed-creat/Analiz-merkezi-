@@ -139,7 +139,7 @@ ok("panelde precheck vurgusu korunuyor", ENGINE.indexOf("const precheck = !!(e.p
 // v35.4: resolvePoolId IIFE İÇİNDE tanımlı; renderKnowledge dışarıda olduğu
 // için çağrı ReferenceError atıp BİLGİ BANKASI sayfasını beyaz bırakıyordu.
 // Köprü: havuzIdCoz() → window.__havuzIdCoz (IIFE içinde açılır).
-ok("konu detayında kayıtlı kimlik de doğrulanarak çözülüyor", HTML.indexOf("havuzIdCoz(selectedTopicKey, kayitliHavuz)") > 0);
+ok("konu detayında kayıtlı kimlik de doğrulanarak çözülüyor", HTML.indexOf("havuzIdCoz(selectedTopicKey, bktKayit.pool_id)") > 0);
 ok("IIFE köprüsü açık (window.__havuzIdCoz)", ENGINE.indexOf("window.__havuzIdCoz =") > 0);
 ok("sayfa çizimi try/catch ile korunuyor", /Bu sayfa yüklenemedi/.test(HTML));
 
@@ -170,8 +170,8 @@ ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v35.8", APP.indexOf('const PWA_SURUM = "v35.8-birlesik-kart-sekilli-sorular"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v35-8-birlesik-kart-sekilli-sorular") > 0);
+ok("PWA sürümü v35.9", APP.indexOf('const PWA_SURUM = "v35.9-gorevler-kart-bildirim"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v35-9-gorevler-kart-bildirim") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

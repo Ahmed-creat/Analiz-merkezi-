@@ -207,18 +207,43 @@
   // Kullanıcı şikâyeti: "test bildirimi gelmiyor". Artık izin verilir
   // verilmez tek seferlik deneme bildirimi gönderilir; düğme yok.
   // Aynı cihazda bir kez gönderilir (localStorage işareti).
-  const TEST_ANAHTARI = "am_push_test_gonderildi";
-  function testGonderildiMi() {
-    try { return localStorage.getItem(TEST_ANAHTARI) === "1"; } catch (e) { return false; }
+  // v35.9 — işaret artık CİHAZ + UÇ NOKTA'ya bağlı. Eskiden tek bir
+  // localStorage bayrağıydı: bir kez başarılı olunca (ya da yeni cihazda
+  // farklı davranınca) bir daha asla denenmiyordu. Şimdi her yeni abonelik
+  // kendi deneme bildirimini alır; başarısız deneme işaretlenmez.
+  const TEST_ANAHTARI = "am_push_test_gonderildi:";
+  function testGonderildiMi(ucNokta) {
+    try { return localStorage.getItem(TEST_ANAHTARI + (ucNokta || "")) === "1"; } catch (e) { return false; }
   }
-  function testIsaretle() {
-    try { localStorage.setItem(TEST_ANAHTARI, "1"); } catch (e) { /* */ }
+  function testIsaretle(ucNokta) {
+    try { localStorage.setItem(TEST_ANAHTARI + (ucNokta || ""), "1"); } catch (e) { /* */ }
   }
   async function testBirKez() {
-    if (testGonderildiMi()) return { ok: true, atlandi: true };
+    let ucNokta = "";
+    try {
+      const kayit = await navigator.serviceWorker.ready;
+      const a = await kayit.pushManager.getSubscription();
+      ucNokta = (a && a.endpoint) ? a.endpoint.slice(-24) : "";
+    } catch (e) { /* */ }
+    if (testGonderildiMi(ucNokta)) return { ok: true, atlandi: true };
     const r = await testEt();
-    if (r && r.ok) testIsaretle();
+    if (r && r.ok) testIsaretle(ucNokta);
     return r;
+  }
+
+  /** Tanılama: cihazda ne var, sunucu ne diyor? (Ayarlar'da görünür) */
+  async function teshis() {
+    const d = await durum();
+    const out = { cihaz: d, sunucu: null };
+    try {
+      const y = await fetch(url() + "/functions/v1/bildirim-gonder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", apikey: anahtar(), Authorization: "Bearer " + anahtar() },
+        body: JSON.stringify({ mod: "saglik" })
+      });
+      out.sunucu = await y.json().catch(() => ({ http: y.status }));
+    } catch (e) { out.sunucu = { hata: String(e).slice(0, 120) }; }
+    return out;
   }
 
   async function durum() {
@@ -248,7 +273,7 @@
     } catch (e) { /* sessiz */ }
   }
 
-  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, buYuzdenKapali: anlasilirHata, testGonderildiMi };
+  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, buYuzdenKapali: anlasilirHata, testGonderildiMi };
   // Oturum açıldığında app-pwa.js çağırır; gecikmeli de bir kez dene
   setTimeout(otomatik, 6000);
 })();

@@ -129,7 +129,11 @@ const modTest = (c) => testGonderimleri(c).filter(x => /"mod":"test"/.test(x.gov
   ok("izin + abonelik tamam", r1 && r1.ok === true, JSON.stringify(r1));
   esit("tam 1 deneme bildirimi gitti", modTest(o1.cagrilar).length, 1);
   ok("test sonucu sonuçta döndü", !!(r1 && r1.test && r1.test.ok), JSON.stringify(r1 && r1.test));
-  esit("cihaz işareti yazıldı", o1.depo["am_push_test_gonderildi"], "1");
+  // v35.9 — işaret artık CİHAZ + UÇ NOKTA'ya bağlı yazılır:
+  //   "am_push_test_gonderildi:<endpoint son 24>"
+  // Eskiden tek bayraktı; yeni cihaz/yeni abonelik bir daha test almıyordu.
+  const isaretAnahtar = Object.keys(o1.depo).find(k => k.indexOf("am_push_test_gonderildi:") === 0);
+  esit("cihaz işareti yazıldı (uç noktaya bağlı)", isaretAnahtar && o1.depo[isaretAnahtar], "1");
   ok("abonelik hesaba yazıldı (upsert veya REST)",
     o1.upsertler.length > 0 || o1.cagrilar.some(x => x.url.indexOf("push_abonelikleri") >= 0),
     "upsert: " + o1.upsertler.length);
@@ -159,7 +163,7 @@ const modTest = (c) => testGonderimleri(c).filter(x => /"mod":"test"/.test(x.gov
   esit("ikinci otomatik çağrıda tekrar gitmedi", modTest(o3.cagrilar).length, 1);
 
   // İşaret zaten varsa hiç göndermez
-  const o4 = ortamKur({ izin: "granted", localStorage: { am_push_test_gonderildi: "1" } });
+  const o4 = ortamKur({ izin: "granted", localStorage: { "am_push_test_gonderildi:m/fcm/send/test-endpoint": "1" } });
   vm.runInNewContext(KAYNAK, o4.sandbox, { filename: "push-bildirim.js" });
   await o4.sandbox.window.AmPush.otomatik();
   esit("işaret varsa gönderim yok", modTest(o4.cagrilar).length, 0);

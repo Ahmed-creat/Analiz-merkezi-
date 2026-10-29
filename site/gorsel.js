@@ -187,10 +187,11 @@
       }
     });
     if (g.not) {
-      const ns = satirBol(g.not);
-      for (let i = ns.length - 1, k = 0; i >= 0; i--, k++) {
-        s += '<text x="8" y="' + (H - 4 - k * 13) + '" font-family="system-ui,sans-serif" font-size="10.5" fill="#5B6577">' + esc(ns[i]) + "</text>";
-      }
+      // Not: 380 px'lik çerçeveye sığacak şekilde bölünür (taşma yok).
+      const ns = satirBol(g.not, 58);
+      ns.forEach(function (sat, i) {
+        s += '<text x="8" y="' + (H - 6 - (ns.length - 1 - i) * 12.5) + '" font-family="system-ui,sans-serif" font-size="10.5" fill="#5B6577">' + esc(sat) + "</text>";
+      });
     }
     return s + "</svg>";
   }
@@ -294,6 +295,14 @@
         s += '<polygon points="' + pts + '" fill="' + (sh.dolgu || "#EEF4FF") + '" stroke="' + (sh.cizgi || "#2563EB") + '" stroke-width="' + (sh.kalinlik || 2) + '"' +
           (sh.kesikli ? ' stroke-dasharray="7 5"' : "") + ' stroke-linejoin="round"/>';
       }
+      // çemberler (çevrel/dış teğet çember) — üçgenin ALTINA çizilir ki
+      // üçgen kenarları çemberin üstünde kalsın.
+      (sh.cemberler || []).forEach(function (c) {
+        const m = P[c.merkez];
+        if (!m) return;
+        s += '<circle cx="' + m.x + '" cy="' + m.y + '" r="' + sayi(c.r, 60) + '" fill="none" stroke="' + (c.renk || "#7C3AED") +
+          '" stroke-width="' + (c.kalinlik || 1.4) + '"' + (c.kesikli ? ' stroke-dasharray="6 5"' : "") + "/>";
+      });
       // ek çizgiler (yükseklik, kenarortay, açıortay, yarıçap…)
       (sh.cizgiler || []).forEach(function (c) {
         const p = P[c.a], q = P[c.b];

@@ -34,6 +34,11 @@ const VAPID_OZEL = Deno.env.get("VAPID_PRIVATE_JWK") || "";
 const VAPID_ACIK = Deno.env.get("VAPID_PUBLIC_KEY") || "";
 const SECRET = Deno.env.get("BILDIRIM_SECRET") || "";
 const KONU = Deno.env.get("VAPID_KONU") || "mailto:bildirim@analiz-merkezi.app";
+// Tarayıcının abone olurken kullandığı AÇIK anahtar (site/push-bildirim.js).
+// Gizli değildir; burada yalnız "sunucudaki sır aynı mı?" denetimi için durur.
+// Farklıysa push servisi 403 döner ve HİÇBİR bildirim gitmez — bu, en sık
+// görülen "izin var ama bildirim gelmiyor" nedenidir.
+const TARAYICI_VAPID_ACIK = "BH-rXf9Vz-jQ6vFnrftcxRhQzB4MeGpGwhJD4IyhMBQW742yazsztzMFd0U2KWV5LlpsU3y7ItTk1Ue4C9FdXwk";
 
 const sbB = () => ({ apikey: SK, Authorization: "Bearer " + SK, "Content-Type": "application/json" });
 const gun = (d: Date) => new Date(d.getTime() + 3 * 3600 * 1000).toISOString().slice(0, 10); // TR günü
@@ -81,8 +86,8 @@ function mesajSec(state: any, bugun: string) {
   if (testler.length) {
     const ad = String(testler[0]).split(" > ").slice(1).join(" > ") || String(testler[0]);
     return {
-      title: testler.length + " konuda kısa kontrol hazır (3 soru)",
-      body: ad + " · 3 dakikada biter",
+      title: testler.length + " konuda kısa kontrol hazır (5 soru)",
+      body: ad + " · 5 soru, 3 dakikada biter",
       url: "./#konu=" + encodeURIComponent(testler[0]),
       kind: "test"
     };
@@ -202,6 +207,24 @@ Deno.serve(async (istek) => {
   try { g = await istek.json(); } catch { g = {}; }
   const mod = String(g.mod || "run");
   const bugun = gun(new Date());
+
+  // --- SAĞLIK: teşhis (sır sızdırmaz; yalnız var/yok ve eşleşme) ---
+  if (mod === "saglik") {
+    let ozelGecerli = false;
+    try { const j = ozelJwk(); ozelGecerli = !!(j && j.d && j.x && j.y); } catch { ozelGecerli = false; }
+    return json({
+      surum: "v35.9",
+      vapid: {
+        ozelAnahtarVar: !!VAPID_OZEL,
+        ozelAnahtarCozuluyor: ozelGecerli,
+        acikAnahtarVar: !!VAPID_ACIK,
+        // EN KRİTİK SATIR: tarayıcıdaki anahtarla sunucudaki aynı mı?
+        tarayiciIleAyni: !!VAPID_ACIK && VAPID_ACIK.trim() === TARAYICI_VAPID_ACIK
+      },
+      bildirimSecretVar: !!SECRET,
+      supabaseAnahtariVar: !!SK
+    });
+  }
 
   if (!VAPID_OZEL || !VAPID_ACIK) return json({ hata: "VAPID anahtarları tanımlı değil" }, 500);
 

@@ -92,7 +92,10 @@ console.log("\n== 4) Kısa Kontrol 5 soru ==");
 ok("motor MINI_SORU = 5", /const MINI_SORU = 5;/.test(ENGINE));
 ok("motorda '3 soru' kalıntısı YOK", ENGINE.indexOf("3 soru") < 0);
 ok("motorda 'Kısa Kontrol — ' + MINI_SORU + ' soru'", /Kısa Kontrol — ' \+ MINI_SORU \+ ' soru/.test(ENGINE));
-ok("index.html'de 'Kısa Kontrol — 5 soru'", HTML.indexOf("Kısa Kontrol — 5 soru") >= 0);
+// v35.9 — Bilgi Bankası'nda iki yerde "5 soru" vardı; tek yer kaldı.
+// Konu Takibi'ndeki düğme "Kısa Kontrol · 5", Bilgi Bankası'ndaki kart
+// "5 soruluk kontrole başla" yazar.
+ok("index.html'de Kısa Kontrol düğmesi (tek biçim)", HTML.indexOf("Kısa Kontrol · ") >= 0 || HTML.indexOf("5 soruluk kontrole başla") >= 0);
 // precheck modunda sayı 3'e düşmemeli
 ok("precheck için ayrı sayı YOK", !/precheck\s*\?\s*3/.test(ENGINE));
 

@@ -799,6 +799,9 @@ select.dd-native {
 .neden-chip b { color: var(--text-main); font-size: 12px; }
 .hafiza-row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border-card); flex-wrap: wrap; }
 .hafiza-row:last-child { border-bottom: none; }
+.bkt-barlar { display: inline-flex; align-items: center; gap: 5px; flex: 0 0 auto; }
+.bkt-barlar .hafiza-bar { width: 58px; }
+.bkt-barlar b { font-size: 11px; min-width: 30px; }
 .hafiza-bar { display: flex; align-items: center; gap: 8px; min-width: 150px; flex: 0 0 220px; }
 .hafiza-bar > span:first-child { flex: 1; height: 8px; border-radius: 99px; background: var(--bg-canvas); overflow: hidden; display: block; }
 .hafiza-bar > span:first-child > span { display: block; height: 100%; border-radius: 99px; }
@@ -903,11 +906,21 @@ select.dd-native {
 .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; } /* minmax(0,1fr): uzun rozet adları sütunu genişletip sayfayı taşırmasın */
 .cal-dow { text-align: center; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--text-muted); padding: 4px 0; }
 .cal-day {
-  position: relative; min-width: 0; min-height: 52px; border-radius: 10px;
-  border: 1px solid var(--border-card); background: var(--bg-canvas);
-  padding: 5px 6px; display: flex; flex-direction: column; gap: 3px; align-items: flex-start;
+  position: relative; min-width: 0; min-height: 64px; border-radius: 11px;
+  border: 1.5px solid var(--border-card); background: var(--bg-canvas);
+  padding: 6px 7px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start;
   font-family: inherit; cursor: pointer; text-align: left;
 }
+/* v35.9 — etkinlikli gün ARTIK görünür: renkli zemin + kalın çerçeve */
+.cal-day.dolu { border-color: color-mix(in srgb, var(--memory-indigo) 45%, var(--border-card)); background: color-mix(in srgb, var(--memory-indigo) 7%, var(--bg-canvas)); }
+.cal-day.dolu.sinavli { border-color: var(--semantic-error); background: color-mix(in srgb, var(--semantic-error) 9%, var(--bg-canvas)); }
+.cal-day.dolu .cal-dnum { font-size: 13px; font-weight: 800; }
+.cal-sayi {
+  position: absolute; top: 5px; right: 5px; min-width: 15px; height: 15px; border-radius: 8px;
+  background: var(--memory-indigo); color: #fff; font-size: 9px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; padding: 0 3px;
+}
+.cal-day.sinavli .cal-sayi { background: var(--semantic-error); }
 .cal-day:hover { border-color: var(--brand-blue); }
 .cal-day.sel { border: 2px solid var(--memory-indigo); box-shadow: 0 0 0 3px color-mix(in srgb, var(--memory-indigo) 18%, transparent); }
 .cal-day.out { opacity: 0.35; }
@@ -916,8 +929,9 @@ select.dd-native {
 .cal-day.today .cal-dnum { color: var(--brand-blue); }
 .cal-pills { display: flex; flex-wrap: wrap; gap: 3px; }
 .cal-pill {
-  font-size: 8.5px; font-weight: 800; letter-spacing: 0.03em;
-  padding: 2px 5px; border-radius: 5px; line-height: 1.25; white-space: nowrap;
+  font-size: 9.5px; font-weight: 800; letter-spacing: 0.02em;
+  padding: 2.5px 6px; border-radius: 6px; line-height: 1.3; white-space: nowrap;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis;
 }
 .cal-pill.tek { background: var(--memory-indigo-bg); color: var(--memory-indigo); }
 .cal-pill.hazirlik { background: var(--semantic-warning-bg); color: var(--on-warning-bg); }
@@ -928,10 +942,10 @@ select.dd-native {
 .cd-box { border: 1px solid var(--border-card); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; background: var(--bg-canvas); }
 .cd-row { display: flex; align-items: flex-start; gap: 6px; padding: 3px 0; font-size: 12.5px; line-height: 1.45; }
 @media (max-width: 640px) {
-  .cal-day { min-height: 46px; padding: 4px 4px; border-radius: 8px; }
-  .cal-dnum { font-size: 10.5px; }
-  .cal-pill { font-size: 8px; padding: 1.5px 4px; }
-  .cal-pill.tek { font-size: 8px; }
+  .cal-day { min-height: 58px; padding: 5px 5px; border-radius: 9px; }
+  .cal-dnum { font-size: 11.5px; }
+  .cal-pill { font-size: 9px; padding: 2px 4px; }
+  .cal-pill.tek { font-size: 9px; }
 }
 
 /* Video → sonuç ekranı hedefi vurgusu (geçici) */
@@ -3026,48 +3040,148 @@ function statBox(label, value) {
 //   solve -> Soru Bankası'na çözüm girmek veya deneme kaydetmek
 // ============================================================
 
+// ============================================================
+// GÜNLÜK GÖREVLER — SABİT DEĞİL (v35.9)
+// Kullanıcı: "günlük görevler sabit olmasın, o gün öğrencinin ne yapması
+// gerekiyorsa onlar görev olmalı." Görevler her açılışta GERÇEK durumdan
+// üretilir: tekrar günü gelen konu, zamanı gelen kısa kontrol, yaklaşan okul
+// sınavı, nedeni işlenmemiş deneme hatası, hafızası zayıf konuların kartları,
+// okuma, soru çözümü ve konu çalışma. Yapılması gereken kalmadıysa o görev
+// listeden DÜŞER — "yapılmış" gibi görünmez.
+// ============================================================
+function gunlukGorevler() {
+  const ms = memoryStats();
+  const bkt = (window.AnalizBKT && typeof window.AnalizBKT.konuDurumlari === "function")
+    ? window.AnalizBKT.konuDurumlari() : {};
+  const liste = [];
+
+  // 1) Tekrar günü gelmiş konular (hafıza motoru)
+  const tekrarlar = ms.rows.filter(r => r.due);
+  if (tekrarlar.length) {
+    liste.push({
+      id: "tekrar", icon: "refresh-cw", onem: 1,
+      baslik: tekrarlar.length + " konu tekrar bekliyor",
+      aciklama: tekrarlar.slice(0, 3).map(r => r.topic).join(" · ") + (tekrarlar.length > 3 ? " …" : ""),
+      sayfa: "tracking", dugme: "Konu Takibi"
+    });
+  }
+
+  // 2) Kısa Kontrol zamanı gelmiş konu
+  const kisa = Object.keys(bkt).filter(k => bkt[k].precheck && bkt[k].poolId && (!bkt[k].kisaKontrol || bkt[k].kisaKontrol.acik));
+  if (kisa.length) {
+    liste.push({
+      id: "kisa", icon: "clipboard-check", onem: 1,
+      baslik: "Kısa Kontrol: " + splitKey(kisa[0]).topic,
+      aciklama: "5 soru, tek tek" + (kisa.length > 1 ? " · " + kisa.length + " konu bekliyor" : " · yalnız bu konunun havuzundan"),
+      sayfa: "tracking", dugme: "Konu Takibi"
+    });
+  }
+
+  // 3) Yaklaşan okul sınavı (bugün ya da 3 gün içinde)
+  const yakin = (state.plan.schoolExams || [])
+    .map(se => ({ se: se, gun: gunFarki(se.date) }))
+    .filter(x => x.gun !== null && x.gun >= 0 && x.gun <= 3)
+    .sort((a, b) => a.gun - b.gun)[0];
+  if (yakin) {
+    liste.push({
+      id: "okulsinav", icon: "graduation-cap", onem: 1,
+      baslik: yakin.se.lesson + " sınavına hazırlık",
+      aciklama: (yakin.gun === 0 ? "Sınav BUGÜN" : yakin.gun + " gün kaldı") +
+        (yakin.se.topics && yakin.se.topics.length ? " · " + yakin.se.topics.length + " konu" : ""),
+      sayfa: "planning", dugme: "Planlama"
+    });
+  }
+
+  // 4) Nedeni işlenmemiş deneme hataları (motor bu kayıtları saymıyor)
+  const nedensiz = (state.exams || []).reduce((a, ex) =>
+    a + (ex.errorLogs || []).filter(l => !l.type).length, 0);
+  if (nedensiz) {
+    liste.push({
+      id: "deneme", icon: "file-warning", onem: 2,
+      baslik: nedensiz + " hatanın nedeni eksik",
+      aciklama: "Neden seçilmeyen hata motora işlenmez — Denemelerim'de tamamla.",
+      sayfa: "exams", dugme: "Denemelerim"
+    });
+  }
+
+  // 5) Tekrar kartları (hafıza gücü düşük konular)
+  const kart = ms.rows.filter(r => r.pct < 60).slice(0, 6);
+  if (kart.length) {
+    liste.push({
+      id: "kart", icon: "layers", onem: 2,
+      baslik: "Tekrar kartları: " + kart.length + " konu",
+      aciklama: "Kısa kartlarla hatırla — " + kart.slice(0, 2).map(r => r.topic).join(" · "),
+      sayfa: "tracking", dugme: "Kartları aç", aksiyon: "kartBasla", hedef: kart[0].key
+    });
+  }
+
+  // 6-8) Çekirdek üç görev (seri bunlara bağlı) — tamamlanan listeden düşer
+  if (!state.dailyTasks.read) {
+    liste.push({
+      id: "oku", icon: "library", onem: 3,
+      baslik: state.plan.dailyReading ? "Kitap oku (" + state.plan.dailyReading + " sayfa)" : "Kitap oku",
+      aciklama: "Kitaplık'tan okuduğun sayfayı gir.", sayfa: "library", dugme: "Kitaplık"
+    });
+  }
+  if (!state.dailyTasks.solve) {
+    liste.push({
+      id: "soru", icon: "pen-tool", onem: 3, baslik: "Soru çözümü",
+      aciklama: "Soru Bankası'na çözüm gir veya deneme kaydet.",
+      sayfa: "questionbank", dugme: "Soru Bankası"
+    });
+  }
+  if (!state.dailyTasks.study) {
+    liste.push({
+      id: "calis", icon: "book-open", onem: 3, baslik: "Konu çalış",
+      aciklama: "Bilgi Bankası'nda bir konuya başla veya adım tamamla.",
+      sayfa: "knowledge", dugme: "Bilgi Bankası"
+    });
+  }
+
+  return liste.sort((a, b) => a.onem - b.onem);
+}
+
 function renderTasks(container) {
   const t = state.dailyTasks;
-  const doneCount = (t.study ? 1 : 0) + (t.read ? 1 : 0) + (t.solve ? 1 : 0);
+  const tamamCekirdek = (t.study ? 1 : 0) + (t.read ? 1 : 0) + (t.solve ? 1 : 0);
   const thisWeek = isoWeek(new Date()) + "-" + new Date().getFullYear();
   const freezeAvailable = state.streak.freezeWeek !== thisWeek;
-
-  // §2: solda görev listesi, sağda seri istatistikleri
-  const tasks = [
-    { key: "study", icon: "book-open", title: "Ders Çalışma + Soru Çöz", page: "knowledge", bt: "Bilgi Bankası'na git", desc: "Bilgi Bankası" + APRX + "nda bir adım tamamla veya konu bitir" },
-    { key: "read", icon: "library", title: "Kitap Oku", page: "library", bt: "Kitaplığa git", desc: "Kitaplık" + APRX + "tan okuduğun sayfayı gir" + (state.plan.dailyReading ? " (hedef: " + state.plan.dailyReading + " sayfa)" : "") },
-    { key: "solve", icon: "pen-tool", title: "Soru Çözümü", page: "questionbank", bt: "Soru Bankası'na git", desc: "Soru Bankası" + APRX + "na çözüm gir veya deneme kaydet" }
-  ];
+  const gorevler = gunlukGorevler();
 
   let html = '<div class="top-bar" style="margin-bottom:14px;"><h2 style="font-size:20px;font-weight:700;">' + icon("check-square", 22, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Günlük Görevler</h2>";
-  html += '<span class="tagpill ' + (doneCount === 3 ? "ok" : "warn") + '">' + doneCount + "/3 görev</span></div>";
+  html += '<span class="tagpill ' + (gorevler.length === 0 ? "ok" : "warn") + '">' + (gorevler.length === 0 ? "bugünlük bitti" : gorevler.length + " iş bekliyor") + "</span></div>";
 
   html += '<div class="ikili-grid">';
-  // SOL: Günlük Hedefler
-  html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">Günlük Hedefler</h3>' +
-    '<p class="text-xs text-muted" style="margin-bottom:10px;">Görevler elle işaretlenmez — ilgili modülde eylemi yapınca otomatik tamamlanır.</p>';
-  html += tasks.map(tsk => {
-    const ok = !!t[tsk.key];
-    return '<div class="gorev-row ' + (ok ? "ok" : "") + '">' +
-      '<span class="gorev-ic">' + icon(ok ? "check-circle-2" : tsk.icon, 18, ok ? "color:var(--semantic-success);" : "color:var(--text-muted);") + "</span>" +
-      '<div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:13.5px;">' + tsk.title + " " + (ok ? '<span class="tagpill ok">tamam</span>' : '<span class="tagpill danger">Eksik</span>') + "</div>" +
-      '<div class="text-xs text-muted" style="margin-top:1px;">' + tsk.desc + "</div>" +
-      (ok ? "" : '<button class="btn btn-sm btn-ghost" style="margin-top:6px;" data-act="nav" data-page="' + tsk.page + '">' + icon("arrow-right", 12) + " " + tsk.bt + "</button>") +
-      "</div></div>";
-  }).join("");
+  // SOL: Bugünün listesi (sabit değil)
+  html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">Bugün Ne Yapmalıyım?</h3>' +
+    '<p class="text-xs text-muted" style="margin-bottom:10px;">Liste her açılışta yeniden kurulur: tekrar günü gelen konu, zamanı gelen kısa kontrol, yaklaşan sınav, eksik nedenler… Bitsin, düşsün.</p>';
+  if (gorevler.length) {
+    html += gorevler.map(g => {
+      const btn = g.aksiyon
+        ? '<button class="btn btn-sm btn-primary" data-act="' + g.aksiyon + '" data-topic="' + attr(g.hedef || "") + '">' + icon("arrow-right", 12) + " " + g.dugme + "</button>"
+        : '<button class="btn btn-sm btn-ghost" data-act="nav" data-page="' + g.sayfa + '">' + icon("arrow-right", 12) + " " + g.dugme + "</button>";
+      return '<div class="gorev-row">' +
+        '<span class="gorev-ic">' + icon(g.icon, 18, "color:var(--text-muted);") + "</span>" +
+        '<div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:13.5px;">' + g.baslik + "</div>" +
+        '<div class="text-xs text-muted" style="margin-top:1px;">' + esc(g.aciklama) + "</div>" +
+        '<div style="margin-top:6px;">' + btn + "</div></div></div>";
+    }).join("");
+  } else {
+    html += '<div class="empty-state">' + icon("party-popper", 30) + "<div>Bugün için bekleyen iş yok. Yarın tekrar günü gelen konular burada görünecek.</div></div>";
+  }
   html += "</div>";
 
-  // SAĞ: Seri İstatistikleri
+  // SAĞ: Seri
   html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("bar-chart-3", 15, "vertical-align:-3px;color:var(--brand-blue);") + " Seri İstatistikleri</h3>";
-  html += '<div class="seri-kutu"><div><div class="text-xs text-muted">MEVCUT SER' + APRX + "</div><div class='tabular' style='font-size:22px;font-weight:800;'>" + state.streak.count + '<span class="text-xs text-muted" style="font-weight:600;"> / 3+ gün</span></div></div>' +
-    '<div style="text-align:right;"><div class="text-xs text-muted">BUGÜN</div><div class="tabular" style="font-size:22px;font-weight:800;color:var(--brand-blue);">' + doneCount + '<span class="text-xs text-muted" style="font-weight:600;"> / 3 görev</span></div></div></div>';
-  html += '<div class="seri-bar"><div style="width:' + (doneCount / 3 * 100) + '%;"></div></div>';
-  html += '<div class="seri-not' + (doneCount === 3 ? " ok" : "") + '">' + icon(doneCount === 3 ? "party-popper" : "snowflake", 15, "flex-shrink:0;") +
-    (doneCount === 3
-      ? "<span><b>3 görev tamam, seri +1 gün!</b> Yarın " + (state.streak.count + 1) + " güne çıkar.</span>"
-      : (3 - doneCount) + " görev kaldı. " + (freezeAvailable ? "Haftalık <b>Seri Dondurma</b> hakkın hazır (bir gün kaçırırsan seri yanmaz)." : "Bu haftanın dondurma hakkı kullanıldı.")) + "</div>";
-  html += '<div class="bento-card" style="background:var(--bg-canvas);box-shadow:none;margin-top:12px;padding:14px;"><b style="font-size:12.5px;">' + icon("info", 13, "vertical-align:-2px;color:var(--brand-blue);") + " Nasıl Çalışır?</b>" +
-    '<ol class="nasil-list"><li>Bilgi Bankası\'ndan konu çalış → <b>Ders Çalışma</b> görevi dolar.</li><li>Soru Bankası\'ndan çözüm gir veya deneme kaydet → <b>Soru Çözümü</b>.</li><li>Kitaplık\'tan sayfa ilerlet → <b>Kitap Oku</b>.</li><li>3 görev de dolunca gün işlenir; seri büyür, rozetler açılır.</li></ol></div>';
+  html += '<div class="seri-kutu"><div><div class="text-xs text-muted">MEVCUT SERİ</div><div class="tabular" style="font-size:22px;font-weight:800;">' + state.streak.count + '<span class="text-xs text-muted" style="font-weight:600;"> / 3+ gün</span></div></div>' +
+    '<div style="text-align:right;"><div class="text-xs text-muted">BUGÜN</div><div class="tabular" style="font-size:22px;font-weight:800;color:var(--brand-blue);">' + tamamCekirdek + '<span class="text-xs text-muted" style="font-weight:600;"> / 3 çekirdek</span></div></div></div>';
+  html += '<div class="seri-bar"><div style="width:' + (tamamCekirdek / 3 * 100) + '%;"></div></div>';
+  html += '<div class="seri-not' + (tamamCekirdek === 3 ? " ok" : "") + '">' + icon(tamamCekirdek === 3 ? "party-popper" : "snowflake", 15, "flex-shrink:0;") +
+    (tamamCekirdek === 3
+      ? "<span><b>3 çekirdek görev tamam, seri +1 gün!</b> Yarın " + (state.streak.count + 1) + " güne çıkar.</span>"
+      : (3 - tamamCekirdek) + " çekirdek görev kaldı. " + (freezeAvailable ? "Haftalık <b>Seri Dondurma</b> hakkın hazır." : "Bu haftanın dondurma hakkı kullanıldı.")) + "</div>";
+  html += '<div class="bento-card" style="background:var(--bg-canvas);box-shadow:none;margin-top:12px;padding:14px;"><b style="font-size:12.5px;">' + icon("info", 13, "vertical-align:-2px;color:var(--brand-blue);") + " Nasıl çalışır?</b>" +
+    '<ol class="nasil-list"><li>Soldaki liste <b>bugünün ihtiyacına göre</b> kurulur; sabit değildir.</li><li>Tekrarı gelen konu, zamanı gelen kısa kontrol, 3 gün içindeki sınav öne çıkar.</li><li>Çekirdek üç görev (konu çalış · soru çöz · kitap oku) seriyi besler.</li><li>İş bitince satır kendiliğinden düşer.</li></ol></div>';
   html += "</div></div>";
 
   container.innerHTML = html;
@@ -3185,10 +3299,10 @@ function moreUrgentTopics() {
   renderTracking(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
-let memoryLimit = 10; // Hafıza Gücü satırları: aynı AÇ/KAPA davranışı
+let memoryLimit = 6; // Öğrenme Durumu satırları: sade görünüm için 6, "daha fazla" ile artar
 function moreMemoryRows() {
   const toplam = memoryStats().rows.length;
-  memoryLimit = (memoryLimit >= toplam && memoryLimit > 10) ? 10 : memoryLimit + 10;
+  memoryLimit = (memoryLimit >= toplam && memoryLimit > 6) ? 6 : memoryLimit + 6;
   renderTracking(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
@@ -3247,92 +3361,86 @@ function renderTracking(container) {
     ).join("") +'<div class="flex gap-2" style="margin-top:10px;flex-wrap:wrap;"><button type="button" class="btn btn-ghost btn-sm" data-act="kokeksikKonuGit" data-key="' + attr(roots[0].weak) + '">' + icon("arrow-right", 13) + " En kritik konuyu aç</button></div>" + "</div>";
   }
 
-  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (TEK KART, v35.8) =====
-  // Kullanıcı: "Konu takibindeki öğrenme durumu ile hafıza gücü bölümünü
-  // birleştir — her iki bölümde de hafıza gücünü gösteriyor."
-  // Burada konu başına TEK satır var: durum (BKT) + yeterlilik + hafıza barı +
-  // tekrar aksiyonları + kısa kontrol düğmesi. Ayrı BKT paneli kaldırıldı.
+  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (TEK KART, v35.9 — SADE) =====
+  // v35.8'de bölümler birleşti; kullanıcı "çok karmaşık görünüyor" dedi.
+  // Sadeleştirme: 4 KPI kutusu → tek özet satırı; konu başına TEK başlık
+  // satırı + iki ince bar (hafıza/BKT) + en fazla birincil aksiyon.
   const bktDurumlar = (window.AnalizBKT && typeof window.AnalizBKT.konuDurumlari === "function")
     ? window.AnalizBKT.konuDurumlari() : {};
   const bktAnahtar = Object.keys(bktDurumlar);
   const hafizaAnahtar = ms.rows.map(r => r.key);
-  // Birleşik satırlar: hafıza kaydı olan konular + yalnız BKT kaydı olan konular
   const birlesik = hafizaAnahtar.slice();
   bktAnahtar.forEach(k => { if (birlesik.indexOf(k) < 0) birlesik.push(k); });
   const satirlar = birlesik.map(k => {
     const mem = ms.rows.find(r => r.key === k) || null;
     return { key: k, lesson: splitKey(k).lesson, topic: splitKey(k).topic, mem: mem, bkt: bktDurumlar[k] || null };
   }).sort((a, b) => {
-    const pa = a.mem ? a.mem.pct : 101, pb = b.mem ? b.mem.pct : 101;   // hafızası zayıf olan üstte
+    const pa = a.mem ? a.mem.pct : 101, pb = b.mem ? b.mem.pct : 101;
     return pa - pb;
   });
+  const onayliSay = bktAnahtar.filter(k => bktDurumlar[k].onayli).length;
 
-  html += '<div class="bento-card" id="bkt-birlesik-kart" style="margin-top:16px;"><div class="flex items-center justify-between" style="margin-bottom:4px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
-  const iv = idealReviewInterval();
-  if (iv !== null) html += '<span class="text-xs text-muted">Sınav yaklaşırken aralıklar Cepeda %15 ile sıklaşır · ideal: <b>' + iv + " gün</b></span>";
-  html += "</div>";
-  html += '<div class="text-xs text-muted" style="margin:0 0 10px;line-height:1.45;">Durum = bu konuyu bilme olasılığın (Veri yetersiz → Gelişiyor → Pekişiyor → ONAYLANDI) · Hafıza = tekrar kartlarının gücü. Kısa Kontrol yalnız bu konunun havuzundan soru açar.</div>';
+  html += '<div class="bento-card" id="bkt-birlesik-kart" style="margin-top:16px;"><div class="flex items-center justify-between" style="margin-bottom:2px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
+  html += '<span class="text-xs text-muted tabular">' + satirlar.length + " konu · " + ms.waiting + " tekrar bugün · ort. hafıza %" + ms.avg + (onayliSay ? " · " + onayliSay + " onaylı" : "") + "</span></div>";
+  html += '<div class="text-xs text-muted" style="margin:0 0 10px;">Her konu tek satır: solda hafıza, sağda BKT yeterliliği. Hafıza düşükse kart/tekrar, yeterlilik düşükse Kısa Kontrol önerilir.</div>';
   if (satirlar.length) {
-    html += '<div class="stat-grid" style="margin-bottom:14px;">' +
-      statBox("Tekrar Bekleyen", ms.waiting) +
-      statBox("Ort. Hafıza", "%" + ms.avg) +
-      statBox("Kritik (<%20)", ms.critical) +
-      statBox("Onaylı Konu", bktAnahtar.filter(k => bktDurumlar[k].onayli).length) + "</div>";
     html += satirlar.slice(0, memoryLimit).map(sat => {
       const r = sat.mem;
       const b = sat.bkt;
       const pct = r ? r.pct : null;
       const durum = b ? b.durum : "Veri yetersiz";
       const yeter = b && b.yeterlilik !== null ? b.yeterlilik : null;
-      let alsat = "";
+      const kisaKapali = !!(b && b.kisaKontrol && b.kisaKontrol.acik === false);
+      // durum rengi: tek küçük nokta (badge kalabalığı yerine)
+      const nokta = pct !== null && pct < MEMORY_CRITICAL ? "var(--semantic-error)"
+        : (r && r.due) ? "var(--semantic-warning)"
+          : (b && b.onayli) ? "var(--semantic-success)" : "var(--brand-blue)";
+      // tek birincil aksiyon
+      let ana = "";
       if (r) {
-        const done = r.pct >= 90;
-        const urgent = r.pct < MEMORY_CRITICAL;
-        const btn = urgent
-          ? '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("flame", 13) + " ACİL TEKRAR ET</button>"
-          : r.due
-            ? '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>"
-            : done
-              ? '<button class="btn btn-sm btn-success" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>"
-              : '<button class="btn btn-sm btn-primary" data-act="earlyReview" data-topic="' + attr(r.key) + '">' + icon("fast-forward", 13) + " Erken Tekrar Yap</button>";
-        alsat += btn + '<button class="btn btn-sm btn-ghost" data-act="resetTopic" data-topic="' + attr(r.key) + '" style="color:var(--semantic-error);" title="Baştan Başla">' + icon("rotate-ccw", 13) + "</button>";
+        if (pct < MEMORY_CRITICAL) ana = '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("flame", 13) + " ACİL TEKRAR</button>";
+        else if (r.due) ana = '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>";
+        else if (pct >= 90) ana = '<button class="btn btn-sm btn-success" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>";
+        else ana = '<button class="btn btn-sm btn-primary" data-act="earlyReview" data-topic="' + attr(r.key) + '">' + icon("fast-forward", 13) + " Erken Tekrar</button>";
       }
+      // ikincil: kartlar (her zaman) + kısa kontrol (yalnız zamanı gelince)
+      let ikincil = "";
+      if (r) ikincil += '<button type="button" class="btn btn-sm btn-ghost" data-act="kartBasla" data-topic="' + attr(r.key) + '" style="min-width:44px;min-height:40px;" title="Tekrar kartları">' + icon("layers", 13) + " Kart</button>";
       if (b && b.poolId) {
-        alsat += '<button type="button" class="btn btn-sm ' + (b.precheck ? "btn-primary" : "btn-ghost") + ' bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="precheck" style="min-width:48px;min-height:44px;">Kısa Kontrol — ' + (window.AnalizBKT && window.AnalizBKT.MINI_SORU || 5) + " soru</button>";
-        if (b.ogrenmeTesti) alsat += '<button type="button" class="btn btn-sm btn-ghost bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="learning" style="min-width:48px;min-height:44px;">Öğrenme Testi</button>';
+        ikincil += kisaKapali
+          ? '<button type="button" class="btn btn-sm btn-ghost" disabled style="min-width:44px;min-height:40px;opacity:0.5;" title="Kısa Kontrol kısa süre önce yapıldı">' + icon("lock", 12) + " Kısa Kontrol · " + b.kisaKontrol.kalan + " gün</button>"
+          : '<button type="button" class="btn btn-sm ' + (b.precheck ? "btn-primary" : "btn-ghost") + ' bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="precheck" style="min-width:44px;min-height:40px;">' + icon("clipboard-check", 13) + " Kısa Kontrol · " + (window.AnalizBKT && window.AnalizBKT.MINI_SORU || 5) + "</button>";
       }
-      let orta = "";
-      if (pct !== null) {
-        orta += '<span class="hafiza-bar"><span style="width:' + pct + "%;background:" + memoryColor(pct) + ';"></span><b class="tabular" style="color:' + memoryColor(pct) + ';">%' + pct + "</b></span>";
-      }
-      if (yeter !== null) {
-        orta += '<span class="hafiza-bar" title="Yeterlilik (BKT)"><span style="width:' + yeter + '%;background:var(--brand-blue);"></span><b class="tabular" style="color:var(--brand-blue);">' + yeter + "%</b></span>";
-      }
-      let alt = '<div class="text-xs text-muted">' + esc(sat.lesson);
-      if (r) alt += " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki: " + fmtDate(r.next.date) + " (" + r.next.day + ". gün)" : "");
-      if (b) alt += " · " + b.gozlem + " soru izlendi";
-      alt += "</div>";
-      if (b && b.odak) alt += '<div class="text-xs" style="color:var(--brand-blue);margin-top:2px;">Hataların şurada yoğunlaşıyor: ' + esc(b.odak) + "</div>";
-      if (b && b.kok) alt += '<div class="text-xs" style="color:var(--brand-blue);margin-top:2px;">Önce şunu sağlamlaştır: ' + esc(b.kok) + "</div>";
-      if (b && !b.poolId) alt += '<div class="text-xs" style="color:var(--semantic-warning);margin-top:2px;">Soru havuzu eşlenmedi — bu konuyla birebir eşleşen havuz yok.</div>';
-      return '<div class="hafiza-row">' +
+      // sıfırlama: küçük ve sonda
+      if (r) ikincil += '<button class="btn btn-sm btn-ghost" data-act="resetTopic" data-topic="' + attr(r.key) + '" style="color:var(--semantic-error);min-width:36px;min-height:40px;padding:4px 6px;" title="Baştan başla">' + icon("rotate-ccw", 12) + "</button>";
+
+      let alt = '<span class="text-xs text-muted">' + esc(sat.lesson);
+      if (r) alt += " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki " + fmtDate(r.next.date) : " · tekrar gerekmiyor");
+      alt += "</span>";
+      const uyari = b && !b.poolId ? '<span class="text-xs" style="color:var(--semantic-warning);">Soru havuzu eşlenmedi</span>' : "";
+      // iki ince bar — etiketler barın altında, küçük
+      let barlar = '<span class="bkt-barlar">';
+      if (pct !== null) barlar += '<span class="hafiza-bar" title="Hafıza gücü"><span style="width:' + pct + "%;background:" + memoryColor(pct) + ';"></span></span><b class="tabular" style="color:' + memoryColor(pct) + ';">%' + pct + "</b>";
+      if (yeter !== null) barlar += '<span class="hafiza-bar" title="Yeterlilik (BKT)"><span style="width:' + yeter + '%;background:var(--brand-blue);"></span></span><b class="tabular" style="color:var(--brand-blue);">' + yeter + "%</b>";
+      barlar += "</span>";
+      return '<div class="hafiza-row" style="align-items:center;gap:10px;">' +
+        '<span style="width:8px;height:8px;border-radius:50%;background:' + nokta + ';flex:0 0 auto;" title="' + esc(durum) + '"></span>' +
         '<span class="hafiza-ad" style="min-width:0;flex:1;">' +
-        (pct !== null && pct < MEMORY_WARNING ? '<span class="badge badge-kritik">KRİTİK</span> ' : "") +
-        (r && r.due ? '<span class="badge badge-warn">BUGÜN</span> ' : "") +
-        '<b style="font-size:13px;">' + esc(sat.topic) + '</b> <span class="text-xs" style="color:var(--brand-blue);font-weight:700;">' + esc(durum) + "</span>" +
-        alt + "</span>" +
-        orta +
-        '<span class="flex gap-2" style="flex-shrink:0;flex-wrap:wrap;">' + alsat + "</span></div>";
+        '<b style="font-size:13px;">' + esc(sat.topic) + '</b> <span class="text-xs" style="color:var(--text-muted);font-weight:700;">' + esc(durum) + "</span>" +
+        "<br>" + alt + " " + uyari +
+        "</span>" +
+        barlar +
+        '<span class="flex gap-1" style="flex-shrink:0;flex-wrap:wrap;align-items:center;">' + ana + ikincil + "</span></div>";
     }).join("");
     if (satirlar.length > memoryLimit) {
       html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-down", 14) + " Daha Fazla Göster (" + (satirlar.length - memoryLimit) + " konu daha)</button>";
-    } else if (memoryLimit > 10) {
+    } else if (memoryLimit > 6) {
       html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:8px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
     }
   } else {
     html += '<div class="empty-state">' + icon("brain", 34) + "<div>Bilgi Bankası'nda konu tamamlandıkça ya da kısa kontroller çözüldükçe durum ve hafıza barları burada belirir.</div></div>";
   }
-  html += "</div>";
+  html += "</div>";  html += "</div>";
 
   container.innerHTML = html;
   if (window.lucide && lucide.createIcons) lucide.createIcons();
@@ -3817,6 +3925,9 @@ function updateBookRead(idx) {
 // Tersine planlama + Haftalık İvme + Altın Saat + Rejim tablosu
 // ============================================================
 
+// v35.9 — Planlama formları varsayılan KAPALI: "Ekle"/"Düzenle" ile açılır.
+let planHedefAcik = false;
+let planOkulFormAcik = false;
 function renderPlanning(container) {
   const p = state.plan;
   const mom = weeklyMomentum();
@@ -3831,11 +3942,23 @@ function renderPlanning(container) {
   }
   html += "</div>";
 
-  html += '<div class="ikili-grid" style="--ikili:1.2fr 1fr;">';
+  // ---- ÇALIŞMA TAKVİMİ: sayfanın ANA öğesi (en üstte, tam genişlik) ----
+  html += renderCalendarHTML();
+
+  html += '<div class="ikili-grid" style="--ikili:1.2fr 1fr;margin-top:16px;">';
 
   // ---- SOL: Hedef Belirleme + Okuma (§7 sol form grubu) ----
-  html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("target", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Deneme Hedefi</h3>";
-  html += '<p class="text-xs text-muted" style="margin:-6px 0 10px;">TYT denemelerin için hedef tarih, saat ve net — deneme tüm dersleri kapsar.</p>';
+  // v35.9: form varsayılan KAPALI; "Düzenle"ye basınca açılır.
+  html += '<div class="bento-card"><div class="flex items-center justify-between" style="margin-bottom:6px;gap:8px;flex-wrap:wrap;"><h3 style="font-size:15px;font-weight:700;margin:0;">' + icon("target", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Deneme Hedefi</h3>" +
+    '<button class="btn btn-sm btn-ghost" data-act="togglePlanHedef">' + icon(planHedefAcik ? "x" : "pencil", 13) + " " + (planHedefAcik ? "Kapat" : "Düzenle") + "</button></div>";
+  if (!planHedefAcik) {
+    // Kapalıyken sade özet — form alanları gizli
+    const ozet = (p.targetDate ? "Hedef tarih: <b>" + esc(fmtDate(p.targetDate)) + "</b>" + (p.examTime ? " · " + esc(p.examTime) : "") : "Henüz hedef tarih yok") +
+      " · Hedef net: <b>" + (p.targetNet || "—") + "</b> · Günlük çalışma: <b>" + (p.dailyHours || "—") + " sa</b>" +
+      (p.dailyReading ? " · Okuma: <b>" + p.dailyReading + " sayfa</b>" : "");
+    html += '<p class="text-xs text-muted" style="margin:2px 0 0;line-height:1.6;">' + ozet + "</p>";
+  } else {
+  html += '<p class="text-xs text-muted" style="margin:2px 0 10px;">TYT denemelerin için hedef tarih, saat ve net — deneme tüm dersleri kapsar.</p>';
   html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;">' +
     '<div><label class="text-xs text-muted">Sınav Tarihi</label><input type="date" id="plan-date" class="input" value="' + attr(p.targetDate || "") + '"></div>' +
     '<div><label class="text-xs text-muted">Sınav Saati</label><input type="time" id="plan-time" class="input" value="' + attr(p.examTime || "") + '"></div>' +
@@ -3845,7 +3968,9 @@ function renderPlanning(container) {
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">' +
     '<div><label class="text-xs text-muted">Süre (dk, tavan ' + READING_MAX_MINUTES + ')</label><input type="number" inputmode="numeric" id="plan-reading-min" class="input" min="0" max="' + READING_MAX_MINUTES + '" value="' + (p.readingMinutes || "") + '"></div>' +
     '<div><label class="text-xs text-muted">Hedef (sayfa)</label><input type="number" inputmode="numeric" id="plan-reading" class="input" min="0" value="' + (p.dailyReading || "") + '"></div></div>';
-  html += '<button class="btn btn-primary w-full btn-sticky" data-act="savePlan" style="margin-top:14px;">' + icon("save", 15) + " Planı Kaydet</button></div>";
+  html += '<button class="btn btn-primary w-full btn-sticky" data-act="savePlan" style="margin-top:14px;">' + icon("save", 15) + " Planı Kaydet</button>";
+  }
+  html += "</div>";
 
   // ---- OKUL SINAVLARI: tek ders + seçilen konular (sınav kapsamı yalnızca burada) ----
   html += renderSchoolExamsHTML();
@@ -3869,9 +3994,6 @@ function renderPlanning(container) {
     icon(r.icon, 20) + '<div style="font-weight:700;font-size:13px;">' + r.key + '</div><div class="text-xs text-muted tabular">' + r.hours + "</div></button>"
   ).join("");
   html += "</div></div></div></div>";
-
-  // ---- ÇALIŞMA TAKVİMİ (Google Takvim tarzı aylık ızgara) ----
-  html += renderCalendarHTML();
 
   // ---- §7 alt: Altın Saat Önerisi + KRİTİK konular ----
   html += '<div class="bento-card" style="margin-top:16px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">' + icon("sun", 16, "vertical-align:middle;margin-right:6px;color:var(--semantic-warning);") + " Altın Saat Önerisi</h3>" +
@@ -3911,8 +4033,10 @@ let schoolFormLesson = "";
 
 function renderSchoolExamsHTML() {
   const exams = state.plan.schoolExams || [];
-  let h = '<div class="bento-card" style="margin-top:16px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">' + icon("graduation-cap", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Okul Sınavları</h3>" +
-    '<p class="text-xs text-muted" style="margin:0 0 10px;">Her okul sınavı tek derstendir; sınavda çıkacakını düşündüğün konuları seç — hazırlık tekrarları ve hatırlatmalar bunlara göre çalışır.</p>';
+  // v35.9 — form varsayılan KAPALI; "Sınav Ekle"ye basınca açılır.
+  let h = '<div class="bento-card" style="margin-top:16px;"><div class="flex items-center justify-between" style="gap:8px;flex-wrap:wrap;"><h3 style="font-size:15px;font-weight:700;margin:0;">' + icon("graduation-cap", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Okul Sınavları</h3>" +
+    '<button class="btn btn-sm ' + (planOkulFormAcik ? "btn-ghost" : "btn-primary") + '" data-act="togglePlanOkulForm">' + icon(planOkulFormAcik ? "x" : "plus", 13) + " " + (planOkulFormAcik ? "Kapat" : "Sınav Ekle") + "</button></div>" +
+    '<p class="text-xs text-muted" style="margin:4px 0 10px;">Her okul sınavı tek derstendir; sınavda çıkacakını düşündüğün konuları seç — hazırlık tekrarları bunlara göre çalışır.</p>';
   if (exams.length) {
     h += exams.map(se => {
       const gun = gunFarki(se.date);
@@ -3927,6 +4051,7 @@ function renderSchoolExamsHTML() {
   } else {
     h += '<div class="empty-state" style="padding:12px;">' + icon("calendar-plus", 24) + "<div>Henüz okul sınavı eklenmedi.</div></div>";
   }
+  if (!planOkulFormAcik) { h += "</div>"; return h; }
   h += '<div class="mini-ayrac"></div><div class="text-xs font-bold" style="letter-spacing:0.05em;color:var(--text-muted);margin-bottom:8px;">YENİ OKUL SINAVI</div>';
   h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:8px;">' +
     '<div><label class="text-xs text-muted">Ders</label><select id="school-lesson" class="select"><option value="">Ders Seç…</option>' + Object.keys(CURRICULUM[state.user.grade || "9"] || LESSON_CONFIG).map(l => '<option value="' + attr(l) + '"' + (schoolFormLesson === l ? " selected" : "") + ">" + esc(l) + "</option>").join("") + "</select></div>" +
@@ -4065,9 +4190,13 @@ function renderCalendarHTML() {
     const ds = toDayStr(new Date(y, m, gun));
     const evs = events[ds] || [];
     const isToday = ds === todayStrNow;
-    h += '<button type="button" class="cal-day' + (isToday ? " today" : "") + (calSelected === ds ? " sel" : "") + '" data-act="calDay" data-date="' + ds + '"><span class="cal-dnum">' + gun + "</span>";
+    const sinavli = evs.some(e => e.tip === "sinav");
+    h += '<button type="button" class="cal-day' + (isToday ? " today" : "") + (calSelected === ds ? " sel" : "") + (evs.length ? " dolu" : "") + (sinavli ? " sinavli" : "") + '" data-act="calDay" data-date="' + ds + '">' +
+      '<span class="cal-dnum">' + gun + "</span>";
     if (evs.length) {
-      h += '<span class="cal-pills">' + evs.map(e => '<span class="cal-pill ' + e.tip + '">' + esc(e.etiket) + "</span>").join("") + "</span>";
+      if (evs.length > 1) h += '<span class="cal-sayi">' + evs.length + "</span>";
+      h += '<span class="cal-pills">' + evs.slice(0, 2).map(e => '<span class="cal-pill ' + e.tip + '">' + esc(e.etiket) + "</span>").join("") +
+        (evs.length > 2 ? '<span class="cal-pill tek">+' + (evs.length - 2) + "</span>" : "") + "</span>";
     }
     h += "</button>";
   }
@@ -4360,7 +4489,16 @@ function renderKnowledge(container) {
       // v35.6: kontrol testi yapılmadıysa EN ÜSTTE belirgin kart (keşfedilebilir olsun)
       const bktKayit = (state.bkt_state && state.bkt_state[selectedTopicKey]) || {};
       const havuzKontrol = havuzIdCoz(selectedTopicKey, bktKayit.pool_id);
-      if (bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol) {
+      const kisaDurum = (window.AnalizBKT && window.AnalizBKT.konuDurum) ? window.AnalizBKT.konuDurum(selectedTopicKey) : null;
+      const kisaKapali = !!(kisaDurum && kisaDurum.kisaKontrol && kisaDurum.kisaKontrol.acik === false);
+      if (bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol && kisaKapali) {
+        // v35.9 — "5 kısa soru her zaman açık kalmayacak": kısa kontrol
+        // yapıldıktan sonra birkaç gün kapalı; yerine kart çalışması önerilir.
+        html += '<div class="bento-card" style="margin-bottom:16px;">' +
+          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">' + icon("lock", 18, "color:var(--text-muted);") + '<b style="font-size:14px;">Kısa Kontrol dinlenmede</b></div>' +
+          '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu konunun kısa kontrolünü kısa süre önce yaptın; aynı 5 soruyu tekrar sormak öğrenmeyi ölçmez. <b>' + kisaDurum.kisaKontrol.kalan + ' gün</b> sonra ya da tekrar zamanı gelince yeniden açılır.</p>' +
+          '<button class="btn btn-primary w-full" data-act="kartBasla" data-topic="' + attr(selectedTopicKey) + '" style="min-height:48px;">' + icon("layers", 15) + " Tekrar kartlarıyla çalış</button></div>";
+      } else if (bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol) {
         html += '<div class="bento-card" style="margin-bottom:16px;border:2px solid var(--brand-blue);background:linear-gradient(180deg,rgba(37,99,235,0.07),transparent);">' +
           '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">' + icon("clipboard-check", 20, "color:var(--brand-blue);") + '<b style="font-size:15px;">5 soruluk kısa kontrol seni bekliyor</b></div>' +
           '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu konuyu gerçekten öğrendin mi? Sorular tek tek, sırayla sorulur. Doğru cevap test sırasında gösterilmez.</p>' +
@@ -4378,16 +4516,10 @@ function renderKnowledge(container) {
         '<div class="kb-hafiza"><span class="text-xs text-muted">Yeterlilik</span>' + (bktPercent === null ? '<span class="text-xs text-muted">Birkaç soru daha çöz, seviyen netleşsin</span>' : '<div class="progress" style="flex:1;"><div style="width:' + bktPercent + '%;background:var(--brand-blue);"></div></div><b class="tabular" style="color:var(--brand-blue);font-size:16px;">%' + bktPercent + '%</b>') + '</div></div>' +
         '<div class="kb-satir tabular"><span>Tekrar: <b>' + (mem.reviewCount || 0) + '</b></span><span>Tamamlanma: <b>' + fmtDate(mem.completedAt) + "</b></span><span>Son Tekrar: <b>" + (mem.lastReview ? fmtDate(mem.lastReview) : "-") + "</b></span><span>Sıradaki: <b>" + (nr ? fmtDate(nr.date) + " (" + nr.day + ". gün)" : "-") + "</b></span></div>" +
         '<div class="flex gap-2" style="margin-top:12px;flex-wrap:wrap;">' +
-        (function () {
-          // Kısa Kontrol, konu kaydında pool_id olmasa da ÇIKAR: havuz
-          // "Ders > Konu" anahtarından çözülür (eskiden yumurta-tavuktu).
-          // NOT: köprü (havuzIdCoz) kullanılır; resolvePoolId bu kapsamda YOK.
-          const kayitliHavuz = state.bkt_state && state.bkt_state[selectedTopicKey] && state.bkt_state[selectedTopicKey].pool_id;
-          const cozulen = havuzIdCoz(selectedTopicKey, kayitliHavuz);
-          if (!cozulen) return '';
-          if (state.bkt_state && state.bkt_state[selectedTopicKey] && !state.bkt_state[selectedTopicKey].pool_id) state.bkt_state[selectedTopicKey].pool_id = cozulen;
-          return '<button class="btn btn-ghost btn-sm" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(cozulen) + '" data-bkt-mode="precheck" style="min-width:48px;min-height:48px;">Kısa Kontrol — 5 soru</button>';
-        })() +
+        // v35.9 — Kısa Kontrol düğmesi BURADAN KALDIRILDI: aynı ekranda iki
+        // yerde "5 soru" vardı. Tek yer: üstteki "5 soruluk kısa kontrol"
+        // kartı (zamanı gelince). Yerine tekrar kartları düğmesi konur.
+        '<button class="btn btn-ghost btn-sm" data-act="kartBasla" data-topic="' + attr(selectedTopicKey) + '" style="min-width:48px;min-height:48px;">' + icon("layers", 14) + " Tekrar Kartları</button>" +
         '<button class="btn btn-success btn-sm" data-act="reviewTopic" data-topic="' + attr(selectedTopicKey) + '">' + icon("refresh-cw", 14) + " Tekrar Ettim</button>" +
         '<button class="btn btn-primary btn-sm" data-act="earlyReview" data-topic="' + attr(selectedTopicKey) + '">' + icon("fast-forward", 14) + " Erken Tekrar</button>" +
         '<button class="btn btn-ghost btn-sm" data-act="resetTopic" data-topic="' + attr(selectedTopicKey) + '" style="color:var(--semantic-error);margin-left:auto;">' + icon("rotate-ccw", 14) + " Sıfırla</button></div></div>";
@@ -4925,6 +5057,8 @@ document.addEventListener("DOMContentLoaded", function () {
       case "moreUrgent": moreUrgentTopics(); break;
       case "moreMemory": moreMemoryRows(); break;
       case "reviewTopic": reviewTopic(el.dataset.topic); break;
+      // v35.9 — Tekrar Kartları (flashcard): her konu için, onay beklemeden
+      case "kartBasla": if (window.AmKart && window.AmKart.ac) window.AmKart.ac(el.dataset.topic); break;
       case "earlyReview": earlyReview(el.dataset.topic); break;
       case "resetTopic": resetTopic(el.dataset.topic); break;
       // Kitaplık
@@ -4934,6 +5068,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Planlama
       case "setRhythm": setRhythm(el.dataset.rhythm); break;
       case "savePlan": savePlan(); break;
+      case "togglePlanHedef": planHedefAcik = !planHedefAcik; renderPlanning(document.getElementById("main-content")); if (window.lucide && lucide.createIcons) lucide.createIcons(); break;
+      case "togglePlanOkulForm": planOkulFormAcik = !planOkulFormAcik; renderPlanning(document.getElementById("main-content")); if (window.lucide && lucide.createIcons) lucide.createIcons(); break;
       case "calPrev": calShift(-1); break;
       case "calNext": calShift(1); break;
       case "calDay": selectCalDay(el.dataset.date); break;
@@ -4997,6 +5133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- BKT motoru: yeterlilik/tekrar hesabı, havuz→soru akışı, flashcard, ilişki grafı.
      window.AnalizBKT API'sini kurar; kendi IIFE'sinde çalışır, sayfayı düşürmez. -->
 <script src="bkt-engine.js" defer></script>
+<script src="kart.js" defer></script>
 <script src="mesaj.js"></script>
 <script type="module" src="app-pwa.js"></script>
 </body>

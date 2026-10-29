@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261029-v35-8-birlesik-kart-sekilli-sorular";
+const CACHE = "analiz-merkezi-v-20261029-v35-9-gorevler-kart-bildirim";
 const ASSETS = [
   "./",
   "./index.html",
@@ -22,6 +22,7 @@ const ASSETS = [
   "./video-cozum.js",
   "./push-bildirim.js",
   "./bkt-engine.js",
+  "./kart.js",
   "./content/konu_esleme.json",
   "./vendor/supabase.js",
   "./content/iliski_grafi.json",

@@ -30,7 +30,7 @@ const hatalar = [];
 function ok(ad, kosul, ek) { if (kosul) { gecen++; return true; } kalan++; hatalar.push(ad + (ek ? " → " + ek : "")); return false; }
 
 // ---------- 1) Kartın HTML'ini gerçek kodla üret ----------
-const bas = HTML.indexOf("  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (TEK KART, v35.8) =====");
+const bas = HTML.indexOf("  // ===== ÖĞRENME DURUMU · HAFIZA GÜCÜ (TEK KART, v35.9 — SADE) =====");
 const son = HTML.indexOf('  html += "</div>";\n\n  container.innerHTML = html;', bas);
 ok("birleşik kart kodu bulundu", bas > 0 && son > bas);
 const blok = HTML.slice(bas, son + '  html += "</div>";'.length);

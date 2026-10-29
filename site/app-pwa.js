@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.8-birlesik-kart-sekilli-sorular";
+const PWA_SURUM = "v35.9-gorevler-kart-bildirim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -137,8 +137,38 @@ function initAuthUI() {
     else if (a === "pwaAuthRegister") emailRegister();
     else if (a === "pwaAuthReset") resetPassword();
     else if (a === "pwaAuthGoogle") googleLogin();
+    else if (a === "pushTeshis") pushTeshisYaz();
   });
   if (window.lucide && lucide.createIcons) lucide.createIcons();
+}
+
+// ---- BİLDİRİM TANILAMA GÖRÜNÜMÜ -------------------------------------
+// Ne gösterir: bu cihazda izin/abonelik/kayıt durumu + sunucunun VAPID
+// anahtarı tarayıcıdakiyle aynı mı. "Gelmiyor" şikâyetinin nedenini yazar.
+async function pushTeshisYaz() {
+  const kutu = document.getElementById("pwa-push-durum");
+  if (!kutu) return;
+  try {
+    if (!window.AmPush || !window.AmPush.teshis) { kutu.textContent = "Bildirim modülü yüklenmedi."; return; }
+    const t = await window.AmPush.teshis();
+    const c = (t && t.cihaz) || {};
+    const s = (t && t.sunucu) || {};
+    const satir = [];
+    satir.push("Destek: " + (c.destek ? "✓ var" : "✗ bu tarayıcı desteklemiyor"));
+    satir.push("İzin: " + (c.izin === "granted" ? "✓ verildi" : c.izin === "denied" ? "✗ reddedildi" : "— verilmedi"));
+    satir.push("Cihaz aboneliği: " + (c.abone ? "✓ kurulu" : "✗ yok"));
+    satir.push("Hesaba kayıtlı: " + (c.kayitli ? "✓ evet" : "✗ hayır (giriş yap / izin iste)"));
+    const v = s && s.vapid;
+    if (v) {
+      satir.push("Sunucu anahtarı: " + (v.tarayiciIleAyni ? "✓ tarayıcıyla aynı" : "✗ FARKLI — bildirimler bu yüzden gelmez"));
+      satir.push("Sunucu özel anahtarı: " + (v.ozelAnahtarCozuluyor ? "✓ okunuyor" : "✗ okunamıyor"));
+    } else if (s && s.hata) {
+      satir.push("Sunucu: " + escHtml(String(s.hata).slice(0, 90)));
+    }
+    kutu.innerHTML = satir.map(x => "<div>" + x + "</div>").join("");
+  } catch (e) {
+    kutu.textContent = "Kontrol edilemedi: " + String(e).slice(0, 90);
+  }
 }
 
 function buildAuthModal() {
@@ -327,8 +357,18 @@ function renderProfileModal() {
   html += '<b>Sürüm:</b> ' + escHtml(PWA_SURUM) + ' · <b>Bulut:</b> Supabase';
   html += '</div>';
 
+  // D) BİLDİRİM TANILAMA (v35.9)
+  // Kullanıcı: "izin var ama test bildirimi gelmiyor." Test düğmesi YOK
+  // (v35.7 kararı); bunun yerine DURUM görünür: cihazda abonelik var mı,
+  // sunucudaki VAPID anahtarı tarayıcıdakiyle aynı mı. Kişisel veri yok.
+  html += '<div style="border:1px dashed rgba(0,0,0,0.18);border-radius:14px;padding:12px;font-size:12px;opacity:0.85;margin-top:10px;">';
+  html += '<b>Bildirim durumu</b><div id="pwa-push-durum" style="margin-top:6px;line-height:1.6;">kontrol ediliyor…</div>';
+  html += '<button type="button" data-act="pushTeshis" style="margin-top:8px;background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Yeniden kontrol et</button>';
+  html += '</div>';
+
   html += '</div>';
   m.innerHTML = html;
+  pushTeshisYaz();
 }
 
 // ---- 4) E-POSTA/ŞİFRE İŞLEMLERİ (Supabase Auth) ----

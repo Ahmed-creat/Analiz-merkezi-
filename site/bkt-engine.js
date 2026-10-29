@@ -733,6 +733,8 @@
   //  • Sorular TEK TEK, sırayla gösterilir (hepsi alt alta değil)
   //  • Havuzda görsel varsa (q.gorsel) sorunun içinde çizilir (gorsel.js → GV)
   const MINI_SORU = 5;
+  // Kısa Kontrol aynı konu için bu kadar gün içinde yeniden açılmaz.
+  const KISA_ARALIK_GUN = 3;
   function miniBaslik(mode) { return mode === "precheck" ? "Kısa Kontrol" : "Öğrenme Testi"; }
   // v35.8 — SONUÇ EKRANI SORUYU DA GÖSTERİR (yalnız "cevap" değil):
   // soru metni + varsa şekil + tüm şıklar (senin cevabın / doğru cevap) + çözüm.
@@ -986,6 +988,22 @@
       }
     });
     const mode = data.mode || "learning";
+    // v35.9 — "5 kısa soru her zaman açık kalmayacak": Kısa Kontrol yapıldığı
+    // gün damgalanır; KISA_ARALIK_GUN gün boyunca bir daha AÇILMAZ (motorun
+    // kendi zamanlaması — precheck_due — geldiyse elbette açılır).
+    if (mode === "precheck") {
+      const kayit = getEntry(data.konu_id || data.topicKey, true);
+      kayit.son_kisa_kontrol = TODAY();
+      kayit.son_kisa_kontrol_dogru = correct;
+      kayit.son_kisa_kontrol_toplam = questions.length;
+      // KÖK NEDEN (v35.9): precheck_due hiç ilerletilmiyordu → "5 soru"
+      // düğmesi SONSUZA KADAR açık kalıyordu (kullanıcı şikâyeti: "5 kısa
+      // soru her zaman açık kalmayacak"). Test yapıldıysa sıradaki kontrol
+      // ertelenir: geçtiyse KISA_ARALIK_GUN, kaldıysa 1 gün sonra.
+      const gecti = questions.length ? (correct / questions.length) >= 0.6 : false;
+      kayit.precheck_due = addDays(TODAY(), gecti ? KISA_ARALIK_GUN : 1);
+      kayit.son_kisa_kontrol_gecti = gecti;
+    }
     const result = mode === "precheck" ? { passed: false, precheck: true, returnToFirstStep: correct <= 1, ratio: questions.length ? correct / questions.length : 0, status: statusFor(getEntry(data.konu_id || data.topicKey, true)) } : validateLearningTest(data.konu_id || data.topicKey, correct, questions.length);
     result.correct = correct; result.total = questions.length;
     return { ok: true, result: result, correct: correct, total: questions.length, answers: answers, wrongIndexes: wrongIndexes };
@@ -1117,6 +1135,7 @@
     havuzIdCoz: function (k, kayitli) { return window.__havuzIdCoz(k, kayitli); },
     resolvePoolId: resolvePoolId,
     MINI_SORU: MINI_SORU,
+    KISA_ARALIK_GUN: KISA_ARALIK_GUN,
     scheduleLearningTest: scheduleLearningTest,
     queueLearningTests: queueLearningTests,
     validatePool: validatePool,
@@ -1140,6 +1159,14 @@
       const known = e.gozlem_sayisi >= 5;
       const poolId = window.__havuzIdCoz(key, e.pool_id || e.soru_havuzu_id) || null;
       const precheck = !!(e.precheck_due && dateValue(e.precheck_due) <= dateValue(TODAY()));
+      // Kısa Kontrol erişimi: motor "zamanı geldi" diyorsa AÇIK; aksi hâlde
+      // son testten bu yana KISA_ARALIK_GUN geçmeden KAPALI.
+      let kisaAcik = true, kisaKalan = 0;
+      if (e.son_kisa_kontrol) {
+        const gecen = Math.floor((dateValue(TODAY()) - dateValue(e.son_kisa_kontrol)) / 86400000);
+        const sinir = e.son_kisa_kontrol_gecti === false ? 1 : KISA_ARALIK_GUN;
+        if (gecen >= 0 && gecen < sinir) { kisaAcik = false; kisaKalan = sinir - gecen; }
+      }
       const task = (s.mini_test_kuyrugu || []).some(function (x) { return x.topicKey === key && x.type === "learning" && !x.completed; });
       const cause = e.graph_topic_id ? rootCause(e.graph_topic_id, e.hata_gecmisi || []) : null;
       return {
@@ -1150,6 +1177,7 @@
         gozlem: e.gozlem_sayisi || 0,
         poolId: poolId,
         precheck: precheck,
+        kisaKontrol: { acik: kisaAcik, kalan: kisaKalan, sonTarih: e.son_kisa_kontrol || null },
         ogrenmeTesti: task,
         odak: focusLabel(e) || "",
         kok: cause && !cause.stay ? cause.topicName : ""
