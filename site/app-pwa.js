@@ -72,7 +72,12 @@ if ("serviceWorker" in navigator) {
     hookSaveState();
     listenAuth();
     // v40 — oturum açıldıysa Realtime bildirim kanalını hemen kur.
-    setTimeout(function () { try { bildirimKanaliniKur(); } catch (e) { } }, 1500);
+    setTimeout(function () {
+    try { bildirimKanaliniKur(); } catch (e) { }
+    // v40 — FCM kapandıktan sonra abonelik bizim VAPID anahtarımızla
+    // kendiliğinden onarılır (izin verilmişse). Ölü endpoint'ler böyle temizlenir.
+    try { if (window.AmPush && typeof window.AmPush.otomatik === "function") window.AmPush.otomatik(); } catch (e) { }
+  }, 1500);
     // Köprü: site/push-bildirim.js (klasik script) modül kapsamındaki
     // Supabase istemcisine ve oturuma buradan erişir.
     window.__amSupabase = sb;
