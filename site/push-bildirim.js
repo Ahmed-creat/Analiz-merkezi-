@@ -232,16 +232,46 @@
   }
 
   /** Tanılama: cihazda ne var, sunucu ne diyor? (Ayarlar'da görünür) */
+  // v35.9 — Üç ayrı gerçek yan yana konur:
+  //   1) cihaz: izin + abonelik + hesaba kayıt + "bu cihaza son push ulaştı mı" (sw.js izi)
+  //   2) sunucu: bu cihaza en son hangi gün bildirim gönderdi (push_abonelikleri.son_gonderim)
+  //   3) sunucu sürümü: mod:"saglik" yanıtı (yayınlanmamışsa "eski sürüm" denir, hata değil)
+  async function cihazSonPush() {
+    try {
+      if (typeof caches === "undefined") return null;
+      const c = await caches.open("am-push-iz");
+      const r = await c.match("/__am-push-son");
+      if (!r) return null;
+      const j = await r.json();
+      return j && j.zaman ? j : null;
+    } catch (e) { return null; }
+  }
   async function teshis() {
     const d = await durum();
     const out = { cihaz: d, sunucu: null };
+    try {
+      d.sonPush = await cihazSonPush();
+    } catch (e) { d.sonPush = null; }
+    try {
+      const kayit = await navigator.serviceWorker.ready;
+      const a = await kayit.pushManager.getSubscription();
+      const sb = app();
+      if (a && sb && sb.from) {
+        const { data } = await sb.from("push_abonelikleri")
+          .select("son_gonderim").eq("endpoint", a.endpoint).maybeSingle();
+        d.sunucuSonGonderim = (data && data.son_gonderim) || null;
+      }
+    } catch (e) { /* alan boş kalır */ }
     try {
       const y = await fetch(url() + "/functions/v1/bildirim-gonder", {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: anahtar(), Authorization: "Bearer " + anahtar() },
         body: JSON.stringify({ mod: "saglik" })
       });
-      out.sunucu = await y.json().catch(() => ({ http: y.status }));
+      const g = await y.json().catch(() => ({ http: y.status }));
+      // Yayınlanmış sürüm bu ucu tanımıyorsa hata değil, sürüm bilgisidir.
+      if (g && typeof g.hata === "string" && /geçersiz mod/i.test(g.hata)) out.sunucu = { surumEski: true };
+      else out.sunucu = g;
     } catch (e) { out.sunucu = { hata: String(e).slice(0, 120) }; }
     return out;
   }

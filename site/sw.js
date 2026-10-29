@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261029-v35-9-gorevler-kart-bildirim";
+const CACHE = "analiz-merkezi-v-20261029-v35-9b-teshis-izi";
 const ASSETS = [
   "./",
   "./index.html",
@@ -249,9 +249,27 @@ function bildirimSecenekleri(payload) {
   const tag = data.key || payload.kind || payload.collapse_key || "analiz-merkezi";
   return { title, options: { body, icon, badge, tag, renotify: false, data: { url } } };
 }
+/* v35.9 — PUSH İZİ (cihaz tarafı kanıt)
+   "Sunucu gönderdi (FCM 201) ama telefon göstermedi" ile "cihaza hiç
+   ulaşmadı" arasındaki farkı ayırmak için her push'un zamanı yazılır.
+   Ayarlar → Bildirim durumu bu izi okur. */
+const PUSH_IZ_ADI = "am-push-iz";
+const PUSH_IZ_YOLU = "/__am-push-son";
+async function pushIzYaz(bilgi) {
+  try {
+    const c = await caches.open(PUSH_IZ_ADI);
+    await c.put(PUSH_IZ_YOLU, new Response(JSON.stringify(bilgi), {
+      headers: { "Content-Type": "application/json" }
+    }));
+  } catch (e) { /* iz yazılamazsa bildirim yine gösterilir */ }
+}
 self.addEventListener("push", (event) => {
   const secim = bildirimSecenekleri(pushPayload(event));
-  event.waitUntil(self.registration.showNotification(secim.title, secim.options));
+  event.waitUntil((async () => {
+    // ÖNCE iz, SONRA gösterim: gösterim hata verse bile "push ulaştı" kanıtı kalır.
+    await pushIzYaz({ zaman: Date.now(), baslik: String(secim.title || "").slice(0, 120) });
+    await self.registration.showNotification(secim.title, secim.options);
+  })());
 });
 
 /* Bildirime tıklayınca uygulamayı aç / öne getir */

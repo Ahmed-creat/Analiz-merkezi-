@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.9-gorevler-kart-bildirim";
+const PWA_SURUM = "v35.9b-teshis-izi";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -145,6 +145,18 @@ function initAuthUI() {
 // ---- BİLDİRİM TANILAMA GÖRÜNÜMÜ -------------------------------------
 // Ne gösterir: bu cihazda izin/abonelik/kayıt durumu + sunucunun VAPID
 // anahtarı tarayıcıdakiyle aynı mı. "Gelmiyor" şikâyetinin nedenini yazar.
+function pushZaman(ms) {
+  try {
+    const d = new Date(ms);
+    const iki = n => String(n).padStart(2, "0");
+    return iki(d.getDate()) + "." + iki(d.getMonth() + 1) + "." + d.getFullYear() + " " + iki(d.getHours()) + ":" + iki(d.getMinutes());
+  } catch (e) { return String(ms); }
+}
+function pushGun(iso) {
+  const t = String(iso || "").slice(0, 10); // YYYY-MM-DD
+  const p = t.split("-");
+  return p.length === 3 ? p[2] + "." + p[1] + "." + p[0] : t;
+}
 async function pushTeshisYaz() {
   const kutu = document.getElementById("pwa-push-durum");
   if (!kutu) return;
@@ -158,10 +170,20 @@ async function pushTeshisYaz() {
     satir.push("İzin: " + (c.izin === "granted" ? "✓ verildi" : c.izin === "denied" ? "✗ reddedildi" : "— verilmedi"));
     satir.push("Cihaz aboneliği: " + (c.abone ? "✓ kurulu" : "✗ yok"));
     satir.push("Hesaba kayıtlı: " + (c.kayitli ? "✓ evet" : "✗ hayır (giriş yap / izin iste)"));
+    // ---- CİHAZ: bu telefona/bilgisayara push fiziksel olarak ulaştı mı? ----
+    const sp = c.sonPush;
+    satir.push("Bu cihaza son push: " + (sp && sp.zaman
+      ? "✓ " + pushZaman(sp.zaman)
+      : "✗ hiç ulaşmadı (sunucu gönderse de cihaz almıyor)"));
+    // ---- SUNUCU: bu cihaza en son hangi gün gönderdi? ----
+    if (c.sunucuSonGonderim) satir.push("Sunucu bu cihaza gönderdi: ✓ " + pushGun(c.sunucuSonGonderim));
+    // ---- SUNUCU SÜRÜMÜ ----
     const v = s && s.vapid;
     if (v) {
       satir.push("Sunucu anahtarı: " + (v.tarayiciIleAyni ? "✓ tarayıcıyla aynı" : "✗ FARKLI — bildirimler bu yüzden gelmez"));
       satir.push("Sunucu özel anahtarı: " + (v.ozelAnahtarCozuluyor ? "✓ okunuyor" : "✗ okunamıyor"));
+    } else if (s && s.surumEski) {
+      satir.push("Sunucu: yayındaki sürüm bu denetimi tanımıyor (anahtar kontrolü yok)");
     } else if (s && s.hata) {
       satir.push("Sunucu: " + escHtml(String(s.hata).slice(0, 90)));
     }

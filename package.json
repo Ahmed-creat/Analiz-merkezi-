@@ -36,6 +36,7 @@
     "test:davranis": "node tests/kisa-kontrol.test.js && node tests/sekıl-tutarlilik.test.js && node tests/birlesik-kart.test.js && node tests/kaynak-sozdizimi.test.js && node tests/bildirim-otomatik.test.js",
     "test:kart": "node tests/birlesik-kart.test.js",
     "test:sekil": "node tests/sekıl-tutarlilik.test.js",
-    "test:bktdavranis": "node tests/bkt-davranis.test.js"
+    "test:bktdavranis": "node tests/bkt-davranis.test.js",
+    "test:bildirimTeshis": "node tests/bildirim-teshis.test.js"
   }
 }
