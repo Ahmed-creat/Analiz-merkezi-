@@ -47,8 +47,21 @@ Yani hata mesajı doğruydu; suçlu depolama değil, büyüyen veriydi.
 
 - Yedek: `public.app_states_yedek_20261029` (3 satır, 5.799 KB).
 - Sıkıştırma: konu başına `hata_gecmisi` son 40 kayda indirildi.
-- Sonuç: **5.868.448 → 126.056 bayt (46× küçük)**. `L`, `gözlem_sayisi`,
-  `onay_durumu`, `pool_id` **değişmedi** (kontrol edildi).
+- Sonuç: **5.868.448 → 126.056 bayt (46× küçük)**.
+
+Karşılaştırma (yedek ↔ güncel), hesabınızdaki 25 konu:
+
+| Ölçüm | Önce | Sonra |
+|---|---|---|
+| `hata_gecmisi` toplam kayıt | **66.176** | **752** |
+| Konu sayısı | 25 | 25 |
+| `L` değeri değişen konu | — | **0** |
+| `gözlem_sayisi` değişen konu | — | **0** |
+| `onay_durumu` / `pool_id` değişen | — | **0** |
+
+Yani gözlem sayısı (92) hiç değişmedi; atılan 65.424 satır **aynı hatanın
+tekrarıydı**. Gerçek bir kayıt kaybolmadı; silinen tekrarlar geri gelmez
+(istenirse yedek tablosundan 30 gün içinde alınabilir).
 
 ### Kanıt testi — `tests/veri-sikistir.test.js` 23/23
 
@@ -178,6 +191,18 @@ ayracı + kart zorunluluğu bölümleri eklendi).
 - `kart.js`'te arka yüzü hep açık yaptım → `✗ arka yüz GİZLİ`, `✗ 'Kartı çevir' düğmesi var`
 - eşiği %70 → %50 yaptım → `✗ 3/5 (%60) → gün TAMAMLANMADI`
 - ikisi de geri alınınca 28/28.
+
+## Yayın doğrulaması (canlı)
+
+| Kontrol | Sonuç |
+|---|---|
+| Commit | `14fbe42` (branch `arena/cc4de070-analiz-merkezi`) |
+| Vercel dağıtımı | `dpl_DKLomUknMHz1evMMPTwJ11RvoGbg` — READY |
+| Alias | `https://analiz-merkezi.vercel.app` |
+| `sw.js` önbelleği | `analiz-merkezi-v-20261029-v36-ajanda-kart` ✓ |
+| `veri-sikistir.js` | sunucuda var, içeriği v36 ✓ |
+| Ana sayfa | "BUGÜN YAPILACAKLAR · 3" — dinamik `gunlukGorevler()` çıktısı ✓ |
+| Supabase verisi | 5.868.448 → 126.056 bayt ✓ |
 
 ## Değişen dosyalar
 
