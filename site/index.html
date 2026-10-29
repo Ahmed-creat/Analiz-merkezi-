@@ -3592,6 +3592,14 @@ function renderTracking(container) {
       }
       let ikincil = "";
       if (r && kartVar) ikincil += '<button type="button" class="btn btn-sm btn-ghost" data-act="kartBasla" data-topic="' + attr(r.key) + '" title="Tekrar kartları (' + kartBilgi.sayi + ' kart)">' + icon("layers", 13) + " Kart · " + kartBilgi.sayi + (kartTamam ? " ✓" : "") + "</button>";
+      // v38 — 3. GÜN ÖĞRENME TESTİ (rapor §4.1: "Gün 3 → 5 soru").
+      // Bu düğme hiçbir yerde çıkmıyordu: kuyruğu dolduran çağrı ölüydü
+      // (bkz. bkt-engine queueLearningTests) ve bu satırda düğmesi yoktu.
+      // Artık motor "zamanı geldi" dediğinde burada görünür, test bitince
+      // kuyruk kaydı completed olur ve düğme kendiliğinden kalkar.
+      if (b && b.poolId && b.ogrenmeTesti) {
+        ikincil += '<button type="button" class="btn btn-sm btn-primary bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="learning">' + icon("clipboard-list", 13) + " Öğrenme Testi · " + (window.AnalizBKT && window.AnalizBKT.MINI_SORU || 5) + "</button>";
+      }
       if (b && b.poolId && b.precheck && !kisaKapali) {
         ikincil += '<button type="button" class="btn btn-sm bkt-control" data-bkt-test="' + attr(b.key) + '" data-bkt-pool="' + attr(b.poolId) + '" data-bkt-mode="precheck">' + icon("clipboard-check", 13) + " Kısa Kontrol · " + (window.AnalizBKT && window.AnalizBKT.MINI_SORU || 5) + "</button>";
       }
@@ -4775,17 +4783,12 @@ function renderKnowledge(container) {
           '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">' + icon("clipboard-check", 20, "color:var(--brand-blue);") + '<b style="font-size:15px;">5 soruluk kısa kontrol seni bekliyor</b></div>' +
           '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu konuyu gerçekten öğrendin mi? Sorular tek tek, sırayla sorulur. Doğru cevap test sırasında gösterilmez.</p>' +
           '<button class="btn btn-primary w-full" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(havuzKontrol) + '" data-bkt-mode="precheck" style="min-height:48px;">' + icon("play", 15) + " 5 soruluk kontrole başla</button></div>";
-      } else if (bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol) {
-        // Test yakın zamanda yapıldı ya da motor henüz zamanı gelmedi diyor:
-        // düğme YOK, sadece sakin bir bilgi satırı (kapanmayan kutu yok).
-        const kalanGun = kisaKapali ? kisaDurum.kisaKontrol.kalan : null;
-        const tarih = kisaDurum && kisaDurum.precheckTarih ? fmtDate(kisaDurum.precheckTarih) : null;
-        html += '<div class="bento-card" style="margin-bottom:16px;">' +
-          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">' + icon("calendar-check", 17, "color:var(--brand-blue);") + '<b style="font-size:13.5px;">Kısa Kontrol planlandı</b></div>' +
-          '<p class="text-xs text-muted" style="margin:0;line-height:1.5;">' +
-          (kalanGun ? "Bu konunun kısa kontrolünü yeni yaptın. " : "") +
-          (tarih ? "Sıradaki kontrol: <b>" + esc(tarih) + "</b>." : "Motor zamanı gelince Konu Takibi'nde görünecek.") +
-          " Aynı 5 soruyu hemen tekrar sormak öğrenmeyi ölçmez.</p></div>";
+      } else if (false) {
+        // v38 — KULLANICI: "5 tekrar sorusu hiç gitmiyor".
+        // Buradaki "Kısa Kontrol planlandı / Sıradaki kontrol: …" kartı her
+        // onaysız konuda kalıcı olarak duruyordu; kısa kontrol çözülse bile
+        // bölümden kalkmıyordu. KALDIRILDI: zamanı gelmeyen kontrol için
+        // hiçbir kart çizilmez, konu satırında da iz bırakmaz.
       } else if (bktKayit.onay_durumu !== "ONAYLANDI") {
         // v35.7 — düğmenin NEDEN çıkmadığı yazılır; sessiz kalmak yok.
         // Bilerek başka konunun havuzu bağlanmaz (kullanıcı isteği).

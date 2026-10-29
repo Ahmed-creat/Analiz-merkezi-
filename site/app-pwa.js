@@ -1,4 +1,4 @@
-const PWA_SURUM = "v37-takvim-kart";
+const PWA_SURUM = "v38-bildirim-kart";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

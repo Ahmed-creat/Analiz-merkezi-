@@ -29,7 +29,13 @@
   // Supabase projesi (supabase-config.js zaten yüklü; yoksa buradan okunur)
   const VARSAYILAN_URL = "https://ztgzmhfklsdlngrtennp.supabase.co";
   // VAPID AÇIK anahtarı — gizli değil, tarayıcıya gömülmek üzere tasarlanmıştır.
-  const VAPID_ACIK = "BH-rXf9Vz-jQ6vFnrftcxRhQzB4MeGpGwhJD4IyhMBQW742yazsztzMFd0U2KWV5LlpsU3y7ItTk1Ue4C9FdXwk";
+  // v38 — ANAHTAR YENİLENDİ (sunucu + tarayıcı AYNI çifti kullanır).
+  // Kök neden: sunucunun imzaladığı anahtar ile cihazdaki aboneliğin
+  // applicationServerKey'i ayrışırsa push servisi 201 döner ama TARAYICI
+  // bildirimi sessizce düşürür ("hiç ulaşmadı" belirtisi tam olarak bu).
+  // Bu yüzden hem sunucu sırrı (VAPID_PRIVATE_JWK / VAPID_PUBLIC_KEY) hem
+  // bu satır tek bir üretilmiş çiftten yazıldı; ikisi artık ayrışamaz.
+  const VAPID_ACIK = "BNRjTCIDs_ML94GereBzsi08_jNu0qXDQt8GNZPepDplBaIvW3HJuq7GtYOy-lKkNnPPCdMm6YJSFzJIQR46aU8";
 
   function app() {
     if (window.__amSupabase) return window.__amSupabase;
@@ -107,7 +113,22 @@
     } catch (e) { return { ok: false, neden: String(e) }; }
   }
 
-  async function abonelikAl(izinZorla) {
+  // v38 — TEK UÇUŞ: aynı anda birden çok çağrı olunca her biri ayrı
+  // subscribe() yapıyor, her seferinde YENİ bir endpoint doğuyordu
+  // (veritabanında aynı kullanıcı için 4 ayrı abonelik). Eski uçlar ölü
+  // kalıp bildirimleri yutuyordu. Artık eşzamanlı çağrılar aynı işlemi bekler.
+  let aboneIslem = null;
+  function abonelikAl(izinZorla) {
+    if (!aboneIslem) {
+      aboneIslem = abonelikAlIc(izinZorla).then(
+        function (r) { aboneIslem = null; return r; },
+        function (e) { aboneIslem = null; throw e; }
+      );
+    }
+    return aboneIslem;
+  }
+
+  async function abonelikAlIc(izinZorla) {
     if (!destekVarMi()) throw new Error("Bu tarayıcı arka plan bildirimini desteklemiyor");
     if (Notification.permission !== "granted") {
       if (!izinZorla) throw new Error("Bildirim izni verilmemiş");

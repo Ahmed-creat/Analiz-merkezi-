@@ -244,6 +244,7 @@
     return kartlar(topicKey).then(function (liste) {
       var konuAdi = String(topicKey).indexOf(" > ") > 0
         ? String(topicKey).split(" > ").slice(1).join(" > ") : String(topicKey);
+      stilKur();
       var modal = document.createElement("div");
       modal.id = MODAL_ID;
       modal.style.cssText = "position:fixed;inset:0;z-index:10050;display:flex;align-items:center;justify-content:center;background:rgba(10,16,32,.62);padding:14px;";
@@ -255,6 +256,33 @@
         modal.appendChild(kutu);
         document.body.appendChild(modal);
         return sonuc;
+      }
+
+      // v38 — TEK KART + GÖRÜNÜR DÖNÜŞ.
+      // Kullanıcı: "kart iki yerde de var, biri mavi diğeri beyaz" ve
+      // "dönme animasyonu yok". Sebep: 3B (preserve-3d + backface-visibility)
+      // yaklaşımı bazı Android/Safari sürümlerinde iki yüzü AYNI ANDA
+      // gösteriyordu. Artık tek bir yüz çizilir; dokununca kart 90°'ye
+      // döner, tam kenarda içerik değişir, 0°'ye döner. İki kart asla
+      // aynı anda görünmez, animasyon her tarayıcıda çalışır.
+      function stilKur() {
+        if (document.getElementById("am-kart-stil")) return;
+        var st = document.createElement("style");
+        st.id = "am-kart-stil";
+        st.textContent =
+          ".kart-sahne{perspective:1200px;cursor:pointer;outline:none;display:block;width:100%;-webkit-tap-highlight-color:transparent;}" +
+          ".kart-ic{position:relative;box-sizing:border-box;width:100%;height:min(46vh,260px);min-height:190px;display:flex;" +
+          "align-items:center;justify-content:center;text-align:center;padding:18px 16px 30px;border-radius:18px;" +
+          "border:1px solid #E5EAF3;background:linear-gradient(180deg,#FFFFFF,#F3F6FC);box-shadow:0 10px 26px rgba(16,24,40,.10);" +
+          "font-size:17px;line-height:1.5;font-weight:700;color:#16213A;transform:rotateY(0deg);" +
+          "transition:transform .19s ease-in;will-change:transform;overflow:hidden;}" +
+          ".kart-ic.arka{background:linear-gradient(180deg,#F2FBF5,#E8F7EE);border-color:#16A34A;text-align:left;" +
+          "justify-content:flex-start;align-items:flex-start;font-weight:600;font-size:15.5px;line-height:1.6;overflow:auto;}" +
+          ".kart-ic.cevir{transform:rotateY(90deg);}" +
+          ".kart-ic .kart-ipucu{position:absolute;left:0;right:0;bottom:9px;text-align:center;font-size:10.5px;" +
+          "font-weight:800;letter-spacing:.07em;opacity:.45;}" +
+          ".kart-ic .kart-etiket{position:absolute;left:14px;top:10px;font-size:10.5px;font-weight:800;letter-spacing:.07em;opacity:.55;}";
+        document.head.appendChild(st);
       }
 
       if (!liste.length) {
@@ -292,15 +320,14 @@
           '<button type="button" data-kart-kapat style="min-width:44px;min-height:44px;border:0;background:none;font-size:22px;cursor:pointer;color:inherit;">×</button></div>' +
           '<div style="margin:0 0 10px;">' + noktalar + "</div>" +
 
-          // TIKLANABİLİR KART: data-kart-goster ön yüzde, data-kart-cevir arka yüzde.
-          '<div class="kart-sahne" data-kart-goster tabindex="0" role="button" aria-label="Kartı çevir" style="perspective:1200px;cursor:pointer;outline:none;">' +
-            '<div class="kart-ic" style="position:relative;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.3,1);transform:rotateY(' + (acik ? 180 : 0) + 'deg);min-height:176px;">' +
-              '<div class="kart-on" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;border:1px solid var(--border-card,#E5EAF3);border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#F3F6FC);font-size:16px;line-height:1.55;font-weight:700;box-shadow:0 2px 10px rgba(16,24,40,.06);">' +
-                on +
-                '<span style="position:absolute;bottom:8px;left:0;right:0;font-size:10.5px;font-weight:700;letter-spacing:.06em;opacity:.45;">DOKUN · ÇEVİR</span></div>' +
-              '<div class="kart-arka" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);overflow:auto;padding:16px;border:1px solid var(--semantic-success,#16A34A);border-radius:16px;background:linear-gradient(180deg,#F2FBF5,#E8F7EE);font-size:14.5px;line-height:1.65;box-shadow:0 2px 10px rgba(16,24,40,.06);">' +
-                '<div style="font-size:10.5px;font-weight:800;letter-spacing:.06em;opacity:.6;margin-bottom:4px;">ARKA YÜZ</div>' + cevap + "</div>" +
-            "</div></div>" +
+          // TEK KART: dokununca 90° döner, içerik değişir, geri döner.
+          '<div class="kart-sahne" data-kart-goster tabindex="0" role="button" aria-label="Kartı çevir">' +
+            '<div class="kart-ic' + (acik ? " arka" : "") + '">' +
+              '<div class="kart-etiket">' + (acik ? "ARKA YÜZ" : "ÖN YÜZ") + "</div>" +
+              "<div>" + (acik ? cevap : on) + "</div>" +
+              '<div class="kart-ipucu">' + (acik ? "DOKUN · GERİ ÇEVİR" : "DOKUN · ÇEVİR") + "</div>" +
+            "</div>" +
+          "</div>" +
 
           (acik
             ? '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">' +
@@ -309,6 +336,28 @@
               '<button type="button" class="btn btn-ghost w-full" data-kart-cevir style="margin-top:8px;min-height:42px;">Kartı geri çevir</button>'
             : '<button type="button" class="btn btn-primary w-full" data-kart-goster style="margin-top:12px;min-height:50px;">Kartı çevir</button>' +
               '<div style="font-size:11.5px;opacity:.65;margin-top:6px;text-align:center;">Önce zihninden cevapla, sonra karta dokun. (Boşluk tuşu da çevirir.)</div>');
+      }
+
+      // Çevirme: 0° → 90° (190 ms) → içerik değişir → 90° → 0°.
+      // Aynı anda TEK yüz görünür; animasyon bitmeden ikinci dokunuş yok sayılır.
+      var donuyor = false;
+      function cevir() {
+        if (donuyor) return;
+        donuyor = true;
+        var ic = kutu.querySelector(".kart-ic");
+        if (ic) ic.classList.add("cevir");
+        setTimeout(function () {
+          acik = !acik;
+          donuyor = false;
+          ciz();
+          var yeni = kutu.querySelector(".kart-ic");
+          if (yeni) {
+            yeni.classList.add("cevir");
+            var duzelt = function () { yeni.classList.remove("cevir"); };
+            if (window.requestAnimationFrame) requestAnimationFrame(function () { requestAnimationFrame(duzelt); });
+            else setTimeout(duzelt, 20);
+          }
+        }, 190);
       }
 
       function bitisCiz() {
@@ -336,10 +385,16 @@
       modal.appendChild(kutu);
       document.body.appendChild(modal);
 
+      // Boşluk / Enter: kartı çevir (ipucu metni artık gerçekten çalışıyor)
+      modal.addEventListener("keydown", function (e) {
+        if (e.key !== " " && e.key !== "Enter" && e.key !== "Spacebar") return;
+        if (e.target && e.target.tagName === "BUTTON") return;
+        e.preventDefault();
+        cevir();
+      });
       modal.addEventListener("click", function (e) {
         if (e.target === modal || e.target.closest("[data-kart-kapat]")) { kapat(); return; }
-        if (e.target.closest("[data-kart-cevir]")) { acik = false; ciz(); return; }
-        if (e.target.closest("[data-kart-goster]")) { acik = !acik; ciz(); return; }
+        if (e.target.closest("[data-kart-cevir]") || e.target.closest("[data-kart-goster]")) { cevir(); return; }
         if (e.target.closest("[data-kart-tekrar]")) {
           tur = liste.filter(function (k) {
             return sonuc.detay.some(function (d) { return !d.bildi && d.front === k.front; });

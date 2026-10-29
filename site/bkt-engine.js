@@ -1226,12 +1226,17 @@
     // v35.8 — Ayrı BKT paneli KALDIRILDI: öğrenme durumu + hafıza gücü tek
     // kartta (Konu Takibi → "Öğrenme Durumu · Hafıza Gücü"). Kart ekrandaysa
     // burada ikinci kez çizilmez.
+    // v38 — KÖK NEDEN (5 tekrar sorusu hiç gelmiyor):
+    // Kuyruğu dolduran queueLearningTests() çağrısı bu erken dönüşün ALTINDA
+    // kaldığı için Konu Takibi'nde birleşik kart varken (her zaman varken)
+    // hiç çalışmıyordu. Sonuç: 3. gün öğrenme testi kuyruğa hiç girmiyor,
+    // dolayısıyla "Öğrenme Testi — 5 soru" düğmesi hiçbir zaman çıkmıyordu.
+    queueLearningTests();
     if (document.getElementById("bkt-birlesik-kart")) {
       const eskiKart = document.getElementById("bkt-learning-panel");
       if (eskiKart) eskiKart.remove();
       return;
     }
-    queueLearningTests();
     // Sıra: testi zamanı gelmiş konu → onaylı olmayan → onaylı.
     // (Kısa kontrolü hazır konu panelin en üstünde görünür.)
     const bugun = TODAY();
@@ -1294,12 +1299,11 @@
       html += '</div>';
     });
     html += '</div>';
-    const verificationQueue = dailyVerificationQueue();
-    const cards = verificationQueue.cards;
-    if (cards.length) {
-      const card = cards[0];
-      html += '<div style="border-top:1px solid var(--border-card);margin-top:12px;padding-top:10px;"><div class="text-xs text-muted" style="margin-bottom:5px;">Tekrar Kartı</div><div style="font-weight:700;font-size:13px;margin-bottom:8px;">' + safeText(card.front) + '</div><div style="display:flex;gap:7px;flex-wrap:wrap;"><button class="btn btn-sm btn-ghost bkt-control" data-bkt-card="' + safeText(card.id) + '" data-bkt-rating="Bildi" style="min-width:48px;min-height:48px;">Bildi</button><button class="btn btn-sm btn-ghost bkt-control" data-bkt-card="' + safeText(card.id) + '" data-bkt-rating="Zorlandım" style="min-width:48px;min-height:48px;">Zorlandım</button><button class="btn btn-sm btn-primary bkt-control" data-bkt-card="' + safeText(card.id) + '" data-bkt-rating="Bilemedi" style="min-width:48px;min-height:48px;">Bilemedi</button></div></div>';
-    }
+    // v38 — KULLANICI: "o bölümde kart iki yerde de var. Biri mavi diğeri
+    // beyaz." Bu panelin altında ikinci bir "Tekrar Kartı" (Bildi /
+    // Zorlandım / Bilemedi) çiziliyordu; asıl flashcard penceresiyle
+    // çakışıyor ve §5.1'e aykırı üçüncü bir "Zorlandım" düğmesi gösteriyordu.
+    // KALDIRILDI: tek kart yeri AmKart penceresi (site/kart.js).
     panel.innerHTML = html;
     if (window.lucide && lucide.createIcons) lucide.createIcons();
   }

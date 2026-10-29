@@ -453,7 +453,8 @@ const KONU = Deno.env.get("VAPID_KONU") || "mailto:bildirim@analiz-merkezi.app";
 // Gizli değildir; burada yalnız "sunucudaki sır aynı mı?" denetimi için durur.
 // Farklıysa push servisi 403 döner ve HİÇBİR bildirim gitmez — bu, en sık
 // görülen "izin var ama bildirim gelmiyor" nedenidir.
-const TARAYICI_VAPID_ACIK = "BH-rXf9Vz-jQ6vFnrftcxRhQzB4MeGpGwhJD4IyhMBQW742yazsztzMFd0U2KWV5LlpsU3y7ItTk1Ue4C9FdXwk";
+// v38 — site/push-bildirim.js ile BİREBİR aynı olmalı (teşhis bunu karşılaştırır)
+const TARAYICI_VAPID_ACIK = "BNRjTCIDs_ML94GereBzsi08_jNu0qXDQt8GNZPepDplBaIvW3HJuq7GtYOy-lKkNnPPCdMm6YJSFzJIQR46aU8";
 
 const sbB = () => ({ apikey: SK, Authorization: "Bearer " + SK, "Content-Type": "application/json" });
 const gun = (d: Date) => new Date(d.getTime() + 3 * 3600 * 1000).toISOString().slice(0, 10); // TR günü
@@ -624,17 +625,30 @@ Deno.serve(async (istek) => {
   const bugun = gun(new Date());
 
   // --- SAĞLIK: teşhis (sır sızdırmaz; yalnız var/yok ve eşleşme) ---
+  // v38 — KÖK NEDEN ÖLÇÜMÜ: push servisi 201 dönerken telefonun bildirimi
+  // sessizce düşürmesinin tek sebebi, imzada kullanılan anahtarın cihazdaki
+  // aboneliğin "applicationServerKey"i ile AYNI OLMAMASIDIR. Bu yüzden özel
+  // anahtardan TÜRETİLEN açık anahtar da raporlanır (açık anahtar sır değil).
   if (mod === "saglik") {
-    let ozelGecerli = false;
-    try { const j = ozelJwk(); ozelGecerli = !!(j && j.d && j.x && j.y); } catch { ozelGecerli = false; }
+    let ozelGecerli = false, turetilen = "";
+    try {
+      const j = ozelJwk();
+      ozelGecerli = !!(j && j.d && j.x && j.y);
+      if (j && j.x && j.y) turetilen = b64url(birlestir(new Uint8Array([4]), b64urlCoz(j.x), b64urlCoz(j.y)));
+    } catch { ozelGecerli = false; }
     return json({
-      surum: "v36",
+      surum: "v37",
       vapid: {
         ozelAnahtarVar: !!VAPID_OZEL,
         ozelAnahtarCozuluyor: ozelGecerli,
         acikAnahtarVar: !!VAPID_ACIK,
-        // EN KRİTİK SATIR: tarayıcıdaki anahtarla sunucudaki aynı mı?
-        tarayiciIleAyni: !!VAPID_ACIK && VAPID_ACIK.trim() === TARAYICI_VAPID_ACIK
+        // Sır olarak yazılan açık anahtar, tarayıcıdakiyle aynı mı?
+        tarayiciIleAyni: !!VAPID_ACIK && VAPID_ACIK.trim() === TARAYICI_VAPID_ACIK,
+        // ASIL ÖLÇÜM: imzayı atan anahtar tarayıcıdakiyle aynı mı?
+        turetilenAnahtar: turetilen,
+        turetilenParmak: turetilen.slice(0, 24),
+        tarayiciParmak: TARAYICI_VAPID_ACIK.slice(0, 24),
+        imzaTarayiciIleAyni: !!turetilen && turetilen === TARAYICI_VAPID_ACIK
       },
       bildirimSecretVar: !!SECRET,
       supabaseAnahtariVar: !!SK
@@ -662,6 +676,37 @@ Deno.serve(async (istek) => {
         const r = await gonder(a, mesaj);
         sonuc.push({ id: a.id, ...r });
         if (r.kod === 410 || r.kod === 404) await sil(a.id);
+      }
+      return json({ mod, gonderilen: sonuc.filter(x => x.kod === 201).length, sonuc });
+    }
+
+    // --- TEKİL: x-bildirim-secret ile TEK kullanıcıya/cihaza test ---
+    // Sağdaki teşhis "cihaza hiç ulaşmadı" dediğinde gerçek gönderimi
+    // tek cihazda ölçmek için: push servisinin döndüğü kodu abonelik
+    // abonelik raporlar (201 = servis kabul etti, 404/410 = abonelik ölü).
+    if (mod === "tekil") {
+      const gelen = istek.headers.get("x-bildirim-secret") || "";
+      if (!SECRET || gelen !== SECRET) return json({ hata: "yetkisiz (x-bildirim-secret)" }, 401);
+      const kime = String(g.user_id || "");
+      const tekId = String(g.abonelik_id || "");
+      const filtre = tekId
+        ? "&id=eq." + encodeURIComponent(tekId)
+        : (kime ? "&user_id=eq." + encodeURIComponent(kime) : "");
+      if (!filtre) return json({ hata: "user_id veya abonelik_id gerekli" }, 400);
+      const liste = await abonelikler(filtre);
+      if (!liste.length) return json({ hata: "abonelik yok", filtre }, 404);
+      const mesaj = {
+        title: "Analiz Merkezi",
+        body: String(g.mesaj || "Bildirim testi — bu mesajı görüyorsan kanal çalışıyor."),
+        url: "./",
+        kind: "test"
+      };
+      const sonuc: any[] = [];
+      for (const a of liste) {
+        const r = await gonder(a, mesaj);
+        sonuc.push({ id: a.id, user_id: a.user_id, kod: r.kod, metin: r.metin });
+        if (r.kod === 201) await isaretle(a.id, bugun);
+        if (r.kod === 404 || r.kod === 410) await sil(a.id);
       }
       return json({ mod, gonderilen: sonuc.filter(x => x.kod === 201).length, sonuc });
     }
@@ -724,6 +769,7 @@ Deno.serve(async (istek) => {
         let mesajlar: any[] = [];
         try { mesajlar = buildMessages(st, new Date()); } catch (e) { continue; }
         const bugunKumesi = gonderilmis.get(a.user_id)!;
+        let buAbone = 0;
         for (const m of mesajlar) {
           const anahtar = String((m && m.key) || "");
           if (!anahtar || bugunKumesi.has(anahtar)) continue;   // bugün zaten gitti
@@ -737,13 +783,16 @@ Deno.serve(async (istek) => {
           };
           const r = await gonder(a, mesaj);
           if (r.kod === 201) {
-            gonderilen++;
+            gonderilen++; buAbone++;
             bugunKumesi.add(anahtar);
             await anahtarYaz(a.user_id, anahtar, bugun);
           } else if (r.kod === 404 || r.kod === 410) { await sil(a.id); break; }
           else hatalar.push({ id: a.id, anahtar, ...r });
         }
-        if (gonderilen) await isaretle(a.id, bugun);
+        // v38 — ESKİ HATA: `if (gonderilen)` GLOBAL sayaçtı; bir cihaza
+        // gönderim başarılı olunca SONRAKİ TÜM abonelikler "gönderildi"
+        // işaretleniyordu. Artık abonelik başına sayılıyor.
+        if (buAbone) await isaretle(a.id, bugun);
       } catch (e) {
         hatalar.push({ id: a.id, hata: String(e).slice(0, 160) });
       }

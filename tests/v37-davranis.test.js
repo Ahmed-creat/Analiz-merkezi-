@@ -184,10 +184,16 @@ function calisma(state, bugun) {
 
   // ================= 6) FLASHCARD 3B ÇEVİRME =================
   console.log("\n== 6) Flashcard gerçekten dönüyor (3B) ==\n");
-  ok("perspective var", KART.indexOf("perspective:1200px") >= 0);
-  ok("preserve-3d var", KART.indexOf("transform-style:preserve-3d") >= 0);
-  ok("çevirme transformu", /transform:rotateY\(' \+ \(acik \? 180 : 0\)/.test(KART));
-  ok("arka yüz gizleme", KART.indexOf("backface-visibility:hidden") >= 0);
+  // v38 — 3B yaklaşımı bazı tarayıcılarda İKİ yüzü birden gösteriyordu
+  // ("kart iki yerde, biri mavi diğeri beyaz"). Yeni sözleşme:
+  //   • aynı anda TEK yüz çizilir (arka yüz ayrı bir DOM düğümü DEĞİL)
+  //   • dokununca 90° dönüş animasyonu olur, içerik tam kenarda değişir
+  ok("dönüş için perspective", KART.indexOf("perspective:1200px") >= 0);
+  ok("çevirme sınıfı (90 derece)", /\.kart-ic\.cevir\{transform:rotateY\(90deg\);\}/.test(KART));
+  ok("yumuşak dönüş (transition)", /\.kart-ic\{[^}]*transition:transform \.19s/.test(KART));
+  ok("tek yüz: ayrı arka yüz düğümü yok", KART.indexOf("kart-arka") < 0);
+  ok("içerik 90 derecede değişiyor", /setInterval|setTimeout\(function \(\) \{\s*acik = !acik;/.test(KART));
+  ok("ikinci dokunuş animasyon sırasında yok sayılır", /if \(donuyor\) return;/.test(KART));
   ok("karta dokunma (data-kart-goster sahne üzerinde)", /kart-sahne" data-kart-goster/.test(KART));
   ok("geri çevirme düğmesi", KART.indexOf("data-kart-cevir") >= 0);
   ok("iki değerlendirme düğmesi (rapor §5.1)", /data-kart-puan="bildi"/.test(KART) && /data-kart-puan="bilemedi"/.test(KART) && KART.indexOf("Zorlandım") < 0);
