@@ -159,6 +159,23 @@ const d3 = m3.A.konuDurum(K3);
 ok("aynı gün kısa kontrol KAPALI", d3 && d3.kisaKontrol && d3.kisaKontrol.acik === false, JSON.stringify(d3 && d3.kisaKontrol));
 ok("kalan gün pozitif", d3 && d3.kisaKontrol && d3.kisaKontrol.kalan >= 1, d3 && d3.kisaKontrol && d3.kisaKontrol.kalan);
 
+// ---------- 9) Aynı kayıt iki kez sayılmaz ----------
+console.log("\n== 9) Aynı deneme iki kez işlenirse gözlem İKİ KEZ sayılmaz ==");
+const m4 = motorKur();
+m4.s.state.exams = [{
+  id: "deneme-1", date: "2026-10-29", lessons: {},
+  errorLogs: [{ topic: "Türev", lesson: "Matematik", type: "KONUEKSİKLİĞİ", date: "2026-10-29" }]
+}];
+const ilkSayi = m4.A.processNewRecords();
+const K4 = "Matematik > Türev";
+const g4 = (m4.s.state.bkt_state[K4] || {}).gozlem_sayisi || 0;
+ok("ilk işlemede 1 gözlem", ilkSayi === 1 && g4 === 1, ilkSayi + " / " + g4);
+const ikinciSayi = m4.A.processNewRecords();
+const g4b = (m4.s.state.bkt_state[K4] || {}).gozlem_sayisi || 0;
+ok("ikinci işlemede yeni gözlem yok", ikinciSayi === 0 && g4b === 1, ikinciSayi + " / " + g4b);
+ok("mükerrer koruması kayıt kimliğine dayanır", !!m4.s.state.bkt_processed_records &&
+  Object.keys(m4.s.state.bkt_processed_records).length > 0);
+
 console.log("\n" + "─".repeat(58));
 if (kalan) {
   hatalar.forEach(h => console.log(" ✗ " + h));
