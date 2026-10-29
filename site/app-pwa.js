@@ -168,7 +168,7 @@ async function pushTeshisYaz() {
     let abone = false;
     try { const k = await navigator.serviceWorker.ready; abone = !!(await k.pushManager.getSubscription()); } catch (e) { /* */ }
     kutu.textContent = abone
-      ? "Açık ✓ Her sabah (~07:30) günün görevlerini, akşam (~19:30) yalnız acil olanları hatırlatırım."
+      ? "Açık ✓ Her sabah (~07:40) günün kalan görevlerini, akşam (~19:30) yalnız acil olanları hatırlatırım."
       : "İzin var ama cihaz kaydı tamamlanmadı. Uygulamayı bir kez kapatıp aç; sürerse Ayarlar → “Bildirim İzni İste”ye tekrar dokun.";
   } catch (e) {
     kutu.textContent = "Bildirim durumu okunamadı. Uygulamayı yenilemeyi dene.";
