@@ -333,7 +333,10 @@
             ? '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">' +
               '<button type="button" class="btn btn-sm btn-danger" data-kart-puan="bilemedi" style="min-height:50px;">Bilemedim</button>' +
               '<button type="button" class="btn btn-sm btn-success" data-kart-puan="bildi" style="min-height:50px;">Bildim</button></div>' +
-              '<button type="button" class="btn btn-ghost w-full" data-kart-cevir style="margin-top:8px;min-height:42px;">Kartı geri çevir</button>'
+              '<button type="button" class="btn btn-ghost w-full" data-kart-cevir style="margin-top:8px;min-height:42px;">Kartı geri çevir</button>' +
+              // v41 — kullanıcı: "öğrenci soruda hata var ise 'soru hatalı' ya tıklar,
+              // bize şu soru hatalı mesajı gelir". Kart da aynı geri bildirimi gönderir.
+              '<button type="button" class="btn btn-ghost w-full" data-kart-sikayet style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">⚠ Bu kartta hata var</button>'
             : '<button type="button" class="btn btn-primary w-full" data-kart-goster style="margin-top:12px;min-height:50px;">Kartı çevir</button>' +
               '<div style="font-size:11.5px;opacity:.65;margin-top:6px;text-align:center;">Önce zihninden cevapla, sonra karta dokun. (Boşluk tuşu da çevirir.)</div>');
       }
@@ -403,6 +406,16 @@
           sonuc = { bildi: 0, bilemedi: 0, detay: [] };
           i = 0; acik = false; ciz(); return;
         }
+        if (e.target.closest("[data-kart-sikayet]")) {
+          if (typeof window.__amGeriBildirim !== "function") return;
+          window.__amGeriBildirim({
+            tur: "soru",
+            konu: String(topicKey || ""),
+            soru_metni: String((tur[i] && tur[i].front) || "").slice(0, 1000),
+            mesaj: "Kart hatası · cevap: " + String((tur[i] && tur[i].back) || "").slice(0, 300)
+          });
+          return;
+        }
         var p = e.target.closest("[data-kart-puan]");
         if (p) {
           var bildi = p.getAttribute("data-kart-puan") === "bildi";
@@ -418,6 +431,16 @@
   migrate();
   window.AmKart = {
     ac: ac, kartlar: kartlar, sayi: sayi, kayit: kayit, kapat: kapat,
+    // v41 — kart ekranından "bu kartta hata var" geri bildirimi
+    sikayet: function (topicKey, on, arka) {
+      try {
+        if (typeof window.__amGeriBildirim !== "function") return Promise.resolve({ ok: false });
+        return window.__amGeriBildirim({
+          tur: "soru", konu: String(topicKey || ""), soru_metni: String(on || "").slice(0, 1000),
+          mesaj: "Kart hatası: " + String(on || "").slice(0, 300) + " | Cevap: " + String(arka || "").slice(0, 300)
+        });
+      } catch (e) { return Promise.resolve({ ok: false }); }
+    },
     tekrarDurumu: tekrarDurumu, gununKartlari: gununKartlari,
     sonucuIsle: sonucuIsle, migrate: migrate,
     TAVAN: TAVAN, OTURUM_ESIGI: OTURUM_ESIGI

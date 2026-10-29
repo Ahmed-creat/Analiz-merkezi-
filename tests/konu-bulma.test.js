@@ -175,7 +175,12 @@ esit("adres yoksa bağlantı null", VC.izleLink({ videoVar: true }), null);
 // TAMAMEN kaldırıldı (dersin tüm yanlış konularını listeliyordu).
 ok("video çözüm adımı KALDIRILDI", HTML.indexOf("function videoAdimHtml") < 0 && !/video:\s*true/.test(HTML));
 ok("adımlarda 'izle' vaadi kalmadı", HTML.indexOf("çözüm bağlantısı yok") < 0);
-ok("yol haritası 4 adım", /const ROADMAP_STEPS = \[[\s\S]{0,900}?\];/.test(HTML) && (HTML.match(/\{ title: "/g) || []).length >= 4);
+// v41 — kullanıcı: "5 soruluk tekrar sorusu bu 5 adım kontrol olarak ekle."
+ok("yol haritası 4 çalışma adımı + 5. adım kısa kontrol",
+  /const ROADMAP_STEPS = \[[\s\S]{0,900}?\];/.test(HTML) &&
+  (HTML.match(/\{ title: "/g) || []).length >= 4 &&
+  HTML.indexOf("Kısa Kontrol (5 soru)") > 0 &&
+  HTML.indexOf('data-bkt-test="' + "' + attr(selectedTopicKey) + '" + '"') > 0);
 esit("Okulizyon'a çıkış bağlantısı KALMADI", HTML.indexOf("okulizyon.com"), -1);
 // v35.8 — "Yapamadığın Sorular" bölümü kaldırıldı; "Konuyu aç" düğmesi de
 // onunla birlikte gitti. Konuya gitme işlevi (kök eksik kartı) DURUYOR.
@@ -184,8 +189,8 @@ ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v40", APP.indexOf('const PWA_SURUM = "v40-realtime-renk"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v40-realtime-renk") > 0);
+ok("PWA sürümü v41", APP.indexOf('const PWA_SURUM = "v41-bes-adim"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261029-v41-bes-adim") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

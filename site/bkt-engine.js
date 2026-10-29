@@ -836,6 +836,9 @@
     h += '<div class="text-xs text-muted" style="margin-top:8px;line-height:1.45;">' +
       (bos ? 'İstersen boş bırakıp geçebilirsin — sonuçta "boş" olarak sayılır ve boş için ayrı neden sorulur.'
            : 'Cevabını değiştirebilirsin.') + '</div>';
+    // v41 — KULLANICI: "öğrenci soruda hata var ise soru hatalı mı? ya tıklar,
+    // bize şu soru hatalı mesajı gelir." Her sorunun altında bu düğme var.
+    h += '<button type="button" class="btn btn-ghost w-full" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">⚠ Bu soruda hata var</button>';
     h += '<div id="bkt-test-message" class="text-xs" style="min-height:18px;margin-top:8px;"></div></div>';
     modal.innerHTML = h;
   }
@@ -937,6 +940,7 @@
       const etiket = ok ? "Doğru" : bosMu ? "Boş" : "Yanlış";
       const renk = ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)";
       html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b style="color:' + renk + ';">' + (i + 1) + ". " + etiket + "</b>" + miniSoruTam(q, ham) +
+        '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">⚠ Bu soruda hata var</button>' +
         '<div class="text-muted" style="margin-top:6px;">Çözüm: ' + safeText(q.cozum) + "</div>";
       // Yanlış ve boş için AYRI neden listesi (Süre yetmedi seçeneği yok).
       if (!ok) html += '<label style="display:block;margin-top:7px;">' + (bosMu ? "Neden boş bıraktın?" : "Neden yanlış yaptın?") +
@@ -1000,7 +1004,8 @@
       h += '<div style="border-top:1px solid var(--border-card);padding:9px 0;font-size:12.5px;">' +
         '<b style="color:' + (ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)") + ';">' + (i + 1) + ". " + (ok ? "Doğru" : bosMu ? "Boş" : "Yanlış") + "</b>" +
         miniSoruTam(q, cevap) +
-        '<div class="text-muted" style="margin-top:4px;line-height:1.45;">' + safeText(q.cozum) + "</div></div>";
+        '<div class="text-muted" style="margin-top:4px;line-height:1.45;">' + safeText(q.cozum) + "</div>" +
+        '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">⚠ Bu soruda hata var</button></div>';
     });
     h += '<button type="button" data-bkt-close-test class="btn btn-primary w-full" style="min-height:48px;margin-top:12px;">Kapat</button></div>';
     modal.innerHTML = h;
@@ -1044,6 +1049,9 @@
       const gecti = questions.length ? (correct / questions.length) >= 0.6 : false;
       kayit.precheck_due = addDays(TODAY(), gecti ? KISA_ARALIK_GUN : 1);
       kayit.son_kisa_kontrol_gecti = gecti;
+      // v41 — 5. ADIM TAMAMLANDI. Yol haritası aynı ekranda tazelenir
+      // (kullanıcı: "adım bittiğinde çıkmıyor, ağaca tıklayınca açılıyor").
+      try { if (typeof window.__kisaKontrolBitti === "function") window.__kisaKontrolBitti(data.konu_id || data.topicKey); } catch (e) { /* */ }
     }
     const result = mode === "precheck" ? { passed: false, precheck: true, returnToFirstStep: correct <= 1, ratio: questions.length ? correct / questions.length : 0, status: statusFor(getEntry(data.konu_id || data.topicKey, true)) } : validateLearningTest(data.konu_id || data.topicKey, correct, questions.length);
     result.correct = correct; result.total = questions.length;
@@ -1307,6 +1315,27 @@
       const testButton = event.target.closest("[data-bkt-test]");
       if (testButton) { openMiniTest(testButton.dataset.bktTest, testButton.dataset.bktPool, { mode: testButton.dataset.bktMode || "learning" }); return; }
       if (event.target.closest("[data-bkt-close-test]")) { closeMiniTest(); return; }
+      // v41 — "Bu soruda hata var": soru metni + konu + havuz bize iletilir.
+      const sikayet = event.target.closest("[data-bkt-sikayet]");
+      if (sikayet) {
+        const modal = document.getElementById("bkt-test-modal");
+        const sira = Number(sikayet.dataset.bktSikayet) || 0;
+        const q = (modal && modal._bktQuestions && modal._bktQuestions[sira]) || {};
+        const parca = String((modal && modal._bktTopicKey) || "").split(" > ");
+        if (typeof window.__amGeriBildirim === "function") {
+          const cevap = Array.isArray(q.secenekler) ? q.secenekler.map(function (x, j) { return ("ABCDE".charAt(j) || (j + 1)) + ") " + x; }).join(" | ") : "";
+          window.__amGeriBildirim({
+            tur: "soru",
+            ders: parca.length > 1 ? parca[0] : "",
+            konu: (modal && modal._bktTopicKey) || "",
+            havuz: (modal && modal._bktPoolId) || "",
+            soru_id: q.soru_id || "",
+            soru_metni: (q.metin || "") + (cevap ? " || " + cevap : ""),
+            mesaj: "Soru hatalı bildirimi · doğru cevap indeksi: " + q.dogru_index + " · mod: " + ((modal && modal._bktMode) || "")
+          });
+        }
+        return;
+      }
       if (event.target.closest("[data-bkt-submit-test]")) { const modal = document.getElementById("bkt-test-modal"); if (modal) finishMiniTest(modal); return; }
       if (event.target.closest("[data-bkt-next]")) { const modal = document.getElementById("bkt-test-modal"); if (modal) miniSonraki(modal); return; }
       if (event.target.closest("[data-bkt-prev]")) { const modal = document.getElementById("bkt-test-modal"); if (modal) miniOnceki(modal); return; }

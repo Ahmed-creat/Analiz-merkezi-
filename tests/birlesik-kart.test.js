@@ -102,8 +102,14 @@ console.log("\n== 1) Başlık + her konu kendi bento kartında ==");
 ok("başlık kartı var (hafiza-baslik-kart)", cikti.indexOf('id="hafiza-baslik-kart"') >= 0);
 ok("başlık: Öğrenme Durumu · Hafıza Gücü", cikti.indexOf("Öğrenme Durumu · Hafıza Gücü") >= 0);
 ok("konular bento ızgarasında", cikti.indexOf('class="konu-grid"') >= 0);
-ok("her konu ayrı konu-kart", (cikti.match(/class="konu-kart"/g) || []).length === 3,
+// v41 — KULLANICI: "konu 5 adımlı çalışmayı tamamlamadı ise hafıza gücü
+// bölümüne gidemez, tekrar kartı da olamaz." Listeye artık YALNIZ
+// state.memory[...].completedAt olan konular girer. MS'te 2 tamamlanmış konu
+// var; BKT'deki "Biyoloji > 2.2 Hücre" tamamlanmamış → listede OLMAMALI.
+ok("her konu ayrı konu-kart (yalnız tamamlananlar)", (cikti.match(/class="konu-kart"/g) || []).length === 2,
    String((cikti.match(/class="konu-kart"/g) || []).length));
+ok("5 adımı bitmemiş konu hafıza listesinde YOK", cikti.indexOf("2.2 Hücre") < 0);
+ok("sıralama açıklaması ekranda", cikti.indexOf("tekrar bekleyenler üstte") >= 0);
 ok("aynı konu iki kez basılmıyor", (cikti.match(/konu-kart-ad[^>]*>.*?1\.1 Trigonometri/g) || []).length === 1);
 ok("BKT durumu kartın içinde", cikti.indexOf("Gelişiyor") >= 0);
 
@@ -111,12 +117,29 @@ console.log("\n== 2) Yalnız HAFIZA çubuğu, yeterlilik % metni ==");
 ok("hafıza çubuğu var (%12)", /konu-metre-etiket">Hafıza</.test(cikti) && cikti.indexOf("%12") >= 0);
 ok("yeterlilik ÇUBUĞU YOK", cikti.indexOf("konu-metre-etiket\">Yeterlilik<") < 0);
 ok("yeterlilik yüzde metni var (%62)", /Yeterlilik: <b>%62<\/b>/.test(cikti));
-ok("ikinci çubuk yok (tek konu-metre-bar / konu)", (cikti.match(/konu-metre-bar/g) || []).length === 3,
+ok("ikinci çubuk yok (tek konu-metre-bar / konu)", (cikti.match(/konu-metre-bar/g) || []).length === 2,
    String((cikti.match(/konu-metre-bar/g) || []).length));
 
 console.log("\n== 3) 5 soru düğmesi konu kartında YOK ==");
 ok("5 soruluk test düğmesi konu kartında YOK", cikti.indexOf("data-bkt-test") < 0);
 ok("tekrar aksiyonu (reviewTopic)", cikti.indexOf('data-act="reviewTopic"') >= 0);
+
+console.log("\n== 3a) v41 — tekrar sırası: bekleyenler üstte, en uzak gün altta ==");
+{
+  const sira = {
+    rows: [
+      { key: "Matematik > UZAK", lesson: "Matematik", topic: "UZAK", pct: 90, reviews: 1, due: false, next: { date: "2026-11-20", day: 21 } },
+      { key: "Matematik > BEKLEYEN", lesson: "Matematik", topic: "BEKLEYEN", pct: 40, reviews: 1, due: true, next: null },
+      { key: "Matematik > YAKIN", lesson: "Matematik", topic: "YAKIN", pct: 70, reviews: 1, due: false, next: { date: "2026-11-01", day: 3 } }
+    ],
+    waiting: 1, avg: 66, critical: 0
+  };
+  const c = kart(sira, {}, 10);
+  const iBekleyen = c.indexOf("BEKLEYEN"), iYakin = c.indexOf("YAKIN"), iUzak = c.indexOf("UZAK");
+  ok("üçü de çizildi", iBekleyen >= 0 && iYakin >= 0 && iUzak >= 0);
+  ok("tekrar bekleyen EN ÜSTTE", iBekleyen < iYakin && iBekleyen < iUzak, iBekleyen + "/" + iYakin + "/" + iUzak);
+  ok("tekrar günü en UZAK olan EN ALTTA", iUzak > iYakin && iUzak > iBekleyen, iBekleyen + "/" + iYakin + "/" + iUzak);
+}
 
 console.log("\n== 3b) v37/v39 — kart bitince düğme durumu ==");
 {

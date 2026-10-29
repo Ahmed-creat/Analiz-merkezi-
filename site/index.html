@@ -1150,6 +1150,25 @@ select.dd-native {
   </div>
 </div>
 
+<!-- ===== v41 — İLK AÇILIŞ TANITIMI ===== -->
+<div id="tanitim-modal" class="modal-overlay" data-modal>
+  <div class="modal" style="max-width:560px;">
+    <div class="modal-body" style="padding:24px;">
+      <div class="flex items-center justify-between" style="margin-bottom:6px;">
+        <h3 style="font-size:19px;font-weight:800;"><i data-lucide="compass" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;color:var(--brand-blue);"></i> Analiz Merkezi'ne hoş geldin</h3>
+        <button class="btn btn-ghost" data-act="tanitimKapat" style="min-height:36px;min-width:36px;padding:6px;"><i data-lucide="x" style="width:16px;height:16px;"></i></button>
+      </div>
+      <p class="text-xs text-muted" style="margin-bottom:8px;">Hangi bölüm ne işe yarıyor — 20 saniyede:</p>
+      <div id="tanitim-icerik" style="max-height:55vh;overflow-y:auto;"></div>
+      <div class="flex gap-2" style="margin-top:14px;flex-wrap:wrap;">
+        <button class="btn btn-primary" data-act="tanitimKapat" style="flex:1;min-height:46px;"><i data-lucide="check" style="width:16px;height:16px;"></i> Anladım, başla</button>
+        <button class="btn btn-ghost" data-act="tanitimKilavuz" style="min-height:46px;"><i data-lucide="book-open" style="width:16px;height:16px;"></i> Kılavuzu oku</button>
+      </div>
+      <p class="text-xs text-muted" style="margin-top:10px;text-align:center;">Daha fazla bilgi için kılavuzu oku. Bu tanıtımı Ayarlar → Uygulamayı Tanı ile tekrar açabilirsin.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ===== AYARLAR (SAĞDAN ÇEKMECE) ===== -->
 <div id="settings-overlay" class="sidebar-overlay" data-act="closeSettings"></div>
 <aside id="settings-drawer" class="settings-drawer">
@@ -1158,6 +1177,15 @@ select.dd-native {
     <button class="btn btn-ghost" data-act="closeSettings" style="min-height:36px;min-width:36px;padding:6px;"><i data-lucide="x" style="width:16px;height:16px;"></i></button>
   </div>
   <button class="btn btn-ghost w-full" data-act="openHelp" style="justify-content:flex-start;"><i data-lucide="book-open" style="width:16px;height:16px;"></i> Kullanım Kılavuzu</button>
+  <button class="btn btn-ghost w-full" data-act="tanitimAc" style="justify-content:flex-start;"><i data-lucide="compass" style="width:16px;height:16px;"></i> Uygulamayı Tanı</button>
+
+  <div style="margin-top:20px;">
+    <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">GERİ BİLDİRİM</div>
+    <p class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Bir sorun, eksik ya da öneri mi var? Yaz — her mesajı okuyoruz. (Soruda hata varsa soru ekranındaki “Bu soruda hata var” düğmesi daha işe yarar: soru metni de bize gelir.)</p>
+    <textarea id="geri-bildirim-metin" class="input" rows="3" maxlength="1000" placeholder="Örn: Fizik 1.3 havuzundaki 4. sorunun cevabı yanlış görünüyor." style="width:100%;min-height:78px;resize:vertical;font-size:13px;"></textarea>
+    <button class="btn btn-primary w-full" data-act="geriBildirimGonder" style="margin-top:8px;min-height:44px;"><i data-lucide="send" style="width:15px;height:15px;"></i> Geri Bildirimi Gönder</button>
+    <div id="geri-bildirim-sonuc" class="text-xs text-muted" style="margin-top:6px;line-height:1.5;"></div>
+  </div>
   <div style="margin-top:16px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">SINIF</div>
     <div class="flex gap-2">
@@ -1176,8 +1204,8 @@ select.dd-native {
   <div style="margin-top:20px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">BİLDİRİM</div>
     <button class="btn btn-ghost w-full" data-act="toggleNotifPermission" style="justify-content:flex-start;"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i> <span id="notif-perm-label">Bildirim İzni İste</span></button>
-    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">İzin verdiğin an bir deneme bildirimi gönderilir. Sonrasında sabah (~07:35) günün tüm bildirimleri, akşam (~19:30) yalnız acil olanlar gelir.</p>
-    <p class="text-xs text-muted" style="margin-top:6px;line-height:1.5;opacity:.85;">İzin penceresi yalnızca bu düğmeye <b>dokunduğunda</b> açılır (tarayıcı kuralı). Daha önce “Engelle” dendiyse site bunu kodla geri açamaz; adres çubuğundaki kilit simgesinden izin verip sayfayı yenile.</p>
+    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">İzin verdiğin an bu cihaza bir bildirim gösterilir. Sonrasında her sabah (~07:40) günün kalan görevleri, akşam (~19:30) yalnız acil olanlar gelir.</p>
+    <p class="text-xs text-muted" style="margin-top:6px;line-height:1.5;opacity:.85;">İzin penceresi yalnızca bu düğmeye <b>dokunduğunda</b> açılır (tarayıcı kuralı). Daha önce “Engelle” dendiyse adres çubuğundaki kilit simgesinden izin verip sayfayı yenile.</p>
   </div>
   <div style="margin-top:24px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px;">YEDEKLEME</div>
@@ -2468,6 +2496,16 @@ function requestNotifPermission() {
       if (el) el.textContent = m;
       return;
     }
+    // v41 — KULLANICI: "'Bu cihazda dene'yi bildirim izni verildiği anda çağır."
+    // İzin verildiği SANİYE cihazda bir sistem bildirimi gösterilir (sunucuya
+    // bağlı değil). Göründüyse telefonun bildirim kanalı sağlamdır.
+    try {
+      if (window.__amCihazBildirimTesti) {
+        window.__amCihazBildirimTesti().then(function (t) {
+          if (t && t.ok && typeof toast === "function") toast("Bildirimler açıldı — biraz önce bir bildirim gösterdim.", "success");
+        }).catch(function () { });
+      }
+    } catch (e) { /* */ }
     // Burada izin var. Sıra abonelikte: abonelik yoksa uygulama kapalıyken
     // bildirim GELMEZ. Kullanıcıya bunu ayrı ayrı söyle.
     if (!window.AmPush) {
@@ -2520,8 +2558,8 @@ function updateBildirimDurum() {
   }
   const izin = Notification.permission;
   if (izin === "denied") el.textContent = "İzin tarayıcıda ENGELLENMİŞ. Adres çubuğundaki kilit simgesi → Bildirimler → İzin ver → sayfayı yenile.";
-  else if (izin === "granted") el.textContent = "Bildirim izni açık · deneme bildirimi bir kez gönderilir · sabah (~07:35) tümü, akşam (~19:30) aciller.";
-  else el.textContent = "Bildirim izni henüz verilmedi → yukarıdaki düğmeye dokun. İzin verdiğin an bir deneme bildirimi gelir.";
+  else if (izin === "granted") el.textContent = "Bildirimler açık ✓ Her sabah (~07:40) günün kalan görevleri, akşam (~19:30) yalnız acil olanlar hatırlatılır.";
+  else el.textContent = "Bildirim izni henüz verilmedi → yukarıdaki düğmeye dokun. İzin verdiğin an bu cihazda bir bildirim gösterilir.";
 }
 
 function updateNotifPermLabel() {
@@ -2996,15 +3034,165 @@ function renderCoachPanel() {
   if (box) box.innerHTML = coachMessages().map(m => '<div class="coach-msg">' + m + "</div>").join("");
 }
 
+// ============================================================
+// v41 — GERİ BİLDİRİM (öğrenciden bize)
+// Kullanıcı: "öğrenci soruda hata var ise ... bize şu soru hatalı mesajı
+// gelir" + "ayarlara da ekle genel sorunları yapabilecekleri bir yer".
+// Akış: ekran → window.__amGeriBildirim() → Supabase public.geri_bildirim
+// tablosu. Gönderim olmazsa (çevrimdışı) kayıt cihazda kuyruğa alınır ve
+// bağlantı gelince kendiliğinden gönderilir. Öğrenciye teknik hata metni
+// gösterilmez.
+// ============================================================
+const GERI_KUYRUK_ANAHTAR = "am_geri_bildirim_kuyruk";
+
+function geriKuyrukOku() {
+  try { const l = JSON.parse(localStorage.getItem(GERI_KUYRUK_ANAHTAR) || "[]"); return Array.isArray(l) ? l : []; }
+  catch (e) { return []; }
+}
+function geriKuyrukYaz(liste) {
+  try { localStorage.setItem(GERI_KUYRUK_ANAHTAR, JSON.stringify((liste || []).slice(-40))); } catch (e) { /* kota */ }
+}
+function geriKayitNormalle(p) {
+  const k = p || {};
+  return {
+    tur: k.tur === "soru" ? "soru" : "genel",
+    mesaj: String(k.mesaj || "").slice(0, 1000) || null,
+    ders: k.ders ? String(k.ders).slice(0, 120) : null,
+    konu: k.konu ? String(k.konu).slice(0, 200) : null,
+    havuz: k.havuz ? String(k.havuz).slice(0, 120) : null,
+    soru_id: k.soru_id ? String(k.soru_id).slice(0, 120) : null,
+    soru_metni: k.soru_metni ? String(k.soru_metni).slice(0, 1200) : null,
+    sayfa: (typeof currentPage === "string" ? currentPage : null)
+  };
+}
+async function geriTekGonder(kayit) {
+  const sb = window.__amSupabase;
+  if (!sb || typeof sb.from !== "function") return { ok: false, yok: true };
+  let oturum = null;
+  try { oturum = window.__amSession ? await window.__amSession() : null; } catch (e) { /* */ }
+  const uid = oturum && oturum.user ? oturum.user.id : null;
+  try {
+    const { error } = await sb.from("geri_bildirim").insert(Object.assign({}, kayit, { user_id: uid }));
+    if (error) return { ok: false, hata: error.message };
+    return { ok: true };
+  } catch (e) { return { ok: false, hata: String((e && e.message) || e) }; }
+}
+async function geriKuyrukBosalt() {
+  const kuyruk = geriKuyrukOku();
+  if (!kuyruk.length) return 0;
+  const kalan = [];
+  let giden = 0;
+  for (const k of kuyruk) {
+    const r = await geriTekGonder(k);
+    if (r.ok) giden++; else kalan.push(k);
+  }
+  geriKuyrukYaz(kalan);
+  return giden;
+}
+async function geriBildirimGonder(paket) {
+  const kayit = geriKayitNormalle(paket);
+  const r = await geriTekGonder(kayit);
+  if (r.ok) return { ok: true };
+  const kuyruk = geriKuyrukOku(); kuyruk.push(Object.assign({ zaman: new Date().toISOString() }, kayit));
+  geriKuyrukYaz(kuyruk);
+  return { ok: false, kuyruk: true };
+}
+
+// Soru/kart ekranlarındaki "Bu soruda hata var" düğmeleri buraya bağlanır.
+window.__amGeriBildirim = async function (p) {
+  const r = await geriBildirimGonder(p);
+  if (typeof toast === "function") {
+    toast(r.ok
+      ? "Teşekkürler — bildirimin bize ulaştı. Soruyu kontrol edeceğiz."
+      : "Şu an gönderilemedi; bildirimin bu cihazda saklandı, bağlantı gelince göndereceğim.", r.ok ? "success" : "warning");
+  }
+  return r;
+};
+
+// Ayarlar'daki genel geri bildirim formu
+async function geriBildirimFormGonder() {
+  const alan = document.getElementById("geri-bildirim-metin");
+  const kutu = document.getElementById("geri-bildirim-sonuc");
+  const metin = ((alan && alan.value) || "").trim();
+  if (metin.length < 5) {
+    if (kutu) kutu.textContent = "Birkaç kelime yaz (en az 5 karakter), sonra gönder.";
+    return;
+  }
+  const r = await geriBildirimGonder({ tur: "genel", mesaj: metin });
+  if (alan) alan.value = "";
+  if (kutu) kutu.textContent = r.ok
+    ? "Gönderildi — teşekkürler. Her mesajı okuyoruz."
+    : "Şu an gönderilemedi; mesaj cihazda saklandı, bağlantı gelince gönderilecek.";
+  if (typeof toast === "function" && r.ok) toast("Geri bildirimin gönderildi.", "success");
+}
+
+// v41 — 5. adım (5 soruluk kısa kontrol) bitince Bilgi Bankası panelini
+// AYNI EKRANDA tazele. Kullanıcı: "adım bittiğinde çıkmıyor, müfredat ağacına
+// tıklandığında açılıyor bunu düzelt."
+window.__kisaKontrolBitti = function (key) {
+  try {
+    if (typeof currentPage !== "string" || currentPage !== "knowledge") return;
+    if (typeof selectedTopicKey !== "string" || selectedTopicKey !== String(key || "")) return;
+    if (typeof renderKnowledge === "function") renderKnowledge(document.getElementById("main-content"));
+    if (window.lucide && lucide.createIcons) lucide.createIcons();
+    if (typeof toast === "function") toast("5. adım tamam ✓ Artık konuyu tamamlayıp hafıza takibine alabilirsin.", "success");
+  } catch (e) { /* */ }
+};
+
+// Bağlantı gelince bekleyen bildirimleri kendiliğinden gönder
+(function geriKuyrukDinle() {
+  const dene = function () { geriKuyrukBosalt().catch(function () { }); };
+  if (typeof window.addEventListener === "function") {
+    window.addEventListener("online", dene);
+    setTimeout(dene, 8000);
+  }
+})();
+
+// ===== İLK AÇILIŞ TANITIMI (v41) =====
+// Kullanıcı: "uygulama ilk açıldığında ... bu bölüm bu işe yarar,
+// şuradan geri bildirim sağlayabilirsiniz gibi şeyler gösterir. Ve daha
+// fazla bilgi için kılavuzu oku der ve biter."
+const TANITIM_ANAHTAR = "am_tanitim_v41";
+const TANITIM_ADIMLARI = [
+  { icon: "clipboard-list", renk: "var(--brand-blue)", baslik: "Denemelerim", metin: "Deneme sonucunu buradan girersin: ders ders doğru/yanlış/boş. Yanlışların konusunu ve nedenini işaretlersen uygulama çalışma listeni kendi kurar." },
+  { icon: "graduation-cap", renk: "#059669", baslik: "Dersler · Bilgi Bankası", metin: "Dersleri buradan çalışırsın. Bir konu 5 adımdır: ön test, aktif çalışma, çözümlü örnek, karışık pratik ve 5 soruluk kısa kontrol. 5 adım bitmeden konu hafıza takibine girmez." },
+  { icon: "brain", renk: "var(--memory-indigo)", baslik: "Konu Takibi", metin: "Hafıza gücünü ve tekrar günlerini burada görürsün. Tekrar bekleyenler en üstte, tekrar günü en uzak olan en altta. Renk yeşilden kırmızıya iner." },
+  { icon: "settings", renk: "var(--semantic-warning)", baslik: "Ayarlar", metin: "Tema (açık/koyu), sınıf (9/10), bildirim izni, yedekleme ve geri bildirim burada." },
+  { icon: "message-square", renk: "#DC2626", baslik: "Geri bildirim", metin: "Soruda hata mı var? Soru ekranındaki “Bu soruda hata var”a bas. Genel öneri/sorun için Ayarlar → Geri Bildirim." }
+];
+
+function tanitimGoster(zorla) {
+  let goruldu = false;
+  try { goruldu = localStorage.getItem(TANITIM_ANAHTAR) === "1"; } catch (e) { /* */ }
+  if (goruldu && !zorla) return;
+  const kutu = document.getElementById("tanitim-icerik");
+  if (!kutu) return;
+  kutu.innerHTML = TANITIM_ADIMLARI.map(a =>
+    '<div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-card);">' +
+      '<span style="flex-shrink:0;width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:' + a.renk + '18;color:' + a.renk + ';">' + icon(a.icon, 17) + "</span>" +
+      "<div><div style=\"font-weight:700;font-size:13.5px;\">" + a.baslik + "</div>" +
+      '<div class="text-xs text-muted" style="margin-top:2px;line-height:1.5;">' + a.metin + "</div></div></div>"
+  ).join("");
+  if (window.lucide && lucide.createIcons) lucide.createIcons();
+  openModal("tanitim-modal");
+}
+function tanitimKapat(kilitle) {
+  try { localStorage.setItem(TANITIM_ANAHTAR, "1"); } catch (e) { /* */ }
+  closeModal("tanitim-modal");
+  if (kilitle) { openHelp(); }
+}
+
 // ===== KULLANIM KILAVUZU =====
 const HELP_MODULES = [
   { icon: "clipboard-list", color: "var(--brand-blue)", title: "Denemelerim (Modül A)", text: "Uygulamanın tüm veri giriş merkezi. 8 TYT dersinin D/Y/B girişini yap; yanlış ve boşlarda Soru No + Konu + Neden satırları otomatik açılır. Her hata, Priorite motoruna beslenir." },
-  { icon: "radar", color: "var(--memory-indigo)", title: "Konu Takibi (Modül B)", text: "Laplace düzeltmeli Priorite Puanı'na göre Acil Çalışılacaklar listesi, ders başarı oranları ve Hafıza Gücü takibi. %20 altı konular için ACİL TEKRAR butonu çıkar." },
+  { icon: "radar", color: "var(--memory-indigo)", title: "Konu Takibi (Modül B)", text: "Acil Çalışılacaklar listesi (ilk 5, kendi içinde kaydırılır) ve Hafıza Gücü. Hafıza listesinde yalnız 5 adımlı çalışmayı bitiren konular görünür; tekrar bekleyenler en üstte, tekrar günü en uzak olan en alttadır. Her konu bir renk kademesi taşır: yeşil (%85+) güçlü, kırmızı (%29 ve altı) kritik." },
   { icon: "library", color: "#059669", title: "Kitaplık (Modül C)", text: "Okuma disiplinini süre ve çözüm hatalarıyla ilişkilendirir. Günlük sayfa girişi yap; Disiplin Puanı, Okuma Hızı ve (5+ deneme sonrası) Bilişsel Kondisyon Eğilimi hesaplanır." },
   { icon: "calendar-clock", color: "var(--semantic-warning)", title: "Planlama (Modül D)", text: "Sınav tarihi + hedef net ile tersine planlama: Haftalık İvme Hedefi = (HedefNet - MevcutOrt) / KalanHafta. Sirkadiyen ritmine göre Altın Saat konuları atanır." },
-  { icon: "graduation-cap", color: "var(--brand-blue)", title: "Bilgi Bankası (Modül E)", text: "Müfredat ağacından konu seç; 4 adımlı kanıta dayalı motor çalışır: 0) Ön Test (bilişsel kanca) → 1) Aktif Çalışma → 2) Çözümlü Örnek → 3) Karışık Pratik. Adımlar sıralı kilitlidir. Tamamlandığında 3-7-14-21-28 gün tekrar takvimi kurulur." },
+  { icon: "graduation-cap", color: "var(--brand-blue)", title: "Bilgi Bankası (Modül E) — 5 ADIM", text: "Müfredat ağacından konu seç; 5 adımlı motor çalışır: 1) Ön Test → 2) Aktif Çalışma → 3) Çözümlü Örnek → 4) Karışık Pratik → 5) Kısa Kontrol (5 soru, tek tek). Adımlar sıralı kilitlidir. 4. adım bitince 5. adım AYNI EKRANDA çıkar; ayrıca bir yere tıklaman gerekmez. 5. adım bitmeden konu “tamamlandı” sayılmaz, hafıza takibine girmez ve tekrar kartı açılmaz. Konu tamamlanınca 3-7-14-21-28 gün tekrar takvimi kurulur." },
   { icon: "pen-tool", color: "var(--semantic-error)", title: "Soru Bankası (Modül F)", text: "Günlük çözümlerini gir; zorluk seviyesi önerisi al (≤%40 TEMEL, ≤%75 ORTA, >%75 ZOR/YENİ NESİL). Denemelerle aynı analitik motora bağlanır (1.0x ağırlık)." },
-  { icon: "check-square", color: "#059669", title: "Günlük Görevler (Modül G)", text: "Streak (seri) sistemi. Haftada 1 Streak Freeze hakkın var: bir gün boş geçse bile serin yanmaz." }
+  { icon: "check-square", color: "#059669", title: "Günlük Görevler (Modül G)", text: "Streak (seri) sistemi. Haftada 1 Streak Freeze hakkın var: bir gün boş geçse bile serin yanmaz." },
+  { icon: "bell-ring", color: "#0EA5E9", title: "Bildirimler", text: "Bildirim iznini Ayarlar → Bildirim İzni İste ile ver. İzin verdiğin ANDA bu cihaza bir deneme bildirimi gelir. Her sabah (~07:40) günün kalan görevleri, akşam (~19:30) yalnız acil olanlar hatırlatılır." },
+  { icon: "message-square", color: "#DC2626", title: "Geri Bildirim", text: "Bir soruda hata mı var? Kısa kontrol veya kart ekranındaki “Bu soruda hata var” düğmesine bas — soru bize olduğu gibi iletilir. Genel öneri/sorun için Ayarlar → Geri Bildirim bölümünü kullan." }
 ];
 
 function openHelp() {
@@ -3610,24 +3798,33 @@ function renderTracking(container) {
   // (5 soru = Bilgi Bankası konu kartı + Günlük Görevler satırı).
   const bktDurumlar = (window.AnalizBKT && typeof window.AnalizBKT.konuDurumlari === "function")
     ? window.AnalizBKT.konuDurumlari() : {};
-  const bktAnahtar = Object.keys(bktDurumlar);
-  const hafizaAnahtar = ms.rows.map(r => r.key);
-  const birlesik = hafizaAnahtar.slice();
-  bktAnahtar.forEach(k => { if (birlesik.indexOf(k) < 0) birlesik.push(k); });
-  const satirlar = birlesik.map(k => {
-    const mem = ms.rows.find(r => r.key === k) || null;
-    return { key: k, lesson: splitKey(k).lesson, topic: splitKey(k).topic, mem: mem, bkt: bktDurumlar[k] || null };
+  // v41 — KULLANICI: "konu 5 adımlı çalışmayı tamamlamadı ise hafıza gücü
+  // bölümüne gidemez, tekrar kartı da olamaz."
+  // KÖK NEDEN: burada yalnız kısa kontrol yapılmış (hafızaya alınmamış)
+  // konular da listeye ekleniyordu. Artık liste YALNIZ tamamlanmış konulardan
+  // (state.memory[...].completedAt) kurulur; BKT bilgisi yalnız bu konuların
+  // kartına renk/yeterlilik olarak eşlenir.
+  const satirlar = ms.rows.map(k => {
+    const mem = ms.rows.find(r => r.key === k.key) || null;
+    return { key: k.key, lesson: k.lesson, topic: k.topic, mem: mem, bkt: bktDurumlar[k.key] || null };
   }).sort((a, b) => {
-    const pa = a.mem ? a.mem.pct : 101, pb = b.mem ? b.mem.pct : 101;
-    return pa - pb;
+    // v41 — SIRALAMA: tekrar bekleyenler en üstte; tekrar günü en UZAK olan
+    // en altta. (Eskiden hafıza yüzdesine göre sıralanıyordu; kullanıcı
+    // tekrar takvimine göre sıra istedi.)
+    const ga = a.mem ? (a.mem.due ? 0 : (a.mem.next ? 1 : 2)) : 3;
+    const gb = b.mem ? (b.mem.due ? 0 : (b.mem.next ? 1 : 2)) : 3;
+    if (ga !== gb) return ga - gb;
+    if (ga === 0) return (a.mem.pct || 0) - (b.mem.pct || 0);              // bekleyenler: en zayıf hafıza üstte
+    if (ga === 1) return String(a.mem.next.date) < String(b.mem.next.date) ? -1 : (String(a.mem.next.date) > String(b.mem.next.date) ? 1 : 0); // yakın tekrar üstte, uzak altta
+    return (a.mem.pct || 0) - (b.mem.pct || 0);
   });
-  const onayliSay = bktAnahtar.filter(k => bktDurumlar[k].onayli).length;
+  const onayliSay = satirlar.filter(s => s.bkt && s.bkt.onayli).length;
   hafizaKartToplam = satirlar.length;
 
   html += '<div class="bento-card" id="hafiza-baslik-kart" style="margin-top:16px;">';
   html += '<div class="flex items-center justify-between" style="margin-bottom:2px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
   html += '<span class="text-xs text-muted tabular">' + satirlar.length + " konu · " + ms.waiting + " tekrar bugün · ort. hafıza %" + ms.avg + (onayliSay ? " · " + onayliSay + " onaylı" : "") + "</span></div>";
-  html += '<div class="text-xs text-muted" style="margin:0;">Her konu kendi kartında. Çubuk yalnız hafıza gücü içindir; yeterlilik yüzde olarak yazılır.</div>';
+  html += '<div class="text-xs text-muted" style="margin:0;">Yalnız 5 adımlı çalışmayı bitiren konular burada. Sıra: <b>tekrar bekleyenler üstte</b>, tekrar günü en uzak olan en altta. Çubuk yalnız hafıza gücü içindir; yeterlilik yüzde olarak yazılır.</div>';
   // v40 — renk skalasının ANLAMI ekranda yazılı olsun (yeşilden kırmızıya).
   html += '<div class="konu-renk-legend">' + HAFIZA_SKALA.slice().reverse().map(function (k) {
     return '<span><i style="background:' + k.renk + ';"></i>%' + (k.esik === 0 ? "0-29" : k.esik + "+") + " " + k.ad + "</span>";
@@ -3703,7 +3900,7 @@ function renderTracking(container) {
       html += '<button class="btn btn-ghost w-full" data-act="moreMemory" style="margin-top:10px;">' + icon("chevron-up", 14) + " Daha Az Göster</button>";
     }
   } else {
-    html += '<div class="bento-card" style="margin-top:12px;"><div class="empty-state">' + icon("brain", 34) + "<div>Bilgi Bankasında konu tamamlandıkça ya da kısa kontroller çözüldükçe hafıza kartları burada belirir.</div></div></div>";
+    html += '<div class="bento-card" style="margin-top:12px;"><div class="empty-state">' + icon("brain", 34) + "<div>Bilgi Bankasında 5 adımlı çalışmayı bitirdiğin konular burada hafıza kartı olarak belirir. 5 adım bitmeden konu bu listeye girmez.</div></div></div>";
   }
 
   container.innerHTML = html;
@@ -4038,7 +4235,19 @@ function startStudy(topicKey) {
 // v36 — "konunun tekrar edilmesi için flashcardı tamamlamak zorunlu".
 // Kartı olan konuda "Tekrar Ettim" doğrudan tekrarı kapatmaz: önce kart turu
 // açılır. Tur ≥ %70 bilgiyle biterse __kartTamamla tekrarı kapatır.
+// v41 — 5 adımlı çalışma bitmeden tekrar kartı açılmaz.
+// Kullanıcı: "konu 5 adımlı çalışmayı tamamlamadı ise hafıza gücü bölümüne
+// gidemez tekrar kartı da olamaz."
+function konuTamamMi(topicKey) {
+  const m = state.memory && state.memory[topicKey];
+  return !!(m && m.completedAt);
+}
+function tamamlanmamisUyar(topicKey) {
+  toast("Bu konu 5 adımlı çalışmayı tamamlamadı — önce Bilgi Bankası'nda adımları ve 5 soruluk kısa kontrolü bitir.", "warning");
+  try { navigate("knowledge"); selectKnowledgeTopic(topicKey); } catch (e) { /* */ }
+}
 function reviewTopic(topicKey, erken) {
+  if (!konuTamamMi(topicKey)) { tamamlanmamisUyar(topicKey); return; }
   const kb = kartDurumHizli(topicKey);
   if (kb.sayi > 0 && !kb.tamam) {
     if (window.AmKart && typeof window.AmKart.ac === "function") {
@@ -4893,22 +5102,46 @@ function renderKnowledge(container) {
         '<button class="btn btn-primary btn-sm" data-act="earlyReview" data-topic="' + attr(selectedTopicKey) + '">' + icon("fast-forward", 14) + " Erken Tekrar</button>" +
         '<button class="btn btn-ghost btn-sm" data-act="resetTopic" data-topic="' + attr(selectedTopicKey) + '" style="color:var(--semantic-error);margin-left:auto;">' + icon("rotate-ccw", 14) + " Sıfırla</button></div></div>";
     } else {
-      // 4 adım (0-3), sıralı kilit
-      html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("map", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + ' Çalışma Yol Haritası</h3>';
+      // v41 — 5 ADIM. Kullanıcı: "5 soruluk tekrar sorusu bu 5 adım kontrol
+      // olarak ekle. Adım bittiğinde çıkmıyor, müfredat ağacına tıklandığında
+      // açılıyor bunu düzelt." KÖK NEDEN: 5 soruluk kısa kontrol yol
+      // haritasının DIŞINDA ayrı bir karttı ve yalnız konu tamamlandıktan
+      // sonra (ayrıca müfredat ağacına yeniden tıklanınca) görünüyordu.
+      // Artık 5. ADIM yol haritasının İÇİNDE: 4 çalışma adımı bitince aynı
+      // ekranda, yeniden tıklama gerekmeden çıkar.
+      const adimBitti = tstate.step >= ROADMAP_STEPS.length;
+      const bktKayitAdim = (state.bkt_state && state.bkt_state[selectedTopicKey]) || {};
+      const kontrolHavuz = havuzIdCoz(selectedTopicKey, bktKayitAdim.pool_id);
+      const kisaBitti = !!bktKayitAdim.son_kisa_kontrol;
+      html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("map", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + ' Çalışma Yol Haritası <span class="text-xs text-muted" style="font-weight:600;">· 5 adım</span></h3>';
       ROADMAP_STEPS.forEach((st, i) => {
         const isDone = tstate.step > i;
         const isActive = tstate.step === i;
         const locked = tstate.step < i;
         html += '<div class="roadmap-step ' + (isDone ? "completed" : isActive ? "active" : "locked") + '">' +
-          '<div class="step-number">' + (isDone ? icon("check", 15) : i) + "</div>" +
+          '<div class="step-number">' + (isDone ? icon("check", 15) : (i + 1)) + "</div>" +
           '<div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:14px;">' + esc(st.title) + (locked ? " " + icon("lock", 12, "opacity:0.5;") : "") + "</div>" +
           '<div class="text-xs text-muted" style="margin-top:2px;">' + esc(st.desc) + "</div>";
         if (isActive) html += '<button class="btn btn-sm btn-primary" style="margin-top:8px;" data-act="completeStep" data-topic="' + attr(selectedTopicKey) + '" data-step="' + i + '">' + icon("check", 13) + " Tamamla</button>";
         else if (isDone) html += '<span class="badge badge-success" style="margin-top:8px;">TAMAMLANDI</span>';
         html += "</div></div>";
       });
-      if (tstate.step >= ROADMAP_STEPS.length) {
-        html += '<button class="btn btn-success w-full" style="margin-top:6px;" data-act="completeTopic" data-topic="' + attr(selectedTopicKey) + '">' + icon("check-circle-2", 16) + " Konuyu Tamamlandı Olarak İşaretle</button>";
+      // 5. ADIM — Kısa Kontrol (5 soru)
+      html += '<div class="roadmap-step ' + (kisaBitti ? "completed" : (adimBitti ? "active" : "locked")) + '">' +
+        '<div class="step-number">' + (kisaBitti ? icon("check", 15) : 5) + "</div>" +
+        '<div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:14px;">Kısa Kontrol (5 soru)' + (!adimBitti ? " " + icon("lock", 12, "opacity:0.5;") : "") + "</div>" +
+        '<div class="text-xs text-muted" style="margin-top:2px;">Konudan 5 soru tek tek sorulur. Doğru cevap test sırasında gösterilmez. Bu adım bitmeden konu tamamlanmaz ve hafıza takibine girmez.</div>';
+      if (kisaBitti) {
+        html += '<span class="badge badge-success" style="margin-top:8px;">TAMAMLANDI' + (bktKayitAdim.son_kisa_kontrol_dogru != null ? " · " + bktKayitAdim.son_kisa_kontrol_dogru + "/" + (bktKayitAdim.son_kisa_kontrol_toplam || 5) : "") + "</span>";
+      } else if (adimBitti && kontrolHavuz) {
+        html += '<button class="btn btn-sm btn-primary" style="margin-top:8px;" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(kontrolHavuz) + '" data-bkt-mode="precheck">' + icon("clipboard-check", 13) + " 5 soruluk kontrole başla</button>";
+      } else if (adimBitti) {
+        html += '<div class="text-xs text-muted" style="margin-top:6px;">Bu konunun soru havuzu yok — 5. adım atlanır.</div>';
+      }
+      html += "</div></div>";
+      if (adimBitti) {
+        const kilit = !!kontrolHavuz && !kisaBitti;
+        html += '<button class="btn ' + (kilit ? "btn-ghost" : "btn-success") + ' w-full" style="margin-top:6px;" data-act="completeTopic" data-topic="' + attr(selectedTopicKey) + '">' + icon(kilit ? "lock" : "check-circle-2", 16) + " " + (kilit ? "Önce 5 soruluk kontrolü bitir" : "Konuyu Tamamlandı Olarak İşaretle") + "</button>";
       }
       html += "</div>";
     }
@@ -4954,6 +5187,16 @@ function completeStep(key, step) {
 }
 
 function completeTopic(key) {
+  // v41 — 5. ADIM KAPISI. Kullanıcı: "konu 5 adımlı çalışmayı tamamlamadı ise
+  // hafıza gücü bölümüne gidemez, tekrar kartı da olamaz." Bu yüzden konu
+  // ancak 5 soruluk kısa kontrol yapıldıktan sonra tamamlanır. Soru havuzu
+  // olmayan konularda 5. adım atlanır (yoksa konu sonsuza kilitli kalırdı).
+  const bktKayit = (state.bkt_state && state.bkt_state[key]) || {};
+  const kontrolHavuz = havuzIdCoz(key, bktKayit.pool_id);
+  if (kontrolHavuz && !bktKayit.son_kisa_kontrol) {
+    toast("Önce 5. adımı bitir: 5 soruluk kısa kontrolü çöz. Bitmeden konu hafıza takibine girmez.", "warning");
+    return;
+  }
   const left = daysLeftToExam();
   if (left !== null && left < 7 && !(state.topics[key] && state.topics[key].completedAt)) {
     toast("Son hafta: yeni konu başlatmak yerine mevcut konularını tekrar et.", "warning");
@@ -5349,6 +5592,14 @@ document.addEventListener("DOMContentLoaded", function () {
   initChrome();
   initSidebarPreference();
 
+  // v41 — İLK AÇILIŞ TANITIMI: uygulama daha önce açılmadıysa bölümlerin
+  // ne işe yaradığını tek ekranda gösterir, sonunda kılavuz bağlantısı verir.
+  // Derin bağlantıyla (bildirimden) gelindiyse kullanıcının işini bölmemek
+  // için tanıtım açılmaz.
+  setTimeout(function () {
+    try { if (!(location.hash || "").replace(/^#/, "").includes("=")) tanitimGoster(false); } catch (e) { /* */ }
+  }, 900);
+
   // Olay delegasyonu — tüm tıklamalar buradan geçer
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Enter" && e.key !== " ") return;
@@ -5384,6 +5635,11 @@ document.addEventListener("DOMContentLoaded", function () {
       case "openSettings": closeAllModals(); closeMoreSheet(); openSettings(); break;
       case "closeSettings": closeSettings(); break;
       case "openHelp": openHelp(); break;
+      // v41 — ilk açılış tanıtımı + geri bildirim
+      case "tanitimAc": tanitimGoster(true); break;
+      case "tanitimKapat": tanitimKapat(false); break;
+      case "tanitimKilavuz": tanitimKapat(true); break;
+      case "geriBildirimGonder": geriBildirimFormGonder(); break;
       case "openNotif": renderNotifList(); openModal("notif-modal"); break;
       case "markAllRead": state.notifications.forEach(function (n) { n.read = true; }); saveState(); renderNotifList(); updateBellBadges(); break;
       case "toggleNotifPermission": requestNotifPermission(); break;
@@ -5425,6 +5681,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // v35.9 — Tekrar Kartları (flashcard): her konu için, onay beklemeden
       case "kartBasla":
         // Kart turu bitince (≥ %70) tekrar kapanır ve sayfa tazelenir.
+        // v41 — 5 adımlı çalışma bitmeden tekrar kartı açılmaz.
+        if (!konuTamamMi(el.dataset.topic)) { tamamlanmamisUyar(el.dataset.topic); break; }
         if (window.AmKart && window.AmKart.ac) {
           window.AmKart.ac(el.dataset.topic).then(function (r) {
             if (r && r.tamamlandi) { navigate(currentPage === "tracking" ? "tracking" : "tasks"); }

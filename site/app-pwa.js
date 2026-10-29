@@ -1,4 +1,4 @@
-const PWA_SURUM = "v40-realtime-renk";
+const PWA_SURUM = "v41-bes-adim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -139,82 +139,39 @@ function initAuthUI() {
     else if (a === "pwaAuthRegister") emailRegister();
     else if (a === "pwaAuthReset") resetPassword();
     else if (a === "pwaAuthGoogle") googleLogin();
-    else if (a === "pushTeshis") pushTeshisYaz();
-    else if (a === "pushTestGonder") pushTestGonder();
-    else if (a === "cihazBildirimTesti") cihazBildirimTesti();
-    else if (a === "realtimeBildirimKur") { bildirimKanaliniKur(); bildirimleriGetir(); toast("Realtime bildirim kanalı kuruldu.", "success"); }
+    // v41 — test/tanılama düğmeleri KALDIRILDI. "Bu cihazda dene" artık
+    // yalnız bildirim izni VERİLDİĞİ ANDA kendiliğinden çalışır (index.html
+    // requestNotifPermission → window.__amCihazBildirimTesti).
   });
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
 
-// ---- BİLDİRİM TANILAMA GÖRÜNÜMÜ -------------------------------------
-// Ne gösterir: bu cihazda izin/abonelik/kayıt durumu + sunucunun VAPID
-// anahtarı tarayıcıdakiyle aynı mı. "Gelmiyor" şikâyetinin nedenini yazar.
-function pushZaman(ms) {
-  try {
-    const d = new Date(ms);
-    const iki = n => String(n).padStart(2, "0");
-    return iki(d.getDate()) + "." + iki(d.getMonth() + 1) + "." + d.getFullYear() + " " + iki(d.getHours()) + ":" + iki(d.getMinutes());
-  } catch (e) { return String(ms); }
-}
-function pushGun(iso) {
-  const t = String(iso || "").slice(0, 10); // YYYY-MM-DD
-  const p = t.split("-");
-  return p.length === 3 ? p[2] + "." + p[1] + "." + p[0] : t;
-}
-// v39 — TEK DOKUNUŞ ÖLÇÜM: sunucudan bu cihaza test push'u iste.
-// Dönen kod tek başına anlamlıdır:
-//   201 = push servisi kabul etti (sorun cihaz/izin tarafında)
-//   403 = VAPID anahtar uyuşmazlığı · 404/410 = abonelik ölü · 401 = oturum yok
-async function pushTestGonder() {
-  const kutu = document.getElementById("pwa-push-test-sonuc");
-  if (kutu) kutu.innerHTML = "Gönderiliyor…";
-  try {
-    if (!window.AmPush || !window.AmPush.testEt) { if (kutu) kutu.textContent = "Bildirim modülü yüklenmedi."; return; }
-    const r = await window.AmPush.testEt();
-    const sonuc = (r && (r.sonuc || r.sonuclar)) || [];
-    const kod = sonuc.length ? sonuc.map(x => x.kod).join(", ") : (r && r.hata ? "hata" : "? ");
-    let metin = "Sunucu yanıtı: " + (r && r.hata ? "✗ " + r.hata : "kod " + kod);
-    if (r && r.gonderilen) metin += " · " + r.gonderilen + " cihaza gönderildi";
-    if (kutu) kutu.innerHTML = escHtml(metin) + "<div style=\"margin-top:4px;opacity:.75;\">Kod 201 ise push servisi kabul etti; bildirim görünmüyorsa telefonun Chrome bildirim izni/pil kısıtı kapalıdır. 403 ise anahtar uyuşmuyor, 404/410 ise abonelik ölü — sayfayı yenile, abonelik yeniden kurulur.</div>";
-  } catch (e) {
-    if (kutu) kutu.textContent = "Gönderilemedi: " + String(e).slice(0, 90);
-  }
-}
-
+// v41 — TEK CÜMLELİK, ÖĞRENCİYE YÖNELİK DURUM.
+// Teknik tanılama metinleri (VAPID anahtarı, abonelik uç noktası, sunucu
+// sürümü, push izi) kaldırıldı; öğrencinin yapabileceği bir şey varsa o yazılır.
 async function pushTeshisYaz() {
   const kutu = document.getElementById("pwa-push-durum");
   if (!kutu) return;
   try {
-    if (!window.AmPush || !window.AmPush.teshis) { kutu.textContent = "Bildirim modülü yüklenmedi."; return; }
-    const t = await window.AmPush.teshis();
-    const c = (t && t.cihaz) || {};
-    const s = (t && t.sunucu) || {};
-    const satir = [];
-    satir.push("Destek: " + (c.destek ? "✓ var" : "✗ bu tarayıcı desteklemiyor"));
-    satir.push("İzin: " + (c.izin === "granted" ? "✓ verildi" : c.izin === "denied" ? "✗ reddedildi" : "— verilmedi"));
-    satir.push("Cihaz aboneliği: " + (c.abone ? "✓ kurulu" : "✗ yok"));
-    satir.push("Hesaba kayıtlı: " + (c.kayitli ? "✓ evet" : "✗ hayır (giriş yap / izin iste)"));
-    // ---- CİHAZ: bu telefona/bilgisayara push fiziksel olarak ulaştı mı? ----
-    const sp = c.sonPush;
-    satir.push("Bu cihaza son push: " + (sp && sp.zaman
-      ? "✓ " + pushZaman(sp.zaman)
-      : "✗ hiç ulaşmadı (sunucu gönderse de cihaz almıyor)"));
-    // ---- SUNUCU: bu cihaza en son hangi gün gönderdi? ----
-    if (c.sunucuSonGonderim) satir.push("Sunucu bu cihaza gönderdi: ✓ " + pushGun(c.sunucuSonGonderim));
-    // ---- SUNUCU SÜRÜMÜ ----
-    const v = s && s.vapid;
-    if (v) {
-      satir.push("Sunucu anahtarı: " + (v.tarayiciIleAyni ? "✓ tarayıcıyla aynı" : "✗ FARKLI — bildirimler bu yüzden gelmez"));
-      satir.push("Sunucu özel anahtarı: " + (v.ozelAnahtarCozuluyor ? "✓ okunuyor" : "✗ okunamıyor"));
-    } else if (s && s.surumEski) {
-      satir.push("Sunucu: yayındaki sürüm bu denetimi tanımıyor (anahtar kontrolü yok)");
-    } else if (s && s.hata) {
-      satir.push("Sunucu: " + escHtml(String(s.hata).slice(0, 90)));
+    if (typeof Notification === "undefined" || !("serviceWorker" in navigator)) {
+      kutu.textContent = "Bu tarayıcı bildirim göstermiyor. iPhone'da uygulamayı “Ana Ekrana Ekle” ile kurunca çalışır.";
+      return;
     }
-    kutu.innerHTML = satir.map(x => "<div>" + x + "</div>").join("");
+    if (Notification.permission === "denied") {
+      kutu.textContent = "Bildirimler tarayıcıda kapalı. Adres çubuğundaki kilit simgesi → Bildirimler → İzin ver → sayfayı yenile.";
+      return;
+    }
+    if (Notification.permission !== "granted") {
+      kutu.textContent = "Bildirim izni verilmedi. Ayarlar → “Bildirim İzni İste”ye dokun; izin verdiğin an bir deneme bildirimi gelir.";
+      return;
+    }
+    let abone = false;
+    try { const k = await navigator.serviceWorker.ready; abone = !!(await k.pushManager.getSubscription()); } catch (e) { /* */ }
+    kutu.textContent = abone
+      ? "Açık ✓ Her sabah (~07:30) günün görevlerini, akşam (~19:30) yalnız acil olanları hatırlatırım."
+      : "İzin var ama cihaz kaydı tamamlanmadı. Uygulamayı bir kez kapatıp aç; sürerse Ayarlar → “Bildirim İzni İste”ye tekrar dokun.";
   } catch (e) {
-    kutu.textContent = "Kontrol edilemedi: " + String(e).slice(0, 90);
+    kutu.textContent = "Bildirim durumu okunamadı. Uygulamayı yenilemeyi dene.";
   }
 }
 
@@ -396,31 +353,15 @@ function renderProfileModal() {
     if (pm && pm.style.display === "flex") renderProfileModal();
   });
 
-  // C) SORU HAVUZU / SÜRÜM
-  const havuzSayisi = (window.__havuzBilgi && window.__havuzBilgi.havuz) || 0;
-  const soruSayisi = (window.__havuzBilgi && window.__havuzBilgi.soru) || 0;
-  html += '<div style="border:1px dashed rgba(0,0,0,0.18);border-radius:14px;padding:12px;font-size:12px;opacity:0.85;">';
-  html += '<b>Soru havuzu:</b> ' + (havuzSayisi ? havuzSayisi + " havuz · " + soruSayisi + " soru" : "yükleniyor…") + '<br>';
-  html += '<b>Sürüm:</b> ' + escHtml(PWA_SURUM) + ' · <b>Bulut:</b> Supabase';
-  html += '</div>';
-
-  // D) BİLDİRİM TANILAMA (v35.9)
-  // Kullanıcı: "izin var ama test bildirimi gelmiyor." Test düğmesi YOK
-  // (v35.7 kararı); bunun yerine DURUM görünür: cihazda abonelik var mı,
-  // sunucudaki VAPID anahtarı tarayıcıdakiyle aynı mı. Kişisel veri yok.
-  html += '<div style="border:1px dashed rgba(0,0,0,0.18);border-radius:14px;padding:12px;font-size:12px;opacity:0.85;margin-top:10px;">';
-  html += '<b>Bildirim durumu</b><div id="pwa-push-durum" style="margin-top:6px;line-height:1.6;">kontrol ediliyor…</div>';
-  html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;">';
-  html += '<button type="button" data-act="pushTeshis" style="background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Yeniden kontrol et</button>';
-  // v39 — "bildirim gelmedi" için tek dokunuşluk ölçüm: sunucu gerçekten
-  // gönderdi mi (201/404/410) ve cihaz aldı mı? Sonuç burada yazılır.
-  html += '<button type="button" data-act="pushTestGonder" style="background:#2563EB;color:#fff;border:0;border-radius:9px;padding:6px 10px;font-size:11.5px;font-weight:700;cursor:pointer;">Test bildirimi gönder</button>';
-  // v40 — OS kanalını push'suz ölçen test (push 201 dönse bile telefon
-  // göstermeyebiliyor; bu düğme doğrudan showNotification çağırır).
-  html += '<button type="button" data-act="cihazBildirimTesti" style="background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Bu cihazda dene</button>';
-  html += '<button type="button" data-act="realtimeBildirimKur" style="background:none;border:1px solid rgba(0,0,0,0.2);border-radius:9px;padding:6px 10px;font-size:11.5px;cursor:pointer;color:inherit;">Realtime kanalı yenile</button>';
-  html += '</div>';
-  html += '<div id="pwa-push-test-sonuc" style="margin-top:6px;font-size:11.5px;line-height:1.5;"></div>';
+  // v41 — KULLANICI: "Uygulamada öğrenciyi ilgilendirmeyen yazıları sil.
+  // Mesela teknik yazılar vb. Bildirim çalıştığına göre test bildirimi, cihaz
+  // bildirimi vb kaldır."
+  // Buradaki "Soru havuzu / Sürüm / Bulut" teknik kutusu ve dört tanılama
+  // düğmesi (test bildirimi gönder, bu cihazda dene, realtime kanalı yenile,
+  // yeniden kontrol) KALDIRILDI. Yerine tek cümlelik, öğrenciye yönelik
+  // bildirim durumu kaldı.
+  html += '<div style="border:1px solid rgba(0,0,0,0.10);border-radius:14px;padding:12px;font-size:12px;line-height:1.6;">';
+  html += '<b>Bildirimler</b><div id="pwa-push-durum" style="margin-top:6px;">kontrol ediliyor…</div>';
   html += '</div>';
 
   html += '</div>';
@@ -708,32 +649,28 @@ function realtimeBildirim(r, sessizSistem) {
   if (sb && r.id) { try { sb.from("bildirimler").update({ okundu: true }).eq("id", r.id).then(() => { }); } catch (e) { } }
 }
 
-// ---- 6c) CİHAZDA BİLDİRİM TESTİ (OS kanalını push'suz ölçer) ----
-// Push sunucusu "201 kabul" dese bile telefon göstermeyebilir. Bu düğme
-// doğrudan showNotification çağırır: sistem bildirimi çıkıyorsa OS kanalı
-// sağlamdır (sorun push teslimindedir); çıkmıyorsa sorun telefon/kanal
-// ayarındadır. Yalan yok: ekranda sonucu yazar.
+// ---- 6c) İZİN VERİLDİĞİ ANDA CİHAZ BİLDİRİMİ (v41) ----
+// Kullanıcı: "Bildirim çalıştığına göre test bildirimi, cihaz bildirimi vb
+// kaldır. 'Bu cihazda dene'yi bildirim izni verildiği anda çağır."
+// Yani ayrı test düğmesi YOK; izin verilir verilmez bu cihazda bir sistem
+// bildirimi gösterilir. Kullanıcı bildirimi görürse kanal sağlamdır.
 async function cihazBildirimTesti() {
-  const kutu = document.getElementById("pwa-push-test-sonuc");
-  const yaz = (m) => { if (kutu) kutu.innerHTML = m; };
   try {
-    if (typeof Notification === "undefined") return yaz("Bu tarayıcı Bildirim API'sini desteklemiyor.");
-    if (Notification.permission === "default") {
-      const p = await Notification.requestPermission();
-      if (p !== "granted") return yaz("İzin verilmedi (tarayıcı izni: " + p + ").");
-    }
-    if (Notification.permission !== "granted") return yaz("Site bildirim izni kapalı: " + Notification.permission + ".");
-    if (!("serviceWorker" in navigator)) return yaz("Servis çalışanı yok — bu ortamda sistem bildirimi gösterilemez.");
+    if (typeof Notification === "undefined") return { ok: false, neden: "Bu tarayıcı bildirim göstermiyor." };
+    if (Notification.permission !== "granted") return { ok: false, neden: "Bildirim izni verilmedi." };
+    if (!("serviceWorker" in navigator)) return { ok: false, neden: "Bu ortamda sistem bildirimi gösterilemiyor." };
     const kayit = await navigator.serviceWorker.ready;
-    await kayit.showNotification("Cihaz bildirimi çalışıyor", {
-      body: "Bunu görüyorsan telefonun bildirim kanalı sağlam.",
-      icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: "am-cihaz-testi", data: { url: "./" }
+    await kayit.showNotification("Bildirimler açıldı ✓", {
+      body: "Bunu görüyorsan bu cihazın bildirim kanalı sağlam. Her sabah görevlerini hatırlatacağım.",
+      icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: "am-izin-testi", data: { url: "./" }
     });
-    yaz("Gönderildi. Bildirim görünmediyse: telefon Ayarlar → Uygulamalar → Chrome → Bildirimler ve site kanalı (Sessiz/Önemli) ayarını kontrol et.");
+    return { ok: true };
   } catch (e) {
-    yaz("Hata: " + String((e && e.message) || e).slice(0, 160));
+    return { ok: false, neden: "Bildirim gösterilemedi." };
   }
 }
+// index.html (klasik script) bu kancayla çağırır.
+window.__amCihazBildirimTesti = cihazBildirimTesti;
 
 // ---- 7) CLOUD MESSAGING (KALDIRILDI — v40) ----
 // KÖK NEDEN ("bildirim hiç gelmiyor"): Firebase getToken(), AYNI servis
