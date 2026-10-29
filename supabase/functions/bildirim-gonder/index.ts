@@ -628,7 +628,7 @@ Deno.serve(async (istek) => {
     let ozelGecerli = false;
     try { const j = ozelJwk(); ozelGecerli = !!(j && j.d && j.x && j.y); } catch { ozelGecerli = false; }
     return json({
-      surum: "v35.9",
+      surum: "v36",
       vapid: {
         ozelAnahtarVar: !!VAPID_OZEL,
         ozelAnahtarCozuluyor: ozelGecerli,
@@ -682,6 +682,17 @@ Deno.serve(async (istek) => {
     //   akşam (TR ≥ 14) → yalnız kritikler (okul sınavı, sınav geri sayımı, hafıza kritik)
     const aksam = trSaat >= 14;
     const KRITIK = ["schooleve@", "schooltoday@", "exam@", ":memcrit"];
+    // v36 — KULLANICI: "sadece tekrar günleri açılmalı".
+    // Gönderim artık YALNIZ şu anahtarlarla sınırlı:
+    //   • :reviews  → bugün tekrar günü gelen konular
+    //   • :memcrit  → hafızası %20'nin altına düşen (acil tekrar) konular
+    //   • :forget   → unutma indeksi yükselen konular
+    //   • schooltoday@ / schooleve@ → okul sınavı günü/yarını (kaçırılması
+    //     zararlı olduğu için korunuyor)
+    // Kaldırılanlar: coach (selamlama), urgent (öncelik listesi), daily (özet),
+    // exam@ geri sayım. Bunlar in-app bildirim olarak kalır.
+    const TEKRAR_IZINLI = [":reviews", ":memcrit", ":forget", "schooltoday@", "schooleve@"];
+    const tekrarMi = (k: string) => TEKRAR_IZINLI.some((p) => String(k || "").includes(p));
     const kritikMi = (k: string) => KRITIK.some((p) => String(k || "").includes(p));
 
     // TANILAMA: gömülü bildirim mantığı (bildirim-logic.js) gerçekten çalışıyor mu?
@@ -717,6 +728,7 @@ Deno.serve(async (istek) => {
           const anahtar = String((m && m.key) || "");
           if (!anahtar || bugunKumesi.has(anahtar)) continue;   // bugün zaten gitti
           if (aksam && !kritikMi(anahtar)) continue;            // akşam yalnız kritik
+          if (!tekrarMi(anahtar)) continue;                      // v36: yalnız tekrar günleri
           const mesaj = {
             title: String(m.title || "Analiz Merkezi"),
             body: String(m.body || ""),

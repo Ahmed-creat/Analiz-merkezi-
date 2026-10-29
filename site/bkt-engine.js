@@ -236,7 +236,8 @@
     if (!correct) {
       entry.son_negatif_tarihi = entry.son_gozlem_tarihi;
       entry.hata_gecmisi.push({ type: reason, date: entry.son_gozlem_tarihi, source: source, alt_beceri: data.alt_beceri || data.altBeceri || "" });
-      if (entry.hata_gecmisi.length > 100) entry.hata_gecmisi.shift();
+      // v36: 100 kayıt × 339 konu bulutu ve localStorage'ı taşırıyordu.
+      if (entry.hata_gecmisi.length > 40) entry.hata_gecmisi.shift();
     }
     if (entry.gozlem_sayisi >= 5 && entry.onay_durumu === "VERI_YETERSIZ") entry.onay_durumu = "OGRENIYOR";
     return { ignored: false, topicKey: key, L: entry.L, status: statusFor(entry), weight: weight };
@@ -1038,7 +1039,8 @@
     const topic = (s.topics && s.topics[key]) || {};
     const questionCards = pool && Array.isArray(pool.sorular) ? pool.sorular.map(q => q && q.flashcard).filter(Boolean) : [];
     const sourceCards = pool && Array.isArray(pool.flashcards) ? pool.flashcards : (questionCards.length ? questionCards : (Array.isArray(topic.flashcards) ? topic.flashcards : []));
-    sourceCards.slice(0, 10).forEach(function (card, i) {
+    // Rapor §5.1: konu başına EN FAZLA 8 standart kart.
+    sourceCards.slice(0, 8).forEach(function (card, i) {
       const front = card.front || card.on; const back = card.back || card.arka;
       if (!front || !back) return;
       const id = (pool ? "pool:" + (pool.konu_id || key) : "std:" + key) + ":" + i;

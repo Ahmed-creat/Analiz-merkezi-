@@ -1,4 +1,4 @@
-const PWA_SURUM = "v35.9b-teshis-izi";
+const PWA_SURUM = "v36-ajanda-kart";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -553,6 +553,10 @@ async function oturumUygula(session) {
           state = mergeDeep(mergeDeep(freshState(), uzakState), state);
         }
         state.user.grade = state.user.grade || (uzakState.user && uzakState.user.grade) || "9";
+        // v36 — Buluttan gelen 5,8 MB'lık kayıt (tek konuda 7.680 mükerrer hata
+        // kaydı) sıkıştırılmadan yazılırsa localStorage kotası dolar ve her
+        // kayıtta "depolama dolu" uyarısı çıkar. Birleştirmeden hemen sonra sıkıştır.
+        try { if (window.VeriSikistir && window.VeriSikistir.sikistir) window.VeriSikistir.sikistir(state); } catch (e) { /* */ }
         saveState();
         navigate(currentPage);
         if (typeof updateUserUI === "function") updateUserUI();
@@ -924,8 +928,14 @@ function okzbktBirlestir(hedef, kaynak) {
   const top = n1 + n2;
   if (top > 0) hedef.L = ((Number(hedef.L) || 0) * n1 + (Number(kaynak.L) || 0) * n2) / top;
   hedef.gozlem_sayisi = top;
-  hedef.hata_gecmisi = (Array.isArray(hedef.hata_gecmisi) ? hedef.hata_gecmisi : [])
+  // v36 — KÖK NEDEN DÜZELTMESİ: burada koşulsuz birleştirme vardı; her
+  // senkronda aynı kayıtlar tekrar eklenip tek konuyu 7.680 kayda çıkardı
+  // (bulut 5,8 MB, "depolama dolu" hatası). Artık tekilleştir + 40'ta tut.
+  const hamHata = (Array.isArray(hedef.hata_gecmisi) ? hedef.hata_gecmisi : [])
     .concat(Array.isArray(kaynak.hata_gecmisi) ? kaynak.hata_gecmisi : []);
+  hedef.hata_gecmisi = (typeof window !== "undefined" && window.VeriSikistir && window.VeriSikistir.tekilKirp)
+    ? window.VeriSikistir.tekilKirp(hamHata, 40)
+    : hamHata.slice(-40);
   Object.keys(kaynak).forEach(k => { if (hedef[k] === undefined) hedef[k] = kaynak[k]; });
   // Daha ileri bir onay durumu varsa onu koru
   const SIRA = { VERI_YETERSIZ: 0, GELISIYOR: 1, PEKISIYOR: 2, RISKLI: 3, ONAYLANDI: 4 };

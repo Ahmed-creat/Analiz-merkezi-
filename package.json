@@ -37,6 +37,8 @@
     "test:kart": "node tests/birlesik-kart.test.js",
     "test:sekil": "node tests/sekıl-tutarlilik.test.js",
     "test:bktdavranis": "node tests/bkt-davranis.test.js",
-    "test:bildirimTeshis": "node tests/bildirim-teshis.test.js"
+    "test:bildirimTeshis": "node tests/bildirim-teshis.test.js",
+    "test:kartflash": "node tests/kart-flashcard.test.js",
+    "test:sikistir": "node tests/veri-sikistir.test.js"
   }
 }

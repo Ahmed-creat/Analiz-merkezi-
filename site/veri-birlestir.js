@@ -23,6 +23,13 @@
   "use strict";
 
   function nesne(x) { return x && typeof x === "object" && !Array.isArray(x); }
+
+  // veri-sikistir.js: tarayıcıda pencereye, Node'da require ile gelir.
+  function sikistirici() {
+    if (kok && kok.VeriSikistir) return kok.VeriSikistir;
+    try { if (typeof require === "function") return require("./veri-sikistir.js"); } catch (e) { /* yoksa aşağıdaki yedek */ }
+    return null;
+  }
   function dizi(x) { return Array.isArray(x) ? x : []; }
   function sayi(x) { const n = Number(x); return isFinite(n) ? n : 0; }
 
@@ -85,7 +92,13 @@
     const cikti = Object.assign({}, yan, ana);
     cikti.gozlem_sayisi = Math.max(n1, n2);
     cikti.L = Math.max(sayi(a.L), sayi(b.L));
-    cikti.hata_gecmisi = dizi(a.hata_gecmisi).concat(dizi(b.hata_gecmisi));
+    // v36 — KÖK NEDEN DÜZELTMESİ: burada iki dizi koşulsuz birleştiriliyordu.
+    // Her girişte (senkron) aynı kayıtlar tekrar eklendiği için tek konunun
+    // hata geçmişi 7.680 kayda çıktı ve bulut/localStorage taştı.
+    // Artık tekilleştirilir + 40 kayıtta tutulur (veri-sikistir.js ile aynı kural).
+    const VS = sikistirici();
+    const ham = dizi(a.hata_gecmisi).concat(dizi(b.hata_gecmisi));
+    cikti.hata_gecmisi = VS ? VS.tekilKirp(ham, VS.SINIR.hata_gecmisi) : ham.slice(-40);
     const SIRA = { VERI_YETERSIZ: 0, GELISIYOR: 1, PEKISIYOR: 2, RISKLI: 3, ONAYLANDI: 4 };
     const s1 = SIRA[a.onay_durumu] || 0, s2 = SIRA[b.onay_durumu] || 0;
     if (s1 !== s2) cikti.onay_durumu = s1 > s2 ? a.onay_durumu : b.onay_durumu;

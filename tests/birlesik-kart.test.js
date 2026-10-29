@@ -45,13 +45,28 @@ const splitKey = (k) => { const i = String(k).indexOf(" > "); return { lesson: S
 const idealReviewInterval = () => 3;
 const MEMORY_CRITICAL = 20, MEMORY_WARNING = 40;
 
-function kart(ms, bkt, limit) {
+// v36 — kart artık gerçek `kartDurumHizli()` fonksiyonunu kullanıyor.
+// Metne bakmıyoruz: fonksiyon index.html'den çıkarılıp GERÇEKTEN çalıştırılıyor.
+const kdhBas = HTML.indexOf("function kartDurumHizli");
+const kdhSon = HTML.indexOf("\n}", HTML.indexOf("return { sayi: sayi, tamam:", kdhBas)) + 2;
+ok("kartDurumHizli bulundu", kdhBas > 0 && kdhSon > kdhBas);
+// Fonksiyon `state` ve `todayStr()` kullanıyor → bağımlılıkları vererek üret.
+const kartDurumHizliUret = kdhBas > 0
+  ? new Function("state", "todayStr", "return (" + HTML.slice(kdhBas, kdhSon) + ")")
+  : () => (() => ({ sayi: 0, tamam: false }));
+const BUGUN = "2026-10-29";
+
+function kart(ms, bkt, limit, st) {
+  const durum = st || { flashcards: { cards: [] }, tekrarKartlari: {} };
+  const kdh = kartDurumHizliUret(durum, () => BUGUN);
+  const kartDurumHizli = k => kdh(k);
   const window = { AnalizBKT: { konuDurumlari: () => bkt } };
   const fn = new Function("html", "ms", "memoryLimit", "window", "icon", "esc", "attr", "statBox",
     "memoryColor", "fmtDate", "splitKey", "idealReviewInterval", "MEMORY_CRITICAL", "MEMORY_WARNING",
+    "state", "todayStr", "kartDurumHizli",
     "return (function(){\n" + blok + "\nreturn html;\n})();");
   return fn("", ms, limit || 10, window, icon, esc, attr, statBox, memoryColor, fmtDate, splitKey,
-    idealReviewInterval, MEMORY_CRITICAL, MEMORY_WARNING);
+    idealReviewInterval, MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli);
 }
 
 const MS = {
@@ -90,6 +105,33 @@ console.log("\n== 4) Ayrı BKT paneli çizilmiyor ==");
 ok("motor birleşik kartı tanıyor", ENGINE.indexOf('getElementById("bkt-birlesik-kart")') > 0);
 ok("eski panel temizleniyor", /bkt-birlesik-kart[\s\S]{0,220}bkt-learning-panel/.test(ENGINE));
 ok("konuDurum API'si dışa açık", ENGINE.indexOf("konuDurum: function (key)") > 0);
+
+console.log("\n== 5) v36 — ders ayracı ve flashcard zorunluluğu ==");
+{
+  const st = {
+    flashcards: { cards: [
+      { id: "s1", topicKey: "Matematik > 1.1 Trigonometri", front: "ö1", back: "a1" },
+      { id: "s2", topicKey: "Matematik > 1.1 Trigonometri", front: "ö2", back: "a2" },
+      { id: "s3", topicKey: "Matematik > 1.1 Trigonometri", front: "ö3", back: "a3" }
+    ] },
+    tekrarKartlari: {}
+  };
+  const c = kart(MS, BKT, 10, st);
+  ok("ders ayracı basıldı", c.indexOf("ders-ayrac") >= 0);
+  ok("ayraçta ders adı var", /ders-ayrac[\s\S]{0,200}Matematik/.test(c));
+  ok("kart sayısı yazıldı (3)", c.indexOf("Kartları Bitir (3)") >= 0);
+  ok("kart zorunlu notu", c.indexOf("kart zorunlu (3)") >= 0);
+  // Kart bitmeden birincil aksiyon kart düğmesi; ikincil tekrar düğmesi kalır.
+  const anaBolum = c.slice(c.indexOf("Kartları Bitir"), c.indexOf("Kartları Bitir") + 400);
+  ok("kart düğmesi birincil (btn-primary)", anaBolum.indexOf("btn-primary") >= 0, anaBolum.slice(0, 120));
+
+  const st2 = JSON.parse(JSON.stringify(st));
+  st2.tekrarKartlari["Matematik > 1.1 Trigonometri"] = { bildi: 3, bilemedi: 0, tamamlandi: BUGUN };
+  const c2 = kart(MS, BKT, 10, st2);
+  ok("tamamlanınca kart işareti ✓", c2.indexOf("Kart · 3 ✓") >= 0);
+  ok("tamamlanınca 'Kartları Bitir' kalkar", c2.indexOf("Kartları Bitir") < 0);
+  ok("tamamlanınca tekrar düğmesi geri gelir", c2.indexOf('data-act="reviewTopic"') >= 0);
+}
 
 console.log("\n" + "─".repeat(56));
 if (kalan) { hatalar.forEach(h => console.log(" ✗ " + h)); console.log("Birleşik kart testi — " + gecen + "/" + (gecen + kalan) + " geçti"); process.exit(1); }

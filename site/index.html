@@ -775,10 +775,47 @@ select.dd-native {
 .ikili-grid > * { min-width: 0; }
 @media (min-width: 900px) { .ikili-grid { grid-template-columns: var(--ikili, 1fr 1fr); } }
 
-/* Görevler (§2) */
-.gorev-row { display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--border-card); }
-.gorev-row:last-child { border-bottom: none; }
+.ajanda { margin-top: 14px; }
+.ajanda-baslik { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 8px; color: var(--text-muted); }
+.ajanda-satir:hover { border-color: var(--brand-blue); }
+@media (min-width: 900px) { .ajanda { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; } .ajanda-baslik { grid-column: 1 / -1; } }
+
+/* Görevler (§2) — v36: Google Takvim "Ajanda" görünümü
+   Kullanıcı: "Görevler de ordaki gibi renkli satırlar olsun."
+   Her satır: solda renk şeridi + ikon, ortada başlık/açıklama, sağda aksiyon. */
+.gorev-row {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 12px 14px 12px 12px; margin-bottom: 8px;
+  border: 1px solid var(--border-card); border-left: 4px solid var(--brand-blue);
+  border-radius: 12px; background: var(--bg-card);
+}
+.gorev-row:last-child { margin-bottom: 0; }
 .gorev-row.ok .gorev-ic { color: var(--semantic-success); }
+/* renk türleri */
+.gorev-row.tekrar { border-left-color: var(--memory-indigo); background: color-mix(in srgb, var(--memory-indigo) 6%, var(--bg-card)); }
+.gorev-row.kisa   { border-left-color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 6%, var(--bg-card)); }
+.gorev-row.sinav  { border-left-color: var(--semantic-error); background: color-mix(in srgb, var(--semantic-error) 6%, var(--bg-card)); }
+.gorev-row.hazirlik { border-left-color: var(--semantic-warning); background: color-mix(in srgb, var(--semantic-warning) 8%, var(--bg-card)); }
+.gorev-row.kritik { border-left-color: var(--semantic-error); background: color-mix(in srgb, var(--semantic-error) 4%, var(--bg-card)); }
+.gorev-row.kart   { border-left-color: var(--memory-indigo); background: color-mix(in srgb, var(--memory-indigo) 4%, var(--bg-card)); }
+.gorev-row.oku    { border-left-color: var(--semantic-success); background: color-mix(in srgb, var(--semantic-success) 6%, var(--bg-card)); }
+.gorev-row.soru   { border-left-color: var(--brand-blue); background: color-mix(in srgb, var(--brand-blue) 4%, var(--bg-card)); }
+.gorev-row.calis  { border-left-color: var(--semantic-success); background: color-mix(in srgb, var(--semantic-success) 4%, var(--bg-card)); }
+.gorev-row .gorev-ic {
+  width: 30px; height: 30px; min-width: 30px; border-radius: 9px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--bg-canvas);
+}
+/* Ders başlığı şeridi — konuların alanı ayrışsın (kullanıcı: "karışık görünüyor") */
+.ders-ayrac {
+  display: flex; align-items: center; gap: 8px;
+  margin: 16px 0 8px; padding: 6px 10px;
+  background: color-mix(in srgb, var(--brand-blue) 9%, var(--bg-canvas));
+  border-radius: 9px; font-size: 12px; font-weight: 800; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--brand-blue);
+}
+.ders-ayrac:first-child { margin-top: 0; }
+.ders-ayrac span { margin-left: auto; font-weight: 600; letter-spacing: 0; text-transform: none; opacity: .75; }
 .seri-kutu { display: flex; justify-content: space-between; gap: 10px; }
 .seri-bar { height: 8px; border-radius: 99px; background: var(--bg-canvas); overflow: hidden; margin: 12px 0 10px; }
 .seri-bar > div { height: 100%; background: var(--brand-gradient); border-radius: 99px; transition: width 0.4s ease; }
@@ -1510,7 +1547,29 @@ function loadState() {
       const parsed = JSON.parse(saved);
       state = mergeDeep(freshState(), parsed);
     }
+    // v36 — Açılışta sıkıştır: mükerrer hata kayıtlarını ve sınırsız büyüyen
+    // dizileri at. Ölçülen vaka: tek konunun hata geçmişi 7.680 kayıttı,
+    // bulut kaydı 5,8 MB'tı → "depolama dolu" hatası.
+    sikistirVeYaz();
   } catch (e) { console.warn("Veri okunamadı, temiz başlanıyor.", e); }
+}
+
+// Sıkıştırma yardımcıları (window.VeriSikistir: site/veri-sikistir.js)
+function veriBoyutu() {
+  try { return JSON.stringify(state).length; } catch (e) { return 0; }
+}
+function sikistir(acil) {
+  if (!window.VeriSikistir || typeof window.VeriSikistir.sikistir !== "function") return null;
+  try { return window.VeriSikistir.sikistir(state, { acil: !!acil }); } catch (e) { return null; }
+}
+function sikistirVeYaz() {
+  const once = veriBoyutu();
+  const rap = sikistir(false);
+  if (rap && rap.kazanilan > 2000) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { /* kota: sessiz */ }
+    console.info("Veri sıkıştırıldı: " + once + " → " + veriBoyutu() + " bayt", rap.islem);
+  }
+  return rap;
 }
 
 function mergeDeep(base, extra) {
@@ -1525,8 +1584,23 @@ function mergeDeep(base, extra) {
 }
 
 function saveState() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
-  catch (e) { toast("Veri kaydedilemedi: depolama dolu olabilir.", "error"); }
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    return true;
+  } catch (e) {
+    // KÖK NEDEN (v36): dizi büyümesi. Kota dolduysa önce ACİL sıkıştır,
+    // sonra yeniden dene. Hâlâ olmuyorsa kullanıcıya GERÇEK sayıyı söyle.
+    const rap = sikistir(true);
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      toast("Depolama dolmuştu; " + (rap ? rap.hataTekrar + " mükerrer kayıt temizlendi" : "veri sıkıştırıldı") + " ve kayıt yapıldı.", "warning");
+      return true;
+    } catch (e2) {
+      const kb = Math.round(veriBoyutu() / 1024);
+      toast("Veri kaydedilemedi (yerel depo dolu — veri " + kb + " KB). Bulut yedeği devam ediyor; tarayıcıda site verilerini temizleyip tekrar giriş yap.", "error");
+      return false;
+    }
+  }
 }
 
 function confirmReset(type) {
@@ -1678,6 +1752,39 @@ function dueReviews() {
   });
   return list;
 }
+
+// ---- FLASHCARD DURUMU (senkron özet) ---------------------------------
+// Kart sayısı ve bugünkü tur: Konu Takibi kartını async yapmadan çizmek için
+// motorun kart defterinden okunur (kaynak: state.flashcards.cards).
+// Tavan rapor §5.1: 8 standart + 5 hata kartı.
+function kartDurumHizli(topicKey) {
+  const s = state && state.flashcards && Array.isArray(state.flashcards.cards) ? state.flashcards.cards : [];
+  const bnm = s.filter(c => c && c.topicKey === topicKey);
+  const hata = bnm.filter(c => c.errorCard).length;
+  const std = bnm.length - hata;
+  const sayi = Math.min(std, 8) + Math.min(hata, 5);
+  const r = (state.tekrarKartlari || {})[topicKey] || null;
+  return { sayi: sayi, tamam: !!(r && r.tamamlandi === todayStr()) };
+}
+
+// Kart turu tamamlandığında (≥ %70) hafıza barını %100 yapar ve sıradaki
+// tekrarı yeniden kurar. kart.js çağırır: window.__kartTamamla(key, erken)
+window.__kartTamamla = function (topicKey, erken) {
+  if (!topicKey) return false;
+  const mem = state.memory[topicKey];
+  if (!mem) return false;
+  mem.lastReview = new Date().toISOString();
+  mem.reviewCount = (mem.reviewCount || 0) + 1;
+  scheduleReviews(topicKey);
+  addNotification({
+    title: erken ? "Erken Tekrar (kartlarla) Tamamlandı" : "Tekrar Tamamlandı (kartlarla)",
+    body: splitKey(topicKey).topic + " kartlarının en az %70'ini bildin; hafıza barı %100.",
+    kind: "review", topicKey
+  });
+  saveState();
+  evaluateBadges();
+  return true;
+};
 
 // Tekrar Ettim -> bar %100, ivme yavaşlar, sonraki periyot Cepeda oranına göre yeniden kurulur
 function markReviewed(topicKey, early) {
@@ -2312,7 +2419,7 @@ function requestNotifPermission() {
       if (r && r.ok) {
         const testGitti = !!(r.test && r.test.ok);
         if (typeof toast === "function") toast(testGitti
-          ? "Arka plan bildirimi açık — deneme bildirimi gönderildi."
+          ? "Bildirimler açıldı ve bu cihaza bir DENEME bildirimi gönderildi (sınav bildirimi değil). Gelmezse Profil → Bildirim durumu."
           : "Arka plan bildirimi açık — uygulama kapalıyken de haber vereceğim.", "success");
       }
       else if (typeof toast === "function") toast((r && r.neden) || "Abonelik kurulamadı.", "warning");
@@ -2917,12 +3024,20 @@ function renderDashboard(container) {
   html += ozetKutusu("icon", "alert-circle", pr.length, "Acil Konu", "var(--semantic-warning)");
   html += ozetKutusu("icon", "brain", ms.avg ? "%" + ms.avg : "—", "Ort. Hafıza", "var(--semantic-success)");
   html += "</div>";
-  // Bugünün görev şeridi
-  const t = state.dailyTasks || {};
-  html += '<div class="flex items-center gap-2" style="flex-wrap:wrap;margin-top:4px;padding-top:10px;border-top:1px solid var(--border-card);">' +
-    '<span class="text-xs text-muted" style="font-weight:700;letter-spacing:0.05em;">GÜNÜN GÖREVLERİ:</span>' +
-    gorevRozeti("Konu Çalış", t.study) + gorevRozeti("Soru Çöz", t.solve) + gorevRozeti("Okuma", t.read) +
-    '<button class="btn btn-primary btn-sm" style="margin-left:auto;" data-act="nav" data-page="tasks">' + icon("check-square", 13) + " Görevlere Git</button></div>";
+  // Bugünün görevleri — v36: sabit üç rozet YERİNE o gün gerçekten
+  // yapılması gerekenler (kullanıcı: "ana sayfada günlük görevler hâlâ eski
+  // formda"). Günlük Görevler sayfasıyla AYNI satırlar kullanılır.
+  const bugunGorev = gunlukGorevler();
+  html += '<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border-card);">' +
+    '<div class="flex items-center justify-between" style="margin-bottom:8px;gap:8px;flex-wrap:wrap;">' +
+    '<span class="text-xs text-muted" style="font-weight:800;letter-spacing:0.05em;">BUGÜN YAPILACAKLAR' +
+    (bugunGorev.length ? " · " + bugunGorev.length : "") + "</span>" +
+    '<button class="btn btn-ghost btn-sm" data-act="nav" data-page="tasks">' + icon("check-square", 13) + " Tümünü Gör</button></div>";
+  html += bugunGorev.length
+    ? bugunGorev.slice(0, 4).map(g => gorevSatirHTML(g)).join("") +
+      (bugunGorev.length > 4 ? '<button class="btn btn-ghost w-full" data-act="nav" data-page="tasks" style="margin-top:6px;">' + icon("chevron-down", 13) + " " + (bugunGorev.length - 4) + " görev daha</button>" : "")
+    : '<div class="empty-state" style="padding:14px;">' + icon("party-popper", 26) + "<div>Bugün için bekleyen iş yok.</div></div>";
+  html += "</div>";
   // En acil 3 konu
   if (pr.length) {
     html += '<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border-card);">' +
@@ -3059,7 +3174,7 @@ function gunlukGorevler() {
   const tekrarlar = ms.rows.filter(r => r.due);
   if (tekrarlar.length) {
     liste.push({
-      id: "tekrar", icon: "refresh-cw", onem: 1,
+      id: "tekrar", tur: "tekrar", icon: "refresh-cw", onem: 1,
       baslik: tekrarlar.length + " konu tekrar bekliyor",
       aciklama: tekrarlar.slice(0, 3).map(r => r.topic).join(" · ") + (tekrarlar.length > 3 ? " …" : ""),
       sayfa: "tracking", dugme: "Konu Takibi"
@@ -3070,7 +3185,7 @@ function gunlukGorevler() {
   const kisa = Object.keys(bkt).filter(k => bkt[k].precheck && bkt[k].poolId && (!bkt[k].kisaKontrol || bkt[k].kisaKontrol.acik));
   if (kisa.length) {
     liste.push({
-      id: "kisa", icon: "clipboard-check", onem: 1,
+      id: "kisa", tur: "kisa", icon: "clipboard-check", onem: 1,
       baslik: "Kısa Kontrol: " + splitKey(kisa[0]).topic,
       aciklama: "5 soru, tek tek" + (kisa.length > 1 ? " · " + kisa.length + " konu bekliyor" : " · yalnız bu konunun havuzundan"),
       sayfa: "tracking", dugme: "Konu Takibi"
@@ -3084,7 +3199,7 @@ function gunlukGorevler() {
     .sort((a, b) => a.gun - b.gun)[0];
   if (yakin) {
     liste.push({
-      id: "okulsinav", icon: "graduation-cap", onem: 1,
+      id: "okulsinav", tur: "sinav", icon: "graduation-cap", onem: 1,
       baslik: yakin.se.lesson + " sınavına hazırlık",
       aciklama: (yakin.gun === 0 ? "Sınav BUGÜN" : yakin.gun + " gün kaldı") +
         (yakin.se.topics && yakin.se.topics.length ? " · " + yakin.se.topics.length + " konu" : ""),
@@ -3097,7 +3212,7 @@ function gunlukGorevler() {
     a + (ex.errorLogs || []).filter(l => !l.type).length, 0);
   if (nedensiz) {
     liste.push({
-      id: "deneme", icon: "file-warning", onem: 2,
+      id: "deneme", tur: "kritik", icon: "file-warning", onem: 2,
       baslik: nedensiz + " hatanın nedeni eksik",
       aciklama: "Neden seçilmeyen hata motora işlenmez — Denemelerim'de tamamla.",
       sayfa: "exams", dugme: "Denemelerim"
@@ -3108,7 +3223,7 @@ function gunlukGorevler() {
   const kart = ms.rows.filter(r => r.pct < 60).slice(0, 6);
   if (kart.length) {
     liste.push({
-      id: "kart", icon: "layers", onem: 2,
+      id: "kart", tur: "kart", icon: "layers", onem: 2,
       baslik: "Tekrar kartları: " + kart.length + " konu",
       aciklama: "Kısa kartlarla hatırla — " + kart.slice(0, 2).map(r => r.topic).join(" · "),
       sayfa: "tracking", dugme: "Kartları aç", aksiyon: "kartBasla", hedef: kart[0].key
@@ -3118,27 +3233,47 @@ function gunlukGorevler() {
   // 6-8) Çekirdek üç görev (seri bunlara bağlı) — tamamlanan listeden düşer
   if (!state.dailyTasks.read) {
     liste.push({
-      id: "oku", icon: "library", onem: 3,
+      id: "oku", tur: "oku", icon: "library", onem: 3,
       baslik: state.plan.dailyReading ? "Kitap oku (" + state.plan.dailyReading + " sayfa)" : "Kitap oku",
       aciklama: "Kitaplık'tan okuduğun sayfayı gir.", sayfa: "library", dugme: "Kitaplık"
     });
   }
   if (!state.dailyTasks.solve) {
     liste.push({
-      id: "soru", icon: "pen-tool", onem: 3, baslik: "Soru çözümü",
+      id: "soru", tur: "soru", icon: "pen-tool", onem: 3, baslik: "Soru çözümü",
       aciklama: "Soru Bankası'na çözüm gir veya deneme kaydet.",
       sayfa: "questionbank", dugme: "Soru Bankası"
     });
   }
   if (!state.dailyTasks.study) {
     liste.push({
-      id: "calis", icon: "book-open", onem: 3, baslik: "Konu çalış",
+      id: "calis", tur: "calis", icon: "book-open", onem: 3, baslik: "Konu çalış",
       aciklama: "Bilgi Bankası'nda bir konuya başla veya adım tamamla.",
       sayfa: "knowledge", dugme: "Bilgi Bankası"
     });
   }
 
   return liste.sort((a, b) => a.onem - b.onem);
+}
+
+// ---- GÖREV SATIRI (Google Takvim "Ajanda" görünümü) -------------------
+// v36: ana sayfa ve Günlük Görevler AYNI satırı kullanır (kullanıcı:
+// "Ana sayfada günlük görevler hâlâ eski formda"). Satır rengi görev türüne
+// göre: tekrar (mor), kısa kontrol (mavi), sınav (kırmızı), hazırlık (turuncu),
+// kart (mor), okuma (yeşil), soru (mavi), konu çalışma (yeşil).
+function gorevSatirHTML(g, secenek) {
+  const o = secenek || {};
+  const tur = g.tur || "calis";
+  const btn = g.aksiyon
+    ? '<button class="btn btn-sm btn-primary" data-act="' + g.aksiyon + '" data-topic="' + attr(g.hedef || "") + '" style="min-height:34px;">' + icon("arrow-right", 12) + " " + esc(g.dugme || "Aç") + "</button>"
+    : '<button class="btn btn-sm btn-ghost" data-act="nav" data-page="' + attr(g.sayfa || "tasks") + '" style="min-height:34px;">' + icon("arrow-right", 12) + " " + esc(g.dugme || "Git") + "</button>";
+  return '<div class="gorev-row ' + tur + (o.ok ? " ok" : "") + '">' +
+    '<span class="gorev-ic">' + icon(g.icon || "circle", 17) + "</span>" +
+    '<div style="flex:1;min-width:0;">' +
+      '<div style="font-weight:700;font-size:13.5px;line-height:1.35;">' + esc(g.baslik || "") + "</div>" +
+      (g.aciklama ? '<div class="text-xs text-muted" style="margin-top:2px;line-height:1.45;">' + esc(g.aciklama) + "</div>" : "") +
+    "</div>" +
+    '<span style="flex-shrink:0;align-self:center;">' + btn + "</span></div>";
 }
 
 function renderTasks(container) {
@@ -3156,16 +3291,7 @@ function renderTasks(container) {
   html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">Bugün Ne Yapmalıyım?</h3>' +
     '<p class="text-xs text-muted" style="margin-bottom:10px;">Liste her açılışta yeniden kurulur: tekrar günü gelen konu, zamanı gelen kısa kontrol, yaklaşan sınav, eksik nedenler… Bitsin, düşsün.</p>';
   if (gorevler.length) {
-    html += gorevler.map(g => {
-      const btn = g.aksiyon
-        ? '<button class="btn btn-sm btn-primary" data-act="' + g.aksiyon + '" data-topic="' + attr(g.hedef || "") + '">' + icon("arrow-right", 12) + " " + g.dugme + "</button>"
-        : '<button class="btn btn-sm btn-ghost" data-act="nav" data-page="' + g.sayfa + '">' + icon("arrow-right", 12) + " " + g.dugme + "</button>";
-      return '<div class="gorev-row">' +
-        '<span class="gorev-ic">' + icon(g.icon, 18, "color:var(--text-muted);") + "</span>" +
-        '<div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:13.5px;">' + g.baslik + "</div>" +
-        '<div class="text-xs text-muted" style="margin-top:1px;">' + esc(g.aciklama) + "</div>" +
-        '<div style="margin-top:6px;">' + btn + "</div></div></div>";
-    }).join("");
+    html += gorevler.map(g => gorevSatirHTML(g)).join("");
   } else {
     html += '<div class="empty-state">' + icon("party-popper", 30) + "<div>Bugün için bekleyen iş yok. Yarın tekrar günü gelen konular burada görünecek.</div></div>";
   }
@@ -3375,6 +3501,10 @@ function renderTracking(container) {
     const mem = ms.rows.find(r => r.key === k) || null;
     return { key: k, lesson: splitKey(k).lesson, topic: splitKey(k).topic, mem: mem, bkt: bktDurumlar[k] || null };
   }).sort((a, b) => {
+    // v36 — kullanıcı: "konuların alanı birbirinden ayrılmıyor".
+    // Önce DERS, sonra en zayıf konu: aynı dersin konuları tek blokta kalır.
+    const ders = String(a.lesson).localeCompare(String(b.lesson), "tr");
+    if (ders !== 0) return ders;
     const pa = a.mem ? a.mem.pct : 101, pb = b.mem ? b.mem.pct : 101;
     return pa - pb;
   });
@@ -3384,9 +3514,21 @@ function renderTracking(container) {
   html += '<span class="text-xs text-muted tabular">' + satirlar.length + " konu · " + ms.waiting + " tekrar bugün · ort. hafıza %" + ms.avg + (onayliSay ? " · " + onayliSay + " onaylı" : "") + "</span></div>";
   html += '<div class="text-xs text-muted" style="margin:0 0 10px;">Her konu tek satır: solda hafıza, sağda BKT yeterliliği. Hafıza düşükse kart/tekrar, yeterlilik düşükse Kısa Kontrol önerilir.</div>';
   if (satirlar.length) {
+    let sonDers = "";
     html += satirlar.slice(0, memoryLimit).map(sat => {
       const r = sat.mem;
       const b = sat.bkt;
+      // ---- DERS AYRACI: her dersin konuları kendi bloğunda ----
+      let ayrac = "";
+      if (sat.lesson !== sonDers) {
+        sonDers = sat.lesson;
+        const dersKonu = satirlar.filter(x => x.lesson === sat.lesson).length;
+        ayrac = '<div class="ders-ayrac">' + icon("book-open", 13) + " " + esc(sat.lesson) + "<span>" + dersKonu + " konu</span></div>";
+      }
+      // ---- FLASHCARD: sayı ve zorunluluk ----
+      const kartBilgi = kartDurumHizli(sat.key);
+      const kartVar = kartBilgi.sayi > 0;
+      const kartTamam = kartBilgi.tamam;
       const pct = r ? r.pct : null;
       const durum = b ? b.durum : "Veri yetersiz";
       const yeter = b && b.yeterlilik !== null ? b.yeterlilik : null;
@@ -3397,7 +3539,10 @@ function renderTracking(container) {
           : (b && b.onayli) ? "var(--semantic-success)" : "var(--brand-blue)";
       // tek birincil aksiyon
       let ana = "";
-      if (r) {
+      if (kartVar && !kartTamam && r) {
+        // Tekrar, kart turu tamamlanmadan SAYILMAZ (rapor §5.4 + kullanıcı isteği).
+        ana = '<button class="btn btn-sm btn-primary" data-act="kartBasla" data-topic="' + attr(sat.key) + '" style="min-height:38px;">' + icon("layers", 13) + " Kartları Bitir (" + kartBilgi.sayi + ")</button>";
+      } else if (r) {
         if (pct < MEMORY_CRITICAL) ana = '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("flame", 13) + " ACİL TEKRAR</button>";
         else if (r.due) ana = '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>";
         else if (pct >= 90) ana = '<button class="btn btn-sm btn-success" data-act="reviewTopic" data-topic="' + attr(r.key) + '">' + icon("check", 13) + " Tekrar Ettim</button>";
@@ -3405,7 +3550,7 @@ function renderTracking(container) {
       }
       // ikincil: kartlar (her zaman) + kısa kontrol (yalnız zamanı gelince)
       let ikincil = "";
-      if (r) ikincil += '<button type="button" class="btn btn-sm btn-ghost" data-act="kartBasla" data-topic="' + attr(r.key) + '" style="min-width:44px;min-height:40px;" title="Tekrar kartları">' + icon("layers", 13) + " Kart</button>";
+      if (r && kartVar) ikincil += '<button type="button" class="btn btn-sm btn-ghost" data-act="kartBasla" data-topic="' + attr(r.key) + '" style="min-width:44px;min-height:40px;" title="Tekrar kartları (' + kartBilgi.sayi + ' kart)">' + icon("layers", 13) + " Kart · " + kartBilgi.sayi + (kartTamam ? " ✓" : "") + "</button>";
       if (b && b.poolId) {
         ikincil += kisaKapali
           ? '<button type="button" class="btn btn-sm btn-ghost" disabled style="min-width:44px;min-height:40px;opacity:0.5;" title="Kısa Kontrol kısa süre önce yapıldı">' + icon("lock", 12) + " Kısa Kontrol · " + b.kisaKontrol.kalan + " gün</button>"
@@ -3423,11 +3568,12 @@ function renderTracking(container) {
       if (pct !== null) barlar += '<span class="hafiza-bar" title="Hafıza gücü"><span style="width:' + pct + "%;background:" + memoryColor(pct) + ';"></span></span><b class="tabular" style="color:' + memoryColor(pct) + ';">%' + pct + "</b>";
       if (yeter !== null) barlar += '<span class="hafiza-bar" title="Yeterlilik (BKT)"><span style="width:' + yeter + '%;background:var(--brand-blue);"></span></span><b class="tabular" style="color:var(--brand-blue);">' + yeter + "%</b>";
       barlar += "</span>";
-      return '<div class="hafiza-row" style="align-items:center;gap:10px;">' +
+      var kartNotu = kartVar ? (kartTamam ? " · kart ✓" : " · kart zorunlu (" + kartBilgi.sayi + ")") : "";
+      return ayrac + '<div class="hafiza-row" style="align-items:center;gap:10px;">' +
         '<span style="width:8px;height:8px;border-radius:50%;background:' + nokta + ';flex:0 0 auto;" title="' + esc(durum) + '"></span>' +
         '<span class="hafiza-ad" style="min-width:0;flex:1;">' +
         '<b style="font-size:13px;">' + esc(sat.topic) + '</b> <span class="text-xs" style="color:var(--text-muted);font-weight:700;">' + esc(durum) + "</span>" +
-        "<br>" + alt + " " + uyari +
+        "<br>" + alt + kartNotu + " " + uyari +
         "</span>" +
         barlar +
         '<span class="flex gap-1" style="flex-shrink:0;flex-wrap:wrap;align-items:center;">' + ana + ikincil + "</span></div>";
@@ -3771,8 +3917,25 @@ function startStudy(topicKey) {
   setTimeout(() => selectKnowledgeTopic(topicKey), 50);
 }
 
-function reviewTopic(topicKey) { markReviewed(topicKey, false); navigate("tracking"); toast("Tekrar kaydedildi; hafıza barı %100.", "success"); }
-function earlyReview(topicKey) { markReviewed(topicKey, true); navigate("tracking"); toast("Erken tekrar kaydedildi.", "success"); }
+// v36 — "konunun tekrar edilmesi için flashcardı tamamlamak zorunlu".
+// Kartı olan konuda "Tekrar Ettim" doğrudan tekrarı kapatmaz: önce kart turu
+// açılır. Tur ≥ %70 bilgiyle biterse __kartTamamla tekrarı kapatır.
+function reviewTopic(topicKey, erken) {
+  const kb = kartDurumHizli(topicKey);
+  if (kb.sayi > 0 && !kb.tamam) {
+    if (window.AmKart && typeof window.AmKart.ac === "function") {
+      toast("Bu konunun tekrarı için önce " + kb.sayi + " kartı bitirmen gerekiyor.", "info");
+      window.AmKart.ac(topicKey, { tekrar: true }).then(function (r) {
+        if (r && r.tamamlandi) navigate("tracking");
+      });
+      return;
+    }
+  }
+  markReviewed(topicKey, !!erken);
+  navigate("tracking");
+  toast(erken ? "Erken tekrar kaydedildi; hafıza barı %100." : "Tekrar kaydedildi; hafıza barı %100.", "success");
+}
+function earlyReview(topicKey) { reviewTopic(topicKey, true); }
 function resetTopic(topicKey) {
   openConfirm("Konu 'Tamamlandı' statüsünden çıkacak, hafıza sıfırlanacak ve 0. Adım'a döneceksin. Emin misin?", () => {
     resetTopicMemory(topicKey); saveState(); toast("Konu sıfırlandı.", "warning"); navigate("tracking");
@@ -4207,8 +4370,48 @@ function renderCalendarHTML() {
   const hazSay = ayEvs.reduce((a, d) => a + events[d].filter(e => e.tip === "hazirlik").length, 0);
   const sinSay = ayEvs.reduce((a, d) => a + events[d].filter(e => e.tip === "sinav").length, 0);
   h += renderCalDetailHTML(events);
+  h += renderAgendaHTML(events);
   h += '<p class="text-xs text-muted" style="margin-top:10px;">Güne dokun: o günün sınavı, tekrarları ve konuları burada görünür.</p>';
   h += '<p class="text-xs text-muted" style="margin-top:6px;">Bu ay: <b>' + tekSay + "</b> tekrar günü" + (hazSay ? " · <b>" + hazSay + "</b> hazırlık tekrarı" : "") + (sinSay ? " · <b>" + sinSay + "</b> sınav günü" : "") + ".</p>";
+  h += "</div>";
+  return h;
+}
+
+// ===== AJANDA (Google Takvim'in alt ajanda listesi gibi) ==================
+// v36 — kullanıcı: "planlamadaki takvim aynı Google takvim gibi olsun.
+// Görevler de ordaki gibi renkli satırlar olsun."
+// Bugünden başlayıp 45 gün ileriye bakan, güne göre gruplanmış renkli satırlar.
+function renderAgendaHTML(events) {
+  const bugun = todayStr();
+  const bugunD = parseDay(bugun);
+  if (!bugunD) return "";
+  const gunler = [];
+  for (let i = 0; i < 45; i++) {
+    const d = new Date(bugunD.getTime());
+    d.setDate(d.getDate() + i);
+    gunler.push(toDayStr(d));
+  }
+  const TUR = { tek: "tekrar", hazirlik: "hazirlik", sinav: "sinav" };
+  const AD = { tek: "Konu tekrarı", hazirlik: "Sınava hazırlık", sinav: "Sınav" };
+  let h = '<div class="ajanda"><div class="ajanda-baslik">' + icon("list", 15, "vertical-align:-3px;margin-right:6px;color:var(--brand-blue);") + " AJANDA" +
+    '<span class="text-xs text-muted" style="font-weight:400;margin-left:6px;">önümüzdeki 45 gün</span></div>';
+  let satir = 0;
+  gunler.forEach(ds => {
+    const evs = (events[ds] || []);
+    if (!evs.length || satir >= 12) return;
+    satir++;
+    const d = parseDay(ds);
+    const gunAd = ds === bugun ? "Bugün" : d.toLocaleDateString("tr-TR", { day: "numeric", month: "short", weekday: "short" });
+    evs.forEach(e => {
+      const tur = TUR[e.tip] || "kisa";
+      h += '<div class="gorev-row ' + tur + ' ajanda-satir" data-act="calDay" data-date="' + attr(ds) + '" style="cursor:pointer;">' +
+        '<span class="gorev-ic">' + icon(e.tip === "sinav" ? "alert-triangle" : e.tip === "hazirlik" ? "shield-check" : "refresh-cw", 16) + "</span>" +
+        '<div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:13px;">' + esc(e.etiket) + "</div>" +
+        '<div class="text-xs text-muted" style="margin-top:1px;">' + esc(gunAd) + " · " + esc(AD[e.tip] || "") + "</div></div>" +
+        '<span class="text-xs text-muted" style="align-self:center;flex-shrink:0;">' + esc((ds || "").slice(8, 10) + "." + (ds || "").slice(5, 7)) + "</span></div>";
+    });
+  });
+  if (!satir) h += '<div class="empty-state" style="padding:14px;">' + icon("calendar-plus", 26) + "<div>Önümüzdeki 45 günde planlı tekrar/sınav yok. Konu tamamlayınca tekrar günleri burada belirir.</div></div>";
   h += "</div>";
   return h;
 }
@@ -5058,7 +5261,14 @@ document.addEventListener("DOMContentLoaded", function () {
       case "moreMemory": moreMemoryRows(); break;
       case "reviewTopic": reviewTopic(el.dataset.topic); break;
       // v35.9 — Tekrar Kartları (flashcard): her konu için, onay beklemeden
-      case "kartBasla": if (window.AmKart && window.AmKart.ac) window.AmKart.ac(el.dataset.topic); break;
+      case "kartBasla":
+        // Kart turu bitince (≥ %70) tekrar kapanır ve sayfa tazelenir.
+        if (window.AmKart && window.AmKart.ac) {
+          window.AmKart.ac(el.dataset.topic).then(function (r) {
+            if (r && r.tamamlandi) { navigate(currentPage === "tracking" ? "tracking" : "tasks"); }
+          });
+        }
+        break;
       case "earlyReview": earlyReview(el.dataset.topic); break;
       case "resetTopic": resetTopic(el.dataset.topic); break;
       // Kitaplık
@@ -5122,6 +5332,7 @@ document.addEventListener("DOMContentLoaded", function () {
      eski motor (3 soru, tek sayfa) üzerine yazıyordu. -->
 <script src="vendor/supabase.js"></script>
 <script src="okz-normalize.js"></script>
+<script src="veri-sikistir.js"></script>
 <script src="veri-birlestir.js"></script>
 <script src="gorsel.js"></script>
 <script src="kok-eksik.js"></script>
