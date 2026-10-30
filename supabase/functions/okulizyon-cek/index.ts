@@ -281,15 +281,21 @@ function ayikla(html: string, ad: string, tarih: string) {
 async function giris(kimlik: any, k: Kavanoz): Promise<any> {
   let html = "";
   try { html = await (await http(k, GIRIS)).text(); } catch (e) { return { durum: "hata", mesaj: "Giriş sayfası: " + String(e) }; }
-  const ilkodu = esle(secenekler(html, "ilkodu"), kimlik.il || "Gaziantep") || "27";
+  let ilkodu = esle(secenekler(html, "ilkodu"), kimlik.il || "Gaziantep") || "27";
+  // v42 — seçimden gelen kodlar varsa onlar kullanılır (isim tahmini yok).
+  if (kimlik.ilkodu) ilkodu = String(kimlik.ilkodu);
   let ilcekodu = "", kurumkodu = "";
-  try {
-    const j: any = await (await http(k, TABAN + "/ajax/ilceler.php?ilkodu=" + ilkodu, { headers: { "X-Requested-With": "XMLHttpRequest", Referer: GIRIS } })).json();
-    const t: Record<string, string> = {};
-    for (const s of (Array.isArray(j) ? j : [])) if (s?.ilceadi != null) t[String(s.ilceadi)] = String(s.ilcekodu);
-    ilcekodu = esle(t, kimlik.ilce) || "";
-  } catch (_) { /**/ }
-  if (ilcekodu) {
+  if (kimlik.ilcekodu) ilcekodu = String(kimlik.ilcekodu);
+  if (kimlik.kurumkodu) kurumkodu = String(kimlik.kurumkodu);
+  if (!ilcekodu) {
+    try {
+      const j: any = await (await http(k, TABAN + "/ajax/ilceler.php?ilkodu=" + ilkodu, { headers: { "X-Requested-With": "XMLHttpRequest", Referer: GIRIS } })).json();
+      const t: Record<string, string> = {};
+      for (const s of (Array.isArray(j) ? j : [])) if (s?.ilceadi != null) t[String(s.ilceadi)] = String(s.ilcekodu);
+      ilcekodu = esle(t, kimlik.ilce) || "";
+    } catch (_) { /**/ }
+  }
+  if (ilcekodu && !kurumkodu) {
     try {
       const j: any = await (await http(k, TABAN + "/ajax/kurumlar.php?ilcekodu=" + ilcekodu, { headers: { "X-Requested-With": "XMLHttpRequest", Referer: GIRIS } })).json();
       const t: Record<string, string> = {};
@@ -370,7 +376,12 @@ function kimlikOku(s: any) {
   try {
     const st = typeof s.state === "string" ? JSON.parse(s.state) : s.state, o = st?.settings?.okulizyon;
     if (!o?.ad || !o?.okulNo) return null;
-    return { ad: o.ad, okulNo: o.okulNo, sinif: o.sinif, il: o.il, ilce: o.ilce, okulAdi: o.okulAdi, sifre: o.sifre };
+    // v42 — Profil artık il/ilçe/okulu Okulizyon'un kendi listelerinden seçiyor;
+    // kodlar varsa isim eşleştirmesi hiç yapılmaz (yanlış okula giriş riski biter).
+    return {
+      ad: o.ad, okulNo: o.okulNo, sinif: o.sinif, il: o.il, ilce: o.ilce, okulAdi: o.okulAdi, sifre: o.sifre,
+      ilkodu: o.ilkodu || "", ilcekodu: o.ilcekodu || "", kurumkodu: o.kurumkodu || ""
+    };
   } catch { return null; }
 }
 

@@ -3161,6 +3161,18 @@ const TANITIM_ADIMLARI = [
   { icon: "message-square", renk: "#DC2626", baslik: "Geri bildirim", metin: "Soruda hata mı var? Soru ekranındaki “Bu soruda hata var”a bas. Genel öneri/sorun için Ayarlar → Geri Bildirim." }
 ];
 
+// v42 — AÇILIŞ EKRANI ("Başla" düğmesi) yalnız İLK açılışta.
+// Sonraki açılışlarda düğme beklenmez; ekran kendiliğinden kapanır.
+function splashKapat() {
+  const sp = document.getElementById("splash");
+  if (!sp) return;
+  sp.classList.add("gone");
+  setTimeout(function () { if (sp && sp.parentNode) sp.parentNode.removeChild(sp); }, 450);
+}
+function splashIlkAcilisMi() {
+  try { return localStorage.getItem("am_giris_yapildi") !== "1"; } catch (e) { return false; }
+}
+
 function tanitimGoster(zorla) {
   let goruldu = false;
   try { goruldu = localStorage.getItem(TANITIM_ANAHTAR) === "1"; } catch (e) { /* */ }
@@ -3185,7 +3197,7 @@ function tanitimKapat(kilitle) {
 // ===== KULLANIM KILAVUZU =====
 const HELP_MODULES = [
   { icon: "clipboard-list", color: "var(--brand-blue)", title: "Denemelerim (Modül A)", text: "Uygulamanın tüm veri giriş merkezi. 8 TYT dersinin D/Y/B girişini yap; yanlış ve boşlarda Soru No + Konu + Neden satırları otomatik açılır. Her hata, Priorite motoruna beslenir." },
-  { icon: "radar", color: "var(--memory-indigo)", title: "Konu Takibi (Modül B)", text: "Acil Çalışılacaklar listesi (ilk 5, kendi içinde kaydırılır) ve Hafıza Gücü. Hafıza listesinde yalnız 5 adımlı çalışmayı bitiren konular görünür; tekrar bekleyenler en üstte, tekrar günü en uzak olan en alttadır. Her konu bir renk kademesi taşır: yeşil (%85+) güçlü, kırmızı (%29 ve altı) kritik." },
+  { icon: "radar", color: "var(--memory-indigo)", title: "Konu Takibi (Modül B)", text: "Acil Çalışılacaklar listesi (ilk 5, kendi içinde kaydırılır) ve Hafıza Gücü. Hafıza listesinde yalnız 5 adımlı çalışmayı bitiren konular görünür; tekrar bekleyenler en üstte, tekrar günü en uzak olan en alttadır. Tekrar günü gelen konu KIRMIZI çizilir ve tekrarı kart turuyla yapılır (kart zorunlu). Günü gelmeyen konuda kart istenmez; istersen “Erken Tekrar” ile öne alabilirsin. Renk kademesi yeşilden kırmızıya iner: yeşil (%85+) güçlü, kırmızı (%29 ve altı) kritik." },
   { icon: "library", color: "#059669", title: "Kitaplık (Modül C)", text: "Okuma disiplinini süre ve çözüm hatalarıyla ilişkilendirir. Günlük sayfa girişi yap; Disiplin Puanı, Okuma Hızı ve (5+ deneme sonrası) Bilişsel Kondisyon Eğilimi hesaplanır." },
   { icon: "calendar-clock", color: "var(--semantic-warning)", title: "Planlama (Modül D)", text: "Sınav tarihi + hedef net ile tersine planlama: Haftalık İvme Hedefi = (HedefNet - MevcutOrt) / KalanHafta. Sirkadiyen ritmine göre Altın Saat konuları atanır." },
   { icon: "graduation-cap", color: "var(--brand-blue)", title: "Bilgi Bankası (Modül E) — 5 ADIM", text: "Müfredat ağacından konu seç; 5 adımlı motor çalışır: 1) Ön Test → 2) Aktif Çalışma → 3) Çözümlü Örnek → 4) Karışık Pratik → 5) Kısa Kontrol (5 soru, tek tek). Adımlar sıralı kilitlidir. 4. adım bitince 5. adım AYNI EKRANDA çıkar; ayrıca bir yere tıklaman gerekmez. 5. adım bitmeden konu “tamamlandı” sayılmaz, hafıza takibine girmez ve tekrar kartı açılmaz. Konu tamamlanınca 3-7-14-21-28 gün tekrar takvimi kurulur." },
@@ -3824,7 +3836,7 @@ function renderTracking(container) {
   html += '<div class="bento-card" id="hafiza-baslik-kart" style="margin-top:16px;">';
   html += '<div class="flex items-center justify-between" style="margin-bottom:2px;flex-wrap:wrap;gap:6px;"><h3 style="font-size:15px;font-weight:700;">' + icon("brain", 16, "vertical-align:middle;margin-right:6px;color:var(--memory-indigo);") + " Öğrenme Durumu · Hafıza Gücü</h3>";
   html += '<span class="text-xs text-muted tabular">' + satirlar.length + " konu · " + ms.waiting + " tekrar bugün · ort. hafıza %" + ms.avg + (onayliSay ? " · " + onayliSay + " onaylı" : "") + "</span></div>";
-  html += '<div class="text-xs text-muted" style="margin:0;">Yalnız 5 adımlı çalışmayı bitiren konular burada. Sıra: <b>tekrar bekleyenler üstte</b>, tekrar günü en uzak olan en altta. Çubuk yalnız hafıza gücü içindir; yeterlilik yüzde olarak yazılır.</div>';
+  html += '<div class="text-xs text-muted" style="margin:0;">Yalnız 5 adımlı çalışmayı bitiren konular burada. Sıra: <b>tekrar bekleyenler üstte</b>, tekrar günü en uzak olan en altta. <b style="color:#DC2626;">Tekrar günü gelen konu kırmızıdır ve kart turu zorunludur.</b> Günü gelmeyen konuda kart istenmez — istersen “Erken Tekrar” ile öne alabilirsin.</div>';
   // v40 — renk skalasının ANLAMI ekranda yazılı olsun (yeşilden kırmızıya).
   html += '<div class="konu-renk-legend">' + HAFIZA_SKALA.slice().reverse().map(function (k) {
     return '<span><i style="background:' + k.renk + ';"></i>%' + (k.esik === 0 ? "0-29" : k.esik + "+") + " " + k.ad + "</span>";
@@ -3836,32 +3848,36 @@ function renderTracking(container) {
     html += satirlar.slice(0, memoryLimit).map(sat => {
       const r = sat.mem;
       const b = sat.bkt;
-      const kartBilgi = kartDurumHizli(sat.key);
-      const kartVar = kartBilgi.sayi > 0;
-      const kartTamam = kartBilgi.tamam;
       const pct = r ? r.pct : null;
       const durum = b ? b.durum : "Veri yetersiz";
       const yeter = b && b.yeterlilik !== null && b.yeterlilik !== undefined ? b.yeterlilik : null;
       // v40 — nokta rengi de aynı hafıza kademesinden gelir (tek dil).
-      const nokta = pct !== null ? memoryColor(pct)
+      const nokta = (r && r.due) ? "#DC2626"
+        : pct !== null ? memoryColor(pct)
         : (b && b.onayli) ? "var(--semantic-success)" : "var(--brand-blue)";
 
-      // ---- v40 — TEK DÜĞME ----
-      // KULLANICI: "neden hem tekrar ettim hem de flashcard tuşu aynı anda,
-      // zaten ikisinde de soruyu açıyor. Tekrar ettim > soruları açsın. Bitti."
-      // KÖK NEDEN: iki düğme de AYNI işi yapıyordu — reviewTopic() kart varsa
-      // zaten kart turunu açıyor (index.html reviewTopic). Artık kartı olan
-      // konuda TEK düğme var: "Tekrar Ettim · N kart" → doğrudan soruları açar.
-      // Kartı olmayan konuda aynı düğme tekrarı kaydeder. Renk kademesi hafıza
-      // gücünden gelir (kırmızı = kritik).
+      // ---- v42 — TEKRAR KURALI (tek dil) ----
+      // KULLANICI: "Neden bazı konularda tekrar için kart istiyor iken
+      // bazılarında istemiyor. Eğer tekrar zamanı gelmişse ona kırmızı renk
+      // ata. Ve tabii ki kart zorunlu olur. Çalışma zamanı gelmediyse kart
+      // olmaz ve en başta da olmaz. Şu an karışık görünüyor."
+      // KÖK NEDEN: düğme "konunun kart defteri var mı" (kartDurumHizli)
+      // sorusuna göre seçiliyordu. Defter yalnız onaydan sonra oluştuğu için
+      // aynı listede bazı konular "N kart"la, bazıları kart olmadan görünüyordu.
+      // Artık ölçüt KART DEFTERİ DEĞİL, TEKRAR GÜNÜ:
+      //   • tekrar bugün/geçmiş (r.due) → KIRMIZI kart + kart turu ZORUNLU
+      //   • tekrar ileride             → renk kademesi, KART YOK, yalnız
+      //                                  "Erken Tekrar" (istersen kaydet)
+      const tekrarZamani = !!(r && r.due);
       let tekrarDugme = "";
-      if (kartVar) {
-        tekrarDugme = '<button class="btn btn-sm ' + (kartTamam ? "btn-ghost" : "btn-primary") + '" data-act="reviewTopic" data-topic="' + attr(sat.key) + '" style="min-height:38px;">' +
-          icon("layers", 13) + " Tekrar Ettim · " + kartBilgi.sayi + " kart" + (kartTamam ? " ✓" : "") + "</button>";
-      } else if (r) {
-        if (pct < MEMORY_CRITICAL) tekrarDugme = '<button class="btn btn-sm btn-danger" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:38px;">' + icon("flame", 13) + " ACİL TEKRAR</button>";
-        else if (r.due) tekrarDugme = '<button class="btn btn-sm btn-primary" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:38px;">' + icon("check", 13) + " Tekrar Ettim</button>";
-        else tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="earlyReview" data-topic="' + attr(r.key) + '" style="min-height:38px;">' + icon("fast-forward", 13) + " Erken Tekrar</button>";
+      if (r) {
+        if (tekrarZamani) {
+          tekrarDugme = '<button class="btn btn-sm btn-danger w-full" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:42px;">' +
+            icon("flame", 13) + " Tekrar Ettim · kartlar zorunlu</button>";
+        } else {
+          tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="earlyReview" data-topic="' + attr(r.key) + '" style="min-height:38px;opacity:.85;">' +
+            icon("fast-forward", 13) + " Erken Tekrar</button>";
+        }
       }
 
       // ---- çubuk YALNIZ hafıza; yeterlilik sadece yüzde metni ----
@@ -3874,17 +3890,17 @@ function renderTracking(container) {
       const yeterMetin = '<span class="konu-yeter">Yeterlilik: <b>' + (yeter !== null ? "%" + yeter : "—") + "</b></span>";
 
       let alt = esc(sat.lesson);
-      if (r) alt += " · " + r.reviews + " tekrar" + (r.next ? " · sıradaki " + fmtDate(r.next.date) : "");
-      if (kartVar) alt += kartTamam ? " · kart ✓" : " · kart zorunlu";
+      if (r) alt += " · " + r.reviews + " tekrar" + (tekrarZamani ? " · TEKRAR BUGÜN" : (r.next ? " · sıradaki " + fmtDate(r.next.date) : ""));
       // v40 — kullanıcı: "uygulamanın arka plan rengi ile kartlar arasında çok
       // fark yok, ayırt edilemiyor" + "hafıza gücünün rengi kademelere göre
       // yeşilden kırmızıya". Kartın solunda 4px renk şeridi + hafif renkli
       // zemin var; şerit rengi hafıza kademesinden gelir.
+      // v42 — tekrar günü gelmiş konu KIRMIZI; gelmemişse hafıza kademesi.
       const kademe = pct !== null ? memoryKademe(pct) : null;
-      const seritRenk = kademe ? kademe.renk : "var(--border-strong)";
-      const kartStil = kademe
-        ? "border-left:5px solid " + kademe.renk + ";background:linear-gradient(90deg," + kademe.renk + "12,var(--bg-card) 34%);"
-        : "";
+      const seritRenk = tekrarZamani ? "#DC2626" : (kademe ? kademe.renk : "var(--border-strong)");
+      const kartStil = tekrarZamani
+        ? "border-left:5px solid #DC2626;background:linear-gradient(90deg,#DC262614,var(--bg-card) 38%);"
+        : (kademe ? "border-left:5px solid " + kademe.renk + ";background:linear-gradient(90deg," + kademe.renk + "12,var(--bg-card) 34%);" : "");
       return '<div class="konu-kart" data-konu="' + attr(sat.key) + '" style="' + kartStil + '">' +
         '<div class="konu-kart-ust"><span class="konu-kart-ad"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + nokta + ';margin-right:6px;vertical-align:middle;" title="' + esc(durum) + '"></i>' + esc(sat.topic) + "</span>" +
         '<span class="konu-durum" style="color:' + nokta + ';">' + esc(durum) + "</span></div>" +
@@ -4246,21 +4262,55 @@ function tamamlanmamisUyar(topicKey) {
   toast("Bu konu 5 adımlı çalışmayı tamamlamadı — önce Bilgi Bankası'nda adımları ve 5 soruluk kısa kontrolü bitir.", "warning");
   try { navigate("knowledge"); selectKnowledgeTopic(topicKey); } catch (e) { /* */ }
 }
+// v42 — TEKRAR YOLU TEK KURAL:
+//   • tekrar günü GELMİŞ  → kart turu ZORUNLU (kart yoksa tekrar yazılır)
+//   • tekrar günü GELMEMİŞ → KART İSTENMEZ, "Erken Tekrar" yalnız kaydeder
+// KULLANICI: "Eğer tekrar zamanı gelmişse ona kırmızı renk ata. Ve tabii ki
+// kart zorunlu olur. Çalışma zamanı gelmediyse kart olmaz."
 function reviewTopic(topicKey, erken) {
   if (!konuTamamMi(topicKey)) { tamamlanmamisUyar(topicKey); return; }
-  const kb = kartDurumHizli(topicKey);
-  if (kb.sayi > 0 && !kb.tamam) {
-    if (window.AmKart && typeof window.AmKart.ac === "function") {
-      toast("Bu konunun tekrarı için önce " + kb.sayi + " kartı bitirmen gerekiyor.", "info");
-      window.AmKart.ac(topicKey, { tekrar: true }).then(function (r) {
-        if (r && r.tamamlandi) navigate("tracking");
-      });
-      return;
-    }
+
+  // 1) ERKEN TEKRAR — günü gelmedi: kart sorulmaz.
+  if (erken) {
+    markReviewed(topicKey, true);
+    navigate("tracking");
+    toast("Erken tekrar kaydedildi; hafıza barı %100. Kart istenmez çünkü tekrar günü gelmedi.", "success");
+    return;
   }
-  markReviewed(topicKey, !!erken);
+
+  // 2) TEKRAR GÜNÜ GELDİ — kart zorunlu. Kart listesi konunun havuzundan da
+  //    üretilebildiği için "kart defteri" yerine GERÇEK listeye bakılır;
+  //    böylece bazı konularda kart istenip bazılarında istenmemesi biter.
+  const kb = kartDurumHizli(topicKey);
+  if (kb.tamam) { // kart turu bugün zaten bitmiş → tekrarı kapat
+    markReviewed(topicKey, false);
+    navigate("tracking");
+    toast("Tekrar kaydedildi; hafıza barı %100.", "success");
+    return;
+  }
+  const K = window.AmKart;
+  if (K && typeof K.kartlar === "function" && typeof K.ac === "function") {
+    K.kartlar(topicKey).then(function (liste) {
+      if (liste && liste.length) {
+        toast("Tekrar günü geldi: bu konu " + liste.length + " kartla tekrar edilir.", "info");
+        K.ac(topicKey, { tekrar: true }).then(function (r) {
+          if (r && r.tamamlandi) navigate("tracking");
+        });
+      } else {
+        // Gerçekten kartı olmayan konu kilitlenmesin.
+        markReviewed(topicKey, false);
+        navigate("tracking");
+        toast("Tekrar kaydedildi (bu konunun kartı yok); hafıza barı %100.", "success");
+      }
+    }).catch(function () {
+      markReviewed(topicKey, false); navigate("tracking");
+      toast("Tekrar kaydedildi; hafıza barı %100.", "success");
+    });
+    return;
+  }
+  markReviewed(topicKey, false);
   navigate("tracking");
-  toast(erken ? "Erken tekrar kaydedildi; hafıza barı %100." : "Tekrar kaydedildi; hafıza barı %100.", "success");
+  toast("Tekrar kaydedildi; hafıza barı %100.", "success");
 }
 function earlyReview(topicKey) { reviewTopic(topicKey, true); }
 function resetTopic(topicKey) {
@@ -5623,9 +5673,21 @@ document.addEventListener("DOMContentLoaded", function () {
       case "executeConfirm": executeConfirm(); break;
       case "closeModal": closeAllModals(); break;
       case "enterApp": { // Açılış sayfası: kapat + yeni kullanıcıysa karşılama
-        const sp = document.getElementById("splash");
-        if (sp) { sp.classList.add("gone"); setTimeout(() => sp.remove(), 450); }
-        if (!window.__entered) { window.__entered = true; if (!state.user.name) openModal("welcome-modal"); }
+        // v42 — KULLANICI: "Her açılışta başlayalım tuşu gelmesin."
+        // İlk girişten sonra hatırlanır; sonraki açılışlarda açılış ekranı
+        // kendiliğinden geçilir (aşağıdaki init kodu).
+        try { localStorage.setItem("am_giris_yapildi", "1"); } catch (e) { /* */ }
+        splashKapat();
+        if (!window.__entered) {
+          window.__entered = true;
+          // v42 — karşılama penceresi de yalnız BİR KEZ açılır.
+          try {
+            if (!state.user.name && localStorage.getItem("am_karsilama_goruldu") !== "1") {
+              localStorage.setItem("am_karsilama_goruldu", "1");
+              openModal("welcome-modal");
+            }
+          } catch (e) { /* */ }
+        }
         break;
       }
       case "toggleBookForm": bookFormOpen = !bookFormOpen; renderLibrary(document.getElementById("main-content")); window.scrollTo({ top: 0 }); break;
@@ -5731,6 +5793,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Açılış: uygulama açılış sayfasının ARKASINDA hazır; "Başla" ile devam
+  // v42 — ama yalnız İLK açılışta. Sonraki açılışlarda düğme beklenmez.
+  if (!splashIlkAcilisMi()) {
+    window.__entered = true;
+    splashKapat();
+  }
   ddify(document); // tüm native select'ler temalı özel açılır listeye dönüşür
   updateUserUI();
   navigate("dashboard");

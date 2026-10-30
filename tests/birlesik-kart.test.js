@@ -141,7 +141,12 @@ console.log("\n== 3a) v41 — tekrar sırası: bekleyenler üstte, en uzak gün 
   ok("tekrar günü en UZAK olan EN ALTTA", iUzak > iYakin && iUzak > iBekleyen, iBekleyen + "/" + iYakin + "/" + iUzak);
 }
 
-console.log("\n== 3b) v37/v39 — kart bitince düğme durumu ==");
+console.log("\n== 3b) v42 — kart istenmesi TEK kurala bağlı (tekrar günü) ==");
+// KULLANICI: "Neden bazı konularda tekrar için kart istiyor iken bazılarında
+// istemiyor. Eğer tekrar zamanı gelmişse ona kırmızı renk ata. Ve tabii ki
+// kart zorunlu olur. Çalışma zamanı gelmediyse kart olmaz ve en başta da olmaz."
+// ESKİ HATA: düğme, konunun kart DEFTERİ var mı diye bakıyordu; defter yalnız
+// onaydan sonra oluştuğu için liste karışık görünüyordu. Artık ölçüt tekrar günü.
 {
   const st = {
     flashcards: { cards: [
@@ -152,30 +157,32 @@ console.log("\n== 3b) v37/v39 — kart bitince düğme durumu ==");
     tekrarKartlari: {}
   };
   const c = kart(MS, BKT, 10, st);
-  // v39 — eskiden aynı konuda İKİ flashcard düğmesi vardı
-  // ("Kartları Bitir (3)" + "Kart · 3"). Artık TEK düğme var.
-  // v40 — KULLANICI: "neden hem tekrar ettim hem de flashcard tuşu aynı anda,
-  // zaten ikisinde de soruyu açıyor. Tekrar ettim > soruları açsın. Bitti."
-  // Artık kartı olan konuda TEK düğme var ve tıklanınca kartları açar
-  // (reviewTopic → AmKart). kartBasla düğmesi kartta YOK.
-  {
-    // Her kartta EN FAZLA 1 aksiyon düğmesi olmalı (eskiden 2 tane vardı).
-    const parcalar = c.split('class="konu-kart"').slice(1);
-    const fazla = parcalar.filter(p => (p.match(/data-act="(kartBasla|reviewTopic|earlyReview)"/g) || []).length > 1);
-    ok("her kartta tek aksiyon düğmesi", fazla.length === 0,
-       parcalar.map(p => (p.match(/data-act="(kartBasla|reviewTopic|earlyReview)"/g) || []).length).join(","));
-  }
+  const parcalar = c.split('class="konu-kart"').slice(1);
+  const fazla = parcalar.filter(p => (p.match(/data-act="(kartBasla|reviewTopic|earlyReview)"/g) || []).length > 1);
+  ok("her kartta tek aksiyon düğmesi", fazla.length === 0,
+     parcalar.map(p => (p.match(/data-act="(kartBasla|reviewTopic|earlyReview)"/g) || []).length).join(","));
   ok("flashcard düğmesi ayrıca çizilmiyor", (c.match(/data-act="kartBasla"/g) || []).length === 0);
-  ok("düğme metni: Tekrar Ettim · 3 kart", c.indexOf("Tekrar Ettim · 3 kart") >= 0);
-  ok("düğme soruları açan aksiyona bağlı", c.indexOf('data-act="reviewTopic"') >= 0);
-  ok("kart zorunlu notu", c.indexOf("kart zorunlu") >= 0);
+
+  const trig = parcalar.find(p => p.indexOf("1.1 Trigonometri") >= 0) || "";
+  ok("tekrar günü gelen konuda düğme: 'kartlar zorunlu'", trig.indexOf("Tekrar Ettim · kartlar zorunlu") >= 0);
+  ok("tekrar günü gelen konu reviewTopic'e bağlı", trig.indexOf('data-act="reviewTopic"') >= 0);
+  ok("tekrar günü gelen konu KIRMIZI şeritli", trig.indexOf("#DC2626") >= 0);
+  ok("tekrar günü gelen konuda 'TEKRAR BUGÜN' yazar", trig.indexOf("TEKRAR BUGÜN") >= 0);
+
+  const fizik = parcalar.find(p => p.indexOf("Sabit Hızlı Hareket") >= 0) || "";
+  ok("günü GELMEYEN konuda kart istenmez", fizik.indexOf('data-act="reviewTopic"') < 0);
+  ok("günü GELMEYEN konuda kart zorunluluğu yazmaz",
+     fizik.indexOf("kartlar zorunlu") < 0 && fizik.indexOf("kart zorunlu") < 0 && fizik.indexOf("· kart") < 0);
+  ok("günü GELMEYEN konuda yalnız Erken Tekrar var", fizik.indexOf('data-act="earlyReview"') >= 0);
+  ok("günü GELMEYEN konu kırmızı DEĞİL", fizik.indexOf("#DC2626") < 0);
+
+  // Kart defteri boş olsa da günü gelen konu kart ister (deftere bağlı değil).
+  const stBos = { flashcards: { cards: [] }, tekrarKartlari: {} };
+  const cBos = kart(MS, BKT, 10, stBos);
+  ok("kart defteri boşken de günü gelen konu kart ister", cBos.indexOf("kartlar zorunlu") >= 0);
+
   ok("5 soru düğmesi yine YOK", c.indexOf("data-bkt-test") < 0);
   ok("ders ayracı KALDIRILDI", c.indexOf("ders-ayrac") < 0);
-  const st2 = JSON.parse(JSON.stringify(st));
-  st2.tekrarKartlari["Matematik > 1.1 Trigonometri"] = { bildi: 3, bilemedi: 0, tamamlandi: BUGUN };
-  const c2 = kart(MS, BKT, 10, st2);
-  ok("tamamlanınca kart işareti ✓", c2.indexOf("Tekrar Ettim · 3 kart ✓") >= 0);
-  ok("tamamlanınca tekrar düğmesi geri gelir", c2.indexOf('data-act="reviewTopic"') >= 0);
 }
 
 console.log("\n== 3c) Daha fazla göster sayacı ==");

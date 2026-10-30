@@ -1,4 +1,4 @@
-const PWA_SURUM = "v41-bes-adim";
+const PWA_SURUM = "v42-kart-kurali-liste";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -278,6 +278,80 @@ function profilAvatarHarfleri() {
   return harf.toLocaleUpperCase("tr-TR");
 }
 window.__profilTaze = function () { const m = document.getElementById("pwa-profile-modal"); if (m && m.style.display === "flex") renderProfileModal(); };
+// ============================================================
+// v42 — OKULİZYON İL / İLÇE / OKUL LİSTELERİ (SABİT DEĞİL)
+// KULLANICI: "Okulizyon bilgileri de sabit olmasın. Şehir, ilçe ve okullar
+// Okulizyon'daki gibi seçilebilsin. Direkt oradaki listeleri kopyala yapıştır."
+// Kaynak: okulizyon-liste edge fonksiyonu (okulizyon.com'un kendi listeleri).
+// Liste + KOD birlikte saklanır: sonraki çekimlerde isim tahmini kalmaz.
+// ============================================================
+const OKZ_LISTE_ANAHTAR = "am_okz_liste_v42";
+let OKZ_LISTE = (function () {
+  try { const t = JSON.parse(localStorage.getItem(OKZ_LISTE_ANAHTAR) || "{}"); return (t && typeof t === "object") ? t : {}; } catch (e) { return {}; }
+})();
+const okzListeKod = (mod, kod) => mod === "il" ? "il" : (mod === "ilce" ? "ilce:" + kod : "okul:" + kod);
+// "Gaziantep" = "GAZIANTEP" = "Gazıantep" (Türkçe büyük/küçük + aksan farkı yok)
+const okzNorm = (x) => String(x || "").toLocaleUpperCase("tr-TR")
+  .replace(/İ/g, "I").replace(/Ş/g, "S").replace(/Ğ/g, "G").replace(/Ç/g, "C")
+  .replace(/Ö/g, "O").replace(/Ü/g, "U").replace(/\s+/g, " ").trim();
+const okzAyni = (a, b) => !!a && !!b && okzNorm(a) === okzNorm(b);
+function okzListeYaz(k) {
+  try { localStorage.setItem(OKZ_LISTE_ANAHTAR, JSON.stringify(OKZ_LISTE)); } catch (e) { /* */ }
+}
+
+// <select> üretimi: seçenekler {ad, kod}; kod data-kod içinde taşınır.
+function okzSecim(id, etiket, anahtar, seciliKod, seciliAd) {
+  const liste = OKZ_LISTE[anahtar] || [];
+  const bos = id === "il" ? "Yükleniyor…" : (id === "ilce" ? "Önce il seç" : "Önce ilçe seç");
+  let ic = '<option value="" data-kod="">— ' + bos + " —</option>";
+  if (!liste.length && seciliAd) ic += '<option value="' + escHtml(seciliAd) + '" data-kod="' + escHtml(seciliKod || "") + '" selected>' + escHtml(seciliAd) + " (kayıtlı)</option>";
+  ic += liste.map(x => {
+    const sec = (seciliKod && x.kod === seciliKod) || (!seciliKod && okzAyni(x.ad, seciliAd));
+    return '<option value="' + escHtml(x.ad) + '" data-kod="' + escHtml(x.kod) + '"' + (sec ? " selected" : "") + ">" + escHtml(x.ad) + "</option>";
+  }).join("");
+  return '<label style="font-size:11.5px;opacity:0.8;">' + etiket +
+    '<select id="okz-' + id + '" data-okz-liste="' + escHtml(anahtar) + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + ic + "</select></label>";
+}
+
+// Listeyi sunucudan çek (önbellekte varsa hiç gitmez), sonra arayüzü tazele.
+let okzListeSuruyor = {};
+function okzListeTazele(mod, kod, zorla) {
+  const anahtar = okzListeKod(mod, kod);
+  if (!zorla && (OKZ_LISTE[anahtar] || []).length) return Promise.resolve(OKZ_LISTE[anahtar]);
+  if (okzListeSuruyor[anahtar]) return okzListeSuruyor[anahtar];
+  if (!SUPABASE_CONFIG || !SUPABASE_CONFIG.url) return Promise.resolve([]);
+  let url = SUPABASE_CONFIG.url + "/functions/v1/okulizyon-liste?mod=" + encodeURIComponent(mod);
+  if (mod === "ilce") url += "&ilkodu=" + encodeURIComponent(kod);
+  if (mod === "okul") url += "&ilcekodu=" + encodeURIComponent(kod);
+  if (zorla) url += "&zorla=1";
+  okzListeSuruyor[anahtar] = fetch(url, { headers: { apikey: SUPABASE_CONFIG.anonKey } })
+    .then(r => r.ok ? r.json() : null)
+    .then(c => {
+      const liste = c && Array.isArray(c.liste) ? c.liste.filter(x => x && x.ad && x.kod) : [];
+      if (liste.length) { OKZ_LISTE[anahtar] = liste; okzListeYaz(anahtar); }
+      return liste;
+    })
+    .catch(() => [])
+    .then(l => { delete okzListeSuruyor[anahtar]; okzSecimleriDoldur(); return l; });
+  return okzListeSuruyor[anahtar];
+}
+
+// Açık profildeki seçimleri (sunucudan liste gelince) yerinde doldur.
+function okzSecimleriDoldur() {
+  document.querySelectorAll("[data-okz-liste]").forEach(sel => {
+    const anahtar = sel.dataset.okzListe;
+    if (!/^(il|ilce:|okul:)/.test(anahtar)) return;
+    const liste = OKZ_LISTE[anahtar] || [];
+    if (!liste.length) return;
+    const mevcutKod = (sel.selectedOptions && sel.selectedOptions[0] ? sel.selectedOptions[0].dataset.kod : "") || "";
+    const mevcutAd = sel.value || "";
+    sel.innerHTML = '<option value="" data-kod="">— Seç —</option>' + liste.map(x => {
+      const sec = (mevcutKod && x.kod === mevcutKod) || (!mevcutKod && okzAyni(x.ad, mevcutAd));
+      return '<option value="' + escHtml(x.ad) + '" data-kod="' + escHtml(x.kod) + '"' + (sec ? " selected" : "") + ">" + escHtml(x.ad) + "</option>";
+    }).join("");
+  });
+}
+
 function renderProfileModal() {
   const m = document.getElementById("pwa-profile-modal");
   if (!m) return;
@@ -289,7 +363,6 @@ function renderProfileModal() {
     ? '<div style="display:flex;align-items:center;gap:10px;"><div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">' + escHtml(profilAvatarHarfleri()) + '</div><div style="min-width:0;"><div style="font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(currentUser.email || "hesap") + '</div><div style="font-size:11.5px;color:#16A34A;font-weight:600;">☁ Bulut yedeği etkin (Supabase)</div></div></div>'
     : '<div style="font-size:12.5px;opacity:0.8;">Giriş yapılmadı — veriler yalnız bu cihazda saklanıyor.</div>';
 
-  const ILCELER = ["Şahinbey", "Şehitkamil", "Oğuzeli", "Nizip", "İslahiye", "Nurdağı", "Araban", "Yavuzeli", "Karkamış"];
   const inp = (k, label, ph) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" autocapitalize="characters" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;' + (k === "ad" ? "text-transform:uppercase;font-weight:600;" : "") + '"></label>';
   const sel = (k, label, opts) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<select id="okz-' + k + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + opts.map(o => '<option' + ((s[k] || opts[0]) === o ? " selected" : "") + '>' + escHtml(o) + "</option>").join("") + "</select></label>";
 
@@ -316,9 +389,13 @@ function renderProfileModal() {
   html += inp("ad", "AD SOYAD (BÜYÜK HARF)", "AHMET YILMAZ");
   html += inp("okulNo", "OKUL NO", "1234");
   html += sel("sinif", "SINIF", ["9", "10", "11", "12"]);
-  html += sel("il", "İL", ["Gaziantep"]);
-  html += sel("ilce", "İLÇE", ILCELER);
-  html += sel("okulAdi", "OKUL", ["AKKENT ANADOLU LİSESİ"]);
+  // v42 — KULLANICI: "Okulizyon bilgileri de sabit olmasın. Şehir, ilçe ve
+  // okullar Okulizyon'daki gibi seçilebilsin. Direkt oradaki listeleri
+  // kopyala yapıştır." Listeler artık okulizyon-liste edge fonksiyonundan
+  // GERÇEK okulizyon.com listeleri olarak gelir (il → ilçe → okul zinciri).
+  html += okzSecim("il", "İL", "il", s.ilkodu || "", s.il || "");
+  html += okzSecim("ilce", "İLÇE", "ilce:" + (s.ilkodu || ""), s.ilcekodu || "", s.ilce || "");
+  html += okzSecim("okulAdi", "OKUL", "okul:" + (s.ilcekodu || ""), s.kurumkodu || "", s.okulAdi || "");
   html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa)<input id="okz-sifre" type="password" autocomplete="off" value="' + escHtml(s.sifre || "") + '" placeholder="Okulizyon şifresi" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
   html += '</div>';
   // Yoksayılan / işlenen sınav defteri (kalıcı)
@@ -367,6 +444,10 @@ function renderProfileModal() {
   html += '</div>';
   m.innerHTML = html;
   pushTeshisYaz();
+  // v42 — listeler önbellekten hemen çizildi; arka planda tazelenir.
+  okzListeTazele("il");
+  if (s.ilkodu) okzListeTazele("ilce", s.ilkodu);
+  if (s.ilcekodu) okzListeTazele("okul", s.ilcekodu);
 }
 
 // ---- 4) E-POSTA/ŞİFRE İŞLEMLERİ (Supabase Auth) ----
@@ -1186,6 +1267,26 @@ function initOkulizyonUI() {
   // Okulizyon girişi yalnız PROFİL penceresinden; burada sadece kuyruk penceresi hazırlanır
   buildOkzModal();
   buildProfileModal();
+  // v42 — İL → İLÇE → OKUL zinciri (Okulizyon'daki gibi)
+  document.addEventListener("change", (e) => {
+    const el = e.target;
+    if (!el || !el.id) return;
+    if (el.id === "okz-il") {
+      const o = el.selectedOptions && el.selectedOptions[0];
+      const kod = o ? (o.dataset.kod || "") : "";
+      const ilce = document.getElementById("okz-ilce");
+      const okul = document.getElementById("okz-okulAdi");
+      if (ilce) ilce.innerHTML = '<option value="" data-kod="">— Önce il seç —</option>';
+      if (okul) okul.innerHTML = '<option value="" data-kod="">— Önce ilçe seç —</option>';
+      if (kod) okzListeTazele("ilce", kod, true);
+    } else if (el.id === "okz-ilce") {
+      const o = el.selectedOptions && el.selectedOptions[0];
+      const kod = o ? (o.dataset.kod || "") : "";
+      const okul = document.getElementById("okz-okulAdi");
+      if (okul) okul.innerHTML = '<option value="" data-kod="">— Yükleniyor… —</option>';
+      if (kod) okzListeTazele("okul", kod, true);
+    }
+  });
   document.addEventListener("click", (e) => {
     const el = e.target.closest("[data-act]");
     if (!el) return;
@@ -1455,10 +1556,15 @@ function okzSaveBilgi() {
   const al = k => { const el = document.getElementById("okz-" + k); return el ? (el.value || "").trim() : ""; };
   const ad = al("ad").toLocaleUpperCase("tr-TR"); // sitedeki gibi BÜYÜK HARF
   if (!ad || !al("okulNo")) { toast("AD SOYAD ve OKUL NO gerekli (adı büyük harf yaz).", "error"); return; }
+  // v42 — seçilen Okulizyon KODLARI da saklanır (il/ilçe/okul adı tahmini yerine).
+  const kod = (k) => { const el = document.getElementById("okz-" + k); const o = el && el.selectedOptions && el.selectedOptions[0]; return o ? (o.dataset.kod || "") : ""; };
+  if (!al("il") || !al("ilce") || !al("okulAdi")) { toast("İl, ilçe ve okulu Okulizyon listesinden seç.", "error"); return; }
   state.settings.okulizyon = {
     ad: ad, okulNo: al("okulNo"),
-    sinif: al("sinif") || "9", il: al("il") || "Gaziantep",
-    ilce: al("ilce") || "Şahinbey", okulAdi: al("okulAdi") || "AKKENT ANADOLU LİSESİ"
+    sinif: al("sinif") || "9",
+    il: al("il"), ilkodu: kod("il"),
+    ilce: al("ilce"), ilcekodu: kod("ilce"),
+    okulAdi: al("okulAdi"), kurumkodu: kod("okulAdi")
   };
   const sifreEl = document.getElementById("okz-sifre");
   if (sifreEl && sifreEl.value) state.settings.okulizyon.sifre = sifreEl.value;
