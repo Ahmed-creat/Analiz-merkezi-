@@ -75,6 +75,12 @@ ok("okul ucu /ajax/kurumlar.php", LISTE.indexOf("/ajax/kurumlar.php?ilcekodu=") 
 ok("7 günlük önbellek var", LISTE.indexOf("okulizyon_liste") > 0);
 ok("CORS açık (tarayıcı çağırabilsin)", LISTE.indexOf("Access-Control-Allow-Origin") > 0);
 
+console.log("\n== 5) Hafıza listesi sıralaması ==");
+ok("eski yüzde sıralaması KALMADI", HTML.indexOf("}).sort((a, b) => a.pct - b.pct);") < 0);
+ok("günü gelenler önce", HTML.indexOf("if (a.due !== b.due) return a.due ? -1 : 1;") > 0);
+ok("sonra tekrar günü en yakın", HTML.indexOf("if (ta !== tb) return ta - tb;") > 0);
+ok("günü eşitse zayıf hafıza önce", HTML.indexOf("return a.pct - b.pct;") > 0);
+
 console.log("\n" + "─".repeat(56));
 if (kalan) {
   hatalar.forEach(x => console.log(" ✗ " + x));

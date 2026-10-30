@@ -1912,7 +1912,16 @@ function memoryStats() {
     if (pct < MEMORY_CRITICAL) critical++;
     sum += pct;
     return { key, lesson: splitKey(key).lesson, topic: splitKey(key).topic, pct, reviews: state.memory[key].reviewCount || 0, due, next: nr };
-  }).sort((a, b) => a.pct - b.pct);
+  }).sort((a, b) => {
+    // v42 — kullanıcı kuralı: "tekrar bekleyenler üstte, tekrar günü en uzak
+    // olan en altta." Önce günü gelmiş (due) konular, sonra tekrar günü en
+    // yakın olan; günü eşitse hafızası zayıf olan önce gelir.
+    if (a.due !== b.due) return a.due ? -1 : 1;
+    const ta = a.next ? a.next.dt : Infinity;
+    const tb = b.next ? b.next.dt : Infinity;
+    if (ta !== tb) return ta - tb;
+    return a.pct - b.pct;
+  });
   return {
     rows, waiting, critical,
     completed: keys.length,
