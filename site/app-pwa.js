@@ -1,4 +1,4 @@
-const PWA_SURUM = "v42-kart-kurali-liste";
+const PWA_SURUM = "v43-acilis-ve-tekrar";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -299,10 +299,30 @@ function okzListeYaz(k) {
   try { localStorage.setItem(OKZ_LISTE_ANAHTAR, JSON.stringify(OKZ_LISTE)); } catch (e) { /* */ }
 }
 
-// <select> üretimi: seçenekler {ad, kod}; kod data-kod içinde taşınır.
-function okzSecim(id, etiket, anahtar, seciliKod, seciliAd) {
-  const liste = OKZ_LISTE[anahtar] || [];
-  const bos = id === "il" ? "Yükleniyor…" : (id === "ilce" ? "Önce il seç" : "Önce ilçe seç");
+// SEÇİM DURUMU — v43
+// KULLANICI: "Okulizyon bilgileri sabit değil ama girişini bozmuşsun. Sadece
+// şehir seçilebiliyor."
+// KÖK NEDEN: seçimlerin hangi listeye ait olduğu DOM'daki data-okz-liste
+// niteliğinden okunuyordu. İl değişince o nitelik ESKİ kodda kalıyor, bu
+// yüzden ilçe listesi hiç dolmuyordu (yalnız il seçilebiliyordu).
+// ÇÖZÜM: seçimler artık DOM'da değil, bu durum nesnesinde tutulur. Liste
+// hangi kod için geldiyse o select doğrudan bu duruma göre çizilir.
+let OKZ_SECIM = { il: { ad: "", kod: "" }, ilce: { ad: "", kod: "" }, okul: { ad: "", kod: "" } };
+let OKZ_HATA = "";      // son liste hatası (arayüzde gösterilir)
+let OKZ_SURUYOR = {};   // aynı listenin iki kez çekilmesini engeller
+
+const okzRolKod = (rol) => rol === "il" ? "il" : (rol === "ilce" ? "ilce" : "okul");
+function okzListeAnahtari(rol) {
+  if (rol === "il") return "il";
+  if (rol === "ilce") return OKZ_SECIM.il.kod ? "ilce:" + OKZ_SECIM.il.kod : "";
+  return OKZ_SECIM.ilce.kod ? "okul:" + OKZ_SECIM.ilce.kod : "";
+}
+
+// Arayüz: tek bir select (seçenekler + hangi seçenek seçili)
+function okzSecim(id, etiket, rol, seciliKod, seciliAd) {
+  const anahtar = okzListeAnahtari(rol);
+  const liste = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
+  const bos = rol === "il" ? "Yükleniyor…" : (rol === "ilce" ? "Önce il seç" : "Önce ilçe seç");
   let ic = '<option value="" data-kod="">— ' + bos + " —</option>";
   if (!liste.length && seciliAd) ic += '<option value="' + escHtml(seciliAd) + '" data-kod="' + escHtml(seciliKod || "") + '" selected>' + escHtml(seciliAd) + " (kayıtlı)</option>";
   ic += liste.map(x => {
@@ -310,46 +330,73 @@ function okzSecim(id, etiket, anahtar, seciliKod, seciliAd) {
     return '<option value="' + escHtml(x.ad) + '" data-kod="' + escHtml(x.kod) + '"' + (sec ? " selected" : "") + ">" + escHtml(x.ad) + "</option>";
   }).join("");
   return '<label style="font-size:11.5px;opacity:0.8;">' + etiket +
-    '<select id="okz-' + id + '" data-okz-liste="' + escHtml(anahtar) + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + ic + "</select></label>";
+    '<select id="okz-' + id + '" data-okz-rol="' + rol + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + ic + "</select></label>";
 }
 
-// Listeyi sunucudan çek (önbellekte varsa hiç gitmez), sonra arayüzü tazele.
-let okzListeSuruyor = {};
-function okzListeTazele(mod, kod, zorla) {
-  const anahtar = okzListeKod(mod, kod);
-  if (!zorla && (OKZ_LISTE[anahtar] || []).length) return Promise.resolve(OKZ_LISTE[anahtar]);
-  if (okzListeSuruyor[anahtar]) return okzListeSuruyor[anahtar];
-  if (!SUPABASE_CONFIG || !SUPABASE_CONFIG.url) return Promise.resolve([]);
-  let url = SUPABASE_CONFIG.url + "/functions/v1/okulizyon-liste?mod=" + encodeURIComponent(mod);
+// Liste çek: rol + kod. Başarılıysa önbelleğe yazılır ve arayüz tazelenir.
+function okzListeTazele(rol, zorla) {
+  const anahtar = okzListeAnahtari(rol);
+  if (!anahtar) return Promise.resolve([]);
+  if (!zorla && (OKZ_LISTE[anahtar] || []).length) { okzSecimleriDoldur(); return Promise.resolve(OKZ_LISTE[anahtar]); }
+  if (OKZ_SURUYOR[anahtar]) return OKZ_SURUYOR[anahtar];
+  const cfg = (typeof SUPABASE_CONFIG !== "undefined" && SUPABASE_CONFIG) ? SUPABASE_CONFIG : null;
+  if (!cfg || !cfg.url) { OKZ_HATA = "Sunucu ayarı bulunamadı."; okzHataYaz(); return Promise.resolve([]); }
+  const mod = rol === "okul" ? "okul" : rol;
+  const kod = rol === "il" ? "" : (rol === "ilce" ? OKZ_SECIM.il.kod : OKZ_SECIM.ilce.kod);
+  let url = cfg.url + "/functions/v1/okulizyon-liste?mod=" + encodeURIComponent(mod);
   if (mod === "ilce") url += "&ilkodu=" + encodeURIComponent(kod);
   if (mod === "okul") url += "&ilcekodu=" + encodeURIComponent(kod);
   if (zorla) url += "&zorla=1";
-  okzListeSuruyor[anahtar] = fetch(url, { headers: { apikey: SUPABASE_CONFIG.anonKey } })
-    .then(r => r.ok ? r.json() : null)
+  OKZ_HATA = "";
+  okzHataYaz();
+  OKZ_SURUYOR[anahtar] = fetch(url, { headers: { apikey: cfg.anonKey } })
+    .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
     .then(c => {
       const liste = c && Array.isArray(c.liste) ? c.liste.filter(x => x && x.ad && x.kod) : [];
-      if (liste.length) { OKZ_LISTE[anahtar] = liste; okzListeYaz(anahtar); }
+      if (!liste.length) throw new Error("boş liste");
+      OKZ_LISTE[anahtar] = liste;
+      okzListeYaz(anahtar);
       return liste;
     })
-    .catch(() => [])
-    .then(l => { delete okzListeSuruyor[anahtar]; okzSecimleriDoldur(); return l; });
-  return okzListeSuruyor[anahtar];
+    .catch(e => {
+      OKZ_HATA = (rol === "il" ? "İl" : rol === "ilce" ? "İlçe" : "Okul") + " listesi yüklenemedi (" + String((e && e.message) || e) + "). İnterneti kontrol edip “Listeyi yenile”ye bas.";
+      return [];
+    })
+    .then(l => { delete OKZ_SURUYOR[anahtar]; okzSecimleriDoldur(); okzHataYaz(); return l; });
+  return OKZ_SURUYOR[anahtar];
 }
 
-// Açık profildeki seçimleri (sunucudan liste gelince) yerinde doldur.
+// Açık profildeki TÜM seçimleri DURUMA göre yeniden çiz (DOM niteliği okunmaz).
 function okzSecimleriDoldur() {
-  document.querySelectorAll("[data-okz-liste]").forEach(sel => {
-    const anahtar = sel.dataset.okzListe;
-    if (!/^(il|ilce:|okul:)/.test(anahtar)) return;
-    const liste = OKZ_LISTE[anahtar] || [];
+  document.querySelectorAll("select[data-okz-rol]").forEach(sel => {
+    const rol = sel.dataset.okzRol;
+    const anahtar = okzListeAnahtari(rol);
+    const liste = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
     if (!liste.length) return;
-    const mevcutKod = (sel.selectedOptions && sel.selectedOptions[0] ? sel.selectedOptions[0].dataset.kod : "") || "";
-    const mevcutAd = sel.value || "";
+    const sec = OKZ_SECIM[rol] || { ad: "", kod: "" };
     sel.innerHTML = '<option value="" data-kod="">— Seç —</option>' + liste.map(x => {
-      const sec = (mevcutKod && x.kod === mevcutKod) || (!mevcutKod && okzAyni(x.ad, mevcutAd));
-      return '<option value="' + escHtml(x.ad) + '" data-kod="' + escHtml(x.kod) + '"' + (sec ? " selected" : "") + ">" + escHtml(x.ad) + "</option>";
+      const on = (sec.kod && x.kod === sec.kod) || (!sec.kod && okzAyni(x.ad, sec.ad));
+      return '<option value="' + escHtml(x.ad) + '" data-kod="' + escHtml(x.kod) + '"' + (on ? " selected" : "") + ">" + escHtml(x.ad) + "</option>";
     }).join("");
   });
+}
+function okzHataYaz() {
+  const k = document.getElementById("okz-liste-hata");
+  if (!k) return;
+  k.textContent = OKZ_HATA || "";
+  k.style.display = OKZ_HATA ? "block" : "none";
+}
+// Profil açıldığında kayıtlı seçimleri duruma yükle
+function okzSecimYukle(s) {
+  OKZ_SECIM = {
+    il: { ad: (s && s.il) || "", kod: (s && s.ilkodu) || "" },
+    ilce: { ad: (s && s.ilce) || "", kod: (s && s.ilcekodu) || "" },
+    okul: { ad: (s && s.okulAdi) || "", kod: (s && s.kurumkodu) || "" }
+  };
+  OKZ_HATA = "";
+  okzListeTazele("il");
+  if (OKZ_SECIM.il.kod) okzListeTazele("ilce");
+  if (OKZ_SECIM.ilce.kod) okzListeTazele("okul");
 }
 
 function renderProfileModal() {
@@ -394,8 +441,10 @@ function renderProfileModal() {
   // kopyala yapıştır." Listeler artık okulizyon-liste edge fonksiyonundan
   // GERÇEK okulizyon.com listeleri olarak gelir (il → ilçe → okul zinciri).
   html += okzSecim("il", "İL", "il", s.ilkodu || "", s.il || "");
-  html += okzSecim("ilce", "İLÇE", "ilce:" + (s.ilkodu || ""), s.ilcekodu || "", s.ilce || "");
-  html += okzSecim("okulAdi", "OKUL", "okul:" + (s.ilcekodu || ""), s.kurumkodu || "", s.okulAdi || "");
+  html += okzSecim("ilce", "İLÇE", "ilce", s.ilcekodu || "", s.ilce || "");
+  html += okzSecim("okulAdi", "OKUL", "okul", s.kurumkodu || "", s.okulAdi || "");
+  html += '<div id="okz-liste-hata" style="display:none;grid-column:1 / -1;font-size:11.5px;line-height:1.45;color:#B45309;"></div>';
+  html += '<div style="grid-column:1 / -1;"><button data-act="okzListeYenile" style="background:none;border:0;padding:0;font-size:11.5px;text-decoration:underline;color:#2563EB;cursor:pointer;">Listeyi yenile</button></div>';
   html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa)<input id="okz-sifre" type="password" autocomplete="off" value="' + escHtml(s.sifre || "") + '" placeholder="Okulizyon şifresi" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
   html += '</div>';
   // Yoksayılan / işlenen sınav defteri (kalıcı)
@@ -444,10 +493,8 @@ function renderProfileModal() {
   html += '</div>';
   m.innerHTML = html;
   pushTeshisYaz();
-  // v42 — listeler önbellekten hemen çizildi; arka planda tazelenir.
-  okzListeTazele("il");
-  if (s.ilkodu) okzListeTazele("ilce", s.ilkodu);
-  if (s.ilcekodu) okzListeTazele("okul", s.ilcekodu);
+  // v43 — listeler önbellekten hemen çizilir, eksik olanlar arka planda çekilir.
+  okzSecimYukle(s);
 }
 
 // ---- 4) E-POSTA/ŞİFRE İŞLEMLERİ (Supabase Auth) ----
@@ -1267,24 +1314,30 @@ function initOkulizyonUI() {
   // Okulizyon girişi yalnız PROFİL penceresinden; burada sadece kuyruk penceresi hazırlanır
   buildOkzModal();
   buildProfileModal();
-  // v42 — İL → İLÇE → OKUL zinciri (Okulizyon'daki gibi)
+  // v43 — İL → İLÇE → OKUL zinciri (Okulizyon'daki gibi)
+  // Seçim DURUMDA tutulur; DOM'daki eski kod artık okunmaz (v42'de il
+  // değişince ilçe listesi boş kalıyordu, "sadece şehir seçilebiliyor").
   document.addEventListener("change", (e) => {
     const el = e.target;
-    if (!el || !el.id) return;
-    if (el.id === "okz-il") {
-      const o = el.selectedOptions && el.selectedOptions[0];
-      const kod = o ? (o.dataset.kod || "") : "";
-      const ilce = document.getElementById("okz-ilce");
-      const okul = document.getElementById("okz-okulAdi");
-      if (ilce) ilce.innerHTML = '<option value="" data-kod="">— Önce il seç —</option>';
-      if (okul) okul.innerHTML = '<option value="" data-kod="">— Önce ilçe seç —</option>';
-      if (kod) okzListeTazele("ilce", kod, true);
-    } else if (el.id === "okz-ilce") {
-      const o = el.selectedOptions && el.selectedOptions[0];
-      const kod = o ? (o.dataset.kod || "") : "";
-      const okul = document.getElementById("okz-okulAdi");
-      if (okul) okul.innerHTML = '<option value="" data-kod="">— Yükleniyor… —</option>';
-      if (kod) okzListeTazele("okul", kod, true);
+    if (!el || el.tagName !== "SELECT" || !el.dataset || !el.dataset.okzRol) return;
+    const rol = el.dataset.okzRol;
+    const o = el.selectedOptions && el.selectedOptions[0];
+    const ad = o ? String(o.value || "") : "";
+    const kod = o ? String(o.dataset.kod || "") : "";
+    OKZ_SECIM[rol] = { ad, kod };
+    if (rol === "il") {
+      OKZ_SECIM.ilce = { ad: "", kod: "" };
+      OKZ_SECIM.okul = { ad: "", kod: "" };
+      const i2 = document.querySelector('select[data-okz-rol="ilce"]');
+      const o2 = document.querySelector('select[data-okz-rol="okul"]');
+      if (i2) i2.innerHTML = '<option value="" data-kod="">— Yükleniyor… —</option>';
+      if (o2) o2.innerHTML = '<option value="" data-kod="">— Önce ilçe seç —</option>';
+      if (kod) okzListeTazele("ilce");
+    } else if (rol === "ilce") {
+      OKZ_SECIM.okul = { ad: "", kod: "" };
+      const o2 = document.querySelector('select[data-okz-rol="okul"]');
+      if (o2) o2.innerHTML = '<option value="" data-kod="">— Yükleniyor… —</option>';
+      if (kod) okzListeTazele("okul");
     }
   });
   document.addEventListener("click", (e) => {
@@ -1295,6 +1348,7 @@ function initOkulizyonUI() {
     else if (a === "okzSimdiCek") { toast("Okulizyon sonuçları sorgulanıyor…", "info"); okzSunucuCek(); }
     else if (a === "okzClose") closeOkzModal();
     else if (a === "okzSaveBilgi") okzSaveBilgi();
+    else if (a === "okzListeYenile") { toast("Listeler yenileniyor…", "info"); okzListeTazele("il", true).then(() => { if (OKZ_SECIM.il.kod) return okzListeTazele("ilce", true); }).then(() => { if (OKZ_SECIM.ilce.kod) return okzListeTazele("okul", true); }); }
     else if (a === "okzAnalizKaydet") okzAnalizKaydet();
     else if (a === "okzHepsi") okzHepsiUygula(el.dataset.reason);
     else if (a === "okzYeniden") okzYenidenAktar(el.dataset.i);
@@ -1556,15 +1610,19 @@ function okzSaveBilgi() {
   const al = k => { const el = document.getElementById("okz-" + k); return el ? (el.value || "").trim() : ""; };
   const ad = al("ad").toLocaleUpperCase("tr-TR"); // sitedeki gibi BÜYÜK HARF
   if (!ad || !al("okulNo")) { toast("AD SOYAD ve OKUL NO gerekli (adı büyük harf yaz).", "error"); return; }
-  // v42 — seçilen Okulizyon KODLARI da saklanır (il/ilçe/okul adı tahmini yerine).
-  const kod = (k) => { const el = document.getElementById("okz-" + k); const o = el && el.selectedOptions && el.selectedOptions[0]; return o ? (o.dataset.kod || "") : ""; };
+  // v43 — seçilen Okulizyon KODLARI durumdan okunur (DOM'a bağlı değil).
+  const secKod = (rol) => (OKZ_SECIM[rol] && OKZ_SECIM[rol].kod) || "";
   if (!al("il") || !al("ilce") || !al("okulAdi")) { toast("İl, ilçe ve okulu Okulizyon listesinden seç.", "error"); return; }
+  if (!secKod("il") || !secKod("ilce") || !secKod("okul")) {
+    // Liste ağdan gelmediyse isimle kaydetmeye izin ver ama sessiz kalma.
+    toast("Seçtiğin il/ilçe/okulun kodu alınamadı — “Listeyi yenile”ye basıp tekrar seç.", "warning");
+  }
   state.settings.okulizyon = {
     ad: ad, okulNo: al("okulNo"),
     sinif: al("sinif") || "9",
-    il: al("il"), ilkodu: kod("il"),
-    ilce: al("ilce"), ilcekodu: kod("ilce"),
-    okulAdi: al("okulAdi"), kurumkodu: kod("okulAdi")
+    il: al("il"), ilkodu: secKod("il"),
+    ilce: al("ilce"), ilcekodu: secKod("ilce"),
+    okulAdi: al("okulAdi"), kurumkodu: secKod("okul")
   };
   const sifreEl = document.getElementById("okz-sifre");
   if (sifreEl && sifreEl.value) state.settings.okulizyon.sifre = sifreEl.value;

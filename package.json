@@ -28,7 +28,7 @@
     "test:gorsel": "node tests/gorsel-video.test.js",
     "test:yuk": "node tests/okz-yuk.test.js",
     "test:konubulma": "node tests/konu-bulma.test.js",
-    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk && npm run -s test:konubulma && npm run -s test:kokeksik && npm run -s test:bildirim && npm run -s test:davranis",
+    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk && npm run -s test:konubulma && npm run -s test:kokeksik && npm run -s test:bildirim && npm run -s test:davranis && npm run -s test:v42 && npm run -s test:dom",
     "test:konu": "node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
     "esleme:uret": "node scripts/konu-esleme-uret.js",
     "test:bildirim": "node tests/bildirim.test.js",
@@ -40,6 +40,11 @@
     "test:bildirimTeshis": "node tests/bildirim-teshis.test.js",
     "test:kartflash": "node tests/kart-flashcard.test.js",
     "test:sikistir": "node tests/veri-sikistir.test.js",
-    "test:v37": "node tests/v37-davranis.test.js"
+    "test:v37": "node tests/v37-davranis.test.js",
+    "test:v42": "node tests/v42-kural.test.js",
+    "test:dom": "node tests/dom/dom-acilis.test.js && node tests/dom/dom-okz-secim.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
   }
 }

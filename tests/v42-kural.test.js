@@ -35,14 +35,14 @@ let gecen = 0, kalan = 0;
 const hatalar = [];
 function ok(ad, kosul, ek) { if (kosul) { gecen++; return true; } kalan++; hatalar.push(ad + (ek ? " → " + ek : "")); return false; }
 
-console.log("\n== 1) Açılış ekranı yalnız İLK açılışta ==");
-ok("ilk açılış işareti tanımlı", HTML.indexOf('"am_giris_yapildi"') > 0);
-ok("splashKapat yardımcısı var", HTML.indexOf("function splashKapat(") > 0);
-ok("splashIlkAcilisMi yardımcısı var", HTML.indexOf("function splashIlkAcilisMi(") > 0);
-ok("açılışta ilk değilse splash kendiliğinden kapanır",
-  /if \(!splashIlkAcilisMi\(\)\) \{[\s\S]{0,120}?splashKapat\(\);/.test(HTML));
-ok("Başla'ya basınca işaret yazılır",
-  /case "enterApp"[\s\S]{0,400}?localStorage\.setItem\("am_giris_yapildi", "1"\)/.test(HTML));
+console.log("\n== 1) Her açılışta \"Başlayalım\" ÇIKMAZ (v43: kapı tamamen kaldırıldı) ==");
+// Kullanıcı iki turdur aynı şeyi söyledi: "Her açılışta başlayalım olan kısım
+// hâlâ geliyor." localStorage işaretine güvenmek yetmedi; açılış kapısı artık
+// dosyada HİÇ YOK. Tarayıcıda gerçekten çalıştığı tests/dom-acilis.test.js'te.
+ok("açılış ekranı (#splash) DOM'da YOK", HTML.indexOf('<div id="splash">') < 0);
+ok("\"Başla\" düğmesi (enterApp) YOK", HTML.indexOf('data-act="enterApp"') < 0);
+ok("splashKapat yardımcısı var (eski bağlantılar bozulmasın)", HTML.indexOf("function splashKapat(") > 0);
+ok("init her açılışta doğrudan açıyor", HTML.indexOf("window.__entered = true;") > 0);
 
 console.log("\n== 2) Tekrar kuralı: zamanı gelen kart, gelmeyen serbest ==");
 const rtBas = HTML.indexOf("function reviewTopic(");
@@ -62,9 +62,9 @@ ok("sabit okul adı KALMADI", APP.indexOf('["AKKENT ANADOLU LİSESİ"]') < 0);
 ok("okzSecim() seçim üreticisi var", APP.indexOf("function okzSecim(") > 0);
 ok("il/ilçe/okul seçimleri canlı listeden", APP.indexOf('okzSecim("il", "İL"') > 0 && APP.indexOf('okzSecim("ilce", "İLÇE"') > 0 && APP.indexOf('okzSecim("okulAdi", "OKUL"') > 0);
 ok("liste sunucudan çekiliyor", APP.indexOf("/functions/v1/okulizyon-liste") > 0);
-ok("İL değişince İLÇE tazelenir", /okz-il[\s\S]{0,400}?okzListeTazele\("ilce"/.test(APP));
-ok("İLÇE değişince OKUL tazelenir", /okz-ilce[\s\S]{0,400}?okzListeTazele\("okul"/.test(APP));
-ok("seçilen KODLAR saklanıyor", APP.indexOf("ilkodu: kod(\"il\")") > 0 && APP.indexOf("ilcekodu: kod(\"ilce\")") > 0 && APP.indexOf("kurumkodu: kod(\"okulAdi\")") > 0);
+ok("İL değişince İLÇE tazelenir", /if \(rol === "il"\)[\s\S]{0,600}?okzListeTazele\("ilce"\)/.test(APP));
+ok("İLÇE değişince OKUL tazelenir", /if \(rol === "ilce"\)[\s\S]{0,400}?okzListeTazele\("okul"\)/.test(APP));
+ok("seçilen KODLAR saklanıyor", APP.indexOf("ilkodu: secKod(\"il\")") > 0 && APP.indexOf("ilcekodu: secKod(\"ilce\")") > 0 && APP.indexOf("kurumkodu: secKod(\"okul\")") > 0);
 ok("excel benzeri isim tahmini yerine kod kullanılıyor", CEK.indexOf("if (kimlik.ilcekodu) ilcekodu") > 0);
 
 console.log("\n== 4) okulizyon-liste fonksiyonu ==");

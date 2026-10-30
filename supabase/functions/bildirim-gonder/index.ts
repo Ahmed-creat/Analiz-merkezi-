@@ -730,6 +730,11 @@ Deno.serve(async (istek) => {
     //   sabah (TR < 14) → günün TÜM bildirimleri
     //   akşam (TR ≥ 14) → yalnız kritikler (okul sınavı, sınav geri sayımı, hafıza kritik)
     const aksam = trSaat >= 14;
+    // v43 — KULLANICI: "Tekrar hatırlatma falan hiçbiri yok."
+    // Aynı gün içinde TEKRAR hatırlatma: her vardiya kendi diliminde sayılır.
+    // Böylece günü gelmiş bir tekrar 07:35'te gitti diye 13:05/21:35
+    // hatırlatmaları susmaz. Dilimler: s(≤09) o(10-14) a(15-19) g(20+).
+    const dilim = trSaat < 10 ? "s" : (trSaat < 15 ? "o" : (trSaat < 20 ? "a" : "g"));
     const KRITIK = ["schooleve@", "schooltoday@", "exam@", ":memcrit"];
     // v36 — KULLANICI: "sadece tekrar günleri açılmalı".
     // Gönderim artık YALNIZ şu anahtarlarla sınırlı:
@@ -776,9 +781,11 @@ Deno.serve(async (istek) => {
         let buAbone = 0;
         for (const m of mesajlar) {
           const anahtar = String((m && m.key) || "");
-          if (!anahtar || bugunKumesi.has(anahtar)) continue;   // bugün zaten gitti
-          if (aksam && !kritikMi(anahtar)) continue;            // akşam yalnız kritik
+          if (!anahtar || bugunKumesi.has(anahtar + "@" + dilim)) continue; // bu dilimde gitti
           if (!tekrarMi(anahtar)) continue;                      // v36: yalnız tekrar günleri
+          // v43 — akşam da tekrar hatırlatması gider; selamlama/özet susar.
+          if (aksam && !kritikMi(anahtar) && !tekrarMi(anahtar)) continue;
+          const damga = anahtar + "@" + dilim;                   // dilim bazlı tekilleştirme
           const mesaj = {
             title: String(m.title || "Analiz Merkezi"),
             body: String(m.body || ""),
@@ -788,8 +795,8 @@ Deno.serve(async (istek) => {
           const r = await gonder(a, mesaj);
           if (r.kod === 201) {
             gonderilen++; buAbone++;
-            bugunKumesi.add(anahtar);
-            await anahtarYaz(a.user_id, anahtar, bugun);
+            bugunKumesi.add(damga);
+            await anahtarYaz(a.user_id, damga, bugun);
           } else if (r.kod === 404 || r.kod === 410) { await sil(a.id); break; }
           else hatalar.push({ id: a.id, anahtar, ...r });
         }
@@ -801,7 +808,7 @@ Deno.serve(async (istek) => {
         hatalar.push({ id: a.id, hata: String(e).slice(0, 160) });
       }
     }
-    return json({ mod, vardiya: aksam ? "aksam" : "sabah", kontrol, abonelik: abonelikler_.length, gonderilen, hatalar: hatalar.slice(0, 10), gun: bugun });
+    return json({ mod, vardiya: aksam ? "aksam" : "sabah", dilim, kontrol, abonelik: abonelikler_.length, gonderilen, hatalar: hatalar.slice(0, 10), gun: bugun });
   } catch (e) {
     return json({ hata: String(e) }, 500);
   }

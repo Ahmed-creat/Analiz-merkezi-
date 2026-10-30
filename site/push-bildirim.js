@@ -325,6 +325,13 @@
   }
 
   window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, buYuzdenKapali: anlasilirHata, testGonderildiMi };
-  // Oturum açıldığında app-pwa.js çağırır; gecikmeli de bir kez dene
+  // Oturum açıldığında app-pwa.js çağırır; gecikmeli de bir kez dene.
+  // v43 — HER açılışta ve uygulama öne geldiğinde abonelik tazelenir: eski
+  // uç nokta ölmüşse zamanlanmış hatırlatmalar sessizce kayboluyordu.
   setTimeout(otomatik, 6000);
+  if (typeof document !== "undefined" && document.addEventListener) {
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") setTimeout(otomatik, 1500);
+    });
+  }
 })();

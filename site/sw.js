@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261030-v42-kart-kurali-liste";
+const CACHE = "analiz-merkezi-v-20261030-v43-acilis-ve-tekrar";
 const ASSETS = [
   "./",
   "./index.html",
@@ -248,7 +248,18 @@ function bildirimSecenekleri(payload) {
   const icon = n.icon || data.icon || ICON_URL;
   const badge = n.badge || data.badge || ICON_URL;
   const tag = data.key || payload.kind || payload.collapse_key || "analiz-merkezi";
-  return { title, options: { body, icon, badge, tag, renotify: false, data: { url } } };
+  // v43 — KULLANICI: "Bildirim sadece ayarlardan dokununca geliyor."
+  // Bildirim artık ekranda KALIR (requireInteraction) ve tek dokunuşluk
+  // "Aç" düğmesi taşır; sessizce kaybolup gözden kaçmaz.
+  return {
+    title,
+    options: {
+      body, icon, badge, tag, renotify: true, requireInteraction: true,
+      vibrate: [180, 90, 180],
+      actions: [{ action: "ac", title: "Uygulamayı aç" }],
+      data: { url }
+    }
+  };
 }
 /* v35.9 — PUSH İZİ (cihaz tarafı kanıt)
    "Sunucu gönderdi (FCM 201) ama telefon göstermedi" ile "cihaza hiç
@@ -273,9 +284,26 @@ self.addEventListener("push", (event) => {
   })());
 });
 
+/* v43 — Tarayıcı aboneliği kendiliğinden yenilerse (endpoint değişirse)
+   yeniden abone ol ve sunucuya yaz. Aksi hâlde eski uç nokta ölür ve
+   zamanlanmış hatırlatmalar sessizce kaybolur. */
+self.addEventListener("pushsubscriptionchange", (event) => {
+  event.waitUntil((async () => {
+    try {
+      const secenekler = event.oldSubscription ? event.oldSubscription.options : { userVisibleOnly: true };
+      const yeni = await self.registration.pushManager.subscribe(secenekler);
+      // Yazma yetkisi (oturum + apikey) service worker'da yok; uygulama her
+      // açılışta AmPush.otomatik() ile aboneliği sunucuya kendisi yazar.
+      const cs = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
+      for (const c of cs) { try { c.postMessage({ am: "push-yenilendi", endpoint: (yeni && yeni.endpoint) || "" }); } catch (_) {} }
+    } catch (_) { /* yenilenemezse uygulama açılışında tekrar denenir */ }
+  })());
+});
+
 /* Bildirime tıklayınca uygulamayı aç / öne getir */
 self.addEventListener("notificationclick", (e) => {
   e.notification.close();
+  // v43 — "Aç" düğmesi ya da gövdeye dokunma: ikisi de uygulamayı açar.
   const hedef = (e.notification.data && e.notification.data.url) || APP_URL;
   e.waitUntil(
     self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((cs) => {
