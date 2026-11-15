@@ -57,6 +57,7 @@ const bekle = (ms) => new Promise(r => setTimeout(r, ms));
 const kok = (rol) => d.querySelector('.okz-arama[data-okz-rol="' + rol + '"]');
 const girdi = (rol) => kok(rol).querySelector(".okz-arama-girdi");
 const liste = (rol) => kok(rol).querySelector(".okz-arama-liste");
+const gorunur = (rol) => liste(rol).style.display === "block";
 const secenekler = (rol) => Array.from(liste(rol).querySelectorAll(".okz-arama-sec"));
 
 function yaz(rol, metin) {
@@ -152,6 +153,15 @@ function sec(rol, kod) {
     await bekle(260);
     ok("seçim değişmedi (ADANA kaldı)", O().secim().il.kod === "1");
     ok("yazılan geri alındı", g4.value === "ADANA");
+  }
+
+  console.log("\n== 4e) Açılır liste kırpılmıyor (fixed konum, yer yoksa yukarı) ==");
+  {
+    const g5 = girdi("il");
+    g5.dispatchEvent(new w.Event("focusin", { bubbles: true }));
+    ok("liste açıldı (display:block)", gorunur("il"));
+    ok("konum: fixed (kaydırma kabı kesmez)", liste("il").style.position === "fixed");
+    ok("genişlik hesaplandı", /px$/.test(liste("il").style.width));
   }
 
   console.log("\n== 5) İL değişince alt seçimler temizlenir ==");

@@ -364,7 +364,7 @@ function okzSecim(id, etiket, rol, seciliKod, seciliAd) {
     '</label>' +
     '<span style="position:absolute;right:26px;top:26px;pointer-events:none;opacity:0.45;font-size:11px;">▾</span>' +
     '<input type="hidden" id="okz-' + id + '" value="' + escHtml(ad) + '" data-kod="' + escHtml(kod) + '">' +
-    '<div class="okz-arama-liste" role="listbox" hidden style="position:absolute;z-index:70;left:0;right:0;top:100%;margin-top:4px;max-height:230px;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border:1px solid rgba(0,0,0,0.18);border-radius:11px;box-shadow:0 16px 40px rgba(0,0,0,0.22);"></div>' +
+    '<div class="okz-arama-liste" role="listbox" hidden style="position:fixed;z-index:9998;left:0;top:0;display:none;max-height:min(46vh,300px);overflow:auto;-webkit-overflow-scrolling:touch;background:var(--bg-elev,#fff);color:var(--text,#16213A);border:1px solid rgba(0,0,0,0.18);border-radius:11px;box-shadow:0 16px 40px rgba(0,0,0,0.22);"></div>' +
     '</div>';
 }
 
@@ -383,7 +383,7 @@ function okzAramaCiz(kok, yazilan) {
   if (!hepsi.length) {
     kutu.innerHTML = '<div style="padding:10px 12px;font-size:12.5px;opacity:0.7;">' +
       (rol === "il" ? "İl listesi yükleniyor…" : "Önce üstteki seçimi yap.") + "</div>";
-    kutu.hidden = false; okzAramaGirdi(kok).setAttribute("aria-expanded", "true");
+    okzAramaKonumla(kok); okzAramaGirdi(kok).setAttribute("aria-expanded", "true");
     return;
   }
   const q = okzNorm(yazilan || "");
@@ -430,12 +430,50 @@ function okzAramaCiz(kok, yazilan) {
     kutu.dataset.adet = String(suzulen.length);
     kutu.dataset.sorgu = String(yazilan || "");
   }
-  kutu.hidden = false;
+  okzAramaKonumla(kok);
   okzAramaGirdi(kok).setAttribute("aria-expanded", "true");
 }
+
+// v45 — KONUMLANDIRMA: profil penceresi kaydırılabilir; position:absolute ile
+// açılan liste altta KIRPILIYORDU (765 okullu listede tam bir çile).
+// Kutu artık gövdeye göre FIXED konumlanır: hiçbir kaydırma kabı onu kesmez.
+// Yer yoksa YUKARI açılır.
+function okzAramaKonumla(kok) {
+  const kutu = okzAramaListe(kok);
+  const g = okzAramaGirdi(kok);
+  if (!kutu || !g) return;
+  const r = g.getBoundingClientRect();
+  const boslukAlt = window.innerHeight - r.bottom;
+  const yukari = boslukAlt < 220 && r.top > boslukAlt;
+  const yukseklik = Math.min(300, Math.max(160, (yukari ? r.top : boslukAlt) - 16));
+  kutu.style.display = "block";
+  kutu.style.width = Math.max(180, Math.round(r.width)) + "px";
+  kutu.style.left = Math.round(Math.min(r.left, window.innerWidth - Math.max(180, r.width) - 8)) + "px";
+  kutu.style.maxHeight = yukseklik + "px";
+  if (yukari) {
+    kutu.style.top = "auto";
+    kutu.style.bottom = Math.round(window.innerHeight - r.top + 4) + "px";
+  } else {
+    kutu.style.bottom = "auto";
+    kutu.style.top = Math.round(r.bottom + 4) + "px";
+  }
+}
+function okzAramaGizle(kutu) {
+  if (!kutu) return;
+  kutu.style.display = "none";
+}
+// Profil kaydırılınca/pencere boyutu değişince liste yerinde kalsın.
+function okzAramaKonumlariTazele() {
+  document.querySelectorAll(".okz-arama").forEach(kok => {
+    const kutu = okzAramaListe(kok);
+    if (kutu && kutu.style.display === "block") okzAramaKonumla(kok);
+  });
+}
+window.addEventListener("scroll", okzAramaKonumlariTazele, true);
+window.addEventListener("resize", okzAramaKonumlariTazele);
 function okzAramaKapat(kok) {
   const kutu = okzAramaListe(kok);
-  if (kutu) kutu.hidden = true;
+  okzAramaGizle(kutu);
   const g = okzAramaGirdi(kok);
   if (g) { g.setAttribute("aria-expanded", "false"); const sec = OKZ_SECIM[kok.dataset.okzRol]; if (sec && sec.ad) g.value = sec.ad; }
 }
@@ -463,7 +501,7 @@ function okzAramaAltSifirla(rol, ipucu) {
   if (!kok) return;
   const g = okzAramaGirdi(kok); if (g) { g.value = ""; g.placeholder = ipucu; g.disabled = false; }
   const h = okzAramaGizli(kok); if (h) { h.value = ""; h.dataset.kod = ""; }
-  const kutu = okzAramaListe(kok); if (kutu) kutu.hidden = true;
+  const kutu = okzAramaListe(kok); okzAramaGizle(kutu);
 }
 
 document.addEventListener("focusin", (e) => {
@@ -503,11 +541,11 @@ document.addEventListener("focusout", (e) => {
     const kutu = okzAramaListe(kok);
     if (!kutu) return;
     // Kullanıcı listeden bir şeye dokunduysa okzAramaSec zaten çalıştı.
-    if ((OKZ_SECIM[rol] && OKZ_SECIM[rol].kod) !== seciliKod) { kutu.hidden = true; return; }
+    if ((OKZ_SECIM[rol] && OKZ_SECIM[rol].kod) !== seciliKod) { okzAramaGizle(kutu); return; }
     const enIyiKod = kutu.dataset.enIyiKod || "";
     const enIyiAd = kutu.dataset.enIyiAd || "";
     const adet = Number(kutu.dataset.adet || 0);
-    if (!yazilan || !enIyiKod || !enIyiAd) { kutu.hidden = true; return; }
+    if (!yazilan || !enIyiKod || !enIyiAd) { okzAramaGizle(kutu); return; }
     const q = okzNorm(yazilan);
     const anahtar = okzListeAnahtari(rol);
     const hepsi = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
@@ -521,7 +559,7 @@ document.addEventListener("focusout", (e) => {
     // Belirsiz: yazılanı geri al, kayıtlı seçime dön (yanlış seçim yapma).
     const sec = OKZ_SECIM[rol];
     e.target.value = sec && sec.ad ? sec.ad : "";
-    kutu.hidden = true;
+    okzAramaGizle(kutu);
   }, 180);
 });
 document.addEventListener("keydown", (e) => {
@@ -529,7 +567,7 @@ document.addEventListener("keydown", (e) => {
   if (!kok || !e.target.classList.contains("okz-arama-girdi")) return;
   const kutu = okzAramaListe(kok);
   if (e.key === "Escape") { okzAramaKapat(kok); return; }
-  if (!kutu || kutu.hidden) { if (e.key === "ArrowDown") okzAramaCiz(kok, e.target.value); return; }
+  if (!kutu || kutu.style.display !== "block") { if (e.key === "ArrowDown") okzAramaCiz(kok, e.target.value); return; }
   const secenekler = Array.from(kutu.querySelectorAll(".okz-arama-sec"));
   if (!secenekler.length) return;
   let i = secenekler.findIndex(x => x.dataset.aktif === "1");
@@ -602,7 +640,7 @@ function okzSecimleriDoldur() {
     const h = okzAramaGizli(kok);
     if (h && sec.ad) { h.value = sec.ad; h.dataset.kod = sec.kod || ""; if (g && document.activeElement !== g) g.value = sec.ad; }
     const kutu = okzAramaListe(kok);
-    if (kutu && !kutu.hidden) okzAramaCiz(kok, (g && document.activeElement === g) ? g.value : "");
+    if (kutu && kutu.style.display === "block") okzAramaCiz(kok, (g && document.activeElement === g) ? g.value : "");
   });
 }
 
