@@ -72,11 +72,38 @@ RLS: kullanıcı **yalnız kendi** satırlarını görür/yazar/siler. `anon` ro
 
 ```
 cron.job: bildirim-sabah  →  "35 4 * * *"  (TR 07:35)
-cron.job: bildirim-aksam  →  "30 16 * * *" (TR 19:30)
    └─ public.bildirim_cron_tetikle()
         └─ net.http_post → /functions/v1/bildirim-gonder  {mod:"run"}
              x-bildirim-secret: vault'tan
+
+cron.job: bildirim-aksam  →  "30 16 * * *" (TR 19:30)   [2026-11-15 değişti]
+   └─ select public.bildirim_cron_tetikle()      -- kritik anahtarlar (edge)
+            , public.bildirim_tekrar_tetikle();  -- tekrar hatırlatması (doğrudan push)
 ```
+
+**Neden iki çağrı?** Canlıdaki edge fonksiyonu hâlâ eski gövdeyi (v37) çalıştırıyor:
+akşam vardiyasında yalnız "kritik" anahtarları gönderiyor, `:reviews` gibi tekrar
+anahtarlarını eliyor. Bu yüzden 19:30'da hiçbir bildirim çıkmıyordu. Akşam
+hatırlatmasını bugün çalışır hâle getirmek için vardiyaya `bildirim_tekrar_tetikle()`
+eklendi; bu fonksiyon zaten 13:05 ve 21:35'te kullanılan, tekrar konularını
+doğrudan (`mod:"tekil"`) gönderen yoldur.
+
+Depodaki v43 gövdesi (dilim bazlı tekilleştirme + akşam tekrar izni) yayınlandığında
+`bildirim-aksam` **tekrar** yalnız `bildirim_cron_tetikle()` olmalıdır; aksi hâlde
+aynı hatırlatma iki kez gider.
+
+### 2026-11-15 ölçümü (canlı)
+
+| Adım | Sonuç |
+|---|---|
+| 19:30 vardiyası (değişiklik öncesi) | edge `mod:"run"` → `abonelik:3, gonderilen:0` (akşam yalnız kritik; bugünün anahtarları sabahtan yazılı) |
+| `bildirim_tekrar_tetikle()` elle | edge `mod:"tekil"` → `gonderilen:3`, üç abonelik de **201** |
+| Abonelik sayısı | **3**, hepsi aynı kullanıcı, aynı dakikada yazılmış (kurulum adresi başına yeni uç) |
+
+Not: aynı kullanıcıda 3 uç varsa aynı bildirim cihazda 3 kez görünür. Uçlar
+**kurulum adresine** (origin) bağlıdır; eski test adresinden kurulmuş uygulama
+kaldırılmadıkça uç ölmediği için silinmez (404/410 ancak tarayıcı aboneliği
+iptal ederse döner).
 
 `mod:"run"` (v35.5 — GitHub Actions ile **aynı** kural):
 - `x-bildirim-secret` yoksa/yanlışsa **401**
