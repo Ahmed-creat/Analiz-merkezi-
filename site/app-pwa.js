@@ -1,4 +1,4 @@
-const PWA_SURUM = "v55-kanal-dogrulama";
+const PWA_SURUM = "v56-yerel-bildirim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -229,6 +229,11 @@ async function pushTeshisYaz() {
       metin += " · Kanal testi: cihaz bildirimi gösteriyor.";
     }
     if (cihaz.ucKodu) metin += " · Cihaz kodu: " + cihaz.ucKodu + ".";
+    // v56 — hangi tarayıcı? (Chrome dışı / WebView ise push inmez)
+    try {
+      const tb = (window.AmPush && window.AmPush.kisaTarayici) ? window.AmPush.kisaTarayici() : "";
+      if (tb) metin += " · Tarayıcı: " + tb + ".";
+    } catch (e) { /* */ }
     if (sonPush && sonPush.hata) metin += " Gösterim hatası: " + String(sonPush.hata).slice(0, 80);
     if (sonPush && sonPush.sadeSecenek) metin += " (sade biçimde gösterildi)";
     kutu.textContent = metin;

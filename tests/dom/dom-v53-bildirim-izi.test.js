@@ -54,7 +54,18 @@ ok("kanal testi düğmesi var", /data-act="amKanalTesti"/.test(APP));
 ok("sahte başarı mesajı kaldırıldı (index.html)", !/if \(t && t\.ok && typeof toast === "function"\) toast\("Bildirimler açıldı — biraz önce bir bildirim gösterdim\."/.test(HTML));
 ok("index.html cihaz göstermiyorsa hata diyor", /cihazGostermiyor/.test(HTML));
 
-console.log("\n== 6) Sürüm damgası senkron ==");
+console.log("\n== 6) Yerel yedek yol + teşhis (v56) ==");
+ok("arka planda yerel sistem bildirimi var", /function yerelSistemBildirimi\(n\)/.test(HTML));
+ok("yalnız sekme gizliyken gösteriyor", /document\.visibilityState !== "hidden"\) return/.test(HTML));
+ok("günlük tekilleştirme var", /am_yerel_sys_/.test(HTML));
+ok("push izi bugün aynı başlığı gösterdiyse atlıyor", /iz\.baslik === String\(n\.title/.test(HTML));
+ok("addNotification yerel bildirimi çağırıyor", /yerelSistemBildirimi\(n\);/.test(HTML));
+ok("teşhis: tarayıcı adı + anahtar parmak izi kaydediliyor", /\|k=" \+ aboneAnahtarParmak\(abone\)/.test(PUSH));
+ok("WebView ayırt ediliyor", /WV:/.test(PUSH));
+ok("hedef (imza) anahtarı da yazılıyor", /__amHedefAnahtar/.test(PUSH));
+ok("profil tarayıcı adını gösteriyor", /" · Tarayıcı: " \+ tb/.test(APP));
+
+console.log("\n== 7) Sürüm damgası senkron ==");
 const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "analiz-merkezi-v-\d+-([^"]+)"/) || [])[1] || "";
 ok("PWA_SURUM tanımlı", !!surum);

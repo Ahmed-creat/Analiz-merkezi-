@@ -2268,6 +2268,42 @@ function coachMessages() {
 // gerekir (plan.pdf FAZ 4). Bu motor uygulama açıkken ve açılışta çalışır.
 // ============================================================
 
+// v56 — YEREL SİSTEM BİLDİRİMİ (push'a bağımlı olmayan yol).
+// Kanıt: 16 Kasım'da sunucudan gelen push cihaza hiç inmiyordu (201 kabul,
+// SW'ye ulaşmıyor) ama YEREL showNotification çalışıyordu. Uygulama arka
+// plandayken üretilen hatırlatmalar artık sistem bildirimi olarak da gösterilir;
+// böylece push kanalı aksasa bile hatırlatma gözden kaçmaz.
+function yerelSistemBildirimi(n) {
+  try {
+    if (typeof document === "undefined" || document.visibilityState !== "hidden") return;
+    if (typeof Notification === "undefined" || Notification.permission !== "granted") return;
+    if (!("serviceWorker" in navigator)) return;
+    const gunAnahtari = "am_yerel_sys_" + todayStr();
+    let m = {};
+    try { m = JSON.parse(localStorage.getItem(gunAnahtari) || "{}") || {}; } catch (e) { m = {}; }
+    const kod = (n.kind || "info") + "|" + String(n.title || "").slice(0, 40);
+    if (m[kod]) return;                       // bugün aynısı gösterildi
+    m[kod] = Date.now();
+    try { localStorage.setItem(gunAnahtari, JSON.stringify(m)); } catch (e) { /* */ }
+    navigator.serviceWorker.ready.then(function (kayit) {
+      // push bugün aynı başlığı zaten gösterdiyse tekrar gösterme
+      return caches.open("am-push-iz").then(function (c) {
+        return c.match("/__am-push-son").then(function (r) { return r ? r.json() : null; }).catch(function () { return null; })
+          .then(function (iz) {
+            const ayni = iz && iz.baslik && iz.baslik === String(n.title || "") &&
+              (Date.now() - Number(iz.zaman || 0)) < 6 * 3600 * 1000;
+            if (ayni) return;
+            return kayit.showNotification(String(n.title || "Analiz Merkezi"), {
+              body: String(n.body || ""),
+              icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
+              tag: "am-yerel-" + (n.kind || "info"), data: { url: "./" }
+            });
+          });
+      });
+    }).catch(function () { /* gösterilemezse uygulama içi bildirim kalır */ });
+  } catch (e) { /* */ }
+}
+
 function addNotification(n) {
   // Aynı bildirimi tekrar üretme
   const dup = state.notifications.some(x => x.kind === n.kind && x.topicKey === n.topicKey && x.body === n.body);
@@ -2279,6 +2315,7 @@ function addNotification(n) {
   if (state.notifications.length > 200) state.notifications.length = 200;
   saveState();
   updateBellBadges();
+  yerelSistemBildirimi(n);   // v56 — arka planda sistem bildirimi
 }
 
 function unreadCount() { return state.notifications.filter(n => !n.read).length; }

@@ -128,6 +128,28 @@
     return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   }
 
+  // v56 — TEŞHİS: hangi tarayıcı, abonelik hangi VAPID anahtarıyla kurulmuş?
+  // "201 döndü ama cihaza inmedi" tablosunda iki şeyi ayırmak için:
+  //   • anahtar uyuşmazlığı  → subscription'ın applicationServerKey'i ≠ imza anahtarı
+  //   • tarayıcı sorunu      → WebView / Chrome dışı tarayıcı / eski sürüm
+  // Bu iki bilgi abonelik satırının `ua` alanına yazılır (şema değişmez).
+  function kisaTarayici() {
+    try {
+      const ua = navigator.userAgent || "";
+      const webview = /; wv\)/.test(ua) || (/Chrome\//.test(ua) && !/Safari\//.test(ua));
+      const m = ua.match(/(SamsungBrowser|EdgA|YaBrowser|Firefox|FxiOS|CriOS|Chrome)\/(\d+)/);
+      const ad = m ? m[1] + "/" + m[2] : "bilinmeyen";
+      return (webview ? "WV:" : "") + ad;
+    } catch (e) { return "?"; }
+  }
+  function aboneAnahtarParmak(a) {
+    try {
+      const k = a && a.options && a.options.applicationServerKey;
+      if (!k) return "yok";
+      return b64Yaz(new Uint8Array(k)).slice(0, 12);
+    } catch (e) { return "hata"; }
+  }
+
   /** Depoya (push_abonelikleri) yaz — supabase-js varsa onu, yoksa REST kullanır. */
   async function kaydet(abone) {
     const u = kullanici();
@@ -138,7 +160,9 @@
       endpoint: j.endpoint,
       p256dh: (j.keys && j.keys.p256dh) || "",
       auth: (j.keys && j.keys.auth) || "",
-      ua: navigator.platform || "",
+      // v56 — teşhis: tarayıcı | abonelik anahtarı | hedef (imza) anahtarı
+      ua: kisaTarayici() + "|k=" + aboneAnahtarParmak(abone) +
+          "|h=" + String(window.__amHedefAnahtar || "").slice(0, 12),
       aktif: true,
       updated_at: new Date().toISOString()
     };
@@ -194,6 +218,7 @@
     const sunucuAnahtar = await sunucuVapid();
     const kullanilacak = sunucuAnahtar || VAPID_ACIK;
     const istenen = b64Coz(kullanilacak);
+    window.__amHedefAnahtar = kullanilacak; // v56 — teşhis kaydı için
     let abone = await kayit.pushManager.getSubscription();
     if (abone) {
       // Farklı bir anahtarla kurulmuşsa (eski FCM / eski sürüm) DEĞİŞTİR.
@@ -418,7 +443,7 @@
     } catch (e) { return { ok: false, neden: anlasilirHata(e) }; }
   }
 
-  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, yenile, sunucuVapid, buYuzdenKapali: anlasilirHata, testGonderildiMi, sonKayitHatasi };
+  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, yenile, sunucuVapid, buYuzdenKapali: anlasilirHata, testGonderildiMi, sonKayitHatasi, kisaTarayici };
   // Oturum açıldığında app-pwa.js çağırır; gecikmeli de bir kez dene.
   // v43 — HER açılışta ve uygulama öne geldiğinde abonelik tazelenir: eski
   // uç nokta ölmüşse zamanlanmış hatırlatmalar sessizce kayboluyordu.
