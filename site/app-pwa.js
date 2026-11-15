@@ -1,4 +1,4 @@
-const PWA_SURUM = "v58-vapid-cifti-duzeltildi";
+const PWA_SURUM = "v59-tek-kanal-webpush";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -204,7 +204,9 @@ async function pushTeshisYaz() {
     }
     // v57 — DÜRÜSTLÜK: "izin açık" bir kanıt değil, ön koşuldur. Metin artık
     // "hatırlatma gelir" DEMAZ; cihazın push alıp almadığı ölçümle yazılır.
-    let metin = "Bildirim izni açık ✓ Saatler: 07:35 · 13:05 · 19:30 · 21:35.";
+    // v59 — DÜRÜST SAAT: hatırlatma günde iki vardiya gider (sabah + akşam).
+    // Dört saat yazıp ikisini göndermek yanıltıcıydı.
+    let metin = "Bildirim izni açık ✓ Günde 2 hatırlatma: sabah 07:35 · akşam 19:30.";
     if (sonGonderim) {
       const t = new Date(sonGonderim + "T00:00:00");
       const gun = t.toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
