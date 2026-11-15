@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261031-v56-yerel-bildirim";
+const CACHE = "analiz-merkezi-v-20261031-v57-teslim-olcumu";
 const ASSETS = [
   "./",
   "./index.html",
@@ -217,6 +217,8 @@ self.addEventListener("activate", (e) => {
       keys.filter((k) => k !== CACHE && k !== KORUNAN_IZ).map((k) => caches.delete(k))
     )).then(() => self.clients.claim())
   );
+  // v57 — hangi SW sürümünün cihazda gerçekten çalıştığı sunucudan görülsün
+  e.waitUntil(teslimAbone().then(() => teslimYaz({ asama: "sw-acildi" })));
 });
 self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
@@ -276,6 +278,48 @@ function bildirimSecenekleri(payload) {
    Ayarlar → Bildirim durumu bu izi okur. */
 const PUSH_IZ_ADI = "am-push-iz";
 const PUSH_IZ_YOLU = "/__am-push-son";
+
+/* v57 — CİHAZ TARAFI ÖLÇÜM (sunucudan okunabilir kanıt)
+   -------------------------------------------------------
+   Tablo: "FCM 201 kabul etti" ≠ "bildirim cihazda". Aradaki farkı ölçmenin
+   tek kesin yolu cihazın KENDİ beyanıdır. Bu yüzden service worker:
+     • her kurulumda  asama:"sw-acildi"   → hangi SW sürümü çalışıyor,
+     • push gelince   asama:"push"        → push OLAYI cihaza ULAŞTI,
+     • gösterim sonrası asama:"gosterim"  → gösterildi mi, hata neydi
+   satırlarını doğrudan veritabanına yazar. Böylece "cihaza hiç inmedi" ile
+   "indi ama Android göstermedi" ayrımı tahmin değil kayıt olur.
+   Yazma/okuma anon anahtarla; tablo yalnız teşhis satırları içerir (gizli veri yok). */
+const TESLIM_URL = "https://ztgzmhfklsdlngrtennp.supabase.co/rest/v1/push_teslim";
+const TESLIM_ANAHTAR = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0Z3ptaGZrbHNkbG5ncnRlbm5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMxMTgzODMsImV4cCI6MjEwODY5NDM4M30.mQ1gt11KldJaPkdU07B51jC6XLYyfwsIaU-qNYkhZzE";
+let TESLIM_ABONE = "";
+async function teslimYaz(kayit) {
+  try {
+    const govde = Object.assign({
+      sw: CACHE,
+      ua: String((self.navigator && self.navigator.userAgent) || "").slice(0, 160),
+      abonelik: TESLIM_ABONE
+    }, kayit);
+    const y = await fetch(TESLIM_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: TESLIM_ANAHTAR,
+        Authorization: "Bearer " + TESLIM_ANAHTAR,
+        Prefer: "return=minimal"
+      },
+      body: JSON.stringify(govde)
+    });
+    return y.ok;
+  } catch (e) { return false; }
+}
+/* Bu cihazın abonelik kuyruğu (son 4 karakter) — hangi cihaz olduğu belli olsun */
+async function teslimAbone() {
+  try {
+    const a = await self.registration.pushManager.getSubscription();
+    TESLIM_ABONE = a && a.endpoint ? String(a.endpoint).slice(-4) : "";
+  } catch (e) { TESLIM_ABONE = ""; }
+  return TESLIM_ABONE;
+}
 async function pushIzYaz(bilgi) {
   try {
     const c = await caches.open(PUSH_IZ_ADI);
@@ -288,6 +332,9 @@ self.addEventListener("push", (event) => {
   const secim = bildirimSecenekleri(pushPayload(event));
   event.waitUntil((async () => {
     const iz = { zaman: Date.now(), baslik: String(secim.title || "").slice(0, 120) };
+    // v57 — ÖNCE "push OLAYI ULAŞTI" satırı (gösterim başarısız olsa da kalır)
+    await teslimAbone();
+    await teslimYaz({ asama: "push", baslik: String(secim.title || "").slice(0, 120) });
     // ÖNCE iz, SONRA gösterim: gösterim hata verse bile "push ulaştı" kanıtı kalır.
     await pushIzYaz(iz);
     try {
@@ -313,6 +360,13 @@ self.addEventListener("push", (event) => {
       }
     }
     if (iz.hata) await pushIzYaz(iz);
+    // v57 — gösterim sonucu da sunucuya: "Android gösterdi mi?"
+    await teslimYaz({
+      asama: "gosterim",
+      baslik: iz.baslik,
+      gosterildi: !!iz.gosterildi,
+      hata: iz.hata2 || iz.hata || null
+    });
   })());
 });
 

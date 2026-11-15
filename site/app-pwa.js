@@ -1,4 +1,4 @@
-const PWA_SURUM = "v56-yerel-bildirim";
+const PWA_SURUM = "v57-teslim-olcumu";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -202,7 +202,9 @@ async function pushTeshisYaz() {
       kutu.textContent = m2;
       return;
     }
-    let metin = "Açık ✓ Her sabah 07:35 · 13:05 · akşam 19:30 · 21:35 hatırlatma gelir.";
+    // v57 — DÜRÜSTLÜK: "izin açık" bir kanıt değil, ön koşuldur. Metin artık
+    // "hatırlatma gelir" DEMAZ; cihazın push alıp almadığı ölçümle yazılır.
+    let metin = "Bildirim izni açık ✓ Saatler: 07:35 · 13:05 · 19:30 · 21:35.";
     if (sonGonderim) {
       const t = new Date(sonGonderim + "T00:00:00");
       const gun = t.toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
@@ -228,6 +230,30 @@ async function pushTeshisYaz() {
     } else if (kanal && kanal.gorunur === true) {
       metin += " · Kanal testi: cihaz bildirimi gösteriyor.";
     }
+    // v57 — CİHAZ BEYANI (sw.js → push_teslim): sunucunun gönderdiği push
+    // OLAYI bu cihaza ulaştı mı? "Gönderildi" ile "cihaz aldı" arasındaki fark
+    // artık kullanıcıya tahmin olarak değil kayıt olarak gösterilir.
+    try {
+      const kod = cihaz.ucKodu || "";
+      if (sb && sb.from && kod) {
+        const { data } = await sb.from("push_teslim")
+          .select("asama,created_at,gosterildi,hata")
+          .eq("abonelik", kod).order("created_at", { ascending: false }).limit(6);
+        const satirlar = Array.isArray(data) ? data : [];
+        const pushSatir = satirlar.filter(function (r) { return r.asama === "push"; })[0] || null;
+        const gosterim = satirlar.filter(function (r) { return r.asama === "gosterim"; })[0] || null;
+        const bicim = function (z) {
+          return new Date(z).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+        };
+        if (pushSatir) {
+          metin += " · Cihaz sunucu bildirimini ALDI ✓ (" + bicim(pushSatir.created_at) + ")";
+          if (gosterim) metin += gosterim.gosterildi ? ", ekranda gösterdi ✓." : ", EKRANDA GÖSTEREMEDİ: " + String(gosterim.hata || "bilinmeyen hata").slice(0, 60);
+          else metin += ".";
+        } else if (satirlar.some(function (r) { return r.asama === "sw-acildi"; })) {
+          metin += " · Cihaz hazır, ama sunucu bildirimi bu cihaza HİÇ ULAŞMADI.";
+        }
+      }
+    } catch (e) { /* ölçüm okunamazsa metin kısalır, uygulama bozulmaz */ }
     if (cihaz.ucKodu) metin += " · Cihaz kodu: " + cihaz.ucKodu + ".";
     // v56 — hangi tarayıcı? (Chrome dışı / WebView ise push inmez)
     try {

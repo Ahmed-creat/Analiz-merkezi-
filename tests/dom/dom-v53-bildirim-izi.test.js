@@ -65,6 +65,19 @@ ok("WebView ayırt ediliyor", /WV:/.test(PUSH));
 ok("hedef (imza) anahtarı da yazılıyor", /__amHedefAnahtar/.test(PUSH));
 ok("profil tarayıcı adını gösteriyor", /" · Tarayıcı: " \+ tb/.test(APP));
 
+console.log("\n== 8) Cihaz beyanı: push ulaştı mı? (v57) ==");
+ok("sw.js push_teslim tablosuna yazıyor", /rest\/v1\/push_teslim/.test(SW));
+ok("push olayı gelince 'push' satırı yazılıyor", /asama: "push"/.test(SW));
+ok("gösterim sonucu 'gosterim' satırı olarak yazılıyor", /asama: "gosterim"/.test(SW));
+ok("kurulumda 'sw-acildi' nabzı var", /asama: "sw-acildi"/.test(SW));
+ok("hangi SW sürümü çalışıyor bilgisi kayda giriyor", /sw: CACHE/.test(SW));
+ok("cihaz kodu (abonelik son 4) kayda giriyor", /TESLIM_ABONE/.test(SW));
+ok("ölçüm okunamazsa uygulama bozulmuyor (try/catch)", /push_teslim"\)\s*\n?\.select|from\("push_teslim"\)/.test(APP));
+ok("izin açık artık 'hatırlatma gelir' diye vaat etmiyor",
+  !/let metin = "Açık ✓ Her sabah/.test(APP));
+ok("cihaz aldıysa gösteriliyor", /Cihaz sunucu bildirimini ALDI/.test(APP));
+ok("cihaza hiç ulaşmadıysa açıkça yazılıyor", /HİÇ ULAŞMADI/.test(APP));
+
 console.log("\n== 7) Sürüm damgası senkron ==");
 const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "analiz-merkezi-v-\d+-([^"]+)"/) || [])[1] || "";
