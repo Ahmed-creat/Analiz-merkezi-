@@ -63,7 +63,9 @@ ok("uygulama anahtarı sunucudan alıyor", PUSH.indexOf("async function sunucuVa
 ok("abonelik SUNUCU anahtarıyla kuruluyor", PUSH.indexOf("const kullanilacak = sunucuAnahtar || VAPID_ACIK") > 0);
 ok("anahtar değişmişse abonelik yenileniyor", PUSH.indexOf("b64Yaz(mevcut) !== kullanilacak") > 0);
 ok("anahtar çakışmasında zorla sıfırlayıp yeniden dener", PUSH.indexOf("await eski.unsubscribe()") > 0);
-ok("oturum geç gelirse vazgeçmiyor (yeniden dener)", PUSH.indexOf("if (otomatikDeneme++ < 8)") > 0);
+// v54: 8 deneme (32 sn) yavaş açılışta yetmiyordu; sınır yükseltildi.
+// Test sabit sayıya bağlı kalmasın: "vazgeçmeden yeniden deniyor" ölçülür.
+ok("oturum geç gelirse vazgeçmiyor (yeniden dener)", /if \(otomatikDeneme\+\+ < \d+\) setTimeout\(otomatik, \d+\)/.test(PUSH));
 ok("tek dokunuşluk onarım var", PUSH.indexOf("async function yenile()") > 0 && APP.indexOf('a === "amBildirimOnar"') > 0);
 ok("durum metni sunucu + cihazı KARŞILAŞTIRIYOR", APP.indexOf("sunucuSonGonderim") > 0 && APP.indexOf("cihaz aldı") > 0);
 ok("4 hatırlatma saati yazılı", APP.indexOf("07:35 · 13:05 · akşam 19:30 · 21:35") > 0);

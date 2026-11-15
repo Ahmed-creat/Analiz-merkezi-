@@ -78,6 +78,19 @@
     return yerelVapid();
   }
 
+  // v54 — KAYIT HATASI GÖRÜNÜR OLSUN.
+  // "Abonelik var" ≠ "sunucu bu cihazı biliyor". Kayıt başarısız olursa
+  // (oturum henüz yok, RLS, ağ) sunucu bu cihaza HİÇ göndermez ama arayüz
+  // "Açık ✓ hatırlatma gelir" diyordu. Artık hata saklanır ve gösterilir.
+  const KAYIT_HATA_ANAHTARI = "am_push_kayit_hata";
+  function kayitHatasiYaz(neden) {
+    try { localStorage.setItem(KAYIT_HATA_ANAHTARI, JSON.stringify({ zaman: Date.now(), neden: String(neden || "").slice(0, 160) })); } catch (e) { /* */ }
+  }
+  function kayitHatasiSil() { try { localStorage.removeItem(KAYIT_HATA_ANAHTARI); } catch (e) { /* */ } }
+  function sonKayitHatasi() {
+    try { const j = JSON.parse(localStorage.getItem(KAYIT_HATA_ANAHTARI) || "null"); return j && j.zaman ? j : null; } catch (e) { return null; }
+  }
+
   function app() {
     if (window.__amSupabase) return window.__amSupabase;
     return null;
@@ -210,7 +223,8 @@
   async function abone(izinZorla) {
     const a = await abonelikAl(izinZorla);
     const r = await kaydet(a);
-    if (r.ok) window.__amPushAbone = true;
+    if (r.ok) { window.__amPushAbone = true; kayitHatasiSil(); }
+    else kayitHatasiYaz(r && r.neden);
     return r;
   }
 
@@ -378,7 +392,10 @@
       // v44 — Oturum Supabase'ten birkaç saniyede gelir; eskiden tek deneme
       // 6. saniyede yapılıp vazgeçiliyordu (yavaş ağda abonelik hiç tazelenmiyor).
       if (!kullanici()) {
-        if (otomatikDeneme++ < 8) setTimeout(otomatik, 4000);
+        // v54 — 8×4 sn = 32 sn yetmiyordu (yavaş açılışta abonelik hiç
+        // kaydedilmiyordu). 25×3,5 sn ≈ 87 sn; ayrıca sekme görünür oldukça
+        // oturum gelince otomatik() yine çağrılır.
+        if (otomatikDeneme++ < 25) setTimeout(otomatik, 3500);
         return;
       }
       otomatikDeneme = 0;
@@ -401,7 +418,7 @@
     } catch (e) { return { ok: false, neden: anlasilirHata(e) }; }
   }
 
-  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, yenile, sunucuVapid, buYuzdenKapali: anlasilirHata, testGonderildiMi };
+  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, yenile, sunucuVapid, buYuzdenKapali: anlasilirHata, testGonderildiMi, sonKayitHatasi };
   // Oturum açıldığında app-pwa.js çağırır; gecikmeli de bir kez dene.
   // v43 — HER açılışta ve uygulama öne geldiğinde abonelik tazelenir: eski
   // uç nokta ölmüşse zamanlanmış hatırlatmalar sessizce kayboluyordu.

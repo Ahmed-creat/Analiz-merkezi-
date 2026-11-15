@@ -1,4 +1,4 @@
-const PWA_SURUM = "v53-bildirim-izi";
+const PWA_SURUM = "v54-cihaz-kaydi";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -178,6 +178,18 @@ async function pushTeshisYaz() {
     const cihaz = bilgi && bilgi.cihaz ? bilgi.cihaz : {};
     const sonGonderim = cihaz.sunucuSonGonderim || null;
     const sonPush = cihaz.sonPush ? new Date(cihaz.sonPush.zaman) : null;
+    // v54 — ÖNCE "SUNUCU BU CİHAZI TANIYOR MU?".
+    // 15 Kasım vakası: cihazda abonelik vardı, arayüz "Açık ✓ hatırlatma gelir"
+    // diyordu, ama uç nokta veritabanında YOKTU → sunucu başka (ölü) uçlara
+    // gönderiyor, FCM 201 dönüyor, tablete hiçbir şey ulaşmıyordu.
+    if (cihaz.kayitli === false) {
+      let m2 = "Bu cihaz sunucuya kayıtlı değil — hatırlatmalar şu an bu cihaza gelmez. “Bağlantıyı yenile”ye dokun.";
+      if (cihaz.ucKodu) m2 += " · Cihaz kodu: " + cihaz.ucKodu + ".";
+      const kh = window.AmPush && window.AmPush.sonKayitHatasi ? window.AmPush.sonKayitHatasi() : null;
+      if (kh && kh.neden) m2 += " Kayıt hatası: " + String(kh.neden).slice(0, 80);
+      kutu.textContent = m2;
+      return;
+    }
     let metin = "Açık ✓ Her sabah 07:35 · 13:05 · akşam 19:30 · 21:35 hatırlatma gelir.";
     if (sonGonderim) {
       const t = new Date(sonGonderim + "T00:00:00");
@@ -856,6 +868,11 @@ function sifreYenileAkisi() {
 function listenAuth() {
   if (!sb) return;
   sb.auth.getSession().then(({ data }) => { if (data && data.session) oturumUygula(data.session); });
+  // v54 — tablette uygulama arka plandan dönünce abonelik tazelensin
+  // (endpoint değişmişse sunucudaki kayıt eskiyordu).
+  window.addEventListener("focus", function () {
+    try { if (window.AmPush && window.AmPush.otomatik) window.AmPush.otomatik(); } catch (e) { /* */ }
+  });
   // Eski sürümlerden gelen (Firebase) oturum kalıntılarını temizle
   try { Object.keys(localStorage).filter(k => k.indexOf("firebase:") === 0 || k.indexOf("__firebase") === 0).forEach(k => localStorage.removeItem(k)); } catch (e) {}
   sb.auth.onAuthStateChange((event, session) => {

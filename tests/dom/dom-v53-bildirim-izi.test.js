@@ -34,7 +34,16 @@ ok("push-bildirim uç nokta son 4 hanesini veriyor", /d\.ucKodu = a && a\.endpoi
 ok("arayüz cihaz kodunu yazıyor", /" · Cihaz kodu: " \+ cihaz\.ucKodu/.test(APP));
 ok("gösterim hatası arayüzde görünüyor", /sonPush\.hata\) metin \+= " Gösterim hatası: "/.test(APP));
 
-console.log("\n== 4) Sürüm damgası senkron ==");
+console.log("\n== 4) 'Kayıtlı değil' dürüstçe söyleniyor (v54) ==");
+ok("kayıtlı değilse uyarı yazılıyor", /if \(cihaz\.kayitli === false\) \{/.test(APP));
+ok("uyarıda cihaz kodu var", /hatırlatmalar şu an bu cihaza gelmez/.test(APP));
+ok("kayıt hatası da gösteriliyor", /Kayıt hatası: "/.test(APP));
+ok("push-bildirim kayıt hatasını saklıyor", /localStorage\.setItem\(KAYIT_HATA_ANAHTARI/.test(PUSH));
+ok("başarılı kayıtta hata siliniyor", /kayitHatasiSil\(\)/.test(PUSH));
+ok("oturum için daha uzun bekleniyor (25 deneme)", /otomatikDeneme\+\+ < 25/.test(PUSH));
+ok("sayfaya dönüşte abonelik tazeleniyor", /window\.addEventListener\("focus"/.test(APP));
+
+console.log("\n== 5) Sürüm damgası senkron ==");
 const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "analiz-merkezi-v-\d+-([^"]+)"/) || [])[1] || "";
 ok("PWA_SURUM tanımlı", !!surum);
