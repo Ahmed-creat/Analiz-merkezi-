@@ -12,6 +12,7 @@ const KOK = path.join(__dirname, "..", "..");
 const SW = fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8");
 const APP = fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8");
 const PUSH = fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8");
+const HTML = fs.readFileSync(path.join(KOK, "site", "index.html"), "utf8");
 
 let gecen = 0; const hata = [];
 const ok = (ad, kosul) => { if (kosul) { gecen++; console.log("  ✓ " + ad); } else { hata.push(ad); console.log("  ✗ " + ad); } };
@@ -43,7 +44,17 @@ ok("başarılı kayıtta hata siliniyor", /kayitHatasiSil\(\)/.test(PUSH));
 ok("oturum için daha uzun bekleniyor (25 deneme)", /otomatikDeneme\+\+ < 25/.test(PUSH));
 ok("sayfaya dönüşte abonelik tazeleniyor", /window\.addEventListener\("focus"/.test(APP));
 
-console.log("\n== 5) Sürüm damgası senkron ==");
+console.log("\n== 5) 'Gönderildi' ≠ 'göründü' (v55) ==");
+ok("gösterimden sonra getNotifications ile doğrulanıyor",
+  /sayi = \(await kayit\.getNotifications\(\{ tag: etiket \}\)\)\.length/.test(APP));
+ok("görünmediyse ok:false dönüyor", /ok: gorunur/.test(APP));
+ok("sonuç cihazda saklanıyor", /am_bildirim_kanal_testi/.test(APP));
+ok("profil satırı 'cihaz göstermiyor' diyebiliyor", /CİHAZ BİLDİRİM GÖSTERMİYOR/.test(APP));
+ok("kanal testi düğmesi var", /data-act="amKanalTesti"/.test(APP));
+ok("sahte başarı mesajı kaldırıldı (index.html)", !/if \(t && t\.ok && typeof toast === "function"\) toast\("Bildirimler açıldı — biraz önce bir bildirim gösterdim\."/.test(HTML));
+ok("index.html cihaz göstermiyorsa hata diyor", /cihazGostermiyor/.test(HTML));
+
+console.log("\n== 6) Sürüm damgası senkron ==");
 const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "analiz-merkezi-v-\d+-([^"]+)"/) || [])[1] || "";
 ok("PWA_SURUM tanımlı", !!surum);

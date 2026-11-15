@@ -2584,10 +2584,13 @@ function requestNotifPermission() {
     // v41 — KULLANICI: "'Bu cihazda dene'yi bildirim izni verildiği anda çağır."
     // İzin verildiği SANİYE cihazda bir sistem bildirimi gösterilir (sunucuya
     // bağlı değil). Göründüyse telefonun bildirim kanalı sağlamdır.
+    // v55 — "gösterdim" demek yetmez: gerçekten göründü mü diye ölçülür.
     try {
       if (window.__amCihazBildirimTesti) {
         window.__amCihazBildirimTesti().then(function (t) {
-          if (t && t.ok && typeof toast === "function") toast("Bildirimler açıldı — biraz önce bir bildirim gösterdim.", "success");
+          if (typeof toast !== "function") return;
+          if (t && t.gorunur) toast("Bildirimler açıldı — cihazda bir bildirim gösterdim ✓", "success");
+          else if (t && t.gorunur === false) toast("Bu cihaz bildirimi GÖSTERMİYOR. Ayarlar → Uygulamalar → Chrome → Bildirimler açık mı? Rahatsız etmeyin kapalı mı?", "error");
         }).catch(function () { });
       }
     } catch (e) { /* */ }
@@ -2602,9 +2605,15 @@ function requestNotifPermission() {
       updateBildirimDurum();
       if (r && r.ok) {
         const testGitti = !!(r.test && r.test.ok);
-        if (typeof toast === "function") toast(testGitti
-          ? "Bildirimler açıldı. Bu cihaza bir deneme bildirimi gönderildi."
-          : "Bildirimler açık — uygulama kapalıyken de haber vereceğim.", "success");
+        // v55 — sunucu "gönderdim" dese de cihaz gösteremiyorsa SUCCESS denmez.
+        const kanal = (window.__amSonKanalTesti ? window.__amSonKanalTesti() : null);
+        const cihazGostermiyor = !!(kanal && kanal.gorunur === false);
+        if (typeof toast === "function") {
+          if (cihazGostermiyor) toast("Sunucu bildirimi gönderdi ama bu cihaz göstermiyor. Telefon: Ayarlar → Uygulamalar → Chrome → Bildirimler + Rahatsız etmeyin.", "error");
+          else toast(testGitti
+            ? "Bildirimler açıldı. Bu cihaza bir deneme bildirimi gönderildi."
+            : "Bildirimler açık — uygulama kapalıyken de haber vereceğim.", "success");
+        }
       }
       else if (typeof toast === "function") toast("Bildirim aboneliği kurulamadı. Birazdan tekrar dene.", "warning");
     }).catch(function (e) {

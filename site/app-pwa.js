@@ -1,4 +1,4 @@
-const PWA_SURUM = "v54-cihaz-kaydi";
+const PWA_SURUM = "v55-kanal-dogrulama";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -150,6 +150,18 @@ function initAuthUI() {
 // v41 — TEK CÜMLELİK, ÖĞRENCİYE YÖNELİK DURUM.
 // Teknik tanılama metinleri (VAPID anahtarı, abonelik uç noktası, sunucu
 // sürümü, push izi) kaldırıldı; öğrencinin yapabileceği bir şey varsa o yazılır.
+// v55 — profil düğmesi: bildirimi göster, göründü mü diye ölç, sonucu söyle.
+async function amKanalTestiCalistir() {
+  if (typeof toast === "function") toast("Bildirim kanalı deneniyor…", "info");
+  const t = await cihazBildirimTesti();
+  if (typeof toast === "function") {
+    if (t && t.gorunur) toast("Cihaz bildirimi gösteriyor ✓ Bu cihaza hatırlatmalar düşecek.", "success");
+    else if (t && /izin/.test(String(t.neden || ""))) toast("Önce bildirim izni ver: Ayarlar → Bildirim İzni İste.", "warning");
+    else toast("Bu cihaz bildirimi GÖSTERMİYOR. Telefon ayarları → Uygulamalar → Chrome → Bildirimler'i aç, Rahatsız etmeyin'i kapat, sonra tekrar dene.", "error");
+  }
+  await pushTeshisYaz();
+}
+
 async function pushTeshisYaz() {
   const kutu = document.getElementById("pwa-push-durum");
   if (!kutu) return;
@@ -208,6 +220,14 @@ async function pushTeshisYaz() {
     // v53 — CİHAZ KODU + varsa gösterim hatası. İkisi birlikte, "sunucu
     // gönderdi ama cihaz göstermedi" ile "cihaz hiç almadı" ayrımını
     // kullanıcıdan tek satırla öğrenmeyi sağlar.
+    const kanal = (window.__amSonKanalTesti ? window.__amSonKanalTesti() : null);
+    if (kanal && kanal.gorunur === false) {
+      metin += " · CİHAZ BİLDİRİM GÖSTERMİYOR (kanal testi: " +
+        new Date(kanal.zaman).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) +
+        "). Android: Ayarlar → Uygulamalar → Chrome → Bildirimler açık mı? Rahatsız etmeyin kapalı mı?";
+    } else if (kanal && kanal.gorunur === true) {
+      metin += " · Kanal testi: cihaz bildirimi gösteriyor.";
+    }
     if (cihaz.ucKodu) metin += " · Cihaz kodu: " + cihaz.ucKodu + ".";
     if (sonPush && sonPush.hata) metin += " Gösterim hatası: " + String(sonPush.hata).slice(0, 80);
     if (sonPush && sonPush.sadeSecenek) metin += " (sade biçimde gösterildi)";
@@ -750,7 +770,11 @@ function renderProfileModal() {
   // bildirim durumu kaldı.
   html += '<div style="border:1px solid rgba(0,0,0,0.10);border-radius:14px;padding:12px;font-size:12px;line-height:1.6;">';
   html += '<b>Bildirimler</b><div id="pwa-push-durum" style="margin-top:6px;">kontrol ediliyor…</div>';
-  html += '<button data-act="amBildirimOnar" style="margin-top:8px;background:none;border:1px solid rgba(0,0,0,0.15);border-radius:8px;padding:6px 10px;font-size:12px;color:inherit;cursor:pointer;">Bağlantıyı yenile</button>';
+  html += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">';
+  html += '<button data-act="amBildirimOnar" style="background:none;border:1px solid rgba(0,0,0,0.15);border-radius:8px;padding:6px 10px;font-size:12px;color:inherit;cursor:pointer;">Bağlantıyı yenile</button>';
+  // v55 — tek dokunuş: bildirimi gösterir ve GERÇEKTEN göründü mü diye ölçer.
+  html += '<button data-act="amKanalTesti" style="background:none;border:1px solid rgba(0,0,0,0.15);border-radius:8px;padding:6px 10px;font-size:12px;color:inherit;cursor:pointer;">Bildirim kanalını test et</button>';
+  html += '</div>';
   html += '</div>';
 
   html += '</div>';
@@ -1111,21 +1135,46 @@ function realtimeBildirim(r, sessizSistem) {
 // kaldır. 'Bu cihazda dene'yi bildirim izni verildiği anda çağır."
 // Yani ayrı test düğmesi YOK; izin verilir verilmez bu cihazda bir sistem
 // bildirimi gösterilir. Kullanıcı bildirimi görürse kanal sağlamdır.
+// v55 — "GÖNDERİLDİ" DEMEK YETMİYOR: GERÇEKTEN GÖRÜNDÜ MÜ?
+// 16 Kasım vakası: showNotification hatasız dönüyordu ama Android bildirimi
+// hiç göstermiyordu; arayüz "test bildirimi gönderildi" diyordu. Artık
+// gösterimden sonra getNotifications() ile VAR MI diye bakılır ve sonuç
+// cihazda saklanır (profil satırı bunu okur).
+const KANAL_TESTI_ANAHTARI = "am_bildirim_kanal_testi";
 async function cihazBildirimTesti() {
+  const yaz = (r) => {
+    try { localStorage.setItem(KANAL_TESTI_ANAHTARI, JSON.stringify(Object.assign({ zaman: Date.now() }, r))); } catch (e) { /* */ }
+    return r;
+  };
   try {
-    if (typeof Notification === "undefined") return { ok: false, neden: "Bu tarayıcı bildirim göstermiyor." };
-    if (Notification.permission !== "granted") return { ok: false, neden: "Bildirim izni verilmedi." };
-    if (!("serviceWorker" in navigator)) return { ok: false, neden: "Bu ortamda sistem bildirimi gösterilemiyor." };
+    if (typeof Notification === "undefined") return yaz({ ok: false, neden: "Bu tarayıcı bildirim göstermiyor." });
+    if (Notification.permission !== "granted") return yaz({ ok: false, neden: "Bildirim izni verilmedi." });
+    if (!("serviceWorker" in navigator)) return yaz({ ok: false, neden: "Bu ortamda sistem bildirimi gösterilemiyor." });
     const kayit = await navigator.serviceWorker.ready;
+    const etiket = "am-izin-testi-" + Date.now(); // benzersiz: eski bildirimle karışmasın
     await kayit.showNotification("Bildirimler açıldı ✓", {
       body: "Bunu görüyorsan bu cihazın bildirim kanalı sağlam. Her sabah görevlerini hatırlatacağım.",
-      icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: "am-izin-testi", data: { url: "./" }
+      icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: etiket, data: { url: "./" }
     });
-    return { ok: true };
+    // Kısa bekle: bazı tarayıcılar listeyi gecikmeli günceller.
+    await new Promise(function (r) { setTimeout(r, 1200); });
+    let sayi = -1;
+    try { sayi = (await kayit.getNotifications({ tag: etiket })).length; } catch (e) { sayi = -1; }
+    const gorunur = sayi > 0;
+    return yaz({
+      ok: gorunur,
+      gorunur: gorunur,
+      sayi: sayi,
+      neden: gorunur ? "" : "Tarayıcı bildirimi oluşturdu ama listede yok — cihaz/Android göstermiyor."
+    });
   } catch (e) {
-    return { ok: false, neden: "Bildirim gösterilemedi." };
+    return yaz({ ok: false, gorunur: false, neden: "Bildirim gösterilemedi: " + String((e && e.message) || e).slice(0, 80) });
   }
 }
+function sonKanalTesti() {
+  try { const j = JSON.parse(localStorage.getItem(KANAL_TESTI_ANAHTARI) || "null"); return j && j.zaman ? j : null; } catch (e) { return null; }
+}
+window.__amSonKanalTesti = sonKanalTesti;
 // index.html (klasik script) bu kancayla çağırır.
 window.__amCihazBildirimTesti = cihazBildirimTesti;
 
@@ -1674,6 +1723,7 @@ function initOkulizyonUI() {
     else if (a === "okzSimdiCek") { toast("Okulizyon sonuçları sorgulanıyor…", "info"); okzSunucuCek(); }
     else if (a === "okzClose") closeOkzModal();
     else if (a === "okzSaveBilgi") okzSaveBilgi();
+    else if (a === "amKanalTesti") { amKanalTestiCalistir(); }
     else if (a === "amBildirimOnar") {
       if (!window.AmPush || !window.AmPush.yenile) { toast("Bildirim modülü yüklenmedi, sayfayı yenile.", "warning"); return; }
       toast("Bildirim bağlantısı yeniden kuruluyor…", "info");
