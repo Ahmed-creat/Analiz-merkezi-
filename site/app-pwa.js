@@ -1,4 +1,4 @@
-const PWA_SURUM = "v57-teslim-olcumu";
+const PWA_SURUM = "v58-vapid-cifti-duzeltildi";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

@@ -78,6 +78,13 @@ ok("izin açık artık 'hatırlatma gelir' diye vaat etmiyor",
 ok("cihaz aldıysa gösteriliyor", /Cihaz sunucu bildirimini ALDI/.test(APP));
 ok("cihaza hiç ulaşmadıysa açıkça yazılıyor", /HİÇ ULAŞMADI/.test(APP));
 
+console.log("\n== 9) VAPID çifti: abonelik anahtarı = imza anahtarı (v58) ==");
+ok("sabit açık anahtar yeni (düzeltilmiş) çift", /VAPID_ACIK = "BIzGKXitJVLsKPQHMciDpOM/.test(PUSH));
+ok("eski/uyumsuz anahtar kalmadı", !/BNRjTCIDs_ML94/.test(PUSH));
+ok("eski anahtar önbelleği geçersiz sayıldı", /am_vapid_sunucu_v58/.test(PUSH));
+ok("anahtar okunamıyorsa da abonelik yenileniyor (doğrulanamaz abonelik korunmaz)",
+  /if \(!mevcut \|\| b64Yaz\(mevcut\) !== kullanilacak\)/.test(PUSH));
+
 console.log("\n== 7) Sürüm damgası senkron ==");
 const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "analiz-merkezi-v-\d+-([^"]+)"/) || [])[1] || "";

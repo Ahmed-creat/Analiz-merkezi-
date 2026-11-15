@@ -35,7 +35,7 @@
   // bildirimi sessizce düşürür ("hiç ulaşmadı" belirtisi tam olarak bu).
   // Bu yüzden hem sunucu sırrı (VAPID_PRIVATE_JWK / VAPID_PUBLIC_KEY) hem
   // bu satır tek bir üretilmiş çiftten yazıldı; ikisi artık ayrışamaz.
-  const VAPID_ACIK = "BNRjTCIDs_ML94GereBzsi08_jNu0qXDQt8GNZPepDplBaIvW3HJuq7GtYOy-lKkNnPPCdMm6YJSFzJIQR46aU8";
+  const VAPID_ACIK = "BIzGKXitJVLsKPQHMciDpOM7D1RDBKEVwim7Z4mmkpiT8QsF1HmoUmAM5FuCWCEe26zh6ca2uoaR_SUryMvAhUE";
 
   // ============================================================
   // v44 — SUNUCU ↔ TARAYICI ANAHTAR ANLAŞMASI (bildirim neden gelmiyor)
@@ -48,7 +48,7 @@
   // DÜŞÜRÜR: ne hata, ne kayıt... tam olarak "hiç gelmiyor" belirtisi.
   // Artık anahtar sunucudan alınır ve abonelik ONA göre kurulur.
   // ============================================================
-  const VAPID_ANAHTAR_DEPO = "am_vapid_sunucu_v44";
+  const VAPID_ANAHTAR_DEPO = "am_vapid_sunucu_v58"; // v58: eski/uyumsuz anahtar önbelleği geçersiz
   function yerelVapid() {
     try { return localStorage.getItem(VAPID_ANAHTAR_DEPO) || ""; } catch (e) { return ""; }
   }
@@ -222,8 +222,13 @@
     let abone = await kayit.pushManager.getSubscription();
     if (abone) {
       // Farklı bir anahtarla kurulmuşsa (eski FCM / eski sürüm) DEĞİŞTİR.
+      // v58 — KÖK NEDEN: VAPID çifti tutmuyordu (açık anahtar A, imza anahtarı B).
+      // Google mesajı 201 ile kabul edip Chrome'a hiç vermiyordu. Ayrıca mevcut
+      // anahtar OKUNAMIYORSA (mevcut boş) eski abonelik korunuyordu; o abonelik
+      // hangi anahtarla kurulduğu bilinmediği için DOĞRULANAMAZ. Artık anahtar
+      // yoksa da yenilenir: abonelik her zaman güncel sunucu anahtarına bağlanır.
       const mevcut = abone.options && abone.options.applicationServerKey;
-      if (mevcut && b64Yaz(mevcut) !== kullanilacak) {
+      if (!mevcut || b64Yaz(mevcut) !== kullanilacak) {
         try { await abone.unsubscribe(); } catch (_) {}
         abone = null;
       }
