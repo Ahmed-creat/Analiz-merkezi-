@@ -669,7 +669,10 @@ select option:checked, select option:hover {
 .list-row:last-child { border-bottom: none; }
 .empty-state { text-align: center; padding: 36px 16px; color: var(--text-muted); }
 .empty-state svg { width: 36px; height: 36px; opacity: 0.4; margin-bottom: 10px; }
-.chart-wrap { position: relative; width: 100%; height: clamp(170px, 32vh, 260px); }
+.chart-wrap { position: relative; width: 100%; height: clamp(190px, 34vh, 280px); overflow: hidden; }
+/* v48 — grafik taşmasın: uzun sınav adları ekseni bozuyordu */
+.chart-wrap canvas { max-width: 100% !important; max-height: 100% !important; }
+.bento-card canvas { max-width: 100% !important; }
 @media (max-height: 560px) { .chart-wrap { height: 180px; } }
 .golden-hour-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.06em; background: var(--semantic-warning-bg); color: var(--semantic-warning); padding: 2px 6px; border-radius: 6px; }
 .regime-table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -1390,10 +1393,17 @@ function activeLessonConfig() {
 // 4 Yalın Yanlış + 3 Yalın Boş taksonomisi (v5 şartnamesi)
 // v35.8 — Yanlış ve BOŞ için AYRI hata nedenleri; "Süre yetmedi" seçeneği
 // kullanıcı isteğiyle TAMAMEN kaldırıldı.
-const WRONG_REASONS = ["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"];
-const EMPTY_REASONS = ["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM"];
-function canonicalReason(value) { return ({"KONU EKSİKLİĞİ":"KONUEKSİKLİĞİ","KONUEKSİKLİĞİ":"KONUEKSİKLİĞİ","ÇÖZÜM YOLUNU BULAMADIM":"ÇÖZÜMYOLUNUBULAMADIM","Konuyu Bilmiyordum":"KONUEKSİKLİĞİ","SÜRE YETMEDİ":"SUREYETMEDI","SÜREYETMEDİ":"SUREYETMEDI"}[String(value || "").trim()] || String(value || "").trim()); }
-function reasonLabel(value) { return ({"KONUEKSİKLİĞİ":"Konu eksiği","ANLAMADIM":"Anlamadım","ÇÖZÜMYOLUNUBULAMADIM":"Çözüm yolunu bulamadım","İşlem Hatası/Dikkatsizlik":"İşlem hatası / dikkatsizlik","Kodlama/Kitapçık Hatası":"Kodlama / kitapçık hatası","SUREYETMEDI":"Süre yetmedi (eski kayıt)"}[canonicalReason(value)] || value); }
+// v48 — KULLANICI: "deneme ve soru girişinde yanlış ve boş nedenleri neden
+// değişmiş? Orjinali böyle değildi."
+// ORİJİNAL ayrım geri getirildi (kaynak: 12.10.2026 teslim zip'i, index.html:1255).
+//   YANLIŞ → Konuyu Bilmiyordum · Anlamadım · İşlem hatası · Kodlama hatası
+//   BOŞ    → Konu eksiği · Çözüm yolunu bulamadım
+// TEK fark: kullanıcının kendi isteğiyle (v35.8) kaldırılan "Süre yetmedi"
+// geri GETİRİLMEDİ.
+const WRONG_REASONS = ["Konuyu Bilmiyordum", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"];
+const EMPTY_REASONS = ["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"];
+function canonicalReason(value) { return ({"KONU EKSİKLİĞİ":"KONUEKSİKLİĞİ","KONUEKSİKLİĞİ":"KONUEKSİKLİĞİ","ÇÖZÜM YOLUNU BULAMADIM":"ÇÖZÜMYOLUNUBULAMADIM","Konuyu Bilmiyordum":"Konuyu Bilmiyordum","SÜRE YETMEDİ":"SUREYETMEDI","SÜREYETMEDİ":"SUREYETMEDI"}[String(value || "").trim()] || String(value || "").trim()); }
+function reasonLabel(value) { return ({"Konuyu Bilmiyordum":"Konuyu bilmiyordum","KONUEKSİKLİĞİ":"Konu eksiği","ANLAMADIM":"Anlamadım","ÇÖZÜMYOLUNUBULAMADIM":"Çözüm yolunu bulamadım","İşlem Hatası/Dikkatsizlik":"İşlem hatası / dikkatsizlik","Kodlama/Kitapçık Hatası":"Kodlama / kitapçık hatası","SUREYETMEDI":"Süre yetmedi (eski kayıt)"}[canonicalReason(value)] || value); }
 
 // Hata tipi -> ağırlık (Laplace düzeltmeli Priorite formülü, v5)
 // Priorite = [1.5·DenemeBilgi + 1.0·TestBilgi + 0.5·(İşlem+Anlama)] × (1 + AYT Ağırlığı)
@@ -2746,6 +2756,10 @@ function navigate(page) {
       '<button class="btn btn-sm btn-ghost" data-nav="dashboard" style="margin-top:10px;">Ana Sayfaya Dön</button></div>';
     if (typeof toast === "function") toast("Sayfa yüklenemedi — Ana Sayfaya dönülüyor.", "error");
   }
+  // v48 — KULLANICI: "her gelişim grafiği bozuk".
+  // Sayfa gizliyken (display:none) çizilen Chart.js tuvali 0 genişlikte
+  // kalabiliyor; görünür olduktan sonra bir kez yeniden boyutlandır.
+  if (typeof grafikleriYenile === "function") requestAnimationFrame(grafikleriYenile);
   const CRUMBS = { dashboard: "Ana Sayfa", tasks: "Günlük Görevler", exams: "Denemelerim", tracking: "Konu Takibi", library: "Kitaplık", planning: "Planlama", knowledge: "Bilgi Bankası", questionbank: "Soru Bankası" };
   const crumb = document.getElementById("topbar-crumb");
   if (crumb) crumb.textContent = CRUMBS[page] || "Ana Sayfa";
@@ -3235,7 +3249,7 @@ const HELP_MODULES = [
   { icon: "library", color: "#059669", title: "Kitaplık (Modül C)", text: "Okuma disiplinini süre ve çözüm hatalarıyla ilişkilendirir. Günlük sayfa girişi yap; Disiplin Puanı, Okuma Hızı ve (5+ deneme sonrası) Bilişsel Kondisyon Eğilimi hesaplanır." },
   { icon: "calendar-clock", color: "var(--semantic-warning)", title: "Planlama (Modül D)", text: "Sınav tarihi + hedef net ile tersine planlama: Haftalık İvme Hedefi = (HedefNet - MevcutOrt) / KalanHafta. Sirkadiyen ritmine göre Altın Saat konuları atanır." },
   { icon: "graduation-cap", color: "var(--brand-blue)", title: "Bilgi Bankası (Modül E) — 5 ADIM", text: "Müfredat ağacından konu seç; 5 adımlı motor çalışır: 1) Ön Test → 2) Aktif Çalışma → 3) Çözümlü Örnek → 4) Karışık Pratik → 5) Kısa Kontrol (5 soru, tek tek). Adımlar sıralı kilitlidir. 4. adım bitince 5. adım AYNI EKRANDA çıkar; ayrıca bir yere tıklaman gerekmez. 5. adım bitmeden konu “tamamlandı” sayılmaz, hafıza takibine girmez ve tekrar kartı açılmaz. Konu tamamlanınca 3-7-14-21-28 gün tekrar takvimi kurulur." },
-  { icon: "pen-tool", color: "var(--semantic-error)", title: "Soru Bankası (Modül F)", text: "Günlük çözümlerini gir; zorluk seviyesi önerisi al (≤%40 TEMEL, ≤%75 ORTA, >%75 ZOR/YENİ NESİL). Denemelerle aynı analitik motora bağlanır (1.0x ağırlık)." },
+  { icon: "pen-tool", color: "var(--semantic-error)", title: "Soru Bankası (Modül F)", text: "Günlük çözümlerini gir. <b>Toplam Çözülen</b> yazınca boş sayısı kendiliğinden hesaplanır (Boş = Toplam − Doğru − Yanlış); doğru/yanlış/boş için konu ve neden satırları açılır. Denemelerle aynı analitik motora bağlanır (1.0x ağırlık)." },
   { icon: "check-square", color: "#059669", title: "Günlük Görevler (Modül G)", text: "Streak (seri) sistemi. Haftada 1 Streak Freeze hakkın var: bir gün boş geçse bile serin yanmaz." },
   { icon: "bell-ring", color: "#0EA5E9", title: "Bildirimler", text: "Bildirim iznini Ayarlar → Bildirim İzni İste ile ver. İzin verdiğin ANDA bu cihaza bir deneme bildirimi gelir. Günde dört kez (07:35 · 13:05 · 19:30 · 21:35) tekrar günü gelen konular ve günün görevleri hatırlatılır." },
   { icon: "message-square", color: "#DC2626", title: "Geri Bildirim", text: "Bir soruda hata mı var? Kısa kontrol veya kart ekranındaki “Bu soruda hata var” düğmesine bas — soru bize olduğu gibi iletilir. Genel öneri/sorun için Ayarlar → Geri Bildirim bölümünü kullan." }
@@ -3399,11 +3413,12 @@ function renderDashCharts() {
     const cv1 = document.getElementById("dash-net-chart");
     if (cv1) {
       const st = examStats();
+      const tamAdlar = st.series.map(s => s.name);
       if (window.__dashNet) window.__dashNet.destroy();
       window.__dashNet = new Chart(cv1, {
         type: "line",
-        data: { labels: st.series.map(s => s.name), datasets: [{ label: "Net", data: st.series.map(s => s.net), borderColor: cssVar("--brand-blue", "#2563EB"), backgroundColor: "rgba(37,99,235,0.08)", fill: true, tension: 0.35, pointRadius: 4, pointBackgroundColor: cssVar("--brand-blue", "#2563EB") }] },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { color: tickCol }, grid: { color: gridCol } }, x: { ticks: { color: tickCol, maxRotation: 30, autoSkip: true }, grid: { color: gridCol } } } }
+        data: { labels: tamAdlar.map(kisaDenemeEtiketi), datasets: [{ label: "Net", data: st.series.map(s => s.net), borderColor: cssVar("--brand-blue", "#2563EB"), backgroundColor: "rgba(37,99,235,0.08)", fill: true, tension: 0.35, pointRadius: 4, pointHitRadius: 14, pointBackgroundColor: cssVar("--brand-blue", "#2563EB") }] },
+        options: grafikAyar(tamAdlar)
       });
     }
     const cv2 = document.getElementById("dash-lesson-chart");
@@ -4261,16 +4276,62 @@ function deleteExam(idx) {
   });
 }
 
+// v48 — görünür olunca tüm grafikleri yeniden ölç (0 genişlik / sıkışma bitişi)
+function grafikleriYenile() {
+  [window.__examChart, window.__dashNet, window.__dashLesson, window.__qbChart].forEach(function (c) {
+    try { if (c && typeof c.resize === "function") c.resize(); } catch (e) { /* yoksay */ }
+  });
+}
+window.addEventListener("orientationchange", () => setTimeout(grafikleriYenile, 250));
+
+// v48 — KULLANICI: "deneme bölümündeki her gelişim grafiği bozuk" (görsel).
+// KÖK NEDEN: x eksenine sınavın TAM adı yazılıyordu
+// ("Okulizyon: 10.SINIF MAARİF İZLEME SINAVI 1"). Ad uzun olunca Chart.js
+// etiketi 45° çeviriyor, eksen okunamaz hâle geliyor ve dar ekranda grafik
+// sağa sıkışıyordu. Artık: kısa etiket (en fazla 12 karakter) + TAM AD ipucunda.
+function kisaDenemeEtiketi(ad) {
+  const t = String(ad || "").replace(/^Okulizyon:\s*/i, "").trim() || "Deneme";
+  return t.length > 12 ? t.slice(0, 11).trimEnd() + "…" : t;
+}
+// Tüm gelişim grafikleri için ortak eksen/pencere ayarı (tek yerden).
+function grafikAyar(fullNames, yBaslik) {
+  const tick = cssVar("--text-muted", "#64748B"), grid = cssVar("--border-card", "#E8EEF8");
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: { padding: { top: 4, right: 6, bottom: 0, left: 0 } },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: (items) => {
+            const i = items && items[0] ? items[0].dataIndex : 0;
+            return (fullNames && fullNames[i]) || "Deneme";
+          }
+        }
+      }
+    },
+    scales: {
+      y: { beginAtZero: true, ticks: { color: tick, font: { size: 10 }, maxTicksLimit: 6 }, grid: { color: grid } },
+      x: { ticks: { color: tick, font: { size: 10 }, maxRotation: 0, minRotation: 0, autoSkip: true, maxTicksLimit: 6 }, grid: { color: grid } }
+    }
+  };
+}
+
 function renderExamChart() {
   const cv = document.getElementById("exam-chart");
   if (!cv || typeof Chart === "undefined") return;
   const st = examStats();
+  const tamAdlar = st.series.map(s => s.name);
   try {
     if (window.__examChart) { window.__examChart.destroy(); }
     window.__examChart = new Chart(cv, {
       type: "line",
-      data: { labels: st.series.map(s => s.name), datasets: [{ label: "Net", data: st.series.map(s => s.net), borderColor: cssVar("--brand-blue", "#2563EB"), backgroundColor: "rgba(37,99,235,0.08)", fill: true, tension: 0.35, pointRadius: 4, pointBackgroundColor: cssVar("--brand-blue", "#2563EB") }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { color: cssVar("--text-muted", "#64748B") }, grid: { color: cssVar("--border-card", "#E8EEF8") } }, x: { ticks: { color: cssVar("--text-muted", "#64748B") }, grid: { color: cssVar("--border-card", "#E8EEF8") } } } }
+      data: {
+        labels: tamAdlar.map(kisaDenemeEtiketi),
+        datasets: [{ label: "Net", data: st.series.map(s => s.net), borderColor: cssVar("--brand-blue", "#2563EB"), backgroundColor: "rgba(37,99,235,0.08)", fill: true, tension: 0.35, pointRadius: 4, pointHitRadius: 14, pointBackgroundColor: cssVar("--brand-blue", "#2563EB") }]
+      },
+      options: grafikAyar(tamAdlar)
     });
   } catch (e) { /* grafik çizilemezse sessiz atla */ }
 }
@@ -5332,24 +5393,12 @@ function completeTopic(key) {
 let qbFormOpen = false; // Form varsayılan KAPALI
 
 function renderQuestionBank(container) {
-  const pr = calculatePriority();
   let html = '<div class="top-bar" style="margin-bottom:14px;"><h2 style="font-size:20px;font-weight:700;">' + icon("pen-tool", 22, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Soru Bankası</h2>" +
     '<button class="btn btn-primary btn-sm" data-act="toggleQBForm">' + icon(qbFormOpen ? "x" : "plus", 15) + " " + (qbFormOpen ? "Formu Kapat" : "Soru Girişi Aç") + "</button></div>";
   html += '<!--QBKPI-->';
 
-  // Zorluk önerisi (Akıllı Filtre)
-  html += '<div class="bento-card" style="margin-bottom:20px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:10px;">' + icon("filter", 16, "vertical-align:middle;margin-right:6px;color:var(--semantic-warning);") + " Akıllı Zorluk Filtresi</h3>";
-  if (pr.length) {
-    html += '<p class="text-xs text-muted" style="margin-bottom:10px;">Başarı yüzdesine göre önerilen soru tipi: ≤%40 TEMEL · ≤%75 ORTA · >%75 ZOR/YENİ NESİL</p>';
-    html += pr.slice(0, 4).map(p => {
-      const d = difficultyFor(p[0]);
-      return '<div class="topic-row"><span class="topic-rank">' + icon("zap", 13) + '</span><div class="topic-info"><span style="font-weight:600;font-size:13.5px;">' + esc(splitKey(p[0]).topic) + '</span><span class="text-xs text-muted">' + esc(splitKey(p[0]).lesson) + '</span></div>' +
-        '<span class="badge" style="background:' + d.color + '22;color:' + d.color + ';">' + d.level + (d.rate !== null ? " · %" + d.rate : "") + "</span></div>";
-    }).join("");
-  } else {
-    html += '<div class="empty-state">' + icon("filter", 30) + "<div>Deneme/soru verisi girince hatalı konulara göre zorluk seviyesi önerilir.</div></div>";
-  }
-  html += "</div>";
+  // v48 — KULLANICI: "Uygulamadaki akıllı zorluk filtresi bölümünü kaldır."
+  // Bölüm tamamen KALDIRILDI (kart, başlık, öneri listesi, boş durum yazısı).
 
   // Giriş formu
   html += '<div class="bento-card" style="margin-bottom:20px;" id="qb-form-card">';
@@ -5363,7 +5412,9 @@ function renderQuestionBank(container) {
   html += '<div class="dwb-row" style="margin-top:10px;">' +
     '<div class="field d"><label>DOĞRU</label><input type="number" inputmode="numeric" id="qb-d" min="0" placeholder="0"></div>' +
     '<div class="field w"><label>YANLIŞ</label><input type="number" inputmode="numeric" id="qb-w" min="0" placeholder="0"></div>' +
-    '<div class="field b"><label>BOŞ</label><input type="number" inputmode="numeric" id="qb-e" min="0" placeholder="0"></div></div>';
+    '<div class="field b"><label>BOŞ (OTO)</label><input type="number" inputmode="numeric" id="qb-e" min="0" placeholder="0" title="Toplam Çözülen yazıldıysa Boş = Toplam − (Doğru + Yanlış) olarak kendiliğinden hesaplanır."></div></div>';
+  // v48 — KULLANICI: "soru girişinde otomatik boş hesabı yok. 10 soru · D8/Y1/B0"
+  html += '<div class="text-xs text-muted" style="margin-top:6px;">Boş, <b>Toplam Çözülen</b> yazdığında kendiliğinden hesaplanır: Boş = Toplam − (Doğru + Yanlış).</div>';
   html += '<div id="qb-error-area" style="margin-top:10px;"></div>';
   html += '<div id="qb-validation"></div>';
   html += '<button class="btn btn-primary w-full btn-sticky" data-act="saveQB" style="margin-top:8px;">' + icon("save", 15) + " Kaydet</button>";
@@ -5381,7 +5432,7 @@ function renderQuestionBank(container) {
       const idx = state.questions.length - 1 - ri;
       const noLog = (q.errorLogs || []).length === 0 && (q.w + q.e) > 0;
       return '<div class="list-row"><div style="flex:1;min-width:0;"><div style="font-weight:600;font-size:13px;">' + esc(q.lesson) + '</div>' +
-        '<div class="text-xs text-muted tabular">' + fmtDate(q.date) + " · " + q.total + " soru · D" + q.d + "/Y" + q.w + "/B" + q.e + (noLog ? ' · <span style="color:var(--on-warning-bg-soft);">⚠ hata kaydı girilmedi</span>' : "") + "</div></div>" +
+        '<div class="text-xs text-muted tabular">' + fmtDate(q.date) + " · " + q.total + " soru · D" + q.d + "/Y" + q.w + "/B" + qbBos(q) + (noLog ? ' · <span style="color:var(--on-warning-bg-soft);">⚠ hata kaydı girilmedi</span>' : "") + "</div></div>" +
         '<button class="icon-btn" data-act="deleteQB" data-idx="' + idx + '" style="min-width:48px;min-height:48px;">' + icon("trash-2", 15, "color:var(--semantic-error);") + "</button></div>";
     }).join("");
   } else {
@@ -5425,6 +5476,12 @@ function bindQBForm() {
     if (!t || !t.dataset.user) {
       if (total < dv + wv + ev) total = dv + wv + ev;
       if (t) t.value = total || "";
+    } else {
+      // v48 — OTOMATİK BOŞ: kullanıcı TOPLAM yazdıysa
+      //   Boş = Toplam − (Doğru + Yanlış)   → 10 soru, D8/Y1 ise B1 olur.
+      // (Önceden boş 0'da kalıyordu: "10 soru · D8/Y1/B0".)
+      const oto = Math.max(0, total - dv - wv);
+      if (ev !== oto) { ev = oto; if (e) e.value = oto; }
     }
     // CANLI VALIDASYON (kırmızı kutu — ekran yapısı Modül F)
     const msgs = [];
@@ -5437,9 +5494,24 @@ function bindQBForm() {
   // SINIR: D+Y+B, "Toplam Çözülen"i aşamaz (aşılan giriş anında kırpılır)
   const clampQB = (changed) => {
     const capRaw = Number(t.value) || 0;
-    const cap = capRaw > 0 ? capRaw : 200;
+    // v48 — ÜST SINIR yalnızca kullanıcı TOPLAM'ı ELLE yazdıysa geçerli.
+    // Toplam otomatik türetiliyorsa (D+Y+B) sınır olarak kullanılamaz: aksi
+    // hâlde D8 yazınca toplam 8'e sabitleniyor ve sonra Y1 girilemiyordu.
+    const cap = (t && t.dataset.user && capRaw > 0) ? capRaw : 200;
     const dig = { d: Number(d.value) || 0, w: Number(w.value) || 0, e: Number(e.value) || 0 };
     const f = changed === d ? "d" : changed === w ? "w" : "e";
+    if (changed !== t && t && t.dataset.user) {
+      // v48 — TOPLAM yazıldıysa BOŞ otomatik türetilir, bu yüzden boş "yer
+      // kaplamaz": D+Y toplamı aşamaz. (Yoksa ilk yazılan D, boş=10 yüzünden
+      // 0'a kırpılıyordu.)
+      const pay = f === "e" ? (dig.d + dig.w) : (f === "d" ? dig.w : dig.d);
+      const v = Math.min(dig[f], Math.max(0, cap - pay));
+      if (v !== dig[f]) {
+        changed.value = v; dig[f] = v;
+        if (live) live.innerHTML = '<div class="validation-msg">' + icon("alert-circle", 15) + "Doğru+Yanlış, toplam soru sayısını (" + cap + ") geçemez — giriş kırpıldı.</div>";
+      }
+      return dig;
+    }
     if (changed !== t) {
       const others = dig.d + dig.w + dig.e - dig[f];
       let v = Math.min(dig[f], Math.max(0, cap - others));
@@ -5533,8 +5605,12 @@ function saveQB() {
   const date = document.getElementById("qb-date").value || todayStr();
   const dRaw = numericWholeValue(document.getElementById("qb-d")), wRaw = numericWholeValue(document.getElementById("qb-w")), eRaw = numericWholeValue(document.getElementById("qb-e")), totalRaw = numericWholeValue(document.getElementById("qb-total"));
   if (![dRaw, wRaw, eRaw, totalRaw].every(x => x.valid && x.value >= 0)) return fail("Soru sayıları tam sayı ve sıfırdan büyük/eşit olmalı.");
-  const dv = dRaw.value, wv = wRaw.value, ev = eRaw.value;
+  const dv = dRaw.value, wv = wRaw.value;
+  let ev = eRaw.value;
   let total = totalRaw.value || (dv + wv + ev);
+  // v48 — OTOMATİK BOŞ: toplam yazıldıysa boş = toplam − (D + Y).
+  // Eski kayıtlarda/tarayıcıda boş 0 kalmış olsa bile doğru sayı kaydedilir.
+  if (totalRaw.value > 0 && total > dv + wv && ev < total - dv - wv) ev = total - dv - wv; 
   if (!lesson) return fail("Ders seçmelisin.");
   if (isFutureDay(date)) return fail("Gelecek tarihli kayıt kaydedilemez.");
   if (dv + wv + ev === 0) return fail("D/Y/B değerlerinden en az biri sıfırdan büyük olmalı.");
@@ -5570,6 +5646,14 @@ function saveQB() {
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
 
+// v48 — Kayıtlı "boş" sayısı 0 kalmışsa toplamdan türet (eski kayıtlar için de
+// "10 soru · D8/Y1/B1" görünür; boş hiç 0'a düşüp yanlış sayılmaz).
+function qbBos(q) {
+  const d = Number(q && q.d) || 0, w = Number(q && q.w) || 0, e = Number(q && q.e) || 0;
+  const total = Number(q && q.total) || 0;
+  return Math.max(e, Math.max(0, total - d - w));
+}
+
 function deleteQB(idx) {
   const q = state.questions[Number(idx)];
   if (!q) return;
@@ -5597,7 +5681,7 @@ function renderQBChart() {
           { label: "Yanlış", data: labels.map(k => byDate[k].w), backgroundColor: cssVar("--semantic-error", "#EF4444"), borderRadius: 6, stack: "s" }
         ]
       },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "bottom", labels: { color: cssVar("--text-muted", "#64748B") } } }, scales: { x: { stacked: true, ticks: { color: cssVar("--text-muted", "#64748B") }, grid: { color: cssVar("--border-card", "#E8EEF8") } }, y: { stacked: true, beginAtZero: true, ticks: { color: cssVar("--text-muted", "#64748B") }, grid: { color: cssVar("--border-card", "#E8EEF8") } } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "bottom", labels: { color: cssVar("--text-muted", "#64748B") } } }, scales: { x: { stacked: true, ticks: { color: cssVar("--text-muted", "#64748B"), maxRotation: 0, minRotation: 0, autoSkip: true, maxTicksLimit: 6 }, grid: { color: cssVar("--border-card", "#E8EEF8") } }, y: { stacked: true, beginAtZero: true, ticks: { color: cssVar("--text-muted", "#64748B") }, grid: { color: cssVar("--border-card", "#E8EEF8") } } } }
     });
   } catch (e) { /* Chart yoksa sessiz atla */ }
 }

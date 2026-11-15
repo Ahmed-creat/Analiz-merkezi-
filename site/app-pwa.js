@@ -1,4 +1,4 @@
-const PWA_SURUM = "v47-sinav-kimligi";
+const PWA_SURUM = "v48-giris-grafik-duzeltme";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
