@@ -75,7 +75,7 @@ function ortam2() {
   const kutu = { state: { user: { name: "TEST", grade: "10" }, exams: [] } };
   const fn = new Function(
     "localStorage", "state", "saveState",
-    BLOK + "\nreturn { okzDefter, okzDefterIsaretle, okzDefterTemizle, okzDefterSayisi, okzStore, OKZ_DEFTER_KEY };"
+    BLOK + "\nreturn { okzDefter, okzDefterIsaretle, okzDefterTemizle, okzDefterSayisi, okzStore, okzKey, okzDefterIkili, OKZ_DEFTER_KEY };"
   );
   // state'i canlı tutmak için getter/setter'lı bir Proxy kullan
   const proxy = new Proxy({}, {
@@ -191,6 +191,59 @@ const HASH = OKZ.kararHash(SINAV);
   esit("silme sonrası kuyruğa geri gelmez", k.yeni.length, 0);
   const GELEN2 = [SINAV, Object.assign({}, SINAV, { name: "2. DENEME", date: "2026-10-20" })];
   esit("ikisi de geri gelmez", OKZ.karar(GELEN2, [], o5.api.okzDefter()).yeni.length, 0);
+
+  // ============================================================
+  // v46c — ÇOK SINAV: aynı ad + aynı tarih olsa bile KARIŞMAZ
+  // Kullanıcı: "birden fazla varsa doğru şekilde birbirine karışmadan
+  // çekilebiliyor mu?"
+  // Okulizyon her sınava tekil sid verir → kimlik odur.
+  // ============================================================
+  console.log("\n== 10) Aynı ad+tarih, farklı sid → AYRI sınavlar ==");
+  {
+    const A = Object.assign({}, SINAV, { url: "https://okulizyon.com/app2/ogrenci/?pg=yks&sid=111" });
+    const B = Object.assign({}, SINAV, { url: "https://okulizyon.com/app2/ogrenci/?pg=yks&sid=222" });
+    esit("sid okunuyor", OKZ.sidCikar(A.url), "111");
+    ok("anahtar sid'e dayanıyor", OKZ.kararAnahtar(A) === "sid:111", OKZ.kararAnahtar(A));
+    ok("iki sınavın anahtarı FARKLI", OKZ.kararAnahtar(A) !== OKZ.kararAnahtar(B));
+    // A depoda var; B gelirse ikisi karışmamalı → B "yeni"
+    const depoA = { name: "Okulizyon: " + A.name, date: A.date, lessons: A.lessons, okulizyonUrl: A.url };
+    const k1 = OKZ.karar([B], [depoA], {});
+    esit("B yeni sınav olarak gelir (A ile karışmadı)", k1.yeni.length, 1);
+    esit("yanlış eşleşme 'değişmiş' üretmez", k1.degisen.length, 0);
+    // Aynı sid tekrar gelirse yeni değil
+    const k2 = OKZ.karar([A], [depoA], {});
+    esit("aynı sid tekrar 'yeni' sayılmaz", k2.yeni.length, 0);
+    // Aynı sid, içerik değişti → degisen
+    const A2 = Object.assign({}, A, { lessons: { Matematik: { d: 25, w: 1, e: 4 } } });
+    const k3 = OKZ.karar([A2], [depoA], {});
+    esit("içerik değişince 'değişmiş' olarak görünür", k3.degisen.length, 1);
+  }
+
+  console.log("\n== 11) sid yoksa eski davranış korunur (geriye dönük) ==");
+  {
+    const sidsiz = Object.assign({}, SINAV);
+    esit("sid yoksa anahtar ad|tarih", OKZ.kararAnahtar(sidsiz), SINAV.name + "|" + SINAV.date);
+    // Eski sürümde deftere "ad|tarih" ile yazılmış silme kaydı, sid'li gelse bile tutmalı
+    const defter = {};
+    defter[SINAV.name + "|" + SINAV.date] = OKZ.kararHash(SINAV);
+    const s = Object.assign({}, SINAV, { url: "https://okulizyon.com/app2/ogrenci/?pg=yks&sid=999" });
+    esit("eski defter kaydı geçerli (silinen sınav geri gelmez)", OKZ.karar([s], [], defter).yeni.length, 0);
+  }
+
+  console.log("\n== 12) okzKey (app-pwa) sid'i okuyor ==");
+  {
+    const o = ortam2();
+    ok("okzKey sid'li denemede sid:...", String(o.api.okzKey({ name: "X", date: "2026-10-27", url: "https://a/?sid=77" })) === "sid:77",
+      String(o.api.okzKey({ name: "X", date: "2026-10-27", url: "https://a/?sid=77" })));
+    ok("uygulamadaki deneme (okulizyonUrl) da sid okur",
+      String(o.api.okzKey({ name: "Okulizyon: X", date: "2026-10-27", okulizyonUrl: "https://a/?pg=yks&sid=88" })) === "sid:88");
+    // fidye: ikili defter hem sid hem ad|tarih yazar
+    const o2 = ortam2();
+    o2.api.okzDefterIkili({ name: "X", date: "2026-10-27", url: "https://a/?sid=55" }, "H1");
+    const d = o2.api.okzDefter();
+    ok("ikili defter sid anahtarını yazdı", d["sid:55"] === "H1");
+    ok("ikili defter eski anahtarı da yazdı", d["X|2026-10-27"] === "H1");
+  }
 
   // ---------- Sonuç ----------
   console.log("\n" + "─".repeat(56));

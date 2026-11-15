@@ -139,9 +139,27 @@
       Object.keys(l).sort().map((k) => k + ":" + (Number(l[k].d) || 0) + "," + (Number(l[k].w) || 0) + "," + (Number(l[k].e) || 0)).join(";")].join("|");
   }
 
-  // Sınav anahtarı: "ad|tarih"
-  function kararAnahtar(ex) {
+  // v46c — OKULİZYON SINAV KİMLİĞİ
+  // KULLANICI: "birden fazla varsa doğru şekilde birbirine karışmadan
+  // çekilebiliyor mu?"
+  // Okulizyon her sınava tekil bir sid verir (sonuç sayfası: ?pg=yks&sid=…).
+  // Eskiden eşleştirme yalnız "ad + tarih" idi: adı ve tarihi AYNI iki sınav
+  // varsa uygulama onları tek sınav sanıp karıştırabiliyordu. Artık sid varsa
+  // kimlik odur; ad+tarih yalnız yedek (sid yoksa) kullanılır.
+  function sidCikar(url) {
+    const m = /[?&]sid=([^&]+)/i.exec(String(url || ""));
+    if (!m) return "";
+    try { return decodeURIComponent(m[1]); } catch (e) { return m[1]; }
+  }
+  function siniSid(ex) { return sidCikar(ex && (ex.url || ex.okulizyonUrl)); }
+  // Eski (sid'siz) defter anahtarı — geriye dönük uyumluluk için korunur.
+  function kararEskiAnahtar(ex) {
     return ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
+  }
+  // Sınav anahtarı: sid varsa "sid:<sid>", yoksa "ad|tarih"
+  function kararAnahtar(ex) {
+    const sid = siniSid(ex);
+    return sid ? "sid:" + sid : kararEskiAnahtar(ex);
   }
 
   /**
@@ -161,8 +179,20 @@
     };
     // Tarih boşsa (Okulizyon tarih vermediyse) yalnız ada göre eşle — yoksa
     // aynı sınav her çekimde "yeni" sanılıp tekrar tekrar aktarılır.
-    const bul = (ex) => liste.find((e) => e && e.name === adi(ex) &&
+    const adaGoreBul = (ex) => liste.find((e) => e && e.name === adi(ex) &&
       (!(ex && ex.date) || !e.date || String(e.date) === String(ex.date)));
+    // v46c — ÖNCE sid: aynı sınav mı, kesin cevap. sid'ler FARKLIYSA bunlar
+    // ayrı sınavlardır (ad+tarih aynı olsa bile) → eşleştirme YAPILMAZ,
+    // yeni sınav olarak kuyruğa girer. Karışma burada engellenir.
+    const bul = (ex) => {
+      const sid = siniSid(ex);
+      if (!sid) return adaGoreBul(ex);
+      const ayniSid = liste.find((e) => e && siniSid(e) === sid);
+      if (ayniSid) return ayniSid;
+      const adaGore = adaGoreBul(ex);
+      if (adaGore && siniSid(adaGore)) return null;  // başka bir sınav
+      return adaGore;                                 // sid'siz eski kayıt: ada göre
+    };
     const hash = (ex) => {
       // iki tarafı da aynı normalizasyondan geçir: ham Okulizyon adları
       // ("Matematik-1") ile uygulama adları ("Matematik") aynı hash'i versin
@@ -173,18 +203,21 @@
     const yeni = [], degisen = [], gecerliAnahtarlar = [];
     (Array.isArray(gelen) ? gelen : []).forEach((ex) => {
       const anahtar = kararAnahtar(ex);
+      const eski = kararEskiAnahtar(ex);
       const h = hash(ex);
       const varOlan = bul(ex);
-      if (varOlan) gecerliAnahtarlar.push(((ex && ex.name) || "?") + "|" + ((ex && ex.date) || ""));
-      // Bu sınav bu içerikle zaten işlendi veya yoksayıldı → kuyruğa geri koyma
-      if (defter[anahtar] && defter[anahtar] === h) return;
+      if (varOlan) gecerliAnahtarlar.push(anahtar);
+      // Bu sınav bu içerikle zaten işlendi veya yoksayıldı → kuyruğa geri koyma.
+      // v46c — ESKİ anahtar da kontrol edilir: sid'li anahtara geçmeden önce
+      // silinmiş/yoksayılmış sınavlar geri gelmesin.
+      if ((defter[anahtar] && defter[anahtar] === h) || (defter[eski] && defter[eski] === h)) return;
       if (!varOlan) { yeni.push(ex); return; }
       if (hash(varOlan) !== h) degisen.push({ key: ((ex.name) || "?") + "|" + (ex.date || ""), exam: ex, hash: h });
     });
     return { yeni, degisen, gecerliAnahtarlar };
   }
 
-  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt, karar, kararHash, kararAnahtar };
+  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt, karar, kararHash, kararAnahtar, kararEskiAnahtar, sidCikar };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (kok) kok.OKZ = api;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v46-sade-arama";
+const PWA_SURUM = "v47-sinav-kimligi";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -1204,6 +1204,23 @@ function okzDefterTemizle() {
   try { saveState(); } catch (e) { /* */ }
 }
 function okzDefterSayisi() { return Object.keys(okzDefter()).length; }
+// v46c — Okulizyon sınav kimliği. sid varsa "sid:<sid>", yoksa "ad|tarih".
+// Aynı ad+tarihli iki ayrı sınav artık tek sınav sanılmıyor.
+function okzKey(ex) {
+  if (window.OKZ && typeof window.OKZ.kararAnahtar === "function") return window.OKZ.kararAnahtar(ex);
+  const m = /[?&]sid=([^&]+)/i.exec(String((ex && (ex.url || ex.okulizyonUrl)) || ""));
+  if (m) return "sid:" + m[1];
+  return ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
+}
+// Geriye dönük anahtar: sid'e geçmeden önce yazılmış defter kayıtları ve
+// "sildim" işaretleri kaybolmasın diye ikisi BİRLİKTE yazılır.
+function okzDefterIkili(ex, hash) {
+  okzDefterIsaretle(okzKey(ex), hash);
+  const eski = ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
+  const kisa = eski.replace(/^Okulizyon:\s*/i, "");
+  okzDefterIsaretle(eski, hash);
+  if (kisa !== eski) okzDefterIsaretle(kisa, hash);
+}
 // Denemelerim'den bir Okulizyon denemesi silinirse deftere yaz:
 // "sildim" = "bir daha Analiz Bekliyor'a gelmesin". index.html → deleteExam çağırır.
 window.__okzDenemeSilindi = function (ex) {
@@ -1213,7 +1230,9 @@ window.__okzDenemeSilindi = function (ex) {
     const ad = ham.replace(/^Okulizyon:\s*/i, "").trim();
     if (!ad) return;
     const hash = (window.OKZ && typeof window.OKZ.kararHash === "function") ? window.OKZ.kararHash(ex) : "";
-    okzDefterIsaretle(ad + "|" + ((ex && ex.date) || ""), hash);
+    // v46c: sid anahtarı + eski "ad|tarih" anahtarı BİRLİKTE yazılır ki
+    // hangi sürümde silinmiş olursa olsun sınav geri gelmesin.
+    okzDefterIkili(Object.assign({}, ex, { name: ad }), hash);
   } catch (e) { /* sessiz */ }
 };
 // Kullanıcı "verileri sil" dediğinde kuyruktakilerin TAMAMINI deftere yaz.
@@ -1225,7 +1244,7 @@ window.__okzKuyruguDeftereYaz = function () {
     const liste = st.pending || [];
     liste.forEach(ex => {
       const h = (window.OKZ && typeof window.OKZ.kararHash === "function") ? window.OKZ.kararHash(ex) : "";
-      okzDefterIsaretle(((ex && ex.name) || "?") + "|" + ((ex && ex.date) || ""), h);
+      okzDefterIkili(ex, h);
     });
     st.pending = [];
     return liste.length;
@@ -1296,7 +1315,6 @@ function okzZaman(ts) {
   try { return new Date(ts).toLocaleString("tr-TR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }); }
   catch (e) { return ""; }
 }
-function okzKey(ex) { return (ex.name || "?") + "|" + (ex.date || ""); }
 // Uygulamanın bildiği ders adları (10. sınıf / 9. sınıf farkı index.html'den gelir)
 function okzBilinenDersler() {
   try { if (typeof activeLessonConfig === "function") return Object.keys(activeLessonConfig()); } catch (e) { /**/ }
@@ -2089,7 +2107,7 @@ async function okzAnalizKaydet(tekNeden) {
     st.aktarilan = st.aktarilan || {};
     st.aktarilan[anahtar] = okzHash(ex);
     // Kalıcı defter: bu sınav bu içerikle işlendi (silinse bile geri gelmez)
-    okzDefterIsaretle(anahtar, window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex));
+    okzDefterIkili(ex, window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex));
   });
   st.pending = st.pending.filter(ex => st.importedKeys.includes(okzKey(ex)) ? false : true);
   saveState();
