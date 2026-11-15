@@ -113,6 +113,47 @@ function sec(rol, kod) {
   ok("okul seçildi (kod 745770)", O().secim().okul.kod === "745770");
   ok("gizli alan OKUL adı", d.getElementById("okz-okulAdi").value === "19 MAYIS MTAL");
 
+  console.log("\n== 4b) 'gazi' yaz → EN İYİ eşleşme vurgulu, tek dokunuş seçer ==");
+  {
+    const k2 = kok("il");
+    const g2 = girdi("il");
+    g2.dispatchEvent(new w.Event("focusin", { bubbles: true }));
+    g2.value = "gazi";
+    g2.dispatchEvent(new w.Event("input", { bubbles: true }));
+    const ilk = secenekler("il")[0];
+    ok("en iyi eşleşme listenin BAŞINDA", ilk && ilk.dataset.kod === "27");
+    ok("'EN İYİ' etiketi görünüyor", /EN İYİ/.test(liste("il").textContent));
+    ok("en iyi eşleşme zaten aktif (ok tuşu gerekmez)", ilk && ilk.dataset.aktif === "1");
+    // Enter ile seç (dokunmadan)
+    g2.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+    ok("Enter en iyi eşleşmeyi seçti", O().secim().il.kod === "27");
+    ok("giriş kutusu tam adı gösterdi", g2.value === "GAZIANTEP");
+  }
+
+  console.log("\n== 4c) Yazıp dokunmayı unutursa: tek aday kendiliğinden seçilir ==");
+  {
+    const g3 = girdi("il");
+    g3.dispatchEvent(new w.Event("focusin", { bubbles: true }));
+    g3.value = "adan";
+    g3.dispatchEvent(new w.Event("input", { bubbles: true }));
+    g3.dispatchEvent(new w.Event("focusout", { bubbles: true }));
+    await bekle(260);
+    ok("'adan' → ADANA kendiliğinden seçildi", O().secim().il.kod === "1");
+    ok("kutuya tam ad yazıldı", g3.value === "ADANA");
+  }
+
+  console.log("\n== 4d) Belirsiz yazımda ZORLA seçim yapılmaz (yanlış okul riski yok) ==");
+  {
+    const g4 = girdi("il");
+    g4.dispatchEvent(new w.Event("focusin", { bubbles: true }));
+    g4.value = "a";            // ADANA, ANKARA, GAZIANTEP... birden çok aday
+    g4.dispatchEvent(new w.Event("input", { bubbles: true }));
+    g4.dispatchEvent(new w.Event("focusout", { bubbles: true }));
+    await bekle(260);
+    ok("seçim değişmedi (ADANA kaldı)", O().secim().il.kod === "1");
+    ok("yazılan geri alındı", g4.value === "ADANA");
+  }
+
   console.log("\n== 5) İL değişince alt seçimler temizlenir ==");
   yaz("il", "adana");
   sec("il", "1");

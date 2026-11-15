@@ -1,4 +1,4 @@
-const PWA_SURUM = "v44-arama-tek-kayit";
+const PWA_SURUM = "v45-arama-en-iyi";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -402,15 +402,33 @@ function okzAramaCiz(kok, yazilan) {
   if (!suzulen.length) {
     kutu.innerHTML = '<div style="padding:10px 12px;font-size:12.5px;opacity:0.7;">Eşleşme yok. Farklı yazmayı dene.</div>';
   } else {
+    // v44b — KULLANICI: "gazi yazdım, listede en çok uyuşan ölü ona tıklarım;
+    // hepsini yazmam gerekmiyor."
+    // Bu yüzden EN İYİ EŞLEŞME listenin başında ve ZATEN VURGULU gelir:
+    // tek dokunuş seçer, Enter de seçer, ayrıca ok tuşu gerekmez.
     const EN_FAZLA = 80;
     const parca = suzulen.slice(0, EN_FAZLA);
-    kutu.innerHTML = parca.map(x =>
-      '<div class="okz-arama-sec" role="option" data-kod="' + escHtml(x.kod) + '" data-ad="' + escHtml(x.ad) + '"' +
-      ' style="padding:9px 12px;font-size:13px;cursor:pointer;background:' + (x.kod === secili ? "rgba(37,99,235,0.14)" : "transparent") + ';' +
-      (x.kod === secili ? "font-weight:700;" : "") + '">' + escHtml(x.ad) + "</div>"
-    ).join("") + (suzulen.length > EN_FAZLA
+    const ilkKod = parca.length ? parca[0].kod : "";
+    kutu.innerHTML = parca.map((x, j) => {
+      const enIyi = j === 0 && !!q;
+      const seciliMi = x.kod === secili;
+      const vurgu = enIyi || seciliMi;
+      return '<div class="okz-arama-sec" role="option" data-kod="' + escHtml(x.kod) + '" data-ad="' + escHtml(x.ad) + '"' +
+        (j === 0 ? ' data-aktif="1"' : "") +
+        ' style="padding:9px 12px;font-size:13px;cursor:pointer;display:flex;gap:8px;align-items:center;' +
+        'background:' + (vurgu ? "rgba(37,99,235,0.14)" : "transparent") + ';' +
+        (vurgu ? "font-weight:700;" : "") + '">' +
+        '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escHtml(x.ad) + "</span>" +
+        (enIyi ? '<span style="flex-shrink:0;font-size:10px;font-weight:800;letter-spacing:0.04em;color:#2563EB;background:rgba(37,99,235,0.16);border-radius:6px;padding:2px 6px;">EN İYİ</span>' : "") +
+        "</div>";
+    }).join("") + (suzulen.length > EN_FAZLA
       ? '<div style="padding:8px 12px;font-size:11.5px;opacity:0.6;">' + (suzulen.length - EN_FAZLA) + ' sonuç daha var — birkaç harf daha yaz.</div>'
       : "");
+    // İlk eşleşmenin kodunu hatırla: odaktan çıkarken "tek aday" ise seçilir.
+    kutu.dataset.enIyiKod = ilkKod;
+    kutu.dataset.enIyiAd = parca.length ? parca[0].ad : "";
+    kutu.dataset.adet = String(suzulen.length);
+    kutu.dataset.sorgu = String(yazilan || "");
   }
   kutu.hidden = false;
   okzAramaGirdi(kok).setAttribute("aria-expanded", "true");
@@ -459,12 +477,52 @@ document.addEventListener("input", (e) => {
   if (!kok || !e.target.classList.contains("okz-arama-girdi")) return;
   okzAramaCiz(kok, e.target.value);
 });
-document.addEventListener("mousedown", (e) => {
+function okzAramaTiklandi(e) {
   const sec = e.target.closest && e.target.closest(".okz-arama-sec");
-  if (!sec) return;
+  if (!sec) return false;
   e.preventDefault();
   const kok = okzAramaKok(sec);
   if (kok) okzAramaSec(kok, sec.dataset.ad || "", sec.dataset.kod || "");
+  return true;
+}
+// Hem fare hem dokunma: mobilde mousedown gecikebilir/düşebilir.
+document.addEventListener("pointerdown", okzAramaTiklandi);
+document.addEventListener("mousedown", (e) => { if (!e.__okzIslendi) okzAramaTiklandi(e); });
+
+// v44b — ODAKTAN ÇIKINCA EN İYİ EŞLEŞMEYİ SEÇ
+// Kullanıcı "gazi" yazıp listeden dokunmayı unutursa alan boş kalmasın.
+// Kural: yazdığıyla BAŞLAYAN tek sonuç varsa o seçilir; birden çok aday
+// varsa hiçbir şey zorla seçilmez (yanlış okula giriş riski yok).
+document.addEventListener("focusout", (e) => {
+  const kok = okzAramaKok(e.target);
+  if (!kok || !e.target.classList.contains("okz-arama-girdi")) return;
+  const rol = kok.dataset.okzRol;
+  const yazilan = String(e.target.value || "").trim();
+  const seciliKod = (OKZ_SECIM[rol] && OKZ_SECIM[rol].kod) || "";
+  setTimeout(() => {
+    const kutu = okzAramaListe(kok);
+    if (!kutu) return;
+    // Kullanıcı listeden bir şeye dokunduysa okzAramaSec zaten çalıştı.
+    if ((OKZ_SECIM[rol] && OKZ_SECIM[rol].kod) !== seciliKod) { kutu.hidden = true; return; }
+    const enIyiKod = kutu.dataset.enIyiKod || "";
+    const enIyiAd = kutu.dataset.enIyiAd || "";
+    const adet = Number(kutu.dataset.adet || 0);
+    if (!yazilan || !enIyiKod || !enIyiAd) { kutu.hidden = true; return; }
+    const q = okzNorm(yazilan);
+    const anahtar = okzListeAnahtari(rol);
+    const hepsi = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
+    const baslayanlar = hepsi.filter(x => okzNorm(x.ad).startsWith(q));
+    if (baslayanlar.length === 1) {
+      // Tek ve net aday: kendiliğinden seç.
+      okzAramaSec(kok, baslayanlar[0].ad, baslayanlar[0].kod);
+      return;
+    }
+    if (adet === 1) { okzAramaSec(kok, enIyiAd, enIyiKod); return; }
+    // Belirsiz: yazılanı geri al, kayıtlı seçime dön (yanlış seçim yapma).
+    const sec = OKZ_SECIM[rol];
+    e.target.value = sec && sec.ad ? sec.ad : "";
+    kutu.hidden = true;
+  }, 180);
 });
 document.addEventListener("keydown", (e) => {
   const kok = okzAramaKok(e.target);
