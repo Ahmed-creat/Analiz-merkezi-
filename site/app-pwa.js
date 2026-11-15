@@ -1,4 +1,4 @@
-const PWA_SURUM = "v50-sade-arayuz";
+const PWA_SURUM = "v51-cikis-ve-yerlesim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -805,12 +805,20 @@ async function googleLogin() {
 }
 async function doSignOut() {
   if (!sb) return;
+  // v51 — KULLANICI: "Çıkış yapınca hâlâ bilgiler kalıyor; normal
+  // uygulamalarda çıkış yapınca bilgi kalmıyor."
+  // 1) Son hâli buluta yazmayı dene: çıkış veri kaybına dönüşmesin.
+  try { await bulutaYaz(true); } catch (e) { /* çevrimdışı: sonraki girişte birleşir */ }
   const { error } = await sb.auth.signOut();
   if (error) return toast(authMsg(error), "error");
   currentUser = null;
+  window.currentUser = null;
   window.__bulutYuklenenKullanici = null;
+  // 2) Bu cihazdaki kişisel kayıtları sil (denemeler, hafıza, bekleyen
+  //    Okulizyon soruları, Okulizyon adı/şifresi...).
+  try { if (typeof window.__cikisYerelTemizle === "function") window.__cikisYerelTemizle(); } catch (e) { console.warn("Yerel temizlik:", e); }
   setAuthLabel(false);
-  toast("Çıkış yapıldı — verilerin bu cihazda durmaya devam ediyor.", "success");
+  toast("Çıkış yapıldı. Bu cihazdaki kayıtlar silindi — tekrar giriş yapınca geri gelir.", "success");
 }
 
 function setAuthLabel(girisli, kim) {

@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261031-v50-sade-arayuz";
+const CACHE = "analiz-merkezi-v-20261031-v51-cikis-ve-yerlesim";
 const ASSETS = [
   "./",
   "./index.html",
@@ -216,8 +216,12 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;
+  // v51 — Sayfa (HTML) her zaman AĞDAN ve tarayıcı önbelleği ATLANARAK
+  // alınır: yayınlanan sürüm bir sonraki açılışta kesin görünür, eski ekran
+  // (silinmiş bir satır bile) cihazda takılı kalmaz.
+  const istek = e.request.mode === "navigate" ? new Request(e.request, { cache: "no-store" }) : e.request;
   e.respondWith(
-    fetch(e.request).then((res) => {
+    fetch(istek).then((res) => {
       const kopya = res.clone();
       caches.open(CACHE).then((c) => c.put(e.request, kopya));
       return res;

@@ -189,8 +189,15 @@ ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v50", APP.indexOf('const PWA_SURUM = "v50-sade-arayuz"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261031-v50-sade-arayuz") > 0);
+ok("PWA sürümü v50", APP.indexOf('const PWA_SURUM = "v51-cikis-ve-yerlesim"') === 0);
+// v51 — sürüm damgası TEK yerden okunur: PWA_SURUM ile sw.js CACHE
+// birbirinden kopamaz (v50'de elle güncellenirken atlanmıştı).
+{
+  const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
+  const sw = fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8");
+  ok("SW önbelleği aynı sürüm damgasını taşıyor", surum.length > 0 && sw.indexOf("analiz-merkezi-v-20261031-" + surum) > 0,
+    surum + " ↔ " + (sw.match(/analiz-merkezi-v-[0-9]+-[a-z0-9-]+/) || [""])[0]);
+}
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

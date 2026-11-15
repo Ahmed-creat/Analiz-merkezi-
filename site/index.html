@@ -194,7 +194,6 @@ svg.lucide, i[data-lucide] svg { stroke-width: 1.75px; }
 }
 .sb-brand { display: flex; align-items: center; gap: 10px; padding: 2px 6px 14px; }
 .sb-grp { font-size: 9.5px; font-weight: 800; letter-spacing: 0.14em; color: rgba(255,255,255,0.62); padding: 10px 14px 5px; }
-.sb-vendor { text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); padding: 8px 0 6px; }
 .sidebar-nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
 .nav-item {
   display: flex; align-items: center; gap: 12px;
@@ -245,8 +244,8 @@ svg.lucide, i[data-lucide] svg { stroke-width: 1.75px; }
 }
 .settings-drawer.open { transform: translateX(0); }
 
-/* ===== MASAÜSTÜ / TABLET (≥1024px): 3 kolonlu Bento yerleşimi ===== */
-@media (min-width: 1024px) {
+/* ===== MASAÜSTÜ / TABLET (≥768px ve yeterli yükseklik): YATAY yerleşim ===== */
+@media (min-width: 768px) and (min-height: 480px) {
   .mobile-topbar, .bottom-nav { display: none; }
   .sidebar { transform: translateX(0); width: 262px; }
   /* width:auto şart: margin-left ile birlikte width:100% yatay taşma yapar */
@@ -330,15 +329,15 @@ html, body, .main-content, .app-footer { background-color: var(--bg-canvas); }
 }
 .ms-item:active { transform: scale(0.97); }
 
-/* ===== MOBİL: SOL MENÜ YOK — alt navigasyon var ===== */
-@media (max-width: 1023px) {
+/* ===== MOBİL (DK): SOL MENÜ YOK — alt navigasyon var ===== */
+@media (max-width: 767px), (max-height: 479px) {
   .sidebar, #sidebar-overlay, .sidebar-close, .sidebar-collapse-btn, #sb-reopen { display: none !important; }
   .bottom-nav { grid-template-columns: repeat(6, 1fr); }
 }
 @media (min-width: 640px) {
   .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; align-items: start; }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) and (min-height: 480px) {
   #more-sheet, #more-backdrop { display: none !important; }
   .main-content { max-width: 1280px; } /* kartlar ekran boyunca aşırı uzamasın */
 }
@@ -376,7 +375,7 @@ html, body, .main-content, .app-footer { background-color: var(--bg-canvas); }
 }
 .winctrl:hover { background: var(--bg-canvas); color: var(--text-main); }
 .winctrl.close:hover { background: var(--semantic-error-bg); color: var(--semantic-error); }
-@media (min-width: 1024px) {
+@media (min-width: 768px) and (min-height: 480px) {
   #desk-topbar { display: flex; }
   .main-content { margin-top: 56px; }
 }
@@ -617,7 +616,7 @@ select option:checked, select option:hover {
   box-shadow: 0 10px 30px -8px rgba(37,99,235,0.5); transition: var(--transition-smooth);
 }
 #coach-toggle:hover { transform: scale(1.06); }
-@media (min-width: 1024px) { #coach-toggle { bottom: 20px; } }
+@media (min-width: 768px) and (min-height: 480px) { #coach-toggle { bottom: 20px; } }
 #coach-panel {
   position: fixed; right: 16px; bottom: calc(146px + env(safe-area-inset-bottom,0px)); z-index: 50;
   width: 320px; max-width: calc(100vw - 32px);
@@ -625,7 +624,7 @@ select option:checked, select option:hover {
   border-radius: var(--radius-card); box-shadow: 0 16px 50px -12px rgba(15,23,42,0.3);
   padding: 16px; max-height: 46vh; overflow-y: auto;
 }
-@media (min-width: 1024px) { #coach-panel { bottom: 84px; } }
+@media (min-width: 768px) and (min-height: 480px) { #coach-panel { bottom: 84px; } }
 .coach-msg { font-size: 12.5px; color: var(--text-main); background: var(--bg-canvas); border-radius: 12px; padding: 10px 12px; line-height: 1.45; }
 .coach-msg b { color: var(--brand-blue); }
 .notif-card {
@@ -689,7 +688,7 @@ select option:checked, select option:hover {
   bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 -8px 24px -12px rgba(15,23,42,0.35), var(--shadow-bento);
 }
-@media (min-width: 1024px) { .btn-sticky { position: static; box-shadow: none; } }
+@media (min-width: 768px) and (min-height: 480px) { .btn-sticky { position: static; box-shadow: none; } }
 
 /* ===== DERS UYARI KUTUSU (canlı sınır) ===== */
 .lesson-warn {
@@ -1664,6 +1663,44 @@ function sikistirVeYaz() {
   }
   return rap;
 }
+
+// ============================================================
+// v51 — ÇIKIŞ YAPINCA CİHAZDAKİ KİŞİSEL KAYITLAR SİLİNİR
+// KULLANICI: "Çıkış yapınca hâlâ bilgiler kalıyor. Normal uygulamalarda
+// çıkış yapınca bilgi kalmıyor."
+// Sıra önemli: çıkıştan ÖNCE buluta son yazma denenir (kayıp olmasın),
+// SONRA bu cihazdaki kişisel kayıtlar silinir. Tekrar giriş yapılınca
+// veriler buluttan geri gelir (bulut birleştirmesi aynen çalışır).
+// ============================================================
+function cikistaYerelTemizle() {
+  try {
+    ["analizmerkezi_v6", "analizmerkezi_v5", "am_tanitim_v41",
+     "am_geri_bildirim_kuyruk", "am_okz_islenen_v1", "am_bkt_panel_acik"].forEach(function (k) {
+      localStorage.removeItem(k);
+    });
+    // Sınıf bazlı arşivler (analizmerkezi_v6_g9/g10) + Okulizyon önbellekleri
+    Object.keys(localStorage).forEach(function (k) {
+      if (k.indexOf("analizmerkezi_v6_g") === 0 ||
+          k.indexOf("am_okz_") === 0 ||
+          k.indexOf("am_geri_bildirim") === 0 ||
+          k.indexOf("am_push_test") === 0) {
+        localStorage.removeItem(k);
+      }
+    });
+  } catch (e) { /* depo kapalıysa yapılacak bir şey yok */ }
+
+  // Bellekteki durum da sıfırlanır: bekleyen Okulizyon soruları, denemeler,
+  // hafıza, Okulizyon adı/şifresi... hiçbiri ekranda kalmaz.
+  state = freshState();
+
+  // Arayüz boş hesapla yeniden çizilir.
+  try { updateUserUI(); } catch (e) { /* */ }
+  try { currentPage = "dashboard"; navigate("dashboard"); } catch (e) { /* */ }
+  try { if (typeof updateBellBadges === "function") updateBellBadges(); } catch (e) { /* */ }
+  try { if (window.lucide && lucide.createIcons) lucide.createIcons(); } catch (e) { /* */ }
+  return true;
+}
+window.__cikisYerelTemizle = cikistaYerelTemizle;
 
 function mergeDeep(base, extra) {
   const out = Array.isArray(base) ? [] : {};
@@ -2735,6 +2772,42 @@ function initChrome() {
   renderCoachPanel();
 }
 
+// ============================================================
+// v51 — YERLEŞİM YÖNÜ
+// KULLANICI: "Bilgisayar ve tablette landscape modunda olsun, mobilde
+// normal dikey olsun."
+// Kural tek yerde: geniş (≥768px) VE yeterince yüksek (≥480px) ekran
+// yatay yerleşimi (yan menü + geniş içerik) kullanır. Telefonlar — dar
+// ekran ya da yatayda çok kısa ekran — dikey yerleşimde (alt navigasyon)
+// kalır. CSS'teki kırılma noktasıyla BİREBİR aynı ölçüt.
+// ============================================================
+function yatayYerlesimMi() {
+  try {
+    return window.matchMedia("(min-width: 768px) and (min-height: 480px)").matches;
+  } catch (e) {
+    return window.innerWidth >= 768 && window.innerHeight >= 480;
+  }
+}
+
+// Yön kilidi yalnız KURULU UYGULAMADA (standalone) ve dokunmatik cihazda
+// denenir: telefon → dikey, tablet → yatay. Desteklenmiyorsa (masaüstü,
+// iOS) sessizce vazgeçilir; ekran hiçbir zaman kilitli kalmaz.
+function yonKilidiDene() {
+  try {
+    const durum = (navigator.standalone === true) ||
+      (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
+      (window.matchMedia && window.matchMedia("(display-mode: fullscreen)").matches);
+    if (!durum) return;
+    const dokunmatik = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    if (!dokunmatik) return;
+    if (!screen.orientation || typeof screen.orientation.lock !== "function") return;
+    const kisaKenar = Math.min(window.screen.width || 0, window.screen.height || 0);
+    const hedef = kisaKenar < 600 ? "portrait" : "landscape";
+    const p = screen.orientation.lock(hedef);
+    if (p && typeof p.catch === "function") p.catch(function () { /* desteklenmiyor: sorun değil */ });
+  } catch (e) { /* desteklenmiyor */ }
+}
+
 function navigate(page) {
   currentPage = page;
   document.querySelectorAll(".nav-item, .bottom-nav-item").forEach(el => el.classList.toggle("active", el.dataset.nav === page));
@@ -2768,7 +2841,7 @@ function navigate(page) {
   const tg = document.getElementById("topbar-grade");
   if (tg) tg.textContent = state.user.grade ? state.user.grade + ". Sınıf" : "";
   if (window.lucide && lucide.createIcons) lucide.createIcons();
-  if (window.innerWidth < 1024) toggleSidebar(false);
+  if (!yatayYerlesimMi()) toggleSidebar(false);
   closeMoreSheet();
   if (typeof closeDDMenus === "function") closeDDMenus();
   if (typeof updateCountdowns === "function") updateCountdowns();
@@ -2872,7 +2945,9 @@ document.addEventListener("click", function (e) {
       const m = wrap.querySelector(".dd-menu"); m.hidden = false;
       // MOBİL/YATAY (≤1023px): menü alt-sheet olarak açılır — altındaki
       // alanı (örn. NEDEN SEÇ butonu) ÖRTMEZ, tek dokunuşla iki liste de kullanılabilir
-      const isCompact = window.matchMedia("(max-width: 1023px)").matches;
+      const isCompact = (typeof yatayYerlesimMi === "function")
+        ? !yatayYerlesimMi()
+        : window.matchMedia("(max-width: 767px), (max-height: 479px)").matches;
       if (isCompact) {
         wrap.classList.add("sheet");
         m.classList.add("dd-sheet");
@@ -2917,7 +2992,7 @@ function setSidebarCollapsed(collapsed) {
   try { localStorage.setItem("am_sidebar_collapsed", collapsed ? "1" : "0"); } catch (e) {}
 }
 function initSidebarPreference() {
-  if (window.innerWidth >= 1024) {
+  if (yatayYerlesimMi()) {
     /* Gelişmiş arayüzde menü her zaman açık — daraltma kaldırıldı */
   }
 }
@@ -5320,7 +5395,7 @@ function selectKnowledgeTopic(key) {
   // Mobilde konu paneli listenin altında kalmasın: panoya kaydır.
   try {
     const panel = document.getElementById("konu-paneli");
-    if (panel && window.innerWidth < 1024) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (panel && !yatayYerlesimMi()) panel.scrollIntoView({ behavior: "smooth", block: "start" });
   } catch (e) { /* */ }
 }
 
@@ -5922,7 +5997,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // yüzden cihaz deposu temizlense bile bir daha çıkmaz.
   window.__entered = true;
   splashKapat();
+  yonKilidiDene();
   ddify(document); // tüm native select'ler temalı özel açılır listeye dönüşür
+  // v51 — eski sürümün yan menü altındaki satıcı damgası, cihazda kalmış eski
+  // bir kopyadan DOM'a sızarsa burada silinir (ekranda kalıcı olamaz).
+  document.querySelectorAll(".sb-vendor").forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
   updateUserUI();
   navigate("dashboard");
 
