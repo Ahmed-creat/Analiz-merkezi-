@@ -110,26 +110,25 @@ function ok(ad, kosul, ek) {
   } catch (e) {
     kontrol = String((e.stdout || "") + (e.stderr || "")).trim();
   }
-  ok("index.ts şablon + kripto ile güncel", kontrol === "güncel", kontrol);
+  // v59 — gömülü kripto üretimi KAPATILDI (canlıda çözülemeyen gövde üretiyordu)
+  ok("derleyici üretimi durdurduğunu bildiriyor", /ATLANDI/.test(kontrol), kontrol);
 
-  // ---------- 5) YETKİ KAPILARI ----------
-  console.log("\n5) Edge fonksiyon yetki kapıları");
+  // ---------- 5) YALIN SÜRÜM: GÖNDERİM TEK KANAL ----------
+  console.log("\n5) bildirim-gonder (v59 yalın) — tek kanal kuralı");
   const surucu = fs.readFileSync(path.join(KOK, "supabase", "functions", "bildirim-gonder", "index.ts"), "utf8");
-  ok("mod:run x-bildirim-secret istiyor",
-    /mod !== "run"[\s\S]{0,400}x-bildirim-secret/.test(surucu) && /SECRET \|\| gelen !== SECRET/.test(surucu));
+  ok("mod:run KAPALI (eski GitHub yolu gönderemez)",
+    /mod === "run"[\s\S]{0,200}kapali: true/.test(surucu));
+  ok("run kapalıyken gonderilen 0", /gonderilen: 0/.test(surucu));
+  ok("mod:saglik imza anahtarını yayınlıyor", /acikAnahtar: imza/.test(surucu));
+  ok("saglik anahtarı özel anahtardan türetiyor (çift tutarlılığı ölçülür)",
+    /imzaTarayiciIleAyni/.test(surucu) && /b64Coz\(j\.x\)/.test(surucu));
   ok("mod:test JWT'yi /auth/v1/user ile doğruluyor", /\/auth\/v1\/user/.test(surucu) && /mod === "test"/.test(surucu));
-  ok("mod:test yalnız çağıranın aboneliğini okuyor", /abonelikler\("&user_id=eq\." \+ u\.id\)/.test(surucu));
-  ok("yalnız test|run modları var", /geçersiz mod — test \| run/.test(surucu));
-  ok("sessiz saat koruması var", /sessiz saat/.test(surucu));
-  // v35.4: tek "günün bildirimi" yerine ANAHTAR başına günlük tekilleştirme.
-  ok("günlük tekilleştirme bildirim_log anahtarlarıyla", /gunlukAnahtarlar\(/.test(surucu) && /bildirim_log\?select=anahtar/.test(surucu));
-  ok("gönderilen anahtar kaydediliyor (tekrar atmaz)", /await anahtarYaz\(/.test(surucu) && /bildirim_log\?on_conflict=user_id,anahtar/.test(surucu));
-  ok("sabah tüm bildirimler, akşam yalnız kritik", /vardiya: aksam \? "aksam" : "sabah"/.test(surucu) && /KRITIK/.test(surucu));
-  ok("bildirim metinleri gömülü tek kaynaktan (buildMessages)", /function buildMessages\s*\(/.test(surucu));
-  ok("ölü abonelikler siliniyor (404/410)", /410/.test(surucu) && /await sil\(a\.id\)/.test(surucu));
-  ok("service role anahtarı tarayıcıya sızmıyor", !/service_role/.test(fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8")));
-  ok("VAPID özel anahtarı depoda yok",
-    !fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8").includes("Q-SA82vvE8VWKFSm"));
+  ok("mod:test yalnız çağıranın aboneliğini okuyor",
+    /push_abonelikleri\?select=id&aktif=is\.true&user_id=eq\./.test(surucu));
+  ok("test gönderimi kanıtlanmış yola (push-tani) devrediyor", /functions\/v1\/push-tani/.test(surucu));
+  ok("test gönderimi web-push ile şifreletiyor", /sifreli: "webpush"/.test(surucu));
+  ok("gömülü kripto kalmadı (aes128gcm üretimi yok)", !/Content-Encoding: aes128gcm".*NUL|hkdf\(ikm/.test(surucu));
+  ok("servis anahtarı tarayıcıya sızmıyor", !/service_role/.test(fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8")));
 
   // ---------- 6) TARAYICI TARAFI ----------
   console.log("\n6) Tarayıcı tarafı (push-bildirim.js)");

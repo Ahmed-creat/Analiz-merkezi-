@@ -69,10 +69,19 @@ function uret() {
 const yeni = uret();
 const eski = fs.existsSync(CIKTI) ? fs.readFileSync(CIKTI, "utf8") : "";
 
-if (process.argv.includes("--kontrol")) {
-  console.log(eski === yeni ? "güncel" : "GÜNCEL DEĞİL — node scripts/bildirim-derle.js");
-  process.exit(eski === yeni ? 0 : 1);
-}
+// v59 — ÜRETİM DURDURULDU (hem normal hem --kontrol modunda).
+// Gerekçe: gömülü kripto canlıda çözülemeyen gövde üretiyordu (FCM 201, cihazda
+// push olayı yok). Yerine elle yazılan yalın sürüm geçti; bu betik artık EZMEZ.
+console.log("ATLANDI — index.ts elle yazılır (v59 yalın sürüm). Gömülü kripto üretimi kapatıldı.");
+process.exit(0);
 
-fs.writeFileSync(CIKTI, yeni);
-console.log("yazıldı: " + path.relative(KOK, CIKTI) + " (" + yeni.length + " bayt)");
+// v59 — ÜRETİM DURDURULDU.
+// Eski şablon (sablon.ts + gömülü kripto) ile üretilen fonksiyon canlıda
+// ÇALIŞMIYORDU: FCM 201 dönüyor, Chrome gövdeyi çözemediği için push olayı
+// cihaza hiç ulaşmıyordu. Yerine elle yazılan YALIN sürüm geçti:
+//   mod=saglik → imza anahtarını yayınlar
+//   mod=test   → push-tani'ya devreder (kanıtlanmış yol)
+//   mod=run    → KAPALI (tek kanal: webpush_tetikle + push-tani)
+// Bu betik artık index.ts'i EZMİYOR; yalnız durumu bildirir.
+console.log("ATLANDI — index.ts elle yazılır (v59 yalın sürüm). Gömülü kripto üretimi kapatıldı.");
+if (process.argv.includes("--kontrol")) process.exit(0);
