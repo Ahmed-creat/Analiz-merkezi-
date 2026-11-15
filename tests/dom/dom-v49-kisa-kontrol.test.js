@@ -174,6 +174,8 @@ console.log("\n== 5) Teknik notlar temizlendi ==");
   const APP = fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8");
   ok("kullanıcı metninde 'Supabase' YOK", !/Bulut yedeği etkin \(Supabase\)/.test(APP));
   ok("Google Cloud kurulum talimatı YOK", APP.indexOf("Google Cloud → APIs") < 0);
+  ok("kullanıcı metninde 'Supabase' adı YOK (başlık)", /Bulut Hesabı \(Supabase\)/.test(APP) === false);
+  ok("kullanıcı metninde 'Supabase → Authentication' YOK", APP.indexOf("Supabase → Authentication") < 0);
   ok("dosya yolu (supabase-config.js) kullanıcı metninde YOK", !/supabase-config\.js ve site\/vendor/.test(APP));
 }
 

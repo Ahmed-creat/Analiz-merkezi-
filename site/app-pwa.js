@@ -38,7 +38,7 @@ const AUTH_ERR = {
   "email_address_invalid": "Geçerli bir e-posta adresi gir (ör. ad@ornek.com).",
   "for security purposes": "Çok fazla deneme — birkaç dakika bekle, sonra tekrar dene.",
   "over_email_send_rate_limit": "Çok fazla e-posta isteği — birkaç dakika bekle, sonra tekrar dene.",
-  "provider is not enabled": "Google girişi Supabase panelinde etkin değil — e-posta ve şifre ile devam edebilirsin.",
+  "provider is not enabled": "Google ile giriş şu an kullanılamıyor — e-posta ve şifre ile devam edebilirsin.",
   "failed to fetch": "Sunucuya ulaşılamadı — internet bağlantını kontrol et."
 };
 function authMsg(e) {
@@ -207,7 +207,7 @@ function buildAuthModal() {
   m.innerHTML = `
     <div style="width:100%;max-width:380px;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-        <div style="font-weight:800;font-size:18px;">Bulut Hesabı (Supabase)</div>
+        <div style="font-weight:800;font-size:18px;">Bulut Hesabı</div>
         <button data-act="pwaAuthClose" style="background:none;border:0;cursor:pointer;font-size:20px;line-height:1;color:inherit;">✕</button>
       </div>
       <div style="font-size:12.5px;opacity:0.75;margin-bottom:14px;">Giriş yapınca verilerin hesabına otomatik yedeklenir; başka cihazdan devam edebilirsin.</div>
@@ -799,7 +799,7 @@ async function googleLogin() {
   if (error) {
     const ham = String((error && (error.message || error.error_description || error.code)) || "");
     authMsgYaz(/provider is not enabled/i.test(ham)
-      ? "Google girişi bu projede açık değil. Supabase → Authentication → Providers → Google bölümünden Client ID/Secret girilip açılmalı. Şimdilik e-posta + şifre ile giriş yapabilirsin."
+      ? "Google ile giriş şu an kullanılamıyor. E-posta ve şifre ile giriş yapabilirsin."
       : authMsg(error), true);
   }
 }
@@ -1953,7 +1953,7 @@ async function okzKuyrukCek(zorla) {
   if (!zorla && st0.sonDeneme && simdi - st0.sonDeneme < 5 * 60 * 1000) return;
   st0.sonDeneme = simdi;
 
-  if (!sb) return okzDurum("bulut-yok", "Supabase istemcisi yüklenmedi (vendor/supabase.js / supabase-config.js).");
+  if (!sb) return okzDurum("bulut-yok", "Bulut bağlantısı kurulamadı. Birazdan tekrar dene.");
   if (!currentUser) return okzDurum("giris-yok", "Giriş yapılmadı — sınav sonuçları hesaba bağlı. Önce giriş yap.");
 
   okzCekSuruyor = true;
