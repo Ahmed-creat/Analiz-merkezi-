@@ -1,4 +1,4 @@
-const PWA_SURUM = "v48-giris-grafik-duzeltme";
+const PWA_SURUM = "v49-sure-ve-hatali-soru";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

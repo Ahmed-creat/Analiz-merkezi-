@@ -22,24 +22,30 @@
 
   const PARAM = Object.freeze({ P_L0: 0.12, P_G: 0.25, P_S: 0.10 });
   const SOURCE_PT = Object.freeze({ deneme: 0.05, soru_girisi: 0.15, mini_test: 0.10 });
-  // v35.8 — "Süre yetmedi" SEÇENEĞİ TAMAMEN KALDIRILDI; yanlış ve boş için
-  // HATA NEDENLERİ AYRI listelenir (kullanıcı isteği).
+  // v49 — KULLANICI: "Kısa kontrol kendi listesini kullanıyor" → Kısa Kontrol
+  // artık deneme/soru girişiyle AYNI orijinal taksonomiyi kullanır:
+  //   YANLIŞ → Konuyu Bilmiyordum · Anlamadım · İşlem hatası · Kodlama hatası
+  //   BOŞ    → Konu eksiği · Çözüm yolunu bulamadım
+  // "Süre yetmedi" BURADA YOK: kısa kontrol süreli bir sınav değil
+  // (kullanıcı: süre nedeni yalnız denemede).
   const WRONG_WEIGHT = Object.freeze({
-    "KONUEKSİKLİĞİ": 1.0,
+    "Konuyu Bilmiyordum": 1.0,
+    "KONUEKSİKLİĞİ": 1.0,      // eski kayıtlar için aynı ağırlık
     "ANLAMADIM": 0.5,
     "ÇÖZÜMYOLUNUBULAMADIM": 0.5,
     "İşlem Hatası/Dikkatsizlik": 0.2,
     "Kodlama/Kitapçık Hatası": null
   });
-  // Yanlış cevap nedenleri (5)
+  // Yanlış cevap nedenleri (4)
   const WRONG_REASONS = Object.freeze([
-    "KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM",
+    "Konuyu Bilmiyordum", "ANLAMADIM",
     "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"
   ]);
-  // Boş bırakma nedenleri (3) — işlem/kitapçık hatası boşta anlamsız.
-  const EMPTY_REASONS = Object.freeze(["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM"]);
+  // Boş bırakma nedenleri (2) — işlem/kitapçık hatası boşta anlamsız.
+  const EMPTY_REASONS = Object.freeze(["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"]);
   const REASON_LABELS = Object.freeze({
-    "KONUEKSİKLİĞİ": "Konu eksiği — bilmiyordum",
+    "Konuyu Bilmiyordum": "Konuyu bilmiyordum",
+    "KONUEKSİKLİĞİ": "Konu eksiği",
     "ANLAMADIM": "Anlamadım",
     "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm yolunu bulamadım",
     "İşlem Hatası/Dikkatsizlik": "İşlem hatası / dikkatsizlik",
@@ -838,7 +844,11 @@
            : 'Cevabını değiştirebilirsin.') + '</div>';
     // v41 — KULLANICI: "öğrenci soruda hata var ise soru hatalı mı? ya tıklar,
     // bize şu soru hatalı mesajı gelir." Her sorunun altında bu düğme var.
-    h += '<button type="button" class="btn btn-ghost w-full" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">⚠ Bu soruda hata var</button>';
+    // v49 — "Bu soruda hata var" denildiyse: bu soru puanlamaya katılmaz, neden sorulmaz.
+    const buHatali = !!(modal._bktHatali && modal._bktHatali[i]);
+    h += buHatali
+      ? '<div class="text-xs" style="margin-top:6px;line-height:1.45;color:var(--on-warning-bg,#92400E);">Bu soru hatalı olarak bildirildi — puanlamaya katılmaz, neden sorulmaz.</div>'
+      : '<button type="button" class="btn btn-ghost w-full" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">⚠ Bu soruda hata var</button>';
     h += '<div id="bkt-test-message" class="text-xs" style="min-height:18px;margin-top:8px;"></div></div>';
     modal.innerHTML = h;
   }
@@ -928,22 +938,29 @@
   }
   function showMiniResult(modal, draft) {
     const questions = modal._bktQuestions || [];
-    const puan = questions.length ? Math.round((Number(draft.correct) / questions.length) * 100) : 0;
+    // v49 — hatalı bildirilen sorular neden sorulmaz ve puanlamaya girmez.
+    const hataliListe = (draft.hatali || Object.keys(modal._bktHatali || {}).map(Number));
+    const hataliMi = i => hataliListe.indexOf(i) >= 0;
+    const gecerli = Math.max(0, questions.length - hataliListe.length);
+    const puan = gecerli ? Math.round((Number(draft.correct) / gecerli) * 100) : 0;
     const renk = puan >= 80 ? "var(--semantic-success)" : puan >= 40 ? "var(--semantic-warning)" : "var(--semantic-error)";
     let html = '<div style="width:100%;max-width:600px;max-height:90vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><strong>Sonuçlar</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:20px;">×</button></div>' +
-      '<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;"><b class="tabular" style="font-size:32px;color:' + renk + ';">' + draft.correct + '/' + questions.length + '</b><span class="text-sm text-muted">doğru · %' + puan + '</span></div>' +
+      '<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;"><b class="tabular" style="font-size:32px;color:' + renk + ';">' + draft.correct + '/' + gecerli + '</b><span class="text-sm text-muted">doğru · %' + puan + '</span></div>' +
+      (hataliListe.length ? '<p class="text-xs text-muted" style="margin-bottom:6px;">' + hataliListe.length + ' soru hatalı olarak bildirildi — bu sorular için neden sorulmaz, puanlamaya katılmaz.</p>' : '') +
       '<p class="text-xs text-muted" style="margin-bottom:8px;">Yanlışların nedenini seç — kayıt buna göre işlenecek.</p>';
     questions.forEach((q, i) => {
       const ham = draft.answers[i];
       const bosMu = ham == null || String(ham) === "";
       const ok = !bosMu && Number(ham) === Number(q.dogru_index);
-      const etiket = ok ? "Doğru" : bosMu ? "Boş" : "Yanlış";
-      const renk = ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)";
+      const hatali = hataliMi(i);
+      const etiket = hatali ? "Hatalı (hesaba katılmadı)" : ok ? "Doğru" : bosMu ? "Boş" : "Yanlış";
+      const renk = hatali ? "var(--text-muted,#64748B)" : ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)";
       html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b style="color:' + renk + ';">' + (i + 1) + ". " + etiket + "</b>" + miniSoruTam(q, ham) +
-        '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">⚠ Bu soruda hata var</button>' +
+        (hatali ? '<div class="text-xs text-muted" style="margin-top:6px;">Bu soru hatalı olarak bildirildi — neden sorulmaz, puanlamaya katılmaz.</div>'
+                : '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">⚠ Bu soruda hata var</button>') +
         '<div class="text-muted" style="margin-top:6px;">Çözüm: ' + safeText(q.cozum) + "</div>";
-      // Yanlış ve boş için AYRI neden listesi (Süre yetmedi seçeneği yok).
-      if (!ok) html += '<label style="display:block;margin-top:7px;">' + (bosMu ? "Neden boş bıraktın?" : "Neden yanlış yaptın?") +
+      // Yanlış ve boş için AYRI neden listesi. Hatalı bildirilen soruda neden SORULMAZ.
+      if (!ok && !hatali) html += '<label style="display:block;margin-top:7px;">' + (bosMu ? "Neden boş bıraktın?" : "Neden yanlış yaptın?") +
         ' <select data-bkt-reason="' + i + '" data-bkt-bos="' + (bosMu ? "1" : "0") + '" style="min-height:48px;"><option value="">Seçiniz</option>' + nedenSecenekleri(bosMu) + "</select></label>";
       html += "</div>";
     });
@@ -958,24 +975,33 @@
       return a == null ? "" : String(a);
     });
     // v35.8 — Boş bırakılan soru bitirmeyi ENGELLEMEZ ("" = boş cevap).
-    const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: answers, mode: modal._bktMode });
+    const hatali = Object.keys(modal._bktHatali || {}).map(Number).filter(n => !isNaN(n));
+    const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: answers, mode: modal._bktMode, hatali: hatali });
+    if (result.reason === "all_flagged") {
+      const msg = modal.querySelector("#bkt-test-message");
+      if (msg) msg.textContent = "Tüm sorular hatalı olarak bildirildi — bu kontrol sayılmadı, tekrar açılacak.";
+      return;
+    }
     if (result.needsReasons) showMiniResult(modal, result);
     else completeMiniTestView(modal, result);
   }
   function completeMiniTestReasons(modal) {
     const draft = modal._bktDraft || {}; const reasons = {};
-    const gerekli = (draft.wrongIndexes || []).concat(draft.bosIndexes || []);
+    // v49 — hatalı bildirilen sorular neden listesine GİRMEZ.
+    const hatali = (draft.hatali || Object.keys(modal._bktHatali || {}).map(Number)).map(Number);
+    const hataliMi = i => hatali.indexOf(i) >= 0;
+    const gerekli = (draft.wrongIndexes || []).concat(draft.bosIndexes || []).filter(i => !hataliMi(i));
     gerekli.forEach(i => {
       const el = modal.querySelector('[data-bkt-reason="' + i + '"]');
       if (el && el.value) reasons[i] = el.value;
     });
     if (gerekli.some(i => !reasons[i])) {
       const msg = modal.querySelector("#bkt-test-message");
-      const eksikBos = (draft.bosIndexes || []).some(i => !reasons[i]);
+      const eksikBos = (draft.bosIndexes || []).some(i => !hataliMi(i) && !reasons[i]);
       if (msg) msg.textContent = eksikBos ? "Boş bıraktığın sorular için de neden seç." : "Her yanlış cevap için neden seç.";
       return;
     }
-    const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: draft.answers, reasons: reasons, mode: modal._bktMode });
+    const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: draft.answers, reasons: reasons, mode: modal._bktMode, hatali: hatali });
     if (result.ok) completeMiniTestView(modal, result);
   }
   function completeMiniTestView(modal, result) {
@@ -984,7 +1010,9 @@
     // v35.6: sonuç 1.3 saniyede kayboluyordu — öğrenci skoru göremiyordu.
     // Artık sonuç ekranı AÇIK kalır, "Kapat" ile çıkılır.
     const dogru = Number(result.correct) || 0;
-    const toplam = Number(result.total) || (modal._bktQuestions || []).length || 0;
+    const hataliListe = (result && result.hatali) || Object.keys(modal._bktHatali || {}).map(Number);
+    const hataliMi = i => hataliListe.indexOf(i) >= 0;
+    const toplam = Number(result.total) || Math.max(0, (modal._bktQuestions || []).length - hataliListe.length) || 0;
     const puan = toplam ? Math.round((dogru / toplam) * 100) : 0;
     const renk = puan >= 80 ? "var(--semantic-success)" : puan >= 40 ? "var(--semantic-warning)" : "var(--semantic-error)";
     const baslik = modal._bktMode === "precheck" ? "Kısa Kontrol sonucu" : "Öğrenme Testi sonucu";
@@ -1001,8 +1029,9 @@
       const cevap = (modal._bktAnswers || [])[i];
       const bosMu = cevap == null || String(cevap) === "";
       const ok = !bosMu && Number(cevap) === Number(q.dogru_index);
+      const hatali = hataliMi(i);
       h += '<div style="border-top:1px solid var(--border-card);padding:9px 0;font-size:12.5px;">' +
-        '<b style="color:' + (ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)") + ';">' + (i + 1) + ". " + (ok ? "Doğru" : bosMu ? "Boş" : "Yanlış") + "</b>" +
+        '<b style="color:' + (hatali ? "var(--text-muted,#64748B)" : ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)") + ';">' + (i + 1) + ". " + (hatali ? "Hatalı (hesaba katılmadı)" : ok ? "Doğru" : bosMu ? "Boş" : "Yanlış") + "</b>" +
         miniSoruTam(q, cevap) +
         '<div class="text-muted" style="margin-top:4px;line-height:1.45;">' + safeText(q.cozum) + "</div>" +
         '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">⚠ Bu soruda hata var</button></div>';
@@ -1015,17 +1044,27 @@
     const answers = Array.isArray(data.answers) ? data.answers : [];
     if (!questions.length || answers.length !== questions.length) return { ok: false, reason: "all_required" };
     const reasons = data.reasons || {}; const wrongIndexes = []; const bosIndexes = [];
+    // v49 — KULLANICI: "kullanıcı kısa kontrolde 'soru hatalı' derse yine de boş
+    // nedeni istiyor. Hata varsa neden sormasın. Ve çözdüğü soru üzerinden hesapla."
+    // → "Bu soruda hata var" denilen soru: neden sorulmaz, puanlamaya girmez,
+    //   BKT'ye gözlem yazmaz. Puan yalnız gerçekten çözülen sorular üzerinden.
+    const hatali = (Array.isArray(data.hatali) ? data.hatali : []).map(Number).filter(i => i >= 0 && i < questions.length);
+    const hataliMi = i => hatali.indexOf(i) >= 0;
     let correct = 0;
     questions.forEach((q, i) => {
+      if (hataliMi(i)) return;                                   // hatalı soru: sayılmaz
       const cevap = answers[i] == null ? "" : String(answers[i]);
       if (cevap === "") { bosIndexes.push(i); return; }          // boş = yanlış ama nedeni AYRI
       if (Number(cevap) === Number(q.dogru_index)) correct++; else wrongIndexes.push(i);
     });
+    const gecerli = questions.length - hatali.length;
+    if (gecerli <= 0) return { ok: false, reason: "all_flagged", hatali: hatali };
     const nedenGerekli = wrongIndexes.concat(bosIndexes);
     if (nedenGerekli.length && nedenGerekli.some(i => !reasons[i])) {
-      return { ok: false, needsReasons: true, correct: correct, total: questions.length, answers: answers, wrongIndexes: wrongIndexes, bosIndexes: bosIndexes };
+      return { ok: false, needsReasons: true, correct: correct, total: gecerli, answers: answers, wrongIndexes: wrongIndexes, bosIndexes: bosIndexes, hatali: hatali };
     }
     questions.forEach((q, i) => {
+      if (hataliMi(i)) return;                                   // hatalı soru gözlem üretmez
       const isCorrect = answers[i] != null && String(answers[i]) !== "" && Number(answers[i]) === Number(q.dogru_index);
       observe({ konu_id: data.konu_id || data.topicKey, pool_id: data.pool_id || data.poolId, dogru_mu: isCorrect, neden: reasons[i], kaynak: "mini_test", tarih: TODAY(), alt_beceri: q.alt_beceri });
       if (!isCorrect && reasons[i]) {
@@ -1041,21 +1080,21 @@
       const kayit = getEntry(data.konu_id || data.topicKey, true);
       kayit.son_kisa_kontrol = TODAY();
       kayit.son_kisa_kontrol_dogru = correct;
-      kayit.son_kisa_kontrol_toplam = questions.length;
+      kayit.son_kisa_kontrol_toplam = gecerli;
       // KÖK NEDEN (v35.9): precheck_due hiç ilerletilmiyordu → "5 soru"
       // düğmesi SONSUZA KADAR açık kalıyordu (kullanıcı şikâyeti: "5 kısa
       // soru her zaman açık kalmayacak"). Test yapıldıysa sıradaki kontrol
       // ertelenir: geçtiyse KISA_ARALIK_GUN, kaldıysa 1 gün sonra.
-      const gecti = questions.length ? (correct / questions.length) >= 0.6 : false;
+      const gecti = gecerli ? (correct / gecerli) >= 0.6 : false;
       kayit.precheck_due = addDays(TODAY(), gecti ? KISA_ARALIK_GUN : 1);
       kayit.son_kisa_kontrol_gecti = gecti;
       // v41 — 5. ADIM TAMAMLANDI. Yol haritası aynı ekranda tazelenir
       // (kullanıcı: "adım bittiğinde çıkmıyor, ağaca tıklayınca açılıyor").
       try { if (typeof window.__kisaKontrolBitti === "function") window.__kisaKontrolBitti(data.konu_id || data.topicKey); } catch (e) { /* */ }
     }
-    const result = mode === "precheck" ? { passed: false, precheck: true, returnToFirstStep: correct <= 1, ratio: questions.length ? correct / questions.length : 0, status: statusFor(getEntry(data.konu_id || data.topicKey, true)) } : validateLearningTest(data.konu_id || data.topicKey, correct, questions.length);
-    result.correct = correct; result.total = questions.length;
-    return { ok: true, result: result, correct: correct, total: questions.length, answers: answers, wrongIndexes: wrongIndexes };
+    const result = mode === "precheck" ? { passed: false, precheck: true, returnToFirstStep: correct <= 1, ratio: gecerli ? correct / gecerli : 0, status: statusFor(getEntry(data.konu_id || data.topicKey, true)) } : validateLearningTest(data.konu_id || data.topicKey, correct, gecerli);
+    result.correct = correct; result.total = gecerli;
+    return { ok: true, result: result, correct: correct, total: gecerli, answers: answers, wrongIndexes: wrongIndexes, hatali: hatali };
   }
 
   function validateLearningTest(key, correct, total) {
@@ -1321,6 +1360,14 @@
         const modal = document.getElementById("bkt-test-modal");
         const sira = Number(sikayet.dataset.bktSikayet) || 0;
         const q = (modal && modal._bktQuestions && modal._bktQuestions[sira]) || {};
+        // v49 — işaretle: bu soru için neden sorulmaz, puana katılmaz.
+        if (modal) {
+          if (!modal._bktHatali || typeof modal._bktHatali !== "object") modal._bktHatali = {};
+          modal._bktHatali[sira] = true;
+          // Sonuç ekranı açıksa neden kutusu KALKSIN; test ekranındaysa not görünsün.
+          if (modal._bktDraft && modal.querySelector('[data-bkt-finalize-test]')) showMiniResult(modal, modal._bktDraft);
+          else if (modal._bktQuestions && modal._bktQuestions.length) cizMiniSoru(modal);
+        }
         const parca = String((modal && modal._bktTopicKey) || "").split(" > ");
         if (typeof window.__amGeriBildirim === "function") {
           const cevap = Array.isArray(q.secenekler) ? q.secenekler.map(function (x, j) { return ("ABCDE".charAt(j) || (j + 1)) + ") " + x; }).join(" | ") : "";

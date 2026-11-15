@@ -1178,6 +1178,14 @@ select.dd-native {
     <textarea id="geri-bildirim-metin" class="input" rows="3" maxlength="1000" placeholder="Örn: Fizik 1.3 havuzundaki 4. sorunun cevabı yanlış görünüyor." style="width:100%;min-height:78px;resize:vertical;font-size:13px;"></textarea>
     <button class="btn btn-primary w-full" data-act="geriBildirimGonder" style="margin-top:8px;min-height:44px;"><i data-lucide="send" style="width:15px;height:15px;"></i> Geri Bildirimi Gönder</button>
     <div id="geri-bildirim-sonuc" class="text-xs text-muted" style="margin-top:6px;line-height:1.5;"></div>
+    <!-- v49 — KULLANICI: "geri bildirim çalışıyor mu ben nereden göreceğim" -->
+    <div style="margin-top:12px;">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);">GÖNDERDİKLERİM</span>
+        <button class="btn btn-ghost btn-sm" data-act="geriBildirimleriYenile" style="min-height:30px;font-size:11px;">Yenile</button>
+      </div>
+      <div id="geri-bildirimlerim" class="text-xs text-muted" style="margin-top:6px;line-height:1.55;">Yükleniyor…</div>
+    </div>
   </div>
   <div style="margin-top:16px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">SINIF</div>
@@ -1393,17 +1401,20 @@ function activeLessonConfig() {
 // 4 Yalın Yanlış + 3 Yalın Boş taksonomisi (v5 şartnamesi)
 // v35.8 — Yanlış ve BOŞ için AYRI hata nedenleri; "Süre yetmedi" seçeneği
 // kullanıcı isteğiyle TAMAMEN kaldırıldı.
-// v48 — KULLANICI: "deneme ve soru girişinde yanlış ve boş nedenleri neden
-// değişmiş? Orjinali böyle değildi."
-// ORİJİNAL ayrım geri getirildi (kaynak: 12.10.2026 teslim zip'i, index.html:1255).
+// v48 — ORİJİNAL ayrım geri getirildi (kaynak: 12.10.2026 teslim zip'i, index.html:1255).
 //   YANLIŞ → Konuyu Bilmiyordum · Anlamadım · İşlem hatası · Kodlama hatası
 //   BOŞ    → Konu eksiği · Çözüm yolunu bulamadım
-// TEK fark: kullanıcının kendi isteğiyle (v35.8) kaldırılan "Süre yetmedi"
-// geri GETİRİLMEDİ.
+// v49 — KULLANICI: "süre yetmedi denemede olsun ama soru girişinde olmasın.
+// Çünkü deneme süre ile yapılıyor."
+//   → DENEME (süreli): boşta "Süre yetmedi" seçeneği var (orijinalde de boş
+//     nedenleri arasındaydı). SORU GİRİŞİ (süresiz): bu seçenek yok.
 const WRONG_REASONS = ["Konuyu Bilmiyordum", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"];
-const EMPTY_REASONS = ["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"];
+const EMPTY_REASONS = ["KONUEKSİKLİĞİ", "SÜREYETMEDİ", "ÇÖZÜMYOLUNUBULAMADIM"];
+// Soru Bankası (süresiz giriş) için: "Süre yetmedi" yok.
+const QB_EMPTY_REASONS = ["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"];
+const QB_WRONG_REASONS = WRONG_REASONS.slice();
 function canonicalReason(value) { return ({"KONU EKSİKLİĞİ":"KONUEKSİKLİĞİ","KONUEKSİKLİĞİ":"KONUEKSİKLİĞİ","ÇÖZÜM YOLUNU BULAMADIM":"ÇÖZÜMYOLUNUBULAMADIM","Konuyu Bilmiyordum":"Konuyu Bilmiyordum","SÜRE YETMEDİ":"SUREYETMEDI","SÜREYETMEDİ":"SUREYETMEDI"}[String(value || "").trim()] || String(value || "").trim()); }
-function reasonLabel(value) { return ({"Konuyu Bilmiyordum":"Konuyu bilmiyordum","KONUEKSİKLİĞİ":"Konu eksiği","ANLAMADIM":"Anlamadım","ÇÖZÜMYOLUNUBULAMADIM":"Çözüm yolunu bulamadım","İşlem Hatası/Dikkatsizlik":"İşlem hatası / dikkatsizlik","Kodlama/Kitapçık Hatası":"Kodlama / kitapçık hatası","SUREYETMEDI":"Süre yetmedi (eski kayıt)"}[canonicalReason(value)] || value); }
+function reasonLabel(value) { return ({"Konuyu Bilmiyordum":"Konuyu bilmiyordum","KONUEKSİKLİĞİ":"Konu eksiği","ANLAMADIM":"Anlamadım","ÇÖZÜMYOLUNUBULAMADIM":"Çözüm yolunu bulamadım","İşlem Hatası/Dikkatsizlik":"İşlem hatası / dikkatsizlik","Kodlama/Kitapçık Hatası":"Kodlama / kitapçık hatası","SUREYETMEDI":"Süre yetmedi"}[canonicalReason(value)] || value); }
 
 // Hata tipi -> ağırlık (Laplace düzeltmeli Priorite formülü, v5)
 // Priorite = [1.5·DenemeBilgi + 1.0·TestBilgi + 0.5·(İşlem+Anlama)] × (1 + AYT Ağırlığı)
@@ -1438,14 +1449,18 @@ const EXAM_REGIMES = [
 const REASON_GROUP = {
   "Konuyu Bilmiyordum": "Konu Bilgisi Eksiği", "KONUEKSİKLİĞİ": "Konu Bilgisi Eksiği",
   "ANLAMADIM": "Anlama Güçlüğü", "İşlem Hatası/Dikkatsizlik": "İşlem Hatası",
-  "Kodlama/Kitapçık Hatası": "Kitapçık Hatası", "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm Yolu"
+  "Kodlama/Kitapçık Hatası": "Kitapçık Hatası", "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm Yolu",
+  // v49 — "Süre yetmedi" denemede yeniden seçilebilir oldu; raporda kendi
+  // grubunda görünmeli (yoksa yanlışlıkla "Anlama Güçlüğü"ne yazılıyordu).
+  "SUREYETMEDI": "Süre Yönetimi"
 };
 const GROUP_META = {
   "Konu Bilgisi Eksiği": { label: "Konu Bilgisi Eksiği", color: "var(--semantic-error)", bg: "var(--semantic-error-bg)" },
   "Anlama Güçlüğü": { label: "Anlama Güçlüğü", color: "var(--semantic-warning)", bg: "var(--semantic-warning-bg)" },
   "İşlem Hatası": { label: "İşlem Hatası", color: "var(--semantic-warning)", bg: "var(--semantic-warning-bg)" },
   "Çözüm Yolu": { label: "Çözüm Yolu", color: "var(--memory-indigo)", bg: "var(--memory-indigo-bg)" },
-  "Kitapçık Hatası": { label: "Kitapçık Hatası", color: "var(--text-muted)", bg: "var(--bg-canvas)" }
+  "Kitapçık Hatası": { label: "Kitapçık Hatası", color: "var(--text-muted)", bg: "var(--bg-canvas)" },
+  "Süre Yönetimi": { label: "Süre Yönetimi", color: "var(--memory-indigo)", bg: "var(--memory-indigo-bg)" }
 };
 
 // KÖK EKSİK: v35.5'e kadar burada sabit bir kelime listesi (CROSS_LINKS) vardı
@@ -2088,7 +2103,7 @@ function errorTypeDistribution() {
 }
 
 // Çözüm yolu eksiği oranı (%)
-// v35.8 — "Süre yetmedi" nedeni kaldırıldığı için bu oran yalnız
+// v49 — "Süre yetmedi" artık denemede seçilebilir; bu oran yalnız
 // "Çözüm yolunu bulamadım" kayıtlarını sayar.
 function skyaRate() {
   let total = 0, skya = 0;
@@ -2940,7 +2955,13 @@ function openConfirm(message, cb) {
 function closeConfirm() { confirmCallback = null; closeModal("confirm-modal"); }
 function executeConfirm() { if (typeof confirmCallback === "function") confirmCallback(); closeConfirm(); }
 
-function openSettings() { updateGradeButtons(); document.getElementById("settings-drawer").classList.add("open"); document.getElementById("settings-overlay").classList.add("show"); try { updateBildirimDurum(); } catch (e) {} }
+function openSettings() {
+  updateGradeButtons();
+  document.getElementById("settings-drawer").classList.add("open");
+  document.getElementById("settings-overlay").classList.add("show");
+  try { updateBildirimDurum(); } catch (e) {}
+  try { geriBildirimlerimYukle(); } catch (e) {}
+}
 function closeSettings() { document.getElementById("settings-drawer").classList.remove("open"); document.getElementById("settings-overlay").classList.remove("show"); }
 
 function toast(msg, type) {
@@ -3154,6 +3175,53 @@ window.__amGeriBildirim = async function (p) {
   return r;
 };
 
+// v49 — ÖĞRENCİ/KULLANICI GÖRÜNÜRLÜĞÜ: gönderdiği geri bildirimler
+// Supabase public.geri_bildirim tablosuna yazılıyor (RLS: herkes yalnız KENDİ
+// satırını okur). Burada son 10 kayıt gösterilir → "gönderdim, ulaştı mı?"
+// sorusunun uygulama içindeki cevabı budur.
+async function geriBildirimlerimYukle() {
+  const kutu = document.getElementById("geri-bildirimlerim");
+  if (!kutu) return;
+  const kuyruk = geriKuyrukOku();
+  const bekleyen = kuyruk.length ? '<div style="margin-bottom:6px;color:var(--on-warning-bg,#92400E);">Cihazda bekleyen ' + kuyruk.length + " bildirim var — bağlantı gelince kendiliğinden gönderilecek.</div>" : "";
+  const sb = window.__amSupabase;
+  if (!sb || typeof sb.from !== "function") {
+    kutu.innerHTML = bekleyen + "Bulut bağlantısı yok. Gönderdiklerin bu cihazda saklanıyor; giriş yapınca listelenir.";
+    return;
+  }
+  let oturum = null;
+  try { oturum = window.__amSession ? await window.__amSession() : null; } catch (e) { /* */ }
+  if (!oturum) {
+    kutu.innerHTML = bekleyen + "Gönderdiklerini burada görmek için Profil → Giriş yap (bildirimler hesabına bağlanır).";
+    return;
+  }
+  let satirlar = [];
+  try {
+    const { data, error } = await sb.from("geri_bildirim")
+      .select("tur,mesaj,ders,konu,created_at")
+      .eq("user_id", oturum.user.id)
+      .order("created_at", { ascending: false })
+      .limit(10);
+    if (error) throw error;
+    satirlar = Array.isArray(data) ? data : [];
+  } catch (e) {
+    kutu.innerHTML = bekleyen + "Liste şu an alınamadı (" + esc(String((e && e.message) || e)) + ").";
+    return;
+  }
+  if (!satirlar.length) {
+    kutu.innerHTML = bekleyen + "Henüz bir geri bildirim göndermedin.";
+    return;
+  }
+  kutu.innerHTML = bekleyen + satirlar.map(function (r) {
+    const ne = r.tur === "soru" ? (r.ders || "Soru") + (r.konu ? " · " + String(r.konu).split(" > ").pop() : "") : (r.mesaj || "Genel bildirim");
+    const dd = r.created_at ? new Date(r.created_at) : null;
+    const t = dd && !isNaN(dd.getTime()) ? dd.toLocaleDateString("tr-TR") + " " + dd.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" }) : "";
+    return '<div style="border-top:1px solid var(--border-card);padding:5px 0;">' +
+      '<span class="tabular" style="opacity:.75;">' + esc(t) + "</span> · " + esc(String(ne).slice(0, 90)) +
+      '<span style="color:var(--semantic-success);font-weight:700;"> ✓ ulaştı</span></div>';
+  }).join("") + '<div style="margin-top:6px;opacity:.8;">Son 10 kayıt gösteriliyor.</div>';
+}
+
 // Ayarlar'daki genel geri bildirim formu
 async function geriBildirimFormGonder() {
   const alan = document.getElementById("geri-bildirim-metin");
@@ -3169,6 +3237,7 @@ async function geriBildirimFormGonder() {
     ? "Gönderildi — teşekkürler. Her mesajı okuyoruz."
     : "Şu an gönderilemedi; mesaj cihazda saklandı, bağlantı gelince gönderilecek.";
   if (typeof toast === "function" && r.ok) toast("Geri bildirimin gönderildi.", "success");
+  if (r.ok) geriBildirimlerimYukle();
 }
 
 // v41 — 5. adım (5 soruluk kısa kontrol) bitince Bilgi Bankası panelini
@@ -5561,7 +5630,7 @@ function updateQBErrors(dv, wv, ev) {
       '<div style="flex:1.4;min-width:0;"><span class="err-label">KONU SEÇ <span class="text-xs text-muted font-normal">(' + esc(lesson) + ')</span></span>' +
       '<select data-qberr="' + i + ':topic"><option value="">Konu Seç…</option>' + topicsOfLesson(lesson).map(tp => '<option value="' + attr(tp) + '"' + (prev[i + ":topic"] === tp ? " selected" : "") + ">" + esc(tp) + "</option>").join("") + "</select></div>" +
       '<div style="flex:1;min-width:0;"><span class="err-label">NEDEN SEÇ</span>' +
-      '<select data-qberr="' + i + ':type"><option value="">Neden Seç…</option>' + (isWrong ? WRONG_REASONS : EMPTY_REASONS).map(r => '<option value="' + attr(r) + '">' + esc(reasonLabel(r)) + "</option>").join("") + "</select></div>" +
+      '<select data-qberr="' + i + ':type"><option value="">Neden Seç…</option>' + (isWrong ? QB_WRONG_REASONS : QB_EMPTY_REASONS).map(r => '<option value="' + attr(r) + '">' + esc(reasonLabel(r)) + "</option>").join("") + "</select></div>" +
       "</div></div>";
   }
   area.innerHTML = html;
@@ -5816,6 +5885,7 @@ document.addEventListener("DOMContentLoaded", function () {
       case "tanitimKapat": tanitimKapat(false); break;
       case "tanitimKilavuz": tanitimKapat(true); break;
       case "geriBildirimGonder": geriBildirimFormGonder(); break;
+      case "geriBildirimleriYenile": geriBildirimlerimYukle(); break;
       case "openNotif": renderNotifList(); openModal("notif-modal"); break;
       case "markAllRead": state.notifications.forEach(function (n) { n.read = true; }); saveState(); renderNotifList(); updateBellBadges(); break;
       case "toggleNotifPermission": requestNotifPermission(); break;

@@ -198,17 +198,24 @@ console.log("\n== 4) Yanlış/boş nedenleri orijinal ayrımda ==");
   ok("YANLIŞ = Konuyu Bilmiyordum · Anlamadım · İşlem hatası · Kodlama hatası",
     JSON.stringify(wr) === JSON.stringify(["Konuyu Bilmiyordum", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"]),
     JSON.stringify(wr));
-  ok("BOŞ = Konu eksiği · Çözüm yolunu bulamadım",
-    JSON.stringify(er) === JSON.stringify(["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"]), JSON.stringify(er));
+  ok("BOŞ = Konu eksiği · Süre yetmedi · Çözüm yolunu bulamadım (deneme)",
+    JSON.stringify(er) === JSON.stringify(["KONUEKSİKLİĞİ", "SÜREYETMEDİ", "ÇÖZÜMYOLUNUBULAMADIM"]), JSON.stringify(er));
   ok("iki liste AYRI", JSON.stringify(wr) !== JSON.stringify(er));
-  ok("'Süre yetmedi' hiçbir listede yok (kullanıcı isteği)",
-    wr.concat(er).every(r => !/SÜRE|süre/i.test(r)));
+  // v49 — kullanıcı: "süre yetmedi denemede olsun ama soru girişinde olmasın"
+  ok("'Süre yetmedi' YANLIŞ listesinde değil (deneme)", !wr.some(r => /SÜRE/i.test(r)));
+  const qbW = new Function(HTML.slice(HTML.indexOf("const QB_WRONG_REASONS"), HTML.indexOf("\n", HTML.indexOf("const QB_WRONG_REASONS"))).replace("const ", "return ") + ";")();
+  const qbE = new Function(HTML.slice(HTML.indexOf("const QB_EMPTY_REASONS"), HTML.indexOf("\n", HTML.indexOf("const QB_EMPTY_REASONS"))).replace("const ", "return ") + ";")();
+  ok("soru girişi listelerinde 'Süre yetmedi' YOK",
+    qbW.concat(qbE).every(r => !/SÜRE/i.test(r)), JSON.stringify(qbW.concat(qbE)));
+  ok("soru girişi BOŞ listesi = Konu eksiği · Çözüm yolunu bulamadım",
+    JSON.stringify(qbE) === JSON.stringify(["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"]), JSON.stringify(qbE));
   ok("'Konuyu Bilmiyordum' yeniden YANLIŞ listesinde", wr.includes("Konuyu Bilmiyordum"));
   ok("'Anlamadım' BOŞ listesinde değil (orijinalde yoktu)", !er.includes("ANLAMADIM"));
 
   // reasonLabel: her seçenek Türkçe etiket göstermeli (kod değil)
   const rl = new Function(fonksiyonCikar("canonicalReason") + "\n" + fonksiyonCikar("reasonLabel") + "\nreturn reasonLabel;")();
   ok("Konuyu Bilmiyordum → 'Konuyu bilmiyordum'", rl("Konuyu Bilmiyordum") === "Konuyu bilmiyordum", rl("Konuyu Bilmiyordum"));
+  ok("SÜREYETMEDİ → 'Süre yetmedi' (artık gerçek seçenek)", rl("SÜREYETMEDİ") === "Süre yetmedi", rl("SÜREYETMEDİ"));
   ok("KONUEKSİKLİĞİ → 'Konu eksiği'", rl("KONUEKSİKLİĞİ") === "Konu eksiği", rl("KONUEKSİKLİĞİ"));
   ok("ANLAMADIM → 'Anlamadım'", rl("ANLAMADIM") === "Anlamadım", rl("ANLAMADIM"));
   ok("ÇÖZÜMYOLUNUBULAMADIM → 'Çözüm yolunu bulamadım'", rl("ÇÖZÜMYOLUNUBULAMADIM") === "Çözüm yolunu bulamadım");
@@ -216,10 +223,12 @@ console.log("\n== 4) Yanlış/boş nedenleri orijinal ayrımda ==");
     rl("Konuyu Bilmiyordum") !== rl("KONUEKSİKLİĞİ"));
 
   // Form gerçekten bu listeleri kullanıyor mu? (deneme + soru girişi)
-  ok("Deneme formu WRONG/EMPTY listeni kullanıyor",
+  ok("Deneme formu WRONG_REASONS/EMPTY_REASONS kullanıyor",
     /isWrong \? WRONG_REASONS : EMPTY_REASONS/.test(HTML));
-  const kullanim = (HTML.match(/isWrong \? WRONG_REASONS : EMPTY_REASONS/g) || []).length;
-  ok("hem deneme hem soru girişinde aynı listeler (2 yer)", kullanim === 2, "bulunan: " + kullanim);
+  ok("Soru girişi QB_WRONG_REASONS/QB_EMPTY_REASONS kullanıyor",
+    /isWrong \? QB_WRONG_REASONS : QB_EMPTY_REASONS/.test(HTML));
+  ok("soru girişi deneme listelerini kullanmıyor",
+    (HTML.match(/data-qberr[\s\S]{0,120}?WRONG_REASONS : EMPTY_REASONS/) || []).length === 0);
 }
 
 console.log("\n" + "─".repeat(56));
