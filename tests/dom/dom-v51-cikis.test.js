@@ -136,9 +136,12 @@ async function ac(depo) {
 
   console.log("\n== 4) Yerleşim: bilgisayar/tablet yatay, telefon dikey ==");
   {
-    ok("CSS kırılma noktası 768px + 480px yükseklik", HTML.indexOf("(min-width: 768px) and (min-height: 480px)") > 0);
-    ok("telefon kuralı dar ekran VEYA kısa ekran",
-      HTML.indexOf("@media (max-width: 767px), (max-height: 479px)") > 0);
+    // v52: kırılma noktası yatay ekran ister (tablet portrede bozuluyordu).
+    // Ayrıntılı cihaz matrisi: dom-v52-yerlesim.test.js
+    ok("yatay yerleşim kuralı yatay ekran istiyor",
+      /@media \(\(orientation: landscape\) and \(min-width: 900px\) and \(min-height: 480px\)\)/.test(HTML));
+    ok("telefon/tablet portre kuralı var",
+      HTML.indexOf("@media (max-width: 899px), (max-height: 479px), ((orientation: portrait) and (max-width: 1179px))") > 0);
     ok("eski 1024px kırılma noktası kalmadı", HTML.indexOf("min-width: 1024px") < 0);
     ok("yerleşim ölçütü tek fonksiyonda", /function yatayYerlesimMi\(\)/.test(HTML));
     ok("yön kilidi yalnız kurulu uygulamada denenir", /navigator\.standalone|display-mode: standalone/.test(HTML));

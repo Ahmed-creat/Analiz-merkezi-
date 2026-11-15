@@ -1,4 +1,4 @@
-const PWA_SURUM = "v51-cikis-ve-yerlesim";
+const PWA_SURUM = "v52-tablet-yerlesim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

@@ -245,8 +245,8 @@ svg.lucide, i[data-lucide] svg { stroke-width: 1.75px; }
 .settings-drawer.open { transform: translateX(0); }
 
 /* ===== MASAÜSTÜ / TABLET (≥768px ve yeterli yükseklik): YATAY yerleşim ===== */
-@media (min-width: 768px) and (min-height: 480px) {
-  .mobile-topbar, .bottom-nav { display: none; }
+@media ((orientation: landscape) and (min-width: 900px) and (min-height: 480px)), ((min-width: 1180px) and (min-height: 620px)) {
+  .mobile-topbar, .bottom-nav { display: none !important; }
   .sidebar { transform: translateX(0); width: 262px; }
   /* width:auto şart: margin-left ile birlikte width:100% yatay taşma yapar */
   .main-content { width: auto; }
@@ -292,6 +292,10 @@ svg.lucide, i[data-lucide] svg { stroke-width: 1.75px; }
 }
 /* Kaydırma alanının altında kalan bölge de her zaman tema renginde kalır */
 html, body, .main-content, .app-footer { background-color: var(--bg-canvas); }
+/* v52 — yatay taşma emniyeti: sayfa hiçbir genişlikte yana kaymaz.
+   Yalnız html'e verilir; body'ye verilirse sticky üst çubuk bozulur. */
+html { overflow-x: hidden; }
+body { max-width: 100%; }
 
 
 /* ===== AÇILIŞ SAYFASI (görsel: giriş sayfası tasarımı) ===== */
@@ -330,14 +334,14 @@ html, body, .main-content, .app-footer { background-color: var(--bg-canvas); }
 .ms-item:active { transform: scale(0.97); }
 
 /* ===== MOBİL (DK): SOL MENÜ YOK — alt navigasyon var ===== */
-@media (max-width: 767px), (max-height: 479px) {
+@media (max-width: 899px), (max-height: 479px), ((orientation: portrait) and (max-width: 1179px)) {
   .sidebar, #sidebar-overlay, .sidebar-close, .sidebar-collapse-btn, #sb-reopen { display: none !important; }
   .bottom-nav { grid-template-columns: repeat(6, 1fr); }
 }
 @media (min-width: 640px) {
   .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; align-items: start; }
 }
-@media (min-width: 768px) and (min-height: 480px) {
+@media ((orientation: landscape) and (min-width: 900px) and (min-height: 480px)), ((min-width: 1180px) and (min-height: 620px)) {
   #more-sheet, #more-backdrop { display: none !important; }
   .main-content { max-width: 1280px; } /* kartlar ekran boyunca aşırı uzamasın */
 }
@@ -375,7 +379,7 @@ html, body, .main-content, .app-footer { background-color: var(--bg-canvas); }
 }
 .winctrl:hover { background: var(--bg-canvas); color: var(--text-main); }
 .winctrl.close:hover { background: var(--semantic-error-bg); color: var(--semantic-error); }
-@media (min-width: 768px) and (min-height: 480px) {
+@media ((orientation: landscape) and (min-width: 900px) and (min-height: 480px)), ((min-width: 1180px) and (min-height: 620px)) {
   #desk-topbar { display: flex; }
   .main-content { margin-top: 56px; }
 }
@@ -616,7 +620,7 @@ select option:checked, select option:hover {
   box-shadow: 0 10px 30px -8px rgba(37,99,235,0.5); transition: var(--transition-smooth);
 }
 #coach-toggle:hover { transform: scale(1.06); }
-@media (min-width: 768px) and (min-height: 480px) { #coach-toggle { bottom: 20px; } }
+@media ((orientation: landscape) and (min-width: 900px) and (min-height: 480px)), ((min-width: 1180px) and (min-height: 620px)) { #coach-toggle { bottom: 20px; } }
 #coach-panel {
   position: fixed; right: 16px; bottom: calc(146px + env(safe-area-inset-bottom,0px)); z-index: 50;
   width: 320px; max-width: calc(100vw - 32px);
@@ -624,7 +628,7 @@ select option:checked, select option:hover {
   border-radius: var(--radius-card); box-shadow: 0 16px 50px -12px rgba(15,23,42,0.3);
   padding: 16px; max-height: 46vh; overflow-y: auto;
 }
-@media (min-width: 768px) and (min-height: 480px) { #coach-panel { bottom: 84px; } }
+@media ((orientation: landscape) and (min-width: 900px) and (min-height: 480px)), ((min-width: 1180px) and (min-height: 620px)) { #coach-panel { bottom: 84px; } }
 .coach-msg { font-size: 12.5px; color: var(--text-main); background: var(--bg-canvas); border-radius: 12px; padding: 10px 12px; line-height: 1.45; }
 .coach-msg b { color: var(--brand-blue); }
 .notif-card {
@@ -688,7 +692,7 @@ select option:checked, select option:hover {
   bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 -8px 24px -12px rgba(15,23,42,0.35), var(--shadow-bento);
 }
-@media (min-width: 768px) and (min-height: 480px) { .btn-sticky { position: static; box-shadow: none; } }
+@media ((orientation: landscape) and (min-width: 900px) and (min-height: 480px)), ((min-width: 1180px) and (min-height: 620px)) { .btn-sticky { position: static; box-shadow: none; } }
 
 /* ===== DERS UYARI KUTUSU (canlı sınır) ===== */
 .lesson-warn {
@@ -792,12 +796,13 @@ select.dd-native {
    Kullanıcı: "Görevler de ordaki gibi renkli satırlar olsun."
    Her satır: solda renk şeridi + ikon, ortada başlık/açıklama, sağda aksiyon. */
 .gorev-row {
-  display: flex; gap: 12px; align-items: flex-start;
+  display: flex; gap: 12px; align-items: flex-start; overflow: hidden;
   padding: 12px 14px 12px 12px; margin-bottom: 8px;
   border: 1px solid var(--border-card); border-left: 4px solid var(--brand-blue);
   border-radius: 12px; background: var(--bg-card);
 }
 .gorev-row:last-child { margin-bottom: 0; }
+.gorev-row > div { min-width: 0; }
 .gorev-row.ok .gorev-ic { color: var(--semantic-success); }
 /* renk türleri */
 .gorev-row.tekrar { border-left-color: var(--memory-indigo); background: color-mix(in srgb, var(--memory-indigo) 6%, var(--bg-card)); }
@@ -2776,16 +2781,24 @@ function initChrome() {
 // v51 — YERLEŞİM YÖNÜ
 // KULLANICI: "Bilgisayar ve tablette landscape modunda olsun, mobilde
 // normal dikey olsun."
-// Kural tek yerde: geniş (≥768px) VE yeterince yüksek (≥480px) ekran
-// yatay yerleşimi (yan menü + geniş içerik) kullanır. Telefonlar — dar
-// ekran ya da yatayda çok kısa ekran — dikey yerleşimde (alt navigasyon)
-// kalır. CSS'teki kırılma noktasıyla BİREBİR aynı ölçüt.
+// v52 — tablet portre modunda YAN MENÜ + sıkışmış 3 sütun açılıyordu
+// (iPad 820px genişlik). Düzeltme: yatay yerleşim artık YATAY ekran ister.
+//   YATAY yerleşim (yan menü + geniş içerik):
+//     · ekran yatay VE en az 900×480, ya da
+//     · en az 1180×620 (büyük ekran; hafif dikey pencerelerde de ferah)
+//   DİKEY yerleşim (alt navigasyon, tek/iki sütun): diğer her şey →
+//     telefon, tablet portre, çok kısa yatay ekran.
+// CSS'teki kırılma noktasıyla BİREBİR aynı ölçüt (aynı sorgu metni).
 // ============================================================
+const YERLESIM_GENIS_SORGU = "((orientation: landscape) and (min-width: 900px) and (min-height: 480px)), ((min-width: 1180px) and (min-height: 620px))";
+const YERLESIM_DAR_SORGU = "(max-width: 899px), (max-height: 479px), ((orientation: portrait) and (max-width: 1179px))";
 function yatayYerlesimMi() {
   try {
-    return window.matchMedia("(min-width: 768px) and (min-height: 480px)").matches;
+    return window.matchMedia(YERLESIM_GENIS_SORGU).matches;
   } catch (e) {
-    return window.innerWidth >= 768 && window.innerHeight >= 480;
+    // matchMedia yoksa: aynı ölçüt elle uygulanır
+    const w = window.innerWidth || 0, h = window.innerHeight || 0;
+    return (w > h && w >= 900 && h >= 480) || (w >= 1180 && h >= 620);
   }
 }
 
@@ -2947,7 +2960,7 @@ document.addEventListener("click", function (e) {
       // alanı (örn. NEDEN SEÇ butonu) ÖRTMEZ, tek dokunuşla iki liste de kullanılabilir
       const isCompact = (typeof yatayYerlesimMi === "function")
         ? !yatayYerlesimMi()
-        : window.matchMedia("(max-width: 767px), (max-height: 479px)").matches;
+        : window.matchMedia(YERLESIM_DAR_SORGU).matches;
       if (isCompact) {
         wrap.classList.add("sheet");
         m.classList.add("dd-sheet");
@@ -3441,7 +3454,8 @@ function renderDashboard(container) {
         return '<div class="flex items-center gap-2" style="padding:5px 0;min-width:0;">' +
           '<span class="acil-rank" style="width:22px;height:22px;min-width:22px;display:inline-flex;align-items:center;justify-content:center;border-radius:7px;background:var(--semantic-error-bg);color:var(--on-error-bg);font-size:10.5px;font-weight:800;">#' + (i + 1) + "</span>" +
           '<span style="min-width:0;flex:1;font-size:12.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + esc(s.topic) + "</span>" +
-          '<span class="text-xs text-muted" style="flex-shrink:0;">' + esc(s.lesson) + "</span></div>";
+          // v52 — ders adı uzun olduğunda karttan taşmasın: kırpılır (üç nokta)
+          '<span class="text-xs text-muted" style="flex:0 1 auto;max-width:42%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + esc(s.lesson) + "</span></div>";
       }).join("") + "</div>";
   }
   html += "</div>";

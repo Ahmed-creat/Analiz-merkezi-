@@ -189,7 +189,9 @@ ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v50", APP.indexOf('const PWA_SURUM = "v51-cikis-ve-yerlesim"') === 0);
+// Sürüm damgası sabit yazılmaz: her yükseltmede test kırılmasın.
+// (Damganın sw.js ile aynı olduğu aşağıdaki kontrolde ölçülüyor.)
+ok("PWA sürüm damgası tanımlı", /^const PWA_SURUM = "v\d[^"]*";/.test(APP));
 // v51 — sürüm damgası TEK yerden okunur: PWA_SURUM ile sw.js CACHE
 // birbirinden kopamaz (v50'de elle güncellenirken atlanmıştı).
 {
