@@ -85,6 +85,18 @@ ok("eski anahtar önbelleği geçersiz sayıldı", /am_vapid_sunucu_v58/.test(PU
 ok("anahtar okunamıyorsa da abonelik yenileniyor (doğrulanamaz abonelik korunmaz)",
   /if \(!mevcut \|\| b64Yaz\(mevcut\) !== kullanilacak\)/.test(PUSH));
 
+console.log("\n== 10) Hatırlatma: kanıtlanmış gönderim yolu (v59) ==");
+const MIG = fs.existsSync("supabase/migrations/0002_webpush_tetikle.sql")
+  ? fs.readFileSync("supabase/migrations/0002_webpush_tetikle.sql", "utf8") : "";
+ok("göç dosyası var", !!MIG);
+ok("hatırlatıcı fonksiyonu tanımlı", /create or replace function public\.webpush_tetikle\(\)/.test(MIG));
+ok("gönderim kanıtlanmış yola (push-tani) bağlı", /functions\/v1\/push-tani/.test(MIG));
+ok("şifreleme web-push ile (sifreli webpush)", /'sifreli', 'webpush'/.test(MIG));
+ok("sır istemciden değil vault'tan okunuyor", /vault\.decrypted_secrets/.test(MIG));
+ok("günde iki vardiya, vardiya başına tekrar yok", /vardiya/.test(MIG) && /on conflict do nothing/.test(MIG));
+ok("bozuk gömülü şifrelemeye bağımlılık yok (bildirim-gonder çağrılmıyor)",
+  !/functions\/v1\/bildirim-gonder/.test(MIG));
+
 console.log("\n== 7) Sürüm damgası senkron ==");
 const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "analiz-merkezi-v-\d+-([^"]+)"/) || [])[1] || "";
