@@ -41,7 +41,7 @@ ok("harf yazınca süzülüyor (input olayı)", /document\.addEventListener\("in
 ok("Türkçe harf farkı aramayı bozmuyor", APP.indexOf("const okzNorm") > 0 && APP.indexOf("n.startsWith(q)") > 0);
 ok("klavyeyle seçim (ok tuşları + Enter)", APP.indexOf("ArrowDown") > 0 && APP.indexOf("ArrowUp") > 0 && APP.indexOf('e.key === "Enter"') > 0);
 ok("seçim gizli alanda korunuyor (kaydet bozulmasın)", APP.indexOf('type="hidden" id="okz-\' + id') > 0 || APP.indexOf('id="okz-\' + id') > 0);
-ok("765 okulda liste 80 ile sınırlı + uyarı", APP.indexOf("EN_FAZLA = 80") > 0);
+ok("uzun okul listesi kırpılıyor (performans sınırı var)", /EN_FAZLA = \d+/.test(APP));
 ok("il değişince ilçe/okul temizleniyor", APP.indexOf("function okzAramaAltSifirla") > 0 && APP.indexOf('okzAramaAltSifirla("ilce"') > 0);
 
 console.log("\n== 2) DEPOLAMA: tek yazıcı, tek kopya ==");

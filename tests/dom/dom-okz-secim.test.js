@@ -90,7 +90,7 @@ function sec(rol, kod) {
   yaz("il", "gazı");
   ok("Türkçe harf farkı aramayı bozmuyor ('gazı')", secenekler("il").length === 1);
   yaz("il", "zzz");
-  ok("eşleşme yoksa açıkça söyler", /Eşleşme yok/.test(liste("il").textContent));
+  ok("eşleşme yoksa açıkça söyler", /Sonuç yok/.test(liste("il").textContent));
   yaz("il", "a");
   ok("çok sonuçta ilk 80 gösterilir + 'daha var' uyarısı", secenekler("il").length <= 80);
 
@@ -114,20 +114,22 @@ function sec(rol, kod) {
   ok("okul seçildi (kod 745770)", O().secim().okul.kod === "745770");
   ok("gizli alan OKUL adı", d.getElementById("okz-okulAdi").value === "19 MAYIS MTAL");
 
-  console.log("\n== 4b) 'gazi' yaz → EN İYİ eşleşme vurgulu, tek dokunuş seçer ==");
+  console.log("\n== 4b) 'gazi' yaz → SADE liste (etiket/uyarı yok), ilk satıra dokun ==");
   {
-    const k2 = kok("il");
     const g2 = girdi("il");
     g2.dispatchEvent(new w.Event("focusin", { bubbles: true }));
     g2.value = "gazi";
     g2.dispatchEvent(new w.Event("input", { bubbles: true }));
     const ilk = secenekler("il")[0];
-    ok("en iyi eşleşme listenin BAŞINDA", ilk && ilk.dataset.kod === "27");
-    ok("'EN İYİ' etiketi görünüyor", /EN İYİ/.test(liste("il").textContent));
-    ok("en iyi eşleşme zaten aktif (ok tuşu gerekmez)", ilk && ilk.dataset.aktif === "1");
-    // Enter ile seç (dokunmadan)
-    g2.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
-    ok("Enter en iyi eşleşmeyi seçti", O().secim().il.kod === "27");
+    ok("en çok uyuşan listenin BAŞINDA", ilk && ilk.dataset.kod === "27");
+    // KULLANICI: "EN İYİ, birkaç harf daha yaz gibi etiket olmasın, Okulizyon gibi olsun."
+    ok("'EN İYİ' etiketi YOK", !/EN İYİ/.test(liste("il").textContent));
+    ok("'birkaç harf daha yaz' uyarısı YOK", !/harf daha yaz/i.test(liste("il").textContent));
+    ok("sayaç/rozet yok (sadece adlar)", secenekler("il").every(x => x.children.length === 0));
+    ok("satır metni yalnızca ad", ilk && ilk.textContent.trim() === "GAZIANTEP");
+    // İlk satıra DOKUN (kullanıcının yaptığı şey)
+    ilk.dispatchEvent(new w.Event("pointerdown", { bubbles: true }));
+    ok("ilk satıra dokunmak seçti", O().secim().il.kod === "27");
     ok("giriş kutusu tam adı gösterdi", g2.value === "GAZIANTEP");
   }
 

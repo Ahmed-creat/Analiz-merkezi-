@@ -1,4 +1,4 @@
-const PWA_SURUM = "v45-arama-en-iyi";
+const PWA_SURUM = "v46-sade-arama";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -382,7 +382,7 @@ function okzAramaCiz(kok, yazilan) {
   const hepsi = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
   if (!hepsi.length) {
     kutu.innerHTML = '<div style="padding:10px 12px;font-size:12.5px;opacity:0.7;">' +
-      (rol === "il" ? "İl listesi yükleniyor…" : "Önce üstteki seçimi yap.") + "</div>";
+      (rol === "il" ? "Yükleniyor…" : (rol === "ilce" ? "Önce il seç" : "Önce ilçe seç")) + "</div>";
     okzAramaKonumla(kok); okzAramaGirdi(kok).setAttribute("aria-expanded", "true");
     return;
   }
@@ -400,32 +400,22 @@ function okzAramaCiz(kok, yazilan) {
     suzulen = bas.concat(ic);
   }
   if (!suzulen.length) {
-    kutu.innerHTML = '<div style="padding:10px 12px;font-size:12.5px;opacity:0.7;">Eşleşme yok. Farklı yazmayı dene.</div>';
+    kutu.innerHTML = '<div style="padding:10px 12px;font-size:12.5px;opacity:0.7;">Sonuç yok.</div>';
   } else {
-    // v44b — KULLANICI: "gazi yazdım, listede en çok uyuşan ölü ona tıklarım;
-    // hepsini yazmam gerekmiyor."
-    // Bu yüzden EN İYİ EŞLEŞME listenin başında ve ZATEN VURGULU gelir:
-    // tek dokunuş seçer, Enter de seçer, ayrıca ok tuşu gerekmez.
-    const EN_FAZLA = 80;
+    // v45c — KULLANICI: "EN İYİ, birkaç harf daha yaz gibi etiket olmasın,
+    // aynı Okulizyon'daki gibi olsun."
+    // Liste SADE: sadece adlar, tek satır, etiket yok, uyarı yok, sayaç yok.
+    // En çok uyuşan yine en üstte — kullanıcı ilk satıra dokunur.
+    const EN_FAZLA = 120;
     const parca = suzulen.slice(0, EN_FAZLA);
-    const ilkKod = parca.length ? parca[0].kod : "";
-    kutu.innerHTML = parca.map((x, j) => {
-      const enIyi = j === 0 && !!q;
-      const seciliMi = x.kod === secili;
-      const vurgu = enIyi || seciliMi;
-      return '<div class="okz-arama-sec" role="option" data-kod="' + escHtml(x.kod) + '" data-ad="' + escHtml(x.ad) + '"' +
-        (j === 0 ? ' data-aktif="1"' : "") +
-        ' style="padding:9px 12px;font-size:13px;cursor:pointer;display:flex;gap:8px;align-items:center;' +
-        'background:' + (vurgu ? "rgba(37,99,235,0.14)" : "transparent") + ';' +
-        (vurgu ? "font-weight:700;" : "") + '">' +
-        '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escHtml(x.ad) + "</span>" +
-        (enIyi ? '<span style="flex-shrink:0;font-size:10px;font-weight:800;letter-spacing:0.04em;color:#2563EB;background:rgba(37,99,235,0.16);border-radius:6px;padding:2px 6px;">EN İYİ</span>' : "") +
-        "</div>";
-    }).join("") + (suzulen.length > EN_FAZLA
-      ? '<div style="padding:8px 12px;font-size:11.5px;opacity:0.6;">' + (suzulen.length - EN_FAZLA) + ' sonuç daha var — birkaç harf daha yaz.</div>'
-      : "");
-    // İlk eşleşmenin kodunu hatırla: odaktan çıkarken "tek aday" ise seçilir.
-    kutu.dataset.enIyiKod = ilkKod;
+    kutu.innerHTML = parca.map(x =>
+      '<div class="okz-arama-sec" role="option" data-kod="' + escHtml(x.kod) + '" data-ad="' + escHtml(x.ad) + '"' +
+      ' style="padding:10px 12px;font-size:13.5px;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;' +
+      'background:' + (x.kod === secili ? "rgba(37,99,235,0.14)" : "transparent") + ';' +
+      (x.kod === secili ? "font-weight:700;" : "") + '">' + escHtml(x.ad) + "</div>"
+    ).join("");
+    // Odaktan çıkışta "tek net aday" kuralı için hatırlanan bilgiler.
+    kutu.dataset.enIyiKod = parca.length ? parca[0].kod : "";
     kutu.dataset.enIyiAd = parca.length ? parca[0].ad : "";
     kutu.dataset.adet = String(suzulen.length);
     kutu.dataset.sorgu = String(yazilan || "");
