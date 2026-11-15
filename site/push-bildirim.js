@@ -328,6 +328,10 @@
     try {
       const kayit = await navigator.serviceWorker.ready;
       const a = await kayit.pushManager.getSubscription();
+      // v53 — CİHAZ KODU: uç noktanın son 4 karakteri. Kullanıcı bunu söyleyince
+      // "hangi abonelik gerçekten bu cihazın" sorusu veritabanından tek bakışta
+      // yanıtlanır (3 abonelik vakası).
+      d.ucKodu = a && a.endpoint ? String(a.endpoint).slice(-4) : "";
       const sb = app();
       if (a && sb && sb.from) {
         const { data } = await sb.from("push_abonelikleri")

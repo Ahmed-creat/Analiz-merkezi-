@@ -1,0 +1,45 @@
+/* v53 — "Sunucu gönderdi (201) ama cihazda bildirim yok" vakasının kanıt yolu.
+   Bu test UYGULAMANIN KENDİ dosyalarını okur; davranışı metinden doğrular:
+     1) SW, push izi önbelleğini activate sırasında SİLMİYOR (eski hata)
+     2) showNotification hata atarsa SADE seçeneklerle tekrar deniyor
+     3) hata ize yazılıyor (görünmez arıza bir daha olmasın)
+     4) arayüz cihaz kodunu (uç nokta son 4) gösteriyor
+     5) uygulama sürümü ile SW önbellek damgası aynı
+*/
+"use strict";
+const fs = require("fs"), path = require("path");
+const KOK = path.join(__dirname, "..", "..");
+const SW = fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8");
+const APP = fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8");
+const PUSH = fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8");
+
+let gecen = 0; const hata = [];
+const ok = (ad, kosul) => { if (kosul) { gecen++; console.log("  ✓ " + ad); } else { hata.push(ad); console.log("  ✗ " + ad); } };
+
+console.log("\n== 1) Push izi her yayında silinmiyor ==");
+ok("korunan önbellek adı tanımlı", /const KORUNAN_IZ = "am-push-iz"/.test(SW));
+ok("activate yalnız CACHE ve iz dışındakileri siliyor",
+  /keys\.filter\(\(k\) => k !== CACHE && k !== KORUNAN_IZ\)/.test(SW));
+ok("eski hatalı filtre kalmadı", !/keys\.filter\(\(k\) => k !== CACHE\)\.map/.test(SW));
+
+console.log("\n== 2) Gösterim hatası bildirimi düşürmüyor ==");
+ok("ilk gösterim try içinde", /try \{\s*await self\.registration\.showNotification\(secim\.title, secim\.options\);/.test(SW));
+ok("hata yakalanınca sade seçeneklerle tekrar deniyor",
+  /iz\.sadeSecenek = true/.test(SW) && /showNotification\(secim\.title, \{\s*body: secim\.options\.body/.test(SW));
+ok("hata ize yazılıyor", /iz\.hata = String\(e\)\.slice\(0, 160\)/.test(SW) && /if \(iz\.hata\) await pushIzYaz\(iz\)/.test(SW));
+ok("başarı durumu da ize yazılıyor", /iz\.gosterildi = true/.test(SW));
+
+console.log("\n== 3) Cihaz kodu (hangi abonelik bu cihazın) ==");
+ok("push-bildirim uç nokta son 4 hanesini veriyor", /d\.ucKodu = a && a\.endpoint \? String\(a\.endpoint\)\.slice\(-4\)/.test(PUSH));
+ok("arayüz cihaz kodunu yazıyor", /" · Cihaz kodu: " \+ cihaz\.ucKodu/.test(APP));
+ok("gösterim hatası arayüzde görünüyor", /sonPush\.hata\) metin \+= " Gösterim hatası: "/.test(APP));
+
+console.log("\n== 4) Sürüm damgası senkron ==");
+const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
+const cache = (SW.match(/const CACHE = "analiz-merkezi-v-\d+-([^"]+)"/) || [])[1] || "";
+ok("PWA_SURUM tanımlı", !!surum);
+ok("SW önbellek damgası PWA_SURUM ile aynı", !!surum && surum === cache);
+
+console.log("\n" + "─".repeat(56));
+console.log(`v53 bildirim izi — ${gecen}/${gecen + hata.length} geçti` + (hata.length ? "" : " ✓"));
+if (hata.length) { hata.forEach(h => console.log("  ✗ " + h)); process.exit(1); }

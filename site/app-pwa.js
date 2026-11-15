@@ -1,4 +1,4 @@
-const PWA_SURUM = "v52-tablet-yerlesim";
+const PWA_SURUM = "v53-bildirim-izi";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -193,6 +193,12 @@ async function pushTeshisYaz() {
     } else if (sonPush) {
       metin += " Son gelen bildirim: " + sonPush.toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + ".";
     }
+    // v53 — CİHAZ KODU + varsa gösterim hatası. İkisi birlikte, "sunucu
+    // gönderdi ama cihaz göstermedi" ile "cihaz hiç almadı" ayrımını
+    // kullanıcıdan tek satırla öğrenmeyi sağlar.
+    if (cihaz.ucKodu) metin += " · Cihaz kodu: " + cihaz.ucKodu + ".";
+    if (sonPush && sonPush.hata) metin += " Gösterim hatası: " + String(sonPush.hata).slice(0, 80);
+    if (sonPush && sonPush.sadeSecenek) metin += " (sade biçimde gösterildi)";
     kutu.textContent = metin;
   } catch (e) {
     kutu.textContent = "Bildirim durumu okunamadı. Uygulamayı yenilemeyi dene.";

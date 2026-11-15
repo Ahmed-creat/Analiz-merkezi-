@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261031-v52-tablet-yerlesim";
+const CACHE = "analiz-merkezi-v-20261031-v53-bildirim-izi";
 const ASSETS = [
   "./",
   "./index.html",
@@ -207,10 +207,15 @@ const ICON_URL = "./icons/icon-192.png";
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
+/* v53 — KORUNAN önbellek: push izi. Eski hâlde burada CACHE dışındaki HER
+   önbellek siliniyordu; "am-push-iz" de silindiği için "cihaza ulaştı mı"
+   kanıtı her yayında yok oluyordu. */
+const KORUNAN_IZ = "am-push-iz";
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim())
+    caches.keys().then((keys) => Promise.all(
+      keys.filter((k) => k !== CACHE && k !== KORUNAN_IZ).map((k) => caches.delete(k))
+    )).then(() => self.clients.claim())
   );
 });
 self.addEventListener("fetch", (e) => {
@@ -282,9 +287,32 @@ async function pushIzYaz(bilgi) {
 self.addEventListener("push", (event) => {
   const secim = bildirimSecenekleri(pushPayload(event));
   event.waitUntil((async () => {
+    const iz = { zaman: Date.now(), baslik: String(secim.title || "").slice(0, 120) };
     // ÖNCE iz, SONRA gösterim: gösterim hata verse bile "push ulaştı" kanıtı kalır.
-    await pushIzYaz({ zaman: Date.now(), baslik: String(secim.title || "").slice(0, 120) });
-    await self.registration.showNotification(secim.title, secim.options);
+    await pushIzYaz(iz);
+    try {
+      await self.registration.showNotification(secim.title, secim.options);
+      iz.gosterildi = true;
+    } catch (e) {
+      // v53 — KÖK NEDEN SINIFI: bazı tarayıcılar (vibrate/actions/requireInteraction
+      // gibi) seçeneklerden birini reddedince showNotification HATA atar ve
+      // bildirim HİÇ görünmez; sunucu ise 201 aldığı için sorun görünmezdi.
+      // Sade seçeneklerle bir kez daha dene; sonucu ize yaz.
+      iz.hata = String(e).slice(0, 160);
+      iz.gosterildi = false;
+      try {
+        await self.registration.showNotification(secim.title, {
+          body: secim.options.body,
+          tag: secim.options.tag,
+          data: secim.options.data
+        });
+        iz.gosterildi = true;
+        iz.sadeSecenek = true;
+      } catch (e2) {
+        iz.hata2 = String(e2).slice(0, 160);
+      }
+    }
+    if (iz.hata) await pushIzYaz(iz);
   })());
 });
 
