@@ -189,8 +189,8 @@ ok("konuya gitme işlevi korundu", HTML.indexOf("function konuGit(") > 0 && HTML
 
 // ---------- 8) Sürüm ----------
 console.log("\n== 8) Sürüm ==");
-ok("PWA sürümü v49", APP.indexOf('const PWA_SURUM = "v49-sure-ve-hatali-soru"') === 0);
-ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261031-v49-sure-ve-hatali-soru") > 0);
+ok("PWA sürümü v50", APP.indexOf('const PWA_SURUM = "v50-sade-arayuz"') === 0);
+ok("SW önbelleği yenilendi", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf("analiz-merkezi-v-20261031-v50-sade-arayuz") > 0);
 ok("SW yeni modülleri önbelleğe alıyor", /ASSETS[\s\S]{0,900}havuz-bul\.js/.test(fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8")));
 
 console.log("\n" + "─".repeat(56));

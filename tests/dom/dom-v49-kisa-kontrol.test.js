@@ -52,18 +52,22 @@ const q3 = [
 /* ============================================================
    1) KISA KONTROL LİSTELERİ = ORİJİNAL TAKSONOMİ
    ============================================================ */
-console.log("\n== 1) Kısa Kontrol tek taksonomiyi kullanıyor ==");
+console.log("\n== 1) Kısa Kontrol KENDİ listesini kullanıyor ==");
 {
-  ok("YANLIŞ listesi 4'lü orijinal",
-    JSON.stringify(API.WRONG_REASONS) === JSON.stringify(["Konuyu Bilmiyordum", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"]),
+  // v50 — kullanıcı: "kısa kontrol kendi listesini kullanıyor dedim, yani kullansın."
+  ok("YANLIŞ listesi 5'li (kendi listesi)",
+    JSON.stringify(API.WRONG_REASONS) === JSON.stringify(["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"]),
     JSON.stringify(API.WRONG_REASONS));
-  ok("BOŞ listesi 2'li orijinal",
-    JSON.stringify(API.EMPTY_REASONS) === JSON.stringify(["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"]),
+  ok("BOŞ listesi 3'lü (kendi listesi)",
+    JSON.stringify(API.EMPTY_REASONS) === JSON.stringify(["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM"]),
     JSON.stringify(API.EMPTY_REASONS));
+  ok("deneme/soru girişi listelerinden AYRı (kendi listesi)",
+    JSON.stringify(API.WRONG_REASONS) !== JSON.stringify(["Konuyu Bilmiyordum", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"]));
   ok("kısa kontrolde 'Süre yetmedi' YOK (süreli sınav değil)",
     API.WRONG_REASONS.concat(API.EMPTY_REASONS).every(r => !/SÜRE/i.test(r)));
-  ok("etiket: Konuyu Bilmiyordum", API.REASON_LABELS["Konuyu Bilmiyordum"] === "Konuyu bilmiyordum");
   ok("etiket: Konu eksiği", API.REASON_LABELS["KONUEKSİKLİĞİ"] === "Konu eksiği");
+  ok("etiket: Konuyu bilmiyordum da tanımlı (deneme kayıtları için)",
+    API.REASON_LABELS["Konuyu Bilmiyordum"] === "Konuyu bilmiyordum");
   // Ağırlık: Konuyu Bilmiyordum, Konu eksiğiyle aynı (1.0) — BKT hesabı bozulmaz
   ok("Konuyu Bilmiyordum ağırlığı 1.0", API.WRONG_WEIGHT["Konuyu Bilmiyordum"] === 1.0);
 }
@@ -139,16 +143,38 @@ console.log("\n== 3) Arayüz: hatalı soru satırında neden kutusu yok ==");
 /* ============================================================
    4) GERİ BİLDİRİM GÖRÜNÜRLÜĞÜ
    ============================================================ */
-console.log("\n== 4) Geri bildirim: gönderim + görünürlük ==");
+console.log("\n== 4) Gönderdiklerim kaldırıldı, geri bildirim çalışıyor ==");
 {
-  ok("geriBildirimlerimYukle fonksiyonu var", /async function geriBildirimlerimYukle/.test(HTML));
-  ok("Ayarlar'da GÖNDERDİKLERİM bölümü var", HTML.indexOf("GÖNDERDİKLERİM") > 0);
-  ok("liste kutusu var", HTML.indexOf('id="geri-bildirimlerim"') > 0);
-  ok("kendi satırlarını okur (user_id filtresi)", /\.eq\("user_id", oturum\.user\.id\)/.test(HTML));
-  ok("Ayarlar açılınca yükleniyor", /gere?iBildirimlerimYukle\(\); \} catch/.test(HTML));
-  ok("gönderim sonrası liste tazeleniyor", /if \(r\.ok\) geriBildirimlerimYukle\(\);/.test(HTML));
-  ok("çevrimdışı kuyruk bilgisi gösteriliyor", /Cihazda bekleyen /.test(HTML));
-  ok("giriş yoksa yönlendirme var", /Profil → Giriş yap/.test(HTML));
+  // v50 — kullanıcı: "gönderdiklerimi kaldır"
+  ok("GÖNDERDİKLERİM bölümü YOK", HTML.indexOf("GÖNDERDİKLERİM") < 0);
+  ok("geriBildirimlerimYukle fonksiyonu YOK", !/geriBildirimlerimYukle/.test(HTML));
+  ok("liste kutusu YOK", HTML.indexOf('id="geri-bildirimlerim"') < 0);
+  // Gönderim akışı korunuyor (kanıt: DB'de 24 kayıt)
+  ok("geriBildirimGonder fonksiyonu var", /async function geriBildirimGonder/.test(HTML));
+  ok("Supabase geri_bildirim tablosuna yazıyor", /sb\.from\("geri_bildirim"\)\.insert/.test(HTML));
+  ok("çevrimdışı kuyruk korunuyor", /GERI_KUYRUK_ANAHTAR/.test(HTML));
+  ok("Ayarlar'da geri bildirim formu var", HTML.indexOf('id="geri-bildirim-metin"') > 0);
+}
+
+console.log("\n== 5) Teknik notlar temizlendi ==");
+{
+  ok("Panam Yayıncılık YOK", !/Panam/i.test(HTML));
+  ok("'Her sınıf AYRI HESAPTIR' notu YOK", HTML.indexOf("Her sınıf AYRI HESAPTIR") < 0);
+  ok("'tarayıcı kuralı' açıklaması YOK", HTML.indexOf("(tarayıcı kuralı)") < 0);
+  ok("'her mesajı okuyoruz' YOK", HTML.indexOf("her mesajı okuyoruz") < 0);
+  ok("'İşlenen/yoksayılan sınav' notu YOK", !/İşlenen\/yoksayılan/.test(fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8")));
+  ok("'kuyruğa geri gelmez' YOK", !/kuyruğa geri gelmez/i.test(fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8")));
+  // Kullanıcının GÖRDÜĞÜ metinler: JS/CSS yorum satırları hariç.
+  // (Yorumlar ekranda görünmez; iç adlar orada kalabilir.)
+  const GORUNUR = HTML.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+  ok("'Infinite Engine' YOK (title)", !/Infinite Engine/.test(GORUNUR));
+  ok("kullanıcı metninde 'Modül A' gibi iç kod YOK", !/Modül [A-G]\b/.test(GORUNUR));
+  ok("kılavuzda 'Laplace' YOK", GORUNUR.indexOf("Laplace") < 0);
+  ok("kılavuzda 'Cepeda' YOK", GORUNUR.indexOf("Cepeda") < 0);
+  const APP = fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8");
+  ok("kullanıcı metninde 'Supabase' YOK", !/Bulut yedeği etkin \(Supabase\)/.test(APP));
+  ok("Google Cloud kurulum talimatı YOK", APP.indexOf("Google Cloud → APIs") < 0);
+  ok("dosya yolu (supabase-config.js) kullanıcı metninde YOK", !/supabase-config\.js ve site\/vendor/.test(APP));
 }
 
 console.log("\n" + "─".repeat(56));

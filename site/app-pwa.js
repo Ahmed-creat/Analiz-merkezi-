@@ -1,4 +1,4 @@
-const PWA_SURUM = "v49-sure-ve-hatali-soru";
+const PWA_SURUM = "v50-sade-arayuz";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -21,7 +21,7 @@ function cloudReady() {
     window.supabase && typeof window.supabase.createClient === "function");
 }
 function cfgMissing() {
-  toast("Bulut özelliği yapılandırılamadı: site/supabase-config.js ve site/vendor/supabase.js dosyalarını kontrol et (docs/SUPABASE-VERCEL.md).", "warning");
+  toast("Bulut yedeği şu an kullanılamıyor — yerel kayıt devam ediyor.", "warning");
 }
 
 // Supabase/Auth hata mesajlarını Türkçeleştir
@@ -237,7 +237,7 @@ function openAuthModal() {
   if (msg) msg.textContent = "";
   // Bulut yapılandırması eksikse pencereyi yine de aç: kullanıcı ne olduğunu görsün
   if (!cloudReady()) {
-    authMsgYaz("Bulut bağlantısı kurulamadı — giriş şu an kullanılamıyor. site/supabase-config.js ve site/vendor/supabase.js dosyalarını kontrol et.", true);
+    authMsgYaz("Giriş şu an kullanılamıyor. İnternet bağlantını kontrol edip tekrar dene.", true);
     try { cfgMissing(); } catch (e) {}
   }
   m.style.display = "flex";
@@ -249,14 +249,7 @@ function openAuthModal() {
       b.setAttribute("disabled", "disabled");
       b.style.opacity = "0.45"; b.style.cursor = "not-allowed";
       if (not) {
-        // Elden gelen tek şey: ne yapılacağını TAM adresle söylemek.
-        // Google, OAuth istemcisini yalnız hesap sahibinin Google Cloud
-        // konsolundan almasına izin verir; kodla açılamıyor.
-        not.innerHTML = "Google girişi bu projede henüz açık değil. Açmak için:<br>"
-          + "1) Google Cloud → APIs & Services → Credentials → <b>OAuth client ID</b> (Web) oluştur.<br>"
-          + "2) Yetkili yönlendirme adresi: <code style='font-size:11px;'>" + SUPABASE_CONFIG.url + "/auth/v1/callback</code><br>"
-          + "3) Supabase → Authentication → Providers → Google: Client ID + Secret yapıştır, etkinleştir.<br>"
-          + "Bunlar yapılınca bu düğme kendiliğinden çalışır. Şimdilik e-posta + şifre ile giriş yapabilirsin.";
+        not.textContent = "Google ile giriş şu an kullanılamıyor. E-posta ve şifre ile giriş yapabilirsin.";
       }
     } else {
       b.removeAttribute("disabled"); b.style.opacity = ""; b.style.cursor = "pointer";
@@ -661,14 +654,14 @@ function renderProfileModal() {
   const st = okzStore();
   const bekleyen = st.pending.reduce((acc, ex) => acc + (ex.rows || []).length, 0);
   const hesapSatiri = currentUser
-    ? '<div style="display:flex;align-items:center;gap:10px;"><div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">' + escHtml(profilAvatarHarfleri()) + '</div><div style="min-width:0;"><div style="font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(currentUser.email || "hesap") + '</div><div style="font-size:11.5px;color:#16A34A;font-weight:600;">☁ Bulut yedeği etkin (Supabase)</div></div></div>'
+    ? '<div style="display:flex;align-items:center;gap:10px;"><div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">' + escHtml(profilAvatarHarfleri()) + '</div><div style="min-width:0;"><div style="font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(currentUser.email || "hesap") + '</div><div style="font-size:11.5px;color:#16A34A;font-weight:600;">☁ Bulut yedeği açık</div></div></div>'
     : '<div style="font-size:12.5px;opacity:0.8;">Giriş yapılmadı — veriler yalnız bu cihazda saklanıyor.</div>';
 
   const inp = (k, label, ph) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" autocapitalize="characters" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;' + (k === "ad" ? "text-transform:uppercase;font-weight:600;" : "") + '"></label>';
   const sel = (k, label, opts) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<select id="okz-' + k + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + opts.map(o => '<option' + ((s[k] || opts[0]) === o ? " selected" : "") + '>' + escHtml(o) + "</option>").join("") + "</select></label>";
 
   let html = '<div style="width:100%;max-width:520px;max-height:88vh;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">';
-  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><div style="font-weight:800;font-size:18px;">👤 Profil <span style="font-size:10px;font-weight:400;opacity:0.5;">' + escHtml(PWA_SURUM) + '</span></div><button data-act="pwaProfileClose" style="background:none;border:0;font-size:20px;cursor:pointer;color:inherit;min-width:36px;min-height:36px;">✕</button></div>';
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><div style="font-weight:800;font-size:18px;">👤 Profil</div><button data-act="pwaProfileClose" style="background:none;border:0;font-size:20px;cursor:pointer;color:inherit;min-width:36px;min-height:36px;">✕</button></div>';
 
   // A) HESAP
   html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
@@ -679,7 +672,7 @@ function renderProfileModal() {
     ? '<button data-act="pwaAuth" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Çıkış Yap</button><button data-act="syncNow" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi Yedekle</button>'
     : '<button data-act="pwaAuth" class="btn btn-primary btn-sm">Giriş Yap / Kayıt Ol</button>';
   html += '</div>';
-  html += '<div style="font-size:11px;opacity:0.65;margin-top:8px;">Giriş yapınca denemeler, konular ve plan cihazlar arasında Supabase üzerinden eşitlenir.</div>';
+  html += '<div style="font-size:11px;opacity:0.65;margin-top:8px;">Giriş yapınca verilerin cihazların arasında eşitlenir.</div>';
   html += '</div>';
 
   // B) OKULIZYON
@@ -701,9 +694,6 @@ function renderProfileModal() {
   html += '<div style="grid-column:1 / -1;"><button data-act="okzListeYenile" style="background:none;border:0;padding:0;font-size:11.5px;text-decoration:underline;color:#2563EB;cursor:pointer;">Listeyi yenile</button></div>';
   html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa)<input id="okz-sifre" type="password" autocomplete="off" value="' + escHtml(s.sifre || "") + '" placeholder="Okulizyon şifresi" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
   html += '</div>';
-  // Yoksayılan / işlenen sınav defteri (kalıcı)
-  const defterSayi = okzDefterSayisi();
-  html += '<div style="font-size:11px;opacity:0.7;margin-bottom:8px;line-height:1.45;">İşlenen/yoksayılan sınav: <b>' + defterSayi + '</b> — bunlar kuyruğa geri gelmez.' + (defterSayi ? ' <button data-act="okzDefteriTemizle" style="background:none;border:0;padding:0;color:#B45309;font-size:11px;text-decoration:underline;cursor:pointer;">geri al</button>' : '') + '</div>';
   html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
   html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
   html += '<button data-act="okzSimdiCek" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi dene</button>';
@@ -715,7 +705,7 @@ function renderProfileModal() {
   html += '<div style="margin-top:9px;font-size:11.5px;line-height:1.45;color:' + durumRenk + ';">'
        + '<b>Son çekim:</b> '
        + (st.durum ? escHtml(okzZaman(st.durum.zaman)) + " — " + escHtml(st.durum.mesaj) : "henüz denenmedi")
-       + (st.sonCekim ? '<br><span style="opacity:0.75;">Sunucudaki son çekim: ' + escHtml(okzZaman(Date.parse(st.sonCekim) || 0)) + '</span>' : "")
+       + (st.sonCekim ? '<br><span style="opacity:0.75;">Son otomatik çekim: ' + escHtml(okzZaman(Date.parse(st.sonCekim) || 0)) + '</span>' : "")
        + '</div>';
   if (st.duyurular && st.duyurular.length) {
     html += '<div style="margin-top:12px;font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKUL DUYURULARI</div>';
@@ -1197,13 +1187,15 @@ function okzDefterIsaretle(anahtar, hash) {
   st.islenen[anahtar] = String(hash || "");
   okzDefterDiskeYaz(Object.assign({}, okzDefterDisktenOku(), st.islenen));
 }
+// Defterdeki kayıt sayısı. Ekranda gösterilmiyor (v50'de defter satırı kaldırıldı);
+// testler bu fonksiyonla defterin doğru yazıldığını ölçüyor.
+function okzDefterSayisi() { return Object.keys(okzDefter()).length; }
 function okzDefterTemizle() {
   const st = okzStore();
   st.islenen = {};
   okzDefterDiskeYaz({});
   try { saveState(); } catch (e) { /* */ }
 }
-function okzDefterSayisi() { return Object.keys(okzDefter()).length; }
 // v46c — Okulizyon sınav kimliği. sid varsa "sid:<sid>", yoksa "ad|tarih".
 // Aynı ad+tarihli iki ayrı sınav artık tek sınav sanılmıyor.
 function okzKey(ex) {
@@ -1580,7 +1572,7 @@ function okzKonuEslemeHtml() {
   const elleSayi = Object.keys(harita).length;
   let h = '<details id="okz-konu-esleme" ' + (eksik.length ? 'open' : '') + ' style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;"><summary style="cursor:pointer;font-size:12.5px;font-weight:700;">Okulizyon konu eşlemesi' + (eksik.length ? ' · ' + eksik.length + ' bekliyor' : ' ✓') + '</summary>';
   h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKULİZYON KONU EŞLEMESİ</div>' + (elleSayi ? '<span style="font-size:10.5px;opacity:0.6;">' + elleSayi + ' eşleme kayıtlı</span>' : '') + '</div>';
-  h += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:8px;">Okulizyon konuları <b>kazanım cümlesi</b> olarak gelir ("… varsayımlarda bulunur."), uygulama <b>konu başlığı</b> kullanır ("1.1 …"). Eşleşmeyenler ayrı konu gibi görünür ve soru havuzundan soru gelmez. Aşağıdaki eşlemeyi <b>bir kez</b> yap; sonraki çekimlerde otomatik uygulanır.</div>';
+  h += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:8px;">Okulizyon\'daki kazanımları uygulamadaki konu başlıklarıyla eşleştir. Eşleşmeyen kazanımların soru havuzu açılmaz. Bir kez yapman yeterli — sonraki çekimlerde otomatik uygulanır.</div>';
   if (!eksik.length) {
     h += '<div style="font-size:12px;color:#16A34A;font-weight:600;">✓ Tüm konular eşlendi — soru havuzu bağlı.</div></details>';
     return h;
@@ -1597,7 +1589,7 @@ function okzKonuEslemeHtml() {
     h += '<div style="font-size:11px;opacity:0.7;margin-bottom:6px;">Belirsiz kazanım kalmadı — seçim yapmana gerek yok.</div>';
   }
   h += '<div style="font-size:11.5px;font-weight:700;color:#B45309;margin-bottom:4px;">' + eksik.length + ' kazanım bekliyor</div>';
-  h += '<div style="font-size:11px;opacity:0.7;line-height:1.45;margin-bottom:8px;">Her satır <b>hazır öneriyle</b> geliyor — tek düğmeye basman yeterli. Emin olmadığımız satırlarda “emin değilim” yazar; istersen listeden değiştir.</div>';
+  h += '<div style="font-size:11px;opacity:0.7;line-height:1.45;margin-bottom:8px;">Her satır hazır öneriyle gelir; dokunman yeterli. Gerekirse listeden değiştir.</div>';
   let sonDers = "";
   h += '<div style="display:grid;gap:8px;">';
   eksik.forEach((x, i) => {
@@ -1793,8 +1785,8 @@ function okzYoksay(liste) {
   okzBadge();
   renderOkzModal();
   const kalan = (st.pending || []).reduce((a, ex) => a + (ex.rows || []).length, 0);
-  if (kalan > 0) toast("Yoksayıldı. Kuyrukta " + kalan + " soru kaldı.", "info");
-  else toast("Kuyruk temizlendi — bir daha gelmeyecek.", "success");
+  if (kalan > 0) toast("Yoksayıldı. " + kalan + " soru kaldı.", "info");
+  else toast("Tamam — bir daha gelmeyecek.", "success");
 }
 function okzHepsiniYoksay() {
   const st = okzStore();
@@ -1804,7 +1796,7 @@ function okzHepsiniYoksay() {
   }));
   if (!liste.length) return toast("Yoksayılacak sınav yok.", "info");
   const toplam = (st.pending || []).reduce((a, ex) => a + (ex.rows || []).length, 0);
-  openConfirm("Analiz Bekliyor kuyruğundaki " + toplam + " soru yoksayılacak ve bir daha gösterilmeyecek. Emin misin?", function () {
+  openConfirm(toplam + " soru yoksayılacak ve bir daha gösterilmeyecek. Emin misin?", function () {
     okzYoksay(liste);
   });
 }
@@ -1814,9 +1806,9 @@ function renderOkzModal() {
   const s = state.settings && state.settings.okulizyon ? state.settings.okulizyon : {};
   const st = okzStore();
   let html = '<div style="width:100%;max-width:520px;max-height:86vh;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">';
-  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-weight:800;font-size:17px;">Okulizyon <span style="font-size:10px;font-weight:400;opacity:0.5;">' + PWA_SURUM + '</span></div><button data-act="okzClose" style="background:none;border:0;font-size:19px;cursor:pointer;color:inherit;">✕</button></div>';
+  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-weight:800;font-size:17px;">Okulizyon</div><button data-act="okzClose" style="background:none;border:0;font-size:19px;cursor:pointer;color:inherit;">✕</button></div>';
   // A) Bağlantı bilgileri artık PROFİL penceresinde — burada yalnız kuyruk yönetilir
-  html += '<div style="font-size:12px;opacity:0.8;margin-bottom:10px;padding:10px;border:1px dashed rgba(0,0,0,0.2);border-radius:10px;">Okulizyon bilgileri (ad, okul no, sınıf, il/ilçe, okul) <b>Profil</b> penceresinden girilir. Buradan yalnızca <b>Analiz Bekliyor</b> kuyruğunu işlersin.</div>';
+  html += '<div style="font-size:12px;opacity:0.8;margin-bottom:10px;padding:10px;border:1px dashed rgba(0,0,0,0.2);border-radius:10px;">Okulizyon bilgilerini <b>Profil</b> penceresinden gir. Burada bekleyen sınav sonuçlarını işlersin.</div>';
   html += '<button data-act="openProfile" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);margin-bottom:14px;">Profili Aç</button>';
   // A2) SON ÇEKİLEN SONUÇ — her zaman görünür (yeni olsun olmasın)
   const sonSonuc = Array.isArray(st.sonSonuc) ? st.sonSonuc : [];
@@ -1862,15 +1854,15 @@ function renderOkzModal() {
     // TEK DOKUNUŞ: soru başına neden seçmek zorunda değilsin. Sınavın tamamı
     // için bir neden seç, gerisini uygulama yapsın (konu eşlemesi otomatik).
     html += '<div style="border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.06);border-radius:12px;padding:10px;margin-bottom:10px;">';
-    html += '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">⚡ Tek dokunuş: kuyruktaki tüm yanlış/boşlar için neden</div>';
+    html += '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">⚡ Tüm yanlış/boşlar için tek neden seç</div>';
     html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;" id="okz-hizli-nedenler">' +
       ["KONUEKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik"].map((r, k) =>
         '<button data-act="okzHizliNedenSec" data-reason="' + escHtml(r) + '" class="okz-hizli-chip" data-secili="' + (k === 0 ? "1" : "0") + '" style="font-size:11.5px;padding:7px 10px;min-height:40px;border-radius:99px;border:1px solid ' + (k === 0 ? "#2563EB" : "rgba(0,0,0,0.18)") + ';background:' + (k === 0 ? "rgba(37,99,235,0.12)" : "none") + ';color:inherit;cursor:pointer;font-weight:' + (k === 0 ? "700" : "400") + ';">' + r + '</button>').join("") +
       '</div>';
     html += '<button data-act="okzHizliIsle" class="btn btn-primary w-full" style="font-weight:700;">Bu nedenle tümünü işle</button>';
-    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:6px;line-height:1.4;">Tek seçim: soru başına neden seçmen gerekmez. Konular Okulizyon kazanımından otomatik eşlenir; emin olunamayanlar Profil → Okulizyon → Konu Eşlemesi bölümünde hazır öneriyle gelir.</div>';
+    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:6px;line-height:1.4;">Konular otomatik eşlenir; emin olunamayanlar için hazır öneri sunulur.</div>';
     html += '</div>';
-    html += '<div style="font-size:11.5px;opacity:0.75;margin-bottom:8px;">İstersen aşağıdan soru soru değiştirebilirsin (isteğe bağlı).</div>';
+    html += '<div style="font-size:11.5px;opacity:0.75;margin-bottom:8px;">İstersen soru soru da düzenleyebilirsin.</div>';
     bekleyen.forEach((ex, i) => {
       html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:12px;padding:10px;margin-bottom:10px;">';
       html += '<div style="font-weight:700;font-size:13.5px;margin-bottom:6px;">' + escHtml(ex.name) + (ex.date ? ' <span style="opacity:0.6;font-weight:400;">· ' + escHtml(ex.date) + "</span>" : "") + "</div>";
@@ -1907,7 +1899,7 @@ function renderOkzModal() {
     });
     html += '<button data-act="okzAnalizKaydet" class="btn btn-primary w-full" style="font-weight:700;">Seçilenleri Deneme Olarak Kaydet</button>';
     html += '<button data-act="okzHepsiniYoksay" class="btn btn-ghost w-full btn-sm" style="margin-top:8px;border:1px solid rgba(0,0,0,0.15);opacity:0.85;">Analiz etmeyeceğim — hepsini yoksay</button>';
-    html += '<div style="font-size:10.5px;opacity:0.6;margin-top:6px;line-height:1.45;">Yoksayılan sınav kuyruğa bir daha gelmez. Okulizyon\'da sonucu DEĞİŞİRSE kendiliğinden geri gelir. Profil → Okulizyon bölümünden geri alabilirsin.</div>';
+    html += '<div style="font-size:10.5px;opacity:0.6;margin-top:6px;line-height:1.45;">İşaretlediğin sınavlar bir daha sorulmaz.</div>';
   } else {
     html += '<div style="border:1px dashed rgba(0,0,0,0.2);border-radius:12px;padding:16px;text-align:center;font-size:13px;opacity:0.75;">Analiz bekleyen soru yok. Sınav sonuçların her sabah 07:00 otomatik çekilir.</div>';
   }
@@ -1971,7 +1963,7 @@ async function okzKuyrukCek(zorla) {
       .select("exams, pulled_at, durum, durum_mesaji")
       .eq("user_id", currentUser.id)
       .maybeSingle();
-    if (error) return okzDurum("hata", "Sunucu hatası: " + (error.message || "kuyruk okunamadı"));
+    if (error) return okzDurum("hata", "Sonuçlar şu an alınamadı. Birazdan tekrar dene.");
     if (!data) return okzDurum("bos", "Bu hesap için sunucuda çekilmiş sonuç yok — «Şimdi dene» ile ilk çekimi başlat.");
     // Sunucu "giriş yapılamadı / şifre gerekli / sonuç yok" dediyse sebebi göster
     if (data.durum && data.durum !== "ok" && !(data.exams && data.exams.length)) {

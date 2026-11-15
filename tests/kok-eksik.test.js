@@ -129,7 +129,12 @@ ok("izin yalnız düğmeden isteniyor", /case "toggleNotifPermission": requestNo
 ok("tanılama paneli KALDIRILDI (v35.7)", HTML.indexOf("function bildirimTeshisPaneli(") < 0);
 ok("test bildirimi düğmesi KALDIRILDI", HTML.indexOf('data-act="bildirimTest"') < 0);
 ok("izin verilince otomatik test bildirimi", fs.readFileSync(path.join(KOK, "site", "push-bildirim.js"), "utf8").indexOf("async function testBirKez()") > 0);
-ok("engelli durumunda adım adım çözüm yazıyor", HTML.indexOf("Tarayıcı izni bir kez 'engellendi' olarak kaydedince site kodla geri açamaz") > 0);
+// v50 — kullanıcı: "kullanıcıyı ilgilendirmeyen notları kaldır." Teknik gerekçe
+// cümlesi kalktı; YERİNE kullanıcının uygulayacağı adımlar kaldı (kaybolmadı).
+ok("engelli durumunda ne yapılacağı yazıyor (Site ayarları → Bildirimler)",
+  HTML.indexOf("Site ayarları → Bildirimler → İzin ver") > 0);
+ok("engelli durumunda iPhone yolu yazıyor", /Ayarlar → Bildirimler → Analiz Merkezi → İzin Ver/.test(HTML));
+ok("eski teknoloji gerekçesi kaldırıldı", HTML.indexOf("Tarayıcı izni bir kez 'engellendi' olarak kaydedince") < 0);
 ok("requestPermission await'siz (dokunuş içinde)", /sonuc = Notification\.requestPermission\(bitir\)/.test(HTML));
 
 console.log("\n" + "─".repeat(56));

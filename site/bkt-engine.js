@@ -22,30 +22,28 @@
 
   const PARAM = Object.freeze({ P_L0: 0.12, P_G: 0.25, P_S: 0.10 });
   const SOURCE_PT = Object.freeze({ deneme: 0.05, soru_girisi: 0.15, mini_test: 0.10 });
-  // v49 — KULLANICI: "Kısa kontrol kendi listesini kullanıyor" → Kısa Kontrol
-  // artık deneme/soru girişiyle AYNI orijinal taksonomiyi kullanır:
-  //   YANLIŞ → Konuyu Bilmiyordum · Anlamadım · İşlem hatası · Kodlama hatası
-  //   BOŞ    → Konu eksiği · Çözüm yolunu bulamadım
-  // "Süre yetmedi" BURADA YOK: kısa kontrol süreli bir sınav değil
-  // (kullanıcı: süre nedeni yalnız denemede).
+  // v50 — KULLANICI: "sana kısa kontrol kendi listesini kullanıyor dedim, yani
+  // kullansın." Kısa Kontrol KENDİ listesini korur (deneme/soru girişinden bağımsız):
+  //   yanlış 5 · boş 3. Deneme ve soru girişi kendi listelerini kullanmaya devam
+  //   eder; iki taraf canonicalReason ile aynı anahtarlara bağlanır.
   const WRONG_WEIGHT = Object.freeze({
-    "Konuyu Bilmiyordum": 1.0,
-    "KONUEKSİKLİĞİ": 1.0,      // eski kayıtlar için aynı ağırlık
+    "KONUEKSİKLİĞİ": 1.0,
+    "Konuyu Bilmiyordum": 1.0,   // deneme/soru girişinden gelen eşdeğer kayıt
     "ANLAMADIM": 0.5,
     "ÇÖZÜMYOLUNUBULAMADIM": 0.5,
     "İşlem Hatası/Dikkatsizlik": 0.2,
     "Kodlama/Kitapçık Hatası": null
   });
-  // Yanlış cevap nedenleri (4)
+  // Kısa Kontrol — yanlış cevap nedenleri (5)
   const WRONG_REASONS = Object.freeze([
-    "Konuyu Bilmiyordum", "ANLAMADIM",
+    "KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM",
     "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"
   ]);
-  // Boş bırakma nedenleri (2) — işlem/kitapçık hatası boşta anlamsız.
-  const EMPTY_REASONS = Object.freeze(["KONUEKSİKLİĞİ", "ÇÖZÜMYOLUNUBULAMADIM"]);
+  // Kısa Kontrol — boş bırakma nedenleri (3); işlem/kitapçık hatası boşta anlamsız.
+  const EMPTY_REASONS = Object.freeze(["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM"]);
   const REASON_LABELS = Object.freeze({
-    "Konuyu Bilmiyordum": "Konuyu bilmiyordum",
     "KONUEKSİKLİĞİ": "Konu eksiği",
+    "Konuyu Bilmiyordum": "Konuyu bilmiyordum",
     "ANLAMADIM": "Anlamadım",
     "ÇÖZÜMYOLUNUBULAMADIM": "Çözüm yolunu bulamadım",
     "İşlem Hatası/Dikkatsizlik": "İşlem hatası / dikkatsizlik",

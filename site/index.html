@@ -10,7 +10,7 @@
 if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}
 document.documentElement.setAttribute("data-theme",t);})();
 </script>
-<title>Analiz Merkezi v5.1 — Infinite Engine</title>
+<title>Analiz Merkezi — Sınav Analizi ve Çalışma Planı</title>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onerror="window.__lucide_failed=true"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" onerror="window.__chart_failed=true"></script>
 <style>/* ===== ANALİZ MERKEZİ v5.1 — DESIGN TOKENS (tema.pdf / Calm Soft-Bento) =====
@@ -1157,7 +1157,6 @@ select.dd-native {
         <button class="btn btn-primary" data-act="tanitimKapat" style="flex:1;min-height:46px;"><i data-lucide="check" style="width:16px;height:16px;"></i> Anladım, başla</button>
         <button class="btn btn-ghost" data-act="tanitimKilavuz" style="min-height:46px;"><i data-lucide="book-open" style="width:16px;height:16px;"></i> Kılavuzu oku</button>
       </div>
-      <p class="text-xs text-muted" style="margin-top:10px;text-align:center;">Daha fazla bilgi için kılavuzu oku. Bu tanıtımı Ayarlar → Uygulamayı Tanı ile tekrar açabilirsin.</p>
     </div>
   </div>
 </div>
@@ -1174,18 +1173,10 @@ select.dd-native {
 
   <div style="margin-top:20px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">GERİ BİLDİRİM</div>
-    <p class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Bir sorun, eksik ya da öneri mi var? Yaz — her mesajı okuyoruz. (Soruda hata varsa soru ekranındaki “Bu soruda hata var” düğmesi daha işe yarar: soru metni de bize gelir.)</p>
+    <p class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Bir sorun ya da önerin varsa yaz. Soruyla ilgiliyse soru ekranındaki “Bu soruda hata var” düğmesini kullan.</p>
     <textarea id="geri-bildirim-metin" class="input" rows="3" maxlength="1000" placeholder="Örn: Fizik 1.3 havuzundaki 4. sorunun cevabı yanlış görünüyor." style="width:100%;min-height:78px;resize:vertical;font-size:13px;"></textarea>
     <button class="btn btn-primary w-full" data-act="geriBildirimGonder" style="margin-top:8px;min-height:44px;"><i data-lucide="send" style="width:15px;height:15px;"></i> Geri Bildirimi Gönder</button>
     <div id="geri-bildirim-sonuc" class="text-xs text-muted" style="margin-top:6px;line-height:1.5;"></div>
-    <!-- v49 — KULLANICI: "geri bildirim çalışıyor mu ben nereden göreceğim" -->
-    <div style="margin-top:12px;">
-      <div class="flex items-center justify-between">
-        <span class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);">GÖNDERDİKLERİM</span>
-        <button class="btn btn-ghost btn-sm" data-act="geriBildirimleriYenile" style="min-height:30px;font-size:11px;">Yenile</button>
-      </div>
-      <div id="geri-bildirimlerim" class="text-xs text-muted" style="margin-top:6px;line-height:1.55;">Yükleniyor…</div>
-    </div>
   </div>
   <div style="margin-top:16px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">SINIF</div>
@@ -1193,7 +1184,7 @@ select.dd-native {
       <button class="btn btn-ghost w-full grade-btn" data-act="setGrade" data-grade="9" style="flex:1;"><i data-lucide="book-open" style="width:16px;height:16px;"></i> 9. Sınıf</button>
       <button class="btn btn-ghost w-full grade-btn" data-act="setGrade" data-grade="10" style="flex:1;"><i data-lucide="book-open" style="width:16px;height:16px;"></i> 10. Sınıf</button>
     </div>
-    <p class="text-xs text-muted" style="margin-top:6px;line-height:1.5;">Her sınıf AYRI HESAPTIR: sınıf değiştirince o sınıfın deneme, soru, kitaplık, hafıza ve plan verileri yüklenir (yoksa boş açılır). Diğer sınıfın verileri korunur.</p>
+    <p class="text-xs text-muted" style="margin-top:6px;line-height:1.5;">Her sınıfın verisi ayrı tutulur; sınıf değiştirdiğinde diğerinin kayıtları korunur.</p>
   </div>
   <div style="margin-top:16px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">TEMA</div>
@@ -1205,8 +1196,7 @@ select.dd-native {
   <div style="margin-top:20px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">BİLDİRİM</div>
     <button class="btn btn-ghost w-full" data-act="toggleNotifPermission" style="justify-content:flex-start;"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i> <span id="notif-perm-label">Bildirim İzni İste</span></button>
-    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">İzin verdiğin an bir deneme bildirimi gelir. Sonrasında günde dört kez hatırlatma gelir: 07:35 · 13:05 · 19:30 · 21:35. Uygulama kapalıyken de çalışır.</p>
-    <p class="text-xs text-muted" style="margin-top:6px;line-height:1.5;opacity:.85;">İzin penceresi yalnızca bu düğmeye <b>dokunduğunda</b> açılır (tarayıcı kuralı). Daha önce “Engelle” dendiyse adres çubuğundaki kilit simgesinden izin verip sayfayı yenile.</p>
+    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">İzin verdiğin an bir deneme bildirimi gelir. Sonrasında gün içinde hatırlatmalar alırsın — uygulama kapalıyken de çalışır.</p>
   </div>
   <div style="margin-top:24px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px;">YEDEKLEME</div>
@@ -1223,7 +1213,7 @@ select.dd-native {
     <button class="btn btn-ghost w-full" data-act="confirmReset" data-target="books" style="justify-content:flex-start;color:var(--semantic-error);margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Kitaplığı Sil</button>
     <button class="btn btn-ghost w-full" data-act="confirmReset" data-target="all" style="justify-content:flex-start;color:var(--semantic-error);"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Tüm Verileri Sıfırla</button>
   </div>
-  <div class="text-xs text-muted" style="margin-top:28px;text-align:center;">Sürüm 5.1 — Infinite Engine<br>Developed by Ahmed İbrahim</div>
+  <div class="text-xs text-muted" style="margin-top:28px;text-align:center;">Sürüm 5.1<br>Geliştirici: Ahmed İbrahim</div>
 </aside>
 
 <!-- ===== MOBİL ÜST BAR — bildirim + ayarlar YUKARI SOLDA (dikey + yatay mod) ===== -->
@@ -1282,7 +1272,6 @@ select.dd-native {
     <button class="icon-btn" data-act="openSettings" style="color:#fff;"><i data-lucide="settings" style="width:18px;height:18px;"></i></button>
     <div class="text-xs tabular" id="sidebar-date" style="color:rgba(255,255,255,0.7);font-size:10px;"></div>
   </div>
-  <div class="sb-vendor">Panam Yayıncılık</div>
 </aside>
 
 
@@ -1701,7 +1690,7 @@ function saveState() {
       return true;
     } catch (e2) {
       const kb = Math.round(veriBoyutu() / 1024);
-      toast("Veri kaydedilemedi (yerel depo dolu — veri " + kb + " KB). Bulut yedeği devam ediyor; tarayıcıda site verilerini temizleyip tekrar giriş yap.", "error");
+      toast("Kayıt yapılamadı — cihazda yer kalmadı (" + kb + " KB). Tarayıcı verilerini temizleyip tekrar dene.", "error");
       return false;
     }
   }
@@ -2211,7 +2200,7 @@ function coachMessages() {
     const mathNets = state.exams.slice(-3).map(e => e.lessons && e.lessons["Matematik"] ? netOf(e.lessons["Matematik"].d, e.lessons["Matematik"].w) : null).filter(v => v !== null);
     if (mathNets.length === 3) {
       const mAvg = Math.round(avg(mathNets) * 100) / 100;
-      msgs.push("Son 3 denemede Matematik netlerin <b>" + mAvg + "</b> seviyesinde. " + (mAvg >= 10 ? "Gümüş seviyeye yükseldin, böyle devam!" : "Temel eksikleri Modül B'den önceliklendiriyorum."));
+      msgs.push("Son 3 denemede Matematik netlerin <b>" + mAvg + "</b> seviyesinde. " + (mAvg >= 10 ? "Gümüş seviyeye yükseldin, böyle devam!" : "Temel eksikleri Konu Takibi'nde önceliklendiriyorum."));
     }
     msgs.push("Net eğilimin: <b>" + (trend >= 0 ? "+" : "") + Math.round(trend * 100) / 100 + "</b> puan. " + (trend >= 0 ? "İvme pozitif." : "Küçük bir tekrar planı gerekiyor."));
   } else if (st.count > 0) {
@@ -2464,8 +2453,8 @@ function bildirimTeshis() {
     return {
       kod: "api-yok",
       metin: ios
-        ? "iPhone/iPad'de bildirim yalnız uygulama \"Ana Ekrana Ekle\" ile kurulduğunda çalışır. Safari'de sekmeyken iOS izin vermiyor (Apple kuralı)."
-        : "Bu tarayıcı bildirim API'sini sunmuyor (gizli sekme olabilir). Normal sekmede açıp tekrar dene.",
+        ? "iPhone/iPad'de bildirimler yalnızca uygulama Ana Ekrana Eklendiğinde çalışır."
+        : "Bu tarayıcı bildirim göstermiyor. Normal bir sekmede açıp tekrar dene.",
       nasil: ios ? "Paylaş → Ana Ekrana Ekle → uygulamayı oradan aç." : "Gizli sekmeyi kapat, normal sekmede aç."
     };
   }
@@ -2479,12 +2468,10 @@ function bildirimTeshis() {
   if (Notification.permission === "denied") {
     return {
       kod: "engelli",
-      metin: "Bu site için bildirimler tarayıcıda ENGELLENMİŞ durumda. Tarayıcı bir daha SORMAZ — bu yüzden düğmeye basmak hiçbir şey yapmıyor gibi görünür.",
-      nasil: "Tarayıcı izni bir kez 'engellendi' olarak kaydedince site kodla geri açamaz (güvenlik kuralı). " +
-        "Chrome/Edge (bilgisayar): adres çubuğundaki kilit/ayar simgesi → Site ayarları → Bildirimler → İzin ver → sayfayı yenile. " +
-        "Chrome (Android): ⋮ → Ayarlar → Site ayarları → Bildirimler → analiz-merkezi.vercel.app → İzin ver. " +
-        "iPhone: uygulama Ana Ekrana eklendiyse Ayarlar → Bildirimler → Analiz Merkezi → İzin Ver. " +
-        "NOT: Chrome, kullanıcı dokunmadan yapılan izin isteklerini (ve eski sürümün deneme kaydından sonra otomatik istemesini) sessizce engelleyebiliyor; engellendikten sonra yukarıdaki adım şart."
+      metin: "Bildirimler bu site için kapalı. Açmak için:",
+      nasil: "Bilgisayar: adres çubuğundaki kilit simgesi → Site ayarları → Bildirimler → İzin ver → sayfayı yenile. " +
+        "Android: ⋮ → Ayarlar → Site ayarları → Bildirimler → bu site → İzin ver. " +
+        "iPhone: uygulama Ana Ekrana eklendiyse Ayarlar → Bildirimler → Analiz Merkezi → İzin Ver."
     };
   }
   return { kod: "hazir", metin: "", nasil: "" };
@@ -2517,19 +2504,19 @@ function requestNotifPermission() {
   // sunucunun imza anahtarıyla YENİDEN kurar (ölü/uyumsuz abonelikler onarılır).
   if (Notification.permission === "granted") {
     if (!window.AmPush) {
-      if (typeof toast === "function") toast("Bildirim modülü yüklenmedi — sayfayı yenile.", "warning");
+      if (typeof toast === "function") toast("Bildirimler şu an kullanılamıyor — sayfayı yenile.", "warning");
       return;
     }
     if (typeof toast === "function") toast("Bildirim bağlantısı denetleniyor…", "info");
     window.AmPush.yenile().then(function (r) {
       if (!r || !r.ok) {
-        if (typeof toast === "function") toast("Bağlantı kurulamadı: " + ((r && r.neden) || "bilinmeyen"), "error");
+        if (typeof toast === "function") toast("Bildirim bağlantısı kurulamadı. Birazdan tekrar dene.", "error");
         return;
       }
       return window.AmPush.testEt().then(function (t) {
         const m = (t && t.ok)
-          ? "Sunucudan deneme bildirimi gönderildi. Geldiyse arka plan kanalı sağlam."
-          : "Sunucu gönderemedi: " + ((t && t.neden) || "bilinmeyen hata");
+          ? "Deneme bildirimi gönderildi. Gelmediyse bildirim iznini kontrol et."
+          : "Deneme bildirimi gönderilemedi. Birazdan tekrar dene.";
         if (typeof toast === "function") toast(m, (t && t.ok) ? "success" : "error");
         if (typeof updateBildirimDurum === "function") updateBildirimDurum();
       });
@@ -2565,7 +2552,7 @@ function requestNotifPermission() {
     // Burada izin var. Sıra abonelikte: abonelik yoksa uygulama kapalıyken
     // bildirim GELMEZ. Kullanıcıya bunu ayrı ayrı söyle.
     if (!window.AmPush) {
-      const m = "İzin verildi ama bildirim modülü yüklenmedi (push-bildirim.js). Sayfayı yenile.";
+      const m = "İzin verildi. Bildirimler için sayfayı bir kez yenile.";
       if (typeof toast === "function") toast(m, "warning");
       return;
     }
@@ -2574,13 +2561,13 @@ function requestNotifPermission() {
       if (r && r.ok) {
         const testGitti = !!(r.test && r.test.ok);
         if (typeof toast === "function") toast(testGitti
-          ? "Bildirimler açıldı ve bu cihaza bir DENEME bildirimi gönderildi (sınav bildirimi değil). Gelmezse Profil → Bildirim durumu."
-          : "Arka plan bildirimi açık — uygulama kapalıyken de haber vereceğim.", "success");
+          ? "Bildirimler açıldı. Bu cihaza bir deneme bildirimi gönderildi."
+          : "Bildirimler açık — uygulama kapalıyken de haber vereceğim.", "success");
       }
-      else if (typeof toast === "function") toast((r && r.neden) || "Abonelik kurulamadı.", "warning");
+      else if (typeof toast === "function") toast("Bildirim aboneliği kurulamadı. Birazdan tekrar dene.", "warning");
     }).catch(function (e) {
       updateBildirimDurum();
-      if (typeof toast === "function") toast("Abonelik kurulamadı: " + String((e && e.message) || e), "warning");
+      if (typeof toast === "function") toast("Bildirim aboneliği kurulamadı. Birazdan tekrar dene.", "warning");
     });
   };
 
@@ -2594,7 +2581,7 @@ function requestNotifPermission() {
     sonuc = Notification.requestPermission();
   }
   if (sonuc && typeof sonuc.then === "function") sonuc.then(bitir).catch(function (e) {
-    const m = "İzin istenemedi: " + String((e && (e.name || e.message)) || e);
+    const m = "Bildirim izni istenemedi. Tarayıcı ayarlarından izin verebilirsin.";
     if (typeof toast === "function") toast(m, "warning");
     const el = document.getElementById("bildirim-durum");
     if (el) el.textContent = m;
@@ -2613,9 +2600,9 @@ function updateBildirimDurum() {
     return;
   }
   const izin = Notification.permission;
-  if (izin === "denied") el.textContent = "İzin tarayıcıda ENGELLENMİŞ. Adres çubuğundaki kilit simgesi → Bildirimler → İzin ver → sayfayı yenile.";
-  else if (izin === "granted") el.textContent = "Bildirimler açık ✓ 07:35 · 13:05 · 19:30 · 21:35 — tekrar günü gelen konular ve günün görevleri hatırlatılır.";
-  else el.textContent = "Bildirim izni henüz verilmedi → yukarıdaki düğmeye dokun. İzin verdiğin an bu cihazda bir bildirim gösterilir.";
+  if (izin === "denied") el.textContent = "Bildirimler kapalı. Açmak için adres çubuğundaki kilit simgesi → Bildirimler → İzin ver.";
+  else if (izin === "granted") el.textContent = "Bildirimler açık ✓ Gün içinde tekrar ve görev hatırlatmaları alırsın.";
+  else el.textContent = "Bildirim izni henüz verilmedi — yukarıdaki düğmeye dokun.";
 }
 
 function updateNotifPermLabel() {
@@ -2960,7 +2947,6 @@ function openSettings() {
   document.getElementById("settings-drawer").classList.add("open");
   document.getElementById("settings-overlay").classList.add("show");
   try { updateBildirimDurum(); } catch (e) {}
-  try { geriBildirimlerimYukle(); } catch (e) {}
 }
 function closeSettings() { document.getElementById("settings-drawer").classList.remove("open"); document.getElementById("settings-overlay").classList.remove("show"); }
 
@@ -3175,53 +3161,6 @@ window.__amGeriBildirim = async function (p) {
   return r;
 };
 
-// v49 — ÖĞRENCİ/KULLANICI GÖRÜNÜRLÜĞÜ: gönderdiği geri bildirimler
-// Supabase public.geri_bildirim tablosuna yazılıyor (RLS: herkes yalnız KENDİ
-// satırını okur). Burada son 10 kayıt gösterilir → "gönderdim, ulaştı mı?"
-// sorusunun uygulama içindeki cevabı budur.
-async function geriBildirimlerimYukle() {
-  const kutu = document.getElementById("geri-bildirimlerim");
-  if (!kutu) return;
-  const kuyruk = geriKuyrukOku();
-  const bekleyen = kuyruk.length ? '<div style="margin-bottom:6px;color:var(--on-warning-bg,#92400E);">Cihazda bekleyen ' + kuyruk.length + " bildirim var — bağlantı gelince kendiliğinden gönderilecek.</div>" : "";
-  const sb = window.__amSupabase;
-  if (!sb || typeof sb.from !== "function") {
-    kutu.innerHTML = bekleyen + "Bulut bağlantısı yok. Gönderdiklerin bu cihazda saklanıyor; giriş yapınca listelenir.";
-    return;
-  }
-  let oturum = null;
-  try { oturum = window.__amSession ? await window.__amSession() : null; } catch (e) { /* */ }
-  if (!oturum) {
-    kutu.innerHTML = bekleyen + "Gönderdiklerini burada görmek için Profil → Giriş yap (bildirimler hesabına bağlanır).";
-    return;
-  }
-  let satirlar = [];
-  try {
-    const { data, error } = await sb.from("geri_bildirim")
-      .select("tur,mesaj,ders,konu,created_at")
-      .eq("user_id", oturum.user.id)
-      .order("created_at", { ascending: false })
-      .limit(10);
-    if (error) throw error;
-    satirlar = Array.isArray(data) ? data : [];
-  } catch (e) {
-    kutu.innerHTML = bekleyen + "Liste şu an alınamadı (" + esc(String((e && e.message) || e)) + ").";
-    return;
-  }
-  if (!satirlar.length) {
-    kutu.innerHTML = bekleyen + "Henüz bir geri bildirim göndermedin.";
-    return;
-  }
-  kutu.innerHTML = bekleyen + satirlar.map(function (r) {
-    const ne = r.tur === "soru" ? (r.ders || "Soru") + (r.konu ? " · " + String(r.konu).split(" > ").pop() : "") : (r.mesaj || "Genel bildirim");
-    const dd = r.created_at ? new Date(r.created_at) : null;
-    const t = dd && !isNaN(dd.getTime()) ? dd.toLocaleDateString("tr-TR") + " " + dd.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" }) : "";
-    return '<div style="border-top:1px solid var(--border-card);padding:5px 0;">' +
-      '<span class="tabular" style="opacity:.75;">' + esc(t) + "</span> · " + esc(String(ne).slice(0, 90)) +
-      '<span style="color:var(--semantic-success);font-weight:700;"> ✓ ulaştı</span></div>';
-  }).join("") + '<div style="margin-top:6px;opacity:.8;">Son 10 kayıt gösteriliyor.</div>';
-}
-
 // Ayarlar'daki genel geri bildirim formu
 async function geriBildirimFormGonder() {
   const alan = document.getElementById("geri-bildirim-metin");
@@ -3237,7 +3176,6 @@ async function geriBildirimFormGonder() {
     ? "Gönderildi — teşekkürler. Her mesajı okuyoruz."
     : "Şu an gönderilemedi; mesaj cihazda saklandı, bağlantı gelince gönderilecek.";
   if (typeof toast === "function" && r.ok) toast("Geri bildirimin gönderildi.", "success");
-  if (r.ok) geriBildirimlerimYukle();
 }
 
 // v41 — 5. adım (5 soruluk kısa kontrol) bitince Bilgi Bankası panelini
@@ -3311,17 +3249,20 @@ function tanitimKapat(kilitle) {
 }
 
 // ===== KULLANIM KILAVUZU =====
+// v50 — KULLANICI: "kullanıcıyı ilgilendirmeyen notları kaldır, gerekli olanları
+// profesyonelce yaz." Kılavuzdan iç kod adları (Modül A/B…), formül adları
+// (Laplace, Cepeda) ve motor jargonu çıkarıldı; her kart kısa ve eylem odaklı.
 const HELP_MODULES = [
-  { icon: "clipboard-list", color: "var(--brand-blue)", title: "Denemelerim (Modül A)", text: "Uygulamanın tüm veri giriş merkezi. 8 TYT dersinin D/Y/B girişini yap; yanlış ve boşlarda Soru No + Konu + Neden satırları otomatik açılır. Her hata, Priorite motoruna beslenir." },
-  { icon: "user-round", color: "var(--brand-blue)", title: "Profil ve Okulizyon", text: "Profil bölümünde il, ilçe ve okulu tek tek yazman gerekmez. Birkaç harf yaz (ör. <b>gazi</b>); listenin ilk satırı en çok uyuşandır, ona dokun — alan kendiliğinden tamamlanır. Türkçe harf farkı aramayı bozmaz (gazi = gazı). İl değişirse ilçe ve okul kendiliğinden sıfırlanır." },
-  { icon: "radar", color: "var(--memory-indigo)", title: "Konu Takibi (Modül B)", text: "Acil Çalışılacaklar listesi (ilk 5, kendi içinde kaydırılır) ve Hafıza Gücü. Hafıza listesinde yalnız 5 adımlı çalışmayı bitiren konular görünür; tekrar bekleyenler en üstte, tekrar günü en uzak olan en alttadır. Tekrar günü gelen konu KIRMIZI çizilir ve tekrarı kart turuyla yapılır (kart zorunlu). Günü gelmeyen konuda kart istenmez; istersen “Erken Tekrar” ile öne alabilirsin. Renk kademesi yeşilden kırmızıya iner: yeşil (%85+) güçlü, kırmızı (%29 ve altı) kritik." },
-  { icon: "library", color: "#059669", title: "Kitaplık (Modül C)", text: "Okuma disiplinini süre ve çözüm hatalarıyla ilişkilendirir. Günlük sayfa girişi yap; Disiplin Puanı, Okuma Hızı ve (5+ deneme sonrası) Bilişsel Kondisyon Eğilimi hesaplanır." },
-  { icon: "calendar-clock", color: "var(--semantic-warning)", title: "Planlama (Modül D)", text: "Sınav tarihi + hedef net ile tersine planlama: Haftalık İvme Hedefi = (HedefNet - MevcutOrt) / KalanHafta. Sirkadiyen ritmine göre Altın Saat konuları atanır." },
-  { icon: "graduation-cap", color: "var(--brand-blue)", title: "Bilgi Bankası (Modül E) — 5 ADIM", text: "Müfredat ağacından konu seç; 5 adımlı motor çalışır: 1) Ön Test → 2) Aktif Çalışma → 3) Çözümlü Örnek → 4) Karışık Pratik → 5) Kısa Kontrol (5 soru, tek tek). Adımlar sıralı kilitlidir. 4. adım bitince 5. adım AYNI EKRANDA çıkar; ayrıca bir yere tıklaman gerekmez. 5. adım bitmeden konu “tamamlandı” sayılmaz, hafıza takibine girmez ve tekrar kartı açılmaz. Konu tamamlanınca 3-7-14-21-28 gün tekrar takvimi kurulur." },
-  { icon: "pen-tool", color: "var(--semantic-error)", title: "Soru Bankası (Modül F)", text: "Günlük çözümlerini gir. <b>Toplam Çözülen</b> yazınca boş sayısı kendiliğinden hesaplanır (Boş = Toplam − Doğru − Yanlış); doğru/yanlış/boş için konu ve neden satırları açılır. Denemelerle aynı analitik motora bağlanır (1.0x ağırlık)." },
-  { icon: "check-square", color: "#059669", title: "Günlük Görevler (Modül G)", text: "Streak (seri) sistemi. Haftada 1 Streak Freeze hakkın var: bir gün boş geçse bile serin yanmaz." },
-  { icon: "bell-ring", color: "#0EA5E9", title: "Bildirimler", text: "Bildirim iznini Ayarlar → Bildirim İzni İste ile ver. İzin verdiğin ANDA bu cihaza bir deneme bildirimi gelir. Günde dört kez (07:35 · 13:05 · 19:30 · 21:35) tekrar günü gelen konular ve günün görevleri hatırlatılır." },
-  { icon: "message-square", color: "#DC2626", title: "Geri Bildirim", text: "Bir soruda hata mı var? Kısa kontrol veya kart ekranındaki “Bu soruda hata var” düğmesine bas — soru bize olduğu gibi iletilir. Genel öneri/sorun için Ayarlar → Geri Bildirim bölümünü kullan." }
+  { icon: "clipboard-list", color: "var(--brand-blue)", title: "Denemelerim", text: "Tüm veri girişinin merkezi. Ders ders doğru, yanlış ve boş sayılarını gir; her yanlış ve boş için konu ve neden seçersin. Girdiğin her hata, çalışma önceliklerini belirler." },
+  { icon: "user-round", color: "var(--brand-blue)", title: "Profil ve Okulizyon", text: "İl, ilçe ve okulu tek tek yazman gerekmez: birkaç harf yaz (ör. <b>gazi</b>), listenin ilk satırı en çok uyuşandır — dokun, alan kendiliğinden tamamlanır. Türkçe harf farkı aramayı bozmaz (gazi = gazı). İl değişirse ilçe ve okul sıfırlanır." },
+  { icon: "radar", color: "var(--memory-indigo)", title: "Konu Takibi", text: "Önce Acil Çalışılacaklar (ilk 5 konu), sonra Hafıza Gücü gelir. Hafıza listesinde 5 adımı bitirdiğin konular görünür; tekrarı yaklaşan en üstte. Tekrar günü gelen konu kırmızı çizilir ve tekrarı kart turuyla yapılır. Renk yeşilden kırmızıya iner: yeşil (%85+) güçlü, kırmızı (%29 ve altı) kritik." },
+  { icon: "library", color: "#059669", title: "Kitaplık", text: "Günlük okuduğun sayfayı gir. Disiplin Puanı ve Okuma Hızı hesaplanır; yeterli deneme kaydın varsa okuma alışkanlığının çözüm hatalarına etkisi de gösterilir." },
+  { icon: "calendar-clock", color: "var(--semantic-warning)", title: "Planlama", text: "Sınav tarihini ve hedef netini gir; kalan haftalara göre haftalık ivme hedefin hesaplanır. Konular gün içinde en verimli olduğun saatlere göre yerleştirilir." },
+  { icon: "graduation-cap", color: "var(--brand-blue)", title: "Bilgi Bankası — 5 adım", text: "Müfredattan konu seç; beş adım sırayla açılır: 1) Ön Test → 2) Aktif Çalışma → 3) Çözümlü Örnek → 4) Karışık Pratik → 5) Kısa Kontrol (5 soru, tek tek). 4. adım bitince 5. adım aynı ekranda çıkar. 5. adım bitmeden konu tamamlanmış sayılmaz. Konu tamamlanınca 3-7-14-21-28 gün tekrar takvimi kurulur." },
+  { icon: "pen-tool", color: "var(--semantic-error)", title: "Soru Bankası", text: "Günlük çözümlerini gir. <b>Toplam Çözülen</b> yazınca boş sayısı kendiliğinden hesaplanır (Boş = Toplam − Doğru − Yanlış). Doğru, yanlış ve boş için konu ve neden satırları açılır." },
+  { icon: "check-square", color: "#059669", title: "Günlük Görevler", text: "Her gün çalışarak serini (streak) büyüt. Haftada 1 kez seri dondurma hakkın var: bir günü boş geçsen bile serin bozulmaz." },
+  { icon: "bell-ring", color: "#0EA5E9", title: "Bildirimler", text: "İzni Ayarlar → Bildirim İzni İste ile ver; izin verdiğin an bu cihaza bir deneme bildirimi gelir. Sonrasında gün içinde tekrar ve görev hatırlatmaları alırsın." },
+  { icon: "message-square", color: "#DC2626", title: "Geri Bildirim", text: "Bir soruda hata mı var? Kısa kontrol veya kart ekranındaki “Bu soruda hata var” düğmesine bas — soru bize olduğu gibi iletilir. Genel öneri ve sorunlar için Ayarlar → Geri Bildirim bölümünü kullan." }
 ];
 
 function openHelp() {
@@ -3332,16 +3273,16 @@ function openHelp() {
       '<p style="font-size:13px;color:var(--text-muted);">' + m.text + "</p></div>"
     ).join("") +
     '<div class="bento-card" style="padding:16px;background:var(--memory-indigo-bg);border:none;">' +
-      "<h4 style=\"color:var(--memory-indigo);margin-bottom:8px;\">" + icon("brain", 16, "vertical-align:middle;margin-right:4px;") + ' Bilimsel Algoritmalar</h4>' +
+      "<h4 style=\"color:var(--memory-indigo);margin-bottom:8px;\">" + icon("brain", 16, "vertical-align:middle;margin-right:4px;") + ' Hesaplamalar nasıl çalışır?</h4>' +
       '<ul style="font-size:12.5px;color:var(--text-main);padding-left:18px;display:flex;flex-direction:column;gap:6px;">' +
-      "<li><b>Hafıza:</b> Hafıza %100'den başlar, üstel sönümle azalır. Her tekrar unutma hızını %10 yavaşlatır.</li>" +
-      "<li><b>Cepeda %10-20 kuralı:</b> İdeal tekrar aralığı = max(1, round(KalanGün × 0.15)). Sınav yaklaştıkça aralıklar otomatik sıklaşır.</li>" +
-      "<li><b>Laplace düzeltmeli Priorite:</b> [1.5·Deneme + 1.0·Test + 0.5·(İşlem+Anlama)] × (1 + AYT Ağırlığı).</li>" +
-      "<li><b>Kök Eksik (ön koşul):</b> Müfredat ilişki grafındaki <b>zorunlu ön koşul</b> bağları taranır. Bir konuda 2+ hata varsa ve o konu başka konuların ön koşuluysa uyarı üretilir — konu düzeyinde ölçülür, ders yüzdesiyle karşılaştırma YAPILMAZ.</li>" +
+      "<li><b>Hafıza:</b> %100'den başlar, zamanla azalır. Her tekrar unutmayı yavaşlatır.</li>" +
+      "<li><b>Tekrar aralığı:</b> Sınav yaklaştıkça aralıklar kendiliğinden sıklaşır.</li>" +
+      "<li><b>Öncelik:</b> Deneme hataları, soru bankası hatalarından daha ağır puanlanır.</li>" +
+      "<li><b>Kök eksik:</b> Bir konuyu besleyen temel konularda tekrarlayan hata varsa, önce temeli çalışman önerilir.</li>" +
       "</ul></div>" +
     '<div class="bento-card" style="padding:16px;margin-top:12px;"><h4 style="color:var(--semantic-warning);margin-bottom:8px;">' + icon("zap", 16, "vertical-align:middle;margin-right:4px;") + ' Pro İpuçları</h4>' +
       '<ul style="font-size:12.5px;color:var(--text-muted);padding-left:18px;display:flex;flex-direction:column;gap:5px;">' +
-      "<li>Haftalık ivmenin altında kalmamak için her denemeden sonra Modül B'yi kontrol et.</li>" +
+      "<li>Haftalık ivmenin altında kalmamak için her denemeden sonra Konu Takibi'ni kontrol et.</li>" +
       "<li>Son haftada yeni konu açma; sadece kırmızı hataları tarama (rejim tablosu Planlama'da).</li>" +
       "<li>Verilerini Ayarlar → Dışa Aktar ile haftada bir yedekle.</li>" +
       "</ul></div>";
@@ -5885,7 +5826,6 @@ document.addEventListener("DOMContentLoaded", function () {
       case "tanitimKapat": tanitimKapat(false); break;
       case "tanitimKilavuz": tanitimKapat(true); break;
       case "geriBildirimGonder": geriBildirimFormGonder(); break;
-      case "geriBildirimleriYenile": geriBildirimlerimYukle(); break;
       case "openNotif": renderNotifList(); openModal("notif-modal"); break;
       case "markAllRead": state.notifications.forEach(function (n) { n.read = true; }); saveState(); renderNotifList(); updateBellBadges(); break;
       case "toggleNotifPermission": requestNotifPermission(); break;
