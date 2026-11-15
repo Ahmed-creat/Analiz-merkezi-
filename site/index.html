@@ -1194,7 +1194,7 @@ select.dd-native {
   <div style="margin-top:20px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">BİLDİRİM</div>
     <button class="btn btn-ghost w-full" data-act="toggleNotifPermission" style="justify-content:flex-start;"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i> <span id="notif-perm-label">Bildirim İzni İste</span></button>
-    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">İzin verdiğin an bu cihaza bir bildirim gösterilir. Sonrasında her sabah (~07:40) günün kalan görevleri, akşam (~19:30) yalnız acil olanlar gelir.</p>
+    <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">İzin verdiğin an bir deneme bildirimi gelir. Sonrasında günde dört kez hatırlatma gelir: 07:35 · 13:05 · 19:30 · 21:35. Uygulama kapalıyken de çalışır.</p>
     <p class="text-xs text-muted" style="margin-top:6px;line-height:1.5;opacity:.85;">İzin penceresi yalnızca bu düğmeye <b>dokunduğunda</b> açılır (tarayıcı kuralı). Daha önce “Engelle” dendiyse adres çubuğundaki kilit simgesinden izin verip sayfayı yenile.</p>
   </div>
   <div style="margin-top:24px;">
@@ -2482,6 +2482,38 @@ function requestNotifPermission() {
     return;
   }
 
+  // v44 — KULLANICI: "Bildirim çalışmıyor, sadece ayarlardan tıklayınca test
+  // bildirimi geliyor."
+  // Ayarlardaki deneme iki ayrı şeyi karıştırıyordu:
+  //   • YEREL gösterim (kayit.showNotification) → sunucuya hiç gitmez,
+  //     her zaman görünür. "Geldi" sanılan şey buydu.
+  //   • GERÇEK push (sunucudan) → uygulama kapalıyken de gelir; asıl olay bu.
+  // Artık izin zaten verilmişse düğme GERÇEK push denemesi yapar ve aboneliği
+  // sunucunun imza anahtarıyla YENİDEN kurar (ölü/uyumsuz abonelikler onarılır).
+  if (Notification.permission === "granted") {
+    if (!window.AmPush) {
+      if (typeof toast === "function") toast("Bildirim modülü yüklenmedi — sayfayı yenile.", "warning");
+      return;
+    }
+    if (typeof toast === "function") toast("Bildirim bağlantısı denetleniyor…", "info");
+    window.AmPush.yenile().then(function (r) {
+      if (!r || !r.ok) {
+        if (typeof toast === "function") toast("Bağlantı kurulamadı: " + ((r && r.neden) || "bilinmeyen"), "error");
+        return;
+      }
+      return window.AmPush.testEt().then(function (t) {
+        const m = (t && t.ok)
+          ? "Sunucudan deneme bildirimi gönderildi. Geldiyse arka plan kanalı sağlam."
+          : "Sunucu gönderemedi: " + ((t && t.neden) || "bilinmeyen hata");
+        if (typeof toast === "function") toast(m, (t && t.ok) ? "success" : "error");
+        if (typeof updateBildirimDurum === "function") updateBildirimDurum();
+      });
+    }).catch(function (e) {
+      if (typeof toast === "function") toast("Bağlantı kurulamadı: " + String((e && e.message) || e), "error");
+    });
+    return;
+  }
+
   // İzin akışı: izin + push aboneliği birlikte yürür.
   const bitir = function (p) {
     state.settings.notifPermission = p; saveState();
@@ -2557,7 +2589,7 @@ function updateBildirimDurum() {
   }
   const izin = Notification.permission;
   if (izin === "denied") el.textContent = "İzin tarayıcıda ENGELLENMİŞ. Adres çubuğundaki kilit simgesi → Bildirimler → İzin ver → sayfayı yenile.";
-  else if (izin === "granted") el.textContent = "Bildirimler açık ✓ Her sabah (~07:40) günün kalan görevleri, akşam (~19:30) yalnız acil olanlar hatırlatılır.";
+  else if (izin === "granted") el.textContent = "Bildirimler açık ✓ 07:35 · 13:05 · 19:30 · 21:35 — tekrar günü gelen konular ve günün görevleri hatırlatılır.";
   else el.textContent = "Bildirim izni henüz verilmedi → yukarıdaki düğmeye dokun. İzin verdiğin an bu cihazda bir bildirim gösterilir.";
 }
 
@@ -3168,8 +3200,10 @@ function splashKapat() {
   sp.classList.add("gone");
   setTimeout(function () { if (sp && sp.parentNode) sp.parentNode.removeChild(sp); }, 450);
 }
+// v44 — açılış kapısı yok; eski sürümden kalan işaret varsa temizlenir.
 function splashIlkAcilisMi() {
-  try { return localStorage.getItem("am_giris_yapildi") !== "1"; } catch (e) { return false; }
+  try { localStorage.removeItem("am_giris_yapildi"); } catch (e) { /* */ }
+  return false;
 }
 
 function tanitimGoster(zorla) {
@@ -3202,7 +3236,7 @@ const HELP_MODULES = [
   { icon: "graduation-cap", color: "var(--brand-blue)", title: "Bilgi Bankası (Modül E) — 5 ADIM", text: "Müfredat ağacından konu seç; 5 adımlı motor çalışır: 1) Ön Test → 2) Aktif Çalışma → 3) Çözümlü Örnek → 4) Karışık Pratik → 5) Kısa Kontrol (5 soru, tek tek). Adımlar sıralı kilitlidir. 4. adım bitince 5. adım AYNI EKRANDA çıkar; ayrıca bir yere tıklaman gerekmez. 5. adım bitmeden konu “tamamlandı” sayılmaz, hafıza takibine girmez ve tekrar kartı açılmaz. Konu tamamlanınca 3-7-14-21-28 gün tekrar takvimi kurulur." },
   { icon: "pen-tool", color: "var(--semantic-error)", title: "Soru Bankası (Modül F)", text: "Günlük çözümlerini gir; zorluk seviyesi önerisi al (≤%40 TEMEL, ≤%75 ORTA, >%75 ZOR/YENİ NESİL). Denemelerle aynı analitik motora bağlanır (1.0x ağırlık)." },
   { icon: "check-square", color: "#059669", title: "Günlük Görevler (Modül G)", text: "Streak (seri) sistemi. Haftada 1 Streak Freeze hakkın var: bir gün boş geçse bile serin yanmaz." },
-  { icon: "bell-ring", color: "#0EA5E9", title: "Bildirimler", text: "Bildirim iznini Ayarlar → Bildirim İzni İste ile ver. İzin verdiğin ANDA bu cihaza bir deneme bildirimi gelir. Her sabah (~07:40) günün kalan görevleri, akşam (~19:30) yalnız acil olanlar hatırlatılır." },
+  { icon: "bell-ring", color: "#0EA5E9", title: "Bildirimler", text: "Bildirim iznini Ayarlar → Bildirim İzni İste ile ver. İzin verdiğin ANDA bu cihaza bir deneme bildirimi gelir. Günde dört kez (07:35 · 13:05 · 19:30 · 21:35) tekrar günü gelen konular ve günün görevleri hatırlatılır." },
   { icon: "message-square", color: "#DC2626", title: "Geri Bildirim", text: "Bir soruda hata mı var? Kısa kontrol veya kart ekranındaki “Bu soruda hata var” düğmesine bas — soru bize olduğu gibi iletilir. Genel öneri/sorun için Ayarlar → Geri Bildirim bölümünü kullan." }
 ];
 
@@ -5671,11 +5705,7 @@ document.addEventListener("DOMContentLoaded", function () {
       case "closeConfirm": closeConfirm(); break;
       case "executeConfirm": executeConfirm(); break;
       case "closeModal": closeAllModals(); break;
-      case "enterApp": { // Açılış sayfası: kapat + yeni kullanıcıysa karşılama
-        // v42 — KULLANICI: "Her açılışta başlayalım tuşu gelmesin."
-        // İlk girişten sonra hatırlanır; sonraki açılışlarda açılış ekranı
-        // kendiliğinden geçilir (aşağıdaki init kodu).
-        try { localStorage.setItem("am_giris_yapildi", "1"); } catch (e) { /* */ }
+      case "enterApp": { // (v44: açılış kapısı kaldırıldı — bu dal artık bağlanmıyor)
         splashKapat();
         if (!window.__entered) {
           window.__entered = true;

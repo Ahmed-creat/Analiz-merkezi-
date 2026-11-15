@@ -1,4 +1,4 @@
-const PWA_SURUM = "v43-acilis-ve-tekrar";
+const PWA_SURUM = "v44-arama-tek-kayit";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -69,6 +69,7 @@ if ("serviceWorker" in navigator) {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "pkce" },
       global: { headers: { "x-application-name": "analiz-merkezi-pwa" } }
     });
+    eskiAnahtarlariTemizle();
     hookSaveState();
     listenAuth();
     // v40 — oturum açıldıysa Realtime bildirim kanalını hemen kur.
@@ -165,11 +166,34 @@ async function pushTeshisYaz() {
       kutu.textContent = "Bildirim izni verilmedi. Ayarlar → “Bildirim İzni İste”ye dokun; izin verdiğin an bir deneme bildirimi gelir.";
       return;
     }
-    let abone = false;
-    try { const k = await navigator.serviceWorker.ready; abone = !!(await k.pushManager.getSubscription()); } catch (e) { /* */ }
-    kutu.textContent = abone
-      ? "Açık ✓ Her sabah (~07:40) günün kalan görevlerini, akşam (~19:30) yalnız acil olanları hatırlatırım."
-      : "İzin var ama cihaz kaydı tamamlanmadı. Uygulamayı bir kez kapatıp aç; sürerse Ayarlar → “Bildirim İzni İste”ye tekrar dokun.";
+    let abone = null;
+    try { const k = await navigator.serviceWorker.ready; abone = await k.pushManager.getSubscription(); } catch (e) { /* */ }
+    if (!abone) {
+      kutu.textContent = "İzin var ama cihaz kaydı tamamlanmadı. “Bağlantıyı yenile”ye dokun.";
+      return;
+    }
+    // v44 — YALAN SÖYLEME: sunucunun gönderdiği ile cihazın aldığı karşılaştırılır.
+    // Sunucu "gönderdim" diyor, cihazda iz yoksa gerçekten ulaşmıyor demektir.
+    const bilgi = (window.AmPush && window.AmPush.teshis) ? await window.AmPush.teshis().catch(() => null) : null;
+    const cihaz = bilgi && bilgi.cihaz ? bilgi.cihaz : {};
+    const sonGonderim = cihaz.sunucuSonGonderim || null;
+    const sonPush = cihaz.sonPush ? new Date(cihaz.sonPush.zaman) : null;
+    let metin = "Açık ✓ Her sabah 07:35 · 13:05 · akşam 19:30 · 21:35 hatırlatma gelir.";
+    if (sonGonderim) {
+      const t = new Date(sonGonderim + "T00:00:00");
+      const gun = t.toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
+      metin += " Sunucu son olarak " + gun + " gönderdi";
+      if (sonPush && sonPush >= t) {
+        metin += ", cihaz aldı ✓";
+      } else if (sonPush) {
+        metin += ", cihaz en son " + sonPush.toLocaleDateString("tr-TR") + " tarihli bildirimi aldı — bağlantıyı yenile.";
+      } else {
+        metin += ", cihaza ulaştığına dair iz yok — “Bağlantıyı yenile”ye dokun.";
+      }
+    } else if (sonPush) {
+      metin += " Son gelen bildirim: " + sonPush.toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + ".";
+    }
+    kutu.textContent = metin;
   } catch (e) {
     kutu.textContent = "Bildirim durumu okunamadı. Uygulamayı yenilemeyi dene.";
   }
@@ -318,20 +342,157 @@ function okzListeAnahtari(rol) {
   return OKZ_SECIM.ilce.kod ? "okul:" + OKZ_SECIM.ilce.kod : "";
 }
 
-// Arayüz: tek bir select (seçenekler + hangi seçenek seçili)
+// ARAYÜZ — v44: YAZARAK ARAMA (Okulizyon'daki gibi)
+// KULLANICI: "Bu sınıf il ilçe okul seçmede okulizyondaki gibi yazma da olsun,
+// yani arama gibi."
+// 765 okullu bir listede kaydırma çilesi bitiyor: harf yazdıkça süzülür.
+// Gizli <input id="okz-X"> değeri korur (okzSaveBilgi aynı yerden okur).
 function okzSecim(id, etiket, rol, seciliKod, seciliAd) {
+  const ad = seciliAd || "";
+  const kod = seciliKod || "";
   const anahtar = okzListeAnahtari(rol);
-  const liste = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
-  const bos = rol === "il" ? "Yükleniyor…" : (rol === "ilce" ? "Önce il seç" : "Önce ilçe seç");
-  let ic = '<option value="" data-kod="">— ' + bos + " —</option>";
-  if (!liste.length && seciliAd) ic += '<option value="' + escHtml(seciliAd) + '" data-kod="' + escHtml(seciliKod || "") + '" selected>' + escHtml(seciliAd) + " (kayıtlı)</option>";
-  ic += liste.map(x => {
-    const sec = (seciliKod && x.kod === seciliKod) || (!seciliKod && okzAyni(x.ad, seciliAd));
-    return '<option value="' + escHtml(x.ad) + '" data-kod="' + escHtml(x.kod) + '"' + (sec ? " selected" : "") + ">" + escHtml(x.ad) + "</option>";
-  }).join("");
-  return '<label style="font-size:11.5px;opacity:0.8;">' + etiket +
-    '<select id="okz-' + id + '" data-okz-rol="' + rol + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + ic + "</select></label>";
+  const hazir = !!(anahtar && (OKZ_LISTE[anahtar] || []).length);
+  const ipucu = rol === "il" ? "İl yaz (ör. Gazi)" : (rol === "ilce" ? "İlçe yaz (ör. Şahin)" : "Okul yaz (ör. 19 Mayıs)");
+  const kapali = rol !== "il" && !anahtar ? " disabled" : "";
+  return '<div class="okz-arama" data-okz-rol="' + rol + '" style="position:relative;">' +
+    '<label style="font-size:11.5px;opacity:0.8;">' + etiket +
+    '<input id="okz-' + id + '-arama" class="okz-arama-girdi" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false"' +
+    ' placeholder="' + (anahtar ? ipucu : (rol === "il" ? "Yükleniyor…" : "Önce il seç")) + '"' +
+    (hazir || anahtar ? "" : kapali) +
+    ' value="' + escHtml(ad) + '"' +
+    ' style="width:100%;box-sizing:border-box;padding:9px 30px 9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' +
+    '</label>' +
+    '<span style="position:absolute;right:26px;top:26px;pointer-events:none;opacity:0.45;font-size:11px;">▾</span>' +
+    '<input type="hidden" id="okz-' + id + '" value="' + escHtml(ad) + '" data-kod="' + escHtml(kod) + '">' +
+    '<div class="okz-arama-liste" role="listbox" hidden style="position:absolute;z-index:70;left:0;right:0;top:100%;margin-top:4px;max-height:230px;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border:1px solid rgba(0,0,0,0.18);border-radius:11px;box-shadow:0 16px 40px rgba(0,0,0,0.22);"></div>' +
+    '</div>';
 }
+
+// --- Yazarak arama davranışı (olaylar document üzerinden, tek dinleyici) ---
+function okzAramaKok(el) { return el && el.closest ? el.closest(".okz-arama") : null; }
+function okzAramaListe(kok) { return kok ? kok.querySelector(".okz-arama-liste") : null; }
+function okzAramaGirdi(kok) { return kok ? kok.querySelector(".okz-arama-girdi") : null; }
+function okzAramaGizli(kok) { return kok ? kok.querySelector('input[type="hidden"][id^="okz-"]') : null; }
+
+function okzAramaCiz(kok, yazilan) {
+  const rol = kok.dataset.okzRol;
+  const kutu = okzAramaListe(kok);
+  if (!kutu) return;
+  const anahtar = okzListeAnahtari(rol);
+  const hepsi = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
+  if (!hepsi.length) {
+    kutu.innerHTML = '<div style="padding:10px 12px;font-size:12.5px;opacity:0.7;">' +
+      (rol === "il" ? "İl listesi yükleniyor…" : "Önce üstteki seçimi yap.") + "</div>";
+    kutu.hidden = false; okzAramaGirdi(kok).setAttribute("aria-expanded", "true");
+    return;
+  }
+  const q = okzNorm(yazilan || "");
+  const secili = (OKZ_SECIM[rol] && OKZ_SECIM[rol].kod) || "";
+  let suzulen = hepsi;
+  if (q) {
+    // Önce "başlıyor", sonra "içeriyor" — yazdıkça en olası üstte.
+    const bas = [], ic = [];
+    for (const x of hepsi) {
+      const n = okzNorm(x.ad);
+      if (n.startsWith(q)) bas.push(x);
+      else if (n.indexOf(q) >= 0) ic.push(x);
+    }
+    suzulen = bas.concat(ic);
+  }
+  if (!suzulen.length) {
+    kutu.innerHTML = '<div style="padding:10px 12px;font-size:12.5px;opacity:0.7;">Eşleşme yok. Farklı yazmayı dene.</div>';
+  } else {
+    const EN_FAZLA = 80;
+    const parca = suzulen.slice(0, EN_FAZLA);
+    kutu.innerHTML = parca.map(x =>
+      '<div class="okz-arama-sec" role="option" data-kod="' + escHtml(x.kod) + '" data-ad="' + escHtml(x.ad) + '"' +
+      ' style="padding:9px 12px;font-size:13px;cursor:pointer;background:' + (x.kod === secili ? "rgba(37,99,235,0.14)" : "transparent") + ';' +
+      (x.kod === secili ? "font-weight:700;" : "") + '">' + escHtml(x.ad) + "</div>"
+    ).join("") + (suzulen.length > EN_FAZLA
+      ? '<div style="padding:8px 12px;font-size:11.5px;opacity:0.6;">' + (suzulen.length - EN_FAZLA) + ' sonuç daha var — birkaç harf daha yaz.</div>'
+      : "");
+  }
+  kutu.hidden = false;
+  okzAramaGirdi(kok).setAttribute("aria-expanded", "true");
+}
+function okzAramaKapat(kok) {
+  const kutu = okzAramaListe(kok);
+  if (kutu) kutu.hidden = true;
+  const g = okzAramaGirdi(kok);
+  if (g) { g.setAttribute("aria-expanded", "false"); const sec = OKZ_SECIM[kok.dataset.okzRol]; if (sec && sec.ad) g.value = sec.ad; }
+}
+function okzAramaSec(kok, ad, kod) {
+  const rol = kok.dataset.okzRol;
+  const gizli = okzAramaGizli(kok);
+  if (gizli) { gizli.value = ad; gizli.dataset.kod = kod; }
+  const g = okzAramaGirdi(kok); if (g) g.value = ad;
+  OKZ_SECIM[rol] = { ad: ad, kod: kod };
+  okzAramaKapat(kok);
+  if (rol === "il") {
+    OKZ_SECIM.ilce = { ad: "", kod: "" };
+    OKZ_SECIM.okul = { ad: "", kod: "" };
+    okzAramaAltSifirla("ilce", "Önce il seç");
+    okzAramaAltSifirla("okul", "Önce ilçe seç");
+    if (kod) okzListeTazele("ilce");
+  } else if (rol === "ilce") {
+    OKZ_SECIM.okul = { ad: "", kod: "" };
+    okzAramaAltSifirla("okul", "Önce ilçe seç");
+    if (kod) okzListeTazele("okul");
+  }
+}
+function okzAramaAltSifirla(rol, ipucu) {
+  const kok = document.querySelector('.okz-arama[data-okz-rol="' + rol + '"]');
+  if (!kok) return;
+  const g = okzAramaGirdi(kok); if (g) { g.value = ""; g.placeholder = ipucu; g.disabled = false; }
+  const h = okzAramaGizli(kok); if (h) { h.value = ""; h.dataset.kod = ""; }
+  const kutu = okzAramaListe(kok); if (kutu) kutu.hidden = true;
+}
+
+document.addEventListener("focusin", (e) => {
+  const kok = okzAramaKok(e.target);
+  if (!kok || !e.target.classList.contains("okz-arama-girdi")) return;
+  okzAramaCiz(kok, "");
+  const g = okzAramaGirdi(kok); if (g) g.select();
+});
+document.addEventListener("input", (e) => {
+  const kok = okzAramaKok(e.target);
+  if (!kok || !e.target.classList.contains("okz-arama-girdi")) return;
+  okzAramaCiz(kok, e.target.value);
+});
+document.addEventListener("mousedown", (e) => {
+  const sec = e.target.closest && e.target.closest(".okz-arama-sec");
+  if (!sec) return;
+  e.preventDefault();
+  const kok = okzAramaKok(sec);
+  if (kok) okzAramaSec(kok, sec.dataset.ad || "", sec.dataset.kod || "");
+});
+document.addEventListener("keydown", (e) => {
+  const kok = okzAramaKok(e.target);
+  if (!kok || !e.target.classList.contains("okz-arama-girdi")) return;
+  const kutu = okzAramaListe(kok);
+  if (e.key === "Escape") { okzAramaKapat(kok); return; }
+  if (!kutu || kutu.hidden) { if (e.key === "ArrowDown") okzAramaCiz(kok, e.target.value); return; }
+  const secenekler = Array.from(kutu.querySelectorAll(".okz-arama-sec"));
+  if (!secenekler.length) return;
+  let i = secenekler.findIndex(x => x.dataset.aktif === "1");
+  if (e.key === "ArrowDown") { e.preventDefault(); i = Math.min(secenekler.length - 1, i + 1); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); i = Math.max(0, i - 1); }
+  else if (e.key === "Enter") {
+    e.preventDefault();
+    const hedef = secenekler[i < 0 ? 0 : i];
+    if (hedef) okzAramaSec(kok, hedef.dataset.ad || "", hedef.dataset.kod || "");
+    return;
+  } else return;
+  secenekler.forEach((x, j) => {
+    x.dataset.aktif = j === i ? "1" : "0";
+    x.style.background = j === i ? "rgba(37,99,235,0.18)" : (x.dataset.kod === (OKZ_SECIM[kok.dataset.okzRol] || {}).kod ? "rgba(37,99,235,0.14)" : "transparent");
+  });
+  if (secenekler[i] && secenekler[i].scrollIntoView) secenekler[i].scrollIntoView({ block: "nearest" });
+});
+document.addEventListener("click", (e) => {
+  if (okzAramaKok(e.target)) return;
+  document.querySelectorAll(".okz-arama").forEach(okzAramaKapat);
+});
 
 // Liste çek: rol + kod. Başarılıysa önbelleğe yazılır ve arayüz tazelenir.
 function okzListeTazele(rol, zorla) {
@@ -366,20 +527,27 @@ function okzListeTazele(rol, zorla) {
   return OKZ_SURUYOR[anahtar];
 }
 
-// Açık profildeki TÜM seçimleri DURUMA göre yeniden çiz (DOM niteliği okunmaz).
+// Liste sunucudan gelince AÇIK aramaları tazele (seçim durumdan okunur).
 function okzSecimleriDoldur() {
-  document.querySelectorAll("select[data-okz-rol]").forEach(sel => {
-    const rol = sel.dataset.okzRol;
+  document.querySelectorAll(".okz-arama").forEach(kok => {
+    const rol = kok.dataset.okzRol;
     const anahtar = okzListeAnahtari(rol);
     const liste = anahtar ? (OKZ_LISTE[anahtar] || []) : [];
-    if (!liste.length) return;
+    const g = okzAramaGirdi(kok);
+    if (g) {
+      g.disabled = !anahtar || !liste.length;
+      if (anahtar && liste.length) {
+        g.placeholder = rol === "il" ? "İl yaz (ör. Gazi)" : (rol === "ilce" ? "İlçe yaz (ör. Şahin)" : "Okul yaz (ör. 19 Mayıs)");
+      }
+    }
     const sec = OKZ_SECIM[rol] || { ad: "", kod: "" };
-    sel.innerHTML = '<option value="" data-kod="">— Seç —</option>' + liste.map(x => {
-      const on = (sec.kod && x.kod === sec.kod) || (!sec.kod && okzAyni(x.ad, sec.ad));
-      return '<option value="' + escHtml(x.ad) + '" data-kod="' + escHtml(x.kod) + '"' + (on ? " selected" : "") + ">" + escHtml(x.ad) + "</option>";
-    }).join("");
+    const h = okzAramaGizli(kok);
+    if (h && sec.ad) { h.value = sec.ad; h.dataset.kod = sec.kod || ""; if (g && document.activeElement !== g) g.value = sec.ad; }
+    const kutu = okzAramaListe(kok);
+    if (kutu && !kutu.hidden) okzAramaCiz(kok, (g && document.activeElement === g) ? g.value : "");
   });
 }
+
 function okzHataYaz() {
   const k = document.getElementById("okz-liste-hata");
   if (!k) return;
@@ -488,6 +656,7 @@ function renderProfileModal() {
   // bildirim durumu kaldı.
   html += '<div style="border:1px solid rgba(0,0,0,0.10);border-radius:14px;padding:12px;font-size:12px;line-height:1.6;">';
   html += '<b>Bildirimler</b><div id="pwa-push-durum" style="margin-top:6px;">kontrol ediliyor…</div>';
+  html += '<button data-act="amBildirimOnar" style="margin-top:8px;background:none;border:1px solid rgba(0,0,0,0.15);border-radius:8px;padding:6px 10px;font-size:12px;color:inherit;cursor:pointer;">Bağlantıyı yenile</button>';
   html += '</div>';
 
   html += '</div>';
@@ -639,6 +808,8 @@ async function oturumUygula(session) {
       .maybeSingle();
     if (error) throw error;
     if (data && data.state) {
+      // v44 — uzak kaydın zamanı: kendi yazdığımızdan yeni ise üzerine yazmayız.
+      sonUzakYazma = bulutZaman(data.updated_at);
       const uzakState = typeof data.state === "string" ? JSON.parse(data.state) : data.state;
       const yerelBos = !state.exams.length && !state.questions.length && !Object.keys(state.topics).length;
       const nEx = (uzakState.exams || []).length;
@@ -680,14 +851,35 @@ async function oturumUygula(session) {
   registerFCM();
 }
 
-// ---- 6) saveState KANCASI: her kayıtta Supabase'e debounced yaz ----
-function hookSaveState() {
-  if (window.__saveHooked) return;
-  window.__saveHooked = true;
-  const orijinal = window.saveState;
-  if (typeof orijinal !== "function") return;
-  async function senkronizeEt() {
-    if (!sb || !currentUser) return;
+// ---- 6) TEK YAZICI: cihaz önbelleği + hesaptaki tek kopya (v44) ----
+// KULLANICI: "Bilgiler hem localStorage hem bulut hem Supabase'de depolanınca
+// karmaşıklık oluyor. Güncel uygulamalar nasıl yapıyorsa öyle yap."
+//
+// DURUM (eski): saveState → 4 sn debounce; ayrıca "online" olayında ayrı bir
+// zamanlayıcı; ayrıca elle "Şimdi Yedekle" → AYNI anda 2-3 yazma uçuşuyor,
+// eskisi yeniyi ezip geçebiliyordu. Üstüne giriş yapınca birleştirme başka bir
+// yerde tekrar yazıyordu.
+//
+// YENİ (güncel uygulama deseni — "yerel önbellek + tek uzak kopya"):
+//   • Tek yazıcı: aynı anda EN FAZLA bir yazma uçuşur (single-flight).
+//   • Kısa debounce + son hâli yaz: uçuş sırasında yeni değişiklik olursa
+//     bitince BİR kez daha yazılır (kuyruk birleşir, istek çoğalmaz).
+//   • Sürüm damgası: yazdığımız anı saklarız; bizden daha yeni bir uzak kayıt
+//     varsa üzerine YAZMAYIZ (bayat sekme veri ezmez), birleştiririz.
+//   • Çevrimdışıysa yazma beklemez: cihazda durur, bağlantı gelince gider.
+let yazmaUcusu = null;      // süren yazma
+let yazmaBekliyor = false;  // uçuş sırasında yeni değişiklik oldu
+let yazmaZamanlayici = null;
+let sonYerelDegisim = 0;    // bu cihazdaki son değişiklik (ms)
+let sonUzakYazma = 0;       // sunucudaki updated_at (ms)
+
+function bulutZaman(iso) { const t = iso ? Date.parse(iso) : NaN; return isNaN(t) ? 0 : t; }
+
+async function bulutaYaz(sessiz) {
+  if (!sb || !currentUser) return { ok: false, neden: "oturum yok" };
+  if (typeof state === "undefined") return { ok: false, neden: "durum yok" };
+  if (yazmaUcusu) { yazmaBekliyor = true; return yazmaUcusu; }
+  yazmaUcusu = (async () => {
     try {
       const { error } = await sb.from("app_states").upsert({
         user_id: currentUser.id,
@@ -697,27 +889,57 @@ function hookSaveState() {
         updated_at: new Date().toISOString()
       }, { onConflict: "user_id" });
       if (error) throw error;
+      sonUzakYazma = Date.now();
       setAuthLabel(true, (currentUser.email || "").split("@")[0] || "hesap");
       const rozet = document.getElementById("pwa-auth-label");
       if (rozet && rozet.textContent.indexOf("✓ bulutta") === -1) rozet.textContent += " · ✓ bulutta";
-    } catch (e) { console.warn("Bulut senkronu başarısız (çevrimdışı?):", e); }
-  }
-  window.__supabaseSenkronizeEt = senkronizeEt;
+      return { ok: true };
+    } catch (e) {
+      if (!sessiz) console.warn("Bulut yazımı başarısız (çevrimdışı?):", e);
+      return { ok: false, neden: String(e && e.message || e) };
+    } finally {
+      yazmaUcusu = null;
+      if (yazmaBekliyor) { yazmaBekliyor = false; setTimeout(() => bulutaYaz(true), 300); }
+    }
+  })();
+  return yazmaUcusu;
+}
+
+function yazmaPlanla(gecikme) {
+  if (!currentUser || !sb) return;
+  sonYerelDegisim = Date.now();
+  clearTimeout(yazmaZamanlayici);
+  yazmaZamanlayici = setTimeout(() => { bulutaYaz(true); }, gecikme == null ? 1500 : gecikme);
+}
+
+function hookSaveState() {
+  if (window.__saveHooked) return;
+  window.__saveHooked = true;
+  const orijinal = window.saveState;
+  if (typeof orijinal !== "function") return;
+  window.__supabaseSenkronizeEt = () => bulutaYaz(false);
   window.saveState = function () {
     const sonuc = orijinal.apply(this, arguments);
-    if (currentUser && sb) {
-      clearTimeout(syncTimer);
-      syncTimer = setTimeout(senkronizeEt, 4000);
-    }
+    yazmaPlanla(1500);
     return sonuc;
   };
-  // İnternet geri gelince bekleyen senkronu otomatik yeniden dene
-  window.addEventListener("online", () => {
-    if (currentUser && sb) {
-      clearTimeout(syncTimer);
-      syncTimer = setTimeout(senkronizeEt, 2500);
-    }
-  });
+  // Çevrimdışıyken biriken değişiklik: bağlantı gelince TEK yazma.
+  window.addEventListener("online", () => yazmaPlanla(800));
+  // Sekme kapanırken kaybolmasın (mobil tarayıcı arka plana atınca).
+  window.addEventListener("pagehide", () => { if (currentUser && sb && sonYerelDegisim > sonUzakYazma) bulutaYaz(true); });
+}
+
+// Eski sürümlerden kalan, artık HİÇBİR işe yaramayan anahtarları temizle.
+// (Açılış kapısı kaldırıldı, test işareti cihaz+uç noktaya taşındı.)
+function eskiAnahtarlariTemizle() {
+  try {
+    const olu = ["am_giris_yapildi"]; // açılış kapısı kaldırıldı: işaret artık ölü
+    olu.forEach(k => localStorage.removeItem(k));
+    Object.keys(localStorage).forEach(k => {
+      if (k.indexOf("am_push_test_gonderildi") === 0) localStorage.removeItem(k);
+      if (k.indexOf("firebase:") === 0 || k.indexOf("__firebase") === 0) localStorage.removeItem(k);
+    });
+  } catch (e) { /* */ }
 }
 
 // ---- 6b) REALTIME BİLDİRİM KANALI (v40) ----
@@ -1314,32 +1536,9 @@ function initOkulizyonUI() {
   // Okulizyon girişi yalnız PROFİL penceresinden; burada sadece kuyruk penceresi hazırlanır
   buildOkzModal();
   buildProfileModal();
-  // v43 — İL → İLÇE → OKUL zinciri (Okulizyon'daki gibi)
-  // Seçim DURUMDA tutulur; DOM'daki eski kod artık okunmaz (v42'de il
-  // değişince ilçe listesi boş kalıyordu, "sadece şehir seçilebiliyor").
-  document.addEventListener("change", (e) => {
-    const el = e.target;
-    if (!el || el.tagName !== "SELECT" || !el.dataset || !el.dataset.okzRol) return;
-    const rol = el.dataset.okzRol;
-    const o = el.selectedOptions && el.selectedOptions[0];
-    const ad = o ? String(o.value || "") : "";
-    const kod = o ? String(o.dataset.kod || "") : "";
-    OKZ_SECIM[rol] = { ad, kod };
-    if (rol === "il") {
-      OKZ_SECIM.ilce = { ad: "", kod: "" };
-      OKZ_SECIM.okul = { ad: "", kod: "" };
-      const i2 = document.querySelector('select[data-okz-rol="ilce"]');
-      const o2 = document.querySelector('select[data-okz-rol="okul"]');
-      if (i2) i2.innerHTML = '<option value="" data-kod="">— Yükleniyor… —</option>';
-      if (o2) o2.innerHTML = '<option value="" data-kod="">— Önce ilçe seç —</option>';
-      if (kod) okzListeTazele("ilce");
-    } else if (rol === "ilce") {
-      OKZ_SECIM.okul = { ad: "", kod: "" };
-      const o2 = document.querySelector('select[data-okz-rol="okul"]');
-      if (o2) o2.innerHTML = '<option value="" data-kod="">— Yükleniyor… —</option>';
-      if (kod) okzListeTazele("okul");
-    }
-  });
+  // v44 — İL → İLÇE → OKUL zinciri yazarak aramalı bileşende yürür
+  // (okzAramaSec). Burada ayrıca change dinleyicisi YOK: tek yol, tek davranış.
+
   document.addEventListener("click", (e) => {
     const el = e.target.closest("[data-act]");
     if (!el) return;
@@ -1348,6 +1547,18 @@ function initOkulizyonUI() {
     else if (a === "okzSimdiCek") { toast("Okulizyon sonuçları sorgulanıyor…", "info"); okzSunucuCek(); }
     else if (a === "okzClose") closeOkzModal();
     else if (a === "okzSaveBilgi") okzSaveBilgi();
+    else if (a === "amBildirimOnar") {
+      if (!window.AmPush || !window.AmPush.yenile) { toast("Bildirim modülü yüklenmedi, sayfayı yenile.", "warning"); return; }
+      toast("Bildirim bağlantısı yeniden kuruluyor…", "info");
+      window.AmPush.yenile().then(r => {
+        if (r && r.ok) {
+          toast("Bağlantı yenilendi — birazdan bir deneme bildirimi gelecek.", "success");
+          setTimeout(function () { try { pushTeshisYaz(); } catch (e) {} }, 1500);
+        } else {
+          toast("Kurulamadı: " + ((r && r.neden) || "bilinmeyen hata"), "error");
+        }
+      });
+    }
     else if (a === "okzListeYenile") { toast("Listeler yenileniyor…", "info"); okzListeTazele("il", true).then(() => { if (OKZ_SECIM.il.kod) return okzListeTazele("ilce", true); }).then(() => { if (OKZ_SECIM.ilce.kod) return okzListeTazele("okul", true); }); }
     else if (a === "okzAnalizKaydet") okzAnalizKaydet();
     else if (a === "okzHepsi") okzHepsiUygula(el.dataset.reason);

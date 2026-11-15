@@ -37,6 +37,47 @@
   // bu satır tek bir üretilmiş çiftten yazıldı; ikisi artık ayrışamaz.
   const VAPID_ACIK = "BNRjTCIDs_ML94GereBzsi08_jNu0qXDQt8GNZPepDplBaIvW3HJuq7GtYOy-lKkNnPPCdMm6YJSFzJIQR46aU8";
 
+  // ============================================================
+  // v44 — SUNUCU ↔ TARAYICI ANAHTAR ANLAŞMASI (bildirim neden gelmiyor)
+  // KULLANICI: "Bildirim falan çalışmıyor, sadece ayarlardan tıklayınca
+  // test bildirimi geliyor."
+  // Ayarlardaki test YEREL gösterimdir (kayit.showNotification) — sunucuya
+  // hiç gitmez, bu yüzden her zaman görünür. Gerçek hatırlatmalar ise Web
+  // Push ile gider. Abonelik A anahtarıyla kurulup sunucu B anahtarıyla
+  // imzalarsa push servisi 201 döner ama TARAYICI bildirimi sessizce
+  // DÜŞÜRÜR: ne hata, ne kayıt... tam olarak "hiç gelmiyor" belirtisi.
+  // Artık anahtar sunucudan alınır ve abonelik ONA göre kurulur.
+  // ============================================================
+  const VAPID_ANAHTAR_DEPO = "am_vapid_sunucu_v44";
+  function yerelVapid() {
+    try { return localStorage.getItem(VAPID_ANAHTAR_DEPO) || ""; } catch (e) { return ""; }
+  }
+  function yerelVapidYaz(k) {
+    try { if (k) localStorage.setItem(VAPID_ANAHTAR_DEPO, k); } catch (e) { /* */ }
+  }
+  /** Sunucunun imzayı attığı GERÇEK açık anahtar. Ulaşılamazsa son bilinen. */
+  let vapidSozu = null; // oturum boyunca tek istek
+  async function sunucuVapid() {
+    if (vapidSozu) return vapidSozu;
+    vapidSozu = sunucuVapidIc();
+    const k = await vapidSozu;
+    if (!k) vapidSozu = null; // başarısızsa sonraki denemede yeniden sor
+    return k;
+  }
+  async function sunucuVapidIc() {
+    try {
+      const y = await fetch(url() + "/functions/v1/bildirim-gonder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", apikey: anahtar() },
+        body: JSON.stringify({ mod: "saglik" })
+      });
+      const g = await y.json().catch(() => ({}));
+      const k = (g && (g.acikAnahtar || (g.vapid && g.vapid.turetilenAnahtar))) || "";
+      if (k) { yerelVapidYaz(k); return k; }
+    } catch (e) { /* çevrimdışı: son bilinen kullanılır */ }
+    return yerelVapid();
+  }
+
   function app() {
     if (window.__amSupabase) return window.__amSupabase;
     return null;
@@ -136,21 +177,32 @@
       if (p !== "granted") throw new Error("Bildirim izni reddedildi");
     }
     const kayit = await navigator.serviceWorker.ready;
-    const istenen = b64Coz(VAPID_ACIK);
+    // v44 — anahtar SUNUCUDAN: imzayı atan anahtarla abonelik birebir aynı olur.
+    const sunucuAnahtar = await sunucuVapid();
+    const kullanilacak = sunucuAnahtar || VAPID_ACIK;
+    const istenen = b64Coz(kullanilacak);
     let abone = await kayit.pushManager.getSubscription();
     if (abone) {
-      // Farklı bir anahtarla (ör. eski FCM) kurulmuşsa bizimkiyle değiştir
+      // Farklı bir anahtarla kurulmuşsa (eski FCM / eski sürüm) DEĞİŞTİR.
       const mevcut = abone.options && abone.options.applicationServerKey;
-      if (mevcut && b64Yaz(mevcut) !== VAPID_ACIK) {
+      if (mevcut && b64Yaz(mevcut) !== kullanilacak) {
         try { await abone.unsubscribe(); } catch (_) {}
         abone = null;
       }
     }
     if (!abone) {
-      abone = await kayit.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: istenen
-      });
+      try {
+        abone = await kayit.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: istenen
+        });
+      } catch (e) {
+        // Anahtar değişmişse tarayıcı eski aboneliği bırakmak istemeyebilir:
+        // bir kez zorla sıfırlayıp yeniden dene.
+        const eski = await kayit.pushManager.getSubscription().catch(() => null);
+        if (eski) { try { await eski.unsubscribe(); } catch (_) {} }
+        abone = await kayit.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: istenen });
+      }
     }
     return abone;
   }
@@ -314,17 +366,38 @@
   }
 
   /** Girişten sonra sessizce: izin zaten verilmişse aboneliği tazele. */
+  let otomatikDeneme = 0;
   async function otomatik() {
     try {
-      if (!kullanici() || !destekVarMi()) return;
+      if (!destekVarMi()) return;
       if (Notification.permission !== "granted") return;
+      // v44 — Oturum Supabase'ten birkaç saniyede gelir; eskiden tek deneme
+      // 6. saniyede yapılıp vazgeçiliyordu (yavaş ağda abonelik hiç tazelenmiyor).
+      if (!kullanici()) {
+        if (otomatikDeneme++ < 8) setTimeout(otomatik, 4000);
+        return;
+      }
+      otomatikDeneme = 0;
       const r = await abone(false);
       // İzin önceden verilmiş ama test bildirimi hiç gitmemişse bir kez gönder
       if (r && r.ok) await testBirKez();
     } catch (e) { /* sessiz */ }
   }
 
-  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, buYuzdenKapali: anlasilirHata, testGonderildiMi };
+  /** Tek dokunuşluk onarım: aboneliği sunucu anahtarıyla YENİDEN kur. */
+  async function yenile() {
+    try {
+      const kayit = await navigator.serviceWorker.ready;
+      const eski = await kayit.pushManager.getSubscription().catch(() => null);
+      if (eski) { try { await eski.unsubscribe(); } catch (_) {} }
+      try { localStorage.removeItem(VAPID_ANAHTAR_DEPO); } catch (_) { /* */ }
+      vapidSozu = null;
+      const r = await abone(true);
+      return r;
+    } catch (e) { return { ok: false, neden: anlasilirHata(e) }; }
+  }
+
+  window.AmPush = { hazir: destekVarMi, izinIste, abone: () => abone(false), testEt, testBirKez, birak, durum, otomatik, teshis, yenile, sunucuVapid, buYuzdenKapali: anlasilirHata, testGonderildiMi };
   // Oturum açıldığında app-pwa.js çağırır; gecikmeli de bir kez dene.
   // v43 — HER açılışta ve uygulama öne geldiğinde abonelik tazelenir: eski
   // uç nokta ölmüşse zamanlanmış hatırlatmalar sessizce kayboluyordu.

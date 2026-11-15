@@ -225,8 +225,19 @@ Deno.serve(async (istek) => {
       ozelGecerli = !!(j && j.d && j.x && j.y);
       if (j && j.x && j.y) turetilen = b64url(birlestir(new Uint8Array([4]), b64urlCoz(j.x), b64urlCoz(j.y)));
     } catch { ozelGecerli = false; }
+    // v44 — KULLANICI: "Bildirim falan çalışmıyor, sadece ayarlardan
+    // tıklayınca test bildirimi geliyor."
+    // Kök neden sınıfı: tarayıcı aboneliği A anahtarıyla kurulmuş, sunucu
+    // B anahtarıyla imzalıyorsa push servisi 201 döner, TARAYICI bildirimi
+    // sessizce düşürür. Test bildirimi ise sayfadan YEREL gösterildiği için
+    // her zaman görünür (app-pwa.js → cihazBildirimTesti). Yani "test geliyor,
+    // hatırlatma gelmiyor" tablosunun tam sebebi budur.
+    // Çözüm: sunucu imzayı atan GERÇEK açık anahtarı yayınlar; uygulama
+    // aboneliği bu anahtarla kurar. İki taraf bir daha ayrışamaz.
+    const imzaAnahtari = turetilen || VAPID_ACIK || "";
     return json({
-      surum: "v37",
+      surum: "v44",
+      acikAnahtar: imzaAnahtari,
       vapid: {
         ozelAnahtarVar: !!VAPID_OZEL,
         ozelAnahtarCozuluyor: ozelGecerli,
