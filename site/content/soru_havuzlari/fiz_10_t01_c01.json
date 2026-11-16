@@ -1,0 +1,279 @@
+{
+  "konu_id": "fiz_10_t01_c01",
+  "kod": "FİZ.10.1.1",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 1,
+  "tema_adi": "Kuvvet ve Hareket",
+  "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.17-33",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t01_c01_o01",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin konum, yer değiştirme, hız ve zaman değişkenlerine yönelik gözlemler yapar.",
+      "metin": "Yatay doğrultuda sabit hızlı hareket eden bir cisim için aşağıdakilerden hangisi doğrudur?",
+      "secenekler": [
+        "Hızının büyüklüğü sabittir ancak yönü sürekli değişir.",
+        "Eşit zaman aralıklarında eşit yer değiştirme yapar.",
+        "Hızı her saniye düzenli olarak artar.",
+        "İvmesi sabit ve sıfırdan farklıdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Sabit hızlı harekette hızın hem büyüklüğü hem yönü değişmez; bu nedenle eşit zaman aralıklarında eşit yer değiştirme olur ve ivme sıfırdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit hızlı harekette eşit zaman aralıklarında ne eşittir?",
+        "back": "Yer değiştirme miktarı eşittir."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o02",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin konum, yer değiştirme, hız ve zaman değişkenlerine yönelik gözlemler yapar.",
+      "metin": "Bir cismin konumu t = 0, 1, 2 ve 3. saniyelerde sırasıyla 0, 4, 8 ve 12 m olarak ölçülmüştür. Bu ölçümlerden yararlanarak hangi sonuca ulaşılır?",
+      "secenekler": [
+        "Cisim her saniye hızlanmaktadır.",
+        "Cismin ivmesi 4 m/s²'dir.",
+        "Cisim sabit büyüklükte hızla hareket etmektedir.",
+        "Cisim yön değiştirmektedir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Konum her saniyede 4 m artmıştır. Eşit zaman aralıklarında eşit yer değiştirme, hız büyüklüğünün sabit olduğunu gösterir; ivme sıfırdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Konum değerleri her saniye aynı miktarda artan cisim nasıl hareket eder?",
+        "back": "Sabit hızlı hareket eder (ivmesi sıfırdır)."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o03",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin konum, yer değiştirme, hız ve zaman değişkenlerine yönelik gözlemler yapar.",
+      "metin": "Bir koşucu düz bir parkurda 60 m ileri koşup başladığı noktaya geri dönmüştür. Koşucunun aldığı yol ve yer değiştirmesi için ne söylenebilir?",
+      "secenekler": [
+        "Alınan yol 120 m, yer değiştirme 0 m'dir.",
+        "Alınan yol 0 m, yer değiştirme 120 m'dir.",
+        "Alınan yol ve yer değiştirme ikisi de 120 m'dir.",
+        "Alınan yol ve yer değiştirme ikisi de 60 m'dir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Alınan yol, izlenen yörüngenin toplam uzunluğudur ve 60 + 60 = 120 m'dir. Yer değiştirme ise ilk ve son konum arasındaki farktır; başlangıç ve bitiş aynı olduğu için 0 m'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Başladığı noktaya dönen bir hareketlinin yer değiştirmesi kaçtır?",
+        "back": "Sıfırdır; alınan yol ise sıfırdan büyüktür."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o04",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
+      "metin": "Sabit hızlı hareket eden bir cismin konum-zaman (x-t) grafiğinin eğimi hangi niceliği verir?",
+      "secenekler": [
+        "Cismin ivmesini",
+        "Cismin aldığı yolu",
+        "Cismin ortalama süratini",
+        "Cismin hızının büyüklüğünü"
+      ],
+      "dogru_index": 3,
+      "cozum": "x-t grafiğinde eğim, konumdaki değişimin zamandaki değişime oranıdır; bu oran yer değiştirmenin zamana bölümü olduğu için hızın büyüklüğünü verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "x-t grafiğinin eğimi hangi niceliğe eşittir?",
+        "back": "Hızın büyüklüğüne (Δx / Δt)."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o05",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
+      "metin": "Sabit hızla hareket eden bir cismin hız-zaman (v-t) grafiği ile yatay eksen arasında kalan alan hangi niceliği verir?",
+      "secenekler": [
+        "İvmeyi",
+        "Yer değiştirmeyi",
+        "Hız değişimini",
+        "Yalnızca geçen zamanı"
+      ],
+      "dogru_index": 1,
+      "cozum": "v-t grafiğinde alan, hız ile zamanın çarpımıdır; bu çarpım yer değiştirmenin büyüklüğünü verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "v-t grafiği ile eksen arasındaki alan neyi verir?",
+        "back": "Yer değiştirmeyi (alınan yolu)."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o06",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
+      "metin": "Şekildeki x-t grafiği yatay doğrultuda hareket eden bir araca aittir. Aracın hızının büyüklüğü kaç m/s'dir?",
+      "secenekler": [
+        "2",
+        "4",
+        "6",
+        "12"
+      ],
+      "dogru_index": 2,
+      "cozum": "Grafikte konum 2 saniyede 12 m artmıştır. Eğim = 12 m / 2 s = 6 m/s olduğundan aracın hızının büyüklüğü 6 m/s'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "x-t grafiğinde doğrunun eğimi nasıl hesaplanır?",
+        "back": "Konum değişimi zaman değişimine bölünerek (Δx / Δt)."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "x (m)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "x",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                12
+              ],
+              [
+                4,
+                24
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o07",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
+      "metin": "Bir araç sabit hızla 8 saniyede 96 m yol almıştır. Aracın ortalama sürati kaç m/s'dir?",
+      "secenekler": [
+        "12",
+        "88",
+        "104",
+        "768"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ortalama sürat, alınan yolun geçen zamana bölümüdür: 96 m / 8 s = 12 m/s.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortalama sürat hangi iki büyüklükle hesaplanır?",
+        "back": "Alınan yol ve geçen zaman (yol / zaman)."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o08",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hız, sürat, yer değiştirme ve alınan yol değişkenlerine ilişkin matematiksel modelleri geneller.",
+      "metin": "Sabit hızlı hareket eden bir cismin hızının büyüklüğü 15 m/s'dir. Cisim 6 saniyede kaç metre yer değiştirir?",
+      "secenekler": [
+        "21",
+        "90",
+        "60",
+        "150"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sabit hızlı harekette yer değiştirme x = v · t modeliyle bulunur: 15 m/s · 6 s = 90 m.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit hızda yer değiştirme hangi modelle bulunur?",
+        "back": "x = v · t modeliyle."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o09",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hız, sürat, yer değiştirme ve alınan yol değişkenlerine ilişkin matematiksel modelleri geneller.",
+      "metin": "Aynı doğrultuda ve aynı yönde sabit hızlarla hareket eden K ve L araçlarının hız büyüklükleri sırasıyla 8 m/s ve 5 m/s'dir. Aynı anda aynı konumdan harekete geçen araçların 10 saniye sonra aralarındaki uzaklık kaç metredir?",
+      "secenekler": [
+        "3",
+        "13",
+        "30",
+        "130"
+      ],
+      "dogru_index": 2,
+      "cozum": "Araçların hız farkı 8 − 5 = 3 m/s'dir. Aradaki uzaklık her saniye 3 m açılır; 10 saniyede 3 m/s · 10 s = 30 m olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı yönde farklı sabit hızlarla giden iki araç arasındaki uzaklık nasıl değişir?",
+        "back": "Hız farkı ile zamanın çarpımı kadar düzenli artar."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c01_o10",
+      "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hız, sürat, yer değiştirme ve alınan yol değişkenlerine ilişkin matematiksel modelleri geneller.",
+      "metin": "Sabit hızlı hareketin matematiksel modeli olan x = v · t bağıntısındaki semboller için aşağıdakilerden hangisi doğrudur?",
+      "secenekler": [
+        "x yer değiştirmeyi, v ortalama sürati, t alınan yolu gösterir.",
+        "x yalnızca alınan yolu, v ise ivmeyi gösterir.",
+        "x ivmeyi, v hızın büyüklüğünü, t zamanı gösterir.",
+        "x yer değiştirmeyi, v hızın büyüklüğünü, t geçen zamanı gösterir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Modelde x yer değiştirmeyi, v hızın büyüklüğünü, t ise geçen zamanı temsil eder. İvme bu modelde yer almaz; sabit hızlı harekette ivme sıfırdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "x = v · t modelindeki semboller neyi gösterir?",
+        "back": "x yer değiştirme, v hız büyüklüğü, t geçen zaman."
+      },
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t01_c01_o01:flashcard",
+      "front": "Sabit hızlı harekette eşit zaman aralıklarında ne eşittir?",
+      "back": "Yer değiştirme miktarı eşittir."
+    },
+    {
+      "id": "fiz_10_t01_c01_o02:flashcard",
+      "front": "Konum değerleri her saniye aynı miktarda artan cisim nasıl hareket eder?",
+      "back": "Sabit hızlı hareket eder (ivmesi sıfırdır)."
+    },
+    {
+      "id": "fiz_10_t01_c01_o03:flashcard",
+      "front": "Başladığı noktaya dönen bir hareketlinin yer değiştirmesi kaçtır?",
+      "back": "Sıfırdır; alınan yol ise sıfırdan büyüktür."
+    },
+    {
+      "id": "fiz_10_t01_c01_o04:flashcard",
+      "front": "x-t grafiğinin eğimi hangi niceliğe eşittir?",
+      "back": "Hızın büyüklüğüne (Δx / Δt)."
+    },
+    {
+      "id": "fiz_10_t01_c01_o05:flashcard",
+      "front": "v-t grafiği ile eksen arasındaki alan neyi verir?",
+      "back": "Yer değiştirmeyi (alınan yolu)."
+    },
+    {
+      "id": "fiz_10_t01_c01_o06:flashcard",
+      "front": "x-t grafiğinde doğrunun eğimi nasıl hesaplanır?",
+      "back": "Konum değişimi zaman değişimine bölünerek (Δx / Δt)."
+    },
+    {
+      "id": "fiz_10_t01_c01_o07:flashcard",
+      "front": "Ortalama sürat hangi iki büyüklükle hesaplanır?",
+      "back": "Alınan yol ve geçen zaman (yol / zaman)."
+    },
+    {
+      "id": "fiz_10_t01_c01_o08:flashcard",
+      "front": "Sabit hızda yer değiştirme hangi modelle bulunur?",
+      "back": "x = v · t modeliyle."
+    },
+    {
+      "id": "fiz_10_t01_c01_o09:flashcard",
+      "front": "Aynı yönde farklı sabit hızlarla giden iki araç arasındaki uzaklık nasıl değişir?",
+      "back": "Hız farkı ile zamanın çarpımı kadar düzenli artar."
+    },
+    {
+      "id": "fiz_10_t01_c01_o10:flashcard",
+      "front": "x = v · t modelindeki semboller neyi gösterir?",
+      "back": "x yer değiştirme, v hız büyüklüğü, t geçen zaman."
+    }
+  ]
+}

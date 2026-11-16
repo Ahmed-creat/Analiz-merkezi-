@@ -114,11 +114,20 @@ def rapor(slug: str) -> None:
     if not veri["sayfalar"]:
         sys.exit("Kayıt yok: %s (önce --ekle)" % kayit_yolu(slug))
     print("== KİTAP METİN RAPORU: %s ==" % slug)
-    for p in veri["parcalar"]:
-        print("  parça %d: %s · %s MB · s.%d-%d · sha256 %s…"
-              % (veri["parcalar"].index(p) + 1, p["dosya"], p["boyut_mb"],
-                 p["sayfa_araligi"][0], p["sayfa_araligi"][1], p["sha256"][:12]))
+    bas = 0
+    for i, p in enumerate(veri["parcalar"], start=1):
+        if isinstance(p, dict) and "sayfa_araligi" in p:
+            ilk, son = p["sayfa_araligi"][0], p["sayfa_araligi"][1]
+        else:  # iş akışından gelen kayıt: aralık yok, sırayla hesapla
+            n = int(p.get("sayfa") or p.get("sayfa_sayisi") or 0)
+            ilk, son = bas + 1, bas + n
+            bas = son
+        print("  parça %d: %s · s.%d-%d · sha256 %s…"
+              % (i, p.get("dosya", "?"), ilk, son, str(p.get("sha256", ""))[:12]))
+        if p.get("boyut_mb"):
+            print("           %s MB" % p["boyut_mb"])
     print("  toplam sayfa: %d" % veri["sayfa_sayisi"])
+
     kisa = [x for x in veri["sayfalar"] if x["kr"] < ESIK]
     print("  metinsiz/zayıf sayfa: %d" % len(kisa))
     if kisa:

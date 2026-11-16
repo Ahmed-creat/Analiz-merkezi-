@@ -1,0 +1,279 @@
+{
+  "konu_id": "fiz_10_t01_c03",
+  "kod": "FİZ.10.1.3",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 1,
+  "tema_adi": "Kuvvet ve Hareket",
+  "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.42-60",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t01_c03_o01",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeli hareket grafiklerini inceler.",
+      "metin": "Hız-zaman grafiği düzgün biçimde artan bir doğru olan cismin hareketi için hangisi doğrudur?",
+      "secenekler": [
+        "İvmesi giderek artmaktadır.",
+        "İvmesi sabittir.",
+        "Hızı sabittir.",
+        "İvmesi sıfırdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Hız-zaman grafiği doğru biçimindeyse eğim sabittir. Eğim ivmeyi verdiği için cismin ivmesi sabittir; hızı ise düzenli olarak artmaktadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hız-zaman grafiği doğru olan cismin ivmesi nasıldır?",
+        "back": "Sabittir; çünkü grafiğin eğimi değişmez."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o02",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeli hareket grafiklerini inceler.",
+      "metin": "Şekildeki hız-zaman grafiği yatay doğrultuda hareket eden bir cisme aittir. Cismin (0-4) s aralığındaki ivmesinin büyüklüğü kaç m/s²'dir?",
+      "secenekler": [
+        "1",
+        "2",
+        "4",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "Hız 4 saniyede 0'dan 12 m/s'ye çıkmıştır. İvme = Δv / Δt = 12 m/s / 4 s = 3 m/s² bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hız-zaman grafiğinin eğimi nasıl hesaplanır?",
+        "back": "Hız değişimi zaman değişimine bölünerek (Δv / Δt)."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                6
+              ],
+              [
+                4,
+                12
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o03",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeli hareket grafiklerini inceler.",
+      "metin": "Konum-zaman grafiğinin eğrisi giderek dikleşen bir cisim için hangisi doğrudur?",
+      "secenekler": [
+        "Cismin hızı azalmaktadır.",
+        "Cisim sabit hızla hareket etmektedir.",
+        "Cismin hızı artmaktadır.",
+        "Cismin ivmesi negatiftir."
+      ],
+      "dogru_index": 2,
+      "cozum": "x-t grafiğinde eğim hızı verir. Eğri dikleştikçe eğim büyüdüğü için cismin hızı artmaktadır; bu da ivmenin hareket yönünde olduğunu gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "x-t grafiğinin eğrisi dikleşiyorsa cismin hızı için ne söylenir?",
+        "back": "Hızı artmaktadır."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o04",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeli hareket grafiklerini birbirine dönüştürerek matematiksel modellere ulaşır.",
+      "metin": "Hız-zaman grafiği ile yatay eksen arasında kalan alanın büyüklüğü 24 m olarak hesaplanmıştır. Bu alan hangi niceliği verir?",
+      "secenekler": [
+        "Yer değiştirmeyi",
+        "İvmeyi",
+        "Hız değişimini",
+        "Yalnızca geçen zamanı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Hız-zaman grafiğinde alan, hız ile zamanın çarpımına karşılık gelir. Bu çarpım cismin yer değiştirmesinin büyüklüğünü verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "v-t grafiğinde alanın birimi hangi niceliğin birimidir?",
+        "back": "Yer değiştirmenin birimi olan metredir."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o05",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeli hareket grafiklerini birbirine dönüştürerek matematiksel modellere ulaşır.",
+      "metin": "İlk hızının büyüklüğü 2 m/s olan bir araç 3 m/s² büyüklüğünde sabit ivmeyle 4 saniye hızlanmıştır. Aracın bu süredeki yer değiştirmesinin büyüklüğü kaç metredir?",
+      "secenekler": [
+        "20",
+        "32",
+        "40",
+        "56"
+      ],
+      "dogru_index": 1,
+      "cozum": "x = v0 · t + ½ · a · t² modeli kullanılır: 2 · 4 + ½ · 3 · 16 = 8 + 24 = 32 m bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit ivmeli harekette yer değiştirme hangi modelle bulunur?",
+        "back": "x = v0·t + ½·a·t² modeliyle."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o06",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeli hareket grafiklerini birbirine dönüştürerek matematiksel modellere ulaşır.",
+      "metin": "Sabit ivmeyle hareket eden bir cismin hız-zaman grafiğinde (0-5) s aralığında grafik ile eksen arasındaki alan 50 m'dir. Bu bilgiden yararlanarak cismin ortalama hızının büyüklüğü kaç m/s bulunur?",
+      "secenekler": [
+        "5",
+        "250",
+        "10",
+        "50"
+      ],
+      "dogru_index": 2,
+      "cozum": "Alan yer değiştirmeyi verir: 50 m. Ortalama hızın büyüklüğü yer değiştirmenin zamana bölümüdür: 50 m / 5 s = 10 m/s.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Alanı ve süresi bilinen v-t grafiğinden ortalama hız nasıl bulunur?",
+        "back": "Alan (yer değiştirme) süreye bölünerek."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o07",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeli hareket grafiklerini birbirine dönüştürerek matematiksel modellere ulaşır.",
+      "metin": "İvme-zaman (a-t) grafiği ile yatay eksen arasında kalan alan hangi niceliği verir?",
+      "secenekler": [
+        "Yer değiştirmeyi",
+        "İvmenin büyüklüğünü",
+        "Geçen zamanı",
+        "Hız değişimini"
+      ],
+      "dogru_index": 3,
+      "cozum": "a-t grafiğinde alan, ivme ile zamanın çarpımıdır. a = Δv / Δt bağıntısına göre bu çarpım hızdaki değişimi verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "a-t grafiğinde alan neyi verir?",
+        "back": "Hız değişimini (Δv = a · Δt)."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o08",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareketine ilişkin grafikleri ve matematiksel modeller arasındaki ilişkiyi kendi cümleleriyle yeniden ifade eder.",
+      "metin": "Sabit ivmeli hareket eden bir cisme ait hız-zaman grafiğinden yararlanılarak aşağıdakilerden hangisi doğrudan bulunabilir?",
+      "secenekler": [
+        "Cismin kütlesi",
+        "Yer değiştirme ve ivme",
+        "Cisme etki eden net kuvvet",
+        "Cismin sürati ile kütlesinin çarpımı"
+      ],
+      "dogru_index": 1,
+      "cozum": "v-t grafiğinde eğim ivmeyi, grafik ile eksen arasındaki alan yer değiştirmeyi verir. Kütle ve net kuvvet bu grafikten bulunamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "v-t grafiğinden hangi iki nicelik elde edilir?",
+        "back": "Eğimden ivme, alandan yer değiştirme."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o09",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareketine ilişkin grafikleri ve matematiksel modeller arasındaki ilişkiyi kendi cümleleriyle yeniden ifade eder.",
+      "metin": "Sabit ivmeli hareket için aşağıdaki ifadelerden hangisi yanlıştır?",
+      "secenekler": [
+        "Hız-zaman grafiği eğri bir çizgidir.",
+        "Hız-zaman grafiğinin eğimi sabittir.",
+        "İvme-zaman grafiği yatay eksene paralel bir doğrudur.",
+        "Hız-zaman grafiğinin altında kalan alan yer değiştirmeyi verir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Sabit ivmede hız eşit zaman aralıklarında eşit miktarda değişir; bu nedenle hız-zaman grafiği eğri değil doğru olur. Diğer ifadeler doğrudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit ivmede hız-zaman grafiğinin biçimi nasıldır?",
+        "back": "Doğru biçimindedir; eğri olmaz."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c03_o10",
+      "alt_beceri": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareketine ilişkin grafikleri ve matematiksel modeller arasındaki ilişkiyi kendi cümleleriyle yeniden ifade eder.",
+      "metin": "Hız-zaman grafiği yatay eksene paralel olan bir cisim ile hız-zaman grafiği eğimli bir doğru olan cisim karşılaştırıldığında hangisi doğrudur?",
+      "secenekler": [
+        "Her iki cismin de ivmesi aynıdır.",
+        "Paralel grafiğe sahip cismin ivmesi sabit ve sıfırdan farklıdır.",
+        "Eğimli doğruya sahip cismin ivmesi sabit ve sıfırdan farklıdır.",
+        "Her iki cismin de hızı sabittir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Yatay eksene paralel v-t grafiğinde hız değişmediği için ivme sıfırdır. Eğimli doğruda hız düzenli değiştiği için ivme sabit ve sıfırdan farklıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hangi v-t grafiğinde ivme sıfırdan farklıdır?",
+        "back": "Eğimli doğru biçimindeki grafikte."
+      },
+      "kazanim": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t01_c03_o01:flashcard",
+      "front": "Hız-zaman grafiği doğru olan cismin ivmesi nasıldır?",
+      "back": "Sabittir; çünkü grafiğin eğimi değişmez."
+    },
+    {
+      "id": "fiz_10_t01_c03_o02:flashcard",
+      "front": "Hız-zaman grafiğinin eğimi nasıl hesaplanır?",
+      "back": "Hız değişimi zaman değişimine bölünerek (Δv / Δt)."
+    },
+    {
+      "id": "fiz_10_t01_c03_o03:flashcard",
+      "front": "x-t grafiğinin eğrisi dikleşiyorsa cismin hızı için ne söylenir?",
+      "back": "Hızı artmaktadır."
+    },
+    {
+      "id": "fiz_10_t01_c03_o04:flashcard",
+      "front": "v-t grafiğinde alanın birimi hangi niceliğin birimidir?",
+      "back": "Yer değiştirmenin birimi olan metredir."
+    },
+    {
+      "id": "fiz_10_t01_c03_o05:flashcard",
+      "front": "Sabit ivmeli harekette yer değiştirme hangi modelle bulunur?",
+      "back": "x = v0·t + ½·a·t² modeliyle."
+    },
+    {
+      "id": "fiz_10_t01_c03_o06:flashcard",
+      "front": "Alanı ve süresi bilinen v-t grafiğinden ortalama hız nasıl bulunur?",
+      "back": "Alan (yer değiştirme) süreye bölünerek."
+    },
+    {
+      "id": "fiz_10_t01_c03_o07:flashcard",
+      "front": "a-t grafiğinde alan neyi verir?",
+      "back": "Hız değişimini (Δv = a · Δt)."
+    },
+    {
+      "id": "fiz_10_t01_c03_o08:flashcard",
+      "front": "v-t grafiğinden hangi iki nicelik elde edilir?",
+      "back": "Eğimden ivme, alandan yer değiştirme."
+    },
+    {
+      "id": "fiz_10_t01_c03_o09:flashcard",
+      "front": "Sabit ivmede hız-zaman grafiğinin biçimi nasıldır?",
+      "back": "Doğru biçimindedir; eğri olmaz."
+    },
+    {
+      "id": "fiz_10_t01_c03_o10:flashcard",
+      "front": "Hangi v-t grafiğinde ivme sıfırdan farklıdır?",
+      "back": "Eğimli doğru biçimindeki grafikte."
+    }
+  ]
+}
