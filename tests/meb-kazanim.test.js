@@ -144,6 +144,23 @@ ok("service worker okz-meb.js önbelleğe alıyor", SW.indexOf('"./okz-meb.js"')
 ok("okzKonuBul MEB katmanını çağırıyor", APP.indexOf("MEBM.konuBul(") > 0);
 ok("MEB katmanı korumalı (OKZM yoksa çalışmaz)", APP.indexOf("typeof MEBM.konuBul === \"function\"") > 0);
 
+// ---------- 5) İnsan için rapor (docs/MEB-KONU-KAZANIM-TABLOSU.md) ----------
+console.log("\n== 5) Okunabilir rapor ==");
+const RAPOR_YOL = path.join(KOK, "docs/MEB-KONU-KAZANIM-TABLOSU.md");
+const raporVar = fs.existsSync(RAPOR_YOL);
+ok("rapor dosyası var", raporVar, RAPOR_YOL);
+const RAPOR = raporVar ? fs.readFileSync(RAPOR_YOL, "utf8") : "";
+ok("rapor otomatik üretildiğini söylüyor", RAPOR.indexOf("otomatik üretildi") > 0);
+ok("rapor üreticiyi gösteriyor", RAPOR.indexOf("scripts/meb-rapor.js") > 0);
+esit("rapor: konuya bağlanan sayısı güncel", RAPOR.indexOf("| Konuya bağlanan | " + ESL.ozet.eslesen_konu + " |") > 0, true);
+esit("rapor: kanıtsız sayısı güncel", RAPOR.indexOf("| Kanıt yetersiz (kod yazılmadı) | " + ESL.ozet.eslesmeyen_konu + " |") > 0, true);
+const eksikKonu = ESL.konular.filter(k => RAPOR.indexOf(k.konu_id) < 0).map(k => k.konu_id);
+ok("raporda her konu kimliği var", eksikKonu.length === 0, eksikKonu.slice(0, 5).join(","));
+const bagliKodlar = new Set();
+ESL.konular.forEach(k => (k.kodlar || []).forEach(x => bagliKodlar.add(x)));
+const raporDisi = RESMI.ciktilar.filter(c => !bagliKodlar.has(c.kod) && RAPOR.indexOf(c.kod) < 0).map(c => c.kod);
+ok("bağlanmayan çıktılar raporda listeli", raporDisi.length === 0, raporDisi.slice(0, 5).join(","));
+
 // ---------- Özet ----------
 console.log("");
 if (kalan) {

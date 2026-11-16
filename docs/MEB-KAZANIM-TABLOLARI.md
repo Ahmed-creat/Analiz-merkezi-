@@ -6,6 +6,10 @@
 **İstenen:** "MEB hangi dersin hangi konusunda hangi kazanım var paylaşıyor" → kazanımı **resmî
 tabloya** bağlamak, tahminle değil kanıtla.
 
+> **Konu → kazanım listesi:** [`docs/MEB-KONU-KAZANIM-TABLOSU.md`](./MEB-KONU-KAZANIM-TABLOSU.md)
+> — ders ders, konu konu, her satırda MEB kodu + resmî cümle + kanıt türü. `npm run rapor:meb` ile
+> `kazanim_konu_10.json`'dan üretilir; bu dosya yöntemi, kaynağı ve sınırları anlatır.
+
 ---
 
 ## 1. Bulunan resmî kaynaklar
