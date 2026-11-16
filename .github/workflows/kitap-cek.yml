@@ -1,13 +1,14 @@
 name: Kitap Çek
 
-# Amaç: ders kitabı PDF'ini (veya herhangi bir dosyayı) GitHub runner'ı
-# üzerinden indirip artifact olarak almak. Sandbox'a yalnızca GitHub erişimi
-# olduğu için köprü görevi görür. Dosya REPOYA COMMIT EDİLMEZ; artifact
-# 30 gün sonra kendiliğinden silinir (istenirse elle de silinir).
+# AMAÇ (köprü): ders kitabı PDF'ini GitHub runner'ı üzerinden indirip artifact
+# olarak almak. Sandbox'a yalnızca GitHub erişimi olduğu için köprü gerekir.
+# Dosya REPOYA COMMIT EDİLMEZ; artifact kısa ömürlüdür (3 gün) ve iş bitince
+# elle silinir.
 #
-# Kullanım (kullanıcı arayüzünden): Actions → Kitap Çek → Run workflow
-# Kullanım (komut satırından):
-#   gh workflow run kitap-cek.yml --ref <dal> -f url="<Drive linki>" -f ad=fizik.pdf
+# İki tetikleyici:
+#   1) workflow_dispatch — varsayılan dalda kayıtlıysa kullanılır
+#   2) pull_request — başlığında "[kitap]" geçen PR'larda çalışır; girdiler
+#      docs/uretim/kopru-girdi.txt dosyasından okunur (1. satır adres, 2. satır ad)
 
 on:
   workflow_dispatch:
@@ -19,20 +20,32 @@ on:
         description: "Kaydedilecek dosya adı"
         required: true
         default: "kitap.pdf"
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
 
 jobs:
   cek:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.title, '[kitap]')
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
-      - name: Adresi çöz
+      - uses: actions/checkout@v4
+
+      - name: Girdiyi çöz
         id: coz
         run: |
           set -u
-          U="${{ inputs.url }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            U='${{ inputs.url }}'
+            A='${{ inputs.ad }}'
+          else
+            U=$(sed -n 1p docs/uretim/kopru-girdi.txt | tr -d '\r')
+            A=$(sed -n 2p docs/uretim/kopru-girdi.txt | tr -d '\r')
+          fi
+          [ -n "$A" ] || A=kitap.pdf
           ID=""
           case "$U" in
             *drive.google.com*|*docs.google.com*)
@@ -43,13 +56,16 @@ jobs:
             *) ID="$U" ;;
           esac
           echo "id=$ID" >> "$GITHUB_OUTPUT"
-          echo "Drive kimliği: ${ID:-yok (doğrudan adres)}"
+          echo "ad=$A" >> "$GITHUB_OUTPUT"
+          echo "url=$U" >> "$GITHUB_OUTPUT"
+          echo "Drive kimliği: ${ID:-yok (doğrudan adres)} · dosya adı: $A"
 
       - name: İndir
         run: |
           set -euo pipefail
           ID='${{ steps.coz.outputs.id }}'
-          HEDEF='${{ inputs.ad }}'
+          HEDEF='${{ steps.coz.outputs.ad }}'
+          URL='${{ steps.coz.outputs.url }}'
           if [ -n "$ID" ]; then
             curl -sSL --retry 3 -c cerez.txt -b cerez.txt \
               "https://drive.google.com/uc?export=download&id=$ID" -o ham.bin || true
@@ -62,38 +78,35 @@ jobs:
                 -o ham.bin
             fi
           else
-            curl -sSL --retry 3 -A "Mozilla/5.0" '${{ inputs.url }}' -o ham.bin
+            curl -sSL --retry 3 -A "Mozilla/5.0" "$URL" -o ham.bin
           fi
           ls -l ham.bin
           echo "--- dosya türü ---"
           file ham.bin || true
-          head -c 64 ham.bin | xxd | head -2 || true
 
           if head -c 400 ham.bin | grep -qiE '<html|<!DOCTYPE'; then
             echo "::error::Bağlantı dosya yerine HTML döndürdü. Dosya 'bağlantıya sahip herkes' ile paylaşılmamış olabilir."
-            grep -oiE '<title>[^<]*</title>|Hesap|izin|erişim' ham.bin | head -5 || true
+            grep -oiE '<title>[^<]*</title>' ham.bin | head -3 || true
             exit 1
           fi
-
           BOYUT=$(stat -c%s ham.bin)
           echo "boyut: $BOYUT bayt ($(( BOYUT / 1024 / 1024 )) MB)"
           if [ "$BOYUT" -lt 100000 ]; then
             echo "::error::Dosya beklenenden çok küçük ($BOYUT bayt) — indirme başarısız."
             exit 1
           fi
-
           mv ham.bin "$HEDEF"
           echo "--- sha256 ---"
           sha256sum "$HEDEF" | tee sha256.txt
-          echo "--- sayfa sayısı (varsa) ---"
-          (pdfinfo "$HEDEF" 2>/dev/null | grep -E 'Pages|Title|Creator') || echo "(pdfinfo yok/PDF değil)"
+          echo "--- pdf bilgisi (varsa) ---"
+          (pdfinfo "$HEDEF" 2>/dev/null | grep -E 'Pages|Title|Creator|Page size') || echo "(pdfinfo yok / PDF değil)"
 
       - name: Artifact yükle
         uses: actions/upload-artifact@v4
         with:
           name: kitap
           path: |
-            ${{ inputs.ad }}
+            ${{ steps.coz.outputs.ad }}
             sha256.txt
           retention-days: 3
           if-no-files-found: error
