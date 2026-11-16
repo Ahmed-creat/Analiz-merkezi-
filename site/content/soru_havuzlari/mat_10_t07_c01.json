@@ -1,0 +1,312 @@
+{
+  "konu_id": "mat_10_t07_c01",
+  "kod": "MAT.10.7.1",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 7,
+  "tema_adi": "Veriden Olasılığa",
+  "kazanim": "Koşullu olasılık ile çıkarım yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.393-403",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t07_c01_o01",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumlara ilişkin mevcut olasılık bilgisini kullanarak varsayımda bulunur.",
+      "metin": "A ve B olayları için koşullu olasılık P(A|B) hangi ifadeyle hesaplanır?",
+      "secenekler": [
+        "P(A) · P(B)",
+        "P(A ∩ B)/P(B)",
+        "P(A ∪ B)/P(A)",
+        "P(B)/P(A ∩ B)"
+      ],
+      "dogru_index": 1,
+      "cozum": "B olayının gerçekleştiği bilindiğinde örnek uzay B'ye daralır. Bu nedenle P(A|B) = P(A ∩ B)/P(B) olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu olasılık nedir?",
+        "back": "Bir olayın gerçekleştiği bilindiğinde diğer olayın olasılığıdır."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o02",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumlara ilişkin mevcut olasılık bilgisini kullanarak varsayımda bulunur.",
+      "metin": "Koşullu olasılık hesabında 'B olayı gerçekleşti' bilgisi örnek uzayı nasıl etkiler?",
+      "secenekler": [
+        "Örnek uzay iki katına çıkar.",
+        "Örnek uzay boş küme olur.",
+        "Örnek uzay değişmez.",
+        "Örnek uzay B olayına daralır."
+      ],
+      "dogru_index": 3,
+      "cozum": "B olayının gerçekleştiği bilindiğinde yalnızca B içindeki sonuçlar dikkate alınır. Bu nedenle örnek uzay B'ye daralır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu olasılıkta örnek uzay nedir?",
+        "back": "Koşul olarak verilen olayın kendi kümesidir."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o03",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu gerçek yaşam durumlarına ilişkin olası tüm çıktıları listeler.",
+      "metin": "Tabloda 100 öğrencinin kahvaltı yapma durumu verilmiştir. Rastgele seçilen bir öğrencinin kız olduğu bilindiğine göre kahvaltı yapma olasılığı kaçtır?",
+      "secenekler": [
+        "0,6",
+        "0,75",
+        "0,3",
+        "0,4"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kız öğrenci sayısı 50, bunlardan kahvaltı yapan 30'dur. Koşullu olasılık 30/50 = 0,6 bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "",
+          "Kahvaltı yapar",
+          "Yapmaz",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "Kız",
+            "30",
+            "20",
+            "50"
+          ],
+          [
+            "Erkek",
+            "10",
+            "40",
+            "50"
+          ],
+          [
+            "Toplam",
+            "40",
+            "60",
+            "100"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Satır toplamının koşullu olasılıktaki rolü nedir?",
+        "back": "Koşul satırının toplamı payda olarak kullanılır."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o04",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu gerçek yaşam durumlarına ilişkin olası tüm çıktıları listeler.",
+      "metin": "Tabloda 100 öğrencinin kahvaltı yapma durumu verilmiştir. Rastgele seçilen bir öğrencinin kahvaltı yaptığı bilindiğine göre kız olma olasılığı kaçtır?",
+      "secenekler": [
+        "0,6",
+        "0,3",
+        "0,75",
+        "0,5"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kahvaltı yapan öğrenci sayısı 40, bunlardan kız olan 30'dur. Koşullu olasılık 30/40 = 0,75 bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "",
+          "Kahvaltı yapar",
+          "Yapmaz",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "Kız",
+            "30",
+            "20",
+            "50"
+          ],
+          [
+            "Erkek",
+            "10",
+            "40",
+            "50"
+          ],
+          [
+            "Toplam",
+            "40",
+            "60",
+            "100"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Koşullu olasılıkta paydanın anlamı nedir?",
+        "back": "Koşul olarak verilen olayın gerçekleşme sayısıdır."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o05",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu ya da olmadığı durumlarda olası tüm çıktıların sayısı ile istenen durumların sayısını karşılaştırır.",
+      "metin": "A ve B bağımsız olaylar olmak üzere P(A) = 0,4 ve P(B) = 0,5'tir. Buna göre P(A ∩ B) kaçtır?",
+      "secenekler": [
+        "0,9",
+        "0,1",
+        "0,45",
+        "0,2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bağımsız olaylarda kesişim olasılığı çarpıma eşittir: 0,4 · 0,5 = 0,2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağımsız olayların kesişim olasılığı nedir?",
+        "back": "Olasılıkların çarpımıdır."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o06",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu ya da olmadığı durumlarda olası tüm çıktıların sayısı ile istenen durumların sayısını karşılaştırır.",
+      "metin": "Bir zar iki kez atılmıştır. İlk atışta 6 gelmesi, ikinci atışta 6 gelme olasılığını nasıl etkiler?",
+      "secenekler": [
+        "Olasılığı iki katına çıkarır.",
+        "Etkilemez; olaylar bağımsızdır.",
+        "Olasılığı yarıya indirir.",
+        "Olasılığı sıfır yapar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Zar atışları birbirini etkilemez; her atışta 6 gelme olasılığı 1/6'dır. Bu nedenle olaylar bağımsızdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağımsız olaylar nedir?",
+        "back": "Birinin gerçekleşmesinin diğerinin olasılığını değiştirmediği olaylardır."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o07",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını hesaplamaya yönelik matematiksel önerme sunar.",
+      "metin": "P(A) = 0,5 ve P(A ∩ B) = 0,2 olduğuna göre P(B|A) kaçtır?",
+      "secenekler": [
+        "0,4",
+        "0,1",
+        "0,7",
+        "0,25"
+      ],
+      "dogru_index": 0,
+      "cozum": "P(B|A) = P(A ∩ B)/P(A) = 0,2/0,5 = 0,4 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu olasılık formülü nedir?",
+        "back": "P(B|A) = P(A ∩ B)/P(A) eşitliğidir."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o08",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını hesaplamaya yönelik matematiksel önerme sunar.",
+      "metin": "52 kartlık bir desteden rastgele bir kart çekilmiştir. Kartın siyah olduğu bilindiğine göre sinek olma olasılığı kaçtır?",
+      "secenekler": [
+        "1/4",
+        "1/13",
+        "1/2",
+        "13/52"
+      ],
+      "dogru_index": 2,
+      "cozum": "Siyah kart sayısı 26, bunlardan sinek olan 13'tür. Koşullu olasılık 13/26 = 1/2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Destede siyah kart sayısı nedir?",
+        "back": "26'dır; 13 maça ve 13 sinek."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o09",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu ya da olmadığı gerçek yaşam durumlarının olasılığını koşullu olasılık ile değerlendirir.",
+      "metin": "Bir sınıfta 20 öğrenci vardır; 12'si kız, 8'i erkektir. Kızların 9'u, erkeklerin 3'ü gözlüklüdür. Rastgele seçilen öğrencinin gözlüklü olduğu bilindiğine göre kız olma olasılığı kaçtır?",
+      "secenekler": [
+        "9/20",
+        "3/4",
+        "3/5",
+        "1/2"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gözlüklü öğrenci sayısı 9 + 3 = 12'dir. Bunlardan 9'u kız olduğundan olasılık 9/12 = 3/4 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu olasılıkta payın anlamı nedir?",
+        "back": "İstenen olayın koşul olayıyla birlikte gerçekleştiği durum sayısıdır."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c01_o10",
+      "alt_beceri": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu ya da olmadığı gerçek yaşam durumlarının olasılığını koşullu olasılık ile değerlendirir.",
+      "metin": "120 kişilik bir toplulukta 48 kişi A ürününü, 30 kişi hem A hem B ürününü kullanmaktadır. Rastgele seçilen bir kişinin A ürününü kullandığı bilindiğine göre B ürününü de kullanma olasılığı kaçtır?",
+      "secenekler": [
+        "1/4",
+        "3/4",
+        "5/12",
+        "5/8"
+      ],
+      "dogru_index": 3,
+      "cozum": "Koşul A olayıdır: 48 kişi. Her iki ürünü kullanan 30 kişi olduğundan olasılık 30/48 = 5/8 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kesişim kümesinin koşullu olasılıktaki rolü nedir?",
+        "back": "Pay olarak kullanılan birlikte gerçekleşme sayısıdır."
+      },
+      "kazanim": "Koşullu olasılık ile çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t07_c01_o01:flashcard",
+      "front": "Koşullu olasılık nedir?",
+      "back": "Bir olayın gerçekleştiği bilindiğinde diğer olayın olasılığıdır."
+    },
+    {
+      "id": "mat_10_t07_c01_o02:flashcard",
+      "front": "Koşullu olasılıkta örnek uzay nedir?",
+      "back": "Koşul olarak verilen olayın kendi kümesidir."
+    },
+    {
+      "id": "mat_10_t07_c01_o03:flashcard",
+      "front": "Satır toplamının koşullu olasılıktaki rolü nedir?",
+      "back": "Koşul satırının toplamı payda olarak kullanılır."
+    },
+    {
+      "id": "mat_10_t07_c01_o04:flashcard",
+      "front": "Koşullu olasılıkta paydanın anlamı nedir?",
+      "back": "Koşul olarak verilen olayın gerçekleşme sayısıdır."
+    },
+    {
+      "id": "mat_10_t07_c01_o05:flashcard",
+      "front": "Bağımsız olayların kesişim olasılığı nedir?",
+      "back": "Olasılıkların çarpımıdır."
+    },
+    {
+      "id": "mat_10_t07_c01_o06:flashcard",
+      "front": "Bağımsız olaylar nedir?",
+      "back": "Birinin gerçekleşmesinin diğerinin olasılığını değiştirmediği olaylardır."
+    },
+    {
+      "id": "mat_10_t07_c01_o07:flashcard",
+      "front": "Koşullu olasılık formülü nedir?",
+      "back": "P(B|A) = P(A ∩ B)/P(A) eşitliğidir."
+    },
+    {
+      "id": "mat_10_t07_c01_o08:flashcard",
+      "front": "Destede siyah kart sayısı nedir?",
+      "back": "26'dır; 13 maça ve 13 sinek."
+    },
+    {
+      "id": "mat_10_t07_c01_o09:flashcard",
+      "front": "Koşullu olasılıkta payın anlamı nedir?",
+      "back": "İstenen olayın koşul olayıyla birlikte gerçekleştiği durum sayısıdır."
+    },
+    {
+      "id": "mat_10_t07_c01_o10:flashcard",
+      "front": "Kesişim kümesinin koşullu olasılıktaki rolü nedir?",
+      "back": "Pay olarak kullanılan birlikte gerçekleşme sayısıdır."
+    }
+  ]
+}

@@ -1,0 +1,664 @@
+{
+  "konu_id": "mat_10_t04_c02",
+  "kod": "MAT.10.4.2",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
+  "kaynak": "Matematik 10 ders kitabı, s.197-223",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t04_c02_o01",
+      "alt_beceri": "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "metin": "f(x) = x² − 6x + 5 fonksiyonunun tepe noktası hangisidir?",
+      "secenekler": [
+        "(−3, −4)",
+        "(3, −4)",
+        "(3, 4)",
+        "(6, −4)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tepe noktasının apsisi x = −b/(2a) = 6/2 = 3'tür. f(3) = 9 − 18 + 5 = −4 olduğundan tepe noktası (3, −4) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tepe noktası apsisinin formülü nedir?",
+        "back": "−b/(2a)'dır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o02",
+      "alt_beceri": "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "metin": "f(x) = ax² + bx + c biçimindeki bir karesel fonksiyonun grafiğinde a ≠ 0 koşulu neden gereklidir?",
+      "secenekler": [
+        "a = 0 olduğunda grafik çember olur.",
+        "a = 0 olduğunda tanım kümesi boş küme olur.",
+        "a = 0 olduğunda tepe noktası sonsuza gider.",
+        "a = 0 olduğunda ifade doğrusal fonksiyona dönüşür."
+      ],
+      "dogru_index": 3,
+      "cozum": "a = 0 olduğunda x² terimi yok olur ve geriye bx + c doğrusal ifadesi kalır; grafik parabol değil doğru olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel fonksiyon nedir?",
+        "back": "ax² + bx + c biçiminde, a ≠ 0 olan fonksiyondur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o03",
+      "alt_beceri": "Karesel referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
+      "metin": "f(x) = 2x² + 8x − 1 fonksiyonunun grafiğinin simetri ekseni hangisidir?",
+      "secenekler": [
+        "x = −2",
+        "x = 2",
+        "x = −4",
+        "x = 4"
+      ],
+      "dogru_index": 0,
+      "cozum": "Simetri ekseni tepe noktasından geçen düşey doğrudur: x = −b/(2a) = −8/4 = −2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Parabolün simetri ekseni nedir?",
+        "back": "Tepe noktasından geçen ve grafiği iki eş parçaya ayıran düşey doğrudur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o04",
+      "alt_beceri": "Karesel referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
+      "metin": "f(x) = (x − 4)² + 3 fonksiyonunun simetri ekseni hangisidir?",
+      "secenekler": [
+        "x = −4",
+        "x = 3",
+        "x = 4",
+        "x = −3"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tepe biçiminde (x − r)² ifadesinde tepe noktasının apsisi r'dir. Burada r = 4 olduğundan simetri ekseni x = 4'tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tepe biçimindeki fonksiyon nedir?",
+        "back": "a(x − r)² + k biçiminde yazılan karesel fonksiyondur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o05",
+      "alt_beceri": "Karesel referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
+      "metin": "Aşağıdaki fonksiyonlardan hangisinin grafiği aşağı doğru açılır?",
+      "secenekler": [
+        "f(x) = x² + 3x + 1",
+        "f(x) = 2x² − 1",
+        "f(x) = 5x² + x",
+        "f(x) = −x² + 3x + 1"
+      ],
+      "dogru_index": 3,
+      "cozum": "Başkatsayı a negatif olduğunda parabolün kolları aşağı doğru açılır. −x² + 3x + 1 fonksiyonunda a = −1'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Parabol kollarının yönünün belirleyicisi nedir?",
+        "back": "Başkatsayının işaretidir; a > 0 yukarı, a < 0 aşağı."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o06",
+      "alt_beceri": "Karesel referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
+      "metin": "f(x) = 3x² + 6x + 2 fonksiyonunun en küçük değeri bulunmaktadır. Bu fonksiyonun tepe noktasının apsisi kaçtır?",
+      "secenekler": [
+        "1",
+        "−1",
+        "−2",
+        "3"
+      ],
+      "dogru_index": 1,
+      "cozum": "a = 3 > 0 olduğundan parabolün kolları yukarı bakar ve tepe noktası minimumu verir. Apsis −b/(2a) = −6/6 = −1 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "a > 0 olan parabalde tepe noktasının anlamı nedir?",
+        "back": "Fonksiyonun en küçük (minimum) değeridir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o07",
+      "alt_beceri": "Karesel referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer karesel fonksiyonlara dönüştürür.",
+      "metin": "f(x) = x² − 5x + 6 fonksiyonunun sıfırları hangileridir?",
+      "secenekler": [
+        "2 ve 3",
+        "−2 ve −3",
+        "1 ve 6",
+        "−1 ve 6"
+      ],
+      "dogru_index": 0,
+      "cozum": "x² − 5x + 6 = (x − 2)(x − 3) biçiminde çarpanlara ayrılır. Çarpanlar sıfıra eşitlendiğinde x = 2 ve x = 3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kök kavramının anlamı nedir?",
+        "back": "Fonksiyonu sıfır yapan x değerleridir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o08",
+      "alt_beceri": "Karesel referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer karesel fonksiyonlara dönüştürür.",
+      "metin": "f(x) = x² − 9 fonksiyonunun grafiği x eksenini hangi noktalarda keser?",
+      "secenekler": [
+        "(9, 0) ve (−9, 0)",
+        "(0, 3) ve (0, −3)",
+        "(3, 0) ve (−3, 0)",
+        "(3, 0) ve (0, −3)"
+      ],
+      "dogru_index": 2,
+      "cozum": "x² − 9 = (x − 3)(x + 3) olduğundan sıfırlar x = 3 ve x = −3'tür. x eksenini kestiği noktalar (3, 0) ve (−3, 0) olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kare farkı özdeşliği nedir?",
+        "back": "a² − b² = (a − b)(a + b) biçimindeki özdeşliktir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o09",
+      "alt_beceri": "Karesel referans fonksiyon ile elde ettiği karesel fonksiyonların grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
+      "metin": "f(x) = x² + 2x + 5 fonksiyonunun kaç gerçek sıfırı vardır?",
+      "secenekler": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "dogru_index": 1,
+      "cozum": "Diskriminant Δ = b² − 4ac = 4 − 20 = −16 < 0 olduğundan gerçek kök yoktur; grafik x eksenini kesmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Diskriminant nedir?",
+        "back": "b² − 4ac ifadesidir; karesel denklemin kök sayısını belirler."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o10",
+      "alt_beceri": "Karesel referans fonksiyon ile elde ettiği karesel fonksiyonların grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
+      "metin": "f(x) = x² − 4x + 4 fonksiyonunun sıfırı için hangisi doğrudur?",
+      "secenekler": [
+        "Diskriminant negatif olduğu için sıfırı yoktur.",
+        "İki farklı gerçek sıfırı vardır.",
+        "Sıfırı x = 4'tür.",
+        "Diskriminant sıfır olduğu için tek bir sıfırı vardır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Δ = 16 − 16 = 0 olduğundan çift katlı tek kök vardır. x² − 4x + 4 = (x − 2)² olduğundan sıfır x = 2'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Diskriminant sıfır olduğunda kök durumu nedir?",
+        "back": "Çift katlı tek gerçek kök vardır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o11",
+      "alt_beceri": "Karesel referans fonksiyonun nitel özelliklerinden hareketle diğer karesel fonksiyonların nitel özellikleri hakkında varsayımlarda bulunur.",
+      "metin": "f(x) = x² − 4x + 5 fonksiyonu tam kareye dönüştürüldüğünde tepe noktası ne olur?",
+      "secenekler": [
+        "(−2, 1)",
+        "(2, 1)",
+        "(2, 5)",
+        "(4, 5)"
+      ],
+      "dogru_index": 1,
+      "cozum": "x² − 4x + 5 = (x − 2)² + 1 biçiminde yazılır. Tepe biçiminden tepe noktasının (2, 1) olduğu görülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tam kareye tamamlama nedir?",
+        "back": "İfadenin (x − r)² + k biçimine getirilmesidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o12",
+      "alt_beceri": "Karesel referans fonksiyonun nitel özelliklerinden hareketle diğer karesel fonksiyonların nitel özellikleri hakkında varsayımlarda bulunur.",
+      "metin": "f(x) = x² + 6x + 7 fonksiyonunun tepe noktası hangisidir?",
+      "secenekler": [
+        "(3, −2)",
+        "(−3, 2)",
+        "(−6, 7)",
+        "(−3, −2)"
+      ],
+      "dogru_index": 3,
+      "cozum": "x² + 6x + 7 = (x + 3)² − 2 biçiminde yazılır. Tepe noktası (−3, −2) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tepe biçimindeki k değerinin anlamı nedir?",
+        "back": "Tepe noktasının y değeridir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o13",
+      "alt_beceri": "Varsayımlarına dayalı olarak karesel fonksiyonların nitel özelliklerine ilişkin örüntüleri (cebirsel, sayısal veya grafiksel) geneller.",
+      "metin": "f(x) = −x² + 4x + 1 fonksiyonunun en büyük değeri kaçtır?",
+      "secenekler": [
+        "5",
+        "1",
+        "4",
+        "−5"
+      ],
+      "dogru_index": 0,
+      "cozum": "a = −1 < 0 olduğundan tepe noktası maksimumu verir. Apsis x = 2 olup f(2) = −4 + 8 + 1 = 5 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "a < 0 olan parabalde tepe noktasının anlamı nedir?",
+        "back": "Fonksiyonun en büyük (maksimum) değeridir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o14",
+      "alt_beceri": "Varsayımlarına dayalı olarak karesel fonksiyonların nitel özelliklerine ilişkin örüntüleri (cebirsel, sayısal veya grafiksel) geneller.",
+      "metin": "f(x) = x² − 2x + 7 fonksiyonunun en küçük değeri kaçtır?",
+      "secenekler": [
+        "7",
+        "1",
+        "6",
+        "5"
+      ],
+      "dogru_index": 2,
+      "cozum": "x² − 2x + 7 = (x − 1)² + 6 olduğundan tepe noktası (1, 6)'dır. En küçük değer 6 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel fonksiyonun minimum değerinin alındığı nokta nedir?",
+        "back": "Kollar yukarı iken tepe noktasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o15",
+      "alt_beceri": "f) Genellemelerinin varsayımlarını karşılayıp karşılamadığını kontrol eder.",
+      "metin": "Grafikte f(x) = x² − 4x + 5 fonksiyonunun grafiği verilmiştir. Grafiğe göre fonksiyonun x eksenini kesen kaç noktası vardır?",
+      "secenekler": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "dogru_index": 3,
+      "cozum": "Grafik en alt noktada y = 1 değerindedir ve x eksenine hiç inmez. Bu nedenle x eksenini kesen nokta yoktur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x",
+        "yEkseni": "f(x)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "f",
+            "noktalar": [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                10
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Grafiği x eksenini kesmeyen parabolün kök durumu nedir?",
+        "back": "Gerçek kökü yoktur; diskriminant negatiftir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o16",
+      "alt_beceri": "f) Genellemelerinin varsayımlarını karşılayıp karşılamadığını kontrol eder.",
+      "metin": "Grafikte f(x) = x² − 4x + 5 fonksiyonunun grafiği verilmiştir. Grafiğe göre fonksiyonun tepe noktası hangisidir?",
+      "secenekler": [
+        "(0, 5)",
+        "(2, 1)",
+        "(4, 5)",
+        "(3, 2)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Grafikte en alt nokta (2, 1) olarak okunur. Bu nokta parabolün tepe noktasıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x",
+        "yEkseni": "f(x)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "f",
+            "noktalar": [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                10
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Tepe noktası kavramı nedir?",
+        "back": "Parabolün en alt ya da en üst noktasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o17",
+      "alt_beceri": "g) Genellemelerinden elde ettiği önermeleri uygun sözel veya cebirsel dil ile sunar.",
+      "metin": "f(x) = x² − 4 fonksiyonunun grafiği y eksenini hangi noktada keser?",
+      "secenekler": [
+        "(0, −4)",
+        "(0, 4)",
+        "(4, 0)",
+        "(−4, 0)"
+      ],
+      "dogru_index": 0,
+      "cozum": "y eksenini kestiği noktada x = 0'dır. f(0) = −4 olduğundan kesişim noktası (0, −4) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Grafiğin y eksenini kestiği nokta nasıl bulunur?",
+        "back": "x = 0 yazılarak f(0) değeri hesaplanır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o18",
+      "alt_beceri": "g) Genellemelerinden elde ettiği önermeleri uygun sözel veya cebirsel dil ile sunar.",
+      "metin": "f(x) = x² − 3x + 2 fonksiyonunun x eksenini kestiği noktaların apsisleri toplamı kaçtır?",
+      "secenekler": [
+        "2",
+        "−3",
+        "3",
+        "1"
+      ],
+      "dogru_index": 2,
+      "cozum": "x² − 3x + 2 = (x − 1)(x − 2) olduğundan kökler 1 ve 2'dir. Toplamları 3 bulunur; bu değer −b/a ile de doğrulanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kökler toplamı bağıntısı nedir?",
+        "back": "−b/a'dır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o19",
+      "alt_beceri": "ğ) Elde ettiği önermelerin gerçek yaşam bağlamlarındaki kullanışlılığını değerlendirir.",
+      "metin": "f(x) = x² fonksiyonunun grafiği 2 birim sağa, 1 birim yukarı ötelendiğinde hangi fonksiyon elde edilir?",
+      "secenekler": [
+        "(x + 2)² + 1",
+        "(x − 2)² + 1",
+        "(x − 2)² − 1",
+        "(x + 1)² + 2"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sağa öteleme x yerine (x − 2), yukarı öteleme fonksiyona + 1 eklenerek yapılır. Sonuç (x − 2)² + 1 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatay ötelemenin fonksiyondaki karşılığı nedir?",
+        "back": "Sağa ötelemede x yerine (x − r) yazılmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o20",
+      "alt_beceri": "ğ) Elde ettiği önermelerin gerçek yaşam bağlamlarındaki kullanışlılığını değerlendirir.",
+      "metin": "g(x) = (x + 3)² − 4 fonksiyonunun grafiği f(x) = x² grafiğinden nasıl elde edilir?",
+      "secenekler": [
+        "3 birim sağa, 4 birim aşağı ötelenerek",
+        "3 birim sola, 4 birim yukarı ötelenerek",
+        "4 birim sola, 3 birim aşağı ötelenerek",
+        "3 birim sola, 4 birim aşağı ötelenerek"
+      ],
+      "dogru_index": 3,
+      "cozum": "(x + 3) ifadesi 3 birim sola ötelemeyi, −4 ise 4 birim aşağı ötelemeyi gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşey ötelemenin fonksiyondaki karşılığı nedir?",
+        "back": "Fonksiyona sabit eklenmesi ya da çıkarılmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o21",
+      "alt_beceri": "h) Önermelerini grafiksel olarak doğrular veya cebirsel olarak ispatlar.",
+      "metin": "Bir cisim yukarı doğru atıldığında yerden yüksekliği h(t) = −5t² + 20t metre olarak modellenmektedir. Cisim en fazla kaç metre yükselir?",
+      "secenekler": [
+        "10",
+        "20",
+        "40",
+        "25"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tepe noktasının apsisi t = −20/(2 · −5) = 2 saniyedir. h(2) = −20 + 40 = 20 metre bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Atış hareketinin yükseklik modeli hangi fonksiyonla ifade edilir?",
+        "back": "Başkatsayısı negatif olan karesel fonksiyonla."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o22",
+      "alt_beceri": "h) Önermelerini grafiksel olarak doğrular veya cebirsel olarak ispatlar.",
+      "metin": "Yerden yukarı atılan bir cismin yüksekliği h(t) = −5t² + 20t modeliyle verilmiştir. Cisim kaç saniye sonra yere düşer?",
+      "secenekler": [
+        "2",
+        "5",
+        "20",
+        "4"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yere düşme anında h(t) = 0'dır: −5t(t − 4) = 0 eşitliğinden t = 0 ve t = 4 bulunur. Atıldıktan sonraki düşme anı 4. saniyedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yükseklik modelinin sıfırı neyi gösterir?",
+        "back": "Cismin yerden ayrıldığı ve yere döndüğü anları gösterir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o23",
+      "alt_beceri": "ı) Uyguladığı doğrulama veya ispat yöntemlerinin farklı durumlardaki kullanışlılığını değerlendirir.",
+      "metin": "Çevresi 40 metre olan dikdörtgen biçimindeki bir bahçenin alanı en fazla kaç metrekaredir?",
+      "secenekler": [
+        "100",
+        "80",
+        "120",
+        "160"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kenarlar x ve 20 − x alınırsa alan A(x) = x(20 − x) = −x² + 20x olur. Tepe noktası x = 10'da olduğundan en büyük alan 10 · 10 = 100 m² bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit çevreli dikdörtgende alanın en büyük olduğu durum nedir?",
+        "back": "Dikdörtgen kareye dönüştüğünde alan en büyüktür."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c02_o24",
+      "alt_beceri": "ı) Uyguladığı doğrulama veya ispat yöntemlerinin farklı durumlardaki kullanışlılığını değerlendirir.",
+      "metin": "60 metre tel ile dikdörtgen biçiminde bir çit çevrilecektir. Alanın en büyük olması için kısa kenar kaç metre seçilmelidir?",
+      "secenekler": [
+        "10",
+        "20",
+        "15",
+        "30"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kenarlar x ve 30 − x olur ve alan A(x) = −x² + 30x olarak yazılır. Tepe noktası x = 15 olduğundan kısa kenar 15 metre olmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Alan fonksiyonunun tepe noktasının anlamı nedir?",
+        "back": "En büyük alanı ve onu sağlayan kenar uzunluğudur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t04_c02_o01:flashcard",
+      "front": "Tepe noktası apsisinin formülü nedir?",
+      "back": "−b/(2a)'dır."
+    },
+    {
+      "id": "mat_10_t04_c02_o02:flashcard",
+      "front": "Karesel fonksiyon nedir?",
+      "back": "ax² + bx + c biçiminde, a ≠ 0 olan fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c02_o03:flashcard",
+      "front": "Parabolün simetri ekseni nedir?",
+      "back": "Tepe noktasından geçen ve grafiği iki eş parçaya ayıran düşey doğrudur."
+    },
+    {
+      "id": "mat_10_t04_c02_o04:flashcard",
+      "front": "Tepe biçimindeki fonksiyon nedir?",
+      "back": "a(x − r)² + k biçiminde yazılan karesel fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c02_o05:flashcard",
+      "front": "Parabol kollarının yönünün belirleyicisi nedir?",
+      "back": "Başkatsayının işaretidir; a > 0 yukarı, a < 0 aşağı."
+    },
+    {
+      "id": "mat_10_t04_c02_o06:flashcard",
+      "front": "a > 0 olan parabalde tepe noktasının anlamı nedir?",
+      "back": "Fonksiyonun en küçük (minimum) değeridir."
+    },
+    {
+      "id": "mat_10_t04_c02_o07:flashcard",
+      "front": "Kök kavramının anlamı nedir?",
+      "back": "Fonksiyonu sıfır yapan x değerleridir."
+    },
+    {
+      "id": "mat_10_t04_c02_o08:flashcard",
+      "front": "İki kare farkı özdeşliği nedir?",
+      "back": "a² − b² = (a − b)(a + b) biçimindeki özdeşliktir."
+    },
+    {
+      "id": "mat_10_t04_c02_o09:flashcard",
+      "front": "Diskriminant nedir?",
+      "back": "b² − 4ac ifadesidir; karesel denklemin kök sayısını belirler."
+    },
+    {
+      "id": "mat_10_t04_c02_o10:flashcard",
+      "front": "Diskriminant sıfır olduğunda kök durumu nedir?",
+      "back": "Çift katlı tek gerçek kök vardır."
+    },
+    {
+      "id": "mat_10_t04_c02_o11:flashcard",
+      "front": "Tam kareye tamamlama nedir?",
+      "back": "İfadenin (x − r)² + k biçimine getirilmesidir."
+    },
+    {
+      "id": "mat_10_t04_c02_o12:flashcard",
+      "front": "Tepe biçimindeki k değerinin anlamı nedir?",
+      "back": "Tepe noktasının y değeridir."
+    },
+    {
+      "id": "mat_10_t04_c02_o13:flashcard",
+      "front": "a < 0 olan parabalde tepe noktasının anlamı nedir?",
+      "back": "Fonksiyonun en büyük (maksimum) değeridir."
+    },
+    {
+      "id": "mat_10_t04_c02_o14:flashcard",
+      "front": "Karesel fonksiyonun minimum değerinin alındığı nokta nedir?",
+      "back": "Kollar yukarı iken tepe noktasıdır."
+    },
+    {
+      "id": "mat_10_t04_c02_o15:flashcard",
+      "front": "Grafiği x eksenini kesmeyen parabolün kök durumu nedir?",
+      "back": "Gerçek kökü yoktur; diskriminant negatiftir."
+    },
+    {
+      "id": "mat_10_t04_c02_o16:flashcard",
+      "front": "Tepe noktası kavramı nedir?",
+      "back": "Parabolün en alt ya da en üst noktasıdır."
+    },
+    {
+      "id": "mat_10_t04_c02_o17:flashcard",
+      "front": "Grafiğin y eksenini kestiği nokta nasıl bulunur?",
+      "back": "x = 0 yazılarak f(0) değeri hesaplanır."
+    },
+    {
+      "id": "mat_10_t04_c02_o18:flashcard",
+      "front": "Kökler toplamı bağıntısı nedir?",
+      "back": "−b/a'dır."
+    },
+    {
+      "id": "mat_10_t04_c02_o19:flashcard",
+      "front": "Yatay ötelemenin fonksiyondaki karşılığı nedir?",
+      "back": "Sağa ötelemede x yerine (x − r) yazılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c02_o20:flashcard",
+      "front": "Düşey ötelemenin fonksiyondaki karşılığı nedir?",
+      "back": "Fonksiyona sabit eklenmesi ya da çıkarılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c02_o21:flashcard",
+      "front": "Atış hareketinin yükseklik modeli hangi fonksiyonla ifade edilir?",
+      "back": "Başkatsayısı negatif olan karesel fonksiyonla."
+    },
+    {
+      "id": "mat_10_t04_c02_o22:flashcard",
+      "front": "Yükseklik modelinin sıfırı neyi gösterir?",
+      "back": "Cismin yerden ayrıldığı ve yere döndüğü anları gösterir."
+    },
+    {
+      "id": "mat_10_t04_c02_o23:flashcard",
+      "front": "Sabit çevreli dikdörtgende alanın en büyük olduğu durum nedir?",
+      "back": "Dikdörtgen kareye dönüştüğünde alan en büyüktür."
+    },
+    {
+      "id": "mat_10_t04_c02_o24:flashcard",
+      "front": "Alan fonksiyonunun tepe noktasının anlamı nedir?",
+      "back": "En büyük alanı ve onu sağlayan kenar uzunluğudur."
+    }
+  ]
+}

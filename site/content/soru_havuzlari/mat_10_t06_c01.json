@@ -1,0 +1,254 @@
+{
+  "konu_id": "mat_10_t06_c01",
+  "kod": "MAT.10.6.1",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 6,
+  "tema_adi": "Analitik İnceleme",
+  "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.356-371",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t06_c01_o01",
+      "alt_beceri": "Dik koordinat sisteminde iki nokta arasındaki uzaklık bağıntısı ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili varsayımda bulunur.",
+      "metin": "Koordinat düzleminde A(x₁, y₁) ve B(x₂, y₂) noktaları arasındaki uzaklık hangi ifadeyle hesaplanır?",
+      "secenekler": [
+        "(x₂ − x₁) + (y₂ − y₁)",
+        "√((x₂ − x₁)² + (y₂ − y₁)²)",
+        "√((x₂ + x₁)² − (y₂ + y₁)²)",
+        "|x₂ − x₁| · |y₂ − y₁|"
+      ],
+      "dogru_index": 1,
+      "cozum": "İki nokta arasındaki uzaklık, koordinat farklarının kareleri toplamının kareköküdür. Bu ifade Pisagor teoreminden elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki nokta arasındaki uzaklığın dayanağı nedir?",
+        "back": "Pisagor teoremidir."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o02",
+      "alt_beceri": "Dik koordinat sisteminde iki nokta arasındaki uzaklık bağıntısı ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili varsayımda bulunur.",
+      "metin": "Koordinat düzleminde A(0, 0) ve B(3, 4) noktaları arasındaki uzaklık kaç birimdir?",
+      "secenekler": [
+        "7",
+        "4",
+        "3",
+        "5"
+      ],
+      "dogru_index": 3,
+      "cozum": "|AB| = √(3² + 4²) = √(9 + 16) = √25 = 5 birim bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Orijine uzaklık formülü nedir?",
+        "back": "Koordinatların kareleri toplamının kareköküdür."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o03",
+      "alt_beceri": "Farklı örnekler üzerinden varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "A(1, 2) ve B(4, 6) noktaları arasındaki uzaklık kaç birimdir?",
+      "secenekler": [
+        "5",
+        "7",
+        "√7",
+        "3"
+      ],
+      "dogru_index": 0,
+      "cozum": "|AB| = √((4 − 1)² + (6 − 2)²) = √(9 + 16) = 5 birim bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Uzaklık hesabında koordinat farklarının kullanımı nedir?",
+        "back": "Farkların kareleri toplanıp karekökünün alınmasıdır."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o04",
+      "alt_beceri": "Farklı örnekler üzerinden varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "A(−2, 3) ve B(4, 3) noktaları arasındaki uzaklık kaç birimdir?",
+      "secenekler": [
+        "2",
+        "8",
+        "6",
+        "3"
+      ],
+      "dogru_index": 2,
+      "cozum": "y koordinatları eşit olduğundan uzaklık yalnızca x farkına bağlıdır: 4 − (−2) = 6 birim.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı yatay doğru üzerindeki noktaların uzaklığı nedir?",
+        "back": "x koordinatlarının farkının mutlak değeridir."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o05",
+      "alt_beceri": "İki nokta arasındaki uzaklık bağıntısına ve bir doğru parçasını belli oranda bölen noktanın koordinatlarına ilişkin genellemeleri ile varsayımlarını karşılaştırır.",
+      "metin": "A(1, 3) ve B(5, 7) noktaları verilmiştir. [AB] doğru parçasının orta noktası hangisidir?",
+      "secenekler": [
+        "(2, 2)",
+        "(4, 4)",
+        "(6, 10)",
+        "(3, 5)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Orta nokta koordinatları uç noktaların ortalamasıdır: ((1 + 5)/2, (3 + 7)/2) = (3, 5).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Orta nokta koordinatlarının formülü nedir?",
+        "back": "Uç noktaların koordinatlarının aritmetik ortalamasıdır."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o06",
+      "alt_beceri": "İki nokta arasındaki uzaklık bağıntısına ve bir doğru parçasını belli oranda bölen noktanın koordinatlarına ilişkin genellemeleri ile varsayımlarını karşılaştırır.",
+      "metin": "[AB] doğru parçasının orta noktası (4, −1), A noktası (2, 3) olduğuna göre B noktası hangisidir?",
+      "secenekler": [
+        "(3, 1)",
+        "(6, −5)",
+        "(6, 1)",
+        "(2, −5)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Orta nokta bağıntısından B = 2·M − A yazılır: (8 − 2, −2 − 3) = (6, −5) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Orta noktadan uç nokta nasıl bulunur?",
+        "back": "Orta nokta iki katından bilinen uç nokta çıkarılarak."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o07",
+      "alt_beceri": "İki nokta arasındaki uzaklık bağıntısına ve bir doğru parçasını belli oranda bölen noktanın koordinatlarına yönelik önermeler sunar.",
+      "metin": "A(1, 2) ve B(7, 8) noktaları verilmiştir. [AB] üzerinde |AP| : |PB| = 1 : 2 olacak biçimde bir P noktası alınırsa P hangisi olur?",
+      "secenekler": [
+        "(3, 4)",
+        "(4, 5)",
+        "(2, 3)",
+        "(5, 6)"
+      ],
+      "dogru_index": 0,
+      "cozum": "P noktası A'dan B'ye doğru 1/3 oranında ilerler. x: 1 + 6/3 = 3, y: 2 + 6/3 = 4 olduğundan P(3, 4) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oranda bölme nedir?",
+        "back": "Bir doğru parçasının verilen orana göre iç noktasının bulunmasıdır."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o08",
+      "alt_beceri": "İki nokta arasındaki uzaklık bağıntısına ve bir doğru parçasını belli oranda bölen noktanın koordinatlarına yönelik önermeler sunar.",
+      "metin": "A(0, 0) ve B(6, 9) noktaları arasında |AP| : |PB| = 1 : 2 olacak biçimde P noktası alınırsa P hangisi olur?",
+      "secenekler": [
+        "(3, 4,5)",
+        "(1, 1,5)",
+        "(2, 3)",
+        "(4, 6)"
+      ],
+      "dogru_index": 2,
+      "cozum": "P, toplam 3 parçanın 1 parçası kadar ileridedir: x = 6/3 = 2, y = 9/3 = 3. P(2, 3) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oranda bölmede kullanılan kesir nedir?",
+        "back": "Payın, pay ile paydanın toplamına oranıdır."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o09",
+      "alt_beceri": "Önermeleri gerçek yaşam problemleri bağlamında değerlendirir.",
+      "metin": "Koordinat düzleminde A(−1, 2), B(5, 2) ve C(5, 6) noktaları bir dik üçgenin köşeleridir. Bu üçgenin hipotenüs uzunluğu kaç birimdir?",
+      "secenekler": [
+        "10",
+        "2√13",
+        "√52 + 4",
+        "8"
+      ],
+      "dogru_index": 1,
+      "cozum": "Dik kenarlar |AB| = 6 ve |BC| = 4 birimdir. Hipotenüs √(36 + 16) = √52 = 2√13 birim bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koordinat düzleminde dik üçgenin hipotenüsü nasıl bulunur?",
+        "back": "Uzaklık formülü ya da Pisagor teoremi kullanılarak."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c01_o10",
+      "alt_beceri": "Önermeleri gerçek yaşam problemleri bağlamında değerlendirir.",
+      "metin": "Bir drone doğrusal bir rota izleyerek A(2, 3) noktasından B(8, 11) noktasına uçmaktadır. Koordinat birimi 100 metre olduğuna göre drone kaç metre yol alır?",
+      "secenekler": [
+        "700",
+        "1400",
+        "500",
+        "1000"
+      ],
+      "dogru_index": 3,
+      "cozum": "|AB| = √((8 − 2)² + (11 − 3)²) = √(36 + 64) = 10 birimdir. 10 · 100 = 1000 metre yol alır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Harita ölçeği hesabı nedir?",
+        "back": "Haritadaki uzunluğun ölçek katsayısıyla çarpılmasıdır."
+      },
+      "kazanim": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t06_c01_o01:flashcard",
+      "front": "İki nokta arasındaki uzaklığın dayanağı nedir?",
+      "back": "Pisagor teoremidir."
+    },
+    {
+      "id": "mat_10_t06_c01_o02:flashcard",
+      "front": "Orijine uzaklık formülü nedir?",
+      "back": "Koordinatların kareleri toplamının kareköküdür."
+    },
+    {
+      "id": "mat_10_t06_c01_o03:flashcard",
+      "front": "Uzaklık hesabında koordinat farklarının kullanımı nedir?",
+      "back": "Farkların kareleri toplanıp karekökünün alınmasıdır."
+    },
+    {
+      "id": "mat_10_t06_c01_o04:flashcard",
+      "front": "Aynı yatay doğru üzerindeki noktaların uzaklığı nedir?",
+      "back": "x koordinatlarının farkının mutlak değeridir."
+    },
+    {
+      "id": "mat_10_t06_c01_o05:flashcard",
+      "front": "Orta nokta koordinatlarının formülü nedir?",
+      "back": "Uç noktaların koordinatlarının aritmetik ortalamasıdır."
+    },
+    {
+      "id": "mat_10_t06_c01_o06:flashcard",
+      "front": "Orta noktadan uç nokta nasıl bulunur?",
+      "back": "Orta nokta iki katından bilinen uç nokta çıkarılarak."
+    },
+    {
+      "id": "mat_10_t06_c01_o07:flashcard",
+      "front": "Oranda bölme nedir?",
+      "back": "Bir doğru parçasının verilen orana göre iç noktasının bulunmasıdır."
+    },
+    {
+      "id": "mat_10_t06_c01_o08:flashcard",
+      "front": "Oranda bölmede kullanılan kesir nedir?",
+      "back": "Payın, pay ile paydanın toplamına oranıdır."
+    },
+    {
+      "id": "mat_10_t06_c01_o09:flashcard",
+      "front": "Koordinat düzleminde dik üçgenin hipotenüsü nasıl bulunur?",
+      "back": "Uzaklık formülü ya da Pisagor teoremi kullanılarak."
+    },
+    {
+      "id": "mat_10_t06_c01_o10:flashcard",
+      "front": "Harita ölçeği hesabı nedir?",
+      "back": "Haritadaki uzunluğun ölçek katsayısıyla çarpılmasıdır."
+    }
+  ]
+}

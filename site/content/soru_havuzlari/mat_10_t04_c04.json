@@ -1,0 +1,590 @@
+{
+  "konu_id": "mat_10_t04_c04",
+  "kod": "MAT.10.4.4",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
+  "kaynak": "Matematik 10 ders kitabı, s.243-263",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t04_c04_o01",
+      "alt_beceri": "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "metin": "Aşağıdakilerden hangisi rasyonel fonksiyon değildir?",
+      "secenekler": [
+        "f(x) = (x + 1)/(x − 3)",
+        "f(x) = √x",
+        "f(x) = 5/x²",
+        "f(x) = (2x)/(x² + 1)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Rasyonel fonksiyon iki polinomun oranıdır. √x ifadesi karekök içerdiği için polinom değildir; diğer üç seçenek rasyonel fonksiyondur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Polinom nedir?",
+        "back": "Katsayıları gerçek sayı olan, negatif olmayan tam sayı kuvvetli ifadedir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o02",
+      "alt_beceri": "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "metin": "f(x) = (x − 2)/(x² − 4) fonksiyonunun tanım kümesi hangisidir?",
+      "secenekler": [
+        "ℝ − {4}",
+        "ℝ − {2}",
+        "ℝ",
+        "ℝ − {−2, 2}"
+      ],
+      "dogru_index": 3,
+      "cozum": "x² − 9 = 0 eşitliğinden x = 3 ve x = −3 bulunur. Bu iki değer tanım kümesinden çıkarılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paydayı sıfır yapan değerler ne olur?",
+        "back": "Tanım kümesinden çıkarılır ve düşey asimptot oluşturur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o03",
+      "alt_beceri": "Rasyonel referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
+      "metin": "(x² − 9)/(x − 3) ifadesinin x ≠ 3 için sadeleştirilmiş biçimi hangisidir?",
+      "secenekler": [
+        "x + 3",
+        "x − 3",
+        "x² + 3",
+        "x"
+      ],
+      "dogru_index": 0,
+      "cozum": "x² − 9 = (x − 3)(x + 3) olduğundan pay ve paydadaki (x − 3) çarpanları sadeleşir. Sonuç x + 3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel ifade sadeleştirmesi nedir?",
+        "back": "Pay ve paydadaki ortak çarpanların yok edilmesidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o04",
+      "alt_beceri": "Rasyonel referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
+      "metin": "(x² + 5x + 6)/(x + 2) ifadesinin x ≠ −2 için sadeleştirilmiş biçimi hangisidir?",
+      "secenekler": [
+        "x + 2",
+        "x² + 3",
+        "x + 3",
+        "x − 3"
+      ],
+      "dogru_index": 2,
+      "cozum": "x² + 5x + 6 = (x + 2)(x + 3) biçiminde çarpanlara ayrılır. (x + 2) çarpanı sadeleştiğinde x + 3 kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sadeleştirmede dışlanan değerler nedir?",
+        "back": "Paydayı sıfır yapan değerlerdir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o05",
+      "alt_beceri": "Rasyonel referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
+      "metin": "f(x) = 1/(x − 2) fonksiyonunun grafiğinin düşey asimptotu hangisidir?",
+      "secenekler": [
+        "x = −2",
+        "y = 2",
+        "y = 0",
+        "x = 2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Paydayı sıfır yapan x değeri düşey asimptotu verir: x − 2 = 0 ise x = 2'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşey asimptot nedir?",
+        "back": "Paydayı sıfır yapan x değerinden geçen düşey doğrudur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o06",
+      "alt_beceri": "Rasyonel referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
+      "metin": "f(x) = (2x + 1)/(x + 3) fonksiyonunun düşey asimptotu hangisidir?",
+      "secenekler": [
+        "x = 3",
+        "x = −3",
+        "x = 2",
+        "y = 2"
+      ],
+      "dogru_index": 1,
+      "cozum": "Payda x + 3 sıfır olduğunda fonksiyon tanımsızdır. x = −3 doğrusu düşey asimptottur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşey asimptot paydadan nasıl bulunur?",
+        "back": "Paydanın kökü alınarak bulunur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o07",
+      "alt_beceri": "Rasyonel referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer rasyonel fonksiyonlara dönüştürür.",
+      "metin": "f(x) = (3x + 1)/(x − 2) fonksiyonunun yatay asimptotu hangisidir?",
+      "secenekler": [
+        "y = 3",
+        "y = 1",
+        "y = −2",
+        "y = 2"
+      ],
+      "dogru_index": 0,
+      "cozum": "Pay ve paydanın dereceleri eşit olduğunda yatay asimptot başkatsayıların oranıdır: 3/1 = 3, yani y = 3.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatay asimptot nedir?",
+        "back": "x büyüdükçe fonksiyonun yaklaştığı yatay doğrudur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o08",
+      "alt_beceri": "Rasyonel referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer rasyonel fonksiyonlara dönüştürür.",
+      "metin": "f(x) = 5/(x² + 1) fonksiyonunun yatay asimptotu hangisidir?",
+      "secenekler": [
+        "y = 5",
+        "y = 1",
+        "y = 0",
+        "y = −5"
+      ],
+      "dogru_index": 2,
+      "cozum": "Paydanın derecesi paydan büyük olduğunda x büyüdükçe değer sıfıra yaklaşır. Yatay asimptot y = 0'dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paydanın derecesi büyük olduğunda yatay asimptot nedir?",
+        "back": "y = 0 doğrusudur."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o09",
+      "alt_beceri": "Rasyonel referans fonksiyon ile elde ettiği rasyonel fonksiyonların grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
+      "metin": "f(x) = (x − 1)/(x + 2) fonksiyonunun sıfırı kaçtır?",
+      "secenekler": [
+        "−2",
+        "1",
+        "2",
+        "−1"
+      ],
+      "dogru_index": 1,
+      "cozum": "Rasyonel fonksiyonun sıfırı payın sıfır olduğu değerdir: x − 1 = 0 ise x = 1'dir. Payda bu değerde sıfır olmadığı için geçerlidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel fonksiyonun sıfırı nasıl bulunur?",
+        "back": "Pay sıfıra eşitlenerek, paydayı sıfır yapmayan değerler alınır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o10",
+      "alt_beceri": "Rasyonel referans fonksiyon ile elde ettiği rasyonel fonksiyonların grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
+      "metin": "f(x) = 1/(x − 4) fonksiyonunda x, 4'ten büyük değerler alarak 4'e yaklaşırsa fonksiyonun değeri için hangisi doğrudur?",
+      "secenekler": [
+        "−∞ yönünde küçülür.",
+        "Sıfıra yaklaşır.",
+        "4 değerine yaklaşır.",
+        "+∞ yönünde büyür."
+      ],
+      "dogru_index": 3,
+      "cozum": "x > 4 olduğunda x − 4 pozitif ve çok küçük olur; 1/(x − 4) çok büyük pozitif değer alır. Bu nedenle fonksiyon +∞ yönünde büyür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşey asimptot civarındaki davranış nedir?",
+        "back": "Sağdan ve soldan farklı yönlerde sonsuza gitmesidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o11",
+      "alt_beceri": "Rasyonel referans fonksiyonun nitel özelliklerinden hareketle diğer rasyonel fonksiyonların nitel özellikleri hakkında varsayımlarda bulunur.",
+      "metin": "1/(x − 1) = 2 denkleminin çözümü kaçtır?",
+      "secenekler": [
+        "1/2",
+        "3/2",
+        "2",
+        "−1/2"
+      ],
+      "dogru_index": 1,
+      "cozum": "İçler dışlar çarpımı yapılırsa 1 = 2x − 2 ve 2x = 3 olur. Buradan x = 3/2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel denklemin çözüm yöntemi nedir?",
+        "back": "İçler dışlar çarpımıyla paydaların yok edilmesidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o12",
+      "alt_beceri": "Rasyonel referans fonksiyonun nitel özelliklerinden hareketle diğer rasyonel fonksiyonların nitel özellikleri hakkında varsayımlarda bulunur.",
+      "metin": "(x + 1)/(x − 2) = 3 denkleminin çözümü kaçtır?",
+      "secenekler": [
+        "2",
+        "5/2",
+        "3",
+        "7/2"
+      ],
+      "dogru_index": 3,
+      "cozum": "İçler dışlar çarpımıyla x + 1 = 3x − 6 olur. Buradan 7 = 2x ve x = 7/2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel denklemde çözümün paydaya göre denetlenme nedeni nedir?",
+        "back": "Paydayı sıfır yapan değerin çözüm olamamasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o13",
+      "alt_beceri": "Varsayımlarına dayalı olarak rasyonel fonksiyonların nitel özelliklerine ilişkin örüntüleri (cebirsel, sayısal veya grafiksel) geneller.",
+      "metin": "(x − 1)/(x + 2) > 0 eşitsizliğinin çözüm kümesi hangisidir?",
+      "secenekler": [
+        "(−∞, −2) ∪ (1, ∞)",
+        "(−∞, −2) ∪ (−2, 1)",
+        "(−2, 1) ∪ (1, ∞)",
+        "(−∞, 1) ∪ (1, ∞)"
+      ],
+      "dogru_index": 0,
+      "cozum": "Pay x = 1'de, payda x = −2'de işaret değiştirir. İşaret tablosunda ifade (−∞, −2) ve (1, ∞) aralıklarında pozitiftir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel eşitsizlikte işaret tablosu nedir?",
+        "back": "Pay ve paydanın köklerine göre işaretlerin belirlendiği çizelgedir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o14",
+      "alt_beceri": "Varsayımlarına dayalı olarak rasyonel fonksiyonların nitel özelliklerine ilişkin örüntüleri (cebirsel, sayısal veya grafiksel) geneller.",
+      "metin": "1/(x − 3) ≤ 0 eşitsizliğini sağlayan x değerleri için hangisi doğrudur?",
+      "secenekler": [
+        "x > 3",
+        "x ≤ 3",
+        "x < 3",
+        "x ≥ 3"
+      ],
+      "dogru_index": 2,
+      "cozum": "Pay 1 pozitif olduğundan ifadenin işareti paydaya bağlıdır. x − 3 < 0 ise x < 3 olur; x = 3'te ifade tanımsızdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kesirin işareti neye bağlıdır?",
+        "back": "Pay ve paydanın işaretlerinin oranına bağlıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o15",
+      "alt_beceri": "f) Genellemelerinin varsayımlarını karşılayıp karşılamadığını kontrol eder.",
+      "metin": "1/x + 1/(x + 1) işleminin sonucu hangisidir?",
+      "secenekler": [
+        "(2x + 1)/(x + 1)",
+        "2/(2x + 1)",
+        "(x + 1)/(x² + x)",
+        "(2x + 1)/(x² + x)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ortak payda x(x + 1) alınır: (x + 1 + x)/(x² + x) = (2x + 1)/(x² + x) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel ifadelerde toplamanın adımı nedir?",
+        "back": "Ortak paydaya getirilip payların toplanmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o16",
+      "alt_beceri": "f) Genellemelerinin varsayımlarını karşılayıp karşılamadığını kontrol eder.",
+      "metin": "2/(x − 1) − 1/(x + 1) işleminin sonucu hangisidir?",
+      "secenekler": [
+        "(x + 1)/(x² − 1)",
+        "(x + 3)/(x² − 1)",
+        "(x − 3)/(x² − 1)",
+        "1/(x² − 1)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ortak payda (x − 1)(x + 1) = x² − 1'dir. Pay: 2(x + 1) − (x − 1) = x + 3 olduğundan sonuç (x + 3)/(x² − 1) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kare farkının çarpanlarına ayrılışı nedir?",
+        "back": "x² − a² = (x − a)(x + a) biçimidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o17",
+      "alt_beceri": "g) Genellemelerinden elde ettiği önermeleri uygun sözel veya cebirsel dil ile sunar.",
+      "metin": "(x²/4) · (2/x) işleminin x ≠ 0 için sonucu hangisidir?",
+      "secenekler": [
+        "x/2",
+        "2x",
+        "x/8",
+        "2/x"
+      ],
+      "dogru_index": 0,
+      "cozum": "Paylar ve paydalar çarpıldığında 2x²/4x elde edilir; sadeleştirildiğinde x/2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel ifadelerde çarpmanın kuralı nedir?",
+        "back": "Payların ve paydaların ayrı ayrı çarpılmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o18",
+      "alt_beceri": "g) Genellemelerinden elde ettiği önermeleri uygun sözel veya cebirsel dil ile sunar.",
+      "metin": "((x² − 1)/x) ÷ ((x − 1)/x²) işleminin sonucu hangisidir?",
+      "secenekler": [
+        "x(x − 1)",
+        "x + 1",
+        "x(x + 1)",
+        "x²"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bölmede ikinci kesir ters çevrilip çarpılır: ((x − 1)(x + 1)/x) · (x²/(x − 1)) = x(x + 1) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel ifadelerde bölmenin kuralı nedir?",
+        "back": "İkinci kesrin ters çevrilip çarpılmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o19",
+      "alt_beceri": "ğ) Elde ettiği önermelerin gerçek yaşam bağlamlarındaki kullanışlılığını değerlendirir.",
+      "metin": "Bir işi A makinesi 6 saatte, B makinesi 3 saatte bitirmektedir. İkisi birlikte çalıştığında iş kaç saatte biter?",
+      "secenekler": [
+        "3",
+        "2",
+        "4,5",
+        "9"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bir saatte yapılan iş miktarları 1/6 ve 1/3'tür; toplamları 1/6 + 2/6 = 1/2 olur. İş 2 saatte biter.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İş problemi hangi rasyonel modelle çözülür?",
+        "back": "Birim zamanda yapılan işlerin toplanmasıyla."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o20",
+      "alt_beceri": "ğ) Elde ettiği önermelerin gerçek yaşam bağlamlarındaki kullanışlılığını değerlendirir.",
+      "metin": "Bir havuzu iki musluktan biri 4 saatte, diğeri 12 saatte doldurmaktadır. İkisi birlikte açıldığında havuz kaç saatte dolar?",
+      "secenekler": [
+        "6",
+        "8",
+        "16",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bir saatte dolan miktar 1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3'tür. Havuz 3 saatte dolar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birlikte çalışma oranı nedir?",
+        "back": "Birim zamandaki iş miktarlarının toplamıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o21",
+      "alt_beceri": "h) Önermelerini grafiksel olarak doğrular veya cebirsel olarak ispatlar.",
+      "metin": "60 km'lik yolu ortalama 40 km/sa hızla giden bir araç yolu kaç saatte tamamlar?",
+      "secenekler": [
+        "1,2",
+        "1,5",
+        "2",
+        "2,5"
+      ],
+      "dogru_index": 1,
+      "cozum": "Süre, yolun hıza oranıdır: t = 60/40 = 1,5 saat bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hız-yol-süre bağıntısı nedir?",
+        "back": "Yol, hız ile sürenin çarpımına eşittir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o22",
+      "alt_beceri": "h) Önermelerini grafiksel olarak doğrular veya cebirsel olarak ispatlar.",
+      "metin": "t(v) = 120/v fonksiyonu 120 km'lik yolun ortalama hıza göre süresini verir. Hız iki katına çıkarıldığında süre için hangisi doğrudur?",
+      "secenekler": [
+        "Süre iki katına çıkar.",
+        "Süre değişmez.",
+        "Süre dört katına çıkar.",
+        "Süre yarıya iner."
+      ],
+      "dogru_index": 3,
+      "cozum": "t(2v) = 120/(2v) = t(v)/2 olduğundan süre yarıya iner. Bu, ters orantının tipik özelliğidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters orantı nedir?",
+        "back": "Bir nicelik artarken diğerinin aynı oranda azaldığı ilişkidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o23",
+      "alt_beceri": "ı) Uyguladığı doğrulama veya ispat yöntemlerinin farklı durumlardaki kullanışlılığını değerlendirir.",
+      "metin": "Bir tesisin ortalama maliyeti M(x) = (2000 + 20x)/x modeliyle verilmektedir (x: üretim miktarı). Üretim miktarı çok arttığında ortalama maliyet hangi değere yaklaşır?",
+      "secenekler": [
+        "20",
+        "0",
+        "2000",
+        "100"
+      ],
+      "dogru_index": 0,
+      "cozum": "İfade 2000/x + 20 biçiminde yazılabilir. x büyüdükçe 2000/x sıfıra yaklaşır ve değer 20'ye yaklaşır; bu değer yatay asimptottur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortalama maliyet modelinde yatay asimptot neyi gösterir?",
+        "back": "Üretim arttıkça birim maliyetin yaklaştığı alt sınırı."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c04_o24",
+      "alt_beceri": "ı) Uyguladığı doğrulama veya ispat yöntemlerinin farklı durumlardaki kullanışlılığını değerlendirir.",
+      "metin": "Bir ilacın kandaki derişimi C(t) = 120/(t + 4) modeliyle verilmektedir. t = 8 saat sonra derişim kaç birimdir?",
+      "secenekler": [
+        "15",
+        "30",
+        "10",
+        "12"
+      ],
+      "dogru_index": 2,
+      "cozum": "C(8) = 120/(8 + 4) = 120/12 = 10 birim bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel modelde zaman büyüdükçe derişim nasıl değişir?",
+        "back": "Azalarak sıfıra yaklaşır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t04_c04_o01:flashcard",
+      "front": "Polinom nedir?",
+      "back": "Katsayıları gerçek sayı olan, negatif olmayan tam sayı kuvvetli ifadedir."
+    },
+    {
+      "id": "mat_10_t04_c04_o02:flashcard",
+      "front": "Paydayı sıfır yapan değerler ne olur?",
+      "back": "Tanım kümesinden çıkarılır ve düşey asimptot oluşturur."
+    },
+    {
+      "id": "mat_10_t04_c04_o03:flashcard",
+      "front": "Rasyonel ifade sadeleştirmesi nedir?",
+      "back": "Pay ve paydadaki ortak çarpanların yok edilmesidir."
+    },
+    {
+      "id": "mat_10_t04_c04_o04:flashcard",
+      "front": "Sadeleştirmede dışlanan değerler nedir?",
+      "back": "Paydayı sıfır yapan değerlerdir."
+    },
+    {
+      "id": "mat_10_t04_c04_o05:flashcard",
+      "front": "Düşey asimptot nedir?",
+      "back": "Paydayı sıfır yapan x değerinden geçen düşey doğrudur."
+    },
+    {
+      "id": "mat_10_t04_c04_o06:flashcard",
+      "front": "Düşey asimptot paydadan nasıl bulunur?",
+      "back": "Paydanın kökü alınarak bulunur."
+    },
+    {
+      "id": "mat_10_t04_c04_o07:flashcard",
+      "front": "Yatay asimptot nedir?",
+      "back": "x büyüdükçe fonksiyonun yaklaştığı yatay doğrudur."
+    },
+    {
+      "id": "mat_10_t04_c04_o08:flashcard",
+      "front": "Paydanın derecesi büyük olduğunda yatay asimptot nedir?",
+      "back": "y = 0 doğrusudur."
+    },
+    {
+      "id": "mat_10_t04_c04_o09:flashcard",
+      "front": "Rasyonel fonksiyonun sıfırı nasıl bulunur?",
+      "back": "Pay sıfıra eşitlenerek, paydayı sıfır yapmayan değerler alınır."
+    },
+    {
+      "id": "mat_10_t04_c04_o10:flashcard",
+      "front": "Düşey asimptot civarındaki davranış nedir?",
+      "back": "Sağdan ve soldan farklı yönlerde sonsuza gitmesidir."
+    },
+    {
+      "id": "mat_10_t04_c04_o11:flashcard",
+      "front": "Rasyonel denklemin çözüm yöntemi nedir?",
+      "back": "İçler dışlar çarpımıyla paydaların yok edilmesidir."
+    },
+    {
+      "id": "mat_10_t04_c04_o12:flashcard",
+      "front": "Rasyonel denklemde çözümün paydaya göre denetlenme nedeni nedir?",
+      "back": "Paydayı sıfır yapan değerin çözüm olamamasıdır."
+    },
+    {
+      "id": "mat_10_t04_c04_o13:flashcard",
+      "front": "Rasyonel eşitsizlikte işaret tablosu nedir?",
+      "back": "Pay ve paydanın köklerine göre işaretlerin belirlendiği çizelgedir."
+    },
+    {
+      "id": "mat_10_t04_c04_o14:flashcard",
+      "front": "Kesirin işareti neye bağlıdır?",
+      "back": "Pay ve paydanın işaretlerinin oranına bağlıdır."
+    },
+    {
+      "id": "mat_10_t04_c04_o15:flashcard",
+      "front": "Rasyonel ifadelerde toplamanın adımı nedir?",
+      "back": "Ortak paydaya getirilip payların toplanmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c04_o16:flashcard",
+      "front": "İki kare farkının çarpanlarına ayrılışı nedir?",
+      "back": "x² − a² = (x − a)(x + a) biçimidir."
+    },
+    {
+      "id": "mat_10_t04_c04_o17:flashcard",
+      "front": "Rasyonel ifadelerde çarpmanın kuralı nedir?",
+      "back": "Payların ve paydaların ayrı ayrı çarpılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c04_o18:flashcard",
+      "front": "Rasyonel ifadelerde bölmenin kuralı nedir?",
+      "back": "İkinci kesrin ters çevrilip çarpılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c04_o19:flashcard",
+      "front": "İş problemi hangi rasyonel modelle çözülür?",
+      "back": "Birim zamanda yapılan işlerin toplanmasıyla."
+    },
+    {
+      "id": "mat_10_t04_c04_o20:flashcard",
+      "front": "Birlikte çalışma oranı nedir?",
+      "back": "Birim zamandaki iş miktarlarının toplamıdır."
+    },
+    {
+      "id": "mat_10_t04_c04_o21:flashcard",
+      "front": "Hız-yol-süre bağıntısı nedir?",
+      "back": "Yol, hız ile sürenin çarpımına eşittir."
+    },
+    {
+      "id": "mat_10_t04_c04_o22:flashcard",
+      "front": "Ters orantı nedir?",
+      "back": "Bir nicelik artarken diğerinin aynı oranda azaldığı ilişkidir."
+    },
+    {
+      "id": "mat_10_t04_c04_o23:flashcard",
+      "front": "Ortalama maliyet modelinde yatay asimptot neyi gösterir?",
+      "back": "Üretim arttıkça birim maliyetin yaklaştığı alt sınırı."
+    },
+    {
+      "id": "mat_10_t04_c04_o24:flashcard",
+      "front": "Rasyonel modelde zaman büyüdükçe derişim nasıl değişir?",
+      "back": "Azalarak sıfıra yaklaşır."
+    }
+  ]
+}

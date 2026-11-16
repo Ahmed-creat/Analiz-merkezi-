@@ -1,14 +1,14 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 20:28 (UTC)
+> Güncelleme: 2026-11-16 20:40 (UTC)
 
 ## Ders bazında
 
 | Ders | Havuz (tamam/toplam) | Soru | Hedef | Kart | Görselli soru |
 | --- | --- | --- | --- | --- | --- |
 | Türk Dili ve Edebiyatı | 0/16 | 0 | 188 | 0 | 0 |
-| Matematik | 0/21 | 0 | 274 | 0 | 0 |
+| Matematik | 21/21 | 274 | 274 | 274 | 22 |
 | Fizik | 22/22 | 220 | 220 | 220 | 27 |
 | Kimya | 21/21 | 215 | 214 | 215 | 46 |
 | Biyoloji | 19/19 | 190 | 190 | 190 | 38 |
@@ -16,9 +16,9 @@
 | Coğrafya | 0/18 | 0 | 190 | 0 | 0 |
 | Felsefe | 0/10 | 0 | 100 | 0 | 0 |
 | Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **62/158** | **625** | **1686** | **625** | **111** |
+| **TOPLAM** | **83/158** | **899** | **1686** | **899** | **133** |
 
-İlerleme: **%37** (625/1686 soru) · kart 1:1 ✔
+İlerleme: **%53** (899/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -43,32 +43,6 @@
 | `edebiyat_10_t04_c02` | TDE4.2 | 16 | yok |
 | `edebiyat_10_t04_c03` | TDE4.3 | 16 | yok |
 | `edebiyat_10_t04_c04` | TDE4.4 | 10 | yok |
-
-### Matematik
-
-| konu_id | kod | hedef soru | durum |
-| --- | --- | --- | --- |
-| `mat_10_t01_c01` | MAT.10.1.1 | 10 | yok |
-| `mat_10_t01_c02` | MAT.10.1.2 | 10 | yok |
-| `mat_10_t01_c03` | MAT.10.1.3 | 10 | yok |
-| `mat_10_t01_c04` | MAT.10.1.4 | 10 | yok |
-| `mat_10_t02_c01` | MAT.10.2.1 | 16 | yok |
-| `mat_10_t02_c02` | MAT.10.2.2 | 10 | yok |
-| `mat_10_t03_c01` | MAT.10.3.1 | 10 | yok |
-| `mat_10_t03_c02` | MAT.10.3.2 | 14 | yok |
-| `mat_10_t03_c03` | MAT.10.3.3 | 14 | yok |
-| `mat_10_t04_c01` | MAT.10.4.1 | 10 | yok |
-| `mat_10_t04_c02` | MAT.10.4.2 | 24 | yok |
-| `mat_10_t04_c03` | MAT.10.4.3 | 12 | yok |
-| `mat_10_t04_c04` | MAT.10.4.4 | 24 | yok |
-| `mat_10_t04_c05` | MAT.10.4.5 | 10 | yok |
-| `mat_10_t04_c06` | MAT.10.4.6 | 20 | yok |
-| `mat_10_t05_c01` | MAT.10.5.1 | 20 | yok |
-| `mat_10_t05_c02` | MAT.10.5.2 | 10 | yok |
-| `mat_10_t06_c01` | MAT.10.6.1 | 10 | yok |
-| `mat_10_t06_c02` | MAT.10.6.2 | 10 | yok |
-| `mat_10_t07_c01` | MAT.10.7.1 | 10 | yok |
-| `mat_10_t07_c02` | MAT.10.7.2 | 10 | yok |
 
 ### Tarih
 

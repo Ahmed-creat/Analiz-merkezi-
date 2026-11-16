@@ -1,0 +1,350 @@
+{
+  "konu_id": "mat_10_t03_c03",
+  "kod": "MAT.10.3.3",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 3,
+  "tema_adi": "Sayılar",
+  "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.161-173",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t03_c03_o01",
+      "alt_beceri": "2, 3, 4, 5, 9 ve 10 ile bölünebilme özelliklerinden hareketle bir doğal sayının 2, 3, 4, 5, 8, 9 ve 10 ile bölümünden elde edilecek kalanlara ilişkin varsayımlarda bulunur.",
+      "metin": "4a5 üç basamaklı sayısı 3 ile tam bölünebildiğine göre a'nın kaç farklı değeri vardır?",
+      "secenekler": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "dogru_index": 1,
+      "cozum": "3 ile bölünebilme için rakamlar toplamı 3'ün katı olmalıdır: 4 + a + 5 = 9 + a. a ∈ {0, 3, 6, 9} olmak üzere 4 değer bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "3 ile bölünebilme kuralı nedir?",
+        "back": "Rakamları toplamı 3'ün katı olan sayı 3 ile tam bölünür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o02",
+      "alt_beceri": "2, 3, 4, 5, 9 ve 10 ile bölünebilme özelliklerinden hareketle bir doğal sayının 2, 3, 4, 5, 8, 9 ve 10 ile bölümünden elde edilecek kalanlara ilişkin varsayımlarda bulunur.",
+      "metin": "Bir doğal sayının 5 ile bölümünden kalan 2'dir. Bu sayının birler basamağı hangisi olabilir?",
+      "secenekler": [
+        "4",
+        "6",
+        "9",
+        "7"
+      ],
+      "dogru_index": 3,
+      "cozum": "5 ile bölümünden kalan birler basamağına bağlıdır. Kalan 2 olduğunda birler basamağı 2 ya da 7'dir; seçenekler arasında 7 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "5 ile bölünebilme kuralı nedir?",
+        "back": "Birler basamağı 0 ya da 5 olan sayı 5 ile tam bölünür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o03",
+      "alt_beceri": "Aynı sayı ile bölme işleminden elde edilecek kalanlara ilişkin farklı örneklerle ilgili örüntüleri listeleyerek varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "2a34 dört basamaklı sayısı 9 ile tam bölünebildiğine göre a'nın alabileceği değerlerin toplamı kaçtır?",
+      "secenekler": [
+        "9",
+        "0",
+        "3",
+        "12"
+      ],
+      "dogru_index": 0,
+      "cozum": "Rakamlar toplamı 2 + a + 3 + 4 = 9 + a olur. a = 0 ve a = 9 değerleri sağlar; toplamları 9 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "9 ile bölünebilme kuralı nedir?",
+        "back": "Rakamları toplamı 9'un katı olan sayı 9 ile tam bölünür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o04",
+      "alt_beceri": "Aynı sayı ile bölme işleminden elde edilecek kalanlara ilişkin farklı örneklerle ilgili örüntüleri listeleyerek varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "5a47 dört basamaklı sayısı 11 ile tam bölünebildiğine göre a kaçtır?",
+      "secenekler": [
+        "7",
+        "6",
+        "8",
+        "9"
+      ],
+      "dogru_index": 2,
+      "cozum": "11 kuralında birler basamağından başlanarak (+ , −) toplanır: (7 + 5) − (4 + a) = 8 − a. Bunun 0 ya da 11'in katı olması için a = 8 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "11 ile bölünebilme kuralı nedir?",
+        "back": "Rakamların işaretli toplamı 11'in katı olan sayı 11 ile tam bölünür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o05",
+      "alt_beceri": "Oluşturduğu genellemenin kendi varsayımını karşılayıp karşılamadığını örneklerle sınar.",
+      "metin": "7a4 üç basamaklı sayısı 4 ile tam bölünebildiğine göre a'nın kaç farklı değeri vardır?",
+      "secenekler": [
+        "4",
+        "3",
+        "6",
+        "5"
+      ],
+      "dogru_index": 3,
+      "cozum": "4 ile bölünebilme son iki basamağa bağlıdır. a4 sayısı 04, 24, 44, 64, 84 için 4'e bölünür; a ∈ {0, 2, 4, 6, 8} olup 5 değer vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "4 ile bölünebilme kuralı nedir?",
+        "back": "Son iki basamağı 4'ün katı olan sayı 4 ile tam bölünür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o06",
+      "alt_beceri": "Oluşturduğu genellemenin kendi varsayımını karşılayıp karşılamadığını örneklerle sınar.",
+      "metin": "1a24 dört basamaklı sayısı 8 ile tam bölünebildiğine göre a'nın kaç farklı değeri vardır?",
+      "secenekler": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "dogru_index": 1,
+      "cozum": "8 ile bölünebilme son üç basamağa bağlıdır. 024, 424 ve 824 sayıları 8'e tam bölünür; dolayısıyla a ∈ {0, 4, 8} olup 3 değer vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "8 ile bölünebilme kuralı nedir?",
+        "back": "Son üç basamağı 8'in katı olan sayı 8 ile tam bölünür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o07",
+      "alt_beceri": "Ulaştığı sonuçlara yönelik matematiksel önermeleri doğrulayabileceği şekilde sunar.",
+      "metin": "4a2 üç basamaklı sayısı 6 ile tam bölünebildiğine göre a'nın kaç farklı değeri vardır?",
+      "secenekler": [
+        "4",
+        "3",
+        "2",
+        "5"
+      ],
+      "dogru_index": 0,
+      "cozum": "6 ile bölünebilme için sayı hem 2 hem 3 ile bölünmelidir. Sayı çift olduğundan 4 + a + 2 = 6 + a toplamının 3'ün katı olması yeterlidir: a ∈ {0, 3, 6, 9}.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "6 ile bölünebilme kuralı nedir?",
+        "back": "Sayı hem 2 hem de 3 ile tam bölünmelidir."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o08",
+      "alt_beceri": "Ulaştığı sonuçlara yönelik matematiksel önermeleri doğrulayabileceği şekilde sunar.",
+      "metin": "73a üç basamaklı sayısı 15 ile tam bölünebildiğine göre a kaçtır?",
+      "secenekler": [
+        "0",
+        "3",
+        "5",
+        "6"
+      ],
+      "dogru_index": 2,
+      "cozum": "15 ile bölünebilme için sayı 3 ve 5 ile bölünmelidir. a = 0 için rakam toplamı 10 olup 3'e bölünmez; a = 5 için toplam 15 olur ve sayı 5 ile biter. Bu nedenle a = 5'tir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "15 ile bölünebilme kuralı nedir?",
+        "back": "Sayı hem 3 hem de 5 ile tam bölünmelidir."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o09",
+      "alt_beceri": "Ulaştığı önermelerin katkısını bu sayıların en küçük ortak katlarından oluşan sayılara bölümünden kalanı bulma bağlamında değerlendirir.",
+      "metin": "Bir doğal sayının 9 ile bölümünden kalan 5'tir. Bu sayının 3 ile bölümünden kalan kaçtır?",
+      "secenekler": [
+        "1",
+        "2",
+        "0",
+        "5"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sayı 9k + 5 biçimindedir. (9k + 5) ÷ 3 işleminde 9k tam bölünür, 5'in 3 ile bölümünden kalan 2'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bölümünden kalan bilinen sayının başka bölenden kalanı nasıl bulunur?",
+        "back": "Bilinen kalan, yeni bölenle bölünerek."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o10",
+      "alt_beceri": "Ulaştığı önermelerin katkısını bu sayıların en küçük ortak katlarından oluşan sayılara bölümünden kalanı bulma bağlamında değerlendirir.",
+      "metin": "2¹⁰ sayısının 7 ile bölümünden kalan kaçtır?",
+      "secenekler": [
+        "1",
+        "4",
+        "3",
+        "2"
+      ],
+      "dogru_index": 3,
+      "cozum": "2¹⁰ = 1024'tür. 7 · 146 = 1022 olduğundan kalan 1024 − 1022 = 2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kuvvetin bölümünden kalanı bulmanın pratik yolu nedir?",
+        "back": "Küçük kuvvetlerden başlayarak kalanların periyodunu bulmak."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o11",
+      "alt_beceri": "Önermelere ilişkin matematiksel doğrulama yöntemlerini seçer ve kullanır.",
+      "metin": "3¹⁰⁰ sayısının 5 ile bölümünden kalan kaçtır?",
+      "secenekler": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "dogru_index": 1,
+      "cozum": "3'ün kuvvetlerinin 5 ile bölümünden kalanlar 3, 4, 2, 1 biçiminde 4'lü periyot izler. 100 sayısı 4'ün katı olduğundan kalan 1 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kalanların periyodu nedir?",
+        "back": "Kuvvet arttıkça kalanların belirli bir düzende tekrar etmesidir."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o12",
+      "alt_beceri": "Önermelere ilişkin matematiksel doğrulama yöntemlerini seçer ve kullanır.",
+      "metin": "Bir doğal sayının 12 ile bölümünden kalan 7'dir. Bu sayının 4 ile bölümünden kalan kaçtır?",
+      "secenekler": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sayı 12k + 7 biçimindedir. 12k dört ile tam bölünür; 7'nin 4 ile bölümünden kalan 3 olduğundan sonuç 3'tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bölenler arasındaki kat ilişkisinin kalana etkisi nedir?",
+        "back": "Küçük bölen büyük böleni tam bölüyorsa kalan da ona göre küçülür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o13",
+      "alt_beceri": "f) Önermelere ilişkin uyguladığı matematiksel doğrulama yöntemini kullanışlılığı açısından değerlendirir. 98",
+      "metin": "Üç basamaklı 2a6 sayısı 9 ile tam bölünebildiğine göre a kaçtır?",
+      "secenekler": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "dogru_index": 0,
+      "cozum": "Rakamlar toplamı 2 + a + 6 = 8 + a olur. 9'un katı olması için a = 1 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rakamları toplamı 9'un katı olan sayının bölünebilirlik özelliği nedir?",
+        "back": "9'a tam bölünmesidir."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c03_o14",
+      "alt_beceri": "f) Önermelere ilişkin uyguladığı matematiksel doğrulama yöntemini kullanışlılığı açısından değerlendirir. 98",
+      "metin": "Beş basamaklı 45a2b sayısı 10 ile tam bölünmekte ve 9 ile de tam bölünmektedir. Buna göre a + b en az kaçtır?",
+      "secenekler": [
+        "5",
+        "9",
+        "7",
+        "11"
+      ],
+      "dogru_index": 2,
+      "cozum": "10 ile bölünebilme için b = 0'dır. Rakamlar toplamı 4 + 5 + a + 2 + 0 = 11 + a olup 9'un katı olması için a = 7 seçilir. Böylece a + b = 7 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "10 ile bölünebilme kuralı nedir?",
+        "back": "Birler basamağı 0 olan sayı 10 ile tam bölünür."
+      },
+      "kazanim": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t03_c03_o01:flashcard",
+      "front": "3 ile bölünebilme kuralı nedir?",
+      "back": "Rakamları toplamı 3'ün katı olan sayı 3 ile tam bölünür."
+    },
+    {
+      "id": "mat_10_t03_c03_o02:flashcard",
+      "front": "5 ile bölünebilme kuralı nedir?",
+      "back": "Birler basamağı 0 ya da 5 olan sayı 5 ile tam bölünür."
+    },
+    {
+      "id": "mat_10_t03_c03_o03:flashcard",
+      "front": "9 ile bölünebilme kuralı nedir?",
+      "back": "Rakamları toplamı 9'un katı olan sayı 9 ile tam bölünür."
+    },
+    {
+      "id": "mat_10_t03_c03_o04:flashcard",
+      "front": "11 ile bölünebilme kuralı nedir?",
+      "back": "Rakamların işaretli toplamı 11'in katı olan sayı 11 ile tam bölünür."
+    },
+    {
+      "id": "mat_10_t03_c03_o05:flashcard",
+      "front": "4 ile bölünebilme kuralı nedir?",
+      "back": "Son iki basamağı 4'ün katı olan sayı 4 ile tam bölünür."
+    },
+    {
+      "id": "mat_10_t03_c03_o06:flashcard",
+      "front": "8 ile bölünebilme kuralı nedir?",
+      "back": "Son üç basamağı 8'in katı olan sayı 8 ile tam bölünür."
+    },
+    {
+      "id": "mat_10_t03_c03_o07:flashcard",
+      "front": "6 ile bölünebilme kuralı nedir?",
+      "back": "Sayı hem 2 hem de 3 ile tam bölünmelidir."
+    },
+    {
+      "id": "mat_10_t03_c03_o08:flashcard",
+      "front": "15 ile bölünebilme kuralı nedir?",
+      "back": "Sayı hem 3 hem de 5 ile tam bölünmelidir."
+    },
+    {
+      "id": "mat_10_t03_c03_o09:flashcard",
+      "front": "Bölümünden kalan bilinen sayının başka bölenden kalanı nasıl bulunur?",
+      "back": "Bilinen kalan, yeni bölenle bölünerek."
+    },
+    {
+      "id": "mat_10_t03_c03_o10:flashcard",
+      "front": "Kuvvetin bölümünden kalanı bulmanın pratik yolu nedir?",
+      "back": "Küçük kuvvetlerden başlayarak kalanların periyodunu bulmak."
+    },
+    {
+      "id": "mat_10_t03_c03_o11:flashcard",
+      "front": "Kalanların periyodu nedir?",
+      "back": "Kuvvet arttıkça kalanların belirli bir düzende tekrar etmesidir."
+    },
+    {
+      "id": "mat_10_t03_c03_o12:flashcard",
+      "front": "Bölenler arasındaki kat ilişkisinin kalana etkisi nedir?",
+      "back": "Küçük bölen büyük böleni tam bölüyorsa kalan da ona göre küçülür."
+    },
+    {
+      "id": "mat_10_t03_c03_o13:flashcard",
+      "front": "Rakamları toplamı 9'un katı olan sayının bölünebilirlik özelliği nedir?",
+      "back": "9'a tam bölünmesidir."
+    },
+    {
+      "id": "mat_10_t03_c03_o14:flashcard",
+      "front": "10 ile bölünebilme kuralı nedir?",
+      "back": "Birler basamağı 0 olan sayı 10 ile tam bölünür."
+    }
+  ]
+}

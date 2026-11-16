@@ -1,0 +1,295 @@
+{
+  "konu_id": "mat_10_t02_c02",
+  "kod": "MAT.10.2.2",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 2,
+  "tema_adi": "İstatistiksel Araştırma Süreci",
+  "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.128-132",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t02_c02_o01",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik istatistiksel temellendirme yapar.",
+      "metin": "Bir haber sitesi 'ankete katılanların %80'i bu ürünü tercih ediyor' başlığını atmış, ancak katılımcı sayısını belirtmemiştir. Bu yorumun incelenmesinde ilk olarak hangi bilgi aranmalıdır?",
+      "secenekler": [
+        "Haber sitesinin tasarımı ve yazı tipi",
+        "Ankete katılan kişi sayısı ve örneklemin nasıl seçildiği",
+        "Ürünün rengi ve ambalaj biçimi",
+        "Başlığın kaç harften oluştuğu ve uzunluğu"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yüzdelerin anlamlı olması için örneklem büyüklüğü ve seçim yöntemi bilinmelidir. Küçük ya da yanlı örneklemde yüzde yüksek olsa da genelleme yapılamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İstatistiksel yorumun değerlendirme ölçütleri nedir?",
+        "back": "Örneklem büyüklüğü, seçim yöntemi, veri toplama biçimi ve kaynağın güvenilirliği."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o02",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik istatistiksel temellendirme yapar.",
+      "metin": "Tabloda iki farklı anketin sonuçları verilmiştir. Buna göre hangi anketin sonucuna güvenmek daha uygundur?",
+      "secenekler": [
+        "II. anket; katılımcı sayısı az olduğu için daha güvenilirdir.",
+        "İki anket de eşit güvenilirdir.",
+        "Tablodaki bilgiler anket güvenilirliğini etkilemez.",
+        "I. anket; örneklem büyük ve rastgele seçilmiştir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Güvenilirlik için yeterli büyüklükte ve yansız (rastgele) seçilmiş örneklem gerekir. I. anket bu koşulları sağlar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Anket",
+          "Katılımcı",
+          "Seçim"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "1200",
+            "Rastgele"
+          ],
+          [
+            "II",
+            "40",
+            "Gönüllü"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Yansız örneklem nedir?",
+        "back": "Evrendeki her birimin seçilme şansının eşit olduğu örneklemdir."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o03",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik istatistiksel temellendirme yapar.",
+      "metin": "Bir gazete, bir semtte yapılan anketin sonucunu tüm ülkeye genellemiştir. Bu yorumdaki temel sorun hangisidir?",
+      "secenekler": [
+        "Yalnızca bir semtten toplanan veri ülke genelini temsil etmez.",
+        "Ankette yüzde kullanılması yanlıştır.",
+        "Anket sonuçları hiçbir zaman yorumlanamaz.",
+        "Semtte yaşayanlar ankete katılamaz."
+      ],
+      "dogru_index": 0,
+      "cozum": "Genelleme yapılacak evren ile örneklemin seçildiği grup uyumlu olmalıdır. Tek bir semt, ülke genelini temsil etmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Evren nedir?",
+        "back": "Araştırmanın sonuçlarının genelleneceği tüm birimlerin kümesidir."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o04",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik hataları ya da yanlılıkları tespit eder.",
+      "metin": "Bir metinde 'iki değişken arasında ilişki bulunduğu için biri diğerine neden olmaktadır' ifadesi yer almaktadır. Bu ifadenin tartışılmasında hangi gerekçe kullanılmalıdır?",
+      "secenekler": [
+        "İlişki varsa nedensellik her zaman vardır.",
+        "Nedensellik için yüzde hesaplamak yeterlidir.",
+        "İlişki gözlemi nedenselliği tek başına kanıtlamaz.",
+        "İlişkinin yönü önemsizdir."
+      ],
+      "dogru_index": 2,
+      "cozum": "İki değişkenin birlikte değişmesi, birinin diğerine neden olduğunu göstermez. Üçüncü bir etken her ikisini de etkiliyor olabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Nedensellik iddiasının kanıt koşulu nedir?",
+        "back": "Değişkenlerden birinin kontrollü biçimde değiştirildiği deneysel kanıt gerekir."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o05",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik hataları ya da yanlılıkları tespit eder.",
+      "metin": "Bir reklam afişinde 'kullananların %95'i memnun' ifadesi yer almaktadır. Bu ifadeyi tartışırken hangi soru sorulmalıdır?",
+      "secenekler": [
+        "Afiş hangi yazı tipiyle hazırlanmıştır?",
+        "Ürünün ambalajı hangi renktir?",
+        "Afiş kaç gün sergilenmiştir?",
+        "Memnuniyet hangi ölçütle ve kaç kişiyle belirlenmiştir?"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yüzdenin anlamlı olması için ölçütün tanımı ve örneklem büyüklüğü bilinmelidir. Aksi hâlde ifade yanıltıcı olabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yanıltıcı istatistik nedir?",
+        "back": "Eksik ya da çarpıtılmış verilerle okuyucuda yanlış izlenim oluşturan sunumdur."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o06",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik hataları ya da yanlılıkları tespit eder.",
+      "metin": "Bir araştırmada 'katılımcıların %70'i yeni uygulamayı onayladı' sonucu verilmiştir. Araştırmanın yalnızca uygulamayı kullananlara sorulduğu öğrenilmiştir. Bu durumda hangi yorum yapılabilir?",
+      "secenekler": [
+        "Sonuç kesindir; %70 yüksek bir orandır.",
+        "Sonuç yanlı olabilir; kullanmayanların görüşü alınmamıştır.",
+        "Kullanmayanların görüşü önemsizdir.",
+        "Yüzde hesabı hatalıdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Yalnızca kullananlara sorulduğunda örneklem yanlıdır; kullanmayanlar dışarıda kalmıştır. Bu nedenle sonuç tüm ilgili grubu yansıtmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yanlı örneklem nedir?",
+        "back": "Evrenin belirli bir bölümünün sistematik olarak dışarıda kaldığı örneklemdir."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o07",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları çürütür ya da kabul eder.",
+      "metin": "Bir rapor, iki kategorik değişken arasındaki ilişkiyi 'nedensel bir bağ' olarak sunmaktadır. Bu raporun güvenilirliğini değerlendirmek için hangi bilgiye bakılmalıdır?",
+      "secenekler": [
+        "Verilerin nasıl toplandığı ve başka etkenlerin kontrol edilip edilmediği",
+        "Raporun sayfa sayısı ve baskı kalitesi",
+        "Raporun kapağındaki görsel tasarım",
+        "Raporun yazıldığı şehir ve tarih"
+      ],
+      "dogru_index": 0,
+      "cozum": "Nedensel iddia için veri toplama yöntemi ve karıştırıcı değişkenlerin kontrolü incelenir. Gözleme dayalı verilerle nedensellik iddiası zayıftır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karıştırıcı değişken nedir?",
+        "back": "İncelenen iki değişkeni de etkileyerek ilişkiyi yanıltıcı gösterebilen değişkendir."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o08",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları çürütür ya da kabul eder.",
+      "metin": "Tabloda bir araştırmanın özet bilgileri verilmiştir. Buna göre araştırmanın hangi yönü güvenilirliği zayıflatır?",
+      "secenekler": [
+        "Verinin tek soruyla toplanması yerine uzun anket olması gerektiği",
+        "Tabloda üç satır bulunması",
+        "Örneklemin gönüllü ve küçük olması",
+        "Araştırmanın yazılı olması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Gönüllü katılım ve küçük örneklem yanlılık oluşturur; sonuçlar evreni temsil etmez. Sosyal medya paylaşımı da kaynağın güvenilirliğini zayıflatır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Özellik",
+          "Durum"
+        ],
+        "satirlar": [
+          [
+            "Örneklem",
+            "Gönüllü 25 kişi"
+          ],
+          [
+            "Veri toplama",
+            "Tek soru"
+          ],
+          [
+            "Kaynak",
+            "Sosyal medya paylaşımı"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Gönüllü katılımın yanlılık nedeni nedir?",
+        "back": "Belirli özelliklere sahip kişilerin katılma olasılığı daha yüksek olduğu için."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o09",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları çürütür ya da kabul eder.",
+      "metin": "Bir araştırmada iki farklı dönemde toplanan veriler karşılaştırılmış, ancak ikinci dönemde soru ifadesi değiştirilmiştir. Bu durumun sonuca etkisi için hangi yorum doğrudur?",
+      "secenekler": [
+        "Soru ifadesi değişse de sonuç aynı kalır.",
+        "Soru ifadesi değiştiği için karşılaştırma güvenilirliğini yitirir.",
+        "İkinci dönem verisi daha güvenilirdir.",
+        "İki dönemin karşılaştırılması her zaman geçerlidir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Karşılaştırılabilirlik için ölçme aracının aynı kalması gerekir. Soru ifadesi değiştiğinde farkın veriden mi yoksa sorudan mı kaynaklandığı bilinemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karşılaştırılabilir veri nedir?",
+        "back": "Aynı ölçme aracı ve yöntemle toplanmış veridir."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c02_o10",
+      "alt_beceri": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları çürütür ya da kabul eder.",
+      "metin": "Bir metinde 'bu sonuç bilimseldir, çünkü grafikle gösterilmiştir' ifadesi yer almaktadır. Bu gerekçenin değerlendirmesi hangisidir?",
+      "secenekler": [
+        "Grafik varsa araştırma kesinlikle bilimseldir.",
+        "Grafik kullanımı bilimselliği azaltır.",
+        "Grafikler yalnızca sayısal olmayan veriler için kullanılır.",
+        "Grafik görsellik sağlar; bilimsellik verinin toplanma biçimine bağlıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Görselleştirme sunumu iyileştirir; ancak bilimsel geçerlilik verinin yöntemine, örneklemine ve analizine bağlıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bilimsel geçerliliğin belirleyicisi nedir?",
+        "back": "Yöntem, örneklem, veri toplama ve analiz süreçlerinin uygunluğuna."
+      },
+      "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t02_c02_o01:flashcard",
+      "front": "İstatistiksel yorumun değerlendirme ölçütleri nedir?",
+      "back": "Örneklem büyüklüğü, seçim yöntemi, veri toplama biçimi ve kaynağın güvenilirliği."
+    },
+    {
+      "id": "mat_10_t02_c02_o02:flashcard",
+      "front": "Yansız örneklem nedir?",
+      "back": "Evrendeki her birimin seçilme şansının eşit olduğu örneklemdir."
+    },
+    {
+      "id": "mat_10_t02_c02_o03:flashcard",
+      "front": "Evren nedir?",
+      "back": "Araştırmanın sonuçlarının genelleneceği tüm birimlerin kümesidir."
+    },
+    {
+      "id": "mat_10_t02_c02_o04:flashcard",
+      "front": "Nedensellik iddiasının kanıt koşulu nedir?",
+      "back": "Değişkenlerden birinin kontrollü biçimde değiştirildiği deneysel kanıt gerekir."
+    },
+    {
+      "id": "mat_10_t02_c02_o05:flashcard",
+      "front": "Yanıltıcı istatistik nedir?",
+      "back": "Eksik ya da çarpıtılmış verilerle okuyucuda yanlış izlenim oluşturan sunumdur."
+    },
+    {
+      "id": "mat_10_t02_c02_o06:flashcard",
+      "front": "Yanlı örneklem nedir?",
+      "back": "Evrenin belirli bir bölümünün sistematik olarak dışarıda kaldığı örneklemdir."
+    },
+    {
+      "id": "mat_10_t02_c02_o07:flashcard",
+      "front": "Karıştırıcı değişken nedir?",
+      "back": "İncelenen iki değişkeni de etkileyerek ilişkiyi yanıltıcı gösterebilen değişkendir."
+    },
+    {
+      "id": "mat_10_t02_c02_o08:flashcard",
+      "front": "Gönüllü katılımın yanlılık nedeni nedir?",
+      "back": "Belirli özelliklere sahip kişilerin katılma olasılığı daha yüksek olduğu için."
+    },
+    {
+      "id": "mat_10_t02_c02_o09:flashcard",
+      "front": "Karşılaştırılabilir veri nedir?",
+      "back": "Aynı ölçme aracı ve yöntemle toplanmış veridir."
+    },
+    {
+      "id": "mat_10_t02_c02_o10:flashcard",
+      "front": "Bilimsel geçerliliğin belirleyicisi nedir?",
+      "back": "Yöntem, örneklem, veri toplama ve analiz süreçlerinin uygunluğuna."
+    }
+  ]
+}

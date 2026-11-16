@@ -1,0 +1,350 @@
+{
+  "konu_id": "mat_10_t03_c02",
+  "kod": "MAT.10.3.2",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 3,
+  "tema_adi": "Sayılar",
+  "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.149-160",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t03_c02_o01",
+      "alt_beceri": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair varsayımlarda bulunur.",
+      "metin": "24 ve 36 sayılarının en büyük ortak böleni (EBOB) kaçtır?",
+      "secenekler": [
+        "6",
+        "12",
+        "18",
+        "24"
+      ],
+      "dogru_index": 1,
+      "cozum": "24 = 2³ · 3 ve 36 = 2² · 3² olduğundan ortak asal çarpanların en küçük üsleri alınır: 2² · 3 = 12.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EBOB nedir?",
+        "back": "İki ya da daha çok sayının ortak bölenlerinin en büyüğüdür."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o02",
+      "alt_beceri": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair varsayımlarda bulunur.",
+      "metin": "İki doğal sayının ortak bölenleri 1, 2, 3 ve 6'dır. Bu iki sayı için aşağıdakilerden hangisi doğrudur?",
+      "secenekler": [
+        "Sayıların EKOK'u 6'dır.",
+        "Sayılar aralarında asaldır.",
+        "Sayıların EBOB'u 1'dir.",
+        "Sayıların EBOB'u 6'dır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Ortak bölenlerin en büyüğü EBOB olduğundan EBOB = 6'dır. Aralarında asal olmaları için tek ortak bölenin 1 olması gerekirdi.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aralarında asal sayılar nedir?",
+        "back": "1'den başka ortak böleni bulunmayan sayılardır."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o03",
+      "alt_beceri": "Farklı örneklerden elde ettiği örüntüleri listeleyerek varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "18 ve 30 sayılarının en küçük ortak katı (EKOK) kaçtır?",
+      "secenekler": [
+        "90",
+        "60",
+        "120",
+        "150"
+      ],
+      "dogru_index": 0,
+      "cozum": "18 = 2 · 3² ve 30 = 2 · 3 · 5 olduğundan ortak asal çarpanların en büyük üsleri alınır: 2 · 3² · 5 = 90.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EKOK nedir?",
+        "back": "İki ya da daha çok sayının ortak katlarının en küçüğüdür."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o04",
+      "alt_beceri": "Farklı örneklerden elde ettiği örüntüleri listeleyerek varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "Bir sayı hem 12'nin hem de 15'in katıdır. Bu sayının en küçük değeri kaçtır?",
+      "secenekler": [
+        "45",
+        "90",
+        "60",
+        "180"
+      ],
+      "dogru_index": 2,
+      "cozum": "12 = 2² · 3 ve 15 = 3 · 5 olduğundan EKOK = 2² · 3 · 5 = 60 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EKOK'un asal çarpanlarla bulunma kuralı nedir?",
+        "back": "Asal çarpanların en büyük üslerinin çarpılmasıdır."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o05",
+      "alt_beceri": "Oluşturduğu genellemelerin varsayımlarını karşılayıp karşılamadığını örneklerle sınar.",
+      "metin": "90 = 2 · 3² · 5 ve 150 = 2 · 3 · 5² olduğuna göre bu iki sayının EBOB'u kaçtır?",
+      "secenekler": [
+        "15",
+        "10",
+        "45",
+        "30"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ortak asal çarpanlar 2, 3 ve 5'tir. En küçük üsler alınır: 2¹ · 3¹ · 5¹ = 30 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpanlarla EBOB nasıl bulunur?",
+        "back": "Ortak asal çarpanların en küçük üsleri çarpılarak."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o06",
+      "alt_beceri": "Oluşturduğu genellemelerin varsayımlarını karşılayıp karşılamadığını örneklerle sınar.",
+      "metin": "84 ve 126 sayılarının EBOB'u kaçtır?",
+      "secenekler": [
+        "21",
+        "42",
+        "14",
+        "63"
+      ],
+      "dogru_index": 1,
+      "cozum": "84 = 2² · 3 · 7 ve 126 = 2 · 3² · 7 olduğundan EBOB = 2 · 3 · 7 = 42 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EBOB'un sayılara göre büyüklük sınırı nedir?",
+        "back": "Küçük sayıdan büyük olamaz."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o07",
+      "alt_beceri": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair elde ettiği genellemelere yönelik önermeler sunar.",
+      "metin": "45 = 3² · 5 ve 60 = 2² · 3 · 5 olduğuna göre bu iki sayının EKOK'u kaçtır?",
+      "secenekler": [
+        "180",
+        "90",
+        "120",
+        "900"
+      ],
+      "dogru_index": 0,
+      "cozum": "Tüm asal çarpanların en büyük üsleri alınır: 2² · 3² · 5 = 4 · 9 · 5 = 180 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpanlarla EKOK nasıl bulunur?",
+        "back": "Görülen tüm asal çarpanların en büyük üsleri çarpılarak."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o08",
+      "alt_beceri": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair elde ettiği genellemelere yönelik önermeler sunar.",
+      "metin": "12, 18 ve 24 sayılarının EKOK'u kaçtır?",
+      "secenekler": [
+        "48",
+        "144",
+        "72",
+        "36"
+      ],
+      "dogru_index": 2,
+      "cozum": "12 = 2² · 3, 18 = 2 · 3², 24 = 2³ · 3 olduğundan EKOK = 2³ · 3² = 8 · 9 = 72 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üç sayının EKOK'u nasıl hesaplanır?",
+        "back": "Üç sayıdaki tüm asal çarpanların en büyük üsleri çarpılarak."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o09",
+      "alt_beceri": "Sunduğu önermelerin gerçek yaşam durumları içeren problemlerdeki katkısını değerlendirir.",
+      "metin": "İki doğal sayının EBOB'u 6, EKOK'u 72'dir. Sayılardan biri 18 olduğuna göre diğeri kaçtır?",
+      "secenekler": [
+        "12",
+        "24",
+        "36",
+        "48"
+      ],
+      "dogru_index": 1,
+      "cozum": "a · b = EBOB · EKOK eşitliğinden 18 · b = 6 · 72 = 432 olur. Buradan b = 432 ÷ 18 = 24 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EBOB ile EKOK arasındaki bağıntı nedir?",
+        "back": "İki sayının çarpımı, EBOB ile EKOK'un çarpımına eşittir."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o10",
+      "alt_beceri": "Sunduğu önermelerin gerçek yaşam durumları içeren problemlerdeki katkısını değerlendirir.",
+      "metin": "İki doğal sayının çarpımı 1800, EBOB'u 10'dur. Bu sayıların EKOK'u kaçtır?",
+      "secenekler": [
+        "18",
+        "90",
+        "360",
+        "180"
+      ],
+      "dogru_index": 3,
+      "cozum": "a · b = EBOB · EKOK olduğundan 1800 = 10 · EKOK ve EKOK = 180 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EBOB ile EKOK'un çarpım bağıntısı nedir?",
+        "back": "İki sayının çarpımına eşit olmasıdır."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o11",
+      "alt_beceri": "Elde ettiği önermeler ile ilgili matematiksel doğrulama yöntemlerini seçer ve kullanır.",
+      "metin": "24 kg ve 36 kg un, birbirine karıştırılmadan ve artmayacak biçimde eşit ağırlıklı torbalara doldurulacaktır. Torbaların ağırlığı en fazla kaç kilogram olabilir?",
+      "secenekler": [
+        "6",
+        "12",
+        "18",
+        "4"
+      ],
+      "dogru_index": 1,
+      "cozum": "Her iki miktarı da tam bölen en büyük sayı istenir; bu EBOB'dur. EBOB(24, 36) = 12 olduğundan torbalar en fazla 12 kg olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bütünü eşit parçalara ayırma problemlerinin kavramı nedir?",
+        "back": "EBOB'dur."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o12",
+      "alt_beceri": "Elde ettiği önermeler ile ilgili matematiksel doğrulama yöntemlerini seçer ve kullanır.",
+      "metin": "Bir hastanın iki ilacından birini 8 saatte, diğerini 12 saatte bir alması gerekmektedir. İkisini birlikte aldıktan en az kaç saat sonra yine birlikte alır?",
+      "secenekler": [
+        "20",
+        "36",
+        "48",
+        "24"
+      ],
+      "dogru_index": 3,
+      "cozum": "Birlikte alma zamanları 8 ve 12'nin ortak katlarıdır. En erken süre EKOK(8, 12) = 24 saat bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birlikte tekrar etme problemlerinin kavramı nedir?",
+        "back": "EKOK'tur."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o13",
+      "alt_beceri": "f) Elde ettiği önermelere ilişkin uyguladığı matematiksel doğrulamayı kullanışlılığı açısından değerlendirir.",
+      "metin": "Bir terzi 90 cm ve 120 cm uzunluğundaki iki kumaşı eşit uzunlukta parçalara ayıracaktır. Parça uzunluğu en fazla kaç santimetre olabilir?",
+      "secenekler": [
+        "30",
+        "15",
+        "60",
+        "10"
+      ],
+      "dogru_index": 0,
+      "cozum": "Eşit parçalara ayırma istendiğinden EBOB kullanılır: EBOB(90, 120) = 30 cm bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EBOB'un gerçek yaşamdaki tipik kullanımı nedir?",
+        "back": "Bütünlerin eşit ve en büyük parçalara ayrılmasıdır."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c02_o14",
+      "alt_beceri": "f) Elde ettiği önermelere ilişkin uyguladığı matematiksel doğrulamayı kullanışlılığı açısından değerlendirir.",
+      "metin": "Üç otobüs sırasıyla 20, 30 ve 45 dakikada bir aynı duraktan kalkmaktadır. Üçü birlikte kalktıktan en az kaç dakika sonra yine birlikte kalkar?",
+      "secenekler": [
+        "90",
+        "60",
+        "180",
+        "270"
+      ],
+      "dogru_index": 2,
+      "cozum": "20 = 2² · 5, 30 = 2 · 3 · 5, 45 = 3² · 5 olduğundan EKOK = 2² · 3² · 5 = 180 dakika bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "EKOK'un gerçek yaşamdaki tipik kullanımı nedir?",
+        "back": "Farklı periyotlarla tekrar eden olayların birlikte tekrar etme zamanıdır."
+      },
+      "kazanim": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t03_c02_o01:flashcard",
+      "front": "EBOB nedir?",
+      "back": "İki ya da daha çok sayının ortak bölenlerinin en büyüğüdür."
+    },
+    {
+      "id": "mat_10_t03_c02_o02:flashcard",
+      "front": "Aralarında asal sayılar nedir?",
+      "back": "1'den başka ortak böleni bulunmayan sayılardır."
+    },
+    {
+      "id": "mat_10_t03_c02_o03:flashcard",
+      "front": "EKOK nedir?",
+      "back": "İki ya da daha çok sayının ortak katlarının en küçüğüdür."
+    },
+    {
+      "id": "mat_10_t03_c02_o04:flashcard",
+      "front": "EKOK'un asal çarpanlarla bulunma kuralı nedir?",
+      "back": "Asal çarpanların en büyük üslerinin çarpılmasıdır."
+    },
+    {
+      "id": "mat_10_t03_c02_o05:flashcard",
+      "front": "Asal çarpanlarla EBOB nasıl bulunur?",
+      "back": "Ortak asal çarpanların en küçük üsleri çarpılarak."
+    },
+    {
+      "id": "mat_10_t03_c02_o06:flashcard",
+      "front": "EBOB'un sayılara göre büyüklük sınırı nedir?",
+      "back": "Küçük sayıdan büyük olamaz."
+    },
+    {
+      "id": "mat_10_t03_c02_o07:flashcard",
+      "front": "Asal çarpanlarla EKOK nasıl bulunur?",
+      "back": "Görülen tüm asal çarpanların en büyük üsleri çarpılarak."
+    },
+    {
+      "id": "mat_10_t03_c02_o08:flashcard",
+      "front": "Üç sayının EKOK'u nasıl hesaplanır?",
+      "back": "Üç sayıdaki tüm asal çarpanların en büyük üsleri çarpılarak."
+    },
+    {
+      "id": "mat_10_t03_c02_o09:flashcard",
+      "front": "EBOB ile EKOK arasındaki bağıntı nedir?",
+      "back": "İki sayının çarpımı, EBOB ile EKOK'un çarpımına eşittir."
+    },
+    {
+      "id": "mat_10_t03_c02_o10:flashcard",
+      "front": "EBOB ile EKOK'un çarpım bağıntısı nedir?",
+      "back": "İki sayının çarpımına eşit olmasıdır."
+    },
+    {
+      "id": "mat_10_t03_c02_o11:flashcard",
+      "front": "Bütünü eşit parçalara ayırma problemlerinin kavramı nedir?",
+      "back": "EBOB'dur."
+    },
+    {
+      "id": "mat_10_t03_c02_o12:flashcard",
+      "front": "Birlikte tekrar etme problemlerinin kavramı nedir?",
+      "back": "EKOK'tur."
+    },
+    {
+      "id": "mat_10_t03_c02_o13:flashcard",
+      "front": "EBOB'un gerçek yaşamdaki tipik kullanımı nedir?",
+      "back": "Bütünlerin eşit ve en büyük parçalara ayrılmasıdır."
+    },
+    {
+      "id": "mat_10_t03_c02_o14:flashcard",
+      "front": "EKOK'un gerçek yaşamdaki tipik kullanımı nedir?",
+      "back": "Farklı periyotlarla tekrar eden olayların birlikte tekrar etme zamanıdır."
+    }
+  ]
+}

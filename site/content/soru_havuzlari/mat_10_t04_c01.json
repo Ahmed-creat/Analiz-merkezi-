@@ -1,0 +1,347 @@
+{
+  "konu_id": "mat_10_t04_c01",
+  "kod": "MAT.10.4.1",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme",
+  "kaynak": "Matematik 10 ders kitabı, s.182-196",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t04_c01_o01",
+      "alt_beceri": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) grafik ve cebirsel temsilleri üzerinden analiz eder.",
+      "metin": "Bir bağıntının fonksiyon olabilmesi için tanım kümesindeki her elemanın görüntü kümesinde kaç elemanla eşleşmesi gerekir?",
+      "secenekler": [
+        "En az 1",
+        "Tam 1",
+        "En çok 2",
+        "Sınırsız"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fonksiyon tanımı gereği tanım kümesindeki her eleman görüntü kümesinde yalnızca bir elemanla eşleşir. Bir elemanın iki farklı görüntüsü olması fonksiyon olmaktan çıkarır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fonksiyon nedir?",
+        "back": "Tanım kümesindeki her elemanı tek bir görüntüye eşleyen bağıntıdır."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o02",
+      "alt_beceri": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) grafik ve cebirsel temsilleri üzerinden analiz eder.",
+      "metin": "f(x) = 1/(x − 3) fonksiyonunun tanım kümesi hangisidir?",
+      "secenekler": [
+        "ℝ",
+        "ℝ − {0}",
+        "ℝ − {−3}",
+        "ℝ − {3}"
+      ],
+      "dogru_index": 3,
+      "cozum": "Payda sıfır olamayacağı için x − 3 ≠ 0, yani x ≠ 3 olmalıdır. Tanım kümesi gerçek sayılardan 3 çıkarılarak bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kesirli ifadede tanımsızlık nedir?",
+        "back": "Paydanın sıfır olmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o03",
+      "alt_beceri": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) grafik ve cebirsel temsilleri üzerinden analiz eder.",
+      "metin": "Tanım kümesi {1, 2, 3} olan f fonksiyonu için f(1) = 4, f(2) = 4 ve f(3) = 7'dir. Bu fonksiyonun görüntü kümesi hangisidir?",
+      "secenekler": [
+        "{4, 7}",
+        "{1, 2, 3}",
+        "{4, 4, 7}",
+        "{7}"
+      ],
+      "dogru_index": 0,
+      "cozum": "Görüntü kümesi, alınan değerlerin tekrar etmeyen biçimde yazılmasıyla oluşur. 4 iki kez alınsa da kümede bir kez yazılır; görüntü kümesi {4, 7} olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Görüntü kümesi nedir?",
+        "back": "Fonksiyonun tanım kümesindeki elemanlar için aldığı değerlerin kümesidir."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o04",
+      "alt_beceri": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) grafik ve cebirsel temsilleri üzerinden analiz eder.",
+      "metin": "Tabloda f fonksiyonunun bazı değerleri verilmiştir. Buna göre f(3) + f(1) kaçtır?",
+      "secenekler": [
+        "13",
+        "19",
+        "16",
+        "11"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tablodan f(3) = 11 ve f(1) = 5 okunur. Toplamları 11 + 5 = 16 bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "x",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "satirlar": [
+          [
+            "f(x)",
+            "5",
+            "8",
+            "11",
+            "14"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Girdi-çıktı eşleştirmesi nedir?",
+        "back": "Her x değerinin karşısına f(x) değerinin yazılmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o05",
+      "alt_beceri": "Gerçek sayılarda tanımlı fonksiyonların grafik ve cebirsel temsillerini fonksiyon olma şartları ve fonksiyonların nitel özellikleri bakımından karşılaştırır.",
+      "metin": "f(x) = 3x + 2 fonksiyonu gerçek sayılarda tanımlıdır. Bu fonksiyonun artan ya da azalan olma durumu için hangisi doğrudur?",
+      "secenekler": [
+        "Katsayı 3 pozitif olduğu için daima azalandır.",
+        "Önce artar sonra azalır.",
+        "Sabit fonksiyondur.",
+        "Katsayı 3 pozitif olduğu için daima artandır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Doğrusal fonksiyonda eğim (x'in katsayısı) pozitifse fonksiyon artandır. 3 > 0 olduğundan f daima artan bir fonksiyondur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Artan fonksiyon nedir?",
+        "back": "Tanım kümesinde x büyüdükçe değeri büyüyen fonksiyondur."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o06",
+      "alt_beceri": "Gerçek sayılarda tanımlı fonksiyonların grafik ve cebirsel temsillerini fonksiyon olma şartları ve fonksiyonların nitel özellikleri bakımından karşılaştırır.",
+      "metin": "Grafikte tanım kümesi [0, 5] olan bir f fonksiyonu verilmiştir. Grafiğe göre fonksiyonun en küçük değeri kaçtır?",
+      "secenekler": [
+        "0",
+        "1",
+        "2",
+        "5"
+      ],
+      "dogru_index": 1,
+      "cozum": "Grafikte en alt nokta (2, 1) noktasıdır. Bu nedenle fonksiyonun en küçük değeri 1'dir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x",
+        "yEkseni": "f(x)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "f",
+            "noktalar": [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                10
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Fonksiyonun minimum değeri nedir?",
+        "back": "Grafiğin en alt noktasının y değeridir."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o07",
+      "alt_beceri": "Gerçek sayılarda tanımlı fonksiyonların grafik ve cebirsel temsillerini fonksiyon olma şartları ve fonksiyonların nitel özellikleri bakımından karşılaştırır.",
+      "metin": "Grafikte tanım kümesi [0, 5] olan bir f fonksiyonu verilmiştir. Grafiğe göre fonksiyon hangi aralıkta azalmaktadır?",
+      "secenekler": [
+        "(0, 2)",
+        "(2, 5)",
+        "(1, 3)",
+        "(0, 5)"
+      ],
+      "dogru_index": 0,
+      "cozum": "Grafik x = 0'dan x = 2'ye kadar iner, sonra yeniden yükselir. Bu nedenle fonksiyon (0, 2) aralığında azalandır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x",
+        "yEkseni": "f(x)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "f",
+            "noktalar": [
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                10
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Azalan fonksiyon nedir?",
+        "back": "Tanım kümesinde x büyüdükçe değeri küçülen fonksiyondur."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o08",
+      "alt_beceri": "Karşılaştırmalarından hareketle gerçek sayılarda tanımlı fonksiyonların grafik ve",
+      "metin": "Bir taksinin açılış ücreti 20 TL, her kilometre için 8 TL'dir. Gidilen yolu x ile gösteren ücret fonksiyonu f(x) = 8x + 20 olduğuna göre 5 km'lik yolculuk kaç TL tutar?",
+      "secenekler": [
+        "48",
+        "68",
+        "60",
+        "40"
+      ],
+      "dogru_index": 2,
+      "cozum": "f(5) = 8 · 5 + 20 = 40 + 20 = 60 TL bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doğrusal model nedir?",
+        "back": "Sabit başlangıç değeri ile sabit değişim oranından oluşan fonksiyondur."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o09",
+      "alt_beceri": "Karşılaştırmalarından hareketle gerçek sayılarda tanımlı fonksiyonların grafik ve",
+      "metin": "Bir depoda 500 L su bulunmaktadır. Depodan saatte 40 L su çekildiğinde kalan su miktarı V(t) = 500 − 40t fonksiyonu ile verilmektedir. Bu fonksiyonun sıfırı kaçtır?",
+      "secenekler": [
+        "10",
+        "12,5",
+        "15",
+        "20"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fonksiyonun sıfırı V(t) = 0 eşitliğini sağlayan t değeridir: 500 = 40t, t = 12,5 saat bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fonksiyonun sıfırı nedir?",
+        "back": "Fonksiyonun değerini sıfır yapan tanım kümesi elemanıdır."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c01_o10",
+      "alt_beceri": "Karşılaştırmalarından hareketle gerçek sayılarda tanımlı fonksiyonların grafik ve",
+      "metin": "Bir cep telefonunun pil yüzdesi, kullanım süresine bağlı olarak saatte 5 puan azalmaktadır. Başlangıçta pil %100 olduğuna göre pilin %40'a düşmesi kaç saat sürer?",
+      "secenekler": [
+        "10",
+        "8",
+        "20",
+        "12"
+      ],
+      "dogru_index": 3,
+      "cozum": "Pil değeri P(t) = 100 − 5t fonksiyonu ile modellenir. 40 = 100 − 5t eşitliğinden 5t = 60 ve t = 12 saat bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Azalma modeli hangi fonksiyonla ifade edilir?",
+        "back": "Başlangıç değerinden zamanla sabit miktar çıkarılan doğrusal fonksiyonla."
+      },
+      "kazanim": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t04_c01_o01:flashcard",
+      "front": "Fonksiyon nedir?",
+      "back": "Tanım kümesindeki her elemanı tek bir görüntüye eşleyen bağıntıdır."
+    },
+    {
+      "id": "mat_10_t04_c01_o02:flashcard",
+      "front": "Kesirli ifadede tanımsızlık nedir?",
+      "back": "Paydanın sıfır olmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c01_o03:flashcard",
+      "front": "Görüntü kümesi nedir?",
+      "back": "Fonksiyonun tanım kümesindeki elemanlar için aldığı değerlerin kümesidir."
+    },
+    {
+      "id": "mat_10_t04_c01_o04:flashcard",
+      "front": "Girdi-çıktı eşleştirmesi nedir?",
+      "back": "Her x değerinin karşısına f(x) değerinin yazılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c01_o05:flashcard",
+      "front": "Artan fonksiyon nedir?",
+      "back": "Tanım kümesinde x büyüdükçe değeri büyüyen fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c01_o06:flashcard",
+      "front": "Fonksiyonun minimum değeri nedir?",
+      "back": "Grafiğin en alt noktasının y değeridir."
+    },
+    {
+      "id": "mat_10_t04_c01_o07:flashcard",
+      "front": "Azalan fonksiyon nedir?",
+      "back": "Tanım kümesinde x büyüdükçe değeri küçülen fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c01_o08:flashcard",
+      "front": "Doğrusal model nedir?",
+      "back": "Sabit başlangıç değeri ile sabit değişim oranından oluşan fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c01_o09:flashcard",
+      "front": "Fonksiyonun sıfırı nedir?",
+      "back": "Fonksiyonun değerini sıfır yapan tanım kümesi elemanıdır."
+    },
+    {
+      "id": "mat_10_t04_c01_o10:flashcard",
+      "front": "Azalma modeli hangi fonksiyonla ifade edilir?",
+      "back": "Başlangıç değerinden zamanla sabit miktar çıkarılan doğrusal fonksiyonla."
+    }
+  ]
+}
