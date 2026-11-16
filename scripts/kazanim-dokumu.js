@@ -44,6 +44,12 @@ const p = s => L.push(s);
 
 p("# 10. Sınıf — Tüm Derslerin Öğrenme Çıktıları ve Süreç Bileşenleri");
 p("");
+p("> ## SÜRÜM 3");
+p("> **158 çıktı · 612 süreç · 1.686 soru · 1.686 flashcard · 44 tema**");
+p(">");
+p("> Bu blok güncellik damgasıdır. Dosyanın başında **SÜRÜM 3** yazmıyorsa");
+p("> elindeki kopya eskidir — yeniden indir.");
+p("");
 p("> **Kaynak:** MEB Türkiye Yüzyılı Maarif Modeli (TYMM) 2026 öğretim programları.");
 p("> `node scripts/kazanim-dokumu.js` üretir; elle düzenlenmez.");
 p("> Ham veri: `site/content/mufredat/meb_kazanim_10.json`");

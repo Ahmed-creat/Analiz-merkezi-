@@ -1,5 +1,15 @@
 # Soru Üretim Talimatı — 10. Sınıf (MEB TYMM 2026)
 
+> ## SÜRÜM 3
+> **Flashcard 1:1 zorunlu · Görsel soru bazında, kota yok**
+>
+> Bu blok güncellik damgasıdır. Dosyanın başında **SÜRÜM 3** yazmıyorsa
+> elindeki kopya eskidir — yeniden indir.
+>
+> Hızlı kontrol: §3'te `flashcard sayısı = soru sayısı` satırı **varsa** güncel,
+> §8 başlığı **"Görsel — isteğe bağlı değil, soru başına karar"** ise güncel.
+> Bu satırlar yoksa eski sürümdesin (2 dosyalık ilk paket 480 satırdı, bu sürüm 610+).
+
 > Bu **tek** talimat dosyasıdır: yöntem, kurallar, JSON şeması, dal/PR akışı,
 > kabul testleri — hepsi burada. Kazanım verisi ayrı dosyada:
 > **`docs/uretim/TUM-KAZANIMLAR-10SINIF.md`**
