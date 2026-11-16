@@ -3,7 +3,12 @@
 const fs = require("fs");
 const path = require("path");
 
-const dir = path.join(process.cwd(), "content", "soru_havuzlari");
+// YAYINLANAN dizin esastır: Vercel `site/` klasörünü yayımlar
+// (deploy/build.sh). Kök `content/` eski bir kopyadır; burada onu
+// doğrulamak "geçti" yanılsaması üretiyordu.
+const SITE_DIR = path.join(process.cwd(), "site", "content", "soru_havuzlari");
+const KOK_DIR = path.join(process.cwd(), "content", "soru_havuzlari");
+const dir = fs.existsSync(SITE_DIR) ? SITE_DIR : KOK_DIR;
 if (!fs.existsSync(dir)) {
   console.log("Soru havuzu dizini yok; havuzsuz bozulmuş mod geçerli.");
   process.exit(0);
