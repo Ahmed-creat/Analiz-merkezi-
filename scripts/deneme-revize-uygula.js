@@ -292,65 +292,34 @@ function calistir(revizeYol, orijinalYol, yaz) {
       return { pdfAd: d.pdfAd, ders: kanon || d.pdfAd, kanonik: !!kanon, kap: kap, d: dd, w: ww, e: ee, net: d.net, yanlis: d.yanlis, bos: d.bos, notlar: notlar, listeW: listeW, listeE: listeE };
     });
 
-    /* --- kapasite onarımı ---------------------------------------------------
-       Uygulamanın ders azamileri SABİT (TDE 30 · Mat 30 · Fiz/Kim/Biyo 10 ·
-       Tar/Coğ 12 · Din 6 = 120). Belge bir derse azamiden fazla soru yazmışsa
-       fazlalık, azami altındaki derse TAŞINIR — D/Y/B türü korunarak.
-       Toplam soru ve toplam net DEĞİŞMEZ. Belgenin yazdığı sayılar
-       _tutarsizliklar içinde aynen saklanır. Tek bir alıcı/verici yoksa
-       veya aktarım kapasiteyi çözmüyorsa veri OLDUĞU GİBİ bırakılır. --- */
-    const belgeDegerleri = dersler.map((x) => x.pdfAd + " " + x.d + "D/" + x.w + "Y/" + x.e + "B");
-    const tasima = [];
-    let cozuldu = true;
-
-    for (let tur = 0; tur < 8; tur++) {
-      const asan = dersler.filter((x) => x.kap && x.d + x.w + x.e > x.kap);
-      const eksik = dersler.filter((x) => x.kap && x.d + x.w + x.e < x.kap);
-      if (!asan.length) { cozuldu = true; break; }
-      if (asan.length !== 1 || eksik.length !== 1) { cozuldu = false; break; }
-      const A = asan[0], E = eksik[0];
-      const fazla = (A.d + A.w + A.e) - A.kap;
-      const yer = E.kap - (E.d + E.w + E.e);
-      if (fazla > yer) { cozuldu = false; break; }
-
-      let kalan = fazla;
-      for (const tip of ["d", "w", "e"]) {
-        const k = Math.min(A[tip], kalan);
-        if (k > 0) {
-          A[tip] -= k; E[tip] += k; kalan -= k;
-          tasima.push({ adet: k, tip: tip.toUpperCase(), kimden: A.pdfAd, kime: E.pdfAd });
-        }
+    /* --- SINA V BAZLI DERS KAPASİTESİ ---------------------------------------
+       Yayın kurulu bir sınavda soru dağılımını değiştirebilir: ör. Gis-3'te
+       Tarih 14, Din Kültürü 4 (genel azami 12 ve 6). Bu bir HATA DEĞİL,
+       o sınavın kendi tasarımıdır — orijinal karne de Tarih'i 14 soru
+       üzerinden hesaplamıştır.
+       Bu yüzden: soru TAŞINMAZ. Dersin toplam soru sayısı uygulamanın genel
+       azamisinden farklıysa sınavın `ders_azami` alanına o sınavın kendi
+       azamisi yazılır ve gerekçesi _tutarsizliklar'a düşer.
+       Sınavın TOPLAMI yine 120 olmalıdır. --- */
+    const dersAzami = {};
+    const sapmalar = [];
+    for (const x of dersler) {
+      if (!x.kap) continue;
+      const toplam = x.d + x.w + x.e;
+      if (toplam !== x.kap) {
+        dersAzami[x.ders] = toplam;
+        sapmalar.push(x.pdfAd + " " + toplam + " soru (genel azami " + x.kap + ")");
       }
-      if (kalan > 0) { cozuldu = false; break; }
     }
-
-    if (!tasima.length) {
-      /* taşıma gerekmedi */
-    } else if (cozuldu) {
+    if (sapmalar.length) {
       tutarsizliklar.push({
-        sinav: id, ders: asanDers(dersler, tasima[0].kimden),
-        soru: null, azami: null,
-        aciklama: "Belgede ders azamisi aşılmış: " + tasima.map((t) => t.kimden + "→" + t.kime + " " + t.adet + t.tip).join(", ") +
-          " taşındı. Toplam soru (120) ve toplam net DEĞİŞMEDİ. Belgenin yazdığı değerler: " + belgeDegerleri.join(" · ")
+        sinav: id, ders: null, soru: null, azami: null, tur: "sinav-bazli-dagilim",
+        aciklama: "Bu sınavda soru dağılımı genel azamiden farklı: " + sapmalar.join(" · ") +
+          ". Bu bir HATA DEĞİL: yayın kurulu o sınav için dağılımı özel tasarlamış, orijinal " +
+          "karne de o sayılar üzerinden hesaplanmıştır. Soru taşınmadı; sınavın kendi dağılımı " +
+          "korundu (`ders_azami` alanı). Toplam soru sayısı " +
+          dersler.reduce((a, x) => a + x.d + x.w + x.e, 0) + ", genel net " + (s.genel && s.genel.net != null ? s.genel.net : "-") + "."
       });
-    } else {
-      /* çözülemedi → geri al, olduğu gibi bırak, beyan et */
-      for (const t of tasima.slice().reverse()) {
-        const A = dersler.find((x) => x.pdfAd === t.kimden);
-        const E = dersler.find((x) => x.pdfAd === t.kime);
-        const tip = t.tip.toLowerCase();
-        A[tip] += t.adet; E[tip] -= t.adet;
-      }
-      tasima.length = 0;
-      const asan = dersler.filter((x) => x.kap && x.d + x.w + x.e > x.kap);
-      for (const A of asan) {
-        tutarsizliklar.push({
-          sinav: id, ders: asanDers(dersler, A.pdfAd),
-          soru: A.d + A.w + A.e, azami: A.kap,
-          aciklama: "Ders azami soru sayısını aşıyor (" + (A.d + A.w + A.e) + " > " + A.kap +
-            "), kapasiteye oturtulamadı. Veri kırpılmadı, belgedeki gibi bırakıldı."
-        });
-      }
     }
 
     /* --- sınav düzeyi kontroller --- */
@@ -413,6 +382,7 @@ function calistir(revizeYol, orijinalYol, yaz) {
       kaynak: "9. sınıf deneme revize dökümü · " + s.tarihHam,
       bilinen_soru: toplamSoru
     };
+    if (Object.keys(dersAzami).length) kayit.ders_azami = dersAzami;
     for (const x of dersler) {
       const o = { d: x.d, w: x.w, e: x.e, net_beyan: yuvarla(x.d - x.w / 4) };
       if (Math.abs(o.net_beyan - x.net) > 0.001) o.belge_net = x.net;   // taşıma öncesi belge değeri

@@ -112,28 +112,36 @@ let bileşik = [];
     ok(etiket + " w tam sayı", Number.isInteger(v.w) && v.w >= 0, String(v.w));
     ok(etiket + " e tam sayı", Number.isInteger(v.e) && v.e >= 0, String(v.e));
     // Azami aşımı yalnızca dosyada AÇIKÇA beyan edilmişse kabul edilir.
-    const asim = v.d + v.w + v.e - LESSON_CONFIG[ders].max;
+    /* Sınav bazlı dağılım: yayın kurulu bir sınavda ders soru sayısını
+       değiştirebilir (ör. Gis-3: Tarih 14, Din 4). Bu durumda sınav kendi
+       azamisini `ders_azami` ile beyan eder ve o değer esas alınır. */
+    const azami = (ex.ders_azami && Number.isFinite(ex.ders_azami[ders]))
+      ? ex.ders_azami[ders] : LESSON_CONFIG[ders].max;
+    const asim = v.d + v.w + v.e - azami;
     if (asim > 0) {
       const beyan = (veri._tutarsizliklar || []).some(
         t => t.sinav === ex.id && t.ders === ders);
       ok(etiket + " azami aşımı beyan edilmiş", beyan,
-        (v.d + v.w + v.e) + " > " + LESSON_CONFIG[ders].max + " (beyan yok)");
+        (v.d + v.w + v.e) + " > " + azami + " (beyan yok)");
     } else ok(etiket + " azamiyi aşmıyor", true);
+
+    // Sınav bazlı dağılım varsa gerekçesi _tutarsizliklar'da olmalı.
+    if (ex.ders_azami && Number.isFinite(ex.ders_azami[ders])) {
+      const gerekce = (veri._tutarsizliklar || []).some(
+        x => x.sinav === ex.id && x.tur === "sinav-bazli-dagilim");
+      ok(etiket + " sınav bazlı dağılım gerekçeli", gerekce, "ders_azami var, gerekçe yok");
+    }
     // Toplam 120 ve genel net tutuyorsa her ders azamisini DOLDURMALI.
     if (veri._revizyon) {
       const toplam = Object.values(ex.lessons || {}).reduce((a, x) => a + x.d + x.w + x.e, 0);
-      ok(etiket + " kapasite tam", v.d + v.w + v.e === LESSON_CONFIG[ders].max || toplam !== 120,
-        (v.d + v.w + v.e) + " ≠ " + LESSON_CONFIG[ders].max + " (ders toplamı " + toplam + ")");
+      ok(etiket + " kapasite tam", v.d + v.w + v.e === azami || toplam !== 120,
+        (v.d + v.w + v.e) + " ≠ " + azami + " (ders toplamı " + toplam + ")");
     }
     if (Number.isFinite(v.net_beyan)) {
       const fark = Math.abs(netOf(v.d, v.w) - v.net_beyan);
       ok(etiket + " net beyana yakın", fark <= 0.25 + 1e-9, "fark " + fark.toFixed(2));
     }
-    // Taşıma yapıldıysa belgenin özgün neti kaybolmamalı.
-    if (Number.isFinite(v.belge_net)) {
-      const beyan = (veri._tutarsizliklar || []).some(t => t.sinav === ex.id);
-      ok(etiket + " belge_net beyanlı", beyan, "belge_net " + v.belge_net + " ama tutarsızlık kaydı yok");
-    }
+
   });
 });
 ok("bileşik satır yalnız 2 sınavda", new Set(bileşik).size <= 2, [...new Set(bileşik)].join(", "));

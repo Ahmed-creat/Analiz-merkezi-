@@ -266,6 +266,22 @@ PDF'te olmayan bir dersin gerçek dağılımını biliyorsan
 `docs/veri/eksik-dersler.json` dosyasını doldur — betik onu türetme yerine
 kullanır ve `"kaynak": "elle"` yazar.
 
+### Sınav bazlı ders dağılımı (`ders_azami`)
+
+Yayın kurulu bir sınavda soru dağılımını genel azamiden farklı tasarlayabilir.
+Örnek: **Gis-3** — Tarih 14, Din Kültürü 4 (genel azami 12 ve 6). Orijinal karne
+de Tarih'i 14 soru üzerinden hesaplamıştır.
+
+Bu bir hata **değildir** ve soru **taşınmaz**. Sınav kendi azamisini bildirir:
+
+```json
+"ders_azami": { "Tarih": 14, "Din Kültürü": 4 }
+```
+
+Test, azami kontrolünü önce `ders_azami` ile yapar; yoksa `LESSON_CONFIG`.
+Sınav bazlı dağılım varsa `_tutarsizliklar` içinde `tur: "sinav-bazli-dagilim"`
+kaydı **zorunludur**. Sınavın toplam soru sayısı yine 120 olmalıdır.
+
 ### Beyanlı tutarsızlıklar
 
 PDF kendi içinde çelişebilir (örn. `27,50 net` + `3 yanlış` → 31,25 soru, azami 30).
@@ -278,7 +294,7 @@ aritmetik toleransını gevşetir — beyansız bir sapma **testi düşürür**.
 ## 5. Kontrol
 
 ```bash
-node tests/deneme-ice-aktarma.test.js     # 378 doğrulama
+node tests/deneme-ice-aktarma.test.js     # 564 doğrulama
 node tests/deneme-import-butonu.test.js   # 26 doğrulama
 # veya ikisi birden:
 npm run -s test:deneme
@@ -294,6 +310,8 @@ gözlem) **ve aritmetik**:
 | Σ `net_beyan` = sınavın `net`'i | **tolerans 0** — PDF'teki her ders eksiksiz |
 | Σ`(d − w/4)` = sınavın `net`'i | ≤ 0,25 (beyanlı sınavda beyan edilen sapma) |
 | Ders kapsamı | 8 dersin tamamı (birleşik satır kendi derslerini kapsar) |
+| Ders azamisi | `ders_azami` varsa o, yoksa `LESSON_CONFIG` |
+| Sınav bazlı dağılım | `ders_azami` varsa gerekçe kaydı zorunlu |
 
 **`deneme-import-butonu`:** `importData`yı `index.html`'den çıkarıp sahte DOM'da
 çalıştırır — birleştirme modunda profil/konu/hafıza/BKT/plan korunuyor mu,

@@ -83,10 +83,11 @@
   },
   {
    "sinav": "pdf9-05",
-   "ders": "Tarih",
+   "ders": null,
    "soru": null,
    "azami": null,
-   "aciklama": "Belgede ders azamisi aşılmış: Tarih-1→Din Kültürü 2D taşındı. Toplam soru (120) ve toplam net DEĞİŞMEDİ. Belgenin yazdığı değerler: Türkçe 22D/5Y/3B · Tarih-1 14D/0Y/0B · Coğrafya-1 10D/2Y/0B · Din Kültürü 4D/0Y/0B · Matematik-1 13D/6Y/11B · Fizik 8D/1Y/1B · Kimya 8D/1Y/1B · Biyoloji 7D/0Y/3B"
+   "tur": "sinav-bazli-dagilim",
+   "aciklama": "Bu sınavda soru dağılımı genel azamiden farklı: Tarih-1 14 soru (genel azami 12) · Din Kültürü 4 soru (genel azami 6). Bu bir HATA DEĞİL: yayın kurulu o sınav için dağılımı özel tasarlamış, orijinal karne de o sayılar üzerinden hesaplanmıştır. Soru taşınmadı; sınavın kendi dağılımı korundu (`ders_azami` alanı). Toplam soru sayısı 120, genel net 82.25."
   },
   {
    "sinav": "pdf9-06",
@@ -1680,11 +1681,10 @@
       "net_beyan": 20.75
      },
      "Tarih": {
-      "d": 12,
+      "d": 14,
       "w": 0,
       "e": 0,
-      "net_beyan": 12,
-      "belge_net": 14
+      "net_beyan": 14
      },
      "Coğrafya": {
       "d": 10,
@@ -1693,11 +1693,10 @@
       "net_beyan": 9.5
      },
      "Din Kültürü": {
-      "d": 6,
+      "d": 4,
       "w": 0,
       "e": 0,
-      "net_beyan": 6,
-      "belge_net": 4
+      "net_beyan": 4
      },
      "Matematik": {
       "d": 13,
@@ -1994,6 +1993,10 @@
     "net": 82.25,
     "kaynak": "9. sınıf deneme revize dökümü · 14 Mart 2026",
     "bilinen_soru": 120,
+    "ders_azami": {
+     "Tarih": 14,
+     "Din Kültürü": 4
+    },
     "kazanim_farki": [
      {
       "ders": "Biyoloji",
