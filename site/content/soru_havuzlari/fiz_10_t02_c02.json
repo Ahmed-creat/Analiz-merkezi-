@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t02_c02",
+  "kod": "FİZ.10.2.2",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 2,
+  "tema_adi": "Enerji",
+  "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.128-143",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t02_c02_o01",
+      "alt_beceri": "İş, enerji ve güç kavramları hakkında mevcut bilgisi dâhilinde hipotez kurar.",
+      "metin": "Bir vinç 2 dakika boyunca toplam 24 000 J'lük iş yapmıştır. Vincin gücü kaç W'tır?",
+      "secenekler": [
+        "120",
+        "200",
+        "480",
+        "12 000"
+      ],
+      "dogru_index": 1,
+      "cozum": "Süre 2 dakika = 120 saniyedir. P = W / t = 24 000 J / 120 s = 200 W bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gücün matematiksel modelini yazınız.",
+        "back": "P = W / t; yapılan işin geçen süreye bölümü."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o02",
+      "alt_beceri": "İş, enerji ve güç kavramları hakkında mevcut bilgisi dâhilinde hipotez kurar.",
+      "metin": "Aynı yükü aynı yüksekliğe çıkaran iki vinçten biri işi daha kısa sürede tamamlamıştır. Bu iki vinç için hangisi doğrudur?",
+      "secenekler": [
+        "Yaptıkları iş ve güçleri eşittir.",
+        "Kısa sürede çalışan vinç daha az iş yapmıştır.",
+        "Kısa sürede çalışan vincin gücü daha küçüktür.",
+        "Yapılan işler eşittir; kısa sürede çalışan vincin gücü daha büyüktür."
+      ],
+      "dogru_index": 3,
+      "cozum": "Aynı yük aynı yüksekliğe çıkarıldığı için yapılan işler eşittir. Güç, işin yapılma süresiyle ters orantılı olduğundan işi kısa sürede yapan vincin gücü daha büyüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Güç, iş ve süre arasındaki orantı ilişkisi nedir?",
+        "back": "Güç işle doğru, işin yapılma süresiyle ters orantılıdır."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o03",
+      "alt_beceri": "İş, enerji ve güç kavramlarına yönelik ilişkileri listeler.",
+      "metin": "İş, enerji ve güç kavramları arasındaki ilişkilerle ilgili aşağıdakilerden hangisi yanlıştır?",
+      "secenekler": [
+        "Güç, cismin kütlesiyle doğru orantılıdır.",
+        "Yapılan net iş, cismin enerjisindeki değişime eşittir.",
+        "Güç, yapılan iş ile doğru orantılıdır.",
+        "Güç, işin yapılma süresiyle ters orantılıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Güç; yapılan iş ve süreye bağlıdır, cismin kütlesiyle doğru orantılı olduğu söylenemez. Diğer ilişkiler iş-enerji teoremi ve güç tanımıyla uyumludur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Net iş ile enerji değişimi arasındaki ilişkiyi yazınız.",
+        "back": "W_net = ΔE = E_son − E_ilk."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o04",
+      "alt_beceri": "İş, enerji ve güç kavramlarına yönelik ilişkileri listeler.",
+      "metin": "Bir cismin enerjisi 40 J'den 90 J'ye çıkmıştır. Cisim üzerinde yapılan net iş kaç J'dür?",
+      "secenekler": [
+        "130",
+        "40",
+        "50",
+        "90"
+      ],
+      "dogru_index": 2,
+      "cozum": "İş-enerji teoremine göre net iş enerji değişimine eşittir: 90 − 40 = 50 J.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerjiyi tanımlayınız.",
+        "back": "İş yapabilme yeteneğidir."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o05",
+      "alt_beceri": "İş, enerji ve güç kavramlarını karşılaştırır.",
+      "metin": "İş, enerji ve güç kavramlarının birimleri için hangisi doğrudur?",
+      "secenekler": [
+        "İş: watt, enerji: joule, güç: newton",
+        "İş: joule, enerji: joule, güç: watt",
+        "İş: newton, enerji: watt, güç: joule",
+        "Üçünün de birimi joule'dür."
+      ],
+      "dogru_index": 1,
+      "cozum": "İş ve enerji aynı birime sahiptir ve joule ile ölçülür. Güç ise işin zamana bölümü olduğu için birimi watt'tır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gücün SI birimindeki birimi nedir?",
+        "back": "Watt (W); 1 W = 1 J/s."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o06",
+      "alt_beceri": "İş, enerji ve güç kavramlarını karşılaştırır.",
+      "metin": "2000 W gücünde bir elektrikli ısıtıcı 30 saniye çalıştırılmıştır. Isıtıcının harcadığı enerji kaç joule'dür?",
+      "secenekler": [
+        "67",
+        "2000",
+        "30 000",
+        "60 000"
+      ],
+      "dogru_index": 3,
+      "cozum": "Enerji, güç ile sürenin çarpımına eşittir: 2000 W · 30 s = 60 000 J.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerjinin SI birimindeki birimi nedir?",
+        "back": "Joule (J)."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o07",
+      "alt_beceri": "İş ve güç kavramları arasındaki ilişkiye yönelik önermelerde bulunur.",
+      "metin": "Aynı işi yapan K ve L makinelerinden K, işi L'nin yarısı kadar sürede tamamlamaktadır. K'nin gücü L'ninkinin kaç katıdır?",
+      "secenekler": [
+        "2",
+        "0,5",
+        "4",
+        "Eşittir"
+      ],
+      "dogru_index": 0,
+      "cozum": "Aynı işte güç süreyle ters orantılıdır. K'nin süresi yarı olduğundan gücü iki katıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İş ile güç arasındaki fark nedir?",
+        "back": "İş yapılan toplam etkidir; güç bu işin birim zamandaki hızıdır."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o08",
+      "alt_beceri": "İş ve güç kavramları arasındaki ilişkiye yönelik önermelerde bulunur.",
+      "metin": "Bir sporcu 8 saniyede 400 J'lük iş yaparken başka bir sporcu aynı işi 16 saniyede yapmıştır. İki sporcunun güçleri için hangisi doğrudur?",
+      "secenekler": [
+        "Güçleri eşittir.",
+        "İkinci sporcunun gücü daha büyüktür.",
+        "İlk sporcunun gücü 50 W, ikincisinin 25 W'dır.",
+        "İlk sporcunun gücü 25 W, ikincisinin 50 W'dır."
+      ],
+      "dogru_index": 2,
+      "cozum": "400 J / 8 s = 50 W ve 400 J / 16 s = 25 W bulunur. Aynı işi kısa sürede yapan sporcunun gücü daha büyüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Güç ile süre arasındaki ilişki nedir?",
+        "back": "Aynı iş için süre azaldıkça güç artar (ters orantı)."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o09",
+      "alt_beceri": "Önermelerini matematiksel modele dönüştürerek değerlendirir.",
+      "metin": "Güç kavramıyla ilgili aşağıdaki önermelerden hangisi doğrudur?",
+      "secenekler": [
+        "Güç, yapılan işten bağımsızdır.",
+        "Güç, birim zamanda yapılan iştir.",
+        "Güç, işin yapılma süresiyle doğru orantılıdır.",
+        "Güç ile enerji aynı birime sahiptir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Güç, yapılan işin geçen zamana bölümü olarak tanımlanır; yani birim zamanda yapılan iştir. Birimi watt'tır ve süreyle ters orantılıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Watt ile joule/saniye arasındaki ilişki nedir?",
+        "back": "1 W = 1 J/s."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c02_o10",
+      "alt_beceri": "Önermelerini matematiksel modele dönüştürerek değerlendirir.",
+      "metin": "6000 N ağırlığındaki bir yükü 10 m yükseğe 30 saniyede çıkaran asansörün gücü kaç W'tır?",
+      "secenekler": [
+        "200",
+        "600",
+        "1000",
+        "2000"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yapılan iş 6000 N · 10 m = 60 000 J'dir. Güç = 60 000 J / 30 s = 2000 W bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Güç ile F·Δx/t arasındaki ilişki nedir?",
+        "back": "P = F · Δx / t; iş yerine kuvvet ile yer değiştirmenin çarpımı yazılır."
+      },
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t02_c02_o01:flashcard",
+      "front": "Gücün matematiksel modelini yazınız.",
+      "back": "P = W / t; yapılan işin geçen süreye bölümü."
+    },
+    {
+      "id": "fiz_10_t02_c02_o02:flashcard",
+      "front": "Güç, iş ve süre arasındaki orantı ilişkisi nedir?",
+      "back": "Güç işle doğru, işin yapılma süresiyle ters orantılıdır."
+    },
+    {
+      "id": "fiz_10_t02_c02_o03:flashcard",
+      "front": "Net iş ile enerji değişimi arasındaki ilişkiyi yazınız.",
+      "back": "W_net = ΔE = E_son − E_ilk."
+    },
+    {
+      "id": "fiz_10_t02_c02_o04:flashcard",
+      "front": "Enerjiyi tanımlayınız.",
+      "back": "İş yapabilme yeteneğidir."
+    },
+    {
+      "id": "fiz_10_t02_c02_o05:flashcard",
+      "front": "Gücün SI birimindeki birimi nedir?",
+      "back": "Watt (W); 1 W = 1 J/s."
+    },
+    {
+      "id": "fiz_10_t02_c02_o06:flashcard",
+      "front": "Enerjinin SI birimindeki birimi nedir?",
+      "back": "Joule (J)."
+    },
+    {
+      "id": "fiz_10_t02_c02_o07:flashcard",
+      "front": "İş ile güç arasındaki fark nedir?",
+      "back": "İş yapılan toplam etkidir; güç bu işin birim zamandaki hızıdır."
+    },
+    {
+      "id": "fiz_10_t02_c02_o08:flashcard",
+      "front": "Güç ile süre arasındaki ilişki nedir?",
+      "back": "Aynı iş için süre azaldıkça güç artar (ters orantı)."
+    },
+    {
+      "id": "fiz_10_t02_c02_o09:flashcard",
+      "front": "Watt ile joule/saniye arasındaki ilişki nedir?",
+      "back": "1 W = 1 J/s."
+    },
+    {
+      "id": "fiz_10_t02_c02_o10:flashcard",
+      "front": "Güç ile F·Δx/t arasındaki ilişki nedir?",
+      "back": "P = F · Δx / t; iş yerine kuvvet ile yer değiştirmenin çarpımı yazılır."
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t02_c03",
+  "kod": "FİZ.10.2.3",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 2,
+  "tema_adi": "Enerji",
+  "kazanim": "Enerji biçimlerini karşılaştırabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.144-155",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t02_c03_o01",
+      "alt_beceri": "Enerji biçimlerine ilişkin özellikleri belirler.",
+      "metin": "Terminale yaklaşan bir otobüs yavaşlamaktadır. Otobüsün kinetik enerjisi için hangisi doğrudur?",
+      "secenekler": [
+        "Hızı azaldığı için azalır.",
+        "Hızı azaldığı için artar.",
+        "Kütlesi azaldığı için artar.",
+        "Değişmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Kinetik enerji E_K = ½ · m · v² modeline göre hızın karesiyle doğru orantılıdır. Otobüs yavaşladığı için kinetik enerjisi azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kinetik enerjinin matematiksel modelini yazınız.",
+        "back": "E_K = ½ · m · v²."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o02",
+      "alt_beceri": "Enerji biçimlerine ilişkin özellikleri belirler.",
+      "metin": "Bir ok atıcısı yayı gererek oku fırlatmaya hazırlamaktadır. Yayın gerilmesiyle yayda depolanan enerji biçimi hangisidir?",
+      "secenekler": [
+        "Kinetik enerji",
+        "Kimyasal enerji",
+        "Esneklik potansiyel enerjisi",
+        "Nükleer enerji"
+      ],
+      "dogru_index": 2,
+      "cozum": "Gerilen ya da sıkıştırılan yaylarda konum değişikliği nedeniyle esneklik potansiyel enerjisi depolanır; yay serbest bırakıldığında bu enerji oka kinetik enerji olarak aktarılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Esneklik potansiyel enerjisinin depolandığı durum nedir?",
+        "back": "Yayın gerilmesi veya sıkıştırılması durumunda depolanır."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o03",
+      "alt_beceri": "Enerji biçimlerine ilişkin özellikleri belirler.",
+      "metin": "Cep telefonu şarj edilirken pilde depolanan enerji biçimi ile ilgili hangisi doğrudur?",
+      "secenekler": [
+        "Pil yalnızca mekanik enerji depolayan bir düzenektir.",
+        "Pil kimyasal enerji depolar; kullanımda elektrik enerjisine dönüşür.",
+        "Pil içindeki nükleer enerjiyi ısıya dönüştürür.",
+        "Pil yalnızca ışık enerjisi üreten bir kaynaktır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Pil ve akülerde kimyasal bağlarda depolanan kimyasal enerji bulunur. Kullanım sırasında bu enerji elektrik enerjisine dönüştürülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kimyasal enerjiyi tanımlayınız.",
+        "back": "Moleküllerin kimyasal bağlarında depolanan enerjidir."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o04",
+      "alt_beceri": "Enerji biçimlerine ilişkin benzerlikleri listeler.",
+      "metin": "Kinetik enerji ile potansiyel enerjinin benzerlikleri için hangisi doğrudur?",
+      "secenekler": [
+        "İkisi de yalnızca kimyasal tepkimelerle oluşur.",
+        "İkisi de yalnızca yüksek sıcaklıklarda görülür.",
+        "İkisi de ışık enerjisinin bir biçimidir.",
+        "İkisi de mekanik enerjinin bileşenidir ve birimleri joule'dür."
+      ],
+      "dogru_index": 3,
+      "cozum": "Mekanik enerji, kinetik ve potansiyel enerjinin toplamıdır. Her iki enerji biçiminin de SI birimi joule'dür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik enerjinin matematiksel modelini yazınız.",
+        "back": "E_M = E_K + E_P."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o05",
+      "alt_beceri": "Enerji biçimlerine ilişkin benzerlikleri listeler.",
+      "metin": "Işık, ısı ve ses enerjilerinin ortak özelliği için hangisi doğrudur?",
+      "secenekler": [
+        "Üçü de yalnızca kimyasal enerjiden elde edilir.",
+        "Üçünün de birimi joule'dür ve başka enerji biçimlerine dönüşebilirler.",
+        "Üçü de yalnızca canlılarda görülür.",
+        "Üçünün de birimi newton'dır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Işık, ısı ve ses birer enerji biçimidir; tüm enerji biçimlerinin birimi joule'dür ve bu biçimler birbirine dönüştürülebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerji biçimleri arasındaki dönüşüm nedir?",
+        "back": "Bir enerji biçiminin ihtiyaca göre başka bir enerji biçimine dönüşmesidir."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o06",
+      "alt_beceri": "Enerji biçimlerine ilişkin benzerlikleri listeler.",
+      "metin": "Elektrik enerjisi ile ilgili aşağıdakilerden hangisi doğrudur?",
+      "secenekler": [
+        "Başka enerji biçimlerine dönüştürülebilen ikincil bir enerji biçimidir.",
+        "Yalnızca nükleer santrallerde üretilir.",
+        "Depolanamayan bir enerji biçimidir.",
+        "Birimi joule değil, watt'tır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Elektrik enerjisi; termik, nükleer ve yenilenebilir kaynaklardan elde edilen ikincil bir enerji biçimidir ve aydınlatma, ısıtma gibi amaçlarla başka biçimlere dönüştürülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik enerjisini tanımlayınız.",
+        "back": "Potansiyel fark etkisiyle serbest elektron ve iyonların hareketinden açığa çıkan enerjidir."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o07",
+      "alt_beceri": "Enerji biçimlerine ilişkin farklılıkları listeler.",
+      "metin": "Kimyasal enerji ile nükleer enerjinin farklılığı için hangisi doğrudur?",
+      "secenekler": [
+        "Kimyasal enerji atom çekirdeğinden, nükleer enerji molekül bağlarından elde edilir.",
+        "İkisi de yalnızca Güneş'te açığa çıkar.",
+        "Kimyasal enerji moleküler bağlarda depolanırken nükleer enerji atom çekirdeğinden elde edilir.",
+        "İkisinin de birimi newton'dır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Kimyasal enerji moleküllerin kimyasal bağlarında depolanır. Nükleer enerji ise atom çekirdeklerinin birleşmesi veya bölünmesiyle açığa çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Nükleer enerjinin kaynağı nedir?",
+        "back": "Atom çekirdeklerinin birleşmesi (füzyon) veya bölünmesi (fisyon)."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o08",
+      "alt_beceri": "Enerji biçimlerine ilişkin farklılıkları listeler.",
+      "metin": "Potansiyel enerji ile kinetik enerji arasındaki fark için hangisi doğrudur?",
+      "secenekler": [
+        "Kinetik enerji konuma, potansiyel enerji hıza bağlıdır.",
+        "Potansiyel enerji konuma, kinetik enerji harekete (hıza) bağlıdır.",
+        "İkisi de yalnızca hıza bağlıdır.",
+        "İkisi de yalnızca kütleye bağlıdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Potansiyel enerji cismin konumundan (yükseklik, yayın sıkışması), kinetik enerji ise hareketinden yani hızından kaynaklanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Potansiyel enerjinin tanımını yazınız.",
+        "back": "Cisimlerin konumlarından dolayı sahip olduğu enerjidir."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o09",
+      "alt_beceri": "Enerji biçimlerine ilişkin farklılıkları listeler.",
+      "metin": "Bir hidroelektrik santralde barajda biriken su türbinlere doğru akarken enerji dönüşümü gerçekleşir. Bu olay için hangisi doğrudur?",
+      "secenekler": [
+        "Su alçaldıkça potansiyel enerjisi azalır, kinetik enerjisi artar.",
+        "Su alçaldıkça kinetik enerjisi azalır.",
+        "Her iki enerji de değişmez.",
+        "Potansiyel enerji kinetik enerjiye dönüşmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Yükseklik azaldıkça yer çekimi potansiyel enerjisi azalır; suyun hızı arttığı için kinetik enerjisi artar. Bu enerji türbinde elektrik enerjisine dönüştürülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yer çekimi potansiyel enerjisinin matematiksel modelini yazınız.",
+        "back": "E_P = m · g · h."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c03_o10",
+      "alt_beceri": "Enerji biçimlerine ilişkin farklılıkları listeler.",
+      "metin": "Enerji biçimleriyle ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+      "secenekler": [
+        "Kimyasal enerji pilde depolanabilir.",
+        "Işık enerjisi fotosentezde kimyasal enerjiye dönüşür.",
+        "Ses enerjisi bir enerji biçimidir ve başka biçimlere dönüşebilir.",
+        "Enerji biçimleri birbirine dönüşemez."
+      ],
+      "dogru_index": 3,
+      "cozum": "Enerji biçimleri ihtiyaç doğrultusunda birbirine dönüşebilir; örneğin ışık enerjisi fotosentezde kimyasal enerjiye dönüşür. Bu nedenle son ifade yanlıştır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kinetik enerji ile kütle ve hız arasındaki ilişki nedir?",
+        "back": "Kütle ve hızın karesiyle doğru orantılıdır: E_K = ½ · m · v²."
+      },
+      "kazanim": "Enerji biçimlerini karşılaştırabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t02_c03_o01:flashcard",
+      "front": "Kinetik enerjinin matematiksel modelini yazınız.",
+      "back": "E_K = ½ · m · v²."
+    },
+    {
+      "id": "fiz_10_t02_c03_o02:flashcard",
+      "front": "Esneklik potansiyel enerjisinin depolandığı durum nedir?",
+      "back": "Yayın gerilmesi veya sıkıştırılması durumunda depolanır."
+    },
+    {
+      "id": "fiz_10_t02_c03_o03:flashcard",
+      "front": "Kimyasal enerjiyi tanımlayınız.",
+      "back": "Moleküllerin kimyasal bağlarında depolanan enerjidir."
+    },
+    {
+      "id": "fiz_10_t02_c03_o04:flashcard",
+      "front": "Mekanik enerjinin matematiksel modelini yazınız.",
+      "back": "E_M = E_K + E_P."
+    },
+    {
+      "id": "fiz_10_t02_c03_o05:flashcard",
+      "front": "Enerji biçimleri arasındaki dönüşüm nedir?",
+      "back": "Bir enerji biçiminin ihtiyaca göre başka bir enerji biçimine dönüşmesidir."
+    },
+    {
+      "id": "fiz_10_t02_c03_o06:flashcard",
+      "front": "Elektrik enerjisini tanımlayınız.",
+      "back": "Potansiyel fark etkisiyle serbest elektron ve iyonların hareketinden açığa çıkan enerjidir."
+    },
+    {
+      "id": "fiz_10_t02_c03_o07:flashcard",
+      "front": "Nükleer enerjinin kaynağı nedir?",
+      "back": "Atom çekirdeklerinin birleşmesi (füzyon) veya bölünmesi (fisyon)."
+    },
+    {
+      "id": "fiz_10_t02_c03_o08:flashcard",
+      "front": "Potansiyel enerjinin tanımını yazınız.",
+      "back": "Cisimlerin konumlarından dolayı sahip olduğu enerjidir."
+    },
+    {
+      "id": "fiz_10_t02_c03_o09:flashcard",
+      "front": "Yer çekimi potansiyel enerjisinin matematiksel modelini yazınız.",
+      "back": "E_P = m · g · h."
+    },
+    {
+      "id": "fiz_10_t02_c03_o10:flashcard",
+      "front": "Kinetik enerji ile kütle ve hız arasındaki ilişki nedir?",
+      "back": "Kütle ve hızın karesiyle doğru orantılıdır: E_K = ½ · m · v²."
+    }
+  ]
+}
