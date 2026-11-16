@@ -183,19 +183,47 @@ function denetle(dosya) {
     if (q.kazanim && plan && sade(q.kazanim) !== sade(plan.kazanim)) H(no + ": soru içindeki kazanim farklı");
     if (!q.kazanim) W(no + ": soru içinde kazanim alanı yok (havuzdan devralınıyor)");
 
-    /* kart */
+    /* ---- kart: TANIM / FORMÜL / KURAL (üretim kartı) ----
+       Kural (depodaki önceki havuzlar + MANUAL_INCELEME):
+         · kart Bilgi Bankası'ndaki tanım/formül/kural maddesini sorar
+         · tanıma kartı (4 seçenekli "hangisi") YASAK
+         · kart, soru senaryosunun kopyası/özeti olamaz
+         · arka yüz en çok 2 cümle                                    */
+    const KART_DESEN = /(nedir|ne demektir|tanımla|tanımı|formül|model|birim|sembol|işareti|arasındaki ilişki|nasıl hesaplanır|nasıl bulunur|nasıl tanımlanır|ne söylenir|hangi niceliği verir|biçimi nasıldır|ne olur)/i;
+    const KART_YASAK = /(hangisi|aşağıdaki|aşağıdakilerden|şekilde|grafikte|tabloda)/i;
     const fc = q.flashcard;
     if (!fc || typeof fc !== "object") H(no + ": flashcard yok");
     else {
-      if (!String(fc.front || "").trim()) H(no + ": flashcard.front boş");
-      if (!String(fc.back || "").trim()) H(no + ": flashcard.back boş");
-      if (sade(fc.front) === sade(fc.back) && fc.front) H(no + ": flashcard ön/arka aynı");
-      if (metin && fc.front && jaccard(ucgenler(fc.front), ucgenler(metin)) > 0.75) {
-        W(no + ": flashcard.front sorunun kopyası gibi (kart tek bilgiyi sormalı)");
+      const on = String(fc.front || "").trim();
+      const ar = String(fc.back || "").trim();
+      if (!on) H(no + ": flashcard.front boş");
+      if (!ar) H(no + ": flashcard.back boş");
+      if (sade(on) === sade(ar) && on) H(no + ": flashcard ön/arka aynı");
+      if (on && KART_YASAK.test(on)) {
+        H(no + ": kart tanıma/tablo sorusu gibi (\"" + on.slice(0, 40) + "\"… ) — kart tanım/formül sormalı");
       }
-      if (fc.back && jaccard(ucgenler(fc.back), ucgenler(cozum)) > 0.9 && cozum.length > 60) {
+      if (on && !KART_DESEN.test(on)) {
+        W(no + ": kart önü tanım/formül/kural kalıbında değil: " + JSON.stringify(on.slice(0, 50)));
+      }
+      if (metin && on) {
+        const benzerlik = jaccard(ucgenler(on), ucgenler(metin));
+        if (benzerlik > 0.5) H(no + ": kart önü sorunun kopyası (%" + Math.round(benzerlik * 100) + ")");
+        else if (benzerlik > 0.35) W(no + ": kart önü soruya çok benziyor (%" + Math.round(benzerlik * 100) + ")");
+      }
+      if (ar) {
+        const cumle = (ar.match(/[.!?](\s|$)/g) || []).length;
+        if (cumle > 2) W(no + ": kart arka yüzü " + cumle + " cümle (en çok 2 olmalı)");
+        if (ar.length > 220) W(no + ": kart arka yüzü çok uzun (" + ar.length + " kr)");
+      }
+      if (ar && cozum.length > 60 && jaccard(ucgenler(ar), ucgenler(cozum)) > 0.9) {
         W(no + ": flashcard.back çözümün kopyası");
       }
+    }
+
+    /* ---- soru kavrama düzeyinde mi? tanım sorusu karta taşınmalı ---- */
+    if (metin && metin.length < 140 && !/\d/.test(metin) &&
+        /\b(nedir|ne demektir|hangi niceliği verir|tanımlayınız)\b/i.test(metin)) {
+      W(no + ": soru tanım/hatırlama düzeyinde görünüyor — kavrama senaryosuna çevrilmeli");
     }
 
     /* görsel */

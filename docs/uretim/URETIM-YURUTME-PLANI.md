@@ -140,6 +140,25 @@ Kitap metni `.gitignore`'da: repoya commit edilmez, üretim bitince silinebilir.
 
 Ek yazım kuralları (üretim sırasında uygulanacak):
 
+### 4.1 Kart ≠ soru: kart tanım/formül, soru kavrama
+
+Depodaki önceki havuzlar (`MANUAL_INCELEME.md` §"MCQ–flashcard çifti örneklemi",
+`TEST_BULGULARI_.md` F12/H8/H10 ve BKT şartnamesi) kart biçimini şöyle tanımlıyor:
+
+| Öğe | Ne sorar | Örnek |
+| --- | --- | --- |
+| **Soru (MCQ)** | Kazanımın **kavrama** düzeyi: senaryo, veri, karşılaştırma, hesap | "Bir taşıyıcı bant valizi 40 s'de 8 m, sonra 20 s'de 4 m taşıyor. Hangi sonuca ulaşılır?" |
+| **Kart (flashcard)** | **Bilgi Bankası maddesi:** tanım, formül, birim, kural — *üretim kartı* | "Ortalama süratin matematiksel modelini yazınız." → "Ortalama sürat = alınan yol / geçen zaman." |
+
+Yasaklar (araç bunları **hata** olarak yakalar, `havuz-denetle.js`):
+
+- Tanıma kartı: `hangisi`, `aşağıdaki`, seçenek listesi → **yasak**
+- Kart önü, soru kökünün kopyası/özeti (trigram benzerliği > %50) → **hata**, > %35 → uyarı
+- Kart önünde şekil/tablo atfı (`şekilde`, `grafikte`, `tabloda`) → **hata**
+- Kart arka yüzü 2 cümleden uzun ya da 220 karakterden fazla → uyarı
+- Soru kökü tanım/hatırlama düzeyindeyse (sayı yok + "nedir/hangi niceliği verir") → uyarı: kavrama senaryosuna çevrilir
+- Kart önü tanım/formül kalıbı taşımıyorsa (`nedir`, `tanımlayınız`, `formül`, `model`, `birim`, `… ilişki`) → uyarı
+
 - **Cevap dengesi:** havuz içinde hiçbir şık %40'ı geçmez → 10 soruda en çok 4; ders genelinde
   A/B/C/D ~%25 hedeflenir (eski havuzlarda A %34,8 idi — tekrarlanmayacak).
 - **Çeldirici:** yanlış şıklar konuyla ilgili yaygın kavram yanılgılarından; "hepsi/hiçbiri" yok.
