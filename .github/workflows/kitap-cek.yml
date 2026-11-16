@@ -1,0 +1,99 @@
+name: Kitap Çek
+
+# Amaç: ders kitabı PDF'ini (veya herhangi bir dosyayı) GitHub runner'ı
+# üzerinden indirip artifact olarak almak. Sandbox'a yalnızca GitHub erişimi
+# olduğu için köprü görevi görür. Dosya REPOYA COMMIT EDİLMEZ; artifact
+# 30 gün sonra kendiliğinden silinir (istenirse elle de silinir).
+#
+# Kullanım (kullanıcı arayüzünden): Actions → Kitap Çek → Run workflow
+# Kullanım (komut satırından):
+#   gh workflow run kitap-cek.yml --ref <dal> -f url="<Drive linki>" -f ad=fizik.pdf
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Dosya adresi (Google Drive view/uc linki) ya da Drive dosya kimliği"
+        required: true
+      ad:
+        description: "Kaydedilecek dosya adı"
+        required: true
+        default: "kitap.pdf"
+
+permissions:
+  contents: read
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Adresi çöz
+        id: coz
+        run: |
+          set -u
+          U="${{ inputs.url }}"
+          ID=""
+          case "$U" in
+            *drive.google.com*|*docs.google.com*)
+              ID=$(printf '%s' "$U" | sed -n 's#.*/d/\([A-Za-z0-9_-]\{10,\}\).*#\1#p')
+              [ -z "$ID" ] && ID=$(printf '%s' "$U" | sed -n 's#.*[?&]id=\([A-Za-z0-9_-]\{10,\}\).*#\1#p')
+              ;;
+            http*) ID="" ;;
+            *) ID="$U" ;;
+          esac
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "Drive kimliği: ${ID:-yok (doğrudan adres)}"
+
+      - name: İndir
+        run: |
+          set -euo pipefail
+          ID='${{ steps.coz.outputs.id }}'
+          HEDEF='${{ inputs.ad }}'
+          if [ -n "$ID" ]; then
+            curl -sSL --retry 3 -c cerez.txt -b cerez.txt \
+              "https://drive.google.com/uc?export=download&id=$ID" -o ham.bin || true
+            if head -c 400 ham.bin | grep -qiE '<html|<!DOCTYPE'; then
+              echo "→ Drive onay sayfası geldi, uuid aranıyor"
+              UUID=$(grep -oE 'uuid=[A-Za-z0-9_-]+' ham.bin | head -1 | cut -d= -f2 || true)
+              echo "→ uuid: ${UUID:-yok}"
+              curl -sSL --retry 3 -c cerez.txt -b cerez.txt \
+                "https://drive.usercontent.google.com/download?id=$ID&export=download&confirm=t${UUID:+&uuid=$UUID}" \
+                -o ham.bin
+            fi
+          else
+            curl -sSL --retry 3 -A "Mozilla/5.0" '${{ inputs.url }}' -o ham.bin
+          fi
+          ls -l ham.bin
+          echo "--- dosya türü ---"
+          file ham.bin || true
+          head -c 64 ham.bin | xxd | head -2 || true
+
+          if head -c 400 ham.bin | grep -qiE '<html|<!DOCTYPE'; then
+            echo "::error::Bağlantı dosya yerine HTML döndürdü. Dosya 'bağlantıya sahip herkes' ile paylaşılmamış olabilir."
+            grep -oiE '<title>[^<]*</title>|Hesap|izin|erişim' ham.bin | head -5 || true
+            exit 1
+          fi
+
+          BOYUT=$(stat -c%s ham.bin)
+          echo "boyut: $BOYUT bayt ($(( BOYUT / 1024 / 1024 )) MB)"
+          if [ "$BOYUT" -lt 100000 ]; then
+            echo "::error::Dosya beklenenden çok küçük ($BOYUT bayt) — indirme başarısız."
+            exit 1
+          fi
+
+          mv ham.bin "$HEDEF"
+          echo "--- sha256 ---"
+          sha256sum "$HEDEF" | tee sha256.txt
+          echo "--- sayfa sayısı (varsa) ---"
+          (pdfinfo "$HEDEF" 2>/dev/null | grep -E 'Pages|Title|Creator') || echo "(pdfinfo yok/PDF değil)"
+
+      - name: Artifact yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: kitap
+          path: |
+            ${{ inputs.ad }}
+            sha256.txt
+          retention-days: 3
+          if-no-files-found: error
