@@ -58,6 +58,8 @@ ok("geçtiyse KISA_ARALIK_GUN, kaldıysa 1 gün",
   /entry\.son_kisa_kontrol_gecti === false \? 1 : KISA_ARALIK_GUN/.test(BKT));
 ok("arayüzde aynı gün koruması var", /const kisaBugun =/.test(HTML));
 ok("bekleyen kart aynı gün çizilmez", /kisaDue && !kisaKapali && !kisaBugun/.test(HTML));
+ok("kontrol BİR KEZ yapıldıysa büyük kart hiç çizilmez", /const kisaYapildi = !!bktKayit\.son_kisa_kontrol;/.test(HTML));
+ok("kart yalnız 'hiç yapılmadı' ise gösterilir", /if \(!kisaYapildi && bktKayit\.onay_durumu !== "ONAYLANDI"/.test(HTML));
 
 console.log("\n== 4) Açılışta test bildirimi YOK ==");
 ok("otomatik() test göndermiyor", !/await testBirKez\(\)/.test(PUSH.split("async function otomatik")[1] || ""));

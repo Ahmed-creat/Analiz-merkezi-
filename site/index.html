@@ -5408,7 +5408,17 @@ function renderKnowledge(container) {
       // çözüldüyse bekleyen-kontrol kartı çizilmez (motorun precheck_due'su
       // yanlışlıkla bugüne çekilse bile kart geri gelmez).
       const kisaBugun = !!(bktKayit.son_kisa_kontrol && String(bktKayit.son_kisa_kontrol).slice(0, 10) === todayStr());
-      if (bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol && kisaDue && !kisaKapali && !kisaBugun) {
+      // v60 — KULLANICI: "5 soruluk kısa kontrol zaten 5. adımdı, orada
+      // çözdükten sonra neden geri geliyor?" KÖK NEDEN (canlı kayıt):
+      // Biyoloji > 1.1 ... konusunda son kısa kontrol 15.11, sonuç KALDI
+      // (gecti:false) → motor sıradaki kontrolü 16.11'e atmıştı; ama
+      // completeTopic eski sürümde precheck_due'yu 15.11'e geri çekti.
+      // Sonuç: kart her gün "seni bekliyor" diye geri geliyordu.
+      // YENİ KURAL: 5. adım (kısa kontrol) BİR KEZ yapıldıysa bu büyük kart
+      // bir daha çizilmez. Kart yalnız kontrol HİÇ yapılmadıysa (5. adım
+      // gerçekten bekliyorsa) gösterilir.
+      const kisaYapildi = !!bktKayit.son_kisa_kontrol;
+      if (!kisaYapildi && bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol && kisaDue && !kisaKapali && !kisaBugun) {
         html += '<div class="bento-card" style="margin-bottom:16px;border:2px solid var(--brand-blue);background:linear-gradient(180deg,rgba(37,99,235,0.07),transparent);">' +
           '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">' + icon("clipboard-check", 20, "color:var(--brand-blue);") + '<b style="font-size:15px;">5 soruluk kısa kontrol seni bekliyor</b></div>' +
           '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu konuyu gerçekten öğrendin mi? Sorular tek tek, sırayla sorulur. Doğru cevap test sırasında gösterilmez.</p>' +
