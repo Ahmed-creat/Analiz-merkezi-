@@ -304,11 +304,16 @@ yaz("din_10_t05_c03", KAYNAK + ", s.159-163", [
   },
   {
     si: 1,
-    metin: "Ayetin sonunda geçen “hakkıyla bilendir, hakkıyla haberdar olandır” ifadeleri hangi isimlerle ilgilidir?",
-    secenekler: ["Alim ve Habir", "Rahman ve Rahim", "Halık ve Bari", "Aziz ve Kadir"],
+    metin: "Aynı ayetin bir mealinde “en değerli”, başka bir mealinde “en üstün” ifadesi kullanılmıştır. Bu durum mealden yararlanırken neyi gösterir?",
+    secenekler: [
+      "Meallerde kelime tercihi değişebildiği için anlamın bütününe bakmak gerektiğini",
+      "Ayetin yalnızca tek bir mealinden okunmasının yeterli olduğunu",
+      "Meal okumanın ayetin anlamını bozduğunu, bu yüzden okunmaması gerektiğini",
+      "Ayetin anlamının yalnızca Arapça bilenlerce kavranabileceğini"
+    ],
     dogru: 0,
-    cozum: "Ayet, Allah’ın her şeyi hakkıyla bilen (Alim) ve her şeyden haberdar olan (Habir) olduğunu bildirir.",
-    fc: ["Habir isminin anlamı nedir?", "Her şeyden hakkıyla haberdar olan, gizli açık her şeyi bilendir."]
+    cozum: "Meallerde kelime tercihleri çevirmene göre değişebilir; bu nedenle ayetin mesajını anlamak için tek bir sözcüğe bağlı kalmak yerine anlamın bütününe ve farklı meallerdeki karşılıklarına bakmak gerekir.",
+    fc: ["Kur’an meali okurken anlam bütününe bakmanın gerekçesi nedir?", "Meallerde kelime tercihleri değişebildiği için tek sözcüğe bağlı kalmak ayetin mesajını daraltabilir; anlam bütünü esas alınır."]
   },
   {
     si: 2,

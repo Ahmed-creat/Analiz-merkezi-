@@ -921,7 +921,7 @@ _Bu havuzda görsel gerekmedi._
 | `din_10_t05_c03_o01` | “Ey insanlar! Şüphe yok ki biz, sizi bir erkek ve bir dişi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 | `din_10_t05_c03_o02` | Hucurat suresi 13. ayette insanların boylara ve kabilelere… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 | `din_10_t05_c03_o03` | Ayette üstünlük ölçütü olarak belirtilen kavram hangisidir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `din_10_t05_c03_o04` | Ayetin sonunda geçen “hakkıyla bilendir, hakkıyla haberdar… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o04` | Aynı ayetin bir mealinde “en değerli”, başka bir mealinde … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 | `din_10_t05_c03_o05` | Hucurat suresi 13. ayette geçen konular hangi başlıklar al… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 | `din_10_t05_c03_o06` | Ayette üstünlük ölçütü olarak sayılanlar arasında hangisi … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 | `din_10_t05_c03_o07` | Ayetten hareketle “asabiyet” hakkında hangi çıkarım yapıla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |

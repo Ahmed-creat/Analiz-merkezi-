@@ -665,7 +665,7 @@
 ### din_10_t05_c03  ·  Din Kültürü  ·  MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025), s.159-163
 - soru 1: **S1** kokten(çözüm)
 - soru 2: S2 yardimlasmak(çözüm)
-- soru 4: S2 seyden(çözüm)
+- soru 4: S2 mealinde(kök), meallerde(doğru), kelime(doğru), bakmak(doğru), meallerde(çözüm), kelime(çözüm), cevirmene(çözüm), sozcuge(çözüm)
 - soru 5: S2 kokeni(doğru), koken(çözüm)
 - soru 6: **S1** saymaz(çözüm) | S2 sayilanlar(kök), yalniz(çözüm)
 - soru 7: S2 iddiasi(doğru), celisir(doğru), celisir(çözüm)
