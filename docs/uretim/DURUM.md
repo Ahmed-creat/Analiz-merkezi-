@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 20:40 (UTC)
+> Güncelleme: 2026-11-16 20:47 (UTC)
 
 ## Ders bazında
 
@@ -13,12 +13,12 @@
 | Kimya | 21/21 | 215 | 214 | 215 | 46 |
 | Biyoloji | 19/19 | 190 | 190 | 190 | 38 |
 | Tarih | 0/14 | 0 | 140 | 0 | 0 |
-| Coğrafya | 0/18 | 0 | 190 | 0 | 0 |
+| Coğrafya | 18/18 | 190 | 190 | 190 | 8 |
 | Felsefe | 0/10 | 0 | 100 | 0 | 0 |
 | Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **83/158** | **899** | **1686** | **899** | **133** |
+| **TOPLAM** | **101/158** | **1089** | **1686** | **1089** | **141** |
 
-İlerleme: **%53** (899/1686 soru) · kart 1:1 ✔
+İlerleme: **%65** (1089/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -62,29 +62,6 @@
 | `tar_10_t03_c03` | TAR.10.3.3 | 10 | yok |
 | `tar_10_t03_c04` | TAR.10.3.4 | 10 | yok |
 | `tar_10_t03_c05` | TAR.10.3.5 | 10 | yok |
-
-### Coğrafya
-
-| konu_id | kod | hedef soru | durum |
-| --- | --- | --- | --- |
-| `cogr_10_t01_c01` | COĞ.10.1.1 | 10 | yok |
-| `cogr_10_t02_c01` | COĞ.10.2.1 | 10 | yok |
-| `cogr_10_t02_c02` | COĞ.10.2.2 | 14 | yok |
-| `cogr_10_t03_c01` | COĞ.10.3.1 | 10 | yok |
-| `cogr_10_t03_c02` | COĞ.10.3.2 | 10 | yok |
-| `cogr_10_t03_c03` | COĞ.10.3.3 | 10 | yok |
-| `cogr_10_t03_c04` | COĞ.10.3.4 | 12 | yok |
-| `cogr_10_t03_c05` | COĞ.10.3.5 | 10 | yok |
-| `cogr_10_t04_c01` | COĞ.10.4.1 | 10 | yok |
-| `cogr_10_t04_c02` | COĞ.10.4.2 | 10 | yok |
-| `cogr_10_t05_c01` | COĞ.10.5.1 | 10 | yok |
-| `cogr_10_t05_c02` | COĞ.10.5.2 | 10 | yok |
-| `cogr_10_t05_c03` | COĞ.10.5.3 | 12 | yok |
-| `cogr_10_t06_c01` | COĞ.10.6.1 | 10 | yok |
-| `cogr_10_t06_c02` | COĞ.10.6.2 | 10 | yok |
-| `cogr_10_t06_c03` | COĞ.10.6.3 | 12 | yok |
-| `cogr_10_t06_c04` | COĞ.10.6.4 | 10 | yok |
-| `cogr_10_t07_c01` | COĞ.10.7.1 | 10 | yok |
 
 ### Felsefe
 

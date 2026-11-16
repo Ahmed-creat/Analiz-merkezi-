@@ -1,0 +1,277 @@
+{
+  "konu_id": "cogr_10_t06_c01",
+  "kod": "COĞ.10.6.1",
+  "sinif": 10,
+  "ders": "Coğrafya",
+  "tema": 6,
+  "tema_adi": "Afetler ve Sürdürülebilir Çevre",
+  "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme",
+  "kaynak": "Coğrafya 10 ders kitabı, s.171-179",
+  "sorular": [
+    {
+      "soru_id": "cogr_10_t06_c01_o01",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örneklerine yönelik merak ettiği soruları sorar.",
+      "metin": "Bir öğrenci, ülkelerin depremlere karşı geliştirdiği uygulamaların farklı sonuçlar vermesini araştırmak istemektedir. Bu amaçla hangi soruyu sorması en uygundur?",
+      "secenekler": [
+        "Depremler hangi renk bulutla haber verilir?",
+        "Aynı büyüklükteki depremlerde can kaybı neden ülkeden ülkeye değişir?",
+        "Depremler neden yalnızca kışın olur?",
+        "Deprem sayısı her yıl aynı mıdır?"
+      ],
+      "dogru_index": 1,
+      "cozum": "Can kaybı farkının nedeni yapı kalitesi, denetim, erken uyarı ve tahliye gibi uygulamalardır. Bu nedenle soru karşılaştırmalı olmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet riski nedir?",
+        "back": "Bir tehlikenin can ve mal kaybına dönüşme olasılığıdır."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o02",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örneklerine yönelik merak ettiği soruları sorar.",
+      "metin": "Tabloda iki depremin büyüklüğü ve can kaybı verilmiştir. Bu verilerden hareketle hangi soru araştırılabilir?",
+      "secenekler": [
+        "Depremlerin rengi büyüklüğü gösterir mi?",
+        "Depremler yalnızca gece mi olur?",
+        "Deprem sayısı mevsime bağlı mıdır?",
+        "Yapı denetimi ve erken uyarı sistemleri can kaybını nasıl etkiler?"
+      ],
+      "dogru_index": 3,
+      "cozum": "Şili'de büyüklük 8,3 iken 13 kişi, Bem'de 6,6 iken yaklaşık 26 bin kişi yaşamını yitirmiştir. Bu fark uygulamaların etkisini araştırmayı gerektirir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Deprem",
+          "Büyüklük",
+          "Derinlik (km)",
+          "Can kaybı"
+        ],
+        "satirlar": [
+          [
+            "Şili (2015)",
+            "8,3",
+            "22,4",
+            "13"
+          ],
+          [
+            "Bem (2003)",
+            "6,6",
+            "8",
+            "26.000"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Deprem büyüklüğü nedir?",
+        "back": "Depremin açığa çıkardığı enerjinin ölçüsüdür."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o03",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örnekleri ile ilgili bilgi toplar.",
+      "metin": "Şili'de 2015 depreminde tsunami dalgaları 4,5 metreyi aşmıştır. Bu olayla ilgili bilgi toplanırken hangi kaynak en uygundur?",
+      "secenekler": [
+        "Afet kurumlarının resmî raporları ve uydu verileri",
+        "Yöre halkının yemek tarifleri",
+        "Bölgedeki futbol maçı sonuçları",
+        "Turistik gezi broşürleri"
+      ],
+      "dogru_index": 0,
+      "cozum": "Afet büyüklüğü, etkisi ve müdahale süreçleri resmî kurum raporları ve uydu verileriyle belgelenir. Bu kaynaklar güvenilir bilgi sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet raporu nedir?",
+        "back": "Afetin etkilerini ve müdahaleyi belgeleyen resmî yazıdır."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o04",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örnekleri ile ilgili bilgi toplar.",
+      "metin": "Töhoku depremi ve tsunamisine ilişkin bilgi toplayan öğrenci hangi veriyi öncelikle kaydetmelidir?",
+      "secenekler": [
+        "Bölgedeki otellerin fiyatları",
+        "Yörenin yemek kültürü",
+        "Depremin büyüklüğü, süresi ve tsunami yüksekliği",
+        "Bölgedeki okulların kuruluş yılı"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bir afetin etkisini değerlendirmek için büyüklük, süre ve tetiklediği olayların ölçüsü gerekir. Bu veriler karşılaştırma yapmayı sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet verisi nedir?",
+        "back": "Afetin ölçülebilir büyüklük ve etki bilgisidir."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o05",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örnekleri hakkında elde ettiği bilgileri düzenler.",
+      "metin": "Öğrenci grubu, incelediği afet örneklerini 'deprem, sel, kasırga ve nükleer kaza' başlıkları altında toplamıştır. Bu işlem hangi aşamaya aittir?",
+      "secenekler": [
+        "Bilgi toplama",
+        "Soru oluşturma",
+        "Sonuç paylaşma",
+        "Bilgileri düzenleme"
+      ],
+      "dogru_index": 3,
+      "cozum": "Toplanan bilgilerin ortak özelliklerine göre gruplandırılması düzenleme aşamasıdır. Böylece örnekler karşılaştırılabilir hâle gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet sınıflaması nedir?",
+        "back": "Afetlerin oluşum kaynağına göre gruplandırılmasıdır."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o06",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örnekleri hakkında elde ettiği bilgileri düzenler.",
+      "metin": "Afet örnekleri oluşum kaynağına göre sınıflandırılırken 'Katie Kasırgası' hangi grupta yer alır?",
+      "secenekler": [
+        "Jeolojik afetler",
+        "Meteorolojik afetler",
+        "Teknolojik kazalar",
+        "Biyolojik afetler"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kasırgalar atmosfer olaylarıyla oluştuğu için meteorolojik afet grubundadır. Deprem ve tsunami jeolojik, nükleer kaza ise teknolojik kazadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Meteorolojik afet nedir?",
+        "back": "Atmosfer olaylarından kaynaklanan afettir."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o07",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örnekleri hakkında düzenlediği bilgileri çözümler.",
+      "metin": "Şili'de 8,3 büyüklüğündeki depremde 13 kişi yaşamını yitirirken Bem'de 6,6 büyüklüğündeki depremde yaklaşık 26 bin kişi yaşamını yitirmiştir. Bu farkın en önemli nedeni hangisidir?",
+      "secenekler": [
+        "Yapı kalitesi ve afet hazırlığındaki farklılık",
+        "Depremlerin oluştuğu mevsim",
+        "Ülkelerin yüzölçümü",
+        "Depremlerin olduğu saat"
+      ],
+      "dogru_index": 0,
+      "cozum": "Aynı tehlikenin farklı kayıplara yol açması, yapı denetimi, erken uyarı ve tahliye gibi hazırlık düzeyindeki farktan kaynaklanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet hazırlığı nedir?",
+        "back": "Afet öncesinde riski azaltmak için yapılan çalışmalardır."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o08",
+      "alt_beceri": "Afetlerle mücadelede iyi uygulama örnekleri hakkında düzenlediği bilgileri çözümler.",
+      "metin": "Töhoku tsunamisinde kıyıya 35-40 metre yüksekliğinde dalgalar ulaşmıştır. Bu durumda alınabilecek en etkili önlem hangisidir?",
+      "secenekler": [
+        "Kıyıya daha çok bina yapmak",
+        "Tsunami uyarı sistemlerini kapatmak",
+        "Kıyı yerleşmelerinde yüksek alanlara tahliye planı hazırlamak",
+        "Kıyıda dolgu alanı oluşturmak"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tsunamiden korunmada erken uyarı ve yüksek alanlara hızlı tahliye en etkili yöntemdir. Kıyıda yapılaşmayı artırmak riski büyütür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tsunami nedir?",
+        "back": "Deniz tabanındaki sarsıntının oluşturduğu dev dalgalardır."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o09",
+      "alt_beceri": "Afetle mücadelede iyi uygulama örneklerine ilişkin çözümlediği bilgilerden çıkardığı sonuçları paylaşır.",
+      "metin": "Öğrenciler, incelediği afet örneklerinden yola çıkarak kendi kentleri için öneri listesi hazırlamıştır. Bu listenin değeri hangisine bağlıdır?",
+      "secenekler": [
+        "Listenin uzun olmasına",
+        "Kentteki risklerle önerilerin örtüşmesine",
+        "Önerilerin başka ülkelerden alınmasına",
+        "Görsellerin renkli olmasına"
+      ],
+      "dogru_index": 1,
+      "cozum": "Öneriler kentin baskın riskine göre düzenlenirse uygulanabilir olur. Deprem riski yüksek bir kentte sel önlemi öncelikli değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Risk önceliği nedir?",
+        "back": "En sık ve en çok zarar veren tehlikenin öne alınmasıdır."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    },
+    {
+      "soru_id": "cogr_10_t06_c01_o10",
+      "alt_beceri": "Afetle mücadelede iyi uygulama örneklerine ilişkin çözümlediği bilgilerden çıkardığı sonuçları paylaşır.",
+      "metin": "Bir sınıf, afetle mücadelede iyi uygulama örneklerini paylaşmak için poster hazırlamıştır. Posterin en önemli işlevi hangisidir?",
+      "secenekler": [
+        "Afetlerin sayısını azaltması",
+        "Riskli bölgeleri yok etmesi",
+        "Depremleri önlemesi",
+        "Uygulanabilir önlemleri görsel olarak görünür kılması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Poster, iyi uygulamaları ve önlemleri anlaşılır biçimde aktararak farkındalık oluşturur. Afetin kendisini engellemez, zararını azaltmayı hedefler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet farkındalığı nedir?",
+        "back": "Afet riskleri ve önlemleri konusunda bilinç düzeyidir."
+      },
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "cogr_10_t06_c01_o01:flashcard",
+      "front": "Afet riski nedir?",
+      "back": "Bir tehlikenin can ve mal kaybına dönüşme olasılığıdır."
+    },
+    {
+      "id": "cogr_10_t06_c01_o02:flashcard",
+      "front": "Deprem büyüklüğü nedir?",
+      "back": "Depremin açığa çıkardığı enerjinin ölçüsüdür."
+    },
+    {
+      "id": "cogr_10_t06_c01_o03:flashcard",
+      "front": "Afet raporu nedir?",
+      "back": "Afetin etkilerini ve müdahaleyi belgeleyen resmî yazıdır."
+    },
+    {
+      "id": "cogr_10_t06_c01_o04:flashcard",
+      "front": "Afet verisi nedir?",
+      "back": "Afetin ölçülebilir büyüklük ve etki bilgisidir."
+    },
+    {
+      "id": "cogr_10_t06_c01_o05:flashcard",
+      "front": "Afet sınıflaması nedir?",
+      "back": "Afetlerin oluşum kaynağına göre gruplandırılmasıdır."
+    },
+    {
+      "id": "cogr_10_t06_c01_o06:flashcard",
+      "front": "Meteorolojik afet nedir?",
+      "back": "Atmosfer olaylarından kaynaklanan afettir."
+    },
+    {
+      "id": "cogr_10_t06_c01_o07:flashcard",
+      "front": "Afet hazırlığı nedir?",
+      "back": "Afet öncesinde riski azaltmak için yapılan çalışmalardır."
+    },
+    {
+      "id": "cogr_10_t06_c01_o08:flashcard",
+      "front": "Tsunami nedir?",
+      "back": "Deniz tabanındaki sarsıntının oluşturduğu dev dalgalardır."
+    },
+    {
+      "id": "cogr_10_t06_c01_o09:flashcard",
+      "front": "Risk önceliği nedir?",
+      "back": "En sık ve en çok zarar veren tehlikenin öne alınmasıdır."
+    },
+    {
+      "id": "cogr_10_t06_c01_o10:flashcard",
+      "front": "Afet farkındalığı nedir?",
+      "back": "Afet riskleri ve önlemleri konusunda bilinç düzeyidir."
+    }
+  ]
+}
