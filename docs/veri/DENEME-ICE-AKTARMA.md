@@ -1,0 +1,215 @@
+# Deneme Verisi — Uygulamanın İçe Aktarma JSON Yapısı
+
+Bu belge iki şeyi verir:
+
+1. Uygulamanın **kendi** içe aktarma biçimi (koddan çıkarıldı, uydurma yok).
+2. Bu biçime dönüştürülmüş **9. sınıf deneme verisi**: `site/veri/9-sinif-denemeler.json`
+
+Kaynak: 9. sınıf deneme dökümü PDF'i (7 sınav, 22.10.2025 – 22.05.2026).
+
+---
+
+## 1. Uygulama nasıl içe aktarıyor
+
+`site/index.html` → `importData(input)` (satır ~1803):
+
+```js
+const parsed = JSON.parse(reader.result);
+const data = parsed.user ? parsed : (parsed.state && parsed.state.user ? parsed.state : null);
+state = mergeDeep(freshState(), data);   // ← TAM DURUM DEĞİŞİMİ
+saveState();
+```
+
+Kabul edilen iki biçim:
+
+| Biçim | Örnek |
+| --- | --- |
+| Doğrudan durum | `{ "user": {...}, "exams": [...] }` |
+| Sarmalayıcı | `{ "_okumaNotu": "...", "state": { "user": {...}, "exams": [...] } }` |
+
+> ### ⚠️ Bu düğme her şeyi siler
+> `mergeDeep(freshState(), data)` — dosyada olmayan **her alan varsayılana döner**.
+> Konu takibi, hafıza, BKT durumu, profil adı, görevler: hepsi silinir.
+> Bu yüzden üretilen dosyayı **doğrudan içe aktarma düğmesiyle açma**.
+> §4'teki birleştirme betiğini kullan.
+
+`state.user` zorunludur; yoksa dosya reddedilir ("Dosya okunamadı").
+
+---
+
+## 2. `state.exams[]` şeması
+
+Koddaki tek doğru kaynak: `freshState()` yorumu + `saveExam` + `processRecord`.
+
+```json
+{
+  "id": "pdf9-01",
+  "name": "1. Deneme: 9. Sınıf Süreç İzleme 1",
+  "date": "2025-10-22",
+  "lessons": {
+    "Türk Dili ve Edebiyatı": { "d": 27, "w": 3, "e": 0 }
+  },
+  "errorLogs": [
+    {
+      "qno": 1,
+      "lesson": "Türk Dili ve Edebiyatı",
+      "topic": "Ses Olayları",
+      "kazanim": "Ses olayları",
+      "type": "Konuyu Bilmiyordum",
+      "date": "2025-10-22"
+    }
+  ],
+  "total": 120,
+  "net": 85.5
+}
+```
+
+| Alan | Zorunlu | Kural |
+| --- | --- | --- |
+| `id` | ✅ | Tekil. BKT işleme anahtarı `record:deneme:<id>` buna bağlı |
+| `name` | ✅ | Liste ve grafiklerde görünen ad |
+| `date` | ✅ | `YYYY-MM-DD` |
+| `lessons` | ✅ | `{ "<Ders>": { d, w, e } }` — d doğru, w yanlış, e boş |
+| `errorLogs` | ✅ | Soru başına bir kayıt; boş dizi olabilir |
+| `total` | ✅ | Toplam soru (liste satırında "N soru") |
+| `net` | ✅ | **Doğrudan gösterilir.** Ders neti `d − w/4` ile hesaplanır |
+
+### 2.1 Ders adları
+
+`LESSON_CONFIG` (9. sınıf) dışında anahtar kullanılamaz, yoksa
+"Ders Detayları" tablosunda görünmez:
+
+```
+Türk Dili ve Edebiyatı · Matematik · Fizik · Kimya · Biyoloji · Tarih · Coğrafya · Din Kültürü
+```
+
+Azami soru: TDE 30 · Matematik 30 · Fizik 10 · Kimya 10 · Biyoloji 10 · Tarih 12 · Coğrafya 12 · Din 6 = **120**
+
+### 2.2 Net kuralı
+
+```js
+NET_RULE = { wrongDivisor: 4 }        // net = d − w/4
+```
+
+### 2.3 `errorLogs[].type` — geçerli değerler
+
+Yanlış için: `Konuyu Bilmiyordum` · `ANLAMADIM` · `İşlem Hatası/Dikkatsizlik` · `Kodlama/Kitapçık Hatası`
+
+Boş için: `KONUEKSİKLİĞİ` · `ÇÖZÜMYOLUNUBULAMADIM` · `SÜREYETMEDİ`
+
+BKT motoru her kaydı gözlem sayar (`bkt-engine.js` → `processRecord`). Ağırlıklar:
+`Konuyu Bilmiyordum` 1.5 · `KONUEKSİKLİĞİ` 1.5 · `ÇÖZÜMYOLUNUBULAMADIM` 0.8 · `ANLAMADIM` 0.5.
+
+### 2.4 `topic` nasıl doldurulur
+
+Uygulama `topicKey(topic, lesson)` ile `"Ders > Konu"` üretir; Konu Takibi ve
+soru havuzu bu anahtarla çalışır. İki durum:
+
+- Konu başlığı **kesin** eşleşiyorsa (kazanım metni başlığı içeriyorsa) başlık yazılır.
+- Eşleşme yoksa **kazanım metni** yazılır (uygulamanın kendi davranışı da budur:
+  `okzKayitKonu` → `topic: e ? e.konu : kazanim`). Uydurma başlık yazılmaz.
+
+---
+
+## 3. Üretilen dosya
+
+`site/veri/9-sinif-denemeler.json` — 58 KB, 7 sınav, **209 hata kaydı**.
+
+```
+sınav   tarih        net     kayıt
+1       2025-10-22   85,50   26
+2       2025-11-24   78,50   30
+3       2025-12-23   65,25   26
+4       2026-02-07   77,75   32
+5       2026-03-14   82,25   31
+6       2026-03-26   67,50   32
+7       2026-05-22   78,50   32
+```
+
+### 3.1 PDF'ten **aynen** alınanlar
+
+- Sınav adı ve tarihi
+- Genel net → `net`
+- Her dersin beyan neti → `lessons[ders].net_beyan`
+- Yanlış ve boş kazanım listeleri + adetleri → `errorLogs` (her soru ayrı kayıt)
+
+### 3.2 Türetilenler (PDF'te yok)
+
+| Alan | Nasıl | Neden |
+| --- | --- | --- |
+| `lessons[ders].d` | `round(beyan_net + w/4)` | PDF doğru sayısını vermiyor; net tutsun diye |
+| `total` | `120` | 9. sınıf deneme formatı (`LESSON_CONFIG` toplamı) |
+| `type` | yanlış → `Konuyu Bilmiyordum`, boş → `KONUEKSİKLİĞİ` | PDF nedeni yazmıyor; ikisi de 1.5 ağırlıklı |
+| `topic` | kazanım → konu başlığı eşlemesi | Eşleşmezse kazanım metni kalır |
+
+**Yuvarlama payı:** türetilen `d` yüzünden bazı derslerde hesaplanan net
+beyandan ±0,25 sapar. Sapmalar dosyada `uyarilar` alanında tek tek yazılı.
+
+### 3.3 Bileşik ders satırları
+
+PDF'te 4. sınavda `Tarih & Coğrafya & Din (27,50)`, 7. sınavda
+`Tarih & Din (15,50)` tek satır. Netleri derslere bölmek mümkün değil
+(bölününce tam sayı çıkmıyor), bu yüzden **tek anahtar** olarak duruyor.
+Hata kayıtları ise doğru derse yazıldı (Tarih / Coğrafya / Din Kültürü).
+
+### 3.4 Kaynak içi tutarsızlık
+
+`_tutarsizliklar` alanında beyan edildi. Tek vaka:
+
+> `pdf9-01 · Biyoloji` → `d+w+e = 11 > azami 10`.
+> PDF hem neti (8,75) hem 1 yanlış + 1 boş yazıyor; 10 soruluk derste
+> üçü birden doğru olamaz (8 doğru − 0,25 = 7,75). **Beyan net korundu.**
+
+---
+
+## 4. Güvenli aktarma (önerilen)
+
+Uygulamayı aç → tarayıcı konsolu (F12) → yapıştır:
+
+```js
+(async () => {
+  const r = await fetch('/veri/9-sinif-denemeler.json', { cache: 'no-store' });
+  const { state: gelen } = await r.json();
+
+  let eklenen = 0, atlanan = 0;
+  for (const ex of gelen.exams) {
+    const varMi = state.exams.find(e => e.name === ex.name && e.date === ex.date);
+    if (varMi) { atlanan++; continue; }
+    state.exams.push(ex);
+    eklenen++;
+  }
+  state.exams.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+
+  saveState();
+  if (window.AnalizBKT && window.AnalizBKT.processNewRecords) {
+    window.AnalizBKT.processNewRecords();   // BKT / Konu Takibi'ne işle
+  }
+  if (typeof renderExamChart === 'function') renderExamChart();
+  navigate('exams');
+  console.log(`eklendi ${eklenen} · atlandı ${atlanan}`);
+})();
+```
+
+Bu betik:
+
+- **Hiçbir şeyi silmez** — yalnız `state.exams` dizisine ekler
+- Aynı sınav ikinci kez eklenmez (ad + tarih ile kontrol)
+- BKT motorunu tetikler; 209 kayıt konu durumlarına işlenir
+
+### 4.1 Eski yöntem (tam içe aktarma) — dikkat
+
+`Verileri İçe Aktar` düğmesi dosyayı kabul eder ama **tüm durumu değiştirir**.
+Kullanacaksan önce `Dışa Aktar` ile yedek al. Bu yöntemde `state.user.name`
+boşalır (gizlilik gereği dosyada ad yok).
+
+---
+
+## 5. Kontrol
+
+```bash
+node tests/deneme-ice-aktarma.test.js
+```
+
+277 doğrulama: alan bütünlüğü, tarih biçimi, ders adları, azami soru,
+net−beyan farkı ≤ 0,25, kayıt sayısı = w + e, geçerli neden kodları,
+Türkçe karakterler.
