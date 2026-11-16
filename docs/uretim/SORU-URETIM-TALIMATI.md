@@ -61,9 +61,20 @@ gh pr create \
 ```
 hedef soru = max(10, 2 × süreç bileşeni sayısı)
 her süreç bileşeni = bir alt_beceri → her birine EN AZ 2 soru
+
+flashcard sayısı = soru sayısı       → HER SORU İÇİN TAM 1 KART
 ```
 
-Örnek: `DKAB.10.1.1` → 2 süreç bileşeni → `max(10, 4) = 10` soru, her süreç için 5.
+İki sayı vardır, ikisi de zorunludur:
+
+- **Soru:** taban 10. Yalnızca "her süreç bileşenine en az 2 soru" şartı
+  10'u aşmayı gerektiriyorsa artar (`max(10, 2 × süreç)`).
+  158 çıktının 139'u tam 10, 19'u daha fazla.
+- **Flashcard:** istisnasız soru sayısı kadar. 1:1'dir, "isteğe bağlı" değildir.
+  Mevcut 172 havuzun tamamı böyledir (1956 soru / 1956 kart).
+
+Örnek: `DKAB.10.1.1` → 2 süreç bileşeni → `max(10, 4) = 10` soru,
+her süreç için 5 → **10 soru + 10 flashcard**.
 
 | Ders | Çıktı | Süreç | Hedef soru | Tema |
 | --- | --- | --- | --- | --- |
@@ -149,6 +160,9 @@ node scripts/havuz-index-uret.js --plan
 }
 ```
 
+`flashcards` dizisi boş bırakılırsa dosya **reddedilir**. Sorular yazıldıktan
+sonra aynı sayıda kart eklenir (§6.3).
+
 | Alan | Zorunlu | Kural |
 | --- | --- | --- |
 | `konu_id` | ✅ | Plandaki değerle birebir; dosya adıyla aynı |
@@ -160,7 +174,7 @@ node scripts/havuz-index-uret.js --plan
 | `kazanim` | ✅ | Resmî çıktı cümlesi, **birebir** |
 | `kaynak` | ➖ | Kitap adı + sayfa (izlenebilirlik) |
 | `sorular` | ✅ | ≥ `hedef_soru` |
-| `flashcards` | ➖ | Varsa her soru için bir kart |
+| `flashcards` | ✅ | `sorular` ile **birebir**: 10 soru → 10 kart |
 
 ### 6.2 Soru nesnesi
 
@@ -192,16 +206,30 @@ node scripts/havuz-index-uret.js --plan
 | `dogru_index` | `0..3` tam sayı. |
 | `cozum` | Zorunlu, ≥ 25 karakter, nedeni açıklar ("A" yazılmaz). |
 | `zorluk` | Her soruda `"deneme"`. |
-| `flashcard` | `{front, back}` — isteğe bağlı. |
-| `gorsel` | İsteğe bağlı SVG tanımı (bkz. §8). |
+| `flashcard` | `{front, back}` — **zorunlu**, her soruda. Soru başına 1 kart. |
+| `gorsel` | Soruya göre karar verilir — bkz. §8. Şekle gönderme varsa zorunlu. |
 | `kazanim` | Havuzdaki `kazanim` ile aynı. |
 
 ### 6.3 Flashcard dizisi
 
+Havuz düzeyinde `flashcards` dizisi **sorularla birebir** olmalıdır:
+10 soru → 10 kart. `id` daima `<soru_id>:flashcard` biçimindedir.
+
 ```json
 "flashcards": [
-  { "id": "din_10_t01_c01_o01:flashcard", "front": "…", "back": "…" }
+  { "id": "din_10_t01_c01_o01:flashcard", "front": "…", "back": "…" },
+  { "id": "din_10_t01_c01_o02:flashcard", "front": "…", "back": "…" }
 ]
+```
+
+Kart, o sorunun öğrettiği **tek** şeyi sorar. `front` ile `back` aynı olamaz.
+Kart metni sorunun kopyası değildir; soru çözüldükten sonra akılda kalması
+gereken bilgiyi hedefler.
+
+```json
+{ "id": "mat_10_t01_c01_o01:flashcard",
+  "front": "Dik üçgende dar açı α için tanjant oranını karşı ve komşu dik kenarlarla yaz.",
+  "back": "tan α = karşı dik kenar / komşu dik kenar." }
 ```
 
 ### 6.4 Tam dolu örnek havuz
@@ -364,14 +392,61 @@ Aşağıdaki dosya **birebir şablon** olarak kullanılabilir — doğrulayıcı
    verilir; uydurulmaz.
 8. **Kopya yok:** Başka yayınevinin sorusu birebir alınmaz; kitaptaki bilgiyle **özgün**
    soru yazılır (telif).
-9. **Görsel:** Yalnızca gerekliyse (grafik, geometri, vektör) ve §8'e uygun.
+9. **Flashcard:** Her soru için **tam 1 kart**. Havuz düzeyindeki `flashcards`
+   dizisi sorularla birebir (10 soru → 10 kart). `id` = `<soru_id>:flashcard`.
+   `front` ≠ `back`. Kart, sorunun kopyası değil; sorunun öğrettiği tek şeyi sorar.
+10. **Görsel:** Kota yok. Soru bazında karar verilir (§8). Metin bir şekle
+    gönderme yapıyorsa (`şekilde`, `grafikte`, `tabloda`, `düzenekte`,
+    `devredeki`, `haritada`, `şemada`, `kesitte`, `görselde` …) `gorsel`
+    **zorunludur**; yoksa doğrulayıcı hata verir. Tanım §8.1 tiplerine uyar.
+11. **Görselle metin tutarlı:** Görseldeki etiket/sayı ile metindeki veri aynı
+    olur. Görsel süs değildir; sorunun çözümü için gereken bilgiyi taşır.
 
 ---
 
-## 8. Görsel (isteğe bağlı)
+## 8. Görsel — isteğe bağlı değil, soru başına karar
 
-`site/gorsel.js` yedi tip destekler; tanım geçersizse **soru reddedilir**.
-Tipler: `ucgen`, `grafik`, `vektor`, `sema`, `tablo`, `geometri`, `cember`.
+**Kazanım başına görsel sayısı yoktur.** Aynı çıktının soruları farklı
+ihtiyaç taşır:
+
+| Soru | Görsel |
+| --- | --- |
+| "Dik kenarları 7 ve 24 birim olan dik üçgende tan α kaçtır?" | **gerekir** — kenar değerleri bir şekle bağlı |
+| "1 − cos²x ifadesinin eşiti nedir?" | **gerekmez** — saf cebirsel özdeşlik |
+| "Şekildeki düzenekte X maddesi hangi kaba eklenmiştir?" | **gerekir** — "şekildeki" diyor |
+| "Ohm yasasına göre direnç sabitken akım ile gerilim ilişkisi nedir?" | gerekmez |
+| "Aşağıdaki devrede eşdeğer direnç kaç Ω'dur?" | **gerekir** — "aşağıdaki devre" diyor |
+
+Karar **sorular yazıldıktan sonra, tek tek** verilir. Sıra:
+
+1. **Soruyu yaz.** Görseli önce tasarlama; soru metni neyi gerektiriyorsa onu çiz.
+2. **Kendine sor:** bu soru görsel olmadan çözülebilir mi?
+   - Hayır → `gorsel` alanını yaz (§8.1 tipleriyle).
+   - Evet ama görsel anlamayı kolaylaştırıyor → yine de ekleyebilirsin.
+   - Evet ve gereksiz → alanı **hiç yazma**.
+3. **Metin ile görseli eşleştir.** Metin "şekilde", "grafikte", "tabloda",
+   "düzenekte", "devredeki", "haritada", "şemada", "kesitte", "görselde"
+   gibi bir ifadeyle bir şekle gönderme yapıyorsa `gorsel` **zorunludur** —
+   doğrulayıcı bunu arar ve yoksa **hata verir**.
+
+> Bu kural tek yönlüdür: şekle gönderme varsa görsel şart. Şekle gönderme
+> yoksa görsel yasak değildir, ama zorunlu da değildir. "Şu kazanımda şu
+> kadar görsel olacak" diye bir kota **yoktur**.
+
+### 8.1 Görsel tipleri
+
+`site/gorsel.js` yedi tip destekler. Tanım geçersizse **soru reddedilir**
+(`require("./site/gorsel.js").dogrula(gorsel)`).
+
+| Tip | Ne için | Zorunlu alan |
+| --- | --- | --- |
+| `ucgen` | dik üçgen, trigonometrik oranlar | `kenarlar` |
+| `geometri` | serbest üçgen/çokgen, açıortay, kenarortay | `noktalar` |
+| `grafik` | hız-zaman, kuvvet-yol, ohm, çözünürlük eğrisi | `seriler` |
+| `tablo` | ölçüm tablosu, veri tablosu | `satirlar` |
+| `cember` | birim çember, açı | `aci` |
+| `vektor` | kuvvet, hız vektörleri | `vektorler` |
+| `sema` | akış, döngü, sınıflandırma | `kutular` |
 
 ```json
 "gorsel": {
@@ -383,7 +458,43 @@ Tipler: `ucgen`, `grafik`, `vektor`, `sema`, `tablo`, `geometri`, `cember`.
 }
 ```
 
-Doğrulama: `require("./site/gorsel.js").dogrula(gorsel)`
+### 8.2 Hangi içerik görsel ister
+
+Bunlar **tipik** durumlardır, kural değil — yine soru bazında karar verilir:
+
+| Ders | Görsel gerektiren soru tipi | Uygun tip |
+| --- | --- | --- |
+| Matematik | dik üçgende oran, sinüs/kosinüs teoremi, üçgen alanı | `ucgen`, `geometri` |
+| Matematik | referans fonksiyon grafikleri, dönüşümler | `grafik` |
+| Matematik | koordinat düzlemi, iki nokta arası uzaklık | `geometri` |
+| Matematik | iki kategorik değişkenli veri, koşullu olasılık | `tablo`, `sema` |
+| Fizik | hız-zaman, ivme-zaman, kuvvet-yol grafikleri | `grafik` |
+| Fizik | elektrik devresi, direnç/üreteç bağlama | `sema` |
+| Fizik | dalga biçimi, periyot, dalga boyu | `grafik` |
+| Fizik | yansıma/kırılma ışın çizimi | `geometri` |
+| Kimya | tanecik modeli, tepkime öncesi/sonrası | `sema` |
+| Kimya | gaz yasaları, çözünürlük-sıcaklık eğrisi | `grafik` |
+| Kimya | deney düzeneği | `sema` |
+| Biyoloji | fotosentez/solunum evreleri, madde döngüsü | `sema` |
+| Biyoloji | enerji piramidi, popülasyon değişimi | `grafik`, `sema` |
+| Coğrafya | harita, levha hareketi, yer şekli kesiti | `sema`, `geometri` |
+| Coğrafya | sektör dağılımı | `grafik`, `tablo` |
+
+Sayısal değer verilmemiş, tamamen sözel bir soruda görsel eklemek
+zorunlu değildir — ama **"şekildeki" deyip görsel koymamak hatadır**.
+
+### 8.3 İnceleme listesi
+
+Doğrulayıcı, görselsiz **ve** şekle gönderme yapmayan soruları bir listeye
+yazar. Bu liste "bunlara görsel gerekmez" demek değildir; "bunlara tek tek
+bakılmalı" demektir:
+
+```bash
+INCELEME=1 node scripts/soru-uret-dogrula.js <dizin>
+```
+
+Listedeki her soru için kendine sor: *görsel olmadan anlaşılıyor mu?*
+Anlaşılmıyorsa görseli ekle. Bu adım atlanmaz.
 
 ---
 
@@ -414,6 +525,9 @@ npm run -s validate:pools
 # 4) Testler
 node tests/question-pools.test.js
 npm run -s test:hepsi
+
+# 5) Görsel incelemesi — görselsiz soruların listesi (tek tek bakılır)
+INCELEME=1 node scripts/soru-uret-dogrula.js site/content/soru_havuzlari
 ```
 
 ### Teslim kabul şartları
@@ -427,7 +541,10 @@ npm run -s test:hepsi
 | 5 | `havuz-index-uret.js --plan` → **0 hata** |
 | 6 | `npm run -s validate:pools` → hepsi geçerli |
 | 7 | Metin tekrarı 0, hiçbir şık > %40 |
-| 8 | Uygulama kodu **değiştirilmedi** (yalnız veri eklendi) |
+| 8 | Her soruda `flashcard` var; `flashcards.length == sorular.length`; toplam ≥ 1.686 kart |
+| 9 | Şekle gönderme yapan her soruda `gorsel` var ve §8.1 tipine uyuyor |
+| 10 | `INCELEME=1` listesindeki her soru tek tek gözden geçirildi |
+| 11 | Uygulama kodu **değiştirilmedi** (yalnız veri eklendi) |
 
 ---
 
@@ -474,9 +591,16 @@ ders kitabı                              → içerik
         ↓
 her süreç bileşeni için ≥2 soru           → alt_beceri = süreç metni
         ↓
+her soru için 1 flashcard                 → front/back
+        ↓
+soruları bitirdikten sonra TEK TEK        → bu soru görsel ister mi?
+  evet → gorsel alanı (§8.1 tipleri)      → hayır → alanı yazma
+        ↓
 site/content/soru_havuzlari/<konu_id>.json
         ↓
 soru-uret-dogrula.js → havuz-index-uret.js --plan → validate:pools → test:hepsi
+        ↓
+INCELEME=1 ... → görselsiz listeyi gözden geçir
         ↓
 dal soru-uretim → PR #4'ün hattına
 ```

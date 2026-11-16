@@ -13,31 +13,48 @@ bu çıktıların **612 süreç bileşeni** burada eksiksiz listelenmiştir.
 Her çıktının başlığı altında şu satır vardır:
 
 ```
-Dosya: <konu_id>.json · konu_id: <ders>_10_t<tema>_c<sıra> · hedef soru: N · süreç: M
+Dosya: <konu_id>.json · konu_id: <ders>_10_t<tema>_c<sıra> · soru: N · flashcard: N · süreç: M
 ```
 
-Bunlar soru üretecek ajanın iş emridir: hangi dosyayı açacağı, kaç soru yazacağı
-ve soruları hangi süreç bileşenlerine dağıtacağı bu satırdan okunur.
+Bunlar soru üretecek ajanın iş emridir: hangi dosyayı açacağı, kaç soru ve kaç
+flashcard yazacağı, soruları hangi süreç bileşenlerine dağıtacağı bu satırdan okunur.
+
+Görsel için bu satırda sayı YOKTUR. Görsel, sorular yazıldıktan sonra soru bazında
+tek tek kararlaştırılır (bkz. talimat §8).
 
 **Hiçbir metin değiştirilmemiştir.** Kazanım cümleleri ve süreç bileşenleri resmî
 programdan birebir alınmıştır (doğrulama: `npm run -s test:tymm` → 158/158 çıktı, 612/612 süreç).
 
 ## Özet
 
-| Ders | Çıktı | Süreç bileşeni | Üretilecek soru |
-| --- | --- | --- | --- |
-| Türk Dili ve Edebiyatı | 16 | 64 | **188** |
-| Matematik | 21 | 123 | **274** |
-| Fizik | 22 | 70 | **220** |
-| Kimya | 21 | 69 | **214** |
-| Biyoloji | 19 | 61 | **190** |
-| Tarih | 14 | 49 | **140** |
-| Coğrafya | 18 | 73 | **190** |
-| Felsefe | 10 | 38 | **100** |
-| Din Kültürü | 17 | 65 | **170** |
-| **Toplam** | **158** | **612** | **1686** |
+| Ders | Çıktı | Süreç | Soru | Flashcard |
+| --- | --- | --- | --- | --- |
+| Türk Dili ve Edebiyatı | 16 | 64 | **188** | 188 |
+| Matematik | 21 | 123 | **274** | 274 |
+| Fizik | 22 | 70 | **220** | 220 |
+| Kimya | 21 | 69 | **214** | 214 |
+| Biyoloji | 19 | 61 | **190** | 190 |
+| Tarih | 14 | 49 | **140** | 140 |
+| Coğrafya | 18 | 73 | **190** | 190 |
+| Felsefe | 10 | 38 | **100** | 100 |
+| Din Kültürü | 17 | 65 | **170** | 170 |
+| **Toplam** | **158** | **612** | **1686** | **1686** |
 
-Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
+**İki sayı kuralı:**
+
+```
+soru      = max(10, 2 × süreç bileşeni sayısı)   → taban 10, süreç çoksa artar
+flashcard = soru sayısı                         → her soru için tam 1 kart
+```
+
+Flashcard istisnasız 1:1'dir. Mevcut 172 havuzun tamamı böyledir
+(1956 soru / 1956 kart). Kart metni sorunun kendisinden bağımsız
+yazılmaz; o sorunun öğrettiği tek şeyi sorar.
+
+**Görsel için sayı yoktur.** Aynı çıktının soruları farklı ihtiyaç taşır:
+"dik kenarları 7 ve 24 olan dik üçgende tan α" görsel ister,
+"1 − cos²x kaçtır" istemez. Karar soru yazıldıktan sonra, soru bazında,
+tek tek verilir — bkz. talimat §8.
 
 ## Kaynak belgeler
 
@@ -59,18 +76,18 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 16 öğrenme çıktısı · 64 süreç bileşeni · 188 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Sözün Ezgisi | 4 |
-| 2 | Kelimelerin Ritmi | 4 |
-| 3 | Dünden Bugüne | 4 |
-| 4 | Nesillerin Mirası | 4 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Sözün Ezgisi | 4 | 42 |
+| 2 | Kelimelerin Ritmi | 4 | 42 |
+| 3 | Dünden Bugüne | 4 | 52 |
+| 4 | Nesillerin Mirası | 4 | 52 |
 
 ### Türk Dili ve Edebiyatı · Tema 1 — Sözün Ezgisi
 
 #### `TDE1.1` — Dinlemeyi/İzlemeyi Yönetebilme
 
-- **Dosya:** `edebiyat_10_t01_c01.json` · **konu_id:** `edebiyat_10_t01_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t01_c01.json` · **konu_id:** `edebiyat_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -79,7 +96,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE1.2` — Anlam Oluşturabilme
 
-- **Dosya:** `edebiyat_10_t01_c02.json` · **konu_id:** `edebiyat_10_t01_c02` · **hedef soru:** 12 · **süreç:** 6
+- **Dosya:** `edebiyat_10_t01_c02.json` · **konu_id:** `edebiyat_10_t01_c02` · **soru:** 12 · **flashcard:** 12 · **süreç:** 6
 
 **Süreç bileşenleri:**
 
@@ -92,7 +109,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE1.3` — Çözümleyebilme
 
-- **Dosya:** `edebiyat_10_t01_c03.json` · **konu_id:** `edebiyat_10_t01_c03` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t01_c03.json` · **konu_id:** `edebiyat_10_t01_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -101,7 +118,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE1.4` — Süreci Değerlendirebilme
 
-- **Dosya:** `edebiyat_10_t01_c04.json` · **konu_id:** `edebiyat_10_t01_c04` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t01_c04.json` · **konu_id:** `edebiyat_10_t01_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -112,7 +129,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE2.1` — Okumayı Yönetebilme
 
-- **Dosya:** `edebiyat_10_t02_c01.json` · **konu_id:** `edebiyat_10_t02_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t02_c01.json` · **konu_id:** `edebiyat_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** OKUMA • Tema içeriğine uygun bir koşuk • Ara Metin: Tema içeriğine uygun bir koşma • Tema içeriğine uygun bir türkü • Ara Metin: Tema içeriğine uygun bir ninni *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -122,7 +139,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE2.2` — Anlam Oluşturabilme
 
-- **Dosya:** `edebiyat_10_t02_c02.json` · **konu_id:** `edebiyat_10_t02_c02` · **hedef soru:** 12 · **süreç:** 6
+- **Dosya:** `edebiyat_10_t02_c02.json` · **konu_id:** `edebiyat_10_t02_c02` · **soru:** 12 · **flashcard:** 12 · **süreç:** 6
 - **ODSGM sınav konusu:** OKUMA • Tema içeriğine uygun bir koşuk • Ara Metin: Tema içeriğine uygun bir koşma • Tema içeriğine uygun bir türkü • Ara Metin: Tema içeriğine uygun bir ninni *(senaryo sayıları: 1, 1, 1, 2)*
 
 **Süreç bileşenleri:**
@@ -136,7 +153,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE2.3` — Çözümleyebilme
 
-- **Dosya:** `edebiyat_10_t02_c03.json` · **konu_id:** `edebiyat_10_t02_c03` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t02_c03.json` · **konu_id:** `edebiyat_10_t02_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** OKUMA • Tema içeriğine uygun bir koşuk • Ara Metin: Tema içeriğine uygun bir koşma • Tema içeriğine uygun bir türkü • Ara Metin: Tema içeriğine uygun bir ninni *(senaryo sayıları: 1, 1)*
 
 **Süreç bileşenleri:**
@@ -146,7 +163,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE2.4` — Süreci Değerlendirebilme
 
-- **Dosya:** `edebiyat_10_t02_c04.json` · **konu_id:** `edebiyat_10_t02_c04` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t02_c04.json` · **konu_id:** `edebiyat_10_t02_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** OKUMA • Tema içeriğine uygun bir koşuk • Ara Metin: Tema içeriğine uygun bir koşma • Tema içeriğine uygun bir türkü • Ara Metin: Tema içeriğine uygun bir ninni *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -158,7 +175,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE3.1` — Konuşmayı Yönetebilme
 
-- **Dosya:** `edebiyat_10_t03_c01.json` · **konu_id:** `edebiyat_10_t03_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t03_c01.json` · **konu_id:** `edebiyat_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -167,7 +184,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE3.2` — İçerik Oluşturabilme
 
-- **Dosya:** `edebiyat_10_t03_c02.json` · **konu_id:** `edebiyat_10_t03_c02` · **hedef soru:** 18 · **süreç:** 9
+- **Dosya:** `edebiyat_10_t03_c02.json` · **konu_id:** `edebiyat_10_t03_c02` · **soru:** 18 · **flashcard:** 18 · **süreç:** 9
 
 **Süreç bileşenleri:**
 
@@ -183,7 +200,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE3.3` — Kural Uygulayabilme
 
-- **Dosya:** `edebiyat_10_t03_c03.json` · **konu_id:** `edebiyat_10_t03_c03` · **hedef soru:** 14 · **süreç:** 7
+- **Dosya:** `edebiyat_10_t03_c03.json` · **konu_id:** `edebiyat_10_t03_c03` · **soru:** 14 · **flashcard:** 14 · **süreç:** 7
 
 **Süreç bileşenleri:**
 
@@ -197,7 +214,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE3.4` — Süreci Değerlendirebilme
 
-- **Dosya:** `edebiyat_10_t03_c04.json` · **konu_id:** `edebiyat_10_t03_c04` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t03_c04.json` · **konu_id:** `edebiyat_10_t03_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -208,7 +225,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE4.1` — Yazmayı Yönetebilme
 
-- **Dosya:** `edebiyat_10_t04_c01.json` · **konu_id:** `edebiyat_10_t04_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t04_c01.json` · **konu_id:** `edebiyat_10_t04_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** YAZMA • Dinlediği masalı film şeridi hâline getirebilme *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -218,7 +235,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE4.2` — İçerik Oluşturabilme
 
-- **Dosya:** `edebiyat_10_t04_c02.json` · **konu_id:** `edebiyat_10_t04_c02` · **hedef soru:** 16 · **süreç:** 8
+- **Dosya:** `edebiyat_10_t04_c02.json` · **konu_id:** `edebiyat_10_t04_c02` · **soru:** 16 · **flashcard:** 16 · **süreç:** 8
 - **ODSGM sınav konusu:** YAZMA • Dinlediği masalı film şeridi hâline getirebilme *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -234,7 +251,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE4.3` — Kural Uygulayabilme
 
-- **Dosya:** `edebiyat_10_t04_c03.json` · **konu_id:** `edebiyat_10_t04_c03` · **hedef soru:** 16 · **süreç:** 8
+- **Dosya:** `edebiyat_10_t04_c03.json` · **konu_id:** `edebiyat_10_t04_c03` · **soru:** 16 · **flashcard:** 16 · **süreç:** 8
 - **ODSGM sınav konusu:** YAZMA • Dinlediği masalı film şeridi hâline getirebilme *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -250,7 +267,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TDE4.4` — Süreci Değerlendirebilme
 
-- **Dosya:** `edebiyat_10_t04_c04.json` · **konu_id:** `edebiyat_10_t04_c04` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `edebiyat_10_t04_c04.json` · **konu_id:** `edebiyat_10_t04_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** YAZMA • Dinlediği masalı film şeridi hâline getirebilme *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -264,21 +281,21 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 21 öğrenme çıktısı · 123 süreç bileşeni · 274 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Geometrik Şekiller | 4 |
-| 2 | İstatistiksel Araştırma Süreci | 2 |
-| 3 | Sayılar | 3 |
-| 4 | Nicelikler ve Değişimler | 6 |
-| 5 | Sayma, Algoritma ve Bilişim | 2 |
-| 6 | Analitik İnceleme | 2 |
-| 7 | Veriden Olasılığa | 2 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Geometrik Şekiller | 4 | 40 |
+| 2 | İstatistiksel Araştırma Süreci | 2 | 26 |
+| 3 | Sayılar | 3 | 38 |
+| 4 | Nicelikler ve Değişimler | 6 | 100 |
+| 5 | Sayma, Algoritma ve Bilişim | 2 | 30 |
+| 6 | Analitik İnceleme | 2 | 20 |
+| 7 | Veriden Olasılığa | 2 | 20 |
 
 ### Matematik · Tema 1 — Geometrik Şekiller
 
 #### `MAT.10.1.1` — Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme
 
-- **Dosya:** `mat_10_t01_c01.json` · **konu_id:** `mat_10_t01_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `mat_10_t01_c01.json` · **konu_id:** `mat_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler *(senaryo sayıları: 2, 3, 3, 2, 2, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -291,7 +308,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.1.2` — Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme
 
-- **Dosya:** `mat_10_t01_c02.json` · **konu_id:** `mat_10_t01_c02` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `mat_10_t01_c02.json` · **konu_id:** `mat_10_t01_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Üçgende Yardımcı Elemanlar *(senaryo sayıları: 1, 1, 2, 2, 2, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -304,7 +321,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.1.3` — Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme
 
-- **Dosya:** `mat_10_t01_c03.json` · **konu_id:** `mat_10_t01_c03` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `mat_10_t01_c03.json` · **konu_id:** `mat_10_t01_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Üçgenin Alanı *(senaryo sayıları: 1, 1, 1, 2, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -317,7 +334,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.1.4` — Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme
 
-- **Dosya:** `mat_10_t01_c04.json` · **konu_id:** `mat_10_t01_c04` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `mat_10_t01_c04.json` · **konu_id:** `mat_10_t01_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Sinüs ve Kosinüs Teoremleri *(senaryo sayıları: 1, 1, 1, 2, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -329,7 +346,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.2.1` — İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme
 
-- **Dosya:** `mat_10_t02_c01.json` · **konu_id:** `mat_10_t02_c01` · **hedef soru:** 16 · **süreç:** 8
+- **Dosya:** `mat_10_t02_c01.json` · **konu_id:** `mat_10_t02_c01` · **soru:** 16 · **flashcard:** 16 · **süreç:** 8
 - **ODSGM sınav konusu:** İki Kategorik Değişkenli Veriler *(senaryo sayıları: 2, 1, 2, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -345,7 +362,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.2.2` — Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme
 
-- **Dosya:** `mat_10_t02_c02.json` · **konu_id:** `mat_10_t02_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `mat_10_t02_c02.json` · **konu_id:** `mat_10_t02_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verileri İnceleme *(senaryo sayıları: 1, 1)*
 
 **Süreç bileşenleri:**
@@ -358,7 +375,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.3.1` — Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme
 
-- **Dosya:** `mat_10_t03_c01.json` · **konu_id:** `mat_10_t03_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `mat_10_t03_c01.json` · **konu_id:** `mat_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Bir Doğal Sayının Asal Çarpanları, Bölenleri *(senaryo sayıları: 1, 1, 1, 2, 1)*
 
 **Süreç bileşenleri:**
@@ -371,7 +388,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.3.2` — Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme
 
-- **Dosya:** `mat_10_t03_c02.json` · **konu_id:** `mat_10_t03_c02` · **hedef soru:** 14 · **süreç:** 7
+- **Dosya:** `mat_10_t03_c02.json` · **konu_id:** `mat_10_t03_c02` · **soru:** 14 · **flashcard:** 14 · **süreç:** 7
 - **ODSGM sınav konusu:** En Büyük Ortak Bölen, En Küçük Ortak Kat *(senaryo sayıları: 2, 2, 3, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -386,7 +403,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.3.3` — Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme
 
-- **Dosya:** `mat_10_t03_c03.json` · **konu_id:** `mat_10_t03_c03` · **hedef soru:** 14 · **süreç:** 7
+- **Dosya:** `mat_10_t03_c03.json` · **konu_id:** `mat_10_t03_c03` · **soru:** 14 · **flashcard:** 14 · **süreç:** 7
 - **ODSGM sınav konusu:** Bölünebilme *(senaryo sayıları: 2, 2, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -403,7 +420,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.4.1` — Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme
 
-- **Dosya:** `mat_10_t04_c01.json` · **konu_id:** `mat_10_t04_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `mat_10_t04_c01.json` · **konu_id:** `mat_10_t04_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Gerçek Sayılarda Fonksiyon Olma Şartları *(senaryo sayıları: 1, 1, 2, 1)*
 
 **Süreç bileşenleri:**
@@ -414,7 +431,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.4.2` — Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±
 
-- **Dosya:** `mat_10_t04_c02.json` · **konu_id:** `mat_10_t04_c02` · **hedef soru:** 24 · **süreç:** 12
+- **Dosya:** `mat_10_t04_c02.json` · **konu_id:** `mat_10_t04_c02` · **soru:** 24 · **flashcard:** 24 · **süreç:** 12
 - **ODSGM sınav konusu:** Karesel Fonksiyon ve Nitel Özellikleri *(senaryo sayıları: 1, 1)*
 
 **Süreç bileşenleri:**
@@ -434,7 +451,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.4.3` — Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±
 
-- **Dosya:** `mat_10_t04_c03.json` · **konu_id:** `mat_10_t04_c03` · **hedef soru:** 12 · **süreç:** 6
+- **Dosya:** `mat_10_t04_c03.json` · **konu_id:** `mat_10_t04_c03` · **soru:** 12 · **flashcard:** 12 · **süreç:** 6
 - **ODSGM sınav konusu:** Karekök Fonksiyonu ve Nitel Özellikleri *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -448,7 +465,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.4.4` — Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±
 
-- **Dosya:** `mat_10_t04_c04.json` · **konu_id:** `mat_10_t04_c04` · **hedef soru:** 24 · **süreç:** 12
+- **Dosya:** `mat_10_t04_c04.json` · **konu_id:** `mat_10_t04_c04` · **soru:** 24 · **flashcard:** 24 · **süreç:** 12
 
 **Süreç bileşenleri:**
 
@@ -467,7 +484,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.4.5` — Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme
 
-- **Dosya:** `mat_10_t04_c05.json` · **konu_id:** `mat_10_t04_c05` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `mat_10_t04_c05.json` · **konu_id:** `mat_10_t04_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -479,7 +496,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.4.6` — Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme
 
-- **Dosya:** `mat_10_t04_c06.json` · **konu_id:** `mat_10_t04_c06` · **hedef soru:** 20 · **süreç:** 10
+- **Dosya:** `mat_10_t04_c06.json` · **konu_id:** `mat_10_t04_c06` · **soru:** 20 · **flashcard:** 20 · **süreç:** 10
 
 **Süreç bileşenleri:**
 
@@ -498,7 +515,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.5.1` — Sayma stratejileri kullanarak problem çözebilme
 
-- **Dosya:** `mat_10_t05_c01.json` · **konu_id:** `mat_10_t05_c01` · **hedef soru:** 20 · **süreç:** 10
+- **Dosya:** `mat_10_t05_c01.json` · **konu_id:** `mat_10_t05_c01` · **soru:** 20 · **flashcard:** 20 · **süreç:** 10
 
 **Süreç bileşenleri:**
 
@@ -515,7 +532,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.5.2` — Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme
 
-- **Dosya:** `mat_10_t05_c02.json` · **konu_id:** `mat_10_t05_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `mat_10_t05_c02.json` · **konu_id:** `mat_10_t05_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -526,7 +543,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.6.1` — Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme
 
-- **Dosya:** `mat_10_t06_c01.json` · **konu_id:** `mat_10_t06_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `mat_10_t06_c01.json` · **konu_id:** `mat_10_t06_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -538,7 +555,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.6.2` — Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme
 
-- **Dosya:** `mat_10_t06_c02.json` · **konu_id:** `mat_10_t06_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `mat_10_t06_c02.json` · **konu_id:** `mat_10_t06_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -550,7 +567,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.7.1` — Koşullu olasılık ile çıkarım yapabilme
 
-- **Dosya:** `mat_10_t07_c01.json` · **konu_id:** `mat_10_t07_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `mat_10_t07_c01.json` · **konu_id:** `mat_10_t07_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -562,7 +579,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `MAT.10.7.2` — Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme
 
-- **Dosya:** `mat_10_t07_c02.json` · **konu_id:** `mat_10_t07_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `mat_10_t07_c02.json` · **konu_id:** `mat_10_t07_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -576,18 +593,18 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 22 öğrenme çıktısı · 70 süreç bileşeni · 220 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Kuvvet ve Hareket | 3 |
-| 2 | Enerji | 5 |
-| 3 | Elektrik | 7 |
-| 4 | Dalgalar | 7 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Kuvvet ve Hareket | 3 | 30 |
+| 2 | Enerji | 5 | 50 |
+| 3 | Elektrik | 7 | 70 |
+| 4 | Dalgalar | 7 | 70 |
 
 ### Fizik · Tema 1 — Kuvvet ve Hareket
 
 #### `FİZ.10.1.1` — Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme
 
-- **Dosya:** `fiz_10_t01_c01.json` · **konu_id:** `fiz_10_t01_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t01_c01.json` · **konu_id:** `fiz_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Sabit Hızlı Hareket *(senaryo sayıları: 3, 3, 2, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -598,7 +615,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.1.2` — İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme
 
-- **Dosya:** `fiz_10_t01_c02.json` · **konu_id:** `fiz_10_t01_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `fiz_10_t01_c02.json` · **konu_id:** `fiz_10_t01_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Bir Boyutta Sabit İvmeli Hareket *(senaryo sayıları: 2, 3, 3, 3, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -608,7 +625,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.1.3` — Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme
 
-- **Dosya:** `fiz_10_t01_c03.json` · **konu_id:** `fiz_10_t01_c03` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t01_c03.json` · **konu_id:** `fiz_10_t01_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Bir Boyutta Sabit İvmeli Hareket *(senaryo sayıları: 2, 1, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -621,7 +638,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.2.1` — Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme
 
-- **Dosya:** `fiz_10_t02_c01.json` · **konu_id:** `fiz_10_t02_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `fiz_10_t02_c01.json` · **konu_id:** `fiz_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** İş, Enerji ve Güç *(senaryo sayıları: 1, 1, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -631,7 +648,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.2.2` — İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme
 
-- **Dosya:** `fiz_10_t02_c02.json` · **konu_id:** `fiz_10_t02_c02` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `fiz_10_t02_c02.json` · **konu_id:** `fiz_10_t02_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** İş, Enerji ve Güç *(senaryo sayıları: 1, 2, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -644,7 +661,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.2.3` — Enerji biçimlerini karşılaştırabilme
 
-- **Dosya:** `fiz_10_t02_c03.json` · **konu_id:** `fiz_10_t02_c03` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t02_c03.json` · **konu_id:** `fiz_10_t02_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Enerji Biçimleri *(senaryo sayıları: 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -655,7 +672,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.2.4` — Mekanik enerjiyi çözümleyebilme
 
-- **Dosya:** `fiz_10_t02_c04.json` · **konu_id:** `fiz_10_t02_c04` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `fiz_10_t02_c04.json` · **konu_id:** `fiz_10_t02_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Mekanik Enerji *(senaryo sayıları: 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -665,7 +682,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.2.5` — Yenilenebilen ve yenilenemeyen enerji kaynaklarını karşılaştırabilme
 
-- **Dosya:** `fiz_10_t02_c05.json` · **konu_id:** `fiz_10_t02_c05` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t02_c05.json` · **konu_id:** `fiz_10_t02_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Enerji Kaynakları *(senaryo sayıları: 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -678,7 +695,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.3.1` — Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme
 
-- **Dosya:** `fiz_10_t03_c01.json` · **konu_id:** `fiz_10_t03_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t03_c01.json` · **konu_id:** `fiz_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -688,7 +705,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.3.2` — Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme
 
-- **Dosya:** `fiz_10_t03_c02.json` · **konu_id:** `fiz_10_t03_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `fiz_10_t03_c02.json` · **konu_id:** `fiz_10_t03_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -697,7 +714,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.3.3` — Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme
 
-- **Dosya:** `fiz_10_t03_c03.json` · **konu_id:** `fiz_10_t03_c03` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `fiz_10_t03_c03.json` · **konu_id:** `fiz_10_t03_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -706,7 +723,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.3.4` — Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme
 
-- **Dosya:** `fiz_10_t03_c04.json` · **konu_id:** `fiz_10_t03_c04` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t03_c04.json` · **konu_id:** `fiz_10_t03_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -716,7 +733,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.3.5` — Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme
 
-- **Dosya:** `fiz_10_t03_c05.json` · **konu_id:** `fiz_10_t03_c05` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t03_c05.json` · **konu_id:** `fiz_10_t03_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -726,7 +743,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.3.6` — Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilme
 
-- **Dosya:** `fiz_10_t03_c06.json` · **konu_id:** `fiz_10_t03_c06` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fiz_10_t03_c06.json` · **konu_id:** `fiz_10_t03_c06` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -737,7 +754,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.3.7` — Topraklama olayının önemini sorgulayabilme
 
-- **Dosya:** `fiz_10_t03_c07.json` · **konu_id:** `fiz_10_t03_c07` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `fiz_10_t03_c07.json` · **konu_id:** `fiz_10_t03_c07` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -751,7 +768,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.4.1` — Periyodik hareketlere ilişkin deneyimlerini yansıtabilme
 
-- **Dosya:** `fiz_10_t04_c01.json` · **konu_id:** `fiz_10_t04_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t04_c01.json` · **konu_id:** `fiz_10_t04_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -761,7 +778,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.4.2` — Dalgaların temel kavramlarına ilişkin operasyonel tanımlama yapabilme
 
-- **Dosya:** `fiz_10_t04_c02.json` · **konu_id:** `fiz_10_t04_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t04_c02.json` · **konu_id:** `fiz_10_t04_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -771,7 +788,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.4.3` — Dalgaları özelliklerine göre sınıflandırabilme
 
-- **Dosya:** `fiz_10_t04_c03.json` · **konu_id:** `fiz_10_t04_c03` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fiz_10_t04_c03.json` · **konu_id:** `fiz_10_t04_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -782,7 +799,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.4.4` — Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme
 
-- **Dosya:** `fiz_10_t04_c04.json` · **konu_id:** `fiz_10_t04_c04` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `fiz_10_t04_c04.json` · **konu_id:** `fiz_10_t04_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -794,7 +811,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.4.5` — Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme
 
-- **Dosya:** `fiz_10_t04_c05.json` · **konu_id:** `fiz_10_t04_c05` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fiz_10_t04_c05.json` · **konu_id:** `fiz_10_t04_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -804,7 +821,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.4.6` — Rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilme
 
-- **Dosya:** `fiz_10_t04_c06.json` · **konu_id:** `fiz_10_t04_c06` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `fiz_10_t04_c06.json` · **konu_id:** `fiz_10_t04_c06` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -816,7 +833,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FİZ.10.4.7` — Depremle ilgili bilimsel model oluşturabilme
 
-- **Dosya:** `fiz_10_t04_c07.json` · **konu_id:** `fiz_10_t04_c07` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `fiz_10_t04_c07.json` · **konu_id:** `fiz_10_t04_c07` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -829,17 +846,17 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 21 öğrenme çıktısı · 69 süreç bileşeni · 214 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Etkileşim | 11 |
-| 2 | Çeşitlilik | 8 |
-| 3 | Sürdürülebilirlik | 2 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Etkileşim | 11 | 114 |
+| 2 | Çeşitlilik | 8 | 80 |
+| 3 | Sürdürülebilirlik | 2 | 20 |
 
 ### Kimya · Tema 1 — Etkileşim
 
 #### `KİM.10.1.1` — Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme
 
-- **Dosya:** `kim_10_t01_c01.json` · **konu_id:** `kim_10_t01_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t01_c01.json` · **konu_id:** `kim_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Kimyasal Tepkimeler *(senaryo sayıları: 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -850,7 +867,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.10` — İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme
 
-- **Dosya:** `kim_10_t01_c10.json` · **konu_id:** `kim_10_t01_c10` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `kim_10_t01_c10.json` · **konu_id:** `kim_10_t01_c10` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Gazlar *(senaryo sayıları: 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -860,7 +877,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.11` — Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme
 
-- **Dosya:** `kim_10_t01_c11.json` · **konu_id:** `kim_10_t01_c11` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `kim_10_t01_c11.json` · **konu_id:** `kim_10_t01_c11` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -869,7 +886,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.2` — Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme
 
-- **Dosya:** `kim_10_t01_c02.json` · **konu_id:** `kim_10_t01_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `kim_10_t01_c02.json` · **konu_id:** `kim_10_t01_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Kimyasal Tepkimeler *(senaryo sayıları: 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -879,7 +896,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.3` — Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme
 
-- **Dosya:** `kim_10_t01_c03.json` · **konu_id:** `kim_10_t01_c03` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t01_c03.json` · **konu_id:** `kim_10_t01_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Kimyasal Tepkimeler *(senaryo sayıları: 2, 2, 2, 1, 2, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -890,7 +907,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.4` — Mol kavramına ilişkin operasyonel tanımlama yapabilme
 
-- **Dosya:** `kim_10_t01_c04.json` · **konu_id:** `kim_10_t01_c04` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t01_c04.json` · **konu_id:** `kim_10_t01_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Kimyasal Tepkimeler *(senaryo sayıları: 2, 1, 1, 2, 2, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -901,7 +918,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.5` — Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme
 
-- **Dosya:** `kim_10_t01_c05.json` · **konu_id:** `kim_10_t01_c05` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `kim_10_t01_c05.json` · **konu_id:** `kim_10_t01_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Kimyasal Tepkimeler *(senaryo sayıları: 1, 2, 2, 1, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -911,7 +928,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.6` — Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme
 
-- **Dosya:** `kim_10_t01_c06.json` · **konu_id:** `kim_10_t01_c06` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `kim_10_t01_c06.json` · **konu_id:** `kim_10_t01_c06` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Kimyasal Tepkimeler *(senaryo sayıları: 1, 1, 1, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -923,7 +940,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.7` — Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme
 
-- **Dosya:** `kim_10_t01_c07.json` · **konu_id:** `kim_10_t01_c07` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t01_c07.json` · **konu_id:** `kim_10_t01_c07` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Kimyasal Tepkimeler *(senaryo sayıları: 2, 2, 2, 1, 2, 1, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -934,7 +951,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.8` — Gazların özelliklerine ilişkin bilimsel gözlem yapabilme
 
-- **Dosya:** `kim_10_t01_c08.json` · **konu_id:** `kim_10_t01_c08` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t01_c08.json` · **konu_id:** `kim_10_t01_c08` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Gazlar *(senaryo sayıları: 2, 2, 1, 1, 1, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -945,7 +962,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.1.9` — Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme
 
-- **Dosya:** `kim_10_t01_c09.json` · **konu_id:** `kim_10_t01_c09` · **hedef soru:** 14 · **süreç:** 7
+- **Dosya:** `kim_10_t01_c09.json` · **konu_id:** `kim_10_t01_c09` · **soru:** 14 · **flashcard:** 14 · **süreç:** 7
 - **ODSGM sınav konusu:** Gazlar *(senaryo sayıları: 1, 2, 1, 1, 1, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -962,7 +979,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.1` — Çözünme sürecine ilişkin bilimsel model oluşturabilme
 
-- **Dosya:** `kim_10_t02_c01.json` · **konu_id:** `kim_10_t02_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `kim_10_t02_c01.json` · **konu_id:** `kim_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -971,7 +988,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.2` — Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme
 
-- **Dosya:** `kim_10_t02_c02.json` · **konu_id:** `kim_10_t02_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t02_c02.json` · **konu_id:** `kim_10_t02_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -981,7 +998,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.3` — Çözünme olayını sınıflandırabilme
 
-- **Dosya:** `kim_10_t02_c03.json` · **konu_id:** `kim_10_t02_c03` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `kim_10_t02_c03.json` · **konu_id:** `kim_10_t02_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -992,7 +1009,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.4` — Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme
 
-- **Dosya:** `kim_10_t02_c04.json` · **konu_id:** `kim_10_t02_c04` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t02_c04.json` · **konu_id:** `kim_10_t02_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1002,7 +1019,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.5` — Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme
 
-- **Dosya:** `kim_10_t02_c05.json` · **konu_id:** `kim_10_t02_c05` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `kim_10_t02_c05.json` · **konu_id:** `kim_10_t02_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1012,7 +1029,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.6` — Çözeltileri sınıflandırabilme
 
-- **Dosya:** `kim_10_t02_c06.json` · **konu_id:** `kim_10_t02_c06` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `kim_10_t02_c06.json` · **konu_id:** `kim_10_t02_c06` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1023,7 +1040,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.7` — Çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilme
 
-- **Dosya:** `kim_10_t02_c07.json` · **konu_id:** `kim_10_t02_c07` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `kim_10_t02_c07.json` · **konu_id:** `kim_10_t02_c07` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -1032,7 +1049,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.2.8` — Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme
 
-- **Dosya:** `kim_10_t02_c08.json` · **konu_id:** `kim_10_t02_c08` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `kim_10_t02_c08.json` · **konu_id:** `kim_10_t02_c08` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1046,7 +1063,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.3.1` — Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme
 
-- **Dosya:** `kim_10_t03_c01.json` · **konu_id:** `kim_10_t03_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `kim_10_t03_c01.json` · **konu_id:** `kim_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1057,7 +1074,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `KİM.10.3.2` — Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme
 
-- **Dosya:** `kim_10_t03_c02.json` · **konu_id:** `kim_10_t03_c02` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `kim_10_t03_c02.json` · **konu_id:** `kim_10_t03_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1073,16 +1090,16 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 19 öğrenme çıktısı · 61 süreç bileşeni · 190 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Enerji | 10 |
-| 2 | Ekoloji | 9 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Enerji | 10 | 100 |
+| 2 | Ekoloji | 9 | 90 |
 
 ### Biyoloji · Tema 1 — Enerji
 
 #### `BİY.10.1.1` — Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme
 
-- **Dosya:** `biyo_10_t01_c01.json` · **konu_id:** `biyo_10_t01_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `biyo_10_t01_c01.json` · **konu_id:** `biyo_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Canlılık İçin Enerjinin Önemi (ATP’nin Yapısı ve Enerji Aktarımında ATP’nin Rolü) *(senaryo sayıları: 2, 3, 2, 3, 1)*
 
 **Süreç bileşenleri:**
@@ -1095,7 +1112,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.10` — Besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapabilme
 
-- **Dosya:** `biyo_10_t01_c10.json` · **konu_id:** `biyo_10_t01_c10` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `biyo_10_t01_c10.json` · **konu_id:** `biyo_10_t01_c10` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1105,7 +1122,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.2` — Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme
 
-- **Dosya:** `biyo_10_t01_c02.json` · **konu_id:** `biyo_10_t01_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `biyo_10_t01_c02.json` · **konu_id:** `biyo_10_t01_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Işık Enerjisi Kullanılarak Besin Sentezi: Fotosentez (Işığın Kullanıldığı Tepkimeler, Işığın Kullanılmadığı Tepkimeler, Fotosentez Hızına Etki Eden Çevresel Faktörler) *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -1115,7 +1132,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.3` — Fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapabilme
 
-- **Dosya:** `biyo_10_t01_c03.json` · **konu_id:** `biyo_10_t01_c03` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `biyo_10_t01_c03.json` · **konu_id:** `biyo_10_t01_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Işık Enerjisi Kullanılarak Besin Sentezi: Fotosentez (Işığın Kullanıldığı Tepkimeler, Işığın Kullanılmadığı Tepkimeler, Fotosentez Hızına Etki Eden Çevresel Faktörler) *(senaryo sayıları: 1, 1, 1, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1125,7 +1142,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.4` — Kemosentez hakkında bilgi toplayabilme
 
-- **Dosya:** `biyo_10_t01_c04.json` · **konu_id:** `biyo_10_t01_c04` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `biyo_10_t01_c04.json` · **konu_id:** `biyo_10_t01_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Işık Enerjisi Kullanılmadan Besin Sentezi: Kemosentez *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -1137,7 +1154,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.5` — Canlılarda sindirim çeşitlerini ve yapılarını sınıflandırabilme
 
-- **Dosya:** `biyo_10_t01_c05.json` · **konu_id:** `biyo_10_t01_c05` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `biyo_10_t01_c05.json` · **konu_id:** `biyo_10_t01_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Sindirim (Hücre İçi Sindirim ve Hücre Dışı Sindirim), Canlılarda Sindirim Yapıları *(senaryo sayıları: 2, 2, 3, 1, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1149,7 +1166,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.6` — İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme
 
-- **Dosya:** `biyo_10_t01_c06.json` · **konu_id:** `biyo_10_t01_c06` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `biyo_10_t01_c06.json` · **konu_id:** `biyo_10_t01_c06` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** İnsanda Sindirim, Emilim ve Taşınma *(senaryo sayıları: 2, 1, 2)*
 
 **Süreç bileşenleri:**
@@ -1160,7 +1177,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.7` — Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme
 
-- **Dosya:** `biyo_10_t01_c07.json` · **konu_id:** `biyo_10_t01_c07` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `biyo_10_t01_c07.json` · **konu_id:** `biyo_10_t01_c07` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Hücresel Solunum (Glikoliz, Sitrik Asit Döngüsü, Elektron Taşıma Sistemi) *(senaryo sayıları: —)*
 
 **Süreç bileşenleri:**
@@ -1170,7 +1187,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.8` — Farklı besin gruplarından enerji eldesi süreçlerini karşılaştırabilme
 
-- **Dosya:** `biyo_10_t01_c08.json` · **konu_id:** `biyo_10_t01_c08` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `biyo_10_t01_c08.json` · **konu_id:** `biyo_10_t01_c08` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Besinlerin Solunuma Katılma Yolları *(senaryo sayıları: 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1181,7 +1198,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.1.9` — Fermantasyon ile ilgili deney yapabilme
 
-- **Dosya:** `biyo_10_t01_c09.json` · **konu_id:** `biyo_10_t01_c09` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `biyo_10_t01_c09.json` · **konu_id:** `biyo_10_t01_c09` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Fermantasyon (Laktik Asit Fermantasyonu, Etil Alkol Fermantasyonu) *(senaryo sayıları: 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1193,7 +1210,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.1` — Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme
 
-- **Dosya:** `biyo_10_t02_c01.json` · **konu_id:** `biyo_10_t02_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `biyo_10_t02_c01.json` · **konu_id:** `biyo_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -1202,7 +1219,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.2` — Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme
 
-- **Dosya:** `biyo_10_t02_c02.json` · **konu_id:** `biyo_10_t02_c02` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `biyo_10_t02_c02.json` · **konu_id:** `biyo_10_t02_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1214,7 +1231,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.3` — Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme
 
-- **Dosya:** `biyo_10_t02_c03.json` · **konu_id:** `biyo_10_t02_c03` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `biyo_10_t02_c03.json` · **konu_id:** `biyo_10_t02_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1224,7 +1241,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.4` — Madde döngüleri ile ilgili bilimsel model oluşturabilme
 
-- **Dosya:** `biyo_10_t02_c04.json` · **konu_id:** `biyo_10_t02_c04` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `biyo_10_t02_c04.json` · **konu_id:** `biyo_10_t02_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -1233,7 +1250,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.5` — Ekolojik sürdürülebilirliğin önemini yorumlayabilme
 
-- **Dosya:** `biyo_10_t02_c05.json` · **konu_id:** `biyo_10_t02_c05` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `biyo_10_t02_c05.json` · **konu_id:** `biyo_10_t02_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1243,7 +1260,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.6` — Çevresinde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilme
 
-- **Dosya:** `biyo_10_t02_c06.json` · **konu_id:** `biyo_10_t02_c06` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `biyo_10_t02_c06.json` · **konu_id:** `biyo_10_t02_c06` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1253,7 +1270,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.7` — Ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilme
 
-- **Dosya:** `biyo_10_t02_c07.json` · **konu_id:** `biyo_10_t02_c07` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `biyo_10_t02_c07.json` · **konu_id:** `biyo_10_t02_c07` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1264,7 +1281,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.8` — Doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilme
 
-- **Dosya:** `biyo_10_t02_c08.json` · **konu_id:** `biyo_10_t02_c08` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `biyo_10_t02_c08.json` · **konu_id:** `biyo_10_t02_c08` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1276,7 +1293,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `BİY.10.2.9` — Çevresinde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilme
 
-- **Dosya:** `biyo_10_t02_c09.json` · **konu_id:** `biyo_10_t02_c09` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `biyo_10_t02_c09.json` · **konu_id:** `biyo_10_t02_c09` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1291,17 +1308,17 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 14 öğrenme çıktısı · 49 süreç bileşeni · 140 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Türkistan’dan Türkiye’ye (1040-1299) | 4 |
-| 2 | Beylikten Devlete Osmanlı (1299-1453) | 5 |
-| 3 | Cihan Devleti Osmanlı (1453-1683) | 5 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Türkistan’dan Türkiye’ye (1040-1299) | 4 | 40 |
+| 2 | Beylikten Devlete Osmanlı (1299-1453) | 5 | 50 |
+| 3 | Cihan Devleti Osmanlı (1453-1683) | 5 | 50 |
 
 ### Tarih · Tema 1 — Türkistan’dan Türkiye’ye (1040-1299)
 
 #### `TAR.10.1.1` — Türkistan’dan Türkiye’ye uzanan süreçte 1040-1299 yılları arasında meydana VE SÜREÇ BİLEŞENLERİ gelen önemli askerî mücadelelerin Türk tarihinin seyrine etkilerini karşılaştırabilme
 
-- **Dosya:** `tar_10_t01_c01.json` · **konu_id:** `tar_10_t01_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t01_c01.json` · **konu_id:** `tar_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler *(senaryo sayıları: 3, 2, 1, 2, 2, 3, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1312,7 +1329,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.1.2` — Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlayabilme
 
-- **Dosya:** `tar_10_t01_c02.json` · **konu_id:** `tar_10_t01_c02` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `tar_10_t01_c02.json` · **konu_id:** `tar_10_t01_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim *(senaryo sayıları: 2, 3, 2, 2, 2, 3, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1324,7 +1341,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.1.3` — Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgulayabilme
 
-- **Dosya:** `tar_10_t01_c03.json` · **konu_id:** `tar_10_t01_c03` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `tar_10_t01_c03.json` · **konu_id:** `tar_10_t01_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri *(senaryo sayıları: 2, 2, 3, 3, 2, 1, 1, 1, 2)*
 
 **Süreç bileşenleri:**
@@ -1337,7 +1354,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.1.4` — Türkistan’dan Türkiye’ye uzanan süreçte Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmeleri Anadolu’nun Türkleşme ve İslamlaşma sürecine etkisi açısından değerlendirebilme
 
-- **Dosya:** `tar_10_t01_c04.json` · **konu_id:** `tar_10_t01_c04` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t01_c04.json` · **konu_id:** `tar_10_t01_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Türk-İslam Medeniyetinin Bilim, Kültür, Eğitim ve Sanat Alanlarında Ortaya Çıkardığı Etkiler *(senaryo sayıları: 2, 1, 1, 1, 2)*
 
 **Süreç bileşenleri:**
@@ -1350,7 +1367,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.2.1` — Osmanlı Devleti’nin kuruluşuna dair farklı görüşleri tartışabilme VE SÜREÇ BİLEŞENLERİ
 
-- **Dosya:** `tar_10_t02_c01.json` · **konu_id:** `tar_10_t02_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t02_c01.json` · **konu_id:** `tar_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Osmanlı Devleti’nin Kuruluşuna Dair Farklı Görüşler *(senaryo sayıları: 2, 2, 2, 1, 1, 2)*
 
 **Süreç bileşenleri:**
@@ -1361,7 +1378,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.2.2` — 1299-1453 yılları arasında Osmanlı Devleti’nin Anadolu ve Rumeli’de gerçekleştirdiği siyasi ve askerî mücadeleleri yorumlayabilme
 
-- **Dosya:** `tar_10_t02_c02.json` · **konu_id:** `tar_10_t02_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t02_c02.json` · **konu_id:** `tar_10_t02_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Osmanlı Devleti’nin Anadolu ve Rumeli’deki Siyasi ve Askerî Mücadeleleri *(senaryo sayıları: 2, 2, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1372,7 +1389,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.2.3` — Osmanlı Devleti’nin ordu, hukuk ve toprak sistemi ile devletleşme süreci arasındaki ilişkiyi çözümleyebilme
 
-- **Dosya:** `tar_10_t02_c03.json` · **konu_id:** `tar_10_t02_c03` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `tar_10_t02_c03.json` · **konu_id:** `tar_10_t02_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -1381,7 +1398,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.2.4` — Osmanlı Devleti’nin fethettiği topraklarda kalıcı olabilmek için izlediği politikaları sorgulayabilme
 
-- **Dosya:** `tar_10_t02_c04.json` · **konu_id:** `tar_10_t02_c04` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t02_c04.json` · **konu_id:** `tar_10_t02_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1391,7 +1408,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.2.5` — Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin etkilerine dair fikirler üretebilme
 
-- **Dosya:** `tar_10_t02_c05.json` · **konu_id:** `tar_10_t02_c05` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t02_c05.json` · **konu_id:** `tar_10_t02_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1403,7 +1420,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.3.1` — 1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti’nin VE SÜREÇ BİLEŞENLERİ cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilme
 
-- **Dosya:** `tar_10_t03_c01.json` · **konu_id:** `tar_10_t03_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t03_c01.json` · **konu_id:** `tar_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1413,7 +1430,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.3.2` — 1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliğe ilişkin kaynakları yorumlayabilme
 
-- **Dosya:** `tar_10_t03_c02.json` · **konu_id:** `tar_10_t03_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `tar_10_t03_c02.json` · **konu_id:** `tar_10_t03_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1423,7 +1440,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.3.3` — Avrupalıların sömürgeci politikalarının etkilerini tarihsel bağlamı içerisinde değerlendirebilme
 
-- **Dosya:** `tar_10_t03_c03.json` · **konu_id:** `tar_10_t03_c03` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `tar_10_t03_c03.json` · **konu_id:** `tar_10_t03_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1434,7 +1451,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.3.4` — 1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçlarını müzakere edebilme
 
-- **Dosya:** `tar_10_t03_c04.json` · **konu_id:** `tar_10_t03_c04` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `tar_10_t03_c04.json` · **konu_id:** `tar_10_t03_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1446,7 +1463,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `TAR.10.3.5` — 1453-1683 yılları arasında Osmanlı Devleti’nde bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin oluşturduğu özgün ürünleri paylaşabilme
 
-- **Dosya:** `tar_10_t03_c05.json` · **konu_id:** `tar_10_t03_c05` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `tar_10_t03_c05.json` · **konu_id:** `tar_10_t03_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1462,21 +1479,21 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 18 öğrenme çıktısı · 73 süreç bileşeni · 190 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Coğrafyanın Doğası | 1 |
-| 2 | Mekânsal Bilgi Teknolojileri | 2 |
-| 3 | Doğal Sistemler ve Süreçler | 5 |
-| 4 | Beşerî Sistemler ve Süreçler | 2 |
-| 5 | Ekonomik Faaliyetler ve Etkileri | 3 |
-| 6 | Afetler ve Sürdürülebilir Çevre | 4 |
-| 7 | Bölgeler, Ülkeler ve Küresel Bağlantılar | 1 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Coğrafyanın Doğası | 1 | 10 |
+| 2 | Mekânsal Bilgi Teknolojileri | 2 | 24 |
+| 3 | Doğal Sistemler ve Süreçler | 5 | 52 |
+| 4 | Beşerî Sistemler ve Süreçler | 2 | 20 |
+| 5 | Ekonomik Faaliyetler ve Etkileri | 3 | 32 |
+| 6 | Afetler ve Sürdürülebilir Çevre | 4 | 42 |
+| 7 | Bölgeler, Ülkeler ve Küresel Bağlantılar | 1 | 10 |
 
 ### Coğrafya · Tema 1 — Coğrafyanın Doğası
 
 #### `COĞ.10.1.1` — Örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilme
 
-- **Dosya:** `cogr_10_t01_c01.json` · **konu_id:** `cogr_10_t01_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `cogr_10_t01_c01.json` · **konu_id:** `cogr_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Coğrafi Bakış *(senaryo sayıları: 1, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1490,7 +1507,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.2.1` — Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme
 
-- **Dosya:** `cogr_10_t02_c01.json` · **konu_id:** `cogr_10_t02_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `cogr_10_t02_c01.json` · **konu_id:** `cogr_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** CBS ve Uzaktan Algılamanın Uygulama Alanları *(senaryo sayıları: 1, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1501,7 +1518,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.2.2` — Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme
 
-- **Dosya:** `cogr_10_t02_c02.json` · **konu_id:** `cogr_10_t02_c02` · **hedef soru:** 14 · **süreç:** 7
+- **Dosya:** `cogr_10_t02_c02.json` · **konu_id:** `cogr_10_t02_c02` · **soru:** 14 · **flashcard:** 14 · **süreç:** 7
 - **ODSGM sınav konusu:** Mekânsal Verilerin Haritalara Aktarılması *(senaryo sayıları: 1, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1518,7 +1535,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.3.1` — Yerkürenin tektonik yapısını çözümleyebilme
 
-- **Dosya:** `cogr_10_t03_c01.json` · **konu_id:** `cogr_10_t03_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `cogr_10_t03_c01.json` · **konu_id:** `cogr_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Tektonik Süreçler *(senaryo sayıları: 1, 1, 2, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1528,7 +1545,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.3.2` — Yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilme
 
-- **Dosya:** `cogr_10_t03_c02.json` · **konu_id:** `cogr_10_t03_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `cogr_10_t03_c02.json` · **konu_id:** `cogr_10_t03_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi *(senaryo sayıları: 1, 1, 1, 1, 2, 2, 1, 2, 2, 1)*
 
 **Süreç bileşenleri:**
@@ -1538,7 +1555,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.3.3` — Yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilme
 
-- **Dosya:** `cogr_10_t03_c03.json` · **konu_id:** `cogr_10_t03_c03` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `cogr_10_t03_c03.json` · **konu_id:** `cogr_10_t03_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Aşınım ve Birikim Süreçlerinin Yeryüzü Şekillerinin Oluşumuna Etkisi *(senaryo sayıları: 1, 1, 1, 1, 2, 2, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1548,7 +1565,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.3.4` — Yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilme
 
-- **Dosya:** `cogr_10_t03_c04.json` · **konu_id:** `cogr_10_t03_c04` · **hedef soru:** 12 · **süreç:** 6
+- **Dosya:** `cogr_10_t03_c04.json` · **konu_id:** `cogr_10_t03_c04` · **soru:** 12 · **flashcard:** 12 · **süreç:** 6
 - **ODSGM sınav konusu:** Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması *(senaryo sayıları: 1, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1562,7 +1579,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.3.5` — Yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilme
 
-- **Dosya:** `cogr_10_t03_c05.json` · **konu_id:** `cogr_10_t03_c05` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `cogr_10_t03_c05.json` · **konu_id:** `cogr_10_t03_c05` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim *(senaryo sayıları: 1, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1577,7 +1594,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.4.1` — Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilme
 
-- **Dosya:** `cogr_10_t04_c01.json` · **konu_id:** `cogr_10_t04_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `cogr_10_t04_c01.json` · **konu_id:** `cogr_10_t04_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim *(senaryo sayıları: 1, 1, 1, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1590,7 +1607,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.4.2` — Türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre sınıflandırabilme
 
-- **Dosya:** `cogr_10_t04_c02.json` · **konu_id:** `cogr_10_t04_c02` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `cogr_10_t04_c02.json` · **konu_id:** `cogr_10_t04_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Yerleşmelerin Fonksiyonları *(senaryo sayıları: 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1604,7 +1621,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.5.1` — Ekonomik faaliyetleri sektörlere göre sınıflandırabilme
 
-- **Dosya:** `cogr_10_t05_c01.json` · **konu_id:** `cogr_10_t05_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `cogr_10_t05_c01.json` · **konu_id:** `cogr_10_t05_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1615,7 +1632,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.5.2` — Ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden farklı gelişmişlik seviyesine sahip ülkeleri karşılaştırabilme
 
-- **Dosya:** `cogr_10_t05_c02.json` · **konu_id:** `cogr_10_t05_c02` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `cogr_10_t05_c02.json` · **konu_id:** `cogr_10_t05_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1626,7 +1643,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.5.3` — Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilme
 
-- **Dosya:** `cogr_10_t05_c03.json` · **konu_id:** `cogr_10_t05_c03` · **hedef soru:** 12 · **süreç:** 6
+- **Dosya:** `cogr_10_t05_c03.json` · **konu_id:** `cogr_10_t05_c03` · **soru:** 12 · **flashcard:** 12 · **süreç:** 6
 
 **Süreç bileşenleri:**
 
@@ -1641,7 +1658,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.6.1` — Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme
 
-- **Dosya:** `cogr_10_t06_c01.json` · **konu_id:** `cogr_10_t06_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `cogr_10_t06_c01.json` · **konu_id:** `cogr_10_t06_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1653,7 +1670,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.6.2` — Afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilme
 
-- **Dosya:** `cogr_10_t06_c02.json` · **konu_id:** `cogr_10_t06_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `cogr_10_t06_c02.json` · **konu_id:** `cogr_10_t06_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -1662,7 +1679,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.6.3` — Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilme
 
-- **Dosya:** `cogr_10_t06_c03.json` · **konu_id:** `cogr_10_t06_c03` · **hedef soru:** 12 · **süreç:** 6
+- **Dosya:** `cogr_10_t06_c03.json` · **konu_id:** `cogr_10_t06_c03` · **soru:** 12 · **flashcard:** 12 · **süreç:** 6
 
 **Süreç bileşenleri:**
 
@@ -1675,7 +1692,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.6.4` — Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarını yansıtabilme
 
-- **Dosya:** `cogr_10_t06_c04.json` · **konu_id:** `cogr_10_t06_c04` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `cogr_10_t06_c04.json` · **konu_id:** `cogr_10_t06_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1687,7 +1704,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `COĞ.10.7.1` — Türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilme
 
-- **Dosya:** `cogr_10_t07_c01.json` · **konu_id:** `cogr_10_t07_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `cogr_10_t07_c01.json` · **konu_id:** `cogr_10_t07_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1701,23 +1718,23 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 10 öğrenme çıktısı · 38 süreç bileşeni · 100 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | Felsefenin Doğası | 1 |
-| 2 | Felsefe, Mantık ve Argümantasyon | 2 |
-| 3 | Varlık Felsefesi | 1 |
-| 4 | Bilgi Felsefesi | 1 |
-| 5 | Ahlak Felsefesi | 1 |
-| 6 | Estetik ve Sanat Felsefesi | 1 |
-| 7 | Siyaset Felsefesi | 1 |
-| 8 | Din Felsefesi | 1 |
-| 9 | Bilim Felsefesi | 1 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | Felsefenin Doğası | 1 | 10 |
+| 2 | Felsefe, Mantık ve Argümantasyon | 2 | 20 |
+| 3 | Varlık Felsefesi | 1 | 10 |
+| 4 | Bilgi Felsefesi | 1 | 10 |
+| 5 | Ahlak Felsefesi | 1 | 10 |
+| 6 | Estetik ve Sanat Felsefesi | 1 | 10 |
+| 7 | Siyaset Felsefesi | 1 | 10 |
+| 8 | Din Felsefesi | 1 | 10 |
+| 9 | Bilim Felsefesi | 1 | 10 |
 
 ### Felsefe · Tema 1 — Felsefenin Doğası
 
 #### `FEL.10.1.1` — Felsefenin anlamını, gelişim sürecini ve işlevini sorgulayabilme
 
-- **Dosya:** `fel_10_t01_c01.json` · **konu_id:** `fel_10_t01_c01` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `fel_10_t01_c01.json` · **konu_id:** `fel_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Felsefenin Anlamı Felsefi Düşüncenin Özellikleri Felsefi Düşüncenin Gelişimi Felsefi Sorunun Temel Özellikleri Felsefenin Diğer Alanlarla İlişkisi Felsefenin Bireysel ve Toplumsal İşlevi *(senaryo sayıları: 2, 3, 3, 3, 3, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1732,7 +1749,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.2.1` — Düşünme ve dil ilişkisini yapılandırabilme
 
-- **Dosya:** `fel_10_t02_c01.json` · **konu_id:** `fel_10_t02_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `fel_10_t02_c01.json` · **konu_id:** `fel_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** Düşünme ve Dil İlişkisi *(senaryo sayıları: 2, 1, 1, 2, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1742,7 +1759,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.2.2` — Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme.
 
-- **Dosya:** `fel_10_t02_c02.json` · **konu_id:** `fel_10_t02_c02` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `fel_10_t02_c02.json` · **konu_id:** `fel_10_t02_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 - **ODSGM sınav konusu:** Mantık ve Argümantasyonun Temel Kavramları Argümantasyonun Yapısı *(senaryo sayıları: 2, 1, 2, 2, 1, 2, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1755,7 +1772,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.3.1` — Varlık felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
-- **Dosya:** `fel_10_t03_c01.json` · **konu_id:** `fel_10_t03_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fel_10_t03_c01.json` · **konu_id:** `fel_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Varlık Felsefesinin Konusu ve Temel Kavramları Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu) *(senaryo sayıları: 3, 2, 2, 2, 3)*
 
 **Süreç bileşenleri:**
@@ -1769,7 +1786,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.4.1` — Bilgi felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
-- **Dosya:** `fel_10_t04_c01.json` · **konu_id:** `fel_10_t04_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fel_10_t04_c01.json` · **konu_id:** `fel_10_t04_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Bilgi Felsefesinin Konusu ve Temel Kavramları Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri) *(senaryo sayıları: 1, 1, 1, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1783,7 +1800,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.5.1` — Ahlak felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
-- **Dosya:** `fel_10_t05_c01.json` · **konu_id:** `fel_10_t05_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fel_10_t05_c01.json` · **konu_id:** `fel_10_t05_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1796,7 +1813,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.6.1` — Estetik ve sanat felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
-- **Dosya:** `fel_10_t06_c01.json` · **konu_id:** `fel_10_t06_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fel_10_t06_c01.json` · **konu_id:** `fel_10_t06_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1809,7 +1826,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.7.1` — Siyaset felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
-- **Dosya:** `fel_10_t07_c01.json` · **konu_id:** `fel_10_t07_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fel_10_t07_c01.json` · **konu_id:** `fel_10_t07_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1822,7 +1839,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.8.1` — Din felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
-- **Dosya:** `fel_10_t08_c01.json` · **konu_id:** `fel_10_t08_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fel_10_t08_c01.json` · **konu_id:** `fel_10_t08_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1835,7 +1852,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `FEL.10.9.1` — Bilim felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
-- **Dosya:** `fel_10_t09_c01.json` · **konu_id:** `fel_10_t09_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `fel_10_t09_c01.json` · **konu_id:** `fel_10_t09_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1850,19 +1867,19 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 17 öğrenme çıktısı · 65 süreç bileşeni · 170 soru
 
-| Tema | Ad | Çıktı |
-| --- | --- | --- |
-| 1 | İslam’da Varlık ve Bilgi | 3 |
-| 2 | Allah’ı Tanımak | 3 |
-| 3 | İslam’ın Evrensel Mesajları | 4 |
-| 4 | Din, Çevre ve Teknoloji | 4 |
-| 5 | İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar | 3 |
+| Tema | Ad | Çıktı | Soru |
+| --- | --- | --- | --- |
+| 1 | İslam’da Varlık ve Bilgi | 3 | 30 |
+| 2 | Allah’ı Tanımak | 3 | 30 |
+| 3 | İslam’ın Evrensel Mesajları | 4 | 40 |
+| 4 | Din, Çevre ve Teknoloji | 4 | 40 |
+| 5 | İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar | 3 | 30 |
 
 ### Din Kültürü · Tema 1 — İslam’da Varlık ve Bilgi
 
 #### `DKAB.10.1.1` — İslam’da bilginin yerini ve kaynaklarını çözümleyebilme
 
-- **Dosya:** `din_10_t01_c01.json` · **konu_id:** `din_10_t01_c01` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `din_10_t01_c01.json` · **konu_id:** `din_10_t01_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 - **ODSGM sınav konusu:** İslam’da Bilgi ve Bilginin Kaynakları *(senaryo sayıları: 2, 2, 1, 2, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1872,7 +1889,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.1.2` — Allah-âlem ilişkisini müşahede edebilme
 
-- **Dosya:** `din_10_t01_c02.json` · **konu_id:** `din_10_t01_c02` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `din_10_t01_c02.json` · **konu_id:** `din_10_t01_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Allah-Âlem İlişkisi *(senaryo sayıları: 3, 2, 3, 3, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1884,7 +1901,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.1.3` — İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme
 
-- **Dosya:** `din_10_t01_c03.json` · **konu_id:** `din_10_t01_c03` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `din_10_t01_c03.json` · **konu_id:** `din_10_t01_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Kur’an’dan Mesajlar *(senaryo sayıları: 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1899,7 +1916,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.2.1` — Allah’ın (cc) varlığının delillerini müşahede edebilme
 
-- **Dosya:** `din_10_t02_c01.json` · **konu_id:** `din_10_t02_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `din_10_t02_c01.json` · **konu_id:** `din_10_t02_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Allah’ın Varlığının Delilleri *(senaryo sayıları: 1, 1, 1, 1, 2, 2, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1911,7 +1928,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.2.2` — Allah’ı (cc) gereği gibi tanıyabilmek için O’nun isim ve sıfatlarını bağlamına uygun kullanabilme
 
-- **Dosya:** `din_10_t02_c02.json` · **konu_id:** `din_10_t02_c02` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `din_10_t02_c02.json` · **konu_id:** `din_10_t02_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** Allah’ı İsim ve Sıfatlarıyla Tanımak *(senaryo sayıları: 2, 2, 2, 2, 2, 2)*
 
 **Süreç bileşenleri:**
@@ -1923,7 +1940,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.2.3` — Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme
 
-- **Dosya:** `din_10_t02_c03.json` · **konu_id:** `din_10_t02_c03` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `din_10_t02_c03.json` · **konu_id:** `din_10_t02_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 - **ODSGM sınav konusu:** Kur’an’dan Mesajlar *(senaryo sayıları: 1, 1, 1, 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1938,7 +1955,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.3.1` — İslam’ın evrensel mesajlarından biri olan tevhit ilkesi hakkında bilgi toplayabilme
 
-- **Dosya:** `din_10_t03_c01.json` · **konu_id:** `din_10_t03_c01` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `din_10_t03_c01.json` · **konu_id:** `din_10_t03_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 - **ODSGM sınav konusu:** İslam’ın Tevhit İlkesi *(senaryo sayıları: 1, 1, 1)*
 
 **Süreç bileşenleri:**
@@ -1950,7 +1967,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.3.2` — İslam’da adalet ve eşitlik kavramlarını bağlamına uygun kullanabilme
 
-- **Dosya:** `din_10_t03_c02.json` · **konu_id:** `din_10_t03_c02` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `din_10_t03_c02.json` · **konu_id:** `din_10_t03_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -1961,7 +1978,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.3.3` — İslam ve barış ilişkisini yorumlayabilme
 
-- **Dosya:** `din_10_t03_c03.json` · **konu_id:** `din_10_t03_c03` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `din_10_t03_c03.json` · **konu_id:** `din_10_t03_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1971,7 +1988,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.3.4` — Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme
 
-- **Dosya:** `din_10_t03_c04.json` · **konu_id:** `din_10_t03_c04` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `din_10_t03_c04.json` · **konu_id:** `din_10_t03_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -1985,7 +2002,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.4.1` — İnsan, çevre ve ahlak arasındaki ilişkiyi yorumlayabilme
 
-- **Dosya:** `din_10_t04_c01.json` · **konu_id:** `din_10_t04_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `din_10_t04_c01.json` · **konu_id:** `din_10_t04_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -1995,7 +2012,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.4.2` — Teknoloji ve ahlak ilişkisini çözümleyebilme
 
-- **Dosya:** `din_10_t04_c02.json` · **konu_id:** `din_10_t04_c02` · **hedef soru:** 10 · **süreç:** 2
+- **Dosya:** `din_10_t04_c02.json` · **konu_id:** `din_10_t04_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 2
 
 **Süreç bileşenleri:**
 
@@ -2004,7 +2021,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.4.3` — Çevre ve teknoloji ilişkisini özetleyebilme
 
-- **Dosya:** `din_10_t04_c03.json` · **konu_id:** `din_10_t04_c03` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `din_10_t04_c03.json` · **konu_id:** `din_10_t04_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -2014,7 +2031,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.4.4` — Rum suresinin 41. ayetinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme
 
-- **Dosya:** `din_10_t04_c04.json` · **konu_id:** `din_10_t04_c04` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `din_10_t04_c04.json` · **konu_id:** `din_10_t04_c04` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 
@@ -2028,7 +2045,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.5.1` — Dinî yorum farklılıklarının ortaya çıkış sebeplerini sentezleyebilme
 
-- **Dosya:** `din_10_t05_c01.json` · **konu_id:** `din_10_t05_c01` · **hedef soru:** 10 · **süreç:** 3
+- **Dosya:** `din_10_t05_c01.json` · **konu_id:** `din_10_t05_c01` · **soru:** 10 · **flashcard:** 10 · **süreç:** 3
 
 **Süreç bileşenleri:**
 
@@ -2038,7 +2055,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.5.2` — İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları irdeleyebilme
 
-- **Dosya:** `din_10_t05_c02.json` · **konu_id:** `din_10_t05_c02` · **hedef soru:** 10 · **süreç:** 4
+- **Dosya:** `din_10_t05_c02.json` · **konu_id:** `din_10_t05_c02` · **soru:** 10 · **flashcard:** 10 · **süreç:** 4
 
 **Süreç bileşenleri:**
 
@@ -2049,7 +2066,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 #### `DKAB.10.5.3` — Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur’an’ı Kerim meallerine başvurabilme
 
-- **Dosya:** `din_10_t05_c03.json` · **konu_id:** `din_10_t05_c03` · **hedef soru:** 10 · **süreç:** 5
+- **Dosya:** `din_10_t05_c03.json` · **konu_id:** `din_10_t05_c03` · **soru:** 10 · **flashcard:** 10 · **süreç:** 5
 
 **Süreç bileşenleri:**
 

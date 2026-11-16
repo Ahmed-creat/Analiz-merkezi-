@@ -132,10 +132,35 @@ function sade(s) {
     .trim();
 }
 
-/* Hedef soru kuralı — tek ve sabit. */
+/* ---- HEDEF SORU ----------------------------------------------------------
+   Taban 10'dur (uygulamanın standardı: her kazanım 10 soru).
+   Yalnızca "her süreç bileşenine en az 2 soru" şartı 10'u aşmayı
+   gerektiriyorsa artar:  hedef = max(10, 2 × süreç).
+   Böylece 158 çıktının 139'u tam 10, 19'u daha fazladır.            */
 function hedefHesapla(surecSayisi) {
   return Math.max(10, 2 * surecSayisi);
 }
+
+/* ---- FLASHCARD -----------------------------------------------------------
+   Kural: HER SORU İÇİN BİR KART. Mevcut 172 havuzun tamamı böyledir
+   (150/150, 205/205, 252/252 … flashcard = soru). İsteğe bağlı değildir. */
+function flashcardHesapla(hedefSoru) {
+  return hedefSoru;
+}
+
+/* ---- GÖRSEL --------------------------------------------------------------
+   Görsel, kazanımdan sayılamaz. Aynı çıktının soruları farklı ihtiyaçlar
+   taşır: "dik kenarları 7 ve 24 olan dik üçgende tan α" görsel ister;
+   "1 − cos²x kaçtır" gibi bir özdeşlik sorusu istemez.
+
+   Bu yüzden burada kazanım başına görsel sayısı TANIMLANMAZ.
+   Karar, soru yazıldıktan sonra soru bazında verilir:
+     - Metin bir şekle gönderme yapıyorsa ("şekilde", "grafikte",
+       "düzenekte" …) görsel ZORUNLUDUR — doğrulayıcı bunu arar.
+     - Görsel gerekiyorsa site/gorsel.js tipleriyle tanımlanır.
+     - Gerektirmiyorsa alan hiç yazılmaz.
+   Doğrulayıcı ayrıca "tek tek inceleme" listesi basar.               */
+
 
 const plan = [];
 
@@ -160,6 +185,7 @@ for (const c of MUFREDAT.ciktilar) {
     surec,
     surec_sayisi: surec.length,
     hedef_soru: hedefHesapla(surec.length),
+    flashcard_hedef: flashcardHesapla(hedefHesapla(surec.length)),
     konu_id: konuId,
     dosya: konuId + ".json"
   });
@@ -172,6 +198,7 @@ const ozet = {
   cikti: plan.length,
   surec: plan.reduce((a, b) => a + b.surec_sayisi, 0),
   hedef_soru: plan.reduce((a, b) => a + b.hedef_soru, 0),
+  flashcard: plan.reduce((a, b) => a + b.flashcard_hedef, 0),
   ders: new Set(plan.map(c => c.ders)).size,
   tema_adli: plan.filter(c => c.tema_adi).length
 };
@@ -179,5 +206,5 @@ const ozet = {
 module.exports = {
   KISA, DERS_SIRA, TEMA_ADI,
   plan, planKayit, planKonu, ozet,
-  kodCoz, sade, hedefHesapla
+  kodCoz, sade, hedefHesapla, flashcardHesapla
 };

@@ -57,11 +57,14 @@ p("");
 p("Her çıktının başlığı altında şu satır vardır:");
 p("");
 p("```");
-p("Dosya: <konu_id>.json · konu_id: <ders>_10_t<tema>_c<sıra> · hedef soru: N · süreç: M");
+p("Dosya: <konu_id>.json · konu_id: <ders>_10_t<tema>_c<sıra> · soru: N · flashcard: N · süreç: M");
 p("```");
 p("");
-p("Bunlar soru üretecek ajanın iş emridir: hangi dosyayı açacağı, kaç soru yazacağı");
-p("ve soruları hangi süreç bileşenlerine dağıtacağı bu satırdan okunur.");
+p("Bunlar soru üretecek ajanın iş emridir: hangi dosyayı açacağı, kaç soru ve kaç");
+p("flashcard yazacağı, soruları hangi süreç bileşenlerine dağıtacağı bu satırdan okunur.");
+p("");
+p("Görsel için bu satırda sayı YOKTUR. Görsel, sorular yazıldıktan sonra soru bazında");
+p("tek tek kararlaştırılır (bkz. talimat §8).");
 p("");
 p("**Hiçbir metin değiştirilmemiştir.** Kazanım cümleleri ve süreç bileşenleri resmî");
 p("programdan birebir alınmıştır (doğrulama: `npm run -s test:tymm` → 158/158 çıktı, 612/612 süreç).");
@@ -71,17 +74,32 @@ p("");
 const toplamCikti = PLAN.ciktilar.length;
 const toplamSurec = PLAN.ciktilar.reduce((a, b) => a + b.surec_sayisi, 0);
 const toplamHedef = PLAN.ciktilar.reduce((a, b) => a + b.hedef_soru, 0);
+const toplamFlash = PLAN.ciktilar.reduce((a, b) => a + (b.flashcard_hedef || 0), 0);
 p("## Özet");
 p("");
-p("| Ders | Çıktı | Süreç bileşeni | Üretilecek soru |");
-p("| --- | --- | --- | --- |");
+p("| Ders | Çıktı | Süreç | Soru | Flashcard |");
+p("| --- | --- | --- | --- | --- |");
 for (const ders of DERS_SIRA) {
   const ds = PLAN.ciktilar.filter(c => c.ders === ders);
-  p(`| ${ders} | ${ds.length} | ${ds.reduce((a, b) => a + b.surec_sayisi, 0)} | **${ds.reduce((a, b) => a + b.hedef_soru, 0)}** |`);
+  p(`| ${ders} | ${ds.length} | ${ds.reduce((a, b) => a + b.surec_sayisi, 0)} | **${ds.reduce((a, b) => a + b.hedef_soru, 0)}** | ${ds.reduce((a, b) => a + b.flashcard_hedef, 0)} |`);
 }
-p(`| **Toplam** | **${toplamCikti}** | **${toplamSurec}** | **${toplamHedef}** |`);
+p(`| **Toplam** | **${toplamCikti}** | **${toplamSurec}** | **${toplamHedef}** | **${toplamFlash}** |`);
 p("");
-p("Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`");
+p("**İki sayı kuralı:**");
+p("");
+p("```");
+p("soru      = max(10, 2 × süreç bileşeni sayısı)   → taban 10, süreç çoksa artar");
+p("flashcard = soru sayısı                         → her soru için tam 1 kart");
+p("```");
+p("");
+p("Flashcard istisnasız 1:1'dir. Mevcut 172 havuzun tamamı böyledir");
+p("(1956 soru / 1956 kart). Kart metni sorunun kendisinden bağımsız");
+p("yazılmaz; o sorunun öğrettiği tek şeyi sorar.");
+p("");
+p("**Görsel için sayı yoktur.** Aynı çıktının soruları farklı ihtiyaç taşır:");
+p("\"dik kenarları 7 ve 24 olan dik üçgende tan α\" görsel ister,");
+p("\"1 − cos²x kaçtır\" istemez. Karar soru yazıldıktan sonra, soru bazında,");
+p("tek tek verilir — bkz. talimat §8.");
 p("");
 p("## Kaynak belgeler");
 p("");
@@ -105,12 +123,12 @@ for (const ders of DERS_SIRA) {
   p(`${ds.length} öğrenme çıktısı · ${ds.reduce((a, b) => a + b.surec_sayisi, 0)} süreç bileşeni · ` +
     `${ds.reduce((a, b) => a + b.hedef_soru, 0)} soru`);
   p("");
-  p("| Tema | Ad | Çıktı |");
-  p("| --- | --- | --- |");
+  p("| Tema | Ad | Çıktı | Soru |");
+  p("| --- | --- | --- | --- |");
   for (const t of temaSet) {
     const ad = ds.find(c => c.tema === t).tema_adi;
-    const n = ds.filter(c => c.tema === t).length;
-    p(`| ${t} | ${ad || "— (kanıtlanmış ad yok)"} | ${n} |`);
+    const g = ds.filter(c => c.tema === t);
+    p(`| ${t} | ${ad || "—"} | ${g.length} | ${g.reduce((a, b) => a + b.hedef_soru, 0)} |`);
   }
   p("");
 
@@ -121,7 +139,7 @@ for (const ders of DERS_SIRA) {
     for (const c of ds.filter(x => x.tema === t)) {
       p(`#### \`${c.kod}\` — ${c.kazanim}`);
       p("");
-      p(`- **Dosya:** \`${c.dosya}\` · **konu_id:** \`${c.konu_id}\` · **hedef soru:** ${c.hedef_soru} · **süreç:** ${c.surec_sayisi}`);
+      p(`- **Dosya:** \`${c.dosya}\` · **konu_id:** \`${c.konu_id}\` · **soru:** ${c.hedef_soru} · **flashcard:** ${c.flashcard_hedef} · **süreç:** ${c.surec_sayisi}`);
       const od = odsgmKonu[c.kod];
       if (od && od.length) {
         const o = od[0];

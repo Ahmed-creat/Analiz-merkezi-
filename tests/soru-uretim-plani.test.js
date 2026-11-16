@@ -134,6 +134,10 @@ for (const s of ornekPlan.surec) {
 }
 ok("cevap dağılımı dengeli", Math.max(...dagilim) <= Math.ceil(ORNEK.sorular.length * 0.4), dagilim.join("/"));
 esit("flashcard sayısı soru sayısına eşit", ORNEK.flashcards.length, ORNEK.sorular.length);
+ok("altın örnekte her soruda satır içi flashcard",
+  ORNEK.sorular.every(q => q.flashcard && q.flashcard.front && q.flashcard.back));
+ok("flashcard id = soru_id:flashcard",
+  ORNEK.flashcards.every((k, i) => k.id === ORNEK.sorular[i].soru_id + ":flashcard"));
 
 // ---------- 5b) tema adları ----------
 console.log("\n== 5b) Tema adları ==");
@@ -141,6 +145,20 @@ esit("tema adı dolu 158", PLAN.ozet.tema_adli, 158);
 const temaEksik = P.filter(c => !c.tema_adi).map(c => c.kod);
 esit("tema adı boş yok", temaEksik.join(","), "");
 esit("44 tema", new Set(P.map(c => c.ders + "|" + c.tema)).size, 44);
+
+// ---------- 5c) flashcard kuralı ----------
+console.log("\n== 5c) Flashcard = soru (1:1) ==");
+esit("toplam flashcard hedefi = toplam soru", PLAN.ozet.flashcard, PLAN.ozet.hedef_soru);
+esit("flashcard hedefi 1.686", PLAN.ozet.flashcard, 1686);
+ok("her çıktıda flashcard_hedef = hedef_soru",
+  P.every(c => c.flashcard_hedef === c.hedef_soru));
+const fcEksik = P.filter(c => !c.flashcard_hedef || c.flashcard_hedef < 1).map(c => c.kod);
+esit("flashcard hedefi boş çıktı yok", fcEksik.join(","), "");
+
+// ---------- 5d) görsel: kazanım başına kota YOK ----------
+console.log("\n== 5d) Görsel kotası yok ==");
+ok("planda görsel sayısı alanı yok", P.every(c => !("gorsel" in c) && !("gorsel_min" in c)));
+ok("modülde görsel kademe fonksiyonu yok", !("gorselKademe" in U) && !("gorselMin" in U));
 
 // ---------- 6) durum sayıları ----------
 console.log("\n== 6) Mevcut durum ==");
