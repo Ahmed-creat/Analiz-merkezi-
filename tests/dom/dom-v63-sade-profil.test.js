@@ -58,7 +58,9 @@ ok("kanal kanıtı bildirimi duruyor", /cihazBildirimTesti/.test(APP));
 ok("“her sabah” yerine günde iki kez yazıyor", /Günde iki kez \(sabah ve akşam\)/.test(APP));
 
 console.log("\n== 5) Sürüm damgası ==");
-ok("uygulama sürümü v63", /PWA_SURUM = "v63-sade-profil"/.test(APP));
+const pwaSurum = (APP.match(/PWA_SURUM = "(v[^"]+)"/) || [])[1] || "";
+ok("uygulama sürümü v63 veya üstü (sade-profil hattı)", /^v6[3-9]/.test(pwaSurum));
+ok("SW önbelleği aynı sürüm damgasını taşıyor", !!pwaSurum && SW.indexOf("-" + pwaSurum) > 0);
 
 console.log("\n" + "─".repeat(56));
 console.log("v63 sade-profil testi — " + gecen + " geçti, " + hata.length + " kaldı");

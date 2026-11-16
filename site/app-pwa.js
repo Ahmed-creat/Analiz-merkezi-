@@ -1,4 +1,4 @@
-const PWA_SURUM = "v63-sade-profil";
+const PWA_SURUM = "v67-meb-kazanim";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
