@@ -1,0 +1,293 @@
+{
+  "konu_id": "biyo_10_t02_c01",
+  "kod": "BİY.10.2.1",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 2,
+  "tema_adi": "Ekoloji",
+  "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.100-107",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t02_c01_o01",
+      "alt_beceri": "Ekosistemi oluşturan cansız ve canlı bileşenleri belirler.",
+      "metin": "Bir araştırmacı, bir gölde yaşayan canlıların birbirleriyle ve su sıcaklığıyla ilişkilerini incelemektedir. Bu çalışma hangi bilim dalının alanına girer?",
+      "secenekler": [
+        "Taksonomi",
+        "Ekoloji",
+        "Genetik",
+        "Embriyoloji"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ekoloji, canlıların birbirleriyle ve çevreleriyle olan ilişkilerini inceleyen bilim dalıdır. Organizma, popülasyon, komünite ve ekosistem düzeyinde çalışmalar yapılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ekoloji nedir?",
+        "back": "Canlıların birbirleri ve çevreleriyle olan ilişkilerini inceleyen bilim dalıdır."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o02",
+      "alt_beceri": "Ekosistemi oluşturan cansız ve canlı bileşenleri belirler.",
+      "metin": "Şemada bir ekosistemin bileşenleri gruplandırılmıştır. Buna göre hangisi ekosistemin cansız (abiyotik) bileşenleri arasında yer alır?",
+      "secenekler": [
+        "Ayrıştırıcı bakteriler",
+        "Otçul tüketiciler",
+        "Üretici bitkiler",
+        "Toprağın pH değeri"
+      ],
+      "dogru_index": 3,
+      "cozum": "Işık, su, sıcaklık, toprak, mineraller ve pH cansız bileşenlerdir. Bakteriler, otçullar ve bitkiler canlı bileşenler arasında yer alır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "sema",
+        "kutular": [
+          {
+            "metin": "Ekosistem"
+          },
+          {
+            "metin": "Cansız bileşenler"
+          },
+          {
+            "metin": "Canlı bileşenler"
+          },
+          {
+            "metin": "Üretici, tüketici, ayrıştırıcı"
+          }
+        ],
+        "oklar": true
+      },
+      "flashcard": {
+        "front": "Ekosistemin cansız bileşenleri nedir?",
+        "back": "Işık, su, sıcaklık, toprak, mineraller ve pH gibi etkenlerdir."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o03",
+      "alt_beceri": "Ekosistemi oluşturan cansız ve canlı bileşenleri belirler.",
+      "metin": "Tabloda ekosistemin canlı bileşenleri ve görevleri verilmiştir. Buna göre hangi bileşen organik maddeleri inorganik maddelere dönüştürür?",
+      "secenekler": [
+        "Ayrıştırıcı",
+        "Üretici",
+        "Tüketici",
+        "Üretici ve tüketici ortak görev yapar"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ayrıştırıcılar (saprotrof canlılar) organik maddeleri inorganik maddelere dönüştürür. Böylece üreticilerin kullanacağı inorganik maddelerin döngüsü sağlanır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Bileşen",
+          "Görev"
+        ],
+        "satirlar": [
+          [
+            "Üretici",
+            "Fotosentezle besin üretir"
+          ],
+          [
+            "Tüketici",
+            "Hazır besinle beslenir"
+          ],
+          [
+            "Ayrıştırıcı",
+            "Organik maddeyi inorganiğe çevirir"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Ayrıştırıcıların görevi nedir?",
+        "back": "Organik maddeleri inorganik maddelere dönüştürerek madde döngüsünü sağlarlar."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o04",
+      "alt_beceri": "Ekosistemi oluşturan cansız ve canlı bileşenleri belirler.",
+      "metin": "Bir öğrenci göl kenarında yaptığı gözlemde ışık, su sıcaklığı, suyun pH değeri ve algleri kaydetmiştir. Bu kayıtlardan hangisi cansız bileşen değildir?",
+      "secenekler": [
+        "Işık",
+        "Su sıcaklığı",
+        "Algler",
+        "Suyun pH değeri"
+      ],
+      "dogru_index": 2,
+      "cozum": "Algler fotosentez yapan canlılardır ve biyotik bileşendir. Işık, sıcaklık ve pH cansız (abiyotik) bileşenlerdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ekosistemin canlı bileşen grupları nedir?",
+        "back": "Üreticiler, tüketiciler ve ayrıştırıcılardır."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o05",
+      "alt_beceri": "Ekosistemi oluşturan cansız ve canlı bileşenleri belirler.",
+      "metin": "Bir bölgedeki su miktarı belirli düzeyin altına düştüğünde bitkilerde enzimler yeterince çalışamaz. Bu durum suyun hangi özelliğini gösterir?",
+      "secenekler": [
+        "Yalnızca hayvanlar için gerekli olduğunu",
+        "Ekosistemde hiç tükenmediğini",
+        "Işığın yerine geçtiğini",
+        "Sınırlayıcı bir bileşen olabildiğini"
+      ],
+      "dogru_index": 3,
+      "cozum": "Su; madde taşınması, fotosentez, boşaltım ve enzim çalışması için gereklidir. Miktarı belirli düzeyin altına düşünce canlılığı sınırladığı için sınırlayıcı bileşendir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sınırlayıcı bileşen nedir?",
+        "back": "Miktarı yetersiz olduğunda canlıların yaşamını ve gelişimini sınırlayan etkendir."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o06",
+      "alt_beceri": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri belirler.",
+      "metin": "Bir ekosistemde ayrıştırıcıların tamamen ortadan kalktığı varsayılırsa hangi sonuç beklenir?",
+      "secenekler": [
+        "Üreticiler daha hızlı fotosentez yapar.",
+        "Organik maddeler ayrışamaz ve üreticiler inorganik maddeye ulaşamaz.",
+        "Tüketici sayısı sürekli artar.",
+        "Ekosistemdeki ışık miktarı azalır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Ayrıştırıcılar organik atıkları inorganik maddelere çevirir. Bu canlılar olmadığında inorganik madde döngüsü kesilir, üreticiler gerekli maddelere ulaşamaz ve ekosistem dengesi bozulur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ayrıştırıcıların yokluğunda madde döngüsünün durmasının nedeni nedir?",
+        "back": "Organik atıklar inorganik maddelere çevrilemediği için üreticilerin kullanacağı maddeler oluşmaz."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o07",
+      "alt_beceri": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri belirler.",
+      "metin": "Günlerin uzaması bazı kuşların göç etmesine, bazı hayvanların kış uykusuna yatmasına neden olur. Bu durum hangi cansız bileşenin canlılar üzerindeki etkisini gösterir?",
+      "secenekler": [
+        "Işıklanma süresi",
+        "Toprağın tuzluluğu",
+        "Suyun bulanıklığı",
+        "Rüzgâr yönü"
+      ],
+      "dogru_index": 0,
+      "cozum": "Gün uzunluğu yani ışıklanma süresi canlıların davranışlarını, üreme dönemlerini ve göçlerini etkiler. Işık ekosistemin önemli cansız bileşenlerinden biridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Işığın canlılar üzerindeki etkileri nedir?",
+        "back": "Fotosentezi, çiçek açma zamanını, göçü, kış uykusunu ve üreme dönemini etkiler."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o08",
+      "alt_beceri": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri belirler.",
+      "metin": "Bir gölde kirlilik nedeniyle pH değeri belirgin biçimde düşmüştür. Bu değişimin ekosisteme etkisi için hangisi beklenir?",
+      "secenekler": [
+        "Canlı çeşitliliği kendiliğinden artar.",
+        "Suyun oksijen içeriği değişmez.",
+        "Sucul canlıların biyolojik süreçleri olumsuz etkilenir.",
+        "Üreticiler daha hızlı çoğalır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Her canlının yaşayabileceği optimum pH değeri vardır. pH değişimi enzim çalışmasını ve biyolojik süreçleri bozarak canlıları olumsuz etkiler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "pH'ın canlılar için öneminin nedeni nedir?",
+        "back": "Enzimlerin ve biyolojik süreçlerin çalışması için her canlının uygun bir pH aralığı vardır."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o09",
+      "alt_beceri": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri belirler.",
+      "metin": "Ekosistemdeki üreticiler ile tüketiciler arasındaki ilişki için hangisi doğrudur?",
+      "secenekler": [
+        "Tüketiciler fotosentezle besin üretir.",
+        "Üreticilerin ürettiği organik besin, tüketicilere enerji sağlar.",
+        "Üreticiler besinlerini ayrıştırıcılardan hazır alır.",
+        "Üretici ve tüketiciler arasında enerji aktarımı olmaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Üreticiler fotosentez veya kemosentezle organik besin üretir. Bu besinler besin zinciri yoluyla tüketicilere aktarılır ve enerji sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üreticilerin beslenme biçimi nedir?",
+        "back": "Ototrof olarak fotosentez veya kemosentezle kendi besinini üretir."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c01_o10",
+      "alt_beceri": "Ekosistemi oluşturan cansız ve canlı bileşenleri belirler.",
+      "metin": "Sulak alanların ekosistem açısından önemi için hangisi doğrudur?",
+      "secenekler": [
+        "Yalnızca tek bir canlı türünü barındırır.",
+        "Sel sularını hızlandırarak taşkını artırır.",
+        "Yer altı sularını tüketir.",
+        "Birçok türe beslenme, üreme ve barınma ortamı sağlar."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sulak alanlar tür çeşitliliği yüksek, üretken ekosistemlerdir. Canlılara barınma ve üreme ortamı sağlar, sel sularını emerek yavaşlatır ve yer altı sularına kaynak oluşturur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sulak alanların işlevi nedir?",
+        "back": "Türlere yaşam ortamı sağlar, sel kontrolüne katkı verir ve yer altı sularını besler."
+      },
+      "kazanim": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t02_c01_o01:flashcard",
+      "front": "Ekoloji nedir?",
+      "back": "Canlıların birbirleri ve çevreleriyle olan ilişkilerini inceleyen bilim dalıdır."
+    },
+    {
+      "id": "biyo_10_t02_c01_o02:flashcard",
+      "front": "Ekosistemin cansız bileşenleri nedir?",
+      "back": "Işık, su, sıcaklık, toprak, mineraller ve pH gibi etkenlerdir."
+    },
+    {
+      "id": "biyo_10_t02_c01_o03:flashcard",
+      "front": "Ayrıştırıcıların görevi nedir?",
+      "back": "Organik maddeleri inorganik maddelere dönüştürerek madde döngüsünü sağlarlar."
+    },
+    {
+      "id": "biyo_10_t02_c01_o04:flashcard",
+      "front": "Ekosistemin canlı bileşen grupları nedir?",
+      "back": "Üreticiler, tüketiciler ve ayrıştırıcılardır."
+    },
+    {
+      "id": "biyo_10_t02_c01_o05:flashcard",
+      "front": "Sınırlayıcı bileşen nedir?",
+      "back": "Miktarı yetersiz olduğunda canlıların yaşamını ve gelişimini sınırlayan etkendir."
+    },
+    {
+      "id": "biyo_10_t02_c01_o06:flashcard",
+      "front": "Ayrıştırıcıların yokluğunda madde döngüsünün durmasının nedeni nedir?",
+      "back": "Organik atıklar inorganik maddelere çevrilemediği için üreticilerin kullanacağı maddeler oluşmaz."
+    },
+    {
+      "id": "biyo_10_t02_c01_o07:flashcard",
+      "front": "Işığın canlılar üzerindeki etkileri nedir?",
+      "back": "Fotosentezi, çiçek açma zamanını, göçü, kış uykusunu ve üreme dönemini etkiler."
+    },
+    {
+      "id": "biyo_10_t02_c01_o08:flashcard",
+      "front": "pH'ın canlılar için öneminin nedeni nedir?",
+      "back": "Enzimlerin ve biyolojik süreçlerin çalışması için her canlının uygun bir pH aralığı vardır."
+    },
+    {
+      "id": "biyo_10_t02_c01_o09:flashcard",
+      "front": "Üreticilerin beslenme biçimi nedir?",
+      "back": "Ototrof olarak fotosentez veya kemosentezle kendi besinini üretir."
+    },
+    {
+      "id": "biyo_10_t02_c01_o10:flashcard",
+      "front": "Sulak alanların işlevi nedir?",
+      "back": "Türlere yaşam ortamı sağlar, sel kontrolüne katkı verir ve yer altı sularını besler."
+    }
+  ]
+}

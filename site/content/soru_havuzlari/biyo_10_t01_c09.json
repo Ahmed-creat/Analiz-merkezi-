@@ -1,0 +1,305 @@
+{
+  "konu_id": "biyo_10_t01_c09",
+  "kod": "BİY.10.1.9",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "kazanim": "Fermantasyon ile ilgili deney yapabilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.67-71",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t01_c09_o01",
+      "alt_beceri": "Fermantasyon ile ilgili deney tasarlar.",
+      "metin": "Fermantasyonun gerçekleştiğini göstermek isteyen bir öğrenci, deneyinde hangi gözlemi bağımlı değişken olarak kullanabilir?",
+      "secenekler": [
+        "Kullanılan şeker miktarı",
+        "Açığa çıkan gaz miktarı",
+        "Deney kabının rengi",
+        "Ortamın nem oranı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fermantasyonda CO2 gibi gazlar açığa çıkabilir. Gaz miktarı bağımsız değişkene bağlı olarak ölçülen bağımlı değişkendir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyon nedir?",
+        "back": "Glikoliz sonucu oluşan piruvatın etil alkol ya da laktik asit gibi moleküllere dönüştürüldüğü tepkimelerdir."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o02",
+      "alt_beceri": "Fermantasyon ile ilgili deney tasarlar.",
+      "metin": "Maya ile şekerli su kullanarak fermantasyon deneyi tasarlayan öğrenci, hangi düzeneği kurmalıdır?",
+      "secenekler": [
+        "Ağzı tamamen açık, gaz kaçan düzenek",
+        "Yalnızca ışık ölçen düzenek",
+        "Yalnızca termometre bulunan düzenek",
+        "Gaz çıkışını toplayan kapalı düzenek"
+      ],
+      "dogru_index": 3,
+      "cozum": "Fermantasyonda açığa çıkan gazın ölçülebilmesi için kapalı düzenek ve gaz toplama sistemi gerekir. Açık düzenekte gaz kaçar ve ölçüm yapılamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyonun gerçekleştiği yer nedir?",
+        "back": "Ökaryot ve prokaryot hücrelerin sitoplazmasında gerçekleşir."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o03",
+      "alt_beceri": "Tasarladığı deneyden elde ettiği sonuçların analizini yapar ve bu sonuçları fermantasyonu açıklamak için kullanır.",
+      "metin": "Tabloda iki fermantasyon türünün özellikleri verilmiştir. Buna göre hangi satırda bilgi yanlıştır?",
+      "secenekler": [
+        "IV. satır",
+        "I. satır",
+        "II. satır",
+        "III. satır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Fermantasyon oksijen ve ETS kullanılmadan gerçekleşir. Bu nedenle IV. satırda 'oksijen gerekli' bilgisi yanlıştır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Özellik",
+          "Etil alkol",
+          "Laktik asit"
+        ],
+        "satirlar": [
+          [
+            "Son ürün",
+            "Etanol",
+            "Laktik asit"
+          ],
+          [
+            "CO2 çıkışı",
+            "Var",
+            "Yok"
+          ],
+          [
+            "Net ATP",
+            "2",
+            "2"
+          ],
+          [
+            "Oksijen kullanımı",
+            "Gerekli",
+            "Gerekli"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Fermantasyonda oksijenin kullanım durumu nedir?",
+        "back": "Kullanılmaz; süreç oksijensiz ortamda, sitoplazmada gerçekleşir."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o04",
+      "alt_beceri": "Tasarladığı deneyden elde ettiği sonuçların analizini yapar ve bu sonuçları fermantasyonu açıklamak için kullanır.",
+      "metin": "Etil alkol fermantasyonunda glikozun parçalanmasıyla hangi ürünler oluşur?",
+      "secenekler": [
+        "2 laktik asit ve 2 ATP",
+        "6 CO2, 6 H2O ve 38 ATP",
+        "2 etanol, 2 CO2 ve 2 ATP",
+        "2 piruvat ve 6 CO2"
+      ],
+      "dogru_index": 2,
+      "cozum": "Etil alkol fermantasyonunda glikozdan 2 etanol, 2 CO2 ve net 2 ATP oluşur. Laktik asit fermantasyonunda ise CO2 çıkışı görülmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Etil alkol fermantasyonunun denklemi nedir?",
+        "back": "Glikoz → 2 etanol + 2 CO2 + 2 ATP."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o05",
+      "alt_beceri": "Fermantasyon ile ilgili deney tasarlar.",
+      "metin": "Öğrenci deneyinde maya yerine yalnızca saf su ve şeker kullanmıştır. Deneyde gaz çıkışı gözlenmemiştir. Bu sonucun nedeni hangisidir?",
+      "secenekler": [
+        "Şekerin çok fazla olması",
+        "Kabın renginin uygun olmaması",
+        "Ortamda çok fazla oksijen bulunması",
+        "Fermantasyonu gerçekleştirecek mikroorganizma bulunmaması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Fermantasyonu maya gibi mikroorganizmalar gerçekleştirir. Maya yoksa enzimatik işlem başlamaz ve gaz çıkışı gözlenmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyonda mikroorganizmanın görevi nedir?",
+        "back": "Enzimatik işlemlerle ham maddeden ürün oluşumunu sağlamaktır."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o06",
+      "alt_beceri": "Tasarladığı deneyden elde ettiği sonuçların analizini yapar ve bu sonuçları fermantasyonu açıklamak için kullanır.",
+      "metin": "Laktik asit fermantasyonunda CO2 çıkışının görülmemesinin nedeni hangisidir?",
+      "secenekler": [
+        "Glikoliz evresinin gerçekleşmemesi",
+        "Piruvatın hidrojen alarak doğrudan laktik aside dönüşmesi",
+        "Oksijenin ortamda bulunması",
+        "ATP üretiminin durması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Laktik asit fermantasyonunda piruvat, NADH'taki hidrojenleri alarak doğrudan laktik aside dönüşür. Bu dönüşümde karbon kaybı olmadığı için CO2 çıkmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Laktik asit fermantasyonunun denklemi nedir?",
+        "back": "Glikoz → 2 laktik asit + 2 ATP."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o07",
+      "alt_beceri": "Fermantasyon ile ilgili deney tasarlar.",
+      "metin": "Deneyde sıcaklığın fermantasyon hızına etkisini incelemek isteyen öğrenci hangi değişkeni sabit tutmalıdır?",
+      "secenekler": [
+        "Maya ve şeker miktarını",
+        "Sıcaklığı",
+        "Gaz miktarını",
+        "Deney süresini bağımsız değişken olarak"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sıcaklık bağımsız değişken olduğunda maya ve şeker miktarı kontrol değişkeni olarak sabit tutulur. Böylece farkın sıcaklıktan kaynaklandığı gösterilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyon hızını etkileyen etkenler nedir?",
+        "back": "Sıcaklık, pH, şeker derişimi ve mikroorganizma türü gibi etkenlerdir."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o08",
+      "alt_beceri": "Tasarladığı deneyden elde ettiği sonuçların analizini yapar ve bu sonuçları fermantasyonu açıklamak için kullanır.",
+      "metin": "Tabloda sıcaklığa göre bir fermentasyon deneyinde toplanan gaz miktarları verilmiştir. Buna göre deneyin sonucu için hangi yorum yapılabilir?",
+      "secenekler": [
+        "Sıcaklık arttıkça gaz miktarı sürekli artmıştır.",
+        "Sıcaklık fermantasyonu etkilememiştir.",
+        "Enzimler 50 °C'de bozulduğu için gaz miktarı azalmıştır.",
+        "En yüksek gaz miktarı 10 °C'de ölçülmüştür."
+      ],
+      "dogru_index": 2,
+      "cozum": "30 °C'de en yüksek gaz miktarı (18 mL) elde edilmiştir. 50 °C'de enzimler bozulduğu için gaz miktarı 2 mL'ye düşmüştür.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Sıcaklık (°C)",
+          "Gaz (mL/10 dk)"
+        ],
+        "satirlar": [
+          [
+            "10",
+            "4"
+          ],
+          [
+            "30",
+            "18"
+          ],
+          [
+            "50",
+            "2"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Fermantasyonda optimum sıcaklık nedir?",
+        "back": "Enzimlerin en iyi çalıştığı ve gaz oluşumunun en yüksek olduğu sıcaklıktır."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o09",
+      "alt_beceri": "Tasarladığı deneyden elde ettiği sonuçların analizini yapar ve bu sonuçları fermantasyonu açıklamak için kullanır.",
+      "metin": "Yoğurt üretiminde sütteki laktozun laktik aside dönüşmesi hangi süreçle açıklanır?",
+      "secenekler": [
+        "Etil alkol fermantasyonu",
+        "Laktik asit fermantasyonu",
+        "Oksijenli solunum",
+        "Kemosentez"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yoğurt bakterileri laktozu laktik aside dönüştürür. Bu süreç laktik asit fermantasyonudur ve sütün pH'ını düşürerek pıhtılaşma sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Laktik asit fermantasyonunun kullanıldığı üretim alanları nedir?",
+        "back": "Yoğurt, peynir, turşu gibi fermente ürünlerin üretiminde kullanılır."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c09_o10",
+      "alt_beceri": "Fermantasyon ile ilgili deney tasarlar.",
+      "metin": "Fermantasyon deneyinde NAD+ yenilenmesinin önemini göstermek isteyen öğrenci hangi bilgiye yer vermelidir?",
+      "secenekler": [
+        "NAD+ yenilendiğinde glikoliz yavaşlar.",
+        "NAD+ yalnızca ETS'de görev alır.",
+        "NAD+ fermantasyonda hiç kullanılmaz.",
+        "NAD+ yenilenmezse glikoliz durur ve ATP üretimi kesilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Fermantasyonda glikolizde oluşan NADH'ın hidrojenleri son ürüne aktarılır ve NAD+ yeniden oluşur. Bu sayede glikoliz ve ATP üretimi devam eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyonda NAD+'ın gereklilik nedeni nedir?",
+        "back": "Glikolizin devam edebilmesi için NADH'ın hidrojenlerinin aktarılmasıyla NAD+ yeniden oluşturulur."
+      },
+      "kazanim": "Fermantasyon ile ilgili deney yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t01_c09_o01:flashcard",
+      "front": "Fermantasyon nedir?",
+      "back": "Glikoliz sonucu oluşan piruvatın etil alkol ya da laktik asit gibi moleküllere dönüştürüldüğü tepkimelerdir."
+    },
+    {
+      "id": "biyo_10_t01_c09_o02:flashcard",
+      "front": "Fermantasyonun gerçekleştiği yer nedir?",
+      "back": "Ökaryot ve prokaryot hücrelerin sitoplazmasında gerçekleşir."
+    },
+    {
+      "id": "biyo_10_t01_c09_o03:flashcard",
+      "front": "Fermantasyonda oksijenin kullanım durumu nedir?",
+      "back": "Kullanılmaz; süreç oksijensiz ortamda, sitoplazmada gerçekleşir."
+    },
+    {
+      "id": "biyo_10_t01_c09_o04:flashcard",
+      "front": "Etil alkol fermantasyonunun denklemi nedir?",
+      "back": "Glikoz → 2 etanol + 2 CO2 + 2 ATP."
+    },
+    {
+      "id": "biyo_10_t01_c09_o05:flashcard",
+      "front": "Fermantasyonda mikroorganizmanın görevi nedir?",
+      "back": "Enzimatik işlemlerle ham maddeden ürün oluşumunu sağlamaktır."
+    },
+    {
+      "id": "biyo_10_t01_c09_o06:flashcard",
+      "front": "Laktik asit fermantasyonunun denklemi nedir?",
+      "back": "Glikoz → 2 laktik asit + 2 ATP."
+    },
+    {
+      "id": "biyo_10_t01_c09_o07:flashcard",
+      "front": "Fermantasyon hızını etkileyen etkenler nedir?",
+      "back": "Sıcaklık, pH, şeker derişimi ve mikroorganizma türü gibi etkenlerdir."
+    },
+    {
+      "id": "biyo_10_t01_c09_o08:flashcard",
+      "front": "Fermantasyonda optimum sıcaklık nedir?",
+      "back": "Enzimlerin en iyi çalıştığı ve gaz oluşumunun en yüksek olduğu sıcaklıktır."
+    },
+    {
+      "id": "biyo_10_t01_c09_o09:flashcard",
+      "front": "Laktik asit fermantasyonunun kullanıldığı üretim alanları nedir?",
+      "back": "Yoğurt, peynir, turşu gibi fermente ürünlerin üretiminde kullanılır."
+    },
+    {
+      "id": "biyo_10_t01_c09_o10:flashcard",
+      "front": "Fermantasyonda NAD+'ın gereklilik nedeni nedir?",
+      "back": "Glikolizin devam edebilmesi için NADH'ın hidrojenlerinin aktarılmasıyla NAD+ yeniden oluşturulur."
+    }
+  ]
+}

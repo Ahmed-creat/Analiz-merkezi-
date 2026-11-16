@@ -1,0 +1,326 @@
+{
+  "konu_id": "biyo_10_t02_c03",
+  "kod": "BİY.10.2.3",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 2,
+  "tema_adi": "Ekoloji",
+  "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.123-132",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t02_c03_o01",
+      "alt_beceri": "Ekosistemdeki enerji akışıyla ilgili gözlem yapar.",
+      "metin": "Bir öğrenci okul bahçesinde yaptığı gözlemde çekirge, kurbağa, yılan ve çayır otu arasındaki beslenme ilişkisini kaydetmiştir. Bu gözlem hangi yapıyı oluşturmaya temel olur?",
+      "secenekler": [
+        "Ekolojik piramit",
+        "Besin zinciri",
+        "Popülasyon yoğunluğu",
+        "Habitat haritası"
+      ],
+      "dogru_index": 1,
+      "cozum": "Üreticiden tüketiciye doğru tek yönlü beslenme ilişkisi besin zincirini oluşturur. Çayır otu → çekirge → kurbağa → yılan bir besin zinciridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Besin zinciri nedir?",
+        "back": "Besinlerde depolanan enerjinin üreticiden tüketicilere doğru tek yönlü aktarımını gösteren beslenme ilişkisidir."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o02",
+      "alt_beceri": "Ekosistemdeki enerji akışıyla ilgili gözlem yapar.",
+      "metin": "Şemada bir besin zinciri verilmiştir. Buna göre besin zincirinin başlangıcında yer alan canlı grubu hangisidir?",
+      "secenekler": [
+        "Birincil tüketiciler",
+        "İkincil tüketiciler",
+        "Ayrıştırıcılar",
+        "Üreticiler"
+      ],
+      "dogru_index": 3,
+      "cozum": "Besin zinciri üreticilerle başlar. Çayır otu üretici, çekirge birincil tüketici, kurbağa ikincil tüketici, yılan üçüncül tüketicidir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "sema",
+        "kutular": [
+          {
+            "metin": "Çayır otu"
+          },
+          {
+            "metin": "Çekirge"
+          },
+          {
+            "metin": "Kurbağa"
+          },
+          {
+            "metin": "Yılan"
+          }
+        ],
+        "oklar": true
+      },
+      "flashcard": {
+        "front": "Birincil tüketici nedir?",
+        "back": "Üreticilerle beslenen otçul canlıdır."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o03",
+      "alt_beceri": "Ekosistemdeki enerji akışıyla ilgili gözlem yapar.",
+      "metin": "Bir ekosistemde otçul, etçil ve ayrıştırıcı canlıların birbiriyle örtüşen çok sayıda beslenme ilişkisi bulunmaktadır. Bu ilişkilerin tamamı hangi kavramla ifade edilir?",
+      "secenekler": [
+        "Besin ağı",
+        "Besin zinciri",
+        "Biyokütle",
+        "Trofik düzey"
+      ],
+      "dogru_index": 0,
+      "cozum": "Örtüşen çok sayıda besin zincirinin oluşturduğu karmaşık yapı besin ağıdır. Besin ağı habitattaki canlılar arasındaki enerji aktarımını gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Besin ağı nedir?",
+        "back": "Bir habitatta örtüşen çok sayıda besin zincirinin oluşturduğu karmaşık ağdır."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o04",
+      "alt_beceri": "Ekosistemdeki enerji akışıyla ilgili örüntüleri oluşturur.",
+      "metin": "Tabloda bir besin piramidinde basamaklara göre biyokütle değerleri verilmiştir. Buna göre basamaklar arasında hangi örüntü oluşur?",
+      "secenekler": [
+        "Üst basamaklara çıkıldıkça biyokütle artar.",
+        "Biyokütle tüm basamaklarda eşittir.",
+        "Üst basamaklara çıkıldıkça biyokütle yaklaşık onda birine düşer.",
+        "Biyokütle değişimi düzensizdir; örüntü oluşmaz."
+      ],
+      "dogru_index": 2,
+      "cozum": "Her basamakta biyokütle bir öncekinin yaklaşık onda biridir. Bunun nedeni, enerjinin bir kısmının canlının yaşamsal faaliyetlerinde kullanılması ve ısı olarak kaybedilmesidir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Basamak",
+          "Biyokütle (kg)"
+        ],
+        "satirlar": [
+          [
+            "Üretici",
+            "10000"
+          ],
+          [
+            "Birincil tüketici",
+            "1000"
+          ],
+          [
+            "İkincil tüketici",
+            "100"
+          ],
+          [
+            "Üçüncül tüketici",
+            "10"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Biyokütle nedir?",
+        "back": "Bir popülasyonu oluşturan tüm bireylerin toplam kütlesidir."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o05",
+      "alt_beceri": "Ekosistemdeki enerji akışıyla ilgili örüntüleri oluşturur.",
+      "metin": "Bir besin piramidinde üreticideki enerjinin yalnızca küçük bir bölümü bir sonraki basamağa aktarılır. Bu durumun nedeni hangisidir?",
+      "secenekler": [
+        "Enerjinin üreticide tamamen yok olması",
+        "Tüketicilerin enerjiyi hiç kullanmayıp depolaması",
+        "Ayrıştırıcıların besin zincirine enerji üretmesi",
+        "Enerjinin bir kısmının ısı olarak kaybedilmesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Canlılar aldıkları enerjinin bir bölümünü solunum, hareket ve ısı üretimi gibi faaliyetlerde kullanır. Bu nedenle bir sonraki trofik basamağa aktarılan enerji azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerji piramidi nedir?",
+        "back": "Trofik basamaklara göre aktarılan enerji miktarını gösteren piramittir."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o06",
+      "alt_beceri": "Ekosistemdeki enerji akışıyla ilgili örüntüleri oluşturur.",
+      "metin": "Ekosistemde enerji akışı tek yönlüdür; madde ise döngüseldir. Bu farkın sonucu hangisidir?",
+      "secenekler": [
+        "Enerji ve madde aynı biçimde döngüye girer.",
+        "Enerji sürekli güneşten sağlanırken maddeler yeniden kullanılabilir.",
+        "Maddeler tek yönlü akar, enerji döngüseldir.",
+        "Enerji ayrıştırıcılar tarafından üreticilere geri verilir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Enerji besin zincirinde tek yönlü akar ve ısı olarak kaybedilir; bu nedenle sürekli güneş enerjisi gerekir. Madde ise ayrıştırıcılar sayesinde inorganik forma dönüp yeniden kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerji akışının tek yönlü olmasının nedeni nedir?",
+        "back": "Enerjinin bir kısmı her basamakta ısı olarak kaybedildiği ve geri kazanılamadığı için."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o07",
+      "alt_beceri": "Oluşturduğu örüntülerden yola çıkarak ekosistemdeki enerji akışıyla ilgili genelleme yapar.",
+      "metin": "Grafikte bir ekosistemdeki enerji miktarının trofik basamaklara göre değişimi verilmiştir. Buna göre hangi genelleme yapılabilir?",
+      "secenekler": [
+        "Trofik basamak yükseldikçe aktarılan enerji azalır.",
+        "Trofik basamak yükseldikçe enerji artar.",
+        "Enerji tüm basamaklarda sabittir.",
+        "Enerji yalnızca ikinci basamakta bulunur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Grafikte enerji her basamakta yaklaşık onda birine düşmektedir. Bu nedenle üst basamaklarda daha az birey bulunur ve besin zinciri genellikle kısa kalır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Trofik basamak",
+        "yEkseni": "Enerji (kJ)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "Enerji",
+            "noktalar": [
+              [
+                1,
+                1000
+              ],
+              [
+                2,
+                100
+              ],
+              [
+                3,
+                10
+              ],
+              [
+                4,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Trofik basamak nedir?",
+        "back": "Besin piramidinde canlıların beslenme düzeyine göre yer aldığı her bir basamaktır."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o08",
+      "alt_beceri": "Oluşturduğu örüntülerden yola çıkarak ekosistemdeki enerji akışıyla ilgili genelleme yapar.",
+      "metin": "Japonya'da bir körfeze boşaltılan metil cıva balıklarda birikmiş, bu balıkları yiyen insanlarda ağır zehirlenme görülmüştür. Bu olaydan çıkarılabilecek genelleme hangisidir?",
+      "secenekler": [
+        "Zehirli maddeler yalnızca üreticilerde birikir.",
+        "Besin zinciri zehirli maddeleri parçalar.",
+        "Besin piramidinin üst basamaklarında zehirli madde birikimi artar.",
+        "Ağır metaller canlılarda birikmez."
+      ],
+      "dogru_index": 2,
+      "cozum": "Vücuttan uzaklaştırılamayan maddeler dokularda birikir ve besin zinciri boyunca üst basamaklara aktarılır. Bu nedenle en üst basamaktaki canlılarda birikim en yüksek olur (biyolojik birikim).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Biyolojik birikim nedir?",
+        "back": "Vücuttan kolayca atılamayan zararlı maddelerin besin zinciri boyunca dokularda birikmesidir."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o09",
+      "alt_beceri": "Oluşturduğu örüntülerden yola çıkarak ekosistemdeki enerji akışıyla ilgili genelleme yapar.",
+      "metin": "Bir göl ekosisteminde ayrıştırıcıların etkinliği azalmıştır. Bu durumun enerji akışına etkisi için hangi genelleme yapılabilir?",
+      "secenekler": [
+        "Enerji akışı hızlanır ve üretici sayısı artar.",
+        "Organik atıklar birikir ve üreticilere giden inorganik madde azalır.",
+        "Besin zinciri kısalır ve enerji kaybı azalır.",
+        "Enerji akışı tamamen durur ve güneş enerjisi kesilir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Ayrıştırıcılar organik maddeleri inorganik maddelere çevirir. Etkinlik azalınca organik atıklar birikir, üreticilerin kullanabileceği inorganik maddeler azalır ve enerji akışı zayıflar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ayrıştırıcıların enerji akışındaki rolü nedir?",
+        "back": "Organik maddeleri inorganik maddelere çevirerek üreticilerin kullanımına sunarlar."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c03_o10",
+      "alt_beceri": "Ekosistemdeki enerji akışıyla ilgili örüntüleri oluşturur.",
+      "metin": "Bir ekosistemde üreticilerin biyokütlesi birincil tüketicilerden daha azdır. Buna göre bu ekosistem için hangisi doğrudur?",
+      "secenekler": [
+        "Böyle bir ekosistemde enerji akışı imkânsızdır.",
+        "Biyokütle piramidi her zaman ters olmak zorundadır.",
+        "Tüketiciler fotosentez yapmaya başlamıştır.",
+        "Sucul ekosistemlerde fitoplankton gibi hızlı yenilenen üreticiler bu duruma yol açabilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sucul ekosistemlerde fitoplankton hızlı üreyip hızla tüketildiği için biyokütle piramidi ters görünebilir. Ancak enerji piramidi her zaman düz kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Biyokütle piramidinin ters görünme durumu nedir?",
+        "back": "Sucul ekosistemlerde hızlı yenilenen üreticiler nedeniyle ters görünebilir; enerji piramidi ise her zaman düzdür."
+      },
+      "kazanim": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t02_c03_o01:flashcard",
+      "front": "Besin zinciri nedir?",
+      "back": "Besinlerde depolanan enerjinin üreticiden tüketicilere doğru tek yönlü aktarımını gösteren beslenme ilişkisidir."
+    },
+    {
+      "id": "biyo_10_t02_c03_o02:flashcard",
+      "front": "Birincil tüketici nedir?",
+      "back": "Üreticilerle beslenen otçul canlıdır."
+    },
+    {
+      "id": "biyo_10_t02_c03_o03:flashcard",
+      "front": "Besin ağı nedir?",
+      "back": "Bir habitatta örtüşen çok sayıda besin zincirinin oluşturduğu karmaşık ağdır."
+    },
+    {
+      "id": "biyo_10_t02_c03_o04:flashcard",
+      "front": "Biyokütle nedir?",
+      "back": "Bir popülasyonu oluşturan tüm bireylerin toplam kütlesidir."
+    },
+    {
+      "id": "biyo_10_t02_c03_o05:flashcard",
+      "front": "Enerji piramidi nedir?",
+      "back": "Trofik basamaklara göre aktarılan enerji miktarını gösteren piramittir."
+    },
+    {
+      "id": "biyo_10_t02_c03_o06:flashcard",
+      "front": "Enerji akışının tek yönlü olmasının nedeni nedir?",
+      "back": "Enerjinin bir kısmı her basamakta ısı olarak kaybedildiği ve geri kazanılamadığı için."
+    },
+    {
+      "id": "biyo_10_t02_c03_o07:flashcard",
+      "front": "Trofik basamak nedir?",
+      "back": "Besin piramidinde canlıların beslenme düzeyine göre yer aldığı her bir basamaktır."
+    },
+    {
+      "id": "biyo_10_t02_c03_o08:flashcard",
+      "front": "Biyolojik birikim nedir?",
+      "back": "Vücuttan kolayca atılamayan zararlı maddelerin besin zinciri boyunca dokularda birikmesidir."
+    },
+    {
+      "id": "biyo_10_t02_c03_o09:flashcard",
+      "front": "Ayrıştırıcıların enerji akışındaki rolü nedir?",
+      "back": "Organik maddeleri inorganik maddelere çevirerek üreticilerin kullanımına sunarlar."
+    },
+    {
+      "id": "biyo_10_t02_c03_o10:flashcard",
+      "front": "Biyokütle piramidinin ters görünme durumu nedir?",
+      "back": "Sucul ekosistemlerde hızlı yenilenen üreticiler nedeniyle ters görünebilir; enerji piramidi ise her zaman düzdür."
+    }
+  ]
+}

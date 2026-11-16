@@ -1,0 +1,293 @@
+{
+  "konu_id": "biyo_10_t01_c01",
+  "kod": "BİY.10.1.1",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.16-21",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t01_c01_o01",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili merakını ifade eder.",
+      "metin": "Bir öğrenci kış uykusuna yatan bir hayvanın aylarca beslenmeden yaşamasını merak etmiş ve bu konuda sorular sormuştur. Öğrencinin merakını en iyi yansıtan ifade hangisidir?",
+      "secenekler": [
+        "Kış uykusuna yatan hayvanların tüy rengi neden değişir?",
+        "Kış uykusundaki canlılar enerji ihtiyacını depoladıkları besinlerden mi karşılar?",
+        "Kış uykusu hangi ülkelerde daha uzun sürer?",
+        "Kış uykuna yatan hayvanların boyu ne kadardır?"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kış uykusundaki canlılar vücutlarında besin depolar ve bu besinlerden elde ettikleri enerjiyle vücut sıcaklığını dengede tutar. Merakı yansıtan soru enerji kaynağıyla ilgili olandır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerji nedir?",
+        "back": "İş yapabilme yeteneği ya da bir değişikliğe neden olma kapasitesidir."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o02",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili sorular sorar.",
+      "metin": "Canlıların yaşamını sürdürmesi ile enerji arasındaki ilişkiyi araştırmak isteyen bir öğrenci hangi araştırma sorusunu sormalıdır?",
+      "secenekler": [
+        "Canlıların en çok hangi renkleri sevdiği ölçülebilir mi?",
+        "Enerji kelimesi hangi dilde ilk kez kullanılmıştır?",
+        "Canlıların ortalama ağırlığı bölgeye göre değişir mi?",
+        "Besinlerde depolanan enerji hücrelerde nasıl kullanılabilir hâle gelir?"
+      ],
+      "dogru_index": 3,
+      "cozum": "Araştırılabilir soru ölçülebilir bir ilişki kurmalıdır. Besinlerdeki kimyasal enerjinin ATP'ye dönüşerek kullanılması sınanabilir bir süreçtir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ATP'nin yapısında hangi birimler bulunur?",
+        "back": "Adenin bazı, riboz şekeri ve üç adet fosfat grubu bulunur."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o03",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili bilgileri toplar.",
+      "metin": "Şemada ATP ile ADP arasındaki dönüşüm gösterilmiştir. Buna göre ATP döngüsünde yer alan süreçler için hangisi doğrudur?",
+      "secenekler": [
+        "ATP hidrolizi enerji açığa çıkarır; ADP'ye fosfat eklenmesi enerji gerektirir.",
+        "ATP hidrolizi enerji gerektirir; ADP'ye fosfat eklenmesi enerji açığa çıkarır.",
+        "Hem ATP hidrolizi hem fosforilasyon enerji açığa çıkarır.",
+        "ATP döngüsünde enerji alışverişi gerçekleşmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Fosfat bağlarının hidrolizi (defosforilasyon) enerji açığa çıkarır. ADP'ye enerji ve inorganik fosfat eklenmesiyle ATP sentezlenmesine fosforilasyon denir ve bu süreç enerji gerektirir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "sema",
+        "kutular": [
+          {
+            "metin": "ATP"
+          },
+          {
+            "metin": "ADP + Pi"
+          },
+          {
+            "metin": "Enerji açığa çıkar"
+          },
+          {
+            "metin": "Enerji alınır (fosforilasyon)"
+          }
+        ],
+        "oklar": true
+      },
+      "flashcard": {
+        "front": "Fosforilasyon nedir?",
+        "back": "ADP molekülüne enerji ve inorganik fosfat (Pi) eklenerek ATP sentezlenmesidir."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o04",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili bilgileri toplar.",
+      "metin": "Canlılarda enerji dönüşümlerini incelemek için hazırlanan tabloda boş bırakılan satır hangi seçenekle tamamlanmalıdır?",
+      "secenekler": [
+        "Fotosentezde oksijen oluşumu",
+        "Besinlerin klorofille tutulması",
+        "Vücut sıcaklığının korunması",
+        "ATP'nin hücreden hücreye aktarılması"
+      ],
+      "dogru_index": 2,
+      "cozum": "ATP'deki kimyasal enerji vücut ısısının korunması sırasında ısı enerjisine dönüşür. ATP depolanamaz ve bir hücreden diğerine aktarılamaz.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Olay",
+          "Dönüşüm"
+        ],
+        "satirlar": [
+          [
+            "Fotosentez",
+            "Işık enerjisi → kimyasal enerji"
+          ],
+          [
+            "Kas kasılması",
+            "Kimyasal enerji → hareket enerjisi"
+          ],
+          [
+            "?",
+            "Kimyasal enerji → ısı enerjisi"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "ATP'nin vücuttaki kullanım alanları nedir?",
+        "back": "Sinirsel iletim, kas kasılması, aktif taşıma, büyüme, onarım ve vücut ısısının korunmasıdır."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o05",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili topladığı bilgilerin doğruluğunu değerlendirir.",
+      "metin": "Bir kaynakta 'ATP hücrelerde uzun süre depolanabilir' ifadesi yer almaktadır. Bu ifadenin doğruluğunu değerlendirirken hangi bilgi kullanılmalıdır?",
+      "secenekler": [
+        "ATP'nin yapısında üç fosfat bulunduğu için saklanabilir.",
+        "ATP, riboz şekeri sayesinde hücre zarından depolanır.",
+        "ATP, ADP'ye dönüşmediği için uzun süre kalıcıdır.",
+        "ATP sürekli üretilip tüketilen bir moleküldür; depolanamaz."
+      ],
+      "dogru_index": 3,
+      "cozum": "ATP hücrede sürekli yenilenen bir moleküldür; metabolik faaliyetlerde yıkılıp yeniden sentezlenir. Depolanamaz ve hücreden hücreye aktarılamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ATP döngüsü nedir?",
+        "back": "ATP'nin metabolik faaliyetler için yıkılıp yeniden sentezlenmesidir."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o06",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili topladığı bilgilerin doğruluğunu değerlendirir.",
+      "metin": "Bir öğrenci 'fotosentez yapmayan canlıların enerji kaynağı yoktur' yorumunu yapmıştır. Bu yorumun doğruluğu hangi bilgiyle sınanır?",
+      "secenekler": [
+        "Fotosentez yapmayan canlılar enerjiyi doğrudan topraktan alır.",
+        "Tüketici canlılar enerjiyi besin zinciriyle üreticilerden alır.",
+        "Tüketici canlılar enerjiyi ışıktan doğrudan kazanır.",
+        "Fotosentez yapmayan canlılar enerjiye ihtiyaç duymaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Üreticiler besinleri fotosentezle üretir; tüketiciler bu besinlerdeki kimyasal enerjiyi besin zinciri aracılığıyla alır. Bu nedenle fotosentez yapmayan canlılar da enerjiye sahiptir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Besinlerdeki enerjinin kaynağı nedir?",
+        "back": "Güneştir; fotosentezle kimyasal bağ enerjisine dönüştürülür."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o07",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili topladığı bilgiler üzerinden çıkarım yapar.",
+      "metin": "Işık enerjisinin canlılar için kullanılabilir hâle gelmesi sürecinde hangi çıkarım yapılabilir?",
+      "secenekler": [
+        "Fotosentez, güneş enerjisini kimyasal bağ enerjisine dönüştürür.",
+        "Fotosentez, kimyasal enerjiyi ışık enerjisine dönüştürür.",
+        "Fotosentezde enerji yok edilerek ısıya çevrilir.",
+        "Fotosentez yalnızca ısı enerjisi üretir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Fotosentezde ışık enerjisi kullanılarak inorganik maddelerden organik besin sentezlenir; enerji besinlerin bağlarında depolanır. Enerji yok olmaz, form değiştirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotosentez nedir?",
+        "back": "Işık enerjisi kullanılarak CO2 ve su gibi inorganik maddelerden organik madde sentezlenmesidir."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o08",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili topladığı bilgiler üzerinden çıkarım yapar.",
+      "metin": "Hücrede bir tepkime için enerji gerekiyorsa bu tepkime ile onu besleyen tepkime arasındaki ilişki hangisidir?",
+      "secenekler": [
+        "Endergonik tepkimenin açığa çıkardığı enerji ekzergonik tepkimeyi yürütür.",
+        "İki tepkime birbirinden bağımsız olarak enerji üretir.",
+        "Ekzergonik tepkimenin açığa çıkardığı enerji endergonik tepkimeyi yürütür.",
+        "Endergonik tepkimeler enerji açığa çıkarır, ekzergonikler enerji tüketir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Ekzergonik (enerji veren) tepkimelerde açığa çıkan enerji, endergonik (enerji alan) tepkimelerin yürütülmesinde kullanılır. Hücrede bu iki tepkime birlikte yürütülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ekzergonik tepkime nedir?",
+        "back": "Enerjinin açığa çıktığı, yani enerji veren tepkimedir."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o09",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili merakını ifade eder.",
+      "metin": "ATP molekülünün yapısını inceleyen bir öğrenci modelinde hangi hatayı yaparsa modeli bilimsel yapıya uymaz?",
+      "secenekler": [
+        "ATP'de adenin bazını göstermesi",
+        "ATP'yi iki fosfat grubuyla göstermesi",
+        "ATP'de riboz şekerini göstermesi",
+        "Fosfat grupları arasındaki bağları göstermesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "ATP'de üç fosfat grubu bulunur. İki fosfat grubu gösterilirse molekül ADP olur; bu nedenle model hatalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ATP ile ADP arasındaki fark nedir?",
+        "back": "ATP'de üç, ADP'de iki fosfat grubu bulunur."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c01_o10",
+      "alt_beceri": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğiyle ilgili sorular sorar.",
+      "metin": "ATP'nin hücrede sürekli yenilenmesinin nedeni hangisidir?",
+      "secenekler": [
+        "ATP'nin hücre zarından geçememesi",
+        "ATP'nin yalnızca bitki hücrelerinde bulunması",
+        "ATP'nin ışık enerjisiyle doğrudan parçalanması",
+        "ATP'nin depolanamaması ve metabolik faaliyetlerde sürekli tüketilmesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "ATP depolanamaz; kullanıldıkça ADP ve Pi'ye ayrılır. Hücre bu nedenle solunum ve fotosentez gibi süreçlerle ATP'yi sürekli yeniden sentezler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ATP'nin hücredeki rolü nedir?",
+        "back": "Metabolik faaliyetler için gereken enerjiyi aktaran evrensel enerji taşıyıcısıdır."
+      },
+      "kazanim": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t01_c01_o01:flashcard",
+      "front": "Enerji nedir?",
+      "back": "İş yapabilme yeteneği ya da bir değişikliğe neden olma kapasitesidir."
+    },
+    {
+      "id": "biyo_10_t01_c01_o02:flashcard",
+      "front": "ATP'nin yapısında hangi birimler bulunur?",
+      "back": "Adenin bazı, riboz şekeri ve üç adet fosfat grubu bulunur."
+    },
+    {
+      "id": "biyo_10_t01_c01_o03:flashcard",
+      "front": "Fosforilasyon nedir?",
+      "back": "ADP molekülüne enerji ve inorganik fosfat (Pi) eklenerek ATP sentezlenmesidir."
+    },
+    {
+      "id": "biyo_10_t01_c01_o04:flashcard",
+      "front": "ATP'nin vücuttaki kullanım alanları nedir?",
+      "back": "Sinirsel iletim, kas kasılması, aktif taşıma, büyüme, onarım ve vücut ısısının korunmasıdır."
+    },
+    {
+      "id": "biyo_10_t01_c01_o05:flashcard",
+      "front": "ATP döngüsü nedir?",
+      "back": "ATP'nin metabolik faaliyetler için yıkılıp yeniden sentezlenmesidir."
+    },
+    {
+      "id": "biyo_10_t01_c01_o06:flashcard",
+      "front": "Besinlerdeki enerjinin kaynağı nedir?",
+      "back": "Güneştir; fotosentezle kimyasal bağ enerjisine dönüştürülür."
+    },
+    {
+      "id": "biyo_10_t01_c01_o07:flashcard",
+      "front": "Fotosentez nedir?",
+      "back": "Işık enerjisi kullanılarak CO2 ve su gibi inorganik maddelerden organik madde sentezlenmesidir."
+    },
+    {
+      "id": "biyo_10_t01_c01_o08:flashcard",
+      "front": "Ekzergonik tepkime nedir?",
+      "back": "Enerjinin açığa çıktığı, yani enerji veren tepkimedir."
+    },
+    {
+      "id": "biyo_10_t01_c01_o09:flashcard",
+      "front": "ATP ile ADP arasındaki fark nedir?",
+      "back": "ATP'de üç, ADP'de iki fosfat grubu bulunur."
+    },
+    {
+      "id": "biyo_10_t01_c01_o10:flashcard",
+      "front": "ATP'nin hücredeki rolü nedir?",
+      "back": "Metabolik faaliyetler için gereken enerjiyi aktaran evrensel enerji taşıyıcısıdır."
+    }
+  ]
+}

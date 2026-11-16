@@ -1,0 +1,331 @@
+{
+  "konu_id": "biyo_10_t01_c02",
+  "kod": "BİY.10.1.2",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.21-31",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t01_c02_o01",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Fotosentez sürecini açıklayan bir model öneren öğrenci, modelinde hangi iki ana evreyi ayrı göstermelidir?",
+      "secenekler": [
+        "Glikoliz ve Krebs döngüsü",
+        "Işığa bağlı evre ve ışıktan bağımsız evre",
+        "Fermantasyon ve solunum",
+        "Ekzergonik ve endergonik çözünme"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fotosentez; ışığa bağlı evre (granumda) ve ışıktan bağımsız evre (stromada, Calvin döngüsü) olmak üzere iki ana reaksiyon zincirinden oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotosentezin iki ana evresi nedir?",
+        "back": "Işığa bağlı evre ve ışıktan bağımsız evre (Calvin döngüsü)."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o02",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Fotosentez modeli hazırlayan bir öğrenci, ışığa bağlı evrede üretilen maddeleri modelinde göstermek istemektedir. Bu maddeler hangileridir?",
+      "secenekler": [
+        "ADP ve NADP+",
+        "Glikoz ve oksijen",
+        "Karbondioksit ve su",
+        "ATP ve NADPH"
+      ],
+      "dogru_index": 3,
+      "cozum": "Işığa bağlı evrede suyun fotolizi ve elektron taşıma sistemi ile ATP ve NADPH üretilir. Bu moleküller ışıktan bağımsız evrede organik madde sentezinde kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Işığa bağlı evrenin temel ürünleri nedir?",
+        "back": "ATP ve NADPH'tır; ayrıca fotoliz sonucu oksijen açığa çıkar."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o03",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Şemada kloroplastın bölümleri gösterilmiştir. Buna göre ışığa bağlı evre ile Calvin döngüsünün gerçekleştiği yerler hangisinde doğru verilmiştir?",
+      "secenekler": [
+        "Işığa bağlı evre granumda, Calvin döngüsü stromada gerçekleşir.",
+        "Işığa bağlı evre stromada, Calvin döngüsü granumda gerçekleşir.",
+        "Her iki evre de yalnızca sitoplazmada gerçekleşir.",
+        "Her iki evre de yalnızca çekirdekte gerçekleşir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Ökaryotlarda ışığa bağlı evre kloroplastın granumlarında, ışıktan bağımsız evre ise stromada gerçekleşir. Prokaryotlarda bu evreler sitoplazmadaki katlanmış zar bölümlerinde yürür.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "sema",
+        "kutular": [
+          {
+            "metin": "Kloroplast"
+          },
+          {
+            "metin": "Granum (tilakoit zar)"
+          },
+          {
+            "metin": "Stroma"
+          }
+        ],
+        "oklar": true
+      },
+      "flashcard": {
+        "front": "Calvin döngüsünün gerçekleştiği bölüm nedir?",
+        "back": "Kloroplastın stromasında gerçekleşir."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o04",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Fotosentez modelini bilimsel modelle karşılaştıran bir öğrenci, fotolizde açığa çıkan oksijenin kaynağını modelinde yanlış göstermiştir. Doğru kaynak hangisidir?",
+      "secenekler": [
+        "Karbondioksit molekülü",
+        "Glikoz molekülü",
+        "Su molekülü",
+        "Atmosferdeki ozon"
+      ],
+      "dogru_index": 2,
+      "cozum": "Hill reaksiyonu, ışığa bağlı evrede açığa çıkan oksijenin karbondioksitten değil sudan geldiğini göstermiştir. Su fotolize uğrayarak O2, H+ ve elektron verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotosentezde açığa çıkan oksijenin kaynağı nedir?",
+        "back": "Fotolize uğrayan su molekülüdür."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o05",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Fotosentez modeli hazırlayan öğrenci, ışıktan bağımsız evrede karbondioksitin tutulduğu basamağı göstermelidir. Bu evrede ilk kararlı ürün olarak hangi molekül oluşur?",
+      "secenekler": [
+        "Glikoz",
+        "Nişasta",
+        "Sükroz",
+        "PGAL"
+      ],
+      "dogru_index": 3,
+      "cozum": "Calvin döngüsünde CO2 tutulur ve PGAL (fosfogliseraldehit) oluşur. PGAL glikoz, sükroz, nişasta, lipit ve amino asit sentezinde kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "PGAL'in fotosentezdeki işlevi nedir?",
+        "back": "Calvin döngüsünde oluşan ve organik bileşiklerin sentezine giren ilk üründür."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o06",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Grafikte fotosentez hızının ışık şiddetiyle değişimi verilmiştir. Buna göre grafikteki yatay bölümün nedeni hangisidir?",
+      "secenekler": [
+        "Işık şiddeti arttıkça enzimler tamamen parçalanır.",
+        "Belirli bir değerden sonra başka bir faktör sınırlayıcı olur.",
+        "Fotosentez hızı ışık şiddetinden hiç etkilenmez.",
+        "Klorofil miktarı ışıkla birlikte sürekli artar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Fotosentez hızını, miktarı en az olan faktör belirler (minimum kuralı). Işık belirli bir değere ulaştıktan sonra CO2, sıcaklık ya da su gibi başka bir faktör sınırlayıcı olduğu için hız artmaz.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Işık şiddeti",
+        "yEkseni": "Fotosentez hızı",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "Fotosentez hızı",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                6,
+                8
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                10,
+                8
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Minimum kuralı nedir?",
+        "back": "Fotosentez hızını, ortamda miktarı en az olan faktörün belirlemesidir."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o07",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Engelmann deneyinde ipliksi alg üzerine farklı dalga boylarında ışık düşürülmüş ve oksijenli bakteriler mor, mavi ve kırmızı bölgelerde kümelenmiştir. Bu sonuçtan çıkarılacak yargı hangisidir?",
+      "secenekler": [
+        "Klorofil en çok mor, mavi ve kırmızı ışığı soğurur; buralarda fotosentez hızlıdır.",
+        "Klorofil yalnızca yeşil ışığı soğurur; buralarda fotosentez hızlıdır.",
+        "Oksijenli bakteriler ışıktan doğrudan enerji üretir.",
+        "Fotosentez hızı ışığın dalga boyundan bağımsızdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Bakteriler oksijenin en fazla üretildiği bölgede toplanır. Mor, mavi ve kırmızı bölgelerde kümelenme, klorofilin bu dalga boylarını soğurduğunu ve fotosentezin buralarda hızlandığını gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Engelmann deneyinin sonucu nedir?",
+        "back": "Klorofilin en çok mor, mavi ve kırmızı dalga boylu ışığı soğurduğunu."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o08",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Fotosentez hızına etki eden faktörler tabloda karşılaştırılmıştır. Buna göre hangi satırdaki etki yanlış verilmiştir?",
+      "secenekler": [
+        "I. satır",
+        "II. satır",
+        "IV. satır",
+        "III. satır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Enzimler yaklaşık 35 °C'nin üzerinde bozulmaya başlar; yüksek sıcaklıkta fotosentez hızı düşer veya durur. Bu nedenle IV. satır hatalıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Faktör",
+          "Etki"
+        ],
+        "satirlar": [
+          [
+            "CO2 artışı",
+            "Hız artar"
+          ],
+          [
+            "Optimum sıcaklık",
+            "Hız artar"
+          ],
+          [
+            "Su miktarı artışı",
+            "Hız artar"
+          ],
+          [
+            "Sıcaklığın 45 °C'ye çıkması",
+            "Hız artar"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Optimum sıcaklık nedir?",
+        "back": "Enzimlerin en iyi görev yaptığı, tepkimenin en hızlı yürüdüğü sıcaklık değeridir."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o09",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Fotosentez modelinde güneş enerjisini soğuran pigmentler gösterilecektir. Bu pigmentlerin ortak işlevi hangisidir?",
+      "secenekler": [
+        "Karbondioksiti doğrudan glikoza çevirmek",
+        "Işık enerjisini soğurup klorofile aktarmak",
+        "Suyu hidrojen ve oksijene ayırmak",
+        "ATP'yi hücre zarından taşımak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Klorofil dışındaki yardımcı pigmentler farklı dalga boylarındaki ışığı soğurup klorofile aktarır; bir kısmı da fazla ışığı soğurarak klorofili korur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yardımcı pigmentlerin işlevi nedir?",
+        "back": "Klorofilin soğuramadığı dalga boylarındaki ışığı soğurup klorofile aktarır ve fazla ışıkta klorofili korur."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c02_o10",
+      "alt_beceri": "Fotosentez reaksiyonlarının işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Bir öğrenci modelinde ışıktan bağımsız evreyi 'ışık olmadan da karanlıkta sürekli çalışan evre' olarak göstermiştir. Bu modelin düzeltilmesi için hangi bilgi kullanılmalıdır?",
+      "secenekler": [
+        "Calvin döngüsü yalnızca ışık varlığında CO2 tutar.",
+        "Calvin döngüsü granumda gerçekleşir.",
+        "Calvin döngüsünde oksijen üretilir.",
+        "Calvin döngüsü ışığa bağlı evreden gelen ATP ve NADPH'a bağımlıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Işıktan bağımsız evre doğrudan ışık kullanmaz; ancak ışığa bağlı evrede üretilen ATP ve NADPH ile yürür. Bu nedenle karanlıkta sürekli çalışamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Işıktan bağımsız evrenin ışığa bağlı evreye bağımlılığının nedeni nedir?",
+        "back": "CO2 özümlemesi için gereken ATP ve NADPH'ı ışığa bağlı evreden aldığı için."
+      },
+      "kazanim": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t01_c02_o01:flashcard",
+      "front": "Fotosentezin iki ana evresi nedir?",
+      "back": "Işığa bağlı evre ve ışıktan bağımsız evre (Calvin döngüsü)."
+    },
+    {
+      "id": "biyo_10_t01_c02_o02:flashcard",
+      "front": "Işığa bağlı evrenin temel ürünleri nedir?",
+      "back": "ATP ve NADPH'tır; ayrıca fotoliz sonucu oksijen açığa çıkar."
+    },
+    {
+      "id": "biyo_10_t01_c02_o03:flashcard",
+      "front": "Calvin döngüsünün gerçekleştiği bölüm nedir?",
+      "back": "Kloroplastın stromasında gerçekleşir."
+    },
+    {
+      "id": "biyo_10_t01_c02_o04:flashcard",
+      "front": "Fotosentezde açığa çıkan oksijenin kaynağı nedir?",
+      "back": "Fotolize uğrayan su molekülüdür."
+    },
+    {
+      "id": "biyo_10_t01_c02_o05:flashcard",
+      "front": "PGAL'in fotosentezdeki işlevi nedir?",
+      "back": "Calvin döngüsünde oluşan ve organik bileşiklerin sentezine giren ilk üründür."
+    },
+    {
+      "id": "biyo_10_t01_c02_o06:flashcard",
+      "front": "Minimum kuralı nedir?",
+      "back": "Fotosentez hızını, ortamda miktarı en az olan faktörün belirlemesidir."
+    },
+    {
+      "id": "biyo_10_t01_c02_o07:flashcard",
+      "front": "Engelmann deneyinin sonucu nedir?",
+      "back": "Klorofilin en çok mor, mavi ve kırmızı dalga boylu ışığı soğurduğunu."
+    },
+    {
+      "id": "biyo_10_t01_c02_o08:flashcard",
+      "front": "Optimum sıcaklık nedir?",
+      "back": "Enzimlerin en iyi görev yaptığı, tepkimenin en hızlı yürüdüğü sıcaklık değeridir."
+    },
+    {
+      "id": "biyo_10_t01_c02_o09:flashcard",
+      "front": "Yardımcı pigmentlerin işlevi nedir?",
+      "back": "Klorofilin soğuramadığı dalga boylarındaki ışığı soğurup klorofile aktarır ve fazla ışıkta klorofili korur."
+    },
+    {
+      "id": "biyo_10_t01_c02_o10:flashcard",
+      "front": "Işıktan bağımsız evrenin ışığa bağlı evreye bağımlılığının nedeni nedir?",
+      "back": "CO2 özümlemesi için gereken ATP ve NADPH'ı ışığa bağlı evreden aldığı için."
+    }
+  ]
+}

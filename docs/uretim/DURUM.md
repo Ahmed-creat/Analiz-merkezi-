@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 20:16 (UTC)
+> Güncelleme: 2026-11-16 20:28 (UTC)
 
 ## Ders bazında
 
@@ -11,14 +11,14 @@
 | Matematik | 0/21 | 0 | 274 | 0 | 0 |
 | Fizik | 22/22 | 220 | 220 | 220 | 27 |
 | Kimya | 21/21 | 215 | 214 | 215 | 46 |
-| Biyoloji | 0/19 | 0 | 190 | 0 | 0 |
+| Biyoloji | 19/19 | 190 | 190 | 190 | 38 |
 | Tarih | 0/14 | 0 | 140 | 0 | 0 |
 | Coğrafya | 0/18 | 0 | 190 | 0 | 0 |
 | Felsefe | 0/10 | 0 | 100 | 0 | 0 |
 | Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **43/158** | **435** | **1686** | **435** | **73** |
+| **TOPLAM** | **62/158** | **625** | **1686** | **625** | **111** |
 
-İlerleme: **%26** (435/1686 soru) · kart 1:1 ✔
+İlerleme: **%37** (625/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -69,30 +69,6 @@
 | `mat_10_t06_c02` | MAT.10.6.2 | 10 | yok |
 | `mat_10_t07_c01` | MAT.10.7.1 | 10 | yok |
 | `mat_10_t07_c02` | MAT.10.7.2 | 10 | yok |
-
-### Biyoloji
-
-| konu_id | kod | hedef soru | durum |
-| --- | --- | --- | --- |
-| `biyo_10_t01_c01` | BİY.10.1.1 | 10 | yok |
-| `biyo_10_t01_c10` | BİY.10.1.10 | 10 | yok |
-| `biyo_10_t01_c02` | BİY.10.1.2 | 10 | yok |
-| `biyo_10_t01_c03` | BİY.10.1.3 | 10 | yok |
-| `biyo_10_t01_c04` | BİY.10.1.4 | 10 | yok |
-| `biyo_10_t01_c05` | BİY.10.1.5 | 10 | yok |
-| `biyo_10_t01_c06` | BİY.10.1.6 | 10 | yok |
-| `biyo_10_t01_c07` | BİY.10.1.7 | 10 | yok |
-| `biyo_10_t01_c08` | BİY.10.1.8 | 10 | yok |
-| `biyo_10_t01_c09` | BİY.10.1.9 | 10 | yok |
-| `biyo_10_t02_c01` | BİY.10.2.1 | 10 | yok |
-| `biyo_10_t02_c02` | BİY.10.2.2 | 10 | yok |
-| `biyo_10_t02_c03` | BİY.10.2.3 | 10 | yok |
-| `biyo_10_t02_c04` | BİY.10.2.4 | 10 | yok |
-| `biyo_10_t02_c05` | BİY.10.2.5 | 10 | yok |
-| `biyo_10_t02_c06` | BİY.10.2.6 | 10 | yok |
-| `biyo_10_t02_c07` | BİY.10.2.7 | 10 | yok |
-| `biyo_10_t02_c08` | BİY.10.2.8 | 10 | yok |
-| `biyo_10_t02_c09` | BİY.10.2.9 | 10 | yok |
 
 ### Tarih
 
