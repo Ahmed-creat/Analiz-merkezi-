@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t04_c05",
+  "kod": "FİZ.10.4.5",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 4,
+  "tema_adi": "Dalgalar",
+  "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.310-323",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t04_c05_o01",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olaylarına ilişkin gözlemler yapar.",
+      "metin": "Doğrusal su dalgası düz engele çarptıktan sonra gözlenen durum için hangisi doğrudur?",
+      "secenekler": [
+        "Dalga engelin arkasına geçerek ilerler.",
+        "Dalga yansıyarak ortamda ilerlemeye devam eder.",
+        "Dalga engelde yok olur.",
+        "Dalganın frekansı artar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Düz engele çarpan doğrusal su dalgası yansıyarak ortamda ilerlemeye devam eder; yansıyan dalganın doğrultusu gelme açısına göre belirlenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yansıma yasasının tanımı nedir?",
+        "back": "Gelme açısının yansıma açısına eşit olmasıdır (i = r)."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o02",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olaylarına ilişkin gözlemler yapar.",
+      "metin": "Doğrusal su dalgaları farklı derinliğe sahip bir ortama geçerken yön değiştirmiştir. Bu olay hangi kavramla adlandırılır?",
+      "secenekler": [
+        "Yansıma",
+        "Sönümleme",
+        "Girişim",
+        "Kırılma"
+      ],
+      "dogru_index": 3,
+      "cozum": "Dalgaların farklı derinlikteki ortama geçerken süratlerinin değişmesi ve bu nedenle yön değiştirmesi kırılma olarak adlandırılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kırılmanın tanımını yazınız.",
+        "back": "Dalganın farklı derinlikteki ortama geçerken süratinin değişip yön değiştirmesidir."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o03",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olaylarına ilişkin gözlemler yapar.",
+      "metin": "Doğrusal su dalgaları sığ ortamdan derin ortama geçerken dalga boyu için hangisi gözlenir?",
+      "secenekler": [
+        "Dalga boyu değişmez.",
+        "Dalga boyu kısalır.",
+        "Dalga boyu uzar.",
+        "Dalga boyu sıfır olur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Sığ ortamdan derin ortama geçen su dalgalarının sürati artar. Frekans değişmediği için dalga boyu uzar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sığ ortamdan derin ortama geçen dalganın kırılma kuralı nedir?",
+        "back": "Hızlanır, dalga boyu uzar ve normalden uzaklaşır."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o04",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olayları sırasındaki açılar arasında ilişki kurar.",
+      "metin": "Doğrusal bir su dalgasının düz engele gelme açısı 40° olarak ölçülmüştür. Bu dalganın yansıma açısı kaç derecedir?",
+      "secenekler": [
+        "40",
+        "50",
+        "80",
+        "140"
+      ],
+      "dogru_index": 0,
+      "cozum": "Yansıma yasasına göre gelme açısı yansıma açısına eşittir. Bu nedenle yansıma açısı da 40° olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gelme açısının tanımını yazınız.",
+        "back": "Gelen dalganın ilerleme doğrultusunun yüzey normaliyle yaptığı açıdır."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o05",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olayları sırasındaki açılar arasında ilişki kurar.",
+      "metin": "Düz engele gelen doğrusal su dalgasının gelme açısı ile yansıma açısı arasındaki ilişki için hangisi doğrudur?",
+      "secenekler": [
+        "Gelme açısı her zaman daha büyüktür.",
+        "İki açının toplamı 90°'dir.",
+        "Yansıma açısı gelme açısının iki katıdır.",
+        "Açılar birbirine eşittir ve her ikisi de yüzey normaliyle ölçülür."
+      ],
+      "dogru_index": 3,
+      "cozum": "Yansıma yasasına göre gelme ve yansıma açıları eşittir. Her iki açı da yüzey normali ile dalganın ilerleme doğrultusu arasında ölçülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yansıma açısının tanımını yazınız.",
+        "back": "Yansıyan dalganın ilerleme doğrultusunun yüzey normaliyle yaptığı açıdır."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o06",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olayları sırasındaki açılar arasında ilişki kurar.",
+      "metin": "Su dalgası derin ortamdan sığ ortama geçtiğinde kırılan dalganın yüzey normaliyle yaptığı açı için hangisi doğrudur?",
+      "secenekler": [
+        "Açı artar.",
+        "Açı azalır.",
+        "Açı değişmez.",
+        "Açı 90° olur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Derin ortamdan sığ ortama geçen dalga yavaşlar ve normale yaklaşarak kırılır. Bu nedenle normalle yaptığı açı azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kırılmada açı ile sürat arasındaki ilişki nedir?",
+        "back": "Sürat azalırsa dalga normale yaklaşır; sürat artarsa normalden uzaklaşır."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o07",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olaylarına ilişkin genellemeler yapar.",
+      "metin": "Doğrusal su dalgalarıyla ilgili genellemelerden hangisi doğrudur?",
+      "secenekler": [
+        "Yansımadan sonra dalganın ilerleme yönü değişmez.",
+        "Ortam derinliği değiştiğinde dalgaların frekansı artar.",
+        "Derin ortamdan sığ ortama geçen dalgalar normale yaklaşır.",
+        "Sığ ortama geçen dalgalar normalden uzaklaşır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Derin ortamdan sığ ortama geçen su dalgaları yavaşlar, dalga boyu kısalır ve normale yaklaşarak kırılır. Kırılmada frekans değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kırılmada değişmeyen nicelik nedir?",
+        "back": "Frekans değişmez; dalga boyu ve ilerleme yönü değişir."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o08",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olaylarına ilişkin genellemeler yapar.",
+      "metin": "Su dalgalarının yansımasıyla ilgili hangi genelleme doğrudur?",
+      "secenekler": [
+        "Gelen dalga, yansıyan dalga ve yüzey normali aynı düzlemdedir.",
+        "Gelen dalga ile yansıyan dalga her zaman aynı doğrultudadır.",
+        "Yansımada dalga boyu iki katına çıkar.",
+        "Yansımada dalganın frekansı değişir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Yansıma yasasına göre gelme açısı yansıma açısına eşittir; gelen dalga, yansıyan dalga ve yüzey normali aynı düzlemde bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yüzey normalinin tanımını yazınız.",
+        "back": "Gelen dalganın engelle birleştiği noktada yüzeye dik çizilen doğrudur."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o09",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olaylarına ilişkin genellemeler yapar.",
+      "metin": "Kırılma olayı için hangi genelleme doğrudur?",
+      "secenekler": [
+        "Frekans ve dalga boyu birlikte değişir.",
+        "Frekans değişmez; dalga boyu ve ilerleme yönü değişir.",
+        "Sürat ve frekans değişir, dalga boyu sabit kalır.",
+        "Hiçbir nicelik değişmez."
+      ],
+      "dogru_index": 1,
+      "cozum": "Ortam değiştiğinde dalganın sürati ve dalga boyu değişir, yönü değişir; ancak kaynağa bağlı olan frekansı değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doğrusal su dalgalarının tanımını yazınız.",
+        "back": "Derinliği sabit bir ortamda oluşan, her noktada eş zamanlı ve aynı yönde ilerleyen periyodik dalgalardır."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c05_o10",
+      "alt_beceri": "Su dalgalarında yansıma ve kırılma olaylarına ilişkin genellemeler yapar.",
+      "metin": "Sığ ortamdan derin ortama geçen doğrusal su dalgaları için hangisi doğrudur?",
+      "secenekler": [
+        "Sürati azalır ve normale yaklaşır.",
+        "Dalga boyu kısalır.",
+        "Frekansı artar.",
+        "Sürati artar ve normalden uzaklaşır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sığ ortamdan derin ortama geçen su dalgası hızlanır, dalga boyu uzar ve yüzey normalinden uzaklaşarak kırılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dalga ayırıcı yüzeye normal boyunca gelirse ne olur?",
+        "back": "Doğrultu değiştirmeden yoluna devam eder."
+      },
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t04_c05_o01:flashcard",
+      "front": "Yansıma yasasının tanımı nedir?",
+      "back": "Gelme açısının yansıma açısına eşit olmasıdır (i = r)."
+    },
+    {
+      "id": "fiz_10_t04_c05_o02:flashcard",
+      "front": "Kırılmanın tanımını yazınız.",
+      "back": "Dalganın farklı derinlikteki ortama geçerken süratinin değişip yön değiştirmesidir."
+    },
+    {
+      "id": "fiz_10_t04_c05_o03:flashcard",
+      "front": "Sığ ortamdan derin ortama geçen dalganın kırılma kuralı nedir?",
+      "back": "Hızlanır, dalga boyu uzar ve normalden uzaklaşır."
+    },
+    {
+      "id": "fiz_10_t04_c05_o04:flashcard",
+      "front": "Gelme açısının tanımını yazınız.",
+      "back": "Gelen dalganın ilerleme doğrultusunun yüzey normaliyle yaptığı açıdır."
+    },
+    {
+      "id": "fiz_10_t04_c05_o05:flashcard",
+      "front": "Yansıma açısının tanımını yazınız.",
+      "back": "Yansıyan dalganın ilerleme doğrultusunun yüzey normaliyle yaptığı açıdır."
+    },
+    {
+      "id": "fiz_10_t04_c05_o06:flashcard",
+      "front": "Kırılmada açı ile sürat arasındaki ilişki nedir?",
+      "back": "Sürat azalırsa dalga normale yaklaşır; sürat artarsa normalden uzaklaşır."
+    },
+    {
+      "id": "fiz_10_t04_c05_o07:flashcard",
+      "front": "Kırılmada değişmeyen nicelik nedir?",
+      "back": "Frekans değişmez; dalga boyu ve ilerleme yönü değişir."
+    },
+    {
+      "id": "fiz_10_t04_c05_o08:flashcard",
+      "front": "Yüzey normalinin tanımını yazınız.",
+      "back": "Gelen dalganın engelle birleştiği noktada yüzeye dik çizilen doğrudur."
+    },
+    {
+      "id": "fiz_10_t04_c05_o09:flashcard",
+      "front": "Doğrusal su dalgalarının tanımını yazınız.",
+      "back": "Derinliği sabit bir ortamda oluşan, her noktada eş zamanlı ve aynı yönde ilerleyen periyodik dalgalardır."
+    },
+    {
+      "id": "fiz_10_t04_c05_o10:flashcard",
+      "front": "Dalga ayırıcı yüzeye normal boyunca gelirse ne olur?",
+      "back": "Doğrultu değiştirmeden yoluna devam eder."
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t04_c07",
+  "kod": "FİZ.10.4.7",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 4,
+  "tema_adi": "Dalgalar",
+  "kazanim": "Depremle ilgili bilimsel model oluşturabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.324-335",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t04_c07_o01",
+      "alt_beceri": "Depremle ilgili bir model önerir.",
+      "metin": "Depremi modellemek isteyen bir öğrenci modele hangi unsuru eklemelidir?",
+      "secenekler": [
+        "Depremi ilk inceleyen bilim insanının adını",
+        "Binaların dış cephesinde kullanılan renkleri",
+        "Levha hareketleriyle açığa çıkan enerjiyi ve fay hattını",
+        "Depremin yaşandığı günün takvimdeki adını"
+      ],
+      "dogru_index": 2,
+      "cozum": "Deprem, yer kabuğundaki levha hareketleri sonucu açığa çıkan enerjinin boşalmasıyla oluşur. Modelin bu enerjiyi ve kırılmanın gerçekleştiği fay hattını göstermesi gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bilimsel modelin tanımını yazınız.",
+        "back": "Gerçek bir olayı açıklamak için kurulan, sınanabilir ve basitleştirilmiş temsildir."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o02",
+      "alt_beceri": "Depremle ilgili bir model önerir.",
+      "metin": "Bir deprem modeline odak noktası ve merkez üssü neden eklenir?",
+      "secenekler": [
+        "Dalgaların kaynağından yüzeye doğru yayılımını göstermek için",
+        "Depremin toplam süresini ölçmek için",
+        "Binaların yüksekliğini belirlemek için",
+        "Fay hattının rengini göstermek için"
+      ],
+      "dogru_index": 0,
+      "cozum": "Deprem dalgaları odak noktasından çevreye yayılır ve yeryüzüne merkez üssü çevresinde ulaşır. Bu iki kavram modelde yayılımı göstermek için gereklidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Merkez üssünün tanımını yazınız.",
+        "back": "Odak noktasının yeryüzündeki izdüşümüdür."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o03",
+      "alt_beceri": "Depremle ilgili bir model önerir.",
+      "metin": "Deprem modelinde sismik dalgaların yeryüzüne ulaşması hangi kavramla ilişkilendirilir?",
+      "secenekler": [
+        "Kırılma",
+        "Genlik",
+        "Periyot",
+        "Sarsıntı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sismik dalgalar enerjiyi kaynaktan çevreye ileterek yeryüzünde hissedilen sarsıntılara yol açar. Modelde bu sarsıntı, dalgaların yüzeye ulaşmasıyla gösterilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Deprem modelinde yer alması gereken temel değişkenler nedir?",
+        "back": "Fay hattı, odak noktası, merkez üssü ve sismik dalgalar."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o04",
+      "alt_beceri": "Depremle ilgili bir model önerir.",
+      "metin": "Bir deprem modelinin temsil ettiği temel olay hangisidir?",
+      "secenekler": [
+        "Güneş ışınlarının atmosferde kırılması",
+        "Yer kabuğundaki enerjinin boşalarak dalgalar üretmesi",
+        "Ses dalgalarının katılarda yayılması",
+        "Su dalgalarının kıyıya ulaşması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Deprem, yer kabuğundaki hareketlerin meydana getirdiği enerjinin boşalmasıyla oluşan sarsıntıdır. Model bu enerji boşalmasını ve oluşan dalgaları temsil eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fay hattının tanımını yazınız.",
+        "back": "Levha hareketleriyle açığa çıkan enerjinin kayaçlarda oluşturduğu kırılma hatlarıdır."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o05",
+      "alt_beceri": "Depremle ilgili bir model önerir.",
+      "metin": "Deprem modelinde 'depremin büyüklüğü' hangi nicelikle temsil edilir?",
+      "secenekler": [
+        "Sarsıntının hissedilme derecesiyle",
+        "Fay hattının uzunluğuyla",
+        "Odak noktasının derinliğiyle",
+        "Açığa çıkan enerji miktarıyla"
+      ],
+      "dogru_index": 3,
+      "cozum": "Depremin büyüklüğü açığa çıkan enerjiyle ilişkilidir. Hissedilme derecesi ve hasar ise şiddet kavramıyla ifade edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Deprem şiddeti ile hasar arasındaki ilişki nedir?",
+        "back": "Şiddet arttıkça hasar düzeyi hafif hasardan yıkıma kadar değişir."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o06",
+      "alt_beceri": "Depremle ilgili önerilen modeli geliştirir.",
+      "metin": "Bir öğrenci hazırladığı deprem modeline zemin türünü ekleyerek modeli geliştirmiştir. Bu geliştirmenin modele katkısı için hangisi doğrudur?",
+      "secenekler": [
+        "Depremin büyüklüğünü kesin olarak hesaplamayı sağlar.",
+        "Fay hattının yerini tek başına belirler.",
+        "Farklı zeminlerde sarsıntı şiddetinin neden değiştiğini açıklar.",
+        "Sismik dalgaların oluşumunu ortadan kaldırır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Zemin türü, sismik dalgaların iletilme biçimini ve şiddeti etkiler. Modele eklenmesi, aynı depremin farklı zeminlerde farklı hasar oluşturmasını açıklar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Modelin geliştirilmesinde eklenen değişkenin işlevi nedir?",
+        "back": "Gözlenen farklılıkları açıklayarak modelin kapsamını genişletmek."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o07",
+      "alt_beceri": "Depremle ilgili önerilen modeli geliştirir.",
+      "metin": "Modelini geliştirmek isteyen bir öğrenci binaların doğal frekansını modele eklediğinde hangi olayı açıklayabilir?",
+      "secenekler": [
+        "Rezonans nedeniyle hasarın artmasını",
+        "Depremin oluş zamanını",
+        "Fay hattının derinliğini",
+        "Sismik dalgaların yayılma süratini"
+      ],
+      "dogru_index": 0,
+      "cozum": "Binaların doğal frekansı zeminin titreşim frekansıyla eşleştiğinde rezonans oluşur. Bu değişken modele eklendiğinde hasarın neden arttığı açıklanabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rezonansın modele eklenmesi hangi sonucu açıklar?",
+        "back": "Binaların doğal frekansı zemin titreşimiyle eşleştiğinde hasarın artmasını."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o08",
+      "alt_beceri": "Depremle ilgili önerilen modeli geliştirir.",
+      "metin": "Bir deprem modelinde ölçek kullanılmasının amacı için hangisi doğrudur?",
+      "secenekler": [
+        "Sarsıntının süresini sıfıra indirmek",
+        "Modelin gerçeğe göre orantılı küçültülmesini sağlamak",
+        "Fay hattını modelden çıkarmak",
+        "Depremin oluşumunu tamamen engellemek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ölçek, modeldeki uzunluk ve büyüklüklerin gerçek olayla orantılı olmasını sağlar. Böylece model gözlemlerle karşılaştırılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Model ölçeğinin işlevi nedir?",
+        "back": "Gerçeğin orantılı olarak küçültülerek temsil edilmesini sağlar."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o09",
+      "alt_beceri": "Depremle ilgili önerilen modeli geliştirir.",
+      "metin": "Model geliştirilirken yapılan tahminlerin sınanması için hangisi gereklidir?",
+      "secenekler": [
+        "Tahminlerin yalnızca defterde kalması",
+        "Modelin hiçbir değişiklik yapılmadan korunması",
+        "Tahminlerin yalnızca sözlü olarak aktarılması",
+        "Model sonuçlarının gerçek deprem gözlemleriyle karşılaştırılması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bir modelin geçerliliği, ürettiği sonuçların gerçek gözlem ve ölçümlerle karşılaştırılmasıyla sınanır. Uyuşmazlık varsa model düzeltilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Modelin sınanması neden gereklidir?",
+        "back": "Tahminlerin geçerliliği ancak gözlem ve ölçümle karşılaştırılarak belirlenebilir."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c07_o10",
+      "alt_beceri": "Depremle ilgili önerilen modeli geliştirir.",
+      "metin": "Deprem modelinin geliştirilmesinde en etkili adım hangisidir?",
+      "secenekler": [
+        "Modelin görsel olarak süslenmesi",
+        "Modelin bir kez çizilip değiştirilmemesi",
+        "Modeldeki değişkenlerin gözlem ve ölçümlerle sınanıp düzeltilmesi",
+        "Modelden zemin ve yapı bilgilerinin çıkarılması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Model, gözlem ve ölçümlerle sınandıkça gelişir. Değişkenlerin sınanması ve sonuçlara göre düzeltilmesi modelin açıklama gücünü artırır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Model ile gerçek olay arasındaki ilişki nedir?",
+        "back": "Model gerçeğin basitleştirilmiş temsilidir; sonuçları gözlemlerle sınanır."
+      },
+      "kazanim": "Depremle ilgili bilimsel model oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t04_c07_o01:flashcard",
+      "front": "Bilimsel modelin tanımını yazınız.",
+      "back": "Gerçek bir olayı açıklamak için kurulan, sınanabilir ve basitleştirilmiş temsildir."
+    },
+    {
+      "id": "fiz_10_t04_c07_o02:flashcard",
+      "front": "Merkez üssünün tanımını yazınız.",
+      "back": "Odak noktasının yeryüzündeki izdüşümüdür."
+    },
+    {
+      "id": "fiz_10_t04_c07_o03:flashcard",
+      "front": "Deprem modelinde yer alması gereken temel değişkenler nedir?",
+      "back": "Fay hattı, odak noktası, merkez üssü ve sismik dalgalar."
+    },
+    {
+      "id": "fiz_10_t04_c07_o04:flashcard",
+      "front": "Fay hattının tanımını yazınız.",
+      "back": "Levha hareketleriyle açığa çıkan enerjinin kayaçlarda oluşturduğu kırılma hatlarıdır."
+    },
+    {
+      "id": "fiz_10_t04_c07_o05:flashcard",
+      "front": "Deprem şiddeti ile hasar arasındaki ilişki nedir?",
+      "back": "Şiddet arttıkça hasar düzeyi hafif hasardan yıkıma kadar değişir."
+    },
+    {
+      "id": "fiz_10_t04_c07_o06:flashcard",
+      "front": "Modelin geliştirilmesinde eklenen değişkenin işlevi nedir?",
+      "back": "Gözlenen farklılıkları açıklayarak modelin kapsamını genişletmek."
+    },
+    {
+      "id": "fiz_10_t04_c07_o07:flashcard",
+      "front": "Rezonansın modele eklenmesi hangi sonucu açıklar?",
+      "back": "Binaların doğal frekansı zemin titreşimiyle eşleştiğinde hasarın artmasını."
+    },
+    {
+      "id": "fiz_10_t04_c07_o08:flashcard",
+      "front": "Model ölçeğinin işlevi nedir?",
+      "back": "Gerçeğin orantılı olarak küçültülerek temsil edilmesini sağlar."
+    },
+    {
+      "id": "fiz_10_t04_c07_o09:flashcard",
+      "front": "Modelin sınanması neden gereklidir?",
+      "back": "Tahminlerin geçerliliği ancak gözlem ve ölçümle karşılaştırılarak belirlenebilir."
+    },
+    {
+      "id": "fiz_10_t04_c07_o10:flashcard",
+      "front": "Model ile gerçek olay arasındaki ilişki nedir?",
+      "back": "Model gerçeğin basitleştirilmiş temsilidir; sonuçları gözlemlerle sınanır."
+    }
+  ]
+}

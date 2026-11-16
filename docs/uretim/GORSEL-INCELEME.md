@@ -258,6 +258,125 @@ _Bu havuzda görsel gerekmedi._
 
 _Bu havuzda görsel gerekmedi._
 
+## fiz_10_t04_c01.json (`FİZ.10.4.1`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t04_c01_o01` | Aşağıdaki günlük hayat gözlemlerinden hangisi periyodik ha… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o02` | Bir öğrenci salıncakta sallanırken salınımın düzenli aralı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o03` | Seyircilerin sırayla ayağa kalkıp oturmasıyla yapılan Meks… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o04` | Bir sarkaç 20 saniyede 10 tam salınım yapmıştır. Sarkacın … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o05` | Dinlenme hâlindeki bir kişinin kalbi dakikada 72 kez atmak… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o06` | Periyodu 0,5 saniye olan bir titreşimin frekansı kaç hertz… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o07` | Bir öğrenci 'Sarkacın uzunluğu artırıldığında periyodu art… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o08` | Bir öğrenci 'Sarkacın periyodu genliğine bağlı değildir.' … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o09` | Bir öğrenci 'Her tekrarlanan hareket periyodiktir.' çıkarı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c01_o10` | Bir öğrenci sarkacın 5 tam salınım süresini ölçüp bu değer… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t04_c02.json (`FİZ.10.4.2`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t04_c02_o01` | Bir dalgada denge konumunun üstünde yer alan en yüksek nok… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o02` | Dalganın herhangi bir andaki konumunun denge noktasına dik… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o03` | Bir dalganın taşıdığı enerjinin ölçüsü olarak kabul edilen… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o04` | Bir dalganın ardışık iki tepesi arasındaki uzaklık 4 m, fr… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o05` | Bir dalganın uzanım-zaman grafiğinde iki ardışık tepe aras… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o06` | Periyodu 0,2 saniye olan bir dalganın frekansı kaç hertzdi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o07` | Bir dalganın genliği artırılıp frekansı ve ortamı değiştir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o08` | Aynı ortamda üretilen iki dalgadan frekansı büyük olan içi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o09` | Dalga boyu 0,5 m, periyodu 0,25 saniye olan bir dalganın y… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c02_o10` | Bir dalga kaynağı 3 saniyede 6 tam dalga oluşturmuştur. Ol… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t04_c03.json (`FİZ.10.4.3`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t04_c03_o01` | Mekanik dalgaların ortak özelliği için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o02` | Elektromanyetik dalgaların özelliği için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o03` | Hem enine hem boyuna titreşebilen dalgalara hangisi örnekt… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o04` | Gerilmiş bir yayın ucu yukarı aşağı hareket ettirilerek da… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o05` | Boyuna dalgalarda titreşim doğrultusu için hangisi doğrudu… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o06` | Ses dalgaları titreşim doğrultusuna göre hangi sınıfta yer… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o07` | Aşağıdaki dalgalardan hangisi taşıdığı enerjiye göre mekan… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o08` | Aşağıdaki dalgalardan hangisi elektromanyetik dalga grubun… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o09` | Titreşim doğrultusuna ve taşıdığı enerjiye göre 'mekanik v… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c03_o10` | Deprem dalgaları sınıflandırmada hangi grupta yer alır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t04_c04.json (`FİZ.10.4.4`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t04_c04_o01` | Bir öğrenci dalgaların yayılma süratini etkileyen etmenler… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o02` | Ses dalgalarının yayılma sürati için hangi tahmin doğrudur… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o03` | Deniz altındaki bir dalgıç, yaklaşan teknenin motor sesini… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o04` | Aynı sıcaklıktaki hava ve su ortamlarında ses dalgalarının… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o05` | Doğrusal su dalgaları derin ortamdan sığ ortama geçerken s… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o06` | Bir dalga leğeninde su derinliği artırıldığında doğrusal s… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o07` | Elektromanyetik dalgaların boşluktaki yayılma sürati için … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o08` | Bir öğrenci 'Işığın sürati ortam değiştirdiğinde değişir.'… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o09` | Bir öğrenci 'Elektromanyetik dalgaların sürati ortamdan ba… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c04_o10` | Morötesi, X ve gama ışınlarını algılayan teleskopların Dün… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t04_c05.json (`FİZ.10.4.5`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t04_c05_o01` | Doğrusal su dalgası düz engele çarptıktan sonra gözlenen d… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o02` | Doğrusal su dalgaları farklı derinliğe sahip bir ortama ge… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o03` | Doğrusal su dalgaları sığ ortamdan derin ortama geçerken d… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o04` | Doğrusal bir su dalgasının düz engele gelme açısı 40° olar… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o05` | Düz engele gelen doğrusal su dalgasının gelme açısı ile ya… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o06` | Su dalgası derin ortamdan sığ ortama geçtiğinde kırılan da… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o07` | Doğrusal su dalgalarıyla ilgili genellemelerden hangisi do… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o08` | Su dalgalarının yansımasıyla ilgili hangi genelleme doğrud… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o09` | Kırılma olayı için hangi genelleme doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c05_o10` | Sığ ortamdan derin ortama geçen doğrusal su dalgaları için… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t04_c06.json (`FİZ.10.4.6`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t04_c06_o01` | Rezonansın ne olduğuyla ilgili hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o02` | Bir belgeselde yer kabuğundaki kırılmalar sonucunda oluşan… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o03` | Rezonansla ilgili aşağıdaki sorulardan hangisi neden-sonuç… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o04` | Depremle ilgili araştırma sorusu hazırlayan bir öğrencinin… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o05` | Depremle ilgili toplanan bilgilerde merkez üssü kavramı iç… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o06` | Depremin şiddeti kavramı için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o07` | Bir kaynakta 'Deprem şiddeti ile deprem büyüklüğü aynı kav… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o08` | Bir öğrenci 'Deprem yalnızca merkez üssüne yakın yerlerde … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o09` | Depremin yıkıcı etkisi ile rezonans arasındaki ilişki için… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c06_o10` | Mexico City'de merkez üssüne 320 km uzaklıkta büyük yıkım … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t04_c07.json (`FİZ.10.4.7`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t04_c07_o01` | Depremi modellemek isteyen bir öğrenci modele hangi unsuru… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o02` | Bir deprem modeline odak noktası ve merkez üssü neden ekle… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o03` | Deprem modelinde sismik dalgaların yeryüzüne ulaşması hang… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o04` | Bir deprem modelinin temsil ettiği temel olay hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o05` | Deprem modelinde 'depremin büyüklüğü' hangi nicelikle tems… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o06` | Bir öğrenci hazırladığı deprem modeline zemin türünü ekley… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o07` | Modelini geliştirmek isteyen bir öğrenci binaların doğal f… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o08` | Bir deprem modelinde ölçek kullanılmasının amacı için hang… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o09` | Model geliştirilirken yapılan tahminlerin sınanması için h… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t04_c07_o10` | Deprem modelinin geliştirilmesinde en etkili adım hangisid… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
 ---
 
-Toplam incelenen soru: **150** · görselli: **5** · görselsiz: **145**
+Toplam incelenen soru: **220** · görselli: **5** · görselsiz: **215**

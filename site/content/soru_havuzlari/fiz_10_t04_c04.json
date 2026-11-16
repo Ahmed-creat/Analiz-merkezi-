@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t04_c04",
+  "kod": "FİZ.10.4.4",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 4,
+  "tema_adi": "Dalgalar",
+  "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.292-300",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t04_c04_o01",
+      "alt_beceri": "Dalgaların yayılma süratine etki eden etmenleri tahmin eder.",
+      "metin": "Bir öğrenci dalgaların yayılma süratini etkileyen etmenleri tahmin etmektedir. Hangisi bu etmenlerden biri değildir?",
+      "secenekler": [
+        "Ortamın cinsi",
+        "Ortamın sıcaklığı",
+        "Dalga kaynağının rengi",
+        "Suyun derinliği"
+      ],
+      "dogru_index": 2,
+      "cozum": "Dalgaların yayılma sürati ortamın cinsine, sıcaklığına ve su dalgaları için derinliğe bağlıdır. Kaynağın rengi sürati etkilemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortam değiştiğinde dalganın yayılma süratinin durumu nedir?",
+        "back": "Ortamın cinsine, sıcaklığına ve derinliğine göre değişir."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o02",
+      "alt_beceri": "Dalgaların yayılma süratine etki eden etmenleri tahmin eder.",
+      "metin": "Ses dalgalarının yayılma sürati için hangi tahmin doğrudur?",
+      "secenekler": [
+        "Katı ortamlarda sıvı ve gazlara göre daha süratli yayılır.",
+        "Gaz ortamlarda en süratli yayılır.",
+        "Ortamdan tamamen bağımsızdır.",
+        "Boşlukta en süratli yayılır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Ses mekanik bir dalgadır. Ortamın tanecikleri birbirine yaklaştıkça enerji daha hızlı aktarılır; bu nedenle ses katılarda en süratli, gazlarda en yavaş yayılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sesin katı, sıvı ve gaz ortamlardaki sürat sıralaması nedir?",
+        "back": "Katı > sıvı > gaz."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o03",
+      "alt_beceri": "Dalgaların farklı ortamlardaki yayılma süratini karşılaştırır.",
+      "metin": "Deniz altındaki bir dalgıç, yaklaşan teknenin motor sesini su yüzeyindekine göre daha yakından duymaktadır. Bu durumun nedeni için hangisi doğrudur?",
+      "secenekler": [
+        "Ses su altında daha yavaş yayılır.",
+        "Ses su altında hiç yayılmaz.",
+        "Motor su altında daha güçlü çalışır.",
+        "Ses, suda havadakinden daha süratli yayılır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Ses suda havadan daha süratli yayıldığı için kaynaktan gelen ses dalgaları dalgıca daha kısa sürede ulaşır ve ses daha yakından geliyormuş gibi algılanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sesin suda havadan daha süratli yayılmasının nedeni nedir?",
+        "back": "Suyun tanecikleri havaya göre birbirine daha yakın olduğu için enerji daha hızlı aktarılır."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o04",
+      "alt_beceri": "Dalgaların farklı ortamlardaki yayılma süratini karşılaştırır.",
+      "metin": "Aynı sıcaklıktaki hava ve su ortamlarında ses dalgalarının süratleri karşılaştırıldığında hangisi doğrudur?",
+      "secenekler": [
+        "Havada daha süratlidir.",
+        "Suda daha süratlidir.",
+        "İki ortamda eşittir.",
+        "Ortam sürati etkilemez."
+      ],
+      "dogru_index": 1,
+      "cozum": "Ses mekanik bir dalga olduğundan ortamın özelliklerine bağlıdır. Sıvıların tanecikleri gazlara göre daha yakın olduğu için ses suda daha süratli yayılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sesin süratini belirleyen ortam özelliği nedir?",
+        "back": "Ortamın tanecik yapısı (yoğunluk) ve sıcaklığı."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o05",
+      "alt_beceri": "Dalgaların farklı ortamlardaki yayılma süratlerine ilişkin sonuç çıkarır.",
+      "metin": "Doğrusal su dalgaları derin ortamdan sığ ortama geçerken sürati ve dalga boyu için hangisi doğrudur?",
+      "secenekler": [
+        "Sürat artar, dalga boyu uzar.",
+        "Sürat değişmez, dalga boyu kısalır.",
+        "Sürat azalır, dalga boyu kısalır.",
+        "Sürat azalır, dalga boyu uzar."
+      ],
+      "dogru_index": 2,
+      "cozum": "Su dalgaları derin ortamdan sığ ortama geçerken yavaşlar. Frekans değişmediği için dalga boyu kısalır (λs < λd).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgalarının derinliğe bağlı sürat kuralı nedir?",
+        "back": "Derin ortamda sürat büyük, sığ ortamda küçüktür."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o06",
+      "alt_beceri": "Dalgaların farklı ortamlardaki yayılma süratlerine ilişkin sonuç çıkarır.",
+      "metin": "Bir dalga leğeninde su derinliği artırıldığında doğrusal su dalgalarının yayılma sürati için hangi sonuç çıkarılır?",
+      "secenekler": [
+        "Derinlik arttıkça su dalgalarının sürati artar.",
+        "Derinlik arttıkça su dalgalarının sürati azalır.",
+        "Derinlik su dalgalarının süratini etkilemez.",
+        "Dalgalar derinlikle birlikte durur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Su dalgalarının sürati ortamın derinliğine bağlıdır. Derinlik arttıkça sürat artar; bu nedenle dalga boyu da uzar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sığ ortama geçen su dalgasının dalga boyu için kural nedir?",
+        "back": "Sürat azaldığı için dalga boyu kısalır (λs < λd)."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o07",
+      "alt_beceri": "Elektromanyetik dalgaların yayılma sürati ile ilgili tahminlerde bulunur.",
+      "metin": "Elektromanyetik dalgaların boşluktaki yayılma sürati için hangi tahmin doğrudur?",
+      "secenekler": [
+        "Sesin havadaki süratine eşittir.",
+        "Yaklaşık 3 · 10⁸ m/s'dir.",
+        "Yaklaşık 340 m/s'dir.",
+        "Ortama göre sıfırdan başlayıp artar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Elektromanyetik dalgalar boşlukta yaklaşık 3 · 10⁸ m/s büyüklüğündeki ışık hızıyla yayılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sesin çelikte ve havada yayılma süratleri arasındaki ilişki nedir?",
+        "back": "Çelikte havadakinden yaklaşık 14 kat süratli yayılır."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o08",
+      "alt_beceri": "Elektromanyetik dalgaların yayılma sürati ile ilgili tahminlerde bulunur.",
+      "metin": "Bir öğrenci 'Işığın sürati ortam değiştirdiğinde değişir.' tahmininde bulunmuştur. Bu tahmin hangi gözlemle desteklenir?",
+      "secenekler": [
+        "Yıldırımın sesinin ışığından sonra duyulması",
+        "Sesin katılarda daha süratli yayılması",
+        "Su dalgalarının engelden yansıması",
+        "Işığın havadan suya geçerken kırılmaya uğraması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Işık bir ortamdan başka bir ortama geçerken sürati değişir; bu değişim ışığın yön değiştirmesine yani kırılmaya yol açar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Işığın ortam değiştirdiğinde yön değiştirmesinin nedeni nedir?",
+        "back": "Ortama göre süratinin değişmesi."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o09",
+      "alt_beceri": "Elektromanyetik dalgaların yayılma sürati ile ilgili tahminlerinin geçerliliğini sorgular.",
+      "metin": "Bir öğrenci 'Elektromanyetik dalgaların sürati ortamdan bağımsızdır.' tahmininde bulunmuştur. Bu tahminin geçerliliği için hangisi doğrudur?",
+      "secenekler": [
+        "Tahmin bütün koşullarda geçerlidir.",
+        "Tahmin ışık için doğru, ses için yanlıştır.",
+        "Tahmin geçerli değildir; sürat ortama göre değişir, en büyük değeri boşluktadır.",
+        "Tahmin hiçbir biçimde değerlendirilemez."
+      ],
+      "dogru_index": 2,
+      "cozum": "Elektromanyetik dalgaların sürati ortama göre değişir. Boşluktaki değeri en büyüktür; saydam ortamlarda sürat azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektromanyetik dalgaların süratinin en büyük olduğu ortam nedir?",
+        "back": "Boşluk (yaklaşık 3 · 10⁸ m/s)."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c04_o10",
+      "alt_beceri": "Elektromanyetik dalgaların yayılma sürati ile ilgili tahminlerinin geçerliliğini sorgular.",
+      "metin": "Morötesi, X ve gama ışınlarını algılayan teleskopların Dünya'da değil uzayda kurulmasının nedeni için hangisi doğrudur?",
+      "secenekler": [
+        "Bu ışınların atmosfer tarafından büyük ölçüde soğurulması",
+        "Uzayda ışığın daha yavaş yayılması",
+        "Bu ışınların boşlukta yayılamaması",
+        "Teleskopların Dünya'da çalışmaması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Atmosfer, morötesi ve daha yüksek enerjili ışınların büyük bölümünü soğurur. Bu ışınları gözlemek için teleskopların atmosfer dışına kurulması gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Atmosferin yüksek enerjili ışınlara etkisi nedir?",
+        "back": "Morötesi, X ve gama ışınlarının büyük bölümünü soğurur."
+      },
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t04_c04_o01:flashcard",
+      "front": "Ortam değiştiğinde dalganın yayılma süratinin durumu nedir?",
+      "back": "Ortamın cinsine, sıcaklığına ve derinliğine göre değişir."
+    },
+    {
+      "id": "fiz_10_t04_c04_o02:flashcard",
+      "front": "Sesin katı, sıvı ve gaz ortamlardaki sürat sıralaması nedir?",
+      "back": "Katı > sıvı > gaz."
+    },
+    {
+      "id": "fiz_10_t04_c04_o03:flashcard",
+      "front": "Sesin suda havadan daha süratli yayılmasının nedeni nedir?",
+      "back": "Suyun tanecikleri havaya göre birbirine daha yakın olduğu için enerji daha hızlı aktarılır."
+    },
+    {
+      "id": "fiz_10_t04_c04_o04:flashcard",
+      "front": "Sesin süratini belirleyen ortam özelliği nedir?",
+      "back": "Ortamın tanecik yapısı (yoğunluk) ve sıcaklığı."
+    },
+    {
+      "id": "fiz_10_t04_c04_o05:flashcard",
+      "front": "Su dalgalarının derinliğe bağlı sürat kuralı nedir?",
+      "back": "Derin ortamda sürat büyük, sığ ortamda küçüktür."
+    },
+    {
+      "id": "fiz_10_t04_c04_o06:flashcard",
+      "front": "Sığ ortama geçen su dalgasının dalga boyu için kural nedir?",
+      "back": "Sürat azaldığı için dalga boyu kısalır (λs < λd)."
+    },
+    {
+      "id": "fiz_10_t04_c04_o07:flashcard",
+      "front": "Sesin çelikte ve havada yayılma süratleri arasındaki ilişki nedir?",
+      "back": "Çelikte havadakinden yaklaşık 14 kat süratli yayılır."
+    },
+    {
+      "id": "fiz_10_t04_c04_o08:flashcard",
+      "front": "Işığın ortam değiştirdiğinde yön değiştirmesinin nedeni nedir?",
+      "back": "Ortama göre süratinin değişmesi."
+    },
+    {
+      "id": "fiz_10_t04_c04_o09:flashcard",
+      "front": "Elektromanyetik dalgaların süratinin en büyük olduğu ortam nedir?",
+      "back": "Boşluk (yaklaşık 3 · 10⁸ m/s)."
+    },
+    {
+      "id": "fiz_10_t04_c04_o10:flashcard",
+      "front": "Atmosferin yüksek enerjili ışınlara etkisi nedir?",
+      "back": "Morötesi, X ve gama ışınlarının büyük bölümünü soğurur."
+    }
+  ]
+}
