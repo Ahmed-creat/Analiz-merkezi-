@@ -488,7 +488,7 @@ if (require.main === module) {
         "olduğu için tam durum değişimi YAPILMAZ, yalnız bu sınavlar listeye eklenir.",
       _uyari:
         "Tüm hata nedenleri KONUEKSİKLİĞİ (ağırlık 1,5). Yanlış/boş ayrımı lessons[ders].w ve .e alanlarında.",
-      _surum: "2026-11-17",
+      _surum: "2026-10-27",
       _tutarsizliklar: tutarsizliklar,
       _kaynak: "9. sınıf deneme dökümü (PDF) — " + sinavlar.length + " sınav",
       _sayilar: {
