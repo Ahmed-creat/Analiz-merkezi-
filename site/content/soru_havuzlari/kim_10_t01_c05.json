@@ -1,0 +1,284 @@
+{
+  "konu_id": "kim_10_t01_c05",
+  "kod": "KİM.10.1.5",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme",
+  "kaynak": "Kimya 10 ders kitabı, s.56-61",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c05_o01",
+      "alt_beceri": "Atom sayısı, molekül sayısı, kütle ile mol sayısı arasındaki ilişkiyi kuramsal temele dayalı kurduğu hipotezleri ile test eder.",
+      "metin": "Tabloda bazı element örneklerinin kütlesi ve içerdiği atom sayısı verilmiştir. Buna göre hangi örnekte mol sayısı yanlış hesaplanmıştır? (Mg: 24, Zn: 65, Pb: 207, Na = 6,02·10²³)",
+      "secenekler": [
+        "I. örnek",
+        "IV. örnek",
+        "II. örnek",
+        "III. örnek"
+      ],
+      "dogru_index": 1,
+      "cozum": "48 g magnezyum 48/24 = 2 moldür; tabloda 1 mol yazılmıştır. Diğer satırlarda mol sayıları kütlenin mol kütlesine bölümüyle doğru hesaplanmıştır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Örnek",
+          "Kütle",
+          "Mol"
+        ],
+        "satirlar": [
+          [
+            "Mg",
+            "24 g",
+            "1"
+          ],
+          [
+            "Zn",
+            "65 g",
+            "1"
+          ],
+          [
+            "Pb",
+            "414 g",
+            "3"
+          ],
+          [
+            "Mg",
+            "48 g",
+            "1"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Mol sayısı nasıl hesaplanır?",
+        "back": "n = m / MA bağıntısıyla; kütle mol kütlesine bölünür."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o02",
+      "alt_beceri": "Atom sayısı, molekül sayısı, kütle ile mol sayısı arasındaki ilişkiyi kuramsal temele dayalı kurduğu hipotezleri ile test eder.",
+      "metin": "Bir öğrenci 'bir bileşiğin mol kütlesi, formülündeki atomların kütlelerinin toplamıdır' hipotezini kuruyor. Bu hipotezi test etmek için hangi işlem yapılmalıdır?",
+      "secenekler": [
+        "Bileşiğin rengini ve erime noktasını ölçerek karşılaştırmak",
+        "Bileşiği suda çözüp çözeltinin pH değerini belirlemek",
+        "Bileşiğin hacmini dereceli silindirle ölçmek",
+        "Formüldeki her elementin atom kütlesini atom sayısıyla çarpıp toplamak"
+      ],
+      "dogru_index": 3,
+      "cozum": "Mol kütlesi, formüldeki elementlerin atom kütlelerinin atom sayılarıyla çarpılıp toplanmasıyla bulunur. Örneğin C9H8O4 için 9·12 + 8·1 + 4·16 = 180 g/mol hesaplanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bileşiğin mol kütlesi nasıl hesaplanır?",
+        "back": "Elementlerin atom kütleleri atom sayılarıyla çarpılır ve toplanır."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o03",
+      "alt_beceri": "Değişkenler arasındaki orantısal ilişkilere yönelik hipotezlerini yeni durumları açıklamak için kullanır.",
+      "metin": "Nitrik asidin (HNO3) mol kütlesi 63 g/mol'dür. Buna göre 126 g nitrik asit kaç moldür?",
+      "secenekler": [
+        "2 mol",
+        "1 mol",
+        "3 mol",
+        "0,5 mol"
+      ],
+      "dogru_index": 0,
+      "cozum": "n = m/MA = 126/63 = 2 mol bulunur. Orantıyla da 1 mol 63 g ise 126 g 2 moldür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "HNO3'ün mol kütlesi nedir?",
+        "back": "63 g/mol'dür (1 + 14 + 3·16 = 63)."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o04",
+      "alt_beceri": "Değişkenler arasındaki orantısal ilişkilere yönelik hipotezlerini yeni durumları açıklamak için kullanır.",
+      "metin": "0,2 mol serotonin (C10H12N2O) molekülünde kaç tane azot atomu bulunur? (NA = 6,02·10²³)",
+      "secenekler": [
+        "1,204·10²³",
+        "6,02·10²³",
+        "2,408·10²³",
+        "3,01·10²³"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bir molekülde 2 azot atomu vardır; 0,2 mol molekülde 0,4 mol azot atomu bulunur. 0,4 · 6,02·10²³ = 2,408·10²³ tane azot atomu elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol hesabında moleküldeki atom sayısının önemi nedir?",
+        "back": "Molekülün mol sayısı, formüldeki atom sayısıyla çarpılarak o atomun mol sayısı bulunur."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o05",
+      "alt_beceri": "Atom sayısı, molekül sayısı, kütle ile mol sayısı arasındaki ilişkiyi kuramsal temele dayalı kurduğu hipotezleri ile test eder.",
+      "metin": "1 mol CO2 ile 1 mol H2O örneklerinin kütleleri farklıdır. Bu farkın nedeni hangisidir?",
+      "secenekler": [
+        "İki örnekteki tanecik sayıları birbirinden farklı olduğu için kütleler değişir.",
+        "Su molekülü sıvı, karbon dioksit gaz olduğu için molleri farklı tartılır.",
+        "Avogadro sayısı gazlar için farklı, sıvılar için farklı değer alır.",
+        "Molekülleri oluşturan atomların türü ve sayısı farklı olduğu için mol kütleleri farklıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Mol kütlesi formüldeki atomların kütlelerinin toplamıdır: CO2 için 44 g/mol, H2O için 18 g/mol. Tanecik sayıları eşit olsa da taneciklerin kütleleri farklıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "1 mol CO2'nin kütlesi nedir?",
+        "back": "44 g'dır (12 + 2·16)."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o06",
+      "alt_beceri": "Değişkenler arasındaki orantısal ilişkilere yönelik hipotezlerini yeni durumları açıklamak için kullanır.",
+      "metin": "9,03·10²² tane kafein (C8H10N4O2) molekülü kaç moldür? (NA = 6,02·10²³)",
+      "secenekler": [
+        "0,30 mol",
+        "0,15 mol",
+        "1,5 mol",
+        "0,05 mol"
+      ],
+      "dogru_index": 1,
+      "cozum": "n = N/NA = 9,03·10²² / 6,02·10²³ = 0,15 mol bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tanecik sayısı verilen bir örnekte mol sayısı nedir?",
+        "back": "Tanecik sayısının Avogadro sayısına bölümüdür."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o07",
+      "alt_beceri": "Atom sayısı, molekül sayısı, kütle ile mol sayısı arasındaki ilişkiyi kuramsal temele dayalı kurduğu hipotezleri ile test eder.",
+      "metin": "Öğrenciler, '1 mol maddenin kütlesi mol kütlesine eşittir' genellemesini farklı maddelerle test ediyorlar. Bu testte ölçülmesi gereken temel nicelikler hangileridir?",
+      "secenekler": [
+        "Maddenin kütlesi ve bilinen mol sayısındaki tanecik sayısı",
+        "Maddenin rengi ve erime sıcaklığı",
+        "Maddenin hacmi ve elektrik iletkenliği",
+        "Maddenin yoğunluğu ve çözünürlüğü"
+      ],
+      "dogru_index": 0,
+      "cozum": "Genelleme kütle ile mol sayısı arasındaki orantıya dayanır. Bunun için örneğin kütlesi tartılır ve tanecik sayısı (ya da mol sayısı) belirlenerek MA = m/n ilişkisi sınanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir maddenin mol kütlesi deneysel olarak nasıl bulunur?",
+        "back": "Tartılan kütlesi, hesaplanan mol sayısına bölünür (MA = m/n)."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o08",
+      "alt_beceri": "Değişkenler arasındaki orantısal ilişkilere yönelik hipotezlerini yeni durumları açıklamak için kullanır.",
+      "metin": "Porselen üretiminde kullanılan ortoklaz (KAlSi3O8) mineralinin mol kütlesi 278 g/mol'dür. Buna göre 278 g ortoklazda kaç mol silisyum atomu bulunur? (K: 39, Al: 27, Si: 28, O: 16 g/mol)",
+      "secenekler": [
+        "1 mol",
+        "8 mol",
+        "3 mol",
+        "2 mol"
+      ],
+      "dogru_index": 2,
+      "cozum": "278 g ortoklaz 1 moldür. Formülde 3 silisyum atomu bulunduğu için 1 mol ortoklaz 3 mol silisyum atomu içerir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortoklazın formülü nedir?",
+        "back": "KAlSi3O8 biçimindedir; mol kütlesi 278 g/mol'dür."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o09",
+      "alt_beceri": "Değişkenler arasındaki orantısal ilişkilere yönelik hipotezlerini yeni durumları açıklamak için kullanır.",
+      "metin": "171 g pancar şekeri (C12H22O11) kaç moldür? (H: 1, C: 12, O: 16 g/mol)",
+      "secenekler": [
+        "1 mol",
+        "0,5 mol",
+        "2 mol",
+        "0,25 mol"
+      ],
+      "dogru_index": 1,
+      "cozum": "MA = 12·12 + 22·1 + 11·16 = 144 + 22 + 176 = 342 g/mol. n = 171/342 = 0,5 mol bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sakkarozun mol kütlesi nedir?",
+        "back": "342 g/mol'dür (C12H22O11)."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c05_o10",
+      "alt_beceri": "Değişkenler arasındaki orantısal ilişkilere yönelik hipotezlerini yeni durumları açıklamak için kullanır.",
+      "metin": "6,02·10²² tane bakır atomu içeren saf bakır yüzük kaç gramdır? (Cu: 63,5 g/mol, NA = 6,02·10²³)",
+      "secenekler": [
+        "12,7 g",
+        "0,635 g",
+        "31,75 g",
+        "6,35 g"
+      ],
+      "dogru_index": 3,
+      "cozum": "n = 6,02·10²²/6,02·10²³ = 0,1 mol. m = 0,1 · 63,5 = 6,35 g bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bakırın mol kütlesi nedir?",
+        "back": "63,5 g/mol'dür."
+      },
+      "kazanim": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c05_o01:flashcard",
+      "front": "Mol sayısı nasıl hesaplanır?",
+      "back": "n = m / MA bağıntısıyla; kütle mol kütlesine bölünür."
+    },
+    {
+      "id": "kim_10_t01_c05_o02:flashcard",
+      "front": "Bileşiğin mol kütlesi nasıl hesaplanır?",
+      "back": "Elementlerin atom kütleleri atom sayılarıyla çarpılır ve toplanır."
+    },
+    {
+      "id": "kim_10_t01_c05_o03:flashcard",
+      "front": "HNO3'ün mol kütlesi nedir?",
+      "back": "63 g/mol'dür (1 + 14 + 3·16 = 63)."
+    },
+    {
+      "id": "kim_10_t01_c05_o04:flashcard",
+      "front": "Mol hesabında moleküldeki atom sayısının önemi nedir?",
+      "back": "Molekülün mol sayısı, formüldeki atom sayısıyla çarpılarak o atomun mol sayısı bulunur."
+    },
+    {
+      "id": "kim_10_t01_c05_o05:flashcard",
+      "front": "1 mol CO2'nin kütlesi nedir?",
+      "back": "44 g'dır (12 + 2·16)."
+    },
+    {
+      "id": "kim_10_t01_c05_o06:flashcard",
+      "front": "Tanecik sayısı verilen bir örnekte mol sayısı nedir?",
+      "back": "Tanecik sayısının Avogadro sayısına bölümüdür."
+    },
+    {
+      "id": "kim_10_t01_c05_o07:flashcard",
+      "front": "Bir maddenin mol kütlesi deneysel olarak nasıl bulunur?",
+      "back": "Tartılan kütlesi, hesaplanan mol sayısına bölünür (MA = m/n)."
+    },
+    {
+      "id": "kim_10_t01_c05_o08:flashcard",
+      "front": "Ortoklazın formülü nedir?",
+      "back": "KAlSi3O8 biçimindedir; mol kütlesi 278 g/mol'dür."
+    },
+    {
+      "id": "kim_10_t01_c05_o09:flashcard",
+      "front": "Sakkarozun mol kütlesi nedir?",
+      "back": "342 g/mol'dür (C12H22O11)."
+    },
+    {
+      "id": "kim_10_t01_c05_o10:flashcard",
+      "front": "Bakırın mol kütlesi nedir?",
+      "back": "63,5 g/mol'dür."
+    }
+  ]
+}

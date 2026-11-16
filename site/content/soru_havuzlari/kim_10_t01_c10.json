@@ -1,0 +1,310 @@
+{
+  "konu_id": "kim_10_t01_c10",
+  "kod": "KİM.10.1.10",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.99-106",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c10_o01",
+      "alt_beceri": "Boyle, Charles ve Avogadro yasaları arasında örüntü oluşturur.",
+      "metin": "Sabit sıcaklıkta bir gazın basıncı 2 atm iken hacmi 11,2 L, basıncı 4 atm iken hacmi 5,6 L ölçülmüştür. Bu verilerden yararlanarak hangi örüntüye ulaşılır?",
+      "secenekler": [
+        "Basınç iki katına çıkarken hacim de iki katına çıkar; PV değişir.",
+        "Basınç iki katına çıkarken hacim yarıya iner; PV çarpımı sabittir.",
+        "Basınç ile hacim arasında bir ilişki yoktur; değerler rastlantısaldır.",
+        "Basınç arttıkça hacim önce artar, sonra azalır; PV artar."
+      ],
+      "dogru_index": 1,
+      "cozum": "2·11,2 = 22,4 ve 4·5,6 = 22,4 bulunur. Basınç iki katına çıkarken hacim yarıya indiği için sabit sıcaklıkta PV çarpımı sabittir (Boyle yasası).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boyle yasasının matematiksel modeli nedir?",
+        "back": "PV = sabit; P1V1 = P2V2 bağıntısıyla ifade edilir."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o02",
+      "alt_beceri": "Boyle, Charles ve Avogadro yasaları arasında örüntü oluşturur.",
+      "metin": "Sabit basınçta bir gazın 300 K'de hacmi 2 L, 600 K'de 4 L, 900 K'de 6 L ölçülmüştür. Bu verilerden hangi örüntü çıkarılır?",
+      "secenekler": [
+        "Sıcaklık artarken hacim azalır; V ile T ters orantılıdır.",
+        "Sıcaklık artarken hacim değişmez; V yalnızca basınca bağlıdır.",
+        "Hacim sabit kalırken sıcaklık sürekli artar; V · T sabittir.",
+        "Mutlak sıcaklık iki katına çıkarken hacim iki katına çıkar; V/T sabittir."
+      ],
+      "dogru_index": 3,
+      "cozum": "2/300 = 4/600 = 6/900 = 1/150 olduğundan V/T oranı sabittir. Sabit basınçta hacim mutlak sıcaklıkla doğru orantılıdır (Charles yasası).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Charles yasasının matematiksel modeli nedir?",
+        "back": "V/T = sabit; V1/T1 = V2/T2 bağıntısıyla ifade edilir."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o03",
+      "alt_beceri": "Gazların basınç, hacim, sıcaklık ve mol sayısı değişkenleri arasındaki ilişkiyi genel matematiksel bir eşitlikle ifade eder.",
+      "metin": "Tabloda üç farklı gaz örneğinin basınç, hacim, mol ve sıcaklık değerleri verilmiştir. Buna göre PV/nT oranı kaç atm·L/mol·K bulunur?",
+      "secenekler": [
+        "0,082",
+        "0,8314",
+        "1,00",
+        "8,314"
+      ],
+      "dogru_index": 0,
+      "cozum": "Her örnek için PV/nT hesaplanır: I için 22,4/273 ≈ 0,082; II için 5,6/68,25 ≈ 0,082; III için 22,4/273 ≈ 0,082. Gaz sabiti R = 0,082 atm·L/mol·K bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Örnek",
+          "P",
+          "V",
+          "n",
+          "T"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "2",
+            "11,2",
+            "1",
+            "273"
+          ],
+          [
+            "II",
+            "1",
+            "5,6",
+            "0,25",
+            "273"
+          ],
+          [
+            "III",
+            "2",
+            "11,2",
+            "0,5",
+            "546"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "İdeal gaz sabitinin değeri ve birimi nedir?",
+        "back": "0,082 atm·L/mol·K (ya da 22,4/273) değerindedir."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o04",
+      "alt_beceri": "Gazların basınç, hacim, sıcaklık ve mol sayısı değişkenleri arasındaki ilişkiyi genel matematiksel bir eşitlikle ifade eder.",
+      "metin": "Tabloda ideal gaz denkleminin sınanması için verilen x ve y değerleri bulunacaktır. Buna göre x ve y değerleri hangisinde doğru verilmiştir? (R = 0,082)",
+      "secenekler": [
+        "x = 546 K, y = 8 atm",
+        "x = 273 K, y = 8 atm",
+        "x = 273 K, y = 16 atm",
+        "x = 136 K, y = 16 atm"
+      ],
+      "dogru_index": 2,
+      "cozum": "x için T = PV/nR = (0,5·22,4)/(0,5·0,082) = 273 K. y için P = nRT/V = (4·0,082·546)/11,2 = 16 atm bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "P (atm)",
+          "V (L)",
+          "n (mol)",
+          "T (K)"
+        ],
+        "satirlar": [
+          [
+            "0,5",
+            "22,4",
+            "0,5",
+            "x"
+          ],
+          [
+            "y",
+            "11,2",
+            "4",
+            "546"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "İdeal gaz denklemi nedir?",
+        "back": "PV = nRT bağıntısıdır; P basınç, V hacim, n mol, R gaz sabiti, T mutlak sıcaklıktır."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o05",
+      "alt_beceri": "Boyle, Charles ve Avogadro yasaları arasında örüntü oluşturur.",
+      "metin": "Bir mol gazın 0 °C ve 1 atm'de 22,4 L hacim kapladığı bilinmektedir. Bu bilgi ile gaz sabiti (R) nasıl hesaplanır?",
+      "secenekler": [
+        "R = P·V·n·T = 1·22,4·1·273 çarpımıyla hesaplanır.",
+        "R = nT/PV = (1·273)/(1·22,4) oranıyla hesaplanır.",
+        "R = PV·T/n = (1·22,4·273)/1 çarpımıyla hesaplanır.",
+        "R = PV/nT = (1·22,4)/(1·273) bağıntısıyla hesaplanır."
+      ],
+      "dogru_index": 3,
+      "cozum": "İdeal gaz denklemi PV = nRT'den R = PV/nT elde edilir. Değerler yerine konulduğunda R = 22,4/273 ≈ 0,082 atm·L/mol·K bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Standart molar hacim nedir?",
+        "back": "Bir mol gazın 0 °C ve 1 atm'de kapladığı 22,4 L'lik hacimdir."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o06",
+      "alt_beceri": "Gazların basınç, hacim, sıcaklık ve mol sayısı değişkenleri arasındaki ilişkiyi genel matematiksel bir eşitlikle ifade eder.",
+      "metin": "273 °C sıcaklıkta 11,2 L'lik bir kapta 0,4 g H2 gazı bulunmaktadır. Buna göre gazın basıncı kaç atm'dir? (H: 1 g/mol, R = 0,082)",
+      "secenekler": [
+        "1,6 atm",
+        "0,8 atm",
+        "0,4 atm",
+        "8 atm"
+      ],
+      "dogru_index": 1,
+      "cozum": "n = 0,4/2 = 0,2 mol, T = 273 + 273 = 546 K. P = nRT/V = (0,2·0,082·546)/11,2 = 0,8 atm bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İdeal gaz denkleminde sıcaklık hangi birimle yazılır?",
+        "back": "Kelvin (mutlak sıcaklık) birimiyle yazılır."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o07",
+      "alt_beceri": "Gazların basınç, hacim, sıcaklık ve mol sayısı değişkenleri arasındaki ilişkiyi genel matematiksel bir eşitlikle ifade eder.",
+      "metin": "0 °C sıcaklık ve 2 atm basınçta 5,6 L hacim kaplayan argon gazı kaç moldür? (R = 0,082)",
+      "secenekler": [
+        "0,5 mol",
+        "1 mol",
+        "0,25 mol",
+        "2 mol"
+      ],
+      "dogru_index": 0,
+      "cozum": "n = PV/RT = (2·5,6)/(0,082·273) = 11,2/22,386 ≈ 0,5 mol bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol sayısı ideal gaz denkleminden nasıl bulunur?",
+        "back": "n = PV/RT bağıntısıyla bulunur."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o08",
+      "alt_beceri": "Boyle, Charles ve Avogadro yasaları arasında örüntü oluşturur.",
+      "metin": "Boyle, Charles ve Avogadro yasaları ideal gaz denkleminde birleştirilirken hangi yaklaşım kullanılmıştır?",
+      "secenekler": [
+        "Yasalar birbirinden bağımsız olduğu için yalnızca deneysel tablo hâlinde bırakılmıştır.",
+        "Gazların tanecikleri arasındaki çekim kuvvetleri eşitliğe eklenmiştir.",
+        "Her yasada sabit kalan çarpım ya da oranlar tek bir eşitlikte toplanmıştır.",
+        "Her yasa farklı gazlar için ayrı ayrı sabitler tanımlamıştır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Boyle'da PV sabit, Charles'ta V/T sabit, Avogadro'da V/n sabittir. Bu oranlar birleştirildiğinde PV = nRT eşitliği elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İdeal gaz varsayımları nedir?",
+        "back": "Taneciklerin öz hacminin olmadığı ve tanecikler arası çekim kuvvetinin bulunmadığı kabul edilir."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o09",
+      "alt_beceri": "Gazların basınç, hacim, sıcaklık ve mol sayısı değişkenleri arasındaki ilişkiyi genel matematiksel bir eşitlikle ifade eder.",
+      "metin": "Gerçek gazların ideal gaz davranışına en yakın olduğu koşullar hangileridir?",
+      "secenekler": [
+        "Düşük sıcaklık, yüksek basınç ve büyük mol kütlesi",
+        "Yüksek sıcaklık, düşük basınç ve küçük mol kütlesi",
+        "Yüksek basınç, düşük sıcaklık ve büyük molekül hacmi",
+        "Basınç ve sıcaklıktan bağımsız olarak her koşulda aynıdır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yüksek sıcaklıkta tanecikler arası çekim etkisi azalır, düşük basınçta tanecikler birbirinden uzaktır. Mol kütlesi küçük gazlar da ideale daha yakındır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gerçek gaz ile ideal gaz arasındaki fark nedir?",
+        "back": "Gerçek gazlarda tanecik hacmi sıfırdan büyük ve tanecikler arası çekim vardır; ideal gazda bunlar yok sayılır."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c10_o10",
+      "alt_beceri": "Boyle, Charles ve Avogadro yasaları arasında örüntü oluşturur.",
+      "metin": "Sabit sıcaklık ve basınçta bir gazın mol sayısı iki katına çıkarıldığında hacmi de iki katına çıkmaktadır. Bu gözlem hangi yasa ile açıklanır?",
+      "secenekler": [
+        "Boyle yasası: P ile V ters orantılıdır.",
+        "Gay Lussac yasası: P ile T doğru orantılıdır.",
+        "Charles yasası: V ile T doğru orantılıdır.",
+        "Avogadro yasası: V ile n doğru orantılıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sabit sıcaklık ve basınçta gazın mol sayısı ile hacmi doğru orantılıdır. Bu ilişki Avogadro yasasıdır ve V/n = sabit biçiminde yazılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro yasasının bağıntısı nedir?",
+        "back": "V1/n1 = V2/n2; sabit T ve P'de hacim mol sayısıyla doğru orantılıdır."
+      },
+      "kazanim": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c10_o01:flashcard",
+      "front": "Boyle yasasının matematiksel modeli nedir?",
+      "back": "PV = sabit; P1V1 = P2V2 bağıntısıyla ifade edilir."
+    },
+    {
+      "id": "kim_10_t01_c10_o02:flashcard",
+      "front": "Charles yasasının matematiksel modeli nedir?",
+      "back": "V/T = sabit; V1/T1 = V2/T2 bağıntısıyla ifade edilir."
+    },
+    {
+      "id": "kim_10_t01_c10_o03:flashcard",
+      "front": "İdeal gaz sabitinin değeri ve birimi nedir?",
+      "back": "0,082 atm·L/mol·K (ya da 22,4/273) değerindedir."
+    },
+    {
+      "id": "kim_10_t01_c10_o04:flashcard",
+      "front": "İdeal gaz denklemi nedir?",
+      "back": "PV = nRT bağıntısıdır; P basınç, V hacim, n mol, R gaz sabiti, T mutlak sıcaklıktır."
+    },
+    {
+      "id": "kim_10_t01_c10_o05:flashcard",
+      "front": "Standart molar hacim nedir?",
+      "back": "Bir mol gazın 0 °C ve 1 atm'de kapladığı 22,4 L'lik hacimdir."
+    },
+    {
+      "id": "kim_10_t01_c10_o06:flashcard",
+      "front": "İdeal gaz denkleminde sıcaklık hangi birimle yazılır?",
+      "back": "Kelvin (mutlak sıcaklık) birimiyle yazılır."
+    },
+    {
+      "id": "kim_10_t01_c10_o07:flashcard",
+      "front": "Mol sayısı ideal gaz denkleminden nasıl bulunur?",
+      "back": "n = PV/RT bağıntısıyla bulunur."
+    },
+    {
+      "id": "kim_10_t01_c10_o08:flashcard",
+      "front": "İdeal gaz varsayımları nedir?",
+      "back": "Taneciklerin öz hacminin olmadığı ve tanecikler arası çekim kuvvetinin bulunmadığı kabul edilir."
+    },
+    {
+      "id": "kim_10_t01_c10_o09:flashcard",
+      "front": "Gerçek gaz ile ideal gaz arasındaki fark nedir?",
+      "back": "Gerçek gazlarda tanecik hacmi sıfırdan büyük ve tanecikler arası çekim vardır; ideal gazda bunlar yok sayılır."
+    },
+    {
+      "id": "kim_10_t01_c10_o10:flashcard",
+      "front": "Avogadro yasasının bağıntısı nedir?",
+      "back": "V1/n1 = V2/n2; sabit T ve P'de hacim mol sayısıyla doğru orantılıdır."
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "konu_id": "kim_10_t01_c03",
+  "kod": "KİM.10.1.3",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.35-46",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c03_o01",
+      "alt_beceri": "Tepkime türlerinin (çökelme, indirgenme-yükseltgenme ve asit-baz) oluşum sürecine ilişkin gözlemlenebilir göstergeleri (renk değişimi, çökelek oluşumu, enerji değişimi ve gaz çıkışı) tanımlar.",
+      "metin": "Tabloda suda az çözünen ve çok çözünen iyonlara ilişkin bilgiler verilmiştir. Buna göre hangi çözelti çifti karıştırıldığında çökelek oluşması beklenir?",
+      "secenekler": [
+        "NaNO3 ve KNO3 çözeltileri",
+        "Na2S ve Cu(NO3)2 çözeltileri",
+        "NaCl ve KNO3 çözeltileri",
+        "NaOH ve NaCl çözeltileri"
+      ],
+      "dogru_index": 1,
+      "cozum": "Na2S ile Cu(NO3)2 karıştırıldığında Cu2+ ile S2- iyonları bir araya gelir. Bakır(II) sülfür suda az çözünen bir katı olduğundan çökelek oluşur: Cu2+ + S2- → CuS(k).",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Suda az çözünen",
+          "Suda çok çözünen"
+        ],
+        "satirlar": [
+          [
+            "CO3²⁻, PO4³⁻, S²⁻",
+            "Na⁺, K⁺, NH4⁺"
+          ],
+          [
+            "OH⁻, SO4²⁻",
+            "NO3⁻, CH3COO⁻"
+          ],
+          [
+            "Ag⁺, Pb²⁺, Ba²⁺",
+            "Cl⁻ (Ag⁺ hariç)"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Çökelek oluşumunu belirleyen özellik nedir?",
+        "back": "Oluşan bileşiğin suda az çözünür ya da çözünmez olması belirleyicidir."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o02",
+      "alt_beceri": "Tepkime türlerinin oluşum sürecine ilişkin gözlemlenebilir göstergelere yönelik veri toplar ve kaydeder.",
+      "metin": "Tabloda üç istasyonda yapılan deneylerin gözlemleri verilmiştir. Buna göre hangi istasyonda pH değişimi tepkimenin belirgin göstergesidir?",
+      "secenekler": [
+        "I. istasyonda katı oluşumu belirgindir.",
+        "II. istasyonda gaz çıkışı belirgindir.",
+        "II. istasyonda renk değişimi belirgindir.",
+        "III. istasyonda pH değişimi belirgindir."
+      ],
+      "dogru_index": 3,
+      "cozum": "HCl ile KOH nötralleşme tepkimesi verir; H+ iyonları OH- iyonlarıyla H2O oluşturduğu için ortamın pH değeri yükselir. I. istasyonda katı oluşumu, II. istasyonda gaz çıkışı öne çıkar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "İstasyon",
+          "Karışım"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "AgNO3 + NaCl"
+          ],
+          [
+            "II",
+            "Al + HCl"
+          ],
+          [
+            "III",
+            "HCl + KOH"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Nötralleşme tepkimesinin net iyon denklemi nedir?",
+        "back": "H+(suda) + OH-(suda) → H2O(s)"
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o03",
+      "alt_beceri": "Tepkime türlerinin (çökelme, indirgenme-yükseltgenme ve asit-baz) oluşum sürecine ilişkin gözlemlenebilir göstergeleri (renk değişimi, çökelek oluşumu, enerji değişimi ve gaz çıkışı) tanımlar.",
+      "metin": "Bir magnezyum şeridi yaklaşık 2000 °C sıcaklıkta parlak bir ışıkla yanarak beyaz MgO katısına dönüşmektedir: 2Mg(k) + O2(g) → 2MgO(k). Bu olay için hangisi doğrudur?",
+      "secenekler": [
+        "Yanma gerçekleşmiştir; tepkime aynı zamanda indirgenme-yükseltgenme tepkimesidir.",
+        "Fiziksel bir değişimdir; yalnızca magnezyumun ısınıp parlamasıdır.",
+        "Yalnızca asit-baz tepkimesidir; oksijen baz gibi davranmıştır.",
+        "Çökelme tepkimesidir; MgO katısı çözeltiden çökmüştür."
+      ],
+      "dogru_index": 0,
+      "cozum": "Magnezyum elektron vererek yükseltgenir, oksijen elektron alarak indirgenir. Bu nedenle olay hem yanma hem indirgenme-yükseltgenme tepkimesidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yükseltgenme ve indirgenmeyi tanımlayınız.",
+        "back": "Yükseltgenme elektron kaybı, indirgenme elektron kazanımıdır; ikisi eş zamanlı gerçekleşir."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o04",
+      "alt_beceri": "Tepkimelerin oluşum sürecine ilişkin verileri sembolik ve alt mikro seviyedeki gösterimlerle açıklar.",
+      "metin": "2AgNO3(suda) + Cu(k) → Cu(NO3)2(suda) + 2Ag(k) tepkimesinde bakır telin etrafında gümüş oluşur, çözelti maviye döner. Bu tepkimenin alt mikroskobik gösteriminde elektron transferi nasıl ifade edilir?",
+      "secenekler": [
+        "Cu2+ iyonu iki elektron alıp nötr bakıra dönüşürken gümüş iyonları elektron verir.",
+        "Ag+ iyonları iki elektron vererek gümüş molekülü oluşturur, bakır elektron alır.",
+        "Cu atomu 2 elektron verip Cu2+ olurken iki Ag+ iyonu birer elektron alıp Ag'ye dönüşür.",
+        "Nitrat iyonları elektron transferini sağlayarak gümüşü çöktürür."
+      ],
+      "dogru_index": 2,
+      "cozum": "Cu(k) → Cu2+ + 2e- yükseltgenme, 2Ag+ + 2e- → 2Ag(k) indirgenmedir. Alınan ve verilen elektron sayısı eşittir; nitrat iyonları seyirci iyondur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seyirci iyon nedir?",
+        "back": "Tepkimede hiçbir değişikliğe uğramadan çözeltide kalan iyondur."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o05",
+      "alt_beceri": "Tepkime türlerinin (çökelme, indirgenme-yükseltgenme ve asit-baz) oluşum sürecine ilişkin gözlemlenebilir göstergeleri (renk değişimi, çökelek oluşumu, enerji değişimi ve gaz çıkışı) tanımlar.",
+      "metin": "HCl(g) + NH3(g) → NH4Cl(k) tepkimesi gaz fazında gerçekleşmektedir. Bu tepkime için hangisi doğrudur?",
+      "secenekler": [
+        "Hem asit-baz hem nötralleşme tepkimesidir.",
+        "Yalnızca çökelme tepkimesidir; suda çözünmeyen tuz oluşmuştur.",
+        "İndirgenme-yükseltgenme tepkimesidir; elektron aktarımı vardır.",
+        "Asit-baz tepkimesidir ancak nötralleşme tepkimesi değildir."
+      ],
+      "dogru_index": 3,
+      "cozum": "NH4Cl katısı oluşsa da nötralleşme tepkimeleri sulu ortamda gerçekleşir. Gaz fazındaki bu aktarım asit-baz tepkimesidir; nötralleşme değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Nötralleşme tepkimesinin gerçekleştiği ortam nedir?",
+        "back": "Sulu ortamda, asit ile bazın tuz ve su oluşturduğu tepkimedir."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o06",
+      "alt_beceri": "Tepkime türlerinin oluşum sürecine ilişkin gözlemlenebilir göstergelere yönelik veri toplar ve kaydeder.",
+      "metin": "Bir öğrenci KOH çözeltisini HCl çözeltisine yavaşça eklerken ortama fenolftalein damlatmıştır. Çözeltide kalıcı pembe renk gözlendiği anda asit-baz tepkimesi için hangi sonuca varılır?",
+      "secenekler": [
+        "Ortamda OH- iyonları tükenmiş, H+ iyonları artmıştır.",
+        "Ortamda H+ iyonları tükenmiş, OH- iyonları artmıştır.",
+        "Her iki iyondan da eşit miktarda bulunduğu için pH değişmemiştir.",
+        "Tepkime tamamlanmış ve tuz katı hâlde çökmüştür."
+      ],
+      "dogru_index": 1,
+      "cozum": "Fenolftalein bazik ortamda pembe renk verir. Kalıcı pembe renk, eklenen OH- iyonlarının ortamda arttığını, H+ iyonlarının ise nötralleşmede tükendiğini gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fenolftaleinin bazik ortamdaki rengi nedir?",
+        "back": "Bazik ortamda pembeye döner; asidik ortamda renksizdir."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o07",
+      "alt_beceri": "Tepkime türlerinin oluşum sürecine ilişkin gözlemlenebilir göstergelere yönelik veri toplar ve kaydeder.",
+      "metin": "Tabloda dört gözlem kaydedilmiştir. Buna göre hangi gözlem indirgenme-yükseltgenme tepkimesinin göstergesi olarak değerlendirilir?",
+      "secenekler": [
+        "II",
+        "I",
+        "III",
+        "IV"
+      ],
+      "dogru_index": 0,
+      "cozum": "Çinko asit içinde tepkimeye girdiğinde Zn yükseltgenir, H+ iyonları indirgenerek H2 gazı açığa çıkar. Gaz çıkışı redoks tepkimesinin göstergesidir; diğer olaylar fizikseldir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Gözlem",
+          "Kayıt"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "Şekerin suda çözünmesi"
+          ],
+          [
+            "II",
+            "Çinko parçası üzerinde gaz kabarcıkları"
+          ],
+          [
+            "III",
+            "Buzun erimesi"
+          ],
+          [
+            "IV",
+            "Alkolün buharlaşması"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Redoks tepkimelerinin göstergeleri nedir?",
+        "back": "Gaz çıkışı, renk ve koku değişimi, enerji değişimi ile metallerin çözünmesi gibi olaylardır."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o08",
+      "alt_beceri": "Tepkimelerin oluşum sürecine ilişkin verileri sembolik ve alt mikro seviyedeki gösterimlerle açıklar.",
+      "metin": "Hidrojen yakıt pilinde anotta 2H2(g) + 4OH-(suda) → 4H2O(s) + 4e-, katotta O2(g) + 2H2O(s) + 4e- → 4OH-(suda) tepkimeleri gerçekleşir. Bu bilgilere göre yakıt pili için hangisi doğrudur?",
+      "secenekler": [
+        "Elektronlar katottan anoda doğru akar; toplam tepkime nötralleşmedir.",
+        "Anotta indirgenme, katotta yükseltgenme gerçekleşir ve elektron verilmez.",
+        "Elektronlar anottan katoda doğru akar; toplam tepkime redokstur.",
+        "Tepkime yalnızca çözeltide kalır; elektron aktarımı söz konusu değildir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Anotta H2 yükseltgenerek elektron verir, katotta O2 indirgenerek bu elektronları alır. Elektron akışı anottan katoda doğrudur ve toplam tepkime 2H2 + O2 → 2H2O bir redoks tepkimesidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir redoks tepkimesinde anot ve katotta ne olur?",
+        "back": "Anotta yükseltgenme (elektron kaybı), katotta indirgenme (elektron kazanımı) gerçekleşir."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o09",
+      "alt_beceri": "Tepkime türlerinin (çökelme, indirgenme-yükseltgenme ve asit-baz) oluşum sürecine ilişkin gözlemlenebilir göstergeleri (renk değişimi, çökelek oluşumu, enerji değişimi ve gaz çıkışı) tanımlar.",
+      "metin": "Baryum sülfat, röntgende görüntüleme için kullanılan suda çözünmeyen bir tuzdur. Laboratuvarda BaSO4 elde etmek için hangi asit-baz çifti kullanılmalıdır?",
+      "secenekler": [
+        "HCl ve NaOH çözeltileri",
+        "H2SO4 ve Ba(OH)2 çözeltileri",
+        "HNO3 ve KOH çözeltileri",
+        "CH3COOH ve NH3 çözeltileri"
+      ],
+      "dogru_index": 1,
+      "cozum": "H2SO4 ile Ba(OH)2 nötralleştiğinde BaSO4 ve su oluşur: H2SO4 + Ba(OH)2 → BaSO4(k) + 2H2O. Diğer çiftler suda çözünen tuzlar verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asit-baz tepkimesinin genel gösterimi nedir?",
+        "back": "ASİT + BAZ → TUZ + SU"
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c03_o10",
+      "alt_beceri": "Tepkime türlerinin oluşum sürecine ilişkin gözlemlenebilir göstergelere yönelik veri toplar ve kaydeder.",
+      "metin": "Cu(OH)2, Fe(OH)3 ve CaCO3 katılarını ayrı ayrı elde etmek isteyen bir öğrenci hangi çözelti çiftini kullanırsa Fe(OH)3 çökeleği oluşur?",
+      "secenekler": [
+        "FeCl3 ve NaCl çözeltileri",
+        "Fe(NO3)3 ve KNO3 çözeltileri",
+        "Fe2(SO4)3 ve Na2SO4 çözeltileri",
+        "FeCl3 ve NaOH çözeltileri"
+      ],
+      "dogru_index": 3,
+      "cozum": "Fe3+ iyonları ile OH- iyonları bir araya gelerek suda az çözünen Fe(OH)3 katısını oluşturur: Fe3+ + 3OH- → Fe(OH)3(k). Diğer çiftlerde çökelek oluşturacak iyon çifti yoktur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Demir(III) hidroksitin formülü nedir?",
+        "back": "Fe(OH)3 — suda az çözünen kahverengi bir katıdır."
+      },
+      "kazanim": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c03_o01:flashcard",
+      "front": "Çökelek oluşumunu belirleyen özellik nedir?",
+      "back": "Oluşan bileşiğin suda az çözünür ya da çözünmez olması belirleyicidir."
+    },
+    {
+      "id": "kim_10_t01_c03_o02:flashcard",
+      "front": "Nötralleşme tepkimesinin net iyon denklemi nedir?",
+      "back": "H+(suda) + OH-(suda) → H2O(s)"
+    },
+    {
+      "id": "kim_10_t01_c03_o03:flashcard",
+      "front": "Yükseltgenme ve indirgenmeyi tanımlayınız.",
+      "back": "Yükseltgenme elektron kaybı, indirgenme elektron kazanımıdır; ikisi eş zamanlı gerçekleşir."
+    },
+    {
+      "id": "kim_10_t01_c03_o04:flashcard",
+      "front": "Seyirci iyon nedir?",
+      "back": "Tepkimede hiçbir değişikliğe uğramadan çözeltide kalan iyondur."
+    },
+    {
+      "id": "kim_10_t01_c03_o05:flashcard",
+      "front": "Nötralleşme tepkimesinin gerçekleştiği ortam nedir?",
+      "back": "Sulu ortamda, asit ile bazın tuz ve su oluşturduğu tepkimedir."
+    },
+    {
+      "id": "kim_10_t01_c03_o06:flashcard",
+      "front": "Fenolftaleinin bazik ortamdaki rengi nedir?",
+      "back": "Bazik ortamda pembeye döner; asidik ortamda renksizdir."
+    },
+    {
+      "id": "kim_10_t01_c03_o07:flashcard",
+      "front": "Redoks tepkimelerinin göstergeleri nedir?",
+      "back": "Gaz çıkışı, renk ve koku değişimi, enerji değişimi ile metallerin çözünmesi gibi olaylardır."
+    },
+    {
+      "id": "kim_10_t01_c03_o08:flashcard",
+      "front": "Bir redoks tepkimesinde anot ve katotta ne olur?",
+      "back": "Anotta yükseltgenme (elektron kaybı), katotta indirgenme (elektron kazanımı) gerçekleşir."
+    },
+    {
+      "id": "kim_10_t01_c03_o09:flashcard",
+      "front": "Asit-baz tepkimesinin genel gösterimi nedir?",
+      "back": "ASİT + BAZ → TUZ + SU"
+    },
+    {
+      "id": "kim_10_t01_c03_o10:flashcard",
+      "front": "Demir(III) hidroksitin formülü nedir?",
+      "back": "Fe(OH)3 — suda az çözünen kahverengi bir katıdır."
+    }
+  ]
+}

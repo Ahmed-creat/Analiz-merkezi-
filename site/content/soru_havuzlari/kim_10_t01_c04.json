@@ -1,0 +1,300 @@
+{
+  "konu_id": "kim_10_t01_c04",
+  "kod": "KİM.10.1.4",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.48-61",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c04_o01",
+      "alt_beceri": "Maddelerin aynı sayıda tanecik içeren örneklerinin kütlesini ölçer.",
+      "metin": "Tabloda bazı elementlerin bir mollerinin kütleleri verilmiştir. Buna göre aynı sayıda atom içeren magnezyum ve karbon örnekleri için alınması gereken kütleler hangi seçenekte doğru verilmiştir?",
+      "secenekler": [
+        "12 g magnezyum ve 24,3 g karbon",
+        "24,3 g magnezyum ve 12 g karbon",
+        "24,3 g magnezyum ve 24,3 g karbon",
+        "63,5 g magnezyum ve 108 g karbon"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bir mol her element 6,02·10²³ tane atom içerir. Aynı sayıda atom için her iki elementten de birer mol alınmalıdır; bu da 24,3 g Mg ve 12 g C demektir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Element",
+          "1 mol (g)"
+        ],
+        "satirlar": [
+          [
+            "Mg",
+            "24,3"
+          ],
+          [
+            "C",
+            "12"
+          ],
+          [
+            "Cu",
+            "63,5"
+          ],
+          [
+            "Ag",
+            "108"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Mol kütlesi nedir?",
+        "back": "Bir mol maddenin gram cinsinden kütlesidir; birimi g/mol'dür."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o02",
+      "alt_beceri": "Maddelerin miktarını ifade etmek için ölçülebilir (kütle, tanecik sayısı vb.) özellikleri belirler.",
+      "metin": "Kum, şeker gibi maddelerin tanelerini tek tek saymak pratik değildir. Bu maddelerin miktarını ifade etmek için hangi ölçülebilir özelliklerinden yararlanılır?",
+      "secenekler": [
+        "Renginden ve taneciklerinin büyüklüğünden",
+        "Sıcaklığından ve hacminin sabit olmasından",
+        "Sertliğinden ve suda çözünürlüğünden",
+        "Kütlesinden ve içerdiği tanecik sayısından"
+      ],
+      "dogru_index": 3,
+      "cozum": "Mol kavramı madde miktarını tanecik sayısıyla ilişkilendirir. Tartılabilen kütle ile tanecik sayısı arasında mol kütlesi üzerinden kurulan ilişki sayesinde maddeler sayılmadan miktarları belirlenebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro sayısının değeri nedir?",
+        "back": "6,02·10²³ tür; bir moldeki tanecik sayısını verir ve NA ile gösterilir."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o03",
+      "alt_beceri": "Maddelerin aynı sayıda tanecik içeren örneklerinin kütlesini ölçer.",
+      "metin": "108 g gümüş metali ile tam olarak aynı sayıda atom içeren bakır tozundan kaç gram alınmalıdır? (Cu: 63,5 g/mol, Ag: 108 g/mol)",
+      "secenekler": [
+        "63,5 g",
+        "108 g",
+        "127 g",
+        "31,75 g"
+      ],
+      "dogru_index": 0,
+      "cozum": "108 g gümüş 108/108 = 1 moldür. Aynı sayıda atom için 1 mol bakır gerekir; bu da 63,5 g bakırdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol sayısı kütle ile nasıl hesaplanır?",
+        "back": "n = m / MA bağıntısıyla; kütle mol kütlesine bölünür."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o04",
+      "alt_beceri": "Maddelerin tanecik sayısını ifade etmek için yaptığı işlemlere uygun tanım yapar.",
+      "metin": "Bir mol karbon dioksit (CO2) molekülünde toplam kaç tane atom bulunur?",
+      "secenekler": [
+        "1 · 6,02·10²³",
+        "2 · 6,02·10²³",
+        "3 · 6,02·10²³",
+        "4 · 6,02·10²³"
+      ],
+      "dogru_index": 2,
+      "cozum": "CO2 molekülü 1 karbon ve 2 oksijen atomundan oluşur; bir molekülde 3 atom vardır. Bu nedenle 1 mol CO2, 3 mol yani 3 · 6,02·10²³ tane atom içerir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir mol CH4 molekülünün içerdiği atom sayısı nedir?",
+        "back": "5 mol atom içerir: 1 mol C ve 4 mol H."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o05",
+      "alt_beceri": "Maddelerin miktarını ifade etmek için ölçülebilir (kütle, tanecik sayısı vb.) özellikleri belirler.",
+      "metin": "Bir düzine 12 tane, bir top kâğıt 500 tane anlamına gelir. Mol biriminin bu birimlerden temel farkı hangisidir?",
+      "secenekler": [
+        "Mol yalnızca gazların miktarını belirtmek için kullanılan bir birimdir.",
+        "Mol, maddelerin kütlesini doğrudan kilogram cinsinden veren bir birimdir.",
+        "Mol, tane sayısı yerine hacim ölçmeye yarayan bir birimdir.",
+        "Mol, çok küçük tanecikleri sayılamayacak kadar büyük bir sayıyla ifade eder."
+      ],
+      "dogru_index": 3,
+      "cozum": "Düzine ve top gündelik sayma birimleridir. Mol ise atom, molekül, iyon gibi gözle görülmeyen çok küçük tanecikleri 6,02·10²³'lük gruplar hâlinde ifade eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol kavramının tanımı nedir?",
+        "back": "6,02·10²³ tane tanecik içeren madde miktarıdır."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o06",
+      "alt_beceri": "Maddelerin tanecik sayısını ifade etmek için yaptığı işlemlere uygun tanım yapar.",
+      "metin": "Juglon bileşiğinin molekül formülü C10H6O3'tür. Buna göre 0,5 mol juglon kaç gramdır? (H: 1, C: 12, O: 16 g/mol)",
+      "secenekler": [
+        "174 g",
+        "87 g",
+        "43,5 g",
+        "348 g"
+      ],
+      "dogru_index": 1,
+      "cozum": "MA = 10·12 + 6·1 + 3·16 = 120 + 6 + 48 = 174 g/mol. 0,5 mol için m = 0,5 · 174 = 87 g bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kütle, mol sayısı ve mol kütlesi arasındaki ilişki nedir?",
+        "back": "m = n · MA bağıntısı geçerlidir; kütle mol sayısı ile mol kütlesinin çarpımıdır."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o07",
+      "alt_beceri": "Maddelerin aynı sayıda tanecik içeren örneklerinin kütlesini ölçer.",
+      "metin": "Tabloda demir içeren üç mineralin mol kütlesi verilmiştir. Buna göre 112 g saf demir elde etmek için kaç mol siderit (FeCO3) kullanılmalıdır? (Fe: 56 g/mol)",
+      "secenekler": [
+        "2 mol",
+        "1 mol",
+        "0,5 mol",
+        "3 mol"
+      ],
+      "dogru_index": 0,
+      "cozum": "112 g demir 112/56 = 2 moldür. Bir FeCO3 formülünde 1 demir atomu bulunduğundan 2 mol demir için 2 mol siderit gerekir (2 · 116 = 232 g).",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Mineral",
+          "MA (g/mol)"
+        ],
+        "satirlar": [
+          [
+            "Hematit Fe2O3",
+            "160"
+          ],
+          [
+            "Manyetit Fe3O4",
+            "232"
+          ],
+          [
+            "Siderit FeCO3",
+            "116"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Siderit mineralinin formülü nedir?",
+        "back": "FeCO3 (demir(II) karbonat) biçimindedir."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o08",
+      "alt_beceri": "Maddelerin tanecik sayısını ifade etmek için yaptığı işlemlere uygun tanım yapar.",
+      "metin": "12,04·10²³ tane atom içeren CH4 örneği kaç mol CH4 molekülüdür? (NA = 6,02·10²³)",
+      "secenekler": [
+        "2 mol",
+        "0,2 mol",
+        "0,4 mol",
+        "5 mol"
+      ],
+      "dogru_index": 2,
+      "cozum": "12,04·10²³ tane atom 2 mol atomdur. Bir CH4 molekülü 5 atom içerdiği için 2 mol atom, 2/5 = 0,4 mol CH4 molekülüne karşılık gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tanecik sayısı ile mol sayısı arasındaki bağıntı nedir?",
+        "back": "n = N / NA bağıntısı kullanılır; tanecik sayısı Avogadro sayısına bölünür."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o09",
+      "alt_beceri": "Maddelerin aynı sayıda tanecik içeren örneklerinin kütlesini ölçer.",
+      "metin": "Eşit kütlede hidrojen (H2) ve oksijen (O2) gazları alınmıştır. Buna göre hangi gaz örneği daha fazla sayıda molekül içerir? (H: 1, O: 16 g/mol)",
+      "secenekler": [
+        "Oksijen; mol kütlesi büyük olduğu için aynı kütlede daha çok molekül içerir.",
+        "Hidrojen; mol kütlesi küçük olduğu için aynı kütlede mol sayısı büyüktür.",
+        "Her ikisi de aynı sayıda molekül içerir; çünkü kütleleri eşittir.",
+        "Karşılaştırma yapılamaz; çünkü gazların hacimleri verilmemiştir."
+      ],
+      "dogru_index": 1,
+      "cozum": "n = m/MA bağıntısında kütle sabitken mol kütlesi küçük olan gazın mol sayısı büyük olur. H2'nin mol kütlesi 2, O2'ninki 32 g/mol olduğundan eşit kütlede hidrojen daha çok molekül içerir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kütlesi ve mol kütlesi bilinen bir maddenin mol sayısı nasıl bulunur?",
+        "back": "Mol kütlesi küçük olan maddenin mol sayısı daha büyüktür."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c04_o10",
+      "alt_beceri": "Maddelerin miktarını ifade etmek için ölçülebilir (kütle, tanecik sayısı vb.) özellikleri belirler.",
+      "metin": "Kimyacılar atom kütlelerini belirlerken neden 12C izotopunu standart olarak seçmişlerdir?",
+      "secenekler": [
+        "12C izotopu doğada serbest hâlde en çok bulunan elementtir.",
+        "12C izotopunun kütlesi en hassas terazide doğrudan tartılabilir.",
+        "12C izotopu bütün bileşiklerin yapısında zorunlu olarak bulunur.",
+        "Diğer atomların kütleleri bu standarda göre bağıl olarak ifade edilebilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Tek bir atomun kütlesi tartılamadığı için 12C izotopu referans alınır. Diğer atomların kütleleri bu standarda göre bağıl atom kütlesi olarak belirlenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağıl atom kütlesi nedir?",
+        "back": "Bir atomun kütlesinin 12C izotopunun kütlesine göre oranlanarak ifade edilmesidir."
+      },
+      "kazanim": "Mol kavramına ilişkin operasyonel tanımlama yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c04_o01:flashcard",
+      "front": "Mol kütlesi nedir?",
+      "back": "Bir mol maddenin gram cinsinden kütlesidir; birimi g/mol'dür."
+    },
+    {
+      "id": "kim_10_t01_c04_o02:flashcard",
+      "front": "Avogadro sayısının değeri nedir?",
+      "back": "6,02·10²³ tür; bir moldeki tanecik sayısını verir ve NA ile gösterilir."
+    },
+    {
+      "id": "kim_10_t01_c04_o03:flashcard",
+      "front": "Mol sayısı kütle ile nasıl hesaplanır?",
+      "back": "n = m / MA bağıntısıyla; kütle mol kütlesine bölünür."
+    },
+    {
+      "id": "kim_10_t01_c04_o04:flashcard",
+      "front": "Bir mol CH4 molekülünün içerdiği atom sayısı nedir?",
+      "back": "5 mol atom içerir: 1 mol C ve 4 mol H."
+    },
+    {
+      "id": "kim_10_t01_c04_o05:flashcard",
+      "front": "Mol kavramının tanımı nedir?",
+      "back": "6,02·10²³ tane tanecik içeren madde miktarıdır."
+    },
+    {
+      "id": "kim_10_t01_c04_o06:flashcard",
+      "front": "Kütle, mol sayısı ve mol kütlesi arasındaki ilişki nedir?",
+      "back": "m = n · MA bağıntısı geçerlidir; kütle mol sayısı ile mol kütlesinin çarpımıdır."
+    },
+    {
+      "id": "kim_10_t01_c04_o07:flashcard",
+      "front": "Siderit mineralinin formülü nedir?",
+      "back": "FeCO3 (demir(II) karbonat) biçimindedir."
+    },
+    {
+      "id": "kim_10_t01_c04_o08:flashcard",
+      "front": "Tanecik sayısı ile mol sayısı arasındaki bağıntı nedir?",
+      "back": "n = N / NA bağıntısı kullanılır; tanecik sayısı Avogadro sayısına bölünür."
+    },
+    {
+      "id": "kim_10_t01_c04_o09:flashcard",
+      "front": "Kütlesi ve mol kütlesi bilinen bir maddenin mol sayısı nasıl bulunur?",
+      "back": "Mol kütlesi küçük olan maddenin mol sayısı daha büyüktür."
+    },
+    {
+      "id": "kim_10_t01_c04_o10:flashcard",
+      "front": "Bağıl atom kütlesi nedir?",
+      "back": "Bir atomun kütlesinin 12C izotopunun kütlesine göre oranlanarak ifade edilmesidir."
+    }
+  ]
+}

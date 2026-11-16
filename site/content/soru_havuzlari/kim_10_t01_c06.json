@@ -1,0 +1,279 @@
+{
+  "konu_id": "kim_10_t01_c06",
+  "kod": "KİM.10.1.6",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme",
+  "kaynak": "Kimya 10 ders kitabı, s.62-68",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c06_o01",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarındaki tutarsızlıkların nerede olduğunu belirler.",
+      "metin": "Tabloda bir tepkimenin denkleştirilmemiş hâlindeki atom sayıları verilmiştir. Buna göre tutarsızlık hangi elementte ve hangi yönde ortaya çıkmıştır?",
+      "secenekler": [
+        "Karbon: tepkende 1, üründe 2 atom vardır.",
+        "Hidrojen: tepkende 4, üründe 2 atom vardır.",
+        "Oksijen: tepkende 2, üründe 4 atom vardır.",
+        "Tutarsızlık yoktur; denklem denktir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Tepkende 4 hidrojen, üründe yalnızca 2 hidrojen bulunmaktadır. Karbon ve oksijen sayıları eşit olduğundan tutarsızlık hidrojendedir ve suyun katsayısı artırılarak giderilir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Element",
+          "Tepken",
+          "Ürün"
+        ],
+        "satirlar": [
+          [
+            "C",
+            "1",
+            "1"
+          ],
+          [
+            "H",
+            "4",
+            "2"
+          ],
+          [
+            "O",
+            "2",
+            "2"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Denkleştirilmemiş bir denklemde tutarsızlık nasıl bulunur?",
+        "back": "Her elementin tepken ve ürün tarafındaki atom sayıları karşılaştırılır."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o02",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarındaki tutarsızlıkların nerede olduğunu belirler.",
+      "metin": "CH4(g) + O2(g) → CO2(g) + H2O(s) denklemi denkleştirilirken suyun katsayısı 2 yapıldığında oksijen sayısı 4 olur. Bu durumda oksijenin denkleştirilmesi için hangi işlem yapılır?",
+      "secenekler": [
+        "O2'nin katsayısı 4 yapılır; oksijen atomu başına bir molekül eklenir.",
+        "CO2'nin katsayısı 2 yapılarak oksijen sayısı dengelenir.",
+        "CH4'ün katsayısı 2 yapılarak denklem genişletilir.",
+        "O2'nin katsayısı 2 yapılır; böylece her iki tarafta 4 oksijen olur."
+      ],
+      "dogru_index": 3,
+      "cozum": "Ürün tarafında CO2'den 2, 2H2O'dan 2 olmak üzere 4 oksijen vardır. Tepkende O2 molekülü iki oksijen içerdiği için katsayı 2 olmalıdır: CH4 + 2O2 → CO2 + 2H2O.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Moleküler elementlerin katsayısının en son belirlenmesinin nedeni nedir?",
+        "back": "Serbest element molekülleri yalnızca tek tür atom içerdiğinden katsayıları en sona bırakmak işlemi kolaylaştırır."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o03",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için uygun yolu seçerek uygular.",
+      "metin": "C4H10(g) + O2(g) → CO2(g) + H2O(g) tepkimesi denkleştirilirken oksijen için 13/2 katsayısı bulunmuştur. Tepkimenin en küçük tam sayılı hâli hangisidir?",
+      "secenekler": [
+        "2C4H10 + 13O2 → 8CO2 + 10H2O",
+        "C4H10 + 13O2 → 4CO2 + 5H2O",
+        "2C4H10 + 13O2 → 4CO2 + 10H2O",
+        "4C4H10 + 13O2 → 8CO2 + 20H2O"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kesirli katsayıdan kurtulmak için denklem 2 ile genişletilir: 2C4H10 + 13O2 → 8CO2 + 10H2O. Kontrol: C 8=8, H 20=20, O 26=16+10.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kesirli katsayı yerine tam sayı kullanma kuralı nedir?",
+        "back": "Tepkime denklemi en küçük tam sayı katsayılarla yazılır; bu nedenle kesirli katsayılar genişletilerek tam sayıya çevrilir."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o04",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için olası yolları araştırır.",
+      "metin": "Al(k) + HNO3(suda) → Al(NO3)3(suda) + H2(g) tepkimesini denkleştirmek isteyen bir öğrenci hangi sıralamayı uygularsa işlemi daha az basamakta tamamlar?",
+      "secenekler": [
+        "Önce hidrojeni, sonra oksijeni, en son alüminyumu denkleştirmek",
+        "Önce oksijeni, sonra azotu, en son alüminyumu denkleştirmek",
+        "Önce Al ve nitrat grubunu, sonra hidrojeni, en son hidrojeni veren asidi denkleştirmek",
+        "Önce bütün katsayıları 2 ile çarpıp sonra tek tek azaltmak"
+      ],
+      "dogru_index": 2,
+      "cozum": "Denkleştirmede en karmaşık formüle 1 verilir, H ve O dışındaki elementler önce, serbest element ve moleküler maddeler sonra denkleştirilir. Bu sıralama Al ve nitrat grubuyla başlamayı gerektirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Denkleştirmede önerilen basamak sırası nedir?",
+        "back": "En karmaşık formüle 1 verilir; H ve O dışındaki atomlar önce, moleküler elementler en son denkleştirilir."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o05",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için uygun yolu seçerek uygular.",
+      "metin": "Uzay istasyonunda CO2(g) + H2(g) → CH4(g) + H2O(g) (Sabatier tepkimesi) gerçekleşir. Buna göre doğru denkleştirilmiş hâli hangisidir?",
+      "secenekler": [
+        "CO2 + 2H2 → CH4 + 2H2O",
+        "CO2 + 4H2 → CH4 + H2O",
+        "2CO2 + 4H2 → 2CH4 + 2H2O",
+        "CO2 + 4H2 → CH4 + 2H2O"
+      ],
+      "dogru_index": 3,
+      "cozum": "Üründe 4 hidrojen metanda, 2 hidrojen de suda olmak üzere toplam 8 hidrojen gerekir; bu da 4H2 demektir. Oksijen 2=2, karbon 1=1 olduğundan denklem denktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabatier tepkimesinin denklemi nedir?",
+        "back": "CO2 + 4H2 → CH4 + 2H2O"
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o06",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tanecik sayılarının denkliğini değerlendirir. 40",
+      "metin": "Bir öğrenci C6H12O6 + O2 → CO2 + H2O denklemini C6H12O6 + 6O2 → 6CO2 + 6H2O biçiminde yazmıştır. Bu denklemin denkliği için hangi değerlendirme doğrudur?",
+      "secenekler": [
+        "Denklem denk değildir; oksijen sayısı solda 12, sağda 18'dir.",
+        "Denklem denktir; C 6=6, H 12=12, O 18=18 sağlanır.",
+        "Denklem denk değildir; hidrojen sayısı solda 12, sağda 6'dır.",
+        "Denklem denktir ancak katsayılar en küçük tam sayı değildir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Solda oksijen 6 + 6·2 = 18, sağda 6·2 + 6·1 = 18'dir. Karbon ve hidrojen de eşit olduğundan denklem denktir ve katsayılar en küçük tam sayıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Denklemin denk olup olmadığı nasıl bulunur?",
+        "back": "Her elementin iki taraftaki atom sayısı ayrı ayrı hesaplanıp karşılaştırılır."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o07",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için uygun yolu seçerek uygular.",
+      "metin": "Termit tepkimesi Al(k) + Fe2O3(k) → Fe(k) + Al2O3(k) biçimindedir. Denkleştirildiğinde alüminyumun katsayısı kaç olur?",
+      "secenekler": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "dogru_index": 0,
+      "cozum": "Üründe 2 alüminyum bulunduğu için tepkende 2Al yazılır: 2Al + Fe2O3 → 2Fe + Al2O3. Demir 2=2, oksijen 3=3 olduğundan denklem denktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Termit tepkimesi nedir?",
+        "back": "Alüminyumun metal oksitlerle şiddetli tepkimesidir; yüksek ısı açığa çıkar ve kaynakta kullanılır."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o08",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için olası yolları araştırır.",
+      "metin": "KO2(k) + CO2(g) → K2CO3(k) + O2(g) tepkimesi kapalı sistemlerde oksijen üretmek için kullanılır. Denkleştirildiğinde oksijen molekülünün katsayısı kaç olur?",
+      "secenekler": [
+        "1",
+        "2",
+        "3/2",
+        "1/2"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tepkime 4KO2 + 2CO2 → 2K2CO3 + 3O2 biçiminde denkleştirilir; sadeleştirilmiş hâli 2KO2 + CO2 → K2CO3 + 3/2O2'dir. Bu nedenle O2 katsayısı 3/2'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Potasyum süperoksitin kullanım amacı nedir?",
+        "back": "Hem nem hem karbon dioksitle tepkimeye girerek ortama oksijen verebildiği için."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o09",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tanecik sayılarının denkliğini değerlendirir. 40",
+      "metin": "Denkleştirilmiş bir kimyasal tepkimede aşağıdakilerden hangisi kesinlikle korunur?",
+      "secenekler": [
+        "Tepken ve ürünlerin mol sayıları toplamı",
+        "Her elementin atom sayısı ve toplam kütle",
+        "Gaz hâlindeki maddelerin hacimleri",
+        "Tepkimeye giren taneciklerin çeşidi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kütlenin korunumu kanunu gereği her elementin atom sayısı ve toplam kütle korunur. Mol sayıları toplamı ve tanecik çeşidi ise değişebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kütlenin korunumu kanunu nedir?",
+        "back": "1789'da Antoine Laurent Lavoisier ileri sürmüştür."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c06_o10",
+      "alt_beceri": "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için uygun yolu seçerek uygular.",
+      "metin": "C6H12O6 → C2H5OH + CO2 tepkimesi oksijensiz solunumda gerçekleşir. Denkleştirildiğinde karbon dioksitin katsayısı kaç olur?",
+      "secenekler": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "dogru_index": 3,
+      "cozum": "C6H12O6 → 2C2H5OH + 2CO2 denklemi denktir: C 6 = 4+2, H 12 = 12, O 6 = 2+4. Bu nedenle CO2'nin katsayısı 2'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksijensiz solunumun ürünleri nedir?",
+        "back": "Kullanılan enzime göre etil alkol ve CO2 ya da laktik asit oluşur."
+      },
+      "kazanim": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c06_o01:flashcard",
+      "front": "Denkleştirilmemiş bir denklemde tutarsızlık nasıl bulunur?",
+      "back": "Her elementin tepken ve ürün tarafındaki atom sayıları karşılaştırılır."
+    },
+    {
+      "id": "kim_10_t01_c06_o02:flashcard",
+      "front": "Moleküler elementlerin katsayısının en son belirlenmesinin nedeni nedir?",
+      "back": "Serbest element molekülleri yalnızca tek tür atom içerdiğinden katsayıları en sona bırakmak işlemi kolaylaştırır."
+    },
+    {
+      "id": "kim_10_t01_c06_o03:flashcard",
+      "front": "Kesirli katsayı yerine tam sayı kullanma kuralı nedir?",
+      "back": "Tepkime denklemi en küçük tam sayı katsayılarla yazılır; bu nedenle kesirli katsayılar genişletilerek tam sayıya çevrilir."
+    },
+    {
+      "id": "kim_10_t01_c06_o04:flashcard",
+      "front": "Denkleştirmede önerilen basamak sırası nedir?",
+      "back": "En karmaşık formüle 1 verilir; H ve O dışındaki atomlar önce, moleküler elementler en son denkleştirilir."
+    },
+    {
+      "id": "kim_10_t01_c06_o05:flashcard",
+      "front": "Sabatier tepkimesinin denklemi nedir?",
+      "back": "CO2 + 4H2 → CH4 + 2H2O"
+    },
+    {
+      "id": "kim_10_t01_c06_o06:flashcard",
+      "front": "Denklemin denk olup olmadığı nasıl bulunur?",
+      "back": "Her elementin iki taraftaki atom sayısı ayrı ayrı hesaplanıp karşılaştırılır."
+    },
+    {
+      "id": "kim_10_t01_c06_o07:flashcard",
+      "front": "Termit tepkimesi nedir?",
+      "back": "Alüminyumun metal oksitlerle şiddetli tepkimesidir; yüksek ısı açığa çıkar ve kaynakta kullanılır."
+    },
+    {
+      "id": "kim_10_t01_c06_o08:flashcard",
+      "front": "Potasyum süperoksitin kullanım amacı nedir?",
+      "back": "Hem nem hem karbon dioksitle tepkimeye girerek ortama oksijen verebildiği için."
+    },
+    {
+      "id": "kim_10_t01_c06_o09:flashcard",
+      "front": "Kütlenin korunumu kanunu nedir?",
+      "back": "1789'da Antoine Laurent Lavoisier ileri sürmüştür."
+    },
+    {
+      "id": "kim_10_t01_c06_o10:flashcard",
+      "front": "Oksijensiz solunumun ürünleri nedir?",
+      "back": "Kullanılan enzime göre etil alkol ve CO2 ya da laktik asit oluşur."
+    }
+  ]
+}

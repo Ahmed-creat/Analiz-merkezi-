@@ -1,0 +1,330 @@
+{
+  "konu_id": "kim_10_t01_c01",
+  "kod": "KİM.10.1.1",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.21-34",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c01_o01",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerini (enerji değişimi, gaz çıkışı, renk değişimi veya yeni bir katının oluşumu) tanımlar.",
+      "metin": "Tabloda üç ayrı deneyde kaydedilen gözlemler verilmiştir. Bu deneylerden hangisinde iki farklı kimyasal değişim göstergesi birlikte gözlenmiştir?",
+      "secenekler": [
+        "2. deneyde yalnızca balon şişmesi",
+        "1. deneyde köpük çıkışı ve ısınma",
+        "3. deneyde yalnızca sarı katı oluşumu",
+        "Hiçbir deneyde iki gösterge yoktur."
+      ],
+      "dogru_index": 1,
+      "cozum": "1. deneyde köpük çıkışı gaz oluşumunun, kabın ısınması enerji değişiminin göstergesidir. 2. deneyde yalnızca gaz çıkışı, 3. deneyde ise yalnızca katı oluşumu gözlenmiştir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Deney",
+          "Gözlem"
+        ],
+        "satirlar": [
+          [
+            "1. deney",
+            "Köpük taşması, ısınma"
+          ],
+          [
+            "2. deney",
+            "Balonun şişmesi"
+          ],
+          [
+            "3. deney",
+            "Sarı katı oluşumu"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Kimyasal değişimin göstergeleri nedir?",
+        "back": "Enerji değişimi, gaz çıkışı, renk değişimi, katı oluşumu, ışık oluşumu, koku değişimi, pH değişimi ve iletkenlik değişimi."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o02",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerini (enerji değişimi, gaz çıkışı, renk değişimi veya yeni bir katının oluşumu) tanımlar.",
+      "metin": "Bir öğrenci iki çözeltiyi karıştırıyor; kapta beyaz bir katının oluştuğunu ve karışımın ısındığını gözlüyor. Öğrencinin bu gözlemlere dayanarak yaptığı hangi çıkarım en güçlü kanıta dayanır?",
+      "secenekler": [
+        "Yalnızca fiziksel bir karışma olmuştur; katı, çözeltideki tuzun kristallenmesidir.",
+        "Kimyasal değişim olduğu kesin değildir; çünkü renk değişimi gözlenmemiştir.",
+        "Tepkime endotermiktir; ortamdan ısı alındığı için kap soğumuştur.",
+        "Kimyasal bir değişim gerçekleşmiştir; katı oluşumu ve ısı açığa çıkması bunun kanıtıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Suda çözünmeyen yeni bir katının oluşması ve ısı açığa çıkması kimyasal değişimin iki ayrı göstergesidir. Renk değişimi her kimyasal değişimde görülmez; bu nedenle varlığı zorunlu değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kimyasal tepkimenin gerçekleştiğini gösteren kanıtlar nedir?",
+        "back": "Yeni bir maddenin oluşması, gaz çıkışı, katı oluşumu, renk/koku değişimi ve enerji değişimi gibi kanıtlarla anlaşılır."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o03",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin veri toplar ve kaydeder.",
+      "metin": "Bir öğrenci deney sırasındaki gözlemlerini tabloya kaydetmiştir. Bu tabloda hangi satırda gözlem yerine çıkarım yazılmıştır?",
+      "secenekler": [
+        "IV. satır",
+        "I. satır",
+        "II. satır",
+        "III. satır"
+      ],
+      "dogru_index": 0,
+      "cozum": "I, II ve III. satırlarda duyu organlarıyla ya da ölçüm aletiyle elde edilen doğrudan gözlemler vardır. IV. satır ise bu gözlemlerden çıkarılan bir yorumdur, gözlem kaydı değildir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Satır",
+          "Kayıt"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "Sıcaklık 22 °C'den 31 °C'ye çıktı."
+          ],
+          [
+            "II",
+            "Kapta gaz kabarcıkları oluştu."
+          ],
+          [
+            "III",
+            "Çözeltinin rengi maviden yeşile döndü."
+          ],
+          [
+            "IV",
+            "Tepkime ısı veren bir tepkimedir."
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Gözlem ile çıkarım arasındaki ilişki nedir?",
+        "back": "Gözlem duyu organları veya ölçüm aletleriyle doğrudan elde edilen veridir; çıkarım bu verilerden yapılan yorumdur."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o04",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerini (enerji değişimi, gaz çıkışı, renk değişimi veya yeni bir katının oluşumu) tanımlar.",
+      "metin": "Bir maden suyu şişesi açıldığında kabarcıkların çıktığı, kapağı kapatılıp bekletildiğinde ise kabarcık oluşmadığı gözlenmiştir. Bu gözleme göre kabarcık oluşumunun nedeni için hangisi söylenebilir?",
+      "secenekler": [
+        "Su molekülleri parçalanarak hidrojen gazı oluşturmuştur; kimyasal değişimdir.",
+        "Kapak kapatılınca tepkime ters yönde ilerlemiş ve gaz üretimi durmuştur.",
+        "Kaptaki basınç azalınca çözünmüş gaz açığa çıkmıştır; bu olay kimyasal değişim değildir.",
+        "Karbondioksit suda çözünmeyen yeni bir katı oluşturmuş, katı gaz hâline geçmiştir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Basınç düşünce çözünmüş CO2 gazı açığa çıkar; bu fiziksel bir süreçtir. Maddenin kendi kimliği değişmediği için kimyasal değişim söz konusu değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz çıkışının kimyasal değişim kanıtı olmadığı durum nedir?",
+        "back": "Hayır. Basınç düşmesiyle çözünmüş gazın açığa çıkması fizikseldir; yeni madde oluşmuşsa kimyasal değişimdir."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o05",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin veri toplar ve kaydeder.",
+      "metin": "Bir öğrenci 'karpuzun dilimlendiğinde renginin değişmemesi, kimyasal değişim olmadığını gösterir' hipotezini kuruyor. Öğrenci bu hipotezi sınamak için hangi deneyi yaparsa hipotezini doğrudan sınar?",
+      "secenekler": [
+        "Farklı türde meyveleri aynı süre bekletip renklerini karşılaştırmak",
+        "Karpuzun kütlesini dilimlemeden önce ve sonra tartmak",
+        "Karpuz suyunu süzüp süzüntünün pH değerini ölçmek",
+        "Dilimlenmiş karpuzu bir süre bekletip yüzeyinde renk ve koku değişimi olup olmadığını kaydetmek"
+      ],
+      "dogru_index": 3,
+      "cozum": "Hipotez, dilimlemenin renk değişimi oluşturmadığı üzerinedir. Bunu sınamak için aynı örnek bekletilerek yüzeyde renk ve koku değişimi olup olmadığı izlenir; meyve türünü değiştirmek kontrol değişkenini bozar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kontrollü deneyde bağımsız değişken nedir?",
+        "back": "Araştırmacının kasıtlı olarak değiştirdiği, etkisi ölçülen değişkendir; diğer değişkenler sabit tutulur."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o06",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin topladığı verileri tepkenlerin alt mikro seviyedeki değişimi temelinde açıklar.",
+      "metin": "Tabloda iki farklı tanecik modeli verilmiştir. Buna göre hangi modelde yeni bir maddenin oluştuğu (kimyasal değişim) gösterilmiştir?",
+      "secenekler": [
+        "I. model: tanecikler yalnızca yer değiştirmiştir.",
+        "II. model: tanecikler yeniden düzenlenip yeni tanecik oluşturmuştur.",
+        "III. model: tanecik sayısı değişmemiştir.",
+        "IV. model: tanecikler birbirinden uzaklaşmıştır."
+      ],
+      "dogru_index": 1,
+      "cozum": "II. modelde tepkime öncesinde ayrı türdeki tanecikler (●● ve ○○) bir araya gelerek her biri bir ● ve bir ○ içeren yeni taneciklere (●○) dönüşmüştür. Bu, taneciklerin yeniden düzenlenmesidir; kimyasal değişimdir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Model",
+          "Tepkime öncesi",
+          "Tepkime sonrası"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "●● ○○",
+            "●● ○○"
+          ],
+          [
+            "II",
+            "●● ○○",
+            "●○ ●○"
+          ],
+          [
+            "III",
+            "●●●",
+            "●●●"
+          ],
+          [
+            "IV",
+            "●○",
+            "●○"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Alt mikroskobik seviye nedir?",
+        "back": "Gözle görülmeyen taneciklerin (atom, molekül, iyon) yapısı ve hareketlerinin modellerle gösterildiği seviyedir."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o07",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin topladığı verileri tepkenlerin alt mikro seviyedeki değişimi temelinde açıklar.",
+      "metin": "Pb(NO3)2(suda) + 2KI(suda) → PbI2(k) + 2KNO3(suda) tepkimesinde sarı renkli bir katı oluşur. Bu gözlem alt mikroskobik seviyede nasıl açıklanır?",
+      "secenekler": [
+        "Pb2+ ve I- iyonları bir araya gelerek suda çözünmeyen PbI2 taneciklerini oluşturur.",
+        "Pb2+ ve K+ iyonları yer değiştirerek yeni bir katı oluşturur.",
+        "Nitrat iyonları parçalanarak katı hâlde çöker ve çözelti sararır.",
+        "Su molekülleri iyonlaşarak katı oluşturur ve sarı renk buradan gelir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Karıştırılan çözeltilerde Pb2+ ile I- iyonları karşılaşır ve suda çözünmeyen PbI2 katısını oluşturur. K+ ve NO3- iyonları çözeltide kalır (seyirci iyonlar).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çökelek nedir?",
+        "back": "Çözeltideki iyonların birleşerek oluşturduğu, suda çözünmeyip ayrılan katıdır."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o08",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin veri toplar ve kaydeder.",
+      "metin": "Bir öğrenci kimyasal değişimi kanıtlamak için yalnızca sıcaklık değişimini ölçmeyi planlamıştır. Öğretmen bu planın yetersiz olduğunu söylemiştir. Bu yetersizliğin nedeni hangisidir?",
+      "secenekler": [
+        "Sıcaklık termometre ile güvenilir biçimde ölçülemez.",
+        "Kimyasal değişimlerde sıcaklık hiçbir zaman değişmez.",
+        "Sıcaklık değişimi çözünme gibi fiziksel süreçlerde de gerçekleşebilir.",
+        "Sıcaklık değişimi yalnızca gaz çıkışı olan tepkimelerde görülür."
+      ],
+      "dogru_index": 2,
+      "cozum": "NaOH katısı suda çözünürken ortam ısınır; ancak bu fiziksel bir süreçtir. Tek başına sıcaklık değişimi kimyasal değişimi kanıtlamaz, bu nedenle en az bir kimyasal göstergeyle birlikte değerlendirilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerji değişiminin kimyasal değişim kanıtı sayılmadığı örnek nedir?",
+        "back": "Çözünme, hâl değişimi gibi fiziksel süreçlerde de ısı alınır veya verilir; bu yüzden tek başına yeterli değildir."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o09",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin topladığı verileri tepkenlerin alt mikro seviyedeki değişimi temelinde açıklar.",
+      "metin": "H2O2 çözeltisine deterjan ve KI katısı eklendiğinde yoğun köpük oluşmuştur. Tepkime denklemi H2O2(suda) → H2O(s) + 1/2O2(g) olduğuna göre köpüğün oluşumu nasıl açıklanır?",
+      "secenekler": [
+        "Deterjan tanecikleri parçalanarak karbon dioksit gazı açığa çıkarır.",
+        "H2O2 tanecikleri parçalanarak su ve oksijen taneciklerine dönüşür; oksijen gazı deterjanla köpürür.",
+        "KI katısı suda çözünürken köpük oluşturur; kimyasal değişim yoktur.",
+        "Su molekülleri hidrojen gazına ayrışarak köpük hâlinde ayrılır."
+      ],
+      "dogru_index": 1,
+      "cozum": "H2O2 molekülleri yeniden düzenlenerek H2O ve O2 oluşur. Açığa çıkan O2 gazı, deterjanın oluşturduğu köpükte birikerek taşmaya neden olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "H2O2'nin ayrışma ürünleri nedir?",
+        "back": "Su (H2O) ve oksijen gazı (O2): 2H2O2 → 2H2O + O2."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c01_o10",
+      "alt_beceri": "Kimyasal değişimlerin gözlemlenebilir göstergelerini (enerji değişimi, gaz çıkışı, renk değişimi veya yeni bir katının oluşumu) tanımlar.",
+      "metin": "Bir yumurtanın aşırı pişirildiğinde sarısının çevresinde yeşilimsi bir halka oluştuğu gözlenir. Bu halkanın oluşumu için hangi açıklama doğrudur?",
+      "secenekler": [
+        "Yumurtadaki suyun buharlaşarak sarı içinde kristallenmesi ve renk vermesi",
+        "Yumurta sarısındaki yağların eriyerek yüzeye çıkması ve yeşil renge dönüşmesi",
+        "Yumurtanın kabuğundaki kalsiyumun sarıya geçmesi ve orada birikmesi",
+        "Yumurta akındaki proteinlerin denatüre olması ve demirle hidrojen sülfürün tepkimeye girmesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Aşırı pişirmede proteinler denatüre olur ve hidrojen sülfür gazı açığa çıkar. Bu gaz, sarıdaki demirle tepkimeye girerek yeşilimsi demir sülfür halkasını oluşturur; bu bir kimyasal değişimdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Protein denatürasyonu nedir?",
+        "back": "Isı, asit gibi etkilerle proteinin üç boyutlu yapısının bozulup katılaşmasıdır."
+      },
+      "kazanim": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c01_o01:flashcard",
+      "front": "Kimyasal değişimin göstergeleri nedir?",
+      "back": "Enerji değişimi, gaz çıkışı, renk değişimi, katı oluşumu, ışık oluşumu, koku değişimi, pH değişimi ve iletkenlik değişimi."
+    },
+    {
+      "id": "kim_10_t01_c01_o02:flashcard",
+      "front": "Kimyasal tepkimenin gerçekleştiğini gösteren kanıtlar nedir?",
+      "back": "Yeni bir maddenin oluşması, gaz çıkışı, katı oluşumu, renk/koku değişimi ve enerji değişimi gibi kanıtlarla anlaşılır."
+    },
+    {
+      "id": "kim_10_t01_c01_o03:flashcard",
+      "front": "Gözlem ile çıkarım arasındaki ilişki nedir?",
+      "back": "Gözlem duyu organları veya ölçüm aletleriyle doğrudan elde edilen veridir; çıkarım bu verilerden yapılan yorumdur."
+    },
+    {
+      "id": "kim_10_t01_c01_o04:flashcard",
+      "front": "Gaz çıkışının kimyasal değişim kanıtı olmadığı durum nedir?",
+      "back": "Hayır. Basınç düşmesiyle çözünmüş gazın açığa çıkması fizikseldir; yeni madde oluşmuşsa kimyasal değişimdir."
+    },
+    {
+      "id": "kim_10_t01_c01_o05:flashcard",
+      "front": "Kontrollü deneyde bağımsız değişken nedir?",
+      "back": "Araştırmacının kasıtlı olarak değiştirdiği, etkisi ölçülen değişkendir; diğer değişkenler sabit tutulur."
+    },
+    {
+      "id": "kim_10_t01_c01_o06:flashcard",
+      "front": "Alt mikroskobik seviye nedir?",
+      "back": "Gözle görülmeyen taneciklerin (atom, molekül, iyon) yapısı ve hareketlerinin modellerle gösterildiği seviyedir."
+    },
+    {
+      "id": "kim_10_t01_c01_o07:flashcard",
+      "front": "Çökelek nedir?",
+      "back": "Çözeltideki iyonların birleşerek oluşturduğu, suda çözünmeyip ayrılan katıdır."
+    },
+    {
+      "id": "kim_10_t01_c01_o08:flashcard",
+      "front": "Enerji değişiminin kimyasal değişim kanıtı sayılmadığı örnek nedir?",
+      "back": "Çözünme, hâl değişimi gibi fiziksel süreçlerde de ısı alınır veya verilir; bu yüzden tek başına yeterli değildir."
+    },
+    {
+      "id": "kim_10_t01_c01_o09:flashcard",
+      "front": "H2O2'nin ayrışma ürünleri nedir?",
+      "back": "Su (H2O) ve oksijen gazı (O2): 2H2O2 → 2H2O + O2."
+    },
+    {
+      "id": "kim_10_t01_c01_o10:flashcard",
+      "front": "Protein denatürasyonu nedir?",
+      "back": "Isı, asit gibi etkilerle proteinin üç boyutlu yapısının bozulup katılaşmasıdır."
+    }
+  ]
+}
