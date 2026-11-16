@@ -14,6 +14,7 @@ const ASSETS = [
   "./mesaj.js",
   "./okz-normalize.js",
   "./okz-konu.js",
+  "./okz-meb.js",
  "./konu-anahtar.js",
  "./havuz-bul.js",
   "./veri-sikistir.js",

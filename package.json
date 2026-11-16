@@ -23,6 +23,7 @@
     "test:mesaj": "node tests/mesaj.test.js && node tests/mesaj-ui.test.js",
     "test:mesaj-ui": "node tests/mesaj-ui.test.js",
     "test:ders": "node tests/okz-normalize.test.js && node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
+    "test:meb": "node tests/meb-kazanim.test.js",
     "test:kuyruk": "node tests/okz-kuyruk.test.js",
     "test:birlestir": "node tests/birlestir.test.js",
     "test:gorsel": "node tests/gorsel-video.test.js",

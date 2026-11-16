@@ -1515,6 +1515,19 @@ function okzKonuBul(ders, kazanim) {
   const kanon = okzDersKanonik(ders);
   const elle = okzKonuHaritasi()[okzHaritaAnahtar(kanon, kazanim)];
   if (elle) return { konu: String(elle).split(" > ").slice(1).join(" > "), topicKey: elle, kaynak: "harita" };
+  // 1b) MEB RESMÎ KAZANIM KATMANI (site/okz-meb.js)
+  // Okulizyon'un kazanım cümlesi, MEB 2026 öğrenme çıktısı tablosundaki bir
+  // cümleyle / havuzdaki kazanım metniyle BİREBİR eşleşiyorsa konu doğrudan
+  // ve deterministik bağlanır; resmî çıktı KODU da elimizde kalır
+  // (ör. BİY.10.1.1). Cümle tanınmıyorsa hiçbir şey yazılmaz → aşağıdaki
+  // katmanlar devreye girer.
+  const MEBM = (typeof window !== "undefined" && window.OKZM) || (typeof globalThis !== "undefined" && globalThis.OKZM) || null;
+  if (MEBM && typeof MEBM.konuBul === "function") {
+    const m = MEBM.konuBul(kazanim, kanon);
+    if (m && m.konuId && m.topicKey) {
+      return { konu: m.konu, topicKey: m.topicKey, kaynak: "meb", kod: (m.kodlar || [])[0] || "" };
+    }
+  }
   // 2) ELLE BAKILMIŞ KURAL TABLOSU (site/konu-anahtar.js)
   // Kazanım cümlesinde konunun ayırt edici kavramı geçiyorsa ("açıortay",
   // "mol", "ahenk"…) doğrudan konuya bağlanır. İndeks yüklenmeden de çalışır.
