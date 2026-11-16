@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 20:47 (UTC)
+> Güncelleme: 2026-11-16 21:56 (UTC)
 
 ## Ders bazında
 
@@ -12,13 +12,13 @@
 | Fizik | 22/22 | 220 | 220 | 220 | 27 |
 | Kimya | 21/21 | 215 | 214 | 215 | 46 |
 | Biyoloji | 19/19 | 190 | 190 | 190 | 38 |
-| Tarih | 0/14 | 0 | 140 | 0 | 0 |
+| Tarih | 14/14 | 140 | 140 | 140 | 5 |
 | Coğrafya | 18/18 | 190 | 190 | 190 | 8 |
 | Felsefe | 0/10 | 0 | 100 | 0 | 0 |
 | Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **101/158** | **1089** | **1686** | **1089** | **141** |
+| **TOPLAM** | **115/158** | **1229** | **1686** | **1229** | **146** |
 
-İlerleme: **%65** (1089/1686 soru) · kart 1:1 ✔
+İlerleme: **%73** (1229/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -43,25 +43,6 @@
 | `edebiyat_10_t04_c02` | TDE4.2 | 16 | yok |
 | `edebiyat_10_t04_c03` | TDE4.3 | 16 | yok |
 | `edebiyat_10_t04_c04` | TDE4.4 | 10 | yok |
-
-### Tarih
-
-| konu_id | kod | hedef soru | durum |
-| --- | --- | --- | --- |
-| `tar_10_t01_c01` | TAR.10.1.1 | 10 | yok |
-| `tar_10_t01_c02` | TAR.10.1.2 | 10 | yok |
-| `tar_10_t01_c03` | TAR.10.1.3 | 10 | yok |
-| `tar_10_t01_c04` | TAR.10.1.4 | 10 | yok |
-| `tar_10_t02_c01` | TAR.10.2.1 | 10 | yok |
-| `tar_10_t02_c02` | TAR.10.2.2 | 10 | yok |
-| `tar_10_t02_c03` | TAR.10.2.3 | 10 | yok |
-| `tar_10_t02_c04` | TAR.10.2.4 | 10 | yok |
-| `tar_10_t02_c05` | TAR.10.2.5 | 10 | yok |
-| `tar_10_t03_c01` | TAR.10.3.1 | 10 | yok |
-| `tar_10_t03_c02` | TAR.10.3.2 | 10 | yok |
-| `tar_10_t03_c03` | TAR.10.3.3 | 10 | yok |
-| `tar_10_t03_c04` | TAR.10.3.4 | 10 | yok |
-| `tar_10_t03_c05` | TAR.10.3.5 | 10 | yok |
 
 ### Felsefe
 
