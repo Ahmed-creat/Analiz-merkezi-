@@ -1,6 +1,7 @@
 # Soru Üretim Talimatı — 10. Sınıf (MEB TYMM 2026)
 
 > Bu dosya **soru üretecek ajan/kişi** içindir.
+> **Önce `docs/uretim/BASLA-BURADAN.md` oku** — dal/PR akışı ve yazma izinleri orada.
 > Tek kaynak: `docs/uretim/uretim-plani.json` (158 iş emri, makine tarafı).
 > Plan yeniden üretimi: `node scripts/soru-uretim-plani.js`
 > Kabul testi: `node scripts/soru-uret-dogrula.js <dizin>`
@@ -23,6 +24,8 @@
 
 | Dosya | Ne içerir | Kullanım |
 | --- | --- | --- |
+| `docs/uretim/BASLA-BURADAN.md` | Giriş noktası, dal/PR akışı, yazma izinleri | İlk bunu oku |
+| `docs/uretim/TUM-KAZANIMLAR-10SINIF.md` | **158 çıktı + 612 süreç bileşeni**, okunabilir tam döküm | Asıl kaynak metin |
 | `docs/uretim/uretim-plani.json` | 158 çıktı: kod, ders, tema, kazanım, süreç bileşenleri, hedef soru, konu_id | **İş emri — tek doğru kaynak** |
 | `site/content/mufredat/meb_kazanim_10.json` | 158 çıktı × 612 süreç bileşeni (resmî metin) | Kazanım/süreç doğrulaması |
 | `tests/fixtures/tymm-2026-10sinif.json` | Aynı veri, sha256 damgalı resmî TYMM kopyası | Çapraz doğrulama |

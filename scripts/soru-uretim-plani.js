@@ -39,12 +39,21 @@ const KISA = {
   "Türk Dili ve Edebiyatı": "edebiyat"
 };
 
-/* Resmî tema adları — YALNIZ doğrulanmış kaynaktan.
-   Din: dkab912.pdf s.36-37 (1.3 tablosu).
-   Matematik: TYMM 2026 kataloğu (theme alanı).
-   TDE: program beceri eksenli; tema = beceri alanı.
-   Diğer derslerde ad doğrulanmadı → null bırakılır, uydurulmaz. */
+/* Resmî tema adları — YALNIZ kanıtlanmış kaynaktan. Kanıt yoksa null.
+   Kaynak kodları:
+     ODSGM : kullanıcının ODSGM PDF'i (odsgm_konu_kazanim_10.json). Bir temanın
+             TÜM satırları tek ünite adı gösteriyorsa o ad kullanılır.
+     DKAB  : dkab912.pdf s.36-37 (1.3 ÜNİTE/ÇIKTI/SAAT tablosu).
+     KATALOG: TYMM 2026 JSON kataloğunun `theme` alanı (resmî programdan çıkarım).
+   ÇAKIŞMA varsa (bir tema iki ayrı ünite adına düşüyorsa) ad YAZILMAZ. */
 const TEMA_ADI = {
+  "Biyoloji": { 1: "Enerji" },
+  "Coğrafya": {
+    1: "Coğrafyanın Doğası",
+    2: "Mekânsal Bilgi Teknolojileri",
+    3: "Doğal Sistemler ve Süreçler"
+    // 4: ODSGM'de çakışma (Doğal/Beşerî) → yazılmadı; 5-7 ODSGM 1. dönem dışı
+  },
   "Din Kültürü": {
     1: "İslam’da Varlık ve Bilgi",
     2: "Allah’ı Tanımak",
@@ -52,6 +61,14 @@ const TEMA_ADI = {
     4: "Din, Çevre ve Teknoloji",
     5: "İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar"
   },
+  "Felsefe": {
+    1: "Felsefenin Doğası",
+    2: "Felsefe, Mantık ve Argümantasyon",
+    3: "Varlık Felsefesi",
+    4: "Bilgi Felsefesi"
+  },
+  "Fizik": { 1: "Kuvvet ve Hareket", 2: "Enerji", 3: "Elektrik", 4: "Dalgalar" },
+  "Kimya": { 1: "Etkileşim", 2: "Çeşitlilik", 3: "Sürdürülebilirlik" },
   "Matematik": {
     1: "Geometrik Şekiller",
     2: "İstatistiksel Araştırma Süreci",
@@ -61,7 +78,14 @@ const TEMA_ADI = {
     6: "Analitik İnceleme",
     7: "Veriden Olasılığa"
   },
-  "Türk Dili ve Edebiyatı": null   // tema = dinleme/okuma/konuşma/yazma becerisi
+  "Tarih": { 1: "Türkistan’dan Türkiye’ye (1040-1299)" },
+  // tema 2 ODSGM'de iki ada bölünmüş → yazılmadı; tema 3 ODSGM 1. dönem dışı
+  "Türk Dili ve Edebiyatı": {
+    1: "Dinleme/İzleme",
+    2: "Okuma",     // ODSGM satırları "OKUMA •" ile başlıyor
+    3: "Konuşma",
+    4: "Yazma"      // ODSGM satırları "YAZMA •" ile başlıyor
+  }
 };
 
 const ciktilar = require(MUFREDAT).ciktilar;
