@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t03_c02",
+  "kod": "FİZ.10.3.2",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.210-215",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t03_c02_o01",
+      "alt_beceri": "Bir iletkende elektrik akımı oluşması ile ilgili değişkenleri belirler.",
+      "metin": "Bir iletkenin dik kesitinden 0,5 saniyede 2 C yük geçmiştir. Bu iletkenden geçen elektrik akımı kaç A'dır?",
+      "secenekler": [
+        "0,25",
+        "4",
+        "1",
+        "2,5"
+      ],
+      "dogru_index": 1,
+      "cozum": "Akım, birim zamanda geçen yük miktarıdır: I = q / t = 2 C / 0,5 s = 4 A.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımının matematiksel modelini yazınız.",
+        "back": "I = q / t."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o02",
+      "alt_beceri": "Bir iletkende elektrik akımı oluşması ile ilgili değişkenleri belirler.",
+      "metin": "Bir iletkende elektrik akımının oluşabilmesi için gerekli koşullar hangileridir?",
+      "secenekler": [
+        "İletkende serbest yük taşıyıcılarının bulunması ve uçları arasında potansiyel fark olması",
+        "İletkenin uzunluğunun çok fazla, kesit alanının ise çok dar olması",
+        "Anahtarın açık konumda bırakılmış ve üretecin bağlanmamış olması",
+        "Üretecin kütlesinin çok büyük, potansiyel farkının ise sıfır olması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Katı iletkenlerde akımı serbest elektronlar oluşturur. Elektronların hareket edebilmesi için iletkenin uçları arasında potansiyel fark bulunmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Katı iletkenlerde akımı oluşturan yük taşıyıcıları nedir?",
+        "back": "Serbest elektronlar."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o03",
+      "alt_beceri": "Bir iletkende elektrik akımı oluşması ile ilgili değişkenleri belirler.",
+      "metin": "Bir iletkenden 10 saniyede 30 C yük geçmektedir. Bu iletkenden geçen akım kaç A'dır?",
+      "secenekler": [
+        "300",
+        "0,3",
+        "30",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "I = q / t = 30 C / 10 s = 3 A bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımının SI birimindeki birimi nedir?",
+        "back": "Amper (A)."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o04",
+      "alt_beceri": "Bir iletkende elektrik akımı oluşması ile ilgili değişkenleri belirler.",
+      "metin": "Bir metal telden akım geçerken tel içinde hareket eden yük taşıyıcıları hangileridir?",
+      "secenekler": [
+        "Protonlar",
+        "Nötronlar",
+        "Serbest elektronlar",
+        "Atom çekirdekleri"
+      ],
+      "dogru_index": 2,
+      "cozum": "Metallerin atomlarının dış yörüngelerindeki serbest elektronlar iletken içinde hareket ederek elektrik akımını oluşturur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yük biriminin adı ve sembolü nedir?",
+        "back": "Coulomb (C)."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o05",
+      "alt_beceri": "Bir iletkende elektrik akımı oluşması ile ilgili değişkenleri belirler.",
+      "metin": "Bir iletkende elektrik akımının yönü ile elektronların hareket yönü arasındaki ilişki için hangisi doğrudur?",
+      "secenekler": [
+        "Elektronların hareketiyle aynı yönde ilerler.",
+        "Akımın yönü elektronların hareket yönüne zıttır.",
+        "Elektronların hareketine dik yönde ilerler.",
+        "Akımın belirli bir yönü bulunmaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Elektronlar negatif yüklü olduğundan elektrik akımının yönü elektronların hareket yönüne zıt kabul edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akımın yönü, elektronların hareket yönüne göre nasıl tanımlanır?",
+        "back": "Elektronlar negatif yüklü olduğu için akımın yönü onların hareketine zıt kabul edilir."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o06",
+      "alt_beceri": "Elektrik akımını oluşturan değişkenler arasındaki ilişkiyi belirler.",
+      "metin": "Akım, yük ve zaman arasındaki ilişki için hangisi doğrudur?",
+      "secenekler": [
+        "Aynı sürede geçen yük miktarı arttıkça akım artar.",
+        "Akım, geçen yük miktarıyla ters orantılıdır.",
+        "Akım, süreyle doğru orantılıdır.",
+        "Akım, geçen yükten bağımsızdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Bir iletkende birim zamanda geçen yük miktarı ile akım doğru orantılıdır; süre uzadıkça aynı yük için akım azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ampermetrenin bağlanma kuralı nedir?",
+        "back": "Devreye seri bağlanır."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o07",
+      "alt_beceri": "Elektrik akımını oluşturan değişkenler arasındaki ilişkiyi belirler.",
+      "metin": "Bir iletkenden 4 saniyede 12 C yük geçmektedir. Akım sabit kalmak koşuluyla 8 saniyede geçen yük miktarı kaç coulomb olur?",
+      "secenekler": [
+        "12",
+        "48",
+        "6",
+        "24"
+      ],
+      "dogru_index": 3,
+      "cozum": "Akım I = 12 / 4 = 3 A'dır. 8 saniyede geçen yük q = I · t = 3 · 8 = 24 C bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "1 amperin coulomb ve saniye cinsinden karşılığı nedir?",
+        "back": "1 A = 1 C/s."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o08",
+      "alt_beceri": "Elektrik akımını oluşturan değişkenler arasındaki ilişkiyi belirler.",
+      "metin": "İletkenin dik kesitinden geçen yük miktarı sabitken geçiş süresi iki katına çıkarılırsa akım nasıl değişir?",
+      "secenekler": [
+        "İki katına çıkar.",
+        "Dört katına çıkar.",
+        "Yarıya iner.",
+        "Değişmez."
+      ],
+      "dogru_index": 2,
+      "cozum": "I = q / t bağıntısında q sabitken t iki katına çıkarsa akım yarıya iner; akım süreyle ters orantılıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Süre iki katına çıktığında akımın değişimi için kural nedir?",
+        "back": "Yük miktarı sabitse akım yarıya iner (ters orantı)."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o09",
+      "alt_beceri": "Elektrik akımını oluşturan değişkenler arasındaki ilişkiyi belirler.",
+      "metin": "Bir elektrik devresinden 5 saniye boyunca 2 A akım geçmiştir. İletkenin dik kesitinden geçen yük miktarı kaç coulomb'dur?",
+      "secenekler": [
+        "2,5",
+        "10",
+        "7",
+        "0,4"
+      ],
+      "dogru_index": 1,
+      "cozum": "I = q / t bağıntısından q = I · t = 2 A · 5 s = 10 C bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akım ve süre bilindiğinde geçen yük nasıl hesaplanır?",
+        "back": "q = I · t bağıntısıyla."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c02_o10",
+      "alt_beceri": "Elektrik akımını oluşturan değişkenler arasındaki ilişkiyi belirler.",
+      "metin": "Akım şiddeti 0,5 A olan bir iletkenden 1 dakika boyunca geçen yük miktarı kaç coulomb'dur?",
+      "secenekler": [
+        "30",
+        "0,5",
+        "60",
+        "120"
+      ],
+      "dogru_index": 0,
+      "cozum": "1 dakika 60 saniyedir. q = I · t = 0,5 A · 60 s = 30 C bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir elektronun yükünün değeri nedir?",
+        "back": "−1,6 · 10⁻¹⁹ C."
+      },
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t03_c02_o01:flashcard",
+      "front": "Elektrik akımının matematiksel modelini yazınız.",
+      "back": "I = q / t."
+    },
+    {
+      "id": "fiz_10_t03_c02_o02:flashcard",
+      "front": "Katı iletkenlerde akımı oluşturan yük taşıyıcıları nedir?",
+      "back": "Serbest elektronlar."
+    },
+    {
+      "id": "fiz_10_t03_c02_o03:flashcard",
+      "front": "Elektrik akımının SI birimindeki birimi nedir?",
+      "back": "Amper (A)."
+    },
+    {
+      "id": "fiz_10_t03_c02_o04:flashcard",
+      "front": "Yük biriminin adı ve sembolü nedir?",
+      "back": "Coulomb (C)."
+    },
+    {
+      "id": "fiz_10_t03_c02_o05:flashcard",
+      "front": "Akımın yönü, elektronların hareket yönüne göre nasıl tanımlanır?",
+      "back": "Elektronlar negatif yüklü olduğu için akımın yönü onların hareketine zıt kabul edilir."
+    },
+    {
+      "id": "fiz_10_t03_c02_o06:flashcard",
+      "front": "Ampermetrenin bağlanma kuralı nedir?",
+      "back": "Devreye seri bağlanır."
+    },
+    {
+      "id": "fiz_10_t03_c02_o07:flashcard",
+      "front": "1 amperin coulomb ve saniye cinsinden karşılığı nedir?",
+      "back": "1 A = 1 C/s."
+    },
+    {
+      "id": "fiz_10_t03_c02_o08:flashcard",
+      "front": "Süre iki katına çıktığında akımın değişimi için kural nedir?",
+      "back": "Yük miktarı sabitse akım yarıya iner (ters orantı)."
+    },
+    {
+      "id": "fiz_10_t03_c02_o09:flashcard",
+      "front": "Akım ve süre bilindiğinde geçen yük nasıl hesaplanır?",
+      "back": "q = I · t bağıntısıyla."
+    },
+    {
+      "id": "fiz_10_t03_c02_o10:flashcard",
+      "front": "Bir elektronun yükünün değeri nedir?",
+      "back": "−1,6 · 10⁻¹⁹ C."
+    }
+  ]
+}

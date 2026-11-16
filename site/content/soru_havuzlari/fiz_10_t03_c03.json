@@ -1,0 +1,275 @@
+{
+  "konu_id": "fiz_10_t03_c03",
+  "kod": "FİZ.10.3.3",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.216-223",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t03_c03_o01",
+      "alt_beceri": "Elektrik akımı, direnç ve potansiyel fark arasındaki ilişkiyi deney yoluyla keşfederek Ohm Yasası'nın matematiksel modeline ulaşır.",
+      "metin": "Bir öğrenci deneyde bir direncin uçları arasındaki potansiyel farkı ve üzerinden geçen akımı ölçerek şekildeki V-I grafiğini çizmiştir. Grafiğin eğiminden yararlanarak direncin büyüklüğü kaç Ω bulunur?",
+      "secenekler": [
+        "2",
+        "10",
+        "20",
+        "40"
+      ],
+      "dogru_index": 1,
+      "cozum": "V-I grafiğinin eğimi direnci verir. Grafikte 2 A akımda potansiyel fark 20 V olduğundan R = 20 / 2 = 10 Ω bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "V-I grafiğinin eğiminin tanımı nedir?",
+        "back": "Eğim = ΔV / ΔI olup iletkenin direncine eşittir."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "I (A)",
+        "yEkseni": "V (V)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "V",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                20
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o02",
+      "alt_beceri": "Elektrik akımı, direnç ve potansiyel fark arasındaki ilişkiyi deney yoluyla keşfederek Ohm Yasası'nın matematiksel modeline ulaşır.",
+      "metin": "Direnci 3 Ω olan bir iletkenin üzerinden 2 A akım geçmektedir. İletkenin uçları arasındaki potansiyel fark kaç V'tur?",
+      "secenekler": [
+        "6",
+        "1,5",
+        "5",
+        "12"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ohm Yasası'na göre V = I · R = 2 A · 3 Ω = 6 V bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ohm Yasası'nın matematiksel modelini yazınız.",
+        "back": "V = I · R (R = V / I)."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o03",
+      "alt_beceri": "Elektrik akımı, direnç ve potansiyel fark arasındaki ilişkiyi deney yoluyla keşfederek Ohm Yasası'nın matematiksel modeline ulaşır.",
+      "metin": "Bir iletkenin uçları arasındaki potansiyel fark 20 V iken üzerinden 4 A akım geçmektedir. İletkenin direnci kaç Ω'dur?",
+      "secenekler": [
+        "80",
+        "0,2",
+        "24",
+        "5"
+      ],
+      "dogru_index": 3,
+      "cozum": "R = V / I = 20 V / 4 A = 5 Ω bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Direncin biriminin adı ve sembolü nedir?",
+        "back": "Ohm (Ω)."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o04",
+      "alt_beceri": "Elektrik akımı, direnç ve potansiyel fark arasındaki ilişkiyi deney yoluyla keşfederek Ohm Yasası'nın matematiksel modeline ulaşır.",
+      "metin": "Ohm Yasası'na göre sabit sıcaklıkta bir iletkenin uçları arasındaki potansiyel farkın üzerinden geçen akıma oranı için hangisi doğrudur?",
+      "secenekler": [
+        "Akımın büyüklüğüne göre değişir.",
+        "Potansiyel farkla doğru orantılı olarak artar.",
+        "Sabittir ve iletkenin direncine eşittir.",
+        "Dirençle ters orantılı olarak sürekli değişir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Ohm Yasası'na göre sabit sıcaklıkta potansiyel farkın akıma oranı sabittir ve bu sabit değer iletkenin direncine eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Potansiyel farkın biriminin adı ve sembolü nedir?",
+        "back": "Volt (V)."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o05",
+      "alt_beceri": "Elektrik akımı, direnç ve potansiyel fark arasındaki ilişkiyi deney yoluyla keşfederek Ohm Yasası'nın matematiksel modeline ulaşır.",
+      "metin": "Bir öğrenci 10 Ω'luk dirençle yaptığı deneyde uyguladığı potansiyel farkı iki katına çıkarmıştır. Buna göre akım için hangisi gözlenir?",
+      "secenekler": [
+        "Akım yarıya iner.",
+        "Akım iki katına çıkar.",
+        "Akım değişmez.",
+        "Akım dört katına çıkar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Direnç sabitken akım potansiyel farkla doğru orantılıdır. Potansiyel fark iki katına çıktığında akım da iki katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ohm Yasası'na göre akım ile potansiyel fark arasındaki ilişki nedir?",
+        "back": "Direnç sabitken akım potansiyel farkla doğru orantılıdır."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o06",
+      "alt_beceri": "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar.",
+      "metin": "Uçları arasındaki potansiyel fark 24 V olan 8 Ω'luk dirençten geçen akım kaç A'dır?",
+      "secenekler": [
+        "192",
+        "0,33",
+        "32",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "I = V / R = 24 V / 8 Ω = 3 A bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ohm Yasası'na göre akım ile direnç arasındaki ilişki nedir?",
+        "back": "Potansiyel fark sabitken akım dirençle ters orantılıdır."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o07",
+      "alt_beceri": "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar.",
+      "metin": "Aynı potansiyel fark altında direnci iki katına çıkarılan bir iletkende akım nasıl değişir?",
+      "secenekler": [
+        "İki katına çıkar.",
+        "Değişmez.",
+        "Yarıya iner.",
+        "Dört katına çıkar."
+      ],
+      "dogru_index": 2,
+      "cozum": "Potansiyel fark sabitken akım dirençle ters orantılıdır. Direnç iki katına çıkarıldığında akım yarıya iner.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Direnç ile akım arasındaki orantı ilişkisi nedir?",
+        "back": "Akım dirençle ters orantılıdır."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o08",
+      "alt_beceri": "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar.",
+      "metin": "Üzerinden 0,5 A akım geçen 20 Ω'luk direncin uçları arasındaki potansiyel fark kaç V'tur?",
+      "secenekler": [
+        "10",
+        "40",
+        "0,025",
+        "20,5"
+      ],
+      "dogru_index": 0,
+      "cozum": "V = I · R = 0,5 A · 20 Ω = 10 V bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "1 Ω'luk direncin tanımı nedir?",
+        "back": "Uçları arasına 1 V uygulandığında üzerinden 1 A akım geçen iletkenin direncidir."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o09",
+      "alt_beceri": "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar.",
+      "metin": "Direnci sabit bir iletkende potansiyel fark 6 V'tan 18 V'a çıkarıldığında akım için hangisi doğrudur?",
+      "secenekler": [
+        "Akım üçte bire iner.",
+        "Akım üç katına çıkar.",
+        "Akım iki katına çıkar.",
+        "Akım değişmez."
+      ],
+      "dogru_index": 1,
+      "cozum": "Potansiyel fark üç katına çıktığına göre direnç sabit olduğundan akım da üç katına çıkar (18/6 = 3).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ohm Yasası'nın geçerli olduğu koşul nedir?",
+        "back": "İletkenin sıcaklığı sabit olduğunda geçerlidir."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c03_o10",
+      "alt_beceri": "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar.",
+      "metin": "Uçları arasındaki potansiyel fark 15 V, direnci 3 Ω olan bir iletkenden 10 saniyede geçen yük miktarı kaç coulomb'dur?",
+      "secenekler": [
+        "50",
+        "150",
+        "5",
+        "30"
+      ],
+      "dogru_index": 0,
+      "cozum": "Akım I = V / R = 15 / 3 = 5 A'dır. Geçen yük q = I · t = 5 · 10 = 50 C bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit dirençli (ohmik) bir iletkenin V-I grafiği nasıl tanımlanır?",
+        "back": "Orijinden geçen bir doğru biçimindedir; eğimi direnci verir."
+      },
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t03_c03_o01:flashcard",
+      "front": "V-I grafiğinin eğiminin tanımı nedir?",
+      "back": "Eğim = ΔV / ΔI olup iletkenin direncine eşittir."
+    },
+    {
+      "id": "fiz_10_t03_c03_o02:flashcard",
+      "front": "Ohm Yasası'nın matematiksel modelini yazınız.",
+      "back": "V = I · R (R = V / I)."
+    },
+    {
+      "id": "fiz_10_t03_c03_o03:flashcard",
+      "front": "Direncin biriminin adı ve sembolü nedir?",
+      "back": "Ohm (Ω)."
+    },
+    {
+      "id": "fiz_10_t03_c03_o04:flashcard",
+      "front": "Potansiyel farkın biriminin adı ve sembolü nedir?",
+      "back": "Volt (V)."
+    },
+    {
+      "id": "fiz_10_t03_c03_o05:flashcard",
+      "front": "Ohm Yasası'na göre akım ile potansiyel fark arasındaki ilişki nedir?",
+      "back": "Direnç sabitken akım potansiyel farkla doğru orantılıdır."
+    },
+    {
+      "id": "fiz_10_t03_c03_o06:flashcard",
+      "front": "Ohm Yasası'na göre akım ile direnç arasındaki ilişki nedir?",
+      "back": "Potansiyel fark sabitken akım dirençle ters orantılıdır."
+    },
+    {
+      "id": "fiz_10_t03_c03_o07:flashcard",
+      "front": "Direnç ile akım arasındaki orantı ilişkisi nedir?",
+      "back": "Akım dirençle ters orantılıdır."
+    },
+    {
+      "id": "fiz_10_t03_c03_o08:flashcard",
+      "front": "1 Ω'luk direncin tanımı nedir?",
+      "back": "Uçları arasına 1 V uygulandığında üzerinden 1 A akım geçen iletkenin direncidir."
+    },
+    {
+      "id": "fiz_10_t03_c03_o09:flashcard",
+      "front": "Ohm Yasası'nın geçerli olduğu koşul nedir?",
+      "back": "İletkenin sıcaklığı sabit olduğunda geçerlidir."
+    },
+    {
+      "id": "fiz_10_t03_c03_o10:flashcard",
+      "front": "Sabit dirençli (ohmik) bir iletkenin V-I grafiği nasıl tanımlanır?",
+      "back": "Orijinden geçen bir doğru biçimindedir; eğimi direnci verir."
+    }
+  ]
+}

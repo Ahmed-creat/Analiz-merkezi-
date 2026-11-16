@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 19:20 (UTC)
+> Güncelleme: 2026-11-16 19:23 (UTC)
 
 ## Ders bazında
 
@@ -9,16 +9,16 @@
 | --- | --- | --- | --- | --- | --- |
 | Türk Dili ve Edebiyatı | 0/16 | 0 | 188 | 0 | 0 |
 | Matematik | 0/21 | 0 | 274 | 0 | 0 |
-| Fizik | 8/22 | 80 | 220 | 80 | 4 |
+| Fizik | 15/22 | 150 | 220 | 150 | 5 |
 | Kimya | 0/21 | 0 | 214 | 0 | 0 |
 | Biyoloji | 0/19 | 0 | 190 | 0 | 0 |
 | Tarih | 0/14 | 0 | 140 | 0 | 0 |
 | Coğrafya | 0/18 | 0 | 190 | 0 | 0 |
 | Felsefe | 0/10 | 0 | 100 | 0 | 0 |
 | Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **8/158** | **80** | **1686** | **80** | **4** |
+| **TOPLAM** | **15/158** | **150** | **1686** | **150** | **5** |
 
-İlerleme: **%5** (80/1686 soru) · kart 1:1 ✔
+İlerleme: **%9** (150/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -74,13 +74,6 @@
 
 | konu_id | kod | hedef soru | durum |
 | --- | --- | --- | --- |
-| `fiz_10_t03_c01` | FİZ.10.3.1 | 10 | yok |
-| `fiz_10_t03_c02` | FİZ.10.3.2 | 10 | yok |
-| `fiz_10_t03_c03` | FİZ.10.3.3 | 10 | yok |
-| `fiz_10_t03_c04` | FİZ.10.3.4 | 10 | yok |
-| `fiz_10_t03_c05` | FİZ.10.3.5 | 10 | yok |
-| `fiz_10_t03_c06` | FİZ.10.3.6 | 10 | yok |
-| `fiz_10_t03_c07` | FİZ.10.3.7 | 10 | yok |
 | `fiz_10_t04_c01` | FİZ.10.4.1 | 10 | yok |
 | `fiz_10_t04_c02` | FİZ.10.4.2 | 10 | yok |
 | `fiz_10_t04_c03` | FİZ.10.4.3 | 10 | yok |

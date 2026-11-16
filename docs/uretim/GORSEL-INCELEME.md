@@ -139,6 +139,125 @@ _Bu havuzda görsel gerekmedi._
 
 _Bu havuzda görsel gerekmedi._
 
+## fiz_10_t03_c01.json (`FİZ.10.3.1`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c01_o01` | Bir öğrenci el fenerinin anahtarını kapattığında lambanın … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o02` | Bir öğrenci su tesisatında vanayı açtığında suyun akmaya b… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o03` | Bir su tesisatında borunun kireçlenme nedeniyle daraldığı … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o04` | Su tesisatı ile basit elektrik devresi karşılaştırıldığınd… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o05` | Su tesisatı ile basit elektrik devresinin farklılığı için … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o06` | Su sayacı kullanılan su miktarını ölçer. Bu eleman, elektr… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o07` | Su deposunun yüksek bir noktaya yerleştirilmesi suya potan… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o08` | Su tesisatı analojisinden yararlanılarak elektrik akımı iç… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o09` | Analojiye göre direnç kavramı için hangi çıkarım doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c01_o10` | Su tesisatında pompanın uyguladığı basınç artırıldığında s… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t03_c02.json (`FİZ.10.3.2`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c02_o01` | Bir iletkenin dik kesitinden 0,5 saniyede 2 C yük geçmişti… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o02` | Bir iletkende elektrik akımının oluşabilmesi için gerekli … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o03` | Bir iletkenden 10 saniyede 30 C yük geçmektedir. Bu iletke… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o04` | Bir metal telden akım geçerken tel içinde hareket eden yük… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o05` | Bir iletkende elektrik akımının yönü ile elektronların har… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o06` | Akım, yük ve zaman arasındaki ilişki için hangisi doğrudur… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o07` | Bir iletkenden 4 saniyede 12 C yük geçmektedir. Akım sabit… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o08` | İletkenin dik kesitinden geçen yük miktarı sabitken geçiş … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o09` | Bir elektrik devresinden 5 saniye boyunca 2 A akım geçmişt… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c02_o10` | Akım şiddeti 0,5 A olan bir iletkenden 1 dakika boyunca ge… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t03_c03.json (`FİZ.10.3.3`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c03_o01` | Bir öğrenci deneyde bir direncin uçları arasındaki potansi… | gorsel var | `grafik` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `fiz_10_t03_c03_o02` | Direnci 3 Ω olan bir iletkenin üzerinden 2 A akım geçmekte… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o03` | Bir iletkenin uçları arasındaki potansiyel fark 20 V iken … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o04` | Ohm Yasası'na göre sabit sıcaklıkta bir iletkenin uçları a… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o05` | Bir öğrenci 10 Ω'luk dirençle yaptığı deneyde uyguladığı p… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o06` | Uçları arasındaki potansiyel fark 24 V olan 8 Ω'luk direnç… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o07` | Aynı potansiyel fark altında direnci iki katına çıkarılan … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o08` | Üzerinden 0,5 A akım geçen 20 Ω'luk direncin uçları arasın… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o09` | Direnci sabit bir iletkende potansiyel fark 6 V'tan 18 V'a… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c03_o10` | Uçları arasındaki potansiyel fark 15 V, direnci 3 Ω olan b… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 1 soruda `gorsel` var (grafik)._
+
+## fiz_10_t03_c04.json (`FİZ.10.3.4`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c04_o01` | Dirençlerin seri bağlanması için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o02` | Paralel bağlı dirençler için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o03` | Birleşik (karışık) bağlı devre için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o04` | 3 Ω, 4 Ω ve 5 Ω'luk dirençler seri bağlanmıştır. Devrenin … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o05` | 6 Ω ve 3 Ω'luk iki direnç paralel bağlanmıştır. Devrenin e… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o06` | Bir iletken telin uzunluğu iki katına çıkarıldığında (kesi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o07` | İç direnci ihmal edilen 30 V değerindeki üretece 4 Ω ve 6 … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o08` | İki özdeş 2 Ω'luk direnç paralel bağlanarak iç direnci ihm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o09` | Seri bağlı dirençlerden oluşan bir devrenin eşdeğer direnc… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c04_o10` | 4 Ω ve 12 Ω'luk iki direnç paralel bağlanmıştır. 4 Ω'luk d… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t03_c05.json (`FİZ.10.3.5`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c05_o01` | Üreteçlerin seri bağlanması için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o02` | Paralel bağlı özdeş üreteçler için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o03` | Düz seri bağlı özdeş üreteçler için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o04` | Her birinin potansiyel farkı 1,5 V olan dört özdeş pil düz… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o05` | Potansiyel farkları 10 V, 15 V ve 20 V olan üç üreteç düz … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o06` | Aynı kutupları birbirine gelecek biçimde ters seri bağlana… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o07` | El fenerinde iki pilin seri düz bağlanması ile paralel bağ… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o08` | Paralel bağlı özdeş üreteçlerin sağladığı avantaj için han… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o09` | 8 V ile çalışan bir cihaz için elde yalnızca 2 V değerinde… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c05_o10` | Üreteçlerin seri mi paralel mi bağlanacağına karar verirke… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t03_c06.json (`FİZ.10.3.6`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c06_o01` | Elektrik akımının tehlikelerine karşı alınacak önlemlerle … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o02` | Bir öğrenci elektrik güvenliğiyle ilgili bilgi toplamak is… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o03` | Elektrik çarpması durumunda yapılması gerekenlerle ilgili … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o04` | Elektrik akımının tehlikelerinden korunmak için alınabilec… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o05` | Sigortanın işlevi için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o06` | Evlerdeki priz ve duyların birbirine paralel bağlı olmasın… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o07` | Bir öğrenci 'Elektrik kaynağıyla teması süren kişiye hemen… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o08` | Elektrik çarpması geçiren bir kişiye yapılması gerekenlerl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o09` | Elektrik güvenliğiyle ilgili toplanan bilgilerin kaydedilm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c06_o10` | Elektrik kazalarını önlemeye yönelik afiş hazırlayan bir ö… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## fiz_10_t03_c07.json (`FİZ.10.3.7`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c07_o01` | Topraklamanın ne olduğuyla ilgili hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o02` | Topraklı priz ile topraklamasız priz arasındaki fark için … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o03` | Topraklamayla ilgili aşağıdaki sorulardan hangisi toprakla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o04` | Bir öğrenci topraklamayı 5N1K sorularıyla araştırırken 'To… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o05` | Topraklamayla ilgili bilgi toplarken hangi kaynağın kullan… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o06` | Elektrik kaçağı olan topraklamasız bir cihaza dokunan kişi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o07` | Bir kaynakta 'Topraklama yalnızca yüksek gerilimli cihazla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o08` | Topraklamayla ilgili iki farklı bilgi toplanmıştır: biri '… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o09` | Topraklamanın önemi hakkında yapılabilecek çıkarım hangisi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `fiz_10_t03_c07_o10` | Bir mutfakta topraklı prize bağlı buzdolabında elektrik ka… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
 ---
 
-Toplam incelenen soru: **80** · görselli: **4** · görselsiz: **76**
+Toplam incelenen soru: **150** · görselli: **5** · görselsiz: **145**

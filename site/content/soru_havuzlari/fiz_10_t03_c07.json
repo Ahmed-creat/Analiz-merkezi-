@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t03_c07",
+  "kod": "FİZ.10.3.7",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "kazanim": "Topraklama olayının önemini sorgulayabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.255-270",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t03_c07_o01",
+      "alt_beceri": "Topraklama olayını tanımlar.",
+      "metin": "Topraklamanın ne olduğuyla ilgili hangisi doğrudur?",
+      "secenekler": [
+        "Cihazın üretece seri bağlanmasıdır.",
+        "Cihazın iletkenle toprağa gömülü sisteme bağlanmasıdır.",
+        "Prizlerin paralel bağlanmasıdır.",
+        "Sigortanın devreden çıkarılmasıdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Elektrikli cihazların, elektrik kaçağı tehlikesine karşı bir iletkenle toprağa gömülü hâldeki sisteme bağlanmasına topraklama denir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklamanın tanımını yazınız.",
+        "back": "Cihazların, elektrik kaçağı tehlikesine karşı iletkenle toprağa gömülü sisteme bağlanmasıdır."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o02",
+      "alt_beceri": "Topraklama olayını tanımlar.",
+      "metin": "Topraklı priz ile topraklamasız priz arasındaki fark için hangisi doğrudur?",
+      "secenekler": [
+        "Topraklı prizde cihaz hiç çalışmaz.",
+        "Topraklı priz yalnızca aydınlatmada kullanılır.",
+        "Topraklamasız priz daha güvenlidir.",
+        "Topraklı prizde kaçak akım güvenli biçimde toprağa aktarılır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Topraklı prizlerde kaçak akım, vücut üzerinden geçmek yerine toprak hattı üzerinden güvenli biçimde toprağa aktarılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklı prizin tanımı nedir?",
+        "back": "Toprak bağlantısı yapılmış prizdir."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o03",
+      "alt_beceri": "Topraklama olayıyla ilgili sorular sorar.",
+      "metin": "Topraklamayla ilgili aşağıdaki sorulardan hangisi topraklamanın işlevini sorgulamaya yöneliktir?",
+      "secenekler": [
+        "Topraklama kablosunun rengi nedir?",
+        "Topraklama ilk olarak hangi yılda uygulanmıştır?",
+        "Topraklama, elektrik kaçağı durumunda canlıları nasıl korur?",
+        "Topraklama işlemini hangi meslek grubu yapar?"
+      ],
+      "dogru_index": 2,
+      "cozum": "İşlevi sorgulayan soru, topraklamanın ne işe yaradığını ve canlıları nasıl koruduğunu araştırır. Renk, tarih ve meslek bilgisi işlevle ilgili değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklamanın işlevi nedir?",
+        "back": "Kaçak akımı güvenli biçimde toprağa aktararak canlıları korumak."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o04",
+      "alt_beceri": "Topraklama olayıyla ilgili sorular sorar.",
+      "metin": "Bir öğrenci topraklamayı 5N1K sorularıyla araştırırken 'Topraklama neden önemlidir?' sorusunu sormuştur. Bu soru 5N1K sorularından hangisine karşılık gelir?",
+      "secenekler": [
+        "Neden?",
+        "Ne?",
+        "Nasıl?",
+        "Kim?"
+      ],
+      "dogru_index": 0,
+      "cozum": "5N1K soruları ne, nerede, ne zaman, neden, nasıl ve kim sorularıdır. 'Neden önemlidir?' sorusu neden sorusuna karşılık gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "5N1K sorularının açılımı nedir?",
+        "back": "Ne, nerede, ne zaman, neden, nasıl, kim."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o05",
+      "alt_beceri": "Topraklama olayı hakkında bilgi toplar.",
+      "metin": "Topraklamayla ilgili bilgi toplarken hangi kaynağın kullanılması uygundur?",
+      "secenekler": [
+        "Elektrik teknisyeni olmayan kişilerin kulaktan dolma tavsiyeleri",
+        "İnternetteki isimsiz forum yorumları",
+        "Tanıtım amacıyla hazırlanmış reklam broşürleri",
+        "Resmî kurumların elektrik tesisatı yönetmelikleri"
+      ],
+      "dogru_index": 3,
+      "cozum": "Topraklama bir güvenlik konusudur; bu nedenle resmî kurumların yönetmelikleri ve yetkili kaynaklar esas alınmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Resmî yönetmeliklerin işlevi nedir?",
+        "back": "Elektrik tesisatının güvenli kurulumu için uyulması gereken kuralları belirler."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o06",
+      "alt_beceri": "Topraklama olayı hakkında bilgi toplar.",
+      "metin": "Elektrik kaçağı olan topraklamasız bir cihaza dokunan kişiden akım geçmesinin nedeni için hangisi doğrudur?",
+      "secenekler": [
+        "Vücut direncinin sonsuz büyük olması",
+        "Kaçak akımın toprağa aktarılamaması ve vücudun akım yolu olması",
+        "Cihazın üretece seri olarak bağlanmış olması",
+        "Prizin devreye paralel olarak bağlanmış olması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Topraklama yoksa kaçak akım toprağa güvenli biçimde aktarılamaz; bu durumda vücut akım yolu hâline gelir ve kişi elektrik çarpmasına maruz kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik kaçağının tanımını yazınız.",
+        "back": "Akımın, cihazın olmaması gereken bir noktasına geçmesiyle oluşan durumdur."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o07",
+      "alt_beceri": "Topraklama olayı ile ilgili topladığı bilgilerin doğru olup olmadığını değerlendirir.",
+      "metin": "Bir kaynakta 'Topraklama yalnızca yüksek gerilimli cihazlarda gereklidir.' bilgisi yer almaktadır. Bu bilginin doğruluğu için hangisi doğrudur?",
+      "secenekler": [
+        "Yanlıştır; kaçak riski taşıyan tüm cihazlarda topraklama gerekir.",
+        "Doğrudur; düşük gerilimlerde elektrik çarpması tehlikesi bulunmaz.",
+        "Doğrudur; topraklama yalnızca sanayi tesislerinde uygulanır.",
+        "Bu bilginin doğruluğu değerlendirilemez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Elektrik kaçağı düşük gerilimlerde de canlılar için tehlikelidir. Bu nedenle topraklama, kaçak riski taşıyan tüm cihazlarda gereklidir; bilgi yanlıştır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklamanın canlı güvenliğiyle ilişkisi nedir?",
+        "back": "Kaçak akımı vücut yerine toprağa yönlendirerek çarpılma riskini azaltır."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o08",
+      "alt_beceri": "Topraklama olayı ile ilgili topladığı bilgilerin doğru olup olmadığını değerlendirir.",
+      "metin": "Topraklamayla ilgili iki farklı bilgi toplanmıştır: biri 'topraklı priz kullanılmalıdır', diğeri 'topraklama gereksizdir'. Doğrulanabilir bilgi hangisidir?",
+      "secenekler": [
+        "Topraklamanın gereksiz olduğu bilgisi",
+        "Her iki bilgi de doğrudur",
+        "Topraklı priz kullanılması gerektiği bilgisi",
+        "Her iki bilgi de yanlıştır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Elektrik kaçağı tehlikesini önlemek için topraklı prizler kullanılır. Bu bilgi yönetmeliklerle ve ders kitabıyla desteklenir; gereksiz olduğu bilgisi doğrulanamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklamasız cihaz kullanmanın riski nedir?",
+        "back": "Kaçak akımın vücut üzerinden geçerek elektrik çarpmasına yol açması."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o09",
+      "alt_beceri": "Topraklama olayının önemi hakkında çıkarım yapar.",
+      "metin": "Topraklamanın önemi hakkında yapılabilecek çıkarım hangisidir?",
+      "secenekler": [
+        "Topraklama enerji tasarrufu sağlayan bir uygulamadır.",
+        "Topraklama, kaçak akımı güvenli yola yönlendirip canlıları korur.",
+        "Topraklama potansiyel farkını artırarak cihazları hızlandırır.",
+        "Topraklama direnci azaltarak akımı artırır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Topraklama, elektrik kaçağı durumunda akımı güvenli bir yola yönlendirir. Böylece akımın canlı vücudundan geçmesi önlenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yetkili elektrik teknisyeninin görevi nedir?",
+        "back": "Topraklama dâhil tesisat işlerini yönetmeliklere uygun biçimde yapmak."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c07_o10",
+      "alt_beceri": "Topraklama olayının önemi hakkında çıkarım yapar.",
+      "metin": "Bir mutfakta topraklı prize bağlı buzdolabında elektrik kaçağı oluşmuş ve buzdolabına dokunan kişi çarpılmamıştır. Bu durumda topraklamanın etkisi için hangisi doğrudur?",
+      "secenekler": [
+        "Akım, kişi yerine toprak hattından geçer.",
+        "Kaçak akımın büyüklüğü artar.",
+        "Cihaz tamamen çalışmaz hâle gelir.",
+        "Vücudun direnci azalarak akım artar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Topraklama yapılmışsa kaçak akım toprak hattı üzerinden akar; vücut üzerinden geçen akım azalır. Bu nedenle topraklı prizler kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Topraklı prizlerin yaygınlaşmasının amacı nedir?",
+        "back": "Elektrik kaçağı tehlikesini önlemek."
+      },
+      "kazanim": "Topraklama olayının önemini sorgulayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t03_c07_o01:flashcard",
+      "front": "Topraklamanın tanımını yazınız.",
+      "back": "Cihazların, elektrik kaçağı tehlikesine karşı iletkenle toprağa gömülü sisteme bağlanmasıdır."
+    },
+    {
+      "id": "fiz_10_t03_c07_o02:flashcard",
+      "front": "Topraklı prizin tanımı nedir?",
+      "back": "Toprak bağlantısı yapılmış prizdir."
+    },
+    {
+      "id": "fiz_10_t03_c07_o03:flashcard",
+      "front": "Topraklamanın işlevi nedir?",
+      "back": "Kaçak akımı güvenli biçimde toprağa aktararak canlıları korumak."
+    },
+    {
+      "id": "fiz_10_t03_c07_o04:flashcard",
+      "front": "5N1K sorularının açılımı nedir?",
+      "back": "Ne, nerede, ne zaman, neden, nasıl, kim."
+    },
+    {
+      "id": "fiz_10_t03_c07_o05:flashcard",
+      "front": "Resmî yönetmeliklerin işlevi nedir?",
+      "back": "Elektrik tesisatının güvenli kurulumu için uyulması gereken kuralları belirler."
+    },
+    {
+      "id": "fiz_10_t03_c07_o06:flashcard",
+      "front": "Elektrik kaçağının tanımını yazınız.",
+      "back": "Akımın, cihazın olmaması gereken bir noktasına geçmesiyle oluşan durumdur."
+    },
+    {
+      "id": "fiz_10_t03_c07_o07:flashcard",
+      "front": "Topraklamanın canlı güvenliğiyle ilişkisi nedir?",
+      "back": "Kaçak akımı vücut yerine toprağa yönlendirerek çarpılma riskini azaltır."
+    },
+    {
+      "id": "fiz_10_t03_c07_o08:flashcard",
+      "front": "Topraklamasız cihaz kullanmanın riski nedir?",
+      "back": "Kaçak akımın vücut üzerinden geçerek elektrik çarpmasına yol açması."
+    },
+    {
+      "id": "fiz_10_t03_c07_o09:flashcard",
+      "front": "Yetkili elektrik teknisyeninin görevi nedir?",
+      "back": "Topraklama dâhil tesisat işlerini yönetmeliklere uygun biçimde yapmak."
+    },
+    {
+      "id": "fiz_10_t03_c07_o10:flashcard",
+      "front": "Topraklı prizlerin yaygınlaşmasının amacı nedir?",
+      "back": "Elektrik kaçağı tehlikesini önlemek."
+    }
+  ]
+}

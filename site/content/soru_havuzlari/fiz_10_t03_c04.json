@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t03_c04",
+  "kod": "FİZ.10.3.4",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.224-242",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t03_c04_o01",
+      "alt_beceri": "Dirençlerin seri, paralel ve birleşik bağlanma türlerini tanımlar.",
+      "metin": "Dirençlerin seri bağlanması için hangisi doğrudur?",
+      "secenekler": [
+        "Uç uca bağlanırlar ve üzerlerinden farklı akımlar geçer.",
+        "Uç uca bağlanırlar ve üzerlerinden aynı akım geçer.",
+        "Aynı iki nokta arasına bağlanırlar.",
+        "Yalnızca iki dirençle oluşturulabilir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Seri bağlamada dirençler uç uca eklenir; tek yol bulunduğu için tüm dirençlerden aynı akım geçer.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri bağlamanın tanımını yazınız.",
+        "back": "Dirençlerin uç uca bağlanmasıdır; her birinden aynı akım geçer."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o02",
+      "alt_beceri": "Dirençlerin seri, paralel ve birleşik bağlanma türlerini tanımlar.",
+      "metin": "Paralel bağlı dirençler için hangisi doğrudur?",
+      "secenekler": [
+        "Üzerlerinden aynı akım geçer.",
+        "Uçları arasındaki potansiyel farklar birbirinden farklıdır.",
+        "Uçları arasındaki potansiyel farklar birbirine eşittir.",
+        "Eşdeğer direnç, en büyük dirençten daha büyüktür."
+      ],
+      "dogru_index": 2,
+      "cozum": "Paralel bağlamada dirençlerin üst uçları ve alt uçları ortak noktalarda birleştiği için uçları arasındaki potansiyel fark eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel bağlamanın tanımını yazınız.",
+        "back": "Dirençlerin aynı iki nokta arasına bağlanmasıdır; potansiyel farkları eşittir."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o03",
+      "alt_beceri": "Dirençlerin seri, paralel ve birleşik bağlanma türlerini tanımlar.",
+      "metin": "Birleşik (karışık) bağlı devre için hangisi doğrudur?",
+      "secenekler": [
+        "Yalnızca seri bağlı dirençlerden oluşur.",
+        "Yalnızca paralel bağlı dirençlerden oluşur.",
+        "Dirençlerin tümü aynı değerde olmak zorundadır.",
+        "Seri ve paralel bağlantıların birlikte bulunduğu devredir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Birleşik bağlı devrede bazı dirençler seri, bazıları paralel bağlanır; eşdeğer direnç hesaplanırken bağlantı türü basamak basamak çözülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birleşik bağlamanın tanımını yazınız.",
+        "back": "Seri ve paralel bağlantıların aynı devrede birlikte bulunduğu bağlama türüdür."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o04",
+      "alt_beceri": "Dirençlerin seri, paralel ve birleşik bağlanması ile eşdeğer direnç arasındaki ilişkiyi belirlemek üzere veri toplar ve kaydeder.",
+      "metin": "3 Ω, 4 Ω ve 5 Ω'luk dirençler seri bağlanmıştır. Devrenin eşdeğer direnci kaç Ω'dur?",
+      "secenekler": [
+        "12",
+        "6",
+        "1,7",
+        "60"
+      ],
+      "dogru_index": 0,
+      "cozum": "Seri bağlamada eşdeğer direnç dirençlerin toplamıdır: 3 + 4 + 5 = 12 Ω.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri bağlı dirençlerin eşdeğer direnç formülünü yazınız.",
+        "back": "R_eş = R1 + R2 + R3 + …"
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o05",
+      "alt_beceri": "Dirençlerin seri, paralel ve birleşik bağlanması ile eşdeğer direnç arasındaki ilişkiyi belirlemek üzere veri toplar ve kaydeder.",
+      "metin": "6 Ω ve 3 Ω'luk iki direnç paralel bağlanmıştır. Devrenin eşdeğer direnci kaç Ω'dur?",
+      "secenekler": [
+        "9",
+        "4,5",
+        "2",
+        "18"
+      ],
+      "dogru_index": 2,
+      "cozum": "Paralel bağlamada 1/R_eş = 1/6 + 1/3 = 3/6 olduğundan R_eş = 2 Ω bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel bağlı iki direnç için eşdeğer direnç kuralı nedir?",
+        "back": "1/R_eş = 1/R1 + 1/R2; eşdeğer direnç en küçük dirençten küçüktür."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o06",
+      "alt_beceri": "Dirençlerin seri, paralel ve birleşik bağlanması ile eşdeğer direnç arasındaki ilişkiyi belirlemek üzere veri toplar ve kaydeder.",
+      "metin": "Bir iletken telin uzunluğu iki katına çıkarıldığında (kesit alanı ve cinsi aynı) direnci nasıl değişir?",
+      "secenekler": [
+        "Yarıya iner.",
+        "İki katına çıkar.",
+        "Değişmez.",
+        "Dört katına çıkar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Direncin büyüklüğü iletkenin uzunluğu ile doğru orantılıdır. Uzunluk iki katına çıktığında direnç de iki katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Direnç ile iletkenin uzunluğu ve kesit alanı arasındaki ilişki nedir?",
+        "back": "Uzunluk arttıkça direnç artar; kesit alanı arttıkça direnç azalır."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o07",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak ulaştığı çıkarımları matematiksel modellemeleri kullanarak test eder.",
+      "metin": "İç direnci ihmal edilen 30 V değerindeki üretece 4 Ω ve 6 Ω büyüklüğündeki dirençler seri bağlanmıştır. Ana koldan geçen akım kaç amperdir?",
+      "secenekler": [
+        "5",
+        "0,33",
+        "7,5",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "Eşdeğer direnç 4 + 6 = 10 Ω'dur. Ohm Yasası'na göre I = V / R_eş = 30 / 10 = 3 A bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri bağlı devrede akım ile ana kol akımı arasındaki ilişki nedir?",
+        "back": "Tüm dirençlerden geçen akım ana kol akımına eşittir."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o08",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak ulaştığı çıkarımları matematiksel modellemeleri kullanarak test eder.",
+      "metin": "İki özdeş 2 Ω'luk direnç paralel bağlanarak iç direnci ihmal edilen 10 V'luk üretece bağlanmıştır. Ana kol akımı kaç A'dır?",
+      "secenekler": [
+        "10",
+        "5",
+        "20",
+        "2,5"
+      ],
+      "dogru_index": 0,
+      "cozum": "Paralel iki 2 Ω'luk direncin eşdeğeri 1 Ω'dur. Ana kol akımı I = 10 / 1 = 10 A bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel bağlamada ana kol akımı ile dallardaki akımlar arasındaki ilişki nedir?",
+        "back": "Ana kol akımı, dallardan geçen akımların toplamına eşittir."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o09",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak ulaştığı çıkarımları matematiksel modellemeleri kullanarak test eder.",
+      "metin": "Seri bağlı dirençlerden oluşan bir devrenin eşdeğer direnci için hangisi doğrudur?",
+      "secenekler": [
+        "Devredeki en küçük dirençten küçüktür.",
+        "Dirençlerin aritmetik ortalamasına eşittir.",
+        "Devredeki en büyük dirençten daha büyüktür.",
+        "Her zaman sıfırdır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Seri bağlamada eşdeğer direnç, dirençlerin toplamıdır. Toplam her bir dirençten büyük olduğundan en büyük dirençten de büyüktür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri bağlamada eşdeğer direncin büyüklük kuralı nedir?",
+        "back": "Eşdeğer direnç, bağlı dirençlerin en büyüğünden daha büyüktür."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c04_o10",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak ulaştığı çıkarımları matematiksel modellemeleri kullanarak test eder.",
+      "metin": "4 Ω ve 12 Ω'luk iki direnç paralel bağlanmıştır. 4 Ω'luk direnç üzerinden 3 A akım geçtiğine göre 12 Ω'luk direnç üzerinden geçen akım kaç A'dır?",
+      "secenekler": [
+        "9",
+        "1",
+        "3",
+        "4"
+      ],
+      "dogru_index": 1,
+      "cozum": "Paralel bağlı dirençlerin uçları arasındaki potansiyel fark eşittir: V = 3 · 4 = 12 V. Buradan 12 Ω üzerinden geçen akım 12 / 12 = 1 A bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri bağlı dirençlerin potansiyel farkları ile üretecin potansiyel farkı arasındaki ilişki nedir?",
+        "back": "V = V1 + V2 + V3; toplamları üretecin potansiyel farkına eşittir."
+      },
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t03_c04_o01:flashcard",
+      "front": "Seri bağlamanın tanımını yazınız.",
+      "back": "Dirençlerin uç uca bağlanmasıdır; her birinden aynı akım geçer."
+    },
+    {
+      "id": "fiz_10_t03_c04_o02:flashcard",
+      "front": "Paralel bağlamanın tanımını yazınız.",
+      "back": "Dirençlerin aynı iki nokta arasına bağlanmasıdır; potansiyel farkları eşittir."
+    },
+    {
+      "id": "fiz_10_t03_c04_o03:flashcard",
+      "front": "Birleşik bağlamanın tanımını yazınız.",
+      "back": "Seri ve paralel bağlantıların aynı devrede birlikte bulunduğu bağlama türüdür."
+    },
+    {
+      "id": "fiz_10_t03_c04_o04:flashcard",
+      "front": "Seri bağlı dirençlerin eşdeğer direnç formülünü yazınız.",
+      "back": "R_eş = R1 + R2 + R3 + …"
+    },
+    {
+      "id": "fiz_10_t03_c04_o05:flashcard",
+      "front": "Paralel bağlı iki direnç için eşdeğer direnç kuralı nedir?",
+      "back": "1/R_eş = 1/R1 + 1/R2; eşdeğer direnç en küçük dirençten küçüktür."
+    },
+    {
+      "id": "fiz_10_t03_c04_o06:flashcard",
+      "front": "Direnç ile iletkenin uzunluğu ve kesit alanı arasındaki ilişki nedir?",
+      "back": "Uzunluk arttıkça direnç artar; kesit alanı arttıkça direnç azalır."
+    },
+    {
+      "id": "fiz_10_t03_c04_o07:flashcard",
+      "front": "Seri bağlı devrede akım ile ana kol akımı arasındaki ilişki nedir?",
+      "back": "Tüm dirençlerden geçen akım ana kol akımına eşittir."
+    },
+    {
+      "id": "fiz_10_t03_c04_o08:flashcard",
+      "front": "Paralel bağlamada ana kol akımı ile dallardaki akımlar arasındaki ilişki nedir?",
+      "back": "Ana kol akımı, dallardan geçen akımların toplamına eşittir."
+    },
+    {
+      "id": "fiz_10_t03_c04_o09:flashcard",
+      "front": "Seri bağlamada eşdeğer direncin büyüklük kuralı nedir?",
+      "back": "Eşdeğer direnç, bağlı dirençlerin en büyüğünden daha büyüktür."
+    },
+    {
+      "id": "fiz_10_t03_c04_o10:flashcard",
+      "front": "Seri bağlı dirençlerin potansiyel farkları ile üretecin potansiyel farkı arasındaki ilişki nedir?",
+      "back": "V = V1 + V2 + V3; toplamları üretecin potansiyel farkına eşittir."
+    }
+  ]
+}

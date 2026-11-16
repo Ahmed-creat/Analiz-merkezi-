@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t03_c01",
+  "kod": "FİZ.10.3.1",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.201-209",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t03_c01_o01",
+      "alt_beceri": "Basit elektrik devresi ile su tesisatının bileşenlerini gözlemler.",
+      "metin": "Bir öğrenci el fenerinin anahtarını kapattığında lambanın yandığını, açtığında söndüğünü gözlemlemiştir. Bu gözleme göre anahtarın işlevi için hangisi doğrudur?",
+      "secenekler": [
+        "Devredeki potansiyel farkı artırır.",
+        "Devredeki direnci azaltarak lambayı söndürür.",
+        "Devreden akım geçişini kontrol ederek devreyi açıp kapatır.",
+        "Üretecin tükenme süresini uzatır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Anahtar devreyi açıp kapatmaya yarar. Anahtar açıkken devreden akım geçmez ve devre çalışmaz; kapalıyken akım geçerek lamba yanar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Anahtarın tanımını yazınız.",
+        "back": "Devreyi açıp kapatmaya yarayan devre elemanıdır."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o02",
+      "alt_beceri": "Basit elektrik devresi ile su tesisatının bileşenlerini gözlemler.",
+      "metin": "Bir öğrenci su tesisatında vanayı açtığında suyun akmaya başladığını, basit elektrik devresinde anahtarı kapattığında lambanın yandığını gözlemlemiştir. Bu iki gözlemde ortak olan unsur hangisidir?",
+      "secenekler": [
+        "Her ikisinde de akışı başlatan bir kontrol elemanı bulunması",
+        "Her ikisinde de su kullanılması",
+        "Her ikisinde de potansiyel farkın sabit kalması",
+        "Her ikisinde de direncin sıfır olması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Her iki sistem de bir enerji kaynağı, bir akış yolu ve bir kontrol mekanizması içerir. Vana ile anahtar, akışı denetleyen kontrol elemanlarıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Basit elektrik devresinde enerji kaynağının görevi nedir?",
+        "back": "Yükleri harekete geçirecek potansiyel farkı sağlamak."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o03",
+      "alt_beceri": "Basit elektrik devresi ile su tesisatının bileşenlerini gözlemler.",
+      "metin": "Bir su tesisatında borunun kireçlenme nedeniyle daraldığı gözlenmiştir. Bu daralmanın suyun akışına etkisi için hangisi doğrudur?",
+      "secenekler": [
+        "Akış hızlanır, çünkü borudaki basınç artar.",
+        "Akış hiç değişmez.",
+        "Akış tamamen durur.",
+        "Akış zorlaşır; daralma akışa karşı bir zorluk oluşturur."
+      ],
+      "dogru_index": 3,
+      "cozum": "Borudaki daralma suyun akışını zorlaştırır. Bu durum elektrik devresinde direncin akıma gösterdiği zorluğa benzer.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su tesisatı analojisinde kireçlenmiş dar borunun karşılığı nedir?",
+        "back": "Direnç."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o04",
+      "alt_beceri": "Basit elektrik devresi ile su tesisatının bileşenleri arasındaki benzerlikleri ve farklılıkları tespit eder.",
+      "metin": "Su tesisatı ile basit elektrik devresi karşılaştırıldığında aşağıdaki eşleştirmelerden hangisi yanlıştır?",
+      "secenekler": [
+        "Pompa – üreteç",
+        "Boru – direnç",
+        "Vana – anahtar",
+        "Kireçlenmiş dar boru – direnç"
+      ],
+      "dogru_index": 1,
+      "cozum": "Boru, devre elemanlarını birbirine bağlayan ve enerji iletimini sağlayan kabloya yani iletken tele karşılık gelir. Direncin karşılığı kireçlenmiş dar borudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su tesisatı analojisinde borunun karşılığı nedir?",
+        "back": "İletken tel (kablo)."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o05",
+      "alt_beceri": "Basit elektrik devresi ile su tesisatının bileşenleri arasındaki benzerlikleri ve farklılıkları tespit eder.",
+      "metin": "Su tesisatı ile basit elektrik devresinin farklılığı için hangisi doğrudur?",
+      "secenekler": [
+        "Elektrik devresinde elektronlar borudaki su gibi tek yönde hızla ilerler.",
+        "Elektrik devresinde elektronlar titreşerek küçük mesafelerde yol alır.",
+        "Su tesisatında enerji kaynağı bulunmaz.",
+        "Su tesisatında akışı kontrol eden eleman yoktur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Su pompa yardımıyla borunun bir ucundan diğerine ilerler. Elektronlar ise potansiyel fark etkisiyle titreşir, birbirine enerji aktararak yavaşça sürüklenir ve akımı oluşturur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektronların iletken tel içindeki hareketini tanımlayınız.",
+        "back": "Titreşerek küçük mesafelerde yol alır, birbirine enerji aktararak yavaşça sürüklenir."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o06",
+      "alt_beceri": "Basit elektrik devresi ile su tesisatının bileşenleri arasındaki benzerlikleri ve farklılıkları tespit eder.",
+      "metin": "Su sayacı kullanılan su miktarını ölçer. Bu eleman, elektrik devresindeki hangi ölçüm aracıyla ilişkilendirilebilir?",
+      "secenekler": [
+        "Birim zamanda geçen yük miktarını ölçen ampermetre",
+        "Potansiyel farkı ölçen voltmetre",
+        "Direnci ölçen ohmmetre",
+        "Enerji depolayan üreteç"
+      ],
+      "dogru_index": 0,
+      "cozum": "Su sayacı birim zamanda kullanılan su miktarını ölçer. Elektrik devresinde birim zamanda geçen yük miktarını yani akımı ölçen araç ampermetredir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su tesisatı analojisinde su sayacının karşılığı nedir?",
+        "back": "Ampermetre."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o07",
+      "alt_beceri": "Benzerliklere dayalı olarak basit elektrik devresindeki potansiyel fark, elektrik akımı ve direncin tanımı hakkında çıkarım yapar.",
+      "metin": "Su deposunun yüksek bir noktaya yerleştirilmesi suya potansiyel enerji kazandırır ve borularda basınç oluşturur. Bu durumun elektrik devresindeki karşılığı için hangisi doğrudur?",
+      "secenekler": [
+        "Devredeki direncin artması",
+        "Anahtarın kapatılması",
+        "İletken telin uzaması",
+        "Üretecin uçları arasındaki potansiyel fark"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yüksekliğin suda oluşturduğu basınç, elektrik devresinde üretecin uçları arasındaki potansiyel farka karşılık gelir; yükleri harekete geçiren etkiyi sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su deposunun yüksekliğinin elektrik devresindeki karşılığı nedir?",
+        "back": "Üretecin uçları arasındaki potansiyel fark."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o08",
+      "alt_beceri": "Benzerliklere dayalı olarak basit elektrik devresindeki potansiyel fark, elektrik akımı ve direncin tanımı hakkında çıkarım yapar.",
+      "metin": "Su tesisatı analojisinden yararlanılarak elektrik akımı için hangi çıkarım yapılabilir?",
+      "secenekler": [
+        "Akım, iletkenin uçları arasındaki potansiyel farkla harekete geçen yüklerin akışıdır.",
+        "Akım, üretecin kütlesine bağlıdır.",
+        "Akım, borunun rengine bağlıdır.",
+        "Akım yalnızca anahtar açıkken oluşur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Analojide suyun akışı elektrik akımına karşılık gelir. Akım, potansiyel fark etkisiyle yüklerin iletken içinde hareket etmesiyle oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımının tanımını yazınız.",
+        "back": "Bir iletkenin dik kesitinden birim zamanda geçen toplam yük miktarıdır."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o09",
+      "alt_beceri": "Benzerliklere dayalı olarak basit elektrik devresindeki potansiyel fark, elektrik akımı ve direncin tanımı hakkında çıkarım yapar.",
+      "metin": "Analojiye göre direnç kavramı için hangi çıkarım doğrudur?",
+      "secenekler": [
+        "Direnç, üretecin potansiyel farkını artıran elemandır.",
+        "Direnç, devredeki yük miktarını ölçen elemandır.",
+        "Direnç, iletkenin akımın geçişine karşı gösterdiği zorluktur.",
+        "Direnç, anahtarın bir türüdür."
+      ],
+      "dogru_index": 2,
+      "cozum": "Kireçlenmiş dar borunun suyun akışına gösterdiği zorluk gibi direnç de iletkenin içinden geçen elektrik akımına karşı gösterdiği zorluktur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Direnci tanımlayınız.",
+        "back": "İletkenin içinden geçen elektrik akımına karşı gösterdiği zorluktur."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c01_o10",
+      "alt_beceri": "Benzerliklere dayalı olarak basit elektrik devresindeki potansiyel fark, elektrik akımı ve direncin tanımı hakkında çıkarım yapar.",
+      "metin": "Su tesisatında pompanın uyguladığı basınç artırıldığında suyun akış hızı artar. Elektrik devresinde bu duruma karşılık gelen değişim için hangisi doğrudur?",
+      "secenekler": [
+        "Üretecin potansiyel farkı artırıldığında devreden geçen akım artar.",
+        "Direnç artırıldığında devreden geçen akım artar.",
+        "Potansiyel fark artırıldığında devreden geçen akım azalır.",
+        "Akım, potansiyel farktan bağımsızdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Basınç artışının akışı hızlandırması gibi potansiyel fark artışı da akımı artırır; potansiyel fark ile akım doğru orantılıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Direncin biriminin adı ve sembolü nedir?",
+        "back": "Ohm (Ω); direnç R ile gösterilir."
+      },
+      "kazanim": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t03_c01_o01:flashcard",
+      "front": "Anahtarın tanımını yazınız.",
+      "back": "Devreyi açıp kapatmaya yarayan devre elemanıdır."
+    },
+    {
+      "id": "fiz_10_t03_c01_o02:flashcard",
+      "front": "Basit elektrik devresinde enerji kaynağının görevi nedir?",
+      "back": "Yükleri harekete geçirecek potansiyel farkı sağlamak."
+    },
+    {
+      "id": "fiz_10_t03_c01_o03:flashcard",
+      "front": "Su tesisatı analojisinde kireçlenmiş dar borunun karşılığı nedir?",
+      "back": "Direnç."
+    },
+    {
+      "id": "fiz_10_t03_c01_o04:flashcard",
+      "front": "Su tesisatı analojisinde borunun karşılığı nedir?",
+      "back": "İletken tel (kablo)."
+    },
+    {
+      "id": "fiz_10_t03_c01_o05:flashcard",
+      "front": "Elektronların iletken tel içindeki hareketini tanımlayınız.",
+      "back": "Titreşerek küçük mesafelerde yol alır, birbirine enerji aktararak yavaşça sürüklenir."
+    },
+    {
+      "id": "fiz_10_t03_c01_o06:flashcard",
+      "front": "Su tesisatı analojisinde su sayacının karşılığı nedir?",
+      "back": "Ampermetre."
+    },
+    {
+      "id": "fiz_10_t03_c01_o07:flashcard",
+      "front": "Su deposunun yüksekliğinin elektrik devresindeki karşılığı nedir?",
+      "back": "Üretecin uçları arasındaki potansiyel fark."
+    },
+    {
+      "id": "fiz_10_t03_c01_o08:flashcard",
+      "front": "Elektrik akımının tanımını yazınız.",
+      "back": "Bir iletkenin dik kesitinden birim zamanda geçen toplam yük miktarıdır."
+    },
+    {
+      "id": "fiz_10_t03_c01_o09:flashcard",
+      "front": "Direnci tanımlayınız.",
+      "back": "İletkenin içinden geçen elektrik akımına karşı gösterdiği zorluktur."
+    },
+    {
+      "id": "fiz_10_t03_c01_o10:flashcard",
+      "front": "Direncin biriminin adı ve sembolü nedir?",
+      "back": "Ohm (Ω); direnç R ile gösterilir."
+    }
+  ]
+}
