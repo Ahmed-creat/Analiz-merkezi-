@@ -18,6 +18,7 @@
 --     eski "vardiyada tek gönderim" anahtarı (…:reviews) artık KULLANILMAZ.
 --   • TTL 86400 → 5400 (90 dk): cihaz açıldığında biriken ESKİ mesajlar
 --     topluca patlamasın; sıradaki deneme zaten en geç 2 saat sonra.
+--     v61: 5400 → 9000 (2,5 saat). Cihaz 2 saat sonra uyansa bile mesaj yaşar.
 --   • Onay eşleşmesi: başlık + gün + abonelik son 4 hanesi.
 --
 -- CRON: 07:35 · 09:35 · 11:35 · 13:05 (sabah) · 19:30 · 21:35 (akşam) TR
@@ -128,7 +129,7 @@ begin
         body := jsonb_build_object(
           'abonelik_id', a.id,
           -- 90 dk: cihaz kapalıysa mesaj birikmesin, sıradaki deneme zaten gelir.
-          'ttl', '5400',
+          'ttl', '9000',
           'sifreli', 'webpush',
           'mesaj', yuk
         )
@@ -145,4 +146,4 @@ end;
 $fn$;
 
 comment on function public.webpush_tetikle() is
-  'Hatırlatma: cihaz gosterildi=true yazana kadar vardiya başına en fazla 4 deneme. TTL 90 dk. Tek kanal: push-tani (web-push).';
+  'Hatırlatma: cihaz gosterildi=true yazana kadar vardiya başına en fazla 4 deneme. TTL 150 dk. Tek kanal: push-tani (web-push).';

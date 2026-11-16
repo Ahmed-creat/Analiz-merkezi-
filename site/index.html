@@ -35,6 +35,14 @@ document.documentElement.setAttribute("data-theme",t);})();
   /* Marka */
   --brand-blue: #2563EB;         /* Royal Blue */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+  /* v61 — KULLANICI: "uygulamada önemli tuşlar vb mavi olmamalı."
+     Depodaki renk dokümanları maviyi bir TÜR rengi olarak tanımlıyor
+     (docs/v37-raporu.md: kısa kontrol = mavi #2563EB), eylem rengi olarak
+     değil. Bu yüzden birincil eylem yüzeyi artık MÜREKKEP (koyu grafit):
+     mavi yalnız bilgi/vurgu (ikon, rozet, bağlantı) olarak kalır. */
+  --action-bg: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+  --action-fg: #FFFFFF;
+  --action-shadow: 0 4px 14px -4px rgba(15,23,42,0.45);
   /* Semantik (tema.pdf: renk + pastel zemin çiftleri) */
   --semantic-success: #10B981; --semantic-success-bg: #ECFDF5;
   --semantic-error:   #EF4444;   --semantic-error-bg:   #FEF2F2;
@@ -71,6 +79,9 @@ document.documentElement.setAttribute("data-theme",t);})();
   --text-muted: #A1A1A1;           /* Geist muted */
   --brand-blue: #3B82F6;           /* okunabilir mavi vurgu */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+  --action-bg: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+  --action-fg: #0F172A;
+  --action-shadow: 0 4px 14px -4px rgba(0,0,0,0.55);
   --semantic-success: #0CCA93; --semantic-success-bg: #04231C;   /* Geist yeşili */
   --semantic-error:   #F04452;   --semantic-error-bg:   #2A0D10;
   --semantic-warning: #F5A623;   --semantic-warning-bg: #2A1D04;
@@ -95,6 +106,9 @@ document.documentElement.setAttribute("data-theme",t);})();
   --text-muted: #A1A1A1;           /* Geist muted */
   --brand-blue: #3B82F6;           /* okunabilir mavi vurgu */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+  --action-bg: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+  --action-fg: #0F172A;
+  --action-shadow: 0 4px 14px -4px rgba(0,0,0,0.55);
   --semantic-success: #0CCA93; --semantic-success-bg: #04231C;   /* Geist yeşili */
   --semantic-error:   #F04452;   --semantic-error-bg:   #2A0D10;
   --semantic-warning: #F5A623;   --semantic-warning-bg: #2A1D04;
@@ -403,7 +417,7 @@ body { max-width: 100%; }
   transition: var(--transition-smooth); text-decoration: none;
 }
 .btn svg { width: 16px; height: 16px; }
-.btn-primary { background: var(--brand-gradient); color: #fff; box-shadow: 0 4px 14px -4px rgba(37,99,235,0.4); }
+.btn-primary { background: var(--action-bg); color: var(--action-fg); box-shadow: var(--action-shadow); }
 .btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
 .btn-success { background: var(--semantic-success); color: #fff; }
 .btn-danger { background: var(--semantic-error); color: #fff; }
@@ -2312,6 +2326,51 @@ function yerelSistemBildirimi(n) {
     }).catch(function () { /* gösterilemezse uygulama içi bildirim kalır */ });
   } catch (e) { /* */ }
 }
+
+// v61 — HATIRLATMA TELAFİSİ (cihaz kapalıyken kaçan hatırlatma).
+// KULLANICI: "Tableti açınca tekrar bildirimi gelmedi, sadece uygulamaya girince
+// test bildirimi geliyor."
+// GERÇEK: Web push, tarayıcı arka planda çalışırken iner; tablet derin uykuda
+// ya da Chrome askıya alınmışsa mesaj cihaza hiç ulaşmaz (canlı kanıt:
+// 16 Kas 07:35 cron 201 aldı, push_teslim'de tek satır yok; tablet 11:06'da
+// açılınca aynı aboneliğe giden push anında düştü).
+// ÇÖZÜM: uygulama açıldığında, o günün hatırlatması bu cihazda HİÇ
+// gösterilmediyse aynı hatırlatma YEREL sistem bildirimi olarak gösterilir.
+// Böylece "bildirim gelmedi" durumu kalmaz: en geç uygulamayı açtığında,
+// TEST değil GERÇEK hatırlatmayı görürsün.
+function hatirlatmaTelafisi() {
+  try {
+    if (typeof Notification === "undefined" || Notification.permission !== "granted") return;
+    if (!("serviceWorker" in navigator)) return;
+    const due = (typeof dueReviews === "function") ? dueReviews() : [];
+    if (!due.length) return;
+    const d = new Date();
+    const vardiya = d.getHours() < 14 ? "s" : "a";
+    const anahtar = "am_telafi_" + todayStr() + "_" + vardiya;
+    try { if (localStorage.getItem(anahtar)) return; } catch (e) { return; }
+    const baslik = vardiya === "s" ? "Günaydın! Tekrar Zamanı" : "Akşam tekrarı seni bekliyor";
+    const konular = due.slice(0, 5).map(x => splitKey(x.key || x.topicKey || "").topic).filter(Boolean);
+    const govde = due.length + " konunun tekrarı bugün: " + konular.join(", ") +
+      (due.length > 5 ? " +" + (due.length - 5) : "") + ". Her biri 10 dakikalık müdahale yeter.";
+    navigator.serviceWorker.ready.then(function (kayit) {
+      // Push bugün aynı başlığı zaten gösterdiyse MÜKERRER gösterme.
+      return caches.open("am-push-iz").then(function (c) {
+        return c.match("/__am-push-son").then(function (r) { return r ? r.json() : null; }).catch(function () { return null; })
+          .then(function (iz) {
+            const ayni = iz && iz.baslik === baslik && (Date.now() - Number(iz.zaman || 0)) < 12 * 3600 * 1000;
+            if (ayni) { try { localStorage.setItem(anahtar, "push"); } catch (e) { /* */ } return; }
+            try { localStorage.setItem(anahtar, "yerel"); } catch (e) { /* */ }
+            return kayit.showNotification(baslik, {
+              body: govde,
+              icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
+              tag: "am-telafi-" + vardiya, data: { url: "./" }
+            });
+          });
+      });
+    }).catch(function () { /* gösterilemezse uygulama içi liste kalır */ });
+  } catch (e) { /* */ }
+}
+window.__amHatirlatmaTelafisi = hatirlatmaTelafisi;
 
 function addNotification(n) {
   // Aynı bildirimi tekrar üretme
@@ -4666,7 +4725,7 @@ function renderLibrary(container) {
         '<div class="text-xs text-muted tabular">' + b.read + " / " + b.pages + " sayfa · " + (b.pages - b.read) + " kaldı</div></div>" +
         '<span class="tabular font-bold" style="color:var(--brand-blue);">%' + pct + "</span></div>" +
         '<div class="progress" style="margin-bottom:8px;"><div style="width:' + pct + "%;background:" + pctBarColor(pct) + ';"></div></div>' +
-        '<div style="display:flex;gap:8px;flex-wrap:wrap;"><input type="number" inputmode="numeric" class="input" placeholder="Bugün kaç sayfa?" style="flex:1;min-width:120px;min-height:40px;" data-book-pages="' + idx + '">' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;"><input type="number" inputmode="numeric" class="input" placeholder="Bugün kaç sayfa? (en fazla ' + (b.pages - b.read) + ')" min="1" max="' + (b.pages - b.read) + '" style="flex:1;min-width:120px;min-height:40px;" data-book-pages="' + idx + '">' +
         '<input type="number" inputmode="numeric" class="input" placeholder="Dk (opsiyonel)" style="width:110px;min-height:40px;" data-book-minutes="' + idx + '">' +
         '<button class="btn btn-sm btn-primary" data-act="updateBookRead" data-idx="' + idx + '">' + icon("save", 13) + " Aç/Kaydet</button>" +
         '<button class="icon-btn" data-act="deleteBook" data-idx="' + idx + '" style="min-width:44px;min-height:44px;">' + icon("trash-2", 15, "color:var(--semantic-error);") + "</button></div>" +
@@ -4704,7 +4763,13 @@ function addBook() {
   const author = document.getElementById("book-author").value.trim();
   const pages = Number(document.getElementById("book-pages").value);
   if (!title) return toast("Kitap adı gerekli.", "error");
-  if (!pages || pages < 1) return toast("Geçerli bir sayfa sayısı gir.", "error");
+  // v61 — KULLANICI: "kitabın sayfa sayısından fazla sayfa girilebiliyor".
+  // Kök neden: b.read Math.min ile kırpılıyordu ama okunan sayfa GEÇMİŞE
+  // girilen ham değer yazılıyordu → "Okunan Sayfa" ve okuma hızı şişiyordu.
+  // Artık: tam sayı, 1..10000 aralığı zorunlu.
+  if (!pages || !Number.isFinite(pages) || pages < 1) return toast("Geçerli bir sayfa sayısı gir.", "error");
+  if (!Number.isInteger(pages)) return toast("Sayfa sayısı tam sayı olmalı.", "error");
+  if (pages > 10000) return toast("Sayfa sayısı en fazla 10000 olabilir.", "error");
   state.books.push({ id: uid(), title: title, author: author, pages: pages, read: 0, done: false, history: [] });
   saveState();
   toast("Kitap eklendi.", "success"); bookFormOpen = false;
@@ -4726,7 +4791,14 @@ function updateBookRead(idx) {
   const pages = Number(pagesEl && pagesEl.value) || 0;
   const minutes = Number(minEl && minEl.value) || 0;
   if (pages <= 0) return toast("Bugün okuduğun sayfa sayısını gir.", "error");
-  b.read = Math.min(b.pages, b.read + pages);
+  if (!Number.isInteger(pages)) return toast("Sayfa sayısı tam sayı olmalı.", "error");
+  // v61 — KULLANICI: "kitabın sayfa sayısından fazla sayfa girilebiliyor".
+  // Kitapta KALAN sayfadan fazlası kabul edilmez: hem okunan sayfa hem geçmiş
+  // aynı değeri taşır (eskiden b.read kırpılıyor, geçmişe ham sayı yazılıyordu).
+  const kalan = Math.max(0, Number(b.pages) - Number(b.read || 0));
+  if (kalan === 0) return toast("Bu kitap zaten tamamlandı (" + b.pages + " sayfa).", "error");
+  if (pages > kalan) return toast("Bu kitapta " + kalan + " sayfa kaldı; " + pages + " sayfa girilemez.", "error");
+  b.read = Number(b.read || 0) + pages;
   b.history.push({ date: todayStr(), pages: pages, minutes: minutes });
   if (b.read >= b.pages) { b.done = true; fireConfetti(); toast("Kitap tamamlandı! Tebrikler.", "success"); }
   else toast("Kaydedildi: +" + pages + " sayfa.", "success");
@@ -6134,6 +6206,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Bildirim motoru: açılışta + dakikalık kontrol (tekrar saatleri, kritik hafıza)
   processDueNotifications();
   setInterval(processDueNotifications, 60000);
+  // v61 — cihaz kapalıyken kaçan hatırlatmayı açılışta telafi et (push değil,
+  // yerel sistem bildirimi). Uygulama öne geldikçe de bir kez denenir.
+  setTimeout(function () { try { hatirlatmaTelafisi(); } catch (e) { /* */ } }, 4000);
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") {
+      setTimeout(function () { try { hatirlatmaTelafisi(); } catch (e) { /* */ } }, 2500);
+    }
+  });
   setInterval(updateCountdowns, 1000);
 
   // Grafik ilk çizim (deneme sayfası açıksa)

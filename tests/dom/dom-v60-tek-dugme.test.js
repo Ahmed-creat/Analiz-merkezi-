@@ -67,14 +67,15 @@ ok("açılış temizliği test işaretini silmiyor",
   !/indexOf\("am_push_test_gonderildi"\) === 0/.test(APP));
 ok("izin ilk verildiğinde bir kez test (kanal kanıtı) korunuyor",
   /if \(r && r\.ok\) \{\s*\n\s*const t = await testBirKez\(\);/.test(PUSH));
-ok("sürüm damgası v60", APP.indexOf('PWA_SURUM = "v60-tek-tekrar-dugmesi"') >= 0);
+ok("sürüm damgası güncel (v60+)", /PWA_SURUM = "v6[0-9]-/.test(APP));
 
 console.log("\n== 5) Sunucu: cihaz beyanına kadar tekrar ==");
 ok("cihaz onayı aranıyor", /t\.gosterildi is true/.test(SQL) && /t\.baslik = hat_baslik/.test(SQL));
 ok("abonelik son 4 hanesiyle eşleşiyor", /right\(p\.endpoint, 4\) = t\.abonelik/.test(SQL));
 ok("vardiya başına en fazla 4 deneme", /deneme >= 4/.test(SQL));
 ok("deneme anahtarı yazılıyor", /':try:' \|\| \(deneme \+ 1\)/.test(SQL));
-ok("TTL 90 dk (birikme yok)", /'ttl', '5400'/.test(SQL));
+// v61 — 5400 → 9000 (2,5 saat): cihaz uyandığında mesaj hâlâ yaşıyor.
+ok("TTL 150 dk (birikme yok, uyanınca yaşar)", /'ttl', '9000'/.test(SQL));
 ok("tek kanal korunuyor (push-tani)", /functions\/v1\/push-tani/.test(SQL));
 
 console.log("\n────────────────────────────────────────────────────────");

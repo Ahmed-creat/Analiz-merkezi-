@@ -1,4 +1,4 @@
-const PWA_SURUM = "v60-tek-tekrar-dugmesi";
+const PWA_SURUM = "v61-telafi-murekkep-dugme";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

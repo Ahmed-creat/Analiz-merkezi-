@@ -36,6 +36,8 @@
   // Bu yüzden hem sunucu sırrı (VAPID_PRIVATE_JWK / VAPID_PUBLIC_KEY) hem
   // bu satır tek bir üretilmiş çiftten yazıldı; ikisi artık ayrışamaz.
   const VAPID_ACIK = "BIzGKXitJVLsKPQHMciDpOM7D1RDBKEVwim7Z4mmkpiT8QsF1HmoUmAM5FuCWCEe26zh6ca2uoaR_SUryMvAhUE";
+  // v61 — bu cihazda aboneliğin hangi VAPID anahtarıyla kurulduğu
+  const VAPID_KURULAN_ANAHTAR = "am_vapid_kurulan";
 
   // ============================================================
   // v44 — SUNUCU ↔ TARAYICI ANAHTAR ANLAŞMASI (bildirim neden gelmiyor)
@@ -227,8 +229,26 @@
       // anahtar OKUNAMIYORSA (mevcut boş) eski abonelik korunuyordu; o abonelik
       // hangi anahtarla kurulduğu bilinmediği için DOĞRULANAMAZ. Artık anahtar
       // yoksa da yenilenir: abonelik her zaman güncel sunucu anahtarına bağlanır.
+      // v61 — KÖK NEDEN (canlı kanıt): aynı kullanıcı için 6 AKTİF abonelik
+      // oluşmuştu (_ulI, TW8Q, Rem8, ioLP, 7IiE, HVwT); her uygulama açılışında
+      // 1-2 YENİ uç nokta doğuyordu. Sebep: bazı Chrome sürümleri
+      // getSubscription().options.applicationServerKey değerini BOŞ döndürüyor;
+      // v58 kuralı "anahtar okunamıyorsa aboneliği yenile" olduğu için her
+      // açılışta unsubscribe + subscribe çalışıyordu. Sonuç: eski uçlar ölü
+      // kalıyor ama veritabanında aktif görünüyor → cron aynı anda 6 push
+      // gönderiyor, cihaz yalnız birini alıyor, gerisi 410/404 oluyor.
+      // ÇÖZÜM: aboneliği HANGİ VAPID anahtarıyla kurduğumuzu cihazda sakla.
+      // Anahtar aynıysa mevcut abonelik KORUNUR (yeni uç üretilmez).
       const mevcut = abone.options && abone.options.applicationServerKey;
-      if (!mevcut || b64Yaz(mevcut) !== kullanilacak) {
+      let anahtarAyni;
+      if (mevcut) {
+        anahtarAyni = b64Yaz(mevcut) === kullanilacak;
+      } else {
+        let kayitli = null;
+        try { kayitli = localStorage.getItem(VAPID_KURULAN_ANAHTAR); } catch (_) { /* */ }
+        anahtarAyni = kayitli === kullanilacak;
+      }
+      if (!anahtarAyni) {
         try { await abone.unsubscribe(); } catch (_) {}
         abone = null;
       }
@@ -247,6 +267,9 @@
         abone = await kayit.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: istenen });
       }
     }
+    // Hangi anahtarla kurulduğunu damgala: sonraki açılışlarda anahtar
+    // okunamasa bile abonelik YENİLENMEZ (yeni uç nokta üretilmez).
+    try { localStorage.setItem(VAPID_KURULAN_ANAHTAR, kullanilacak); } catch (_) { /* */ }
     return abone;
   }
 

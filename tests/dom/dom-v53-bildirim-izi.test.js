@@ -82,8 +82,15 @@ console.log("\n== 9) VAPID çifti: abonelik anahtarı = imza anahtarı (v58) =="
 ok("sabit açık anahtar yeni (düzeltilmiş) çift", /VAPID_ACIK = "BIzGKXitJVLsKPQHMciDpOM/.test(PUSH));
 ok("eski/uyumsuz anahtar kalmadı", !/BNRjTCIDs_ML94/.test(PUSH));
 ok("eski anahtar önbelleği geçersiz sayıldı", /am_vapid_sunucu_v58/.test(PUSH));
-ok("anahtar okunamıyorsa da abonelik yenileniyor (doğrulanamaz abonelik korunmaz)",
-  /if \(!mevcut \|\| b64Yaz\(mevcut\) !== kullanilacak\)/.test(PUSH));
+// v61 — v58'in "anahtar okunamıyorsa yenile" kuralı TERSİNE döndü.
+// KÖK NEDEN: bazı Chrome sürümleri applicationServerKey'i boş döndürüyor;
+// bu kural her açılışta yeni uç nokta üretiyordu ve aynı kullanıcıda
+// 6 AKTİF abonelik birikti (canlı kanıt: _ulI, TW8Q, Rem8, ioLP, 7IiE, HVwT).
+// Artık aboneliğin HANGİ anahtarla kurulduğu cihazda saklanır; anahtar
+// aynıysa abonelik KORUNUR (yeni uç üretilmez).
+ok("anahtar okunamazsa KAYITLI anahtarla karşılaştırılıyor (v61)",
+  /anahtarAyni = kayitli === kullanilacak;/.test(PUSH));
+ok("cihazda saklanan anahtar yoksa yenilenir", /if \(!anahtarAyni\)/.test(PUSH));
 
 console.log("\n== 10) Hatırlatma: kanıtlanmış gönderim yolu (v59) ==");
 const MIG = fs.existsSync("supabase/migrations/0002_webpush_tetikle.sql")

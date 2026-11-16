@@ -61,7 +61,12 @@ ok("sunucu imza anahtarını yayınlıyor", SABLON.indexOf("acikAnahtar: imzaAna
 ok("imza anahtarı ÖZEL anahtardan türetiliyor", SABLON.indexOf("const imzaAnahtari = turetilen || VAPID_ACIK") > 0);
 ok("uygulama anahtarı sunucudan alıyor", PUSH.indexOf("async function sunucuVapid()") > 0);
 ok("abonelik SUNUCU anahtarıyla kuruluyor", PUSH.indexOf("const kullanilacak = sunucuAnahtar || VAPID_ACIK") > 0);
-ok("anahtar değişmişse abonelik yenileniyor", PUSH.indexOf("b64Yaz(mevcut) !== kullanilacak") > 0);
+// v61 — karşılaştırma artık `anahtarAyni` değişkeninde; tarayıcı anahtarı
+// OKUYAMAZSA cihazda saklanan anahtarla kıyaslanır (yoksa her açılışta yeni
+// uç nokta doğuyordu: aynı kullanıcıda 6 aktif abonelik).
+ok("anahtar değişmişse abonelik yenileniyor",
+  PUSH.indexOf("anahtarAyni = b64Yaz(mevcut) === kullanilacak") > 0 &&
+  PUSH.indexOf("if (!anahtarAyni) {") > 0);
 ok("anahtar çakışmasında zorla sıfırlayıp yeniden dener", PUSH.indexOf("await eski.unsubscribe()") > 0);
 // v54: 8 deneme (32 sn) yavaş açılışta yetmiyordu; sınır yükseltildi.
 // Test sabit sayıya bağlı kalmasın: "vazgeçmeden yeniden deniyor" ölçülür.
