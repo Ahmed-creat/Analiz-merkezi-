@@ -194,6 +194,177 @@ _Bu havuzda 2 soruda `gorsel` var (tablo)._
 
 _Bu havuzda 2 soruda `gorsel` var (grafik)._
 
+## kim_10_t02_c01.json (`KİM.10.2.1`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c01_o01` | Bir ilaç molekülünün mide sıvısında çözünmesi modellenirke… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c01_o02` | Çözünme sürecinin birinci ve ikinci basamağında çözücü-çöz… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c01_o03` | Tabloda iki öğrencinin tuzun suda çözünmesi için çizdiği m… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c01_o04` | NaCl suda çözündüğünde Na+ iyonunun çevresini su molekülün… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c01_o05` | Bir öğrenci şekerin suda çözünmesi modelinde yalnızca şeke… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c01_o06` | Suda çözünme sırasında taneciklerin hareketi ile ilgili ha… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c01_o07` | Tabloda çözünmenin üç basamağı verilmiştir. Buna göre hang… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c01_o08` | Öğrenciler çizdikleri çözünme modelini animasyonla karşıla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c01_o09` | Su dışında bir çözücü kullanıldığında çözünen taneciklerin… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c01_o10` | Tabloda bir öğrencinin çözünme modeli ile bilimsel model k… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+
+_Bu havuzda 3 soruda `gorsel` var (tablo)._
+
+## kim_10_t02_c02.json (`KİM.10.2.2`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c02_o01` | Tabloda altı karışımın suda ve benzende çözünme durumları … | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c02_o02` | İyot (I2) suda çözünmediği hâlde benzende (C6H6) çözünmekt… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c02_o03` | Bir öğrenci 'NaCl benzende çözünmez' gözlemini kaydetmişti… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c02_o04` | Tabloda dört maddenin yapısı verilmiştir. Buna göre hangi … | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c02_o05` | Yağda çözünen A, D ve K vitaminleri apolar yapılıdır; C vi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c02_o06` | Etanol (C2H5OH) suyla her oranda karışabildiği gibi yağlar… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c02_o07` | Sabun molekülü suda yağ lekesini uzaklaştırmaktadır. Bu ol… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c02_o08` | Tabloda üç maddenin su ve karbon tetraklorür (CCl4) içinde… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c02_o09` | Bir öğrenci çözünürlük verilerini düzenlerken tabloya 'çöz… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c02_o10` | Kuru temizlemede su yerine perkloroetilen gibi apolar çözü… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 3 soruda `gorsel` var (tablo)._
+
+## kim_10_t02_c03.json (`KİM.10.2.3`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c03_o01` | Tabloda üç maddenin suda çözünme denklemleri verilmiştir. … | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c03_o02` | Amonyak gazı suda çözündüğünde NH3(g) + H2O(s) ⇌ NH4+(suda… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c03_o03` | Aşağıdaki maddelerden hangisi suda moleküler çözünür? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c03_o04` | HCl(g) + H2O(s) → H3O+(suda) + Cl-(suda) denklemi verilmiş… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c03_o05` | Tabloda verilen çözünme örnekleri fiziksel ve kimyasal ola… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c03_o06` | Sirkede bulunan asetik asidin suda çözünmesi hangi sınıfa … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c03_o07` | Öğrenciler çözünmeleri 'tanecikler ayrışıyor' ve 'tanecikl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c03_o08` | Bir öğrenci çözünmeleri 'hızlı çözünenler' ve 'yavaş çözün… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c03_o09` | NaOH(k) → Na+(suda) + OH-(suda) denklemi için hangi sınıfl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c03_o10` | Çözünme olayını ayırt etmek için kullanılacak ölçütler bel… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 2 soruda `gorsel` var (tablo)._
+
+## kim_10_t02_c04.json (`KİM.10.2.4`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c04_o01` | Tabloda iki katının farklı sıcaklıklarda 100 g sudaki çözü… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c04_o02` | 20 °C sıcaklıkta sodyum klorürün çözünürlüğü 35,7 g/100 g … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c04_o03` | 20 °C sıcaklıkta 100 g suya 70 g KBr eklenmiş ve 4,7 g KBr… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c04_o04` | Grafikte X ve Y katılarının çözünürlüklerinin sıcaklıkla d… | gorsel var | `grafik` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c04_o05` | 60 °C'de 100 g suda 288,9 g sakkaroz ve 37,1 g NaCl çözüle… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c04_o06` | Bir katının sudaki çözünürlüğünü belirlemek için deney pla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c04_o07` | Bir öğrenci çözünürlüğü 'bir çözücüde çözünen madde miktar… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c04_o08` | Katıların saf sudaki çözünürlüğü için belirlenen ölçütler … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c04_o09` | 100 g suda KNO3'ün çözünürlüğü 20 °C'de 31,6 g, 80 °C'de 1… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c04_o10` | Bir öğrenci 20 °C'de 100 g suya 25 g KBr ekleyip karıştırm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 2 soruda `gorsel` var (tablo, grafik)._
+
+## kim_10_t02_c05.json (`KİM.10.2.5`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c05_o01` | Tabloda üç maddenin çözünürlüğünün sıcaklıkla değişimi öze… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c05_o02` | Gazların sudaki çözünürlüğü ile sıcaklık arasındaki ilişki… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c05_o03` | Basıncın çözünürlüğe etkisi için hangisi doğrudur? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c05_o04` | Grafikte deniz suyunda çözünmüş oksijen miktarının derinli… | gorsel var | `grafik` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c05_o05` | KNO3 ve NaCl karışımı, çözünürlük farkından yararlanılarak… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c05_o06` | Bir öğrenci sıcaklığın gazların çözünürlüğüne etkisini ara… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c05_o07` | Dalış tüplerinde basınç yüksek tutulduğunda kanda daha faz… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c05_o08` | Şeker pancarından şeker üretiminde pancar sıcak suyla işle… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c05_o09` | Çözünürlüğe etki eden faktörlere ilişkin ölçütler belirlen… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c05_o10` | Çözünürlük verileri düzenlenirken aynı tabloya 'maddenin f… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 3 soruda `gorsel` var (tablo, grafik)._
+
+## kim_10_t02_c06.json (`KİM.10.2.6`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c06_o01` | 20 °C'de 100 mL suya 65,3 g KBr eklendiğinde tamamı çözünü… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o02` | Tabloda iki çözeltinin iletkenlik gözlemi verilmiştir. Bun… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c06_o03` | 20 °C'de 100 g suya 20 g KNO3 eklenerek çözelti hazırlanmı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o04` | 20 °C'de 100 g suya 35 g KNO3 eklenip 30 °C'ye ısıtılan çö… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o05` | Çözeltileri sınıflandırmak için kullanılan ölçütler arasın… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o06` | Musluk suyu elektrik akımını iletirken damıtılmış su iletm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o07` | Yaz aylarında Tuz Gölü'nün çevresinde tuz kristalleri oluş… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o08` | Bir öğrenci çözeltileri 'tuzlu sular' ve 'şekerli sular' o… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o09` | Bir çözeltinin doymuş olup olmadığını anlamak için hangi g… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c06_o10` | Aşağıdaki çözeltilerden hangisi aşırı doymuş olabilir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 1 soruda `gorsel` var (tablo)._
+
+## kim_10_t02_c07.json (`KİM.10.2.7`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c07_o01` | Tabloda beş çözeltinin madde miktarı, hacmi ve molar deriş… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c07_o02` | 5,6 g KOH katısı saf suda çözülerek çözelti hacmi 2 L'ye t… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c07_o03` | 4 g NaOH ile hazırlanan 200 mL çözeltiden çökme olmaksızın… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c07_o04` | Derişimi 3 M olan 0,5 L CaCl2 çözeltisinde kaç gram CaCl2 … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c07_o05` | 250 mL 4 M NaOH çözeltisine 150 mL saf su ilave edilmiştir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c07_o06` | Havadaki karbon dioksit derişimi 1000 cm³ havada 380 mg ol… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c07_o07` | Tabloda 25 °C'de 100 mL su ile hazırlanan iki tuzlu su çöz… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c07_o08` | Üç kapta hazırlanan NaCl çözeltileri için 1. kapta 0,1 mol… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c07_o09` | Bir firma 1 L limonata için 10,26 g sakkaroz (C12H22O11) k… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c07_o10` | Bir öğrenci 50 mL su ve 17,1 g sakkaroz ile çözelti hazırl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 2 soruda `gorsel` var (tablo)._
+
+## kim_10_t02_c08.json (`KİM.10.2.8`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t02_c08_o01` | Bir öğrenci katı-sıvı çözeltilerin kaynama ve donma noktas… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o02` | Saf suya uçucu olmayan bir katı eklendiğinde kaynama nokta… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o03` | Bir öğrenci çözünen madde miktarının donma noktasına etkis… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o04` | Grafikte saf su ve iki çözeltinin 1 atm dış basınçta ısıtı… | gorsel var | `grafik` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c08_o05` | Kaynama noktası yükselmesi ve donma noktası alçalması hang… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o06` | Eşit miktarda suya eşit mollerde NaCl ve C6H12O6 (glikoz) … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o07` | Kaynama noktası yükselmesi deneyinde aşağıdakilerden hangi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o08` | Tabloda eşit miktarda suda 1'er mol çözünen maddelerin olu… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t02_c08_o09` | Kışın otomobil radyatörlerinde antifriz, yollarda ise tuz … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o10` | Sütün donma noktası ölçülerek sütün saf olup olmadığı beli… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t02_c08_o11` | Tabloda iki maddenin kullanım alanı verilmiştir. Buna göre… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+
+_Bu havuzda 3 soruda `gorsel` var (grafik, tablo)._
+
+## kim_10_t03_c01.json (`KİM.10.3.1`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t03_c01_o01` | Tabloda aynı deneyin makro ve mikro ölçekte kullanılan mal… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t03_c01_o02` | Bir bireyin tükettiği mal ve hizmetlerin üretimi için kull… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c01_o03` | Tabloda yeşil kimya ilkeleri ve uygulama örnekleri verilmi… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t03_c01_o04` | Aynı çökelme deneyi makro ve mikro ölçekte yapılmış; kulla… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t03_c01_o05` | Makro ve mikro ölçekli deneylerin su ayak izi karşılaştırı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c01_o06` | Bir tepkimede çıkış maddesindeki atomların ne kadarının is… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c01_o07` | Aynı deney iki ölçekte yapılmıştır: makro ölçekte 10 g kim… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c01_o08` | Mikro ölçekli bir deneyde su tüketimi makro ölçeğe göre 50… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c01_o09` | Bir öğretmen aynı kazanımı mikro ölçekli deneyle vermeyi t… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c01_o10` | Bir öğrenci mikro ölçekli deneylerin her zaman tercih edil… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 3 soruda `gorsel` var (tablo)._
+
+## kim_10_t03_c02.json (`KİM.10.3.2`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `kim_10_t03_c02_o01` | Bir bölgede kömür yakıtlı santral bacasından çıkan SO2 gaz… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c02_o02` | Atmosferin doğasındaki değişimler balık kılçığı diyagramın… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c02_o03` | Tabloda hava kirliliği kaynakları verilmiştir. Buna göre h… | gorsel var | `tablo` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t03_c02_o04` | Ozon tabakasının incelmesi sonucunda ekosistemde oluşan et… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c02_o05` | Grafikte bir ülkenin yıllara göre kükürt dioksit salımı ve… | gorsel var | `grafik` tipi görsel eklendi; metin görsele gönderme yapıyor |
+| `kim_10_t03_c02_o06` | CFC gazlarının kullanımı uluslararası anlaşmalarla sınırla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c02_o07` | Bir öğrenci 'fosil yakıt yerine yenilenebilir enerji kulla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c02_o08` | Atmosferdeki değişimlere yönelik öneriler değerlendirilirk… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c02_o09` | Sera etkisi ile küresel ısınma arasındaki ilişki için hang… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `kim_10_t03_c02_o10` | Karbon döngüsünde insan faaliyetlerinin etkisini değerlend… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda 2 soruda `gorsel` var (tablo, grafik)._
+
 ---
 
-Toplam incelenen soru: **114** · görselli: **22** · görselsiz: **92**
+Toplam incelenen soru: **215** · görselli: **46** · görselsiz: **169**

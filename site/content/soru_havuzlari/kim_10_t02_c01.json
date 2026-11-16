@@ -1,0 +1,325 @@
+{
+  "konu_id": "kim_10_t02_c01",
+  "kod": "KİM.10.2.1",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.152-156",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t02_c01_o01",
+      "alt_beceri": "Çözünme sürecini temsil etmek için basit tanecik modelleri geliştirir.",
+      "metin": "Bir ilaç molekülünün mide sıvısında çözünmesi modellenirken izlenmesi gereken basamak sırası hangisidir?",
+      "secenekler": [
+        "Çözücüde boşluk oluşur, ilaç kristali büyür, molekül kristale tutunur.",
+        "İlaç kristalinden ayrılır, çözücüde boşluk oluşur, molekül boşluğa yerleşir.",
+        "İlaç molekülü kimyasal tepkimeye girer, yeni moleküller boşluğa yerleşir.",
+        "Moleküller çözücüden ayrılarak kristal yüzeyinde toplanır, sonra dağılır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözünme; çözünen taneciklerin kristalden ayrılması, çözücüde onlar için boşluk oluşması ve taneciklerin bu boşluğa yerleşmesiyle gerçekleşir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünme nedir?",
+        "back": "İki ya da daha fazla maddenin birbiri içinde homojen olarak dağılmasıdır; oluşan karışıma çözelti denir."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o02",
+      "alt_beceri": "Çözünme sürecini temsil etmek için basit tanecik modelleri geliştirir.",
+      "metin": "Çözünme sürecinin birinci ve ikinci basamağında çözücü-çözücü ile çözünen-çözünen etkileşimleri yenilir. Bu basamaklar için hangisi doğrudur?",
+      "secenekler": [
+        "Her iki basamak ekzotermiktir; enerji açığa çıkar.",
+        "Birinci basamak ekzotermik, ikinci basamak endotermiktir.",
+        "Bu basamaklarda enerji değişimi gözlenmez; yalnızca tanecikler yer değiştirir.",
+        "Her iki basamak endotermiktir; etkileşimleri yenmek için enerji gerekir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Çözücü moleküllerinin ve çözünen taneciklerinin birbirinden ayrılması için aralarındaki çekim kuvvetlerini yenmek gerekir; bu nedenle ilk iki basamak endotermiktir. Üçüncü basamak endotermik ya da ekzotermik olabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Endotermik ve ekzotermik süreç nedir?",
+        "back": "Endotermik süreç ısı alır, ekzotermik süreç ısı verir."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o03",
+      "alt_beceri": "Çözünme sürecine ilişkin modelleri bilimsel modellerle karşılaştırır.",
+      "metin": "Tabloda iki öğrencinin tuzun suda çözünmesi için çizdiği modellerin özellikleri verilmiştir. Buna göre hangi model bilimsel modele daha uygundur?",
+      "secenekler": [
+        "II. model; su molekülleri iyonların çevresini sararak hidratasyonu gösterir.",
+        "I. model; su molekülleri gösterilmediği için daha sade ve anlaşılırdır.",
+        "İki model de eşdeğerdir; su molekülleri modelde isteğe bağlıdır.",
+        "II. model; su molekülleri yalnızca çözücü-çözücü etkileşimini gösterir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Çözünmenin temel basamağı iyonların su molekülleri tarafından sarılmasıdır (hidratasyon). Su molekülleri gösterilmediğinde model süreci eksik açıklar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Özellik",
+          "I. model",
+          "II. model"
+        ],
+        "satirlar": [
+          [
+            "İyonlar ayrı",
+            "evet",
+            "evet"
+          ],
+          [
+            "Su molekülü",
+            "yok",
+            "var"
+          ],
+          [
+            "İyon çevresi sarılı",
+            "hayır",
+            "evet"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Hidratasyon nedir?",
+        "back": "Çözünen taneciklerin su molekülleri tarafından sarılmasıdır."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o04",
+      "alt_beceri": "Çözünme sürecini temsil etmek için basit tanecik modelleri geliştirir.",
+      "metin": "NaCl suda çözündüğünde Na+ iyonunun çevresini su molekülünün hangi ucu sarar?",
+      "secenekler": [
+        "Kısmi pozitif ucu (δ+) sarar; aynı yükler birbirini çeker.",
+        "Yalnızca hidrojen atomları sarar; oksijen ucu dışarıda kalır.",
+        "Kısmi negatif ucu (δ-) sarar; zıt yükler birbirini çeker.",
+        "Su molekülü iyonlarla etkileşmez; yalnızca fiziksel olarak dağılır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Su molekülünde oksijen ucu kısmi negatif, hidrojen uçları kısmi pozitiftir. Na+ katyonunu suyun kısmi negatif ucu, Cl- anyonunu ise kısmi pozitif ucu sarar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İyon-dipol etkileşimi nedir?",
+        "back": "İyonlar ile polar moleküllerin zıt yüklü uçları arasındaki elektrostatik çekimdir."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o05",
+      "alt_beceri": "Çözünme sürecine ilişkin modelleri bilimsel modellerle karşılaştırır.",
+      "metin": "Bir öğrenci şekerin suda çözünmesi modelinde yalnızca şeker moleküllerini çizmiş, su moleküllerini göstermemiştir. Modelin geliştirilmesi için en uygun gerekçe hangisidir?",
+      "secenekler": [
+        "Şeker molekülü suda iyonlaştığı için iyonların da çizilmesi gerekir.",
+        "Modelde tanecik sayısı az olduğu için kütle korunumu gözlenmez.",
+        "Su molekülleri yalnızca rengi belirlediği için görsel açıdan gereklidir.",
+        "Çözücü-çözünen etkileşimleri gösterilmediği için model çözünmeyi açıklamaz."
+      ],
+      "dogru_index": 3,
+      "cozum": "Moleküler çözünmede şeker molekülleri iyonlaşmaz; su molekülleriyle hidrojen bağı kurarak dağılır. Su molekülleri gösterilmezse çözücü-çözünen etkileşimi modellenmemiş olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Moleküler çözünmede taneciklere ne olur?",
+        "back": "Moleküller iyonlaşmadan, su molekülleriyle etkileşerek homojen dağılır."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o06",
+      "alt_beceri": "Çözünme sürecini temsil etmek için basit tanecik modelleri geliştirir.",
+      "metin": "Suda çözünme sırasında taneciklerin hareketi ile ilgili hangisi doğrudur?",
+      "secenekler": [
+        "Çözünen tanecikler dibe çökerek ayrı bir tabaka oluşturur.",
+        "Çözünen tanecikler çözücü içinde sürekli hareket ederek homojen dağılır.",
+        "Çözücü molekülleri hareketsiz kalır, yalnızca çözünen hareket eder.",
+        "Tanecikler kristal yüzeyinde durur; hareket yalnızca ısıtınca başlar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözünen tanecikler çözücü molekülleriyle çarpışarak sürekli hareket eder ve karışımın her yerine homojen olarak dağılır. Bu dağılma çözeltinin homojen olmasını sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Homojen karışım nedir?",
+        "back": "Her noktasında aynı özelliği gösteren, bileşenleri tek faz hâlinde dağılmış karışımdır."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o07",
+      "alt_beceri": "Çözünme sürecini temsil etmek için basit tanecik modelleri geliştirir.",
+      "metin": "Tabloda çözünmenin üç basamağı verilmiştir. Buna göre hangi basamak endotermik ya da ekzotermik olabilir?",
+      "secenekler": [
+        "3. basamak",
+        "1. basamak",
+        "2. basamak",
+        "Üç basamağın hepsi"
+      ],
+      "dogru_index": 0,
+      "cozum": "1 ve 2. basamaklarda etkileşimler yenildiği için enerji gerekir (endotermik). 3. basamakta yeni etkileşimler kurulur; bu basamak endotermik veya ekzotermik olabilir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Basamak",
+          "Olay"
+        ],
+        "satirlar": [
+          [
+            "1",
+            "Çözücü-çözücü ayrılır"
+          ],
+          [
+            "2",
+            "Çözünen-çözünen ayrılır"
+          ],
+          [
+            "3",
+            "Çözücü ile çözünen karışır"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Çözünme ısısının bağlı olduğu etken nedir?",
+        "back": "Çözücü-çözünen etkileşimlerinin gücüne; güçlü etkileşim ekzotermik, zayıf etkileşim endotermik sonuç verir."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o08",
+      "alt_beceri": "Çözünme sürecine ilişkin modelleri bilimsel modellerle karşılaştırır.",
+      "metin": "Öğrenciler çizdikleri çözünme modelini animasyonla karşılaştırmış ve modellerinde taneciklerin birbirine yapışık kaldığını fark etmişlerdir. Modele yapılması gereken düzeltme hangisidir?",
+      "secenekler": [
+        "Taneciklerin tümü tek renge boyanarak karışım basitleştirilmeli.",
+        "Model yalnızca çözücü taneciklerle sınırlandırılarak sadeleştirilmeli.",
+        "Çözücü ve çözünen tanecikleri birbirinden ayrılıp yeniden karışmış biçimde gösterilmeli.",
+        "Tanecik sayısı azaltılarak çarpışma olasılığı düşürülmeli."
+      ],
+      "dogru_index": 2,
+      "cozum": "Çözünmede çözücü-çözücü ve çözünen-çözünen etkileşimler kopar, çözücü-çözünen etkileşimleri kurulur. Modelde tanecikler ayrılmış ve karışmış olarak gösterilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bilimsel bir modelin taşıması gereken temel özellik nedir?",
+        "back": "Gözlenen olayı eksiksiz ve tutarlı biçimde temsil etmesi, tanecikleri doğru göstermesidir."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o09",
+      "alt_beceri": "Çözünme sürecini temsil etmek için basit tanecik modelleri geliştirir.",
+      "metin": "Su dışında bir çözücü kullanıldığında çözünen taneciklerin çözücü molekülleriyle sarılmasına ne ad verilir?",
+      "secenekler": [
+        "Hidratasyon",
+        "Solvatasyon",
+        "Nötralleşme",
+        "Efüzyon"
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözücü su ise süreç hidratasyon, su dışında başka bir çözücü ise solvatasyon olarak adlandırılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hidratasyon ile solvatasyon arasındaki fark nedir?",
+        "back": "Hidratasyon su ile sarılmayı, solvatasyon ise su dışındaki çözücülerle sarılmayı ifade eder."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c01_o10",
+      "alt_beceri": "Çözünme sürecine ilişkin modelleri bilimsel modellerle karşılaştırır.",
+      "metin": "Tabloda bir öğrencinin çözünme modeli ile bilimsel model karşılaştırılmıştır. Buna göre hangi satır modelin geliştirilmesini gerektirir?",
+      "secenekler": [
+        "I. satır",
+        "II. satır",
+        "IV. satır",
+        "III. satır"
+      ],
+      "dogru_index": 3,
+      "cozum": "Çözünmede kristal yapı dağılır, tanecikler tek tek ayrılarak çözücü içinde dağılır. Kristalin bütün hâlde gösterilmesi çözünmenin gerçekleşmediği anlamına gelir; model bu yönüyle geliştirilmelidir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Karşılaştırma",
+          "Öğrenci modeli"
+        ],
+        "satirlar": [
+          [
+            "Tanecikler karışmış",
+            "evet"
+          ],
+          [
+            "Çözücü molekülleri",
+            "gösterilmiş"
+          ],
+          [
+            "Çözünen kristali",
+            "bütün hâlde"
+          ],
+          [
+            "İyon yükleri",
+            "işaretlenmiş"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Çözünme modelinde kristal yapı nasıl gösterilmelidir?",
+        "back": "Kristal dağılmış, tanecikler birbirinden ayrılmış ve çözücü içinde homojen dağılmış olarak gösterilmelidir."
+      },
+      "kazanim": "Çözünme sürecine ilişkin bilimsel model oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t02_c01_o01:flashcard",
+      "front": "Çözünme nedir?",
+      "back": "İki ya da daha fazla maddenin birbiri içinde homojen olarak dağılmasıdır; oluşan karışıma çözelti denir."
+    },
+    {
+      "id": "kim_10_t02_c01_o02:flashcard",
+      "front": "Endotermik ve ekzotermik süreç nedir?",
+      "back": "Endotermik süreç ısı alır, ekzotermik süreç ısı verir."
+    },
+    {
+      "id": "kim_10_t02_c01_o03:flashcard",
+      "front": "Hidratasyon nedir?",
+      "back": "Çözünen taneciklerin su molekülleri tarafından sarılmasıdır."
+    },
+    {
+      "id": "kim_10_t02_c01_o04:flashcard",
+      "front": "İyon-dipol etkileşimi nedir?",
+      "back": "İyonlar ile polar moleküllerin zıt yüklü uçları arasındaki elektrostatik çekimdir."
+    },
+    {
+      "id": "kim_10_t02_c01_o05:flashcard",
+      "front": "Moleküler çözünmede taneciklere ne olur?",
+      "back": "Moleküller iyonlaşmadan, su molekülleriyle etkileşerek homojen dağılır."
+    },
+    {
+      "id": "kim_10_t02_c01_o06:flashcard",
+      "front": "Homojen karışım nedir?",
+      "back": "Her noktasında aynı özelliği gösteren, bileşenleri tek faz hâlinde dağılmış karışımdır."
+    },
+    {
+      "id": "kim_10_t02_c01_o07:flashcard",
+      "front": "Çözünme ısısının bağlı olduğu etken nedir?",
+      "back": "Çözücü-çözünen etkileşimlerinin gücüne; güçlü etkileşim ekzotermik, zayıf etkileşim endotermik sonuç verir."
+    },
+    {
+      "id": "kim_10_t02_c01_o08:flashcard",
+      "front": "Bilimsel bir modelin taşıması gereken temel özellik nedir?",
+      "back": "Gözlenen olayı eksiksiz ve tutarlı biçimde temsil etmesi, tanecikleri doğru göstermesidir."
+    },
+    {
+      "id": "kim_10_t02_c01_o09:flashcard",
+      "front": "Hidratasyon ile solvatasyon arasındaki fark nedir?",
+      "back": "Hidratasyon su ile sarılmayı, solvatasyon ise su dışındaki çözücülerle sarılmayı ifade eder."
+    },
+    {
+      "id": "kim_10_t02_c01_o10:flashcard",
+      "front": "Çözünme modelinde kristal yapı nasıl gösterilmelidir?",
+      "back": "Kristal dağılmış, tanecikler birbirinden ayrılmış ve çözücü içinde homojen dağılmış olarak gösterilmelidir."
+    }
+  ]
+}

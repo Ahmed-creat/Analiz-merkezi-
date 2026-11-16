@@ -1,0 +1,296 @@
+{
+  "konu_id": "kim_10_t02_c03",
+  "kod": "KİM.10.2.3",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "kazanim": "Çözünme olayını sınıflandırabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.165-171",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t02_c03_o01",
+      "alt_beceri": "Çeşitli maddelerin suda çözünme olayını ayırt etmek için ölçütler (çözücü ve çözünenin etkileşimleri ve sembolik gösterimleri) belirler.",
+      "metin": "Tabloda üç maddenin suda çözünme denklemleri verilmiştir. Buna göre hangi satırda çözünen madde iyonlarına ayrışmıştır?",
+      "secenekler": [
+        "I. satır; şeker molekülü iyonlarına ayrışmıştır.",
+        "II. satır; KNO3 iyonlarına ayrışarak çözünmüştür.",
+        "III. satır; metanol iyonlaşarak çözünmüştür.",
+        "Üç satırda da iyonlaşma gözlenmiştir."
+      ],
+      "dogru_index": 1,
+      "cozum": "KNO3 suda K+ ve NO3- iyonlarına ayrışır; bu iyonik çözünmedir. Şeker ve metanol moleküler hâlde dağıldığı için iyonlaşma yoktur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "Denklem"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "C12H22O11 → C12H22O11(suda)"
+          ],
+          [
+            "II",
+            "KNO3 → K+ + NO3-"
+          ],
+          [
+            "III",
+            "CH3OH → CH3OH(suda)"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "İyonik çözünme nedir?",
+        "back": "Maddenin çözücü içinde iyonlarına ayrışarak çözünmesidir."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o02",
+      "alt_beceri": "Çeşitli maddelerin suda çözünme olayını ayırt etmek için ölçütler (çözücü ve çözünenin etkileşimleri ve sembolik gösterimleri) belirler.",
+      "metin": "Amonyak gazı suda çözündüğünde NH3(g) + H2O(s) ⇌ NH4+(suda) + OH-(suda) tepkimesi gerçekleşir. Bu çözünme türü hangisidir?",
+      "secenekler": [
+        "Fiziksel çözünme; madde kendi özelliğini korumuştur.",
+        "Yalnızca moleküler çözünme; iyon oluşmamıştır.",
+        "Çözünme gerçekleşmemiş; yalnızca gaz karışımı oluşmuştur.",
+        "Kimyasal çözünme; yeni tür iyonlar oluşmuştur."
+      ],
+      "dogru_index": 3,
+      "cozum": "Amonyak suda çözünürken suyla tepkimeye girerek NH4+ ve OH- iyonlarını oluşturur. Yeni türler oluştuğu için bu kimyasal çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kimyasal çözünme nedir?",
+        "back": "Maddenin çözücü ile tepkimeye girerek yeni madde türleri oluşturduğu çözünmedir."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o03",
+      "alt_beceri": "Çözünme olayını belirlediği ölçütlere (iyonik veya moleküler, fiziksel veya kimyasal) göre ayrıştırır.",
+      "metin": "Aşağıdaki maddelerden hangisi suda moleküler çözünür?",
+      "secenekler": [
+        "C6H12O6",
+        "NaCl",
+        "KOH",
+        "MgCl2"
+      ],
+      "dogru_index": 0,
+      "cozum": "Glikoz kovalent bağlı bir moleküldür ve suda iyonlaşmadan moleküler hâlde dağılır. NaCl, KOH ve MgCl2 iyonik yapılı oldukları için iyonlarına ayrışarak çözünür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Moleküler çözünme nedir?",
+        "back": "Maddenin çözücü içinde moleküller hâlinde dağılarak homojen karışım oluşturmasıdır."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o04",
+      "alt_beceri": "Çözünme olayını belirlediği ölçütlere (iyonik veya moleküler, fiziksel veya kimyasal) göre ayrıştırır.",
+      "metin": "HCl(g) + H2O(s) → H3O+(suda) + Cl-(suda) denklemi verilmiştir. Bu denklem için hangisi doğrudur?",
+      "secenekler": [
+        "Fiziksel çözünmedir; HCl moleküler hâlde dağılmıştır.",
+        "Çökelme tepkimesidir; katı oluşmuştur.",
+        "Kimyasal çözünmedir; HCl suyla tepkimeye girerek iyon oluşturmuştur.",
+        "Nötralleşme tepkimesidir; tuz ve su oluşmuştur."
+      ],
+      "dogru_index": 2,
+      "cozum": "HCl suda iyonlaşarak hidronyum ve klorür iyonlarını oluşturur. Yeni tanecik türleri oluştuğu için bu çözünme kimyasaldır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hidronyum iyonunun formülü nedir?",
+        "back": "H3O+ biçimindedir; H+ iyonunun su molekülüne bağlanmasıyla oluşur."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o05",
+      "alt_beceri": "Belirlediği ölçütleri kullanarak çözünme olaylarını gruplandırır.",
+      "metin": "Tabloda verilen çözünme örnekleri fiziksel ve kimyasal olarak gruplandırılacaktır. Buna göre hangi örnek kimyasal çözünmeye girer?",
+      "secenekler": [
+        "I. örnek",
+        "III. örnek",
+        "I ve III. örnekler",
+        "II. örnek"
+      ],
+      "dogru_index": 3,
+      "cozum": "CO2 suda çözünürken karbonik asit/hidrojen karbonat oluşturacak biçimde tepkimeye girer; bu kimyasal çözünmedir. Etanol moleküler, AlCl3 iyonik ama fiziksel çözünmedir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Örnek",
+          "Denklem"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "C2H5OH → C2H5OH(suda)"
+          ],
+          [
+            "II",
+            "CO2 + H2O → HCO3- + H+"
+          ],
+          [
+            "III",
+            "AlCl3 → Al3+ + 3Cl-"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Fiziksel çözünme nedir?",
+        "back": "Maddenin çözücü içinde kimyasal değişime uğramadan çözünmesidir."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o06",
+      "alt_beceri": "Belirlediği ölçütleri kullanarak çözünme olaylarını gruplandırır.",
+      "metin": "Sirkede bulunan asetik asidin suda çözünmesi hangi sınıfa girer?",
+      "secenekler": [
+        "Moleküler çözünme; asetik asit hiç iyonlaşmaz.",
+        "İyonik çözünme; asetik asit iyonlarına ayrışır.",
+        "Kimyasal çözünme; yeni bir tuz oluşur.",
+        "Çözünme değildir; asetik asit suda dağılmaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Asetik asit zayıf bir asittir ve suda kısmen iyonlaşarak H3O+ ile CH3COO- iyonlarını oluşturur. Asitlerin suda iyonlarına ayrışarak çözünmesi iyonik çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Zayıf asit nedir?",
+        "back": "Suda kısmen iyonlaşan asittir; asetik asit bunun örneğidir."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o07",
+      "alt_beceri": "Oluşturduğu grup adlandırmalarını bilimsel karşılığı ile kıyaslar.",
+      "metin": "Öğrenciler çözünmeleri 'tanecikler ayrışıyor' ve 'tanecikler ayrışmıyor' olarak iki gruba ayırmıştır. Bu gruplandırmanın bilimsel karşılığı hangisidir?",
+      "secenekler": [
+        "İyonik çözünme ve moleküler çözünme",
+        "Ekzotermik çözünme ve endotermik çözünme",
+        "Doymuş çözelti ve doymamış çözelti",
+        "Elektrolit ve çözünürlük"
+      ],
+      "dogru_index": 0,
+      "cozum": "Taneciklerin iyonlarına ayrışarak dağılması iyonik çözünme, moleküller hâlinde dağılması moleküler çözünmedir. Öğrencilerin gruplandırması bu ayrıma karşılık gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünme türlerinin sınıflandırılma ölçütü nedir?",
+        "back": "Taneciklerin iyonlarına ayrışıp ayrışmamasına ve kimyasal değişim olup olmamasına göre."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o08",
+      "alt_beceri": "Oluşturduğu grup adlandırmalarını bilimsel karşılığı ile kıyaslar.",
+      "metin": "Bir öğrenci çözünmeleri 'hızlı çözünenler' ve 'yavaş çözünenler' olarak gruplandırmıştır. Bu gruplandırmanın bilimsel sınıflandırmaya göre eksik yönü hangisidir?",
+      "secenekler": [
+        "Hız ölçütü iyonik çözünmeyi tam olarak açıklamak için yeterlidir.",
+        "Çözünme hızı hiçbir zaman ölçülemediği için gruplama geçersizdir.",
+        "Çözünme türü tanecik düzeyindeki değişime göre tanımlanır; hız ölçüt değildir.",
+        "Bilimsel sınıflandırmada gruplar yalnızca renge göre belirlenir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Bilimsel sınıflandırma çözünenin iyonlaşıp iyonlaşmadığına ve kimyasal değişim olup olmadığına dayanır. Çözünme hızı bu ayrımda ölçüt değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sınıflandırmada kullanılacak ölçüt nedir?",
+        "back": "Gözlenebilir ve tanecik düzeyinde açıklanabilir, ayırt edici bir özellik olmalıdır."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o09",
+      "alt_beceri": "Çözünme olayını belirlediği ölçütlere (iyonik veya moleküler, fiziksel veya kimyasal) göre ayrıştırır.",
+      "metin": "NaOH(k) → Na+(suda) + OH-(suda) denklemi için hangi sınıflandırma doğrudur?",
+      "secenekler": [
+        "Moleküler ve fiziksel çözünme",
+        "İyonik ve fiziksel çözünme",
+        "İyonik ve kimyasal çözünme",
+        "Moleküler ve kimyasal çözünme"
+      ],
+      "dogru_index": 1,
+      "cozum": "NaOH iyonik yapılıdır ve suda Na+ ile OH- iyonlarına ayrışır; yeni tür oluşmadığı için bu iyonik ve fiziksel çözünmedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İyonik bileşiklerin suda çözünmesinde oluşan etkileşim nedir?",
+        "back": "İyon-dipol etkileşimleri oluşur."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c03_o10",
+      "alt_beceri": "Çeşitli maddelerin suda çözünme olayını ayırt etmek için ölçütler (çözücü ve çözünenin etkileşimleri ve sembolik gösterimleri) belirler.",
+      "metin": "Çözünme olayını ayırt etmek için kullanılacak ölçütler belirlenirken hangisi en uygun ölçüttür?",
+      "secenekler": [
+        "Çözeltinin bulunduğu kabın büyüklüğü",
+        "Çözeltinin hazırlandığı ortamın nem oranı",
+        "Çözücünün rengi ve kokusu",
+        "Çözünenin iyonik ya da moleküler yapıda olması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Çözünme türü, çözünenin iyonik/moleküler yapısı ve kimyasal değişim olup olmamasıyla ayrılır. Kap boyutu, nem, renk ve koku ayırt edici ölçüt değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünme olayının sınıflandırılmasında kullanılan temel ölçüt nedir?",
+        "back": "Çözünenin iyonik veya moleküler yapıda olması ve kimyasal değişimin gerçekleşip gerçekleşmemesidir."
+      },
+      "kazanim": "Çözünme olayını sınıflandırabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t02_c03_o01:flashcard",
+      "front": "İyonik çözünme nedir?",
+      "back": "Maddenin çözücü içinde iyonlarına ayrışarak çözünmesidir."
+    },
+    {
+      "id": "kim_10_t02_c03_o02:flashcard",
+      "front": "Kimyasal çözünme nedir?",
+      "back": "Maddenin çözücü ile tepkimeye girerek yeni madde türleri oluşturduğu çözünmedir."
+    },
+    {
+      "id": "kim_10_t02_c03_o03:flashcard",
+      "front": "Moleküler çözünme nedir?",
+      "back": "Maddenin çözücü içinde moleküller hâlinde dağılarak homojen karışım oluşturmasıdır."
+    },
+    {
+      "id": "kim_10_t02_c03_o04:flashcard",
+      "front": "Hidronyum iyonunun formülü nedir?",
+      "back": "H3O+ biçimindedir; H+ iyonunun su molekülüne bağlanmasıyla oluşur."
+    },
+    {
+      "id": "kim_10_t02_c03_o05:flashcard",
+      "front": "Fiziksel çözünme nedir?",
+      "back": "Maddenin çözücü içinde kimyasal değişime uğramadan çözünmesidir."
+    },
+    {
+      "id": "kim_10_t02_c03_o06:flashcard",
+      "front": "Zayıf asit nedir?",
+      "back": "Suda kısmen iyonlaşan asittir; asetik asit bunun örneğidir."
+    },
+    {
+      "id": "kim_10_t02_c03_o07:flashcard",
+      "front": "Çözünme türlerinin sınıflandırılma ölçütü nedir?",
+      "back": "Taneciklerin iyonlarına ayrışıp ayrışmamasına ve kimyasal değişim olup olmamasına göre."
+    },
+    {
+      "id": "kim_10_t02_c03_o08:flashcard",
+      "front": "Sınıflandırmada kullanılacak ölçüt nedir?",
+      "back": "Gözlenebilir ve tanecik düzeyinde açıklanabilir, ayırt edici bir özellik olmalıdır."
+    },
+    {
+      "id": "kim_10_t02_c03_o09:flashcard",
+      "front": "İyonik bileşiklerin suda çözünmesinde oluşan etkileşim nedir?",
+      "back": "İyon-dipol etkileşimleri oluşur."
+    },
+    {
+      "id": "kim_10_t02_c03_o10:flashcard",
+      "front": "Çözünme olayının sınıflandırılmasında kullanılan temel ölçüt nedir?",
+      "back": "Çözünenin iyonik veya moleküler yapıda olması ve kimyasal değişimin gerçekleşip gerçekleşmemesidir."
+    }
+  ]
+}

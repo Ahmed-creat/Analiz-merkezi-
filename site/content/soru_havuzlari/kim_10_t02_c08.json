@@ -1,0 +1,384 @@
+{
+  "konu_id": "kim_10_t02_c08",
+  "kod": "KİM.10.2.8",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.203-211",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t02_c08_o01",
+      "alt_beceri": "Katı-sıvı çözeltilerin kaynama ve donma noktasının saf suya göre değişimine yönelik araştırma sorusu belirler.",
+      "metin": "Bir öğrenci katı-sıvı çözeltilerin kaynama ve donma noktasını incelemek için araştırma sorusu yazacaktır. Buna göre hangi soru deneyle sınanabilir niteliktedir?",
+      "secenekler": [
+        "İnsanlar neden kışın sıcak çay içmeyi sever?",
+        "Çözünen maddenin mol sayısı arttıkça kaynama noktası nasıl değişir?",
+        "Antifriz ilk olarak hangi ülkede üretilmiştir?",
+        "Kaynama noktası kavramı neden ilginçtir?"
+      ],
+      "dogru_index": 1,
+      "cozum": "Araştırılabilir soru ölçülebilir değişkenler arasında sınanabilir ilişki kurar. Mol sayısı değiştirilerek kaynama noktası ölçülebilir; diğer seçenekler ölçüm gerektirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koligatif özellik nedir?",
+        "back": "Çözünenin türüne değil, çözeltideki tanecik sayısına bağlı olarak değişen özelliklerdir."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o02",
+      "alt_beceri": "Çözeltilerin kaynama ve donma noktasının değişimine yönelik neden-sonuç ilişkilerini belirtir.",
+      "metin": "Saf suya uçucu olmayan bir katı eklendiğinde kaynama noktasının yükselmesinin neden-sonuç ilişkisi hangisinde doğru verilmiştir?",
+      "secenekler": [
+        "Çözünen tanecikler suyu ısıtır → buhar basıncı artar → kaynama noktası yükselir.",
+        "Çözünen tanecikler su moleküllerini parçalar → buhar basıncı artar → kaynama noktası düşer.",
+        "Çözünen tanecikler kabın basıncını azaltır → buhar basıncı düşer → kaynama noktası düşer.",
+        "Çözünen tanecikler buharlaşmayı engeller → buhar basıncı düşer → kaynama noktası yükselir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Çözünen tanecikler sıvı yüzeyinden kaçmaya çalışan su moleküllerine engel olur. Buhar basıncı düştüğü için atmosfer basıncına ulaşmak daha yüksek sıcaklıkta gerçekleşir; kaynama noktası yükselir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kaynama noktasının tanımı nedir?",
+        "back": "Sıvının buhar basıncının dış basınca eşitlendiği sıcaklığa göre belirlenir."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o03",
+      "alt_beceri": "Neden-sonuç ilişkilerini araştırabilmek için bağımlı-bağımsız değişkenleri ve kontrol değişkenlerini belirler.",
+      "metin": "Bir öğrenci çözünen madde miktarının donma noktasına etkisini araştıracaktır. Bu deneyde bağımsız, bağımlı ve kontrol değişkeni hangisinde doğru verilmiştir?",
+      "secenekler": [
+        "Bağımsız: çözünen mol sayısı; bağımlı: donma noktası; kontrol: çözücü kütlesi",
+        "Bağımsız: donma noktası; bağımlı: çözünen mol sayısı; kontrol: kabın rengi",
+        "Bağımsız: çözücü kütlesi; bağımlı: çözünen türü; kontrol: donma noktası",
+        "Bağımsız: dış basınç; bağımlı: çözücü kütlesi; kontrol: çözünen mol sayısı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Araştırmacı çözünen mol sayısını değiştirir; donma noktası bu değişime bağlı olarak ölçülür. Çözücü kütlesi ve dış basınç sabit tutulan kontrol değişkenleridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koligatif özelliklerde belirleyici olan nicelik nedir?",
+        "back": "Çözeltideki toplam tanecik sayısıdır; taneciklerin türü değildir."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o04",
+      "alt_beceri": "Değişkenler arasındaki ilişkiyi belirlemek üzere deneyler yaparak elde ettiği verilere dayalı önermeler sunar.",
+      "metin": "Grafikte saf su ve iki çözeltinin 1 atm dış basınçta ısıtılmasına ait sıcaklık-zaman değişimi verilmiştir. Buna göre hangi çözeltide çözünen tanecik sayısı en fazladır?",
+      "secenekler": [
+        "I. çözeltide; kaynama noktası suya en yakındır.",
+        "Saf suda; kaynama noktası 100 °C'de sabit kalmıştır.",
+        "II. çözeltide; kaynama noktası en yükseğe çıkmıştır.",
+        "Her iki çözeltide eşittir; fark yalnızca zamandadır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Kaynama noktası yükselmesi tanecik sayısıyla artar. II. çözeltide kaynama 102 °C'ye çıktığı için tanecik sayısı en fazladır; saf suyun kaynama noktası değişmez.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Zaman (dk)",
+        "yEkseni": "Sıcaklık (°C)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "Su",
+            "noktalar": [
+              [
+                0,
+                25
+              ],
+              [
+                4,
+                100
+              ],
+              [
+                8,
+                100
+              ]
+            ]
+          },
+          {
+            "ad": "I",
+            "noktalar": [
+              [
+                0,
+                25
+              ],
+              [
+                4,
+                101
+              ],
+              [
+                8,
+                101
+              ]
+            ]
+          },
+          {
+            "ad": "II",
+            "noktalar": [
+              [
+                0,
+                25
+              ],
+              [
+                4,
+                102
+              ],
+              [
+                8,
+                102
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Kaynama noktası yükselmesinin bağlı olduğu nicelik nedir?",
+        "back": "Çözeltideki toplam tanecik sayısına (birim çözücüdeki mol sayısına) bağlıdır."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o05",
+      "alt_beceri": "Çözeltilerin kaynama noktasının yükselmesi ve donma noktasının düşmesine neden olan faktörlere yönelik sunduğu önermeleri bilimsel kuramlar ile destekler.",
+      "metin": "Kaynama noktası yükselmesi ve donma noktası alçalması hangi bilimsel kuramla açıklanır?",
+      "secenekler": [
+        "Kütlenin korunumu kanunuyla açıklanır.",
+        "Elektron transferi temel alınarak açıklanır.",
+        "Avogadro yasasıyla açıklanır.",
+        "Buhar basıncının düşmesi temel alınarak açıklanır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Uçucu olmayan çözünen tanecikler yüzeyden buharlaşmayı azalttığı için buhar basıncı düşer. Kaynama noktası yükselir, donma noktası ise alçalır; bu ilişki buhar basıncı temellidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Donma noktası alçalması nedir?",
+        "back": "Çözeltinin donma noktasının saf çözücünün donma noktasından daha düşük olmasıdır."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o06",
+      "alt_beceri": "Çözeltilerin kaynama ve donma noktasının değişimine yönelik neden-sonuç ilişkilerini belirtir.",
+      "metin": "Eşit miktarda suya eşit mollerde NaCl ve C6H12O6 (glikoz) eklenmiştir. Buna göre kaynama noktası değişimi için hangisi doğrudur?",
+      "secenekler": [
+        "Glikoz çözeltisinde daha büyük yükselme olur; molekül daha büyüktür.",
+        "NaCl çözeltisinde daha büyük yükselme olur; iki iyon oluşturur.",
+        "İki çözeltide yükselme eşit olur; mol sayıları eşittir.",
+        "Hiçbirinde yükselme olmaz; maddeler uçucudur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Koligatif özellikler tanecik sayısına bağlıdır. 1 mol NaCl suda 2 mol iyon (Na+ ve Cl-) oluştururken 1 mol glikoz 1 mol molekül verir; bu nedenle NaCl'de yükselme daha fazladır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrolit çözeltilerde tanecik sayısını belirleyen ölçüt nedir?",
+        "back": "İyonlaşma denklemindeki toplam iyon sayısı dikkate alınır."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o07",
+      "alt_beceri": "Neden-sonuç ilişkilerini araştırabilmek için bağımlı-bağımsız değişkenleri ve kontrol değişkenlerini belirler.",
+      "metin": "Kaynama noktası yükselmesi deneyinde aşağıdakilerden hangisi kontrol değişkeni olarak sabit tutulmalıdır?",
+      "secenekler": [
+        "Çözücü kütlesi ve dış basınç",
+        "Çözünen maddenin mol sayısı",
+        "Kayanma noktasındaki artış miktarı",
+        "Kullanılan termometrenin markası"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kaynama noktası hem çözücü miktarından hem dış basınçtan etkilenir. Bu nedenle çözücü kütlesi ve dış basınç sabit tutulmalı; yalnızca çözünen mol sayısı değiştirilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kontrol değişkeninin sabit tutulmasının nedeni nedir?",
+        "back": "Sonucun yalnızca bağımsız değişkenden kaynaklandığından emin olmak için."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o08",
+      "alt_beceri": "Değişkenler arasındaki ilişkiyi belirlemek üzere deneyler yaparak elde ettiği verilere dayalı önermeler sunar.",
+      "metin": "Tabloda eşit miktarda suda 1'er mol çözünen maddelerin oluşturduğu iyon sayıları ve kaynama noktası artışları verilmiştir. Buna göre hangi satırda hata vardır?",
+      "secenekler": [
+        "I. satır",
+        "II. satır",
+        "III. satır",
+        "IV. satır"
+      ],
+      "dogru_index": 2,
+      "cozum": "MgCl2 suda 1 Mg2+ ve 2 Cl- olmak üzere 3 iyon oluşturur; artış 3a olmalıdır. Tabloda 2a yazıldığı için bu satır hatalıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "İyon",
+          "Artış"
+        ],
+        "satirlar": [
+          [
+            "Glikoz",
+            "1",
+            "a"
+          ],
+          [
+            "NaCl",
+            "2",
+            "2a"
+          ],
+          [
+            "MgCl2",
+            "3",
+            "2a"
+          ],
+          [
+            "Al2(SO4)3",
+            "5",
+            "5a"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "MgCl2'nin suda oluşturduğu iyon sayısı nedir?",
+        "back": "Üç iyon oluşturur: 1 mol Mg2+ ve 2 mol Cl-."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o09",
+      "alt_beceri": "Çözeltilerin kaynama noktasının yükselmesi ve donma noktasının düşmesine neden olan faktörlere yönelik sunduğu önermeleri bilimsel kuramlar ile destekler.",
+      "metin": "Kışın otomobil radyatörlerinde antifriz, yollarda ise tuz kullanılması hangi ilkeye dayanır?",
+      "secenekler": [
+        "Çözünen tanecikler donma noktasını yükseltir; su daha çabuk donar.",
+        "Çözünen tanecikler donma noktasını düşürür; suyun donması gecikir.",
+        "Çözünen tanecikler suyun kaynama noktasını düşürür; su buharlaşmaz.",
+        "Çözünen tanecikler suyun buhar basıncını artırarak donmayı engeller."
+      ],
+      "dogru_index": 1,
+      "cozum": "Donma noktası alçalması tanecik sayısına bağlıdır. Antifriz ve tuz suda çözünerek tanecik sayısını artırır, donma noktasını düşürür ve buzlanmayı geciktirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Antifrizin işlevi nedir?",
+        "back": "Suda çözünerek donma noktasını düşürür ve motor suyunun donmasını engeller."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o10",
+      "alt_beceri": "Katı-sıvı çözeltilerin kaynama ve donma noktasının saf suya göre değişimine yönelik araştırma sorusu belirler.",
+      "metin": "Sütün donma noktası ölçülerek sütün saf olup olmadığı belirlenebilmektedir. Bu uygulama hangi özelliğe dayanır?",
+      "secenekler": [
+        "Sütün renginin sıcaklıkla değişmesine",
+        "Sütteki yağın donma sırasında yanmasına",
+        "Süt proteinlerinin donma sırasında buharlaşmasına",
+        "Çözeltilerin donma noktasının çözünen tanecik sayısına bağlı olmasına"
+      ],
+      "dogru_index": 3,
+      "cozum": "Donma noktası alçalması tanecik sayısına bağlıdır. Süte su katılırsa tanecik derişimi değişir ve donma noktası farklı ölçülür; bu nedenle donma noktası kalite kontrolünde kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Donma noktası ölçümünün kullanım amacı nedir?",
+        "back": "Çözeltideki tanecik sayısına bağlı olarak saflık ve katkı kontrolünde kullanılır."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c08_o11",
+      "alt_beceri": "Çözeltilerin kaynama ve donma noktasının değişimine yönelik neden-sonuç ilişkilerini belirtir.",
+      "metin": "Tabloda iki maddenin kullanım alanı verilmiştir. Buna göre bu maddelerin ortak işlevi hangisidir?",
+      "secenekler": [
+        "Suda çözünerek kaynama noktasını düşürmek",
+        "Suyun buhar basıncını artırmak",
+        "Suda çözünerek donma noktasını düşürmek",
+        "Suyun donma noktasını yükseltmek"
+      ],
+      "dogru_index": 2,
+      "cozum": "Her iki madde de suda çözünerek tanecik sayısını artırır ve donma noktasını düşürür. Bu sayede su daha düşük sıcaklıklarda donar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "Kullanım"
+        ],
+        "satirlar": [
+          [
+            "Etilen glikol",
+            "Antifriz"
+          ],
+          [
+            "NaCl",
+            "Yollarda buzlanma"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Etilen glikolün formülü nedir?",
+        "back": "C2H6O2 biçimindedir; antifriz olarak kullanılır."
+      },
+      "kazanim": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t02_c08_o01:flashcard",
+      "front": "Koligatif özellik nedir?",
+      "back": "Çözünenin türüne değil, çözeltideki tanecik sayısına bağlı olarak değişen özelliklerdir."
+    },
+    {
+      "id": "kim_10_t02_c08_o02:flashcard",
+      "front": "Kaynama noktasının tanımı nedir?",
+      "back": "Sıvının buhar basıncının dış basınca eşitlendiği sıcaklığa göre belirlenir."
+    },
+    {
+      "id": "kim_10_t02_c08_o03:flashcard",
+      "front": "Koligatif özelliklerde belirleyici olan nicelik nedir?",
+      "back": "Çözeltideki toplam tanecik sayısıdır; taneciklerin türü değildir."
+    },
+    {
+      "id": "kim_10_t02_c08_o04:flashcard",
+      "front": "Kaynama noktası yükselmesinin bağlı olduğu nicelik nedir?",
+      "back": "Çözeltideki toplam tanecik sayısına (birim çözücüdeki mol sayısına) bağlıdır."
+    },
+    {
+      "id": "kim_10_t02_c08_o05:flashcard",
+      "front": "Donma noktası alçalması nedir?",
+      "back": "Çözeltinin donma noktasının saf çözücünün donma noktasından daha düşük olmasıdır."
+    },
+    {
+      "id": "kim_10_t02_c08_o06:flashcard",
+      "front": "Elektrolit çözeltilerde tanecik sayısını belirleyen ölçüt nedir?",
+      "back": "İyonlaşma denklemindeki toplam iyon sayısı dikkate alınır."
+    },
+    {
+      "id": "kim_10_t02_c08_o07:flashcard",
+      "front": "Kontrol değişkeninin sabit tutulmasının nedeni nedir?",
+      "back": "Sonucun yalnızca bağımsız değişkenden kaynaklandığından emin olmak için."
+    },
+    {
+      "id": "kim_10_t02_c08_o08:flashcard",
+      "front": "MgCl2'nin suda oluşturduğu iyon sayısı nedir?",
+      "back": "Üç iyon oluşturur: 1 mol Mg2+ ve 2 mol Cl-."
+    },
+    {
+      "id": "kim_10_t02_c08_o09:flashcard",
+      "front": "Antifrizin işlevi nedir?",
+      "back": "Suda çözünerek donma noktasını düşürür ve motor suyunun donmasını engeller."
+    },
+    {
+      "id": "kim_10_t02_c08_o10:flashcard",
+      "front": "Donma noktası ölçümünün kullanım amacı nedir?",
+      "back": "Çözeltideki tanecik sayısına bağlı olarak saflık ve katkı kontrolünde kullanılır."
+    },
+    {
+      "id": "kim_10_t02_c08_o11:flashcard",
+      "front": "Etilen glikolün formülü nedir?",
+      "back": "C2H6O2 biçimindedir; antifriz olarak kullanılır."
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "konu_id": "kim_10_t02_c04",
+  "kod": "KİM.10.2.4",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.180-184",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t02_c04_o01",
+      "alt_beceri": "Katıların saf sudaki çözünürlüğüne ilişkin ölçütler (maddde cinsi ve sıcaklık) belirler.",
+      "metin": "Tabloda iki katının farklı sıcaklıklarda 100 g sudaki çözünürlükleri verilmiştir. Buna göre çözünürlüğe etki eden ölçütler hangileridir?",
+      "secenekler": [
+        "Yalnızca çözücünün rengi",
+        "Maddenin cinsi ve sıcaklık",
+        "Yalnızca kabın hacmi",
+        "Maddenin kütlesi ve tanecik büyüklüğü"
+      ],
+      "dogru_index": 1,
+      "cozum": "Aynı sıcaklıkta sakkarozun çözünürlüğü NaCl'den çok yüksektir; madde cinsi etkilidir. Her iki maddede de sıcaklık 60 °C'ye çıktığında çözünürlük artmıştır; sıcaklık da ölçüttür.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "20 °C",
+          "60 °C"
+        ],
+        "satirlar": [
+          [
+            "Sakkaroz",
+            "201,9",
+            "288,9"
+          ],
+          [
+            "NaCl",
+            "35,7",
+            "37,1"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Çözünürlük nedir?",
+        "back": "Belirli bir sıcaklıkta 100 g çözücüde çözünebilen maksimum madde miktarıdır."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o02",
+      "alt_beceri": "Katıların saf sudaki çözünürlüğüne ilişkin ölçütler (maddde cinsi ve sıcaklık) belirler.",
+      "metin": "20 °C sıcaklıkta sodyum klorürün çözünürlüğü 35,7 g/100 g sudur. Bu sıcaklıkta 50 g su kullanıldığında en fazla kaç gram NaCl çözünür?",
+      "secenekler": [
+        "35,7 g",
+        "71,4 g",
+        "53,55 g",
+        "17,85 g"
+      ],
+      "dogru_index": 3,
+      "cozum": "Çözünürlük 100 g suya göre verilmiştir. 50 g su için doğru orantı kurulur: 35,7 · 50/100 = 17,85 g çözünür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlüğün birimi nedir?",
+        "back": "Genellikle g/100 g su biçiminde ifade edilir."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o03",
+      "alt_beceri": "Çözünürlüğe ilişkin belirlediği ölçütleri test eder.",
+      "metin": "20 °C sıcaklıkta 100 g suya 70 g KBr eklenmiş ve 4,7 g KBr dibe çökmüştür. Buna göre KBr'nin bu sıcaklıktaki çözünürlüğü kaç g/100 g sudur?",
+      "secenekler": [
+        "65,3",
+        "70",
+        "74,7",
+        "4,7"
+      ],
+      "dogru_index": 0,
+      "cozum": "Eklenen miktardan çöken miktar çıkarılarak çözünen bulunur: 70 - 4,7 = 65,3 g. Bu nedenle çözünürlük 65,3 g/100 g sudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlüğün deneysel belirlenme yolu nedir?",
+        "back": "Doygun çözelti elde edilene kadar madde eklenir; çözünen miktar 100 g suya oranlanır."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o04",
+      "alt_beceri": "Çözünürlüğün tanımını yaparak kendi tanımı ile bilimsel tanım arasındaki farkı açıklar.",
+      "metin": "Grafikte X ve Y katılarının çözünürlüklerinin sıcaklıkla değişimi verilmiştir. Buna göre sıcaklık 0 °C'den 100 °C'ye çıkarıldığında çözünürlükler nasıl değişir?",
+      "secenekler": [
+        "Her ikisinin de çözünürlüğü artar.",
+        "X'in çözünürlüğü azalır, Y'ninki artar.",
+        "X'in çözünürlüğü artar, Y'ninki azalır.",
+        "Her ikisinin de çözünürlüğü değişmez."
+      ],
+      "dogru_index": 2,
+      "cozum": "Grafikte X doğrusu yukarı, Y doğrusu aşağı yönelmiştir. Sıcaklık arttıkça X'in çözünürlüğü artar, Y'ninki azalır; bu maddelerin ayırt edici özelliğidir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Sıcaklık (°C)",
+        "yEkseni": "Çözünürlük (g/100 g su)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "X",
+            "noktalar": [
+              [
+                0,
+                20
+              ],
+              [
+                50,
+                45
+              ],
+              [
+                100,
+                80
+              ]
+            ]
+          },
+          {
+            "ad": "Y",
+            "noktalar": [
+              [
+                0,
+                80
+              ],
+              [
+                50,
+                45
+              ],
+              [
+                100,
+                15
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Sıcaklık-çözünürlük grafiğinin gösterdiği ilişki nedir?",
+        "back": "Bir katının çözünürlüğünün sıcaklıkla nasıl değiştiğini gösterir."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o05",
+      "alt_beceri": "Çözünürlüğe ilişkin belirlediği ölçütleri test eder.",
+      "metin": "60 °C'de 100 g suda 288,9 g sakkaroz ve 37,1 g NaCl çözülerek iki çözelti hazırlanmıştır. Çözeltiler 20 °C'ye soğutulduğunda hangisinin dibinde daha çok katı toplanır? (20 °C çözünürlükleri: sakkaroz 201,9, NaCl 35,7 g/100 g su)",
+      "secenekler": [
+        "NaCl çözeltisinde; 35,7 g katı çöker, sakkarozda hiç çökmez.",
+        "İkisinde de eşit miktarda katı çöker; sıcaklık farkı aynıdır.",
+        "Hiçbirinde çökme olmaz; çözeltiler doymamıştır.",
+        "Sakkaroz çözeltisinde; 87 g katı çöker, NaCl'de 1,4 g çöker."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sakkarozda 288,9 - 201,9 = 87 g, NaCl'de 37,1 - 35,7 = 1,4 g katı çöker. Sakkarozun çözünürlüğü sıcaklıkla çok değiştiği için çökme belirgindir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Soğutma sırasında çökelmenin nedeni nedir?",
+        "back": "Çözünürlük azaldığı için çözücü fazla gelen maddeyi tutamaz ve katı hâlde ayrılır."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o06",
+      "alt_beceri": "Çözünürlüğe ilişkin belirlediği ölçütleri test eder.",
+      "metin": "Bir katının sudaki çözünürlüğünü belirlemek için deney planlanmıştır. Bu deneyde kontrol değişkeni olarak hangileri sabit tutulmalıdır?",
+      "secenekler": [
+        "Katının rengi ve kabın şekli",
+        "Su miktarı ve sıcaklık",
+        "Çözünen miktarı ve karıştırma süresi",
+        "Basınç ve çözeltinin rengi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözünürlük 100 g su ve belirli sıcaklık için tanımlanır. Deneyde su miktarı ile sıcaklık sabit tutulup eklenen katı miktarı değiştirilerek çözünen miktar ölçülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlük hangi koşullara bağlı olarak tanımlanır?",
+        "back": "Belirli sıcaklık, belirli çözücü miktarı ve doygunluk koşuluna bağlı olarak tanımlanır."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o07",
+      "alt_beceri": "Çözünürlüğün tanımını yaparak kendi tanımı ile bilimsel tanım arasındaki farkı açıklar.",
+      "metin": "Bir öğrenci çözünürlüğü 'bir çözücüde çözünen madde miktarı' olarak tanımlamıştır. Bu tanımın bilimsel tanımdan farkı hangisidir?",
+      "secenekler": [
+        "Bilimsel tanım belirli sıcaklıkta çözünebilen maksimum miktarı belirtir.",
+        "Bilimsel tanım çözünen maddenin rengini de kapsar.",
+        "Bilimsel tanım mol sayısını hiç kullanmaz, kütle kullanır.",
+        "İki tanım arasında hiçbir fark yoktur; ikisi de aynıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Çözünürlük belirli bir sıcaklıkta 100 g çözücüde çözünebilen maksimum madde miktarıdır. Öğrenci tanımında sıcaklık ve maksimum (doygunluk) koşulu eksiktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doygun çözelti nedir?",
+        "back": "Belirli sıcaklıkta çözebileceği maksimum maddeyi çözmüş çözeltidir."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o08",
+      "alt_beceri": "Katıların saf sudaki çözünürlüğüne ilişkin ölçütler (maddde cinsi ve sıcaklık) belirler.",
+      "metin": "Katıların saf sudaki çözünürlüğü için belirlenen ölçütler arasında hangisi yer almaz?",
+      "secenekler": [
+        "Maddenin cinsi",
+        "Sıcaklık",
+        "Ortamın açık hava basıncı",
+        "Çözücü miktarı"
+      ],
+      "dogru_index": 2,
+      "cozum": "Katıların çözünürlüğü basınç değişiminden belirgin biçimde etkilenmez. Etkili ölçütler madde cinsi, sıcaklık ve çözücü miktarıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Basınç değişiminin katıların çözünürlüğüne etkisi nedir?",
+        "back": "Katılarda basıncın çözünürlüğe etkisi ihmal edilecek kadar azdır; gazlarda ise belirgindir."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o09",
+      "alt_beceri": "Çözünürlüğün tanımını yaparak kendi tanımı ile bilimsel tanım arasındaki farkı açıklar.",
+      "metin": "100 g suda KNO3'ün çözünürlüğü 20 °C'de 31,6 g, 80 °C'de 167,1 g'dır. Buna göre 80 °C'de hazırlanan doygun çözelti 20 °C'ye soğutulursa kaç gram KNO3 çöker?",
+      "secenekler": [
+        "167,1 g",
+        "135,5 g",
+        "31,6 g",
+        "198,7 g"
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözünürlük farkı kadar madde çöker: 167,1 - 31,6 = 135,5 g. Bu olay kristallendirme yönteminin temelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kristallendirme nedir?",
+        "back": "Doygun çözeltinin soğutulmasıyla çözünürlüğü azalan maddenin kristal hâlinde ayrılmasıdır."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c04_o10",
+      "alt_beceri": "Çözünürlüğe ilişkin belirlediği ölçütleri test eder.",
+      "metin": "Bir öğrenci 20 °C'de 100 g suya 25 g KBr ekleyip karıştırmıştır. KBr'nin bu sıcaklıktaki çözünürlüğü 65,3 g/100 g su olduğuna göre çözelti için hangisi doğrudur?",
+      "secenekler": [
+        "Doymuştur; dibinde mutlaka katı KBr bulunur.",
+        "Aşırı doymuştur; ısıtıldığında katı çöker.",
+        "Çözelti değildir; KBr suda çözünmemiştir.",
+        "Doymamıştır; 65,3 g'a kadar daha KBr çözebilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Eklenen 25 g, çözünürlük sınırı olan 65,3 g'dan azdır. Bu nedenle çözelti doymamıştır ve daha fazla KBr çözebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doymamış çözelti nedir?",
+        "back": "Belirli sıcaklıkta çözebileceğinden daha az madde içeren, madde çözmeye devam edebilen çözeltidir."
+      },
+      "kazanim": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t02_c04_o01:flashcard",
+      "front": "Çözünürlük nedir?",
+      "back": "Belirli bir sıcaklıkta 100 g çözücüde çözünebilen maksimum madde miktarıdır."
+    },
+    {
+      "id": "kim_10_t02_c04_o02:flashcard",
+      "front": "Çözünürlüğün birimi nedir?",
+      "back": "Genellikle g/100 g su biçiminde ifade edilir."
+    },
+    {
+      "id": "kim_10_t02_c04_o03:flashcard",
+      "front": "Çözünürlüğün deneysel belirlenme yolu nedir?",
+      "back": "Doygun çözelti elde edilene kadar madde eklenir; çözünen miktar 100 g suya oranlanır."
+    },
+    {
+      "id": "kim_10_t02_c04_o04:flashcard",
+      "front": "Sıcaklık-çözünürlük grafiğinin gösterdiği ilişki nedir?",
+      "back": "Bir katının çözünürlüğünün sıcaklıkla nasıl değiştiğini gösterir."
+    },
+    {
+      "id": "kim_10_t02_c04_o05:flashcard",
+      "front": "Soğutma sırasında çökelmenin nedeni nedir?",
+      "back": "Çözünürlük azaldığı için çözücü fazla gelen maddeyi tutamaz ve katı hâlde ayrılır."
+    },
+    {
+      "id": "kim_10_t02_c04_o06:flashcard",
+      "front": "Çözünürlük hangi koşullara bağlı olarak tanımlanır?",
+      "back": "Belirli sıcaklık, belirli çözücü miktarı ve doygunluk koşuluna bağlı olarak tanımlanır."
+    },
+    {
+      "id": "kim_10_t02_c04_o07:flashcard",
+      "front": "Doygun çözelti nedir?",
+      "back": "Belirli sıcaklıkta çözebileceği maksimum maddeyi çözmüş çözeltidir."
+    },
+    {
+      "id": "kim_10_t02_c04_o08:flashcard",
+      "front": "Basınç değişiminin katıların çözünürlüğüne etkisi nedir?",
+      "back": "Katılarda basıncın çözünürlüğe etkisi ihmal edilecek kadar azdır; gazlarda ise belirgindir."
+    },
+    {
+      "id": "kim_10_t02_c04_o09:flashcard",
+      "front": "Kristallendirme nedir?",
+      "back": "Doygun çözeltinin soğutulmasıyla çözünürlüğü azalan maddenin kristal hâlinde ayrılmasıdır."
+    },
+    {
+      "id": "kim_10_t02_c04_o10:flashcard",
+      "front": "Doymamış çözelti nedir?",
+      "back": "Belirli sıcaklıkta çözebileceğinden daha az madde içeren, madde çözmeye devam edebilen çözeltidir."
+    }
+  ]
+}

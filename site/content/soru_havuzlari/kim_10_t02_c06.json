@@ -1,0 +1,271 @@
+{
+  "konu_id": "kim_10_t02_c06",
+  "kod": "KİM.10.2.6",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "kazanim": "Çözeltileri sınıflandırabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.193-202",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t02_c06_o01",
+      "alt_beceri": "Çözeltileri ayırt etmek için ölçütler (içerdiği çözünenin miktarı üzerinden doymuş, doymamış, aşırı doymuş; içerdiği çözünenin iyonik karakteri üzerinden elektrolit olan, elektrolit olmayan) belirler.",
+      "metin": "20 °C'de 100 mL suya 65,3 g KBr eklendiğinde tamamı çözünürken 70 g eklendiğinde 4,7 g katı dibe çökmektedir. Buna göre 20 °C'deki KBr çözünürlük sınırı için hangi sonuca varılır?",
+      "secenekler": [
+        "70 g'dır; çöken kısım çözünmeyen safsızlıktır.",
+        "65,3 g'dır; bu miktarın üzerinde eklenen madde çözünmez.",
+        "4,7 g'dır; yalnızca bu miktar çözünebilir.",
+        "Belirlenemez; sıcaklık değişmeden sınır bulunamaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "65,3 g eklendiğinde tamamı çözünmüş, 70 g eklendiğinde 4,7 g çökmüştür. Çözünen miktar 65,3 g olduğundan bu sıcaklıkta çözünürlük 65,3 g/100 mL sudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doygun çözeltinin elde edilme yolu nedir?",
+        "back": "Belirli sıcaklıkta çözücüye çözünürlük sınırına kadar madde eklenip çözülmesiyle elde edilir."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o02",
+      "alt_beceri": "Çözeltileri ayırt etmek için ölçütler (içerdiği çözünenin miktarı üzerinden doymuş, doymamış, aşırı doymuş; içerdiği çözünenin iyonik karakteri üzerinden elektrolit olan, elektrolit olmayan) belirler.",
+      "metin": "Tabloda iki çözeltinin iletkenlik gözlemi verilmiştir. Buna göre iletkenlik farkının nedeni hangisidir?",
+      "secenekler": [
+        "Etanol iyonlarına ayrıştığı için iletken, KCl moleküler çözündüğü için iletken değildir.",
+        "Her iki çözelti de elektrolittir; iletkenlik farkı sıcaklıktan kaynaklanır.",
+        "İletkenlik çözeltinin rengine bağlı olduğu için fark oluşmuştur.",
+        "KCl iyonlarına ayrıştığı için elektrolit, etanol moleküler çözündüğü için elektrolit değildir."
+      ],
+      "dogru_index": 3,
+      "cozum": "KCl suda K+ ve Cl- iyonlarına ayrışır; iyonlar elektrik akımını taşır. Etanol moleküler hâlde çözündüğü için iyon oluşturmaz ve çözelti iletken değildir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Çözelti",
+          "İletkenlik"
+        ],
+        "satirlar": [
+          [
+            "KCl çözeltisi",
+            "iletken"
+          ],
+          [
+            "Etanol çözeltisi",
+            "iletken değil"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Elektrolit çözelti nedir?",
+        "back": "Elektrik akımını ileten, iyon içeren çözeltidir."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o03",
+      "alt_beceri": "Çözeltileri belirlediği ölçütlere göre ayrıştırır.",
+      "metin": "20 °C'de 100 g suya 20 g KNO3 eklenerek çözelti hazırlanmıştır (çözünürlük 31,6 g/100 g su). Bu çözeltinin türü hangisidir?",
+      "secenekler": [
+        "Doymamış çözelti",
+        "Doymuş çözelti",
+        "Aşırı doymuş çözelti",
+        "Çözelti değil; heterojen karışım"
+      ],
+      "dogru_index": 0,
+      "cozum": "20 g, 31,6 g'lık çözünürlük sınırından azdır ve dipte katı yoktur. Bu nedenle çözelti doymamıştır; daha fazla KNO3 çözebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aşırı doymuş çözelti nedir?",
+        "back": "Belirli koşullarda çözebileceği maksimum miktardan daha fazla madde içeren çözeltidir."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o04",
+      "alt_beceri": "Çözeltileri belirlediği ölçütlere göre ayrıştırır.",
+      "metin": "20 °C'de 100 g suya 35 g KNO3 eklenip 30 °C'ye ısıtılan çözelti tekrar 20 °C'ye soğutulmuştur. Bu işlem sonunda hangi gözlem beklenir? (20 °C'de 31,6 g, 30 °C'de 45,3 g/100 g su)",
+      "secenekler": [
+        "Tüm KNO3 çözünmüş kalır; çökme olmaz.",
+        "35 g'ın tamamı kristallenerek dibe çöker.",
+        "20 °C'ye soğutulduğunda 3,4 g KNO3 kristallenir.",
+        "30 °C'de 35 g'ın tamamı çözünmez ve hemen çöker."
+      ],
+      "dogru_index": 2,
+      "cozum": "30 °C'de 35 g tamamen çözünür (sınır 45,3 g). 20 °C'ye soğutulduğunda sınır 31,6 g'a düştüğü için 35 - 31,6 = 3,4 g KNO3 kristallenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kristallenme ile çökelme arasındaki fark nedir?",
+        "back": "Kristallenme çözünürlüğün azalmasıyla düzenli kristal oluşumudur; çökelme iyonların birleşerek katı oluşturmasıdır."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o05",
+      "alt_beceri": "Çözeltileri ayırt etmek için ölçütler (içerdiği çözünenin miktarı üzerinden doymuş, doymamış, aşırı doymuş; içerdiği çözünenin iyonik karakteri üzerinden elektrolit olan, elektrolit olmayan) belirler.",
+      "metin": "Çözeltileri sınıflandırmak için kullanılan ölçütler arasında hangisi yer alır?",
+      "secenekler": [
+        "Çözeltinin bulunduğu kabın büyüklüğü",
+        "Çözeltinin hazırlandığı odanın sıcaklığı",
+        "Çözücünün ambalajının rengi",
+        "Çözünen miktarının çözünürlük sınırına göre durumu ve iyon içerip içermemesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Çözeltiler doymuş/doymamış/aşırı doymuş olarak çözünen miktarına göre; elektrolit/elektrolit olmayan olarak iyon içerip içermemesine göre sınıflandırılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözeltilerin sınıflandırılma ölçütleri nedir?",
+        "back": "Çözünen miktarına (doymuş, doymamış, aşırı doymuş) ve iyon içermesine (elektrolit) göre."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o06",
+      "alt_beceri": "Çözeltileri belirlediği ölçütlere göre ayrıştırır.",
+      "metin": "Musluk suyu elektrik akımını iletirken damıtılmış su iletmemektedir. Bu gözleme göre hangi sınıflandırma doğrudur?",
+      "secenekler": [
+        "Damıtılmış su elektrolit, musluk suyu elektrolit değildir.",
+        "Musluk suyu elektrolit, damıtılmış su elektrolit değildir.",
+        "Her ikisi de elektrolittir; iletkenlik farkı kaplardan kaynaklanır.",
+        "Her ikisi de elektrolit değildir; su hiçbir zaman iletken olmaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Musluk suyu içerdiği çözünmüş iyonlar sayesinde akımı iletir ve elektrolittir. Damıtılmış suda iyon miktarı çok az olduğu için iletkenlik gözlenmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrolit olmayan çözelti nedir?",
+        "back": "İyon içermediği için elektrik akımını iletmeyen çözeltidir."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o07",
+      "alt_beceri": "Çözeltileri farklı biçimlerde gruplandırır.",
+      "metin": "Yaz aylarında Tuz Gölü'nün çevresinde tuz kristalleri oluşurken denizlerde benzer bir durum gözlenmez. Bu farkın nedeni hangisidir?",
+      "secenekler": [
+        "Tuz Gölü'nde buharlaşma fazla olduğu için çözelti doygunluğu aşıp tuz kristallenir.",
+        "Deniz suyu tatlı su olduğu için tuz kristallenmesi gözlenmez.",
+        "Tuz Gölü'nde basınç çok yüksek olduğu için tuz çöker.",
+        "Denizlerde sıcaklık çok düşük olduğu için tuz çözünürlüğü sıfırdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Tuz Gölü sığdır ve buharlaşma fazladır; su miktarı azalınca derişim artar, çözelti doygunluğu aşar ve tuz kristallenir. Denizlerde su hacmi çok büyük olduğu için bu durum gözlenmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Buharlaşmanın çözelti derişimine etkisi nedir?",
+        "back": "Çözücü azaldığı için derişim artar; doygunluk aşılırsa çözünen kristallenir."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o08",
+      "alt_beceri": "Oluşturduğu grup adlandırmalarını bilimsel karşılığı ile kıyaslar.",
+      "metin": "Bir öğrenci çözeltileri 'tuzlu sular' ve 'şekerli sular' olarak gruplandırmıştır. Bu gruplandırmanın bilimsel karşılığı ile ilgili hangisi doğrudur?",
+      "secenekler": [
+        "Her iki grup da aynı ölçüte göre elektrolit sayılır.",
+        "Şekerli sular iyon içerdiği için elektrolit, tuzlu sular değildir.",
+        "Tuzlu sular iyon içerdiği için elektrolit, şekerli sular elektrolit değildir.",
+        "Bu gruplandırmanın çözelti türleriyle hiçbir ilişkisi yoktur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Tuzlar suda iyonlarına ayrıştığı için tuzlu su iletkendir; şeker moleküler çözündüğü için şekerli su elektrolit değildir. Öğrencinin gruplandırması bu ayrıma karşılık gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tuzlu suyun iletken olmasının nedeni nedir?",
+        "back": "Suda iyonlarına ayrışan tuz, elektrik akımını taşıyacak iyonları sağlar."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o09",
+      "alt_beceri": "Çözeltileri farklı biçimlerde gruplandırır.",
+      "metin": "Bir çözeltinin doymuş olup olmadığını anlamak için hangi gözlem kullanılır?",
+      "secenekler": [
+        "Çözeltinin renginin koyulaşması",
+        "Çözeltiye eklenen katının bir kısmının çözünmeden kalması",
+        "Kabın toplam kütlesinin değişmesi",
+        "Çözeltinin sıcaklığının düşmesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Belirli sıcaklıkta eklenen maddenin bir kısmı çözünmeden kalıyorsa çözelti doymuştur. Renk, kütle ya da sıcaklık değişimi tek başına bu bilgiyi vermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doygunluğu belirleyen koşul nedir?",
+        "back": "Belirli sıcaklıkta çözebileceği maksimum maddeyi çözmüş olmasıdır."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c06_o10",
+      "alt_beceri": "Oluşturduğu grup adlandırmalarını bilimsel karşılığı ile kıyaslar.",
+      "metin": "Aşağıdaki çözeltilerden hangisi aşırı doymuş olabilir?",
+      "secenekler": [
+        "Oda sıcaklığında dibinde katı bulunan çözelti",
+        "Çözünürlük sınırının yarısı kadar madde içeren çözelti",
+        "Saf suya birkaç damla tuz eklenmiş çözelti",
+        "Isıtılıp doygun hâle getirilen ve katı eklenmeden yavaşça soğutulan çözelti"
+      ],
+      "dogru_index": 3,
+      "cozum": "Aşırı doymuş çözelti, çözebileceğinden fazla madde içeren kararsız çözeltidir. Doygun hâle getirilip yavaş soğutulan çözeltide madde çözünmüş hâlde kalabilir; bu durum aşırı doymuşluğa örnektir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aşırı doymuş çözeltinin kararlı hâle gelme yolu nedir?",
+        "back": "Çözeltiye tohum kristal eklenmesi ya da sallanması fazla maddenin kristallenmesine yol açar."
+      },
+      "kazanim": "Çözeltileri sınıflandırabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t02_c06_o01:flashcard",
+      "front": "Doygun çözeltinin elde edilme yolu nedir?",
+      "back": "Belirli sıcaklıkta çözücüye çözünürlük sınırına kadar madde eklenip çözülmesiyle elde edilir."
+    },
+    {
+      "id": "kim_10_t02_c06_o02:flashcard",
+      "front": "Elektrolit çözelti nedir?",
+      "back": "Elektrik akımını ileten, iyon içeren çözeltidir."
+    },
+    {
+      "id": "kim_10_t02_c06_o03:flashcard",
+      "front": "Aşırı doymuş çözelti nedir?",
+      "back": "Belirli koşullarda çözebileceği maksimum miktardan daha fazla madde içeren çözeltidir."
+    },
+    {
+      "id": "kim_10_t02_c06_o04:flashcard",
+      "front": "Kristallenme ile çökelme arasındaki fark nedir?",
+      "back": "Kristallenme çözünürlüğün azalmasıyla düzenli kristal oluşumudur; çökelme iyonların birleşerek katı oluşturmasıdır."
+    },
+    {
+      "id": "kim_10_t02_c06_o05:flashcard",
+      "front": "Çözeltilerin sınıflandırılma ölçütleri nedir?",
+      "back": "Çözünen miktarına (doymuş, doymamış, aşırı doymuş) ve iyon içermesine (elektrolit) göre."
+    },
+    {
+      "id": "kim_10_t02_c06_o06:flashcard",
+      "front": "Elektrolit olmayan çözelti nedir?",
+      "back": "İyon içermediği için elektrik akımını iletmeyen çözeltidir."
+    },
+    {
+      "id": "kim_10_t02_c06_o07:flashcard",
+      "front": "Buharlaşmanın çözelti derişimine etkisi nedir?",
+      "back": "Çözücü azaldığı için derişim artar; doygunluk aşılırsa çözünen kristallenir."
+    },
+    {
+      "id": "kim_10_t02_c06_o08:flashcard",
+      "front": "Tuzlu suyun iletken olmasının nedeni nedir?",
+      "back": "Suda iyonlarına ayrışan tuz, elektrik akımını taşıyacak iyonları sağlar."
+    },
+    {
+      "id": "kim_10_t02_c06_o09:flashcard",
+      "front": "Doygunluğu belirleyen koşul nedir?",
+      "back": "Belirli sıcaklıkta çözebileceği maksimum maddeyi çözmüş olmasıdır."
+    },
+    {
+      "id": "kim_10_t02_c06_o10:flashcard",
+      "front": "Aşırı doymuş çözeltinin kararlı hâle gelme yolu nedir?",
+      "back": "Çözeltiye tohum kristal eklenmesi ya da sallanması fazla maddenin kristallenmesine yol açar."
+    }
+  ]
+}

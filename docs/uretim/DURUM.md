@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 20:11 (UTC)
+> Güncelleme: 2026-11-16 20:16 (UTC)
 
 ## Ders bazında
 
@@ -10,15 +10,15 @@
 | Türk Dili ve Edebiyatı | 0/16 | 0 | 188 | 0 | 0 |
 | Matematik | 0/21 | 0 | 274 | 0 | 0 |
 | Fizik | 22/22 | 220 | 220 | 220 | 27 |
-| Kimya | 11/21 | 114 | 214 | 114 | 22 |
+| Kimya | 21/21 | 215 | 214 | 215 | 46 |
 | Biyoloji | 0/19 | 0 | 190 | 0 | 0 |
 | Tarih | 0/14 | 0 | 140 | 0 | 0 |
 | Coğrafya | 0/18 | 0 | 190 | 0 | 0 |
 | Felsefe | 0/10 | 0 | 100 | 0 | 0 |
 | Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **33/158** | **334** | **1686** | **334** | **49** |
+| **TOPLAM** | **43/158** | **435** | **1686** | **435** | **73** |
 
-İlerleme: **%20** (334/1686 soru) · kart 1:1 ✔
+İlerleme: **%26** (435/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -69,21 +69,6 @@
 | `mat_10_t06_c02` | MAT.10.6.2 | 10 | yok |
 | `mat_10_t07_c01` | MAT.10.7.1 | 10 | yok |
 | `mat_10_t07_c02` | MAT.10.7.2 | 10 | yok |
-
-### Kimya
-
-| konu_id | kod | hedef soru | durum |
-| --- | --- | --- | --- |
-| `kim_10_t02_c01` | KİM.10.2.1 | 10 | yok |
-| `kim_10_t02_c02` | KİM.10.2.2 | 10 | yok |
-| `kim_10_t02_c03` | KİM.10.2.3 | 10 | yok |
-| `kim_10_t02_c04` | KİM.10.2.4 | 10 | yok |
-| `kim_10_t02_c05` | KİM.10.2.5 | 10 | yok |
-| `kim_10_t02_c06` | KİM.10.2.6 | 10 | yok |
-| `kim_10_t02_c07` | KİM.10.2.7 | 10 | yok |
-| `kim_10_t02_c08` | KİM.10.2.8 | 10 | yok |
-| `kim_10_t03_c01` | KİM.10.3.1 | 10 | yok |
-| `kim_10_t03_c02` | KİM.10.3.2 | 10 | yok |
 
 ### Biyoloji
 
