@@ -1,21 +1,22 @@
 {
  "_mod": "deneme-birlestir",
- "_okumaNotu": "9. sınıf deneme dökümü (7 sınav). \"Verileri İçe Aktar\" düğmesiyle açılabilir: _mod=deneme-birlestir olduğu için uygulama TAM DURUM DEĞİŞİMİ yapmaz, yalnız bu sınavları listeye ekler. Konu takibi, hafıza, profil ve BKT korunur.",
- "_uyari": "Tüm hata nedenleri \"KONUEKSİKLİĞİ\" (konu eksikliği, ağırlık 1,5) olarak işaretlidir. Yanlış/boş ayrımı lessons[ders].w ve .e alanlarında korunur; errorLogs içinde ikisi de aynı nedenle yazılır.",
+ "_okumaNotu": "9. sınıf deneme dökümü. \"Verileri İçe Aktar\" düğmesiyle açılabilir: _mod=deneme-birlestir olduğu için tam durum değişimi YAPILMAZ, yalnız bu sınavlar listeye eklenir.",
+ "_uyari": "Tüm hata nedenleri KONUEKSİKLİĞİ (ağırlık 1,5). Yanlış/boş ayrımı lessons[ders].w ve .e alanlarında.",
  "_surum": "2026-11-17",
- "_kaynak": "9. sınıf deneme dökümü (PDF) — 7 sınav, 22.10.2025 – 22.05.2026",
  "_tutarsizliklar": [
   {
    "sinav": "pdf9-01",
    "ders": "Biyoloji",
-   "sorun": "d+w+e = 11 > azami 10",
-   "ayrinti": "PDF hem neti (8.75) hem 1 yanlış + 1 boş yazıyor; 10 soruluk bir derste bunlar aynı anda doğru olamaz (8 doğru − 0,25 = 7,75). Beyan net korundu, d buna göre türetildi."
+   "soru": 11,
+   "azami": 10,
+   "aciklama": "PDF'teki d+w+e azamiyi aşıyor; veri kırpılmadı."
   }
  ],
+ "_kaynak": "9. sınıf deneme dökümü (PDF) — 7 sınav",
  "_sayilar": {
   "sinav": 7,
   "hata_kaydi": 209,
-  "sorusu_cozulen_cikti": 0
+  "turetilmis_dersli_sinav": 6
  },
  "state": {
   "user": {
@@ -64,6 +65,20 @@
       "w": 1,
       "e": 1,
       "net_beyan": 8.75
+     },
+     "Kimya": {
+      "d": 7,
+      "w": 2,
+      "e": 1,
+      "net_beyan": 6.5,
+      "kaynak": "aritmetik-turetme"
+     },
+     "Din Kültürü": {
+      "d": 4,
+      "w": 1,
+      "e": 1,
+      "net_beyan": 3.75,
+      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -86,7 +101,7 @@
      {
       "qno": 3,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Ses Olayları",
+      "topic": "Ses olayları",
       "kazanim": "Ses olayları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
@@ -134,7 +149,7 @@
      {
       "qno": 9,
       "lesson": "Matematik",
-      "topic": "1.3 Sayı Kümelerinin Özellikleri",
+      "topic": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
       "kazanim": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
@@ -238,7 +253,7 @@
      {
       "qno": 22,
       "lesson": "Tarih",
-      "topic": "1.2 Tarihin Doğası",
+      "topic": "Tarihin doğası, tarihin tanımı ve diğer disiplinlerle ilişkisi",
       "kazanim": "Tarihin doğası, tarihin tanımı ve diğer disiplinlerle ilişkisi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
@@ -254,7 +269,7 @@
      {
       "qno": 24,
       "lesson": "Fizik",
-      "topic": "1.1 Fizik Bilimi",
+      "topic": "Fizik biliminin alt dallarını çalışma alanlarıyla ilişkilendirerek etiketler",
       "kazanim": "Fizik biliminin alt dallarını çalışma alanlarıyla ilişkilendirerek etiketler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
@@ -279,9 +294,15 @@
     "total": 120,
     "net": 85.5,
     "kaynak": "9. sınıf deneme dökümü (PDF) · 22 Ekim 2025",
-    "bilinen_soru": 104,
+    "bilinen_soru": 120,
+    "tamamlanan_dersler": [
+     "Kimya",
+     "Din Kültürü"
+    ],
     "uyarilar": [
-     "Tarih-1: beyan net 11 · yuvarlanmış d ile 10.75"
+     "Tarih-1: PDF neti 11 ama d/w tam sayı olmak zorunda → 10.75 (0,25 PDF içi tutarsızlık)",
+     "Biyoloji (8.75 net): PDF d+w+e = 11 > azami 10 · PDF'in kendi sayımı çelişkili, sayılar olduğu gibi bırakıldı",
+     "PDF'te Kimya, Din Kültürü bölümü YOK. Bu derslerin neti 10.25 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
     ]
    },
    {
@@ -324,13 +345,27 @@
       "w": 0,
       "e": 1,
       "net_beyan": 9
+     },
+     "Kimya": {
+      "d": 10,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 10,
+      "kaynak": "aritmetik-turetme"
+     },
+     "Din Kültürü": {
+      "d": 6,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 6,
+      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
      {
       "qno": 1,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Yazım Kuralları",
+      "topic": "Yazım kurallarını uygular",
       "kazanim": "Yazım kurallarını uygular",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
@@ -354,7 +389,7 @@
      {
       "qno": 4,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Yazım Kuralları",
+      "topic": "Yazım kuralları",
       "kazanim": "Yazım kuralları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
@@ -450,7 +485,7 @@
      {
       "qno": 16,
       "lesson": "Matematik",
-      "topic": "1.3 Sayı Kümelerinin Özellikleri",
+      "topic": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
       "kazanim": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
@@ -458,7 +493,7 @@
      {
       "qno": 17,
       "lesson": "Matematik",
-      "topic": "1.3 Sayı Kümelerinin Özellikleri",
+      "topic": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
       "kazanim": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
@@ -530,7 +565,7 @@
      {
       "qno": 26,
       "lesson": "Coğrafya",
-      "topic": "1.1.2 Niçin Coğrafya Öğrenmeliyiz?",
+      "topic": "Niçin coğrafya öğrenmeliyiz?",
       "kazanim": "Niçin coğrafya öğrenmeliyiz?",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
@@ -546,7 +581,7 @@
      {
       "qno": 28,
       "lesson": "Fizik",
-      "topic": "1.1 Fizik Bilimi",
+      "topic": "Fizik bilimi ve fiziğin uygulama alanları",
       "kazanim": "Fizik bilimi ve fiziğin uygulama alanları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
@@ -554,7 +589,7 @@
      {
       "qno": 29,
       "lesson": "Fizik",
-      "topic": "1.1 Fizik Bilimi",
+      "topic": "Fizik biliminin alt dalları ve temel büyüklükler",
       "kazanim": "Fizik biliminin alt dalları ve temel büyüklükler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
@@ -571,8 +606,14 @@
     "total": 120,
     "net": 78.5,
     "kaynak": "9. sınıf deneme dökümü (PDF) · 24 Kasım 2025",
-    "bilinen_soru": 96,
-    "uyarilar": []
+    "bilinen_soru": 112,
+    "tamamlanan_dersler": [
+     "Kimya",
+     "Din Kültürü"
+    ],
+    "uyarilar": [
+     "PDF'te Kimya, Din Kültürü bölümü YOK. Bu derslerin neti 16 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+    ]
    },
    {
     "id": "pdf9-03",
@@ -614,6 +655,20 @@
       "w": 4,
       "e": 0,
       "net_beyan": 5
+     },
+     "Matematik": {
+      "d": 15,
+      "w": 1,
+      "e": 14,
+      "net_beyan": 14.75,
+      "kaynak": "aritmetik-turetme"
+     },
+     "Din Kültürü": {
+      "d": 3,
+      "w": 0,
+      "e": 3,
+      "net_beyan": 3,
+      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -676,7 +731,7 @@
      {
       "qno": 8,
       "lesson": "Coğrafya",
-      "topic": "1.1.3 Coğrafya Biliminin Gelişimi",
+      "topic": "Coğrafya biliminin gelişimine katkı sağlayan isimler",
       "kazanim": "Coğrafya biliminin gelişimine katkı sağlayan isimler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -684,7 +739,7 @@
      {
       "qno": 9,
       "lesson": "Coğrafya",
-      "topic": "3.1.1 Hava Olayları",
+      "topic": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
       "kazanim": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -692,7 +747,7 @@
      {
       "qno": 10,
       "lesson": "Coğrafya",
-      "topic": "3.1.1 Hava Olayları",
+      "topic": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
       "kazanim": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -708,7 +763,7 @@
      {
       "qno": 12,
       "lesson": "Coğrafya",
-      "topic": "2.1.3 Mekânsal Bilgi Teknolojileri",
+      "topic": "Mekânsal bilgi teknolojileri",
       "kazanim": "Mekânsal bilgi teknolojileri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -724,7 +779,7 @@
      {
       "qno": 14,
       "lesson": "Fizik",
-      "topic": "2.3 Vektörler",
+      "topic": "Vektörlerin toplanmasında kullanılan yöntemleri inceler",
       "kazanim": "Vektörlerin toplanmasında kullanılan yöntemleri inceler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -756,7 +811,7 @@
      {
       "qno": 18,
       "lesson": "Kimya",
-      "topic": "1.2.4 Periyodik Özellikler",
+      "topic": "Periyodik özelliklerin değişimi",
       "kazanim": "Periyodik özelliklerin değişimi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -788,7 +843,7 @@
      {
       "qno": 22,
       "lesson": "Kimya",
-      "topic": "2.1.1 Metalik Bağ",
+      "topic": "Metalik bağ ve elektron denizi modeli",
       "kazanim": "Metalik bağ ve elektron denizi modeli",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -804,7 +859,7 @@
      {
       "qno": 24,
       "lesson": "Biyoloji",
-      "topic": "1.4 Canlıların Ortak Özellikleri",
+      "topic": "Canlıların ortak özellikleri",
       "kazanim": "Canlıların ortak özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -812,7 +867,7 @@
      {
       "qno": 25,
       "lesson": "Biyoloji",
-      "topic": "1.4 Canlıların Ortak Özellikleri",
+      "topic": "Canlıların ortak özellikleri",
       "kazanim": "Canlıların ortak özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -820,7 +875,7 @@
      {
       "qno": 26,
       "lesson": "Biyoloji",
-      "topic": "1.4 Canlıların Ortak Özellikleri",
+      "topic": "Canlıların ortak özellikleri",
       "kazanim": "Canlıların ortak özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
@@ -829,10 +884,15 @@
     "total": 120,
     "net": 65.25,
     "kaynak": "9. sınıf deneme dökümü (PDF) · 23 Aralık 2025",
-    "bilinen_soru": 77,
+    "bilinen_soru": 113,
+    "tamamlanan_dersler": [
+     "Matematik",
+     "Din Kültürü"
+    ],
     "uyarilar": [
-     "Tarih-1: beyan net 7.25 · yuvarlanmış d ile 7.5",
-     "Coğrafya-1: beyan net 1.5 · yuvarlanmış d ile 1.25"
+     "Tarih-1: PDF neti 7.25 ama d/w tam sayı olmak zorunda → 7.5 (0,25 PDF içi tutarsızlık)",
+     "Coğrafya-1: PDF neti 1.5 ama d/w tam sayı olmak zorunda → 1.25 (0,25 PDF içi tutarsızlık)",
+     "PDF'te Matematik, Din Kültürü bölümü YOK. Bu derslerin neti 17.75 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
     ]
    },
    {
@@ -850,7 +910,8 @@
       "d": 28,
       "w": 3,
       "e": 0,
-      "net_beyan": 27.5
+      "net_beyan": 27.5,
+      "kaynak": "bilesik-satir"
      },
      "Matematik": {
       "d": 19,
@@ -913,7 +974,7 @@
      {
       "qno": 5,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Yazım Kuralları",
+      "topic": "Yazım kuralları",
       "kazanim": "Yazım kuralları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
@@ -945,30 +1006,30 @@
      {
       "qno": 9,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Deneme",
+      "topic": "Deneme türünü tanıma",
       "kazanim": "Deneme türünü tanıma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 10,
-      "lesson": "Tarih",
-      "topic": "1.1 Tarih Öğrenmenin Faydaları",
+      "lesson": "Tarih & Coğrafya & Din",
+      "topic": "Tarih öğrenmenin faydaları",
       "kazanim": "Tarih öğrenmenin faydaları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 11,
-      "lesson": "Coğrafya",
-      "topic": "2.1.3 Mekânsal Bilgi Teknolojileri",
+      "lesson": "Tarih & Coğrafya & Din",
+      "topic": "Mekânsal Bilgi Teknolojilerinin Bileşenleri",
       "kazanim": "Mekânsal Bilgi Teknolojilerinin Bileşenleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 12,
-      "lesson": "Din Kültürü",
+      "lesson": "Tarih & Coğrafya & Din",
       "topic": "İslam'da ibadetlerin temel ilkeleri",
       "kazanim": "İslam'da ibadetlerin temel ilkeleri",
       "type": "KONUEKSİKLİĞİ",
@@ -1089,7 +1150,7 @@
      {
       "qno": 27,
       "lesson": "Kimya",
-      "topic": "2.1.4 Lewis Nokta Yapısı",
+      "topic": "Lewis Nokta Yapısı",
       "kazanim": "Lewis Nokta Yapısı",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
@@ -1097,7 +1158,7 @@
      {
       "qno": 28,
       "lesson": "Kimya",
-      "topic": "2.1.3 Kovalent Bağ",
+      "topic": "Kovalent Bağ",
       "kazanim": "Kovalent Bağ",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
@@ -1140,7 +1201,7 @@
     "kaynak": "9. sınıf deneme dökümü (PDF) · 07 Şubat 2026",
     "bilinen_soru": 115,
     "uyarilar": [
-     "Tarih & Coğrafya & Din: beyan net 27.5 · yuvarlanmış d ile 27.25"
+     "Tarih & Coğrafya & Din (27.5 net, 3 yanlış) ayrı derslere bölünemedi: bölününce 26.25 net çıkıyor, 1.25 kayıp. PDF 28.25 doğru diyor → 31.25 soru, azami 30 (PDF kendi içinde çelişkili). Birleşik satır korundu, kazanımlar derslere ayrıldı."
     ]
    },
    {
@@ -1183,6 +1244,20 @@
       "w": 0,
       "e": 3,
       "net_beyan": 7
+     },
+     "Tarih": {
+      "d": 12,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 12,
+      "kaynak": "aritmetik-turetme"
+     },
+     "Din Kültürü": {
+      "d": 6,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 6,
+      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -1197,7 +1272,7 @@
      {
       "qno": 2,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Yazım Kuralları",
+      "topic": "Yazım kuralları",
       "kazanim": "Yazım kuralları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1221,7 +1296,7 @@
      {
       "qno": 5,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Gezi Yazısı",
+      "topic": "Gezi yazısı",
       "kazanim": "Gezi yazısı",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1245,7 +1320,7 @@
      {
       "qno": 8,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Gezi Yazısı",
+      "topic": "Gezi yazısı",
       "kazanim": "Gezi yazısı",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1253,7 +1328,7 @@
      {
       "qno": 9,
       "lesson": "Coğrafya",
-      "topic": "3.1.2 İklim Sistemi",
+      "topic": "İklim sisteminin bileşen ve değişkenleri",
       "kazanim": "İklim sisteminin bileşen ve değişkenleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1301,7 +1376,7 @@
      {
       "qno": 15,
       "lesson": "Matematik",
-      "topic": "4.1 Geometrik Dönüşümler",
+      "topic": "Geometrik dönüşümler",
       "kazanim": "Geometrik dönüşümler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1349,7 +1424,7 @@
      {
       "qno": 21,
       "lesson": "Matematik",
-      "topic": "4.4 Tales, Öklid ve Pisagor",
+      "topic": "Tales, Öklid ve Pisagor Teoremleri",
       "kazanim": "Tales, Öklid ve Pisagor Teoremleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1357,7 +1432,7 @@
      {
       "qno": 22,
       "lesson": "Matematik",
-      "topic": "4.4 Tales, Öklid ve Pisagor",
+      "topic": "Tales, Öklid ve Pisagor Teoremleri",
       "kazanim": "Tales, Öklid ve Pisagor Teoremleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1381,7 +1456,7 @@
      {
       "qno": 25,
       "lesson": "Fizik",
-      "topic": "3.2 Sıvılarda Basınç",
+      "topic": "Sıvılarda Basınç",
       "kazanim": "Sıvılarda Basınç",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1389,7 +1464,7 @@
      {
       "qno": 26,
       "lesson": "Fizik",
-      "topic": "3.2 Sıvılarda Basınç",
+      "topic": "Sıvılarda Basınç",
       "kazanim": "Sıvılarda Basınç",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1397,7 +1472,7 @@
      {
       "qno": 27,
       "lesson": "Kimya",
-      "topic": "2.1.2 İyonik Bağ",
+      "topic": "İyonik Bağ",
       "kazanim": "İyonik Bağ",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1405,7 +1480,7 @@
      {
       "qno": 28,
       "lesson": "Kimya",
-      "topic": "2.1.1 Metalik Bağ",
+      "topic": "Metalik Bağ",
       "kazanim": "Metalik Bağ",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
@@ -1438,8 +1513,14 @@
     "total": 120,
     "net": 82.25,
     "kaynak": "9. sınıf deneme dökümü (PDF) · 14 Mart 2026",
-    "bilinen_soru": 99,
-    "uyarilar": []
+    "bilinen_soru": 117,
+    "tamamlanan_dersler": [
+     "Tarih",
+     "Din Kültürü"
+    ],
+    "uyarilar": [
+     "PDF'te Tarih, Din Kültürü bölümü YOK. Bu derslerin neti 18 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+    ]
    },
    {
     "id": "pdf9-06",
@@ -1481,6 +1562,20 @@
       "w": 3,
       "e": 0,
       "net_beyan": 5.25
+     },
+     "Biyoloji": {
+      "d": 6,
+      "w": 1,
+      "e": 3,
+      "net_beyan": 5.75,
+      "kaynak": "aritmetik-turetme"
+     },
+     "Din Kültürü": {
+      "d": 4,
+      "w": 2,
+      "e": 0,
+      "net_beyan": 3.5,
+      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -1551,7 +1646,7 @@
      {
       "qno": 9,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Ses Olayları",
+      "topic": "Ses olayları",
       "kazanim": "Ses olayları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1679,7 +1774,7 @@
      {
       "qno": 25,
       "lesson": "Matematik",
-      "topic": "5.1 Algoritma ile Problem Çözme",
+      "topic": "Algoritma temelli problem çözme",
       "kazanim": "Algoritma temelli problem çözme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1687,7 +1782,7 @@
      {
       "qno": 26,
       "lesson": "Fizik",
-      "topic": "3.1 Basınç",
+      "topic": "Basınç verilerini kaydetme",
       "kazanim": "Basınç verilerini kaydetme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1695,7 +1790,7 @@
      {
       "qno": 27,
       "lesson": "Fizik",
-      "topic": "3.2 Sıvılarda Basınç",
+      "topic": "Durgun sıvılarda basınç",
       "kazanim": "Durgun sıvılarda basınç",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1703,7 +1798,7 @@
      {
       "qno": 28,
       "lesson": "Fizik",
-      "topic": "3.3 Açık Hava Basıncı",
+      "topic": "Açık hava basıncına ilişkin çıkarımlar",
       "kazanim": "Açık hava basıncına ilişkin çıkarımlar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1711,7 +1806,7 @@
      {
       "qno": 29,
       "lesson": "Fizik",
-      "topic": "3.3 Açık Hava Basıncı",
+      "topic": "Açık hava basıncına ilişkin çıkarımlar",
       "kazanim": "Açık hava basıncına ilişkin çıkarımlar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1719,7 +1814,7 @@
      {
       "qno": 30,
       "lesson": "Kimya",
-      "topic": "1.2.3 Periyodik Tabloda Yer Bulma",
+      "topic": "Periyodik tabloda yer bulma",
       "kazanim": "Periyodik tabloda yer bulma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1727,7 +1822,7 @@
      {
       "qno": 31,
       "lesson": "Kimya",
-      "topic": "1.2.4 Periyodik Özellikler",
+      "topic": "Periyodik özellikler",
       "kazanim": "Periyodik özellikler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1735,7 +1830,7 @@
      {
       "qno": 32,
       "lesson": "Kimya",
-      "topic": "2.1.6 Bileşiklerin Adlandırılması",
+      "topic": "Bileşiklerin adlandırılması",
       "kazanim": "Bileşiklerin adlandırılması",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
@@ -1744,8 +1839,14 @@
     "total": 120,
     "net": 67.5,
     "kaynak": "9. sınıf deneme dökümü (PDF) · 26 Mart 2026",
-    "bilinen_soru": 95,
-    "uyarilar": []
+    "bilinen_soru": 111,
+    "tamamlanan_dersler": [
+     "Biyoloji",
+     "Din Kültürü"
+    ],
+    "uyarilar": [
+     "PDF'te Biyoloji, Din Kültürü bölümü YOK. Bu derslerin neti 9.25 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+    ]
    },
    {
     "id": "pdf9-07",
@@ -1758,11 +1859,19 @@
       "e": 3,
       "net_beyan": 24.5
      },
-     "Tarih & Din": {
-      "d": 16,
-      "w": 2,
+     "Tarih": {
+      "d": 11,
+      "w": 1,
       "e": 0,
-      "net_beyan": 15.5
+      "net_beyan": 10.75,
+      "kaynak": "bilesik-satir"
+     },
+     "Din Kültürü": {
+      "d": 5,
+      "w": 1,
+      "e": 0,
+      "net_beyan": 4.75,
+      "kaynak": "bilesik-satir"
      },
      "Matematik": {
       "d": 14,
@@ -1781,6 +1890,20 @@
       "w": 3,
       "e": 6,
       "net_beyan": 0.25
+     },
+     "Fizik": {
+      "d": 8,
+      "w": 0,
+      "e": 2,
+      "net_beyan": 8,
+      "kaynak": "aritmetik-turetme"
+     },
+     "Coğrafya": {
+      "d": 10,
+      "w": 0,
+      "e": 2,
+      "net_beyan": 10,
+      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -1811,7 +1934,7 @@
      {
       "qno": 4,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Ses Olayları",
+      "topic": "Ses olayları",
       "kazanim": "Ses olayları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
@@ -1835,7 +1958,7 @@
      {
       "qno": 7,
       "lesson": "Din Kültürü",
-      "topic": "5.1 Hz. Muhammed'in Beşeri/Peygamberlik Yönü",
+      "topic": "Hz. Muhammed’in beşerî ve peygamberlik yönü",
       "kazanim": "Hz. Muhammed’in beşerî ve peygamberlik yönü",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
@@ -1971,7 +2094,7 @@
      {
       "qno": 24,
       "lesson": "Biyoloji",
-      "topic": "2.2 Organik Moleküller",
+      "topic": "Organik moleküllerin yapısı",
       "kazanim": "Organik moleküllerin yapısı",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
@@ -2044,8 +2167,15 @@
     "total": 120,
     "net": 78.5,
     "kaynak": "9. sınıf deneme dökümü (PDF) · 22 Mayıs 2026",
-    "bilinen_soru": 95,
-    "uyarilar": []
+    "bilinen_soru": 117,
+    "tamamlanan_dersler": [
+     "Fizik",
+     "Coğrafya"
+    ],
+    "uyarilar": [
+     "Tarih & Din (15.5 net) alt derslere bölündü: Tarih 10.75 · Din Kültürü 4.75 = 15.5",
+     "PDF'te Fizik, Coğrafya bölümü YOK. Bu derslerin neti 18 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+    ]
    }
   ]
  }

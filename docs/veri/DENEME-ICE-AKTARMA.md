@@ -227,18 +227,73 @@ ile mevcut veriyi sakla.
 
 ---
 
+## 4.4 PDF'ten yeniden üretme (tek komut)
+
+JSON elle yazılmaz; PDF'ten üretilir:
+
+```bash
+node scripts/deneme-pdf-ayikla.js "9-sinif-denemeler.pdf"          # sadece doğrula
+node scripts/deneme-pdf-ayikla.js "9-sinif-denemeler.pdf" --yaz    # JSON'u yaz
+```
+
+Çıktı, her sınav için **aritmetik kontrolü** basar:
+
+```
+✓ tam   ◆ fark = kapasite (eksik dersler tümüyle doğru)
+! fark kapasiteye sığıyor   ✗ sığıyor mu (sığmıyorsa exit 1)
+```
+
+### Eksik ders ne demek?
+
+PDF bazı sınavlarda bazı derslerin **blok başlığını hiç yazmıyor** (ders o
+sınavda raporlanmamış). O dersler yine de JSON'a **girer**, çünkü:
+
+```
+Σ(ders neti) = Genel Net   →   eksik derslerin neti = Genel Net − ders toplamı
+```
+
+Bu bir tahmin değil, **aritmetik zorunluluk**. Net derslere kapasite oranıyla
+dağıtılır; `d`, `w`, `e` tam sayı ve `d+w+e ≤ azami` olacak şekilde en az
+yanlışlı çözüm seçilir (dinamik programlama).
+
+Bu dersler `"kaynak": "aritmetik-turetme"` ile **açıkça işaretlenir** ve
+`uyarilar[]`'a gerekçesi yazılır. PDF'te o dersin kazanımı olmadığı için
+`errorLogs`'a **kayıt eklenmez** (`w`/`e` yalnız neti tutmak için vardır).
+
+### Elle düzeltme
+
+PDF'te olmayan bir dersin gerçek dağılımını biliyorsan
+`docs/veri/eksik-dersler.json` dosyasını doldur — betik onu türetme yerine
+kullanır ve `"kaynak": "elle"` yazar.
+
+### Beyanlı tutarsızlıklar
+
+PDF kendi içinde çelişebilir (örn. `27,50 net` + `3 yanlış` → 31,25 soru, azami 30).
+Bu durumda **veri kırpılmaz**; çelişki kök düzeyindeki `_tutarsizliklar`
+dizisine ve sınavın `uyarilar[]` alanına yazılır. Test, beyanlı sınavlarda
+aritmetik toleransını gevşetir — beyansız bir sapma **testi düşürür**.
+
+---
+
 ## 5. Kontrol
 
 ```bash
-node tests/deneme-ice-aktarma.test.js     # 287 doğrulama
+node tests/deneme-ice-aktarma.test.js     # 378 doğrulama
 node tests/deneme-import-butonu.test.js   # 26 doğrulama
 # veya ikisi birden:
 npm run -s test:deneme
 ```
 
 **`deneme-ice-aktarma`:** alan bütünlüğü, tarih biçimi, ders adları, azami soru,
-net−beyan farkı ≤ 0,25, kayıt sayısı = w + e, tek neden türü + kanonik yazım,
-Türkçe karakterler, uçtan uca BKT (209/209 gözlem).
+net−beyan farkı ≤ 0,25, kayıt sayısı = w + e (türetilmiş dersler hariç),
+tek neden türü + kanonik yazım, Türkçe karakterler, uçtan uca BKT (209/209
+gözlem) **ve aritmetik**:
+
+| Kontrol | Kural |
+|---|---|
+| Σ `net_beyan` = sınavın `net`'i | **tolerans 0** — PDF'teki her ders eksiksiz |
+| Σ`(d − w/4)` = sınavın `net`'i | ≤ 0,25 (beyanlı sınavda beyan edilen sapma) |
+| Ders kapsamı | 8 dersin tamamı (birleşik satır kendi derslerini kapsar) |
 
 **`deneme-import-butonu`:** `importData`yı `index.html`'den çıkarıp sahte DOM'da
 çalıştırır — birleştirme modunda profil/konu/hafıza/BKT/plan korunuyor mu,

@@ -11,7 +11,11 @@
      4) lessons anahtarları LESSON_CONFIG'te (bileşik satırlar hariç)
      5) d/w/e negatif değil, tam sayı
      6) netOf(d,w) beyan nete en fazla 0,25 uzak (yuvarlama payı)
-     7) errorLogs sayısı = derslerdeki w + e toplamı
+     7) errorLogs sayısı = derslerdeki w + e toplamı (türetilmiş dersler hariç)
+     7b) ARİTMETİK: Σ net_beyan = sınavın Genel Net'i  (birebir, tolerans 0)
+     7c) ARİTMETİK: Σ(d − w/4) Genel Net'e en fazla 0,25 uzak
+         — PDF'in kendi içinde çeliştiği sınavlar _tutarsizliklar'da beyanlıysa
+           bu kontrol o sınav için beyan edilen sapmaya kadar gevşetilir.
      8) her kayıtta lesson, topic, kazanim, type, date; type geçerli neden
      9) metin tekrarı yok, Türkçe karakterler bozulmamış
    Çalıştır: node tests/deneme-ice-aktarma.test.js
@@ -127,9 +131,14 @@ ok("bileşik satır yalnız 2 sınavda", new Set(bileşik).size <= 2, [...new Se
 console.log("\n== 4) Hata kayıtları ==");
 let toplamKayit = 0;
 (veri.state.exams || []).forEach((ex) => {
+  /* Türetilmiş derslerin (PDF'te bölümü olmayan) kazanım kaydı YOKTUR;
+     w/e'leri yalnız aritmetiği tutturmak için vardır. Kayıt kontrolünden düşülür. */
   const beklenen = Object.values(ex.lessons || {}).reduce((a, v) => a + v.w + v.e, 0);
-  ok(ex.id + " kayıt sayısı = w+e", ex.errorLogs.length === beklenen,
-    ex.errorLogs.length + " ≠ " + beklenen);
+  const turetilmis = Object.values(ex.lessons || {})
+    .filter(v => v.kaynak === "aritmetik-turetme")
+    .reduce((a, v) => a + v.w + v.e, 0);
+  ok(ex.id + " kayıt sayısı = w+e (türetilmiş hariç)", ex.errorLogs.length === beklenen - turetilmis,
+    ex.errorLogs.length + " ≠ " + (beklenen - turetilmis) + " (w+e " + beklenen + ", türetilmiş " + turetilmis + ")");
   toplamKayit += ex.errorLogs.length;
   ex.errorLogs.forEach((l, i) => {
     const n = ex.id + " kayıt " + (i + 1);
@@ -158,6 +167,43 @@ ok("kanonik kodun ağırlığı var",
   new RegExp('"' + KONU_EKSIKLIGI + '"\\s*:\\s*[\\d.]+').test(HTML));
 ok("emekli kod KONUEKSİZLİĞİ (Z) kullanılmıyor",
   ![...nedenler].some(n => n.includes("EKSİZ")), [...nedenler].join(", "));
+
+// ---------- 4c) ARİTMETİK ----------
+console.log("\n== 4c) Aritmetik (ders netleri ⇔ Genel Net) ==");
+const yuv = (n) => Math.round(n * 100) / 100;
+(veri.state.exams || []).forEach((ex) => {
+  const dersler = Object.values(ex.lessons || {});
+  const beyan = yuv(dersler.reduce(
+    (a, v) => a + (Number.isFinite(v.net_beyan) ? v.net_beyan : v.d - v.w / NET_RULE.wrongDivisor), 0));
+  const hesap = yuv(dersler.reduce((a, v) => a + netOf(v.d, v.w), 0));
+  const genel = yuv(ex.net);
+
+  // (a) PDF'ten okunan ders netlerinin toplamı Genel Net'i BİREBİR tutmalı.
+  ok(ex.id + " Σ ders net_beyan = Genel Net", Math.abs(beyan - genel) < 0.005,
+    "dersler " + beyan + " ≠ genel " + genel + " (fark " + yuv(genel - beyan) + ")");
+
+  // (b) d/w tam sayı olduğu için hesap en fazla 0,25 sapabilir.
+  const sapma = yuv(Math.abs(hesap - genel));
+  const beyanli = (veri._tutarsizliklar || []).some(t => t.sinav === ex.id);
+  const sinir = beyanli ? 1.5 : 0.25;
+  ok(ex.id + " Σ(d−w/4) Genel Net'e yakın", sapma <= sinir + 1e-9,
+    "fark " + sapma + " (sınır " + sinir + (beyanli ? ", beyanlı sınav" : "") + ")");
+
+  // (c) Hiçbir ders sessizce atlanmamış olmalı. Birleşik satır ("Tarih & Coğrafya & Din")
+  //     kendi derslerini kapsar; içindeki dersler de kapsama sayılır.
+  const anahtarlar = Object.keys(ex.lessons || {});
+  const kapsanan = new Set(anahtarlar.filter(k => LESSON_CONFIG[k]));
+  anahtarlar.filter(k => k.includes("&")).forEach(k =>
+    k.split("&").map(x => x.trim()).forEach(x => {
+      const xl = x.toLowerCase();
+      const t = Object.keys(LESSON_CONFIG).find(d =>
+        d.toLowerCase() === xl || d.toLowerCase().startsWith(xl + " "));
+      if (t) kapsanan.add(t);
+    }));
+  ok(ex.id + " ders kapsamı", kapsanan.size === Object.keys(LESSON_CONFIG).length,
+    kapsanan.size + "/" + Object.keys(LESSON_CONFIG).length + " ders; eksik: " +
+    Object.keys(LESSON_CONFIG).filter(d => !kapsanan.has(d)).join(", "));
+});
 
 // ---------- 9) metin ----------
 console.log("\n== 5) Metin kalitesi ==");
