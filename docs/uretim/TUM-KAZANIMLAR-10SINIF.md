@@ -2,14 +2,22 @@
 
 > **Kaynak:** MEB Türkiye Yüzyılı Maarif Modeli (TYMM) 2026 öğretim programları.
 > `node scripts/kazanim-dokumu.js` üretir; elle düzenlenmez.
-> Makine tarafı: `docs/uretim/uretim-plani.json` · Ham veri: `site/content/mufredat/meb_kazanim_10.json`
+> Ham veri: `site/content/mufredat/meb_kazanim_10.json`
+> Eşlik eden talimat: `docs/uretim/SORU-URETIM-TALIMATI.md`
 
 ## Bu dosya nedir?
 
-Dokuz dersin **10. sınıf** programındaki **158 öğrenme çıktısının** tamamı ve bu
-çıktıların **612 süreç bileşeni** burada eksiksiz listelenmiştir. Soru üretecek ajan,
-her çıktı için bir soru havuzu yazar; hangi çıktının kaç sorusu olacağı ve dosya
-adının ne olacağı her başlığın altında yazılıdır.
+Dokuz dersin **10. sınıf** programındaki **158 öğrenme çıktısının** tamamı, **44 tema** ve
+bu çıktıların **612 süreç bileşeni** burada eksiksiz listelenmiştir.
+
+Her çıktının başlığı altında şu satır vardır:
+
+```
+Dosya: <konu_id>.json · konu_id: <ders>_10_t<tema>_c<sıra> · hedef soru: N · süreç: M
+```
+
+Bunlar soru üretecek ajanın iş emridir: hangi dosyayı açacağı, kaç soru yazacağı
+ve soruları hangi süreç bileşenlerine dağıtacağı bu satırdan okunur.
 
 **Hiçbir metin değiştirilmemiştir.** Kazanım cümleleri ve süreç bileşenleri resmî
 programdan birebir alınmıştır (doğrulama: `npm run -s test:tymm` → 158/158 çıktı, 612/612 süreç).
@@ -53,12 +61,12 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 
 | Tema | Ad | Çıktı |
 | --- | --- | --- |
-| 1 | Dinleme/İzleme | 4 |
-| 2 | Okuma | 4 |
-| 3 | Konuşma | 4 |
-| 4 | Yazma | 4 |
+| 1 | Sözün Ezgisi | 4 |
+| 2 | Kelimelerin Ritmi | 4 |
+| 3 | Dünden Bugüne | 4 |
+| 4 | Nesillerin Mirası | 4 |
 
-### Türk Dili ve Edebiyatı · Tema 1 — Dinleme/İzleme
+### Türk Dili ve Edebiyatı · Tema 1 — Sözün Ezgisi
 
 #### `TDE1.1` — Dinlemeyi/İzlemeyi Yönetebilme
 
@@ -100,7 +108,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - TDE1.4.1. Kendini değerlendirir.
 - TDE1.4.2. Tepki ortaya koyar.
 
-### Türk Dili ve Edebiyatı · Tema 2 — Okuma
+### Türk Dili ve Edebiyatı · Tema 2 — Kelimelerin Ritmi
 
 #### `TDE2.1` — Okumayı Yönetebilme
 
@@ -146,7 +154,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - TDE2.4.1. Kendini değerlendirir.
 - TDE2.4.2. Tepki ortaya koyar.
 
-### Türk Dili ve Edebiyatı · Tema 3 — Konuşma
+### Türk Dili ve Edebiyatı · Tema 3 — Dünden Bugüne
 
 #### `TDE3.1` — Konuşmayı Yönetebilme
 
@@ -196,7 +204,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - TDE3.4.1. Kendini değerlendirir.
 - TDE3.4.2. Tepki ortaya koyar.
 
-### Türk Dili ve Edebiyatı · Tema 4 — Yazma
+### Türk Dili ve Edebiyatı · Tema 4 — Nesillerin Mirası
 
 #### `TDE4.1` — Yazmayı Yönetebilme
 
@@ -1068,7 +1076,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 | Tema | Ad | Çıktı |
 | --- | --- | --- |
 | 1 | Enerji | 10 |
-| 2 | — (kanıtlanmış ad yok) | 9 |
+| 2 | Ekoloji | 9 |
 
 ### Biyoloji · Tema 1 — Enerji
 
@@ -1181,7 +1189,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - a) Fermantasyon ile ilgili deney tasarlar.
 - b) Tasarladığı deneyden elde ettiği sonuçların analizini yapar ve bu sonuçları fermantasyonu açıklamak için kullanır.
 
-### Biyoloji · Tema 2
+### Biyoloji · Tema 2 — Ekoloji
 
 #### `BİY.10.2.1` — Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme
 
@@ -1286,8 +1294,8 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 | Tema | Ad | Çıktı |
 | --- | --- | --- |
 | 1 | Türkistan’dan Türkiye’ye (1040-1299) | 4 |
-| 2 | — (kanıtlanmış ad yok) | 5 |
-| 3 | — (kanıtlanmış ad yok) | 5 |
+| 2 | Beylikten Devlete Osmanlı (1299-1453) | 5 |
+| 3 | Cihan Devleti Osmanlı (1453-1683) | 5 |
 
 ### Tarih · Tema 1 — Türkistan’dan Türkiye’ye (1040-1299)
 
@@ -1338,7 +1346,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - b) Türkistan’dan Türkiye’ye uzanan süreçte Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmelerin Anadolu’nun Türkleşme ve İslamlaşma sürecine etkisine ilişkin kanıtları kullanarak yargıda bulunur.
 - c) Hoca Ahmed Yesevi, Kaşgarlı Mahmud, Ömer Hayyam, Cezeri, İbnülarabi, Mevlana Celaleddin Rumi, Hacı Bektaş Veli, Yunus Emre ve İbni Bibi’nin düşünceleri veya eserleri hakkında insanlığın ortak mirasına katkıları bakımından yargıda bulunur.
 
-### Tarih · Tema 2
+### Tarih · Tema 2 — Beylikten Devlete Osmanlı (1299-1453)
 
 #### `TAR.10.2.1` — Osmanlı Devleti’nin kuruluşuna dair farklı görüşleri tartışabilme VE SÜREÇ BİLEŞENLERİ
 
@@ -1391,7 +1399,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - b) Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında ilk Türk-İslam devletlerindeki benzer deneyimleri inceler.
 - c) Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin rolüne ilişkin fikir üretir.
 
-### Tarih · Tema 3
+### Tarih · Tema 3 — Cihan Devleti Osmanlı (1453-1683)
 
 #### `TAR.10.3.1` — 1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti’nin VE SÜREÇ BİLEŞENLERİ cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilme
 
@@ -1459,10 +1467,10 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 | 1 | Coğrafyanın Doğası | 1 |
 | 2 | Mekânsal Bilgi Teknolojileri | 2 |
 | 3 | Doğal Sistemler ve Süreçler | 5 |
-| 4 | — (kanıtlanmış ad yok) | 2 |
-| 5 | — (kanıtlanmış ad yok) | 3 |
-| 6 | — (kanıtlanmış ad yok) | 4 |
-| 7 | — (kanıtlanmış ad yok) | 1 |
+| 4 | Beşerî Sistemler ve Süreçler | 2 |
+| 5 | Ekonomik Faaliyetler ve Etkileri | 3 |
+| 6 | Afetler ve Sürdürülebilir Çevre | 4 |
+| 7 | Bölgeler, Ülkeler ve Küresel Bağlantılar | 1 |
 
 ### Coğrafya · Tema 1 — Coğrafyanın Doğası
 
@@ -1565,7 +1573,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - ç) Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili düzenlediği bilgileri çözümler.
 - d) Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili çözümlediği bilgilerden çıkardığı sonuçları paylaşır. 50
 
-### Coğrafya · Tema 4
+### Coğrafya · Tema 4 — Beşerî Sistemler ve Süreçler
 
 #### `COĞ.10.4.1` — Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilme
 
@@ -1592,7 +1600,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - c) Türkiye ve dünyadaki yerleşmelerin fonksiyonları üzerinde etkili olan değişkenleri tasnif eder.
 - ç) Türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre etiketler.
 
-### Coğrafya · Tema 5
+### Coğrafya · Tema 5 — Ekonomik Faaliyetler ve Etkileri
 
 #### `COĞ.10.5.1` — Ekonomik faaliyetleri sektörlere göre sınıflandırabilme
 
@@ -1629,7 +1637,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - d) Ekonomik sektörlere göre sınıflandırdığı verileri görselleştirir.
 - e) Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagramları amaca uygun şekilde kullanır.
 
-### Coğrafya · Tema 6
+### Coğrafya · Tema 6 — Afetler ve Sürdürülebilir Çevre
 
 #### `COĞ.10.6.1` — Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme
 
@@ -1675,7 +1683,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - b) Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin deneyimlerinden çıkarım yapar.
 - c) Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin çıkarımlarını değerlendirir.
 
-### Coğrafya · Tema 7
+### Coğrafya · Tema 7 — Bölgeler, Ülkeler ve Küresel Bağlantılar
 
 #### `COĞ.10.7.1` — Türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilme
 
@@ -1699,11 +1707,11 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 | 2 | Felsefe, Mantık ve Argümantasyon | 2 |
 | 3 | Varlık Felsefesi | 1 |
 | 4 | Bilgi Felsefesi | 1 |
-| 5 | — (kanıtlanmış ad yok) | 1 |
-| 6 | — (kanıtlanmış ad yok) | 1 |
-| 7 | — (kanıtlanmış ad yok) | 1 |
-| 8 | — (kanıtlanmış ad yok) | 1 |
-| 9 | — (kanıtlanmış ad yok) | 1 |
+| 5 | Ahlak Felsefesi | 1 |
+| 6 | Estetik ve Sanat Felsefesi | 1 |
+| 7 | Siyaset Felsefesi | 1 |
+| 8 | Din Felsefesi | 1 |
+| 9 | Bilim Felsefesi | 1 |
 
 ### Felsefe · Tema 1 — Felsefenin Doğası
 
@@ -1771,7 +1779,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - c) Bilgi felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.
 - ç) Bilgi felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler.
 
-### Felsefe · Tema 5
+### Felsefe · Tema 5 — Ahlak Felsefesi
 
 #### `FEL.10.5.1` — Ahlak felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
@@ -1784,7 +1792,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - c) Ahlak felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.
 - ç) Ahlak felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler.
 
-### Felsefe · Tema 6
+### Felsefe · Tema 6 — Estetik ve Sanat Felsefesi
 
 #### `FEL.10.6.1` — Estetik ve sanat felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
@@ -1797,7 +1805,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - c) Estetik ve sanat felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.
 - ç) Estetik ve sanat felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler.
 
-### Felsefe · Tema 7
+### Felsefe · Tema 7 — Siyaset Felsefesi
 
 #### `FEL.10.7.1` — Siyaset felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
@@ -1810,7 +1818,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - c) Siyaset felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.
 - ç) Siyaset felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler.
 
-### Felsefe · Tema 8
+### Felsefe · Tema 8 — Din Felsefesi
 
 #### `FEL.10.8.1` — Din felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
@@ -1823,7 +1831,7 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 - c) Din felsefesinin temel problemlerine yönelik düşünce ve argümanları değerlendirir.
 - ç) Din felsefesiyle ilgili metinlerde yer alan kavram, problem ve argümanları inceler.
 
-### Felsefe · Tema 9
+### Felsefe · Tema 9 — Bilim Felsefesi
 
 #### `FEL.10.9.1` — Bilim felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme
 
@@ -2058,10 +2066,6 @@ Kural: `hedef soru = max(10, 2 × süreç bileşeni sayısı)`
 Aşağıdaki temalarda resmî ad **kanıtlanamadığı için boş bırakıldı** (uydurulmadı).
 Soru üretimi için tema numarası ve MEB kodu yeterlidir.
 
-- **Biyoloji**: tema 2
-- **Tarih**: tema 2, 3
-- **Coğrafya**: tema 4, 5, 6, 7
-- **Felsefe**: tema 5, 6, 7, 8, 9
 
 ## Sırada ne var?
 

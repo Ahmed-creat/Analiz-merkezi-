@@ -27,8 +27,9 @@ const fs = require("fs");
 const path = require("path");
 
 const KOK = path.join(__dirname, "..");
-const PLAN = require(path.join(KOK, "docs/uretim/uretim-plani.json"));
-const hedefDizin = process.argv[2] || path.join(KOK, "docs/uretim/ornekler");
+const U = require("./uretim-veri.js");
+const PLAN = { ciktilar: U.plan };
+const hedefDizin = process.argv[2] || path.join(KOK, "site", "content", "soru_havuzlari");
 const DIZIN = path.isAbsolute(hedefDizin) ? hedefDizin : path.join(KOK, hedefDizin);
 
 if (!fs.existsSync(DIZIN)) {
@@ -48,10 +49,13 @@ function sade(s) {
 }
 
 const planKod = new Map(PLAN.ciktilar.map(c => [c.konu_id, c]));
+/* Geçiş dönemi: 2018 ünite şemasındaki (<ders>_10_uNN_kNN) havuzlar
+   yeni planda yoktur ama SİLİNMEZ — hata değil, "eski-sema" sayılır. */
+const ESKI_SEMA = /_10_u\d+_k\d+$/;
 const gorulenMetin = new Map();   // normalize metin → dosya
 const hatalar = [];
 const uyarilar = [];
-let dosyaSayisi = 0, soruSayisi = 0, gecerli = 0;
+let dosyaSayisi = 0, soruSayisi = 0, gecerli = 0, eskiSema = 0;
 
 function hata(dosya, mesaj) { hatalar.push(dosya + ": " + mesaj); }
 function uyari(dosya, mesaj) { uyarilar.push(dosya + ": " + mesaj); }
@@ -78,7 +82,11 @@ for (const dosya of dosyalar) {
   if (!konuId) { hata(dosya, "konu_id yok"); continue; }
   if (dosya !== konuId + ".json") hata(dosya, "dosya adı konu_id ile uyuşmuyor (" + konuId + ".json olmalı)");
   const plan = planKod.get(konuId);
-  if (!plan) { hata(dosya, "konu_id planda yok: " + konuId); continue; }
+  if (!plan) {
+    if (ESKI_SEMA.test(konuId)) { eskiSema++; continue; }
+    hata(dosya, "konu_id planda yok: " + konuId);
+    continue;
+  }
 
   // ---- 2) kod + kazanım ----
   if (String(pool.kod || "") !== plan.kod) {
@@ -178,8 +186,9 @@ console.log("");
 console.log("== SORU HAVUZU DOĞRULAMA ==");
 console.log("dizin      : " + path.relative(KOK, DIZIN));
 console.log("dosya      : " + dosyaSayisi + " (geçerli " + gecerli + ")");
+console.log("eski şema  : " + eskiSema + " (2018 ünite yapısı — denetim dışı, korunur)");
 console.log("soru       : " + soruSayisi);
-console.log("plan dışı  : " + dosyalar.filter(f => !planKod.has(f.replace(/\.json$/, ""))).length);
+console.log("plan dışı  : " + dosyalar.filter(f => { const k = f.replace(/\.json$/, ""); return !planKod.has(k) && !ESKI_SEMA.test(k); }).length);
 console.log("eksik havuz: " + eksikHavuz.length + " / " + PLAN.ciktilar.length);
 if (eksikHavuz.length && eksikHavuz.length <= 20) {
   console.log("  " + eksikHavuz.map(c => c.konu_id).join(", "));

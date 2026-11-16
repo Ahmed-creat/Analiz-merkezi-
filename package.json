@@ -48,7 +48,6 @@
     "rapor:meb": "node scripts/meb-rapor.js",
     "test:tymm": "node tests/tymm-capraz.test.js",
     "denetim:tymm": "node scripts/tymm-denetim.js",
-    "uretim:plan": "node scripts/soru-uretim-plani.js",
     "uretim:dogrula": "node scripts/soru-uret-dogrula.js",
     "havuz:index": "node scripts/havuz-index-uret.js",
     "test:uretim": "node tests/soru-uretim-plani.test.js",

@@ -7,7 +7,7 @@
      3) konu_id'ler tekil, dosya adlarıyla tutarlı, kurala uygun.
      4) Planın her kod'u resmî MEB tablosunda var (uydurma yok).
      5) Süreç metinleri resmî veriyle birebir.
-     6) Altın örnek havuz şemayı karşılıyor (10 soru, 2 süreç × 5).
+     6) Talimattaki altın örnek havuz şemayı karşılıyor (10 soru, 2 süreç × 5).
    Çalıştır: node tests/soru-uretim-plani.test.js
    ============================================================ */
 "use strict";
@@ -16,9 +16,22 @@ const fs = require("fs");
 const path = require("path");
 
 const KOK = path.join(__dirname, "..");
-const PLAN = require(path.join(KOK, "docs/uretim/uretim-plani.json"));
+const U = require(path.join(KOK, "scripts/uretim-veri.js"));
+const PLAN = { ciktilar: U.plan, ozet: U.ozet };
 const RESMI = require(path.join(KOK, "site/content/mufredat/meb_kazanim_10.json")).ciktilar;
-const ORNEK = require(path.join(KOK, "docs/uretim/ornekler/din_10_t01_c01.json"));
+/* Altın örnek: talimat dosyasındaki §6.4 bloğu BC. Artık ayrı JSON dosyası
+   yok (kullanıcı "2 dosya" istedi). Bu yüzden örnek, talimatın içinden
+   çıkarılıp aynı kurallarla doğrulanır. */
+const TALIMAT = fs.readFileSync(path.join(KOK, "docs/uretim/SORU-URETIM-TALIMATI.md"), "utf8");
+function talimattakiOrnek() {
+  const i = TALIMAT.indexOf("### 6.4 Tam dolu örnek havuz");
+  if (i < 0) throw new Error("Talimatta §6.4 örnek havuz bulunamadı");
+  const bas = TALIMAT.indexOf("```json", i);
+  const son = TALIMAT.indexOf("```", bas + 7);
+  if (bas < 0 || son < 0) throw new Error("Örnek JSON bloğu kapalı değil");
+  return JSON.parse(TALIMAT.slice(bas + 7, son));
+}
+const ORNEK = talimattakiOrnek();
 
 let gecen = 0, kalan = 0;
 const hatalar = [];
@@ -122,13 +135,17 @@ for (const s of ornekPlan.surec) {
 ok("cevap dağılımı dengeli", Math.max(...dagilim) <= Math.ceil(ORNEK.sorular.length * 0.4), dagilim.join("/"));
 esit("flashcard sayısı soru sayısına eşit", ORNEK.flashcards.length, ORNEK.sorular.length);
 
+// ---------- 5b) tema adları ----------
+console.log("\n== 5b) Tema adları ==");
+esit("tema adı dolu 158", PLAN.ozet.tema_adli, 158);
+const temaEksik = P.filter(c => !c.tema_adi).map(c => c.kod);
+esit("tema adı boş yok", temaEksik.join(","), "");
+esit("44 tema", new Set(P.map(c => c.ders + "|" + c.tema)).size, 44);
+
 // ---------- 6) durum sayıları ----------
 console.log("\n== 6) Mevcut durum ==");
-esit("boş çıktı 38", PLAN.ozet.durum.bos, 38);
-const dinBos = P.filter(c => c.ders === "Din Kültürü" && c.mevcut.durum === "bos").length;
-const tdeBos = P.filter(c => c.ders === "Türk Dili ve Edebiyatı" && c.mevcut.durum === "bos").length;
-esit("Din'de 17 boş çıktı", dinBos, 17);
-esit("TDE'de 16 boş çıktı", tdeBos, 16);
+esit("Din 17 çıktı", P.filter(c => c.ders === "Din Kültürü").length, 17);
+esit("TDE 16 çıktı", P.filter(c => c.ders === "Türk Dili ve Edebiyatı").length, 16);
 
 // ---------- özet ----------
 console.log("\n" + "-".repeat(52));

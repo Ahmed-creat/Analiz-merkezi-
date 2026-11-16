@@ -30,7 +30,7 @@ const path = require("path");
 const KOK = path.join(__dirname, "..");
 const HAVUZ_DIR = path.join(KOK, "site", "content", "soru_havuzlari");
 const MANIFEST = path.join(HAVUZ_DIR, "index.json");
-const PLAN_YOL = path.join(KOK, "docs", "uretim", "uretim-plani.json");
+const U = require("./uretim-veri.js");
 
 const PLANLA = process.argv.includes("--plan");
 const KONTROL = process.argv.includes("--kontrol");
@@ -56,7 +56,7 @@ function topicKey(kod, ders, kazanim) {
   return ders + " > " + String(kazanim || "").trim();
 }
 
-const plan = PLANLA || KONTROL ? require(PLAN_YOL) : null;
+const plan = PLANLA || KONTROL ? { ciktilar: U.plan } : null;
 const planMap = plan ? new Map(plan.ciktilar.map(c => [c.konu_id, c])) : null;
 
 /* Eski şema: <ders>_10_uNN_kNN (2018 ünite yapısı).

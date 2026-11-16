@@ -19,7 +19,8 @@ const fs = require("fs");
 const path = require("path");
 
 const KOK = path.join(__dirname, "..");
-const PLAN = require(path.join(KOK, "docs/uretim/uretim-plani.json"));
+const U = require("./uretim-veri.js");
+const PLAN = { ciktilar: U.plan, ozet: U.ozet };
 const ODSGM = require(path.join(KOK, "site/content/mufredat/odsgm_konu_kazanim_10.json"));
 const FY = require(path.join(KOK, "tests/fixtures/tymm-2026-10sinif.json"));
 const CIKTI = path.join(KOK, "docs/uretim", "TUM-KAZANIMLAR-10SINIF.md");
@@ -36,8 +37,7 @@ for (const k of ODSGM.konular || []) {
   }
 }
 
-const DERS_SIRA = ["Türk Dili ve Edebiyatı", "Matematik", "Fizik", "Kimya", "Biyoloji",
-  "Tarih", "Coğrafya", "Felsefe", "Din Kültürü"];
+const DERS_SIRA = U.DERS_SIRA;
 
 const L = [];
 const p = s => L.push(s);
@@ -46,14 +46,22 @@ p("# 10. Sınıf — Tüm Derslerin Öğrenme Çıktıları ve Süreç Bileşenl
 p("");
 p("> **Kaynak:** MEB Türkiye Yüzyılı Maarif Modeli (TYMM) 2026 öğretim programları.");
 p("> `node scripts/kazanim-dokumu.js` üretir; elle düzenlenmez.");
-p("> Makine tarafı: `docs/uretim/uretim-plani.json` · Ham veri: `site/content/mufredat/meb_kazanim_10.json`");
+p("> Ham veri: `site/content/mufredat/meb_kazanim_10.json`");
+p("> Eşlik eden talimat: `docs/uretim/SORU-URETIM-TALIMATI.md`");
 p("");
 p("## Bu dosya nedir?");
 p("");
-p("Dokuz dersin **10. sınıf** programındaki **158 öğrenme çıktısının** tamamı ve bu");
-p("çıktıların **612 süreç bileşeni** burada eksiksiz listelenmiştir. Soru üretecek ajan,");
-p("her çıktı için bir soru havuzu yazar; hangi çıktının kaç sorusu olacağı ve dosya");
-p("adının ne olacağı her başlığın altında yazılıdır.");
+p("Dokuz dersin **10. sınıf** programındaki **158 öğrenme çıktısının** tamamı, **44 tema** ve");
+p("bu çıktıların **612 süreç bileşeni** burada eksiksiz listelenmiştir.");
+p("");
+p("Her çıktının başlığı altında şu satır vardır:");
+p("");
+p("```");
+p("Dosya: <konu_id>.json · konu_id: <ders>_10_t<tema>_c<sıra> · hedef soru: N · süreç: M");
+p("```");
+p("");
+p("Bunlar soru üretecek ajanın iş emridir: hangi dosyayı açacağı, kaç soru yazacağı");
+p("ve soruları hangi süreç bileşenlerine dağıtacağı bu satırdan okunur.");
 p("");
 p("**Hiçbir metin değiştirilmemiştir.** Kazanım cümleleri ve süreç bileşenleri resmî");
 p("programdan birebir alınmıştır (doğrulama: `npm run -s test:tymm` → 158/158 çıktı, 612/612 süreç).");
