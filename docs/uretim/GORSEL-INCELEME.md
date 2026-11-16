@@ -105,6 +105,193 @@ _Bu havuzda görsel gerekmedi._
 
 _Bu havuzda görsel gerekmedi._
 
+## din_10_t03_c01.json (`DKAB.10.3.1`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t03_c01_o01` | Tevhit ilkesi hakkında bilgi toplarken başvurulacak kaynak… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o02` | Tevhit ilkesiyle ilgili bilgiler doğrulanırken hangi ölçüt… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o03` | Tevhit ilkesi araştırılırken “Allah’ın bir olması” hangi b… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o04` | “Eğer yerde ve gökte Allah’tan başka ilahlar olsaydı, kesi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o05` | İhlas suresinde tevhit inancı nasıl ifade edilir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o06` | Hadiste imanın en üstün şubesi olarak hangi söz gösterilir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o07` | Bir öğrenci “Tevhit yalnızca Allah’ın varlığını kabul etme… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o08` | “Son sözü ‘La ilahe illallah’ olan kimse cennete girer.” h… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o09` | Tevhit ilkesi hakkında toplanan bilgiler kaydedilirken han… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c01_o10` | Tevhit ilkesiyle ilgili bir sunum hazırlayan öğrenci hangi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t03_c02.json (`DKAB.10.3.2`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t03_c02_o01` | Adaletin İslam’ın evrensel mesajlarından biri sayılmasının… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o02` | Hz. Peygamber’in peygamberlik öncesinde Hilfülfudul’a katı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o03` | Kur’an’a göre insanın Allah katında değerli olmasının ölçü… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o04` | Adalet ile eşitlik arasındaki ilişki nasıl açıklanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o05` | Adaletin “hesap verebilirlik” ilkesi hangi davranışla iliş… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o06` | Şeffaflık ilkesinin bulunmadığı bir toplumda ortaya çıkmas… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o07` | Tarafsızlık ile hakkaniyet arasındaki fark hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o08` | Adaletin ilkelerinden “liyakat” ile “emanet” arasındaki il… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o09` | Bir müdürün işe alımlarda kişisel yakınlık yerine sınav so… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c02_o10` | Bir öğrencinin kopya çekmeden sınava girmesi ahlaki açıdan… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t03_c03.json (`DKAB.10.3.3`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t03_c03_o01` | İslam kelimesinin kökü hangi anlamları taşır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o02` | İslam’a göre barış ortamının korunması hangi değerlerin gü… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o03` | Hz. Peygamber’in “Düşmanla karşılaşmayı temenni etmeyiniz.… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o04` | Kur’an’da savaşın karşılığı olarak kullanılan kavram hangi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o05` | Sınıfta arkadaşıyla küskünlüğünü gidermek isteyen bir öğre… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o06` | “İslam barış dinidir.” ifadesini kendi yaşantısı için anla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o07` | Barışın bozulduğu bir toplumda ortaya çıkması beklenen dur… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o08` | İslam ve barış ilişkisini nesnel biçimde ifade eden cümle … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o09` | İslam’da savaşa izin verilen durumlar hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c03_o10` | Barışın sağlanmasında adaletin işlevi nasıl açıklanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t03_c04.json (`DKAB.10.3.4`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t03_c04_o01` | “Şüphesiz Allah, adaleti, iyilik yapmayı, yakınlara yardım… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o02` | “Allah size, emanetleri mutlaka ehline vermenizi ve insanl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o03` | Nahl suresi 90. ayette geçen “fahşâ” kavramı neyi ifade ed… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o04` | Bakara suresi 208. ayette geçen “silm” kavramı hangi anlam… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o05` | Üç ayet konularına göre nasıl sınıflandırılır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o06` | Aşağıdakilerden hangisi Nisa suresi 58. ayette emredilenle… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o07` | Hz. Peygamber’in Kâbe’nin anahtarını Osman bin Talha’da bı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o08` | Bakara 208. ayette inananların uyarılmasının gerekçesi han… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o09` | Nahl 90. ayetin mesajını kendi cümleleriyle ifade eden cüm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t03_c04_o10` | Bakara 208. ayetin mesajını günlük hayata taşıyan biri han… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t04_c01.json (`DKAB.10.4.1`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t04_c01_o01` | İslam’ın çevre ahlakının temel ilkeleri arasında hangileri… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o02` | “Yarın kıyametin kopacağını bilseniz bile elinizdeki fidan… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o03` | Kur’an’da evrenin belli bir ölçü ve dengeyle yaratıldığını… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o04` | İnsanın çevreye karşı sorumlu tutulmasının temel gerekçesi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o05` | Su kirliliğinin başlıca nedenleri arasında hangileri sayıl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o06` | Biyoçeşitliliğin azalmasına yol açan etkenler hangileridir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o07` | İklim değişikliğiyle mücadelede bireye düşen davranışlar h… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o08` | Bir kişi, kullanmadığı hâlde musluğu açık bırakıp suyun bo… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o09` | Bir öğrencinin “Çevre sorunları beni ilgilendirmez.” sözün… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c01_o10` | Geri dönüşüme ve atık yönetimine destek olmanın çevreye ka… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t04_c02.json (`DKAB.10.4.2`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t04_c02_o01` | Teknolojiyle ilgili ahlaki unsurlar araştırılırken hangi k… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o02` | Teknoloji geliştirenlerin taşıması gereken ahlaki sorumlul… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o03` | Kullanıcıların dijital ortamlarda kaçınması gereken davran… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o04` | Teknoloji alanında uyulması gereken ahlaki kurallardan bir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o05` | 6698 sayılı Kişisel Verilerin Korunması Kanunu hangi amaca… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o06` | Teknoloji ile ahlak arasındaki ilişki nasıl açıklanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o07` | Sosyal medyada yalan haber paylaşan bir kullanıcının ihlal… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o08` | Bir uygulamanın kullanıcıdan gereksiz izinler istemesi han… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o09` | Kur’an’ın “Gizlilikleri araştırmayın, birbirinizin gıybeti… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c02_o10` | 7 Nisan tarihinin teknoloji ahlakı açısından önemi hangisi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t04_c03.json (`DKAB.10.4.3`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t04_c03_o01` | Teknolojik gelişmelerin kırsal bölgelerden kentlere göçü h… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o02` | Dijital teknolojilerin yaygınlaşmasının tüketim alışkanlık… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o03` | Çevreye duyarlı teknolojik ürünlerin geliştirilmesinin ama… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o04` | “Türkiye Çevre Haftası” hangi amaçla kutlanmaktadır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o05` | Çevre ve teknoloji ilişkisi konusunda yapılan çözümlemede … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o06` | Teknolojinin çevre üzerindeki etkileri hangi başlıklar alt… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o07` | Atık miktarının azaltılması ve geri dönüşümün yaygınlaşmas… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o08` | Çevre ve teknoloji ilişkisi dikkate alındığında sürdürüleb… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o09` | Bir şehrin toplu taşımayı yaygınlaştırıp elektrikli araçla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c03_o10` | Teknolojinin çevreye etkisini açıklayan bir metinde hangi … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t04_c04.json (`DKAB.10.4.4`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t04_c04_o01` | Rum suresinin 41. ayeti hangi konuyu ele alır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o02` | Ayette “karada ve denizde bozulmaların ortaya çıkması” ifa… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o03` | Rum suresinin 41. ayetinde geçen “fesat” kavramı hangi anl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o04` | Ayette insanın çevreye verdiği zararla ilgili hangi kavram… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o05` | Ayette geçen konular hangi başlıklar altında sınıflandırıl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o06` | “Fesat” kavramının Kur’an’da geçtiği başka bir bağlam hang… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o07` | Ayetten hareketle çevre sorunlarının ortaya çıkışı hakkınd… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o08` | Ayette yaşanan olumsuzlukların hangi işlevi vurgulanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o09` | Rum suresinin 41. ayetinin mesajını kendi cümleleriyle ifa… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t04_c04_o10` | Bir öğrenci ayetten hareketle çevre sorunlarına çözüm öner… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t05_c01.json (`DKAB.10.5.1`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t05_c01_o01` | Din ile dinî yorum arasındaki temel fark hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o02` | Dinî yorum farklılıklarının ortaya çıkmasında insan kaynak… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o03` | Coğrafi ve kültürel sebeplerin dinî yoruma etkisine örnek … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o04` | Hz. Peygamber döneminde büyük çapta yorum farklılığı görül… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o05` | Sahabilerin vefatının dinî yorum farklılıklarıyla ilişkisi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o06` | Al-i İmran suresinin 7. ayetine göre ayetlerin muhkem ve m… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o07` | Dinî metinlerin yaklaşık 23 yılda parça parça indirilmesi … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o08` | Dinî yorum farklılıklarının sebeplerine bütüncül bakıldığı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o09` | Yorum farklılıklarını “din ayrılığı” olarak değerlendirmek… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c01_o10` | Bir öğrencinin farklı yorumları incelerken takınması gerek… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t05_c02.json (`DKAB.10.5.2`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t05_c02_o01` | İtikadi-siyasi mezhepler ile fıkhi mezheplerin doğuş kayna… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o02` | Ehlisünnet bünyesindeki itikadi mezhepler hangileridir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o03` | Şia mezhebinin Ehlisünnet’ten ayrılan temel görüşü hangisi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o04` | Eşarilik ile Matüridiliğin iman anlayışı arasındaki fark h… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o05` | Hanefilik ile Malikiliğin hüküm çıkarma yöntemi arasındaki… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o06` | İmam Malik’in Medine halkının uygulamalarına özel önem ver… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o07` | Bir fıkhi mezhebin görüşü, temel dinî bilgi kaynakları ölç… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o08` | Caferiliğin ortaya çıkışı ve yayıldığı bölgeler hangisinde… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o09` | İtikadi-siyasi ve fıkhi yorumları karşılaştıran bir öğrenc… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c02_o10` | Bir konuşmacı “Mezhepler birbirini bütünüyle reddeder.” de… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
+## din_10_t05_c03.json (`DKAB.10.5.3`)
+
+| soru | metin (kısaltılmış) | karar | gerekçe |
+| --- | --- | --- | --- |
+| `din_10_t05_c03_o01` | “Ey insanlar! Şüphe yok ki biz, sizi bir erkek ve bir dişi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o02` | Hucurat suresi 13. ayette insanların boylara ve kabilelere… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o03` | Ayette üstünlük ölçütü olarak belirtilen kavram hangisidir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o04` | Ayetin sonunda geçen “hakkıyla bilendir, hakkıyla haberdar… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o05` | Hucurat suresi 13. ayette geçen konular hangi başlıklar al… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o06` | Ayette üstünlük ölçütü olarak sayılanlar arasında hangisi … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o07` | Ayetten hareketle “asabiyet” hakkında hangi çıkarım yapıla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o08` | Veda Hutbesi’ndeki “Beyazın siyaha üstünlüğü yoktur.” ifad… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o09` | Hucurat suresi 13. ayetin mesajını kendi cümleleriyle ifad… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t05_c03_o10` | Ayetin mesajını öğrenci panosuna taşıyan bir sınıfın hazır… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+
+_Bu havuzda görsel gerekmedi._
+
 ---
 
-Toplam incelenen soru: **60** · görselli: **0** · görselsiz: **60**
+Toplam incelenen soru: **170** · görselli: **0** · görselsiz: **170**

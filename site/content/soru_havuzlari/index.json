@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 303,
- "soru_sayisi": 3345,
- "flashcard_sayisi": 3345,
+ "havuz_sayisi": 314,
+ "soru_sayisi": 3455,
+ "flashcard_sayisi": 3455,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -1297,6 +1297,201 @@
    "baslik": "Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
    "topic_key": "Din Kültürü > 2.3 Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
    "kod": "DKAB.10.2.3",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t03_c01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t03_c01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İslam’da tevhit ilkesi hakkında bilgiye ulaşmak için kullanacağı kaynakları araştırır.",
+    "Belirlediği kaynaklardan İslam’da tevhit ilkesi hakkında bilgileri bulur.",
+    "İslam’da tevhit ilkesi hakkında elde ettiği bilgileri ayet ve hadisler ışığında doğrular.",
+    "İslam’da tevhit ilkesi hakkında elde ettiği bilgileri kaydeder."
+   ],
+   "baslik": "İslam’ın evrensel mesajlarından biri olan tevhit ilkesi hakkında bilgi toplayabilme",
+   "topic_key": "Din Kültürü > 3.1 İslam’ın evrensel mesajlarından biri olan tevhit ilkesi hakkında bilgi toplayabilme",
+   "kod": "DKAB.10.3.1",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t03_c02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t03_c02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İslam’da adalet ve eşitlik kavramlarının önemini fark eder.",
+    "İslam’da adalet ve eşitlik kavramları arasında ilişki kurar.",
+    "İslam’da adalet ve eşitlik kavramlarının benzerliklerini ve farklılıklarını açıklar.",
+    "İslam’da adalet ve eşitlik kavramlarına sözlü ve yazılı iletişimde bağlamına uygun olarak yer verir."
+   ],
+   "baslik": "İslam’da adalet ve eşitlik kavramlarını bağlamına uygun kullanabilme",
+   "topic_key": "Din Kültürü > 3.2 İslam’da adalet ve eşitlik kavramlarını bağlamına uygun kullanabilme",
+   "kod": "DKAB.10.3.2",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t03_c03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t03_c03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İslam ve barış ilişkisini inceler.",
+    "İslam ve barış ilişkisini bağlamı içerisinde kendisi için anlamlı hâle getirir.",
+    "İslam ve barış ilişkisini nesnel ve doğru bir şekilde ifade eder."
+   ],
+   "baslik": "İslam ve barış ilişkisini yorumlayabilme",
+   "topic_key": "Din Kültürü > 3.3 İslam ve barış ilişkisini yorumlayabilme",
+   "kod": "DKAB.10.3.3",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t03_c04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t03_c04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetlerin meallerini bulur.",
+    "Ayetlerde geçen konu ve kavramları belirler.",
+    "Ayetleri içeriklerine göre sınıflandırır.",
+    "Ayetlerin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayetlerde verilen mesajlarla ilgili yaptığı çıkarımları kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 3.4 Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "kod": "DKAB.10.3.4",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t04_c01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t04_c01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İnsan, çevre ve ahlak arasındaki ilişkiyi inceler.",
+    "Çevreye karşı ahlaki sorumluluklarını bağlamından koparmadan kendi yaşantısı için anlamlı hâle getirir.",
+    "İnsan ve çevre arasındaki ilişkiyi nesnel bir biçimde ifade eder."
+   ],
+   "baslik": "İnsan, çevre ve ahlak arasındaki ilişkiyi yorumlayabilme",
+   "topic_key": "Din Kültürü > 4.1 İnsan, çevre ve ahlak arasındaki ilişkiyi yorumlayabilme",
+   "kod": "DKAB.10.4.1",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t04_c02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t04_c02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Teknoloji ve ahlakla ilgili unsurları araştırır.",
+    "Teknoloji ve ahlakla ilgili unsurlar arasındaki ilişkileri belirler."
+   ],
+   "baslik": "Teknoloji ve ahlak ilişkisini çözümleyebilme",
+   "topic_key": "Din Kültürü > 4.2 Teknoloji ve ahlak ilişkisini çözümleyebilme",
+   "kod": "DKAB.10.4.2",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t04_c03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t04_c03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Çevre ve teknoloji ilişkisi ile ilgili çözümleme yapar.",
+    "Çevre ve teknoloji arasındaki ilişkileri sınıflandırır.",
+    "Çevre ve teknoloji ilişkisini açıklar."
+   ],
+   "baslik": "Çevre ve teknoloji ilişkisini özetleyebilme",
+   "topic_key": "Din Kültürü > 4.3 Çevre ve teknoloji ilişkisini özetleyebilme",
+   "kod": "DKAB.10.4.3",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t04_c04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t04_c04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetin mealini bulur.",
+    "Ayette geçen konu ve kavramları belirler.",
+    "Ayette geçen konuları sınıflandırır.",
+    "Ayetin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayette verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "Rum suresinin 41. ayetinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 4.4 Rum suresinin 41. ayetinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "kod": "DKAB.10.4.4",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t05_c01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t05_c01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Dinî yorum farklılıklarının ortaya çıkış sebeplerinin neler olduğunu belirler.",
+    "Dinî yorum farklılıklarının ortaya çıkış sebepleri arasında ilişki kurar.",
+    "Dinî yorum farklılıklarının ortaya çıkış sebepleriyle ilgili bütünsel bakış açısına ulaşır."
+   ],
+   "baslik": "Dinî yorum farklılıklarının ortaya çıkış sebeplerini sentezleyebilme",
+   "topic_key": "Din Kültürü > 5.1 Dinî yorum farklılıklarının ortaya çıkış sebeplerini sentezleyebilme",
+   "kod": "DKAB.10.5.1",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t05_c02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t05_c02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları tespit eder.",
+    "İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları karşılaştırır.",
+    "İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları temel dinî bilgi kaynaklarını ölçüt alarak inceler.",
+    "İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları açıklar."
+   ],
+   "baslik": "İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları irdeleyebilme",
+   "topic_key": "Din Kültürü > 5.2 İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları irdeleyebilme",
+   "kod": "DKAB.10.5.2",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t05_c03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t05_c03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetin mealini bulur.",
+    "Ayette geçen konu ve kavramları belirler.",
+    "Ayette geçen konuları sınıflandırır.",
+    "Ayetin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayette verilen mesajlarla ilgili çıkarımları kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur’an’ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 5.3 Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur’an’ı Kerim meallerine başvurabilme",
+   "kod": "DKAB.10.5.3",
    "uretim_durumu": "tam"
   },
   {
