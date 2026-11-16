@@ -27,11 +27,16 @@ Kabul edilen iki biçim:
 | Doğrudan durum | `{ "user": {...}, "exams": [...] }` |
 | Sarmalayıcı | `{ "_okumaNotu": "...", "state": { "user": {...}, "exams": [...] } }` |
 
-> ### ⚠️ Bu düğme her şeyi siler
-> `mergeDeep(freshState(), data)` — dosyada olmayan **her alan varsayılana döner**.
-> Konu takibi, hafıza, BKT durumu, profil adı, görevler: hepsi silinir.
-> Bu yüzden üretilen dosyayı **doğrudan içe aktarma düğmesiyle açma**.
-> §4'teki birleştirme betiğini kullan.
+> ### Bu düğme iki modda çalışır (v70)
+>
+> | Dosyada `_mod` | Davranış |
+> | --- | --- |
+> | `"deneme-birlestir"` | **Yalnız sınav ekler.** Konu takibi, hafıza, BKT, profil, görevler **korunur** |
+> | yok | Tam durum değişimi — `mergeDeep(freshState(), data)`, dosyada olmayan her alan sıfırlanır |
+>
+> `site/veri/9-sinif-denemeler.json` **`_mod = "deneme-birlestir"`** taşır.
+> Yani bu dosyayı **doğrudan düğmeyle yükleyebilirsin**, hiçbir verin silinmez.
+> Aynı sınav (ad + tarih) ikinci kez eklenmez.
 
 `state.user` zorunludur; yoksa dosya reddedilir ("Dosya okunamadı").
 
@@ -100,6 +105,22 @@ Boş için: `KONUEKSİKLİĞİ` · `ÇÖZÜMYOLUNUBULAMADIM` · `SÜREYETMEDİ`
 BKT motoru her kaydı gözlem sayar (`bkt-engine.js` → `processRecord`). Ağırlıklar:
 `Konuyu Bilmiyordum` 1.5 · `KONUEKSİKLİĞİ` 1.5 · `ÇÖZÜMYOLUNUBULAMADIM` 0.8 · `ANLAMADIM` 0.5.
 
+> **Yazım tuzağı:** doğru kod `KONUEKSİKLİĞİ` (**eksik**). `KONUEKSİZLİĞİ` (**eksiz**)
+> yazılırsa `REASON_WEIGHTS`'ta karşılığı olmaz: ağırlık uygulanmaz, kayıt
+> "büyük hata" sayılmaz — sessiz bozulma. `scripts/deneme-ice-aktarma-hazirla.js`
+> bu değeri uygulama kaynağından okur, elle yazmaz.
+
+### 2.3.1 Bu dosyada neden türü
+
+Kullanıcı isteğiyle **tüm kayıtlar** `KONUEKSİKLİĞİ` (ağırlık 1.5):
+
+```
+KONUEKSİKLİĞİ: 209 / 209
+```
+
+Yanlış ve boş ayrımı `lessons[ders].w` / `lessons[ders].e` alanlarında korunur;
+`errorLogs` içinde ikisi de aynı nedenle yazılır.
+
 ### 2.4 `topic` nasıl doldurulur
 
 Uygulama `topicKey(topic, lesson)` ile `"Ders > Konu"` üretir; Konu Takibi ve
@@ -162,54 +183,64 @@ Hata kayıtları ise doğru derse yazıldı (Tarih / Coğrafya / Din Kültürü)
 
 ---
 
-## 4. Güvenli aktarma (önerilen)
+## 4. Nasıl yüklenir
 
-Uygulamayı aç → tarayıcı konsolu (F12) → yapıştır:
+### 4.1 İçe aktar düğmesi (artık güvenli)
+
+1. Uygulamayı aç
+2. **Ayarlar → Verileri İçe Aktar** (veya profil menüsündeki aynı düğme)
+3. `9-sinif-denemeler.json` dosyasını seç
+
+Dosya `_mod: "deneme-birlestir"` taşıdığı için:
+
+- Konu takibi, hafıza, BKT durumu, profil adı, seri, plan, görevler **korunur**
+- 7 sınav `exams` listesine eklenir, tarihe göre sıralanır
+- BKT motoru çalışır, 209 kayıt konu durumlarına işlenir
+- Bildirim: `7 deneme eklendi.`
+
+Aynı dosyayı tekrar yüklersen: `Yeni deneme yok — hepsi zaten kayıtlı.`
+
+### 4.2 Konsol yöntemi (isteğe bağlı)
 
 ```js
 (async () => {
   const r = await fetch('/veri/9-sinif-denemeler.json', { cache: 'no-store' });
   const { state: gelen } = await r.json();
-
   let eklenen = 0, atlanan = 0;
   for (const ex of gelen.exams) {
-    const varMi = state.exams.find(e => e.name === ex.name && e.date === ex.date);
-    if (varMi) { atlanan++; continue; }
-    state.exams.push(ex);
-    eklenen++;
+    if (state.exams.find(e => e.name === ex.name && e.date === ex.date)) { atlanan++; continue; }
+    state.exams.push(ex); eklenen++;
   }
   state.exams.sort((a, b) => String(a.date).localeCompare(String(b.date)));
-
   saveState();
-  if (window.AnalizBKT && window.AnalizBKT.processNewRecords) {
-    window.AnalizBKT.processNewRecords();   // BKT / Konu Takibi'ne işle
-  }
-  if (typeof renderExamChart === 'function') renderExamChart();
+  if (window.AnalizBKT?.processNewRecords) window.AnalizBKT.processNewRecords();
   navigate('exams');
   console.log(`eklendi ${eklenen} · atlandı ${atlanan}`);
 })();
 ```
 
-Bu betik:
+### 4.3 Tam yedek geri yükleme
 
-- **Hiçbir şeyi silmez** — yalnız `state.exams` dizisine ekler
-- Aynı sınav ikinci kez eklenmez (ad + tarih ile kontrol)
-- BKT motorunu tetikler; 209 kayıt konu durumlarına işlenir
-
-### 4.1 Eski yöntem (tam içe aktarma) — dikkat
-
-`Verileri İçe Aktar` düğmesi dosyayı kabul eder ama **tüm durumu değiştirir**.
-Kullanacaksan önce `Dışa Aktar` ile yedek al. Bu yöntemde `state.user.name`
-boşalır (gizlilik gereği dosyada ad yok).
+`_mod` alanı **olmayan** bir dosya seçersen eski davranış sürer: tüm durum
+değişir. Bunu yalnızca yedekten geri dönerken kullan ve önce **Dışa Aktar**
+ile mevcut veriyi sakla.
 
 ---
 
 ## 5. Kontrol
 
 ```bash
-node tests/deneme-ice-aktarma.test.js
+node tests/deneme-ice-aktarma.test.js     # 287 doğrulama
+node tests/deneme-import-butonu.test.js   # 26 doğrulama
+# veya ikisi birden:
+npm run -s test:deneme
 ```
 
-277 doğrulama: alan bütünlüğü, tarih biçimi, ders adları, azami soru,
-net−beyan farkı ≤ 0,25, kayıt sayısı = w + e, geçerli neden kodları,
-Türkçe karakterler.
+**`deneme-ice-aktarma`:** alan bütünlüğü, tarih biçimi, ders adları, azami soru,
+net−beyan farkı ≤ 0,25, kayıt sayısı = w + e, tek neden türü + kanonik yazım,
+Türkçe karakterler, uçtan uca BKT (209/209 gözlem).
+
+**`deneme-import-butonu`:** `importData`yı `index.html`'den çıkarıp sahte DOM'da
+çalıştırır — birleştirme modunda profil/konu/hafıza/BKT/plan korunuyor mu,
+sınavlar ekleniyor mu, tekrar yükleme mükerrer üretiyor mu, `_mod`suz dosya
+eski davranışta mı.

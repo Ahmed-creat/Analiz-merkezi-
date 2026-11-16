@@ -1811,6 +1811,30 @@ function importData(input) {
         ? (parsed.user ? parsed : (parsed.state && parsed.state.user ? parsed.state : null))
         : null;
       if (!data) throw new Error("geçersiz");
+      // v70 — DENEME BİRLEŞTİRME MODU
+      // Dosyada "_mod": "deneme-birlestir" varsa TAM DURUM DEĞİŞİMİ YAPILMAZ.
+      // Yalnız sınav listesine eklenir; konu takibi, hafıza, BKT, profil ve
+      // görevler olduğu gibi kalır. Aynı sınav (ad + tarih) tekrar eklenmez.
+      if (parsed._mod === "deneme-birlestir") {
+        const gelen = Array.isArray(data.exams) ? data.exams : [];
+        if (!gelen.length) throw new Error("sınav yok");
+        let eklenen = 0, atlanan = 0;
+        gelen.forEach(ex => {
+          if (!ex || !ex.name) return;
+          const varMi = (state.exams || []).some(e => e && e.name === ex.name && String(e.date || "") === String(ex.date || ""));
+          if (varMi) { atlanan++; return; }
+          state.exams.push(ex); eklenen++;
+        });
+        state.exams.sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+        saveState();
+        try { if (window.AnalizBKT && typeof window.AnalizBKT.processNewRecords === "function") window.AnalizBKT.processNewRecords(); } catch (e) { /* motor yoksa sessiz */ }
+        updateUserUI();
+        try { if (typeof renderExamChart === "function") renderExamChart(); } catch (e) { /**/ }
+        navigate(currentPage);
+        toast(eklenen ? eklenen + " deneme eklendi" + (atlanan ? " · " + atlanan + " zaten vardı" : "") + "." : "Yeni deneme yok — hepsi zaten kayıtlı.", eklenen ? "success" : "info");
+        input.value = "";   // aynı dosya yeniden seçilebilsin
+        return;
+      }
       state = mergeDeep(freshState(), data);
       saveState(); updateUserUI(); navigate(currentPage);
       toast("Veriler içe aktarıldı.", "success");

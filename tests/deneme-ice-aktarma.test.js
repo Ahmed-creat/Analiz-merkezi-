@@ -41,10 +41,27 @@ const LESSON_CONFIG = sabitOku("LESSON_CONFIG");
 const NET_RULE = sabitOku("NET_RULE");
 const netOf = (d, w) => d - w / NET_RULE.wrongDivisor;
 
-const GECERLI_NEDEN = new Set([
-  "Konuyu Bilmiyordum", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası",
-  "KONUEKSİKLİĞİ", "SÜREYETMEDİ", "ÇÖZÜMYOLUNUBULAMADIM"
-]);
+/* Geçerli neden kodları — UYDURULMAZ, index.html'deki listelerden okunur. */
+function diziCikar(ad) {
+  const i = HTML.indexOf("const " + ad + " = [");
+  if (i < 0) throw new Error(ad + " bulunamadı");
+  const bas = HTML.indexOf("[", i);
+  const son = HTML.indexOf("];", bas);
+  return eval("(" + HTML.slice(bas, son + 1) + ")");
+}
+const WRONG_REASONS = diziCikar("WRONG_REASONS");
+const EMPTY_REASONS = diziCikar("EMPTY_REASONS");
+const GECERLI_NEDEN = new Set([...WRONG_REASONS, ...EMPTY_REASONS]);
+
+/* "konu eksikliği"nin kanonik kodu — canonicalReason eşlemesinden okunur.
+   DİKKAT: doğru kod KONUEKSİKLİĞİ (eksik). KONUEKSİZLİĞİ (eksiz) yazılırsa
+   REASON_WEIGHTS'ta karşılığı olmaz → ağırlık uygulanmaz, sessiz bozulma. */
+const KONU_EKSIKLIGI = (() => {
+  const m = HTML.match(/"KONU EKSİKLİĞİ"\s*:\s*"([^"]+)"/);
+  if (!m) throw new Error("canonicalReason eşlemesi yok");
+  return m[1];
+})();
+const BKT_KAYNAK = fs.readFileSync(path.join(KOK, "site/bkt-engine.js"), "utf8");
 
 let gecen = 0, kalan = 0;
 const hatalar = [];
@@ -128,6 +145,19 @@ let toplamKayit = 0;
   ok(ex.id + " qno tekrar etmiyor", new Set(qno).size === qno.length);
 });
 ok("toplam hata kaydı 209", toplamKayit === 209, String(toplamKayit));
+
+// ---------- 4b) tüm nedenler konu eksikliği ----------
+console.log("\n== 4b) Tüm nedenler konu eksikliği ==");
+const nedenler = new Set();
+(veri.state.exams || []).forEach(ex => ex.errorLogs.forEach(l => nedenler.add(l.type)));
+ok("tek neden türü var", nedenler.size === 1, [...nedenler].join(", "));
+ok("neden = kanonik konu eksikliği", nedenler.has(KONU_EKSIKLIGI),
+  [...nedenler].join(", ") + " ≠ " + KONU_EKSIKLIGI);
+ok("kanonik kod BKT motorunda tanınıyor", BKT_KAYNAK.includes('"' + KONU_EKSIKLIGI + '"'));
+ok("kanonik kodun ağırlığı var",
+  new RegExp('"' + KONU_EKSIKLIGI + '"\\s*:\\s*[\\d.]+').test(HTML));
+ok("emekli kod KONUEKSİZLİĞİ (Z) kullanılmıyor",
+  ![...nedenler].some(n => n.includes("EKSİZ")), [...nedenler].join(", "));
 
 // ---------- 9) metin ----------
 console.log("\n== 5) Metin kalitesi ==");

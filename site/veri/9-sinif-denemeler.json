@@ -1,6 +1,7 @@
 {
- "_okumaNotu": "9. sınıf deneme dökümü (7 sınav). Uygulamanın state.exams şemasına birebir uyar. İçe aktarma yöntemleri docs/veri/DENEME-ICE-AKTARMA.md dosyasında.",
- "_uyari": "Bu dosyayı 'Verileri İçe Aktar' düğmesiyle açmak TÜM mevcut veriyi (konu takibi, hafıza, BKT, profil) siler — içe aktarma tam durum değiştirir. Bunun yerine belgede verilen birleştirme betiğini kullan: yalnız bu 7 sınavı append eder, hiçbir şeyi silmez.",
+ "_mod": "deneme-birlestir",
+ "_okumaNotu": "9. sınıf deneme dökümü (7 sınav). \"Verileri İçe Aktar\" düğmesiyle açılabilir: _mod=deneme-birlestir olduğu için uygulama TAM DURUM DEĞİŞİMİ yapmaz, yalnız bu sınavları listeye ekler. Konu takibi, hafıza, profil ve BKT korunur.",
+ "_uyari": "Tüm hata nedenleri \"KONUEKSİKLİĞİ\" (konu eksikliği, ağırlık 1,5) olarak işaretlidir. Yanlış/boş ayrımı lessons[ders].w ve .e alanlarında korunur; errorLogs içinde ikisi de aynı nedenle yazılır.",
  "_surum": "2026-11-17",
  "_kaynak": "9. sınıf deneme dökümü (PDF) — 7 sınav, 22.10.2025 – 22.05.2026",
  "_tutarsizliklar": [
@@ -71,7 +72,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Şiirin içeriği (tema, konu) ile ilgili çalışma yapar",
       "kazanim": "Şiirin içeriği (tema, konu) ile ilgili çalışma yapar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -79,7 +80,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Şiirin yapısı (nazım birimi, ölçüsü) ile ilgili çalışma yapar",
       "kazanim": "Şiirin yapısı (nazım birimi, ölçüsü) ile ilgili çalışma yapar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -87,7 +88,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Ses Olayları",
       "kazanim": "Ses olayları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -95,7 +96,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
       "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -103,7 +104,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
       "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -111,7 +112,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
       "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -119,7 +120,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
       "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -127,7 +128,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
       "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -135,7 +136,7 @@
       "lesson": "Matematik",
       "topic": "1.3 Sayı Kümelerinin Özellikleri",
       "kazanim": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -239,7 +240,7 @@
       "lesson": "Tarih",
       "topic": "1.2 Tarihin Doğası",
       "kazanim": "Tarihin doğası, tarihin tanımı ve diğer disiplinlerle ilişkisi",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -255,7 +256,7 @@
       "lesson": "Fizik",
       "topic": "1.1 Fizik Bilimi",
       "kazanim": "Fizik biliminin alt dallarını çalışma alanlarıyla ilişkilendirerek etiketler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -263,7 +264,7 @@
       "lesson": "Biyoloji",
       "topic": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
       "kazanim": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
@@ -331,7 +332,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Yazım Kuralları",
       "kazanim": "Yazım kurallarını uygular",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -339,7 +340,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Metinde geçen söz sanatlarını belirler",
       "kazanim": "Metinde geçen söz sanatlarını belirler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -379,7 +380,7 @@
       "lesson": "Matematik",
       "topic": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
       "kazanim": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -387,7 +388,7 @@
       "lesson": "Matematik",
       "topic": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
       "kazanim": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -395,7 +396,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayı aralıkları ile yapılan işlemler",
       "kazanim": "Gerçek sayı aralıkları ile yapılan işlemler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -403,7 +404,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayı aralıkları ile yapılan işlemler",
       "kazanim": "Gerçek sayı aralıkları ile yapılan işlemler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -411,7 +412,7 @@
       "lesson": "Matematik",
       "topic": "Bir aralığın mutlak değer ile gösterimi",
       "kazanim": "Bir aralığın mutlak değer ile gösterimi",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -419,7 +420,7 @@
       "lesson": "Matematik",
       "topic": "Özdeşliklerden yaralanarak işlem yapabilme",
       "kazanim": "Özdeşliklerden yaralanarak işlem yapabilme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -491,7 +492,7 @@
       "lesson": "Tarih",
       "topic": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
       "kazanim": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -499,7 +500,7 @@
       "lesson": "Tarih",
       "topic": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
       "kazanim": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -523,7 +524,7 @@
       "lesson": "Coğrafya",
       "topic": "Mekânın aynası haritalar ve harita okuryazarlığı",
       "kazanim": "Mekânın aynası haritalar ve harita okuryazarlığı",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -531,7 +532,7 @@
       "lesson": "Coğrafya",
       "topic": "1.1.2 Niçin Coğrafya Öğrenmeliyiz?",
       "kazanim": "Niçin coğrafya öğrenmeliyiz?",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -539,7 +540,7 @@
       "lesson": "Coğrafya",
       "topic": "Harita türlerine ilişkin çıkarım yapar",
       "kazanim": "Harita türlerine ilişkin çıkarım yapar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -547,7 +548,7 @@
       "lesson": "Fizik",
       "topic": "1.1 Fizik Bilimi",
       "kazanim": "Fizik bilimi ve fiziğin uygulama alanları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
@@ -621,7 +622,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Anlatım biçimi ve düşünceyi geliştirme yollarından yararlanma",
       "kazanim": "Anlatım biçimi ve düşünceyi geliştirme yollarından yararlanma",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -629,7 +630,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Türlerin içerik ve anlam özellikleri yapı unsurlarıyla çözümleme",
       "kazanim": "Türlerin içerik ve anlam özellikleri yapı unsurlarıyla çözümleme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -653,7 +654,7 @@
       "lesson": "Tarih",
       "topic": "Tarihsel bilgi üretim sürecindeki aşamalar",
       "kazanim": "Tarihsel bilgi üretim sürecindeki aşamalar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -661,7 +662,7 @@
       "lesson": "Tarih",
       "topic": "Tarihsel bilgi üretim sürecindeki aşamalar",
       "kazanim": "Tarihsel bilgi üretim sürecindeki aşamalar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -677,7 +678,7 @@
       "lesson": "Coğrafya",
       "topic": "1.1.3 Coğrafya Biliminin Gelişimi",
       "kazanim": "Coğrafya biliminin gelişimine katkı sağlayan isimler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -685,7 +686,7 @@
       "lesson": "Coğrafya",
       "topic": "3.1.1 Hava Olayları",
       "kazanim": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -693,7 +694,7 @@
       "lesson": "Coğrafya",
       "topic": "3.1.1 Hava Olayları",
       "kazanim": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -717,7 +718,7 @@
       "lesson": "Fizik",
       "topic": "Birimi SI birim sisteminde verilen nicelikleri tanımlar",
       "kazanim": "Birimi SI birim sisteminde verilen nicelikleri tanımlar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -741,7 +742,7 @@
       "lesson": "Kimya",
       "topic": "Kimyasal maddelerin kullanımı ve güvenliği",
       "kazanim": "Kimyasal maddelerin kullanımı ve güvenliği",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -749,7 +750,7 @@
       "lesson": "Kimya",
       "topic": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
       "kazanim": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -797,7 +798,7 @@
       "lesson": "Biyoloji",
       "topic": "Bilginin doğasıyla ilgili elde ettiği bilgileri ifade eder",
       "kazanim": "Bilginin doğasıyla ilgili elde ettiği bilgileri ifade eder",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -805,7 +806,7 @@
       "lesson": "Biyoloji",
       "topic": "1.4 Canlıların Ortak Özellikleri",
       "kazanim": "Canlıların ortak özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -813,7 +814,7 @@
       "lesson": "Biyoloji",
       "topic": "1.4 Canlıların Ortak Özellikleri",
       "kazanim": "Canlıların ortak özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
@@ -821,7 +822,7 @@
       "lesson": "Biyoloji",
       "topic": "1.4 Canlıların Ortak Özellikleri",
       "kazanim": "Canlıların ortak özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      }
     ],
@@ -882,7 +883,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
       "kazanim": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -890,7 +891,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
       "kazanim": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -898,7 +899,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Çıkarım yapar",
       "kazanim": "Çıkarım yapar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -906,7 +907,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "İletileri açık veya örtük şekilde ifade eder",
       "kazanim": "İletileri açık veya örtük şekilde ifade eder",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -914,7 +915,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Yazım Kuralları",
       "kazanim": "Yazım kuralları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -922,7 +923,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Yapı unsurları",
       "kazanim": "Yapı unsurları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -954,7 +955,7 @@
       "lesson": "Tarih",
       "topic": "1.1 Tarih Öğrenmenin Faydaları",
       "kazanim": "Tarih öğrenmenin faydaları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -962,7 +963,7 @@
       "lesson": "Coğrafya",
       "topic": "2.1.3 Mekânsal Bilgi Teknolojileri",
       "kazanim": "Mekânsal Bilgi Teknolojilerinin Bileşenleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -970,7 +971,7 @@
       "lesson": "Din Kültürü",
       "topic": "İslam'da ibadetlerin temel ilkeleri",
       "kazanim": "İslam'da ibadetlerin temel ilkeleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -978,7 +979,7 @@
       "lesson": "Matematik",
       "topic": "Sayı kümelerinin temel özelliklerine ilişkin varsayımlar",
       "kazanim": "Sayı kümelerinin temel özelliklerine ilişkin varsayımlar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -986,7 +987,7 @@
       "lesson": "Matematik",
       "topic": "Doğrusal referans fonksiyonun nitel özellikleri",
       "kazanim": "Doğrusal referans fonksiyonun nitel özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -994,7 +995,7 @@
       "lesson": "Matematik",
       "topic": "Üçgende açı ve kenar özellikleri",
       "kazanim": "Üçgende açı ve kenar özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1002,7 +1003,7 @@
       "lesson": "Matematik",
       "topic": "Üçgende açı ve kenar özellikleri",
       "kazanim": "Üçgende açı ve kenar özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1010,7 +1011,7 @@
       "lesson": "Matematik",
       "topic": "Üçgende açı ve kenar özellikleri",
       "kazanim": "Üçgende açı ve kenar özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1058,7 +1059,7 @@
       "lesson": "Fizik",
       "topic": "Konum, sürat ve hız kavramlarını ilişkilendirir",
       "kazanim": "Konum, sürat ve hız kavramlarını ilişkilendirir",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1066,7 +1067,7 @@
       "lesson": "Fizik",
       "topic": "Özkütleyi kütle ve hacimle ilişkilendirerek açıklar",
       "kazanim": "Özkütleyi kütle ve hacimle ilişkilendirerek açıklar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1074,7 +1075,7 @@
       "lesson": "Fizik",
       "topic": "Basınca yönelik çıkarımlar",
       "kazanim": "Basınca yönelik çıkarımlar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1082,7 +1083,7 @@
       "lesson": "Fizik",
       "topic": "Ortalama hız kavramı",
       "kazanim": "Ortalama hız kavramı",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1090,7 +1091,7 @@
       "lesson": "Kimya",
       "topic": "2.1.4 Lewis Nokta Yapısı",
       "kazanim": "Lewis Nokta Yapısı",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1114,7 +1115,7 @@
       "lesson": "Biyoloji",
       "topic": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
       "kazanim": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1122,7 +1123,7 @@
       "lesson": "Biyoloji",
       "topic": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
       "kazanim": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
@@ -1130,7 +1131,7 @@
       "lesson": "Biyoloji",
       "topic": "Bilimin doğasını yorumlayabilme",
       "kazanim": "Bilimin doğasını yorumlayabilme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      }
     ],
@@ -1190,7 +1191,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Bilgilerin sunuluş şekli",
       "kazanim": "Bilgilerin sunuluş şekli",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1198,7 +1199,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Yazım Kuralları",
       "kazanim": "Yazım kuralları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1206,7 +1207,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Hikâye yapı unsurları",
       "kazanim": "Hikâye yapı unsurları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1214,7 +1215,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Şiirde ahenk unsurları",
       "kazanim": "Şiirde ahenk unsurları",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1222,7 +1223,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Gezi Yazısı",
       "kazanim": "Gezi yazısı",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1254,7 +1255,7 @@
       "lesson": "Coğrafya",
       "topic": "3.1.2 İklim Sistemi",
       "kazanim": "İklim sisteminin bileşen ve değişkenleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1262,7 +1263,7 @@
       "lesson": "Coğrafya",
       "topic": "İklim verilerini kullanarak diyagram hazırlayabilme",
       "kazanim": "İklim verilerini kullanarak diyagram hazırlayabilme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1270,7 +1271,7 @@
       "lesson": "Matematik",
       "topic": "Üslü ve köklü gösterimlerle muhakeme",
       "kazanim": "Üslü ve köklü gösterimlerle muhakeme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1278,7 +1279,7 @@
       "lesson": "Matematik",
       "topic": "Üslü ve köklü gösterimlerle muhakeme",
       "kazanim": "Üslü ve köklü gösterimlerle muhakeme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1286,7 +1287,7 @@
       "lesson": "Matematik",
       "topic": "İşlem özellikleri",
       "kazanim": "İşlem özellikleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1294,7 +1295,7 @@
       "lesson": "Matematik",
       "topic": "Eşlik ve Benzerlik",
       "kazanim": "Eşlik ve Benzerlik",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1302,7 +1303,7 @@
       "lesson": "Matematik",
       "topic": "4.1 Geometrik Dönüşümler",
       "kazanim": "Geometrik dönüşümler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1310,7 +1311,7 @@
       "lesson": "Matematik",
       "topic": "Mutlak değer gösterimi",
       "kazanim": "Mutlak değer gösterimi",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1382,7 +1383,7 @@
       "lesson": "Fizik",
       "topic": "3.2 Sıvılarda Basınç",
       "kazanim": "Sıvılarda Basınç",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1398,7 +1399,7 @@
       "lesson": "Kimya",
       "topic": "2.1.2 İyonik Bağ",
       "kazanim": "İyonik Bağ",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
@@ -1488,7 +1489,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Şiir yapısı ve ahenk",
       "kazanim": "Şiir yapısı ve ahenk",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1496,7 +1497,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Ön bilgilerle bağlantı kurar",
       "kazanim": "Ön bilgilerle bağlantı kurar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1504,7 +1505,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Ön bilgilerle bağlantı kurar",
       "kazanim": "Ön bilgilerle bağlantı kurar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1512,7 +1513,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Şiir içeriği",
       "kazanim": "Şiir içeriği",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1520,7 +1521,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Yazım ve Noktalama",
       "kazanim": "Yazım ve Noktalama",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1528,7 +1529,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Yazım ve Noktalama",
       "kazanim": "Yazım ve Noktalama",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1560,7 +1561,7 @@
       "lesson": "Tarih",
       "topic": "Eski Çağ toplumlarında inançlar ile bilim ve sanat anlayışları arasındaki ilişkiyi yorumlama",
       "kazanim": "Eski Çağ toplumlarında inançlar ile bilim ve sanat anlayışları arasındaki ilişkiyi yorumlama",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1568,7 +1569,7 @@
       "lesson": "Tarih",
       "topic": "Tarım Devrimi'nin yerleşmeye etkisini değerlendirme",
       "kazanim": "Tarım Devrimi'nin yerleşmeye etkisini değerlendirme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1576,7 +1577,7 @@
       "lesson": "Coğrafya",
       "topic": "Harita üzerinden çıkarım yapabilme",
       "kazanim": "Harita üzerinden çıkarım yapabilme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1584,7 +1585,7 @@
       "lesson": "Coğrafya",
       "topic": "İklim teknolojileri bileşenleri",
       "kazanim": "İklim teknolojileri bileşenleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1592,7 +1593,7 @@
       "lesson": "Coğrafya",
       "topic": "İklim teknolojileri bileşenleri",
       "kazanim": "İklim teknolojileri bileşenleri",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1600,7 +1601,7 @@
       "lesson": "Matematik",
       "topic": "Doğrusal fonksiyon denklemleri ve problem çözme",
       "kazanim": "Doğrusal fonksiyon denklemleri ve problem çözme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1688,7 +1689,7 @@
       "lesson": "Fizik",
       "topic": "3.1 Basınç",
       "kazanim": "Basınç verilerini kaydetme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1696,7 +1697,7 @@
       "lesson": "Fizik",
       "topic": "3.2 Sıvılarda Basınç",
       "kazanim": "Durgun sıvılarda basınç",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1704,7 +1705,7 @@
       "lesson": "Fizik",
       "topic": "3.3 Açık Hava Basıncı",
       "kazanim": "Açık hava basıncına ilişkin çıkarımlar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1712,7 +1713,7 @@
       "lesson": "Fizik",
       "topic": "3.3 Açık Hava Basıncı",
       "kazanim": "Açık hava basıncına ilişkin çıkarımlar",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1720,7 +1721,7 @@
       "lesson": "Kimya",
       "topic": "1.2.3 Periyodik Tabloda Yer Bulma",
       "kazanim": "Periyodik tabloda yer bulma",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1728,7 +1729,7 @@
       "lesson": "Kimya",
       "topic": "1.2.4 Periyodik Özellikler",
       "kazanim": "Periyodik özellikler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
@@ -1736,7 +1737,7 @@
       "lesson": "Kimya",
       "topic": "2.1.6 Bileşiklerin Adlandırılması",
       "kazanim": "Bileşiklerin adlandırılması",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      }
     ],
@@ -1788,7 +1789,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Şiirde ahengi sağlayan özellikler",
       "kazanim": "Şiirde ahengi sağlayan özellikler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1796,7 +1797,7 @@
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Türlerin yapı unsurlarıyla çözümlemesi",
       "kazanim": "Türlerin yapı unsurlarıyla çözümlemesi",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1828,7 +1829,7 @@
       "lesson": "Tarih",
       "topic": "Tarım Devrimi’nin Eski Çağ Medeniyetlerindeki ekonomiye etkisi",
       "kazanim": "Tarım Devrimi’nin Eski Çağ Medeniyetlerindeki ekonomiye etkisi",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1836,7 +1837,7 @@
       "lesson": "Din Kültürü",
       "topic": "5.1 Hz. Muhammed'in Beşeri/Peygamberlik Yönü",
       "kazanim": "Hz. Muhammed’in beşerî ve peygamberlik yönü",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1844,7 +1845,7 @@
       "lesson": "Matematik",
       "topic": "Gerçek sayı aralıklarının gösteriminde küme işlemlerinden yararlanabilme",
       "kazanim": "Gerçek sayı aralıklarının gösteriminde küme işlemlerinden yararlanabilme",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1948,7 +1949,7 @@
       "lesson": "Kimya",
       "topic": "Atomların elektron dizilimi ve Periyodik Tablo",
       "kazanim": "Atomların elektron dizilimi ve Periyodik Tablo",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1956,7 +1957,7 @@
       "lesson": "Kimya",
       "topic": "Atomların elektron dizilimi ve Periyodik Tablo",
       "kazanim": "Atomların elektron dizilimi ve Periyodik Tablo",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1972,7 +1973,7 @@
       "lesson": "Biyoloji",
       "topic": "2.2 Organik Moleküller",
       "kazanim": "Organik moleküllerin yapısı",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1980,7 +1981,7 @@
       "lesson": "Biyoloji",
       "topic": "Karbohidrat, Yağ ve Proteinler",
       "kazanim": "Karbohidrat, Yağ ve Proteinler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
@@ -1988,7 +1989,7 @@
       "lesson": "Biyoloji",
       "topic": "Karbohidrat, Yağ ve Proteinler",
       "kazanim": "Karbohidrat, Yağ ve Proteinler",
-      "type": "Konuyu Bilmiyordum",
+      "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
