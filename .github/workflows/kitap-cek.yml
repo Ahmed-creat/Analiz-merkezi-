@@ -14,14 +14,20 @@ name: Kitap Çek
 on:
   workflow_dispatch:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, reopened, labeled]
 
 permissions:
   contents: write
 
 jobs:
   cek:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.title, '[kitap]')
+    # Her push'ta çalışmasın: yalnız "[kitap]" başlıklı PR açıldığında/yeniden açıldığında
+    # ya da PR'a `kitap-cek` etiketi eklendiğinde. Yeni kitap geldiğinde etiket eklemek yeter.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.action == 'opened' && contains(github.event.pull_request.title, '[kitap]')) ||
+      (github.event.action == 'reopened' && contains(github.event.pull_request.title, '[kitap]')) ||
+      (github.event.action == 'labeled' && github.event.label.name == 'kitap-cek')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
