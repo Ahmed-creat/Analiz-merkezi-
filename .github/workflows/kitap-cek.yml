@@ -1,112 +1,101 @@
 name: Kitap Çek
 
-# AMAÇ (köprü): ders kitabı PDF'ini GitHub runner'ı üzerinden indirip artifact
-# olarak almak. Sandbox'a yalnızca GitHub erişimi olduğu için köprü gerekir.
-# Dosya REPOYA COMMIT EDİLMEZ; artifact kısa ömürlüdür (3 gün) ve iş bitince
-# elle silinir.
+# KÖPRÜ İŞ AKIŞI
+# Sandbox yalnızca github.com / api.github.com / codeload.github.com'a çıkabiliyor.
+# Bu iş akışı GitHub runner'ının açık internetini kullanır:
+#   1) release asset olarak yüklenen ders kitabı PDF'lerini indirir
+#   2) pdftotext ile sayfa sayfa metne çevirir (JSON)
+#   3) metni `kitap-kaynak` adlı GEÇİCİ dala commit eder (PDF repoya girmez)
+# Sandbox tarafı metni `git fetch origin kitap-kaynak` ile alır, sonra dal silinir.
 #
-# İki tetikleyici:
-#   1) workflow_dispatch — varsayılan dalda kayıtlıysa kullanılır
-#   2) pull_request — başlığında "[kitap]" geçen PR'larda çalışır; girdiler
-#      docs/uretim/kopru-girdi.txt dosyasından okunur (1. satır adres, 2. satır ad)
+# Tetikleme: pull_request (başlığında "[kitap]" geçen PR) ya da workflow_dispatch
+# Girdi listesi: docs/uretim/kopru-kitaplar.txt  →  <slug>|<release asset adı>
 
 on:
   workflow_dispatch:
-    inputs:
-      url:
-        description: "Dosya adresi (Google Drive view/uc linki) ya da Drive dosya kimliği"
-        required: true
-      ad:
-        description: "Kaydedilecek dosya adı"
-        required: true
-        default: "kitap.pdf"
   pull_request:
     types: [opened, synchronize, reopened]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   cek:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.title, '[kitap]')
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ETIKET: derskitaplari
     steps:
       - uses: actions/checkout@v4
 
-      - name: Girdiyi çöz
-        id: coz
-        run: |
-          set -u
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            U='${{ inputs.url }}'
-            A='${{ inputs.ad }}'
-          else
-            U=$(sed -n 1p docs/uretim/kopru-girdi.txt | tr -d '\r')
-            A=$(sed -n 2p docs/uretim/kopru-girdi.txt | tr -d '\r')
-          fi
-          [ -n "$A" ] || A=kitap.pdf
-          ID=""
-          case "$U" in
-            *drive.google.com*|*docs.google.com*)
-              ID=$(printf '%s' "$U" | sed -n 's#.*/d/\([A-Za-z0-9_-]\{10,\}\).*#\1#p')
-              [ -z "$ID" ] && ID=$(printf '%s' "$U" | sed -n 's#.*[?&]id=\([A-Za-z0-9_-]\{10,\}\).*#\1#p')
-              ;;
-            http*) ID="" ;;
-            *) ID="$U" ;;
-          esac
-          echo "id=$ID" >> "$GITHUB_OUTPUT"
-          echo "ad=$A" >> "$GITHUB_OUTPUT"
-          echo "url=$U" >> "$GITHUB_OUTPUT"
-          echo "Drive kimliği: ${ID:-yok (doğrudan adres)} · dosya adı: $A"
-
-      - name: İndir
+      - name: Araçları hazırla
         run: |
           set -euo pipefail
-          ID='${{ steps.coz.outputs.id }}'
-          HEDEF='${{ steps.coz.outputs.ad }}'
-          URL='${{ steps.coz.outputs.url }}'
-          if [ -n "$ID" ]; then
-            curl -sSL --retry 3 -c cerez.txt -b cerez.txt \
-              "https://drive.google.com/uc?export=download&id=$ID" -o ham.bin || true
-            if head -c 400 ham.bin | grep -qiE '<html|<!DOCTYPE'; then
-              echo "→ Drive onay sayfası geldi, uuid aranıyor"
-              UUID=$(grep -oE 'uuid=[A-Za-z0-9_-]+' ham.bin | head -1 | cut -d= -f2 || true)
-              echo "→ uuid: ${UUID:-yok}"
-              curl -sSL --retry 3 -c cerez.txt -b cerez.txt \
-                "https://drive.usercontent.google.com/download?id=$ID&export=download&confirm=t${UUID:+&uuid=$UUID}" \
-                -o ham.bin
+          command -v pdftotext >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+          pdftotext -v 2>&1 | head -1
+
+      - name: Kitapları indir ve metne çevir
+        run: |
+          set -euo pipefail
+          mkdir -p cikti
+          while IFS='|' read -r SLUG ASSET; do
+            [ -z "${SLUG:-}" ] && continue
+            case "$SLUG" in \#*) continue ;; esac
+            echo "=== $SLUG ← $ASSET ==="
+            if ! gh release download "$ETIKET" --pattern "$ASSET" --dir indirilen --clobber; then
+              echo "::warning::$ASSET indirilemedi (release'te yok?)"
+              continue
             fi
-          else
-            curl -sSL --retry 3 -A "Mozilla/5.0" "$URL" -o ham.bin
-          fi
-          ls -l ham.bin
-          echo "--- dosya türü ---"
-          file ham.bin || true
+            PDF="indirilen/$ASSET"
+            echo "boyut: $(stat -c%s "$PDF") bayt"
+            pdfinfo "$PDF" 2>/dev/null | grep -E 'Pages|Title|Creator' || true
+            pdftotext -layout -enc UTF-8 "$PDF" "cikti/$SLUG.txt"
+            python3 - "$SLUG" "cikti/$SLUG.txt" "cikti/$SLUG.json" "$ASSET" "$(sha256sum "$PDF" | cut -d' ' -f1)" <<'PY'
+          import json, sys, re
+          slug, txt, out, asset, sha = sys.argv[1:6]
+          ham = open(txt, encoding="utf-8", errors="replace").read()
+          sayfalar = ham.split("\f")
+          if sayfalar and not sayfalar[-1].strip():
+              sayfalar = sayfalar[:-1]
+          def temizle(t):
+              t = t.replace("\u00ad", "")
+              t = re.sub(r"[ \t]+", " ", t)
+              t = re.sub(r"\n{3,}", "\n\n", t)
+              return t.strip()
+          kayit = []
+          for i, s in enumerate(sayfalar, start=1):
+              m = temizle(s)
+              kayit.append({"s": i, "metin": m, "kr": len(m)})
+          kisa = [x["s"] for x in kayit if x["kr"] < 200]
+          veri = {"slug": slug, "parcalar": [{"dosya": asset, "sha256": sha, "sayfa": len(kayit)}],
+                  "sayfa_sayisi": len(kayit), "sayfalar": kayit}
+          json.dump(veri, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          print("  sayfa: %d · toplam kr: %d · zayıf sayfa: %d %s"
+                % (len(kayit), sum(x["kr"] for x in kayit), len(kisa), kisa[:20]))
+          open("rapor.txt", "a", encoding="utf-8").write(
+              "%s · %s · %d sayfa · %d kr · zayıf %d\n" % (slug, asset, len(kayit),
+                                                          sum(x["kr"] for x in kayit), len(kisa)))
+          PY
+            rm -f "$PDF" "cikti/$SLUG.txt"
+          done < docs/uretim/kopru-kitaplar.txt
+          echo "--- özet ---"
+          cat rapor.txt || true
+          ls -la cikti
 
-          if head -c 400 ham.bin | grep -qiE '<html|<!DOCTYPE'; then
-            echo "::error::Bağlantı dosya yerine HTML döndürdü. Dosya 'bağlantıya sahip herkes' ile paylaşılmamış olabilir."
-            grep -oiE '<title>[^<]*</title>' ham.bin | head -3 || true
-            exit 1
-          fi
-          BOYUT=$(stat -c%s ham.bin)
-          echo "boyut: $BOYUT bayt ($(( BOYUT / 1024 / 1024 )) MB)"
-          if [ "$BOYUT" -lt 100000 ]; then
-            echo "::error::Dosya beklenenden çok küçük ($BOYUT bayt) — indirme başarısız."
-            exit 1
-          fi
-          mv ham.bin "$HEDEF"
-          echo "--- sha256 ---"
-          sha256sum "$HEDEF" | tee sha256.txt
-          echo "--- pdf bilgisi (varsa) ---"
-          (pdfinfo "$HEDEF" 2>/dev/null | grep -E 'Pages|Title|Creator|Page size') || echo "(pdfinfo yok / PDF değil)"
-
-      - name: Artifact yükle
-        uses: actions/upload-artifact@v4
-        with:
-          name: kitap
-          path: |
-            ${{ steps.coz.outputs.ad }}
-            sha256.txt
-          retention-days: 3
-          if-no-files-found: error
+      - name: Metni geçici dala gönder
+        run: |
+          set -euo pipefail
+          git config --global user.name "kitap-koprusu[bot]"
+          git config --global user.email "actions@users.noreply.github.com"
+          D=$(mktemp -d)
+          cp cikti/*.json "$D"/ 2>/dev/null || true
+          cp rapor.txt "$D"/rapor.txt 2>/dev/null || true
+          cd "$D"
+          git init -q
+          git add -A
+          git commit -q -m "kitap metinleri: $(date -u +%F)"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            HEAD:refs/heads/kitap-kaynak
+          echo "dal gönderildi: kitap-kaynak"
