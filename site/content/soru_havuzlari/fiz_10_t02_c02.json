@@ -106,21 +106,41 @@
     {
       "soru_id": "fiz_10_t02_c02_o06",
       "alt_beceri": "İş, enerji ve güç kavramlarını karşılaştırır.",
-      "metin": "2000 W gücünde bir elektrikli ısıtıcı 30 saniye çalıştırılmıştır. Isıtıcının harcadığı enerji kaç joule'dür?",
+      "metin": "Bir öğrenci iki vinçle aynı yükü aynı yüksekliğe çıkararak yapılan işi ve geçen süreyi tabloya kaydetmiştir. Tablodaki verilere göre hangisi doğrudur?",
       "secenekler": [
-        "67",
-        "2000",
-        "30 000",
-        "60 000"
+        "K'nin gücü 300 W, L'nin gücü 200 W'dır; K daha güçlüdür.",
+        "İki vincin gücü eşittir; çünkü yaptıkları iş eşittir.",
+        "L'nin gücü 200 W olup K'nin gücünden büyüktür.",
+        "Tablodaki verilerden güç hesaplanamaz."
       ],
-      "dogru_index": 3,
-      "cozum": "Enerji, güç ile sürenin çarpımına eşittir: 2000 W · 30 s = 60 000 J.",
+      "dogru_index": 0,
+      "cozum": "Güç, yapılan işin süreye bölümüdür: K için 6000/20 = 300 W, L için 6000/30 = 200 W bulunur. Aynı işi kısa sürede yapan K daha güçlüdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Enerjinin SI birimindeki birimi nedir?",
-        "back": "Joule (J)."
+        "front": "Tablo verilerinden güç hesaplamanın kuralı nedir?",
+        "back": "Her satır için P = W / t oranı hesaplanır."
       },
-      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme"
+      "kazanim": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Vinç",
+          "Yapılan iş (J)",
+          "Süre (s)"
+        ],
+        "satirlar": [
+          [
+            "K",
+            "6000",
+            "20"
+          ],
+          [
+            "L",
+            "6000",
+            "30"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t02_c02_o07",
@@ -227,8 +247,8 @@
     },
     {
       "id": "fiz_10_t02_c02_o06:flashcard",
-      "front": "Enerjinin SI birimindeki birimi nedir?",
-      "back": "Joule (J)."
+      "front": "Tablo verilerinden güç hesaplamanın kuralı nedir?",
+      "back": "Her satır için P = W / t oranı hesaplanır."
     },
     {
       "id": "fiz_10_t02_c02_o07:flashcard",

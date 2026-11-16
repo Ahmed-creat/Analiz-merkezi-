@@ -11,21 +11,56 @@
     {
       "soru_id": "fiz_10_t04_c03_o01",
       "alt_beceri": "Dalgaların özelliklerini belirler.",
-      "metin": "Mekanik dalgaların ortak özelliği için hangisi doğrudur?",
+      "metin": "Bir öğrenci dalgaları titreşim doğrultusuna ve taşıdığı enerjiye göre sınıflandırdığı tabloyu doldurmuştur. Tablodaki satırlardan hangisindeki sınıflandırma yanlıştır?",
       "secenekler": [
-        "Boşlukta en hızlı biçimde yayılırlar.",
-        "Yalnızca elektrik alan değişimiyle oluşurlar.",
-        "Yayılabilmek için maddesel bir ortama ihtiyaç duyarlar.",
-        "Yalnızca enine titreşebilirler."
+        "1. satır",
+        "2. satır",
+        "3. satır",
+        "4. satır"
       ],
-      "dogru_index": 2,
-      "cozum": "Mekanik dalgalar enerjiyi taşımak için katı, sıvı, gaz veya plazma gibi maddesel bir ortama ihtiyaç duyar; boşlukta ilerleyemezler.",
+      "dogru_index": 3,
+      "cozum": "Deprem dalgaları hem enine hem boyuna yayılabilen mekanik dalgalardır. Bu nedenle 4. satırdaki 'yalnızca enine' ifadesi yanlıştır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mekanik dalgaların tanımını yazınız.",
-        "back": "Enerjiyi taşımak için maddesel (esnek) bir ortama ihtiyaç duyan dalgalardır."
+        "front": "Deprem dalgalarının sınıflandırmadaki yeri nedir?",
+        "back": "Mekanik dalgadır; hem enine hem boyuna yayılabilir."
       },
-      "kazanim": "Dalgaları özelliklerine göre sınıflandırabilme"
+      "kazanim": "Dalgaları özelliklerine göre sınıflandırabilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "No",
+          "Dalga",
+          "Titreşim",
+          "Ortam"
+        ],
+        "satirlar": [
+          [
+            "1",
+            "Ses",
+            "Boyuna",
+            "Maddesel ortam gerekir"
+          ],
+          [
+            "2",
+            "Işık",
+            "Enine",
+            "Maddesel ortam gerekmez"
+          ],
+          [
+            "3",
+            "Su",
+            "Hem enine hem boyuna",
+            "Maddesel ortam gerekir"
+          ],
+          [
+            "4",
+            "Deprem",
+            "Yalnızca enine",
+            "Maddesel ortam gerekir"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t04_c03_o02",
@@ -202,8 +237,8 @@
   "flashcards": [
     {
       "id": "fiz_10_t04_c03_o01:flashcard",
-      "front": "Mekanik dalgaların tanımını yazınız.",
-      "back": "Enerjiyi taşımak için maddesel (esnek) bir ortama ihtiyaç duyan dalgalardır."
+      "front": "Deprem dalgalarının sınıflandırmadaki yeri nedir?",
+      "back": "Mekanik dalgadır; hem enine hem boyuna yayılabilir."
     },
     {
       "id": "fiz_10_t04_c03_o02:flashcard",

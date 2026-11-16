@@ -112,59 +112,126 @@
     {
       "soru_id": "fiz_10_t01_c01_o05",
       "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
-      "metin": "Sabit 4 m/s hızla hareket eden bir bisikletlinin 5 saniyelik hareketi için hız-zaman grafiği ile yatay eksen arasında kalan alan hesaplanacaktır. Bu alanın büyüklüğü kaç metredir?",
+      "metin": "Şekildeki hız-zaman grafiği sabit hızla hareket eden bir bisikletliye aittir. Bisikletlinin 5 saniyede aldığı yol kaç metredir?",
       "secenekler": [
         "4",
-        "5",
         "9",
-        "20"
+        "20",
+        "25"
       ],
-      "dogru_index": 3,
-      "cozum": "Alan dikdörtgen biçimindedir: hız · zaman = 4 m/s · 5 s = 20 m. v-t grafiğinde alan yer değiştirmenin büyüklüğünü verir.",
+      "dogru_index": 2,
+      "cozum": "Hız-zaman grafiğinde grafik ile eksen arasındaki alan yer değiştirmeyi verir. Dikdörtgenin alanı 4 m/s · 5 s = 20 m bulunur.",
       "zorluk": "deneme",
       "flashcard": {
         "front": "Hız-zaman grafiğinde alan hangi niceliği verir?",
-        "back": "Yer değiştirmenin büyüklüğünü verir."
+        "back": "Yer değiştirmeyi (alınan yolu) verir."
       },
-      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t01_c01_o06",
       "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
-      "metin": "Bir aracın konumu t = 0 anında 10 m iken 4 saniye sonra 30 m olmuştur ve konum-zaman grafiği düz bir doğrudur. Aracın hızının büyüklüğü kaç m/s'dir?",
+      "metin": "Şekildeki konum-zaman grafiği doğrusal yolda hareket eden bir araca aittir. Aracın hızının büyüklüğü kaç m/s'dir?",
       "secenekler": [
         "5",
-        "7,5",
         "10",
+        "20",
         "40"
       ],
       "dogru_index": 0,
-      "cozum": "Konum değişimi 30 − 10 = 20 m, geçen zaman 4 s'dir. Doğru biçimindeki grafiğin eğimi hızı verir: 20 m / 4 s = 5 m/s.",
+      "cozum": "Konum-zaman grafiğinin eğimi hızı verir: (30 − 10) / (4 − 0) = 5 m/s.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sabit hızlı harekette yer değiştirme hangi modelle hesaplanır?",
-        "back": "x = v · t (hareket x0 ≠ 0 noktasından başlıyorsa x = x0 + v · t)."
+        "front": "Konum-zaman grafiğinin eğimi hangi niceliği verir?",
+        "back": "Hızı verir."
       },
-      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "x (m)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "x",
+            "noktalar": [
+              [
+                0,
+                10
+              ],
+              [
+                4,
+                30
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t01_c01_o07",
       "alt_beceri": "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
-      "metin": "Bir otobüs 30 m/s sabit hızla 30 saniye boyunca ilerlemiştir. Otobüsün hız-zaman grafiğinde bu süre için grafik ile yatay eksen arasında kalan alan kaç metredir?",
+      "metin": "Şekildeki konum-zaman grafiği bir aracın 10 saniyelik hareketine aittir. Aracın (4-10) s zaman aralığındaki hızı kaç m/s'dir?",
       "secenekler": [
-        "300",
-        "600",
-        "900",
-        "1200"
+        "−6",
+        "−2,4",
+        "4",
+        "−4"
       ],
-      "dogru_index": 2,
-      "cozum": "Grafik yatay bir doğru olduğundan alan dikdörtgendir: 30 m/s · 30 s = 900 m. Bu alan otobüsün yer değiştirmesine eşittir.",
+      "dogru_index": 3,
+      "cozum": "Grafiğin (4-10) s aralığındaki eğimi hızı verir: (0 − 24) / (10 − 4) = −4 m/s. Negatif işaret, hareketin başlangıç yönüne zıt olduğunu gösterir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ortalama hızın matematiksel modelini yazınız.",
-        "back": "v_ort = Δx / Δt, yani yer değiştirmenin geçen zamana bölümü."
+        "front": "Konum-zaman grafiğinde negatif eğimin anlamı nedir?",
+        "back": "Cismin referans noktasına yaklaşacak biçimde, seçilen pozitif yönün tersine hareket etmesidir."
       },
-      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme"
+      "kazanim": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "x (m)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "x",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                24
+              ],
+              [
+                10,
+                0
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t01_c01_o08",
@@ -248,17 +315,17 @@
     {
       "id": "fiz_10_t01_c01_o05:flashcard",
       "front": "Hız-zaman grafiğinde alan hangi niceliği verir?",
-      "back": "Yer değiştirmenin büyüklüğünü verir."
+      "back": "Yer değiştirmeyi (alınan yolu) verir."
     },
     {
       "id": "fiz_10_t01_c01_o06:flashcard",
-      "front": "Sabit hızlı harekette yer değiştirme hangi modelle hesaplanır?",
-      "back": "x = v · t (hareket x0 ≠ 0 noktasından başlıyorsa x = x0 + v · t)."
+      "front": "Konum-zaman grafiğinin eğimi hangi niceliği verir?",
+      "back": "Hızı verir."
     },
     {
       "id": "fiz_10_t01_c01_o07:flashcard",
-      "front": "Ortalama hızın matematiksel modelini yazınız.",
-      "back": "v_ort = Δx / Δt, yani yer değiştirmenin geçen zamana bölümü."
+      "front": "Konum-zaman grafiğinde negatif eğimin anlamı nedir?",
+      "back": "Cismin referans noktasına yaklaşacak biçimde, seçilen pozitif yönün tersine hareket etmesidir."
     },
     {
       "id": "fiz_10_t01_c01_o08:flashcard",

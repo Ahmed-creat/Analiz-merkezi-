@@ -163,21 +163,42 @@
     {
       "soru_id": "fiz_10_t03_c04_o09",
       "alt_beceri": "Elde ettiği verileri yorumlayarak ulaştığı çıkarımları matematiksel modellemeleri kullanarak test eder.",
-      "metin": "Seri bağlı dirençlerden oluşan bir devrenin eşdeğer direnci için hangisi doğrudur?",
+      "metin": "Bir öğrenci 4 Ω, 6 Ω ve 12 Ω'luk dirençlerle üç farklı devre kurup eşdeğer dirençleri ölçmüştür. Tablodaki verilere göre hangi sonuç doğrudur?",
       "secenekler": [
-        "Devredeki en küçük dirençten küçüktür.",
-        "Dirençlerin aritmetik ortalamasına eşittir.",
-        "Devredeki en büyük dirençten daha büyüktür.",
-        "Her zaman sıfırdır."
+        "En büyük eşdeğer direnç seri bağlamada elde edilmiştir.",
+        "En büyük eşdeğer direnç paralel bağlamada elde edilmiştir.",
+        "Birleşik bağlamada eşdeğer direnç seri bağlamadan büyüktür.",
+        "Paralel bağlamada eşdeğer direnç en büyük dirençten büyüktür."
       ],
-      "dogru_index": 2,
-      "cozum": "Seri bağlamada eşdeğer direnç, dirençlerin toplamıdır. Toplam her bir dirençten büyük olduğundan en büyük dirençten de büyüktür.",
+      "dogru_index": 0,
+      "cozum": "Tabloya göre seri bağlamada 22 Ω, paralelde 2 Ω, birleşikte 8 Ω bulunmuştur. En büyük eşdeğer direnç seri bağlamada elde edilir; paralelde eşdeğer direnç en küçük dirençten de küçüktür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri bağlamada eşdeğer direncin büyüklük kuralı nedir?",
-        "back": "Eşdeğer direnç, bağlı dirençlerin en büyüğünden daha büyüktür."
+        "front": "Eşdeğer direnci en büyük yapan bağlama türü nedir?",
+        "back": "Seri bağlama; dirençler toplandığı için en büyük değer elde edilir."
       },
-      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme"
+      "kazanim": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Devre",
+          "Eşdeğer direnç (Ω)"
+        ],
+        "satirlar": [
+          [
+            "Üç direnç seri",
+            "22"
+          ],
+          [
+            "Üç direnç paralel",
+            "2"
+          ],
+          [
+            "4 Ω + (6 Ω ∥ 12 Ω)",
+            "8"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t03_c04_o10",
@@ -242,8 +263,8 @@
     },
     {
       "id": "fiz_10_t03_c04_o09:flashcard",
-      "front": "Seri bağlamada eşdeğer direncin büyüklük kuralı nedir?",
-      "back": "Eşdeğer direnç, bağlı dirençlerin en büyüğünden daha büyüktür."
+      "front": "Eşdeğer direnci en büyük yapan bağlama türü nedir?",
+      "back": "Seri bağlama; dirençler toplandığı için en büyük değer elde edilir."
     },
     {
       "id": "fiz_10_t03_c04_o10:flashcard",

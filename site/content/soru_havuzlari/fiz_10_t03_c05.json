@@ -87,21 +87,56 @@
     {
       "soru_id": "fiz_10_t03_c05_o05",
       "alt_beceri": "Üreteçlerin seri ve paralel bağlanması durumunda devrenin potansiyel fark, ana kol akımı ve üreteçlerin tükenme süreleri arasındaki ilişkiyi belirlemek üzere veri toplayarak kaydeder.",
-      "metin": "Potansiyel farkları 10 V, 15 V ve 20 V olan üç üreteç düz seri bağlanmıştır. K-L noktaları arasındaki toplam potansiyel fark kaç V olur?",
+      "metin": "Bir öğrenci özdeş pillerle dört farklı devre kurup lambanın uçları arasındaki potansiyel farkı, akımı ve pillerin tükenme süresini ölçmüştür. Tablodaki verilere göre hangi sonuç çıkarılır?",
       "secenekler": [
-        "45",
-        "30",
-        "15",
-        "5"
+        "Seri bağlamada V ve akım artar; paralelde V sabit kalırken süre uzar.",
+        "Seri bağlamada potansiyel fark hiç değişmez.",
+        "Paralel bağlamada potansiyel fark iki katına çıkar.",
+        "Pillerin tükenme süresi bağlama türünden etkilenmez."
       ],
       "dogru_index": 0,
-      "cozum": "Üreteçler düz seri bağlı olduğundan potansiyel farklar toplanır: 10 + 15 + 20 = 45 V bulunur.",
+      "cozum": "Tabloda seri bağlanan pil sayısı arttıkça potansiyel fark ve akımın arttığı görülür. Paralel bağlamada potansiyel fark tek pilinki kadar kalır ancak tükenme süresi iki katına çıkar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Üreteçlerin bağlanma türünün devreye etkisi nedir?",
-        "back": "Toplam potansiyel farkı, akımı ve devrenin performansını belirler."
+        "front": "Paralel bağlı özdeş pillerde tükenme süresinin kuralı nedir?",
+        "back": "Pil sayısı arttıkça devre daha uzun süre çalışır."
       },
-      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Devre",
+          "V (V)",
+          "I (A)",
+          "Tükenme (s)"
+        ],
+        "satirlar": [
+          [
+            "Bir pil",
+            "3",
+            "0,3",
+            "600"
+          ],
+          [
+            "İki pil düz seri",
+            "6",
+            "0,6",
+            "600"
+          ],
+          [
+            "Üç pil düz seri",
+            "9",
+            "0,9",
+            "600"
+          ],
+          [
+            "İki pil paralel",
+            "3",
+            "0,6",
+            "1200"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t03_c05_o06",
@@ -222,8 +257,8 @@
     },
     {
       "id": "fiz_10_t03_c05_o05:flashcard",
-      "front": "Üreteçlerin bağlanma türünün devreye etkisi nedir?",
-      "back": "Toplam potansiyel farkı, akımı ve devrenin performansını belirler."
+      "front": "Paralel bağlı özdeş pillerde tükenme süresinin kuralı nedir?",
+      "back": "Pil sayısı arttıkça devre daha uzun süre çalışır."
     },
     {
       "id": "fiz_10_t03_c05_o06:flashcard",

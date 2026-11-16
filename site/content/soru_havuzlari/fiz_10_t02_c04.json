@@ -163,21 +163,50 @@
     {
       "soru_id": "fiz_10_t02_c04_o09",
       "alt_beceri": "Mekanik enerjiyle ilgili bileşenler arasındaki matematiksel ilişkiyi belirler.",
-      "metin": "Yatay zeminden 5 m yükseklikte 200 J potansiyel enerjiye sahip bir koli eğik düzlemden aşağı kaymış, sürtünme kuvveti yol boyunca 150 J'lük iş yapmıştır. Kolinin yatay zemine ulaştığı andaki kinetik enerjisi kaç joule'dür?",
+      "metin": "Sürtünmelerin ihmal edildiği bir ortamda üç cismin kütlesi, yerden yüksekliği ve hızı tabloya kaydedilmiştir (g = 10 m/s²). Tablodaki verilere göre hangi cismin mekanik enerjisi en büyüktür?",
       "secenekler": [
-        "350",
-        "200",
-        "50",
-        "150"
+        "K cismi",
+        "L cismi",
+        "M cismi",
+        "Üç cismin mekanik enerjisi eşittir."
       ],
       "dogru_index": 2,
-      "cozum": "Sürtünmenin yaptığı negatif iş mekanik enerjiden düşülür: 200 − 150 = 50 J. Koli zeminde yalnızca kinetik enerjiye sahip olduğundan EK = 50 J bulunur.",
+      "cozum": "Mekanik enerji E_M = m·g·h + ½·m·v² ile hesaplanır. K: 100 J, L: 60 + 24 = 84 J, M: 200 J bulunur. En büyük mekanik enerji M cismine aittir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sürtünmenin yaptığı iş ile mekanik enerji arasındaki ilişki nedir?",
-        "back": "Sürtünme negatif iş yapar ve mekanik enerjiyi azaltır; azalan kısım ısı enerjisine dönüşür."
+        "front": "Mekanik enerji hesabında kullanılan bileşenler nedir?",
+        "back": "Yer çekimi potansiyel enerjisi (m·g·h) ve kinetik enerji (½·m·v²)."
       },
-      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+      "kazanim": "Mekanik enerjiyi çözümleyebilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Cisim",
+          "m (kg)",
+          "h (m)",
+          "v (m/s)"
+        ],
+        "satirlar": [
+          [
+            "K",
+            "2",
+            "5",
+            "0"
+          ],
+          [
+            "L",
+            "3",
+            "2",
+            "4"
+          ],
+          [
+            "M",
+            "2",
+            "10",
+            "0"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t02_c04_o10",
@@ -242,8 +271,8 @@
     },
     {
       "id": "fiz_10_t02_c04_o09:flashcard",
-      "front": "Sürtünmenin yaptığı iş ile mekanik enerji arasındaki ilişki nedir?",
-      "back": "Sürtünme negatif iş yapar ve mekanik enerjiyi azaltır; azalan kısım ısı enerjisine dönüşür."
+      "front": "Mekanik enerji hesabında kullanılan bileşenler nedir?",
+      "back": "Yer çekimi potansiyel enerjisi (m·g·h) ve kinetik enerji (½·m·v²)."
     },
     {
       "id": "fiz_10_t02_c04_o10:flashcard",

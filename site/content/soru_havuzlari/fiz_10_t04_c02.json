@@ -51,12 +51,12 @@
       "alt_beceri": "Dalgaların temel kavramlarına ilişkin nitelikleri tanımlar.",
       "metin": "Bir dalganın taşıdığı enerjinin ölçüsü olarak kabul edilen nicelik hangisidir?",
       "secenekler": [
+        "Genlik",
         "Dalga boyu",
         "Periyot",
-        "Genlik",
         "Frekans"
       ],
-      "dogru_index": 2,
+      "dogru_index": 0,
       "cozum": "Genlik, dalganın denge konumundan en uzak noktaya olan mesafesidir ve dalganın enerjisinin bir ölçüsüdür.",
       "zorluk": "deneme",
       "flashcard": {
@@ -87,21 +87,54 @@
     {
       "soru_id": "fiz_10_t04_c02_o05",
       "alt_beceri": "Dalgaların temel kavramlarına ilişkin niteliklerin ölçümünü yapar.",
-      "metin": "Bir dalganın uzanım-zaman grafiğinde iki ardışık tepe arasındaki süre neyi verir?",
+      "metin": "Şekildeki uzanım-zaman grafiği bir dalgaya aittir. Grafikten yararlanarak dalganın periyodu kaç saniyedir?",
       "secenekler": [
-        "Genliği",
-        "Dalga boyunu",
-        "Periyodu",
-        "Yayılma süratini"
+        "1",
+        "2",
+        "4",
+        "8"
       ],
       "dogru_index": 2,
-      "cozum": "Uzanım-zaman grafiğinde yatay eksen zamanı gösterir. İki ardışık tepe arasındaki süre bir tam dalganın süresi yani periyottur.",
+      "cozum": "Uzanım-zaman grafiğinde bir tam dalganın tamamlanma süresi periyottur. Grafikte tam dalga 0'dan 4. saniyeye kadar tamamlandığından T = 4 s bulunur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Periyot ile bir tam dalganın süresi arasındaki ilişki nedir?",
-        "back": "Bir tam dalganın (tam titreşimin) süresi periyoda eşittir."
+        "front": "Uzanım-zaman grafiğinde bir tam dalganın süresi hangi niceliği verir?",
+        "back": "Periyodu verir."
       },
-      "kazanim": "Dalgaların temel kavramlarına ilişkin operasyonel tanımlama yapabilme"
+      "kazanim": "Dalgaların temel kavramlarına ilişkin operasyonel tanımlama yapabilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "uzanım (cm)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "y",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                -4
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t04_c02_o06",
@@ -144,21 +177,62 @@
     {
       "soru_id": "fiz_10_t04_c02_o08",
       "alt_beceri": "Dalgaların temel kavramlarını niteliklerine bağlı olarak tanımlar.",
-      "metin": "Aynı ortamda üretilen iki dalgadan frekansı büyük olan için hangisi doğrudur?",
+      "metin": "Şekildeki uzanım-konum grafiği bir dalganın belirli bir andaki görünümüne aittir. Grafikten yararlanarak dalga boyu kaç metredir?",
       "secenekler": [
-        "Dalga boyu daha küçüktür.",
-        "Yayılma sürati daha büyüktür.",
-        "Genliği kesinlikle daha büyüktür.",
-        "Periyodu daha büyüktür."
+        "2",
+        "3",
+        "4",
+        "6"
       ],
-      "dogru_index": 0,
-      "cozum": "Aynı ortamda sürat aynıdır. v = λ · f bağıntısına göre frekans büyükse dalga boyu küçüktür.",
+      "dogru_index": 2,
+      "cozum": "Uzanım-konum grafiğinde ardışık iki tepe arasındaki uzaklık dalga boyudur. Tepeler 1 m ve 5 m'de olduğundan λ = 5 − 1 = 4 m bulunur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aynı ortamda frekans ile dalga boyu arasındaki ilişki nedir?",
-        "back": "Ters orantılıdır; frekans artarken dalga boyu azalır."
+        "front": "Uzanım-konum grafiğinde ardışık iki tepe arası uzaklık hangi niceliği verir?",
+        "back": "Dalga boyunu verir."
       },
-      "kazanim": "Dalgaların temel kavramlarına ilişkin operasyonel tanımlama yapabilme"
+      "kazanim": "Dalgaların temel kavramlarına ilişkin operasyonel tanımlama yapabilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x (m)",
+        "yEkseni": "uzanım (cm)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "y",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                -2
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                6,
+                0
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t04_c02_o09",
@@ -222,8 +296,8 @@
     },
     {
       "id": "fiz_10_t04_c02_o05:flashcard",
-      "front": "Periyot ile bir tam dalganın süresi arasındaki ilişki nedir?",
-      "back": "Bir tam dalganın (tam titreşimin) süresi periyoda eşittir."
+      "front": "Uzanım-zaman grafiğinde bir tam dalganın süresi hangi niceliği verir?",
+      "back": "Periyodu verir."
     },
     {
       "id": "fiz_10_t04_c02_o06:flashcard",
@@ -237,8 +311,8 @@
     },
     {
       "id": "fiz_10_t04_c02_o08:flashcard",
-      "front": "Aynı ortamda frekans ile dalga boyu arasındaki ilişki nedir?",
-      "back": "Ters orantılıdır; frekans artarken dalga boyu azalır."
+      "front": "Uzanım-konum grafiğinde ardışık iki tepe arası uzaklık hangi niceliği verir?",
+      "back": "Dalga boyunu verir."
     },
     {
       "id": "fiz_10_t04_c02_o09:flashcard",

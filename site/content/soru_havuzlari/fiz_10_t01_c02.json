@@ -68,40 +68,86 @@
     {
       "soru_id": "fiz_10_t01_c02_o04",
       "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
-      "metin": "Hız-zaman grafiği yatay eksene paralel olan bir cisim ile hız-zaman grafiği düzgün artan bir doğru olan cisim karşılaştırılıyor. Bu iki cismin ivmeleri için hangisi doğrudur?",
+      "metin": "Şekildeki hız-zaman grafiği bir cismin 4 saniyelik hareketine aittir. Cismin (0-2) s zaman aralığındaki ivmesinin büyüklüğü kaç m/s²'dir?",
       "secenekler": [
-        "Her ikisinin de ivmesi sıfırdan farklıdır.",
-        "Her ikisinin de ivmesi sıfırdır.",
-        "Paralel grafikteki cismin ivmesi sıfırdan farklı, eğimli grafikteki cismin ivmesi sıfırdır.",
-        "Paralel grafikteki cismin ivmesi sıfır, eğimli grafikteki cismin ivmesi sabit ve sıfırdan farklıdır."
+        "4",
+        "1",
+        "8",
+        "16"
       ],
-      "dogru_index": 3,
-      "cozum": "Paralel v-t grafiğinde hız değişmediğinden ivme sıfırdır. Eğimli doğruda hız düzenli değiştiği için ivme sabit ve sıfırdan farklıdır.",
+      "dogru_index": 0,
+      "cozum": "İvme, hız-zaman grafiğinin eğimidir: (8 − 0) / (2 − 0) = 4 m/s². (2-4) s aralığında hız sabit olduğu için bu aralıkta ivme sıfırdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hızı değişmeyen bir cismin ivmesi nedir?",
-        "back": "Sıfırdır; hız değişimi olmadığı için ivme oluşmaz."
+        "front": "Hız-zaman grafiğinin eğimi hangi niceliği verir?",
+        "back": "İvmeyi verir."
       },
-      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                4,
+                8
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t01_c02_o05",
       "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
-      "metin": "Hareket yönüne zıt yönde bir kuvvetin etkisinde kalan bir cisim için hangisi doğrudur?",
+      "metin": "Şekildeki hız-zaman grafiği düz bir yolda hareket eden bir cisme aittir. Cismin (0-4) s zaman aralığındaki ivmesi için hangisi doğrudur?",
       "secenekler": [
-        "Hızı artar, ivmesi pozitiftir.",
-        "Hızı sabit kalır, ivmesi sıfırdır.",
-        "Hızı azalır; hız değişimi negatif olduğu için ivmesi negatiftir.",
-        "Hızı azalır, ivmesi pozitiftir."
+        "İvme +5 m/s² olup hareketle aynı yöndedir.",
+        "İvme sıfırdır; cisim sabit hızlı hareket eder.",
+        "İvme −5 m/s² olup hareket yönüne zıttır.",
+        "İvme −20 m/s² olup çok büyüktür."
       ],
       "dogru_index": 2,
-      "cozum": "Hareket yönüne zıt kuvvet cismi yavaşlatır. Yavaşlayan harekette hız değişimi negatif olduğundan ivme de negatif işaretlidir.",
+      "cozum": "Grafiğin eğimi ivmeyi verir: (0 − 20) / (4 − 0) = −5 m/s². Negatif işaret ivmenin hareket yönüne zıt olduğunu, yani cismin yavaşladığını gösterir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hızlanan ve yavaşlayan hareketlerde ivmenin işareti nasıldır?",
-        "back": "Hızlanan harekette pozitif, yavaşlayan harekette negatiftir."
+        "front": "Negatif ivmenin anlamı nedir?",
+        "back": "İvmenin hareket yönüne zıt olduğunu, yani cismin yavaşladığını gösterir."
       },
-      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                20
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t01_c02_o06",
@@ -163,21 +209,42 @@
     {
       "soru_id": "fiz_10_t01_c02_o09",
       "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi geneller.",
-      "metin": "İvme-zaman grafiği 5 saniye boyunca yatay eksene paralel ve a = 2 m/s² olan bir cismin bu aralıktaki hız değişiminin büyüklüğü kaç m/s'dir?",
+      "metin": "Şekildeki ivme-zaman grafiği bir cisme aittir. Cismin (0-4) s zaman aralığındaki hız değişimi kaç m/s'dir?",
       "secenekler": [
-        "2",
-        "5",
-        "10",
-        "25"
+        "3",
+        "4",
+        "7",
+        "12"
       ],
-      "dogru_index": 2,
-      "cozum": "a-t grafiğinde alan hız değişimini verir: 2 m/s² · 5 s = 10 m/s.",
+      "dogru_index": 3,
+      "cozum": "İvme-zaman grafiğinde grafik ile eksen arasındaki alan hız değişimini verir: 3 m/s² · 4 s = 12 m/s.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "a-t grafiğinde alan hangi niceliği verir?",
-        "back": "Hız değişimini verir: Δv = a · Δt."
+        "front": "İvme-zaman grafiğinde alan hangi niceliği verir?",
+        "back": "Hız değişimini verir."
       },
-      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "a (m/s²)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "a",
+            "noktalar": [
+              [
+                0,
+                3
+              ],
+              [
+                4,
+                3
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t01_c02_o10",
@@ -217,13 +284,13 @@
     },
     {
       "id": "fiz_10_t01_c02_o04:flashcard",
-      "front": "Hızı değişmeyen bir cismin ivmesi nedir?",
-      "back": "Sıfırdır; hız değişimi olmadığı için ivme oluşmaz."
+      "front": "Hız-zaman grafiğinin eğimi hangi niceliği verir?",
+      "back": "İvmeyi verir."
     },
     {
       "id": "fiz_10_t01_c02_o05:flashcard",
-      "front": "Hızlanan ve yavaşlayan hareketlerde ivmenin işareti nasıldır?",
-      "back": "Hızlanan harekette pozitif, yavaşlayan harekette negatiftir."
+      "front": "Negatif ivmenin anlamı nedir?",
+      "back": "İvmenin hareket yönüne zıt olduğunu, yani cismin yavaşladığını gösterir."
     },
     {
       "id": "fiz_10_t01_c02_o06:flashcard",
@@ -242,8 +309,8 @@
     },
     {
       "id": "fiz_10_t01_c02_o09:flashcard",
-      "front": "a-t grafiğinde alan hangi niceliği verir?",
-      "back": "Hız değişimini verir: Δv = a · Δt."
+      "front": "İvme-zaman grafiğinde alan hangi niceliği verir?",
+      "back": "Hız değişimini verir."
     },
     {
       "id": "fiz_10_t01_c02_o10:flashcard",

@@ -146,33 +146,67 @@
     {
       "soru_id": "fiz_10_t03_c03_o07",
       "alt_beceri": "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar.",
-      "metin": "Aynı potansiyel fark altında direnci iki katına çıkarılan bir iletkende akım nasıl değişir?",
+      "metin": "Şekildeki V-I grafiğinde K ve L iletkenlerine ait doğrular verilmiştir. İletkenlerin dirençleri için hangisi doğrudur?",
       "secenekler": [
-        "İki katına çıkar.",
-        "Değişmez.",
-        "Yarıya iner.",
-        "Dört katına çıkar."
+        "K'nin direnci L'ninkinden büyüktür.",
+        "L'nin direnci K'ninkinden büyüktür.",
+        "İki iletkenin direnci eşittir.",
+        "Grafikten direnç değeri bulunamaz."
       ],
-      "dogru_index": 2,
-      "cozum": "Potansiyel fark sabitken akım dirençle ters orantılıdır. Direnç iki katına çıkarıldığında akım yarıya iner.",
+      "dogru_index": 0,
+      "cozum": "V-I grafiğinin eğimi direnci verir. K için 20/2 = 10 Ω, L için 20/4 = 5 Ω olduğundan K'nin direnci daha büyüktür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Direnç ile akım arasındaki orantı ilişkisi nedir?",
-        "back": "Akım dirençle ters orantılıdır."
+        "front": "V-I grafiğinde eğimi büyük olan iletkenin direnci için ne söylenir?",
+        "back": "Direnci daha büyüktür."
       },
-      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme"
+      "kazanim": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "I (A)",
+        "yEkseni": "V (V)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "K",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                20
+              ]
+            ]
+          },
+          {
+            "ad": "L",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                20
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t03_c03_o08",
       "alt_beceri": "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar.",
       "metin": "Üzerinden 0,5 A akım geçen 20 Ω'luk direncin uçları arasındaki potansiyel fark kaç V'tur?",
       "secenekler": [
-        "10",
         "40",
         "0,025",
+        "10",
         "20,5"
       ],
-      "dogru_index": 0,
+      "dogru_index": 2,
       "cozum": "V = I · R = 0,5 A · 20 Ω = 10 V bulunur.",
       "zorluk": "deneme",
       "flashcard": {
@@ -253,8 +287,8 @@
     },
     {
       "id": "fiz_10_t03_c03_o07:flashcard",
-      "front": "Direnç ile akım arasındaki orantı ilişkisi nedir?",
-      "back": "Akım dirençle ters orantılıdır."
+      "front": "V-I grafiğinde eğimi büyük olan iletkenin direnci için ne söylenir?",
+      "back": "Direnci daha büyüktür."
     },
     {
       "id": "fiz_10_t03_c03_o08:flashcard",

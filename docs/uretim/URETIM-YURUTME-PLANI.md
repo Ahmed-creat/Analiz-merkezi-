@@ -166,6 +166,31 @@ Yasaklar (araç bunları **hata** olarak yakalar, `havuz-denetle.js`):
 - **Dil:** öğrenci seviyesi, açık Türkçe; din/tarih'te resmî anlatım korunur.
 - **Telif:** kitaptaki soru birebir alınmaz; bilgiyle **özgün** soru yazılır.
 
+### 4.2 Bilgi grafikle verilir: grafik sorusu **çizilmiş grafik** üzerinden sorulur
+
+Ders kitapları bilgiyi ağırlıkla **grafik, tablo ve şekil** üzerinden veriyor (Fizik 1. ünitede `x-t`,
+`v-t`, `a-t` grafikleri; deney sayfalarında veri tabloları; yansıma/kırılma şekilleri). Bu nedenle:
+
+- **Metin görsele gönderme yapıyorsa `gorsel` zorunlu** (araç: `SEKİL_ATFI` listesi → *hata*).
+- Sözel grafik tarifi **yerine gerçek görsel** kullanılır: "hız-zaman grafiği yatay eksene paralel olan cisim…"
+  gibi bir kök yerine `grafik` tipiyle **çizilmiş grafik** verilir; soru grafikten okunacak biçimde yazılır
+  (eğim → hız/ivme/direnç, alan → yer değiştirme/hız değişimi/iş).
+- Tema başına tipik görsel eşleşmesi:
+
+| Tema / konu | Görsel tipi | Ne sorulur |
+| --- | --- | --- |
+| Hareket (sabit hızlı, ivmeli) | `grafik` | eğim = hız / ivme, alan = yer değiştirme, yön (negatif eğim) |
+| İş–enerji–güç | `grafik`, `tablo` | F-x alanı = iş, deney tablosundan güç/enerji |
+| Elektrik | `grafik`, `tablo` | V-I eğimi = direnç, deney tablosundan eşdeğer direnç/üreteç davranışı |
+| Dalgalar | `grafik`, `tablo`, `geometri` | periyot/dalga boyu okuma, ortam sürati tablosu, yansıma açıları |
+| Kimya (çözünürlük, iletkenlik), Coğrafya (harita/kesit) | `grafik`, `tablo`, `geometri` | eksen okuma, karşılaştırma, kesit yorumu |
+
+- **Oran hedefi:** ders genelinde görselli soru **≥ %10**, grafik/tablo yoğun temalarda **≥ %30**.
+- **Amaç az görsel değil, doğru görsel:** her soru tek tek incelenir; `gerekmez` kararı gerekçelenir
+  (`GORSEL-INCELEME.md`). Şekle bağımlı veri yoksa görsel eklenmez, **uydurma görsel konmaz**.
+- **Fizik kapanışı (22 havuz / 220 soru):** 27 görselli (%12) — 18 `grafik`, 8 `tablo`, 1 `geometri`;
+  grafik yoğun 1. ünitede (Hareket) 30 sorunun 12'si (%40).
+
 ---
 
 ## 5. Kalite kapıları (her tur sonunda çalıştırılır)

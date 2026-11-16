@@ -68,21 +68,95 @@
     {
       "soru_id": "fiz_10_t04_c05_o04",
       "alt_beceri": "Su dalgalarında yansıma ve kırılma olayları sırasındaki açılar arasında ilişki kurar.",
-      "metin": "Doğrusal bir su dalgasının düz engele gelme açısı 40° olarak ölçülmüştür. Bu dalganın yansıma açısı kaç derecedir?",
+      "metin": "Şekildeki düz engele gönderilen doğrusal su dalgasının yüzey normaliyle yaptığı açı 35°'dir. Dalganın yansıma açısı kaç derecedir?",
       "secenekler": [
-        "40",
-        "50",
-        "80",
-        "140"
+        "35",
+        "55",
+        "70",
+        "145"
       ],
       "dogru_index": 0,
-      "cozum": "Yansıma yasasına göre gelme açısı yansıma açısına eşittir. Bu nedenle yansıma açısı da 40° olur.",
+      "cozum": "Yansıma yasasına göre gelme açısı yansıma açısına eşittir. Gelme açısı 35° olduğundan yansıma açısı da 35° olur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gelme açısının tanımını yazınız.",
-        "back": "Gelen dalganın ilerleme doğrultusunun yüzey normaliyle yaptığı açıdır."
+        "front": "Yansıma olayında açıların eşitliği kuralı nedir?",
+        "back": "Gelme açısı = yansıma açısı (i = r)."
       },
-      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme"
+      "kazanim": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "P": [
+            95,
+            80
+          ],
+          "O": [
+            190,
+            215
+          ],
+          "R": [
+            285,
+            80
+          ],
+          "N": [
+            190,
+            60
+          ],
+          "G1": [
+            40,
+            215
+          ],
+          "G2": [
+            340,
+            215
+          ]
+        },
+        "cizgiler": [
+          {
+            "a": "G1",
+            "b": "G2",
+            "renk": "#16213A",
+            "kalinlik": 3
+          },
+          {
+            "a": "O",
+            "b": "N",
+            "etiket": "N",
+            "kesikli": true
+          },
+          {
+            "a": "P",
+            "b": "O",
+            "etiket": "gelen dalga"
+          },
+          {
+            "a": "O",
+            "b": "R",
+            "etiket": "yansıyan dalga"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "O",
+            "etiket": "35°",
+            "a": "N",
+            "b": "P"
+          },
+          {
+            "kose": "O",
+            "etiket": "r",
+            "a": "N",
+            "b": "R"
+          }
+        ],
+        "not": "Düz engel, yüzey normali N ve dalga doğrultuları",
+        "etiketler": {
+          "O": "O"
+        },
+        "isaretli": [
+          "O"
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t04_c05_o05",
@@ -217,8 +291,8 @@
     },
     {
       "id": "fiz_10_t04_c05_o04:flashcard",
-      "front": "Gelme açısının tanımını yazınız.",
-      "back": "Gelen dalganın ilerleme doğrultusunun yüzey normaliyle yaptığı açıdır."
+      "front": "Yansıma olayında açıların eşitliği kuralı nedir?",
+      "back": "Gelme açısı = yansıma açısı (i = r)."
     },
     {
       "id": "fiz_10_t04_c05_o05:flashcard",

@@ -68,21 +68,51 @@
     {
       "soru_id": "fiz_10_t03_c06_o04",
       "alt_beceri": "Belirlediği aracı kullanarak elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemler ile ilgili bilgileri bulur.",
-      "metin": "Elektrik akımının tehlikelerinden korunmak için alınabilecek önlemlerden hangisi doğrudur?",
+      "metin": "Bir öğrenci elektrik kazalarına ilişkin tehlike ve önlemleri tabloya kaydetmiştir. Tablodaki satırlardan hangisindeki önlem yanlıştır?",
       "secenekler": [
-        "Elektrikli aletler ıslak zeminde kullanılmalıdır.",
-        "Prizlere birden fazla fiş birlikte takılmalıdır.",
-        "Yuvalarından çıkmış prizler kullanılmaya devam edilmelidir.",
-        "Elektrikli aletlere ve prizlere ıslak elle temas edilmemelidir."
+        "1. satır",
+        "2. satır",
+        "3. satır",
+        "4. satır"
       ],
       "dogru_index": 3,
-      "cozum": "Islak el ve ıslak zemin elektrik çarpması riskini artırır. Elektrikli aletler ıslak elle tutulmamalı, ıslak zeminde çalıştırılmamalıdır.",
+      "cozum": "Elektrik uyarı levhaları dikkate alınmalıdır; kaldırılmaları can güvenliğini tehlikeye atar. Bu nedenle 4. satırdaki önlem yanlıştır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Islak elle prize temas etmenin tehlikesi nedir?",
-        "back": "Su iletken olduğu için vücuttan akım geçme riski artar."
+        "front": "Elektrik uyarı levhalarının işlevi nedir?",
+        "back": "Yüksek gerilim gibi tehlikeli bölgeleri bildirerek kazaları önlemek."
       },
-      "kazanim": "Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilme"
+      "kazanim": "Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "No",
+          "Tehlike",
+          "Önlem"
+        ],
+        "satirlar": [
+          [
+            "1",
+            "Islak elle prize dokunma",
+            "Elleri kurulayarak prize dokunma"
+          ],
+          [
+            "2",
+            "Prizde açık yuva",
+            "Emniyet kapağı takma"
+          ],
+          [
+            "3",
+            "Bir prize çok fiş takma",
+            "Her prize tek fiş takma"
+          ],
+          [
+            "4",
+            "Yüksek gerilim",
+            "Uyarı levhasını kaldırma"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t03_c06_o05",
@@ -217,8 +247,8 @@
     },
     {
       "id": "fiz_10_t03_c06_o04:flashcard",
-      "front": "Islak elle prize temas etmenin tehlikesi nedir?",
-      "back": "Su iletken olduğu için vücuttan akım geçme riski artar."
+      "front": "Elektrik uyarı levhalarının işlevi nedir?",
+      "back": "Yüksek gerilim gibi tehlikeli bölgeleri bildirerek kazaları önlemek."
     },
     {
       "id": "fiz_10_t03_c06_o05:flashcard",

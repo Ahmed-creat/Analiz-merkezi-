@@ -14,11 +14,11 @@
       "metin": "Bir iletkenin dik kesitinden 0,5 saniyede 2 C yük geçmiştir. Bu iletkenden geçen elektrik akımı kaç A'dır?",
       "secenekler": [
         "0,25",
-        "4",
         "1",
-        "2,5"
+        "2,5",
+        "4"
       ],
-      "dogru_index": 1,
+      "dogru_index": 3,
       "cozum": "Akım, birim zamanda geçen yük miktarıdır: I = q / t = 2 C / 0,5 s = 4 A.",
       "zorluk": "deneme",
       "flashcard": {
@@ -49,21 +49,42 @@
     {
       "soru_id": "fiz_10_t03_c02_o03",
       "alt_beceri": "Bir iletkende elektrik akımı oluşması ile ilgili değişkenleri belirler.",
-      "metin": "Bir iletkenden 10 saniyede 30 C yük geçmektedir. Bu iletkenden geçen akım kaç A'dır?",
+      "metin": "Bir öğrenci iletkenin dik kesitinden geçen yük miktarını farklı sürelerde ölçerek tablodaki verileri elde etmiştir. Tablodaki verilere göre iletkenden geçen akım kaç amperdir?",
       "secenekler": [
-        "300",
-        "0,3",
-        "30",
-        "3"
+        "0,33",
+        "3",
+        "6",
+        "30"
       ],
-      "dogru_index": 3,
-      "cozum": "I = q / t = 30 C / 10 s = 3 A bulunur.",
+      "dogru_index": 1,
+      "cozum": "Tablodaki her satırda q / t oranı aynıdır: 6/2 = 15/5 = 30/10 = 3 A. Akımın sabit olduğu görülür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Elektrik akımının SI birimindeki birimi nedir?",
-        "back": "Amper (A)."
+        "front": "Tablo verilerinden akım hesaplamanın kuralı nedir?",
+        "back": "Her satır için q / t oranı hesaplanır; oran akımı verir."
       },
-      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme"
+      "kazanim": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "t (s)",
+          "q (C)"
+        ],
+        "satirlar": [
+          [
+            "2",
+            "6"
+          ],
+          [
+            "5",
+            "15"
+          ],
+          [
+            "10",
+            "30"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t03_c02_o04",
@@ -212,8 +233,8 @@
     },
     {
       "id": "fiz_10_t03_c02_o03:flashcard",
-      "front": "Elektrik akımının SI birimindeki birimi nedir?",
-      "back": "Amper (A)."
+      "front": "Tablo verilerinden akım hesaplamanın kuralı nedir?",
+      "back": "Her satır için q / t oranı hesaplanır; oran akımı verir."
     },
     {
       "id": "fiz_10_t03_c02_o04:flashcard",

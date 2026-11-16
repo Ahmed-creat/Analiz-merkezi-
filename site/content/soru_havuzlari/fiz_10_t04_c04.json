@@ -68,21 +68,42 @@
     {
       "soru_id": "fiz_10_t04_c04_o04",
       "alt_beceri": "Dalgaların farklı ortamlardaki yayılma süratini karşılaştırır.",
-      "metin": "Aynı sıcaklıktaki hava ve su ortamlarında ses dalgalarının süratleri karşılaştırıldığında hangisi doğrudur?",
+      "metin": "Bir öğrenci sesin farklı ortamlardaki yayılma süratini ölçerek tablodaki verileri elde etmiştir. Tablodaki verilere göre hangisi doğrudur?",
       "secenekler": [
-        "Havada daha süratlidir.",
-        "Suda daha süratlidir.",
-        "İki ortamda eşittir.",
-        "Ortam sürati etkilemez."
+        "Ses en süratli havada, en yavaş çelikte yayılır.",
+        "Ses en süratli çelikte, en yavaş havada yayılır.",
+        "Ses her üç ortamda aynı süratle yayılır.",
+        "Tablodaki verilerden sesin sürati hakkında yorum yapılamaz."
       ],
       "dogru_index": 1,
-      "cozum": "Ses mekanik bir dalga olduğundan ortamın özelliklerine bağlıdır. Sıvıların tanecikleri gazlara göre daha yakın olduğu için ses suda daha süratli yayılır.",
+      "cozum": "Tabloya göre ses havada 343 m/s, suda 1482 m/s, çelikte 5000 m/s süratle yayılır. Ses katılarda en süratli, gazlarda en yavaştır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sesin süratini belirleyen ortam özelliği nedir?",
-        "back": "Ortamın tanecik yapısı (yoğunluk) ve sıcaklığı."
+        "front": "Sesin süratinin ortama göre değişimini gösteren kural nedir?",
+        "back": "Tanecikler birbirine yaklaştıkça sürat artar: katı > sıvı > gaz."
       },
-      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme"
+      "kazanim": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Ortam",
+          "Sesin sürati (m/s)"
+        ],
+        "satirlar": [
+          [
+            "Hava (20 °C)",
+            "343"
+          ],
+          [
+            "Su",
+            "1482"
+          ],
+          [
+            "Çelik",
+            "5000"
+          ]
+        ]
+      }
     },
     {
       "soru_id": "fiz_10_t04_c04_o05",
@@ -217,8 +238,8 @@
     },
     {
       "id": "fiz_10_t04_c04_o04:flashcard",
-      "front": "Sesin süratini belirleyen ortam özelliği nedir?",
-      "back": "Ortamın tanecik yapısı (yoğunluk) ve sıcaklığı."
+      "front": "Sesin süratinin ortama göre değişimini gösteren kural nedir?",
+      "back": "Tanecikler birbirine yaklaştıkça sürat artar: katı > sıvı > gaz."
     },
     {
       "id": "fiz_10_t04_c04_o05:flashcard",
