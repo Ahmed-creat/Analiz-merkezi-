@@ -1,4 +1,4 @@
-const PWA_SURUM = "v62-kapali-bildirim";
+const PWA_SURUM = "v63-sade-profil";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -181,7 +181,7 @@ async function pushTeshisYaz() {
     let abone = null;
     try { const k = await navigator.serviceWorker.ready; abone = await k.pushManager.getSubscription(); } catch (e) { /* */ }
     if (!abone) {
-      kutu.textContent = "İzin var ama cihaz kaydı tamamlanmadı. “Bağlantıyı yenile”ye dokun.";
+      kutu.textContent = "İzin var, cihaz kaydı tamamlanıyor. Uygulama bunu kendisi tamamlar; birkaç saniye içinde bu satır güncellenir.";
       return;
     }
     // v44 — YALAN SÖYLEME: sunucunun gönderdiği ile cihazın aldığı karşılaştırılır.
@@ -195,7 +195,7 @@ async function pushTeshisYaz() {
     // diyordu, ama uç nokta veritabanında YOKTU → sunucu başka (ölü) uçlara
     // gönderiyor, FCM 201 dönüyor, tablete hiçbir şey ulaşmıyordu.
     if (cihaz.kayitli === false) {
-      let m2 = "Bu cihaz sunucuya kayıtlı değil — hatırlatmalar şu an bu cihaza gelmez. “Bağlantıyı yenile”ye dokun.";
+      let m2 = "Bu cihaz sunucuya kayıtlı değil — hatırlatmalar şu an bu cihaza gelmez. İnternete bağlıyken uygulama kaydı kendisi yeniler.";
       if (cihaz.ucKodu) m2 += " · Cihaz kodu: " + cihaz.ucKodu + ".";
       const kh = window.AmPush && window.AmPush.sonKayitHatasi ? window.AmPush.sonKayitHatasi() : null;
       if (kh && kh.neden) m2 += " Kayıt hatası: " + String(kh.neden).slice(0, 80);
@@ -214,9 +214,9 @@ async function pushTeshisYaz() {
       if (sonPush && sonPush >= t) {
         metin += ", cihaz aldı ✓";
       } else if (sonPush) {
-        metin += ", cihaz en son " + sonPush.toLocaleDateString("tr-TR") + " tarihli bildirimi aldı — bağlantıyı yenile.";
+        metin += ", cihaz en son " + sonPush.toLocaleDateString("tr-TR") + " tarihli bildirimi aldı.";
       } else {
-        metin += ", cihaza ulaştığına dair iz yok — “Bağlantıyı yenile”ye dokun.";
+        metin += ", cihaza ulaştığına dair iz yok.";
       }
     } else if (sonPush) {
       metin += " Son gelen bildirim: " + sonPush.toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + ".";
@@ -803,11 +803,13 @@ function renderProfileModal() {
   // bildirim durumu kaldı.
   html += '<div style="border:1px solid rgba(0,0,0,0.10);border-radius:14px;padding:12px;font-size:12px;line-height:1.6;">';
   html += '<b>Bildirimler</b><div id="pwa-push-durum" style="margin-top:6px;">kontrol ediliyor…</div>';
-  html += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">';
-  html += '<button data-act="amBildirimOnar" style="background:none;border:1px solid rgba(0,0,0,0.15);border-radius:8px;padding:6px 10px;font-size:12px;color:inherit;cursor:pointer;">Bağlantıyı yenile</button>';
-  // v55 — tek dokunuş: bildirimi gösterir ve GERÇEKTEN göründü mü diye ölçer.
-  html += '<button data-act="amKanalTesti" style="background:none;border:1px solid rgba(0,0,0,0.15);border-radius:8px;padding:6px 10px;font-size:12px;color:inherit;cursor:pointer;">Bildirim kanalını test et</button>';
-  html += '</div>';
+  // v63 — KULLANICI: profildeki elle onarım düğmesini profesyonel
+  // uygulamalarda görmediğini söyledi; HAKLI.
+  // Onarım kullanıcıya iş olarak verilmez: uygulama her açılışta aboneliği
+  // kendisi doğrular, gerekiyorsa yeniler (push-bildirim.js otomatik()),
+  // pushsubscriptionchange olayını dinler, sunucu da ölü uçları (404/410)
+  // pasife alır. Bu yüzden elle onarım ve kanal testi düğmeleri KALDIRILDI;
+  // tek satırlık durum metni kalır.
   html += '</div>';
 
   html += '</div>';
@@ -1191,7 +1193,7 @@ async function cihazBildirimTesti() {
     const kayit = await navigator.serviceWorker.ready;
     const etiket = "am-izin-testi-" + Date.now(); // benzersiz: eski bildirimle karışmasın
     await kayit.showNotification("Bildirimler açıldı ✓", {
-      body: "Bunu görüyorsan bu cihazın bildirim kanalı sağlam. Her sabah görevlerini hatırlatacağım.",
+      body: "Bunu görüyorsan bu cihazın bildirim kanalı sağlam. Günde iki kez (sabah ve akşam) hatırlatacağım.",
       icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: etiket, data: { url: "./" }
     });
     // Kısa bekle: bazı tarayıcılar listeyi gecikmeli günceller.

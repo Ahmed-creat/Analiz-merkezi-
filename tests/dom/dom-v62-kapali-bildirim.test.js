@@ -69,8 +69,8 @@ ok("Derin uykudaki uygulamalar listesi anlatılıyor", /Derin uykudaki uygulamal
 ok("yalnız Android'de gösterilir", /Android\/i\.test\(navigator\.userAgent/.test(HTML));
 
 console.log("\n== 6) Sürüm damgaları ==");
-ok("sw önbellek v62", /const CACHE = "analiz-merkezi-v-20261031-v62-kapali-bildirim"/.test(SW));
-ok("uygulama sürümü v62", /PWA_SURUM = "v62-kapali-bildirim"/.test(APP));
+ok("sw önbellek v62+ (kapalı-bildirim katmanı)", /const CACHE = "analiz-merkezi-v-20261031-v6[2-9]-/.test(SW));
+ok("uygulama sürümü v62+ (kapalı-bildirim katmanı)", /PWA_SURUM = "v6[2-9]-/.test(APP));
 
 console.log("\n" + "─".repeat(56));
 console.log("v62 kapalı-bildirim testi — " + gecen + " geçti, " + hata.length + " kaldı");

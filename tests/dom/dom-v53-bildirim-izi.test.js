@@ -50,7 +50,10 @@ ok("gösterimden sonra getNotifications ile doğrulanıyor",
 ok("görünmediyse ok:false dönüyor", /ok: gorunur/.test(APP));
 ok("sonuç cihazda saklanıyor", /am_bildirim_kanal_testi/.test(APP));
 ok("profil satırı 'cihaz göstermiyor' diyebiliyor", /CİHAZ BİLDİRİM GÖSTERMİYOR/.test(APP));
-ok("kanal testi düğmesi var", /data-act="amKanalTesti"/.test(APP));
+// v63 — düğme KALDIRILDI (kullanıcı: "profesyonel uygulamalarda öyle bir şey
+// yok"); kanal ölçümü arka planda aynen sürüyor.
+ok("kanal testi düğmesi profilden kaldırıldı", !/data-act="amKanalTesti"/.test(APP));
+ok("ölçüm (getNotifications) hâlâ yapılıyor", /cihazBildirimTesti/.test(APP));
 ok("sahte başarı mesajı kaldırıldı (index.html)", !/if \(t && t\.ok && typeof toast === "function"\) toast\("Bildirimler açıldı — biraz önce bir bildirim gösterdim\."/.test(HTML));
 ok("index.html cihaz göstermiyorsa hata diyor", /cihazGostermiyor/.test(HTML));
 
