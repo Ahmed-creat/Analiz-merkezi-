@@ -1,22 +1,104 @@
 {
  "_mod": "deneme-birlestir",
- "_okumaNotu": "9. sınıf deneme dökümü. \"Verileri İçe Aktar\" düğmesiyle açılabilir: _mod=deneme-birlestir olduğu için tam durum değişimi YAPILMAZ, yalnız bu sınavlar listeye eklenir.",
+ "_okumaNotu": "9. sınıf deneme dökümü (REVİZE). \"Verileri İçe Aktar\" düğmesiyle açılabilir: _mod=deneme-birlestir olduğu için tam durum değişimi YAPILMAZ, yalnız bu sınavlar listeye eklenir.",
  "_uyari": "Tüm hata nedenleri KONUEKSİKLİĞİ (ağırlık 1,5). Yanlış/boş ayrımı lessons[ders].w ve .e alanlarında.",
  "_surum": "2026-10-27",
+ "_kaynak": "9. sınıf deneme revize dökümü — 7 sınav",
+ "_revizyon": {
+  "belge": "9.json revize.pdf",
+  "glif_onarimi": [
+   {
+    "karakter": "🛠",
+    "kod": "U+1F6E0",
+    "rakam": 3,
+    "kanit": "56/56"
+   }
+  ],
+  "dogrulama": [
+   {
+    "sinav": "pdf9-01",
+    "ders_toplami": "89/14/17",
+    "genel": "89/14/17",
+    "ders_neti": 85.5,
+    "genel_net": 85.5,
+    "soru_toplami": 120
+   },
+   {
+    "sinav": "pdf9-02",
+    "ders_toplami": "81/10/29",
+    "genel": "82/14/24",
+    "ders_neti": 78.5,
+    "genel_net": 78.5,
+    "soru_toplami": 120
+   },
+   {
+    "sinav": "pdf9-03",
+    "ders_toplami": "70/19/31",
+    "genel": "70/19/31",
+    "ders_neti": 65.25,
+    "genel_net": 65.25,
+    "soru_toplami": 120
+   },
+   {
+    "sinav": "pdf9-04",
+    "ders_toplami": "83/21/16",
+    "genel": "83/21/16",
+    "ders_neti": 77.75,
+    "genel_net": 77.75,
+    "soru_toplami": 120
+   },
+   {
+    "sinav": "pdf9-05",
+    "ders_toplami": "86/15/19",
+    "genel": "86/15/19",
+    "ders_neti": 82.25,
+    "genel_net": 82.25,
+    "soru_toplami": 120
+   },
+   {
+    "sinav": "pdf9-06",
+    "ders_toplami": "74/26/20",
+    "genel": "73/22/25",
+    "ders_neti": 67.5,
+    "genel_net": 67.5,
+    "soru_toplami": 120
+   },
+   {
+    "sinav": "pdf9-07",
+    "ders_toplami": "81/10/29",
+    "genel": "81/10/29",
+    "ders_neti": 78.5,
+    "genel_net": 78.5,
+    "soru_toplami": 120
+   }
+  ]
+ },
  "_tutarsizliklar": [
   {
-   "sinav": "pdf9-01",
-   "ders": "Biyoloji",
-   "soru": 11,
-   "azami": 10,
-   "aciklama": "PDF'teki d+w+e azamiyi aşıyor; veri kırpılmadı."
+   "sinav": "pdf9-02",
+   "ders": null,
+   "soru": "81/10/29",
+   "azami": null,
+   "aciklama": "Belgenin GENEL satırı kendi ders dökümüyle çelişiyor: genel 82/14/24, ders toplamı 81/10/29. Net ikisinde de 78.5. Ders dökümü esas alındı (her ders kendi içinde d−w/4=net tutuyor ve toplam 120)."
+  },
+  {
+   "sinav": "pdf9-05",
+   "ders": "Tarih",
+   "soru": null,
+   "azami": null,
+   "aciklama": "Belgede ders azamisi aşılmış: Tarih-1→Din Kültürü 2D taşındı. Toplam soru (120) ve toplam net DEĞİŞMEDİ. Belgenin yazdığı değerler: Türkçe 22D/5Y/3B · Tarih-1 14D/0Y/0B · Coğrafya-1 10D/2Y/0B · Din Kültürü 4D/0Y/0B · Matematik-1 13D/6Y/11B · Fizik 8D/1Y/1B · Kimya 8D/1Y/1B · Biyoloji 7D/0Y/3B"
+  },
+  {
+   "sinav": "pdf9-06",
+   "ders": null,
+   "soru": "74/26/20",
+   "azami": null,
+   "aciklama": "Belgenin GENEL satırı kendi ders dökümüyle çelişiyor: genel 73/22/25, ders toplamı 74/26/20. Net ikisinde de 67.5. Ders dökümü esas alındı (her ders kendi içinde d−w/4=net tutuyor ve toplam 120)."
   }
  ],
- "_kaynak": "9. sınıf deneme dökümü (PDF) — 7 sınav",
  "_sayilar": {
   "sinav": 7,
-  "hata_kaydi": 209,
-  "turetilmis_dersli_sinav": 6
+  "hata_kaydi": 254
  },
  "state": {
   "user": {
@@ -36,17 +118,11 @@
       "e": 0,
       "net_beyan": 26.25
      },
-     "Matematik": {
-      "d": 11,
-      "w": 6,
-      "e": 12,
-      "net_beyan": 9.5
-     },
      "Tarih": {
       "d": 11,
       "w": 1,
       "e": 0,
-      "net_beyan": 11
+      "net_beyan": 10.75
      },
      "Coğrafya": {
       "d": 11,
@@ -54,31 +130,35 @@
       "e": 1,
       "net_beyan": 11
      },
+     "Din Kültürü": {
+      "d": 4,
+      "w": 2,
+      "e": 0,
+      "net_beyan": 3.5
+     },
+     "Matematik": {
+      "d": 11,
+      "w": 6,
+      "e": 13,
+      "net_beyan": 9.5
+     },
      "Fizik": {
       "d": 9,
       "w": 1,
       "e": 0,
       "net_beyan": 8.75
      },
-     "Biyoloji": {
-      "d": 9,
-      "w": 1,
-      "e": 1,
-      "net_beyan": 8.75
-     },
      "Kimya": {
-      "d": 7,
-      "w": 2,
-      "e": 1,
-      "net_beyan": 6.5,
-      "kaynak": "aritmetik-turetme"
+      "d": 8,
+      "w": 0,
+      "e": 2,
+      "net_beyan": 8
      },
-     "Din Kültürü": {
-      "d": 4,
+     "Biyoloji": {
+      "d": 8,
       "w": 1,
       "e": 1,
-      "net_beyan": 3.75,
-      "kaynak": "aritmetik-turetme"
+      "net_beyan": 7.75
      }
     },
     "errorLogs": [
@@ -108,158 +188,14 @@
      },
      {
       "qno": 4,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
-      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "lesson": "Tarih",
+      "topic": "Tarih öğrenmenin faydaları",
+      "kazanim": "Tarih öğrenmenin faydaları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
       "qno": 5,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
-      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 6,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 7,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 8,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 9,
-      "lesson": "Matematik",
-      "topic": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
-      "kazanim": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 10,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 11,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 12,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 13,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 14,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 15,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 16,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 17,
-      "lesson": "Matematik",
-      "topic": "Örüntüleri listeleyerek varsayımlarına yönelik genellemeler yapar",
-      "kazanim": "Örüntüleri listeleyerek varsayımlarına yönelik genellemeler yapar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 18,
-      "lesson": "Matematik",
-      "topic": "Örüntüleri listeleyerek varsayımlarına yönelik genellemeler yapar",
-      "kazanim": "Örüntüleri listeleyerek varsayımlarına yönelik genellemeler yapar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 19,
-      "lesson": "Matematik",
-      "topic": "Örüntüleri listeleyerek varsayımlarına yönelik genellemeler yapar",
-      "kazanim": "Örüntüleri listeleyerek varsayımlarına yönelik genellemeler yapar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 20,
-      "lesson": "Matematik",
-      "topic": "Küme sembol ve işlemlerini probleme uygun şekilde kullanır",
-      "kazanim": "Küme sembol ve işlemlerini probleme uygun şekilde kullanır",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 21,
-      "lesson": "Matematik",
-      "topic": "Küme sembol ve işlemlerini probleme uygun şekilde kullanır",
-      "kazanim": "Küme sembol ve işlemlerini probleme uygun şekilde kullanır",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 22,
-      "lesson": "Tarih",
-      "topic": "Tarihin doğası, tarihin tanımı ve diğer disiplinlerle ilişkisi",
-      "kazanim": "Tarihin doğası, tarihin tanımı ve diğer disiplinlerle ilişkisi",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-10-22"
-     },
-     {
-      "qno": 23,
       "lesson": "Coğrafya",
       "topic": "Haritaya ait bileşenlerden yararlanarak haritaları okur",
       "kazanim": "Haritaya ait bileşenlerden yararlanarak haritaları okur",
@@ -267,42 +203,231 @@
       "date": "2025-10-22"
      },
      {
+      "qno": 6,
+      "lesson": "Din Kültürü",
+      "topic": "Doğruyu arayan bir varlık olarak insan",
+      "kazanim": "Doğruyu arayan bir varlık olarak insan",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 7,
+      "lesson": "Din Kültürü",
+      "topic": "İbadet ve dua eden varlık olarak insan",
+      "kazanim": "İbadet ve dua eden varlık olarak insan",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 8,
+      "lesson": "Matematik",
+      "topic": "Üslü ve köklü gösterimlerle yapılan işlemler",
+      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 9,
+      "lesson": "Matematik",
+      "topic": "Üslü ve köklü gösterimlerle yapılan işlemler",
+      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 10,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 11,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 12,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 13,
+      "lesson": "Matematik",
+      "topic": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
+      "kazanim": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 14,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 15,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 16,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 17,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 18,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 19,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 20,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 21,
+      "lesson": "Matematik",
+      "topic": "Örüntü genellemeleri",
+      "kazanim": "Örüntü genellemeleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 22,
+      "lesson": "Matematik",
+      "topic": "Örüntü genellemeleri",
+      "kazanim": "Örüntü genellemeleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 23,
+      "lesson": "Matematik",
+      "topic": "Örüntü genellemeleri",
+      "kazanim": "Örüntü genellemeleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
       "qno": 24,
-      "lesson": "Fizik",
-      "topic": "Fizik biliminin alt dallarını çalışma alanlarıyla ilişkilendirerek etiketler",
-      "kazanim": "Fizik biliminin alt dallarını çalışma alanlarıyla ilişkilendirerek etiketler",
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
       "qno": 25,
-      "lesson": "Biyoloji",
-      "topic": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
-      "kazanim": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      },
      {
       "qno": 26,
+      "lesson": "Matematik",
+      "topic": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
+      "kazanim": "Sayı kümelerinin özellikleri hakkında önermeler sunar",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 27,
+      "lesson": "Fizik",
+      "topic": "Fizik biliminin alt dalları ve temel büyüklükler",
+      "kazanim": "Fizik biliminin alt dalları ve temel büyüklükler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 28,
+      "lesson": "Kimya",
+      "topic": "Kimyasal ürünlerin niteliklerindeki farklılıklar ve veri kaydı",
+      "kazanim": "Kimyasal ürünlerin niteliklerindeki farklılıklar ve veri kaydı",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 29,
+      "lesson": "Kimya",
+      "topic": "Kimyasal ürünlerin niteliklerindeki farklılıklar ve veri kaydı",
+      "kazanim": "Kimyasal ürünlerin niteliklerindeki farklılıklar ve veri kaydı",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-10-22"
+     },
+     {
+      "qno": 30,
       "lesson": "Biyoloji",
-      "topic": "Biyolojinin önemi ve biyoloji biliminin gelişimindeki dönüm noktaları",
-      "kazanim": "Biyolojinin önemi ve biyoloji biliminin gelişimindeki dönüm noktaları",
+      "topic": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
+      "kazanim": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-10-22"
      }
     ],
     "total": 120,
     "net": 85.5,
-    "kaynak": "9. sınıf deneme dökümü (PDF) · 22 Ekim 2025",
+    "kaynak": "9. sınıf deneme revize dökümü · 22 Ekim 2025",
     "bilinen_soru": 120,
-    "tamamlanan_dersler": [
-     "Kimya",
-     "Din Kültürü"
+    "kazanim_farki": [
+     {
+      "ders": "Biyoloji",
+      "baslik": {
+       "yanlis": 1,
+       "bos": 1
+      },
+      "liste": {
+       "yanlis": 1,
+       "bos": 0
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     }
     ],
     "uyarilar": [
-     "Tarih-1: PDF neti 11 ama d/w tam sayı olmak zorunda → 10.75 (0,25 PDF içi tutarsızlık)",
-     "Biyoloji (8.75 net): PDF d+w+e = 11 > azami 10 · PDF'in kendi sayımı çelişkili, sayılar olduğu gibi bırakıldı",
-     "PDF'te Kimya, Din Kültürü bölümü YOK. Bu derslerin neti 10.25 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+     "Biyoloji: kazanım listesi başlıkla uyuşmuyor (başlık 1Y/1B, liste 1Y/0B): 1 boşun kazanımı listede yok",
+     "errorLogs 30 kayıt · başlıktaki w+e = 31 · beyanlı kazanım farkı: Biyoloji 0Y/1B"
     ]
    },
    {
@@ -313,14 +438,8 @@
      "Türk Dili ve Edebiyatı": {
       "d": 23,
       "w": 2,
-      "e": 4,
+      "e": 5,
       "net_beyan": 22.5
-     },
-     "Matematik": {
-      "d": 9,
-      "w": 6,
-      "e": 8,
-      "net_beyan": 7.5
      },
      "Tarih": {
       "d": 8,
@@ -334,55 +453,59 @@
       "e": 0,
       "net_beyan": 8.25
      },
+     "Din Kültürü": {
+      "d": 6,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 6
+     },
+     "Matematik": {
+      "d": 8,
+      "w": 2,
+      "e": 20,
+      "net_beyan": 7.5
+     },
      "Fizik": {
       "d": 8,
       "w": 1,
       "e": 1,
       "net_beyan": 7.75
      },
+     "Kimya": {
+      "d": 10,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 10
+     },
      "Biyoloji": {
       "d": 9,
       "w": 0,
       "e": 1,
       "net_beyan": 9
-     },
-     "Kimya": {
-      "d": 10,
-      "w": 0,
-      "e": 0,
-      "net_beyan": 10,
-      "kaynak": "aritmetik-turetme"
-     },
-     "Din Kültürü": {
-      "d": 6,
-      "w": 0,
-      "e": 0,
-      "net_beyan": 6,
-      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
      {
       "qno": 1,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Yazım kurallarını uygular",
-      "kazanim": "Yazım kurallarını uygular",
+      "topic": "Yazım kuralları",
+      "kazanim": "Yazım kuralları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
       "qno": 2,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Metinde geçen söz sanatlarını belirler",
-      "kazanim": "Metinde geçen söz sanatlarını belirler",
+      "topic": "Söz sanatları",
+      "kazanim": "Söz sanatları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
       "qno": 3,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Metinlerden hareketle çıkarımlar yapar",
-      "kazanim": "Metinlerden hareketle çıkarımlar yapar",
+      "topic": "Metinlerden çıkarım yapma",
+      "kazanim": "Metinlerden çıkarım yapma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
@@ -397,13 +520,21 @@
      {
       "qno": 5,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Bilgilerin sunuluş şeklini inceler",
-      "kazanim": "Bilgilerin sunuluş şeklini inceler",
+      "topic": "Bilgilerin sunuluş şekli",
+      "kazanim": "Bilgilerin sunuluş şekli",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
       "qno": 6,
+      "lesson": "Türk Dili ve Edebiyatı",
+      "topic": "Söz sanatları",
+      "kazanim": "Söz sanatları",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 7,
       "lesson": "Türk Dili ve Edebiyatı",
       "topic": "Düşünceyi geliştirme yollarını kullanır",
       "kazanim": "Düşünceyi geliştirme yollarını kullanır",
@@ -411,159 +542,39 @@
       "date": "2025-11-24"
      },
      {
-      "qno": 7,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
-      "kazanim": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
       "qno": 8,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
-      "kazanim": "Üslü ve köklü gösterimlerle ilgili önermelerin kullanışlılığını değerlendirir",
+      "lesson": "Tarih",
+      "topic": "Tarih öğrenmenin faydaları",
+      "kazanim": "Tarih öğrenmenin faydaları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
       "qno": 9,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayı aralıkları ile yapılan işlemler",
-      "kazanim": "Gerçek sayı aralıkları ile yapılan işlemler",
+      "lesson": "Tarih",
+      "topic": "Tarih öğrenmenin faydaları",
+      "kazanim": "Tarih öğrenmenin faydaları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
       "qno": 10,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayı aralıkları ile yapılan işlemler",
-      "kazanim": "Gerçek sayı aralıkları ile yapılan işlemler",
+      "lesson": "Tarih",
+      "topic": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
+      "kazanim": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
       "qno": 11,
-      "lesson": "Matematik",
-      "topic": "Bir aralığın mutlak değer ile gösterimi",
-      "kazanim": "Bir aralığın mutlak değer ile gösterimi",
+      "lesson": "Tarih",
+      "topic": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
+      "kazanim": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      },
      {
       "qno": 12,
-      "lesson": "Matematik",
-      "topic": "Özdeşliklerden yaralanarak işlem yapabilme",
-      "kazanim": "Özdeşliklerden yaralanarak işlem yapabilme",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 13,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemler",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemler",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 14,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemler",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemler",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 15,
-      "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle yapılan işlemler",
-      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemler",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 16,
-      "lesson": "Matematik",
-      "topic": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
-      "kazanim": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 17,
-      "lesson": "Matematik",
-      "topic": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
-      "kazanim": "Sayı kümelerinin özellikleri hakkında muhakeme yapabilme",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 18,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
-      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 19,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
-      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 20,
-      "lesson": "Matematik",
-      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
-      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 21,
-      "lesson": "Tarih",
-      "topic": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
-      "kazanim": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 22,
-      "lesson": "Tarih",
-      "topic": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
-      "kazanim": "Tarih öğrenmenin bireye ve topluma faydalarını yorumlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 23,
-      "lesson": "Tarih",
-      "topic": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
-      "kazanim": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 24,
-      "lesson": "Tarih",
-      "topic": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
-      "kazanim": "Tarih araştırma ve yazımında dijitalleşme sürecini analiz eder",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 25,
-      "lesson": "Coğrafya",
-      "topic": "Mekânın aynası haritalar ve harita okuryazarlığı",
-      "kazanim": "Mekânın aynası haritalar ve harita okuryazarlığı",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 26,
       "lesson": "Coğrafya",
       "topic": "Niçin coğrafya öğrenmeliyiz?",
       "kazanim": "Niçin coğrafya öğrenmeliyiz?",
@@ -571,7 +582,15 @@
       "date": "2025-11-24"
      },
      {
-      "qno": 27,
+      "qno": 13,
+      "lesson": "Coğrafya",
+      "topic": "Mekânın aynası haritalar ve harita okuryazarlığı",
+      "kazanim": "Mekânın aynası haritalar ve harita okuryazarlığı",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 14,
       "lesson": "Coğrafya",
       "topic": "Harita türlerine ilişkin çıkarım yapar",
       "kazanim": "Harita türlerine ilişkin çıkarım yapar",
@@ -579,7 +598,159 @@
       "date": "2025-11-24"
      },
      {
+      "qno": 15,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 16,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 17,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 18,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 19,
+      "lesson": "Matematik",
+      "topic": "Bir aralığın mutlak değer ile gösterimi",
+      "kazanim": "Bir aralığın mutlak değer ile gösterimi",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 20,
+      "lesson": "Matematik",
+      "topic": "Özdeşlikler",
+      "kazanim": "Özdeşlikler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 21,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 22,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 23,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 24,
+      "lesson": "Matematik",
+      "topic": "Sayı kümeleri muhakemesi",
+      "kazanim": "Sayı kümeleri muhakemesi",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 25,
+      "lesson": "Matematik",
+      "topic": "Sayı kümeleri muhakemesi",
+      "kazanim": "Sayı kümeleri muhakemesi",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 26,
+      "lesson": "Matematik",
+      "topic": "Bir aralığın mutlak değer ile gösterimi",
+      "kazanim": "Bir aralığın mutlak değer ile gösterimi",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 27,
+      "lesson": "Matematik",
+      "topic": "Bir aralığın mutlak değer ile gösterimi",
+      "kazanim": "Bir aralığın mutlak değer ile gösterimi",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
       "qno": 28,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 29,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 30,
+      "lesson": "Matematik",
+      "topic": "Üslü/Köklü muhakeme",
+      "kazanim": "Üslü/Köklü muhakeme",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 31,
+      "lesson": "Matematik",
+      "topic": "Üslü/Köklü muhakeme",
+      "kazanim": "Üslü/Köklü muhakeme",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 32,
+      "lesson": "Matematik",
+      "topic": "Üslü/Köklü muhakeme",
+      "kazanim": "Üslü/Köklü muhakeme",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 33,
+      "lesson": "Matematik",
+      "topic": "Varsayım ve genellemeler",
+      "kazanim": "Varsayım ve genellemeler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-11-24"
+     },
+     {
+      "qno": 34,
       "lesson": "Fizik",
       "topic": "Fizik bilimi ve fiziğin uygulama alanları",
       "kazanim": "Fizik bilimi ve fiziğin uygulama alanları",
@@ -587,32 +758,57 @@
       "date": "2025-11-24"
      },
      {
-      "qno": 29,
+      "qno": 35,
       "lesson": "Fizik",
       "topic": "Fizik biliminin alt dalları ve temel büyüklükler",
       "kazanim": "Fizik biliminin alt dalları ve temel büyüklükler",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-11-24"
-     },
-     {
-      "qno": 30,
-      "lesson": "Biyoloji",
-      "topic": "Virüslerin canlı veya cansız olarak sınıflandırılmama nedenlerini açıklar",
-      "kazanim": "Virüslerin canlı veya cansız olarak sınıflandırılmama nedenlerini açıklar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-11-24"
      }
     ],
     "total": 120,
     "net": 78.5,
-    "kaynak": "9. sınıf deneme dökümü (PDF) · 24 Kasım 2025",
-    "bilinen_soru": 112,
-    "tamamlanan_dersler": [
-     "Kimya",
-     "Din Kültürü"
+    "kaynak": "9. sınıf deneme revize dökümü · 24 Kasım 2025",
+    "bilinen_soru": 120,
+    "kazanim_farki": [
+     {
+      "ders": "Matematik",
+      "baslik": {
+       "yanlis": 2,
+       "bos": 20
+      },
+      "liste": {
+       "yanlis": 6,
+       "bos": 13
+      },
+      "fark": {
+       "yanlis": -4,
+       "bos": 7
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     },
+     {
+      "ders": "Biyoloji",
+      "baslik": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "liste": {
+       "yanlis": 0,
+       "bos": 0
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     }
     ],
     "uyarilar": [
-     "PDF'te Kimya, Din Kültürü bölümü YOK. Bu derslerin neti 16 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+     "ders D/Y/B toplamı 81/10/29 ≠ genel 82/14/24 (net aynı: 78.5 = 78.5)",
+     "Matematik-1: kazanım listesi başlıkla uyuşmuyor (başlık 2Y/20B, liste 6Y/13B): 7 boşun kazanımı listede yok · 4 yanlış listede FAZLA",
+     "Biyoloji: kazanım listesi başlıkla uyuşmuyor (başlık 0Y/1B, liste 0Y/0B): 1 boşun kazanımı listede yok",
+     "errorLogs 35 kayıt · başlıktaki w+e = 39 · beyanlı kazanım farkı: Matematik -4Y/7B, Biyoloji 0Y/1B"
     ]
    },
    {
@@ -628,15 +824,27 @@
      },
      "Tarih": {
       "d": 8,
-      "w": 2,
+      "w": 3,
       "e": 1,
       "net_beyan": 7.25
      },
      "Coğrafya": {
-      "d": 2,
+      "d": 7,
       "w": 3,
       "e": 2,
-      "net_beyan": 1.5
+      "net_beyan": 6.25
+     },
+     "Din Kültürü": {
+      "d": 6,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 6
+     },
+     "Matematik": {
+      "d": 8,
+      "w": 4,
+      "e": 18,
+      "net_beyan": 7
      },
      "Fizik": {
       "d": 7,
@@ -647,7 +855,7 @@
      "Kimya": {
       "d": 2,
       "w": 2,
-      "e": 5,
+      "e": 6,
       "net_beyan": 1.5
      },
      "Biyoloji": {
@@ -655,20 +863,6 @@
       "w": 4,
       "e": 0,
       "net_beyan": 5
-     },
-     "Matematik": {
-      "d": 15,
-      "w": 1,
-      "e": 14,
-      "net_beyan": 14.75,
-      "kaynak": "aritmetik-turetme"
-     },
-     "Din Kültürü": {
-      "d": 3,
-      "w": 0,
-      "e": 3,
-      "net_beyan": 3,
-      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -683,16 +877,16 @@
      {
       "qno": 2,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Türlerin içerik ve anlam özellikleri yapı unsurlarıyla çözümleme",
-      "kazanim": "Türlerin içerik ve anlam özellikleri yapı unsurlarıyla çözümleme",
+      "topic": "Tür analizi ve çözümleme",
+      "kazanim": "Tür analizi ve çözümleme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
       "qno": 3,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Metnin ana düşüncesini/duygusunu belirleme",
-      "kazanim": "Metnin ana düşüncesini/duygusunu belirleme",
+      "topic": "Ana düşünce/duygu belirleme",
+      "kazanim": "Ana düşünce/duygu belirleme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
@@ -739,16 +933,16 @@
      {
       "qno": 9,
       "lesson": "Coğrafya",
-      "topic": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
-      "kazanim": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
+      "topic": "Hava olayları ve iklim ilişkisi",
+      "kazanim": "Hava olayları ve iklim ilişkisi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
       "qno": 10,
       "lesson": "Coğrafya",
-      "topic": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
-      "kazanim": "Hava olaylarıyla ilgili deneyim ve gözlemlerini iklimle ilişkilendirme",
+      "topic": "Hava olayları ve iklim ilişkisi",
+      "kazanim": "Hava olayları ve iklim ilişkisi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
@@ -770,6 +964,182 @@
      },
      {
       "qno": 13,
+      "lesson": "Matematik",
+      "topic": "Üslü ve köklü gösterimlerle muhakeme",
+      "kazanim": "Üslü ve köklü gösterimlerle muhakeme",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 14,
+      "lesson": "Matematik",
+      "topic": "Üslü ve köklü gösterimlerle muhakeme",
+      "kazanim": "Üslü ve köklü gösterimlerle muhakeme",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 15,
+      "lesson": "Matematik",
+      "topic": "Üslü ve köklü gösterimlerle muhakeme",
+      "kazanim": "Üslü ve köklü gösterimlerle muhakeme",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 16,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 17,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayılar",
+      "kazanim": "Gerçek sayılar",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 18,
+      "lesson": "Matematik",
+      "topic": "Sayı kümeleri",
+      "kazanim": "Sayı kümeleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 19,
+      "lesson": "Matematik",
+      "topic": "Sayı kümeleri",
+      "kazanim": "Sayı kümeleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 20,
+      "lesson": "Matematik",
+      "topic": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "kazanim": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 21,
+      "lesson": "Matematik",
+      "topic": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "kazanim": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 22,
+      "lesson": "Matematik",
+      "topic": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "kazanim": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 23,
+      "lesson": "Matematik",
+      "topic": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "kazanim": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 24,
+      "lesson": "Matematik",
+      "topic": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "kazanim": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 25,
+      "lesson": "Matematik",
+      "topic": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "kazanim": "Doğrusal fonksiyonlar ve nitel özellikler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 26,
+      "lesson": "Matematik",
+      "topic": "Mantık",
+      "kazanim": "Mantık",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 27,
+      "lesson": "Matematik",
+      "topic": "Denklem ve eşitsizlik problemleri",
+      "kazanim": "Denklem ve eşitsizlik problemleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 28,
+      "lesson": "Matematik",
+      "topic": "Denklem ve eşitsizlik problemleri",
+      "kazanim": "Denklem ve eşitsizlik problemleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 29,
+      "lesson": "Matematik",
+      "topic": "Denklem ve eşitsizlik problemleri",
+      "kazanim": "Denklem ve eşitsizlik problemleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 30,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 31,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 32,
+      "lesson": "Matematik",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 33,
+      "lesson": "Matematik",
+      "topic": "Küme sembolleri",
+      "kazanim": "Küme sembolleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 34,
+      "lesson": "Matematik",
+      "topic": "Önerme sunma",
+      "kazanim": "Önerme sunma",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2025-12-23"
+     },
+     {
+      "qno": 35,
       "lesson": "Fizik",
       "topic": "Birimi SI birim sisteminde verilen nicelikleri tanımlar",
       "kazanim": "Birimi SI birim sisteminde verilen nicelikleri tanımlar",
@@ -777,23 +1147,23 @@
       "date": "2025-12-23"
      },
      {
-      "qno": 14,
+      "qno": 36,
       "lesson": "Fizik",
-      "topic": "Vektörlerin toplanmasında kullanılan yöntemleri inceler",
-      "kazanim": "Vektörlerin toplanmasında kullanılan yöntemleri inceler",
+      "topic": "Vektörlerin toplanması",
+      "kazanim": "Vektörlerin toplanması",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
-      "qno": 15,
+      "qno": 37,
       "lesson": "Fizik",
-      "topic": "Hareketin temel kavramlarına yönelik benzerlikleri bulur",
-      "kazanim": "Hareketin temel kavramlarına yönelik benzerlikleri bulur",
+      "topic": "Hareket kavramları",
+      "kazanim": "Hareket kavramları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
-      "qno": 16,
+      "qno": 38,
       "lesson": "Kimya",
       "topic": "Kimyasal maddelerin kullanımı ve güvenliği",
       "kazanim": "Kimyasal maddelerin kullanımı ve güvenliği",
@@ -801,15 +1171,15 @@
       "date": "2025-12-23"
      },
      {
-      "qno": 17,
+      "qno": 39,
       "lesson": "Kimya",
-      "topic": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
-      "kazanim": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
+      "topic": "Atomların elektron dizilimi ve Periyodik Tablo",
+      "kazanim": "Atomların elektron dizilimi ve Periyodik Tablo",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      },
      {
-      "qno": 18,
+      "qno": 40,
       "lesson": "Kimya",
       "topic": "Periyodik özelliklerin değişimi",
       "kazanim": "Periyodik özelliklerin değişimi",
@@ -817,7 +1187,7 @@
       "date": "2025-12-23"
      },
      {
-      "qno": 19,
+      "qno": 41,
       "lesson": "Kimya",
       "topic": "Atom orbitalleri ve elektron dizilimi",
       "kazanim": "Atom orbitalleri ve elektron dizilimi",
@@ -825,7 +1195,7 @@
       "date": "2025-12-23"
      },
      {
-      "qno": 20,
+      "qno": 42,
       "lesson": "Kimya",
       "topic": "Atom orbitalleri ve elektron dizilimi",
       "kazanim": "Atom orbitalleri ve elektron dizilimi",
@@ -833,7 +1203,7 @@
       "date": "2025-12-23"
      },
      {
-      "qno": 21,
+      "qno": 43,
       "lesson": "Kimya",
       "topic": "Atom orbitalleri ve elektron dizilimi",
       "kazanim": "Atom orbitalleri ve elektron dizilimi",
@@ -841,7 +1211,7 @@
       "date": "2025-12-23"
      },
      {
-      "qno": 22,
+      "qno": 44,
       "lesson": "Kimya",
       "topic": "Metalik bağ ve elektron denizi modeli",
       "kazanim": "Metalik bağ ve elektron denizi modeli",
@@ -849,50 +1219,73 @@
       "date": "2025-12-23"
      },
      {
-      "qno": 23,
+      "qno": 45,
       "lesson": "Biyoloji",
-      "topic": "Bilginin doğasıyla ilgili elde ettiği bilgileri ifade eder",
-      "kazanim": "Bilginin doğasıyla ilgili elde ettiği bilgileri ifade eder",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-12-23"
-     },
-     {
-      "qno": 24,
-      "lesson": "Biyoloji",
-      "topic": "Canlıların ortak özellikleri",
-      "kazanim": "Canlıların ortak özellikleri",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-12-23"
-     },
-     {
-      "qno": 25,
-      "lesson": "Biyoloji",
-      "topic": "Canlıların ortak özellikleri",
-      "kazanim": "Canlıların ortak özellikleri",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2025-12-23"
-     },
-     {
-      "qno": 26,
-      "lesson": "Biyoloji",
-      "topic": "Canlıların ortak özellikleri",
-      "kazanim": "Canlıların ortak özellikleri",
+      "topic": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
+      "kazanim": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
       "type": "KONUEKSİKLİĞİ",
       "date": "2025-12-23"
      }
     ],
     "total": 120,
     "net": 65.25,
-    "kaynak": "9. sınıf deneme dökümü (PDF) · 23 Aralık 2025",
-    "bilinen_soru": 113,
-    "tamamlanan_dersler": [
-     "Matematik",
-     "Din Kültürü"
+    "kaynak": "9. sınıf deneme revize dökümü · 23 Aralık 2025",
+    "bilinen_soru": 120,
+    "kazanim_farki": [
+     {
+      "ders": "Tarih",
+      "baslik": {
+       "yanlis": 3,
+       "bos": 1
+      },
+      "liste": {
+       "yanlis": 2,
+       "bos": 1
+      },
+      "fark": {
+       "yanlis": 1,
+       "bos": 0
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     },
+     {
+      "ders": "Kimya",
+      "baslik": {
+       "yanlis": 2,
+       "bos": 6
+      },
+      "liste": {
+       "yanlis": 2,
+       "bos": 5
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     },
+     {
+      "ders": "Biyoloji",
+      "baslik": {
+       "yanlis": 4,
+       "bos": 0
+      },
+      "liste": {
+       "yanlis": 1,
+       "bos": 0
+      },
+      "fark": {
+       "yanlis": 3,
+       "bos": 0
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     }
     ],
     "uyarilar": [
-     "Tarih-1: PDF neti 7.25 ama d/w tam sayı olmak zorunda → 7.5 (0,25 PDF içi tutarsızlık)",
-     "Coğrafya-1: PDF neti 1.5 ama d/w tam sayı olmak zorunda → 1.25 (0,25 PDF içi tutarsızlık)",
-     "PDF'te Matematik, Din Kültürü bölümü YOK. Bu derslerin neti 17.75 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+     "Tarih-1: kazanım listesi başlıkla uyuşmuyor (başlık 3Y/1B, liste 2Y/1B): 1 yanlışın kazanımı listede yok",
+     "Kimya: kazanım listesi başlıkla uyuşmuyor (başlık 2Y/6B, liste 2Y/5B): 1 boşun kazanımı listede yok",
+     "Biyoloji: kazanım listesi başlıkla uyuşmuyor (başlık 4Y/0B, liste 1Y/0B): 3 yanlışın kazanımı listede yok",
+     "errorLogs 45 kayıt · başlıktaki w+e = 50 · beyanlı kazanım farkı: Tarih 1Y/0B, Kimya 0Y/1B, Biyoloji 3Y/0B"
     ]
    },
    {
@@ -903,26 +1296,37 @@
      "Türk Dili ve Edebiyatı": {
       "d": 18,
       "w": 6,
-      "e": 3,
+      "e": 6,
       "net_beyan": 16.5
      },
-     "Tarih & Coğrafya & Din": {
-      "d": 28,
-      "w": 3,
+     "Tarih": {
+      "d": 12,
+      "w": 0,
       "e": 0,
-      "net_beyan": 27.5,
-      "kaynak": "bilesik-satir"
+      "net_beyan": 12
+     },
+     "Coğrafya": {
+      "d": 11,
+      "w": 1,
+      "e": 0,
+      "net_beyan": 10.75
+     },
+     "Din Kültürü": {
+      "d": 5,
+      "w": 1,
+      "e": 0,
+      "net_beyan": 4.75
      },
      "Matematik": {
       "d": 19,
       "w": 5,
-      "e": 5,
+      "e": 6,
       "net_beyan": 17.75
      },
      "Fizik": {
       "d": 5,
       "w": 4,
-      "e": 0,
+      "e": 1,
       "net_beyan": 4
      },
      "Kimya": {
@@ -934,7 +1338,7 @@
      "Biyoloji": {
       "d": 6,
       "w": 3,
-      "e": 0,
+      "e": 1,
       "net_beyan": 5.25
      }
     },
@@ -942,24 +1346,24 @@
      {
       "qno": 1,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
-      "kazanim": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
+      "topic": "Metin birimleri etkileşimi",
+      "kazanim": "Metin birimleri etkileşimi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 2,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
-      "kazanim": "Metni oluşturan birimler arasındaki etkileşimleri değerlendirir",
+      "topic": "Metin birimleri etkileşimi",
+      "kazanim": "Metin birimleri etkileşimi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 3,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Çıkarım yapar",
-      "kazanim": "Çıkarım yapar",
+      "topic": "Çıkarım yapma",
+      "kazanim": "Çıkarım yapma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
@@ -990,8 +1394,8 @@
      {
       "qno": 7,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Metnin konu/temasını belirleme",
-      "kazanim": "Metnin konu/temasını belirleme",
+      "topic": "Şiirin içeriği (tema, konu) ile ilgili çalışma yapar",
+      "kazanim": "Şiirin içeriği (tema, konu) ile ilgili çalışma yapar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
@@ -1006,64 +1410,64 @@
      {
       "qno": 9,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Deneme türünü tanıma",
-      "kazanim": "Deneme türünü tanıma",
+      "topic": "Metin karşılaştırma",
+      "kazanim": "Metin karşılaştırma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 10,
-      "lesson": "Tarih & Coğrafya & Din",
-      "topic": "Tarih öğrenmenin faydaları",
-      "kazanim": "Tarih öğrenmenin faydaları",
+      "lesson": "Türk Dili ve Edebiyatı",
+      "topic": "Şiir içeriği",
+      "kazanim": "Şiir içeriği",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 11,
-      "lesson": "Tarih & Coğrafya & Din",
+      "lesson": "Türk Dili ve Edebiyatı",
+      "topic": "Deneme türü",
+      "kazanim": "Deneme türü",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-02-07"
+     },
+     {
+      "qno": 12,
+      "lesson": "Türk Dili ve Edebiyatı",
+      "topic": "Düşünceyi geliştirme yollarını kullanır",
+      "kazanim": "Düşünceyi geliştirme yollarını kullanır",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-02-07"
+     },
+     {
+      "qno": 13,
+      "lesson": "Coğrafya",
       "topic": "Mekânsal Bilgi Teknolojilerinin Bileşenleri",
       "kazanim": "Mekânsal Bilgi Teknolojilerinin Bileşenleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
-      "qno": 12,
-      "lesson": "Tarih & Coğrafya & Din",
+      "qno": 14,
+      "lesson": "Din Kültürü",
       "topic": "İslam'da ibadetlerin temel ilkeleri",
       "kazanim": "İslam'da ibadetlerin temel ilkeleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
-      "qno": 13,
-      "lesson": "Matematik",
-      "topic": "Sayı kümelerinin temel özelliklerine ilişkin varsayımlar",
-      "kazanim": "Sayı kümelerinin temel özelliklerine ilişkin varsayımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2026-02-07"
-     },
-     {
-      "qno": 14,
-      "lesson": "Matematik",
-      "topic": "Doğrusal referans fonksiyonun nitel özellikleri",
-      "kazanim": "Doğrusal referans fonksiyonun nitel özellikleri",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2026-02-07"
-     },
-     {
       "qno": 15,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar özellikleri",
-      "kazanim": "Üçgende açı ve kenar özellikleri",
+      "topic": "Sayı kümeleri varsayımları",
+      "kazanim": "Sayı kümeleri varsayımları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 16,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar özellikleri",
-      "kazanim": "Üçgende açı ve kenar özellikleri",
+      "topic": "Doğrusal referans fonksiyonun nitel özellikleri",
+      "kazanim": "Doğrusal referans fonksiyonun nitel özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
@@ -1078,24 +1482,24 @@
      {
       "qno": 18,
       "lesson": "Matematik",
-      "topic": "Mutlak değer fonksiyonunun parçalı gösterimi",
-      "kazanim": "Mutlak değer fonksiyonunun parçalı gösterimi",
+      "topic": "Üçgende açı ve kenar özellikleri",
+      "kazanim": "Üçgende açı ve kenar özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 19,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar ilişkileri",
-      "kazanim": "Üçgende açı ve kenar ilişkileri",
+      "topic": "Üçgende açı ve kenar özellikleri",
+      "kazanim": "Üçgende açı ve kenar özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
       "qno": 20,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar ilişkileri",
-      "kazanim": "Üçgende açı ve kenar ilişkileri",
+      "topic": "Mutlak değer fonksiyonunun parçalı gösterimi",
+      "kazanim": "Mutlak değer fonksiyonunun parçalı gösterimi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
@@ -1117,6 +1521,22 @@
      },
      {
       "qno": 23,
+      "lesson": "Matematik",
+      "topic": "Üçgende açı ve kenar ilişkileri",
+      "kazanim": "Üçgende açı ve kenar ilişkileri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-02-07"
+     },
+     {
+      "qno": 24,
+      "lesson": "Matematik",
+      "topic": "Üçgende açı ve kenar ilişkileri",
+      "kazanim": "Üçgende açı ve kenar ilişkileri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-02-07"
+     },
+     {
+      "qno": 25,
       "lesson": "Fizik",
       "topic": "Konum, sürat ve hız kavramlarını ilişkilendirir",
       "kazanim": "Konum, sürat ve hız kavramlarını ilişkilendirir",
@@ -1124,23 +1544,23 @@
       "date": "2026-02-07"
      },
      {
-      "qno": 24,
-      "lesson": "Fizik",
-      "topic": "Özkütleyi kütle ve hacimle ilişkilendirerek açıklar",
-      "kazanim": "Özkütleyi kütle ve hacimle ilişkilendirerek açıklar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2026-02-07"
-     },
-     {
-      "qno": 25,
-      "lesson": "Fizik",
-      "topic": "Basınca yönelik çıkarımlar",
-      "kazanim": "Basınca yönelik çıkarımlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2026-02-07"
-     },
-     {
       "qno": 26,
+      "lesson": "Fizik",
+      "topic": "Özkütle",
+      "kazanim": "Özkütle",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-02-07"
+     },
+     {
+      "qno": 27,
+      "lesson": "Fizik",
+      "topic": "Basınç çıkarımları",
+      "kazanim": "Basınç çıkarımları",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-02-07"
+     },
+     {
+      "qno": 28,
       "lesson": "Fizik",
       "topic": "Ortalama hız kavramı",
       "kazanim": "Ortalama hız kavramı",
@@ -1148,7 +1568,15 @@
       "date": "2026-02-07"
      },
      {
-      "qno": 27,
+      "qno": 29,
+      "lesson": "Fizik",
+      "topic": "Doğadaki temel kuvvetler",
+      "kazanim": "Doğadaki temel kuvvetler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-02-07"
+     },
+     {
+      "qno": 30,
       "lesson": "Kimya",
       "topic": "Lewis Nokta Yapısı",
       "kazanim": "Lewis Nokta Yapısı",
@@ -1156,7 +1584,7 @@
       "date": "2026-02-07"
      },
      {
-      "qno": 28,
+      "qno": 31,
       "lesson": "Kimya",
       "topic": "Kovalent Bağ",
       "kazanim": "Kovalent Bağ",
@@ -1164,7 +1592,7 @@
       "date": "2026-02-07"
      },
      {
-      "qno": 29,
+      "qno": 32,
       "lesson": "Kimya",
       "topic": "Molekül Polarlığı ve Apolarlığı",
       "kazanim": "Molekül Polarlığı ve Apolarlığı",
@@ -1172,36 +1600,72 @@
       "date": "2026-02-07"
      },
      {
-      "qno": 30,
+      "qno": 33,
       "lesson": "Biyoloji",
-      "topic": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
-      "kazanim": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
+      "topic": "Üç üst âlem (domain) sistemi ve canlılar",
+      "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
-      "qno": 31,
+      "qno": 34,
       "lesson": "Biyoloji",
-      "topic": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
-      "kazanim": "Üç üst âlem (domain) sisteminde yer alan canlıların özelliklerini karşılaştırır",
+      "topic": "Üç üst âlem (domain) sistemi ve canlılar",
+      "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      },
      {
-      "qno": 32,
+      "qno": 35,
       "lesson": "Biyoloji",
-      "topic": "Bilimin doğasını yorumlayabilme",
-      "kazanim": "Bilimin doğasını yorumlayabilme",
+      "topic": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
+      "kazanim": "Bilimin doğası, bilimsel araştırma süreçleri ve bilginin niteliği",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-02-07"
      }
     ],
     "total": 120,
     "net": 77.75,
-    "kaynak": "9. sınıf deneme dökümü (PDF) · 07 Şubat 2026",
-    "bilinen_soru": 115,
+    "kaynak": "9. sınıf deneme revize dökümü · 07 Şubat 2026",
+    "bilinen_soru": 120,
+    "kazanim_farki": [
+     {
+      "ders": "Matematik",
+      "baslik": {
+       "yanlis": 5,
+       "bos": 6
+      },
+      "liste": {
+       "yanlis": 5,
+       "bos": 5
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     },
+     {
+      "ders": "Biyoloji",
+      "baslik": {
+       "yanlis": 3,
+       "bos": 1
+      },
+      "liste": {
+       "yanlis": 3,
+       "bos": 0
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     }
+    ],
     "uyarilar": [
-     "Tarih & Coğrafya & Din (27.5 net, 3 yanlış) ayrı derslere bölünemedi: bölününce 26.25 net çıkıyor, 1.25 kayıp. PDF 28.25 doğru diyor → 31.25 soru, azami 30 (PDF kendi içinde çelişkili). Birleşik satır korundu, kazanımlar derslere ayrıldı."
+     "Matematik-1: kazanım listesi başlıkla uyuşmuyor (başlık 5Y/6B, liste 5Y/5B): 1 boşun kazanımı listede yok",
+     "Biyoloji: kazanım listesi başlıkla uyuşmuyor (başlık 3Y/1B, liste 3Y/0B): 1 boşun kazanımı listede yok",
+     "errorLogs 35 kayıt · başlıktaki w+e = 37 · beyanlı kazanım farkı: Matematik 0Y/1B, Biyoloji 0Y/1B"
     ]
    },
    {
@@ -1215,16 +1679,30 @@
       "e": 3,
       "net_beyan": 20.75
      },
+     "Tarih": {
+      "d": 12,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 12,
+      "belge_net": 14
+     },
      "Coğrafya": {
       "d": 10,
       "w": 2,
       "e": 0,
       "net_beyan": 9.5
      },
+     "Din Kültürü": {
+      "d": 6,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 6,
+      "belge_net": 4
+     },
      "Matematik": {
       "d": 13,
       "w": 6,
-      "e": 8,
+      "e": 11,
       "net_beyan": 11.5
      },
      "Fizik": {
@@ -1244,20 +1722,6 @@
       "w": 0,
       "e": 3,
       "net_beyan": 7
-     },
-     "Tarih": {
-      "d": 12,
-      "w": 0,
-      "e": 0,
-      "net_beyan": 12,
-      "kaynak": "aritmetik-turetme"
-     },
-     "Din Kültürü": {
-      "d": 6,
-      "w": 0,
-      "e": 0,
-      "net_beyan": 6,
-      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -1280,8 +1744,8 @@
      {
       "qno": 3,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Hikâye yapı unsurları",
-      "kazanim": "Hikâye yapı unsurları",
+      "topic": "Yapı unsurları",
+      "kazanim": "Yapı unsurları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
@@ -1304,8 +1768,8 @@
      {
       "qno": 6,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Şiirde ahenk",
-      "kazanim": "Şiirde ahenk",
+      "topic": "Şiirde ahenk unsurları",
+      "kazanim": "Şiirde ahenk unsurları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
@@ -1336,24 +1800,24 @@
      {
       "qno": 10,
       "lesson": "Coğrafya",
-      "topic": "İklim verilerini kullanarak diyagram hazırlayabilme",
-      "kazanim": "İklim verilerini kullanarak diyagram hazırlayabilme",
+      "topic": "İklim verileriyle diyagram hazırlama",
+      "kazanim": "İklim verileriyle diyagram hazırlama",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
       "qno": 11,
       "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle muhakeme",
-      "kazanim": "Üslü ve köklü gösterimlerle muhakeme",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
       "qno": 12,
       "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlerle muhakeme",
-      "kazanim": "Üslü ve köklü gösterimlerle muhakeme",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere ilişkin varsayımlarda bulunur",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
@@ -1384,8 +1848,8 @@
      {
       "qno": 16,
       "lesson": "Matematik",
-      "topic": "Mutlak değer gösterimi",
-      "kazanim": "Mutlak değer gösterimi",
+      "topic": "Bir aralığın mutlak değer ile gösterimi",
+      "kazanim": "Bir aralığın mutlak değer ile gösterimi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
@@ -1408,16 +1872,16 @@
      {
       "qno": 19,
       "lesson": "Matematik",
-      "topic": "Gerçek sayı aralıkları",
-      "kazanim": "Gerçek sayı aralıkları",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
       "qno": 20,
       "lesson": "Matematik",
-      "topic": "Gerçek sayı aralıkları",
-      "kazanim": "Gerçek sayı aralıkları",
+      "topic": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
+      "kazanim": "Gerçek sayı aralıkları ve bunlarla yapılan işlemlerde kullanılan küme sembol ve işlemlerini tanır",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
@@ -1440,29 +1904,45 @@
      {
       "qno": 23,
       "lesson": "Matematik",
-      "topic": "Üslü/Köklü muhakeme",
-      "kazanim": "Üslü/Köklü muhakeme",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
       "qno": 24,
       "lesson": "Matematik",
-      "topic": "Üslü/Köklü muhakeme",
-      "kazanim": "Üslü/Köklü muhakeme",
+      "topic": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
+      "kazanim": "Gerçek sayıların üslü ve köklü gösterimleriyle yapılan işlemlere dair muhakeme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
       "qno": 25,
-      "lesson": "Fizik",
-      "topic": "Sıvılarda Basınç",
-      "kazanim": "Sıvılarda Basınç",
+      "lesson": "Matematik",
+      "topic": "Eşlik ve Benzerlik",
+      "kazanim": "Eşlik ve Benzerlik",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
       "qno": 26,
+      "lesson": "Matematik",
+      "topic": "Geometrik dönüşümler",
+      "kazanim": "Geometrik dönüşümler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-14"
+     },
+     {
+      "qno": 27,
+      "lesson": "Matematik",
+      "topic": "Bir aralığın mutlak değer ile gösterimi",
+      "kazanim": "Bir aralığın mutlak değer ile gösterimi",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-14"
+     },
+     {
+      "qno": 28,
       "lesson": "Fizik",
       "topic": "Sıvılarda Basınç",
       "kazanim": "Sıvılarda Basınç",
@@ -1470,7 +1950,15 @@
       "date": "2026-03-14"
      },
      {
-      "qno": 27,
+      "qno": 29,
+      "lesson": "Fizik",
+      "topic": "Sıvılarda Basınç",
+      "kazanim": "Sıvılarda Basınç",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-14"
+     },
+     {
+      "qno": 30,
       "lesson": "Kimya",
       "topic": "İyonik Bağ",
       "kazanim": "İyonik Bağ",
@@ -1478,15 +1966,15 @@
       "date": "2026-03-14"
      },
      {
-      "qno": 28,
+      "qno": 31,
       "lesson": "Kimya",
-      "topic": "Metalik Bağ",
-      "kazanim": "Metalik Bağ",
+      "topic": "Metalik bağ ve elektron denizi modeli",
+      "kazanim": "Metalik bağ ve elektron denizi modeli",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      },
      {
-      "qno": 29,
+      "qno": 32,
       "lesson": "Biyoloji",
       "topic": "Biyolojik Sınıflandırma",
       "kazanim": "Biyolojik Sınıflandırma",
@@ -1494,32 +1982,41 @@
       "date": "2026-03-14"
      },
      {
-      "qno": 30,
+      "qno": 33,
       "lesson": "Biyoloji",
       "topic": "Hayvanlar",
       "kazanim": "Hayvanlar",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2026-03-14"
-     },
-     {
-      "qno": 31,
-      "lesson": "Biyoloji",
-      "topic": "Mantarlar",
-      "kazanim": "Mantarlar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-14"
      }
     ],
     "total": 120,
     "net": 82.25,
-    "kaynak": "9. sınıf deneme dökümü (PDF) · 14 Mart 2026",
-    "bilinen_soru": 117,
-    "tamamlanan_dersler": [
-     "Tarih",
-     "Din Kültürü"
+    "kaynak": "9. sınıf deneme revize dökümü · 14 Mart 2026",
+    "bilinen_soru": 120,
+    "kazanim_farki": [
+     {
+      "ders": "Biyoloji",
+      "baslik": {
+       "yanlis": 0,
+       "bos": 3
+      },
+      "liste": {
+       "yanlis": 0,
+       "bos": 2
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     }
     ],
     "uyarilar": [
-     "PDF'te Tarih, Din Kültürü bölümü YOK. Bu derslerin neti 18 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+     "Tarih-1: d+w+e = 14 ≠ azami 12",
+     "Din Kültürü: d+w+e = 4 ≠ azami 6",
+     "Biyoloji: kazanım listesi başlıkla uyuşmuyor (başlık 0Y/3B, liste 0Y/2B): 1 boşun kazanımı listede yok",
+     "errorLogs 33 kayıt · başlıktaki w+e = 34 · beyanlı kazanım farkı: Biyoloji 0Y/1B"
     ]
    },
    {
@@ -1545,37 +2042,35 @@
       "e": 0,
       "net_beyan": 8.25
      },
+     "Din Kültürü": {
+      "d": 6,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 6
+     },
      "Matematik": {
-      "d": 12,
-      "w": 1,
-      "e": 10,
+      "d": 13,
+      "w": 5,
+      "e": 12,
       "net_beyan": 11.75
      },
      "Fizik": {
       "d": 5,
       "w": 4,
-      "e": 0,
+      "e": 1,
       "net_beyan": 4
      },
      "Kimya": {
       "d": 6,
       "w": 3,
-      "e": 0,
+      "e": 1,
       "net_beyan": 5.25
      },
      "Biyoloji": {
-      "d": 6,
-      "w": 1,
-      "e": 3,
-      "net_beyan": 5.75,
-      "kaynak": "aritmetik-turetme"
-     },
-     "Din Kültürü": {
       "d": 4,
-      "w": 2,
-      "e": 0,
-      "net_beyan": 3.5,
-      "kaynak": "aritmetik-turetme"
+      "w": 3,
+      "e": 3,
+      "net_beyan": 3.25
      }
     },
     "errorLogs": [
@@ -1614,16 +2109,16 @@
      {
       "qno": 5,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Yazım ve Noktalama",
-      "kazanim": "Yazım ve Noktalama",
+      "topic": "Noktalama",
+      "kazanim": "Noktalama",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 6,
       "lesson": "Türk Dili ve Edebiyatı",
-      "topic": "Yazım ve Noktalama",
-      "kazanim": "Yazım ve Noktalama",
+      "topic": "Noktalama",
+      "kazanim": "Noktalama",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
@@ -1654,40 +2149,40 @@
      {
       "qno": 10,
       "lesson": "Tarih",
-      "topic": "Eski Çağ toplumlarında inançlar ile bilim ve sanat anlayışları arasındaki ilişkiyi yorumlama",
-      "kazanim": "Eski Çağ toplumlarında inançlar ile bilim ve sanat anlayışları arasındaki ilişkiyi yorumlama",
+      "topic": "Dijitalleşmenin tarihe etkisi",
+      "kazanim": "Dijitalleşmenin tarihe etkisi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 11,
       "lesson": "Tarih",
-      "topic": "Tarım Devrimi'nin yerleşmeye etkisini değerlendirme",
-      "kazanim": "Tarım Devrimi'nin yerleşmeye etkisini değerlendirme",
+      "topic": "Eski Çağ'da mülkiyet ve sınıfların oluşumu",
+      "kazanim": "Eski Çağ'da mülkiyet ve sınıfların oluşumu",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 12,
       "lesson": "Coğrafya",
-      "topic": "Harita üzerinden çıkarım yapabilme",
-      "kazanim": "Harita üzerinden çıkarım yapabilme",
+      "topic": "Mekânın aynası haritalar ve harita okuryazarlığı",
+      "kazanim": "Mekânın aynası haritalar ve harita okuryazarlığı",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 13,
       "lesson": "Coğrafya",
-      "topic": "İklim teknolojileri bileşenleri",
-      "kazanim": "İklim teknolojileri bileşenleri",
+      "topic": "İklim sisteminin bileşen ve değişkenleri",
+      "kazanim": "İklim sisteminin bileşen ve değişkenleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 14,
       "lesson": "Coğrafya",
-      "topic": "İklim teknolojileri bileşenleri",
-      "kazanim": "İklim teknolojileri bileşenleri",
+      "topic": "İklim sisteminin bileşen ve değişkenleri",
+      "kazanim": "İklim sisteminin bileşen ve değişkenleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
@@ -1726,93 +2221,141 @@
      {
       "qno": 19,
       "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlere ilişkin varsayımlar",
+      "topic": "Bir aralığın mutlak değer ile gösterimi",
+      "kazanim": "Bir aralığın mutlak değer ile gösterimi",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 20,
       "lesson": "Matematik",
-      "topic": "Üslü ve köklü gösterimlere ilişkin varsayımlar",
-      "kazanim": "Üslü ve köklü gösterimlere ilişkin varsayımlar",
+      "topic": "Çıkarım yapma",
+      "kazanim": "Çıkarım yapma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 21,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar özellikleri",
-      "kazanim": "Üçgende açı ve kenar özellikleri",
+      "topic": "Fonksiyon temsillerini dönüştürme",
+      "kazanim": "Fonksiyon temsillerini dönüştürme",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 22,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar özellikleri",
-      "kazanim": "Üçgende açı ve kenar özellikleri",
+      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
+      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 23,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar özellikleri",
-      "kazanim": "Üçgende açı ve kenar özellikleri",
+      "topic": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
+      "kazanim": "Üslü ve köklü gösterimlerle yapılan işlemlere ilişkin varsayımlar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 24,
       "lesson": "Matematik",
-      "topic": "Üçgende açı ve kenar özellikleri",
-      "kazanim": "Üçgende açı ve kenar özellikleri",
+      "topic": "Genelleme karşılaştırma",
+      "kazanim": "Genelleme karşılaştırma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 25,
       "lesson": "Matematik",
-      "topic": "Algoritma temelli problem çözme",
-      "kazanim": "Algoritma temelli problem çözme",
+      "topic": "Üçgende açı ve kenar özellikleri",
+      "kazanim": "Üçgende açı ve kenar özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 26,
-      "lesson": "Fizik",
-      "topic": "Basınç verilerini kaydetme",
-      "kazanim": "Basınç verilerini kaydetme",
+      "lesson": "Matematik",
+      "topic": "Üçgende açı ve kenar özellikleri",
+      "kazanim": "Üçgende açı ve kenar özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 27,
-      "lesson": "Fizik",
-      "topic": "Durgun sıvılarda basınç",
-      "kazanim": "Durgun sıvılarda basınç",
+      "lesson": "Matematik",
+      "topic": "Üçgende açı ve kenar özellikleri",
+      "kazanim": "Üçgende açı ve kenar özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 28,
-      "lesson": "Fizik",
-      "topic": "Açık hava basıncına ilişkin çıkarımlar",
-      "kazanim": "Açık hava basıncına ilişkin çıkarımlar",
+      "lesson": "Matematik",
+      "topic": "Üçgende açı ve kenar özellikleri",
+      "kazanim": "Üçgende açı ve kenar özellikleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 29,
-      "lesson": "Fizik",
-      "topic": "Açık hava basıncına ilişkin çıkarımlar",
-      "kazanim": "Açık hava basıncına ilişkin çıkarımlar",
+      "lesson": "Matematik",
+      "topic": "Üçgen ispatları",
+      "kazanim": "Üçgen ispatları",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      },
      {
       "qno": 30,
+      "lesson": "Matematik",
+      "topic": "Algoritma problemleri",
+      "kazanim": "Algoritma problemleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 31,
+      "lesson": "Fizik",
+      "topic": "Hareketin temel kavramlarına yönelik benzerlikleri bulur",
+      "kazanim": "Hareketin temel kavramlarına yönelik benzerlikleri bulur",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 32,
+      "lesson": "Fizik",
+      "topic": "Hareket türleri",
+      "kazanim": "Hareket türleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 33,
+      "lesson": "Fizik",
+      "topic": "Basınç çıkarımları",
+      "kazanim": "Basınç çıkarımları",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 34,
+      "lesson": "Fizik",
+      "topic": "Sıvılarda Basınç",
+      "kazanim": "Sıvılarda Basınç",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 35,
+      "lesson": "Fizik",
+      "topic": "Açık hava basıncı verileri",
+      "kazanim": "Açık hava basıncı verileri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 36,
       "lesson": "Kimya",
       "topic": "Periyodik tabloda yer bulma",
       "kazanim": "Periyodik tabloda yer bulma",
@@ -1820,7 +2363,7 @@
       "date": "2026-03-26"
      },
      {
-      "qno": 31,
+      "qno": 37,
       "lesson": "Kimya",
       "topic": "Periyodik özellikler",
       "kazanim": "Periyodik özellikler",
@@ -1828,24 +2371,89 @@
       "date": "2026-03-26"
      },
      {
-      "qno": 32,
+      "qno": 38,
       "lesson": "Kimya",
       "topic": "Bileşiklerin adlandırılması",
       "kazanim": "Bileşiklerin adlandırılması",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 39,
+      "lesson": "Kimya",
+      "topic": "Kimyasal Türler Arası Etkileşimler",
+      "kazanim": "Kimyasal Türler Arası Etkileşimler",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 40,
+      "lesson": "Biyoloji",
+      "topic": "Canlıların ortak özellikleri",
+      "kazanim": "Canlıların ortak özellikleri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 41,
+      "lesson": "Biyoloji",
+      "topic": "Üç üst âlem (domain) sistemi ve canlılar",
+      "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-03-26"
+     },
+     {
+      "qno": 42,
+      "lesson": "Biyoloji",
+      "topic": "Organik moleküllerin yapısı",
+      "kazanim": "Organik moleküllerin yapısı",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-03-26"
      }
     ],
     "total": 120,
     "net": 67.5,
-    "kaynak": "9. sınıf deneme dökümü (PDF) · 26 Mart 2026",
-    "bilinen_soru": 111,
-    "tamamlanan_dersler": [
-     "Biyoloji",
-     "Din Kültürü"
+    "kaynak": "9. sınıf deneme revize dökümü · 26 Mart 2026",
+    "bilinen_soru": 120,
+    "kazanim_farki": [
+     {
+      "ders": "Matematik",
+      "baslik": {
+       "yanlis": 5,
+       "bos": 12
+      },
+      "liste": {
+       "yanlis": 1,
+       "bos": 15
+      },
+      "fark": {
+       "yanlis": 4,
+       "bos": -3
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     },
+     {
+      "ders": "Biyoloji",
+      "baslik": {
+       "yanlis": 3,
+       "bos": 3
+      },
+      "liste": {
+       "yanlis": 3,
+       "bos": 0
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 3
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     }
     ],
     "uyarilar": [
-     "PDF'te Biyoloji, Din Kültürü bölümü YOK. Bu derslerin neti 9.25 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+     "ders D/Y/B toplamı 74/26/20 ≠ genel 73/22/25 (net aynı: 67.5 = 67.5)",
+     "Matematik-1: kazanım listesi başlıkla uyuşmuyor (başlık 5Y/12B, liste 1Y/15B): 4 yanlışın kazanımı listede yok · 3 boş listede FAZLA",
+     "Biyoloji: kazanım listesi başlıkla uyuşmuyor (başlık 3Y/3B, liste 3Y/0B): 3 boşun kazanımı listede yok",
+     "errorLogs 42 kayıt · başlıktaki w+e = 46 · beyanlı kazanım farkı: Matematik 4Y/-3B, Biyoloji 0Y/3B"
     ]
    },
    {
@@ -1863,21 +2471,31 @@
       "d": 11,
       "w": 1,
       "e": 0,
-      "net_beyan": 10.75,
-      "kaynak": "bilesik-satir"
+      "net_beyan": 10.75
+     },
+     "Coğrafya": {
+      "d": 12,
+      "w": 0,
+      "e": 0,
+      "net_beyan": 12
      },
      "Din Kültürü": {
       "d": 5,
       "w": 1,
       "e": 0,
-      "net_beyan": 4.75,
-      "kaynak": "bilesik-satir"
+      "net_beyan": 4.75
      },
      "Matematik": {
       "d": 14,
       "w": 1,
-      "e": 12,
+      "e": 15,
       "net_beyan": 13.75
+     },
+     "Fizik": {
+      "d": 6,
+      "w": 0,
+      "e": 4,
+      "net_beyan": 6
      },
      "Kimya": {
       "d": 7,
@@ -1890,20 +2508,6 @@
       "w": 3,
       "e": 6,
       "net_beyan": 0.25
-     },
-     "Fizik": {
-      "d": 8,
-      "w": 0,
-      "e": 2,
-      "net_beyan": 8,
-      "kaynak": "aritmetik-turetme"
-     },
-     "Coğrafya": {
-      "d": 10,
-      "w": 0,
-      "e": 2,
-      "net_beyan": 10,
-      "kaynak": "aritmetik-turetme"
      }
     },
     "errorLogs": [
@@ -2014,8 +2618,8 @@
      {
       "qno": 14,
       "lesson": "Matematik",
-      "topic": "Eşlik ve benzerlik önermeleri",
-      "kazanim": "Eşlik ve benzerlik önermeleri",
+      "topic": "Eşlik ve Benzerlik",
+      "kazanim": "Eşlik ve Benzerlik",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
@@ -2069,22 +2673,38 @@
      },
      {
       "qno": 21,
-      "lesson": "Kimya",
-      "topic": "Atomların elektron dizilimi ve Periyodik Tablo",
-      "kazanim": "Atomların elektron dizilimi ve Periyodik Tablo",
+      "lesson": "Matematik",
+      "topic": "Özdeşliklerden yararlanma",
+      "kazanim": "Özdeşliklerden yararlanma",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
       "qno": 22,
-      "lesson": "Kimya",
-      "topic": "Atomların elektron dizilimi ve Periyodik Tablo",
-      "kazanim": "Atomların elektron dizilimi ve Periyodik Tablo",
+      "lesson": "Fizik",
+      "topic": "Hareket türleri",
+      "kazanim": "Hareket türleri",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
       "qno": 23,
+      "lesson": "Kimya",
+      "topic": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
+      "kazanim": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-05-22"
+     },
+     {
+      "qno": 24,
+      "lesson": "Kimya",
+      "topic": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
+      "kazanim": "Atomların elektron dizilimiyle periyodik tablodaki yeri",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-05-22"
+     },
+     {
+      "qno": 25,
       "lesson": "Kimya",
       "topic": "Kimyasal Türler Arası Etkileşimler",
       "kazanim": "Kimyasal Türler Arası Etkileşimler",
@@ -2092,7 +2712,7 @@
       "date": "2026-05-22"
      },
      {
-      "qno": 24,
+      "qno": 26,
       "lesson": "Biyoloji",
       "topic": "Organik moleküllerin yapısı",
       "kazanim": "Organik moleküllerin yapısı",
@@ -2100,34 +2720,18 @@
       "date": "2026-05-22"
      },
      {
-      "qno": 25,
-      "lesson": "Biyoloji",
-      "topic": "Karbohidrat, Yağ ve Proteinler",
-      "kazanim": "Karbohidrat, Yağ ve Proteinler",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2026-05-22"
-     },
-     {
-      "qno": 26,
-      "lesson": "Biyoloji",
-      "topic": "Karbohidrat, Yağ ve Proteinler",
-      "kazanim": "Karbohidrat, Yağ ve Proteinler",
-      "type": "KONUEKSİKLİĞİ",
-      "date": "2026-05-22"
-     },
-     {
       "qno": 27,
       "lesson": "Biyoloji",
-      "topic": "Enzimatik reaksiyonlara etki eden faktörler",
-      "kazanim": "Enzimatik reaksiyonlara etki eden faktörler",
+      "topic": "Karbohidrat, Yağ ve Proteinler",
+      "kazanim": "Karbohidrat, Yağ ve Proteinler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
       "qno": 28,
       "lesson": "Biyoloji",
-      "topic": "Enzimatik reaksiyonlara etki eden faktörler",
-      "kazanim": "Enzimatik reaksiyonlara etki eden faktörler",
+      "topic": "Karbohidrat, Yağ ve Proteinler",
+      "kazanim": "Karbohidrat, Yağ ve Proteinler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
@@ -2142,16 +2746,16 @@
      {
       "qno": 30,
       "lesson": "Biyoloji",
-      "topic": "Üç üst âlem (domain) sistemi ve canlılar",
-      "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
+      "topic": "Enzimatik reaksiyonlara etki eden faktörler",
+      "kazanim": "Enzimatik reaksiyonlara etki eden faktörler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
      {
       "qno": 31,
       "lesson": "Biyoloji",
-      "topic": "Üç üst âlem (domain) sistemi ve canlılar",
-      "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
+      "topic": "Enzimatik reaksiyonlara etki eden faktörler",
+      "kazanim": "Enzimatik reaksiyonlara etki eden faktörler",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
      },
@@ -2162,19 +2766,66 @@
       "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
       "type": "KONUEKSİKLİĞİ",
       "date": "2026-05-22"
+     },
+     {
+      "qno": 33,
+      "lesson": "Biyoloji",
+      "topic": "Üç üst âlem (domain) sistemi ve canlılar",
+      "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-05-22"
+     },
+     {
+      "qno": 34,
+      "lesson": "Biyoloji",
+      "topic": "Üç üst âlem (domain) sistemi ve canlılar",
+      "kazanim": "Üç üst âlem (domain) sistemi ve canlılar",
+      "type": "KONUEKSİKLİĞİ",
+      "date": "2026-05-22"
      }
     ],
     "total": 120,
     "net": 78.5,
-    "kaynak": "9. sınıf deneme dökümü (PDF) · 22 Mayıs 2026",
-    "bilinen_soru": 117,
-    "tamamlanan_dersler": [
-     "Fizik",
-     "Coğrafya"
+    "kaynak": "9. sınıf deneme revize dökümü · 22 Mayıs 2026",
+    "bilinen_soru": 120,
+    "kazanim_farki": [
+     {
+      "ders": "Matematik",
+      "baslik": {
+       "yanlis": 1,
+       "bos": 15
+      },
+      "liste": {
+       "yanlis": 1,
+       "bos": 13
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 2
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     },
+     {
+      "ders": "Fizik",
+      "baslik": {
+       "yanlis": 0,
+       "bos": 4
+      },
+      "liste": {
+       "yanlis": 0,
+       "bos": 1
+      },
+      "fark": {
+       "yanlis": 0,
+       "bos": 3
+      },
+      "aciklama": "Kazanım listesi ders başlığıyla uyuşmuyor. Kayıt UYDURULMADI: errorLogs yalnızca belgede yazılı kazanımları içerir. D/Y/B ve net başlıktan alındı."
+     }
     ],
     "uyarilar": [
-     "Tarih & Din (15.5 net) alt derslere bölündü: Tarih 10.75 · Din Kültürü 4.75 = 15.5",
-     "PDF'te Fizik, Coğrafya bölümü YOK. Bu derslerin neti 18 (Genel Net − ders toplamı). d/w/e kapasite oranıyla türetildi, gözlem değildir."
+     "Matematik-1: kazanım listesi başlıkla uyuşmuyor (başlık 1Y/15B, liste 1Y/13B): 2 boşun kazanımı listede yok",
+     "Fizik: kazanım listesi başlıkla uyuşmuyor (başlık 0Y/4B, liste 0Y/1B): 3 boşun kazanımı listede yok",
+     "errorLogs 34 kayıt · başlıktaki w+e = 39 · beyanlı kazanım farkı: Matematik 0Y/2B, Fizik 0Y/3B"
     ]
    }
   ]

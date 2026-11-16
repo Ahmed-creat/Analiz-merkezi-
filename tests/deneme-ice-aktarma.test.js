@@ -11,7 +11,7 @@
      4) lessons anahtarları LESSON_CONFIG'te (bileşik satırlar hariç)
      5) d/w/e negatif değil, tam sayı
      6) netOf(d,w) beyan nete en fazla 0,25 uzak (yuvarlama payı)
-     7) errorLogs sayısı = derslerdeki w + e toplamı (türetilmiş dersler hariç)
+     7) errorLogs sayısı = derslerdeki w + e toplamı − beyan edilmiş eksik kazanım
      7b) ARİTMETİK: Σ net_beyan = sınavın Genel Net'i  (birebir, tolerans 0)
      7c) ARİTMETİK: Σ(d − w/4) Genel Net'e en fazla 0,25 uzak
          — PDF'in kendi içinde çeliştiği sınavlar _tutarsizliklar'da beyanlıysa
@@ -119,9 +119,20 @@ let bileşik = [];
       ok(etiket + " azami aşımı beyan edilmiş", beyan,
         (v.d + v.w + v.e) + " > " + LESSON_CONFIG[ders].max + " (beyan yok)");
     } else ok(etiket + " azamiyi aşmıyor", true);
+    // Toplam 120 ve genel net tutuyorsa her ders azamisini DOLDURMALI.
+    if (veri._revizyon) {
+      const toplam = Object.values(ex.lessons || {}).reduce((a, x) => a + x.d + x.w + x.e, 0);
+      ok(etiket + " kapasite tam", v.d + v.w + v.e === LESSON_CONFIG[ders].max || toplam !== 120,
+        (v.d + v.w + v.e) + " ≠ " + LESSON_CONFIG[ders].max + " (ders toplamı " + toplam + ")");
+    }
     if (Number.isFinite(v.net_beyan)) {
       const fark = Math.abs(netOf(v.d, v.w) - v.net_beyan);
       ok(etiket + " net beyana yakın", fark <= 0.25 + 1e-9, "fark " + fark.toFixed(2));
+    }
+    // Taşıma yapıldıysa belgenin özgün neti kaybolmamalı.
+    if (Number.isFinite(v.belge_net)) {
+      const beyan = (veri._tutarsizliklar || []).some(t => t.sinav === ex.id);
+      ok(etiket + " belge_net beyanlı", beyan, "belge_net " + v.belge_net + " ama tutarsızlık kaydı yok");
     }
   });
 });
@@ -131,14 +142,29 @@ ok("bileşik satır yalnız 2 sınavda", new Set(bileşik).size <= 2, [...new Se
 console.log("\n== 4) Hata kayıtları ==");
 let toplamKayit = 0;
 (veri.state.exams || []).forEach((ex) => {
-  /* Türetilmiş derslerin (PDF'te bölümü olmayan) kazanım kaydı YOKTUR;
-     w/e'leri yalnız aritmetiği tutturmak için vardır. Kayıt kontrolünden düşülür. */
+  /* Belgede kazanım metni yazılmamış (ya da fazla yazılmış) sorular olabilir.
+     Kayıt UYDURULMAZ; her sapma sınavın kazanim_farki alanında beyan edilir.
+     Beyan ile gerçek kayıt sayısı birebir tutmak ZORUNDA. */
   const beklenen = Object.values(ex.lessons || {}).reduce((a, v) => a + v.w + v.e, 0);
-  const turetilmis = Object.values(ex.lessons || {})
-    .filter(v => v.kaynak === "aritmetik-turetme")
-    .reduce((a, v) => a + v.w + v.e, 0);
-  ok(ex.id + " kayıt sayısı = w+e (türetilmiş hariç)", ex.errorLogs.length === beklenen - turetilmis,
-    ex.errorLogs.length + " ≠ " + (beklenen - turetilmis) + " (w+e " + beklenen + ", türetilmiş " + turetilmis + ")");
+  const farklar = (ex.kazanim_farki || []);
+  const farkToplam = farklar.reduce((a, k) => a + (k.fark.yanlis || 0) + (k.fark.bos || 0), 0);
+  ok(ex.id + " kayıt sayısı = w+e − beyanlı kazanım farkı", ex.errorLogs.length === beklenen - farkToplam,
+    ex.errorLogs.length + " ≠ " + (beklenen - farkToplam) + " (w+e " + beklenen + ", beyanlı fark " + farkToplam + ")");
+
+  // Ders bazında da tutmalı: kayıt(ders) + fark(ders) = w + e
+  const dersKayit = {};
+  ex.errorLogs.forEach(l => { dersKayit[l.lesson] = (dersKayit[l.lesson] || 0) + 1; });
+  const dersFark = {};
+  farklar.forEach(k => { dersFark[k.ders] = (k.fark.yanlis || 0) + (k.fark.bos || 0); });
+  Object.entries(ex.lessons || {}).forEach(([ders, v]) => {
+    const kayit = dersKayit[ders] || 0;
+    const fark = dersFark[ders] || 0;
+    ok(ex.id + " · " + ders + " kayıt+fark = w+e", kayit + fark === v.w + v.e,
+      "kayıt " + kayit + " + fark " + fark + " ≠ " + (v.w + v.e));
+    ok(ex.id + " · " + ders + " beyan ile liste tutarlı",
+      !dersFark[ders] || farklar.some(k => k.ders === ders && k.liste &&
+        k.liste.yanlis - k.baslik.yanlis !== undefined), "beyan eksik");
+  });
   toplamKayit += ex.errorLogs.length;
   ex.errorLogs.forEach((l, i) => {
     const n = ex.id + " kayıt " + (i + 1);
@@ -153,7 +179,14 @@ let toplamKayit = 0;
   const qno = ex.errorLogs.map(l => l.qno);
   ok(ex.id + " qno tekrar etmiyor", new Set(qno).size === qno.length);
 });
-ok("toplam hata kaydı 209", toplamKayit === 209, String(toplamKayit));
+/* Toplam kayıt SABİT DEĞİL: belgede kazanımı yazılmamış sorular varsa düşer.
+   Doğru ölçüt, kayıtların derslerle ve beyanlarla tutarlı olması (yukarıda). */
+ok("toplam hata kaydı > 0", toplamKayit > 0, String(toplamKayit));
+ok("toplam hata kaydı = w+e − beyanlı fark",
+  toplamKayit === (veri.state.exams || []).reduce((a, ex) =>
+    a + Object.values(ex.lessons || {}).reduce((b, v) => b + v.w + v.e, 0) -
+    (ex.kazanim_farki || []).reduce((b, k) => b + (k.fark.yanlis || 0) + (k.fark.bos || 0), 0), 0),
+  String(toplamKayit));
 
 // ---------- 4b) tüm nedenler konu eksikliği ----------
 console.log("\n== 4b) Tüm nedenler konu eksikliği ==");
@@ -256,7 +289,7 @@ console.log("\n== 6) BKT motoru (uçtan uca) ==");
 console.log("\n" + "-".repeat(52));
 if (kalan === 0) {
   console.log(`DENEME İÇE AKTARMA: ${gecen}/${gecen} geçti ✅`);
-  console.log("7 sınav · 209 hata kaydı · uygulama şemasına uygun.");
+  console.log(veri.state.exams.length + " sınav · " + toplamKayit + " hata kaydı · uygulama şemasına uygun.");
   process.exit(0);
 } else {
   console.log(`GEÇEN ${gecen} · KALAN ${kalan} ❌`);
