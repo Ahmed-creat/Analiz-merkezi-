@@ -389,6 +389,20 @@ Aşağıdaki dosya **birebir şablon** olarak kullanılabilir — doğrulayıcı
 
 1. **Sadakat:** Soru yalnızca o çıktının kazanımı ve süreç bileşenleri kapsamında olur.
    Başka çıktının konusundan soru yazılmaz.
+   **Kapsam denetimi (zorunlu):** Bilgi kitapta geçse bile, kazanımın istemediği bir
+   ayrıntı sorulmaz. Ölçüt şudur: “Öğrenci bu soruyu ancak kazanımın öğrettiği beceriyle
+   çözebilir mi, yoksa yan konudan ek bilgi mi gerekiyor?”
+   Yanlış örnek (düzeltildi): “Coğrafyanın Doğası” ünitesinde, kazanım
+   *“örnek olay/olgu/mekânı coğrafyanın temel kavramlarıyla ilişkilendirme”* iken
+   Marmara Gölü için *“gölün oluşumunda hangi süreç etkili olmuştur? (akarsu biriktirmesi /
+   alüvyon set gölü)”* sorusu — gölün oluşum türü ayrı bir konudur, öğrencinin bilmesi
+   beklenmez. Doğru yaklaşım: aynı örnek olay üzerinden ünitenin anahtar kavramları
+   (konum, dağılış, değişim, hareket, mekân, zaman) sorulur.
+   Uygulama kuralı: soruyu yazdıktan sonra “bu cevap hangi kazanıma hizmet ediyor?”
+   sorusuna kazanım metniyle cevap verilemiyorsa soru değiştirilir.
+   Tarama aracı: `node docs/uretim/araclar/kapsam-denetle.js --liste` (rapor:
+   `docs/uretim/KAPSAM-DENETLEME.md`). Araç yalnızca sözcük düzeyinde ipucu verir;
+   son karar kazanım metniyle karşılaştırarak verilir.
 2. **Süreç kapsaması:** Her süreç bileşenine **en az 2 soru**. Bir madde atlanırsa havuz
    reddedilir.
 3. **Cevap dengesi:** Hiçbir şık %40'ı geçmez. (Mevcut havuzlarda A %34,8 ile bozuktu —
