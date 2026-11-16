@@ -3,176 +3,108 @@
 > Listelenen her soru **tek tek** gözden geçirildi.
 > `gerekmez` = şekle bağımlı veri yok, metin kendi kendine yeter · `gorsel var` = soruda `gorsel` alanı tanımlı.
 
-## fel_10_t01_c01.json (`FEL.10.1.1`)
+## din_10_t01_c01.json (`DKAB.10.1.1`)
 
 | soru | metin (kısaltılmış) | karar | gerekçe |
 | --- | --- | --- | --- |
-| `fel_10_t01_c01_o01` | “Philosophia” terimini ilk kullanan ve bilgeliğin tanrılar… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o02` | Felsefeyi “yolda olmak” biçiminde tanımlayan 20. yüzyıl fi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o03` | Felsefi düşüncenin, doğru kabul edilen bilgileri bile gere… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o04` | Felsefi düşüncenin “yığılımlı ilerleme” özelliği aşağıdaki… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o05` | Felsefe, Orta Çağ’da dinî bakış açısıyla evreni anlamlandı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o06` | Bir düşünür, “Sokak kapısı açık mı?” sorusu ile “Şuur nedi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o07` | Felsefi soruların yanıtının deneyle kesin olarak kapatılam… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o08` | Bilimin başlangıçta felsefenin bir parçası olarak doğması … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o09` | Felsefenin din karşısındaki tutumu, dinî öğretilerin sorgu… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t01_c01_o10` | Felsefi düşünmenin bireylere katkısı olarak aşağıdakilerde… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o01` | İslam literatüründe bilgi genellikle “ilim” kavramıyla kar… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o02` | Hz. Muhammed’in (sav) “İlim öğrenmek kadın ve erkek her Mü… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o03` | Bedir Savaşı sonrasında okuma yazma bilen esirlerin on Müs… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o04` | Metne göre doğru bilgi insanı öncelikli olarak hangi sonuc… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o05` | İslam’a göre bilginin asıl kaynağı hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o06` | İslam düşüncesinde nesnel bilgi kaynakları hangileridir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o07` | Sadık haberin iki kısmı aşağıdakilerden hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o08` | Mütevatir haberin kesin bilgi kaynağı sayılmasının gerekçe… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o09` | Salim duyularla elde edilen bilgilerin sınırlı sayılmasını… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c01_o10` | Öznel bilgi kaynaklarıyla elde edilen bilgilerin özelliği … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 
 _Bu havuzda görsel gerekmedi._
 
-## fel_10_t02_c01.json (`FEL.10.2.1`)
+## din_10_t01_c02.json (`DKAB.10.1.2`)
 
 | soru | metin (kısaltılmış) | karar | gerekçe |
 | --- | --- | --- | --- |
-| `fel_10_t02_c01_o01` | Türkçede akrabalık ilişkileri için çok sayıda ayrı sözcük … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o02` | Bazı düşünürlerin düşünmeyi “sessiz konuşma” olarak nitele… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o03` | Dil ile düşünmenin birbirini etkilediğini ancak birinin di… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o04` | Bir dilde yeni teknolojilerle birlikte yeni sözcüklerin tü… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o05` | Dilin sözcük dağarcığının düşünme biçimini sınırlandırdığı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o06` | Düşünme ve dil ilişkisine dair farklı görüşleri bir araya … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o07` | “Dil düşünceyi belirler” ile “düşünce dili belirler” savla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o08` | Bir metinde dilin düşünceyi sınırladığı savı ile düşünmeni… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o09` | Düşünme ve dil üzerine farklı görüşleri sınıflandırarak su… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c01_o10` | Düşünme ve dil ilişkisi üzerine kurulan bütünlüklü bir açı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o01` | Allah-âlem ilişkisi konusuna başlarken öğrencilerden merak… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o02` | Allah-âlem ilişkisi hakkında merak edilenleri belirlerken … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o03` | Aşağıdaki sorulardan hangisi Allah-âlem ilişkisini incelem… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o04` | “Allah evreni yarattıktan sonra onu kendi hâline mi bırakm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o05` | “Âlemin varlığı kendiliğinden mi, bir yaratıcıya mı bağlıd… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o06` | Bir öğrenci, Allah-âlem ilişkisini araştırırken “Allah’ın … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o07` | Akıl ve duyularla algılanamayan varlıkların oluşturduğu bö… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o08` | İslam inancına göre insanın yeryüzündeki konumu hangi soru… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o09` | “Âlemlerin Rabbi” tabiri Allah-âlem ilişkisi hakkında hang… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c02_o10` | Allah-âlem ilişkisine dair ayetlerden hareketle aşağıdaki … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 
 _Bu havuzda görsel gerekmedi._
 
-## fel_10_t02_c02.json (`FEL.10.2.2`)
+## din_10_t01_c03.json (`DKAB.10.1.3`)
 
 | soru | metin (kısaltılmış) | karar | gerekçe |
 | --- | --- | --- | --- |
-| `fel_10_t02_c02_o01` | “Bütün insanlar ölümlüdür; Ali insan olduğuna göre Ali de … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o02` | “Evren ya vardır ya yoktur.” önermesi hangi akıl ilkesini … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o03` | Bir akıl yürütmede sonucun öncüllerden zorunlu olarak çıkm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o04` | “Hava soğudu, yollar buz tuttu, bu yüzden kaza riski arttı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o05` | “Bütün öğrenciler sınava girdi. Ayşe öğrencidir. O hâlde A… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o06` | Bir tartışmada konuyla ilgisi olmayan cümlelerin ayıklanma… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o07` | “Çoğu insan sabah erken kalkmanın daha verimli olduğunu sö… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o08` | Bir metindeki savı kendi cümleleriyle yeniden ifade ederke… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o09` | Günlük dildeki bir konuşmayı, öncüllerin alt alta yazıldığ… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t02_c02_o10` | Aynı düşünceyi farklı sözcüklerle anlatan iki cümlenin anl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o01` | “Hakkında kesin bilgi sahibi olmadığın şeyin peşine düşme.… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o02` | “De ki: O, sizi yaratan ve size kulaklar, gözler ve kalple… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o03` | Her iki ayette de bilgi edinme vasıtası olarak zikredilen … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o04` | İsra suresinde kulak, göz ve kalbin “ondan sorumlu” sayılm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o05` | İsra 36. ayet ile Mülk 23. ayet içeriklerine göre nasıl sı… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o06` | Aşağıdaki yargılardan hangisi Mülk 23. ayetin içeriğine gi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o07` | İsra 36. ayetinden hareketle aşağıdaki çıkarımlardan hangi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o08` | Mülk 23. ayetinden hareketle insanın bilgi edinme sürecine… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o09` | İsra 36. ayetin mesajını kendi cümleleriyle ifade eden bir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t01_c03_o10` | Mülk 23. ayetin mesajını kendi cümleleriyle ifade eden aşa… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 
 _Bu havuzda görsel gerekmedi._
 
-## fel_10_t03_c01.json (`FEL.10.3.1`)
+## din_10_t02_c01.json (`DKAB.10.2.1`)
 
 | soru | metin (kısaltılmış) | karar | gerekçe |
 | --- | --- | --- | --- |
-| `fel_10_t03_c01_o01` | MÖ 6. yüzyıldan itibaren varlığın temel özelliklerini, yap… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o02` | Dış dünyadaki nesne ve olayların insan bilincinde beliren … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o03` | Parmenides’in varlığı değişmez, bölünemez ve sonsuz saymas… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o04` | Gorgias’ın varlık hakkındaki görüşü hangi sonuca ulaşır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o05` | “Varlık var mıdır?” tartışması felsefe tarihinde hangi iki… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o06` | Parmenides’in “düşünce ile varlık birdir” yargısını temell… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o07` | Hegel’e göre tinin tez, antitez ve sentez süreciyle evreni… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o08` | İbni Sina’nın varlıkları zorunlu ve mümkün varlıklar olara… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o09` | Bir varlık felsefesi metninde “töz” kavramının farklı anla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t03_c01_o10` | Varlık felsefesi metinlerinde argümanların dayandığı öncül… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o01` | İnsanın “Beni kim yarattı, niçin yaratıldım?” gibi sorular… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o02` | Allah’ın varlığı inancının insan hayatındaki işlevi hangis… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o03` | Kur’an’ın “Eğer doğru söyleyenler iseniz kesin delilinizi … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o04` | “Evren hareket etmektedir; her hareket edenin bir hareket … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o05` | Hudus deliline göre evrenin bir yaratıcıya muhtaç olmasını… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o06` | “Yaratılanlar Allah’ın varlığına işaret eder mi?” sorusunu… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o07` | Teleolojik delil, evreni incelerken hangi olgudan hareket … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o08` | Ontolojik delilin diğer delillerden ayrılan yönü hangisidi… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o09` | Gazali’nin şiir ve musiki zevki örneği hangi delilin sınır… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c01_o10` | Delillerin sınıflandırılmasından hareketle hangi çıkarım y… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 
 _Bu havuzda görsel gerekmedi._
 
-## fel_10_t04_c01.json (`FEL.10.4.1`)
+## din_10_t02_c02.json (`DKAB.10.2.2`)
 
 | soru | metin (kısaltılmış) | karar | gerekçe |
 | --- | --- | --- | --- |
-| `fel_10_t04_c01_o01` | 17. yüzyıldan itibaren bilginin yapısını, kaynağını, sınır… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o02` | Bilgiyi bilgi olmayandan ayıran temel ölçüt aşağıdakilerde… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o03` | Şüphecilere göre kesin bilgiye ulaşmanın imkânsız olmasını… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o04` | Descartes’ın şüpheciliğini septiklerin yaklaşımından ayıra… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o05` | Rasyonalizm ile empirizmin bilginin kaynağı konusundaki te… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o06` | 17-18. yüzyıl İngiliz felsefesinde savunulan empirizme gör… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o07` | Kant’ın 18. yüzyılda geliştirdiği kritisizme göre bilgi na… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o08` | Descartes’ın “Düşünüyorum, öyleyse varım.” çıkarımı hangi … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o09` | Doğruluk ölçütlerinden biri, önermelerin birbiriyle çelişm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t04_c01_o10` | Bir metinde “sanı” ile “bilgi” ayrımının belirsizleşmesi h… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o01` | Ayet ve hadislerde Allah’ın isim ve sıfatlarını tespit ede… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o02` | “Allah güzeldir, güzelliği sever.” hadisinde Allah’ın hang… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o03` | “Allah’ım sen affedicisin, affı seversin beni affet” duası… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o04` | Allah’ın Basir ismi hangi sıfatla ilişkilidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o05` | Hay isminin kudret, tekvin ve ilim sıfatlarıyla ilişkili o… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o06` | Allah’ın görmesi ile insanın görme yetisi arasındaki benze… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o07` | Zatî sıfatlar ile sübuti sıfatlar arasındaki temel fark ha… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o08` | Vahdaniyet sıfatı hangi anlama gelir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o09` | Hastalık sebebiyle dua eden bir kişinin “Şafi” ismini zikr… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c02_o10` | Bir öğrenci kompozisyonunda Allah’ın isimlerini kullanırke… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 
 _Bu havuzda görsel gerekmedi._
 
-## fel_10_t05_c01.json (`FEL.10.5.1`)
+## din_10_t02_c03.json (`DKAB.10.2.3`)
 
 | soru | metin (kısaltılmış) | karar | gerekçe |
 | --- | --- | --- | --- |
-| `fel_10_t05_c01_o01` | İnsanların toplumsal davranışlarını düzenleyen yazısız kur… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o02` | Antik Çağ’dan bu yana ahlakı felsefi açıdan inceleyen, ahl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o03` | Sokrates, Platon ve Aristoteles’in iyi anlayışında temel ö… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o04` | Evrensel ahlak yasasının varlığını reddeden görüş hangi ge… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o05` | Kant’a göre bir eylemin ahlaki değeri neye bağlıdır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o06` | Determinist görüşün özgürlük-sorumluluk tartışmasındaki et… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o07` | 19. yüzyılda geliştirilen faydacılığın ahlaki ölçütü nedir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o08` | Hazcı ahlak anlayışına yöneltilen temel eleştiri aşağıdaki… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o09` | Bir ahlak metninde “iyi” kavramının hem sonuç hem niyet an… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t05_c01_o10` | Ahlak metinlerinde filozofların argümanlarını karşılaştırm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-
-_Bu havuzda görsel gerekmedi._
-
-## fel_10_t06_c01.json (`FEL.10.6.1`)
-
-| soru | metin (kısaltılmış) | karar | gerekçe |
-| --- | --- | --- | --- |
-| `fel_10_t06_c01_o01` | Güzellik kavramını ve bu kavramın insan üzerindeki etkiler… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o02` | Bir nesneye çıkar gözetmeksizin yalnızca estetik bir bakış… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o03` | Bir öğrenci, bir heykelin güzelliğini “parçaların uyumu ve… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o04` | Kant’a göre güzel, hangi özelliğiyle tanımlanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o05` | Ortak estetik yargıların imkânı tartışması hangi soruya od… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o06` | Sanatı taklit olarak gören görüş ile ifade olarak gören gö… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o07` | Sanat felsefesinde, estetik bir nesneyle kurulan deneyim s… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o08` | Bir sanat eserinin değerini yalnızca öznenin beğenisine ba… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o09` | Estetik metinlerde “güzel” kavramının filozoflarca farklı … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t06_c01_o10` | Sanat felsefesi metinlerindeki estetik yargı örneklerini i… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-
-_Bu havuzda görsel gerekmedi._
-
-## fel_10_t07_c01.json (`FEL.10.7.1`)
-
-| soru | metin (kısaltılmış) | karar | gerekçe |
-| --- | --- | --- | --- |
-| `fel_10_t07_c01_o01` | Siyaset felsefesinin temel problemleri ağırlıklı olarak ha… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o02` | Yönetme yetkisinin ilahi bir güç tarafından verildiğine da… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o03` | Aristoteles, insanın doğası gereği topluluk içinde yaşadığ… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o04` | Hobbes, Locke ve Rousseau devletin insanların karşılıklı a… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o05` | Ütopya ile distopya arasındaki temel fark hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o06` | Aristoteles’e göre yönetimin seçkinlere bırakılması gerekt… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o07` | İktidarın kaynağı konusunda tanrı temelli ve insan temelli… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o08` | Ütopyaların siyaset felsefesindeki işlevi hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o09` | Bir siyaset metninde “özgürlük” kavramının hem bireysel he… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t07_c01_o10` | Siyaset felsefesi metinlerindeki argümanları değerlendirir… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-
-_Bu havuzda görsel gerekmedi._
-
-## fel_10_t08_c01.json (`FEL.10.8.1`)
-
-| soru | metin (kısaltılmış) | karar | gerekçe |
-| --- | --- | --- | --- |
-| `fel_10_t08_c01_o01` | Dinî konuları akla ve gerekçeye dayalı biçimde inceleyen, … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o02` | Dinî konuları belirli bir dinin öğretileri ışığında değerl… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o03` | Kozmolojik argümanın dayandığı temel öncül hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o04` | Teleolojik argüman hangi gözleme dayanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o05` | Ontolojik argümanın dayandığı öncül hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o06` | Kötülük problemi hangi ikileme dayanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o07` | Kötülük problemine verilen “kötülük, iyiliğin bilinmesi iç… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o08` | Ruhun ölümsüzlüğü problemi hangi konularla birlikte ele al… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o09` | Bir din felsefesi metninde kanıtlamaların inanç öğretileri… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t08_c01_o10` | Din felsefesi metinlerinde “iman” ve “bilgi” kavramlarının… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-
-_Bu havuzda görsel gerekmedi._
-
-## fel_10_t09_c01.json (`FEL.10.9.1`)
-
-| soru | metin (kısaltılmış) | karar | gerekçe |
-| --- | --- | --- | --- |
-| `fel_10_t09_c01_o01` | 20. yüzyılda bilimi konu edinen; bilimin ne olduğunu, yönt… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o02` | Bir alanda belirli bir dönemde geçerli olan genel kabul ha… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o03` | Bilimsel yöntemin ilk aşaması aşağıdakilerden hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o04` | Kuhn’a göre olağan bilim döneminin sona ermesine yol açan … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o05` | Carnap’a göre bilim aşağıdakilerden hangisiyle tanımlanır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o06` | Popper’a göre bir önermenin bilimsel sayılmasının ölçütü h… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o07` | Popper’ın doğrulama yerine yanlışlamayı önermesinin gerekç… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o08` | Kuhn’a göre bilimsel ilerleme nasıl gerçekleşir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o09` | Bir bilim felsefesi metninde doğrulama ile yanlışlamanın k… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
-| `fel_10_t09_c01_o10` | Astroloji gibi alanların bilim sayılıp sayılmadığı tartışm… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o01` | Haşr suresinin 22-24. ayetleri hangi konuyu ele alır? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o02` | “Gayb” ve “şehadet” kavramları Haşr suresinin 22. ayetinde… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o03` | Haşr suresinin 22-24. ayetlerinde geçen isimlerden biri aş… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o04` | “Melik” isminin Haşr suresindeki anlamı hangisidir? | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o05` | Haşr suresinde geçen isimlerden hangisi yaratmayla ilgili … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o06` | Haşr suresinde geçen isimler konularına göre nasıl sınıfla… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o07` | Haşr suresinin son ayetinde göklerde ve yerdeki varlıkları… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o08` | Ayetlerdeki isimlerden hareketle “hiç kimse Allah’a ortak … | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o09` | Haşr suresinin 22-24. ayetlerine göre Allah’ı tanımanın ik… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
+| `din_10_t02_c03_o10` | Bir öğrenci Haşr suresinden çıkardığı mesajı ifade ederken… | gerekmez | senaryo/hesap sorusu; şekle bağımlı veri yok |
 
 _Bu havuzda görsel gerekmedi._
 
 ---
 
-Toplam incelenen soru: **100** · görselli: **0** · görselsiz: **100**
+Toplam incelenen soru: **60** · görselli: **0** · görselsiz: **60**

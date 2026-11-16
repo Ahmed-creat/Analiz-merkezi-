@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 297,
- "soru_sayisi": 3285,
- "flashcard_sayisi": 3285,
+ "havuz_sayisi": 303,
+ "soru_sayisi": 3345,
+ "flashcard_sayisi": 3345,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -1190,6 +1190,114 @@
    "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
    "kod": "",
    "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_t01_c01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t01_c01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İslam düşüncesinde bilginin yerini ve kaynaklarını inceler.",
+    "İslam düşüncesinde bilginin yeri ve kaynakları arasındaki ilişkiyi belirler."
+   ],
+   "baslik": "İslam’da bilginin yerini ve kaynaklarını çözümleyebilme",
+   "topic_key": "Din Kültürü > 1.1 İslam’da bilginin yerini ve kaynaklarını çözümleyebilme",
+   "kod": "DKAB.10.1.1",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t01_c02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t01_c02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Allah-âlem ilişkisiyle ilgili merak ettiklerini belirler.",
+    "Allah-âlem ilişkisiyle ilgili merak ettiklerine dair sorular sorar.",
+    "Allah-âlem ilişkisiyle ilgili kavramları inceler.",
+    "Allah-âlem ilişkisi hakkında inceleme sonuçlarından hareketle çıkarım yapar."
+   ],
+   "baslik": "Allah-âlem ilişkisini müşahede edebilme",
+   "topic_key": "Din Kültürü > 1.2 Allah-âlem ilişkisini müşahede edebilme",
+   "kod": "DKAB.10.1.2",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t01_c03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t01_c03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetlerin meallerini bulur.",
+    "Ayetlerde geçen konu ve kavramları belirler.",
+    "Ayetleri içeriklerine göre sınıflandırır.",
+    "Ayetlerin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 1.3 İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "kod": "DKAB.10.1.3",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t02_c01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t02_c01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Allah’ın (cc) varlığının delilleriyle ilgili merak ettiklerini belirler.",
+    "Allah’ın (cc) varlığının delilleriyle ilgili sorular sorar.",
+    "Allah’ın (cc) varlığının delillerini inceler.",
+    "Allah’ın (cc) varlığının delilleriyle ilgili inceleme sonuçları hakkında çıkarım yapar."
+   ],
+   "baslik": "Allah’ın (cc) varlığının delillerini müşahede edebilme",
+   "topic_key": "Din Kültürü > 2.1 Allah’ın (cc) varlığının delillerini müşahede edebilme",
+   "kod": "DKAB.10.2.1",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t02_c02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t02_c02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayet ve hadislerde yer alan Allah’ın (cc) isim ve sıfatlarını fark eder.",
+    "Allah’ın (cc) isimleri ve sıfatları arasında ilişki kurar.",
+    "Allah’ın (cc) isimleri ve sıfatlarının benzerliklerini ve farklılıklarını açıklar.",
+    "Allah’ın (cc) isim ve sıfatlarına sözlü ve yazılı iletişimde bağlamına uygun olarak yer verir."
+   ],
+   "baslik": "Allah’ı (cc) gereği gibi tanıyabilmek için O’nun isim ve sıfatlarını bağlamına uygun kullanabilme",
+   "topic_key": "Din Kültürü > 2.2 Allah’ı (cc) gereği gibi tanıyabilmek için O’nun isim ve sıfatlarını bağlamına uygun kullanabilme",
+   "kod": "DKAB.10.2.2",
+   "uretim_durumu": "tam"
+  },
+  {
+   "konu_id": "din_10_t02_c03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_t02_c03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetlerin mealini bulur.",
+    "Ayetlerde geçen konu ve kavramları belirler.",
+    "Ayetleri içeriklerine göre sınıflandırır.",
+    "Ayetlerin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 2.3 Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "kod": "DKAB.10.2.3",
+   "uretim_durumu": "tam"
   },
   {
    "konu_id": "din_10_u01_k01",

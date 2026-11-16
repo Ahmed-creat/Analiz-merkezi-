@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 22:36 (UTC)
+> Güncelleme: 2026-11-16 22:40 (UTC)
 
 ## Ders bazında
 
@@ -15,10 +15,10 @@
 | Tarih | 14/14 | 140 | 140 | 140 | 5 |
 | Coğrafya | 18/18 | 190 | 190 | 190 | 8 |
 | Felsefe | 10/10 | 100 | 100 | 100 | 0 |
-| Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **125/158** | **1329** | **1686** | **1329** | **146** |
+| Din Kültürü | 6/17 | 60 | 170 | 60 | 0 |
+| **TOPLAM** | **131/158** | **1389** | **1686** | **1389** | **146** |
 
-İlerleme: **%79** (1329/1686 soru) · kart 1:1 ✔
+İlerleme: **%82** (1389/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -48,12 +48,6 @@
 
 | konu_id | kod | hedef soru | durum |
 | --- | --- | --- | --- |
-| `din_10_t01_c01` | DKAB.10.1.1 | 10 | yok |
-| `din_10_t01_c02` | DKAB.10.1.2 | 10 | yok |
-| `din_10_t01_c03` | DKAB.10.1.3 | 10 | yok |
-| `din_10_t02_c01` | DKAB.10.2.1 | 10 | yok |
-| `din_10_t02_c02` | DKAB.10.2.2 | 10 | yok |
-| `din_10_t02_c03` | DKAB.10.2.3 | 10 | yok |
 | `din_10_t03_c01` | DKAB.10.3.1 | 10 | yok |
 | `din_10_t03_c02` | DKAB.10.3.2 | 10 | yok |
 | `din_10_t03_c03` | DKAB.10.3.3 | 10 | yok |
