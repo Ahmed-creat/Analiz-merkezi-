@@ -34,7 +34,9 @@ const HAVUZLAR = MANIFEST.havuzlar || [];
 
 // ---------- 1) Manifest: baslik alanı ----------
 console.log("\n== 1) Havuz manifesti ==");
-esit("havuz sayısı 172", HAVUZLAR.length, 172);
+const POOL_DOSYA = fs.readdirSync(path.join(KOK, "site", "content", "soru_havuzlari"))
+  .filter(f => f.endsWith(".json") && f !== "index.json");
+esit("havuz sayısı = dizindeki havuz dosyası sayısı", HAVUZLAR.length, POOL_DOSYA.length);
 ok("her havuzda baslik var", HAVUZLAR.every(h => h.baslik && String(h.baslik).trim()), HAVUZLAR.filter(h => !h.baslik).map(h => h.konu_id).slice(0, 5).join(","));
 ok("her havuzda baslik dolu", HAVUZLAR.every(h => String(h.baslik || "").trim().length > 0), HAVUZLAR.filter(h => !String(h.baslik || "").trim()).map(h => h.konu_id).slice(0,3).join(","));
 ok("Kimya havuzunda baslik dolu", !!HB.bul("Kimya > 1.1.3 Mol Kavramı", HAVUZLAR));

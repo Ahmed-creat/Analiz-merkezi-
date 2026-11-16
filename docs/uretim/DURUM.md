@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-16 21:56 (UTC)
+> Güncelleme: 2026-11-16 22:36 (UTC)
 
 ## Ders bazında
 
@@ -14,11 +14,11 @@
 | Biyoloji | 19/19 | 190 | 190 | 190 | 38 |
 | Tarih | 14/14 | 140 | 140 | 140 | 5 |
 | Coğrafya | 18/18 | 190 | 190 | 190 | 8 |
-| Felsefe | 0/10 | 0 | 100 | 0 | 0 |
+| Felsefe | 10/10 | 100 | 100 | 100 | 0 |
 | Din Kültürü | 0/17 | 0 | 170 | 0 | 0 |
-| **TOPLAM** | **115/158** | **1229** | **1686** | **1229** | **146** |
+| **TOPLAM** | **125/158** | **1329** | **1686** | **1329** | **146** |
 
-İlerleme: **%73** (1229/1686 soru) · kart 1:1 ✔
+İlerleme: **%79** (1329/1686 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
@@ -43,21 +43,6 @@
 | `edebiyat_10_t04_c02` | TDE4.2 | 16 | yok |
 | `edebiyat_10_t04_c03` | TDE4.3 | 16 | yok |
 | `edebiyat_10_t04_c04` | TDE4.4 | 10 | yok |
-
-### Felsefe
-
-| konu_id | kod | hedef soru | durum |
-| --- | --- | --- | --- |
-| `fel_10_t01_c01` | FEL.10.1.1 | 10 | yok |
-| `fel_10_t02_c01` | FEL.10.2.1 | 10 | yok |
-| `fel_10_t02_c02` | FEL.10.2.2 | 10 | yok |
-| `fel_10_t03_c01` | FEL.10.3.1 | 10 | yok |
-| `fel_10_t04_c01` | FEL.10.4.1 | 10 | yok |
-| `fel_10_t05_c01` | FEL.10.5.1 | 10 | yok |
-| `fel_10_t06_c01` | FEL.10.6.1 | 10 | yok |
-| `fel_10_t07_c01` | FEL.10.7.1 | 10 | yok |
-| `fel_10_t08_c01` | FEL.10.8.1 | 10 | yok |
-| `fel_10_t09_c01` | FEL.10.9.1 | 10 | yok |
 
 ### Din Kültürü
 
