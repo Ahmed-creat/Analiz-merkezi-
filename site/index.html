@@ -1215,6 +1215,15 @@ select.dd-native {
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">BİLDİRİM</div>
     <button class="btn btn-ghost w-full" data-act="toggleNotifPermission" style="justify-content:flex-start;"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i> <span id="notif-perm-label">Bildirim İzni İste</span></button>
     <p id="bildirim-durum" class="text-xs text-muted" style="margin-top:8px;line-height:1.5;">İzin verdiğin an bir deneme bildirimi gelir. Sonrasında gün içinde hatırlatmalar alırsın — uygulama kapalıyken de çalışır.</p>
+    <!-- v62 — CİHAZ UYKUSU UYARISI
+         KULLANICI: "Mesaj için uygulamayı açmam mı gerekiyor?"
+         HAYIR: Android'de push, uygulama kapalıyken Chrome'u kendisi uyandırır.
+         Ama üretici (Samsung/Xiaomi) Chrome'u "uyuyan uygulama" listesine
+         atarsa FCM mesajı cihaza hiç inmez ve TTL dolunca düşer.
+         Ölçüm (16 Kas): 07:35 push 201 aldı, cihazda tek satır bile yok. -->
+    <p id="bildirim-uyku-notu" class="text-xs" style="margin-top:8px;line-height:1.5;color:var(--text-muted);display:none;">
+      <strong>Tablet bildirimleri gecikiyorsa:</strong> Ayarlar → Pil → Arka plan kullanım sınırları → <em>Uyuyan uygulamalar</em> / <em>Derin uykudaki uygulamalar</em> listesinden <strong>Chrome</strong>'u çıkar, sonra Ayarlar → Uygulamalar → Chrome → Pil → <em>Kısıtlanmamış</em> seç.
+    </p>
   </div>
   <div style="margin-top:24px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px;">YEDEKLEME</div>
@@ -2360,10 +2369,22 @@ function hatirlatmaTelafisi() {
             const ayni = iz && iz.baslik === baslik && (Date.now() - Number(iz.zaman || 0)) < 12 * 3600 * 1000;
             if (ayni) { try { localStorage.setItem(anahtar, "push"); } catch (e) { /* */ } return; }
             try { localStorage.setItem(anahtar, "yerel"); } catch (e) { /* */ }
-            return kayit.showNotification(baslik, {
-              body: govde,
-              icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
-              tag: "am-telafi-" + vardiya, data: { url: "./" }
+            // v62 — YEREL İZ: push 6 saat sonra gelirse aynı hatırlatmayı
+            // İKİNCİ kez göstermesin diye service worker ile ortak önbelleğe
+            // "bunu ben gösterdim" yazılır.
+            const izYaz = function () {
+              return caches.open("am-push-iz").then(function (c2) {
+                return c2.put("/__am-push-son", new Response(JSON.stringify({
+                  zaman: Date.now(), baslik: baslik, kaynak: "yerel", gosterildi: true
+                }), { headers: { "Content-Type": "application/json" } }));
+              }).catch(function () { /* */ });
+            };
+            return izYaz().then(function () {
+              return kayit.showNotification(baslik, {
+                body: govde,
+                icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
+                tag: "am-telafi-" + vardiya, data: { url: "./" }
+              });
             });
           });
       });
@@ -2766,6 +2787,12 @@ function updateNotifPermLabel() {
   if (!el) return;
   const p = (typeof Notification !== "undefined" && Notification.permission) || state.settings.notifPermission || "default";
   el.textContent = p === "granted" ? "Bildirimler Açık ✓" : "Bildirim İzni İste";
+  // v62 — Android'de üretici pil kısıtı bildirimi sessizce yutar; kullanıcı
+  // nereye bakacağını burada görsün (sohbet mesajında kaybolmasın).
+  try {
+    const uyku = document.getElementById("bildirim-uyku-notu");
+    if (uyku && /Android/i.test(navigator.userAgent || "")) uyku.style.display = "block";
+  } catch (e) { /* */ }
 }
 
 // ============================================================

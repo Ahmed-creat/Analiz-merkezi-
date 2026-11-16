@@ -61,11 +61,32 @@ Deno.serve(async (istek) => {
     if (!Array.isArray(liste) || !liste.length) return json({ hata: "abonelik yok" }, 404);
     const a = liste[0];
     const jwt = await vapidJwt(ozelJwk(), a.endpoint);
+    // v9 — URGENCY + TOPIC (RFC 8030 5.3 / 5.4).
+    // OLCUM (16 Kas): 07:35'te FCM 201 dondu, cihazda TEK satir yok. Sebep
+    // mesajin cihaz uykudayken kuyrukta beklemesi ve TTL'in dolmasi.
+    //  • Urgency: high  -> FCM yuksek oncelik; cihaz uykudan uyandirilabilir.
+    //  • Topic          -> ayni vardiyanin tekrar denemeleri YIGILMAZ, son
+    //                      mesaj eskisinin yerine gecer (4 ayri bildirim olmaz).
+    const topic = String(g.topic || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 32);
     const basliklar: Record<string, string> = {
       Authorization: "vapid t=" + jwt.jwt + ", k=" + (jwt.acik || VAPID_ACIK),
-      TTL: g.ttl ? String(g.ttl) : "300",
+      TTL: g.ttl ? String(g.ttl) : "21600",
       Urgency: g.urgency ? String(g.urgency) : "high"
     };
+    if (topic) basliklar.Topic = topic;
+    // v10 — KURU ÇALIŞTIRMA: bildirimi GÖNDERMEDEN hangi başlıkların
+    // kullanılacağını döndürür. Canlı doğrulama için cihaza test bildirimi
+    // atmadan "TTL/urgency/topic gerçekten yazılıyor mu" ölçülür.
+    if (g.kuru === true) {
+      return json({
+        kuru: true,
+        endpointSon4: String(a.endpoint).slice(-4),
+        ttl: basliklar.TTL,
+        urgency: basliklar.Urgency,
+        topic: basliklar.Topic || null,
+        sifreli: g.sifreli || "yok"
+      });
+    }
     let govde: Uint8Array | undefined;
     let not = "";
     if (g.sifreli === "webpush") {
@@ -102,7 +123,10 @@ Deno.serve(async (istek) => {
       kod: r.status, metin, not,
       sifreli: g.sifreli || "yok",
       endpointSon4: String(a.endpoint).slice(-4),
-      kapatildi
+      kapatildi,
+      ttl: basliklar.TTL,
+      urgency: basliklar.Urgency,
+      topic: basliklar.Topic || null
     });
   } catch (e) {
     return json({ hata: String(e).slice(0, 300) }, 500);

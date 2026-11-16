@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261031-v61-telafi-murekkep-dugme";
+const CACHE = "analiz-merkezi-v-20261031-v62-kapali-bildirim";
 const ASSETS = [
   "./",
   "./index.html",
@@ -336,7 +336,23 @@ self.addEventListener("push", (event) => {
     await teslimAbone();
     await teslimYaz({ asama: "push", baslik: String(secim.title || "").slice(0, 120) });
     // ÖNCE iz, SONRA gösterim: gösterim hata verse bile "push ulaştı" kanıtı kalır.
-    await pushIzYaz(iz);
+    // v62 — MÜKERRER ENGELLİ: uygulama açılırken aynı hatırlatmayı YEREL
+    // gösterdiyse (kaynak:"yerel") ve üzerinden 3 saat geçmediyse, geç gelen
+    // push tekrar gösterilmez. Mesaj yine "ulaştı" diye kaydedilir.
+    let oncekiIz = null;
+    try {
+      const c0 = await caches.open(PUSH_IZ_ADI);
+      const r0 = await c0.match(PUSH_IZ_YOLU);
+      oncekiIz = r0 ? await r0.json() : null;
+    } catch (e) { oncekiIz = null; }
+    const yerelGosterildi = !!(oncekiIz && oncekiIz.kaynak === "yerel" &&
+      oncekiIz.baslik === iz.baslik &&
+      (Date.now() - Number(oncekiIz.zaman || 0)) < 3 * 3600 * 1000);
+    await pushIzYaz(Object.assign({}, iz, { tekrar: yerelGosterildi }));
+    if (yerelGosterildi) {
+      await teslimYaz({ asama: "gosterim", baslik: iz.baslik, gosterildi: true, hata: null });
+      return;
+    }
     try {
       await self.registration.showNotification(secim.title, secim.options);
       iz.gosterildi = true;
