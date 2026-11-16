@@ -1,0 +1,300 @@
+{
+  "konu_id": "fizik_10_u01_k01",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u01_k01_o01",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Uzaktan kumandalı bir tekne, sakin bir kanalda kıvrımlı bir parkuru sabit süratle izliyor. Teknenin hız vektörü için ne söylenebilir?",
+      "secenekler": [
+        "Yönü değiştiği için hız vektörü değişir.",
+        "Sürat sabit olduğundan hız vektörü de sabittir.",
+        "Hız vektörünün büyüklüğü sıfırdır.",
+        "Yalnızca aldığı yol değişir; hız vektörü değişmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Sürat hızın büyüklüğüdür. Tekne kıvrımlı parkurda yön değiştirdiğinden hız vektörü değişir; sürati sabit kalabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit sürat ile sabit hız arasındaki temel fark nedir?",
+        "back": "Sürat, yolun zamana oranı olan skaler bir niceliktir; hız ise yer değiştirme ve yönle ilişkilidir."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o02",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir araç yatay doğrultuda +5 m/s sabit hızla 3 s hareket ediyor. Yer değiştirmesi kaç metredir?",
+      "secenekler": [
+        "8 m",
+        "15 m",
+        "−15 m",
+        "5 m"
+      ],
+      "dogru_index": 1,
+      "cozum": "Δx = v · Δt = 5 · 3 = 15 m olur. 5 m/s hız büyüklüğünü yer değiştirme sanmak, zamanı hesaba katmamaktır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit hızla hareket eden cismin Δt sürede yaptığı yer değiştirme bağıntısını yaz.",
+        "back": "Δx = v · Δt."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o03",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Tabloda bir aracın konumu t = 0 s'de 14 m, t = 6 s'de 50 m'dir. Araç bu aralıkta sabit hızlıysa hızı kaç m/s'dir?",
+      "secenekler": [
+        "8 m/s",
+        "5 m/s",
+        "6 m/s",
+        "10 m/s"
+      ],
+      "dogru_index": 2,
+      "cozum": "Hız, konum değişiminin zamana oranıdır: (50 − 14)/6 = 6 m/s. 36 m yer değiştirmedir; sabit hızı bulmak için bu değer 6 s’ye bölünür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Konum-zaman grafiğinin eğimi sabit hızlı harekette hangi fiziksel niceliği verir?",
+        "back": "Hızı verir: v = Δx/Δt."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o04",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir araç her 1 s'de aynı yönde 6 m yer değiştirerek doğrusal yolda ilerliyor. İvmesi kaç m/s²'dir?",
+      "secenekler": [
+        "6",
+        "1",
+        "−6",
+        "0"
+      ],
+      "dogru_index": 3,
+      "cozum": "Eşit zaman aralıklarında eşit yer değiştirme sabit hızı gösterir; hız değişmediği için ivme 0'dır. 6 m/s², 6 m'lik yer değiştirmeyi ivme sanmaktan kaynaklanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir cismin hızı değişmiyorsa ivmesi kaçtır?",
+        "back": "İvmesi sıfırdır; hız değişimi olmadığı için a = Δv/Δt = 0."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o05",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir cismin yatay doğrultuda sabit hızlı hareketini gösteren konum-zaman grafiği nasıl olmalıdır?",
+      "secenekler": [
+        "Sabit eğimli bir doğru",
+        "Eğimi sürekli artan eğri",
+        "Önce yatay sonra dikey doğru",
+        "Eğimi zamanla değişen eğri"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sabit hız, konumun zamana göre sabit eğimle değişmesi demektir; grafik doğrusal olur. Eğimi değişen eğri, hızın da değiştiğini gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit hızlı hareket eden cismin konum-zaman grafiğinin temel biçimi nasıldır?",
+        "back": "Eğimi sabit olan bir doğru biçimindedir."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o06",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir deney arabası seçilen eksende −3 m/s sabit hızla 8 s ilerliyor. Bu sürede yer değiştirmesi kaç metredir?",
+      "secenekler": [
+        "−24 m/s",
+        "−24 m",
+        "24 m",
+        "−3 m"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sabit hızlı harekette yer değiştirme Δx=v·Δt olur. Δx=(−3)·8=−24 m; eksi işaret seçilen pozitif yönün tersini gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hız-zaman grafiği ile zaman ekseni arasında kalan imzalı alan sabit hızlı harekette neyi verir?",
+        "back": "Cismin yer değiştirmesini verir."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o07",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir aracın sabit hızını gösteren yatay hız-zaman doğrusu zaman ekseninin altında yer alıyor. Araç hangi yönde hareket eder?",
+      "secenekler": [
+        "Önce pozitif, sonra negatif yönde",
+        "Durgun",
+        "Seçilen pozitif yönün tersinde",
+        "Yönü belirlenemez"
+      ],
+      "dogru_index": 2,
+      "cozum": "Zaman ekseninin altındaki hız değerleri negatiftir; araç seçilen pozitif yönün tersinde hareket eder. Durgun cisimde hız-zaman grafiği zaman ekseni üzerinde olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hız-zaman grafiğinde zaman ekseninin altında kalan sabit bir doğru hangi hareket yönünü gösterir?",
+        "back": "Seçilen pozitif yönün tersindeki, negatif yönlü hareketi gösterir."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o08",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir cismin belirli bir zaman aralığının başlangıcındaki konumu ile bitişindeki konumu aynıdır. Bu aralık için ortalama hızının büyüklüğü kaçtır?",
+      "secenekler": [
+        "Parkurun uzunluğunun toplam zamana oranı",
+        "0",
+        "Parkurun uzunluğu",
+        "Tur süresine bağlı olarak değişir; sıfır olamaz"
+      ],
+      "dogru_index": 1,
+      "cozum": "Başlangıç ve bitiş konumları aynı olduğundan toplam yer değiştirme sıfırdır. Ortalama hızın büyüklüğü yer değiştirme büyüklüğünün zamana oranı olduğu için 0’dır; alınan yolun zamana oranı ise ortalama sürattir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortalama hızın büyüklüğünü, yer değiştirme ve zaman cinsinden nasıl hesaplarsın?",
+        "back": "Ortalama hızın büyüklüğü = yer değiştirme büyüklüğü / geçen zaman."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o09",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir hastane içi taşıma robotu düz bir koridorda 720 m yolu 90 s’de alıyor. Robotun ortalama sürati kaç m/s’dir?",
+      "secenekler": [
+        "8 m/s",
+        "630 m/s",
+        "90 m/s",
+        "0,125 m/s"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ortalama sürat=toplam yol/toplam zaman=720/90=8 m/s olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortalama sürat nasıl hesaplanır?",
+        "back": "Toplam alınan yol, toplam geçen zamana bölünür."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o10",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir cisim doğrusal yolda 4 s boyunca yön değiştirmeden hareket ediyor. Bu hareket için ortalama sürat ve ortalama hız büyüklükleri nasıl karşılaştırılır?",
+      "secenekler": [
+        "Ortalama sürat daha büyüktür.",
+        "Ortalama hızın büyüklüğü daha büyüktür.",
+        "Geçen zaman bilindiği için karşılaştırılamaz.",
+        "Eşittir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Yön değiştirmeden doğrusal hareket edince alınan yol ile yer değiştirme büyüklüğü eşit olur; aynı zamana bölündüklerinden ortalama sürat ve ortalama hız büyüklüğü eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Cisim doğrusal yolda yön değiştirmeden hareket ederse ortalama sürat ile ortalama hızın büyüklüğü arasında nasıl bir ilişki vardır?",
+        "back": "Birbirine eşittir; alınan yolun büyüklüğü yer değiştirme büyüklüğüne eşit olur."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o11",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Bir cismin başlangıç konumundan bitiş konumuna çizilen yönlü doğru parçası hangi fiziksel niceliği tanımlar?",
+      "secenekler": [
+        "Alınan toplam yolu",
+        "Ortalama sürati",
+        "Yer değiştirme vektörünü (büyüklüğü istenirse yer değiştirme büyüklüğünü)",
+        "Hareket süresini"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yer değiştirme vektörü, başlangıç konumundan bitiş konumuna yönlü olarak çizilen vektördür. İzlenen kıvrımlı rotanın toplam uzunluğu alınan yoldur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Alınan yol ile yer değiştirme arasındaki farkı bir cümleyle açıkla.",
+        "back": "Alınan yol izlenen güzergâhın toplam uzunluğudur; yer değiştirme başlangıç ve bitiş konumlarını yönlü olarak birleştirir."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k01_o12",
+      "alt_beceri": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "metin": "Aynı yönde ilerleyen iki otonom bakım aracı 14 m/s ve 9 m/s süratlere sahiptir. Hızlı aracın yavaş araca göre bağıl hızının büyüklüğü kaç m/s’dir?",
+      "secenekler": [
+        "23 m/s",
+        "14 m/s",
+        "9 m/s",
+        "5 m/s"
+      ],
+      "dogru_index": 3,
+      "cozum": "Aynı yönde hareket eden cisimlerin bağıl hız büyüklüğü sürat farkıdır. 14−9=5 m/s olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı yönde sabit hızlarla hareket eden iki cismin bağıl hız büyüklüğü nasıl bulunur?",
+        "back": "Daha hızlı cismin hız büyüklüğünden daha yavaş olan çıkarılır."
+      },
+      "kazanim": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u01_k01_o01:flashcard",
+      "front": "Sabit sürat ile sabit hız arasındaki temel fark nedir?",
+      "back": "Sürat, yolun zamana oranı olan skaler bir niceliktir; hız ise yer değiştirme ve yönle ilişkilidir."
+    },
+    {
+      "id": "fizik_10_u01_k01_o02:flashcard",
+      "front": "Sabit hızla hareket eden cismin Δt sürede yaptığı yer değiştirme bağıntısını yaz.",
+      "back": "Δx = v · Δt."
+    },
+    {
+      "id": "fizik_10_u01_k01_o03:flashcard",
+      "front": "Konum-zaman grafiğinin eğimi sabit hızlı harekette hangi fiziksel niceliği verir?",
+      "back": "Hızı verir: v = Δx/Δt."
+    },
+    {
+      "id": "fizik_10_u01_k01_o04:flashcard",
+      "front": "Bir cismin hızı değişmiyorsa ivmesi kaçtır?",
+      "back": "İvmesi sıfırdır; hız değişimi olmadığı için a = Δv/Δt = 0."
+    },
+    {
+      "id": "fizik_10_u01_k01_o05:flashcard",
+      "front": "Sabit hızlı hareket eden cismin konum-zaman grafiğinin temel biçimi nasıldır?",
+      "back": "Eğimi sabit olan bir doğru biçimindedir."
+    },
+    {
+      "id": "fizik_10_u01_k01_o06:flashcard",
+      "front": "Hız-zaman grafiği ile zaman ekseni arasında kalan imzalı alan sabit hızlı harekette neyi verir?",
+      "back": "Cismin yer değiştirmesini verir."
+    },
+    {
+      "id": "fizik_10_u01_k01_o07:flashcard",
+      "front": "Hız-zaman grafiğinde zaman ekseninin altında kalan sabit bir doğru hangi hareket yönünü gösterir?",
+      "back": "Seçilen pozitif yönün tersindeki, negatif yönlü hareketi gösterir."
+    },
+    {
+      "id": "fizik_10_u01_k01_o08:flashcard",
+      "front": "Ortalama hızın büyüklüğünü, yer değiştirme ve zaman cinsinden nasıl hesaplarsın?",
+      "back": "Ortalama hızın büyüklüğü = yer değiştirme büyüklüğü / geçen zaman."
+    },
+    {
+      "id": "fizik_10_u01_k01_o09:flashcard",
+      "front": "Ortalama sürat nasıl hesaplanır?",
+      "back": "Toplam alınan yol, toplam geçen zamana bölünür."
+    },
+    {
+      "id": "fizik_10_u01_k01_o10:flashcard",
+      "front": "Cisim doğrusal yolda yön değiştirmeden hareket ederse ortalama sürat ile ortalama hızın büyüklüğü arasında nasıl bir ilişki vardır?",
+      "back": "Birbirine eşittir; alınan yolun büyüklüğü yer değiştirme büyüklüğüne eşit olur."
+    },
+    {
+      "id": "fizik_10_u01_k01_o11:flashcard",
+      "front": "Alınan yol ile yer değiştirme arasındaki farkı bir cümleyle açıkla.",
+      "back": "Alınan yol izlenen güzergâhın toplam uzunluğudur; yer değiştirme başlangıç ve bitiş konumlarını yönlü olarak birleştirir."
+    },
+    {
+      "id": "fizik_10_u01_k01_o12:flashcard",
+      "front": "Aynı yönde sabit hızlarla hareket eden iki cismin bağıl hız büyüklüğü nasıl bulunur?",
+      "back": "Daha hızlı cismin hız büyüklüğünden daha yavaş olan çıkarılır."
+    }
+  ],
+  "baslik": "1.1 Sabit Hızlı Hareket",
+  "topic_key": "Fizik > 1.1 Sabit Hızlı Hareket"
+}

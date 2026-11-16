@@ -1,0 +1,356 @@
+{
+  "konu_id": "din_10_u01_k02",
+  "sinif": 10,
+  "ders": "Din Kültürü",
+  "kaynak_dosya": "10. Sınıf din json.zip",
+  "sorular": [
+    {
+      "soru_id": "din_10_u01_k02_o01",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir öğrenci, güvenilir aktarımları, sağlam aklı ve doğru çalışan duyuları bilgi edinmede kullanıyor. Bu kaynaklar hangi sınıfa girer?",
+      "secenekler": [
+        "Nesnel bilgi kaynaklarına",
+        "Yalnızca öznel bilgi kaynaklarına",
+        "Sadece kişisel beklentilere",
+        "Bilgi dışı kanaatlere"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kaynakta sadık haber, selim akıl ve salim duyular nesnel bilgi kaynakları olarak sıralanır. Bilginin asıl kaynağının Allah olduğu da belirtilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İslam düşüncesinde nesnel bilgi kaynakları nelerdir?",
+        "back": "Sadık haber, selim akıl ve salim duyular nesnel bilgi kaynaklarıdır; bilginin asıl kaynağı Allah’tır."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o02",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir aktarımın bilgi kaynağı kabul edilmesinde, dinleyenin ona inanmasından çok hangi özellik belirleyicidir?",
+      "secenekler": [
+        "Aktarımın kişiyi etkilemesi",
+        "Olayın fiilen yaşanmış olması",
+        "Haberin eski ya da yeni olması",
+        "Aktarımın yalnızca kişisel tecrübeye dayanması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sadık haber, fiilen gerçekleşmiş olayın aktarılmasıdır. Kaynak, belirleyici olanın kişinin inanması değil olayın yaşanmış olması olduğunu vurgular.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sadık haber ne anlama gelir?",
+        "back": "Fiilen gerçekleşmiş bir olayın aktarılmasıdır; bilgi kaynağı sayılabilmesi için haberin gerçekten yaşanmış olmasına dayanması gerekir."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o03",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Peygamber aracılığıyla insanlara iletilen ilahi bilgi, sadık haberin hangi türüdür?",
+      "secenekler": [
+        "Mütevatir haber",
+        "Kişisel sezgi",
+        "Haberiresul",
+        "Gündelik tecrübe"
+      ],
+      "dogru_index": 2,
+      "cozum": "Haberiresul, peygamberlerin Allah’tan alıp insanlara ulaştırdığı vahiydir. Mütevatir haber ise çok sayıda kişinin aktardığı haber türüdür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sadık haberin iki türünü ve haberiresulün niteliğini açıklayın.",
+        "back": "Sadık haber haberiresul ve mütevatir haber olarak ikiye ayrılır; haberiresul peygamberlerin Allah’tan alıp insanlara ulaştırdığı vahiydir."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o04",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir inanan, peygamber aracılığıyla iletilmiş ilahi bilgiyi dinî yaşamında temel alıyor. Bu bilgi türünün kaynağı nedir?",
+      "secenekler": [
+        "Rüya",
+        "Sezgi",
+        "Kişisel deneyim",
+        "Vahiy"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kaynak vahyi peygamberler aracılığıyla insanlara gönderilen ilahi bilgi olarak tanımlar ve inananlar için kesin, bağlayıcı sayar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Vahiy inananlar için nasıl bir bilgi kaynağıdır?",
+        "back": "Peygamberler aracılığıyla insanlara gönderilen ilahi bilgidir; inananlar için kesin ve bağlayıcı bilgi kaynağıdır."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o05",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir bilgi, birbirinden farklı kişilerce farklı zamanlarda aynı içerikle aktarılıyor ve aktarıcıların yalan üzerinde birleşmesi mümkün görülmüyor. Bu haber türü nedir?",
+      "secenekler": [
+        "Mütevatir haber",
+        "Haberiresul",
+        "Rüya",
+        "İlham"
+      ],
+      "dogru_index": 0,
+      "cozum": "Mütevatir haber, yalan üzerinde birleşmesi mümkün olmayan bir topluluğun aktardığı haberdir ve doğruluğundan şüphe duyulmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mütevatir haber nasıl tanımlanır?",
+        "back": "Yalan üzerinde birleşmeleri mümkün olmayan bir topluluğun, farklı zaman ve yerlerde aynı içerikle aktardığı haberdir; kesin bilgi kaynağı kabul edilir."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o06",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kişi, bilgileri önyargı veya olumsuz etkilerden uzak biçimde değerlendirip doğru karar vermeye çalışıyor. Bu hangi bilgi kaynağının niteliğidir?",
+      "secenekler": [
+        "Salim duyuların",
+        "Selim aklın",
+        "Mütevatir haberin",
+        "Rüyanın"
+      ],
+      "dogru_index": 1,
+      "cozum": "Selim akıl, doğru karar vermeyi sağlayan ve yaratılıştaki temizliğini koruyan akıl olarak açıklanır. Duyular ve haber farklı kaynaklardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Selim akıl ne anlama gelir?",
+        "back": "Varlığın hakikatini kavrayıp ilişki kurma ve karşılaştırma yapabilen; doğru karar vermesini engelleyen olumsuzluklardan etkilenmeyen akıldır."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o07",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir insanın emir ve yasaklar karşısında sorumlu tutulabilmesinde kaynak hangi özelliği temel şartlardan sayar?",
+      "secenekler": [
+        "Çok tecrübeli olmasını",
+        "Herkesle aynı kanaati taşımasını",
+        "Akıl sahibi olmasını",
+        "Duyularının her zaman yanılmasını"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kaynak, akıl sahibi olmayı dinî sorumluluğun temel şartlarından biri sayar. Akıl düşünme, araştırma ve doğruyu yanlıştan ayırmaya da imkân verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akıl bilgi edinme ve sorumluluk açısından hangi işlevleri görür?",
+        "back": "İnsan aklıyla düşünür, araştırır, doğruyu yanlıştan ayırır ve bilgi edinir; akıl sahibi olmak dinî sorumluluğun temel şartlarındandır."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o08",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kişinin duyu organları temel işlevlerini koruyarak çevresindeki varlıkları algılıyor. Bu kaynak nasıl adlandırılır?",
+      "secenekler": [
+        "Selim akıl",
+        "Sadık haber",
+        "Keşif",
+        "Salim duyular"
+      ],
+      "dogru_index": 3,
+      "cozum": "Salim duyular, temel özelliklerini yitirmemiş duyulardır. Dış dünyayı algılamaya ve varlıklar hakkında bilgi edinmeye yararlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Salim duyular neyi ifade eder?",
+        "back": "Temel özelliklerini herhangi bir etkenle yitirmemiş, dış dünyayı doğru algılamaya elverişli duyulardır."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o09",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir araştırmacı, çevresindeki varlıklar hakkında doğrudan gözlem yaparken hangi bilgi araçlarından yararlanabilir?",
+      "secenekler": [
+        "Duyu organlarından",
+        "Yalnızca rüyadan",
+        "Sadece aile geleneğinden",
+        "Mütevatir haberden"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kaynak, görme, işitme, koklama, dokunma ve tatmayı çevreyi algılamada kullanılan duyular olarak sayar. Mütevatir haber farklı bir bilgi kaynağıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İnsan dış dünyayı hangi duyularla algılar?",
+        "back": "Görme, işitme, koklama, dokunma ve tatma duyularıyla algılar."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o10",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kişi yalnızca duyduğu kısa bir sesi esas alıp onun kaynağı hakkında kesin hüküm veriyor. Hangi özelliği göz ardı etmemelidir?",
+      "secenekler": [
+        "Duyuların her bilgiyi kesinleştirdiğini",
+        "Duyuların sınırlı ve yanıltıcı olabileceğini",
+        "Akıl yürütmenin gereksiz olduğunu",
+        "Sadık haberin öznel olduğunu"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kaynak, duyuların algı alanının sınırlı olduğunu ve kimi zaman yanıltabildiğini belirtir. Bu yüzden tek bir duyusal izlenim her konuda kesin bilgi sağlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Duyularla elde edilen bilginin sınırları ve yanılma ihtimali nedir?",
+        "back": "Her duyu yalnızca belirli koşul ve aralıkları algılar; bu nedenle duyu bilgisi sınırlı olabilir ve bazen yanıltabilir."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o11",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kişi, kendi iç deneyimi ve kişisel yaşantısından hareketle bir kanaat oluşturuyor. Bu tür kaynaklar hangi gruptadır?",
+      "secenekler": [
+        "Nesnel bilgi kaynaklarında",
+        "Sadık haber türlerinde",
+        "Öznel bilgi kaynaklarında",
+        "Vahiyde"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kaynak sezgi, rüya, keşif, ilham ve kişisel tecrübeleri öznel kaynaklar arasında sayar. Bunlar sadık haber, selim akıl ve salim duyulardan ayrılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Öznel bilgi kaynaklarına hangi örnekler verilir?",
+        "back": "Sezgi, rüya, keşif ve ilham; ayrıca sosyal çevre, aile büyükleri ve kişisel hayat tecrübesi öznel bilgi kaynakları arasında sayılır."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o12",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir yorum yalnızca kişisel bir rüyaya ve aileden aktarılan kanaate dayanıyor. Kaynağa göre bu yorumun niteliği nedir?",
+      "secenekler": [
+        "Mütevatir ve kesin haber",
+        "Vahiy kaynaklı bağlayıcı bilgi",
+        "Selim aklın zorunlu sonucu",
+        "Kesin ve bağlayıcı olmayan öznel bilgi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kaynak, öznel kaynaklarla elde edilen bilgilerin kesin olmadığını ve bağlayıcılığı bulunmadığını söyler. Güvenilir bilgi kaynakları tercih edilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Öznel bilgi kaynaklarından edinilen bilgilerin bağlayıcılığı nasıldır?",
+        "back": "Kesin değildir ve bağlayıcılığı yoktur; güvenilir bilgiye ulaşmak için sağlam kaynaklara yönelmek gerekir."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o13",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kişi günlük yaşam tecrübeleriyle bir işin nasıl yapılacağını öğreniyor. Bu hangi bilgi türüne örnektir?",
+      "secenekler": [
+        "Gündelik bilgiye",
+        "Dinî bilgiye",
+        "Felsefi bilgiye",
+        "Sanatsal bilgiye"
+      ],
+      "dogru_index": 0,
+      "cozum": "Gündelik bilgi tecrübeyle edinilir ve genellikle sistematik değildir. Dinî bilgi ise kaynağını kutsal varlık ve İslam’da Kur’an ile sünnetten alır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gündelik bilgi ile dinî bilgi arasındaki farkı belirtin.",
+        "back": "Gündelik bilgi tecrübeyle ve sistemsiz öğrenmeyle edinilir; dinî bilgi kutsal kaynağa dayanır, inananlar için kesin ve değişmez kabul edilir."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o14",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir bilgi birikimi, doğadaki kaynaklardan yararlanıp insan gücüne duyulan ihtiyacı azaltan bir ürünün ortaya çıkmasını sağlıyor. Bu hangi bilgi türüdür?",
+      "secenekler": [
+        "Sanatsal bilgi",
+        "Teknik bilgi",
+        "Dinî bilgi",
+        "Felsefi bilgi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Teknik bilgi, doğadan yararlanarak elde edilir ve gündelik ya da bilimsel bilgiyi pratiğe dönüştürür. Ürünleri yaşamı kolaylaştırabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Teknik bilgi hangi amaca hizmet eder?",
+        "back": "İnsanın doğadan yararlanarak somut ürünler ve teknolojiler geliştirmesine, gündelik ve bilimsel bilgiyi uygulamaya dönüştürmesine hizmet eder."
+      }
+    },
+    {
+      "soru_id": "din_10_u01_k02_o15",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir çalışma deney ve gözlemle sınanıyor, bir diğeri evren ve insan hakkında akla dayalı sorgulamalar yürütüyor. Bunlar sırasıyla hangi bilgi türleridir?",
+      "secenekler": [
+        "Sanatsal ve gündelik bilgi",
+        "Dinî ve teknik bilgi",
+        "Bilimsel ve felsefi bilgi",
+        "Felsefi ve dinî bilgi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bilimsel bilgi deney ve gözleme dayanır, yeni çalışmalarla değişebilir. Felsefi bilgi akıl ve mantık çerçevesinde sorgulama yoluyla elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sanatsal, bilimsel ve felsefi bilgi hangi özellikleriyle ayırt edilir?",
+        "back": "Sanatsal bilgi öznel ve duygulara dönüktür; bilimsel bilgi deney-gözleme dayanır ve değişebilir; felsefi bilgi akıl ve mantıkla sorgulama sonucu oluşur."
+      }
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "din_10_u01_k02_o01:flashcard",
+      "front": "İslam düşüncesinde nesnel bilgi kaynakları nelerdir?",
+      "back": "Sadık haber, selim akıl ve salim duyular nesnel bilgi kaynaklarıdır; bilginin asıl kaynağı Allah’tır."
+    },
+    {
+      "id": "din_10_u01_k02_o02:flashcard",
+      "front": "Sadık haber ne anlama gelir?",
+      "back": "Fiilen gerçekleşmiş bir olayın aktarılmasıdır; bilgi kaynağı sayılabilmesi için haberin gerçekten yaşanmış olmasına dayanması gerekir."
+    },
+    {
+      "id": "din_10_u01_k02_o03:flashcard",
+      "front": "Sadık haberin iki türünü ve haberiresulün niteliğini açıklayın.",
+      "back": "Sadık haber haberiresul ve mütevatir haber olarak ikiye ayrılır; haberiresul peygamberlerin Allah’tan alıp insanlara ulaştırdığı vahiydir."
+    },
+    {
+      "id": "din_10_u01_k02_o04:flashcard",
+      "front": "Vahiy inananlar için nasıl bir bilgi kaynağıdır?",
+      "back": "Peygamberler aracılığıyla insanlara gönderilen ilahi bilgidir; inananlar için kesin ve bağlayıcı bilgi kaynağıdır."
+    },
+    {
+      "id": "din_10_u01_k02_o05:flashcard",
+      "front": "Mütevatir haber nasıl tanımlanır?",
+      "back": "Yalan üzerinde birleşmeleri mümkün olmayan bir topluluğun, farklı zaman ve yerlerde aynı içerikle aktardığı haberdir; kesin bilgi kaynağı kabul edilir."
+    },
+    {
+      "id": "din_10_u01_k02_o06:flashcard",
+      "front": "Selim akıl ne anlama gelir?",
+      "back": "Varlığın hakikatini kavrayıp ilişki kurma ve karşılaştırma yapabilen; doğru karar vermesini engelleyen olumsuzluklardan etkilenmeyen akıldır."
+    },
+    {
+      "id": "din_10_u01_k02_o07:flashcard",
+      "front": "Akıl bilgi edinme ve sorumluluk açısından hangi işlevleri görür?",
+      "back": "İnsan aklıyla düşünür, araştırır, doğruyu yanlıştan ayırır ve bilgi edinir; akıl sahibi olmak dinî sorumluluğun temel şartlarındandır."
+    },
+    {
+      "id": "din_10_u01_k02_o08:flashcard",
+      "front": "Salim duyular neyi ifade eder?",
+      "back": "Temel özelliklerini herhangi bir etkenle yitirmemiş, dış dünyayı doğru algılamaya elverişli duyulardır."
+    },
+    {
+      "id": "din_10_u01_k02_o09:flashcard",
+      "front": "İnsan dış dünyayı hangi duyularla algılar?",
+      "back": "Görme, işitme, koklama, dokunma ve tatma duyularıyla algılar."
+    },
+    {
+      "id": "din_10_u01_k02_o10:flashcard",
+      "front": "Duyularla elde edilen bilginin sınırları ve yanılma ihtimali nedir?",
+      "back": "Her duyu yalnızca belirli koşul ve aralıkları algılar; bu nedenle duyu bilgisi sınırlı olabilir ve bazen yanıltabilir."
+    },
+    {
+      "id": "din_10_u01_k02_o11:flashcard",
+      "front": "Öznel bilgi kaynaklarına hangi örnekler verilir?",
+      "back": "Sezgi, rüya, keşif ve ilham; ayrıca sosyal çevre, aile büyükleri ve kişisel hayat tecrübesi öznel bilgi kaynakları arasında sayılır."
+    },
+    {
+      "id": "din_10_u01_k02_o12:flashcard",
+      "front": "Öznel bilgi kaynaklarından edinilen bilgilerin bağlayıcılığı nasıldır?",
+      "back": "Kesin değildir ve bağlayıcılığı yoktur; güvenilir bilgiye ulaşmak için sağlam kaynaklara yönelmek gerekir."
+    },
+    {
+      "id": "din_10_u01_k02_o13:flashcard",
+      "front": "Gündelik bilgi ile dinî bilgi arasındaki farkı belirtin.",
+      "back": "Gündelik bilgi tecrübeyle ve sistemsiz öğrenmeyle edinilir; dinî bilgi kutsal kaynağa dayanır, inananlar için kesin ve değişmez kabul edilir."
+    },
+    {
+      "id": "din_10_u01_k02_o14:flashcard",
+      "front": "Teknik bilgi hangi amaca hizmet eder?",
+      "back": "İnsanın doğadan yararlanarak somut ürünler ve teknolojiler geliştirmesine, gündelik ve bilimsel bilgiyi uygulamaya dönüştürmesine hizmet eder."
+    },
+    {
+      "id": "din_10_u01_k02_o15:flashcard",
+      "front": "Sanatsal, bilimsel ve felsefi bilgi hangi özellikleriyle ayırt edilir?",
+      "back": "Sanatsal bilgi öznel ve duygulara dönüktür; bilimsel bilgi deney-gözleme dayanır ve değişebilir; felsefi bilgi akıl ve mantıkla sorgulama sonucu oluşur."
+    }
+  ],
+  "topic_key": "Din Kültürü > 1.2 Kur'an'ın Anlaşılması ve Yorumlanması"
+}

@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u01_k03",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u01_k03_o01",
+      "alt_beceri": "A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "metin": "Bir bilgisayar benzetiminde aynı sanal cisim durgun hâlden iki kez bırakılıyor. A koşulunda g=3,0 m/s², B koşulunda g=7,5 m/s² kullanılıyor. 2 s sonunda cismin sürati hangi koşulda daha büyüktür?",
+      "secenekler": [
+        "B koşulunda",
+        "A koşulunda",
+        "İki koşulda eşittir",
+        "Kütle bilinmeden karşılaştırılamaz"
+      ],
+      "dogru_index": 0,
+      "cozum": "Durgun hâlden serbest düşmede v=g·t olur. Aynı süre için g değeri büyük olan B koşulunda hız daha büyüktür (7,5·2=15 m/s; A’da 3·2=6 m/s).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yer çekimi ivme vektörünün yönü ve SI birimi nedir?",
+        "back": "Yönü, gök cisminin merkezine doğrudur; SI birimi m/s²’dir."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o02",
+      "alt_beceri": "A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "metin": "Kütlesi 3 kg olan bir test kütlesi, yer çekimi ivmesinin 4,2 m/s² olduğu bir deney düzeneğinde bulunuyor. Kütlenin ağırlığı kaç N’dır?",
+      "secenekler": [
+        "10,5 N",
+        "12,6 N",
+        "7,2 N",
+        "16,8 N"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ağırlık W=mg bağıntısıyla bulunur: W=3·4,2=12,6 N.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir cismin ağırlık kuvvetini kütlesi ve bulunduğu yerdeki yer çekimi ivmesiyle nasıl hesaplarsın?",
+        "back": "G = m·g; ağırlık kuvvetinin yönü gök cisminin merkezine doğrudur."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o03",
+      "alt_beceri": "A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "metin": "Bir gezegen yüzeyindeki aynı konumda kalan araştırma aracına ek yük bağlanıyor ve toplam kütlesi 0,2 kg’dan 4 kg’a çıkarılıyor. Hava direncinin ihmal edildiği serbest düşme modelinde yer çekimi ivmesi nasıl değişir?",
+      "secenekler": [
+        "10 katına çıkar.",
+        "Yarısına iner.",
+        "Değişmez; kütleden bağımsızdır.",
+        "Sıfır olur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Aynı konumda yer çekimi ivmesi, düşen cismin kütlesine değil gezegenin kütle çekim alanına bağlıdır. Bu nedenle aracın kütlesi değişse de g değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hava sürtünmesi ihmal edildiğinde aynı ortamda farklı kütleli cisimlerin yer çekimi ivmeleri nasıl karşılaştırılır?",
+        "back": "Büyüklükleri eşittir; yer çekimi ivmesi cismin kütlesinden bağımsızdır."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o04",
+      "alt_beceri": "A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "metin": "Havada aynı anda bırakılan aynı kâğıdın biri düz, diğeri sıkıca buruşturulmuş hâldedir. Düz kâğıdın daha geç düşmesi en iyi nasıl açıklanır?",
+      "secenekler": [
+        "Düz kâğıdın yer çekimi ivmesi daha küçüktür.",
+        "Buruşturulmuş kâğıdın kütlesi kaybolmuştur.",
+        "Buruşturulmuş kâğıda yer çekimi etki etmez.",
+        "Şekilleri farklı olduğundan hava direnci onları farklı etkiler."
+      ],
+      "dogru_index": 3,
+      "cozum": "Gerçek ortamda hava direnci cismin biçimine göre farklı etki edebilir. Düz kâğıt daha fazla hava direnciyle karşılaşarak daha yavaş düşebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hava sürtünmesi nedir?",
+        "back": "Cisim hareket ederken hava ile etkileşmesi sonucu karşılaştığı direnç kuvvetidir."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o05",
+      "alt_beceri": "A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "metin": "Bir fizik modeli, yere yakın bir bölgede düşen cismi incelerken hava direncini hesaba katmıyor ve yalnızca yer çekimi etkisini alıyor. Cisme etki eden net kuvvet nedir?",
+      "secenekler": [
+        "Cismin ağırlığı olan yer çekimi kuvveti",
+        "Sıfır kuvvet",
+        "Yalnız hava direnci",
+        "Ağırlık ile hava direncinin toplamı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Modelde hava direnci yok sayıldığı ve yalnızca yer çekimi etkisi alındığı için net kuvvet cismin ağırlığı olan yer çekimi kuvvetidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hava sürtünmesinin ihmal edildiği serbest düşmede cisme etki eden net kuvvet nedir?",
+        "back": "Cismin ağırlığına eşit olan yer çekimi kuvvetidir."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o06",
+      "alt_beceri": "B) Serbest Düşme Hareketi",
+      "metin": "Hava direncinin ihmal edildiği bir ortamda, fırlatma işlemi bitmiş araştırma kapsülü yalnızca yer çekimi etkisiyle düşey yukarı hareket ediyor. Bu hareket serbest düşme kapsamına girer mi?",
+      "secenekler": [
+        "Hayır; yukarı yönlü hareket serbest düşme sayılmaz.",
+        "Yalnızca kapsül en yüksek noktaya ulaştıktan sonra serbest düşmedir.",
+        "Evet; yalnızca yer çekimi etkisindeki yukarı ve aşağı hareketler serbest düşme kapsamındadır.",
+        "Yalnızca ilk hızı sıfır olan cisimler serbest düşme yapar."
+      ],
+      "dogru_index": 2,
+      "cozum": "Hava direnci ihmal edildiğinde serbest düşme, yalnızca yer çekiminin etkisindeki hareketi kapsar. Cisim yukarı fırlatılmış olsa da yükselme ve düşme hareketi bu kapsamdadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşme hareketi hangi cisimlerin hareketini kapsar?",
+        "back": "Yalnızca yer çekimi kuvvetinin etkisindeki yukarı atılan, aşağı atılan veya bırakılan cisimlerin hareketini kapsar."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o07",
+      "alt_beceri": "B) Serbest Düşme Hareketi",
+      "metin": "Bir deney düzeneğinde yer çekimi ivmesi 6 m/s² olarak ayarlanıyor. Cisim durgun hâlden serbest bırakılırsa 4 s sonraki hız büyüklüğü kaç m/s olur?",
+      "secenekler": [
+        "12 m/s",
+        "24 m/s",
+        "48 m/s",
+        "6 m/s"
+      ],
+      "dogru_index": 1,
+      "cozum": "İlk hız sıfır olduğundan v=g·t=6×4=24 m/s olur. Bu hesapta serbest düşme ivmesi ile geçen süre çarpılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İlk hızı sıfır olan cismin hava direnci yokken t sürede düşey hızının büyüklüğü nasıl bulunur?",
+        "back": "v = g·t bağıntısı kullanılır."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o08",
+      "alt_beceri": "B) Serbest Düşme Hareketi",
+      "metin": "Hava direnci yokken cisim 180 m yükseklikten durgun hâlde bırakılıyor. g = 10 m/s² ise yere kaç saniyede ulaşır?",
+      "secenekler": [
+        "1 s",
+        "6 s",
+        "4 s",
+        "√2 s"
+      ],
+      "dogru_index": 1,
+      "cozum": "h = ½gt² olduğundan 180 = 5t² ve t² = 36 bulunur. Pozitif süre t = 6 s’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İlk hızı sıfır olan cismin t sürede düşey yer değiştirmesi hangi bağıntıyla hesaplanır?",
+        "back": "h = ½·g·t²."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o09",
+      "alt_beceri": "B) Serbest Düşme Hareketi",
+      "metin": "Hava direnci ihmal edilerek bırakılan cisim 125 m düşüyor. g = 10 m/s² ise yere çarpmadan hemen önceki hızının büyüklüğü kaç m/s’dir?",
+      "secenekler": [
+        "10 m/s",
+        "40 m/s",
+        "50 m/s",
+        "200 m/s"
+      ],
+      "dogru_index": 2,
+      "cozum": "v² = 2gh = 2 × 10 × 125 = 2 500 olduğundan v = 50 m/s olur. Önce hızın karesi bulunur; sorulan hız için karekök alınır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İlk hızı sıfır olan serbest düşen cisim için hız, g ve düşey yer değiştirme arasındaki bağıntı nedir?",
+        "back": "v² = 2·g·h."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u01_k03_o10",
+      "alt_beceri": "B) Serbest Düşme Hareketi",
+      "metin": "Bir su gösterisinde düşey fıskiye ağzından çıkan su damlası 15 m/s hızla yukarı yöneliyor. g=10 m/s² ise damla en yüksek noktaya kaç saniyede ulaşır?",
+      "secenekler": [
+        "4 s",
+        "3 s",
+        "0,5 s",
+        "1,5 s"
+      ],
+      "dogru_index": 3,
+      "cozum": "Tepe noktasında düşey hız sıfırdır. Hız her saniye 10 m/s azaldığından 15/10=1,5 s’de bu noktaya ulaşır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşey yukarı atılan cismin en yüksek noktaya ulaşma süresini ilk hız ve yer çekimi ivmesinden nasıl bulursun?",
+        "back": "Tepe noktasında düşey hız sıfırdır; v = v₀ − g·t bağıntısından t = v₀/g elde edilir."
+      },
+      "kazanim": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u01_k03_o01:flashcard",
+      "front": "Yer çekimi ivme vektörünün yönü ve SI birimi nedir?",
+      "back": "Yönü, gök cisminin merkezine doğrudur; SI birimi m/s²’dir."
+    },
+    {
+      "id": "fizik_10_u01_k03_o02:flashcard",
+      "front": "Bir cismin ağırlık kuvvetini kütlesi ve bulunduğu yerdeki yer çekimi ivmesiyle nasıl hesaplarsın?",
+      "back": "G = m·g; ağırlık kuvvetinin yönü gök cisminin merkezine doğrudur."
+    },
+    {
+      "id": "fizik_10_u01_k03_o03:flashcard",
+      "front": "Hava sürtünmesi ihmal edildiğinde aynı ortamda farklı kütleli cisimlerin yer çekimi ivmeleri nasıl karşılaştırılır?",
+      "back": "Büyüklükleri eşittir; yer çekimi ivmesi cismin kütlesinden bağımsızdır."
+    },
+    {
+      "id": "fizik_10_u01_k03_o04:flashcard",
+      "front": "Hava sürtünmesi nedir?",
+      "back": "Cisim hareket ederken hava ile etkileşmesi sonucu karşılaştığı direnç kuvvetidir."
+    },
+    {
+      "id": "fizik_10_u01_k03_o05:flashcard",
+      "front": "Hava sürtünmesinin ihmal edildiği serbest düşmede cisme etki eden net kuvvet nedir?",
+      "back": "Cismin ağırlığına eşit olan yer çekimi kuvvetidir."
+    },
+    {
+      "id": "fizik_10_u01_k03_o06:flashcard",
+      "front": "Serbest düşme hareketi hangi cisimlerin hareketini kapsar?",
+      "back": "Yalnızca yer çekimi kuvvetinin etkisindeki yukarı atılan, aşağı atılan veya bırakılan cisimlerin hareketini kapsar."
+    },
+    {
+      "id": "fizik_10_u01_k03_o07:flashcard",
+      "front": "İlk hızı sıfır olan cismin hava direnci yokken t sürede düşey hızının büyüklüğü nasıl bulunur?",
+      "back": "v = g·t bağıntısı kullanılır."
+    },
+    {
+      "id": "fizik_10_u01_k03_o08:flashcard",
+      "front": "İlk hızı sıfır olan cismin t sürede düşey yer değiştirmesi hangi bağıntıyla hesaplanır?",
+      "back": "h = ½·g·t²."
+    },
+    {
+      "id": "fizik_10_u01_k03_o09:flashcard",
+      "front": "İlk hızı sıfır olan serbest düşen cisim için hız, g ve düşey yer değiştirme arasındaki bağıntı nedir?",
+      "back": "v² = 2·g·h."
+    },
+    {
+      "id": "fizik_10_u01_k03_o10:flashcard",
+      "front": "Düşey yukarı atılan cismin en yüksek noktaya ulaşma süresini ilk hız ve yer çekimi ivmesinden nasıl bulursun?",
+      "back": "Tepe noktasında düşey hız sıfırdır; v = v₀ − g·t bağıntısından t = v₀/g elde edilir."
+    }
+  ],
+  "baslik": "1.3 Serbest Düşme",
+  "topic_key": "Fizik > 1.3 Serbest Düşme"
+}

@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u03_k06",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u03_k06_o01",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Elektrik akımına maruz kalan bir kişi dengesini kaybedip merdivenden düşüyor. Bu olay, elektrik akımının hangi tehlike grubuna örnektir?",
+      "secenekler": [
+        "Düşme veya çarpma sonucu yaralanma",
+        "Akımın sinirler, kaslar ve kalp üzerine doğrudan etkisi",
+        "Isınmaya bağlı yanık",
+        "Yalıtımın erimesiyle oluşan kısa devre"
+      ],
+      "dogru_index": 0,
+      "cozum": "Elektrik çarpması kişinin dengesini kaybetmesine ve düşerek yaralanmasına yol açabilir. Bu, akımın dokular üzerindeki doğrudan etkisinden ayrı olarak düşme veya çarpma kaynaklı yaralanmadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımının insan sağlığı açısından oluşturabileceği üç temel tehlike grubunu sayınız.",
+        "back": "Sinir, kas ve kalp üzerindeki doğrudan etkiler; ısınmaya bağlı yanıklar; düşme veya çarpma sonucu yaralanmalar."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o02",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Aynı büyüklükteki akım, bir kişinin vücudunda kalp üzerinden; diğerinde ise kalpten uzakta bir yol izliyor. Hangi durumda zarar daha fazla olabilir?",
+      "secenekler": [
+        "Akım kalpten uzakta geçtiğinde",
+        "Akım kalbin üzerinden geçtiğinde",
+        "Yolun etkisi yoktur; yalnızca gerilim önemlidir.",
+        "Her iki durumda da zarar kesinlikle aynıdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Akımın vücutta izlediği yol zararın düzeyini etkiler; kalbin üzerinden geçen yol daha tehlikelidir. Bu nedenle yalnızca gerilime bakmak yeterli değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik çarpmasının vücuda vereceği zararın düzeyini hangi etkenler belirler?",
+        "back": "Akımın büyüklüğü, vücutta izlediği yol ve maruz kalma süresi; ayrıca kişinin vücut direnci ve bireysel koşulları etkiler."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o03",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Aynı büyüklükteki akım iki kişide de aynı vücut yolunu izliyor; birinde temas kısa, diğerinde belirgin biçimde daha uzun sürüyor. Hangi durum daha yüksek risk taşır?",
+      "secenekler": [
+        "Kısa temas; süre kısaldıkça zarar artar.",
+        "İki durumda da süre önemli değildir.",
+        "Daha uzun temas; akımın etki süresi arttıkça zarar riski artabilir.",
+        "Yalnızca ortamın aydınlığı riski belirler."
+      ],
+      "dogru_index": 2,
+      "cozum": "Elektrik akımının etkisi; büyüklük, vücutta izlediği yol ve etki süresi gibi etkenlere bağlıdır. Diğer koşullar aynıyken daha uzun maruziyet daha yüksek risk oluşturabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımına maruz kalma süresi uzarsa sağlık riski nasıl değişebilir?",
+        "back": "Aynı akım ve vücut yolu için etki süresi uzadıkça oluşabilecek zarar artabilir."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o04",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir bakım çalışanı, elektrik dağıtım dolabında yüksek gerilim uyarı levhası görüyor. En güvenli davranış hangisidir?",
+      "secenekler": [
+        "Dolabın kapağını açıp içini incelemek",
+        "Uyarı levhasını dikkate almadan çalışmayı sürdürmek",
+        "Yalıtkan ayakkabı giyip dolaba dokunmak",
+        "Dolaba yaklaşmamak, dokunmamak ve yetkili kişiye haber vermek"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yüksek gerilim uyarısı tehlikeli bir elektrik alanı bulunduğunu bildirir. Yetkili olmayan kişi yaklaşmamalı veya dolaba müdahale etmemeli; durumu sorumlu kişiye iletmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik tehlikesi uyarı levhası bulunan bir alanda nasıl davranılmalıdır?",
+        "back": "Uyarıya uyulmalı, tehlikeli alana yaklaşılmamalı veya dokunulmamalı; durum yetkili kişilere bildirilmelidir."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o05",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir servis görevlisi, devrenin sık sık kesilmesini önlemek için atmış sigortanın yerine kalın bir metal tel koymayı öneriyor. Temel risk nedir?",
+      "secenekler": [
+        "Aşırı akımda devre koruması çalışmayabilir; kablolar aşırı ısınıp zarar görebilir.",
+        "Elektrik akımı bütünüyle kaybolur ve cihazlar soğur.",
+        "Devrenin gerilimi kendiliğinden sıfırlanır.",
+        "Metal tel aşırı akımın oluşmasını kesin olarak engeller."
+      ],
+      "dogru_index": 0,
+      "cozum": "Sigorta aşırı akımda devreyi açarak kablo ve cihazları korumaya yardımcı olur. Onu metal telle köprülemek korumayı etkisizleştirebilir ve aşırı ısınma ya da yangın riskini artırabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Atmış bir sigortayı iletken tel ile köprülemek neden tehlikelidir?",
+        "back": "Koruma devre dışı kalabilir; aşırı akımda kablo ve cihazlar tehlikeli biçimde ısınıp zarar görebilir."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o06",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Aşırı akım nedeniyle tesisat kabloları tehlikeli biçimde ısınmaya başlarsa koruma amacıyla hangi eleman devreyi açar?",
+      "secenekler": [
+        "Ampermetre",
+        "Sigorta",
+        "Pil yatağı",
+        "Anahtarın yalıtkan gövdesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sigorta, aşırı akımın oluşturduğu ısı etkisiyle devreyi açıp akımı keserek cihazları ve canlıları korur. Ampermetre akım ölçer; koruma amacıyla akımı otomatik kesmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sigorta elektrik tesisatını aşırı akıma karşı nasıl korur?",
+        "back": "Aşırı akım sigortada ısı oluşturur; sigortanın içindeki tel eriyip devreyi açarak akımı keser."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o07",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir kişinin elektrik akımına kapıldığını gören kişi için en güvenli ilk yaklaşım hangisidir?",
+      "secenekler": [
+        "Kişiyi çıplak elle çekerek kaynaktan ayırmak",
+        "Kişiye su dökerek akımı durdurmak",
+        "Önce akımı kesmek; bu mümkün değilse iletken olmayan bir malzemeyle teması ayırmak",
+        "Kişi akımla temas hâlindeyken nabzını kontrol etmek"
+      ],
+      "dogru_index": 2,
+      "cozum": "Akım kaynağıyla teması süren kişiye dokunulmamalıdır. Önce akım kesilir; bu mümkün değilse iletken olmayan bir malzeme kullanılır, ardından 112 aranır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akım kaynağıyla teması süren birine yardım ederken izlenecek güvenli ilk adımlar nelerdir?",
+        "back": "Kişiye doğrudan dokunma; mümkünse akımı hemen kes. Kesilemiyorsa iletken olmayan bir malzemeyle teması ayır, 112'yi ara ve uygun ilk yardımı sağla."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o08",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir teknisyenin sabit bir elektrik devresinde bakım yapması gerekiyor. Çalışmaya başlamadan önce atılması gereken temel güvenlik adımı hangisidir?",
+      "secenekler": [
+        "Yalnızca cihaz düğmesini kapatmak",
+        "Kablonun yalıtımını ıslatmak",
+        "Devre çalışırken hızlıca müdahale etmek",
+        "İlgili devrenin enerjisini kesmek ve güvenli olduğunu doğrulamak"
+      ],
+      "dogru_index": 3,
+      "cozum": "Elektrik tesisatına müdahale edilmeden önce ilgili devrenin enerjisi kesilmeli ve güvenli olduğu doğrulanmalıdır. Devre çalışır durumdayken müdahale etmek çarpılma riski doğurur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik tesisatında onarım veya inceleme yapılmadan önce hangi güvenlik adımı atılmalıdır?",
+        "back": "İlgili devrenin enerjisi kesilmeli; elektrik işi yetkin kişi tarafından güvenli koşullarda yapılmalıdır."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o09",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Bir sera sulama hattındaki kaçak, prize bağlı su pompasının çevresindeki zemini ıslatıyor. En güvenli davranış hangisidir?",
+      "secenekler": [
+        "Makineyi kullanmayı bırakıp ıslak alandan uzak durmak ve yetkili kişiye haber vermek",
+        "Makineyi ıslak zeminde çalıştırmaya devam etmek",
+        "Cihaza çıplak elle dokunup fişi hızla çekmek",
+        "Elektrikli cihaz açıkken su birikintisini elle silmek"
+      ],
+      "dogru_index": 0,
+      "cozum": "Islak zeminde elektrikli alet kullanılmamalı; suya veya pompaya dokunulmamalıdır. Güvenli mesafeye geçip durum yetkili kişiye bildirilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrikli bir cihazın çevresindeki zeminde su birikintisi görülürse nasıl davranılmalıdır?",
+        "back": "Cihaz ıslak zeminde kullanılmamalı ve suya ya da cihaza dokunulmamalıdır. Alan güvenli tutulup yetkili kişiye haber verilmelidir."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u03_k06_o10",
+      "alt_beceri": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "metin": "Üzerinde belirli bir gerilim aralığı yazan bir elektrikli aleti güvenli kullanmak için ne yapılmalıdır?",
+      "secenekler": [
+        "Daha yüksek gerilimde daha kısa süre çalıştırmak",
+        "Cihazı yalnızca tasarlandığı ve üreticinin belirttiği gerilim aralığında çalıştırmak",
+        "Gerilim bilgisini önemsemeden yalnızca kablo uzunluğuna bakmak",
+        "Cihazın fişini topraklı priz yerine herhangi bir prize takmak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Elektrikli cihazlar üreticinin belirttiği ve tasarlandıkları gerilim aralığında kullanılmalıdır. Daha yüksek gerilimde kısa süre çalıştırmak güvenli kullanım sağlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrikli cihazlar güvenli biçimde çalıştırılmak için hangi gerilim koşulunda kullanılmalıdır?",
+        "back": "Cihazlar tasarlandıkları ve üreticilerinin belirttiği gerilim aralığında kullanılmalıdır."
+      },
+      "kazanim": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u03_k06_o01:flashcard",
+      "front": "Elektrik akımının insan sağlığı açısından oluşturabileceği üç temel tehlike grubunu sayınız.",
+      "back": "Sinir, kas ve kalp üzerindeki doğrudan etkiler; ısınmaya bağlı yanıklar; düşme veya çarpma sonucu yaralanmalar."
+    },
+    {
+      "id": "fizik_10_u03_k06_o02:flashcard",
+      "front": "Elektrik çarpmasının vücuda vereceği zararın düzeyini hangi etkenler belirler?",
+      "back": "Akımın büyüklüğü, vücutta izlediği yol ve maruz kalma süresi; ayrıca kişinin vücut direnci ve bireysel koşulları etkiler."
+    },
+    {
+      "id": "fizik_10_u03_k06_o03:flashcard",
+      "front": "Elektrik akımına maruz kalma süresi uzarsa sağlık riski nasıl değişebilir?",
+      "back": "Aynı akım ve vücut yolu için etki süresi uzadıkça oluşabilecek zarar artabilir."
+    },
+    {
+      "id": "fizik_10_u03_k06_o04:flashcard",
+      "front": "Elektrik tehlikesi uyarı levhası bulunan bir alanda nasıl davranılmalıdır?",
+      "back": "Uyarıya uyulmalı, tehlikeli alana yaklaşılmamalı veya dokunulmamalı; durum yetkili kişilere bildirilmelidir."
+    },
+    {
+      "id": "fizik_10_u03_k06_o05:flashcard",
+      "front": "Atmış bir sigortayı iletken tel ile köprülemek neden tehlikelidir?",
+      "back": "Koruma devre dışı kalabilir; aşırı akımda kablo ve cihazlar tehlikeli biçimde ısınıp zarar görebilir."
+    },
+    {
+      "id": "fizik_10_u03_k06_o06:flashcard",
+      "front": "Sigorta elektrik tesisatını aşırı akıma karşı nasıl korur?",
+      "back": "Aşırı akım sigortada ısı oluşturur; sigortanın içindeki tel eriyip devreyi açarak akımı keser."
+    },
+    {
+      "id": "fizik_10_u03_k06_o07:flashcard",
+      "front": "Akım kaynağıyla teması süren birine yardım ederken izlenecek güvenli ilk adımlar nelerdir?",
+      "back": "Kişiye doğrudan dokunma; mümkünse akımı hemen kes. Kesilemiyorsa iletken olmayan bir malzemeyle teması ayır, 112'yi ara ve uygun ilk yardımı sağla."
+    },
+    {
+      "id": "fizik_10_u03_k06_o08:flashcard",
+      "front": "Elektrik tesisatında onarım veya inceleme yapılmadan önce hangi güvenlik adımı atılmalıdır?",
+      "back": "İlgili devrenin enerjisi kesilmeli; elektrik işi yetkin kişi tarafından güvenli koşullarda yapılmalıdır."
+    },
+    {
+      "id": "fizik_10_u03_k06_o09:flashcard",
+      "front": "Elektrikli bir cihazın çevresindeki zeminde su birikintisi görülürse nasıl davranılmalıdır?",
+      "back": "Cihaz ıslak zeminde kullanılmamalı ve suya ya da cihaza dokunulmamalıdır. Alan güvenli tutulup yetkili kişiye haber verilmelidir."
+    },
+    {
+      "id": "fizik_10_u03_k06_o10:flashcard",
+      "front": "Elektrikli cihazlar güvenli biçimde çalıştırılmak için hangi gerilim koşulunda kullanılmalıdır?",
+      "back": "Cihazlar tasarlandıkları ve üreticilerinin belirttiği gerilim aralığında kullanılmalıdır."
+    }
+  ],
+  "baslik": "3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
+  "topic_key": "Fizik > 3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler"
+}

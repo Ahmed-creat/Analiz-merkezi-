@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u04_k05",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u04_k05_o01",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Sabit derinlikli bir sulama kanalında ilerleyen doğrusal su dalgaları, düz bir beton kıyı yüzeyine çarpıp aynı ortama geri dönüyor. Yansıma sonrasında hangi özellikler beklenir?",
+      "secenekler": [
+        "Yön değişir; frekans, sürat ve dalga boyu değişmez.",
+        "Yalnız frekans değişir.",
+        "Sürat ve dalga boyu azalır.",
+        "Dalga farklı ortama geçer ve frekansı artar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Yansıma sırasında dalga aynı ortamda kalır. Bu nedenle yönü değişir; kaynağa bağlı frekans ile ortamın belirlediği sürat ve dalga boyu değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgası sabit derinlikte bir engelden yansıdığında hangi özellik değişir, hangileri aynı kalır?",
+        "back": "Yayılma yönü değişir; frekansı, sürati ve dalga boyu değişmez."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o02",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Bir doğrusal su dalgasının düz engele gelme açısı yüzey normaline göre 35° ölçülüyor. Yansıma açısı kaç derecedir?",
+      "secenekler": [
+        "55°",
+        "35°",
+        "70°",
+        "0°"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yansıma yasasına göre normalle ölçülen gelme ve yansıma açıları eşittir. Bu nedenle yansıma açısı 35° olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgalarında gelme ve yansıma açılarını ölçerken hangi çizgiyi referans alırsın ve aralarındaki ilişki nedir?",
+        "back": "Yüzey normalini referans alırım; gelme açısı yansıma açısına eşittir (i = r)."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o03",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Bir su dalgası düz bir yansıtıcı kenara yüzey normaliyle 42° açı yaparak geliyor. Yansıyan dalganın normalle yaptığı açı kaç derecedir?",
+      "secenekler": [
+        "48°",
+        "21°",
+        "42°",
+        "84°"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yansıma yasasına göre normalle ölçülen yansıma açısı gelme açısına eşittir. Bu nedenle açı 42° olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düz engele eğik gelen doğrusal su dalgasının gelme ve yansıma açıları arasında nasıl bir ilişki vardır?",
+        "back": "Açılar yüzey normaline göre ölçülür; gelme açısı yansıma açısına eşittir."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o04",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Derin ortamda ilerleyen doğrusal su dalgaları, ayırıcı yüzeye eğik açıyla gelip sığ ortama geçiyor. Beklenen değişim hangisidir?",
+      "secenekler": [
+        "Sürat ve dalga boyu artar; dalga normalden uzaklaşır.",
+        "Frekans artar, sürat sabit kalır.",
+        "Dalga yönü değişmez, tüm özellikler aynı kalır.",
+        "Sürat ve dalga boyu azalır; dalga normale yaklaşır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Derin ortamdan sığ ortama geçerken su dalgasının sürati ve dalga boyu azalır. Sürat değişimi nedeniyle dalga yüzey normaline yaklaşarak kırılır; frekansı değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgaları derin ortamdan sığ ortama geçerken sürat, dalga boyu ve yön nasıl değişir?",
+        "back": "Sürat ve dalga boyu azalır; dalga yüzey normaline yaklaşarak kırılır. Frekans değişmez."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o05",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Sığ ortamdan derin ortama eğik gelen su dalgası ayırıcı yüzeyi geçiyor. Kırılan dalganın hangi özelliği artar?",
+      "secenekler": [
+        "Yayılma sürati ve dalga boyu",
+        "Frekans ve periyot birlikte",
+        "Dalga boyu azalırken sürat",
+        "Yansıma açısı daima sıfıra"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sığ ortamdan derin ortama geçince su dalgasının sürati artar ve dalga boyu uzar. Kaynağa bağlı frekans değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgaları sığ ortamdan derin ortama geçerken yayılma sürati ve dalga boyunda ne beklersin?",
+        "back": "Sürat ve dalga boyu artar; dalga yüzey normalinden uzaklaşarak kırılır. Frekans değişmez."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o06",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Aynı kaynak 5 Hz frekansla doğrusal su dalgaları üretiyor. Dalgalar derin bölgeden sığ bölgeye geçince frekansları ne olur?",
+      "secenekler": [
+        "Sığ ortamda 2,5 Hz'e düşer.",
+        "5 Hz olarak kalır.",
+        "Sığ ortamda iki katına çıkar.",
+        "Sığ ortamda sıfır olur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Dalga frekansı kaynağın frekansına bağlıdır ve ortam değişirken değişmez. Derinlik değişiminde sürat ve dalga boyu değişse de frekans 5 Hz kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgası farklı derinliğe geçerken frekansın değişip değişmediğini ve bunun nedenini açıkla.",
+        "back": "Frekans değişmez; dalganın frekansı kaynağın frekansına bağlıdır. Derinlik değişince sürat ve dalga boyu değişebilir."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o07",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Frekansı değişmeyen bir su dalgasının derin ortamdaki dalga boyu 12 cm, sığ ortamdaki 8 cm'dir. Derin ortamdaki sürat sığ ortamdakinin kaç katıdır?",
+      "secenekler": [
+        "2/3",
+        "3",
+        "1,5",
+        "4"
+      ],
+      "dogru_index": 2,
+      "cozum": "Frekans aynı kaldığından c = λ·f gereği sürat dalga boyuyla aynı oranda değişir. Sürat oranı 12/8 = 1,5'tir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kırılma sırasında frekans sabit kalıyorsa dalga boyuyla sürat arasındaki değişimi nasıl ilişkilendirirsin?",
+        "back": "c = λ·f bağıntısında f sabit olduğundan sürat ve dalga boyu aynı oranda değişir."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o08",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Gelen doğrusal su dalgası düz engel yüzeyiyle 25° açı yapıyor. Yüzey normaliyle ölçülen gelme açısı kaç derecedir?",
+      "secenekler": [
+        "25°",
+        "45°",
+        "90°",
+        "65°"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yüzey ile yüzey normali dik olduğundan iki açı toplamı 90°’dir. Gelme açısı 90° − 25° = 65° olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su dalgasının engelle yaptığı açı ile gelme açısı arasında nasıl dönüşüm yaparsın?",
+        "back": "Gelme açısı yüzey normaliyle ölçülür; yüzeyle yapılan açı ile toplamı 90°'dir."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o09",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Doğrusal su dalgası derin ortamdan sığ ortama ayırıcı yüzeyin normal doğrultusunda geçiyor. Hangi sonuç beklenir?",
+      "secenekler": [
+        "Yön değişmeden sürat ve dalga boyu azalır; frekans sabit kalır.",
+        "Sürat, dalga boyu ve frekans artar.",
+        "Yansıma gerçekleşir ve dalga aynı ortamda kalır.",
+        "Yön değişir ama sürat ve dalga boyu sabit kalır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Dalga normal doğrultusunda geçtiği için yayılma yönü değişmez. Derin ortamdan sığ ortama geçişte sürat ve dalga boyu azalırken frekans değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doğrusal su dalgası farklı derinliklerin sınırına yüzey normalinden ilerleyerek gelirse hangi özellikler değişebilir?",
+        "back": "Yayılma doğrultusu değişmez; derinlik değiştiği için sürat ve dalga boyu değişir, frekans sabit kalır."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u04_k05_o10",
+      "alt_beceri": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "metin": "Bir taşkın gözlem istasyonunda, ölçüm platformuna gelen su dalgalarını başka yöne çevirmek için kanalın kenarına düz ve sert bir yansıtıcı panel yerleştiriliyor. Panel, platformdaki dalga etkisini nasıl azaltmaya yardımcı olur?",
+      "secenekler": [
+        "Dalga frekansını kaynağın frekansından bağımsız biçimde sıfırlayarak",
+        "Gelen dalga enerjisinin bir bölümünü yansıtıp veya sönümleyip kafes içine aktarımı azaltarak",
+        "Suyun derinliğini her yerde artırarak",
+        "Dalga yayılmasını mekanik dalgadan elektromanyetik dalgaya çevirerek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Su dalgaları düz ve sert bir yüzeye çarptığında yansıyıp yön değiştirir. Panel gelen dalgaların bir bölümünü ölçüm platformundan uzağa yönlendirerek platforma ulaşan dalga etkisini azaltır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Açık suya bakan bir gözlem platformunun çevresindeki dalga perdesi dalga etkisini nasıl azaltabilir?",
+        "back": "Perde gelen su dalgalarını yansıtarak yönlerini değiştirir ve platforma ulaşan dalga etkisini azaltmaya yardımcı olur."
+      },
+      "kazanim": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u04_k05_o01:flashcard",
+      "front": "Su dalgası sabit derinlikte bir engelden yansıdığında hangi özellik değişir, hangileri aynı kalır?",
+      "back": "Yayılma yönü değişir; frekansı, sürati ve dalga boyu değişmez."
+    },
+    {
+      "id": "fizik_10_u04_k05_o02:flashcard",
+      "front": "Su dalgalarında gelme ve yansıma açılarını ölçerken hangi çizgiyi referans alırsın ve aralarındaki ilişki nedir?",
+      "back": "Yüzey normalini referans alırım; gelme açısı yansıma açısına eşittir (i = r)."
+    },
+    {
+      "id": "fizik_10_u04_k05_o03:flashcard",
+      "front": "Düz engele eğik gelen doğrusal su dalgasının gelme ve yansıma açıları arasında nasıl bir ilişki vardır?",
+      "back": "Açılar yüzey normaline göre ölçülür; gelme açısı yansıma açısına eşittir."
+    },
+    {
+      "id": "fizik_10_u04_k05_o04:flashcard",
+      "front": "Su dalgaları derin ortamdan sığ ortama geçerken sürat, dalga boyu ve yön nasıl değişir?",
+      "back": "Sürat ve dalga boyu azalır; dalga yüzey normaline yaklaşarak kırılır. Frekans değişmez."
+    },
+    {
+      "id": "fizik_10_u04_k05_o05:flashcard",
+      "front": "Su dalgaları sığ ortamdan derin ortama geçerken yayılma sürati ve dalga boyunda ne beklersin?",
+      "back": "Sürat ve dalga boyu artar; dalga yüzey normalinden uzaklaşarak kırılır. Frekans değişmez."
+    },
+    {
+      "id": "fizik_10_u04_k05_o06:flashcard",
+      "front": "Su dalgası farklı derinliğe geçerken frekansın değişip değişmediğini ve bunun nedenini açıkla.",
+      "back": "Frekans değişmez; dalganın frekansı kaynağın frekansına bağlıdır. Derinlik değişince sürat ve dalga boyu değişebilir."
+    },
+    {
+      "id": "fizik_10_u04_k05_o07:flashcard",
+      "front": "Kırılma sırasında frekans sabit kalıyorsa dalga boyuyla sürat arasındaki değişimi nasıl ilişkilendirirsin?",
+      "back": "c = λ·f bağıntısında f sabit olduğundan sürat ve dalga boyu aynı oranda değişir."
+    },
+    {
+      "id": "fizik_10_u04_k05_o08:flashcard",
+      "front": "Su dalgasının engelle yaptığı açı ile gelme açısı arasında nasıl dönüşüm yaparsın?",
+      "back": "Gelme açısı yüzey normaliyle ölçülür; yüzeyle yapılan açı ile toplamı 90°'dir."
+    },
+    {
+      "id": "fizik_10_u04_k05_o09:flashcard",
+      "front": "Doğrusal su dalgası farklı derinliklerin sınırına yüzey normalinden ilerleyerek gelirse hangi özellikler değişebilir?",
+      "back": "Yayılma doğrultusu değişmez; derinlik değiştiği için sürat ve dalga boyu değişir, frekans sabit kalır."
+    },
+    {
+      "id": "fizik_10_u04_k05_o10:flashcard",
+      "front": "Açık suya bakan bir gözlem platformunun çevresindeki dalga perdesi dalga etkisini nasıl azaltabilir?",
+      "back": "Perde gelen su dalgalarını yansıtarak yönlerini değiştirir ve platforma ulaşan dalga etkisini azaltmaya yardımcı olur."
+    }
+  ],
+  "baslik": "4.5 Su Dalgalarında Yansıma ve Kırılma",
+  "topic_key": "Fizik > 4.5 Su Dalgalarında Yansıma ve Kırılma"
+}

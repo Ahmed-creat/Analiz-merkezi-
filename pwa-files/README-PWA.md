@@ -28,10 +28,27 @@ Bu proje `analiz-merkezi-pwa (3).zip` dosyasından çıkarılan PWA uygulamasıd
 - **icons/icon-192.png** - PWA ikon (192x192)
 - **icons/icon-512.png** - PWA ikon (512x512)
 
+## 10. Sınıf Deneme Formatı
+
+10. sınıf denemesi sınıf seçimine göre 120 soru ve 135 dakika olarak açılır:
+TDE 30; Tarih 10; Coğrafya 10; Felsefe 5; Din Kültürü 5; Matematik 30;
+Fizik, Kimya ve Biyoloji 10'ar soru. Yayınlar arasında küçük alt dağılım farkları olabilir.
+MEB ortak yazılısı bu genel deneme formatından ayrıdır.
+
+## Soru Havuzlarının Eklenmesi
+
+Soru havuzları `content/soru_havuzlari/{konu_id}.json` altında tutulur. Konu başına en az 10 soru,
+alt beceri başına en az 2 soru, dört seçenek ve zorunlu `cozum` alanı gerekir.
+Yeni havuz ekledikten sonra kök dizinde `npm run validate:pools` çalıştırılmalıdır.
+Havuz bulunmayan konular bozulmuş modda mevcut deneme verisiyle çalışmaya devam eder.
+İlişki grafı `content/iliski_grafi.json` olarak açılışta doğrulanır.
+Depoya alınan 9 ders havuzunda 152 konu ve 1.756 soru bulunur; `index.json` manifestiyle yüklenir.
+
 ## Kurulum
 
 ```bash
 npm install
+npm run validate:pools
 firebase deploy
 ```
 

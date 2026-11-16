@@ -1,0 +1,241 @@
+{
+  "konu_id": "edebiyat_10_u02_k02",
+  "sinif": 10,
+  "ders": "Türk Dili ve Edebiyatı",
+  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "sorular": [
+    {
+      "soru_id": "edebiyat_10_u02_k02_o01",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir şair, dönemin yöneticisine sunmak üzere uzun ve sanatlı bir şiir hazırlıyor. Bu şiir türü hangisidir?",
+      "secenekler": [
+        "Kaside",
+        "Türkü",
+        "Sav",
+        "Fabl"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kaside çoğunlukla din ve devlet adamlarını övmek amacıyla yazılan uzun Divan şiiridir; yergi amacıyla da kullanılabilir. Türkü ve sav farklı geleneklere aittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kasidenin yaygın yazılış amacını ve yöneltilebileceği kişileri yaz.",
+        "back": "Birini, çoğunlukla din ya da devlet büyüğünü övmek; kimi zaman yermek için yazılır."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o02",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir nazım biçiminin uzunluğu onlarca beyitle ölçülüyor ve birimleri ikişer dizeden oluşuyor. Kaynağın kaside için verdiği aralık hangisidir?",
+      "secenekler": [
+        "5–15 beyit",
+        "33–99 beyit",
+        "3–5 dörtlük",
+        "Tek dörtlük"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kaside beyitlerle kurulur ve kaynakta genellikle 33–99 beyit aralığı verilir. 5–15 beyit gazel, 3–5 dörtlük koşma için belirtilmiştir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kasidenin nazım birimi ve yaygın beyit aralığı nedir?",
+        "back": "Beyit; kaynakta genellikle 33–99 beyit aralığı verilir."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o03",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kasidede ilk beyit kendi içinde uyaklı, sonraki beyitlerin ikinci dizeleri ilk beyitle uyaklıdır. Bu düzen hangisidir?",
+      "secenekler": [
+        "aa, bb, cc, dd",
+        "abab, cccb, dddb",
+        "aa, ba, ca, da",
+        "aaaa, bbbb, cccc"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kaside de gazel gibi aa, ba, ca düzenini kullanır. aa, bb, cc düzeni mesnevinin tipik uyak yapısıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kasidenin uyak düzeni gazeldeki hangi düzenle aynıdır?",
+        "back": "aa, ba, ca, da biçimiyle."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o04",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir öğrenci kasidenin bölümlerini sayarken nesip, girizgâh, methiye, tegazzül, fahriye ve dua başlıklarını buluyor. Toplam kaç bölüm vardır?",
+      "secenekler": [
+        "Üç",
+        "Dört",
+        "On",
+        "Altı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kaynağa göre kaside altı temel bölümden oluşur. Masal ve halk hikâyesi için verilen bölüm sayıları bundan farklıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kaynakta kasidenin kaç temel bölümü sıralanır?",
+        "back": "Altı bölüm."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o05",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kasidenin başlangıcında şair çevreyi ve mevsimi tasvir ederek şiire giriyor. Bu başlangıç bölümü nasıl adlandırılır?",
+      "secenekler": [
+        "Nesip (teşbib)",
+        "Methiye",
+        "Dua",
+        "Fahriye"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kasidenin ilk tasvir bölümü nesiptir; mevsim tasviri içerdiğinde teşbib adı da verilir. Methiye övgü, dua ise son bölümüdür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kasidenin başındaki tasvir bölümüne hangi ad verilir?",
+        "back": "Nesip; mevsim tasviri varsa teşbib adı da kullanılır."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o06",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Şair, tasvirden övgüye geçmeden önce bir iki beyitle yeni bölüme başlayacağını sezdiriyor. Bu geçişin adı nedir?",
+      "secenekler": [
+        "Fahriye",
+        "Girizgâh",
+        "Tegazzül",
+        "Hatime"
+      ],
+      "dogru_index": 1,
+      "cozum": "Girizgâh, nesipten methiyeye geçişi sağlayan kısa bölümdür. Fahriye şairin kendini övmesi, tegazzül kaside içinde gazel söylemedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kasidede nesipten methiyeye geçişi sağlayan bölümün adını yaz.",
+        "back": "Girizgâh."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o07",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir şiirin orta bölümünde şiirin sunulduğu kişinin başarıları abartılı biçimde övülüyor. Bu bölüm hangi adla anılır?",
+      "secenekler": [
+        "Nesip",
+        "Fahriye",
+        "Methiye",
+        "Girizgâh"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kasidenin sunulduğu kişinin övüldüğü bölüm methiyedir. Şairin kendisini övdüğü bölüm fahriyedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kasidede sunulan kişinin övüldüğü bölüm nedir?",
+        "back": "Methiye."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o08",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Uzun bir kasidenin akışında şair, aynı ölçü ve uyakla ayrı bir gazel söylüyor. Bu uygulamanın adı nedir?",
+      "secenekler": [
+        "Teşbib",
+        "Münacat",
+        "Fahriye",
+        "Tegazzül"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kasidenin içinde gazel söylemeye tegazzül denir. Teşbib tasvirli başlangıçla, fahriye şairin kendini övmesiyle ilgilidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kasidenin içinde aynı ölçü ve uyakla gazel söylenmesine ne denir?",
+        "back": "Tegazzül."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o09",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir kasidede şair, kendi şiir gücünü ve yeteneğini öne çıkarıyor. Bu bölüm hangi terimle adlandırılır?",
+      "secenekler": [
+        "Fahriye",
+        "Methiye",
+        "Dua",
+        "Nesip"
+      ],
+      "dogru_index": 0,
+      "cozum": "Fahriye şairin kendisini övdüğü bölümdür. Methiye kasidenin sunulduğu kişiyi över.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Şairin kendisini övdüğü kaside bölümünü adlandır.",
+        "back": "Fahriye."
+      }
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k02_o10",
+      "alt_beceri": "Genel konu becerisi",
+      "metin": "Bir şiir, tek yaratıcı inancını ve Allah'ın birliğini anlatma amacıyla yazılmıştır. Konusuna göre bu kaside türü nedir?",
+      "secenekler": [
+        "Naat",
+        "Tevhit",
+        "Hicviye",
+        "Şehrengiz"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tevhit Allah'ın birliğini anlatır. Naat Peygamber'i övmeye, hicviye eleştiri ve alaya, şehrengiz bir şehrin güzelliklerine yönelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Allah'ın birliğini anlatan kaside türünün adını yaz.",
+        "back": "Tevhit."
+      }
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "edebiyat_10_u02_k02_o01:flashcard",
+      "front": "Kasidenin yaygın yazılış amacını ve yöneltilebileceği kişileri yaz.",
+      "back": "Birini, çoğunlukla din ya da devlet büyüğünü övmek; kimi zaman yermek için yazılır."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o02:flashcard",
+      "front": "Kasidenin nazım birimi ve yaygın beyit aralığı nedir?",
+      "back": "Beyit; kaynakta genellikle 33–99 beyit aralığı verilir."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o03:flashcard",
+      "front": "Kasidenin uyak düzeni gazeldeki hangi düzenle aynıdır?",
+      "back": "aa, ba, ca, da biçimiyle."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o04:flashcard",
+      "front": "Kaynakta kasidenin kaç temel bölümü sıralanır?",
+      "back": "Altı bölüm."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o05:flashcard",
+      "front": "Kasidenin başındaki tasvir bölümüne hangi ad verilir?",
+      "back": "Nesip; mevsim tasviri varsa teşbib adı da kullanılır."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o06:flashcard",
+      "front": "Kasidede nesipten methiyeye geçişi sağlayan bölümün adını yaz.",
+      "back": "Girizgâh."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o07:flashcard",
+      "front": "Kasidede sunulan kişinin övüldüğü bölüm nedir?",
+      "back": "Methiye."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o08:flashcard",
+      "front": "Kasidenin içinde aynı ölçü ve uyakla gazel söylenmesine ne denir?",
+      "back": "Tegazzül."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o09:flashcard",
+      "front": "Şairin kendisini övdüğü kaside bölümünü adlandır.",
+      "back": "Fahriye."
+    },
+    {
+      "id": "edebiyat_10_u02_k02_o10:flashcard",
+      "front": "Allah'ın birliğini anlatan kaside türünün adını yaz.",
+      "back": "Tevhit."
+    }
+  ],
+  "topic_key": "Türk Dili ve Edebiyatı > Kaside"
+}
