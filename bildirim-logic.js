@@ -7,12 +7,12 @@
 
 const REASON_WEIGHTS = {
   "Konuyu Bilmiyordum": 1.5,
-  "KONUEKSİKLİĞİ": 1.5,
+  "KONU EKSİKLİĞİ": 1.5,
   "ANLAMADIM": 0.5,
   "İşlem Hatası/Dikkatsizlik": 0.5,
   "Kodlama/Kitapçık Hatası": 0.1,
-  "SÜREYETMEDİ": 0.3,
-  "ÇÖZÜMYOLUNUBULAMADIM": 0.8
+  "SÜRE YETMEDİ": 0.3,
+  "ÇÖZÜM YOLUNU BULAMADIM": 0.8
 };
 const MEMORY_BASE_DECAY = 0.16;
 const MEMORY_DECAY_SLOWDOWN = 0.90;
@@ -29,7 +29,7 @@ const RHYTHMS = [
 ];
 
 function parseDay(str) {
-  if (!str || typeof str !== "string" || !/^[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(str)) return null;
+  if (!str || typeof str !== "string" || !/^\d{4}-\d{2}-\d{2}/.test(str)) return null;
   const d = new Date(str.slice(0, 10) + "T00:00:00");
   return isNaN(d.getTime()) ? null : d;
 }
@@ -89,36 +89,33 @@ function topicLearnedAfter(key, logDate, state) {
   const ld = logDate ? parseDay(logDate) : null;
   return !ld ? true : ld < done;
 }
-function canonicalReason(value) {
-  const r = String(value || "").trim();
-  return ({ "KONU EKSİKLİĞİ": "KONUEKSİKLİĞİ", "SÜRE YETMEDİ": "SÜREYETMEDİ", "ÇÖZÜM YOLUNU BULAMADIM": "ÇÖZÜMYOLUNUBULAMADIM" })[r] || r;
-}
 function collectErrorStats(state) {
   const stats = {};
-  const push = (log, source) => {
+  const push = (log, sourceWeight) => {
     if (!log || !log.topic || !log.lesson) return;
     const key = log.lesson + " > " + log.topic;
     if (topicLearnedAfter(key, log.date, state)) return;
-    if (!stats[key]) stats[key] = { lesson: log.lesson, topic: log.topic, count: 0, denemeBilgi: 0, testBilgi: 0, islem: 0, anlamadim: 0, reasons: {} };
-    const row = stats[key]; const reason = canonicalReason(log.type || log.reason); row.count++; row.reasons[reason] = (row.reasons[reason] || 0) + 1;
-    if (reason === "Konuyu Bilmiyordum" || reason === "KONUEKSİKLİĞİ") source === "deneme" ? row.denemeBilgi++ : row.testBilgi++;
-    if (reason === "İşlem Hatası/Dikkatsizlik") row.islem++;
-    if (reason === "ANLAMADIM") row.anlamadim++;
+    if (!stats[key]) stats[key] = { lesson: log.lesson, topic: log.topic, count: 0, kae: 0, reasons: {}, weighted: 0 };
+    const s = stats[key];
+    const w = REASON_WEIGHTS[log.type] != null ? REASON_WEIGHTS[log.type] : 0.5;
+    s.count++;
+    if (log.type === "Konuyu Bilmiyordum" || log.type === "KONU EKSİKLİĞİ") s.kae++;
+    s.weighted += w * sourceWeight;
   };
-  (state.exams || []).forEach(ex => (ex.errorLogs || []).forEach(l => push(l, "deneme")));
-  (state.questions || []).forEach(q => (q.errorLogs || []).forEach(l => push(l, "test")));
+  (state.exams || []).forEach(ex => (ex.errorLogs || []).forEach(l => push(l, 1.5)));
+  (state.questions || []).forEach(q => (q.errorLogs || []).forEach(l => push(l, 1.0)));
   return stats;
 }
-function calculatePriority(state, aytOverride) {
+function calculatePriority(state) {
   const stats = collectErrorStats(state);
-  return Object.entries(stats).map(([key, s]) => {
-    const configuredAyt = state && state.settings && Number.isFinite(Number(state.settings.aytWeight)) ? Number(state.settings.aytWeight) : aytOverride;
-    const factor = configuredAyt == null ? aytWeightOf(s.lesson) : configuredAyt;
-    const score = (1.5 * s.denemeBilgi + 1.0 * s.testBilgi + 0.5 * (s.islem + s.anlamadim)) * (1 + factor);
-    const override = state.bkt_state && state.bkt_state[key] && state.bkt_state[key].kok_neden_oncelik;
-    const effective = override ? Math.max(score, Number(override.etkin) || 0) : score;
-    return [key, Math.round(effective * 100) / 100];
-  }).filter(r => r[1] > 0).sort((a, b) => b[1] - a[1]);
+  return Object.entries(stats)
+    .map(([key, s]) => {
+      const laplace = s.kae / (s.count + 1);
+      const score = s.weighted * (1 + laplace) * (1 + aytWeightOf(s.lesson));
+      return [key, Math.round(score * 10) / 10];
+    })
+    .filter(r => r[1] > 0)
+    .sort((a, b) => b[1] - a[1]);
 }
 
 // Konu başarı yüzdesi (deneme + soru bankası)
