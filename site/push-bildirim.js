@@ -429,9 +429,12 @@
         return;
       }
       otomatikDeneme = 0;
-      const r = await abone(false);
-      // İzin önceden verilmiş ama test bildirimi hiç gitmemişse bir kez gönder
-      if (r && r.ok) await testBirKez();
+      // v60 — KULLANICI: "Uygulamaya her girildiğinde test bildirimi geliyor."
+      // OTOMATİK TEST BİLDİRİMİ KALDIRILDI. Her açılışta (ve her öne gelişte)
+      // bir test push'u atmak gürültüdür; kanal zaten cihaz beyanıyla kanıtlandı
+      // (push_teslim: asama=push + gosterim{gosterildi:true}). Test yalnız izin
+      // İLK verildiğinde (izinIste) ve "kanalı test et" düğmesiyle çalışır.
+      await abone(false);
     } catch (e) { /* sessiz */ }
   }
 

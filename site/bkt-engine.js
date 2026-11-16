@@ -1332,7 +1332,27 @@
     }
     if (!completeTopicWrapped && typeof window.completeTopic === "function") {
       completeTopicWrapped = true; const originalComplete = window.completeTopic;
-      window.completeTopic = function (key) { const result = originalComplete.apply(this, arguments); const entry = getEntry(key, true); entry.study_completed_at = TODAY(); entry.precheck_due = TODAY(); scheduleLearningTest(key, TODAY()); if (typeof saveState === "function") saveState(); return result; };
+      window.completeTopic = function (key) {
+        const result = originalComplete.apply(this, arguments);
+        const entry = getEntry(key, true);
+        entry.study_completed_at = TODAY();
+        // v60 — KÖK NEDEN: burada koşulsuz `entry.precheck_due = TODAY()`
+        // yazılıyordu. 5. adım (5 soruluk kısa kontrol) az önce çözüldüğü hâlde
+        // kontrol yeniden "zamanı geldi" sayılıyor, konu tamamlanır tamamlanmaz
+        // "5 soruluk kısa kontrol seni bekliyor" kartı geri geliyordu
+        // (kullanıcı: "zaten 5. adımdı, orada çözdükten sonra neden geri geliyor").
+        // Artık kontrol tarihi varsa sıradaki kontrol o tarihten itibaren
+        // aralık kadar ileri atılır; ancak hiç kontrol yapılmadıysa bugündür.
+        if (entry.son_kisa_kontrol) {
+          const aralik = entry.son_kisa_kontrol_gecti === false ? 1 : KISA_ARALIK_GUN;
+          entry.precheck_due = addDays(entry.son_kisa_kontrol, aralik);
+        } else {
+          entry.precheck_due = TODAY();
+        }
+        scheduleLearningTest(key, TODAY());
+        if (typeof saveState === "function") saveState();
+        return result;
+      };
     }
     const host = document.getElementById("main-content");
     if (host && window.MutationObserver) { uiObserver = new MutationObserver(scheduleUi); uiObserver.observe(host, { childList: true }); }

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v59-tek-kanal-webpush";
+const PWA_SURUM = "v60-tek-tekrar-dugmesi";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -1100,7 +1100,12 @@ function eskiAnahtarlariTemizle() {
     const olu = ["am_giris_yapildi"]; // açılış kapısı kaldırıldı: işaret artık ölü
     olu.forEach(k => localStorage.removeItem(k));
     Object.keys(localStorage).forEach(k => {
-      if (k.indexOf("am_push_test_gonderildi") === 0) localStorage.removeItem(k);
+      // v60 — KÖK NEDEN: burada "am_push_test_gonderildi*" anahtarları da
+      // siliniyordu. O anahtar "bu cihaza test bildirimi zaten gönderildi"
+      // işaretidir; her açılışta silindiği için koruma her seferinde sıfırlanıp
+      // HER UYGULAMA AÇILIŞINDA yeni bir test push'u atılıyordu (kullanıcı:
+      // "Uygulamaya her girildiğinde test bildirimi geliyor"). Artık YALNIZ
+      // gerçekten ölü olan Firebase anahtarları temizlenir.
       if (k.indexOf("firebase:") === 0 || k.indexOf("__firebase") === 0) localStorage.removeItem(k);
     });
   } catch (e) { /* */ }

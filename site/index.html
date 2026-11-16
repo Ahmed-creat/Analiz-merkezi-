@@ -1918,6 +1918,15 @@ window.__kartTamamla = function (topicKey, erken) {
   });
   saveState();
   evaluateBadges();
+  // v60 — TEK DÜĞME: kart turu bitince Bilgi Bankası paneli AYNI ekranda
+  // tazelenir; "Tekrar Ettim/Erken Tekrar" etiketi ve "Sıradaki" tarihi
+  // kendiliğinden güncellenir (eskiden sekmeye gidip gelmek gerekiyordu).
+  try {
+    if (typeof currentPage === "string" && currentPage === "knowledge" && typeof renderKnowledge === "function") {
+      renderKnowledge(document.getElementById("main-content"));
+      if (window.lucide && lucide.createIcons) lucide.createIcons();
+    }
+  } catch (e) { /* */ }
   return true;
 };
 
@@ -4553,6 +4562,35 @@ function reviewTopic(topicKey, erken) {
   toast("Tekrar kaydedildi; hafıza barı %100.", "success");
 }
 function earlyReview(topicKey) { reviewTopic(topicKey, true); }
+
+// v60 — TEK TEKRAR YOLU.
+// KULLANICI: "Tek bir tane tekrar kartı olsun; zamanı gelmemişse Erken Tekrar
+// yazsın, zamanı geldiğinde Tekrar Ettim yazsın ve tıklayınca kart açılsın."
+//   • Etiket: tekrar günü bugün/geçmiş → "Tekrar Ettim"; ileride → "Erken Tekrar"
+//   • Davranış TEK: kart turu açılır. Tur ≥ %70 bilgiyle biterse tekrar yazılır
+//     (erken ise "erken tekrar" olarak). Kartı olmayan konu kilitlenmez.
+function tekrarKartBasla(topicKey) {
+  if (!konuTamamMi(topicKey)) { tamamlanmamisUyar(topicKey); return; }
+  const nr = nextReviewInfo(topicKey);
+  const zamaniGeldi = !!(nr && nr.date && parseDay(nr.date) <= parseDay(todayStr()));
+  const erken = !zamaniGeldi;
+  const yaz = function (kartli) {
+    markReviewed(topicKey, erken);
+    navigate("tracking");
+    toast((erken ? "Erken tekrar kaydedildi" : "Tekrar kaydedildi") +
+      (kartli ? "" : " (bu konunun kartı yok)") + "; hafıza barı %100.", "success");
+  };
+  // Bugün kart turu zaten bittiyse kart istemeyiz; tekrarı doğrudan yaz.
+  if (kartDurumHizli(topicKey).tamam) { yaz(true); return; }
+  const K = window.AmKart;
+  if (!K || typeof K.ac !== "function") { yaz(false); return; }
+  K.ac(topicKey, { tekrar: true, erken: erken }).then(function (r) {
+    // r.ok === true → kart ekranı açıldı; bitişi __kartTamamla yazar.
+    if (r && r.ok) return;
+    yaz(false); // kart bulunamadı → konu kilitlenmesin
+  }).catch(function () { yaz(false); });
+}
+window.tekrarKartBasla = tekrarKartBasla;
 function resetTopic(topicKey) {
   openConfirm("Konu 'Tamamlandı' statüsünden çıkacak, hafıza sıfırlanacak ve 0. Adım'a döneceksin. Emin misin?", () => {
     resetTopicMemory(topicKey); saveState(); toast("Konu sıfırlandı.", "warning"); navigate("tracking");
@@ -5345,6 +5383,14 @@ function renderKnowledge(container) {
     if (done) {
       const pct = getMemoryStrength(selectedTopicKey);
       const nr = nextReviewInfo(selectedTopicKey);
+      // v60 — TEK TEKRAR DÜĞMESİ. Kullanıcı: "Tek bir tane tekrar kartı olsun;
+      // zamanı gelmemişse Erken Tekrar, zamanı geldiğinde Tekrar Ettim yazsın ve
+      // tıklayınca kart açılsın." Etiket tekrar gününe göre değişir, davranış aynı.
+      const tekrarZamani = !!(nr && nr.date && parseDay(nr.date) <= parseDay(todayStr()));
+      const tekrarDugme =
+        '<button class="btn ' + (tekrarZamani ? "btn-success" : "btn-primary") + ' btn-sm" data-act="tekrarKart" data-topic="' +
+        attr(selectedTopicKey) + '" style="min-height:48px;">' +
+        icon(tekrarZamani ? "refresh-cw" : "fast-forward", 14) + (tekrarZamani ? " Tekrar Ettim" : " Erken Tekrar") + "</button>";
       // v35.6: kontrol testi yapılmadıysa EN ÜSTTE belirgin kart (keşfedilebilir olsun)
       const bktKayit = (state.bkt_state && state.bkt_state[selectedTopicKey]) || {};
       const havuzKontrol = havuzIdCoz(selectedTopicKey, bktKayit.pool_id);
@@ -5357,7 +5403,12 @@ function renderKnowledge(container) {
       // ve son test üzerinden dinlenme süresi geçtiyse gösterilir. Test
       // yapıldıysa hiçbir iz bırakmadan kaybolur.
       const kisaDue = !!(kisaDurum && kisaDurum.precheck);
-      if (bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol && kisaDue && !kisaKapali) {
+      // v60 — KULLANICI: "5 soruluk kısa kontrol zaten 5. adımdı, orada
+      // çözdükten sonra neden geri geliyor?" Savunma katmanı: 5. adım BUGÜN
+      // çözüldüyse bekleyen-kontrol kartı çizilmez (motorun precheck_due'su
+      // yanlışlıkla bugüne çekilse bile kart geri gelmez).
+      const kisaBugun = !!(bktKayit.son_kisa_kontrol && String(bktKayit.son_kisa_kontrol).slice(0, 10) === todayStr());
+      if (bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol && kisaDue && !kisaKapali && !kisaBugun) {
         html += '<div class="bento-card" style="margin-bottom:16px;border:2px solid var(--brand-blue);background:linear-gradient(180deg,rgba(37,99,235,0.07),transparent);">' +
           '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">' + icon("clipboard-check", 20, "color:var(--brand-blue);") + '<b style="font-size:15px;">5 soruluk kısa kontrol seni bekliyor</b></div>' +
           '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu konuyu gerçekten öğrendin mi? Sorular tek tek, sırayla sorulur. Doğru cevap test sırasında gösterilmez.</p>' +
@@ -5387,9 +5438,12 @@ function renderKnowledge(container) {
         // v35.9 — Kısa Kontrol düğmesi BURADAN KALDIRILDI: aynı ekranda iki
         // yerde "5 soru" vardı. Tek yer: üstteki "5 soruluk kısa kontrol"
         // kartı (zamanı gelince). Yerine tekrar kartları düğmesi konur.
-        '<button class="btn btn-ghost btn-sm" data-act="kartBasla" data-topic="' + attr(selectedTopicKey) + '" style="min-width:48px;min-height:48px;">' + icon("layers", 14) + " Tekrar Kartları</button>" +
-        '<button class="btn btn-success btn-sm" data-act="reviewTopic" data-topic="' + attr(selectedTopicKey) + '">' + icon("refresh-cw", 14) + " Tekrar Ettim</button>" +
-        '<button class="btn btn-primary btn-sm" data-act="earlyReview" data-topic="' + attr(selectedTopicKey) + '">' + icon("fast-forward", 14) + " Erken Tekrar</button>" +
+        // v60 — KULLANICI: "bir tane kart düğmesi 2 tane de tekrar et düğmesi var
+        // neden?" Eski hâlde aynı panelde ÜÇ düğme vardı: Tekrar Kartları (gri),
+        // Tekrar Ettim (yeşil), Erken Tekrar (mavi). Hangisinin kart açacağı
+        // kullanıcı için öngörülemezdi. Artık TEK düğme: etiket tekrar gününe
+        // göre değişir, tıklanınca her durumda kart turu açılır.
+        tekrarDugme +
         '<button class="btn btn-ghost btn-sm" data-act="resetTopic" data-topic="' + attr(selectedTopicKey) + '" style="color:var(--semantic-error);margin-left:auto;">' + icon("rotate-ccw", 14) + " Sıfırla</button></div></div>";
     } else {
       // v41 — 5 ADIM. Kullanıcı: "5 soruluk tekrar sorusu bu 5 adım kontrol
@@ -5999,6 +6053,8 @@ document.addEventListener("DOMContentLoaded", function () {
       case "moreUrgent": moreUrgentTopics(); break;
       case "moreMemory": moreMemoryRows(); break;
       case "reviewTopic": reviewTopic(el.dataset.topic); break;
+      // v60 — tek tekrar düğmesi: etiket ne olursa olsun kart turu açar.
+      case "tekrarKart": tekrarKartBasla(el.dataset.topic); break;
       // v35.9 — Tekrar Kartları (flashcard): her konu için, onay beklemeden
       case "kartBasla":
         // Kart turu bitince (≥ %70) tekrar kapanır ve sayfa tazelenir.

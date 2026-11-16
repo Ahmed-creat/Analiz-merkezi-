@@ -42,7 +42,7 @@
     "test:sikistir": "node tests/veri-sikistir.test.js",
     "test:v37": "node tests/v37-davranis.test.js",
     "test:v42": "node tests/v42-kural.test.js",
-    "test:dom": "node tests/dom/dom-acilis.test.js && node tests/dom/dom-okz-secim.test.js && node tests/dom/dom-giris-duzeltme.test.js && node tests/dom/dom-v49-kisa-kontrol.test.js && node tests/dom/dom-v51-cikis.test.js && node tests/dom/dom-v52-yerlesim.test.js && node tests/dom/dom-v53-bildirim-izi.test.js",
+    "test:dom": "node tests/dom/dom-acilis.test.js && node tests/dom/dom-okz-secim.test.js && node tests/dom/dom-giris-duzeltme.test.js && node tests/dom/dom-v49-kisa-kontrol.test.js && node tests/dom/dom-v51-cikis.test.js && node tests/dom/dom-v52-yerlesim.test.js && node tests/dom/dom-v53-bildirim-izi.test.js && node tests/dom/dom-v60-tek-dugme.test.js",
     "test:v44": "node tests/v44-bildirim-depo.test.js"
   },
   "devDependencies": {

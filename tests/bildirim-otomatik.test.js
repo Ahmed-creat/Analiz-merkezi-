@@ -153,20 +153,28 @@ const modTest = (c) => testGonderimleri(c).filter(x => /"mod":"test"/.test(x.gov
   ok("izin reddedildi olarak döndü", !(r3 && r3.ok === true), JSON.stringify(r3));
   esit("deneme bildirimi gönderilmedi", modTest(o2.cagrilar).length, 0);
 
-  // ---------- 4) İzin önceden verilmişse otomatik() gönderir ----------
-  console.log("\n== 4) İzin önceden verilmiş (eski kullanıcı) ==");
+  // ---------- 4) v60: AÇILIŞTA OTOMATİK TEST BİLDİRİMİ YOK ----------
+  // KULLANICI: "Uygulamaya her girildiğinde test bildirimi geliyor."
+  // KÖK NEDEN: app-pwa.js → eskiAnahtarlariTemizle() her açılışta
+  // "am_push_test_gonderildi*" işaretini siliyordu; koruma her seferinde
+  // sıfırlanıyor, her açılışta yeni bir test push'u atılıyordu (canlı kanıt:
+  // 16 Kas 11:29'da aynı dakikada 3 test push'u, hepsi gosterildi:true).
+  console.log("\n== 4) v60 — uygulama açılışında test bildirimi GİTMEZ ==");
   const o3 = ortamKur({ izin: "granted" });
   vm.runInNewContext(KAYNAK, o3.sandbox, { filename: "push-bildirim.js" });
   await o3.sandbox.window.AmPush.otomatik();
-  esit("bir kez deneme bildirimi gitti", modTest(o3.cagrilar).length, 1);
+  esit("açılışta deneme bildirimi GİTMEDİ", modTest(o3.cagrilar).length, 0);
   await o3.sandbox.window.AmPush.otomatik();
-  esit("ikinci otomatik çağrıda tekrar gitmedi", modTest(o3.cagrilar).length, 1);
+  esit("ikinci açılışta da GİTMEDİ", modTest(o3.cagrilar).length, 0);
+  ok("abonelik yine de tazelendi (kanal sağ kalsın)", (o3.upsertler || []).length > 0);
 
-  // İşaret zaten varsa hiç göndermez
+  // İşaret varsa da yoksa da açılış sessiz kalır (kanal testi yalnız izin anında)
   const o4 = ortamKur({ izin: "granted", localStorage: { "am_push_test_gonderildi:m/fcm/send/test-endpoint": "1" } });
   vm.runInNewContext(KAYNAK, o4.sandbox, { filename: "push-bildirim.js" });
   await o4.sandbox.window.AmPush.otomatik();
-  esit("işaret varsa gönderim yok", modTest(o4.cagrilar).length, 0);
+  esit("işaret varsa da gönderim yok", modTest(o4.cagrilar).length, 0);
+  ok("açılış temizliği test işaretini SİLMİYOR",
+     !/indexOf\("am_push_test_gonderildi"\) === 0/.test(fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8")));
 
   // ---------- 5) Ayarlar: test düğmesi/paneli kaldırıldı ----------
   console.log("\n== 5) Ayarlar temiz ==");

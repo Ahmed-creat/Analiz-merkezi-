@@ -38,6 +38,9 @@
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
   var MODAL_ID = "kart-modal";
+  // v60 — tek tekrar düğmesi: tur erken mi başlatıldı? Tamamlamada bildirim ve
+  // kayıt metni buna göre yazılır (eskiden her tur "normal tekrar" sayılıyordu).
+  var sonErken = false;
   var TAVAN = { standart: 8, hata: 5 };   // rapor §5.1
   var OTURUM_ESIGI = 0.70;                // rapor §5.4
   var HAFIZA_SINIRI = 20;                 // rapor §5.2 kural 2
@@ -223,7 +226,7 @@
       r.tamamlandi = bugunT;
       // Hafıza barını %100'e çek + sonraki tekrarı yeniden kur (rapor §5.4).
       try {
-        if (typeof window.__kartTamamla === "function") window.__kartTamamla(topicKey, false);
+        if (typeof window.__kartTamamla === "function") window.__kartTamamla(topicKey, sonErken);
       } catch (e) { /* */ }
     } else {
       r.tamamlandi = null;   // gün SAYILMAZ; kartlar ertesi gün yeniden gelir
@@ -240,6 +243,7 @@
   function ac(topicKey, secenek) {
     if (!topicKey) return Promise.resolve({ ok: false });
     var o = secenek || {};
+    sonErken = !!o.erken;
     kapat();
     return kartlar(topicKey).then(function (liste) {
       var konuAdi = String(topicKey).indexOf(" > ") > 0
