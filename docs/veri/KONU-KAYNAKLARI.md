@@ -128,6 +128,42 @@ BİY.10.1.1 — Canlıların yaşamına devam edebilmesi için enerjinin
              gerekliliğini sorgulayabilme                        ✔
 ```
 
+### Köprü nasıl kurulur — iki kanal
+
+Okulizyon TDE kazanımı ile TYMM arasında **iki kanal** var:
+
+**1) İÇERİK kanalı** — metin türü doğrudan TYMM tema sayfasının düz metninde:
+
+| Okulizyon kazanımı | Geçen tür | TYMM teması | TYMM'de nerede |
+|---|---|---|---|
+| "… **koşuk** türünün genel özelliklerini açıklar." | koşuk | 1. Sözün Ezgisi | "koşuk ve türkü türünde metinler seçilir" |
+| "… **koşma** türünün genel özelliklerini kavrar." | koşma | 1. Sözün Ezgisi | "ara metin olarak koşma ve ninni" |
+| "**Türkü** türünün genel özelliklerini belirler." | türkü | 1. Sözün Ezgisi | "koşuk ve türkü türünde metinler" |
+
+**2) BECERİ kanalı** — metin türü içermeyen kazanımlar TDE2.x'e gider:
+
+| Okulizyon kazanımı | TYMM çıktısı | Kanıt |
+|---|---|---|
+| "Şiirde **ahengi** sağlayan özellikleri (uyak, redif, aliterasyon, asonans)…" | TDE2.2, TDE2.3 | 10/2 Anahtar Kavramlar: ahenk unsurları, aruz, kafiye, ölçü, ritim |
+| "Metindeki **söz varlığının** anlamını bağlamdan hareketle belirler." | TDE2.2 | Anlam Oluşturabilme |
+| "Metinlerden hareketle **çıkarımlar** yapar." | TDE2.3 | Çözümleyebilme |
+
+> **"Destan Dönemi" tuzağı:** bu ifade hem `destan` (tema 3) hem
+> `destan dönemi` (tema 1) içerir. En uzun çekirdek kazanır → **tema 1**,
+> çünkü koşuk destan döneminin nazım birimidir. Betik bunu böyle çözer.
+
+Tablo: `site/content/mufredat/tde_icerik_10.json` (4 tema, kaynak URL'li)
+Betik: `node scripts/tde-kopru.js` → her kazanımın kanıtıyla birlikte tablo
+
+**4 temanın içeriği** (TYMM'den birebir):
+
+| Tema | Okuma (ana) | Ara metin | Dinleme/İzleme |
+|---|---|---|---|
+| 1. Sözün Ezgisi | koşuk, türkü | koşma, ninni | masal |
+| 2. Kelimelerin Ritmi | gazel, saf şiir | kaside | söyleşi |
+| 3. Dünden Bugüne | destan, mesnevi | halk hikâyesi | fabl |
+| 4. Nesillerin Mirası | Dede Korkut hikâyesi, Tanzimat şiiri | Servetifünun romanı, Fecriati şiiri | Millî Edebiyat hikâyesi |
+
 ### Çözüm
 
 TDE'nin konu kazanımı **Okulizyon'dan** alınır:
