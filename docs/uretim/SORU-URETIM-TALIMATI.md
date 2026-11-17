@@ -546,6 +546,9 @@ node scripts/havuz-index-uret.js --plan
 # 3) Uygulama kuralları (bkt-engine validatePool ile aynı)
 npm run -s validate:pools
 
+# 3b) TÜM dersler, TÜM dosyalar (plan + eski şema, 313 dosya)
+node docs/uretim/araclar/havuz-son-kontrol.js
+
 # 4) Testler
 node tests/question-pools.test.js
 npm run -s test:hepsi
@@ -553,6 +556,12 @@ npm run -s test:hepsi
 # 5) Görsel incelemesi — görselsiz soruların listesi (tek tek bakılır)
 INCELEME=1 node scripts/soru-uret-dogrula.js site/content/soru_havuzlari
 ```
+
+> `havuz-denetle.js --tumu` ve `soru-uret-dogrula.js` yalnız **plan şemalı**
+> (`<ders>_10_tNN_cNN`) havuzları denetler. Geçiş döneminde yaşayan eski şemalı
+> (`<ders>_10_uNN_kNN`) konu havuzları o iki kapının dışında kalır; kapsam
+> boşluğu `havuz-son-kontrol.js` ile kapatılır (yapı, mükerrer kayıt, kart
+> önü–kök çakışması, topic_key ↔ `konular.js` ağacı, ağaç kapsamı).
 
 ### Teslim kabul şartları
 

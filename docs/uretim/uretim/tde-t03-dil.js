@@ -3,7 +3,7 @@
    TDE · 3. TEMA — DİL BİLGİSİ konu havuzları
    ------------------------------------------------------------
    Kaynak: 10. sınıf TDE ders notları (Mustafa Çiftçi)
-     edebiyat_10_u03_k05  Zarflar (Belirteç)   s.123-129
+     edebiyat_10_u03_k05  Zarflar (Belirteçler)   s.123-129
      edebiyat_10_u03_k06  Şiirde Ahenk         s.24-33
    Kullanım: node docs/uretim/uretim/tde-t03-dil.js
    ============================================================ */
@@ -26,7 +26,7 @@ yazKonu({
   ders: DERS,
   tema: TEMA,
   tema_adi: TEMA_ADI,
-  baslik: "Zarflar (Belirteç)",
+  baslik: "Zarflar (Belirteçler)",
   kazanim:
     "Zarfları tür, işlev ve yapı bakımından çözümleyebilme.",
   kaynak: kaynak("123-129"),

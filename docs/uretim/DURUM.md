@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-17 12:14 (UTC)
+> Güncelleme: 2026-11-17 12:35 (UTC)
 
 ## Ders bazında
 
@@ -27,7 +27,8 @@ Yok — plan çıktılarının tamamı tamam 🎉 (TDE konu havuzlarıyla karş�
 ## Kapı komutları
 
 ```bash
-node docs/uretim/araclar/havuz-denetle.js --tumu      # hızlı kapı
+node docs/uretim/araclar/havuz-son-kontrol.js         # 313 dosya, tüm dersler
+node docs/uretim/araclar/havuz-denetle.js --tumu      # plan şemalı 142 dosya
 node scripts/soru-uret-dogrula.js site/content/soru_havuzlari
 node scripts/havuz-index-uret.js --plan --kontrol
 npm run -s validate:pools && npm run -s test:hepsi

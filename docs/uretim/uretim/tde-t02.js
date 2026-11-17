@@ -473,7 +473,7 @@ yazKonu({
   ders: DERS,
   tema: TEMA,
   tema_adi: TEMA_ADI,
-  baslik: "Saf (Öz) Şiir Anlayışı",
+  baslik: "Saf Şiir",
   kazanim:
     "Saf (öz) şiir anlayışının ilkelerini, temsilcilerini ve şiir diline ilişkin kavramları çözümleyebilme.",
   kaynak: kaynak("79-85"),

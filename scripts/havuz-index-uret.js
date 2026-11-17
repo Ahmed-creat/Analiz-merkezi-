@@ -127,10 +127,63 @@ for (const dosya of dosyalar) {
     baslik: (p ? p.kazanim : "") || (eski && eski.baslik) || altBeceriler[0] || "",
     topic_key: p
       ? topicKey(p.kod, p.ders, p.kazanim)
-      : String((eski && eski.topic_key) || pool.topic_key || ""),
+      // Havuz dosyası asıl kaynaktır; üretici düzeltmesi (ör. ağaçtaki
+      // resmî başlık) manifestteki eski değeri de günceller.
+      : String(pool.topic_key || (eski && eski.topic_key) || ""),
     kod: p ? p.kod : String(pool.kod || (eski && eski.kod) || ""),
     uretim_durumu: durum
   });
+}
+
+/* ------------------------------------------------------------
+   topic_key çakışması (eski şema)
+   ------------------------------------------------------------
+   Eski şemalı havuzların topic_key'i önceki manifestten AYNEN
+   korunur. Bu yüzden bir kez yanlış eşlenen kayıt kendini tekrar
+   üretir (ör. din_10_u05_k01, din_10_u04_k03 ile aynı anahtarı
+   taşıyordu). Aynı anahtarı ikinci kez kullanan havuz, Bilgi
+   Bankası kayıt defterindeki RESMÎ konu adıyla yeniden etiketlenir;
+   böylece hem çakışma kalkar hem de havuz kendi konusunu gösterir.
+   Plan şemalı havuzlara dokunulmaz (anahtar plandan türetilir).
+   ------------------------------------------------------------ */
+const KAYIT_DEFTERI = path.join(KOK, "site", "content", "mufredat", "konu_kayit_defteri.json");
+const kayitAdi = new Map();
+if (fs.existsSync(KAYIT_DEFTERI)) {
+  try {
+    const defter = JSON.parse(fs.readFileSync(KAYIT_DEFTERI, "utf8"));
+    for (const r of (Array.isArray(defter.records) ? defter.records : [])) {
+      if (r && r.konu_id && r.konu_adi) kayitAdi.set(String(r.konu_id).trim(), String(r.konu_adi).trim());
+    }
+  } catch (e) {
+    console.log("uyarı: konu_kayit_defteri.json okunamadı (" + e.message + ")");
+  }
+}
+
+function resmiTopicKey(h) {
+  const ad = kayitAdi.get(h.konu_id);
+  if (!ad) return "";
+  return ad.includes(" > ") ? ad : (h.ders ? h.ders + " > " : "") + ad;
+}
+
+const anahtarSahibi = new Map();
+for (const h of havuzlar) {
+  if (!h.topic_key) {
+    const yeni = resmiTopicKey(h);
+    if (yeni) h.topic_key = yeni;
+  }
+  const onceki = anahtarSahibi.get(h.topic_key);
+  if (!onceki) { anahtarSahibi.set(h.topic_key, h.konu_id); continue; }
+  const resmi = resmiTopicKey(h);
+  if (resmi && resmi !== h.topic_key && !anahtarSahibi.has(resmi)) {
+    console.log("topic_key çakışması: " + h.konu_id + " (" + h.topic_key + " → " + resmi +
+      "), anahtar " + onceki + " havuzunda kaldı");
+    h.topic_key = resmi;
+    // Başlık da resmî adla hizalanır ("Ders > " öneki atılır).
+    h.baslik = resmi.includes(" > ") ? resmi.split(" > ").pop() : resmi;
+    anahtarSahibi.set(resmi, h.konu_id);
+  } else {
+    hatalar.push(h.konu_id + ": topic_key çakışması (" + h.topic_key + "), çözülemedi");
+  }
 }
 
 const eski = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : {};

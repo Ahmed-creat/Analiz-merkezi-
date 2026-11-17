@@ -92,7 +92,7 @@
     {
       "soru_id": "din_10_u02_k03_o07",
       "alt_beceri": "Zekât",
-      "metin": "Zekât oranı kırkta bir ise bu yüzde kaçtır?",
+      "metin": "Bir kişi, nisap miktarını aşan malının kırkta birini zekât olarak vermektedir. Bu oran yüzde olarak kaçtır?",
       "secenekler": [
         "%2,5",
         "%5",
@@ -100,13 +100,13 @@
         "%1"
       ],
       "dogru_index": 0,
-      "cozum": "1/40 = %2,5 zekât oranıdır.",
+      "cozum": "Kırkta bir kesri, 1/40 = 0,025 olduğundan yüzde olarak %2,5'e karşılık gelir. Zekât, nisap miktarını aşan malın kırkta biri oranında verilir.",
       "zorluk": "deneme"
     },
     {
       "soru_id": "din_10_u02_k03_o08",
       "alt_beceri": "Zekât",
-      "metin": "Zekât kimlere verilir?",
+      "metin": "Bir kişi zekâtını yalnız akrabalarına vermek istemiş; oysa zekâtın harcanacağı yerler Kur'an'da sayılmıştır. Buna göre zekât kimlere verilir?",
       "secenekler": [
         "Kur'an'da belirtilen ihtiyaç sahiplerine",
         "Yalnız akrabalara",
