@@ -2,250 +2,255 @@
   "konu_id": "kimya_10_u01_k08",
   "sinif": 10,
   "ders": "Kimya",
-  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "baslik": "1.2.3 İdeal Gaz Yasası",
+  "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası",
+  "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar.",
+  "kaynak": "Kimya 10 ders kitabı, s.98-105",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "kimya_10_u01_k08_o01",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Mol sayısı ve hacmi sabit bir ideal gazın mutlak sıcaklığı iki katına çıkarılırsa basıncı nasıl değişir?",
+      "alt_beceri": "İdeal gaz denklemini ve sabitini açıklar.",
+      "metin": "İdeal gaz denklemi hangisidir?",
       "secenekler": [
-        "İki katına çıkar.",
-        "Yarıya iner.",
-        "Değişmez.",
-        "Dört katına çıkar."
+        "PV = nT",
+        "PV = nRT",
+        "P/V = nRT",
+        "P + V = nRT"
       ],
-      "dogru_index": 0,
-      "cozum": "PV = nRT eşitliğinde n ve V sabitken basınç mutlak sıcaklıkla doğru orantılıdır. Sıcaklık iki katına çıkınca basınç da iki katına çıkar.",
+      "dogru_index": 1,
+      "cozum": "İdeal gaz denklemi PV = nRT'dir; R ideal gaz sabitidir (s.100-101).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İdeal gaz denkleminde ilişkilendirilen değişkenleri ve kullanılan eşitliği yazınız.",
-        "back": "Basınç (P), hacim (V), mol sayısı (n) ve mutlak sıcaklık (T) PV = nRT eşitliğiyle ilişkilendirilir."
+        "front": "İdeal gaz denklemindeki semboller neyi gösterir?",
+        "back": "P basınç, V hacim, n mol, T sıcaklık, R gaz sabiti."
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o02",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Bir gaz laboratuvarı PV = nRT bağıntısını Kr ve N₂O örneklerine ayrı ayrı uyguluyor. Birimler tutarlı seçildiğinde R sabitiyle ilgili hangi ifade doğrudur?",
+      "alt_beceri": "İdeal gaz denklemini ve sabitini açıklar.",
+      "metin": "İdeal gaz denkleminde sıcaklık hangi birimle kullanılmalıdır?",
       "secenekler": [
-        "R yalnızca helyum için kullanılan sabittir.",
-        "R bütün gazlar için aynı ideal gaz sabitidir.",
-        "R gazın mol kütlesine göre değişir.",
-        "R sadece sıcaklık ölçümlerinde kullanılır."
+        "Santigrat",
+        "Fahrenhayt",
+        "Fark etmez",
+        "Kelvin (K)"
       ],
-      "dogru_index": 1,
-      "cozum": "R ideal gaz sabitidir ve gazın türüne bağlı değildir. Farklı gaz örneklerinde aynı birim sistemi kullanıldığında aynı R değeri uygulanır.",
+      "dogru_index": 3,
+      "cozum": "Denklemde mutlak sıcaklık (K) kullanılır; °C kullanılamaz (s.101).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İdeal gaz denklemindeki R sembolünün anlamını ve gazlar arasında ortak olup olmadığını belirtiniz.",
-        "back": "R ideal gaz sabitidir ve tüm gazlar için aynı değerdedir."
+        "front": "Mutlak sıcaklık ölçeğinin birimi nedir?",
+        "back": "Kelvin."
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o03",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Gerçek bir gazın basıncı giderek sıfıra yaklaştırılırsa ideal gaz modeline göre davranışı nasıl değişir?",
+      "alt_beceri": "İdeal gaz denklemini ve sabitini açıklar.",
+      "metin": "İdeal gaz denkleminde basınç atm, hacim litre alınırsa gaz sabiti R yaklaşık kaçtır?",
       "secenekler": [
-        "İdeal gaz davranışından daha çok uzaklaşırlar.",
-        "Tanecikler arası çekim kuvveti zorunlu olarak artar.",
-        "İdeal gaz gibi davranmaya yaklaşır.",
-        "Mol kütleleri sıfıra düşer."
+        "0,0821 L·atm/(mol·K)",
+        "8,314 L·atm/(mol·K)",
+        "0,821 L·atm/(mol·K)",
+        "22,4 L·atm/(mol·K)"
       ],
-      "dogru_index": 2,
-      "cozum": "Basınç sıfıra yaklaşırken tanecikler arasındaki etkileşimlerin ve tanecik hacminin etkisi azalır; gerçek gaz ideal gaz davranışına yaklaşır.",
+      "dogru_index": 0,
+      "cozum": "R = PV/(nT) = 2·11,2/(1·273) ≈ 0,0821 L·atm/(mol·K) (s.100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İdeal gaz modelinde taneciklerin öz hacmi ve tanecikler arası çekim kuvveti için hangi kabuller yapılır?",
-        "back": "İdeal gaz taneciklerinin öz hacimlerinin olmadığı ve tanecikler arasında çekim kuvveti bulunmadığı kabul edilir."
+        "front": "İdeal gaz sabitinin (R) değeri nedir?",
+        "back": "0,0821 L·atm/(mol·K)"
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o04",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Aşağıdaki durumlardan hangisindeki gaz ideal gaz davranışına daha çok yaklaşır?",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "0 °C ve 1 atm'de 22,4 L hacim kaplayan C2H6 gazı kaç gramdır? (C:12, H:1)",
       "secenekler": [
-        "Düşük sıcaklıkta, yüksek basınçta ve büyük mol kütlesiyle",
-        "Düşük sıcaklıkta, düşük basınçta ve büyük mol kütlesiyle",
-        "Yüksek sıcaklıkta, yüksek basınçta ve büyük mol kütlesiyle",
-        "Yüksek sıcaklıkta, düşük basınçta ve küçük mol kütlesiyle"
+        "22,4",
+        "44",
+        "30",
+        "15"
       ],
-      "dogru_index": 3,
-      "cozum": "İdeal davranışa yaklaşma koşulları yüksek sıcaklık, düşük basınç ve genellikle küçük mol kütlesidir. D seçeneği bu üç koşulu birlikte sağlar.",
+      "dogru_index": 2,
+      "cozum": "0 °C, 1 atm'de 22,4 L = 1 mol; MA(C2H6) = 24 + 6 = 30 g/mol → 30 g (kitabın çalışma yaprağı, s.103).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gerçek gazların ideal gaz davranışına yaklaştığı koşulları yazınız.",
-        "back": "Gazlar yüksek sıcaklıkta ve düşük basınçta ideale yaklaşır; mol kütlesi küçük olan gazlar da genellikle ideale daha yakındır."
+        "front": "Normal koşullarda 1 mol gazın hacmi nedir?",
+        "back": "22,4 L (0 °C ve 1 atm)."
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o05",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Bir gaz kalibrasyon hücresinde 0,50 mol ideal gaz 400 K sıcaklık ve 2,0 atm basınçta tutuluyor. R = 0,082 L·atm/(mol·K) ise gazın hacmi kaç litredir?",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "0 °C ve 1 atm'de 5,6 L hacim kaplayan He gazı kaç moldür?",
       "secenekler": [
-        "8,2 L",
-        "4,1 L",
-        "16,4 L",
-        "32,8 L"
+        "0,25 mol",
+        "0,5 mol",
+        "1 mol",
+        "4 mol"
       ],
       "dogru_index": 0,
-      "cozum": "PV=nRT bağıntısından V=nRT/P bulunur. V=0,50×0,082×400/2,0=8,2 L olur.",
+      "cozum": "22,4 L = 1 mol olduğundan 5,6 L = 0,25 mol (s.103).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İdeal gazın birim mol başına hacmi hangi koşullara bağlıdır?",
-        "back": "V/n = RT/P olduğundan molar hacim mutlak sıcaklık yükseldikçe artar, basınç yükseldikçe azalır. Bu nedenle tek bir molar hacim değeri tüm koşullar için geçerli değildir."
+        "front": "Normal koşullarda hacimden mol sayısı nasıl bulunur?",
+        "back": "Hacim 22,4 L/mol'e bölünür; 5,6 L ÷ 22,4 = 0,25 mol."
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o06",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Bir gaz analiz odasındaki numunenin sıcaklığı −13 °C olarak ölçülüyor. PV = nRT hesabında kullanılacak mutlak sıcaklık kaç K’dir?",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "Aynı koşullarda balon en fazla 67,2 L hacme dayanıyorsa ve içinde 0,25 mol He varsa en fazla kaç mol daha He eklenebilir?",
       "secenekler": [
-        "253 K",
-        "260 K",
-        "286 K",
-        "−13 K"
+        "3",
+        "2,75",
+        "0,25",
+        "2"
       ],
       "dogru_index": 1,
-      "cozum": "Mutlak sıcaklığı bulmak için Celsius değerine 273 eklenir: −13+273=260 K. İdeal gaz denkleminde sıcaklık kelvin cinsinden kullanılır.",
+      "cozum": "67,2 L = 3 mol; 3 − 0,25 = 2,75 mol daha eklenebilir (s.103).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İdeal gaz denkleminde sıcaklık hangi ölçekte kullanılır ve Celsius sıcaklığı kelvine nasıl çevrilir?",
-        "back": "Sıcaklık kelvin cinsinden, yani mutlak sıcaklık olarak kullanılır. T(K) = t(°C) + 273 bağıntısı uygulanır."
+        "front": "Gaz hacmi ile mol sayısı arasındaki ilişki nedir?",
+        "back": "2,75 mol"
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o07",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Mol sayısı ve sıcaklığı sabit ideal gazın basıncı yarıya indirilirse hacmi nasıl değişir?",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "Yukarıdaki soruda eklenebilecek en fazla He kütlesi kaç gramdır? (He:4)",
       "secenekler": [
-        "Yarıya iner.",
-        "Değişmez.",
-        "İki katına çıkar.",
-        "Dört katına çıkar."
+        "11",
+        "12",
+        "3",
+        "44"
       ],
-      "dogru_index": 2,
-      "cozum": "Sıcaklık ve mol sayısı sabitken PV çarpımı sabittir. Basınç yarıya düşerse hacim iki katına çıkar.",
+      "dogru_index": 0,
+      "cozum": "2,75 mol · 4 g/mol = 11 g (s.103).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İdeal gaz denkleminin Boyle, Charles ve Avogadro yasalarıyla ilişkisini açıklayınız.",
-        "back": "İdeal gaz denklemi basınç-hacim, sıcaklık-hacim ve mol sayısı-hacim ilişkilerini tek bir eşitlikte birleştirir."
+        "front": "Mol sayısından kütle nasıl bulunur?",
+        "back": "m = n · MA; 2,75 mol He için 2,75 · 4 = 11 g."
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o08",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Sabit hacimli bir kaptaki gazın basıncı 100 kPa ve sıcaklığı 300 K’dir. Sıcaklık 360 K’ye çıkarılırsa son basınç kaç kPa olur?",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "1 mol ideal gaz 273 K'de 11,2 L hacim kaplıyorsa basıncı kaç atm'dir? (R = 0,0821)",
       "secenekler": [
-        "100 kPa",
-        "80 kPa",
-        "140 kPa",
-        "120 kPa"
+        "1",
+        "0,5",
+        "2",
+        "22,4"
       ],
-      "dogru_index": 3,
-      "cozum": "Gay-Lussac yasasına göre sabit hacimde P/T sabittir. P₂ = 100 × (360/300) = 120 kPa olur.",
+      "dogru_index": 2,
+      "cozum": "P = nRT/V = 1·0,0821·273/11,2 ≈ 2 atm (kitabın tablosu, s.100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sabit hacimli bir kapta gazın mutlak sıcaklığı artırılırsa basıncı nasıl değişir?",
-        "back": "Gaz miktarı ve hacim sabitken basınç mutlak sıcaklıkla doğru orantılıdır. Taneciklerin ortalama kinetik enerjisi arttıkça kap çeperlerine çarpışma etkisi de artar."
+        "front": "İdeal gaz denkleminde basınç nasıl bulunur?",
+        "back": "2 atm"
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o09",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Yüksek basınç ve düşük sıcaklık koşulları için gerçek gazların ideal davranışı hakkında hangi yorum yapılabilir?",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "İdeal gaz denklemine göre n ve V sabitken mutlak sıcaklık iki katına çıkarılırsa basınç nasıl değişir?",
       "secenekler": [
-        "İdeal davranıştan uzaklaşmaya daha yatkındırlar.",
-        "İdeal davranışa en çok yaklaşırlar.",
-        "Taneciklerin öz hacmi sıfır olur.",
-        "Mol sayısı otomatik olarak azalır."
+        "Yarıya iner",
+        "İki katına çıkar",
+        "Değişmez",
+        "Dört katına çıkar"
       ],
-      "dogru_index": 0,
-      "cozum": "Gerçek gazlar yüksek sıcaklık ve düşük basınçta ideal gaz modeline daha çok yaklaşır. Yüksek basınç ve düşük sıcaklıkta tanecik hacmi ile çekim kuvvetlerinin etkisi belirginleşir.",
+      "dogru_index": 1,
+      "cozum": "PV = nRT'de n ve V sabitse P ∝ T; sıcaklık iki katına çıkarsa basınç iki katına çıkar (s.101).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gerçek gaz ile ideal gaz varsayımlarını tanecik hacmi ve etkileşimleri bakımından karşılaştırınız.",
-        "back": "İdeal gazda taneciklerin öz hacmi ve tanecikler arası çekim ihmal edilir; gerçek gazlarda tanecik hacmi sıfır değildir ve moleküller arası çekim bulunur."
+        "front": "T 2 katına çıkarsa P ne olur?",
+        "back": "2 katına çıkar."
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     },
     {
       "soru_id": "kimya_10_u01_k08_o10",
-      "alt_beceri": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
-      "metin": "Bir gaz kalibrasyon hücresinde P = 1,2 atm, V = 16,4 L ve T = 300 K ölçülüyor. R = 0,082 L·atm/(mol·K) olduğuna göre hücredeki ideal gaz miktarı kaç moldür?",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "Aşağıdaki gazlardan hangisi ideal gaz davranışına en yakındır?",
       "secenekler": [
-        "0,4 mol",
-        "0,8 mol",
-        "1,2 mol",
-        "1,5 mol"
+        "Düşük sıcaklık ve yüksek basınçtaki gaz",
+        "Yoğunlaşmaya yakın gaz",
+        "Çok yüksek basınçtaki gaz",
+        "Yüksek sıcaklık ve düşük basınçtaki gaz"
       ],
-      "dogru_index": 1,
-      "cozum": "PV=nRT denkleminde n=PV/(RT) alınır. n=(1,2×16,4)/(0,082×300)=0,8 mol olur.",
+      "dogru_index": 3,
+      "cozum": "Düşük basınç ve yüksek sıcaklıkta tanecikler arası etkileşimler önemsizleşir; gaz ideale yaklaşır (s.98-101).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İdeal gaz denkleminde üç değişken biliniyorsa dördüncü değişken için ne yapılabilir?",
-        "back": "PV = nRT bağıntısı kullanılarak bilinen üç değişkenden dördüncüsü hesaplanabilir."
+        "front": "İdeal davranışa yaklaşma koşulları nedir?",
+        "back": "Yüksek sıcaklık, düşük basınç."
       },
-      "kazanim": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
     }
   ],
   "flashcards": [
     {
       "id": "kimya_10_u01_k08_o01:flashcard",
-      "front": "İdeal gaz denkleminde ilişkilendirilen değişkenleri ve kullanılan eşitliği yazınız.",
-      "back": "Basınç (P), hacim (V), mol sayısı (n) ve mutlak sıcaklık (T) PV = nRT eşitliğiyle ilişkilendirilir."
+      "front": "İdeal gaz denklemindeki semboller neyi gösterir?",
+      "back": "P basınç, V hacim, n mol, T sıcaklık, R gaz sabiti."
     },
     {
       "id": "kimya_10_u01_k08_o02:flashcard",
-      "front": "İdeal gaz denklemindeki R sembolünün anlamını ve gazlar arasında ortak olup olmadığını belirtiniz.",
-      "back": "R ideal gaz sabitidir ve tüm gazlar için aynı değerdedir."
+      "front": "Mutlak sıcaklık ölçeğinin birimi nedir?",
+      "back": "Kelvin."
     },
     {
       "id": "kimya_10_u01_k08_o03:flashcard",
-      "front": "İdeal gaz modelinde taneciklerin öz hacmi ve tanecikler arası çekim kuvveti için hangi kabuller yapılır?",
-      "back": "İdeal gaz taneciklerinin öz hacimlerinin olmadığı ve tanecikler arasında çekim kuvveti bulunmadığı kabul edilir."
+      "front": "İdeal gaz sabitinin (R) değeri nedir?",
+      "back": "0,0821 L·atm/(mol·K)"
     },
     {
       "id": "kimya_10_u01_k08_o04:flashcard",
-      "front": "Gerçek gazların ideal gaz davranışına yaklaştığı koşulları yazınız.",
-      "back": "Gazlar yüksek sıcaklıkta ve düşük basınçta ideale yaklaşır; mol kütlesi küçük olan gazlar da genellikle ideale daha yakındır."
+      "front": "Normal koşullarda 1 mol gazın hacmi nedir?",
+      "back": "22,4 L (0 °C ve 1 atm)."
     },
     {
       "id": "kimya_10_u01_k08_o05:flashcard",
-      "front": "İdeal gazın birim mol başına hacmi hangi koşullara bağlıdır?",
-      "back": "V/n = RT/P olduğundan molar hacim mutlak sıcaklık yükseldikçe artar, basınç yükseldikçe azalır. Bu nedenle tek bir molar hacim değeri tüm koşullar için geçerli değildir."
+      "front": "Normal koşullarda hacimden mol sayısı nasıl bulunur?",
+      "back": "Hacim 22,4 L/mol'e bölünür; 5,6 L ÷ 22,4 = 0,25 mol."
     },
     {
       "id": "kimya_10_u01_k08_o06:flashcard",
-      "front": "İdeal gaz denkleminde sıcaklık hangi ölçekte kullanılır ve Celsius sıcaklığı kelvine nasıl çevrilir?",
-      "back": "Sıcaklık kelvin cinsinden, yani mutlak sıcaklık olarak kullanılır. T(K) = t(°C) + 273 bağıntısı uygulanır."
+      "front": "Gaz hacmi ile mol sayısı arasındaki ilişki nedir?",
+      "back": "2,75 mol"
     },
     {
       "id": "kimya_10_u01_k08_o07:flashcard",
-      "front": "İdeal gaz denkleminin Boyle, Charles ve Avogadro yasalarıyla ilişkisini açıklayınız.",
-      "back": "İdeal gaz denklemi basınç-hacim, sıcaklık-hacim ve mol sayısı-hacim ilişkilerini tek bir eşitlikte birleştirir."
+      "front": "Mol sayısından kütle nasıl bulunur?",
+      "back": "m = n · MA; 2,75 mol He için 2,75 · 4 = 11 g."
     },
     {
       "id": "kimya_10_u01_k08_o08:flashcard",
-      "front": "Sabit hacimli bir kapta gazın mutlak sıcaklığı artırılırsa basıncı nasıl değişir?",
-      "back": "Gaz miktarı ve hacim sabitken basınç mutlak sıcaklıkla doğru orantılıdır. Taneciklerin ortalama kinetik enerjisi arttıkça kap çeperlerine çarpışma etkisi de artar."
+      "front": "İdeal gaz denkleminde basınç nasıl bulunur?",
+      "back": "2 atm"
     },
     {
       "id": "kimya_10_u01_k08_o09:flashcard",
-      "front": "Gerçek gaz ile ideal gaz varsayımlarını tanecik hacmi ve etkileşimleri bakımından karşılaştırınız.",
-      "back": "İdeal gazda taneciklerin öz hacmi ve tanecikler arası çekim ihmal edilir; gerçek gazlarda tanecik hacmi sıfır değildir ve moleküller arası çekim bulunur."
+      "front": "T 2 katına çıkarsa P ne olur?",
+      "back": "2 katına çıkar."
     },
     {
       "id": "kimya_10_u01_k08_o10:flashcard",
-      "front": "İdeal gaz denkleminde üç değişken biliniyorsa dördüncü değişken için ne yapılabilir?",
-      "back": "PV = nRT bağıntısı kullanılarak bilinen üç değişkenden dördüncüsü hesaplanabilir."
+      "front": "İdeal davranışa yaklaşma koşulları nedir?",
+      "back": "Yüksek sıcaklık, düşük basınç."
     }
-  ],
-  "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası"
+  ]
 }

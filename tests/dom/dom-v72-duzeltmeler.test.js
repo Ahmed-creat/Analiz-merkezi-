@@ -38,26 +38,19 @@ function esit(ad, gelen, beklenen) {
 /* ------------------------------------------------------------ */
 console.log("\n== 1) Ajanın elle yazdığı sorular silindi ==");
 const HAVUZLAR = MANIFEST.havuzlar || [];
-esit("havuz sayısı 152", HAVUZLAR.length, 152);
+/* v75 — DEVRİM: 20 elle yazılmış havuz silindi; havuz seti ders
+   kitabından yeniden üretildi (192 havuz). Aynı konu_id'ler artık ders
+   kitabı kaynaklı havuzlar taşıyor — "elle yazıldı" damgası aranır,
+   kimliğe göre kara liste tutulmaz. */
+esit("havuz sayısı 192", HAVUZLAR.length, 192);
 
-const ELLE = ["biyo_10_u01_k08", "biyo_10_u02_k05", "biyo_10_u02_k06", "cogr_10_u04_k02",
-  "cogr_10_u05_k02", "cogr_10_u05_k03", "cogr_10_u06_k02", "cogr_10_u06_k03",
-  "cogr_10_u06_k04", "cogr_10_u07_k01", "din_10_u02_k03", "din_10_u02_k04",
-  "din_10_u03_k04", "edebiyat_10_u03_k06", "edebiyat_10_u04_k06", "kimya_10_u02_k06",
-  "kimya_10_u02_k07", "kimya_10_u02_k08", "tarih_10_u01_k04", "tarih_10_u02_k05"];
-const kalanElle = ELLE.filter((id) => fs.existsSync(path.join(KOK, "site/content/soru_havuzlari", id + ".json")));
-esit("elle yazılmış havuz dosyası kalmadı", kalanElle.length, 0);
-ok("hiçbiri manifestte de yok", HAVUZLAR.every((h) => ELLE.indexOf(h.konu_id) < 0),
-  HAVUZLAR.filter((h) => ELLE.indexOf(h.konu_id) >= 0).map((h) => h.konu_id).join(","));
-
-/* Kullanıcının kendi zip'inden gelenler korundu: havuz dosyalarının
-   kaynak_dosya alanı "10. Sınıf <ders> json.zip" olmalı. */
 const HAVUZ_DIZIN = path.join(KOK, "site/content/soru_havuzlari");
 const kaynaklar = fs.readdirSync(HAVUZ_DIZIN)
   .filter((a) => a.endsWith(".json") && a !== "index.json")
   .map((a) => JSON.parse(fs.readFileSync(path.join(HAVUZ_DIZIN, a), "utf8")).kaynak_dosya || "");
-const zipKaynakli = kaynaklar.filter((k) => /\.zip$/.test(k)).length;
-esit("her havuz kullanıcı zip'inden", zipKaynakli, kaynaklar.length);
+esit("her havuzun kaynak dosyası var", kaynaklar.filter(Boolean).length, kaynaklar.length);
+const kaynakli = kaynaklar.filter((k) => /\.(pdf|zip)\b/i.test(k)).length;
+esit("her havuz ders kitabı / kullanıcı zip'inden", kaynakli, kaynaklar.length);
 ok("hiçbir havuzda 'elle yazıldı' damgası yok",
   !kaynaklar.some((k) => /elle yaz/i.test(k)), kaynaklar.filter((k) => /elle yaz/i.test(k)).join(","));
 

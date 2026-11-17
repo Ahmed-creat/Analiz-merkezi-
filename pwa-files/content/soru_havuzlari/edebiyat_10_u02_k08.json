@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u02_k08",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 2,
+  "tema_adi": "Divan Şiiri ve Saf Şiir",
+  "baslik": "Ünlem",
+  "topic_key": "Türk Dili ve Edebiyatı > Ünlem",
+  "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.108",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u02_k08_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi beklenmedik bir haber karşısında şaşkınlığını tek bir seslenişle gösteriyor. Bu sözcük türü hangisidir?",
+      "alt_beceri": "Ünlemleri asıl, ünlem gibi kullanılan ve yansıma ünlemler olarak sınıflandırır.",
+      "metin": "Bir olay karşısında duyulan korku, sevinç, üzüntü ve şaşkınlık \"Ah!\", \"Vah vah!\", \"Aman!\" gibi sözcüklerle dile getirilir. Bu sözcüklerin türü hangisidir?",
       "secenekler": [
-        "Ünlem",
         "Edat",
+        "Ünlem",
         "Bağlaç",
-        "Sıfat"
+        "Zarf"
       ],
-      "dogru_index": 0,
-      "cozum": "Ünlemler korku, sevinç, üzüntü ya da şaşkınlık gibi duyguları yansıtır. Bağlaç ve edatlar duygu bildirmek zorunda değildir.",
+      "dogru_index": 1,
+      "cozum": "Bir olay ya da durum karşısında beliren korku, sevinç, üzüntü, şaşkınlık gibi duyguları yansıtan sözcükler ünlemdir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ünlem sözcükleri hangi tür durumları yansıtır?",
-        "back": "Korku, sevinç, üzüntü ve şaşkınlık gibi duyguları."
-      }
+        "front": "Ünlem nedir?",
+        "back": "Bir olay karşısında beliren korku, sevinç, üzüntü, şaşkınlık gibi duyguları yansıtan sözcüktür."
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir dil bilgisi çalışmasında ünlem olarak kullanılan ve başka sözcük türünde görev almayan özel seslenişler inceleniyor. Bunlar hangi gruptur?",
+      "alt_beceri": "Ünlemleri asıl, ünlem gibi kullanılan ve yansıma ünlemler olarak sınıflandırır.",
+      "metin": "\"Hişt, haydi, ey, hey, ah, aman, vah vah, of, oh\" sözcükleri başka hiçbir görevde kullanılmaz, yalnızca duygu bildirir. Bu sözcükler hangi grupta yer alır?",
       "secenekler": [
         "Ünlem gibi kullanılan sözcükler",
-        "Asıl ünlemler",
         "Yansıma ünlemleri",
-        "Bağlaçlar"
+        "Ünlem cümleleri",
+        "Asıl ünlemler"
       ],
-      "dogru_index": 1,
-      "cozum": "Asıl ünlemler her zaman ünlem olan ve başka görevi bulunmayan sözcüklerdir. Yansıma ünlemleri ses taklitlerinden oluşur.",
+      "dogru_index": 3,
+      "cozum": "Her zaman ünlem olan, başka bir görevi bulunmayan sözcükler asıl ünlemlerdir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Her zaman ünlem olan, başka görevi bulunmayan sözcüklere ne denir?",
-        "back": "Asıl ünlemler."
-      }
+        "front": "Asıl ünlem nedir?",
+        "back": "Her zaman ünlem olan, başka görevi bulunmayan ünlemlerdir: hişt, haydi, ey, ah."
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir güvenlik görevlisi kalabalıkta 'Yolu açın!' sözünü vurgulu ve ani bir uyarı olarak söylüyor. Bu kullanım hangi gruba girer?",
+      "alt_beceri": "Ünlemlerin yansıttığı duyguları belirler.",
+      "metin": "\"Ordular, ilk hedefiniz Akdeniz'dir, ileri!\" cümlesinde \"ileri\" sözcüğü aslında bir yön bildirir; ancak vurgu nedeniyle duygu değeri kazanmıştır. Bu kullanım hangi gruba girer?",
       "secenekler": [
+        "Ünlem gibi kullanılan sözcükler",
         "Asıl ünlemler",
         "Yansıma ünlemleri",
-        "Ünlem gibi kullanılan sözcükler",
-        "Edat grubu"
+        "Ünlem cümlesi"
       ],
-      "dogru_index": 2,
-      "cozum": "Bazı sözcük ve cümleler asıl ünlem olmadıkları hâlde vurgu nedeniyle ünlem değeri kazanabilir. Ses taklidi bulunmadığı için yansıma ünlemi değildir.",
+      "dogru_index": 0,
+      "cozum": "Ünlem olmadığı hâlde vurgu gereği ünlem değeri kazanan sözcükler \"ünlem gibi kullanılan sözcükler\" grubundadır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ünlem olmadığı hâlde vurguyla ünlem değeri kazanan sözcükler hangi gruptadır?",
-        "back": "Ünlem gibi kullanılan sözcükler."
-      }
+        "front": "Ünlem gibi kullanılan sözcükler nedir?",
+        "back": "Ünlem olmadığı hâlde vurguyla ünlem değeri kazanan sözcüklerdir: ileri!, dikkatli ol!"
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir film sahnesinde eski bir motor çalışırken duyulan ses, kısa bir taklit sözcükle yansıtılıyor. Bu ünlem türü nedir?",
+      "alt_beceri": "Ünlemlerin yansıttığı duyguları belirler.",
+      "metin": "\"Tak tak!\", \"Çat!\" ve \"Deh küheylan!\" örneklerinde olduğu gibi doğadaki seslerin taklidiyle kurulan ünlemler hangi gruptadır?",
       "secenekler": [
-        "Asıl ünlem",
-        "Soru zamiri",
-        "Bağlaç",
-        "Yansıma ünlemi"
+        "Asıl ünlemler",
+        "Ünlem gibi kullanılan sözcükler",
+        "Yansıma ünlemleri",
+        "Soru ünlemleri"
       ],
-      "dogru_index": 3,
-      "cozum": "Doğadaki ya da nesnelerdeki sesleri taklit eden sözcükler yansıma ünlemi oluşturabilir. Asıl ünlemler ses taklidine dayanmak zorunda değildir.",
+      "dogru_index": 2,
+      "cozum": "Yansıma sözcüklerle oluşan ünlemlere yansıma ünlemleri denir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ses taklitleriyle oluşan ünlemler nasıl adlandırılır?",
-        "back": "Yansıma ünlemleri."
-      }
+        "front": "Yansıma ünlem nedir?",
+        "back": "Yansıma sözcüklerle oluşan ünlemlerdir: tak tak, çat, deh küheylan."
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede şaşkınlık bildiren bir sözcük bulunuyor ve tüm cümle bu duyguyu yansıtıyor. Bu cümle nasıl adlandırılır?",
+      "alt_beceri": "Ünlemleri asıl, ünlem gibi kullanılan ve yansıma ünlemler olarak sınıflandırır.",
+      "metin": "\"Aman efendim, bu ne güzel tesadüf!\" ve \"Sakın ha, kimseye söyleme!\" cümlelerinde ünlem yer almaktadır. İçinde ünlem bulunan bu cümleler hangi adla anılır?",
       "secenekler": [
-        "Ünlem cümlesi",
-        "İsim tamlaması",
+        "Soru cümlesi",
+        "Emir cümlesi",
         "Koşul cümlesi",
-        "Fiilimsi grubu"
+        "Ünlem cümlesi"
       ],
-      "dogru_index": 0,
-      "cozum": "İçinde ünlem bulunan cümleye ünlem cümlesi denir. Koşul cümlesi ise bir yargının gerçekleşmesini başka bir koşula bağlar.",
+      "dogru_index": 3,
+      "cozum": "İçinde ünlemlerin yer aldığı cümleler ünlem cümlesidir.",
       "zorluk": "deneme",
       "flashcard": {
         "front": "Ünlem cümlesi nedir?",
-        "back": "İçinde ünlem bulunan cümledir."
-      }
+        "back": "İçinde ünlemlerin yer aldığı cümledir: Aman efendim, bu ne güzel tesadüf!"
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıcı, tehlikeyi fark eder etmez karşısındakileri uyarmak için kısa bir ünlem kullanıyor. Bu kullanımın işlevi nedir?",
+      "alt_beceri": "Ünlem cümlesini diğer cümle türlerinden ayırt eder.",
+      "metin": "\"Vah vah, ne kadar üzüldüm!\" cümlesindeki ünlem hangi duyguyu yansıtmaktadır?",
       "secenekler": [
-        "Bir adı nitelemek",
-        "Ani tepki ve uyarıyı yansıtmak",
-        "Bir sözcüğü başka sözcüğe bağlamak",
-        "Bir fiilin zamanını belirtmek"
+        "Sevinç",
+        "Üzüntü",
+        "Şaşkınlık",
+        "Korku"
       ],
       "dogru_index": 1,
-      "cozum": "Ünlemler ani duygu, sesleniş ve tepkileri aktarabilir. Ad niteleme sıfatın, bağlama bağlacın, zaman bildirme fiil kipinin işlevidir.",
+      "cozum": "\"Vah vah\" ünlemi üzüntü bildirir; asıl ünlemler yansıttıkları duyguya göre değerlendirilir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir ünlemin temel işlevi nedir?",
-        "back": "Duygu, sesleniş ya da ani tepkiyi yansıtmak."
-      }
+        "front": "Ünlemlerin işlevi nedir?",
+        "back": "Korku, sevinç, üzüntü, şaşkınlık gibi duyguları yansıtmaktır."
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir konuşmada hey seslenişi ve vurguyla ünlem değeri kazanan 'Pencereyi kapat!' cümlesi yer alıyor. Bu iki kullanım sırasıyla nasıl adlandırılır?",
+      "alt_beceri": "Ünlem cümlesini diğer cümle türlerinden ayırt eder.",
+      "metin": "\"Yaşasın, sınavı kazandım!\" cümlesinde kullanılan ünlem hangi duyguyu öne çıkarır?",
       "secenekler": [
-        "Ünlem gibi kullanılan cümle; asıl ünlem",
-        "Yansıma ünlemi; ünlem gibi kullanılan cümle",
-        "Asıl ünlem; ünlem gibi kullanılan cümle",
-        "Bağlaç; soru zamiri"
+        "Sevinç",
+        "Üzüntü",
+        "Öfke",
+        "Korku"
       ],
-      "dogru_index": 2,
-      "cozum": "Hey, kaynakta her zaman ünlem olarak kullanılan bir sözcüktür; 'Pencereyi kapat!' ise vurgu ve söyleyişle ünlem değeri kazanan bir cümledir. Bu yüzden ilk kullanım asıl ünlem, ikincisi ünlem gibi kullanılan cümledir.",
+      "dogru_index": 0,
+      "cozum": "\"Yaşasın\" ünlemi sevinç duygusunu yansıtır; ünlemler tek başına duygu belirtir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Asıl ünlemlerle ünlem gibi kullanılan sözcükler arasındaki temel fark nedir?",
-        "back": "Asıl ünlemler her zaman ünlem görevindedir; bazı sözcük ve cümleler ise vurgu gereği ünlem değeri kazanır."
-      }
+        "front": "Sevinç bildiren ünlemler nedir?",
+        "back": "Yaşasın, oh, heyecan gibi sevinç duygusunu yansıtan ünlemlerdir."
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir dil bilgisi fişi ünlem türlerini birlikte gruplandırıyor. Kaynaktaki sınıflandırmayı doğru veren seçenek hangisidir?",
+      "alt_beceri": "Ünlemlerin yansıttığı duyguları belirler.",
+      "metin": "\"Dikkatli ol!\" cümlesi tek bir sözcükten oluşmasına karşın güçlü bir uyarı ve duygu taşır. Bu cümlede \"dikkatli ol\" hangi değeri kazanmıştır?",
       "secenekler": [
-        "Asıl ünlemler, soru zamirleri, bağlaçlar",
-        "Yansıma ünlemleri, sıfatlar, fiiller",
-        "Ünlem cümleleri, edatlar, adıllar",
-        "Asıl ünlemler, ünlem gibi kullanılan sözcükler, yansıma ünlemleri"
+        "Edat değeri",
+        "Bağlaç değeri",
+        "Ünlem değeri",
+        "Sıfat değeri"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynakta ünlemler asıl ünlemler, ünlem gibi kullanılan sözcükler ve yansıma ünlemleri olarak üç grupta ele alınır. Ünlem cümlesi ise bu gruplardan ayrı bir kavramdır.",
+      "dogru_index": 2,
+      "cozum": "Bazı sözcük ve cümleler ünlem olmadıkları hâlde vurgu gereği ünlem değeri kazanabilir: Dikkatli ol!",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ünlemler kaynakta hangi üç grupta incelenir?",
-        "back": "Asıl ünlemler, ünlem gibi kullanılan sözcükler ve yansıma ünlemleri."
-      }
+        "front": "Ünlem değeri kazanma nedir?",
+        "back": "Ünlem olmayan bir sözcüğün vurguyla ünlem görevi üstlenmesidir: Dikkatli ol!"
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir konuşmacı ani şaşkınlığını tek başına 'Aman!' sözüyle belirtiyor. Kaynağa göre aman sözcüğü hangi gruptadır?",
+      "alt_beceri": "Ünlem cümlesini diğer cümle türlerinden ayırt eder.",
+      "metin": "Bir metinde \"Tak tak!\" sesiyle kapı vurulduğu anlatılmış, ardından \"Ah, yine mi!\" denilmiştir. Bu iki kullanımdan ilki hangi ünlem grubunda değerlendirilir?",
       "secenekler": [
         "Asıl ünlem",
-        "Ünlem gibi kullanılan cümle",
         "Yansıma ünlemi",
-        "Bağlaç"
+        "Ünlem gibi kullanılan sözcük",
+        "Ünlem cümlesi"
       ],
-      "dogru_index": 0,
-      "cozum": "Aman, kaynakta her zaman ünlem olan ve başka görev üstlenmeyen örnekler arasında yer alır. Bu nedenle asıl ünlemdir; ses taklidi ya da başka bir sözcük türü değildir.",
+      "dogru_index": 1,
+      "cozum": "\"Tak tak\" doğadaki bir sesin taklididir; yansıma sözcüklerle oluşan ünlemler yansıma ünlemleridir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Asıl ünlemlere kaynakta verilen örneklerden birini yaz.",
-        "back": "Örneğin ah, aman, hey, vah vah, of ya da oh."
-      }
+        "front": "Yansıma ünlemlerinin kaynağı nedir?",
+        "back": "Doğadaki seslerin taklididir: tak tak, çat, pat."
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k08_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede kısa bir sesleniş şaşkınlığı gösterirken başka bir sözcük iki yargıyı birbirine bağlıyor. İlk sözcük hangi türdedir?",
+      "alt_beceri": "Ünlemleri asıl, ünlem gibi kullanılan ve yansıma ünlemler olarak sınıflandırır.",
+      "metin": "Bir öğrenci \"aman, of, ey\" sözcüklerini cümlede bağlaç olarak kullanmak istemiştir. Bu girişim neden başarısızdır?",
       "secenekler": [
-        "Bağlaç",
-        "Ünlem",
-        "Edat",
-        "Sıfat"
+        "Bu sözcükler yalnızca edat olarak kullanılır",
+        "Bu sözcükler cümlede hiç yer almaz",
+        "Bu sözcükler yalnızca soru sorar",
+        "Bu sözcükler yalnızca ünlem görevinde kullanılır"
       ],
-      "dogru_index": 1,
-      "cozum": "Duygu ve tepki bildiren sözcük ünlemdir. Bağlaçların temel görevi eş görevli öge veya cümleleri bağlamaktır.",
+      "dogru_index": 3,
+      "cozum": "Asıl ünlemler her zaman ünlemdir ve başka bir görevi bulunmaz; bu yüzden bağlaç olarak kullanılamaz.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ünlem ile bağlaç arasındaki temel fark nedir?",
-        "back": "Ünlem duygu veya tepki bildirir; bağlaç sözcükleri ya da cümleleri bağlar."
-      }
+        "front": "Asıl ünlemlerin ortak özelliği nedir?",
+        "back": "Yalnızca ünlem görevinde kullanılmaları ve başka görevlerinin bulunmamasıdır."
+      },
+      "kazanim": "Ünlemleri türleri ve cümledeki işlevleri bakımından çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u02_k08_o01:flashcard",
-      "front": "Ünlem sözcükleri hangi tür durumları yansıtır?",
-      "back": "Korku, sevinç, üzüntü ve şaşkınlık gibi duyguları."
+      "front": "Ünlem nedir?",
+      "back": "Bir olay karşısında beliren korku, sevinç, üzüntü, şaşkınlık gibi duyguları yansıtan sözcüktür."
     },
     {
       "id": "edebiyat_10_u02_k08_o02:flashcard",
-      "front": "Her zaman ünlem olan, başka görevi bulunmayan sözcüklere ne denir?",
-      "back": "Asıl ünlemler."
+      "front": "Asıl ünlem nedir?",
+      "back": "Her zaman ünlem olan, başka görevi bulunmayan ünlemlerdir: hişt, haydi, ey, ah."
     },
     {
       "id": "edebiyat_10_u02_k08_o03:flashcard",
-      "front": "Ünlem olmadığı hâlde vurguyla ünlem değeri kazanan sözcükler hangi gruptadır?",
-      "back": "Ünlem gibi kullanılan sözcükler."
+      "front": "Ünlem gibi kullanılan sözcükler nedir?",
+      "back": "Ünlem olmadığı hâlde vurguyla ünlem değeri kazanan sözcüklerdir: ileri!, dikkatli ol!"
     },
     {
       "id": "edebiyat_10_u02_k08_o04:flashcard",
-      "front": "Ses taklitleriyle oluşan ünlemler nasıl adlandırılır?",
-      "back": "Yansıma ünlemleri."
+      "front": "Yansıma ünlem nedir?",
+      "back": "Yansıma sözcüklerle oluşan ünlemlerdir: tak tak, çat, deh küheylan."
     },
     {
       "id": "edebiyat_10_u02_k08_o05:flashcard",
       "front": "Ünlem cümlesi nedir?",
-      "back": "İçinde ünlem bulunan cümledir."
+      "back": "İçinde ünlemlerin yer aldığı cümledir: Aman efendim, bu ne güzel tesadüf!"
     },
     {
       "id": "edebiyat_10_u02_k08_o06:flashcard",
-      "front": "Bir ünlemin temel işlevi nedir?",
-      "back": "Duygu, sesleniş ya da ani tepkiyi yansıtmak."
+      "front": "Ünlemlerin işlevi nedir?",
+      "back": "Korku, sevinç, üzüntü, şaşkınlık gibi duyguları yansıtmaktır."
     },
     {
       "id": "edebiyat_10_u02_k08_o07:flashcard",
-      "front": "Asıl ünlemlerle ünlem gibi kullanılan sözcükler arasındaki temel fark nedir?",
-      "back": "Asıl ünlemler her zaman ünlem görevindedir; bazı sözcük ve cümleler ise vurgu gereği ünlem değeri kazanır."
+      "front": "Sevinç bildiren ünlemler nedir?",
+      "back": "Yaşasın, oh, heyecan gibi sevinç duygusunu yansıtan ünlemlerdir."
     },
     {
       "id": "edebiyat_10_u02_k08_o08:flashcard",
-      "front": "Ünlemler kaynakta hangi üç grupta incelenir?",
-      "back": "Asıl ünlemler, ünlem gibi kullanılan sözcükler ve yansıma ünlemleri."
+      "front": "Ünlem değeri kazanma nedir?",
+      "back": "Ünlem olmayan bir sözcüğün vurguyla ünlem görevi üstlenmesidir: Dikkatli ol!"
     },
     {
       "id": "edebiyat_10_u02_k08_o09:flashcard",
-      "front": "Asıl ünlemlere kaynakta verilen örneklerden birini yaz.",
-      "back": "Örneğin ah, aman, hey, vah vah, of ya da oh."
+      "front": "Yansıma ünlemlerinin kaynağı nedir?",
+      "back": "Doğadaki seslerin taklididir: tak tak, çat, pat."
     },
     {
       "id": "edebiyat_10_u02_k08_o10:flashcard",
-      "front": "Ünlem ile bağlaç arasındaki temel fark nedir?",
-      "back": "Ünlem duygu veya tepki bildirir; bağlaç sözcükleri ya da cümleleri bağlar."
+      "front": "Asıl ünlemlerin ortak özelliği nedir?",
+      "back": "Yalnızca ünlem görevinde kullanılmaları ve başka görevlerinin bulunmamasıdır."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Ünlem"
+  ]
 }

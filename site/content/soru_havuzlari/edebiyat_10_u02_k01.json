@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u02_k01",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 2,
+  "tema_adi": "Divan Şiiri ve Saf Şiir",
+  "baslik": "Gazel",
+  "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+  "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.74-75",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u02_k01_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şiir incelemesinde beyitlerle kurulmuş, lirik konular işleyen klasik bir biçim ele alınıyor. Bu biçim hangisidir?",
+      "alt_beceri": "Gazelin beyit, kafiye ve beyit sayısı özelliklerini belirler.",
+      "metin": "Bir divan şairinin gazelini inceleyen öğrenci, önce şiirin beyit sayısını sayarak eserin türün sınırları içinde olup olmadığını kontrol eder. Gazelde beyit sayısı hangi aralıktadır?",
       "secenekler": [
-        "Gazel",
-        "Koşma",
-        "Türkü",
-        "Fabl"
+        "3-5 beyit",
+        "5-15 beyit",
+        "15-25 beyit",
+        "33-99 beyit"
       ],
-      "dogru_index": 0,
-      "cozum": "Gazel, Divan edebiyatının nazım biçimidir. Koşma halk şiirine, türkü ezgili halk şiirine, fabl ise öğretici anlatıya aittir.",
+      "dogru_index": 1,
+      "cozum": "Gazelin beyit sayısı 5-15 arasındadır. 33-99 beyit kasidenin, 3-5 bent şarkının ölçüsüdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazel hangi edebî geleneğin nazım biçimidir?",
-        "back": "Divan edebiyatının nazım biçimidir."
-      }
+        "front": "Gazelin beyit sayısı nedir?",
+        "back": "Genellikle 5-15 beyit arasındadır."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrenci, gazel için kaynakta verilen yaygın beyit sayısı aralığını not ediyor. Doğru aralık hangisidir?",
+      "alt_beceri": "Gazelin beyit, kafiye ve beyit sayısı özelliklerini belirler.",
+      "metin": "Bir gazelin ilk beyti kendi arasında kafiyelidir ve şiirin girişini oluşturur; sonraki beyitlerin ikinci dizeleri bu beyitle kafiyelenir. Bu beyde verilen ad hangisidir?",
       "secenekler": [
-        "2–4 beyit",
-        "5–15 beyit",
-        "20–30 beyit",
-        "33–99 beyit"
+        "Makta",
+        "Hüsn-i makta",
+        "Beytül gazel",
+        "Matla"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynakta gazelin 5–15 beyit arasında olduğu belirtilir. 33–99 beyit aralığı kaside için verilir.",
+      "dogru_index": 3,
+      "cozum": "Gazelin ilk beytine matla denir. Son beyit makta, son beyitten önceki beyit hüsn-i makta, en güzel beyit beytül gazeldir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazel genellikle kaç beyitten oluşur?",
-        "back": "Beş ile on beş beyit arasında."
-      }
+        "front": "Matla nedir?",
+        "back": "Gazel ve kasidede ilk beyittir; kendi arasında kafiyelidir."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir gazelde ilk beytin iki dizesi birbiriyle uyaklanıyor, sonraki beyitlerde yalnız ikinci dizeler aynı uyakla buluşuyor. Bu örgü hangisidir?",
+      "alt_beceri": "Matla, makta, beytül gazel gibi gazel kavramlarını ayırt eder.",
+      "metin": "Bir gazelin son beytinde şair kendi mahlasını anmıştır. Bu beyit, şiirin son beyti olması dolayısıyla hangi adla anılır?",
       "secenekler": [
-        "abab, cccb, dddb",
-        "aa, bb, cc, dd",
-        "aa, ba, ca, da",
-        "aaaa, bbbb, cccc"
+        "Makta",
+        "Matla",
+        "Hüsn-i matla",
+        "Tegazzül"
       ],
-      "dogru_index": 2,
-      "cozum": "Gazel uyak örgüsü aa, ba, ca biçimindedir. aa, bb, cc düzeninde her beyit kendi içinde kafiyelenir; bu mesnevinin örgüsüdür.",
+      "dogru_index": 0,
+      "cozum": "Gazelin son beytine makta denir ve şairin mahlası bu beyitte yer alır. Kasidede mahlasın bulunduğu beyit ise taç beyit adını alır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazelin uyak düzeni nasıldır?",
-        "back": "İlk beyit kendi içinde uyaklıdır; sonraki beyitlerin ikinci dizeleri onunla uyaklanır: aa, ba, ca…"
-      }
+        "front": "Makta nedir?",
+        "back": "Gazel ve kasidede son beyittir; gazelde şairin mahlası bu beyittedir."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şiir çözümlemesinde gazelin başlangıç ve bitiş beyitleri terimleriyle adlandırılıyor. Sırasıyla hangi terimler kullanılır?",
+      "alt_beceri": "Gazelin beyit, kafiye ve beyit sayısı özelliklerini belirler.",
+      "metin": "Bir gazel okumasında, beyitler arasında en çok beğenilen ve şairin ustalığını gösteren beyit ayrıca adlandırılır. Bu beyde verilen ad hangisidir?",
       "secenekler": [
-        "Nesip ve dua",
-        "Döşeme ve dilek",
-        "Girizgâh ve fahriye",
-        "Matla ve makta"
+        "Hüsn-i matla",
+        "Hüsn-i makta",
+        "Beytül gazel",
+        "Matla"
       ],
-      "dogru_index": 3,
-      "cozum": "Gazelin ilk beyti matla, son beyti maktadır. Nesip, dua, girizgâh ve fahriye kasidenin bölümleridir.",
+      "dogru_index": 2,
+      "cozum": "Gazelin en güzel beytine beytül gazel (şah beyit) denir. Hüsn-i matla ikinci beyit, hüsn-i makta sondan bir önceki beyittir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazelin ilk ve son beyitleri hangi adları alır?",
-        "back": "İlk beyit matla, son beyit makta."
-      }
+        "front": "Beytül gazel nedir?",
+        "back": "Gazelin en güzel beytidir; şah beyit de denir."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir okur, gazelin bütün beyitleri arasından en başarılı bulduğu beyti seçiyor. Kaynağa göre bu beyit hangi adla anılır?",
+      "alt_beceri": "Matla, makta, beytül gazel gibi gazel kavramlarını ayırt eder.",
+      "metin": "Bir gazelde ilk beyit kendi içinde, sonraki beyitlerin yalnızca ikinci dizeleri ilk beyitle kafiyelidir. Bu kafiye düzeni hangisidir?",
       "secenekler": [
-        "Beytülgazel",
-        "Hüsn-i matla",
-        "Hüsn-i makta",
-        "Taç beyit"
+        "abab, cccb, dddb",
+        "aaxa, aaaa",
+        "aa, bb, cc, dd",
+        "aa, ba, ca, da"
       ],
-      "dogru_index": 0,
-      "cozum": "Gazelin en güzel beyti beytülgazel ya da şah beyit olarak adlandırılır. Hüsn-i matla ve hüsn-i makta, ilk ve son beyit çevresindeki beyitlerle ilişkilidir.",
+      "dogru_index": 3,
+      "cozum": "Gazelde kafiye şeması aa, ba, ca, da biçimindedir. abab-cccb şarkının, aaxa tuyuğun düzenidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazelin en güzel beyti nasıl adlandırılır?",
-        "back": "Beytülgazel ya da şah beyit."
-      }
+        "front": "Gazelin kafiye düzeni nedir?",
+        "back": "aa, ba, ca, da biçimindedir; ilk beyit kendi içinde kafiyelidir."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şair, klasik şiir biçiminin bitiş beytinde takma adını kullanıyor. Bu uygulama gazelde en çok hangi bölümde görülür?",
+      "alt_beceri": "Matla, makta, beytül gazel gibi gazel kavramlarını ayırt eder.",
+      "metin": "Bir gazelin bütün beyitlerinde aynı konu işlenmiş, şiir boyunca anlam birliği korunmuştur. Bu gazel hangi adla anılır?",
       "secenekler": [
-        "Matla",
-        "Makta",
-        "Girizgâh",
-        "Nesip"
+        "Yek-avaz gazel",
+        "Yek-ahenk gazel",
+        "Hüsn-i matla",
+        "Şah beyit"
       ],
       "dogru_index": 1,
-      "cozum": "Gazel şairinin mahlası çoğunlukla son beyit olan maktada yer alır. Matla ilk beyittir; nesip ve girizgâh kaside bölümleridir.",
+      "cozum": "Bütün beyitlerinde aynı konunun işlendiği, anlam birliği bulunan gazel yek-ahenktir. Yek-avaz ise beyitleri aynı güzellikte olan gazeldir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazelin son beytinde şairin hangi kişisel işareti bulunabilir?",
-        "back": "Şairin mahlası."
-      }
+        "front": "Yek-ahenk gazel nedir?",
+        "back": "Bütün beyitlerinde aynı konunun işlendiği, anlam birliği olan gazeldir."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şiirin her beyti aynı ana duygu çevresinde anlam birliği kuruyor. Kaynağa göre bu gazel türünün adı nedir?",
+      "alt_beceri": "Gazeli konusuna göre âşıkane, rindane, hakimane ve şûhâne olarak sınıflandırır.",
+      "metin": "Başka bir gazelde beyitler konu bakımından farklıdır; ancak beyitlerin tamamı aynı güzellik düzeyindedir. Bu gazel hangi adla anılır?",
       "secenekler": [
-        "Yek-avaz",
-        "Rindane",
-        "Yek-ahenk",
-        "Şuhane"
+        "Yek-avaz gazel",
+        "Yek-ahenk gazel",
+        "Müstezat",
+        "Şarkı"
       ],
-      "dogru_index": 2,
-      "cozum": "Bütün beyitlerinde aynı konu işlenen gazel yek-ahenktir. Yek-avaz gazelde ise bütün beyitlerin güzellik bakımından aynı düzeyde olması öne çıkar.",
+      "dogru_index": 0,
+      "cozum": "Bütün beyitleri aynı güzelliğe sahip gazeller yek-avaz adını alır. Konu birliği aranmaz; ölçüt güzellik düzeyinin eşitliğidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bütün beyitlerinde aynı konuyu işleyen gazel nasıl adlandırılır?",
-        "back": "Yek-ahenk gazel."
-      }
+        "front": "Yek-avaz gazel nedir?",
+        "back": "Bütün beyitleri aynı güzelliğe sahip olan gazeldir."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir eleştirmen, bir gazelde tek bir beyitin öne çıkmadığını, bütün beyitlerin aynı güzellik düzeyini taşıdığını söylüyor. Bu nitelik hangi terimle adlandırılır?",
+      "alt_beceri": "Gazeli konusuna göre âşıkane, rindane, hakimane ve şûhâne olarak sınıflandırır.",
+      "metin": "Divan şiirinde gazellerin başlığı yoktur; bir gazel redifindeki sözcükle ya da ilk mısrasıyla anılır. Buna göre gazellerin adlandırılmasında ne esas alınır?",
       "secenekler": [
-        "Yek-ahenk",
-        "Âşıkane",
-        "Rindane",
-        "Yek-avaz"
+        "Şairin mahlasıyla",
+        "Beyit sayısının adıyla",
+        "Redifiyle ya da ilk mısrasıyla",
+        "Bestelendiği makamla"
       ],
-      "dogru_index": 3,
-      "cozum": "Bütün beyitleri aynı güzelliğe sahip gazel yek-avazdır. Yek-ahenk, beyitlerin aynı konu çevresinde anlam birliği kurmasını anlatır.",
+      "dogru_index": 2,
+      "cozum": "Gazellerin başlığı bulunmadığı için adlandırma rediflerine göre ya da ilk mısralarına göre yapılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bütün beyitleri güzellik bakımından aynı düzeyde olan gazel nasıl adlandırılır?",
-        "back": "Yek-avaz gazel."
-      }
+        "front": "Gazellerin adlandırılma biçimi nasıldır?",
+        "back": "Başlıkları yoktur; rediflerine göre ya da ilk mısralarına göre adlandırılır."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şair, gazelinde bireysel aşk yerine toplum yaşamına dair öğüt ve düşünceler geliştiriyor. Konusuna göre bu gazel hangi türdedir?",
+      "alt_beceri": "Gazeli konusuna göre âşıkane, rindane, hakimane ve şûhâne olarak sınıflandırır.",
+      "metin": "Bir gazelde aşkın verdiği acı, hasret ve içli duygular dile getirilmiştir; bu türün en iyi örneği Fuzuli'nin gazelleridir. Gazel konusuna göre hangi adı alır?",
       "secenekler": [
-        "Hakimane",
-        "Âşıkane",
-        "Rindane",
-        "Şuhane"
+        "Rindane gazel",
+        "Âşıkane gazel",
+        "Hakimane gazel",
+        "Şûhâne gazel"
       ],
-      "dogru_index": 0,
-      "cozum": "Hakimane gazel öğretici, düşünsel ve toplumsal içeriklidir. Âşıkane aşk duygularını, rindane yaşamdan zevk almayı, şuhane sevgilinin güzelliğini öne çıkarır.",
+      "dogru_index": 1,
+      "cozum": "Aşka ilişkin acı ve mutluluk gibi içli duyguları işleyen gazeller âşıkane gazeldir; Fuzuli bu türün en iyi örneğidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Öğretici ve toplumsal düşünceleri öne çıkaran gazel türü nedir?",
-        "back": "Hakimane (hikemî) gazel."
-      }
+        "front": "Âşıkane gazel nedir?",
+        "back": "Aşka ilişkin acı, hasret ve mutluluk gibi içli duyguları işleyen gazeldir; Fuzuli."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k01_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir etkinlikte biri makamla gazel okuyor, diğeri gazel yazarı olarak tanıtılıyor. Bu iki görev sırasıyla nasıl adlandırılır?",
+      "alt_beceri": "Gazeli konusuna göre âşıkane, rindane, hakimane ve şûhâne olarak sınıflandırır.",
+      "metin": "İçki, yaşamı boş verme ve yaşamdan zevk alma konularında yazılan gazellerin en iyi örneği Baki'nin gazelleridir. Bu gazel türü hangisidir?",
       "secenekler": [
-        "Hamsenüvis ve meddah",
-        "Gazelhan ve gazelsera",
-        "Ozan ve baksı",
-        "Nâib ve münşi"
+        "Âşıkane gazel",
+        "Hikemî gazel",
+        "Şûhâne gazel",
+        "Rindane gazel"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynakta gazeli makamla okuyan kişiye gazelhan, gazel yazan usta şaire gazelsera denir. Hamsenüvis hamse sahibi şairdir.",
+      "dogru_index": 3,
+      "cozum": "İçki ve yaşamdan zevk alma konularını işleyen gazeller rindanedir; Baki örnek gösterilir. Öğretici ve sosyal konulu gazeller hikemî, sevgilinin güzelliğini anlatanlar şûhânedir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazel okuyan kişiye ve gazel yazan usta şaire hangi adlar verilir?",
-        "back": "Gazel okuyan gazelhan, usta gazel yazarı gazelsera."
-      }
+        "front": "Rindane gazel nedir?",
+        "back": "İçki, yaşamı boş verme ve zevk alma konularını işleyen gazeldir; Baki."
+      },
+      "kazanim": "Gazelin biçim özelliklerini, kavramlarını ve konularına göre türlerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u02_k01_o01:flashcard",
-      "front": "Gazel hangi edebî geleneğin nazım biçimidir?",
-      "back": "Divan edebiyatının nazım biçimidir."
+      "front": "Gazelin beyit sayısı nedir?",
+      "back": "Genellikle 5-15 beyit arasındadır."
     },
     {
       "id": "edebiyat_10_u02_k01_o02:flashcard",
-      "front": "Gazel genellikle kaç beyitten oluşur?",
-      "back": "Beş ile on beş beyit arasında."
+      "front": "Matla nedir?",
+      "back": "Gazel ve kasidede ilk beyittir; kendi arasında kafiyelidir."
     },
     {
       "id": "edebiyat_10_u02_k01_o03:flashcard",
-      "front": "Gazelin uyak düzeni nasıldır?",
-      "back": "İlk beyit kendi içinde uyaklıdır; sonraki beyitlerin ikinci dizeleri onunla uyaklanır: aa, ba, ca…"
+      "front": "Makta nedir?",
+      "back": "Gazel ve kasidede son beyittir; gazelde şairin mahlası bu beyittedir."
     },
     {
       "id": "edebiyat_10_u02_k01_o04:flashcard",
-      "front": "Gazelin ilk ve son beyitleri hangi adları alır?",
-      "back": "İlk beyit matla, son beyit makta."
+      "front": "Beytül gazel nedir?",
+      "back": "Gazelin en güzel beytidir; şah beyit de denir."
     },
     {
       "id": "edebiyat_10_u02_k01_o05:flashcard",
-      "front": "Gazelin en güzel beyti nasıl adlandırılır?",
-      "back": "Beytülgazel ya da şah beyit."
+      "front": "Gazelin kafiye düzeni nedir?",
+      "back": "aa, ba, ca, da biçimindedir; ilk beyit kendi içinde kafiyelidir."
     },
     {
       "id": "edebiyat_10_u02_k01_o06:flashcard",
-      "front": "Gazelin son beytinde şairin hangi kişisel işareti bulunabilir?",
-      "back": "Şairin mahlası."
+      "front": "Yek-ahenk gazel nedir?",
+      "back": "Bütün beyitlerinde aynı konunun işlendiği, anlam birliği olan gazeldir."
     },
     {
       "id": "edebiyat_10_u02_k01_o07:flashcard",
-      "front": "Bütün beyitlerinde aynı konuyu işleyen gazel nasıl adlandırılır?",
-      "back": "Yek-ahenk gazel."
+      "front": "Yek-avaz gazel nedir?",
+      "back": "Bütün beyitleri aynı güzelliğe sahip olan gazeldir."
     },
     {
       "id": "edebiyat_10_u02_k01_o08:flashcard",
-      "front": "Bütün beyitleri güzellik bakımından aynı düzeyde olan gazel nasıl adlandırılır?",
-      "back": "Yek-avaz gazel."
+      "front": "Gazellerin adlandırılma biçimi nasıldır?",
+      "back": "Başlıkları yoktur; rediflerine göre ya da ilk mısralarına göre adlandırılır."
     },
     {
       "id": "edebiyat_10_u02_k01_o09:flashcard",
-      "front": "Öğretici ve toplumsal düşünceleri öne çıkaran gazel türü nedir?",
-      "back": "Hakimane (hikemî) gazel."
+      "front": "Âşıkane gazel nedir?",
+      "back": "Aşka ilişkin acı, hasret ve mutluluk gibi içli duyguları işleyen gazeldir; Fuzuli."
     },
     {
       "id": "edebiyat_10_u02_k01_o10:flashcard",
-      "front": "Gazel okuyan kişiye ve gazel yazan usta şaire hangi adlar verilir?",
-      "back": "Gazel okuyan gazelhan, usta gazel yazarı gazelsera."
+      "front": "Rindane gazel nedir?",
+      "back": "İçki, yaşamı boş verme ve zevk alma konularını işleyen gazeldir; Baki."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Gazel"
+  ]
 }

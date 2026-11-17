@@ -2,298 +2,255 @@
   "konu_id": "cogr_10_u06_k01",
   "sinif": 10,
   "ders": "Coğrafya",
-  "kaynak_dosya": "10. Sınıf coğrafya json.zip",
+  "tema": 6,
+  "tema_adi": "Afetler ve Sürdürülebilir Çevre",
+  "baslik": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+  "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+  "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular.",
+  "kaynak": "Coğrafya 10 ders kitabı, s.171-179",
+  "kaynak_dosya": "cografya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "cogr_10_u06_k01_o01",
-      "alt_beceri": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,",
-      "metin": "Bir yerleşme, deprem tehlikesini ortadan kaldıramıyor. Can ve mal kaybını azaltmak için hangi yaklaşımı önceliklendirmelidir?",
+      "alt_beceri": "Afet türlerini ve bölgesel dağılışını açıklar.",
+      "metin": "Deprem, tsunami ve kasırga gibi gerçekleşmesi önlenemeyen afetlerde hangi tür önlemler ön plana çıkar?",
       "secenekler": [
-        "Sağlam zeminde planlı yerleşme, dayanıklı yapılar ve hazırlıklı müdahale",
-        "Fay hattı çevresinde yapılaşmayı artırıp planları ertelemek",
-        "Bütün riskleri yalnızca afet sonrasında değerlendirmek",
-        "Erken uyarı ve tahliyeyi gereksiz görmek"
+        "Afetin oluşumunu tümüyle engelleyen önlemler",
+        "Zararı en aza indirmeye yönelik önlemler",
+        "Yalnızca afet sonrası yardım çalışmaları",
+        "Afet bölgesinin boşaltılıp terk edilmesi"
       ],
-      "dogru_index": 0,
-      "cozum": "Deprem önlenemese de yer seçimi, yapı güvenliği ve hazırlıklı müdahale zararları azaltabilir. Riskleri yalnızca afet sonrasında ele almak kayıpları önleme fırsatını kaçırır.",
+      "dogru_index": 1,
+      "cozum": "Gerçekleşmesi önlenemeyecek afetlerde erken uyarı sistemleri, yıkımı azaltacak mimari tarz ve yer seçimi gibi zararı en aza indirmeye yönelik önlemler ön plandadır (s.171).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Deprem gibi önlenemeyen bir tehlikenin afete dönüşen zararları hangi tür uygulamalarla azaltılabilir?",
-        "back": "Güvenli yer seçimi, depreme dayanıklı yapılaşma, erken uyarı ve tahliye planları gibi önlemler zararları azaltabilir."
+        "front": "Zarar azaltma nedir?",
+        "back": "Önlenemeyen afetlerde can ve mal kaybını en aza indirmeye yönelik çalışma."
       },
-      "kazanim": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o02",
-      "alt_beceri": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,",
-      "metin": "Bir tarım havzasında yağışların uzun süre düşük seyretmesi olası su sıkıntısı yaratıyor. Yerel yönetim, sıkıntı büyümeden harekete geçmek istiyor. Afet öncesi yaklaşımın temel mantığı hangisidir?",
+      "alt_beceri": "Afet türlerini ve bölgesel dağılışını açıklar.",
+      "metin": "Su baskını, heyelan, orman yangını ve kuraklık gibi afetlerde hangi önlemler ağırlık kazanır?",
       "secenekler": [
-        "Sorunu yalnızca etkiler ortaya çıktıktan sonra ele almak",
-        "Tehlike ve maruziyeti önceden değerlendirip zarar azaltma ve hazırlık adımlarını yerel koşullara göre belirlemek",
-        "Yerleşim ve faaliyetleri risk incelemesi yapmadan genişletmek",
-        "Her bölgede aynı uygulamanın uygun olduğunu varsaymak"
+        "Yalnızca sigorta uygulamaları",
+        "Afet sonrası hasar tespiti",
+        "Nüfusun bölgeye yerleştirilmesi",
+        "Afetin gerçekleşmesini önlemeye yönelik önlemler"
       ],
-      "dogru_index": 1,
-      "cozum": "Afet öncesi risk ve zarar azaltma çalışmaları, tehlike etkileri büyümeden planlanır. Önlemler yerel koşullara ve maruziyete göre belirlenmelidir.",
+      "dogru_index": 3,
+      "cozum": "Su baskını, heyelan, orman yangını, kuraklık ve salgında afetin gerçekleşmesini önlemeye yönelik tedbirler ön plandadır (s.171).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir tehlikenin afete yol açma olasılığını ve vereceği zararı azaltmak için planlama hangi ilkeye dayanmalıdır?",
-        "back": "Tehlikenin önlenebilirliğini, mekânsal koşulları ve maruziyeti değerlendirip; mümkünse oluşma riskini azaltmalı, önlenemeyen durumda zarar azaltma ve hazırlığı öne çıkarmalıdır."
+        "front": "Afeti önleme nedir?",
+        "back": "Dere ıslahı, istinat duvarı, yangın uyarı sistemi gibi oluşumu engelleyen tedbir."
       },
-      "kazanim": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o03",
-      "alt_beceri": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,",
-      "metin": "Kurgusal iki ada ülkesinde volkanik tehlikeye ilişkin güncel bilgiler bulunuyor. Ülke P bu bilgileri yerleşme ve acil durum planlarında kullanırken Ülke R yalnızca arşivliyor. Bu iki yaklaşımı değerlendirirken hangi karşılaştırma en açıklayıcıdır?",
+      "alt_beceri": "Afet türlerini ve bölgesel dağılışını açıklar.",
+      "metin": "Dünyada afetlerin bölgesel dağılışı dikkate alındığında Güneydoğu Asya'da hangi afetler öne çıkar?",
       "secenekler": [
-        "Yalnızca ülke adlarının nüfuslarını karşılaştırmak",
-        "Sadece volkanların adlarını sıralayıp hazırlıkları incelememek",
-        "Tehlike bilgisinin yerel koşullara, halkın hazırlığına ve kurumların uygulamalarına nasıl yansıdığını incelemek",
-        "Yalnızca afet sonrasında yapılan harcamalara bakmak"
+        "Deprem, tsunami ve volkanik püskürmeler",
+        "Kuraklık ve çölleşme",
+        "Kasırga ve hortum",
+        "Çığ ve don olayları"
       ],
-      "dogru_index": 2,
-      "cozum": "Afetle mücadelede bilgi ancak yerel koşullar dikkate alınarak planlama ve hazırlık uygulamalarına dönüştürüldüğünde etkili olur. Bu nedenle coğrafi koşullar, halkın hazırlığı ve kurumların eylemleri birlikte karşılaştırılmalıdır.",
+      "dogru_index": 0,
+      "cozum": "Güneydoğu Asya'da deprem, tsunami ve volkanik püskürmeler; Orta Amerika'da kasırgalar, Kuzey Afrika'da kuraklık daha çok görülür (s.171).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Farklı ülkelerin afetle mücadele uygulamalarını karşılaştırırken hangi başlıklar incelenmelidir?",
-        "back": "Tehlike ve coğrafi koşullar, yer seçimi ve yapı güvenliği, erken uyarı, tahliye, halkın eğitimi ve afet sonrası iyileştirme birlikte incelenebilir."
+        "front": "Afetlerin bölgesel dağılışı nedir?",
+        "back": "Afet türlerinin coğrafi koşullara bağlı olarak bölgelere göre farklılaşması."
       },
-      "kazanim": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o04",
-      "alt_beceri": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,",
-      "metin": "Bir kentte bir ana su hattı zarar gördüğünde yedek hatlar temel hizmeti sürdürmeye yardımcı oluyor. Bu özellik dirençliliğin hangi boyutunu en doğrudan gösterir?",
+      "alt_beceri": "Afet türlerini ve bölgesel dağılışını açıklar.",
+      "metin": "2023'te ABD'nin Oklahoma eyaletinde saatteki hızı 200-210 km'yi bulan kasırgada hangi tedbirlerle zarar azaltılmaya çalışılmaktadır?",
       "secenekler": [
-        "Kapsayıcılık",
-        "Uyum sağlama",
-        "Sadece fiziksel sağlamlık",
-        "Yedeklilik"
+        "Akarsu yataklarının ıslahı",
+        "Dik yamaçlara istinat duvarı yapılması",
+        "Erken uyarı, halkın tahliyesi ve yer altı sığınakları",
+        "Orman yangını uyarı sistemleri"
       ],
-      "dogru_index": 3,
-      "cozum": "Yedeklilik, ana sistem devre dışı kaldığında yedek kapasitenin hizmet vermesidir. Bu sayede temel işlevler afet sırasında sürdürülebilir.",
+      "dogru_index": 2,
+      "cozum": "Kasırgalarda erken uyarı, halkın tahliye edilmesi ve yer altı sığınaklarının kullanılması zararları azaltmaya yönelik tedbirlerdir (s.172).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Afete dirençli bir yaşam alanının temel amacı ve kapasitesi nedir?",
-        "back": "Olası tehlikelere hazırlanmak, afet şoklarının etkisini azaltmak, temel işlevleri sürdürmek, sonrasında toparlanmak ve değişen koşullara uyum sağlamaktır."
+        "front": "Kasırgada zarar azaltma nedir?",
+        "back": "Erken uyarı, tahliye ve sığınaklarla can kaybının azaltılması."
       },
-      "kazanim": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o05",
-      "alt_beceri": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,",
-      "metin": "Bir kent, yeni bir tahliye ve hizmet sürekliliği planını mahalle sakinleri, toplu taşıma işletmeleri ve sağlık hizmeti temsilcileriyle birlikte hazırlıyor. Bu sürecin dirençliliğe en doğrudan katkısı hangisidir?",
+      "alt_beceri": "Afet türlerini ve bölgesel dağılışını açıklar.",
+      "metin": "2024'te Brezilya'nın Rio Grande do Sul eyaletinde yaşanan su baskınında 2 milyon 300 bin kişi etkilenmiştir. Bu afete karşı alınacak başlıca tedbir hangisidir?",
       "secenekler": [
-        "Farklı paydaşların kararlara katılmasıyla kapsayıcılık ve entegrasyonu güçlendirmesi",
-        "Yalnızca yedek enerji kapasitesi oluşturması",
-        "Fiziksel yapıların dayanıklılığını tek başına artırması",
-        "Kriz kaynaklarının kullanım dışı bırakılması"
+        "Yer altı sığınaklarının inşa edilmesi",
+        "Nükleer tesislerin taşınması",
+        "Yamaçlara istinat duvarı yapılması",
+        "Akarsu yataklarının ve drenaj kanallarının önceden ıslah edilmesi"
       ],
-      "dogru_index": 0,
-      "cozum": "Farklı paydaşların risk politikalarına ve planlamaya katılması kapsayıcılık ve entegrasyonu güçlendirir. Bu katılım tek başına yapı sağlamlığı ya da yedeklilik anlamına gelmez.",
+      "dogru_index": 3,
+      "cozum": "Su baskınlarında akarsu yatakları ve drenaj kanallarının ıslahı, yataklara imarın yasaklanması, erken uyarı ve tahliye başlıca tedbirlerdir (s.172).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dirençli şehirlerde sağlamlık, esneklik, kapsayıcılık ve kaynaklara sahip olma nasıl birbirini tamamlar?",
-        "back": "Yapı ve sistemler işlevini sürdürür; kurumlar değişime yanıt verir; toplumun farklı kesimleri kararlara katılır ve temel hizmetleri yeniden kuracak kaynaklar bulunur."
+        "front": "Su baskınından korunma nedir?",
+        "back": "Akarsu yatağı ve drenaj ıslahı, imar yasağı, erken uyarı ve tahliye."
       },
-      "kazanim": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o06",
-      "alt_beceri": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,",
-      "metin": "Bir dağlık ilçede yerleşmeler birbirinden uzak vadilere dağılmış, ilçe merkezi ise yoğun yapılaşmış bir düzlükte bulunuyor. Afete dirençli yaşam alanı için hangi planlama yaklaşımı daha uygundur?",
+      "alt_beceri": "Afetlere yönelik iyi uygulama örneklerini ve tedbirleri çözümler.",
+      "metin": "2022'de Brezilya'nın Petropolis kentinde şiddetli yağışların ardından yaşanan heyelanda 223 kişi hayatını kaybetmiştir. Bu afete karşı alınacak tedbir hangisidir?",
       "secenekler": [
-        "Her yerde aynı erişim ve hizmet planını kullanmak",
-        "Yer şekillerini, yerleşme dağılışını ve erişimi birlikte değerlendirip müdahale ve hizmet düzenini yerel koşullara uyarlamak",
-        "Risk incelemesi tamamlanmadan yeni yapı alanları açmak",
-        "Yalnızca toplam nüfusa bakıp mekânsal özellikleri göz ardı etmek"
+        "Kıyı yapılarının güçlendirilmesi",
+        "Dik yamaçlara sağlam istinat duvarları yapılması",
+        "Tsunami erken uyarı sisteminin kurulması",
+        "Yer altı sığınaklarının açılması"
       ],
       "dogru_index": 1,
-      "cozum": "Dağınık vadi yerleşmeleri ile yoğun merkez aynı erişim ve hizmet koşullarına sahip değildir. Yer şekilleri, yerleşme dağılışı ve ulaşım birlikte incelenerek plan yerel koşullara uyarlanmalıdır.",
+      "cozum": "Heyelanda dik yamaçlara sağlam istinat duvarları yapılması ve risk altındaki yerleşmelerin güvenli alanlara taşınması temel tedbirlerdir (s.172).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Afete dirençli yaşam alanı planlanırken coğrafi koşullar neden dikkate alınmalıdır?",
-        "back": "Konum, yer şekilleri, zemin, iklim, bitki örtüsü ve mevcut yerleşme özellikleri hangi tehlikelerin öne çıktığını ve hangi önlemlerin uygun olacağını belirler."
+        "front": "Heyelandan korunma nedir?",
+        "back": "İstinat duvarı yapımı ve riskli yerleşmelerin güvenli alana taşınması."
       },
-      "kazanim": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o07",
-      "alt_beceri": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,",
-      "metin": "Bir yerleşmenin çevresinde yaz boyunca kuru kalan otluklar, dağınık konutlar ve yalnızca bir erişim yolu bulunuyor. Afet risklerini belirlemek için hangi yaklaşım en uygundur?",
+      "alt_beceri": "Afetlere yönelik iyi uygulama örneklerini ve tedbirleri çözümler.",
+      "metin": "Japonya'da 2011'de magnitüdü 9,1 olan Töhoku depremi ve ardından oluşan tsunamide zararı azaltmaya yönelik hangi tedbir öne çıkar?",
       "secenekler": [
-        "Yalnızca günlük hava tahminini incelemek",
-        "Sadece nüfus miktarını dikkate almak",
-        "Bitki örtüsü ve iklimle birlikte yerleşim dağılışını, erişim yollarını ve bina özelliklerini değerlendirmek",
-        "Coğrafi koşulları planlama dışında bırakmak"
+        "Depreme dayanıklı mimari ve tsunami erken uyarı sisteminin kullanılması",
+        "Yerleşmelerin kıyıya en yakın alanlara taşınması",
+        "Orman alanlarının yerleşime açılması",
+        "Dere yataklarının kapatılması"
       ],
-      "dogru_index": 2,
-      "cozum": "Risk değerlendirmesi doğal koşullarla birlikte yerleşmelerin dağılışını, erişimi ve yapı özelliklerini de dikkate almalıdır. Bu bilgiler, tehlikenin afete dönüşme olasılığını anlamaya yardım eder.",
+      "dogru_index": 0,
+      "cozum": "Töhoku afetinde zararı azaltmaya yönelik tedbirler; deprem riski az ve zemini sağlam alanlara yerleşme, depreme dayanıklı mimari, tsunami erken uyarı sistemi ve halkın eğitilmesidir (s.173).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Afet risklerini belirlerken doğal ve beşerî özelliklerden hangileri birlikte incelenmelidir?",
-        "back": "Coğrafi konum, yer şekilleri, jeolojik yapı, iklim, bitki örtüsü; yerleşmenin konumu, imar düzeni ve binaların yapısı birlikte incelenmelidir."
+        "front": "Töhoku depremi nedir?",
+        "back": "2011'de Japonya açıklarında oluşan 9,1 büyüklüğündeki deprem ve ardından gelen tsunami."
       },
-      "kazanim": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o08",
-      "alt_beceri": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,",
-      "metin": "Yoğun yağışların ardından yamaç hareketini izleyen ölçüm istasyonları, yakındaki yerleşime erken bildirim gönderiyor. Bu uyarı sisteminin en önemli yararı hangisidir?",
+      "alt_beceri": "Afetlere yönelik iyi uygulama örneklerini ve tedbirleri çözümler.",
+      "metin": "Fukushima Daiichi Nükleer Santrali kazasına yönelik en önemli tedbir hangisidir?",
       "secenekler": [
-        "Yağışı ve yamaç hareketini tamamen önlemek",
-        "Yerleşmenin konumunu değiştirmek",
-        "Bütün yapıların hasarsız kalacağını garanti etmek",
-        "İnsanlara güvenli alanlara yönelmeleri ve tahliye için zaman kazandırmak"
+        "Tesislerin kıyıya daha yakın inşa edilmesi",
+        "Tsunami uyarı sistemlerinin kaldırılması",
+        "Nükleer tesislerin deprem riski düşük bölgelere kurulması",
+        "Tesis çevresinde yerleşmenin yoğunlaştırılması"
       ],
-      "dogru_index": 3,
-      "cozum": "Erken uyarı tehlikeyi ortadan kaldırmaz; ancak insanlara ve kurumlara zaman kazandırarak korunma ve tahliye önlemlerinin uygulanmasını sağlar.",
+      "dogru_index": 2,
+      "cozum": "Bu tür kazalara yönelik başlıca tedbirler; nükleer tesislerin deprem riski düşük bölgelere kurulması, tsunami erken uyarı sistemleri ve hızlı tahliyedir (s.173).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Erken uyarı sistemleri afet zararlarını hangi mekanizmayla azaltır?",
-        "back": "Tehlikeyi önceden tespit edip kurumları ve halkı hızla bilgilendirerek korunma, tahliye ve müdahale için zaman kazandırır."
+        "front": "Nükleer kaza riski nedir?",
+        "back": "Tesisin deprem riski düşük bölgeye kurulması, erken uyarı ve hızlı tahliye."
       },
-      "kazanim": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o09",
-      "alt_beceri": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,",
-      "metin": "Bir spor salonunda tavana asılı skor panosu ve hoparlörlerin sarsıntıda düşmesini önlemek için bağlantıları güçlendiriliyor. Bu önlem öncelikle hangi risk grubunu azaltır?",
+      "alt_beceri": "Afetlere yönelik iyi uygulama örneklerini ve tedbirleri çözümler.",
+      "metin": "2021'de Muğla'da yaşanan orman yangınlarında yaklaşık 9 bin 52 hektar orman alanı zarar görmüştür. Orman yangınlarını önlemeye yönelik tedbir hangisidir?",
       "secenekler": [
-        "Yapısal olmayan elemanlardan kaynaklanan riskleri",
-        "Fay hareketlerinin gerçekleşme olasılığını",
-        "Bölgenin jeolojik yapısını",
-        "Depremin büyüklüğünü"
+        "Yangın riski oluşturan faaliyetlerin serbest bırakılması",
+        "Yangın uyarı sistemleri kurulması ve hızlı müdahale ekipleri oluşturulması",
+        "Orman alanlarının imara açılması",
+        "Yamaçlarda istinat duvarı yapılması"
       ],
-      "dogru_index": 0,
-      "cozum": "Tavana asılı donanımlar binanın taşıyıcı sisteminden ayrı elemanlardır. Bunların sabitlenmesi düşme ve çarpma kaynaklı yapısal olmayan riskleri azaltır; fay hareketini ya da depremin büyüklüğünü değiştirmez.",
+      "dogru_index": 1,
+      "cozum": "Orman yangınlarını önlemeye yönelik başlıca tedbirler; yangın uyarı sistemleri kurulması, hızlı müdahale ekipleri oluşturulması ve yangın riski oluşturan faaliyetlerin yasaklanmasıdır (s.173).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yapısal ve yapısal olmayan zarar azaltma önlemleri nasıl farklılaşır?",
-        "back": "Yapısal önlemler bina, zemin ve altyapıyı güçlendirir; yapısal olmayan önlemler bina içindeki eşya ve donanımların devrilme/düşme riskini azaltır."
+        "front": "Orman yangını önlemi nedir?",
+        "back": "Uyarı sistemi, hızlı müdahale ekibi ve riskli faaliyet yasağı."
       },
-      "kazanim": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     },
     {
       "soru_id": "cogr_10_u06_k01_o10",
-      "alt_beceri": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz",
-      "metin": "Bir ilçede sosyal medyada resmî afet uyarılarına benzeyen doğrulanmamış iletiler hızla yayılıyor. Farkındalık çalışması, resmî uyarı kanalını tanımayı ve teyitsiz iletileri paylaşmamayı öğretiyor. Bunun başlıca toplumsal yararı nedir?",
+      "alt_beceri": "Afetlere yönelik iyi uygulama örneklerini ve tedbirleri çözümler.",
+      "metin": "Gaziantep Büyükşehir Belediyesinin geliştirdiği risk haritası uygulamasının özgün değeri hangisidir?",
       "secenekler": [
-        "Afet tehlikesini ortadan kaldırması",
-        "Güvenilir iletişimi ve koordineli korunma davranışını güçlendirmesi",
-        "Her türlü hasarı kesin olarak sıfırlaması",
-        "Acil durum planlarına duyulan ihtiyacı ortadan kaldırması"
-      ],
-      "dogru_index": 1,
-      "cozum": "Resmî uyarıyı tanımak ve doğrulanmamış bilgiyi yaymamak, toplumun doğru bilgiye göre hareket etmesine ve eş güdümün korunmasına katkı sağlar. Bu, tehlikeyi ortadan kaldırmaz ama zarar azaltmayı destekler.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Afet bilinci afet öncesi, esnası ve sonrasında hangi davranış ve becerileri destekler?",
-        "back": "Riskleri fark etmeyi, doğru karar vermeyi, hazırlık ve tahliyeyi, güvenli davranışı, dayanışmayı ve iyileştirme çalışmalarına katılımı destekler."
-      },
-      "kazanim": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u06_k01_o11",
-      "alt_beceri": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz",
-      "metin": "Bir şehirlerarası otobüs terminalinde olağanüstü durumda yolcuların yönlendirilmesi için plan hazırlanıyor. Yazılı plan var; ancak vardiyalardaki görevler ve duyuruların nasıl yapılacağı net değil. Hazırlığı güçlendirmek için en uygun adım hangisidir?",
-      "secenekler": [
-        "Planı yalnızca terminal yöneticisinin erişebileceği yerde tutmak",
-        "Personel bilgilendirmesini ve hazırlık denemelerini kaldırmak",
-        "Vardiya görevlerini ve iletişim yöntemlerini netleştirip planı senaryo çalışmasıyla sınamak",
-        "Yolcu yönlendirmesini yalnızca olay başladıktan sonra kararlaştırmak"
-      ],
-      "dogru_index": 2,
-      "cozum": "Görevlerin ve iletişim yöntemlerinin önceden belirlenmesi, planın senaryo çalışmasıyla denenmesi hazırlık ve koordinasyonu güçlendirir. Sadece yöneticinin bildiği ya da sınanmayan bir plan uygulamada eksik kalabilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Afet hazırlık planları neden düzenli olarak gözden geçirilmeli ve denenmelidir?",
-        "back": "Koşullar, görevler ve ihtiyaçlar değişebilir. Planı gözden geçirmek eksikleri önceden bulmaya, denemek ise uygulama kapasitesini geliştirmeye yardım eder."
-      },
-      "kazanim": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u06_k01_o12",
-      "alt_beceri": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz",
-      "metin": "Bir semt kütüphanesi, düzenli bültenlerinde resmî afet duyurularının nasıl tanınacağına ve güvenilir bilgiye nasıl ulaşılacağına dair kısa notlar yayımlıyor. Bu çalışmanın en önemli katkısı hangisidir?",
-      "secenekler": [
-        "Bölgedeki tehlike olasılığını tamamen ortadan kaldırmak",
-        "Acil yardım kaynaklarını kullanılamaz hâle getirmek",
-        "Afet anında bireysel ve kurumsal sorumlulukları belirsizleştirmek",
-        "Afet farkındalığını ve doğru bilgiye dayalı toplumsal hazırlığı güçlendirmek"
+        "Yalnızca deprem riskini gösteren kâğıt haritalar hazırlanması",
+        "Afet sonrası yardımların dağıtılmasının planlanması",
+        "Yalnızca orman yangınları için kullanılması",
+        "Tüm olayların mahalle bazında işlendiği CBS tabanlı sistemin Türkiye'de ilk kez uygulanması"
       ],
       "dogru_index": 3,
-      "cozum": "Güvenilir bilgiye erişim ve afet risklerine ilişkin farkındalık, bireylerin daha uygun kararlar almasına ve toplumun hazırlık kapasitesinin gelişmesine katkı sağlar.",
+      "cozum": "Gaziantep'te tüm olaylar ilçe ve mahalle bazlı olarak haritaya işlenmekte; sistem Türkiye'de ilk kez uygulanmakta ve 30.000'e yakın olayın girişi yapılmıştır (s.175).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Toplumsal afet farkındalığı çalışmaları afetlere karşı direnci hangi yollarla güçlendirebilir?",
-        "back": "Bilgiyi yaygınlaştırır, riskli davranışları azaltır, hazırlık ve dayanışmayı artırır; bireylerin ve kurumların ortak eylem kapasitesini geliştirir."
+        "front": "Afet risk haritası nedir?",
+        "back": "Olayların mahalle bazında işlendiği, önleyici tedbire temel olan harita."
       },
-      "kazanim": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz"
+      "kazanim": "Afetlerle mücadelede iyi uygulama örneklerini sorgular."
     }
   ],
   "flashcards": [
     {
       "id": "cogr_10_u06_k01_o01:flashcard",
-      "front": "Deprem gibi önlenemeyen bir tehlikenin afete dönüşen zararları hangi tür uygulamalarla azaltılabilir?",
-      "back": "Güvenli yer seçimi, depreme dayanıklı yapılaşma, erken uyarı ve tahliye planları gibi önlemler zararları azaltabilir."
+      "front": "Zarar azaltma nedir?",
+      "back": "Önlenemeyen afetlerde can ve mal kaybını en aza indirmeye yönelik çalışma."
     },
     {
       "id": "cogr_10_u06_k01_o02:flashcard",
-      "front": "Bir tehlikenin afete yol açma olasılığını ve vereceği zararı azaltmak için planlama hangi ilkeye dayanmalıdır?",
-      "back": "Tehlikenin önlenebilirliğini, mekânsal koşulları ve maruziyeti değerlendirip; mümkünse oluşma riskini azaltmalı, önlenemeyen durumda zarar azaltma ve hazırlığı öne çıkarmalıdır."
+      "front": "Afeti önleme nedir?",
+      "back": "Dere ıslahı, istinat duvarı, yangın uyarı sistemi gibi oluşumu engelleyen tedbir."
     },
     {
       "id": "cogr_10_u06_k01_o03:flashcard",
-      "front": "Farklı ülkelerin afetle mücadele uygulamalarını karşılaştırırken hangi başlıklar incelenmelidir?",
-      "back": "Tehlike ve coğrafi koşullar, yer seçimi ve yapı güvenliği, erken uyarı, tahliye, halkın eğitimi ve afet sonrası iyileştirme birlikte incelenebilir."
+      "front": "Afetlerin bölgesel dağılışı nedir?",
+      "back": "Afet türlerinin coğrafi koşullara bağlı olarak bölgelere göre farklılaşması."
     },
     {
       "id": "cogr_10_u06_k01_o04:flashcard",
-      "front": "Afete dirençli bir yaşam alanının temel amacı ve kapasitesi nedir?",
-      "back": "Olası tehlikelere hazırlanmak, afet şoklarının etkisini azaltmak, temel işlevleri sürdürmek, sonrasında toparlanmak ve değişen koşullara uyum sağlamaktır."
+      "front": "Kasırgada zarar azaltma nedir?",
+      "back": "Erken uyarı, tahliye ve sığınaklarla can kaybının azaltılması."
     },
     {
       "id": "cogr_10_u06_k01_o05:flashcard",
-      "front": "Dirençli şehirlerde sağlamlık, esneklik, kapsayıcılık ve kaynaklara sahip olma nasıl birbirini tamamlar?",
-      "back": "Yapı ve sistemler işlevini sürdürür; kurumlar değişime yanıt verir; toplumun farklı kesimleri kararlara katılır ve temel hizmetleri yeniden kuracak kaynaklar bulunur."
+      "front": "Su baskınından korunma nedir?",
+      "back": "Akarsu yatağı ve drenaj ıslahı, imar yasağı, erken uyarı ve tahliye."
     },
     {
       "id": "cogr_10_u06_k01_o06:flashcard",
-      "front": "Afete dirençli yaşam alanı planlanırken coğrafi koşullar neden dikkate alınmalıdır?",
-      "back": "Konum, yer şekilleri, zemin, iklim, bitki örtüsü ve mevcut yerleşme özellikleri hangi tehlikelerin öne çıktığını ve hangi önlemlerin uygun olacağını belirler."
+      "front": "Heyelandan korunma nedir?",
+      "back": "İstinat duvarı yapımı ve riskli yerleşmelerin güvenli alana taşınması."
     },
     {
       "id": "cogr_10_u06_k01_o07:flashcard",
-      "front": "Afet risklerini belirlerken doğal ve beşerî özelliklerden hangileri birlikte incelenmelidir?",
-      "back": "Coğrafi konum, yer şekilleri, jeolojik yapı, iklim, bitki örtüsü; yerleşmenin konumu, imar düzeni ve binaların yapısı birlikte incelenmelidir."
+      "front": "Töhoku depremi nedir?",
+      "back": "2011'de Japonya açıklarında oluşan 9,1 büyüklüğündeki deprem ve ardından gelen tsunami."
     },
     {
       "id": "cogr_10_u06_k01_o08:flashcard",
-      "front": "Erken uyarı sistemleri afet zararlarını hangi mekanizmayla azaltır?",
-      "back": "Tehlikeyi önceden tespit edip kurumları ve halkı hızla bilgilendirerek korunma, tahliye ve müdahale için zaman kazandırır."
+      "front": "Nükleer kaza riski nedir?",
+      "back": "Tesisin deprem riski düşük bölgeye kurulması, erken uyarı ve hızlı tahliye."
     },
     {
       "id": "cogr_10_u06_k01_o09:flashcard",
-      "front": "Yapısal ve yapısal olmayan zarar azaltma önlemleri nasıl farklılaşır?",
-      "back": "Yapısal önlemler bina, zemin ve altyapıyı güçlendirir; yapısal olmayan önlemler bina içindeki eşya ve donanımların devrilme/düşme riskini azaltır."
+      "front": "Orman yangını önlemi nedir?",
+      "back": "Uyarı sistemi, hızlı müdahale ekibi ve riskli faaliyet yasağı."
     },
     {
       "id": "cogr_10_u06_k01_o10:flashcard",
-      "front": "Afet bilinci afet öncesi, esnası ve sonrasında hangi davranış ve becerileri destekler?",
-      "back": "Riskleri fark etmeyi, doğru karar vermeyi, hazırlık ve tahliyeyi, güvenli davranışı, dayanışmayı ve iyileştirme çalışmalarına katılımı destekler."
-    },
-    {
-      "id": "cogr_10_u06_k01_o11:flashcard",
-      "front": "Afet hazırlık planları neden düzenli olarak gözden geçirilmeli ve denenmelidir?",
-      "back": "Koşullar, görevler ve ihtiyaçlar değişebilir. Planı gözden geçirmek eksikleri önceden bulmaya, denemek ise uygulama kapasitesini geliştirmeye yardım eder."
-    },
-    {
-      "id": "cogr_10_u06_k01_o12:flashcard",
-      "front": "Toplumsal afet farkındalığı çalışmaları afetlere karşı direnci hangi yollarla güçlendirebilir?",
-      "back": "Bilgiyi yaygınlaştırır, riskli davranışları azaltır, hazırlık ve dayanışmayı artırır; bireylerin ve kurumların ortak eylem kapasitesini geliştirir."
+      "front": "Afet risk haritası nedir?",
+      "back": "Olayların mahalle bazında işlendiği, önleyici tedbire temel olan harita."
     }
-  ],
-  "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri"
+  ]
 }

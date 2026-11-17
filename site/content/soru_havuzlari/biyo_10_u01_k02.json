@@ -2,307 +2,255 @@
   "konu_id": "biyo_10_u01_k02",
   "sinif": 10,
   "ders": "Biyoloji",
-  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "baslik": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+  "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+  "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.21-31",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "biyo_10_u01_k02_o01",
-      "alt_beceri": "Fotosentez",
-      "metin": "Bir su kültüründeki mikroorganizmanın ışığı kullanarak CO₂ ve sudan organik madde ürettiği ölçülüyor. Besin ağındaki rolü nedir?",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Işığa bağlı evrede klorofilin kaybettiği elektronların yerini hangi kaynak doldurur?",
       "secenekler": [
-        "Üretici; fotosentezle organik madde oluşturur.",
-        "Tüketici; besinini başka canlılardan hazır alır.",
-        "Ayrıştırıcı; organik atıkları inorganik maddelere dönüştürür.",
-        "Cansız bileşen; metabolik etkinliği yoktur."
+        "NADPH molekülünün hidrojenleri",
+        "Suyun fotoliziyle açığa çıkan elektronlar",
+        "Karbondioksitin parçalanmasıyla açığa çıkan elektronlar",
+        "ETS'de taşınan oksijen molekülleri"
       ],
-      "dogru_index": 0,
-      "cozum": "Işık enerjisini kullanarak inorganik maddelerden organik madde üreten canlı üreticidir. Üreticiler besin ve enerji akışının başlangıcında yer alır.",
+      "dogru_index": 1,
+      "cozum": "Uyarılan klorofil elektron kaybeder; kaybettiği elektronların yerine suyun fotolizi ile açığa çıkan elektronlar gelir ve böylece elektron açığı kapanır (s.25).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fotosentezi, kullanılan enerji kaynağı ve sentezlenen madde açısından açıklayınız.",
-        "back": "Klorofil taşıyan canlılarda ışık enerjisi kullanılarak inorganik maddelerden organik madde sentezlenmesine fotosentez denir."
+        "front": "Fotolizin ışığa bağlı evredeki işlevi nedir?",
+        "back": "Klorofilin kaybettiği elektronları yerine koymak."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,",
-      "gorsel": {
-        "tip": "sema",
-        "kutular": [
-          "Işık enerjisi",
-          "Fotosentez",
-          "Besin + O₂"
-        ],
-        "aciklama": "Fotosentez ışık enerjisiyle besin üretir."
-      }
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o02",
-      "alt_beceri": "Fotosentez",
-      "metin": "Bir yetiştirme tankında fotosentetik mikroorganizmaların üretimi belirgin biçimde azalıyor. Bu değişimin tüketicilere olası etkisi nedir?",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Işığa bağlı evrede üretilen hangi iki molekül Calvin döngüsünde organik madde sentezi için kullanılır?",
       "secenekler": [
-        "Tüketiciler fotosentez yapmaya başlar.",
-        "Besin ve enerji akışının başlangıç kaynağı azalır.",
-        "Besin ağına aktarılan organik madde zorunlu olarak artar.",
-        "Tüketicilerin enerji gereksinimi ortadan kalkar."
+        "ADP ve NADP⁺",
+        "Glikoz ve oksijen",
+        "PGAL ve nişasta",
+        "ATP ve NADPH"
       ],
-      "dogru_index": 1,
-      "cozum": "Fotosentetik üreticiler su ekosistemlerinde besin ve enerji akışının temelini oluşturur. Üretim azalırsa tüketicilere aktarılan organik madde de azalabilir.",
+      "dogru_index": 3,
+      "cozum": "Işığa bağlı evrede üretilen temel moleküller ATP ve NADPH'tır; bunlar ışıktan bağımsız evrede CO2 ile birlikte organik bileşenlerin sentezinde görev alır (s.26).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fotosentezin heterotrof canlılara sağladığı temel ekolojik katkıyı belirtiniz.",
-        "back": "Fotosentez organik besin üretir; heterotrof canlıların besin ve enerji ihtiyacı doğrudan ya da dolaylı olarak bu üretime dayanır."
+        "front": "Işığa bağlı evrenin iki ürünü nedir?",
+        "back": "ATP ve NADPH."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o03",
-      "alt_beceri": "Pigmentler",
-      "metin": "Beyaz ışık bir güvenlik filtresine tutuluyor. Filtrenin kırmızı dalga boylarını geçirip diğer görünür dalga boylarını soğurduğu biliniyorsa, filtreden çıkan ışık baskın olarak hangi renkte görünür?",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Suyun fotolizi sırasında bir su molekülü ışık enerjisiyle parçalandığında hangi üç bileşen açığa çıkar?",
       "secenekler": [
-        "Mavi",
-        "Mor",
-        "Kırmızı",
-        "Yeşil"
+        "Elektron, hidrojen iyonu ve oksijen",
+        "Elektron, karbondioksit ve su",
+        "Hidrojen iyonu, glikoz ve ATP",
+        "Oksijen, NADPH ve PGAL"
       ],
-      "dogru_index": 2,
-      "cozum": "Filtre kırmızı dalga boylarını geçirir ve diğer görünür dalga boylarını soğurur. Bu nedenle filtreden çıkan ışık baskın olarak kırmızıdır.",
+      "dogru_index": 0,
+      "cozum": "Fotoliz, su moleküllerinin ışık enerjisiyle elektronlar (e⁻), hidrojen iyonları (H⁺) ve oksijen (O₂) olarak ayrılmasıdır (s.25).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Pigmentleri ışıkla etkileşimleri bakımından açıklayınız.",
-        "back": "Pigmentler görünür ışığı soğuran maddelerdir; fotosentezde klorofilin soğurduğu ışık enerjisi kullanılır."
+        "front": "Fotoliz nedir?",
+        "back": "Suyun ışıkla e⁻, H⁺ ve O₂ olarak ayrılması."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o04",
-      "alt_beceri": "Pigmentler",
-      "metin": "Bir fotosentetik hücreye mavi ve kırmızı ışık fotonları ulaşıyor. Mavi ışığın dalga boyu daha kısa olduğuna göre foton başına enerji bakımından hangi sonuç doğrudur?",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Calvin döngüsünde CO2 ile birleşerek 3 karbonlu PGAL'in oluşmasını sağlayan hidrojenler hangi molekülden gelir?",
       "secenekler": [
-        "Foton enerjisi dalga boyundan bağımsızdır.",
-        "Kırmızı ışık fotonları daha fazla enerji taşır; dalga boyları daha uzundur.",
-        "İki renkteki fotonlar aynı enerjiyi taşır.",
-        "Mavi ışık fotonları daha fazla enerji taşır; dalga boyları daha kısadır."
+        "ATP",
+        "FAD",
+        "NADPH",
+        "Klorofil"
       ],
-      "dogru_index": 3,
-      "cozum": "Işığın dalga boyu ile taşıdığı enerji ters orantılıdır. Bu nedenle daha kısa dalga boylu mavi fotonlar kırmızı fotonlardan daha fazla enerji taşır.",
+      "dogru_index": 2,
+      "cozum": "Işığa bağlı evreden gelen ATP'nin defosforilasyonuyla açığa çıkan enerji kullanılarak NADPH'ın hidrojenleri ve CO2 birleştirilir, PGAL sentezlenir (s.26).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Işığın dalga boyu ile taşıdığı enerji arasındaki ilişkiyi yazınız.",
-        "back": "Işığın dalga boyu ile enerjisi ters orantılıdır; kısa dalga boylu ışık daha fazla enerji taşır."
+        "front": "NADPH'ın Calvin döngüsündeki işlevi nedir?",
+        "back": "CO2 ile birleşecek hidrojenleri taşımak."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o05",
-      "alt_beceri": "Işığın Kullanıldığı Tepkimeler",
-      "metin": "Işığın kullanıldığı tepkimelerde ATP ve NADPH hangi sonraki basamağa madde ve enerji sağlar?",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Bir bitkinin kloroplast stromasında gerçekleşen evrede aşağıdakilerden hangisi doğrudan görev almaz?",
       "secenekler": [
-        "Calvin döngüsünde CO₂'den organik madde sentezine",
-        "Hücre zarında mineral taşınmasına",
-        "Klorofil pigmentinin sentezlenmesine",
-        "Besinlerin sindirim kanalında emilmesine"
+        "Calvin döngüsü enzimleri",
+        "Karbondioksit",
+        "ATP",
+        "Klorofil pigmenti"
       ],
-      "dogru_index": 0,
-      "cozum": "Işığın kullanıldığı tepkimelerde üretilen ATP ve NADPH, Calvin döngüsünde CO₂'nin organik maddeye dönüştürülmesinde kullanılır. Diğer seçenekler bu iki fotosentez basamağı arasındaki aktarımı açıklamaz.",
+      "dogru_index": 3,
+      "cozum": "Işıktan bağımsız evre enzimlerin kontrolünde gerçekleşir; bu evrede klorofil ve ETS elemanları görev almaz, CO2 ve ATP tüketilir (s.26).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ökaryot hücrelerde ışığın kullanıldığı fotosentez tepkimelerinin yerini, suyun parçalanması ve oluşan iki taşıyıcıyla birlikte yazınız.",
-        "back": "Tepkimeler kloroplastın granumlarında gerçekleşir; su fotoliz edilir ve bu süreçte oluşan ATP ile NADPH fotosentezde kullanılır."
+        "front": "Calvin döngüsü nedir?",
+        "back": "Stromada enzimlerle yürüyen, CO2'den organik madde üreten evre."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o06",
-      "alt_beceri": "Işığın Kullanıldığı Tepkimeler",
-      "metin": "Işığın kullanıldığı tepkimelerde klorofilin kaybettiği elektronların yerine hangi kaynaktan elektron gelir?",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Bir serada ışık şiddeti sürekli artırıldığında fotosentez hızı nasıl değişir?",
       "secenekler": [
-        "Karbondioksitin parçalanmasından",
-        "Suyun fotolizinden",
-        "Glikozun depolanmasından",
-        "NADP⁺'ın hidrolizinden"
+        "Işık şiddetiyle aynı oranda sürekli artar",
+        "Belirli bir düzeye kadar artar, sonra sabit kalır",
+        "Işık şiddeti arttıkça sürekli azalır",
+        "Değişmez, ışık şiddetinden etkilenmez"
       ],
       "dogru_index": 1,
-      "cozum": "Suyun fotoliziyle açığa çıkan elektronlar klorofilin kaybettiği elektronların yerini alır. Fotoliz aynı zamanda H⁺ ve oksijen oluşmasını sağlar.",
+      "cozum": "Işık şiddeti arttıkça fotosentez hızlanır; ancak diğer faktörler sabit kaldığından belirli bir seviyeden sonra fotosentez sabit hızla devam eder (s.28).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Suyun ışık etkisiyle fotolizinde ortaya çıkan tanecikleri ve gazı belirtiniz.",
-        "back": "Fotolizle su elektronlara, H⁺ iyonlarına ve O₂'ye ayrılır."
+        "front": "Minimum kuralı nedir?",
+        "back": "Fotosentez hızını, miktarı en az olan faktör belirler."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o07",
-      "alt_beceri": "Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü)",
-      "metin": "Calvin döngüsünde sentezlenen organik maddelerin karbon iskeleti temel olarak hangi molekülden sağlanır?",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Klorofil; mor, mavi ve kırmızı dalga boylu ışığı güçlü soğurur. Buna göre hangi ışıkta fotosentez en düşük hızdadır?",
       "secenekler": [
-        "Su (H₂O)",
-        "Oksijen (O₂)",
-        "Karbondioksit (CO₂)",
-        "NADPH"
+        "Yeşil ışıkta",
+        "Mavi ışıkta",
+        "Kırmızı ışıkta",
+        "Mor ışıkta"
       ],
-      "dogru_index": 2,
-      "cozum": "Calvin döngüsünde CO₂ kullanılarak organik maddeler sentezlenir. ATP ve NADPH bu sentez için enerji ve indirgen güç sağlar, karbon kaynağı değildir.",
+      "dogru_index": 0,
+      "cozum": "Klorofil yeşil ışığı çok az soğurduğu için fotosentez yeşil ışıkta en düşük hızda gerçekleşir (s.28).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Calvin döngüsünün ökaryot hücredeki yerini ve karbon kaynağını yazınız.",
-        "back": "Calvin döngüsü kloroplastın stromasında gerçekleşir; CO₂ kullanılarak organik maddeler sentezlenir."
+        "front": "Klorofilin soğurduğu ışık ile yaprak rengi arasındaki ilişki nedir?",
+        "back": "Soğurulmayan yeşil ışık yansıtıldığı için yaprak yeşil görünür."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o08",
-      "alt_beceri": "Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü)",
-      "metin": "Calvin döngüsünde üretilen PGAL’ın bir bölümü bitkide enerji depolayan karbonhidratların yapımında kullanılıyor. PGAL’ın olası bir ürünü hangisidir?",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Engelmann 1883'te ipliksi alg ile oksijenli solunum yapan bakterileri kullanarak hangi sonuca ulaşmıştır?",
       "secenekler": [
-        "Nitrat",
-        "Oksijen",
-        "Klorofil",
-        "Glikoz"
+        "Bakteriler yalnızca yeşil ışık bölgesinde kümelenir",
+        "Tüm dalga boylarında oksijen çıkışı eşittir",
+        "Bakteriler mor, mavi ve kırmızı ışık bölgelerinde daha çok kümelenir",
+        "Algler ışıktan bağımsız evrede oksijen üretir"
       ],
-      "dogru_index": 3,
-      "cozum": "PGAL’ın bir bölümü glikoza dönüşebilir. Diğer bir bölümü bitkinin gereksinim duyduğu farklı organik bileşiklerin sentezine katılır.",
+      "dogru_index": 2,
+      "cozum": "Bakterilerin mor, mavi ve kırmızı ışığın düştüğü bölgelerde kümelenmesi, klorofilin bu dalga boylarını çok soğurduğunu ve fotosentezin oralarda hızlı olduğunu kanıtlar (s.29).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Calvin döngüsünde oluşan PGAL'ın glikoz ve diğer organik bileşiklerle ilişkisini açıklayınız.",
-        "back": "PGAL'in bir kısmı glikoza dönüşür; bir kısmı da bitkinin gereksinim duyduğu diğer organik maddelerin sentezinde kullanılır."
+        "front": "Engelmann deneyinin sonucu nedir?",
+        "back": "Klorofilin mor, mavi ve kırmızı ışığı çok soğurduğu kanıtlanmıştır."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o09",
-      "alt_beceri": "Fotosentez Hızına Etki Eden Çevresel Faktörler",
-      "metin": "Sera koşullarında ışık, su ve sıcaklık uygunken CO₂ miktarı yetersizdir. Fotosentez hızını sınırlayan etken hangisidir?",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Sıcaklık 35 °C'nin üzerine çıktığında fotosentez hızının düşmesinin temel nedeni nedir?",
       "secenekler": [
-        "CO₂ miktarı",
-        "Işık şiddeti",
-        "Su miktarı",
-        "Sıcaklık"
+        "Klorofilin tamamen yok olması",
+        "Fotosentez enzimlerinin yapısının bozulması",
+        "Suyun fotolizinin hızlanması",
+        "CO2'nin atmosfere kaçması"
       ],
-      "dogru_index": 0,
-      "cozum": "Diğer koşullar uygunken miktarı yetersiz olan CO₂ minimum kuralına göre fotosentez hızını sınırlar. Işık, su ve sıcaklığın uygun olduğu bilgisi bu seçenekleri eler.",
+      "dogru_index": 1,
+      "cozum": "Fotosentez reaksiyonlarının çoğu enzimlerle yürür; 35 °C üstünde enzim yapısı bozulduğu için fotosentez yavaşlar ya da durur (s.30).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fotosentez hızını etkileyen faktörlerden miktarı en az olanın hızı belirlemesi kuralını açıklayınız.",
-        "back": "Minimum kuralına göre miktarı en az olan faktör fotosentez hızını sınırlar; yetersizliği süreci yavaşlatabilir veya durdurabilir."
+        "front": "Optimum sıcaklık nedir?",
+        "back": "Enzimlerin en iyi çalıştığı sıcaklık; fotosentezde yaklaşık 33 °C."
       },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k02_o10",
-      "alt_beceri": "Fotosentez Hızına Etki Eden Çevresel Faktörler",
-      "metin": "Bir bitki, kendi türü için uygun olan sıcaklığın belirgin biçimde üzerine çıkarılıyor; ışık ve CO₂ yeterli kalıyor. Fotosentez hızının düşmesini en iyi hangi durum açıklar?",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Deney ortamına NaOH veya KOH gibi CO2 tutucu bir madde konulduğunda fotosentez hızı nasıl etkilenir?",
       "secenekler": [
-        "Işık şiddeti zorunlu olarak sıfırlanır.",
-        "Fotosentez enzimlerinin yapısı bozulabilir.",
-        "Klorofil CO₂’yi suya dönüştürür.",
-        "Bitkinin bütün mineralleri aniden tükenir."
-      ],
-      "dogru_index": 1,
-      "cozum": "Fotosentez enzimlerle yürütülen tepkimeler içerir. Sıcaklığın uygun aralığın çok üzerine çıkması enzimlerin yapısını bozarak hızı düşürebilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Sıcaklığın fotosentez için uygun aralığın belirgin biçimde üzerine çıkması fotosentez hızını nasıl etkileyebilir?",
-        "back": "Enzimlerin etkinliği azalabilir veya yapıları bozulabilir; fotosentez hızı düşebilir ya da süreç durabilir. Uygun sıcaklık aralığı bitki türüne göre değişir."
-      },
-      "kazanim": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,"
-    },
-    {
-      "soru_id": "biyo_10_u01_k02_o11",
-      "alt_beceri": "Fotosentezde Kullanılan ve Üretilen Maddeler",
-      "metin": "Fotosentez sırasında açığa çıkan O₂ gazındaki oksijen atomları temel olarak hangi girdinin parçalanmasıyla sağlanır?",
-      "secenekler": [
-        "O₂ bitkilerin köklerinden hazır alınır.",
-        "Oksijen atomlarının tamamı CO₂’den gelir.",
-        "Fotosentezde kullanılan suyun parçalanmasıyla oluşur.",
-        "O₂ glikozun hücre dışına taşınmasıyla oluşur."
-      ],
-      "dogru_index": 2,
-      "cozum": "Işığın kullanıldığı tepkimelerde su fotolize uğrar ve O₂ oluşur. Bu nedenle fotosentezde atmosfere verilen oksijenin kaynağı sudur.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Bitkilerde fotosentezin sadeleştirilmiş kimyasal denklemindeki temel girdileri ve ürünleri yazınız.",
-        "back": "Işık ve klorofil varlığında CO₂ ile H₂O'dan C₆H₁₂O₆ ve O₂ oluşur."
-      },
-      "kazanim": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız,"
-    },
-    {
-      "soru_id": "biyo_10_u01_k02_o12",
-      "alt_beceri": "Fotosentezde Kullanılan ve Üretilen Maddeler",
-      "metin": "Işık alan bir mikrobiyal filmde bazı fotosentetik prokaryotların H₂S kullandığı ve O₂ açığa çıkarmadığı belirleniyor. Bu süreçte hangi yan ürünün oluşması beklenir?",
-      "secenekler": [
-        "Nitrat (NO₃⁻)",
-        "Oksijen (O₂)",
-        "Karbondioksit (CO₂)",
-        "Kükürt (S)"
+        "CO2 arttığı için hız yükselir",
+        "Enzimler denatüre olduğu için durur",
+        "Yalnızca ışığa bağlı evre hızlanır",
+        "CO2 ortamdan çekildiği için hız düşer"
       ],
       "dogru_index": 3,
-      "cozum": "Bazı fotosentetik prokaryotlar hidrojen kaynağı olarak H₂S kullanır. Bu durumda oksijen yerine elementel kükürt oluşabilir.",
+      "cozum": "NaOH, KOH, Ca(OH)2 ve Ba(OH)2 CO2 ile tepkimeye girerek ortamdan çeker; CO2 azalınca fotosentez hızı düşer (s.29).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bazı fotosentetik prokaryotlar su yerine hangi hidrojen kaynağını kullanabilir ve bu durumda hangi yan ürün oluşabilir?",
-        "back": "Bazı prokaryotlar H₂S kullanabilir; bu süreçte O₂ yerine kükürt oluşabilir."
+        "front": "CO2 tutucusu nedir?",
+        "back": "CO2 ile tepkimeye girip ortamdan çeken bileşik (NaOH, KOH)."
       },
-      "kazanim": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız,"
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
     }
   ],
   "flashcards": [
     {
       "id": "biyo_10_u01_k02_o01:flashcard",
-      "front": "Fotosentezi, kullanılan enerji kaynağı ve sentezlenen madde açısından açıklayınız.",
-      "back": "Klorofil taşıyan canlılarda ışık enerjisi kullanılarak inorganik maddelerden organik madde sentezlenmesine fotosentez denir."
+      "front": "Fotolizin ışığa bağlı evredeki işlevi nedir?",
+      "back": "Klorofilin kaybettiği elektronları yerine koymak."
     },
     {
       "id": "biyo_10_u01_k02_o02:flashcard",
-      "front": "Fotosentezin heterotrof canlılara sağladığı temel ekolojik katkıyı belirtiniz.",
-      "back": "Fotosentez organik besin üretir; heterotrof canlıların besin ve enerji ihtiyacı doğrudan ya da dolaylı olarak bu üretime dayanır."
+      "front": "Işığa bağlı evrenin iki ürünü nedir?",
+      "back": "ATP ve NADPH."
     },
     {
       "id": "biyo_10_u01_k02_o03:flashcard",
-      "front": "Pigmentleri ışıkla etkileşimleri bakımından açıklayınız.",
-      "back": "Pigmentler görünür ışığı soğuran maddelerdir; fotosentezde klorofilin soğurduğu ışık enerjisi kullanılır."
+      "front": "Fotoliz nedir?",
+      "back": "Suyun ışıkla e⁻, H⁺ ve O₂ olarak ayrılması."
     },
     {
       "id": "biyo_10_u01_k02_o04:flashcard",
-      "front": "Işığın dalga boyu ile taşıdığı enerji arasındaki ilişkiyi yazınız.",
-      "back": "Işığın dalga boyu ile enerjisi ters orantılıdır; kısa dalga boylu ışık daha fazla enerji taşır."
+      "front": "NADPH'ın Calvin döngüsündeki işlevi nedir?",
+      "back": "CO2 ile birleşecek hidrojenleri taşımak."
     },
     {
       "id": "biyo_10_u01_k02_o05:flashcard",
-      "front": "Ökaryot hücrelerde ışığın kullanıldığı fotosentez tepkimelerinin yerini, suyun parçalanması ve oluşan iki taşıyıcıyla birlikte yazınız.",
-      "back": "Tepkimeler kloroplastın granumlarında gerçekleşir; su fotoliz edilir ve bu süreçte oluşan ATP ile NADPH fotosentezde kullanılır."
+      "front": "Calvin döngüsü nedir?",
+      "back": "Stromada enzimlerle yürüyen, CO2'den organik madde üreten evre."
     },
     {
       "id": "biyo_10_u01_k02_o06:flashcard",
-      "front": "Suyun ışık etkisiyle fotolizinde ortaya çıkan tanecikleri ve gazı belirtiniz.",
-      "back": "Fotolizle su elektronlara, H⁺ iyonlarına ve O₂'ye ayrılır."
+      "front": "Minimum kuralı nedir?",
+      "back": "Fotosentez hızını, miktarı en az olan faktör belirler."
     },
     {
       "id": "biyo_10_u01_k02_o07:flashcard",
-      "front": "Calvin döngüsünün ökaryot hücredeki yerini ve karbon kaynağını yazınız.",
-      "back": "Calvin döngüsü kloroplastın stromasında gerçekleşir; CO₂ kullanılarak organik maddeler sentezlenir."
+      "front": "Klorofilin soğurduğu ışık ile yaprak rengi arasındaki ilişki nedir?",
+      "back": "Soğurulmayan yeşil ışık yansıtıldığı için yaprak yeşil görünür."
     },
     {
       "id": "biyo_10_u01_k02_o08:flashcard",
-      "front": "Calvin döngüsünde oluşan PGAL'ın glikoz ve diğer organik bileşiklerle ilişkisini açıklayınız.",
-      "back": "PGAL'in bir kısmı glikoza dönüşür; bir kısmı da bitkinin gereksinim duyduğu diğer organik maddelerin sentezinde kullanılır."
+      "front": "Engelmann deneyinin sonucu nedir?",
+      "back": "Klorofilin mor, mavi ve kırmızı ışığı çok soğurduğu kanıtlanmıştır."
     },
     {
       "id": "biyo_10_u01_k02_o09:flashcard",
-      "front": "Fotosentez hızını etkileyen faktörlerden miktarı en az olanın hızı belirlemesi kuralını açıklayınız.",
-      "back": "Minimum kuralına göre miktarı en az olan faktör fotosentez hızını sınırlar; yetersizliği süreci yavaşlatabilir veya durdurabilir."
+      "front": "Optimum sıcaklık nedir?",
+      "back": "Enzimlerin en iyi çalıştığı sıcaklık; fotosentezde yaklaşık 33 °C."
     },
     {
       "id": "biyo_10_u01_k02_o10:flashcard",
-      "front": "Sıcaklığın fotosentez için uygun aralığın belirgin biçimde üzerine çıkması fotosentez hızını nasıl etkileyebilir?",
-      "back": "Enzimlerin etkinliği azalabilir veya yapıları bozulabilir; fotosentez hızı düşebilir ya da süreç durabilir. Uygun sıcaklık aralığı bitki türüne göre değişir."
-    },
-    {
-      "id": "biyo_10_u01_k02_o11:flashcard",
-      "front": "Bitkilerde fotosentezin sadeleştirilmiş kimyasal denklemindeki temel girdileri ve ürünleri yazınız.",
-      "back": "Işık ve klorofil varlığında CO₂ ile H₂O'dan C₆H₁₂O₆ ve O₂ oluşur."
-    },
-    {
-      "id": "biyo_10_u01_k02_o12:flashcard",
-      "front": "Bazı fotosentetik prokaryotlar su yerine hangi hidrojen kaynağını kullanabilir ve bu durumda hangi yan ürün oluşabilir?",
-      "back": "Bazı prokaryotlar H₂S kullanabilir; bu süreçte O₂ yerine kükürt oluşabilir."
+      "front": "CO2 tutucusu nedir?",
+      "back": "CO2 ile tepkimeye girip ortamdan çeken bileşik (NaOH, KOH)."
     }
-  ],
-  "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)"
+  ]
 }

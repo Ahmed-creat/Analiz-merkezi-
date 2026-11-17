@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u01_k05",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 1,
+  "tema_adi": "Sözün Ezgisi",
+  "baslik": "Masal",
+  "topic_key": "Türk Dili ve Edebiyatı > Masal",
+  "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.19-21",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u01_k05_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıda konuşan bir göl, görünmez bir yolcuya yardım ediyor; olayın gerçek dünyada yaşandığı ileri sürülmüyor. Bu özellik anlatıyı hangi türe yaklaştırır?",
+      "alt_beceri": "Masalın tanımını ve temel özelliklerini belirler.",
+      "metin": "Halkın yarattığı, ağızdan ağza ve kuşaktan kuşağa aktarılan, olağanüstü kişilerin başından geçen olağandışı olayları anlatan kısa hikâyelere ne ad verilir?",
       "secenekler": [
+        "Halk hikâyesi",
         "Masal",
-        "Öğretici makale",
-        "Günlük",
-        "Tarihî belge"
+        "Fabl",
+        "Efsane"
       ],
-      "dogru_index": 0,
-      "cozum": "Masallarda olaylar hayalî ve olağanüstü olabilir; kahramanlar da olağanüstü nitelik taşır. Öğretici metin ve günlük kurmaca masal anlatısı değildir.",
+      "dogru_index": 1,
+      "cozum": "Konu anlatımında masal, halkın yarattığı ve olağanüstü kişilerin başından geçen olağandışı olayları anlatan kısa hikâyeler olarak tanımlanır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalın olayları genellikle nasıl nitelendirilir?",
-        "back": "Hayal ürünü ve olağanüstüdür; olağanüstü kahramanlar görülebilir."
-      }
+        "front": "Masal nedir?",
+        "back": "Halkın yarattığı, ağızdan ağza aktarılan, olağanüstü kişi ve olayları anlatan kısa hikâyelerdir."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatı, zamanı ve mekânı kesin bir tarih ya da yer adıyla vermeden uzak bir ülkede geçiyor. Bu durum masalın hangi özelliğiyle örtüşür?",
+      "alt_beceri": "Masalın tanımını ve temel özelliklerini belirler.",
+      "metin": "Bir masalda olayların geçtiği yer ve zamanın belirsiz olduğu, kişilerin olağanüstü nitelikler taşıdığı görülür. Konu anlatımına göre masallarda yer ve zaman için hangisi söylenebilir?",
       "secenekler": [
-        "Olayların mutlaka yakın tarihte geçmesiyle",
-        "Yer ve zamanın genellikle belirsiz olmasıyla",
-        "Gerçek yer adlarının zorunlu tutulmasıyla",
-        "Anlatının bir mahkeme tutanağı olmasıyla"
+        "Yer ve zaman gerçek adlarıyla verilir.",
+        "Yalnızca zaman bellidir.",
+        "Yer bellidir, zaman belirsizdir.",
+        "Yer ve zaman belli değildir."
       ],
-      "dogru_index": 1,
-      "cozum": "Masallarda yer ve zaman çoğunlukla belli değildir. Gerçek tarih ve somut mekân zorunluluğu masalın temel kuralı değildir.",
+      "dogru_index": 3,
+      "cozum": "Masallarda olaylar tamamen hayal ürünüdür; yer ve zaman belli değildir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masallarda yer ve zaman çoğunlukla nasıldır?",
-        "back": "Belirsizdir."
-      }
+        "front": "Masallarda yer ve zamanın durumu nedir?",
+        "back": "Belli değildir; olaylar hayal ürünüdür ve belirsiz bir yerde, belirsiz bir zamanda geçer."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıcı, asıl olaydan önce ritimli ve gerçek dışı bir söz dizisiyle dinleyicilerin ilgisini topluyor. Masal planında bu giriş nasıl adlandırılır?",
+      "alt_beceri": "Masalın tanımını ve temel özelliklerini belirler.",
+      "metin": "Masalların çoğu \"bir varmış, bir yokmuş\" ya da \"evvel zaman içinde, kalbur saman içinde\" gibi sözlerle başlar. Konu anlatımına göre masalların olayları hangi zamanla anlatılır?",
       "secenekler": [
-        "Düğüm",
-        "Çözüm",
-        "Döşeme",
-        "Dilek"
+        "-miş'li geçmiş zamanla",
+        "Geniş zamanla",
+        "Şimdiki zamanla",
+        "Gelecek zamanla"
       ],
-      "dogru_index": 2,
-      "cozum": "Masalın başındaki tekerlemeli, ilgi çekici giriş döşemedir. Düğüm çatışmayı geliştirir; çözüm olayları sonuçlandırır.",
+      "dogru_index": 0,
+      "cozum": "Konu anlatımında masallarda olayların -miş'li geçmiş zaman kullanılarak anlatıldığı belirtilir; bu, anlatılanın duyulmuş bir olay gibi sunulmasını sağlar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalın başındaki dikkat çekici kalıplaşmış giriş bölümüne ne denir?",
-        "back": "Döşeme ya da tekerleme."
-      }
+        "front": "Masallarda kullanılan zaman nedir?",
+        "back": "-miş'li geçmiş zaman kullanılır."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Yeni bir anlatının başlangıcında başkişiler tanıtılıyor, olayın geçeceği çevreye giriş yapılıyor. Bu bölüm masal planında hangisidir?",
+      "alt_beceri": "Masalın tanımını ve temel özelliklerini belirler.",
+      "metin": "Masallarda iyiler ödüllendirilir, kötüler cezalandırılır; milli ve dinî motiflere hemen hemen hiç yer verilmez. Bu özellik masalın hangi yönünü gösterir?",
       "secenekler": [
-        "Düğüm",
-        "Çözüm",
-        "Dilek",
-        "Serim"
+        "Tarihî bir belge olduğunu",
+        "Yalnızca çocuklara seslendiğini",
+        "Evrensel ve didaktik bir tür olduğunu",
+        "Aruzla yazıldığını"
       ],
-      "dogru_index": 3,
-      "cozum": "Serimde kişiler tanıtılır ve olaya giriş yapılır. Çatışmanın belirginleşmesi düğüm, sona bağlanması çözüm bölümünün görevidir.",
+      "dogru_index": 2,
+      "cozum": "Milli ve dinî motiflere yer verilmemesi masalı evrensel kılar; iyilerin ödüllendirilmesi ise türün didaktik (öğretici) niteliğini gösterir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalın serim bölümünde ne yapılır?",
-        "back": "Kişiler tanıtılır ve olaya giriş yapılır."
-      }
+        "front": "Masalın evrensel olmasının nedeni nedir?",
+        "back": "Milli ve dinî motiflere hemen hemen hiç yer verilmemesi, konuların evrensel olmasıdır."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir masalda kahramanın karşısına yeni engeller çıkıyor ve sonuç henüz bilinmediği için dinleyici meraklanıyor. Bu bölüm hangisidir?",
+      "alt_beceri": "Masalın bölümlerini ve kalıplaşmış sözlerini çözümler.",
+      "metin": "Bir masal, \"Evvel zaman içinde, kalbur saman içinde…\" sözleriyle başlamış ve bu bölümle dinleyicinin ilgisi çekilmiştir. Masal planında bu bölüm hangisidir?",
       "secenekler": [
-        "Düğüm",
-        "Döşeme",
         "Serim",
-        "Dilek"
+        "Düğüm",
+        "Çözüm",
+        "Döşeme"
       ],
-      "dogru_index": 0,
-      "cozum": "Düğüm bölümünde olaylar gelişir, çatışma ve merak belirginleşir. Dinleyiciye iyi dilek sunan bölüm masalın sonundaki dilektir.",
+      "dogru_index": 3,
+      "cozum": "Dinleyicinin ilgisini çekme amacı taşıyan, kalıplaşmış sözlerle kurulan tekerleme bölümü döşemedir. Serimde kişiler tanıtılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalın düğüm bölümünün temel işlevi nedir?",
-        "back": "Çatışmayı geliştirip merak ve gerilimi artırmak."
-      }
+        "front": "Masalda dinleyicinin ilgisini çeken tekerleme bölümü nedir?",
+        "back": "Döşeme denir; \"Evvel zaman içinde, kalbur saman içinde…\" gibi kalıplaşmış sözlerle başlar."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir masalın sonunda kahraman engeli aşar, adaletsiz davranan kişi sonuçla karşılaşır ve olay örgüsü kapanır. Bu bölüm nasıl adlandırılır?",
+      "alt_beceri": "Masalın bölümlerini ve kalıplaşmış sözlerini çözümler.",
+      "metin": "Masal planındaki bölümlerden hangisinde iyiler ile kötüler belirginleşir, olaylar gelişir ve merak duygusu yoğunlaşır?",
       "secenekler": [
         "Döşeme",
+        "Düğüm",
         "Çözüm",
-        "Serim",
-        "Kavuştak"
+        "Dilek"
       ],
       "dogru_index": 1,
-      "cozum": "Çözüm bölümünde düğümde belirginleşen çatışma sona erer. Döşeme giriş tekerlemesi, kavuştak ise türküde yinelenen bölümdür.",
+      "cozum": "Düğüm bölümünde olaylar gelişir, çatışma ortaya konur, iyiler ve kötüler belirginleşir; merak duygusu yoğunlaşarak çözüme yönelir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalın çözüm bölümünde genellikle ne gerçekleşir?",
-        "back": "Çatışma sonuçlanır; iyiler kazanır, kötüler cezalandırılır."
-      }
+        "front": "Düğüm bölümü nedir?",
+        "back": "Düğüm bölümüdür; olaylar gelişir, iyiler ve kötüler belirginleşir."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Anlatıcı, olay bittikten sonra dinleyicilere mutluluk ve esenlik dileyen kalıplaşmış bir sözle anlatıyı kapatıyor. Masal planındaki bu bölüm hangisidir?",
+      "alt_beceri": "Masalın bölümlerini ve kalıplaşmış sözlerini çözümler.",
+      "metin": "Bir masalda kötülerin cezalandırıldığı, iyilerin kazandığı ve çatışmanın sona erdiği bölüm hangisidir?",
       "secenekler": [
+        "Çözüm",
         "Serim",
-        "Düğüm",
-        "Dilek",
-        "Girizgâh"
+        "Döşeme",
+        "Düğüm"
       ],
-      "dogru_index": 2,
-      "cozum": "Masalın sonundaki iyi dilek sözleri dilek bölümünü oluşturur. Girizgâh, kasidede övgü bölümüne geçiş yapan beyittir.",
+      "dogru_index": 0,
+      "cozum": "Çözüm bölümünde düğümde belirginleşen çatışma, iyilerin kazanması ve kötülerin cezalandırılmasıyla çözülür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalın sonunda yer alan iyi dilek bildiren bölüme ne denir?",
-        "back": "Dilek."
-      }
+        "front": "Çözüm bölümü nedir?",
+        "back": "Çözüm bölümüdür; iyiler kazanır, kötüler cezalandırılır."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Sözlü anlatı geleneğine ilişkin notlarda masal anlatıcılarının çoğunlukla hangi gruptan olduğu belirtiliyor?",
+      "alt_beceri": "Masalın bölümlerini ve kalıplaşmış sözlerini çözümler.",
+      "metin": "Bir masal, \"Onlar ermiş muradına, biz çıkalım kerevetine\" sözüyle sona ermiştir. Masal planında bu bölüm hangisidir?",
       "secenekler": [
-        "Sadece saray şairleri",
-        "Yalnızca tarihçiler",
-        "Sadece gezgin askerler",
-        "Kadınlar"
+        "Çözüm",
+        "Düğüm",
+        "Dilek",
+        "Serim"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak, masal anlatıcılarının genellikle kadınlar olduğunu belirtir. Bu, masal geleneğinin sözlü aktarımına ilişkin bir bilgidir; mutlak bir kural değildir.",
+      "dogru_index": 2,
+      "cozum": "Masal, iyi dilek bildiren kalıplaşmış sözlerle son bulur; bu bölüm dilektir. Çözüm ise çatışmanın sona erdiği bölümdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalların geleneksel anlatımında anlatıcılar genellikle kimlerden olmuştur?",
-        "back": "Kadınlardan."
-      }
+        "front": "Masalın iyi dileklerle biten bölümü nedir?",
+        "back": "Dilek denir; \"Onlar ermiş muradına, biz çıkalım kerevetine\" gibi kalıplaşmış sözlerle kurulur."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir masalın olayları eğlenceli biçimde ilerlerken dinleyiciye iyi davranışların önemini de düşündürüyor. Bu durum hangi özelliği açıklar?",
+      "alt_beceri": "Masalı kaynak eserler ve kahramanlar üzerinden yorumlar.",
+      "metin": "Türklerde masal özelliği gösteren ilk eser olarak ders notunda hangi eser gösterilir?",
       "secenekler": [
-        "Masallarda didaktik bir yön bulunabilmesini",
-        "Masalların mutlaka bilimsel kanıt sunmasını",
-        "Masalların yalnızca gerçek olayları belgelemesini",
-        "Masalların öğüt vermesinin imkânsız olmasını"
+        "Billur Köşk Masalları",
+        "Kalyanamkara ve Papamkara",
+        "Kelile ve Dimne",
+        "Binbir Gece Masalları"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak, masallarda genellikle bir eğitim amacının saklı olabileceğini söyler. Bu, masalın bütünüyle bilimsel ya da belgesel olduğu anlamına gelmez.",
+      "dogru_index": 1,
+      "cozum": "Konu anlatımına göre Uygur Dönemi eserlerinden Kalyanamkara ve Papamkara, Türklerde masal özelliği gösteren ilk eserdir. Billur Köşk ise en eski masal kitabımızdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masalların eğitim yönü nasıl açıklanır?",
-        "back": "Çoğunda örtük bir eğitim amacı bulunur; bu yönüyle öğretici nitelik taşır."
-      }
+        "front": "Papamkara hikâyesinin edebiyatımızdaki yeri nedir?",
+        "back": "Uygur Dönemi eserlerinden Kalyanamkara ve Papamkara'dır."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k05_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Yeni bir masalda kahraman uzak bir ülkeye gitmiş, sonra bir saray bulmuş diye aktarım yapılıyor. Bu anlatımda kullanılan geçmiş zaman biçimi nedir?",
+      "alt_beceri": "Masalı kaynak eserler ve kahramanlar üzerinden yorumlar.",
+      "metin": "Masallarda yer alan kahramanlardan Keloğlan'ın temsil ettiği değer, ders notuna göre hangisidir?",
       "secenekler": [
-        "Görülen geçmiş zaman",
-        "-miş'li geçmiş zaman",
-        "Şimdiki zaman",
-        "Gelecek zaman"
+        "Zulüm ve baskı",
+        "Kıskançlık",
+        "Kötülük",
+        "Şans ve zekâ"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak, masal olaylarının -miş'li geçmiş zamanla anlatıldığını belirtir. Diğer seçenekler farklı zaman biçimleridir.",
+      "dogru_index": 3,
+      "cozum": "Keloğlan, en önemli Türk masal kahramanı olarak şans ve zekâyı temsil eder. Üvey anne zulmü, üvey kız kardeş kıskançlığı, köse kötülüğü simgeler.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Masallarda olaylar hangi geçmiş zaman biçimiyle anlatılır?",
-        "back": "-miş'li geçmiş zaman."
-      }
+        "front": "Keloğlan karakterinin simgesi nedir?",
+        "back": "Şansı ve zekâyı temsil eder; en önemli Türk masal kahramanıdır."
+      },
+      "kazanim": "Masalın temel özelliklerini, plan bölümlerini ve kaynak eserlerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u01_k05_o01:flashcard",
-      "front": "Masalın olayları genellikle nasıl nitelendirilir?",
-      "back": "Hayal ürünü ve olağanüstüdür; olağanüstü kahramanlar görülebilir."
+      "front": "Masal nedir?",
+      "back": "Halkın yarattığı, ağızdan ağza aktarılan, olağanüstü kişi ve olayları anlatan kısa hikâyelerdir."
     },
     {
       "id": "edebiyat_10_u01_k05_o02:flashcard",
-      "front": "Masallarda yer ve zaman çoğunlukla nasıldır?",
-      "back": "Belirsizdir."
+      "front": "Masallarda yer ve zamanın durumu nedir?",
+      "back": "Belli değildir; olaylar hayal ürünüdür ve belirsiz bir yerde, belirsiz bir zamanda geçer."
     },
     {
       "id": "edebiyat_10_u01_k05_o03:flashcard",
-      "front": "Masalın başındaki dikkat çekici kalıplaşmış giriş bölümüne ne denir?",
-      "back": "Döşeme ya da tekerleme."
+      "front": "Masallarda kullanılan zaman nedir?",
+      "back": "-miş'li geçmiş zaman kullanılır."
     },
     {
       "id": "edebiyat_10_u01_k05_o04:flashcard",
-      "front": "Masalın serim bölümünde ne yapılır?",
-      "back": "Kişiler tanıtılır ve olaya giriş yapılır."
+      "front": "Masalın evrensel olmasının nedeni nedir?",
+      "back": "Milli ve dinî motiflere hemen hemen hiç yer verilmemesi, konuların evrensel olmasıdır."
     },
     {
       "id": "edebiyat_10_u01_k05_o05:flashcard",
-      "front": "Masalın düğüm bölümünün temel işlevi nedir?",
-      "back": "Çatışmayı geliştirip merak ve gerilimi artırmak."
+      "front": "Masalda dinleyicinin ilgisini çeken tekerleme bölümü nedir?",
+      "back": "Döşeme denir; \"Evvel zaman içinde, kalbur saman içinde…\" gibi kalıplaşmış sözlerle başlar."
     },
     {
       "id": "edebiyat_10_u01_k05_o06:flashcard",
-      "front": "Masalın çözüm bölümünde genellikle ne gerçekleşir?",
-      "back": "Çatışma sonuçlanır; iyiler kazanır, kötüler cezalandırılır."
+      "front": "Düğüm bölümü nedir?",
+      "back": "Düğüm bölümüdür; olaylar gelişir, iyiler ve kötüler belirginleşir."
     },
     {
       "id": "edebiyat_10_u01_k05_o07:flashcard",
-      "front": "Masalın sonunda yer alan iyi dilek bildiren bölüme ne denir?",
-      "back": "Dilek."
+      "front": "Çözüm bölümü nedir?",
+      "back": "Çözüm bölümüdür; iyiler kazanır, kötüler cezalandırılır."
     },
     {
       "id": "edebiyat_10_u01_k05_o08:flashcard",
-      "front": "Masalların geleneksel anlatımında anlatıcılar genellikle kimlerden olmuştur?",
-      "back": "Kadınlardan."
+      "front": "Masalın iyi dileklerle biten bölümü nedir?",
+      "back": "Dilek denir; \"Onlar ermiş muradına, biz çıkalım kerevetine\" gibi kalıplaşmış sözlerle kurulur."
     },
     {
       "id": "edebiyat_10_u01_k05_o09:flashcard",
-      "front": "Masalların eğitim yönü nasıl açıklanır?",
-      "back": "Çoğunda örtük bir eğitim amacı bulunur; bu yönüyle öğretici nitelik taşır."
+      "front": "Papamkara hikâyesinin edebiyatımızdaki yeri nedir?",
+      "back": "Uygur Dönemi eserlerinden Kalyanamkara ve Papamkara'dır."
     },
     {
       "id": "edebiyat_10_u01_k05_o10:flashcard",
-      "front": "Masallarda olaylar hangi geçmiş zaman biçimiyle anlatılır?",
-      "back": "-miş'li geçmiş zaman."
+      "front": "Keloğlan karakterinin simgesi nedir?",
+      "back": "Şansı ve zekâyı temsil eder; en önemli Türk masal kahramanıdır."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Masal"
+  ]
 }

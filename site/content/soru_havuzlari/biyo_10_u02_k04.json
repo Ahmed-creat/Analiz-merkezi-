@@ -2,250 +2,255 @@
   "konu_id": "biyo_10_u02_k04",
   "sinif": 10,
   "ders": "Biyoloji",
-  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "tema": 2,
+  "tema_adi": "Ekoloji",
+  "baslik": "2.4 Madde Döngüleri",
+  "topic_key": "Biyoloji > 2.4 Madde Döngüleri",
+  "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.132-138",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "biyo_10_u02_k04_o01",
-      "alt_beceri": "Ekolojik Sürdürülebilirliğin Önemi",
-      "metin": "Bir yerleşim planında bugünkü konut ve ulaşım gereksinimleri karşılanırken çevredeki doğal alanların gelecek kuşaklar için korunması da hedefleniyor. Bu yaklaşım hangi anlayışla uyumludur?",
+      "alt_beceri": "Su, karbon ve azot döngülerinin basamaklarını açıklar.",
+      "metin": "Su döngüsü hangi temel olaylarla gerçekleşir?",
       "secenekler": [
-        "Sürdürülebilir kalkınma",
-        "Kaynakları kısa sürede tüketme",
-        "Habitat parçalanması",
-        "Atıkları kontrolsüz depolama"
+        "Fotosentez ve solunum",
+        "Buharlaşma, yoğuşma ve terleme",
+        "Nitrifikasyon ve denitrifikasyon",
+        "Yanma ve ayrışma"
       ],
-      "dogru_index": 0,
-      "cozum": "Sürdürülebilir kalkınma bugünün gereksinimlerini karşılarken gelecek kuşakların kaynaklara erişme olanağını korur. Planlamada doğal alanların da gözetilmesi bu anlayışla uyumludur.",
+      "dogru_index": 1,
+      "cozum": "Su döngüsü buharlaşma, yoğuşma ve terleme gibi temel olaylarla gerçekleşir; yağışla yeryüzüne dönen suyun bir kısmı yer altı sularını oluşturur (s.136).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sürdürülebilir kalkınmayı gelecek kuşakların gereksinimleriyle ilişkisini belirterek açıklayınız.",
-        "back": "Bugünün gereksinimlerini, gelecek kuşakların gereksinimlerini karşılama yeteneğinden ödün vermeden karşılayan kalkınmadır."
+        "front": "Su döngüsü nedir?",
+        "back": "Suyun yeryüzü ile gökyüzü arasındaki dolanımı."
       },
-      "kazanim": "ekolojik sürdürülebilirliğin önemini yorumlayabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o02",
-      "alt_beceri": "Ekolojik Sürdürülebilirliğin Önemi",
-      "metin": "Doğal kaynaklar kendini yenileme hızından daha hızlı tüketilirse ekolojik sürdürülebilirlik açısından ne beklenir?",
+      "alt_beceri": "Su, karbon ve azot döngülerinin basamaklarını açıklar.",
+      "metin": "Canlıların terlemesi ve solunumu su döngüsüne nasıl katkı sağlar?",
       "secenekler": [
-        "Kaynakların sınırsız hâle gelmesi",
-        "Ekosistem dengesinin bozulması ve kaynakların tükenme riski",
-        "Biyoçeşitliliğin her durumda artması",
-        "Gelecek kuşakların kaynaklara erişiminin güvenceye alınması"
+        "Suyu yer altı sularına aktarır",
+        "Suyu oksijen ve hidrojene ayırır",
+        "Yağış oluşumunu durdurur",
+        "Yapılarındaki suyun bir kısmını buhar olarak atmosfere verir"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynakların yenilenme hızının üzerinde kullanılması ekosistem dengesini bozar, kaynakları tüketebilir ve gelecek kuşaklara aktarılmasını engeller. Bu nedenle kullanımın dengeli olması gerekir.",
+      "dogru_index": 3,
+      "cozum": "Terleme ve solunum sonucunda canlıların yapısındaki suyun bir kısmı buhar hâlinde atmosfere verilir (s.138).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekolojik sürdürülebilirliğin doğal kaynaklar, biyoçeşitlilik ve ekosistem dengesi bakımından önemini açıklayınız.",
-        "back": "Doğal kaynakların ve biyoçeşitliliğin korunmasına, ekosistemlerin dengede kalmasına ve kaynakların gelecek nesillere aktarılmasına katkı sağlar."
+        "front": "Yoğuşma nedir?",
+        "back": "Su buharının soğuyup sıvı hâle geçmesi."
       },
-      "kazanim": "ekolojik sürdürülebilirliğin önemini yorumlayabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o03",
-      "alt_beceri": "Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar",
-      "metin": "Yeni bir demiryolu hattı, daha önce kesintisiz olan dağ çayırını birbirinden kopuk küçük parçalara ayırıyor. Bu değişiklik hangi soruna örnektir?",
+      "alt_beceri": "Su, karbon ve azot döngülerinin basamaklarını açıklar.",
+      "metin": "Karbon atmosferde hangi formda bulunur?",
       "secenekler": [
-        "Habitat kaybı olmadan doğal kaynak artışı",
-        "Ekolojik sürdürülebilirlik",
-        "Habitat parçalanması",
-        "Biyolojik çeşitliliğin doğal artışı"
+        "Karbondioksit (CO2)",
+        "Elementel karbon",
+        "Amonyak",
+        "Nitrat"
       ],
-      "dogru_index": 2,
-      "cozum": "İnsan etkisiyle büyük ve sürekli bir yaşam alanının küçük, birbirinden kopuk parçalara ayrılması habitat parçalanmasıdır. Bu durum türlerin yayılmasını ve alanlar arasında hareket etmesini zorlaştırabilir.",
+      "dogru_index": 0,
+      "cozum": "Karbon atmosferde CO2, suda CO2 ve bikarbonat, karada ise doğal gaz, petrol, kömür ve kireç taşı olarak bulunur (s.136).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Habitat kaybı ile habitat parçalanmasını yaşam alanlarında meydana gelen değişim bakımından karşılaştırınız.",
-        "back": "Habitat kaybı yaşam alanının tamamen yok olmasıdır; habitat parçalanması büyük ve sürekli yaşam alanlarının insan etkisiyle küçük parçalara ayrılmasıdır."
+        "front": "Karbon döngüsü nedir?",
+        "back": "Karbonun atmosfer, toprak, su ve canlılar arasında dolaşımı."
       },
-      "kazanim": "çevrenizde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o04",
-      "alt_beceri": "Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar",
-      "metin": "Bir balık yetiştirme havuzunda fazla yem ve organik artıkların birikmesi suya besin tuzları kazandırıyor; algler hızla çoğalırken çözünmüş oksijen azalıyor. Bu süreç nasıl adlandırılır?",
+      "alt_beceri": "Su, karbon ve azot döngülerinin basamaklarını açıklar.",
+      "metin": "Yeryüzündeki kireç taşları binlerce yıl içinde aşınarak içlerindeki karbonu açığa çıkarır. Bu durum kireç taşlarının hangi özelliğini gösterir?",
       "secenekler": [
-        "Habitat kaybı",
-        "Biyoremediasyon",
-        "Süksesyon",
-        "Ötrofikasyon"
+        "Atmosferdeki azotu bağlamak",
+        "Suyu buharlaştırmak",
+        "Karbonu hapsetmek ve aşınmayla döngüye bırakmak",
+        "Fosil yakıt oluşturmak"
       ],
-      "dogru_index": 3,
-      "cozum": "Fazla azot ve fosfor alglerin kontrolsüz çoğalmasına yol açar. Organik maddenin ayrışması oksijeni azaltabildiğinden bu süreç ötrofikasyondur.",
+      "dogru_index": 2,
+      "cozum": "Kireç taşları karbonu hapseder; zamanla aşınmalarıyla içlerindeki karbon açığa çıkarak döngüye katılır (s.136).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir su ortamına aşırı besin tuzu girişiyle başlayan ötrofikasyonun temel aşamalarını ve ekosisteme etkisini açıklayınız.",
-        "back": "Azot ve fosfor girdisinin artması alg ve su bitkilerinin hızla çoğalmasına yol açar. Organik maddenin ayrışması sudaki oksijeni azaltarak canlıları olumsuz etkileyebilir."
+        "front": "Fosil yakıt nedir?",
+        "back": "Canlı atıklarının toprak altında uzun süre kalmasıyla oluşan yakıt."
       },
-      "kazanim": "çevrenizde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o05",
-      "alt_beceri": "Ekolojik Ayak İzinin Küçültülmesi",
-      "metin": "Bir belediye parkında peyzaj sulaması için depolanan yağmur suyu kullanılıyor ve içme suyu tüketimi azalıyor. Bu uygulama ekolojik ayak izini nasıl etkileyebilir?",
+      "alt_beceri": "Su, karbon ve azot döngülerinin basamaklarını açıklar.",
+      "metin": "Fotosentez karbon döngüsünde hangi basamağı oluşturur?",
       "secenekler": [
-        "Kaynak tüketimini ve atık üretimini azaltarak ayak izini küçültmeye katkı sağlar.",
-        "Üretim kaynaklı etkileri zorunlu olarak artırır.",
-        "Ekosistemdeki bütün madde döngülerini durdurur.",
-        "Biyoçeşitliliğin azalmasını doğrudan hızlandırır."
+        "Organik karbonun CO2'ye dönüşmesini",
+        "Azotun nitrata çevrilmesini",
+        "Suyun yoğuşmasını",
+        "Atmosferdeki CO2'nin organik bileşik yapısına katılmasını"
       ],
-      "dogru_index": 0,
-      "cozum": "Yağmur suyunun değerlendirilmesi, sulama için kullanılan içme suyu miktarını ve kaynak tüketimini azaltabilir. Bu tür kaynak verimliliği ekolojik ayak izinin küçültülmesine katkı sağlar.",
+      "dogru_index": 3,
+      "cozum": "Yeşil bitkiler ve fitoplanktonlar CO2'yi fotosentezde kullanır; böylece karbon organik bileşiklerin yapısına katılır (s.136).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekolojik ayak izinin neyi ölçtüğünü ve hangi insan etkinliklerini kapsadığını açıklayınız.",
-        "back": "Ekolojik ayak izi, bir kişinin, topluluğun veya ülkenin kaynak tüketimini ve çevresel etkilerini; kullanılan kaynaklar ile oluşan atıklar dâhil ölçen bir kavramdır."
+        "front": "Karbonun atmosfere dönüş yolları nedir?",
+        "back": "Solunum, ayrışma ve yanma."
       },
-      "kazanim": "ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o06",
-      "alt_beceri": "Ekolojik Ayak İzinin Küçültülmesi",
-      "metin": "Bir okul yemekhanesi öğrencilerin porsiyon miktarını seçmesine izin veriyor; böylece yenilebilir yemek artıkları azalıyor. Bu uygulamanın olası çevresel sonucu nedir?",
+      "alt_beceri": "İnsan etkinliklerinin madde döngülerine etkisini yorumlar.",
+      "metin": "Atmosferde gaz hâlinde bulunan azot, havanın yaklaşık yüzde kaçını oluşturur?",
       "secenekler": [
-        "Gıda üretimi için gereken doğal kaynak miktarını artırır.",
-        "Gıda atığını ve üretim için gereken kaynak tüketimini azaltır.",
-        "Atıkları yeniden kullanılamaz hâle getirir.",
-        "Ekolojik ayak izini zorunlu olarak büyütür."
+        "%21",
+        "%78",
+        "%50",
+        "%0,03"
       ],
       "dogru_index": 1,
-      "cozum": "Yemek artıklarının azalması, boşa üretilen gıdayı ve bu üretim için harcanan su, enerji ve ham maddeyi azaltır. Bu yaklaşım ekolojik ayak izinin küçültülmesini destekler.",
+      "cozum": "Atmosferde gaz hâlinde bulunan azot havanın yaklaşık %78'ini oluşturur (s.137).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gıda atıklarının kaynağında azaltılması ve uygun biçimde değerlendirilmesi ekolojik ayak izini nasıl küçültebilir?",
-        "back": "Gıda üretimi için harcanan su, enerji ve ham madde boşa gitmez; atık miktarı ve bertaraf yükü azalır, kaynak kullanımı daha verimli hâle gelir."
+        "front": "Azot döngüsü nedir?",
+        "back": "Azotun atmosfer, toprak, su ve canlılar arasında dolaşımı."
       },
-      "kazanim": "ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o07",
-      "alt_beceri": "Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
-      "metin": "Nesli tehlikedeki bir dağ eğrelti türü, doğal yayılış gösterdiği alanda koruma altına alınıyor. Bu hangi koruma yaklaşımıdır?",
+      "alt_beceri": "İnsan etkinliklerinin madde döngülerine etkisini yorumlar.",
+      "metin": "Bitkiler topraktan azotu hangi formlarda alabilir?",
       "secenekler": [
-        "Alan dışı koruma",
-        "Türün yaşam alanını ortadan kaldırma",
-        "Alan koruma (yerinde koruma)",
-        "Kaynakların aşırı kullanımı"
+        "Amonyum (NH4⁺) ve nitrat (NO3⁻)",
+        "Azot gazı (N2) olarak doğrudan",
+        "Nitrik asit olarak",
+        "Amino asit olarak"
       ],
-      "dogru_index": 2,
-      "cozum": "Bir türün kendi doğal habitatında korunması alan koruma, yani yerinde korumadır. Tohum veya gen bankasında saklama ise alan dışı korumaya örnektir.",
+      "dogru_index": 0,
+      "cozum": "Bitkiler atmosferdeki azotu doğrudan kullanamaz; azotun amonyum ve nitrata çevrilmesi gerekir, bitkiler bu formları topraktan alır (s.137).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Biyoçeşitliliği oluşturan çeşitlilik boyutlarını ve korunmasının önemini açıklayınız.",
-        "back": "Biyoçeşitlilik tür, genetik ve ekosistem çeşitliliğini kapsar; korunması ekosistem dengesinin, doğal mirasın ve canlı yaşamının devamlılığı için önemlidir."
+        "front": "Azot fiksasyonu nedir?",
+        "back": "Atmosferik azotun bitkilerin kullanabileceği forma çevrilmesi."
       },
-      "kazanim": "doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o08",
-      "alt_beceri": "Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
-      "metin": "Nesli tehlikedeki bir nehir balığı, doğal yaşam alanından uzaktaki kontrollü bir akvaryumda çoğaltılıp korunuyor. Hangi yöntem uygulanmaktadır?",
+      "alt_beceri": "İnsan etkinliklerinin madde döngülerine etkisini yorumlar.",
+      "metin": "Amonyağın toprak bakterileri tarafından önce nitrite sonra nitrata dönüştürülmesine ne ad verilir?",
       "secenekler": [
-        "Süksesyon",
-        "Alan koruma",
-        "Habitat parçalanması",
-        "Alan dışı koruma"
+        "Denitrifikasyon",
+        "Azot fiksasyonu",
+        "Nitrifikasyon",
+        "Ayrışma"
       ],
-      "dogru_index": 3,
-      "cozum": "Bir türün doğal habitatı dışında, insan denetimindeki bir ortamda korunması alan dışı korumadır. Doğal habitatında yapılan koruma ise alan içidir.",
+      "dogru_index": 2,
+      "cozum": "Amonyağın nitrite, ardından nitrata dönüşmesi nitrifikasyon olarak adlandırılır (s.137).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Alan içi ve alan dışı korumayı canlıların doğal habitatıyla ilişkileri bakımından karşılaştırınız.",
-        "back": "Alan içi korumada tür doğal habitatında korunur; alan dışı korumada doğal habitatı dışındaki kontrollü bir ortamda korunur."
+        "front": "Nitrifikasyon nedir?",
+        "back": "Amonyağın nitrit ve nitrata dönüşmesi."
       },
-      "kazanim": "doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilmeniz,"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o09",
-      "alt_beceri": "Atık Yönetimi",
-      "metin": "Bir tekstil atölyesi temiz kumaş kırpıntılarını geri kazanım için ayrı bir kapta biriktiriyor. Bu malzemeler nasıl yönetilmelidir?",
+      "alt_beceri": "İnsan etkinliklerinin madde döngülerine etkisini yorumlar.",
+      "metin": "Topraktaki nitrat ve nitrit tuzlarının bakterilerle azot gazına çevrilip atmosfere verilmesine ne denir?",
       "secenekler": [
-        "Ayrı toplanarak uygun geri dönüşüm veya geri kazanım zincirine aktarılmalıdır.",
-        "Organik atıklarla karıştırılıp kompostlaştırılmalıdır.",
-        "Açık alanda yakılmalıdır.",
-        "Toprağa gömülerek bertaraf edilmelidir."
+        "Nitrifikasyon",
+        "Denitrifikasyon",
+        "Azot fiksasyonu",
+        "Kemosentez"
       ],
-      "dogru_index": 0,
-      "cozum": "Geri kazanılabilir atıklar kaynağında ayrı toplanmalı ve uygun bir geri dönüşüm ya da geri kazanım sürecine aktarılmalıdır. Yakma veya toprağa gömme bu amaca uygun değildir.",
+      "dogru_index": 1,
+      "cozum": "Azotun topraktan tekrar atmosfere geçmesini sağlayan bu olaya denitrifikasyon denir (s.137).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Atık yönetiminin oluşumdan bertarafa uzanan temel süreçlerini sıralayınız.",
-        "back": "Atığın önlenmesi ve azaltılması; yeniden kullanım, kaynağında ayrıştırma ve toplama; geçici depolama, taşıma, geri dönüşüm/geri kazanım ve uygun bertaraf atık yönetiminin temel süreçleridir."
+        "front": "Denitrifikasyon nedir?",
+        "back": "Nitratın azot gazına çevrilip atmosfere verilmesi."
       },
-      "kazanim": "çevrenizde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilmeniz"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     },
     {
       "soru_id": "biyo_10_u02_k04_o10",
-      "alt_beceri": "Atık Yönetimi",
-      "metin": "Organik atıkların oksijensiz ortamda parçalanarak metan ve karbondioksit içeren biyogaza dönüştürülmesi hangi işlemdir?",
+      "alt_beceri": "İnsan etkinliklerinin madde döngülerine etkisini yorumlar.",
+      "metin": "Fosil yakıtların yakılması karbon döngüsünü nasıl etkiler?",
       "secenekler": [
-        "Düzenli depolama",
-        "Biyometanizasyon",
-        "Kompostlaştırma",
-        "Kaynağında ayrıştırma"
+        "Karbonu kireç taşına dönüştürür",
+        "Azot fiksasyonunu hızlandırır",
+        "Fotosentezi durdurur",
+        "Atmosfere verilen CO2 miktarını artırır"
       ],
-      "dogru_index": 1,
-      "cozum": "Oksijensiz ortamda organik atıkların biyogaza dönüştürülmesi biyometanizasyondur. Kompostlaştırmada organik maddeler humus benzeri kararlı bir ürüne ayrıştırılır.",
+      "dogru_index": 3,
+      "cozum": "Odun ve fosil yakıtların yanmasıyla karbondioksit atmosfere verilir; bu durum atmosferdeki CO2 miktarını artırır (s.136).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kompostlaştırma ile biyometanizasyonun organik atıklar üzerindeki işleyişini karşılaştırınız.",
-        "back": "Kompostlaştırmada organik atıklar kontrollü koşullarda humus benzeri ürüne ayrıştırılır; biyometanizasyonda organik atıklar oksijensiz ortamda parçalanıp biyogaza dönüştürülür."
+        "front": "Küresel ısınmanın karbon döngüsüyle ilişkisi nedir?",
+        "back": "Yanma sonucu CO2 artışı sera etkisini güçlendirir."
       },
-      "kazanim": "çevrenizde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilmeniz"
+      "kazanim": "Su, karbon ve azot döngülerinin basamaklarını açıklar; insan etkinliklerinin bu döngülere etkisini yorumlar."
     }
   ],
   "flashcards": [
     {
       "id": "biyo_10_u02_k04_o01:flashcard",
-      "front": "Sürdürülebilir kalkınmayı gelecek kuşakların gereksinimleriyle ilişkisini belirterek açıklayınız.",
-      "back": "Bugünün gereksinimlerini, gelecek kuşakların gereksinimlerini karşılama yeteneğinden ödün vermeden karşılayan kalkınmadır."
+      "front": "Su döngüsü nedir?",
+      "back": "Suyun yeryüzü ile gökyüzü arasındaki dolanımı."
     },
     {
       "id": "biyo_10_u02_k04_o02:flashcard",
-      "front": "Ekolojik sürdürülebilirliğin doğal kaynaklar, biyoçeşitlilik ve ekosistem dengesi bakımından önemini açıklayınız.",
-      "back": "Doğal kaynakların ve biyoçeşitliliğin korunmasına, ekosistemlerin dengede kalmasına ve kaynakların gelecek nesillere aktarılmasına katkı sağlar."
+      "front": "Yoğuşma nedir?",
+      "back": "Su buharının soğuyup sıvı hâle geçmesi."
     },
     {
       "id": "biyo_10_u02_k04_o03:flashcard",
-      "front": "Habitat kaybı ile habitat parçalanmasını yaşam alanlarında meydana gelen değişim bakımından karşılaştırınız.",
-      "back": "Habitat kaybı yaşam alanının tamamen yok olmasıdır; habitat parçalanması büyük ve sürekli yaşam alanlarının insan etkisiyle küçük parçalara ayrılmasıdır."
+      "front": "Karbon döngüsü nedir?",
+      "back": "Karbonun atmosfer, toprak, su ve canlılar arasında dolaşımı."
     },
     {
       "id": "biyo_10_u02_k04_o04:flashcard",
-      "front": "Bir su ortamına aşırı besin tuzu girişiyle başlayan ötrofikasyonun temel aşamalarını ve ekosisteme etkisini açıklayınız.",
-      "back": "Azot ve fosfor girdisinin artması alg ve su bitkilerinin hızla çoğalmasına yol açar. Organik maddenin ayrışması sudaki oksijeni azaltarak canlıları olumsuz etkileyebilir."
+      "front": "Fosil yakıt nedir?",
+      "back": "Canlı atıklarının toprak altında uzun süre kalmasıyla oluşan yakıt."
     },
     {
       "id": "biyo_10_u02_k04_o05:flashcard",
-      "front": "Ekolojik ayak izinin neyi ölçtüğünü ve hangi insan etkinliklerini kapsadığını açıklayınız.",
-      "back": "Ekolojik ayak izi, bir kişinin, topluluğun veya ülkenin kaynak tüketimini ve çevresel etkilerini; kullanılan kaynaklar ile oluşan atıklar dâhil ölçen bir kavramdır."
+      "front": "Karbonun atmosfere dönüş yolları nedir?",
+      "back": "Solunum, ayrışma ve yanma."
     },
     {
       "id": "biyo_10_u02_k04_o06:flashcard",
-      "front": "Gıda atıklarının kaynağında azaltılması ve uygun biçimde değerlendirilmesi ekolojik ayak izini nasıl küçültebilir?",
-      "back": "Gıda üretimi için harcanan su, enerji ve ham madde boşa gitmez; atık miktarı ve bertaraf yükü azalır, kaynak kullanımı daha verimli hâle gelir."
+      "front": "Azot döngüsü nedir?",
+      "back": "Azotun atmosfer, toprak, su ve canlılar arasında dolaşımı."
     },
     {
       "id": "biyo_10_u02_k04_o07:flashcard",
-      "front": "Biyoçeşitliliği oluşturan çeşitlilik boyutlarını ve korunmasının önemini açıklayınız.",
-      "back": "Biyoçeşitlilik tür, genetik ve ekosistem çeşitliliğini kapsar; korunması ekosistem dengesinin, doğal mirasın ve canlı yaşamının devamlılığı için önemlidir."
+      "front": "Azot fiksasyonu nedir?",
+      "back": "Atmosferik azotun bitkilerin kullanabileceği forma çevrilmesi."
     },
     {
       "id": "biyo_10_u02_k04_o08:flashcard",
-      "front": "Alan içi ve alan dışı korumayı canlıların doğal habitatıyla ilişkileri bakımından karşılaştırınız.",
-      "back": "Alan içi korumada tür doğal habitatında korunur; alan dışı korumada doğal habitatı dışındaki kontrollü bir ortamda korunur."
+      "front": "Nitrifikasyon nedir?",
+      "back": "Amonyağın nitrit ve nitrata dönüşmesi."
     },
     {
       "id": "biyo_10_u02_k04_o09:flashcard",
-      "front": "Atık yönetiminin oluşumdan bertarafa uzanan temel süreçlerini sıralayınız.",
-      "back": "Atığın önlenmesi ve azaltılması; yeniden kullanım, kaynağında ayrıştırma ve toplama; geçici depolama, taşıma, geri dönüşüm/geri kazanım ve uygun bertaraf atık yönetiminin temel süreçleridir."
+      "front": "Denitrifikasyon nedir?",
+      "back": "Nitratın azot gazına çevrilip atmosfere verilmesi."
     },
     {
       "id": "biyo_10_u02_k04_o10:flashcard",
-      "front": "Kompostlaştırma ile biyometanizasyonun organik atıklar üzerindeki işleyişini karşılaştırınız.",
-      "back": "Kompostlaştırmada organik atıklar kontrollü koşullarda humus benzeri ürüne ayrıştırılır; biyometanizasyonda organik atıklar oksijensiz ortamda parçalanıp biyogaza dönüştürülür."
+      "front": "Küresel ısınmanın karbon döngüsüyle ilişkisi nedir?",
+      "back": "Yanma sonucu CO2 artışı sera etkisini güçlendirir."
     }
-  ],
-  "topic_key": "Biyoloji > 2.9 Atık Yönetimi"
+  ]
 }

@@ -2,378 +2,255 @@
   "konu_id": "edebiyat_10_u04_k03",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 4,
+  "tema_adi": "Nesillerin Mirası",
+  "baslik": "Fiiller (Eylemler)",
+  "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)",
+  "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.134-147",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u04_k03_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözcüğün köküne -mek eki getirildiğinde anlamlı bir mastar biçimi oluşuyor. Bu sözcüğün türünü belirlemek için hangi ölçütten yararlanılmıştır?",
+      "alt_beceri": "Fiilleri anlam özelliklerine göre sınıflandırır.",
+      "metin": "Bir sözcüğün fiil olup olmadığını anlamak için yalın hâline \"-mek, -mak\" ekleri getirilir. Buna göre hangi sözcük fiildir?",
       "secenekler": [
-        "Fiil köküne mastar eki getirme ölçütünden",
-        "Sözcüğün çoğul eki almasına bakmaktan",
-        "Sözcüğün büyük harfle yazılmasından",
-        "Sözcüğün ardından sıfat gelmesinden"
+        "koşu",
+        "koş-",
+        "koşucu",
+        "koşturma"
       ],
-      "dogru_index": 0,
-      "cozum": "Fiil olup olmadığını sınamak için sözcüğe -mak ya da -mek getirilebilir. Diğer seçenekler fiil tanıma ölçütü değildir.",
+      "dogru_index": 1,
+      "cozum": "Yalın hâline \"-mek, -mak\" getirilebilen sözcük fiildir: koş-mak. Koşu, koşucu ve koşturma ad soylu sözcüklerdir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fiilleri tanımla ve bir sözcüğün fiil olup olmadığını sınama yolunu yaz.",
-        "back": "Fiiller iş, oluş, kılış, durum ve hareket bildirir; yalın sözcüğe -mak/-mek getirilerek fiil olup olmadığı sınanabilir."
-      }
+        "front": "Fiil nedir?",
+        "back": "İş, oluş, kılış, durum ve hareket bildiren sözcüktür; \"-mek/-mak\" alabilir."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede yapraklar zaman içinde sararıyor; öznenin bilinçli bir eylemi ve etkilenen bir nesne yok. Fiil anlam özelliğine göre hangi türdedir?",
+      "alt_beceri": "Fiilleri anlam özelliklerine göre sınıflandırır.",
+      "metin": "\"Yaz-, oku-, kes-, sil-\" fiilleri öznenin iradesiyle yapılan ve bir nesneyi etkileyen eylemlerdir. Bu fiiller hangi anlam özelliğindedir?",
       "secenekler": [
-        "Kılış fiili",
-        "Oluş fiili",
         "Durum fiili",
-        "Yardımcı fiil"
+        "Oluş fiili",
+        "Birleşik fiil",
+        "Kılış fiili"
       ],
-      "dogru_index": 1,
-      "cozum": "Kendiliğinden gerçekleşen ve varlığın değişimini bildiren fiil oluş fiilidir. Kılış fiili nesneyi etkiler; durum fiili öznenin sürmekte olan hâlini bildirir.",
+      "dogru_index": 3,
+      "cozum": "Nesne alan, yani geçişli olan ve öznenin iradesiyle bir nesneyi etkileyen fiiller kılış fiilidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kılış, durum ve oluş fiillerini nesne ve özne iradesi bakımından ayır.",
-        "back": "Kılış fiilleri öznenin iradesiyle nesneyi etkiler; durum fiilleri nesne almadan bir durumu sürdürür; oluş fiilleri kendiliğinden değişim bildirir."
-      }
+        "front": "Kılış fiili nedir?",
+        "back": "Öznenin iradesiyle yapılan, nesne alan (geçişli) fiildir: yaz-, kes-, sil-."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede eylem hem zaman/dilek anlamı hem de işi yapan kişiyi bildiriyor. Bu fiil çekimlenmiş sayılır ve çoğunlukla hangi cümle ögesidir?",
+      "alt_beceri": "Fiilleri anlam özelliklerine göre sınıflandırır.",
+      "metin": "\"Uyu-, ağla-, gül-, otur-\" fiilleri bir nesne almadan bir durumun sürekliliğini ya da durağanlığını anlatır. Bu fiiller hangi gruptadır?",
       "secenekler": [
-        "Belirtisiz nesne",
-        "Zarf tümleci",
-        "Yüklem",
-        "Sıfat tamlayanı"
+        "Durum fiili",
+        "Kılış fiili",
+        "Oluş fiili",
+        "Tezlik fiili"
       ],
-      "dogru_index": 2,
-      "cozum": "Kip ve kişi eki alan fiil çekimli fiildir ve cümlede yüklem görevinde bulunur. Şart kipiyle çekimlenenler çoğunlukla yan cümle kurabilir.",
+      "dogru_index": 0,
+      "cozum": "Nesne almayan, içinde bulunulan durumu açıklayan ve süreklilik bildiren fiiller durum fiilidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çekimli fiil ne demektir ve cümlede genellikle hangi görevde bulunur?",
-        "back": "Kip ve kişi eki almış fiildir; cümlede yüklem görevindedir."
-      }
+        "front": "Durum fiili nedir?",
+        "back": "Nesne almayan, bir durumun sürekliliğini ya da durağanlığını anlatan fiildir: uyu-, gül-."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir fiil geçmişte, şimdi ya da gelecekte gerçekleşen bir işi zaman bakımından bildiriyor. Bu kip grubunun adı nedir?",
+      "alt_beceri": "Haber ve dilek kiplerini, kişi eklerini çözümler.",
+      "metin": "\"Yaprak sarardı, hava ısındı, çiçek büyüdü.\" cümlelerinde eylemler öznenin iradesi dışında, kendiliğinden gerçekleşmiştir. Bu fiiller hangi anlam özelliğindedir?",
       "secenekler": [
-        "Dilek kipleri",
-        "Kişi ekleri",
-        "Yapım ekleri",
-        "Haber (bildirme) kipleri"
+        "Kılış fiili",
+        "Durum fiili",
+        "Oluş fiili",
+        "Sürerlik fiili"
       ],
-      "dogru_index": 3,
-      "cozum": "Haber kipleri fiilin zamanını bildirir. Dilek kipleri ise istek, şart, gereklilik veya emir anlamı katar.",
+      "dogru_index": 2,
+      "cozum": "Kendiliğinden, öznenin iradesi dışında gerçekleşen ve bir değişimi anlatan fiiller oluş fiilidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Haber kipleri fiile hangi temel anlamı katar?",
-        "back": "Zaman bildirir."
-      }
+        "front": "Oluş fiili nedir?",
+        "back": "Öznenin iradesi dışında, kendiliğinden gerçekleşen değişimi anlatan fiildir: sarar-, büyü-."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir dil bilgisi tablosunda geçmişin görülen ve duyulan biçimleri, şimdiki zaman, gelecek zaman ve alışkanlık/genel zaman ayrı sütunlarda gösteriliyor. Bu sütunların ortak üst başlığı nedir?",
+      "alt_beceri": "Haber ve dilek kiplerini, kişi eklerini çözümler.",
+      "metin": "\"Kaç-tı-m\" çekiminde görülen \"-tı\" eki, geçmişte yapılan işin kişi tarafından görüldüğünü bildirir. Bu kip hangisidir?",
       "secenekler": [
-        "Haber kipleri",
-        "Dilek kipleri",
-        "Fiil yapıları",
-        "Kişi zamirleri"
+        "Öğrenilen geçmiş zaman",
+        "Şimdiki zaman",
+        "Geniş zaman",
+        "Görülen geçmiş zaman"
       ],
-      "dogru_index": 0,
-      "cozum": "Bu beş zaman türü haber/bildirme kipleridir. İstek, şart, gereklilik ve emir dilek kipleri içinde yer alır.",
+      "dogru_index": 3,
+      "cozum": "Görülen geçmiş zaman \"-di, -dı, -du, -dü, -tı, -ti\" ekleriyle yapılır ve işin kişi tarafından görüldüğünü bildirir; \"-mış\" öğrenilen geçmiş zamandır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Türkçedeki beş haber kipini say.",
-        "back": "Görülen geçmiş, öğrenilen geçmiş, şimdiki, gelecek ve geniş zaman kipleri."
-      }
+        "front": "Görülen geçmiş zaman nedir?",
+        "back": "\"-di\" ekiyle yapılan, işin kişi tarafından görüldüğünü bildiren kiptir."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir fiil, gelecekte gerçekleşme zamanı vermek yerine yapılmasının gerekli olduğunu belirtiyor. Bu anlam hangi kip grubuna girer?",
+      "alt_beceri": "Haber ve dilek kiplerini, kişi eklerini çözümler.",
+      "metin": "\"Geziyorum, gelmekteyim, yağmakta\" çekimlerinde işin söyleniş anıyla aynı zamanda gerçekleştiği görülür. Bu kip hangisidir?",
       "secenekler": [
-        "Haber kiplerine",
-        "Dilek kiplerine",
-        "Birleşik fiil yapısına",
-        "Kişi zamirlerine"
+        "Gelecek zaman",
+        "Şimdiki zaman",
+        "Geniş zaman",
+        "İstek kipi"
       ],
       "dogru_index": 1,
-      "cozum": "Gereklilik, dilek kiplerinden biridir. Dilek kipleri zaman bildirmez; istek, şart, gereklilik veya emir anlamı katar.",
+      "cozum": "\"-yor, -mekte, -makta\" ekleriyle yapılan şimdiki zaman, iş ile anlatışın aynı zamanda olduğunu bildirir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dilek kiplerinin temel işlevlerini yaz.",
-        "back": "İstek, şart, gereklilik ve emir anlamı katar; doğrudan zaman bildirmez."
-      }
+        "front": "Şimdiki zaman nedir?",
+        "back": "\"-yor, -mekte, -makta\" ekleriyle yapılan, işin şu anda gerçekleştiğini bildiren kiptir."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir fiilin sonundaki ek, işi yapanın konuşan kişi mi, dinleyen mi, başkası mı olduğunu gösteriyor. Bu ekin işlevi nedir?",
+      "alt_beceri": "Basit, türemiş ve birleşik fiilleri ayırt eder.",
+      "metin": "\"Görür\" çekiminin olumsuzu \"görmez\"dir; burada zaman eki ortadan kalkmıştır. Bu durum hangi kiple ilgilidir?",
       "secenekler": [
-        "Fiilin olumsuzluğunu bildirmek",
-        "Eylemin yönünü bildirmek",
-        "Kişiyi (şahsı) bildirmek",
-        "Bir adın niteliğini bildirmek"
+        "Geniş zaman",
+        "Şimdiki zaman",
+        "Görülen geçmiş zaman",
+        "Gereklilik kipi"
       ],
-      "dogru_index": 2,
-      "cozum": "Kişi ekleri eylemi kimin yaptığını belirtir ve özneyi bulmaya yardımcı olur. Olumsuzluk eki ve ad niteleme bu eklerin işlevi değildir.",
+      "dogru_index": 0,
+      "cozum": "Geniş zaman \"-r, -er, -ır\" ekiyle yapılır; olumsuzu \"-mez, -maz\" ile kurulur ve zaman eki ortadan kalkar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fiillerde kişi ekleri hangi bilgiyi bildirir?",
-        "back": "Eylemi kimin yaptığını bildirir ve öznenin bulunmasına yardımcı olur."
-      }
+        "front": "Geniş zamanın olumsuzu nedir?",
+        "back": "\"-mez, -maz\" ekleriyle kurulur: görür – görmez."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir eylem kökü tek bir kip eki ve kişi ekiyle çekimleniyor; ikinci bir kip eki bulunmuyor. Zaman yapısına göre nasıl sınıflandırılır?",
+      "alt_beceri": "Haber ve dilek kiplerini, kişi eklerini çözümler.",
+      "metin": "\"Düşünmeliyiz, yürümelisiniz, olmalı\" çekimleri gerekme ve ihtimal anlamı taşır. Bu çekimler hangi kipte yapılmıştır?",
       "secenekler": [
-        "Birleşik zamanlı fiil",
-        "Birleşik fiil",
-        "Türemiş isim",
-        "Basit zamanlı fiil"
+        "İstek kipi",
+        "Şart kipi",
+        "Gereklilik kipi",
+        "Emir kipi"
       ],
-      "dogru_index": 3,
-      "cozum": "Tek kip eki alan fiil basit zamanlı fiildir. İki kip eki taşıyan fiiller birleşik zamanlıdır; birleşik zamanlılık fiilin yapıca birleşik olması demek değildir.",
+      "dogru_index": 2,
+      "cozum": "\"-meli, -malı\" ekiyle kurulan gereklilik kipi gerekme ve ihtimal anlamı katar; \"-se, -sa\" şart, \"-e, -a\" istek kipidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir fiil tek kip eki alıyorsa zaman yapısına göre nasıl adlandırılır?",
-        "back": "Basit zamanlı (basit çekimli) fiil."
-      }
+        "front": "Gereklilik kipi nedir?",
+        "back": "\"-meli, -malı\" ekiyle kurulan, gerekme ve ihtimal anlamı katan kiptir."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir fiilde ilk kip ekinden sonra ek-fiil kaynaklı ikinci bir kip eki bulunuyor. Bu fiilin zaman çekimi nasıl adlandırılır?",
+      "alt_beceri": "Fiilleri anlam özelliklerine göre sınıflandırır.",
+      "metin": "Emir kipinin sabit bir eki yoktur ve her şahısta çekimi bulunmaz. Emir kipinde hangi kişilerin çekimi yoktur?",
       "secenekler": [
-        "Birleşik zamanlı",
-        "Basit zamanlı",
-        "Basit yapılı",
-        "Türemiş fiil"
+        "2. tekil ve 2. çoğul kişilerin",
+        "1. tekil ve 1. çoğul kişilerin",
+        "3. tekil ve 3. çoğul kişilerin",
+        "Yalnızca 3. tekil kişinin"
       ],
-      "dogru_index": 0,
-      "cozum": "İki kip eki alan fiil birleşik zamanlıdır. Birleşik zamanlılık ile birden fazla sözcükten kurulan birleşik fiil farklı kavramlardır.",
+      "dogru_index": 1,
+      "cozum": "Emir kipinde 1. tekil ve 1. çoğul kişilerin çekimi yoktur: gel, gel-in(iz), gel-sin, gel-sinler.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki kip eki alan fiiller zaman bakımından hangi gruptadır?",
-        "back": "Birleşik zamanlı fiiller."
-      }
+        "front": "Emir kipinin kişi çekimi nedir?",
+        "back": "Birinci tekil ve birinci çoğul kişilerin çekimi yoktur."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k03_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir fiile önce haber kipi, sonra duyulan geçmiş biçimi ekleniyor. Bu birleşik zaman türü hangi adla anılır?",
+      "alt_beceri": "Basit, türemiş ve birleşik fiilleri ayırt eder.",
+      "metin": "\"Git-miş-ti-n\" ve \"Gid-ecek-miş-iz\" çekimlerinde iki kip eki bulunur; ikinci kip eki aslında ek-fiildir. Bu fiiller hangi gruptadır?",
       "secenekler": [
-        "Hikâye birleşik zamanı",
-        "Rivayet birleşik zamanı",
-        "Şart birleşik zamanı",
-        "Basit zaman"
-      ],
-      "dogru_index": 1,
-      "cozum": "Rivayet birleşik zamanında ikinci kip eki -miş olur. -di hikâye, -se/-sa şart birleşik zamanını kurar.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Birleşik zamanlı fiillerin hikâye, rivayet ve şart biçimlerinde ikinci kip eki olarak hangi ekler kullanılır?",
-        "back": "Sırasıyla -di, -miş ve -se/-sa."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k03_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir fiil, eylemin yapılmadığını gösterecek biçimde çekimleniyor. Olumsuzluk oluşturmak için hangi ekler kullanılır?",
-      "secenekler": [
-        "-ki ve -ler",
-        "-de ve -den",
-        "-ma/-me; geniş zamanda -maz/-mez",
-        "-lık ve -cı"
-      ],
-      "dogru_index": 2,
-      "cozum": "Fiil olumsuzluğu çoğunlukla -ma/-me ile, geniş zamanda -maz/-mez biçimleriyle kurulur. Diğer ekler bu işlevi taşımaz.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Fiillerde olumsuzluk hangi eklerle kurulur?",
-        "back": "-ma/-me ve geniş zamanda -maz/-mez biçimleriyle."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k03_o12",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrenci çekimli fiili soru yaparken soru ekini önceki sözcükten ayırıyor, kişi ekini ise soru ekine bağlıyor. Bu yazım kuralı doğru mudur?",
-      "secenekler": [
-        "Hayır; soru eki her zaman fiile bitişik yazılır.",
-        "Hayır; kişi eki soru ekinden ayrı yazılır.",
-        "Hayır; soru eki yalnızca isimlere getirilir.",
-        "Evet; soru eki ayrı, ondan sonraki ekler soru ekine bitişik yazılır."
+        "Basit zamanlı fiiller",
+        "Türemiş fiiller",
+        "Anlamca kaynaşmış fiiller",
+        "Birleşik zamanlı fiiller"
       ],
       "dogru_index": 3,
-      "cozum": "Fiil soru eki mı/mi/mu/mü ile soru anlamı kazanır; soru eki önceki sözcükten ayrı yazılır, sonrasındaki ekler ona bitişir. Diğer seçenekler kuralı tersine çevirir.",
+      "cozum": "İki kip eki alan fiiller birleşik zamanlıdır: hikâye (-di), rivayet (-miş), şart (-se). Emir kipinin birleşik zamanı yoktur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fiillere soru anlamı veren ekin yazımı nasıldır?",
-        "back": "mı/mi/mu/mü soru eki ayrı yazılır; ardından gelen ekler soru ekine bitişir."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k03_o13",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir konuşmacı, ileride gerçekleşmesi beklenen bir etkinliği şimdiki zaman ekiyle anlatıyor. Kullanılan kipin bildirdiği zaman ile amaçlanan zaman uyuşmadığında bu olaya ne denir?",
-      "secenekler": [
-        "Anlam-zaman kayması",
-        "Fiilde çatı",
-        "Ses olayı",
-        "Basit fiil"
-      ],
-      "dogru_index": 0,
-      "cozum": "Kip eki görevinden farklı biçimde kullanıldığında anlam-zaman kayması oluşur. Bu durum fiilin yapısal olarak basit ya da birleşik olmasından farklıdır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Kip ekinin başka bir zaman ya da kipin yerine kullanılmasına ne denir?",
-        "back": "Anlam-zaman (kip) kayması."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k03_o14",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir çözümleme ekibi, fiilleri yapım eki almama, yapım ekiyle oluşma ve birden fazla sözcükten kurulma ölçütlerine göre sınıflandırıyor. Üç ana başlığı yaz.",
-      "secenekler": [
-        "Kılış, durum ve oluş",
-        "Basit, türemiş ve birleşik",
-        "Haber, dilek ve kişi",
-        "Niteleme, miktar ve zaman"
-      ],
-      "dogru_index": 1,
-      "cozum": "Yapı bakımından fiiller basit, türemiş ve birleşik olarak sınıflandırılır. Kılış-durum-oluş anlam özelliği; haber-dilek ise kip gruplarıdır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Fiiller yapısına göre hangi üç ana gruba ayrılır?",
-        "back": "Basit, türemiş ve birleşik fiiller."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k03_o15",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kurum, belgeyi geçerli hâle getirmek anlamında bir ad ile yardımcı fiili birleştirerek yeni bir eylem kuruyor. Bu yapı birleşik fiillerin hangi grubuna girer?",
-      "secenekler": [
-        "Yeterlik fiiline",
-        "Anlamca kaynaşmış birleşik fiile",
-        "Yardımcı fiille kurulan birleşik fiile",
-        "Basit fiile"
-      ],
-      "dogru_index": 2,
-      "cozum": "Ad/ad soylu sözcükle yardımcı fiilin birleşmesi bu grubu oluşturur. Yeterlik, tezlik ve benzeri yapılar kurallı özel birleşik fiillerdir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Yardımcı fiille kurulan birleşik fiilin kuruluşunu açıkla.",
-        "back": "Ad ya da ad soylu sözcük, kendi anlamı dışında kullanılan etmek, eylemek, olmak, kılmak veya buyurmak gibi yardımcı fiillerle birleşir."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k03_o16",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir çalışan, uygun koşul oluşursa yeni yazılımı çalıştırabileceğini belirtiyor. Bu fiilde yeterlik birleşiğinin kattığı anlam nedir?",
-      "secenekler": [
-        "Eylemin çok hızlı yapılması",
-        "Eylemin sürmekte olması",
-        "Eylemin gerçekleşmesine az kalması",
-        "Eylemi yapabilme gücü ya da olanağı"
-      ],
-      "dogru_index": 3,
-      "cozum": "Yeterlik fiili bir işi yapmaya gücü yetme/olanağı anlatır ve -abil/-ebil ile kurulur. Tezlik hız, sürerlik devam, yaklaşma ise az kalma anlamı verir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Yeterlik fiili hangi anlamı verir ve hangi eklerle kurulur?",
-        "back": "Bir işi yapabilme gücü veya olanağı anlamı verir; fiil köküne -abil/-ebil getirilerek kurulur."
-      }
+        "front": "Birleşik zamanlı fiil nedir?",
+        "back": "İki kip eki alan fiildir: hikâye, rivayet ve şart birleşik zamanları vardır."
+      },
+      "kazanim": "Fiilleri anlam, kip, kişi ve yapı bakımından çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u04_k03_o01:flashcard",
-      "front": "Fiilleri tanımla ve bir sözcüğün fiil olup olmadığını sınama yolunu yaz.",
-      "back": "Fiiller iş, oluş, kılış, durum ve hareket bildirir; yalın sözcüğe -mak/-mek getirilerek fiil olup olmadığı sınanabilir."
+      "front": "Fiil nedir?",
+      "back": "İş, oluş, kılış, durum ve hareket bildiren sözcüktür; \"-mek/-mak\" alabilir."
     },
     {
       "id": "edebiyat_10_u04_k03_o02:flashcard",
-      "front": "Kılış, durum ve oluş fiillerini nesne ve özne iradesi bakımından ayır.",
-      "back": "Kılış fiilleri öznenin iradesiyle nesneyi etkiler; durum fiilleri nesne almadan bir durumu sürdürür; oluş fiilleri kendiliğinden değişim bildirir."
+      "front": "Kılış fiili nedir?",
+      "back": "Öznenin iradesiyle yapılan, nesne alan (geçişli) fiildir: yaz-, kes-, sil-."
     },
     {
       "id": "edebiyat_10_u04_k03_o03:flashcard",
-      "front": "Çekimli fiil ne demektir ve cümlede genellikle hangi görevde bulunur?",
-      "back": "Kip ve kişi eki almış fiildir; cümlede yüklem görevindedir."
+      "front": "Durum fiili nedir?",
+      "back": "Nesne almayan, bir durumun sürekliliğini ya da durağanlığını anlatan fiildir: uyu-, gül-."
     },
     {
       "id": "edebiyat_10_u04_k03_o04:flashcard",
-      "front": "Haber kipleri fiile hangi temel anlamı katar?",
-      "back": "Zaman bildirir."
+      "front": "Oluş fiili nedir?",
+      "back": "Öznenin iradesi dışında, kendiliğinden gerçekleşen değişimi anlatan fiildir: sarar-, büyü-."
     },
     {
       "id": "edebiyat_10_u04_k03_o05:flashcard",
-      "front": "Türkçedeki beş haber kipini say.",
-      "back": "Görülen geçmiş, öğrenilen geçmiş, şimdiki, gelecek ve geniş zaman kipleri."
+      "front": "Görülen geçmiş zaman nedir?",
+      "back": "\"-di\" ekiyle yapılan, işin kişi tarafından görüldüğünü bildiren kiptir."
     },
     {
       "id": "edebiyat_10_u04_k03_o06:flashcard",
-      "front": "Dilek kiplerinin temel işlevlerini yaz.",
-      "back": "İstek, şart, gereklilik ve emir anlamı katar; doğrudan zaman bildirmez."
+      "front": "Şimdiki zaman nedir?",
+      "back": "\"-yor, -mekte, -makta\" ekleriyle yapılan, işin şu anda gerçekleştiğini bildiren kiptir."
     },
     {
       "id": "edebiyat_10_u04_k03_o07:flashcard",
-      "front": "Fiillerde kişi ekleri hangi bilgiyi bildirir?",
-      "back": "Eylemi kimin yaptığını bildirir ve öznenin bulunmasına yardımcı olur."
+      "front": "Geniş zamanın olumsuzu nedir?",
+      "back": "\"-mez, -maz\" ekleriyle kurulur: görür – görmez."
     },
     {
       "id": "edebiyat_10_u04_k03_o08:flashcard",
-      "front": "Bir fiil tek kip eki alıyorsa zaman yapısına göre nasıl adlandırılır?",
-      "back": "Basit zamanlı (basit çekimli) fiil."
+      "front": "Gereklilik kipi nedir?",
+      "back": "\"-meli, -malı\" ekiyle kurulan, gerekme ve ihtimal anlamı katan kiptir."
     },
     {
       "id": "edebiyat_10_u04_k03_o09:flashcard",
-      "front": "İki kip eki alan fiiller zaman bakımından hangi gruptadır?",
-      "back": "Birleşik zamanlı fiiller."
+      "front": "Emir kipinin kişi çekimi nedir?",
+      "back": "Birinci tekil ve birinci çoğul kişilerin çekimi yoktur."
     },
     {
       "id": "edebiyat_10_u04_k03_o10:flashcard",
-      "front": "Birleşik zamanlı fiillerin hikâye, rivayet ve şart biçimlerinde ikinci kip eki olarak hangi ekler kullanılır?",
-      "back": "Sırasıyla -di, -miş ve -se/-sa."
-    },
-    {
-      "id": "edebiyat_10_u04_k03_o11:flashcard",
-      "front": "Fiillerde olumsuzluk hangi eklerle kurulur?",
-      "back": "-ma/-me ve geniş zamanda -maz/-mez biçimleriyle."
-    },
-    {
-      "id": "edebiyat_10_u04_k03_o12:flashcard",
-      "front": "Fiillere soru anlamı veren ekin yazımı nasıldır?",
-      "back": "mı/mi/mu/mü soru eki ayrı yazılır; ardından gelen ekler soru ekine bitişir."
-    },
-    {
-      "id": "edebiyat_10_u04_k03_o13:flashcard",
-      "front": "Kip ekinin başka bir zaman ya da kipin yerine kullanılmasına ne denir?",
-      "back": "Anlam-zaman (kip) kayması."
-    },
-    {
-      "id": "edebiyat_10_u04_k03_o14:flashcard",
-      "front": "Fiiller yapısına göre hangi üç ana gruba ayrılır?",
-      "back": "Basit, türemiş ve birleşik fiiller."
-    },
-    {
-      "id": "edebiyat_10_u04_k03_o15:flashcard",
-      "front": "Yardımcı fiille kurulan birleşik fiilin kuruluşunu açıkla.",
-      "back": "Ad ya da ad soylu sözcük, kendi anlamı dışında kullanılan etmek, eylemek, olmak, kılmak veya buyurmak gibi yardımcı fiillerle birleşir."
-    },
-    {
-      "id": "edebiyat_10_u04_k03_o16:flashcard",
-      "front": "Yeterlik fiili hangi anlamı verir ve hangi eklerle kurulur?",
-      "back": "Bir işi yapabilme gücü veya olanağı anlamı verir; fiil köküne -abil/-ebil getirilerek kurulur."
+      "front": "Birleşik zamanlı fiil nedir?",
+      "back": "İki kip eki alan fiildir: hikâye, rivayet ve şart birleşik zamanları vardır."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)"
+  ]
 }

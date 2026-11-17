@@ -2,251 +2,255 @@
   "konu_id": "fizik_10_u03_k03",
   "sinif": 10,
   "ders": "Fizik",
-  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "baslik": "3.3 Ohm Yasası",
+  "topic_key": "Fizik > 3.3 Ohm Yasası",
+  "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar.",
+  "kaynak": "Fizik 10 ders kitabı, s.215-222",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "fizik_10_u03_k03_o01",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir kalibrasyon yükünün direnci 7 Ω’dur. Bu yükten 3 A akım geçirilmesi için uçlarına kaç V potansiyel fark uygulanmalıdır?",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Ohm Yasası hangi ilişkiyi ifade eder?",
       "secenekler": [
-        "21 V",
-        "10 V",
-        "4 V",
-        "7 V"
+        "Potansiyel fark ile akımın çarpımı sabittir",
+        "Sabit sıcaklıkta potansiyel farkın akıma oranı sabittir",
+        "Akımın potansiyel farka oranı sürekli artar",
+        "Direnç zamana bağlıdır"
       ],
-      "dogru_index": 0,
-      "cozum": "Ohm Yasası’na göre V = IR = 3 × 7 = 21 V olur. Potansiyel farkı bulmak için akım ile direnç çarpılır.",
+      "dogru_index": 1,
+      "cozum": "Kitapta sabit sıcaklıkta V/I oranının sabit kaldığı ve bu sabitin direnci verdiği belirtilir (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ohm Yasası'nda potansiyel fark, akım ve direnç arasındaki bağıntıyı yaz.",
-        "back": "V = I·R (eşdeğer olarak R = V/I)."
+        "front": "Ohm Yasası'nın temel ifadesi nedir?",
+        "back": "V/I = R (sabit sıcaklıkta)."
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o02",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Direnci sabit bir elemanın uçlarındaki gerilim 4 V'tan 8 V'a yükseltiliyor. Akımı nasıl değişir?",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Ohm Yasası'nın matematiksel modeli hangisidir?",
       "secenekler": [
-        "Yarıya düşer.",
-        "İki katına çıkar.",
-        "Değişmez.",
-        "Dört katına çıkar."
+        "V = I/R",
+        "V = R/I",
+        "I = V·R",
+        "V = I·R"
       ],
-      "dogru_index": 1,
-      "cozum": "R sabitken V = IR olduğundan gerilimin iki katına çıkması akımı da iki katına çıkarır. Direnç de değişmedikçe akım sabit kalmaz.",
+      "dogru_index": 3,
+      "cozum": "V = I·R; birimi volttur (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sabit sıcaklıkta ve sabit dirençte potansiyel fark değişirse akım nasıl değişir?",
-        "back": "Akım potansiyel farkla doğru orantılıdır; V iki katına çıkarsa I de iki katına çıkar."
+        "front": "V = I·R bağıntısının anlamı nedir?",
+        "back": "V = I·R"
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o03",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir akım düzenleyici devresinde besleme gerilimi 18 V sabit tutulurken yük direnci 6 Ω’dan 12 Ω’a çıkarılıyor. Akımın yeni değeri ilk değere göre nasıl değişir?",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Potansiyel fark-akım grafiğinin eğimi neyi verir?",
       "secenekler": [
-        "İki katına çıkar.",
-        "Değişmez.",
-        "Yarıya düşer.",
-        "Dört katına çıkar."
+        "Direnci",
+        "Gücü",
+        "Yükü",
+        "Zamanı"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak gerilimi sabitken I = V/R’dir. Direnç iki katına çıkarıldığında akım yarıya iner.",
+      "dogru_index": 0,
+      "cozum": "Kitaptaki etkinlikte V-I grafiğinin eğiminin direnci verdiği bulunur (s.216-217).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Potansiyel fark sabitken direnç büyütülürse devre akımında nasıl bir değişim olur?",
-        "back": "Akım azalır; I = V/R olduğundan sabit V için I, R ile ters orantılıdır."
+        "front": "Direnç, gerilim ile akım arasındaki ilişkiden nasıl elde edilir?",
+        "back": "Gerilim-akım doğrusunun eğimi direnci verir: R = V / I."
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o04",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir akıllı sera kontrol biriminin dirençli algılayıcısında 21 V potansiyel fark ve 3 A akım ölçülüyor. Algılayıcının direnci kaç Ω’dur?",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Aynı iletkende potansiyel fark artırılırsa akım nasıl değişir?",
       "secenekler": [
-        "5 Ω",
-        "4 Ω",
-        "6 Ω",
-        "7 Ω"
+        "Azalır",
+        "Değişmez",
+        "Doğru orantılı olarak artar",
+        "Önce artar sonra azalır"
       ],
-      "dogru_index": 3,
-      "cozum": "Ohm Yasası’na göre R=V/I=21/3=7 Ω olur. Direnci bulmak için potansiyel fark akıma bölünür.",
+      "dogru_index": 2,
+      "cozum": "Direnç sabitken I = V/R olduğundan V ile I doğru orantılıdır (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir devre elemanının direncini V ve I ölçümlerinden nasıl hesaplarsın?",
-        "back": "R = V/I; volt cinsinden potansiyel fark amper cinsinden akıma bölünür."
+        "front": "Gerilim artarsa akım ne olur?",
+        "back": "Doğru orantılı artar."
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o05",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir motor kontrol kartındaki 9 Ω’luk yük direncinin uçlarına 18 V uygulanıyor. Dirençten geçen akım kaç A olur?",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Bir iletkenin direnci 4 Ω'da sabit tutulup gerilim 4 V'tan 8 V'a çıkarıldığında akım 1 A'dan 2 A'ya çıkıyor. Akım ile potansiyel fark arasındaki ilişki nedir?",
       "secenekler": [
-        "2 A",
-        "9 A",
-        "3 A",
-        "1 A"
+        "Ters orantılı",
+        "Karesel",
+        "Bağımsız",
+        "Doğru orantılı"
       ],
-      "dogru_index": 0,
-      "cozum": "Ohm Yasası’na göre I=V/R=18/9=2 A olur. Akım, potansiyel farkın dirence bölünmesiyle bulunur.",
+      "dogru_index": 3,
+      "cozum": "Ohm Yasası'na göre V arttıkça I aynı oranda artar (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bilinen V ve R değerlerinden devreden geçen akımı nasıl hesaplarsın?",
-        "back": "I = V/R."
+        "front": "Akım ile gerilim arasındaki orantı nedir?",
+        "back": "Doğru orantı."
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o06",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir V-I grafiğinde I = 3 A iken V = 18 V noktası bulunuyor. Grafiğin eğimi olan direnç kaç Ω’dur?",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Uçları arasındaki potansiyel fark 12 V olan 6 Ω'luk dirençten kaç amper akım geçer?",
       "secenekler": [
-        "54 Ω",
-        "6 Ω",
-        "15 Ω",
-        "3 Ω"
+        "72",
+        "2",
+        "0,5",
+        "18"
       ],
       "dogru_index": 1,
-      "cozum": "V-I grafiğinin eğimi R = V/I = 18/3 = 6 Ω’dur. Gerilim ile akımı çarpmak yerine oran alınır.",
+      "cozum": "I = V/R = 12/6 = 2 A (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "V-I grafiğinde sabit dirençli iletkenin doğrusunun eğimi hangi büyüklüğü verir?",
-        "back": "Eğim V/I olduğundan direnci verir."
+        "front": "Verilen gerilim ve dirençten akım nasıl hesaplanır?",
+        "back": "2 A"
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o07",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir dirençten geçen akım ve direncin uçlarındaki gerilim doğru ölçülecek. Ölçü aletlerinin bağlantısı nasıl olmalıdır?",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Üzerinden 3 A akım geçen 4 Ω'luk direncin uçları arasındaki potansiyel fark kaç V'tur?",
       "secenekler": [
-        "İkisi de dirence paralel",
-        "Ampermetre paralel, voltmetre seri",
-        "İkisi de dirençle seri",
-        "Ampermetre seri, voltmetre dirence paralel"
+        "12",
+        "7",
+        "0,75",
+        "1,33"
       ],
-      "dogru_index": 3,
-      "cozum": "Ampermetre, devreden geçen akımı ölçmek için seri; voltmetre potansiyel farkı ölçmek için dirence paralel bağlanır. İkisini aynı şekilde bağlamak doğru ölçüm sağlamaz.",
+      "dogru_index": 0,
+      "cozum": "V = I·R = 3·4 = 12 V (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Akımı ve potansiyel farkı ölçmek için ampermetre ile voltmetre devreye nasıl bağlanır?",
-        "back": "Ampermetre devre elemanına seri, voltmetre elemanın uçlarına paralel bağlanır."
+        "front": "Akım ile direnç çarpımının karşılığı nedir?",
+        "back": "12 V"
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o08",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir ölçüm kartında sensöre bağlı yük, daha büyük dirençli bir bileşenle değiştiriliyor; besleme gerilimi sabit tutuluyor. Akım nasıl değişir?",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Uçları arasındaki potansiyel fark 20 V olan dirençten 4 A akım geçiyor. Direnç kaç Ω'dur?",
       "secenekler": [
-        "Artar.",
-        "Değişmez.",
-        "Azalır.",
-        "Önce artar sonra aynı kalır."
+        "80",
+        "0,2",
+        "5",
+        "24"
       ],
       "dogru_index": 2,
-      "cozum": "Kaynak gerilimi sabitken Ohm Yasası I=V/R’dir. Direnç arttığında devre akımı azalır.",
+      "cozum": "R = V/I = 20/4 = 5 Ω (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kaynak gerilimi sabitken bir devrenin direnci artırılırsa akım nasıl değişir?",
-        "back": "Ohm Yasası’na göre I=V/R olduğundan direnç artarken akım azalır."
+        "front": "Gerilim ve akımdan direnç nasıl bulunur?",
+        "back": "5 Ω"
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o09",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir ölçüm sensörünün direnci çalışma boyunca sabit tutuluyor, ancak besleme gerilimi düşürülüyor. Ohm Yasası’na göre sensörden geçen akım ne olur?",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Potansiyel fark sabitken direnç iki katına çıkarılırsa akım nasıl değişir?",
       "secenekler": [
-        "Azalır.",
-        "Artar.",
-        "Değişmez.",
-        "Sıfırdan farklı olamaz."
+        "İki katına çıkar",
+        "Yarıya iner",
+        "Değişmez",
+        "Dört katına çıkar"
       ],
-      "dogru_index": 0,
-      "cozum": "Direnç sabitken I=V/R’dir. Besleme gerilimi azaldığında sensörden geçen akım da azalır.",
+      "dogru_index": 1,
+      "cozum": "I = V/R olduğundan R iki katına çıkarsa I yarıya iner; akım dirençle ters orantılıdır (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Direnci sabit bir elemanın uçlarındaki potansiyel fark azalırsa akımı nasıl değişir?",
-        "back": "Ohm Yasası’na göre I=V/R olduğundan direnç sabitken akım potansiyel farkla doğru orantılıdır; akım azalır."
+        "front": "Direnç artarsa akım ne olur?",
+        "back": "Ters orantılı azalır."
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k03_o10",
-      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
-      "metin": "Bir sensör devresine 18 V uygulanıyor ve elemanın direnci 6 Ω ölçülüyor. Devreden kaç A akım geçer?",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "10 Ω'luk dirençten 2 A akım geçiyor. Direncin uçları arasındaki potansiyel fark kaç V'tur?",
       "secenekler": [
-        "108 A",
-        "3 A",
-        "12 A",
-        "24 A"
+        "5",
+        "12",
+        "0,2",
+        "20"
       ],
-      "dogru_index": 1,
-      "cozum": "Ohm Yasası’na göre I = V/R = 18/6 = 3 A olur. Akım gerilimin dirence bölünmesiyle bulunur.",
+      "dogru_index": 3,
+      "cozum": "V = I·R = 2·10 = 20 V (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bilinen potansiyel fark ve dirençten devre akımını nasıl hesaplarsın?",
-        "back": "Ohm Yasası’ndan I = V/R bağıntısı kullanılır."
+        "front": "Potansiyel farkın bağıntısı nedir?",
+        "back": "20 V"
       },
-      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "fizik_10_u03_k03_o01:flashcard",
-      "front": "Ohm Yasası'nda potansiyel fark, akım ve direnç arasındaki bağıntıyı yaz.",
-      "back": "V = I·R (eşdeğer olarak R = V/I)."
+      "front": "Ohm Yasası'nın temel ifadesi nedir?",
+      "back": "V/I = R (sabit sıcaklıkta)."
     },
     {
       "id": "fizik_10_u03_k03_o02:flashcard",
-      "front": "Sabit sıcaklıkta ve sabit dirençte potansiyel fark değişirse akım nasıl değişir?",
-      "back": "Akım potansiyel farkla doğru orantılıdır; V iki katına çıkarsa I de iki katına çıkar."
+      "front": "V = I·R bağıntısının anlamı nedir?",
+      "back": "V = I·R"
     },
     {
       "id": "fizik_10_u03_k03_o03:flashcard",
-      "front": "Potansiyel fark sabitken direnç büyütülürse devre akımında nasıl bir değişim olur?",
-      "back": "Akım azalır; I = V/R olduğundan sabit V için I, R ile ters orantılıdır."
+      "front": "Direnç, gerilim ile akım arasındaki ilişkiden nasıl elde edilir?",
+      "back": "Gerilim-akım doğrusunun eğimi direnci verir: R = V / I."
     },
     {
       "id": "fizik_10_u03_k03_o04:flashcard",
-      "front": "Bir devre elemanının direncini V ve I ölçümlerinden nasıl hesaplarsın?",
-      "back": "R = V/I; volt cinsinden potansiyel fark amper cinsinden akıma bölünür."
+      "front": "Gerilim artarsa akım ne olur?",
+      "back": "Doğru orantılı artar."
     },
     {
       "id": "fizik_10_u03_k03_o05:flashcard",
-      "front": "Bilinen V ve R değerlerinden devreden geçen akımı nasıl hesaplarsın?",
-      "back": "I = V/R."
+      "front": "Akım ile gerilim arasındaki orantı nedir?",
+      "back": "Doğru orantı."
     },
     {
       "id": "fizik_10_u03_k03_o06:flashcard",
-      "front": "V-I grafiğinde sabit dirençli iletkenin doğrusunun eğimi hangi büyüklüğü verir?",
-      "back": "Eğim V/I olduğundan direnci verir."
+      "front": "Verilen gerilim ve dirençten akım nasıl hesaplanır?",
+      "back": "2 A"
     },
     {
       "id": "fizik_10_u03_k03_o07:flashcard",
-      "front": "Akımı ve potansiyel farkı ölçmek için ampermetre ile voltmetre devreye nasıl bağlanır?",
-      "back": "Ampermetre devre elemanına seri, voltmetre elemanın uçlarına paralel bağlanır."
+      "front": "Akım ile direnç çarpımının karşılığı nedir?",
+      "back": "12 V"
     },
     {
       "id": "fizik_10_u03_k03_o08:flashcard",
-      "front": "Kaynak gerilimi sabitken bir devrenin direnci artırılırsa akım nasıl değişir?",
-      "back": "Ohm Yasası’na göre I=V/R olduğundan direnç artarken akım azalır."
+      "front": "Gerilim ve akımdan direnç nasıl bulunur?",
+      "back": "5 Ω"
     },
     {
       "id": "fizik_10_u03_k03_o09:flashcard",
-      "front": "Direnci sabit bir elemanın uçlarındaki potansiyel fark azalırsa akımı nasıl değişir?",
-      "back": "Ohm Yasası’na göre I=V/R olduğundan direnç sabitken akım potansiyel farkla doğru orantılıdır; akım azalır."
+      "front": "Direnç artarsa akım ne olur?",
+      "back": "Ters orantılı azalır."
     },
     {
       "id": "fizik_10_u03_k03_o10:flashcard",
-      "front": "Bilinen potansiyel fark ve dirençten devre akımını nasıl hesaplarsın?",
-      "back": "Ohm Yasası’ndan I = V/R bağıntısı kullanılır."
+      "front": "Potansiyel farkın bağıntısı nedir?",
+      "back": "20 V"
     }
-  ],
-  "baslik": "3.3 Ohm Yasası",
-  "topic_key": "Fizik > 3.3 Ohm Yasası"
+  ]
 }

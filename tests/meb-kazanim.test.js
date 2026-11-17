@@ -60,9 +60,10 @@ ok("Biyoloji kaynağı MEB PDF", /mufredat\.meb\.gov\.tr/.test(RESMI.kaynaklar["
 // ---------- 2) Eşleme dosyası ----------
 console.log("\n== 2) Konu eşleme dosyası ==");
 const konular = ESL.konular || [];
-// Müfredat ağacı 172 konu (konular.js) — havuzdan bağımsızdır.
-// Havuzlar 152: ajanın elle yazdığı 20 havuz kullanıcı isteğiyle silindi.
-esit("müfredat konusu 172", konular.length, 172);
+// v75 — Müfredat ağacı 193 konu, havuz 192. TDE "Paragraf" konusunun
+// havuzu yok (kullanıcı kararı: uygulamada paragraf sorulamıyor), bu yüzden
+// kazanım eşleme dosyasında kaydı da yok.
+esit("kazanım konusu 192 (havuzlu konular)", konular.length, 192);
 const kodKumesi = new Set(kodlar);
 const bozukKod = konular.flatMap(k => (k.kodlar || []).filter(kod => !kodKumesi.has(kod)).map(kod => k.konu_id + ":" + kod));
 ok("her eşlenen kod resmî tabloda var", bozukKod.length === 0, bozukKod.slice(0, 4).join(","));
@@ -72,15 +73,12 @@ const havuzDosyalari = fs.readdirSync(path.join(KOK, "site/content/soru_havuzlar
 const konuIdKumesi = new Set(havuzDosyalari.map(a => a.replace(/\.json$/, "")));
 // 20 konunun havuzu silindi → havuzsuz kalması BEKLENEN durum.
 // Başka ajan soru üretim talimatıyla dolduracak.
-const HAVUZSUZ = new Set(["biyo_10_u01_k08","biyo_10_u02_k05","biyo_10_u02_k06","cogr_10_u04_k02",
-  "cogr_10_u05_k02","cogr_10_u05_k03","cogr_10_u06_k02","cogr_10_u06_k03","cogr_10_u06_k04",
-  "cogr_10_u07_k01","din_10_u02_k03","din_10_u02_k04","din_10_u03_k04","edebiyat_10_u03_k06",
-  "edebiyat_10_u04_k06","kimya_10_u02_k06","kimya_10_u02_k07","kimya_10_u02_k08",
-  "tarih_10_u01_k04","tarih_10_u02_k05"]);
+const HAVUZSUZ = new Set(["edebiyat_10_u04_k06"]);   // TDE Paragraf
 const bozukKonu = konular.filter(k => !konuIdKumesi.has(k.konu_id) && !HAVUZSUZ.has(k.konu_id)).map(k => k.konu_id);
-ok("her konu_id gerçek bir havuz (20 silinen hariç)", bozukKonu.length === 0, bozukKonu.slice(0, 4).join(","));
-esit("havuz dosyası 152", konuIdKumesi.size, 152);
-esit("havuzsuz konu 20", konular.filter(k => HAVUZSUZ.has(k.konu_id)).length, 20);
+ok("her konu_id gerçek bir havuz (Paragraf hariç)", bozukKonu.length === 0, bozukKonu.slice(0, 4).join(","));
+esit("havuz dosyası 192", konuIdKumesi.size, 192);
+// Paragraf'ın havuzu (ve dolayısıyla kazanım kaydı) yok — beklenen 0.
+esit("havuzsuz konu kaydı yok (Paragraf dosyada yok)", konular.filter(k => HAVUZSUZ.has(k.konu_id)).length, 0);
 
 const dersKarismasi = konular.flatMap(k => (k.kodlar || [])
   .filter(kod => !kod.startsWith({ "Biyoloji": "BİY", "Coğrafya": "COĞ", "Din Kültürü": "DKAB", "Felsefe": "FEL", "Fizik": "FİZ", "Kimya": "KİM", "Matematik": "MAT", "Tarih": "TAR", "Türk Dili ve Edebiyatı": "TDE" }[k.ders] || "@@"))
@@ -93,7 +91,10 @@ ok("'yok' kayıtlarında kod yok", konular.filter(k => k.guven === "yok").every(
 ok("'kesin' kayıtlarda kod var", konular.filter(k => k.guven === "kesin").every(k => (k.kodlar || []).length > 0));
 
 // Regresyon tabanı: otomatik eşleşen konu sayısı düşmemeli
-const TABAN = { "Biyoloji": 11, "Coğrafya": 5, "Fizik": 9, "Kimya": 14, "Matematik": 18, "Tarih": 10 };
+/* v75 — Havuzlar ders kitabından yeniden üretildi; "kesin" katman artık
+   havuz kazanımı + Okulizyon arşiv cümlesiyle çalışıyor. Taban, bugünkü
+   gerçek değerlerin biraz altında tutulur (regresyon koruması). */
+const TABAN = { "Biyoloji": 10, "Coğrafya": 12, "Fizik": 8, "Kimya": 12, "Matematik": 11, "Tarih": 10 };
 for (const [ders, n] of Object.entries(TABAN)) {
   const kesin = konular.filter(k => k.ders === ders && k.guven === "kesin").length;
   ok(ders + " kesin eşleşme tabanı (≥" + n + ")", kesin >= n, "gelen: " + kesin);

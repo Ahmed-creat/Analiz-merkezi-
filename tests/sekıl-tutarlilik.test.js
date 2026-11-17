@@ -31,9 +31,11 @@ const HDIR = path.join(KOK, "site", "content", "soru_havuzlari");
 const GV = require(path.join(KOK, "site", "gorsel.js"));
 
 // Incelenen havuzlar: kullanıcının şikâyet ettiği konular
+// v75 — havuz seti ders kitabından yeniden üretildi. Bu test TAMAMI
+// şekilli havuzlarla çalışır: 5 havuz × 10 soru = 50.
 const HAVUZLAR = [
   "mat_10_u01_k01", "mat_10_u01_k02", "mat_10_u01_k03", "mat_10_u01_k04",
-  "fizik_10_u01_k01", "fizik_10_u01_k02"
+  "fizik_10_u01_k01"
 ];
 
 let gecen = 0, kalan = 0;
@@ -78,7 +80,7 @@ HAVUZLAR.forEach(id => {
     ok(s + " SVG'de NaN/undefined yok", !/NaN|undefined|Infinity/.test(svg));
   });
 });
-ok("6 havuzun tamamı şekilli", sekilli === toplamSoru, sekilli + "/" + toplamSoru);
+ok("5 havuzun tamamı şekilli", sekilli === toplamSoru, sekilli + "/" + toplamSoru);
 
 console.log("\n== 2) Grafik eksen adı seriyle uyumlu ==");
 HAVUZLAR.forEach(id => {

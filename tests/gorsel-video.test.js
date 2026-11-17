@@ -52,7 +52,8 @@ ok("doğrulama: eksik seriler yakalanır", GV.dogrula({ tip: "grafik" }).length 
 
 // ---------- 2) Havuzlara eklenen görseller ----------
 console.log("\n== 2) Havuzdaki görseller ==");
-const dosyalar = ["mat_10_u01_k01", "fizik_10_u01_k01", "fizik_10_u01_k02", "fizik_10_u01_k04", "kimya_10_u01_k04", "biyo_10_u01_k02"];
+// v75 — havuz seti ders kitabından yeniden üretildi; görselli dosyalar güncellendi.
+const dosyalar = ["mat_10_u01_k01", "mat_10_u01_k02", "mat_10_u01_k03", "fizik_10_u01_k01", "cogr_10_u06_k03"];
 let gorselliSoru = 0, bozuk = 0;
 dosyalar.forEach(function (h) {
   const d = JSON.parse(fs.readFileSync(path.join(HAVUZ, h + ".json"), "utf8"));
@@ -71,10 +72,11 @@ const q1 = mat.sorular.find(q => q.soru_id === "mat_10_u01_k01_o01");
 ok("trigonometri sorusunda üçgen var", q1 && q1.gorsel && (q1.gorsel.tip === "geometri" || q1.gorsel.tip === "ucgen"), q1 && q1.gorsel && q1.gorsel.tip);
 const q1Kenar = (q1.gorsel.kenarlar || []).map(k => k.etiket);
 ok("üçgen kenarları soru metniyle aynı (7 ve 24)", q1Kenar.indexOf("7") >= 0 && q1Kenar.indexOf("24") >= 0, JSON.stringify(q1Kenar));
-const fiz = JSON.parse(fs.readFileSync(path.join(HAVUZ, "fizik_10_u01_k02.json"), "utf8"));
-const q9 = fiz.sorular.find(q => q.soru_id === "fizik_10_u01_k02_o09");
+// v75 — grafik sorusu yeni fizik havuzundan (sabit hızlı hareket v-t grafiği).
+const fiz = JSON.parse(fs.readFileSync(path.join(HAVUZ, "fizik_10_u01_k01.json"), "utf8"));
+const q9 = fiz.sorular.find(q => q.soru_id === "fizik_10_u01_k01_o03");
 ok("hız-zaman grafiği sorusunda grafik var", q9 && q9.gorsel && q9.gorsel.tip === "grafik");
-esit("grafik +12'den −12'ye", JSON.stringify(q9.gorsel.seriler[0].noktalar), JSON.stringify([[0, 12], [4, 0], [8, -12]]));
+esit("grafik 6 m/s sabit hız", JSON.stringify(q9.gorsel.seriler[0].noktalar), JSON.stringify([[0, 6], [2, 6], [4, 6]]));
 
 // ---------- 3) Görsel ekranlara bağlı mı? ----------
 console.log("\n== 3) Arayüz bağlantısı ==");

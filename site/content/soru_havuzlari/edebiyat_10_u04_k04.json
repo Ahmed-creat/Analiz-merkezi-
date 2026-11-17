@@ -2,378 +2,255 @@
   "konu_id": "edebiyat_10_u04_k04",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 4,
+  "tema_adi": "Nesillerin Mirası",
+  "baslik": "Yazım Kuralları",
+  "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları",
+  "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme.",
+  "kaynak": "10. sınıf Yazım Kuralları notları (Mustafa Çiftçi), 31 s.",
+  "kaynak_dosya": "Yazim.Kurallari.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u04_k04_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir yazım notunda elektrik akımının şiddet birimi olan amper sözcüğü genel bir ölçü birimi anlamında kullanılıyor. Kaynağın kuralına göre ilk harf nasıl yazılır?",
+      "alt_beceri": "Büyük harfin kullanıldığı ve kullanılmadığı yerleri ayırt eder.",
+      "metin": "\"İzmir'e -bu güzel şehre- daha önce hiç gelmemiştim.\" cümlesinde iki kısa çizgi arasına açıklama alınmıştır. Bu açıklamanın ilk harfi nasıl yazılır?",
       "secenekler": [
-        "Küçük harfle",
-        "Büyük harfle",
-        "Tümü büyük harfle",
-        "Kesme işaretinden sonra büyük harfle"
+        "Büyük harfle başlar",
+        "Küçük harfle başlar",
+        "Tamamı büyük yazılır",
+        "Yalnız ilk sözcüğü büyük olur"
       ],
-      "dogru_index": 0,
-      "cozum": "Amper özel adı, kaynakta elektrik akımının şiddet birimi anlamında kullanılır; bu genel anlamıyla küçük harfle yazılır.",
+      "dogru_index": 1,
+      "cozum": "İki kısa çizgi arasındaki açıklama cümleleri büyük harfle başlamaz; cümle büyük harfle başlar kuralının istisnasıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Özel adlardan türetilen sözcüklerin büyük-küçük harfle yazım kuralını açıkla.",
-        "back": "Özel addan türetilen sözcükler büyük harfle başlar; özel ad anlamından çıkıp genel bir anlam kazananlar küçük harfle yazılır."
-      }
+        "front": "İki kısa çizgi arasındaki açıklamanın yazımı nedir?",
+        "back": "Açıklama cümlesi büyük harfle başlamaz: İzmir'e -bu güzel şehre- ..."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir etkinlik takviminde açılış günü 12 mart olarak kaydedilmiş. Tarih yazımına göre ay adı hangi biçimde olmalıdır?",
+      "alt_beceri": "Büyük harfin kullanıldığı ve kullanılmadığı yerleri ayırt eder.",
+      "metin": "\"Kelimeler genel olarak ikiye ayrılır: isimler ve fiiller.\" cümlesinde iki noktadan sonra örnekler sıralanmıştır. Buna göre iki noktadan sonra gelen bölümün ilk harfi nasıl yazılır?",
       "secenekler": [
-        "12 mart",
-        "12 Mart",
-        "12 MART",
-        "12-mart"
+        "Büyük harfle başlar",
+        "Tamamı büyük yazılır",
+        "Yalnız ilk sözcüğü büyük olur",
+        "Küçük harfle başlar"
       ],
-      "dogru_index": 1,
-      "cozum": "Gün ya da ay adı belirli bir tarihle birlikte kullanıldığında büyük harfle başlar. Bu nedenle tarih içindeki ay adı Mart biçiminde yazılır.",
+      "dogru_index": 3,
+      "cozum": "İki noktadan sonra cümle gelirse büyük harfle başlar; cümle ve özel ad niteliğinde olmayan örnekler sıralandığında ise küçük harfle başlar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gün ve ay adları hangi durumda büyük harfle başlar?",
-        "back": "Belirli bir tarihe bağlandıklarında büyük; belirli tarih bildirmediklerinde küçük harfle başlarlar."
-      }
+        "front": "İki noktadan sonra büyük harf kuralı nedir?",
+        "back": "Cümle gelirse büyük, örnek sıralaması gelirse küçük harfle başlar."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir rota notunda Kars'ın güneybatısında ifadesi geçiyor. Yer-yön sözü özel addan sonra geldiğine göre doğru yazım hangisidir?",
+      "alt_beceri": "Büyük harfin kullanıldığı ve kullanılmadığı yerleri ayırt eder.",
+      "metin": "\"Dün Nimet ablama gittim.\" cümlesinde geçen akrabalık bildiren sözcük, kendisinden önceki özel ada rağmen küçük harfle yazılmıştır. Bu yazım hangi kurala dayanır?",
       "secenekler": [
-        "Kars'ın Güneybatısında",
-        "Kars'ın Güney Batısında",
-        "Kars'ın güneybatısında",
-        "kars'ın güneybatısında"
+        "Akrabalık bildiren kelimeler küçük harfle başlar",
+        "Özel adlar her zaman büyük harfle başlar",
+        "Hitaplar büyük harfle başlar",
+        "Tabela yazıları büyük harfle başlar"
       ],
-      "dogru_index": 2,
-      "cozum": "Yer-yön sözü özel addan sonra geldiğinde küçük harfle yazılır; birleşik ara yön güneybatı bitişik yazılır. Bu nedenle doğru biçim Kars'ın güneybatısında olur.",
+      "dogru_index": 0,
+      "cozum": "Akrabalık bildiren kelimeler küçük harfle başlar: Nimet ablama, Nezaket teyzemin.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yer-yön bildiren sözcüklerin özel adların önünde ve arkasında yazımını açıkla.",
-        "back": "Özel addan önce kullanılan yön sözü büyük, özel addan sonra ya da tek başına yön bildirdiğinde küçük harfle başlar; ara yönler bitişik yazılır."
-      }
+        "front": "Akrabalık bildiren kelimelerin yazımı nedir?",
+        "back": "Küçük harfle başlar: Nimet ablama, Nezaket teyzemin."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir redaktör sayıların yazımını denetliyor. Kaynağa göre hangi gruptaki sayılar rakamla gösterilir?",
+      "alt_beceri": "Sayıların ve eklerin yazımını uygular.",
+      "metin": "\"Türkçeden Arapçaya geçmiş birçok kelime vardır.\" cümlesinde dil adlarına çekim eki getirilmiştir. Bu eklerin yazımı için hangisi doğrudur?",
       "secenekler": [
-        "Metindeki bütün sayılar istisnasız",
-        "Yalnızca kişi adlarına bağlı sayılar",
-        "Sadece sıralama bildiren sayılar",
-        "Saat, para tutarı, ölçü ve istatistik verileri"
+        "Kesme işaretiyle ayrılır",
+        "Ek ayrı sözcük olarak yazılır",
+        "Kesme işaretiyle ayrılmaz",
+        "Ek büyük harfle yazılır"
       ],
-      "dogru_index": 3,
-      "cozum": "Metin içinde sayılar genel olarak yazıyla verilir; saat, para tutarı, ölçü ve istatistik verilerinde rakam kullanılır.",
+      "dogru_index": 2,
+      "cozum": "Dil ve lehçe adları büyük harfle başlar; ancak bunlara gelen çekim ekleri kesinlikle kesme işaretiyle ayrılmaz: Türkçeden, Arapçaya.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sayıların metin içinde ve ölçü, saat, para ya da istatistik bildiren kullanımlardaki yazımını karşılaştır.",
-        "back": "Sayılar metin içinde genellikle yazıyla; saat, para tutarı, ölçü ve istatistik verilerinde rakamla yazılır."
-      }
+        "front": "Dil adlarına gelen eklerin yazımı nedir?",
+        "back": "Kesme işaretiyle ayrılmaz: Türkçeden, Arapçaya."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir notta 'Yeni atölyeye Ece __ katılacak.' cümlesi yer alıyor. Cümleye 'o da' anlamı katan bağlaç nasıl yazılmalıdır?",
+      "alt_beceri": "Sayıların ve eklerin yazımını uygular.",
+      "metin": "\"Van Gölü\" ve \"Ağrı Dağı\" yazımlarında tür bildiren ikinci sözcük büyük harfle başlamıştır. Buna karşılık hangi yazımda ikinci sözcük küçük harfle başlar?",
       "secenekler": [
-        "Ece de katılacak",
-        "Ece'de katılacak",
-        "Ece te katılacak",
-        "Ece'te katılacak"
+        "Van Gölü",
+        "Çanakkale Boğazı",
+        "Fırat Nehri",
+        "Kocaeli ili"
       ],
-      "dogru_index": 0,
-      "cozum": "Buradaki de 'dahi' anlamında bağlaçtır ve ayrı yazılır. Bağlaç olan de/da hiçbir zaman te/ta biçiminde yazılmaz.",
+      "dogru_index": 3,
+      "cozum": "Özel ada dâhil olup tamlama kuran göl, dağ, boğaz gibi sözler büyük harfle başlar; özel ada dâhil olmayan il, ilçe, köy sözleri ise küçük harfle başlar: Kocaeli ili.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bağlaç olan de/da ile bulunma durumu ekini yazım bakımından nasıl ayırırsın?",
-        "back": "Bağlaç olan de/da ayrı, bulunma durumu eki -de/-da/-te/-ta sözcüğe bitişik yazılır; bağlaç cümleden çıkarıldığında anlam genellikle büyük ölçüde bozulmaz."
-      }
+        "front": "Yer adlarında tür bildiren sözcüklerin yazımı nedir?",
+        "back": "Özel ada dâhilse büyük (Van Gölü), değilse küçük (Kocaeli ili) yazılır."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir redaktör, kalıplaşmış bağlaçlardan birini yazıyor. Kaynakta bitişik yazıldığı belirtilen biçim hangisidir?",
+      "alt_beceri": "Sayıların ve eklerin yazımını uygular.",
+      "metin": "Bir metinde \"ikişer, üçer, onar, yüzer\" sözcükleri rakamla değil yazıyla yazılmıştır. Bu yazım hangi sayı türüyle ilgilidir?",
       "secenekler": [
-        "Madem ki",
-        "Mademki",
-        "Madem-ki",
-        "Madem,ki"
+        "Sıra sayıları",
+        "Üleştirme sayıları",
+        "Kesirli sayılar",
+        "Çokluk sayıları"
       ],
       "dogru_index": 1,
-      "cozum": "Mademki, kaynakta bitişik yazılan kalıplaşmış ki bağlaçları arasında sayılır. Genel kuralda bağlaç olan ki ayrı yazılır; bu sözcükler istisnadır.",
+      "cozum": "Üleştirme sayıları rakamla değil yazıyla belirtilir: ikişer, üçer, onar, yüzer.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bağlaç olan ki ile ilgi ya da sıfat yapan -ki eklerinin yazım farkını açıkla.",
-        "back": "Bağlaç olan ki ayrı, ilgi zamiri ve sıfat yapan -ki bitişik yazılır; bazı kalıplaşmış bağlaçlar da bitişik yazılır."
-      }
+        "front": "Üleştirme sayılarının yazımı nedir?",
+        "back": "Rakamla değil yazıyla yazılır: ikişer, üçer, onar, yüzer."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir davetli için 'Siz de hazır __?' ifadesi yazılıyor. Soru ekinden sonra kişi eki de getirilecekse doğru yazım hangisidir?",
+      "alt_beceri": "Bağlaç ve soru ekinin yazımını kuralla eşleştirir.",
+      "metin": "\"420185\" ve \"52680250\" sayıları metne aktarılırken üçlü gruplara ayrılmış ve aralarına nokta konmuştur. Bu kural hangi sayılar için geçerlidir?",
       "secenekler": [
-        "hazırmısınız",
-        "hazır mı sınız",
-        "hazır mısınız",
-        "hazırmı sınız"
+        "Beş ve daha çok basamaklı sayılar",
+        "İki basamaklı sayılar",
+        "Yalnızca tarih sayıları",
+        "Yalnızca kesirli sayılar"
       ],
-      "dogru_index": 2,
-      "cozum": "Soru eki hazır sözcüğünden ayrı, kişi eki ise soru ekine bitişik yazılır. Bu nedenle doğru biçim hazır mısınız olur.",
+      "dogru_index": 0,
+      "cozum": "Beş ve beşten çok rakamlı sayılar sondan sayılmak üzere üçlü gruplara ayrılır ve araya nokta konur: 420.185.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Soru eki mı/mi/mu/mü ile bu ekten sonra gelen eklerin yazımını açıkla.",
-        "back": "Soru eki önceki sözcükten ayrı yazılır; soru ekinden sonra gelen ekler ise ona bitişik yazılır."
-      }
+        "front": "Büyük sayıların yazımı nedir?",
+        "back": "Beş ve daha çok basamaklı sayılar üçlü gruplara ayrılır, araya nokta konur."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir envanterde ölçü biriminin kısaltması kullanılacak. Kaynağın kuralına göre bu kısaltmanın sonuna nokta konur mu?",
+      "alt_beceri": "Sayıların ve eklerin yazımını uygular.",
+      "metin": "\"Kitabı kütüphanede unutmuşum.\" cümlesindeki \"-de\" çıkarıldığında cümlenin anlamı bozulmaktadır. Buna göre bu \"-de\" hangi görevdedir?",
       "secenekler": [
-        "Her zaman nokta konur",
-        "İki nokta konur",
-        "Nokta kısaltmanın ortasına konur",
-        "Nokta konmaz"
+        "Bağlaç",
+        "Yapım eki",
+        "Bulunma hâl eki",
+        "Soru eki"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynakta element ve ölçü birimi kısaltmalarının sonunda nokta kullanılmadığı belirtilir. Bu nedenle bir ölçü birimi kısaltması noktasız yazılır.",
+      "dogru_index": 2,
+      "cozum": "Bulunma hâl eki sözcüğe bitişik yazılır ve cümleden çıkarıldığında anlam bozulur. Bağlaç olan \"de\" ise ayrı yazılır, çıkarıldığında anlamda büyük daralma olmaz.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kısaltmalarda büyük-küçük harf, nokta ve ek kullanımı için temel yazım ayrımını belirt.",
-        "back": "Büyük harfli kısaltmalar genellikle noktasız, küçük harfli sözcük kısaltmaları noktalı yazılır; element ve ölçü kısaltmalarının sonunda da nokta bulunmaz."
-      }
+        "front": "Bulunma hâl eki ile \"de\" bağlacının ayrımı nedir?",
+        "back": "Hâl eki bitişik yazılır ve çıkarılınca anlam bozulur; bağlaç ayrı yazılır."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıcı 'komşu imiş' sözünü ekleşmiş biçimde yazıyor. Doğru yazılış hangisidir?",
+      "alt_beceri": "Bağlaç ve soru ekinin yazımını kuralla eşleştirir.",
+      "metin": "\"Hâlâ dağları karlı Erzincan'da mısın?\" cümlesinde soru ekinden sonra kişi eki gelmiştir. Bu eklerin yazımı için hangisi doğrudur?",
       "secenekler": [
-        "komşuymuş",
-        "komşu imiş",
-        "komşumuş",
-        "komşuy imiş"
+        "Soru eki de sonraki ekler de bitişik yazılır",
+        "Soru eki ayrı, sonraki ekler bitişik yazılır",
+        "Soru eki bitişik, sonraki ekler ayrı yazılır",
+        "İkisi de kesme işaretiyle ayrılır"
       ],
-      "dogru_index": 0,
-      "cozum": "Komşu ünlüyle bittiği için ekleşmede araya y girer ve ekin başındaki i düşer. Doğru biçim komşuymuş olur.",
+      "dogru_index": 1,
+      "cozum": "Soru eki mı, mi, mu, mü ayrı yazılır; ancak soru ekinden sonra gelen ekler bu eke bitişik yazılır: mısın, miydi, müdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ek eylemin idi/imiş/ise biçimleri sözcüğe bitiştiğinde görülen ses değişimini açıkla.",
-        "back": "Ünsüzle biten sözcükte i düşer; ünlüyle biten sözcükte araya y girer ve i düşer."
-      }
+        "front": "Soru ekinin yazımı nedir?",
+        "back": "Soru eki ayrı yazılır, sonra gelen ekler ise ona bitişik yazılır: mısın, miydi."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     },
     {
       "soru_id": "edebiyat_10_u04_k04_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir metin düzenleyicisi tekrar grubu olarak kullanılan sözcükleri yazıya geçiriyor. Kurala uygun biçim hangisidir?",
+      "alt_beceri": "Bağlaç ve soru ekinin yazımını kuralla eşleştirir.",
+      "metin": "\"Kuzey Amerika\" ve \"Amerika'nın kuzeyi\" yazımlarında yön bildiren sözcük farklı harflerle yazılmıştır. Bu farkın nedeni hangisidir?",
       "secenekler": [
-        "Tanetane",
-        "Tane tane",
-        "Tane-tane",
-        "Tane, tane"
-      ],
-      "dogru_index": 1,
-      "cozum": "İkilemelerin genel yazımı ayrı ve noktalama işaretsizdir. Bu nedenle tane tane biçimi doğrudur.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "İkilemelerin yazım kuralını ve aralarındaki noktalama kullanımını belirt.",
-        "back": "İkilemeler ayrı yazılır ve aralarına noktalama işareti konmaz; bazı kalıplaşmış ikilemeler bitişik yazılır."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k04_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Dizgi sırasında 'masa' sözcüğü satıra sığmıyor. Hece sınırında ve tek harf bırakmadan yapılmış doğru bölme hangisidir?",
-      "secenekler": [
-        "m- / asa",
-        "mas- / a",
-        "ma- / sa",
-        "masa- / "
-      ],
-      "dogru_index": 2,
-      "cozum": "Masa sözcüğü ma-sa biçiminde hecelenir; ma- / sa bölmesi hece sınırındadır ve tek harf bırakmaz. Diğer seçenekler heceleme kuralına uymaz.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Satır sonuna sığmayan bir sözcüğü bölme kurallarını açıkla.",
-        "back": "Sözcük yalnız hecelerinden bölünür ve satır sonunda kısa çizgi kullanılır; satır sonunda ya da başında tek harf bırakılmaz."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k04_o12",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir editör, herhangi bir ses değişimine uğramayan 'takip etmek' birleşik fiilini yazıyor. Doğru biçim hangisidir?",
-      "secenekler": [
-        "takipetmek",
-        "takip-etmek",
-        "takip,etmek",
-        "takip etmek"
+        "Yön adlarının her zaman büyük yazılması",
+        "Yön adlarının her zaman küçük yazılması",
+        "Ara yönlerin ayrı yazılması",
+        "Özel isimden önce gelince büyük, sonra gelince küçük yazılması"
       ],
       "dogru_index": 3,
-      "cozum": "İlk sözcük ses düşmesine ya da ünsüz türemesine uğramadığında yardımcı eylemle kurulan birleşik fiil ayrı yazılır. Bu nedenle takip etmek biçimi doğrudur.",
+      "cozum": "Yer-yön bildiren sözcükler özel isimden önce kullanıldığında büyük, sonra kullanıldığında küçük harfle başlar; ara yönler bitişik yazılır: Güneydoğu Anadolu.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Etmek ya da olmak yardımcı eylemiyle kurulan birleşik fiillerde bitişik-ayrı yazımı belirleyen ölçüt nedir?",
-        "back": "İlk sözcükte ses düşmesi ya da ünsüz türemesi olursa bitişik, böyle bir ses değişimi olmazsa ayrı yazılır."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k04_o13",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir yazı kurulunda ev sözüyle kurulan ve istisnalar arasında bulunmayan yeni bir birleşik kelimenin yazımı tartışılıyor. Kaynağın genel kuralına uygun tercih hangisidir?",
-      "secenekler": [
-        "Bitişik yazılır",
-        "Ayrı yazılır",
-        "Kesme işaretiyle ayrılır",
-        "Araya kısa çizgi konur"
-      ],
-      "dogru_index": 0,
-      "cozum": "Kaynakta ev sözüyle kurulan birleşik kelimelerin bitişik yazıldığı; bağ evi, kır evi ve dağ evi biçimlerinin ise ayrı yazıldığı belirtilir. Soruda istisna olmadığı için bitişik yazılır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Ev sözüyle kurulan birleşik kelimelerin bitişik yazımı ve istisnalarını açıkla.",
-        "back": "Ev kelimesiyle kurulan birleşik kelimeler bitişik yazılır; bağ evi, kır evi ve dağ evi ayrı yazılır."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k04_o14",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir raporda etkinliğin henüz devam ettiğini anlatan sözcük kullanılacak. Kaynağın anlam ayırıcı yazımına göre doğru biçim hangisidir?",
-      "secenekler": [
-        "hala",
-        "hâlâ",
-        "hâla",
-        "haalâ"
-      ],
-      "dogru_index": 1,
-      "cozum": "Düzeltme işareti, henüz anlamındaki hâlâ sözcüğünü babanın kız kardeşi anlamındaki hala sözcüğünden ayırır. Bu nedenle cümledeki anlam için hâlâ yazılır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Düzeltme işaretinin temel işlevlerini açıkla.",
-        "back": "Uzun ünlüyü ve ince okunan g, k, l ünsüzleriyle ilgili a/u seslerini göstermeye yarar; ayrıca yazılışı aynı, anlamı farklı sözcükleri ayırabilir."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k04_o15",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir yerleşim planında yapının ayrı bölümünü belirten Batı kökenli sözcük kullanılacak. Kaynağın iki ünsüzle başlayan alıntı sözcüklere ilişkin kuralına uygun biçim hangisidir?",
-      "secenekler": [
-        "bılok",
-        "bulok",
-        "blok",
-        "bilok"
-      ],
-      "dogru_index": 2,
-      "cozum": "Batı kökenli alıntı sözcük iki ünsüzle başlıyorsa bu ünsüzler arasına ünlü eklenmez. Bu nedenle verilen biçim bloktur.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Batı kökenli alıntı sözcüklerde yan yana gelen ünsüzlerin yazımı için temel kuralı belirt.",
-        "back": "Ünsüz kümeleri arasına kaynakta belirtilen kural dışı sözcükler hariç ünlü eklenmeden yazılır; sözcükler Türkçedeki yerleşik biçimleriyle korunur."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u04_k04_o16",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir resmî yazıda 'Yeni Ufuklar Araştırma Kurumu' adına yönelme eki getirilecek. Kurum adlarına ilişkin kurala uygun yazım hangisidir?",
-      "secenekler": [
-        "Yeni Ufuklar Araştırma Kurumu'na",
-        "Yeni Ufuklar Araştırma Kurumuna'",
-        "Yeni Ufuklar Araştırma Kurumu na",
-        "Yeni Ufuklar Araştırma Kurumuna"
-      ],
-      "dogru_index": 3,
-      "cozum": "Kurum ve kuruluş adlarına gelen çekim ekleri kesme işaretiyle ayrılmaz. Bu nedenle yönelme eki Kurumuna biçiminde doğrudan eklenir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Kurum, kuruluş, kurul ve iş yeri adlarına getirilen çekim ekleri nasıl yazılır?",
-        "back": "Bu adlara gelen çekim ekleri kesme işaretiyle ayrılmaz, adın sonuna bitişik yazılır."
-      }
+        "front": "Yön adlarının yazımı nedir?",
+        "back": "Özel isimden önce büyük, sonra küçük yazılır; ara yönler bitişik yazılır."
+      },
+      "kazanim": "Yazım kurallarını büyük harf, sayı, bağlaç ve ek yazımı bakımından uygulayabilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u04_k04_o01:flashcard",
-      "front": "Özel adlardan türetilen sözcüklerin büyük-küçük harfle yazım kuralını açıkla.",
-      "back": "Özel addan türetilen sözcükler büyük harfle başlar; özel ad anlamından çıkıp genel bir anlam kazananlar küçük harfle yazılır."
+      "front": "İki kısa çizgi arasındaki açıklamanın yazımı nedir?",
+      "back": "Açıklama cümlesi büyük harfle başlamaz: İzmir'e -bu güzel şehre- ..."
     },
     {
       "id": "edebiyat_10_u04_k04_o02:flashcard",
-      "front": "Gün ve ay adları hangi durumda büyük harfle başlar?",
-      "back": "Belirli bir tarihe bağlandıklarında büyük; belirli tarih bildirmediklerinde küçük harfle başlarlar."
+      "front": "İki noktadan sonra büyük harf kuralı nedir?",
+      "back": "Cümle gelirse büyük, örnek sıralaması gelirse küçük harfle başlar."
     },
     {
       "id": "edebiyat_10_u04_k04_o03:flashcard",
-      "front": "Yer-yön bildiren sözcüklerin özel adların önünde ve arkasında yazımını açıkla.",
-      "back": "Özel addan önce kullanılan yön sözü büyük, özel addan sonra ya da tek başına yön bildirdiğinde küçük harfle başlar; ara yönler bitişik yazılır."
+      "front": "Akrabalık bildiren kelimelerin yazımı nedir?",
+      "back": "Küçük harfle başlar: Nimet ablama, Nezaket teyzemin."
     },
     {
       "id": "edebiyat_10_u04_k04_o04:flashcard",
-      "front": "Sayıların metin içinde ve ölçü, saat, para ya da istatistik bildiren kullanımlardaki yazımını karşılaştır.",
-      "back": "Sayılar metin içinde genellikle yazıyla; saat, para tutarı, ölçü ve istatistik verilerinde rakamla yazılır."
+      "front": "Dil adlarına gelen eklerin yazımı nedir?",
+      "back": "Kesme işaretiyle ayrılmaz: Türkçeden, Arapçaya."
     },
     {
       "id": "edebiyat_10_u04_k04_o05:flashcard",
-      "front": "Bağlaç olan de/da ile bulunma durumu ekini yazım bakımından nasıl ayırırsın?",
-      "back": "Bağlaç olan de/da ayrı, bulunma durumu eki -de/-da/-te/-ta sözcüğe bitişik yazılır; bağlaç cümleden çıkarıldığında anlam genellikle büyük ölçüde bozulmaz."
+      "front": "Yer adlarında tür bildiren sözcüklerin yazımı nedir?",
+      "back": "Özel ada dâhilse büyük (Van Gölü), değilse küçük (Kocaeli ili) yazılır."
     },
     {
       "id": "edebiyat_10_u04_k04_o06:flashcard",
-      "front": "Bağlaç olan ki ile ilgi ya da sıfat yapan -ki eklerinin yazım farkını açıkla.",
-      "back": "Bağlaç olan ki ayrı, ilgi zamiri ve sıfat yapan -ki bitişik yazılır; bazı kalıplaşmış bağlaçlar da bitişik yazılır."
+      "front": "Üleştirme sayılarının yazımı nedir?",
+      "back": "Rakamla değil yazıyla yazılır: ikişer, üçer, onar, yüzer."
     },
     {
       "id": "edebiyat_10_u04_k04_o07:flashcard",
-      "front": "Soru eki mı/mi/mu/mü ile bu ekten sonra gelen eklerin yazımını açıkla.",
-      "back": "Soru eki önceki sözcükten ayrı yazılır; soru ekinden sonra gelen ekler ise ona bitişik yazılır."
+      "front": "Büyük sayıların yazımı nedir?",
+      "back": "Beş ve daha çok basamaklı sayılar üçlü gruplara ayrılır, araya nokta konur."
     },
     {
       "id": "edebiyat_10_u04_k04_o08:flashcard",
-      "front": "Kısaltmalarda büyük-küçük harf, nokta ve ek kullanımı için temel yazım ayrımını belirt.",
-      "back": "Büyük harfli kısaltmalar genellikle noktasız, küçük harfli sözcük kısaltmaları noktalı yazılır; element ve ölçü kısaltmalarının sonunda da nokta bulunmaz."
+      "front": "Bulunma hâl eki ile \"de\" bağlacının ayrımı nedir?",
+      "back": "Hâl eki bitişik yazılır ve çıkarılınca anlam bozulur; bağlaç ayrı yazılır."
     },
     {
       "id": "edebiyat_10_u04_k04_o09:flashcard",
-      "front": "Ek eylemin idi/imiş/ise biçimleri sözcüğe bitiştiğinde görülen ses değişimini açıkla.",
-      "back": "Ünsüzle biten sözcükte i düşer; ünlüyle biten sözcükte araya y girer ve i düşer."
+      "front": "Soru ekinin yazımı nedir?",
+      "back": "Soru eki ayrı yazılır, sonra gelen ekler ise ona bitişik yazılır: mısın, miydi."
     },
     {
       "id": "edebiyat_10_u04_k04_o10:flashcard",
-      "front": "İkilemelerin yazım kuralını ve aralarındaki noktalama kullanımını belirt.",
-      "back": "İkilemeler ayrı yazılır ve aralarına noktalama işareti konmaz; bazı kalıplaşmış ikilemeler bitişik yazılır."
-    },
-    {
-      "id": "edebiyat_10_u04_k04_o11:flashcard",
-      "front": "Satır sonuna sığmayan bir sözcüğü bölme kurallarını açıkla.",
-      "back": "Sözcük yalnız hecelerinden bölünür ve satır sonunda kısa çizgi kullanılır; satır sonunda ya da başında tek harf bırakılmaz."
-    },
-    {
-      "id": "edebiyat_10_u04_k04_o12:flashcard",
-      "front": "Etmek ya da olmak yardımcı eylemiyle kurulan birleşik fiillerde bitişik-ayrı yazımı belirleyen ölçüt nedir?",
-      "back": "İlk sözcükte ses düşmesi ya da ünsüz türemesi olursa bitişik, böyle bir ses değişimi olmazsa ayrı yazılır."
-    },
-    {
-      "id": "edebiyat_10_u04_k04_o13:flashcard",
-      "front": "Ev sözüyle kurulan birleşik kelimelerin bitişik yazımı ve istisnalarını açıkla.",
-      "back": "Ev kelimesiyle kurulan birleşik kelimeler bitişik yazılır; bağ evi, kır evi ve dağ evi ayrı yazılır."
-    },
-    {
-      "id": "edebiyat_10_u04_k04_o14:flashcard",
-      "front": "Düzeltme işaretinin temel işlevlerini açıkla.",
-      "back": "Uzun ünlüyü ve ince okunan g, k, l ünsüzleriyle ilgili a/u seslerini göstermeye yarar; ayrıca yazılışı aynı, anlamı farklı sözcükleri ayırabilir."
-    },
-    {
-      "id": "edebiyat_10_u04_k04_o15:flashcard",
-      "front": "Batı kökenli alıntı sözcüklerde yan yana gelen ünsüzlerin yazımı için temel kuralı belirt.",
-      "back": "Ünsüz kümeleri arasına kaynakta belirtilen kural dışı sözcükler hariç ünlü eklenmeden yazılır; sözcükler Türkçedeki yerleşik biçimleriyle korunur."
-    },
-    {
-      "id": "edebiyat_10_u04_k04_o16:flashcard",
-      "front": "Kurum, kuruluş, kurul ve iş yeri adlarına getirilen çekim ekleri nasıl yazılır?",
-      "back": "Bu adlara gelen çekim ekleri kesme işaretiyle ayrılmaz, adın sonuna bitişik yazılır."
+      "front": "Yön adlarının yazımı nedir?",
+      "back": "Özel isimden önce büyük, sonra küçük yazılır; ara yönler bitişik yazılır."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları"
+  ]
 }

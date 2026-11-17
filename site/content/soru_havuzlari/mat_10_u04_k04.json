@@ -2,299 +2,591 @@
   "konu_id": "mat_10_u04_k04",
   "sinif": 10,
   "ders": "Matematik",
-  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "baslik": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+  "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+  "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler.",
+  "kaynak": "Matematik 10 ders kitabı, s.243-263",
+  "kaynak_dosya": "matematik-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "mat_10_u04_k04_o01",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "f(x)=1/x fonksiyonu için f(−7) kaçtır?",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = 1/x rasyonel referans fonksiyonunun tanım kümesi hangisidir?",
       "secenekler": [
-        "−1/7",
-        "1/7",
-        "−7",
-        "7"
+        "R",
+        "R − {0}",
+        "[0, ∞)",
+        "(−∞, 0]"
       ],
-      "dogru_index": 0,
-      "cozum": "f(−7)=1/(−7)=−1/7’dir. Negatif girdinin işareti, fonksiyon değerinin işaretini de negatif yapar.",
+      "dogru_index": 1,
+      "cozum": "x = 0'da payda sıfır olduğundan fonksiyon tanımsızdır; tanım kümesi R − {0}'dır (s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Rasyonel referans fonksiyonunun cebirsel gösterimini, tanım koşuluyla birlikte yaz.",
-        "back": "f(x)=1/x, x≠0"
+        "front": "1/x'in tanım kümesi nedir?",
+        "back": "R − {0}"
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o02",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "f(x)=1/x rasyonel referans fonksiyonunda hangi girdi için fonksiyon değeri tanımlı olmaz?",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = 1/x kuralında elde edilen değerler hangi kümedir?",
       "secenekler": [
-        "x=−1",
-        "x=0",
-        "x=1",
-        "x=2"
+        "R",
+        "[0, ∞)",
+        "(−∞, 0]",
+        "R − {0}"
       ],
-      "dogru_index": 1,
-      "cozum": "x=0 için 1/x ifadesinin paydası sıfır olur ve sıfıra bölme tanımlı değildir. Bu nedenle 0 tanım kümesinde bulunmaz.",
+      "dogru_index": 3,
+      "cozum": "1/x hiçbir zaman 0 değerini almaz; görüntü kümesi R − {0}'dır (s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=1/x fonksiyonunun tanım kümesinde 0 neden bulunmaz?",
-        "back": "x=0 için payda 0 olur ve fonksiyon tanımsızdır."
+        "front": "Değerlerin hiç sıfır olmaması ne demektir?",
+        "back": "R − {0}"
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o03",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "f(x)=1/x fonksiyonu için x=9 olduğunda f(x) kaçtır?",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = 1/x fonksiyonunun sıfırı için hangisi doğrudur?",
       "secenekler": [
-        "9",
-        "1/3",
-        "1/9",
-        "−1/9"
+        "Sıfırı yoktur",
+        "Sıfırı x = 0'dadır",
+        "Sıfırı x = 1'dedir",
+        "İki sıfırı vardır"
       ],
-      "dogru_index": 2,
-      "cozum": "f(9)=1/9’dur; rasyonel referans fonksiyonu sıfırdan farklı girdiyi çarpmaya göre tersine eşler.",
+      "dogru_index": 0,
+      "cozum": "1/x = 0 denkleminin çözümü yoktur; fonksiyon x eksenini kesmez (s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=1/x rasyonel referans fonksiyonunun görüntü kümesini yaz.",
-        "back": "ℝ∖{0}"
+        "front": "Payı sıfır yapan değerin yokluğu ne demektir?",
+        "back": "Yok."
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o04",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "f(x)=1/x fonksiyonu hangi aralıkta negatif değer alır?",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = 1/x fonksiyonunun (−∞, 0) ve (0, ∞) aralıklarındaki davranışı nasıldır?",
       "secenekler": [
-        "(0,∞)",
-        "ℝ∖{0}",
-        "{0}",
-        "(−∞,0)"
+        "Her iki aralıkta artan",
+        "Birinde artan, birinde azalan",
+        "Her iki aralıkta azalan",
+        "Sabit"
       ],
-      "dogru_index": 3,
-      "cozum": "x<0 için 1/x<0 olduğundan fonksiyon (−∞,0) aralığında negatiftir. 0 tanım kümesinde bulunmaz.",
+      "dogru_index": 2,
+      "cozum": "Kitaba göre 1/x fonksiyonu (−∞, 0) ve (0, +∞) aralıklarının her birinde azalandır (s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=1/x fonksiyonu pozitif ve negatif değerleri hangi x aralıklarında alır?",
-        "back": "x>0 iken pozitiftir, x<0 iken negatiftir."
+        "front": "Hiperbol kollarının monotonluğu nedir?",
+        "back": "Her iki aralıkta azalan."
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o05",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "f(x)=1/x için x=7 ve x=13 değerleri karşılaştırıldığında hangi sonuç doğrudur?",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1 / x fonksiyonunun x = 4 için değeri kaçtır?",
       "secenekler": [
-        "f(7)>f(13)",
-        "f(7)=f(13)",
-        "f(7)<f(13)",
-        "Karşılaştırılamaz"
+        "4",
+        "−4",
+        "0'ın kendisi",
+        "1/4"
       ],
-      "dogru_index": 0,
-      "cozum": "f(7)=1/7 ve f(13)=1/13 olduğundan f(7)>f(13). Pozitif girdilerde x büyüdükçe 1/x küçülür.",
+      "dogru_index": 3,
+      "cozum": "x yerine 4 yazılır: f(4) = 1/4 = 0,25 bulunur; payda sıfırdan farklı olduğu için değer tanımlıdır (s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=1/x fonksiyonunun (−∞,0) ve (0,∞) aralıklarındaki değişimini yaz.",
-        "back": "Her iki aralıkta da azalandır."
+        "front": "Rasyonel fonksiyonda tanım kümesindeki bir noktanın değeri nasıl bulunur?",
+        "back": "x yerine o değer yazılır; örneğin f(4) = 1/4 = 0,25."
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o06",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "f(x)=1/x rasyonel referans fonksiyonunun grafiği hangi noktaya göre simetriktir?",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1/(x − 2) fonksiyonunun tanım kümesi hangisidir?",
       "secenekler": [
-        "y ekseni üzerindeki noktaya",
-        "Orijine",
-        "x ekseni üzerindeki noktaya",
-        "y=x doğrusuna"
+        "R − {−2}",
+        "R − {2}",
+        "[2, ∞)",
+        "R"
       ],
       "dogru_index": 1,
-      "cozum": "f(−x)=−f(x) olduğundan f tek fonksiyondur ve grafiği orijine göre simetriktir. y eksenine göre simetri çift fonksiyonların özelliğidir.",
+      "cozum": "x − 2 = 0 → x = 2 dışında tüm gerçek sayılar tanım kümesindedir (s.246-252).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tek bir fonksiyonda f(−x) ile f(x) arasındaki eşitliği yaz.",
-        "back": "f(−x)=−f(x)"
+        "front": "Paydanın sıfırlandığı noktanın dışlanma gerekçesi nedir?",
+        "back": "R − {2}"
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o07",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "g(x)=8/(x−9)+5, x≠9 fonksiyonu için g(x₁)=g(x₂) ise hangi sonuç zorunludur?",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1/(x − 2) fonksiyonunun düşey asimptotu hangisidir?",
       "secenekler": [
-        "x₁+x₂=18",
-        "x₁x₂=81",
-        "x₁=x₂",
-        "x₁=−x₂"
+        "x = 2",
+        "y = 2",
+        "x = 0",
+        "y = 0"
       ],
-      "dogru_index": 2,
-      "cozum": "5’ler çıkarılıp 8’e bölündüğünde 1/(x₁−9)=1/(x₂−9) elde edilir. x₁,x₂≠9 olduğundan paydalar eşitlenebilir ve x₁−9=x₂−9, yani x₁=x₂ bulunur.",
+      "dogru_index": 0,
+      "cozum": "Paydayı sıfır yapan x = 2 doğrusu düşey asimptottur (s.248-252).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bire bir fonksiyonda f(x₁)=f(x₂) ise x₁ ve x₂ hakkında hangi sonuç çıkar?",
-        "back": "x₁=x₂ olur."
+        "front": "Paydayı sıfırlayan değerin asimptot olarak adı nedir?",
+        "back": "x = 2"
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o08",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "f(x)=1/x için 0<x<1/8 olduğunda f(x) hakkında hangi ifade doğrudur?",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1/x fonksiyonunun yatay asimptotu hangisidir?",
       "secenekler": [
-        "f(x)<0 olur",
-        "0<f(x)<8 olur",
-        "f(x)=8 olur",
-        "f(x)>8 olur"
+        "x = 0",
+        "y = 1",
+        "y = 0",
+        "x = 1"
       ],
-      "dogru_index": 3,
-      "cozum": "0<x<1/8 olduğundan pozitif bir sayının çarpmaya göre tersi 8’den büyüktür; dolayısıyla f(x)>8 olur.",
+      "dogru_index": 2,
+      "cozum": "x büyüdükçe 1/x sıfıra yaklaşır; yatay asimptot y = 0 (x ekseni) olur (s.245-250).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=1/x rasyonel referans fonksiyonunun maksimum ve minimum değer durumunu açıklayınız.",
-        "back": "Maksimum ve minimum değeri yoktur."
+        "front": "x büyürken değerin sıfıra yaklaşması ne demektir?",
+        "back": "y = 0"
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o09",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "g(x)=4/(x−7)+2 fonksiyonu hangi x değerinde tanımsızdır?",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1 / x fonksiyonunun x = −4 için değeri kaçtır?",
       "secenekler": [
-        "7",
-        "−7",
-        "0",
-        "1"
+        "1/4",
+        "−1/4",
+        "−4",
+        "4"
       ],
-      "dogru_index": 0,
-      "cozum": "x=7 için payda x−7=0 olur. Paydası sıfır olan bu girdide fonksiyon tanımsızdır.",
+      "dogru_index": 1,
+      "cozum": "x yerine −4 yazılır: f(−4) = 1/(−4) = −1/4; payda sıfırdan farklı olduğu için değer tanımlıdır (s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "g(x)=a/(x+r)+k biçiminde verilen fonksiyonun tanım kümesinden hangi x değeri çıkarılır?",
-        "back": "x=−r çıkarılır; payda bu değerde 0 olur."
+        "front": "Negatif girdinin rasyonel fonksiyondaki sonucu nedir?",
+        "back": "Bölümün işareti girdinin işaretine göre belirlenir: f(−4) = 1/(−4) = −1/4."
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o10",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "h(x)=6/(x−3)+2 fonksiyonu için h(9) kaçtır?",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = (x + 1)/(x − 3) fonksiyonunun tanım kümesi hangisidir?",
       "secenekler": [
-        "4",
-        "3",
-        "6",
-        "8"
+        "R − {−1}",
+        "R",
+        "R − {1}",
+        "R − {3}"
       ],
-      "dogru_index": 1,
-      "cozum": "h(9)=6/(9−3)+2=6/6+2=3 bulunur.",
+      "dogru_index": 3,
+      "cozum": "Paydayı sıfır yapan x = 3 değeri tanım kümesinden çıkarılır (s.246-252).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "g(x)=a/(x+r)+k biçiminde a≠0 ise görüntü kümesinden hangi değer çıkarılır?",
-        "back": "y=k değeri çıkarılır."
+        "front": "Tanım kümesinden çıkarılan değer nedir?",
+        "back": "R − {3}"
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o11",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "t(x)=−5/(x−6)−3 fonksiyonu, tanımlı olduğu aralıkların her birinde nasıl değişir?",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = 3 / (x + 1) fonksiyonunun tanım kümesi aşağıdakilerden hangisidir?",
       "secenekler": [
-        "Solda artar, sağda azalır.",
-        "Azalır.",
-        "Artar.",
-        "Solda azalır, sağda artar."
+        "ℝ − {−1}",
+        "ℝ − {1}",
+        "ℝ − {3}",
+        "ℝ"
       ],
-      "dogru_index": 2,
-      "cozum": "Fonksiyon a/(x+r)+k biçimindedir ve a=−5<0’dır. Bu durumda fonksiyon, tanım kümesinin (−∞,6) ve (6,∞) parçalarının her birinde artar.",
+      "dogru_index": 0,
+      "cozum": "Payda sıfır olamaz: x + 1 ≠ 0 → x ≠ −1; tanım kümesi ℝ − {−1} olur (s.243-248).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "g(x)=a/(x+r)+k fonksiyonunda a<0 iken her tanım aralığında x arttıkça g(x) nasıl değişir?",
-        "back": "Her iki aralıkta da artar."
+        "front": "Rasyonel fonksiyonun tanım kümesi nasıl bulunur?",
+        "back": "Paydayı sıfır yapan değerler tanım kümesinden çıkarılır."
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     },
     {
       "soru_id": "mat_10_u04_k04_o12",
-      "alt_beceri": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
-      "metin": "Bir etiketleme makinesi 420 ürünü saatte 210 ürün hızında etiketliyor. İşin tamamlanması kaç saat sürer?",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = (2x − 6) / (x + 4) fonksiyonunun tanım kümesi aşağıdakilerden hangisidir?",
       "secenekler": [
-        "16 saat",
-        "8 saat",
-        "4 saat",
-        "2 saat"
+        "ℝ − {3}",
+        "ℝ − {−3}",
+        "ℝ − {−4}",
+        "ℝ − {4}"
       ],
-      "dogru_index": 3,
-      "cozum": "Süre, toplam iş miktarının hıza bölünmesiyle bulunur: 420/210=2 saat.",
+      "dogru_index": 2,
+      "cozum": "Paydayı sıfır yapan değer x = −4’tür; payın sıfırı (x = 3) tanım kümesini kısıtlamaz (s.243-248).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki pozitif nicelik ters orantılıysa biri 3 katına çıktığında diğeri nasıl değişir?",
-        "back": "Diğer nicelik başlangıç değerinin üçte birine düşer; iki niceliğin çarpımı sabit kalır."
+        "front": "Payın sıfırının tanım kümesine etkisi nedir?",
+        "back": "Kısıtlamaz; yalnızca paydayı sıfır yapan değerler dışarıda bırakılır."
       },
-      "kazanim": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o13",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = 1 / x² fonksiyonunun işareti için hangisi doğrudur?",
+      "secenekler": [
+        "İşareti x’in işaretiyle aynıdır.",
+        "Her x için pozitiftir.",
+        "Her x için negatiftir.",
+        "İşareti x’in işaretiyle terstir."
+      ],
+      "dogru_index": 3,
+      "cozum": "x² = 0 yalnızca x = 0 için sağlanır; bu değer dışındaki tüm gerçek sayılar tanım kümesindedir (s.243-250).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel paydalı fonksiyonun işaret kuralı nedir?",
+        "back": "ℝ − {0}."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o14",
+      "alt_beceri": "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+      "metin": "f(x) = 5 / (x² − 9) fonksiyonunun tanım kümesi aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "ℝ − {3}",
+        "ℝ − {−3, 3}",
+        "ℝ − {−9, 9}",
+        "ℝ − {9}"
+      ],
+      "dogru_index": 1,
+      "cozum": "x² − 9 = 0 → x = −3 veya x = 3; iki değer de tanım kümesinden çıkarılır (s.243-250).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki noktada tanımsız kalan fonksiyonun tanım aralığı nedir?",
+        "back": "ℝ − {−3, 3}."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o15",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1 / (x − 2) + 3 fonksiyonunun yatay asimptotu aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "y = 3",
+        "y = 2",
+        "y = 0",
+        "x = 2"
+      ],
+      "dogru_index": 0,
+      "cozum": "Fonksiyon f(x) = 1/(x − 2) + k biçiminde olduğundan yatay asimptot y = k = 3’tür (s.252-258).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşey ötelemenin yatay asimptota etkisi nedir?",
+        "back": "y = k doğrusu."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o16",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 2 / x fonksiyonunun görüntü kümesi aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "[0, ∞)",
+        "ℝ − {0}",
+        "ℝ",
+        "ℝ − {2}"
+      ],
+      "dogru_index": 1,
+      "cozum": "Hiçbir x değeri için 2/x sıfır olamaz; bunun dışındaki her gerçek değer alınabilir: ℝ − {0} (s.248-252).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit katsayılı ters orantının değer kümesi nedir?",
+        "back": "ℝ − {0}; fonksiyon hiçbir zaman sıfır değerini almaz."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o17",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1 / x fonksiyonunun değeri x sonsuza büyürken hangi sayıya yaklaşır?",
+      "secenekler": [
+        "1",
+        "0",
+        "Sonsuz",
+        "−1"
+      ],
+      "dogru_index": 1,
+      "cozum": "x büyüdükçe 1/x küçülür ve sıfıra yaklaşır; bu nedenle yatay asimptot y = 0’dır (s.252-258).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sonsuzdaki limit davranışı nedir?",
+        "back": "Sıfıra; yatay asimptot y = 0’dır."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o18",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1 / (x − 1) fonksiyonunun düşey asimptotu aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "x = 0",
+        "y = 1",
+        "y = 0",
+        "x = 1"
+      ],
+      "dogru_index": 3,
+      "cozum": "Paydayı sıfır yapan değer düşey asimptottur: x − 1 = 0 → x = 1 (s.252-258).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel fonksiyonun düşey asimptotu nasıl bulunur?",
+        "back": "Paydayı sıfır yapan x değeri düşey asimptottur."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o19",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = −1 / x fonksiyonunun işareti için hangisi doğrudur?",
+      "secenekler": [
+        "x < 0 iken pozitif, x > 0 iken negatiftir.",
+        "x < 0 iken negatif, x > 0 iken pozitiftir.",
+        "Her iki aralıkta da pozitiftir.",
+        "Her iki aralıkta da negatiftir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Payda x ile −1 çarpımı incelenir: x negatifken bölüm pozitif, x pozitifken bölüm negatiftir (s.246-252).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Negatif rasyonel fonksiyonun işaret çizelgesi nedir?",
+        "back": "x negatifken pozitif, x pozitifken negatiftir."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o20",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1 / x + 2 fonksiyonunun x = 2 için değeri kaçtır?",
+      "secenekler": [
+        "0,5",
+        "3",
+        "2,5",
+        "1"
+      ],
+      "dogru_index": 2,
+      "cozum": "x yerine 2 yazılır: 1/2 + 2 = 0,5 + 2 = 2,5 (s.244-248).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel fonksiyonda bir noktadaki değer nasıl hesaplanır?",
+        "back": "x yerine ilgili değer yazılıp işlem yapılır."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o21",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "Bir su deposunun kalan su miktarı V(t) = 600 / (t + 2) litre bağıntısıyla modellenmektedir (t dakika). t arttıkça kalan su miktarı nasıl değişir?",
+      "secenekler": [
+        "Artar ve sonsuza yaklaşır.",
+        "Sabit kalır.",
+        "Önce artar, sonra azalır.",
+        "Azalır ve sıfıra yaklaşır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Payda büyüdükçe bölüm küçülür; kalan su miktarı azalarak sıfıra yaklaşır, yatay asimptot V = 0’dır (s.252-260).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Azalan rasyonel modelin davranışı nedir?",
+        "back": "Azalır ve sıfıra yaklaşır."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o22",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = (x + 3) / (x − 1) fonksiyonunun x = 3 için değeri kaçtır?",
+      "secenekler": [
+        "1,5",
+        "3",
+        "2",
+        "6"
+      ],
+      "dogru_index": 1,
+      "cozum": "x = 3 yazılır: (3 + 3) / (3 − 1) = 6 / 2 = 3 (s.244-248).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paydası sıfır olmayan bir noktada rasyonel fonksiyonun değeri nasıl bulunur?",
+        "back": "Pay ve paydada x yerine değer yazılıp bölme yapılır."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o23",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = k / x fonksiyonunun değeri (1, 4) noktasından geçiyorsa k kaçtır?",
+      "secenekler": [
+        "4",
+        "1",
+        "0,25",
+        "8"
+      ],
+      "dogru_index": 0,
+      "cozum": "Nokta fonksiyonu sağlar: f(1) = k / 1 = 4 → k = 4 (s.244-250).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Noktanın fonksiyon üzerinde olması ne demektir?",
+        "back": "Noktanın koordinatları fonksiyon denklemini sağlar: f(x) = y."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k04_o24",
+      "alt_beceri": "Rasyonel fonksiyonun grafiğini yorumlar.",
+      "metin": "f(x) = 1 / x fonksiyonu için f(a) = 3 ise a kaçtır?",
+      "secenekler": [
+        "3",
+        "−1/3",
+        "1/3",
+        "1"
+      ],
+      "dogru_index": 2,
+      "cozum": "1 / a = 3 eşitliğinden a = 1/3 bulunur (s.244-248).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f(x) = 1/x için f(a) = c ise a nedir?",
+        "back": "a = 1/c."
+      },
+      "kazanim": "Rasyonel referans fonksiyonunun tanım kümesi, görüntü kümesi ve davranışını inceler."
     }
   ],
   "flashcards": [
     {
       "id": "mat_10_u04_k04_o01:flashcard",
-      "front": "Rasyonel referans fonksiyonunun cebirsel gösterimini, tanım koşuluyla birlikte yaz.",
-      "back": "f(x)=1/x, x≠0"
+      "front": "1/x'in tanım kümesi nedir?",
+      "back": "R − {0}"
     },
     {
       "id": "mat_10_u04_k04_o02:flashcard",
-      "front": "f(x)=1/x fonksiyonunun tanım kümesinde 0 neden bulunmaz?",
-      "back": "x=0 için payda 0 olur ve fonksiyon tanımsızdır."
+      "front": "Değerlerin hiç sıfır olmaması ne demektir?",
+      "back": "R − {0}"
     },
     {
       "id": "mat_10_u04_k04_o03:flashcard",
-      "front": "f(x)=1/x rasyonel referans fonksiyonunun görüntü kümesini yaz.",
-      "back": "ℝ∖{0}"
+      "front": "Payı sıfır yapan değerin yokluğu ne demektir?",
+      "back": "Yok."
     },
     {
       "id": "mat_10_u04_k04_o04:flashcard",
-      "front": "f(x)=1/x fonksiyonu pozitif ve negatif değerleri hangi x aralıklarında alır?",
-      "back": "x>0 iken pozitiftir, x<0 iken negatiftir."
+      "front": "Hiperbol kollarının monotonluğu nedir?",
+      "back": "Her iki aralıkta azalan."
     },
     {
       "id": "mat_10_u04_k04_o05:flashcard",
-      "front": "f(x)=1/x fonksiyonunun (−∞,0) ve (0,∞) aralıklarındaki değişimini yaz.",
-      "back": "Her iki aralıkta da azalandır."
+      "front": "Rasyonel fonksiyonda tanım kümesindeki bir noktanın değeri nasıl bulunur?",
+      "back": "x yerine o değer yazılır; örneğin f(4) = 1/4 = 0,25."
     },
     {
       "id": "mat_10_u04_k04_o06:flashcard",
-      "front": "Tek bir fonksiyonda f(−x) ile f(x) arasındaki eşitliği yaz.",
-      "back": "f(−x)=−f(x)"
+      "front": "Paydanın sıfırlandığı noktanın dışlanma gerekçesi nedir?",
+      "back": "R − {2}"
     },
     {
       "id": "mat_10_u04_k04_o07:flashcard",
-      "front": "Bire bir fonksiyonda f(x₁)=f(x₂) ise x₁ ve x₂ hakkında hangi sonuç çıkar?",
-      "back": "x₁=x₂ olur."
+      "front": "Paydayı sıfırlayan değerin asimptot olarak adı nedir?",
+      "back": "x = 2"
     },
     {
       "id": "mat_10_u04_k04_o08:flashcard",
-      "front": "f(x)=1/x rasyonel referans fonksiyonunun maksimum ve minimum değer durumunu açıklayınız.",
-      "back": "Maksimum ve minimum değeri yoktur."
+      "front": "x büyürken değerin sıfıra yaklaşması ne demektir?",
+      "back": "y = 0"
     },
     {
       "id": "mat_10_u04_k04_o09:flashcard",
-      "front": "g(x)=a/(x+r)+k biçiminde verilen fonksiyonun tanım kümesinden hangi x değeri çıkarılır?",
-      "back": "x=−r çıkarılır; payda bu değerde 0 olur."
+      "front": "Negatif girdinin rasyonel fonksiyondaki sonucu nedir?",
+      "back": "Bölümün işareti girdinin işaretine göre belirlenir: f(−4) = 1/(−4) = −1/4."
     },
     {
       "id": "mat_10_u04_k04_o10:flashcard",
-      "front": "g(x)=a/(x+r)+k biçiminde a≠0 ise görüntü kümesinden hangi değer çıkarılır?",
-      "back": "y=k değeri çıkarılır."
+      "front": "Tanım kümesinden çıkarılan değer nedir?",
+      "back": "R − {3}"
     },
     {
       "id": "mat_10_u04_k04_o11:flashcard",
-      "front": "g(x)=a/(x+r)+k fonksiyonunda a<0 iken her tanım aralığında x arttıkça g(x) nasıl değişir?",
-      "back": "Her iki aralıkta da artar."
+      "front": "Rasyonel fonksiyonun tanım kümesi nasıl bulunur?",
+      "back": "Paydayı sıfır yapan değerler tanım kümesinden çıkarılır."
     },
     {
       "id": "mat_10_u04_k04_o12:flashcard",
-      "front": "İki pozitif nicelik ters orantılıysa biri 3 katına çıktığında diğeri nasıl değişir?",
-      "back": "Diğer nicelik başlangıç değerinin üçte birine düşer; iki niceliğin çarpımı sabit kalır."
+      "front": "Payın sıfırının tanım kümesine etkisi nedir?",
+      "back": "Kısıtlamaz; yalnızca paydayı sıfır yapan değerler dışarıda bırakılır."
+    },
+    {
+      "id": "mat_10_u04_k04_o13:flashcard",
+      "front": "Karesel paydalı fonksiyonun işaret kuralı nedir?",
+      "back": "ℝ − {0}."
+    },
+    {
+      "id": "mat_10_u04_k04_o14:flashcard",
+      "front": "İki noktada tanımsız kalan fonksiyonun tanım aralığı nedir?",
+      "back": "ℝ − {−3, 3}."
+    },
+    {
+      "id": "mat_10_u04_k04_o15:flashcard",
+      "front": "Düşey ötelemenin yatay asimptota etkisi nedir?",
+      "back": "y = k doğrusu."
+    },
+    {
+      "id": "mat_10_u04_k04_o16:flashcard",
+      "front": "Sabit katsayılı ters orantının değer kümesi nedir?",
+      "back": "ℝ − {0}; fonksiyon hiçbir zaman sıfır değerini almaz."
+    },
+    {
+      "id": "mat_10_u04_k04_o17:flashcard",
+      "front": "Sonsuzdaki limit davranışı nedir?",
+      "back": "Sıfıra; yatay asimptot y = 0’dır."
+    },
+    {
+      "id": "mat_10_u04_k04_o18:flashcard",
+      "front": "Rasyonel fonksiyonun düşey asimptotu nasıl bulunur?",
+      "back": "Paydayı sıfır yapan x değeri düşey asimptottur."
+    },
+    {
+      "id": "mat_10_u04_k04_o19:flashcard",
+      "front": "Negatif rasyonel fonksiyonun işaret çizelgesi nedir?",
+      "back": "x negatifken pozitif, x pozitifken negatiftir."
+    },
+    {
+      "id": "mat_10_u04_k04_o20:flashcard",
+      "front": "Rasyonel fonksiyonda bir noktadaki değer nasıl hesaplanır?",
+      "back": "x yerine ilgili değer yazılıp işlem yapılır."
+    },
+    {
+      "id": "mat_10_u04_k04_o21:flashcard",
+      "front": "Azalan rasyonel modelin davranışı nedir?",
+      "back": "Azalır ve sıfıra yaklaşır."
+    },
+    {
+      "id": "mat_10_u04_k04_o22:flashcard",
+      "front": "Paydası sıfır olmayan bir noktada rasyonel fonksiyonun değeri nasıl bulunur?",
+      "back": "Pay ve paydada x yerine değer yazılıp bölme yapılır."
+    },
+    {
+      "id": "mat_10_u04_k04_o23:flashcard",
+      "front": "Noktanın fonksiyon üzerinde olması ne demektir?",
+      "back": "Noktanın koordinatları fonksiyon denklemini sağlar: f(x) = y."
+    },
+    {
+      "id": "mat_10_u04_k04_o24:flashcard",
+      "front": "f(x) = 1/x için f(a) = c ise a nedir?",
+      "back": "a = 1/c."
     }
-  ],
-  "baslik": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
-  "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri"
+  ]
 }

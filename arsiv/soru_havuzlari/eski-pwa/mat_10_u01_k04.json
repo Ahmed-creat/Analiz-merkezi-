@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u01_k04",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u01_k04_o01",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende A = 45°, C = 90° ve a = 7 cm ise c kenarının uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "7√2",
+        "14",
+        "7",
+        "7√3"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sinüs teoremine göre c = a·sin C/sin A = 7·1/(√2/2) = 7√2 cm olur. 14 cm, sin 45° yerine 1/2 kullanıldığında elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir ABC üçgeninde a, b ve c kenarlarını karşılarındaki açıların sinüsleriyle ilişkilendiren sinüs teoremini yaz.",
+        "back": "sin A/a = sin B/b = sin C/c."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o02",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Kenar uzunlukları 12 cm ve 7 cm olan bir üçgende bu kenarlar arasındaki açı 60°dir. Üçgenin alanı kaç santimetrekaredir?",
+      "secenekler": [
+        "42",
+        "21√3",
+        "42√3",
+        "84"
+      ],
+      "dogru_index": 1,
+      "cozum": "Alan = (1/2)·12·7·sin 60° = 42·(√3/2) = 21√3 cm² bulunur. 42 cm², sinüs çarpanı kullanılmadığında elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kenarı b ve c, aralarındaki açı A olan üçgenin alanını sinüs yardımıyla ifade et.",
+        "back": "Alan = (1/2) · b · c · sin A."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o03",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende c = 12 cm, A = 60° ve C = 45° ölçülüyor. sin 60° = √3/2 ve sin 45° = √2/2 olduğuna göre a kenarı kaç santimetredir?",
+      "secenekler": [
+        "12",
+        "6√2",
+        "6√6",
+        "18"
+      ],
+      "dogru_index": 2,
+      "cozum": "Sinüs teoreminden a = c·sin A/sin C = 12·(√3/2)/(√2/2) = 6√6 cm bulunur. 12 cm verilen c kenarının uzunluğudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ABC üçgeninde c kenarı ve karşısındaki C açısı biliniyorsa a kenarını sinüs teoremiyle ifade et.",
+        "back": "a = c · sin A / sin C."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o04",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende A = 30°, B = 45° ve a = 10 cm ise b kenarının uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "10",
+        "5√2",
+        "20",
+        "10√2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sinüs teoremine göre b = a·sin B/sin A = 10·(√2/2)/(1/2) = 10√2 cm olur. 20 cm, sinüs oranlarının yarım katsayısı hesaba katılmadığında çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sinüs teoreminden a ve b kenarlarıyla A ve B açıları arasındaki eşitliği yaz.",
+        "back": "a/sin A = b/sin B."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o05",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende a = 8 cm, A = 60° ve C = 90°dir. c kenarının uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "16√3/3",
+        "8√3/3",
+        "16",
+        "4√3"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sinüs teoremine göre c = a·sin C/sin A = 8/(√3/2) = 16√3/3 cm bulunur. 16 cm, sin 60° değeri kullanılmadığında elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sinüs teoreminde a kenarını, karşısındaki A açısını ve başka bir karşılıklı kenar-açı çiftini kullanarak oran bağıntısı yaz.",
+        "back": "a/sin A = c/sin C."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o06",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende A = 60°, B = 45° ve a = 12 cm’dir. sin 60° = √3/2 ve sin 45° = √2/2 olduğuna göre b kaç santimetredir?",
+      "secenekler": [
+        "6√6",
+        "4√6",
+        "6√2",
+        "8"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sinüs teoremine göre b = a·sin B/sin A = 12·(√2/2)/(√3/2) = 4√6 cm olur. 6√6 cm, kök içindeki oran doğru sadeleştirilmediğinde bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ABC üçgeninde a, b ve c kenarlarının karşılarında hangi açıların bulunduğunu sembollerle eşleştir.",
+        "back": "a kenarı A açısının, b kenarı B açısının, c kenarı C açısının karşısındadır."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o07",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende b = 8 cm, c = 7 cm ve bu iki kenar arasındaki A açısı 60°dir. a kenarının uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "√113",
+        "15",
+        "√57",
+        "1"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kosinüs teoremine göre a² = 8² + 7² − 2·8·7·cos 60° = 64 + 49 − 56 = 57 olur. Kenar uzunluğu pozitif olduğundan a = √57 cm’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ABC üçgeninde A açısının karşısındaki a kenarı için kosinüs teoremini yaz.",
+        "back": "a² = b² + c² − 2bc · cos A."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o08",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende a = 9 cm, c = 5 cm ve aralarındaki B açısı 60°dir. b kenarının uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "14",
+        "√106",
+        "6",
+        "√61"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kosinüs teoremine göre b² = 9² + 5² − 2·9·5·cos 60° = 81 + 25 − 45 = 61 olur. Bu nedenle b = √61 cm’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ABC üçgeninde B açısının karşısındaki b kenarı için kosinüs teoremini yaz.",
+        "back": "b² = a² + c² − 2ac · cos B."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o09",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende a = 9 cm, c = 6 cm ve b = 3√7 cm’dir. B açısının ölçüsü kaç derecedir?",
+      "secenekler": [
+        "60°",
+        "90°",
+        "45°",
+        "120°"
+      ],
+      "dogru_index": 0,
+      "cozum": "cos B = (a² + c² − b²)/(2ac) = (81 + 36 − 63)/(2·9·6) = 1/2 bulunur. Üçgenin iç açısı olduğundan B = 60°dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ABC üçgeninde B açısının kosinüsünü a, b ve c kenarlarıyla ifade et.",
+        "back": "cos B = (a² + c² − b²)/(2ac)."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o10",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende 5 cm ve 8 cm uzunluğundaki iki kenar arasındaki açı 120°dir. Bu açının karşısındaki kenarın uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "√89",
+        "√129",
+        "13",
+        "9"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kosinüs teoremine göre karşı kenarın karesi 5² + 8² − 2·5·8·cos 120° = 25 + 64 + 40 = 129 olur. Kenar uzunluğu √129 cm’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kenarı b ve c, aralarındaki açısı A olan üçgende a² için kosinüs teoremini yaz.",
+        "back": "a² = b² + c² − 2bc · cos A."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o11",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Bir üçgende a = 10 cm, b = 7 cm ve c = 9 cm’dir. C açısının kosinüs değeri kaçtır?",
+      "secenekler": [
+        "12/35",
+        "35/17",
+        "17/35",
+        "1/2"
+      ],
+      "dogru_index": 2,
+      "cozum": "cos C = (a² + b² − c²)/(2ab) = (100 + 49 − 81)/(2·10·7) = 68/140 = 17/35 olur. 35/17, bu oranın tersidir ve kosinüs değeri olamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kosinüs teoreminde C açısının kosinüsünü a, b ve c kenarlarıyla ifade et.",
+        "back": "cos C = (a² + b² − c²)/(2ab)."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u01_k04_o12",
+      "alt_beceri": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "metin": "Dik açıyı çevreleyen iki kenarı 7 cm ve 9 cm olan üçgende, dik açının karşısındaki kenar kaç santimetredir?",
+      "secenekler": [
+        "14",
+        "√50",
+        "2",
+        "√130"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kosinüs teoreminde cos 90° = 0 olduğundan karşı kenarın karesi 7² + 9² = 130 olur. Kenar uzunluğu √130 cm’dir; 14 cm dik kenarların toplamıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kosinüs teoremini c kenarı ve karşısındaki C açısı için yaz.",
+        "back": "c² = a² + b² − 2ab · cos C."
+      },
+      "kazanim": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u01_k04_o01:flashcard",
+      "front": "Bir ABC üçgeninde a, b ve c kenarlarını karşılarındaki açıların sinüsleriyle ilişkilendiren sinüs teoremini yaz.",
+      "back": "sin A/a = sin B/b = sin C/c."
+    },
+    {
+      "id": "mat_10_u01_k04_o02:flashcard",
+      "front": "İki kenarı b ve c, aralarındaki açı A olan üçgenin alanını sinüs yardımıyla ifade et.",
+      "back": "Alan = (1/2) · b · c · sin A."
+    },
+    {
+      "id": "mat_10_u01_k04_o03:flashcard",
+      "front": "ABC üçgeninde c kenarı ve karşısındaki C açısı biliniyorsa a kenarını sinüs teoremiyle ifade et.",
+      "back": "a = c · sin A / sin C."
+    },
+    {
+      "id": "mat_10_u01_k04_o04:flashcard",
+      "front": "Sinüs teoreminden a ve b kenarlarıyla A ve B açıları arasındaki eşitliği yaz.",
+      "back": "a/sin A = b/sin B."
+    },
+    {
+      "id": "mat_10_u01_k04_o05:flashcard",
+      "front": "Sinüs teoreminde a kenarını, karşısındaki A açısını ve başka bir karşılıklı kenar-açı çiftini kullanarak oran bağıntısı yaz.",
+      "back": "a/sin A = c/sin C."
+    },
+    {
+      "id": "mat_10_u01_k04_o06:flashcard",
+      "front": "ABC üçgeninde a, b ve c kenarlarının karşılarında hangi açıların bulunduğunu sembollerle eşleştir.",
+      "back": "a kenarı A açısının, b kenarı B açısının, c kenarı C açısının karşısındadır."
+    },
+    {
+      "id": "mat_10_u01_k04_o07:flashcard",
+      "front": "ABC üçgeninde A açısının karşısındaki a kenarı için kosinüs teoremini yaz.",
+      "back": "a² = b² + c² − 2bc · cos A."
+    },
+    {
+      "id": "mat_10_u01_k04_o08:flashcard",
+      "front": "ABC üçgeninde B açısının karşısındaki b kenarı için kosinüs teoremini yaz.",
+      "back": "b² = a² + c² − 2ac · cos B."
+    },
+    {
+      "id": "mat_10_u01_k04_o09:flashcard",
+      "front": "ABC üçgeninde B açısının kosinüsünü a, b ve c kenarlarıyla ifade et.",
+      "back": "cos B = (a² + c² − b²)/(2ac)."
+    },
+    {
+      "id": "mat_10_u01_k04_o10:flashcard",
+      "front": "İki kenarı b ve c, aralarındaki açısı A olan üçgende a² için kosinüs teoremini yaz.",
+      "back": "a² = b² + c² − 2bc · cos A."
+    },
+    {
+      "id": "mat_10_u01_k04_o11:flashcard",
+      "front": "Kosinüs teoreminde C açısının kosinüsünü a, b ve c kenarlarıyla ifade et.",
+      "back": "cos C = (a² + b² − c²)/(2ab)."
+    },
+    {
+      "id": "mat_10_u01_k04_o12:flashcard",
+      "front": "Kosinüs teoremini c kenarı ve karşısındaki C açısı için yaz.",
+      "back": "c² = a² + b² − 2ab · cos C."
+    }
+  ],
+  "baslik": "1.4 Sinüs ve Kosinüs Teoremleri",
+  "topic_key": "Matematik > 1.4 Sinüs ve Kosinüs Teoremleri"
+}

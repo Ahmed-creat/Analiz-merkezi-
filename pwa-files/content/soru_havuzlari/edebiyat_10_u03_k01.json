@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u03_k01",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 3,
+  "tema_adi": "Dünden Bugüne",
+  "baslik": "Destan",
+  "topic_key": "Türk Dili ve Edebiyatı > Destan",
+  "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.110-116",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u03_k01_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir topluluğun kuşaklar boyunca anlattığı şiirsel anlatıda tarihî bir mücadele, ortak hayal gücüyle olağanüstü özellikler kazanıyor. Bu metin türü nedir?",
+      "alt_beceri": "Destanın tanımını, oluşum evrelerini ve türlerini belirler.",
+      "metin": "Bir milletin hayatında büyük yankı uyandırmış bir kahramanın ya da tarih olayının, milletin hayal dünyasında ortak sembollerle zenginleştirilerek anlatıldığı uzun manzum hikâyelere ne ad verilir?",
       "secenekler": [
+        "Masal",
         "Destan",
-        "Günlük",
-        "Makale",
-        "Fıkra"
+        "Halk hikâyesi",
+        "Mesnevi"
       ],
-      "dogru_index": 0,
-      "cozum": "Toplumu etkileyen olayın ortak hafızada olağanüstü unsurlarla anlatılması destan özelliğidir. Günlük ve makale bu tür sözlü-epik anlatı değildir.",
+      "dogru_index": 1,
+      "cozum": "Toplumu derinden sarsan olayların ve önemli kişilerin toplumun hayal dünyasında masallaştırılmasıyla oluşan uzun manzum hikâyeler destandır; Batı'da epope denir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Destan türünü tanımlayan temel özellikleri yaz.",
-        "back": "Destan; milletlerin yaşamında iz bırakan kahraman ya da olayların ortak sembol ve ifadelerle zenginleştirildiği uzun, çoğunlukla manzum anlatıdır."
-      }
+        "front": "Destan nedir?",
+        "back": "Bir milleti derinden etkileyen olayları ve kahramanları anlatan uzun manzum hikâyedir."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir ozan, kuşaktan kuşağa aktarılan bir anlatıyı yazıya geçiriyor. Destanın oluşum sürecinin bu son aşaması ne diye adlandırılır?",
+      "alt_beceri": "Destanın tanımını, oluşum evrelerini ve türlerini belirler.",
+      "metin": "Doğal destanlar üç evrede oluşur. Toplumu etkileyen olayların ağızdan ağıza, nesilden nesile dolaştığı döneme ne ad verilir?",
       "secenekler": [
-        "Oluşum evresi",
+        "Oluş evresi",
         "Derleme evresi",
-        "Yayılma evresi",
-        "Mit evresi"
+        "Yazıya geçiş evresi",
+        "Yayılma evresi"
       ],
-      "dogru_index": 1,
-      "cozum": "Ozanın sözlü anlatıyı toparlayıp yazıya aktarması derleme evresidir. Olayın yaşanması oluşum, sözlü dolaşım yayılma aşamasıdır.",
+      "dogru_index": 3,
+      "cozum": "Doğal destanın evreleri oluş, yayılma ve derlemedir. Sözlü dolaşım yayılma, bir ozan tarafından yazıya geçirilme derleme evresidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Doğal destanın oluşum, yayılma ve derleme aşamalarını sırayla açıkla.",
-        "back": "Önce toplumu etkileyen olay yaşanır, sonra anlatı kuşaklar arasında sözlü olarak yayılır, son olarak bir ozan onu derleyip yazıya geçirir."
-      }
+        "front": "Doğal destanın evreleri nedir?",
+        "back": "Oluş, yayılma ve derleme evreleridir."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir arşivci, eski anlatının yazılı bir yazar metni değil, sözlü aktarım ürünü olduğunu; şiir biçiminde kurulduğunu ve mitolojik unsurlar içerdiğini saptıyor. Bu özellikler hangi türü destekler?",
+      "alt_beceri": "Türk destanlarını dönemlerine ve milletlerine göre sınıflandırır.",
+      "metin": "Bir destanın metni, yüzyıllar sonra bir ozan tarafından derlenip yazıya aktarılmıştır. Bu işlem doğal destanın hangi evresine karşılık gelir?",
       "secenekler": [
-        "Bilimsel makale",
-        "Tiyatro eleştirisi",
-        "Destan",
-        "Resmî tutanak"
+        "Derleme",
+        "Oluş",
+        "Yayılma",
+        "Takti"
       ],
-      "dogru_index": 2,
-      "cozum": "Sözlü gelenek, manzum anlatım ve mitolojik ögeler destan dönemi metinlerinin temel nitelikleridir. Diğer metin türleri bu özellikler kümesiyle tanımlanmaz.",
+      "dogru_index": 0,
+      "cozum": "Ağızdan ağıza dolaşan destanın bir ozan tarafından derlenerek yazıya aktarılması derleme evresidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Destan dönemi metinlerinin üç belirgin niteliğini yaz.",
-        "back": "Sözlü gelenekte oluşmaları, manzum olmaları ve mitolojik ögelere dayanmaları."
-      }
+        "front": "Derleme evresi nedir?",
+        "back": "Sözlü dolaşan destanın bir ozan tarafından yazıya geçirildiği evredir."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Eski bir anlatı, gök olaylarının ve insanların kökeninin nasıl açıklanacağını toplulukların hayal gücüyle yorumluyor. Bu anlatı türünün adı nedir?",
+      "alt_beceri": "Destanın tanımını, oluşum evrelerini ve türlerini belirler.",
+      "metin": "Doğal destanların söyleyeni belli değildir ve metinleri yüzyıllar sonra kayda geçmiştir. Bu durum doğal destanların hangi özelliğini gösterir?",
       "secenekler": [
-        "Haber yazısı",
-        "Anı",
-        "Gezi yazısı",
-        "Mit"
+        "Aruzla yazılmaları",
+        "Yazarının bilinmesi",
+        "Anonim olmaları",
+        "Konularının günlük olması"
       ],
-      "dogru_index": 3,
-      "cozum": "Bilinmeyen evren ve yaşam olaylarını hayalî, alegorik açıklamalarla anlamlandıran anlatı mit niteliğindedir. Haber, anı ve gezi yazısı bu köken açıklama işlevini taşımaz.",
+      "dogru_index": 2,
+      "cozum": "Doğal destanlar anonimdir ve yazıya sonradan geçirilmiştir; bu yönüyle yapma destanlardan ayrılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mit kavramını ve ortaya çıkışındaki ihtiyacı açıkla.",
-        "back": "Mit, evrenin, insanların ve doğa olaylarının kökenini hayalî ve alegorik biçimde yorumlayan geleneksel anlatıdır; bilinmeyeni anlamlandırma ihtiyacından doğar."
-      }
+        "front": "Doğal destanın anonimlik özelliği nedir?",
+        "back": "Söyleyeni belli değildir; metin yüzyıllar sonra yazıya geçirilmiştir."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir uzun anlatıda aynı simgesel öge farklı bölümlerde yinelenerek olay örgüsünü ve anlamı güçlendiriyor. Bu ögeyi edebiyat terimiyle adlandır.",
+      "alt_beceri": "Türk destanlarını dönemlerine ve milletlerine göre sınıflandırır.",
+      "metin": "Göktürklerin büyük bir yenilginin ardından Ergenekon adını verdikleri yere çekilip orada çoğaldıktan sonra demir dağı eritmeleri hangi destanda anlatılır?",
       "secenekler": [
-        "Motif",
-        "Ölçü",
-        "Redif",
-        "Diyalog"
+        "Şu Destanı",
+        "Manas Destanı",
+        "Türeyiş Destanı",
+        "Ergenekon Destanı"
       ],
-      "dogru_index": 0,
-      "cozum": "Anlatı içinde bilinçli biçimde yinelenip kurguyu güçlendiren öge motiftir. Ölçü ve redif şiir düzeniyle, diyalog konuşmayla ilgilidir.",
+      "dogru_index": 3,
+      "cozum": "Demir dağın eritilerek yol açılması Göktürk destanlarından Ergenekon Destanı'nın konusudur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir eserde yinelenerek kurguyu güçlendiren ögeye ne ad verilir?",
-        "back": "Motif."
-      }
+        "front": "Ergenekon Destanı nedir?",
+        "back": "Göktürk destanıdır; Ergenekon'dan demir dağı eriterek çıkışı anlatır."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Farklı destanlarda karşılaşılan, cesareti ve kahramanlığıyla toplumun benimsediği değerleri temsil eden karakter için hangi kavram kullanılır?",
+      "alt_beceri": "Türk destanlarını dönemlerine ve milletlerine göre sınıflandırır.",
+      "metin": "Oğuz Türklerinin Üçoklar ve Bozoklar olarak ikiye ayrılması hangi destanda yer alır?",
       "secenekler": [
-        "Motif",
-        "Tip",
-        "Uyak",
-        "Bend"
+        "Bozkurt Destanı",
+        "Oğuz Kağan Destanı",
+        "Göç Destanı",
+        "Atilla Destanı"
       ],
       "dogru_index": 1,
-      "cozum": "Toplumun temel değerlerini taşıyan, çeşitli eserlerde benzer özelliklerle görülen karakter tip olarak adlandırılır. Motif ise yinelenen olay/öge unsurudur.",
+      "cozum": "Oğuz Kağan Destanı, Hun-Oğuz destanlarındandır ve Oğuz Türklerinin Üçoklar ile Bozoklar biçiminde ikiye ayrılmasını anlatır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Birçok eserde yinelenen ve toplumun temel değerlerini temsil eden karaktere ne denir?",
-        "back": "Tip."
-      }
+        "front": "Oğuz Kağan Destanı nedir?",
+        "back": "Hun-Oğuz destanıdır; Oğuzların Üçoklar ve Bozoklar olarak ayrılmasını anlatır."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatı kişisi yalnız gücüyle değil, cesareti, yiğitliği ve topluluğu koruma çabasıyla da öne çıkıyor. Bu karakter hangi tip çevresinde değerlendirilir?",
+      "alt_beceri": "Destanlardaki motifleri ve tipleri çözümler.",
+      "metin": "İslamiyet'ten sonraki Türk destanları arasında Kazak-Kırgız sahasına ait olan ve geniş bir coğrafyada yayılan destan hangisidir?",
       "secenekler": [
-        "Bilge tipi",
-        "Meddah tipi",
-        "Alp tipi",
-        "Rind tipi"
+        "Manas Destanı",
+        "Cengiz Han Destanı",
+        "Köroğlu Destanı",
+        "Danişment Gazi Destanı"
       ],
-      "dogru_index": 2,
-      "cozum": "Cesaret ve kahramanlık özellikleri alp tipinin merkezindedir. Bilge tipi akıl ve öğütle, meddah anlatıcılık rolüyle ilişkilidir.",
+      "dogru_index": 0,
+      "cozum": "Manas, Kazak-Kırgız sahasının destanıdır. Cengiz Han Türk-Moğol, Köroğlu ve Danişment Gazi Selçuklu-Beylikler dönemine aittir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Destanlardaki alp tipinin öne çıkan özelliklerini yaz.",
-        "back": "Alp; yiğit, cesur, kahraman ve kişisel üstünlüğü bulunan savaşçı tipidir."
-      }
+        "front": "Manas Destanı nedir?",
+        "back": "Kazak-Kırgız sahasına ait İslamiyet sonrası Türk destanıdır."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir destan kahramanı karar anında deneyimli bir büyüğe danışıyor; yaşlı kişi verdiği öğütle topluluğun yolunu aydınlatıyor. Bu karakter hangi tiptir?",
+      "alt_beceri": "Destanlardaki motifleri ve tipleri çözümler.",
+      "metin": "Destanlarda kurt, Türk'ün hayat ve savaş gücünün simgesidir; Oğuz Kağan Destanı'nda ışık içinden çıkarak orduya yol gösterir. Kurt motifinin destanlardaki adları hangisinde birlikte verilmiştir?",
       "secenekler": [
-        "Alp tipi",
-        "Açgözlü tipi",
-        "Taşlama tipi",
-        "Bilge tipi"
+        "Bekay ve Öge",
+        "Uluğ Türk ve Öge",
+        "Börte Çine ve Asena",
+        "Kırat ve Aşkâr"
       ],
-      "dogru_index": 3,
-      "cozum": "Topluma manevi liderlik eden, öğütleriyle yol gösteren kişi bilge tipidir. Alp tipi daha çok yiğitlik ve kahramanlıkla tanımlanır.",
+      "dogru_index": 2,
+      "cozum": "Kurt destanlarda Börte Çine ve Asena adlarıyla sembolleşmiştir; Kırat ve Aşkâr at motifine bağlı adlardır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Topluma öğüt veren ve yol gösteren destan kişisi hangi tiptir?",
-        "back": "Bilge tipi."
-      }
+        "front": "Kurt motifinin destanlardaki adları nedir?",
+        "back": "Börte Çine ve Asena'dır; kurt Türk'ün savaş gücünü simgeler."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kaynakça düzenleyicisi, sözlü gelenekte gelişmiş destanlarla bir şairin belirli bir zamanda yazdığı destanları iki ana başlıkta sınıflandırıyor. Bu iki başlık nedir?",
+      "alt_beceri": "Destanlardaki motifleri ve tipleri çözümler.",
+      "metin": "Destanlarda bir taş, millî birlik ve bütünlüğü, halkın mutluluğunu temsil eder; ülkeden çıkarıldığında kıtlık baş gösterir. Bu motif hangisidir?",
       "secenekler": [
-        "Doğal destan ve yapma destan",
-        "Masal ve fabl",
-        "Sav ve sagu",
-        "Gazel ve kaside"
+        "Ağaç motifi",
+        "Yada taşı",
+        "Kırklar motifi",
+        "Mağara motifi"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynakta destanlar doğal ve yapma olmak üzere ikiye ayrılır. Diğer ikililer farklı sözlü ürün veya nazım biçimleridir.",
+      "dogru_index": 1,
+      "cozum": "Yada taşı millî birlik ve bütünlüğü, halkın mutluluğunu ve devletin idealini temsil eder; ülkeden çıkarılınca birlik bozulur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Doğal destanlar oluşum biçimine göre hangi ana gruplandırmada yer alır?",
-        "back": "Destanlar doğal destan ve yapma destan olarak ikiye ayrılır."
-      }
+        "front": "Yada taşı motifi nedir?",
+        "back": "Millî birlik ve bütünlüğü, halkın mutluluğunu temsil eden destan motifidir."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k01_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıda kahramanın doğuşu kutsal bir ışıkla ilişkilendiriliyor ve ışık yeni yaşamın işareti sayılıyor. Bu motif hangi anlam alanını taşır?",
+      "alt_beceri": "Türk destanlarını dönemlerine ve milletlerine göre sınıflandırır.",
+      "metin": "Destanlarda hakanların akıl danıştığı, yol gösteren güngörmüş yaşlılar vardır; Dede Korkut, Uluğ Türk, Öge ve Bekay bu kişilere örnektir. Bu kişiler hangi tipi oluşturur?",
       "secenekler": [
-        "Yalnızca yön bulma işlevi",
-        "Kutsallık ve hayat verici güç",
-        "Ticaret ve alışveriş",
-        "Gündelik iş bölümü"
+        "Kadın tipi",
+        "Alp tipi",
+        "Düşman tipi",
+        "Bilge tipi"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak, ışık motifini destanın kuruluşundaki kutsallık ve hayat verici güçle ilişkilendirir. Bu motif yalnızca fiziksel aydınlatma anlamına indirgenmez.",
+      "dogru_index": 3,
+      "cozum": "Topluma manevi liderlik yapan, öğütleriyle yol gösteren bu kişiler bilge tipidir; ak sakallı ifadesiyle de anılırlar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Türk destanlarında ışık motifi hangi temel anlamla ilişkilendirilir?",
-        "back": "Kutsallık ve hayat verici güçle ilişkilendirilir."
-      }
+        "front": "Bilge tipi nedir?",
+        "back": "Destanlarda akıl danışılan, öğüt veren güngörmüş kişilerdir: Dede Korkut, Uluğ Türk."
+      },
+      "kazanim": "Destanın oluşum evrelerini, Türk destanlarını ve destan motiflerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u03_k01_o01:flashcard",
-      "front": "Destan türünü tanımlayan temel özellikleri yaz.",
-      "back": "Destan; milletlerin yaşamında iz bırakan kahraman ya da olayların ortak sembol ve ifadelerle zenginleştirildiği uzun, çoğunlukla manzum anlatıdır."
+      "front": "Destan nedir?",
+      "back": "Bir milleti derinden etkileyen olayları ve kahramanları anlatan uzun manzum hikâyedir."
     },
     {
       "id": "edebiyat_10_u03_k01_o02:flashcard",
-      "front": "Doğal destanın oluşum, yayılma ve derleme aşamalarını sırayla açıkla.",
-      "back": "Önce toplumu etkileyen olay yaşanır, sonra anlatı kuşaklar arasında sözlü olarak yayılır, son olarak bir ozan onu derleyip yazıya geçirir."
+      "front": "Doğal destanın evreleri nedir?",
+      "back": "Oluş, yayılma ve derleme evreleridir."
     },
     {
       "id": "edebiyat_10_u03_k01_o03:flashcard",
-      "front": "Destan dönemi metinlerinin üç belirgin niteliğini yaz.",
-      "back": "Sözlü gelenekte oluşmaları, manzum olmaları ve mitolojik ögelere dayanmaları."
+      "front": "Derleme evresi nedir?",
+      "back": "Sözlü dolaşan destanın bir ozan tarafından yazıya geçirildiği evredir."
     },
     {
       "id": "edebiyat_10_u03_k01_o04:flashcard",
-      "front": "Mit kavramını ve ortaya çıkışındaki ihtiyacı açıkla.",
-      "back": "Mit, evrenin, insanların ve doğa olaylarının kökenini hayalî ve alegorik biçimde yorumlayan geleneksel anlatıdır; bilinmeyeni anlamlandırma ihtiyacından doğar."
+      "front": "Doğal destanın anonimlik özelliği nedir?",
+      "back": "Söyleyeni belli değildir; metin yüzyıllar sonra yazıya geçirilmiştir."
     },
     {
       "id": "edebiyat_10_u03_k01_o05:flashcard",
-      "front": "Bir eserde yinelenerek kurguyu güçlendiren ögeye ne ad verilir?",
-      "back": "Motif."
+      "front": "Ergenekon Destanı nedir?",
+      "back": "Göktürk destanıdır; Ergenekon'dan demir dağı eriterek çıkışı anlatır."
     },
     {
       "id": "edebiyat_10_u03_k01_o06:flashcard",
-      "front": "Birçok eserde yinelenen ve toplumun temel değerlerini temsil eden karaktere ne denir?",
-      "back": "Tip."
+      "front": "Oğuz Kağan Destanı nedir?",
+      "back": "Hun-Oğuz destanıdır; Oğuzların Üçoklar ve Bozoklar olarak ayrılmasını anlatır."
     },
     {
       "id": "edebiyat_10_u03_k01_o07:flashcard",
-      "front": "Destanlardaki alp tipinin öne çıkan özelliklerini yaz.",
-      "back": "Alp; yiğit, cesur, kahraman ve kişisel üstünlüğü bulunan savaşçı tipidir."
+      "front": "Manas Destanı nedir?",
+      "back": "Kazak-Kırgız sahasına ait İslamiyet sonrası Türk destanıdır."
     },
     {
       "id": "edebiyat_10_u03_k01_o08:flashcard",
-      "front": "Topluma öğüt veren ve yol gösteren destan kişisi hangi tiptir?",
-      "back": "Bilge tipi."
+      "front": "Kurt motifinin destanlardaki adları nedir?",
+      "back": "Börte Çine ve Asena'dır; kurt Türk'ün savaş gücünü simgeler."
     },
     {
       "id": "edebiyat_10_u03_k01_o09:flashcard",
-      "front": "Doğal destanlar oluşum biçimine göre hangi ana gruplandırmada yer alır?",
-      "back": "Destanlar doğal destan ve yapma destan olarak ikiye ayrılır."
+      "front": "Yada taşı motifi nedir?",
+      "back": "Millî birlik ve bütünlüğü, halkın mutluluğunu temsil eden destan motifidir."
     },
     {
       "id": "edebiyat_10_u03_k01_o10:flashcard",
-      "front": "Türk destanlarında ışık motifi hangi temel anlamla ilişkilendirilir?",
-      "back": "Kutsallık ve hayat verici güçle ilişkilendirilir."
+      "front": "Bilge tipi nedir?",
+      "back": "Destanlarda akıl danışılan, öğüt veren güngörmüş kişilerdir: Dede Korkut, Uluğ Türk."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Destan"
+  ]
 }

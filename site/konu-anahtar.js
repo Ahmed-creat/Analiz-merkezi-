@@ -60,14 +60,14 @@
       desen: /sayma strateji|permutasyon|kombinasyon|faktoriyel/ },
 
     // ---- Fizik ----
-    { ders: ["fizik"], konu: "1.2 Bir Boyutta Sabit İvmeli Hareket",
+    { ders: ["fizik"], konu: "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
       desen: /sabit ivme|ivmeli hareket|ivme zaman|ivme.*grafik|grafik.*ivme/ },
     { ders: ["fizik"], konu: "1.1 Sabit Hızlı Hareket",
       desen: /sabit hizli hareket|sabit hizla|sabit suratle|sabit hiz.*grafik/ },
-    { ders: ["fizik"], konu: "1.3 Serbest Düşme", desen: /serbest dusme/ },
+    { ders: ["fizik"], konu: "1.3.2 Serbest Düşme Hareketi", desen: /serbest dusme/ },
     { ders: ["fizik"], konu: "1.4 İki Boyutta Sabit İvmeli Hareket",
       desen: /iki boyutta|yatay atis|egik atis|menzil/ },
-    { ders: ["fizik"], konu: "2.1 İş, Enerji ve Güç", desen: /is.*enerji.*guc|enerji.*guc|guc.*is/ },
+    { ders: ["fizik"], konu: "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki", desen: /is.*enerji.*guc|enerji.*guc|guc.*is/ },
     { ders: ["fizik"], konu: "3.3 Ohm Yasası", desen: /ohm|direnc.*gerilim|akim.*gerilim/ },
     { ders: ["fizik"], konu: "3.4 Dirençlerin Bağlanması", desen: /direnclerin baglanmasi|seri.*paralel.*direnc|esdeger direnc/ },
     { ders: ["fizik"], konu: "4.1 Dalgaların Temel Kavramları",
@@ -84,7 +84,7 @@
       desen: /stokiyometri|tepkime.*hesaplama|sinirlayici bilesen/ },
     { ders: ["kimya"], konu: "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
       desen: /gaz yasa|boyle|charles|basinc.?hacim|ideal gaz/ },
-    { ders: ["kimya"], konu: "1.2.4 Graham Difüzyon ve Eftizyon Yasası", desen: /difuzyon|efuzyon|eftizyon/ },
+    { ders: ["kimya"], konu: "1.2.4 Graham Difüzyon ve Efüzyon Yasası", desen: /difuzyon|efuzyon|eftizyon/ },
     { ders: ["kimya"], konu: "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
       desen: /birbiri icindeki cozunebilirlik|cozunebilirlik/ },
     { ders: ["kimya"], konu: "2.1.5 Çözünürlük", desen: /cozunurluk|asiri doymus/ },
@@ -94,6 +94,11 @@
     { ders: ["biyoloji"], konu: "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)", desen: /fotosentez/ },
     { ders: ["biyoloji"], konu: "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)", desen: /kemosentez/ },
     { ders: ["biyoloji"], konu: "1.5 Sindirim", desen: /sindirim/ },
+    // ATP: ODSGM'nin bu konudaki resmî başlığı "Canlılık İçin Enerjinin Önemi
+    // (ATP'nin Yapısı ve Enerji Aktarımında ATP'nin Rolü)" — Okulizyon aynı
+    // konuyu yalnız parantez içeriğiyle gönderiyor.
+    { ders: ["biyoloji"], konu: "1.1 Canlılık İçin Enerjinin Önemi",
+      desen: /atpnin yapisi|atp nin yapisi|enerji aktariminda atp|atpnin rolu/ },
     { ders: ["biyoloji"], konu: "1.7 Hücresel Solunum", desen: /hucre sel solunum|hucre solunumu|oksijenli solunum|oksijensiz solunum/ },
     { ders: ["biyoloji"], konu: "1.9 Fermantasyon", desen: /fermantasyon|etil alkol|laktik asit/ },
     { ders: ["biyoloji"], konu: "2.1 Ekosistemin Bileşenleri", desen: /ekosistemin bilesenleri|ekosistem.*bilesen/ },

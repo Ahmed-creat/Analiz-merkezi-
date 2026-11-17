@@ -2,263 +2,255 @@
   "konu_id": "edebiyat_10_u01_k04",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 1,
+  "tema_adi": "Sözün Ezgisi",
+  "baslik": "Koşma",
+  "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+  "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.17-18",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u01_k04_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir halk şiiri seçkisinde saz eşliğinde söylenen ve en sık karşılaşılan biçim olarak tanıtılan şiir türü hangisidir?",
+      "alt_beceri": "Koşmanın biçim ve söyleyiş özelliklerini belirler.",
+      "metin": "Halk edebiyatında en yaygın kullanılan nazım şekli olan, saz eşliğinde kendine özgü bir ezgiyle okunan tür hangisidir?",
       "secenekler": [
+        "Mani",
         "Koşma",
-        "Gazel",
-        "Mesnevi",
-        "Kaside"
+        "Semai",
+        "Destan"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak, koşmayı halk edebiyatında en yaygın nazım şekli olarak tanımlar. Diğer seçenekler Divan edebiyatı nazım biçimleridir.",
+      "dogru_index": 1,
+      "cozum": "Konu anlatımında koşmanın halk edebiyatının en yaygın kullanılan nazım şekli olduğu ve saz eşliğinde kendine özgü bir ezgiyle okunduğu belirtilir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Koşma halk edebiyatında nasıl bir yere sahiptir?",
-        "back": "En yaygın kullanılan nazım şeklidir."
-      }
+        "front": "Halk edebiyatının en yaygın nazım şekli nedir?",
+        "back": "Koşmadır."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şiir incelemesinde her dörtlüğün 11 heceli dizelerden oluştuğu görülüyor. Bu biçim koşmanın hangi özelliğini gösterir?",
+      "alt_beceri": "Koşmanın biçim ve söyleyiş özelliklerini belirler.",
+      "metin": "Bir koşma metninde dörtlük sayısı sayılmış ve dizelerin 11'li hece kalıbıyla kurulduğu görülmüştür. Konu anlatımına göre koşmada dörtlük sayısı kaç arasında değişir?",
       "secenekler": [
-        "Aruzla beyitlerden kurulmasını",
-        "11'li hece ölçüsüyle dörtlüklerden kurulmasını",
-        "Serbest ölçüyle bentlerden kurulmasını",
-        "7'li heceyle tek dörtlük olmasını"
+        "2-4",
+        "4-8",
+        "6-10",
+        "3-5"
       ],
-      "dogru_index": 1,
-      "cozum": "Koşmalar 11'li hece ölçüsüyle söylenir ve nazım birimi dörtlüktür. Beyit-aruz gazel ve kasideyle, tek dörtlük başka biçimlerle ilişkilidir.",
+      "dogru_index": 3,
+      "cozum": "Koşma 11'li hece ölçüsüyle söylenir, nazım birimi dörtlüktür ve dörtlük sayısı 3-5 arasında değişir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Koşmanın ölçüsü ve nazım birimi nedir?",
-        "back": "11'li hece ölçüsü ve dörtlük."
-      }
+        "front": "Koşmanın dörtlük sayısı nedir?",
+        "back": "Genellikle 3 ile 5 dörtlük arasında değişir."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğretmen, koşma biçiminde yeni bir şiir tasarlıyor. Kaynakta verilen yaygın dörtlük sayısı aralığı hangisidir?",
+      "alt_beceri": "Koşmanın biçim ve söyleyiş özelliklerini belirler.",
+      "metin": "Bir koşmanın uyak düzeni incelendiğinde birinci dörtlüğün çapraz, sonraki dörtlüklerin ise ortak uyakla bağlandığı görülür. Bu metnin uyak düzeni hangisidir?",
       "secenekler": [
-        "1–2 dörtlük",
-        "7–10 dörtlük",
-        "3–5 dörtlük",
-        "Sınırsız sayıda beyit"
+        "abab, cccb, dddb",
+        "aaab, cccb, dddb",
+        "aabb, ccdd, eeff",
+        "abba, cddc, effe"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynağa göre koşmanın dörtlük sayısı 3–5 arasında değişir. Sınırsız beyit mesnevi için verilen bir özelliktir.",
+      "dogru_index": 0,
+      "cozum": "Koşmanın uyak düzeni abab, cccb, dddb ya da abcb, dddb, eeeb gibi biçimlerde olabilir. aaab, cccb koşuğun uyak düzenidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir koşma genellikle kaç dörtlükten oluşur?",
-        "back": "Üç ile beş dörtlük arasında."
-      }
+        "front": "Koşmanın uyak düzeni nedir?",
+        "back": "abab, cccb, dddb ya da abcb, dddb, eeeb biçiminde olabilir; genelde yarım kafiye kullanılır."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir ozan, halk şiiri örneğinin son dörtlüğünde kendi seçtiği adı söylüyor. Bu kullanım hangi terimle anılır?",
+      "alt_beceri": "Koşmanın biçim ve söyleyiş özelliklerini belirler.",
+      "metin": "Bir âşık, koşmanın son dörtlüğünde kendi takma adını söylemiştir. Konu anlatımına göre bu uygulamaya ne ad verilir?",
       "secenekler": [
-        "Matla",
-        "Tegazzül",
+        "Mahlas",
         "Döşeme",
-        "Tapşırma"
+        "Tapşırma",
+        "Kavuştak"
       ],
-      "dogru_index": 3,
-      "cozum": "Ozanın koşmanın son dörtlüğünde takma adını söylemesine tapşırma denir. Matla gazelin ilk beyti, tegazzül kaside içinde gazel söyleme, döşeme ise anlatı bölümüdür.",
+      "dogru_index": 2,
+      "cozum": "Âşığın koşmanın son dörtlüğünde takma adını söylemesine tapşırma denir; divan şiirinde aynı uygulama mahlas adını alır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Koşmanın son dörtlüğünde ozanın kullandığı takma ada ne denir?",
-        "back": "Tapşırma; Divan şiirinde buna mahlas denir."
-      }
+        "front": "Tapşırma nedir?",
+        "back": "Tapşırma denir; divan şiirindeki karşılığı mahlastır."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Yeni bir koşmada şair, sevdiği kişinin güzelliğini ve kır manzarasının onda uyandırdığı özlemi içten bir dille anlatıyor. Bu koşma türü hangisidir?",
+      "alt_beceri": "Koşmanın biçim ve söyleyiş özelliklerini belirler.",
+      "metin": "Koşmanın halka hitap etmesi, dil ve anlatım bakımından hangi sonucu doğurmuştur?",
       "secenekler": [
-        "Güzelleme",
-        "Taşlama",
-        "Koçaklama",
-        "Ağıt"
+        "Aruzun yoğun biçimde kullanılmasını",
+        "Arapça ve Farsça tamlamalarla süslenmesini",
+        "Yalnızca saray çevresinde okunmasını",
+        "Dilin sade, anlatımın yalın ve içten olmasını"
       ],
-      "dogru_index": 0,
-      "cozum": "Güzelleme aşk, hasret, ayrılık ve doğa sevgisi gibi lirik konuları işler. Taşlama eleştiri, koçaklama yiğitlik, ağıt ise ölüm acısı üzerinedir.",
+      "dogru_index": 3,
+      "cozum": "Konu anlatımında koşmanın halka hitap ettiği için dilinin sade, anlatımının yalın ve içten olduğu belirtilir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aşk, ayrılık ve doğa sevgisini lirik biçimde işleyen koşma türünün adını yaz.",
-        "back": "Güzelleme."
-      }
+        "front": "Koşmanın dil ve anlatım özelliği nedir?",
+        "back": "Halka hitap ettiği için sade, anlatımı yalın ve içtendir."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir ozan, kasabadaki haksız uygulamaları alaycı ve eleştirel bir şiirle hedef alıyor. Konusuna göre bu koşma nasıl adlandırılır?",
+      "alt_beceri": "Koşmayı konularına göre sınıflandırır.",
+      "metin": "Aşk, hasret, ayrılık ve doğa sevgisi gibi lirik konuları işleyen koşma türü hangisidir?",
       "secenekler": [
-        "Güzelleme",
         "Taşlama",
+        "Güzelleme",
         "Koçaklama",
         "Ağıt"
       ],
       "dogru_index": 1,
-      "cozum": "Taşlama, kişiyi ya da toplumun bozuk yönlerini eleştirmek için yazılır; Divan edebiyatında hicviye karşılığı vardır. Yiğitçe savaş anlatımı koçaklamadır.",
+      "cozum": "Güzelleme, aşk, hasret, ayrılık ve doğa sevgisi gibi lirik konuları işleyen koşma türüdür; Karacaoğlan'ın güzellemeleri ünlüdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir kişiyi ya da toplumsal aksaklığı yeren koşma türü nedir?",
-        "back": "Taşlama; Divan edebiyatındaki karşılığı hicviyedir."
-      }
+        "front": "Güzelleme nedir?",
+        "back": "Aşk, hasret, ayrılık ve doğa sevgisi gibi lirik konuları işleyen koşma türüdür."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir halk ozanı, savunma sırasında gösterilen cesareti ve savaşçıların yiğitliğini coşkulu bir söyleyişle anlatıyor. Bu koşma türü hangisidir?",
+      "alt_beceri": "Koşmayı konularına göre sınıflandırır.",
+      "metin": "Bir koşmada toplumun bozuk yönleri eleştirilmekte, bir kişi yergiyle anlatılmaktadır. Bu koşma türü ve divan edebiyatındaki karşılığı hangisinde birlikte verilmiştir?",
       "secenekler": [
-        "Güzelleme",
-        "Taşlama",
-        "Koçaklama",
-        "Ağıt"
+        "Taşlama – Hicviye",
+        "Güzelleme – Methiye",
+        "Koçaklama – Kaside",
+        "Ağıt – Mersiye"
       ],
-      "dogru_index": 2,
-      "cozum": "Koçaklama savaş ve dövüşleri yiğitçe bir üslupla anlatır. Güzelleme lirik konulara, taşlama eleştiriye, ağıt ölüm acısına yönelir.",
+      "dogru_index": 0,
+      "cozum": "Bir kimseyi yermek veya toplumun bozuk yönlerini eleştirmek amacıyla yazılan koşmalara taşlama denir; divan edebiyatındaki karşılığı hicviyedir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yiğitlik ve savaş konularını coşkulu biçimde anlatan koşma türünün adını yaz.",
-        "back": "Koçaklama."
-      }
+        "front": "Taşlamanın divan edebiyatındaki karşılığı nedir?",
+        "back": "Hicviyedir; günümüz edebiyatındaki karşılığı yergi, Batı edebiyatındaki karşılığı satirdir."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir topluluk, kaybettikleri bir kişiyi anarken duyduğu acıyı belirli bir ezgiyle söylüyor. Halk şiirindeki bu türün adı nedir?",
+      "alt_beceri": "Koşmayı konularına göre sınıflandırır.",
+      "metin": "Coşkun ve yiğitçe bir üslupla savaş ve dövüşleri anlatan koşma türü hangisidir?",
       "secenekler": [
+        "Taşlama",
         "Güzelleme",
         "Koçaklama",
-        "Taşlama",
         "Ağıt"
       ],
-      "dogru_index": 3,
-      "cozum": "Ağıt, bir kişinin ölümünden duyulan acıyı dile getirir ve ezgiyle söylenir. Koçaklama yiğitliği, taşlama eleştiriyi işler.",
+      "dogru_index": 2,
+      "cozum": "Savaş ve dövüşleri coşkun, yiğitçe bir üslupla anlatan koşmalara koçaklama denir; Köroğlu, Dadaloğlu ve Kayıkçı Kul Mustafa bu türde tanınır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ölüm ardından duyulan acıyı ezgiyle dile getiren koşma türünün adını yaz.",
-        "back": "Ağıt."
-      }
+        "front": "Koçaklama nedir?",
+        "back": "Savaş ve dövüşleri coşkun, yiğitçe bir üslupla anlatan koşma türüdür."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir karşılaştırma tablosunda koşmanın eski Türk şiirindeki ve Divan şiirindeki benzerleri isteniyor. Doğru eşleştirme hangisidir?",
+      "alt_beceri": "Koşmayı koşuk, gazel ve ağıtla ilişkilendirir.",
+      "metin": "Bir kişinin ölümünden duyulan acının belli bir ezgiyle anlatıldığı, hem anonim halk edebiyatında hem âşık edebiyatında görülen tür hangisidir?",
       "secenekler": [
-        "Koşuk ve gazel",
-        "Sav ve kaside",
-        "Sagu ve mesnevi",
-        "Türkü ve rubai"
+        "Güzelleme",
+        "Ağıt",
+        "Sav",
+        "Türkü"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak, koşmanın İslamiyet öncesi karşılığını koşuk, Divan edebiyatındaki karşılığını gazel olarak verir. Sav ve sagu içerikçe farklı sözlü ürünlerdir.",
+      "dogru_index": 1,
+      "cozum": "Ağıt, bir kişinin ölümünden duyulan acıyı belli bir ezgiyle anlatan türdür; İslamiyet öncesinde sagu, divan edebiyatında mersiye karşılığıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Koşmanın İslamiyet öncesi ve Divan edebiyatındaki karşılıkları nelerdir?",
-        "back": "İslamiyet öncesinde koşuk, Divan edebiyatında gazel."
-      }
+        "front": "Ağıdın karşılık geldiği türler nedir?",
+        "back": "İslamiyet öncesi Türk edebiyatında sagu, divan edebiyatında mersiye karşılığıdır."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k04_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir ozan, halkın anlayabileceği sade sözlerle dörtlüklerini saz eşliğinde dile getiriyor. Bu anlatım hangi halk şiiri biçimiyle uyumludur?",
+      "alt_beceri": "Koşmayı koşuk, gazel ve ağıtla ilişkilendirir.",
+      "metin": "Koşmanın divan edebiyatındaki karşılığı olarak ders notunda hangi tür gösterilir?",
       "secenekler": [
         "Kaside",
-        "Koşma",
-        "Gazel",
-        "Mesnevi"
+        "Mersiye",
+        "Mesnevi",
+        "Gazel"
       ],
-      "dogru_index": 1,
-      "cozum": "Koşmalar saz eşliğinde ve yalın, içten bir dille okunur. Divan şiiri biçimlerinde ağır ve sanatlı söyleyiş daha baskındır.",
+      "dogru_index": 3,
+      "cozum": "Konu anlatımında koşmanın İslamiyet öncesi adının koşuk, divan edebiyatındaki karşılığının ise gazel olduğu belirtilir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Koşmaların söyleyiş ve dil özellikleri nasıldır?",
-        "back": "Saz eşliğinde kendine özgü ezgiyle söylenir; dili yalın ve içtendir."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u01_k04_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir koşma incelemesinde dizelerin sonunda tek ses benzerliği temel alınmış. Kaynağa göre koşmalarda genellikle hangi uyak kullanılır?",
-      "secenekler": [
-        "Zengin uyak",
-        "Cinaslı uyak zorunluluğu",
-        "Yarım uyak",
-        "Uyak bulunmaması"
-      ],
-      "dogru_index": 2,
-      "cozum": "Kaynağa göre koşmalarda genellikle yarım uyak kullanılır. Cinaslı uyak bazı manilerde görülebilir; koşma için zorunlu değildir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Koşmalarda genellikle kullanılan uyak türünü yaz.",
-        "back": "Yarım uyak."
-      }
+        "front": "Koşmanın divan şiirindeki eşdeğeri nedir?",
+        "back": "Gazeldir; İslamiyet öncesindeki adı ise koşuktur."
+      },
+      "kazanim": "Koşmanın biçim özelliklerini, konularına göre türlerini ve benzer türlerle ilişkisini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u01_k04_o01:flashcard",
-      "front": "Koşma halk edebiyatında nasıl bir yere sahiptir?",
-      "back": "En yaygın kullanılan nazım şeklidir."
+      "front": "Halk edebiyatının en yaygın nazım şekli nedir?",
+      "back": "Koşmadır."
     },
     {
       "id": "edebiyat_10_u01_k04_o02:flashcard",
-      "front": "Koşmanın ölçüsü ve nazım birimi nedir?",
-      "back": "11'li hece ölçüsü ve dörtlük."
+      "front": "Koşmanın dörtlük sayısı nedir?",
+      "back": "Genellikle 3 ile 5 dörtlük arasında değişir."
     },
     {
       "id": "edebiyat_10_u01_k04_o03:flashcard",
-      "front": "Bir koşma genellikle kaç dörtlükten oluşur?",
-      "back": "Üç ile beş dörtlük arasında."
+      "front": "Koşmanın uyak düzeni nedir?",
+      "back": "abab, cccb, dddb ya da abcb, dddb, eeeb biçiminde olabilir; genelde yarım kafiye kullanılır."
     },
     {
       "id": "edebiyat_10_u01_k04_o04:flashcard",
-      "front": "Koşmanın son dörtlüğünde ozanın kullandığı takma ada ne denir?",
-      "back": "Tapşırma; Divan şiirinde buna mahlas denir."
+      "front": "Tapşırma nedir?",
+      "back": "Tapşırma denir; divan şiirindeki karşılığı mahlastır."
     },
     {
       "id": "edebiyat_10_u01_k04_o05:flashcard",
-      "front": "Aşk, ayrılık ve doğa sevgisini lirik biçimde işleyen koşma türünün adını yaz.",
-      "back": "Güzelleme."
+      "front": "Koşmanın dil ve anlatım özelliği nedir?",
+      "back": "Halka hitap ettiği için sade, anlatımı yalın ve içtendir."
     },
     {
       "id": "edebiyat_10_u01_k04_o06:flashcard",
-      "front": "Bir kişiyi ya da toplumsal aksaklığı yeren koşma türü nedir?",
-      "back": "Taşlama; Divan edebiyatındaki karşılığı hicviyedir."
+      "front": "Güzelleme nedir?",
+      "back": "Aşk, hasret, ayrılık ve doğa sevgisi gibi lirik konuları işleyen koşma türüdür."
     },
     {
       "id": "edebiyat_10_u01_k04_o07:flashcard",
-      "front": "Yiğitlik ve savaş konularını coşkulu biçimde anlatan koşma türünün adını yaz.",
-      "back": "Koçaklama."
+      "front": "Taşlamanın divan edebiyatındaki karşılığı nedir?",
+      "back": "Hicviyedir; günümüz edebiyatındaki karşılığı yergi, Batı edebiyatındaki karşılığı satirdir."
     },
     {
       "id": "edebiyat_10_u01_k04_o08:flashcard",
-      "front": "Ölüm ardından duyulan acıyı ezgiyle dile getiren koşma türünün adını yaz.",
-      "back": "Ağıt."
+      "front": "Koçaklama nedir?",
+      "back": "Savaş ve dövüşleri coşkun, yiğitçe bir üslupla anlatan koşma türüdür."
     },
     {
       "id": "edebiyat_10_u01_k04_o09:flashcard",
-      "front": "Koşmanın İslamiyet öncesi ve Divan edebiyatındaki karşılıkları nelerdir?",
-      "back": "İslamiyet öncesinde koşuk, Divan edebiyatında gazel."
+      "front": "Ağıdın karşılık geldiği türler nedir?",
+      "back": "İslamiyet öncesi Türk edebiyatında sagu, divan edebiyatında mersiye karşılığıdır."
     },
     {
       "id": "edebiyat_10_u01_k04_o10:flashcard",
-      "front": "Koşmaların söyleyiş ve dil özellikleri nasıldır?",
-      "back": "Saz eşliğinde kendine özgü ezgiyle söylenir; dili yalın ve içtendir."
-    },
-    {
-      "id": "edebiyat_10_u01_k04_o11:flashcard",
-      "front": "Koşmalarda genellikle kullanılan uyak türünü yaz.",
-      "back": "Yarım uyak."
+      "front": "Koşmanın divan şiirindeki eşdeğeri nedir?",
+      "back": "Gazeldir; İslamiyet öncesindeki adı ise koşuktur."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Koşma"
+  ]
 }

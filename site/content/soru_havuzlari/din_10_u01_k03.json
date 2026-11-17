@@ -2,286 +2,327 @@
   "konu_id": "din_10_u01_k03",
   "sinif": 10,
   "ders": "Din Kültürü",
-  "kaynak_dosya": "10. Sınıf din json.zip",
+  "tema": 1,
+  "tema_adi": "İslam'da Varlık ve Bilgi",
+  "baslik": "1.2 Allah-Âlem İlişkisi",
+  "topic_key": "Din Kültürü > 1.2 Allah-Âlem İlişkisi",
+  "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar.",
+  "kaynak": "Din Kültürü 10 ders kitabı, s.23-27",
+  "kaynak_dosya": "din-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "din_10_u01_k03_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kavram, Allah dışındaki tüm varlıkları ve varlık alanını kapsayacak biçimde kullanılıyor. Bu kavram nedir?",
+      "alt_beceri": "Âlem kavramını, şehadet ve gayb âlemini açıklar.",
+      "metin": "Akıl ve duyu organlarıyla bilinebilen veya varlığı düşünülebilen, Allah dışındaki bütün varlıkları ifade eden kavram hangisidir?",
       "secenekler": [
+        "Şehadet",
         "Âlem",
-        "Vahiy",
-        "İlim",
-        "Kulluk"
+        "Gayb",
+        "Mahlûk"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak, âlemi Allah dışındaki bütün varlıklar olarak tanımlar; sözlükte evren, kâinat ve dünya anlamlarında kullanıldığını da belirtir.",
+      "dogru_index": 1,
+      "cozum": "Âlem, Allah'ın dışındaki bütün varlıkları kapsayan kavramdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Âlem kavramının sözlük ve terim anlamlarını açıklayın.",
-        "back": "Sözlükte evren, gök cisimleri, kâinat ve dünya; terim olarak akıl ve duyularla bilinebilen ya da varlığı düşünülebilen Allah dışındaki bütün varlıklardır."
-      }
+        "front": "Âlem nedir?",
+        "back": "Allah dışındaki bütün varlıkları ifade eden kavram."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Duyu organlarıyla doğrudan algılanamayan ancak varlığına inanılan alan, kaynakta hangi kavramla anılır?",
+      "alt_beceri": "Âlem kavramını, şehadet ve gayb âlemini açıklar.",
+      "metin": "İnsanın duyular yoluyla algılayabildiği varlıklardan oluşan bölüm hangisidir?",
       "secenekler": [
-        "Şehadet âlemi",
         "Gayb âlemi",
-        "İnsanlar âlemi",
-        "Cansızlar âlemi"
+        "Melekût âlemi",
+        "Berzah âlemi",
+        "Şehadet âlemi"
       ],
-      "dogru_index": 1,
-      "cozum": "Gayb âlemi duyularla algılanamayan varlıkların alanıdır. Şehadet âlemi ise duyularla algılanabilen varlıkları kapsar.",
+      "dogru_index": 3,
+      "cozum": "Duyularla algılanabilen varlıklar şehadet âlemini oluşturur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Şehadet âlemi ile gayb âlemini ayırt edin.",
-        "back": "Şehadet âlemi duyularla algılanabilen varlıkları; gayb âlemi akıl ve duyularla algılanamayan varlıkları kapsar."
-      }
+        "front": "Şehadet âlemi nedir?",
+        "back": "Duyularla algılanabilen varlıkların oluşturduğu bölüm."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir açıklama, varlıkların yalnızca ilk anda yaratılmadığını, Allah’ın yaratmasının devam ettiğini savunuyor. Bu, Allah-âlem ilişkisinin hangi yönüdür?",
+      "alt_beceri": "Âlem kavramını, şehadet ve gayb âlemini açıklar.",
+      "metin": "Akıl ve duyular yoluyla algılanamayan varlıkların oluşturduğu bölüm hangisidir?",
       "secenekler": [
-        "Âlemin Allah’tan bağımsız olması",
-        "Yaratılışın yalnızca insanla sınırlı olması",
-        "Yaratmanın sürekliliği",
-        "Allah’ın varlıklarca yaratılması"
+        "Gayb âlemi",
+        "Şehadet âlemi",
+        "Bezm-i elest",
+        "Dâr-ı dünya"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak, Allah’ın tüm varlıkları yarattığını, yaratmasının devam ettiğini ve âlemin varlığının O’na bağlı olduğunu bildirir.",
+      "dogru_index": 0,
+      "cozum": "Duyularla algılanamayan varlık alanı gayb âlemi olarak adlandırılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İslam’a göre Allah ile âlem arasındaki yaratma ilişkisini açıklayın.",
-        "back": "Allah bütün varlıkları yoktan var eder, yaratması sürer ve yarattıklarına şekil verir; âlemi oluşturan varlıkların varlığı O’na bağlıdır."
-      }
+        "front": "Gayb âlemi nedir?",
+        "back": "Duyularla algılanamayan varlıkların oluşturduğu bölüm."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir görüş, bütün varlıkların varlığı için başka bir varlığa bağlı olduğunu, Allah’ın ise hiçbir şeye ihtiyaç duymadığını savunuyor. Bu hangi ilişkiyi açıklar?",
+      "alt_beceri": "Âlem kavramını, şehadet ve gayb âlemini açıklar.",
+      "metin": "Allah'ın her şeyin yaratıcısı olduğunu ifade eden ismi hangisidir?",
       "secenekler": [
-        "Allah ile âlemin eşit derecede muhtaç olmasını",
-        "Âlemin kendi kendini yaratmasını",
-        "İnsanın yaratıcı olmasını",
-        "Allah’ın bağımsızlığı ve âlemin O’na bağlılığını"
+        "el-Alîm",
+        "er-Rezzâk",
+        "el-Halık",
+        "el-Basîr"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynakta Allah’ın var olmak için hiçbir şeye muhtaç olmadığı, bütün varlıkların ise O’na muhtaç olduğu belirtilir.",
+      "dogru_index": 2,
+      "cozum": "el-Halık, yaratan anlamına gelir ve Allah'ın yaratıcılığını ifade eder.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah’ın âlem karşısındaki bağımsızlığını ve âlemin O’na ihtiyacını belirtin.",
-        "back": "Allah var olmak için hiçbir şeye muhtaç değildir; âlem ise kendiliğinden var olmadığından varlığını sürdürmek için Allah’a muhtaçtır."
-      }
+        "front": "el-Halık ne demektir?",
+        "back": "Yaratan; Allah'ın her şeyin yaratıcısı olması."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi, yaşadığı çevreyi korumayı ve toplumsal adalete katkıda bulunmayı kendisine verilmiş bir görev sayıyor. Bu tutum hangi insan anlayışıyla ilişkilidir?",
+      "alt_beceri": "Âlem kavramını, şehadet ve gayb âlemini açıklar.",
+      "metin": "İslam düşüncesine göre âlemin varlığını sürdürmesi hangi gerçeğe bağlıdır?",
       "secenekler": [
-        "İnsanın halife ve sorumlu oluşuyla",
-        "İnsanın âlemden bağımsız oluşuyla",
-        "İnsanın tüm varlıklara sahip olmasıyla",
-        "İnsanın sorumluluk taşımamasıyla"
+        "Âlemin kendi kendine yeterli olmasına",
+        "Varlıkların birbirini yaratmasına",
+        "İnsanın âlemi yönetmesine",
+        "Allah'ın yaratmasının devam etmesine"
       ],
-      "dogru_index": 0,
-      "cozum": "İslam inancında insanın âlemdeki konumu halifelik sorumluluğuyla ilişkilendirilir. İnsan yeryüzünü imar etmek ve emanetleri korumakla görevlidir.",
+      "dogru_index": 3,
+      "cozum": "Âlem var olmak ve varlığını sürdürmek için Allah'a muhtaçtır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsanın âlemdeki konumu hangi sorumlulukla ilişkilendirilir?",
-        "back": "İnsan Allah’ın halifesi olarak yeryüzünü imar etmek, adaleti sağlamak ve kendisine emanet edilenleri korumakla sorumludur."
-      }
+        "front": "Yaratmanın sürekliliği nedir?",
+        "back": "Allah'ın yaratmasının devam etmesi; âlemin varlığını sürdürmesi."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir insan, hayatını yaratılış amacına uygun sürdürmek için Allah’ın emirlerine uymaya ve hayırlı işler yapmaya çalışıyor. Bu tutum nasıl adlandırılır?",
+      "alt_beceri": "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar.",
+      "metin": "İslam inancına göre insanın âlemdeki konumu hangi sorumlulukla ilişkilidir?",
       "secenekler": [
-        "Âlem",
-        "Kulluk",
-        "Gayb",
-        "İlim"
+        "Âlemin tek sahibi olma yetkisi",
+        "Allah'ın halifesi olma sorumluluğu",
+        "Doğa olaylarını belirleme görevi",
+        "Varlıkları yaratma görevi"
       ],
       "dogru_index": 1,
-      "cozum": "Kaynak kulluğu Allah’ın emir ve yasaklarına uymak, hayatı yaratılış amacına uygun yaşamak ve hayırlı işler yapmak olarak açıklar.",
+      "cozum": "İnsan, yeryüzünü imar etmek ve emanetleri korumakla sorumlu bir halifedir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsanın yaratılış amacı kaynakta nasıl açıklanır?",
-        "back": "İnsan Allah’ı tanımak ve O’na kulluk etmek için yaratılmıştır; kulluk emir ve yasaklara uymayı ve hayırlı işler yapmayı kapsar."
-      }
+        "front": "İnsanın âlemdeki konumu nedir?",
+        "back": "Allah'ın halifesi olma sorumluluğu."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir topluluk, kendisine sunulan kaynakları sınırsızca tüketmek yerine onları koruma sorumluluğu taşıdığını kabul ediyor. Kaynağa göre bu anlayış neyi yansıtır?",
+      "alt_beceri": "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar.",
+      "metin": "Kur’an’da insanın yaratılış amacı, “Ben cinleri ve insanları ancak bana kulluk etsinler diye yarattım.” ayetiyle açıklanır. Bu ayetten çıkarılan temel ilke hangisidir?",
       "secenekler": [
-        "İnsanın mutlak sahipliğini",
-        "Kaynakların amaçsız yaratılmasını",
-        "Nimetlerin emanet oluşunu",
-        "Âlemin Allah’tan bağımsızlığını"
+        "İbadetin yalnızca Allah’a yapılması",
+        "İnsanın doğayı yönetmesi",
+        "Servetin adil paylaşılması",
+        "Ahiret hayatının dünya hayatından üstün olması"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak, yeryüzündeki nimetlerin Allah’ın mülkü olarak insana emanet edildiğini ve uygun biçimde kullanılmaları gerektiğini belirtir.",
+      "dogru_index": 0,
+      "cozum": "Ayet, insanın yaratılış amacını Allah'a kulluk olarak bildirir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsana sunulan nimetler neden emanet olarak görülür?",
-        "back": "Nimetler Allah’ın mülküdür ve belirli amaçlarla insana sunulmuştur; insan onları O’nun irade ve rızasına uygun kullanmakla sorumludur."
-      }
+        "front": "İnsanın yaratılış amacı nedir?",
+        "back": "Allah’a kulluk etmek."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi, farklı davranış seçenekleri arasından tercih yapabiliyor ve kararının hesabını vermesi gerektiğini biliyor. Bu hangi ilişkiyi gösterir?",
+      "alt_beceri": "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar.",
+      "metin": "İnsanın kendisine verilen nimetler karşısındaki sorumluluğu hangisidir?",
       "secenekler": [
-        "Duyular ile sezgi ilişkisini",
-        "Âlemin yaratılması ile vahiy ilişkisini",
-        "Allah’ın muhtaç oluşunu",
-        "İrade özgürlüğü ile sorumluluk ilişkisini"
+        "Nimetleri kendi mülkü saymak",
+        "Nimetleri sınırsız tüketmek",
+        "Nimetleri Allah'ın rızasına uygun kullanmak",
+        "Nimetleri biriktirip saklamak"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak, insanın davranış ve kullukta tercih yapabildiğini ve bu tercihlerinden sorumlu tutulduğunu açıklar.",
+      "dogru_index": 2,
+      "cozum": "Nimetler Allah'ın mülkü olup emanet olarak rızaya uygun kullanılmalıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsanın iradesi ile sorumluluğu arasındaki ilişki nedir?",
-        "back": "İnsan temel ihtiyaçlarında Allah’ın koyduğu kurallara bağlıdır; davranışlarında ve kullukta tercih yapabildiği için tercihlerinden sorumludur."
-      }
+        "front": "Emanet bilinci nedir?",
+        "back": "Nimetleri Allah'ın mülkü bilip rızasına uygun kullanmak."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrenci, kâinattaki düzenin varlıkların ortak bir yasalar çerçevesinde işlemesine dayandığını ifade ediyor. Kaynağa göre bu düzeni kim belirlemiştir?",
+      "alt_beceri": "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar.",
+      "metin": "Allah-âlem ilişkisi hangi ilmin konuları arasında yer alır?",
       "secenekler": [
-        "Allah",
-        "Âlemdeki varlıkların kendileri",
-        "İnsanın kişisel tercihleri",
-        "Tesadüfî yorumlar"
+        "Fıkıh",
+        "Kelam",
+        "Tefsir",
+        "Hadis"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak varlıkların Allah’ın koyduğu kurallarla hareket ettiğini ve bütün varlıkların Allah’ı tesbih ettiğini aktarır.",
+      "dogru_index": 1,
+      "cozum": "Allah'ın varlığı ve âlemle ilişkisi kelam ilminin konularındandır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İslam düşüncesinde varlıkların Allah’ın koyduğu kurallarla ilişkisi nasıldır?",
-        "back": "Varlıklar Allah’ın koyduğu kurallar çerçevesinde hareket eder; kainatta uyumsuzluk bulunmadığı ve bütün varlıkların Allah’ı tesbih ettiği belirtilir."
-      }
+        "front": "Kelam ilminin konularından biri nedir?",
+        "back": "Allah-âlem ilişkisi."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir inceleme Allah’ın varlığı, âlemin O’na bağlılığı ve yaratılış ilişkisini konu ediniyor. Bu çalışma hangi ilim alanıyla doğrudan ilişkilidir?",
+      "alt_beceri": "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar.",
+      "metin": "İnsanın davranışlarında serbest bırakılmasının sonucu hangisidir?",
       "secenekler": [
-        "Astronomiyle",
-        "Kelamla",
-        "Fıkıhla",
-        "Tıpla"
+        "Yalnız ibadetlerinden sorumlu tutulması",
+        "Amellerinin karşılığını dünyada alması",
+        "Sorumluluğunun meleklere ait olması",
+        "Tercihlerinden sorumlu tutulması"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak, Allah-âlem ilişkisini kelam ilminin ele aldığı konular arasında sayar. Diğer disiplinler farklı alanları inceler.",
+      "dogru_index": 3,
+      "cozum": "İnsan iradesini kullanmakta serbest bırakılmış, bu nedenle tercihlerinden sorumlu tutulmuştur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah-âlem ilişkisi İslam düşüncesinde hangi ilim alanında ele alınır?",
-        "back": "Allah-âlem ilişkisi kelam ilminin ele aldığı konular arasındadır."
-      }
+        "front": "İnsanın sorumluluğunun kaynağı nedir?",
+        "back": "İradesini serbestçe kullanması."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir insan, çevresindeki varlıkları yalnızca kendi çıkarı için kullanmak yerine yaratılış amacı ve emanet sorumluluğunu gözetiyor. Bu yaklaşım hangi anlayışa uygundur?",
+      "alt_beceri": "Âlem kavramını, şehadet ve gayb âlemini açıklar.",
+      "metin": "“Âlemlerin Rabbi” tabiri hangi ilişkiye işaret eder?",
       "secenekler": [
-        "İnsanın tüm varlıkların mutlak sahibi olmasına",
-        "Gayb âleminin duyularla bilinmesine",
-        "İnsanın âlemdeki sorumlu konumuna",
-        "Âlemin Allah’tan bağımsız olmasına"
+        "Allah'ın bütün varlıkların Rabbi olmasına",
+        "İnsanın âlemi yönetmesine",
+        "Varlıkların kendi kendine var olmasına",
+        "Âlemin Allah'ın bir parçası olmasına"
       ],
-      "dogru_index": 2,
-      "cozum": "İslam’a göre insanın âlemde özel bir sorumluluğu vardır; yaratılış amacı kulluk etmek ve kendisine sunulan nimetleri uygun kullanmaktır.",
+      "dogru_index": 0,
+      "cozum": "Tabir, Allah'ın yarattığı bütün varlıklar üzerindeki Rabliğini ifade eder.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İslam’a göre âlemdeki varlıklar ile insanın konumu arasındaki bağı açıklayın.",
-        "back": "Âlemdeki varlıkların farklı yaratılış amaçları vardır; insan Allah’ı tanıyıp kulluk etmek ve kendisine emanet edilen nimetleri sorumlu biçimde kullanmakla yükümlüdür."
-      }
+        "front": "Rab kavramının anlamı nedir?",
+        "back": "Yaratan, besleyen ve yöneten; âlemlerin Rabbi olan Allah."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     },
     {
       "soru_id": "din_10_u01_k03_o12",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir açıklama Allah’ı bütün varlıkların yaratıcısı ve yöneticisi, insanı da seçimi ve kulluğundan sorumlu olarak ele alıyor. Bu çerçeve hangi konuyu özetler?",
+      "alt_beceri": "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar.",
+      "metin": "İnsanın yeryüzünde halife olması hangi görevleri kapsar?",
       "secenekler": [
-        "Bilgi kaynaklarının sınıflandırılmasını",
-        "Dinî yorum farklılıklarını",
-        "İslam’daki ilim dallarını",
-        "Allah-âlem ilişkisini"
+        "Servet toplayıp toplum üzerinde hüküm kurmak",
+        "Doğa olaylarının yönünü değiştirmek",
+        "Yeryüzünü imar etmek, adaleti sağlamak ve emanetleri korumak",
+        "Varlıkları yaratıp onlara şekil vermek"
       ],
-      "dogru_index": 3,
-      "cozum": "Allah-âlem ilişkisi yaratma, varlıkların Allah’a bağlılığı, insanın kulluk ve sorumluluk konumunu birlikte ele alır.",
+      "dogru_index": 2,
+      "cozum": "Halifelik, imar, adalet ve emaneti koruma sorumluluğunu içerir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah-âlem ilişkisinin temel unsurlarını kısa biçimde sıralayın.",
-        "back": "Allah âlemin Rabbi, yaratıcısı ve rızık vericisidir; âlem O’na muhtaçtır, yaratma sürer ve insan kullukla sorumludur."
-      }
+        "front": "Halifelik nedir?",
+        "back": "İnsanın yeryüzünü imar etme, adaleti sağlama ve emaneti koruma sorumluluğu."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
+    },
+    {
+      "soru_id": "din_10_u01_k03_o13",
+      "alt_beceri": "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar.",
+      "metin": "İslam düşüncesine göre varlıkların Allah'ı tespih etmesi neyi gösterir?",
+      "secenekler": [
+        "Varlıkların irade sahibi olduğunu",
+        "Âlemin Allah'tan bağımsız olduğunu",
+        "İnsanın varlıklardan üstün olmadığını",
+        "Bütün varlıkların Allah ile ilişki içinde olduğunu"
+      ],
+      "dogru_index": 3,
+      "cozum": "Tespih, varlıkların Allah ile kesintisiz ilişkisini dile getirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tespih nedir?",
+        "back": "Varlıkların Allah'ı anması ve O'nunla kesintisiz ilişki içinde olması."
+      },
+      "kazanim": "Allah-âlem ilişkisini ve insanın âlemdeki konumunu açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "din_10_u01_k03_o01:flashcard",
-      "front": "Âlem kavramının sözlük ve terim anlamlarını açıklayın.",
-      "back": "Sözlükte evren, gök cisimleri, kâinat ve dünya; terim olarak akıl ve duyularla bilinebilen ya da varlığı düşünülebilen Allah dışındaki bütün varlıklardır."
+      "front": "Âlem nedir?",
+      "back": "Allah dışındaki bütün varlıkları ifade eden kavram."
     },
     {
       "id": "din_10_u01_k03_o02:flashcard",
-      "front": "Şehadet âlemi ile gayb âlemini ayırt edin.",
-      "back": "Şehadet âlemi duyularla algılanabilen varlıkları; gayb âlemi akıl ve duyularla algılanamayan varlıkları kapsar."
+      "front": "Şehadet âlemi nedir?",
+      "back": "Duyularla algılanabilen varlıkların oluşturduğu bölüm."
     },
     {
       "id": "din_10_u01_k03_o03:flashcard",
-      "front": "İslam’a göre Allah ile âlem arasındaki yaratma ilişkisini açıklayın.",
-      "back": "Allah bütün varlıkları yoktan var eder, yaratması sürer ve yarattıklarına şekil verir; âlemi oluşturan varlıkların varlığı O’na bağlıdır."
+      "front": "Gayb âlemi nedir?",
+      "back": "Duyularla algılanamayan varlıkların oluşturduğu bölüm."
     },
     {
       "id": "din_10_u01_k03_o04:flashcard",
-      "front": "Allah’ın âlem karşısındaki bağımsızlığını ve âlemin O’na ihtiyacını belirtin.",
-      "back": "Allah var olmak için hiçbir şeye muhtaç değildir; âlem ise kendiliğinden var olmadığından varlığını sürdürmek için Allah’a muhtaçtır."
+      "front": "el-Halık ne demektir?",
+      "back": "Yaratan; Allah'ın her şeyin yaratıcısı olması."
     },
     {
       "id": "din_10_u01_k03_o05:flashcard",
-      "front": "İnsanın âlemdeki konumu hangi sorumlulukla ilişkilendirilir?",
-      "back": "İnsan Allah’ın halifesi olarak yeryüzünü imar etmek, adaleti sağlamak ve kendisine emanet edilenleri korumakla sorumludur."
+      "front": "Yaratmanın sürekliliği nedir?",
+      "back": "Allah'ın yaratmasının devam etmesi; âlemin varlığını sürdürmesi."
     },
     {
       "id": "din_10_u01_k03_o06:flashcard",
-      "front": "İnsanın yaratılış amacı kaynakta nasıl açıklanır?",
-      "back": "İnsan Allah’ı tanımak ve O’na kulluk etmek için yaratılmıştır; kulluk emir ve yasaklara uymayı ve hayırlı işler yapmayı kapsar."
+      "front": "İnsanın âlemdeki konumu nedir?",
+      "back": "Allah'ın halifesi olma sorumluluğu."
     },
     {
       "id": "din_10_u01_k03_o07:flashcard",
-      "front": "İnsana sunulan nimetler neden emanet olarak görülür?",
-      "back": "Nimetler Allah’ın mülküdür ve belirli amaçlarla insana sunulmuştur; insan onları O’nun irade ve rızasına uygun kullanmakla sorumludur."
+      "front": "İnsanın yaratılış amacı nedir?",
+      "back": "Allah’a kulluk etmek."
     },
     {
       "id": "din_10_u01_k03_o08:flashcard",
-      "front": "İnsanın iradesi ile sorumluluğu arasındaki ilişki nedir?",
-      "back": "İnsan temel ihtiyaçlarında Allah’ın koyduğu kurallara bağlıdır; davranışlarında ve kullukta tercih yapabildiği için tercihlerinden sorumludur."
+      "front": "Emanet bilinci nedir?",
+      "back": "Nimetleri Allah'ın mülkü bilip rızasına uygun kullanmak."
     },
     {
       "id": "din_10_u01_k03_o09:flashcard",
-      "front": "İslam düşüncesinde varlıkların Allah’ın koyduğu kurallarla ilişkisi nasıldır?",
-      "back": "Varlıklar Allah’ın koyduğu kurallar çerçevesinde hareket eder; kainatta uyumsuzluk bulunmadığı ve bütün varlıkların Allah’ı tesbih ettiği belirtilir."
+      "front": "Kelam ilminin konularından biri nedir?",
+      "back": "Allah-âlem ilişkisi."
     },
     {
       "id": "din_10_u01_k03_o10:flashcard",
-      "front": "Allah-âlem ilişkisi İslam düşüncesinde hangi ilim alanında ele alınır?",
-      "back": "Allah-âlem ilişkisi kelam ilminin ele aldığı konular arasındadır."
+      "front": "İnsanın sorumluluğunun kaynağı nedir?",
+      "back": "İradesini serbestçe kullanması."
     },
     {
       "id": "din_10_u01_k03_o11:flashcard",
-      "front": "İslam’a göre âlemdeki varlıklar ile insanın konumu arasındaki bağı açıklayın.",
-      "back": "Âlemdeki varlıkların farklı yaratılış amaçları vardır; insan Allah’ı tanıyıp kulluk etmek ve kendisine emanet edilen nimetleri sorumlu biçimde kullanmakla yükümlüdür."
+      "front": "Rab kavramının anlamı nedir?",
+      "back": "Yaratan, besleyen ve yöneten; âlemlerin Rabbi olan Allah."
     },
     {
       "id": "din_10_u01_k03_o12:flashcard",
-      "front": "Allah-âlem ilişkisinin temel unsurlarını kısa biçimde sıralayın.",
-      "back": "Allah âlemin Rabbi, yaratıcısı ve rızık vericisidir; âlem O’na muhtaçtır, yaratma sürer ve insan kullukla sorumludur."
+      "front": "Halifelik nedir?",
+      "back": "İnsanın yeryüzünü imar etme, adaleti sağlama ve emaneti koruma sorumluluğu."
+    },
+    {
+      "id": "din_10_u01_k03_o13:flashcard",
+      "front": "Tespih nedir?",
+      "back": "Varlıkların Allah'ı anması ve O'nunla kesintisiz ilişki içinde olması."
     }
-  ],
-  "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar (Ünite 1)"
+  ]
 }

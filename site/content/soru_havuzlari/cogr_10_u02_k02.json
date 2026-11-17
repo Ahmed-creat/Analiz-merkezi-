@@ -2,250 +2,351 @@
   "konu_id": "cogr_10_u02_k02",
   "sinif": 10,
   "ders": "Coğrafya",
-  "kaynak_dosya": "10. Sınıf coğrafya json.zip",
+  "tema": 2,
+  "tema_adi": "Mekânsal Bilgi Teknolojileri",
+  "baslik": "2.2 Mekânsal Verilerin Haritalara Aktarılması",
+  "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması",
+  "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur.",
+  "kaynak": "Coğrafya 10 ders kitabı, s.37-40",
+  "kaynak_dosya": "cografya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "cogr_10_u02_k02_o01",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir coğrafi veri tabanında bir sağlık biriminin koordinatları ile günlük hizmet kapasitesi tutuluyor. Bu bilgilerden hangisi mekânsal veridir?",
+      "alt_beceri": "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+      "metin": "Bir özelliğin nerede olduğunu ifade eden veri türü hangisidir?",
       "secenekler": [
-        "Sağlık biriminin koordinatları",
-        "Günlük hizmet kapasitesi",
-        "Çalışan sayısı",
-        "Hizmet türlerinin adları"
+        "Mekânsal olmayan veri",
+        "Mekânsal veri",
+        "Tanıtıcı veri",
+        "Betimleyici veri"
       ],
-      "dogru_index": 0,
-      "cozum": "Koordinatlar sağlık biriminin nerede olduğunu gösterdiğinden mekânsal veridir. Kapasite, çalışan sayısı ve hizmet türü konumda bulunan özelliklere ilişkin tanıtıcı bilgilerdir.",
+      "dogru_index": 1,
+      "cozum": "Mekânsal veri, herhangi bir özelliğin konumunu (nerede olduğunu) ifade eder (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mekânsal veri ile mekânsal olmayan veri arasındaki temel fark nedir?",
-        "back": "Mekânsal veri bir özelliğin konumunu bildirir; mekânsal olmayan veri ise o konumdaki özellik hakkında tanıtıcı bilgi verir."
+        "front": "Mekânsal veri nedir?",
+        "back": "Bir özelliğin konumunu, yani nerede bulunduğunu ifade eden veridir."
       },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
     },
     {
       "soru_id": "cogr_10_u02_k02_o02",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir arazi haritasında tek bir deniz fenerinin konumu gösterilecek. Bu mekânsal unsur için en uygun vektör gösterimi hangisidir?",
+      "alt_beceri": "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+      "metin": "Bir okulun öğrenci sayısı, kuruluş yılı ve türü gibi bilgiler hangi veri grubuna girer?",
       "secenekler": [
-        "Alan",
-        "Çizgi",
-        "Nokta",
-        "Ölçek"
+        "Mekânsal veri",
+        "Vektör veri",
+        "Konum verisi",
+        "Mekânsal olmayan veri"
       ],
-      "dogru_index": 2,
-      "cozum": "Tekil bir tesisin konumu nokta ile gösterilir. Çizgi uzunlamasına uzanan unsurlar, alan ise sınırı ve yüzeyi bulunan geniş mekânsal özellikler içindir.",
+      "dogru_index": 3,
+      "cozum": "Mekânsal olmayan veri, belirli bir konuma sahip özellik hakkında tanıtıcı bilgileri ifade eder (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Vektör veri yapısında mekânsal özellikleri haritada göstermek için hangi üç geometri türü kullanılır?",
-        "back": "Nokta, çizgi ve alan kullanılır."
+        "front": "Mekânsal olmayan veri nedir?",
+        "back": "Konumu verilmeyen, özelliği tanıtan bilgilerdir."
       },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
     },
     {
       "soru_id": "cogr_10_u02_k02_o03",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir bölgedeki enerji iletim hattı haritada başından sonuna kadar izlenecek. Hattı en uygun biçimde gösteren geometri hangisidir?",
+      "alt_beceri": "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+      "metin": "Mekânsal verilerin haritalarda gösteriminde kullanılan üç sembol hangisidir?",
+      "secenekler": [
+        "Nokta, çizgi, alan",
+        "Daire, kare, üçgen",
+        "Renk, desen, gölge",
+        "Başlık, lejant, ölçek"
+      ],
+      "dogru_index": 0,
+      "cozum": "Mekânsal verilerin haritalardaki gösteriminde nokta, çizgi ve alan olmak üzere üç sembol kullanılır (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Haritada mekânsal veri sembolleri nedir?",
+        "back": "Nokta, çizgi ve alan."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o04",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Haritaya aktarılacak okul, ev ve lokanta gibi şekli ve sınırları küçük olan mekânsal veriler için hangi sembol kullanılır?",
+      "secenekler": [
+        "Çizgi",
+        "Alan",
+        "Nokta",
+        "Tarama"
+      ],
+      "dogru_index": 2,
+      "cozum": "Okul, ev, lokanta gibi şekli ve sınırları küçük olan mekânsal veriler nokta ile gösterilir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Nokta sembolü ne zaman kullanılır?",
+        "back": "Şekli ve sınırları küçük, alan kaplamayan veriler için."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o05",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Yol ve akarsu gibi mekânsal verilerin harita üzerinde gösteriminde hangi sembol kullanılır?",
+      "secenekler": [
+        "Nokta",
+        "Alan",
+        "Nokta kümesi",
+        "Çizgi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yol, akarsu gibi uzanan mekânsal veriler çizgi sembolüyle gösterilir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çizgi sembolü ne zaman kullanılır?",
+        "back": "Uzunluğu olan, bir hat boyunca uzanan veriler için."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o06",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Göl ve orman gibi mekânsal verilerin harita üzerinde gösteriminde hangi sembol kullanılır?",
+      "secenekler": [
+        "Nokta",
+        "Alan",
+        "Çizgi",
+        "Ok işareti"
+      ],
+      "dogru_index": 1,
+      "cozum": "Göl, orman gibi yayılış alanı olan mekânsal veriler alan sembolüyle gösterilir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Alan sembolü ne zaman kullanılır?",
+        "back": "Yayılış alanı olan, sınırları belirli yüzeyler için."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o07",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Bir grup, yakın çevresine ait park alanlarını alan, ulaşım yollarını çizgi, iş yerlerini nokta sembolüyle işaretlemiştir. Bu işlem mekânsal bilgi teknolojileriyle harita oluşturma adımlarından hangisine karşılık gelir?",
+      "secenekler": [
+        "Mekânsal verileri kullanılacak sembollere göre tasnif etme",
+        "Haritanın amacını belirleme",
+        "Haritayı diğer grupların çalışmalarıyla karşılaştırma",
+        "Dijital harita uygulamalarını inceleme"
+      ],
+      "dogru_index": 0,
+      "cozum": "Verilerin nokta, çizgi ve alan sembollerine göre ayrılması tasnif adımıdır (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tasnif nedir?",
+        "back": "Mekânsal verilerin gösterilecekleri sembollere göre ayrılmasıdır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o08",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Uydu görüntüsü altlığı üzerine park, konut ve yol verilerinin işlendiği bir çalışmada kullanılan veri türü hangisidir?",
+      "secenekler": [
+        "Mekânsal olmayan veri",
+        "Tanıtıcı veri",
+        "Vektör veri",
+        "Sayısal olmayan veri"
+      ],
+      "dogru_index": 2,
+      "cozum": "Uydu görüntüsü üzerine nokta, çizgi ve alan biçiminde eklenen veriler vektör veridir (s.38).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Vektör veri nedir?",
+        "back": "Nokta, çizgi ve alan geometrisiyle tanımlanan sayısal veridir."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o09",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Harita oluşturma çalışmasında gözlemci olarak seçilen öğrencinin işlevi hangisidir?",
+      "secenekler": [
+        "Haritadaki tüm sembolleri rastgele değiştirmek",
+        "Kendi haritasını diğer grupların çalışmalarıyla karşılaştırıp güncellemeyi sağlamak",
+        "Verileri toplamadan haritayı çizmek",
+        "Grubun yerine kararı tek başına vermek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gözlemci aracılığıyla harita diğer grupların çalışmalarıyla karşılaştırılıp güncellenir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gözlemcinin görevi nedir?",
+        "back": "Haritayı diğer çalışmalarla karşılaştırıp güncellemeyi sağlamak."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o10",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Harita oluşturmadan önce amaç belirlemenin gerekliliği hangisiyle açıklanır?",
+      "secenekler": [
+        "Amaç belirlenmezse sembol sayısı artar",
+        "Amaç yalnızca haritanın rengini belirler",
+        "Amaç belirlemek ölçek seçimini gereksiz kılar",
+        "Haritanın amacı hangi mekânsal verilerin toplanacağını ve nasıl gösterileceğini belirler"
+      ],
+      "dogru_index": 3,
+      "cozum": "Etkinlikte önce haritanın amacı belirlenmekte, ardından amaca uygun mekânsal veriler toplanıp sembollerle tasnif edilmektedir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Harita amacı ile veri seçimi arasındaki ilişki nedir?",
+        "back": "Amaç, hangi verinin toplanacağını ve gösterileceğini belirler."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o11",
+      "alt_beceri": "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+      "metin": "Okul, ev ve lokanta gibi şekli ve sınırları küçük olan mekânsal verilerin gösteriminde hangi sembol kullanılır?",
       "secenekler": [
         "Nokta",
         "Çizgi",
         "Alan",
-        "Mekânsal olmayan veri"
+        "Yüzey"
       ],
-      "dogru_index": 1,
-      "cozum": "İletim hattı bir güzergâh boyunca uzandığı için çizgi geometrisiyle gösterilir. Nokta yalnızca belirli bir konumu, alan ise yüzey kaplayan bir özelliği ifade eder.",
+      "dogru_index": 0,
+      "cozum": "Şekli ve sınırları küçük olan mekânsal veriler (okul, ev, lokanta) haritada nokta sembolüyle gösterilir (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Uzunluğu ve güzergâhı olan bir mekânsal unsur hangi vektör geometrisiyle gösterilir?",
-        "back": "Çizgi geometrisiyle gösterilir."
+        "front": "Nokta sembolü nedir?",
+        "back": "Şekli ve sınırları küçük mekânsal verilerin haritada gösterimi."
       },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
     },
     {
-      "soru_id": "cogr_10_u02_k02_o04",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir lojistik kampüsünün sınırları ve kapladığı yüzey sayısal haritada gösterilecek. Bu mekânsal unsur için hangi vektör geometrisi uygundur?",
+      "soru_id": "cogr_10_u02_k02_o12",
+      "alt_beceri": "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+      "metin": "Akarsu ve yol gibi uzunluğu öne çıkan mekânsal verilerin gösteriminde hangi sembol kullanılır?",
       "secenekler": [
-        "Çizgi",
         "Nokta",
-        "Koordinat etiketi",
-        "Alan"
-      ],
-      "dogru_index": 3,
-      "cozum": "Lojistik kampüsü sınırları belirli geniş bir yüzey kapladığından alan geometrisiyle gösterilir. Çizgi güzergâhları, nokta ise tekil konumları belirtir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Yüzey kaplayan ve sınırları haritada gösterilebilen bir mekânsal unsur hangi geometriyle temsil edilir?",
-        "back": "Alan geometrisiyle temsil edilir."
-      },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u02_k02_o05",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir ekip, kırsal yerleşmelerde internet bağlantısının erişilebilirliğini gösteren bir harita hazırlıyor. Veri toplamaya başlamadan önce hangi kararı vermesi en uygundur?",
-      "secenekler": [
-        "Haritanın amacını ve yanıtlayacağı soruyu belirlemek",
-        "Bütün verileri tek bir nokta sembolüne dönüştürmek",
-        "Ölçeksiz bir çizim yapıp sonradan veri aramak",
-        "Harita tamamlanana kadar kullanılacak verileri gizlemek"
-      ],
-      "dogru_index": 0,
-      "cozum": "Haritanın amacı, erişilebilirliği değerlendirmek için hangi konum ve kapsama verilerinin gerekli olduğunu belirler. Amaç netleşmeden veri seçmek haritanın ihtiyaca uygunluğunu azaltır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Bir harita hazırlanmadan önce haritanın amacını belirlemek neden önemlidir?",
-        "back": "Amaç, hangi mekânsal verilerin toplanacağını, hangi gösterimlerin seçileceğini ve haritanın hangi soruya yanıt vereceğini belirler."
-      },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u02_k02_o06",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir üretim alanı haritasında tek bir kontrol binası, konveyör hattı ve yükleme avlusu gösterilecek. Bu unsurlar hangi sırayla temsil edilmelidir?",
-      "secenekler": [
-        "Kontrol binası nokta, konveyör hattı çizgi, yükleme avlusu alan",
-        "Kontrol binası alan, konveyör hattı nokta, yükleme avlusu çizgi",
-        "Kontrol binası çizgi, konveyör hattı alan, yükleme avlusu nokta",
-        "Üç unsur da nokta"
-      ],
-      "dogru_index": 0,
-      "cozum": "Tekil binanın konumu nokta, uzanan konveyör hattı çizgi, yüzey kaplayan avlu alan geometrisiyle gösterilir. Üçünü de nokta yapmak biçim ve yayılış bilgisini kaybettirir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Haritanın amacına uygun mekânsal veriler seçildikten sonra bu veriler nasıl düzenlenir?",
-        "back": "Harita unsuruna ve geometrisine göre nokta, çizgi ve alan türlerinde sınıflandırılır; ardından uygun sembollerle gösterilir."
-      },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u02_k02_o07",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir zanaat fuarının ziyaretçi haritası için amaç belirlenmiş, girişler, dolaşım güzergâhları ve stant bölgeleri konumlarıyla kaydedilmiştir. Harita oluşturulurken sıradaki en uygun adım hangisidir?",
-      "secenekler": [
-        "Verileri kullanmadan haritayı tamamlanmış saymak",
-        "Mekânsal unsurları nokta, çizgi ve alan türlerine göre sınıflandırıp uygun sembolleri seçmek",
-        "Bütün unsurları alan geometrisine çevirmek",
-        "Haritanın kullanım amacını kaldırmak"
-      ],
-      "dogru_index": 1,
-      "cozum": "Amaç ve konum verileri belirlendikten sonra giriş, güzergâh ve stant bölgeleri uygun geometrilere ayrılır; ardından bu geometriler için semboller seçilir. Verileri sınıflandırmadan haritaya aktarmak doğru gösterimi engeller.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Dijital harita araçları yakın çevre haritası oluştururken hangi iki aşamada yarar sağlar?",
-        "back": "Mekânsal verileri elde etme ve seçilen verileri harita üzerinde işleme/gösterme aşamalarında yarar sağlar."
-      },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u02_k02_o08",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir bilim merkezinin ziyaretçi haritasında bir girişin eksik olduğu ve yürüyüş yollarıyla sergi bölümlerinin aynı sembolle gösterildiği fark ediliyor. Haritayı iyileştirmek için en uygun işlem hangisidir?",
-      "secenekler": [
-        "Haritanın amacını ve verileri göz ardı etmek",
-        "Eksik konum bilgisini tamamlayıp yollar ve bölümler için uygun sembollerle haritayı güncellemek",
-        "Yolları alan, sergi bölümlerini nokta olarak göstermek",
-        "Haritayı hiçbir kontrol yapmadan sonlandırmak"
-      ],
-      "dogru_index": 1,
-      "cozum": "Eksik giriş bilgisi tamamlanmalı; güzergâhlar çizgi, sergi bölümleri alan sembolüyle ayırt edilmelidir. Bu düzeltmeler haritayı kullanım amacına daha uygun ve okunaklı hâle getirir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Bir haritanın belirlenen kullanım amacına hizmet ettiğini nasıl değerlendirirsin?",
-        "back": "Gerekli konumların doğru ve güncel gösterilip gösterilmediğini, sembollerin unsurlarla uyumunu ve haritanın aranan bilgiyi anlaşılır biçimde sunmasını kontrol ederim."
-      },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u02_k02_o09",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir dijital haritada her kargo dolabının konumu ile o dolaptan teslim alınan günlük paket sayısı birlikte incelenecek. Bu bilgileri anlamlı biçimde ilişkilendirmek için ne yapılmalıdır?",
-      "secenekler": [
-        "Paket sayılarını konumlarından bağımsız biçimde rastgele dağıtmak",
-        "Dolapları çizgiyle, paket sayılarını alanla göstermek",
-        "Konum bilgisini silip yalnızca paket sayılarını bırakmak",
-        "Her paket sayısını ait olduğu dolabın konum verisine bağlamak"
-      ],
-      "dogru_index": 3,
-      "cozum": "Paket sayısı, ait olduğu kargo dolabının konumuna bağlanırsa dağılış ile kullanım yoğunluğu birlikte incelenebilir. Konumları silmek, değerlerin hangi yerle ilişkili olduğunu belirsizleştirir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Bir konuma ait kategori veya ölçüm bilgisi, haritadaki geometrik konumla nasıl ilişkilendirilir?",
-        "back": "Tanıtıcı bilgi, ilgili nokta, çizgi veya alan mekânsal unsuruna bağlanır; böylece konum ile özellik birlikte incelenir."
-      },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u02_k02_o10",
-      "alt_beceri": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-      "metin": "Bir doğa yürüyüşü derneği, arazi kontrolünde bir köprünün kapandığını ve yeni bir geçiş yolunun açıldığını saptıyor. Kullanılan rota haritası için en uygun sonraki adım nedir?",
-      "secenekler": [
-        "Eski haritayı doğrulama yapmadan kullanmaya devam etmek",
-        "Bütün verileri silip haritanın amacını değiştirmek",
-        "Yeni güzergâhı doğrulayıp çizgi verisini ve ilgili gösterimi haritada güncellemek",
-        "Haritada yalnızca açıklama metni bırakıp konumları kaldırmak"
+        "Alan",
+        "Çizgi",
+        "Lejant"
       ],
       "dogru_index": 2,
-      "cozum": "Sahadaki değişiklik doğrulanmalı; kapanan geçiş ve yeni güzergâh haritada uygun çizgi gösterimiyle güncellenmelidir. Eski veriyi korumak kullanıcıya hatalı yönlendirme verir.",
+      "cozum": "Yol ve akarsu gibi uzanan mekânsal veriler haritada çizgi sembolüyle gösterilir (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Harita taslağı sahada doğrulanmış bilgilerle karşılaştırıldığında neyi geliştirmek için revize edilir?",
-        "back": "Eksik veya güncelliğini yitirmiş mekânsal verileri tamamlamak ve gösterimi kullanım amacına daha uygun hâle getirmek için revize edilir."
+        "front": "Çizgi sembolü nedir?",
+        "back": "Yol ve akarsu gibi uzanan mekânsal verilerin gösterimi."
       },
-      "kazanim": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o13",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Bir öğrencinin adı, doğum yeri ve okuduğu bölüm gibi bilgiler mekânsal veri açısından nasıl adlandırılır?",
+      "secenekler": [
+        "Mekânsal veri",
+        "Vektör veri",
+        "Raster veri",
+        "Mekânsal olmayan veri"
+      ],
+      "dogru_index": 3,
+      "cozum": "Konum bildirmeyen, bir özellik hakkında tanıtıcı bilgi veren veriler mekânsal olmayan veridir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal olmayan veri nedir?",
+        "back": "Konum bildirmeyen, tanıtıcı bilgi veren veri."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o14",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Uydu görüntüsü üzerine nokta, çizgi ve alan olarak eklenen harita verilerine ne ad verilir?",
+      "secenekler": [
+        "Raster veri",
+        "Vektör veri",
+        "Lejant",
+        "Ölçek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Uydu görüntüsü üzerinde nokta, çizgi ve alan biçiminde tanımlanan veriler vektör veri olarak adlandırılır (s.38).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Vektör veri nedir?",
+        "back": "Nokta, çizgi ve alan olarak tanımlanan harita verisi."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
     }
   ],
   "flashcards": [
     {
       "id": "cogr_10_u02_k02_o01:flashcard",
-      "front": "Mekânsal veri ile mekânsal olmayan veri arasındaki temel fark nedir?",
-      "back": "Mekânsal veri bir özelliğin konumunu bildirir; mekânsal olmayan veri ise o konumdaki özellik hakkında tanıtıcı bilgi verir."
+      "front": "Mekânsal veri nedir?",
+      "back": "Bir özelliğin konumunu, yani nerede bulunduğunu ifade eden veridir."
     },
     {
       "id": "cogr_10_u02_k02_o02:flashcard",
-      "front": "Vektör veri yapısında mekânsal özellikleri haritada göstermek için hangi üç geometri türü kullanılır?",
-      "back": "Nokta, çizgi ve alan kullanılır."
+      "front": "Mekânsal olmayan veri nedir?",
+      "back": "Konumu verilmeyen, özelliği tanıtan bilgilerdir."
     },
     {
       "id": "cogr_10_u02_k02_o03:flashcard",
-      "front": "Uzunluğu ve güzergâhı olan bir mekânsal unsur hangi vektör geometrisiyle gösterilir?",
-      "back": "Çizgi geometrisiyle gösterilir."
+      "front": "Haritada mekânsal veri sembolleri nedir?",
+      "back": "Nokta, çizgi ve alan."
     },
     {
       "id": "cogr_10_u02_k02_o04:flashcard",
-      "front": "Yüzey kaplayan ve sınırları haritada gösterilebilen bir mekânsal unsur hangi geometriyle temsil edilir?",
-      "back": "Alan geometrisiyle temsil edilir."
+      "front": "Nokta sembolü ne zaman kullanılır?",
+      "back": "Şekli ve sınırları küçük, alan kaplamayan veriler için."
     },
     {
       "id": "cogr_10_u02_k02_o05:flashcard",
-      "front": "Bir harita hazırlanmadan önce haritanın amacını belirlemek neden önemlidir?",
-      "back": "Amaç, hangi mekânsal verilerin toplanacağını, hangi gösterimlerin seçileceğini ve haritanın hangi soruya yanıt vereceğini belirler."
+      "front": "Çizgi sembolü ne zaman kullanılır?",
+      "back": "Uzunluğu olan, bir hat boyunca uzanan veriler için."
     },
     {
       "id": "cogr_10_u02_k02_o06:flashcard",
-      "front": "Haritanın amacına uygun mekânsal veriler seçildikten sonra bu veriler nasıl düzenlenir?",
-      "back": "Harita unsuruna ve geometrisine göre nokta, çizgi ve alan türlerinde sınıflandırılır; ardından uygun sembollerle gösterilir."
+      "front": "Alan sembolü ne zaman kullanılır?",
+      "back": "Yayılış alanı olan, sınırları belirli yüzeyler için."
     },
     {
       "id": "cogr_10_u02_k02_o07:flashcard",
-      "front": "Dijital harita araçları yakın çevre haritası oluştururken hangi iki aşamada yarar sağlar?",
-      "back": "Mekânsal verileri elde etme ve seçilen verileri harita üzerinde işleme/gösterme aşamalarında yarar sağlar."
+      "front": "Tasnif nedir?",
+      "back": "Mekânsal verilerin gösterilecekleri sembollere göre ayrılmasıdır."
     },
     {
       "id": "cogr_10_u02_k02_o08:flashcard",
-      "front": "Bir haritanın belirlenen kullanım amacına hizmet ettiğini nasıl değerlendirirsin?",
-      "back": "Gerekli konumların doğru ve güncel gösterilip gösterilmediğini, sembollerin unsurlarla uyumunu ve haritanın aranan bilgiyi anlaşılır biçimde sunmasını kontrol ederim."
+      "front": "Vektör veri nedir?",
+      "back": "Nokta, çizgi ve alan geometrisiyle tanımlanan sayısal veridir."
     },
     {
       "id": "cogr_10_u02_k02_o09:flashcard",
-      "front": "Bir konuma ait kategori veya ölçüm bilgisi, haritadaki geometrik konumla nasıl ilişkilendirilir?",
-      "back": "Tanıtıcı bilgi, ilgili nokta, çizgi veya alan mekânsal unsuruna bağlanır; böylece konum ile özellik birlikte incelenir."
+      "front": "Gözlemcinin görevi nedir?",
+      "back": "Haritayı diğer çalışmalarla karşılaştırıp güncellemeyi sağlamak."
     },
     {
       "id": "cogr_10_u02_k02_o10:flashcard",
-      "front": "Harita taslağı sahada doğrulanmış bilgilerle karşılaştırıldığında neyi geliştirmek için revize edilir?",
-      "back": "Eksik veya güncelliğini yitirmiş mekânsal verileri tamamlamak ve gösterimi kullanım amacına daha uygun hâle getirmek için revize edilir."
+      "front": "Harita amacı ile veri seçimi arasındaki ilişki nedir?",
+      "back": "Amaç, hangi verinin toplanacağını ve gösterileceğini belirler."
+    },
+    {
+      "id": "cogr_10_u02_k02_o11:flashcard",
+      "front": "Nokta sembolü nedir?",
+      "back": "Şekli ve sınırları küçük mekânsal verilerin haritada gösterimi."
+    },
+    {
+      "id": "cogr_10_u02_k02_o12:flashcard",
+      "front": "Çizgi sembolü nedir?",
+      "back": "Yol ve akarsu gibi uzanan mekânsal verilerin gösterimi."
+    },
+    {
+      "id": "cogr_10_u02_k02_o13:flashcard",
+      "front": "Mekânsal olmayan veri nedir?",
+      "back": "Konum bildirmeyen, tanıtıcı bilgi veren veri."
+    },
+    {
+      "id": "cogr_10_u02_k02_o14:flashcard",
+      "front": "Vektör veri nedir?",
+      "back": "Nokta, çizgi ve alan olarak tanımlanan harita verisi."
     }
-  ],
-  "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması"
+  ]
 }

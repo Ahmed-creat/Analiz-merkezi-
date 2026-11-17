@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u02_k07",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 2,
+  "tema_adi": "Divan Şiiri ve Saf Şiir",
+  "baslik": "Bağlaç",
+  "topic_key": "Türk Dili ve Edebiyatı > Bağlaç",
+  "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.104-107",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u02_k07_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir metinde iki eş görevli sözcük ve iki cümle ortak bir anlam ilişkisiyle birleştiriliyor. Bu sözcüklerin türü nedir?",
+      "alt_beceri": "Bağlaçların bağladığı sözcük, öbek ve cümleleri belirler.",
+      "metin": "\"Küçük odanın ve mutfağın penceresi açık kaldı.\" cümlesinde \"ve\" sözcüğü eş görevli iki unsuru birbirine bağlamıştır. Bu sözcüğün türü hangisidir?",
       "secenekler": [
-        "Bağlaç",
         "Edat",
-        "Sıfat",
-        "Fiil"
+        "Bağlaç",
+        "Ünlem",
+        "Zarf"
       ],
-      "dogru_index": 0,
-      "cozum": "Bağlaçlar eş görevli sözcükleri, öbekleri ya da cümleleri bağlar. Edatlar ise önceki sözcükle öbekleşerek anlam ilgisi kurar.",
+      "dogru_index": 1,
+      "cozum": "Eş görevli sözcükleri, söz öbeklerini ve cümleleri birbirine bağlayan sözcükler bağlaçtır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bağlaçların temel görevi nedir?",
-        "back": "Eş görevli sözcük, söz öbeği veya cümleleri bağlamak."
-      }
+        "front": "Bağlaç nedir?",
+        "back": "Eş görevli sözcükleri, söz öbeklerini ve cümleleri bağlayan sözcüktür."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Duyuru cümlesinde yeni katılımcı anlamı veren de sözcüğü bağlaçtır. Yazımında nasıl davranılmalıdır?",
+      "alt_beceri": "Bağlaçların bağladığı sözcük, öbek ve cümleleri belirler.",
+      "metin": "\"Sen de mi geliyorsun?\" cümlesinde \"de\" kendinden önceki sözcükten ayrı yazılmıştır; \"Pasta da kısır da çok güzel olmuş.\" cümlesinde de aynı yazım görülür. Bu yazım özelliği hangi sözcüğe aittir?",
       "secenekler": [
-        "Önceki sözcüğe bitişik yazılmalıdır.",
-        "Önceki sözcükten ayrı yazılmalıdır.",
-        "Her zaman kesme işaretiyle ayrılmalıdır.",
-        "Bir sonraki sözcüğe bitişik yazılmalıdır."
+        "Hâl eki olan \"-de\"",
+        "Yapım eki \"-de\"",
+        "Edat olan \"değil\"",
+        "Bağlaç olan \"de\""
       ],
-      "dogru_index": 1,
-      "cozum": "Bağlaç olan de-da ayrı yazılır. Bitişik yazılan -de eki çoğunlukla bulunma durum eki ya da yapım eki görevindedir.",
+      "dogru_index": 3,
+      "cozum": "Bağlaç olan \"de\" kendinden önceki sözcükten ayrı yazılır; bulunma hâl eki olan \"-de\" ise bitişik yazılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bağlaç olan de-da nasıl yazılır?",
-        "back": "Kendinden önceki sözcükten ayrı yazılır."
-      }
+        "front": "Bağlaç olan \"de\"nin yazımı nedir?",
+        "back": "Kendinden önceki sözcükten ayrı yazılır: sen de, pasta da."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede iki yargıyı açıklama ilişkisiyle bağlayan ki kullanılıyor. Bağlaç olan ki'nin yazımı nasıldır?",
+      "alt_beceri": "Bağlaçların bağladığı sözcük, öbek ve cümleleri belirler.",
+      "metin": "\"Onu tanımıyorum ki.\" ve \"Öyle sanıyorum ki artık gelmeyecek.\" cümlelerinde \"ki\" kendinden önceki ve sonraki sözcüklerden ayrı yazılmıştır. Bu kullanım hangi sözcüğe aittir?",
       "secenekler": [
-        "Her zaman bitişik yazılır.",
-        "Kesme işaretiyle ayrılır.",
-        "Ayrı yazılır.",
-        "Önündeki sözcüğün ilk harfi büyük yazılır."
+        "Bağlaç olan \"ki\"",
+        "İlgi zamiri \"-ki\"",
+        "Sıfat yapan \"-ki\"",
+        "Yapım eki \"-ki\""
       ],
-      "dogru_index": 2,
-      "cozum": "Bağlaç olan ki ayrı yazılır. Bitişik -ki bazı kullanımlarda ek görevindedir ve yazımı buna göre değişir.",
+      "dogru_index": 0,
+      "cozum": "Bağlaç olan \"ki\" ayrı yazılır; ilgi zamiri ve sıfat yapan \"-ki\" ise sözcüğe bitişik yazılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bağlaç olan ki nasıl yazılır?",
-        "back": "Kendinden önceki ve sonraki sözcüklerden ayrı yazılır."
-      }
+        "front": "Bağlaç olan \"ki\"nin yazımı nedir?",
+        "back": "Kendinden önceki ve sonraki sözcükten ayrı yazılır: sanıyorum ki, tanımıyorum ki."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Arşivci ile restoratör yeni belgeleri birlikte inceliyor cümlesinde ile sözcüğünün yerine ve getirilebiliyor. Bu sözcük hangi görevde?",
+      "alt_beceri": "Bağlaçların kurduğu anlam ilgilerini (karşıtlık, koşul, olumsuzluk) ayırt eder.",
+      "metin": "\"Sinemaya gidebilirsin ama eve erken döneceksin.\" cümlesinde \"ama\" bağlacı karşıtlık değil, bir şart bildirmektedir. Buna göre bağlaç cümleye hangi anlamı katmıştır?",
       "secenekler": [
-        "Edat",
-        "Soru zamiri",
-        "Ünlem",
-        "Bağlaç"
+        "Pekiştirme",
+        "Karşıtlık",
+        "Koşul",
+        "Neden"
       ],
-      "dogru_index": 3,
-      "cozum": "İle yerine ve getirilebildiği için bağlaçtır. Araç anlamı veren çekiçle gibi kullanımlarda ile edat görevi üstlenir.",
+      "dogru_index": 2,
+      "cozum": "\"Ama, fakat, lakin\" karşıt anlamlı cümleleri bağlar; ayrıca koşul ve pekiştirme anlamı da katabilir. Bu cümlede koşul anlamı vardır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İle sözcüğü hangi durumda bağlaç olur?",
-        "back": "Yerine ve getirilebiliyorsa."
-      }
+        "front": "\"Ama, fakat, lakin\" bağlaçlarının işlevi nedir?",
+        "back": "Karşıt anlamlı cümleleri bağlar; koşul ve pekiştirme anlamı da katar."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Ekip planı tamamladı fakat teslim saatini kaçırdı cümlesinde fakat hangi anlam ilişkisini kurar?",
+      "alt_beceri": "Bağlaçların kurduğu anlam ilgilerini (karşıtlık, koşul, olumsuzluk) ayırt eder.",
+      "metin": "\"Geziye yalnız bizim sınıf katıldı.\" cümlesinde \"yalnız\" sözcüğü \"sadece\" anlamındadır. \"Onunla konuşurum yalnız sen de benimle geleceksin.\" cümlesinde ise karşıtlık bildirir. İlk cümledeki görev hangisidir?",
       "secenekler": [
-        "Karşıtlık",
-        "Benzerlik",
-        "Sıralama",
-        "Ölçü"
+        "Bağlaç",
+        "Zarf",
+        "Ünlem",
+        "Edat"
       ],
-      "dogru_index": 0,
-      "cozum": "Fakat iki yargı arasında karşıtlık kurar. Bu bağlaçlar bazı cümlelerde koşul ya da pekiştirme anlamı da katabilir.",
+      "dogru_index": 3,
+      "cozum": "\"Yalnız\" sözcüğü \"bir tek, sadece\" anlamında edat; \"ama, fakat\" anlamında bağlaçtır. \"Ancak\" için de aynı ölçüt geçerlidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ama, fakat ve lakin bağlaçları genellikle hangi ilişkiyi kurar?",
-        "back": "Karşıtlık; bazı kullanımlarda koşul ya da pekiştirme."
-      }
+        "front": "\"Yalnız\" sözcüğünün edat ve bağlaç olarak ayrımı nedir?",
+        "back": "\"Sadece, bir tek\" anlamındaysa edat; \"ama, fakat\" anlamındaysa bağlaçtır."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Ne görevli ne ziyaretçi salona girebildi cümlesinde tekrarlanan bağlaç hangi anlamı kurar?",
+      "alt_beceri": "Bağlaçların kurduğu anlam ilgilerini (karşıtlık, koşul, olumsuzluk) ayırt eder.",
+      "metin": "\"Yağmur yağıyor, evim ise çok uzakta.\" cümlesinde \"ise\" iki yargı arasında karşıtlık kurmuştur. \"Çocuk başarılıysa sınıfını geçer.\" cümlesinde ise aynı sözcük ek-fiilin şart çekimindedir. İlk cümledeki görev hangisidir?",
       "secenekler": [
-        "İki unsurun da gerçekleştiğini",
-        "İki unsurun da gerçekleşmediğini",
-        "Birinin seçilmesi gerektiğini",
-        "Birini diğerine benzetmeyi"
+        "Ek-fiilin şartı",
+        "Bağlaç",
+        "Edat",
+        "Zarf"
       ],
       "dogru_index": 1,
-      "cozum": "Tekrarlı olumsuz bağlaç iki unsurun da bulunmadığını bildirir. İkili kapsama bağlacı ise her ikisinin de bulunduğunu anlatır.",
+      "cozum": "Karşılaştırma ve karşıtlık kurmak üzere kullanılan \"ise\" bağlaçtır; \"başarılıysa\" örneğinde ek-fiilin şart çekimi söz konusudur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ne... ne bağlacı cümleye genellikle hangi anlamı verir?",
-        "back": "Karşılaştırılan unsurların hiçbirinin olmadığını bildirerek olumsuzluk katar."
-      }
+        "front": "\"İse\" bağlacının işlevi nedir?",
+        "back": "Karşılaştırma ilgisi kurar ve karşıtlığı güçlendirir."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Hem taslak hem son metin incelemeye alındı cümlesinde bağlaç hangi ilişkiyi kuruyor?",
+      "alt_beceri": "Bağlaç ile edat görevindeki sözcükleri yazım ve anlam bakımından ayırır.",
+      "metin": "\"Beni ne arıyor ne soruyor.\" cümlesinde \"ne ... ne\" bağlacı iki eylemi birbirine bağlamış ve cümleye olumsuzluk katmıştır. Bu bağlaçla kurulan cümlelerde hangi anlam ortaya çıkar?",
       "secenekler": [
-        "İki unsurun da dışlandığını",
-        "Yalnızca birinin seçildiğini",
-        "İki unsurun da kapsandığını",
-        "İki unsur arasında neden-sonuç olduğunu"
+        "Karşılaştırılan iki unsurun hiçbiri gerçekleşmez",
+        "Karşılaştırılan iki unsurun ikisi de gerçekleşir",
+        "Yalnızca birinci unsur gerçekleşir",
+        "İki unsur arasında bir seçim yapılır"
       ],
-      "dogru_index": 2,
-      "cozum": "İlk yapı, karşılaştırılan iki unsurun ikisini de kapsar. Olumsuz yapı yokluğu, seçenek yapısı ise tercihi bildirir.",
+      "dogru_index": 0,
+      "cozum": "\"Ne ... ne\" cümleyi anlamca olumsuz yapar ve karşılaştırılan iki unsurun hiçbiri anlamını verir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hem... hem bağlacı hangi anlamı verir?",
-        "back": "Karşılaştırılan iki unsurun ikisinin de geçerli olduğunu."
-      }
+        "front": "\"Ne ... ne\" bağlacının anlamı nedir?",
+        "back": "Cümleyi olumsuz yapar; karşılaştırılan iki unsurun hiçbiri anlamını verir."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Katılımcıya çevrim içi ya da yüz yüze görüşme seçenekleri sunuluyor. Ya... ya bağlacı hangi anlamı oluşturur?",
+      "alt_beceri": "Bağlaç ile edat görevindeki sözcükleri yazım ve anlam bakımından ayırır.",
+      "metin": "\"Hem ucuz hem kaliteli bir ürün aldık.\" cümlesinde bağlaç iki unsuru birlikte karşılamaktadır. Bu bağlacın cümleye kattığı anlam hangisidir?",
       "secenekler": [
-        "İki seçeneğin de zorunlu olmasını",
-        "Her iki seçeneğin de olumsuzlanmasını",
-        "Sadece benzerlik kurulmasını",
-        "Seçeneklerden birinin tercih edilmesini"
+        "İkisi de geçersiz",
+        "Yalnız biri geçerli",
+        "İkisi de geçerli",
+        "İkisi arasında orta değer"
       ],
-      "dogru_index": 3,
-      "cozum": "Tekrarlı seçenek yapısı, karşılaştırılan unsurlardan birini belirtir. İkili kapsama yapısı ise her iki unsuru da kapsar.",
+      "dogru_index": 2,
+      "cozum": "\"Hem ... hem\" bağlacı karşılaştırılan iki unsurun hepsi anlamını verir; \"ne ... ne\" ise hiçbiri anlamını verir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ya... ya bağlacı hangi ilişkiyi kurar?",
-        "back": "Seçeneklerden birini belirtir."
-      }
+        "front": "\"Hem ... hem\" bağlacının anlamı nedir?",
+        "back": "Karşılaştırılan iki unsurun ikisinin de geçerli olduğunu bildirir."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Saha ekibi hazırlıklıydı; yalnız hava koşulları çalışmayı erteledi cümlesinde yalnız, ama ile değiştirilebiliyor. Görevi nedir?",
+      "alt_beceri": "Bağlaçların bağladığı sözcük, öbek ve cümleleri belirler.",
+      "metin": "\"Ya bu deveyi güdeceksin ya bu diyardan gideceksin.\" cümlesinde bağlaç iki seçenek sunmaktadır. Bu bağlacın işlevi hangisidir?",
       "secenekler": [
-        "Bağlaç",
-        "Edat",
-        "Soru sıfatı",
-        "Zarf-fiil"
+        "Seçeneklerin tümünü geçerli kılmak",
+        "Sunulan seçeneklerden birini ifade etmek",
+        "Seçeneklerin hiçbirini geçersiz kılmak",
+        "İki karşıt sıfatın ortasını vermek"
       ],
-      "dogru_index": 0,
-      "cozum": "Yalnız, ama/fakat anlamında iki yargıyı bağlıyorsa bağlaçtır. Sadece anlamındaysa edat olabilir.",
+      "dogru_index": 1,
+      "cozum": "\"Ya ... ya\" bağlacı karşılaştırılan unsurlardan birini ifade etmek için kullanılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yalnız sözcüğü hangi durumda bağlaç sayılır?",
-        "back": "Ama ya da fakat anlamında kullanılıyorsa."
-      }
+        "front": "\"Ya ... ya\" bağlacının anlamı nedir?",
+        "back": "Karşılaştırılan unsurlardan yalnızca birini ifade eder."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k07_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Atölye bugün kapalı, çünkü bakım çalışması yapılıyor cümlesinde çünkü hangi yargıyı açıklar?",
+      "alt_beceri": "Bağlaç ile edat görevindeki sözcükleri yazım ve anlam bakımından ayırır.",
+      "metin": "\"Dün okula gelemedim, zira çok hastaydım.\" cümlesinde bağlaç, önceki yargının gerekçesini bildirmiştir. \"Kısacası, yani, demek ki, öyleyse\" bağlaçları ise başka bir işlev görür. İlk cümledeki bağlacın kurduğu ilgi hangisidir?",
       "secenekler": [
-        "Atölyenin açılma amacını",
-        "Atölyenin kapalı olma nedenini",
-        "İki eş seçeneği",
-        "Bir varlığın niteliğini"
+        "Özetleme",
+        "Karşılaştırma",
+        "Koşul",
+        "Gerekçe"
       ],
-      "dogru_index": 1,
-      "cozum": "Çünkü, önceki yargının nedenini açıklar. Amaç cümlesinde hangi amaçla sorusu sorulur; burada kapalı olmanın nedeni verilir.",
+      "dogru_index": 3,
+      "cozum": "\"Zira, çünkü\" gerekçe bildirir; \"kısacası, yani, demek ki, öyleyse\" bağlaçları ise özetleme işlevi görür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çünkü bağlacı cümleler arasında hangi anlam ilişkisini kurar?",
-        "back": "Açıklama ya da neden bildirir."
-      }
+        "front": "Özetleme bağlaçları nedir?",
+        "back": "Kısacası, yani, demek ki, öyleyse, o hâlde gibi sözleri toparlayan bağlaçlardır."
+      },
+      "kazanim": "Bağlaçların bağladığı unsurları, kurduğu anlam ilgilerini ve yazım özelliklerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u02_k07_o01:flashcard",
-      "front": "Bağlaçların temel görevi nedir?",
-      "back": "Eş görevli sözcük, söz öbeği veya cümleleri bağlamak."
+      "front": "Bağlaç nedir?",
+      "back": "Eş görevli sözcükleri, söz öbeklerini ve cümleleri bağlayan sözcüktür."
     },
     {
       "id": "edebiyat_10_u02_k07_o02:flashcard",
-      "front": "Bağlaç olan de-da nasıl yazılır?",
-      "back": "Kendinden önceki sözcükten ayrı yazılır."
+      "front": "Bağlaç olan \"de\"nin yazımı nedir?",
+      "back": "Kendinden önceki sözcükten ayrı yazılır: sen de, pasta da."
     },
     {
       "id": "edebiyat_10_u02_k07_o03:flashcard",
-      "front": "Bağlaç olan ki nasıl yazılır?",
-      "back": "Kendinden önceki ve sonraki sözcüklerden ayrı yazılır."
+      "front": "Bağlaç olan \"ki\"nin yazımı nedir?",
+      "back": "Kendinden önceki ve sonraki sözcükten ayrı yazılır: sanıyorum ki, tanımıyorum ki."
     },
     {
       "id": "edebiyat_10_u02_k07_o04:flashcard",
-      "front": "İle sözcüğü hangi durumda bağlaç olur?",
-      "back": "Yerine ve getirilebiliyorsa."
+      "front": "\"Ama, fakat, lakin\" bağlaçlarının işlevi nedir?",
+      "back": "Karşıt anlamlı cümleleri bağlar; koşul ve pekiştirme anlamı da katar."
     },
     {
       "id": "edebiyat_10_u02_k07_o05:flashcard",
-      "front": "Ama, fakat ve lakin bağlaçları genellikle hangi ilişkiyi kurar?",
-      "back": "Karşıtlık; bazı kullanımlarda koşul ya da pekiştirme."
+      "front": "\"Yalnız\" sözcüğünün edat ve bağlaç olarak ayrımı nedir?",
+      "back": "\"Sadece, bir tek\" anlamındaysa edat; \"ama, fakat\" anlamındaysa bağlaçtır."
     },
     {
       "id": "edebiyat_10_u02_k07_o06:flashcard",
-      "front": "Ne... ne bağlacı cümleye genellikle hangi anlamı verir?",
-      "back": "Karşılaştırılan unsurların hiçbirinin olmadığını bildirerek olumsuzluk katar."
+      "front": "\"İse\" bağlacının işlevi nedir?",
+      "back": "Karşılaştırma ilgisi kurar ve karşıtlığı güçlendirir."
     },
     {
       "id": "edebiyat_10_u02_k07_o07:flashcard",
-      "front": "Hem... hem bağlacı hangi anlamı verir?",
-      "back": "Karşılaştırılan iki unsurun ikisinin de geçerli olduğunu."
+      "front": "\"Ne ... ne\" bağlacının anlamı nedir?",
+      "back": "Cümleyi olumsuz yapar; karşılaştırılan iki unsurun hiçbiri anlamını verir."
     },
     {
       "id": "edebiyat_10_u02_k07_o08:flashcard",
-      "front": "Ya... ya bağlacı hangi ilişkiyi kurar?",
-      "back": "Seçeneklerden birini belirtir."
+      "front": "\"Hem ... hem\" bağlacının anlamı nedir?",
+      "back": "Karşılaştırılan iki unsurun ikisinin de geçerli olduğunu bildirir."
     },
     {
       "id": "edebiyat_10_u02_k07_o09:flashcard",
-      "front": "Yalnız sözcüğü hangi durumda bağlaç sayılır?",
-      "back": "Ama ya da fakat anlamında kullanılıyorsa."
+      "front": "\"Ya ... ya\" bağlacının anlamı nedir?",
+      "back": "Karşılaştırılan unsurlardan yalnızca birini ifade eder."
     },
     {
       "id": "edebiyat_10_u02_k07_o10:flashcard",
-      "front": "Çünkü bağlacı cümleler arasında hangi anlam ilişkisini kurar?",
-      "back": "Açıklama ya da neden bildirir."
+      "front": "Özetleme bağlaçları nedir?",
+      "back": "Kısacası, yani, demek ki, öyleyse, o hâlde gibi sözleri toparlayan bağlaçlardır."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Bağlaç"
+  ]
 }

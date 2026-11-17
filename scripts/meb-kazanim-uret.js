@@ -154,6 +154,31 @@ if (odsgmVar) {
    Yeniden yazmak için: YAZ_JSON=1 node scripts/meb-kazanim-uret.js */
 const ONCEKI = fs.existsSync(CIKTI_JSON) ? okuJson(CIKTI_JSON) : null;
 
+/* v75 — OKULİZYON CÜMLE ARŞİVİ
+   Yeni havuzlar ders kitabından üretildi; Okulizyon'un kendi kazanım
+   cümleleri havuzlarda yok. Eski havuzların Okulizyon cümleleri
+   arsiv/okulizyon-metin-esleme.json'da tutuluyor. "Kesin" katmanı bu
+   cümleleri de değerlendirir; aksi hâlde resmî çıktı eşleşmesi
+   (ör. Kimya "Mol Kavramı") kaybolur. */
+const ARSIV_CUMLE = (() => {
+  const harita = new Map();
+  const yol = path.join(KOK, "arsiv", "okulizyon-metin-esleme.json");
+  if (!fs.existsSync(yol)) return harita;
+  let d = null;
+  try { d = okuJson(yol); } catch (e) { return harita; }
+  for (const e of (d.cumleler || [])) {
+    const metin = String(e.metin || "").trim();
+    if (!metin) continue;
+    for (const k of [String(e.konu_id || ""), String(e.topic_key || "")]) {
+      if (!k) continue;
+      if (!harita.has(k)) harita.set(k, []);
+      const liste = harita.get(k);
+      if (!liste.includes(metin)) liste.push(metin);
+    }
+  }
+  return harita;
+})();
+
 const havuzlar = [];
 for (const ad of fs.readdirSync(HAVUZ_DIZINI)) {
   if (!ad.endsWith(".json") || ad === "index.json") continue;
@@ -169,6 +194,10 @@ for (const ad of fs.readdirSync(HAVUZ_DIZINI)) {
       if (t) altBeceriler.add(t);
     }
   }
+  const arsCumle = (ARSIV_CUMLE.get(String(d.konu_id)) ||
+    ARSIV_CUMLE.get(String(d.topic_key)) || [])
+    .filter(x => !kazanimlar.includes(x));
+  kazanimlar.push(...arsCumle);
   const m = /_u(\d+)_k(\d+)$/.exec(d.konu_id);
   havuzlar.push({
     konu_id: d.konu_id,
@@ -491,9 +520,22 @@ const havuzTopic = new Map(havuzlar.map(h => [h.konu_id, h.topic_key]));
 // En zengin konu listesi: dosyadaki arşiv + bu turda üretilenler.
 const KONULAR_EQ = [];
 const gorulenKonu = new Set();
-for (const h of [...(ONCEKI && Array.isArray(ONCEKI.konular) ? ONCEKI.konular : []), ...sonuc]) {
-  if (gorulenKonu.has(h.konu_id)) continue;
-  gorulenKonu.add(h.konu_id);
+for (const h of sonuc) {
+  const k = h.konu_id + "|" + h.ders + "|" + h.konu;
+  if (gorulenKonu.has(k)) continue;
+  gorulenKonu.add(k);
+  KONULAR_EQ.push(h);
+}
+// Arşivden yalnız BUGÜNKÜ havuzlarda karşılığı OLMAYAN konular taşınır;
+// aynı "ders > konu" iki farklı konu_id ile gelirse canlı olan kazanır.
+const canliTopic = new Set(sonuc.map(h => h.ders + "|" + h.konu));
+const canliId = new Set(sonuc.map(h => h.konu_id));
+for (const h of (ONCEKI && Array.isArray(ONCEKI.konular) ? ONCEKI.konular : [])) {
+  const k = h.konu_id + "|" + h.ders + "|" + h.konu;
+  if (gorulenKonu.has(k)) continue;
+  if (canliId.has(h.konu_id)) continue;
+  if (canliTopic.has(h.ders + "|" + h.konu)) continue;
+  gorulenKonu.add(k);
   KONULAR_EQ.push(h);
 }
 const UYGULAMA = [];

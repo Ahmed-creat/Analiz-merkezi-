@@ -2,251 +2,255 @@
   "konu_id": "fizik_10_u03_k05",
   "sinif": 10,
   "ders": "Fizik",
-  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "baslik": "3.5 Üreteçlerin Bağlanması",
+  "topic_key": "Fizik > 3.5 Üreteçlerin Bağlanması",
+  "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar.",
+  "kaynak": "Fizik 10 ders kitabı, s.242-249",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "fizik_10_u03_k05_o01",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "Taşınabilir bir teleskop izleyicisi, iç dirençleri ihmal edilen iki özdeş 2,0 V hücreyi düz seri bağlı kullanıyor. Kaynağın uçları arasındaki toplam potansiyel fark kaç V olur?",
+      "alt_beceri": "Üreteç bağlama türlerini açıklar.",
+      "metin": "Üreteçler seri bağlandığında devrenin potansiyel farkı nasıl bulunur?",
       "secenekler": [
-        "4 V",
-        "2 V",
-        "0 V",
-        "6 V"
+        "Potansiyel farklar çarpılır",
+        "Üreteçlerin potansiyel farkları toplanır",
+        "Ortalaması alınır",
+        "En büyüğü alınır"
       ],
-      "dogru_index": 0,
-      "cozum": "Düz seri bağlı üreteçlerin potansiyel farkları toplanır: 2,0+2,0=4,0 V. Bu nedenle teleskop izleyicisinin kaynağının uçları arasında 4 V bulunur.",
+      "dogru_index": 1,
+      "cozum": "Seri bağlı üreteçlerin potansiyel farkları toplanır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Özdeş piller düz seri bağlandığında toplam potansiyel farkı nasıl hesaplarsın?",
-        "back": "Her pilin potansiyel farkı toplanır: Vtoplam = V₁ + V₂ + …"
+        "front": "Seri üreteçlerde gerilimlerin toplanması ne demektir?",
+        "back": "Toplanır."
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o02",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "9 V ve 12 V'luk üreteçler ters seri bağlanıyor. Uçlar arasındaki potansiyel farkın büyüklüğü kaç V olur?",
+      "alt_beceri": "Üreteç bağlama türlerini açıklar.",
+      "metin": "Üreteçler düz seri bağlanırken kutuplar nasıl birleştirilir?",
       "secenekler": [
-        "21",
-        "3",
-        "12",
-        "0"
+        "Aynı kutuplar uç uca",
+        "Paralel olarak",
+        "Rastgele",
+        "Zıt kutuplar uç uca"
       ],
-      "dogru_index": 1,
-      "cozum": "Ters seri bağlamada potansiyel farklar birbirine zıt etki eder; büyüklük |12 − 9| = 3 V'tur. 21 V, düz seri bağlamadaki toplama işlemidir.",
+      "dogru_index": 3,
+      "cozum": "Düz seri bağlamada bir üretecin (+) kutbu diğerinin (−) kutbuna bağlanır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ters seri bağlı iki üretecin toplam potansiyel farkı nasıl bulunur?",
-        "back": "Daha büyük potansiyel farktan küçük olan çıkarılır; yönü büyük üreteç belirler."
+        "front": "Düz seri bağlamanın kutup kuralı nedir?",
+        "back": "Zıt kutuplar uç uca."
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o03",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "Uzak bir taşkın uyarı işaretçisi, iç dirençleri ihmal edilen dört özdeş 2,0 V üreteci paralel bağlı kullanıyor. İşaretçinin uçlarındaki potansiyel fark kaç V olur?",
+      "alt_beceri": "Üreteç bağlama türlerini açıklar.",
+      "metin": "Özdeş üreteçler paralel bağlandığında hangi nicelik artar?",
       "secenekler": [
-        "8 V",
-        "4 V",
-        "2 V",
-        "6 V"
+        "Devrenin akım verme kapasitesi",
+        "Potansiyel fark",
+        "Eşdeğer direnç",
+        "Enerji kaybı"
       ],
-      "dogru_index": 2,
-      "cozum": "Özdeş üreteçler paralel bağlandığında uçlar arasındaki potansiyel fark tek bir üretecin potansiyel farkına eşit kalır. Bu nedenle toplam gerilim 2,0 V’tur.",
+      "dogru_index": 0,
+      "cozum": "Paralel bağlamada potansiyel fark değişmez, üreteçlerin toplam akım verme süresi/kapasitesi artar (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Özdeş üreteçler paralel bağlandığında devreye sağlanan potansiyel fark nasıl değişir?",
-        "back": "Tek bir üretecin potansiyel farkına eşit kalır; üreteç sayısı artınca gerilim artmaz."
+        "front": "Özdeş üreteçlerin paralel bağlanmasının sağladığı avantaj nedir?",
+        "back": "Değişmez, bir üretecin gerilimine eşit kalır; akım verme kapasitesi artar."
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o04",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "Direnci sabit bir taşınabilir hava kalitesi sensörüne özdeş piller düz seri bağlanarak sayısı artırılıyor. Devre akımı ve pillerin tükenme süresi nasıl değişir?",
+      "alt_beceri": "Üreteç bağlama türlerini açıklar.",
+      "metin": "Özdeş üreteçler paralel bağlandığında devrenin potansiyel farkı nasıl değişir?",
       "secenekler": [
-        "Akım azalır, piller daha geç tükenir.",
-        "Akım değişmez, pil ömrü de değişmez.",
-        "Akım sıfırlanır, piller daha çabuk tükenir.",
-        "Akım artar, piller daha çabuk tükenir."
+        "Toplanır",
+        "Yarıya iner",
+        "Değişmez",
+        "İki katına çıkar"
       ],
-      "dogru_index": 3,
-      "cozum": "Düz seri bağlamada pil gerilimleri toplanır. Direnç sabitken gerilim arttığı için akım artar; daha fazla akım çekildiğinden piller daha kısa sürede tükenir.",
+      "dogru_index": 2,
+      "cozum": "Paralel bağlı özdeş üreteçlerin potansiyel farkı bir üretecin potansiyel farkına eşittir (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aynı dirençli devrede seri üreteç sayısı arttığında akım ve pillerin tükenme süresi nasıl etkilenir?",
-        "back": "Toplam gerilim ve akım artar; piller daha kısa sürede tükenir."
+        "front": "Paralel bağlı özdeş pillerde gerilimin değişmemesi ne demektir?",
+        "back": "Değişmez."
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o05",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "Bir deniz gözlem şamandırası, toplam I akımını dört özdeş hücrenin paralel bağlı olduğu paketten çekiyor. İdeal durumda her hücrenin sağladığı akım kaçtır?",
+      "alt_beceri": "Üreteç bağlama türlerini açıklar.",
+      "metin": "Üreteçler neden seri bağlanır?",
       "secenekler": [
-        "I/4",
-        "4I",
-        "I",
-        "I²"
+        "Daha düşük potansiyel fark için",
+        "Direnci artırmak için",
+        "Akımı kesmek için",
+        "Daha yüksek potansiyel fark elde etmek için"
       ],
-      "dogru_index": 0,
-      "cozum": "Özdeş paralel hücreler toplam akımı eşit paylaşır. Dört hücre bulunduğundan her birinden I/4 akım geçer.",
+      "dogru_index": 3,
+      "cozum": "Seri bağlama ile üreteçlerin potansiyel farkları toplanarak daha büyük gerilim elde edilir (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Özdeş paralel üreteçlerde ana kol akımı ve her bir pilin verdiği akım nasıl paylaşılır?",
-        "back": "Toplam ana kol akımı değişmez; özdeş piller bu akımı paylaşır, pil sayısı arttıkça her pilin verdiği akım azalır."
+        "front": "Seri bağlamanın amacı nedir?",
+        "back": "Gerilimi artırmak."
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o06",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "İki 9 V pil ters seri bağlanıyor. İdeal kaynak kabulünde devreye sağlanan net gerilim kaç V olur?",
+      "alt_beceri": "Bağlı üreteçlerin toplam potansiyel farkını hesaplar.",
+      "metin": "10 V, 15 V ve 20 V'luk üreteçler düz seri bağlanırsa toplam potansiyel fark kaç V olur?",
       "secenekler": [
-        "18",
-        "0",
-        "9",
-        "4,5"
+        "30",
+        "45",
+        "25",
+        "15"
       ],
       "dogru_index": 1,
-      "cozum": "Ters seri bağlamada gerilimler çıkarılır; eşit 9 V kaynaklar için net değer 9 − 9 = 0 V'tur. Net potansiyel fark olmadığında akım oluşmaz.",
+      "cozum": "10 + 15 + 20 = 45 V (kitaptaki VKL örneği, s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Eşit potansiyel farklı iki üreteç ters seri bağlanırsa devrede ne olur?",
-        "back": "Net potansiyel fark sıfır olur; akım oluşmaz."
+        "front": "Düz seri bağlı üreteçlerin gerilim hesabı nedir?",
+        "back": "45 V"
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o07",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "Bir taşınabilir hava istasyonunun güç modülündeki seri bağlı hücrelerden biri açık devre olacak biçimde arızalanıyor. İstasyonun sensörleri için ne beklenir?",
+      "alt_beceri": "Bağlı üreteçlerin toplam potansiyel farkını hesaplar.",
+      "metin": "15 V'luk ve 10 V'luk iki üreteç, biri ters çevrilerek bağlanırsa toplam potansiyel fark kaç V olur?",
       "secenekler": [
-        "Diğer seri hücreler akımı artırır.",
-        "Sadece toplam gerilim artar.",
-        "Akım geçmez; sensörler çalışmayı durdurur.",
-        "Devre paralel bağlantıya dönüşür."
+        "5",
+        "25",
+        "15",
+        "10"
       ],
-      "dogru_index": 2,
-      "cozum": "Seri devrede tüm hücreler tek akım yolu üzerindedir. Bir hücre devreyi açarsa yüklerden akım geçmez ve sensörler çalışmaz.",
+      "dogru_index": 0,
+      "cozum": "Ters bağlamada potansiyel farklar çıkarılır: 15 − 10 = 5 V (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri bağlı üreteçlerden biri devre yolunu kesen biçimde arızalanırsa yükün çalışması nasıl etkilenir?",
-        "back": "Seri devrenin tek akım yolu kesilir; devreden akım geçmez ve yük çalışmaz."
+        "front": "Ters bağlı üreteçte toplam gerilim nedir?",
+        "back": "5 V"
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o08",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "Paralel bağlı özdeş pillerden biri devre dışı kalıyor, diğerleri ve yük sağlam kalıyor. Beklenen sonuç nedir?",
+      "alt_beceri": "Bağlı üreteçlerin toplam potansiyel farkını hesaplar.",
+      "metin": "Özdeş iki 1,5 V'luk pil seri bağlanırsa toplam potansiyel fark kaç V olur?",
       "secenekler": [
-        "Devrenin akımı mutlaka sıfırlanır.",
-        "Kalan üreteçler devreye akım sağlamayı sürdürür.",
-        "Toplam gerilim iki katına çıkar.",
-        "Kalan piller ters seri olur."
+        "1,5",
+        "0,75",
+        "3",
+        "4,5"
       ],
-      "dogru_index": 1,
-      "cozum": "Paralel bağlı diğer üreteçler çalışmaya devam eder ve yükü besler. Bu, paralel bağlamanın seri bağlantıya göre avantajlarından biridir.",
+      "dogru_index": 2,
+      "cozum": "Seri bağlamada toplanır: 1,5 + 1,5 = 3 V (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Özdeş üreteçler paralelken bir üreteç bozulursa kalanlar devreye nasıl katkı verir?",
-        "back": "Kalan üreteçler akım vermeye devam eder; paralel kollar bağımsız yol sağlar."
+        "front": "İki özdeş pil seri bağlanınca gerilimin katlanması ne demektir?",
+        "back": "3 V"
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o09",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "6 V ve 3 V'luk iki üreteç doğrudan paralel bağlanırsa hangi durum oluşabilir?",
+      "alt_beceri": "Bağlı üreteçlerin toplam potansiyel farkını hesaplar.",
+      "metin": "Özdeş iki 1,5 V'luk pil paralel bağlanırsa devrenin potansiyel farkı kaç V olur?",
       "secenekler": [
-        "Kaynaklar arasında gerilim eşitlenene kadar akım geçebilir.",
-        "Toplam gerilim 9 V olur ve sorun yaşanmaz.",
-        "Üreteçlerden akım çekilmez.",
-        "İki üreteç otomatik olarak seri olur."
+        "3",
+        "1,5",
+        "0,75",
+        "6"
       ],
-      "dogru_index": 0,
-      "cozum": "Paralel bağlı kaynakların gerilimleri farklı olduğunda aralarında gerilimi eşitlemeye çalışan akım geçebilir. Bu nedenle farklı potansiyel farklara sahip üreteçleri doğrudan paralel bağlamak sakıncalıdır.",
+      "dogru_index": 1,
+      "cozum": "Paralel bağlamada potansiyel fark değişmez, 1,5 V olarak kalır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Farklı potansiyel farklara sahip üreteçleri paralel bağlarken neden dikkatli olmak gerekir?",
-        "back": "Gerilimleri eşit değilse potansiyel farkları eşitlenene kadar kaynaklar arasında akım geçebilir; bu bağlantı karmaşık ve sakıncalıdır."
+        "front": "Özdeş pillerin paralel bağlanmasında gerilim nedir?",
+        "back": "1,5 V"
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
     {
       "soru_id": "fizik_10_u03_k05_o10",
-      "alt_beceri": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
-      "metin": "Bir kablosuz çevre sensörünün daha yüksek besleme potansiyel farkıyla çalışması isteniyor. Özdeş piller için hangi bağlantı uygundur?",
+      "alt_beceri": "Bağlı üreteçlerin toplam potansiyel farkını hesaplar.",
+      "metin": "Seri bağlı üreteçlerden birinin kutupları ters çevrilirse devrenin toplam potansiyel farkı nasıl değişir?",
       "secenekler": [
-        "Ters seri; gerilimler birbirini yok eder.",
-        "Paralel; gerilim pillerin toplamına çıkar.",
-        "Tek pil; daha yüksek gerilim sağlar.",
-        "Düz seri; üreteçlerin potansiyel farkları toplanır."
+        "Artar",
+        "Değişmez",
+        "Sıfırlanır",
+        "Azalır"
       ],
       "dogru_index": 3,
-      "cozum": "Özdeş piller düz seri bağlandığında potansiyel farkları toplanır. Paralel bağlama toplam gerilimi artırmaz; daha uzun kullanım süresine katkı sağlayabilir.",
+      "cozum": "Ters bağlanan üreteç toplamdan çıkarıldığı için toplam potansiyel fark azalır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir devrede daha yüksek potansiyel fark ya da daha uzun pil ömrü isteniyorsa hangi bağlantı türü tercih edilir?",
-        "back": "Daha yüksek potansiyel fark için seri; daha uzun kullanım süresi için özdeş pilleri paralel bağlama tercih edilir."
+        "front": "Ters bağlı üretecin toplam gerilime etkisi nedir?",
+        "back": "Azalır."
       },
-      "kazanim": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+      "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "fizik_10_u03_k05_o01:flashcard",
-      "front": "Özdeş piller düz seri bağlandığında toplam potansiyel farkı nasıl hesaplarsın?",
-      "back": "Her pilin potansiyel farkı toplanır: Vtoplam = V₁ + V₂ + …"
+      "front": "Seri üreteçlerde gerilimlerin toplanması ne demektir?",
+      "back": "Toplanır."
     },
     {
       "id": "fizik_10_u03_k05_o02:flashcard",
-      "front": "Ters seri bağlı iki üretecin toplam potansiyel farkı nasıl bulunur?",
-      "back": "Daha büyük potansiyel farktan küçük olan çıkarılır; yönü büyük üreteç belirler."
+      "front": "Düz seri bağlamanın kutup kuralı nedir?",
+      "back": "Zıt kutuplar uç uca."
     },
     {
       "id": "fizik_10_u03_k05_o03:flashcard",
-      "front": "Özdeş üreteçler paralel bağlandığında devreye sağlanan potansiyel fark nasıl değişir?",
-      "back": "Tek bir üretecin potansiyel farkına eşit kalır; üreteç sayısı artınca gerilim artmaz."
+      "front": "Özdeş üreteçlerin paralel bağlanmasının sağladığı avantaj nedir?",
+      "back": "Değişmez, bir üretecin gerilimine eşit kalır; akım verme kapasitesi artar."
     },
     {
       "id": "fizik_10_u03_k05_o04:flashcard",
-      "front": "Aynı dirençli devrede seri üreteç sayısı arttığında akım ve pillerin tükenme süresi nasıl etkilenir?",
-      "back": "Toplam gerilim ve akım artar; piller daha kısa sürede tükenir."
+      "front": "Paralel bağlı özdeş pillerde gerilimin değişmemesi ne demektir?",
+      "back": "Değişmez."
     },
     {
       "id": "fizik_10_u03_k05_o05:flashcard",
-      "front": "Özdeş paralel üreteçlerde ana kol akımı ve her bir pilin verdiği akım nasıl paylaşılır?",
-      "back": "Toplam ana kol akımı değişmez; özdeş piller bu akımı paylaşır, pil sayısı arttıkça her pilin verdiği akım azalır."
+      "front": "Seri bağlamanın amacı nedir?",
+      "back": "Gerilimi artırmak."
     },
     {
       "id": "fizik_10_u03_k05_o06:flashcard",
-      "front": "Eşit potansiyel farklı iki üreteç ters seri bağlanırsa devrede ne olur?",
-      "back": "Net potansiyel fark sıfır olur; akım oluşmaz."
+      "front": "Düz seri bağlı üreteçlerin gerilim hesabı nedir?",
+      "back": "45 V"
     },
     {
       "id": "fizik_10_u03_k05_o07:flashcard",
-      "front": "Seri bağlı üreteçlerden biri devre yolunu kesen biçimde arızalanırsa yükün çalışması nasıl etkilenir?",
-      "back": "Seri devrenin tek akım yolu kesilir; devreden akım geçmez ve yük çalışmaz."
+      "front": "Ters bağlı üreteçte toplam gerilim nedir?",
+      "back": "5 V"
     },
     {
       "id": "fizik_10_u03_k05_o08:flashcard",
-      "front": "Özdeş üreteçler paralelken bir üreteç bozulursa kalanlar devreye nasıl katkı verir?",
-      "back": "Kalan üreteçler akım vermeye devam eder; paralel kollar bağımsız yol sağlar."
+      "front": "İki özdeş pil seri bağlanınca gerilimin katlanması ne demektir?",
+      "back": "3 V"
     },
     {
       "id": "fizik_10_u03_k05_o09:flashcard",
-      "front": "Farklı potansiyel farklara sahip üreteçleri paralel bağlarken neden dikkatli olmak gerekir?",
-      "back": "Gerilimleri eşit değilse potansiyel farkları eşitlenene kadar kaynaklar arasında akım geçebilir; bu bağlantı karmaşık ve sakıncalıdır."
+      "front": "Özdeş pillerin paralel bağlanmasında gerilim nedir?",
+      "back": "1,5 V"
     },
     {
       "id": "fizik_10_u03_k05_o10:flashcard",
-      "front": "Bir devrede daha yüksek potansiyel fark ya da daha uzun pil ömrü isteniyorsa hangi bağlantı türü tercih edilir?",
-      "back": "Daha yüksek potansiyel fark için seri; daha uzun kullanım süresi için özdeş pilleri paralel bağlama tercih edilir."
+      "front": "Ters bağlı üretecin toplam gerilime etkisi nedir?",
+      "back": "Azalır."
     }
-  ],
-  "baslik": "3.5 Üreteçlerin Bağlanması",
-  "topic_key": "Fizik > 3.5 Üreteçlerin Bağlanması"
+  ]
 }

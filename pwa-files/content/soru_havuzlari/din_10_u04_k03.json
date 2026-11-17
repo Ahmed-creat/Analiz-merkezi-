@@ -2,286 +2,303 @@
   "konu_id": "din_10_u04_k03",
   "sinif": 10,
   "ders": "Din Kültürü",
-  "kaynak_dosya": "10. Sınıf din json.zip",
+  "tema": 4,
+  "tema_adi": "Din, Çevre ve Teknoloji",
+  "baslik": "4.3 Çevre ve Teknoloji",
+  "topic_key": "Din Kültürü > 4.3 Çevre ve Teknoloji",
+  "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar.",
+  "kaynak": "Din Kültürü 10 ders kitabı, s.126-130",
+  "kaynak_dosya": "din-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "din_10_u04_k03_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir üretim sistemi doğal kaynak kullanımını hızlandırırken çevre üzerindeki baskıyı artırıyor. Kaynağa göre bu hangi ilişkiyi gösterir?",
+      "alt_beceri": "Teknolojik gelişmelerin yol açtığı çevre sorunlarını açıklar.",
+      "metin": "Sanayi için gereken ham madde ihtiyacının doğal kaynaklara yönelmesi hangi sonucu doğurmuştur?",
       "secenekler": [
-        "Teknolojinin çevresel etkisini",
-        "Çevrenin teknolojiden etkilenmemesini",
-        "İnsanın çevreden bağımsızlığını",
-        "Kaynakların sınırsızlığını"
+        "Kentlerin küçülmesini",
+        "Doğal kaynakların hızla tükenmesini",
+        "Üretimin azalmasını",
+        "Göçlerin durmasını"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak teknolojiyle hızlanan insan faaliyetlerinin doğal kaynakların tükenmesine ve çevre sorunlarına yol açabileceğini belirtir.",
+      "dogru_index": 1,
+      "cozum": "Ham madde ihtiyacı kaynakların hızla tükenmesine ve çevre sorunlarına yol açmıştır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsan ve teknoloji çevreyi nasıl etkiler?",
-        "back": "İnsan ihtiyaçlarını karşılamak için çevreyi şekillendirir; teknolojik gelişmeler bu süreci hızlandırıp doğal kaynakların tükenmesine ve çevre sorunlarına yol açabilir."
-      }
+        "front": "Ham madde ihtiyacının sonucu nedir?",
+        "back": "Doğal kaynakların hızla tükenmesi ve çevre sorunları."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir gelişme doğal yaşam alanlarını azaltıyor, tüketimi artırıyor ve şehirlerin plansız büyümesine katkı sağlıyor. Kaynakta bu sonuçlar hangi genel başlıkta ele alınır?",
+      "alt_beceri": "Teknolojik gelişmelerin yol açtığı çevre sorunlarını açıklar.",
+      "metin": "Teknolojik gelişmelerin sebep olduğu çevre sorunları hangi seçenekte verilmiştir?",
       "secenekler": [
-        "Bilgi kaynaklarında",
-        "Teknoloji kaynaklı çevre sorunlarında",
-        "Dinî yorumlarda",
-        "Estetik yargılarda"
+        "Okuryazarlığın artması, kentlerin güzelleşmesi",
+        "Ulaşımın kolaylaşması, iletişimin hızlanması",
+        "Sağlık hizmetlerinin yaygınlaşması, ömrün uzaması",
+        "İklim değişikliği, ormanların yok edilmesi, türlerin tükenmesi"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak teknolojik gelişmelerle ilişkilendirilen çevre sorunları arasında iklim değişikliği, tür kaybı, çarpık kentleşme ve tüketim bağımlılığını sayar.",
+      "dogru_index": 3,
+      "cozum": "İklim değişikliği, ormansızlaşma, türlerin tükenmesi, çarpık kentleşme ve tüketim bağımlılığı teknoloji kaynaklı sorunlardır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknolojik gelişmelerin yol açabileceği çevre sorunlarını örnekleyin.",
-        "back": "İklim değişikliği, ormanların yok edilmesi, türlerin tükenmesi, çarpık kentleşme ve tüketim bağımlılığı bu sorunlardandır."
-      }
+        "front": "Teknoloji kaynaklı çevre sorunlarının ortak nedeni nedir?",
+        "back": "Sanayi ve tüketim artışı; iklim değişikliği, ormansızlaşma ve tür kaybına yol açar."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Enerji üretiminde sera gazı salımını artıran bir yöntem yaygınlaşıyor. Kaynağa göre hangi çevresel süreç hızlanabilir?",
+      "alt_beceri": "Teknolojik gelişmelerin yol açtığı çevre sorunlarını açıklar.",
+      "metin": "Sanayi, enerji ve otomotiv sektörlerindeki gelişmelerin atmosferde artırdığı gaz hangisidir?",
       "secenekler": [
-        "Biyoçeşitliliğin artması",
-        "Doğal kaynakların çoğalması",
-        "Küresel ısınma",
-        "Çevre kirliliğinin kendiliğinden sona ermesi"
+        "Sera gazı",
+        "Oksijen",
+        "Azot",
+        "Hidrojen"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak sanayi, enerji ve otomotiv alanlarındaki gelişmelerin sera gazlarını artırarak küresel ısınmaya yol açabileceğini açıklar.",
+      "dogru_index": 0,
+      "cozum": "Sera gazlarının artması küresel ısınmaya yol açar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Küresel ısınma ile teknolojik faaliyetler arasındaki ilişki nedir?",
-        "back": "Sanayi, enerji ve otomotiv alanlarındaki gelişmeler sera gazı miktarını artırabilir; bu durum küresel ısınmaya katkı sağlar."
-      }
+        "front": "Sera gazı artışının yol açtığı sonuç nedir?",
+        "back": "Küresel ısınma."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir çevresel süreç kuraklığın artmasına ve deniz seviyesinin yükselmesine neden oluyorsa hangi sonuçlar birlikte görülmektedir?",
+      "alt_beceri": "Teknolojik gelişmelerin yol açtığı çevre sorunlarını açıklar.",
+      "metin": "Küresel ısınmanın doğrudan sonuçları hangi seçenekte verilmiştir?",
       "secenekler": [
-        "Yalnızca iletişim kolaylıkları",
-        "Sadece şehir içi ulaşım",
-        "Dinî bilgi türleri",
-        "Küresel ısınmanın etkileri"
+        "Deniz seviyesinin düşmesi",
+        "Ormanların genişlemesi",
+        "Sel, fırtına ve kuraklığın artması",
+        "Kutup buzullarının artması"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak küresel ısınmanın doğal afetleri artırabileceğini, deniz seviyesini ve kuraklığı yükseltebileceğini belirtir.",
+      "dogru_index": 2,
+      "cozum": "Küresel ısınma afetleri artırır, deniz seviyesini yükseltir ve kuraklığı çoğaltır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Küresel ısınmanın doğa üzerindeki bazı sonuçları nelerdir?",
-        "back": "Fırtına, sel, hortum ve orman yangını gibi afetlerin artmasına; deniz seviyesinin ve kuraklığın yükselmesine yol açabilir."
-      }
+        "front": "İklim değişikliğinin sıklaştırdığı doğa olayları nedir?",
+        "back": "Sel, fırtına, hortum, orman yangını ve kuraklık."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Teknolojiyle kolaylaşan yaşam ve iş olanakları kent nüfusunu hızla artırıyor; çevredeki canlıların alanı daralıyor. Kaynağa göre hangi süreç yaşanıyor?",
+      "alt_beceri": "Teknolojik gelişmelerin yol açtığı çevre sorunlarını açıklar.",
+      "metin": "Teknolojik imkânların kırsaldan kente göçü hızlandırmasının çevresel sonucu hangisidir?",
       "secenekler": [
-        "Kentleşmenin çevresel etkisi",
-        "Doğal alanların genişlemesi",
-        "Kaynak tüketiminin sona ermesi",
-        "Çevresel etkiden bağımsız göç"
+        "Kırsal üretimin artması",
+        "Kentlerde su tüketiminin azalması",
+        "Hava kirliliğinin bitmesi",
+        "Çarpık kentleşme ve doğal yaşam alanlarının azalması"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak teknolojik imkânların kırsaldan kente göçü hızlandırabildiğini, bunun doğal alanları ve çevreyi etkileyebildiğini söyler.",
+      "dogru_index": 3,
+      "cozum": "Kent nüfusunun hızla artması çarpık kentleşmeye ve kirliliğe yol açar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknolojinin kentleşme ve canlıların yaşam alanları üzerindeki etkisi nedir?",
-        "back": "Kırsaldan kente göçü hızlandırabilir; kent nüfusunun artması doğal yaşam alanlarını azaltıp kirlilik ve çarpık kentleşmeye yol açabilir."
-      }
+        "front": "Kentleşme baskısının çevresel sonucu nedir?",
+        "back": "Çarpık kentleşme, kirlilik ve doğal yaşam alanlarının daralması."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "İnsanlar çevrim içi araçlarla ürünlere daha kolay ulaşırken sürekli yeni şeylere sahip olma isteği de artıyor. Kaynağa göre hangi risk doğabilir?",
+      "alt_beceri": "Teknolojik gelişmelerin yol açtığı çevre sorunlarını açıklar.",
+      "metin": "Anadolu'da geçmişte yaşayan Asya fili, aslan ve çita gibi türlerin bugün bulunmaması hangi soruna örnektir?",
       "secenekler": [
-        "Doğal kaynakların sınırsızlaşması",
-        "Tüketim bağımlılığı",
-        "İhtiyaçların tamamen ortadan kalkması",
-        "Çevresel sorumluluğun kendiliğinden artması"
+        "İklimin soğumasına",
+        "Türlerin neslinin tükenmesine",
+        "Ormanların artmasına",
+        "Kentlerin küçülmesine"
       ],
       "dogru_index": 1,
-      "cozum": "Kaynak dijital ürün ve hizmetlere kolay erişimin, farklı olma ve can sıkıntısını giderme isteğiyle birleşerek tüketimi ve bağımlılığı artırabileceğini belirtir.",
+      "cozum": "Bu türlerin nesli ülkemizde tümüyle tükenmiştir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dijital ürün ve hizmetlere kolay erişim tüketim bağımlılığını nasıl etkileyebilir?",
-        "back": "Ürünlere kolay erişim ve farklı ya da eşsiz olma isteği tüketimi artırabilir ve tüketim bağımlılığına yol açabilir."
-      }
+        "front": "Asya fili ve çita örneğinin gösterdiği sorun nedir?",
+        "back": "Türlerin neslinin tükenmesi."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir tesis enerji ihtiyacını yenilenebilir kaynaklarla karşılayıp verimliliği artırıyor. Kaynağa göre beklenen çevresel katkı nedir?",
+      "alt_beceri": "Çevre sorunlarına yönelik çözüm önerilerini yorumlar.",
+      "metin": "Teknolojinin çevreye etkisi hangi ikili ilişkiyle açıklanabilir?",
       "secenekler": [
-        "Doğal kaynakların hızla tükenmesi",
-        "Tüketim bağımlılığının artması",
-        "Ham madde tüketimi ve emisyonların azalması",
-        "Çevre kirliliğinin büyümesi"
+        "Hayatı kolaylaştırırken çevre sorunlarını artırması",
+        "Yalnızca çevreyi koruması",
+        "Üretimi tümüyle durdurması",
+        "Doğal kaynakları çoğaltması"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak çevre dostu teknolojilerin yenilenebilir enerji ve verimlilikle kaynak kullanımını ve sera gazı salımını azaltabileceğini açıklar.",
+      "dogru_index": 0,
+      "cozum": "Teknoloji bir yandan kolaylık sağlar, diğer yandan çevre sorunlarını artırır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çevre dostu teknolojiler çevrenin korunmasına nasıl katkıda bulunur?",
-        "back": "Yenilenebilir enerji, verimlilik ve tasarruf sağlayarak ham madde tüketimini, çevre kirliliğini ve sera gazı salımını azaltmaya yardımcı olabilir."
-      }
+        "front": "Teknoloji ile çevre arasındaki ilişkinin özeti nedir?",
+        "back": "Kolaylık sağlarken çevre sorunlarını da artırması."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir karar verici bugünkü üretim kararlarının başka canlıları ve gelecek kuşakları etkileyebileceğini hesaba katıyor. Hangi sorumluluğu gözetiyor?",
+      "alt_beceri": "Çevre sorunlarına yönelik çözüm önerilerini yorumlar.",
+      "metin": "Su kirliliğini azaltmak isteyen birinin çözüm önerisi hangisidir?",
       "secenekler": [
-        "Sınırsız tüketim hakkını",
-        "Yalnızca kısa vadeli çıkarı",
-        "Doğal dengenin önemsizliğini",
-        "Çevreye karşı dinî ve ahlaki sorumluluğu"
+        "Daha fazla deterjan tüketmek",
+        "Atık suları akarsulara bırakmak",
+        "Kimyasal temizleyiciler yerine doğal ürünler kullanmak",
+        "Su kullanımını artırmak"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak insanın kendi yaşamını, diğer canlıları ve gelecek nesilleri tehlikeye atacak biçimde sınırsız davranmasını yasaklayan bir sorumluluk anlayışı sunar.",
+      "dogru_index": 2,
+      "cozum": "Kimyasal ürünler yerine doğal temizleyiciler tercih edilmelidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İslam’a göre çevreye duyarlı olmak neden önemlidir?",
-        "back": "İnsan sınırsız ve sorumsuz davranarak kendi, diğer canlıların ve gelecek nesillerin yaşamını tehlikeye atmamalıdır."
-      }
+        "front": "Mutfakta kullanılan kimyasal temizleyicilerin zararı nedir?",
+        "back": "Su kirliliğine yol açmaları."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir üretim alanı büyüyen ham madde ihtiyacını yalnızca doğal kaynaklardan karşılıyor ve kaynaklar hızla azalıyor. Bu hangi bağlantıyı gösterir?",
+      "alt_beceri": "Çevre sorunlarına yönelik çözüm önerilerini yorumlar.",
+      "metin": "Tüketim bağımlılığının çevreyle ilişkisi hangisidir?",
       "secenekler": [
-        "Teknolojik üretim ve kaynak tüketimi bağlantısını",
-        "Teknolojinin çevreye etkisizliğini",
-        "Kaynakların kendiliğinden çoğalmasını",
-        "Üretimin tüketimden bağımsızlığını"
+        "Doğal kaynakları koruması",
+        "Kaynak tüketimini ve atık miktarını artırması",
+        "Kirliliği tümüyle önlemesi",
+        "Üretimi azaltması"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak sanayi için gereken ham madde ihtiyacının doğal kaynaklara yönelttiğini ve bunların hızla tükenmesine yol açabildiğini belirtir.",
+      "dogru_index": 1,
+      "cozum": "Aşırı tüketim, kaynakların tükenmesini ve atık artışını hızlandırır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknolojik gelişme ile doğal kaynakların tükenmesi arasındaki temel bağlantı nedir?",
-        "back": "Sanayinin ham madde ihtiyacı insanları doğal kaynaklara yöneltir; kaynakların hızla kullanımı tükenmeyi ve çevre sorunlarını artırabilir."
-      }
+        "front": "Aşırı tüketimin çevre üzerindeki etkisi nedir?",
+        "back": "Kaynak tüketimini ve atık miktarını artırması."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir üretim çözümü daha az ham madde ve enerji kullanırken çevre kirliliğini azaltmayı hedefliyor. Bu teknolojinin hangi yönüdür?",
+      "alt_beceri": "Çevre sorunlarına yönelik çözüm önerilerini yorumlar.",
+      "metin": "Çevre sorunlarının çözümünde teknolojiden yararlanmanın doğru biçimi hangisidir?",
       "secenekler": [
-        "Çevreye zarar veren aşırı tüketim yönü",
-        "Çevre dostu kullanım yönü",
-        "Kaynakları israf etme yönü",
-        "Doğal yaşamı korumayı reddetme yönü"
+        "Teknoloji kullanımını tümüyle bırakmak",
+        "Üretimi sınırsız artırmak",
+        "Doğal kaynakları hızla tüketmek",
+        "Çevre dostu, tasarruflu teknolojiler geliştirmek"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak teknolojinin yalnızca sorun üretmediğini; çevre dostu ürünlerin enerji verimliliği ve doğal hayatın korunmasına da katkı sağlayabildiğini belirtir.",
+      "dogru_index": 3,
+      "cozum": "Teknoloji, çevreye duyarlı ve tasarruflu biçimde yönlendirilmelidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çevre sorunları karşısında teknoloji nasıl olumlu bir araç hâline gelebilir?",
-        "back": "Çevreye duyarlı ürünler geliştirerek yenilenebilir kaynak kullanımını, enerji tasarrufunu ve doğal hayatın korunmasını destekleyebilir."
-      }
+        "front": "Çevre sorunlarında teknolojinin doğru kullanımı nedir?",
+        "back": "Çevre dostu ve tasarruflu teknolojiler geliştirmek."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir toplum yeni teknolojilerden yararlanırken çevresel maliyetlerini de değerlendirip daha duyarlı seçenekleri tercih ediyor. Hangi yaklaşımı benimser?",
+      "alt_beceri": "Çevre sorunlarına yönelik çözüm önerilerini yorumlar.",
+      "metin": "Teknolojik gelişmelerin çevre üzerindeki olumsuz etkilerinin artmaya başladığı dönem hangisiyle ilişkilendirilir?",
       "secenekler": [
-        "Teknolojiyi sonuçlarından bağımsız görmeyi",
-        "Yalnızca tüketimi artırmayı",
-        "Teknolojinin yarar ve çevresel sonuçlarını birlikte gözetmeyi",
-        "Çevresel etkileri önemsememeyi"
+        "Sanayileşmenin hızlandığı dönem",
+        "Tarımın başladığı dönem",
+        "Yazının bulunduğu dönem",
+        "Ateşin keşfedildiği dönem"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak teknolojinin yaşamı kolaylaştıran yönlerini kabul ederken çevreye yol açabileceği olumsuzlukların da dikkate alınmasını ister.",
+      "dogru_index": 0,
+      "cozum": "Sanayileşmeyle birlikte ham madde ihtiyacı ve kirlilik hızla artmıştır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çevre ve teknoloji ilişkisini değerlendirirken hangi iki yön birlikte düşünülmelidir?",
-        "back": "Teknoloji yaşamı kolaylaştırabilir; ancak kaynak tüketimi, kirlilik ve iklim etkileri gibi sonuçları nedeniyle sorumlu biçimde geliştirilip kullanılmalıdır."
-      }
+        "front": "Çevre sorunlarının belirgin biçimde arttığı dönem nedir?",
+        "back": "Sanayileşmenin hızlandığı dönem."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     },
     {
       "soru_id": "din_10_u04_k03_o12",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir çiftlik çalışanı, hayvanları taşırken gereksiz acı çekmemeleri için dikkatli davranıyor ve onlara eziyet edilmesini önlüyor. Kaynağın hayvanlara yönelik hangi ilkesi bu tutumu destekler?",
+      "alt_beceri": "Çevre sorunlarına yönelik çözüm önerilerini yorumlar.",
+      "metin": "Çevre sorunlarıyla mücadelede bireyin yapabileceği en etkili davranış hangisidir?",
       "secenekler": [
-        "Doğal kaynakları sınırsız kullanmayı",
-        "Canlıların yaşam alanlarını yok saymayı",
-        "Çevre sorunlarını önemsiz görmeyi",
-        "Hayvanlara merhamet gösterip yaşamlarını korumayı"
+        "Sorunu yalnızca yöneticilere bırakmak",
+        "Tüketimi artırarak ekonomiyi canlandırmak",
+        "Kaynakları israf etmemek ve geri dönüşüme katkı sunmak",
+        "Kirliliği görmezden gelmek"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak hayvanlara eziyet edilmemesi gerektiğini ve canlılara merhametli davranmayı vurgular; bu örnek, verilen serçe rivayetini tekrarlamadan aynı sorumluluğu uygular.",
+      "dogru_index": 2,
+      "cozum": "İsrafı önlemek ve geri dönüşüme katkı sunmak bireysel sorumluluktur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İslam’ın hayvanlara yönelik çevre ahlakı hangi sorumluluğu vurgular?",
-        "back": "Hayvanlara eziyet etmemek ve sebepsiz yere öldürmekten kaçınmak; diğer canlıların yaşamını korumak çevreye karşı sorumluluğun parçasıdır."
-      }
+        "front": "Bireyin çevre sorumluluğu nedir?",
+        "back": "İsraf etmemek, geri dönüşüme katkı sunmak."
+      },
+      "kazanim": "Teknolojik gelişmelerin çevre üzerindeki etkilerini açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "din_10_u04_k03_o01:flashcard",
-      "front": "İnsan ve teknoloji çevreyi nasıl etkiler?",
-      "back": "İnsan ihtiyaçlarını karşılamak için çevreyi şekillendirir; teknolojik gelişmeler bu süreci hızlandırıp doğal kaynakların tükenmesine ve çevre sorunlarına yol açabilir."
+      "front": "Ham madde ihtiyacının sonucu nedir?",
+      "back": "Doğal kaynakların hızla tükenmesi ve çevre sorunları."
     },
     {
       "id": "din_10_u04_k03_o02:flashcard",
-      "front": "Teknolojik gelişmelerin yol açabileceği çevre sorunlarını örnekleyin.",
-      "back": "İklim değişikliği, ormanların yok edilmesi, türlerin tükenmesi, çarpık kentleşme ve tüketim bağımlılığı bu sorunlardandır."
+      "front": "Teknoloji kaynaklı çevre sorunlarının ortak nedeni nedir?",
+      "back": "Sanayi ve tüketim artışı; iklim değişikliği, ormansızlaşma ve tür kaybına yol açar."
     },
     {
       "id": "din_10_u04_k03_o03:flashcard",
-      "front": "Küresel ısınma ile teknolojik faaliyetler arasındaki ilişki nedir?",
-      "back": "Sanayi, enerji ve otomotiv alanlarındaki gelişmeler sera gazı miktarını artırabilir; bu durum küresel ısınmaya katkı sağlar."
+      "front": "Sera gazı artışının yol açtığı sonuç nedir?",
+      "back": "Küresel ısınma."
     },
     {
       "id": "din_10_u04_k03_o04:flashcard",
-      "front": "Küresel ısınmanın doğa üzerindeki bazı sonuçları nelerdir?",
-      "back": "Fırtına, sel, hortum ve orman yangını gibi afetlerin artmasına; deniz seviyesinin ve kuraklığın yükselmesine yol açabilir."
+      "front": "İklim değişikliğinin sıklaştırdığı doğa olayları nedir?",
+      "back": "Sel, fırtına, hortum, orman yangını ve kuraklık."
     },
     {
       "id": "din_10_u04_k03_o05:flashcard",
-      "front": "Teknolojinin kentleşme ve canlıların yaşam alanları üzerindeki etkisi nedir?",
-      "back": "Kırsaldan kente göçü hızlandırabilir; kent nüfusunun artması doğal yaşam alanlarını azaltıp kirlilik ve çarpık kentleşmeye yol açabilir."
+      "front": "Kentleşme baskısının çevresel sonucu nedir?",
+      "back": "Çarpık kentleşme, kirlilik ve doğal yaşam alanlarının daralması."
     },
     {
       "id": "din_10_u04_k03_o06:flashcard",
-      "front": "Dijital ürün ve hizmetlere kolay erişim tüketim bağımlılığını nasıl etkileyebilir?",
-      "back": "Ürünlere kolay erişim ve farklı ya da eşsiz olma isteği tüketimi artırabilir ve tüketim bağımlılığına yol açabilir."
+      "front": "Asya fili ve çita örneğinin gösterdiği sorun nedir?",
+      "back": "Türlerin neslinin tükenmesi."
     },
     {
       "id": "din_10_u04_k03_o07:flashcard",
-      "front": "Çevre dostu teknolojiler çevrenin korunmasına nasıl katkıda bulunur?",
-      "back": "Yenilenebilir enerji, verimlilik ve tasarruf sağlayarak ham madde tüketimini, çevre kirliliğini ve sera gazı salımını azaltmaya yardımcı olabilir."
+      "front": "Teknoloji ile çevre arasındaki ilişkinin özeti nedir?",
+      "back": "Kolaylık sağlarken çevre sorunlarını da artırması."
     },
     {
       "id": "din_10_u04_k03_o08:flashcard",
-      "front": "İslam’a göre çevreye duyarlı olmak neden önemlidir?",
-      "back": "İnsan sınırsız ve sorumsuz davranarak kendi, diğer canlıların ve gelecek nesillerin yaşamını tehlikeye atmamalıdır."
+      "front": "Mutfakta kullanılan kimyasal temizleyicilerin zararı nedir?",
+      "back": "Su kirliliğine yol açmaları."
     },
     {
       "id": "din_10_u04_k03_o09:flashcard",
-      "front": "Teknolojik gelişme ile doğal kaynakların tükenmesi arasındaki temel bağlantı nedir?",
-      "back": "Sanayinin ham madde ihtiyacı insanları doğal kaynaklara yöneltir; kaynakların hızla kullanımı tükenmeyi ve çevre sorunlarını artırabilir."
+      "front": "Aşırı tüketimin çevre üzerindeki etkisi nedir?",
+      "back": "Kaynak tüketimini ve atık miktarını artırması."
     },
     {
       "id": "din_10_u04_k03_o10:flashcard",
-      "front": "Çevre sorunları karşısında teknoloji nasıl olumlu bir araç hâline gelebilir?",
-      "back": "Çevreye duyarlı ürünler geliştirerek yenilenebilir kaynak kullanımını, enerji tasarrufunu ve doğal hayatın korunmasını destekleyebilir."
+      "front": "Çevre sorunlarında teknolojinin doğru kullanımı nedir?",
+      "back": "Çevre dostu ve tasarruflu teknolojiler geliştirmek."
     },
     {
       "id": "din_10_u04_k03_o11:flashcard",
-      "front": "Çevre ve teknoloji ilişkisini değerlendirirken hangi iki yön birlikte düşünülmelidir?",
-      "back": "Teknoloji yaşamı kolaylaştırabilir; ancak kaynak tüketimi, kirlilik ve iklim etkileri gibi sonuçları nedeniyle sorumlu biçimde geliştirilip kullanılmalıdır."
+      "front": "Çevre sorunlarının belirgin biçimde arttığı dönem nedir?",
+      "back": "Sanayileşmenin hızlandığı dönem."
     },
     {
       "id": "din_10_u04_k03_o12:flashcard",
-      "front": "İslam’ın hayvanlara yönelik çevre ahlakı hangi sorumluluğu vurgular?",
-      "back": "Hayvanlara eziyet etmemek ve sebepsiz yere öldürmekten kaçınmak; diğer canlıların yaşamını korumak çevreye karşı sorumluluğun parçasıdır."
+      "front": "Bireyin çevre sorumluluğu nedir?",
+      "back": "İsraf etmemek, geri dönüşüme katkı sunmak."
     }
-  ],
-  "topic_key": "Din Kültürü > 4.3 Medine Dönemi"
+  ]
 }

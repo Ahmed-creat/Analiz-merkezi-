@@ -92,7 +92,7 @@ ok(
 /* 20 havuz silindiği için konu_id'si havuzda olmayan 2 TDE konusu BEKLENEN
    durumdur (soruları başka ajan üretecek). Diğer 28'i havuzda olmalı. */
 const havuzda = TDED.konular.filter((k) => KE.havuzlar.some((h) => h.konu_id === k.konu_id));
-ok("havuzu olan TDE konusu 28", havuzda.length === 28, String(havuzda.length));
+ok("havuzu olan TDE konusu 29", havuzda.length === 29, String(havuzda.length));
 ok("her konunun TYMM kaynak URL'si var", TDED.konular.every((k) => /^https:\/\/tymm\.meb\.gov\.tr\//.test(k.kaynak_url)));
 
 console.log("\n== 2) Kazanımlar kaynaklı (uydurma yok) ==");

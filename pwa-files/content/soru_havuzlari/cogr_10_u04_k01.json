@@ -2,346 +2,327 @@
   "konu_id": "cogr_10_u04_k01",
   "sinif": 10,
   "ders": "Coğrafya",
-  "kaynak_dosya": "10. Sınıf coğrafya json.zip",
+  "tema": 4,
+  "tema_adi": "Beşerî Sistemler ve Süreçler",
+  "baslik": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+  "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+  "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular.",
+  "kaynak": "Coğrafya 10 ders kitabı, s.121-129",
+  "kaynak_dosya": "cografya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "cogr_10_u04_k01_o01",
-      "alt_beceri": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-      "metin": "Bir alanda insanlar kalıcı konutlar kuruyor, temel ihtiyaçlarını karşılıyor ve ekonomik-sosyal faaliyetlerini sürdürüyor. Bu alan hangi kavramla tanımlanır?",
+      "alt_beceri": "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+      "metin": "İnsanların barınma, korunma ve sosyoekonomik ihtiyaçlarını sürdürdükleri yerlere ne ad verilir?",
       "secenekler": [
+        "Nüfus",
         "Yerleşme",
-        "Geçici ulaşım koridoru",
-        "Doğal sınır",
-        "Ekonomik sektör"
+        "Fonksiyon",
+        "Mekânsal veri"
       ],
-      "dogru_index": 0,
-      "cozum": "İnsanların barınma, korunma ve sosyoekonomik ihtiyaçlarını karşıladıkları yerler yerleşme olarak adlandırılır. Ulaşım koridoru tek başına yerleşme değildir.",
+      "dogru_index": 1,
+      "cozum": "İnsanların barınma, korunma, sosyoekonomik ve benzeri ihtiyaçlarını sürdürdükleri yerlere yerleşme denir (s.121).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yerleşme kavramı insanların hangi temel faaliyet ve ihtiyaçlarıyla ilişkilidir?",
-        "back": "İnsanların barınma, korunma ve sosyoekonomik ihtiyaçlarını sürdürdükleri alanlar yerleşmelerdir."
+        "front": "Yerleşme nedir?",
+        "back": "İnsanların barınma ve sosyoekonomik ihtiyaçlarını sürdürdüğü yer."
       },
-      "kazanim": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o02",
-      "alt_beceri": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-      "metin": "Tarım ve günlük yaşam için yeni bir yerleşme alanı seçilecek. İklim, su, verimli toprak ve ulaşım koşulları birlikte düşünüldüğünde hangi alan daha elverişlidir?",
+      "alt_beceri": "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+      "metin": "Neolitik Çağ'da insanın yerleşik hayata geçmesine yol açan değişim hangisidir?",
       "secenekler": [
-        "Sürekli su kıtlığı yaşayan, tuzlu topraklı ve sarp yamaçlı alan",
-        "Ilıman koşullu, suya erişimi olan ve verimli düzlüklere yakın alan",
-        "Yoğun bataklık ve sık orman örtüsüyle kaplı, erişimi sınırlı alan",
-        "Tarım yapılabilen toprağı olmayan, aşırı kurak yüksek plato"
+        "Madenden saban yapması",
+        "Ticaret yollarını kullanması",
+        "Şehirlerde sanayi tesisleri kurması",
+        "Tarım ve hayvancılık gibi ekonomik faaliyetlere yönelmesi"
       ],
-      "dogru_index": 1,
-      "cozum": "Elverişli iklim, yeterli su, verimli toprak ve düşük eğim yerleşme ve tarımsal faaliyetleri destekler. Su kıtlığı, sarp topoğrafya ve verimsiz toprak ise sınırlayıcı olabilir.",
+      "dogru_index": 3,
+      "cozum": "Göçebe yaşayan insanın Neolitik Çağ'da tarım ve hayvancılığa yönelmesi yerleşik hayata geçmesine neden olmuştur (s.121).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yerleşme yeri seçiminde etkili olabilen başlıca doğal faktörlerden beşini sayınız.",
-        "back": "İklim, su kaynakları, toprak yapısı, topoğrafya, bitki örtüsü ve kara-deniz dağılışı doğal faktörler arasındadır."
+        "front": "Yerleşik hayata geçiş nedir?",
+        "back": "Tarım ve hayvancılığın başlamasıyla insanların belirli bir yerde kalıcı yaşaması."
       },
-      "kazanim": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o03",
-      "alt_beceri": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-      "metin": "Bir bölgede dağlık kesimlerde yerleşmeler seyrek, geniş düzlüklerde ise daha yoğundur. Bu dağılışı en iyi hangi açıklama destekler?",
+      "alt_beceri": "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+      "metin": "Yeryüzündeki ilk yerleşme alanlarının seçiminde öne çıkan iki temel unsur hangileridir?",
       "secenekler": [
-        "Yerleşmelerin yalnızca denizlere yakın kurulabilmesi",
-        "Düzlüklerde iklimin her zaman daha soğuk olması",
-        "Engebeli alanlarda tarım ve ulaşımın zorlaşması; düzlüklerde bu olanakların artması",
-        "Yükselti ve eğimin insan faaliyetleri üzerinde etkisiz olması"
+        "İklim koşullarının elverişliliği ve su kaynaklarının yeterliliği",
+        "Maden yataklarının varlığı ve sanayi tesisleri",
+        "Ulaşım ağları ve üniversiteler",
+        "Turizm değerleri ve limanlar"
       ],
-      "dogru_index": 2,
-      "cozum": "Yüksek ve engebeli alanlarda tarım için uygun yüzey ve ulaşım olanağı azalabilir. Düzlüklerde ekonomik faaliyet çeşitliliği ve erişim daha elverişli olduğundan yerleşme yoğunluğu artabilir.",
+      "dogru_index": 0,
+      "cozum": "İklim koşullarının elverişli ve su kaynaklarının yeterli olması, ilk yerleşme alanlarının seçiminde öne çıkan unsurlardır (s.122).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yükselti ve eğim, yerleşme yeri seçimini hangi yollarla etkiler?",
-        "back": "Yüksek ve engebeli alanlar tarım alanını ve ulaşım olanaklarını sınırlandırabilir; az engebeli düzlükler yerleşme yoğunluğunu artırabilir."
+        "front": "İlk yerleşme yeri seçimi nedir?",
+        "back": "Elverişli iklim ve yeterli su kaynağına dayanan yer seçimidir."
       },
-      "kazanim": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o04",
-      "alt_beceri": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-      "metin": "Yeni bir ulaşım bağlantısı kurulan ve iş olanakları artan bir yerleşmeye çevre yerlerden nüfus göç ediyor. En olası sonuç hangisidir?",
+      "alt_beceri": "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+      "metin": "Bakır, tunç ve demirin işlenmeye başlanması yerleşme yeri seçiminde nasıl bir değişim yaratmıştır?",
       "secenekler": [
-        "Yerleşmenin nüfus ve işlev bakımından büyümesi",
-        "Ekonomik faaliyet çeşitliliğinin zorunlu olarak azalması",
-        "Su ve iklim koşullarının tamamen ortadan kalkması",
-        "Ulaşım bağlantısının göçü her durumda durdurması"
+        "Yalnızca kıyı ovalarının tercih edilmesine",
+        "Yerleşmelerin su kaynaklarından uzaklaşmasına",
+        "Madenin çıkarıldığı ve odunun bol olduğu ağaçlık mekânların tercih edilmesine",
+        "Göçebe hayata geri dönülmesine"
       ],
-      "dogru_index": 0,
-      "cozum": "Ulaşım ve iş olanakları ekonomik faaliyet çeşitliliğini ve iş gücü talebini artırabilir. Göç alan yerleşmelerin nüfusu ve kapladığı alan büyüyebilir.",
+      "dogru_index": 2,
+      "cozum": "Maden işlemeye başlanmasıyla madenin çıkarıldığı ve eritmede kullanılan odunun bol olduğu ağaçlık mekânlar yerleşme olarak tercih edilmiştir (s.122).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekonomik faaliyet, ulaşım, göç ve teknoloji yerleşmelerin gelişimini nasıl etkileyebilir?",
-        "back": "İş ve ulaşım olanakları ekonomik çeşitliliği ve iş gücü talebini artırabilir; göç nüfusu ve alanı büyütebilir, teknoloji daha önce elverişsiz olan yerlerde yerleşmeyi mümkün kılabilir."
+        "front": "Madenciliğin yerleşmeye etkisi nedir?",
+        "back": "Maden yatakları ve yakıt odunu bulunan alanlarda yerleşme kurulması."
       },
-      "kazanim": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o05",
-      "alt_beceri": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-      "metin": "Bir topluluk tarım ve hayvancılıkla düzenli üretime başlayıp ürünlerini depolama ihtiyacı duyuyor. Bu ekonomik değişimin yerleşme üzerindeki en olası etkisi nedir?",
+      "alt_beceri": "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+      "metin": "Sanayi Devrimi'nin yerleşmeler üzerindeki etkisi hangisidir?",
       "secenekler": [
-        "Yerleşik yaşama geçişi desteklemesi",
-        "Bütün topluluğun sürekli göç etmesini zorunlu kılması",
-        "Su ve toprak kaynaklarının önemini azaltması",
-        "Şehir fonksiyonlarının hemen tümünün oluşması"
+        "Yerleşmelerin kırsal alanlara dağılması",
+        "Şehirlerde iş imkânlarının azalması",
+        "Metropollerin ortadan kalkması",
+        "Yerleşmelerin hem nüfus hem alan olarak hızla büyümesi"
       ],
-      "dogru_index": 0,
-      "cozum": "Tarım ve hayvancılık üretimi belirli alanlarda sürdürmeyi gerektirdiği için yerleşik yaşama geçişi desteklemiştir. Bu durum şehir fonksiyonlarının hemen tamamının ortaya çıkması anlamına gelmez.",
+      "dogru_index": 3,
+      "cozum": "Sanayi Devrimi ile kurulan tesisler yerleşmelerin hem nüfus miktarı hem alansal açıdan büyümesini hızlandırmıştır (s.122).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tarım ve hayvancılığın gelişmesi, insanların yerleşme biçimini tarihsel olarak nasıl değiştirmiştir?",
-        "back": "Üretimin belirli alanlarda sürdürülmesi ihtiyacı, göçebe yaşamdan yerleşik yaşama geçişi desteklemiştir."
+        "front": "Sanayileşmenin şehirleşmeye etkisi nedir?",
+        "back": "İş imkânı yaratarak nüfus ve alan bakımından hızlı büyüme sağlar."
       },
-      "kazanim": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o06",
-      "alt_beceri": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-      "metin": "Bir yerleşmede nüfus yoğun, faaliyetlerin çoğu tarım dışı ve hizmetler örgütlü biçimde yürütülüyor. Bu yerleşmenin hangi tipe daha yakın olması beklenir?",
+      "alt_beceri": "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+      "metin": "Yerleşmeyi sınırlandıran doğal faktörlerden biri olan gür orman alanları hangi özelliği nedeniyle yerleşmeye elverişli değildir?",
       "secenekler": [
-        "Geçici köy altı yerleşmesi",
-        "Şehir yerleşmesi",
-        "Mevsimlik hayvancılık alanı",
-        "Dağınık kırsal birim"
+        "Topraklarının çok verimli olması",
+        "Ekonomik faaliyetleri ve ulaşımı olumsuz etkilemesi",
+        "İklimin çok kurak olması",
+        "Yer altı suyunun bulunmaması"
       ],
       "dogru_index": 1,
-      "cozum": "Yoğun nüfuslu, organize ve tarım dışı faaliyetlerin baskın olduğu yerleşmeler şehir olarak nitelendirilir. Mevsimlik hayvancılık alanları kırsal ve geçici yerleşme biçimleridir.",
+      "cozum": "Gür orman alanları ekonomik faaliyetleri ve ulaşımı olumsuz etkilediği için yerleşmeyi sınırlandırır; Amazon ve Kongo havzalarında yerleşme seyrektir (s.123).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kır yerleşmesi ile şehir yerleşmesi ayrımında hangi ölçütler kullanılabilir?",
-        "back": "Nüfus miktarı, ekonomik faaliyetlerin türü ve idari/örgütsel yapı birlikte değerlendirilir; kırsal alanlarda tarım ve hayvancılık daha baskın olabilir."
+        "front": "Bitki örtüsünün yerleşmeye etkisi nedir?",
+        "back": "Gür ormanlar ulaşımı ve ekonomik faaliyeti zorlaştırarak yerleşmeyi sınırlar."
       },
-      "kazanim": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o07",
-      "alt_beceri": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-      "metin": "Konargöçer bir aile, yaz mevsiminde hayvancılık yapmak için geçici bir yerleşme birimi oluşturuyor. Bu yerleşme türü hangisidir?",
+      "alt_beceri": "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+      "metin": "Yeryüzündeki yerleşmelerin büyük kısmının Kuzey Yarım Küre'de bulunmasının nedeni hangisidir?",
       "secenekler": [
-        "Mezra",
-        "Mahalle",
-        "Oba",
-        "Şehir"
+        "Karaların kapladığı alanın Kuzey Yarım Küre'de daha fazla olması",
+        "Kuzey Yarım Küre'de yükseltinin sıfır olması",
+        "Güney Yarım Küre'de hiç su kaynağı bulunmaması",
+        "Kuzey Yarım Küre'de bitki örtüsünün hiç bulunmaması"
       ],
-      "dogru_index": 2,
-      "cozum": "Oba, konargöçer ailelerin yaz mevsiminde oluşturduğu ve temel ekonomik faaliyetin hayvancılık olduğu geçici köy altı yerleşmesidir. Mezra ve mahalle yıl boyu kullanılan kırsal birimlerdir.",
+      "dogru_index": 0,
+      "cozum": "Yeryüzünün yaklaşık dörtte üçü sularla kaplıdır; karaların alanı Kuzey Yarım Küre'de daha fazla olduğu için yerleşmelerin büyük kısmı buradadır (s.123).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Köy altı yerleşmelerinin sürekli ve geçici kullanılan türleri arasında nasıl bir fark vardır?",
-        "back": "Bazı türler yıl boyunca kullanılır; yayla, oba ve kom gibi bazı türler ise hayvancılık veya başka faaliyetlerle bağlantılı olarak yılın belirli dönemlerinde kullanılır."
+        "front": "Kara ve deniz dağılışı nedir?",
+        "back": "Karaların Kuzey Yarım Küre'de daha geniş yer tutmasıdır."
       },
-      "kazanim": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o08",
-      "alt_beceri": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-      "metin": "Bir yerleşmede nüfusun ve iş olanaklarının büyük bölümü ürünlerin işlenip fabrikalarda yeni ürünlere dönüştürülmesine bağlı. Yerleşmenin öne çıkan fonksiyonu hangisidir?",
+      "alt_beceri": "Yerleşme tiplerini ölçütlerine göre sınıflandırır.",
+      "metin": "Türkiye'de kır yerleşmesi sayılabilmesi için nüfusun üst sınırı kaçtır?",
       "secenekler": [
-        "Tarım",
-        "Yönetim",
-        "Turizm",
-        "Sanayi"
+        "2 bin",
+        "20 bin",
+        "10 bin",
+        "100 bin"
       ],
-      "dogru_index": 3,
-      "cozum": "Ham madde ve ara malların atölye veya fabrikalarda yeni ürüne dönüştürülmesi sanayi faaliyetidir. Bu nedenle yerleşmenin belirgin fonksiyonu sanayidir.",
+      "dogru_index": 2,
+      "cozum": "Yaşayanların ağırlıklı olarak tarım ve hayvancılıkla geçindiği, nüfusu 10 binden az kırsal yerleşmeler kır yerleşmesidir (s.125).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir yerleşmenin fonksiyonu neyi ifade eder?",
-        "back": "Yerleşmenin oluşmasını ve varlığını sürdürmesini sağlayan ekonomik, sosyal ve kültürel amaçlı faaliyetleri ifade eder."
+        "front": "Kır yerleşmesi nedir?",
+        "back": "Nüfusu 10 binden az, geçimi tarım ve hayvancılığa dayanan yerleşme."
       },
-      "kazanim": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o09",
-      "alt_beceri": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-      "metin": "Bir yerleşmenin gelişmesinde madenlerin çıkarılması ve işletilmesi, iş gücü ile hizmet talebinin temel kaynağı hâline geliyor. Hangi fonksiyon ön plandadır?",
+      "alt_beceri": "Yerleşme tiplerini ölçütlerine göre sınıflandırır.",
+      "metin": "Türkiye'de nüfusu 2.000 ila 10.000 arasında olan kır yerleşmesine ne ad verilir?",
       "secenekler": [
-        "Ulaşım",
-        "Madencilik",
-        "Sağlık",
-        "Eğitim ve kültür"
+        "Köy",
+        "Kasaba",
+        "Mezra",
+        "Metropol"
       ],
       "dogru_index": 1,
-      "cozum": "Yerin üstündeki veya altındaki minerallerin çıkarılması ve işletilmesi madencilik fonksiyonudur. Ulaşım, insanların ve varlıkların bir yerden başka yere taşınmasıyla ilgilidir.",
+      "cozum": "Kır yerleşmelerinden nüfusu 2.000 ila 10.000 arası olanına kasaba, 2.000'in altında olanına köy denir (s.125).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yerleşmeler hangi ekonomik ve toplumsal işlevlere göre sınıflandırılabilir?",
-        "back": "Tarım, madencilik, sanayi, ticaret, yönetim, sağlık, ulaşım, turizm, eğitim-kültür ve askerî işlevler temel sınıflandırma ölçütlerindendir."
+        "front": "Kasaba nedir?",
+        "back": "Nüfusu 2.000 ile 10.000 arasında olan kır yerleşmesi."
       },
-      "kazanim": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o10",
-      "alt_beceri": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-      "metin": "Bir ilçede seçilmiş yerel yöneticiler, mahalle yolları ve yerel hizmetler için karar alıyor. Bu faaliyet hangi yönetim düzeyiyle ilişkilidir?",
+      "alt_beceri": "Yerleşme tiplerini ölçütlerine göre sınıflandırır.",
+      "metin": "Yayla, oba ve kom gibi köy altı yerleşmelerinin ortak özelliği hangisidir?",
       "secenekler": [
-        "Merkezî yönetimin ülke çapındaki yasama işleri",
-        "Uluslararası ticaret yönetimi",
-        "Yerel yönetim",
-        "Askerî fonksiyon"
+        "Yıl boyu sürekli yerleşme olmaları",
+        "İdari olarak ilçeye bağlı olmaları",
+        "Nüfuslarının 20 binin üzerinde olması",
+        "Yılın belirli dönemlerinde geçici olarak kullanılmaları"
       ],
-      "dogru_index": 2,
-      "cozum": "Belediye ve benzeri seçilmiş birimler yerel hizmetleri yürüten yerel yönetimlerdir. Merkezî yönetim ise ülke çapındaki idari işleri ve taşra teşkilatını kapsar.",
+      "dogru_index": 3,
+      "cozum": "Mahalle ve mezra yıl boyu yaşanan kır yerleşmeleriyken yayla, oba ve kom yılın belirli dönemlerinde kullanılan geçici köy altı yerleşmeleridir (s.125).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Merkezî yönetim ile yerel yönetim yerleşme düzeyinde hangi yönlerden ayrılır?",
-        "back": "Merkezî yönetim ülke çapındaki idari iş ve birimleri yürütür; yerel yönetimler belediye, il özel idaresi ve köy gibi yerel hizmet birimleriyle ilgilenir."
+        "front": "Geçici köy altı yerleşmesi nedir?",
+        "back": "Yılın belirli dönemlerinde kullanılan yayla, oba ve kom gibi yerleşme."
       },
-      "kazanim": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o11",
-      "alt_beceri": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-      "metin": "Bir yerleşmeye çok sayıda kişi tanı ve tedavi hizmetlerinden yararlanmak için geliyor; sağlık kurumları bölgesel ölçekte hizmet veriyor. Hangi fonksiyon öne çıkmıştır?",
+      "alt_beceri": "Yerleşme tiplerini ölçütlerine göre sınıflandırır.",
+      "metin": "Türkiye'de nüfusu 100 bin ila 1 milyon arasında olan şehirler hangi sınıfa girer?",
       "secenekler": [
-        "Ticaret",
-        "Ulaşım",
-        "Askerî",
-        "Sağlık"
+        "Büyük şehir",
+        "Orta şehir",
+        "Küçük şehir",
+        "Metropol"
       ],
-      "dogru_index": 3,
-      "cozum": "Toplumun sağlık düzeyini geliştirmeye ve sürdürmeye yönelik hizmetler sağlık fonksiyonudur. Ulaşım fonksiyonu taşımacılık sistemleriyle ilgilidir.",
+      "dogru_index": 0,
+      "cozum": "Şehirler nüfusa göre küçük (20 bine kadar), orta (20-100 bin), büyük (100 bin-1 milyon) ve metropol (1 milyon üzeri) olarak sınıflandırılır (s.125).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir yerleşmede sağlık fonksiyonunun belirginleştiğini gösteren hangi faaliyetler bulunabilir?",
-        "back": "Sağlık düzeyini yükseltmeye, geliştirmeye ve sürdürmeye yönelik hizmetler; sağlık kuruluşları ve uzmanlaşmış sağlık faaliyetleri bulunabilir."
+        "front": "Metropol nedir?",
+        "back": "Nüfusu 1 milyonun üzerinde olan şehir yerleşmesi."
       },
-      "kazanim": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o12",
-      "alt_beceri": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-      "metin": "Başlangıçta balıkçılıkla tanınan bir kıyı yerleşmesine zamanla bir marina, meslek okulu ve bölgesel sağlık merkezi ekleniyor. Bu gelişme nasıl yorumlanmalıdır?",
+      "alt_beceri": "Yerleşme tiplerini ölçütlerine göre sınıflandırır.",
+      "metin": "Türkiye'de yerleşmelerin yoğunluğu hangi yönde azalır?",
       "secenekler": [
-        "Yerleşmenin fonksiyonlarının çeşitlenip zamanla değişebileceği",
-        "Tarım fonksiyonunun bütün koşullarda tek işlev olarak kalacağı",
-        "Yerleşmenin artık bir yerleşme sayılamayacağı",
-        "Yeni faaliyetlerin nüfus ve gelişim üzerinde etkisiz olacağı"
+        "Doğudan batıya ve iç kesimlerden kıyıya doğru",
+        "Kuzeyden güneye ve kıyıdan iç kesimlere doğru",
+        "Batıdan doğuya ve kıyıdan iç kesimlere doğru",
+        "Güneyden kuzeye ve iç kesimlerden kıyıya doğru"
       ],
-      "dogru_index": 0,
-      "cozum": "Yeni hizmet ve ulaşım faaliyetleri yerleşmenin işlevlerine yenilerini ekleyebilir; zamanla nüfus ve ekonomik yapı da değişebilir. Yerleşme fonksiyonları koşullara bağlı olarak çeşitlenir.",
+      "dogru_index": 2,
+      "cozum": "Türkiye'de yerleşmelerin yoğunluğu batıdan doğuya ve kıyıdan iç kesimlere gidildikçe genel olarak azalır (s.126).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir yerleşmede zamanla yeni işlevlerin eklenmesi veya baskın işlevin değişmesi neyi gösterir?",
-        "back": "Yerleşme fonksiyonlarının ekonomik ve toplumsal koşullara bağlı olarak zaman içinde değişebildiğini gösterir."
+        "front": "Türkiye'de yerleşme dağılışı nedir?",
+        "back": "Kıyı ve batı kesimlerinde yoğun, iç ve doğu kesimlerde seyrektir."
       },
-      "kazanim": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     },
     {
       "soru_id": "cogr_10_u04_k01_o13",
-      "alt_beceri": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-      "metin": "Bir iç bölgede yer alan şehirde eğitim, sağlık, ticaret ve sanayi faaliyetleri bulunuyor; ancak bölgesel yüklerin büyük bölümü şehirdeki demir yolu aktarma merkezi üzerinden taşınıyor ve iş gücünün önemli kısmı lojistikte çalışıyor. Hangi fonksiyon hâkimdir?",
+      "alt_beceri": "Yerleşme tiplerini ölçütlerine göre sınıflandırır.",
+      "metin": "Salda Gölü çevresinde kurulacak yerleşmelerin doğal yaşam alanına zarar vermesini önlemek için hangi adım atılmıştır?",
       "secenekler": [
-        "Şehrin hiçbir fonksiyonu yoktur.",
-        "Şehir yalnızca kırsal yerleşmedir.",
-        "Sağlık işlevi bütün diğerlerini zorunlu olarak ortadan kaldırır.",
-        "Ulaşım fonksiyonu hâkimdir; diğer işlevler de şehirde bulunabilir."
+        "Göl çevresindeki tüm yerleşmeler kaldırılmıştır",
+        "Gölün suyu tarımsal sulamaya açılmıştır",
+        "Göl alanı turizm yatırımlarına tahsis edilmiştir",
+        "Koruma Amaçlı İmar Planları onaylanarak yürürlüğe girmiştir"
       ],
       "dogru_index": 3,
-      "cozum": "Yüklerin önemli bölümünün demir yolu aktarma merkezinde taşınması ve lojistik iş gücünün belirleyici olması ulaşım fonksiyonunun hâkim olduğunu gösterir. Eğitim, sağlık, ticaret ve sanayi gibi diğer işlevler de birlikte bulunabilir.",
+      "cozum": "Salda Gölü çevresinde I. ve II. derece doğal sit alanlarına ilişkin Koruma Amaçlı Nazım ve Uygulama İmar Planları onaylanmıştır (s.129).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yerleşmenin baskın fonksiyonu ile sahip olduğu işlev çeşitliliği arasındaki fark nedir?",
-        "back": "Bir yerleşmede birden çok işlev bulunabilir; nüfus ve gelişim üzerinde diğerlerine göre daha belirleyici olan işlev hâkim fonksiyondur."
+        "front": "Koruma amaçlı imar planı nedir?",
+        "back": "Hassas doğal alanlarda yapılaşmayı sınırlandıran plan."
       },
-      "kazanim": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u04_k01_o14",
-      "alt_beceri": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-      "metin": "Bir yerleşmeye ziyaretçiler ağırlıklı olarak dinlenmek, çevreyi görmek ve kültürel etkinliklere katılmak için geliyor. Bu yerleşmede hangi fonksiyonun öne çıkması beklenir?",
-      "secenekler": [
-        "Madencilik",
-        "Turizm",
-        "Askerî",
-        "Sanayi"
-      ],
-      "dogru_index": 1,
-      "cozum": "Dinlenme, eğlenme, görme ve tanıma amacıyla yapılan ziyaretler turizm faaliyetleridir. Maden çıkarma ve sanayi üretimi farklı ekonomik fonksiyonlardır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Eğitim-kültür ve turizm fonksiyonları yerleşmelerde hangi tür hizmet ve faaliyetlerle belirginleşebilir?",
-        "back": "Eğitim-kültür işlevi üniversite, tarih, sanat ve kültür faaliyetleriyle; turizm işlevi dinlenme, eğlenme, görme ve tanıma amaçlı ziyaretlerle belirginleşebilir."
-      },
-      "kazanim": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
+      "kazanim": "Yerleşmelerin yer seçimi, kuruluşu ve gelişiminde etkili olan coğrafi faktörleri sorgular."
     }
   ],
   "flashcards": [
     {
       "id": "cogr_10_u04_k01_o01:flashcard",
-      "front": "Yerleşme kavramı insanların hangi temel faaliyet ve ihtiyaçlarıyla ilişkilidir?",
-      "back": "İnsanların barınma, korunma ve sosyoekonomik ihtiyaçlarını sürdürdükleri alanlar yerleşmelerdir."
+      "front": "Yerleşme nedir?",
+      "back": "İnsanların barınma ve sosyoekonomik ihtiyaçlarını sürdürdüğü yer."
     },
     {
       "id": "cogr_10_u04_k01_o02:flashcard",
-      "front": "Yerleşme yeri seçiminde etkili olabilen başlıca doğal faktörlerden beşini sayınız.",
-      "back": "İklim, su kaynakları, toprak yapısı, topoğrafya, bitki örtüsü ve kara-deniz dağılışı doğal faktörler arasındadır."
+      "front": "Yerleşik hayata geçiş nedir?",
+      "back": "Tarım ve hayvancılığın başlamasıyla insanların belirli bir yerde kalıcı yaşaması."
     },
     {
       "id": "cogr_10_u04_k01_o03:flashcard",
-      "front": "Yükselti ve eğim, yerleşme yeri seçimini hangi yollarla etkiler?",
-      "back": "Yüksek ve engebeli alanlar tarım alanını ve ulaşım olanaklarını sınırlandırabilir; az engebeli düzlükler yerleşme yoğunluğunu artırabilir."
+      "front": "İlk yerleşme yeri seçimi nedir?",
+      "back": "Elverişli iklim ve yeterli su kaynağına dayanan yer seçimidir."
     },
     {
       "id": "cogr_10_u04_k01_o04:flashcard",
-      "front": "Ekonomik faaliyet, ulaşım, göç ve teknoloji yerleşmelerin gelişimini nasıl etkileyebilir?",
-      "back": "İş ve ulaşım olanakları ekonomik çeşitliliği ve iş gücü talebini artırabilir; göç nüfusu ve alanı büyütebilir, teknoloji daha önce elverişsiz olan yerlerde yerleşmeyi mümkün kılabilir."
+      "front": "Madenciliğin yerleşmeye etkisi nedir?",
+      "back": "Maden yatakları ve yakıt odunu bulunan alanlarda yerleşme kurulması."
     },
     {
       "id": "cogr_10_u04_k01_o05:flashcard",
-      "front": "Tarım ve hayvancılığın gelişmesi, insanların yerleşme biçimini tarihsel olarak nasıl değiştirmiştir?",
-      "back": "Üretimin belirli alanlarda sürdürülmesi ihtiyacı, göçebe yaşamdan yerleşik yaşama geçişi desteklemiştir."
+      "front": "Sanayileşmenin şehirleşmeye etkisi nedir?",
+      "back": "İş imkânı yaratarak nüfus ve alan bakımından hızlı büyüme sağlar."
     },
     {
       "id": "cogr_10_u04_k01_o06:flashcard",
-      "front": "Kır yerleşmesi ile şehir yerleşmesi ayrımında hangi ölçütler kullanılabilir?",
-      "back": "Nüfus miktarı, ekonomik faaliyetlerin türü ve idari/örgütsel yapı birlikte değerlendirilir; kırsal alanlarda tarım ve hayvancılık daha baskın olabilir."
+      "front": "Bitki örtüsünün yerleşmeye etkisi nedir?",
+      "back": "Gür ormanlar ulaşımı ve ekonomik faaliyeti zorlaştırarak yerleşmeyi sınırlar."
     },
     {
       "id": "cogr_10_u04_k01_o07:flashcard",
-      "front": "Köy altı yerleşmelerinin sürekli ve geçici kullanılan türleri arasında nasıl bir fark vardır?",
-      "back": "Bazı türler yıl boyunca kullanılır; yayla, oba ve kom gibi bazı türler ise hayvancılık veya başka faaliyetlerle bağlantılı olarak yılın belirli dönemlerinde kullanılır."
+      "front": "Kara ve deniz dağılışı nedir?",
+      "back": "Karaların Kuzey Yarım Küre'de daha geniş yer tutmasıdır."
     },
     {
       "id": "cogr_10_u04_k01_o08:flashcard",
-      "front": "Bir yerleşmenin fonksiyonu neyi ifade eder?",
-      "back": "Yerleşmenin oluşmasını ve varlığını sürdürmesini sağlayan ekonomik, sosyal ve kültürel amaçlı faaliyetleri ifade eder."
+      "front": "Kır yerleşmesi nedir?",
+      "back": "Nüfusu 10 binden az, geçimi tarım ve hayvancılığa dayanan yerleşme."
     },
     {
       "id": "cogr_10_u04_k01_o09:flashcard",
-      "front": "Yerleşmeler hangi ekonomik ve toplumsal işlevlere göre sınıflandırılabilir?",
-      "back": "Tarım, madencilik, sanayi, ticaret, yönetim, sağlık, ulaşım, turizm, eğitim-kültür ve askerî işlevler temel sınıflandırma ölçütlerindendir."
+      "front": "Kasaba nedir?",
+      "back": "Nüfusu 2.000 ile 10.000 arasında olan kır yerleşmesi."
     },
     {
       "id": "cogr_10_u04_k01_o10:flashcard",
-      "front": "Merkezî yönetim ile yerel yönetim yerleşme düzeyinde hangi yönlerden ayrılır?",
-      "back": "Merkezî yönetim ülke çapındaki idari iş ve birimleri yürütür; yerel yönetimler belediye, il özel idaresi ve köy gibi yerel hizmet birimleriyle ilgilenir."
+      "front": "Geçici köy altı yerleşmesi nedir?",
+      "back": "Yılın belirli dönemlerinde kullanılan yayla, oba ve kom gibi yerleşme."
     },
     {
       "id": "cogr_10_u04_k01_o11:flashcard",
-      "front": "Bir yerleşmede sağlık fonksiyonunun belirginleştiğini gösteren hangi faaliyetler bulunabilir?",
-      "back": "Sağlık düzeyini yükseltmeye, geliştirmeye ve sürdürmeye yönelik hizmetler; sağlık kuruluşları ve uzmanlaşmış sağlık faaliyetleri bulunabilir."
+      "front": "Metropol nedir?",
+      "back": "Nüfusu 1 milyonun üzerinde olan şehir yerleşmesi."
     },
     {
       "id": "cogr_10_u04_k01_o12:flashcard",
-      "front": "Bir yerleşmede zamanla yeni işlevlerin eklenmesi veya baskın işlevin değişmesi neyi gösterir?",
-      "back": "Yerleşme fonksiyonlarının ekonomik ve toplumsal koşullara bağlı olarak zaman içinde değişebildiğini gösterir."
+      "front": "Türkiye'de yerleşme dağılışı nedir?",
+      "back": "Kıyı ve batı kesimlerinde yoğun, iç ve doğu kesimlerde seyrektir."
     },
     {
       "id": "cogr_10_u04_k01_o13:flashcard",
-      "front": "Yerleşmenin baskın fonksiyonu ile sahip olduğu işlev çeşitliliği arasındaki fark nedir?",
-      "back": "Bir yerleşmede birden çok işlev bulunabilir; nüfus ve gelişim üzerinde diğerlerine göre daha belirleyici olan işlev hâkim fonksiyondur."
-    },
-    {
-      "id": "cogr_10_u04_k01_o14:flashcard",
-      "front": "Eğitim-kültür ve turizm fonksiyonları yerleşmelerde hangi tür hizmet ve faaliyetlerle belirginleşebilir?",
-      "back": "Eğitim-kültür işlevi üniversite, tarih, sanat ve kültür faaliyetleriyle; turizm işlevi dinlenme, eğlenme, görme ve tanıma amaçlı ziyaretlerle belirginleşebilir."
+      "front": "Koruma amaçlı imar planı nedir?",
+      "back": "Hassas doğal alanlarda yapılaşmayı sınırlandıran plan."
     }
-  ],
-  "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi"
+  ]
 }

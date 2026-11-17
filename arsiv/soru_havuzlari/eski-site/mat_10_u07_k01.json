@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u07_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u07_k01_o01",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir dijital sayı üreticisi 1’den 12’ye kadar olan tam sayılardan birini eş olasılıkla üretiyor. Üretilen sayının 3’ün katı olduğu biliniyorsa çift olma olasılığı kaçtır?",
+      "secenekler": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "2/3"
+      ],
+      "dogru_index": 0,
+      "cozum": "3’ün katı olan olası sayılar 3, 6, 9 ve 12’dir. Bunlardan 6 ve 12 çift olduğundan koşullu olasılık 2/4=1/2’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(A|B) koşullu olasılığı neyi ifade eder?",
+        "back": "B olayının gerçekleştiği bilindiğinde A olayının gerçekleşme olasılığını ifade eder."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o02",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir veri aktarımında A, paket başlığının bozuk olması; B, sunucunun paketi karantinaya alması olayıdır. P(A)=1/5, P(B)=1/4 ve P(B|A)=1/2 olduğuna göre A ve B’nin birlikte gerçekleşme olasılığı kaçtır?",
+      "secenekler": [
+        "1/20",
+        "1/10",
+        "1/4",
+        "1/2"
+      ],
+      "dogru_index": 1,
+      "cozum": "P(B|A)=1/2, P(B)=1/4 olduğundan olaylar bağımlıdır. P(A ve B)=P(A)P(B|A)=(1/5)(1/2)=1/10.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "B olayının gerçekleşmesi A olayının olasılığını değiştiriyorsa A ve B olayları nasıl adlandırılır?",
+        "back": "Bağımlı olaylardır."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o03",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir veri merkezindeki iki bağımsız güvenlik denetiminden RFID kartının geçme olasılığı 3/4, parmak izi denetiminin geçme olasılığı 2/3’tür. İkisinin de geçme olasılığı kaçtır?",
+      "secenekler": [
+        "1/3",
+        "1/4",
+        "1/2",
+        "5/12"
+      ],
+      "dogru_index": 2,
+      "cozum": "Denetimler bağımsız olduğundan birlikte geçme olasılığı olasılıkların çarpımıdır. (3/4)(2/3)=1/2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A ve B bağımsız olaylarsa her ikisinin birlikte gerçekleşme olasılığını nasıl hesaplarsın?",
+        "back": "P(A ve B) = P(A) · P(B)."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o04",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir simülasyon yazılımının ürettiği sahnenin gece sahnesi olma olasılığı 3/8, hem gece sahnesi olup hem hedef nesnenin görünür olma olasılığı 1/8’dir. Sahnenin gece olduğu bilindiğine göre hedef nesnenin görünür olma olasılığı kaçtır?",
+      "secenekler": [
+        "1/2",
+        "1/4",
+        "2/3",
+        "1/3"
+      ],
+      "dogru_index": 3,
+      "cozum": "Koşullu olasılık, gece ve hedefin görünür olduğu durumların olasılığının gece sahnesi olasılığına oranıdır. (1/8)/(3/8)=1/3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(A|B) hesabında B olayının gerçekleştiği bilgisi örnek uzayı nasıl sınırlar?",
+        "back": "Yalnızca B olayını sağlayan çıktılar dikkate alınır; payda bu çıktıların sayısıdır."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o05",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir arayüz tasarım kütüphanesinde 15 eş olasılıklı simgenin 6’sı yatay eksene göre simetriktir; bu simetrik simgelerin 2’si mavidir. Seçilen simgenin yatay simetrik olduğu biliniyorsa mavi olma olasılığı kaçtır?",
+      "secenekler": [
+        "1/3",
+        "2/5",
+        "1/2",
+        "2/15"
+      ],
+      "dogru_index": 0,
+      "cozum": "Koşul yalnızca 6 simetrik simgeyi örnek uzayında bırakır. Bunların 2’si mavi olduğundan koşullu olasılık 2/6=1/3’tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "B koşulu verildiğinde A olayının olasılığını çıktı sayılarıyla nasıl ifade edersin?",
+        "back": "P(A|B), hem A hem B olayını sağlayan çıktı sayısının B olayını sağlayan toplam çıktı sayısına oranıdır."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o06",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir ağ izleme raporunda kayıtların 2/5’inin bakım penceresine denk geldiği, 1/10’unun ise hem bakım penceresine denk gelip hem uyarı ürettiği belirlenmiştir. Bir kaydın bakım penceresinde olduğu bilindiğine göre uyarı üretme olasılığı kaçtır?",
+      "secenekler": [
+        "1/2",
+        "1/4",
+        "2/5",
+        "1/10"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bakım penceresindeki kayıtlar koşullu örnek uzayıdır. Uyarı ve bakımın birlikte olasılığı bunun bakım olasılığına bölünür: (1/10)/(2/5)=1/4.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(A|B) hesabında B koşulu örnek uzayını ve paydayı nasıl belirler?",
+        "back": "Yalnızca B olayını sağlayan çıktılar değerlendirilir; payda bu çıktılara ait toplam olasılık ya da sayıdır."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o07",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir depoda 30 büyük ve 45 küçük paket vardır. 12 büyük ve 24 küçük paket acil olarak işaretlenmiştir. Acil işaretli bir paket seçildiğine göre büyük olma olasılığı kaçtır?",
+      "secenekler": [
+        "1/4",
+        "2/5",
+        "1/3",
+        "3/5"
+      ],
+      "dogru_index": 2,
+      "cozum": "Acil işaretli paket sayısı 12+24=36’dır; bunların 12’si büyüktür. Koşullu olasılık 12/36=1/3 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(A|B) hesabında paya hangi çıktılar yazılır?",
+        "back": "B koşulunu sağlayan çıktılar arasından A olayını da sağlayanların sayısı yazılır."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o08",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir atölye grubundaki 20 katılımcının 8’i piyano çalıyor, 7’si şarkı söylüyor ve 3’ü her iki etkinliği de yapıyor. Rastgele seçilen bir katılımcının piyano çalması veya şarkı söylemesi olasılığı kaçtır?",
+      "secenekler": [
+        "1/5",
+        "2/3",
+        "3/4",
+        "3/5"
+      ],
+      "dogru_index": 3,
+      "cozum": "Birleşimde 8+7−3=12 katılımcı vardır; ortak olan 3 kişi iki kez sayılmaması için çıkarılır. Olasılık 12/20=3/5’tir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A veya B olayının olasılığını P(A), P(B) ve P(A ve B) cinsinden yaz.",
+        "back": "P(A veya B) = P(A) + P(B) − P(A ve B)."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o09",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir sera kontrol paneli iki bağımsız koşulu izliyor: toprak neminin uygun aralıkta olma olasılığı 3/4, ışık düzeyinin hedef aralıkta olma olasılığı 2/7’dir. İki koşulun birlikte gerçekleşme olasılığı kaçtır?",
+      "secenekler": [
+        "3/14",
+        "5/14",
+        "3/7",
+        "1/2"
+      ],
+      "dogru_index": 0,
+      "cozum": "Koşullar bağımsız olduğundan birlikte gerçekleşme olasılığı çarpımla bulunur. (3/4)(2/7)=6/28=3/14.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağımsız olaylarda B'nin gerçekleştiğini bilmek A olayının olasılığını nasıl etkiler?",
+        "back": "Değiştirmez; P(A|B) = P(A) olur."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o10",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir deneyde A olayının olasılığı 2/3’tür. A olayının gerçekleşmeme olasılığı kaçtır?",
+      "secenekler": [
+        "1/2",
+        "1/3",
+        "2/3",
+        "3/4"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bir olay ile gerçekleşmemesi birbirinin tümleyeni olduğundan olasılıkları toplamı 1’dir. 1−2/3=1/3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(A) biliniyorsa A olayının gerçekleşmemesi olasılığı nasıl bulunur?",
+        "back": "P(A'nın gerçekleşmemesi) = 1 − P(A)."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o11",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir soğuk zincir izleyicisinin ölçümlerinin 3/8’inde sıcaklık eşiği aşılmış, 1/4’ünde ise hem sıcaklık eşiği aşılmış hem nem uyarısı verilmiştir. Sıcaklık eşiğinin aşıldığı biliniyorsa nem uyarısı olasılığı kaçtır?",
+      "secenekler": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "3/4"
+      ],
+      "dogru_index": 2,
+      "cozum": "Sıcaklık eşiğinin aşıldığı durumlar koşullu örnek uzayıdır. (1/4)/(3/8)=2/3 olduğundan nem uyarısının koşullu olasılığı 2/3’tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "B olayı gerçekleşmişken A olayının koşullu olasılığını sayılarla nasıl hesaplayabilirsin?",
+        "back": "Hem A hem B olayını sağlayan çıktıların sayısını, B olayını sağlayan çıktıların sayısına bölersin."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o12",
+      "alt_beceri": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "metin": "Bir yedekleme sistemi iki bağımsız bağlantı kullanıyor. A bağlantısının çalışması olasılığı 3/8, B bağlantısının çalışması olasılığı 1/4’tür. Tam olarak bir bağlantının çalıştığı biliniyorsa B bağlantısının çalışıyor olma olasılığı kaçtır?",
+      "secenekler": [
+        "3/14",
+        "1/2",
+        "2/5",
+        "5/14"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yalnız B’nin çalışması olasılığı (5/8)(1/4)=5/32, yalnız A’nınki (3/8)(3/4)=9/32’dir. Tam olarak birinin çalıştığı bilindiğinde istenen olasılık (5/32)/(14/32)=5/14 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağımsız A ve B olaylarından tam olarak birinin gerçekleşme olasılığını nasıl yazarsın?",
+        "back": "P(A)·[1−P(B)] + [1−P(A)]·P(B)."
+      },
+      "kazanim": "koşullu olasılık ile çıkarım yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u07_k01_o01:flashcard",
+      "front": "P(A|B) koşullu olasılığı neyi ifade eder?",
+      "back": "B olayının gerçekleştiği bilindiğinde A olayının gerçekleşme olasılığını ifade eder."
+    },
+    {
+      "id": "mat_10_u07_k01_o02:flashcard",
+      "front": "B olayının gerçekleşmesi A olayının olasılığını değiştiriyorsa A ve B olayları nasıl adlandırılır?",
+      "back": "Bağımlı olaylardır."
+    },
+    {
+      "id": "mat_10_u07_k01_o03:flashcard",
+      "front": "A ve B bağımsız olaylarsa her ikisinin birlikte gerçekleşme olasılığını nasıl hesaplarsın?",
+      "back": "P(A ve B) = P(A) · P(B)."
+    },
+    {
+      "id": "mat_10_u07_k01_o04:flashcard",
+      "front": "P(A|B) hesabında B olayının gerçekleştiği bilgisi örnek uzayı nasıl sınırlar?",
+      "back": "Yalnızca B olayını sağlayan çıktılar dikkate alınır; payda bu çıktıların sayısıdır."
+    },
+    {
+      "id": "mat_10_u07_k01_o05:flashcard",
+      "front": "B koşulu verildiğinde A olayının olasılığını çıktı sayılarıyla nasıl ifade edersin?",
+      "back": "P(A|B), hem A hem B olayını sağlayan çıktı sayısının B olayını sağlayan toplam çıktı sayısına oranıdır."
+    },
+    {
+      "id": "mat_10_u07_k01_o06:flashcard",
+      "front": "P(A|B) hesabında B koşulu örnek uzayını ve paydayı nasıl belirler?",
+      "back": "Yalnızca B olayını sağlayan çıktılar değerlendirilir; payda bu çıktılara ait toplam olasılık ya da sayıdır."
+    },
+    {
+      "id": "mat_10_u07_k01_o07:flashcard",
+      "front": "P(A|B) hesabında paya hangi çıktılar yazılır?",
+      "back": "B koşulunu sağlayan çıktılar arasından A olayını da sağlayanların sayısı yazılır."
+    },
+    {
+      "id": "mat_10_u07_k01_o08:flashcard",
+      "front": "A veya B olayının olasılığını P(A), P(B) ve P(A ve B) cinsinden yaz.",
+      "back": "P(A veya B) = P(A) + P(B) − P(A ve B)."
+    },
+    {
+      "id": "mat_10_u07_k01_o09:flashcard",
+      "front": "Bağımsız olaylarda B'nin gerçekleştiğini bilmek A olayının olasılığını nasıl etkiler?",
+      "back": "Değiştirmez; P(A|B) = P(A) olur."
+    },
+    {
+      "id": "mat_10_u07_k01_o10:flashcard",
+      "front": "P(A) biliniyorsa A olayının gerçekleşmemesi olasılığı nasıl bulunur?",
+      "back": "P(A'nın gerçekleşmemesi) = 1 − P(A)."
+    },
+    {
+      "id": "mat_10_u07_k01_o11:flashcard",
+      "front": "B olayı gerçekleşmişken A olayının koşullu olasılığını sayılarla nasıl hesaplayabilirsin?",
+      "back": "Hem A hem B olayını sağlayan çıktıların sayısını, B olayını sağlayan çıktıların sayısına bölersin."
+    },
+    {
+      "id": "mat_10_u07_k01_o12:flashcard",
+      "front": "Bağımsız A ve B olaylarından tam olarak birinin gerçekleşme olasılığını nasıl yazarsın?",
+      "back": "P(A)·[1−P(B)] + [1−P(A)]·P(B)."
+    }
+  ],
+  "baslik": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+  "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar"
+}

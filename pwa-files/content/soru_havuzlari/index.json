@@ -1,1754 +1,3128 @@
 {
-  "sinif": 10,
-  "aciklama": "10. sınıf soru havuzları; kaynak arşivindeki ogeler canonical sorular/flashcards şemasına dönüştürüldü.",
-  "havuz_sayisi": 152,
-  "soru_sayisi": 1756,
-  "havuzlar": [
-    {
-      "konu_id": "biyo_10_u01_k01",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u01_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "ATP’nin Yapısı ve Enerji Aktarımındaki Rolü",
-        "Enerjinin Önemi"
-      ],
-      "baslik": "ATP’nin Yapısı ve Enerji Aktarımındaki Rolü",
-      "topic_key": "Biyoloji > 1.1 Canlılık İçin Enerjinin Önemi"
-    },
-    {
-      "konu_id": "biyo_10_u01_k02",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u01_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [
-        "Fotosentez",
-        "Fotosentez Hızına Etki Eden Çevresel Faktörler",
-        "Fotosentezde Kullanılan ve Üretilen Maddeler",
-        "Işığın Kullanıldığı Tepkimeler",
-        "Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü)",
-        "Pigmentler"
-      ],
-      "baslik": "Fotosentez",
-      "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)"
-    },
-    {
-      "konu_id": "biyo_10_u01_k03",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u01_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Kemosentez"
-      ],
-      "baslik": "Kemosentez",
-      "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)"
-    },
-    {
-      "konu_id": "biyo_10_u01_k04",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u01_k04.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [
-        "Canlılarda Sindirim Yapıları",
-        "Diş Adaptasyonları",
-        "Mide ve Bağırsak Adaptasyonları",
-        "Sindirim",
-        "İnsanda Emilim ve Taşınma",
-        "İnsanda Sindirim"
-      ],
-      "baslik": "Canlılarda Sindirim Yapıları",
-      "topic_key": "Biyoloji > 1.5 Sindirim"
-    },
-    {
-      "konu_id": "biyo_10_u01_k05",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u01_k05.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [
-        "Besinlerin Hücresel Solunuma Katılma Yolları",
-        "ETS Evresi",
-        "Glikoliz",
-        "Krebs (Sitrik Asit) Döngüsü",
-        "Oksijenli Solunum",
-        "Oksijensiz Solunum"
-      ],
-      "baslik": "Besinlerin Hücresel Solunuma Katılma Yolları",
-      "topic_key": "Biyoloji > 1.7 Hücresel Solunum"
-    },
-    {
-      "konu_id": "biyo_10_u01_k06",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u01_k06.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Etil Alkol Fermantasyonu",
-        "Fermantasyon",
-        "Laktik Asit Fermantasyonu"
-      ],
-      "baslik": "Etil Alkol Fermantasyonu",
-      "topic_key": "Biyoloji > 1.9 Fermantasyon"
-    },
-    {
-      "konu_id": "biyo_10_u01_k07",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u01_k07.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı",
-        "Farklı Besin Gruplarının Enerji Değerleri"
-      ],
-      "baslik": "Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı",
-      "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi"
-    },
-    {
-      "konu_id": "biyo_10_u02_k01",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u02_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Ekosistemin Bileşenleri",
-        "Ekosistemin Canlı Bileşenleri",
-        "Ekosistemin Cansız Bileşenleri"
-      ],
-      "baslik": "Ekosistemin Bileşenleri",
-      "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri"
-    },
-    {
-      "konu_id": "biyo_10_u02_k02",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u02_k02.json",
-      "soru_sayisi": 14,
-      "flashcard_sayisi": 14,
-      "etiketler": [
-        "Biyolojik Birikim ve Etkileri",
-        "Ekolojik Piramitler",
-        "Ekosistemde Madde ve Enerji Akışı",
-        "Komünitede Tür İçi ve Türler Arası Etkileşimler",
-        "Popülasyon Dinamikleri",
-        "Popülasyon, Komünite, Ekosistem",
-        "Süksesyon"
-      ],
-      "baslik": "Biyolojik Birikim ve Etkileri",
-      "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı"
-    },
-    {
-      "konu_id": "biyo_10_u02_k03",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u02_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Azot Döngüsü",
-        "Karbon Döngüsü",
-        "Madde Döngüleri",
-        "Su Döngüsü"
-      ],
-      "baslik": "Azot Döngüsü",
-      "topic_key": "Biyoloji > 2.4 Madde Döngüleri"
-    },
-    {
-      "konu_id": "biyo_10_u02_k04",
-      "ders": "Biyoloji",
-      "sinif": 10,
-      "dosya": "biyo_10_u02_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Atık Yönetimi",
-        "Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
-        "Ekolojik Ayak İzinin Küçültülmesi",
-        "Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar",
-        "Ekolojik Sürdürülebilirliğin Önemi"
-      ],
-      "baslik": "Atık Yönetimi",
-      "topic_key": "Biyoloji > 2.9 Atık Yönetimi"
-    },
-    {
-      "konu_id": "cogr_10_u01_k01",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u01_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 1.1 Coğrafi Bakış"
-    },
-    {
-      "konu_id": "cogr_10_u02_k01",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u02_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları"
-    },
-    {
-      "konu_id": "cogr_10_u02_k02",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u02_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması"
-    },
-    {
-      "konu_id": "cogr_10_u03_k01",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u03_k01.json",
-      "soru_sayisi": 16,
-      "flashcard_sayisi": 16,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 3.1 Tektonik Süreçler"
-    },
-    {
-      "konu_id": "cogr_10_u03_k02",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u03_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi"
-    },
-    {
-      "konu_id": "cogr_10_u03_k03",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u03_k03.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi"
-    },
-    {
-      "konu_id": "cogr_10_u03_k04",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u03_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması"
-    },
-    {
-      "konu_id": "cogr_10_u03_k05",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u03_k05.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim"
-    },
-    {
-      "konu_id": "cogr_10_u04_k01",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u04_k01.json",
-      "soru_sayisi": 14,
-      "flashcard_sayisi": 14,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi"
-    },
-    {
-      "konu_id": "cogr_10_u05_k01",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u05_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri"
-    },
-    {
-      "konu_id": "cogr_10_u06_k01",
-      "ders": "Coğrafya",
-      "sinif": 10,
-      "dosya": "cogr_10_u06_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri"
-    },
-    {
-      "konu_id": "din_10_u01_k01",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u01_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 1.1 Kur'an-ı Kerim ve Özellikleri"
-    },
-    {
-      "konu_id": "din_10_u01_k02",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u01_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 1.2 Kur'an'ın Anlaşılması ve Yorumlanması"
-    },
-    {
-      "konu_id": "din_10_u01_k03",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u01_k03.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar (Ünite 1)"
-    },
-    {
-      "konu_id": "din_10_u02_k01",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u02_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 2.1 İslam'ın İbadet Boyutu"
-    },
-    {
-      "konu_id": "din_10_u02_k02",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u02_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 2.2 Namaz ve Oruç"
-    },
-    {
-      "konu_id": "din_10_u03_k01",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u03_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 3.1 İslam'ın Ahlak Boyutu"
-    },
-    {
-      "konu_id": "din_10_u03_k02",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u03_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 3.2 Ahlaki Davranışlar"
-    },
-    {
-      "konu_id": "din_10_u03_k03",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u03_k03.json",
-      "soru_sayisi": 14,
-      "flashcard_sayisi": 14,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 3.3 Toplumsal Ahlak"
-    },
-    {
-      "konu_id": "din_10_u04_k01",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u04_k01.json",
-      "soru_sayisi": 14,
-      "flashcard_sayisi": 14,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 4.1 Hz. Muhammed'in Hayatı"
-    },
-    {
-      "konu_id": "din_10_u04_k02",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u04_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 4.2 Mekke Dönemi"
-    },
-    {
-      "konu_id": "din_10_u04_k03",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u04_k03.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 4.3 Medine Dönemi"
-    },
-    {
-      "konu_id": "din_10_u05_k01",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u05_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 4.3 Medine Dönemi"
-    },
-    {
-      "konu_id": "din_10_u05_k02",
-      "ders": "Din Kültürü",
-      "sinif": 10,
-      "dosya": "din_10_u05_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar (Ünite 4)"
-    },
-    {
-      "konu_id": "fel_10_u01_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u01_k01.json",
-      "soru_sayisi": 11,
-      "flashcard_sayisi": 11,
-      "etiketler": [],
-      "baslik": "1.1 Felsefenin Anlamı",
-      "topic_key": "Felsefe > 1.1 Felsefenin Anlamı"
-    },
-    {
-      "konu_id": "fel_10_u01_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u01_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "1.2 Felsefi Düşüncenin Gelişimi",
-      "topic_key": "Felsefe > 1.2 Felsefi Düşüncenin Gelişimi"
-    },
-    {
-      "konu_id": "fel_10_u01_k03",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u01_k03.json",
-      "soru_sayisi": 11,
-      "flashcard_sayisi": 11,
-      "etiketler": [],
-      "baslik": "1.3 Felsefi Düşüncenin Özellikleri",
-      "topic_key": "Felsefe > 1.3 Felsefi Düşüncenin Özellikleri"
-    },
-    {
-      "konu_id": "fel_10_u01_k04",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u01_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "1.4 Felsefi Soruların Temel Özellikleri",
-      "topic_key": "Felsefe > 1.4 Felsefi Soruların Temel Özellikleri"
-    },
-    {
-      "konu_id": "fel_10_u01_k05",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u01_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "1.5 Felsefenin Diğer Alanlarla İlişkisi",
-      "topic_key": "Felsefe > 1.5 Felsefenin Diğer Alanlarla İlişkisi"
-    },
-    {
-      "konu_id": "fel_10_u01_k06",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u01_k06.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "1.6 Felsefenin Bireysel ve Toplumsal İşlevi",
-      "topic_key": "Felsefe > 1.6 Felsefenin Bireysel ve Toplumsal İşlevi"
-    },
-    {
-      "konu_id": "fel_10_u02_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u02_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "2.1 Düşünme ve Dil İlişkisi",
-      "topic_key": "Felsefe > 2.1 Düşünme ve Dil İlişkisi"
-    },
-    {
-      "konu_id": "fel_10_u02_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u02_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "2.2 Mantık ve Argümantasyonun Temel Kavramları",
-      "topic_key": "Felsefe > 2.2 Mantık ve Argümantasyonun Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u02_k03",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u02_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "2.3 Argümantasyonun Yapısı",
-      "topic_key": "Felsefe > 2.3 Argümantasyonun Yapısı"
-    },
-    {
-      "konu_id": "fel_10_u03_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u03_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "3.1 Varlık Felsefesinin Konusu ve Temel Kavramları",
-      "topic_key": "Felsefe > 3.1 Varlık Felsefesinin Konusu ve Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u03_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u03_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
-      "topic_key": "Felsefe > 3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)"
-    },
-    {
-      "konu_id": "fel_10_u04_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u04_k01.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları",
-      "topic_key": "Felsefe > 4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u04_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u04_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
-      "topic_key": "Felsefe > 4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)"
-    },
-    {
-      "konu_id": "fel_10_u05_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u05_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları",
-      "topic_key": "Felsefe > 5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u05_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u05_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)",
-      "topic_key": "Felsefe > 5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)"
-    },
-    {
-      "konu_id": "fel_10_u06_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u06_k01.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları",
-      "topic_key": "Felsefe > 6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u06_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u06_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)",
-      "topic_key": "Felsefe > 6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)"
-    },
-    {
-      "konu_id": "fel_10_u07_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u07_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları",
-      "topic_key": "Felsefe > 7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u07_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u07_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
-      "topic_key": "Felsefe > 7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)"
-    },
-    {
-      "konu_id": "fel_10_u08_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u08_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "8.1 Din Felsefesinin Konusu ve Temel Kavramları",
-      "topic_key": "Felsefe > 8.1 Din Felsefesinin Konusu ve Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u08_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u08_k02.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [],
-      "baslik": "8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
-      "topic_key": "Felsefe > 8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)"
-    },
-    {
-      "konu_id": "fel_10_u09_k01",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u09_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "9.1 Bilim Felsefesinin Konusu ve Temel Kavramları",
-      "topic_key": "Felsefe > 9.1 Bilim Felsefesinin Konusu ve Temel Kavramları"
-    },
-    {
-      "konu_id": "fel_10_u09_k02",
-      "ders": "Felsefe",
-      "sinif": 10,
-      "dosya": "fel_10_u09_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)",
-      "topic_key": "Felsefe > 9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)"
-    },
-    {
-      "konu_id": "fizik_10_u01_k01",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u01_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "1.1 Sabit Hızlı Hareket",
-      "topic_key": "Fizik > 1.1 Sabit Hızlı Hareket"
-    },
-    {
-      "konu_id": "fizik_10_u01_k02",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u01_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [
-        "A) İvme ve Hız Değişimi Arasındaki İlişki",
-        "B) Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi"
-      ],
-      "baslik": "1.2 Bir Boyutta Sabit İvmeli Hareket",
-      "topic_key": "Fizik > 1.2 Bir Boyutta Sabit İvmeli Hareket"
-    },
-    {
-      "konu_id": "fizik_10_u01_k03",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u01_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
-        "B) Serbest Düşme Hareketi"
-      ],
-      "baslik": "1.3 Serbest Düşme",
-      "topic_key": "Fizik > 1.3 Serbest Düşme"
-    },
-    {
-      "konu_id": "fizik_10_u01_k04",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u01_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "1.4 İki Boyutta Sabit İvmeli Hareket",
-      "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket"
-    },
-    {
-      "konu_id": "fizik_10_u02_k01",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u02_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
-        "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki"
-      ],
-      "baslik": "2.1 İş, Enerji ve Güç",
-      "topic_key": "Fizik > 2.1 İş, Enerji ve Güç"
-    },
-    {
-      "konu_id": "fizik_10_u02_k02",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u02_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "2.2 Enerji Biçimleri",
-      "topic_key": "Fizik > 2.2 Enerji Biçimleri"
-    },
-    {
-      "konu_id": "fizik_10_u02_k03",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u02_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "2.3 Mekanik Enerji",
-      "topic_key": "Fizik > 2.3 Mekanik Enerji"
-    },
-    {
-      "konu_id": "fizik_10_u02_k04",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u02_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "2.4 Enerji Kaynakları",
-      "topic_key": "Fizik > 2.4 Enerji Kaynakları"
-    },
-    {
-      "konu_id": "fizik_10_u03_k01",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u03_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "3.1 Basit Elektrik Devreleri",
-      "topic_key": "Fizik > 3.1 Basit Elektrik Devreleri"
-    },
-    {
-      "konu_id": "fizik_10_u03_k02",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u03_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "3.2 Elektrik Akımı",
-      "topic_key": "Fizik > 3.2 Elektrik Akımı"
-    },
-    {
-      "konu_id": "fizik_10_u03_k03",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u03_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "3.3 Ohm Yasası",
-      "topic_key": "Fizik > 3.3 Ohm Yasası"
-    },
-    {
-      "konu_id": "fizik_10_u03_k04",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u03_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "3.4 Dirençlerin Bağlanması",
-      "topic_key": "Fizik > 3.4 Dirençlerin Bağlanması"
-    },
-    {
-      "konu_id": "fizik_10_u03_k05",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u03_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "3.5 Üreteçlerin Bağlanması",
-      "topic_key": "Fizik > 3.5 Üreteçlerin Bağlanması"
-    },
-    {
-      "konu_id": "fizik_10_u03_k06",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u03_k06.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
-      "topic_key": "Fizik > 3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler"
-    },
-    {
-      "konu_id": "fizik_10_u03_k07",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u03_k07.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "3.7 Topraklamanın Önemi",
-      "topic_key": "Fizik > 3.7 Topraklamanın Önemi"
-    },
-    {
-      "konu_id": "fizik_10_u04_k01",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u04_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "4.1 Dalgaların Temel Kavramları",
-      "topic_key": "Fizik > 4.1 Dalgaların Temel Kavramları"
-    },
-    {
-      "konu_id": "fizik_10_u04_k02",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u04_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "4.2 Dalgaların Sınıflandırılması",
-      "topic_key": "Fizik > 4.2 Dalgaların Sınıflandırılması"
-    },
-    {
-      "konu_id": "fizik_10_u04_k03",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u04_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
-      "topic_key": "Fizik > 4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler"
-    },
-    {
-      "konu_id": "fizik_10_u04_k04",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u04_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "4.4 Periyodik Hareketler",
-      "topic_key": "Fizik > 4.4 Periyodik Hareketler"
-    },
-    {
-      "konu_id": "fizik_10_u04_k05",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u04_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "baslik": "4.5 Su Dalgalarında Yansıma ve Kırılma",
-      "topic_key": "Fizik > 4.5 Su Dalgalarında Yansıma ve Kırılma"
-    },
-    {
-      "konu_id": "fizik_10_u04_k06",
-      "ders": "Fizik",
-      "sinif": 10,
-      "dosya": "fizik_10_u04_k06.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "A) Rezonans ve Depremle İlgili Kavramlar",
-        "B) Depremle İlgili Bilimsel Model Oluşturabilme"
-      ],
-      "baslik": "4.6 Rezonans ve Deprem",
-      "topic_key": "Fizik > 4.6 Rezonans ve Deprem"
-    },
-    {
-      "konu_id": "kimya_10_u01_k01",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Kimyasal Değişim",
-        "Kimyasal Tepkimeler",
-        "Kimyasal Tepkimelerin Oluşum Sürecini Modelleme"
-      ],
-      "baslik": "Kimyasal Değişim",
-      "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu"
-    },
-    {
-      "konu_id": "kimya_10_u01_k02",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Asit-Baz Tepkimeleri",
-        "Çökelme Tepkimeleri",
-        "İndirgenme-Yükseltgenme Tepkimeleri"
-      ],
-      "baslik": "Asit-Baz Tepkimeleri",
-      "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri"
-    },
-    {
-      "konu_id": "kimya_10_u01_k03",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Mol Kavramı",
-        "Saf Maddelerin Ölçülebilir Özellikleri"
-      ],
-      "baslik": "Mol Kavramı",
-      "topic_key": "Kimya > 1.1.3 Mol Kavramı"
-    },
-    {
-      "konu_id": "kimya_10_u01_k04",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Kimya > 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi"
-    },
-    {
-      "konu_id": "kimya_10_u01_k05",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar"
-    },
-    {
-      "konu_id": "kimya_10_u01_k06",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k06.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [
-        "Basınç-Hacim İlişkisi (Boyle Yasası)",
-        "Basınç-Sıcaklık İlişkisi (Gay Lusssac Yasası)",
-        "Gazların Kinetik Moleküler Teorisi",
-        "Gazların Özellikleri",
-        "Hacim-Madde Miktarı İlişkisi (Avogadro Yasası)",
-        "Sıcaklık-Hacim İlişkisi (Charles Yasası)"
-      ],
-      "baslik": "Basınç-Hacim İlişkisi (Boyle Yasası)",
-      "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları"
-    },
-    {
-      "konu_id": "kimya_10_u01_k07",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k07.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Efüzyon ve Difüzyon",
-        "Graham Difüzyon ve Efüzyon Yasası"
-      ],
-      "baslik": "Efüzyon ve Difüzyon",
-      "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Eftizyon Yasası"
-    },
-    {
-      "konu_id": "kimya_10_u01_k08",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u01_k08.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası"
-    },
-    {
-      "konu_id": "kimya_10_u02_k01",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u02_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Maddelerin Birbiri İçindeki Çözünebilirliği",
-        "Çözünme Süreci"
-      ],
-      "baslik": "Maddelerin Birbiri İçindeki Çözünebilirliği",
-      "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği"
-    },
-    {
-      "konu_id": "kimya_10_u02_k02",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u02_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Fiziksel Çözünme",
-        "Kimyasal Çözünme",
-        "Moleküler Çözünme",
-        "İyonik Çözünme"
-      ],
-      "baslik": "Fiziksel Çözünme",
-      "topic_key": "Kimya > 2.1.1 Çözünme Süreci"
-    },
-    {
-      "konu_id": "kimya_10_u02_k03",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u02_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması"
-    },
-    {
-      "konu_id": "kimya_10_u02_k04",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u02_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)"
-    },
-    {
-      "konu_id": "kimya_10_u02_k05",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u02_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Aşırı Doymuş Çözelti",
-        "Doymamış Çözelti",
-        "Doymuş Çözelti",
-        "Elektrolit Olmayan Çözelti",
-        "Elektrolit Çözelti"
-      ],
-      "baslik": "Aşırı Doymuş Çözelti",
-      "topic_key": "Kimya > 2.1.5 Çözünürlük"
-    },
-    {
-      "konu_id": "kimya_10_u03_k01",
-      "ders": "Kimya",
-      "sinif": 10,
-      "dosya": "kimya_10_u03_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
-        "Makro ve Mikro Ölçekli Deneyler"
-      ],
-      "baslik": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
-      "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar"
-    },
-    {
-      "konu_id": "mat_10_u01_k01",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u01_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
-      "topic_key": "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler"
-    },
-    {
-      "konu_id": "mat_10_u01_k02",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u01_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
-      "topic_key": "Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler"
-    },
-    {
-      "konu_id": "mat_10_u01_k03",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u01_k03.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "1.3 Üçgende Alan",
-      "topic_key": "Matematik > 1.3 Üçgende Alan"
-    },
-    {
-      "konu_id": "mat_10_u01_k04",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u01_k04.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "1.4 Sinüs ve Kosinüs Teoremleri",
-      "topic_key": "Matematik > 1.4 Sinüs ve Kosinüs Teoremleri"
-    },
-    {
-      "konu_id": "mat_10_u02_k01",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u02_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
-      "topic_key": "Matematik > 2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama"
-    },
-    {
-      "konu_id": "mat_10_u02_k02",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u02_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "2.2 İstatistiksel Sonuç veya Yorumları Tartışma",
-      "topic_key": "Matematik > 2.2 İstatistiksel Sonuç veya Yorumları Tartışma"
-    },
-    {
-      "konu_id": "mat_10_u03_k01",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u03_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
-      "topic_key": "Matematik > 3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler"
-    },
-    {
-      "konu_id": "mat_10_u03_k02",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u03_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
-      "topic_key": "Matematik > 3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat"
-    },
-    {
-      "konu_id": "mat_10_u03_k03",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u03_k03.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
-      "topic_key": "Matematik > 3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma"
-    },
-    {
-      "konu_id": "mat_10_u04_k01",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u04_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
-      "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri"
-    },
-    {
-      "konu_id": "mat_10_u04_k02",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u04_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
-      "topic_key": "Matematik > 4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri"
-    },
-    {
-      "konu_id": "mat_10_u04_k03",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u04_k03.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
-      "topic_key": "Matematik > 4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri"
-    },
-    {
-      "konu_id": "mat_10_u04_k04",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u04_k04.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
-      "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri"
-    },
-    {
-      "konu_id": "mat_10_u04_k05",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u04_k05.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "4.5 Fonksiyonların Ters Fonksiyonları",
-      "topic_key": "Matematik > 4.5 Fonksiyonların Ters Fonksiyonları"
-    },
-    {
-      "konu_id": "mat_10_u04_k06",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u04_k06.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
-      "topic_key": "Matematik > 4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü"
-    },
-    {
-      "konu_id": "mat_10_u05_k01",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u05_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "5.1 Sayma Stratejileri",
-      "topic_key": "Matematik > 5.1 Sayma Stratejileri"
-    },
-    {
-      "konu_id": "mat_10_u05_k02",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u05_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
-      "topic_key": "Matematik > 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı"
-    },
-    {
-      "konu_id": "mat_10_u06_k01",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u06_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
-      "topic_key": "Matematik > 6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme"
-    },
-    {
-      "konu_id": "mat_10_u06_k02",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u06_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "6.2 Doğrunun Özellikleri ve Analitik İncelenmesi",
-      "topic_key": "Matematik > 6.2 Doğrunun Özellikleri ve Analitik İncelenmesi"
-    },
-    {
-      "konu_id": "mat_10_u07_k01",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u07_k01.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
-      "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar"
-    },
-    {
-      "konu_id": "mat_10_u07_k02",
-      "ders": "Matematik",
-      "sinif": 10,
-      "dosya": "mat_10_u07_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "baslik": "7.2 Bayes Teoremi",
-      "topic_key": "Matematik > 7.2 Bayes Teoremi"
-    },
-    {
-      "konu_id": "tarih_10_u01_k01",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u01_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler"
-      ],
-      "baslik": "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler",
-      "topic_key": "Tarih > 1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri"
-    },
-    {
-      "konu_id": "tarih_10_u01_k02",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u01_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim"
-      ],
-      "baslik": "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim",
-      "topic_key": "Tarih > 1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları"
-    },
-    {
-      "konu_id": "tarih_10_u01_k03",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u01_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri"
-      ],
-      "baslik": "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri",
-      "topic_key": "Tarih > 1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme"
-    },
-    {
-      "konu_id": "tarih_10_u02_k01",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u02_k01.json",
-      "soru_sayisi": 16,
-      "flashcard_sayisi": 16,
-      "etiketler": [
-        "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
-        "2.2. Beylikten Devlete Siyasi ve Askerî Gelişmeler",
-        "2.4. Osmanlı Devleti’nin İskân ve İstimalet Politikası"
-      ],
-      "baslik": "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
-      "topic_key": "Tarih > 2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler"
-    },
-    {
-      "konu_id": "tarih_10_u02_k02",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u02_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [
-        "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi"
-      ],
-      "baslik": "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi",
-      "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi"
-    },
-    {
-      "konu_id": "tarih_10_u03_k01",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u03_k01.json",
-      "soru_sayisi": 19,
-      "flashcard_sayisi": 19,
-      "etiketler": [
-        "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi"
-      ],
-      "baslik": "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi",
-      "topic_key": "Tarih > 3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi"
-    },
-    {
-      "konu_id": "tarih_10_u03_k02",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u03_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [
-        "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim"
-      ],
-      "baslik": "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim",
-      "topic_key": "Tarih > 3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim"
-    },
-    {
-      "konu_id": "tarih_10_u03_k03",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u03_k03.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [
-        "3.3. Avrupalıların Sömürgeci Politikaları"
-      ],
-      "baslik": "3.3. Avrupalıların Sömürgeci Politikaları",
-      "topic_key": "Tarih > 3.3 Avrupalıların Sömürgeci Politikaları"
-    },
-    {
-      "konu_id": "tarih_10_u03_k04",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u03_k04.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [
-        "3.4. Osmanlı Devleti’nde İsyanlar"
-      ],
-      "baslik": "3.4. Osmanlı Devleti’nde İsyanlar",
-      "topic_key": "Tarih > 3.4 Osmanlı Devleti'nde İsyanlar"
-    },
-    {
-      "konu_id": "tarih_10_u03_k05",
-      "ders": "Tarih",
-      "sinif": 10,
-      "dosya": "tarih_10_u03_k05.json",
-      "soru_sayisi": 15,
-      "flashcard_sayisi": 15,
-      "etiketler": [
-        "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat"
-      ],
-      "baslik": "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat",
-      "topic_key": "Tarih > 3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k01",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Koşuk"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k02",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Sav"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k03",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Türkü"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k04",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k04.json",
-      "soru_sayisi": 11,
-      "flashcard_sayisi": 11,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Koşma"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k05",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Masal"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k06",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k06.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k07",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k07.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k08",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k08.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)"
-    },
-    {
-      "konu_id": "edebiyat_10_u01_k09",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u01_k09.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k01",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Gazel"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k02",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Kaside"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k03",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Mersiye"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k04",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k05",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k06",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k06.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Edat (İlgeç)"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k07",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k07.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Bağlaç"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k08",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k08.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Ünlem"
-    },
-    {
-      "konu_id": "edebiyat_10_u02_k09",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u02_k09.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Anlamına Göre Cümleler"
-    },
-    {
-      "konu_id": "edebiyat_10_u03_k01",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u03_k01.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Destan"
-    },
-    {
-      "konu_id": "edebiyat_10_u03_k02",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u03_k02.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Mesnevi"
-    },
-    {
-      "konu_id": "edebiyat_10_u03_k03",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u03_k03.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi"
-    },
-    {
-      "konu_id": "edebiyat_10_u03_k04",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u03_k04.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Fabl"
-    },
-    {
-      "konu_id": "edebiyat_10_u03_k05",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u03_k05.json",
-      "soru_sayisi": 10,
-      "flashcard_sayisi": 10,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)"
-    },
-    {
-      "konu_id": "edebiyat_10_u04_k01",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u04_k01.json",
-      "soru_sayisi": 11,
-      "flashcard_sayisi": 11,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri"
-    },
-    {
-      "konu_id": "edebiyat_10_u04_k02",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u04_k02.json",
-      "soru_sayisi": 12,
-      "flashcard_sayisi": 12,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri"
-    },
-    {
-      "konu_id": "edebiyat_10_u04_k03",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u04_k03.json",
-      "soru_sayisi": 16,
-      "flashcard_sayisi": 16,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)"
-    },
-    {
-      "konu_id": "edebiyat_10_u04_k04",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u04_k04.json",
-      "soru_sayisi": 16,
-      "flashcard_sayisi": 16,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları"
-    },
-    {
-      "konu_id": "edebiyat_10_u04_k05",
-      "ders": "Türk Dili ve Edebiyatı",
-      "sinif": 10,
-      "dosya": "edebiyat_10_u04_k05.json",
-      "soru_sayisi": 16,
-      "flashcard_sayisi": 16,
-      "etiketler": [],
-      "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri"
-    }
-  ],
-  "flashcard_sayisi": 1756,
-  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
-  "kaynak_arşiv_sayisi": 9
+ "sinif": 10,
+ "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
+ "havuz_sayisi": 192,
+ "soru_sayisi": 2110,
+ "flashcard_sayisi": 2110,
+ "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
+ "kaynak_arşiv_sayisi": 9,
+ "uretim_plani": null,
+ "havuzlar": [
+  {
+   "konu_id": "biyo_10_u01_k01",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Canlıların yaşamını sürdürmesinde enerjinin rolünü sorgular.",
+    "ATP'nin yapısını ve enerji aktarımındaki işlevini açıklar."
+   ],
+   "baslik": "1.1 Canlılık İçin Enerjinin Önemi",
+   "topic_key": "Biyoloji > 1.1 Canlılık İçin Enerjinin Önemi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k02",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+    "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar."
+   ],
+   "baslik": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+   "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k03",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Fotosentez denkleminde kullanılan ve üretilen maddeleri izler.",
+    "Fotosentezle ilgili bilimsel çalışmaların bilime katkısını değerlendirir."
+   ],
+   "baslik": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+   "topic_key": "Biyoloji > 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k04",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kemosentez ile fotosentezi enerji kaynağı bakımından karşılaştırır.",
+    "Ekstrem ortamlarda kemosentez yapan canlıların ekosistemdeki yerini açıklar."
+   ],
+   "baslik": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+   "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k05",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Mekanik, kimyasal, hücre içi ve hücre dışı sindirimi ayırt eder.",
+    "Omurgalılarda beslenme tipine bağlı sindirim yapısı farklarını açıklar."
+   ],
+   "baslik": "1.5 Sindirim",
+   "topic_key": "Biyoloji > 1.5 Sindirim",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k06",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder.",
+    "İnce ve kalın bağırsaktaki emilim ile taşınma süreçlerini açıklar."
+   ],
+   "baslik": "1.6 İnsanda Sindirim",
+   "topic_key": "Biyoloji > 1.6 İnsanda Sindirim",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k07",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Oksijenli solunumun evrelerini gerçekleştiği yapı ve ürünleriyle açıklar.",
+    "Evrelerdeki ATP, NADH ve FADH2 kazançlarını karşılaştırır."
+   ],
+   "baslik": "1.7 Hücresel Solunum",
+   "topic_key": "Biyoloji > 1.7 Hücresel Solunum",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k08",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Besin gruplarının solunuma katıldığı basamakları belirler.",
+    "Karbon sayısının katılım basamağını belirlemedeki rolünü açıklar."
+   ],
+   "baslik": "1.8 Besinlerin Solunuma Katılma Yolları",
+   "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k09",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Etil alkol ve laktik asit fermantasyonunu son ürünleriyle karşılaştırır.",
+    "Fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+   ],
+   "baslik": "1.9 Fermantasyon",
+   "topic_key": "Biyoloji > 1.9 Fermantasyon",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u01_k10",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u01_k10.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Metabolik tepkimeleri anabolizma ve katabolizma olarak ayırt eder.",
+    "Besinlerin enerji değerlerini karşılaştırarak enerji dengesini yorumlar."
+   ],
+   "baslik": "1.10 Enerji-Metabolizma İlişkisi",
+   "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k01",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Cansız bileşenlerin canlıların yaşamı üzerindeki etkisini açıklar.",
+    "Canlı bileşenleri işlevlerine göre sınıflandırır."
+   ],
+   "baslik": "2.1 Ekosistemin Bileşenleri",
+   "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k02",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k02.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
+    "Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
+   ],
+   "baslik": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+   "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k03",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Besin zinciri ve besin ağında enerjinin akışını izler.",
+    "Enerji piramidi ve biyolojik birikimi yorumlar."
+   ],
+   "baslik": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
+   "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k04",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Su, karbon ve azot döngülerinin basamaklarını açıklar.",
+    "İnsan etkinliklerinin madde döngülerine etkisini yorumlar."
+   ],
+   "baslik": "2.4 Madde Döngüleri",
+   "topic_key": "Biyoloji > 2.4 Madde Döngüleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k05",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Yenilenebilen ve yenilenemeyen kaynakları ayırt eder.",
+    "Sürdürülebilirlik uygulamalarının çevreye katkısını yorumlar."
+   ],
+   "baslik": "2.5 Ekolojik Sürdürülebilirliğin Önemi",
+   "topic_key": "Biyoloji > 2.5 Ekolojik Sürdürülebilirliğin Önemi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k06",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Habitat kaybı ve kirlilik türlerinin nedenlerini açıklar.",
+    "Çevre sorunlarının ekosistemlere etkisini yorumlar."
+   ],
+   "baslik": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+   "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k07",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ekolojik, karbon ve su ayak izini tanımlar.",
+    "Ayak izini küçültmeye yönelik uygulamaları değerlendirir."
+   ],
+   "baslik": "2.7 Ekolojik Ayak İzinin Küçültülmesi",
+   "topic_key": "Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k08",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Biyoçeşitliliğin korunma gerekçelerini açıklar.",
+    "Tür, alan ve alan dışı koruma çalışmalarını ayırt eder."
+   ],
+   "baslik": "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+   "topic_key": "Biyoloji > 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "biyo_10_u02_k09",
+   "ders": "Biyoloji",
+   "sinif": 10,
+   "dosya": "biyo_10_u02_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Atık yönetimi aşamalarını ve bertaraf yöntemlerini açıklar.",
+    "Atık yönetimi uygulamalarının çevresel katkısını yorumlar."
+   ],
+   "baslik": "2.9 Atık Yönetimi",
+   "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u01_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Coğrafi bakışın tanımını, bileşenlerini ve ölçek boyutunu açıklar.",
+    "Bir örnek olayı (Marmara Gölü) coğrafi bakışla çözümler."
+   ],
+   "baslik": "1.1 Coğrafi Bakış",
+   "topic_key": "Coğrafya > 1.1 Coğrafi Bakış",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u02_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u02_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "CBS ve uzaktan algılamanın uygulama alanlarını örneklerle açıklar.",
+    "AYDES'in bileşenlerini ve afet yönetimindeki işlevini çözümler."
+   ],
+   "baslik": "2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
+   "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u02_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u02_k02.json",
+   "soru_sayisi": 14,
+   "flashcard_sayisi": 14,
+   "etiketler": [
+    "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+    "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır."
+   ],
+   "baslik": "2.2 Mekânsal Verilerin Haritalara Aktarılması",
+   "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u03_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u03_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Levha hareketlerini ve bu hareketlerin oluşturduğu yer şekillerini açıklar.",
+    "Türkiye'nin tektonik yapısı ile deprem, volkanizma ve jeotermal alanları ilişkilendirir."
+   ],
+   "baslik": "3.1 Tektonik Süreçler",
+   "topic_key": "Coğrafya > 3.1 Tektonik Süreçler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u03_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u03_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Fiziksel ayrışma süreçlerini ve etkenlerini açıklar.",
+    "İklim ve kayaç özelliklerinin kimyasal çözünme ve ayrışma hızına etkisini çözümler."
+   ],
+   "baslik": "3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
+   "topic_key": "Coğrafya > 3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u03_k03",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u03_k03.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Aşınma, taşınma ve biriktirme süreçlerini birbirinden ayırt eder.",
+    "Dış kuvvetlere göre oluşan yer şekillerini çözümler."
+   ],
+   "baslik": "3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
+   "topic_key": "Coğrafya > 3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u03_k04",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u03_k04.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+    "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür."
+   ],
+   "baslik": "3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
+   "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u03_k05",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u03_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Yeryüzü şekillerinin yerleşme, nüfus ve ulaşım üzerindeki etkisini açıklar.",
+    "Yeryüzü şekillerinin ekonomik, sosyal ve kültürel faaliyetlerle etkileşimini çözümler."
+   ],
+   "baslik": "3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
+   "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u04_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u04_k01.json",
+   "soru_sayisi": 13,
+   "flashcard_sayisi": 13,
+   "etiketler": [
+    "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+    "Yerleşme tiplerini ölçütlerine göre sınıflandırır."
+   ],
+   "baslik": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+   "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u04_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u04_k02.json",
+   "soru_sayisi": 11,
+   "flashcard_sayisi": 11,
+   "etiketler": [
+    "Yerleşme fonksiyonlarını örneklerle açıklar.",
+    "Türkiye'nin idari yapısı ile fonksiyon değişimini çözümler."
+   ],
+   "baslik": "4.2 Yerleşmelerin Fonksiyonları",
+   "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u05_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u05_k01.json",
+   "soru_sayisi": 11,
+   "flashcard_sayisi": 11,
+   "etiketler": [
+    "Ekonomik faaliyetleri sektörlerine göre sınıflandırır.",
+    "Sektörlerin kapsamını ve dönüşümünü örneklerle açıklar."
+   ],
+   "baslik": "5.1 Ekonomik Faaliyetlerin Özellikleri",
+   "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u05_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u05_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Çalışan nüfusun sektörel dağılımı ile gelişmişlik arasındaki ilişkiyi açıklar.",
+    "Sektörlerin GSYİH içindeki payını yorumlar."
+   ],
+   "baslik": "5.2 Ekonomik Sektörler ve Gelişmişlik",
+   "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u05_k03",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u05_k03.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Türkiye'de sektörlerin tarihsel dönüşümünü açıklar.",
+    "Sektörel verilerden yararlanarak Türkiye ekonomisini yorumlar."
+   ],
+   "baslik": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+   "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u06_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u06_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Afet türlerini ve bölgesel dağılışını açıklar.",
+    "Afetlere yönelik iyi uygulama örneklerini ve tedbirleri çözümler."
+   ],
+   "baslik": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+   "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u06_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u06_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Direnç ve dirençli şehir kavramlarını açıklar.",
+    "Afete dirençli yaşam alanı ölçütlerini tsunami örnekleri üzerinden çözümler."
+   ],
+   "baslik": "6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+   "topic_key": "Coğrafya > 6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u06_k03",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u06_k03.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Afet yönetiminin aşamalarını ve risk azaltma adımlarını açıklar.",
+    "Fiziksel-yapısal ve yapısal olmayan korunma önlemlerini çözümler."
+   ],
+   "baslik": "6.3 Afetlerden Korunma",
+   "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u06_k04",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u06_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Afet bilincinin kapsamını ve bileşenlerini açıklar.",
+    "Afet bilinci ile afete hazırlık arasındaki ilişkiyi çözümler."
+   ],
+   "baslik": "6.4 Afet Bilinci",
+   "topic_key": "Coğrafya > 6.4 Afet Bilinci",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u07_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u07_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Türk kültürünün ocağını ve yayıldığı alanları açıklar.",
+    "Türk dünyasının ortak kültürel özelliklerini ve kültürel mirasını çözümler."
+   ],
+   "baslik": "7.1 Türk Kültürünün Mekânsal Özellikleri",
+   "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u01_k01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u01_k01.json",
+   "soru_sayisi": 13,
+   "flashcard_sayisi": 13,
+   "etiketler": [
+    "İslam'da bilgi ve ilmin yerini, ilim öğrenmenin dinî hükmünü açıklar.",
+    "İslam düşüncesinde ilmin kurumsallaşmasını ve bilgi disiplinlerini ilişkilendirir."
+   ],
+   "baslik": "1.1.1 İslam'da Bilginin Yeri",
+   "topic_key": "Din Kültürü > 1.1.1 İslam'da Bilginin Yeri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u01_k02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u01_k02.json",
+   "soru_sayisi": 13,
+   "flashcard_sayisi": 13,
+   "etiketler": [
+    "İslam'da bilginin kaynaklarını sınıflandırır.",
+    "Bilgi türlerini ayırt eder ve duyuların sınırlılığını örneklendirir."
+   ],
+   "baslik": "1.1.2 İslam'da Bilgi Kaynakları",
+   "topic_key": "Din Kültürü > 1.1.2 İslam'da Bilgi Kaynakları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u01_k03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u01_k03.json",
+   "soru_sayisi": 13,
+   "flashcard_sayisi": 13,
+   "etiketler": [
+    "Âlem kavramını, şehadet ve gayb âlemini açıklar.",
+    "İnsanın âlemdeki konumunu ve sorumluluğunu yorumlar."
+   ],
+   "baslik": "1.2 Allah-Âlem İlişkisi",
+   "topic_key": "Din Kültürü > 1.2 Allah-Âlem İlişkisi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u01_k04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetlerin meallerini bulur.",
+    "Ayetlerde geçen konu ve kavramları belirler.",
+    "Ayetleri içeriklerine göre sınıflandırır.",
+    "Ayetlerin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "1.3 Kur'an'dan Mesajlar",
+   "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar",
+   "kod": "DKAB.10.1.3",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u02_k01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Allah'ın varlığının delillerini sınıflandırır ve delilin işlevini açıklar.",
+    "Delilleri ayet, hadis ve örneklerle ilişkilendirerek yorumlar."
+   ],
+   "baslik": "2.1 Allah'ın Varlığının Delilleri",
+   "topic_key": "Din Kültürü > 2.1 Allah'ın Varlığının Delilleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u02_k02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kozmolojik delilin dayandığı temel öncülü belirler.",
+    "Evrenin sonradanlığı ile yaratıcı fikri arasındaki ilişkiyi açıklar."
+   ],
+   "baslik": "2.1.1 Kozmolojik Delil",
+   "topic_key": "Din Kültürü > 2.1.1 Kozmolojik Delil",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u02_k03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Evrendeki düzen örneklerini delille ilişkilendirir.",
+    "Gaye ve nizam kavramlarını ayırt eder."
+   ],
+   "baslik": "2.1.2 Teleolojik Delil",
+   "topic_key": "Din Kültürü > 2.1.2 Teleolojik Delil",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u02_k04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ontolojik delilin mantığını açıklar.",
+    "Delilin sınırlılığını değerlendirir."
+   ],
+   "baslik": "2.1.3 Ontolojik Delil",
+   "topic_key": "Din Kültürü > 2.1.3 Ontolojik Delil",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u02_k05",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Dinî tecrübenin delil olarak nasıl kullanıldığını açıklar.",
+    "Dinî tecrübenin sınırlılığını değerlendirir."
+   ],
+   "baslik": "2.1.4 Dinî Tecrübe Delili",
+   "topic_key": "Din Kültürü > 2.1.4 Dinî Tecrübe Delili",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u02_k06",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k06.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Allah'ın isimlerini gruplandırır ve anlamlarını açıklar.",
+    "İsim-sıfat ilişkisini ve isimlerin davranışlara yansımasını yorumlar."
+   ],
+   "baslik": "2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
+   "topic_key": "Din Kültürü > 2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u02_k07",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetlerin mealini bulur.",
+    "Ayetlerde geçen konu ve kavramları belirler.",
+    "Ayetleri içeriklerine göre sınıflandırır.",
+    "Ayetlerin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "2.3 Kur'an'dan Mesajlar",
+   "topic_key": "Din Kültürü > 2.3 Kur'an'dan Mesajlar",
+   "kod": "DKAB.10.2.3",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u03_k01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u03_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Tevhit ilkesini, boyutlarını ve şirk kavramını açıklar.",
+    "Tevhidin bireysel ve toplumsal hayata yansımalarını yorumlar."
+   ],
+   "baslik": "3.1 İslam'ın Tevhit İlkesi",
+   "topic_key": "Din Kültürü > 3.1 İslam'ın Tevhit İlkesi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u03_k02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u03_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+    "Adalet ilkelerini örnek durumlarla ilişkilendirir."
+   ],
+   "baslik": "3.2 İslam'da Adalet ve Eşitlik",
+   "topic_key": "Din Kültürü > 3.2 İslam'da Adalet ve Eşitlik",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u03_k03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u03_k03.json",
+   "soru_sayisi": 14,
+   "flashcard_sayisi": 14,
+   "etiketler": [
+    "İslam kavramının barışla ilişkisini ve barış ilkelerini açıklar.",
+    "Barışın bireysel ve toplumsal hayata katkısını yorumlar."
+   ],
+   "baslik": "3.3 İslam ve Barış",
+   "topic_key": "Din Kültürü > 3.3 İslam ve Barış",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u03_k04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u03_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetlerin meallerini bulur.",
+    "Ayetlerde geçen konu ve kavramları belirler.",
+    "Ayetleri içeriklerine göre sınıflandırır.",
+    "Ayetlerin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayetlerde verilen mesajlarla ilgili yaptığı çıkarımları kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "3.4 Kur'an'dan Mesajlar",
+   "topic_key": "Din Kültürü > 3.4 Kur'an'dan Mesajlar",
+   "kod": "DKAB.10.3.4",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u04_k01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u04_k01.json",
+   "soru_sayisi": 14,
+   "flashcard_sayisi": 14,
+   "etiketler": [
+    "Çevre ahlakının fıtrat, ölçü, denge ve bütünlük ilkelerini açıklar.",
+    "Çevre sorunlarının birey ve toplum üzerindeki etkilerini yorumlar."
+   ],
+   "baslik": "4.1 İnsan, Çevre ve Ahlak",
+   "topic_key": "Din Kültürü > 4.1 İnsan, Çevre ve Ahlak",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u04_k02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u04_k02.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+    "Teknoloji kullanımında ahlaki sorumluluğun gereklerini yorumlar."
+   ],
+   "baslik": "4.2 Teknoloji ve Ahlak",
+   "topic_key": "Din Kültürü > 4.2 Teknoloji ve Ahlak",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u04_k03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u04_k03.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Teknolojik gelişmelerin yol açtığı çevre sorunlarını açıklar.",
+    "Çevre sorunlarına yönelik çözüm önerilerini yorumlar."
+   ],
+   "baslik": "4.3 Çevre ve Teknoloji",
+   "topic_key": "Din Kültürü > 4.3 Çevre ve Teknoloji",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u04_k04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u04_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetin mealini bulur.",
+    "Ayette geçen konu ve kavramları belirler.",
+    "Ayette geçen konuları sınıflandırır.",
+    "Ayetin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayette verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "4.4 Kur'an'dan Mesajlar",
+   "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar",
+   "kod": "DKAB.10.4.4",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u05_k01",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u05_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Din, dinî yorum, muhkem ve müteşabih kavramlarını açıklar.",
+    "Yorum farklılıklarının sebeplerini örneklerle yorumlar."
+   ],
+   "baslik": "5.1 Dinî Yorum Farklılıklarının Sebepleri",
+   "topic_key": "Din Kültürü > 5.1 Dinî Yorum Farklılıklarının Sebepleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u05_k02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u05_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Mezhep, itikat, fıkıh ve tevil kavramlarını açıklar.",
+    "İtikadi-siyasi ve fıkhi yorumları sınıflandırır."
+   ],
+   "baslik": "5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
+   "topic_key": "Din Kültürü > 5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u05_k03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u05_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ehlisünnet kavramını ve dayanaklarını açıklar.",
+    "Ehlisünnet çizgisindeki itikadi ve fıkhi yorumları ayırt eder."
+   ],
+   "baslik": "5.2.1 Ehlisünnet",
+   "topic_key": "Din Kültürü > 5.2.1 Ehlisünnet",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u05_k04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u05_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Şia'nın imamet anlayışını açıklar.",
+    "Şia içindeki fıkhi yorumları ayırt eder."
+   ],
+   "baslik": "5.2.2 Şia",
+   "topic_key": "Din Kültürü > 5.2.2 Şia",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "din_10_u05_k05",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u05_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ayetin mealini bulur.",
+    "Ayette geçen konu ve kavramları belirler.",
+    "Ayette geçen konuları sınıflandırır.",
+    "Ayetin içerdiği mesajlarla ilgili çıkarım yapar.",
+    "Ayette verilen mesajlarla ilgili çıkarımları kendi cümleleriyle ifade eder."
+   ],
+   "baslik": "5.3 Kur'an'dan Mesajlar",
+   "topic_key": "Din Kültürü > 5.3 Kur'an'dan Mesajlar",
+   "kod": "DKAB.10.5.3",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Koşuğun oluştuğu sözlü dönemi ve söylenme ortamını belirler.",
+    "Koşuğun biçim, ölçü ve dil özelliklerini çözümler.",
+    "Koşuğu koşma ve gazel gibi benzer türlerle karşılaştırır."
+   ],
+   "baslik": "Koşuk",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Savın tanımını ve sözlü dönemdeki yerini belirler.",
+    "Sav örneklerinin anlamını çözümler.",
+    "Savı divan edebiyatındaki karşılığıyla ilişkilendirir."
+   ],
+   "baslik": "Sav",
+   "topic_key": "Türk Dili ve Edebiyatı > Sav",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Türkünün bent ve kavuştak bölümlerini belirler.",
+    "Türkünün ölçü, uyak ve ezgi özelliklerini çözümler.",
+    "Türküyü şarkı ve koşma gibi türlerle karşılaştırır."
+   ],
+   "baslik": "Türkü",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Koşmanın biçim ve söyleyiş özelliklerini belirler.",
+    "Koşmayı konularına göre sınıflandırır.",
+    "Koşmayı koşuk, gazel ve ağıtla ilişkilendirir."
+   ],
+   "baslik": "Koşma",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Masalın tanımını ve temel özelliklerini belirler.",
+    "Masalın bölümlerini ve kalıplaşmış sözlerini çözümler.",
+    "Masalı kaynak eserler ve kahramanlar üzerinden yorumlar."
+   ],
+   "baslik": "Masal",
+   "topic_key": "Türk Dili ve Edebiyatı > Masal",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İsmi türleri bakımından sınıflandırır.",
+    "İsmin yapısını (basit, türemiş, birleşik) çözümler.",
+    "İsim çekim eklerinin işlevini ayırt eder."
+   ],
+   "baslik": "İsimler (Adlar)",
+   "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k07",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İsim tamlaması türlerini ayırt eder.",
+    "Tamlamalarda ek ve kaynaştırma harfi kullanımını çözümler.",
+    "İsim tamlamasını sıfat tamlamasından ve zincirleme yapıdan ayırır."
+   ],
+   "baslik": "İsim Tamlamaları",
+   "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k08",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Niteleme ve belirtme sıfatlarını ayırt eder.",
+    "Sıfatların özelliklerini (adlaşma, pekiştirme, küçültme, derecelendirme) çözümler.",
+    "Sıfatların yapısını belirler."
+   ],
+   "baslik": "Sıfatlar (Ön Adlar)",
+   "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k09",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u01_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sıfat tamlamasının kuruluşunu belirler.",
+    "Sıfat tamlamasının cümledeki görevini çözümler.",
+    "Sıfat tamlamasını adlaşmış sıfattan ve isim tamlamasından ayırır."
+   ],
+   "baslik": "Sıfat Tamlamaları",
+   "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Gazelin beyit, kafiye ve beyit sayısı özelliklerini belirler.",
+    "Matla, makta, beytül gazel gibi gazel kavramlarını ayırt eder.",
+    "Gazeli konusuna göre âşıkane, rindane, hakimane ve şûhâne olarak sınıflandırır."
+   ],
+   "baslik": "Gazel",
+   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kasidenin beyit sayısı, matla, taç beyit gibi biçim özelliklerini belirler.",
+    "Nesip, girizgâh, methiye, tegazzül, fahriye ve dua bölümlerini ayırt eder.",
+    "Kasideyi konusuna göre tevhit, naat, cülûsiye gibi adlarla sınıflandırır."
+   ],
+   "baslik": "Kaside",
+   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Mersiyeyi tanımı ve yazılış amacı bakımından belirler.",
+    "Ölüm temasının İslamiyet öncesi ve halk edebiyatındaki karşılıklarını eşleştirir.",
+    "Mersiyenin önemli şairlerini ve örnek eserlerini ayırt eder."
+   ],
+   "baslik": "Mersiye",
+   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Saf şiir anlayışının temel ilkelerini ve sanat tavrını belirler.",
+    "Anlayışın mimarlarını ve sürdürücülerini ayırt eder.",
+    "İmge, çağrışım ve sembol kavramlarını şiir üzerinde çözümler."
+   ],
+   "baslik": "Saf Şiir",
+   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sözcük hâlindeki zamirleri türlerine göre sınıflandırır.",
+    "Ek hâlindeki zamirleri (ilgi, iyelik) ayırt eder.",
+    "Zamirleri yapı bakımından çözümler ve benzer türlerden ayırır."
+   ],
+   "baslik": "Zamir (Adıl)",
+   "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Edatların cümleye kattığı anlam ilgilerini belirler.",
+    "Edat olarak da bağlaç olarak da kullanılan sözcükleri ayırt eder.",
+    "Edat gruplarının cümledeki görevini çözümler."
+   ],
+   "baslik": "Edat (İlgeç)",
+   "topic_key": "Türk Dili ve Edebiyatı > Edat (İlgeç)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k07",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Bağlaçların bağladığı sözcük, öbek ve cümleleri belirler.",
+    "Bağlaçların kurduğu anlam ilgilerini (karşıtlık, koşul, olumsuzluk) ayırt eder.",
+    "Bağlaç ile edat görevindeki sözcükleri yazım ve anlam bakımından ayırır."
+   ],
+   "baslik": "Bağlaç",
+   "topic_key": "Türk Dili ve Edebiyatı > Bağlaç",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k08",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ünlemleri asıl, ünlem gibi kullanılan ve yansıma ünlemler olarak sınıflandırır.",
+    "Ünlemlerin yansıttığı duyguları belirler.",
+    "Ünlem cümlesini diğer cümle türlerinden ayırt eder."
+   ],
+   "baslik": "Ünlem",
+   "topic_key": "Türk Dili ve Edebiyatı > Ünlem",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k09",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u02_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Neden-sonuç, amaç-sonuç ve koşul-sonuç cümlelerini ayırt eder.",
+    "Açıklama ve karşılaştırma ilişkili cümleleri çözümler.",
+    "Yakınma ve tasarı cümlelerini belirler."
+   ],
+   "baslik": "Anlamına Göre Cümleler",
+   "topic_key": "Türk Dili ve Edebiyatı > Anlamına Göre Cümleler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u03_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Destanın tanımını, oluşum evrelerini ve türlerini belirler.",
+    "Türk destanlarını dönemlerine ve milletlerine göre sınıflandırır.",
+    "Destanlardaki motifleri ve tipleri çözümler."
+   ],
+   "baslik": "Destan",
+   "topic_key": "Türk Dili ve Edebiyatı > Destan",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u03_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Mesnevinin kafiye düzeni, beyit sayısı ve ölçü özelliklerini belirler.",
+    "Hamse geleneğini ve bu geleneğe katkıları ayırt eder.",
+    "Mesnevinin bölümlerini ve bu bölümlerin işlevini çözümler."
+   ],
+   "baslik": "Mesnevi",
+   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u03_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Halk hikâyesinin oluşum ortamını ve anlatım biçimini belirler.",
+    "Halk hikâyesinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+    "Halk hikâyesini destan ve masaldan ayırt eder."
+   ],
+   "baslik": "Halk Hikâyesi",
+   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u03_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Fablın tanımını, kahraman özelliklerini ve iletisini belirler.",
+    "Fablın yapı unsurlarını ve plânını çözümler.",
+    "Fablın Türk ve dünya edebiyatındaki örneklerini ayırt eder."
+   ],
+   "baslik": "Fabl",
+   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u03_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Zarfları türlerine göre sınıflandırır.",
+    "Zarfı sıfat ve edat gibi benzer türlerden ayırt eder.",
+    "Zarfları yapı bakımından çözümler."
+   ],
+   "baslik": "Zarflar (Belirteçler)",
+   "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u03_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ahengi sağlayan ses ögelerini (aliterasyon, asonans, vurgu) belirler.",
+    "Hece, aruz ve serbest ölçünün kurallarını ayırt eder.",
+    "Uyak türlerini ve kafiye şemalarını çözümler."
+   ],
+   "baslik": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u04_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Eserin edebiyat tarihindeki yerini ve yazıya geçirilme sürecini belirler.",
+    "Eserin nüshalarını ve bu nüshaların özelliklerini ayırt eder.",
+    "Hikâyelerin konu, dil ve didaktik özelliklerini çözümler."
+   ],
+   "baslik": "Dede Korkut Hikâyeleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u04_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Tanzimat I. dönem şiirinin sanat anlayışını ve getirdiği kavramları belirler.",
+    "Tanzimat II. dönem şiirinin sanat anlayışını ve konularını çözümler.",
+    "İki dönemi dil, biçim ve içerik bakımından karşılaştırır."
+   ],
+   "baslik": "Tanzimat Dönemi Şiiri",
+   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u04_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Fiilleri anlam özelliklerine göre sınıflandırır.",
+    "Haber ve dilek kiplerini, kişi eklerini çözümler.",
+    "Basit, türemiş ve birleşik fiilleri ayırt eder."
+   ],
+   "baslik": "Fiiller (Eylemler)",
+   "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u04_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Büyük harfin kullanıldığı ve kullanılmadığı yerleri ayırt eder.",
+    "Sayıların ve eklerin yazımını uygular.",
+    "Bağlaç ve soru ekinin yazımını kuralla eşleştirir."
+   ],
+   "baslik": "Yazım Kuralları",
+   "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "dosya": "edebiyat_10_u04_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Nokta, virgül ve noktalı virgülün işlevlerini belirler.",
+    "Kesme, tırnak ve üç noktanın kullanım yerlerini ayırt eder.",
+    "Noktalama işaretlerinin kullanılmadığı yerleri çözümler."
+   ],
+   "baslik": "Noktalama İşaretleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u01_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u01_k01.json",
+   "soru_sayisi": 11,
+   "flashcard_sayisi": 11,
+   "etiketler": [
+    "Felsefenin Anlamı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Felsefenin Anlamı konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "1.1 Felsefenin Anlamı",
+   "topic_key": "Felsefe > 1.1 Felsefenin Anlamı",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u01_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u01_k02.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Felsefi Düşüncenin Gelişimi ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Felsefi Düşüncenin Gelişimi konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "1.2 Felsefi Düşüncenin Gelişimi",
+   "topic_key": "Felsefe > 1.2 Felsefi Düşüncenin Gelişimi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u01_k03",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u01_k03.json",
+   "soru_sayisi": 11,
+   "flashcard_sayisi": 11,
+   "etiketler": [
+    "Felsefi Düşüncenin Özellikleri konusundaki ilişkileri örneklerle yorumlar.",
+    "Felsefi Düşüncenin Özellikleri ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "1.3 Felsefi Düşüncenin Özellikleri",
+   "topic_key": "Felsefe > 1.3 Felsefi Düşüncenin Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u01_k04",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Felsefi Soruların Temel Özellikleri ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Felsefi Soruların Temel Özellikleri konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "1.4 Felsefi Soruların Temel Özellikleri",
+   "topic_key": "Felsefe > 1.4 Felsefi Soruların Temel Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u01_k05",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u01_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Felsefenin Diğer Alanlarla İlişkisi ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Felsefenin Diğer Alanlarla İlişkisi konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "1.5 Felsefenin Diğer Alanlarla İlişkisi",
+   "topic_key": "Felsefe > 1.5 Felsefenin Diğer Alanlarla İlişkisi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u01_k06",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u01_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Felsefenin Bireysel ve Toplumsal İşlevi konusundaki ilişkileri örneklerle yorumlar.",
+    "Felsefenin Bireysel ve Toplumsal İşlevi ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "1.6 Felsefenin Bireysel ve Toplumsal İşlevi",
+   "topic_key": "Felsefe > 1.6 Felsefenin Bireysel ve Toplumsal İşlevi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u02_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u02_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Düşünme ve Dil İlişkisi ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Düşünme ve Dil İlişkisi konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "2.1 Düşünme ve Dil İlişkisi",
+   "topic_key": "Felsefe > 2.1 Düşünme ve Dil İlişkisi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u02_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u02_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Mantık ve Argümantasyonun Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Mantık ve Argümantasyonun Temel Kavramları konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "2.2 Mantık ve Argümantasyonun Temel Kavramları",
+   "topic_key": "Felsefe > 2.2 Mantık ve Argümantasyonun Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u02_k03",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u02_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Argümantasyonun Yapısı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Argümantasyonun Yapısı konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "2.3 Argümantasyonun Yapısı",
+   "topic_key": "Felsefe > 2.3 Argümantasyonun Yapısı",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u03_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u03_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Varlık Felsefesinin Konusu ve Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Varlık Felsefesinin Konusu ve Temel Kavramları konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "3.1 Varlık Felsefesinin Konusu ve Temel Kavramları",
+   "topic_key": "Felsefe > 3.1 Varlık Felsefesinin Konusu ve Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u03_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u03_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Varlık Felsefesinin Temel Problemleri ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Varlık Felsefesinin Temel Problemleri konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
+   "topic_key": "Felsefe > 3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u04_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u04_k01.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Bilgi Felsefesinin Konusu ve Temel Kavramları konusundaki ilişkileri örneklerle yorumlar.",
+    "Bilgi Felsefesinin Konusu ve Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları",
+   "topic_key": "Felsefe > 4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u04_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u04_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Bilgi Felsefesinin Temel Problemleri ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Bilgi Felsefesinin Temel Problemleri konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
+   "topic_key": "Felsefe > 4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u05_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u05_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Ahlak Felsefesinin Konusu ve Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Ahlak Felsefesinin Konusu ve Temel Kavramları konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları",
+   "topic_key": "Felsefe > 5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u05_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u05_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Ahlak Felsefesinin Temel Problemleri konusundaki ilişkileri örneklerle yorumlar.",
+    "Ahlak Felsefesinin Temel Problemleri ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)",
+   "topic_key": "Felsefe > 5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u06_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u06_k01.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları",
+   "topic_key": "Felsefe > 6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u06_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u06_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Estetik ve Sanat Felsefesinin Temel Problemleri konusundaki ilişkileri örneklerle yorumlar.",
+    "Estetik ve Sanat Felsefesinin Temel Problemleri ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)",
+   "topic_key": "Felsefe > 6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u07_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u07_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Siyaset Felsefesinin Konusu ve Temel Kavramları konusundaki ilişkileri örneklerle yorumlar.",
+    "Siyaset Felsefesinin Konusu ve Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları",
+   "topic_key": "Felsefe > 7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u07_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u07_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Siyaset Felsefesinin Temel Problemleri ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Siyaset Felsefesinin Temel Problemleri konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
+   "topic_key": "Felsefe > 7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u08_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u08_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Din Felsefesinin Konusu ve Temel Kavramları konusundaki ilişkileri örneklerle yorumlar.",
+    "Din Felsefesinin Konusu ve Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "8.1 Din Felsefesinin Konusu ve Temel Kavramları",
+   "topic_key": "Felsefe > 8.1 Din Felsefesinin Konusu ve Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u08_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u08_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Din Felsefesinin Temel Problemleri konusundaki ilişkileri örneklerle yorumlar.",
+    "Din Felsefesinin Temel Problemleri ile ilgili temel kavram, görüş ve ayrımları açıklar."
+   ],
+   "baslik": "8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
+   "topic_key": "Felsefe > 8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u09_k01",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u09_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Bilim Felsefesinin Konusu ve Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Bilim Felsefesinin Konusu ve Temel Kavramları konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "9.1 Bilim Felsefesinin Konusu ve Temel Kavramları",
+   "topic_key": "Felsefe > 9.1 Bilim Felsefesinin Konusu ve Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fel_10_u09_k02",
+   "ders": "Felsefe",
+   "sinif": 10,
+   "dosya": "fel_10_u09_k02.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Bilim Felsefesinin Temel Problemleri ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Bilim Felsefesinin Temel Problemleri konusundaki ilişkileri örneklerle yorumlar."
+   ],
+   "baslik": "9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)",
+   "topic_key": "Felsefe > 9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u01_k01",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sabit hızlı hareketi ve ilgili kavramları açıklar.",
+    "Sabit hızlı harekette hesap ve grafik yorumu yapar."
+   ],
+   "baslik": "1.1 Sabit Hızlı Hareket",
+   "topic_key": "Fizik > 1.1 Sabit Hızlı Hareket",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u01_k05",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u01_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Hız değişimi ve ivmeyi matematiksel modelle hesaplar.",
+    "İvmenin yönünü ve işaretini hareket türüne göre yorumlar."
+   ],
+   "baslik": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+   "topic_key": "Fizik > 1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u01_k06",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u01_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Yatay doğrultuda sabit ivmeli hareketin modellerini kullanarak hesap yapar.",
+    "Hareket grafiklerini çizer ve yorumlar."
+   ],
+   "baslik": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "topic_key": "Fizik > 1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u01_k07",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u01_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Yer çekimi ivmesini ve yönünü açıklar.",
+    "Serbest düşmede kütle-ivme ilişkisini yorumlar."
+   ],
+   "baslik": "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+   "topic_key": "Fizik > 1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u01_k08",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u01_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Serbest düşme hareketini matematiksel modellerle hesaplar.",
+    "Serbest düşme hareketinin grafiklerini yorumlar."
+   ],
+   "baslik": "1.3.2 Serbest Düşme Hareketi",
+   "topic_key": "Fizik > 1.3.2 Serbest Düşme Hareketi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u01_k09",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u01_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Yatay atış hareketinde bileşenleri ve süreyi hesaplar.",
+    "Eğik atış hareketinde hız, süre ve menzili yorumlar."
+   ],
+   "baslik": "1.4 İki Boyutta Sabit İvmeli Hareket",
+   "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u02_k01",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u02_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İş kavramını, birimini ve koşullarını açıklar.",
+    "Kuvvet-yer değiştirme grafiğinden işi hesaplar ve yorumlar."
+   ],
+   "baslik": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u02_k02",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u02_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Enerji biçimlerini tanır ve ayırt eder.",
+    "Günlük hayattaki enerji dönüşümlerini açıklar."
+   ],
+   "baslik": "2.2 Enerji Biçimleri",
+   "topic_key": "Fizik > 2.2 Enerji Biçimleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u02_k03",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u02_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Mekanik enerjinin bileşenlerini ve korunumunu açıklar.",
+    "Kinetik ve potansiyel enerji hesaplar."
+   ],
+   "baslik": "2.3 Mekanik Enerji",
+   "topic_key": "Fizik > 2.3 Mekanik Enerji",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u02_k04",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u02_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Enerji kaynaklarını yenilenebilirlik ölçütüne göre sınıflandırır.",
+    "Kaynakların çevresel etkisini ve verimini yorumlar."
+   ],
+   "baslik": "2.4 Enerji Kaynakları",
+   "topic_key": "Fizik > 2.4 Enerji Kaynakları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u02_k05",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İş, enerji ve güç arasındaki ilişkiyi açıklar.",
+    "İş ve güç hesaplamalarını yapar."
+   ],
+   "baslik": "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+   "topic_key": "Fizik > 2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u03_k01",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u03_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Devre elemanlarını ve işlevlerini tanır.",
+    "Ölçüm araçlarını ve temel elektriksel büyüklükleri ilişkilendirir."
+   ],
+   "baslik": "3.1 Basit Elektrik Devreleri",
+   "topic_key": "Fizik > 3.1 Basit Elektrik Devreleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u03_k02",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u03_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Akım kavramını ve akımın yönünü açıklar.",
+    "Akım, yük ve zaman arasındaki ilişkiyi kullanarak hesap yapar."
+   ],
+   "baslik": "3.2 Elektrik Akımı",
+   "topic_key": "Fizik > 3.2 Elektrik Akımı",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u03_k03",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u03_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+    "Potansiyel fark, akım ve direnç hesaplar."
+   ],
+   "baslik": "3.3 Ohm Yasası",
+   "topic_key": "Fizik > 3.3 Ohm Yasası",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u03_k04",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u03_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Bağlama türlerini ve eşdeğer direnci açıklar.",
+    "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar."
+   ],
+   "baslik": "3.4 Dirençlerin Bağlanması",
+   "topic_key": "Fizik > 3.4 Dirençlerin Bağlanması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u03_k05",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u03_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Üreteç bağlama türlerini açıklar.",
+    "Bağlı üreteçlerin toplam potansiyel farkını hesaplar."
+   ],
+   "baslik": "3.5 Üreteçlerin Bağlanması",
+   "topic_key": "Fizik > 3.5 Üreteçlerin Bağlanması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u03_k06",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u03_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Elektrik tehlikelerini tanır.",
+    "Elektrik güvenliği önlemlerini açıklar."
+   ],
+   "baslik": "3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
+   "topic_key": "Fizik > 3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u03_k07",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u03_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Topraklamanın ne olduğunu ve amacını açıklar.",
+    "Kaçak akımın can güvenliği üzerindeki etkisini yorumlar."
+   ],
+   "baslik": "3.7 Topraklamanın Önemi",
+   "topic_key": "Fizik > 3.7 Topraklamanın Önemi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k01",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Dalga hareketine ait temel kavramları tanımlar.",
+    "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar."
+   ],
+   "baslik": "4.1 Dalgaların Temel Kavramları",
+   "topic_key": "Fizik > 4.1 Dalgaların Temel Kavramları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k02",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sınıflandırma ölçütlerini açıklar.",
+    "Dalga türlerini örneklendirir."
+   ],
+   "baslik": "4.2 Dalgaların Sınıflandırılması",
+   "topic_key": "Fizik > 4.2 Dalgaların Sınıflandırılması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k03",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Yayılma süratini etkileyen etmenleri açıklar.",
+    "Deneysel verilerden sonuç çıkarır."
+   ],
+   "baslik": "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
+   "topic_key": "Fizik > 4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k04",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Periyodik hareketi ve sarkaç türlerini açıklar.",
+    "Periyodu etkileyen değişkenleri deney verileriyle yorumlar."
+   ],
+   "baslik": "4.4 Periyodik Hareketler",
+   "topic_key": "Fizik > 4.4 Periyodik Hareketler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k05",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Yansıma yasalarını açıklar.",
+    "Kırılma olayında sürat, dalga boyu ve yön değişimini yorumlar."
+   ],
+   "baslik": "4.5 Su Dalgalarında Yansıma ve Kırılma",
+   "topic_key": "Fizik > 4.5 Su Dalgalarında Yansıma ve Kırılma",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k06",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Rezonansı tanımlar ve örneklendirir.",
+    "Depremle ilgili kavramları ayırt eder."
+   ],
+   "baslik": "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+   "topic_key": "Fizik > 4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k07",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sismoloji ve sismograf kavramlarını açıklar.",
+    "Deprem riskine yönelik model ve çözüm önerilerini yorumlar."
+   ],
+   "baslik": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+   "topic_key": "Fizik > 4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k01",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kimyasal değişimin göstergelerini ayırt eder.",
+    "Tepkime denkleminde tepken, ürün ve katalizörü belirler."
+   ],
+   "baslik": "1.1.1 Kimyasal Tepkimelerin Oluşumu",
+   "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k02",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Tepkime türlerini örnekleriyle açıklar.",
+    "Net iyon denklemini ve seyirci iyonları belirler."
+   ],
+   "baslik": "1.1.2 Kimyasal Tepkime Türleri",
+   "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k03",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Avogadro sayısı ile mol ilişkisini açıklar.",
+    "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar."
+   ],
+   "baslik": "1.1.3 Mol Kavramı",
+   "topic_key": "Kimya > 1.1.3 Mol Kavramı",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k04",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Denkleştirmede korunan nicelikleri açıklar.",
+    "Verilen tepkime denklemini denkleştirir."
+   ],
+   "baslik": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
+   "topic_key": "Kimya > 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k05",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Katsayı oranından mol hesaplar.",
+    "Kütle ve verim hesaplamaları yapar."
+   ],
+   "baslik": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
+   "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k06",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k06.json",
+   "soru_sayisi": 14,
+   "flashcard_sayisi": 14,
+   "etiketler": [
+    "Gazların özelliklerini ve birimlerini açıklar.",
+    "Gaz yasalarıyla hesaplama yapar."
+   ],
+   "baslik": "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+   "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k07",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kinetik moleküler teorinin varsayımlarını açıklar.",
+    "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar."
+   ],
+   "baslik": "1.2.2 Gazların Kinetik Moleküler Teorisi",
+   "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k08",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İdeal gaz denklemini ve sabitini açıklar.",
+    "İdeal gaz denklemiyle nicelik hesaplar."
+   ],
+   "baslik": "1.2.3 İdeal Gaz Yasası",
+   "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k09",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Difüzyon ve efüzyon kavramlarını açıklar.",
+    "Graham Yasası ile hız oranı hesaplar."
+   ],
+   "baslik": "1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k01",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Çözünme sürecinin aşamalarını sıralar.",
+    "Çözünmede etkili etkileşimleri yorumlar."
+   ],
+   "baslik": "2.1.1 Çözünme Süreci",
+   "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k02",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Polar-apolar yapı ile çözünürlük ilişkisini açıklar.",
+    "Günlük yaşam örneklerini çözünürlükle yorumlar."
+   ],
+   "baslik": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k03",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Çözünme türlerini örnekleriyle ayırt eder.",
+    "Çözünme türünü denklemden belirler."
+   ],
+   "baslik": "2.1.3 Çözünme Olayının Sınıflandırılması",
+   "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k04",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Molarite ve ppm kavramlarını açıklar.",
+    "Derişim ve seyreltme hesaplarını yapar."
+   ],
+   "baslik": "2.1.4 Derişim Birimleri (Molarite, ppm)",
+   "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k05",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Çözünürlük kavramını açıklar.",
+    "Çözünürlük verilerini yorumlar."
+   ],
+   "baslik": "2.1.5 Çözünürlük",
+   "topic_key": "Kimya > 2.1.5 Çözünürlük",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k06",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Faktörlerin katı ve gaz çözünürlüğüne etkisini ayırt eder.",
+    "Günlük yaşam olaylarını çözünürlükle açıklar."
+   ],
+   "baslik": "2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "topic_key": "Kimya > 2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k07",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Elektrolit ve elektrolit olmayan çözeltileri ayırt eder.",
+    "Doymamış, doymuş ve aşırı doymuş çözeltileri karşılaştırır."
+   ],
+   "baslik": "2.1.7 Çözeltilerin Sınıflandırılması",
+   "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k08",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Koligatif özellikleri tanımlar.",
+    "Kaynama/donma noktası değişimlerini yorumlar."
+   ],
+   "baslik": "2.1.8 Koligatif Özellikler",
+   "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u03_k01",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u03_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Makro ve mikro ölçek kavramlarını açıklar.",
+    "Atom ekonomisi ve su ayak izini yorumlar."
+   ],
+   "baslik": "3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u03_k02",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u03_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Atmosferdeki temel tepkimeleri tanır.",
+    "Küresel sorunların neden ve sonuçlarını ilişkilendirir."
+   ],
+   "baslik": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+   "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u01_k01",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Dik üçgende trigonometrik oranları tanımlar ve kullanır.",
+    "Trigonometrik özdeşlikleri problem çözmede uygular."
+   ],
+   "baslik": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
+   "topic_key": "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u01_k02",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u01_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Üçgenin yardımcı elemanlarını tanımlar.",
+    "Açıortay ve kenarortay özelliklerini hesapta kullanır."
+   ],
+   "baslik": "1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
+   "topic_key": "Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u01_k03",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u01_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Üçgen alanını taban ve yükseklikle hesaplar.",
+    "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir."
+   ],
+   "baslik": "1.3 Üçgende Alan",
+   "topic_key": "Matematik > 1.3 Üçgende Alan",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u01_k04",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sinüs teoremini kullanır.",
+    "Kosinüs teoremini kullanır."
+   ],
+   "baslik": "1.4 Sinüs ve Kosinüs Teoremleri",
+   "topic_key": "Matematik > 1.4 Sinüs ve Kosinüs Teoremleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u02_k01",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u02_k01.json",
+   "soru_sayisi": 16,
+   "flashcard_sayisi": 16,
+   "etiketler": [
+    "İki kategorik değişkenli araştırma sorusu kurar ve veriyi düzenler.",
+    "İki yönlü tablodan yüzde ve ilişki yorumu yapar."
+   ],
+   "baslik": "2.1 İki Kategorik Değişkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+   "topic_key": "Matematik > 2.1 İki Kategorik Değişkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u02_k02",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u02_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Veri kaynağı ve örneklemi değerlendirir.",
+    "Yorumlardaki yanlılık ve hataları tartışır."
+   ],
+   "baslik": "2.2 Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verilerin İlişkililiğine Dayalı İstatistiksel Sonuç veya Yorumları Tartışma",
+   "topic_key": "Matematik > 2.2 Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verilerin İlişkililiğine Dayalı İstatistiksel Sonuç veya Yorumları Tartışma",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u03_k01",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u03_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Asal çarpanlara ayırmayı yapar.",
+    "Pozitif bölen sayısını hesaplar."
+   ],
+   "baslik": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
+   "topic_key": "Matematik > 3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u03_k02",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u03_k02.json",
+   "soru_sayisi": 14,
+   "flashcard_sayisi": 14,
+   "etiketler": [
+    "EBOB ve EKOK kavramlarını açıklar.",
+    "EBOB-EKOK problemlerini çözer."
+   ],
+   "baslik": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
+   "topic_key": "Matematik > 3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u03_k03",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u03_k03.json",
+   "soru_sayisi": 14,
+   "flashcard_sayisi": 14,
+   "etiketler": [
+    "Bölünebilme kurallarını açıklar.",
+    "Bölümden kalanı kuralla hesaplar."
+   ],
+   "baslik": "3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
+   "topic_key": "Matematik > 3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u04_k01",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u04_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Fonksiyonun temel nitel özelliklerini tanımlar.",
+    "Verilen fonksiyonun nitel özelliklerini belirler."
+   ],
+   "baslik": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+   "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u04_k02",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u04_k02.json",
+   "soru_sayisi": 24,
+   "flashcard_sayisi": 24,
+   "etiketler": [
+    "Karesel fonksiyonun tepe noktasını ve simetri eksenini bulur.",
+    "Karesel fonksiyonun nitel özelliklerini yorumlar."
+   ],
+   "baslik": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
+   "topic_key": "Matematik > 4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u04_k03",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u04_k03.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Karekök fonksiyonunun tanım ve görüntü kümesini belirler.",
+    "Karekök fonksiyonunun grafiğini yorumlar."
+   ],
+   "baslik": "4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
+   "topic_key": "Matematik > 4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u04_k04",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u04_k04.json",
+   "soru_sayisi": 24,
+   "flashcard_sayisi": 24,
+   "etiketler": [
+    "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+    "Rasyonel fonksiyonun grafiğini yorumlar."
+   ],
+   "baslik": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+   "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u04_k05",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u04_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ters fonksiyon kavramını açıklar.",
+    "Verilen fonksiyonun tersini bulur."
+   ],
+   "baslik": "4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+   "topic_key": "Matematik > 4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u04_k06",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u04_k06.json",
+   "soru_sayisi": 20,
+   "flashcard_sayisi": 20,
+   "etiketler": [
+    "Problemi fonksiyonla modeller.",
+    "Denklem ve eşitsizlikleri çözerek yorumlar."
+   ],
+   "baslik": "4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+   "topic_key": "Matematik > 4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u05_k01",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u05_k01.json",
+   "soru_sayisi": 20,
+   "flashcard_sayisi": 20,
+   "etiketler": [
+    "Toplama ve çarpma yoluyla saymayı ayırt eder.",
+    "Sayma problemlerini çözer."
+   ],
+   "baslik": "5.1 Sayma Stratejileri",
+   "topic_key": "Matematik > 5.1 Sayma Stratejileri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u05_k02",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u05_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Algoritma, akış şeması ve algoritmik doğal dili tanır.",
+    "Mantık bağlaçları ve niceleyicilerle koşul ifade eder."
+   ],
+   "baslik": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
+   "topic_key": "Matematik > 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u06_k01",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u06_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İki nokta arasındaki uzaklığı hesaplar.",
+    "Doğru parçasını içten/dıştan bölen noktayı bulur."
+   ],
+   "baslik": "6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+   "topic_key": "Matematik > 6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u06_k02",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u06_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Doğrunun eğimini hesaplar.",
+    "Doğru denklemini yazar, eğim ilişkilerini kullanır."
+   ],
+   "baslik": "6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+   "topic_key": "Matematik > 6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u07_k01",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u07_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Koşullu olasılık kavramını açıklar ve hesaplar.",
+    "Bağımlı ve bağımsız olayları ayırt eder."
+   ],
+   "baslik": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+   "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "mat_10_u07_k02",
+   "ders": "Matematik",
+   "sinif": 10,
+   "dosya": "mat_10_u07_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Bayes teoreminin mantığını açıklar.",
+    "Bayes tipi problemlerde istenen koşullu olasılığı hesaplar."
+   ],
+   "baslik": "7.2 Bayes Teoremi",
+   "topic_key": "Matematik > 7.2 Bayes Teoremi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u01_k01",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "1040-1299 arasındaki askerî mücadelelerin neden ve sonuçlarını açıklar.",
+    "Mücadelelerin Türk tarihinin seyrine etkisini çözümler."
+   ],
+   "baslik": "1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
+   "topic_key": "Tarih > 1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u01_k02",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Devlet teşkilatının İslam öncesi ve sonrası süreklilik ile değişimini açıklar.",
+    "Devlet ve ordu kurumlarının işlevini kaynaklar üzerinden çözümler."
+   ],
+   "baslik": "1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
+   "topic_key": "Tarih > 1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u01_k03",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Tarım, ticaret ve zanaat gibi sosyoekonomik faaliyetleri açıklar.",
+    "Ekonomik faaliyetlerin yerleşme ve şehirleşme anlayışına etkisini çözümler."
+   ],
+   "baslik": "1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
+   "topic_key": "Tarih > 1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u01_k04",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "XI-XIII. yüzyıllarda Türk-İslam medeniyetindeki bilim, eğitim ve sanat kurumlarını açıklar.",
+    "Bu gelişmelerin Anadolu'nun Türkleşme ve İslamlaşma sürecine etkisini çözümler."
+   ],
+   "baslik": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+   "topic_key": "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k05",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kuruluşa dair görüşleri dayandıkları kaynaklar bakımından karşılaştırır.",
+    "Kuruluş tartışmalarında tarihçi yorumunun etkisini değerlendirir."
+   ],
+   "baslik": "2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
+   "topic_key": "Tarih > 2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k06",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Siyasi ve askerî gelişmelerin beylikten devlete geçiş sürecine etkisini açıklar.",
+    "Fetihlerin yönünü ve stratejisini kaynaklar üzerinden çözümler."
+   ],
+   "baslik": "2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+   "topic_key": "Tarih > 2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k07",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ordu, toprak ve hukuk kurumlarının işleyişini açıklar.",
+    "Tımar ve devşirme uygulamalarının merkezî otoriteye etkisini çözümler."
+   ],
+   "baslik": "2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
+   "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k08",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İskân ve istimâlet politikalarının amaç ve yöntemlerini açıklar.",
+    "Bu politikaların Rumeli'de kalıcılığa etkisini kaynaklar üzerinden çözümler."
+   ],
+   "baslik": "2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
+   "topic_key": "Tarih > 2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k09",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Osmanlı şehirlerindeki ilim ve irfan kurumlarını açıklar.",
+    "Şehir, vakıf ve eğitim kurumları arasındaki ilişkiyi çözümler."
+   ],
+   "baslik": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+   "topic_key": "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u03_k10",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u03_k10.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "1453-1683 arasındaki siyasi ve askerî gelişmeleri açıklar.",
+    "Fetihlerin Osmanlı'nın cihan devleti konumuna etkisini çözümler."
+   ],
+   "baslik": "3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
+   "topic_key": "Tarih > 3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u03_k11",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u03_k11.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Merkez ve taşra yönetimi ile divanın işleyişini açıklar.",
+    "Yönetim ve veraset uygulamalarındaki değişimin etkilerini çözümler."
+   ],
+   "baslik": "3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
+   "topic_key": "Tarih > 3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u03_k12",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u03_k12.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Keşif ve sömürgecilik faaliyetlerinin nedenlerini açıklar.",
+    "Sömürgeciliğin ve düşünsel dönüşümün etkilerini çözümler."
+   ],
+   "baslik": "3.3 Avrupalıların Sömürgeci Politikaları",
+   "topic_key": "Tarih > 3.3 Avrupalıların Sömürgeci Politikaları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u03_k13",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u03_k13.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İsyanların nedenlerini ve türlerini açıklar.",
+    "İsyanların merkezî otorite ve toplum düzenine etkisini çözümler."
+   ],
+   "baslik": "3.4 Osmanlı Devleti'nde İsyanlar",
+   "topic_key": "Tarih > 3.4 Osmanlı Devleti'nde İsyanlar",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u03_k14",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u03_k14.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Bilim, eğitim ve sanat kurumları ile önemli temsilcilerini açıklar.",
+    "Osmanlı bilim ve sanat birikiminin kültürel mirasa etkisini çözümler."
+   ],
+   "baslik": "3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
+   "topic_key": "Tarih > 3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  }
+ ]
 }

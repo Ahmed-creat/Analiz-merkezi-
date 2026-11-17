@@ -2,250 +2,255 @@
   "konu_id": "biyo_10_u01_k06",
   "sinif": 10,
   "ders": "Biyoloji",
-  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "baslik": "1.6 İnsanda Sindirim",
+  "topic_key": "Biyoloji > 1.6 İnsanda Sindirim",
+  "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.48-56",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "biyo_10_u01_k06_o01",
-      "alt_beceri": "Fermantasyon",
-      "metin": "Fermantasyonda NADH'deki elektron ve hidrojenler farklı alıcılara aktarıldığında hangi molekül yeniden oluşur?",
+      "alt_beceri": "Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder.",
+      "metin": "Bir dilim ekmek yenildiğinde nişastanın kimyasal sindirimi ilk olarak hangi organda başlar?",
       "secenekler": [
-        "NAD⁺",
-        "ATP",
-        "NADH",
-        "Karbondioksit"
+        "Mide",
+        "Ağız",
+        "İnce bağırsak",
+        "Kalın bağırsak"
       ],
-      "dogru_index": 0,
-      "cozum": "Elektron ve hidrojenlerin aktarılması NAD⁺'ı yeniler; böylece glikoliz ve ATP üretimi sürdürülebilir. NADH ise hidrojen taşıyan indirgenmiş biçimdir, yenilenen molekül değildir.",
+      "dogru_index": 1,
+      "cozum": "Karbohidratların kimyasal sindirimi ağızda salgılanan tükürükle başlar; tükürük enzimi nişasta ve glikojeni maltoza parçalar (s.51).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fermantasyonun gerçekleştiği hücresel bölümü ve oksijen ile ETS kullanımını belirtiniz.",
-        "back": "Ökaryot ve prokaryot hücrelerin sitoplazmasında gerçekleşir; oksijen ve ETS kullanılmaz. Glikolizle oluşan piruvat farklı son ürünlere dönüşür."
+        "front": "Tükürük enziminin işlevi nedir?",
+        "back": "Nişasta ve glikojeni maltoza parçalamak."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o02",
-      "alt_beceri": "Fermantasyon",
-      "metin": "İki mikroorganizmadan biri fermantasyonda etil alkol, diğeri laktik asit oluşturuyor. Bu fermantasyonlara verilen adlar hangi özelliğe dayanır?",
+      "alt_beceri": "Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder.",
+      "metin": "Mide öz suyundaki HCl, proteinlerin sindiriminde hangi işlevi görür?",
       "secenekler": [
-        "Gerçekleştikleri hücre bölümü",
-        "Oluşan son ürünün çeşidi",
-        "Başlangıçta kullanılan hücre sayısı",
-        "Ortam sıcaklığının sabit kalması"
+        "Proteinleri doğrudan amino asitlere ayırır",
+        "Yağları küçük damlacıklara böler",
+        "Karbonhidratları maltoza çevirir",
+        "pH'ı düşürüp proteinleri denatüre eder"
       ],
-      "dogru_index": 1,
-      "cozum": "Fermantasyon, oluşan son ürün çeşidine göre adlandırılır; bu nedenle etil alkol ve laktik asit fermantasyonu adları kullanılır. Hücre bölümü adlandırmayı belirlemez.",
+      "dogru_index": 3,
+      "cozum": "HCl ortamın pH değerini düşürür ve proteinlerin üç boyutlu yapısını bozarak denatüre eder; denatüre proteinler enzimin etkisine açık hâle gelir (s.51).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fermantasyonda NAD⁺'ın yeniden oluşması, glikoliz ve ATP üretiminin sürmesini nasıl sağlar?",
-        "back": "NADH'deki elektron ve hidrojenler farklı alıcılara aktarılınca NAD⁺ yenilenir; bu, glikoliz tepkimelerinin devam etmesini sağlar."
+        "front": "Mide öz suyunun içeriği nedir?",
+        "back": "HCl, sindirim enzimi ve mukus."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o03",
-      "alt_beceri": "Fermantasyon",
-      "metin": "Bir üretici, canlı mikroorganizmalar içeren fermente yulaf içeceğini probiyotik olarak sunuyor. Ürünle ilgili hangi ifade bilimsel açıdan en uygundur?",
+      "alt_beceri": "Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder.",
+      "metin": "Yağların sindirimi ince bağırsakta hangi salgının etkisiyle başlar?",
       "secenekler": [
-        "Bağırsak mikrobiyotasını tamamen yok ettiği belirtilir.",
-        "Yalnızca glikoz sağladığı ve mikroorganizmalarla ilişki kurmadığı belirtilir.",
-        "Sağlıklı bağırsak mikrobiyotasıyla ilişkilendirilebilir ve sindirim sağlığına katkı gösterebilir.",
-        "Bütün bağırsak hastalıklarını kesin olarak iyileştirdiği belirtilir."
+        "Karaciğerde üretilen safra sıvısının",
+        "Pankreasın bikarbonatının",
+        "Mide öz suyunun HCl'sinin",
+        "Tükürükteki karbohidrat enziminin"
       ],
-      "dogru_index": 2,
-      "cozum": "Canlı mikroorganizma içeren probiyotik ürünler sağlıklı bağırsak mikrobiyotasıyla ve sindirim sağlığına olası katkılarıyla ilişkilendirilebilir. Bu, bütün hastalıkları kesin olarak iyileştirdikleri anlamına gelmez.",
+      "dogru_index": 0,
+      "cozum": "Karaciğerde üretilip safra kesesinde depolanan safra ince bağırsağa dökülür; yağları küçük damlacıklara ayırarak enzimlerin etki yüzeyini artırır (s.50, 52).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Canlı kültür içeren yeni bir yulaf içeceği probiyotik olarak tanıtılıyor. Bu nitelik bağırsak mikrobiyotasıyla nasıl ilişkilendirilebilir?",
-        "back": "Canlı mikroorganizmalar sağlıklı bağırsak mikrobiyotasıyla ilişkilendirilebilir; bu tür ürünler sindirim sağlığına olumlu katkı gösterebilir."
+        "front": "Safranın yağ sindirimindeki işlevi nedir?",
+        "back": "Yağları küçük damlacıklara ayırıp yüzeyi artırmak."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o04",
-      "alt_beceri": "Fermantasyon",
-      "metin": "Bir ham madde, mikroorganizmaların kontrollü büyümesi ve enzimatik işlemlerle yiyecek ya da içeceğe dönüştürülüyor. Bu üretim süreci nasıl adlandırılır?",
+      "alt_beceri": "Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder.",
+      "metin": "Safra sıvısının bileşimi dikkate alındığında hangi ifade doğrudur?",
       "secenekler": [
-        "Damıtma",
-        "Dondurarak saklama",
-        "Mekanik sindirim",
-        "Fermantasyon"
+        "Safra proteinleri amino asitlere ayıran enzimler içerir",
+        "Safra yalnızca midede salgılanır",
+        "Safrada sindirim enzimi bulunmaz; yağda çözünen vitaminlerin emilimini kolaylaştırır",
+        "Safra nişastayı doğrudan glikoza çevirir"
       ],
-      "dogru_index": 3,
-      "cozum": "Fermantasyonda mikroorganizmaların metabolik faaliyetleri ve enzimleri ham maddenin yiyecek ya da içeceğe dönüşmesini sağlar. Damıtma ve dondurma fermantasyonun kendisi değildir.",
+      "dogru_index": 2,
+      "cozum": "Safra su, bikarbonat, safra tuzları, kolesterol, yağ asitleri ve bilirubin içerir; sindirim enzimi bulunmaz, A-D-E-K vitaminlerinin emilimini kolaylaştırır (s.51).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fermantasyonu fermente besin üretimi açısından tanımlayınız.",
-        "back": "Mikroorganizmaların kontrollü büyümesi ve enzimatik işlemlerle ham maddenin yiyecek ya da içeceğe dönüştürülmesiyle gerçekleşir."
+        "front": "Safranın bileşimi nedir?",
+        "back": "Su, bikarbonat, safra tuzları, kolesterol ve bilirubin; enzim yok."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o05",
-      "alt_beceri": "Etil Alkol Fermantasyonu",
-      "metin": "Şekerli meyve özünden fermente içecek üretilen kapalı tankta maya etil alkol fermantasyonu yapıyor. Tankta gaz birikmesi ve basıncın artmasına hangi ürün neden olur?",
+      "alt_beceri": "Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder.",
+      "metin": "Mide, yüksek asit ve sindirim enzimlerine rağmen kendi iç duvarının sindirilmesini nasıl engeller?",
       "secenekler": [
-        "Karbondioksit (CO₂) gazı",
-        "Tüketilen oksijen",
-        "Laktik asit",
-        "Asetil-CoA"
+        "İç duvarını keratinle kaplayarak",
+        "Asit salgısını tamamen durdurarak",
+        "Enzimleri bağırsağa göndererek",
+        "İç duvarı kaplayan hücrelerin salgıladığı mukusla"
       ],
-      "dogru_index": 0,
-      "cozum": "Etil alkol fermantasyonunda piruvattan CO₂ ayrılır. Kapalı fermantasyon tankındaki gaz birikimi ve basınç artışı bu karbondioksitten kaynaklanır.",
+      "dogru_index": 3,
+      "cozum": "Midenin iç duvarını kaplayan hücrelerin salgıladığı mukus, mide iç duvarının sindirilmesini engeller (s.52).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Etil alkol fermantasyonunda piruvattan etil alkol oluşana kadar gerçekleşen iki basamağı sıralayınız.",
-        "back": "Piruvattan CO₂ ayrılarak asetaldehit oluşur; ardından asetaldehit NADH ile indirgenerek etil alkole dönüşür ve NAD⁺ yenilenir."
+        "front": "Mukusun midedeki işlevi nedir?",
+        "back": "Mide iç duvarını asit ve enzimlerden korumak."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o06",
-      "alt_beceri": "Etil Alkol Fermantasyonu",
-      "metin": "Etil alkol fermantasyonunun ikinci basamağında asetaldehit NADH ile indirgenince hangi ürün oluşur?",
+      "alt_beceri": "İnce ve kalın bağırsaktaki emilim ile taşınma süreçlerini açıklar.",
+      "metin": "İnce bağırsağın kıvrım, villus ve mikrovillusları sayesinde yüzey alanı yaklaşık hangi değere ulaşır?",
       "secenekler": [
-        "Laktik asit",
-        "Etil alkol",
-        "Piruvat",
-        "Asetil-CoA"
+        "2-3 m²",
+        "200-300 m²",
+        "20-30 m²",
+        "2000-3000 m²"
       ],
       "dogru_index": 1,
-      "cozum": "Asetaldehit NADH kullanılarak etil alkole indirgenir; bu sırada glikolizin sürmesi için NAD⁺ yenilenir. Laktik asit farklı fermantasyon çeşidinin son ürünüdür.",
+      "cozum": "Bağırsak iç yüzeyindeki kıvrımlar, villus ve mikrovilluslar yüzey alanını büyük ölçüde artırır; alan yaklaşık 200-300 m²'ye ulaşır (s.53).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Etil alkol fermantasyonunda asetaldehit, NADH ve NAD⁺ arasındaki ilişki nedir?",
-        "back": "Asetaldehit NADH’den elektron/hidrojen alarak etil alkole indirgenir; NADH oksitlenip NAD⁺ hâline gelir. Yenilenen NAD⁺ glikolizin sürmesine katkı sağlar."
+        "front": "Villus nedir?",
+        "back": "İnce bağırsak iç yüzeyindeki parmak şeklinde çıkıntılar."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o07",
-      "alt_beceri": "Etil Alkol Fermantasyonu",
-      "metin": "Yenilenebilir yakıt üretimini inceleyen bir pilot düzende, tek hücreli ökaryotlar şekerli çözeltiden etil alkol oluşturuyor. Bu mikroorganizmalar hangi gruptadır?",
+      "alt_beceri": "İnce ve kalın bağırsaktaki emilim ile taşınma süreçlerini açıklar.",
+      "metin": "İnce bağırsak epitel hücrelerinin bağırsak boşluğuna bakan yüzündeki fırça şeklindeki uzantılara ne ad verilir?",
       "secenekler": [
-        "Yalnızca yeşil bitkilerin yaprakları",
-        "Memelilerin olgun alyuvarları",
-        "Maya mantarları",
-        "Tüm hayvan hücreleri"
+        "Mikrovillus",
+        "Şilomikron",
+        "Villus",
+        "Kılcal damar"
       ],
-      "dogru_index": 2,
-      "cozum": "Mayalar tek hücreli ökaryot mantarlardır ve etil alkol fermantasyonu yapabilir. Bu süreçte etil alkolle birlikte CO₂ de oluşabilir.",
+      "dogru_index": 0,
+      "cozum": "Villusları oluşturan her hücrenin bağırsak boşluğuna bakan kısmındaki sitoplazmik uzantılara mikrovillus denir (s.53).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Etil alkol fermantasyonunu gerçekleştirebilen mikroorganizma gruplarından birini ve bu sürecin ürünlerini belirtiniz.",
-        "back": "Maya mantarları etil alkol fermantasyonu yapabilir; süreçte etil alkol ve CO₂ oluşur."
+        "front": "Mikrovillus nedir?",
+        "back": "Villus hücresinin boşluğa bakan sitoplazmik uzantıları."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o08",
-      "alt_beceri": "Laktik Asit Fermantasyonu",
-      "metin": "Bir kültürde üç glikoz molekülünün her biri laktik asit fermantasyonuna giriyor. Glikolizden glikoz başına net 2 ATP kazanıldığına göre toplam net ATP kaçtır?",
+      "alt_beceri": "İnce ve kalın bağırsaktaki emilim ile taşınma süreçlerini açıklar.",
+      "metin": "Yağ asidi ve gliserol, bağırsak epitel hücrelerinde trigliserite dönüştürüldükten sonra hangi yolla taşınır?",
       "secenekler": [
-        "8 ATP",
-        "2 ATP",
-        "4 ATP",
-        "6 ATP"
+        "Doğrudan kılcal kan damarlarıyla",
+        "Mideye geri gönderilerek",
+        "Şilomikron oluşturarak lenf kılcallarıyla",
+        "Kalın bağırsaktan ozmozla"
       ],
-      "dogru_index": 3,
-      "cozum": "Laktik asit fermantasyonunda ATP glikoliz sırasında üretilir ve glikoz başına net kazanç 2 ATP’dir. Üç glikoz için toplam net kazanç 6 ATP olur.",
+      "dogru_index": 2,
+      "cozum": "Trigliseritler protein ve kolesterolle kaplanarak şilomikronu oluşturur; şilomikronlar önce lenf kılcallarına, sonra kan dolaşımına katılır (s.54).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Laktik asit fermantasyonunda piruvatın son ürüne dönüşümünü ve NAD⁺ yenilenmesini açıklayınız.",
-        "back": "Piruvat, NADH'nin hidrojenlerini alarak laktik aside dönüşür; NADH'den NAD⁺ yeniden oluştuğu için glikoliz sürdürülebilir."
+        "front": "Şilomikron nedir?",
+        "back": "Trigliseritin protein ve kolesterolle kaplanmış taşınma biçimi."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o09",
-      "alt_beceri": "Laktik Asit Fermantasyonu",
-      "metin": "Kapalı bir kültürde bazı bakteriler oksijen sınırlıyken piruvatı laktata dönüştürerek NAD⁺ yeniliyor. Bu yolla hangi süreçte ATP üretimi sürer?",
+      "alt_beceri": "İnce ve kalın bağırsaktaki emilim ile taşınma süreçlerini açıklar.",
+      "metin": "Kalın bağırsakta gerçekleşen olaylarla ilgili hangi ifade doğrudur?",
       "secenekler": [
-        "Laktik asit fermantasyonu",
-        "Yalnızca fotosentez",
-        "Etil alkol fermantasyonu",
-        "Kemosentez"
+        "Proteinlerin sindirimi tamamlanır",
+        "Su geri emilir ve B ile K vitaminleri sentezlenip emilir",
+        "Yağlar safrayla parçalanır",
+        "Villuslarda glikoz kana geçer"
       ],
-      "dogru_index": 0,
-      "cozum": "Laktik asit fermantasyonunda NADH, piruvata hidrojen aktarır ve NAD⁺ yeniden oluşur. Böylece glikoliz devam ederek ATP üretir.",
+      "dogru_index": 1,
+      "cozum": "Kalın bağırsakta sindirim gerçekleşmez; suyun büyük kısmı emilir, bakteriler B ve K vitamini sentezler ve bu vitaminler burada emilir (s.50, 54).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Oksijen sunumunun yetersiz kaldığı bir hücrede laktik asit fermantasyonu glikolizin sürmesine nasıl yardım eder?",
-        "back": "Piruvat, NADH’den hidrojen alarak laktata dönüşürken NAD⁺ yenilenir. Böylece glikoliz ve sınırlı ATP üretimi devam edebilir."
+        "front": "Kalın bağırsağın işlevi nedir?",
+        "back": "Su ve mineral emmek; B, K vitamini sentezlemek."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     },
     {
       "soru_id": "biyo_10_u01_k06_o10",
-      "alt_beceri": "Laktik Asit Fermantasyonu",
-      "metin": "Bir bakteri kültüründe piruvat doğrudan laktata dönüşüyor ve süreçte CO₂ çıkışı gözlenmiyor. Hangi metabolik yol açıklanmıştır?",
+      "alt_beceri": "İnce ve kalın bağırsaktaki emilim ile taşınma süreçlerini açıklar.",
+      "metin": "İnce bağırsaktan kana geçen besin maddeleri vücuda dağılmadan önce ilk olarak hangi organa gider?",
       "secenekler": [
-        "Etil alkol fermantasyonu",
-        "Laktik asit fermantasyonu",
-        "Oksijenli solunum",
-        "Fotosentez"
+        "Kalp",
+        "Böbrek",
+        "Akciğer",
+        "Karaciğer"
       ],
-      "dogru_index": 1,
-      "cozum": "Laktik asit fermantasyonunda piruvat laktata dönüşür ve CO₂ çıkışı görülmez. Etil alkol fermantasyonunda ise CO₂ oluşabilir.",
+      "dogru_index": 3,
+      "cozum": "Bağırsak kılcallarına emilen besinler kanla önce karaciğere gider; burada değişikliğe uğrar, toksinler dönüştürülür, sonra kalbe ve vücuda dağılır (s.54).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Laktik asit fermantasyonunda karbondioksit çıkışı olup olmadığını belirtiniz.",
-        "back": "Laktik asit fermantasyonunda CO₂ çıkışı görülmez."
+        "front": "Karaciğerin sindirim sistemindeki işlevi nedir?",
+        "back": "Safra üretmek, toksinleri zararsızlaştırmak, kan şekerini düzenlemek."
       },
-      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+      "kazanim": "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "biyo_10_u01_k06_o01:flashcard",
-      "front": "Fermantasyonun gerçekleştiği hücresel bölümü ve oksijen ile ETS kullanımını belirtiniz.",
-      "back": "Ökaryot ve prokaryot hücrelerin sitoplazmasında gerçekleşir; oksijen ve ETS kullanılmaz. Glikolizle oluşan piruvat farklı son ürünlere dönüşür."
+      "front": "Tükürük enziminin işlevi nedir?",
+      "back": "Nişasta ve glikojeni maltoza parçalamak."
     },
     {
       "id": "biyo_10_u01_k06_o02:flashcard",
-      "front": "Fermantasyonda NAD⁺'ın yeniden oluşması, glikoliz ve ATP üretiminin sürmesini nasıl sağlar?",
-      "back": "NADH'deki elektron ve hidrojenler farklı alıcılara aktarılınca NAD⁺ yenilenir; bu, glikoliz tepkimelerinin devam etmesini sağlar."
+      "front": "Mide öz suyunun içeriği nedir?",
+      "back": "HCl, sindirim enzimi ve mukus."
     },
     {
       "id": "biyo_10_u01_k06_o03:flashcard",
-      "front": "Canlı kültür içeren yeni bir yulaf içeceği probiyotik olarak tanıtılıyor. Bu nitelik bağırsak mikrobiyotasıyla nasıl ilişkilendirilebilir?",
-      "back": "Canlı mikroorganizmalar sağlıklı bağırsak mikrobiyotasıyla ilişkilendirilebilir; bu tür ürünler sindirim sağlığına olumlu katkı gösterebilir."
+      "front": "Safranın yağ sindirimindeki işlevi nedir?",
+      "back": "Yağları küçük damlacıklara ayırıp yüzeyi artırmak."
     },
     {
       "id": "biyo_10_u01_k06_o04:flashcard",
-      "front": "Fermantasyonu fermente besin üretimi açısından tanımlayınız.",
-      "back": "Mikroorganizmaların kontrollü büyümesi ve enzimatik işlemlerle ham maddenin yiyecek ya da içeceğe dönüştürülmesiyle gerçekleşir."
+      "front": "Safranın bileşimi nedir?",
+      "back": "Su, bikarbonat, safra tuzları, kolesterol ve bilirubin; enzim yok."
     },
     {
       "id": "biyo_10_u01_k06_o05:flashcard",
-      "front": "Etil alkol fermantasyonunda piruvattan etil alkol oluşana kadar gerçekleşen iki basamağı sıralayınız.",
-      "back": "Piruvattan CO₂ ayrılarak asetaldehit oluşur; ardından asetaldehit NADH ile indirgenerek etil alkole dönüşür ve NAD⁺ yenilenir."
+      "front": "Mukusun midedeki işlevi nedir?",
+      "back": "Mide iç duvarını asit ve enzimlerden korumak."
     },
     {
       "id": "biyo_10_u01_k06_o06:flashcard",
-      "front": "Etil alkol fermantasyonunda asetaldehit, NADH ve NAD⁺ arasındaki ilişki nedir?",
-      "back": "Asetaldehit NADH’den elektron/hidrojen alarak etil alkole indirgenir; NADH oksitlenip NAD⁺ hâline gelir. Yenilenen NAD⁺ glikolizin sürmesine katkı sağlar."
+      "front": "Villus nedir?",
+      "back": "İnce bağırsak iç yüzeyindeki parmak şeklinde çıkıntılar."
     },
     {
       "id": "biyo_10_u01_k06_o07:flashcard",
-      "front": "Etil alkol fermantasyonunu gerçekleştirebilen mikroorganizma gruplarından birini ve bu sürecin ürünlerini belirtiniz.",
-      "back": "Maya mantarları etil alkol fermantasyonu yapabilir; süreçte etil alkol ve CO₂ oluşur."
+      "front": "Mikrovillus nedir?",
+      "back": "Villus hücresinin boşluğa bakan sitoplazmik uzantıları."
     },
     {
       "id": "biyo_10_u01_k06_o08:flashcard",
-      "front": "Laktik asit fermantasyonunda piruvatın son ürüne dönüşümünü ve NAD⁺ yenilenmesini açıklayınız.",
-      "back": "Piruvat, NADH'nin hidrojenlerini alarak laktik aside dönüşür; NADH'den NAD⁺ yeniden oluştuğu için glikoliz sürdürülebilir."
+      "front": "Şilomikron nedir?",
+      "back": "Trigliseritin protein ve kolesterolle kaplanmış taşınma biçimi."
     },
     {
       "id": "biyo_10_u01_k06_o09:flashcard",
-      "front": "Oksijen sunumunun yetersiz kaldığı bir hücrede laktik asit fermantasyonu glikolizin sürmesine nasıl yardım eder?",
-      "back": "Piruvat, NADH’den hidrojen alarak laktata dönüşürken NAD⁺ yenilenir. Böylece glikoliz ve sınırlı ATP üretimi devam edebilir."
+      "front": "Kalın bağırsağın işlevi nedir?",
+      "back": "Su ve mineral emmek; B, K vitamini sentezlemek."
     },
     {
       "id": "biyo_10_u01_k06_o10:flashcard",
-      "front": "Laktik asit fermantasyonunda karbondioksit çıkışı olup olmadığını belirtiniz.",
-      "back": "Laktik asit fermantasyonunda CO₂ çıkışı görülmez."
+      "front": "Karaciğerin sindirim sistemindeki işlevi nedir?",
+      "back": "Safra üretmek, toksinleri zararsızlaştırmak, kan şekerini düzenlemek."
     }
-  ],
-  "topic_key": "Biyoloji > 1.9 Fermantasyon"
+  ]
 }

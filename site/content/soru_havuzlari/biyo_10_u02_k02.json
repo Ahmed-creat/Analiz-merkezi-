@@ -2,346 +2,303 @@
   "konu_id": "biyo_10_u02_k02",
   "sinif": 10,
   "ders": "Biyoloji",
-  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "tema": 2,
+  "tema_adi": "Ekoloji",
+  "baslik": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+  "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+  "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.107-122",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "biyo_10_u02_k02_o01",
-      "alt_beceri": "Popülasyon, Komünite, Ekosistem",
-      "metin": "Tanımlı bir yaşam alanında aynı türe ait bireyler birlikte bulunuyor ve kendi aralarında çoğalabiliyor. Bu grup hangi ekolojik organizasyon düzeyidir?",
+      "alt_beceri": "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
+      "metin": "Remora balıkları köpek balığının yiyecek artıklarıyla beslenir ve onun hareketiyle yer değiştirir. Bu ilişki biçimi hangisidir?",
       "secenekler": [
-        "Popülasyon",
-        "Komünite",
-        "Ekosistem",
-        "Biyom"
+        "Mutualizm",
+        "Kommensalizm",
+        "Parazitizm",
+        "Amensalizm"
       ],
-      "dogru_index": 0,
-      "cozum": "Aynı türün belirli bir alanda yaşayan ve birbiriyle etkileşen bireyleri popülasyonu oluşturur. Farklı türlerin popülasyonları birlikte komüniteyi meydana getirir.",
+      "dogru_index": 1,
+      "cozum": "Kommensalizmde türlerden biri fayda görürken diğeri ne fayda ne zarar görür; remora faydalanır, köpek balığı etkilenmez (s.115).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekolojik organizasyon düzeylerini küçük birimden büyüğe doğru sıralayınız.",
-        "back": "Organizma → popülasyon → komünite → ekosistem → biyosfer."
+        "front": "Kommensalizm nedir?",
+        "back": "Biri fayda görürken diğerinin etkilenmediği birliktelik."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o02",
-      "alt_beceri": "Popülasyon, Komünite, Ekosistem",
-      "metin": "Bir kıyı çalılığında yaşayan ve birbiriyle etkileşim kuran farklı türlere ait tüm popülasyonlar hangi topluluğu oluşturur?",
+      "alt_beceri": "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
+      "metin": "Ceviz ağacının salgıladığı madde kendisini etkilemezken altındaki otsu bitkilerin gelişimini engeller. Bu ilişki hangisidir?",
       "secenekler": [
-        "Popülasyon",
-        "Komünite",
-        "Ekosistem",
-        "Organizma"
+        "Mutualizm",
+        "Kommensalizm",
+        "Parazitizm",
+        "Amensalizm"
       ],
-      "dogru_index": 1,
-      "cozum": "Komünite, belirli bir alanda yaşayan farklı türlerin popülasyonlarından oluşur. Cansız çevre de dâhil edildiğinde daha geniş kavram olan ekosistemden söz edilir.",
+      "dogru_index": 3,
+      "cozum": "Amensalizmde türlerden biri engellenir ya da yok edilir, diğeri etkilenmez; ceviz ağacı ile altındaki otsu bitkiler buna örnektir (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Komünite ile ekosistem arasındaki kapsam farkını açıklayınız.",
-        "back": "Komünite, belirli bir alanda etkileşim hâlindeki farklı türlerin topluluğudur; ekosistem bu canlı topluluğuyla etkileşimdeki cansız çevreyi de kapsar."
+        "front": "Amensalizm nedir?",
+        "back": "Biri engellenirken diğerinin etkilenmediği ilişki."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o03",
-      "alt_beceri": "Popülasyon Dinamikleri",
-      "metin": "Bir koruma alanının 6 km²’lik kesiminde aynı kuş türünden 48 birey sayılıyor. Popülasyon yoğunluğu kaç birey/km²’dir?",
+      "alt_beceri": "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
+      "metin": "Klorofili bulunduğu için fotosentez yapabilen, konaktan yalnızca su ve mineral alan ökse otu hangi grupta yer alır?",
       "secenekler": [
-        "12 birey/km²",
-        "6 birey/km²",
-        "8 birey/km²",
-        "48 birey/km²"
+        "Yarı parazit bitki",
+        "Tam parazit bitki",
+        "Ayrıştırıcı",
+        "Üretici"
       ],
-      "dogru_index": 2,
-      "cozum": "Popülasyon yoğunluğu birey sayısının alan büyüklüğüne bölünmesiyle bulunur. 48 ÷ 6 = 8 birey/km² olur.",
+      "dogru_index": 0,
+      "cozum": "Yarı parazit bitkiler emeçleriyle konaktan yalnızca su ve mineral alır, klorofilleri olduğu için fotosentez yapar; ökse otu bu grubun örneğidir (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Popülasyon yoğunluğunu tanımlayınız ve kullanılan ölçü birimini belirtiniz.",
-        "back": "Popülasyon yoğunluğu, birim alan ya da birim hacimde bulunan birey sayısıdır; örneğin birey/km² olarak ifade edilebilir."
+        "front": "Yarı parazit bitki nedir?",
+        "back": "Klorofili olan, konaktan yalnız su-mineral alan bitki."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o04",
-      "alt_beceri": "Popülasyon Dinamikleri",
-      "metin": "Bir popülasyonda doğum ve içe göçle eklenen birey sayısı, ölüm ve dışa göçle kaybedilenlerden fazlaysa ne beklenir?",
+      "alt_beceri": "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
+      "metin": "Kloroplastı bulunmadığı için fotosentez yapamayan canavar otu hangi parazit grubundadır?",
       "secenekler": [
-        "Popülasyon küçülür.",
-        "Popülasyon hemen yok olur.",
-        "Popülasyon büyüklüğü kesinlikle değişmez.",
-        "Popülasyon büyür."
+        "Yarı parazit bitki",
+        "Dış parazit hayvan",
+        "Tam parazit bitki",
+        "İç parazit hayvan"
       ],
-      "dogru_index": 3,
-      "cozum": "Doğum ve içe göç toplamı ölüm ve dışa göç toplamını aşıyorsa popülasyon büyür. Sayılar eşit olduğunda denge görülür; bu senaryoda eşitlik yoktur.",
+      "dogru_index": 2,
+      "cozum": "Tam parazit bitkilerin kloroplastı yoktur; organik ve inorganik tüm maddeleri konaktan alır (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Popülasyon büyüklüğünü artıran ve azaltan olayları karşılaştırınız.",
-        "back": "Doğumlar ve içe göçler popülasyon büyüklüğünü artırır; ölümler ve dışa göçler azaltır. Bu iki toplam eşitse popülasyon dengede kalır."
+        "front": "Tam parazit bitki nedir?",
+        "back": "Kloroplastı olmayan, tüm maddeleri konaktan alan bitki."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o05",
-      "alt_beceri": "Komünitede Tür İçi ve Türler Arası Etkileşimler",
-      "metin": "Bir adadaki iki farklı kuş türü, sınırlı sayıdaki yuvalama kovuklarını kullanabilmek için yarışıyor. Bu etkileşim nasıl adlandırılır?",
+      "alt_beceri": "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
+      "metin": "Likende alg hücreleri organik molekül ve oksijeni mantar hiflerine verirken mantar da su ve mineral iletir. Bu birliktelik hangi kavramla açıklanır?",
       "secenekler": [
-        "Türler arası rekabet",
-        "Tür içi rekabet",
-        "Mutualizm",
-        "Kommensalizm"
+        "İsteğe bağlı mutualizm",
+        "Kommensalizm",
+        "Amensalizm",
+        "Zorunlu mutualizm"
       ],
-      "dogru_index": 0,
-      "cozum": "Rekabete giren bireyler farklı türlere ait olduğu için bu etkileşim türler arası rekabettir. Tür içi rekabet aynı tür bireyleri arasında görülür.",
+      "dogru_index": 3,
+      "cozum": "Taraflardan birinin diğeri olmadan yaşayamadığı mutualizm zorunlu mutualizmdir; liken birliği bunun örneğidir (s.115).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tür içi ve türler arası rekabeti, rekabete giren canlıların tür sayısı bakımından karşılaştırınız.",
-        "back": "Aynı tür bireyleri arasındaki rekabet tür içi; farklı türler arasındaki rekabet türler arası rekabettir. Sınırlı kaynaklar için rekabet şiddetlenebilir."
+        "front": "Zorunlu mutualizm nedir?",
+        "back": "Tarafların birbirine bağımlı olduğu mutualizm; örn. liken."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o06",
-      "alt_beceri": "Komünitede Tür İçi ve Türler Arası Etkileşimler",
-      "metin": "Bir kuş, başka bir türe ait ağacın gövdesindeki boşluğu yuva olarak kullanıp barınak kazanıyor; ağaç ise etkilenmiyor. Bu ilişki nasıl adlandırılır?",
+      "alt_beceri": "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
+      "metin": "Baklagillerin köküne yerleşen Rhizobium bakterileri havanın azotunu bağlar, bitkiden organik besin alır. Bu ilişki hangisidir?",
       "secenekler": [
         "Parazitizm",
+        "Mutualizm",
         "Kommensalizm",
-        "Amensalizm",
-        "Mutualizm"
+        "Rekabet"
       ],
       "dogru_index": 1,
-      "cozum": "Bu ilişkide kuş fayda sağlar, ağaç ise ne yarar ne zarar görür. Böyle bir simbiyotik ilişki kommensalizmdir.",
+      "cozum": "Bu birliktelikte bitki azot ihtiyacını karşılar, bakteri organik besin alır; iki taraf da fayda gördüğü için mutualizmdir (s.114).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mutualizm, kommensalizm, amensalizm ve parazitizmde türlerin yarar-zarar durumlarını özetleyiniz.",
-        "back": "Mutualizmde iki tür yarar görür; kommensalizmde biri yarar görür, diğeri etkilenmez; amensalizmde biri zarar görür, diğeri etkilenmez; parazitizmde parazit yarar, konak zarar görür."
+        "front": "Nodül nedir?",
+        "back": "Azot bağlayıcı bakterilerin kökte oluşturduğu yapı."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o07",
-      "alt_beceri": "Süksesyon",
-      "metin": "Bir taşkın sonrasında akarsu yatağında yeni bir çakıl adacığı oluşuyor. Bu alanda gelişmiş toprak ve yerleşik komünite bulunmuyor. Hangi süreç başlar?",
+      "alt_beceri": "Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
+      "metin": "Gause, ekolojik nişleri örtüşen Paramecium aurelia ve P. caudatum türlerini aynı kültür ortamına koyduğunda hangi sonucu gözlemlemiştir?",
       "secenekler": [
-        "Birincil süksesyon; çünkü önceki komünite eksiksiz sürmektedir.",
-        "İkincil süksesyon; çünkü toprak ve tohumlar korunmuştur.",
-        "Birincil süksesyon; çünkü gelişmiş toprak ve yerleşik komünite yoktur.",
-        "Süksesyon gerçekleşmez; çıplak kaya üzerinde canlılar yerleşemez."
+        "P. aurelia yaşamını sürdürmüş, P. caudatum yok olmuştur",
+        "İki tür de aynı sayıda kalmıştır",
+        "İki tür birbirini tamamlayarak yaşamıştır",
+        "P. caudatum diğerini ortamdan çıkarmıştır"
       ],
-      "dogru_index": 2,
-      "cozum": "Gelişmiş toprağın ve yerleşik komünitenin bulunmadığı yeni yüzeylerde birincil süksesyon başlar. Bu nedenle çakıl adacığında da önce öncü türlerin yerleşmesi beklenir.",
+      "dogru_index": 0,
+      "cozum": "P. aurelia daha hızlı ürediği ve sınırlı besini daha etkin kullandığı için yaşamını sürdürmüş, P. caudatum ortamdan yok olmuştur (s.113).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Birincil ve ikincil süksesyonun başlangıç koşullarını karşılaştırınız.",
-        "back": "Birincil süksesyon gelişmiş toprağın ve yerleşik komünitenin bulunmadığı ortamda; ikincil süksesyon ise daha önce komünite bulunan alan bozulduğunda gerçekleşir."
+        "front": "Ekolojik niş nedir?",
+        "back": "Türün tüm faaliyetleri, ilişkileri ve ekosistemdeki işlevi."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o08",
-      "alt_beceri": "Süksesyon",
-      "metin": "Daha önce tarım yapılan bir arazi uzun süre işlenmedikten sonra doğal bitkilerle kaplanmaya başlıyor. Önceki bitki topluluğu ortadan kalkmış, ancak üst toprağın ve tohum bankasının bir bölümü korunmuş. Hangi süksesyon türü gerçekleşir?",
+      "alt_beceri": "Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
+      "metin": "Bir popülasyonda bir yıl içinde 40 doğum, 10 içe göç, 30 ölüm ve 5 dışa göç gerçekleşmiştir. Popülasyon büyüklüğü nasıl değişir?",
       "secenekler": [
-        "Süksesyon gerçekleşmez; bitkiler yeniden gelişemez.",
-        "Birincil süksesyon; çünkü toprak hiç bulunmaz.",
-        "Birincil süksesyon; çünkü tohumlar korunmuştur.",
-        "İkincil süksesyon; çünkü toprak ve önceki topluluktan kalan tohumlar vardır."
+        "15 birey azalır",
+        "Değişmez",
+        "15 birey artar",
+        "50 birey artar"
       ],
-      "dogru_index": 3,
-      "cozum": "Önceden bir komünitenin bulunduğu alanda üst toprağın ve tohum bankasının korunması ikincil süksesyona işaret eder. Bu koşullarda yeni topluluk, topraksız bir yüzeydekinden daha hızlı gelişebilir.",
+      "dogru_index": 2,
+      "cozum": "Değişme = (doğum + içe göç) − (ölüm + dışa göç) = (40 + 10) − (30 + 5) = 15; popülasyon büyür (s.120).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yeni açılmış bir dağ yolu yarmasındaki topraksız kaya yüzeyinde başlayan bitki topluluğu nasıl gelişir?",
-        "back": "Öncü likenler ve karayosunları yerleşip toprak oluşumuna katkı verir. Toprak geliştikçe otsu bitkiler ve çalılar, daha sonra ağaçlar yerleşir; komünite giderek karmaşıklaşır."
+        "front": "Popülasyon büyüklüğü nasıl hesaplanır?",
+        "back": "(Doğum + içe göç) − (ölüm + dışa göç)."
       },
-      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o09",
-      "alt_beceri": "Ekosistemde Madde ve Enerji Akışı",
-      "metin": "Bir kıyı gölünde algler ışığı kullanarak organik madde üretiyor; zooplankton alglerle, küçük balıklar da zooplanktonla besleniyor. Bu besin zincirinde enerji aktarımı ilk hangi canlı grubunda başlar?",
+      "alt_beceri": "Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
+      "metin": "Bir gölde 1 hektarlık alanda bulunabilecek maksimum sazan sayısını ifade eden kavram nedir?",
       "secenekler": [
-        "Enerji aktarımının başladığı ilk halkada",
-        "Yalnızca son tüketiciden sonra",
-        "Ayrıştırıcıların yerine geçen son halkada",
-        "Enerji akışından bağımsız olarak"
+        "Popülasyon yoğunluğu",
+        "Taşıma kapasitesi",
+        "Çevre direnci",
+        "Ekolojik niş"
       ],
-      "dogru_index": 0,
-      "cozum": "Algler üreticidir; Güneş enerjisini besinlerde depolanan kimyasal enerjiye dönüştürür. Bu nedenle enerji aktarımı besin zincirinde üreticilerden başlar.",
+      "dogru_index": 1,
+      "cozum": "Birim alanda bulunabilecek maksimum birey sayısına taşıma kapasitesi denir; buna yaklaşan popülasyonlarda çevre direnci artar (s.121).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekosistemde enerji akışı ile madde döngülerinin yön ve süreklilik bakımından farkını açıklayınız.",
-        "back": "Enerji üreticilerden tüketicilere doğru tek yönlü akar ve bir bölümü ısı olarak kaybolur; su, karbon ve azot gibi maddeler canlılarla çevre arasında döngüsel olarak dolaşır."
+        "front": "Çevre direnci nedir?",
+        "back": "Büyümeyi engelleyen biyotik ve abiyotik faktörlerin tümü."
       },
-      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o10",
-      "alt_beceri": "Ekosistemde Madde ve Enerji Akışı",
-      "metin": "Bir tür birden fazla besin zincirinde yer alıyor ve farklı türlerle beslenme ilişkileri kuruyorsa bu ilişkilerin bütünü nasıl gösterilir?",
+      "alt_beceri": "Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
+      "metin": "Topraksız bir kaya yüzeyinde başlayan süksesyon sürecinde ilk yerleşen canlılar hangileridir?",
       "secenekler": [
-        "Tek bir popülasyon",
-        "Besin ağı",
-        "Yalnızca bir besin zinciri",
-        "Birincil süksesyon"
+        "Büyük ağaçlar",
+        "Çalılar",
+        "Otsu bitkiler",
+        "Likenler"
       ],
-      "dogru_index": 1,
-      "cozum": "Birden fazla besin zincirinin birbirine bağlanmasıyla çok yönlü beslenme ilişkilerini gösteren besin ağı oluşur. Tek bir zincir ilişkilerin bu karmaşıklığını göstermez.",
+      "dogru_index": 3,
+      "cozum": "Kayalık ve taşlık yerlere uyum sağlamış likenler ilk yerleşir, toprak oluşumunu başlatır; sonra yosunlar, otsu bitkiler, çalılar ve ağaçlar gelir (s.118).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Besin zinciri ile besin ağının yapı bakımından farkını açıklayınız.",
-        "back": "Besin zinciri, üreticiden tüketiciye uzanan beslenme ilişkisidir; birden fazla zincirin birbirine bağlanması daha karmaşık besin ağını oluşturur."
+        "front": "Süksesyon nedir?",
+        "back": "Türlerin zaman içinde sıralı olarak birbirinin yerini alması."
       },
-      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o11",
-      "alt_beceri": "Ekolojik Piramitler",
-      "metin": "Her trofik basamaktaki canlıların toplam organik madde miktarını gösteren piramit hangisidir?",
+      "alt_beceri": "Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
+      "metin": "Bir ormanda 1 km² alanda 45 sincap sayılmıştır. Bu değer popülasyonun hangi özelliğini verir?",
       "secenekler": [
-        "Enerji piramidi",
-        "Sayı piramidi",
-        "Biyokütle piramidi",
-        "Besin ağı"
+        "Yoğunluğunu",
+        "Büyüklüğünü",
+        "Taşıma kapasitesini",
+        "Çevre direncini"
       ],
-      "dogru_index": 2,
-      "cozum": "Biyokütle piramidi trofik basamaklardaki canlıların toplam organik madde miktarını gösterir. Enerji piramidi ise kullanılabilir enerji miktarını gösterir.",
+      "dogru_index": 0,
+      "cozum": "Birim alan ya da birim hacimde bulunan birey sayısı popülasyon yoğunluğunu verir; 1 km²'de 45 sincap yoğunluk ölçüsüdür (s.120).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Enerji piramidi ile biyokütle piramidinin gösterdiği özellikleri karşılaştırınız.",
-        "back": "Enerji piramidi trofik basamaklardaki kullanılabilir enerji miktarını; biyokütle piramidi her basamaktaki canlıların toplam organik madde miktarını gösterir."
+        "front": "Popülasyon yoğunluğu nedir?",
+        "back": "Birim alan veya hacimdeki birey sayısı."
       },
-      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     },
     {
       "soru_id": "biyo_10_u02_k02_o12",
-      "alt_beceri": "Ekolojik Piramitler",
-      "metin": "Bir trofik basamakta biyokütlede 2.400 kJ enerji depolanmıştır. Yaklaşık %10 aktarım kuralına göre bir üst basamağa ne kadar enerji geçer?",
+      "alt_beceri": "Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
+      "metin": "Bir göldeki sazan popülasyonuna başka bir gölden 30 birey katılmış, aynı yıl 25 birey ölmüştür. Bu veriler popülasyon büyüklüğünü nasıl etkiler?",
       "secenekler": [
-        "2.400 kJ",
-        "24 kJ",
-        "120 kJ",
-        "240 kJ"
-      ],
-      "dogru_index": 3,
-      "cozum": "Bir üst trofik basamağa biyokütlede depolanan enerjinin yaklaşık %10’u aktarılır. 2.400 kJ’nin %10’u 240 kJ’dir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Ekolojik piramitte üst trofik basamağa aktarılan enerjinin yaklaşık oranını ve kullanılmayan enerjinin akıbetini açıklayınız.",
-        "back": "Bir basamaktaki biyokütle enerjisinin yaklaşık %10'u bir üst basamağa aktarılır; enerjinin çoğu solunumla ısıya dönüşür veya atıklarla uzaklaştırılır."
-      },
-      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
-    },
-    {
-      "soru_id": "biyo_10_u02_k02_o13",
-      "alt_beceri": "Biyolojik Birikim ve Etkileri",
-      "metin": "Besin zincirine giren ve vücuttan kolayca uzaklaştırılamayan bir zehirli maddenin miktarı genellikle hangi canlılarda daha fazla olur?",
-      "secenekler": [
-        "Besin zincirinin en altındaki üreticilerde her zaman sıfır olur.",
-        "Yalnızca ayrıştırıcılarda, diğer canlılarda hiç bulunmaz.",
-        "Üst trofik basamaklardaki canlılarda daha fazla birikir.",
-        "Besin zincirindeki tüm canlılarda daima eşit olur."
+        "İçe göç 30, ölüm 25 olduğu için büyüklük 5 birey azalır",
+        "İçe göç ve ölüm birbirini götürdüğü için değişmez",
+        "İçe göç 30, ölüm 25 olduğu için büyüklük 5 birey artar",
+        "Yalnızca dışa göç büyüklüğü etkilediği için değişmez"
       ],
       "dogru_index": 2,
-      "cozum": "Besin zincirinde üst trofik basamaklara çıkıldıkça canlıların dokularında biriken zehirli madde miktarı artabilir. Bu nedenle miktarın her canlıda eşit kalması beklenmez.",
+      "cozum": "Büyüklük değişimi (doğum + içe göç) − (ölüm + dışa göç) ile bulunur; doğum ve dışa göç yokken 30 − 25 = +5 olur (s.120).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Biyolojik birikimi, bu birikime yol açabilen madde ve canlı dokularındaki değişim bakımından tanımlayınız.",
-        "back": "Vücuttan kolayca uzaklaştırılamayan zararlı kimyasal maddelerin besin zinciri boyunca ilerleyip canlıların dokularında birikmesine biyolojik birikim denir."
+        "front": "İçe göç nedir?",
+        "back": "Başka popülasyondan bireylerin popülasyona katılması."
       },
-      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
-    },
-    {
-      "soru_id": "biyo_10_u02_k02_o14",
-      "alt_beceri": "Biyolojik Birikim ve Etkileri",
-      "metin": "X kirleticisi çevrede yavaş parçalanıyor ve canlı dokularında birikebiliyor. Besin zinciri boyunca aktarılması hangi sonucu doğurabilir?",
-      "secenekler": [
-        "Canlı dokularında birikmeden kısa sürede tamamen yok olmasını",
-        "Üreticilerin tüm kirleticileri enerjiye dönüştürmesini",
-        "Yalnızca cansız çevrede kalıp canlılara ulaşmamasını",
-        "Besin zinciri boyunca taşınarak canlı dokularında birikmesini"
-      ],
-      "dogru_index": 3,
-      "cozum": "Yavaş parçalanan kalıcı kirleticiler canlılara geçebilir ve dokularda birikebilir; besin zincirindeki aktarım bu yükü üst trofik düzeylere taşıyabilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Kalıcı kirleticiler besin zinciri boyunca nasıl taşınır ve canlıların dokularında ne tür birikim oluşturabilir?",
-        "back": "Kolay parçalanmayan ve vücuttan uzaklaştırılması zor maddeler canlı dokularında birikebilir. Besin zinciri boyunca üst trofik basamaklara aktarılıp burada daha yüksek miktarlarda birikebilir."
-      },
-      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+      "kazanim": "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "biyo_10_u02_k02_o01:flashcard",
-      "front": "Ekolojik organizasyon düzeylerini küçük birimden büyüğe doğru sıralayınız.",
-      "back": "Organizma → popülasyon → komünite → ekosistem → biyosfer."
+      "front": "Kommensalizm nedir?",
+      "back": "Biri fayda görürken diğerinin etkilenmediği birliktelik."
     },
     {
       "id": "biyo_10_u02_k02_o02:flashcard",
-      "front": "Komünite ile ekosistem arasındaki kapsam farkını açıklayınız.",
-      "back": "Komünite, belirli bir alanda etkileşim hâlindeki farklı türlerin topluluğudur; ekosistem bu canlı topluluğuyla etkileşimdeki cansız çevreyi de kapsar."
+      "front": "Amensalizm nedir?",
+      "back": "Biri engellenirken diğerinin etkilenmediği ilişki."
     },
     {
       "id": "biyo_10_u02_k02_o03:flashcard",
-      "front": "Popülasyon yoğunluğunu tanımlayınız ve kullanılan ölçü birimini belirtiniz.",
-      "back": "Popülasyon yoğunluğu, birim alan ya da birim hacimde bulunan birey sayısıdır; örneğin birey/km² olarak ifade edilebilir."
+      "front": "Yarı parazit bitki nedir?",
+      "back": "Klorofili olan, konaktan yalnız su-mineral alan bitki."
     },
     {
       "id": "biyo_10_u02_k02_o04:flashcard",
-      "front": "Popülasyon büyüklüğünü artıran ve azaltan olayları karşılaştırınız.",
-      "back": "Doğumlar ve içe göçler popülasyon büyüklüğünü artırır; ölümler ve dışa göçler azaltır. Bu iki toplam eşitse popülasyon dengede kalır."
+      "front": "Tam parazit bitki nedir?",
+      "back": "Kloroplastı olmayan, tüm maddeleri konaktan alan bitki."
     },
     {
       "id": "biyo_10_u02_k02_o05:flashcard",
-      "front": "Tür içi ve türler arası rekabeti, rekabete giren canlıların tür sayısı bakımından karşılaştırınız.",
-      "back": "Aynı tür bireyleri arasındaki rekabet tür içi; farklı türler arasındaki rekabet türler arası rekabettir. Sınırlı kaynaklar için rekabet şiddetlenebilir."
+      "front": "Zorunlu mutualizm nedir?",
+      "back": "Tarafların birbirine bağımlı olduğu mutualizm; örn. liken."
     },
     {
       "id": "biyo_10_u02_k02_o06:flashcard",
-      "front": "Mutualizm, kommensalizm, amensalizm ve parazitizmde türlerin yarar-zarar durumlarını özetleyiniz.",
-      "back": "Mutualizmde iki tür yarar görür; kommensalizmde biri yarar görür, diğeri etkilenmez; amensalizmde biri zarar görür, diğeri etkilenmez; parazitizmde parazit yarar, konak zarar görür."
+      "front": "Nodül nedir?",
+      "back": "Azot bağlayıcı bakterilerin kökte oluşturduğu yapı."
     },
     {
       "id": "biyo_10_u02_k02_o07:flashcard",
-      "front": "Birincil ve ikincil süksesyonun başlangıç koşullarını karşılaştırınız.",
-      "back": "Birincil süksesyon gelişmiş toprağın ve yerleşik komünitenin bulunmadığı ortamda; ikincil süksesyon ise daha önce komünite bulunan alan bozulduğunda gerçekleşir."
+      "front": "Ekolojik niş nedir?",
+      "back": "Türün tüm faaliyetleri, ilişkileri ve ekosistemdeki işlevi."
     },
     {
       "id": "biyo_10_u02_k02_o08:flashcard",
-      "front": "Yeni açılmış bir dağ yolu yarmasındaki topraksız kaya yüzeyinde başlayan bitki topluluğu nasıl gelişir?",
-      "back": "Öncü likenler ve karayosunları yerleşip toprak oluşumuna katkı verir. Toprak geliştikçe otsu bitkiler ve çalılar, daha sonra ağaçlar yerleşir; komünite giderek karmaşıklaşır."
+      "front": "Popülasyon büyüklüğü nasıl hesaplanır?",
+      "back": "(Doğum + içe göç) − (ölüm + dışa göç)."
     },
     {
       "id": "biyo_10_u02_k02_o09:flashcard",
-      "front": "Ekosistemde enerji akışı ile madde döngülerinin yön ve süreklilik bakımından farkını açıklayınız.",
-      "back": "Enerji üreticilerden tüketicilere doğru tek yönlü akar ve bir bölümü ısı olarak kaybolur; su, karbon ve azot gibi maddeler canlılarla çevre arasında döngüsel olarak dolaşır."
+      "front": "Çevre direnci nedir?",
+      "back": "Büyümeyi engelleyen biyotik ve abiyotik faktörlerin tümü."
     },
     {
       "id": "biyo_10_u02_k02_o10:flashcard",
-      "front": "Besin zinciri ile besin ağının yapı bakımından farkını açıklayınız.",
-      "back": "Besin zinciri, üreticiden tüketiciye uzanan beslenme ilişkisidir; birden fazla zincirin birbirine bağlanması daha karmaşık besin ağını oluşturur."
+      "front": "Süksesyon nedir?",
+      "back": "Türlerin zaman içinde sıralı olarak birbirinin yerini alması."
     },
     {
       "id": "biyo_10_u02_k02_o11:flashcard",
-      "front": "Enerji piramidi ile biyokütle piramidinin gösterdiği özellikleri karşılaştırınız.",
-      "back": "Enerji piramidi trofik basamaklardaki kullanılabilir enerji miktarını; biyokütle piramidi her basamaktaki canlıların toplam organik madde miktarını gösterir."
+      "front": "Popülasyon yoğunluğu nedir?",
+      "back": "Birim alan veya hacimdeki birey sayısı."
     },
     {
       "id": "biyo_10_u02_k02_o12:flashcard",
-      "front": "Ekolojik piramitte üst trofik basamağa aktarılan enerjinin yaklaşık oranını ve kullanılmayan enerjinin akıbetini açıklayınız.",
-      "back": "Bir basamaktaki biyokütle enerjisinin yaklaşık %10'u bir üst basamağa aktarılır; enerjinin çoğu solunumla ısıya dönüşür veya atıklarla uzaklaştırılır."
-    },
-    {
-      "id": "biyo_10_u02_k02_o13:flashcard",
-      "front": "Biyolojik birikimi, bu birikime yol açabilen madde ve canlı dokularındaki değişim bakımından tanımlayınız.",
-      "back": "Vücuttan kolayca uzaklaştırılamayan zararlı kimyasal maddelerin besin zinciri boyunca ilerleyip canlıların dokularında birikmesine biyolojik birikim denir."
-    },
-    {
-      "id": "biyo_10_u02_k02_o14:flashcard",
-      "front": "Kalıcı kirleticiler besin zinciri boyunca nasıl taşınır ve canlıların dokularında ne tür birikim oluşturabilir?",
-      "back": "Kolay parçalanmayan ve vücuttan uzaklaştırılması zor maddeler canlı dokularında birikebilir. Besin zinciri boyunca üst trofik basamaklara aktarılıp burada daha yüksek miktarlarda birikebilir."
+      "front": "İçe göç nedir?",
+      "back": "Başka popülasyondan bireylerin popülasyona katılması."
     }
-  ],
-  "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı"
+  ]
 }

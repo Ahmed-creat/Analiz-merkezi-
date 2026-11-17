@@ -306,6 +306,31 @@ function uret() {
     },
     konular
   };
+  /* v75 — KORUMA: bu betik yalnız kendi ürettiği alanları yazar. Dosyada
+     bulunan diğer alanlar (pdf_sayfa, bolum, icerik, iliskili_konular)
+     korunur; aksi hâlde her çalıştırmada içerik verisi silinir. */
+  try {
+    const eskiDosya = JSON.parse(fs.readFileSync(D("tde_kazanim_10.json"), "utf8"));
+    // Üst düzey alanlar (iliski_ozet, kaynak_pdf, surum …) korunur.
+    for (const alan of Object.keys(eskiDosya)) {
+      if (dosya[alan] === undefined) dosya[alan] = eskiDosya[alan];
+    }
+    const eskiBy = {};
+    for (const k of (eskiDosya.konular || [])) eskiBy[k.konu_id] = k;
+    for (const k of dosya.konular) {
+      const e = eskiBy[k.konu_id];
+      if (!e) continue;
+      for (const alan of Object.keys(e)) {
+        if (k[alan] === undefined) k[alan] = e[alan];
+      }
+      // Anahtar kavramlar: yeni liste daha kısaysa eskisi korunur.
+      if (Array.isArray(e.anahtar_kavramlar) &&
+          (!Array.isArray(k.anahtar_kavramlar) ||
+           k.anahtar_kavramlar.length < e.anahtar_kavramlar.length)) {
+        k.anahtar_kavramlar = e.anahtar_kavramlar;
+      }
+    }
+  } catch (err) { /* dosya yoksa ilk üretim */ }
   fs.writeFileSync(D("tde_kazanim_10.json"), JSON.stringify(dosya, null, 1));
 
   /* --- konu_esleme.json: TDE arama metni --- */

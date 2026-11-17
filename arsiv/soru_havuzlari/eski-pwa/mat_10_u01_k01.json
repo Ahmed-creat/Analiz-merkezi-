@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u01_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u01_k01_o01",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Dik üçgende α açısının karşı dik kenarı 7, komşu dik kenarı 24 birimdir. tan α kaçtır?",
+      "secenekler": [
+        "24/7",
+        "7/24",
+        "25/24",
+        "7/25"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tanjant karşı dik kenarın komşu dik kenara oranıdır: tan α=7/24.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik üçgende dar açı α için tanjant oranını karşı ve komşu dik kenarlarla yaz.",
+        "back": "tan α = karşı dik kenar uzunluğu / komşu dik kenar uzunluğu."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o02",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Aynı dar açıya sahip iki dik üçgende ilk üçgenin karşı ve komşu dik kenarları sırasıyla 9 ve 40 birimdir. İkinci üçgenin karşı dik kenarı x, komşu dik kenarı 80 birim olduğuna göre x kaçtır?",
+      "secenekler": [
+        "9",
+        "20",
+        "40",
+        "18"
+      ],
+      "dogru_index": 3,
+      "cozum": "Benzer dik üçgenlerde karşı/komşu kenar oranı sabittir: 9/40=x/80, buradan x=18 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik üçgende dar açı α için tan α ve cot α oranlarını kenar uzunluklarıyla yaz.",
+        "back": "tan α = karşı dik kenar / komşu dik kenar; cot α = komşu dik kenar / karşı dik kenar."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o03",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "α dar açı ve sin α = 20/29 olduğuna göre cos α kaçtır?",
+      "secenekler": [
+        "21/29",
+        "20/29",
+        "29/21",
+        "9/29"
+      ],
+      "dogru_index": 0,
+      "cozum": "sin²α+cos²α=1 ve α dar olduğundan cos α pozitiftir. cos α=√(1−400/841)=21/29.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dar açı α için sin²α + cos²α trigonometrik özdeşliğini tamamla.",
+        "back": "sin²α + cos²α = 1."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o04",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir dar açı α için tan α = 5/8 ise cot α kaçtır?",
+      "secenekler": [
+        "5/8",
+        "8/13",
+        "8/5",
+        "5/3"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tanjant ve kotanjant birbirinin çarpmaya göre tersidir; cot α = 8/5 bulunur. 5/8 verilen tanjant değeridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dar açı α için tan α ile cot α değerlerinin çarpımını yaz.",
+        "back": "tan α · cot α = 1."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o05",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Dik üçgen biçimindeki bir vitray parçasında 30°lik açının karşısındaki kenar 8 cm’dir. Bu açının oluşturduğu üçgende hipotenüs uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "8 cm",
+        "16 cm",
+        "4√3 cm",
+        "8√3 cm"
+      ],
+      "dogru_index": 1,
+      "cozum": "sin 30° = karşı kenar/hipotenüs = 1/2 olduğundan 8/H=1/2 ve H=16 cm bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "30° ölçülü açı için sinüs, kosinüs, tanjant ve kotanjant değerlerini sırayla yaz.",
+        "back": "sin 30° = 1/2, cos 30° = √3/2, tan 30° = √3/3 ve cot 30° = √3."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o06",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir ikizkenar dik üçgenin dik kenarlarının her biri 4 cm’dir. Hipotenüsün uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "4",
+        "8",
+        "4√3",
+        "4√2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Pisagor bağıntısına göre hipotenüs √(4² + 4²) = 4√2 cm’dir. 8 cm dik kenarların toplamıdır, hipotenüs değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "45° ölçülü açı için sinüs, kosinüs, tanjant ve kotanjant değerlerini yaz.",
+        "back": "sin 45° = cos 45° = √2/2 ve tan 45° = cot 45° = 1."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o07",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir sahne platformunun eğik destek parçası yatay tabanla α açısı yapıyor. Destek parçasının oluşturduğu dik üçgende düşey yükselmenin yatay uzaklığa oranı trigonometrik olarak nasıl yazılır?",
+      "secenekler": [
+        "tan α",
+        "sin α",
+        "cos α",
+        "cot α"
+      ],
+      "dogru_index": 0,
+      "cozum": "Düşey yükselme α açısının karşı dik kenarı, yatay uzaklık ise komşu dik kenardır. Karşı/komşu oranı tan α’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dar açı x için tan x ve cot x oranlarını sin x ve cos x türünden yaz.",
+        "back": "tan x = sin x / cos x ve cot x = cos x / sin x."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o08",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir dar açı β için sin β=9/41 ve cos β=40/41 olduğuna göre cot β kaçtır?",
+      "secenekler": [
+        "9/40",
+        "41/9",
+        "40/9",
+        "9/41"
+      ],
+      "dogru_index": 2,
+      "cozum": "cot β=cos β/sin β=(40/41)/(9/41)=40/9.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hipotenüsü 1 birim olan dik üçgende dar açı x için karşı ve komşu dik kenar uzunluklarını trigonometrik oranlarla ifade et.",
+        "back": "Karşı dik kenar sin x, komşu dik kenar cos x uzunluğundadır."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o09",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Birim çember üzerindeki bir açının uç noktası P(−12/37, 35/37) olduğuna göre (cos θ, sin θ) sıralı ikilisi hangisidir?",
+      "secenekler": [
+        "(35/37, −12/37)",
+        "(−12/37, 35/37)",
+        "(12/37, 35/37)",
+        "(−35/37, 12/37)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Birim çemberde x koordinatı cos θ, y koordinatı sin θ olduğundan (cos θ, sin θ)=(−12/37,35/37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birim çemberde ölçüsü θ olan açının çemberi kestiği P(x, y) noktası ile cos θ ve sin θ arasındaki ilişkiyi yaz.",
+        "back": "P noktasının koordinatları (cos θ, sin θ) biçimindedir; x = cos θ ve y = sin θ."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o10",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Aşağıdaki noktalardan hangisi birim çember üzerinde bulunur?",
+      "secenekler": [
+        "(7/25, 24/25)",
+        "(7/25, 20/25)",
+        "(1, 1)",
+        "(0, 0)"
+      ],
+      "dogru_index": 0,
+      "cozum": "Birim çemberin merkezi orijin, yarıçapı 1 olduğundan x² + y² = 1 olmalıdır. (7/25)² + (24/25)² = 49/625 + 576/625 = 1; diğer noktalar bu koşulu sağlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birim çemberin merkezini ve yarıçap uzunluğunu belirt.",
+        "back": "Birim çemberin merkezi orijin, yarıçapı 1 birimdir."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o11",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir ışın başlangıç kolundan saat yönünde 235° döndürülüyor. Bu yönlü açı hangi ölçüyle gösterilir?",
+      "secenekler": [
+        "+235°",
+        "+125°",
+        "−125°",
+        "−235°"
+      ],
+      "dogru_index": 3,
+      "cozum": "Saat yönündeki dönüş negatif yönlü açı olarak gösterilir. Dönüşün büyüklüğü 235° olduğundan ölçü −235° olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir ışın orijini merkez alarak saat yönünün tersine ya da saat yönünde döndüğünde yönlü açı işaretini tamamla: ... dönüş pozitif, ... dönüş negatif.",
+        "back": "Saat yönünün tersine dönüş pozitif, saat yönündeki dönüş negatif yönlü açı oluşturur."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u01_k01_o12",
+      "alt_beceri": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "metin": "Bir ışın başlangıç kolundan saat yönünün tersine 137° döndürülüyor. Bu yönlü açı hangi ölçüyle gösterilir?",
+      "secenekler": [
+        "−137°",
+        "−223°",
+        "+137°",
+        "+223°"
+      ],
+      "dogru_index": 2,
+      "cozum": "Saat yönünün tersindeki dönüş pozitif yönlü açı olarak gösterilir. Bu nedenle ölçü +137° olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Saat yönünün tersine 140°lik bir dönüş yönlü açı gösteriminde nasıl yazılır?",
+        "back": "Saat yönünün tersine dönüş pozitif olduğundan +140° yazılır."
+      },
+      "kazanim": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u01_k01_o01:flashcard",
+      "front": "Dik üçgende dar açı α için tanjant oranını karşı ve komşu dik kenarlarla yaz.",
+      "back": "tan α = karşı dik kenar uzunluğu / komşu dik kenar uzunluğu."
+    },
+    {
+      "id": "mat_10_u01_k01_o02:flashcard",
+      "front": "Dik üçgende dar açı α için tan α ve cot α oranlarını kenar uzunluklarıyla yaz.",
+      "back": "tan α = karşı dik kenar / komşu dik kenar; cot α = komşu dik kenar / karşı dik kenar."
+    },
+    {
+      "id": "mat_10_u01_k01_o03:flashcard",
+      "front": "Dar açı α için sin²α + cos²α trigonometrik özdeşliğini tamamla.",
+      "back": "sin²α + cos²α = 1."
+    },
+    {
+      "id": "mat_10_u01_k01_o04:flashcard",
+      "front": "Dar açı α için tan α ile cot α değerlerinin çarpımını yaz.",
+      "back": "tan α · cot α = 1."
+    },
+    {
+      "id": "mat_10_u01_k01_o05:flashcard",
+      "front": "30° ölçülü açı için sinüs, kosinüs, tanjant ve kotanjant değerlerini sırayla yaz.",
+      "back": "sin 30° = 1/2, cos 30° = √3/2, tan 30° = √3/3 ve cot 30° = √3."
+    },
+    {
+      "id": "mat_10_u01_k01_o06:flashcard",
+      "front": "45° ölçülü açı için sinüs, kosinüs, tanjant ve kotanjant değerlerini yaz.",
+      "back": "sin 45° = cos 45° = √2/2 ve tan 45° = cot 45° = 1."
+    },
+    {
+      "id": "mat_10_u01_k01_o07:flashcard",
+      "front": "Dar açı x için tan x ve cot x oranlarını sin x ve cos x türünden yaz.",
+      "back": "tan x = sin x / cos x ve cot x = cos x / sin x."
+    },
+    {
+      "id": "mat_10_u01_k01_o08:flashcard",
+      "front": "Hipotenüsü 1 birim olan dik üçgende dar açı x için karşı ve komşu dik kenar uzunluklarını trigonometrik oranlarla ifade et.",
+      "back": "Karşı dik kenar sin x, komşu dik kenar cos x uzunluğundadır."
+    },
+    {
+      "id": "mat_10_u01_k01_o09:flashcard",
+      "front": "Birim çemberde ölçüsü θ olan açının çemberi kestiği P(x, y) noktası ile cos θ ve sin θ arasındaki ilişkiyi yaz.",
+      "back": "P noktasının koordinatları (cos θ, sin θ) biçimindedir; x = cos θ ve y = sin θ."
+    },
+    {
+      "id": "mat_10_u01_k01_o10:flashcard",
+      "front": "Birim çemberin merkezini ve yarıçap uzunluğunu belirt.",
+      "back": "Birim çemberin merkezi orijin, yarıçapı 1 birimdir."
+    },
+    {
+      "id": "mat_10_u01_k01_o11:flashcard",
+      "front": "Bir ışın orijini merkez alarak saat yönünün tersine ya da saat yönünde döndüğünde yönlü açı işaretini tamamla: ... dönüş pozitif, ... dönüş negatif.",
+      "back": "Saat yönünün tersine dönüş pozitif, saat yönündeki dönüş negatif yönlü açı oluşturur."
+    },
+    {
+      "id": "mat_10_u01_k01_o12:flashcard",
+      "front": "Saat yönünün tersine 140°lik bir dönüş yönlü açı gösteriminde nasıl yazılır?",
+      "back": "Saat yönünün tersine dönüş pozitif olduğundan +140° yazılır."
+    }
+  ],
+  "baslik": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
+  "topic_key": "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler"
+}

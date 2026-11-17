@@ -451,28 +451,10 @@ function bkt(kayit) {
   ok("müfredat okundu", !!cur);
   let konuSayisi = 0, eslesen = 0, hataliEslesme = 0, havuzsuzSayi = 0;
   const hataliOrnek = [];
-  const HAVUZSUZ_20 = new Set([
-    "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
-    "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
-    "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
-    "Din Kültürü > 2.3 Hac ve Zekât",
-    "Din Kültürü > 2.4 Kur'an'dan Mesajlar (Ünite 2)",
-    "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Ünite 3)",
-    "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler",
-    "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
-    "Kimya > 2.1.8 Koligatif Özellikler",
-    "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
-    "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
-    "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
-    "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
-    "Coğrafya > 6.3 Afetlerden Korunma",
-    "Coğrafya > 6.4 Afet Bilinci",
-    "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
-    "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
-    "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
-    "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
-    "Türk Dili ve Edebiyatı > Paragraf"
-  ]);
+  /* v75 — Havuzlar ders kitabından yeniden üretildi (192 havuz).
+     Kullanıcı kararı: Paragraf'a HAVUZ OLMAYACAK (uygulamada paragraf
+     sorulamıyor). Kalan 192 konunun hepsi kendi havuzuna bağlanır. */
+  const HAVUZSUZ = new Set(["Türk Dili ve Edebiyatı > Paragraf"]);
   if (cur) {
     const sade = (x) => String(x == null ? "" : x).toLocaleLowerCase("tr-TR")
       .replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ç/g, "c")
@@ -486,7 +468,7 @@ function bkt(kayit) {
           /* v72 — Kullanıcı isteğiyle ajanın elle yazdığı 20 havuz silindi.
              Bu 20 konunun kendi havuzu YOK; kardeş havuzla eşleşmesi beklenen
              durumdur ve soru üretimi tamamlanınca kendiliğinden düzelir. */
-          if (String(sinif) === "10" && HAVUZSUZ_20.has(key)) { havuzsuzSayi++; return; }
+          if (String(sinif) === "10" && HAVUZSUZ.has(key)) { havuzsuzSayi++; return; }
           const h = API.havuzEsle(key, GERCEK);
           if (!h) return;
           eslesen++;
@@ -511,7 +493,7 @@ function bkt(kayit) {
   }
   ok("müfredat tarandı (" + konuSayisi + " konu, " + eslesen + " eşleşme)", konuSayisi > 200);
   esit("YANLIŞ konuya bağlanan havuz sayısı", hataliEslesme, 0);
-  esit("havuzsuz (soruları silinen) konu 20", havuzsuzSayi, 20);
+  esit("havuzsuz konu 1 (Paragraf — kullanıcı kararı)", havuzsuzSayi, 1);
   if (hataliOrnek.length) hataliOrnek.forEach(x => console.log("   ! " + x));
 
   // ==========================================================

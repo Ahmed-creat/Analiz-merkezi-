@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u03_k02",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 3,
+  "tema_adi": "Dünden Bugüne",
+  "baslik": "Mesnevi",
+  "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+  "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.117-118",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u03_k02_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir uzun şiirde her iki dizelik birimin kendi kafiyesi var ve bir sonraki beyit yeni bir uyakla başlıyor. Bu örgü hangi nazım biçimine özgüdür?",
+      "alt_beceri": "Mesnevinin kafiye düzeni, beyit sayısı ve ölçü özelliklerini belirler.",
+      "metin": "Divan şiirinde uzun aşk hikâyeleri ve tarihî olaylar anlatılırken her beytin dizelerinin kendi arasında uyaklandığı biçim seçilmiştir. Bu biçimin kafiye düzeni hangisidir?",
       "secenekler": [
-        "Mesnevi",
-        "Gazel",
-        "Koşma",
-        "Türkü"
+        "aa, ba, ca, da",
+        "aa, bb, cc, dd",
+        "abab, cccb",
+        "aaxa, aaaa"
       ],
-      "dogru_index": 0,
-      "cozum": "Mesnevide her beyit kendi içinde kafiyelidir; böylece uzun anlatıda yeni uyak bulmak kolaylaşır. Gazelde sonraki beyitlerin ikinci dizeleri ilk beyitle uyaklanır.",
+      "dogru_index": 1,
+      "cozum": "Mesnevide her beyit kendi arasında kafiyelidir: aa, bb, cc, dd. Kafiye bulma zorluğu şairleri uzun metinlerde bu biçime yöneltmiştir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mesnevinin uyak düzenini ve nazım birimini yaz.",
-        "back": "Mesnevi beyitlerle yazılır; her beyit kendi içinde uyaklanır: aa, bb, cc…"
-      }
+        "front": "Mesnevinin kafiye düzeni nedir?",
+        "back": "Her beyit kendi arasında kafiyelidir: aa, bb, cc, dd."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şair, uzun bir olay örgüsünü beyitler hâlinde sürdürmek istiyor; her yeni beyitte farklı uyak kurabiliyor. Bu seçim mesnevinin hangi yapısal kolaylığından yararlanır?",
+      "alt_beceri": "Mesnevinin kafiye düzeni, beyit sayısı ve ölçü özelliklerini belirler.",
+      "metin": "Bir mesnevinin binlerce beyitten oluştuğu görülmüş, gazel ve kasidedeki sınırların burada geçerli olmadığı anlaşılmıştır. Mesnevide beyit sayısı için ne söylenir?",
       "secenekler": [
-        "Her dörtlükte nakarat bulunmasından",
-        "Her beyitte bağımsız uyak kurabilmesinden",
-        "Beyit sayısının sınırlı olmasından",
-        "Ölçüsüz düzyazı biçiminde yazılmasından"
+        "5-15 arasıdır",
+        "33-99 arasıdır",
+        "Dört beyittir",
+        "Sınırsızdır"
       ],
-      "dogru_index": 1,
-      "cozum": "Her beyit kendi arasında uyaklandığından, mesnevi uzun anlatılarda kafiye bulma güçlüğünü azaltır. Dörtlük ve nakarat koşma/türküyle ilgilidir.",
+      "dogru_index": 3,
+      "cozum": "Mesnevide beyit sayısı sınırsızdır; bu yüzden roman ve hikâyenin yerini tutan uzun metinler mesneviyle yazılmıştır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mesneviler neden uzun olay ve hikâyeleri anlatmaya elverişlidir?",
-        "back": "Beyit sayısı sınırsızdır ve her beyit kendi içinde uyaklandığı için uzun anlatıda kafiye sürdürmek kolaylaşır."
-      }
+        "front": "Mesnevinin beyit sayısı nedir?",
+        "back": "Sınırsızdır; uzun konular bu biçimle anlatılır."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şiir biçiminin önce İran edebiyatında ortaya çıktığı, sonra Türk edebiyatında kullanıldığı belirtiliyor. Bu biçim hangisidir?",
+      "alt_beceri": "Hamse geleneğini ve bu geleneğe katkıları ayırt eder.",
+      "metin": "Mesnevi, aruzun genellikle kısa kalıplarıyla yazılır. Şairleri uzun metinlerde bu biçime yönelten temel güçlük hangisidir?",
       "secenekler": [
-        "Mani",
-        "Koşma",
-        "Mesnevi",
-        "Sagu"
+        "Diğer nazım şekillerinde kafiye bulma zorluğu",
+        "Aruz kalıplarının sayıca azlığı",
+        "Beyitlerin tek dize hâlinde yazılması",
+        "Dörtlük sayısının sınırlı olması"
       ],
-      "dogru_index": 2,
-      "cozum": "Mesnevi İran edebiyatında ortaya çıkmış, Türk edebiyatına geçmiştir. Mani, koşma ve sagu farklı geleneksel biçimlerdir.",
+      "dogru_index": 0,
+      "cozum": "Diğer nazım şekillerinde her beyitte yeni kafiye bulma zorluğu, şairleri uzun metinlerde mesneviye yöneltmiştir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mesnevi hangi edebî gelenekten Türk edebiyatına geçmiştir?",
-        "back": "İran edebiyatından."
-      }
+        "front": "Mesnevinin tercih edilme nedeni nedir?",
+        "back": "Diğer şekillerde kafiye bulma zorluğudur; mesnevide her beyit kendi içinde kafiyelidir."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir araştırmacı, Türk edebiyatında bilinen ilk mesnevinin adını bir katalog kaydına geçirmek istiyor. Eserin adı nedir?",
+      "alt_beceri": "Mesnevinin kafiye düzeni, beyit sayısı ve ölçü özelliklerini belirler.",
+      "metin": "Türk edebiyatında bilinen ilk mesnevi hangisidir?",
       "secenekler": [
-        "Divanü Lügati't-Türk",
         "Harnâme",
         "Mantıku't-Tayr",
-        "Kutadgu Bilig"
+        "Kutadgu Bilig",
+        "Kanuni Mersiyesi"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynakta Türk edebiyatında bilinen ilk mesnevi Kutadgu Bilig olarak belirtilir. Diğer eserler farklı tür ve geleneklerle ilişkilidir.",
+      "dogru_index": 2,
+      "cozum": "Türk edebiyatında bilinen ilk mesnevi Kutadgu Bilig'dir; aruz ölçüsünün de ilk kullanıldığı eserdir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Türk edebiyatında bilinen ilk mesnevi hangi eserdir?",
-        "back": "Kutadgu Bilig."
-      }
+        "front": "Kutadgu Bilig'in türü nedir?",
+        "back": "İlk mesnevidir; aruz ölçüsünün ilk kullanıldığı eserdir."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir okuyucu, klasik dönemde uzun aşk ve olay anlatılarını beyitlerle okuyabiliyor. Mesneviler o dönemde hangi modern anlatı türlerinin yerini tutuyordu?",
+      "alt_beceri": "Hamse geleneğini ve bu geleneğe katkıları ayırt eder.",
+      "metin": "Bir şairin beş mesnevisinin bir araya gelmesiyle oluşan yapıt, divan edebiyatında ayrı bir saygınlık kazanmıştır. Bu yapıt hangi adla anılır?",
       "secenekler": [
-        "Roman ve hikâyenin",
-        "Gazete ve derginin",
-        "Dilekçe ve tutanağın",
-        "Sözlük ve ansiklopedinin"
+        "Divan",
+        "Mecmua",
+        "Tezkire",
+        "Hamse"
       ],
-      "dogru_index": 0,
-      "cozum": "Mesnevilerde uzun konular ve olaylar anlatılır; Divan edebiyatında roman ve hikâyenin yerini tutmuştur. Diğer metin türleri aynı işlevle verilmemiştir.",
+      "dogru_index": 3,
+      "cozum": "Beş mesnevinin bir araya gelmesiyle oluşan yapıt hamse, bu eserleri yazan şairler hamse şairi olarak anılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Divan edebiyatında mesnevi hangi tür uzun metinlerin işlevini üstlenmiştir?",
-        "back": "Günümüzdeki roman ve hikâyenin işlevini."
-      }
+        "front": "Hamse nedir?",
+        "back": "Şairin beş mesnevisinin bir araya gelmesiyle oluşan yapıttır."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şairin beş ayrı mesnevisini bir araya getiren eserler bütünü için kullanılan edebiyat terimini yaz.",
+      "alt_beceri": "Hamse geleneğini ve bu geleneğe katkıları ayırt eder.",
+      "metin": "Hamse türüne düzyazının girişi 17. yüzyılda olmuştur. Hamseye düzyazıyı sokan ilk yazar hangisidir?",
       "secenekler": [
-        "Divan",
-        "Hamse",
-        "Tezkire",
-        "Mecmua"
+        "Nevizade Atayi",
+        "Nergisi",
+        "Taşlıcalı Yahya",
+        "Nef'i"
       ],
       "dogru_index": 1,
-      "cozum": "Beş mesnevinin bir araya gelmesiyle hamse oluşur. Hamsenüvis, bu tür eseri yazan şair için kullanılan addır.",
+      "cozum": "Nergisi, hamseye düzyazıyı sokan ilk yazardır; Taşlıcalı Yahya ve Nevizade Atayi'nin de hamseleri vardır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Beş mesneviden oluşan eserler birliğine ne denir?",
-        "back": "Hamse."
-      }
+        "front": "Hamseye düzyazının girişi nedir?",
+        "back": "17. yüzyılda Nergisi ile olmuştur; hamseye düzyazıyı sokan ilk yazardır."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şair beş mesneviden oluşan bir eserler bütünü meydana getiriyor. Bu şaire verilen özel ad nedir?",
+      "alt_beceri": "Mesnevinin kafiye düzeni, beyit sayısı ve ölçü özelliklerini belirler.",
+      "metin": "Bir mesnevinin başında manzum ya da mensur biçimde yer alan ön söz bölümü hangisidir?",
       "secenekler": [
-        "Gazelhan",
-        "Meddah",
-        "Hamsenüvis",
-        "Baksı"
+        "Dibace",
+        "Tevhid",
+        "Hatime",
+        "Sebeb-i telif"
       ],
-      "dogru_index": 2,
-      "cozum": "Beş mesnevilik hamse yazan şair hamsenüvis olarak adlandırılır. Gazelhan gazel okur, meddah ve baksı farklı anlatı geleneklerindedir.",
+      "dogru_index": 0,
+      "cozum": "Mesnevinin ön sözü dibacedir; manzum veya mensur olabilir. Tevhid Allah'ın birliğinin, hatime bitişin anlatıldığı bölümdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hamse sahibi şair için kullanılan ad nedir?",
-        "back": "Hamsenüvis."
-      }
+        "front": "Dibace nedir?",
+        "back": "Mesnevinin ön sözüdür; manzum veya mensur olabilir."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir edebiyat tarihçisi, Türk edebiyatında ilk hamse sahibini ve onun yetiştiği edebî sahayı belirtiyor. Şairin adını yaz.",
+      "alt_beceri": "Hamse geleneğini ve bu geleneğe katkıları ayırt eder.",
+      "metin": "Bir mesnevide şair, eserini hangi nedenle yazdığını ayrı bir bölümde açıklamıştır. Bu bölüm hangisidir?",
       "secenekler": [
-        "Genceli Nizami",
-        "Hamdullah Hamdi",
-        "Nergisi",
-        "Ali Şir Nevaî"
+        "Ağâz-ı dâstan",
+        "Medhiye",
+        "Sebeb-i telif",
+        "Miraciye"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynakta Türk edebiyatında ilk hamse sahibi şair Çağatay sahasından Ali Şir Nevaî olarak verilir. Genceli Nizami İslam edebiyatının, Hamdullah Hamdi Anadolu sahasının ilk hamse sahibidir.",
+      "dogru_index": 2,
+      "cozum": "Mesnevinin yazılış nedeninin belirtildiği bölüm sebeb-i teliftir; ağâz-ı dâstan asıl konunun başladığı bölümdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Türk edebiyatında ilk hamse sahibi şair kimdir?",
-        "back": "Çağatay sahasında Ali Şir Nevaî."
-      }
+        "front": "Sebeb-i telif nedir?",
+        "back": "Mesnevide eserin yazılış nedeninin belirtildiği bölümdür."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir mesnevinin ön söz ve övgü bölümlerinden sonra temel olayın başladığı kısım için hangi bölüm adı kullanılır?",
+      "alt_beceri": "Mesnevinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+      "metin": "Bir mesnevide asıl konunun başladığı bölüme geçilmiş, övgü ve dua bölümleri geride kalmıştır. Bu bölüm hangisidir?",
       "secenekler": [
+        "Hatime bölümü",
         "Ağâz-ı dâstan",
-        "Dibace",
-        "Sebeb-i telif",
-        "Hatime"
+        "Dibace bölümü",
+        "Naat bölümü"
       ],
-      "dogru_index": 0,
-      "cozum": "Ağâz-ı dâstan mesnevinin asıl konusunu içerir. Dibace ön söz, sebeb-i telif yazılış nedeni, hatime bitiş bölümüdür.",
+      "dogru_index": 1,
+      "cozum": "Mesnevinin asıl konusunun bulunduğu bölüm ağâz-ı dâstandır; hatime ise eserin bittiğini belirtir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mesnevinin asıl konusunu taşıyan bölümün adı nedir?",
-        "back": "Ağâz-ı dâstan."
-      }
+        "front": "Ağâz-ı dâstan nedir?",
+        "back": "Mesnevide asıl konunun başladığı bölümdür."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k02_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şair, eserinde bu uzun anlatıyı hangi gerekçeyle kaleme aldığını açıklayan özel bir bölüm ayırıyor. Bu bölümün adı nedir?",
+      "alt_beceri": "Mesnevinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+      "metin": "Bir mesnevide dört halifenin övüldüğü bölüm ile eserin bittiğini bildiren bölüm farklıdır. Eserin bittiğini belirten bölüm hangisidir?",
       "secenekler": [
-        "Ağâz-ı dâstan",
-        "Sebeb-i telif",
-        "Naat",
-        "Miraciye"
+        "Medh-i çihar-yâr-i güzîn",
+        "Münacaat",
+        "Medhiye",
+        "Hatime"
       ],
-      "dogru_index": 1,
-      "cozum": "Sebeb-i telif, mesnevinin yazılma nedenini bildirir. Ağâz-ı dâstan asıl konunun başladığı bölüm, naat ve miraciye ise içerik başlıklarıdır.",
+      "dogru_index": 3,
+      "cozum": "Hatime mesnevinin bittiğini belirten bölümdür; medh-i çihar-yâr-i güzînde dört halife övülür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mesnevinin yazılış nedenini açıklayan bölümün adı nedir?",
-        "back": "Sebeb-i telif."
-      }
+        "front": "Hatime nedir?",
+        "back": "Mesnevinin bittiğini belirten son bölümdür."
+      },
+      "kazanim": "Mesnevinin biçim özelliklerini, hamse geleneğini ve bölümlerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u03_k02_o01:flashcard",
-      "front": "Mesnevinin uyak düzenini ve nazım birimini yaz.",
-      "back": "Mesnevi beyitlerle yazılır; her beyit kendi içinde uyaklanır: aa, bb, cc…"
+      "front": "Mesnevinin kafiye düzeni nedir?",
+      "back": "Her beyit kendi arasında kafiyelidir: aa, bb, cc, dd."
     },
     {
       "id": "edebiyat_10_u03_k02_o02:flashcard",
-      "front": "Mesneviler neden uzun olay ve hikâyeleri anlatmaya elverişlidir?",
-      "back": "Beyit sayısı sınırsızdır ve her beyit kendi içinde uyaklandığı için uzun anlatıda kafiye sürdürmek kolaylaşır."
+      "front": "Mesnevinin beyit sayısı nedir?",
+      "back": "Sınırsızdır; uzun konular bu biçimle anlatılır."
     },
     {
       "id": "edebiyat_10_u03_k02_o03:flashcard",
-      "front": "Mesnevi hangi edebî gelenekten Türk edebiyatına geçmiştir?",
-      "back": "İran edebiyatından."
+      "front": "Mesnevinin tercih edilme nedeni nedir?",
+      "back": "Diğer şekillerde kafiye bulma zorluğudur; mesnevide her beyit kendi içinde kafiyelidir."
     },
     {
       "id": "edebiyat_10_u03_k02_o04:flashcard",
-      "front": "Türk edebiyatında bilinen ilk mesnevi hangi eserdir?",
-      "back": "Kutadgu Bilig."
+      "front": "Kutadgu Bilig'in türü nedir?",
+      "back": "İlk mesnevidir; aruz ölçüsünün ilk kullanıldığı eserdir."
     },
     {
       "id": "edebiyat_10_u03_k02_o05:flashcard",
-      "front": "Divan edebiyatında mesnevi hangi tür uzun metinlerin işlevini üstlenmiştir?",
-      "back": "Günümüzdeki roman ve hikâyenin işlevini."
+      "front": "Hamse nedir?",
+      "back": "Şairin beş mesnevisinin bir araya gelmesiyle oluşan yapıttır."
     },
     {
       "id": "edebiyat_10_u03_k02_o06:flashcard",
-      "front": "Beş mesneviden oluşan eserler birliğine ne denir?",
-      "back": "Hamse."
+      "front": "Hamseye düzyazının girişi nedir?",
+      "back": "17. yüzyılda Nergisi ile olmuştur; hamseye düzyazıyı sokan ilk yazardır."
     },
     {
       "id": "edebiyat_10_u03_k02_o07:flashcard",
-      "front": "Hamse sahibi şair için kullanılan ad nedir?",
-      "back": "Hamsenüvis."
+      "front": "Dibace nedir?",
+      "back": "Mesnevinin ön sözüdür; manzum veya mensur olabilir."
     },
     {
       "id": "edebiyat_10_u03_k02_o08:flashcard",
-      "front": "Türk edebiyatında ilk hamse sahibi şair kimdir?",
-      "back": "Çağatay sahasında Ali Şir Nevaî."
+      "front": "Sebeb-i telif nedir?",
+      "back": "Mesnevide eserin yazılış nedeninin belirtildiği bölümdür."
     },
     {
       "id": "edebiyat_10_u03_k02_o09:flashcard",
-      "front": "Mesnevinin asıl konusunu taşıyan bölümün adı nedir?",
-      "back": "Ağâz-ı dâstan."
+      "front": "Ağâz-ı dâstan nedir?",
+      "back": "Mesnevide asıl konunun başladığı bölümdür."
     },
     {
       "id": "edebiyat_10_u03_k02_o10:flashcard",
-      "front": "Mesnevinin yazılış nedenini açıklayan bölümün adı nedir?",
-      "back": "Sebeb-i telif."
+      "front": "Hatime nedir?",
+      "back": "Mesnevinin bittiğini belirten son bölümdür."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Mesnevi"
+  ]
 }

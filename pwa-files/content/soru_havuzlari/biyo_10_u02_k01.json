@@ -2,250 +2,255 @@
   "konu_id": "biyo_10_u02_k01",
   "sinif": 10,
   "ders": "Biyoloji",
-  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "tema": 2,
+  "tema_adi": "Ekoloji",
+  "baslik": "2.1 Ekosistemin Bileşenleri",
+  "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri",
+  "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.100-106",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "biyo_10_u02_k01_o01",
-      "alt_beceri": "Ekosistemin Bileşenleri",
-      "metin": "Bir dağ çayırında yaşayan canlı toplulukları; ışık, toprak ve su gibi çevresel unsurlarla birlikte inceleniyor. Bu bütün hangi kavramla adlandırılır?",
+      "alt_beceri": "Cansız bileşenlerin canlıların yaşamı üzerindeki etkisini açıklar.",
+      "metin": "Gün uzunluğunun (fotoperiyot) değişmesi bitkilerde çiçeklenme ya da yaprak dökümüne, bazı hayvanlarda göçe yol açar. Bu durum hangi bileşenle açıklanır?",
       "secenekler": [
-        "Ekosistem",
-        "Popülasyon",
-        "Organizma",
-        "Tür"
+        "Toprağın pH değeri",
+        "Işık",
+        "Toprağın humus miktarı",
+        "Rüzgâr hızı"
       ],
-      "dogru_index": 0,
-      "cozum": "Ekosistem canlı topluluklarını ve etkileşimde bulundukları cansız çevreyi kapsar. Işık, toprak ve su gibi unsurlar da bu bütünün parçasıdır.",
+      "dogru_index": 1,
+      "cozum": "Kitap, gün uzunluğuna bağlı çiçeklenme, yaprak dökümü, kış uykusu, göç ve yağ depolamayı ışığın canlılarla etkileşimine örnek verir (s.100, 103).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekosistemi tanımlarken canlı toplulukları ile cansız çevre arasındaki ilişkiyi belirtiniz.",
-        "back": "Ekosistem, belirli bir bölgedeki canlı topluluklarının tamamı ve bu canlıların etkileşim hâlinde olduğu cansız çevredir."
+        "front": "Fotoperiyot nedir?",
+        "back": "Gün uzunluğunun mevsimlere göre değişimi."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o02",
-      "alt_beceri": "Ekosistemin Bileşenleri",
-      "metin": "Canlıların çevreleriyle etkileşimini araştıran bir bilim insanı hangi bilim dalında çalışır?",
+      "alt_beceri": "Cansız bileşenlerin canlıların yaşamı üzerindeki etkisini açıklar.",
+      "metin": "Kaktüslerin 50 °C'nin üzerindeki sıcaklıklara dayanabilmesi hangi cansız bileşene uyum örneğidir?",
       "secenekler": [
-        "Genetik",
-        "Ekoloji",
-        "Anatomi",
-        "Jeoloji"
+        "Işığın dalga boyu",
+        "Toprak pH'ı",
+        "Su miktarı",
+        "Sıcaklık"
       ],
-      "dogru_index": 1,
-      "cozum": "Canlıların birbirleriyle ve çevreleriyle olan ilişkilerini inceleyen bilim dalı ekolojidir. Jeoloji cansız yerküreyi inceler; canlı-çevre ilişkileri ekolojinin konusudur.",
+      "dogru_index": 3,
+      "cozum": "Sıcaklık canlıların biyolojik süreçlerini etkiler; kaktüsler çöl sıcaklıklarına uyum sağlamıştır (s.103).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekoloji biliminin incelediği temel ilişkiyi açıklayınız.",
-        "back": "Ekoloji, canlıların birbirleriyle ve çevreleriyle olan ilişkilerini inceleyen bilim dalıdır."
+        "front": "Sıcaklığın canlı üzerindeki etkisi nedir?",
+        "back": "Enzim ve proteinlerin çalışmasını belirler."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o03",
-      "alt_beceri": "Ekosistemin Bileşenleri",
-      "metin": "Bir pencere önündeki fide, kendisine ulaşan ışığa doğru yönelerek büyüyor. Bu durum hangi iki bileşen arasındaki etkileşimi gösterir?",
+      "alt_beceri": "Cansız bileşenlerin canlıların yaşamı üzerindeki etkisini açıklar.",
+      "metin": "Su miktarı belirli bir seviyenin altına düştüğünde enzimlerin çalışamaması hangi sonucu doğurur?",
       "secenekler": [
-        "İki cansız faktörün birbirini etkilemesini",
-        "İki farklı tüketici arasındaki beslenme ilişkisini",
-        "Canlı bir organizma ile cansız bir çevre faktörünün etkileşimini",
-        "Üretici ile ayrıştırıcı arasındaki madde alışverişini"
+        "Canlıların yaşamsal olayları aksar, su sınırlayıcı olur",
+        "Toprağın humus oranı belirgin biçimde artar",
+        "Işığın şiddeti ve süresi kısalır",
+        "Kemosentez hızı iki katına çıkar"
       ],
-      "dogru_index": 2,
-      "cozum": "Fide canlı bir organizma, ışık ise cansız bir çevre faktörüdür. Işığın bitkinin yönelmesini etkilemesi canlı-cansız etkileşimine örnektir.",
+      "dogru_index": 0,
+      "cozum": "Su; madde taşınması, sindirim, fotosentez ve enzim çalışması için gereklidir; kurak ortamlarda sınırlayıcı bileşen hâline gelir (s.104).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Canlı ve cansız çevre unsurları birbirini hangi iki yönde etkileyebilir?",
-        "back": "Cansız faktörler canlıların yaşamını ve dağılışını etkiler; canlıların faaliyetleri de atmosfer, su ve toprağın özelliklerini değiştirebilir."
+        "front": "Kurak ortamda sınırlayıcı bileşen nedir?",
+        "back": "Su; enzimler yeterince çalışamaz."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o04",
-      "alt_beceri": "Ekosistemin Bileşenleri",
-      "metin": "Bir ekosistemin bileşenlerinden biri ortadan kalkarsa ekosistemin işleyişi için en uygun çıkarım hangisidir?",
+      "alt_beceri": "Cansız bileşenlerin canlıların yaşamı üzerindeki etkisini açıklar.",
+      "metin": "Kanguru sıçanının su içmeden kuru tohumlarla uzun süre yaşayabilmesi hangi uyum örneğidir?",
       "secenekler": [
-        "Yalnızca ortadan kalkan bileşen etkilenir, diğerleri değişmez.",
-        "Cansız çevre otomatik olarak üreticiye dönüşür.",
-        "Ekosistemdeki tüm etkileşimler aynı kalır.",
-        "Ekosistemin dengesi bozulabilir ve diğer bileşenler de etkilenebilir."
+        "Fotosentez yapabilmesi",
+        "Topraktaki humusu parçalaması",
+        "Su kaybını azaltacak yapı ve davranış geliştirmesi",
+        "Havadan azot bağlaması"
       ],
-      "dogru_index": 3,
-      "cozum": "Ekosistem bileşenleri etkileşim içindedir; bir bileşenin ortadan kalkması ekosistemin dengesini bozup diğer bileşenleri de olumsuz etkileyebilir. Bu nedenle diğer ilişkilerin değişmeden kalacağı söylenemez.",
+      "dogru_index": 2,
+      "cozum": "Kurak ortam canlıları su kaybını azaltacak yapı ve özelliklerle uyum sağlar; sarı sabır yapraklarında su depolar, kanguru sıçanı kuru tohumla yaşar (s.104).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekosistemi oluşturan canlı ve cansız unsurların birbirinden bağımsız düşünülememesinin nedenini açıklayınız.",
-        "back": "Canlı ve cansız bileşenler ekosistemde ayrılmaz bir bütün oluşturur; aralarındaki etkileşimler ekosistemin işleyişini ve devamlılığını etkiler."
+        "front": "Toprakta humus nedir?",
+        "back": "Mikroorganizmaların ayrıştırdığı organik kısım."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o05",
-      "alt_beceri": "Ekosistemin Cansız Bileşenleri",
-      "metin": "Bir bölgede uzun yıllar boyunca gözlenen sıcaklık, yağış, rüzgâr ve nem özellikleri hangi çevresel unsurun parçalarıdır?",
+      "alt_beceri": "Cansız bileşenlerin canlıların yaşamı üzerindeki etkisini açıklar.",
+      "metin": "Toprağın inorganik kısmını oluşturan temel bileşen hangisidir?",
       "secenekler": [
-        "İklimin",
-        "Toprak yapısının",
-        "Canlı bileşenlerin",
-        "Besin zincirinin"
+        "Humus",
+        "Çürüyen yapraklar",
+        "Ayrıştırıcı bakteriler",
+        "Mineraller"
       ],
-      "dogru_index": 0,
-      "cozum": "Işık, sıcaklık, yağış, rüzgâr ve nem iklimi oluşturan temel unsurlardandır. Toprak cansız bir bileşen olsa da bu özelliklerin uzun dönem ortalamasını ifade etmez.",
+      "dogru_index": 3,
+      "cozum": "Toprağın organik kısmı humus ve çürüyen organik maddelerden, inorganik kısmı minerallerden oluşur (s.104).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ekosistemin cansız bileşenlerine iklim, su ve topraktan örnekler veriniz.",
-        "back": "Işık, sıcaklık, yağış, rüzgâr ve nem iklim elemanlarıdır; su, pH ve toprak da ekosistemin cansız bileşenlerindendir."
+        "front": "Ekosistemin cansız bileşenleri nedir?",
+        "back": "Işık, sıcaklık, su, pH ve toprak."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o06",
-      "alt_beceri": "Ekosistemin Cansız Bileşenleri",
-      "metin": "Bir bitki yeterli ışık alamadığı için fotosentez yapamıyor. Bu koşulda bitkide hangi durum beklenir?",
+      "alt_beceri": "Canlı bileşenleri işlevlerine göre sınıflandırır.",
+      "metin": "Kendi besinini fotosentez veya kemosentezle üreten canlılar ekosistemde hangi grupta yer alır?",
       "secenekler": [
-        "Çiçeklenmenin her koşulda hızlanması",
-        "Su gereksiniminin tamamen ortadan kalkması",
-        "Büyümesinin yavaşlaması",
-        "Toprağın canlı bileşene dönüşmesi"
+        "Tüketiciler",
+        "Üreticiler",
+        "Ayrıştırıcılar",
+        "Parazitler"
       ],
-      "dogru_index": 2,
-      "cozum": "Yeterli ışık olmadığında bitkiler fotosentez yapamaz ve büyümeleri yavaşlar. Işık eksikliği su gereksinimini ortadan kaldırmaz ve cansız toprak canlı bileşene dönüşmez.",
+      "dogru_index": 1,
+      "cozum": "Üreticiler ototrof organizmalardır; besin üretimi fotosentez veya kemosentezle gerçekleşir (s.105).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Işığın bitkiler üzerindeki etkilerinden ikisini açıklayınız.",
-        "back": "Işık fotosentez ve bitki gelişimini etkiler; ışıklanma süresi ve gün uzunluğu bitkilerin büyüme ve çiçeklenme zamanlarında rol oynar."
+        "front": "Üretici nedir?",
+        "back": "Fotosentez veya kemosentezle besin üreten ototrof canlı."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o07",
-      "alt_beceri": "Ekosistemin Cansız Bileşenleri",
-      "metin": "Bir bitki yetiştirme alanında sulama birkaç gün duruyor; ışık, sıcaklık ve mineral koşulları yeterli olmasına rağmen bitki gelişimi yavaşlıyor. Bu durumda su ekosistemde nasıl bir bileşendir?",
+      "alt_beceri": "Canlı bileşenleri işlevlerine göre sınıflandırır.",
+      "metin": "Sucul ekosistemlerdeki üretici canlılar hangi grupta toplanır?",
       "secenekler": [
-        "Üretici",
-        "Tüketici",
-        "Ayrıştırıcı",
-        "Sınırlayıcı cansız bileşen"
+        "Algler ve siyanobakteriler",
+        "Mantarlar ve bakteriler",
+        "Tilkiler ve dağ keçileri",
+        "Solucanlar ve termitler"
       ],
-      "dogru_index": 3,
-      "cozum": "Sulama kesintisiyle azalan su, bitki gelişimini sınırlandıran cansız bir bileşen hâline gelir. Diğer verilen koşullar yeterli olduğundan bu durumda sınırlayıcı etken sudur.",
+      "dogru_index": 0,
+      "cozum": "Karasal ekosistemlerde bitkiler, sucul ekosistemlerde ise algler ve siyanobakteriler üreticidir (s.105).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Su miktarı ve pH değişimleri ekosistemdeki canlıların yaşamını ve dağılışını nasıl etkileyebilir?",
-        "back": "Su miktarı canlıların yaşamını ve dağılışını etkiler; uygun pH aralığından sapma yaşamsal süreçleri olumsuz etkileyebilir."
+        "front": "Karasal ekosistemin üreticileri nedir?",
+        "back": "Bitkiler; sucul ortamda alg ve siyanobakteriler."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o08",
-      "alt_beceri": "Ekosistemin Canlı Bileşenleri",
-      "metin": "Işık almayan bir yeraltı mağarasında bazı prokaryotlar inorganik maddelerin oksidasyonundan enerji sağlayıp organik madde üretiyor. Bu ekosistemin üreticileri çoğunlukla hangi gruptandır?",
+      "alt_beceri": "Canlı bileşenleri işlevlerine göre sınıflandırır.",
+      "metin": "Derin deniz dipleri ve bataklıklarda ışık bulunmadığı hâlde besin üreten canlılar hangileridir?",
       "secenekler": [
-        "Yalnızca bitkiler",
-        "Otçul memeliler",
-        "Kemosentetik bakteri ve arkeler",
-        "Etçil tüketiciler"
+        "Yeşil algler ve su bitkileri",
+        "Karasal çiçekli bitkiler",
+        "Kemosentetik bakteriler ve arkeler",
+        "Şapkalı mantar türleri"
       ],
       "dogru_index": 2,
-      "cozum": "Işığın ulaşmadığı bu ortamda fotosentez yapılamaz. Kemosentetik bakteri ve arkeler kimyasal enerji kullanarak organik madde üretebilir.",
+      "cozum": "Bu ekosistemlerin üreticileri genellikle kemosentetik bakteriler ve arkelerdir; ışık olmadan inorganik maddelerin oksidasyonuyla besin üretirler (s.105).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gün ışığı alan bir akvaryumda organik madde üreten alglerin besin ağındaki işlevi nedir?",
-        "back": "Algler üreticidir; fotosentezle inorganik maddelerden organik madde sentezleyip tüketicilere besin kaynağı oluştururlar."
+        "front": "Tüketici nedir?",
+        "back": "Besinini dış ortamdan hazır alan heterotrof canlı."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o09",
-      "alt_beceri": "Ekosistemin Canlı Bileşenleri",
-      "metin": "Bir çayır kertenkelesi böcek ve örümceklerle besleniyor. Ekosistemdeki işlevine göre bu canlı nasıl sınıflandırılır?",
+      "alt_beceri": "Canlı bileşenleri işlevlerine göre sınıflandırır.",
+      "metin": "Bir ormanda dökülen yapraklar ve hayvan atıkları 1-2 yıl içinde toprağa karışır. Bu dönüşümü sağlayan canlı grubunun işlevi nedir?",
       "secenekler": [
-        "Tüketici; besinini dış ortamdan hazır alır.",
-        "Üretici; fotosentezle besinini kendisi üretir.",
-        "Ayrıştırıcı; organik maddeleri inorganiklere dönüştürür.",
-        "Cansız bileşen; metabolik faaliyeti yoktur."
+        "Işık enerjisini kimyasal enerjiye çevirmek",
+        "Organik maddeleri inorganik maddelere dönüştürmek",
+        "Su döngüsünü başlatmak",
+        "Atmosferdeki oksijeni tüketmek"
       ],
-      "dogru_index": 0,
-      "cozum": "Kertenkele besinini başka canlıları tüketerek alır. Kendi organik besinini üretmediği için tüketicidir.",
+      "dogru_index": 1,
+      "cozum": "Ayrıştırıcılar, bitki ve hayvan atıklarını parçalayarak inorganik maddelere dönüştürür ve üreticilerin kullanacağı madde döngüsünü sağlar (s.106).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tüketicilerin beslenme biçimini ve ekosistemdeki yerini açıklayınız.",
-        "back": "Tüketiciler heterotroftur; besinlerini kendileri üretmeyip dış ortamdan hazır alırlar. Ekosistemde enerjinin üreticilerden üst trofik düzeylere aktarılmasına katkı sağlarlar."
+        "front": "Ayrıştırıcıların madde döngüsündeki rolü nedir?",
+        "back": "Organik maddeyi inorganiğe çevirip döngüyü kapatmak."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     },
     {
       "soru_id": "biyo_10_u02_k01_o10",
-      "alt_beceri": "Ekosistemin Canlı Bileşenleri",
-      "metin": "Bir yaprak kompostunda mikroorganizmalar ölü bitki kalıntılarını parçalayarak inorganik maddeleri toprağa geri kazandırıyor. Bu canlıların ekosistemdeki işlevi nedir?",
+      "alt_beceri": "Canlı bileşenleri işlevlerine göre sınıflandırır.",
+      "metin": "Bir ekosistemde ayrıştırıcılar tamamen ortadan kalkarsa ne beklenir?",
       "secenekler": [
-        "Üretici; Güneş enerjisini kullanarak organik madde sentezler.",
-        "Ayrıştırıcı; organik kalıntıları parçalayarak madde döngüsüne katkı sağlar.",
-        "Tüketici; besinini yalnızca canlı avlardan alır.",
-        "Cansız bileşen; biyolojik işlevi yoktur."
+        "Üreticiler daha hızlı çoğalır ve biyokütle artar",
+        "Su döngüsü hızlanır, yağışlar artar",
+        "Yalnızca tüketici canlılar etkilenir",
+        "Organik madde ayrışamaz, üretici inorganik madde bulamaz; yaşam sona erer"
       ],
-      "dogru_index": 1,
-      "cozum": "Ölü bitki kalıntılarını parçalayan mikroorganizmalar ayrıştırıcıdır. Organik maddeleri inorganik maddelere dönüştürerek madde döngüsüne katkı sağlarlar.",
+      "dogru_index": 3,
+      "cozum": "Ayrıştırıcılar olmadığında organik maddeler ayrıştırılamaz, üreticiler inorganik maddeye ulaşamaz, yeni organik madde üretimi durur ve ekosistemde yaşam sona erer (s.106).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ayrıştırıcıların madde döngüsü ve üreticiler üzerindeki rolünü açıklayınız.",
-        "back": "Bakteri ve mantar gibi ayrıştırıcılar organik maddeleri inorganik maddelere dönüştürür; bu maddelerin döngüsü üreticilerin ihtiyaç duyduğu kaynakları sağlar."
+        "front": "Ekosistem nedir?",
+        "back": "Canlı toplulukları ve etkileşimde oldukları cansız çevre."
       },
-      "kazanim": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,"
+      "kazanim": "Ekosistemin cansız bileşenlerinin canlılar üzerindeki etkisini açıklar ve canlı bileşenleri işlevlerine göre sınıflandırır."
     }
   ],
   "flashcards": [
     {
       "id": "biyo_10_u02_k01_o01:flashcard",
-      "front": "Ekosistemi tanımlarken canlı toplulukları ile cansız çevre arasındaki ilişkiyi belirtiniz.",
-      "back": "Ekosistem, belirli bir bölgedeki canlı topluluklarının tamamı ve bu canlıların etkileşim hâlinde olduğu cansız çevredir."
+      "front": "Fotoperiyot nedir?",
+      "back": "Gün uzunluğunun mevsimlere göre değişimi."
     },
     {
       "id": "biyo_10_u02_k01_o02:flashcard",
-      "front": "Ekoloji biliminin incelediği temel ilişkiyi açıklayınız.",
-      "back": "Ekoloji, canlıların birbirleriyle ve çevreleriyle olan ilişkilerini inceleyen bilim dalıdır."
+      "front": "Sıcaklığın canlı üzerindeki etkisi nedir?",
+      "back": "Enzim ve proteinlerin çalışmasını belirler."
     },
     {
       "id": "biyo_10_u02_k01_o03:flashcard",
-      "front": "Canlı ve cansız çevre unsurları birbirini hangi iki yönde etkileyebilir?",
-      "back": "Cansız faktörler canlıların yaşamını ve dağılışını etkiler; canlıların faaliyetleri de atmosfer, su ve toprağın özelliklerini değiştirebilir."
+      "front": "Kurak ortamda sınırlayıcı bileşen nedir?",
+      "back": "Su; enzimler yeterince çalışamaz."
     },
     {
       "id": "biyo_10_u02_k01_o04:flashcard",
-      "front": "Ekosistemi oluşturan canlı ve cansız unsurların birbirinden bağımsız düşünülememesinin nedenini açıklayınız.",
-      "back": "Canlı ve cansız bileşenler ekosistemde ayrılmaz bir bütün oluşturur; aralarındaki etkileşimler ekosistemin işleyişini ve devamlılığını etkiler."
+      "front": "Toprakta humus nedir?",
+      "back": "Mikroorganizmaların ayrıştırdığı organik kısım."
     },
     {
       "id": "biyo_10_u02_k01_o05:flashcard",
-      "front": "Ekosistemin cansız bileşenlerine iklim, su ve topraktan örnekler veriniz.",
-      "back": "Işık, sıcaklık, yağış, rüzgâr ve nem iklim elemanlarıdır; su, pH ve toprak da ekosistemin cansız bileşenlerindendir."
+      "front": "Ekosistemin cansız bileşenleri nedir?",
+      "back": "Işık, sıcaklık, su, pH ve toprak."
     },
     {
       "id": "biyo_10_u02_k01_o06:flashcard",
-      "front": "Işığın bitkiler üzerindeki etkilerinden ikisini açıklayınız.",
-      "back": "Işık fotosentez ve bitki gelişimini etkiler; ışıklanma süresi ve gün uzunluğu bitkilerin büyüme ve çiçeklenme zamanlarında rol oynar."
+      "front": "Üretici nedir?",
+      "back": "Fotosentez veya kemosentezle besin üreten ototrof canlı."
     },
     {
       "id": "biyo_10_u02_k01_o07:flashcard",
-      "front": "Su miktarı ve pH değişimleri ekosistemdeki canlıların yaşamını ve dağılışını nasıl etkileyebilir?",
-      "back": "Su miktarı canlıların yaşamını ve dağılışını etkiler; uygun pH aralığından sapma yaşamsal süreçleri olumsuz etkileyebilir."
+      "front": "Karasal ekosistemin üreticileri nedir?",
+      "back": "Bitkiler; sucul ortamda alg ve siyanobakteriler."
     },
     {
       "id": "biyo_10_u02_k01_o08:flashcard",
-      "front": "Gün ışığı alan bir akvaryumda organik madde üreten alglerin besin ağındaki işlevi nedir?",
-      "back": "Algler üreticidir; fotosentezle inorganik maddelerden organik madde sentezleyip tüketicilere besin kaynağı oluştururlar."
+      "front": "Tüketici nedir?",
+      "back": "Besinini dış ortamdan hazır alan heterotrof canlı."
     },
     {
       "id": "biyo_10_u02_k01_o09:flashcard",
-      "front": "Tüketicilerin beslenme biçimini ve ekosistemdeki yerini açıklayınız.",
-      "back": "Tüketiciler heterotroftur; besinlerini kendileri üretmeyip dış ortamdan hazır alırlar. Ekosistemde enerjinin üreticilerden üst trofik düzeylere aktarılmasına katkı sağlarlar."
+      "front": "Ayrıştırıcıların madde döngüsündeki rolü nedir?",
+      "back": "Organik maddeyi inorganiğe çevirip döngüyü kapatmak."
     },
     {
       "id": "biyo_10_u02_k01_o10:flashcard",
-      "front": "Ayrıştırıcıların madde döngüsü ve üreticiler üzerindeki rolünü açıklayınız.",
-      "back": "Bakteri ve mantar gibi ayrıştırıcılar organik maddeleri inorganik maddelere dönüştürür; bu maddelerin döngüsü üreticilerin ihtiyaç duyduğu kaynakları sağlar."
+      "front": "Ekosistem nedir?",
+      "back": "Canlı toplulukları ve etkileşimde oldukları cansız çevre."
     }
-  ],
-  "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri"
+  ]
 }

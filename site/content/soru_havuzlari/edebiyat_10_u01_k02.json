@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u01_k02",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 1,
+  "tema_adi": "Sözün Ezgisi",
+  "baslik": "Sav",
+  "topic_key": "Türk Dili ve Edebiyatı > Sav",
+  "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.12",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u01_k02_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözlü kültür araştırmacısı, eski Türklerden kalan kısa bir öğüdün günümüzdeki atasözleriyle aynı işleve sahip olduğunu söylüyor. Bu eski ürün hangi adla anılır?",
+      "alt_beceri": "Savın tanımını ve sözlü dönemdeki yerini belirler.",
+      "metin": "İslamiyet öncesi sözlü dönemde yaşam deneyimlerini kısa ve özlü biçimde aktaran, günümüzdeki atasözlerinin karşılığı olan sözler hangi adla anılır?",
       "secenekler": [
-        "Sav",
         "Koşuk",
+        "Sav",
         "Sagu",
-        "Türkü"
+        "Destan"
       ],
-      "dogru_index": 0,
-      "cozum": "Sav, İslamiyet öncesi sözlü dönemde atasözlerinin karşılığıdır. Koşuk ve türkü nazım biçimi, sagu ise ölüm üzerine şiirdir.",
+      "dogru_index": 1,
+      "cozum": "Konu anlatımında sav, İslamiyet öncesi sözlü dönemde günümüzdeki atasözlerinin karşılığı olan kısa, özlü sözler olarak tanımlanır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Savın günümüzdeki en yakın karşılığı nedir?",
-        "back": "Atasözü."
-      }
+        "front": "Sav nedir?",
+        "back": "İslamiyet öncesi sözlü dönemde yaşam deneyimlerini aktaran, atasözü niteliğindeki kısa ve özlü sözlerdir."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir topluluk, uzun bir öykü yerine tek cümlelik, kolay hatırlanan bir yaşam öğüdü kullanıyor. Bu sözün sav sayılmasını destekleyen özellik hangisidir?",
+      "alt_beceri": "Savın tanımını ve sözlü dönemdeki yerini belirler.",
+      "metin": "Sav türünün İslamiyet öncesi sözlü dönemde ortaya çıkması, aşağıdakilerden hangisiyle doğrudan ilişkilidir?",
       "secenekler": [
-        "Beyitler hâlinde uzun biçimde kurulması",
-        "Kısa ve özlü olması",
-        "Her dizesinde nakarat bulunması",
-        "Bir ölüm töreninde ezgiyle söylenmesi"
+        "Aruz ölçüsünün yaygın olmasıyla",
+        "Saray edebiyatının gelişmiş olmasıyla",
+        "Divan edebiyatının etkisiyle",
+        "Dönemde yazının kullanılmıyor olmasıyla"
       ],
-      "dogru_index": 1,
-      "cozum": "Savlar kısa ve özlü sözlerdir. Nakaratlı dörtlükler türküye, ölüm törenindeki şiirler saguya daha yakındır.",
+      "dogru_index": 3,
+      "cozum": "Konu anlatımında bu dönemde yazının henüz kullanılmadığı, eserlerin sözlü olarak kuşaktan kuşağa aktarıldığı belirtilir. Sav bu sözlü ortamın ürünüdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Savların anlatım özelliği nasıldır?",
-        "back": "Kısa ve özlüdür; az sözle anlam aktarır."
-      }
+        "front": "Savların sözlü dönem ürünü olmasının nedeni nedir?",
+        "back": "Dönemde yazı henüz kullanılmadığı için deneyimler sözlü olarak, kulaktan kulağa aktarılıyordu."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir usta, genç çırağına deneyiminden doğan kısa bir öğüt veriyor: Acele kararın sonradan pişmanlık doğurabileceğini söylüyor. Bu sözün sav niteliğini hangi yönü açıklar?",
+      "alt_beceri": "Savın tanımını ve sözlü dönemdeki yerini belirler.",
+      "metin": "Bir öğrenci, savların hangi işlevi yerine getirdiğini araştırmaktadır. Savların temel işlevi hangisidir?",
       "secenekler": [
-        "Bir doğa olayını olağanüstü kahramanla anlatması",
-        "Bir kişiyi ölümünün ardından anması",
-        "Yaşam deneyimini özlü biçimde aktarması",
-        "Bir aşk olayını bent ve nakaratla anlatması"
+        "Yaşam deneyimlerini sonraki kuşaklara aktarmak",
+        "Ölen kişinin iyiliklerini anlatmak",
+        "Av sonrası eğlenceyi düzenlemek",
+        "Kahramanlık olaylarını destanlaştırmak"
       ],
-      "dogru_index": 2,
-      "cozum": "Savlar yaşam deneyimlerini aktarır. Olağanüstü uzun anlatı destan, yas şiiri sagu, bent-nakarat düzeni ise türküyle ilgilidir.",
+      "dogru_index": 0,
+      "cozum": "Savlar yaşam deneyimlerini aktarır. Ölen kişinin iyiliklerini anlatmak saguya, av sonrası eğlence koşuğa aittir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Savlar çoğunlukla hangi içerikleri aktarır?",
-        "back": "Yaşam deneyimlerinden süzülen düşünce ve öğütleri aktarır."
-      }
+        "front": "Savların işlevi nedir?",
+        "back": "Toplumun yaşam deneyimlerini kısa ve özlü biçimde sonraki kuşaklara aktarmaktır."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir edebiyat sözlüğü, Divan şiiri geleneğinde atasözü niteliğindeki özlü sözleri adlandıran terimi soruyor. Sav için verilen karşılık hangisidir?",
+      "alt_beceri": "Sav örneklerinin anlamını çözümler.",
+      "metin": "\"Tag taga kavuşmaz, kişi kişige kavuşur.\" savının günümüz Türkçesindeki karşılığı hangisidir?",
       "secenekler": [
-        "Mahlas",
-        "Teşbib",
-        "Tapşırma",
-        "Darb-ı mesel"
+        "Kanı kanla yıkamazlar.",
+        "Aç ne yemez, tok ne demez.",
+        "Dağ dağa kavuşmaz, insan insana kavuşur.",
+        "Birler bin olur, damla damla göl olur."
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynakta savın Divan edebiyatındaki karşılığı darb-ı mesel olarak verilir. Mahlas ve tapşırma şairin takma adı, teşbib ise kasidenin başlangıç bölümüdür.",
+      "dogru_index": 2,
+      "cozum": "Konu anlatımında bu savın karşılığı \"Dağ dağa kavuşmaz, insan insana kavuşur.\" biçiminde verilir; insanların yeniden karşılaşabileceğini anlatır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Divan edebiyatında savın karşılığı olarak hangi terim kullanılır?",
-        "back": "Darb-ı mesel."
-      }
+        "front": "İnsanların yeniden karşılaşabileceğini anlatan savın anlamı nedir?",
+        "back": "\"Tag taga kavuşmaz, kişi kişige kavuşur.\" yani dağ dağa kavuşmaz, insan insana kavuşur."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrencinin dönem çizelgesinde yazının kullanılmadığı eski Türk sözlü ürünleri listeleniyor. Atasözü işlevindeki kısa söz bu listede hangi adla yer alır?",
+      "alt_beceri": "Sav örneklerinin anlamını çözümler.",
+      "metin": "\"Birin birin ming bolur, tama tama göl bolur.\" savı hangi deneyimi aktarır?",
       "secenekler": [
-        "Sav",
-        "Gazel",
-        "Mesnevi",
-        "Kaside"
+        "İntikamın yeni kötülükler ürettiğini",
+        "Tembelliğin yük getirdiğini",
+        "Zenginin tok, yoksulun aç olduğunu",
+        "Küçük katkıların birikerek büyük sonuç doğurduğunu"
       ],
-      "dogru_index": 0,
-      "cozum": "Sav, İslamiyet öncesi sözlü dönemin kısa özlü sözüdür. Gazel, mesnevi ve kaside Divan edebiyatı nazım biçimleridir.",
+      "dogru_index": 3,
+      "cozum": "\"Birler bin olur, damla damla göl olur.\" anlamına gelen sav, küçük ve sürekli katkıların birikerek büyük sonuçlar oluşturduğunu anlatır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sav, hangi edebî dönem ve gelenek içinde ortaya çıkmıştır?",
-        "back": "İslamiyet öncesi Türk sözlü edebiyatında."
-      }
+        "front": "Birikimin gücünü anlatan savın anlamı nedir?",
+        "back": "\"Birin birin ming bolur, tama tama göl bolur.\" yani birler bin olur, damla damla göl olur."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözlü ürün yaşam deneyiminden doğan öğüt niteliğindeyken diğeri cenaze töreninde ölen kişinin iyiliklerini anıyor. İlk ürünün adı nedir?",
+      "alt_beceri": "Sav örneklerinin anlamını çözümler.",
+      "metin": "Bir öğrenci, tembellik üzerine söylenmiş bir savı yorumlarken \"kolay işler bile o kişiye ağır gelir\" sonucuna ulaşmıştır. Öğrencinin yorumunu destekleyen sav hangisidir?",
       "secenekler": [
-        "Sagu",
-        "Sav",
-        "Koşuk",
-        "Mersiye"
+        "Tag taga kavuşmaz, kişi kişige kavuşur.",
+        "Ermegüke bulıt yük bolır.",
+        "Kanıg kan bile yumas.",
+        "Aç ne yimes, tok ne times."
       ],
       "dogru_index": 1,
-      "cozum": "Sav özlü yaşam sözü, sagu ise yuğ törenlerinde söylenen ölüm şiiridir. Mersiye benzer yas içeriğinin Divan edebiyatındaki karşılığıdır.",
+      "cozum": "Konu anlatımında Ermegüke bulıt yük bolır savının karşılığı \"Tembele bulut yük olur.\" biçiminde verilir; yani tembel kişi için kolay işler bile yük hâline gelir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sav ile sagu arasındaki temel fark nedir?",
-        "back": "Sav atasözü niteliğinde özlü söz; sagu ölüm üzerine söylenen şiirdir."
-      }
+        "front": "\"Tembele bulut yük olur.\" sözünün sav olarak karşılığı nedir?",
+        "back": "\"Ermegüke bulıt yük bolır.\" savının karşılığıdır."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir arşivci, eski bir sözün ezberlenmesinin kolay, anlamının yoğun ve öğüt verici olduğunu görüyor. Bu ürün için en uygun sınıflandırma hangisidir?",
+      "alt_beceri": "Savı divan edebiyatındaki karşılığıyla ilişkilendirir.",
+      "metin": "Savlar divan edebiyatında hangi adla anılmıştır?",
       "secenekler": [
-        "Gazel",
-        "Masal",
-        "Sav",
-        "Koşma"
+        "Darb-ı mesel",
+        "Mahlas",
+        "Tapşırma",
+        "Hicviye"
       ],
-      "dogru_index": 2,
-      "cozum": "Savlar kısa, özlü ve yaşam deneyimini aktaran sözlerdir. Gazel ve koşma şiir biçimi; masal ise anlatı türüdür.",
+      "dogru_index": 0,
+      "cozum": "Konu anlatımına göre sav, divan edebiyatında darb-ı mesel adını alır. Mahlas ve tapşırma şairin takma adı, hicviye ise yergi türüdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir sözün sav sayılmasında hangi özellik belirleyicidir?",
-        "back": "Kısa, özlü ve deneyim aktarır nitelikte olması."
-      }
+        "front": "Savın divan edebiyatındaki adı nedir?",
+        "back": "Darb-ı meseldir."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir aile, kısa ve özlü bir yaşam öğüdünü yazılı metne başvurmadan çocuklarına aktarıyor. Bu aktarım biçimi savların hangi niteliğiyle örtüşür?",
+      "alt_beceri": "Savı divan edebiyatındaki karşılığıyla ilişkilendirir.",
+      "metin": "Bir öğrenci sav ile atasözünü karşılaştırırken hangi ortak özelliği vurgulamalıdır?",
       "secenekler": [
-        "Tek bir şair tarafından imzalanmasıyla",
-        "Yalnızca yazılı belgelerde yaşamasıyla",
-        "Sahne gösterisi için bestelenmesiyle",
-        "Sözlü gelenekle kuşaktan kuşağa aktarılmasıyla"
+        "Dörtlüklerle söylenmeleri",
+        "Hece ölçüsüyle yazılmaları",
+        "Kalıplaşmış, öğüt veren kısa sözler olmaları",
+        "Ölüm temasını işlemeleri"
       ],
-      "dogru_index": 3,
-      "cozum": "Savlar İslamiyet öncesi sözlü dönemin ürünleridir ve sözlü biçimde aktarılır. Diğer seçenekler bu aktarım özelliğini karşılamaz.",
+      "dogru_index": 2,
+      "cozum": "Sav, günümüzdeki atasözünün karşılığıdır; ikisi de kalıplaşmış, kısa, öğüt veren ve deneyim aktaran sözlerdir. Dörtlük ve hece ölçüsü koşuk ile saguya aittir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Savın kuşaklar arasında aktarılma biçimini açıkla.",
-        "back": "Savlar, İslamiyet öncesi sözlü edebiyat geleneğinde kuşaktan kuşağa aktarılmıştır."
-      }
+        "front": "Sav ile atasözü arasındaki ilişki nedir?",
+        "back": "Sav, İslamiyet öncesi dönemin atasözüdür; ikisi de kalıplaşmış ve öğüt veren kısa sözlerdir."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözlü kültür sergisi, yaşam deneyimini kısa ve öğütleyici biçimde aktaran yeni bir söz örneği hazırlıyor. Bu amaca en uygun ifade hangisidir?",
+      "alt_beceri": "Savın tanımını ve sözlü dönemdeki yerini belirler.",
+      "metin": "Sav örneklerinden \"Kanıg kan bile yumas.\" sözü hangi anlayışı yansıtır?",
       "secenekler": [
-        "İşini ölçüp biçen, emeğini boşa harcamaz.",
-        "Uzak bir ülkede konuşan taşlar varmış.",
-        "Bir ozan sazını aldı ve uzun bir aşk öyküsü söyledi.",
-        "Bir kahraman, ordusuyla bilinmeyen diyarlara yürüdü."
+        "Kan bağının her şeyden üstün olduğunu",
+        "Kötülüğün kötülükle giderilemeyeceğini",
+        "Savaşın kaçınılmaz olduğunu",
+        "Gücün hile ile yenilebileceğini"
       ],
-      "dogru_index": 0,
-      "cozum": "Seçilen söz kısa bir yaşam öğüdü verir, bu nedenle sav niteliğindedir. Diğer seçenekler masal, halk hikâyesi ve destan anlatımına yaklaşır.",
+      "dogru_index": 1,
+      "cozum": "\"Kanı kanla yıkamazlar.\" anlamındaki bu sav, kötülüğe kötülükle karşılık verilerek sorunun çözülemeyeceğini anlatır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yaşam deneyimini kısa, özlü ve öğütleyici bir sözle anlatan özgün bir sav kur.",
-        "back": "İşini ölçüp biçen, emeğini boşa harcamaz."
-      }
+        "front": "\"Kanı kanla yıkamazlar.\" sözünün anlamı nedir?",
+        "back": "Kötülüğün kötülükle ortadan kaldırılamayacağını, intikamın sorunu çözmediğini anlatır."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k02_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğretmen, uzun açıklama yerine sınıfın kolayca hatırlayacağı özlü bir yaşam kuralı seçiyor. Savın hangi işlevinden yararlanıyor?",
+      "alt_beceri": "Sav örneklerinin anlamını çözümler.",
+      "metin": "Savların kısa ve özlü olması hangi işlevi kolaylaştırır?",
       "secenekler": [
-        "Olay örgüsünü olağanüstü kahramanlarla genişletme",
-        "Deneyimi özlü ve akılda kalıcı biçimde aktarma",
-        "Şiiri nakaratlarla bestelenmeye uygun hâle getirme",
-        "Ölen kişinin ardından ağıt söyleme"
+        "Aruz kalıplarına uydurulmasını",
+        "Yazıya geçirilerek saklanmasını",
+        "Dörtlükler hâlinde söylenmesini",
+        "Akılda kalıp kuşaktan kuşağa aktarılmasını"
       ],
-      "dogru_index": 1,
-      "cozum": "Savın amacı deneyimden doğan düşünceyi kısa ve kalıcı biçimde aktarmaktır. Olay örgüsü destan/masal, nakarat türkü, ağıt ise yas şiiriyle ilgilidir.",
+      "dogru_index": 3,
+      "cozum": "Sözlü kültürde aktarım, sözün kısa ve kalıplaşmış olmasıyla kolaylaşır. Savlarda aruz, dörtlük veya yazılı saklama söz konusu değildir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Savın temel işlevi nedir?",
-        "back": "Yaşama ilişkin deneyimi kısa, akılda kalıcı sözle iletmek."
-      }
+        "front": "Sav biçiminin sözlü kültürdeki işlevi nedir?",
+        "back": "Kolayca akılda kalmasını ve sözlü kültürde kuşaktan kuşağa aktarılmasını sağlar."
+      },
+      "kazanim": "Savın sözlü dönemdeki yerini, anlamını ve divan edebiyatındaki karşılığını çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u01_k02_o01:flashcard",
-      "front": "Savın günümüzdeki en yakın karşılığı nedir?",
-      "back": "Atasözü."
+      "front": "Sav nedir?",
+      "back": "İslamiyet öncesi sözlü dönemde yaşam deneyimlerini aktaran, atasözü niteliğindeki kısa ve özlü sözlerdir."
     },
     {
       "id": "edebiyat_10_u01_k02_o02:flashcard",
-      "front": "Savların anlatım özelliği nasıldır?",
-      "back": "Kısa ve özlüdür; az sözle anlam aktarır."
+      "front": "Savların sözlü dönem ürünü olmasının nedeni nedir?",
+      "back": "Dönemde yazı henüz kullanılmadığı için deneyimler sözlü olarak, kulaktan kulağa aktarılıyordu."
     },
     {
       "id": "edebiyat_10_u01_k02_o03:flashcard",
-      "front": "Savlar çoğunlukla hangi içerikleri aktarır?",
-      "back": "Yaşam deneyimlerinden süzülen düşünce ve öğütleri aktarır."
+      "front": "Savların işlevi nedir?",
+      "back": "Toplumun yaşam deneyimlerini kısa ve özlü biçimde sonraki kuşaklara aktarmaktır."
     },
     {
       "id": "edebiyat_10_u01_k02_o04:flashcard",
-      "front": "Divan edebiyatında savın karşılığı olarak hangi terim kullanılır?",
-      "back": "Darb-ı mesel."
+      "front": "İnsanların yeniden karşılaşabileceğini anlatan savın anlamı nedir?",
+      "back": "\"Tag taga kavuşmaz, kişi kişige kavuşur.\" yani dağ dağa kavuşmaz, insan insana kavuşur."
     },
     {
       "id": "edebiyat_10_u01_k02_o05:flashcard",
-      "front": "Sav, hangi edebî dönem ve gelenek içinde ortaya çıkmıştır?",
-      "back": "İslamiyet öncesi Türk sözlü edebiyatında."
+      "front": "Birikimin gücünü anlatan savın anlamı nedir?",
+      "back": "\"Birin birin ming bolur, tama tama göl bolur.\" yani birler bin olur, damla damla göl olur."
     },
     {
       "id": "edebiyat_10_u01_k02_o06:flashcard",
-      "front": "Sav ile sagu arasındaki temel fark nedir?",
-      "back": "Sav atasözü niteliğinde özlü söz; sagu ölüm üzerine söylenen şiirdir."
+      "front": "\"Tembele bulut yük olur.\" sözünün sav olarak karşılığı nedir?",
+      "back": "\"Ermegüke bulıt yük bolır.\" savının karşılığıdır."
     },
     {
       "id": "edebiyat_10_u01_k02_o07:flashcard",
-      "front": "Bir sözün sav sayılmasında hangi özellik belirleyicidir?",
-      "back": "Kısa, özlü ve deneyim aktarır nitelikte olması."
+      "front": "Savın divan edebiyatındaki adı nedir?",
+      "back": "Darb-ı meseldir."
     },
     {
       "id": "edebiyat_10_u01_k02_o08:flashcard",
-      "front": "Savın kuşaklar arasında aktarılma biçimini açıkla.",
-      "back": "Savlar, İslamiyet öncesi sözlü edebiyat geleneğinde kuşaktan kuşağa aktarılmıştır."
+      "front": "Sav ile atasözü arasındaki ilişki nedir?",
+      "back": "Sav, İslamiyet öncesi dönemin atasözüdür; ikisi de kalıplaşmış ve öğüt veren kısa sözlerdir."
     },
     {
       "id": "edebiyat_10_u01_k02_o09:flashcard",
-      "front": "Yaşam deneyimini kısa, özlü ve öğütleyici bir sözle anlatan özgün bir sav kur.",
-      "back": "İşini ölçüp biçen, emeğini boşa harcamaz."
+      "front": "\"Kanı kanla yıkamazlar.\" sözünün anlamı nedir?",
+      "back": "Kötülüğün kötülükle ortadan kaldırılamayacağını, intikamın sorunu çözmediğini anlatır."
     },
     {
       "id": "edebiyat_10_u01_k02_o10:flashcard",
-      "front": "Savın temel işlevi nedir?",
-      "back": "Yaşama ilişkin deneyimi kısa, akılda kalıcı sözle iletmek."
+      "front": "Sav biçiminin sözlü kültürdeki işlevi nedir?",
+      "back": "Kolayca akılda kalmasını ve sözlü kültürde kuşaktan kuşağa aktarılmasını sağlar."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Sav"
+  ]
 }

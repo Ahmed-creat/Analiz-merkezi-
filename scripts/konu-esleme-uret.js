@@ -28,6 +28,60 @@ const path = require("path");
 const KOK = path.join(__dirname, "..");
 const HAVUZ_DIR = path.join(KOK, "site", "content", "soru_havuzlari");
 const MANIFEST = path.join(HAVUZ_DIR, "index.json");
+/* v75 — ARŞİVDEKİ OKULİZYON CÜMLELERİ
+   Eski havuzlar `alt_beceri` alanında Okulizyon'un BİREBİR kazanım
+   cümlesini taşıyordu ("üçgenin bir kenarı ve o kenara ait yüksekliğinin
+   değişimine bağlı olarak…"). Yeni (ders kitabından üretilmiş) havuzlarda
+   bu alan kısa bir beceri cümlesi. Okulizyon'dan gelen metinle eşleşmeyi
+   korumak için arşivdeki cümleler arama metnine eklenir.
+   Dosya yoksa sessizce atlanır (arşiv kalıcı değil). */
+const ARSIV_DIR = path.join(KOK, "arsiv", "soru_havuzlari", "eski-site");
+/* Eski manifestin `etiketler` alanı Okulizyon'un kendi kazanım cümlelerini
+   taşıyordu ("Türkü türünün genel özelliklerini belirler."). Yeni havuzlarda
+   bu alan ders kitabı kazanımlarıyla doldu; Okulizyon eşleşmesi zayıflamasın
+   diye eski etiketler konu bazında devralınır. */
+const arsivEtiketleri = (() => {
+  const harita = new Map();
+  const yol = path.join(ARSIV_DIR, "index.json");
+  if (!fs.existsSync(yol)) return harita;
+  let d = null;
+  try { d = JSON.parse(fs.readFileSync(yol, "utf8")); } catch (e) { return harita; }
+  for (const h of (d.havuzlar || [])) {
+    const et = (h.etiketler || []).map(x => String(x).trim()).filter(Boolean);
+    if (!et.length) continue;
+    for (const k of [String(h.konu_id || ""), String(h.topic_key || "")]) {
+      if (k && !harita.has(k)) harita.set(k, et);
+    }
+  }
+  return harita;
+})();
+
+const arsivCumleleri = (() => {
+  const harita = new Map();           // anahtar → [cümle]
+  if (!fs.existsSync(ARSIV_DIR)) return harita;
+  for (const ad of fs.readdirSync(ARSIV_DIR)) {
+    if (!ad.endsWith(".json") || ad === "index.json") continue;
+    let d = null;
+    try { d = JSON.parse(fs.readFileSync(path.join(ARSIV_DIR, ad), "utf8")); } catch (e) { continue; }
+    if (!d || !Array.isArray(d.sorular)) continue;
+    const cumleler = [];
+    const gorulen = new Set();
+    for (const q of d.sorular) {
+      const a = q && q.alt_beceri;
+      if (typeof a !== "string") continue;
+      const t = a.trim();
+      if (!t || gorulen.has(t)) continue;
+      gorulen.add(t);
+      cumleler.push(t);
+    }
+    if (!cumleler.length) continue;
+    const anahtarlar = [String(d.konu_id || ""), String(d.topic_key || "")].filter(Boolean);
+    for (const k of anahtarlar) {
+      if (!harita.has(k)) harita.set(k, cumleler);
+    }
+  }
+  return harita;
+})();
 const CIKTI = path.join(KOK, "site", "content", "konu_esleme.json");
 
 function oku(p) {
@@ -51,13 +105,26 @@ function uret() {
     }
     const alt = [];
     const gorulen = new Set();
+    const kazanimlar = [];
+    const gorulenK = new Set();
     for (const q of pool.sorular || []) {
       const a = q && q.alt_beceri;
-      if (!a || typeof a !== "string") continue;
-      const k = a.trim();
-      if (!k || gorulen.has(k)) continue;
-      gorulen.add(k);
-      alt.push(k);
+      if (a && typeof a === "string") {
+        const k = a.trim();
+        if (k && !gorulen.has(k)) { gorulen.add(k); alt.push(k); }
+      }
+      // v75 — yeni havuzlar kazanım cümlesini SORU BAŞINA taşıyor.
+      // Okulizyon da kazanım cümlesi gönderdiği için en güçlü sinyal bu:
+      // "kazanım ↔ kazanım" karşılaştırması. Eski havuzlarda bu alan yoktu,
+      // bu yüzden alt_beceri + etiketler kullanılıyordu; ikisi birlikte alınır.
+      const kz = q && q.kazanim;
+      if (kz && typeof kz === "string") {
+        const k2 = kz.trim();
+        if (k2 && !gorulenK.has(k2)) { gorulenK.add(k2); kazanimlar.push(k2); }
+      }
+    }
+    if (!kazanimlar.length && typeof pool.kazanim === "string" && pool.kazanim.trim()) {
+      kazanimlar.push(pool.kazanim.trim());
     }
     altBeceriSayisi += alt.length;
 
@@ -73,7 +140,9 @@ function uret() {
       konu: konu,
       soru: Number(h.soru_sayisi) || 0,
       // Arama metni (tek alan: tarayıcıda tek geçiş yeter)
-      metin: [konu, h.baslik || "", ...(h.etiketler || []), ...alt]
+      metin: [konu, h.baslik || "", ...(h.etiketler || []), ...alt, ...kazanimlar,
+        ...(arsivCumleleri.get(String(h.konu_id)) || arsivCumleleri.get(topicKey) || []),
+        ...(arsivEtiketleri.get(String(h.konu_id)) || arsivEtiketleri.get(topicKey) || [])]
         .filter(Boolean)
         .join(" · ")
     });

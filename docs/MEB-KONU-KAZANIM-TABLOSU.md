@@ -314,13 +314,13 @@ yalnız hangi **konuda** oldukları ODSGM tablosunda yazmadığı için ünite b
 **Türk Dili ve Edebiyatı** (8)
 
 - `TDE1.1` (tema 1) — Dinlemeyi/İzlemeyi Yönetebilme  
-  ↳ uygulama konusu: (havuzda yok)
+  ↳ uygulama konusu: Masal
 - `TDE1.2` (tema 1) — Anlam Oluşturabilme  
-  ↳ uygulama konusu: (havuzda yok)
+  ↳ uygulama konusu: Masal
 - `TDE1.3` (tema 1) — Çözümleyebilme  
-  ↳ uygulama konusu: (havuzda yok)
+  ↳ uygulama konusu: Masal
 - `TDE1.4` (tema 1) — Süreci Değerlendirebilme  
-  ↳ uygulama konusu: (havuzda yok)
+  ↳ uygulama konusu: Masal
 - `TDE3.1` (tema 3) — Konuşmayı Yönetebilme  
   ↳ uygulama konusu: (havuzda yok)
 - `TDE3.2` (tema 3) — İçerik Oluşturabilme  
@@ -335,17 +335,17 @@ yalnız hangi **konuda** oldukları ODSGM tablosunda yazmadığı için ünite b
 - `MAT.10.4.4` (tema 4) — Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±  
   ↳ uygulama konusu: 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri
 - `MAT.10.4.5` (tema 4) — Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme  
-  ↳ uygulama konusu: 4.5 Fonksiyonların Ters Fonksiyonları
+  ↳ uygulama konusu: 4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları
 - `MAT.10.4.6` (tema 4) — Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme  
-  ↳ uygulama konusu: 4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü
+  ↳ uygulama konusu: 4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü
 - `MAT.10.5.1` (tema 5) — Sayma stratejileri kullanarak problem çözebilme  
   ↳ uygulama konusu: 5.1 Sayma Stratejileri
 - `MAT.10.5.2` (tema 5) — Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme  
   ↳ uygulama konusu: 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı
 - `MAT.10.6.1` (tema 6) — Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme  
-  ↳ uygulama konusu: 6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme
+  ↳ uygulama konusu: 6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme
 - `MAT.10.6.2` (tema 6) — Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme  
-  ↳ uygulama konusu: 6.2 Doğrunun Özellikleri ve Analitik İncelenmesi
+  ↳ uygulama konusu: 6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi
 - `MAT.10.7.1` (tema 7) — Koşullu olasılık ile çıkarım yapabilme  
   ↳ uygulama konusu: 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar
 - `MAT.10.7.2` (tema 7) — Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme  
@@ -378,14 +378,14 @@ yalnız hangi **konuda** oldukları ODSGM tablosunda yazmadığı için ünite b
 - `FİZ.10.4.5` (tema 4) — Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme  
   ↳ uygulama konusu: 4.5 Su Dalgalarında Yansıma ve Kırılma
 - `FİZ.10.4.6` (tema 4) — Rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilme  
-  ↳ uygulama konusu: 4.6 Rezonans ve Deprem
+  ↳ uygulama konusu: 4.6.1 Rezonans ve Depremle İlgili Kavramlar
 - `FİZ.10.4.7` (tema 4) — Depremle ilgili bilimsel model oluşturabilme  
-  ↳ uygulama konusu: (havuzda yok)
+  ↳ uygulama konusu: 4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme
 
 **Kimya** (11)
 
 - `KİM.10.1.11` (tema 1) — Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme  
-  ↳ uygulama konusu: 1.2.4 Graham Difüzyon ve Eftizyon Yasası
+  ↳ uygulama konusu: (havuzda yok)
 - `KİM.10.2.1` (tema 2) — Çözünme sürecine ilişkin bilimsel model oluşturabilme  
   ↳ uygulama konusu: 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği
 - `KİM.10.2.2` (tema 2) — Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme  
@@ -403,7 +403,7 @@ yalnız hangi **konuda** oldukları ODSGM tablosunda yazmadığı için ünite b
 - `KİM.10.2.8` (tema 2) — Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme  
   ↳ uygulama konusu: (havuzda yok)
 - `KİM.10.3.1` (tema 3) — Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme  
-  ↳ uygulama konusu: 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar
+  ↳ uygulama konusu: 3.1.1 Makro ve Mikro Ölçekli Deneyler
 - `KİM.10.3.2` (tema 3) — Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme  
   ↳ uygulama konusu: 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar
 
@@ -414,19 +414,19 @@ yalnız hangi **konuda** oldukları ODSGM tablosunda yazmadığı için ünite b
 - `BİY.10.2.1` (tema 2) — Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme  
   ↳ uygulama konusu: 2.1 Ekosistemin Bileşenleri
 - `BİY.10.2.2` (tema 2) — Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme  
-  ↳ uygulama konusu: 2.3 Ekosistemdeki Madde ve Enerji Akışı
+  ↳ uygulama konusu: 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler
 - `BİY.10.2.3` (tema 2) — Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme  
   ↳ uygulama konusu: 2.3 Ekosistemdeki Madde ve Enerji Akışı
 - `BİY.10.2.4` (tema 2) — Madde döngüleri ile ilgili bilimsel model oluşturabilme  
   ↳ uygulama konusu: 2.4 Madde Döngüleri
 - `BİY.10.2.5` (tema 2) — Ekolojik sürdürülebilirliğin önemini yorumlayabilme  
-  ↳ uygulama konusu: 2.9 Atık Yönetimi
+  ↳ uygulama konusu: 2.5 Ekolojik Sürdürülebilirliğin Önemi
 - `BİY.10.2.6` (tema 2) — Çevresinde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilme  
-  ↳ uygulama konusu: 2.9 Atık Yönetimi
+  ↳ uygulama konusu: 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar
 - `BİY.10.2.7` (tema 2) — Ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilme  
-  ↳ uygulama konusu: 2.9 Atık Yönetimi
+  ↳ uygulama konusu: 2.7 Ekolojik Ayak İzinin Küçültülmesi
 - `BİY.10.2.8` (tema 2) — Doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilme  
-  ↳ uygulama konusu: 2.9 Atık Yönetimi
+  ↳ uygulama konusu: 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması
 - `BİY.10.2.9` (tema 2) — Çevresinde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilme  
   ↳ uygulama konusu: 2.9 Atık Yönetimi
 
@@ -458,7 +458,7 @@ yalnız hangi **konuda** oldukları ODSGM tablosunda yazmadığı için ünite b
 - `COĞ.10.5.3` (tema 5) — Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilme  
   ↳ uygulama konusu: 5.3 Türkiye Ekonomisinin Sektörel Dağılımı
 - `COĞ.10.6.1` (tema 6) — Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme  
-  ↳ uygulama konusu: (havuzda yok)
+  ↳ uygulama konusu: 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri
 - `COĞ.10.6.2` (tema 6) — Afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilme  
   ↳ uygulama konusu: 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri
 - `COĞ.10.6.3` (tema 6) — Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilme  

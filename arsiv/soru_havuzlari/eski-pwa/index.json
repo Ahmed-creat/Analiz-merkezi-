@@ -1,0 +1,1754 @@
+{
+  "sinif": 10,
+  "aciklama": "10. sınıf soru havuzları; kaynak arşivindeki ogeler canonical sorular/flashcards şemasına dönüştürüldü.",
+  "havuz_sayisi": 152,
+  "soru_sayisi": 1756,
+  "havuzlar": [
+    {
+      "konu_id": "biyo_10_u01_k01",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "ATP’nin Yapısı ve Enerji Aktarımındaki Rolü",
+        "Enerjinin Önemi"
+      ],
+      "baslik": "ATP’nin Yapısı ve Enerji Aktarımındaki Rolü",
+      "topic_key": "Biyoloji > 1.1 Canlılık İçin Enerjinin Önemi"
+    },
+    {
+      "konu_id": "biyo_10_u01_k02",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [
+        "Fotosentez",
+        "Fotosentez Hızına Etki Eden Çevresel Faktörler",
+        "Fotosentezde Kullanılan ve Üretilen Maddeler",
+        "Işığın Kullanıldığı Tepkimeler",
+        "Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü)",
+        "Pigmentler"
+      ],
+      "baslik": "Fotosentez",
+      "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)"
+    },
+    {
+      "konu_id": "biyo_10_u01_k03",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Kemosentez"
+      ],
+      "baslik": "Kemosentez",
+      "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)"
+    },
+    {
+      "konu_id": "biyo_10_u01_k04",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k04.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [
+        "Canlılarda Sindirim Yapıları",
+        "Diş Adaptasyonları",
+        "Mide ve Bağırsak Adaptasyonları",
+        "Sindirim",
+        "İnsanda Emilim ve Taşınma",
+        "İnsanda Sindirim"
+      ],
+      "baslik": "Canlılarda Sindirim Yapıları",
+      "topic_key": "Biyoloji > 1.5 Sindirim"
+    },
+    {
+      "konu_id": "biyo_10_u01_k05",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k05.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [
+        "Besinlerin Hücresel Solunuma Katılma Yolları",
+        "ETS Evresi",
+        "Glikoliz",
+        "Krebs (Sitrik Asit) Döngüsü",
+        "Oksijenli Solunum",
+        "Oksijensiz Solunum"
+      ],
+      "baslik": "Besinlerin Hücresel Solunuma Katılma Yolları",
+      "topic_key": "Biyoloji > 1.7 Hücresel Solunum"
+    },
+    {
+      "konu_id": "biyo_10_u01_k06",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Etil Alkol Fermantasyonu",
+        "Fermantasyon",
+        "Laktik Asit Fermantasyonu"
+      ],
+      "baslik": "Etil Alkol Fermantasyonu",
+      "topic_key": "Biyoloji > 1.9 Fermantasyon"
+    },
+    {
+      "konu_id": "biyo_10_u01_k07",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u01_k07.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı",
+        "Farklı Besin Gruplarının Enerji Değerleri"
+      ],
+      "baslik": "Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı",
+      "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi"
+    },
+    {
+      "konu_id": "biyo_10_u02_k01",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u02_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Ekosistemin Bileşenleri",
+        "Ekosistemin Canlı Bileşenleri",
+        "Ekosistemin Cansız Bileşenleri"
+      ],
+      "baslik": "Ekosistemin Bileşenleri",
+      "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri"
+    },
+    {
+      "konu_id": "biyo_10_u02_k02",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u02_k02.json",
+      "soru_sayisi": 14,
+      "flashcard_sayisi": 14,
+      "etiketler": [
+        "Biyolojik Birikim ve Etkileri",
+        "Ekolojik Piramitler",
+        "Ekosistemde Madde ve Enerji Akışı",
+        "Komünitede Tür İçi ve Türler Arası Etkileşimler",
+        "Popülasyon Dinamikleri",
+        "Popülasyon, Komünite, Ekosistem",
+        "Süksesyon"
+      ],
+      "baslik": "Biyolojik Birikim ve Etkileri",
+      "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı"
+    },
+    {
+      "konu_id": "biyo_10_u02_k03",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u02_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Azot Döngüsü",
+        "Karbon Döngüsü",
+        "Madde Döngüleri",
+        "Su Döngüsü"
+      ],
+      "baslik": "Azot Döngüsü",
+      "topic_key": "Biyoloji > 2.4 Madde Döngüleri"
+    },
+    {
+      "konu_id": "biyo_10_u02_k04",
+      "ders": "Biyoloji",
+      "sinif": 10,
+      "dosya": "biyo_10_u02_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Atık Yönetimi",
+        "Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+        "Ekolojik Ayak İzinin Küçültülmesi",
+        "Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar",
+        "Ekolojik Sürdürülebilirliğin Önemi"
+      ],
+      "baslik": "Atık Yönetimi",
+      "topic_key": "Biyoloji > 2.9 Atık Yönetimi"
+    },
+    {
+      "konu_id": "cogr_10_u01_k01",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u01_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 1.1 Coğrafi Bakış"
+    },
+    {
+      "konu_id": "cogr_10_u02_k01",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u02_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları"
+    },
+    {
+      "konu_id": "cogr_10_u02_k02",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u02_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması"
+    },
+    {
+      "konu_id": "cogr_10_u03_k01",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u03_k01.json",
+      "soru_sayisi": 16,
+      "flashcard_sayisi": 16,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 3.1 Tektonik Süreçler"
+    },
+    {
+      "konu_id": "cogr_10_u03_k02",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u03_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi"
+    },
+    {
+      "konu_id": "cogr_10_u03_k03",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u03_k03.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi"
+    },
+    {
+      "konu_id": "cogr_10_u03_k04",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u03_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması"
+    },
+    {
+      "konu_id": "cogr_10_u03_k05",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u03_k05.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim"
+    },
+    {
+      "konu_id": "cogr_10_u04_k01",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u04_k01.json",
+      "soru_sayisi": 14,
+      "flashcard_sayisi": 14,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi"
+    },
+    {
+      "konu_id": "cogr_10_u05_k01",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u05_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri"
+    },
+    {
+      "konu_id": "cogr_10_u06_k01",
+      "ders": "Coğrafya",
+      "sinif": 10,
+      "dosya": "cogr_10_u06_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri"
+    },
+    {
+      "konu_id": "din_10_u01_k01",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u01_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 1.1 Kur'an-ı Kerim ve Özellikleri"
+    },
+    {
+      "konu_id": "din_10_u01_k02",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u01_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 1.2 Kur'an'ın Anlaşılması ve Yorumlanması"
+    },
+    {
+      "konu_id": "din_10_u01_k03",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u01_k03.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar (Ünite 1)"
+    },
+    {
+      "konu_id": "din_10_u02_k01",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u02_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 2.1 İslam'ın İbadet Boyutu"
+    },
+    {
+      "konu_id": "din_10_u02_k02",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u02_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 2.2 Namaz ve Oruç"
+    },
+    {
+      "konu_id": "din_10_u03_k01",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u03_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 3.1 İslam'ın Ahlak Boyutu"
+    },
+    {
+      "konu_id": "din_10_u03_k02",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u03_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 3.2 Ahlaki Davranışlar"
+    },
+    {
+      "konu_id": "din_10_u03_k03",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u03_k03.json",
+      "soru_sayisi": 14,
+      "flashcard_sayisi": 14,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 3.3 Toplumsal Ahlak"
+    },
+    {
+      "konu_id": "din_10_u04_k01",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u04_k01.json",
+      "soru_sayisi": 14,
+      "flashcard_sayisi": 14,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 4.1 Hz. Muhammed'in Hayatı"
+    },
+    {
+      "konu_id": "din_10_u04_k02",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u04_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 4.2 Mekke Dönemi"
+    },
+    {
+      "konu_id": "din_10_u04_k03",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u04_k03.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 4.3 Medine Dönemi"
+    },
+    {
+      "konu_id": "din_10_u05_k01",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u05_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 4.3 Medine Dönemi"
+    },
+    {
+      "konu_id": "din_10_u05_k02",
+      "ders": "Din Kültürü",
+      "sinif": 10,
+      "dosya": "din_10_u05_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar (Ünite 4)"
+    },
+    {
+      "konu_id": "fel_10_u01_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u01_k01.json",
+      "soru_sayisi": 11,
+      "flashcard_sayisi": 11,
+      "etiketler": [],
+      "baslik": "1.1 Felsefenin Anlamı",
+      "topic_key": "Felsefe > 1.1 Felsefenin Anlamı"
+    },
+    {
+      "konu_id": "fel_10_u01_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u01_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "1.2 Felsefi Düşüncenin Gelişimi",
+      "topic_key": "Felsefe > 1.2 Felsefi Düşüncenin Gelişimi"
+    },
+    {
+      "konu_id": "fel_10_u01_k03",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u01_k03.json",
+      "soru_sayisi": 11,
+      "flashcard_sayisi": 11,
+      "etiketler": [],
+      "baslik": "1.3 Felsefi Düşüncenin Özellikleri",
+      "topic_key": "Felsefe > 1.3 Felsefi Düşüncenin Özellikleri"
+    },
+    {
+      "konu_id": "fel_10_u01_k04",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u01_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "1.4 Felsefi Soruların Temel Özellikleri",
+      "topic_key": "Felsefe > 1.4 Felsefi Soruların Temel Özellikleri"
+    },
+    {
+      "konu_id": "fel_10_u01_k05",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u01_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "1.5 Felsefenin Diğer Alanlarla İlişkisi",
+      "topic_key": "Felsefe > 1.5 Felsefenin Diğer Alanlarla İlişkisi"
+    },
+    {
+      "konu_id": "fel_10_u01_k06",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u01_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "1.6 Felsefenin Bireysel ve Toplumsal İşlevi",
+      "topic_key": "Felsefe > 1.6 Felsefenin Bireysel ve Toplumsal İşlevi"
+    },
+    {
+      "konu_id": "fel_10_u02_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u02_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "2.1 Düşünme ve Dil İlişkisi",
+      "topic_key": "Felsefe > 2.1 Düşünme ve Dil İlişkisi"
+    },
+    {
+      "konu_id": "fel_10_u02_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u02_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "2.2 Mantık ve Argümantasyonun Temel Kavramları",
+      "topic_key": "Felsefe > 2.2 Mantık ve Argümantasyonun Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u02_k03",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u02_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "2.3 Argümantasyonun Yapısı",
+      "topic_key": "Felsefe > 2.3 Argümantasyonun Yapısı"
+    },
+    {
+      "konu_id": "fel_10_u03_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u03_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "3.1 Varlık Felsefesinin Konusu ve Temel Kavramları",
+      "topic_key": "Felsefe > 3.1 Varlık Felsefesinin Konusu ve Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u03_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u03_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
+      "topic_key": "Felsefe > 3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)"
+    },
+    {
+      "konu_id": "fel_10_u04_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u04_k01.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları",
+      "topic_key": "Felsefe > 4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u04_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u04_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
+      "topic_key": "Felsefe > 4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)"
+    },
+    {
+      "konu_id": "fel_10_u05_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u05_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları",
+      "topic_key": "Felsefe > 5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u05_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u05_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)",
+      "topic_key": "Felsefe > 5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)"
+    },
+    {
+      "konu_id": "fel_10_u06_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u06_k01.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları",
+      "topic_key": "Felsefe > 6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u06_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u06_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)",
+      "topic_key": "Felsefe > 6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)"
+    },
+    {
+      "konu_id": "fel_10_u07_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u07_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları",
+      "topic_key": "Felsefe > 7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u07_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u07_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
+      "topic_key": "Felsefe > 7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)"
+    },
+    {
+      "konu_id": "fel_10_u08_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u08_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "8.1 Din Felsefesinin Konusu ve Temel Kavramları",
+      "topic_key": "Felsefe > 8.1 Din Felsefesinin Konusu ve Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u08_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u08_k02.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [],
+      "baslik": "8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
+      "topic_key": "Felsefe > 8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)"
+    },
+    {
+      "konu_id": "fel_10_u09_k01",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u09_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "9.1 Bilim Felsefesinin Konusu ve Temel Kavramları",
+      "topic_key": "Felsefe > 9.1 Bilim Felsefesinin Konusu ve Temel Kavramları"
+    },
+    {
+      "konu_id": "fel_10_u09_k02",
+      "ders": "Felsefe",
+      "sinif": 10,
+      "dosya": "fel_10_u09_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)",
+      "topic_key": "Felsefe > 9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)"
+    },
+    {
+      "konu_id": "fizik_10_u01_k01",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u01_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "1.1 Sabit Hızlı Hareket",
+      "topic_key": "Fizik > 1.1 Sabit Hızlı Hareket"
+    },
+    {
+      "konu_id": "fizik_10_u01_k02",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u01_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [
+        "A) İvme ve Hız Değişimi Arasındaki İlişki",
+        "B) Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi"
+      ],
+      "baslik": "1.2 Bir Boyutta Sabit İvmeli Hareket",
+      "topic_key": "Fizik > 1.2 Bir Boyutta Sabit İvmeli Hareket"
+    },
+    {
+      "konu_id": "fizik_10_u01_k03",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u01_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+        "B) Serbest Düşme Hareketi"
+      ],
+      "baslik": "1.3 Serbest Düşme",
+      "topic_key": "Fizik > 1.3 Serbest Düşme"
+    },
+    {
+      "konu_id": "fizik_10_u01_k04",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u01_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "1.4 İki Boyutta Sabit İvmeli Hareket",
+      "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket"
+    },
+    {
+      "konu_id": "fizik_10_u02_k01",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u02_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+        "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki"
+      ],
+      "baslik": "2.1 İş, Enerji ve Güç",
+      "topic_key": "Fizik > 2.1 İş, Enerji ve Güç"
+    },
+    {
+      "konu_id": "fizik_10_u02_k02",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u02_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "2.2 Enerji Biçimleri",
+      "topic_key": "Fizik > 2.2 Enerji Biçimleri"
+    },
+    {
+      "konu_id": "fizik_10_u02_k03",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u02_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "2.3 Mekanik Enerji",
+      "topic_key": "Fizik > 2.3 Mekanik Enerji"
+    },
+    {
+      "konu_id": "fizik_10_u02_k04",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u02_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "2.4 Enerji Kaynakları",
+      "topic_key": "Fizik > 2.4 Enerji Kaynakları"
+    },
+    {
+      "konu_id": "fizik_10_u03_k01",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u03_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "3.1 Basit Elektrik Devreleri",
+      "topic_key": "Fizik > 3.1 Basit Elektrik Devreleri"
+    },
+    {
+      "konu_id": "fizik_10_u03_k02",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u03_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "3.2 Elektrik Akımı",
+      "topic_key": "Fizik > 3.2 Elektrik Akımı"
+    },
+    {
+      "konu_id": "fizik_10_u03_k03",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u03_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "3.3 Ohm Yasası",
+      "topic_key": "Fizik > 3.3 Ohm Yasası"
+    },
+    {
+      "konu_id": "fizik_10_u03_k04",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u03_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "3.4 Dirençlerin Bağlanması",
+      "topic_key": "Fizik > 3.4 Dirençlerin Bağlanması"
+    },
+    {
+      "konu_id": "fizik_10_u03_k05",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u03_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "3.5 Üreteçlerin Bağlanması",
+      "topic_key": "Fizik > 3.5 Üreteçlerin Bağlanması"
+    },
+    {
+      "konu_id": "fizik_10_u03_k06",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u03_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
+      "topic_key": "Fizik > 3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler"
+    },
+    {
+      "konu_id": "fizik_10_u03_k07",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u03_k07.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "3.7 Topraklamanın Önemi",
+      "topic_key": "Fizik > 3.7 Topraklamanın Önemi"
+    },
+    {
+      "konu_id": "fizik_10_u04_k01",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u04_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "4.1 Dalgaların Temel Kavramları",
+      "topic_key": "Fizik > 4.1 Dalgaların Temel Kavramları"
+    },
+    {
+      "konu_id": "fizik_10_u04_k02",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u04_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "4.2 Dalgaların Sınıflandırılması",
+      "topic_key": "Fizik > 4.2 Dalgaların Sınıflandırılması"
+    },
+    {
+      "konu_id": "fizik_10_u04_k03",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u04_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
+      "topic_key": "Fizik > 4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler"
+    },
+    {
+      "konu_id": "fizik_10_u04_k04",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u04_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "4.4 Periyodik Hareketler",
+      "topic_key": "Fizik > 4.4 Periyodik Hareketler"
+    },
+    {
+      "konu_id": "fizik_10_u04_k05",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u04_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "baslik": "4.5 Su Dalgalarında Yansıma ve Kırılma",
+      "topic_key": "Fizik > 4.5 Su Dalgalarında Yansıma ve Kırılma"
+    },
+    {
+      "konu_id": "fizik_10_u04_k06",
+      "ders": "Fizik",
+      "sinif": 10,
+      "dosya": "fizik_10_u04_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "A) Rezonans ve Depremle İlgili Kavramlar",
+        "B) Depremle İlgili Bilimsel Model Oluşturabilme"
+      ],
+      "baslik": "4.6 Rezonans ve Deprem",
+      "topic_key": "Fizik > 4.6 Rezonans ve Deprem"
+    },
+    {
+      "konu_id": "kimya_10_u01_k01",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Kimyasal Değişim",
+        "Kimyasal Tepkimeler",
+        "Kimyasal Tepkimelerin Oluşum Sürecini Modelleme"
+      ],
+      "baslik": "Kimyasal Değişim",
+      "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu"
+    },
+    {
+      "konu_id": "kimya_10_u01_k02",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Asit-Baz Tepkimeleri",
+        "Çökelme Tepkimeleri",
+        "İndirgenme-Yükseltgenme Tepkimeleri"
+      ],
+      "baslik": "Asit-Baz Tepkimeleri",
+      "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri"
+    },
+    {
+      "konu_id": "kimya_10_u01_k03",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Mol Kavramı",
+        "Saf Maddelerin Ölçülebilir Özellikleri"
+      ],
+      "baslik": "Mol Kavramı",
+      "topic_key": "Kimya > 1.1.3 Mol Kavramı"
+    },
+    {
+      "konu_id": "kimya_10_u01_k04",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Kimya > 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi"
+    },
+    {
+      "konu_id": "kimya_10_u01_k05",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar"
+    },
+    {
+      "konu_id": "kimya_10_u01_k06",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k06.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [
+        "Basınç-Hacim İlişkisi (Boyle Yasası)",
+        "Basınç-Sıcaklık İlişkisi (Gay Lusssac Yasası)",
+        "Gazların Kinetik Moleküler Teorisi",
+        "Gazların Özellikleri",
+        "Hacim-Madde Miktarı İlişkisi (Avogadro Yasası)",
+        "Sıcaklık-Hacim İlişkisi (Charles Yasası)"
+      ],
+      "baslik": "Basınç-Hacim İlişkisi (Boyle Yasası)",
+      "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları"
+    },
+    {
+      "konu_id": "kimya_10_u01_k07",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k07.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Efüzyon ve Difüzyon",
+        "Graham Difüzyon ve Efüzyon Yasası"
+      ],
+      "baslik": "Efüzyon ve Difüzyon",
+      "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Eftizyon Yasası"
+    },
+    {
+      "konu_id": "kimya_10_u01_k08",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u01_k08.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası"
+    },
+    {
+      "konu_id": "kimya_10_u02_k01",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Maddelerin Birbiri İçindeki Çözünebilirliği",
+        "Çözünme Süreci"
+      ],
+      "baslik": "Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği"
+    },
+    {
+      "konu_id": "kimya_10_u02_k02",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Fiziksel Çözünme",
+        "Kimyasal Çözünme",
+        "Moleküler Çözünme",
+        "İyonik Çözünme"
+      ],
+      "baslik": "Fiziksel Çözünme",
+      "topic_key": "Kimya > 2.1.1 Çözünme Süreci"
+    },
+    {
+      "konu_id": "kimya_10_u02_k03",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması"
+    },
+    {
+      "konu_id": "kimya_10_u02_k04",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)"
+    },
+    {
+      "konu_id": "kimya_10_u02_k05",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u02_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Aşırı Doymuş Çözelti",
+        "Doymamış Çözelti",
+        "Doymuş Çözelti",
+        "Elektrolit Olmayan Çözelti",
+        "Elektrolit Çözelti"
+      ],
+      "baslik": "Aşırı Doymuş Çözelti",
+      "topic_key": "Kimya > 2.1.5 Çözünürlük"
+    },
+    {
+      "konu_id": "kimya_10_u03_k01",
+      "ders": "Kimya",
+      "sinif": 10,
+      "dosya": "kimya_10_u03_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+        "Makro ve Mikro Ölçekli Deneyler"
+      ],
+      "baslik": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar"
+    },
+    {
+      "konu_id": "mat_10_u01_k01",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u01_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
+      "topic_key": "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler"
+    },
+    {
+      "konu_id": "mat_10_u01_k02",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u01_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
+      "topic_key": "Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler"
+    },
+    {
+      "konu_id": "mat_10_u01_k03",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u01_k03.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "1.3 Üçgende Alan",
+      "topic_key": "Matematik > 1.3 Üçgende Alan"
+    },
+    {
+      "konu_id": "mat_10_u01_k04",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u01_k04.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "1.4 Sinüs ve Kosinüs Teoremleri",
+      "topic_key": "Matematik > 1.4 Sinüs ve Kosinüs Teoremleri"
+    },
+    {
+      "konu_id": "mat_10_u02_k01",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u02_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+      "topic_key": "Matematik > 2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama"
+    },
+    {
+      "konu_id": "mat_10_u02_k02",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u02_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "2.2 İstatistiksel Sonuç veya Yorumları Tartışma",
+      "topic_key": "Matematik > 2.2 İstatistiksel Sonuç veya Yorumları Tartışma"
+    },
+    {
+      "konu_id": "mat_10_u03_k01",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u03_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
+      "topic_key": "Matematik > 3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler"
+    },
+    {
+      "konu_id": "mat_10_u03_k02",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u03_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
+      "topic_key": "Matematik > 3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat"
+    },
+    {
+      "konu_id": "mat_10_u03_k03",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u03_k03.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
+      "topic_key": "Matematik > 3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma"
+    },
+    {
+      "konu_id": "mat_10_u04_k01",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u04_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+      "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri"
+    },
+    {
+      "konu_id": "mat_10_u04_k02",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u04_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
+      "topic_key": "Matematik > 4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri"
+    },
+    {
+      "konu_id": "mat_10_u04_k03",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u04_k03.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
+      "topic_key": "Matematik > 4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri"
+    },
+    {
+      "konu_id": "mat_10_u04_k04",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u04_k04.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+      "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri"
+    },
+    {
+      "konu_id": "mat_10_u04_k05",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u04_k05.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "4.5 Fonksiyonların Ters Fonksiyonları",
+      "topic_key": "Matematik > 4.5 Fonksiyonların Ters Fonksiyonları"
+    },
+    {
+      "konu_id": "mat_10_u04_k06",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u04_k06.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+      "topic_key": "Matematik > 4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü"
+    },
+    {
+      "konu_id": "mat_10_u05_k01",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u05_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "5.1 Sayma Stratejileri",
+      "topic_key": "Matematik > 5.1 Sayma Stratejileri"
+    },
+    {
+      "konu_id": "mat_10_u05_k02",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u05_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
+      "topic_key": "Matematik > 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı"
+    },
+    {
+      "konu_id": "mat_10_u06_k01",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u06_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+      "topic_key": "Matematik > 6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme"
+    },
+    {
+      "konu_id": "mat_10_u06_k02",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u06_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "6.2 Doğrunun Özellikleri ve Analitik İncelenmesi",
+      "topic_key": "Matematik > 6.2 Doğrunun Özellikleri ve Analitik İncelenmesi"
+    },
+    {
+      "konu_id": "mat_10_u07_k01",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u07_k01.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+      "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar"
+    },
+    {
+      "konu_id": "mat_10_u07_k02",
+      "ders": "Matematik",
+      "sinif": 10,
+      "dosya": "mat_10_u07_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "baslik": "7.2 Bayes Teoremi",
+      "topic_key": "Matematik > 7.2 Bayes Teoremi"
+    },
+    {
+      "konu_id": "tarih_10_u01_k01",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u01_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler"
+      ],
+      "baslik": "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler",
+      "topic_key": "Tarih > 1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri"
+    },
+    {
+      "konu_id": "tarih_10_u01_k02",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u01_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim"
+      ],
+      "baslik": "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim",
+      "topic_key": "Tarih > 1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları"
+    },
+    {
+      "konu_id": "tarih_10_u01_k03",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u01_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri"
+      ],
+      "baslik": "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri",
+      "topic_key": "Tarih > 1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme"
+    },
+    {
+      "konu_id": "tarih_10_u02_k01",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u02_k01.json",
+      "soru_sayisi": 16,
+      "flashcard_sayisi": 16,
+      "etiketler": [
+        "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
+        "2.2. Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+        "2.4. Osmanlı Devleti’nin İskân ve İstimalet Politikası"
+      ],
+      "baslik": "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
+      "topic_key": "Tarih > 2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler"
+    },
+    {
+      "konu_id": "tarih_10_u02_k02",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u02_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [
+        "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi"
+      ],
+      "baslik": "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi",
+      "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi"
+    },
+    {
+      "konu_id": "tarih_10_u03_k01",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u03_k01.json",
+      "soru_sayisi": 19,
+      "flashcard_sayisi": 19,
+      "etiketler": [
+        "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi"
+      ],
+      "baslik": "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi",
+      "topic_key": "Tarih > 3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi"
+    },
+    {
+      "konu_id": "tarih_10_u03_k02",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u03_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [
+        "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim"
+      ],
+      "baslik": "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim",
+      "topic_key": "Tarih > 3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim"
+    },
+    {
+      "konu_id": "tarih_10_u03_k03",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u03_k03.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [
+        "3.3. Avrupalıların Sömürgeci Politikaları"
+      ],
+      "baslik": "3.3. Avrupalıların Sömürgeci Politikaları",
+      "topic_key": "Tarih > 3.3 Avrupalıların Sömürgeci Politikaları"
+    },
+    {
+      "konu_id": "tarih_10_u03_k04",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u03_k04.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [
+        "3.4. Osmanlı Devleti’nde İsyanlar"
+      ],
+      "baslik": "3.4. Osmanlı Devleti’nde İsyanlar",
+      "topic_key": "Tarih > 3.4 Osmanlı Devleti'nde İsyanlar"
+    },
+    {
+      "konu_id": "tarih_10_u03_k05",
+      "ders": "Tarih",
+      "sinif": 10,
+      "dosya": "tarih_10_u03_k05.json",
+      "soru_sayisi": 15,
+      "flashcard_sayisi": 15,
+      "etiketler": [
+        "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat"
+      ],
+      "baslik": "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat",
+      "topic_key": "Tarih > 3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Koşuk"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Sav"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Türkü"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k04.json",
+      "soru_sayisi": 11,
+      "flashcard_sayisi": 11,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Koşma"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Masal"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k06",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k07",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k07.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k08",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k08.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)"
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k09",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u01_k09.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Gazel"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Kaside"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Mersiye"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k06",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k06.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Edat (İlgeç)"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k07",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k07.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Bağlaç"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k08",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k08.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Ünlem"
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k09",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u02_k09.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Anlamına Göre Cümleler"
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u03_k01.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Destan"
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u03_k02.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Mesnevi"
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u03_k03.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi"
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u03_k04.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Fabl"
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u03_k05.json",
+      "soru_sayisi": 10,
+      "flashcard_sayisi": 10,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)"
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u04_k01.json",
+      "soru_sayisi": 11,
+      "flashcard_sayisi": 11,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri"
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u04_k02.json",
+      "soru_sayisi": 12,
+      "flashcard_sayisi": 12,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri"
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u04_k03.json",
+      "soru_sayisi": 16,
+      "flashcard_sayisi": 16,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)"
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u04_k04.json",
+      "soru_sayisi": 16,
+      "flashcard_sayisi": 16,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları"
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "sinif": 10,
+      "dosya": "edebiyat_10_u04_k05.json",
+      "soru_sayisi": 16,
+      "flashcard_sayisi": 16,
+      "etiketler": [],
+      "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri"
+    }
+  ],
+  "flashcard_sayisi": 1756,
+  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
+  "kaynak_arşiv_sayisi": 9
+}

@@ -2,355 +2,255 @@
   "konu_id": "din_10_u02_k02",
   "sinif": 10,
   "ders": "Din Kültürü",
-  "kaynak_dosya": "10. Sınıf din json.zip",
+  "tema": 2,
+  "tema_adi": "Allah'ı Tanımak",
+  "baslik": "2.1.1 Kozmolojik Delil",
+  "topic_key": "Din Kültürü > 2.1.1 Kozmolojik Delil",
+  "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir.",
+  "kaynak": "MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025), s.46-51",
+  "kaynak_dosya": "2025-2026.10.Sinif.Din.Kulturu.Ve.Ahlak.Bigisi.Ders.Kitabi.-MEB.pdf",
   "sorular": [
     {
       "soru_id": "din_10_u02_k02_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrenci Allah’ın varlığını kabul ediyor fakat O’nu tanımak için hangi bilgileri öğrenmesi gerektiğini soruyor. Kaynağa göre hangi alanlara yönelmelidir?",
+      "alt_beceri": "Kozmolojik delilin dayandığı temel öncülü belirler.",
+      "metin": "Bir düşünür, evrende hareket eden her şeyin hareketini kendisinden almadığını, hareketi başlatan bir ilk hareket ettirici bulunması gerektiğini savunmuştur. Bu akıl yürütme hangi delile dayanır?",
       "secenekler": [
-        "Allah’ın isim, sıfat ve fiillerine",
-        "Yalnızca duyularla algılanan özelliklere",
-        "Sadece tarihî olaylara",
-        "İnsanların kişisel kanaatlerine"
+        "Ontolojik delil",
+        "Kozmolojik delil",
+        "Dinî tecrübe delili",
+        "Ahlaki delil"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak, Allah’ın varlığını bilmenin O’nu bütünüyle tanımakla aynı olmadığını; isim, sıfat ve fiillerinin de bilinmesi gerektiğini söyler.",
+      "dogru_index": 1,
+      "cozum": "Hareketten ve evrenin oluşumundan yola çıkarak bir ilk neden arayan akıl yürütmeler kozmolojik delil kapsamındadır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah’ın varlığını bilmek ile Allah’ı tanımak arasındaki farkı açıklayın.",
-        "back": "Varlığına ilişkin delilleri bilmek önemlidir ancak Allah’ı tanımak için isimlerini, sıfatlarını ve fiillerini de bilmek gerekir."
-      }
+        "front": "Kozmolojik delil nedir?",
+        "back": "Evrenin varlığından, hareketinden ve sonradanlığından hareketle bir yaratıcının varlığını kanıtlamaya çalışan delildir."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi Allah’a dua ederken O’na ait güzel isimleri anıyor. Bu isimler topluluğunun kavramı nedir?",
+      "alt_beceri": "Kozmolojik delilin dayandığı temel öncülü belirler.",
+      "metin": "Kozmolojik delilin temel öncülü hangisidir?",
       "secenekler": [
-        "Marifetullah",
-        "Esmayıhüsna",
-        "Vahiy",
-        "Kelam"
+        "İnsanda doğuştan yetkin varlık fikri vardır",
+        "Evrende her şey bir amaca hizmet eder",
+        "İnsan dua ettiğinde huzur bulur",
+        "Evrenin bir başlangıcı vardır ve her sonradan var olanın bir varlık sebebi bulunur"
       ],
-      "dogru_index": 1,
-      "cozum": "Esmayıhüsna Allah’a ait güzel isimleri ifade eder; bu isimler O’nun zatını, sıfatlarını ve fiillerini tanımaya yardımcı olur.",
+      "dogru_index": 3,
+      "cozum": "Kozmolojik delil, evrenin sonradan var olduğu ve her sonradan var olanın bir sebebi bulunduğu öncülüne dayanır; diğer seçenekler başka delillere aittir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Esmayıhüsna kavramını açıklayın.",
-        "back": "Allah’ın zatını, sıfatlarını ve fiillerini en güzel biçimde tanımlayan güzel isimler esmayıhüsna olarak adlandırılır."
-      }
+        "front": "Evrenin sonradan var olmasının gerektirdiği nedir?",
+        "back": "Bir varlık sebebini, dolayısıyla bir yaratıcıyı gerektirir."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir inanan Allah’ı zatını duyu organlarıyla algılayarak değil, isimleri, sıfatları ve varlık âlemindeki eserleri üzerinden tanımaya çalışıyor. Hangi bilgi yolunu benimsemiştir?",
+      "alt_beceri": "Kozmolojik delilin dayandığı temel öncülü belirler.",
+      "metin": "Kelam âlimlerinin \"âlem sonradan yaratılmıştır, her sonradan yaratılanın bir yaratıcısı vardır\" biçimindeki akıl yürütmesi hangi delilin en bilinen biçimidir?",
       "secenekler": [
-        "Zatın duyularla algılanmasını",
-        "Yalnız kişisel sezgiye dayanmayı",
-        "İsim, sıfat ve eserlerden hareketle tanımayı",
-        "Allah’ın sıfatlarını yok saymayı"
+        "Hudûs delili (kozmolojik)",
+        "Gaye ve nizam delili",
+        "Ontolojik delil",
+        "Dinî tecrübe delili"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak, Allah’ın zatının duyularla algılanamayacağını; isimleri, sıfatları ve eserleri üzerinden tanınmaya çalışılması gerektiğini bildirir.",
+      "dogru_index": 0,
+      "cozum": "Hudûs delili, evrenin sonradan meydana geldiği öncülünden yaratıcıya ulaşır; kozmolojik delilin kelam geleneğindeki adıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah’ı tanımada isim, sıfat ve eserlerden yararlanmanın gerekçesi nedir?",
-        "back": "Allah aşkın bir varlıktır ve zatı duyu organlarıyla algılanamaz; isim, sıfat ve eserleri O’nu tanımaya yardımcı olur."
-      }
+        "front": "Hudûs delilinin diğer adı nedir?",
+        "back": "Kozmolojik delil; evrenin sonradan yaratıldığı öncülünden yola çıkar."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sınıflandırmada Allah’ın bazı isimleri zatıyla, bazıları kâinatın yaratılışıyla, bazıları da insanla ilişkisiyle bağlantılı ele alınıyor. Kaç grup bulunur?",
+      "alt_beceri": "Evrenin sonradanlığı ile yaratıcı fikri arasındaki ilişkiyi açıklar.",
+      "metin": "Bir metinde, evrenin kendi kendisini var etmesinin akıl dışı olduğu; var olmak için kendisinden önce gelen bir varlığa ihtiyaç duyduğu anlatılmaktadır. Bu açıklama kozmolojik delili nasıl destekler?",
       "secenekler": [
-        "İki",
-        "Dört",
-        "Altı",
-        "Üç"
+        "Evrenin varlığını kendisinden açıklayamadığını gösterir",
+        "Evrende her şeyin tesadüfen oluştuğunu kanıtlar",
+        "İnsanın ahlaki sorumluluğunu ortaya koyar",
+        "İbadetlerin farz olduğunu temellendirir"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak Allah’ın isimlerini zatıyla, kâinatla ve insanla ilgili isimler olarak üç gruba ayırır.",
+      "dogru_index": 0,
+      "cozum": "Kozmolojik delil, evrenin varlığını kendi içinde açıklayamamasını onun bir yaratıcıya bağlı olduğunun kanıtı sayar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah’ın isimleri kaynakta hangi üç grupta incelenir?",
-        "back": "Zatıyla ilgili, kâinatla ilgili ve insanla ilgili isimler olarak üç grupta incelenir."
-      }
+        "front": "Kozmolojik delilin dayandığı özellik nedir?",
+        "back": "Evrenin varlığını kendisinden açıklayamaması, yani sonradan var olması."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir isim Allah’ın ezelî oluşunu, diğeri ebedî ve ölümsüz oluşunu anlatıyor. Bu isimler sırasıyla nelerdir?",
+      "alt_beceri": "Evrenin sonradanlığı ile yaratıcı fikri arasındaki ilişkiyi açıklar.",
+      "metin": "İslam düşüncesinde evrenin \"hâdis\" olduğu söylenir. Bu kavram aşağıdakilerden hangisini ifade eder?",
       "secenekler": [
-        "Evvel ve Baki",
-        "Halık ve Rezzak",
-        "Melik ve Musavvir",
-        "Şekur ve Tevvab"
+        "Ezelî olan",
+        "Zorunlu varlık",
+        "Yoktan var edilemeyen",
+        "Sonradan var olan"
       ],
-      "dogru_index": 0,
-      "cozum": "Evvel başlangıcın olmamasını, Baki ise varlığın sonunun bulunmamasını ifade eder.",
+      "dogru_index": 3,
+      "cozum": "Hâdis, varlığının başlangıcı olan, sonradan meydana gelmiş varlık demektir; evren bu nitelikte görülür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Evvel ve Baki isimlerinin anlamlarını açıklayın.",
-        "back": "Evvel Allah’ın varlığının başlangıcı olmadığını; Baki ise varlığının sonu ve yok oluşu bulunmadığını ifade eder."
-      }
+        "front": "Hâdis ne demektir?",
+        "back": "Sonradan var olan, varlığının başlangıcı bulunan varlık."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir açıklama varlıklara biçim ve suret verme özelliğini vurguluyor. Kaynakta bu anlam hangi isimle ilişkilendirilir?",
+      "alt_beceri": "Evrenin sonradanlığı ile yaratıcı fikri arasındaki ilişkiyi açıklar.",
+      "metin": "Bir öğrenci, kozmolojik delili anlatırken \"evrenin hareketi kendi kendine başlamış olamaz\" cümlesini kurmuştur. Bu cümle delilin hangi aşamasına karşılık gelir?",
       "secenekler": [
-        "Rezzak",
-        "Musavvir",
-        "Melik",
-        "Tevvab"
+        "Evrenin amaçlı düzenini açıklama",
+        "Hareketten hareket ettiriciye geçiş",
+        "Zihindeki yetkin varlık fikrini çözümleme",
+        "Dua ile huzur arasındaki bağı kurma"
       ],
       "dogru_index": 1,
-      "cozum": "Musavvir varlıklara şekil ve suret veren anlamındadır. Halık, Bâri ve Fâtır da yaratmanın farklı yönlerini ifade eder.",
+      "cozum": "Hareketin kendi kendine başlayamayacağı düşüncesi, hareket eden evrenden hareket ettiriciye ulaşan kozmolojik çıkarımın ilk aşamasıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halık, Bâri, Fâtır ve Musavvir isimleri yaratmayla ilgili hangi yönleri anlatır?",
-        "back": "Halık yaratan, Bâri örneksiz yaratan, Fâtır yoktan yaratan, Musavvir varlıklara şekil ve suret verendir."
-      }
+        "front": "Kozmolojik delilde hareketin rolü nedir?",
+        "back": "Hareket eden evrenden hareket ettirici bir varlığa ulaşmayı sağlar."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Canlılara rızık verilmesini Allah’ın merhametinin bir yansıması olarak açıklayan kişi hangi isimler arasındaki ilişkiyi kurar?",
+      "alt_beceri": "Kozmolojik delilin dayandığı temel öncülü belirler.",
+      "metin": "Aşağıdaki ifadelerden hangisi kozmolojik delilin kapsamı dışında kalır?",
       "secenekler": [
-        "Evvel ve Baki",
-        "Melik ve Musavvir",
-        "Rezzak ve Rahman",
-        "Şekur ve Tevvab"
+        "Evrendeki uyumun bilinçli bir düzenleyiciye işaret etmesi",
+        "Evrenin bir başlangıcı bulunması",
+        "Her sonradan var olanın bir sebebi olması",
+        "Hareket eden varlıkların bir ilk hareket ettiriciye ihtiyaç duyması"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak, canlılara rızık verilmesini Rahman isminin merhametinin bir biçimi olarak açıklar ve Rezzak ismiyle ilişkilendirir.",
+      "dogru_index": 0,
+      "cozum": "Evrendeki uyum ve amaçlılık teleolojik (gaye ve nizam) delilin konusudur; diğerleri kozmolojik delilin öncülleridir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Rezzak, Rahman ve Rahîm isimleri arasında nasıl bir ilişki vardır?",
-        "back": "Rezzak canlıların rızkını karşılayanı; Rahman bütün canlılara sonsuz merhametle iyilikte bulunanı; Rahîm çok merhamet edeni ifade eder."
-      }
+        "front": "Kozmolojik delil ile teleolojik delil arasındaki fark nedir?",
+        "back": "Kozmolojik delil varlık ve hareketten, teleolojik delil düzen ve amaçtan yola çıkar."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi, yaratılmış evrenin kendi hâline bırakılmadığını ve mutlak yönetimin Allah’a ait olduğunu belirtiyor. Hangi ismin anlamını vurgular?",
+      "alt_beceri": "Kozmolojik delilin dayandığı temel öncülü belirler.",
+      "metin": "Bir konuşmacı, \"Evren yaratılmamış olsaydı, varlığını sürdürmek için kendisinden başka bir şeye ihtiyaç duymazdı; oysa her an bir desteğe muhtaçtır.\" demiştir. Konuşmacının kullandığı delil hangisidir?",
       "secenekler": [
-        "Baki",
-        "Tevvab",
-        "Şekur",
-        "Melik"
+        "Ontolojik delil",
+        "Dinî tecrübe delili",
+        "Kozmolojik delil",
+        "Tarihsel delil"
       ],
-      "dogru_index": 3,
-      "cozum": "Melik egemenliğin mutlak sahibi anlamına gelir; Allah’ın kâinatı yarattıktan sonra kendi hâline bırakmadığını belirtir.",
+      "dogru_index": 2,
+      "cozum": "Evrenin varlığını sürdürebilmek için başka bir varlığa muhtaç olması, kozmolojik delilin varlık ve sebep ilişkisine dayanan çıkarımıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Melik ismi Allah’ın kâinatla ilişkisini hangi yönden anlatır?",
-        "back": "Allah’ın kâinatın mutlak sahibi ve tek yöneticisi olduğunu ifade eder."
-      }
+        "front": "Kozmolojik delilde sebep kavramının anlamı nedir?",
+        "back": "Sonradan var olan her şeyin varlığını bir başka varlığa borçlu olması."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi yaptığı hatadan dönüp Allah’a yöneliyor ve tövbesinin kabul edilmesini umuyor. Hangi isimle ilgili umut taşır?",
+      "alt_beceri": "Evrenin sonradanlığı ile yaratıcı fikri arasındaki ilişkiyi açıklar.",
+      "metin": "Kozmolojik delilin sonunda ulaşılan varlık için aşağıdakilerden hangisi söylenir?",
       "secenekler": [
-        "Tevvab",
-        "Melik",
-        "Musavvir",
-        "Evvel"
+        "Evrenin bir parçasıdır",
+        "Varlığı başka bir varlığa bağlı olmayan zorunlu varlıktır",
+        "Sonradan yaratılmış bir varlıktır",
+        "Yalnızca insan zihninde bulunan bir fikirdir"
       ],
-      "dogru_index": 0,
-      "cozum": "Tevvab tövbe yollarını gösteren ve tövbeleri kabul eden anlamındadır. Şekur ise küçük amellere büyük karşılık verilmesini ifade eder.",
+      "dogru_index": 1,
+      "cozum": "Delil, varlığı kendinden olan ve başka bir sebebe ihtiyaç duymayan zorunlu bir varlığa ulaşmayı amaçlar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Şekur ve Tevvab isimleri insanla ilişkili olarak neyi ifade eder?",
-        "back": "Şekur küçük amellere büyük karşılık veren; Tevvab kullarına tövbe yollarını gösterip tövbelerini kabul edendir."
-      }
+        "front": "Kozmolojik delilin ulaştığı varlık nasıl tanımlanır?",
+        "back": "Varlığı kendinden olan, sebebe ihtiyaç duymayan zorunlu varlık."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     },
     {
       "soru_id": "din_10_u02_k02_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sıfatın Allah’tan başka bir varlık için düşünülmesi mümkün görülmüyor. Bu sıfat hangi gruptadır?",
+      "alt_beceri": "Kozmolojik delilin dayandığı temel öncülü belirler.",
+      "metin": "Kozmolojik delili reddeden bir kişinin öne sürebileceği itiraz hangisidir?",
       "secenekler": [
-        "Sübutî sıfatlarda",
-        "Zatî sıfatlarda",
-        "İnsanla ilgili isimlerde",
-        "Kişisel deneyimlerde"
-      ],
-      "dogru_index": 1,
-      "cozum": "Zatî sıfatlar Allah’a özgüdür. Sübutî sıfatlar da ezelî ve ebedî olup yaratılmışların sıfatlarıyla yalnızca isim benzerliği taşıyabilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Zatî ve sübutî sıfatlar arasındaki temel fark nedir?",
-        "back": "Zatî sıfatlar yalnız Allah’a özgüdür; sübutî sıfatlar O’nun nitelik ve kusursuzluğunu anlatır ve yaratılmışların niteliklerine benzemez."
-      }
-    },
-    {
-      "soru_id": "din_10_u02_k02_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Allah’ın varlığının başlangıcı olmadığını bildiren zatî sıfat hangi kavramdır?",
-      "secenekler": [
-        "Beka",
-        "Vahdaniyet",
-        "Kıdem",
-        "Vücut"
-      ],
-      "dogru_index": 2,
-      "cozum": "Kıdem Allah’ın varlığının ezelî ve başlangıçsız olmasını ifade eder. Beka sonunun olmamasını anlatır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Allah’ın zatî sıfatlarını adlarıyla sıralayın.",
-        "back": "Vücut, kıdem, beka, vahdaniyet, muhalefetün lilhavadis ve kıyambinefsihi."
-      }
-    },
-    {
-      "soru_id": "din_10_u02_k02_o12",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Allah’ın her şeyi bildiğini ifade eden sübutî sıfat hangisidir?",
-      "secenekler": [
-        "Semi",
-        "Basar",
-        "Tekvin",
-        "İlim"
+        "İnsanda yetkin varlık fikrinin bulunmadığı",
+        "Dua edenlerin huzur duymadığı",
+        "Evrende hiçbir düzenin görülmediği",
+        "Evrenin bir başlangıcı olmayabileceği"
       ],
       "dogru_index": 3,
-      "cozum": "İlim Allah’ın her şeyi bilmesidir. Semi işitme, basar görme, tekvin ise yaratma sıfatıdır.",
+      "cozum": "Delilin ilk öncülü evrenin sonradan var olduğudur; bu öncülü tartışmak delile yönelik en temel itirazdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah’ın sübutî sıfatlarının adlarını sıralayın.",
-        "back": "Hayat, ilim, semi, basar, irade, kudret, kelam ve tekvin."
-      }
-    },
-    {
-      "soru_id": "din_10_u02_k02_o13",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi Allah’ın her şeyi işitmesini ifade eden niteliği adlandırıyor. Hangi sıfatı söylemelidir?",
-      "secenekler": [
-        "Semi",
-        "Basar",
-        "İrade",
-        "Tekvin"
-      ],
-      "dogru_index": 0,
-      "cozum": "Semi işitme sıfatıdır. Basar görme, irade dileme ve tekvin yaratma anlamına gelir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Allah’ın sübutî sıfatlarından hayat, semi, basar, irade, kudret, kelam ve tekvini kısaca açıklayın.",
-        "back": "Hayat diri olmayı; semi işitmeyi; basar görmeyi; irade dilemeyi; kudret sınırsız gücü; kelam konuşmayı; tekvin yaratmayı ifade eder."
-      }
-    },
-    {
-      "soru_id": "din_10_u02_k02_o14",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir isim, görme niteliğine dayandırılarak açıklanıyor. Kaynağa göre bu isim hangi sıfatla ilişkilidir?",
-      "secenekler": [
-        "Beka sıfatıyla",
-        "Basar sıfatıyla",
-        "Kelam sıfatıyla",
-        "Hayat sıfatıyla"
-      ],
-      "dogru_index": 1,
-      "cozum": "Kaynak Basir ismini basar sıfatıyla ilişkilendirir. Bir ismin anlamı, onu mümkün kılan sıfatlarla açıklanabilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Allah’ın isimleri ile sıfatları arasındaki ilişkiyi açıklayın.",
-        "back": "Allah’ın bazı isimleri sıfatlarından kaynaklanır; örneğin Basir basar, Hay ise ilim, kudret ve tekvin gibi sıfatlarla ilişkilidir."
-      }
-    },
-    {
-      "soru_id": "din_10_u02_k02_o15",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrenci, Allah’ı yalnızca var kabul etmekle yetinmeyip O’nun zatı, sıfatları ve fiilleri hakkında bilgi edinmeye çalışıyor. Bu öğrenme hangi kavramla adlandırılır?",
-      "secenekler": [
-        "Mütevatir haber",
-        "Kozmolojik delil",
-        "Marifetullah",
-        "Gündelik bilgi"
-      ],
-      "dogru_index": 2,
-      "cozum": "Marifetullah Allah’ın zatı, sıfatları, fiilleri ve isimleri hakkındaki bilgidir. Kaynakta bu bilginin inanç ve davranışlara etkisi de vurgulanır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Marifetullah ne anlama gelir ve insanın yaşamını nasıl etkileyebilir?",
-        "back": "Allah’ın zatı, sıfatları, fiilleri ve isimleri hakkındaki bilgidir; esmayıhüsnayı bilmek sevgiyi ve inancı güçlendirip davranışları iyiliğe yöneltebilir."
-      }
+        "front": "Kozmolojik delile yöneltilen temel itiraz nedir?",
+        "back": "Evrenin bir başlangıcı olmayabileceği, yani ezelî olabileceği itirazı."
+      },
+      "kazanim": "Evrenin varlığından ve hareketinden hareketle bir yaratıcının varlığını temellendirir."
     }
   ],
   "flashcards": [
     {
       "id": "din_10_u02_k02_o01:flashcard",
-      "front": "Allah’ın varlığını bilmek ile Allah’ı tanımak arasındaki farkı açıklayın.",
-      "back": "Varlığına ilişkin delilleri bilmek önemlidir ancak Allah’ı tanımak için isimlerini, sıfatlarını ve fiillerini de bilmek gerekir."
+      "front": "Kozmolojik delil nedir?",
+      "back": "Evrenin varlığından, hareketinden ve sonradanlığından hareketle bir yaratıcının varlığını kanıtlamaya çalışan delildir."
     },
     {
       "id": "din_10_u02_k02_o02:flashcard",
-      "front": "Esmayıhüsna kavramını açıklayın.",
-      "back": "Allah’ın zatını, sıfatlarını ve fiillerini en güzel biçimde tanımlayan güzel isimler esmayıhüsna olarak adlandırılır."
+      "front": "Evrenin sonradan var olmasının gerektirdiği nedir?",
+      "back": "Bir varlık sebebini, dolayısıyla bir yaratıcıyı gerektirir."
     },
     {
       "id": "din_10_u02_k02_o03:flashcard",
-      "front": "Allah’ı tanımada isim, sıfat ve eserlerden yararlanmanın gerekçesi nedir?",
-      "back": "Allah aşkın bir varlıktır ve zatı duyu organlarıyla algılanamaz; isim, sıfat ve eserleri O’nu tanımaya yardımcı olur."
+      "front": "Hudûs delilinin diğer adı nedir?",
+      "back": "Kozmolojik delil; evrenin sonradan yaratıldığı öncülünden yola çıkar."
     },
     {
       "id": "din_10_u02_k02_o04:flashcard",
-      "front": "Allah’ın isimleri kaynakta hangi üç grupta incelenir?",
-      "back": "Zatıyla ilgili, kâinatla ilgili ve insanla ilgili isimler olarak üç grupta incelenir."
+      "front": "Kozmolojik delilin dayandığı özellik nedir?",
+      "back": "Evrenin varlığını kendisinden açıklayamaması, yani sonradan var olması."
     },
     {
       "id": "din_10_u02_k02_o05:flashcard",
-      "front": "Evvel ve Baki isimlerinin anlamlarını açıklayın.",
-      "back": "Evvel Allah’ın varlığının başlangıcı olmadığını; Baki ise varlığının sonu ve yok oluşu bulunmadığını ifade eder."
+      "front": "Hâdis ne demektir?",
+      "back": "Sonradan var olan, varlığının başlangıcı bulunan varlık."
     },
     {
       "id": "din_10_u02_k02_o06:flashcard",
-      "front": "Halık, Bâri, Fâtır ve Musavvir isimleri yaratmayla ilgili hangi yönleri anlatır?",
-      "back": "Halık yaratan, Bâri örneksiz yaratan, Fâtır yoktan yaratan, Musavvir varlıklara şekil ve suret verendir."
+      "front": "Kozmolojik delilde hareketin rolü nedir?",
+      "back": "Hareket eden evrenden hareket ettirici bir varlığa ulaşmayı sağlar."
     },
     {
       "id": "din_10_u02_k02_o07:flashcard",
-      "front": "Rezzak, Rahman ve Rahîm isimleri arasında nasıl bir ilişki vardır?",
-      "back": "Rezzak canlıların rızkını karşılayanı; Rahman bütün canlılara sonsuz merhametle iyilikte bulunanı; Rahîm çok merhamet edeni ifade eder."
+      "front": "Kozmolojik delil ile teleolojik delil arasındaki fark nedir?",
+      "back": "Kozmolojik delil varlık ve hareketten, teleolojik delil düzen ve amaçtan yola çıkar."
     },
     {
       "id": "din_10_u02_k02_o08:flashcard",
-      "front": "Melik ismi Allah’ın kâinatla ilişkisini hangi yönden anlatır?",
-      "back": "Allah’ın kâinatın mutlak sahibi ve tek yöneticisi olduğunu ifade eder."
+      "front": "Kozmolojik delilde sebep kavramının anlamı nedir?",
+      "back": "Sonradan var olan her şeyin varlığını bir başka varlığa borçlu olması."
     },
     {
       "id": "din_10_u02_k02_o09:flashcard",
-      "front": "Şekur ve Tevvab isimleri insanla ilişkili olarak neyi ifade eder?",
-      "back": "Şekur küçük amellere büyük karşılık veren; Tevvab kullarına tövbe yollarını gösterip tövbelerini kabul edendir."
+      "front": "Kozmolojik delilin ulaştığı varlık nasıl tanımlanır?",
+      "back": "Varlığı kendinden olan, sebebe ihtiyaç duymayan zorunlu varlık."
     },
     {
       "id": "din_10_u02_k02_o10:flashcard",
-      "front": "Zatî ve sübutî sıfatlar arasındaki temel fark nedir?",
-      "back": "Zatî sıfatlar yalnız Allah’a özgüdür; sübutî sıfatlar O’nun nitelik ve kusursuzluğunu anlatır ve yaratılmışların niteliklerine benzemez."
-    },
-    {
-      "id": "din_10_u02_k02_o11:flashcard",
-      "front": "Allah’ın zatî sıfatlarını adlarıyla sıralayın.",
-      "back": "Vücut, kıdem, beka, vahdaniyet, muhalefetün lilhavadis ve kıyambinefsihi."
-    },
-    {
-      "id": "din_10_u02_k02_o12:flashcard",
-      "front": "Allah’ın sübutî sıfatlarının adlarını sıralayın.",
-      "back": "Hayat, ilim, semi, basar, irade, kudret, kelam ve tekvin."
-    },
-    {
-      "id": "din_10_u02_k02_o13:flashcard",
-      "front": "Allah’ın sübutî sıfatlarından hayat, semi, basar, irade, kudret, kelam ve tekvini kısaca açıklayın.",
-      "back": "Hayat diri olmayı; semi işitmeyi; basar görmeyi; irade dilemeyi; kudret sınırsız gücü; kelam konuşmayı; tekvin yaratmayı ifade eder."
-    },
-    {
-      "id": "din_10_u02_k02_o14:flashcard",
-      "front": "Allah’ın isimleri ile sıfatları arasındaki ilişkiyi açıklayın.",
-      "back": "Allah’ın bazı isimleri sıfatlarından kaynaklanır; örneğin Basir basar, Hay ise ilim, kudret ve tekvin gibi sıfatlarla ilişkilidir."
-    },
-    {
-      "id": "din_10_u02_k02_o15:flashcard",
-      "front": "Marifetullah ne anlama gelir ve insanın yaşamını nasıl etkileyebilir?",
-      "back": "Allah’ın zatı, sıfatları, fiilleri ve isimleri hakkındaki bilgidir; esmayıhüsnayı bilmek sevgiyi ve inancı güçlendirip davranışları iyiliğe yöneltebilir."
+      "front": "Kozmolojik delile yöneltilen temel itiraz nedir?",
+      "back": "Evrenin bir başlangıcı olmayabileceği, yani ezelî olabileceği itirazı."
     }
-  ],
-  "topic_key": "Din Kültürü > 2.2 Namaz ve Oruç"
+  ]
 }
