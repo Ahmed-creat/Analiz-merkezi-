@@ -63,13 +63,31 @@ function jaccard(a, b) {
   return kesisim / (a.size + b.size - kesisim);
 }
 
+
+/* ---- plan kaydı → canlı havuz dosyası -----------------------------------
+   Tek yapı U (konu ağacı) olduğundan plan kayıtlarının kendi dosya adları
+   (tNN_cNN) diskte yoktur; kazanım kodu → konu eşlemesiyle bulunur. */
+const KAZANIM_DOSYA = path.join(KOK, "site", "content", "mufredat", "kazanim_konu_10.json");
+const KOD_HAVUZ = new Map();
+try {
+  const K = JSON.parse(fs.readFileSync(KAZANIM_DOSYA, "utf8"));
+  for (const k of (K.konular || [])) {
+    const ad = String(k.konu_id || "") + ".json";
+    if (!fs.existsSync(path.join(HAVUZ_DIR, ad))) continue;
+    for (const kod of (k.kodlar || [])) if (!KOD_HAVUZ.has(kod)) KOD_HAVUZ.set(kod, ad);
+  }
+} catch (e) { /* eşleme yoksa yalnız plan adıyla çalışılır */ }
+function planDosyasi(kayit) {
+  if (kayit.dosya && fs.existsSync(path.join(HAVUZ_DIR, kayit.dosya))) return kayit.dosya;
+  return KOD_HAVUZ.get(kayit.kod) || null;
+}
+
 /* ---- diğer havuzlardaki soru kökleri (global tekrar için) ---- */
 function digerHavuzlar(haric) {
   const out = [];
   if (!fs.existsSync(HAVUZ_DIR)) return out;
   for (const f of fs.readdirSync(HAVUZ_DIR)) {
     if (!f.endsWith(".json") || f === "index.json" || f === path.basename(haric)) continue;
-    if (!/_t\d\d_c\d\d\.json$/.test(f)) continue; // eski şema denetim dışı
     try {
       const p = JSON.parse(fs.readFileSync(path.join(HAVUZ_DIR, f), "utf8"));
       for (const q of (Array.isArray(p.sorular) ? p.sorular : [])) {
@@ -331,8 +349,8 @@ const dersArg = args.indexOf("--ders") >= 0 ? args[args.indexOf("--ders") + 1] :
 if (tumu || dersArg) {
   const istenen = dersArg ? U.plan.filter(c => c.ders.toLocaleLowerCase("tr") === String(dersArg).toLocaleLowerCase("tr")) : U.plan;
   for (const c of istenen) {
-    const p = path.join(HAVUZ_DIR, c.dosya);
-    if (fs.existsSync(p)) hedefler.push(p);
+    const ad = planDosyasi(c);
+    if (ad) hedefler.push(path.join(HAVUZ_DIR, ad));
   }
 } else if (konu) {
   for (const f of fs.readdirSync(HAVUZ_DIR)) {

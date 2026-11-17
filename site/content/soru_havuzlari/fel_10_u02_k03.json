@@ -6,7 +6,7 @@
   "sorular": [
     {
       "soru_id": "fel_10_u02_k03_o01",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
       "metin": "Bir öğrenci, iddiasını desteklemek için gerekçelerini belirleyip bunları bir sonuca bağlıyor. Bu süreç hangi kavramla adlandırılır?",
       "secenekler": [
         "Argümantasyon",
@@ -24,7 +24,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o02",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
       "metin": "Bir konuşmada ana iddia, onu destekleyen gerekçeler ve konuyla ilgisiz bir ek bilgi bulunuyor. Standart biçim kurarken önce ne yapılmalıdır?",
       "secenekler": [
         "Tüm cümleleri tek satırda birleştirmek",
@@ -42,7 +42,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o03",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı konusundaki ilişkileri örneklerle yorumlar.",
       "metin": "Bir raporda sonuç cümlesinden önce iddiaya dayanak oluşturan iki gerekçe sıralanıyor. Bu gerekçelere ne ad verilir?",
       "secenekler": [
         "Sonuç",
@@ -60,7 +60,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o04",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı konusundaki ilişkileri örneklerle yorumlar.",
       "metin": "Bir tartışmada gerekçelerin ardından 'öyleyse' sözüyle ifade edilen ana iddia hangi parçadır?",
       "secenekler": [
         "Öncül",
@@ -78,7 +78,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o05",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
       "metin": "Bir öğrenci, gerekçeleri ayrı satırlara yazıp altına bir çizgi çiziyor ve iddiayı çizginin altına yerleştiriyor. Hangi işlemi yapmıştır?",
       "secenekler": [
         "Argümanı standart biçimde gösterme",
@@ -96,7 +96,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o06",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı konusundaki ilişkileri örneklerle yorumlar.",
       "metin": "Bir değerlendirme kurulu, uzun bir konuşmadaki dayanakların iddiayı gerçekten destekleyip desteklemediğini incelemek istiyor. Hangi işlem bunu kolaylaştırır?",
       "secenekler": [
         "İlgisiz ifadeleri eklemek",
@@ -114,7 +114,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o07",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
       "metin": "Bir konuşmacı, sonucunu destekleyen iki gerekçenin yanına toplantının yapıldığı saati de ekliyor. Standartlaştırmada hangi bilgi çıkarılır?",
       "secenekler": [
         "Sonucu destekleyen ilk gerekçe",
@@ -132,7 +132,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o08",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı konusundaki ilişkileri örneklerle yorumlar.",
       "metin": "Bir metindeki iki ifade savı gerekçelendiriyor, son ifade ise 'bu nedenle' ile ana iddiayı bildiriyor. Son cümlenin argümandaki işlevi nedir?",
       "secenekler": [
         "Öncül olmak",
@@ -150,7 +150,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o09",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
       "metin": "Bir kurul, kararını iki ayrı gerekçeye dayandırıyor ve bu gerekçelerden ortak bir iddiaya ulaşıyor. Argümanın yapısı nasıl tanımlanır?",
       "secenekler": [
         "Birden çok öncül ve bir sonuç",
@@ -168,7 +168,7 @@
     },
     {
       "soru_id": "fel_10_u02_k03_o10",
-      "alt_beceri": "Genel konu becerisi",
+      "alt_beceri": "Argümantasyonun Yapısı konusundaki ilişkileri örneklerle yorumlar.",
       "metin": "Bir çalışma notunda 'Her kayıtlı katılımcı onay formu verir. Derya kayıtlı katılımcıdır. Öyleyse Derya onay formu verir.' deniyor. Hangi ifade sonuçtur?",
       "secenekler": [
         "Her kayıtlı katılımcının onay formu vermesi",
@@ -238,5 +238,9 @@
     }
   ],
   "baslik": "2.3 Argümantasyonun Yapısı",
-  "topic_key": "Felsefe > 2.3 Argümantasyonun Yapısı"
+  "topic_key": "Felsefe > 2.3 Argümantasyonun Yapısı",
+  "beceriler": [
+    "Argümantasyonun Yapısı ile ilgili temel kavram, görüş ve ayrımları açıklar.",
+    "Argümantasyonun Yapısı konusundaki ilişkileri örneklerle yorumlar."
+  ]
 }
