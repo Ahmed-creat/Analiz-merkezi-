@@ -1,7 +1,7 @@
 {
  "surum": "2026-10-28",
  "aciklama": "Okulizyon kazanım metinlerini uygulamanın konu başlıklarına eşlemek için arama indeksi. scripts/konu-esleme-uret.js üretir; elle düzenlenmez.",
- "havuz_sayisi": 161,
+ "havuz_sayisi": 169,
  "alt_beceri_sayisi": 258,
  "havuzlar": [
   {
@@ -10,55 +10,79 @@
    "topic_key": "Biyoloji > 1.1 Canlılık İçin Enerjinin Önemi",
    "konu": "1.1 Canlılık İçin Enerjinin Önemi",
    "soru": 10,
-   "metin": "1.1 Canlılık İçin Enerjinin Önemi · ATP’nin Yapısı ve Enerji Aktarımındaki Rolü · ATP’nin Yapısı ve Enerji Aktarımındaki Rolü · Enerjinin Önemi · Enerjinin Önemi · ATP’nin Yapısı ve Enerji Aktarımındaki Rolü"
+   "metin": "1.1 Canlılık İçin Enerjinin Önemi · 1.1 Canlılık İçin Enerjinin Önemi · Canlıların yaşamını sürdürmesinde enerjinin rolünü sorgular. · ATP'nin yapısını ve enerji aktarımındaki işlevini açıklar."
   },
   {
    "konu_id": "biyo_10_u01_k02",
    "ders": "Biyoloji",
    "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
    "konu": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
-   "soru": 12,
-   "metin": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez) · Fotosentez · Fotosentez · Fotosentez Hızına Etki Eden Çevresel Faktörler · Fotosentezde Kullanılan ve Üretilen Maddeler · Işığın Kullanıldığı Tepkimeler · Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü) · Pigmentler · Fotosentez · Pigmentler · Işığın Kullanıldığı Tepkimeler · Işığın Kullanılmadığı Tepkimeler (Calvin Döngüsü) · Fotosentez Hızına Etki Eden Çevresel Faktörler · Fotosentezde Kullanılan ve Üretilen Maddeler"
+   "soru": 10,
+   "metin": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez) · 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez) · Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar. · Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar."
   },
   {
    "konu_id": "biyo_10_u01_k03",
    "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
-   "konu": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+   "topic_key": "Biyoloji > 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+   "konu": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
    "soru": 10,
-   "metin": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez) · Kemosentez · Kemosentez · Kemosentez"
+   "metin": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler · 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler · Fotosentez denkleminde kullanılan ve üretilen maddeleri izler. · Fotosentezle ilgili bilimsel çalışmaların bilime katkısını değerlendirir."
   },
   {
    "konu_id": "biyo_10_u01_k04",
    "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 1.5 Sindirim",
-   "konu": "1.5 Sindirim",
-   "soru": 12,
-   "metin": "1.5 Sindirim · Canlılarda Sindirim Yapıları · Canlılarda Sindirim Yapıları · Diş Adaptasyonları · Mide ve Bağırsak Adaptasyonları · Sindirim · İnsanda Emilim ve Taşınma · İnsanda Sindirim · Sindirim · Canlılarda Sindirim Yapıları · Diş Adaptasyonları · Mide ve Bağırsak Adaptasyonları · İnsanda Sindirim · İnsanda Emilim ve Taşınma"
+   "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+   "konu": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+   "soru": 10,
+   "metin": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez) · 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez) · Kemosentez ile fotosentezi enerji kaynağı bakımından karşılaştırır. · Ekstrem ortamlarda kemosentez yapan canlıların ekosistemdeki yerini açıklar."
   },
   {
    "konu_id": "biyo_10_u01_k05",
    "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 1.7 Hücresel Solunum",
-   "konu": "1.7 Hücresel Solunum",
-   "soru": 12,
-   "metin": "1.7 Hücresel Solunum · Besinlerin Hücresel Solunuma Katılma Yolları · Besinlerin Hücresel Solunuma Katılma Yolları · ETS Evresi · Glikoliz · Krebs (Sitrik Asit) Döngüsü · Oksijenli Solunum · Oksijensiz Solunum · Oksijenli Solunum · Glikoliz · Krebs (Sitrik Asit) Döngüsü · ETS Evresi · Oksijensiz Solunum · Besinlerin Hücresel Solunuma Katılma Yolları"
+   "topic_key": "Biyoloji > 1.5 Sindirim",
+   "konu": "1.5 Sindirim",
+   "soru": 10,
+   "metin": "1.5 Sindirim · 1.5 Sindirim · Mekanik, kimyasal, hücre içi ve hücre dışı sindirimi ayırt eder. · Omurgalılarda beslenme tipine bağlı sindirim yapısı farklarını açıklar."
   },
   {
    "konu_id": "biyo_10_u01_k06",
    "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 1.9 Fermantasyon",
-   "konu": "1.9 Fermantasyon",
+   "topic_key": "Biyoloji > 1.6 İnsanda Sindirim",
+   "konu": "1.6 İnsanda Sindirim",
    "soru": 10,
-   "metin": "1.9 Fermantasyon · Etil Alkol Fermantasyonu · Etil Alkol Fermantasyonu · Fermantasyon · Laktik Asit Fermantasyonu · Fermantasyon · Etil Alkol Fermantasyonu · Laktik Asit Fermantasyonu"
+   "metin": "1.6 İnsanda Sindirim · 1.6 İnsanda Sindirim · Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder. · İnce ve kalın bağırsaktaki emilim ile taşınma süreçlerini açıklar."
   },
   {
    "konu_id": "biyo_10_u01_k07",
    "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 1.7 Hücresel Solunum",
+   "konu": "1.7 Hücresel Solunum",
+   "soru": 10,
+   "metin": "1.7 Hücresel Solunum · 1.7 Hücresel Solunum · Oksijenli solunumun evrelerini gerçekleştiği yapı ve ürünleriyle açıklar. · Evrelerdeki ATP, NADH ve FADH2 kazançlarını karşılaştırır."
+  },
+  {
+   "konu_id": "biyo_10_u01_k08",
+   "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
+   "konu": "1.8 Besinlerin Solunuma Katılma Yolları",
+   "soru": 10,
+   "metin": "1.8 Besinlerin Solunuma Katılma Yolları · 1.8 Besinlerin Solunuma Katılma Yolları · Besin gruplarının solunuma katıldığı basamakları belirler. · Karbon sayısının katılım basamağını belirlemedeki rolünü açıklar."
+  },
+  {
+   "konu_id": "biyo_10_u01_k09",
+   "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 1.9 Fermantasyon",
+   "konu": "1.9 Fermantasyon",
+   "soru": 10,
+   "metin": "1.9 Fermantasyon · 1.9 Fermantasyon · Etil alkol ve laktik asit fermantasyonunu son ürünleriyle karşılaştırır. · Fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+  },
+  {
+   "konu_id": "biyo_10_u01_k10",
+   "ders": "Biyoloji",
    "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi",
    "konu": "1.10 Enerji-Metabolizma İlişkisi",
    "soru": 10,
-   "metin": "1.10 Enerji-Metabolizma İlişkisi · Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı · Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı · Farklı Besin Gruplarının Enerji Değerleri · Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı · Farklı Besin Gruplarının Enerji Değerleri"
+   "metin": "1.10 Enerji-Metabolizma İlişkisi · 1.10 Enerji-Metabolizma İlişkisi · Metabolik tepkimeleri anabolizma ve katabolizma olarak ayırt eder. · Besinlerin enerji değerlerini karşılaştırarak enerji dengesini yorumlar."
   },
   {
    "konu_id": "biyo_10_u02_k01",
@@ -66,31 +90,71 @@
    "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri",
    "konu": "2.1 Ekosistemin Bileşenleri",
    "soru": 10,
-   "metin": "2.1 Ekosistemin Bileşenleri · Ekosistemin Bileşenleri · Ekosistemin Bileşenleri · Ekosistemin Canlı Bileşenleri · Ekosistemin Cansız Bileşenleri · Ekosistemin Bileşenleri · Ekosistemin Cansız Bileşenleri · Ekosistemin Canlı Bileşenleri"
+   "metin": "2.1 Ekosistemin Bileşenleri · 2.1 Ekosistemin Bileşenleri · Cansız bileşenlerin canlıların yaşamı üzerindeki etkisini açıklar. · Canlı bileşenleri işlevlerine göre sınıflandırır."
   },
   {
    "konu_id": "biyo_10_u02_k02",
    "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı",
-   "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
-   "soru": 14,
-   "metin": "2.3 Ekosistemdeki Madde ve Enerji Akışı · Biyolojik Birikim ve Etkileri · Biyolojik Birikim ve Etkileri · Ekolojik Piramitler · Ekosistemde Madde ve Enerji Akışı · Komünitede Tür İçi ve Türler Arası Etkileşimler · Popülasyon Dinamikleri · Popülasyon, Komünite, Ekosistem · Süksesyon · Popülasyon, Komünite, Ekosistem · Popülasyon Dinamikleri · Komünitede Tür İçi ve Türler Arası Etkileşimler · Süksesyon · Ekosistemde Madde ve Enerji Akışı · Ekolojik Piramitler · Biyolojik Birikim ve Etkileri"
+   "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+   "konu": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+   "soru": 12,
+   "metin": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler · 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler · Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder. · Rekabeti, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar."
   },
   {
    "konu_id": "biyo_10_u02_k03",
    "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 2.4 Madde Döngüleri",
-   "konu": "2.4 Madde Döngüleri",
+   "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı",
+   "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
    "soru": 10,
-   "metin": "2.4 Madde Döngüleri · Azot Döngüsü · Azot Döngüsü · Karbon Döngüsü · Madde Döngüleri · Su Döngüsü · Madde Döngüleri · Su Döngüsü · Karbon Döngüsü · Azot Döngüsü"
+   "metin": "2.3 Ekosistemdeki Madde ve Enerji Akışı · 2.3 Ekosistemdeki Madde ve Enerji Akışı · Besin zinciri ve besin ağında enerjinin akışını izler. · Enerji piramidi ve biyolojik birikimi yorumlar."
   },
   {
    "konu_id": "biyo_10_u02_k04",
    "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 2.4 Madde Döngüleri",
+   "konu": "2.4 Madde Döngüleri",
+   "soru": 10,
+   "metin": "2.4 Madde Döngüleri · 2.4 Madde Döngüleri · Su, karbon ve azot döngülerinin basamaklarını açıklar. · İnsan etkinliklerinin madde döngülerine etkisini yorumlar."
+  },
+  {
+   "konu_id": "biyo_10_u02_k05",
+   "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 2.5 Ekolojik Sürdürülebilirliğin Önemi",
+   "konu": "2.5 Ekolojik Sürdürülebilirliğin Önemi",
+   "soru": 10,
+   "metin": "2.5 Ekolojik Sürdürülebilirliğin Önemi · 2.5 Ekolojik Sürdürülebilirliğin Önemi · Yenilenebilen ve yenilenemeyen kaynakları ayırt eder. · Sürdürülebilirlik uygulamalarının çevreye katkısını yorumlar."
+  },
+  {
+   "konu_id": "biyo_10_u02_k06",
+   "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+   "konu": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+   "soru": 10,
+   "metin": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar · 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar · Habitat kaybı ve kirlilik türlerinin nedenlerini açıklar. · Çevre sorunlarının ekosistemlere etkisini yorumlar."
+  },
+  {
+   "konu_id": "biyo_10_u02_k07",
+   "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi",
+   "konu": "2.7 Ekolojik Ayak İzinin Küçültülmesi",
+   "soru": 10,
+   "metin": "2.7 Ekolojik Ayak İzinin Küçültülmesi · 2.7 Ekolojik Ayak İzinin Küçültülmesi · Ekolojik, karbon ve su ayak izini tanımlar. · Ayak izini küçültmeye yönelik uygulamaları değerlendirir."
+  },
+  {
+   "konu_id": "biyo_10_u02_k08",
+   "ders": "Biyoloji",
+   "topic_key": "Biyoloji > 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+   "konu": "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+   "soru": 10,
+   "metin": "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması · 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması · Biyoçeşitliliğin korunma gerekçelerini açıklar. · Tür, alan ve alan dışı koruma çalışmalarını ayırt eder."
+  },
+  {
+   "konu_id": "biyo_10_u02_k09",
+   "ders": "Biyoloji",
    "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
    "konu": "2.9 Atık Yönetimi",
    "soru": 10,
-   "metin": "2.9 Atık Yönetimi · Atık Yönetimi · Atık Yönetimi · Doğal Kaynakların ve Biyoçeşitliliğin Korunması · Ekolojik Ayak İzinin Küçültülmesi · Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar · Ekolojik Sürdürülebilirliğin Önemi · Ekolojik Sürdürülebilirliğin Önemi · Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar · Ekolojik Ayak İzinin Küçültülmesi · Doğal Kaynakların ve Biyoçeşitliliğin Korunması · Atık Yönetimi"
+   "metin": "2.9 Atık Yönetimi · 2.9 Atık Yönetimi · Atık yönetimi aşamalarını ve bertaraf yöntemlerini açıklar. · Atık yönetimi uygulamalarının çevresel katkısını yorumlar."
   },
   {
    "konu_id": "cogr_10_u01_k01",

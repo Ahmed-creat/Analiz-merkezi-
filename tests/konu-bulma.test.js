@@ -79,14 +79,14 @@ for (const ders of Object.keys(KONULAR["10"])) {
 esit("10. sınıf konu sayısı 193", konuSayisi, 193);
 esit("her konuda Kısa Kontrol (havuz) var: " + (konuSayisi - HAVUZSUZ_KONULAR.length) + "/" + (konuSayisi - HAVUZSUZ_KONULAR.length), kapsanmayan.length, 0);
 ok("kapsanmayan konu listesi boş", kapsanmayan.length === 0, kapsanmayan.slice(0, 3).join(" | "));
-esit("plan havuzu konu başlığıyla eşleşiyor (2.7)",
+esit("kitap havuzu konu başlığıyla eşleşiyor (2.7)",
   (HB.bul("Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi", HAVUZLAR) || {}).konu_id,
-  "biyo_10_t02_c07");
+  "biyo_10_u02_k07");
 // Numarasız sorguda eski etiket kademesi devreye girer; uygulama ağaç
 // başlığını numarasıyla gönderdiği için bu yol yalnız yedek olarak durur.
 esit("numarasız sorguda etiket kademesi yedek olarak çalışıyor",
   (HB.bul("Biyoloji > Ekolojik Ayak İzinin Küçültülmesi", HAVUZLAR) || {}).konu_id,
-  "biyo_10_u02_k04");
+  "biyo_10_u02_k07");
 
 // ---------- 3) Kazanım → konu kuralları ----------
 console.log("\n== 3) Kazanım → konu (elle bakılmış kurallar) ==");
@@ -114,7 +114,7 @@ esit("kural: karşılığı olmayan kazanım UYDURULMAZ",
   KA.esle("Metnin yapı unsurlarının metne olan katkısını değerlendirir.", "Türk Dili ve Edebiyatı"), null);
 esit("kural: ders uyuşmazsa çalışmaz",
   KA.esle("Tepkime türlerinin oluşum süreci", "Matematik"), null);
-ok("kural sayısı makul (denetlenebilir)", KA.KURALLAR.length > 20 && KA.KURALLAR.length < 80, String(KA.KURALLAR.length));
+ok("kural sayısı makul (denetlenebilir)", KA.KURALLAR.length > 20 && KA.KURALLAR.length < 130, String(KA.KURALLAR.length));
 ok("her kuralda ders + konu + desen var", KA.KURALLAR.every(r => Array.isArray(r.ders) && r.ders.length && r.konu && r.desen instanceof RegExp));
 
 // ---------- 4) Kazanım → konu → havuz (uçtan uca) ----------

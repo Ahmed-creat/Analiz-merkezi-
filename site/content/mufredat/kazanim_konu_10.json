@@ -11,24 +11,24 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 161,
-  "eslesen_konu": 117,
+  "konu": 169,
+  "eslesen_konu": 125,
   "oneri_konu": 0,
   "eslesmeyen_konu": 44,
-  "metin": 116,
-  "metin_tek_konu": 20,
-  "metin_kodlu": 115,
+  "metin": 115,
+  "metin_tek_konu": 109,
+  "metin_kodlu": 114,
   "ders_bazli": {
    "Biyoloji": {
-    "konu": 11,
+    "konu": 19,
     "cikti": 19,
-    "kesin": 11,
-    "yapisal": 2,
+    "kesin": 19,
+    "yapisal": 0,
     "orta": 0,
-    "yok": 1,
-    "metin": 20,
-    "metin_tek_konu": 18,
-    "metin_kodlu": 20
+    "yok": 0,
+    "metin": 19,
+    "metin_tek_konu": 19,
+    "metin_kodlu": 19
    },
    "Coğrafya": {
     "konu": 11,
@@ -130,14 +130,14 @@
     "BİY.10.1.1"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.1 bölümü canlılık için enerjinin gerekliliğini, ATP'nin yapısını ve enerji aktarımındaki rolünü verir (s.16-20); BİY.10.1.1.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulamanız,",
+     "metin": "canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulamanız",
      "kod": "BİY.10.1.1",
      "skor": 1
     }
@@ -149,24 +149,18 @@
    "konu": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
    "tema": 1,
    "kodlar": [
-    "BİY.10.1.2",
-    "BİY.10.1.3"
+    "BİY.10.1.2"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 1.2 bölümü fotosentez reaksiyonlarını bilimsel model üzerinden açıklar (s.21-26); BİY.10.1.2.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,",
+     "metin": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız",
      "kod": "BİY.10.1.2",
-     "skor": 1
-    },
-    {
-     "metin": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız,",
-     "kod": "BİY.10.1.3",
      "skor": 1
     }
    ]
@@ -174,21 +168,21 @@
   {
    "konu_id": "biyo_10_u01_k03",
    "ders": "Biyoloji",
-   "konu": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+   "konu": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
    "tema": 1,
    "kodlar": [
-    "BİY.10.1.4"
+    "BİY.10.1.3"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.3 bölümü fotosentezde kullanılan ve üretilen maddeleri deney düzenekleriyle verir (s.27-31); BİY.10.1.3.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "kemosentez hakkında bilgi toplamanız,",
-     "kod": "BİY.10.1.4",
+     "metin": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız",
+     "kod": "BİY.10.1.3",
      "skor": 1
     }
    ]
@@ -196,27 +190,21 @@
   {
    "konu_id": "biyo_10_u01_k04",
    "ders": "Biyoloji",
-   "konu": "1.5 Sindirim",
+   "konu": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
    "tema": 1,
    "kodlar": [
-    "BİY.10.1.5",
-    "BİY.10.1.6"
+    "BİY.10.1.4"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 1.4 bölümü kemosentezi kemosentetik canlı örnekleriyle açıklar (s.32-36); BİY.10.1.4.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,",
-     "kod": "BİY.10.1.5",
-     "skor": 1
-    },
-    {
-     "metin": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,",
-     "kod": "BİY.10.1.6",
+     "metin": "kemosentez hakkında bilgi toplamanız",
+     "kod": "BİY.10.1.4",
      "skor": 1
     }
    ]
@@ -224,27 +212,21 @@
   {
    "konu_id": "biyo_10_u01_k05",
    "ders": "Biyoloji",
-   "konu": "1.7 Hücresel Solunum",
+   "konu": "1.5 Sindirim",
    "tema": 1,
    "kodlar": [
-    "BİY.10.1.7",
-    "BİY.10.1.8"
+    "BİY.10.1.5"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 1.5 bölümü canlılarda sindirim çeşitlerini ve yapılarını sınıflandırır (s.37-39); BİY.10.1.5.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,",
-     "kod": "BİY.10.1.7",
-     "skor": 1
-    },
-    {
-     "metin": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız,",
-     "kod": "BİY.10.1.8",
+     "metin": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız",
+     "kod": "BİY.10.1.5",
      "skor": 1
     }
    ]
@@ -252,21 +234,21 @@
   {
    "konu_id": "biyo_10_u01_k06",
    "ders": "Biyoloji",
-   "konu": "1.9 Fermantasyon",
+   "konu": "1.6 İnsanda Sindirim",
    "tema": 1,
    "kodlar": [
-    "BİY.10.1.9"
+    "BİY.10.1.6"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.6 bölümü insanda sindirim, emilim ve taşıma süreçlerini verir (s.40-47); BİY.10.1.6.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "fermantasyon ile ilgili deney yapmanız,",
-     "kod": "BİY.10.1.9",
+     "metin": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız",
+     "kod": "BİY.10.1.6",
      "skor": 1
     }
    ]
@@ -274,27 +256,87 @@
   {
    "konu_id": "biyo_10_u01_k07",
    "ders": "Biyoloji",
+   "konu": "1.7 Hücresel Solunum",
+   "tema": 1,
+   "kodlar": [
+    "BİY.10.1.7"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 1.7 bölümü hücresel solunum reaksiyonlarını model üzerinden açıklar (s.48-55); BİY.10.1.7.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız",
+     "kod": "BİY.10.1.7",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u01_k08",
+   "ders": "Biyoloji",
+   "konu": "1.8 Besinlerin Solunuma Katılma Yolları",
+   "tema": 1,
+   "kodlar": [
+    "BİY.10.1.8"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 1.8 bölümü besinlerin solunuma katılma yollarını ve farklı besin gruplarının enerji eldesini karşılaştırır (s.57-62); BİY.10.1.8.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız",
+     "kod": "BİY.10.1.8",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u01_k09",
+   "ders": "Biyoloji",
+   "konu": "1.9 Fermantasyon",
+   "tema": 1,
+   "kodlar": [
+    "BİY.10.1.9"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 1.9 bölümü fermantasyonu deneylerle (hamur, yoğurt) verir (s.63-66); BİY.10.1.9.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "fermantasyon ile ilgili deney yapmanız",
+     "kod": "BİY.10.1.9",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u01_k10",
+   "ders": "Biyoloji",
    "konu": "1.10 Enerji-Metabolizma İlişkisi",
    "tema": 1,
    "kodlar": [
-    "BİY.10.1.8",
     "BİY.10.1.10"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 1.10 bölümü besinlerden elde edilen enerjinin metabolik süreçlere katkısını verir (s.67-70); BİY.10.1.10.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
      "metin": "besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapmanız",
      "kod": "BİY.10.1.10",
-     "skor": 1
-    },
-    {
-     "metin": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız,",
-     "kod": "BİY.10.1.8",
      "skor": 1
     }
    ]
@@ -308,14 +350,14 @@
     "BİY.10.2.1"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.1 bölümü ekosistemin canlı ve cansız bileşenlerini hiyerarşi içinde verir (s.100-106); BİY.10.2.1.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,",
+     "metin": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz",
      "kod": "BİY.10.2.1",
      "skor": 1
     }
@@ -324,27 +366,21 @@
   {
    "konu_id": "biyo_10_u02_k02",
    "ders": "Biyoloji",
-   "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
+   "konu": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
    "tema": 2,
    "kodlar": [
-    "BİY.10.2.2",
-    "BİY.10.2.3"
+    "BİY.10.2.2"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 2.2 bölümü komünite ve popülasyondaki etkileşimleri (rekabet, av-avcı, simbiyoz, süksesyon) verir (s.107-121); BİY.10.2.2.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,",
+     "metin": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz",
      "kod": "BİY.10.2.2",
-     "skor": 1
-    },
-    {
-     "metin": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,",
-     "kod": "BİY.10.2.3",
      "skor": 1
     }
    ]
@@ -352,21 +388,21 @@
   {
    "konu_id": "biyo_10_u02_k03",
    "ders": "Biyoloji",
-   "konu": "2.4 Madde Döngüleri",
+   "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
    "tema": 2,
    "kodlar": [
-    "BİY.10.2.4"
+    "BİY.10.2.3"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.3 bölümü besin zinciri/ağı, enerji piramidi ve biyolojik birikimi verir (s.123-131); BİY.10.2.3.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "madde döngüleri ile ilgili bilimsel model oluşturabilmeniz,",
-     "kod": "BİY.10.2.4",
+     "metin": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz",
+     "kod": "BİY.10.2.3",
      "skor": 1
     }
    ]
@@ -374,42 +410,128 @@
   {
    "konu_id": "biyo_10_u02_k04",
    "ders": "Biyoloji",
+   "konu": "2.4 Madde Döngüleri",
+   "tema": 2,
+   "kodlar": [
+    "BİY.10.2.4"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 2.4 bölümü su, karbon ve azot döngülerini model üzerinden verir (s.132-138); BİY.10.2.4.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "madde döngüleri ile ilgili bilimsel model oluşturabilmeniz",
+     "kod": "BİY.10.2.4",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u02_k05",
+   "ders": "Biyoloji",
+   "konu": "2.5 Ekolojik Sürdürülebilirliğin Önemi",
+   "tema": 2,
+   "kodlar": [
+    "BİY.10.2.5"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 2.5 bölümü ekolojik sürdürülebilirliğin önemini net sıfır ve sıfır enerjili bina örnekleriyle verir (s.139-141); BİY.10.2.5.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "ekolojik sürdürülebilirliğin önemini yorumlayabilmeniz",
+     "kod": "BİY.10.2.5",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u02_k06",
+   "ders": "Biyoloji",
+   "konu": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+   "tema": 2,
+   "kodlar": [
+    "BİY.10.2.6"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 2.6 bölümü sürdürülebilirliği kısıtlayan durumları (habitat kaybı, kirlilik türleri) verir (s.143-152); BİY.10.2.6.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "çevrenizde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilmeniz",
+     "kod": "BİY.10.2.6",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u02_k07",
+   "ders": "Biyoloji",
+   "konu": "2.7 Ekolojik Ayak İzinin Küçültülmesi",
+   "tema": 2,
+   "kodlar": [
+    "BİY.10.2.7"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 2.7 bölümü ekolojik, karbon ve su ayak izini küçültme yollarını verir (s.155-157); BİY.10.2.7.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilmeniz",
+     "kod": "BİY.10.2.7",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u02_k08",
+   "ders": "Biyoloji",
+   "konu": "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+   "tema": 2,
+   "kodlar": [
+    "BİY.10.2.8"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 2.8 bölümü doğal kaynak ve biyoçeşitlilik koruma çalışmalarını (tür, alan, alan dışı) verir (s.160-166); BİY.10.2.8.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilmeniz",
+     "kod": "BİY.10.2.8",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "biyo_10_u02_k09",
+   "ders": "Biyoloji",
    "konu": "2.9 Atık Yönetimi",
    "tema": 2,
    "kodlar": [
-    "BİY.10.2.5",
-    "BİY.10.2.6",
-    "BİY.10.2.7",
-    "BİY.10.2.8",
     "BİY.10.2.9"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 5,
+   "gerekce": "Kitabın 2.9 bölümü atık yönetimini ve bertaraf yöntemlerini verir (s.168-174); BİY.10.2.9.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
-    {
-     "metin": "ekolojik sürdürülebilirliğin önemini yorumlayabilmeniz,",
-     "kod": "BİY.10.2.5",
-     "skor": 1
-    },
-    {
-     "metin": "çevrenizde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilmeniz,",
-     "kod": "BİY.10.2.6",
-     "skor": 1
-    },
-    {
-     "metin": "ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilmeniz,",
-     "kod": "BİY.10.2.7",
-     "skor": 1
-    },
-    {
-     "metin": "doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilmeniz,",
-     "kod": "BİY.10.2.8",
-     "skor": 1
-    },
     {
      "metin": "çevrenizde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilmeniz",
      "kod": "BİY.10.2.9",
@@ -3163,9 +3285,9 @@
    "ders": "Biyoloji",
    "metin": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız,",
    "norm": "fotosentezde kullanilan ve uretilen maddelerle ilgili deney yap",
-   "konu_id": "biyo_10_u01_k02",
-   "konu": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
-   "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+   "konu_id": "biyo_10_u01_k03",
+   "konu": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+   "topic_key": "Biyoloji > 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
    "kodlar": [
     "BİY.10.1.3"
    ],
@@ -3176,7 +3298,7 @@
    "ders": "Biyoloji",
    "metin": "kemosentez hakkında bilgi toplamanız,",
    "norm": "kemosentez hakkinda bilgi topla",
-   "konu_id": "biyo_10_u01_k03",
+   "konu_id": "biyo_10_u01_k04",
    "konu": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
    "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
    "kodlar": [
@@ -3189,7 +3311,7 @@
    "ders": "Biyoloji",
    "metin": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,",
    "norm": "canlilarda sindirim cesitlerini ve yapilarini siniflandir",
-   "konu_id": "biyo_10_u01_k04",
+   "konu_id": "biyo_10_u01_k05",
    "konu": "1.5 Sindirim",
    "topic_key": "Biyoloji > 1.5 Sindirim",
    "kodlar": [
@@ -3202,9 +3324,9 @@
    "ders": "Biyoloji",
    "metin": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,",
    "norm": "insanda enerji eldesi icin sindirim emilim ve tasima sureclerinin gerekliligi ile ilgili bilimsel cikarim yap",
-   "konu_id": "biyo_10_u01_k04",
-   "konu": "1.5 Sindirim",
-   "topic_key": "Biyoloji > 1.5 Sindirim",
+   "konu_id": "biyo_10_u01_k06",
+   "konu": "1.6 İnsanda Sindirim",
+   "topic_key": "Biyoloji > 1.6 İnsanda Sindirim",
    "kodlar": [
     "BİY.10.1.6"
    ],
@@ -3215,7 +3337,7 @@
    "ders": "Biyoloji",
    "metin": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,",
    "norm": "hucresel solunum reaksiyonlariyla ilgili bilimsel model olustur",
-   "konu_id": "biyo_10_u01_k05",
+   "konu_id": "biyo_10_u01_k07",
    "konu": "1.7 Hücresel Solunum",
    "topic_key": "Biyoloji > 1.7 Hücresel Solunum",
    "kodlar": [
@@ -3228,21 +3350,20 @@
    "ders": "Biyoloji",
    "metin": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız,",
    "norm": "farkli besin gruplarinin enerji eldesi sureclerini karsilastir",
-   "konu_id": "biyo_10_u01_k05",
-   "konu": "1.7 Hücresel Solunum",
-   "topic_key": "Biyoloji > 1.7 Hücresel Solunum",
+   "konu_id": "biyo_10_u01_k08",
+   "konu": "1.8 Besinlerin Solunuma Katılma Yolları",
+   "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
    "kodlar": [
     "BİY.10.1.8"
    ],
    "kod_guven": "kesin",
-   "konu_guven": "coklu",
-   "coklu": true
+   "konu_guven": "kesin"
   },
   {
    "ders": "Biyoloji",
    "metin": "fermantasyon ile ilgili deney yapmanız,",
    "norm": "fermantasyon ile ilgili deney yap",
-   "konu_id": "biyo_10_u01_k06",
+   "konu_id": "biyo_10_u01_k09",
    "konu": "1.9 Fermantasyon",
    "topic_key": "Biyoloji > 1.9 Fermantasyon",
    "kodlar": [
@@ -3253,9 +3374,9 @@
   },
   {
    "ders": "Biyoloji",
-   "metin": "besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapmanız",
+   "metin": "besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapmanız,",
    "norm": "besinlerden elde edilen enerjinin canlinin metabolik sureclerine katkisi ile ilgili bilimsel cikarim yap",
-   "konu_id": "biyo_10_u01_k07",
+   "konu_id": "biyo_10_u01_k10",
    "konu": "1.10 Enerji-Metabolizma İlişkisi",
    "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi",
    "kodlar": [
@@ -3263,20 +3384,6 @@
    ],
    "kod_guven": "kesin",
    "konu_guven": "kesin"
-  },
-  {
-   "ders": "Biyoloji",
-   "metin": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız,",
-   "norm": "farkli besin gruplarinin enerji eldesi sureclerini karsilastir",
-   "konu_id": "biyo_10_u01_k07",
-   "konu": "1.10 Enerji-Metabolizma İlişkisi",
-   "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi",
-   "kodlar": [
-    "BİY.10.1.8"
-   ],
-   "kod_guven": "kesin",
-   "konu_guven": "coklu",
-   "coklu": true
   },
   {
    "ders": "Biyoloji",
@@ -3296,8 +3403,8 @@
    "metin": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,",
    "norm": "komunitelerde ve populasyonlarda gorulen etkilesimleri ve degisimleri sorgula",
    "konu_id": "biyo_10_u02_k02",
-   "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
-   "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı",
+   "konu": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+   "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
    "kodlar": [
     "BİY.10.2.2"
    ],
@@ -3308,7 +3415,7 @@
    "ders": "Biyoloji",
    "metin": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,",
    "norm": "ekosistemdeki enerji akisiyla ilgili tumevarimsal akil yurut",
-   "konu_id": "biyo_10_u02_k02",
+   "konu_id": "biyo_10_u02_k03",
    "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
    "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı",
    "kodlar": [
@@ -3321,7 +3428,7 @@
    "ders": "Biyoloji",
    "metin": "madde döngüleri ile ilgili bilimsel model oluşturabilmeniz,",
    "norm": "madde donguleri ile ilgili bilimsel model olustur",
-   "konu_id": "biyo_10_u02_k03",
+   "konu_id": "biyo_10_u02_k04",
    "konu": "2.4 Madde Döngüleri",
    "topic_key": "Biyoloji > 2.4 Madde Döngüleri",
    "kodlar": [
@@ -3334,9 +3441,9 @@
    "ders": "Biyoloji",
    "metin": "ekolojik sürdürülebilirliğin önemini yorumlayabilmeniz,",
    "norm": "ekolojik surdurulebilirligin onemini yorumla",
-   "konu_id": "biyo_10_u02_k04",
-   "konu": "2.9 Atık Yönetimi",
-   "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
+   "konu_id": "biyo_10_u02_k05",
+   "konu": "2.5 Ekolojik Sürdürülebilirliğin Önemi",
+   "topic_key": "Biyoloji > 2.5 Ekolojik Sürdürülebilirliğin Önemi",
    "kodlar": [
     "BİY.10.2.5"
    ],
@@ -3347,9 +3454,9 @@
    "ders": "Biyoloji",
    "metin": "çevrenizde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilmeniz,",
    "norm": "cevrenizde surdurulebilirligi kisitlayan durumlarla ilgili gozleme dayali tahmin yap",
-   "konu_id": "biyo_10_u02_k04",
-   "konu": "2.9 Atık Yönetimi",
-   "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
+   "konu_id": "biyo_10_u02_k06",
+   "konu": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+   "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
    "kodlar": [
     "BİY.10.2.6"
    ],
@@ -3360,9 +3467,9 @@
    "ders": "Biyoloji",
    "metin": "ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilmeniz,",
    "norm": "ekolojik ayak izini kucultebilme yollarini bilimsel olarak sorgula",
-   "konu_id": "biyo_10_u02_k04",
-   "konu": "2.9 Atık Yönetimi",
-   "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
+   "konu_id": "biyo_10_u02_k07",
+   "konu": "2.7 Ekolojik Ayak İzinin Küçültülmesi",
+   "topic_key": "Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi",
    "kodlar": [
     "BİY.10.2.7"
    ],
@@ -3373,9 +3480,9 @@
    "ders": "Biyoloji",
    "metin": "doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilmeniz,",
    "norm": "dogal kaynaklarin ve biyocesitliligin korunmasi icin alinan onlemleri sorgula",
-   "konu_id": "biyo_10_u02_k04",
-   "konu": "2.9 Atık Yönetimi",
-   "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
+   "konu_id": "biyo_10_u02_k08",
+   "konu": "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+   "topic_key": "Biyoloji > 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
    "kodlar": [
     "BİY.10.2.8"
    ],
@@ -3384,9 +3491,9 @@
   },
   {
    "ders": "Biyoloji",
-   "metin": "çevrenizde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilmeniz",
+   "metin": "çevrenizde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilmeniz,",
    "norm": "cevrenizde atik yonetimi konusunda yapilan calismalarla ilgili bilgi topla",
-   "konu_id": "biyo_10_u02_k04",
+   "konu_id": "biyo_10_u02_k09",
    "konu": "2.9 Atık Yönetimi",
    "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
    "kodlar": [

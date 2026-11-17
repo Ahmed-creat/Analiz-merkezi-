@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261031-v69-surec-kazanim";
+const CACHE = "analiz-merkezi-v-20261031-v69-biyo10-tur2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -36,12 +36,17 @@ const ASSETS = [
   "./content/soru_havuzlari/biyo_10_u01_k06.json",
   "./content/soru_havuzlari/biyo_10_u01_k07.json",
   "./content/soru_havuzlari/biyo_10_u01_k08.json",
+  "./content/soru_havuzlari/biyo_10_u01_k09.json",
+  "./content/soru_havuzlari/biyo_10_u01_k10.json",
   "./content/soru_havuzlari/biyo_10_u02_k01.json",
   "./content/soru_havuzlari/biyo_10_u02_k02.json",
   "./content/soru_havuzlari/biyo_10_u02_k03.json",
   "./content/soru_havuzlari/biyo_10_u02_k04.json",
   "./content/soru_havuzlari/biyo_10_u02_k05.json",
   "./content/soru_havuzlari/biyo_10_u02_k06.json",
+  "./content/soru_havuzlari/biyo_10_u02_k07.json",
+  "./content/soru_havuzlari/biyo_10_u02_k08.json",
+  "./content/soru_havuzlari/biyo_10_u02_k09.json",
   "./content/soru_havuzlari/cogr_10_u01_k01.json",
   "./content/soru_havuzlari/cogr_10_u02_k01.json",
   "./content/soru_havuzlari/cogr_10_u02_k02.json",
