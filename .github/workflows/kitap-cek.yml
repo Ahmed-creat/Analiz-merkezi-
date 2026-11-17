@@ -13,6 +13,11 @@ name: Kitap Çek
 
 on:
   workflow_dispatch:
+    inputs:
+      slug:
+        description: "Yalnız bu dersi çevir (boş = tümü). Örn: cografya"
+        required: false
+        default: ""
   pull_request:
     types: [opened, reopened, labeled]
 
@@ -33,6 +38,8 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       ETIKET: derskitaplari
+      # Tek ders çekmek için: workflow_dispatch girdisi (boşsa tüm liste)
+      SLUG_FILTRE: ${{ github.event.inputs.slug }}
     steps:
       - uses: actions/checkout@v4
 
@@ -49,6 +56,7 @@ jobs:
           while IFS='|' read -r SLUG ASSET; do
             [ -z "${SLUG:-}" ] && continue
             case "$SLUG" in \#*) continue ;; esac
+            if [ -n "${SLUG_FILTRE:-}" ] && [ "$SLUG" != "$SLUG_FILTRE" ]; then continue; fi
             echo "=== $SLUG ← $ASSET ==="
             if ! gh release download "$ETIKET" --pattern "$ASSET" --dir indirilen --clobber; then
               echo "::warning::$ASSET indirilemedi (release'te yok?)"
