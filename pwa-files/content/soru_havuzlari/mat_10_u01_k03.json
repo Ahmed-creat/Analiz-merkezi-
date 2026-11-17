@@ -13,7 +13,7 @@
     {
       "soru_id": "mat_10_u01_k03_o01",
       "alt_beceri": "Üçgen alanını taban ve yükseklikle hesaplar.",
-      "metin": "Bir üçgenin alanı hangi bağıntıyla bulunur?",
+      "metin": "Şekildeki üçgenin alanı hangi bağıntıyla bulunur?",
       "secenekler": [
         "Taban × yükseklik",
         "(Taban × yükseklik) / 2",
@@ -78,7 +78,7 @@
     {
       "soru_id": "mat_10_u01_k03_o02",
       "alt_beceri": "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir.",
-      "metin": "Taban uzunluğu 12 cm, bu tabana ait yüksekliği 5 cm olan üçgenin alanı kaç cm²'dir?",
+      "metin": "Şekildeki üçgende taban uzunluğu 12 cm, bu tabana ait yükseklik 5 cm ise alanı kaç cm²'dir?",
       "secenekler": [
         "60",
         "17",
@@ -135,7 +135,7 @@
         ]
       },
       "flashcard": {
-        "front": "Taban 12, yükseklik 5 ise alan kaçtır?",
+        "front": "Üçgen alanının taban-yükseklik hesabı nedir?",
         "back": "30 cm²"
       },
       "kazanim": "Üçgenin alanını ve alanlar arasındaki oranları hesaplar."
@@ -143,7 +143,7 @@
     {
       "soru_id": "mat_10_u01_k03_o03",
       "alt_beceri": "Üçgen alanını taban ve yükseklikle hesaplar.",
-      "metin": "Tabanı sabit tutulan bir üçgende yükseklik 2 katına çıkarılırsa alanı nasıl değişir?",
+      "metin": "Şekildeki üçgende taban sabit tutulup yükseklik 2 katına çıkarılırsa alanı nasıl değişir?",
       "secenekler": [
         "2 katına çıkar",
         "Yarıya iner",
@@ -218,7 +218,7 @@
     {
       "soru_id": "mat_10_u01_k03_o04",
       "alt_beceri": "Üçgen alanını taban ve yükseklikle hesaplar.",
-      "metin": "Paralel iki doğru arasında ortak tabana sahip üçgenlerin alanları için hangisi doğrudur?",
+      "metin": "Şekilde paralel iki doğru arasında ortak tabana sahip üçgenlerin alanları için hangisi doğrudur?",
       "secenekler": [
         "Taban uzunluğuna bağlıdır",
         "Yükseklikle ters orantılıdır",
@@ -284,7 +284,7 @@
         "not": "ABC ve ABC₂ ortak tabanlı"
       },
       "flashcard": {
-        "front": "Ortak tabanlı üçgenlerin alanları neden eşittir?",
+        "front": "Ortak tabana sahip üçgenlerde alan eşitliğinin nedeni nedir?",
         "back": "Yükseklikleri eşit."
       },
       "kazanim": "Üçgenin alanını ve alanlar arasındaki oranları hesaplar."
@@ -292,7 +292,7 @@
     {
       "soru_id": "mat_10_u01_k03_o05",
       "alt_beceri": "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir.",
-      "metin": "Benzerlik oranı 2/3 olan iki üçgenin alanları oranı kaçtır?",
+      "metin": "Şekildeki benzer iki üçgenin benzerlik oranı 2/3 ise alanları oranı kaçtır?",
       "secenekler": [
         "2/3",
         "8/27",
@@ -363,7 +363,7 @@
         "not": "Benzer üçgenler"
       },
       "flashcard": {
-        "front": "Benzerlik oranının karesi hangi oranı verir?",
+        "front": "Benzerlik oranının karesinin karşılığı nedir?",
         "back": "Alanlar oranını verir; k = 2/3 ise alanlar oranı 4/9’dur."
       },
       "kazanim": "Üçgenin alanını ve alanlar arasındaki oranları hesaplar."
@@ -371,7 +371,7 @@
     {
       "soru_id": "mat_10_u01_k03_o06",
       "alt_beceri": "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir.",
-      "metin": "İki kenarı 6 cm ve 8 cm, aralarındaki açı 30° olan üçgenin alanı kaç cm²'dir? (sin30° = 1/2)",
+      "metin": "Şekildeki üçgende iki kenar 6 cm ve 8 cm, aralarındaki açı 30° ise alanı kaç cm²'dir? (sin30° = 1/2)",
       "secenekler": [
         "24",
         "12",
@@ -431,7 +431,7 @@
     {
       "soru_id": "mat_10_u01_k03_o07",
       "alt_beceri": "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir.",
-      "metin": "Alanı 24 cm² olan üçgenin bir kenarı 8 cm ise bu kenara ait yükseklik kaç cm'dir?",
+      "metin": "Şekildeki üçgenin alanı 24 cm², bir kenarı 8 cm ise bu kenara ait yükseklik kaç cm'dir?",
       "secenekler": [
         "6",
         "3",
@@ -489,7 +489,7 @@
         "not": "Alan = 24 cm²"
       },
       "flashcard": {
-        "front": "Alan 24, taban 8 ise yükseklik kaçtır?",
+        "front": "Alandan yükseklik nasıl bulunur?",
         "back": "6 cm"
       },
       "kazanim": "Üçgenin alanını ve alanlar arasındaki oranları hesaplar."
@@ -497,7 +497,7 @@
     {
       "soru_id": "mat_10_u01_k03_o08",
       "alt_beceri": "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir.",
-      "metin": "Bir üçgenin kenarları 3 katına çıkarılırsa alanı kaç katına çıkar?",
+      "metin": "Şekildeki üçgenin kenarları 3 katına çıkarılırsa alanı kaç katına çıkar?",
       "secenekler": [
         "3",
         "6",
@@ -567,7 +567,7 @@
         ]
       },
       "flashcard": {
-        "front": "Benzer şekillerde alan oranı, kenar oranının kaçıncı kuvvetidir?",
+        "front": "Alan oranı ile kenar oranı arasındaki ilişki nedir?",
         "back": "İkinci kuvvetidir; kenarlar 3 katına çıkarsa alan 9 katına çıkar."
       },
       "kazanim": "Üçgenin alanını ve alanlar arasındaki oranları hesaplar."
@@ -575,7 +575,7 @@
     {
       "soru_id": "mat_10_u01_k03_o09",
       "alt_beceri": "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir.",
-      "metin": "Tabanları eşit iki üçgenin yükseklikleri 3 cm ve 5 cm ise alanları oranı kaçtır?",
+      "metin": "Şekilde tabanları eşit iki üçgenin yükseklikleri 3 cm ve 5 cm ise alanları oranı kaçtır?",
       "secenekler": [
         "9/25",
         "3/5",
@@ -635,7 +635,7 @@
         "not": "Aynı taban, farklı yükseklik"
       },
       "flashcard": {
-        "front": "Tabanlar eşitse alan oranı neye eşittir?",
+        "front": "Eşit tabanlı üçgenlerde alan oranının eşiti nedir?",
         "back": "Yükseklikler oranına."
       },
       "kazanim": "Üçgenin alanını ve alanlar arasındaki oranları hesaplar."
@@ -643,7 +643,7 @@
     {
       "soru_id": "mat_10_u01_k03_o10",
       "alt_beceri": "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir.",
-      "metin": "Bir üçgenin alanı 36 cm², tabanı 9 cm ise yüksekliği kaç cm'dir?",
+      "metin": "Şekildeki üçgenin alanı 36 cm², tabanı 9 cm ise yüksekliği kaç cm'dir?",
       "secenekler": [
         "4",
         "18",
@@ -701,7 +701,7 @@
         "not": "Alan = 36 cm²"
       },
       "flashcard": {
-        "front": "Alan 36, taban 9 ise yükseklik kaçtır?",
+        "front": "Yüksekliği alandan hesaplamanın yolu nedir?",
         "back": "8 cm"
       },
       "kazanim": "Üçgenin alanını ve alanlar arasındaki oranları hesaplar."
@@ -715,7 +715,7 @@
     },
     {
       "id": "mat_10_u01_k03_o02:flashcard",
-      "front": "Taban 12, yükseklik 5 ise alan kaçtır?",
+      "front": "Üçgen alanının taban-yükseklik hesabı nedir?",
       "back": "30 cm²"
     },
     {
@@ -725,12 +725,12 @@
     },
     {
       "id": "mat_10_u01_k03_o04:flashcard",
-      "front": "Ortak tabanlı üçgenlerin alanları neden eşittir?",
+      "front": "Ortak tabana sahip üçgenlerde alan eşitliğinin nedeni nedir?",
       "back": "Yükseklikleri eşit."
     },
     {
       "id": "mat_10_u01_k03_o05:flashcard",
-      "front": "Benzerlik oranının karesi hangi oranı verir?",
+      "front": "Benzerlik oranının karesinin karşılığı nedir?",
       "back": "Alanlar oranını verir; k = 2/3 ise alanlar oranı 4/9’dur."
     },
     {
@@ -740,22 +740,22 @@
     },
     {
       "id": "mat_10_u01_k03_o07:flashcard",
-      "front": "Alan 24, taban 8 ise yükseklik kaçtır?",
+      "front": "Alandan yükseklik nasıl bulunur?",
       "back": "6 cm"
     },
     {
       "id": "mat_10_u01_k03_o08:flashcard",
-      "front": "Benzer şekillerde alan oranı, kenar oranının kaçıncı kuvvetidir?",
+      "front": "Alan oranı ile kenar oranı arasındaki ilişki nedir?",
       "back": "İkinci kuvvetidir; kenarlar 3 katına çıkarsa alan 9 katına çıkar."
     },
     {
       "id": "mat_10_u01_k03_o09:flashcard",
-      "front": "Tabanlar eşitse alan oranı neye eşittir?",
+      "front": "Eşit tabanlı üçgenlerde alan oranının eşiti nedir?",
       "back": "Yükseklikler oranına."
     },
     {
       "id": "mat_10_u01_k03_o10:flashcard",
-      "front": "Alan 36, taban 9 ise yükseklik kaçtır?",
+      "front": "Yüksekliği alandan hesaplamanın yolu nedir?",
       "back": "8 cm"
     }
   ]

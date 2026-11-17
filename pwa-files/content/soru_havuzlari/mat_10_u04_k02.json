@@ -62,7 +62,7 @@
       "cozum": "a > 0 ise kollar yukarı, a < 0 ise aşağı bakar (s.199-203).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "a < 0 ise kollar ne yapar?",
+        "front": "Baş katsayı negatifken parabolün kollarının yönü nedir?",
         "back": "Aşağı bakar."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -119,7 +119,7 @@
       "cozum": "Kitabın 6. örneğinde görüntü kümesi [0, 9] bulunur (s.199).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=x², [−3,2] görüntü kümesi nedir?",
+        "front": "Kapalı aralıkta x²'nin aldığı değerler nedir?",
         "back": "[0, 9]"
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -138,7 +138,7 @@
       "cozum": "Tanım aralığının sol ucunda f(−3) = 9 en büyük değerdir (s.199).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "[−3,2] aralığında x² en büyük değeri nerede alır?",
+        "front": "Maksimumu veren sınır noktası nedir?",
         "back": "x = −3'te 9"
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -157,7 +157,7 @@
       "cozum": "Tepe apsisi x = 3; f(3) = 9 − 18 + 5 = −4 (s.199-205).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "x²−6x+5'in minimum değeri kaçtır?",
+        "front": "Minimum değerin tepe noktasıyla ilişkisi nedir?",
         "back": "−4"
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -214,7 +214,7 @@
       "cozum": "Simetri ekseni tepe noktasının apsisidir: x = −b / 2a = −8 / 2 = −4 (s.199-204).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Karesel fonksiyonun simetri ekseni hangi bağıntıyla bulunur?",
+        "front": "Simetri ekseninin bağıntısı nedir?",
         "back": "x = −b / 2a; bu değer tepe noktasının apsisidir."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -233,7 +233,7 @@
       "cozum": "Tepe noktasının apsisi x = −b / 2a = 12 / 4 = 3 bulunur (s.199-204).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x) = ax² + bx + c fonksiyonunda tepe noktasının apsis formülü nedir?",
+        "front": "Tepe apsisinin genel formülü nedir?",
         "back": "x = −b / 2a."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -271,7 +271,7 @@
       "cozum": "Apsis x = 1, f(1) = 1 − 2 + m = m − 1 olur. Tepe noktası y = 3 üzerinde olduğundan m − 1 = 3 → m = 4 (s.204-210).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tepe noktasının y = k doğrusu üzerinde olması ne demektedir?",
+        "front": "Tepe noktasının y = k doğrusunda olması ne demektir?",
         "back": "Tepe noktasının ordinatının k olması: f(−b/2a) = k."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -309,7 +309,7 @@
       "cozum": "Apsis x = −8 / (2·(−2)) = 2; f(2) = −8 + 16 − 1 = 7. a < 0 olduğu için bu değer en büyük değerdir (s.206-212).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Karesel fonksiyonda en büyük değer hangi durumda tepe noktasında oluşur?",
+        "front": "En büyük değerin tepe noktasında oluşma koşulu nedir?",
         "back": "a < 0 iken; parabol aşağı açıldığı için tepe noktası maksimumdur."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -328,7 +328,7 @@
       "cozum": "Tepe noktasının apsisi 3 ve a > 0 olduğundan fonksiyon (−∞, 3) aralığında azalan, (3, ∞) aralığında artandır (s.208-214).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "a > 0 olan karesel fonksiyon hangi aralıkta azalandır?",
+        "front": "Azalanlık aralığının tepe noktasıyla ilişkisi nedir?",
         "back": "Tepe noktasının solunda: (−∞, −b/2a)."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -347,7 +347,7 @@
       "cozum": "Kökler −2 ve 2’dir; a > 0 olduğundan parabol kökler arasında x ekseninin altındadır: (−2, 2) (s.210-216).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kökleri −2 ve 2 olan, a > 0 olan parabol hangi aralıkta negatiftir?",
+        "front": "İki kök arasında işaretin negatif olması ne demektir?",
         "back": "Kökler arasında: (−2, 2)."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -366,7 +366,7 @@
       "cozum": "f(x) = (x − r)² + k biçiminde tepe noktası (r, k) olur; burada (2, 3) elde edilir (s.212-218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x) = (x − r)² + k biçimindeki parabolün tepe noktası nedir?",
+        "front": "Tepe biçimindeki parabolün köşe noktası nedir?",
         "back": "(r, k)."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -404,7 +404,7 @@
       "cozum": "Tepe noktası x ekseni üzerindeyse parabol x eksenine teğettir; bu durumda denklemin çift katlı tek kökü vardır, yani Δ = 0 (s.210-216).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Parabol x eksenine teğetse diskriminant kaçtır?",
+        "front": "Teğetlik durumunda diskriminantın değeri nedir?",
         "back": "Δ = 0; denklemin çift katlı tek kökü vardır."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -442,7 +442,7 @@
       "cozum": "y ekseni üzerinde x = 0’dır: f(0) = −3, kesişim noktası (0, −3) (s.200-206).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir fonksiyonun y eksenini kestiği nokta nasıl bulunur?",
+        "front": "Sabit terimin y ekseni kesişimine etkisi nedir?",
         "back": "x = 0 yazılır; nokta (0, f(0)) olur."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -461,7 +461,7 @@
       "cozum": "Tepe noktası (r, k) olan ve a = 1 olan parabol f(x) = (x − r)² + k biçimindedir: f(x) = (x − 1)² − 4 (s.212-218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "a(x − r)² + k ifadesindeki r ve k neyi gösterir?",
+        "front": "a(x − r)² + k biçimindeki r ve k'nın anlamı nedir?",
         "back": "Tepe noktasının koordinatlarını: tepe noktası (r, k)."
       },
       "kazanim": "Karesel fonksiyonun grafiğini çizer; tepe noktası, simetri ekseni ve işaretini inceler."
@@ -480,7 +480,7 @@
     },
     {
       "id": "mat_10_u04_k02_o03:flashcard",
-      "front": "a < 0 ise kollar ne yapar?",
+      "front": "Baş katsayı negatifken parabolün kollarının yönü nedir?",
       "back": "Aşağı bakar."
     },
     {
@@ -495,17 +495,17 @@
     },
     {
       "id": "mat_10_u04_k02_o06:flashcard",
-      "front": "f(x)=x², [−3,2] görüntü kümesi nedir?",
+      "front": "Kapalı aralıkta x²'nin aldığı değerler nedir?",
       "back": "[0, 9]"
     },
     {
       "id": "mat_10_u04_k02_o07:flashcard",
-      "front": "[−3,2] aralığında x² en büyük değeri nerede alır?",
+      "front": "Maksimumu veren sınır noktası nedir?",
       "back": "x = −3'te 9"
     },
     {
       "id": "mat_10_u04_k02_o08:flashcard",
-      "front": "x²−6x+5'in minimum değeri kaçtır?",
+      "front": "Minimum değerin tepe noktasıyla ilişkisi nedir?",
       "back": "−4"
     },
     {
@@ -520,12 +520,12 @@
     },
     {
       "id": "mat_10_u04_k02_o11:flashcard",
-      "front": "Karesel fonksiyonun simetri ekseni hangi bağıntıyla bulunur?",
+      "front": "Simetri ekseninin bağıntısı nedir?",
       "back": "x = −b / 2a; bu değer tepe noktasının apsisidir."
     },
     {
       "id": "mat_10_u04_k02_o12:flashcard",
-      "front": "f(x) = ax² + bx + c fonksiyonunda tepe noktasının apsis formülü nedir?",
+      "front": "Tepe apsisinin genel formülü nedir?",
       "back": "x = −b / 2a."
     },
     {
@@ -535,7 +535,7 @@
     },
     {
       "id": "mat_10_u04_k02_o14:flashcard",
-      "front": "Tepe noktasının y = k doğrusu üzerinde olması ne demektedir?",
+      "front": "Tepe noktasının y = k doğrusunda olması ne demektir?",
       "back": "Tepe noktasının ordinatının k olması: f(−b/2a) = k."
     },
     {
@@ -545,22 +545,22 @@
     },
     {
       "id": "mat_10_u04_k02_o16:flashcard",
-      "front": "Karesel fonksiyonda en büyük değer hangi durumda tepe noktasında oluşur?",
+      "front": "En büyük değerin tepe noktasında oluşma koşulu nedir?",
       "back": "a < 0 iken; parabol aşağı açıldığı için tepe noktası maksimumdur."
     },
     {
       "id": "mat_10_u04_k02_o17:flashcard",
-      "front": "a > 0 olan karesel fonksiyon hangi aralıkta azalandır?",
+      "front": "Azalanlık aralığının tepe noktasıyla ilişkisi nedir?",
       "back": "Tepe noktasının solunda: (−∞, −b/2a)."
     },
     {
       "id": "mat_10_u04_k02_o18:flashcard",
-      "front": "Kökleri −2 ve 2 olan, a > 0 olan parabol hangi aralıkta negatiftir?",
+      "front": "İki kök arasında işaretin negatif olması ne demektir?",
       "back": "Kökler arasında: (−2, 2)."
     },
     {
       "id": "mat_10_u04_k02_o19:flashcard",
-      "front": "f(x) = (x − r)² + k biçimindeki parabolün tepe noktası nedir?",
+      "front": "Tepe biçimindeki parabolün köşe noktası nedir?",
       "back": "(r, k)."
     },
     {
@@ -570,7 +570,7 @@
     },
     {
       "id": "mat_10_u04_k02_o21:flashcard",
-      "front": "Parabol x eksenine teğetse diskriminant kaçtır?",
+      "front": "Teğetlik durumunda diskriminantın değeri nedir?",
       "back": "Δ = 0; denklemin çift katlı tek kökü vardır."
     },
     {
@@ -580,12 +580,12 @@
     },
     {
       "id": "mat_10_u04_k02_o23:flashcard",
-      "front": "Bir fonksiyonun y eksenini kestiği nokta nasıl bulunur?",
+      "front": "Sabit terimin y ekseni kesişimine etkisi nedir?",
       "back": "x = 0 yazılır; nokta (0, f(0)) olur."
     },
     {
       "id": "mat_10_u04_k02_o24:flashcard",
-      "front": "a(x − r)² + k ifadesindeki r ve k neyi gösterir?",
+      "front": "a(x − r)² + k biçimindeki r ve k'nın anlamı nedir?",
       "back": "Tepe noktasının koordinatlarını: tepe noktası (r, k)."
     }
   ]

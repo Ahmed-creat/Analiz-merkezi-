@@ -15,16 +15,16 @@
       "alt_beceri": "Bölünebilme kurallarını açıklar.",
       "metin": "Bir doğal sayının 3 ile bölümünden kalan nasıl bulunur?",
       "secenekler": [
-        "Son basamağına bakılır",
-        "Rakamları toplamının 3 ile bölümünden kalanına bakılır",
+        "Yalnız son basamağına bakılır",
+        "Rakam toplamının 3'e bölüm kalanına bakılır",
         "Son iki basamağına bakılır",
-        "Sayı 3'e bölünür"
+        "Sayı doğrudan 3'e bölünür"
       ],
       "dogru_index": 1,
       "cozum": "Kitapta 3 ile bölümünden kalanın, rakamlar toplamının 3 ile bölümünden kalanına eşit olduğu belirtilir (s.165-166).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "3 ile kalan nasıl bulunur?",
+        "front": "Üçe bölümde rakam toplamı kuralı nedir?",
         "back": "Rakamlar toplamının 3'e bölümünden kalan."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -43,7 +43,7 @@
       "cozum": "5 ile bölümünden kalan, son basamağın 5'e bölümünden kalanına eşittir (s.163).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "5 ile kalan neye bağlıdır?",
+        "front": "5 ile bölümden kalanı belirleyen nedir?",
         "back": "Son basamağa."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -53,16 +53,16 @@
       "alt_beceri": "Bölünebilme kurallarını açıklar.",
       "metin": "Bir doğal sayının 4 ile bölümünden kalan nasıl bulunur?",
       "secenekler": [
-        "Son iki basamağındaki sayının 4 ile bölümünden kalanına bakılır",
         "Rakamlar toplamına",
-        "Son basamağa",
-        "Son üç basamağa"
+        "Son iki basamağın 4'e bölüm kalanına bakılır",
+        "Yalnız son basamağa bakılır",
+        "Yalnız son üç basamağa bakılır"
       ],
-      "dogru_index": 0,
+      "dogru_index": 1,
       "cozum": "4 ile bölünebilme son iki basamağa bağlıdır (s.163-164).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "4 ile kalan nasıl bulunur?",
+        "front": "Dörde bölümde son iki basamak kuralı nedir?",
         "back": "Son iki basamağa bakılır."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -100,7 +100,7 @@
       "cozum": "2+5+2 = 9 ve 9 sayısı 9'a tam bölünür → kalan 0 (kitabın doğrulama örneği, s.166).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "252'nin 9 ile kalanı kaçtır?",
+        "front": "Rakamlar toplamıyla 9 kalanı nedir?",
         "back": "0"
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -110,16 +110,16 @@
       "alt_beceri": "Bölümden kalanı kuralla hesaplar.",
       "metin": "1472 sayısının 3 ile bölümünden kalan kaçtır?",
       "secenekler": [
-        "1",
         "2",
+        "1",
         "0",
         "14"
       ],
-      "dogru_index": 1,
+      "dogru_index": 0,
       "cozum": "1+4+7+2 = 14, 14'ün 3'e bölümünden kalan 2'dir (kitabın örneği, s.166).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1472'nin 3 ile kalanı kaçtır?",
+        "front": "3 kalanının rakam toplamıyla bulunuşu nedir?",
         "back": "2"
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -138,7 +138,7 @@
       "cozum": "1+2+3+4 = 10, 10'un 9'a bölümünden kalan 1'dir (s.165-166).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1234'ün 9 ile kalanı kaçtır?",
+        "front": "9 ile bölümde kalanın kuralı nedir?",
         "back": "1"
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -157,7 +157,7 @@
       "cozum": "Son iki basamak 64'tür ve 64 sayısı 4'e tam bölünür → kalan 0 (s.163-164).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "864'ün 4 ile kalanı kaçtır?",
+        "front": "Son iki basamağın 4 ile ilişkisi nedir?",
         "back": "0"
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -176,7 +176,7 @@
       "cozum": "Kitaptaki çıkarıma göre kalan, 7'nin 4'e bölümünden kalana eşittir: 7 = 4·1 + 3 → kalan 3 (s.169).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "175 = 12·14 + 7 yazımından 4’e bölüm kalanı nasıl çıkarılır?",
+        "front": "Birleşik kalandan alt kalana geçişin kuralı nedir?",
         "back": "175 = 12k + 7 = 4(3k + 1) + 3 olduğundan kalan 3’tür."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -195,7 +195,7 @@
       "cozum": "531 → 5+3+1 = 9 olduğundan 9'a tam bölünür; diğerlerinin rakam toplamı 7, 14 ve 13'tür (s.165-166).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "531 neden 9'a bölünür?",
+        "front": "Rakamları toplamı 9'un katı olma kuralı nedir?",
         "back": "Rakamları toplamı 9."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -233,7 +233,7 @@
       "cozum": "10’un katları birler basamağı 0 olan sayılardır; kalan doğrudan birler basamağındaki rakamdır (s.162-164).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "10 ile bölümünden kalan neye eşittir?",
+        "front": "10 ile bölümde kalanın eşit olduğu basamak nedir?",
         "back": "Sayının birler basamağındaki rakama."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -252,7 +252,7 @@
       "cozum": "Rakamlar toplamı 2+3+4+5 = 14, 14’ün 9 ile bölümünden kalan 5’tir; sayının 9 ile bölümünden kalan da 5 olur (s.165-169).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "9 ile bölümünden kalan nasıl bulunur?",
+        "front": "Rakam toplamını 9'a bölerek kalan bulma nedir?",
         "back": "Rakamlar toplamının 9 ile bölümünden kalanına bakılır."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
@@ -280,17 +280,17 @@
   "flashcards": [
     {
       "id": "mat_10_u03_k03_o01:flashcard",
-      "front": "3 ile kalan nasıl bulunur?",
+      "front": "Üçe bölümde rakam toplamı kuralı nedir?",
       "back": "Rakamlar toplamının 3'e bölümünden kalan."
     },
     {
       "id": "mat_10_u03_k03_o02:flashcard",
-      "front": "5 ile kalan neye bağlıdır?",
+      "front": "5 ile bölümden kalanı belirleyen nedir?",
       "back": "Son basamağa."
     },
     {
       "id": "mat_10_u03_k03_o03:flashcard",
-      "front": "4 ile kalan nasıl bulunur?",
+      "front": "Dörde bölümde son iki basamak kuralı nedir?",
       "back": "Son iki basamağa bakılır."
     },
     {
@@ -300,32 +300,32 @@
     },
     {
       "id": "mat_10_u03_k03_o05:flashcard",
-      "front": "252'nin 9 ile kalanı kaçtır?",
+      "front": "Rakamlar toplamıyla 9 kalanı nedir?",
       "back": "0"
     },
     {
       "id": "mat_10_u03_k03_o06:flashcard",
-      "front": "1472'nin 3 ile kalanı kaçtır?",
+      "front": "3 kalanının rakam toplamıyla bulunuşu nedir?",
       "back": "2"
     },
     {
       "id": "mat_10_u03_k03_o07:flashcard",
-      "front": "1234'ün 9 ile kalanı kaçtır?",
+      "front": "9 ile bölümde kalanın kuralı nedir?",
       "back": "1"
     },
     {
       "id": "mat_10_u03_k03_o08:flashcard",
-      "front": "864'ün 4 ile kalanı kaçtır?",
+      "front": "Son iki basamağın 4 ile ilişkisi nedir?",
       "back": "0"
     },
     {
       "id": "mat_10_u03_k03_o09:flashcard",
-      "front": "175 = 12·14 + 7 yazımından 4’e bölüm kalanı nasıl çıkarılır?",
+      "front": "Birleşik kalandan alt kalana geçişin kuralı nedir?",
       "back": "175 = 12k + 7 = 4(3k + 1) + 3 olduğundan kalan 3’tür."
     },
     {
       "id": "mat_10_u03_k03_o10:flashcard",
-      "front": "531 neden 9'a bölünür?",
+      "front": "Rakamları toplamı 9'un katı olma kuralı nedir?",
       "back": "Rakamları toplamı 9."
     },
     {
@@ -335,12 +335,12 @@
     },
     {
       "id": "mat_10_u03_k03_o12:flashcard",
-      "front": "10 ile bölümünden kalan neye eşittir?",
+      "front": "10 ile bölümde kalanın eşit olduğu basamak nedir?",
       "back": "Sayının birler basamağındaki rakama."
     },
     {
       "id": "mat_10_u03_k03_o13:flashcard",
-      "front": "9 ile bölümünden kalan nasıl bulunur?",
+      "front": "Rakam toplamını 9'a bölerek kalan bulma nedir?",
       "back": "Rakamlar toplamının 9 ile bölümünden kalanına bakılır."
     },
     {

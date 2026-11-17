@@ -13,7 +13,7 @@
     {
       "soru_id": "mat_10_u01_k04_o01",
       "alt_beceri": "Sinüs teoremini kullanır.",
-      "metin": "Sinüs teoremi hangi eşitlikle ifade edilir?",
+      "metin": "Şekildeki ABC üçgeninde sinüs teoremi hangi eşitlikle ifade edilir?",
       "secenekler": [
         "a·sinA = b·sinB = c·sinC",
         "a/sinA = b/sinB = c/sinC",
@@ -74,7 +74,7 @@
     {
       "soru_id": "mat_10_u01_k04_o02",
       "alt_beceri": "Sinüs teoremini kullanır.",
-      "metin": "Kosinüs teoremi hangi eşitlikle ifade edilir?",
+      "metin": "Şekildeki ABC üçgeninde kosinüs teoremi hangi eşitlikle ifade edilir?",
       "secenekler": [
         "a² = b² + c² + 2bc·cosA",
         "a = b + c − 2bc·cosA",
@@ -127,7 +127,7 @@
         ]
       },
       "flashcard": {
-        "front": "Kosinüs teoremi nedir?",
+        "front": "a² = b² + c² − 2bc·cosA bağıntısının adı nedir?",
         "back": "a² = b² + c² − 2bc·cosA"
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -135,9 +135,9 @@
     {
       "soru_id": "mat_10_u01_k04_o03",
       "alt_beceri": "Sinüs teoremini kullanır.",
-      "metin": "Bir üçgende A açısı 90° ise kosinüs teoremi hangi bağıntıya dönüşür?",
+      "metin": "Şekildeki ABC dik üçgeninde A açısı 90° ise kosinüs teoremi hangi bağıntıya dönüşür?",
       "secenekler": [
-        "a² = b² + c² (Pisagor)",
+        "a² = b² + c²",
         "a² = b² − c²",
         "a = b + c",
         "a² = 2bc"
@@ -158,7 +158,7 @@
         "dikIsaret": true
       },
       "flashcard": {
-        "front": "A = 90° iken kosinüs teoremi neye dönüşür?",
+        "front": "Dik açıda kosinüs teoreminin aldığı biçim nedir?",
         "back": "Pisagor bağıntısına."
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -166,12 +166,12 @@
     {
       "soru_id": "mat_10_u01_k04_o04",
       "alt_beceri": "Kosinüs teoremini kullanır.",
-      "metin": "ABC üçgeninde A açısı 30°, B açısı 60° ve a = 6 cm ise b kenarı kaç cm'dir?",
+      "metin": "Şekildeki ABC üçgeninde A açısı 30°, B açısı 60° ve a = 6 cm ise b kenarı kaç cm'dir?",
       "secenekler": [
-        "3",
-        "6",
-        "6√3",
-        "12"
+        "4 cm",
+        "6 cm",
+        "6√3 cm",
+        "12 cm"
       ],
       "dogru_index": 2,
       "cozum": "a/sinA = b/sinB → 6/(1/2) = b/(√3/2) → 12 = 2b/√3 → b = 6√3 cm (s.80).",
@@ -225,7 +225,7 @@
         ]
       },
       "flashcard": {
-        "front": "A=30°, B=60°, a=6 ise b kaçtır?",
+        "front": "Sinüs teoreminde kenar nasıl hesaplanır?",
         "back": "6√3"
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -233,7 +233,7 @@
     {
       "soru_id": "mat_10_u01_k04_o05",
       "alt_beceri": "Kosinüs teoremini kullanır.",
-      "metin": "İki kenarı 5 cm ve 7 cm, aralarındaki açı 60° olan üçgende üçüncü kenarın karesi kaçtır?",
+      "metin": "Şekildeki üçgende iki kenar 5 cm ve 7 cm, aralarındaki açı 60° ise üçüncü kenarın karesi kaçtır?",
       "secenekler": [
         "74",
         "109",
@@ -286,7 +286,7 @@
         ]
       },
       "flashcard": {
-        "front": "5, 7 ve 60° için a² kaçtır?",
+        "front": "Kosinüs teoremiyle üçüncü kenar nasıl hesaplanır?",
         "back": "39"
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -294,7 +294,7 @@
     {
       "soru_id": "mat_10_u01_k04_o06",
       "alt_beceri": "Kosinüs teoremini kullanır.",
-      "metin": "ABC üçgeninde BC = 48 birim, açılar B = 58°, C = 74°'dir. AB kenarı yaklaşık kaç birimdir? (sin58° ≈ 0,84, sin74° ≈ 0,96)",
+      "metin": "Şekildeki ABC üçgeninde BC = 48 birim, açılar B = 58°, C = 74°'dir. AB kenarı yaklaşık kaç birimdir? (sin58° ≈ 0,84, sin74° ≈ 0,96)",
       "secenekler": [
         "37",
         "42",
@@ -353,7 +353,7 @@
         ]
       },
       "flashcard": {
-        "front": "BC=48, B=58°, C=74° ise AB kaçtır?",
+        "front": "İki açı ve bir kenardan diğer kenar nasıl bulunur?",
         "back": "≈42"
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -361,7 +361,7 @@
     {
       "soru_id": "mat_10_u01_k04_o07",
       "alt_beceri": "Kosinüs teoremini kullanır.",
-      "metin": "KA = 60 mil, KB = 50√3 mil ve aralarındaki açı 30° ise AB uzunluğu kaç mildir?",
+      "metin": "Şekildeki KAB üçgeninde KA = 60 mil, KB = 50√3 mil ve aralarındaki açı 30° ise AB uzunluğu kaç mildir?",
       "secenekler": [
         "10√21",
         "10√3",
@@ -414,7 +414,7 @@
         ]
       },
       "flashcard": {
-        "front": "60, 50√3 ve 30° için AB kaçtır?",
+        "front": "Aradaki açıyla uzunluk hesabının modeli nedir?",
         "back": "10√21"
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -422,7 +422,7 @@
     {
       "soru_id": "mat_10_u01_k04_o08",
       "alt_beceri": "Kosinüs teoremini kullanır.",
-      "metin": "Kenar uzunlukları 7, 8 ve 5 birim olan üçgende 7 birimlik kenarın karşısındaki açının kosinüsü kaçtır?",
+      "metin": "Kenar uzunlukları şekilde verilen üçgende 7 birimlik kenarın karşısındaki açının kosinüsü kaçtır?",
       "secenekler": [
         "−1/2",
         "3/5",
@@ -475,7 +475,7 @@
         ]
       },
       "flashcard": {
-        "front": "Kenarlar 7, 8, 5 ise 7'nin karşısındaki açının kosinüsü kaçtır?",
+        "front": "Üç kenarı verilen üçgende açının kosinüsü nasıl bulunur?",
         "back": "1/2"
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -483,7 +483,7 @@
     {
       "soru_id": "mat_10_u01_k04_o09",
       "alt_beceri": "Kosinüs teoremini kullanır.",
-      "metin": "Sinüs teoremi hangi durumda doğrudan kullanılır?",
+      "metin": "Şekildeki ABC üçgeninde sinüs teoremi hangi durumda doğrudan kullanılır?",
       "secenekler": [
         "Yalnız üç kenar bilindiğinde",
         "İki açı ve bir kenar bilindiğinde",
@@ -536,7 +536,7 @@
         ]
       },
       "flashcard": {
-        "front": "Sinüs teoremi ne zaman kullanılır?",
+        "front": "Sinüs teoreminin kullanım koşulu nedir?",
         "back": "İki açı + bir kenar verildiğinde."
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -544,7 +544,7 @@
     {
       "soru_id": "mat_10_u01_k04_o10",
       "alt_beceri": "Kosinüs teoremini kullanır.",
-      "metin": "İki kenarı ve bu kenarlar arasındaki açısı bilinen bir üçgende üçüncü kenarı bulmak için hangi teorem kullanılır?",
+      "metin": "Şekildeki üçgende iki kenar ve aralarındaki açı verilmiştir. Üçüncü kenarı bulmak için hangi teorem kullanılır?",
       "secenekler": [
         "Sinüs teoremi",
         "Açıortay teoremi",
@@ -597,7 +597,7 @@
         ]
       },
       "flashcard": {
-        "front": "İki kenar + aradaki açı → hangi teorem?",
+        "front": "İki kenar ve aradaki açıyla üçüncü kenarın teoremi nedir?",
         "back": "Kosinüs teoremi."
       },
       "kazanim": "Sinüs ve kosinüs teoremlerini kullanarak üçgenin bilinmeyen kenar ve açılarını bulur."
@@ -611,47 +611,47 @@
     },
     {
       "id": "mat_10_u01_k04_o02:flashcard",
-      "front": "Kosinüs teoremi nedir?",
+      "front": "a² = b² + c² − 2bc·cosA bağıntısının adı nedir?",
       "back": "a² = b² + c² − 2bc·cosA"
     },
     {
       "id": "mat_10_u01_k04_o03:flashcard",
-      "front": "A = 90° iken kosinüs teoremi neye dönüşür?",
+      "front": "Dik açıda kosinüs teoreminin aldığı biçim nedir?",
       "back": "Pisagor bağıntısına."
     },
     {
       "id": "mat_10_u01_k04_o04:flashcard",
-      "front": "A=30°, B=60°, a=6 ise b kaçtır?",
+      "front": "Sinüs teoreminde kenar nasıl hesaplanır?",
       "back": "6√3"
     },
     {
       "id": "mat_10_u01_k04_o05:flashcard",
-      "front": "5, 7 ve 60° için a² kaçtır?",
+      "front": "Kosinüs teoremiyle üçüncü kenar nasıl hesaplanır?",
       "back": "39"
     },
     {
       "id": "mat_10_u01_k04_o06:flashcard",
-      "front": "BC=48, B=58°, C=74° ise AB kaçtır?",
+      "front": "İki açı ve bir kenardan diğer kenar nasıl bulunur?",
       "back": "≈42"
     },
     {
       "id": "mat_10_u01_k04_o07:flashcard",
-      "front": "60, 50√3 ve 30° için AB kaçtır?",
+      "front": "Aradaki açıyla uzunluk hesabının modeli nedir?",
       "back": "10√21"
     },
     {
       "id": "mat_10_u01_k04_o08:flashcard",
-      "front": "Kenarlar 7, 8, 5 ise 7'nin karşısındaki açının kosinüsü kaçtır?",
+      "front": "Üç kenarı verilen üçgende açının kosinüsü nasıl bulunur?",
       "back": "1/2"
     },
     {
       "id": "mat_10_u01_k04_o09:flashcard",
-      "front": "Sinüs teoremi ne zaman kullanılır?",
+      "front": "Sinüs teoreminin kullanım koşulu nedir?",
       "back": "İki açı + bir kenar verildiğinde."
     },
     {
       "id": "mat_10_u01_k04_o10:flashcard",
-      "front": "İki kenar + aradaki açı → hangi teorem?",
+      "front": "İki kenar ve aradaki açıyla üçüncü kenarın teoremi nedir?",
       "back": "Kosinüs teoremi."
     }
   ]

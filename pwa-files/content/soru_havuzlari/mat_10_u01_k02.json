@@ -13,7 +13,7 @@
     {
       "soru_id": "mat_10_u01_k02_o01",
       "alt_beceri": "Üçgenin yardımcı elemanlarını tanımlar.",
-      "metin": "Bir üçgende kenarortay kavramı nasıl tanımlanır?",
+      "metin": "Şekildeki üçgende kenarortay kavramı nasıl tanımlanır?",
       "secenekler": [
         "Bir köşeden karşı kenara çizilen dik doğru parçası",
         "Bir köşeyi karşı kenarın orta noktasına birleştiren doğru parçası",
@@ -70,7 +70,7 @@
         ]
       },
       "flashcard": {
-        "front": "Köşeyi karşı kenarın orta noktasına birleştiren doğru parçasına ne ad verilir?",
+        "front": "Kenarortayın tanımı nedir?",
         "back": "Kenarortay."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -78,7 +78,7 @@
     {
       "soru_id": "mat_10_u01_k02_o02",
       "alt_beceri": "Üçgenin yardımcı elemanlarını tanımlar.",
-      "metin": "Bir üçgende kaç tane kenarortay vardır?",
+      "metin": "Şekildeki üçgende kaç tane kenarortay vardır?",
       "secenekler": [
         "1",
         "2",
@@ -149,7 +149,7 @@
         ]
       },
       "flashcard": {
-        "front": "Üçgenin kenarortayları hangi noktada kesişir?",
+        "front": "Bir üçgendeki kenarortay sayısı nedir?",
         "back": "Ağırlık merkezinde (G) kesişir."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -157,7 +157,7 @@
     {
       "soru_id": "mat_10_u01_k02_o03",
       "alt_beceri": "Üçgenin yardımcı elemanlarını tanımlar.",
-      "metin": "Bir üçgende kenarortaylar hangi noktada kesişir?",
+      "metin": "Şekildeki üçgende kenarortaylar hangi noktada kesişir?",
       "secenekler": [
         "Ağırlık merkezinde",
         "Diklik merkezinde",
@@ -224,7 +224,7 @@
         "not": "G: ağırlık merkezi"
       },
       "flashcard": {
-        "front": "Kenarortaylar nerede kesişir?",
+        "front": "Kenarortayların kesişim noktasının adı nedir?",
         "back": "Ağırlık merkezinde."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -232,7 +232,7 @@
     {
       "soru_id": "mat_10_u01_k02_o04",
       "alt_beceri": "Üçgenin yardımcı elemanlarını tanımlar.",
-      "metin": "Ağırlık merkezi, bir kenarortayı köşeden ve kenardan itibaren hangi oranda böler?",
+      "metin": "Şekildeki üçgende ağırlık merkezi, bir kenarortayı köşeden ve kenardan itibaren hangi oranda böler?",
       "secenekler": [
         "Köşeden 1, kenardan 2",
         "Eşit olarak 1:1",
@@ -290,7 +290,7 @@
         "not": "|AG| = 2k, |GD| = k"
       },
       "flashcard": {
-        "front": "Kenarortayın köşeye yakın parçası tüm kenarortayın kaçta kaçıdır?",
+        "front": "Ağırlık merkezinin kenarortayı bölme oranı nedir?",
         "back": "2/3’ü; kenara yakın parça 1/3’tür."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -298,7 +298,7 @@
     {
       "soru_id": "mat_10_u01_k02_o05",
       "alt_beceri": "Üçgenin yardımcı elemanlarını tanımlar.",
-      "metin": "Üçgende yükseklik nasıl tanımlanır?",
+      "metin": "Şekildeki üçgende yükseklik nasıl tanımlanır?",
       "secenekler": [
         "Köşeyi karşı kenarın orta noktasına birleştiren doğru parçası",
         "Açıyı iki eşit parçaya bölen doğru parçası",
@@ -354,7 +354,7 @@
         ]
       },
       "flashcard": {
-        "front": "Yükseklik nedir?",
+        "front": "Yüksekliğin tanımı nedir?",
         "back": "Köşeden karşı kenara çizilen dik doğru parçası."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -362,7 +362,7 @@
     {
       "soru_id": "mat_10_u01_k02_o06",
       "alt_beceri": "Üçgenin yardımcı elemanlarını tanımlar.",
-      "metin": "Üçgende yüksekliklerin kesiştiği noktaya ne denir?",
+      "metin": "Şekildeki üçgende yüksekliklerin kesiştiği noktaya ne denir?",
       "secenekler": [
         "Ağırlık merkezi",
         "Diklik merkezi",
@@ -419,7 +419,7 @@
         "not": "Diklik merkezi: yüksekliklerin kesişimi"
       },
       "flashcard": {
-        "front": "Yükseklikler nerede kesişir?",
+        "front": "Yüksekliklerin kesişim noktasının adı nedir?",
         "back": "Diklik merkezinde."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -427,7 +427,7 @@
     {
       "soru_id": "mat_10_u01_k02_o07",
       "alt_beceri": "Açıortay ve kenarortay özelliklerini hesapta kullanır.",
-      "metin": "ABC üçgeninde [AD] iç açıortaydır. |AB| = 6 cm, |AC| = 9 cm ve |BD| = 4 cm ise |DC| kaç cm'dir?",
+      "metin": "Şekildeki ABC üçgeninde [AD] iç açıortaydır. |AB| = 6 cm, |AC| = 9 cm ve |BD| = 4 cm ise |DC| kaç cm'dir?",
       "secenekler": [
         "6",
         "5",
@@ -497,7 +497,7 @@
         ]
       },
       "flashcard": {
-        "front": "İç açıortay teoremi nedir?",
+        "front": "İç açıortay teoreminin oranı nedir?",
         "back": "|BD|/|DC| = |AB|/|AC|"
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -505,7 +505,7 @@
     {
       "soru_id": "mat_10_u01_k02_o08",
       "alt_beceri": "Açıortay ve kenarortay özelliklerini hesapta kullanır.",
-      "metin": "Bir açının açıortayı üzerinde alınan herhangi bir noktanın açının kollarına olan uzaklıkları için hangisi doğrudur?",
+      "metin": "Şekildeki açıda açıortay üzerinde alınan herhangi bir noktanın açının kollarına olan uzaklıkları için hangisi doğrudur?",
       "secenekler": [
         "Kollardan birine daha yakındır",
         "Toplamları sabittir",
@@ -575,7 +575,7 @@
         "not": "d1 = d2"
       },
       "flashcard": {
-        "front": "Açıortay üzerindeki nokta kollara ne kadar uzaktır?",
+        "front": "Açıortay üzerindeki noktanın kollara uzaklığı nedir?",
         "back": "Eşit uzaklıkta."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -583,7 +583,7 @@
     {
       "soru_id": "mat_10_u01_k02_o09",
       "alt_beceri": "Açıortay ve kenarortay özelliklerini hesapta kullanır.",
-      "metin": "Ağırlık merkezinin bir köşeye uzaklığı 8 cm ise aynı kenarortay üzerinde kenara olan uzaklığı kaç cm'dir?",
+      "metin": "Şekildeki üçgende ağırlık merkezinin bir köşeye uzaklığı 8 cm ise aynı kenarortay üzerinde kenara olan uzaklığı kaç cm'dir?",
       "secenekler": [
         "8",
         "4",
@@ -641,7 +641,7 @@
         "not": "G ağırlık merkezi"
       },
       "flashcard": {
-        "front": "|AG| = 8 ise |GD| kaçtır?",
+        "front": "Ağırlık merkezinin kenara uzaklık oranı nedir?",
         "back": "4"
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -649,7 +649,7 @@
     {
       "soru_id": "mat_10_u01_k02_o10",
       "alt_beceri": "Açıortay ve kenarortay özelliklerini hesapta kullanır.",
-      "metin": "Bir üçgenin bir dış açısına ait açıortay, karşı kenarın uzantısını nasıl böler?",
+      "metin": "Şekildeki üçgende bir dış açıya ait açıortay, karşı kenarın uzantısını nasıl böler?",
       "secenekler": [
         "Her zaman iki eşit parçaya",
         "Kenarların toplamı kadar",
@@ -706,7 +706,7 @@
         ]
       },
       "flashcard": {
-        "front": "Dış açıortay teoremi neyi söyler?",
+        "front": "Dış açıortay teoreminin söylediği nedir?",
         "back": "Dış açıortay, karşı kenarın uzantısını komşu kenarlarla orantılı böler."
       },
       "kazanim": "Üçgende kenarortay, açıortay ve yükseklik ile bunların özelliklerini kullanır."
@@ -715,52 +715,52 @@
   "flashcards": [
     {
       "id": "mat_10_u01_k02_o01:flashcard",
-      "front": "Köşeyi karşı kenarın orta noktasına birleştiren doğru parçasına ne ad verilir?",
+      "front": "Kenarortayın tanımı nedir?",
       "back": "Kenarortay."
     },
     {
       "id": "mat_10_u01_k02_o02:flashcard",
-      "front": "Üçgenin kenarortayları hangi noktada kesişir?",
+      "front": "Bir üçgendeki kenarortay sayısı nedir?",
       "back": "Ağırlık merkezinde (G) kesişir."
     },
     {
       "id": "mat_10_u01_k02_o03:flashcard",
-      "front": "Kenarortaylar nerede kesişir?",
+      "front": "Kenarortayların kesişim noktasının adı nedir?",
       "back": "Ağırlık merkezinde."
     },
     {
       "id": "mat_10_u01_k02_o04:flashcard",
-      "front": "Kenarortayın köşeye yakın parçası tüm kenarortayın kaçta kaçıdır?",
+      "front": "Ağırlık merkezinin kenarortayı bölme oranı nedir?",
       "back": "2/3’ü; kenara yakın parça 1/3’tür."
     },
     {
       "id": "mat_10_u01_k02_o05:flashcard",
-      "front": "Yükseklik nedir?",
+      "front": "Yüksekliğin tanımı nedir?",
       "back": "Köşeden karşı kenara çizilen dik doğru parçası."
     },
     {
       "id": "mat_10_u01_k02_o06:flashcard",
-      "front": "Yükseklikler nerede kesişir?",
+      "front": "Yüksekliklerin kesişim noktasının adı nedir?",
       "back": "Diklik merkezinde."
     },
     {
       "id": "mat_10_u01_k02_o07:flashcard",
-      "front": "İç açıortay teoremi nedir?",
+      "front": "İç açıortay teoreminin oranı nedir?",
       "back": "|BD|/|DC| = |AB|/|AC|"
     },
     {
       "id": "mat_10_u01_k02_o08:flashcard",
-      "front": "Açıortay üzerindeki nokta kollara ne kadar uzaktır?",
+      "front": "Açıortay üzerindeki noktanın kollara uzaklığı nedir?",
       "back": "Eşit uzaklıkta."
     },
     {
       "id": "mat_10_u01_k02_o09:flashcard",
-      "front": "|AG| = 8 ise |GD| kaçtır?",
+      "front": "Ağırlık merkezinin kenara uzaklık oranı nedir?",
       "back": "4"
     },
     {
       "id": "mat_10_u01_k02_o10:flashcard",
-      "front": "Dış açıortay teoremi neyi söyler?",
+      "front": "Dış açıortay teoreminin söylediği nedir?",
       "back": "Dış açıortay, karşı kenarın uzantısını komşu kenarlarla orantılı böler."
     }
   ]

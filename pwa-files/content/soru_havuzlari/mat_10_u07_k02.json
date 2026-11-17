@@ -13,7 +13,7 @@
     {
       "soru_id": "mat_10_u07_k02_o01",
       "alt_beceri": "Bayes teoreminin mantığını açıklar.",
-      "metin": "Bayes teoreminin temel mantığı nedir?",
+      "metin": "Toplumda %1 görülen bir hastalıkta test sonucu öğrenilince olasılık yeniden hesaplanır. Bayes teoreminin temel mantığı nedir?",
       "secenekler": [
         "Olasılıkları toplamak",
         "Bir olayın olasılığını yeni verilerle güncellemek",
@@ -24,7 +24,7 @@
       "cozum": "Kitaba göre Bayes teoremi, mevcut bilgiye dayalı olasılığın yeni verilerle güncellenmesini sağlar (s.404-406).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bayes teoremi ne yapar?",
+        "front": "Olasılığın yeni veriyle güncellenmesi ne demektir?",
         "back": "Olasılığı yeni veriyle günceller."
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -32,7 +32,7 @@
     {
       "soru_id": "mat_10_u07_k02_o02",
       "alt_beceri": "Bayes teoreminin mantığını açıklar.",
-      "metin": "Bir hastalığın toplumda görülme oranı %10, hastalık varken testin pozitif çıkma oranı %90, hastalık yokken pozitif çıkma oranı %20'dir. Testi pozitif çıkan bir kişinin gerçekten hasta olma olasılığı kaçtır?",
+      "metin": "Şekildeki olasılık ağacına göre bir hastalığın toplumda görülme oranı %10, hastalık varken testin pozitif çıkma oranı %90, hastalık yokken pozitif çıkma oranı %20'dir. Testi pozitif çıkan bir kişinin gerçekten hasta olma olasılığı kaçtır?",
       "secenekler": [
         "9/10",
         "1/5",
@@ -66,7 +66,7 @@
         ]
       },
       "flashcard": {
-        "front": "Pozitif testte gerçekten hasta olma olasılığı kaçtır?",
+        "front": "Test pozitifken hastalık olasılığı nasıl hesaplanır?",
         "back": "1/3"
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -85,7 +85,7 @@
       "cozum": "9x hasta + 18x sağlıklı = 27x kişinin testi pozitiftir (s.406).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Toplam pozitif test sayısı kaçtır?",
+        "front": "Pozitif çıkanların toplamı nedir?",
         "back": "27x"
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -104,7 +104,7 @@
       "cozum": "90x sağlıklı kişinin %20'si → 18x kişide yanlış pozitif vardır (s.406).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yanlış pozitif sayısı kaçtır?",
+        "front": "Yanlış pozitiflerin sayısı nedir?",
         "back": "18x"
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -123,7 +123,7 @@
       "cozum": "Hasta 10x kişinin %90'ı pozitifse geriye 1x kişi kalır (s.406).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yalancı negatif sayısı kaçtır?",
+        "front": "Yalancı negatiflerin sayısı nedir?",
         "back": "x"
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -131,7 +131,7 @@
     {
       "soru_id": "mat_10_u07_k02_o06",
       "alt_beceri": "Bayes tipi problemlerde istenen koşullu olasılığı hesaplar.",
-      "metin": "Türkiye'de böbrek taşı görülme sıklığı %15'tir. İdrar tahlili taşı olan bireylerde 4/5, olmayan bireylerde 2/17 oranında pozitif sonuç veriyor. Testi pozitif çıkan birinin böbreğinde taş olma olasılığı kaçtır?",
+      "metin": "Şekildeki olasılık ağacına göre Türkiye'de böbrek taşı görülme sıklığı %15'tir. İdrar tahlili taşı olan bireylerde 4/5, olmayan bireylerde 2/17 oranında pozitif sonuç veriyor. Testi pozitif çıkan birinin böbreğinde taş olma olasılığı kaçtır?",
       "secenekler": [
         "4/5",
         "6/11",
@@ -165,7 +165,7 @@
         ]
       },
       "flashcard": {
-        "front": "P(taş|pozitif) kaçtır?",
+        "front": "Taş olasılığının test sonrası değeri nedir?",
         "back": "6/11"
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -184,7 +184,7 @@
       "cozum": "12 + 10 = 22 kişinin testi pozitiftir (s.408).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Toplam pozitif kaç kişidir?",
+        "front": "Yüz kişide pozitif sayısı nedir?",
         "back": "22"
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -203,7 +203,7 @@
       "cozum": "Hatalılar: 10 + 15 + 24 + 26 = 75; kırmızı hatalı 15 → 15/75 = 1/5 (kitabın 6. örneği, s.405).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "P(kırmızı|hatalı) kaçtır?",
+        "front": "Hatalılar içinde kırmızının payı nedir?",
         "back": "1/5"
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -222,7 +222,7 @@
       "cozum": "Mavi hatalı 260·0,10 = 26; toplam hatalı 75 → 26/75 (s.405).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Koşullu olasılıkta paydaya hangi toplam yazılır?",
+        "front": "Koşullu olasılıkta paydanın içeriği nedir?",
         "back": "Koşulun gerçekleştiği grubun toplamı: hatalılar içinde mavi oranı 26/75."
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -241,7 +241,7 @@
       "cozum": "200·0,05 = 10; 300·0,05 = 15; 240·0,10 = 24; 260·0,10 = 26 → 75 (s.405).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki yönlü sıklık çizelgesinde satır toplamları neyi verir?",
+        "front": "Sıklık çizelgesinde satır toplamlarının anlamı nedir?",
         "back": "Her kategorinin toplam sıklığını; hatalı ambalajların toplamı 75’tir."
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
@@ -250,52 +250,52 @@
   "flashcards": [
     {
       "id": "mat_10_u07_k02_o01:flashcard",
-      "front": "Bayes teoremi ne yapar?",
+      "front": "Olasılığın yeni veriyle güncellenmesi ne demektir?",
       "back": "Olasılığı yeni veriyle günceller."
     },
     {
       "id": "mat_10_u07_k02_o02:flashcard",
-      "front": "Pozitif testte gerçekten hasta olma olasılığı kaçtır?",
+      "front": "Test pozitifken hastalık olasılığı nasıl hesaplanır?",
       "back": "1/3"
     },
     {
       "id": "mat_10_u07_k02_o03:flashcard",
-      "front": "Toplam pozitif test sayısı kaçtır?",
+      "front": "Pozitif çıkanların toplamı nedir?",
       "back": "27x"
     },
     {
       "id": "mat_10_u07_k02_o04:flashcard",
-      "front": "Yanlış pozitif sayısı kaçtır?",
+      "front": "Yanlış pozitiflerin sayısı nedir?",
       "back": "18x"
     },
     {
       "id": "mat_10_u07_k02_o05:flashcard",
-      "front": "Yalancı negatif sayısı kaçtır?",
+      "front": "Yalancı negatiflerin sayısı nedir?",
       "back": "x"
     },
     {
       "id": "mat_10_u07_k02_o06:flashcard",
-      "front": "P(taş|pozitif) kaçtır?",
+      "front": "Taş olasılığının test sonrası değeri nedir?",
       "back": "6/11"
     },
     {
       "id": "mat_10_u07_k02_o07:flashcard",
-      "front": "Toplam pozitif kaç kişidir?",
+      "front": "Yüz kişide pozitif sayısı nedir?",
       "back": "22"
     },
     {
       "id": "mat_10_u07_k02_o08:flashcard",
-      "front": "P(kırmızı|hatalı) kaçtır?",
+      "front": "Hatalılar içinde kırmızının payı nedir?",
       "back": "1/5"
     },
     {
       "id": "mat_10_u07_k02_o09:flashcard",
-      "front": "Koşullu olasılıkta paydaya hangi toplam yazılır?",
+      "front": "Koşullu olasılıkta paydanın içeriği nedir?",
       "back": "Koşulun gerçekleştiği grubun toplamı: hatalılar içinde mavi oranı 26/75."
     },
     {
       "id": "mat_10_u07_k02_o10:flashcard",
-      "front": "İki yönlü sıklık çizelgesinde satır toplamları neyi verir?",
+      "front": "Sıklık çizelgesinde satır toplamlarının anlamı nedir?",
       "back": "Her kategorinin toplam sıklığını; hatalı ambalajların toplamı 75’tir."
     }
   ]

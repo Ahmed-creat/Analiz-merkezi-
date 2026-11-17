@@ -34,16 +34,16 @@
       "alt_beceri": "İki kategorik değişkenli araştırma sorusu kurar ve veriyi düzenler.",
       "metin": "İki kategorik değişkenli verilerin ilişkisini göstermek için en uygun tablo hangisidir?",
       "secenekler": [
-        "Kutu grafiği",
+        "Kutu grafiği çizimi",
+        "İki yönlü sıklık tablosu",
         "Saçılım grafiği",
-        "Histogram",
-        "İki yönlü sıklık (kontenjans) tablosu"
+        "Histogram grafiği"
       ],
-      "dogru_index": 3,
+      "dogru_index": 1,
       "cozum": "İki kategorik değişkenin birlikte sıklıkları iki yönlü sıklık tablosunda gösterilir (s.100-102).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kontenjans (iki yönlü sıklık) tablosu neyin dağılımını gösterir?",
+        "front": "İki yönlü sıklık tablosunun amacı nedir?",
         "back": "İki kategorik değişkenin birlikte gözlenme sıklıklarını."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -81,7 +81,7 @@
       "cozum": "Kitapta kategorik veriler için sütun grafiği ve ısı haritası gibi araçlar kullanılır (s.98-100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kategorik veri için hangi grafik uygundur?",
+        "front": "Kategorik veri görselleştirmesinde uygun araç nedir?",
         "back": "Sütun grafiği."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -89,18 +89,18 @@
     {
       "soru_id": "mat_10_u02_k01_o05",
       "alt_beceri": "İki kategorik değişkenli araştırma sorusu kurar ve veriyi düzenler.",
-      "metin": "İyi bir istatistiksel araştırma sorusunun özelliği nedir?",
+      "metin": "Bir araştırmada 40 kişiye aynı soru sorulmalı ve yanıtlar veriyle desteklenmelidir. İyi bir istatistiksel araştırma sorusunun özelliği nedir?",
       "secenekler": [
-        "Tek bir sayı sorması",
+        "Yalnızca tek bir sayı sorması",
+        "İki değişkenli olup veriyle yanıtlanabilmesi",
         "Yanıtının önceden bilinmesi",
-        "Görüş bildirmesi",
-        "İki değişken arasındaki ilişkiyi ölçebilir ve veriyle yanıtlanabilir olması"
+        "Yalnızca görüş bildirmesi"
       ],
-      "dogru_index": 3,
+      "dogru_index": 1,
       "cozum": "Araştırma sorusu, iki kategorik değişkenin ilişkililiğini ölçmeye yönelik ve veriyle yanıtlanabilir olmalıdır (s.100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Araştırma sorusu nasıl olmalıdır?",
+        "front": "Araştırma sorusunun ölçülebilirlik koşulu nedir?",
         "back": "Veriyle yanıtlanabilir, iki değişkenli."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -110,16 +110,16 @@
       "alt_beceri": "İki yönlü tablodan yüzde ve ilişki yorumu yapar.",
       "metin": "Bir araştırmada 40 kişiden 24'ü A markasını tercih etmiştir. A markasını tercih edenlerin yüzdesi kaçtır?",
       "secenekler": [
-        "%40",
         "%60",
+        "%40",
         "%24",
         "%16"
       ],
-      "dogru_index": 1,
+      "dogru_index": 0,
       "cozum": "24/40 = 0,60 → %60 (s.101-104'teki yüzde hesabı).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "40 kişide 24 kişi ise yüzde kaçtır?",
+        "front": "Yüzde hesabının oranı nedir?",
         "back": "%60"
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -146,7 +146,7 @@
     {
       "soru_id": "mat_10_u02_k01_o08",
       "alt_beceri": "İki yönlü tablodan yüzde ve ilişki yorumu yapar.",
-      "metin": "Araştırmacı yalnızca kendi okulundaki öğrencilere anket uygulayıp tüm Türkiye için sonuç çıkarmıştır. Bu durumda ortaya çıkan sorun nedir?",
+      "metin": "Araştırmacı yalnızca kendi okulundaki 60 öğrenciye anket uygulayıp tüm Türkiye için sonuç çıkarmıştır. Bu durumda ortaya çıkan sorun nedir?",
       "secenekler": [
         "Hesaplama hatası",
         "Aşırı büyük örneklem",
@@ -157,7 +157,7 @@
       "cozum": "Tek bir okuldan alınan örneklem evreni temsil etmez; bu bir örneklem yanlılığıdır (s.98-100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tek okuldan alınan örneklem neye yol açar?",
+        "front": "Temsil gücü düşük örneklemin sonucu nedir?",
         "back": "Örneklem yanlılığına."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -176,7 +176,7 @@
       "cozum": "İlişki varlığı nedensellik göstermez; nedensellik için ek kanıt gerekir (s.128-129).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İlişki varsa nedensellik var mıdır?",
+        "front": "İlişkiden nedensellik çıkarma sınırı nedir?",
         "back": "Hayır."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -187,15 +187,15 @@
       "metin": "İki yönlü sıklık tablosunda tüm satır yüzdeleri her sütunda birbirine benziyorsa hangi sonuca varılır?",
       "secenekler": [
         "Değişkenler kesinlikle bağımlıdır",
-        "Veri toplanmamıştır",
-        "Örneklem sıfırdır",
-        "Değişkenler arasında güçlü bir ilişki görünmemektedir"
+        "Değişkenler arasında ilişki görünmemektedir",
+        "Hiç veri toplanmamıştır",
+        "Örneklem büyüklüğü sıfırdır"
       ],
-      "dogru_index": 3,
+      "dogru_index": 1,
       "cozum": "Koşullu yüzdeler değişmiyorsa iki kategorik değişken arasında belirgin ilişki yoktur (s.104-108).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Satır yüzdelerinin sütunlar arasında benzer olması neyi gösterir?",
+        "front": "Satır yüzdelerinin benzerliği ne demektir?",
         "back": "İki kategorik değişken arasında belirgin bir ilişki olmadığını."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -263,15 +263,15 @@
       "metin": "Aynı araştırmada köyde yaşayan 180 kişinin 45’i düzenli spor yapıyor. Köyde yaşayanlar içinde spor yapanların yüzdesi kaçtır?",
       "secenekler": [
         "%45",
-        "%25",
         "%20",
-        "%15"
+        "%15",
+        "%25"
       ],
-      "dogru_index": 1,
+      "dogru_index": 3,
       "cozum": "Köy satırının kendi toplamı 180’dir: 45 / 180 = 0,25 → %25 (s.104-108).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Satır yüzdelerinde payda olarak hangi sayı kullanılır?",
+        "front": "Satır yüzdesinde paydanın değeri nedir?",
         "back": "İncelenen grubun kendi satır toplamı."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -290,7 +290,7 @@
       "cozum": "Grup yüzdeleri belirgin biçimde farklı olduğunda ilişki olabileceği söylenir; ancak gözleme dayalı veriler neden-sonuç kanıtı vermez (s.110-116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki kategorik değişkende yüzdeler arasında büyük fark varsa ne söylenir?",
+        "front": "Yüzdeler arasındaki büyük farkın anlamı nedir?",
         "back": "Değişkenler arasında ilişki olabileceği söylenir; neden-sonuç iddiası kurulamaz."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -309,7 +309,7 @@
       "cozum": "Az sayıda birimde tek bir gözlem yüzdeleri büyük ölçüde değiştirir. Güvenilir yorum için örneklem büyütülür (s.117-122).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gözlem sayısı çok azken yüzde yorumu neden güvenilir değildir?",
+        "front": "Az gözlemde yüzde yorumunun sakıncası nedir?",
         "back": "Tek bir birim bile yüzdeyi büyük ölçüde değiştirir; bu yüzden örneklem büyütülmelidir."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
@@ -323,7 +323,7 @@
     },
     {
       "id": "mat_10_u02_k01_o02:flashcard",
-      "front": "Kontenjans (iki yönlü sıklık) tablosu neyin dağılımını gösterir?",
+      "front": "İki yönlü sıklık tablosunun amacı nedir?",
       "back": "İki kategorik değişkenin birlikte gözlenme sıklıklarını."
     },
     {
@@ -333,17 +333,17 @@
     },
     {
       "id": "mat_10_u02_k01_o04:flashcard",
-      "front": "Kategorik veri için hangi grafik uygundur?",
+      "front": "Kategorik veri görselleştirmesinde uygun araç nedir?",
       "back": "Sütun grafiği."
     },
     {
       "id": "mat_10_u02_k01_o05:flashcard",
-      "front": "Araştırma sorusu nasıl olmalıdır?",
+      "front": "Araştırma sorusunun ölçülebilirlik koşulu nedir?",
       "back": "Veriyle yanıtlanabilir, iki değişkenli."
     },
     {
       "id": "mat_10_u02_k01_o06:flashcard",
-      "front": "40 kişide 24 kişi ise yüzde kaçtır?",
+      "front": "Yüzde hesabının oranı nedir?",
       "back": "%60"
     },
     {
@@ -353,17 +353,17 @@
     },
     {
       "id": "mat_10_u02_k01_o08:flashcard",
-      "front": "Tek okuldan alınan örneklem neye yol açar?",
+      "front": "Temsil gücü düşük örneklemin sonucu nedir?",
       "back": "Örneklem yanlılığına."
     },
     {
       "id": "mat_10_u02_k01_o09:flashcard",
-      "front": "İlişki varsa nedensellik var mıdır?",
+      "front": "İlişkiden nedensellik çıkarma sınırı nedir?",
       "back": "Hayır."
     },
     {
       "id": "mat_10_u02_k01_o10:flashcard",
-      "front": "Satır yüzdelerinin sütunlar arasında benzer olması neyi gösterir?",
+      "front": "Satır yüzdelerinin benzerliği ne demektir?",
       "back": "İki kategorik değişken arasında belirgin bir ilişki olmadığını."
     },
     {
@@ -383,17 +383,17 @@
     },
     {
       "id": "mat_10_u02_k01_o14:flashcard",
-      "front": "Satır yüzdelerinde payda olarak hangi sayı kullanılır?",
+      "front": "Satır yüzdesinde paydanın değeri nedir?",
       "back": "İncelenen grubun kendi satır toplamı."
     },
     {
       "id": "mat_10_u02_k01_o15:flashcard",
-      "front": "İki kategorik değişkende yüzdeler arasında büyük fark varsa ne söylenir?",
+      "front": "Yüzdeler arasındaki büyük farkın anlamı nedir?",
       "back": "Değişkenler arasında ilişki olabileceği söylenir; neden-sonuç iddiası kurulamaz."
     },
     {
       "id": "mat_10_u02_k01_o16:flashcard",
-      "front": "Gözlem sayısı çok azken yüzde yorumu neden güvenilir değildir?",
+      "front": "Az gözlemde yüzde yorumunun sakıncası nedir?",
       "back": "Tek bir birim bile yüzdeyi büyük ölçüde değiştirir; bu yüzden örneklem büyütülmelidir."
     }
   ]

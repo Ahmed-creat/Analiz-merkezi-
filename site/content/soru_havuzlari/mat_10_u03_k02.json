@@ -13,12 +13,12 @@
     {
       "soru_id": "mat_10_u03_k02_o01",
       "alt_beceri": "EBOB ve EKOK kavramlarını açıklar.",
-      "metin": "En büyük ortak bölen (EBOB) nedir?",
+      "metin": "12 ve 18 sayılarını da kalansız bölen en büyük sayı 6'dır. En büyük ortak bölen (EBOB) nedir?",
       "secenekler": [
         "Verilen sayıların en büyüğü",
-        "Verilen sayıların hepsini bölen en büyük doğal sayı",
-        "Sayıların çarpımı",
-        "Sayıların toplamı"
+        "Sayıları bölen en büyük doğal sayı",
+        "Sayıların birbiriyle çarpımı",
+        "Sayıların birbiriyle toplamı"
       ],
       "dogru_index": 1,
       "cozum": "EBOB, sayıların ortak bölenlerinin en büyüğüdür; asal çarpanlarda ortak olanların en küçük kuvvetleri alınır (s.151-153).",
@@ -32,7 +32,7 @@
     {
       "soru_id": "mat_10_u03_k02_o02",
       "alt_beceri": "EBOB ve EKOK kavramlarını açıklar.",
-      "metin": "En küçük ortak kat (EKOK) nedir?",
+      "metin": "6 ve 8 sayılarının ortak katları 24, 48, 72 diye sürer. En küçük ortak kat (EKOK) nedir?",
       "secenekler": [
         "Sayıların çarpımı",
         "Ortak bölenlerin en büyüğü",
@@ -62,7 +62,7 @@
       "cozum": "12 = 2²·3, 18 = 2·3² → ortak en küçük kuvvetler: 2·3 = 6 (s.151-153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "EBOB(12, 18) kaçtır?",
+        "front": "Ortak bölenlerin en büyüğünün değeri nedir?",
         "back": "6"
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -81,7 +81,7 @@
       "cozum": "12 = 2²·3, 18 = 2·3² → EKOK = 2²·3² = 36 (s.151-153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "EKOK(12, 18) kaçtır?",
+        "front": "Ortak katların en küçüğünün değeri nedir?",
         "back": "36"
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -100,7 +100,7 @@
       "cozum": "24 = 2³·3, 36 = 2²·3² → EBOB = 2²·3 = 12 (s.153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "EBOB(24, 36) kaçtır?",
+        "front": "Ortak çarpanların kesişiminin verdiği değer nedir?",
         "back": "12"
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -119,7 +119,7 @@
       "cozum": "6 = 2·3, 8 = 2³ → EKOK = 2³·3 = 24 (kitaptaki örnek, s.153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "EKOK(6, 8) kaçtır?",
+        "front": "İki sayının ortak katı nasıl bulunur?",
         "back": "24"
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -138,7 +138,7 @@
       "cozum": "İki sayı için EBOB·EKOK = sayıların çarpımı → 6·36 = 216 (s.153-155).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "EBOB·EKOK neye eşittir?",
+        "front": "EBOB ile EKOK çarpımının eşiti nedir?",
         "back": "Sayıların çarpımına."
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -157,7 +157,7 @@
       "cozum": "8 = 2³, 12 = 2²·3 → EBOB = 4, EKOK = 24 (s.153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "8 ve 12 için EBOB, EKOK kaçtır?",
+        "front": "İki sayı için EBOB ve EKOK birlikte nasıl bulunur?",
         "back": "4 ve 24"
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -176,7 +176,7 @@
       "cozum": "Parça uzunluğu EBOB(24, 36) = 12 m'dir (kitaptaki tomruk sorusu, s.153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "24 ve 36'yı eşit en büyük parçalara ayıran uzunluk kaçtır?",
+        "front": "En büyük eşit parça uzunluğunun kavramı nedir?",
         "back": "12"
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -195,7 +195,7 @@
       "cozum": "EKOK(6, 8) = 24 dakika (s.153-156'daki EKOK uygulaması).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "6 ve 8 dakikalık ziller ne zaman birlikte çalar?",
+        "front": "Birlikte çalma anının hesabı nedir?",
         "back": "24 dakika sonra."
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -214,7 +214,7 @@
       "cozum": "1’den başka ortak böleni olmayan, yani EBOB’u 1 olan sayılara aralarında asal sayılar denir (s.149-152).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aralarında asal sayıların EBOB’u kaçtır?",
+        "front": "Aralarında asallığın EBOB'a etkisi nedir?",
         "back": "1."
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -271,7 +271,7 @@
       "cozum": "Her iki kenarı da tam bölen en büyük uzunluk EBOB’dur: EBOB(36, 60) = 12 cm (s.152-156).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir dikdörtgen eşit karelere ayrılırken kenar uzunluğu hangi kavramla bulunur?",
+        "front": "Kare fayans kenarının kavramı nedir?",
         "back": "Kısa ve uzun kenarın EBOB’u ile."
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
@@ -290,47 +290,47 @@
     },
     {
       "id": "mat_10_u03_k02_o03:flashcard",
-      "front": "EBOB(12, 18) kaçtır?",
+      "front": "Ortak bölenlerin en büyüğünün değeri nedir?",
       "back": "6"
     },
     {
       "id": "mat_10_u03_k02_o04:flashcard",
-      "front": "EKOK(12, 18) kaçtır?",
+      "front": "Ortak katların en küçüğünün değeri nedir?",
       "back": "36"
     },
     {
       "id": "mat_10_u03_k02_o05:flashcard",
-      "front": "EBOB(24, 36) kaçtır?",
+      "front": "Ortak çarpanların kesişiminin verdiği değer nedir?",
       "back": "12"
     },
     {
       "id": "mat_10_u03_k02_o06:flashcard",
-      "front": "EKOK(6, 8) kaçtır?",
+      "front": "İki sayının ortak katı nasıl bulunur?",
       "back": "24"
     },
     {
       "id": "mat_10_u03_k02_o07:flashcard",
-      "front": "EBOB·EKOK neye eşittir?",
+      "front": "EBOB ile EKOK çarpımının eşiti nedir?",
       "back": "Sayıların çarpımına."
     },
     {
       "id": "mat_10_u03_k02_o08:flashcard",
-      "front": "8 ve 12 için EBOB, EKOK kaçtır?",
+      "front": "İki sayı için EBOB ve EKOK birlikte nasıl bulunur?",
       "back": "4 ve 24"
     },
     {
       "id": "mat_10_u03_k02_o09:flashcard",
-      "front": "24 ve 36'yı eşit en büyük parçalara ayıran uzunluk kaçtır?",
+      "front": "En büyük eşit parça uzunluğunun kavramı nedir?",
       "back": "12"
     },
     {
       "id": "mat_10_u03_k02_o10:flashcard",
-      "front": "6 ve 8 dakikalık ziller ne zaman birlikte çalar?",
+      "front": "Birlikte çalma anının hesabı nedir?",
       "back": "24 dakika sonra."
     },
     {
       "id": "mat_10_u03_k02_o11:flashcard",
-      "front": "Aralarında asal sayıların EBOB’u kaçtır?",
+      "front": "Aralarında asallığın EBOB'a etkisi nedir?",
       "back": "1."
     },
     {
@@ -345,7 +345,7 @@
     },
     {
       "id": "mat_10_u03_k02_o14:flashcard",
-      "front": "Bir dikdörtgen eşit karelere ayrılırken kenar uzunluğu hangi kavramla bulunur?",
+      "front": "Kare fayans kenarının kavramı nedir?",
       "back": "Kısa ve uzun kenarın EBOB’u ile."
     }
   ]

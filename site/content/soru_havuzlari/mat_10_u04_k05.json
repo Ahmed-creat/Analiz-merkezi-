@@ -24,7 +24,7 @@
       "cozum": "Fonksiyon ve tersinin grafikleri y = x doğrusuna göre simetriktir (s.266-270).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ters fonksiyonun grafiği neye göre simetriktir?",
+        "front": "Ters fonksiyonun grafiğinin simetri ekseni nedir?",
         "back": "y = x doğrusuna göre."
       },
       "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
@@ -43,7 +43,7 @@
       "cozum": "Ters ilişkinin fonksiyon olabilmesi için her görüntünün tek bir ön görüntüsü, yani fonksiyonun bire bir olması gerekir (s.264-269).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tersi fonksiyon olması için ne gerekir?",
+        "front": "Bire birliğin ters fonksiyonla ilişkisi nedir?",
         "back": "Bire birlik."
       },
       "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
@@ -62,7 +62,7 @@
       "cozum": "Ters fonksiyonda tanım ve görüntü kümeleri yer değiştirir (s.264-269).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ters fonksiyonda tanım ve görüntü kümeleri nasıl yer değiştirir?",
+        "front": "Tanım ve görüntü kümelerinin yer değiştirmesi ne demektir?",
         "back": "f: tanım → görüntü ise f⁻¹: görüntü → tanım olur."
       },
       "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
@@ -110,10 +110,10 @@
       "alt_beceri": "Verilen fonksiyonun tersini bulur.",
       "metin": "f(x) = x fonksiyonunun tersi hangisidir?",
       "secenekler": [
-        "−x",
+        "−x ifadesi",
         "Kendisi",
-        "1/x",
-        "x²"
+        "1/x ifadesi",
+        "x² ifadesi"
       ],
       "dogru_index": 1,
       "cozum": "f(x) = x fonksiyonu kendi tersidir (s.266).",
@@ -204,17 +204,17 @@
   "flashcards": [
     {
       "id": "mat_10_u04_k05_o01:flashcard",
-      "front": "Ters fonksiyonun grafiği neye göre simetriktir?",
+      "front": "Ters fonksiyonun grafiğinin simetri ekseni nedir?",
       "back": "y = x doğrusuna göre."
     },
     {
       "id": "mat_10_u04_k05_o02:flashcard",
-      "front": "Tersi fonksiyon olması için ne gerekir?",
+      "front": "Bire birliğin ters fonksiyonla ilişkisi nedir?",
       "back": "Bire birlik."
     },
     {
       "id": "mat_10_u04_k05_o03:flashcard",
-      "front": "Ters fonksiyonda tanım ve görüntü kümeleri nasıl yer değiştirir?",
+      "front": "Tanım ve görüntü kümelerinin yer değiştirmesi ne demektir?",
       "back": "f: tanım → görüntü ise f⁻¹: görüntü → tanım olur."
     },
     {

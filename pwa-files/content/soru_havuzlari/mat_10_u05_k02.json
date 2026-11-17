@@ -13,10 +13,10 @@
     {
       "soru_id": "mat_10_u05_k02_o01",
       "alt_beceri": "Algoritma, akış şeması ve algoritmik doğal dili tanır.",
-      "metin": "Kitaba göre algoritmik yapının problem çözmedeki temel işlevi nedir?",
+      "metin": "Şekildeki akış şemasında 5 adımlık bir çözüm yolu gösterilmiştir. Kitaba göre algoritmik yapının problem çözmedeki temel işlevi nedir?",
       "secenekler": [
-        "Sonucu tahmin etmesi",
-        "Çözüm adımlarını belirli bir sıraya koyup süreci hızlandırması",
+        "Sonucu önceden tahmin etmesi",
+        "Adımları sıraya koyup süreci hızlandırması",
         "Yalnızca sayıları sıralaması",
         "Problemi ortadan kaldırması"
       ],
@@ -57,7 +57,7 @@
         ]
       },
       "flashcard": {
-        "front": "Algoritma ne sağlar?",
+        "front": "Algoritmanın adım sırasına katkısı nedir?",
         "back": "Adımları sıraya koyar, hız ve verim sağlar."
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -67,16 +67,16 @@
       "alt_beceri": "Algoritma, akış şeması ve algoritmik doğal dili tanır.",
       "metin": "Algoritmanın işleyişi kitaba göre hangi biçimlerde ifade edilebilir?",
       "secenekler": [
-        "Yalnızca denklem",
-        "Yalnızca tablo",
-        "Yalnızca grafik",
-        "Algoritmik doğal dil, sözde kod ve akış şeması"
+        "Yalnızca matematiksel denklem",
+        "Doğal dil, sözde kod ve akış şeması",
+        "Yalnızca sayı tablosu",
+        "Yalnızca çizgi grafiği"
       ],
-      "dogru_index": 3,
+      "dogru_index": 1,
       "cozum": "Kitap algoritmanın işleyişini algoritmik doğal dil, sözde kod ve akış şeması ile ifade eder (s.344-348).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Algoritma hangi biçimlerde gösterilir?",
+        "front": "Algoritmanın gösterim araçları nedir?",
         "back": "Algoritmik doğal dil, sözde kod, akış şeması."
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -95,7 +95,7 @@
       "cozum": "Kitapta 've' bağlacı, iki koşulun birlikte gerçekleşmesini gerektirir (s.341).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "'ve' bağlacı neyi gerektirir?",
+        "front": "Ve bağlacının koşul anlamı nedir?",
         "back": "Her iki koşulun birlikte sağlanmasını."
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -114,7 +114,7 @@
       "cozum": "'veya' bağlacı, koşullardan en az birinin sağlanması durumunda doğrudur (s.341).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "'veya' bağlacı neyi gerektirir?",
+        "front": "Veya bağlacının koşul anlamı nedir?",
         "back": "En az birinin sağlanmasını."
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -122,7 +122,7 @@
     {
       "soru_id": "mat_10_u05_k02_o05",
       "alt_beceri": "Algoritma, akış şeması ve algoritmik doğal dili tanır.",
-      "metin": "Kitabın başarı belgesi tablosuna göre teşekkür belgesi alabilmek için dönem sonu ağırlıklı not ortalaması hangi aralıkta olmalıdır?",
+      "metin": "Tabloda görüldüğü üzere teşekkür belgesi alabilmek için dönem sonu ağırlıklı not ortalaması hangi aralıkta olmalıdır?",
       "secenekler": [
         "85 ve üzeri",
         "70'ten küçük",
@@ -176,18 +176,18 @@
     {
       "soru_id": "mat_10_u05_k02_o06",
       "alt_beceri": "Algoritma, akış şeması ve algoritmik doğal dili tanır.",
-      "metin": "Algoritmada 'ise' bağlacının işlevi nedir?",
+      "metin": "Bir algoritmada 'not 50'den büyükse geçti yaz' satırı bulunmaktadır. Algoritmada 'ise' bağlacının işlevi nedir?",
       "secenekler": [
-        "İki koşulu birleştirir",
-        "Koşul sağlandığında belirtilen işlemin yapılmasını sağlar",
-        "Döngüyü başlatır",
-        "Sonucu yazdırır"
+        "İki koşulu tek satırda birleştirir",
+        "Koşul sağlanınca işlemi yaptırır",
+        "Döngüyü baştan başlatır",
+        "Sonucu ekrana yazdırır"
       ],
       "dogru_index": 1,
       "cozum": "Kitaba göre 'ise' bağlacı, koşulun karşılanması durumunda belirtilen işlemin gerçekleştirilmesini sağlar (s.342).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "'ise' bağlacı ne yapar?",
+        "front": "Koşullu adımın tetiklenmesi ne demektir?",
         "back": "Koşul sağlanırsa işlemi yaptırır."
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -198,15 +198,15 @@
       "metin": "'Bazı öğrencilerin dönem sonu ağırlıklı not ortalaması 85'ten büyüktür.' ifadesinde kullanılan niceleyici hangisidir?",
       "secenekler": [
         "Bazı (en az bir)",
-        "Her",
-        "Bütün",
-        "Yalnızca bir"
+        "Her biri (tümü)",
+        "Bütün elemanlar",
+        "Yalnızca bir tanesi"
       ],
       "dogru_index": 0,
       "cozum": "Kitaptaki Tablo 2'de bu ifade 'bazı' niceleyicisiyle kurulur; niceleyiciler algoritmada koşulun hangi öğrenciler için geçerli olduğunu belirtir (s.341).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "'Bazı' niceleyicisi neyi belirtir?",
+        "front": "Bazı niceleyicisinin anlamı nedir?",
         "back": "En az bir öğrenci için geçerli olduğunu."
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -225,7 +225,7 @@
       "cozum": "1 + 2 + ... + 10 = 55; algoritma sayaç 10'a ulaşana kadar toplama yapar (s.344).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1'den 10'a kadar toplam kaçtır?",
+        "front": "Döngüyle toplam hesabının sonucu nedir?",
         "back": "55"
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -236,15 +236,15 @@
       "metin": "Babil metoduyla √70 hesaplanırken başlangıç tahmini x₀ = 8 alınırsa ilk adımdaki x₁ değeri kaçtır?",
       "secenekler": [
         "8,75",
-        "8,375",
         "70",
-        "8,3666"
+        "8,3666",
+        "8,375"
       ],
-      "dogru_index": 1,
+      "dogru_index": 3,
       "cozum": "x₁ = ½·(8 + 70/8) = ½·(8 + 8,75) = 8,375 (kitabın 17. örneği, s.346).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "√70 için x₀=8 ise x₁ kaçtır?",
+        "front": "Babil metodunda ilk adımın modeli nedir?",
         "back": "8,375"
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -263,7 +263,7 @@
       "cozum": "x₂ ≈ 8,3666 bulunur; tekrarlama gerçek kök değerine yaklaşmayı sağlar (s.346).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Babil metodunda tekrar ne işe yarar?",
+        "front": "Tekrarlı yaklaşımın amacı nedir?",
         "back": "Gerçek değere yaklaştırır."
       },
       "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik yapı içinde planlar; mantık bağlaçlarını ve niceleyicileri kullanır."
@@ -272,22 +272,22 @@
   "flashcards": [
     {
       "id": "mat_10_u05_k02_o01:flashcard",
-      "front": "Algoritma ne sağlar?",
+      "front": "Algoritmanın adım sırasına katkısı nedir?",
       "back": "Adımları sıraya koyar, hız ve verim sağlar."
     },
     {
       "id": "mat_10_u05_k02_o02:flashcard",
-      "front": "Algoritma hangi biçimlerde gösterilir?",
+      "front": "Algoritmanın gösterim araçları nedir?",
       "back": "Algoritmik doğal dil, sözde kod, akış şeması."
     },
     {
       "id": "mat_10_u05_k02_o03:flashcard",
-      "front": "'ve' bağlacı neyi gerektirir?",
+      "front": "Ve bağlacının koşul anlamı nedir?",
       "back": "Her iki koşulun birlikte sağlanmasını."
     },
     {
       "id": "mat_10_u05_k02_o04:flashcard",
-      "front": "'veya' bağlacı neyi gerektirir?",
+      "front": "Veya bağlacının koşul anlamı nedir?",
       "back": "En az birinin sağlanmasını."
     },
     {
@@ -297,27 +297,27 @@
     },
     {
       "id": "mat_10_u05_k02_o06:flashcard",
-      "front": "'ise' bağlacı ne yapar?",
+      "front": "Koşullu adımın tetiklenmesi ne demektir?",
       "back": "Koşul sağlanırsa işlemi yaptırır."
     },
     {
       "id": "mat_10_u05_k02_o07:flashcard",
-      "front": "'Bazı' niceleyicisi neyi belirtir?",
+      "front": "Bazı niceleyicisinin anlamı nedir?",
       "back": "En az bir öğrenci için geçerli olduğunu."
     },
     {
       "id": "mat_10_u05_k02_o08:flashcard",
-      "front": "1'den 10'a kadar toplam kaçtır?",
+      "front": "Döngüyle toplam hesabının sonucu nedir?",
       "back": "55"
     },
     {
       "id": "mat_10_u05_k02_o09:flashcard",
-      "front": "√70 için x₀=8 ise x₁ kaçtır?",
+      "front": "Babil metodunda ilk adımın modeli nedir?",
       "back": "8,375"
     },
     {
       "id": "mat_10_u05_k02_o10:flashcard",
-      "front": "Babil metodunda tekrar ne işe yarar?",
+      "front": "Tekrarlı yaklaşımın amacı nedir?",
       "back": "Gerçek değere yaklaştırır."
     }
   ]

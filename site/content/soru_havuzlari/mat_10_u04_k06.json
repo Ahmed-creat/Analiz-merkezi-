@@ -24,7 +24,7 @@
       "cozum": "En az/en çok ifadeleri eşitsizliklerle modellenir; 'eşit' ifadeleri denklem verir (s.284-287).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "'En az' ifadesi neyi gerektirir?",
+        "front": "En az ifadesinin gerektirdiği yapı nedir?",
         "back": "Eşitsizliği."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -43,7 +43,7 @@
       "cozum": "−(x² − 20x + 96) = −(x − 8)(x − 12) → kökler 8 ve 12 (kitabın örneği, s.287).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "−x²+20x−96'nın kökleri nedir?",
+        "front": "Karesel fonksiyonun köklerini veren çarpanlar nedir?",
         "back": "8 ve 12"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -62,7 +62,7 @@
       "cozum": "Kollar aşağı baktığından fonksiyon kökler arasında pozitiftir: (8, 12) (s.287).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "−x²+20x−96 > 0 nerede sağlanır?",
+        "front": "Pozitif olduğu aralığın bulunuşu nedir?",
         "back": "8 < x < 12"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -73,15 +73,15 @@
       "metin": "Aynı fonksiyon için f(x) ≤ 0 eşitsizliğinin çözüm kümesi hangisidir?",
       "secenekler": [
         "(−∞, 8] ∪ [12, ∞)",
-        "(8, 12)",
-        "[12, ∞)",
-        "Boş küme"
+        "(8, 12) aralığı",
+        "[12, ∞) yarı açık aralığı",
+        "Boş küme (çözüm yok)"
       ],
       "dogru_index": 0,
       "cozum": "Kökler dışında fonksiyon negatif veya sıfırdır: (−∞, 8] ∪ [12, ∞) (s.287).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "−x²+20x−96 ≤ 0 nerede sağlanır?",
+        "front": "Sıfırdan küçük eşit olduğu küme nedir?",
         "back": "x ≤ 8 veya x ≥ 12"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -100,7 +100,7 @@
       "cozum": "600 − 20t = 200 → 20t = 400 → t = 20 dakika (s.183, s.285).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "600−20t=200 ise t kaçtır?",
+        "front": "Kalan yakıt denkleminin modeli nedir?",
         "back": "20"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -119,7 +119,7 @@
       "cozum": "600 − 20t > 400 → 20t < 200 → t < 10 dakika (s.285-287).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "600−20t>400 ise t ne olmalıdır?",
+        "front": "Kalan yakıt eşitsizliğinin çözüm kuralı nedir?",
         "back": "t < 10"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -138,7 +138,7 @@
       "cozum": "Her iki tarafın karesi: x = 36 (s.290-296).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "√x = 6 ise x kaçtır?",
+        "front": "√x = 6 tipi denklemin modeli nedir?",
         "back": "36"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -157,7 +157,7 @@
       "cozum": "İçler dışlar çarpımı: 1 = 5x → x = 1/5 = 0,2 (s.296-300).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1/x = 5 ise x kaçtır?",
+        "front": "Rasyonel denklemin çözüm yolu nedir?",
         "back": "0,2"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -176,7 +176,7 @@
       "cozum": "Tepe noktası x = 10'da f(10) = 4'tür (s.287).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "−x²+20x−96'nın en büyük değeri kaçtır?",
+        "front": "Tepe noktasının verdiği en büyük değer nedir?",
         "back": "4"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -195,7 +195,7 @@
       "cozum": "x² − 4 = (x − 2)(x + 2) kökleri −2 ve 2; kollar yukarı olduğundan arada negatiftir: (−2, 2) (s.287-292).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "x²−4<0 nerede sağlanır?",
+        "front": "İki kök arasındaki işaret kuralı nedir?",
         "back": "−2 < x < 2"
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -233,7 +233,7 @@
       "cozum": "İndirimden sonraki fiyat 80·(1 − x/100) olur; ödenen tutar 60 TL olduğundan 80·(1 − x/100) = 60 denklemi kurulur (s.290-296).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "%x indirimden sonra fiyat hangi çarpanla hesaplanır?",
+        "front": "Yüzde indirimde fiyat çarpanı nedir?",
         "back": "Fiyat · (1 − x/100)."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -290,7 +290,7 @@
       "cozum": "Denklem x² + 9 = 25 → x² = 16; pozitif çözüm x = 4’tür (s.296-300).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "x² = 16 denkleminin çözümleri nelerdir?",
+        "front": "x²=16 denkleminin çözüm kümesi nedir?",
         "back": "x = 4 ve x = −4."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -328,7 +328,7 @@
       "cozum": "C karesel fonksiyonunun tepe noktası apsisindedir: x = 20 / 2 = 10; maliyet bu üretim miktarında en küçüktür (s.300-305).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Karesel maliyet fonksiyonunda en düşük maliyet nerede oluşur?",
+        "front": "Karesel maliyetin en düşük olduğu nokta nedir?",
         "back": "Tepe noktasının apsisinde; a > 0 olduğu için tepe minimumdur."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -347,7 +347,7 @@
       "cozum": "Her iki tarafın karesi alınır: x − 1 = 9 → x = 10; sağlama yapıldığında √9 = 3 olduğu görülür (s.284-292).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Karekök içeren denklem hangi adımla çözülür?",
+        "front": "Karekök alarak çözmenin kuralı nedir?",
         "back": "Her iki tarafın karesi alınır, sonra çözüm sağlaması yapılır."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -366,7 +366,7 @@
       "cozum": "İçler dışlar çarpımıyla 4(x − 2) = 1 → 4x − 8 = 1 → x = 9/4 olur (s.292-298).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1/(x − r) = c denklemi nasıl çözülür?",
+        "front": "Rasyonel denklemde paydanın ters çevrilmesi nedir?",
         "back": "İçler dışlar çarpımı yapılarak x yalnız bırakılır."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -385,7 +385,7 @@
       "cozum": "x² − 2x − 8 = (x − 4)(x + 2) kökleri −2 ve 4’tür; a > 0 olduğundan işaret köklerin dışında pozitiftir: (−∞, −2] ∪ [4, ∞) (s.300-305).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kökleri −2 ve 4, baş katsayısı pozitif olan eşitsizlik hangi aralıkta sağlanır?",
+        "front": "Dış aralıkta işaretin pozitif olması ne demektir?",
         "back": "Köklerin dışında: (−∞, −2] ∪ [4, ∞)."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
@@ -394,52 +394,52 @@
   "flashcards": [
     {
       "id": "mat_10_u04_k06_o01:flashcard",
-      "front": "'En az' ifadesi neyi gerektirir?",
+      "front": "En az ifadesinin gerektirdiği yapı nedir?",
       "back": "Eşitsizliği."
     },
     {
       "id": "mat_10_u04_k06_o02:flashcard",
-      "front": "−x²+20x−96'nın kökleri nedir?",
+      "front": "Karesel fonksiyonun köklerini veren çarpanlar nedir?",
       "back": "8 ve 12"
     },
     {
       "id": "mat_10_u04_k06_o03:flashcard",
-      "front": "−x²+20x−96 > 0 nerede sağlanır?",
+      "front": "Pozitif olduğu aralığın bulunuşu nedir?",
       "back": "8 < x < 12"
     },
     {
       "id": "mat_10_u04_k06_o04:flashcard",
-      "front": "−x²+20x−96 ≤ 0 nerede sağlanır?",
+      "front": "Sıfırdan küçük eşit olduğu küme nedir?",
       "back": "x ≤ 8 veya x ≥ 12"
     },
     {
       "id": "mat_10_u04_k06_o05:flashcard",
-      "front": "600−20t=200 ise t kaçtır?",
+      "front": "Kalan yakıt denkleminin modeli nedir?",
       "back": "20"
     },
     {
       "id": "mat_10_u04_k06_o06:flashcard",
-      "front": "600−20t>400 ise t ne olmalıdır?",
+      "front": "Kalan yakıt eşitsizliğinin çözüm kuralı nedir?",
       "back": "t < 10"
     },
     {
       "id": "mat_10_u04_k06_o07:flashcard",
-      "front": "√x = 6 ise x kaçtır?",
+      "front": "√x = 6 tipi denklemin modeli nedir?",
       "back": "36"
     },
     {
       "id": "mat_10_u04_k06_o08:flashcard",
-      "front": "1/x = 5 ise x kaçtır?",
+      "front": "Rasyonel denklemin çözüm yolu nedir?",
       "back": "0,2"
     },
     {
       "id": "mat_10_u04_k06_o09:flashcard",
-      "front": "−x²+20x−96'nın en büyük değeri kaçtır?",
+      "front": "Tepe noktasının verdiği en büyük değer nedir?",
       "back": "4"
     },
     {
       "id": "mat_10_u04_k06_o10:flashcard",
-      "front": "x²−4<0 nerede sağlanır?",
+      "front": "İki kök arasındaki işaret kuralı nedir?",
       "back": "−2 < x < 2"
     },
     {
@@ -449,7 +449,7 @@
     },
     {
       "id": "mat_10_u04_k06_o12:flashcard",
-      "front": "%x indirimden sonra fiyat hangi çarpanla hesaplanır?",
+      "front": "Yüzde indirimde fiyat çarpanı nedir?",
       "back": "Fiyat · (1 − x/100)."
     },
     {
@@ -464,7 +464,7 @@
     },
     {
       "id": "mat_10_u04_k06_o15:flashcard",
-      "front": "x² = 16 denkleminin çözümleri nelerdir?",
+      "front": "x²=16 denkleminin çözüm kümesi nedir?",
       "back": "x = 4 ve x = −4."
     },
     {
@@ -474,22 +474,22 @@
     },
     {
       "id": "mat_10_u04_k06_o17:flashcard",
-      "front": "Karesel maliyet fonksiyonunda en düşük maliyet nerede oluşur?",
+      "front": "Karesel maliyetin en düşük olduğu nokta nedir?",
       "back": "Tepe noktasının apsisinde; a > 0 olduğu için tepe minimumdur."
     },
     {
       "id": "mat_10_u04_k06_o18:flashcard",
-      "front": "Karekök içeren denklem hangi adımla çözülür?",
+      "front": "Karekök alarak çözmenin kuralı nedir?",
       "back": "Her iki tarafın karesi alınır, sonra çözüm sağlaması yapılır."
     },
     {
       "id": "mat_10_u04_k06_o19:flashcard",
-      "front": "1/(x − r) = c denklemi nasıl çözülür?",
+      "front": "Rasyonel denklemde paydanın ters çevrilmesi nedir?",
       "back": "İçler dışlar çarpımı yapılarak x yalnız bırakılır."
     },
     {
       "id": "mat_10_u04_k06_o20:flashcard",
-      "front": "Kökleri −2 ve 4, baş katsayısı pozitif olan eşitsizlik hangi aralıkta sağlanır?",
+      "front": "Dış aralıkta işaretin pozitif olması ne demektir?",
       "back": "Köklerin dışında: (−∞, −2] ∪ [4, ∞)."
     }
   ]

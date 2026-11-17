@@ -13,7 +13,7 @@
     {
       "soru_id": "mat_10_u04_k03_o01",
       "alt_beceri": "Karekök fonksiyonunun tanım ve görüntü kümesini belirler.",
-      "metin": "f(x) = √x fonksiyonunun tanım kümesi hangisidir?",
+      "metin": "f(x) = √x kuralıyla verilen fonksiyon hangi x değerlerinde tanımlıdır?",
       "secenekler": [
         "R",
         "[0, ∞)",
@@ -32,7 +32,7 @@
     {
       "soru_id": "mat_10_u04_k03_o02",
       "alt_beceri": "Karekök fonksiyonunun tanım ve görüntü kümesini belirler.",
-      "metin": "f(x) = √x fonksiyonunun görüntü kümesi hangisidir?",
+      "metin": "f(x) = √x kuralında elde edilen değerler hangi aralığa düşer?",
       "secenekler": [
         "R",
         "(−∞, 0]",
@@ -62,7 +62,7 @@
       "cozum": "x arttıkça √x de artar; fonksiyon artandır (s.226).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "√x artan mı azalan mı?",
+        "front": "√x fonksiyonunun monotonluk davranışı nedir?",
         "back": "Artan."
       },
       "kazanim": "Karekök fonksiyonunun tanım kümesini, görüntü kümesini ve nitel özelliklerini inceler."
@@ -81,7 +81,7 @@
       "cozum": "Kitabın 11. örneğinde tanım aralığındaki farklı x'lerin farklı görüntüler verdiği, yani fonksiyonun bire bir olduğu gösterilir (s.226).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "√x bire bir mi?",
+        "front": "√x'in bire birlik durumu nedir?",
         "back": "Evet."
       },
       "kazanim": "Karekök fonksiyonunun tanım kümesini, görüntü kümesini ve nitel özelliklerini inceler."
@@ -138,7 +138,7 @@
       "cozum": "x = 0'da √0 = 0 en küçük değerdir (s.226).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "[0,20] aralığında √x'in en küçük değeri kaçtır?",
+        "front": "Aralığın sol ucunda karekök fonksiyonunun değeri nedir?",
         "back": "0"
       },
       "kazanim": "Karekök fonksiyonunun tanım kümesini, görüntü kümesini ve nitel özelliklerini inceler."
@@ -146,7 +146,7 @@
     {
       "soru_id": "mat_10_u04_k03_o08",
       "alt_beceri": "Karekök fonksiyonunun grafiğini yorumlar.",
-      "metin": "f(x) = √(x − 3) fonksiyonunun tanım kümesi hangisidir?",
+      "metin": "f(x) = √(x − 3) kuralı hangi x değerlerinden başlayarak tanımlıdır?",
       "secenekler": [
         "[0, ∞)",
         "(−3, ∞)",
@@ -176,7 +176,7 @@
       "cozum": "Fonksiyonun sıfırı f(x) = 0 eşitliğini sağlayan x değeridir: √x = 0 ise x = 0 olur (s.226).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "√x'in sıfırı nerededir?",
+        "front": "√x'in sıfırının koordinatı nedir?",
         "back": "x = 0"
       },
       "kazanim": "Karekök fonksiyonunun tanım kümesini, görüntü kümesini ve nitel özelliklerini inceler."
@@ -195,7 +195,7 @@
       "cozum": "İki tarafın karesi alınırsa x = 25 olur (s.236-240).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "√x = 5 ise x kaçtır?",
+        "front": "Karekök denkleminin çözüm kuralı nedir?",
         "back": "25"
       },
       "kazanim": "Karekök fonksiyonunun tanım kümesini, görüntü kümesini ve nitel özelliklerini inceler."
@@ -203,7 +203,7 @@
     {
       "soru_id": "mat_10_u04_k03_o11",
       "alt_beceri": "Karekök fonksiyonunun grafiğini yorumlar.",
-      "metin": "f(x) = √(x + 4) fonksiyonunun tanım kümesi aşağıdakilerden hangisidir?",
+      "metin": "f(x) = √(x + 4) kuralı hangi aralıkta tanımlıdır?",
       "secenekler": [
         "[−4, ∞)",
         "[4, ∞)",
@@ -222,7 +222,7 @@
     {
       "soru_id": "mat_10_u04_k03_o12",
       "alt_beceri": "Karekök fonksiyonunun grafiğini yorumlar.",
-      "metin": "f(x) = −√x fonksiyonunun görüntü kümesi aşağıdakilerden hangisidir?",
+      "metin": "f(x) = −√x kuralında elde edilen değerler hangi aralığa düşer?",
       "secenekler": [
         "[0, ∞)",
         "ℝ",
@@ -233,7 +233,7 @@
       "cozum": "√x ≥ 0 olduğundan −√x ≤ 0 olur; görüntü kümesi (−∞, 0] biçimindedir (s.232-238).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Karekök fonksiyonu negatif işaretle çarpıldığında görüntü kümesi nasıl olur?",
+        "front": "Negatif işaretli karekök fonksiyonunun görüntü kümesi nedir?",
         "back": "Değerler sıfır veya negatif olur: (−∞, 0]."
       },
       "kazanim": "Karekök fonksiyonunun tanım kümesini, görüntü kümesini ve nitel özelliklerini inceler."
@@ -252,12 +252,12 @@
     },
     {
       "id": "mat_10_u04_k03_o03:flashcard",
-      "front": "√x artan mı azalan mı?",
+      "front": "√x fonksiyonunun monotonluk davranışı nedir?",
       "back": "Artan."
     },
     {
       "id": "mat_10_u04_k03_o04:flashcard",
-      "front": "√x bire bir mi?",
+      "front": "√x'in bire birlik durumu nedir?",
       "back": "Evet."
     },
     {
@@ -272,7 +272,7 @@
     },
     {
       "id": "mat_10_u04_k03_o07:flashcard",
-      "front": "[0,20] aralığında √x'in en küçük değeri kaçtır?",
+      "front": "Aralığın sol ucunda karekök fonksiyonunun değeri nedir?",
       "back": "0"
     },
     {
@@ -282,12 +282,12 @@
     },
     {
       "id": "mat_10_u04_k03_o09:flashcard",
-      "front": "√x'in sıfırı nerededir?",
+      "front": "√x'in sıfırının koordinatı nedir?",
       "back": "x = 0"
     },
     {
       "id": "mat_10_u04_k03_o10:flashcard",
-      "front": "√x = 5 ise x kaçtır?",
+      "front": "Karekök denkleminin çözüm kuralı nedir?",
       "back": "25"
     },
     {
@@ -297,7 +297,7 @@
     },
     {
       "id": "mat_10_u04_k03_o12:flashcard",
-      "front": "Karekök fonksiyonu negatif işaretle çarpıldığında görüntü kümesi nasıl olur?",
+      "front": "Negatif işaretli karekök fonksiyonunun görüntü kümesi nedir?",
       "back": "Değerler sıfır veya negatif olur: (−∞, 0]."
     }
   ]
