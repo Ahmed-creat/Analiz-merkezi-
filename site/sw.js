@@ -4,7 +4,6 @@
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
 const CACHE = "analiz-merkezi-v-20261031-v72-tema-tus-iliski-yok";
 const ASSETS = [
-  "./",
   "./index.html",
   "./manifest.json",
   "./icons/icon-192.png",
@@ -17,8 +16,8 @@ const ASSETS = [
   "./okz-meb.js",
   "./okz-tde-veri.js",
   "./okz-tde.js",
- "./konu-anahtar.js",
- "./havuz-bul.js",
+  "./konu-anahtar.js",
+  "./havuz-bul.js",
   "./veri-sikistir.js",
   "./veri-birlestir.js",
   "./gorsel.js",
@@ -37,13 +36,10 @@ const ASSETS = [
   "./content/soru_havuzlari/biyo_10_u01_k05.json",
   "./content/soru_havuzlari/biyo_10_u01_k06.json",
   "./content/soru_havuzlari/biyo_10_u01_k07.json",
-  "./content/soru_havuzlari/biyo_10_u01_k08.json",
   "./content/soru_havuzlari/biyo_10_u02_k01.json",
   "./content/soru_havuzlari/biyo_10_u02_k02.json",
   "./content/soru_havuzlari/biyo_10_u02_k03.json",
   "./content/soru_havuzlari/biyo_10_u02_k04.json",
-  "./content/soru_havuzlari/biyo_10_u02_k05.json",
-  "./content/soru_havuzlari/biyo_10_u02_k06.json",
   "./content/soru_havuzlari/cogr_10_u01_k01.json",
   "./content/soru_havuzlari/cogr_10_u02_k01.json",
   "./content/soru_havuzlari/cogr_10_u02_k02.json",
@@ -53,26 +49,16 @@ const ASSETS = [
   "./content/soru_havuzlari/cogr_10_u03_k04.json",
   "./content/soru_havuzlari/cogr_10_u03_k05.json",
   "./content/soru_havuzlari/cogr_10_u04_k01.json",
-  "./content/soru_havuzlari/cogr_10_u04_k02.json",
   "./content/soru_havuzlari/cogr_10_u05_k01.json",
-  "./content/soru_havuzlari/cogr_10_u05_k02.json",
-  "./content/soru_havuzlari/cogr_10_u05_k03.json",
   "./content/soru_havuzlari/cogr_10_u06_k01.json",
-  "./content/soru_havuzlari/cogr_10_u06_k02.json",
-  "./content/soru_havuzlari/cogr_10_u06_k03.json",
-  "./content/soru_havuzlari/cogr_10_u06_k04.json",
-  "./content/soru_havuzlari/cogr_10_u07_k01.json",
   "./content/soru_havuzlari/din_10_u01_k01.json",
   "./content/soru_havuzlari/din_10_u01_k02.json",
   "./content/soru_havuzlari/din_10_u01_k03.json",
   "./content/soru_havuzlari/din_10_u02_k01.json",
   "./content/soru_havuzlari/din_10_u02_k02.json",
-  "./content/soru_havuzlari/din_10_u02_k03.json",
-  "./content/soru_havuzlari/din_10_u02_k04.json",
   "./content/soru_havuzlari/din_10_u03_k01.json",
   "./content/soru_havuzlari/din_10_u03_k02.json",
   "./content/soru_havuzlari/din_10_u03_k03.json",
-  "./content/soru_havuzlari/din_10_u03_k04.json",
   "./content/soru_havuzlari/din_10_u04_k01.json",
   "./content/soru_havuzlari/din_10_u04_k02.json",
   "./content/soru_havuzlari/din_10_u04_k03.json",
@@ -106,8 +92,6 @@ const ASSETS = [
   "./content/soru_havuzlari/edebiyat_10_u04_k03.json",
   "./content/soru_havuzlari/edebiyat_10_u04_k04.json",
   "./content/soru_havuzlari/edebiyat_10_u04_k05.json",
-  "./content/soru_havuzlari/edebiyat_10_u04_k06.json",
-  "./content/soru_havuzlari/edebiyat_10_u03_k06.json",
   "./content/soru_havuzlari/fel_10_u01_k01.json",
   "./content/soru_havuzlari/fel_10_u01_k02.json",
   "./content/soru_havuzlari/fel_10_u01_k03.json",
@@ -166,9 +150,6 @@ const ASSETS = [
   "./content/soru_havuzlari/kimya_10_u02_k03.json",
   "./content/soru_havuzlari/kimya_10_u02_k04.json",
   "./content/soru_havuzlari/kimya_10_u02_k05.json",
-  "./content/soru_havuzlari/kimya_10_u02_k06.json",
-  "./content/soru_havuzlari/kimya_10_u02_k07.json",
-  "./content/soru_havuzlari/kimya_10_u02_k08.json",
   "./content/soru_havuzlari/kimya_10_u03_k01.json",
   "./content/soru_havuzlari/mat_10_u01_k01.json",
   "./content/soru_havuzlari/mat_10_u01_k02.json",
@@ -194,10 +175,8 @@ const ASSETS = [
   "./content/soru_havuzlari/tarih_10_u01_k01.json",
   "./content/soru_havuzlari/tarih_10_u01_k02.json",
   "./content/soru_havuzlari/tarih_10_u01_k03.json",
-  "./content/soru_havuzlari/tarih_10_u01_k04.json",
   "./content/soru_havuzlari/tarih_10_u02_k01.json",
   "./content/soru_havuzlari/tarih_10_u02_k02.json",
-  "./content/soru_havuzlari/tarih_10_u02_k05.json",
   "./content/soru_havuzlari/tarih_10_u03_k01.json",
   "./content/soru_havuzlari/tarih_10_u03_k02.json",
   "./content/soru_havuzlari/tarih_10_u03_k03.json",
@@ -208,7 +187,17 @@ const APP_URL = self.location.origin + "/";
 const ICON_URL = "./icons/icon-192.png";
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+  /* v72 — KÖK NEDEN DÜZELTMESİ: `addAll` TEK bir 404'te komple reddeder;
+     o zaman yeni service worker kurulamaz, skipWaiting çalışmaz ve kullanıcı
+     ESKİ sürümde kalır (silinen havuz dosyaları yüzünden tam olarak bu oldu).
+     Artık her dosya AYRI eklenir; eksik olan atlanır, kurulum tamamlanır. */
+  e.waitUntil(
+    caches.open(CACHE)
+      .then((c) => Promise.all(ASSETS.map((u) =>
+        c.add(u).catch(() => null))))
+      .then(() => self.skipWaiting())
+      .catch(() => self.skipWaiting())
+  );
 });
 /* v53 — KORUNAN önbellek: push izi. Eski hâlde burada CACHE dışındaki HER
    önbellek siliniyordu; "am-push-iz" de silindiği için "cihaza ulaştı mı"
