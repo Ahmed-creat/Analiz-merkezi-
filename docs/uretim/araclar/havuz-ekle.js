@@ -87,6 +87,18 @@ for (const hedef of spec) {
     n++;
   }
 
+  /* yalnız kart ÖNÜ değişimi: onlar: [{ soru_id, on }] — arka yüz korunur */
+  let onDuzelti = 0;
+  for (const o of hedef.onlar || []) {
+    const q = sorular.find(s => s.soru_id === o.soru_id);
+    if (!q) throw new Error(hedef.konu_id + ": soru yok → " + o.soru_id);
+    if (!o.on || !String(o.on).trim()) throw new Error(o.soru_id + ": on boş");
+    q.flashcard.front = o.on;
+    const c = j.flashcards.find(f => f.id === o.soru_id + ":flashcard");
+    if (c) c.front = o.on;
+    onDuzelti++;
+  }
+
   /* mevcut soruları düzeltme: duzeltmeler: [{ soru_id, metin?, cozum?, secenekler?, dogru_index?, fc? }] */
   let soruDuzelti = 0;
   for (const d of hedef.duzeltmeler || []) {
@@ -136,6 +148,7 @@ for (const hedef of spec) {
   const dagilim = Object.values(say).join("/");
   console.log(hedef.konu_id, "→", sorular.length, "soru ·", j.flashcards.length, "kart · beceri", dagilim,
     soruDuzelti ? "· soru düzelti " + soruDuzelti : "",
+    onDuzelti ? "· kart önü " + onDuzelti : "",
     kartDuzelti ? "· kart düzelti " + kartDuzelti : "");
   toplamEklenen += (hedef.items || []).length;
 }

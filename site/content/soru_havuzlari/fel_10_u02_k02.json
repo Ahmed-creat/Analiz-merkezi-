@@ -37,7 +37,7 @@
       "cozum": "Önerme, doğru veya yanlış olabilen yargı bildirir. Emir, soru ya da dilek tek başına doğruluk değeri taşıyan bir önerme değildir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Önerme hangi özelliği taşıyan ifadedir?",
+        "front": "Önermenin tanımı nedir?",
         "back": "Doğru ya da yanlış bir yargı bildiren ifadedir."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -45,7 +45,7 @@
     {
       "soru_id": "fel_10_u02_k02_o03",
       "alt_beceri": "Mantık ve Argümantasyonun Temel Kavramları konusundaki ilişkileri örneklerle yorumlar.",
-      "metin": "Aynı koşullarda biri doğru olduğunda diğerinin zorunlu olarak yanlış olduğu iki düşünce arasındaki ilişki nedir?",
+      "metin": "Bir öğretmen tahtaya iki önerme yazıyor: “Bu odada 12 kişi var.” ve “Bu odada 12 kişi yok.” Aynı koşullarda biri doğru olduğunda diğerinin zorunlu olarak yanlış olduğu iki düşünce arasındaki bu ilişki nedir?",
       "secenekler": [
         "Tutarlılık",
         "Geçerlilik",
@@ -56,7 +56,7 @@
       "cozum": "Birbiriyle çelişik iki önerme aynı anda doğru olamaz; biri doğru kabul edilince diğeri yanlış olur. Bu ilişki çelişikliktir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Doğruluk, görüş ve çelişiklik kavramlarını ayırt edin.",
+        "front": "Doğruluk, görüş ve çelişiklik kavramları arasındaki ilişki nedir?",
         "back": "Doğruluk, önermenin gerçeğe uygunluğudur; görüş kişisel yargıdır; çelişik önermelerden biri doğruysa diğeri yanlıştır."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -75,7 +75,7 @@
       "cozum": "Bir terimin aynı akıl yürütme boyunca aynı anlamda kullanılması özdeşlik ilkesidir. Burada anlam kaydırıldığı için ilke ihlal edilmiştir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Özdeşlik ilkesini açıklayın.",
+        "front": "Özdeşlik ilkesinin tanımı nedir?",
         "back": "Bir akıl yürütmede bir terime verilen anlam, akıl yürütme boyunca aynı kalmalıdır."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -94,7 +94,7 @@
       "cozum": "Çelişik iki önerme aynı anda doğru olamaz; biri doğru kabul edildiğinde diğeri yanlış olur. Bu, çelişmezlik ilkesidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çelişmezlik ilkesini açıklayın.",
+        "front": "Çelişmezlik ilkesinin tanımı nedir?",
         "back": "Birbiriyle çelişik iki önermeden biri doğru kabul edilince diğeri zorunlu olarak yanlış olur."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -113,7 +113,7 @@
       "cozum": "Bu ilkeye göre önerme doğru ya da yanlıştır; üçüncü bir doğruluk durumu bulunmaz. Özdeşlik, terimin anlamının sabit kalmasıyla ilgilidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Üçüncü hâlin imkânsızlığı ilkesini açıklayın.",
+        "front": "Üçüncü hâlin imkânsızlığı ilkesinin tanımı nedir?",
         "back": "Bir önerme ya doğrudur ya yanlıştır; bu ikisinin dışında üçüncü bir doğruluk seçeneği yoktur."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -151,7 +151,7 @@
       "cozum": "Tutarlılık, önermelerin doğru ve çelişkisiz olmasıyla; geçerlilik ise sonucun öncüllerden zorunlu çıkmasıyla ilgilidir. Bir akıl yürütme bu ölçütlerden birini sağlayıp diğerini sağlamayabilir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tutarlılık ile geçerlilik arasındaki farkı açıklayın.",
+        "front": "Tutarlılığı geçerlilikten ayıran ölçüt nedir?",
         "back": "Tutarlılık, akıl yürütmedeki önermelerin doğru ve birbiriyle çelişkisiz olmasıdır; geçerlilik, sonucun öncüllerden zorunlu olarak çıkmasıdır."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -159,7 +159,7 @@
     {
       "soru_id": "fel_10_u02_k02_o09",
       "alt_beceri": "Mantık ve Argümantasyonun Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar.",
-      "metin": "Bir öğrenci iki gerekçe sunup bunlardan bir iddiaya ulaşıyor. Gerekçelerin ve ulaşılan iddianın adları sırasıyla nedir?",
+      "metin": "Bir öğrenci tartışmada iki gerekçe sunuyor: “Sınav 3 oturumda yapıldı.” ve “Her oturum 40 dakika sürdü.” Ardından bu gerekçelerden “Sınav yorucu geçti.” iddiasına ulaşıyor. Gerekçelerin ve ulaşılan iddianın adları sırasıyla nedir?",
       "secenekler": [
         "Öncül ve sonuç",
         "Sonuç ve öncül",
@@ -170,7 +170,7 @@
       "cozum": "Argümanda sonucu destekleyen gerekçeler öncül, bu gerekçelerle temellendirilen önerme sonuçtur. Bu düzenin bütünü argümandır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Argüman, öncül ve sonuç kavramlarının ilişkisini açıklayın.",
+        "front": "Argüman, öncül ve sonuç kavramları arasındaki ilişki nedir?",
         "back": "Argüman, bir görüşü desteklemek için öncül ya da öncüllerden sonuç çıkarmadır; öncüller gerekçe, sonuç kanıtlanmaya çalışılan önermedir."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -178,7 +178,7 @@
     {
       "soru_id": "fel_10_u02_k02_o10",
       "alt_beceri": "Mantık ve Argümantasyonun Temel Kavramları ile ilgili temel kavram, görüş ve ayrımları açıklar.",
-      "metin": "Bir kuralın bütün üyeler için geçerli olduğu kabul ediliyor ve bu kural belirli bir üyeye uygulanıyor. Bu akıl yürütme türü nedir?",
+      "metin": "Bir öğretmen “Bu sınıftaki 30 öğrencinin tamamı geziye katıldı.” genel yargısını veriyor; ardından bu kuralı sınıfın bir üyesi olan Elif’e uygulayıp onun da katıldığı sonucuna varıyor. Bu akıl yürütme türü nedir?",
       "secenekler": [
         "Tümevarım",
         "Tümdengelim",
@@ -189,7 +189,7 @@
       "cozum": "Genel yargıdan özel duruma geçiş tümdengelimdir. Tümevarım tekil gözlemlerden genellemeye, analoji benzerlikten başka benzer özelliklere geçer.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tümdengelimi açıklayın.",
+        "front": "Tümdengelimin tanımı nedir?",
         "back": "Genel bir yasa ya da yargıdan özel durumlara ilişkin sonuç çıkarmaktır."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -208,7 +208,7 @@
       "cozum": "Birçok tekil gözlemden genel sonuca ulaşmak tümevarımdır. Tümdengelim bunun tersine genel yargıyı özel duruma uygular.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tümevarımı açıklayın.",
+        "front": "Tümevarımın tanımı nedir?",
         "back": "Tek tek gözlenen olaylardan hareketle genel bir yargıya ulaşmaktır."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -227,7 +227,7 @@
       "cozum": "Analoji, bazı benzerliklerden hareketle başka bir benzer özellik bulunduğu sonucunu çıkarır. Bu çıkarım genel kuralı doğrudan uygulamak değildir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Analoji yoluyla akıl yürütmeyi açıklayın.",
+        "front": "Analoji yoluyla akıl yürütmenin tanımı nedir?",
         "back": "Bazı yönlerden benzer olan şeylerin başka özellikler bakımından da benzer olacağını kabul etmektir."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -246,8 +246,8 @@
       "cozum": "Özel ve istisnai durumdan genel kurala sıçramak genelleştirme safsatasıdır. Yetersiz örnek temsil gücü olmayan örnek kullanır; yanlış sebep ise yeterli dayanak olmadan nedensellik kurar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Safsatanın temel niteliğini ve genelleştirme, yetersiz örnek, yanlış sebep türlerini açıklayın.",
-        "back": "Safsata, düşünceyi ileri sürerken ya da anlamaya çalışırken yapılan yanlış çıkarımdır. Genelleştirme özel durumlardan aşırı genel kurala sıçrar; yetersiz örnek bütünü temsil etmez; yanlış sebep yeterli kanıt olmadan nedensellik kurar."
+        "front": "Safsatının tanımı ve başlıca türleri nedir?",
+        "back": "Safsata, düşünceyi ileri sürerken ya da anlamaya çalışırken yapılan yanlış çıkarımdır. Genelleştirme özelden genele sıçrar, yetersiz örnek bütünü temsil etmez, yanlış sebep kanıtsız nedensellik kurar."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
     },
@@ -284,7 +284,7 @@
       "cozum": "Bir öneriyi çoğunluğun benimsemesini onun doğruluğuna kanıt saymak ortak tutuma başvurma safsatasıdır. Görüşün doğruluğu, yalnızca yaygın kabul edilmesinden çıkmaz.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İspatlama mecburiyeti, ortak tutum, imalı soru, otorite ve duygu safsatalarının ortak yönünü açıklayın.",
+        "front": "İspatlama mecburiyeti, ortak tutum ve otorite safsatalarının ortak yönü nedir?",
         "back": "Bunlar, kanıt yükünü tersine çevirme, çoğunluğa dayanma, suçlayıcı soru sorma, konu dışı otoriteye başvurma, bir uzmanın saygınlığını tek kanıt sayma veya acıma duygusundan yararlanma gibi yollarla ikna etmeye çalışır."
       },
       "kazanim": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme."
@@ -298,27 +298,27 @@
     },
     {
       "id": "fel_10_u02_k02_o02:flashcard",
-      "front": "Önerme hangi özelliği taşıyan ifadedir?",
+      "front": "Önermenin tanımı nedir?",
       "back": "Doğru ya da yanlış bir yargı bildiren ifadedir."
     },
     {
       "id": "fel_10_u02_k02_o03:flashcard",
-      "front": "Doğruluk, görüş ve çelişiklik kavramlarını ayırt edin.",
+      "front": "Doğruluk, görüş ve çelişiklik kavramları arasındaki ilişki nedir?",
       "back": "Doğruluk, önermenin gerçeğe uygunluğudur; görüş kişisel yargıdır; çelişik önermelerden biri doğruysa diğeri yanlıştır."
     },
     {
       "id": "fel_10_u02_k02_o04:flashcard",
-      "front": "Özdeşlik ilkesini açıklayın.",
+      "front": "Özdeşlik ilkesinin tanımı nedir?",
       "back": "Bir akıl yürütmede bir terime verilen anlam, akıl yürütme boyunca aynı kalmalıdır."
     },
     {
       "id": "fel_10_u02_k02_o05:flashcard",
-      "front": "Çelişmezlik ilkesini açıklayın.",
+      "front": "Çelişmezlik ilkesinin tanımı nedir?",
       "back": "Birbiriyle çelişik iki önermeden biri doğru kabul edilince diğeri zorunlu olarak yanlış olur."
     },
     {
       "id": "fel_10_u02_k02_o06:flashcard",
-      "front": "Üçüncü hâlin imkânsızlığı ilkesini açıklayın.",
+      "front": "Üçüncü hâlin imkânsızlığı ilkesinin tanımı nedir?",
       "back": "Bir önerme ya doğrudur ya yanlıştır; bu ikisinin dışında üçüncü bir doğruluk seçeneği yoktur."
     },
     {
@@ -328,33 +328,33 @@
     },
     {
       "id": "fel_10_u02_k02_o08:flashcard",
-      "front": "Tutarlılık ile geçerlilik arasındaki farkı açıklayın.",
+      "front": "Tutarlılığı geçerlilikten ayıran ölçüt nedir?",
       "back": "Tutarlılık, akıl yürütmedeki önermelerin doğru ve birbiriyle çelişkisiz olmasıdır; geçerlilik, sonucun öncüllerden zorunlu olarak çıkmasıdır."
     },
     {
       "id": "fel_10_u02_k02_o09:flashcard",
-      "front": "Argüman, öncül ve sonuç kavramlarının ilişkisini açıklayın.",
+      "front": "Argüman, öncül ve sonuç kavramları arasındaki ilişki nedir?",
       "back": "Argüman, bir görüşü desteklemek için öncül ya da öncüllerden sonuç çıkarmadır; öncüller gerekçe, sonuç kanıtlanmaya çalışılan önermedir."
     },
     {
       "id": "fel_10_u02_k02_o10:flashcard",
-      "front": "Tümdengelimi açıklayın.",
+      "front": "Tümdengelimin tanımı nedir?",
       "back": "Genel bir yasa ya da yargıdan özel durumlara ilişkin sonuç çıkarmaktır."
     },
     {
       "id": "fel_10_u02_k02_o11:flashcard",
-      "front": "Tümevarımı açıklayın.",
+      "front": "Tümevarımın tanımı nedir?",
       "back": "Tek tek gözlenen olaylardan hareketle genel bir yargıya ulaşmaktır."
     },
     {
       "id": "fel_10_u02_k02_o12:flashcard",
-      "front": "Analoji yoluyla akıl yürütmeyi açıklayın.",
+      "front": "Analoji yoluyla akıl yürütmenin tanımı nedir?",
       "back": "Bazı yönlerden benzer olan şeylerin başka özellikler bakımından da benzer olacağını kabul etmektir."
     },
     {
       "id": "fel_10_u02_k02_o13:flashcard",
-      "front": "Safsatanın temel niteliğini ve genelleştirme, yetersiz örnek, yanlış sebep türlerini açıklayın.",
-      "back": "Safsata, düşünceyi ileri sürerken ya da anlamaya çalışırken yapılan yanlış çıkarımdır. Genelleştirme özel durumlardan aşırı genel kurala sıçrar; yetersiz örnek bütünü temsil etmez; yanlış sebep yeterli kanıt olmadan nedensellik kurar."
+      "front": "Safsatının tanımı ve başlıca türleri nedir?",
+      "back": "Safsata, düşünceyi ileri sürerken ya da anlamaya çalışırken yapılan yanlış çıkarımdır. Genelleştirme özelden genele sıçrar, yetersiz örnek bütünü temsil etmez, yanlış sebep kanıtsız nedensellik kurar."
     },
     {
       "id": "fel_10_u02_k02_o14:flashcard",
@@ -363,7 +363,7 @@
     },
     {
       "id": "fel_10_u02_k02_o15:flashcard",
-      "front": "İspatlama mecburiyeti, ortak tutum, imalı soru, otorite ve duygu safsatalarının ortak yönünü açıklayın.",
+      "front": "İspatlama mecburiyeti, ortak tutum ve otorite safsatalarının ortak yönü nedir?",
       "back": "Bunlar, kanıt yükünü tersine çevirme, çoğunluğa dayanma, suçlayıcı soru sorma, konu dışı otoriteye başvurma, bir uzmanın saygınlığını tek kanıt sayma veya acıma duygusundan yararlanma gibi yollarla ikna etmeye çalışır."
     }
   ],
