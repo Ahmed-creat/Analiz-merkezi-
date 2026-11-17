@@ -35,6 +35,24 @@ function havuz(kayit) {
   }
 }
 
+/* TDE planı beceri eksenli (TDE1.1–TDE4.4) olduğu için bu dersin plan
+   çıktıları ayrı havuz olarak üretilmez; kapsam, konu ağacındaki
+   `edebiyat_10_uNN_kNN` havuzlarıyla karşılanır (bkz. TDE-KONU-DIZINI.md). */
+const KONU_HAVUZU_DERS = "Türk Dili ve Edebiyatı";
+const KONU_HAVUZU_DESEN = /^edebiyat_10_u\d+_k\d+\.json$/;
+function konuHavuzlari() {
+  return fs.readdirSync(HAVUZ)
+    .filter(a => KONU_HAVUZU_DESEN.test(a))
+    .map(a => {
+      try {
+        const p = JSON.parse(fs.readFileSync(path.join(HAVUZ, a), "utf8"));
+        const s = Array.isArray(p.sorular) ? p.sorular : [];
+        const k = Array.isArray(p.flashcards) ? p.flashcards : [];
+        return { soru: s.length, kart: k.length, gorselli: s.filter(q => q && q.gorsel).length };
+      } catch (e) { return { soru: 0, kart: 0, gorselli: 0 }; }
+    });
+}
+
 const satirlar = [];
 satirlar.push("# Üretim Durumu (otomatik)");
 satirlar.push("");
@@ -49,6 +67,17 @@ satirlar.push("| --- | --- | --- | --- | --- | --- |");
 let T = { tamam: 0, havuz: 0, soru: 0, hedef: 0, kart: 0, gorselli: 0 };
 const eksikler = [];
 for (const ders of U.DERS_SIRA) {
+  if (ders === KONU_HAVUZU_DERS) {
+    const kh = konuHavuzlari();
+    const soru = kh.reduce((a, b) => a + b.soru, 0);
+    const kart = kh.reduce((a, b) => a + b.kart, 0);
+    const gorsel = kh.reduce((a, b) => a + b.gorselli, 0);
+    satirlar.push("| " + ders + " | " + kh.length + "/" + kh.length + " (konu) | " + soru +
+      " | " + soru + " | " + kart + " | " + gorsel + " |");
+    T.tamam += kh.length; T.havuz += kh.length; T.soru += soru; T.hedef += soru;
+    T.kart += kart; T.gorselli += gorsel;
+    continue;
+  }
   const liste = U.plan.filter(c => c.ders === ders);
   const d = liste.map(havuz);
   const tam = d.filter(x => x.durum === "tamam").length;
@@ -73,7 +102,7 @@ satirlar.push("");
 
 satirlar.push("## Eksik havuzlar");
 satirlar.push("");
-if (!eksikler.length) satirlar.push("Yok — 158/158 tamam 🎉");
+if (!eksikler.length) satirlar.push("Yok — plan çıktılarının tamamı tamam 🎉 (TDE konu havuzlarıyla karşılandı)");
 else {
   let ders = null;
   for (const e of eksikler) {

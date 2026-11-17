@@ -5,6 +5,8 @@
 > Uygulamadaki 30 havuz kimliği (`edebiyat_10_uNN_kNN`) bu sıraya birebir oturur; havuz kimlikleri **değiştirilmez**
 > (Bilgi Bankası havuzu `topic_key`/başlıkla bulur, kimlik değişirse eski kayıtlar kopar).
 > Hedef: her konu için **10 soru + 10 kart**, içerik ders notlarından.
+> **Durum: 29/30 konu tamam** (290 soru + 290 kart) — Paragraf (u04_k06) kararı gereği üretilmedi.
+> Üreticiler: `tde-t01.js`, `tde-t01-dil.js`, `tde-t02.js`, `tde-t02-dil.js`, `tde-t03.js`, `tde-t03-dil.js`, `tde-t04.js`, `tde-t04-yazim.js`.
 > **Paragraf konusundan havuz üretilmez** (kullanıcı kararı: uygulamada paragraf sorusu sorulamıyor).
 > Değiştirilen eski havuzlar silinmez, `arsiv/soru_havuzlari/edebiyat/` altına taşınır (bkz. `arsiv/README.md`).
 
