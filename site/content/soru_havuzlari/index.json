@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 316,
- "soru_sayisi": 3453,
- "flashcard_sayisi": 3453,
+ "havuz_sayisi": 301,
+ "soru_sayisi": 3303,
+ "flashcard_sayisi": 3303,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -463,22 +463,6 @@
    "uretim_durumu": "eski-sema"
   },
   {
-   "konu_id": "biyo_10_u01_k08",
-   "ders": "Biyoloji",
-   "sinif": 10,
-   "dosya": "biyo_10_u01_k08.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Karbonhidrat ve Yağların Katılımı",
-    "Proteinlerin Katılımı ve Ortak Yollar"
-   ],
-   "baslik": "1.8 Besinlerin Solunuma Katılma Yolları",
-   "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
    "konu_id": "biyo_10_u02_k01",
    "ders": "Biyoloji",
    "sinif": 10,
@@ -549,38 +533,6 @@
    ],
    "baslik": "Atık Yönetimi",
    "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "biyo_10_u02_k05",
-   "ders": "Biyoloji",
-   "sinif": 10,
-   "dosya": "biyo_10_u02_k05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Popülasyon Dinamiği",
-    "Türler Arası Etkileşimler"
-   ],
-   "baslik": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
-   "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "biyo_10_u02_k06",
-   "ders": "Biyoloji",
-   "sinif": 10,
-   "dosya": "biyo_10_u02_k06.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Kısıtlayıcı Faktörler",
-    "İnsan Etkisi ve Sonuçları"
-   ],
-   "baslik": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
-   "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1045,22 +997,6 @@
    "uretim_durumu": "eski-sema"
   },
   {
-   "konu_id": "cogr_10_u04_k02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_u04_k02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Yerleşme Tipleri",
-    "Fonksiyona Göre Sınıflandırma"
-   ],
-   "baslik": "4.2 Yerleşmelerin Fonksiyonları",
-   "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
    "konu_id": "cogr_10_u05_k01",
    "ders": "Coğrafya",
    "sinif": 10,
@@ -1074,38 +1010,6 @@
    ],
    "baslik": "5.1 Ekonomik Faaliyetlerin Özellikleri",
    "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "cogr_10_u05_k02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_u05_k02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Ekonomik Sektörler",
-    "Gelişmişlik Göstergeleri"
-   ],
-   "baslik": "5.2 Ekonomik Sektörler ve Gelişmişlik",
-   "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "cogr_10_u05_k03",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_u05_k03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Sektörlerin Payı",
-    "Bölgesel Farklılıklar"
-   ],
-   "baslik": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
-   "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1124,70 +1028,6 @@
    ],
    "baslik": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "cogr_10_u06_k02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_u06_k02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dirençli Yerleşme",
-    "Planlama ve Yapı"
-   ],
-   "baslik": "6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
-   "topic_key": "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "cogr_10_u06_k03",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_u06_k03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Yapısal Önlemler",
-    "Yapısal Olmayan Önlemler"
-   ],
-   "baslik": "6.3 Afetlerden Korunma",
-   "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "cogr_10_u06_k04",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_u06_k04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Bilinç ve Hazırlık",
-    "Doğru Davranış ve Sorumluluk"
-   ],
-   "baslik": "6.4 Afet Bilinci",
-   "topic_key": "Coğrafya > 6.4 Afet Bilinci",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "cogr_10_u07_k01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_u07_k01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Mekân ve Kültür",
-    "Kültürel Miras ve Yayılma"
-   ],
-   "baslik": "7.1 Türk Kültürünün Mekânsal Özellikleri",
-   "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -4075,54 +3915,6 @@
    "uretim_durumu": "eski-sema"
   },
   {
-   "konu_id": "kimya_10_u02_k06",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kimya_10_u02_k06.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Sıcaklık ve Basınç Etkisi",
-    "Çözünen Türü ve Ortak İyon"
-   ],
-   "baslik": "2.1.6 Çözünürlğe Etki Eden Faktörler",
-   "topic_key": "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "kimya_10_u02_k07",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kimya_10_u02_k07.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Derişimine Göre Sınıflandırma",
-    "İletkenliğine ve Türüne Göre"
-   ],
-   "baslik": "2.1.7 Çözeltilerin Sınıflandırılması",
-   "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "kimya_10_u02_k08",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kimya_10_u02_k08.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Kaynama ve Donma Noktası",
-    "Buhar Basıncı ve Ozmotik Basınç"
-   ],
-   "baslik": "2.1.8 Koligatif Özellikler",
-   "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
    "konu_id": "kimya_10_u03_k01",
    "ders": "Kimya",
    "sinif": 10,
@@ -5137,22 +4929,6 @@
    "uretim_durumu": "eski-sema"
   },
   {
-   "konu_id": "tarih_10_u01_k04",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tarih_10_u01_k04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Bilim ve Eğitim Kurumları",
-    "Sanat ve Kültürel Miras"
-   ],
-   "baslik": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
-   "topic_key": "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
    "konu_id": "tarih_10_u02_k01",
    "ders": "Tarih",
    "sinif": 10,
@@ -5181,22 +4957,6 @@
    ],
    "baslik": "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi",
    "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "tarih_10_u02_k05",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tarih_10_u02_k05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "İlim ve Eğitim",
-    "İrfan ve Tasavvuf"
-   ],
-   "baslik": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
-   "topic_key": "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },

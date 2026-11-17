@@ -11,7 +11,7 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 167,
+  "konu": 152,
   "eslesen_konu": 122,
   "oneri_konu": 0,
   "eslesmeyen_konu": 50,
@@ -20,7 +20,7 @@
   "metin_kodlu": 112,
   "ders_bazli": {
    "Biyoloji": {
-    "konu": 14,
+    "konu": 11,
     "cikti": 19,
     "kesin": 11,
     "yapisal": 2,
@@ -31,7 +31,7 @@
     "metin_kodlu": 20
    },
    "Coğrafya": {
-    "konu": 18,
+    "konu": 11,
     "cikti": 18,
     "kesin": 5,
     "yapisal": 13,
@@ -75,7 +75,7 @@
     "metin_kodlu": 23
    },
    "Kimya": {
-    "konu": 17,
+    "konu": 14,
     "cikti": 21,
     "kesin": 14,
     "yapisal": 2,
@@ -97,7 +97,7 @@
     "metin_kodlu": 21
    },
    "Tarih": {
-    "konu": 12,
+    "konu": 10,
     "cikti": 14,
     "kesin": 10,
     "yapisal": 2,
@@ -300,20 +300,6 @@
    ]
   },
   {
-   "konu_id": "biyo_10_u01_k08",
-   "ders": "Biyoloji",
-   "konu": "1.8 Besinlerin Solunuma Katılma Yolları",
-   "tema": 1,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "kanit-yok",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
    "konu_id": "biyo_10_u02_k01",
    "ders": "Biyoloji",
    "konu": "2.1 Ekosistemin Bileşenleri",
@@ -430,38 +416,6 @@
      "skor": 1
     }
    ]
-  },
-  {
-   "konu_id": "biyo_10_u02_k05",
-   "ders": "Biyoloji",
-   "konu": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
-   "tema": 2,
-   "kodlar": [
-    "BİY.10.2.2"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "biyo_10_u02_k06",
-   "ders": "Biyoloji",
-   "konu": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
-   "tema": 2,
-   "kodlar": [
-    "BİY.10.2.6"
-   ],
-   "guven": "yapisal",
-   "yontem": "elle-dogrulama",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "Konu başlığı 'sürdürülebilirliği kısıtlayan durumlar'; çıktı gözleme dayalı tahmin (BİY.10.2.6).",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
   },
   {
    "konu_id": "cogr_10_u01_k01",
@@ -632,22 +586,6 @@
    ]
   },
   {
-   "konu_id": "cogr_10_u04_k02",
-   "ders": "Coğrafya",
-   "konu": "4.2 Yerleşmelerin Fonksiyonları",
-   "tema": 4,
-   "kodlar": [
-    "COĞ.10.4.2"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
    "konu_id": "cogr_10_u05_k01",
    "ders": "Coğrafya",
    "konu": "5.1 Ekonomik Faaliyetlerin Özellikleri",
@@ -661,38 +599,6 @@
    "uyari": "",
    "gerekce": "",
    "kazanim_metinleri": 3,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "cogr_10_u05_k02",
-   "ders": "Coğrafya",
-   "konu": "5.2 Ekonomik Sektörler ve Gelişmişlik",
-   "tema": 5,
-   "kodlar": [
-    "COĞ.10.5.2"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "cogr_10_u05_k03",
-   "ders": "Coğrafya",
-   "konu": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
-   "tema": 5,
-   "kodlar": [
-    "COĞ.10.5.3"
-   ],
-   "guven": "yapisal",
-   "yontem": "sira",
-   "skor": 0.375,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
    "metin_kodlari": []
   },
   {
@@ -728,70 +634,6 @@
      "skor": 0.923
     }
    ]
-  },
-  {
-   "konu_id": "cogr_10_u06_k02",
-   "ders": "Coğrafya",
-   "konu": "6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
-   "tema": 6,
-   "kodlar": [
-    "COĞ.10.6.2"
-   ],
-   "guven": "yapisal",
-   "yontem": "sira",
-   "skor": 0.5,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "cogr_10_u06_k03",
-   "ders": "Coğrafya",
-   "konu": "6.3 Afetlerden Korunma",
-   "tema": 6,
-   "kodlar": [
-    "COĞ.10.6.3"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "cogr_10_u06_k04",
-   "ders": "Coğrafya",
-   "konu": "6.4 Afet Bilinci",
-   "tema": 6,
-   "kodlar": [
-    "COĞ.10.6.4"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "cogr_10_u07_k01",
-   "ders": "Coğrafya",
-   "konu": "7.1 Türk Kültürünün Mekânsal Özellikleri",
-   "tema": 7,
-   "kodlar": [
-    "COĞ.10.7.1"
-   ],
-   "guven": "yapisal",
-   "yontem": "tek-cikti",
-   "skor": 0.5,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
   },
   {
    "konu_id": "din_10_u01_k01",
@@ -2433,52 +2275,6 @@
    ]
   },
   {
-   "konu_id": "kimya_10_u02_k06",
-   "ders": "Kimya",
-   "konu": "2.1.6 Çözünürlğe Etki Eden Faktörler",
-   "tema": 2,
-   "kodlar": [
-    "KİM.10.2.5"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "kimya_10_u02_k07",
-   "ders": "Kimya",
-   "konu": "2.1.7 Çözeltilerin Sınıflandırılması",
-   "tema": 2,
-   "kodlar": [
-    "KİM.10.2.6"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "kimya_10_u02_k08",
-   "ders": "Kimya",
-   "konu": "2.1.8 Koligatif Özellikler",
-   "tema": 2,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "kanit-yok",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
    "konu_id": "kimya_10_u03_k01",
    "ders": "Kimya",
    "konu": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
@@ -3017,22 +2813,6 @@
    ]
   },
   {
-   "konu_id": "tarih_10_u01_k04",
-   "ders": "Tarih",
-   "konu": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
-   "tema": 1,
-   "kodlar": [
-    "TAR.10.1.4"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
    "konu_id": "tarih_10_u02_k01",
    "ders": "Tarih",
    "konu": "2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
@@ -3087,22 +2867,6 @@
      "skor": 1
     }
    ]
-  },
-  {
-   "konu_id": "tarih_10_u02_k05",
-   "ders": "Tarih",
-   "konu": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
-   "tema": 2,
-   "kodlar": [
-    "TAR.10.2.5"
-   ],
-   "guven": "yapisal",
-   "yontem": "baslik-geciyor",
-   "skor": 1,
-   "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
   },
   {
    "konu_id": "tarih_10_u03_k01",

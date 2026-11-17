@@ -451,6 +451,17 @@ function bkt(kayit) {
   ok("müfredat okundu", !!cur);
   let konuSayisi = 0, eslesen = 0, hataliEslesme = 0;
   const hataliOrnek = [];
+  // Elle doğrulanmış eşlemeler (bkt-engine.js · EK_ESLEME). Bu konuların
+  // kendi havuzu 2026-11-17'de arşive taşındı (kaynağı ders kitabı değildi);
+  // havuz ders kitabından yeniden üretilene kadar uygulama, içeriği konuyu
+  // gerçekten kapsayan kardeş havuzu açıyor. Bu 5 satır bilinçli istisnadır.
+  const EK_DOGRULANMIS = new Set([
+    "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
+    "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+    "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+    "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
+    "Coğrafya > 6.3 Afetlerden Korunma"
+  ]);
   if (cur) {
     const sade = (x) => String(x == null ? "" : x).toLocaleLowerCase("tr-TR")
       .replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ç/g, "c")
@@ -466,6 +477,7 @@ function bkt(kayit) {
           eslesen++;
           const ayniTopic = String(h.topic_key) === key;
           const ayniBaslik = sade(h.baslik) === sade(konu);
+          if (!ayniTopic && !ayniBaslik && EK_DOGRULANMIS.has(key)) return;
           if (!ayniTopic && !ayniBaslik) {
             hataliEslesme++;
             if (hataliOrnek.length < 5) hataliOrnek.push(key + " → " + h.konu_id);

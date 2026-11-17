@@ -1,18 +1,18 @@
 # Son Kontrol Raporu — 10. Sınıf Soru Havuzları
 
 > Tarih: 2026-11-16 · Güncelleme: 2026-11-17 · Dal: `arena/4cc1805b-analiz-merkezi`
-> Kapsam: **316 havuz dosyası · 3.453 soru · 3.453 flashcard**
-> (142 plan şemalı `_tNN_cNN` + 174 konu havuzu `_uNN_kNN`)
+> Kapsam: **301 havuz dosyası · 3.303 soru · 3.303 flashcard**
+> (142 plan şemalı `_tNN_cNN` + 159 konu havuzu `_uNN_kNN`; 24 havuz arşivde)
 > Din Kültürü 10 ağacı ders kitabına göre yenilendi; 4 eski din havuzu arşivde.
 
 ## 1. Kapılar — hepsi geçti
 
 | Kapı | Sonuç |
 | --- | --- |
-| `havuz-son-kontrol.js` (tüm dosyalar) | 316 dosya · **0 hata** · **0 üslup uyarısı** · başlık eşleşmesi 188/189 |
+| `havuz-son-kontrol.js` (tüm dosyalar) | 301 dosya · **0 hata** · **0 üslup uyarısı** · başlık eşleşmesi 173/189 |
 | `havuz-denetle.js --tumu` (plan şeması) | 142 dosya · **0 hata · 0 uyarı** |
-| `soru-uret-dogrula.js` | 316 dosya (142 geçerli · 174 konu havuzu) · soru/kart eşi tam · görselli 146 · plan dışı 0 · **TÜM KURALLAR GEÇTİ** |
-| `havuz-index-uret.js --plan --kontrol` | 316 havuz · 3.453 soru · kapsanan **142/158** |
+| `soru-uret-dogrula.js` | 301 dosya (142 geçerli · 159 konu havuzu) · soru/kart eşi tam · görselli 146 · plan dışı 0 · **TÜM KURALLAR GEÇTİ** |
+| `havuz-index-uret.js --plan --kontrol` | 301 havuz · 3.303 soru · kapsanan **142/158** |
 | `npm run -s validate:pools` | hepsi geçerli |
 | `npm run -s test:hepsi` | **67/67** + konu bulma 76/76 |
 | `durum.js` | TDE 29/29 konu · 290 soru · toplam 171/171 havuz · 1.789/1.788 soru · kart 1:1 |
@@ -29,19 +29,19 @@ aracıyla kapatıldı.
 | --- | --- | --- | --- | --- |
 | Matematik | 42 | 526 | 526 | 70 |
 | Fizik | 43 | 434 | 434 | 53 |
-| Coğrafya | 36 | 395 | 395 | 8 |
+| Coğrafya | 29 | 325 | 325 | 8 |
 | Felsefe | 33 | 387 | 387 | 0 |
-| Kimya | 38 | 387 | 387 | 47 |
+| Kimya | 35 | 357 | 357 | 47 |
 | Din Kültürü | 36 | 402 | 402 | 0 |
-| Biyoloji | 33 | 340 | 340 | 39 |
-| Tarih | 26 | 292 | 292 | 5 |
+| Biyoloji | 30 | 310 | 310 | 39 |
+| Tarih | 24 | 272 | 272 | 5 |
 | Türk Dili ve Edebiyatı | 29 | 290 | 290 | 0 |
-| **TOPLAM** | **316** | **3.453** | **3.453** | **222** |
+| **TOPLAM** | **301** | **3.303** | **3.303** | **222** |
 
 Kontrol edilen ortak ölçütler: soru = kart eşliği, boş şık, `dogru_index`
 aralığı, kök ve çözüm uzunluğu, mükerrer `soru_id` / soru metni / `topic_key`,
 kart önünün soru kökünü tekrar etmemesi, `topic_key` ile `konular.js` ağacının
-uyuşması. Doğru şık dağılımı dengeli: `{0: 926, 1: 942, 2: 725, 3: 860}`.
+uyuşması. Doğru şık dağılımı dengeli: `{0: 776, 1: 942, 2: 725, 3: 860}`.
 
 ## 3. Bu turda düzeltilen 20 bulgu
 
@@ -143,19 +143,46 @@ Plan şemalı 12 havuz (`din_10_tNN_cNN`) kazanım bazlı kalır; ünite sonunda
 Sonuç: `npm run -s test:konubulma` → **76/76**, 10. sınıf **189** konunun
 tamamında Kısa Kontrol havuzu var; Din Kültürü 24/24 başlık eşleşti.
 
-## 5. Açık konular
+## 5. Kaynağı ders kitabı olmayan havuzlar arşive taşındı (2026-11-17)
+
+`kaynak_dosya` alanı **"elle yazıldı (v35.3)"** olan, `kaynak` alanı boş ve
+üretici betiği bulunmayan **15 havuz** yayından çıkarıldı. Plan kuralı gereği
+**silinmedi**, `arsiv/soru_havuzlari/` altına taşındı (`arsiv/README.md`):
+
+- Biyoloji: `biyo_10_u01_k08`, `biyo_10_u02_k05`, `biyo_10_u02_k06`
+- Coğrafya: `cogr_10_u04_k02`, `cogr_10_u05_k02`, `cogr_10_u05_k03`,
+  `cogr_10_u06_k02`, `cogr_10_u06_k03`, `cogr_10_u06_k04`, `cogr_10_u07_k01`
+- Kimya: `kimya_10_u02_k06`, `kimya_10_u02_k07`, `kimya_10_u02_k08`
+- Tarih: `tarih_10_u01_k04`, `tarih_10_u02_k05`
+
+Aynı listede olup **yayında bırakılan** tek havuz `edebiyat_10_u03_k06`
+(Şiirde Ahenk): kaynağı ders notları ve üretici betiği (`tde-t03-dil.js`) var.
+
+Sonuç: **301 havuz · 3.303 soru**; ağaç kapsamı **173/189**. Havuzsuz 16 konu
+testte adıyla listelenir (`tests/konu-bulma.test.js` · `HAVUZSUZ_KONULAR`).
+5 konuda (Biyoloji 1.8, 2.2, 2.6 · Coğrafya 6.2, 6.3) uygulama, içeriği konuyu
+gerçekten kapsayan kardeş havuzu açmaya devam ediyor
+(`site/bkt-engine.js` · `EK_ESLEME`, elle doğrulanmış); bu 5 satır testte
+bilinçli istisna olarak işaretli.
+
+**Ek düzeltme:** `site/havuz-bul.js` 4. kademesine **numara koruması** eklendi.
+Kelimeler tutsa bile konu numarası farklıysa eşleşme reddedilir; arşivlemeden
+sonra "Biyoloji > 1.8 ..." sorgusu 1.7 havuzuna bağlanıyordu.
+
+## 6. Açık konular
 
 | # | Konu | Durum |
 | --- | --- | --- |
 | 1 | **Başlık eşleşmesi (kapandı)** | 9 konuda (Biyoloji 1.3, 1.6, 2.5, 2.7, 2.8 · Kimya 1.2.2, 3.1.1 · Tarih 2.2, 2.4) plan havuzunun `topic_key`'i kazanım cümlesiydi. Konu adları zaten ağaçta olduğu için havuz başlıkları bu adlarla eşitlendi (`docs/uretim/uretim/konu-basligi-esle.js`; Tarih 2.2/2.4 için `tarih-t02.js`). Ağaç kapsamı **188/189**; kalan tek konu Paragraf (bilinçli). |
 | 2 | **TDE Paragraf** | Ağaçta konu var, havuz **bilinçli olarak üretilmedi** (kullanıcı talimatı: "uygulamada paragraf sorusu soramayız"). Dosya `arsiv/soru_havuzlari/edebiyat/edebiyat_10_u04_k06.json`. |
-| 3 | **Üslup uyarıları (kapandı)** | Doğru şıkkın belirgin uzun olması 54 soruda düzeltildi (`docs/uretim/uretim/yama-sik-uzunluk.js`): doğru şık kısaltıldı veya çeldiriciler aynı ayrıntı düzeyine getirildi. `havuz-son-kontrol` artık **0 uyarı**. |
-| 4 | **`kim_10_t02_c08` hedef 10, soru 11** | Fazla soru hata değil (`≥ hedef`). |
-| 5 | **`kazanim_konu_10.json` ve `konu_esleme.json` bayat** | Üreticileri yeniden çalıştırıldığında 10 bin satırlık fark ve eşleme kalitesi değişimi doğuyor; ayrı bir iş olarak ele alınmalı. Şimdilik yalnız arşiv izleri temizlendi. |
+| 3 | **15 konu havuzsuz** | Kaynağı ders kitabı olmayan havuzlar arşive taşındı (§5). Bu konularda Kısa Kontrol açılmıyor; havuzlar ders kitabından yeniden üretilmeli. |
+| 4 | **Üslup uyarıları (kapandı)** | Doğru şıkkın belirgin uzun olması 54 soruda düzeltildi (`docs/uretim/uretim/yama-sik-uzunluk.js`): doğru şık kısaltıldı veya çeldiriciler aynı ayrıntı düzeyine getirildi. `havuz-son-kontrol` artık **0 uyarı**. |
+| 5 | **`kim_10_t02_c08` hedef 10, soru 11** | Fazla soru hata değil (`≥ hedef`). |
+| 6 | **`kazanim_konu_10.json` ve `konu_esleme.json` bayat** | Üreticileri yeniden çalıştırıldığında 10 bin satırlık fark ve eşleme kalitesi değişimi doğuyor; ayrı bir iş olarak ele alınmalı. Şimdilik yalnız arşiv izleri temizlendi. |
 
 ---
 
-## 6. Yeni / güncellenen araçlar
+## 7. Yeni / güncellenen araçlar
 
 - `docs/uretim/araclar/havuz-son-kontrol.js` — 316 dosyayı tek geçişte denetler
   (yapı, soru/kart, mükerrer kayıt, kart önü–kök, şık dengesi, `topic_key` ↔

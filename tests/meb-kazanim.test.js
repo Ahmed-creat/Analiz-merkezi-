@@ -60,7 +60,7 @@ ok("Biyoloji kaynağı MEB PDF", /mufredat\.meb\.gov\.tr/.test(RESMI.kaynaklar["
 // ---------- 2) Eşleme dosyası ----------
 console.log("\n== 2) Konu eşleme dosyası ==");
 const konular = ESL.konular || [];
-esit("havuz sayısı 167", konular.length, 167);
+esit("havuz sayısı 152", konular.length, 152);
 const kodKumesi = new Set(kodlar);
 const bozukKod = konular.flatMap(k => (k.kodlar || []).filter(kod => !kodKumesi.has(kod)).map(kod => k.konu_id + ":" + kod));
 ok("her eşlenen kod resmî tabloda var", bozukKod.length === 0, bozukKod.slice(0, 4).join(","));

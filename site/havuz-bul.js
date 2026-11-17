@@ -41,6 +41,11 @@
   function numarasiz(x) {
     return sade(metin(x).replace(/^[\[\s]*\d+([.\-]\d+)*[)\].:\s]*/, ""));
   }
+  // "2.1.6 Çözünürlük" → "2.1.6" · "1.1 X" → "1.1" · numara yoksa ""
+  function numara(x) {
+    var m = metin(x).match(/^\s*\[?\s*(\d+(?:[.-]\d+)*)/);
+    return m ? m[1].replace(/-/g, ".") : "";
+  }
   var DURAK = { ve: 1, ile: 1, bir: 1, "": 1, the: 1, of: 1, in: 1 };
   function kelimeler(x) {
     return sade(x).split(" ").filter(function (w) { return w.length > 2 && !DURAK[w]; });
@@ -92,11 +97,20 @@
     }
 
     // 4) kelime kapsama: başlığın tüm anlamlı kelimeleri konuda geçiyor
+    //    SAYI KORUMASI: konu numarası ile havuz numarası farklıysa bu
+    //    eşleşme kabul edilmez. "Biyoloji > 1.8 ..." sorgusu 1.7
+    //    havuzuna bağlanıyordu (kelimeler tutuyor ama konu başka);
+    //    öğrenciye yanlış konunun soruları açılıyordu.
     var istenen = kelimeler(konu);
     if (istenen.length >= 2) {
+      var konuNo = numara(konu);
       var eslesen = ayniDers.filter(function (h) {
         var bas = kelimeler(konuBasligi(h));
         if (!bas.length) return false;
+        if (konuNo) {
+          var hNo = numara(konuBasligi(h));
+          if (hNo && hNo !== konuNo) return false;
+        }
         return bas.every(function (w) { return istenen.indexOf(w) >= 0; });
       });
       if (eslesen.length === 1) return eslesen[0];   // belirsizse null

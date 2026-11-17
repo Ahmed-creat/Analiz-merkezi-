@@ -1,7 +1,7 @@
 {
  "surum": "2026-10-28",
  "aciklama": "Okulizyon kazanım metinlerini uygulamanın konu başlıklarına eşlemek için arama indeksi. scripts/konu-esleme-uret.js üretir; elle düzenlenmez.",
- "havuz_sayisi": 167,
+ "havuz_sayisi": 152,
  "alt_beceri_sayisi": 258,
  "havuzlar": [
   {
@@ -61,14 +61,6 @@
    "metin": "1.10 Enerji-Metabolizma İlişkisi · Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı · Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı · Farklı Besin Gruplarının Enerji Değerleri · Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı · Farklı Besin Gruplarının Enerji Değerleri"
   },
   {
-   "konu_id": "biyo_10_u01_k08",
-   "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
-   "konu": "1.8 Besinlerin Solunuma Katılma Yolları",
-   "soru": 10,
-   "metin": "1.8 Besinlerin Solunuma Katılma Yolları · 1.8 Besinlerin Solunuma Katılma Yolları · Karbonhidrat ve Yağların Katılımı · Proteinlerin Katılımı ve Ortak Yollar · Karbonhidrat ve Yağların Katılımı · Proteinlerin Katılımı ve Ortak Yollar"
-  },
-  {
    "konu_id": "biyo_10_u02_k01",
    "ders": "Biyoloji",
    "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri",
@@ -99,22 +91,6 @@
    "konu": "2.9 Atık Yönetimi",
    "soru": 10,
    "metin": "2.9 Atık Yönetimi · Atık Yönetimi · Atık Yönetimi · Doğal Kaynakların ve Biyoçeşitliliğin Korunması · Ekolojik Ayak İzinin Küçültülmesi · Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar · Ekolojik Sürdürülebilirliğin Önemi · Ekolojik Sürdürülebilirliğin Önemi · Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar · Ekolojik Ayak İzinin Küçültülmesi · Doğal Kaynakların ve Biyoçeşitliliğin Korunması · Atık Yönetimi"
-  },
-  {
-   "konu_id": "biyo_10_u02_k05",
-   "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
-   "konu": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
-   "soru": 10,
-   "metin": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler · 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler · Popülasyon Dinamiği · Türler Arası Etkileşimler · Popülasyon Dinamiği · Türler Arası Etkileşimler"
-  },
-  {
-   "konu_id": "biyo_10_u02_k06",
-   "ders": "Biyoloji",
-   "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
-   "konu": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
-   "soru": 10,
-   "metin": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar · 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar · Kısıtlayıcı Faktörler · İnsan Etkisi ve Sonuçları · Kısıtlayıcı Faktörler · İnsan Etkisi ve Sonuçları"
   },
   {
    "konu_id": "cogr_10_u01_k01",
@@ -189,14 +165,6 @@
    "metin": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi · 4.1 Yerleşmelerin Kuruluşu ve Gelişimi · yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz, · yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
   },
   {
-   "konu_id": "cogr_10_u04_k02",
-   "ders": "Coğrafya",
-   "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
-   "konu": "4.2 Yerleşmelerin Fonksiyonları",
-   "soru": 10,
-   "metin": "4.2 Yerleşmelerin Fonksiyonları · 4.2 Yerleşmelerin Fonksiyonları · Yerleşme Tipleri · Fonksiyona Göre Sınıflandırma · Yerleşme Tipleri · Fonksiyona Göre Sınıflandırma"
-  },
-  {
    "konu_id": "cogr_10_u05_k01",
    "ders": "Coğrafya",
    "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
@@ -205,60 +173,12 @@
    "metin": "5.1 Ekonomik Faaliyetlerin Özellikleri · 5.1 Ekonomik Faaliyetlerin Özellikleri · ekonomik faaliyetlerin özelliklerinden yola çıkarak bu faaliyet alanlarını birincil, ikincil, üçüncül, dördüncül ve beşincil sektörler şeklinde sınıflandırabilmeniz, · ülke ekonomilerinin sektörel yapısını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden ülkelerin gelişmişlik düzeylerini karşılaştırabilmeniz, · ekonomik faaliyetlerin Türkiye ekonomisindeki yeri ve önemini hazırlanan tablo, grafik, şekil ve/veya diyagramlar üzerinden anlaşılır hâle getirebilmeniz"
   },
   {
-   "konu_id": "cogr_10_u05_k02",
-   "ders": "Coğrafya",
-   "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
-   "konu": "5.2 Ekonomik Sektörler ve Gelişmişlik",
-   "soru": 10,
-   "metin": "5.2 Ekonomik Sektörler ve Gelişmişlik · 5.2 Ekonomik Sektörler ve Gelişmişlik · Ekonomik Sektörler · Gelişmişlik Göstergeleri · Ekonomik Sektörler · Gelişmişlik Göstergeleri"
-  },
-  {
-   "konu_id": "cogr_10_u05_k03",
-   "ders": "Coğrafya",
-   "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
-   "konu": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
-   "soru": 10,
-   "metin": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı · 5.3 Türkiye Ekonomisinin Sektörel Dağılımı · Sektörlerin Payı · Bölgesel Farklılıklar · Sektörlerin Payı · Bölgesel Farklılıklar"
-  },
-  {
    "konu_id": "cogr_10_u06_k01",
    "ders": "Coğrafya",
    "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "soru": 12,
    "metin": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri · 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri · farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz, · afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz, · afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz, · afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz"
-  },
-  {
-   "konu_id": "cogr_10_u06_k02",
-   "ders": "Coğrafya",
-   "topic_key": "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
-   "konu": "6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
-   "soru": 10,
-   "metin": "6.2 Afetlere Karşİ Dirençli Yaşam Alanları · 6.2 Afetlere Karşİ Dirençli Yaşam Alanları · Dirençli Yerleşme · Planlama ve Yapı · Dirençli Yerleşme · Planlama ve Yapı"
-  },
-  {
-   "konu_id": "cogr_10_u06_k03",
-   "ders": "Coğrafya",
-   "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
-   "konu": "6.3 Afetlerden Korunma",
-   "soru": 10,
-   "metin": "6.3 Afetlerden Korunma · 6.3 Afetlerden Korunma · Yapısal Önlemler · Yapısal Olmayan Önlemler · Yapısal Önlemler · Yapısal Olmayan Önlemler"
-  },
-  {
-   "konu_id": "cogr_10_u06_k04",
-   "ders": "Coğrafya",
-   "topic_key": "Coğrafya > 6.4 Afet Bilinci",
-   "konu": "6.4 Afet Bilinci",
-   "soru": 10,
-   "metin": "6.4 Afet Bilinci · 6.4 Afet Bilinci · Bilinç ve Hazırlık · Doğru Davranış ve Sorumluluk · Bilinç ve Hazırlık · Doğru Davranış ve Sorumluluk"
-  },
-  {
-   "konu_id": "cogr_10_u07_k01",
-   "ders": "Coğrafya",
-   "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
-   "konu": "7.1 Türk Kültürünün Mekânsal Özellikleri",
-   "soru": 10,
-   "metin": "7.1 Türk Kültürünün Mekânsal Özellikleri · 7.1 Türk Kültürünün Mekânsal Özellikleri · Mekân ve Kültür · Kültürel Miras ve Yayılma · Mekân ve Kültür · Kültürel Miras ve Yayılma"
   },
   {
    "konu_id": "din_10_u01_k01",
@@ -813,30 +733,6 @@
    "metin": "2.1.5 Çözünürlük · Aşırı Doymuş Çözelti · Aşırı Doymuş Çözelti · Doymamış Çözelti · Doymuş Çözelti · Elektrolit Olmayan Çözelti · Elektrolit Çözelti · Elektrolit Çözelti · Elektrolit Olmayan Çözelti · Doymamış Çözelti · Doymuş Çözelti · Aşırı Doymuş Çözelti"
   },
   {
-   "konu_id": "kimya_10_u02_k06",
-   "ders": "Kimya",
-   "topic_key": "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler",
-   "konu": "2.1.6 Çözünürlğe Etki Eden Faktörler",
-   "soru": 10,
-   "metin": "2.1.6 Çözünürlğe Etki Eden Faktörler · 2.1.6 Çözünürlğe Etki Eden Faktörler · Sıcaklık ve Basınç Etkisi · Çözünen Türü ve Ortak İyon · Sıcaklık ve Basınç Etkisi · Çözünen Türü ve Ortak İyon"
-  },
-  {
-   "konu_id": "kimya_10_u02_k07",
-   "ders": "Kimya",
-   "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
-   "konu": "2.1.7 Çözeltilerin Sınıflandırılması",
-   "soru": 10,
-   "metin": "2.1.7 Çözeltilerin Sınıflandırılması · 2.1.7 Çözeltilerin Sınıflandırılması · Derişimine Göre Sınıflandırma · İletkenliğine ve Türüne Göre · Derişimine Göre Sınıflandırma · İletkenliğine ve Türüne Göre"
-  },
-  {
-   "konu_id": "kimya_10_u02_k08",
-   "ders": "Kimya",
-   "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
-   "konu": "2.1.8 Koligatif Özellikler",
-   "soru": 10,
-   "metin": "2.1.8 Koligatif Özellikler · 2.1.8 Koligatif Özellikler · Kaynama ve Donma Noktası · Buhar Basıncı ve Ozmotik Basınç · Kaynama ve Donma Noktası · Buhar Basıncı ve Ozmotik Basınç"
-  },
-  {
    "konu_id": "kimya_10_u03_k01",
    "ders": "Kimya",
    "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
@@ -1037,14 +933,6 @@
    "metin": "1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme · 1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri · 1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri · 1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri"
   },
   {
-   "konu_id": "tarih_10_u01_k04",
-   "ders": "Tarih",
-   "topic_key": "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
-   "konu": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
-   "soru": 10,
-   "metin": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat · 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat · Bilim ve Eğitim Kurumları · Sanat ve Kültürel Miras · Bilim ve Eğitim Kurumları · Sanat ve Kültürel Miras"
-  },
-  {
    "konu_id": "tarih_10_u02_k01",
    "ders": "Tarih",
    "topic_key": "Tarih > 2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
@@ -1059,14 +947,6 @@
    "konu": "2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
    "soru": 10,
    "metin": "2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi · 2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi · 2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi · 2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi"
-  },
-  {
-   "konu_id": "tarih_10_u02_k05",
-   "ders": "Tarih",
-   "topic_key": "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
-   "konu": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
-   "soru": 10,
-   "metin": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği · 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği · İlim ve Eğitim · İrfan ve Tasavvuf · İlim ve Eğitim · İrfan ve Tasavvuf"
   },
   {
    "konu_id": "tarih_10_u03_k01",

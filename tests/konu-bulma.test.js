@@ -60,7 +60,28 @@ const { KONULAR } = require(path.join(KOK, "konular.js"));
 // Bilinçli istisna: Paragraf konusundan soru havuzu ÜRETİLMEZ (kullanıcı
 // kararı: uygulamada paragraf sorusu sorulamıyor). Eski havuz silinmedi,
 // arsiv/soru_havuzlari/edebiyat/ altına taşındı — bkz. arsiv/README.md.
-const HAVUZSUZ_KONULAR = ["Türk Dili ve Edebiyatı > Paragraf"];
+const HAVUZSUZ_KONULAR = [
+  "Türk Dili ve Edebiyatı > Paragraf",
+  // 2026-11-17: kaynağı ders kitabı/notu olmayan, "elle yazıldı (v35.3)"
+  // damgalı 15 havuz plan gereği arşive taşındı (silinmedi):
+  // arsiv/soru_havuzlari/{biyoloji,cografya,kimya,tarih}/. Bu konuların
+  // havuzu ders kitabından yeniden üretilene kadar Kısa Kontrol açılmaz.
+  "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
+  "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+  "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+  "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
+  "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
+  "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+  "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
+  "Coğrafya > 6.3 Afetlerden Korunma",
+  "Coğrafya > 6.4 Afet Bilinci",
+  "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
+  "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler",
+  "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
+  "Kimya > 2.1.8 Koligatif Özellikler",
+  "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+  "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği"
+];
 let konuSayisi = 0; const kapsanmayan = [];
 for (const ders of Object.keys(KONULAR["10"])) {
   for (const konu of KONULAR["10"][ders]) {
