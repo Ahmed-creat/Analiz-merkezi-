@@ -102,7 +102,61 @@ ile ünite/konu/çıktı tablosu çıkarılır ve
 
 ---
 
-## 5. Uygulamadaki eski konu listesi
+## 5. Okulizyon uyumu: 9 dersin 8'i tutuyor, TDE tutmuyor
+
+| Ders | TYMM çıktısı | Okulizyon ile |
+|---|---|---|
+| Biyoloji, Coğrafya, Din, Felsefe, Fizik, Kimya, Matematik, Tarih | konu içerikli | ✅ **eşleşir** |
+| **Türk Dili ve Edebiyatı** | çıplak beceri adı | ❌ **eşleşmez** |
+
+### Neden sadece TDE?
+
+TYMM'de TDE programı **beceri eksenli** yazılmış. Çıktı yalnız beceri adıdır:
+
+```
+TDE1.1 — Dinlemeyi/İzlemeyi Yönetebilme       ← tema yok, içerik yok
+TDE2.2 — Anlam Oluşturabilme                  ← tema yok, içerik yok
+```
+
+`TDE1.x / 2.x / 3.x / 4.x` numaraları **tema değil beceri ekseni**:
+1 = Dinleme/İzleme · 2 = Okuma · 3 = Konuşma · 4 = Yazma.
+
+Öteki 8 derste TYMM zaten konuyu veriyor:
+
+```
+BİY.10.1.1 — Canlıların yaşamına devam edebilmesi için enerjinin
+             gerekliliğini sorgulayabilme                        ✔
+```
+
+### Çözüm
+
+TDE'nin konu kazanımı **Okulizyon'dan** alınır:
+
+```
+site/content/mufredat/okulizyon_kazanim_10.json
+```
+
+Okulizyon ne verir:
+
+| Sıra | Okulizyon kazanımı |
+|---|---|
+| 1 | Destan Dönemi Türk şiirini ve koşuk türünün genel özelliklerini açıklar. |
+| 2 | Şiirde ahengi sağlayan özellikleri (uyak düzeni, uyak, redif, aliterasyon, asonans) ile ilgili çalışma yapar. |
+| 3 | Metindeki söz varlığının anlamını bağlamdan hareketle belirler. |
+| 4 | Halk şiirini tanımlar, halk şiiri altında koşma türünün genel özelliklerini kavrar. |
+| 7 | Türkü türünün genel özelliklerini belirler. |
+| 8–9 | Metinlerden hareketle çıkarımlar yapar. |
+
+**Kural:** deneme kayıtlarının konu metni Okulizyon'dan gelir; TYMM metniyle
+**değiştirilmez**. TYMM çıktısı yalnız hangi beceriye/temaya bağlı olduğunu
+göstermek için eşlenir.
+
+`docs/uretim/TUM-KAZANIMLAR-10SINIF.md` TYMM çıktılarını listeler. Başındaki
+uyarı 9 dersin 8'inde eşleştiğini, yalnız TDE'de eşleşmediğini söyler.
+
+---
+
+## 6. Uygulamadaki eski konu listesi
 
 `site/index.html` içinde `LESSON` konu başlıkları var (TDE için 29 başlık:
 "Şiir Bilgisi (Şekil Unsurları)", "Şiirde Ahenk (Ölçü, Uyak, Redif,

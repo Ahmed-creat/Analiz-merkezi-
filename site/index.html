@@ -35,14 +35,17 @@ document.documentElement.setAttribute("data-theme",t);})();
   /* Marka */
   --brand-blue: #2563EB;         /* Royal Blue */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
-  /* v61 — KULLANICI: "uygulamada önemli tuşlar vb mavi olmamalı."
-     Depodaki renk dokümanları maviyi bir TÜR rengi olarak tanımlıyor
-     (docs/v37-raporu.md: kısa kontrol = mavi #2563EB), eylem rengi olarak
-     değil. Bu yüzden birincil eylem yüzeyi artık MÜREKKEP (koyu grafit):
-     mavi yalnız bilgi/vurgu (ikon, rozet, bağlantı) olarak kalır. */
-  --action-bg: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+  /* v62 — KULLANICI: "tuşları niye siyah yaptın? Mavi olmasın dedim;
+     md dosyalarında da yazıyordu, durumuna göre ya yeşil ya kırmızı olacak."
+     v61'de mavi yerine MÜREKKEP konmuştu — o da yanlıştı.
+     Kural artık: DURUM RENGİ.
+       · olumlu / ilerletici eylem (kaydet, ekle, başla, tamamla) → YEŞİL
+       · yıkıcı eylem (sil, sıfırla)                              → KIRMIZI
+     Mavi yalnız bilgi/vurgu (ikon, rozet, bağlantı); eylem yüzeyi ASLA mavi
+     ya da siyah değil. Beyaz yazı için koyu yeşil (4,6:1 AA). */
+  --action-bg: linear-gradient(135deg, #047857 0%, #059669 100%);
   --action-fg: #FFFFFF;
-  --action-shadow: 0 4px 14px -4px rgba(15,23,42,0.45);
+  --action-shadow: 0 4px 14px -4px rgba(4,120,87,0.45);
   /* Semantik (tema.pdf: renk + pastel zemin çiftleri) */
   --semantic-success: #10B981; --semantic-success-bg: #ECFDF5;
   --semantic-error:   #EF4444;   --semantic-error-bg:   #FEF2F2;
@@ -79,9 +82,10 @@ document.documentElement.setAttribute("data-theme",t);})();
   --text-muted: #A1A1A1;           /* Geist muted */
   --brand-blue: #3B82F6;           /* okunabilir mavi vurgu */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
-  --action-bg: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
-  --action-fg: #0F172A;
-  --action-shadow: 0 4px 14px -4px rgba(0,0,0,0.55);
+  /* v62 — koyu temada eylem yüzeyi Geist yeşili; yazı koyu (yüksek kontrast) */
+  --action-bg: linear-gradient(135deg, #0CCA93 0%, #10E0A4 100%);
+  --action-fg: #04231C;
+  --action-shadow: 0 4px 14px -4px rgba(12,202,147,0.35);
   --semantic-success: #0CCA93; --semantic-success-bg: #04231C;   /* Geist yeşili */
   --semantic-error:   #F04452;   --semantic-error-bg:   #2A0D10;
   --semantic-warning: #F5A623;   --semantic-warning-bg: #2A1D04;
@@ -106,9 +110,10 @@ document.documentElement.setAttribute("data-theme",t);})();
   --text-muted: #A1A1A1;           /* Geist muted */
   --brand-blue: #3B82F6;           /* okunabilir mavi vurgu */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
-  --action-bg: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
-  --action-fg: #0F172A;
-  --action-shadow: 0 4px 14px -4px rgba(0,0,0,0.55);
+  /* v62 — koyu temada eylem yüzeyi Geist yeşili; yazı koyu (yüksek kontrast) */
+  --action-bg: linear-gradient(135deg, #0CCA93 0%, #10E0A4 100%);
+  --action-fg: #04231C;
+  --action-shadow: 0 4px 14px -4px rgba(12,202,147,0.35);
   --semantic-success: #0CCA93; --semantic-success-bg: #04231C;   /* Geist yeşili */
   --semantic-error:   #F04452;   --semantic-error-bg:   #2A0D10;
   --semantic-warning: #F5A623;   --semantic-warning-bg: #2A1D04;
@@ -1235,10 +1240,10 @@ select.dd-native {
   </div>
   <div style="margin-top:24px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px;">VERİ YÖNETİMİ</div>
-    <button class="btn btn-ghost w-full" data-act="confirmReset" data-target="exams" style="justify-content:flex-start;color:var(--semantic-error);margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Denemeleri Sil</button>
-    <button class="btn btn-ghost w-full" data-act="confirmReset" data-target="questions" style="justify-content:flex-start;color:var(--semantic-error);margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Soru Bankasını Sil</button>
-    <button class="btn btn-ghost w-full" data-act="confirmReset" data-target="books" style="justify-content:flex-start;color:var(--semantic-error);margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Kitaplığı Sil</button>
-    <button class="btn btn-ghost w-full" data-act="confirmReset" data-target="all" style="justify-content:flex-start;color:var(--semantic-error);"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Tüm Verileri Sıfırla</button>
+    <button class="btn btn-danger w-full" data-act="confirmReset" data-target="exams" style="justify-content:flex-start;margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Denemeleri Sil</button>
+    <button class="btn btn-danger w-full" data-act="confirmReset" data-target="questions" style="justify-content:flex-start;margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Soru Bankasını Sil</button>
+    <button class="btn btn-danger w-full" data-act="confirmReset" data-target="books" style="justify-content:flex-start;margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Kitaplığı Sil</button>
+    <button class="btn btn-danger w-full" data-act="confirmReset" data-target="all" style="justify-content:flex-start;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Tüm Verileri Sıfırla</button>
   </div>
   <div class="text-xs text-muted" style="margin-top:28px;text-align:center;">Sürüm 5.1<br>Geliştirici: Ahmed İbrahim</div>
 </aside>
@@ -1818,12 +1823,33 @@ function importData(input) {
       if (parsed._mod === "deneme-birlestir") {
         const gelen = Array.isArray(data.exams) ? data.exams : [];
         if (!gelen.length) throw new Error("sınav yok");
-        let eklenen = 0, atlanan = 0;
+        const buSinif = String(state.user.grade || "9");
+        const kaynakSinif = String((data.user && data.user.grade) || parsed._sinif || buSinif);
+        /* v62 — SINIF FARKINDALIĞI.
+           Deneme artık `grade` taşır. Mükerrer kontrolü SADECE bu sınıfın
+           listesine değil, DİĞER sınıfın arşivine karşı da yapılır; böylece
+           10. sınıfta kayıtlı bir deneme 9. sınıfa geçince "yeni" sayılmaz. */
+        const arsiv = (g) => {
+          try { return JSON.parse(localStorage.getItem("analizmerkezi_v6_g" + g) || "null"); }
+          catch (e) { return null; }
+        };
+        const digerSiniflar = ["9", "10"].filter(g => g !== buSinif).map(g => ({ g: g, s: arsiv(g) }))
+          .filter(x => x.s && Array.isArray(x.s.exams));
+        const anahtar = (e) => e.grade + "|" + e.name + "|" + String(e.date || "");
+        const varOlan = new Set();
+        (state.exams || []).forEach(e => e && varOlan.add(anahtar({ grade: String(e.grade || buSinif), name: e.name, date: e.date })));
+        digerSiniflar.forEach(x => x.s.exams.forEach(e => e && varOlan.add(anahtar({ grade: String(e.grade || x.g), name: e.name, date: e.date }))));
+
+        let eklenen = 0, atlanan = 0, baskaSinif = 0;
         gelen.forEach(ex => {
           if (!ex || !ex.name) return;
-          const varMi = (state.exams || []).some(e => e && e.name === ex.name && String(e.date || "") === String(ex.date || ""));
-          if (varMi) { atlanan++; return; }
-          state.exams.push(ex); eklenen++;
+          const sinif = String(ex.grade || kaynakSinif);
+          const k = anahtar({ grade: sinif, name: ex.name, date: ex.date });
+          if (varOlan.has(k)) { atlanan++; return; }
+          /* Başka sınıfa ait deneme bu hesaba YAZILMAZ — yoksa "bu sınıfta
+             yok" diye yeni deneme gibi görünür. */
+          if (sinif !== buSinif) { baskaSinif++; return; }
+          state.exams.push(ex); varOlan.add(k); eklenen++;
         });
         state.exams.sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
         saveState();
@@ -1831,7 +1857,12 @@ function importData(input) {
         updateUserUI();
         try { if (typeof renderExamChart === "function") renderExamChart(); } catch (e) { /**/ }
         navigate(currentPage);
-        toast(eklenen ? eklenen + " deneme eklendi" + (atlanan ? " · " + atlanan + " zaten vardı" : "") + "." : "Yeni deneme yok — hepsi zaten kayıtlı.", eklenen ? "success" : "info");
+        const parca = [];
+        if (eklenen) parca.push(eklenen + " deneme eklendi");
+        if (atlanan) parca.push(atlanan + " zaten vardı");
+        if (baskaSinif) parca.push(baskaSinif + " başka sınıfa ait (" + kaynakSinif + ". sınıf) — bu hesaba eklenmedi");
+        toast(parca.length ? parca.join(" · ") + "." : "Yeni deneme yok — hepsi zaten kayıtlı.",
+          eklenen ? "success" : (baskaSinif ? "warning" : "info"));
         input.value = "";   // aynı dosya yeniden seçilebilsin
         return;
       }
@@ -4000,7 +4031,11 @@ function renderExams(container) {
     html += state.exams.slice().reverse().map((ex, ri) => {
       const idx = state.exams.length - 1 - ri;
       const secili = (examDetailIdx !== null ? examDetailIdx : state.exams.length - 1) === idx;
-      return '<div class="list-row exam-row' + (secili ? " active" : "") + '" style="cursor:pointer;flex-wrap:wrap;" data-act="examDetail" data-idx="' + idx + '"><div style="flex:1;min-width:0;"><div style="font-weight:600;font-size:13px;">' + esc(ex.name) + '</div>' +
+      /* v62 — başka sınıfa ait deneme listelenirse ETİKETLENİR; sessizce
+         "bu sınıfın denemesi" gibi görünmez, yeni deneme sanılmaz. */
+      const exSinif = String(ex.grade || state.user.grade || "9");
+      const yabanci = exSinif !== String(state.user.grade || "9");
+      return '<div class="list-row exam-row' + (secili ? " active" : "") + '" style="cursor:pointer;flex-wrap:wrap;" data-act="examDetail" data-idx="' + idx + '"><div style="flex:1;min-width:0;"><div style="font-weight:600;font-size:13px;">' + esc(ex.name) + (yabanci ? ' <span class="badge" style="background:var(--semantic-warning-bg);color:var(--on-warning-bg);font-size:10px;">' + exSinif + ". SINIF</span>" : "") + '</div>' +
         '<div class="text-xs text-muted tabular">' + fmtDate(ex.date) + " · " + ex.total + " soru · " + (ex.errorLogs || []).length + " hata kaydı</div></div>" +
         '<span class="tabular font-bold" style="color:var(--brand-blue);">' + ex.net + "</span>" +
         '<span class="badge badge-info" style="flex-shrink:0;">DETAY</span>' +
@@ -4513,7 +4548,12 @@ function saveExam() {
     if (got < need) gap.push(esc(l) + " (" + (need - got) + " eksik)");
   });
   if (gap.length) return fail("Her yanlış ve boş için Konu + Neden girilmeli: " + gap.join(", ") + ".");
-  const exam = { id: uid(), name: name, date: date, lessons: lessons, errorLogs: errorLogs, total: total, net: Math.round(netOf(d, w) * 100) / 100 };
+  /* v62 — SINIF ETİKETİ. KULLANICI: "10. sınıftaki bir deneme var; 9. sınıfa
+     geçince onu bu sınıfta yok diye YENİ DENEME zannediyor." Kök neden: deneme
+     kaydında hangi sınıfa ait olduğu yazmıyordu; sınıf değişince aynı deneme
+     "yeni" sayılıyordu. Artık her deneme doğduğu sınıfı taşır. */
+  const exam = { id: uid(), name: name, date: date, grade: String(state.user.grade || "9"),
+    lessons: lessons, errorLogs: errorLogs, total: total, net: Math.round(netOf(d, w) * 100) / 100 };
   state.exams.push(exam);
   state.dailyTasks.solve = true; // 120 soru çözdün → günlük görev otomatik tamam
   ensureDailyStreakCount();

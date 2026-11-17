@@ -6,6 +6,35 @@
 > Bu blok güncellik damgasıdır. Dosyanın başında **SÜRÜM 3** yazmıyorsa
 > elindeki kopya eskidir — yeniden indir.
 
+> ## ⚠ SADECE TÜRK DİLİ VE EDEBİYATI OKULİZYON'LA EŞLEŞMİYOR
+>
+> **9 dersin 8'i uyumlu.** Biyoloji, Coğrafya, Din Kültürü, Felsefe, Fizik,
+> Kimya, Matematik ve Tarih'te TYMM çıktısı konu içeriklidir ve Okulizyon
+> kazanımıyla örtüşür:
+>
+> ```
+> BİY.10.1.1 — Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini
+>              sorgulayabilme                                       ✔ eşleşir
+> ```
+>
+> **Yalnız Türk Dili ve Edebiyatı** eşleşmez; çünkü TYMM TDE programı
+> **beceri eksenli** yazılmıştır. TYMM'de TDE çıktısı çıplak beceri adıdır:
+>
+> ```
+> TDE1.1 — Dinlemeyi/İzlemeyi Yönetebilme      (tema yok, içerik yok)
+> TDE2.2 — Anlam Oluşturabilme                 (tema yok, içerik yok)
+> ```
+>
+> `TDE1.x / TDE2.x / TDE3.x / TDE4.x` numaraları **tema değil beceri eksenidir**:
+> 1 = Dinleme/İzleme · 2 = Okuma · 3 = Konuşma · 4 = Yazma.
+>
+> Okulizyon ise TDE'de **konu kazanımı** verir:
+> `"Şiirde ahengi sağlayan özellikleri (uyak düzeni, uyak, redif, aliterasyon, asonans) ile ilgili çalışma yapar."`
+>
+> Bu yüzden TDE için konu metni **Okulizyon'dan** alınır:
+> `site/content/mufredat/okulizyon_kazanim_10.json`
+> Diğer 8 ders için TYMM çıktısı doğrudan kullanılabilir.
+
 > **Kaynak:** MEB Türkiye Yüzyılı Maarif Modeli (TYMM) 2026 öğretim programları.
 > `node scripts/kazanim-dokumu.js` üretir; elle düzenlenmez.
 > Ham veri: `site/content/mufredat/meb_kazanim_10.json`

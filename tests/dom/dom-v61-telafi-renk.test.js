@@ -8,7 +8,10 @@
       → Kalan sayfadan fazlası reddedilir; geçmiş + okunan sayfa tutarlı.
    3) "Önemli tuşlar vb mavi olmamalı." (depodaki renk dokümanları:
       mavi bir TÜR rengi — kısa kontrol — eylem rengi değil)
-      → Birincil eylem yüzeyi mürekkep; mavi yalnız vurgu.
+      v62 DÜZELTMESİ — KULLANICI: "tuşları niye siyah yaptın? ... durumuna
+      göre ya yeşil ya kırmızı olacak." Mürekkep de yanlıştı.
+      → Eylem yüzeyi DURUM RENGİ: olumlu eylem YEŞİL, yıkıcı eylem KIRMIZI.
+        Mavi ve siyah eylem rengi olarak KULLANILMAZ.
    4) Aynı cihaz için mükerrer abonelik üretilmez (6 aktif uç vakası).
 */
 "use strict";
@@ -43,11 +46,39 @@ ok("geçmişe girilen değer = kabul edilen değer", /b\.history\.push\(\{ date:
 ok("giriş alanında max var", /max="' \+ \(b\.pages - b\.read\) \+ '"/.test(HTML));
 ok("kitap eklerken tam sayı sınırı", /Number\.isInteger\(pages\)/.test(HTML) && /pages > 10000/.test(HTML));
 
-console.log("\n== 3) Önemli tuşlar mavi değil ==");
-ok("eylem yüzeyi mürekkep (açık tema)", /--action-bg: linear-gradient\(135deg, #0F172A 0%, #334155 100%\)/.test(HTML));
+console.log("\n== 3) Önemli tuşlar: mavi ve siyah DEĞİL, duruma göre yeşil/kırmızı ==");
+
+/* Tema bloklarını ayır: her --action-bg tanımı ayrı değerlendirilir. */
+const actionBg = [...HTML.matchAll(/--action-bg:\s*([^;]+);/g)].map(m => m[1].trim());
+ok("eylem yüzeyi tanımlı", actionBg.length >= 2, actionBg.length + " tanım");
+
+const HEX = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+const yesilMi = (hex) => { const [r, g, b] = HEX(hex); return g > 90 && g > r + 30 && g > b + 10; };
+const siyahMi = (hex) => { const [r, g, b] = HEX(hex); return r < 70 && g < 70 && b < 80; };
+const maviMi = (hex) => { const [r, g, b] = HEX(hex); return b > 140 && b > r + 40 && b > g + 20; };
+
+let hepsiYesil = true, siyahVar = false, maviVar = false;
+for (const bg of actionBg) {
+  const renkler = [...bg.matchAll(/#[0-9A-Fa-f]{6}/g)].map(m => m[0]);
+  if (!renkler.length) { hepsiYesil = false; continue; }
+  for (const r of renkler) {
+    if (!yesilMi(r)) hepsiYesil = false;
+    if (siyahMi(r)) siyahVar = true;
+    if (maviMi(r)) maviVar = true;
+  }
+}
+ok("eylem yüzeyi YEŞİL (açık + koyu tema)", hepsiYesil, actionBg.join(" | "));
+ok("eylem yüzeyi siyah DEĞİL", !siyahVar, actionBg.join(" | "));
+ok("eylem yüzeyi mavi DEĞİL", !maviVar, actionBg.join(" | "));
 ok("btn-primary eylem rengini kullanıyor", /\.btn-primary \{ background: var\(--action-bg\)/.test(HTML));
-ok("btn-primary artık marka mavisini kullanmıyor", !/\.btn-primary \{ background: var\(--brand-gradient\)/.test(HTML));
-ok("koyu temada açık yüzey + koyu yazı", /--action-bg: linear-gradient\(135deg, #E2E8F0 0%, #CBD5E1 100%\)/.test(HTML) && /--action-fg: #0F172A;/.test(HTML));
+ok("btn-primary marka mavisini kullanmıyor", !/\.btn-primary \{ background: var\(--brand-gradient\)/.test(HTML));
+
+/* Yıkıcı eylemler KIRMIZI olmalı (durumuna göre yeşil ya da kırmızı). */
+const yikici = [...HTML.matchAll(/<button class="([^"]*)" data-act="confirmReset"/g)].map(m => m[1]);
+ok("yıkıcı düğmeler var", yikici.length >= 4, yikici.length + " düğme");
+ok("yıkıcı düğmeler KIRMIZI (btn-danger)", yikici.every(c => c.includes("btn-danger")), yikici.join(" | "));
+ok("kırmızı düğme semantik hatayı kullanıyor", /\.btn-danger \{ background: var\(--semantic-error\)/.test(HTML));
+ok("yeşil düğme semantik başarıyı kullanıyor", /\.btn-success \{ background: var\(--semantic-success\)/.test(HTML));
 
 console.log("\n== 4) Mükerrer abonelik üretilmez + ölü uç temizlenir ==");
 ok("kurulan VAPID anahtarı cihazda saklanıyor", PUSH.indexOf('"am_vapid_kurulan"') > 0);

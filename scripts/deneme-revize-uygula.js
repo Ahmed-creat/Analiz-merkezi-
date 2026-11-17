@@ -375,6 +375,7 @@ function calistir(revizeYol, orijinalYol, yaz) {
       id: id,
       name: s.no + ". Deneme: " + s.ad,
       date: null,
+      grade: "9",
       lessons: {},
       errorLogs: errorLogs,
       total: kapasite,
