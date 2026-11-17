@@ -167,7 +167,7 @@ yazKonu({
   ders: DERS, tema: 2, tema_adi: "Ekoloji",
   baslik: "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
   kazanim: "Tür içi ve türler arası etkileşimleri ayırt eder, popülasyon büyüklüğünü etkileyen faktörleri ve süksesyonu açıklar.",
-  kaynak: kaynak("107-121"),
+  kaynak: kaynak("107-122"),
   kaynak_dosya: DOSYA,
   beceriler: [
     "Simbiyotik ilişkileri (mutualizm, kommensalizm, amensalizm, parazitizm) örneklerle ayırt eder.",
@@ -599,7 +599,7 @@ yazKonu({
   ders: DERS, tema: 2, tema_adi: "Ekoloji",
   baslik: "2.5 Ekolojik Sürdürülebilirliğin Önemi",
   kazanim: "Doğal kaynakların sürdürülebilir kullanımını ve ekolojik sürdürülebilirliğin önemini açıklar.",
-  kaynak: kaynak("139-141"),
+  kaynak: kaynak("139-142"),
   kaynak_dosya: DOSYA,
   beceriler: [
     "Yenilenebilen ve yenilenemeyen kaynakları ayırt eder.",
@@ -735,7 +735,7 @@ yazKonu({
   ders: DERS, tema: 2, tema_adi: "Ekoloji",
   baslik: "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
   kazanim: "Ekolojik sürdürülebilirliği kısıtlayan çevre sorunlarının nedenlerini ve ekosistemlere etkilerini açıklar.",
-  kaynak: kaynak("143-152"),
+  kaynak: kaynak("143-154"),
   kaynak_dosya: DOSYA,
   beceriler: [
     "Habitat kaybı ve kirlilik türlerinin nedenlerini açıklar.",
@@ -871,7 +871,7 @@ yazKonu({
   ders: DERS, tema: 2, tema_adi: "Ekoloji",
   baslik: "2.7 Ekolojik Ayak İzinin Küçültülmesi",
   kazanim: "Ekolojik, karbon ve su ayak izi kavramlarını açıklar; ayak izini küçültme yollarını yorumlar.",
-  kaynak: kaynak("155-157"),
+  kaynak: kaynak("155-159"),
   kaynak_dosya: DOSYA,
   beceriler: [
     "Ekolojik, karbon ve su ayak izini tanımlar.",
@@ -1007,7 +1007,7 @@ yazKonu({
   ders: DERS, tema: 2, tema_adi: "Ekoloji",
   baslik: "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
   kazanim: "Biyoçeşitliliğin korunma nedenlerini açıklar, tür-alan ve alan dışı koruma çalışmalarını ayırt eder.",
-  kaynak: kaynak("160-166"),
+  kaynak: kaynak("160-167"),
   kaynak_dosya: DOSYA,
   beceriler: [
     "Biyoçeşitliliğin korunma gerekçelerini açıklar.",

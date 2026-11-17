@@ -712,7 +712,7 @@ yazKonu({
   ders: DERS, tema: 1, tema_adi: "Enerji",
   baslik: "1.6 İnsanda Sindirim",
   kazanim: "İnsanda sindirim kanalı ile yardımcı organların işlevlerini ilişkilendirir, emilim ve taşınma süreçlerini yapısal adaptasyonlarla açıklar.",
-  kaynak: kaynak("48-55"),
+  kaynak: kaynak("48-56"),
   kaynak_dosya: DOSYA,
   beceriler: [
     "Sindirim kanalı ve yardımcı organların sindirimdeki işlevlerini ayırt eder.",

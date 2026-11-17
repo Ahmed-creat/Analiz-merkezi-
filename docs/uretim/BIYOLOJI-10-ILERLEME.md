@@ -31,19 +31,19 @@ Metin OCR gürültülü olduğu için cümleler kitabın anlamına bağlı kalı
 | `biyo_10_u01_k03` | 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler | s.32-36 | 10 |
 | `biyo_10_u01_k04` | 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez) | s.37-39 | 10 |
 | `biyo_10_u01_k05` | 1.5 Sindirim | s.40-47 | 10 |
-| `biyo_10_u01_k06` | 1.6 İnsanda Sindirim | s.48-55 | 10 |
+| `biyo_10_u01_k06` | 1.6 İnsanda Sindirim | s.48-56 | 10 |
 | `biyo_10_u01_k07` | 1.7 Hücresel Solunum | s.57-62 | 10 |
 | `biyo_10_u01_k08` | 1.8 Besinlerin Solunuma Katılma Yolları | s.63-66 | 10 |
 | `biyo_10_u01_k09` | 1.9 Fermantasyon | s.67-70 | 10 |
 | `biyo_10_u01_k10` | 1.10 Enerji-Metabolizma İlişkisi | s.71-74 | 10 |
 | `biyo_10_u02_k01` | 2.1 Ekosistemin Bileşenleri | s.100-106 | 10 |
-| `biyo_10_u02_k02` | 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler | s.107-121 | 12 |
+| `biyo_10_u02_k02` | 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler | s.107-122 | 12 |
 | `biyo_10_u02_k03` | 2.3 Ekosistemdeki Madde ve Enerji Akışı | s.123-131 | 10 |
 | `biyo_10_u02_k04` | 2.4 Madde Döngüleri | s.132-138 | 10 |
-| `biyo_10_u02_k05` | 2.5 Ekolojik Sürdürülebilirliğin Önemi | s.139-141 | 10 |
-| `biyo_10_u02_k06` | 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar | s.143-152 | 10 |
-| `biyo_10_u02_k07` | 2.7 Ekolojik Ayak İzinin Küçültülmesi | s.155-157 | 10 |
-| `biyo_10_u02_k08` | 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması | s.160-166 | 10 |
+| `biyo_10_u02_k05` | 2.5 Ekolojik Sürdürülebilirliğin Önemi | s.139-142 | 10 |
+| `biyo_10_u02_k06` | 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar | s.143-154 | 10 |
+| `biyo_10_u02_k07` | 2.7 Ekolojik Ayak İzinin Küçültülmesi | s.155-159 | 10 |
+| `biyo_10_u02_k08` | 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması | s.160-167 | 10 |
 | `biyo_10_u02_k09` | 2.9 Atık Yönetimi | s.168-174 | 10 |
 
 `u02_k02` 12 soruluk: konu 15 kitap sayfası sürüyor (etkileşimler + popülasyon dinamiği + süksesyon);
