@@ -33,10 +33,10 @@ Aksi hâlde "KoĢuk" gibi aramalar tutmaz.
 | 7 | `edebiyat_10_u01_k07` | İsim Tamlamaları | DN s.46-48, 62-65 | ✅ 10+10 · `tde-t01-dil.js` |
 | 8 | `edebiyat_10_u01_k08` | Sıfatlar (Ön Adlar) | DN s.50-61 | ✅ 10+10 · `tde-t01-dil.js` |
 | 9 | `edebiyat_10_u01_k09` | Sıfat Tamlamaları | DN s.65-67 | ✅ 10+10 · `tde-t01-dil.js` |
-| 10 | `edebiyat_10_u02_k01` | Gazel | DN s.74-75 | ⬜ bekliyor |
-| 11 | `edebiyat_10_u02_k02` | Kaside | DN s.75-79 | ⬜ bekliyor |
-| 12 | `edebiyat_10_u02_k03` | Mersiye | DN s.79 | ⬜ bekliyor |
-| 13 | `edebiyat_10_u02_k04` | Saf Şiir | DN s.79-85 | ⬜ bekliyor |
+| 10 | `edebiyat_10_u02_k01` | Gazel | DN s.74-75 | ✅ 10+10 · `tde-t02.js` |
+| 11 | `edebiyat_10_u02_k02` | Kaside | DN s.75-77 | ✅ 10+10 · `tde-t02.js` |
+| 12 | `edebiyat_10_u02_k03` | Mersiye | DN s.79 | ✅ 10+10 · `tde-t02.js` |
+| 13 | `edebiyat_10_u02_k04` | Saf Şiir | DN s.79-85 | ✅ 10+10 · `tde-t02.js` |
 | 14 | `edebiyat_10_u02_k05` | Zamir (Adıl) | DN s.92-98 | ⬜ bekliyor |
 | 15 | `edebiyat_10_u02_k06` | Edat (İlgeç) | DN s.99-103 | ⬜ bekliyor |
 | 16 | `edebiyat_10_u02_k07` | Bağlaç | DN s.104-107 | ⬜ bekliyor |
