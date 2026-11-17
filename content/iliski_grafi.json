@@ -2283,6 +2283,48 @@
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.9,
       "gerekce": "Rezonans ve deprem kavramları (odak, merkez üssü, büyüklük, şiddet) bilinmeden sismograf ve sismik izolatör modelleri açıklanamaz."
+    },
+    {
+      "kaynak_konu_id": "mat_10_u01_k01",
+      "hedef_konu_id": "mat_10_u01_k02",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Temel trigonometrik oranlar bilinmeden üçgende yardımcı elemanlarla yapılan hesap ve ispatlar izlenemez."
+    },
+    {
+      "kaynak_konu_id": "mat_10_u01_k03",
+      "hedef_konu_id": "mat_10_u01_k04",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Üçgende alan bilgisi, sinüs teoremiyle alan hesabı ve üçgen çözümlemesinin ön koşuludur."
+    },
+    {
+      "kaynak_konu_id": "mat_10_u03_k02",
+      "hedef_konu_id": "mat_10_u03_k03",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Bölen ve ortak bölen kavramı oturmadan bölünebilme özellikleriyle kalan bulma yorumlanamaz."
+    },
+    {
+      "kaynak_konu_id": "mat_10_u04_k03",
+      "hedef_konu_id": "mat_10_u04_k06",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Karekök fonksiyonunun tanım kümesi ve davranışı bilinmeden karekök içeren denklemler çözülemez."
+    },
+    {
+      "kaynak_konu_id": "mat_10_u05_k01",
+      "hedef_konu_id": "mat_10_u05_k02",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Sayma stratejileri (toplama/çarpma yoluyla sayma) kavranmadan algoritmik yapıdaki adım ve döngü sayıları yorumlanamaz."
+    },
+    {
+      "kaynak_konu_id": "mat_10_u05_k02",
+      "hedef_konu_id": "mat_10_u07_k01",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Koşul, bağlaç ve niceleyici mantığı kurulmadan koşullu olasılık ifadeleri çözümlenemez."
     }
   ]
 }

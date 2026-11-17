@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 283,
- "soru_sayisi": 3119,
- "flashcard_sayisi": 3119,
+ "havuz_sayisi": 262,
+ "soru_sayisi": 2803,
+ "flashcard_sayisi": 2803,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": null,
@@ -3631,407 +3631,15 @@
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "mat_10_t01_c01",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t01_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dik üçgende trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili varsayımlarda bulunur.",
-    "Trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili örüntüleri geneller.",
-    "Trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili elde ettiği genellemelerini varsayımlarıyla karşılaştırır.",
-    "Yaptığı karşılaştırmalardan dik üçgende trigonometrik oranlara ve trigonometrik özdeşliklere ilişkin önermeler sunar.",
-    "Ulaştığı trigonometrik oranları ve trigonometrik özdeşlikleri problemler bağlamında değerlendirir."
-   ],
-   "baslik": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme",
-   "topic_key": "Matematik > 1.1 Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme",
-   "kod": "MAT.10.1.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t01_c02",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t01_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Üçgende iç ve dış açıortayların, kenarortayların, kenar orta dikmelerin ve yüksekliklerin özelliklerine ilişkin varsayımda bulunur.",
-    "Farklı üçgen örneklerini inceleyerek varsayımlarına ilişkin örüntüleri geneller.",
-    "Üçgenin yardımcı elemanlarıyla ilgili genellemelerini varsayımlarıyla karşılaştırır.",
-    "Elde ettiği genellemelerden hareketle yardımcı elemanların özelliklerine ilişkin önermeler sunar.",
-    "Üçgenin yardımcı elemanlarıyla ilgili önermeleri problemler bağlamında değerlendirir."
-   ],
-   "baslik": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme",
-   "topic_key": "Matematik > 1.2 Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme",
-   "kod": "MAT.10.1.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t01_c03",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t01_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Üçgenin bir kenarı ve o kenara ait yüksekliğindeki değişimin üçgenin alanındaki değişime etkisine dair varsayımlarda bulunur.",
-    "Farklı üçgenlerdeki gözlemlerinden yararlanarak varsayımlarına yönelik örüntüleri geneller.",
-    "Genellemelerini varsayımlarıyla karşılaştırır.",
-    "Elde ettiği genellemelerden üçgenin alanının hangi elemanlara göre değiştiğine ilişkin önermeler sunar.",
-    "Önermeleri gerçek yaşam problemleri bağlamında değerlendirir."
-   ],
-   "baslik": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme",
-   "topic_key": "Matematik > 1.3 Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme",
-   "kod": "MAT.10.1.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t01_c04",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t01_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Üçgende sinüs ve kosinüs teoremlerine ilişkin farklı doğrulama veya ispatları kullanır.",
-    "Yapılan doğrulama veya ispatları yeni durumlara uyarlayarak değerlendirir."
-   ],
-   "baslik": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme",
-   "topic_key": "Matematik > 1.4 Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme",
-   "kod": "MAT.10.1.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t02_c01",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t02_c01.json",
-   "soru_sayisi": 16,
-   "flashcard_sayisi": 16,
-   "etiketler": [
-    "İki kategorik değişkenli veriye dayalı, istatistiksel araştırma gerektiren gerçek yaşam durumlarını belirler.",
-    "Bağlam içerisinde iki kategorik değişken arasındaki ilişkililiğe odaklanan araştırma soruları oluşturur.",
-    "İki kategorik değişkenli veri toplamak/elde etmek için plan yapar.",
-    "İki kategorik değişkenli verileri toplayarak/elde ederek analize hazırlar.",
-    "Araştırma sorusu bağlamında toplanan/elde edilen iki kategorik değişkenli verileri analiz etmek için görselleştirme ve/veya özetleme (toplam satır veya sütunlardaki göreli sıklıkları gösteren iki yönlü tablo, koşullu göreli sıklıkları gösteren sütun grafikleri, koşullu göreli sıklıklar gibi) araçlarından uygun olanı seçer.",
-    "Araştırma sorusu bağlamında toplanan/elde edilen verileri belirlediği araçlarla analiz eder."
-   ],
-   "baslik": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme",
-   "topic_key": "Matematik > 2.1 İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme",
-   "kod": "MAT.10.2.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t02_c02",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t02_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik istatistiksel temellendirme yapar.",
-    "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumlara yönelik hataları ya da yanlılıkları tespit eder.",
-    "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları çürütür ya da kabul eder."
-   ],
-   "baslik": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme",
-   "topic_key": "Matematik > 2.2 Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme",
-   "kod": "MAT.10.2.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t03_c01",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t03_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Bir doğal sayının asal çarpanları ve bölenleri hakkında varsayımlarda bulunur.",
-    "Farklı örneklerden elde ettiği örüntüleri listeleyerek bir doğal sayının asal çarpanları ve bölenleri hakkındaki varsayımlarına yönelik örüntüleri geneller.",
-    "Oluşturduğu genellemelerin varsayımlarını karşılayıp karşılamadığını örneklerle sınar.",
-    "Bir doğal sayının asal çarpanları ve bölenleri ile ilgili ulaştığı sonuçlara yönelik matematiksel önermeler sunar.",
-    "Elde ettiği önermelerin gerçek yaşam durumları içeren problemlerdeki kullanışlılığını değerlendirir."
-   ],
-   "baslik": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme",
-   "topic_key": "Matematik > 3.1 Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme",
-   "kod": "MAT.10.3.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t03_c02",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t03_c02.json",
-   "soru_sayisi": 14,
-   "flashcard_sayisi": 14,
-   "etiketler": [
-    "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair varsayımlarda bulunur.",
-    "Farklı örneklerden elde ettiği örüntüleri listeleyerek varsayımlarına yönelik örüntüleri geneller.",
-    "Oluşturduğu genellemelerin varsayımlarını karşılayıp karşılamadığını örneklerle sınar.",
-    "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair elde ettiği genellemelere yönelik önermeler sunar.",
-    "Sunduğu önermelerin gerçek yaşam durumları içeren problemlerdeki katkısını değerlendirir.",
-    "Elde ettiği önermeler ile ilgili matematiksel doğrulama yöntemlerini seçer ve kullanır."
-   ],
-   "baslik": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme",
-   "topic_key": "Matematik > 3.2 Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme",
-   "kod": "MAT.10.3.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t03_c03",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t03_c03.json",
-   "soru_sayisi": 14,
-   "flashcard_sayisi": 14,
-   "etiketler": [
-    "2, 3, 4, 5, 9 ve 10 ile bölünebilme özelliklerinden hareketle bir doğal sayının 2, 3, 4, 5, 8, 9 ve 10 ile bölümünden elde edilecek kalanlara ilişkin varsayımlarda bulunur.",
-    "Aynı sayı ile bölme işleminden elde edilecek kalanlara ilişkin farklı örneklerle ilgili örüntüleri listeleyerek varsayımlarına yönelik örüntüleri geneller.",
-    "Oluşturduğu genellemenin kendi varsayımını karşılayıp karşılamadığını örneklerle sınar.",
-    "Ulaştığı sonuçlara yönelik matematiksel önermeleri doğrulayabileceği şekilde sunar.",
-    "Ulaştığı önermelerin katkısını bu sayıların en küçük ortak katlarından oluşan sayılara bölümünden kalanı bulma bağlamında değerlendirir.",
-    "Önermelere ilişkin matematiksel doğrulama yöntemlerini seçer ve kullanır."
-   ],
-   "baslik": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme",
-   "topic_key": "Matematik > 3.3 Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme",
-   "kod": "MAT.10.3.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t04_c01",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t04_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) grafik ve cebirsel temsilleri üzerinden analiz eder.",
-    "Gerçek sayılarda tanımlı fonksiyonların grafik ve cebirsel temsillerini fonksiyon olma şartları ve fonksiyonların nitel özellikleri bakımından karşılaştırır.",
-    "Karşılaştırmalarından hareketle gerçek sayılarda tanımlı fonksiyonların grafik ve"
-   ],
-   "baslik": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme",
-   "topic_key": "Matematik > 4.1 Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme",
-   "kod": "MAT.10.4.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t04_c02",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t04_c02.json",
-   "soru_sayisi": 24,
-   "flashcard_sayisi": 24,
-   "etiketler": [
-    "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
-    "Karesel referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
-    "Karesel referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
-    "Karesel referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer karesel fonksiyonlara dönüştürür.",
-    "Karesel referans fonksiyon ile elde ettiği karesel fonksiyonların grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
-    "Karesel referans fonksiyonun nitel özelliklerinden hareketle diğer karesel fonksiyonların nitel özellikleri hakkında varsayımlarda bulunur."
-   ],
-   "baslik": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
-   "topic_key": "Matematik > 4.2 Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
-   "kod": "MAT.10.4.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t04_c03",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t04_c03.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
-   "etiketler": [
-    "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karekök fonksiyonlarının nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
-    "Karekök referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
-    "Karekök referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
-    "Karekök referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer karekök fonksiyonlarına dönüştürür.",
-    "Karekök referans fonksiyon ile elde ettiği karekök fonksiyonlarının grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
-    "Karekök referans fonksiyonun nitel özelliklerinden hareketle diğer karekök fonksiyonlarının nitel özellikleri hakkında varsayımlarda bulunur. 104"
-   ],
-   "baslik": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
-   "topic_key": "Matematik > 4.3 Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
-   "kod": "MAT.10.4.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t04_c04",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t04_c04.json",
-   "soru_sayisi": 24,
-   "flashcard_sayisi": 24,
-   "etiketler": [
-    "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
-    "Rasyonel referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
-    "Rasyonel referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
-    "Rasyonel referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer rasyonel fonksiyonlara dönüştürür.",
-    "Rasyonel referans fonksiyon ile elde ettiği rasyonel fonksiyonların grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
-    "Rasyonel referans fonksiyonun nitel özelliklerinden hareketle diğer rasyonel fonksiyonların nitel özellikleri hakkında varsayımlarda bulunur."
-   ],
-   "baslik": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
-   "topic_key": "Matematik > 4.4 Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
-   "kod": "MAT.10.4.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t04_c05",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t04_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Referans fonksiyonlar ve bunlardan türetilebilen fonksiyonlar üzerinden bir fonksiyonun ters fonksiyonuna ilişkin varsayımlarda bulunur.",
-    "Varsayımlarından yararlanıp farklı durumlarla ilgili örüntüleri listeleyerek referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarına ilişkin genellemeler yapar.",
-    "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarıyla ilişkisine dair varsayımları ile genellemelerini karşılaştırır.",
-    "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyon ilişkisine ait önermeleri matematiksel olarak doğrulanabilecek şekilde sunar.",
-    "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarına ait elde edilen önermeleri fonksiyonların nitel özellikleri bağlamında değerlendirir. 105"
-   ],
-   "baslik": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme",
-   "topic_key": "Matematik > 4.5 Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme",
-   "kod": "MAT.10.4.5",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t04_c06",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t04_c06.json",
-   "soru_sayisi": 20,
-   "flashcard_sayisi": 20,
-   "etiketler": [
-    "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklere ilişkin matematiksel bileşenleri (nitel özellikleri ile cebirsel ve grafik temsilleri) belirler.",
-    "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklere ilişkin matematiksel bileşenlerin aralarındaki ilişkileri belirler.",
-    "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklerin problem bağlamındaki temsillerini farklı temsillere dönüştürür.",
-    "Dönüştürdüğü temsillerin problem bağlamındaki anlamını ifade eder.",
-    "Elde ettiği ve yorumladığı farklı temsillerden yararlanarak problemin çözümü için strateji oluşturur.",
-    "Belirlediği stratejiyi kullanır."
-   ],
-   "baslik": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme",
-   "topic_key": "Matematik > 4.6 Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme",
-   "kod": "MAT.10.4.6",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t05_c01",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t05_c01.json",
-   "soru_sayisi": 20,
-   "flashcard_sayisi": 20,
-   "etiketler": [
-    "Verilen sayma problemindeki sayılacak nesneleri belirler.",
-    "Sayma problemlerinde yer alan nesneler arasındaki ilişkileri belirler.",
-    "Problem durumlarındaki sözel ifadeleri görsel temsillere dönüştürür.",
-    "Problem durumlarını onlara eş olan başka problem durumlarıyla ya da uygun görsel, tablo veya cebirsel temsillerle yeniden ifade eder.",
-    "Sayma problemlerindeki farklı durumlara uygun çözüm stratejisi oluşturur.",
-    "Seçtiği çözüm stratejisini kullanır."
-   ],
-   "baslik": "Sayma stratejileri kullanarak problem çözebilme",
-   "topic_key": "Matematik > 5.1 Sayma stratejileri kullanarak problem çözebilme",
-   "kod": "MAT.10.5.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t05_c02",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t05_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Karşılaşılan problem durumlarındaki cebirsel ve fonksiyonel işlemlerin algoritmik yapısını ortaya koyar.",
-    "Ön bilgilerini kullanarak cebirsel ve fonksiyonel yapılar ile bu yapıların algoritmaları arasında uyumlu bir bütün oluşturur."
-   ],
-   "baslik": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme",
-   "topic_key": "Matematik > 5.2 Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme",
-   "kod": "MAT.10.5.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t06_c01",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t06_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dik koordinat sisteminde iki nokta arasındaki uzaklık bağıntısı ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili varsayımda bulunur.",
-    "Farklı örnekler üzerinden varsayımlarına yönelik örüntüleri geneller.",
-    "İki nokta arasındaki uzaklık bağıntısına ve bir doğru parçasını belli oranda bölen noktanın koordinatlarına ilişkin genellemeleri ile varsayımlarını karşılaştırır.",
-    "İki nokta arasındaki uzaklık bağıntısına ve bir doğru parçasını belli oranda bölen noktanın koordinatlarına yönelik önermeler sunar.",
-    "Önermeleri gerçek yaşam problemleri bağlamında değerlendirir."
-   ],
-   "baslik": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme",
-   "topic_key": "Matematik > 6.1 Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme",
-   "kod": "MAT.10.6.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t06_c02",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t06_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede araç olarak tanır.",
-    "Karşılaştığı problem durumlarında dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede uygun bir temsil aracı olarak seçer.",
-    "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını temsil etme aracı olarak kullanır."
-   ],
-   "baslik": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme",
-   "topic_key": "Matematik > 6.2 Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme",
-   "kod": "MAT.10.6.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t07_c01",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t07_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumlara ilişkin mevcut olasılık bilgisini kullanarak varsayımda bulunur.",
-    "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu gerçek yaşam durumlarına ilişkin olası tüm çıktıları listeler.",
-    "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu ya da olmadığı durumlarda olası tüm çıktıların sayısı ile istenen durumların sayısını karşılaştırır.",
-    "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını hesaplamaya yönelik matematiksel önerme sunar.",
-    "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu ya da olmadığı gerçek yaşam durumlarının olasılığını koşullu olasılık ile değerlendirir."
-   ],
-   "baslik": "Koşullu olasılık ile çıkarım yapabilme",
-   "topic_key": "Matematik > 7.1 Koşullu olasılık ile çıkarım yapabilme",
-   "kod": "MAT.10.7.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "mat_10_t07_c02",
-   "ders": "Matematik",
-   "sinif": 10,
-   "dosya": "mat_10_t07_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin mevcut bilgileri kullanır.",
-    "Mevcut bilgileri kullanarak Bayes teoremine dayalı hesaplama yapar.",
-    "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin ileriye yönelik yargıda bulunur."
-   ],
-   "baslik": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme",
-   "topic_key": "Matematik > 7.2 Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme",
-   "kod": "MAT.10.7.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
    "konu_id": "mat_10_u01_k01",
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u01_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,"
+    "Dik üçgende trigonometrik oranları tanımlar ve kullanır.",
+    "Trigonometrik özdeşlikleri problem çözmede uygular."
    ],
    "baslik": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
    "topic_key": "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
@@ -4043,10 +3651,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u01_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,"
+    "Üçgenin yardımcı elemanlarını tanımlar.",
+    "Açıortay ve kenarortay özelliklerini hesapta kullanır."
    ],
    "baslik": "1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
    "topic_key": "Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
@@ -4058,10 +3667,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u01_k03.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,"
+    "Üçgen alanını taban ve yükseklikle hesaplar.",
+    "Alan oranlarını benzerlik ve yükseklikle ilişkilendirir."
    ],
    "baslik": "1.3 Üçgende Alan",
    "topic_key": "Matematik > 1.3 Üçgende Alan",
@@ -4073,10 +3683,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u01_k04.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz"
+    "Sinüs teoremini kullanır.",
+    "Kosinüs teoremini kullanır."
    ],
    "baslik": "1.4 Sinüs ve Kosinüs Teoremleri",
    "topic_key": "Matematik > 1.4 Sinüs ve Kosinüs Teoremleri",
@@ -4088,13 +3699,14 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u02_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    "İki kategorik değişkenli araştırma sorusu kurar ve veriyi düzenler.",
+    "İki yönlü tablodan yüzde ve ilişki yorumu yapar."
    ],
-   "baslik": "2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
-   "topic_key": "Matematik > 2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+   "baslik": "2.1 İki Kategorik Değişkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+   "topic_key": "Matematik > 2.1 İki Kategorik Değişkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -4103,13 +3715,14 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u02_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    "Veri kaynağı ve örneklemi değerlendirir.",
+    "Yorumlardaki yanlılık ve hataları tartışır."
    ],
-   "baslik": "2.2 İstatistiksel Sonuç veya Yorumları Tartışma",
-   "topic_key": "Matematik > 2.2 İstatistiksel Sonuç veya Yorumları Tartışma",
+   "baslik": "2.2 Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verilerin İlişkililiğine Dayalı İstatistiksel Sonuç veya Yorumları Tartışma",
+   "topic_key": "Matematik > 2.2 Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verilerin İlişkililiğine Dayalı İstatistiksel Sonuç veya Yorumları Tartışma",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -4118,10 +3731,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u03_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,"
+    "Asal çarpanlara ayırmayı yapar.",
+    "Pozitif bölen sayısını hesaplar."
    ],
    "baslik": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
    "topic_key": "Matematik > 3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
@@ -4133,10 +3747,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u03_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,"
+    "EBOB ve EKOK kavramlarını açıklar.",
+    "EBOB-EKOK problemlerini çözer."
    ],
    "baslik": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
    "topic_key": "Matematik > 3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
@@ -4148,10 +3763,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u03_k03.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilmeniz"
+    "Bölünebilme kurallarını açıklar.",
+    "Bölümden kalanı kuralla hesaplar."
    ],
    "baslik": "3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
    "topic_key": "Matematik > 3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
@@ -4163,10 +3779,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u04_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    "Fonksiyonun temel nitel özelliklerini tanımlar.",
+    "Verilen fonksiyonun nitel özelliklerini belirler."
    ],
    "baslik": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
    "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
@@ -4178,10 +3795,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u04_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    "Karesel fonksiyonun tepe noktasını ve simetri eksenini bulur.",
+    "Karesel fonksiyonun nitel özelliklerini yorumlar."
    ],
    "baslik": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
    "topic_key": "Matematik > 4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
@@ -4193,10 +3811,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u04_k03.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "gerçek sayılarda f(x) = √x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karekök fonksiyonlarının nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    "Karekök fonksiyonunun tanım ve görüntü kümesini belirler.",
+    "Karekök fonksiyonunun grafiğini yorumlar."
    ],
    "baslik": "4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
    "topic_key": "Matematik > 4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
@@ -4208,10 +3827,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u04_k04.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,"
+    "Rasyonel fonksiyonun tanım ve görüntü kümesini belirler.",
+    "Rasyonel fonksiyonun grafiğini yorumlar."
    ],
    "baslik": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
    "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
@@ -4223,13 +3843,14 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u04_k05.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+    "Ters fonksiyon kavramını açıklar.",
+    "Verilen fonksiyonun tersini bulur."
    ],
-   "baslik": "4.5 Fonksiyonların Ters Fonksiyonları",
-   "topic_key": "Matematik > 4.5 Fonksiyonların Ters Fonksiyonları",
+   "baslik": "4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+   "topic_key": "Matematik > 4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -4238,13 +3859,14 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u04_k06.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    "Problemi fonksiyonla modeller.",
+    "Denklem ve eşitsizlikleri çözerek yorumlar."
    ],
-   "baslik": "4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
-   "topic_key": "Matematik > 4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+   "baslik": "4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+   "topic_key": "Matematik > 4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -4253,10 +3875,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u05_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "sayma stratejileri kullanarak problem çözebilmeniz,"
+    "Toplama ve çarpma yoluyla saymayı ayırt eder.",
+    "Sayma problemlerini çözer."
    ],
    "baslik": "5.1 Sayma Stratejileri",
    "topic_key": "Matematik > 5.1 Sayma Stratejileri",
@@ -4268,10 +3891,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u05_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    "Algoritma, akış şeması ve algoritmik doğal dili tanır.",
+    "Mantık bağlaçları ve niceleyicilerle koşul ifade eder."
    ],
    "baslik": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
    "topic_key": "Matematik > 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
@@ -4283,13 +3907,14 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u06_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    "İki nokta arasındaki uzaklığı hesaplar.",
+    "Doğru parçasını içten/dıştan bölen noktayı bulur."
    ],
-   "baslik": "6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
-   "topic_key": "Matematik > 6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+   "baslik": "6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+   "topic_key": "Matematik > 6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -4298,13 +3923,14 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u06_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    "Doğrunun eğimini hesaplar.",
+    "Doğru denklemini yazar, eğim ilişkilerini kullanır."
    ],
-   "baslik": "6.2 Doğrunun Özellikleri ve Analitik İncelenmesi",
-   "topic_key": "Matematik > 6.2 Doğrunun Özellikleri ve Analitik İncelenmesi",
+   "baslik": "6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+   "topic_key": "Matematik > 6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -4313,10 +3939,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u07_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "koşullu olasılık ile çıkarım yapabilmeniz,"
+    "Koşullu olasılık kavramını açıklar ve hesaplar.",
+    "Bağımlı ve bağımsız olayları ayırt eder."
    ],
    "baslik": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
    "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
@@ -4328,10 +3955,11 @@
    "ders": "Matematik",
    "sinif": 10,
    "dosya": "mat_10_u07_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz"
+    "Bayes teoreminin mantığını açıklar.",
+    "Bayes tipi problemlerde istenen koşullu olasılığı hesaplar."
    ],
    "baslik": "7.2 Bayes Teoremi",
    "topic_key": "Matematik > 7.2 Bayes Teoremi",

@@ -223,6 +223,15 @@ const ELLE = {
   fizik_10_u04_k06: { kodlar: ["FİZ.10.4.6"], gerekce: "Kitabın 4.6-A alt başlığı rezonans ile depremin odak/merkez üssü/büyüklük/şiddet kavramlarını verir; FİZ.10.4.6 kapsamındadır." },
   fizik_10_u04_k07: { kodlar: ["FİZ.10.4.6"], gerekce: "Sismograf ve sismik izolatör modelleri aynı çıktının (FİZ.10.4.6) model oluşturma boyutudur." },
   biyo_10_u02_k06: { kodlar: ["BİY.10.2.6"], gerekce: "Konu başlığı 'sürdürülebilirliği kısıtlayan durumlar'; çıktı gözleme dayalı tahmin (BİY.10.2.6)." },
+  mat_10_u02_k01: { kodlar: ["MAT.10.2.1"], gerekce: "Kitabın 2.1. bölümü iki kategorik değişkenin ilişkililiğini içeren istatistiksel problemi oluşturma, veri toplama, analiz ve yorumlama sürecini verir (s.98-127); MAT.10.2.1 çıktısıdır." },
+  mat_10_u02_k02: { kodlar: ["MAT.10.2.2"], gerekce: "Kitabın 2.2. bölümü başkalarının ürettiği iki kategorik değişkenli verilere dayalı sonuç/yorumları tartışmayı verir (s.128-132); MAT.10.2.2 çıktısıdır." },
+  mat_10_u04_k02: { kodlar: ["MAT.10.4.2"], gerekce: "Kitabın 4.2. bölümü karesel fonksiyonun tepe noktası, simetri ekseni, işareti ve köklerini inceler (s.197-223); MAT.10.4.2 çıktısı doğrudan bu bölümdür." },
+  mat_10_u04_k03: { kodlar: ["MAT.10.4.3"], gerekce: "Kitabın 4.3. bölümü karekök fonksiyonunun tanım/görüntü kümesi ve nitel özelliklerini verir (s.224-242); MAT.10.4.3 çıktısıdır." },
+  mat_10_u04_k04: { kodlar: ["MAT.10.4.4"], gerekce: "Kitabın 4.4. bölümü rasyonel referans fonksiyonunu ve nitel özelliklerini verir (s.243-263); MAT.10.4.4 çıktısıdır." },
+  mat_10_u04_k05: { kodlar: ["MAT.10.4.5"], gerekce: "Kitabın 4.5. bölümü referans fonksiyonlardan türetilen fonksiyonların terslerini verir (s.264-283); MAT.10.4.5 çıktısıdır." },
+  mat_10_u04_k06: { kodlar: ["MAT.10.4.6"], gerekce: "Kitabın 4.6. bölümü fonksiyonlarla ifade edilebilen denklem ve eşitsizlik problemlerinin çözümünü verir (s.284-305); MAT.10.4.6 çıktısıdır." },
+  mat_10_u06_k01: { kodlar: ["MAT.10.6.1"], gerekce: "Kitabın 6.1. bölümü iki nokta arasındaki uzaklık ile bir doğru parçasını belli oranda bölmeyi birlikte verir (s.359-371); MAT.10.6.1 çıktısıdır." },
+  mat_10_u06_k02: { kodlar: ["MAT.10.6.2"], gerekce: "Kitabın 6.2. bölümü doğrunun eğimi, denklemi ve paralel/dik eğim ilişkilerini verir (s.372-384); MAT.10.6.2 çıktısıdır." },
 };
 
 /* Beceri eksenli programlar: 10. sınıf çıktıları konu değil dil becerisi

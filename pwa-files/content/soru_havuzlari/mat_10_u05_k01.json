@@ -2,299 +2,255 @@
   "konu_id": "mat_10_u05_k01",
   "sinif": 10,
   "ders": "Matematik",
-  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "tema": 5,
+  "tema_adi": "Sayma, Algoritma ve Bilişim",
+  "baslik": "5.1 Sayma Stratejileri",
+  "topic_key": "Matematik > 5.1 Sayma Stratejileri",
+  "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer.",
+  "kaynak": "Matematik 10 ders kitabı, s.313-338",
+  "kaynak_dosya": "matematik-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "mat_10_u05_k01_o01",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Bir kafeterya menüsünde 6 farklı çorba ve 4 farklı salata vardır. Bir öğün için bu seçeneklerden yalnızca biri seçilecekse kaç farklı seçim yapılabilir?",
+      "alt_beceri": "Toplama ve çarpma yoluyla saymayı ayırt eder.",
+      "metin": "Ayrık durumların sayısını bulurken 'veya' bağlacı hangi sayma yöntemini gerektirir?",
       "secenekler": [
-        "10",
-        "24",
-        "6",
-        "4"
+        "Çarpma yoluyla sayma",
+        "Toplama yoluyla sayma",
+        "Ters fonksiyon",
+        "Kosinüs teoremi"
       ],
-      "dogru_index": 0,
-      "cozum": "Yalnızca bir ürün seçileceğinden iki ayrık seçeneğin sayıları toplanır: 6+4=10. 24, iki gruptan birer ürün seçme durumundaki çarpımdır.",
+      "dogru_index": 1,
+      "cozum": "Ayrık seçeneklerden biri 'veya' ile seçilecekse seçenek sayıları toplanır (s.315-318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Birbirinden ortak elemanı olmayan iki gruptan tek bir nesne seçilecekse toplam seçenek sayısını nasıl hesaplarsın?",
-        "back": "İki gruptaki eleman sayıları toplanır."
+        "front": "'veya' hangi saymayı gerektirir?",
+        "back": "Toplama yoluyla sayma."
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o02",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Bir amblem; 3 biçim, 6 renk ve 4 yazı seçeneğinin her grubundan birer seçimle tasarlanıyor. Kaç farklı amblem oluşturulabilir?",
+      "alt_beceri": "Toplama ve çarpma yoluyla saymayı ayırt eder.",
+      "metin": "'Önce ... sonra ...' biçimindeki ardışık seçimlerde hangi yöntem kullanılır?",
       "secenekler": [
-        "13",
-        "24",
-        "72",
-        "48"
+        "Toplama yoluyla sayma",
+        "Olasılık",
+        "Ortalama",
+        "Çarpma yoluyla sayma"
       ],
-      "dogru_index": 2,
-      "cozum": "Her seçim diğerlerinden bağımsızdır; çarpma yoluyla sayma ilkesine göre 3·6·4=72 amblem oluşturulabilir. 13, seçenek sayılarını toplamakla bulunur.",
+      "dogru_index": 3,
+      "cozum": "Ardışık adımlarda seçenek sayıları çarpılır (s.319-322).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir seçim önce m, ardından n farklı biçimde yapılabiliyorsa tüm olası sonuç sayısını nasıl bulursun?",
-        "back": "Çarpma yoluyla sayma ilkesine göre m·n hesaplanır."
+        "front": "Ardışık seçimlerde hangi yöntem?",
+        "back": "Çarpma."
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o03",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Yan yana dizilecek 7 farklı numaralı taş kaç farklı biçimde sıralanabilir?",
+      "alt_beceri": "Toplama ve çarpma yoluyla saymayı ayırt eder.",
+      "metin": "Okulun 3. sınıfında 12, 4. sınıfında 15 öğrenci temsilci seçilecektir. Bu iki sınıftan yalnızca biri temsilci seçecekse kaç farklı seçim yapılabilir?",
       "secenekler": [
-        "720",
-        "40 320",
-        "5 040",
-        "120"
+        "27",
+        "180",
+        "15",
+        "12"
       ],
-      "dogru_index": 2,
-      "cozum": "Yedi farklı taşın sıralanma sayısı 7!=7·6·5·4·3·2·1=5 040’dır. 720, yalnızca altı nesnenin sıralanma sayısıdır.",
+      "dogru_index": 0,
+      "cozum": "Ayrık durumlar olduğundan 12 + 15 = 27 farklı seçim (s.315-318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "n! (n faktöriyel) ifadesinin tanımını yaz.",
-        "back": "n faktöriyel, 1 · 2 · 3 · … · n çarpımına eşittir. Sıfır faktöriyel 1 kabul edilir."
+        "front": "12 veya 15 arasından seçim kaç yol?",
+        "back": "27"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o04",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Dört farklı işaret yan yana bir sıra oluşturacak. Kaç farklı sıralama mümkündür?",
+      "alt_beceri": "Sayma problemlerini çözer.",
+      "metin": "Bir kitap bağışı kampanyasında 4 farklı roman, 3 farklı şiir kitabı vardır. Romanlardan veya şiir kitaplarından bir tane bağışlamak isteyen biri kaç farklı seçim yapabilir?",
       "secenekler": [
-        "4",
-        "8",
         "12",
-        "24"
+        "4",
+        "7",
+        "3"
       ],
-      "dogru_index": 3,
-      "cozum": "Dört farklı işaretin sıralanması 4!=4·3·2·1=24 biçimdedir. 4 yalnızca ilk konuma gelebilecek işaret sayısıdır.",
+      "dogru_index": 2,
+      "cozum": "4 + 3 = 7 (kitabın 'Eylül kitap bağışı' etkinliğinin mantığı, s.315-318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir sıraya dizilecek n farklı nesnenin sıralanış sayısını n cinsinden yaz.",
-        "back": "Sıralanış sayısı n faktöriyeldir (1 · 2 · … · n)."
+        "front": "4 roman veya 3 şiir → kaç seçim?",
+        "back": "7"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o05",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Dokuz gönüllü arasından bir araştırma sunumu için farklı kişilere başkan, veri sorumlusu ve sunucu rolleri verilecektir. Kaç farklı rol dağılımı yapılabilir?",
+      "alt_beceri": "Sayma problemlerini çözer.",
+      "metin": "3 farklı tişört ve 4 farklı pantolondan bir tişört ile bir pantolon seçimi kaç farklı biçimde yapılabilir?",
       "secenekler": [
-        "504",
-        "84",
-        "72",
-        "336"
+        "7",
+        "3",
+        "4",
+        "12"
       ],
-      "dogru_index": 0,
-      "cozum": "Başkan için 9, veri sorumlusu için kalan 8 ve sunucu için kalan 7 kişi seçilebilir. Roller farklı olduğundan 9×8×7=504 dağılım vardır.",
+      "dogru_index": 3,
+      "cozum": "3 · 4 = 12 (s.319-322).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "9 farklı simgeden 3’ü seçilip üç konuma sıralı biçimde yerleştirilecek. Kaç yerleşim vardır?",
-        "back": "9·8·7=504 sıralı yerleşim vardır."
+        "front": "3 tişört + 4 pantolon → kaç kombinasyon?",
+        "back": "12"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o06",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "9 farklı simgeden, sıra gözetilmeksizin 2 simge seçilecektir. Kaç farklı ikili seçim yapılabilir?",
+      "alt_beceri": "Sayma problemlerini çözer.",
+      "metin": "0, 1, 2, 3, 4 rakamları kullanılarak rakamları farklı üç basamaklı kaç sayı yazılabilir?",
       "secenekler": [
-        "18",
-        "36",
-        "72",
-        "45"
+        "60",
+        "48",
+        "45",
+        "100"
       ],
       "dogru_index": 1,
-      "cozum": "Sıra önemli olmadığından seçim sayısı 9·8/2!=36’dır. 72, her ikiliyi iki farklı sırayla sayarak elde edilir.",
+      "cozum": "Yüzler basamağı 4 seçenek (0 olamaz), onlar 4, birler 3 → 4·4·3 = 48 (s.319-323).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir altılı gruptan A ve B seçildiğinde AB ve BA aynı grubu gösteriyorsa seçim sayımında neye dikkat edilir?",
-        "back": "Sıra önemli değildir; AB ve BA aynı seçim sayılır."
+        "front": "0-4 ile farklı rakamlı üç basamaklı kaç sayı?",
+        "back": "48"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o07",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Bir kontrol çizelgesinde dört standart ve üç ayrıntılı inceleme adımı tek sıraya diziliyor. Aynı türdeki adımlar ayırt edilmediğine göre kaç farklı tür sıralaması oluşur?",
+      "alt_beceri": "Sayma problemlerini çözer.",
+      "metin": "4 farklı harfle (A, B, C, D) üç harfli, harfleri tekrarsız kaç farklı şifre oluşturulabilir?",
       "secenekler": [
-        "21",
-        "28",
-        "35",
-        "42"
+        "24",
+        "12",
+        "64",
+        "4"
       ],
-      "dogru_index": 2,
-      "cozum": "Standart incelemelerin ve ayrıntılı incelemelerin kendi içindeki değişimleri ayırt edilmez. Farklı sıralama sayısı 7!/(4!·3!)=35’tir.",
+      "dogru_index": 0,
+      "cozum": "4·3·2 = 24 farklı şifre (kitabın bisiklet şifresi sorusunun yapısı, s.319-322).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Toplam n nesnenin a tanesi bir türde, b tanesi başka türde özdeşse farklı sıralanış sayısını nasıl bulursun?",
-        "back": "Farklı sıralanış sayısı n!/(a!·b!) olur."
+        "front": "4 harften üç harfli tekrarsız şifre kaç tane?",
+        "back": "24"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o08",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Bir kontrol şeridinde aynı türden 5 güvenlik işareti ve aynı türden 3 bakım işareti tek sıraya dizilecektir. Kaç farklı tür dizilişi mümkündür?",
+      "alt_beceri": "Sayma problemlerini çözer.",
+      "metin": "Bir sınıfta 10 erkek, 12 kız vardır. Sınıftan bir başkan veya bir başkan yardımcısı (yalnızca biri) seçilecekse kaç farklı seçim yapılabilir?",
       "secenekler": [
-        "8",
-        "35",
-        "70",
-        "56"
+        "120",
+        "44",
+        "22",
+        "12"
       ],
-      "dogru_index": 3,
-      "cozum": "Toplam 8 işaretin 5’i bir türden, 3’ü diğer türdendir. Özdeş işaretlerin kendi aralarındaki sıralamaları ayırt edilmediğinden 8!/(5!·3!)=56 farklı diziliş vardır.",
+      "dogru_index": 2,
+      "cozum": "10 + 12 = 22 (s.315-318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "n sırada iki tür özdeş nesne varsa ve bu türlerden sırasıyla a ve b tane bulunuyorsa farklı diziliş sayısı nasıl hesaplanır?",
-        "back": "a+b=n için n!/(a!·b!) hesaplanır; aynı türdeki nesnelerin kendi aralarındaki yer değişimleri yeni diziliş oluşturmaz."
+        "front": "10 erkek veya 12 kızdan biri seçilecekse kaç yol?",
+        "back": "22"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o09",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Bir motif dizisinin 5 konumunun her birine 3 şekilden biri yerleştirilebiliyor. Tekrar serbest olduğuna göre kaç farklı motif dizisi vardır?",
+      "alt_beceri": "Sayma problemlerini çözer.",
+      "metin": "ASCII kodlamada 8 bit ile kaç farklı karakter gösterilebilir?",
       "secenekler": [
-        "243",
-        "125",
-        "15",
-        "81"
+        "128",
+        "256",
+        "64",
+        "8"
       ],
-      "dogru_index": 0,
-      "cozum": "Her konum için 3 seçenek vardır; çarpma yoluyla sayma ilkesinden 3·3·3·3·3=3⁵=243 bulunur. 125, her konumda 5 seçenek varmış gibi hesaplar.",
+      "dogru_index": 1,
+      "cozum": "2⁸ = 256 karakter (kitaptaki ASCII örneği, s.322).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir dizinin n bağımsız konumunun her birinde q sembol seçeneği varsa toplam dizilim sayısı nasıl bulunur?",
-        "back": "Her konum için q seçenek olduğundan toplam dizilim sayısı qⁿ’dir."
+        "front": "8 bit ile kaç karakter gösterilir?",
+        "back": "256"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     },
     {
       "soru_id": "mat_10_u05_k01_o10",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Pascal üçgeninde bir satırda yan yana 84 ve 126 sayıları bulunuyor. Sonraki satırda bu iki sayının arasındaki sayı kaçtır?",
+      "alt_beceri": "Sayma problemlerini çözer.",
+      "metin": "ASCII kodlamada 7 bit ile kaç farklı karakter gösterilebilir?",
       "secenekler": [
-        "200",
-        "210",
-        "126",
-        "84"
-      ],
-      "dogru_index": 1,
-      "cozum": "Pascal üçgeninde sonraki satırdaki aradaki sayı, üst satırdaki komşu sayıların toplamıdır: 84+126=210.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Pascal üçgeninde bir satırdaki yan yana iki sayıdan sonraki satırdaki aradaki sayı nasıl bulunur?",
-        "back": "Yan yana iki sayının toplamı, sonraki satırda bu sayıların arasındaki sayıyı verir."
-      },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
-    },
-    {
-      "soru_id": "mat_10_u05_k01_o11",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Bir dijital arşivde 17 dosyanın her biri 16 kategori etiketinden tam birini alıyor. Kesin olarak aynı etiketi taşıyan en az kaç dosya vardır?",
-      "secenekler": [
-        "1 dosya",
-        "3 dosya",
-        "4 dosya",
-        "2 dosya"
+        "256",
+        "64",
+        "7",
+        "128"
       ],
       "dogru_index": 3,
-      "cozum": "16 etikete birer dosya yerleştirilirse 16 dosya kullanılır. On yedinci dosyanın da bir etiketi olacağı için en az bir etiket en az iki dosyada bulunur.",
+      "cozum": "2⁷ = 128 karakter (s.322).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "m kutuya n öğe yerleştiriliyor ve n>m. Hangi sonuç kesinlikle doğrudur?",
-        "back": "En az bir kutuda en az iki öğe bulunur."
+        "front": "7 bit ile kaç karakter?",
+        "back": "128"
       },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
-    },
-    {
-      "soru_id": "mat_10_u05_k01_o12",
-      "alt_beceri": "sayma stratejileri kullanarak problem çözebilmeniz,",
-      "metin": "Bir bakım ekibi 8 farklı yedek parçadan 3 parçalık bir acil durum kiti hazırlıyor. Kitte hangi parçaların bulunduğu önemlidir, parçaların sırası önemli değildir. Kaç farklı kit hazırlanabilir?",
-      "secenekler": [
-        "28",
-        "56",
-        "24",
-        "64"
-      ],
-      "dogru_index": 1,
-      "cozum": "Sıra önemli olmadığından seçim sayısı 8·7·6/(3·2·1)=56’dır. 336, seçilen üç kişinin kendi aralarındaki sıralamaları da ayrı sayar.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "n farklı nesne arasından r tanesini seçme sayısını, r'li sıralanış sayısından nasıl elde edersin?",
-        "back": "r'li sıralanış sayısını, seçilen r nesnenin kendi aralarındaki sıralanış sayısına bölersin."
-      },
-      "kazanim": "sayma stratejileri kullanarak problem çözebilmeniz,"
+      "kazanim": "Toplama ve çarpma yoluyla sayma stratejilerini kullanarak problem çözer."
     }
   ],
   "flashcards": [
     {
       "id": "mat_10_u05_k01_o01:flashcard",
-      "front": "Birbirinden ortak elemanı olmayan iki gruptan tek bir nesne seçilecekse toplam seçenek sayısını nasıl hesaplarsın?",
-      "back": "İki gruptaki eleman sayıları toplanır."
+      "front": "'veya' hangi saymayı gerektirir?",
+      "back": "Toplama yoluyla sayma."
     },
     {
       "id": "mat_10_u05_k01_o02:flashcard",
-      "front": "Bir seçim önce m, ardından n farklı biçimde yapılabiliyorsa tüm olası sonuç sayısını nasıl bulursun?",
-      "back": "Çarpma yoluyla sayma ilkesine göre m·n hesaplanır."
+      "front": "Ardışık seçimlerde hangi yöntem?",
+      "back": "Çarpma."
     },
     {
       "id": "mat_10_u05_k01_o03:flashcard",
-      "front": "n! (n faktöriyel) ifadesinin tanımını yaz.",
-      "back": "n faktöriyel, 1 · 2 · 3 · … · n çarpımına eşittir. Sıfır faktöriyel 1 kabul edilir."
+      "front": "12 veya 15 arasından seçim kaç yol?",
+      "back": "27"
     },
     {
       "id": "mat_10_u05_k01_o04:flashcard",
-      "front": "Bir sıraya dizilecek n farklı nesnenin sıralanış sayısını n cinsinden yaz.",
-      "back": "Sıralanış sayısı n faktöriyeldir (1 · 2 · … · n)."
+      "front": "4 roman veya 3 şiir → kaç seçim?",
+      "back": "7"
     },
     {
       "id": "mat_10_u05_k01_o05:flashcard",
-      "front": "9 farklı simgeden 3’ü seçilip üç konuma sıralı biçimde yerleştirilecek. Kaç yerleşim vardır?",
-      "back": "9·8·7=504 sıralı yerleşim vardır."
+      "front": "3 tişört + 4 pantolon → kaç kombinasyon?",
+      "back": "12"
     },
     {
       "id": "mat_10_u05_k01_o06:flashcard",
-      "front": "Bir altılı gruptan A ve B seçildiğinde AB ve BA aynı grubu gösteriyorsa seçim sayımında neye dikkat edilir?",
-      "back": "Sıra önemli değildir; AB ve BA aynı seçim sayılır."
+      "front": "0-4 ile farklı rakamlı üç basamaklı kaç sayı?",
+      "back": "48"
     },
     {
       "id": "mat_10_u05_k01_o07:flashcard",
-      "front": "Toplam n nesnenin a tanesi bir türde, b tanesi başka türde özdeşse farklı sıralanış sayısını nasıl bulursun?",
-      "back": "Farklı sıralanış sayısı n!/(a!·b!) olur."
+      "front": "4 harften üç harfli tekrarsız şifre kaç tane?",
+      "back": "24"
     },
     {
       "id": "mat_10_u05_k01_o08:flashcard",
-      "front": "n sırada iki tür özdeş nesne varsa ve bu türlerden sırasıyla a ve b tane bulunuyorsa farklı diziliş sayısı nasıl hesaplanır?",
-      "back": "a+b=n için n!/(a!·b!) hesaplanır; aynı türdeki nesnelerin kendi aralarındaki yer değişimleri yeni diziliş oluşturmaz."
+      "front": "10 erkek veya 12 kızdan biri seçilecekse kaç yol?",
+      "back": "22"
     },
     {
       "id": "mat_10_u05_k01_o09:flashcard",
-      "front": "Bir dizinin n bağımsız konumunun her birinde q sembol seçeneği varsa toplam dizilim sayısı nasıl bulunur?",
-      "back": "Her konum için q seçenek olduğundan toplam dizilim sayısı qⁿ’dir."
+      "front": "8 bit ile kaç karakter gösterilir?",
+      "back": "256"
     },
     {
       "id": "mat_10_u05_k01_o10:flashcard",
-      "front": "Pascal üçgeninde bir satırdaki yan yana iki sayıdan sonraki satırdaki aradaki sayı nasıl bulunur?",
-      "back": "Yan yana iki sayının toplamı, sonraki satırda bu sayıların arasındaki sayıyı verir."
-    },
-    {
-      "id": "mat_10_u05_k01_o11:flashcard",
-      "front": "m kutuya n öğe yerleştiriliyor ve n>m. Hangi sonuç kesinlikle doğrudur?",
-      "back": "En az bir kutuda en az iki öğe bulunur."
-    },
-    {
-      "id": "mat_10_u05_k01_o12:flashcard",
-      "front": "n farklı nesne arasından r tanesini seçme sayısını, r'li sıralanış sayısından nasıl elde edersin?",
-      "back": "r'li sıralanış sayısını, seçilen r nesnenin kendi aralarındaki sıralanış sayısına bölersin."
+      "front": "7 bit ile kaç karakter?",
+      "back": "128"
     }
-  ],
-  "baslik": "5.1 Sayma Stratejileri",
-  "topic_key": "Matematik > 5.1 Sayma Stratejileri"
+  ]
 }

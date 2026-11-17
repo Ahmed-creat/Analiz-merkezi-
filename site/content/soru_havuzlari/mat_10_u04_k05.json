@@ -2,299 +2,255 @@
   "konu_id": "mat_10_u04_k05",
   "sinif": 10,
   "ders": "Matematik",
-  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "baslik": "4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+  "topic_key": "Matematik > 4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+  "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar.",
+  "kaynak": "Matematik 10 ders kitabı, s.264-283",
+  "kaynak_dosya": "matematik-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "mat_10_u04_k05_o01",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "f(x)=−4x+13 doğrusal fonksiyonunun tersinin cebirsel temsili hangisidir?",
+      "alt_beceri": "Ters fonksiyon kavramını açıklar.",
+      "metin": "Bir fonksiyonun tersinin grafiği, fonksiyonun grafiğine göre nasıl konumlanır?",
       "secenekler": [
-        "(13−x)/4",
-        "(x−13)/4",
-        "−4x+13",
-        "(x+13)/4"
+        "x eksenine göre simetriktir",
+        "y = x doğrusuna göre simetriktir",
+        "y eksenine göre simetriktir",
+        "Orijine göre simetriktir"
       ],
-      "dogru_index": 0,
-      "cozum": "y=−4x+13 denkleminde x ile y yer değiştirilir: x=−4y+13. Buradan y=(13−x)/4, yani f⁻¹(x)=(13−x)/4 bulunur.",
+      "dogru_index": 1,
+      "cozum": "Fonksiyon ve tersinin grafikleri y = x doğrusuna göre simetriktir (s.266-270).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir fonksiyonun tersi, başlangıçtaki fonksiyonun uyguladığı işleme nasıl karşılık verir?",
-        "back": "Uygulanan işlemi tersine çevirir."
+        "front": "Ters fonksiyonun grafiği neye göre simetriktir?",
+        "back": "y = x doğrusuna göre."
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o02",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "f(x)=5x−7 fonksiyonu için f⁻¹(8) kaçtır?",
+      "alt_beceri": "Ters fonksiyon kavramını açıklar.",
+      "metin": "Bir fonksiyonun tersinin de fonksiyon olması için fonksiyonun hangi özelliği taşıması gerekir?",
       "secenekler": [
-        "8",
-        "3",
-        "4",
-        "15"
+        "Sabit olması",
+        "Artan olması",
+        "Tanım kümesinin R olması",
+        "Bire bir olması"
       ],
-      "dogru_index": 1,
-      "cozum": "f⁻¹(8), 5x−7=8 eşitliğini sağlayan girdidir. 5x=15 olduğundan x=3 bulunur.",
+      "dogru_index": 3,
+      "cozum": "Ters ilişkinin fonksiyon olabilmesi için her görüntünün tek bir ön görüntüsü, yani fonksiyonun bire bir olması gerekir (s.264-269).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=5x−7 doğrusal fonksiyonu için ters fonksiyonun kuralını x cinsinden yaz.",
-        "back": "f⁻¹(x)=(x+7)/5."
+        "front": "Tersi fonksiyon olması için ne gerekir?",
+        "back": "Bire birlik."
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o03",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "(2,5) noktası f fonksiyonunun grafiği üzerindeyse f⁻¹ fonksiyonunun grafiğinde hangi nokta bulunur?",
+      "alt_beceri": "Ters fonksiyon kavramını açıklar.",
+      "metin": "Ters fonksiyonun tanım kümesi neye eşittir?",
       "secenekler": [
-        "(2,5)",
-        "(−2,−5)",
-        "(5,2)",
-        "(5,−2)"
+        "Fonksiyonun görüntü kümesine",
+        "Fonksiyonun tanım kümesine",
+        "R'ye",
+        "Boş kümeye"
       ],
-      "dogru_index": 2,
-      "cozum": "Ters fonksiyonda bağımlı ve bağımsız değişkenler yer değiştirir; bu nedenle (2,5) noktası (5,2) olur. Bu değişim y=x doğrusuna göre yansımayla da açıklanır.",
+      "dogru_index": 0,
+      "cozum": "Ters fonksiyonda tanım ve görüntü kümeleri yer değiştirir (s.264-269).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir fonksiyonun tersi ile kendi grafikleri arasındaki simetri ilişkisini tamamla.",
-        "back": "Ters fonksiyonun grafiği, y=x doğrusuna göre simetriğidir."
+        "front": "Tersin tanım kümesi neye eşittir?",
+        "back": "Fonksiyonun görüntü kümesine."
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o04",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "Bir ölçüm aygıtında f fonksiyonunun tanım kümesi [2,14], görüntü kümesi [−5,19]’dur. f⁻¹ fonksiyonunun tanım ve görüntü kümeleri sırasıyla hangileridir?",
+      "alt_beceri": "Verilen fonksiyonun tersini bulur.",
+      "metin": "f(x) = 4x fonksiyonunun tersi hangisidir?",
       "secenekler": [
-        "[2,14] ve [−5,19]",
-        "[−5,19] ve [−5,19]",
-        "[2,14] ve [2,14]",
-        "[−5,19] ve [2,14]"
+        "f⁻¹(x) = 4x",
+        "f⁻¹(x) = x + 4",
+        "f⁻¹(x) = x/4",
+        "f⁻¹(x) = −4x"
       ],
-      "dogru_index": 3,
-      "cozum": "Ters fonksiyonun tanım kümesi, f fonksiyonunun görüntü kümesidir; tersin görüntü kümesi ise f’nin tanım kümesidir. Bu nedenle aralıklar sırasıyla [−5,19] ve [2,14] olur.",
+      "dogru_index": 2,
+      "cozum": "y = 4x → x = y/4 → f⁻¹(x) = x/4 (kitaptaki tablo, s.266).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f fonksiyonunun tanım kümesi ve görüntü kümesi A ve B ise f⁻¹ fonksiyonunun tanım ve görüntü kümeleri nasıl ilişkilidir?",
-        "back": "f⁻¹'in tanım kümesi B, görüntü kümesi A olur."
+        "front": "4x'in tersi nedir?",
+        "back": "x/4"
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o05",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "p(x)=−3(x−8)²+10, x∈R fonksiyonu için ters ilişki neden fonksiyon olmaz?",
+      "alt_beceri": "Verilen fonksiyonun tersini bulur.",
+      "metin": "h(x) = x − 2 fonksiyonunun tersi hangisidir?",
       "secenekler": [
-        "p(7)=p(9)=7 olduğundan ters ilişkide aynı girdi 7 için iki farklı çıktı bulunur.",
-        "Fonksiyonun tanım kümesi R olduğundan hiçbir ters ilişki kurulamaz.",
-        "Ters ilişki ancak doğrusal fonksiyonlarda elde edilir.",
-        "p fonksiyonunun görüntü kümesi R olduğundan ters ilişki fonksiyon olmaz."
+        "h⁻¹(x) = x − 2",
+        "h⁻¹(x) = 2x",
+        "h⁻¹(x) = −x − 2",
+        "h⁻¹(x) = x + 2"
       ],
-      "dogru_index": 0,
-      "cozum": "p(7)=−3(−1)²+10=7 ve p(9)=−3(1)²+10=7’dir. Farklı iki girdi aynı çıktıyı verdiğinden ters ilişkide 7 girdisine hem 7 hem 9 karşılık gelir; bu ilişki fonksiyon değildir.",
+      "dogru_index": 3,
+      "cozum": "y = x − 2 → x = y + 2 → h⁻¹(x) = x + 2 (s.266).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir fonksiyonun tersinin de fonksiyon olabilmesi için hangi iki özelliğe sahip olması gerekir?",
-        "back": "Bire bir ve örten olmalıdır."
+        "front": "x−2'nin tersi nedir?",
+        "back": "x+2"
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o06",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "f:[4,∞)→[3,∞), f(x)=(x−4)²+3 ise f⁻¹(12) kaçtır?",
+      "alt_beceri": "Verilen fonksiyonun tersini bulur.",
+      "metin": "f(x) = x fonksiyonunun tersi hangisidir?",
       "secenekler": [
-        "−1",
-        "7",
-        "12",
-        "4"
+        "−x",
+        "Kendisi",
+        "1/x",
+        "x²"
       ],
       "dogru_index": 1,
-      "cozum": "y=(x−4)²+3 ve x≥4 olduğundan tersinde x=4+√(y−3) seçilir. f⁻¹(12)=4+√9=7’dir.",
+      "cozum": "f(x) = x fonksiyonu kendi tersidir (s.266).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=x² fonksiyonu [0,∞) ile sınırlandırıldığında tersinin fonksiyon olmasını hangi özellik sağlar?",
-        "back": "Negatif girdiler çıkarıldığı için f bire bir olur; her x≥0 değeri için ters kural f⁻¹(x)=√x olur."
+        "front": "f(x)=x'in tersi nedir?",
+        "back": "Kendisi."
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o07",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "g(x)=√(x−3)+2, x≥3 ise g⁻¹(5) kaçtır?",
+      "alt_beceri": "Verilen fonksiyonun tersini bulur.",
+      "metin": "f(x) = 2x + 3 fonksiyonunun tersi hangisidir?",
       "secenekler": [
-        "5",
-        "10",
-        "12",
-        "√5"
+        "(x − 3)/2",
+        "2x − 3",
+        "(x + 3)/2",
+        "x/2 + 3"
       ],
-      "dogru_index": 2,
-      "cozum": "y=√(x−3)+2 için x=(y−2)²+3 olur. y=5 yazıldığında g⁻¹(5)=(5−2)²+3=12 bulunur.",
+      "dogru_index": 0,
+      "cozum": "y = 2x + 3 → x = (y − 3)/2 → f⁻¹(x) = (x − 3)/2 (s.266-270).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=√x fonksiyonunun tanım ve görüntü kümeleri [0,∞) iken ters fonksiyonunun kuralı nedir?",
-        "back": "f⁻¹(x)=x², x≥0"
+        "front": "2x+3'ün tersi nedir?",
+        "back": "(x−3)/2"
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o08",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "g:[6,∞)→[−9,∞), g(x)=(x−6)²−9 ise g⁻¹(7) kaçtır?",
+      "alt_beceri": "Verilen fonksiyonun tersini bulur.",
+      "metin": "f(2) = 7 ise f⁻¹(7) kaçtır?",
       "secenekler": [
-        "−10",
-        "2",
         "7",
-        "10"
+        "9",
+        "2",
+        "5"
       ],
-      "dogru_index": 3,
-      "cozum": "y=(x−6)²−9 ve x≥6 olduğundan g⁻¹(y)=6+√(y+9). Bu nedenle g⁻¹(7)=6+√16=10’dur.",
+      "dogru_index": 2,
+      "cozum": "Ters fonksiyonda girdi ile çıktı yer değiştirir: f⁻¹(7) = 2 (s.264-269).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "g(x)=(x−h)²+k, x≥h olacak biçimde tanımlanırsa g⁻¹(y) kuralı nedir?",
-        "back": "g⁻¹(y)=h+√(y−k), y≥k. x≥h koşulu nedeniyle pozitif karekök dalı seçilir."
+        "front": "f(2)=7 ise f⁻¹(7) kaçtır?",
+        "back": "2"
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o09",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "g(x)=5/(x−8)−3, x≠8 fonksiyonu için g⁻¹(2) kaçtır?",
+      "alt_beceri": "Verilen fonksiyonun tersini bulur.",
+      "metin": "f: [0, ∞) → [0, ∞), f(x) = x² fonksiyonunun tersi hangisidir?",
       "secenekler": [
-        "9",
-        "1/5",
-        "−8",
-        "2"
+        "x²",
+        "√x",
+        "1/x",
+        "−x²"
       ],
-      "dogru_index": 0,
-      "cozum": "g(x)=2 eşitliğinde 5/(x−8)−3=2, dolayısıyla 5/(x−8)=5 ve x−8=1 olur. Bu nedenle g⁻¹(2)=9’dur.",
+      "dogru_index": 1,
+      "cozum": "Tanım kümesi [0, ∞) ile sınırlandığında x² bire birdir ve tersi √x olur (s.270-278).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=1/x rasyonel referans fonksiyonunun tersi hangi fonksiyondur?",
-        "back": "f⁻¹(x)=1/x, x≠0"
+        "front": "x²'nin [0,∞) üzerindeki tersi nedir?",
+        "back": "√x"
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
     {
       "soru_id": "mat_10_u04_k05_o10",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "Bir algılayıcı ham okuma x değerini f(x)=3x+8 kuralıyla kalibre ediyor. Kalibre edilmiş değer 35 ise ham okuma kaçtır?",
+      "alt_beceri": "Verilen fonksiyonun tersini bulur.",
+      "metin": "f(x) = x³ fonksiyonunun tersi hangisidir?",
       "secenekler": [
-        "35",
-        "9",
-        "27",
-        "8"
-      ],
-      "dogru_index": 1,
-      "cozum": "3x+8=35 olduğundan 3x=27 ve x=9 bulunur. Kalibrasyon kuralının tersi, değerden önce 8 çıkarmak ve sonucu 3’e bölmektir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "f(x)=ax+b, a≠0 biçiminde verilen doğrusal fonksiyonun tersi nasıl yazılır?",
-        "back": "y=ax+b denkleminde değişkenler yer değiştirilip yeni y için çözülür: f⁻¹(x)=(x−b)/a."
-      },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
-    },
-    {
-      "soru_id": "mat_10_u04_k05_o11",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "g:(−∞,−5]→[3,∞), g(x)=(x+5)²+3 ise g⁻¹(12) kaçtır?",
-      "secenekler": [
-        "8",
-        "−2",
-        "−8",
-        "12"
-      ],
-      "dogru_index": 2,
-      "cozum": "(x+5)²+3=12 olduğunda x+5=±3 ve x=−2 veya x=−8 olur. Tanım kümesi x≤−5 olduğundan yalnızca −8 kabul edilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "g(x)=(x−h)²+k, x≤h olacak biçimde tanımlanırsa g⁻¹(y) kuralı nedir?",
-        "back": "g⁻¹(y)=h−√(y−k), y≥k. x≤h koşulu nedeniyle negatif karekök dalı seçilir."
-      },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
-    },
-    {
-      "soru_id": "mat_10_u04_k05_o12",
-      "alt_beceri": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
-      "metin": "Bir görüntü filtresi parlaklık değerini 7 birim azaltarak f(x)=x−7 biçiminde dönüştürüyor. Filtre uygulanmış değer 13 ise başlangıç parlaklığı kaçtır?",
-      "secenekler": [
-        "13",
-        "6",
-        "7",
-        "20"
+        "x²",
+        "1/x³",
+        "3x",
+        "∛x"
       ],
       "dogru_index": 3,
-      "cozum": "Ters işlemde 7 eklenir: başlangıç değeri 13+7=20’dir. 13 filtre sonrası, 20 ise filtre öncesi değerdir.",
+      "cozum": "y = x³ → x = ∛y olduğundan ters fonksiyon ∛x'tir (s.270-278).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(x)=x−c biçimindeki bir dönüşümün tersi nasıl bulunur?",
-        "back": "Çıkarma işlemi toplama ile geri alınır; f⁻¹(x)=x+c olur."
+        "front": "x³'ün tersi nedir?",
+        "back": "∛x"
       },
-      "kazanim": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,"
+      "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     }
   ],
   "flashcards": [
     {
       "id": "mat_10_u04_k05_o01:flashcard",
-      "front": "Bir fonksiyonun tersi, başlangıçtaki fonksiyonun uyguladığı işleme nasıl karşılık verir?",
-      "back": "Uygulanan işlemi tersine çevirir."
+      "front": "Ters fonksiyonun grafiği neye göre simetriktir?",
+      "back": "y = x doğrusuna göre."
     },
     {
       "id": "mat_10_u04_k05_o02:flashcard",
-      "front": "f(x)=5x−7 doğrusal fonksiyonu için ters fonksiyonun kuralını x cinsinden yaz.",
-      "back": "f⁻¹(x)=(x+7)/5."
+      "front": "Tersi fonksiyon olması için ne gerekir?",
+      "back": "Bire birlik."
     },
     {
       "id": "mat_10_u04_k05_o03:flashcard",
-      "front": "Bir fonksiyonun tersi ile kendi grafikleri arasındaki simetri ilişkisini tamamla.",
-      "back": "Ters fonksiyonun grafiği, y=x doğrusuna göre simetriğidir."
+      "front": "Tersin tanım kümesi neye eşittir?",
+      "back": "Fonksiyonun görüntü kümesine."
     },
     {
       "id": "mat_10_u04_k05_o04:flashcard",
-      "front": "f fonksiyonunun tanım kümesi ve görüntü kümesi A ve B ise f⁻¹ fonksiyonunun tanım ve görüntü kümeleri nasıl ilişkilidir?",
-      "back": "f⁻¹'in tanım kümesi B, görüntü kümesi A olur."
+      "front": "4x'in tersi nedir?",
+      "back": "x/4"
     },
     {
       "id": "mat_10_u04_k05_o05:flashcard",
-      "front": "Bir fonksiyonun tersinin de fonksiyon olabilmesi için hangi iki özelliğe sahip olması gerekir?",
-      "back": "Bire bir ve örten olmalıdır."
+      "front": "x−2'nin tersi nedir?",
+      "back": "x+2"
     },
     {
       "id": "mat_10_u04_k05_o06:flashcard",
-      "front": "f(x)=x² fonksiyonu [0,∞) ile sınırlandırıldığında tersinin fonksiyon olmasını hangi özellik sağlar?",
-      "back": "Negatif girdiler çıkarıldığı için f bire bir olur; her x≥0 değeri için ters kural f⁻¹(x)=√x olur."
+      "front": "f(x)=x'in tersi nedir?",
+      "back": "Kendisi."
     },
     {
       "id": "mat_10_u04_k05_o07:flashcard",
-      "front": "f(x)=√x fonksiyonunun tanım ve görüntü kümeleri [0,∞) iken ters fonksiyonunun kuralı nedir?",
-      "back": "f⁻¹(x)=x², x≥0"
+      "front": "2x+3'ün tersi nedir?",
+      "back": "(x−3)/2"
     },
     {
       "id": "mat_10_u04_k05_o08:flashcard",
-      "front": "g(x)=(x−h)²+k, x≥h olacak biçimde tanımlanırsa g⁻¹(y) kuralı nedir?",
-      "back": "g⁻¹(y)=h+√(y−k), y≥k. x≥h koşulu nedeniyle pozitif karekök dalı seçilir."
+      "front": "f(2)=7 ise f⁻¹(7) kaçtır?",
+      "back": "2"
     },
     {
       "id": "mat_10_u04_k05_o09:flashcard",
-      "front": "f(x)=1/x rasyonel referans fonksiyonunun tersi hangi fonksiyondur?",
-      "back": "f⁻¹(x)=1/x, x≠0"
+      "front": "x²'nin [0,∞) üzerindeki tersi nedir?",
+      "back": "√x"
     },
     {
       "id": "mat_10_u04_k05_o10:flashcard",
-      "front": "f(x)=ax+b, a≠0 biçiminde verilen doğrusal fonksiyonun tersi nasıl yazılır?",
-      "back": "y=ax+b denkleminde değişkenler yer değiştirilip yeni y için çözülür: f⁻¹(x)=(x−b)/a."
-    },
-    {
-      "id": "mat_10_u04_k05_o11:flashcard",
-      "front": "g(x)=(x−h)²+k, x≤h olacak biçimde tanımlanırsa g⁻¹(y) kuralı nedir?",
-      "back": "g⁻¹(y)=h−√(y−k), y≥k. x≤h koşulu nedeniyle negatif karekök dalı seçilir."
-    },
-    {
-      "id": "mat_10_u04_k05_o12:flashcard",
-      "front": "f(x)=x−c biçimindeki bir dönüşümün tersi nasıl bulunur?",
-      "back": "Çıkarma işlemi toplama ile geri alınır; f⁻¹(x)=x+c olur."
+      "front": "x³'ün tersi nedir?",
+      "back": "∛x"
     }
-  ],
-  "baslik": "4.5 Fonksiyonların Ters Fonksiyonları",
-  "topic_key": "Matematik > 4.5 Fonksiyonların Ters Fonksiyonları"
+  ]
 }
