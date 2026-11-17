@@ -121,6 +121,8 @@ const ASSETS = [
   "./content/soru_havuzlari/fizik_10_u04_k04.json",
   "./content/soru_havuzlari/fizik_10_u04_k05.json",
   "./content/soru_havuzlari/fizik_10_u04_k06.json",
+  "./content/soru_havuzlari/fizik_10_u02_k05.json",
+  "./content/soru_havuzlari/fizik_10_u04_k07.json",
   "./content/soru_havuzlari/kimya_10_u01_k01.json",
   "./content/soru_havuzlari/kimya_10_u01_k02.json",
   "./content/soru_havuzlari/kimya_10_u01_k03.json",

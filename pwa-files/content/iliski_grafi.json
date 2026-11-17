@@ -1140,6 +1140,20 @@
       "sinif": 10,
       "ders": "Tarih",
       "unite": "3. Ünite: Cihan Devleti Osmanlı"
+    },
+    {
+      "konu_id": "fizik_10_u02_k05",
+      "konu_adi": "İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      "sinif": 10,
+      "ders": "Fizik",
+      "unite": "2. Ünite: Enerji"
+    },
+    {
+      "konu_id": "fizik_10_u04_k07",
+      "konu_adi": "Depremle İlgili Bilimsel Model Oluşturabilme",
+      "sinif": 10,
+      "ders": "Fizik",
+      "unite": "4. Ünite: Dalgalar"
     }
   ],
   "kenarlar": [
@@ -2234,6 +2248,41 @@
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.9,
       "gerekce": "Düşey doğrultudaki serbest düşme hareketi bilinmeden iki boyutta sabit ivmeli hareketin düşey bileşeni çözümlenemez."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u02_k01",
+      "hedef_konu_id": "fizik_10_u02_k05",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Kuvvet-yer değiştirme grafiğinden iş kavramı anlaşılmadan iş-enerji-güç ilişkisi ve güç hesabı kurulamaz."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u02_k05",
+      "hedef_konu_id": "fizik_10_u02_k03",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "İş-enerji ilişkisi ve güç kavramı bilinmeden mekanik enerjinin korunumu ve enerji dönüşümleri çözümlenemez."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u02_k05",
+      "hedef_konu_id": "fizik_10_u02_k02",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "İş ve enerji ilişkisi kurulmadan enerji biçimleri arasındaki dönüşümler anlamlandırılamaz."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u02_k02",
+      "hedef_konu_id": "fizik_10_u02_k04",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Enerji biçimleri tanınmadan enerji kaynaklarının sınıflandırılması ve sürdürülebilirlik değerlendirmesi yapılamaz."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u04_k06",
+      "hedef_konu_id": "fizik_10_u04_k07",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Rezonans ve deprem kavramları (odak, merkez üssü, büyüklük, şiddet) bilinmeden sismograf ve sismik izolatör modelleri açıklanamaz."
     }
   ]
 }

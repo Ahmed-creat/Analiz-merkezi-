@@ -2,37 +2,25 @@
 
 Tarih: 2026-11-16 · Dal: `arena/4cc1805b-analiz-merkezi`
 Kural: her cümle ders kitabının kendi metnine ve sayfasına bağlıdır (NotebookLM kuralı).
-Kaynak metin: `kitap-kaynak` dalındaki `fizik.json` (353 sayfa, kitabın basılı sayfa numaraları).
+Kaynak metin: `kitap-kaynak` dalındaki `fizik.json` (353 sayfa; `s` = PDF sayfası = basılı sayfa + 1).
 
 ---
 
-## 1) Bu turda BİTEN iş — 1. Ünite (Kuvvet ve Hareket)
+## 0) Durum özeti
 
-Kitabın içindekiler (s.7-8) 1. üniteyi şöyle bölüyor:
+| Ölçü | Önce | Şimdi |
+|---|---|---|
+| 10. sınıf Fizik konusu (ağaç) | 21 | **25** |
+| Fizik havuzu (canlı) | 23 (5 kitap + 18 zip) | **25 — 25'i de kitap kaynaklı** |
+| Fizik sorusu | 230 | **250** |
+| Kitap künyesi olmayan fizik havuzu | 18 | **0** |
+| Arşive taşınan eski fizik havuzu | 3 | **25** |
 
-| Kitap başlığı | Basılı sayfa |
-|---|---|
-| 1.1. Sabit Hızlı Hareket | 16 |
-| 1.2. Bir Boyutta Sabit İvmeli Hareket | 33 |
-| A) İvme ve Hız Değişimi Arasındaki İlişki | 33 |
-| B) Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi | 43 |
-| 1.3. Serbest Düşme | 60 |
-| A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme | 60 |
-| B) Serbest Düşme Hareketi | 67 |
-| 1.4. İki Boyutta Sabit İvmeli Hareket | 78 |
+**Fizik bitti.** Kalan 8 derste aynı yöntem sırayla uygulanacak.
 
-Bu yapıya göre **müfredat ağacı alt konulara ayrıldı** (21 konu → 23 konu):
+---
 
-```
-1.1 Sabit Hızlı Hareket
-1.2.1 İvme ve Hız Değişimi Arasındaki İlişki
-1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi
-1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme
-1.3.2 Serbest Düşme Hareketi
-1.4 İki Boyutta Sabit İvmeli Hareket
-```
-
-### Sıfırdan yazılan 5 yeni havuz (50 soru)
+## 1) 1. tur — 1. Ünite (bitti, `d06e7b0`)
 
 | Havuz | Başlık | Kitap sayfası | Soru |
 |---|---|---|---|
@@ -42,104 +30,142 @@ Bu yapıya göre **müfredat ağacı alt konulara ayrıldı** (21 konu → 23 ko
 | `fizik_10_u01_k08` | 1.3.2 Serbest Düşme Hareketi | s.67-77 | 10 |
 | `fizik_10_u01_k09` | 1.4 İki Boyutta Sabit İvmeli Hareket | s.78-94 | 10 |
 
-Soruların dayandığı kitap içeriği (her soru `cozum` alanında sayfa veriyor):
-
-- **s.34-37:** hız değişimi `Δv = v₂ − v₁`, ivme `a = Δv/Δt`, metro örneği (4 m/s² → 6. s'de 24 m/s),
-  teslimat motosikleti tablosu (0-6-12-18-18-12 m/s → ivmeler 6,6,6,0,−6).
-- **s.40:** 1.9. soru (K, L, M, N araçları; L için son hız 10 + (−2)·3 = 4 m/s).
-- **s.49-52:** `v = v₀ + a·t`, `x = v₀·t + ½a·t²`, `Δx = (v+v₀)/2 · t`; koşucu örneği (12+36+60 = 108 m);
-  değerlendirme sorusu v₀ = 2 m/s, a = 4 m/s² → 5. s'de v = 22 m/s, x = 60 m.
-- **s.62-65:** yer çekimi ivmesi `g`, birimi m/s², yönü Dünya'nın merkezine, yeryüzüne yakın sabit;
-  havasız ortamda pinpon/tenis/demir bilye aynı anda düşer; ardışık eşit sürelerde yollar h, 3h, 5h;
-  Ay'da tüy ve çekiç deneyi.
-- **s.66, 70-72:** kuyu sorusu (2,3 s → ≈26,5 m, ≈23 m/s), Feryal'in topu (20 m → 2 s, 20 m/s),
-  Grafik 1.6 ve 1.8, tepe noktasında hız sıfır / ivme g.
-- **s.81-82, 87:** yatay atışta `h = ½gt²` (süre yüksekliğe bağlı), menzil `x = v₀·t`,
-  bileşenler `Aₓ = A·cosθ`, `A_y = A·sinθ`, `t_çıkış = v₀y/g`, `t_uçuş = 2v₀y/g`.
-
-### Arşive taşınan eski havuzlar (silinmedi)
-
-| Havuz | Neden |
-|---|---|
-| `fizik_10_u01_k02` (1.2 tek konu) | iki alt başlık tek havuzdaydı, yerine 1.2.1 + 1.2.2 yazıldı |
-| `fizik_10_u01_k03` (1.3 tek konu) | yerine 1.3.1 + 1.3.2 yazıldı |
-| `fizik_10_u01_k04` (1.4) | kitap sayfası künyesi yoktu, yerine s.78-94 havuzu yazıldı |
-
-Konum: `arsiv/soru_havuzlari/fizik/`.
-
-### Birlikte güncellenen yerler
-
-1. `konular.js` + `pwa-files/functions/konular.js` — ağaç blokları birebir aynı.
-2. `content/mufredat/konu_kayit_defteri.json` + `site/.../konu_kayit_defteri.json` — 21 → 23 fizik kaydı.
-3. `content/iliski_grafi.json` + `pwa-files/content/iliski_grafi.json` — 163 düğüm / 156 kenar;
-   alt konular arasına sıra bağı eklendi.
-4. `site/content/konu_esleme.json` (154 havuz), `site/content/mufredat/kazanim_konu_10.json`,
-   `site/okz-meb.js` (4 kazanım metni yeni konuya bağlandı), `site/konu-anahtar.js` (fizik kuralları).
-5. `site/content/soru_havuzlari/index.json` (303 havuz / 3321 soru), `sw.js` önbellek listesi,
-   `pwa-files/content/soru_havuzlari` kopyaları.
-6. `scripts/meb-kazanim-uret.js` içindeki `ELLE` tablosu 5 yeni kimliğe göre yenilendi
-   (yeniden üretim aynı sonucu versin).
-
-### Betikler
-
-```
-node docs/uretim/uretim/fizik-t01b.js              # 5 havuzu yazar
-node docs/uretim/uretim/fizik-konulari-guncelle.js # ağaç + defter + graf + PWA + sw.js
-node docs/uretim/uretim/fizik-veri-esle.js         # kazanım/konu indeksleri + üretici ELLE tablosu
-node scripts/havuz-index-uret.js --plan            # manşet
-```
+Arşive gidenler: `fizik_10_u01_k02`, `_k03`, `_k04`.
 
 ---
 
-## 2) Kanıt (bu turda çalıştırıldı)
+## 2) 2. tur — 1.1 ve 2-4. üniteler (bu tur)
 
-| Kapı | Komut | Sonuç |
-|---|---|---|
-| Havuz yapısı | `npm run -s test:pools` | 303 havuz / 3321 soru — geçti |
-| Müfredat | `npm run -s test:curriculum` | geçti |
-| BKT + panel | `npm run -s test:bkt` | panel 11/11 |
-| Konu bulma | `npm run -s test:konubulma` | 76/76 (ağaç 191 konu) |
-| Davranış paketi | `npm run -s test:davranis` | geçti |
-| Okulizyon/kazanım | `npm run -s test:meb`, `test:ders` | 86/86 · 45/45 |
-| Üretim planı | `npm run -s test:uretim` | 67/67 (158 çıktı) |
-| TYMM çapraz | `npm run -s test:tymm` | 66/66 |
-| Tüm paket | `npm run -s test:hepsi` | çıkış kodu 0 |
-| Kimlik denetimi | `node scripts/validate-ids.js` | fizik 1-4. ünite havuzlarının hepsi defterde |
-| Kaynak denetimi | `node docs/uretim/araclar/kaynak-denetle.js docs/uretim/.kitap-metin` | Fizik: kitap 27 · zip 18 · ağaçta havuzsuz konu 0 |
+### 2.1 Havuzlar (20 havuz, 200 soru — hepsi kitaptan)
 
-Kaynak denetiminin toplam görünümü (tüm dersler): **303 havuz** = kitap 180 · zip 121 · pdf 2.
-Ağaç: 191 konu, havuzsuz konu yalnız 1 (TDE "Paragraf").
-
-Bilinen, bu turda dokunulmayan kalem: `validate-ids` çıktısında `fiz_10_t*`, `mat_10_t0[5-7]*`,
-`tar_10_t*` gibi **plan serisi** havuzlar kayıt defterinde yok (149 satır, önceden de vardı).
-
----
-
-## 3) Fizikte ÜRETİLMEDİ listesi (18 havuz — sıradaki iş)
-
-Bunlar hâlâ hazır paketten (`10. Sınıf fizik json.zip`) geliyor; kitaptan yeniden yazılacak.
-Arşive ancak yerine kitap kaynaklı havuz yazıldıktan sonra taşınır.
-
-| # | Havuz | Başlık | Kitapta sayfa |
+| Havuz | Başlık | Kitap sayfası | Soru |
 |---|---|---|---|
-| 1 | `fizik_10_u01_k01` | 1.1 Sabit Hızlı Hareket | 16-32 |
-| 2 | `fizik_10_u02_k01` | 2.1 İş, Enerji ve Güç → **2.1.1 + 2.1.2** | 110 / 127 |
-| 3 | `fizik_10_u02_k02` | 2.2 Enerji Biçimleri | 143-153 |
-| 4 | `fizik_10_u02_k03` | 2.3 Mekanik Enerji | 154-170 |
-| 5 | `fizik_10_u02_k04` | 2.4 Enerji Kaynakları | 171-186 |
-| 6 | `fizik_10_u03_k01` | 3.1 Basit Elektrik Devreleri | 200-208 |
-| 7 | `fizik_10_u03_k02` | 3.2 Elektrik Akımı | 209-214 |
-| 8 | `fizik_10_u03_k03` | 3.3 Ohm Yasası | 215-222 |
-| 9 | `fizik_10_u03_k04` | 3.4 Dirençlerin Bağlanması | 223-241 |
-| 10 | `fizik_10_u03_k05` | 3.5 Üreteçlerin Bağlanması | 242-249 |
-| 11 | `fizik_10_u03_k06` | 3.6 Elektrik Akımının Tehlikeleri | 250-253 |
-| 12 | `fizik_10_u03_k07` | 3.7 Topraklamanın Önemi | 254-258 |
-| 13 | `fizik_10_u04_k01` | 4.1 Dalgaların Temel Kavramları | 274-282 |
-| 14 | `fizik_10_u04_k02` | 4.2 Dalgaların Sınıflandırılması | 283-290 |
-| 15 | `fizik_10_u04_k03` | 4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler | 291-299 |
-| 16 | `fizik_10_u04_k04` | 4.4 Periyodik Hareketler | 300-308 |
-| 17 | `fizik_10_u04_k05` | 4.5 Su Dalgalarında Yansıma ve Kırılma | 309-322 |
-| 18 | `fizik_10_u04_k06` | 4.6 Rezonans ve Deprem → **4.6.1 + 4.6.2** | 323 / 332 |
+| `fizik_10_u01_k01` | 1.1 Sabit Hızlı Hareket | s.16-32 | 10 |
+| `fizik_10_u02_k01` | 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması | s.110-126 | 10 |
+| `fizik_10_u02_k05` | 2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki | s.127-142 | 10 |
+| `fizik_10_u02_k02` | 2.2 Enerji Biçimleri | s.143-153 | 10 |
+| `fizik_10_u02_k03` | 2.3 Mekanik Enerji | s.154-170 | 10 |
+| `fizik_10_u02_k04` | 2.4 Enerji Kaynakları | s.171-186 | 10 |
+| `fizik_10_u03_k01` | 3.1 Basit Elektrik Devreleri | s.200-208 | 10 |
+| `fizik_10_u03_k02` | 3.2 Elektrik Akımı | s.209-214 | 10 |
+| `fizik_10_u03_k03` | 3.3 Ohm Yasası | s.215-222 | 10 |
+| `fizik_10_u03_k04` | 3.4 Dirençlerin Bağlanması | s.223-241 | 10 |
+| `fizik_10_u03_k05` | 3.5 Üreteçlerin Bağlanması | s.242-249 | 10 |
+| `fizik_10_u03_k06` | 3.6 Akımın Tehlikeleri ve Önlemler | s.250-253 | 10 |
+| `fizik_10_u03_k07` | 3.7 Topraklamanın Önemi | s.254-258 | 10 |
+| `fizik_10_u04_k01` | 4.1 Dalgaların Temel Kavramları | s.274-282 | 10 |
+| `fizik_10_u04_k02` | 4.2 Dalgaların Sınıflandırılması | s.283-290 | 10 |
+| `fizik_10_u04_k03` | 4.3 Yayılma Süratini Etkileyen Etmenler | s.291-299 | 10 |
+| `fizik_10_u04_k04` | 4.4 Periyodik Hareketler | s.300-308 | 10 |
+| `fizik_10_u04_k05` | 4.5 Su Dalgalarında Yansıma ve Kırılma | s.309-322 | 10 |
+| `fizik_10_u04_k06` | 4.6.1 Rezonans ve Depremle İlgili Kavramlar | s.323-331 | 10 |
+| `fizik_10_u04_k07` | 4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme | s.332-338 | 10 |
 
-Sıradaki adım: 1.1 + 2. ünite (1.1, 2.1.1, 2.1.2, 2.2, 2.3, 2.4 = 6 havuz, 60 soru),
-sonra 3. ünite (7 havuz), sonra 4. ünite (7 havuz). Her ünitede aynı üç betik sırayla çalıştırılır.
+Paket dosyaları (silinmedi, `arsiv/soru_havuzlari/fizik/` altında):
+`eski-fizik_10_u01_k01`, `eski-fizik_10_u02_k01..k04`, `eski-fizik_10_u03_k01..k07`,
+`eski-fizik_10_u04_k01..k06` (18 dosya) + 1. turun 3 dosyası + eski `fiz_10_t01_c01`
+… `fiz_10_t04_c07` (22 dosya, eski "zip" kimlik şeması). Toplam **43 arşiv dosyası**.
+
+### 2.2 Ağaç (25 konu — kitabın içindekiler düzeyi)
+
+```
+1.1 Sabit Hızlı Hareket
+1.2.1 İvme ve Hız Değişimi Arasındaki İlişki
+1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi
+1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme
+1.3.2 Serbest Düşme Hareketi
+1.4 İki Boyutta Sabit İvmeli Hareket
+2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması
+2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki
+2.2 Enerji Biçimleri
+2.3 Mekanik Enerji
+2.4 Enerji Kaynakları
+3.1 Basit Elektrik Devreleri
+3.2 Elektrik Akımı
+3.3 Ohm Yasası
+3.4 Dirençlerin Bağlanması
+3.5 Üreteçlerin Bağlanması
+3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler
+3.7 Topraklamanın Önemi
+4.1 Dalgaların Temel Kavramları
+4.2 Dalgaların Sınıflandırılması
+4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler
+4.4 Periyodik Hareketler
+4.5 Su Dalgalarında Yansıma ve Kırılma
+4.6.1 Rezonans ve Depremle İlgili Kavramlar
+4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme
+```
+
+Alt konuya ayrılan iki başlık: **2.1** (A: s.110-126, B: s.127-142) ve **4.6** (A: s.323-331, B: s.332-338).
+
+### 2.3 Soruların dayandığı kitap sayfaları (örnek künyeler)
+
+| Soru | Dayandığı sayfa |
+|---|---|
+| 1.1 · 12 m / 4 s bant sorusu | s.21 |
+| 1.1 · 480 m, 5 ve 7 m/s karşılaşma | s.29 (kitabın 1.4. sorusu) |
+| 2.1.1 · 20 N ve 3 m iş | s.116 |
+| 2.1.2 · 62,5 kW ruhsat | s.134 |
+| 2.1.2 · 5 ton / 3 m / 20 s → 7,5 kW | s.135 (kitabın 2.4. sorusu) |
+| 2.2 · 300-700 nm görünür ışık | s.147 |
+| 2.3 · 4 kg, 5 m → v = 10 m/s | s.168 |
+| 2.4 · 1 kg uranyum 50.000 kWh | s.174 |
+| 3.2 · 2 s'de 10·10¹⁹ elektron → 8 A | s.213 |
+| 3.4 · 3-4-5 Ω seri, 6 A → 72 V | s.232 (kitabın 3.6. sorusu) |
+| 3.4 · 12 V paralel kollar → 2 A + 4 A | s.235 |
+| 3.5 · 10+15+20 = 45 V | s.245 |
+| 3.7 · 220 V / 2000 Ω → 0,11 A | s.256 |
+| 4.1 · 340 m/s ve 440 Hz → 0,77 m | s.281 |
+| 4.3 · 4 cm ve 6 cm leğen sorusu | s.315 (kitabın 4.15. sorusu) |
+| 4.4 · 10 cm → 0,6 s, 40 cm → 1,2 s | s.306 |
+| 4.5 · yankı için en az 17 m | s.316 |
+| 4.6.1 · Mercalli I-XII | s.327 |
+| 4.6.2 · sismograf = yay + ağırlıklı çubuk + kalem | s.332 |
+
+---
+
+## 3) Bu turda düzeltilen iki hata (kanıt)
+
+1. **Ağaç güncelleyici yanlış blok yazdı.** `konular.js` içinde 9. ve 10. sınıf için iki
+   `"Fizik": [` bloğu var; betik ilkini (9. sınıf) değiştirdi. Düzeltildi: 9. sınıf
+   20 konu, 10. sınıf 25 konu. Kanıt: `node -e` çıktısı — `9. sınıf fizik: 20 · 1.1 Fizik Bilimi`,
+   `10. sınıf fizik: 25 · 2.1.1 …`. Betik artık yalnız `"10": {` sonrasındaki bloğu hedefliyor.
+2. **Eski `fiz_10_t*` havuzları (22 dosya) hâlâ canlıydı.** Kimlik defterinde karşılıkları
+   yoktu (`validate-ids`: “havuz konu_id defterde yok: fiz_10_t02_c01 …”). Arşive taşındı,
+   PWA kopyaları ve `sw.js` listesi temizlendi, indeks 305 → 283 havuz oldu.
+
+---
+
+## 4) Kapılar — bu turun çalıştırılmış çıktıları
+
+| Kapı | Sonuç |
+|---|---|
+| `npm run test:pools` | question-pools: 283 havuz / 3119 soru kontrolü başarılı |
+| `npm run test:curriculum` | curriculum: 10. sınıf TDE ve Felsefe kontrolleri başarılı |
+| `npm run test:bkt` | Öğrenme Durumu paneli 11/11 ✓ |
+| `npm run test:konubulma` | Konu bulma / kısa kontrol / video — 76/76 ✓ |
+| `npm run test:meb` | TÜM TESTLER GEÇTİ (86/86) |
+| `npm run test:ders` | Okulizyon konu eşleme — 91/91 ✓ |
+| `npm run test:uretim` | geçti |
+| `npm run test:tymm` | geçti |
+| `npm run test:davranis` | Şekil tutarlılık 360/360 · tüm davranış testleri ✓ |
+| `npm run test:hepsi` | **TÜM TESTLER GEÇTİ**, çıkış kodu 0 |
+| `node docs/uretim/araclar/kaynak-denetle.js …` | **HATALAR (0)** · Fizik 25/25 “kitap” |
+| `npm run validate:pools` | tüm havuzlar geçerli |
+| `node scripts/havuz-index-uret.js` | havuz 283 · soru 3119 · flashcard 3119 |
+
+`validate:ids` çıktısı: fizik uyarısı **0** (25 havuzun 25'i defterde). Kalan 149 uyarı
+başka derslerin `t*_c*` kimliklerine ait; bu turun kapsamı dışında ve bir sonraki
+ders turlarında aynı yöntemle kapatılacak.
+
+---
+
+## 5) Sırada ne var
+
+1. **Matematik** (21 konu, 10 havuzu zip kaynaklı) → kitaptan yeniden yazım.
+2. **Kimya** (14 konu) → aynı yöntem.
+3. Biyoloji + Coğrafya + Tarih → Din → Felsefe → TDE.
+4. Tüm ağaç/kayıt defteri/arşiv/kapılar/rapor turu.
+
+Her derste aynı üç betik kullanılacak: `xxx-tNN.js` (havuz yazıcı), `xxx-tur2-guncelle.js`
+(ağaç + kayıt defteri + graf + PWA + `sw.js`), `xxx-tur2-veri-esle.js` (kazanım/konu indeksleri).

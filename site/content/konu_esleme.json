@@ -1,7 +1,7 @@
 {
  "surum": "2026-10-28",
  "aciklama": "Okulizyon kazanım metinlerini uygulamanın konu başlıklarına eşlemek için arama indeksi. scripts/konu-esleme-uret.js üretir; elle düzenlenmez.",
- "havuz_sayisi": 154,
+ "havuz_sayisi": 156,
  "alt_beceri_sayisi": 258,
  "havuzlar": [
   {
@@ -697,8 +697,8 @@
    "ders": "Fizik",
    "topic_key": "Fizik > 1.1 Sabit Hızlı Hareket",
    "konu": "1.1 Sabit Hızlı Hareket",
-   "soru": 12,
-   "metin": "1.1 Sabit Hızlı Hareket · 1.1 Sabit Hızlı Hareket · yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+   "soru": 10,
+   "metin": "1.1 Sabit Hızlı Hareket · 1.1 Sabit Hızlı Hareket"
   },
   {
    "konu_id": "fizik_10_u01_k05",
@@ -743,10 +743,10 @@
   {
    "konu_id": "fizik_10_u02_k01",
    "ders": "Fizik",
-   "topic_key": "Fizik > 2.1 İş, Enerji ve Güç",
-   "konu": "2.1 İş, Enerji ve Güç",
+   "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
    "soru": 10,
-   "metin": "2.1 İş, Enerji ve Güç · 2.1 İş, Enerji ve Güç · A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması · B) İş, Enerji ve Güç Kavramları Arasındaki İlişki · A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması · B) İş, Enerji ve Güç Kavramları Arasındaki İlişki"
+   "metin": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması · A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması · 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması"
   },
   {
    "konu_id": "fizik_10_u02_k02",
@@ -771,6 +771,14 @@
    "konu": "2.4 Enerji Kaynakları",
    "soru": 10,
    "metin": "2.4 Enerji Kaynakları · 2.4 Enerji Kaynakları · yenilenebilen ve yenilenemeyen enerji kaynaklarını karşılaştırabilmeniz"
+  },
+  {
+   "konu_id": "fizik_10_u02_k05",
+   "ders": "Fizik",
+   "topic_key": "Fizik > 2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+   "konu": "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+   "soru": 10,
+   "metin": "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki · B) İş, Enerji ve Güç Kavramları Arasındaki İlişki · 2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki"
   },
   {
    "konu_id": "fizik_10_u03_k01",
@@ -871,10 +879,18 @@
   {
    "konu_id": "fizik_10_u04_k06",
    "ders": "Fizik",
-   "topic_key": "Fizik > 4.6 Rezonans ve Deprem",
-   "konu": "4.6 Rezonans ve Deprem",
+   "topic_key": "Fizik > 4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+   "konu": "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
    "soru": 10,
-   "metin": "4.6 Rezonans ve Deprem · 4.6 Rezonans ve Deprem · A) Rezonans ve Depremle İlgili Kavramlar · B) Depremle İlgili Bilimsel Model Oluşturabilme · A) Rezonans ve Depremle İlgili Kavramlar · B) Depremle İlgili Bilimsel Model Oluşturabilme"
+   "metin": "4.6.1 Rezonans ve Depremle İlgili Kavramlar · A) Rezonans ve Depremle İlgili Kavramlar · 4.6.1 Rezonans ve Depremle İlgili Kavramlar"
+  },
+  {
+   "konu_id": "fizik_10_u04_k07",
+   "ders": "Fizik",
+   "topic_key": "Fizik > 4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+   "konu": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+   "soru": 10,
+   "metin": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme · B) Depremle İlgili Bilimsel Model Oluşturabilme · 4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme"
   },
   {
    "konu_id": "kimya_10_u01_k01",

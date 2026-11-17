@@ -206,7 +206,8 @@ const KONULAR = {
    "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
    "1.3.2 Serbest Düşme Hareketi",
    "1.4 İki Boyutta Sabit İvmeli Hareket",
-   "2.1 İş, Enerji ve Güç",
+   "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
    "2.2 Enerji Biçimleri",
    "2.3 Mekanik Enerji",
    "2.4 Enerji Kaynakları",
@@ -222,7 +223,8 @@ const KONULAR = {
    "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
    "4.4 Periyodik Hareketler",
    "4.5 Su Dalgalarında Yansıma ve Kırılma",
-   "4.6 Rezonans ve Deprem"
+   "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+   "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme"
   ],
   "Din Kültürü": [
    "1.1.1 İslam'da Bilginin Yeri",

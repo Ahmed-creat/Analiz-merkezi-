@@ -11,8 +11,8 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 154,
-  "eslesen_konu": 110,
+  "konu": 156,
+  "eslesen_konu": 112,
   "oneri_konu": 0,
   "eslesmeyen_konu": 50,
   "metin": 113,
@@ -64,7 +64,7 @@
     "metin_kodlu": 0
    },
    "Fizik": {
-    "konu": 23,
+    "konu": 25,
     "cikti": 22,
     "kesin": 9,
     "yapisal": 11,
@@ -1670,18 +1670,17 @@
   {
    "konu_id": "fizik_10_u02_k01",
    "ders": "Fizik",
-   "konu": "2.1 İş, Enerji ve Güç",
+   "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
    "tema": 2,
    "kodlar": [
-    "FİZ.10.2.1",
-    "FİZ.10.2.2"
+    "FİZ.10.2.1"
    ],
-   "guven": "yapisal",
+   "guven": "kesin",
    "yontem": "elle-dogrulama",
    "skor": 0,
    "uyari": "",
-   "gerekce": "Konu iş-enerji-güç bütününü kapsıyor; 2026'da iş grafiği (10.2.1) ve iş-enerji-güç çıkarımı (10.2.2) ayrı çıktı.",
-   "kazanim_metinleri": 3,
+   "gerekce": "Kitabın 2.1-A alt başlığı iş kavramını F-x grafiği üzerinden kurar; 2026 programındaki iş çıktısı FİZ.10.2.1'dir.",
+   "kazanim_metinleri": 0,
    "metin_kodlari": []
   },
   {
@@ -1743,6 +1742,22 @@
      "skor": 1
     }
    ]
+  },
+  {
+   "konu_id": "fizik_10_u02_k05",
+   "ders": "Fizik",
+   "konu": "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+   "tema": 2,
+   "kodlar": [
+    "FİZ.10.2.2"
+   ],
+   "guven": "kesin",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Kitabın 2.1-B alt başlığı iş-enerji-güç ilişkisini ve güç hesabını kurar; karşılığı FİZ.10.2.2'dir.",
+   "kazanim_metinleri": 0,
+   "metin_kodlari": []
   },
   {
    "konu_id": "fizik_10_u03_k01",
@@ -1975,24 +1990,34 @@
   {
    "konu_id": "fizik_10_u04_k06",
    "ders": "Fizik",
-   "konu": "4.6 Rezonans ve Deprem",
+   "konu": "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
    "tema": 4,
    "kodlar": [
     "FİZ.10.4.6"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 1,
-   "metin_kodlari": [
-    {
-     "metin": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz",
-     "kod": "FİZ.10.4.6",
-     "skor": 1
-    }
-   ]
+   "gerekce": "Kitabın 4.6-A alt başlığı rezonans ile depremin odak/merkez üssü/büyüklük/şiddet kavramlarını verir; FİZ.10.4.6 kapsamındadır.",
+   "kazanim_metinleri": 0,
+   "metin_kodlari": []
+  },
+  {
+   "konu_id": "fizik_10_u04_k07",
+   "ders": "Fizik",
+   "konu": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+   "tema": 4,
+   "kodlar": [
+    "FİZ.10.4.6"
+   ],
+   "guven": "kesin",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Sismograf ve sismik izolatör modelleri aynı çıktının (FİZ.10.4.6) model oluşturma boyutudur.",
+   "kazanim_metinleri": 0,
+   "metin_kodlari": []
   },
   {
    "konu_id": "kimya_10_u01_k01",
@@ -3513,11 +3538,10 @@
    "metin": "yapılan işin büyüklüğünü hesaplayabilmeniz,",
    "norm": "yapilan isin buyuklugunu hesapla",
    "konu_id": "fizik_10_u02_k01",
-   "konu": "2.1 İş, Enerji ve Güç",
-   "topic_key": "Fizik > 2.1 İş, Enerji ve Güç",
+   "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
    "kodlar": [
-    "FİZ.10.2.1",
-    "FİZ.10.2.2"
+    "FİZ.10.2.1"
    ],
    "kod_guven": "yapisal",
    "konu_guven": "kesin"
@@ -3527,11 +3551,10 @@
    "metin": "iş, enerji ve güç arasındaki ilişkiye yönelik çıkarım yapabilmeniz,",
    "norm": "is enerji ve guc arasindaki iliskiye yonelik cikarim yap",
    "konu_id": "fizik_10_u02_k01",
-   "konu": "2.1 İş, Enerji ve Güç",
-   "topic_key": "Fizik > 2.1 İş, Enerji ve Güç",
+   "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
    "kodlar": [
-    "FİZ.10.2.1",
-    "FİZ.10.2.2"
+    "FİZ.10.2.1"
    ],
    "kod_guven": "yapisal",
    "konu_guven": "kesin"
@@ -3541,11 +3564,10 @@
    "metin": "güç hesapları yapabilmeniz,",
    "norm": "guc hesaplari yap",
    "konu_id": "fizik_10_u02_k01",
-   "konu": "2.1 İş, Enerji ve Güç",
-   "topic_key": "Fizik > 2.1 İş, Enerji ve Güç",
+   "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
    "kodlar": [
-    "FİZ.10.2.1",
-    "FİZ.10.2.2"
+    "FİZ.10.2.1"
    ],
    "kod_guven": "yapisal",
    "konu_guven": "kesin"
@@ -3754,12 +3776,12 @@
    "metin": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz",
    "norm": "rezonans ve depreme iliskin kavramlar uzerinden depremi sorgula",
    "konu_id": "fizik_10_u04_k06",
-   "konu": "4.6 Rezonans ve Deprem",
-   "topic_key": "Fizik > 4.6 Rezonans ve Deprem",
+   "konu": "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+   "topic_key": "Fizik > 4.6.1 Rezonans ve Depremle İlgili Kavramlar",
    "kodlar": [
     "FİZ.10.4.6"
    ],
-   "kod_guven": "kesin",
+   "kod_guven": "yapisal",
    "konu_guven": "kesin"
   },
   {

@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u02_k03",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u02_k03_o01",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "Bir laboratuvar raporunda hareketli bir test platformunun kinetik enerjisi 260 J, yer çekimi potansiyel enerjisi 740 J olarak verilmiştir. Platformun mekanik enerjisi kaç J’dür?",
+      "secenekler": [
+        "1 000 J",
+        "480 J",
+        "740 J",
+        "260 J"
+      ],
+      "dogru_index": 0,
+      "cozum": "Mekanik enerji kinetik ve potansiyel enerjilerin toplamıdır: Eₘ=260+740=1 000 J.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir cismin mekanik enerjisini kinetik ve potansiyel enerjileriyle nasıl ifade edersin?",
+        "back": "Eₘ = Eₖ + Eₚ."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o02",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "3 kg kütleli bir cisim g = 10 m/s² ortamında referans düzeyinden 4 m yukarıdadır. Yer çekimi potansiyel enerjisi kaç J’dür?",
+      "secenekler": [
+        "60 J",
+        "120 J",
+        "30 J",
+        "300 J"
+      ],
+      "dogru_index": 1,
+      "cozum": "Eₚ = mgh = 3 × 10 × 4 = 120 J olur. Kütle, yer çekimi ivmesi ve yüksekliğin üçü de çarpıma katılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir cismin yer çekimi potansiyel enerjisini hesaplarken hangi değişkenleri formülde nasıl birleştirirsin?",
+        "back": "Eₚ = m·g·h; kütle, yer çekimi ivmesi ve seçilen referansa göre yüksekliğe bağlıdır."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o03",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "2 kg kütleli bir ölçüm aygıtı, yerden 0,5 m yükseklikteki bir platformdan 4,5 m yükseklikteki standa spiral bir kızakla çıkarılıyor. g=10 m/s² ise aygıtın yer çekimi potansiyel enerjisi ne kadar artar?",
+      "secenekler": [
+        "40 J",
+        "160 J",
+        "80 J",
+        "100 J"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yükseklik farkı 4,5−0,5=4 m’dir. ΔEₚ=mgΔh=2×10×4=80 J olur; spiral yolun biçimi enerji değişimini etkilemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yer çekimi potansiyel enerjisi değişimi hangi niceliklere bağlıdır ve izlenen yolun biçiminden etkilenir mi?",
+        "back": "ΔEₚ=m·g·Δh; değişim kütleye, yer çekimi ivmesine ve düşey yükseklik farkına bağlıdır, izlenen yolun biçimine bağlı değildir."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o04",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "Bir bungee kordonu sıçrama öncesinde gerilip uzatıldığında kordonun enerji durumunda hangi değişiklik olur?",
+      "secenekler": [
+        "Kinetik enerjisi kesinlikle sıfırlanır.",
+        "Yalnızca yer çekimi potansiyel enerjisi kaybolur.",
+        "Nükleer enerji açığa çıkar.",
+        "Kordonda esneklik potansiyel enerjisi depolanır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Esnek bir kordon denge konumundan uzatıldığında esneklik potansiyel enerjisi depolar. Serbest bırakıldığında bu enerji hareket oluşturabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Esnek bir cisim denge konumundan uzaklaştırıldığında hangi enerji depolanır?",
+        "back": "Esneklik potansiyel enerjisi depolanır; cisim serbest bırakıldığında bu enerji iş yapabilir."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o05",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "2 kg kütleli cisim 3 m/s hızla hareket ediyor. Kinetik enerjisi kaç J'dür?",
+      "secenekler": [
+        "9",
+        "6",
+        "18",
+        "3"
+      ],
+      "dogru_index": 0,
+      "cozum": "Eₖ = ½·2·3² = 9 J olur. Hızı karesiz kullanmak 6 J sonucunu verir; formülde hızın karesi vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Öteleme hareketi yapan cismin kinetik enerjisini nasıl hesaplarsın?",
+        "back": "Eₖ = ½·m·v²; kütle ve hız büyüklüğünün karesi kullanılır."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o06",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "Bir cismin sürati ilk değerinin üç katına çıkarılıyor. Kütlesi değişmediğine göre kinetik enerjisi ilk değerinin kaç katı olur?",
+      "secenekler": [
+        "3 katı",
+        "9 katı",
+        "6 katı",
+        "12 katı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kütle sabitken kinetik enerji süratin karesiyle orantılıdır. Sürat üç katına çıktığında kinetik enerji 3²=9 katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kinetik enerji cismin süratiyle nasıl ilişkilidir?",
+        "back": "Kütle sabitken kinetik enerji süratin karesiyle orantılıdır: Eₖ=½mv²."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o07",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "Sürtünmenin olmadığı bir düzende cisim alçaldıkça kinetik, yer çekimi potansiyel ve toplam mekanik enerjileri nasıl değişir?",
+      "secenekler": [
+        "İkisi de azalır; toplam mekanik enerji artar.",
+        "Kinetik enerji azalır, potansiyel enerji artar.",
+        "Kinetik enerji artar, potansiyel enerji azalır; toplam mekanik enerji korunur.",
+        "İkisi de artar; toplam mekanik enerji değişir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Cisim alçalırken yer çekimi potansiyel enerjisi azalır ve kinetik enerji artar. Sürtünme olmadığından bu dönüşüm sırasında toplam mekanik enerji korunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sürtünmesiz bir sistemde kinetik ve potansiyel enerjiler nasıl değişirken mekanik enerjiye ne olur?",
+        "back": "Kinetik ve potansiyel enerji birbirine dönüşür; toplam mekanik enerji korunur."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o08",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "Sürtünmeli bir ortamda hareket eden cisim yavaşlayıp durduğunda mekanik enerjisinin bir bölümü en çok hangi enerji biçimine dönüşür?",
+      "secenekler": [
+        "Nükleer enerjiye",
+        "Kimyasal enerjiye",
+        "Işık enerjisine",
+        "Isı enerjisine"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sürtünme, hareketle ilişkili mekanik enerjinin bir bölümünü ısı enerjisine dönüştürür. Enerji yok olmaz; biçim değiştirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sürtünmeli hareket sırasında mekanik enerjinin bir bölümü çoğunlukla hangi enerji biçimine dönüşür?",
+        "back": "Isı enerjisine dönüşür. Enerji korunur; ancak mekanik enerji azalabilir."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o09",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "Cisim üzerinde net 20 J iş yapılıyor. İş-kinetik enerji teoremine göre cismin kinetik enerjisi nasıl değişir?",
+      "secenekler": [
+        "20 J artar.",
+        "20 J azalır.",
+        "Değişmez.",
+        "20 W olur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Net iş kinetik enerji değişimine eşittir; pozitif 20 J net iş kinetik enerjiyi 20 J artırır. Watt güç birimidir, enerji değişimi birimi jouledür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Net iş ile kinetik enerji değişimi arasındaki teorem nasıl yazılır?",
+        "back": "Wnet = ΔEₖ = Eₖ,son − Eₖ,ilk."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u02_k03_o10",
+      "alt_beceri": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "metin": "Sürtünmesiz ortamda cisim 20 m yükseklikten bırakılıyor. g = 10 m/s² ise yere çarpma hızı kaç m/s olur?",
+      "secenekler": [
+        "10 m/s",
+        "20 m/s",
+        "25 m/s",
+        "50 m/s"
+      ],
+      "dogru_index": 1,
+      "cozum": "Mekanik enerji korunur: mgh = ½mv². v² = 2 × 10 × 20 = 400 olduğundan yere çarpma hızı 20 m/s’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hava direnci ve sürtünme ihmal edilerek durgun bırakılan cisim için yükseklikten çarpma süratini bulmada enerji korunumu nasıl kullanılır?",
+        "back": "mgh=½mv² eşitliği kurulur; buradan v=√(2gh) elde edilir."
+      },
+      "kazanim": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u02_k03_o01:flashcard",
+      "front": "Bir cismin mekanik enerjisini kinetik ve potansiyel enerjileriyle nasıl ifade edersin?",
+      "back": "Eₘ = Eₖ + Eₚ."
+    },
+    {
+      "id": "fizik_10_u02_k03_o02:flashcard",
+      "front": "Bir cismin yer çekimi potansiyel enerjisini hesaplarken hangi değişkenleri formülde nasıl birleştirirsin?",
+      "back": "Eₚ = m·g·h; kütle, yer çekimi ivmesi ve seçilen referansa göre yüksekliğe bağlıdır."
+    },
+    {
+      "id": "fizik_10_u02_k03_o03:flashcard",
+      "front": "Yer çekimi potansiyel enerjisi değişimi hangi niceliklere bağlıdır ve izlenen yolun biçiminden etkilenir mi?",
+      "back": "ΔEₚ=m·g·Δh; değişim kütleye, yer çekimi ivmesine ve düşey yükseklik farkına bağlıdır, izlenen yolun biçimine bağlı değildir."
+    },
+    {
+      "id": "fizik_10_u02_k03_o04:flashcard",
+      "front": "Esnek bir cisim denge konumundan uzaklaştırıldığında hangi enerji depolanır?",
+      "back": "Esneklik potansiyel enerjisi depolanır; cisim serbest bırakıldığında bu enerji iş yapabilir."
+    },
+    {
+      "id": "fizik_10_u02_k03_o05:flashcard",
+      "front": "Öteleme hareketi yapan cismin kinetik enerjisini nasıl hesaplarsın?",
+      "back": "Eₖ = ½·m·v²; kütle ve hız büyüklüğünün karesi kullanılır."
+    },
+    {
+      "id": "fizik_10_u02_k03_o06:flashcard",
+      "front": "Kinetik enerji cismin süratiyle nasıl ilişkilidir?",
+      "back": "Kütle sabitken kinetik enerji süratin karesiyle orantılıdır: Eₖ=½mv²."
+    },
+    {
+      "id": "fizik_10_u02_k03_o07:flashcard",
+      "front": "Sürtünmesiz bir sistemde kinetik ve potansiyel enerjiler nasıl değişirken mekanik enerjiye ne olur?",
+      "back": "Kinetik ve potansiyel enerji birbirine dönüşür; toplam mekanik enerji korunur."
+    },
+    {
+      "id": "fizik_10_u02_k03_o08:flashcard",
+      "front": "Sürtünmeli hareket sırasında mekanik enerjinin bir bölümü çoğunlukla hangi enerji biçimine dönüşür?",
+      "back": "Isı enerjisine dönüşür. Enerji korunur; ancak mekanik enerji azalabilir."
+    },
+    {
+      "id": "fizik_10_u02_k03_o09:flashcard",
+      "front": "Net iş ile kinetik enerji değişimi arasındaki teorem nasıl yazılır?",
+      "back": "Wnet = ΔEₖ = Eₖ,son − Eₖ,ilk."
+    },
+    {
+      "id": "fizik_10_u02_k03_o10:flashcard",
+      "front": "Hava direnci ve sürtünme ihmal edilerek durgun bırakılan cisim için yükseklikten çarpma süratini bulmada enerji korunumu nasıl kullanılır?",
+      "back": "mgh=½mv² eşitliği kurulur; buradan v=√(2gh) elde edilir."
+    }
+  ],
+  "baslik": "2.3 Mekanik Enerji",
+  "topic_key": "Fizik > 2.3 Mekanik Enerji"
+}

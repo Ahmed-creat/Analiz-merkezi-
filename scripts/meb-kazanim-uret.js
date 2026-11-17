@@ -218,7 +218,10 @@ const ELLE = {
   fizik_10_u01_k07: { kodlar: [], gerekce: "Serbest düşme/yer çekimi ivmesi 2026 programında 11. sınıfa taşındı (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok." },
   fizik_10_u01_k08: { kodlar: [], gerekce: "Serbest düşmenin matematiksel modelleri 2026 programında 11. sınıfta (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok." },
   fizik_10_u01_k09: { kodlar: ["FİZ.10.1.3"], gerekce: "İki boyutta sabit ivmeli hareketin modelleri ve grafiksel dönüşümleri FİZ.10.1.3 çıktısına bağlandı." },
-  fizik_10_u02_k01: { kodlar: ["FİZ.10.2.1", "FİZ.10.2.2"], gerekce: "Konu iş-enerji-güç bütününü kapsıyor; 2026'da iş grafiği (10.2.1) ve iş-enerji-güç çıkarımı (10.2.2) ayrı çıktı." },
+  fizik_10_u02_k01: { kodlar: ["FİZ.10.2.1"], gerekce: "Kitabın 2.1-A alt başlığı iş kavramını F-x grafiği üzerinden kurar; 2026 programındaki iş çıktısı FİZ.10.2.1'dir." },
+  fizik_10_u02_k05: { kodlar: ["FİZ.10.2.2"], gerekce: "Kitabın 2.1-B alt başlığı iş-enerji-güç ilişkisini ve güç hesabını kurar; karşılığı FİZ.10.2.2'dir." },
+  fizik_10_u04_k06: { kodlar: ["FİZ.10.4.6"], gerekce: "Kitabın 4.6-A alt başlığı rezonans ile depremin odak/merkez üssü/büyüklük/şiddet kavramlarını verir; FİZ.10.4.6 kapsamındadır." },
+  fizik_10_u04_k07: { kodlar: ["FİZ.10.4.6"], gerekce: "Sismograf ve sismik izolatör modelleri aynı çıktının (FİZ.10.4.6) model oluşturma boyutudur." },
   biyo_10_u02_k06: { kodlar: ["BİY.10.2.6"], gerekce: "Konu başlığı 'sürdürülebilirliği kısıtlayan durumlar'; çıktı gözleme dayalı tahmin (BİY.10.2.6)." },
 };
 

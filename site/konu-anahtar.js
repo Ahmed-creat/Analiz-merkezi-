@@ -70,11 +70,19 @@
       desen: /serbest dusme|yer cekimi ivmesi|dusey dogrultuda/ },
     { ders: ["fizik"], konu: "1.4 İki Boyutta Sabit İvmeli Hareket",
       desen: /iki boyutta|yatay atis|egik atis|menzil/ },
-    { ders: ["fizik"], konu: "2.1 İş, Enerji ve Güç", desen: /is.*enerji.*guc|enerji.*guc|guc.*is/ },
+    { ders: ["fizik"], konu: "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      desen: /guc|is.*enerji.*guc|enerji.*guc/ },
+    { ders: ["fizik"], konu: "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      desen: /is kavrami|kuvvet.*yer degistirme|f.?x grafigi|grafik.*alan/ },
     { ders: ["fizik"], konu: "3.3 Ohm Yasası", desen: /ohm|direnc.*gerilim|akim.*gerilim/ },
     { ders: ["fizik"], konu: "3.4 Dirençlerin Bağlanması", desen: /direnclerin baglanmasi|seri.*paralel.*direnc|esdeger direnc/ },
     { ders: ["fizik"], konu: "4.1 Dalgaların Temel Kavramları",
       desen: /dalga boyu|dalga.*frekans|periyot.*dalga|dalgalarin temel/ },
+
+    { ders: ["fizik"], konu: "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+      desen: /rezonans|deprem|odak noktasi|merkez ussu|fay hatti|sismik/ },
+    { ders: ["fizik"], konu: "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+      desen: /sismograf|sismogram|sismolog|sismik izolator/ },
 
     // ---- Kimya ----
     { ders: ["kimya"], konu: "1.1.2 Kimyasal Tepkime Türleri",

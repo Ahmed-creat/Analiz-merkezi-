@@ -2,251 +2,255 @@
   "konu_id": "fizik_10_u04_k01",
   "sinif": 10,
   "ders": "Fizik",
-  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "tema": 4,
+  "tema_adi": "Dalgalar",
+  "baslik": "4.1 Dalgaların Temel Kavramları",
+  "topic_key": "Fizik > 4.1 Dalgaların Temel Kavramları",
+  "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar.",
+  "kaynak": "Fizik 10 ders kitabı, s.274-282",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "fizik_10_u04_k01_o01",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Bir makinenin metal gövdesinde oluşan kısa titreşim, gövde boyunca başka noktalara yayılıyor. Dalga hareketiyle ilgili doğru yorum hangisidir?",
+      "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
+      "metin": "Dalga nasıl tanımlanır?",
       "secenekler": [
-        "Enerji ortamda bir noktadan diğerine aktarılır.",
-        "Metal gövdenin tamamı titreşim kaynağına doğru taşınır.",
-        "Dalga yalnızca kaynağın yanında enerji taşır.",
-        "Dalga ilerlerken ortamda hiçbir değişiklik oluşturmaz."
+        "Cismin bir noktadan diğerine taşınması",
+        "Titreşim sonucu esnek ortamda oluşan şekil değişikliği",
+        "Enerjinin depolanması",
+        "Kuvvetlerin dengelenmesi"
       ],
-      "dogru_index": 0,
-      "cozum": "Mekanik dalga ilerlerken enerji ortamda bir noktadan diğerine aktarılır; ortamın tanecikleri ise denge konumları çevresinde titreşir.",
+      "dogru_index": 1,
+      "cozum": "Kitapta dalga, titreşimler sonucunda esnek ortamda meydana gelen şekil değişikliği olarak tanımlanır (s.278).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Esnek bir ortamda ilerleyen bir dalga, kaynaktan başka noktalara ne taşır?",
-        "back": "Enerjiyi bir noktadan başka bir noktaya iletir; ortamda şekil değişikliği oluşturur."
+        "front": "Dalga nedir?",
+        "back": "Esnek ortamda titreşimle oluşan şekil değişikliği."
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o02",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Bir periyodik dalga çiziminde ardışık iki tepe arasındaki yatay uzaklık 9 cm ölçülüyor. Dalga boyu kaç cm’dir?",
+      "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
+      "metin": "Bir dalganın denge konumundan en uzak noktaya olan uzaklığına ne denir?",
       "secenekler": [
-        "4 cm",
-        "9 cm",
-        "12 cm",
-        "2 cm"
+        "Uzanım",
+        "Dalga boyu",
+        "Periyot",
+        "Genlik"
       ],
-      "dogru_index": 1,
-      "cozum": "Ardışık iki tepe aynı titreşim durumundadır; aralarındaki uzaklık bir dalga boyudur. Bu nedenle λ = 9 cm’dir.",
+      "dogru_index": 3,
+      "cozum": "Denge konumundan en büyük uzaklığa genlik (A) denir; uzanım denge konumundan olan anlık uzaklıktır (s.279).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir dalga çiziminde ardışık tepeler arasındaki uzaklığı ölçerek hangi özelliği bulursun?",
-        "back": "Dalga boyunu; ardışık ve özdeş titreşen noktalar (örneğin iki tepe) arasındaki uzaklıktır."
+        "front": "Genlik nedir?",
+        "back": "Denge konumundan en büyük uzaklık."
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o03",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Bir dalganın denge konumuna göre en üst noktası +3 cm, en alt noktası −3 cm’dir. Genliği kaç cm’dir?",
+      "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
+      "metin": "Dalga boyunun birimi nedir?",
       "secenekler": [
-        "6 cm",
-        "2 cm",
-        "3 cm",
-        "−3 cm"
+        "Metre",
+        "Saniye",
+        "Hertz",
+        "Newton"
       ],
-      "dogru_index": 2,
-      "cozum": "Genlik, denge konumundan en uzak noktaya olan uzaklıktır; burada 3 cm’dir. 6 cm tepe ile çukur arasındaki toplam uzaklıktır.",
+      "dogru_index": 0,
+      "cozum": "Dalga boyu λ ile gösterilir ve uzunluk birimi metre ile ölçülür (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir dalganın genliğini denge konumuna göre nasıl ölçersin?",
-        "back": "Denge konumundan tepeye ya da çukura kadar olan en büyük uzaklığı ölçersin; genlik maksimum uzanımdır."
+        "front": "Dalga boyu hangi birimle ölçülür?",
+        "back": "Metre."
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o04",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Bir kaynak 6 s’de 15 tam dalga oluşturuyor. Dalganın frekansı kaç Hz’dir?",
+      "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
+      "metin": "Frekansın birimi nedir?",
       "secenekler": [
-        "0,5 Hz",
-        "3 Hz",
-        "5 Hz",
-        "2,5 Hz"
+        "Metre",
+        "Saniye",
+        "Hertz",
+        "Joule"
       ],
-      "dogru_index": 3,
-      "cozum": "Frekans, birim zamanda oluşan dalga sayısıdır: f = 15/6 = 2,5 Hz. Toplam dalga sayısı süreye bölünür.",
+      "dogru_index": 2,
+      "cozum": "Frekans f ile gösterilir, birimi hertz (Hz)'dir (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir saniyede oluşan dalga sayısını ölçerek hangi niceliği ve birimini elde edersin?",
-        "back": "Frekansı; birimi hertz (Hz), yani s⁻¹'dir."
+        "front": "Frekansın birimi nedir?",
+        "back": "Hertz."
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o05",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Bir periyodik dalganın periyodu 0,25 s ise frekansı kaç Hz'dir?",
+      "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
+      "metin": "Periyot ile frekans arasındaki ilişki nedir?",
       "secenekler": [
-        "4",
-        "0,25",
-        "2",
-        "1"
+        "f = T",
+        "f = T²",
+        "f = 2T",
+        "f = 1/T"
       ],
-      "dogru_index": 0,
-      "cozum": "Frekans, periyodun çarpmaya göre tersidir: f = 1/T = 1/0,25 = 4 Hz. 0,25 s periyot değeridir, frekans değil.",
+      "dogru_index": 3,
+      "cozum": "Periyot bir tam titreşim süresi, frekans saniyedeki titreşim sayısıdır; f = 1/T (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Periyot ile frekans arasındaki ilişkiyi bir matematiksel modelle nasıl gösterirsin?",
-        "back": "T = 1/f; eş değer olarak T·f = 1."
+        "front": "Periyot ve frekans arasındaki bağıntı nedir?",
+        "back": "f = 1/T"
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o06",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Dalga boyu 0,5 m, frekansı 4 Hz olan bir dalganın yayılma sürati kaç m/s'dir?",
+      "alt_beceri": "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar.",
+      "metin": "Havadaki sesin sürati 340 m/s, kemanın la notasının frekansı 440 Hz'tir. Bu sesin dalga boyu yaklaşık kaç m'dir?",
       "secenekler": [
-        "0,125",
-        "2",
-        "4,5",
-        "8"
+        "1,29",
+        "0,77",
+        "340",
+        "440"
       ],
       "dogru_index": 1,
-      "cozum": "Dalga sürati c = λ·f bağıntısıyla bulunur: 0,5 × 4 = 2 m/s. 0,125, dalga boyunu frekansa bölmekten gelir ve doğru bağıntı değildir.",
+      "cozum": "λ = v/f = 340/440 ≈ 0,77 m (kitaptaki 440 Hz örneği, s.281).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dalga boyu ve periyot kullanılarak dalga yayılma süratini nasıl hesaplayabilirsin?",
-        "back": "c = λ/T bağıntısını kullanırsın; aynı bağıntı c = λ·f biçiminde de yazılır."
+        "front": "340 m/s ve 440 Hz için dalga boyu kaç m'dir?",
+        "back": "Yaklaşık 0,77 m"
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o07",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Bir uyarı cihazının sesi aynı oda koşullarında daha ince bir tona ayarlanıyor. Hava sıcaklığı ve ortam değişmediğine göre sesin yayılma sürati nasıl etkilenir?",
+      "alt_beceri": "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar.",
+      "metin": "Dalga boyu 2 m, frekansı 5 Hz olan dalganın yayılma sürati kaç m/s'dir?",
       "secenekler": [
-        "Frekans arttığı için yayılma sürati de kesinlikle artar.",
-        "Ses inceldiği için yayılma sürati kesinlikle azalır.",
-        "Aynı hava ortamı ve koşulları korunduğu için yayılma sürati değişmez.",
-        "Sesin yayılma sürati yalnızca genliğe bağlıdır."
+        "10",
+        "2,5",
+        "0,4",
+        "7"
       ],
-      "dogru_index": 2,
-      "cozum": "Sesin frekansı değişse de aynı ortam ve fiziksel koşullarda yayılma sürati değişmez; frekans artışı dalga boyunda değişime yol açar. Diğer seçenekler süratin kaynağın frekansına ya da genliğine bağlı olduğunu yanlış biçimde ileri sürer.",
+      "dogru_index": 0,
+      "cozum": "v = λ·f = 2·5 = 10 m/s (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aynı ortam değişmeden kalırsa yayılan periyodik dalgaların süratini hangi etken belirler?",
-        "back": "Dalga sürati ortama bağlıdır; ortam aynı kaldığı sürece sürat değişmez."
+        "front": "λ = 2 m, f = 5 Hz ise sürat kaç m/s'dir?",
+        "back": "10 m/s"
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o08",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Aynı ortamda yayılan bir dalganın frekansı iki katına çıkarılırken ortamın özellikleri değişmiyor. Yeni dalga boyu nasıl değişir?",
+      "alt_beceri": "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar.",
+      "metin": "Yayılma sürati 20 m/s, dalga boyu 4 m olan dalganın periyodu kaç s'dir?",
       "secenekler": [
-        "İki katına çıkar.",
-        "Değişmez.",
-        "Dört katına çıkar.",
-        "Yarısına iner."
+        "5",
+        "80",
+        "0,2",
+        "4"
       ],
-      "dogru_index": 3,
-      "cozum": "Aynı ortamda dalga sürati sabittir ve c = λ·f bağıntısı geçerlidir. Frekans iki katına çıkınca aynı sürati korumak için dalga boyu yarıya iner.",
+      "dogru_index": 2,
+      "cozum": "f = v/λ = 20/4 = 5 Hz; T = 1/f = 0,2 s (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aynı ortamda dalga kaynağının frekansı artırılırsa dalga boyu ve sürat nasıl etkilenir?",
-        "back": "Ortam değişmediği için sürat aynı kalır; c = λ·f olduğundan frekans artarken dalga boyu azalır."
+        "front": "v = 20 m/s, λ = 4 m ise periyot kaç s'dir?",
+        "back": "0,2 s"
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o09",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Frekans, periyot ve genlik için SI birimlerinin doğru verildiği seçenek hangisidir?",
+      "alt_beceri": "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar.",
+      "metin": "Genliği daha büyük olan bir dalga için hangisi doğrudur?",
       "secenekler": [
-        "Hz, s, m",
-        "s, Hz, m/s",
-        "m, s, Hz",
-        "m/s, m, s"
+        "Frekansı daha büyüktür",
+        "Taşıdığı enerji daha büyüktür",
+        "Sürati daha büyüktür",
+        "Dalga boyu daha büyüktür"
       ],
-      "dogru_index": 0,
-      "cozum": "Frekansın birimi hertz (Hz), periyodun saniye (s), genliğin metredir (m). m/s ise dalga süratinin birimidir.",
+      "dogru_index": 1,
+      "cozum": "Kitapta genliğin dalganın taşıdığı enerjinin bir ölçüsü olduğu belirtilir (s.279).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Frekans, periyot ve genlik için SI birimlerini sırasıyla yaz.",
-        "back": "Frekans: hertz (Hz); periyot: saniye (s); genlik: metre (m)."
+        "front": "Genlik neyin ölçüsüdür?",
+        "back": "Taşınan enerjinin."
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
     {
       "soru_id": "fizik_10_u04_k01_o10",
-      "alt_beceri": "dalgaların temel kavramlarını tanımlayabilmeniz,",
-      "metin": "Denge çizgisinin altında kalan en uzak nokta, dalga profilinde hangi özelliğe karşılık gelir?",
+      "alt_beceri": "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar.",
+      "metin": "Frekansı sabit tutulan bir dalganın dalga boyu artırılırsa yayılma sürati nasıl değişir?",
       "secenekler": [
-        "Genliğin sıfır olduğu denge noktası",
-        "Dalga çukuru",
-        "Dalga tepesi",
-        "Dalga boyu"
+        "Azalır",
+        "Değişmez",
+        "Sıfır olur",
+        "Artar"
       ],
-      "dogru_index": 1,
-      "cozum": "Denge konumunun altındaki en alçak nokta dalga çukurudur. Tepe denge konumunun üstündeki en yüksek noktadır.",
+      "dogru_index": 3,
+      "cozum": "v = λ·f bağıntısında f sabitse λ arttıkça v artar (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir dalga profilinde tepe ve çukuru denge konumuna göre nasıl ayırt edersin?",
-        "back": "Tepe denge konumunun üstündeki en yüksek, çukur ise altındaki en alçak noktadır."
+        "front": "Frekans sabitken dalga boyu artarsa sürat ne olur?",
+        "back": "Artar."
       },
-      "kazanim": "dalgaların temel kavramlarını tanımlayabilmeniz,"
+      "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "fizik_10_u04_k01_o01:flashcard",
-      "front": "Esnek bir ortamda ilerleyen bir dalga, kaynaktan başka noktalara ne taşır?",
-      "back": "Enerjiyi bir noktadan başka bir noktaya iletir; ortamda şekil değişikliği oluşturur."
+      "front": "Dalga nedir?",
+      "back": "Esnek ortamda titreşimle oluşan şekil değişikliği."
     },
     {
       "id": "fizik_10_u04_k01_o02:flashcard",
-      "front": "Bir dalga çiziminde ardışık tepeler arasındaki uzaklığı ölçerek hangi özelliği bulursun?",
-      "back": "Dalga boyunu; ardışık ve özdeş titreşen noktalar (örneğin iki tepe) arasındaki uzaklıktır."
+      "front": "Genlik nedir?",
+      "back": "Denge konumundan en büyük uzaklık."
     },
     {
       "id": "fizik_10_u04_k01_o03:flashcard",
-      "front": "Bir dalganın genliğini denge konumuna göre nasıl ölçersin?",
-      "back": "Denge konumundan tepeye ya da çukura kadar olan en büyük uzaklığı ölçersin; genlik maksimum uzanımdır."
+      "front": "Dalga boyu hangi birimle ölçülür?",
+      "back": "Metre."
     },
     {
       "id": "fizik_10_u04_k01_o04:flashcard",
-      "front": "Bir saniyede oluşan dalga sayısını ölçerek hangi niceliği ve birimini elde edersin?",
-      "back": "Frekansı; birimi hertz (Hz), yani s⁻¹'dir."
+      "front": "Frekansın birimi nedir?",
+      "back": "Hertz."
     },
     {
       "id": "fizik_10_u04_k01_o05:flashcard",
-      "front": "Periyot ile frekans arasındaki ilişkiyi bir matematiksel modelle nasıl gösterirsin?",
-      "back": "T = 1/f; eş değer olarak T·f = 1."
+      "front": "Periyot ve frekans arasındaki bağıntı nedir?",
+      "back": "f = 1/T"
     },
     {
       "id": "fizik_10_u04_k01_o06:flashcard",
-      "front": "Dalga boyu ve periyot kullanılarak dalga yayılma süratini nasıl hesaplayabilirsin?",
-      "back": "c = λ/T bağıntısını kullanırsın; aynı bağıntı c = λ·f biçiminde de yazılır."
+      "front": "340 m/s ve 440 Hz için dalga boyu kaç m'dir?",
+      "back": "Yaklaşık 0,77 m"
     },
     {
       "id": "fizik_10_u04_k01_o07:flashcard",
-      "front": "Aynı ortam değişmeden kalırsa yayılan periyodik dalgaların süratini hangi etken belirler?",
-      "back": "Dalga sürati ortama bağlıdır; ortam aynı kaldığı sürece sürat değişmez."
+      "front": "λ = 2 m, f = 5 Hz ise sürat kaç m/s'dir?",
+      "back": "10 m/s"
     },
     {
       "id": "fizik_10_u04_k01_o08:flashcard",
-      "front": "Aynı ortamda dalga kaynağının frekansı artırılırsa dalga boyu ve sürat nasıl etkilenir?",
-      "back": "Ortam değişmediği için sürat aynı kalır; c = λ·f olduğundan frekans artarken dalga boyu azalır."
+      "front": "v = 20 m/s, λ = 4 m ise periyot kaç s'dir?",
+      "back": "0,2 s"
     },
     {
       "id": "fizik_10_u04_k01_o09:flashcard",
-      "front": "Frekans, periyot ve genlik için SI birimlerini sırasıyla yaz.",
-      "back": "Frekans: hertz (Hz); periyot: saniye (s); genlik: metre (m)."
+      "front": "Genlik neyin ölçüsüdür?",
+      "back": "Taşınan enerjinin."
     },
     {
       "id": "fizik_10_u04_k01_o10:flashcard",
-      "front": "Bir dalga profilinde tepe ve çukuru denge konumuna göre nasıl ayırt edersin?",
-      "back": "Tepe denge konumunun üstündeki en yüksek, çukur ise altındaki en alçak noktadır."
+      "front": "Frekans sabitken dalga boyu artarsa sürat ne olur?",
+      "back": "Artar."
     }
-  ],
-  "baslik": "4.1 Dalgaların Temel Kavramları",
-  "topic_key": "Fizik > 4.1 Dalgaların Temel Kavramları"
+  ]
 }

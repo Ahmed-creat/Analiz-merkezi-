@@ -2,251 +2,255 @@
   "konu_id": "fizik_10_u03_k04",
   "sinif": 10,
   "ders": "Fizik",
-  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "baslik": "3.4 Dirençlerin Bağlanması",
+  "topic_key": "Fizik > 3.4 Dirençlerin Bağlanması",
+  "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır.",
+  "kaynak": "Fizik 10 ders kitabı, s.223-241",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "fizik_10_u03_k04_o01",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "4 Ω, 9 Ω ve 11 Ω dirençler seri bağlanıyor. Eşdeğer direnç kaç Ω olur?",
+      "alt_beceri": "Bağlama türlerini ve eşdeğer direnci açıklar.",
+      "metin": "Seri bağlı dirençlerin eşdeğer direnci nasıl bulunur?",
       "secenekler": [
-        "24 Ω",
-        "11 Ω",
-        "9 Ω",
-        "396 Ω"
+        "Dirençlerin tersleri toplanır",
+        "Dirençler toplanır",
+        "Dirençler çarpılır",
+        "Dirençlerin ortalaması alınır"
       ],
-      "dogru_index": 0,
-      "cozum": "Seri bağlantıda dirençler toplanır: 4 + 9 + 11 = 24 Ω. Seri eşdeğer direnç, her bir dirençten büyüktür.",
+      "dogru_index": 1,
+      "cozum": "Seri bağlamada R_eş = R1 + R2 + ... (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri bağlanan dirençlerin eşdeğer direncini nasıl hesaplarsın?",
-        "back": "Dirençleri toplarsın: Rₑş = R₁ + R₂ + …"
+        "front": "Seri bağlamada eşdeğer direnç nasıl bulunur?",
+        "back": "Toplanır."
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o02",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "Seri devrenin ana kol akımı 4 A ise her bir dirençten geçen akım kaç A’dir?",
+      "alt_beceri": "Bağlama türlerini ve eşdeğer direnci açıklar.",
+      "metin": "Paralel bağlı dirençlerde hangi nicelik her kolda eşittir?",
       "secenekler": [
-        "Direnç değerine bağlı farklı akımlar",
-        "4 A",
-        "Toplam direnç kadar",
-        "0 A"
+        "Akım",
+        "Direnç",
+        "Güç",
+        "Potansiyel fark"
       ],
-      "dogru_index": 1,
-      "cozum": "Seri devrede tek akım yolu bulunduğundan ana kol ve her dirençteki akım aynıdır: 4 A. Direnç değerleri gerilim düşümlerini değiştirir, akımı farklı kollara ayırmaz.",
+      "dogru_index": 3,
+      "cozum": "Paralel kolların uçları aynı noktalara bağlı olduğundan potansiyel farkları eşittir (s.230).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri bağlı dirençlerden geçen akımı ana kol akımıyla karşılaştır.",
-        "back": "Seri devrede tüm dirençlerden aynı akım geçer: I = I₁ = I₂ = …"
+        "front": "Paralel bağlamada hangi nicelik eşittir?",
+        "back": "Potansiyel fark."
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o03",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "24 V’luk kaynağa seri bağlı 4 Ω dirençten 2 A akım geçiyor. İkinci direncin uçlarındaki gerilim kaç V’tur?",
+      "alt_beceri": "Bağlama türlerini ve eşdeğer direnci açıklar.",
+      "metin": "Seri bağlı dirençlerde akım için hangisi doğrudur?",
       "secenekler": [
-        "12 V",
-        "8 V",
-        "16 V",
-        "24 V"
+        "Her dirençte aynıdır",
+        "Dirençlerde toplanır",
+        "Her kolda yarıya inmiş",
+        "Sıfırdır"
       ],
-      "dogru_index": 2,
-      "cozum": "İlk dirençte V₁ = IR₁ = 2 × 4 = 8 V düşer. Seri devrede toplam gerilim 24 V olduğundan ikinci dirençte 24 − 8 = 16 V kalır.",
+      "dogru_index": 0,
+      "cozum": "Seri devrede akımın geçebileceği tek yol vardır; akım her elemanında aynıdır (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri bağlı dirençlerde üretecin potansiyel farkı dirençlerin gerilimleriyle nasıl ilişkilidir?",
-        "back": "Üreteç gerilimi, seri dirençlerin uçlarındaki gerilimlerin toplamına eşittir: V = V₁ + V₂ + …"
+        "front": "Seri devrede akım değişir mi?",
+        "back": "Hayır, her yerde aynıdır."
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o04",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "İki adet 18 Ω direnç paralel bağlanıyor. Eşdeğer direnç kaç Ω olur?",
+      "alt_beceri": "Bağlama türlerini ve eşdeğer direnci açıklar.",
+      "metin": "Paralel bağlı dirençlerde ana kol akımı nasıl bulunur?",
       "secenekler": [
-        "36 Ω",
-        "18 Ω",
-        "6 Ω",
-        "9 Ω"
+        "Kollardaki akımların çarpımı",
+        "Bir kolun akımı",
+        "Kollardaki akımların toplamı",
+        "Kollardaki akımların ortalaması"
       ],
-      "dogru_index": 3,
-      "cozum": "İki eşit direnç paralel bağlandığında eşdeğer direnç yarıya iner: 18/2 = 9 Ω. 36 Ω, dirençleri seri bağlanmış gibi toplamaktır.",
+      "dogru_index": 2,
+      "cozum": "Ana kol akımı, paralel kollardan geçen akımların toplamına eşittir (s.230).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki direnç paralel bağlandığında eşdeğer direnci bulmak için nasıl bir işlem yaparsın?",
-        "back": "Ters dirençleri toplarsın: 1/Rₑş = 1/R₁ + 1/R₂ + …"
+        "front": "Paralel devrede ana kol akımı nedir?",
+        "back": "Kolların akımları toplamı."
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o05",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "10 V kaynağa paralel bağlanan 5 Ω, 10 Ω ve 20 Ω dirençlerden geçen ana kol akımı kaç A olur?",
+      "alt_beceri": "Bağlama türlerini ve eşdeğer direnci açıklar.",
+      "metin": "Seri bağlı dirençlerin eşdeğer direnci, dirençlerin her birine göre nasıldır?",
       "secenekler": [
-        "3,5 A",
-        "2 A",
-        "1,5 A",
-        "5 A"
+        "Daha küçüktür",
+        "Eşittir",
+        "Bağımsızdır",
+        "Daha büyüktür"
       ],
-      "dogru_index": 0,
-      "cozum": "Paralel kollardaki gerilim 10 V’tur. Kol akımları sırasıyla 10/5 = 2 A, 10/10 = 1 A ve 10/20 = 0,5 A olur. Ana kol akımı 2 + 1 + 0,5 = 3,5 A’dır.",
+      "dogru_index": 3,
+      "cozum": "Toplama yapıldığı için eşdeğer direnç en büyük dirençten de büyüktür (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paralel kollarda potansiyel farkı ve ana kol akımını nasıl ilişkilendirirsin?",
-        "back": "Her kolun gerilimi üreteç gerilimine eşittir; ana kol akımı kol akımlarının toplamıdır."
+        "front": "Seri eşdeğer direnç büyür mü?",
+        "back": "Evet, dirençler toplanır."
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o06",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "4 Ω, 8 Ω ve 8 Ω dirençler paralel bağlandığında eşdeğer direnç kaç Ω’dur?",
+      "alt_beceri": "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar.",
+      "metin": "3 Ω ve 5 Ω'luk iki direnç seri bağlanırsa eşdeğer direnç kaç Ω olur?",
       "secenekler": [
-        "15 Ω",
-        "2 Ω",
-        "3 Ω",
-        "6 Ω"
+        "2",
+        "8",
+        "15",
+        "4"
       ],
       "dogru_index": 1,
-      "cozum": "1/Rₑş = 1/4 + 1/8 + 1/8 = 1/2 olduğundan Rₑş = 2 Ω bulunur. Paralel eşdeğer direnç en küçük dirençten de küçüktür.",
+      "cozum": "R_eş = 3 + 5 = 8 Ω (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paralel bağlı dirençlerin eşdeğer direnci tek tek dirençlerle nasıl karşılaştırılır?",
-        "back": "Eşdeğer direnç, her bir paralel dirençten daha küçüktür."
+        "front": "3 Ω + 5 Ω seri bağlanırsa kaç Ω olur?",
+        "back": "8 Ω"
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o07",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "8 Ω ve 8 Ω direnç paralel bağlanıp bu grup 4 Ω dirençle seri bağlanıyor. 24 V kaynakta ana akım kaç A olur?",
+      "alt_beceri": "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar.",
+      "metin": "6 Ω ve 3 Ω'luk iki direnç paralel bağlanırsa eşdeğer direnç kaç Ω olur?",
       "secenekler": [
-        "2 A",
-        "4 A",
-        "3 A",
-        "6 A"
+        "2",
+        "9",
+        "3",
+        "18"
       ],
-      "dogru_index": 2,
-      "cozum": "İki 8 Ω direncin paralel eşdeğeri 4 Ω’dur. Bu direnç 4 Ω ile seri olduğundan toplam direnç 8 Ω olur. Ohm Yasası’na göre I = V/R = 24/8 = 3 A.",
+      "dogru_index": 0,
+      "cozum": "1/R_eş = 1/6 + 1/3 = 1/2 → R_eş = 2 Ω (s.230).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Birleşik devrede eşdeğer direnci basitleştirerek nasıl hesaplarsın?",
-        "back": "Önce seri/paralel grupları eşdeğer dirençlerle değiştirir, devreyi adım adım sadeleştirirsin."
+        "front": "6 Ω ve 3 Ω paralel bağlanırsa kaç Ω olur?",
+        "back": "2 Ω"
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o08",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "Kısa devre koşulunda, çok küçük dirençli bir iletken yol ana yükle paralel olduğunda yükün çalışması neden aksayabilir?",
+      "alt_beceri": "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar.",
+      "metin": "3, 4 ve 5 Ω'luk dirençler seri bağlıdır. 5 Ω'luk direncin uçları arasında 30 V vardır. Devreden geçen akım kaç A'dır?",
       "secenekler": [
-        "Dirençli elemandaki akım değişmez; iletken yol yalnızca gerilimi artırır.",
-        "Yükten geçen akım zorunlu olarak artar.",
-        "Devrenin eşdeğer direnci sonsuza yükselir.",
-        "Akımın çoğu düşük dirençli yoldan geçerek yükü kısa devre eder."
+        "10",
+        "2",
+        "6",
+        "30"
       ],
-      "dogru_index": 3,
-      "cozum": "Çok küçük dirençli paralel yol, akım için yükten daha kolay bir yol oluşturur. Akımın çoğu bu yoldan geçtiği için yük kısa devre olur ve işlevini yerine getiremeyebilir.",
+      "dogru_index": 2,
+      "cozum": "Seri devrede akım her yerde aynıdır: I = 30/5 = 6 A (kitaptaki 3.6. soru, s.232).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kısa devre nedir ve akım devre elemanını nasıl etkisiz bırakabilir?",
-        "back": "Çok küçük dirençli bir yol, devre elemanına paralel bağlanarak akımın çoğunu üzerinden geçirirse eleman atlanır; bu durum kısa devredir."
+        "front": "5 Ω'da 30 V varsa seri devrede akım kaç A'dır?",
+        "back": "6 A"
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o09",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "Bir ölçüm kartındaki dirençten geçen akımı ve direncin uçlarındaki potansiyel farkı aynı anda ölçmek isteniyor. Ampermetre ile voltmetre nasıl bağlanmalıdır?",
+      "alt_beceri": "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar.",
+      "metin": "Aynı devrede (3, 4, 5 Ω seri) üretecin potansiyel farkı kaç V'tur?",
       "secenekler": [
-        "Ampermetre seri, voltmetre dirence paralel",
-        "İkisi de dirençle seri",
-        "Ampermetre paralel, voltmetre seri",
-        "İkisi de dirence paralel"
+        "30",
+        "72",
+        "12",
+        "45"
       ],
-      "dogru_index": 0,
-      "cozum": "Ampermetre akımı ölçmek için ölçülecek elemanla seri bağlanır. Voltmetre elemanın uçları arasındaki potansiyel farkı ölçtüğünden dirence paralel bağlanır.",
+      "dogru_index": 1,
+      "cozum": "R_eş = 3 + 4 + 5 = 12 Ω; V = I·R_eş = 6·12 = 72 V (s.232).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ampermetre ve voltmetre dirençli bir devre elemanına nasıl bağlanır?",
-        "back": "Ampermetre seri, voltmetre paralel bağlanır."
+        "front": "3-4-5 Ω seri devrede 6 A için üreteç gerilimi kaç V'tur?",
+        "back": "72 V"
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o10",
-      "alt_beceri": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
-      "metin": "Sabit gerilimli devreye bir direnç paralel eklendiğinde ana koldaki toplam akım üzerindeki etki nedir?",
+      "alt_beceri": "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar.",
+      "metin": "12 V'luk üretece paralel bağlanan 6 Ω ve 3 Ω'luk dirençlerden geçen akımlar sırasıyla kaç A'dır?",
       "secenekler": [
-        "Azalır; eşdeğer direnç artar.",
-        "Artar; eşdeğer direnç azalır.",
-        "Değişmez; eşdeğer direnç azalır.",
-        "Sıfır olur; eşdeğer direnç sonsuz olur."
+        "4 ve 2",
+        "6 ve 3",
+        "0,5 ve 0,25",
+        "2 ve 4"
       ],
-      "dogru_index": 1,
-      "cozum": "Paralel kol eklemek iletkenlik yollarını artırır ve eşdeğer direnci düşürür. Gerilim sabitken I = V/Rₑş olduğundan ana akım artar.",
+      "dogru_index": 3,
+      "cozum": "Paralel kollarda V = 12 V: I1 = 12/6 = 2 A, I2 = 12/3 = 4 A (s.235).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sabit gerilimli devreye yeni bir paralel direnç kolu eklendiğinde eşdeğer direnç ve ana akım nasıl değişir?",
-        "back": "Eşdeğer direnç azalır; sabit gerilimde ana kol akımı artar."
+        "front": "12 V'ta 6 Ω ve 3 Ω paralel kolların akımları kaç A'dır?",
+        "back": "2 A ve 4 A"
       },
-      "kazanim": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+      "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     }
   ],
   "flashcards": [
     {
       "id": "fizik_10_u03_k04_o01:flashcard",
-      "front": "Seri bağlanan dirençlerin eşdeğer direncini nasıl hesaplarsın?",
-      "back": "Dirençleri toplarsın: Rₑş = R₁ + R₂ + …"
+      "front": "Seri bağlamada eşdeğer direnç nasıl bulunur?",
+      "back": "Toplanır."
     },
     {
       "id": "fizik_10_u03_k04_o02:flashcard",
-      "front": "Seri bağlı dirençlerden geçen akımı ana kol akımıyla karşılaştır.",
-      "back": "Seri devrede tüm dirençlerden aynı akım geçer: I = I₁ = I₂ = …"
+      "front": "Paralel bağlamada hangi nicelik eşittir?",
+      "back": "Potansiyel fark."
     },
     {
       "id": "fizik_10_u03_k04_o03:flashcard",
-      "front": "Seri bağlı dirençlerde üretecin potansiyel farkı dirençlerin gerilimleriyle nasıl ilişkilidir?",
-      "back": "Üreteç gerilimi, seri dirençlerin uçlarındaki gerilimlerin toplamına eşittir: V = V₁ + V₂ + …"
+      "front": "Seri devrede akım değişir mi?",
+      "back": "Hayır, her yerde aynıdır."
     },
     {
       "id": "fizik_10_u03_k04_o04:flashcard",
-      "front": "İki direnç paralel bağlandığında eşdeğer direnci bulmak için nasıl bir işlem yaparsın?",
-      "back": "Ters dirençleri toplarsın: 1/Rₑş = 1/R₁ + 1/R₂ + …"
+      "front": "Paralel devrede ana kol akımı nedir?",
+      "back": "Kolların akımları toplamı."
     },
     {
       "id": "fizik_10_u03_k04_o05:flashcard",
-      "front": "Paralel kollarda potansiyel farkı ve ana kol akımını nasıl ilişkilendirirsin?",
-      "back": "Her kolun gerilimi üreteç gerilimine eşittir; ana kol akımı kol akımlarının toplamıdır."
+      "front": "Seri eşdeğer direnç büyür mü?",
+      "back": "Evet, dirençler toplanır."
     },
     {
       "id": "fizik_10_u03_k04_o06:flashcard",
-      "front": "Paralel bağlı dirençlerin eşdeğer direnci tek tek dirençlerle nasıl karşılaştırılır?",
-      "back": "Eşdeğer direnç, her bir paralel dirençten daha küçüktür."
+      "front": "3 Ω + 5 Ω seri bağlanırsa kaç Ω olur?",
+      "back": "8 Ω"
     },
     {
       "id": "fizik_10_u03_k04_o07:flashcard",
-      "front": "Birleşik devrede eşdeğer direnci basitleştirerek nasıl hesaplarsın?",
-      "back": "Önce seri/paralel grupları eşdeğer dirençlerle değiştirir, devreyi adım adım sadeleştirirsin."
+      "front": "6 Ω ve 3 Ω paralel bağlanırsa kaç Ω olur?",
+      "back": "2 Ω"
     },
     {
       "id": "fizik_10_u03_k04_o08:flashcard",
-      "front": "Kısa devre nedir ve akım devre elemanını nasıl etkisiz bırakabilir?",
-      "back": "Çok küçük dirençli bir yol, devre elemanına paralel bağlanarak akımın çoğunu üzerinden geçirirse eleman atlanır; bu durum kısa devredir."
+      "front": "5 Ω'da 30 V varsa seri devrede akım kaç A'dır?",
+      "back": "6 A"
     },
     {
       "id": "fizik_10_u03_k04_o09:flashcard",
-      "front": "Ampermetre ve voltmetre dirençli bir devre elemanına nasıl bağlanır?",
-      "back": "Ampermetre seri, voltmetre paralel bağlanır."
+      "front": "3-4-5 Ω seri devrede 6 A için üreteç gerilimi kaç V'tur?",
+      "back": "72 V"
     },
     {
       "id": "fizik_10_u03_k04_o10:flashcard",
-      "front": "Sabit gerilimli devreye yeni bir paralel direnç kolu eklendiğinde eşdeğer direnç ve ana akım nasıl değişir?",
-      "back": "Eşdeğer direnç azalır; sabit gerilimde ana kol akımı artar."
+      "front": "12 V'ta 6 Ω ve 3 Ω paralel kolların akımları kaç A'dır?",
+      "back": "2 A ve 4 A"
     }
-  ],
-  "baslik": "3.4 Dirençlerin Bağlanması",
-  "topic_key": "Fizik > 3.4 Dirençlerin Bağlanması"
+  ]
 }

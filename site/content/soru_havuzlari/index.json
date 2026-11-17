@@ -1,15 +1,12 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 303,
- "soru_sayisi": 3321,
- "flashcard_sayisi": 3321,
+ "havuz_sayisi": 283,
+ "soru_sayisi": 3119,
+ "flashcard_sayisi": 3119,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
- "uretim_plani": {
-  "yol": "docs/uretim/uretim-plani.json",
-  "cikti": 158
- },
+ "uretim_plani": null,
  "havuzlar": [
   {
    "konu_id": "biyo_10_t01_c01",
@@ -28,7 +25,7 @@
    "baslik": "Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme",
    "topic_key": "Biyoloji > 1.1 Canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulayabilme",
    "kod": "BİY.10.1.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c02",
@@ -44,7 +41,7 @@
    "baslik": "Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme",
    "topic_key": "Biyoloji > 1.2 Fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturabilme",
    "kod": "BİY.10.1.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c03",
@@ -60,7 +57,7 @@
    "baslik": "Fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapabilme",
    "topic_key": "Biyoloji > 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
    "kod": "BİY.10.1.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c04",
@@ -78,7 +75,7 @@
    "baslik": "Kemosentez hakkında bilgi toplayabilme",
    "topic_key": "Biyoloji > 1.4 Kemosentez hakkında bilgi toplayabilme",
    "kod": "BİY.10.1.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c05",
@@ -96,7 +93,7 @@
    "baslik": "Canlılarda sindirim çeşitlerini ve yapılarını sınıflandırabilme",
    "topic_key": "Biyoloji > 1.5 Canlılarda sindirim çeşitlerini ve yapılarını sınıflandırabilme",
    "kod": "BİY.10.1.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c06",
@@ -113,7 +110,7 @@
    "baslik": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme",
    "topic_key": "Biyoloji > 1.6 İnsanda Sindirim",
    "kod": "BİY.10.1.6",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c07",
@@ -129,7 +126,7 @@
    "baslik": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme",
    "topic_key": "Biyoloji > 1.7 Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme",
    "kod": "BİY.10.1.7",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c08",
@@ -146,7 +143,7 @@
    "baslik": "Farklı besin gruplarından enerji eldesi süreçlerini karşılaştırabilme",
    "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
    "kod": "BİY.10.1.8",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c09",
@@ -162,7 +159,7 @@
    "baslik": "Fermantasyon ile ilgili deney yapabilme",
    "topic_key": "Biyoloji > 1.9 Fermantasyon ile ilgili deney yapabilme",
    "kod": "BİY.10.1.9",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t01_c10",
@@ -179,7 +176,7 @@
    "baslik": "Besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapabilme",
    "topic_key": "Biyoloji > 1.10 Besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapabilme",
    "kod": "BİY.10.1.10",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c01",
@@ -195,7 +192,7 @@
    "baslik": "Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme",
    "topic_key": "Biyoloji > 2.1 Ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilme",
    "kod": "BİY.10.2.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c02",
@@ -214,7 +211,7 @@
    "baslik": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme",
    "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
    "kod": "BİY.10.2.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c03",
@@ -231,7 +228,7 @@
    "baslik": "Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme",
    "topic_key": "Biyoloji > 2.3 Ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilme",
    "kod": "BİY.10.2.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c04",
@@ -247,7 +244,7 @@
    "baslik": "Madde döngüleri ile ilgili bilimsel model oluşturabilme",
    "topic_key": "Biyoloji > 2.4 Madde döngüleri ile ilgili bilimsel model oluşturabilme",
    "kod": "BİY.10.2.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c05",
@@ -264,7 +261,7 @@
    "baslik": "Ekolojik sürdürülebilirliğin önemini yorumlayabilme",
    "topic_key": "Biyoloji > 2.5 Ekolojik Sürdürülebilirliğin Önemi",
    "kod": "BİY.10.2.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c06",
@@ -281,7 +278,7 @@
    "baslik": "Çevresinde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilme",
    "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
    "kod": "BİY.10.2.6",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c07",
@@ -299,7 +296,7 @@
    "baslik": "Ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilme",
    "topic_key": "Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi",
    "kod": "BİY.10.2.7",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c08",
@@ -318,7 +315,7 @@
    "baslik": "Doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilme",
    "topic_key": "Biyoloji > 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
    "kod": "BİY.10.2.8",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_t02_c09",
@@ -336,7 +333,7 @@
    "baslik": "Çevresinde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilme",
    "topic_key": "Biyoloji > 2.9 Çevresinde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilme",
    "kod": "BİY.10.2.9",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u01_k01",
@@ -352,7 +349,7 @@
    "baslik": "ATP’nin Yapısı ve Enerji Aktarımındaki Rolü",
    "topic_key": "Biyoloji > 1.1 Canlılık İçin Enerjinin Önemi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u01_k02",
@@ -372,7 +369,7 @@
    "baslik": "Fotosentez",
    "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u01_k03",
@@ -387,7 +384,7 @@
    "baslik": "Kemosentez",
    "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u01_k04",
@@ -407,7 +404,7 @@
    "baslik": "Canlılarda Sindirim Yapıları",
    "topic_key": "Biyoloji > 1.5 Sindirim",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u01_k05",
@@ -427,7 +424,7 @@
    "baslik": "Besinlerin Hücresel Solunuma Katılma Yolları",
    "topic_key": "Biyoloji > 1.7 Hücresel Solunum",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u01_k06",
@@ -444,7 +441,7 @@
    "baslik": "Etil Alkol Fermantasyonu",
    "topic_key": "Biyoloji > 1.9 Fermantasyon",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u01_k07",
@@ -460,7 +457,7 @@
    "baslik": "Besinlerden Elde Edilen Enerjinin Canlının Metabolik Süreçlerine Katkısı",
    "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u02_k01",
@@ -477,7 +474,7 @@
    "baslik": "Ekosistemin Bileşenleri",
    "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u02_k02",
@@ -497,7 +494,7 @@
    "baslik": "Biyolojik Birikim ve Etkileri",
    "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u02_k03",
@@ -515,7 +512,7 @@
    "baslik": "Azot Döngüsü",
    "topic_key": "Biyoloji > 2.4 Madde Döngüleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "biyo_10_u02_k04",
@@ -534,7 +531,7 @@
    "baslik": "Atık Yönetimi",
    "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t01_c01",
@@ -552,7 +549,7 @@
    "baslik": "Örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilme",
    "topic_key": "Coğrafya > 1.1 Örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilme",
    "kod": "COĞ.10.1.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t02_c01",
@@ -569,7 +566,7 @@
    "baslik": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme",
    "topic_key": "Coğrafya > 2.1 Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme",
    "kod": "COĞ.10.2.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t02_c02",
@@ -589,7 +586,7 @@
    "baslik": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme",
    "topic_key": "Coğrafya > 2.2 Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme",
    "kod": "COĞ.10.2.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t03_c01",
@@ -605,7 +602,7 @@
    "baslik": "Yerkürenin tektonik yapısını çözümleyebilme",
    "topic_key": "Coğrafya > 3.1 Yerkürenin tektonik yapısını çözümleyebilme",
    "kod": "COĞ.10.3.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t03_c02",
@@ -621,7 +618,7 @@
    "baslik": "Yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilme",
    "topic_key": "Coğrafya > 3.2 Yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilme",
    "kod": "COĞ.10.3.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t03_c03",
@@ -637,7 +634,7 @@
    "baslik": "Yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilme",
    "topic_key": "Coğrafya > 3.3 Yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilme",
    "kod": "COĞ.10.3.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t03_c04",
@@ -657,7 +654,7 @@
    "baslik": "Yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilme",
    "topic_key": "Coğrafya > 3.4 Yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilme",
    "kod": "COĞ.10.3.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t03_c05",
@@ -676,7 +673,7 @@
    "baslik": "Yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilme",
    "topic_key": "Coğrafya > 3.5 Yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilme",
    "kod": "COĞ.10.3.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t04_c01",
@@ -695,7 +692,7 @@
    "baslik": "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilme",
    "topic_key": "Coğrafya > 4.1 Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilme",
    "kod": "COĞ.10.4.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t04_c02",
@@ -713,7 +710,7 @@
    "baslik": "Türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre sınıflandırabilme",
    "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
    "kod": "COĞ.10.4.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t05_c01",
@@ -731,7 +728,7 @@
    "baslik": "Ekonomik faaliyetleri sektörlere göre sınıflandırabilme",
    "topic_key": "Coğrafya > 5.1 Ekonomik faaliyetleri sektörlere göre sınıflandırabilme",
    "kod": "COĞ.10.5.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t05_c02",
@@ -749,7 +746,7 @@
    "baslik": "Ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden farklı gelişmişlik seviyesine sahip ülkeleri karşılaştırabilme",
    "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
    "kod": "COĞ.10.5.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t05_c03",
@@ -769,7 +766,7 @@
    "baslik": "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilme",
    "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
    "kod": "COĞ.10.5.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t06_c01",
@@ -788,7 +785,7 @@
    "baslik": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme",
    "topic_key": "Coğrafya > 6.1 Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme",
    "kod": "COĞ.10.6.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t06_c02",
@@ -804,7 +801,7 @@
    "baslik": "Afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilme",
    "topic_key": "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
    "kod": "COĞ.10.6.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t06_c03",
@@ -824,7 +821,7 @@
    "baslik": "Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilme",
    "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
    "kod": "COĞ.10.6.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t06_c04",
@@ -841,7 +838,7 @@
    "baslik": "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarını yansıtabilme",
    "topic_key": "Coğrafya > 6.4 Afet Bilinci",
    "kod": "COĞ.10.6.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_t07_c01",
@@ -858,7 +855,7 @@
    "baslik": "Türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilme",
    "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
    "kod": "COĞ.10.7.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u01_k01",
@@ -873,7 +870,7 @@
    "baslik": "1.1 Coğrafi Bakış",
    "topic_key": "Coğrafya > 1.1 Coğrafi Bakış",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u02_k01",
@@ -888,7 +885,7 @@
    "baslik": "2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
    "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u02_k02",
@@ -903,7 +900,7 @@
    "baslik": "2.2 Mekânsal Verilerin Haritalara Aktarılması",
    "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u03_k01",
@@ -918,7 +915,7 @@
    "baslik": "3.1 Tektonik Süreçler",
    "topic_key": "Coğrafya > 3.1 Tektonik Süreçler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u03_k02",
@@ -933,7 +930,7 @@
    "baslik": "3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
    "topic_key": "Coğrafya > 3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u03_k03",
@@ -948,7 +945,7 @@
    "baslik": "3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
    "topic_key": "Coğrafya > 3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u03_k04",
@@ -963,7 +960,7 @@
    "baslik": "3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
    "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u03_k05",
@@ -978,7 +975,7 @@
    "baslik": "3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
    "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u04_k01",
@@ -994,7 +991,7 @@
    "baslik": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
    "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u05_k01",
@@ -1011,7 +1008,7 @@
    "baslik": "5.1 Ekonomik Faaliyetlerin Özellikleri",
    "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "cogr_10_u06_k01",
@@ -1029,7 +1026,7 @@
    "baslik": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t01_c01",
@@ -1045,7 +1042,7 @@
    "baslik": "İslam’da bilginin yerini ve kaynaklarını çözümleyebilme",
    "topic_key": "Din Kültürü > 1.1 İslam’da bilginin yerini ve kaynaklarını çözümleyebilme",
    "kod": "DKAB.10.1.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t01_c02",
@@ -1063,7 +1060,7 @@
    "baslik": "Allah-âlem ilişkisini müşahede edebilme",
    "topic_key": "Din Kültürü > 1.2 Allah-âlem ilişkisini müşahede edebilme",
    "kod": "DKAB.10.1.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t01_c03",
@@ -1082,7 +1079,7 @@
    "baslik": "İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
    "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.1.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t02_c01",
@@ -1100,7 +1097,7 @@
    "baslik": "Allah’ın (cc) varlığının delillerini müşahede edebilme",
    "topic_key": "Din Kültürü > 2.1 Allah’ın (cc) varlığının delillerini müşahede edebilme",
    "kod": "DKAB.10.2.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t02_c02",
@@ -1118,7 +1115,7 @@
    "baslik": "Allah’ı (cc) gereği gibi tanıyabilmek için O’nun isim ve sıfatlarını bağlamına uygun kullanabilme",
    "topic_key": "Din Kültürü > 2.2 Allah’ı (cc) gereği gibi tanıyabilmek için O’nun isim ve sıfatlarını bağlamına uygun kullanabilme",
    "kod": "DKAB.10.2.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t02_c03",
@@ -1137,7 +1134,7 @@
    "baslik": "Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
    "topic_key": "Din Kültürü > 2.3 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.2.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t03_c01",
@@ -1155,7 +1152,7 @@
    "baslik": "İslam’ın evrensel mesajlarından biri olan tevhit ilkesi hakkında bilgi toplayabilme",
    "topic_key": "Din Kültürü > 3.1 İslam’ın evrensel mesajlarından biri olan tevhit ilkesi hakkında bilgi toplayabilme",
    "kod": "DKAB.10.3.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t03_c02",
@@ -1173,7 +1170,7 @@
    "baslik": "İslam’da adalet ve eşitlik kavramlarını bağlamına uygun kullanabilme",
    "topic_key": "Din Kültürü > 3.2 İslam’da adalet ve eşitlik kavramlarını bağlamına uygun kullanabilme",
    "kod": "DKAB.10.3.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t03_c03",
@@ -1190,7 +1187,7 @@
    "baslik": "İslam ve barış ilişkisini yorumlayabilme",
    "topic_key": "Din Kültürü > 3.3 İslam ve barış ilişkisini yorumlayabilme",
    "kod": "DKAB.10.3.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t03_c04",
@@ -1209,7 +1206,7 @@
    "baslik": "Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
    "topic_key": "Din Kültürü > 3.4 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.3.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t04_c01",
@@ -1226,7 +1223,7 @@
    "baslik": "İnsan, çevre ve ahlak arasındaki ilişkiyi yorumlayabilme",
    "topic_key": "Din Kültürü > 4.1 İnsan, çevre ve ahlak arasındaki ilişkiyi yorumlayabilme",
    "kod": "DKAB.10.4.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t04_c02",
@@ -1242,7 +1239,7 @@
    "baslik": "Teknoloji ve ahlak ilişkisini çözümleyebilme",
    "topic_key": "Din Kültürü > 4.2 Teknoloji ve ahlak ilişkisini çözümleyebilme",
    "kod": "DKAB.10.4.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t04_c03",
@@ -1259,7 +1256,7 @@
    "baslik": "Çevre ve teknoloji ilişkisini özetleyebilme",
    "topic_key": "Din Kültürü > 4.3 Çevre ve teknoloji ilişkisini özetleyebilme",
    "kod": "DKAB.10.4.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t04_c04",
@@ -1278,7 +1275,7 @@
    "baslik": "Rum suresinin 41. ayetinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
    "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.4.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t05_c01",
@@ -1295,7 +1292,7 @@
    "baslik": "Dinî yorum farklılıklarının ortaya çıkış sebeplerini sentezleyebilme",
    "topic_key": "Din Kültürü > 5.1 Dinî yorum farklılıklarının ortaya çıkış sebeplerini sentezleyebilme",
    "kod": "DKAB.10.5.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t05_c02",
@@ -1313,7 +1310,7 @@
    "baslik": "İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları irdeleyebilme",
    "topic_key": "Din Kültürü > 5.2 İslam düşüncesindeki itikadi-siyasi ve fıkhi yorumları irdeleyebilme",
    "kod": "DKAB.10.5.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_t05_c03",
@@ -1332,7 +1329,7 @@
    "baslik": "Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur’an’ı Kerim meallerine başvurabilme",
    "topic_key": "Din Kültürü > 5.3 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.5.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u01_k01",
@@ -1347,7 +1344,7 @@
    "baslik": "1.1.1 İslam'da Bilginin Yeri",
    "topic_key": "Din Kültürü > 1.1.1 İslam'da Bilginin Yeri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u01_k02",
@@ -1362,7 +1359,7 @@
    "baslik": "1.1.2 İslam'da Bilgi Kaynakları",
    "topic_key": "Din Kültürü > 1.1.2 İslam'da Bilgi Kaynakları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u01_k03",
@@ -1377,7 +1374,7 @@
    "baslik": "1.2 Allah-Âlem İlişkisi",
    "topic_key": "Din Kültürü > 1.2 Allah-Âlem İlişkisi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u02_k01",
@@ -1392,7 +1389,7 @@
    "baslik": "2.1 Allah'ın Varlığının Delilleri",
    "topic_key": "Din Kültürü > 2.1 Allah'ın Varlığının Delilleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u02_k02",
@@ -1407,7 +1404,7 @@
    "baslik": "2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
    "topic_key": "Din Kültürü > 2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u02_k05",
@@ -1423,7 +1420,7 @@
    "baslik": "2.1.1 Kozmolojik Delil",
    "topic_key": "Din Kültürü > 2.1.1 Kozmolojik Delil",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u02_k06",
@@ -1439,7 +1436,7 @@
    "baslik": "2.1.2 Teleolojik Delil",
    "topic_key": "Din Kültürü > 2.1.2 Teleolojik Delil",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u02_k07",
@@ -1455,7 +1452,7 @@
    "baslik": "2.1.3 Ontolojik Delil",
    "topic_key": "Din Kültürü > 2.1.3 Ontolojik Delil",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u02_k08",
@@ -1471,7 +1468,7 @@
    "baslik": "2.1.4 Dinî Tecrübe Delili",
    "topic_key": "Din Kültürü > 2.1.4 Dinî Tecrübe Delili",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u03_k01",
@@ -1486,7 +1483,7 @@
    "baslik": "3.1 İslam'ın Tevhit İlkesi",
    "topic_key": "Din Kültürü > 3.1 İslam'ın Tevhit İlkesi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u03_k02",
@@ -1501,7 +1498,7 @@
    "baslik": "3.2 İslam'da Adalet ve Eşitlik",
    "topic_key": "Din Kültürü > 3.2 İslam'da Adalet ve Eşitlik",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u03_k03",
@@ -1516,7 +1513,7 @@
    "baslik": "3.3 İslam ve Barış",
    "topic_key": "Din Kültürü > 3.3 İslam ve Barış",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u04_k01",
@@ -1531,7 +1528,7 @@
    "baslik": "4.1 İnsan, Çevre ve Ahlak",
    "topic_key": "Din Kültürü > 4.1 İnsan, Çevre ve Ahlak",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u04_k02",
@@ -1546,7 +1543,7 @@
    "baslik": "4.2 Teknoloji ve Ahlak",
    "topic_key": "Din Kültürü > 4.2 Teknoloji ve Ahlak",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u04_k03",
@@ -1561,7 +1558,7 @@
    "baslik": "4.3 Çevre ve Teknoloji",
    "topic_key": "Din Kültürü > 4.3 Çevre ve Teknoloji",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u05_k01",
@@ -1576,7 +1573,7 @@
    "baslik": "5.1 Dinî Yorum Farklılıklarının Sebepleri",
    "topic_key": "Din Kültürü > 5.1 Dinî Yorum Farklılıklarının Sebepleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u05_k02",
@@ -1591,7 +1588,7 @@
    "baslik": "5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
    "topic_key": "Din Kültürü > 5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u05_k03",
@@ -1607,7 +1604,7 @@
    "baslik": "5.2.1 Ehlisünnet",
    "topic_key": "Din Kültürü > 5.2.1 Ehlisünnet",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "din_10_u05_k04",
@@ -1623,7 +1620,7 @@
    "baslik": "5.2.2 Şia",
    "topic_key": "Din Kültürü > 5.2.2 Şia",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k01",
@@ -1640,7 +1637,7 @@
    "baslik": "Koşuk",
    "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k02",
@@ -1657,7 +1654,7 @@
    "baslik": "Sav",
    "topic_key": "Türk Dili ve Edebiyatı > Sav",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k03",
@@ -1674,7 +1671,7 @@
    "baslik": "Türkü",
    "topic_key": "Türk Dili ve Edebiyatı > Türkü",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k04",
@@ -1691,7 +1688,7 @@
    "baslik": "Koşma",
    "topic_key": "Türk Dili ve Edebiyatı > Koşma",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k05",
@@ -1708,7 +1705,7 @@
    "baslik": "Masal",
    "topic_key": "Türk Dili ve Edebiyatı > Masal",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k06",
@@ -1725,7 +1722,7 @@
    "baslik": "İsimler (Adlar)",
    "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k07",
@@ -1742,7 +1739,7 @@
    "baslik": "İsim Tamlamaları",
    "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k08",
@@ -1759,7 +1756,7 @@
    "baslik": "Sıfatlar (Ön Adlar)",
    "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u01_k09",
@@ -1776,7 +1773,7 @@
    "baslik": "Sıfat Tamlamaları",
    "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k01",
@@ -1793,7 +1790,7 @@
    "baslik": "Gazel",
    "topic_key": "Türk Dili ve Edebiyatı > Gazel",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k02",
@@ -1810,7 +1807,7 @@
    "baslik": "Kaside",
    "topic_key": "Türk Dili ve Edebiyatı > Kaside",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k03",
@@ -1827,7 +1824,7 @@
    "baslik": "Mersiye",
    "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k04",
@@ -1844,7 +1841,7 @@
    "baslik": "Saf Şiir",
    "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k05",
@@ -1861,7 +1858,7 @@
    "baslik": "Zamir (Adıl)",
    "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k06",
@@ -1878,7 +1875,7 @@
    "baslik": "Edat (İlgeç)",
    "topic_key": "Türk Dili ve Edebiyatı > Edat (İlgeç)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k07",
@@ -1895,7 +1892,7 @@
    "baslik": "Bağlaç",
    "topic_key": "Türk Dili ve Edebiyatı > Bağlaç",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k08",
@@ -1912,7 +1909,7 @@
    "baslik": "Ünlem",
    "topic_key": "Türk Dili ve Edebiyatı > Ünlem",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u02_k09",
@@ -1929,7 +1926,7 @@
    "baslik": "Anlamına Göre Cümleler",
    "topic_key": "Türk Dili ve Edebiyatı > Anlamına Göre Cümleler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u03_k01",
@@ -1946,7 +1943,7 @@
    "baslik": "Destan",
    "topic_key": "Türk Dili ve Edebiyatı > Destan",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u03_k02",
@@ -1963,7 +1960,7 @@
    "baslik": "Mesnevi",
    "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u03_k03",
@@ -1980,7 +1977,7 @@
    "baslik": "Halk Hikâyesi",
    "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u03_k04",
@@ -1997,7 +1994,7 @@
    "baslik": "Fabl",
    "topic_key": "Türk Dili ve Edebiyatı > Fabl",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u03_k05",
@@ -2014,7 +2011,7 @@
    "baslik": "Zarflar (Belirteçler)",
    "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u03_k06",
@@ -2031,7 +2028,7 @@
    "baslik": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
    "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u04_k01",
@@ -2048,7 +2045,7 @@
    "baslik": "Dede Korkut Hikâyeleri",
    "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u04_k02",
@@ -2065,7 +2062,7 @@
    "baslik": "Tanzimat Dönemi Şiiri",
    "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u04_k03",
@@ -2082,7 +2079,7 @@
    "baslik": "Fiiller (Eylemler)",
    "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u04_k04",
@@ -2099,7 +2096,7 @@
    "baslik": "Yazım Kuralları",
    "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "edebiyat_10_u04_k05",
@@ -2116,7 +2113,7 @@
    "baslik": "Noktalama İşaretleri",
    "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t01_c01",
@@ -2135,7 +2132,7 @@
    "baslik": "Felsefenin anlamını, gelişim sürecini ve işlevini sorgulayabilme",
    "topic_key": "Felsefe > 1.1 Felsefenin anlamını, gelişim sürecini ve işlevini sorgulayabilme",
    "kod": "FEL.10.1.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t02_c01",
@@ -2151,7 +2148,7 @@
    "baslik": "Düşünme ve dil ilişkisini yapılandırabilme",
    "topic_key": "Felsefe > 2.1 Düşünme ve dil ilişkisini yapılandırabilme",
    "kod": "FEL.10.2.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t02_c02",
@@ -2168,7 +2165,7 @@
    "baslik": "Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme.",
    "topic_key": "Felsefe > 2.2 Mantığın temel kavramlarını ve argümantasyon sürecini yorumlayabilme.",
    "kod": "FEL.10.2.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t03_c01",
@@ -2186,7 +2183,7 @@
    "baslik": "Varlık felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "topic_key": "Felsefe > 3.1 Varlık felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "kod": "FEL.10.3.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t04_c01",
@@ -2204,7 +2201,7 @@
    "baslik": "Bilgi felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "topic_key": "Felsefe > 4.1 Bilgi felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "kod": "FEL.10.4.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t05_c01",
@@ -2222,7 +2219,7 @@
    "baslik": "Ahlak felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "topic_key": "Felsefe > 5.1 Ahlak felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "kod": "FEL.10.5.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t06_c01",
@@ -2240,7 +2237,7 @@
    "baslik": "Estetik ve sanat felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "topic_key": "Felsefe > 6.1 Estetik ve sanat felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "kod": "FEL.10.6.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t07_c01",
@@ -2258,7 +2255,7 @@
    "baslik": "Siyaset felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "topic_key": "Felsefe > 7.1 Siyaset felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "kod": "FEL.10.7.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t08_c01",
@@ -2276,7 +2273,7 @@
    "baslik": "Din felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "topic_key": "Felsefe > 8.1 Din felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "kod": "FEL.10.8.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_t09_c01",
@@ -2294,7 +2291,7 @@
    "baslik": "Bilim felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "topic_key": "Felsefe > 9.1 Bilim felsefesinin konusunu, kavramlarını ve problemlerini muhakeme edebilme",
    "kod": "FEL.10.9.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u01_k01",
@@ -2309,7 +2306,7 @@
    "baslik": "1.1 Felsefenin Anlamı",
    "topic_key": "Felsefe > 1.1 Felsefenin Anlamı",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u01_k02",
@@ -2324,7 +2321,7 @@
    "baslik": "1.2 Felsefi Düşüncenin Gelişimi",
    "topic_key": "Felsefe > 1.2 Felsefi Düşüncenin Gelişimi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u01_k03",
@@ -2339,7 +2336,7 @@
    "baslik": "1.3 Felsefi Düşüncenin Özellikleri",
    "topic_key": "Felsefe > 1.3 Felsefi Düşüncenin Özellikleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u01_k04",
@@ -2354,7 +2351,7 @@
    "baslik": "1.4 Felsefi Soruların Temel Özellikleri",
    "topic_key": "Felsefe > 1.4 Felsefi Soruların Temel Özellikleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u01_k05",
@@ -2369,7 +2366,7 @@
    "baslik": "1.5 Felsefenin Diğer Alanlarla İlişkisi",
    "topic_key": "Felsefe > 1.5 Felsefenin Diğer Alanlarla İlişkisi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u01_k06",
@@ -2384,7 +2381,7 @@
    "baslik": "1.6 Felsefenin Bireysel ve Toplumsal İşlevi",
    "topic_key": "Felsefe > 1.6 Felsefenin Bireysel ve Toplumsal İşlevi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u02_k01",
@@ -2399,7 +2396,7 @@
    "baslik": "2.1 Düşünme ve Dil İlişkisi",
    "topic_key": "Felsefe > 2.1 Düşünme ve Dil İlişkisi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u02_k02",
@@ -2414,7 +2411,7 @@
    "baslik": "2.2 Mantık ve Argümantasyonun Temel Kavramları",
    "topic_key": "Felsefe > 2.2 Mantık ve Argümantasyonun Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u02_k03",
@@ -2429,7 +2426,7 @@
    "baslik": "2.3 Argümantasyonun Yapısı",
    "topic_key": "Felsefe > 2.3 Argümantasyonun Yapısı",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u03_k01",
@@ -2444,7 +2441,7 @@
    "baslik": "3.1 Varlık Felsefesinin Konusu ve Temel Kavramları",
    "topic_key": "Felsefe > 3.1 Varlık Felsefesinin Konusu ve Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u03_k02",
@@ -2459,7 +2456,7 @@
    "baslik": "3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
    "topic_key": "Felsefe > 3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u04_k01",
@@ -2474,7 +2471,7 @@
    "baslik": "4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları",
    "topic_key": "Felsefe > 4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u04_k02",
@@ -2489,7 +2486,7 @@
    "baslik": "4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
    "topic_key": "Felsefe > 4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u05_k01",
@@ -2504,7 +2501,7 @@
    "baslik": "5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları",
    "topic_key": "Felsefe > 5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u05_k02",
@@ -2519,7 +2516,7 @@
    "baslik": "5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)",
    "topic_key": "Felsefe > 5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u06_k01",
@@ -2534,7 +2531,7 @@
    "baslik": "6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları",
    "topic_key": "Felsefe > 6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u06_k02",
@@ -2549,7 +2546,7 @@
    "baslik": "6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)",
    "topic_key": "Felsefe > 6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u07_k01",
@@ -2564,7 +2561,7 @@
    "baslik": "7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları",
    "topic_key": "Felsefe > 7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u07_k02",
@@ -2579,7 +2576,7 @@
    "baslik": "7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
    "topic_key": "Felsefe > 7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u08_k01",
@@ -2594,7 +2591,7 @@
    "baslik": "8.1 Din Felsefesinin Konusu ve Temel Kavramları",
    "topic_key": "Felsefe > 8.1 Din Felsefesinin Konusu ve Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u08_k02",
@@ -2609,7 +2606,7 @@
    "baslik": "8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
    "topic_key": "Felsefe > 8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u09_k01",
@@ -2624,7 +2621,7 @@
    "baslik": "9.1 Bilim Felsefesinin Konusu ve Temel Kavramları",
    "topic_key": "Felsefe > 9.1 Bilim Felsefesinin Konusu ve Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fel_10_u09_k02",
@@ -2639,400 +2636,23 @@
    "baslik": "9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)",
    "topic_key": "Felsefe > 9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "fiz_10_t01_c01",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t01_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Yatay doğrultuda sabit hızlı hareket eden cisimlerin konum, yer değiştirme, hız ve zaman değişkenlerine yönelik gözlemler yapar.",
-    "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hareket grafiklerinden yararlanarak hız, sürat, yer değiştirme ve alınan yol değişkenlerinin matematiksel modelini bulur.",
-    "Yatay doğrultuda sabit hızlı hareket eden cisimlerin hız, sürat, yer değiştirme ve alınan yol değişkenlerine ilişkin matematiksel modelleri geneller."
-   ],
-   "baslik": "Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme",
-   "topic_key": "Fizik > 1.1 Yatay doğrultuda sabit hızlı hareket ile ilgili tümevarımsal akıl yürütebilme",
-   "kod": "FİZ.10.1.1",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t01_c02",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t01_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
-    "İvme ve hız değişimi arasındaki ilişkiyi geneller."
-   ],
-   "baslik": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
-   "topic_key": "Fizik > 1.2 İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
-   "kod": "FİZ.10.1.2",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t01_c03",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t01_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Yatay doğrultuda sabit ivmeli hareket grafiklerini inceler.",
-    "Yatay doğrultuda sabit ivmeli hareket grafiklerini birbirine dönüştürerek matematiksel modellere ulaşır.",
-    "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareketine ilişkin grafikleri ve matematiksel modeller arasındaki ilişkiyi kendi cümleleriyle yeniden ifade eder."
-   ],
-   "baslik": "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme",
-   "topic_key": "Fizik > 1.3 Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilme",
-   "kod": "FİZ.10.1.3",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t02_c01",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t02_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Kuvvet, yer değiştirme ve iş arasındaki ilişkiyi matematiksel olarak modeller.",
-    "Kuvvet, yer değiştirme ve iş arasındaki ilişki hakkında genelleme yapar."
-   ],
-   "baslik": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme",
-   "topic_key": "Fizik > 2.1 Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme",
-   "kod": "FİZ.10.2.1",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t02_c02",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t02_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "İş, enerji ve güç kavramları hakkında mevcut bilgisi dâhilinde hipotez kurar.",
-    "İş, enerji ve güç kavramlarına yönelik ilişkileri listeler.",
-    "İş, enerji ve güç kavramlarını karşılaştırır.",
-    "İş ve güç kavramları arasındaki ilişkiye yönelik önermelerde bulunur.",
-    "Önermelerini matematiksel modele dönüştürerek değerlendirir."
-   ],
-   "baslik": "İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme",
-   "topic_key": "Fizik > 2.2 İş, enerji ve güç kavramlarına ilişkin çıkarım yapabilme",
-   "kod": "FİZ.10.2.2",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t02_c03",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t02_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Enerji biçimlerine ilişkin özellikleri belirler.",
-    "Enerji biçimlerine ilişkin benzerlikleri listeler.",
-    "Enerji biçimlerine ilişkin farklılıkları listeler."
-   ],
-   "baslik": "Enerji biçimlerini karşılaştırabilme",
-   "topic_key": "Fizik > 2.3 Enerji biçimlerini karşılaştırabilme",
-   "kod": "FİZ.10.2.3",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t02_c04",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t02_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Mekanik enerjiye ilişkin bileşenleri belirler.",
-    "Mekanik enerjiyle ilgili bileşenler arasındaki matematiksel ilişkiyi belirler."
-   ],
-   "baslik": "Mekanik enerjiyi çözümleyebilme",
-   "topic_key": "Fizik > 2.4 Mekanik enerjiyi çözümleyebilme",
-   "kod": "FİZ.10.2.4",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t02_c05",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t02_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Yenilenebilen ve yenilenemeyen enerji kaynaklarına ilişkin özellikleri belirler.",
-    "Yenilenebilen ve yenilenemeyen enerji kaynaklarının avantajlarını listeler.",
-    "Yenilenebilen ve yenilenemeyen enerji kaynaklarının dezavantajlarını listeler."
-   ],
-   "baslik": "Yenilenebilen ve yenilenemeyen enerji kaynaklarını karşılaştırabilme",
-   "topic_key": "Fizik > 2.5 Yenilenebilen ve yenilenemeyen enerji kaynaklarını karşılaştırabilme",
-   "kod": "FİZ.10.2.5",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t03_c01",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t03_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Basit elektrik devresi ile su tesisatının bileşenlerini gözlemler.",
-    "Basit elektrik devresi ile su tesisatının bileşenleri arasındaki benzerlikleri ve farklılıkları tespit eder.",
-    "Benzerliklere dayalı olarak basit elektrik devresindeki potansiyel fark, elektrik akımı ve direncin tanımı hakkında çıkarım yapar."
-   ],
-   "baslik": "Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme",
-   "topic_key": "Fizik > 3.1 Basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarının tanımına ilişkin analojik akıl yürütebilme",
-   "kod": "FİZ.10.3.1",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t03_c02",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t03_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Bir iletkende elektrik akımı oluşması ile ilgili değişkenleri belirler.",
-    "Elektrik akımını oluşturan değişkenler arasındaki ilişkiyi belirler."
-   ],
-   "baslik": "Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme",
-   "topic_key": "Fizik > 3.2 Elektrik yükünün hareketi üzerinden elektrik akımı kavramını çözümleyebilme",
-   "kod": "FİZ.10.3.2",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t03_c03",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t03_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Elektrik akımı, direnç ve potansiyel fark arasındaki ilişkiyi deney yoluyla keşfederek Ohm Yasası'nın matematiksel modeline ulaşır.",
-    "Ohm Yasası'nın matematiksel modeli üzerinden genelleme yapar."
-   ],
-   "baslik": "Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme",
-   "topic_key": "Fizik > 3.3 Ohm Yasası ile ilgili tümevarımsal akıl yürütebilme",
-   "kod": "FİZ.10.3.3",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t03_c04",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t03_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dirençlerin seri, paralel ve birleşik bağlanma türlerini tanımlar.",
-    "Dirençlerin seri, paralel ve birleşik bağlanması ile eşdeğer direnç arasındaki ilişkiyi belirlemek üzere veri toplar ve kaydeder.",
-    "Elde ettiği verileri yorumlayarak ulaştığı çıkarımları matematiksel modellemeleri kullanarak test eder."
-   ],
-   "baslik": "Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme",
-   "topic_key": "Fizik > 3.4 Dirençlerin bağlanma türüne göre eşdeğer dirence ilişkin bilimsel çıkarım yapabilme",
-   "kod": "FİZ.10.3.4",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t03_c05",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t03_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Üreteçlerin seri ve paralel bağlanma türlerini tanımlar.",
-    "Üreteçlerin seri ve paralel bağlanması durumunda devrenin potansiyel fark, ana kol akımı ve üreteçlerin tükenme süreleri arasındaki ilişkiyi belirlemek üzere veri toplayarak kaydeder.",
-    "Elde ettiği verileri yorumlayarak değerlendirir."
-   ],
-   "baslik": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme",
-   "topic_key": "Fizik > 3.5 Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme",
-   "kod": "FİZ.10.3.5",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t03_c06",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t03_c06.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlere ilişkin bilgiye ulaşmak için kullanacağı araçları belirler.",
-    "Belirlediği aracı kullanarak elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemler ile ilgili bilgileri bulur.",
-    "Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemler hakkında ulaşılan bilgileri doğrular.",
-    "Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemler hakkındaki ulaştığı bilgileri kaydeder."
-   ],
-   "baslik": "Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilme",
-   "topic_key": "Fizik > 3.6 Elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilme",
-   "kod": "FİZ.10.3.6",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t03_c07",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t03_c07.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Topraklama olayını tanımlar.",
-    "Topraklama olayıyla ilgili sorular sorar.",
-    "Topraklama olayı hakkında bilgi toplar.",
-    "Topraklama olayı ile ilgili topladığı bilgilerin doğru olup olmadığını değerlendirir.",
-    "Topraklama olayının önemi hakkında çıkarım yapar."
-   ],
-   "baslik": "Topraklama olayının önemini sorgulayabilme",
-   "topic_key": "Fizik > 3.7 Topraklama olayının önemini sorgulayabilme",
-   "kod": "FİZ.10.3.7",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t04_c01",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t04_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Periyodik hareketlere ilişkin deneyimlerini gözden geçirir.",
-    "Periyodik hareketlere ilişkin deneyimlerinden çıkarım yapar.",
-    "Periyodik hareketlere ilişkin deneyimlerinden ulaştığı çıkarımı değerlendirir."
-   ],
-   "baslik": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme",
-   "topic_key": "Fizik > 4.1 Periyodik hareketlere ilişkin deneyimlerini yansıtabilme",
-   "kod": "FİZ.10.4.1",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t04_c02",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t04_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dalgaların temel kavramlarına ilişkin nitelikleri tanımlar.",
-    "Dalgaların temel kavramlarına ilişkin niteliklerin ölçümünü yapar.",
-    "Dalgaların temel kavramlarını niteliklerine bağlı olarak tanımlar."
-   ],
-   "baslik": "Dalgaların temel kavramlarına ilişkin operasyonel tanımlama yapabilme",
-   "topic_key": "Fizik > 4.2 Dalgaların temel kavramlarına ilişkin operasyonel tanımlama yapabilme",
-   "kod": "FİZ.10.4.2",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t04_c03",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t04_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dalgaların özelliklerini belirler.",
-    "Dalgaları titreşim doğrultusu ve taşıdığı enerjiye göre ayrıştırır.",
-    "Dalgaları titreşim doğrultusu ve taşıdığı enerjiye göre gruplandırır.",
-    "Dalgaları enine, boyuna, hem enine hem boyuna, mekanik ve elektromanyetik olarak adlandırır."
-   ],
-   "baslik": "Dalgaları özelliklerine göre sınıflandırabilme",
-   "topic_key": "Fizik > 4.3 Dalgaları özelliklerine göre sınıflandırabilme",
-   "kod": "FİZ.10.4.3",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t04_c04",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t04_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Dalgaların yayılma süratine etki eden etmenleri tahmin eder.",
-    "Dalgaların farklı ortamlardaki yayılma süratini karşılaştırır.",
-    "Dalgaların farklı ortamlardaki yayılma süratlerine ilişkin sonuç çıkarır.",
-    "Elektromanyetik dalgaların yayılma sürati ile ilgili tahminlerde bulunur.",
-    "Elektromanyetik dalgaların yayılma sürati ile ilgili tahminlerinin geçerliliğini sorgular."
-   ],
-   "baslik": "Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme",
-   "topic_key": "Fizik > 4.4 Dalgaların yayılma süratini etkileyen etmenlere ilişkin bilimsel gözleme dayalı tahmin yapabilme",
-   "kod": "FİZ.10.4.4",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t04_c05",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t04_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Su dalgalarında yansıma ve kırılma olaylarına ilişkin gözlemler yapar.",
-    "Su dalgalarında yansıma ve kırılma olayları sırasındaki açılar arasında ilişki kurar.",
-    "Su dalgalarında yansıma ve kırılma olaylarına ilişkin genellemeler yapar."
-   ],
-   "baslik": "Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme",
-   "topic_key": "Fizik > 4.5 Su dalgalarında yansıma ve kırılma ile ilgili tümevarımsal akıl yürütebilme",
-   "kod": "FİZ.10.4.5",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t04_c06",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t04_c06.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Rezonans ve depremle ilişkili olan kavramları tanımlar.",
-    "Rezonans ve depremle ilişkili olan kavramlar ile ilgili sorular sorar.",
-    "Rezonans ve depremle ilişkili olan kavramlar hakkında bilgi toplar.",
-    "Rezonans ve depremle ilişkili olan kavramlar ile ilgili toplanan bilgilerin doğru olup olmadığını değerlendirir.",
-    "Rezonans ve depreme ilişkin kavramlar üzerinden depreme yönelik çıkarımlar yapar."
-   ],
-   "baslik": "Rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilme",
-   "topic_key": "Fizik > 4.6 Rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilme",
-   "kod": "FİZ.10.4.6",
-   "uretim_durumu": "tam"
-  },
-  {
-   "konu_id": "fiz_10_t04_c07",
-   "ders": "Fizik",
-   "sinif": 10,
-   "dosya": "fiz_10_t04_c07.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Depremle ilgili bir model önerir.",
-    "Depremle ilgili önerilen modeli geliştirir."
-   ],
-   "baslik": "Depremle ilgili bilimsel model oluşturabilme",
-   "topic_key": "Fizik > 4.7 Depremle ilgili bilimsel model oluşturabilme",
-   "kod": "FİZ.10.4.7",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u01_k01",
    "ders": "Fizik",
    "sinif": 10,
    "dosya": "fizik_10_u01_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
+    "Sabit hızlı hareketi ve ilgili kavramları açıklar.",
+    "Sabit hızlı harekette hesap ve grafik yorumu yapar."
    ],
    "baslik": "1.1 Sabit Hızlı Hareket",
    "topic_key": "Fizik > 1.1 Sabit Hızlı Hareket",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u01_k05",
@@ -3048,7 +2668,7 @@
    "baslik": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
    "topic_key": "Fizik > 1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u01_k06",
@@ -3064,7 +2684,7 @@
    "baslik": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
    "topic_key": "Fizik > 1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u01_k07",
@@ -3080,7 +2700,7 @@
    "baslik": "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
    "topic_key": "Fizik > 1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u01_k08",
@@ -3096,7 +2716,7 @@
    "baslik": "1.3.2 Serbest Düşme Hareketi",
    "topic_key": "Fizik > 1.3.2 Serbest Düşme Hareketi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u01_k09",
@@ -3112,7 +2732,7 @@
    "baslik": "1.4 İki Boyutta Sabit İvmeli Hareket",
    "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u02_k01",
@@ -3122,13 +2742,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "A) Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
-    "B) İş, Enerji ve Güç Kavramları Arasındaki İlişki"
+    "İş kavramını, birimini ve koşullarını açıklar.",
+    "Kuvvet-yer değiştirme grafiğinden işi hesaplar ve yorumlar."
    ],
-   "baslik": "2.1 İş, Enerji ve Güç",
-   "topic_key": "Fizik > 2.1 İş, Enerji ve Güç",
+   "baslik": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+   "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u02_k02",
@@ -3138,12 +2758,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "enerji biçimlerini karşılaştırabilmeniz,"
+    "Enerji biçimlerini tanır ve ayırt eder.",
+    "Günlük hayattaki enerji dönüşümlerini açıklar."
    ],
    "baslik": "2.2 Enerji Biçimleri",
    "topic_key": "Fizik > 2.2 Enerji Biçimleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u02_k03",
@@ -3153,12 +2774,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,"
+    "Mekanik enerjinin bileşenlerini ve korunumunu açıklar.",
+    "Kinetik ve potansiyel enerji hesaplar."
    ],
    "baslik": "2.3 Mekanik Enerji",
    "topic_key": "Fizik > 2.3 Mekanik Enerji",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u02_k04",
@@ -3168,12 +2790,29 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "yenilenebilen ve yenilenemeyen enerji kaynaklarını karşılaştırabilmeniz"
+    "Enerji kaynaklarını yenilenebilirlik ölçütüne göre sınıflandırır.",
+    "Kaynakların çevresel etkisini ve verimini yorumlar."
    ],
    "baslik": "2.4 Enerji Kaynakları",
    "topic_key": "Fizik > 2.4 Enerji Kaynakları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u02_k05",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İş, enerji ve güç arasındaki ilişkiyi açıklar.",
+    "İş ve güç hesaplamalarını yapar."
+   ],
+   "baslik": "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+   "topic_key": "Fizik > 2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+   "kod": "",
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u03_k01",
@@ -3183,12 +2822,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,"
+    "Devre elemanlarını ve işlevlerini tanır.",
+    "Ölçüm araçlarını ve temel elektriksel büyüklükleri ilişkilendirir."
    ],
    "baslik": "3.1 Basit Elektrik Devreleri",
    "topic_key": "Fizik > 3.1 Basit Elektrik Devreleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u03_k02",
@@ -3198,12 +2838,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    "Akım kavramını ve akımın yönünü açıklar.",
+    "Akım, yük ve zaman arasındaki ilişkiyi kullanarak hesap yapar."
    ],
    "baslik": "3.2 Elektrik Akımı",
    "topic_key": "Fizik > 3.2 Elektrik Akımı",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u03_k03",
@@ -3213,12 +2854,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+    "Potansiyel fark, akım ve direnç hesaplar."
    ],
    "baslik": "3.3 Ohm Yasası",
    "topic_key": "Fizik > 3.3 Ohm Yasası",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u03_k04",
@@ -3228,12 +2870,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,"
+    "Bağlama türlerini ve eşdeğer direnci açıklar.",
+    "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar."
    ],
    "baslik": "3.4 Dirençlerin Bağlanması",
    "topic_key": "Fizik > 3.4 Dirençlerin Bağlanması",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u03_k05",
@@ -3243,12 +2886,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,"
+    "Üreteç bağlama türlerini açıklar.",
+    "Bağlı üreteçlerin toplam potansiyel farkını hesaplar."
    ],
    "baslik": "3.5 Üreteçlerin Bağlanması",
    "topic_key": "Fizik > 3.5 Üreteçlerin Bağlanması",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u03_k06",
@@ -3258,12 +2902,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    "Elektrik tehlikelerini tanır.",
+    "Elektrik güvenliği önlemlerini açıklar."
    ],
    "baslik": "3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
    "topic_key": "Fizik > 3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u03_k07",
@@ -3273,12 +2918,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz"
+    "Topraklamanın ne olduğunu ve amacını açıklar.",
+    "Kaçak akımın can güvenliği üzerindeki etkisini yorumlar."
    ],
    "baslik": "3.7 Topraklamanın Önemi",
    "topic_key": "Fizik > 3.7 Topraklamanın Önemi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u04_k01",
@@ -3288,12 +2934,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "dalgaların temel kavramlarını tanımlayabilmeniz,"
+    "Dalga hareketine ait temel kavramları tanımlar.",
+    "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar."
    ],
    "baslik": "4.1 Dalgaların Temel Kavramları",
    "topic_key": "Fizik > 4.1 Dalgaların Temel Kavramları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u04_k02",
@@ -3303,12 +2950,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "dalgaları özelliklerine göre sınıflandırabilmeniz,"
+    "Sınıflandırma ölçütlerini açıklar.",
+    "Dalga türlerini örneklendirir."
    ],
    "baslik": "4.2 Dalgaların Sınıflandırılması",
    "topic_key": "Fizik > 4.2 Dalgaların Sınıflandırılması",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u04_k03",
@@ -3318,12 +2966,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,"
+    "Yayılma süratini etkileyen etmenleri açıklar.",
+    "Deneysel verilerden sonuç çıkarır."
    ],
    "baslik": "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
    "topic_key": "Fizik > 4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u04_k04",
@@ -3333,12 +2982,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "periyodik hareketlere ilişkin deneyimlerinizi yansıtabilmeniz,"
+    "Periyodik hareketi ve sarkaç türlerini açıklar.",
+    "Periyodu etkileyen değişkenleri deney verileriyle yorumlar."
    ],
    "baslik": "4.4 Periyodik Hareketler",
    "topic_key": "Fizik > 4.4 Periyodik Hareketler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u04_k05",
@@ -3348,12 +2998,13 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,"
+    "Yansıma yasalarını açıklar.",
+    "Kırılma olayında sürat, dalga boyu ve yön değişimini yorumlar."
    ],
    "baslik": "4.5 Su Dalgalarında Yansıma ve Kırılma",
    "topic_key": "Fizik > 4.5 Su Dalgalarında Yansıma ve Kırılma",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "fizik_10_u04_k06",
@@ -3363,13 +3014,29 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "A) Rezonans ve Depremle İlgili Kavramlar",
-    "B) Depremle İlgili Bilimsel Model Oluşturabilme"
+    "Rezonansı tanımlar ve örneklendirir.",
+    "Depremle ilgili kavramları ayırt eder."
    ],
-   "baslik": "4.6 Rezonans ve Deprem",
-   "topic_key": "Fizik > 4.6 Rezonans ve Deprem",
+   "baslik": "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+   "topic_key": "Fizik > 4.6.1 Rezonans ve Depremle İlgili Kavramlar",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "fizik_10_u04_k07",
+   "ders": "Fizik",
+   "sinif": 10,
+   "dosya": "fizik_10_u04_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Sismoloji ve sismograf kavramlarını açıklar.",
+    "Deprem riskine yönelik model ve çözüm önerilerini yorumlar."
+   ],
+   "baslik": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+   "topic_key": "Fizik > 4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+   "kod": "",
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c01",
@@ -3386,7 +3053,7 @@
    "baslik": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme",
    "topic_key": "Kimya > 1.1 Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme",
    "kod": "KİM.10.1.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c02",
@@ -3402,7 +3069,7 @@
    "baslik": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme",
    "topic_key": "Kimya > 1.2 Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme",
    "kod": "KİM.10.1.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c03",
@@ -3419,7 +3086,7 @@
    "baslik": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme",
    "topic_key": "Kimya > 1.3 Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme",
    "kod": "KİM.10.1.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c04",
@@ -3436,7 +3103,7 @@
    "baslik": "Mol kavramına ilişkin operasyonel tanımlama yapabilme",
    "topic_key": "Kimya > 1.4 Mol kavramına ilişkin operasyonel tanımlama yapabilme",
    "kod": "KİM.10.1.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c05",
@@ -3452,7 +3119,7 @@
    "baslik": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme",
    "topic_key": "Kimya > 1.5 Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme",
    "kod": "KİM.10.1.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c06",
@@ -3470,7 +3137,7 @@
    "baslik": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme",
    "topic_key": "Kimya > 1.6 Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme",
    "kod": "KİM.10.1.6",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c07",
@@ -3487,7 +3154,7 @@
    "baslik": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme",
    "topic_key": "Kimya > 1.7 Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme",
    "kod": "KİM.10.1.7",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c08",
@@ -3504,7 +3171,7 @@
    "baslik": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme",
    "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
    "kod": "KİM.10.1.8",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c09",
@@ -3524,7 +3191,7 @@
    "baslik": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme",
    "topic_key": "Kimya > 1.9 Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme",
    "kod": "KİM.10.1.9",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c10",
@@ -3540,7 +3207,7 @@
    "baslik": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme",
    "topic_key": "Kimya > 1.10 İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme",
    "kod": "KİM.10.1.10",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t01_c11",
@@ -3556,7 +3223,7 @@
    "baslik": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme",
    "topic_key": "Kimya > 1.11 Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme",
    "kod": "KİM.10.1.11",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c01",
@@ -3572,7 +3239,7 @@
    "baslik": "Çözünme sürecine ilişkin bilimsel model oluşturabilme",
    "topic_key": "Kimya > 2.1 Çözünme sürecine ilişkin bilimsel model oluşturabilme",
    "kod": "KİM.10.2.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c02",
@@ -3589,7 +3256,7 @@
    "baslik": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme",
    "topic_key": "Kimya > 2.2 Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme",
    "kod": "KİM.10.2.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c03",
@@ -3607,7 +3274,7 @@
    "baslik": "Çözünme olayını sınıflandırabilme",
    "topic_key": "Kimya > 2.3 Çözünme olayını sınıflandırabilme",
    "kod": "KİM.10.2.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c04",
@@ -3624,7 +3291,7 @@
    "baslik": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme",
    "topic_key": "Kimya > 2.4 Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme",
    "kod": "KİM.10.2.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c05",
@@ -3641,7 +3308,7 @@
    "baslik": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme",
    "topic_key": "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler",
    "kod": "KİM.10.2.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c06",
@@ -3659,7 +3326,7 @@
    "baslik": "Çözeltileri sınıflandırabilme",
    "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
    "kod": "KİM.10.2.6",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c07",
@@ -3675,7 +3342,7 @@
    "baslik": "Çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilme",
    "topic_key": "Kimya > 2.7 Çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilme",
    "kod": "KİM.10.2.7",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t02_c08",
@@ -3694,7 +3361,7 @@
    "baslik": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme",
    "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
    "kod": "KİM.10.2.8",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t03_c01",
@@ -3712,7 +3379,7 @@
    "baslik": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme",
    "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler",
    "kod": "KİM.10.3.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kim_10_t03_c02",
@@ -3731,7 +3398,7 @@
    "baslik": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme",
    "topic_key": "Kimya > 3.2 Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme",
    "kod": "KİM.10.3.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k01",
@@ -3748,7 +3415,7 @@
    "baslik": "Kimyasal Değişim",
    "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k02",
@@ -3765,7 +3432,7 @@
    "baslik": "Asit-Baz Tepkimeleri",
    "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k03",
@@ -3781,7 +3448,7 @@
    "baslik": "Mol Kavramı",
    "topic_key": "Kimya > 1.1.3 Mol Kavramı",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k04",
@@ -3796,7 +3463,7 @@
    "baslik": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
    "topic_key": "Kimya > 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k05",
@@ -3811,7 +3478,7 @@
    "baslik": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
    "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k06",
@@ -3831,7 +3498,7 @@
    "baslik": "Basınç-Hacim İlişkisi (Boyle Yasası)",
    "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k07",
@@ -3847,7 +3514,7 @@
    "baslik": "Efüzyon ve Difüzyon",
    "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Eftizyon Yasası",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u01_k08",
@@ -3862,7 +3529,7 @@
    "baslik": "1.2.3 İdeal Gaz Yasası",
    "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u02_k01",
@@ -3878,7 +3545,7 @@
    "baslik": "Maddelerin Birbiri İçindeki Çözünebilirliği",
    "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u02_k02",
@@ -3896,7 +3563,7 @@
    "baslik": "Fiziksel Çözünme",
    "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u02_k03",
@@ -3911,7 +3578,7 @@
    "baslik": "2.1.3 Çözünme Olayının Sınıflandırılması",
    "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u02_k04",
@@ -3926,7 +3593,7 @@
    "baslik": "2.1.4 Derişim Birimleri (Molarite, ppm)",
    "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u02_k05",
@@ -3945,7 +3612,7 @@
    "baslik": "Aşırı Doymuş Çözelti",
    "topic_key": "Kimya > 2.1.5 Çözünürlük",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "kimya_10_u03_k01",
@@ -3961,7 +3628,7 @@
    "baslik": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t01_c01",
@@ -3980,7 +3647,7 @@
    "baslik": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme",
    "topic_key": "Matematik > 1.1 Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme",
    "kod": "MAT.10.1.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t01_c02",
@@ -3999,7 +3666,7 @@
    "baslik": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme",
    "topic_key": "Matematik > 1.2 Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme",
    "kod": "MAT.10.1.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t01_c03",
@@ -4018,7 +3685,7 @@
    "baslik": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme",
    "topic_key": "Matematik > 1.3 Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme",
    "kod": "MAT.10.1.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t01_c04",
@@ -4034,7 +3701,7 @@
    "baslik": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme",
    "topic_key": "Matematik > 1.4 Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme",
    "kod": "MAT.10.1.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t02_c01",
@@ -4054,7 +3721,7 @@
    "baslik": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme",
    "topic_key": "Matematik > 2.1 İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme",
    "kod": "MAT.10.2.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t02_c02",
@@ -4071,7 +3738,7 @@
    "baslik": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme",
    "topic_key": "Matematik > 2.2 Başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilme",
    "kod": "MAT.10.2.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t03_c01",
@@ -4090,7 +3757,7 @@
    "baslik": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme",
    "topic_key": "Matematik > 3.1 Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme",
    "kod": "MAT.10.3.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t03_c02",
@@ -4110,7 +3777,7 @@
    "baslik": "Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme",
    "topic_key": "Matematik > 3.2 Birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilme",
    "kod": "MAT.10.3.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t03_c03",
@@ -4130,7 +3797,7 @@
    "baslik": "Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme",
    "topic_key": "Matematik > 3.3 Bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilme",
    "kod": "MAT.10.3.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t04_c01",
@@ -4147,7 +3814,7 @@
    "baslik": "Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme",
    "topic_key": "Matematik > 4.1 Gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilme",
    "kod": "MAT.10.4.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t04_c02",
@@ -4167,7 +3834,7 @@
    "baslik": "Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
    "topic_key": "Matematik > 4.2 Gerçek sayılarda f(x) = x2 şeklinde tanımlı karesel referans fonksiyonun nitel cebirsel temsilleri ile nitel özellikleri hakkında yargıda bulunur. özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
    "kod": "MAT.10.4.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t04_c03",
@@ -4187,7 +3854,7 @@
    "baslik": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
    "topic_key": "Matematik > 4.3 Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
    "kod": "MAT.10.4.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t04_c04",
@@ -4207,7 +3874,7 @@
    "baslik": "Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
    "topic_key": "Matematik > 4.4 Gerçek sayılarda f(x) = 1 x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun lendirir. nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
    "kod": "MAT.10.4.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t04_c05",
@@ -4226,7 +3893,7 @@
    "baslik": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme",
    "topic_key": "Matematik > 4.5 Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme",
    "kod": "MAT.10.4.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t04_c06",
@@ -4246,7 +3913,7 @@
    "baslik": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme",
    "topic_key": "Matematik > 4.6 Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme",
    "kod": "MAT.10.4.6",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t05_c01",
@@ -4266,7 +3933,7 @@
    "baslik": "Sayma stratejileri kullanarak problem çözebilme",
    "topic_key": "Matematik > 5.1 Sayma stratejileri kullanarak problem çözebilme",
    "kod": "MAT.10.5.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t05_c02",
@@ -4282,7 +3949,7 @@
    "baslik": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme",
    "topic_key": "Matematik > 5.2 Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme",
    "kod": "MAT.10.5.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t06_c01",
@@ -4301,7 +3968,7 @@
    "baslik": "Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme",
    "topic_key": "Matematik > 6.1 Dik koordinat sisteminde iki nokta arasındaki uzaklık ve bir doğru parçasını belli oranda bölen noktanın koordinatlarıyla ilgili çıkarım yapabilme",
    "kod": "MAT.10.6.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t06_c02",
@@ -4318,7 +3985,7 @@
    "baslik": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme",
    "topic_key": "Matematik > 6.2 Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme",
    "kod": "MAT.10.6.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t07_c01",
@@ -4337,7 +4004,7 @@
    "baslik": "Koşullu olasılık ile çıkarım yapabilme",
    "topic_key": "Matematik > 7.1 Koşullu olasılık ile çıkarım yapabilme",
    "kod": "MAT.10.7.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_t07_c02",
@@ -4354,7 +4021,7 @@
    "baslik": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme",
    "topic_key": "Matematik > 7.2 Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme",
    "kod": "MAT.10.7.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u01_k01",
@@ -4369,7 +4036,7 @@
    "baslik": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
    "topic_key": "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u01_k02",
@@ -4384,7 +4051,7 @@
    "baslik": "1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
    "topic_key": "Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u01_k03",
@@ -4399,7 +4066,7 @@
    "baslik": "1.3 Üçgende Alan",
    "topic_key": "Matematik > 1.3 Üçgende Alan",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u01_k04",
@@ -4414,7 +4081,7 @@
    "baslik": "1.4 Sinüs ve Kosinüs Teoremleri",
    "topic_key": "Matematik > 1.4 Sinüs ve Kosinüs Teoremleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u02_k01",
@@ -4429,7 +4096,7 @@
    "baslik": "2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
    "topic_key": "Matematik > 2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u02_k02",
@@ -4444,7 +4111,7 @@
    "baslik": "2.2 İstatistiksel Sonuç veya Yorumları Tartışma",
    "topic_key": "Matematik > 2.2 İstatistiksel Sonuç veya Yorumları Tartışma",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u03_k01",
@@ -4459,7 +4126,7 @@
    "baslik": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
    "topic_key": "Matematik > 3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u03_k02",
@@ -4474,7 +4141,7 @@
    "baslik": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
    "topic_key": "Matematik > 3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u03_k03",
@@ -4489,7 +4156,7 @@
    "baslik": "3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
    "topic_key": "Matematik > 3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u04_k01",
@@ -4504,7 +4171,7 @@
    "baslik": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
    "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u04_k02",
@@ -4519,7 +4186,7 @@
    "baslik": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
    "topic_key": "Matematik > 4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u04_k03",
@@ -4534,7 +4201,7 @@
    "baslik": "4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
    "topic_key": "Matematik > 4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u04_k04",
@@ -4549,7 +4216,7 @@
    "baslik": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
    "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u04_k05",
@@ -4564,7 +4231,7 @@
    "baslik": "4.5 Fonksiyonların Ters Fonksiyonları",
    "topic_key": "Matematik > 4.5 Fonksiyonların Ters Fonksiyonları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u04_k06",
@@ -4579,7 +4246,7 @@
    "baslik": "4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
    "topic_key": "Matematik > 4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u05_k01",
@@ -4594,7 +4261,7 @@
    "baslik": "5.1 Sayma Stratejileri",
    "topic_key": "Matematik > 5.1 Sayma Stratejileri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u05_k02",
@@ -4609,7 +4276,7 @@
    "baslik": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
    "topic_key": "Matematik > 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u06_k01",
@@ -4624,7 +4291,7 @@
    "baslik": "6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
    "topic_key": "Matematik > 6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u06_k02",
@@ -4639,7 +4306,7 @@
    "baslik": "6.2 Doğrunun Özellikleri ve Analitik İncelenmesi",
    "topic_key": "Matematik > 6.2 Doğrunun Özellikleri ve Analitik İncelenmesi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u07_k01",
@@ -4654,7 +4321,7 @@
    "baslik": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
    "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "mat_10_u07_k02",
@@ -4669,7 +4336,7 @@
    "baslik": "7.2 Bayes Teoremi",
    "topic_key": "Matematik > 7.2 Bayes Teoremi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t01_c01",
@@ -4686,7 +4353,7 @@
    "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte 1040-1299 yılları arasında meydana VE SÜREÇ BİLEŞENLERİ gelen önemli askerî mücadelelerin Türk tarihinin seyrine etkilerini karşılaştırabilme",
    "topic_key": "Tarih > 1.1 Türkistan’dan Türkiye’ye uzanan süreçte 1040-1299 yılları arasında meydana VE SÜREÇ BİLEŞENLERİ gelen önemli askerî mücadelelerin Türk tarihinin seyrine etkilerini karşılaştırabilme",
    "kod": "TAR.10.1.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t01_c02",
@@ -4704,7 +4371,7 @@
    "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlayabilme",
    "topic_key": "Tarih > 1.2 Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlayabilme",
    "kod": "TAR.10.1.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t01_c03",
@@ -4723,7 +4390,7 @@
    "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgulayabilme",
    "topic_key": "Tarih > 1.3 Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgulayabilme",
    "kod": "TAR.10.1.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t01_c04",
@@ -4740,7 +4407,7 @@
    "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmeleri Anadolu’nun Türkleşme ve İslamlaşma sürecine etkisi açısından değerlendirebilme",
    "topic_key": "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
    "kod": "TAR.10.1.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t02_c01",
@@ -4757,7 +4424,7 @@
    "baslik": "Osmanlı Devleti’nin kuruluşuna dair farklı görüşleri tartışabilme VE SÜREÇ BİLEŞENLERİ",
    "topic_key": "Tarih > 2.1 Osmanlı Devleti’nin kuruluşuna dair farklı görüşleri tartışabilme VE SÜREÇ BİLEŞENLERİ",
    "kod": "TAR.10.2.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t02_c02",
@@ -4774,7 +4441,7 @@
    "baslik": "1299-1453 yılları arasında Osmanlı Devleti’nin Anadolu ve Rumeli’de gerçekleştirdiği siyasi ve askerî mücadeleleri yorumlayabilme",
    "topic_key": "Tarih > 2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
    "kod": "TAR.10.2.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t02_c03",
@@ -4790,7 +4457,7 @@
    "baslik": "Osmanlı Devleti’nin ordu, hukuk ve toprak sistemi ile devletleşme süreci arasındaki ilişkiyi çözümleyebilme",
    "topic_key": "Tarih > 2.3 Osmanlı Devleti’nin ordu, hukuk ve toprak sistemi ile devletleşme süreci arasındaki ilişkiyi çözümleyebilme",
    "kod": "TAR.10.2.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t02_c04",
@@ -4807,7 +4474,7 @@
    "baslik": "Osmanlı Devleti’nin fethettiği topraklarda kalıcı olabilmek için izlediği politikaları sorgulayabilme",
    "topic_key": "Tarih > 2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
    "kod": "TAR.10.2.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t02_c05",
@@ -4824,7 +4491,7 @@
    "baslik": "Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin etkilerine dair fikirler üretebilme",
    "topic_key": "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
    "kod": "TAR.10.2.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t03_c01",
@@ -4841,7 +4508,7 @@
    "baslik": "1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti’nin VE SÜREÇ BİLEŞENLERİ cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilme",
    "topic_key": "Tarih > 3.1 1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti’nin VE SÜREÇ BİLEŞENLERİ cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilme",
    "kod": "TAR.10.3.1",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t03_c02",
@@ -4858,7 +4525,7 @@
    "baslik": "1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliğe ilişkin kaynakları yorumlayabilme",
    "topic_key": "Tarih > 3.2 1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliğe ilişkin kaynakları yorumlayabilme",
    "kod": "TAR.10.3.2",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t03_c03",
@@ -4876,7 +4543,7 @@
    "baslik": "Avrupalıların sömürgeci politikalarının etkilerini tarihsel bağlamı içerisinde değerlendirebilme",
    "topic_key": "Tarih > 3.3 Avrupalıların sömürgeci politikalarının etkilerini tarihsel bağlamı içerisinde değerlendirebilme",
    "kod": "TAR.10.3.3",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t03_c04",
@@ -4895,7 +4562,7 @@
    "baslik": "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçlarını müzakere edebilme",
    "topic_key": "Tarih > 3.4 1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçlarını müzakere edebilme",
    "kod": "TAR.10.3.4",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tar_10_t03_c05",
@@ -4914,7 +4581,7 @@
    "baslik": "1453-1683 yılları arasında Osmanlı Devleti’nde bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin oluşturduğu özgün ürünleri paylaşabilme",
    "topic_key": "Tarih > 3.5 1453-1683 yılları arasında Osmanlı Devleti’nde bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin oluşturduğu özgün ürünleri paylaşabilme",
    "kod": "TAR.10.3.5",
-   "uretim_durumu": "tam"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u01_k01",
@@ -4929,7 +4596,7 @@
    "baslik": "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler",
    "topic_key": "Tarih > 1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u01_k02",
@@ -4944,7 +4611,7 @@
    "baslik": "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim",
    "topic_key": "Tarih > 1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u01_k03",
@@ -4959,7 +4626,7 @@
    "baslik": "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri",
    "topic_key": "Tarih > 1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u02_k01",
@@ -4976,7 +4643,7 @@
    "baslik": "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
    "topic_key": "Tarih > 2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u02_k02",
@@ -4991,7 +4658,7 @@
    "baslik": "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi",
    "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u03_k01",
@@ -5006,7 +4673,7 @@
    "baslik": "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi",
    "topic_key": "Tarih > 3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u03_k02",
@@ -5021,7 +4688,7 @@
    "baslik": "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim",
    "topic_key": "Tarih > 3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u03_k03",
@@ -5036,7 +4703,7 @@
    "baslik": "3.3. Avrupalıların Sömürgeci Politikaları",
    "topic_key": "Tarih > 3.3 Avrupalıların Sömürgeci Politikaları",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u03_k04",
@@ -5051,7 +4718,7 @@
    "baslik": "3.4. Osmanlı Devleti’nde İsyanlar",
    "topic_key": "Tarih > 3.4 Osmanlı Devleti'nde İsyanlar",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   },
   {
    "konu_id": "tarih_10_u03_k05",
@@ -5066,7 +4733,7 @@
    "baslik": "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat",
    "topic_key": "Tarih > 3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
    "kod": "",
-   "uretim_durumu": "eski-sema"
+   "uretim_durumu": "plansiz"
   }
  ]
 }
