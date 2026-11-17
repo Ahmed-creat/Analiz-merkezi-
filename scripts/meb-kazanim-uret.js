@@ -146,6 +146,14 @@ if (odsgmVar) {
   }
 }
 
+/* v74 — HAVUZ ARŞİVİ KORUMASI
+   Havuz dizini şu an 152 havuz; kazanim_konu_10.json ise 172 havuzluk
+   arşivden üretilmiş (kazanım metinleri var). Havuzlar yenilenince
+   (agent'in havuzları gelince) dosya küçülmesin: üretim, mevcut dosyadan
+   DAHA AZ konu üretiyorsa dosya YAZILMAZ, uyarı verilir.
+   Yeniden yazmak için: YAZ_JSON=1 node scripts/meb-kazanim-uret.js */
+const ONCEKI = fs.existsSync(CIKTI_JSON) ? okuJson(CIKTI_JSON) : null;
+
 const havuzlar = [];
 for (const ad of fs.readdirSync(HAVUZ_DIZINI)) {
   if (!ad.endsWith(".json") || ad === "index.json") continue;
@@ -463,9 +471,40 @@ const denetim = {
   metin_esleme: metinEsleme,
   eslesmeyen_metinler: eslesmeyen
 };
-yazJson(CIKTI_JSON, denetim);
+const yazJsonIzin = process.env.YAZ_JSON === "1";
+if (!ONCEKI || denetim.konular.length >= (ONCEKI.konular || []).length || yazJsonIzin) {
+  yazJson(CIKTI_JSON, denetim);
+} else {
+  console.log("UYARI: yeni üretim " + denetim.konular.length + " konu, dosyada " +
+    (ONCEKI.konular || []).length + " konu var — dosya KORUNDU (YAZ_JSON=1 ile zorlanır).");
+}
 
 // ---------------- tarayıcı modülü ----------------
+/* v74 — KOD → UYGULAMA KONUSU
+   MEB katmanı bir çıktıyı bulduğunda konu adı ODSGM'nin resmî başlığıdır
+   ("Coğrafi Bakış"). Uygulamanın konusu ise numaralıdır ("1.1 Coğrafi Bakış")
+   ve havuz o topic_key'e bağlıdır. İki ad farklı olduğu için kart açılmıyordu.
+   Bu tablo resmî KODU doğrudan uygulamanın konusuna bağlar; ad benzerliğine
+   güvenmez. Bir kod birden çok konuda geçiyorsa (ör. FEL.10.1.1 altı konuda)
+   cümlenin kelimeleri konu adıyla karşılaştırılır, beraberlikte konu yazılmaz. */
+const havuzTopic = new Map(havuzlar.map(h => [h.konu_id, h.topic_key]));
+// En zengin konu listesi: dosyadaki arşiv + bu turda üretilenler.
+const KONULAR_EQ = [];
+const gorulenKonu = new Set();
+for (const h of [...(ONCEKI && Array.isArray(ONCEKI.konular) ? ONCEKI.konular : []), ...sonuc]) {
+  if (gorulenKonu.has(h.konu_id)) continue;
+  gorulenKonu.add(h.konu_id);
+  KONULAR_EQ.push(h);
+}
+const UYGULAMA = [];
+for (const h of KONULAR_EQ) {
+  if (!h.kodlar || !h.kodlar.length) continue;
+  const tk = havuzTopic.get(h.konu_id) || (h.ders + " > " + h.konu);
+  for (const kod of h.kodlar) {
+    UYGULAMA.push({ k: kod, d: h.ders, id: h.konu_id, tk: tk, kc: h.konu, h: havuzTopic.has(h.konu_id) ? 1 : 0 });
+  }
+}
+
 const tablo = {};
 for (const ders of dersler) {
   tablo[ders] = (ciktiDizini[ders] || []).map(c => {
@@ -517,7 +556,27 @@ if (odsgmVar) {
   }
 }
 
-const metinMap = metinEsleme.map(e => ({
+/* v74 — METİN indeksi de arşivle birleşir.
+   Havuz arşivi 152'ye düştüğü için TDE kazanım cümleleri (98) kaybolmasın:
+   dosyadaki eski kayıtlar korunur, bu turda üretilen kayıt önceliği alır. */
+const METIN_EQ = [];
+{
+  const gorulen = new Set();
+  for (const e of metinEsleme) {
+    const k = String(e.ders) + "|" + String(e.norm);
+    gorulen.add(k);
+    METIN_EQ.push(e);
+  }
+  for (const e of (ONCEKI && Array.isArray(ONCEKI.metin_esleme) ? ONCEKI.metin_esleme : [])) {
+    const k = String(e.ders) + "|" + String(e.norm);
+    if (gorulen.has(k)) continue;
+    gorulen.add(k);
+    // Arşiv kayıtlarının norm'u eski sürümden kalma olabilir → yeniden hesapla.
+    METIN_EQ.push(Object.assign({}, e, { norm: kok(e.metin) }));
+  }
+}
+
+const metinMap = METIN_EQ.map(e => ({
   ders: e.ders, norm: e.norm, metin: e.metin, konu_id: e.konu_id,
   konu: e.konu, topic_key: e.topic_key, kodlar: e.kodlar,
   konu_guven: e.coklu ? "coklu" : "kesin",
@@ -544,6 +603,7 @@ const js = `/* ============================================================
      ciktiBul(kazanim, ders)      → {kod,tema,kazanim,skor} | null
      konuBul(kazanim, ders)       → {konuId,topicKey,konu,kodlar,guven} | null
      ucBul(kazanim, ders)        → {kod,tema,unite,konu,konuId,havuz} | null
+     uygulamaKonu(kod, kazanim, ders) → {konuId,topicKey,konu,havuz} | null
      kodKonu(kod)                → {kod,unite,konu,tema,kazanim} | null
      konuKazanimlari(konu_id)     → [{kod,tema,kazanim}]
      tablo(ders)                  → resmî çıktı listesi
@@ -557,6 +617,7 @@ const js = `/* ============================================================
   var METIN = ${JSON.stringify(metinMap)};
   var SUREC = ${JSON.stringify(SUREC.map(x => ({ d: x.ders, k: x.kod, t: x.tema, u: x.unite, kc: x.konu, m: x.metin, n: x.norm })))};
   var KONU_ADI = ${JSON.stringify(KONU_ADI.map(x => ({ d: x.ders, k: x.kod, u: x.unite, kc: x.konu, n: x.norm })))};
+  var UYGULAMA = ${JSON.stringify(UYGULAMA)};
   var CIKTI_SAYISI = ${ciktilar.length};
 
   var DURAKLI = new Set(${JSON.stringify(Array.from(DURAKLI))});
@@ -809,6 +870,35 @@ const js = `/* ============================================================
     };
   }
 
+  /** v74 — KOD → UYGULAMANIN KONUSU
+      ODSGM başlığı ile uygulama başlığı farklı yazıldığı için (numara,
+      kısaltma) ad benzerliğine güvenilmez: resmî KOD esastır.
+      Bir kod birden çok konuya bağlıysa (ör. FEL.10.1.1 → 1.1…1.6)
+      cümlenin kelimeleri konu adıyla karşılaştırılır; eşitlikte null. */
+  function uygulamaKonu(kod, kazanim, ders) {
+    var aday = [];
+    for (var i = 0; i < UYGULAMA.length; i++) {
+      var u = UYGULAMA[i];
+      if (u.k !== kod) continue;
+      if (ders && sade(u.d) !== sade(ders)) continue;
+      aday.push(u);
+    }
+    if (!aday.length) return null;
+    if (aday.length === 1) {
+      return { konuId: aday[0].id, topicKey: aday[0].tk, konu: aday[0].kc, havuz: !!aday[0].h, yontem: "tek-konu" };
+    }
+    var ck = kelimeler(kazanim);
+    if (!ck.length) return null;
+    var puan = aday.map(function (u) { return { u: u, s: dice(ck, kelimeler(u.kc)) }; });
+    puan.sort(function (a, b) { return b.s - a.s; });
+    if (!puan.length || puan[0].s < 0.34) return null;
+    if (puan[1] && puan[0].s - puan[1].s < 0.05) return null;
+    return {
+      konuId: puan[0].u.id, topicKey: puan[0].u.tk, konu: puan[0].u.kc,
+      havuz: !!puan[0].u.h, yontem: "cok-konu", skor: Math.round(puan[0].s * 1000) / 1000
+    };
+  }
+
   /** Koda göre ünite+konu (ODSGM tablosundan) */
   function kodKonu(kod) {
     var c = ciktiByKod(kod);
@@ -858,6 +948,7 @@ const js = `/* ============================================================
     ciktiBul: ciktiBul,
     konuBul: konuBul,
     ucBul: ucBul,
+    uygulamaKonu: uygulamaKonu,
     kodKonu: kodKonu,
     konuKazanimlari: konuKazanimlari,
     tablo: tablo
@@ -882,4 +973,6 @@ for (const ders of dersler) {
     " orta:" + String(z.orta).padStart(3) + " yok:" + String(z.yok).padStart(3) +
     " metin:" + String(z.metin).padStart(4) + " kodlu:" + String(z.metin_kodlu).padStart(4));
 }
-console.log("yazıldı:", path.relative(KOK, CIKTI_JSON), "ve", path.relative(KOK, CIKTI_JS));
+console.log("yazıldı:", (yazJsonIzin || !ONCEKI || denetim.konular.length >= (ONCEKI.konular || []).length)
+  ? path.relative(KOK, CIKTI_JSON) + " + " + path.relative(KOK, CIKTI_JS)
+  : path.relative(KOK, CIKTI_JS) + " (JSON korundu)");

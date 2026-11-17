@@ -1,4 +1,4 @@
-const PWA_SURUM = "v73-metin-paragraf";
+const PWA_SURUM = "v74-kod-konu";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -1526,6 +1526,7 @@ function okzKonuBul(ders, kazanim) {
   // (ör. BİY.10.1.1). Cümle tanınmıyorsa hiçbir şey yazılmaz → aşağıdaki
   // katmanlar devreye girer.
   const MEBM = (typeof window !== "undefined" && window.OKZM) || (typeof globalThis !== "undefined" && globalThis.OKZM) || null;
+  let mebYedek = null;
   if (MEBM && typeof MEBM.ucBul === "function") {
     const m = MEBM.ucBul(kazanim, kanon);
     if (m && m.kod) {
@@ -1536,8 +1537,28 @@ function okzKonuBul(ders, kazanim) {
       if (m.havuz && m.topicKey) {
         return { konu: (m.topicKey.split(" > ")[1] || m.konu), topicKey: m.topicKey, kaynak: "meb", kod: m.kod, unite: m.unite, mebKonu: m.konu };
       }
+      // v74 — KOD → UYGULAMANIN KONUSU
+      // Resmî çıktı bulundu ama ODSGM konu başlığı ("Coğrafi Bakış") ile
+      // uygulamanın konu başlığı ("1.1 Coğrafi Bakış") aynı yazılmıyordu;
+      // bu yüzden kart açılmıyor, sorular gelmiyordu. Artık resmî KOD
+      // doğrudan uygulamanın konusuna çevrilir (ad benzerliğine güvenilmez).
+      if (typeof MEBM.uygulamaKonu === "function") {
+        const u = MEBM.uygulamaKonu(m.kod, kazanim, kanon);
+        if (u && u.konu && u.topicKey) {
+          return {
+            konu: u.konu, topicKey: u.topicKey, konuId: u.konuId,
+            kaynak: u.havuz ? "meb" : "meb-konu",
+            kod: m.kod, unite: m.unite, mebKonu: m.konu
+          };
+        }
+      }
+      // v74 — MEB BAŞLIĞI ERTELENİR, HEMEN YAZILMAZ.
+      // ODSGM'nin "konu" hücresi her zaman gerçek konu başlığı değil
+      // (ör. "YAZMA • Dinlediği masalı film şeridi hâline getirebilme").
+      // Önce uygulamanın kendi katmanları denenir; hiçbiri bulamazsa
+      // en sonda bu MEB başlığı kullanılır (konu yok demeyiz).
       const baslik = m.konu || m.unite || "";
-      return { konu: baslik, topicKey: kanon + " > " + baslik, kaynak: "meb-konu", kod: m.kod, unite: m.unite, mebKonu: m.konu };
+      mebYedek = { konu: baslik, topicKey: kanon + " > " + baslik, kaynak: "meb-konu", kod: m.kod, unite: m.unite, mebKonu: m.konu };
     }
   }
   if (MEBM && typeof MEBM.konuBul === "function") {
@@ -1572,7 +1593,7 @@ function okzKonuBul(ders, kazanim) {
       return { konu: soz.konu, topicKey: kanon + " > " + soz.konu, kaynak: "sozluk", asama: 1, terim: soz.terim };
     }
   }
-  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return okzTdeYedek(kanon, kazanim);
+  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return okzTdeYedek(kanon, kazanim) || mebYedek;
   const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
   if (r && r.guven === "kesin") {
     okzCacheYaz(kanon, kazanim, r.konu, "kural", 0.85, { topicKey: r.topicKey });
@@ -1587,7 +1608,7 @@ function okzKonuBul(ders, kazanim) {
       return { konu: birinci.konu, topicKey: birinci.topicKey, kaynak: "oto", skor: birinci.skor };
     }
   }
-  return okzTdeYedek(kanon, kazanim);
+  return okzTdeYedek(kanon, kazanim) || mebYedek;
 }
 
 // TDE 2./3. AŞAMA — sözlük ve indeks tutmadığında devreye girer.

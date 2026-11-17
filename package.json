@@ -53,7 +53,8 @@
     "havuz:index": "node scripts/havuz-index-uret.js",
     "test:uretim": "node tests/soru-uretim-plani.test.js",
     "uretim:dokum": "node scripts/kazanim-dokumu.js",
-    "test:deneme": "node tests/deneme-ice-aktarma.test.js && node tests/deneme-import-butonu.test.js"
+    "test:deneme": "node tests/deneme-ice-aktarma.test.js && node tests/deneme-import-butonu.test.js",
+    "okz:kapsam": "node scripts/okz-kapsam-denetle.js"
   },
   "devDependencies": {
     "jsdom": "^24.0.0"
