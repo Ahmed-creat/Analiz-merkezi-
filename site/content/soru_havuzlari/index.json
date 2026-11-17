@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 225,
- "soru_sayisi": 2394,
- "flashcard_sayisi": 2394,
+ "havuz_sayisi": 233,
+ "soru_sayisi": 2474,
+ "flashcard_sayisi": 2474,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": null,
@@ -3512,6 +3512,134 @@
    "uretim_durumu": "plansiz"
   },
   {
+   "konu_id": "tar_10_u01_k02",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Devlet teşkilatının İslam öncesi ve sonrası süreklilik ile değişimini açıklar.",
+    "Devlet ve ordu kurumlarının işlevini kaynaklar üzerinden çözümler."
+   ],
+   "baslik": "1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
+   "topic_key": "Tarih > 1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u01_k03",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Tarım, ticaret ve zanaat gibi sosyoekonomik faaliyetleri açıklar.",
+    "Ekonomik faaliyetlerin yerleşme ve şehirleşme anlayışına etkisini çözümler."
+   ],
+   "baslik": "1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
+   "topic_key": "Tarih > 1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u01_k04",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "XI-XIII. yüzyıllarda Türk-İslam medeniyetindeki bilim, eğitim ve sanat kurumlarını açıklar.",
+    "Bu gelişmelerin Anadolu'nun Türkleşme ve İslamlaşma sürecine etkisini çözümler."
+   ],
+   "baslik": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+   "topic_key": "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k05",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kuruluşa dair görüşleri dayandıkları kaynaklar bakımından karşılaştırır.",
+    "Kuruluş tartışmalarında tarihçi yorumunun etkisini değerlendirir."
+   ],
+   "baslik": "2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
+   "topic_key": "Tarih > 2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k06",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Siyasi ve askerî gelişmelerin beylikten devlete geçiş sürecine etkisini açıklar.",
+    "Fetihlerin yönünü ve stratejisini kaynaklar üzerinden çözümler."
+   ],
+   "baslik": "2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+   "topic_key": "Tarih > 2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k07",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ordu, toprak ve hukuk kurumlarının işleyişini açıklar.",
+    "Tımar ve devşirme uygulamalarının merkezî otoriteye etkisini çözümler."
+   ],
+   "baslik": "2.3 Beylikten Devlete Ordu, Toprak ve Hukuk Sistemi",
+   "topic_key": "Tarih > 2.3 Beylikten Devlete Ordu, Toprak ve Hukuk Sistemi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k08",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "İskân ve istimâlet politikalarının amaç ve yöntemlerini açıklar.",
+    "Bu politikaların Rumeli'de kalıcılığa etkisini kaynaklar üzerinden çözümler."
+   ],
+   "baslik": "2.4 Osmanlı Devleti'nin İskân ve İstimâlet Politikası",
+   "topic_key": "Tarih > 2.4 Osmanlı Devleti'nin İskân ve İstimâlet Politikası",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "tar_10_u02_k09",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u02_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Osmanlı şehirlerindeki ilim ve irfan kurumlarını açıklar.",
+    "Şehir, vakıf ve eğitim kurumları arasındaki ilişkiyi çözümler."
+   ],
+   "baslik": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+   "topic_key": "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
    "konu_id": "tarih_10_u01_k01",
    "ders": "Tarih",
    "sinif": 10,
@@ -3536,8 +3664,8 @@
    "etiketler": [
     "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim"
    ],
-   "baslik": "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim",
-   "topic_key": "Tarih > 1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
+   "baslik": "Türkistan'dan Türkiye'ye: Devlet ve Ordu Teşkilatları",
+   "topic_key": "Tarih > Türkistan'dan Türkiye'ye: Devlet ve Ordu Teşkilatları",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3551,8 +3679,8 @@
    "etiketler": [
     "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri"
    ],
-   "baslik": "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri",
-   "topic_key": "Tarih > 1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
+   "baslik": "Türkistan'dan Türkiye'ye: Sosyoekonomik Hayat, Ahilik ve Şehirleşme",
+   "topic_key": "Tarih > Türkistan'dan Türkiye'ye: Sosyoekonomik Hayat, Ahilik ve Şehirleşme",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3568,8 +3696,8 @@
     "2.2. Beylikten Devlete Siyasi ve Askerî Gelişmeler",
     "2.4. Osmanlı Devleti’nin İskân ve İstimalet Politikası"
    ],
-   "baslik": "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
-   "topic_key": "Tarih > 2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
+   "baslik": "Beylikten Devlete Osmanlı Siyaseti (1299-1453)",
+   "topic_key": "Tarih > Beylikten Devlete Osmanlı Siyaseti (1299-1453)",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
