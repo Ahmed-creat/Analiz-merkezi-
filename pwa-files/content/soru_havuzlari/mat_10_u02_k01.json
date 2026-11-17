@@ -43,15 +43,15 @@
       "cozum": "İki kategorik değişkenin birlikte sıklıkları iki yönlü sıklık tablosunda gösterilir (s.100-102).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki kategorik değişken hangi tabloda gösterilir?",
-        "back": "İki yönlü sıklık tablosu."
+        "front": "Kontenjans (iki yönlü sıklık) tablosu neyin dağılımını gösterir?",
+        "back": "İki kategorik değişkenin birlikte gözlenme sıklıklarını."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
     },
     {
       "soru_id": "mat_10_u02_k01_o03",
       "alt_beceri": "İki kategorik değişkenli araştırma sorusu kurar ve veriyi düzenler.",
-      "metin": "İki yönlü tabloda bir satır yüzdesi nasıl hesaplanır?",
+      "metin": "İki yönlü sıklık tablosunda satır yüzdesi nasıl hesaplanır?",
       "secenekler": [
         "Hücre sıklığı satır toplamına bölünür",
         "Hücre sıklığı genel toplama bölünür",
@@ -127,7 +127,7 @@
     {
       "soru_id": "mat_10_u02_k01_o07",
       "alt_beceri": "İki yönlü tablodan yüzde ve ilişki yorumu yapar.",
-      "metin": "Bir tabloda 200 kişinin 80'i futbol, 50'si tenis izlemeyi seçmiştir. Bu iki grup arasındaki fark kaç kişidir?",
+      "metin": "200 kişilik bir grupta 80 kişi futbol, 50 kişi tenis izlemeyi seçmiştir. Bu iki grup arasındaki fark kaç kişidir?",
       "secenekler": [
         "30",
         "130",
@@ -138,8 +138,8 @@
       "cozum": "80 − 50 = 30 kişi (s.100'deki sıklık tablosu okuma).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "80 ve 50 arasındaki fark kaçtır?",
-        "back": "30"
+        "front": "İki grubun kişi sayısı farkı nasıl bulunur?",
+        "back": "Büyük sayıdan küçüğü çıkarılır: 80 − 50 = 30."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
     },
@@ -184,7 +184,7 @@
     {
       "soru_id": "mat_10_u02_k01_o10",
       "alt_beceri": "İki yönlü tablodan yüzde ve ilişki yorumu yapar.",
-      "metin": "İki yönlü tabloda tüm satır yüzdeleri her sütunda benzer çıkıyorsa ne söylenebilir?",
+      "metin": "İki yönlü sıklık tablosunda tüm satır yüzdeleri her sütunda birbirine benziyorsa hangi sonuca varılır?",
       "secenekler": [
         "Değişkenler kesinlikle bağımlıdır",
         "Veri toplanmamıştır",
@@ -195,8 +195,8 @@
       "cozum": "Koşullu yüzdeler değişmiyorsa iki kategorik değişken arasında belirgin ilişki yoktur (s.104-108).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Satır yüzdeleri benzer ise ne denir?",
-        "back": "Belirgin ilişki yok."
+        "front": "Satır yüzdelerinin sütunlar arasında benzer olması neyi gösterir?",
+        "back": "İki kategorik değişken arasında belirgin bir ilişki olmadığını."
       },
       "kazanim": "İki kategorik değişkenin ilişkililiğine dayalı istatistiksel araştırma sürecini yürütür."
     },
@@ -323,8 +323,8 @@
     },
     {
       "id": "mat_10_u02_k01_o02:flashcard",
-      "front": "İki kategorik değişken hangi tabloda gösterilir?",
-      "back": "İki yönlü sıklık tablosu."
+      "front": "Kontenjans (iki yönlü sıklık) tablosu neyin dağılımını gösterir?",
+      "back": "İki kategorik değişkenin birlikte gözlenme sıklıklarını."
     },
     {
       "id": "mat_10_u02_k01_o03:flashcard",
@@ -348,8 +348,8 @@
     },
     {
       "id": "mat_10_u02_k01_o07:flashcard",
-      "front": "80 ve 50 arasındaki fark kaçtır?",
-      "back": "30"
+      "front": "İki grubun kişi sayısı farkı nasıl bulunur?",
+      "back": "Büyük sayıdan küçüğü çıkarılır: 80 − 50 = 30."
     },
     {
       "id": "mat_10_u02_k01_o08:flashcard",
@@ -363,8 +363,8 @@
     },
     {
       "id": "mat_10_u02_k01_o10:flashcard",
-      "front": "Satır yüzdeleri benzer ise ne denir?",
-      "back": "Belirgin ilişki yok."
+      "front": "Satır yüzdelerinin sütunlar arasında benzer olması neyi gösterir?",
+      "back": "İki kategorik değişken arasında belirgin bir ilişki olmadığını."
     },
     {
       "id": "mat_10_u02_k01_o11:flashcard",

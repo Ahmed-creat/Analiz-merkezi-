@@ -13,7 +13,7 @@
     {
       "soru_id": "fizik_10_u04_k06_o01",
       "alt_beceri": "Rezonansı tanımlar ve örneklendirir.",
-      "metin": "Rezonans nasıl tanımlanır?",
+      "metin": "Rezonans olayı aşağıdakilerden hangisiyle tanımlanır?",
       "secenekler": [
         "Genliğin sürekli azalması",
         "Dış etkinin frekansının sistemin doğal frekansına eşit olmasıyla genliğin büyümesi",
@@ -24,8 +24,8 @@
       "cozum": "Kitapta rezonans, dışarıdan gelen etkinin frekansı ile sistemin doğal frekansının eşit olması sonucu genliğin sürekli artması olarak tanımlanır (s.325).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Rezonans nedir?",
-        "back": "Zorlayıcı frekans = doğal frekans olduğunda genlik artar."
+        "front": "Doğal frekansıyla aynı frekansta zorlanan sistemde genliğe ne olur?",
+        "back": "Genlik belirgin biçimde büyür; bu olaya rezonans denir."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
     },
@@ -127,7 +127,7 @@
     {
       "soru_id": "fizik_10_u04_k06_o07",
       "alt_beceri": "Depremle ilgili kavramları ayırt eder.",
-      "metin": "Depremin merkez üssü nedir?",
+      "metin": "Depremde merkez üssü ile odak noktası arasındaki ilişki nedir?",
       "secenekler": [
         "Odak noktasının yeryüzündeki en yakın noktası",
         "Depremin büyüklüğü",
@@ -138,15 +138,15 @@
       "cozum": "Merkez üssü, odak noktasının yüzeye en yakın noktası olup etkilerin en yoğun hissedildiği yerdir (s.326).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Merkez üssü nedir?",
-        "back": "Odağın yüzeydeki iz düşümü."
+        "front": "Odağın yeryüzündeki iz düşümüne ne ad verilir?",
+        "back": "Merkez üssü (episantr)."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
     },
     {
       "soru_id": "fizik_10_u04_k06_o08",
       "alt_beceri": "Depremle ilgili kavramları ayırt eder.",
-      "metin": "Depremin büyüklüğü neyi ifade eder?",
+      "metin": "Deprem büyüklüğü (magnitüd) hangi niceliği ifade eder?",
       "secenekler": [
         "Yüzeyde hissedilme derecesini",
         "Odak derinliğini",
@@ -157,15 +157,15 @@
       "cozum": "Kitapta büyüklüğün depremin oluşturduğu sarsıntının enerji salınımını ifade ettiği belirtilir (s.326-327).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Büyüklük neyi ifade eder?",
-        "back": "Açığa çıkan enerjiyi."
+        "front": "Deprem büyüklüğü ile şiddet arasındaki fark nedir?",
+        "back": "Büyüklük açığa çıkan enerjiyi, şiddet yüzeydeki etkiyi ifade eder."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
     },
     {
       "soru_id": "fizik_10_u04_k06_o09",
       "alt_beceri": "Depremle ilgili kavramları ayırt eder.",
-      "metin": "Depremin şiddeti hangi ölçekle derecelendirilir?",
+      "metin": "Deprem şiddeti hangi ölçek kullanılarak derecelendirilir?",
       "secenekler": [
         "Ohm ölçeği",
         "Değiştirilmiş Mercalli ölçeği (I-XII)",
@@ -176,8 +176,8 @@
       "cozum": "Kitapta şiddetin Değiştirilmiş Mercalli (MMI) ölçeğiyle I'den XII'ye derecelendirildiği yazılıdır (s.327).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Deprem şiddeti hangi ölçekle belirtilir?",
-        "back": "Mercalli (I-XII)."
+        "front": "Değiştirilmiş Mercalli ölçeği neyi derecelendirir?",
+        "back": "Depremin yüzeydeki etkisini (şiddetini) I-XII arasında."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
     },
@@ -204,8 +204,8 @@
   "flashcards": [
     {
       "id": "fizik_10_u04_k06_o01:flashcard",
-      "front": "Rezonans nedir?",
-      "back": "Zorlayıcı frekans = doğal frekans olduğunda genlik artar."
+      "front": "Doğal frekansıyla aynı frekansta zorlanan sistemde genliğe ne olur?",
+      "back": "Genlik belirgin biçimde büyür; bu olaya rezonans denir."
     },
     {
       "id": "fizik_10_u04_k06_o02:flashcard",
@@ -234,18 +234,18 @@
     },
     {
       "id": "fizik_10_u04_k06_o07:flashcard",
-      "front": "Merkez üssü nedir?",
-      "back": "Odağın yüzeydeki iz düşümü."
+      "front": "Odağın yeryüzündeki iz düşümüne ne ad verilir?",
+      "back": "Merkez üssü (episantr)."
     },
     {
       "id": "fizik_10_u04_k06_o08:flashcard",
-      "front": "Büyüklük neyi ifade eder?",
-      "back": "Açığa çıkan enerjiyi."
+      "front": "Deprem büyüklüğü ile şiddet arasındaki fark nedir?",
+      "back": "Büyüklük açığa çıkan enerjiyi, şiddet yüzeydeki etkiyi ifade eder."
     },
     {
       "id": "fizik_10_u04_k06_o09:flashcard",
-      "front": "Deprem şiddeti hangi ölçekle belirtilir?",
-      "back": "Mercalli (I-XII)."
+      "front": "Değiştirilmiş Mercalli ölçeği neyi derecelendirir?",
+      "back": "Depremin yüzeydeki etkisini (şiddetini) I-XII arasında."
     },
     {
       "id": "fizik_10_u04_k06_o10:flashcard",

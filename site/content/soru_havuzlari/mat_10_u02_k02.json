@@ -70,7 +70,7 @@
     {
       "soru_id": "mat_10_u02_k02_o04",
       "alt_beceri": "Veri kaynağı ve örneklemi değerlendirir.",
-      "metin": "Bir grafikte dikey eksenin sıfırdan başlatılmaması neye yol açar?",
+      "metin": "Dikey eksenin sıfırdan başlatılmaması, sütunların gösterdiği farkları nasıl etkiler?",
       "secenekler": [
         "Fark olduğundan küçük görünür",
         "Grafik geçersiz olur",
@@ -81,8 +81,8 @@
       "cozum": "Eksenin kırpılması farkları abartır; yanıltıcı görselleştirme yanlılık yaratır (s.130-131).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Eksen sıfırdan başlamazsa ne olur?",
-        "back": "Farklar abartılı görünür."
+        "front": "Eksenin kırpılması (sıfırdan başlamaması) hangi yanılgıya yol açar?",
+        "back": "Küçük farkların abartılı biçimde büyük görünmesine."
       },
       "kazanim": "Başkaları tarafından oluşturulan iki kategorik değişkenli verilere dayalı sonuç ve yorumları eleştirel biçimde değerlendirir."
     },
@@ -219,8 +219,8 @@
     },
     {
       "id": "mat_10_u02_k02_o04:flashcard",
-      "front": "Eksen sıfırdan başlamazsa ne olur?",
-      "back": "Farklar abartılı görünür."
+      "front": "Eksenin kırpılması (sıfırdan başlamaması) hangi yanılgıya yol açar?",
+      "back": "Küçük farkların abartılı biçimde büyük görünmesine."
     },
     {
       "id": "mat_10_u02_k02_o05:flashcard",

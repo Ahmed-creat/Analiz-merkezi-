@@ -222,8 +222,8 @@
       "cozum": "Mavi hatalı 260·0,10 = 26; toplam hatalı 75 → 26/75 (s.405).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hatalı ambalajın mavi olma olasılığı kaçtır?",
-        "back": "26/75"
+        "front": "Koşullu olasılıkta paydaya hangi toplam yazılır?",
+        "back": "Koşulun gerçekleştiği grubun toplamı: hatalılar içinde mavi oranı 26/75."
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
     },
@@ -241,8 +241,8 @@
       "cozum": "200·0,05 = 10; 300·0,05 = 15; 240·0,10 = 24; 260·0,10 = 26 → 75 (s.405).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Toplam hatalı ambalaj kaçtır?",
-        "back": "75"
+        "front": "İki yönlü sıklık çizelgesinde satır toplamları neyi verir?",
+        "back": "Her kategorinin toplam sıklığını; hatalı ambalajların toplamı 75’tir."
       },
       "kazanim": "Mevcut olasılıkları yeni verilerle güncelleyerek Bayes teoremiyle koşullu olasılık hesaplar."
     }
@@ -290,13 +290,13 @@
     },
     {
       "id": "mat_10_u07_k02_o09:flashcard",
-      "front": "Hatalı ambalajın mavi olma olasılığı kaçtır?",
-      "back": "26/75"
+      "front": "Koşullu olasılıkta paydaya hangi toplam yazılır?",
+      "back": "Koşulun gerçekleştiği grubun toplamı: hatalılar içinde mavi oranı 26/75."
     },
     {
       "id": "mat_10_u07_k02_o10:flashcard",
-      "front": "Toplam hatalı ambalaj kaçtır?",
-      "back": "75"
+      "front": "İki yönlü sıklık çizelgesinde satır toplamları neyi verir?",
+      "back": "Her kategorinin toplam sıklığını; hatalı ambalajların toplamı 75’tir."
     }
   ]
 }

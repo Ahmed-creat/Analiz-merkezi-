@@ -62,8 +62,8 @@
       "cozum": "Ters fonksiyonda tanım ve görüntü kümeleri yer değiştirir (s.264-269).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tersin tanım kümesi neye eşittir?",
-        "back": "Fonksiyonun görüntü kümesine."
+        "front": "Ters fonksiyonda tanım ve görüntü kümeleri nasıl yer değiştirir?",
+        "back": "f: tanım → görüntü ise f⁻¹: görüntü → tanım olur."
       },
       "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
@@ -146,7 +146,7 @@
     {
       "soru_id": "mat_10_u04_k05_o08",
       "alt_beceri": "Verilen fonksiyonun tersini bulur.",
-      "metin": "f(2) = 7 ise f⁻¹(7) kaçtır?",
+      "metin": "f(2) = 7 ise f⁻¹(7) değeri kaçtır?",
       "secenekler": [
         "7",
         "9",
@@ -157,8 +157,8 @@
       "cozum": "Ters fonksiyonda girdi ile çıktı yer değiştirir: f⁻¹(7) = 2 (s.264-269).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "f(2)=7 ise f⁻¹(7) kaçtır?",
-        "back": "2"
+        "front": "Ters fonksiyonun değeri nasıl hesaplanır?",
+        "back": "f(a) = b ise f⁻¹(b) = a olur; girdi ile çıktı yer değiştirir."
       },
       "kazanim": "Bir fonksiyonun tersini bulur ve ters fonksiyonun grafiğini yorumlar."
     },
@@ -214,8 +214,8 @@
     },
     {
       "id": "mat_10_u04_k05_o03:flashcard",
-      "front": "Tersin tanım kümesi neye eşittir?",
-      "back": "Fonksiyonun görüntü kümesine."
+      "front": "Ters fonksiyonda tanım ve görüntü kümeleri nasıl yer değiştirir?",
+      "back": "f: tanım → görüntü ise f⁻¹: görüntü → tanım olur."
     },
     {
       "id": "mat_10_u04_k05_o04:flashcard",
@@ -239,8 +239,8 @@
     },
     {
       "id": "mat_10_u04_k05_o08:flashcard",
-      "front": "f(2)=7 ise f⁻¹(7) kaçtır?",
-      "back": "2"
+      "front": "Ters fonksiyonun değeri nasıl hesaplanır?",
+      "back": "f(a) = b ise f⁻¹(b) = a olur; girdi ile çıktı yer değiştirir."
     },
     {
       "id": "mat_10_u04_k05_o09:flashcard",

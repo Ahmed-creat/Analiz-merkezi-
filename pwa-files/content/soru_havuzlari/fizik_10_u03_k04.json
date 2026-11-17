@@ -24,8 +24,8 @@
       "cozum": "Seri bağlamada R_eş = R1 + R2 + ... (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri bağlamada eşdeğer direnç nasıl bulunur?",
-        "back": "Toplanır."
+        "front": "Eşdeğer direnci dirençlerin toplamına eşit olan bağlama türü nedir?",
+        "back": "Seri bağlama: R_eş = R₁ + R₂ + …"
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
@@ -138,15 +138,15 @@
       "cozum": "1/R_eş = 1/6 + 1/3 = 1/2 → R_eş = 2 Ω (s.230).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "6 Ω ve 3 Ω paralel bağlanırsa kaç Ω olur?",
-        "back": "2 Ω"
+        "front": "İki direnç paralel bağlandığında eşdeğer direnç hangi sınırlar arasında olur?",
+        "back": "Her iki dirençten de küçüktür; 6 Ω ∥ 3 Ω = 2 Ω."
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
     },
     {
       "soru_id": "fizik_10_u03_k04_o08",
       "alt_beceri": "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar.",
-      "metin": "3, 4 ve 5 Ω'luk dirençler seri bağlıdır. 5 Ω'luk direncin uçları arasında 30 V vardır. Devreden geçen akım kaç A'dır?",
+      "metin": "3, 4 ve 5 Ω’luk dirençler seri bağlanmıştır. 5 Ω’luk direncin uçları arasındaki potansiyel fark 30 V ise akım kaç amperdir?",
       "secenekler": [
         "10",
         "2",
@@ -165,7 +165,7 @@
     {
       "soru_id": "fizik_10_u03_k04_o09",
       "alt_beceri": "Seri ve paralel devrelerde akım, gerilim ve direnç hesabı yapar.",
-      "metin": "Aynı devrede (3, 4, 5 Ω seri) üretecin potansiyel farkı kaç V'tur?",
+      "metin": "3, 4 ve 5 Ω’luk dirençler seri bağlanmıştır ve üzerlerinden 6 A akım geçmektedir. Üretecin potansiyel farkı kaç volttur?",
       "secenekler": [
         "30",
         "72",
@@ -204,8 +204,8 @@
   "flashcards": [
     {
       "id": "fizik_10_u03_k04_o01:flashcard",
-      "front": "Seri bağlamada eşdeğer direnç nasıl bulunur?",
-      "back": "Toplanır."
+      "front": "Eşdeğer direnci dirençlerin toplamına eşit olan bağlama türü nedir?",
+      "back": "Seri bağlama: R_eş = R₁ + R₂ + …"
     },
     {
       "id": "fizik_10_u03_k04_o02:flashcard",
@@ -234,8 +234,8 @@
     },
     {
       "id": "fizik_10_u03_k04_o07:flashcard",
-      "front": "6 Ω ve 3 Ω paralel bağlanırsa kaç Ω olur?",
-      "back": "2 Ω"
+      "front": "İki direnç paralel bağlandığında eşdeğer direnç hangi sınırlar arasında olur?",
+      "back": "Her iki dirençten de küçüktür; 6 Ω ∥ 3 Ω = 2 Ω."
     },
     {
       "id": "fizik_10_u03_k04_o08:flashcard",

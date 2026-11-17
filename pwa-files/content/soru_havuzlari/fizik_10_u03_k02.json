@@ -43,8 +43,8 @@
       "cozum": "Yük q ile gösterilir, birimi coulomb (C)'dur (s.210).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yükün birimi nedir?",
-        "back": "Coulomb."
+        "front": "Coulomb hangi büyüklüğün birimidir?",
+        "back": "Elektrik yükünün."
       },
       "kazanim": "Elektrik akımını yük ve zamanla ilişkilendirerek hesaplar."
     },
@@ -89,7 +89,7 @@
     {
       "soru_id": "fizik_10_u03_k02_o05",
       "alt_beceri": "Akım kavramını ve akımın yönünü açıklar.",
-      "metin": "Akım şiddetinin birimi nedir?",
+      "metin": "Akım şiddetinin SI birim sistemindeki birimi aşağıdakilerden hangisidir?",
       "secenekler": [
         "Coulomb",
         "Volt",
@@ -100,8 +100,8 @@
       "cozum": "Akım I ile gösterilir, birimi amper (A)'dir (s.210).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Akımın birimi nedir?",
-        "back": "Amper."
+        "front": "Amper hangi büyüklüğün birimidir?",
+        "back": "Akım şiddetinin."
       },
       "kazanim": "Elektrik akımını yük ve zamanla ilişkilendirerek hesaplar."
     },
@@ -184,7 +184,7 @@
     {
       "soru_id": "fizik_10_u03_k02_o10",
       "alt_beceri": "Akım, yük ve zaman arasındaki ilişkiyi kullanarak hesap yapar.",
-      "metin": "Devredeki akım şiddetini ölçen ölçüm aracı hangisidir?",
+      "metin": "Elektrik akımının şiddetini ölçmek için kullanılan araç hangisidir?",
       "secenekler": [
         "Voltmetre",
         "Ohmmetre",
@@ -195,8 +195,8 @@
       "cozum": "Akım ampermetreyle, potansiyel fark voltmetreyle ölçülür (s.213).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Akımı hangi araç ölçer?",
-        "back": "Ampermetre."
+        "front": "Ampermetrenin ölçtüğü büyüklük nedir?",
+        "back": "Akım şiddeti."
       },
       "kazanim": "Elektrik akımını yük ve zamanla ilişkilendirerek hesaplar."
     }
@@ -209,8 +209,8 @@
     },
     {
       "id": "fizik_10_u03_k02_o02:flashcard",
-      "front": "Yükün birimi nedir?",
-      "back": "Coulomb."
+      "front": "Coulomb hangi büyüklüğün birimidir?",
+      "back": "Elektrik yükünün."
     },
     {
       "id": "fizik_10_u03_k02_o03:flashcard",
@@ -224,8 +224,8 @@
     },
     {
       "id": "fizik_10_u03_k02_o05:flashcard",
-      "front": "Akımın birimi nedir?",
-      "back": "Amper."
+      "front": "Amper hangi büyüklüğün birimidir?",
+      "back": "Akım şiddetinin."
     },
     {
       "id": "fizik_10_u03_k02_o06:flashcard",
@@ -249,8 +249,8 @@
     },
     {
       "id": "fizik_10_u03_k02_o10:flashcard",
-      "front": "Akımı hangi araç ölçer?",
-      "back": "Ampermetre."
+      "front": "Ampermetrenin ölçtüğü büyüklük nedir?",
+      "back": "Akım şiddeti."
     }
   ]
 }

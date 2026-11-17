@@ -24,8 +24,8 @@
       "cozum": "Kitapta direncin R ile gösterildiği ve biriminin ohm (Ω) olduğu belirtilir (s.204).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Direncin birimi nedir?",
-        "back": "Ohm (Ω)"
+        "front": "Ohm (Ω) hangi fiziksel büyüklüğün birimidir?",
+        "back": "Direncin birimi."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
     },
@@ -138,8 +138,8 @@
       "cozum": "Akımı ölçen ampermetre devreye seri bağlanır (s.228).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ampermetre nasıl bağlanır?",
-        "back": "Seri."
+        "front": "Akım şiddetini ölçen aracın bağlanma biçimi nedir?",
+        "back": "Seri bağlanır; akım kollara ayrılmadan üzerinden geçer."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
     },
@@ -157,8 +157,8 @@
       "cozum": "Potansiyel farkı ölçen voltmetre, uçları arasındaki gerilim ölçülecek elemana paralel bağlanır (s.206-207).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Voltmetre nasıl bağlanır?",
-        "back": "Paralel."
+        "front": "Gerilimi ölçen aracın bağlanma biçimi nedir?",
+        "back": "Paralel bağlanır; ölçülecek uçların gerilim farkını alır."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
     },
@@ -195,8 +195,8 @@
       "cozum": "Potansiyel fark V ile gösterilir ve birimi volt (V)'tur (s.206).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Potansiyel farkın birimi nedir?",
-        "back": "Volt."
+        "front": "Volt hangi büyüklüğün birimidir?",
+        "back": "Potansiyel farkın (gerilimin)."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
     }
@@ -204,8 +204,8 @@
   "flashcards": [
     {
       "id": "fizik_10_u03_k01_o01:flashcard",
-      "front": "Direncin birimi nedir?",
-      "back": "Ohm (Ω)"
+      "front": "Ohm (Ω) hangi fiziksel büyüklüğün birimidir?",
+      "back": "Direncin birimi."
     },
     {
       "id": "fizik_10_u03_k01_o02:flashcard",
@@ -234,13 +234,13 @@
     },
     {
       "id": "fizik_10_u03_k01_o07:flashcard",
-      "front": "Ampermetre nasıl bağlanır?",
-      "back": "Seri."
+      "front": "Akım şiddetini ölçen aracın bağlanma biçimi nedir?",
+      "back": "Seri bağlanır; akım kollara ayrılmadan üzerinden geçer."
     },
     {
       "id": "fizik_10_u03_k01_o08:flashcard",
-      "front": "Voltmetre nasıl bağlanır?",
-      "back": "Paralel."
+      "front": "Gerilimi ölçen aracın bağlanma biçimi nedir?",
+      "back": "Paralel bağlanır; ölçülecek uçların gerilim farkını alır."
     },
     {
       "id": "fizik_10_u03_k01_o09:flashcard",
@@ -249,8 +249,8 @@
     },
     {
       "id": "fizik_10_u03_k01_o10:flashcard",
-      "front": "Potansiyel farkın birimi nedir?",
-      "back": "Volt."
+      "front": "Volt hangi büyüklüğün birimidir?",
+      "back": "Potansiyel farkın (gerilimin)."
     }
   ]
 }

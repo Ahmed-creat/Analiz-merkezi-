@@ -13,7 +13,7 @@
     {
       "soru_id": "fizik_10_u04_k01_o01",
       "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
-      "metin": "Dalga nasıl tanımlanır?",
+      "metin": "Fizikte dalga kavramı aşağıdakilerden hangisiyle tanımlanır?",
       "secenekler": [
         "Cismin bir noktadan diğerine taşınması",
         "Titreşim sonucu esnek ortamda oluşan şekil değişikliği",
@@ -51,7 +51,7 @@
     {
       "soru_id": "fizik_10_u04_k01_o03",
       "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
-      "metin": "Dalga boyunun birimi nedir?",
+      "metin": "Dalga boyu hangi SI birimiyle ifade edilir?",
       "secenekler": [
         "Metre",
         "Saniye",
@@ -70,7 +70,7 @@
     {
       "soru_id": "fizik_10_u04_k01_o04",
       "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
-      "metin": "Frekansın birimi nedir?",
+      "metin": "Frekansın SI birim sistemindeki birimi hangisidir?",
       "secenekler": [
         "Metre",
         "Saniye",
@@ -81,8 +81,8 @@
       "cozum": "Frekans f ile gösterilir, birimi hertz (Hz)'dir (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Frekansın birimi nedir?",
-        "back": "Hertz."
+        "front": "Hertz hangi büyüklüğün birimidir?",
+        "back": "Frekansın (saniyedeki titreşim sayısının)."
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
@@ -100,8 +100,8 @@
       "cozum": "Periyot bir tam titreşim süresi, frekans saniyedeki titreşim sayısıdır; f = 1/T (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Periyot ve frekans arasındaki bağıntı nedir?",
-        "back": "f = 1/T"
+        "front": "Frekansı 5 Hz olan bir hareketin periyodu kaç saniyedir?",
+        "back": "T = 1 / f = 1 / 5 = 0,2 s."
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
     },
@@ -219,13 +219,13 @@
     },
     {
       "id": "fizik_10_u04_k01_o04:flashcard",
-      "front": "Frekansın birimi nedir?",
-      "back": "Hertz."
+      "front": "Hertz hangi büyüklüğün birimidir?",
+      "back": "Frekansın (saniyedeki titreşim sayısının)."
     },
     {
       "id": "fizik_10_u04_k01_o05:flashcard",
-      "front": "Periyot ve frekans arasındaki bağıntı nedir?",
-      "back": "f = 1/T"
+      "front": "Frekansı 5 Hz olan bir hareketin periyodu kaç saniyedir?",
+      "back": "T = 1 / f = 1 / 5 = 0,2 s."
     },
     {
       "id": "fizik_10_u04_k01_o06:flashcard",

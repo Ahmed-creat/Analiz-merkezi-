@@ -51,7 +51,7 @@
     {
       "soru_id": "fizik_10_u03_k05_o03",
       "alt_beceri": "Üreteç bağlama türlerini açıklar.",
-      "metin": "Üreteçler paralel bağlandığında devrede ne artar?",
+      "metin": "Özdeş üreteçler paralel bağlandığında hangi nicelik artar?",
       "secenekler": [
         "Devrenin akım verme kapasitesi",
         "Potansiyel fark",
@@ -62,8 +62,8 @@
       "cozum": "Paralel bağlamada potansiyel fark değişmez, üreteçlerin toplam akım verme süresi/kapasitesi artar (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Üreteçler paralel bağlanınca ne artar?",
-        "back": "Akım verme kapasitesi."
+        "front": "Paralel bağlı özdeş üreteçlerin sağladığı toplam gerilim nasıl değişir?",
+        "back": "Değişmez, bir üretecin gerilimine eşit kalır; akım verme kapasitesi artar."
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
     },
@@ -214,8 +214,8 @@
     },
     {
       "id": "fizik_10_u03_k05_o03:flashcard",
-      "front": "Üreteçler paralel bağlanınca ne artar?",
-      "back": "Akım verme kapasitesi."
+      "front": "Paralel bağlı özdeş üreteçlerin sağladığı toplam gerilim nasıl değişir?",
+      "back": "Değişmez, bir üretecin gerilimine eşit kalır; akım verme kapasitesi artar."
     },
     {
       "id": "fizik_10_u03_k05_o04:flashcard",

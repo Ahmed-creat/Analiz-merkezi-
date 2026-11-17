@@ -201,7 +201,7 @@
     {
       "soru_id": "mat_10_u01_k01_o06",
       "alt_beceri": "Trigonometrik özdeşlikleri problem çözmede uygular.",
-      "metin": "sin30° değeri kaçtır?",
+      "metin": "Trigonometrik oranlara göre sin30° değeri kaçtır?",
       "secenekler": [
         "√3/2",
         "1/2",
@@ -224,8 +224,8 @@
         "dikIsaret": true
       },
       "flashcard": {
-        "front": "sin30° kaçtır?",
-        "back": "1/2"
+        "front": "30°’lik açının karşısındaki kenar ile hipotenüs arasındaki ilişki nedir?",
+        "back": "Karşı kenar hipotenüsün yarısıdır; bu yüzden sin30° = 1/2."
       },
       "kazanim": "Dik üçgende trigonometrik oranları ve trigonometrik özdeşlikleri kullanır."
     },
@@ -418,7 +418,7 @@
       "secenekler": [
         "%17",
         "%58",
-        "%2,9",
+        "%14,6",
         "%29"
       ],
       "dogru_index": 3,
@@ -504,8 +504,8 @@
     },
     {
       "id": "mat_10_u01_k01_o06:flashcard",
-      "front": "sin30° kaçtır?",
-      "back": "1/2"
+      "front": "30°’lik açının karşısındaki kenar ile hipotenüs arasındaki ilişki nedir?",
+      "back": "Karşı kenar hipotenüsün yarısıdır; bu yüzden sin30° = 1/2."
     },
     {
       "id": "mat_10_u01_k01_o07:flashcard",

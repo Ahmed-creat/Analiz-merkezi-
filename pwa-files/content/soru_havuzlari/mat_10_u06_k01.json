@@ -70,7 +70,7 @@
     {
       "soru_id": "mat_10_u06_k01_o04",
       "alt_beceri": "Doğru parçasını içten/dıştan bölen noktayı bulur.",
-      "metin": "Bir haritada A ile B arası 10 birim, B ile C arası 13 birim ölçülüyor. A ile B arası gerçekte 40 km ise B ile C arası gerçekte kaç km'dir?",
+      "metin": "Ölçekli bir krokide A ile B arası 10 birim, B ile C arası 13 birim gelmektedir. A ile B arası gerçekte 40 km ise B ile C arası kaç kilometredir?",
       "secenekler": [
         "48",
         "36",
@@ -81,8 +81,8 @@
       "cozum": "Ölçek 40/10 = 4 km/birim; |BC| = √((9−(−3))² + (−6−(−1))²) = 13 birim → 13·4 = 52 km (kitabın harita sorusu, s.362).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "10 birim = 40 km ise 13 birim kaç km'dir?",
-        "back": "52 km"
+        "front": "Ölçekli gösterimde gerçek uzunluk nasıl bulunur?",
+        "back": "Ölçülen uzunluk ölçek katsayısıyla çarpılır: 10 birim = 40 km ise k = 4."
       },
       "kazanim": "İki nokta arasındaki uzaklığı hesaplar; bir doğru parçasını belli oranda bölen noktayı bulur."
     },
@@ -244,8 +244,8 @@
     },
     {
       "id": "mat_10_u06_k01_o04:flashcard",
-      "front": "10 birim = 40 km ise 13 birim kaç km'dir?",
-      "back": "52 km"
+      "front": "Ölçekli gösterimde gerçek uzunluk nasıl bulunur?",
+      "back": "Ölçülen uzunluk ölçek katsayısıyla çarpılır: 10 birim = 40 km ise k = 4."
     },
     {
       "id": "mat_10_u06_k01_o05:flashcard",

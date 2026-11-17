@@ -24,15 +24,15 @@
       "cozum": "Kitapta pozitif işin cismin kazandığı enerjiye, negatif işin kaybettiği enerjiye eşit olduğu belirtilir (s.133).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Net kuvvetin yaptığı iş neye eşittir?",
-        "back": "Enerji değişimine."
+        "front": "İş-enerji teoremi neyi ifade eder?",
+        "back": "Net kuvvetin yaptığı iş, cismin kinetik enerji değişimine eşittir."
       },
       "kazanim": "İş, enerji ve güç kavramları arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "fizik_10_u02_k05_o02",
       "alt_beceri": "İş, enerji ve güç arasındaki ilişkiyi açıklar.",
-      "metin": "Güç nasıl tanımlanır?",
+      "metin": "Fizikte güç kavramı aşağıdakilerden hangisiyle tanımlanır?",
       "secenekler": [
         "Birim yolda yapılan iş",
         "Kuvvet ile zamanın çarpımı",
@@ -51,7 +51,7 @@
     {
       "soru_id": "fizik_10_u02_k05_o03",
       "alt_beceri": "İş, enerji ve güç arasındaki ilişkiyi açıklar.",
-      "metin": "Gücün SI'daki birimi nedir?",
+      "metin": "Gücün SI birim sistemindeki birimi aşağıdakilerden hangisidir?",
       "secenekler": [
         "Watt",
         "Joule",
@@ -70,7 +70,7 @@
     {
       "soru_id": "fizik_10_u02_k05_o04",
       "alt_beceri": "İş, enerji ve güç arasındaki ilişkiyi açıklar.",
-      "metin": "1 kW kaç watt'a eşittir?",
+      "metin": "1 kilowatt kaç watt değerine eşittir?",
       "secenekler": [
         "100",
         "10",
@@ -119,8 +119,8 @@
       "cozum": "P = W/t = 7200/60 = 120 W (kitaptaki Kaan örneği, s.135).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "60 s'de 7200 J iş yapan kişinin gücü kaç W'dır?",
-        "back": "120 W"
+        "front": "Güç, iş ve zaman arasındaki bağıntı nedir?",
+        "back": "P = W / t; 7200 J / 60 s = 120 W."
       },
       "kazanim": "İş, enerji ve güç kavramları arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
@@ -148,17 +148,17 @@
       "alt_beceri": "İş ve güç hesaplamalarını yapar.",
       "metin": "5 tonluk yükü 3 m yükseğe 20 s'de kaldıran çatal kaldıracın gücü kaç kW'tır? (g = 10 m/s², sürtünme ihmal)",
       "secenekler": [
-        "75",
+        "30",
         "0,75",
         "7,5",
-        "15"
+        "150"
       ],
       "dogru_index": 2,
       "cozum": "W = m·g·h = 5000·10·3 = 150.000 J; P = 150.000/20 = 7500 W = 7,5 kW (kitaptaki 2.4. soru, s.135).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "5 tonu 3 m'ye 20 s'de kaldıran aracın gücü kaç kW'tır?",
-        "back": "7,5 kW"
+        "front": "Kaldırma işinde harcanan güç hangi bağıntıyla hesaplanır?",
+        "back": "P = m·g·h / t; 5000 · 10 · 3 / 20 = 7500 W = 7,5 kW."
       },
       "kazanim": "İş, enerji ve güç kavramları arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
@@ -204,8 +204,8 @@
   "flashcards": [
     {
       "id": "fizik_10_u02_k05_o01:flashcard",
-      "front": "Net kuvvetin yaptığı iş neye eşittir?",
-      "back": "Enerji değişimine."
+      "front": "İş-enerji teoremi neyi ifade eder?",
+      "back": "Net kuvvetin yaptığı iş, cismin kinetik enerji değişimine eşittir."
     },
     {
       "id": "fizik_10_u02_k05_o02:flashcard",
@@ -229,8 +229,8 @@
     },
     {
       "id": "fizik_10_u02_k05_o06:flashcard",
-      "front": "60 s'de 7200 J iş yapan kişinin gücü kaç W'dır?",
-      "back": "120 W"
+      "front": "Güç, iş ve zaman arasındaki bağıntı nedir?",
+      "back": "P = W / t; 7200 J / 60 s = 120 W."
     },
     {
       "id": "fizik_10_u02_k05_o07:flashcard",
@@ -239,8 +239,8 @@
     },
     {
       "id": "fizik_10_u02_k05_o08:flashcard",
-      "front": "5 tonu 3 m'ye 20 s'de kaldıran aracın gücü kaç kW'tır?",
-      "back": "7,5 kW"
+      "front": "Kaldırma işinde harcanan güç hangi bağıntıyla hesaplanır?",
+      "back": "P = m·g·h / t; 5000 · 10 · 3 / 20 = 7500 W = 7,5 kW."
     },
     {
       "id": "fizik_10_u02_k05_o09:flashcard",

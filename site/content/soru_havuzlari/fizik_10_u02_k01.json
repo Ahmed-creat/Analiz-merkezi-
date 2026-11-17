@@ -32,7 +32,7 @@
     {
       "soru_id": "fizik_10_u02_k01_o02",
       "alt_beceri": "İş kavramını, birimini ve koşullarını açıklar.",
-      "metin": "İşin SI'daki birimi nedir?",
+      "metin": "İşin SI birim sistemindeki birimi aşağıdakilerden hangisidir?",
       "secenekler": [
         "Newton",
         "Watt",
@@ -43,15 +43,15 @@
       "cozum": "İşin birimi N·m olup joule (J) olarak adlandırılır (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İşin birimi nedir?",
-        "back": "Joule (J) = N·m"
+        "front": "İş hangi birimle ölçülür ve bu birim nasıl tanımlanır?",
+        "back": "Joule (J); 1 J = 1 N·m."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
     },
     {
       "soru_id": "fizik_10_u02_k01_o03",
       "alt_beceri": "İş kavramını, birimini ve koşullarını açıklar.",
-      "metin": "1 N·m kaç joule'e eşittir?",
+      "metin": "1 N·m’lik iş kaç joule değerine eşittir?",
       "secenekler": [
         "1",
         "10",
@@ -62,15 +62,15 @@
       "cozum": "1 N büyüklüğünde kuvvetle 1 m yer değiştirmede 1 J iş yapılır: 1 N·m = 1 J (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 N·m kaç joule'dür?",
-        "back": "1 J"
+        "front": "Joule ile newton-metre arasındaki ilişki nedir?",
+        "back": "1 J = 1 N·m; aynı büyüklüğü gösterirler."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
     },
     {
       "soru_id": "fizik_10_u02_k01_o04",
       "alt_beceri": "İş kavramını, birimini ve koşullarını açıklar.",
-      "metin": "İş nasıl bir büyüklüktür?",
+      "metin": "İş, matematiksel özelliği bakımından nasıl bir büyüklüktür?",
       "secenekler": [
         "Vektörel",
         "Türetilmemiş",
@@ -81,8 +81,8 @@
       "cozum": "Kitapta işin skaler bir büyüklük olduğu ve W ile gösterildiği belirtilir (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İş skaler mi vektörel mi?",
-        "back": "Skaler."
+        "front": "İşin skaler olması ne anlama gelir?",
+        "back": "Yalnız büyüklüğü vardır, yönü yoktur."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
     },
@@ -146,7 +146,7 @@
     {
       "soru_id": "fizik_10_u02_k01_o08",
       "alt_beceri": "Kuvvet-yer değiştirme grafiğinden işi hesaplar ve yorumlar.",
-      "metin": "Sabit 40 N'luk kuvvet, cisim 10 m yer değiştirirken etki ediyor. Grafikteki dikdörtgenin alanı kaç J'dür?",
+      "metin": "40 N’luk sabit kuvvet, bir cismi 10 m yer değiştirirken etki etmiştir. Bu kuvvetin yaptığı iş kaç joule’dür?",
       "secenekler": [
         "40",
         "4",
@@ -157,8 +157,8 @@
       "cozum": "Alan = 40 N · 10 m = 400 J (s.117'deki alan yöntemi).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "40 N ve 10 m için grafik alanı kaç J'dür?",
-        "back": "400 J"
+        "front": "Kuvvet-yol ilişkisinde yapılan iş hangi geometrik büyüklüğe karşılık gelir?",
+        "back": "Kuvvet-yol grafiğinin altında kalan alana."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
     },
@@ -209,18 +209,18 @@
     },
     {
       "id": "fizik_10_u02_k01_o02:flashcard",
-      "front": "İşin birimi nedir?",
-      "back": "Joule (J) = N·m"
+      "front": "İş hangi birimle ölçülür ve bu birim nasıl tanımlanır?",
+      "back": "Joule (J); 1 J = 1 N·m."
     },
     {
       "id": "fizik_10_u02_k01_o03:flashcard",
-      "front": "1 N·m kaç joule'dür?",
-      "back": "1 J"
+      "front": "Joule ile newton-metre arasındaki ilişki nedir?",
+      "back": "1 J = 1 N·m; aynı büyüklüğü gösterirler."
     },
     {
       "id": "fizik_10_u02_k01_o04:flashcard",
-      "front": "İş skaler mi vektörel mi?",
-      "back": "Skaler."
+      "front": "İşin skaler olması ne anlama gelir?",
+      "back": "Yalnız büyüklüğü vardır, yönü yoktur."
     },
     {
       "id": "fizik_10_u02_k01_o05:flashcard",
@@ -239,8 +239,8 @@
     },
     {
       "id": "fizik_10_u02_k01_o08:flashcard",
-      "front": "40 N ve 10 m için grafik alanı kaç J'dür?",
-      "back": "400 J"
+      "front": "Kuvvet-yol ilişkisinde yapılan iş hangi geometrik büyüklüğe karşılık gelir?",
+      "back": "Kuvvet-yol grafiğinin altında kalan alana."
     },
     {
       "id": "fizik_10_u02_k01_o09:flashcard",
