@@ -19,6 +19,7 @@
     "test:curriculum": "node tests/curriculum.test.js",
     "test:pools": "node tests/question-pools.test.js",
     "validate:ids": "node scripts/validate-ids.js",
+    "defter:esitle": "node docs/uretim/araclar/kayit-defteri-esitle.js",
     "test:okz": "node tests/okulizyon-cekici.test.js",
     "test:mesaj": "node tests/mesaj.test.js && node tests/mesaj-ui.test.js",
     "test:mesaj-ui": "node tests/mesaj-ui.test.js",
