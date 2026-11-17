@@ -1,0 +1,256 @@
+{
+  "konu_id": "biyo_10_u01_k09",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "baslik": "1.9 Fermantasyon",
+  "topic_key": "Biyoloji > 1.9 Fermantasyon",
+  "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.67-70",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k09_o01",
+      "alt_beceri": "Etil alkol ve laktik asit fermantasyonunu son ürünleriyle karşılaştırır.",
+      "metin": "Fermantasyon tepkimeleri hücrenin neresinde ve hangi koşulda gerçekleşir?",
+      "secenekler": [
+        "Mitokondride, oksijen varlığında",
+        "Sitoplazmada, oksijen ve ETS kullanılmadan",
+        "Kloroplastta, ışık varlığında",
+        "ETS'de, oksijen son alıcıyken"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fermantasyon, ökaryot ve prokaryot hücrelerin sitoplazmasında oksijen ve ETS kullanılmadan monosakkaritlerin parçalanmasıyla gerçekleşir (s.69).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyonun temel koşulu nedir?",
+        "back": "Oksijen ve ETS kullanılmadan, sitoplazmada gerçekleşmesi."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o02",
+      "alt_beceri": "Etil alkol ve laktik asit fermantasyonunu son ürünleriyle karşılaştırır.",
+      "metin": "Fermantasyonda glikolizde oluşan 2 NADH'nin hidrojenleri başka moleküllere aktarılır. Bu aktarımın amacı nedir?",
+      "secenekler": [
+        "ATP sayısını iki katına çıkarmak",
+        "Oksijen üretmek",
+        "Karbondioksiti parçalamak",
+        "NAD⁺ yenileyerek glikolizin sürmesini sağlamak"
+      ],
+      "dogru_index": 3,
+      "cozum": "2 NADH'deki hidrojenler organik ya da inorganik maddelere aktarılır ve NAD⁺ yeniden oluşur; böylece glikoliz ve ATP üretimi devam eder (s.69).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "NAD⁺ yenilenmesinin amacı nedir?",
+        "back": "Oksijensiz koşulda glikolizin sürmesini sağlamak."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o03",
+      "alt_beceri": "Etil alkol ve laktik asit fermantasyonunu son ürünleriyle karşılaştırır.",
+      "metin": "Etil alkol fermantasyonunun ilk basamağında piruvata ne olur?",
+      "secenekler": [
+        "Karbondioksit uzaklaşır ve asetaldehit oluşur",
+        "Su eklenerek laktik aside dönüşür",
+        "Doğrudan etil alkole indirgenir",
+        "Asetil-CoA'ya çevrilir"
+      ],
+      "dogru_index": 0,
+      "cozum": "İlk basamakta piruvattan CO2 uzaklaştırılır ve iki karbonlu asetaldehit oluşur; ikinci basamakta asetaldehit NADH ile etil alkole indirgenir (s.69).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asetaldehit nedir?",
+        "back": "Piruvattan CO2 çıkışıyla oluşan 2 karbonlu ara ürün."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o04",
+      "alt_beceri": "Etil alkol ve laktik asit fermantasyonunu son ürünleriyle karşılaştırır.",
+      "metin": "Etil alkol fermantasyonunda asetaldehit hangi molekülün hidrojenleriyle etil alkole indirgenir?",
+      "secenekler": [
+        "FADH2",
+        "ATP",
+        "NADH",
+        "NADPH"
+      ],
+      "dogru_index": 2,
+      "cozum": "İkinci basamakta asetaldehit NADH ile etil alkole indirgenir; böylece glikoliz için gerekli NAD⁺ yenilenir (s.69).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyon çeşitlerinin adlandırılma ölçütü nedir?",
+        "back": "Oluşan son ürün çeşidi."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o05",
+      "alt_beceri": "Etil alkol ve laktik asit fermantasyonunu son ürünleriyle karşılaştırır.",
+      "metin": "Hangi fermantasyon çeşidinde karbondioksit çıkışı görülmez?",
+      "secenekler": [
+        "Etil alkol fermantasyonunda",
+        "Her ikisinde de görülür",
+        "Yalnızca mayalarda",
+        "Laktik asit fermantasyonunda"
+      ],
+      "dogru_index": 3,
+      "cozum": "Laktik asit fermantasyonunda piruvat doğrudan laktik aside dönüşür ve CO2 çıkışı görülmez; etil alkol fermantasyonunda CO2 açığa çıkar (s.70).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Laktik asit fermantasyonu nedir?",
+        "back": "Piruvatın NADH hidrojenleriyle laktik aside dönüşmesi; CO2 yok."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o06",
+      "alt_beceri": "Fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir.",
+      "metin": "Maya ile mayalanan hamur 1 saat sonra belirgin biçimde kabarır. Bu kabarmanın nedeni nedir?",
+      "secenekler": [
+        "Hamurdaki suyun fırın sıcaklığıyla buharlaşması",
+        "Maya mantarlarının etil alkol fermantasyonunda ürettiği CO2 gazı",
+        "Hamurda laktik asidin birikmesi ve pH'ı düşürmesi",
+        "Nişastanın glikoza kadar hidroliz edilmesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ekmek yapımında etil alkol fermantasyonu yapan maya mantarları kullanılır; açığa çıkan CO2 hamurun kabarmasını sağlar (s.69).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Maya mantarının hamurdaki etkisi nedir?",
+        "back": "Etil alkol fermantasyonu; CO2 hamuru kabartır."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o07",
+      "alt_beceri": "Fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir.",
+      "metin": "Peynir, yoğurt ve turşu üretiminde endüstriyel olarak hangi fermantasyon kullanılır?",
+      "secenekler": [
+        "Laktik asit fermantasyonu",
+        "Etil alkol fermantasyonu",
+        "Oksijenli solunum",
+        "Kemosentez"
+      ],
+      "dogru_index": 0,
+      "cozum": "Laktik asit fermantasyonu bazı bakteri ve mantarlarda görülür; endüstride peynir, yoğurt ve turşu üretiminde kullanılır (s.70).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Laktik asit fermantasyonunun endüstrideki yeri nedir?",
+        "back": "Peynir, yoğurt ve turşu üretimi."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o08",
+      "alt_beceri": "Fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir.",
+      "metin": "Yoğun bir koşunun ilk 30 saniyesinde çizgili kaslarda laktik asit fermantasyonu devreye girer. Bunun nedeni nedir?",
+      "secenekler": [
+        "Kasta mitokondri bulunmaması",
+        "Kas hücrelerinin oksijeni zehirli bulması",
+        "Glikoz yıkım hızının, kasın kandan oksijen alma hızını aşması",
+        "Kanda glikoz bulunmaması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yoğun aktivitenin başında glikoz yıkım hızı oksijen alma hızını aşar; bu koşulda oksijenli solunumla birlikte laktik asit fermantasyonu da ATP üretir (s.70).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kaslarda laktik asit birikmesinin nedeni nedir?",
+        "back": "Oksijen yetişmediğinde piruvatın laktik aside dönmesi."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o09",
+      "alt_beceri": "Fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir.",
+      "metin": "Yetişkin bir memelinin hangi hücreleri oksijenli solunum yerine sürekli laktik asit fermantasyonu yapar?",
+      "secenekler": [
+        "Çizgili kas hücreleri",
+        "Olgun alyuvar hücreleri",
+        "Karaciğer hücreleri",
+        "Sinir hücreleri"
+      ],
+      "dogru_index": 1,
+      "cozum": "Laktik asit fermantasyonu bazı bakterilerde, bazı mantarlarda, memelilerin olgun alyuvar hücrelerinde ve omurgalıların çizgili kas hücrelerinde görülür (s.70).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Olgun alyuvarın enerji elde etme yolu nedir?",
+        "back": "Laktik asit fermantasyonu; mitokondri taşımaz."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    },
+    {
+      "soru_id": "biyo_10_u01_k09_o10",
+      "alt_beceri": "Fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir.",
+      "metin": "Yoğurt, kefir, kımız, peynir ve kurut gibi 5 ürünün ortak özelliği nedir?",
+      "secenekler": [
+        "Yalnızca etil alkol içermeleri",
+        "Işıkla üretilmeleri",
+        "Sindirilemeyen selüloz içermeleri",
+        "Fermantasyonla üretilen süt ürünleri olmaları"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bu ürünler fermente süt ürünleridir; probiyotik özellikleriyle bağırsak sağlığını ve bağışıklığı destekleyebilirler (s.67).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Probiyotik nedir?",
+        "back": "Bağırsak sağlığını destekleyen yararlı mikroorganizma içeriği."
+      },
+      "kazanim": "Fermantasyon çeşitlerini son ürünlerine göre karşılaştırır, fermantasyonun endüstri ve insan sağlığındaki yerini örneklendirir."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k09_o01:flashcard",
+      "front": "Fermantasyonun temel koşulu nedir?",
+      "back": "Oksijen ve ETS kullanılmadan, sitoplazmada gerçekleşmesi."
+    },
+    {
+      "id": "biyo_10_u01_k09_o02:flashcard",
+      "front": "NAD⁺ yenilenmesinin amacı nedir?",
+      "back": "Oksijensiz koşulda glikolizin sürmesini sağlamak."
+    },
+    {
+      "id": "biyo_10_u01_k09_o03:flashcard",
+      "front": "Asetaldehit nedir?",
+      "back": "Piruvattan CO2 çıkışıyla oluşan 2 karbonlu ara ürün."
+    },
+    {
+      "id": "biyo_10_u01_k09_o04:flashcard",
+      "front": "Fermantasyon çeşitlerinin adlandırılma ölçütü nedir?",
+      "back": "Oluşan son ürün çeşidi."
+    },
+    {
+      "id": "biyo_10_u01_k09_o05:flashcard",
+      "front": "Laktik asit fermantasyonu nedir?",
+      "back": "Piruvatın NADH hidrojenleriyle laktik aside dönüşmesi; CO2 yok."
+    },
+    {
+      "id": "biyo_10_u01_k09_o06:flashcard",
+      "front": "Maya mantarının hamurdaki etkisi nedir?",
+      "back": "Etil alkol fermantasyonu; CO2 hamuru kabartır."
+    },
+    {
+      "id": "biyo_10_u01_k09_o07:flashcard",
+      "front": "Laktik asit fermantasyonunun endüstrideki yeri nedir?",
+      "back": "Peynir, yoğurt ve turşu üretimi."
+    },
+    {
+      "id": "biyo_10_u01_k09_o08:flashcard",
+      "front": "Kaslarda laktik asit birikmesinin nedeni nedir?",
+      "back": "Oksijen yetişmediğinde piruvatın laktik aside dönmesi."
+    },
+    {
+      "id": "biyo_10_u01_k09_o09:flashcard",
+      "front": "Olgun alyuvarın enerji elde etme yolu nedir?",
+      "back": "Laktik asit fermantasyonu; mitokondri taşımaz."
+    },
+    {
+      "id": "biyo_10_u01_k09_o10:flashcard",
+      "front": "Probiyotik nedir?",
+      "back": "Bağırsak sağlığını destekleyen yararlı mikroorganizma içeriği."
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "konu_id": "biyo_10_u01_k08",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "baslik": "1.8 Besinlerin Solunuma Katılma Yolları",
+  "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
+  "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.63-66",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k08_o01",
+      "alt_beceri": "Besin gruplarının solunuma katıldığı basamakları belirler.",
+      "metin": "Karbohidratların yapı taşı olan glikoz, oksijenli solunum tepkimelerine hangi evreden girer?",
+      "secenekler": [
+        "Krebs döngüsünden",
+        "Glikolizden",
+        "ETS evresinden",
+        "Piruvat oksidasyonundan"
+      ],
+      "dogru_index": 1,
+      "cozum": "Glikoz glikoliz evresinden solunuma girerek piruvata kadar parçalanır; sonra piruvat Asetil-CoA'ya dönüşür (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Glikozun solunuma girdiği evre nedir?",
+        "back": "Glikoliz."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o02",
+      "alt_beceri": "Besin gruplarının solunuma katıldığı basamakları belirler.",
+      "metin": "Yağların sindirim ürünü olan yağ asitleri solunum tepkimelerine hangi basamaktan katılır?",
+      "secenekler": [
+        "Doğrudan glikoliz evresinden, glikoz gibi",
+        "Doğrudan ETS evresinden, oksijen gibi",
+        "Glikolizin ara basamaklarından, gliserol gibi",
+        "Asetil-CoA'ya dönüştükten sonra Krebs döngüsünden"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yağ asitleri Asetil-CoA'ya dönüştürüldükten sonra Krebs döngüsüne girer; gliserol ise glikolizin ara basamaklarından katılır (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yağ asitlerinin solunuma katılma yeri nedir?",
+        "back": "Asetil-CoA üzerinden Krebs döngüsü."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o03",
+      "alt_beceri": "Besin gruplarının solunuma katıldığı basamakları belirler.",
+      "metin": "Yağların diğer sindirim ürünü olan 3 karbonlu gliserol hangi basamaktan solunuma katılır?",
+      "secenekler": [
+        "Glikolizin ara basamaklarından",
+        "Doğrudan Krebs döngüsünden",
+        "Doğrudan ETS evresinden",
+        "Piruvat oksidasyonundan"
+      ],
+      "dogru_index": 0,
+      "cozum": "Gliserol (3C) glikolizin ara basamaklarından tepkimeye girer; yağ asitleri ise Asetil-CoA üzerinden Krebs'e katılır (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gliserolün solunuma katılma yeri nedir?",
+        "back": "Glikolizin ara basamakları."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o04",
+      "alt_beceri": "Besin gruplarının solunuma katıldığı basamakları belirler.",
+      "metin": "3 karbonlu bir amino asit, amino grubu uzaklaştırıldıktan sonra solunum tepkimelerine hangi basamaktan katılır?",
+      "secenekler": [
+        "Asetil-CoA'dan",
+        "Krebs döngüsünden",
+        "Piruvattan",
+        "Glikolizin ilk basamağından"
+      ],
+      "dogru_index": 2,
+      "cozum": "Amino asitlerde önce amino grubu uzaklaştırılır; 2 karbonlular Asetil-CoA'dan, 3 karbonlular piruvattan, 4 ve daha fazla karbonlular Krebs'ten katılır (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Amino asitlerin solunuma katılım kuralı nedir?",
+        "back": "C sayısı: 2→Asetil-CoA, 3→piruvat, 4+→Krebs."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o05",
+      "alt_beceri": "Besin gruplarının solunuma katıldığı basamakları belirler.",
+      "metin": "4 ve daha fazla karbonlu amino asitler solunum tepkimelerine hangi basamaktan girer?",
+      "secenekler": [
+        "Piruvattan",
+        "Asetil-CoA'dan",
+        "ETS evresinden",
+        "Krebs döngüsünden"
+      ],
+      "dogru_index": 3,
+      "cozum": "4 ve daha fazla karbonlu amino asitler Krebs döngüsünden tepkimeye girer; 2 karbonlular Asetil-CoA'dan, 3 karbonlular piruvattan katılır (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asetil-CoA nedir?",
+        "back": "Piruvattan oluşan 2 karbonlu bileşik; Krebs'i başlatır."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o06",
+      "alt_beceri": "Karbon sayısının katılım basamağını belirlemedeki rolünü açıklar.",
+      "metin": "Proteinlerden enerji elde edilirken amino asitlerin yapısındaki azot, solunum tepkimelerine katılmadan önce ne olur?",
+      "secenekler": [
+        "Azot ATP'ye aktarılır",
+        "Amino grubu uzaklaştırılır ve azotlu atık oluşur",
+        "Azot glikozun yapısına katılır",
+        "Azot ETS'de elektron alıcısı olur"
+      ],
+      "dogru_index": 1,
+      "cozum": "Amino asitler solunuma katılmadan önce amino grubu uzaklaştırılır; bu nedenle amino asit yıkımında azot içeren atık maddeler de oluşur (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Protein yıkımının diğer besinlerden farkı nedir?",
+        "back": "Ek olarak azot içeren atık maddeler oluşur."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o07",
+      "alt_beceri": "Karbon sayısının katılım basamağını belirlemedeki rolünü açıklar.",
+      "metin": "Karbohidrat, yağ ve proteinlerin solunum sonucunda ortak olarak açığa çıkardığı ürünler hangileridir?",
+      "secenekler": [
+        "CO2, H2O, ATP ve ısı",
+        "Yalnızca CO2 ve ATP",
+        "Glikoz, ATP ve oksijen",
+        "Azotlu atık, ATP ve ısı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Üç besin grubunda da CO2, H2O, ATP ve ısı açığa çıkar; azotlu atık yalnızca amino asitlerin yıkımında eklenir (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hücresel solunumun ortak ürünleri nedir?",
+        "back": "CO2, H2O, ATP ve ısı."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o08",
+      "alt_beceri": "Karbon sayısının katılım basamağını belirlemedeki rolünü açıklar.",
+      "metin": "Bir öğünde alınan glikoz, yağ asidi ve amino asit aynı solunum yolunu izlemez. Bu farklılığın kaynağı, moleküllerin karbon iskeletlerinin farklı olmasıdır.",
+      "secenekler": [
+        "Sindirim enzimlerinin yetersizliği",
+        "Hücrelerin farklı organellerde solunum yapması",
+        "Kimyasal yapılarındaki karbon iskeletlerinin farklı olması",
+        "Besinlerin enerji değerlerinin eşit olması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Besin gruplarının kimyasal yapılarındaki, özellikle karbon iskeletlerindeki farklılıklar nedeniyle her besin türü solunumun farklı basamağına katılır (s.65).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karbon iskeleti ile katılım basamağı arasındaki ilişki nedir?",
+        "back": "İskeletin karbon sayısı basamağı belirler."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o09",
+      "alt_beceri": "Karbon sayısının katılım basamağını belirlemedeki rolünü açıklar.",
+      "metin": "Kahvaltıda tereyağı ve yumurta tüketen bir kişide yağ asitleri ile amino asitlerin solunuma katılımı karşılaştırıldığında hangisi doğrudur?",
+      "secenekler": [
+        "Her ikisi de doğrudan ETS'ye girer",
+        "Yağ asidi Asetil-CoA'dan, 2 karbonlu amino asit de Asetil-CoA'dan katılır",
+        "Yağ asidi glikolizden, amino asit Krebs'ten girer",
+        "Her ikisi de piruvattan katılır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yağ asitleri Asetil-CoA'ya dönüşüp Krebs'e girer; 2 karbonlu amino asitler de Asetil-CoA'dan katıldığı için bu iki besin aynı basamağı paylaşabilir (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yağ asidinin katılım basamağı nedir?",
+        "back": "Asetil-CoA; 2 karbonlu amino asitlerle aynı basamak."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    },
+    {
+      "soru_id": "biyo_10_u01_k08_o10",
+      "alt_beceri": "Karbon sayısının katılım basamağını belirlemedeki rolünü açıklar.",
+      "metin": "Bir sporcunun uzun süre aç kaldıktan sonra enerji elde etmek için önce yağ depolarını kullanması hangi sıra ile açıklanır?",
+      "secenekler": [
+        "Gliserol → Krebs → glikoliz → ETS",
+        "Yağ asidi → piruvat → glikoliz → ETS",
+        "Yağ asidi → ETS → Krebs → Asetil-CoA",
+        "Yağ asidi → Asetil-CoA → Krebs → ETS"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yağ asitleri önce Asetil-CoA'ya dönüştürülür, Krebs döngüsüne girer, NADH ve FADH2 ETS'ye aktarılarak ATP üretilir (s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yağ asidinin enerji yolculuğu nedir?",
+        "back": "Asetil-CoA → Krebs döngüsü → ETS."
+      },
+      "kazanim": "Karbohidrat, yağ ve proteinlerin oksijenli solunuma katıldığı basamakları karbon iskeletleri bakımından karşılaştırır."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k08_o01:flashcard",
+      "front": "Glikozun solunuma girdiği evre nedir?",
+      "back": "Glikoliz."
+    },
+    {
+      "id": "biyo_10_u01_k08_o02:flashcard",
+      "front": "Yağ asitlerinin solunuma katılma yeri nedir?",
+      "back": "Asetil-CoA üzerinden Krebs döngüsü."
+    },
+    {
+      "id": "biyo_10_u01_k08_o03:flashcard",
+      "front": "Gliserolün solunuma katılma yeri nedir?",
+      "back": "Glikolizin ara basamakları."
+    },
+    {
+      "id": "biyo_10_u01_k08_o04:flashcard",
+      "front": "Amino asitlerin solunuma katılım kuralı nedir?",
+      "back": "C sayısı: 2→Asetil-CoA, 3→piruvat, 4+→Krebs."
+    },
+    {
+      "id": "biyo_10_u01_k08_o05:flashcard",
+      "front": "Asetil-CoA nedir?",
+      "back": "Piruvattan oluşan 2 karbonlu bileşik; Krebs'i başlatır."
+    },
+    {
+      "id": "biyo_10_u01_k08_o06:flashcard",
+      "front": "Protein yıkımının diğer besinlerden farkı nedir?",
+      "back": "Ek olarak azot içeren atık maddeler oluşur."
+    },
+    {
+      "id": "biyo_10_u01_k08_o07:flashcard",
+      "front": "Hücresel solunumun ortak ürünleri nedir?",
+      "back": "CO2, H2O, ATP ve ısı."
+    },
+    {
+      "id": "biyo_10_u01_k08_o08:flashcard",
+      "front": "Karbon iskeleti ile katılım basamağı arasındaki ilişki nedir?",
+      "back": "İskeletin karbon sayısı basamağı belirler."
+    },
+    {
+      "id": "biyo_10_u01_k08_o09:flashcard",
+      "front": "Yağ asidinin katılım basamağı nedir?",
+      "back": "Asetil-CoA; 2 karbonlu amino asitlerle aynı basamak."
+    },
+    {
+      "id": "biyo_10_u01_k08_o10:flashcard",
+      "front": "Yağ asidinin enerji yolculuğu nedir?",
+      "back": "Asetil-CoA → Krebs döngüsü → ETS."
+    }
+  ]
+}

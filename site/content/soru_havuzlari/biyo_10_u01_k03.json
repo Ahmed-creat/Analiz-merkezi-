@@ -2,250 +2,255 @@
   "konu_id": "biyo_10_u01_k03",
   "sinif": 10,
   "ders": "Biyoloji",
-  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "baslik": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+  "topic_key": "Biyoloji > 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+  "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.32-36",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "biyo_10_u01_k03_o01",
-      "alt_beceri": "Kemosentez",
-      "metin": "Işık almayan kapalı bir laboratuvar mikro-ortamında bazı prokaryotlar inorganik maddeleri oksitleyip organik besin sentezliyor. Bu süreci hangi kavram açıklar?",
+      "alt_beceri": "Fotosentez denkleminde kullanılan ve üretilen maddeleri izler.",
+      "metin": "Sadeleştirilmiş fotosentez denklemi 6CO2 + 6H2O → C6H12O6 + 6O2 olduğuna göre 6 molekül CO2 ile kaç molekül su tüketilir?",
       "secenekler": [
-        "Kemosentez",
-        "Fotosentez",
-        "Fermantasyon",
-        "Hücresel sindirim"
+        "12",
+        "6",
+        "3",
+        "18"
       ],
-      "dogru_index": 0,
-      "cozum": "Kemosentez yapan prokaryotlar, inorganik maddelerin oksidasyonundan sağlanan kimyasal enerjiyle organik madde üretir. Süreç ışık gerektirmez.",
+      "dogru_index": 1,
+      "cozum": "Denklem sadeleştirildiğinde 6CO2 + 6H2O → C6H12O6 + 6O2 elde edilir; yani her 6 CO2 için 6 H2O tüketilir (s.35).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentezi, enerji kaynağı ve sentezlenen madde bakımından açıklayınız.",
-        "back": "Bazı prokaryotların inorganik maddeleri oksitleyerek elde ettiği kimyasal enerjiyle inorganik maddelerden organik madde sentezlemesine kemosentez denir."
+        "front": "Fotosentezin sadeleşmiş denklemi nedir?",
+        "back": "6CO2 + 6H2O → C6H12O6 + 6O2 (ışık ve klorofille)."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o02",
-      "alt_beceri": "Kemosentez",
-      "metin": "Bir prokaryot, ışık kullanmadan NH₃'ü oksitleyip açığa çıkan enerjiden yararlanıyor. Bu enerji kaynağı hangi süreçle sağlanır?",
+      "alt_beceri": "Fotosentez denkleminde kullanılan ve üretilen maddeleri izler.",
+      "metin": "Sadeleştirilmemiş denklemde eşitliğin her iki tarafında da H2O bulunması neyi gösterir?",
       "secenekler": [
-        "Organik besinlerin sindirimi",
-        "İnorganik maddenin oksidasyonu",
-        "Klorofilin ışığı soğurması",
-        "Suyun fotosentetik fotolizi"
+        "Suyun tepkimeye girmediğini",
+        "Suyun yalnızca üretildiğini",
+        "Suyun katalizör olduğunu",
+        "Suyun hem tüketildiğini hem de üretildiğini"
       ],
-      "dogru_index": 1,
-      "cozum": "Kemosentezde NH₃ gibi inorganik maddelerin oksidasyonu kimyasal enerji açığa çıkarır. Klorofilin ışık soğurması ise fotosentezin enerji kaynağıdır.",
+      "dogru_index": 3,
+      "cozum": "6CO2 + 12H2O → C6H12O6 + 6O2 + 6H2O denkleminde su iki yanda da yer alır; bu, suyun hem tüketilip hem üretildiğini gösterir (s.35).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentetik ototroflar besin sentezlemek için kimyasal enerjiyi hangi süreçten sağlar?",
-        "back": "H₂S, H₂, NH₃, NO₂, Fe²⁺ veya kükürt gibi inorganik maddelerin oksitlenmesi enerji açığa çıkarır."
+        "front": "Fotosentezde suyun iki yönlü rolü nedir?",
+        "back": "Hem tüketilir hem de üretilir."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o03",
-      "alt_beceri": "Kemosentez",
-      "metin": "Bir prokaryot, H₂ gazını oksitleyerek elde ettiği enerjiyle CO₂’den organik madde sentezliyor. Bu oksidasyondan sağlanan enerji önce hangi molekülün sentezinde kullanılabilir?",
+      "alt_beceri": "Fotosentez denkleminde kullanılan ve üretilen maddeleri izler.",
+      "metin": "Mor kükürt bakterilerinde fotosentez denkleminde su yerine hangi hidrojen kaynağı kullanılır?",
       "secenekler": [
-        "Klorofil",
-        "Glikoz",
-        "ATP",
-        "Oksijen"
+        "Hidrojen sülfür (H2S)",
+        "Metan (CH4)",
+        "Amonyak (NH3)",
+        "Karbonik asit (H2CO3)"
       ],
-      "dogru_index": 2,
-      "cozum": "İnorganik maddelerin oksidasyonu sırasında açığa çıkan enerji ATP sentezlemek için kullanılır; ATP, organik madde üretiminde görev alır. Kemosentez klorofil veya ışık gerektirmez.",
+      "dogru_index": 0,
+      "cozum": "Bitkiler ve bazı bakteriler H2O'yu kullanırken mor kükürt bakterileri hidrojen sülfürü (H2S) hidrojen kaynağı olarak kullanır (s.35).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentezde inorganik maddelerin oksidasyonuyla açığa çıkan enerji, organik madde sentezine aktarılmadan önce hangi molekülde tutulur?",
-        "back": "Açığa çıkan enerji ATP sentezinde kullanılır; ATP organik molekül üretimine enerji aktarır."
+        "front": "Fotosentezde hidrojen kaynağı nedir?",
+        "back": "Bitkilerde H2O, mor kükürt bakterilerinde H2S."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o04",
-      "alt_beceri": "Kemosentez",
-      "metin": "Kemosentezde organik moleküllerin karbonunu sağlayan madde ile hidrojen kaynağı hangisinde doğru eşleştirilmiştir?",
+      "alt_beceri": "Fotosentez denkleminde kullanılan ve üretilen maddeleri izler.",
+      "metin": "6CO2 + 12H2S → C6H12O6 + 12S + 6H2O denkleminde kükürt hangi biçimde ortaya çıkar?",
       "secenekler": [
-        "N₂ karbon kaynağıdır; hidrojen yalnızca metandan sağlanır.",
-        "O₂ karbon kaynağıdır; hidrojen yalnızca glikozdan sağlanır.",
-        "ATP karbon kaynağıdır; hidrojen yalnızca ışıktan sağlanır.",
-        "CO₂ karbon kaynağıdır; hidrojen farklı inorganik kaynaklardan sağlanabilir."
+        "Sülfat iyonu olarak çözünür",
+        "Kükürt dioksit gazı olarak atmosfere verilir",
+        "Elementel kükürt olarak açığa çıkar",
+        "Sülfürik aside dönüşür"
       ],
-      "dogru_index": 3,
-      "cozum": "Kemosentezde organik madde sentezi için CO₂ kullanılır. Hidrojen farklı inorganik kaynaklardan gelebilir; bunların oksidasyonu enerji sağlar.",
+      "dogru_index": 2,
+      "cozum": "Mor kükürt bakterilerinde H2S'ten gelen kükürt elementel hâlde (12S) açığa çıkar; oksijen yerine bu yan ürün oluşur (s.35).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentezde organik madde sentezlenirken kullanılan temel inorganik karbon ve hidrojen kaynaklarını açıklayınız.",
-        "back": "Organik madde sentezinde CO₂ ve H₂O kullanılır; hidrojeni sağlayan inorganik maddeler farklılık gösterebilir."
+        "front": "Mor kükürt bakterilerinde yan ürün nedir?",
+        "back": "Suyun yerini S alır; elementel kükürt açığa çıkar."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o05",
-      "alt_beceri": "Kemosentez",
-      "metin": "Kemoototrof canlılar ekosistemde besin ve enerji akışının başlangıcında hangi temel rolü üstlenir?",
+      "alt_beceri": "Fotosentez denkleminde kullanılan ve üretilen maddeleri izler.",
+      "metin": "Bilim insanları ağır oksijen izotopu kullanarak fotosentezde açığa çıkan oksijenin kaynağını hangi molekül olarak belirlemiştir?",
       "secenekler": [
-        "Üretici; inorganik maddelerin oksidasyonundan enerji sağlayıp organik madde üretir.",
-        "Tüketici; besinini yalnızca başka canlılardan hazır alır.",
-        "Ayrıştırıcı; yalnızca ölü organik maddeleri parçalar.",
-        "Cansız bileşen; enerji dönüşümü gerçekleştirmez."
+        "Karbondioksit",
+        "Glikoz",
+        "Klorofil",
+        "Su"
       ],
-      "dogru_index": 0,
-      "cozum": "Kemoototroflar inorganik maddelerin oksidasyonuyla enerji elde edip organik besin üretir. Bu nedenle ekosistemde üretici rolündedirler.",
+      "dogru_index": 3,
+      "cozum": "Ağır oksijen izotopuyla yapılan çalışmalar, açığa çıkan oksijenin kökeninin CO2 değil H2O olduğunu kanıtlamıştır (s.35).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentetik ototrofların ekosistemde besin ve enerji akışı açısından üstlendiği temel rolü açıklayınız.",
-        "back": "Kemosentetik ototroflar üreticidir; ürettikleri besinler bulundukları ekosistemde enerji akışının başlangıcını oluşturur."
+        "front": "Fotosentezde oksijenin kaynağı nedir?",
+        "back": "Su; ağır oksijen izotopu bunu kanıtlar."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o06",
-      "alt_beceri": "Kemosentez",
-      "metin": "Kemosentetik bir prokaryotun gece-gündüz ayrımı olmaksızın besin üretebilmesini en iyi açıklayan özellik hangisidir?",
+      "alt_beceri": "Fotosentezle ilgili bilimsel çalışmaların bilime katkısını değerlendirir.",
+      "metin": "Helmont beş yıl boyunca söğüt fidanını sulamış; fidanın kütlesi artarken toprağın kütlesi neredeyse değişmemiştir. Helmont bu sonuçtan hangi çıkarımı yapmıştır?",
       "secenekler": [
-        "Fotosentez için ışık enerjisini depolaması",
-        "İnorganik madde oksidasyonundan enerji sağlaması",
-        "Klorofilini yalnızca geceleri kullanması",
-        "Gece fotosentez hızını artırması"
+        "Kütle artışının topraktaki minerallerden olduğunu",
+        "Bitkideki kütle artışının sudan kaynaklandığını",
+        "Bitkinin havadan karbon aldığını",
+        "Toprağın kütlesinin azaldığını"
       ],
       "dogru_index": 1,
-      "cozum": "Kemosentez ışık ve klorofil gerektirmez; kimyasal enerji inorganik maddelerin oksidasyonundan sağlanır. Bu nedenle besin sentezi gece-gündüz fark etmeksizin gerçekleşebilir.",
+      "cozum": "Helmont 80 kg kuru toprağı beş yıl sonra 79,9 kg, fidanı ise 2,5 kg'dan 75 kg olarak ölçmüş ve kütle artışını suya bağlamıştır; karbonun rolü sonraki çalışmalarla anlaşılmıştır (s.33).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentez yapan canlıların fotosentetik ototroflardan farklı olarak klorofil ve ışığa bağımlılığı nasıldır?",
-        "back": "Kemoototroflar klorofil bulundurmaz ve ışık enerjisini kullanmaz; kemosentez bu yüzden günün her saatinde gerçekleşebilir."
+        "front": "Helmont deneyinin sonucu nedir?",
+        "back": "Bitki kütle artışının sudan kaynaklandığı sonucuna varmıştır."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o07",
-      "alt_beceri": "Kemosentez",
-      "metin": "Bir redoks tepkimesinde bir madde elektron vererek ürüne dönüşüyor. Bu madde için hangi kimyasal süreç gerçekleşmiştir?",
+      "alt_beceri": "Fotosentezle ilgili bilimsel çalışmaların bilime katkısını değerlendirir.",
+      "metin": "Priestley, kapalı kavanozdaki mum ve farenin yanına canlı bir bitki koyduğunda mumun yanmaya devam ettiğini ve farenin yaşadığını görmüştür. Bu deney neyi göstermiştir?",
       "secenekler": [
-        "Fosforilasyon",
-        "İndirgenme",
-        "Oksidasyon",
-        "Fotosentez"
+        "Bitkilerin kirlenen havayı temizlediğini",
+        "Farenin oksijen ürettiğini",
+        "Mumun karbondioksit ürettiğini",
+        "Bitkilerin karanlıkta oksijen tükettiğini"
       ],
-      "dogru_index": 2,
-      "cozum": "Oksidasyonda atom veya molekülden elektron ayrılır. Elektron kazanılması ise indirgenmedir.",
+      "dogru_index": 0,
+      "cozum": "Priestley bu deneyle bitkilerin havaya oksijen verdiğini gözlemleyen ilk kişi olmuş ve kirlenen havanın bitkilerce temizlendiğini ifade etmiştir (s.33).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Oksidasyonu elektron alışverişi bakımından tanımlayınız.",
-        "back": "Oksidasyon, bir atom veya molekülden elektron ayrılmasını sağlayan kimyasal reaksiyondur."
+        "front": "Priestley'nin fotosentez bilimine katkısı nedir?",
+        "back": "Bitkilerin havaya oksijen verdiğini ilk kez gözlemlemesi."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o08",
-      "alt_beceri": "Kemosentez",
-      "metin": "Bir çevre izleme sensöründe, metanojen arkelerin etkin olduğu kapalı mikrobiyal düzeneğin gaz çıktısı tanımlanacak. Hangi kimyasal formül sensör kaydına yazılmalıdır?",
+      "alt_beceri": "Fotosentezle ilgili bilimsel çalışmaların bilime katkısını değerlendirir.",
+      "metin": "Ingenhousz'ın 1779'daki deneylerinde su bitkilerinin yalnızca ışık varken hava baloncukları çıkardığı görülmüştür. Bu gözlem hangi sonuca götürmüştür?",
       "secenekler": [
-        "Karbondioksit (CO₂)",
-        "Oksijen (O₂)",
-        "Azot (N₂)",
-        "Metan (CH₄)"
+        "Bitkilerin yalnızca köklerinin fotosentez yaptığına",
+        "Baloncukların karbondioksit olduğuna",
+        "Fotosentez için güneş ışığının gerekli olduğuna",
+        "Fotosentezin gece de sürdüğüne"
       ],
-      "dogru_index": 3,
-      "cozum": "Metanojen arkeler metabolik faaliyetleri sırasında metan oluşturur. Metanın kimyasal formülü CH₄ olduğundan sensör kaydında CH₄ yer almalıdır.",
+      "dogru_index": 2,
+      "cozum": "Ingenhousz baloncuklardaki gazın oksijen olduğunu, bitkilerin karanlıkta CO2 çıkardığını belirlemiş; fotosentez için güneş ışığının gerektiğini ve yalnızca yeşil kısımların fotosentez yaptığını ortaya koymuştur (s.34).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentez yapan metanojen arkelerin oluşturabildiği gazın kimyasal formülü nedir?",
-        "back": "Metan (CH₄)."
+        "front": "Ingenhousz'ın katkısı nedir?",
+        "back": "Işığın zorunluluğu; yalnız yeşil kısımlar fotosentez yapar."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o09",
-      "alt_beceri": "Kemosentez",
-      "metin": "Hidrojen sülfürü oksitleyen bir kemoototrof CO₂'yi kullanarak organik madde üretiyor. Bu süreçte CO₂'nin işlevi nedir?",
+      "alt_beceri": "Fotosentezle ilgili bilimsel çalışmaların bilime katkısını değerlendirir.",
+      "metin": "Robert Hill'in 2H2O → O2 + 4H⁺ + 4e⁻ denklemi fotosentezde hangi bilgiyi kanıtlamıştır?",
       "secenekler": [
-        "Organik maddenin karbon kaynağı olmak",
-        "Işık enerjisini soğurmak",
-        "Klorofil üretmek",
-        "Elektron taşıma sisteminin yerini almak"
+        "Oksijenin karbondioksitten oluştuğunu",
+        "Oksijenin ışığa bağlı evrede sudan oluştuğunu",
+        "Glikozun ışığa bağlı evrede sentezlendiğini",
+        "Klorofilin azot içerdiğini"
       ],
-      "dogru_index": 0,
-      "cozum": "CO₂, kemosentezde organik moleküllerin sentezi için kullanılan karbon kaynağıdır. Enerji ise CO₂'den değil, H₂S gibi inorganik maddelerin oksidasyonundan sağlanır.",
+      "dogru_index": 1,
+      "cozum": "Hill, ışık ve su bulunduğunda izole kloroplastların CO2 olmadan O2 üretebildiğini göstermiş; O2'nin kökeninin CO2 değil H2O olduğunu kanıtlamıştır (s.34).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemosentezde sentezlenen organik maddelerin karbonu hangi temel inorganik kaynaktan gelir?",
-        "back": "Kemosentezde organik madde sentezi için CO₂ kullanılır."
+        "front": "Hill reaksiyonu nedir?",
+        "back": "2H2O → O2 + 4H⁺ + 4e⁻; O2'nin kaynağı sudur."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     },
     {
       "soru_id": "biyo_10_u01_k03_o10",
-      "alt_beceri": "Kemosentez",
-      "metin": "Kapalı devre bir bitki yetiştirme sisteminin biyolojik filtresinde kemoototrof bakteriler organik besin üretirken, heterotrof protistler bu bakterilerle besleniyor. Protistler besin ağında hangi roldedir?",
+      "alt_beceri": "Fotosentezle ilgili bilimsel çalışmaların bilime katkısını değerlendirir.",
+      "metin": "Melvin Calvin ve arkadaşlarının 1946'da başlayan çalışmaları hangi sürecin aydınlatılmasını sağlamıştır?",
       "secenekler": [
-        "Üretici; organik maddeleri kendi sentezler.",
-        "Tüketici; besinini başka canlılardan alır.",
-        "Ayrıştırıcı; cansız çevre bileşenidir.",
-        "Fotosentetik ototrof; ışık enerjisini kullanır."
+        "Klorofilin kimyasal yapısının",
+        "Suyun fotolizinin ilk kez gözlenmesinin",
+        "Kükürt bakterilerinde hidrojen kaynağının",
+        "Atmosferik karbondioksidin organik bileşiklere dönüşmesinin"
       ],
-      "dogru_index": 1,
-      "cozum": "Kemoototrof bakteriler inorganik maddelerin oksidasyonundan sağladıkları enerjiyle organik madde üreten üreticilerdir. Bunlarla beslenen heterotrof protistler tüketicidir.",
+      "dogru_index": 3,
+      "cozum": "Calvin ve ekibi ışıktan bağımsız evre tepkimelerini çalışarak karbon metabolizmasını açıklamış, 1961'de Nobel Ödülü almıştır (s.34).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kemoototrof bakterilerin ürettiği organik maddelerle beslenen bir heterotrof, besin ağında hangi trofik roldedir?",
-        "back": "Tüketicidir; organik maddelerini başka canlılardan hazır alır."
+        "front": "Calvin'in Nobel aldığı çalışma nedir?",
+        "back": "Işıktan bağımsız evrede karbon metabolizmasının açıklanması."
       },
-      "kazanim": "kemosentez hakkında bilgi toplamanız,"
+      "kazanim": "Fotosentez denklemini kullanılan ve üretilen maddeler açısından çözümler, bilim tarihindeki deneyleri fotosentez bilgisine katkılarıyla karşılaştırır."
     }
   ],
   "flashcards": [
     {
       "id": "biyo_10_u01_k03_o01:flashcard",
-      "front": "Kemosentezi, enerji kaynağı ve sentezlenen madde bakımından açıklayınız.",
-      "back": "Bazı prokaryotların inorganik maddeleri oksitleyerek elde ettiği kimyasal enerjiyle inorganik maddelerden organik madde sentezlemesine kemosentez denir."
+      "front": "Fotosentezin sadeleşmiş denklemi nedir?",
+      "back": "6CO2 + 6H2O → C6H12O6 + 6O2 (ışık ve klorofille)."
     },
     {
       "id": "biyo_10_u01_k03_o02:flashcard",
-      "front": "Kemosentetik ototroflar besin sentezlemek için kimyasal enerjiyi hangi süreçten sağlar?",
-      "back": "H₂S, H₂, NH₃, NO₂, Fe²⁺ veya kükürt gibi inorganik maddelerin oksitlenmesi enerji açığa çıkarır."
+      "front": "Fotosentezde suyun iki yönlü rolü nedir?",
+      "back": "Hem tüketilir hem de üretilir."
     },
     {
       "id": "biyo_10_u01_k03_o03:flashcard",
-      "front": "Kemosentezde inorganik maddelerin oksidasyonuyla açığa çıkan enerji, organik madde sentezine aktarılmadan önce hangi molekülde tutulur?",
-      "back": "Açığa çıkan enerji ATP sentezinde kullanılır; ATP organik molekül üretimine enerji aktarır."
+      "front": "Fotosentezde hidrojen kaynağı nedir?",
+      "back": "Bitkilerde H2O, mor kükürt bakterilerinde H2S."
     },
     {
       "id": "biyo_10_u01_k03_o04:flashcard",
-      "front": "Kemosentezde organik madde sentezlenirken kullanılan temel inorganik karbon ve hidrojen kaynaklarını açıklayınız.",
-      "back": "Organik madde sentezinde CO₂ ve H₂O kullanılır; hidrojeni sağlayan inorganik maddeler farklılık gösterebilir."
+      "front": "Mor kükürt bakterilerinde yan ürün nedir?",
+      "back": "Suyun yerini S alır; elementel kükürt açığa çıkar."
     },
     {
       "id": "biyo_10_u01_k03_o05:flashcard",
-      "front": "Kemosentetik ototrofların ekosistemde besin ve enerji akışı açısından üstlendiği temel rolü açıklayınız.",
-      "back": "Kemosentetik ototroflar üreticidir; ürettikleri besinler bulundukları ekosistemde enerji akışının başlangıcını oluşturur."
+      "front": "Fotosentezde oksijenin kaynağı nedir?",
+      "back": "Su; ağır oksijen izotopu bunu kanıtlar."
     },
     {
       "id": "biyo_10_u01_k03_o06:flashcard",
-      "front": "Kemosentez yapan canlıların fotosentetik ototroflardan farklı olarak klorofil ve ışığa bağımlılığı nasıldır?",
-      "back": "Kemoototroflar klorofil bulundurmaz ve ışık enerjisini kullanmaz; kemosentez bu yüzden günün her saatinde gerçekleşebilir."
+      "front": "Helmont deneyinin sonucu nedir?",
+      "back": "Bitki kütle artışının sudan kaynaklandığı sonucuna varmıştır."
     },
     {
       "id": "biyo_10_u01_k03_o07:flashcard",
-      "front": "Oksidasyonu elektron alışverişi bakımından tanımlayınız.",
-      "back": "Oksidasyon, bir atom veya molekülden elektron ayrılmasını sağlayan kimyasal reaksiyondur."
+      "front": "Priestley'nin fotosentez bilimine katkısı nedir?",
+      "back": "Bitkilerin havaya oksijen verdiğini ilk kez gözlemlemesi."
     },
     {
       "id": "biyo_10_u01_k03_o08:flashcard",
-      "front": "Kemosentez yapan metanojen arkelerin oluşturabildiği gazın kimyasal formülü nedir?",
-      "back": "Metan (CH₄)."
+      "front": "Ingenhousz'ın katkısı nedir?",
+      "back": "Işığın zorunluluğu; yalnız yeşil kısımlar fotosentez yapar."
     },
     {
       "id": "biyo_10_u01_k03_o09:flashcard",
-      "front": "Kemosentezde sentezlenen organik maddelerin karbonu hangi temel inorganik kaynaktan gelir?",
-      "back": "Kemosentezde organik madde sentezi için CO₂ kullanılır."
+      "front": "Hill reaksiyonu nedir?",
+      "back": "2H2O → O2 + 4H⁺ + 4e⁻; O2'nin kaynağı sudur."
     },
     {
       "id": "biyo_10_u01_k03_o10:flashcard",
-      "front": "Kemoototrof bakterilerin ürettiği organik maddelerle beslenen bir heterotrof, besin ağında hangi trofik roldedir?",
-      "back": "Tüketicidir; organik maddelerini başka canlılardan hazır alır."
+      "front": "Calvin'in Nobel aldığı çalışma nedir?",
+      "back": "Işıktan bağımsız evrede karbon metabolizmasının açıklanması."
     }
-  ],
-  "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)"
+  ]
 }

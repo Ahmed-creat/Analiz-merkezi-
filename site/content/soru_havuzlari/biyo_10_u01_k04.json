@@ -2,298 +2,255 @@
   "konu_id": "biyo_10_u01_k04",
   "sinif": 10,
   "ders": "Biyoloji",
-  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "baslik": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+  "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+  "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.37-39",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "biyo_10_u01_k04_o01",
-      "alt_beceri": "Sindirim",
-      "metin": "Bir besin örneği, enzim eklenmeden yalnızca fiziksel yollarla daha küçük parçalara ayrılıyor. Bu işlem hangi sindirim çeşididir?",
+      "alt_beceri": "Kemosentez ile fotosentezi enerji kaynağı bakımından karşılaştırır.",
+      "metin": "Hidrotermal bacaların çevresinde güneş ışığı hiç ulaşmadığı hâlde besin üretilir. Bu canlılar enerjiyi nereden sağlar?",
       "secenekler": [
-        "Mekanik sindirim",
-        "Kimyasal sindirim",
-        "Hücre içi sindirim",
-        "Emilim"
+        "Suyun fotolizinden",
+        "İnorganik maddelerin oksidasyonundan",
+        "Ortamdaki ısıyı doğrudan ATP'ye çevirerek",
+        "Organik maddeleri parçalayarak"
       ],
-      "dogru_index": 0,
-      "cozum": "Besinin enzim kullanılmadan fiziksel olarak küçük parçalara ayrılması mekanik sindirimdir. Kimyasal sindirimde büyük moleküller enzim ve suyla yapı taşlarına ayrılır.",
+      "dogru_index": 1,
+      "cozum": "Kemosentezde hidrojen sülfür, amonyak, nitrit, demir gibi inorganik maddelerin oksidasyonuyla açığa çıkan kimyasal enerji kullanılır (s.39).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mekanik ve kimyasal sindirimi gerçekleşme biçimleri bakımından karşılaştırınız.",
-        "back": "Mekanik sindirim besinlerin fiziksel olarak küçük parçalara ayrılmasıdır ve enzim kullanılmaz. Kimyasal sindirimde büyük moleküller su ve enzimlerle hidroliz edilerek yapı taşlarına ayrılır."
+        "front": "Kemosentez nedir?",
+        "back": "İnorganik maddelerin oksidasyonuyla elde edilen enerjiyle organik madde sentezi."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o02",
-      "alt_beceri": "Sindirim",
-      "metin": "Proteinlerin kimyasal sindirimi tamamlandığında hangi küçük moleküller oluşur?",
+      "alt_beceri": "Kemosentez ile fotosentezi enerji kaynağı bakımından karşılaştırır.",
+      "metin": "Kemosentezin temel basamağı olan oksidasyon, kimyasal olarak nasıl tanımlanır?",
       "secenekler": [
-        "Monosakkaritler",
-        "Amino asitler",
-        "Yağ asitleri ve gliserol",
-        "Nükleotitler"
+        "Bir moleküle oksijen atomu eklenmesi",
+        "Bir molekülden su çıkarılması",
+        "Elektronların moleküle eklenmesi",
+        "Bir atom veya molekülden elektron ayrılması"
       ],
-      "dogru_index": 1,
-      "cozum": "Proteinler hidrolizle amino asitlere ayrılır. Yağ asitleri ve gliserol nötral yağların, monosakkaritler ise karbohidratların sindirim ürünleridir.",
+      "dogru_index": 3,
+      "cozum": "Kitap oksidasyonu, bir atom veya molekülden elektron ayrılmasını sağlayan kimyasal reaksiyon olarak tanımlar (s.39).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Karbohidrat, protein ve nötral yağların kimyasal sindirim sonunda oluşan temel yapı taşlarını yazınız.",
-        "back": "Karbohidratlar monosakkaritlere, proteinler amino asitlere, nötral yağlar yağ asitleri ve gliserole parçalanır."
+        "front": "Oksidasyon nedir?",
+        "back": "Atom veya molekülden elektron ayrılması."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o03",
-      "alt_beceri": "Canlılarda Sindirim Yapıları",
-      "metin": "Bir ökaryot hücre iri bir besin parçacığını koful içine alıyor; koful lizozomla birleşince enzimler besini hücre içinde parçalıyor. Bu hangi sindirim biçimidir?",
+      "alt_beceri": "Kemosentez ile fotosentezi enerji kaynağı bakımından karşılaştırır.",
+      "metin": "Kemosentez yapan bir bakteride aşağıdaki maddelerden hangisi oksitlenen inorganik madde olarak kullanılmaz?",
       "secenekler": [
-        "Mekanik sindirim",
-        "Hücre dışı sindirim",
-        "Hücre içi sindirim",
-        "Emilim"
+        "Glikoz",
+        "Hidrojen sülfür",
+        "Amonyak",
+        "Demir (Fe²⁺)"
       ],
-      "dogru_index": 2,
-      "cozum": "Besin endositozla hücreye alınır ve lizozom enzimleriyle hücre içinde parçalanır. Bu süreç hücre içi sindirimdir.",
+      "dogru_index": 0,
+      "cozum": "Kemosentezde H2S, H2, NH3, NO2, Fe²⁺ ve S gibi inorganik maddeler oksitlenir; glikoz organik bir üründür (s.39).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hücre içi sindirimde besin kofulunun oluşumundan yapı taşlarının sitoplazmaya geçişine kadar olan temel basamakları sıralayınız.",
-        "back": "Besin endositozla kofula alınır; koful lizozomla birleşir ve enzimler besini parçalar. Oluşan yapı taşları koful zarından sitoplazmaya geçer."
+        "front": "Kemoototrofun enerji kaynağı nedir?",
+        "back": "İnorganik maddelerin oksidasyonu."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o04",
-      "alt_beceri": "Canlılarda Sindirim Yapıları",
-      "metin": "Bir çürükçül canlı besin üzerine enzim salgılıyor ve parçalanma sonrasında küçük molekülleri hücresine alıyor. Bu hangi sindirim örüntüsüdür?",
+      "alt_beceri": "Kemosentez ile fotosentezi enerji kaynağı bakımından karşılaştırır.",
+      "metin": "Kemosentezde ATP, karbondioksiti hangi kaynaktan gelen hidrojenlerle birleştirir?",
       "secenekler": [
-        "Hücre içi sindirim",
-        "Mekanik sindirim",
-        "Emilim olmadan besin üretimi",
-        "Hücre dışı sindirim"
+        "Fotosentezde üretilen NADPH'tan",
+        "Klorofilden kopan elektronlardan",
+        "Oksitlenen inorganik maddelerden",
+        "Suyun fotolizinden açığa çıkan H⁺'tan"
       ],
-      "dogru_index": 3,
-      "cozum": "Besinin hücre dışında enzimlerle parçalanıp küçük moleküllerin hücreye alınması hücre dışı sindirimdir. Hücre içi sindirimde besin kofulu ve lizozom hücre içinde görev yapar.",
+      "dogru_index": 2,
+      "cozum": "Kemosentezde ATP, CO2 ile çeşitli kaynaklardan elde edilen hidrojenleri birleştirerek organik molekülleri üretir; bu hidrojenler inorganik maddelerin oksidasyonundan sağlanır (s.39).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hücre dışı sindirimde büyük besinlerin parçalanması ve oluşan küçük moleküllerin hücreye alınması nasıl gerçekleşir?",
-        "back": "Enzimler hücre dışına salgılanarak büyük besinleri parçalar; oluşan küçük moleküller aktif veya pasif taşımayla hücre içine alınır."
+        "front": "Kemosentezde hidrojen kaynağı nedir?",
+        "back": "Oksitlenen inorganik maddeler."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o05",
-      "alt_beceri": "Diş Adaptasyonları",
-      "metin": "Etçil beslenen bir vizonun avını tutup dokuyu yırtarken uzun ve sivri köpek dişlerini kullandığı gözleniyor. Bu dişler beslenmede temel olarak hangi işe yarar?",
+      "alt_beceri": "Kemosentez ile fotosentezi enerji kaynağı bakımından karşılaştırır.",
+      "metin": "Kemoototrof bir bakteri 24 saat boyunca organik madde sentezleyebilir. Bu canlının ışığa ihtiyaç duymamasının nedeni nedir?",
       "secenekler": [
-        "Avı tutup et dokusunu yırtmayı kolaylaştırır.",
-        "Bitkisel besinleri öğütmeye yarar.",
-        "Selülozu enzim olmadan kana taşır.",
-        "Sindirilmiş maddelerin ince bağırsakta emilimini sağlar."
+        "Geceleri klorofil sentezledikleri için",
+        "Gece sıcaklığı düştüğü için",
+        "Gündüz CO2 bulamadıkları için",
+        "Klorofil taşımadıkları ve ışığa bağımlı olmadıkları için"
       ],
-      "dogru_index": 0,
-      "cozum": "Vizonun sivri köpek dişleri avı tutup et dokusunu yırtmayı kolaylaştırır. Bu diş yapısı etçil beslenmeye uyum sağlar.",
+      "dogru_index": 3,
+      "cozum": "Kemoototroflar klorofil bulundurmadıkları için ışık enerjisi kullanmaz; bu nedenle besin üretimi gece gündüz fark etmeksizin sürer (s.39).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yaprakla beslenen bir memelinin arka dişleri geniş ve çıkıntılı yüzeylidir. Bu diş yapısı beslenmeye nasıl katkı verir?",
-        "back": "Geniş azı dişleri bitkisel besinleri öğütüp parçalamayı kolaylaştırır."
+        "front": "Kemoototrof nedir?",
+        "back": "Kemosentezle besin üreten, klorofil taşımayan canlı."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o06",
-      "alt_beceri": "Diş Adaptasyonları",
-      "metin": "Hem bitkisel hem hayvansal besin tüketen bir memelinin beslenme tipi nasıl sınıflanır?",
+      "alt_beceri": "Ekstrem ortamlarda kemosentez yapan canlıların ekosistemdeki yerini açıklar.",
+      "metin": "Hidrotermal bacaların 1977'de keşfedildiği Büyük Okyanus tabanında hangi canlılara rastlanır?",
       "secenekler": [
-        "Otçul",
-        "Hepçil",
-        "Etçil",
-        "Ototrof"
+        "Yalnızca tek hücreli algler ve siyanobakteriler",
+        "Karides, yengeç, midye ve denizyıldızı",
+        "Yalnızca mercan resifleri ve süngerler",
+        "Tatlı su balıkları ve su bitkileri"
       ],
       "dogru_index": 1,
-      "cozum": "Bitkisel ve hayvansal besinlerin ikisini de tüketen canlı hepçildir. Etçiller hayvansal, otçullar ise bitkisel besinlerle beslenir.",
+      "cozum": "Bacaların etrafında kemosentez yapan bakterilerle beslenen karides, yengeç, midye ve denizyıldızı gibi canlılar yaşar (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hepçil canlıların beslenme biçimini ve insan dişlerinin bu biçime uyumunu açıklayınız.",
-        "back": "Hepçiller bitkisel ve hayvansal besinlerle beslenir; insanlarda kesici, köpek ve azı dişleri farklı besinleri ısırma, koparma ve öğütmeye uyum sağlamıştır."
+        "front": "Hidrotermal baca nedir?",
+        "back": "Okyanus tabanında sıcak su ve gaz fışkırtan kaynak."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o07",
-      "alt_beceri": "Mide ve Bağırsak Adaptasyonları",
-      "metin": "Bir araştırmada, tek bölmeli mideli ve bitkisel liflerle beslenen bir memelinin kör bağırsağından alınan mikroorganizmalar selüloz içeren besin örneğine ekleniyor. Bu mikroorganizmalar sindirime nasıl katkı sağlar?",
+      "alt_beceri": "Ekstrem ortamlarda kemosentez yapan canlıların ekosistemdeki yerini açıklar.",
+      "metin": "Hidrotermal bacaların iç kısmındaki sıcaklık ile ağız kısmındaki sıcaklık yaklaşık kaç derecedir?",
       "secenekler": [
-        "Besini glikoza dönüştürmeden depolar.",
-        "Selülozu sindirmeden doğrudan kana taşır.",
-        "Selülozu parçalayabilen enzimler üretir.",
-        "Sindirim enzimlerini etkisiz hâle getirir."
+        "İçte 350-400 °C, ağızda yaklaşık 150 °C",
+        "İçte 150 °C, ağızda 350-400 °C",
+        "İçte 100 °C, ağızda 50 °C",
+        "İçte 40 °C, ağızda 20 °C"
       ],
-      "dogru_index": 2,
-      "cozum": "Tek bölmeli mideli otçulların kör bağırsağındaki mikroorganizmalar selülozu parçalayabilen enzimler üretir. Böylece memelinin kendi enzimleriyle sindiremediği bitkisel selülozun sindirimine katkı sağlanır.",
+      "dogru_index": 0,
+      "cozum": "Bacaların iç kısmı 350-400 °C, ağız kısmı yaklaşık 150 °C sıcaklığa sahiptir ve okyanuslardaki ısı transferinde rol oynar (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Geviş getiren otçulların dört bölmeli midesini oluşturan bölümleri sıralayınız.",
-        "back": "İşkembe, börkenek, kırkbayır ve şirden."
+        "front": "Hidrotermal bacaların okyanustaki işlevi nedir?",
+        "back": "Isı transferinde rol oynar; kemosentetik bakterilere ortam sağlar."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o08",
-      "alt_beceri": "Mide ve Bağırsak Adaptasyonları",
-      "metin": "Bir yaban hayatı merkezinde kütleleri benzer iki keseli memelinin beslenme uyumları karşılaştırılıyor: yaprakla beslenen koala ve hayvansal besinlerle beslenen Tazmanya canavarı. Vücut boyutuna göre sindirim kanalı hangisinde daha uzun olmalıdır ve neden?",
+      "alt_beceri": "Ekstrem ortamlarda kemosentez yapan canlıların ekosistemdeki yerini açıklar.",
+      "metin": "Kemoototrofların ekosistemdeki işlevi hangi ifadeyle açıklanır?",
       "secenekler": [
-        "Etçilinki; selülozu sindirebildiği için.",
-        "Etçilinki; et her zaman daha zor sindirildiği için.",
-        "İkisinin sindirim kanalı daima aynı uzunluktadır.",
-        "Otçulun; bitkisel besinlerin sindirimi daha uzun sürdüğü için."
+        "Ayrıştırıcı olup organik maddeyi inorganiğe çevirirler",
+        "Tüketici olup yalnızca otçullarla beslenirler",
+        "Üretici olup enerji akışının başlangıcını oluştururlar",
+        "Parazit olup konak canlıdan besin alırlar"
       ],
-      "dogru_index": 3,
-      "cozum": "Vücut boyutuna göre sindirim kanalı koalada, yani otçul canlıda, daha uzundur. Bitkisel besinlerin sindirimi daha uzun sürdüğünden bu yapı sindirime zaman ve emilim için daha geniş yüzey sağlar.",
+      "dogru_index": 2,
+      "cozum": "Kemoototroflar bulundukları ekosistemin üretici organizmalarıdır; ürettikleri besinler ekosistemin enerji akışının başlangıcıdır (s.39).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Vücut boyutuna göre sindirim kanalı uzunluğunu otçullar, hepçiller ve etçiller bakımından karşılaştırınız.",
-        "back": "Otçul ve hepçillerin sindirim kanalları, vücut boyutlarına göre etçillerinkinden daha uzundur; bitkisel besinlerin sindirimi daha uzun sürer."
+        "front": "Üretici organizmanın ekosistemdeki işlevi nedir?",
+        "back": "Enerji akışını başlatmak; organik madde üretmek."
       },
-      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o09",
-      "alt_beceri": "İnsanda Sindirim",
-      "metin": "İnsanda karbohidratların kimyasal sindirimi ilk olarak nerede başlar?",
+      "alt_beceri": "Ekstrem ortamlarda kemosentez yapan canlıların ekosistemdeki yerini açıklar.",
+      "metin": "Çöplüklerde yaşayan ve metan üreten arkeler hangi ortam koşullarında etkindir?",
       "secenekler": [
-        "Ağızda",
-        "Midede",
-        "Kalın bağırsakta",
-        "Anüste"
+        "Işığın bol olduğu ortamlarda",
+        "Oksijensiz (anaerobik) ortamlarda",
+        "Yalnızca tuzlu sularda",
+        "Yalnızca yüksek oksijenli sularda"
       ],
-      "dogru_index": 0,
-      "cozum": "Karbohidratların kimyasal sindirimi ağızda tükürükteki enzimlerle başlar. Mideye geçen karbohidratların sindirimi mide asidik olduğu için burada sürmez.",
+      "dogru_index": 1,
+      "cozum": "Okyanus ve bataklık diplerindeki oksijensiz çamur, çöplükler ve lağım çamuru işleme kazanları bu prokaryotların yaygın bulunduğu ortamlardır (s.38).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsan sindirim kanalını ağızdan başlayarak sırasıyla oluşturan yapıları yazınız.",
-        "back": "Ağız, yutak, yemek borusu, mide, ince bağırsak, kalın bağırsak ve anüs sindirim kanalını oluşturur."
+        "front": "Metan gazının özellikleri nedir?",
+        "back": "Renksiz, kokusuz ve patlayıcı bir gaz."
       },
-      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     },
     {
       "soru_id": "biyo_10_u01_k04_o10",
-      "alt_beceri": "İnsanda Sindirim",
-      "metin": "Safra sıvısının yağların sindirimine katkısı nasıl açıklanır?",
+      "alt_beceri": "Ekstrem ortamlarda kemosentez yapan canlıların ekosistemdeki yerini açıklar.",
+      "metin": "Fotosentez ile kemosentez karşılaştırıldığında hangi ifade doğrudur?",
       "secenekler": [
-        "Yağları amino asitlere hidroliz eder.",
-        "Yağ damlacıklarını küçülterek enzimlerin etkileyebileceği yüzeyi artırır.",
-        "Protein sindirim enzimlerini üretir.",
-        "Yağları doğrudan kana taşır."
-      ],
-      "dogru_index": 1,
-      "cozum": "Safra yağları küçük damlacıklara ayırır; böylece sindirim enzimlerinin etki ettiği yüzey artar. Safrada sindirim enzimi bulunmaz, bu nedenle yağları doğrudan hidroliz etmez.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Karaciğer, safra kesesi ve pankreasın sindirime katkılarını karşılaştırınız.",
-        "back": "Karaciğer safra üretir, safra kesesi safrayı depolar ve ince bağırsağa salgılar; pankreas sindirim enzimleri ve bikarbonat salgılar."
-      },
-      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
-    },
-    {
-      "soru_id": "biyo_10_u01_k04_o11",
-      "alt_beceri": "İnsanda Emilim ve Taşınma",
-      "metin": "İnce bağırsaktaki villus ve mikrovillusların çoğalması besinlerin emilimine nasıl katkıda bulunur?",
-      "secenekler": [
-        "Besinlerin mekanik sindirimini durdurur.",
-        "Safra üretimini artırır.",
-        "Emilim için kullanılabilen yüzey alanını büyütür.",
-        "Besinleri sindirim kanalından dışarı atar."
-      ],
-      "dogru_index": 2,
-      "cozum": "Villus ve mikrovilluslar ince bağırsağın iç yüzey alanını artırarak sindirilmiş besinlerin emilimini verimli hâle getirir. Safra karaciğerde üretilir; villusların görevi değildir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Emilimi tanımlayınız ve ince bağırsağın emilim yüzeyini büyüten yapıları belirtiniz.",
-        "back": "Emilim, sindirilmiş maddelerin sindirim kanalından kana geçmesidir. İnce bağırsağın kıvrımları, villus ve mikrovillusları emilim yüzeyini artırır."
-      },
-      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
-    },
-    {
-      "soru_id": "biyo_10_u01_k04_o12",
-      "alt_beceri": "İnsanda Emilim ve Taşınma",
-      "metin": "İnce bağırsakta emilen glikoz, amino asit ve suda çözünen vitaminler önce hangi taşıma yoluna katılır?",
-      "secenekler": [
-        "Villuslardaki lenf kılcallarına",
-        "Safra kesesine",
-        "Doğrudan kalın bağırsak boşluğuna",
-        "Villuslardaki kılcal kan damarlarına"
+        "Her iki besin sentezinde de klorofil zorunlu pigmenttir",
+        "Kemosentez yalnızca bitki hücrelerinde görülür",
+        "Fotosentez ışıktan bağımsız evrede gerçekleşir",
+        "Fotosentezde enerji ışıktan, kemosentezde inorganik maddelerin oksidasyonundan sağlanır"
       ],
       "dogru_index": 3,
-      "cozum": "Glikoz, amino asitler ve özellikle B ve C vitaminleri villuslardaki kılcal kan damarlarına geçer. Yağların büyük kısmı ise şilomikronlarla önce lenf kılcallarına katılır.",
+      "cozum": "Ototroflar enerji kaynağına göre ayrılır: fotosentetik ototroflar ışıktan, kemosentetik ototroflar inorganik maddelerin oksidasyonundan enerji sağlar (s.39).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sindirilmiş yağ ürünlerinin ince bağırsak hücrelerinden lenf ve kana taşınma yolunu özetleyiniz.",
-        "back": "Yağ asitleri ve gliserol epitel hücrelerinde yeniden trigliseritlere dönüştürülüp şilomikronları oluşturur; şilomikronlar önce lenf kılcallarına, sonra kana katılır."
+        "front": "Kemosentezin fotosentezden temel farkı nedir?",
+        "back": "Enerji ışıktan değil kimyasal oksidasyondan gelir."
       },
-      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
+      "kazanim": "Kemosentezi fotosentezden ayıran enerji kaynağını açıklar ve kemoototrofların ekosistemdeki üretici rolünü yorumlar."
     }
   ],
   "flashcards": [
     {
       "id": "biyo_10_u01_k04_o01:flashcard",
-      "front": "Mekanik ve kimyasal sindirimi gerçekleşme biçimleri bakımından karşılaştırınız.",
-      "back": "Mekanik sindirim besinlerin fiziksel olarak küçük parçalara ayrılmasıdır ve enzim kullanılmaz. Kimyasal sindirimde büyük moleküller su ve enzimlerle hidroliz edilerek yapı taşlarına ayrılır."
+      "front": "Kemosentez nedir?",
+      "back": "İnorganik maddelerin oksidasyonuyla elde edilen enerjiyle organik madde sentezi."
     },
     {
       "id": "biyo_10_u01_k04_o02:flashcard",
-      "front": "Karbohidrat, protein ve nötral yağların kimyasal sindirim sonunda oluşan temel yapı taşlarını yazınız.",
-      "back": "Karbohidratlar monosakkaritlere, proteinler amino asitlere, nötral yağlar yağ asitleri ve gliserole parçalanır."
+      "front": "Oksidasyon nedir?",
+      "back": "Atom veya molekülden elektron ayrılması."
     },
     {
       "id": "biyo_10_u01_k04_o03:flashcard",
-      "front": "Hücre içi sindirimde besin kofulunun oluşumundan yapı taşlarının sitoplazmaya geçişine kadar olan temel basamakları sıralayınız.",
-      "back": "Besin endositozla kofula alınır; koful lizozomla birleşir ve enzimler besini parçalar. Oluşan yapı taşları koful zarından sitoplazmaya geçer."
+      "front": "Kemoototrofun enerji kaynağı nedir?",
+      "back": "İnorganik maddelerin oksidasyonu."
     },
     {
       "id": "biyo_10_u01_k04_o04:flashcard",
-      "front": "Hücre dışı sindirimde büyük besinlerin parçalanması ve oluşan küçük moleküllerin hücreye alınması nasıl gerçekleşir?",
-      "back": "Enzimler hücre dışına salgılanarak büyük besinleri parçalar; oluşan küçük moleküller aktif veya pasif taşımayla hücre içine alınır."
+      "front": "Kemosentezde hidrojen kaynağı nedir?",
+      "back": "Oksitlenen inorganik maddeler."
     },
     {
       "id": "biyo_10_u01_k04_o05:flashcard",
-      "front": "Yaprakla beslenen bir memelinin arka dişleri geniş ve çıkıntılı yüzeylidir. Bu diş yapısı beslenmeye nasıl katkı verir?",
-      "back": "Geniş azı dişleri bitkisel besinleri öğütüp parçalamayı kolaylaştırır."
+      "front": "Kemoototrof nedir?",
+      "back": "Kemosentezle besin üreten, klorofil taşımayan canlı."
     },
     {
       "id": "biyo_10_u01_k04_o06:flashcard",
-      "front": "Hepçil canlıların beslenme biçimini ve insan dişlerinin bu biçime uyumunu açıklayınız.",
-      "back": "Hepçiller bitkisel ve hayvansal besinlerle beslenir; insanlarda kesici, köpek ve azı dişleri farklı besinleri ısırma, koparma ve öğütmeye uyum sağlamıştır."
+      "front": "Hidrotermal baca nedir?",
+      "back": "Okyanus tabanında sıcak su ve gaz fışkırtan kaynak."
     },
     {
       "id": "biyo_10_u01_k04_o07:flashcard",
-      "front": "Geviş getiren otçulların dört bölmeli midesini oluşturan bölümleri sıralayınız.",
-      "back": "İşkembe, börkenek, kırkbayır ve şirden."
+      "front": "Hidrotermal bacaların okyanustaki işlevi nedir?",
+      "back": "Isı transferinde rol oynar; kemosentetik bakterilere ortam sağlar."
     },
     {
       "id": "biyo_10_u01_k04_o08:flashcard",
-      "front": "Vücut boyutuna göre sindirim kanalı uzunluğunu otçullar, hepçiller ve etçiller bakımından karşılaştırınız.",
-      "back": "Otçul ve hepçillerin sindirim kanalları, vücut boyutlarına göre etçillerinkinden daha uzundur; bitkisel besinlerin sindirimi daha uzun sürer."
+      "front": "Üretici organizmanın ekosistemdeki işlevi nedir?",
+      "back": "Enerji akışını başlatmak; organik madde üretmek."
     },
     {
       "id": "biyo_10_u01_k04_o09:flashcard",
-      "front": "İnsan sindirim kanalını ağızdan başlayarak sırasıyla oluşturan yapıları yazınız.",
-      "back": "Ağız, yutak, yemek borusu, mide, ince bağırsak, kalın bağırsak ve anüs sindirim kanalını oluşturur."
+      "front": "Metan gazının özellikleri nedir?",
+      "back": "Renksiz, kokusuz ve patlayıcı bir gaz."
     },
     {
       "id": "biyo_10_u01_k04_o10:flashcard",
-      "front": "Karaciğer, safra kesesi ve pankreasın sindirime katkılarını karşılaştırınız.",
-      "back": "Karaciğer safra üretir, safra kesesi safrayı depolar ve ince bağırsağa salgılar; pankreas sindirim enzimleri ve bikarbonat salgılar."
-    },
-    {
-      "id": "biyo_10_u01_k04_o11:flashcard",
-      "front": "Emilimi tanımlayınız ve ince bağırsağın emilim yüzeyini büyüten yapıları belirtiniz.",
-      "back": "Emilim, sindirilmiş maddelerin sindirim kanalından kana geçmesidir. İnce bağırsağın kıvrımları, villus ve mikrovillusları emilim yüzeyini artırır."
-    },
-    {
-      "id": "biyo_10_u01_k04_o12:flashcard",
-      "front": "Sindirilmiş yağ ürünlerinin ince bağırsak hücrelerinden lenf ve kana taşınma yolunu özetleyiniz.",
-      "back": "Yağ asitleri ve gliserol epitel hücrelerinde yeniden trigliseritlere dönüştürülüp şilomikronları oluşturur; şilomikronlar önce lenf kılcallarına, sonra kana katılır."
+      "front": "Kemosentezin fotosentezden temel farkı nedir?",
+      "back": "Enerji ışıktan değil kimyasal oksidasyondan gelir."
     }
-  ],
-  "topic_key": "Biyoloji > 1.5 Sindirim"
+  ]
 }
