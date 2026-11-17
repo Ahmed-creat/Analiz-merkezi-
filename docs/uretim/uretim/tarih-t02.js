@@ -3,7 +3,7 @@
    Kaynak: MEB Tarih 10 ders kitabı (2025). JSON sayfa = basılı sayfa + 1. */
 "use strict";
 
-const { yaz } = require("../yazicilar/yaz.js");
+const { yaz, konuBasligiYaz } = require("../yazicilar/yaz.js");
 
 const KAYNAK = "MEB Tarih 10 ders kitabı (2025)";
 
@@ -661,3 +661,7 @@ yaz("tar_10_t02_c05", KAYNAK + ", s.172-196", [
     fc: ["Bacıyân-ı Rum nedir?", "Anadolu’da kadınların kurduğu, üretim ve sosyal dayanışmayı örgütleyen teşkilattır."]
   }
 ]);
+
+/* Uygulama bu havuzları konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
+konuBasligiYaz("tar_10_t02_c02", "Tarih > 2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler");
+konuBasligiYaz("tar_10_t02_c04", "Tarih > 2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası");
