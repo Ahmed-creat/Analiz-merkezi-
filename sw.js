@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261031-v69-biyo10-tur2";
+const CACHE = "analiz-merkezi-v-20261031-v69-cogr10-tur2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -42,6 +42,13 @@ const ASSETS = [
   "./content/soru_havuzlari/cogr_10_u04_k01.json",
   "./content/soru_havuzlari/cogr_10_u05_k01.json",
   "./content/soru_havuzlari/cogr_10_u06_k01.json",
+  "./content/soru_havuzlari/cogr_10_u04_k02.json",
+  "./content/soru_havuzlari/cogr_10_u05_k02.json",
+  "./content/soru_havuzlari/cogr_10_u05_k03.json",
+  "./content/soru_havuzlari/cogr_10_u06_k02.json",
+  "./content/soru_havuzlari/cogr_10_u06_k03.json",
+  "./content/soru_havuzlari/cogr_10_u06_k04.json",
+  "./content/soru_havuzlari/cogr_10_u07_k01.json",
   "./content/soru_havuzlari/din_10_u01_k01.json",
   "./content/soru_havuzlari/din_10_u01_k02.json",
   "./content/soru_havuzlari/din_10_u01_k03.json",

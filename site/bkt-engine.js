@@ -610,10 +610,10 @@
     // "Popülasyon Dinamikleri", "Süksesyon" — konunun tam karşılığı.
     "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler": "biyo_10_u02_k02",
     // Havuz etiketi: "Ekolojik Sürdürülebilirliği Kısıtlayan/Engelleyen Durumlar".
-    "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar": "biyo_10_u02_k04",
-    // Havuz soruları afet direnci/afet bilinci üzerine (4/5 anahtar kelime).
-    "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları": "cogr_10_u06_k01",
-    "Coğrafya > 6.3 Afetlerden Korunma": "cogr_10_u06_k01"
+    "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar": "biyo_10_u02_k04"
+    // Coğrafya 6.2 / 6.3 satırları 2026-11-17'de KALDIRILDI: her iki konunun
+    // kendi havuzu (cogr_10_u06_k02, cogr_10_u06_k03) var; birebir topic_key
+    // eşleşmesi yeterli, ek eşleme afet 6.1 havuzuna yönlendiriyordu.
   });
   // Saf fonksiyon: verilen havuz listesinde YALNIZ bu konunun havuzunu arar.
   function havuzEsle(topicKey, havuzlar) {

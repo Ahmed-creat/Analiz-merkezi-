@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 235,
- "soru_sayisi": 2518,
- "flashcard_sayisi": 2518,
+ "havuz_sayisi": 224,
+ "soru_sayisi": 2384,
+ "flashcard_sayisi": 2384,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": null,
@@ -313,338 +313,15 @@
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "cogr_10_t01_c01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t01_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Örnek olay, olgu ve/veya mekânın harita üzerindeki konumunu algılar.",
-    "Örnek olay, olgu ve/veya mekânın yakın ve uzak çevresiyle olan ilişkilerini çözümler.",
-    "Örnek olay, olgu ve/veya mekânın temel coğrafi koşullarını tanımlar.",
-    "Örnek olay, olgu ve/veya mekânın aynı çevrede bulunan diğer olay, olgu veya mekânlar üzerindeki etkisini sorgular."
-   ],
-   "baslik": "Örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilme",
-   "topic_key": "Coğrafya > 1.1 Örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilme",
-   "kod": "COĞ.10.1.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t02_c01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t02_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını çözümler.",
-    "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını sınıflandırır.",
-    "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını yorumlar."
-   ],
-   "baslik": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme",
-   "topic_key": "Coğrafya > 2.1 Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme",
-   "kod": "COĞ.10.2.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t02_c02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t02_c02.json",
-   "soru_sayisi": 14,
-   "flashcard_sayisi": 14,
-   "etiketler": [
-    "Oluşturacağı haritanın amacını belirler.",
-    "Oluşturacağı harita için gerekli olan yöntemler ve araç gereci kullanır.",
-    "Oluşturacağı haritaya ekleyeceği verileri toplar.",
-    "Oluşturacağı haritanın türünü belirler.",
-    "Verileri haritaya işler ve haritanın bileşenlerini oluşturur.",
-    "Oluşturduğu haritayı amacına uygun biçimde kullanır."
-   ],
-   "baslik": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme",
-   "topic_key": "Coğrafya > 2.2 Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme",
-   "kod": "COĞ.10.2.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t03_c01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t03_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Levha tektoniğine neden olan süreçleri belirler.",
-    "Yeryüzü şekilleri ile levha tektoniği arasındaki ilişkiyi belirler."
-   ],
-   "baslik": "Yerkürenin tektonik yapısını çözümleyebilme",
-   "topic_key": "Coğrafya > 3.1 Yerkürenin tektonik yapısını çözümleyebilme",
-   "kod": "COĞ.10.3.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t03_c02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t03_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Aşınma ve çözünme süreçleri ile iklim ve kayaç yapısı arasındaki ilişkileri neden-sonuç bağlamında ortaya koyar.",
-    "Aşınma ve çözünme süreçlerine ilişkin edindiği bilgilerle kendi bilgilerini anlamlı bir bütün hâline getirir."
-   ],
-   "baslik": "Yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilme",
-   "topic_key": "Coğrafya > 3.2 Yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilme",
-   "kod": "COĞ.10.3.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t03_c03",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t03_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Aşınım ve birikim süreçlerinde ortaya çıkan yeryüzü şekillerini belirler.",
-    "Aşınım ve birikim süreçleriyle yeryüzü şekilleri arasındaki ilişkiyi belirler."
-   ],
-   "baslik": "Yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilme",
-   "topic_key": "Coğrafya > 3.3 Yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilme",
-   "kod": "COĞ.10.3.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t03_c04",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t03_c04.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
-   "etiketler": [
-    "Yeryüzü şekillerinin oluşum ve değişimini incelemek için hazırlık yapar.",
-    "Yeryüzü şekillerinin oluşum ve değişiminde etkili olan faktörleri belirleyebilmek için çalışma sahasında uygulama yapar.",
-    "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili çalışma sahasından bilgi toplar.",
-    "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili çalışma sahasından elde ettiği bilgileri çözümler.",
-    "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili çözümlediği bilgilere dayalı tahminde bulunur.",
-    "Yeryüzü şekillerinin oluşum ve değişimiyle ilgili tahminlerini raporlar."
-   ],
-   "baslik": "Yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilme",
-   "topic_key": "Coğrafya > 3.4 Yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilme",
-   "kod": "COĞ.10.3.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t03_c05",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t03_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili merak ettiği soruları sorar.",
-    "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili bilgi toplar.",
-    "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili topladığı bilgileri düzenler.",
-    "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili düzenlediği bilgileri çözümler.",
-    "Yakın çevresindeki yeryüzü şekilleri ve beşerî faaliyetler arasındaki etkileşimle ilgili çözümlediği bilgilerden çıkardığı sonuçları paylaşır. 50"
-   ],
-   "baslik": "Yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilme",
-   "topic_key": "Coğrafya > 3.5 Yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilme",
-   "kod": "COĞ.10.3.5",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t04_c01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t04_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik sorular sorar.",
-    "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik bilgi toplar.",
-    "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik topladığı bilgileri düzenler.",
-    "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik düzenlediği bilgileri çözümler.",
-    "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörlere yönelik çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
-   ],
-   "baslik": "Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilme",
-   "topic_key": "Coğrafya > 4.1 Yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilme",
-   "kod": "COĞ.10.4.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t04_c02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t04_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Türkiye ve dünyadaki yerleşmelerin fonksiyonları üzerinde etkili olan değişkenleri belirler.",
-    "Türkiye ve dünyadaki yerleşmelerin fonksiyonları üzerinde etkili olan değişkenleri ayrıştırır.",
-    "Türkiye ve dünyadaki yerleşmelerin fonksiyonları üzerinde etkili olan değişkenleri tasnif eder.",
-    "Türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre etiketler."
-   ],
-   "baslik": "Türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre sınıflandırabilme",
-   "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
-   "kod": "COĞ.10.4.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t05_c01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t05_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Ekonomik faaliyetlerin sınıflandırılmasındaki ölçütleri belirler.",
-    "Ekonomik faaliyetleri sektörlere göre ayırır.",
-    "Ekonomik faaliyetleri sektörlere göre tasnif eder.",
-    "Ekonomik faaliyetleri sektörlere göre etiketler."
-   ],
-   "baslik": "Ekonomik faaliyetleri sektörlere göre sınıflandırabilme",
-   "topic_key": "Coğrafya > 5.1 Ekonomik faaliyetleri sektörlere göre sınıflandırabilme",
-   "kod": "COĞ.10.5.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t05_c02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t05_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramları bileşenleriyle tanır ve anlamlandırır.",
-    "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramları çözümler.",
-    "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlardan sonuç çıkarır.",
-    "Farklı gelişmişlik seviyesine sahip ülkelerde ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlardan elde ettiği sonuçları karşılaştırır."
-   ],
-   "baslik": "Ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden farklı gelişmişlik seviyesine sahip ülkeleri karşılaştırabilme",
-   "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
-   "kod": "COĞ.10.5.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t05_c03",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t05_c03.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
-   "etiketler": [
-    "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemine ilişkin oluşturacağı tablo, grafik, şekil ve/veya diyagramın amacını belirler.",
-    "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemine ilişkin oluşturacağı tablo, grafik, şekil ve/veya diyagramın türünü ve kullanacağı araç gereci belirler.",
-    "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemine ilişkin oluşturacağı tablo, grafik, şekil ve/veya diyagramla ilgili veri toplar.",
-    "Topladığı verileri ekonomik sektörlere göre sınıflandırır.",
-    "Ekonomik sektörlere göre sınıflandırdığı verileri görselleştirir.",
-    "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagramları amaca uygun şekilde kullanır."
-   ],
-   "baslik": "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilme",
-   "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
-   "kod": "COĞ.10.5.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t06_c01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t06_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Afetlerle mücadelede iyi uygulama örneklerine yönelik merak ettiği soruları sorar.",
-    "Afetlerle mücadelede iyi uygulama örnekleri ile ilgili bilgi toplar.",
-    "Afetlerle mücadelede iyi uygulama örnekleri hakkında elde ettiği bilgileri düzenler.",
-    "Afetlerle mücadelede iyi uygulama örnekleri hakkında düzenlediği bilgileri çözümler.",
-    "Afetle mücadelede iyi uygulama örneklerine ilişkin çözümlediği bilgilerden çıkardığı sonuçları paylaşır."
-   ],
-   "baslik": "Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme",
-   "topic_key": "Coğrafya > 6.1 Afetlerle mücadelede iyi uygulama örneklerini sorgulayabilme",
-   "kod": "COĞ.10.6.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t06_c02",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t06_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Afete dirençli yaşam alanlarının coğrafi koşullarını tanımlar.",
-    "Afete dirençli yaşam alanlarında yer alan mekânsal unsurların kendi aralarındaki ilişkileri çözümler."
-   ],
-   "baslik": "Afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilme",
-   "topic_key": "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
-   "kod": "COĞ.10.6.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t06_c03",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t06_c03.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
-   "etiketler": [
-    "Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar vermeyi amaç olarak belirler.",
-    "Mekânın özelliklerine göre afetlerden korunma uygulamalarına ilişkin bilgi toplar.",
-    "Mekânın özelliklerine göre afetlerden korunma uygulamalarına alternatif seçenekler oluşturur.",
-    "Mekânın özelliklerine göre afetlerden korunma uygulamalarına alternatif oluşturduğu seçenekler üzerinden çıkarım yapar.",
-    "Mekânın özelliklerine göre afetlerden korunma uygulamaları arasından seçim yapar.",
-    "Mekânın özelliklerine göre seçtiği afetlerden korunma uygulamalarının sonuçları üzerinde yansıtma yapar."
-   ],
-   "baslik": "Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilme",
-   "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
-   "kod": "COĞ.10.6.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t06_c04",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t06_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin deneyimlerini gözden geçirir.",
-    "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin deneyimlerinden çıkarım yapar.",
-    "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarına ilişkin çıkarımlarını değerlendirir."
-   ],
-   "baslik": "Afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarını yansıtabilme",
-   "topic_key": "Coğrafya > 6.4 Afet Bilinci",
-   "kod": "COĞ.10.6.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "cogr_10_t07_c01",
-   "ders": "Coğrafya",
-   "sinif": 10,
-   "dosya": "cogr_10_t07_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Türk kültürünün yayıldığı alanları gözlemler.",
-    "Türk kültürünün yayıldığı alanlardaki kültürel özellikleri tespit eder.",
-    "Türk kültürünün yayıldığı alanlardaki ortak kültürel özellikler hakkında çıkarımda bulunur."
-   ],
-   "baslik": "Türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilme",
-   "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
-   "kod": "COĞ.10.7.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
    "konu_id": "cogr_10_u01_k01",
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u01_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "coğrafyanın konum, zaman, mekân, hareket, bölge, sürdürülebilirlik gibi temel kavramları çerçevesinde örnek olay, olgu veya mekândan yararlanarak coğrafi bakış açısı kazanabilmeniz"
+    "Coğrafi bakışın tanımını, bileşenlerini ve ölçek boyutunu açıklar.",
+    "Bir örnek olayı (Marmara Gölü) coğrafi bakışla çözümler."
    ],
    "baslik": "1.1 Coğrafi Bakış",
    "topic_key": "Coğrafya > 1.1 Coğrafi Bakış",
@@ -659,7 +336,8 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,"
+    "CBS ve uzaktan algılamanın uygulama alanlarını örneklerle açıklar.",
+    "AYDES'in bileşenlerini ve afet yönetimindeki işlevini çözümler."
    ],
    "baslik": "2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
    "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
@@ -674,7 +352,8 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz"
+    "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+    "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır."
    ],
    "baslik": "2.2 Mekânsal Verilerin Haritalara Aktarılması",
    "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması",
@@ -686,10 +365,11 @@
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u03_k01.json",
-   "soru_sayisi": 16,
-   "flashcard_sayisi": 16,
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
    "etiketler": [
-    "levha tektoniğinin sistemsel süreci ve bu süreci oluşturan bileşenleri çözümleyebilmeniz,"
+    "Levha hareketlerini ve bu hareketlerin oluşturduğu yer şekillerini açıklar.",
+    "Türkiye'nin tektonik yapısı ile deprem, volkanizma ve jeotermal alanları ilişkilendirir."
    ],
    "baslik": "3.1 Tektonik Süreçler",
    "topic_key": "Coğrafya > 3.1 Tektonik Süreçler",
@@ -701,10 +381,11 @@
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u03_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "yeryüzünü şekillendiren süreçler ile yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçlerinin iklim ve kayaç özellikleriyle ilişkisini anlamlandırabilmeniz,"
+    "Fiziksel ayrışma süreçlerini ve etkenlerini açıklar.",
+    "İklim ve kayaç özelliklerinin kimyasal çözünme ve ayrışma hızına etkisini çözümler."
    ],
    "baslik": "3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
    "topic_key": "Coğrafya > 3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
@@ -716,10 +397,11 @@
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u03_k03.json",
-   "soru_sayisi": 15,
-   "flashcard_sayisi": 15,
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
    "etiketler": [
-    "yeryüzü şekillerinin oluşumunda aşınma, taşınma ve biriktirme süreçlerinin etkisini belirleyebilmeniz,"
+    "Aşınma, taşınma ve biriktirme süreçlerini birbirinden ayırt eder.",
+    "Dış kuvvetlere göre oluşan yer şekillerini çözümler."
    ],
    "baslik": "3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
    "topic_key": "Coğrafya > 3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
@@ -734,7 +416,8 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+    "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+    "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür."
    ],
    "baslik": "3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
    "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
@@ -746,10 +429,11 @@
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u03_k05.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+    "Yeryüzü şekillerinin yerleşme, nüfus ve ulaşım üzerindeki etkisini açıklar.",
+    "Yeryüzü şekillerinin ekonomik, sosyal ve kültürel faaliyetlerle etkileşimini çözümler."
    ],
    "baslik": "3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
    "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
@@ -761,14 +445,30 @@
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u04_k01.json",
-   "soru_sayisi": 14,
-   "flashcard_sayisi": 14,
+   "soru_sayisi": 13,
+   "flashcard_sayisi": 13,
    "etiketler": [
-    "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-    "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz"
+    "Yerleşme yerinin seçiminde etkili doğal ve beşerî faktörleri açıklar.",
+    "Yerleşme tiplerini ölçütlerine göre sınıflandırır."
    ],
    "baslik": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
    "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u04_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u04_k02.json",
+   "soru_sayisi": 11,
+   "flashcard_sayisi": 11,
+   "etiketler": [
+    "Yerleşme fonksiyonlarını örneklerle açıklar.",
+    "Türkiye'nin idari yapısı ile fonksiyon değişimini çözümler."
+   ],
+   "baslik": "4.2 Yerleşmelerin Fonksiyonları",
+   "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -777,15 +477,46 @@
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u05_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 11,
+   "flashcard_sayisi": 11,
    "etiketler": [
-    "ekonomik faaliyetlerin özelliklerinden yola çıkarak bu faaliyet alanlarını birincil, ikincil, üçüncül, dördüncül ve beşincil sektörler şeklinde sınıflandırabilmeniz,",
-    "ülke ekonomilerinin sektörel yapısını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden ülkelerin gelişmişlik düzeylerini karşılaştırabilmeniz,",
-    "ekonomik faaliyetlerin Türkiye ekonomisindeki yeri ve önemini hazırlanan tablo, grafik, şekil ve/veya diyagramlar üzerinden anlaşılır hâle getirebilmeniz"
+    "Ekonomik faaliyetleri sektörlerine göre sınıflandırır.",
+    "Sektörlerin kapsamını ve dönüşümünü örneklerle açıklar."
    ],
    "baslik": "5.1 Ekonomik Faaliyetlerin Özellikleri",
    "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u05_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u05_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Çalışan nüfusun sektörel dağılımı ile gelişmişlik arasındaki ilişkiyi açıklar.",
+    "Sektörlerin GSYİH içindeki payını yorumlar."
+   ],
+   "baslik": "5.2 Ekonomik Sektörler ve Gelişmişlik",
+   "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u05_k03",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u05_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Türkiye'de sektörlerin tarihsel dönüşümünü açıklar.",
+    "Sektörel verilerden yararlanarak Türkiye ekonomisini yorumlar."
+   ],
+   "baslik": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+   "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -794,16 +525,78 @@
    "ders": "Coğrafya",
    "sinif": 10,
    "dosya": "cogr_10_u06_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,",
-    "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,",
-    "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,",
-    "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz"
+    "Afet türlerini ve bölgesel dağılışını açıklar.",
+    "Afetlere yönelik iyi uygulama örneklerini ve tedbirleri çözümler."
    ],
    "baslik": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u06_k02",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u06_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Direnç ve dirençli şehir kavramlarını açıklar.",
+    "Afete dirençli yaşam alanı ölçütlerini tsunami örnekleri üzerinden çözümler."
+   ],
+   "baslik": "6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+   "topic_key": "Coğrafya > 6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u06_k03",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u06_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Afet yönetiminin aşamalarını ve risk azaltma adımlarını açıklar.",
+    "Fiziksel-yapısal ve yapısal olmayan korunma önlemlerini çözümler."
+   ],
+   "baslik": "6.3 Afetlerden Korunma",
+   "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u06_k04",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u06_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Afet bilincinin kapsamını ve bileşenlerini açıklar.",
+    "Afet bilinci ile afete hazırlık arasındaki ilişkiyi çözümler."
+   ],
+   "baslik": "6.4 Afet Bilinci",
+   "topic_key": "Coğrafya > 6.4 Afet Bilinci",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "cogr_10_u07_k01",
+   "ders": "Coğrafya",
+   "sinif": 10,
+   "dosya": "cogr_10_u07_k01.json",
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
+   "etiketler": [
+    "Türk kültürünün ocağını ve yayıldığı alanları açıklar.",
+    "Türk dünyasının ortak kültürel özelliklerini ve kültürel mirasını çözümler."
+   ],
+   "baslik": "7.1 Türk Kültürünün Mekânsal Özellikleri",
+   "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
    "kod": "",
    "uretim_durumu": "plansiz"
   },

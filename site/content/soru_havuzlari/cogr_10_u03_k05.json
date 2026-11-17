@@ -2,298 +2,255 @@
   "konu_id": "cogr_10_u03_k05",
   "sinif": 10,
   "ders": "Coğrafya",
-  "kaynak_dosya": "10. Sınıf coğrafya json.zip",
+  "tema": 3,
+  "tema_adi": "Doğal Sistemler ve Süreçler",
+  "baslik": "3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
+  "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
+  "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular.",
+  "kaynak": "Coğrafya 10 ders kitabı, s.99-107",
+  "kaynak_dosya": "cografya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "cogr_10_u03_k05_o01",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Bir telekomünikasyon ekibi, geniş ve görece düz bir platonun cihaz kurulumu için elverişli olduğunu; dik kenarlara erişimin ise zorlaştığını belirliyor. Bu değerlendirme hangi yaklaşımı yansıtır?",
+      "alt_beceri": "Yeryüzü şekillerinin yerleşme, nüfus ve ulaşım üzerindeki etkisini açıklar.",
+      "metin": "İnsanların günlük hayatı içindeki ekonomik, sosyal ve kültürel faaliyetlerinin tamamına verilen ad hangisidir?",
       "secenekler": [
-        "Yer şekillerinin sağladığı imkân ve sınırlılıkları birlikte dikkate almayı",
-        "Yer şekillerinin insan faaliyetleriyle hiçbir ilişkisi olmadığını",
-        "Yalnızca nüfus sayısını incelemeyi",
-        "Erişim güçlüğünü fiziksel çevreden bağımsız ele almayı"
+        "Tektonik süreçler",
+        "Beşerî faaliyetler",
+        "Dış kuvvetler",
+        "Karstik süreçler"
       ],
-      "dogru_index": 0,
-      "cozum": "Platonun düz üst yüzeyi kurulum için kolaylık sağlayabilirken dik kenarlar erişimi sınırlayabilir. Coğrafi değerlendirme aynı yer şeklinin imkânlarını ve sınırlılıklarını birlikte ele alır.",
+      "dogru_index": 1,
+      "cozum": "Beşerî faaliyetler; insanların günlük hayatındaki ekonomik, sosyal ve kültürel faaliyetlerinin hepsini kapsar (s.99).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşim neden çift yönlüdür?",
-        "back": "Yer şekilleri yerleşme, nüfus, ekonomi ve ulaşımı etkiler; insan faaliyetleri de araziyi, bitki örtüsünü ve doğal süreçleri değiştirebilir."
+        "front": "Beşerî faaliyet nedir?",
+        "back": "İnsanların ekonomik, sosyal ve kültürel faaliyetlerinin tamamı."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o02",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "İki yerleşme alanından biri geniş ve hafif eğimli bir teras, diğeri dar ve dik yamaçlı bir vadi içindedir. Diğer koşullar benzerken hangi sonuç daha olasıdır?",
+      "alt_beceri": "Yeryüzü şekillerinin yerleşme, nüfus ve ulaşım üzerindeki etkisini açıklar.",
+      "metin": "Nil Vadisi, Büyük Menderes Vadisi ve Çukurova'nın tarih boyunca yoğun nüfuslu olması hangisiyle açıklanır?",
       "secenekler": [
-        "Dar vadide yapılaşma ve erişimin her durumda daha kolay olması",
-        "Geniş terasın daha kullanılabilir alan ve erişim sağlayarak daha sık yerleşmeyi desteklemesi",
-        "Geniş terasın yerleşme ve ulaşım için elverişsiz olması",
-        "Yerleşme dağılışının topoğrafyadan bağımsız olarak her yerde aynı olması"
+        "Bu alanların yüksek ve engebeli olması",
+        "Bölgelerde volkanik faaliyetlerin sürmesi",
+        "Karasal iklimin egemen olması",
+        "Verimli ovalar ve nehir vadilerinin tarıma elverişli koşullar sunması"
       ],
-      "dogru_index": 1,
-      "cozum": "Geniş ve az eğimli teras yapılaşma ve bağlantı kurmayı kolaylaştırabilir; dar, dik vadi ise kullanılabilir alanı ve erişimi sınırlayabilir. Bu nedenle daha yoğun yerleşme terasta daha olasıdır.",
+      "dogru_index": 3,
+      "cozum": "Tarım için ideal koşullar sunan verimli ovalar ve nehir vadileri yoğun nüfuslu yerleşmelerin gelişmesine olanak sağlamıştır (s.99).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yeryüzü şekilleri yerleşme ve nüfus dağılışını hangi yollarla etkileyebilir?",
-        "back": "Eğim, yükselti, kullanılabilir alan, suya erişim ve ulaşım koşulları yapılaşmayı ve günlük yaşamı etkiler; elverişli alanlar daha yoğun, erişimi güç alanlar daha seyrek yerleşmeye uygun olabilir."
+        "front": "Verimli ova ve vadilerin yerleşmeye etkisi nedir?",
+        "back": "Tarıma elverişli koşullar sundukları için yoğun nüfuslanırlar."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o03",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Bir bölgede eğimli ve ormanlık yamaçlar, sınırlı tarım alanları ve doğal kaynaklar bulunuyor. Arazi koşullarıyla daha uyumlu faaliyet bileşimi hangisidir?",
+      "alt_beceri": "Yeryüzü şekillerinin yerleşme, nüfus ve ulaşım üzerindeki etkisini açıklar.",
+      "metin": "Dağlık bölgelerin nüfus bakımından seyrek olmasının temel nedeni hangisidir?",
       "secenekler": [
-        "Yalnızca yoğun sulu tarım",
-        "Açık deniz taşımacılığı ve liman işletmeciliği",
-        "Ormancılık ve uygun alanlarda madencilik",
-        "Geniş ovalarda mekanize tarım"
+        "Olumsuz coğrafi koşullar",
+        "Deniz etkisinin çok güçlü olması",
+        "Tarım alanlarının fazlalığı",
+        "Ulaşım ağlarının çok gelişmiş olması"
       ],
-      "dogru_index": 2,
-      "cozum": "Dağlık ve ormanlık araziler ormancılık ve maden kaynaklarının değerlendirilmesine elverişli olabilir. Liman ve denizcilik faaliyetleri kıyı koşullarına bağlıdır.",
+      "dogru_index": 0,
+      "cozum": "Dağlık bölgeler olumsuz coğrafi koşulları nedeniyle daha seyrek nüfuslu bölgeler olmuştur (s.99).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yer şekilleri ekonomik faaliyetlerin tür ve çeşitliliğini nasıl etkileyebilir?",
-        "back": "Ovalar tarım ve hayvancılığı; dağlık alanlar ormancılık ve madenciliği; kıyılar balıkçılık, denizcilik ve turizmi destekleyebilir."
+        "front": "Yeryüzü şekillerinin nüfusa etkisi nedir?",
+        "back": "Eğim ve yükselti arttıkça yerleşme zorlaşır, nüfus seyrekleşir."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o04",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Bir su iletim hattı için vadi tabanından ve engebeli dağ yamaçlarından geçen iki güzergâh karşılaştırılıyor. Dağlık kesimde maliyetin artmasını en iyi açıklayan etken hangisidir?",
+      "alt_beceri": "Yeryüzü şekillerinin yerleşme, nüfus ve ulaşım üzerindeki etkisini açıklar.",
+      "metin": "Dağlık bölgelerde kara ve demir yolu yapımında maliyeti artıran mühendislik çözümleri hangileridir?",
       "secenekler": [
-        "Düzlüklerde altyapı kurmanın her zaman olanaksız olması",
-        "Dağlık alanlarda yalnızca deniz ulaşımının kullanılamaması",
-        "Yüksek arazilerde güzergâhın hiçbir ek çalışma gerektirmemesi",
-        "Tünel, tahkimat ve benzeri mühendislik yapılarının gerekebilmesi"
+        "Kanallar ve savaklar",
+        "Barajlar ve regülatörler",
+        "Tüneller ve viyadükler",
+        "İskeleler ve dalgakıranlar"
       ],
-      "dogru_index": 3,
-      "cozum": "Engebeli yamaçlar güzergâhı zorlaştırır; tünel ve tahkimat gibi yapılar ek maliyet oluşturabilir. Vadi tabanındaki daha düz kesimler çoğu zaman daha kolay uygulanabilir.",
+      "dogru_index": 2,
+      "cozum": "Dağlık bölgelerde ulaşım, tünel ve viyadük gibi maliyetleri çok artıran mühendislik çözümlerini gerektirir (s.99).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Topografya, büyük altyapı güzergâhlarının maliyetini neden etkileyebilir?",
-        "back": "Eğim ve engebeye bağlı olarak düz alanlarda güzergâh açmak kolaylaşırken dağlık kesimlerde tünel, tahkimat ve benzeri mühendislik çözümleri gerekebilir."
+        "front": "Dağlık arazide ulaşım yatırımı nedir?",
+        "back": "Tünel ve viyadük gibi maliyeti yükselten mühendislik yapıları gerektirir."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o05",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Bir yerleşmenin kıyı konumu, ekonomik faaliyet planlamasında hangi etkinlikleri doğrudan destekleyebilir?",
+      "alt_beceri": "Yeryüzü şekillerinin yerleşme, nüfus ve ulaşım üzerindeki etkisini açıklar.",
+      "metin": "Düzlük alanların kara ve demir yolu ulaşımı için elverişli olmasının sonucu hangisidir?",
       "secenekler": [
-        "Balıkçılık ve deniz yolu ulaşımı",
-        "Yüksek dağlarda karasal ormancılık",
-        "Yer altı madenlerinin oluşumunu",
-        "Akarsu vadilerinde taşkınların tamamen önlenmesini"
+        "Ulaşımın tamamen durması",
+        "Tünel sayısının artması",
+        "Deniz yolu kullanımının zorunlu olması",
+        "Yol yapım maliyetlerinin azalması"
       ],
-      "dogru_index": 0,
-      "cozum": "Kıyı konumu deniz yolu ulaşımı ve balıkçılık için doğrudan olanak sağlar; turizm de kıyı koşullarından yararlanabilir. Maden oluşumu kıyı konumuna bağlı değildir.",
+      "dogru_index": 3,
+      "cozum": "Düzlük alanlar kara ve demir yolu ulaşımına elverişlidir; bu durum yol yapım maliyetlerini azaltır (s.99).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kıyıların yeryüzü şekilleri beşerî ve ekonomik faaliyetlere hangi imkânları sağlayabilir?",
-        "back": "Deniz yolu ulaşımı, balıkçılık ve turizm gibi faaliyetlere elverişli ortam sağlayabilir."
+        "front": "Düzlük alanların ulaşıma etkisi nedir?",
+        "back": "Kara ve demir yolu yapımını kolaylaştırıp maliyeti düşürür."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o06",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Kışın yalnızca kısa süre açık kalan bir dağ geçidi, çevredeki yerleşmelerin ilçe merkezine ulaşmak için kullandığı tek bağlantıdır. Bu koşulun olası sosyal etkisi hangisidir?",
+      "alt_beceri": "Yeryüzü şekillerinin ekonomik, sosyal ve kültürel faaliyetlerle etkileşimini çözümler.",
+      "metin": "Ovaların ekonomik faaliyetlere etkisi hangisidir?",
       "secenekler": [
-        "Bütün yerel geleneklerin zorunlu olarak ortadan kalkması",
-        "Bazı hizmetlere erişimin ve topluluklar arası etkileşimin mevsimsel olarak zorlaşması",
-        "Yer şekillerinin sosyal yaşamla hiçbir ilişki kurmaması",
-        "Ulaşımın her mevsimde ve koşulda kolaylaşması"
+        "Ormancılık ve madencilikte öne çıkmaları",
+        "Tarım ve hayvancılık için elverişli olmaları",
+        "Balıkçılık ve denizciliğe imkân vermeleri",
+        "Buzul turizmine uygun olmaları"
       ],
       "dogru_index": 1,
-      "cozum": "Geçidin kapanması sağlık, eğitim ve günlük hizmetlere erişimi ve yerleşmeler arası etkileşimi dönemsel olarak güçleştirebilir. Bununla birlikte kültür ve toplumsal yaşamı tek başına topoğrafya belirlemez.",
+      "cozum": "Ovalar tarım ve hayvancılık için elverişliyken dağlık alanlar ormancılık ve madenciliğe, kıyılar balıkçılık, denizcilik ve turizme elverişlidir (s.99).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yer şekilleri sosyal yaşam ve kültürel etkileşimi nasıl etkileyebilir?",
-        "back": "Eğim ve erişim koşulları hizmetlere ulaşmayı, topluluklar arası iletişimi ve bazı günlük etkinlikleri etkileyebilir; kültürel özellikleri tek başına belirlemez."
+        "front": "Yer şekilleri ile ekonomik faaliyet arasındaki ilişki nedir?",
+        "back": "Ova tarım-hayvancılık, dağ ormancılık-madencilik, kıyı balıkçılık-turizm getirir."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o07",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Bir dağ geçidi iki yerleşme arasında bağlantı kurmayı kolaylaştırıyor; ancak çevresindeki dik yamaçlarda dönemsel kaya düşmeleri ulaşımı kesebiliyor. Planlamada en uygun yaklaşım hangisidir?",
+      "alt_beceri": "Yeryüzü şekillerinin ekonomik, sosyal ve kültürel faaliyetlerle etkileşimini çözümler.",
+      "metin": "Karadeniz kıyı kuşağındaki dağ köylerinde yemek, müzik ve mimarinin kendine has özellikler taşıması hangisiyle açıklanır?",
       "secenekler": [
-        "Bağlantı avantajı ile kaya düşmesi riskini birlikte dikkate almak",
-        "Geçide erişimin kaya düşmesi riskini bütünüyle ortadan kaldırdığını varsaymak",
-        "Geçitte hiçbir ekonomik faaliyete izin vermemek",
-        "Kaya düşmesi olasılığını arazi kullanımından bağımsız değerlendirmek"
+        "Dağlık arazinin toplulukları izole ederek özgün kültür geliştirmelerine yol açması",
+        "Bölgenin düz ve ulaşımın kolay olması",
+        "Bölgede tarımsal üretimin çok yüksek olması",
+        "Bölgenin deniz turizmine açık olması"
       ],
       "dogru_index": 0,
-      "cozum": "Geçit bağlantı ve ulaşım kolaylığı sağlayabilir; dik yamaçlardaki kaya düşmesi ise güvenlik ve süreklilik açısından sınırlılık oluşturur. İki yön birlikte değerlendirilmelidir.",
+      "cozum": "Dağlık bölgelerde daha az iletişim kuran topluluklar izole yaşamları nedeniyle kendilerine özgü kültürel özellikler geliştirmiştir (s.100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir yer şekli beşerî faaliyetler için aynı anda nasıl hem imkân hem de sınırlılık oluşturabilir?",
-        "back": "Aynı topoğrafya bir faaliyete erişim veya kullanım kolaylığı sunarken doğal süreçlere ya da arazi koşullarına bağlı risk ve kısıtlar da yaratabilir; kararlar iki yönü birlikte gözetmelidir."
+        "front": "Yer şekillerinin kültüre etkisi nedir?",
+        "back": "Ulaşım güçlüğü toplulukları yalıtarak özgün kültürel özellikler oluşturur."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o08",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Yeni bir yerleşim alanı kurulurken yamaçta kesme-dolgu yapılıyor ve yüzey akışını yönlendiren yeni kanallar açılıyor. Bu durum hangi çıkarımı destekler?",
+      "alt_beceri": "Yeryüzü şekillerinin ekonomik, sosyal ve kültürel faaliyetlerle etkileşimini çözümler.",
+      "metin": "Nevşehir'deki volkanik tüf platosunda peribacalarının konut, depo ve yer altı şehri olarak kullanılmasının nedeni hangisidir?",
       "secenekler": [
-        "Yeryüzü şekilleri insan faaliyetlerinden etkilenmez.",
-        "Arazi düzenlemesi yalnızca iklimi değiştirir, topoğrafyayı etkilemez.",
-        "Yer şekilleri beşerî faaliyetleri tek yönlü belirler.",
-        "İnsan faaliyetleri yeryüzü şekillerini ve doğal süreçleri değiştirebilir."
+        "Bölgede yıllık yağışın çok yüksek olması",
+        "Kayaçların ayrışmaya karşı çok dirençli olması",
+        "Arazinin kolay işlenebilir ve kolay aşınabilir olması",
+        "Bölgenin deprem riskinin sıfır olması"
       ],
-      "dogru_index": 3,
-      "cozum": "Kesme-dolgu çalışmaları yamaç biçimini, yeni drenaj kanalları ise akış düzenini değiştirebilir. Bu, beşerî faaliyetlerin topoğrafya ve doğal süreçler üzerindeki etkisini gösterir.",
+      "dogru_index": 2,
+      "cozum": "Peribacaları kolay işlenebildiği için oyularak konut, barınak ve depo; tehlikeli dönemlerde yer altı şehri olarak kullanılmıştır (s.100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsanların arazi düzenleme ve altyapı faaliyetleri yeryüzü şekillerini nasıl değiştirebilir?",
-        "back": "Kazı, dolgu, yüzey düzeltme ve drenaj düzenlemeleri yamaç biçimini, akış yollarını ve çevredeki arazi kullanımını değiştirebilir."
+        "front": "Peribacasının beşerî kullanımı nedir?",
+        "back": "Kolay oyulabildiği için konut, depo ve yer altı şehri olarak kullanılır."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o09",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Eğimli bir bağda sıra aralarındaki doğal örtü kaldırılıp zemin çıplak bırakılıyor. Yağışlı dönemde hangi değişim beklenebilir?",
+      "alt_beceri": "Yeryüzü şekillerinin ekonomik, sosyal ve kültürel faaliyetlerle etkileşimini çözümler.",
+      "metin": "Nil Vadisi'nin verimli olmasına karşın zaman zaman taşkın yapması hangi durumu doğurur?",
       "secenekler": [
-        "Toprağın yüzey akışına karşı daha iyi korunması",
-        "Erozyon riskinin artması",
-        "Yamaç eğiminin kendiliğinden azalması",
-        "Taşınan malzemenin tümünün bağ içinde kalması"
+        "Tarımsal üretimin tamamen sona ermesi",
+        "Vadide yerleşmiş insanlar için tehlike oluşturması",
+        "Vadinin boşaltılması",
+        "Ulaşımın tamamen kesilmesi"
       ],
       "dogru_index": 1,
-      "cozum": "Doğal örtünün kaldırılması toprağı yağış ve yüzey akışına karşı daha savunmasız bırakır. Eğimli arazide toprak taşınması ve erozyon riski artabilir.",
+      "cozum": "Nil Nehri'nin zaman zaman taşkın yapması vadide yaşayan insanlar için tehlike oluşturur (s.100).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Arazi kullanımındaki değişimler yüzey örtüsü ve yeryüzü süreçlerini nasıl etkileyebilir?",
-        "back": "Doğal bitki örtüsünün azalması toprağın korunmasını zayıflatabilir; eğim ve yağışla birlikte yüzey akışı ve erozyon artabilir."
+        "front": "Taşkın ovasının avantaj ve riski nedir?",
+        "back": "Verimli tarım alanı sağlar, ancak taşkın yaptığında can ve mal riski doğurur."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     },
     {
       "soru_id": "cogr_10_u03_k05_o10",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Yeni bir sağlık tesisi için iki konum değerlendiriliyor. Ekip, arazilerin eğimini, zemin özelliklerini, erişimi ve çevresel riskleri karşılaştırıyor. Bu yaklaşımın temel yararı nedir?",
+      "alt_beceri": "Yeryüzü şekillerinin ekonomik, sosyal ve kültürel faaliyetlerle etkileşimini çözümler.",
+      "metin": "İnsan faaliyetlerinin yeryüzü şekillerini etkilediğini gösteren örnek hangisidir?",
       "secenekler": [
-        "Tesisin yalnızca en kısa mesafede bulunmasını sağlamak",
-        "Yer şekillerini planlama dışında bırakmak",
-        "Konumun uygulanabilirliğini, maliyetini ve risklerini birlikte değerlendirmek",
-        "Bütün risklerin tesis kurulduktan sonra ortaya çıkmasını beklemek"
-      ],
-      "dogru_index": 2,
-      "cozum": "Topoğrafya, zemin ve erişim koşulları tesis yerinin uygulanabilirliğini ve maliyetini etkileyebilir. Riskleri önceden incelemek daha uygun konum seçimini destekler.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Yeni bir tesis veya güzergâh planlanırken hangi topoğrafik koşullar değerlendirilmelidir?",
-        "back": "Eğim, yükselti, zemin, su ve erişim koşulları; uygulanabilirlik, maliyet ve olası çevresel risklerle birlikte incelenmelidir."
-      },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u03_k05_o11",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Bir dağlık alanda turizm gelirini artırmak isteyen yerel yönetim, yamaç erozyonu ve doğal bitki örtüsünün korunmasını da gözetiyor. En uygun planlama yaklaşımı hangisidir?",
-      "secenekler": [
-        "Ziyaretçi yoğunluğunu hiçbir sınır koymadan artırmak",
-        "Bitki örtüsünü tamamen kaldırıp yeni alanlar açmak",
-        "Doğal alanların korunmasını ekonomik kararlardan ayırmak",
-        "Ulaşım ve yapılaşmayı eğim, zemin ve çevresel etkiye göre planlamak"
+        "Akarsuların denize döküldüğü yerde delta oluşturması",
+        "Buzulların vadileri U profiline sokması",
+        "Rüzgârın kumulları engellerin önünde biriktirmesi",
+        "Baraj inşaatlarının nehir akışını ve vadi yapısını değiştirmesi"
       ],
       "dogru_index": 3,
-      "cozum": "Faaliyetler yer şekillerinin taşıma kapasitesine ve çevresel özelliklerine göre planlanırsa ekonomik kullanım ile koruma birlikte gözetilebilir. Örtüyü kaldırmak erozyon riskini artırır.",
+      "cozum": "Baraj inşaatları nehirlerin akışını ve vadilerin yapısını değiştirir; tarım ve şehirleşme de erozyon riskini artırır (s.99).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Doğal çevrenin korunması, yer şekillerine bağlı ekonomik faaliyetlerle nasıl birlikte yürütülebilir?",
-        "back": "Faaliyetlerin arazi koşullarına ve taşıma kapasitesine uygun planlanması, erozyon ve habitat kaybını azaltacak önlemlerin alınmasıyla sürdürülebilir kullanım desteklenebilir."
+        "front": "İnsanın yeryüzü şekline müdahalesi nedir?",
+        "back": "Baraj, tarım ve şehirleşme yoluyla doğal süreçlerin değiştirilmesi."
       },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
-    },
-    {
-      "soru_id": "cogr_10_u03_k05_o12",
-      "alt_beceri": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-      "metin": "Bir araştırmacı, iki yerleşmenin farklı yeryüzü şekillerinde kurulmasının yaşam üzerindeki etkilerini karşılaştırıyor. Hangi veri grubu araştırma sorusuna en iyi yanıt verir?",
-      "secenekler": [
-        "Yalnızca yerleşmelerin adları",
-        "Sadece yıllık yağış miktarı",
-        "Yerleşme dağılışı, ekonomik faaliyet ve ulaşım",
-        "İlgisiz bir döneme ait nüfus sıralaması"
-      ],
-      "dogru_index": 2,
-      "cozum": "Yer şekillerinin beşerî faaliyetlere etkisini değerlendirmek için yerleşme, ekonomi, ulaşım ve sosyal-kültürel yaşam göstergeleri birlikte incelenmelidir. Sadece ad veya tek bir ilgisiz veri yeterli olmaz.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Bir çevrede yer şekillerinin sosyal, ekonomik ve kültürel etkilerini incelerken hangi karşılaştırma yöntemi kullanılabilir?",
-        "back": "Yerleşme, üretim, ulaşım ve kültürel yaşam gibi boyutlar ayrı ayrı değerlendirilip yer şekilleriyle ilişkileri karşılaştırılabilir."
-      },
-      "kazanim": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz"
+      "kazanim": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgular."
     }
   ],
   "flashcards": [
     {
       "id": "cogr_10_u03_k05_o01:flashcard",
-      "front": "Yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşim neden çift yönlüdür?",
-      "back": "Yer şekilleri yerleşme, nüfus, ekonomi ve ulaşımı etkiler; insan faaliyetleri de araziyi, bitki örtüsünü ve doğal süreçleri değiştirebilir."
+      "front": "Beşerî faaliyet nedir?",
+      "back": "İnsanların ekonomik, sosyal ve kültürel faaliyetlerinin tamamı."
     },
     {
       "id": "cogr_10_u03_k05_o02:flashcard",
-      "front": "Yeryüzü şekilleri yerleşme ve nüfus dağılışını hangi yollarla etkileyebilir?",
-      "back": "Eğim, yükselti, kullanılabilir alan, suya erişim ve ulaşım koşulları yapılaşmayı ve günlük yaşamı etkiler; elverişli alanlar daha yoğun, erişimi güç alanlar daha seyrek yerleşmeye uygun olabilir."
+      "front": "Verimli ova ve vadilerin yerleşmeye etkisi nedir?",
+      "back": "Tarıma elverişli koşullar sundukları için yoğun nüfuslanırlar."
     },
     {
       "id": "cogr_10_u03_k05_o03:flashcard",
-      "front": "Yer şekilleri ekonomik faaliyetlerin tür ve çeşitliliğini nasıl etkileyebilir?",
-      "back": "Ovalar tarım ve hayvancılığı; dağlık alanlar ormancılık ve madenciliği; kıyılar balıkçılık, denizcilik ve turizmi destekleyebilir."
+      "front": "Yeryüzü şekillerinin nüfusa etkisi nedir?",
+      "back": "Eğim ve yükselti arttıkça yerleşme zorlaşır, nüfus seyrekleşir."
     },
     {
       "id": "cogr_10_u03_k05_o04:flashcard",
-      "front": "Topografya, büyük altyapı güzergâhlarının maliyetini neden etkileyebilir?",
-      "back": "Eğim ve engebeye bağlı olarak düz alanlarda güzergâh açmak kolaylaşırken dağlık kesimlerde tünel, tahkimat ve benzeri mühendislik çözümleri gerekebilir."
+      "front": "Dağlık arazide ulaşım yatırımı nedir?",
+      "back": "Tünel ve viyadük gibi maliyeti yükselten mühendislik yapıları gerektirir."
     },
     {
       "id": "cogr_10_u03_k05_o05:flashcard",
-      "front": "Kıyıların yeryüzü şekilleri beşerî ve ekonomik faaliyetlere hangi imkânları sağlayabilir?",
-      "back": "Deniz yolu ulaşımı, balıkçılık ve turizm gibi faaliyetlere elverişli ortam sağlayabilir."
+      "front": "Düzlük alanların ulaşıma etkisi nedir?",
+      "back": "Kara ve demir yolu yapımını kolaylaştırıp maliyeti düşürür."
     },
     {
       "id": "cogr_10_u03_k05_o06:flashcard",
-      "front": "Yer şekilleri sosyal yaşam ve kültürel etkileşimi nasıl etkileyebilir?",
-      "back": "Eğim ve erişim koşulları hizmetlere ulaşmayı, topluluklar arası iletişimi ve bazı günlük etkinlikleri etkileyebilir; kültürel özellikleri tek başına belirlemez."
+      "front": "Yer şekilleri ile ekonomik faaliyet arasındaki ilişki nedir?",
+      "back": "Ova tarım-hayvancılık, dağ ormancılık-madencilik, kıyı balıkçılık-turizm getirir."
     },
     {
       "id": "cogr_10_u03_k05_o07:flashcard",
-      "front": "Bir yer şekli beşerî faaliyetler için aynı anda nasıl hem imkân hem de sınırlılık oluşturabilir?",
-      "back": "Aynı topoğrafya bir faaliyete erişim veya kullanım kolaylığı sunarken doğal süreçlere ya da arazi koşullarına bağlı risk ve kısıtlar da yaratabilir; kararlar iki yönü birlikte gözetmelidir."
+      "front": "Yer şekillerinin kültüre etkisi nedir?",
+      "back": "Ulaşım güçlüğü toplulukları yalıtarak özgün kültürel özellikler oluşturur."
     },
     {
       "id": "cogr_10_u03_k05_o08:flashcard",
-      "front": "İnsanların arazi düzenleme ve altyapı faaliyetleri yeryüzü şekillerini nasıl değiştirebilir?",
-      "back": "Kazı, dolgu, yüzey düzeltme ve drenaj düzenlemeleri yamaç biçimini, akış yollarını ve çevredeki arazi kullanımını değiştirebilir."
+      "front": "Peribacasının beşerî kullanımı nedir?",
+      "back": "Kolay oyulabildiği için konut, depo ve yer altı şehri olarak kullanılır."
     },
     {
       "id": "cogr_10_u03_k05_o09:flashcard",
-      "front": "Arazi kullanımındaki değişimler yüzey örtüsü ve yeryüzü süreçlerini nasıl etkileyebilir?",
-      "back": "Doğal bitki örtüsünün azalması toprağın korunmasını zayıflatabilir; eğim ve yağışla birlikte yüzey akışı ve erozyon artabilir."
+      "front": "Taşkın ovasının avantaj ve riski nedir?",
+      "back": "Verimli tarım alanı sağlar, ancak taşkın yaptığında can ve mal riski doğurur."
     },
     {
       "id": "cogr_10_u03_k05_o10:flashcard",
-      "front": "Yeni bir tesis veya güzergâh planlanırken hangi topoğrafik koşullar değerlendirilmelidir?",
-      "back": "Eğim, yükselti, zemin, su ve erişim koşulları; uygulanabilirlik, maliyet ve olası çevresel risklerle birlikte incelenmelidir."
-    },
-    {
-      "id": "cogr_10_u03_k05_o11:flashcard",
-      "front": "Doğal çevrenin korunması, yer şekillerine bağlı ekonomik faaliyetlerle nasıl birlikte yürütülebilir?",
-      "back": "Faaliyetlerin arazi koşullarına ve taşıma kapasitesine uygun planlanması, erozyon ve habitat kaybını azaltacak önlemlerin alınmasıyla sürdürülebilir kullanım desteklenebilir."
-    },
-    {
-      "id": "cogr_10_u03_k05_o12:flashcard",
-      "front": "Bir çevrede yer şekillerinin sosyal, ekonomik ve kültürel etkilerini incelerken hangi karşılaştırma yöntemi kullanılabilir?",
-      "back": "Yerleşme, üretim, ulaşım ve kültürel yaşam gibi boyutlar ayrı ayrı değerlendirilip yer şekilleriyle ilişkileri karşılaştırılabilir."
+      "front": "İnsanın yeryüzü şekline müdahalesi nedir?",
+      "back": "Baraj, tarım ve şehirleşme yoluyla doğal süreçlerin değiştirilmesi."
     }
-  ],
-  "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim"
+  ]
 }

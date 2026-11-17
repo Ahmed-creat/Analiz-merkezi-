@@ -11,13 +11,13 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 169,
-  "eslesen_konu": 125,
+  "konu": 176,
+  "eslesen_konu": 132,
   "oneri_konu": 0,
   "eslesmeyen_konu": 44,
-  "metin": 115,
-  "metin_tek_konu": 109,
-  "metin_kodlu": 114,
+  "metin": 116,
+  "metin_tek_konu": 110,
+  "metin_kodlu": 115,
   "ders_bazli": {
    "Biyoloji": {
     "konu": 19,
@@ -31,15 +31,15 @@
     "metin_kodlu": 19
    },
    "Coğrafya": {
-    "konu": 11,
+    "konu": 18,
     "cikti": 18,
-    "kesin": 5,
-    "yapisal": 13,
+    "kesin": 18,
+    "yapisal": 0,
     "orta": 0,
     "yok": 0,
-    "metin": 17,
-    "metin_tek_konu": 17,
-    "metin_kodlu": 17
+    "metin": 18,
+    "metin_tek_konu": 18,
+    "metin_kodlu": 18
    },
    "Din Kültürü": {
     "konu": 12,
@@ -547,13 +547,19 @@
    "kodlar": [
     "COĞ.10.1.1"
    ],
-   "guven": "yapisal",
-   "yontem": "tek-cikti",
-   "skor": 0.381,
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.1 bölümü coğrafyanın konu, bölüm ve ilkelerini örnek olay/olgu üzerinden verir (s.15-24); COĞ.10.1.1.",
    "kazanim_metinleri": 1,
-   "metin_kodlari": []
+   "metin_kodlari": [
+    {
+     "metin": "örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilmeniz",
+     "kod": "COĞ.10.1.1",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "cogr_10_u02_k01",
@@ -564,16 +570,16 @@
     "COĞ.10.2.1"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 0.8,
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.1 bölümü CBS ve uzaktan algılamanın uygulama alanlarını örneklerle verir (s.31-36); COĞ.10.2.1.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
+     "metin": "örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilmeniz",
      "kod": "COĞ.10.2.1",
-     "skor": 0.8
+     "skor": 1
     }
    ]
   },
@@ -585,13 +591,19 @@
    "kodlar": [
     "COĞ.10.2.2"
    ],
-   "guven": "yapisal",
-   "yontem": "sira",
-   "skor": 0.476,
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.2 bölümü vektör veri ve katman mantığıyla mekânsal verilerin haritalara aktarılmasını verir (s.37-40); COĞ.10.2.2.",
    "kazanim_metinleri": 1,
-   "metin_kodlari": []
+   "metin_kodlari": [
+    {
+     "metin": "mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilmeniz",
+     "kod": "COĞ.10.2.2",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "cogr_10_u03_k01",
@@ -601,13 +613,19 @@
    "kodlar": [
     "COĞ.10.3.1"
    ],
-   "guven": "yapisal",
-   "yontem": "sira",
-   "skor": 0.333,
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 3.1 bölümü levha tektoniği, kıta oluşumu ve tektonik olayların yer şekillerine etkisini verir (s.49-69); COĞ.10.3.1.",
    "kazanim_metinleri": 1,
-   "metin_kodlari": []
+   "metin_kodlari": [
+    {
+     "metin": "yerkürenin tektonik yapısını çözümleyebilmeniz",
+     "kod": "COĞ.10.3.1",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "cogr_10_u03_k02",
@@ -617,13 +635,19 @@
    "kodlar": [
     "COĞ.10.3.2"
    ],
-   "guven": "yapisal",
-   "yontem": "sira",
-   "skor": 0.786,
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 3.2 bölümü iklim ile kayaç yapısının aşınma ve çözünme süreçlerine etkisini verir (s.70-75); COĞ.10.3.2.",
    "kazanim_metinleri": 1,
-   "metin_kodlari": []
+   "metin_kodlari": [
+    {
+     "metin": "yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilmeniz",
+     "kod": "COĞ.10.3.2",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "cogr_10_u03_k03",
@@ -633,13 +657,19 @@
    "kodlar": [
     "COĞ.10.3.3"
    ],
-   "guven": "yapisal",
-   "yontem": "sira",
-   "skor": 0.625,
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 3.3 bölümü aşınma, taşınma ve biriktirme süreçleriyle oluşan yer şekillerini verir (s.76-96); COĞ.10.3.3.",
    "kazanim_metinleri": 1,
-   "metin_kodlari": []
+   "metin_kodlari": [
+    {
+     "metin": "yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilmeniz",
+     "kod": "COĞ.10.3.3",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "cogr_10_u03_k04",
@@ -650,16 +680,16 @@
     "COĞ.10.3.4"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 0.842,
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 3.4 bölümü yeryüzü şekillerini saha/sanal saha çalışmasıyla araştırma basamaklarını verir (s.97-98); COĞ.10.3.4.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
+     "metin": "yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilmeniz",
      "kod": "COĞ.10.3.4",
-     "skor": 0.842
+     "skor": 1
     }
    ]
   },
@@ -672,16 +702,16 @@
     "COĞ.10.3.5"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 0.875,
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 3.5 bölümü yakın çevredeki yer şekilleri ile beşerî faaliyetler arasındaki etkileşimi verir (s.99-107); COĞ.10.3.5.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
+     "metin": "yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
      "kod": "COĞ.10.3.5",
-     "skor": 0.875
+     "skor": 1
     }
    ]
   },
@@ -694,16 +724,38 @@
     "COĞ.10.4.1"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 0.941,
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 4.1 bölümü yerleşme yeri seçimi ve gelişiminde etkili coğrafi faktörleri verir (s.121-129); COĞ.10.4.1.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
+     "metin": "yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilmeniz",
      "kod": "COĞ.10.4.1",
-     "skor": 0.941
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "cogr_10_u04_k02",
+   "ders": "Coğrafya",
+   "konu": "4.2 Yerleşmelerin Fonksiyonları",
+   "tema": 4,
+   "kodlar": [
+    "COĞ.10.4.2"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 4.2 bölümü yerleşmelerin fonksiyonlarına göre sınıflandırılmasını verir (s.130-135); COĞ.10.4.2.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
+     "kod": "COĞ.10.4.2",
+     "skor": 1
     }
    ]
   },
@@ -715,13 +767,63 @@
    "kodlar": [
     "COĞ.10.5.1"
    ],
-   "guven": "yapisal",
-   "yontem": "sira",
-   "skor": 0.571,
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 3,
-   "metin_kodlari": []
+   "gerekce": "Kitabın 5.1 bölümü ekonomik faaliyetlerin sektörlere göre sınıflandırılmasını verir (s.145-152); COĞ.10.5.1.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "ekonomik faaliyetleri sektörlere göre sınıflandırabilmeniz",
+     "kod": "COĞ.10.5.1",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "cogr_10_u05_k02",
+   "ders": "Coğrafya",
+   "konu": "5.2 Ekonomik Sektörler ve Gelişmişlik",
+   "tema": 5,
+   "kodlar": [
+    "COĞ.10.5.2"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 5.2 bölümü sektörel dağılım tablo ve grafikleri üzerinden ülkeleri karşılaştırır (s.153-156); COĞ.10.5.2.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden farklı gelişmişlik seviyesine sahip ülkeleri karşılaştırabilmeniz",
+     "kod": "COĞ.10.5.2",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "cogr_10_u05_k03",
+   "ders": "Coğrafya",
+   "konu": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+   "tema": 5,
+   "kodlar": [
+    "COĞ.10.5.3"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 5.3 bölümü Türkiye ekonomisinin sektörel dağılımını verilerle verir (s.157-159); COĞ.10.5.3.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilmeniz",
+     "kod": "COĞ.10.5.3",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "cogr_10_u06_k01",
@@ -729,31 +831,107 @@
    "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "tema": 6,
    "kodlar": [
-    "COĞ.10.6.2",
-    "COĞ.10.6.3",
+    "COĞ.10.6.1"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 6.1 bölümü afetlerle mücadelede iyi uygulama örneklerini verir (s.171-179); COĞ.10.6.1.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "afetlerle mücadelede iyi uygulama örneklerini sorgulayabilmeniz",
+     "kod": "COĞ.10.6.1",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "cogr_10_u06_k02",
+   "ders": "Coğrafya",
+   "konu": "6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+   "tema": 6,
+   "kodlar": [
+    "COĞ.10.6.2"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 6.2 bölümü afete dirençli yaşam alanlarının coğrafi koşullarını verir (s.180-184); COĞ.10.6.2.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilmeniz",
+     "kod": "COĞ.10.6.2",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "cogr_10_u06_k03",
+   "ders": "Coğrafya",
+   "konu": "6.3 Afetlerden Korunma",
+   "tema": 6,
+   "kodlar": [
+    "COĞ.10.6.3"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 6.3 bölümü mekân özelliklerine göre korunma uygulamalarını verir (s.185-189); COĞ.10.6.3.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilmeniz",
+     "kod": "COĞ.10.6.3",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "cogr_10_u06_k04",
+   "ders": "Coğrafya",
+   "konu": "6.4 Afet Bilinci",
+   "tema": 6,
+   "kodlar": [
     "COĞ.10.6.4"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
+   "yontem": "kitap-bolumu",
    "skor": 1,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 4,
+   "gerekce": "Kitabın 6.4 bölümü afet bilinci oluşturmanın faydalarını verir (s.190-195); COĞ.10.6.4.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,",
-     "kod": "COĞ.10.6.2",
-     "skor": 0.857
-    },
-    {
-     "metin": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,",
-     "kod": "COĞ.10.6.3",
-     "skor": 1
-    },
-    {
-     "metin": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz",
+     "metin": "afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarını yansıtabilmeniz",
      "kod": "COĞ.10.6.4",
-     "skor": 0.923
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "cogr_10_u07_k01",
+   "ders": "Coğrafya",
+   "konu": "7.1 Türk Kültürünün Mekânsal Özellikleri",
+   "tema": 7,
+   "kodlar": [
+    "COĞ.10.7.1"
+   ],
+   "guven": "kesin",
+   "yontem": "kitap-bolumu",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "Kitabın 7.1 bölümü Türk dünyasının ortak kültürel özelliklerini ve kültürel mirasını verir (s.203-221); COĞ.10.7.1.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilmeniz",
+     "kod": "COĞ.10.7.1",
+     "skor": 1
     }
    ]
   },
@@ -3504,21 +3682,21 @@
   },
   {
    "ders": "Coğrafya",
-   "metin": "coğrafyanın konum, zaman, mekân, hareket, bölge, sürdürülebilirlik gibi temel kavramları çerçevesinde örnek olay, olgu veya mekândan yararlanarak coğrafi bakış açısı kazanabilmeniz",
-   "norm": "cografyanin konum zaman mekan hareket bolge surdurulebilirlik gibi temel kavramlari cercevesinde ornek olay olgu veya mekandan yararlanarak cografi bakis acisi kazan",
+   "metin": "örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilmeniz,",
+   "norm": "ornek olay olgu ve veya mekani cografyanin temel kavramlari ile iliskilendir",
    "konu_id": "cogr_10_u01_k01",
    "konu": "1.1 Coğrafi Bakış",
    "topic_key": "Coğrafya > 1.1 Coğrafi Bakış",
    "kodlar": [
     "COĞ.10.1.1"
    ],
-   "kod_guven": "yapisal",
+   "kod_guven": "kesin",
    "konu_guven": "kesin"
   },
   {
    "ders": "Coğrafya",
-   "metin": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetleyebilmeniz,",
-   "norm": "cbs ve uzaktan algilamaya yonelik uygulama alanlarini ozetle",
+   "metin": "örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilmeniz,",
+   "norm": "ornek uygulamalar uzerinden cbs ve uzaktan algilamanin kullanim alanlarini ozetle",
    "konu_id": "cogr_10_u02_k01",
    "konu": "2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
    "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
@@ -3530,60 +3708,60 @@
   },
   {
    "ders": "Coğrafya",
-   "metin": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
-   "norm": "mekansal verilerin haritalara aktarilmasinda kullanilan vektor veri yapisini harita olusturma yoluyla kazan",
+   "metin": "mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilmeniz,",
+   "norm": "mekansal bilgi teknolojilerini kullanarak altlik haritalar uzerinde mekansal veriler olustur",
    "konu_id": "cogr_10_u02_k02",
    "konu": "2.2 Mekânsal Verilerin Haritalara Aktarılması",
    "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması",
    "kodlar": [
     "COĞ.10.2.2"
    ],
-   "kod_guven": "yapisal",
+   "kod_guven": "kesin",
    "konu_guven": "kesin"
   },
   {
    "ders": "Coğrafya",
-   "metin": "levha tektoniğinin sistemsel süreci ve bu süreci oluşturan bileşenleri çözümleyebilmeniz,",
-   "norm": "levha tektoniginin sistemsel sureci ve bu sureci olusturan bilesenleri cozumle",
+   "metin": "yerkürenin tektonik yapısını çözümleyebilmeniz,",
+   "norm": "yerkurenin tektonik yapisini cozumle",
    "konu_id": "cogr_10_u03_k01",
    "konu": "3.1 Tektonik Süreçler",
    "topic_key": "Coğrafya > 3.1 Tektonik Süreçler",
    "kodlar": [
     "COĞ.10.3.1"
    ],
-   "kod_guven": "yapisal",
+   "kod_guven": "kesin",
    "konu_guven": "kesin"
   },
   {
    "ders": "Coğrafya",
-   "metin": "yeryüzünü şekillendiren süreçler ile yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçlerinin iklim ve kayaç özellikleriyle ilişkisini anlamlandırabilmeniz,",
-   "norm": "yeryuzunu sekillendiren surecler ile yeryuzu sekillerinin olusumunda etkili olan asinma ve cozunme sureclerinin iklim ve kayac ozellikleriyle iliskisini anlamlandir",
+   "metin": "yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilmeniz,",
+   "norm": "yeryuzu sekillerinin olusumunda etkili olan asinma ve cozunme surecleri ile iklim ve kayac ozellikleri arasindaki iliskileri yapilandir",
    "konu_id": "cogr_10_u03_k02",
    "konu": "3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
    "topic_key": "Coğrafya > 3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
    "kodlar": [
     "COĞ.10.3.2"
    ],
-   "kod_guven": "yapisal",
+   "kod_guven": "kesin",
    "konu_guven": "kesin"
   },
   {
    "ders": "Coğrafya",
-   "metin": "yeryüzü şekillerinin oluşumunda aşınma, taşınma ve biriktirme süreçlerinin etkisini belirleyebilmeniz,",
-   "norm": "yeryuzu sekillerinin olusumunda asinma tasinma ve biriktirme sureclerinin etkisini belirle",
+   "metin": "yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilmeniz,",
+   "norm": "yeryuzu sekillerinin olusumunu asinim ve birikim surecleri acisindan cozumle",
    "konu_id": "cogr_10_u03_k03",
    "konu": "3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
    "topic_key": "Coğrafya > 3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
    "kodlar": [
     "COĞ.10.3.3"
    ],
-   "kod_guven": "yapisal",
+   "kod_guven": "kesin",
    "konu_guven": "kesin"
   },
   {
    "ders": "Coğrafya",
-   "metin": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-   "norm": "yeryuzunu sekillendiren surecleri saha sanal saha calismalariyla arastir",
+   "metin": "yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilmeniz,",
+   "norm": "yeryuzu sekillerinin olusumunda dogal sureclerin etkilerini saha sanal saha calismalariyla arastir",
    "konu_id": "cogr_10_u03_k04",
    "konu": "3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
    "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
@@ -3595,8 +3773,8 @@
   },
   {
    "ders": "Coğrafya",
-   "metin": "yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
-   "norm": "yeryuzu sekilleri ile beseri faaliyetler arasindaki etkilesimi sorgula",
+   "metin": "yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz,",
+   "norm": "yakin cevresindeki yeryuzu sekilleri ile beseri faaliyetler arasindaki etkilesimi sorgula",
    "konu_id": "cogr_10_u03_k05",
    "konu": "3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
    "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
@@ -3608,8 +3786,8 @@
   },
   {
    "ders": "Coğrafya",
-   "metin": "yerleşme yeri seçimi ve yerleşmelerin gelişiminde etkili olan faktörleri sorgulayabilmeniz,",
-   "norm": "yerlesme yeri secimi ve yerlesmelerin gelisiminde etkili olan faktorleri sorgula",
+   "metin": "yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilmeniz,",
+   "norm": "yerlesme yeri seciminde ve yerlesmelerin gelisiminde etkili olan cografi faktorleri sorgula",
    "konu_id": "cogr_10_u04_k01",
    "konu": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
    "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
@@ -3621,78 +3799,76 @@
   },
   {
    "ders": "Coğrafya",
-   "metin": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
-   "norm": "yerlesmeleri fonksiyonlarina gore siniflandir",
-   "konu_id": "cogr_10_u04_k01",
-   "konu": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
-   "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+   "metin": "türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz,",
+   "norm": "turkiye ve dunyadaki yerlesmeleri fonksiyonlarina gore siniflandir",
+   "konu_id": "cogr_10_u04_k02",
+   "konu": "4.2 Yerleşmelerin Fonksiyonları",
+   "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
    "kodlar": [
-    "COĞ.10.4.1"
+    "COĞ.10.4.2"
    ],
    "kod_guven": "kesin",
    "konu_guven": "kesin"
   },
   {
    "ders": "Coğrafya",
-   "metin": "ekonomik faaliyetlerin özelliklerinden yola çıkarak bu faaliyet alanlarını birincil, ikincil, üçüncül, dördüncül ve beşincil sektörler şeklinde sınıflandırabilmeniz,",
-   "norm": "ekonomik faaliyetlerin ozelliklerinden yola cikarak bu faaliyet alanlarini birincil ikincil ucuncul dorduncul ve besincil sektorler seklinde siniflandir",
+   "metin": "ekonomik faaliyetleri sektörlere göre sınıflandırabilmeniz,",
+   "norm": "ekonomik faaliyetleri sektorlere gore siniflandir",
    "konu_id": "cogr_10_u05_k01",
    "konu": "5.1 Ekonomik Faaliyetlerin Özellikleri",
    "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
    "kodlar": [
     "COĞ.10.5.1"
-   ],
-   "kod_guven": "yapisal",
-   "konu_guven": "kesin"
-  },
-  {
-   "ders": "Coğrafya",
-   "metin": "ülke ekonomilerinin sektörel yapısını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden ülkelerin gelişmişlik düzeylerini karşılaştırabilmeniz,",
-   "norm": "ulke ekonomilerinin sektorel yapisini gosteren tablo grafik sekil ve veya diyagramlar uzerinden ulkelerin gelismislik duzeylerini karsilastir",
-   "konu_id": "cogr_10_u05_k01",
-   "konu": "5.1 Ekonomik Faaliyetlerin Özellikleri",
-   "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
-   "kodlar": [
-    "COĞ.10.5.1"
-   ],
-   "kod_guven": "yapisal",
-   "konu_guven": "kesin"
-  },
-  {
-   "ders": "Coğrafya",
-   "metin": "ekonomik faaliyetlerin Türkiye ekonomisindeki yeri ve önemini hazırlanan tablo, grafik, şekil ve/veya diyagramlar üzerinden anlaşılır hâle getirebilmeniz",
-   "norm": "ekonomik faaliyetlerin turkiye ekonomisindeki yeri ve onemini hazirlanan tablo grafik sekil ve veya diyagramlar uzerinden anlasilir hale getir",
-   "konu_id": "cogr_10_u05_k01",
-   "konu": "5.1 Ekonomik Faaliyetlerin Özellikleri",
-   "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
-   "kodlar": [
-    "COĞ.10.5.1"
-   ],
-   "kod_guven": "yapisal",
-   "konu_guven": "kesin"
-  },
-  {
-   "ders": "Coğrafya",
-   "metin": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,",
-   "norm": "farkli ulkelerin afetle mucadele uygulamalarini sorgula",
-   "konu_id": "cogr_10_u06_k01",
-   "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
-   "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
-   "kodlar": [
-    "COĞ.10.6.2",
-    "COĞ.10.6.3",
-    "COĞ.10.6.4"
    ],
    "kod_guven": "kesin",
    "konu_guven": "kesin"
   },
   {
    "ders": "Coğrafya",
-   "metin": "afete dirençli yaşam alanlarını coğrafi koşullar bağlamında tanımlayabilmeniz,",
-   "norm": "afete direncli yasam alanlarini cografi kosullar baglaminda tanimla",
+   "metin": "ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden farklı gelişmişlik seviyesine sahip ülkeleri karşılaştırabilmeniz,",
+   "norm": "ekonomik sektorlerin dagilimini gosteren tablo grafik sekil ve veya diyagramlar uzerinden farkli gelismislik seviyesine sahip ulkeleri karsilastir",
+   "konu_id": "cogr_10_u05_k02",
+   "konu": "5.2 Ekonomik Sektörler ve Gelişmişlik",
+   "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
+   "kodlar": [
+    "COĞ.10.5.2"
+   ],
+   "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Coğrafya",
+   "metin": "ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilmeniz,",
+   "norm": "ekonomik sektorlerin turkiye ekonomisindeki yeri ve onemini gosteren tablo grafik sekil ve veya diyagram hazirla",
+   "konu_id": "cogr_10_u05_k03",
+   "konu": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+   "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+   "kodlar": [
+    "COĞ.10.5.3"
+   ],
+   "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Coğrafya",
+   "metin": "afetlerle mücadelede iyi uygulama örneklerini sorgulayabilmeniz,",
+   "norm": "afetlerle mucadelede iyi uygulama orneklerini sorgula",
    "konu_id": "cogr_10_u06_k01",
    "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
    "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+   "kodlar": [
+    "COĞ.10.6.1"
+   ],
+   "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Coğrafya",
+   "metin": "afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilmeniz,",
+   "norm": "afete direncli yasam alanlarinin cografi kosullarini cozumle",
+   "konu_id": "cogr_10_u06_k02",
+   "konu": "6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+   "topic_key": "Coğrafya > 6.2 Afetlere Karşı Dirençli Yaşam Alanları",
    "kodlar": [
     "COĞ.10.6.2"
    ],
@@ -3701,11 +3877,11 @@
   },
   {
    "ders": "Coğrafya",
-   "metin": "afetlerden korunma uygulamalarına mekânın özelliklerine göre karar verebilmeniz,",
-   "norm": "afetlerden korunma uygulamalarina mekanin ozelliklerine gore karar ver",
-   "konu_id": "cogr_10_u06_k01",
-   "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
-   "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+   "metin": "mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilmeniz,",
+   "norm": "mekanin ozelliklerine gore afetlerden korunma uygulamalarina karar ver",
+   "konu_id": "cogr_10_u06_k03",
+   "konu": "6.3 Afetlerden Korunma",
+   "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
    "kodlar": [
     "COĞ.10.6.3"
    ],
@@ -3714,13 +3890,26 @@
   },
   {
    "ders": "Coğrafya",
-   "metin": "afetlerden korunmada bilinç oluşturmanın faydalarını yansıtabilmeniz",
-   "norm": "afetlerden korunmada bilinc olusturmanin faydalarini yansit",
-   "konu_id": "cogr_10_u06_k01",
-   "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
-   "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+   "metin": "afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarını yansıtabilmeniz,",
+   "norm": "afetlerden korunma amaci ile afet bilinci olusturmanin faydalarini yansit",
+   "konu_id": "cogr_10_u06_k04",
+   "konu": "6.4 Afet Bilinci",
+   "topic_key": "Coğrafya > 6.4 Afet Bilinci",
    "kodlar": [
     "COĞ.10.6.4"
+   ],
+   "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Coğrafya",
+   "metin": "türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilmeniz,",
+   "norm": "turk dunyasinin ortak kulturel ozellikleri hakkinda analojik cikarim yap",
+   "konu_id": "cogr_10_u07_k01",
+   "konu": "7.1 Türk Kültürünün Mekânsal Özellikleri",
+   "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
+   "kodlar": [
+    "COĞ.10.7.1"
    ],
    "kod_guven": "kesin",
    "konu_guven": "kesin"

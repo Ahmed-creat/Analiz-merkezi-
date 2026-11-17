@@ -41,7 +41,7 @@ const ESLEME = {
   cogr_10_t04_c02: ["Coğrafya", "4.2 Yerleşmelerin Fonksiyonları"],
   cogr_10_t05_c02: ["Coğrafya", "5.2 Ekonomik Sektörler ve Gelişmişlik"],
   cogr_10_t05_c03: ["Coğrafya", "5.3 Türkiye Ekonomisinin Sektörel Dağılımı"],
-  cogr_10_t06_c02: ["Coğrafya", "6.2 Afetlere Karşİ Dirençli Yaşam Alanları"],
+  cogr_10_t06_c02: ["Coğrafya", "6.2 Afetlere Karşı Dirençli Yaşam Alanları"],
   cogr_10_t06_c03: ["Coğrafya", "6.3 Afetlerden Korunma"],
   cogr_10_t06_c04: ["Coğrafya", "6.4 Afet Bilinci"],
   cogr_10_t07_c01: ["Coğrafya", "7.1 Türk Kültürünün Mekânsal Özellikleri"],

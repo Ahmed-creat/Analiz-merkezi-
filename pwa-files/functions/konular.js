@@ -287,7 +287,7 @@ const KONULAR = {
    "5.2 Ekonomik Sektörler ve Gelişmişlik",
    "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
    "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
-   "6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
+   "6.2 Afetlere Karşı Dirençli Yaşam Alanları",
    "6.3 Afetlerden Korunma",
    "6.4 Afet Bilinci",
    "7.1 Türk Kültürünün Mekânsal Özellikleri"

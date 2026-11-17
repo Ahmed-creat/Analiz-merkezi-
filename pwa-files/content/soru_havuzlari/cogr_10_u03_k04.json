@@ -2,250 +2,255 @@
   "konu_id": "cogr_10_u03_k04",
   "sinif": 10,
   "ders": "Coğrafya",
-  "kaynak_dosya": "10. Sınıf coğrafya json.zip",
+  "tema": 3,
+  "tema_adi": "Doğal Sistemler ve Süreçler",
+  "baslik": "3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
+  "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
+  "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır.",
+  "kaynak": "Coğrafya 10 ders kitabı, s.97-98",
+  "kaynak_dosya": "cografya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "cogr_10_u03_k04_o01",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir öğrenci grubu, yağışlardan sonra yamaçlarda gelişen küçük aşınım kanallarını sahada inceleyecek. Araziye çıkmadan önce atılması gereken en uygun ilk adım hangisidir?",
+      "alt_beceri": "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+      "metin": "Coğrafya biliminde araştırma yöntemlerinin temelini oluşturan gözlem ve saha çalışması neden zorunludur?",
       "secenekler": [
-        "Yalnızca sonuç raporunu yazmak",
-        "Araştırma amacını belirleyip uygun güzergâh için taslak plan yapmak",
-        "Gözlem yapmadan oluşum süreci hakkında kesin karar vermek",
-        "Güzergâhı ve gerekli malzemeleri değerlendirmeden yola çıkmak"
+        "Arazi çalışması yalnızca harita çizmeye yarar",
+        "Coğrafya biliminin laboratuvarı arazidir",
+        "Saha çalışması laboratuvar deneylerinin yerini alır",
+        "Arazi gözlemi yalnızca iklim ölçümleri için yapılır"
       ],
       "dogru_index": 1,
-      "cozum": "Önce araştırma sorusu netleştirilip buna uygun güzergâh ve çalışma planı hazırlanmalıdır. Gözlem yapmadan kesin sonuca varmak ya da gerekli hazırlıkları atlamak güvenilir saha çalışması sağlamaz.",
+      "cozum": "Coğrafya biliminin laboratuvarı arazidir; gözlem ve saha çalışmasından elde edilen bilgi, belge ve görseller araştırmaya kaynaklık eder (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir saha çalışmasını araştırma amacıyla uyumlu yürütmek için hangi aşamalar izlenir?",
-        "back": "Amaç ve güzergâh belirlenir, plan ve araçlar hazırlanır, yer şekilleri gözlemlenip veri toplanır; veriler çözümlenir, öngörüler oluşturulur ve sonuçlar raporlanıp paylaşılır."
+        "front": "Coğrafyanın laboratuvarı nedir?",
+        "back": "Arazi; gözlem ve saha çalışmasının yapıldığı ortam."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o02",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir ekip, kıyı aşınımını incelemek için gezi planlıyor. Hangi güzergâh seçimi araştırma amacına en uygundur?",
+      "alt_beceri": "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+      "metin": "Saha çalışmasının aşamaları hangi sırayla gerçekleşir?",
       "secenekler": [
-        "Sadece ulaşımı kolay alanlardan geçip kıyı şekillerini dışarıda bırakan güzergâh",
-        "Araştırma sorusuyla ilgisiz iç kesimlerde dolaşan güzergâh",
-        "Kıyı boyunca farklı aşınım ve birikim özelliklerinin güvenli biçimde gözlenebileceği güzergâh",
-        "Gözlem noktaları belirlenmeden rastgele seçilen güzergâh"
+        "Raporlama, hazırlık, sahada uygulama",
+        "Sahada uygulama, raporlama, hazırlık",
+        "Harita çizimi, sunum, güzergâh belirleme",
+        "Hazırlık ve planlama, sahada uygulama, raporlama ve sunma"
       ],
-      "dogru_index": 2,
-      "cozum": "Güzergâh, kıyı aşınımını ve birikimini gözlemlemeye elverişli olmalıdır; güvenlik ve uygulanabilirlik de gözetilir. Araştırma sorusuyla ilgisiz alanlar amaca uygun veri sağlamaz.",
+      "dogru_index": 3,
+      "cozum": "Saha çalışması hazırlık ve planlama, sahada/sanal sahada uygulama, raporlama ve sunma aşamalarından oluşur (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Saha güzergâhı belirlenirken hangi iki özellik birlikte gözetilmelidir?",
-        "back": "Güzergâh araştırma amacına uygun olmalı ve gözlem yapılacak alanlara güvenli, uygulanabilir erişim sağlamalıdır."
+        "front": "Saha çalışması nedir?",
+        "back": "Arazide gözlem yaparak bilgi, belge ve görsel toplamaya dayanan araştırma yöntemi."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o03",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir ekip, yamaç eteğinde birikmiş gevşek malzemeyi inceliyor. Sonradan oluşum sürecini çözümleyebilmek için en yararlı kayıt hangisidir?",
+      "alt_beceri": "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+      "metin": "Saha çalışmasının hazırlık ve planlama aşamasında yapılması gereken hangisidir?",
       "secenekler": [
-        "Yalnızca ziyaret tarihini yazmak",
-        "Malzemenin konumunu, boyutunu, yamaç eğimini ve çevredeki akış izlerini not etmek",
-        "Gözlemi hafızada tutup kayıt almamak",
-        "Yalnızca bölgedeki yerleşme adlarını listelemek"
+        "Gezi güzergâhını ve taslak planı belirlemek",
+        "Yer şekillerinin oluşum süreçlerini çözümlemek",
+        "Ürün dosyasını sınıfla paylaşmak",
+        "Gelecekteki değişimlere dair öngörü yazmak"
       ],
-      "dogru_index": 1,
-      "cozum": "Konum, malzeme, eğim ve akış izleri yamaçtaki aşınma-birikme süreçlerini değerlendirmeye yarar. Yalnızca tarih veya yer adı oluşum mekanizmasını açıklamaz.",
+      "dogru_index": 0,
+      "cozum": "Hazırlık aşamasında güzergâh belirlenir, taslak gezi planı hazırlanır ve gerekli eşyalar temin edilir (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sahada gözlemlenen bir yer şeklinin oluşumunu açıklamak için hangi tür kanıt ve veriler kaydedilebilir?",
-        "back": "Konum, biçim, kayaç ve malzeme özellikleri, eğim, su veya rüzgâr etkisi ile fotoğraf, harita ve gözlem notları kaydedilebilir."
+        "front": "Gezi planı nedir?",
+        "back": "Saha öncesinde güzergâhı ve yapılacakları sıralayan taslak çizelge."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o04",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir araştırma alanına ulaşım mevsim koşulları nedeniyle güvenli değil. Ekip, araziyi incelemeyi sürdürmek için hangi yolu seçebilir?",
+      "alt_beceri": "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+      "metin": "Saha çalışması için hazırlanması gereken eşyalar arasında hangisi yer alır?",
       "secenekler": [
-        "Çalışmayı hiçbir veri kullanmadan tamamlamak",
-        "Güvenlik uyarılarını yok sayıp alana gitmek",
-        "Sadece başka kişilerin yorumlarını kendi gözlemi gibi sunmak",
-        "Harita ve uydu görüntülerinden yararlanarak sanal saha incelemesi yapmak"
+        "Sismograf ve Richter ölçeği",
+        "Meteoroloji istasyonu ve radyosonda",
+        "Defter, bölge haritası ve fotoğraf makinesi",
+        "Sondaj makinesi ve mikroskop"
       ],
-      "dogru_index": 3,
-      "cozum": "Araziye erişim güvenli olmadığında harita ve uydu görüntüleriyle sanal saha çalışması yürütülebilir. Güvenlik koşullarını yok saymak uygun değildir.",
+      "dogru_index": 2,
+      "cozum": "Saha çalışmasında defter, kalem, bölge haritası, fotoğraf makinesi ve uygun kıyafetler hazırlanır (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sanal saha çalışması hangi koşullarda yararlı bir araştırma seçeneği olabilir?",
-        "back": "Araziye erişimin zor, güvensiz veya zaman açısından sınırlı olduğu durumlarda harita, uydu görüntüsü ve diğer dijital veriler üzerinden gözlem yapmayı sağlar."
+        "front": "Saha çalışması donanımı nedir?",
+        "back": "Defter, kalem, bölge haritası, fotoğraf makinesi ve uygun kıyafet."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o05",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir öğrenci, yamaçta paralel oluklar görüyor ve bunların yüzey akışıyla oluşmuş olabileceğini düşünüyor. Bilimsel bir raporda en uygun yaklaşım hangisidir?",
+      "alt_beceri": "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+      "metin": "Sahada uygulama aşamasının temel işi hangisidir?",
       "secenekler": [
-        "Gözlemi ve olası açıklamayı ayırıp yorumunu kanıtlarla desteklemek",
-        "İlk tahmini kesin bilgi gibi sunmak",
-        "Olukların konumunu kaydetmeden nedenlerini sıralamak",
-        "Yalnızca sonucu yazıp gözlem sürecini çıkarmak"
+        "Toplanan verileri rapora dönüştürmek",
+        "Çalışmanın ölçütlerini kontrol listesine işaretlemek",
+        "Ürün dosyasını arkadaşlarla paylaşmak",
+        "Yer şekillerini gözlemleyip oluşumlarında etkili kuvvetlere dair bilgi toplamak"
       ],
-      "dogru_index": 0,
-      "cozum": "Gözlemde görülen oluklar doğrudan kaydedilir; bunların yüzey akışıyla oluştuğu yorumu ise kanıtlarla desteklenmesi gereken bir çıkarımdır. İkisini ayırmak raporun güvenilirliğini artırır.",
+      "dogru_index": 3,
+      "cozum": "Sahada yer şekilleri gözlemlenir; aşınım ve birikim süreçlerinin etkisine dair bilgi toplanır (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gözlem verileri ile bir yer şeklinin oluşumuna ilişkin yorum arasındaki farkı nasıl korursun?",
-        "back": "Gözlenen özellikleri ayrı kaydeder; yorum ve çıkarımları bu kanıtlara dayandırıp belirsizlikleri belirtirim."
+        "front": "Sahada uygulama nedir?",
+        "back": "Yer şekillerinin yerinde gözlemlenmesi ve süreçlere dair bilgi toplanması."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o06",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Saha çalışmasında hassas bir doğal alanın kırılgan olduğu fark ediliyor. Araştırma ekibinin en uygun tutumu hangisidir?",
+      "alt_beceri": "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür.",
+      "metin": "Saha çalışmasının ülke açısından bilimsel katkısının yanında hangi işlevi vardır?",
       "secenekler": [
-        "Doğal varlığa zarar verecek biçimde örnekleri gelişigüzel toplamak",
-        "Alanı araştırma dışında bırakıp önemini değerlendirmemek",
-        "Gözlemi güvenli biçimde yapıp alanın korunmasına yönelik önerileri raporlamak",
-        "Çalışma sonucunu paylaşmadan verileri yok etmek"
+        "Yalnızca harita satışlarını artırmak",
+        "Doğal zenginliklerin fark edilmesine ve korunmasına katkı sağlamak",
+        "Arazi kullanımını sınırlandırmak",
+        "Yer şekillerinin oluşumunu durdurmak"
       ],
-      "dogru_index": 2,
-      "cozum": "Saha çalışması doğal varlıkların önemini fark etmeye ve korunmasına katkı sağlamalıdır. Gözlem, alana zarar vermeden yürütülüp koruma önerileriyle raporlanabilir.",
+      "dogru_index": 1,
+      "cozum": "Saha çalışması doğal zenginliklerin fark edilmesine, değerinin bilinmesine, korunmasına ve gelecek nesillere aktarılmasına katkı sağlar (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Saha araştırması, doğal varlıkların korunmasına ve değerinin anlaşılmasına nasıl katkı sağlayabilir?",
-        "back": "Gözlem ve veri, doğal varlıkların özelliklerini ve önemini görünür kılar; korunması ve gelecek kuşaklara aktarılması için bilinçli kararları destekler."
+        "front": "Saha çalışmasının koruma boyutu nedir?",
+        "back": "Doğal varlıkların fark edilip korunmasına ve aktarılmasına katkı."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o07",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir yamaçta üst kesimde yeni bir kopma yüzeyi, orta kesimde taşınmış toprak ve etekte yığılmış malzeme gözleniyor. Bu kanıtlar hangi yorumu destekler?",
+      "alt_beceri": "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür.",
+      "metin": "Raporlama aşamasında gözlem yoluyla toplanan bilgilerden yararlanılarak yapılan iş hangisidir?",
       "secenekler": [
-        "Üst bölümde malzeme kopmuş, yamaç boyunca taşınmış ve etekte birikmiştir.",
-        "Yamaç boyunca yalnızca tektonik yükselme gerçekleşmiştir.",
-        "Etekteki malzeme üst kesime doğru taşınmıştır.",
-        "Akarsu yatağı ve yamaç hiçbir değişim geçirmemiştir."
+        "Yer şeklinin oluşumundaki aşınım ve birikim süreçlerini çözümlemek",
+        "Gezilecek güzergâhı yeniden belirleyip planı gözden geçirmek",
+        "Saha için eksik kalan eşyaları tamamlamak",
+        "Gözlem yapılacak alanı ve güzergâhı yeniden seçmek"
       ],
       "dogru_index": 0,
-      "cozum": "Kopma yüzeyi malzemenin üst kesimden ayrıldığını, orta yamaçtaki izler taşındığını ve etekteki yığın biriktiğini gösterir. Gözlemler aşınma/taşınma ile birikimin birlikte gerçekleştiğini destekler.",
+      "cozum": "Raporlamada toplanan bilgilerden yararlanılarak yer şekillerinin oluşumunda etkili kuvvetlerin süreçleri çözümlenir (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir yeryüzü şeklinin oluşumunda aşınım ve birikimin göreli etkisi nasıl araştırılır?",
-        "back": "Biçim, malzeme dağılışı, eğim ve etkin dış kuvvetlere ilişkin gözlemler toplanır; bu kanıtlar aşınım ve birikim süreçleriyle ilişkilendirilir."
+        "front": "Saha raporunda çözümleme nedir?",
+        "back": "Gözlem verilerinden yararlanarak yer şeklinin oluşum sürecini açıklamak."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o08",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir kıyı yamacında dalga aşındırmasının etkin olduğu ve kaya parçalarının düzenli olarak koptuğu gözleniyor. Geleceğe yönelik en temkinli öngörü hangisidir?",
+      "alt_beceri": "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür.",
+      "metin": "Çözümlenen yer şekillerinin gelecekte uğrayabileceği değişimler hakkında öngörüde bulunmak neden istenir?",
       "secenekler": [
-        "Kıyı çizgisi hiçbir koşulda değişmeyecektir.",
-        "Aşındırma sürerse yamaç gerileyebilir; ancak hız koşullara bağlıdır.",
-        "Kayaçlar kısa sürede magmaya dönüşecektir.",
-        "Gözlemden hareketle bütün kıyıların aynı biçimde değişeceği kesindir."
+        "Gözlem sayısını artırmak için",
+        "Harita ölçeğini küçültmek için",
+        "Süreçlerin yönünü kavrayıp olası değişimi önceden değerlendirmek için",
+        "Araziye yeniden gitmeyi önlemek için"
       ],
-      "dogru_index": 1,
-      "cozum": "Etkin dalga aşındırması sürerse kıyı yamacı gerileyebilir. Ancak değişimin hızı dalga gücü, kayaç direnci ve diğer koşullara bağlı olduğundan kesin ve evrensel bir sonuç ileri sürülmemelidir.",
+      "dogru_index": 2,
+      "cozum": "Öngörü, yer şeklinin oluşumunda etkili süreçlerin gelecekte ne yönde değişebileceğini değerlendirmeyi sağlar (s.97).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Saha gözlemlerinden yararlanarak yer şekillerinin gelecekteki değişimi hakkında nasıl öngörü oluşturulur?",
-        "back": "Etkin süreçlerin yönü ve şiddeti belirlenir; bu süreçlerin sürmesi hâlinde olası değişimler kanıtlarla ilişkilendirilerek tahmin edilir."
+        "front": "Saha çalışmasında öngörü nedir?",
+        "back": "İzlenen süreçlerin gelecekte yaratabileceği değişimlere dair çıkarım."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o09",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "Bir yerel planlama birimi, kırılgan bir yamaçta yaptığı gözlemleri karar vericilere sunacak. Hangi rapor yapısı araştırma sürecini en iyi yansıtır?",
+      "alt_beceri": "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür.",
+      "metin": "Saha çalışmasının sonunda elde edilen veriler ve öngörüler bir araya getirilerek ne oluşturulur?",
       "secenekler": [
-        "Yalnızca gezi fotoğrafları",
-        "Sadece konu başlığı ve sonuç cümlesi",
-        "Amaç, veri toplama yöntemi, gözlemler, süreç analizi ve kanıta dayalı öngörüler",
-        "Gözlemle ilgisi olmayan genel bilgiler"
+        "Kontrol listesi",
+        "Ürün dosyası",
+        "Taslak gezi planı",
+        "Ders kitabı özeti"
       ],
-      "dogru_index": 2,
-      "cozum": "Amaç, veri toplama yöntemi, gözlemler ve süreç analizi birlikte sunulursa okuyucu sonuçların hangi kanıtlara dayandığını değerlendirebilir. Yalnızca fotoğraflar veya konu dışı bilgiler süreci göstermez.",
+      "dogru_index": 1,
+      "cozum": "Elde edilen veriler ve öngörüler birleştirilerek ürün dosyası oluşturulur ve arkadaşlarla paylaşılır (s.97-98).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir saha çalışması için hazırlanan ürün dosyasında hangi bileşenler yer almalıdır?",
-        "back": "Araştırma amacı, güzergâh, gözlem verileri, görsel veya harita kanıtları, süreç çözümlemesi, öngörüler ve korumaya ilişkin değerlendirmeler yer alabilir."
+        "front": "Ürün dosyası nedir?",
+        "back": "Saha verileri ile öngörülerin bir araya getirildiği çalışma dosyası."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     },
     {
       "soru_id": "cogr_10_u03_k04_o10",
-      "alt_beceri": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,",
-      "metin": "İki grup aynı yamaç için farklı oluşum açıklamaları geliştirmiş. Sonuçların güvenilirliğini artırmak için en uygun adım hangisidir?",
+      "alt_beceri": "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür.",
+      "metin": "Saha çalışmasının değerlendirilmesinde ne kullanılır?",
       "secenekler": [
-        "Kanıtları incelemeden daha iddialı görünen yorumu seçmek",
-        "Gruplardan birinin kayıtlarını silmek",
-        "Yalnızca ortak olmayan görüşleri rapordan çıkarmak",
-        "Gözlem kayıtlarını ve kanıtları karşılaştırıp farklı yorumları tartışmak"
+        "Yalnızca yazılı sınav",
+        "Sadece harita çizim puanı",
+        "Grup üyelerinin birbirini puanlaması",
+        "Aşamaları kapsayan kontrol listesi"
       ],
       "dogru_index": 3,
-      "cozum": "Kanıtların ve gözlem kayıtlarının karşılaştırılması, yorumların dayanaklarını görünür kılar. Farklı görüşleri kanıtla tartışmak çalışmayı geliştirir; kayıtları silmek güvenilirliği azaltır.",
+      "cozum": "Çalışma; hazırlık ve planlama, sahada uygulama, raporlama ve sunma, arazi çalışması başlıklı kontrol listesiyle değerlendirilir (s.98).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Saha çalışması sonunda verileri sınıf arkadaşlarıyla paylaşmak araştırmaya ne kazandırır?",
-        "back": "Gözlem ve yorumların karşılaştırılmasını, farklı kanıtların tartışılmasını ve çalışmanın geliştirilmesini sağlar."
+        "front": "Kontrol listesi nedir?",
+        "back": "Saha çalışması ölçütlerinin evet-hayır biçiminde işaretlendiği değerlendirme aracı."
       },
-      "kazanim": "yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırabilmeniz,"
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     }
   ],
   "flashcards": [
     {
       "id": "cogr_10_u03_k04_o01:flashcard",
-      "front": "Bir saha çalışmasını araştırma amacıyla uyumlu yürütmek için hangi aşamalar izlenir?",
-      "back": "Amaç ve güzergâh belirlenir, plan ve araçlar hazırlanır, yer şekilleri gözlemlenip veri toplanır; veriler çözümlenir, öngörüler oluşturulur ve sonuçlar raporlanıp paylaşılır."
+      "front": "Coğrafyanın laboratuvarı nedir?",
+      "back": "Arazi; gözlem ve saha çalışmasının yapıldığı ortam."
     },
     {
       "id": "cogr_10_u03_k04_o02:flashcard",
-      "front": "Saha güzergâhı belirlenirken hangi iki özellik birlikte gözetilmelidir?",
-      "back": "Güzergâh araştırma amacına uygun olmalı ve gözlem yapılacak alanlara güvenli, uygulanabilir erişim sağlamalıdır."
+      "front": "Saha çalışması nedir?",
+      "back": "Arazide gözlem yaparak bilgi, belge ve görsel toplamaya dayanan araştırma yöntemi."
     },
     {
       "id": "cogr_10_u03_k04_o03:flashcard",
-      "front": "Sahada gözlemlenen bir yer şeklinin oluşumunu açıklamak için hangi tür kanıt ve veriler kaydedilebilir?",
-      "back": "Konum, biçim, kayaç ve malzeme özellikleri, eğim, su veya rüzgâr etkisi ile fotoğraf, harita ve gözlem notları kaydedilebilir."
+      "front": "Gezi planı nedir?",
+      "back": "Saha öncesinde güzergâhı ve yapılacakları sıralayan taslak çizelge."
     },
     {
       "id": "cogr_10_u03_k04_o04:flashcard",
-      "front": "Sanal saha çalışması hangi koşullarda yararlı bir araştırma seçeneği olabilir?",
-      "back": "Araziye erişimin zor, güvensiz veya zaman açısından sınırlı olduğu durumlarda harita, uydu görüntüsü ve diğer dijital veriler üzerinden gözlem yapmayı sağlar."
+      "front": "Saha çalışması donanımı nedir?",
+      "back": "Defter, kalem, bölge haritası, fotoğraf makinesi ve uygun kıyafet."
     },
     {
       "id": "cogr_10_u03_k04_o05:flashcard",
-      "front": "Gözlem verileri ile bir yer şeklinin oluşumuna ilişkin yorum arasındaki farkı nasıl korursun?",
-      "back": "Gözlenen özellikleri ayrı kaydeder; yorum ve çıkarımları bu kanıtlara dayandırıp belirsizlikleri belirtirim."
+      "front": "Sahada uygulama nedir?",
+      "back": "Yer şekillerinin yerinde gözlemlenmesi ve süreçlere dair bilgi toplanması."
     },
     {
       "id": "cogr_10_u03_k04_o06:flashcard",
-      "front": "Saha araştırması, doğal varlıkların korunmasına ve değerinin anlaşılmasına nasıl katkı sağlayabilir?",
-      "back": "Gözlem ve veri, doğal varlıkların özelliklerini ve önemini görünür kılar; korunması ve gelecek kuşaklara aktarılması için bilinçli kararları destekler."
+      "front": "Saha çalışmasının koruma boyutu nedir?",
+      "back": "Doğal varlıkların fark edilip korunmasına ve aktarılmasına katkı."
     },
     {
       "id": "cogr_10_u03_k04_o07:flashcard",
-      "front": "Bir yeryüzü şeklinin oluşumunda aşınım ve birikimin göreli etkisi nasıl araştırılır?",
-      "back": "Biçim, malzeme dağılışı, eğim ve etkin dış kuvvetlere ilişkin gözlemler toplanır; bu kanıtlar aşınım ve birikim süreçleriyle ilişkilendirilir."
+      "front": "Saha raporunda çözümleme nedir?",
+      "back": "Gözlem verilerinden yararlanarak yer şeklinin oluşum sürecini açıklamak."
     },
     {
       "id": "cogr_10_u03_k04_o08:flashcard",
-      "front": "Saha gözlemlerinden yararlanarak yer şekillerinin gelecekteki değişimi hakkında nasıl öngörü oluşturulur?",
-      "back": "Etkin süreçlerin yönü ve şiddeti belirlenir; bu süreçlerin sürmesi hâlinde olası değişimler kanıtlarla ilişkilendirilerek tahmin edilir."
+      "front": "Saha çalışmasında öngörü nedir?",
+      "back": "İzlenen süreçlerin gelecekte yaratabileceği değişimlere dair çıkarım."
     },
     {
       "id": "cogr_10_u03_k04_o09:flashcard",
-      "front": "Bir saha çalışması için hazırlanan ürün dosyasında hangi bileşenler yer almalıdır?",
-      "back": "Araştırma amacı, güzergâh, gözlem verileri, görsel veya harita kanıtları, süreç çözümlemesi, öngörüler ve korumaya ilişkin değerlendirmeler yer alabilir."
+      "front": "Ürün dosyası nedir?",
+      "back": "Saha verileri ile öngörülerin bir araya getirildiği çalışma dosyası."
     },
     {
       "id": "cogr_10_u03_k04_o10:flashcard",
-      "front": "Saha çalışması sonunda verileri sınıf arkadaşlarıyla paylaşmak araştırmaya ne kazandırır?",
-      "back": "Gözlem ve yorumların karşılaştırılmasını, farklı kanıtların tartışılmasını ve çalışmanın geliştirilmesini sağlar."
+      "front": "Kontrol listesi nedir?",
+      "back": "Saha çalışması ölçütlerinin evet-hayır biçiminde işaretlendiği değerlendirme aracı."
     }
-  ],
-  "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması"
+  ]
 }
