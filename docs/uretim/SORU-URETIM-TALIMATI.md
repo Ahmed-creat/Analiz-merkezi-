@@ -57,39 +57,72 @@ her biri için bir soru havuzu** yaz.
 
 ---
 
-## 2. Dal (branch) ve PR — bu iş nerede yapılacak
+## 2. Dal (branch) ve devir — bu iş nerede yapılacak
 
-Bu iş, açık **PR #4**'ün hattının devamıdır ama **aynı dala yazılmaz**.
+Bu iş, açık **PR #4**'ün hattının devamıdır ama **aynı dala yazılmaz** ve
+**merge edilmez**. Devir **dosya teslimiyle** olur: soru üreten taraf dosyaları
+kendi dalına koyar, uygulama hattına dosyalar tek tek alınır.
 
 - Açık PR: **#4** — `arena/cc4de070-analiz-merkezi` → `main`
 - O dal aktif olarak başka bir ajan tarafından kullanılıyor (uygulama düzeltmeleri)
 - Doğrudan oraya push etmek çakışma üretir
+- **PR açma / merge etme yok.** PR #4'ün kaderi kullanıcı kararıdır.
 
-### Komutlar
+### Komutlar — soru üreten taraf
 
 ```bash
 # 1) Hattı al
 git fetch origin
 git checkout -b soru-uretim origin/arena/cc4de070-analiz-merkezi
 
-# 2) Çalış, sonra ekle
-git add site/content/soru_havuzlari/
+# 2) Üret, kabul kapısından geçir
+node scripts/soru-uret-dogrula.js site/content/soru_havuzlari
+
+# 3) Kendi dalına koy
+git add site/content/soru_havuzlari/*.json
 git commit -m "10. sınıf soru havuzları (158 çıktı)"
 git push -u origin soru-uretim
-
-# 3) PR'ı ANA DALA DEĞİL, bu hatta aç
-gh pr create \
-  --base arena/cc4de070-analiz-merkezi \
-  --head soru-uretim \
-  --title "10. sınıf soru havuzları (158 çıktı)" \
-  --body "docs/uretim/SORU-URETIM-TALIMATI.md kurallarına göre üretildi."
 ```
+
+Teslim = dosyaların `origin/soru-uretim` dalında durması. Bitince "dosyalar
+hazır" demen yeterli; **PR açmıyorsun.**
+
+### Alma — uygulama tarafı (merge YOK)
+
+```bash
+git fetch origin
+git restore --source=origin/soru-uretim -- site/content/soru_havuzlari/
+node scripts/havuz-index-uret.js     # index.json
+node scripts/konu-esleme-uret.js     # konu_esleme.json
+node scripts/meb-kazanim-uret.js     # okz-meb.js + kazanim_konu_10.json
+npm run test:hepsi
+```
+
+`git restore --source=...` yalnız **dosyayı** getirir; geçmiş birleştirmez,
+`git merge` değildir. `index.json` / `konu_esleme.json` / `okz-meb.js`
+**elle düzenlenmez** — yukarıdaki betikler üretir.
 
 ### Yasaklar
 
 - ❌ `arena/cc4de070-analiz-merkezi` dalına **doğrudan** push
-- ❌ **PR #4'ü merge etme** (birleştirme kararı kullanıcının)
+- ❌ **PR merge / `git merge`** (birleştirme kararı kullanıcının)
 - ❌ `main`e doğrudan push
+- ❌ `index.json`, `konu_esleme.json`, `site/okz-meb.js` elle düzenleme
+
+### Açık karar — mevcut havuzlarla çakışma (son ölçüm)
+
+Plandaki 158 çıktının **128'i**, bugün havuzu olan bir kodla aynı
+(`kazanim_konu_10.json` → `kodlar`). Yalnız **30** kod tamamen yeni.
+Uygulama bir konuya **tek** havuz bağlar (`bkt-engine.js` → `resolvePoolId`,
+birebir `topic_key`). Bu yüzden aynı içerik iki ayrı konu olarak listelenmesin
+diye şu kural kullanıcı onayı bekliyor:
+
+- **A (önerilen):** aynı koda düşen yeni sorular mevcut havuz dosyasına
+  **eklenir** (tek konu, iki kaynak; 10'luk eski havuz korunur).
+- **B:** yeni havuz ayrı konu olarak eklenir (aynı içerik iki başlıkta).
+- **C:** eski havuz arşivlenir, yalnız yenisi kalır (1.756 soru kaybolur — önerilmez).
+
+Karar verilene kadar yeni dosyalar **alınmaz**.
 
 ---
 
