@@ -11,13 +11,13 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 156,
-  "eslesen_konu": 112,
+  "konu": 161,
+  "eslesen_konu": 117,
   "oneri_konu": 0,
-  "eslesmeyen_konu": 50,
-  "metin": 113,
-  "metin_tek_konu": 107,
-  "metin_kodlu": 112,
+  "eslesmeyen_konu": 44,
+  "metin": 116,
+  "metin_tek_konu": 20,
+  "metin_kodlu": 115,
   "ders_bazli": {
    "Biyoloji": {
     "konu": 11,
@@ -75,15 +75,15 @@
     "metin_kodlu": 23
    },
    "Kimya": {
-    "konu": 14,
+    "konu": 19,
     "cikti": 21,
-    "kesin": 14,
-    "yapisal": 2,
+    "kesin": 19,
+    "yapisal": 0,
     "orta": 0,
-    "yok": 1,
-    "metin": 19,
-    "metin_tek_konu": 19,
-    "metin_kodlu": 19
+    "yok": 0,
+    "metin": 22,
+    "metin_tek_konu": 20,
+    "metin_kodlu": 22
    },
    "Matematik": {
     "konu": 21,
@@ -2029,19 +2029,19 @@
     "KİM.10.1.2"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.1.1 bölümü kimyasal değişimin kanıtlarını ve tepkimenin oluşumunu tanecik modeliyle verir (s.21-34); KİM.10.1.1-1.2.",
    "kazanim_metinleri": 2,
    "metin_kodlari": [
     {
-     "metin": "kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilmeniz,",
+     "metin": "kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilmeniz",
      "kod": "KİM.10.1.1",
      "skor": 1
     },
     {
-     "metin": "kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilmeniz,",
+     "metin": "kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilmeniz",
      "kod": "KİM.10.1.2",
      "skor": 1
     }
@@ -2056,14 +2056,14 @@
     "KİM.10.1.3"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.1.2 bölümü yanma, asit-baz, çökelme ve redoks tepkimelerini gözlemlenebilir göstergelerle sınıflandırır (s.35-46); KİM.10.1.3.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,",
+     "metin": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz",
      "kod": "KİM.10.1.3",
      "skor": 1
     }
@@ -2079,19 +2079,19 @@
     "KİM.10.1.5"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.1.3 bölümü mol kavramını ve saf maddelerin ölçülebilir özellikleriyle (m, MA, N_A) ilişkisini verir (s.47-60); KİM.10.1.4-1.5.",
    "kazanim_metinleri": 2,
    "metin_kodlari": [
     {
-     "metin": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+     "metin": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz",
      "kod": "KİM.10.1.4",
      "skor": 1
     },
     {
-     "metin": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz,",
+     "metin": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz",
      "kod": "KİM.10.1.5",
      "skor": 1
     }
@@ -2106,14 +2106,14 @@
     "KİM.10.1.6"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.1.4 bölümü denklemlerdeki tanecik sayısı tutarsızlıklarını denkleştirmeyle giderir (s.61-67); KİM.10.1.6.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz,",
+     "metin": "kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz",
      "kod": "KİM.10.1.6",
      "skor": 1
     }
@@ -2128,14 +2128,14 @@
     "KİM.10.1.7"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.1.5 bölümü mol oranlarıyla stokiyometrik hesaplamaları ve verim problemlerini verir (s.68-76); KİM.10.1.7.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+     "metin": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz",
      "kod": "KİM.10.1.7",
      "skor": 1
     }
@@ -2151,19 +2151,19 @@
     "KİM.10.1.9"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.2.1 bölümü gazların ölçülebilir özelliklerini ve Boyle-Charles-Avogadro yasalarını verir (s.77-93); KİM.10.1.8-1.9.",
    "kazanim_metinleri": 2,
    "metin_kodlari": [
     {
-     "metin": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz,",
+     "metin": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz",
      "kod": "KİM.10.1.8",
      "skor": 1
     },
     {
-     "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,",
+     "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz",
      "kod": "KİM.10.1.9",
      "skor": 1
     }
@@ -2172,21 +2172,21 @@
   {
    "konu_id": "kimya_10_u01_k07",
    "ders": "Kimya",
-   "konu": "1.2.4 Graham Difüzyon ve Eftizyon Yasası",
+   "konu": "1.2.2 Gazların Kinetik Moleküler Teorisi",
    "tema": 1,
    "kodlar": [
-    "KİM.10.1.11"
+    "KİM.10.1.9"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.2.2 bölümü gazların özelliklerini kinetik moleküler teoriyle açıklar (s.94-97); KİM.10.1.9'un model ayağı.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz",
-     "kod": "KİM.10.1.11",
+     "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz",
+     "kod": "KİM.10.1.9",
      "skor": 1
     }
    ]
@@ -2200,43 +2200,59 @@
     "KİM.10.1.10"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 0.875,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 1.2.3 bölümü ideal gaz denklemini ve R sabitini tümevarımla kurar (s.98-105); KİM.10.1.10.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
+     "metin": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz",
      "kod": "KİM.10.1.10",
-     "skor": 0.875
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "kimya_10_u01_k09",
+   "ders": "Kimya",
+   "konu": "1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "tema": 1,
+   "kodlar": [
+    "KİM.10.1.11"
+   ],
+   "guven": "kesin",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Kitabın 1.2.4 bölümü gazların farklı ortamlarda yayılmasını (difüzyon-efüzyon) deney ve Graham yasasıyla verir (s.106-113); KİM.10.1.11.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz",
+     "kod": "KİM.10.1.11",
+     "skor": 1
     }
    ]
   },
   {
    "konu_id": "kimya_10_u02_k01",
    "ders": "Kimya",
-   "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "konu": "2.1.1 Çözünme Süreci",
    "tema": 2,
    "kodlar": [
-    "KİM.10.2.1",
-    "KİM.10.2.2"
+    "KİM.10.2.1"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 2.1.1 bölümü çözünme sürecini üç aşamada ve tanecik düzeyinde modeller (s.151-155); KİM.10.2.1.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,",
+     "metin": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz",
      "kod": "KİM.10.2.1",
-     "skor": 1
-    },
-    {
-     "metin": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,",
-     "kod": "KİM.10.2.2",
      "skor": 1
     }
    ]
@@ -2244,21 +2260,21 @@
   {
    "konu_id": "kimya_10_u02_k02",
    "ders": "Kimya",
-   "konu": "2.1.1 Çözünme Süreci",
+   "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
    "tema": 2,
    "kodlar": [
-    "KİM.10.2.3"
+    "KİM.10.2.2"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.1.2 bölümü maddelerin birbiri içinde çözünebilirliğini polarite kanıtlarıyla açıklar (s.156-163); KİM.10.2.2.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "çözünme olayını sınıflandırabilmeniz,",
-     "kod": "KİM.10.2.3",
+     "metin": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz",
+     "kod": "KİM.10.2.2",
      "skor": 1
     }
    ]
@@ -2269,18 +2285,18 @@
    "konu": "2.1.3 Çözünme Olayının Sınıflandırılması",
    "tema": 2,
    "kodlar": [
-    "KİM.10.2.4"
+    "KİM.10.2.3"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.1.3 bölümü çözünmeyi iyonik/moleküler ve fiziksel/kimyasal olarak sınıflandırır (s.164-171); KİM.10.2.3.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
-     "kod": "KİM.10.2.4",
+     "metin": "çözünme olayını sınıflandırabilmeniz",
+     "kod": "KİM.10.2.3",
      "skor": 1
     }
    ]
@@ -2291,18 +2307,18 @@
    "konu": "2.1.4 Derişim Birimleri (Molarite, ppm)",
    "tema": 2,
    "kodlar": [
-    "KİM.10.2.5"
+    "KİM.10.2.7"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.1.4 bölümü molarite, ppm ve seyreltme hesaplarını verir (s.172-178); KİM.10.2.7.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilmeniz,",
-     "kod": "KİM.10.2.5",
+     "metin": "çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilmeniz",
+     "kod": "KİM.10.2.7",
      "skor": 1
     }
    ]
@@ -2313,18 +2329,84 @@
    "konu": "2.1.5 Çözünürlük",
    "tema": 2,
    "kodlar": [
-    "KİM.10.2.6"
+    "KİM.10.2.4"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
+   "gerekce": "Kitabın 2.1.5 bölümü çözünürlük kavramını 100 g çözücüde çözünen miktar olarak tanımlar (s.179-183); KİM.10.2.4.",
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "çözeltileri sınıflandırabilmeniz,",
+     "metin": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz",
+     "kod": "KİM.10.2.4",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "kimya_10_u02_k06",
+   "ders": "Kimya",
+   "konu": "2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "tema": 2,
+   "kodlar": [
+    "KİM.10.2.5"
+   ],
+   "guven": "kesin",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Kitabın 2.1.6 bölümü madde cinsi, sıcaklık ve basıncın çözünürlüğe etkisini kanıtlarla verir (s.184-191); KİM.10.2.5.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilmeniz",
+     "kod": "KİM.10.2.5",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "kimya_10_u02_k07",
+   "ders": "Kimya",
+   "konu": "2.1.7 Çözeltilerin Sınıflandırılması",
+   "tema": 2,
+   "kodlar": [
+    "KİM.10.2.6"
+   ],
+   "guven": "kesin",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Kitabın 2.1.7 bölümü çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır (s.192-201); KİM.10.2.6.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "çözeltileri sınıflandırabilmeniz",
      "kod": "KİM.10.2.6",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "kimya_10_u02_k08",
+   "ders": "Kimya",
+   "konu": "2.1.8 Koligatif Özellikler",
+   "tema": 2,
+   "kodlar": [
+    "KİM.10.2.8"
+   ],
+   "guven": "kesin",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Kitabın 2.1.8 bölümü tanecik sayısının kaynama/donma noktasına etkisini koligatif özelliklerle verir (s.202-210); KİM.10.2.8.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilmeniz",
+     "kod": "KİM.10.2.8",
      "skor": 1
     }
    ]
@@ -2332,24 +2414,40 @@
   {
    "konu_id": "kimya_10_u03_k01",
    "ders": "Kimya",
+   "konu": "3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "tema": 3,
+   "kodlar": [
+    "KİM.10.3.1"
+   ],
+   "guven": "kesin",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Kitabın 3.1.1 bölümü makro/mikro ölçekli deneyleri atom ekonomisi ve su ayak iziyle karşılaştırır (s.238-246); KİM.10.3.1.",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz",
+     "kod": "KİM.10.3.1",
+     "skor": 1
+    }
+   ]
+  },
+  {
+   "konu_id": "kimya_10_u03_k02",
+   "ders": "Kimya",
    "konu": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "tema": 3,
    "kodlar": [
-    "KİM.10.3.1",
     "KİM.10.3.2"
    ],
    "guven": "kesin",
-   "yontem": "kazanim-metni",
-   "skor": 1,
+   "yontem": "elle-dogrulama",
+   "skor": 0,
    "uyari": "",
-   "gerekce": "",
-   "kazanim_metinleri": 2,
+   "gerekce": "Kitabın 3.1.2 bölümü atmosferdeki tepkimeleri (sera etkisi, asit yağmuru, ozon) küresel sorunlarla ilişkilendirir (s.247-255); KİM.10.3.2.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": [
-    {
-     "metin": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,",
-     "kod": "KİM.10.3.1",
-     "skor": 1
-    },
     {
      "metin": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz",
      "kod": "KİM.10.3.2",
@@ -3899,20 +3997,20 @@
     "KİM.10.1.9"
    ],
    "kod_guven": "kesin",
-   "konu_guven": "kesin"
+   "konu_guven": "coklu"
   },
   {
    "ders": "Kimya",
-   "metin": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz",
-   "norm": "gazlarin farkli ortamlarda yayilmasina iliskin deney yap",
+   "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,",
+   "norm": "gazlarin ozellikleri arasindaki iliskileri bilimsel sorgula",
    "konu_id": "kimya_10_u01_k07",
-   "konu": "1.2.4 Graham Difüzyon ve Eftizyon Yasası",
-   "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Eftizyon Yasası",
+   "konu": "1.2.2 Gazların Kinetik Moleküler Teorisi",
+   "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
    "kodlar": [
-    "KİM.10.1.11"
+    "KİM.10.1.9"
    ],
    "kod_guven": "kesin",
-   "konu_guven": "kesin"
+   "konu_guven": "coklu"
   },
   {
    "ders": "Kimya",
@@ -3929,11 +4027,24 @@
   },
   {
    "ders": "Kimya",
+   "metin": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz,",
+   "norm": "gazlarin farkli ortamlarda yayilmasina iliskin deney yap",
+   "konu_id": "kimya_10_u01_k09",
+   "konu": "1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "kodlar": [
+    "KİM.10.1.11"
+   ],
+   "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Kimya",
    "metin": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,",
    "norm": "cozunme surecine iliskin bilimsel model olustur",
    "konu_id": "kimya_10_u02_k01",
-   "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
-   "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "konu": "2.1.1 Çözünme Süreci",
+   "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
    "kodlar": [
     "KİM.10.2.1"
    ],
@@ -3944,7 +4055,7 @@
    "ders": "Kimya",
    "metin": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,",
    "norm": "farkli maddelerin birbiri icinde cozunebilirligini kanit kullanarak acikla",
-   "konu_id": "kimya_10_u02_k01",
+   "konu_id": "kimya_10_u02_k02",
    "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
    "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
    "kodlar": [
@@ -3957,9 +4068,9 @@
    "ders": "Kimya",
    "metin": "çözünme olayını sınıflandırabilmeniz,",
    "norm": "cozunme olayini siniflandir",
-   "konu_id": "kimya_10_u02_k02",
-   "konu": "2.1.1 Çözünme Süreci",
-   "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
+   "konu_id": "kimya_10_u02_k03",
+   "konu": "2.1.3 Çözünme Olayının Sınıflandırılması",
+   "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması",
    "kodlar": [
     "KİM.10.2.3"
    ],
@@ -3968,11 +4079,24 @@
   },
   {
    "ders": "Kimya",
+   "metin": "çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilmeniz,",
+   "norm": "cozeltilerin molar derisimine iliskin tumevarimsal akil yurut",
+   "konu_id": "kimya_10_u02_k04",
+   "konu": "2.1.4 Derişim Birimleri (Molarite, ppm)",
+   "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
+   "kodlar": [
+    "KİM.10.2.7"
+   ],
+   "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Kimya",
    "metin": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
    "norm": "cozunurluk kavramina iliskin operasyonel tanimlama yap",
-   "konu_id": "kimya_10_u02_k03",
-   "konu": "2.1.3 Çözünme Olayının Sınıflandırılması",
-   "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması",
+   "konu_id": "kimya_10_u02_k05",
+   "konu": "2.1.5 Çözünürlük",
+   "topic_key": "Kimya > 2.1.5 Çözünürlük",
    "kodlar": [
     "KİM.10.2.4"
    ],
@@ -3983,9 +4107,9 @@
    "ders": "Kimya",
    "metin": "çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilmeniz,",
    "norm": "cozunurluge etki eden faktorleri belirlemeye yonelik kanit kullan",
-   "konu_id": "kimya_10_u02_k04",
-   "konu": "2.1.4 Derişim Birimleri (Molarite, ppm)",
-   "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
+   "konu_id": "kimya_10_u02_k06",
+   "konu": "2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "topic_key": "Kimya > 2.1.6 Çözünürlüğe Etki Eden Faktörler",
    "kodlar": [
     "KİM.10.2.5"
    ],
@@ -3996,11 +4120,24 @@
    "ders": "Kimya",
    "metin": "çözeltileri sınıflandırabilmeniz,",
    "norm": "cozeltileri siniflandir",
-   "konu_id": "kimya_10_u02_k05",
-   "konu": "2.1.5 Çözünürlük",
-   "topic_key": "Kimya > 2.1.5 Çözünürlük",
+   "konu_id": "kimya_10_u02_k07",
+   "konu": "2.1.7 Çözeltilerin Sınıflandırılması",
+   "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
    "kodlar": [
     "KİM.10.2.6"
+   ],
+   "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Kimya",
+   "metin": "çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilmeniz,",
+   "norm": "cozunen maddenin tanecik sayisinin cozeltilerin kaynama ve donma noktasina etkisini belirlemeye yonelik hipotez olustur",
+   "konu_id": "kimya_10_u02_k08",
+   "konu": "2.1.8 Koligatif Özellikler",
+   "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
+   "kodlar": [
+    "KİM.10.2.8"
    ],
    "kod_guven": "kesin",
    "konu_guven": "kesin"
@@ -4010,8 +4147,8 @@
    "metin": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,",
    "norm": "kimya dersinde mikro olcekli deney tercih etmenin sonuclarini ekosistem acisindan degerlendir",
    "konu_id": "kimya_10_u03_k01",
-   "konu": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
-   "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+   "konu": "3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler",
    "kodlar": [
     "KİM.10.3.1"
    ],
@@ -4020,9 +4157,9 @@
   },
   {
    "ders": "Kimya",
-   "metin": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz",
+   "metin": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz,",
    "norm": "kimyasal tepkimeler sonucunda atmosferin dogasindaki degisimin ekosisteme etkilerine yonelik problem coz",
-   "konu_id": "kimya_10_u03_k01",
+   "konu_id": "kimya_10_u03_k02",
    "konu": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "kodlar": [

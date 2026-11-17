@@ -2,250 +2,255 @@
   "konu_id": "kimya_10_u01_k03",
   "sinif": 10,
   "ders": "Kimya",
-  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "baslik": "1.1.3 Mol Kavramı",
+  "topic_key": "Kimya > 1.1.3 Mol Kavramı",
+  "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar.",
+  "kaynak": "Kimya 10 ders kitabı, s.47-60",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "kimya_10_u01_k03_o01",
-      "alt_beceri": "Mol Kavramı",
-      "metin": "Bir soy gaz dolum hattında iki ayrı referans kabına 1 mol Kr atomu ve 1 mol Xe atomu yerleştiriliyor. Mol kütleleri sırasıyla 84 g/mol ve 131 g/mol olduğuna göre örneklerle ilgili hangi yargı doğrudur?",
+      "alt_beceri": "Avogadro sayısı ile mol ilişkisini açıklar.",
+      "metin": "Bir mol maddede kaç tanecik bulunur?",
       "secenekler": [
-        "Aynı sayıda atom içerirler; kütleleri farklıdır.",
-        "Aynı kütleye sahiptirler; atom sayıları farklıdır.",
-        "R örneği daha çok atom içerir ve daha ağırdır.",
-        "S örneğinin atom sayısı ve kütlesi daha azdır."
+        "6,02 · 10²²",
+        "6,02 · 10²³",
+        "1,00 · 10²³",
+        "3,01 · 10²³"
       ],
-      "dogru_index": 0,
-      "cozum": "Her iki kapta da 1 mol atom bulunduğundan atom sayıları eşittir. Kr ve Xe mol kütleleri farklı olduğu için örneklerin kütleleri farklıdır.",
+      "dogru_index": 1,
+      "cozum": "Bir mol, 6,02 · 10²³ tanecik içerir (Avogadro sayısı) (s.50-57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir molün içerdiği tanecik sayısını ve bu sayının adını yazınız.",
-        "back": "Bir mol 6,02 × 10²³ tane tanecik içerir. Bu sayıya Avogadro sayısı denir."
+        "front": "1 mol kaç taneciktir?",
+        "back": "6,02 · 10²³"
       },
-      "kazanim": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o02",
-      "alt_beceri": "Mol Kavramı",
-      "metin": "1 mol O₂ molekülü içeren bir örnekte kaç O₂ molekülü bulunur?",
+      "alt_beceri": "Avogadro sayısı ile mol ilişkisini açıklar.",
+      "metin": "Mol sayısı, kütle ve mol kütlesi arasındaki bağıntı hangisidir?",
       "secenekler": [
-        "3,01 × 10²³",
-        "6,02 × 10²³",
-        "1,204 × 10²⁴",
-        "12,04 × 10²³"
+        "n = m · MA",
+        "n = MA / m",
+        "n = m + MA",
+        "n = m / MA"
       ],
-      "dogru_index": 1,
-      "cozum": "Bir mol, Avogadro sayısı kadar tanecik içerir; bu nedenle örnekte 6,02 × 10²³ O₂ molekülü vardır. Molekül başına iki atom bulunması molekül sayısını değiştirmez.",
+      "dogru_index": 3,
+      "cozum": "Kitapta n = m / MA bağıntısı verilir; MA mol kütlesidir (s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Avogadro sayısının sembolünü ve değerini belirtiniz.",
-        "back": "Avogadro sayısı Nₐ sembolüyle gösterilir ve 6,02 × 10²³ değerindedir."
+        "front": "Mol sayısı nasıl bulunur?",
+        "back": "n = m / MA"
       },
-      "kazanim": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o03",
-      "alt_beceri": "Mol Kavramı",
-      "metin": "18,06 × 10²³ tane toplam atom içeren bir örnekteki atom miktarı kaç moldür? (Nₐ = 6,02 × 10²³ mol⁻¹)",
+      "alt_beceri": "Avogadro sayısı ile mol ilişkisini açıklar.",
+      "metin": "Mol kavramının kimyada kullanılma nedeni nedir?",
       "secenekler": [
-        "1 mol",
-        "2 mol",
-        "3 mol",
-        "4 mol"
+        "Tanecikleri tek tek saymak yerine belirli sayıda tanecikle çalışmayı sağlaması",
+        "Kütleyi ortadan kaldırması",
+        "Sıcaklığı ölçmesi",
+        "Hacmi sabitlemesi"
       ],
-      "dogru_index": 2,
-      "cozum": "Mol sayısı N/Nₐ ile bulunur: 18,06×10²³ / 6,02×10²³ = 3 mol atom.",
+      "dogru_index": 0,
+      "cozum": "Atomları tek tek saymak pratik olmadığından mol, madde miktarını belirli sayıda tanecikle ilişkilendirir (s.50-51, s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tanecik sayısından mol sayısına geçiş bağıntısını yazınız.",
-        "back": "n = N / Nₐ bağıntısında n mol sayısını, N tanecik sayısını, Nₐ Avogadro sayısını gösterir."
+        "front": "Mol neden kullanılır?",
+        "back": "Tanecikleri saymak yerine miktarı ifade etmek için."
       },
-      "kazanim": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o04",
-      "alt_beceri": "Mol Kavramı",
-      "metin": "1 mol SO₂ molekülünde toplam kaç mol atom bulunur?",
+      "alt_beceri": "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar.",
+      "metin": "126 g nitrik asit (HNO3) kaç moldür? (H:1, N:14, O:16)",
       "secenekler": [
-        "1 mol",
-        "2 mol",
-        "4 mol",
-        "3 mol"
+        "1",
+        "3",
+        "2",
+        "4"
       ],
-      "dogru_index": 3,
-      "cozum": "SO₂ molekülünde 1 kükürt ve 2 oksijen atomu, toplam 3 atom vardır. Bu nedenle 1 mol SO₂ molekülü 3 mol atom içerir.",
+      "dogru_index": 2,
+      "cozum": "MA = 1 + 14 + 3·16 = 63 g/mol; n = 126/63 = 2 mol (kitabın örneği, s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bileşiğin formülündeki alt indisleri kullanarak bir mol moleküldeki toplam mol atom sayısını nasıl bulursunuz?",
-        "back": "Formüldeki atom alt indisleri toplanır. Örneğin SO₂ molekülünde toplam 3 atom vardır; bu nedenle 1 mol SO₂ molekülü 3 mol atom içerir."
+        "front": "126 g HNO3 kaç moldür?",
+        "back": "2 mol"
       },
-      "kazanim": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o05",
-      "alt_beceri": "Mol Kavramı",
-      "metin": "Bir analitik teraziyle bir kimyasal örnek doğrudan tartılıyor. Terazinin doğrudan ölçtüğü büyüklük hangisidir?",
+      "alt_beceri": "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar.",
+      "metin": "12,04 · 10²³ tane atom içeren CH4 kaç moldür?",
       "secenekler": [
-        "Kütle",
-        "Mol sayısı",
-        "Tanecik sayısı",
-        "Avogadro sayısı"
+        "1",
+        "4",
+        "12",
+        "2"
       ],
-      "dogru_index": 0,
-      "cozum": "Analitik terazi maddenin kütlesini ölçer; mol sayısını veya tanecik sayısını doğrudan ölçmez. Mol sayısı, ölçülen kütle kullanılarak hesaplanabilir.",
+      "dogru_index": 3,
+      "cozum": "n = N/NA = 12,04·10²³ / 6,02·10²³ = 2 mol (s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kimyasal tepkimelerde mol kullanılması hangi iki kolaylığı sağlar?",
-        "back": "Mol, çok sayıdaki atom veya molekülle çalışmayı kolaylaştırır ve farklı maddelerin miktarlarını karşılaştırmak için tutarlı bir yol sağlar."
+        "front": "12,04·10²³ tanecik kaç moldür?",
+        "back": "2 mol"
       },
-      "kazanim": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o06",
-      "alt_beceri": "Mol Kavramı",
-      "metin": "X ve Y atomlarının proton sayıları aynı, nötron sayıları farklıdır. Bu atomlar arasındaki ilişki nasıl adlandırılır?",
+      "alt_beceri": "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar.",
+      "metin": "108 g gümüş (Ag) kaç moldür? (Ag: 108 g/mol)",
       "secenekler": [
-        "İyon çifti",
-        "İzotop atomlar",
-        "Farklı elementler",
-        "Moleküler gösterimler"
+        "2",
+        "1",
+        "0,5",
+        "108"
       ],
       "dogru_index": 1,
-      "cozum": "Proton sayısı aynı, nötron sayısı farklı atomlar aynı elementin izotoplarıdır. Nötron sayısındaki fark kütle numaralarının farklı olmasına yol açar.",
+      "cozum": "n = 108/108 = 1 mol (kitaptaki 1 mol = 108 g Ag bilgisi, s.54).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İzotop atomları proton ve nötron sayıları bakımından tanımlayınız.",
-        "back": "Proton sayıları aynı, nötron sayıları farklı olan atomlara izotop atomlar denir. İzotop atomlar aynı elementin farklı kütle numaralarına sahiptir."
+        "front": "n = m/MA bağıntısındaki MA neyi gösterir?",
+        "back": "Mol kütlesini (g/mol)."
       },
-      "kazanim": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o07",
-      "alt_beceri": "Saf Maddelerin Ölçülebilir Özellikleri",
-      "metin": "1 mol CO gazının mol kütlesi 28 g/mol olduğuna göre 1 mol CO örneğinin kütlesi kaç gramdır?",
+      "alt_beceri": "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar.",
+      "metin": "0,5 mol CO2 kaç gramdır? (C:12, O:16)",
       "secenekler": [
-        "12 g",
-        "16 g",
-        "28 g",
-        "44 g"
+        "22",
+        "44",
+        "11",
+        "88"
       ],
-      "dogru_index": 2,
-      "cozum": "1 mol örneğin kütlesi mol kütlesine eşittir; m=nM=1×28=28 g.",
+      "dogru_index": 0,
+      "cozum": "MA(CO2) = 12 + 32 = 44 g/mol; m = 0,5 · 44 = 22 g (s.57-59).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mol kütlesini tanımlayınız ve hangi sembolle gösterildiğini yazınız.",
-        "back": "Bir mol maddenin kütlesine mol kütlesi denir ve Mₐ ile gösterilir."
+        "front": "Kütle mol sayısından nasıl bulunur?",
+        "back": "m = n·MA bağıntısıyla."
       },
-      "kazanim": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o08",
-      "alt_beceri": "Saf Maddelerin Ölçülebilir Özellikleri",
-      "metin": "C₂H₆O bileşiğinin mol kütlesi kaç g/mol’dür? (C: 12, H: 1, O: 16 g/mol)",
+      "alt_beceri": "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar.",
+      "metin": "1 mol C ile 1 mol Cu için hangisi doğrudur?",
       "secenekler": [
-        "30",
-        "32",
-        "60",
-        "46"
+        "Kütleleri eşittir",
+        "Atom sayıları farklıdır",
+        "Aynı sayıda atom içerirler, kütleleri farklıdır",
+        "İkisi de 12 g'dır"
       ],
-      "dogru_index": 3,
-      "cozum": "M(C₂H₆O)=2×12+6×1+16=46 g/mol.",
+      "dogru_index": 2,
+      "cozum": "Kitaptaki temsilî görsele göre farklı elementlerin birer molleri aynı sayıda atom içerir; kütleleri mol kütlesine göre değişir (1 mol C = 12 g, 1 mol Cu = 63,5 g) (s.54).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir bileşiğin mol kütlesini formülünden hesaplamak için izlenen basamakları sıralayınız.",
-        "back": "Her elementin atom sayısı belirlenir; atom kütlesi bu sayıyla çarpılarak elementin toplam kütlesi bulunur. Elementlerin toplam kütleleri toplanarak bileşiğin mol kütlesi hesaplanır."
+        "front": "1 mol C ile 1 mol Cu'nun atom sayısı eşit mi?",
+        "back": "Evet; kütleleri farklıdır."
       },
-      "kazanim": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o09",
-      "alt_beceri": "Saf Maddelerin Ölçülebilir Özellikleri",
-      "metin": "Mol kütlesi 17 g/mol olan NH₃’ün 85 g’ı kaç moldür?",
+      "alt_beceri": "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar.",
+      "metin": "2 mol H2O kaç tane molekül içerir?",
       "secenekler": [
-        "5 mol",
-        "2 mol",
-        "0,2 mol",
-        "17 mol"
+        "6,02 · 10²³",
+        "12,04 · 10²³",
+        "3,01 · 10²³",
+        "2 · 10²³"
       ],
-      "dogru_index": 0,
-      "cozum": "Mol sayısı n = m / Mₐ bağıntısıyla bulunur. Burada m = 85 g, Mₐ = 17 g/mol olduğundan n = 85/17 = 5 mol olur.",
+      "dogru_index": 1,
+      "cozum": "N = n · NA = 2 · 6,02·10²³ = 12,04·10²³ molekül (s.57-59).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kütle, mol kütlesi ve mol sayısı arasındaki bağıntıyı mol sayısını bulacak biçimde yazınız.",
-        "back": "n = m / Mₐ bağıntısında n mol sayısı, m kütle, Mₐ mol kütlesidir."
+        "front": "2 mol su kaç moleküldür?",
+        "back": "12,04 · 10²³"
       },
-      "kazanim": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
     {
       "soru_id": "kimya_10_u01_k03_o10",
-      "alt_beceri": "Saf Maddelerin Ölçülebilir Özellikleri",
-      "metin": "Bir hava kalitesi laboratuvarı kapalı bir gaz örneğinde 3,01 × 10²³ tane NO₂ molekülü sayıyor. Nₐ = 6,02 × 10²³ mol⁻¹ olduğuna göre örnekteki NO₂ miktarı kaç moldür?",
+      "alt_beceri": "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar.",
+      "metin": "36 g su kaç moldür? (H:1, O:16)",
       "secenekler": [
-        "2 mol",
-        "0,5 mol",
-        "1 mol",
-        "0,25 mol"
+        "1",
+        "18",
+        "36",
+        "2"
       ],
-      "dogru_index": 1,
-      "cozum": "Madde miktarı n=N/Nₐ bağıntısıyla bulunur: 3,01×10²³ / 6,02×10²³ = 0,5 mol NO₂.",
+      "dogru_index": 3,
+      "cozum": "MA(H2O) = 18 g/mol; n = 36/18 = 2 mol (s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir örneğin tanecik sayısından mol sayısını bulmak için hangi oran kullanılır?",
-        "back": "Tanecik sayısı Avogadro sayısına bölünür: n = N / Nₐ."
+        "front": "Mol sayısı kütleden nasıl bulunur?",
+        "back": "n = m/MA bağıntısıyla."
       },
-      "kazanim": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz,"
+      "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     }
   ],
   "flashcards": [
     {
       "id": "kimya_10_u01_k03_o01:flashcard",
-      "front": "Bir molün içerdiği tanecik sayısını ve bu sayının adını yazınız.",
-      "back": "Bir mol 6,02 × 10²³ tane tanecik içerir. Bu sayıya Avogadro sayısı denir."
+      "front": "1 mol kaç taneciktir?",
+      "back": "6,02 · 10²³"
     },
     {
       "id": "kimya_10_u01_k03_o02:flashcard",
-      "front": "Avogadro sayısının sembolünü ve değerini belirtiniz.",
-      "back": "Avogadro sayısı Nₐ sembolüyle gösterilir ve 6,02 × 10²³ değerindedir."
+      "front": "Mol sayısı nasıl bulunur?",
+      "back": "n = m / MA"
     },
     {
       "id": "kimya_10_u01_k03_o03:flashcard",
-      "front": "Tanecik sayısından mol sayısına geçiş bağıntısını yazınız.",
-      "back": "n = N / Nₐ bağıntısında n mol sayısını, N tanecik sayısını, Nₐ Avogadro sayısını gösterir."
+      "front": "Mol neden kullanılır?",
+      "back": "Tanecikleri saymak yerine miktarı ifade etmek için."
     },
     {
       "id": "kimya_10_u01_k03_o04:flashcard",
-      "front": "Bileşiğin formülündeki alt indisleri kullanarak bir mol moleküldeki toplam mol atom sayısını nasıl bulursunuz?",
-      "back": "Formüldeki atom alt indisleri toplanır. Örneğin SO₂ molekülünde toplam 3 atom vardır; bu nedenle 1 mol SO₂ molekülü 3 mol atom içerir."
+      "front": "126 g HNO3 kaç moldür?",
+      "back": "2 mol"
     },
     {
       "id": "kimya_10_u01_k03_o05:flashcard",
-      "front": "Kimyasal tepkimelerde mol kullanılması hangi iki kolaylığı sağlar?",
-      "back": "Mol, çok sayıdaki atom veya molekülle çalışmayı kolaylaştırır ve farklı maddelerin miktarlarını karşılaştırmak için tutarlı bir yol sağlar."
+      "front": "12,04·10²³ tanecik kaç moldür?",
+      "back": "2 mol"
     },
     {
       "id": "kimya_10_u01_k03_o06:flashcard",
-      "front": "İzotop atomları proton ve nötron sayıları bakımından tanımlayınız.",
-      "back": "Proton sayıları aynı, nötron sayıları farklı olan atomlara izotop atomlar denir. İzotop atomlar aynı elementin farklı kütle numaralarına sahiptir."
+      "front": "n = m/MA bağıntısındaki MA neyi gösterir?",
+      "back": "Mol kütlesini (g/mol)."
     },
     {
       "id": "kimya_10_u01_k03_o07:flashcard",
-      "front": "Mol kütlesini tanımlayınız ve hangi sembolle gösterildiğini yazınız.",
-      "back": "Bir mol maddenin kütlesine mol kütlesi denir ve Mₐ ile gösterilir."
+      "front": "Kütle mol sayısından nasıl bulunur?",
+      "back": "m = n·MA bağıntısıyla."
     },
     {
       "id": "kimya_10_u01_k03_o08:flashcard",
-      "front": "Bir bileşiğin mol kütlesini formülünden hesaplamak için izlenen basamakları sıralayınız.",
-      "back": "Her elementin atom sayısı belirlenir; atom kütlesi bu sayıyla çarpılarak elementin toplam kütlesi bulunur. Elementlerin toplam kütleleri toplanarak bileşiğin mol kütlesi hesaplanır."
+      "front": "1 mol C ile 1 mol Cu'nun atom sayısı eşit mi?",
+      "back": "Evet; kütleleri farklıdır."
     },
     {
       "id": "kimya_10_u01_k03_o09:flashcard",
-      "front": "Kütle, mol kütlesi ve mol sayısı arasındaki bağıntıyı mol sayısını bulacak biçimde yazınız.",
-      "back": "n = m / Mₐ bağıntısında n mol sayısı, m kütle, Mₐ mol kütlesidir."
+      "front": "2 mol su kaç moleküldür?",
+      "back": "12,04 · 10²³"
     },
     {
       "id": "kimya_10_u01_k03_o10:flashcard",
-      "front": "Bir örneğin tanecik sayısından mol sayısını bulmak için hangi oran kullanılır?",
-      "back": "Tanecik sayısı Avogadro sayısına bölünür: n = N / Nₐ."
+      "front": "Mol sayısı kütleden nasıl bulunur?",
+      "back": "n = m/MA bağıntısıyla."
     }
-  ],
-  "topic_key": "Kimya > 1.1.3 Mol Kavramı"
+  ]
 }

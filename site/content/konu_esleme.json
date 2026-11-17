@@ -1,7 +1,7 @@
 {
  "surum": "2026-10-28",
  "aciklama": "Okulizyon kazanım metinlerini uygulamanın konu başlıklarına eşlemek için arama indeksi. scripts/konu-esleme-uret.js üretir; elle düzenlenmez.",
- "havuz_sayisi": 156,
+ "havuz_sayisi": 161,
  "alt_beceri_sayisi": 258,
  "havuzlar": [
   {
@@ -898,7 +898,7 @@
    "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu",
    "konu": "1.1.1 Kimyasal Tepkimelerin Oluşumu",
    "soru": 10,
-   "metin": "1.1.1 Kimyasal Tepkimelerin Oluşumu · Kimyasal Değişim · Kimyasal Değişim · Kimyasal Tepkimeler · Kimyasal Tepkimelerin Oluşum Sürecini Modelleme · Kimyasal Değişim · Kimyasal Tepkimeler · Kimyasal Tepkimelerin Oluşum Sürecini Modelleme"
+   "metin": "1.1.1 Kimyasal Tepkimelerin Oluşumu · 1.1.1 Kimyasal Tepkimelerin Oluşumu · Kimyasal değişimin göstergelerini ayırt eder. · Tepkime denkleminde tepken, ürün ve katalizörü belirler."
   },
   {
    "konu_id": "kimya_10_u01_k02",
@@ -906,7 +906,7 @@
    "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri",
    "konu": "1.1.2 Kimyasal Tepkime Türleri",
    "soru": 10,
-   "metin": "1.1.2 Kimyasal Tepkime Türleri · Asit-Baz Tepkimeleri · Asit-Baz Tepkimeleri · Çökelme Tepkimeleri · İndirgenme-Yükseltgenme Tepkimeleri · Çökelme Tepkimeleri · İndirgenme-Yükseltgenme Tepkimeleri · Asit-Baz Tepkimeleri"
+   "metin": "1.1.2 Kimyasal Tepkime Türleri · 1.1.2 Kimyasal Tepkime Türleri · Tepkime türlerini örnekleriyle açıklar. · Net iyon denklemini ve seyirci iyonları belirler."
   },
   {
    "konu_id": "kimya_10_u01_k03",
@@ -914,7 +914,7 @@
    "topic_key": "Kimya > 1.1.3 Mol Kavramı",
    "konu": "1.1.3 Mol Kavramı",
    "soru": 10,
-   "metin": "1.1.3 Mol Kavramı · Mol Kavramı · Mol Kavramı · Saf Maddelerin Ölçülebilir Özellikleri · Mol Kavramı · Saf Maddelerin Ölçülebilir Özellikleri"
+   "metin": "1.1.3 Mol Kavramı · 1.1.3 Mol Kavramı · Avogadro sayısı ile mol ilişkisini açıklar. · Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar."
   },
   {
    "konu_id": "kimya_10_u01_k04",
@@ -922,7 +922,7 @@
    "topic_key": "Kimya > 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
    "konu": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
    "soru": 10,
-   "metin": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi · 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi · kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz,"
+   "metin": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi · 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi · Denkleştirmede korunan nicelikleri açıklar. · Verilen tepkime denklemini denkleştirir."
   },
   {
    "konu_id": "kimya_10_u01_k05",
@@ -930,23 +930,23 @@
    "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
    "konu": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
    "soru": 10,
-   "metin": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar · 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar · kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+   "metin": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar · 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar · Katsayı oranından mol hesaplar. · Kütle ve verim hesaplamaları yapar."
   },
   {
    "konu_id": "kimya_10_u01_k06",
    "ders": "Kimya",
    "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları",
    "konu": "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
-   "soru": 12,
-   "metin": "1.2.1 Gazların Özellikleri ve Gaz Yasaları · Basınç-Hacim İlişkisi (Boyle Yasası) · Basınç-Hacim İlişkisi (Boyle Yasası) · Basınç-Sıcaklık İlişkisi (Gay Lusssac Yasası) · Gazların Kinetik Moleküler Teorisi · Gazların Özellikleri · Hacim-Madde Miktarı İlişkisi (Avogadro Yasası) · Sıcaklık-Hacim İlişkisi (Charles Yasası) · Gazların Kinetik Moleküler Teorisi · Gazların Özellikleri · Basınç-Hacim İlişkisi (Boyle Yasası) · Sıcaklık-Hacim İlişkisi (Charles Yasası) · Basınç-Sıcaklık İlişkisi (Gay Lusssac Yasası) · Hacim-Madde Miktarı İlişkisi (Avogadro Yasası)"
+   "soru": 10,
+   "metin": "1.2.1 Gazların Özellikleri ve Gaz Yasaları · 1.2.1 Gazların Özellikleri ve Gaz Yasaları · Gazların özelliklerini ve birimlerini açıklar. · Gaz yasalarıyla hesaplama yapar."
   },
   {
    "konu_id": "kimya_10_u01_k07",
    "ders": "Kimya",
-   "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Eftizyon Yasası",
-   "konu": "1.2.4 Graham Difüzyon ve Eftizyon Yasası",
+   "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
+   "konu": "1.2.2 Gazların Kinetik Moleküler Teorisi",
    "soru": 10,
-   "metin": "1.2.4 Graham Difüzyon ve Eftizyon Yasası · Efüzyon ve Difüzyon · Efüzyon ve Difüzyon · Graham Difüzyon ve Efüzyon Yasası · Graham Difüzyon ve Efüzyon Yasası · Efüzyon ve Difüzyon"
+   "metin": "1.2.2 Gazların Kinetik Moleküler Teorisi · 1.2.2 Gazların Kinetik Moleküler Teorisi · Kinetik moleküler teorinin varsayımlarını açıklar. · Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar."
   },
   {
    "konu_id": "kimya_10_u01_k08",
@@ -954,23 +954,31 @@
    "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası",
    "konu": "1.2.3 İdeal Gaz Yasası",
    "soru": 10,
-   "metin": "1.2.3 İdeal Gaz Yasası · 1.2.3 İdeal Gaz Yasası · ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+   "metin": "1.2.3 İdeal Gaz Yasası · 1.2.3 İdeal Gaz Yasası · İdeal gaz denklemini ve sabitini açıklar. · İdeal gaz denklemiyle nicelik hesaplar."
+  },
+  {
+   "konu_id": "kimya_10_u01_k09",
+   "ders": "Kimya",
+   "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "konu": "1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "soru": 10,
+   "metin": "1.2.4 Graham Difüzyon ve Efüzyon Yasası · 1.2.4 Graham Difüzyon ve Efüzyon Yasası · Difüzyon ve efüzyon kavramlarını açıklar. · Graham Yasası ile hız oranı hesaplar."
   },
   {
    "konu_id": "kimya_10_u02_k01",
    "ders": "Kimya",
-   "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
-   "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
+   "konu": "2.1.1 Çözünme Süreci",
    "soru": 10,
-   "metin": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği · Maddelerin Birbiri İçindeki Çözünebilirliği · Maddelerin Birbiri İçindeki Çözünebilirliği · Çözünme Süreci · Çözünme Süreci · Maddelerin Birbiri İçindeki Çözünebilirliği"
+   "metin": "2.1.1 Çözünme Süreci · 2.1.1 Çözünme Süreci · Çözünme sürecinin aşamalarını sıralar. · Çözünmede etkili etkileşimleri yorumlar."
   },
   {
    "konu_id": "kimya_10_u02_k02",
    "ders": "Kimya",
-   "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
-   "konu": "2.1.1 Çözünme Süreci",
+   "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
    "soru": 10,
-   "metin": "2.1.1 Çözünme Süreci · Fiziksel Çözünme · Fiziksel Çözünme · Kimyasal Çözünme · Moleküler Çözünme · İyonik Çözünme · İyonik Çözünme · Moleküler Çözünme · Kimyasal Çözünme · Fiziksel Çözünme"
+   "metin": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği · 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği · Polar-apolar yapı ile çözünürlük ilişkisini açıklar. · Günlük yaşam örneklerini çözünürlükle yorumlar."
   },
   {
    "konu_id": "kimya_10_u02_k03",
@@ -978,7 +986,7 @@
    "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması",
    "konu": "2.1.3 Çözünme Olayının Sınıflandırılması",
    "soru": 10,
-   "metin": "2.1.3 Çözünme Olayının Sınıflandırılması · 2.1.3 Çözünme Olayının Sınıflandırılması · çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+   "metin": "2.1.3 Çözünme Olayının Sınıflandırılması · 2.1.3 Çözünme Olayının Sınıflandırılması · Çözünme türlerini örnekleriyle ayırt eder. · Çözünme türünü denklemden belirler."
   },
   {
    "konu_id": "kimya_10_u02_k04",
@@ -986,7 +994,7 @@
    "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
    "konu": "2.1.4 Derişim Birimleri (Molarite, ppm)",
    "soru": 10,
-   "metin": "2.1.4 Derişim Birimleri (Molarite, ppm) · 2.1.4 Derişim Birimleri (Molarite, ppm) · çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilmeniz,"
+   "metin": "2.1.4 Derişim Birimleri (Molarite, ppm) · 2.1.4 Derişim Birimleri (Molarite, ppm) · Molarite ve ppm kavramlarını açıklar. · Derişim ve seyreltme hesaplarını yapar."
   },
   {
    "konu_id": "kimya_10_u02_k05",
@@ -994,15 +1002,47 @@
    "topic_key": "Kimya > 2.1.5 Çözünürlük",
    "konu": "2.1.5 Çözünürlük",
    "soru": 10,
-   "metin": "2.1.5 Çözünürlük · Aşırı Doymuş Çözelti · Aşırı Doymuş Çözelti · Doymamış Çözelti · Doymuş Çözelti · Elektrolit Olmayan Çözelti · Elektrolit Çözelti · Elektrolit Çözelti · Elektrolit Olmayan Çözelti · Doymamış Çözelti · Doymuş Çözelti · Aşırı Doymuş Çözelti"
+   "metin": "2.1.5 Çözünürlük · 2.1.5 Çözünürlük · Çözünürlük kavramını açıklar. · Çözünürlük verilerini yorumlar."
+  },
+  {
+   "konu_id": "kimya_10_u02_k06",
+   "ders": "Kimya",
+   "topic_key": "Kimya > 2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "konu": "2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "soru": 10,
+   "metin": "2.1.6 Çözünürlüğe Etki Eden Faktörler · 2.1.6 Çözünürlüğe Etki Eden Faktörler · Faktörlerin katı ve gaz çözünürlüğüne etkisini ayırt eder. · Günlük yaşam olaylarını çözünürlükle açıklar."
+  },
+  {
+   "konu_id": "kimya_10_u02_k07",
+   "ders": "Kimya",
+   "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
+   "konu": "2.1.7 Çözeltilerin Sınıflandırılması",
+   "soru": 10,
+   "metin": "2.1.7 Çözeltilerin Sınıflandırılması · 2.1.7 Çözeltilerin Sınıflandırılması · Elektrolit ve elektrolit olmayan çözeltileri ayırt eder. · Doymamış, doymuş ve aşırı doymuş çözeltileri karşılaştırır."
+  },
+  {
+   "konu_id": "kimya_10_u02_k08",
+   "ders": "Kimya",
+   "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
+   "konu": "2.1.8 Koligatif Özellikler",
+   "soru": 10,
+   "metin": "2.1.8 Koligatif Özellikler · 2.1.8 Koligatif Özellikler · Koligatif özellikleri tanımlar. · Kaynama/donma noktası değişimlerini yorumlar."
   },
   {
    "konu_id": "kimya_10_u03_k01",
    "ders": "Kimya",
+   "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "konu": "3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "soru": 10,
+   "metin": "3.1.1 Makro ve Mikro Ölçekli Deneyler · 3.1.1 Makro ve Mikro Ölçekli Deneyler · Makro ve mikro ölçek kavramlarını açıklar. · Atom ekonomisi ve su ayak izini yorumlar."
+  },
+  {
+   "konu_id": "kimya_10_u03_k02",
+   "ders": "Kimya",
    "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "konu": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "soru": 10,
-   "metin": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar · Atmosferdeki Tepkimeler ve Küresel Sorunlar · Atmosferdeki Tepkimeler ve Küresel Sorunlar · Makro ve Mikro Ölçekli Deneyler · Makro ve Mikro Ölçekli Deneyler · Atmosferdeki Tepkimeler ve Küresel Sorunlar"
+   "metin": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar · 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar · Atmosferdeki temel tepkimeleri tanır. · Küresel sorunların neden ve sonuçlarını ilişkilendirir."
   },
   {
    "konu_id": "mat_10_u01_k01",

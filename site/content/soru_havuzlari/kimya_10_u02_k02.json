@@ -2,250 +2,255 @@
   "konu_id": "kimya_10_u02_k02",
   "sinif": 10,
   "ders": "Kimya",
-  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "baslik": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+  "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+  "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir.",
+  "kaynak": "Kimya 10 ders kitabı, s.156-163",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "kimya_10_u02_k02_o01",
-      "alt_beceri": "İyonik Çözünme",
-      "metin": "SrCl₂(k) → Sr²⁺(suda) + 2Cl⁻(suda) gösterimi hangi çözünme türünü belirtir?",
+      "alt_beceri": "Polar-apolar yapı ile çözünürlük ilişkisini açıklar.",
+      "metin": "Yağda çözünen vitaminler hangileridir?",
       "secenekler": [
-        "İyonik çözünme",
-        "Moleküler çözünme",
-        "Çözücüde kimyasal dönüşüm",
-        "Gaz çözünmesi"
+        "C ve B",
+        "A, D ve K",
+        "Yalnız C",
+        "Yalnız B12"
       ],
-      "dogru_index": 0,
-      "cozum": "SrCl₂ çözeltide Sr²⁺ ve Cl⁻ iyonları hâlinde bulunur. İyonlarına ayrılarak çözünmesi iyonik çözünmedir.",
+      "dogru_index": 1,
+      "cozum": "Kitaba göre A, D ve K gibi yağda çözünen vitaminler apolar, hidrofobik moleküllerdir (s.156).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İyonik çözünmeyi, çözünen taneciklerin çözeltideki durumu bakımından tanımlayınız.",
-        "back": "Bir maddenin çözücü içinde iyonlarına ayrışarak çözünmesine iyonik çözünme denir."
+        "front": "A, D ve K vitaminlerinin ortak özelliği nedir?",
+        "back": "Apolar ve hidrofobiktirler; yağda çözünürler."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o02",
-      "alt_beceri": "İyonik Çözünme",
-      "metin": "Bir sera besin çözeltisinde bulunan Mg²⁺ iyonlarının çevresinde su molekülleri yöneliyor. Mg²⁺ iyonuna dönük olan su molekülünün hangi bölgesidir?",
+      "alt_beceri": "Polar-apolar yapı ile çözünürlük ilişkisini açıklar.",
+      "metin": "C vitamini neden kanda ve hücre içi sıvılarda rahatça dolaşabilir?",
       "secenekler": [
-        "Kısmi pozitif yüklü hidrojen ucu",
-        "Kısmi negatif yüklü oksijen ucu",
-        "Suyun iki ucu da yönelmez",
-        "Yalnız su moleküllerinin nötr merkezi"
+        "Apolar olduğu için",
+        "Yağlı dokularda depolandığı için",
+        "İyonik olduğu için",
+        "Polar ve hidrofilik yapıda olduğu için"
       ],
-      "dogru_index": 1,
-      "cozum": "Mg²⁺ pozitif yüklü bir katyondur. Suyun kısmi negatif yüklü oksijen ucu katyona dönük olur.",
+      "dogru_index": 3,
+      "cozum": "C vitamini polar ve hidrofilik yapısı sayesinde su içeren ortamlarda çözünür (s.156).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Suda çözünen bir tuzun katyon ve anyonları çevresinde su molekülleri nasıl yönelir?",
-        "back": "Suyun kısmi negatif yüklü oksijen ucu katyonları, kısmi pozitif yüklü hidrojen ucu anyonları sarar."
+        "front": "C vitamini neden suda çözünür?",
+        "back": "Polar ve hidrofilik olduğu için."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o03",
-      "alt_beceri": "İyonik Çözünme",
-      "metin": "LiBr(k) → Li⁺(suda) + Br⁻(suda) gösterimi iyonik-moleküler sınıflandırmasına göre nasıl değerlendirilir?",
+      "alt_beceri": "Polar-apolar yapı ile çözünürlük ilişkisini açıklar.",
+      "metin": "Genel çözünürlük kuralı hangisidir?",
       "secenekler": [
-        "Moleküler çözünme",
-        "Kimyasal çözünme",
-        "İyonik çözünme",
-        "Çözünme gerçekleşmez"
+        "Benzer benzeri çözer",
+        "Zıt zıttı çözer",
+        "Büyük küçüğü çözer",
+        "Sıcak soğuğu çözer"
       ],
-      "dogru_index": 2,
-      "cozum": "LiBr suda Li⁺ ve Br⁻ iyonları hâlinde dağılmıştır. Bu gösterim iyonik çözünmeye aittir.",
+      "dogru_index": 0,
+      "cozum": "Polar çözücüler polar maddeleri, apolar çözücüler apolar maddeleri çözer; yani benzer benzeri çözer (s.157-160).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Asit, baz ve tuzların suda çözünürken gösterdiği yaygın tanecik davranışını yazınız.",
-        "back": "Asitler, bazlar ve tuzlar suda genellikle iyonlarına ayrışarak çözünür."
+        "front": "Çözünürlükte temel kural nedir?",
+        "back": "Benzer benzeri çözer."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o04",
-      "alt_beceri": "Moleküler Çözünme",
-      "metin": "Asetonun (C₃H₆O) suda çözünürken molekülleri kimliğini koruyup sıvı boyunca dağılması hangi çözünme türünü gösterir?",
+      "alt_beceri": "Günlük yaşam örneklerini çözünürlükle yorumlar.",
+      "metin": "İyot (I2) hangi çözücüde daha iyi çözünür?",
       "secenekler": [
-        "İyonik çözünme",
-        "Kimyasal çözünme",
-        "Çökelme",
-        "Moleküler çözünme"
+        "Su (polar)",
+        "Tuzlu su",
+        "Karbon tetra klorür (apolar)",
+        "Asitli su"
       ],
-      "dogru_index": 3,
-      "cozum": "Aseton molekülleri çözeltide molekül olarak kalır ve homojen biçimde dağılır. Bu olay moleküler çözünmedir.",
+      "dogru_index": 2,
+      "cozum": "İyot apolar bir maddedir; apolar çözücü olan CCl4'te iyi çözünür, suda çok az çözünür (s.158).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Moleküler çözünmeyi, çözünen kovalent bileşiğin tanecik yapısı bakımından tanımlayınız.",
-        "back": "Kovalent bağlı bileşiklerin moleküllerinin çözücü içinde moleküler hâlde dağılıp homojen karışım oluşturmasına moleküler çözünme denir."
+        "front": "İyodun apolar çözücüde çözünmesinin nedeni nedir?",
+        "back": "Benzer benzeri çözer; iyot apolardır."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o05",
-      "alt_beceri": "Moleküler Çözünme",
-      "metin": "Bir parfüm üretim hattında kovalent yapılı K koku bileşiği etil asetat içinde molekül kimliğini koruyarak homojen dağılıyor. Bu süreç nasıl sınıflandırılır?",
+      "alt_beceri": "Günlük yaşam örneklerini çözünürlükle yorumlar.",
+      "metin": "Tuz (NaCl) hangi tür çözücüde iyi çözünür?",
       "secenekler": [
-        "Moleküler çözünme",
-        "İyonik çözünme",
-        "Kimyasal tepkime",
-        "Çözünmezlik"
+        "Apolar çözücüde",
+        "Yalnız asitlerde",
+        "Yalnız bazlarda",
+        "Polar çözücüde"
       ],
-      "dogru_index": 0,
-      "cozum": "K molekülleri iyonlara ayrışmadan kimliklerini koruyup çözücü içinde homojen dağılır. Bu, moleküler çözünmedir.",
+      "dogru_index": 3,
+      "cozum": "İyonik bileşikler polar çözücülerde (ör. su) iyonlarına ayrışarak çözünür (s.158-160).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Moleküler çözünmede çözünen moleküller ile çözücü tanecikleri arasındaki sonucu açıklayınız.",
-        "back": "Çözünen moleküller birbirinden uzaklaşarak çözücü içinde moleküler hâlde dağılır ve homojen karışım oluşur."
+        "front": "İyonik bileşikler hangi tür çözücüde çözünür?",
+        "back": "Polar çözücüde (iyon-dipol etkileşimi)."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o06",
-      "alt_beceri": "Moleküler Çözünme",
-      "metin": "Kovalent bileşik R, suda çözünürken R molekülleri olarak kalıp sıvı boyunca dağılıyor. Bu olay nasıl sınıflandırılır?",
+      "alt_beceri": "Günlük yaşam örneklerini çözünürlükle yorumlar.",
+      "metin": "Su ile yağ karıştırıldığında neden iki faz oluşur?",
       "secenekler": [
-        "İyonik çözünme",
-        "Moleküler çözünme",
-        "Kimyasal çözünme",
-        "Çökelme"
+        "Yağ sudan ağır olduğu için",
+        "Su polar, yağ apolar olduğu için birbiri içinde çözünmezler",
+        "Su kaynadığı için",
+        "Yağ iyonik olduğu için"
       ],
       "dogru_index": 1,
-      "cozum": "R molekülleri iyonlara ya da yeni maddelere dönüşmeden çözeltide dağılır. Bu, moleküler çözünmedir.",
+      "cozum": "Polar su ile apolar yağ birbiri içinde çözünmez; bu yüzden iki ayrı faz oluşur (s.157-160).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kovalent bağlı bir çözünen suda çözündüğünde molekül yapısı nasıl korunabilir?",
-        "back": "Moleküller kimliklerini koruyarak birbirinden uzaklaşır ve çözücü içinde dağılır. Böylece homojen bir karışım oluşabilir."
+        "front": "Su ve yağ neden karışmaz?",
+        "back": "Polar-apolar uyuşmazlığı."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o07",
-      "alt_beceri": "Kimyasal Çözünme",
-      "metin": "Bir gaz suya verildiğinde çözücüyle etkileşip başlangıçta bulunmayan yeni iyon türleri oluşturuyor. Bu çözünme nasıl sınıflandırılır?",
+      "alt_beceri": "Günlük yaşam örneklerini çözünürlükle yorumlar.",
+      "metin": "Alkolün suda iyi çözünmesinin nedeni nedir?",
       "secenekler": [
-        "Moleküler çözünme",
-        "İyonik çözünme",
-        "Kimyasal çözünme",
-        "Fiziksel çözünme"
+        "Molekülünde hem polar hem apolar kısım bulunması",
+        "Apolar olması",
+        "İyonik olması",
+        "Yoğunluğunun büyük olması"
       ],
-      "dogru_index": 2,
-      "cozum": "Çözünen gaz suyla etkileşerek yeni iyon türleri oluşturmuştur. Yeni kimyasal türler oluştuğu için çözünme kimyasaldır.",
+      "dogru_index": 0,
+      "cozum": "Alkol molekülünün -OH ucu suyla hidrojen bağı kurar; bu nedenle suda iyi çözünür (s.158-161).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kimyasal çözünmeyi çözünen madde ve çözücü arasında gerçekleşen değişim bakımından tanımlayınız.",
-        "back": "Bir maddenin çözücüyle kimyasal etkileşime girerek çözünmesi ve yeni madde türleri oluşturması kimyasal çözünmedir."
+        "front": "Alkol suda neden çözünür?",
+        "back": "-OH ucu suyla etkileşir."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o08",
-      "alt_beceri": "Kimyasal Çözünme",
-      "metin": "Bir su arıtma laboratuvarında yeni bir katkı maddesi J sulu banyoya ekleniyor. Analiz, J taneciklerinin suyla etkileşip çözeltide daha önce bulunmayan K⁺ ve L⁻ iyonlarına dönüştüğünü; çözeltide değişmeden kalan J moleküllerinin bulunmadığını gösteriyor. Bu çözünme nasıl sınıflandırılır?",
+      "alt_beceri": "Günlük yaşam örneklerini çözünürlükle yorumlar.",
+      "metin": "Aşağıdaki madde çiftlerinden hangisi birbiri içinde en iyi çözünür?",
       "secenekler": [
-        "İyonik çözünme; çünkü başlangıçtaki katı iyonik yapılıdır.",
-        "Moleküler çözünme; J molekülleri kimliğini koruyarak dağılır.",
-        "Fiziksel çözünme; yeni türler oluşmasına rağmen maddenin kimliği değişmez.",
-        "Kimyasal çözünme; çözücüyle etkileşim sonucu yeni türler oluşmuştur."
+        "Su ve zeytinyağı",
+        "Su ve benzin",
+        "Su ve şeker",
+        "Benzin ve tuz"
       ],
-      "dogru_index": 3,
-      "cozum": "J’nin kimyasal türü suyla etkileşim sırasında değişmiş ve çözeltide yeni iyonlar oluşmuştur. Bu nedenle olay kimyasal çözünmedir.",
+      "dogru_index": 2,
+      "cozum": "Şeker polar yapıda olduğundan polar suda iyi çözünür; diğer çiftler polar-apolar uyuşmazlığı gösterir (s.157-160).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kimyasal çözünmede çözünen madde kimliğini korur mu?",
-        "back": "Hayır. Çözünen, çözücüyle kimyasal etkileşime girerek başlangıçta bulunmayan yeni madde türleri oluşturur."
+        "front": "Su ile hangi madde iyi çözünür?",
+        "back": "Şeker."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o09",
-      "alt_beceri": "Fiziksel Çözünme",
-      "metin": "M molekülü S sıvısında çözünürken kimliğini koruyor ve yeni madde oluşmuyor. Bu olay nasıl sınıflandırılır?",
+      "alt_beceri": "Günlük yaşam örneklerini çözünürlükle yorumlar.",
+      "metin": "Kutup (polar) çözücülerde iyonik bileşiklerin çözünmesini sağlayan temel etkileşim nedir?",
       "secenekler": [
-        "Fiziksel çözünme",
-        "Kimyasal çözünme",
-        "Kimyasal tepkimeyle sentez",
-        "Çökelme"
+        "Kovalent bağ",
+        "İyon-dipol etkileşimleri",
+        "Metalik bağ",
+        "Hidrojen bağı olmayan itme"
       ],
-      "dogru_index": 0,
-      "cozum": "M molekülünün kimyasal kimliği değişmemiş ve yeni tür oluşmamıştır. Bu nedenle olay fiziksel çözünmedir.",
+      "dogru_index": 1,
+      "cozum": "Polar çözücü moleküllerinin kısmi yükleri iyonlarla iyon-dipol etkileşimi kurar ve iyonları çözeltiye taşır (s.158-167).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Fiziksel çözünmede çözünen maddenin kimyasal türü nasıl değişir?",
-        "back": "Çözünen madde yeni bir kimyasal türe dönüşmez ve kendi kimyasal özelliğini korur. İyonik ya da moleküler olarak dağılabilir."
+        "front": "İyonik çözünmede hangi etkileşim etkili?",
+        "back": "İyon-dipol."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     },
     {
       "soru_id": "kimya_10_u02_k02_o10",
-      "alt_beceri": "Fiziksel Çözünme",
-      "metin": "İyonik bir katı suda çözünürken mevcut iyonları çözeltiye dağılıyor ve yeni bir madde oluşmuyor. Bu olayın fiziksel çözünme olarak sınıflandırılmasını hangi özellik destekler?",
+      "alt_beceri": "Günlük yaşam örneklerini çözünürlükle yorumlar.",
+      "metin": "Yağda çözünen vitaminlerin vücutta depolanma eğilimi neden fazladır?",
       "secenekler": [
-        "Çözücünün kimyasal tepkimeyle yeni bileşik oluşturması",
-        "Maddenin kimyasal özelliğini koruyarak çözeltide dağılması",
-        "Gaz taneciklerinin küçük bir açıklıktan çıkması",
-        "Katının kimyasal yapısının bütünüyle farklı bir maddeye dönüşmesi"
+        "Suda çözündükleri için",
+        "İdrarla atıldıkları için",
+        "Gaz hâlinde oldukları için",
+        "Yağlı dokularda çözünüp orada depolandıkları için"
       ],
-      "dogru_index": 1,
-      "cozum": "Fiziksel çözünmede çözünen madde kimyasal özelliğini korur; yeni bir madde oluşması gerekmez. Bir katının mevcut iyonlarının çözeltiye dağılması bu sınıflandırmayla uyumludur.",
+      "dogru_index": 3,
+      "cozum": "Apolar/hidrofobik olduklarından yağlı dokularda emilir ve depolanırlar (s.156).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İyonik veya moleküler olarak gerçekleşen bir çözünmenin fiziksel sayılmasını sağlayan ölçütü belirtiniz.",
-        "back": "Çözünen madde yeni bir kimyasal maddeye dönüşmeden kimyasal özelliğini koruyorsa çözünme fiziksel olabilir; bazı iyonik maddeler çözeltide iyonlar hâlinde dağılır."
+        "front": "A, D, K neden depolanır?",
+        "back": "Yağlı dokularda çözünürler."
       },
-      "kazanim": "çözünme olayını sınıflandırabilmeniz,"
+      "kazanim": "Maddelerin birbiri içinde çözünebilirliğini taneciklerin polaritesiyle ilişkilendirir."
     }
   ],
   "flashcards": [
     {
       "id": "kimya_10_u02_k02_o01:flashcard",
-      "front": "İyonik çözünmeyi, çözünen taneciklerin çözeltideki durumu bakımından tanımlayınız.",
-      "back": "Bir maddenin çözücü içinde iyonlarına ayrışarak çözünmesine iyonik çözünme denir."
+      "front": "A, D ve K vitaminlerinin ortak özelliği nedir?",
+      "back": "Apolar ve hidrofobiktirler; yağda çözünürler."
     },
     {
       "id": "kimya_10_u02_k02_o02:flashcard",
-      "front": "Suda çözünen bir tuzun katyon ve anyonları çevresinde su molekülleri nasıl yönelir?",
-      "back": "Suyun kısmi negatif yüklü oksijen ucu katyonları, kısmi pozitif yüklü hidrojen ucu anyonları sarar."
+      "front": "C vitamini neden suda çözünür?",
+      "back": "Polar ve hidrofilik olduğu için."
     },
     {
       "id": "kimya_10_u02_k02_o03:flashcard",
-      "front": "Asit, baz ve tuzların suda çözünürken gösterdiği yaygın tanecik davranışını yazınız.",
-      "back": "Asitler, bazlar ve tuzlar suda genellikle iyonlarına ayrışarak çözünür."
+      "front": "Çözünürlükte temel kural nedir?",
+      "back": "Benzer benzeri çözer."
     },
     {
       "id": "kimya_10_u02_k02_o04:flashcard",
-      "front": "Moleküler çözünmeyi, çözünen kovalent bileşiğin tanecik yapısı bakımından tanımlayınız.",
-      "back": "Kovalent bağlı bileşiklerin moleküllerinin çözücü içinde moleküler hâlde dağılıp homojen karışım oluşturmasına moleküler çözünme denir."
+      "front": "İyodun apolar çözücüde çözünmesinin nedeni nedir?",
+      "back": "Benzer benzeri çözer; iyot apolardır."
     },
     {
       "id": "kimya_10_u02_k02_o05:flashcard",
-      "front": "Moleküler çözünmede çözünen moleküller ile çözücü tanecikleri arasındaki sonucu açıklayınız.",
-      "back": "Çözünen moleküller birbirinden uzaklaşarak çözücü içinde moleküler hâlde dağılır ve homojen karışım oluşur."
+      "front": "İyonik bileşikler hangi tür çözücüde çözünür?",
+      "back": "Polar çözücüde (iyon-dipol etkileşimi)."
     },
     {
       "id": "kimya_10_u02_k02_o06:flashcard",
-      "front": "Kovalent bağlı bir çözünen suda çözündüğünde molekül yapısı nasıl korunabilir?",
-      "back": "Moleküller kimliklerini koruyarak birbirinden uzaklaşır ve çözücü içinde dağılır. Böylece homojen bir karışım oluşabilir."
+      "front": "Su ve yağ neden karışmaz?",
+      "back": "Polar-apolar uyuşmazlığı."
     },
     {
       "id": "kimya_10_u02_k02_o07:flashcard",
-      "front": "Kimyasal çözünmeyi çözünen madde ve çözücü arasında gerçekleşen değişim bakımından tanımlayınız.",
-      "back": "Bir maddenin çözücüyle kimyasal etkileşime girerek çözünmesi ve yeni madde türleri oluşturması kimyasal çözünmedir."
+      "front": "Alkol suda neden çözünür?",
+      "back": "-OH ucu suyla etkileşir."
     },
     {
       "id": "kimya_10_u02_k02_o08:flashcard",
-      "front": "Kimyasal çözünmede çözünen madde kimliğini korur mu?",
-      "back": "Hayır. Çözünen, çözücüyle kimyasal etkileşime girerek başlangıçta bulunmayan yeni madde türleri oluşturur."
+      "front": "Su ile hangi madde iyi çözünür?",
+      "back": "Şeker."
     },
     {
       "id": "kimya_10_u02_k02_o09:flashcard",
-      "front": "Fiziksel çözünmede çözünen maddenin kimyasal türü nasıl değişir?",
-      "back": "Çözünen madde yeni bir kimyasal türe dönüşmez ve kendi kimyasal özelliğini korur. İyonik ya da moleküler olarak dağılabilir."
+      "front": "İyonik çözünmede hangi etkileşim etkili?",
+      "back": "İyon-dipol."
     },
     {
       "id": "kimya_10_u02_k02_o10:flashcard",
-      "front": "İyonik veya moleküler olarak gerçekleşen bir çözünmenin fiziksel sayılmasını sağlayan ölçütü belirtiniz.",
-      "back": "Çözünen madde yeni bir kimyasal maddeye dönüşmeden kimyasal özelliğini koruyorsa çözünme fiziksel olabilir; bazı iyonik maddeler çözeltide iyonlar hâlinde dağılır."
+      "front": "A, D, K neden depolanır?",
+      "back": "Yağlı dokularda çözünürler."
     }
-  ],
-  "topic_key": "Kimya > 2.1.1 Çözünme Süreci"
+  ]
 }

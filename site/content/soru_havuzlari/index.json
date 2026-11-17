@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 262,
- "soru_sayisi": 2803,
- "flashcard_sayisi": 2803,
+ "havuz_sayisi": 246,
+ "soru_sayisi": 2636,
+ "flashcard_sayisi": 2636,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": null,
@@ -3039,368 +3039,6 @@
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "kim_10_t01_c01",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Kimyasal değişimlerin gözlemlenebilir göstergelerini (enerji değişimi, gaz çıkışı, renk değişimi veya yeni bir katının oluşumu) tanımlar.",
-    "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin veri toplar ve kaydeder.",
-    "Kimyasal değişimlerin gözlemlenebilir göstergelerine ilişkin topladığı verileri tepkenlerin alt mikro seviyedeki değişimi temelinde açıklar."
-   ],
-   "baslik": "Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme",
-   "topic_key": "Kimya > 1.1 Kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilme",
-   "kod": "KİM.10.1.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c02",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Taneciklerin yeniden düzenlenmesi temelinde kimyasal tepkimelerin oluşumu için önerdiği modeli farklı kimyasal tepkimelerin oluşum süreçlerini ince­leyerek sınar.",
-    "Sınama sürecinde elde ettiği kanıtlara uygun olarak modelini geliştirir."
-   ],
-   "baslik": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme",
-   "topic_key": "Kimya > 1.2 Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme",
-   "kod": "KİM.10.1.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c03",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Tepkime türlerinin (çökelme, indirgenme-yükseltgenme ve asit-baz) oluşum sürecine ilişkin gözlemlenebilir göstergeleri (renk değişimi, çökelek oluşumu, enerji değişimi ve gaz çıkışı) tanımlar.",
-    "Tepkime türlerinin oluşum sürecine ilişkin gözlemlenebilir göstergelere yönelik veri toplar ve kaydeder.",
-    "Tepkimelerin oluşum sürecine ilişkin verileri sembolik ve alt mikro seviyedeki gösterimlerle açıklar."
-   ],
-   "baslik": "Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme",
-   "topic_key": "Kimya > 1.3 Kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilme",
-   "kod": "KİM.10.1.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c04",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Maddelerin aynı sayıda tanecik içeren örneklerinin kütlesini ölçer.",
-    "Maddelerin miktarını ifade etmek için ölçülebilir (kütle, tanecik sayısı vb.) özellikleri belirler.",
-    "Maddelerin tanecik sayısını ifade etmek için yaptığı işlemlere uygun tanım yapar."
-   ],
-   "baslik": "Mol kavramına ilişkin operasyonel tanımlama yapabilme",
-   "topic_key": "Kimya > 1.4 Mol kavramına ilişkin operasyonel tanımlama yapabilme",
-   "kod": "KİM.10.1.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c05",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Atom sayısı, molekül sayısı, kütle ile mol sayısı arasındaki ilişkiyi kuramsal temele dayalı kurduğu hipotezleri ile test eder.",
-    "Değişkenler arasındaki orantısal ilişkilere yönelik hipotezlerini yeni durumları açıklamak için kullanır."
-   ],
-   "baslik": "Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme",
-   "topic_key": "Kimya > 1.5 Saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilme",
-   "kod": "KİM.10.1.5",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c06",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c06.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarındaki tutarsızlıkların nerede olduğunu belirler.",
-    "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için uygun yolu seçerek uygular.",
-    "Kimyasal tepkime denklemlerinde tepken ve ürünlerin tanecik sayılarının denkleştirilmesi için olası yolları araştırır.",
-    "Kimyasal tepkime denklemlerinde tanecik sayılarının denkliğini değerlendirir. 40"
-   ],
-   "baslik": "Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme",
-   "topic_key": "Kimya > 1.6 Kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilme",
-   "kod": "KİM.10.1.6",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c07",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c07.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünlerin katsayıları ile mol sayıları arasındaki ilişkileri belirler.",
-    "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkileri kurar.",
-    "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkilere yönelik çıkarım yapar."
-   ],
-   "baslik": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme",
-   "topic_key": "Kimya > 1.7 Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme",
-   "kod": "KİM.10.1.7",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c08",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c08.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Gazların özelliklerinin (hacim, basınç, genleşme, sıkıştırılabilirlik, karışabilirlik ve yoğunluk) farkını ortaya koyar.",
-    "Gazların özelliklerine ilişkin veri toplar ve kaydeder.",
-    "Topladığı veriler üzerinden gazların özelliklerine (basınç, hacim, sıcaklık ve madde miktarı) ilişkin keşfettiği örüntüleri tanecikli model ile açıklar."
-   ],
-   "baslik": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme",
-   "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
-   "kod": "KİM.10.1.8",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c09",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c09.json",
-   "soru_sayisi": 14,
-   "flashcard_sayisi": 14,
-   "etiketler": [
-    "Gazların hacim, basınç, sıcaklık ve madde miktarı değişkenleri arasındaki ilişkilere yönelik araştırılabilir sorular oluşturur.",
-    "Değişkenler arasındaki ilişkiyi belirlemek üzere hipotez kurar.",
-    "Basınç, hacim, sıcaklık ve madde miktarı arasındaki ikili ilişkileri gösteren gaz yasalarına yönelik araştırma planlar ve planladığı araştırmayı gerçekleştirir.",
-    "Çizdiği grafikler üzerinden matematiksel modeller önerir.",
-    "Elde ettiği grafiksel ve matematiksel modelleri kullanarak gazlara ilişkin değişkenler (P, V, T ve",
-    "n) arasındaki ilişkileri açıklar."
-   ],
-   "baslik": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme",
-   "topic_key": "Kimya > 1.9 Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme",
-   "kod": "KİM.10.1.9",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c10",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c10.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Boyle, Charles ve Avogadro yasaları arasında örüntü oluşturur.",
-    "Gazların basınç, hacim, sıcaklık ve mol sayısı değişkenleri arasındaki ilişkiyi genel matematiksel bir eşitlikle ifade eder."
-   ],
-   "baslik": "İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme",
-   "topic_key": "Kimya > 1.10 İdeal gaz denklemini tümevarımsal akıl yürütme yoluyla oluşturabilme",
-   "kod": "KİM.10.1.10",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t01_c11",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t01_c11.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Efüzyon ve difüzyon ile ilgili deney tasarlar.",
-    "Deney sonuçlarını günlük hayattaki durumları açıklamak için kullanır."
-   ],
-   "baslik": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme",
-   "topic_key": "Kimya > 1.11 Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme",
-   "kod": "KİM.10.1.11",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c01",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Çözünme sürecini temsil etmek için basit tanecik modelleri geliştirir.",
-    "Çözünme sürecine ilişkin modelleri bilimsel modellerle karşılaştırır."
-   ],
-   "baslik": "Çözünme sürecine ilişkin bilimsel model oluşturabilme",
-   "topic_key": "Kimya > 2.1 Çözünme sürecine ilişkin bilimsel model oluşturabilme",
-   "kod": "KİM.10.2.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c02",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Farklı maddelerin birbiri içinde çözünmesi ya da çözünmemesi durumuna ilişkin ölçütler (çözücü ve çözünenin polar/apolar veya iyonik/moleküler olması) belirler.",
-    "Çözünme sürecine yönelik verileri kullanarak çözünme ya da çözünmeme durumlarını açıklayacak şekilde veri seti oluşturur.",
-    "Farklı maddelerin birbiri içinde çözünme ya da çözünmeme durumunu kanıtlara dayalı olarak açıklar."
-   ],
-   "baslik": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme",
-   "topic_key": "Kimya > 2.2 Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme",
-   "kod": "KİM.10.2.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c03",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Çeşitli maddelerin suda çözünme olayını ayırt etmek için ölçütler (çözücü ve çözünenin etkileşimleri ve sembolik gösterimleri) belirler.",
-    "Çözünme olayını belirlediği ölçütlere (iyonik veya moleküler, fiziksel veya kimyasal) göre ayrıştırır.",
-    "Belirlediği ölçütleri kullanarak çözünme olaylarını gruplandırır.",
-    "Oluşturduğu grup adlandırmalarını bilimsel karşılığı ile kıyaslar."
-   ],
-   "baslik": "Çözünme olayını sınıflandırabilme",
-   "topic_key": "Kimya > 2.3 Çözünme olayını sınıflandırabilme",
-   "kod": "KİM.10.2.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c04",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Katıların saf sudaki çözünürlüğüne ilişkin ölçütler (maddde cinsi ve sıcaklık) belirler.",
-    "Çözünürlüğe ilişkin belirlediği ölçütleri test eder.",
-    "Çözünürlüğün tanımını yaparak kendi tanımı ile bilimsel tanım arasındaki farkı açıklar."
-   ],
-   "baslik": "Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme",
-   "topic_key": "Kimya > 2.4 Çözünürlük kavramına ilişkin operasyonel tanımlama yapabilme",
-   "kod": "KİM.10.2.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c05",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Katı ve gazların saf sudaki çözünürlüğüne etki eden faktörlere ilişkin ölçütler (madde cinsi, sıcaklık ve basınç) belirler.",
-    "Çözünürlük ile ilgili seçtiği verileri değişkenler arası ilişkileri belirleyecek şekilde düzenler.",
-    "Çözünürlüğe etki eden faktörleri veriye dayalı açıklar."
-   ],
-   "baslik": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme",
-   "topic_key": "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler",
-   "kod": "KİM.10.2.5",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c06",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c06.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Çözeltileri ayırt etmek için ölçütler (içerdiği çözünenin miktarı üzerinden doymuş, doymamış, aşırı doymuş; içerdiği çözünenin iyonik karakteri üzerinden elektrolit olan, elektrolit olmayan) belirler.",
-    "Çözeltileri belirlediği ölçütlere göre ayrıştırır.",
-    "Çözeltileri farklı biçimlerde gruplandırır.",
-    "Oluşturduğu grup adlandırmalarını bilimsel karşılığı ile kıyaslar."
-   ],
-   "baslik": "Çözeltileri sınıflandırabilme",
-   "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
-   "kod": "KİM.10.2.6",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c07",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c07.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Çözeltilerin molar derişimine ilişkin keşfettiği örüntüyü matematiksel olarak modelleyip bu modeli yeni çözeltilerin verileri üzerinde test eder.",
-    "Çözeltilerin molar derişimini, kurduğu matematiksel model üzerinden geneller. 49"
-   ],
-   "baslik": "Çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilme",
-   "topic_key": "Kimya > 2.7 Çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilme",
-   "kod": "KİM.10.2.7",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t02_c08",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t02_c08.json",
-   "soru_sayisi": 11,
-   "flashcard_sayisi": 11,
-   "etiketler": [
-    "Katı-sıvı çözeltilerin kaynama ve donma noktasının saf suya göre değişimine yönelik araştırma sorusu belirler.",
-    "Çözeltilerin kaynama ve donma noktasının değişimine yönelik neden-sonuç ilişkilerini belirtir.",
-    "Neden-sonuç ilişkilerini araştırabilmek için bağımlı-bağımsız değişkenleri ve kontrol değişkenlerini belirler.",
-    "Değişkenler arasındaki ilişkiyi belirlemek üzere deneyler yaparak elde ettiği verilere dayalı önermeler sunar.",
-    "Çözeltilerin kaynama noktasının yükselmesi ve donma noktasının düşmesine neden olan faktörlere yönelik sunduğu önermeleri bilimsel kuramlar ile destekler."
-   ],
-   "baslik": "Çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilme",
-   "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
-   "kod": "KİM.10.2.8",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t03_c01",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t03_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Makro ve mikro ölçekli deneylerin ekosisteme etkilerine ilişkin ölçütler (kimyasal madde miktarı, su miktarı ve kimyasal kirlilik miktarı) belirler.",
-    "Kimyasal tepkimelerle ilgili makro ve mikro ölçekli deneyleri gerçekleştirirken belirlediği ölçütler temelinde ölçümler yapar.",
-    "Ölçme sonuçlarından hareketle makro ve mikro ölçekli deneylerin etkilerine ilişkin belirlediği ölçütleri karşılaştırır.",
-    "Makro ve mikro ölçekli deneylerin ekosisteme etkileri hakkında yargıya varır."
-   ],
-   "baslik": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme",
-   "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler",
-   "kod": "KİM.10.3.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "kim_10_t03_c02",
-   "ders": "Kimya",
-   "sinif": 10,
-   "dosya": "kim_10_t03_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problemleri (hava kirliliği, ozon azalımı, asit yağmurları, sera etkisi, küresel ısınma vb.) belirler.",
-    "Belirlediği problemlerin ekosistem (canlı, cansız, sucul sistem, toprak, hava, sağlık vb.) üzerindeki etkilerini özetler.",
-    "Problemlerin çözümüne yönelik veriye dayalı tahminlerde bulunur.",
-    "Problemin çözümüne yönelik önermeler üzerinden akıl yürütür.",
-    "Problemin çözümüne ilişkin değerlendirmelerde bulunur."
-   ],
-   "baslik": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme",
-   "topic_key": "Kimya > 3.2 Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme",
-   "kod": "KİM.10.3.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
    "konu_id": "kimya_10_u01_k01",
    "ders": "Kimya",
    "sinif": 10,
@@ -3408,11 +3046,10 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Kimyasal Değişim",
-    "Kimyasal Tepkimeler",
-    "Kimyasal Tepkimelerin Oluşum Sürecini Modelleme"
+    "Kimyasal değişimin göstergelerini ayırt eder.",
+    "Tepkime denkleminde tepken, ürün ve katalizörü belirler."
    ],
-   "baslik": "Kimyasal Değişim",
+   "baslik": "1.1.1 Kimyasal Tepkimelerin Oluşumu",
    "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu",
    "kod": "",
    "uretim_durumu": "plansiz"
@@ -3425,11 +3062,10 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Çökelme Tepkimeleri",
-    "İndirgenme-Yükseltgenme Tepkimeleri",
-    "Asit-Baz Tepkimeleri"
+    "Tepkime türlerini örnekleriyle açıklar.",
+    "Net iyon denklemini ve seyirci iyonları belirler."
    ],
-   "baslik": "Asit-Baz Tepkimeleri",
+   "baslik": "1.1.2 Kimyasal Tepkime Türleri",
    "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri",
    "kod": "",
    "uretim_durumu": "plansiz"
@@ -3442,10 +3078,10 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Mol Kavramı",
-    "Saf Maddelerin Ölçülebilir Özellikleri"
+    "Avogadro sayısı ile mol ilişkisini açıklar.",
+    "Mol-kütle ve mol-tanecik sayısı hesaplamalarını yapar."
    ],
-   "baslik": "Mol Kavramı",
+   "baslik": "1.1.3 Mol Kavramı",
    "topic_key": "Kimya > 1.1.3 Mol Kavramı",
    "kod": "",
    "uretim_durumu": "plansiz"
@@ -3458,7 +3094,8 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz,"
+    "Denkleştirmede korunan nicelikleri açıklar.",
+    "Verilen tepkime denklemini denkleştirir."
    ],
    "baslik": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
    "topic_key": "Kimya > 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
@@ -3473,7 +3110,8 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,"
+    "Katsayı oranından mol hesaplar.",
+    "Kütle ve verim hesaplamaları yapar."
    ],
    "baslik": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
    "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
@@ -3485,17 +3123,13 @@
    "ders": "Kimya",
    "sinif": 10,
    "dosya": "kimya_10_u01_k06.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "Gazların Kinetik Moleküler Teorisi",
-    "Gazların Özellikleri",
-    "Basınç-Hacim İlişkisi (Boyle Yasası)",
-    "Sıcaklık-Hacim İlişkisi (Charles Yasası)",
-    "Basınç-Sıcaklık İlişkisi (Gay Lusssac Yasası)",
-    "Hacim-Madde Miktarı İlişkisi (Avogadro Yasası)"
+    "Gazların özelliklerini ve birimlerini açıklar.",
+    "Gaz yasalarıyla hesaplama yapar."
    ],
-   "baslik": "Basınç-Hacim İlişkisi (Boyle Yasası)",
+   "baslik": "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
    "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları",
    "kod": "",
    "uretim_durumu": "plansiz"
@@ -3508,11 +3142,11 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Graham Difüzyon ve Efüzyon Yasası",
-    "Efüzyon ve Difüzyon"
+    "Kinetik moleküler teorinin varsayımlarını açıklar.",
+    "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar."
    ],
-   "baslik": "Efüzyon ve Difüzyon",
-   "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Eftizyon Yasası",
+   "baslik": "1.2.2 Gazların Kinetik Moleküler Teorisi",
+   "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3524,10 +3158,27 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,"
+    "İdeal gaz denklemini ve sabitini açıklar.",
+    "İdeal gaz denklemiyle nicelik hesaplar."
    ],
    "baslik": "1.2.3 İdeal Gaz Yasası",
    "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u01_k09",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u01_k09.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Difüzyon ve efüzyon kavramlarını açıklar.",
+    "Graham Yasası ile hız oranı hesaplar."
+   ],
+   "baslik": "1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+   "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Efüzyon Yasası",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3539,11 +3190,11 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Çözünme Süreci",
-    "Maddelerin Birbiri İçindeki Çözünebilirliği"
+    "Çözünme sürecinin aşamalarını sıralar.",
+    "Çözünmede etkili etkileşimleri yorumlar."
    ],
-   "baslik": "Maddelerin Birbiri İçindeki Çözünebilirliği",
-   "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "baslik": "2.1.1 Çözünme Süreci",
+   "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3555,13 +3206,11 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "İyonik Çözünme",
-    "Moleküler Çözünme",
-    "Kimyasal Çözünme",
-    "Fiziksel Çözünme"
+    "Polar-apolar yapı ile çözünürlük ilişkisini açıklar.",
+    "Günlük yaşam örneklerini çözünürlükle yorumlar."
    ],
-   "baslik": "Fiziksel Çözünme",
-   "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
+   "baslik": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+   "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3573,7 +3222,8 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,"
+    "Çözünme türlerini örnekleriyle ayırt eder.",
+    "Çözünme türünü denklemden belirler."
    ],
    "baslik": "2.1.3 Çözünme Olayının Sınıflandırılması",
    "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması",
@@ -3588,7 +3238,8 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilmeniz,"
+    "Molarite ve ppm kavramlarını açıklar.",
+    "Derişim ve seyreltme hesaplarını yapar."
    ],
    "baslik": "2.1.4 Derişim Birimleri (Molarite, ppm)",
    "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
@@ -3603,14 +3254,59 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Elektrolit Çözelti",
-    "Elektrolit Olmayan Çözelti",
-    "Doymamış Çözelti",
-    "Doymuş Çözelti",
-    "Aşırı Doymuş Çözelti"
+    "Çözünürlük kavramını açıklar.",
+    "Çözünürlük verilerini yorumlar."
    ],
-   "baslik": "Aşırı Doymuş Çözelti",
+   "baslik": "2.1.5 Çözünürlük",
    "topic_key": "Kimya > 2.1.5 Çözünürlük",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k06",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Faktörlerin katı ve gaz çözünürlüğüne etkisini ayırt eder.",
+    "Günlük yaşam olaylarını çözünürlükle açıklar."
+   ],
+   "baslik": "2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "topic_key": "Kimya > 2.1.6 Çözünürlüğe Etki Eden Faktörler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k07",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Elektrolit ve elektrolit olmayan çözeltileri ayırt eder.",
+    "Doymamış, doymuş ve aşırı doymuş çözeltileri karşılaştırır."
+   ],
+   "baslik": "2.1.7 Çözeltilerin Sınıflandırılması",
+   "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u02_k08",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u02_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Koligatif özellikleri tanımlar.",
+    "Kaynama/donma noktası değişimlerini yorumlar."
+   ],
+   "baslik": "2.1.8 Koligatif Özellikler",
+   "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3622,10 +3318,26 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Makro ve Mikro Ölçekli Deneyler",
-    "Atmosferdeki Tepkimeler ve Küresel Sorunlar"
+    "Makro ve mikro ölçek kavramlarını açıklar.",
+    "Atom ekonomisi ve su ayak izini yorumlar."
    ],
-   "baslik": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+   "baslik": "3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
+   "konu_id": "kimya_10_u03_k02",
+   "ders": "Kimya",
+   "sinif": 10,
+   "dosya": "kimya_10_u03_k02.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Atmosferdeki temel tepkimeleri tanır.",
+    "Küresel sorunların neden ve sonuçlarını ilişkilendirir."
+   ],
+   "baslik": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
    "kod": "",
    "uretim_durumu": "plansiz"
