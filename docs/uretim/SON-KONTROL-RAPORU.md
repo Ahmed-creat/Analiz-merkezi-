@@ -9,7 +9,7 @@
 
 | Kapı | Sonuç |
 | --- | --- |
-| `havuz-son-kontrol.js` (tüm dosyalar) | 301 dosya · **0 hata** · **0 üslup uyarısı** · başlık eşleşmesi 173/189 |
+| `havuz-son-kontrol.js` (tüm dosyalar) | 301 dosya · **0 hata** · **0 üslup uyarısı** · başlık eşleşmesi 188/189 |
 | `havuz-denetle.js --tumu` (plan şeması) | 142 dosya · **0 hata · 0 uyarı** |
 | `soru-uret-dogrula.js` | 301 dosya (142 geçerli · 159 konu havuzu) · soru/kart eşi tam · görselli 146 · plan dışı 0 · **TÜM KURALLAR GEÇTİ** |
 | `havuz-index-uret.js --plan --kontrol` | 301 havuz · 3.303 soru · kapsanan **142/158** |
@@ -158,12 +158,21 @@ tamamında Kısa Kontrol havuzu var; Din Kültürü 24/24 başlık eşleşti.
 Aynı listede olup **yayında bırakılan** tek havuz `edebiyat_10_u03_k06`
 (Şiirde Ahenk): kaynağı ders notları ve üretici betiği (`tde-t03-dil.js`) var.
 
-Sonuç: **301 havuz · 3.303 soru**; ağaç kapsamı **173/189**. Havuzsuz 16 konu
-testte adıyla listelenir (`tests/konu-bulma.test.js` · `HAVUZSUZ_KONULAR`).
-5 konuda (Biyoloji 1.8, 2.2, 2.6 · Coğrafya 6.2, 6.3) uygulama, içeriği konuyu
-gerçekten kapsayan kardeş havuzu açmaya devam ediyor
-(`site/bkt-engine.js` · `EK_ESLEME`, elle doğrulanmış); bu 5 satır testte
-bilinçli istisna olarak işaretli.
+**Önemli:** Bu 15 konu havuzsuz KALMADI. Aynı konuların havuzu **plan
+şemasında** (ders kitabından üretilmiş, `_tNN_cNN`) zaten vardı; `topic_key`'leri
+kazanım cümlesi olduğu için uygulama onları bulamıyordu. 15 plan havuzunun
+başlığı ağaç adıyla eşitlendi (`konu-basligi-esle.js`):
+
+| Konu | Havuz |
+| --- | --- |
+| Biyoloji 1.8 · 2.2 · 2.6 | `biyo_10_t01_c08` · `t02_c02` · `t02_c06` |
+| Kimya 2.1.6 · 2.1.7 · 2.1.8 | `kim_10_t02_c05` · `t02_c06` · `t02_c08` |
+| Coğrafya 4.2 · 5.2 · 5.3 · 6.2 · 6.3 · 6.4 · 7.1 | `cogr_10_t04_c02` · `t05_c02` · `t05_c03` · `t06_c02` · `t06_c03` · `t06_c04` · `t07_c01` |
+| Tarih 1.4 · 2.5 | `tar_10_t01_c04` · `t02_c05` |
+
+Sonuç: **301 havuz · 3.303 soru**; ağaç kapsamı **188/189** — tek havuzsuz konu
+Paragraf (bilinçli). Arşivdeki dosyalar izlenebilirlik için duruyor; yayımdaki
+içerik artık ders kitabından üretilmiş havuzlar.
 
 **Ek düzeltme:** `site/havuz-bul.js` 4. kademesine **numara koruması** eklendi.
 Kelimeler tutsa bile konu numarası farklıysa eşleşme reddedilir; arşivlemeden
@@ -175,7 +184,6 @@ sonra "Biyoloji > 1.8 ..." sorgusu 1.7 havuzuna bağlanıyordu.
 | --- | --- | --- |
 | 1 | **Başlık eşleşmesi (kapandı)** | 9 konuda (Biyoloji 1.3, 1.6, 2.5, 2.7, 2.8 · Kimya 1.2.2, 3.1.1 · Tarih 2.2, 2.4) plan havuzunun `topic_key`'i kazanım cümlesiydi. Konu adları zaten ağaçta olduğu için havuz başlıkları bu adlarla eşitlendi (`docs/uretim/uretim/konu-basligi-esle.js`; Tarih 2.2/2.4 için `tarih-t02.js`). Ağaç kapsamı **188/189**; kalan tek konu Paragraf (bilinçli). |
 | 2 | **TDE Paragraf** | Ağaçta konu var, havuz **bilinçli olarak üretilmedi** (kullanıcı talimatı: "uygulamada paragraf sorusu soramayız"). Dosya `arsiv/soru_havuzlari/edebiyat/edebiyat_10_u04_k06.json`. |
-| 3 | **15 konu havuzsuz** | Kaynağı ders kitabı olmayan havuzlar arşive taşındı (§5). Bu konularda Kısa Kontrol açılmıyor; havuzlar ders kitabından yeniden üretilmeli. |
 | 4 | **Üslup uyarıları (kapandı)** | Doğru şıkkın belirgin uzun olması 54 soruda düzeltildi (`docs/uretim/uretim/yama-sik-uzunluk.js`): doğru şık kısaltıldı veya çeldiriciler aynı ayrıntı düzeyine getirildi. `havuz-son-kontrol` artık **0 uyarı**. |
 | 5 | **`kim_10_t02_c08` hedef 10, soru 11** | Fazla soru hata değil (`≥ hedef`). |
 | 6 | **`kazanim_konu_10.json` ve `konu_esleme.json` bayat** | Üreticileri yeniden çalıştırıldığında 10 bin satırlık fark ve eşleme kalitesi değişimi doğuyor; ayrı bir iş olarak ele alınmalı. Şimdilik yalnız arşiv izleri temizlendi. |
