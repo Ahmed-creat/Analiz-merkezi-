@@ -28,6 +28,8 @@
       .replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
   }
 
+  var TDE = ["turk dili ve edebiyati", "turkce", "edebiyat"];
+
   // SIRA ÖNEMLİ: daha özel kural üstte olmalı.
   // (Örn. "kenara ait yükseklik ... alan" → Üçgende Alan,
   //  "yükseklik" tek başına Yardımcı Elemanlar demek DEĞİL.)
@@ -104,26 +106,52 @@
     { ders: ["cografya"], konu: "2.2 Mekânsal Verilerin Haritalara Aktarılması", desen: /harita/ },
     { ders: ["cografya"], konu: "3.1 Tektonik Süreçler", desen: /tektonik|fay hatti|levha hareketleri/ },
 
-    // ---- Türk Dili ve Edebiyatı ----
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
-      desen: /ahenk|uyak|redif|aliterasyon|asonans|olcu/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Paragraf",
-      desen: /paragraf|anlatim bicimi|anlatim teknigi/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Saf Şiir",
-      desen: /mazmun|imge|edebi sanat|edebî sanat/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Yazım Kuralları",
-      desen: /yazim kural|yazim yanlis/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Noktalama İşaretleri",
-      desen: /noktalama/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Zamir (Adıl)", desen: /zamir/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Sıfatlar (Ön Adlar)", desen: /sifat|on ad/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Fiiller (Eylemler)", desen: /fiil\b|eylem/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Zarflar (Belirteçler)", desen: /zarf|belirtec/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Edat (İlgeç)", desen: /edat|ilgec/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Bağlaç", desen: /baglac/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Ünlem", desen: /unlem/ },
-    { ders: ["turk dili ve edebiyati", "turkce", "edebiyat"], konu: "Anlamına Göre Cümleler",
-      desen: /anlamina gore cumle|cumle.*anlam/ }
+    // ---- Türk Dili ve Edebiyatı (10. sınıf, 4 tema) ----
+    // Kaynak: site/content/mufredat/tde_kazanim_10.json
+    // SIRA ÖNEMLİ — özel kural üstte:
+    //   "Destan Dönemi Türk şiiri … koşuk türünün" → KOŞUK (destan dönemi
+    //   nazım birimi koşuktur), aşağıdaki "Destan" kuralına düşmemeli.
+    { ders: TDE, konu: "Koşuk",
+      desen: /destan donemi|kosu[kg]|kopuz|(^| )sigir( |$)|(^| )solen( |$)/ },
+    { ders: TDE, konu: "Sav", desen: /(^| )sav[a-z]{0,7}( |$)|atasozu/ },
+    { ders: TDE, konu: "Türkü", desen: /turku|kavustak|nakarat/ },
+    { ders: TDE, konu: "Koşma", desen: /kosma|guzelleme|kocaklama|taslama/ },
+    { ders: TDE, konu: "Masal", desen: /masal|tekerleme/ },
+    { ders: TDE, konu: "Destan",
+      desen: /dogal destan|yapma destan|destan|motif/ },
+    { ders: TDE, konu: "Mesnevi", desen: /mesnevi/ },
+    { ders: TDE, konu: "Halk Hikâyesi", desen: /halk hikaye/ },
+    { ders: TDE, konu: "Fabl", desen: /fabl/ },
+    { ders: TDE, konu: "Dede Korkut Hikâyeleri", desen: /dede korkut/ },
+    { ders: TDE, konu: "Tanzimat Dönemi Şiiri",
+      desen: /tanzimat|namik kemal|ziya pasa|sinasi|abdulhak hamit/ },
+    { ders: TDE, konu: "Gazel", desen: /gazel|(^| )matla( |$)|(^| )makta( |$)/ },
+    { ders: TDE, konu: "Kaside", desen: /kaside|methiye|nesib|fahriye|tegazzul/ },
+    { ders: TDE, konu: "Mersiye", desen: /mersiye/ },
+    { ders: TDE, konu: "Saf Şiir", desen: /saf siir|imge|mazmun|edebi sanat/ },
+    { ders: TDE, konu: "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+      desen: /aheng|uyak|redif|aliterasyon|asonans|kafiye|olcu|aruz|durak|ritim/ },
+    // Dil bilgisi — tamlama kuralları, tek kelimelik kurallardan ÖNCE
+    { ders: TDE, konu: "İsim Tamlamaları", desen: /isim tamlama|tamlayan|tamlanan/ },
+    { ders: TDE, konu: "Sıfat Tamlamaları", desen: /sifat tamlama/ },
+    { ders: TDE, konu: "İsimler (Adlar)", desen: /isim|ad soylu|varlik adi/ },
+    { ders: TDE, konu: "Sıfatlar (Ön Adlar)",
+      desen: /sifat|(^| )on ad( |$)|niteleme|belirtme sifati/ },
+    { ders: TDE, konu: "Zamir (Adıl)", desen: /zamir|(^| )adil( |$)/ },
+    { ders: TDE, konu: "Edat (İlgeç)", desen: /edat|ilgec/ },
+    { ders: TDE, konu: "Bağlaç", desen: /baglac/ },
+    { ders: TDE, konu: "Ünlem", desen: /unlem/ },
+    { ders: TDE, konu: "Zarflar (Belirteçler)", desen: /zarf|belirtec/ },
+    { ders: TDE, konu: "Fiiller (Eylemler)",
+      desen: /fiil|eylem|(^| )kip( |$)|cati/ },
+    { ders: TDE, konu: "Yazım Kuralları", desen: /(^| )yazim|(^| )imla( |$)|yazim kural/ },
+    { ders: TDE, konu: "Noktalama İşaretleri", desen: /noktalama|virgul|kesme isareti/ },
+    { ders: TDE, konu: "Anlamına Göre Cümleler",
+      desen: /anlamina gore cumle|cumle.*anlam|olumlu cumle|olumsuz cumle|soru cumlesi/ },
+    // Paragraf EN SONDA: "anlatım biçimi" bir tür sorusunda da geçebilir,
+    // tür kuralı onu yukarıda yakalamalı.
+    { ders: TDE, konu: "Paragraf",
+      desen: /paragraf|anlatim bicimi|anlatim teknigi|dusunceyi gelistirme/ }
   ];
 
   /** kazanım + ders → { konu, kaynak:"kural" } ya da null */

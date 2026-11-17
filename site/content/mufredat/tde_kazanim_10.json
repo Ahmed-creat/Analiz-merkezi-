@@ -1,0 +1,1288 @@
+{
+ "surum": "2026-10-27",
+ "ders": "Türk Dili ve Edebiyatı",
+ "sinif": 10,
+ "program": "TYMM 2026-2027 — 10. sınıf TDE, 4 tema",
+ "aciklama": "TDE'nin Okulizyon kazanım seti. Her konu, TYMM çıktı kodlarına ve ayırt edici terimlere bağlıdır. Okulizyon kazanım cümlesi bu terimlerden birini içeriyorsa konu kesinleşir; içermiyorsa beceri çıktısına bağlanır.",
+ "kaynaklar": {
+  "okulizyon": "Kullanıcının Okulizyon hesabından verdiği 9 gerçek kazanım cümlesi (17 Kasım).",
+  "odsgm": "MEB ODSGM 2026-2027 1. dönem ortak yazılı konu-soru dağılım tablosu (tema bazlı çıktı cümlesi).",
+  "tymm": "MEB TYMM 10. sınıf TDE öğrenme çıktısı adı (16 çıktı, 4 eksen).",
+  "konu-adi": "Okulizyon konu ağacındaki konu başlığı.",
+  "tema-terim": "TYMM tema sayfasının Anahtar Kavramlar listesi."
+ },
+ "genel_kazanimlar": [
+  {
+   "metin": "Metindeki söz varlığının anlamını bağlamdan hareketle belirler.",
+   "kaynak": "okulizyon",
+   "neden_konusuz": "Cümlede konu adı yok (genel okuma becerisi). Tek bir konuya bağlanmaz; Okulizyon bu kazanımı hangi tema sorusuna yazdıysa o temanın TDE2.x çıktısına aittir.",
+   "ciktilar": [
+    "TDE2.2",
+    "TDE2.3"
+   ]
+  },
+  {
+   "metin": "Metinlerden hareketle çıkarımlar yapar.",
+   "kaynak": "okulizyon",
+   "neden_konusuz": "Cümlede konu adı yok (genel okuma becerisi). Tek bir konuya bağlanmaz; Okulizyon bu kazanımı hangi tema sorusuna yazdıysa o temanın TDE2.x çıktısına aittir.",
+   "ciktilar": [
+    "TDE2.2",
+    "TDE2.3"
+   ]
+  }
+ ],
+ "ozet": {
+  "konu": 30,
+  "okulizyon_cumlesi": 4,
+  "genel_okulizyon_cumlesi": 2,
+  "kodlu_konu": 16,
+  "dil_bilgisi_konu": 14,
+  "terim": 91
+ },
+ "konular": [
+  {
+   "konu_id": "edebiyat_10_u01_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "Koşuk",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "koşuk",
+    "destan dönemi",
+    "kopuz",
+    "sığır",
+    "şölen"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Koşuk",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Destan Dönemi Türk şiirini ve koşuk türünün genel özelliklerini açıklar.",
+     "kaynak": "okulizyon"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "Sav",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "sav",
+    "atasözü"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Sav",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "Türkü",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "türkü",
+    "kavuştak",
+    "nakarat"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Türkü",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Türkü türünün genel özelliklerini belirler.",
+     "kaynak": "okulizyon"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "Koşma",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "koşma",
+    "güzelleme",
+    "koçaklama",
+    "taşlama"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Koşma",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Halk şiirini tanımlar, halk şiiri altında koşma türünün genel özelliklerini kavrar.",
+     "kaynak": "okulizyon"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "Masal",
+   "eksen": "dinleme",
+   "ciktilar": [
+    "TDE1.1",
+    "TDE1.2",
+    "TDE1.3",
+    "TDE1.4"
+   ],
+   "ayirt_edici_terimler": [
+    "masal",
+    "tekerleme",
+    "masal anlatıcısı",
+    "varyant"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Masal",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Dinlemeyi/İzlemeyi Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "masal anlatıcısı",
+    "masalın bölümleri",
+    "varyant"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "İsimler (Adlar)",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "isim",
+    "ad soylu",
+    "varlık adı"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "İsimler (Adlar)",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k07",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "İsim Tamlamaları",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "isim tamlaması",
+    "tamlayan",
+    "tamlanan"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "İsim Tamlamaları",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k08",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "Sıfatlar (Ön Adlar)",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "sıfat",
+    "ön ad",
+    "niteleme sıfatı",
+    "belirtme sıfatı"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Sıfatlar (Ön Adlar)",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k09",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 1,
+   "tema_ad": "Sözün Ezgisi",
+   "konu": "Sıfat Tamlamaları",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "sıfat tamlaması"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Sıfat Tamlamaları",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Gazel",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "gazel",
+    "matla",
+    "makta"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Gazel",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Kaside",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "kaside",
+    "methiye",
+    "nesib",
+    "fahriye",
+    "tegazzül"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Kaside",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Mersiye",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "mersiye"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Mersiye",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Saf Şiir",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "saf şiir",
+    "imge",
+    "mazmun",
+    "edebî sanat"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Saf Şiir",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kaynak": "odsgm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "imge"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Zamir (Adıl)",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "zamir",
+    "adıl"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Zamir (Adıl)",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Edat (İlgeç)",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "edat",
+    "ilgeç"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Edat (İlgeç)",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k07",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Bağlaç",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "bağlaç"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Bağlaç",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k08",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Ünlem",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "ünlem"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Ünlem",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k09",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 2,
+   "tema_ad": "Kelimelerin Ritmi",
+   "konu": "Anlamına Göre Cümleler",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "anlamına göre cümle",
+    "cümle anlamı",
+    "olumlu cümle",
+    "olumsuz cümle",
+    "soru cümlesi"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Anlamına Göre Cümleler",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 3,
+   "tema_ad": "Dünden Bugüne",
+   "konu": "Destan",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "destan",
+    "doğal destan",
+    "yapma destan",
+    "motif"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Destan",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Okumayı Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "destan",
+    "doğal destan",
+    "motif",
+    "yapma destan"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/256"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 3,
+   "tema_ad": "Dünden Bugüne",
+   "konu": "Mesnevi",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "mesnevi"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Mesnevi",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Okumayı Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "mesnevi"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/256"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 3,
+   "tema_ad": "Dünden Bugüne",
+   "konu": "Halk Hikâyesi",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "halk hikâyesi"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Halk Hikâyesi",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Okumayı Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "halk hikâyesi"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/256"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 3,
+   "tema_ad": "Dünden Bugüne",
+   "konu": "Fabl",
+   "eksen": "dinleme",
+   "ciktilar": [
+    "TDE1.1",
+    "TDE1.2",
+    "TDE1.3",
+    "TDE1.4"
+   ],
+   "ayirt_edici_terimler": [
+    "fabl"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Fabl",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Dinlemeyi/İzlemeyi Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE1.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "fabl"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/256"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 3,
+   "tema_ad": "Dünden Bugüne",
+   "konu": "Zarflar (Belirteçler)",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "zarf",
+    "belirteç"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Zarflar (Belirteçler)",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "anlatım biçimleri",
+    "destan",
+    "didaktik üslup",
+    "doğal destan"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/256"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 3,
+   "tema_ad": "Dünden Bugüne",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "ahenk",
+    "uyak",
+    "redif",
+    "aliterasyon",
+    "asonans",
+    "kafiye",
+    "ölçü",
+    "durak",
+    "aruz",
+    "ritim"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Şiirde ahengi sağlayan özellikleri (uyak düzeni, uyak, redif, aliterasyon, asonans) ile ilgili çalışma yapar.",
+     "kaynak": "okulizyon"
+    },
+    {
+     "metin": "Okumayı Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "anlatım biçimleri",
+    "destan",
+    "didaktik üslup",
+    "doğal destan"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/256"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 4,
+   "tema_ad": "Nesillerin Mirası",
+   "konu": "Dede Korkut Hikâyeleri",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "dede korkut"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Dede Korkut Hikâyeleri",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Okumayı Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "değişim",
+    "dönem",
+    "hikâye"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/261"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 4,
+   "tema_ad": "Nesillerin Mirası",
+   "konu": "Tanzimat Dönemi Şiiri",
+   "eksen": "okuma",
+   "ciktilar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "ayirt_edici_terimler": [
+    "tanzimat",
+    "namık kemal",
+    "ziya paşa",
+    "şinasi",
+    "abdülhak hamit"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Tanzimat Dönemi Şiiri",
+     "kaynak": "konu-adi"
+    },
+    {
+     "metin": "Okumayı Yönetebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.1"
+    },
+    {
+     "metin": "Anlam Oluşturabilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.2"
+    },
+    {
+     "metin": "Çözümleyebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.3"
+    },
+    {
+     "metin": "Süreci Değerlendirebilme",
+     "kaynak": "tymm",
+     "kod": "TDE2.4"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "değişim",
+    "dönem",
+    "hikâye"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/261"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 4,
+   "tema_ad": "Nesillerin Mirası",
+   "konu": "Fiiller (Eylemler)",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "fiil",
+    "eylem",
+    "kip",
+    "çatı"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Fiiller (Eylemler)",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "değişim",
+    "dönem",
+    "hikâye"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/261"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 4,
+   "tema_ad": "Nesillerin Mirası",
+   "konu": "Yazım Kuralları",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "yazım",
+    "imla"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Yazım Kuralları",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "değişim",
+    "dönem",
+    "hikâye"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/261"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 4,
+   "tema_ad": "Nesillerin Mirası",
+   "konu": "Noktalama İşaretleri",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "noktalama",
+    "virgül",
+    "kesme işareti"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Noktalama İşaretleri",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "değişim",
+    "dönem",
+    "hikâye"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/261"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "sinif": 10,
+   "tema": 4,
+   "tema_ad": "Nesillerin Mirası",
+   "konu": "Paragraf",
+   "eksen": "dil-bilgisi",
+   "ciktilar": [],
+   "ayirt_edici_terimler": [
+    "paragraf",
+    "anlatım biçimi",
+    "anlatım tekniği",
+    "düşünceyi geliştirme"
+   ],
+   "kazanimlar": [
+    {
+     "metin": "Paragraf",
+     "kaynak": "konu-adi"
+    }
+   ],
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "değişim",
+    "dönem",
+    "hikâye"
+   ],
+   "kaynak_url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/261"
+  }
+ ]
+}

@@ -15,8 +15,8 @@
   "eslesen_konu": 122,
   "oneri_konu": 0,
   "eslesmeyen_konu": 50,
-  "metin": 113,
-  "metin_tek_konu": 107,
+  "metin": 211,
+  "metin_tek_konu": 141,
   "metin_kodlu": 112,
   "ders_bazli": {
    "Biyoloji": {
@@ -111,12 +111,12 @@
     "konu": 30,
     "cikti": 16,
     "kesin": 0,
-    "yapisal": 0,
+    "yapisal": 16,
     "orta": 0,
-    "yok": 30,
-    "metin": 0,
-    "metin_tek_konu": 0,
-    "metin_kodlu": 0
+    "yok": 14,
+    "metin": 98,
+    "metin_tek_konu": 34,
+    "metin_kodlu": 84
    }
   }
  },
@@ -1022,70 +1022,200 @@
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Koşuk",
    "tema": 1,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 6,
+   "metin_kodlari": [
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u01_k02",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Sav",
    "tema": 1,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u01_k03",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Türkü",
    "tema": 1,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 6,
+   "metin_kodlari": [
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u01_k04",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Koşma",
    "tema": 1,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 6,
+   "metin_kodlari": [
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u01_k05",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Masal",
    "tema": 1,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE1.1",
+    "TDE1.2",
+    "TDE1.3",
+    "TDE1.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "dinlemeyi/izlemeyi yönetebilme",
+     "kod": "TDE1.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE1.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE1.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE1.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u01_k06",
@@ -1094,11 +1224,11 @@
    "tema": 1,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1108,11 +1238,11 @@
    "tema": 1,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1122,11 +1252,11 @@
    "tema": 1,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1136,11 +1266,11 @@
    "tema": 1,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1148,56 +1278,160 @@
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Gazel",
    "tema": 2,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u02_k02",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Kaside",
    "tema": 2,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u02_k03",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Mersiye",
    "tema": 2,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u02_k04",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Saf Şiir",
    "tema": 2,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u02_k05",
@@ -1206,11 +1440,11 @@
    "tema": 2,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1220,11 +1454,11 @@
    "tema": 2,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1234,11 +1468,11 @@
    "tema": 2,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1248,11 +1482,11 @@
    "tema": 2,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1262,11 +1496,11 @@
    "tema": 2,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1274,56 +1508,160 @@
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Destan",
    "tema": 3,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u03_k02",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Mesnevi",
    "tema": 3,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u03_k03",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Halk Hikâyesi",
    "tema": 3,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u03_k04",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Fabl",
    "tema": 3,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE1.1",
+    "TDE1.2",
+    "TDE1.3",
+    "TDE1.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "dinlemeyi/izlemeyi yönetebilme",
+     "kod": "TDE1.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE1.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE1.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE1.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u03_k05",
@@ -1332,11 +1670,11 @@
    "tema": 3,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1344,42 +1682,120 @@
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
    "tema": 3,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 6,
+   "metin_kodlari": [
+    {
+     "metin": "okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u04_k01",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Dede Korkut Hikâyeleri",
    "tema": 4,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u04_k02",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Tanzimat Dönemi Şiiri",
    "tema": 4,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "beceri-eksenli-tema",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
+   "gerekce": "TDE çıktısı beceri eksenli; konunun teması ve ekseni (okuma/dinleme) resmî çıktı kodunu belirler. Kodlar ODSGM tema tablosuyla aynıdır.",
+   "kazanim_metinleri": 5,
+   "metin_kodlari": [
+    {
+     "metin": "okumayı yönetebilme",
+     "kod": "TDE2.1",
+     "skor": 1
+    },
+    {
+     "metin": "anlam oluşturabilme",
+     "kod": "TDE2.2",
+     "skor": 1
+    },
+    {
+     "metin": "çözümleyebilme",
+     "kod": "TDE2.3",
+     "skor": 1
+    },
+    {
+     "metin": "süreci değerlendirebilme",
+     "kod": "TDE2.4",
+     "skor": 1
+    }
+   ]
   },
   {
    "konu_id": "edebiyat_10_u04_k03",
@@ -1388,11 +1804,11 @@
    "tema": 4,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1402,11 +1818,11 @@
    "tema": 4,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1416,11 +1832,11 @@
    "tema": 4,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -1430,11 +1846,11 @@
    "tema": 4,
    "kodlar": [],
    "guven": "yok",
-   "yontem": "beceri-eksenli",
+   "yontem": "dil-bilgisi-kodsuz",
    "skor": 0,
    "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
+   "gerekce": "Dil bilgisi konusu: TYMM TDE çıktısı beceri eksenli olduğu için kural konusuna kod yazılmadı.",
+   "kazanim_metinleri": 1,
    "metin_kodlari": []
   },
   {
@@ -4763,6 +5179,1474 @@
    ],
    "kod_guven": "kesin",
    "konu_guven": "kesin"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Koşuk",
+   "norm": "koşuk",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k01",
+   "konu": "Koşuk",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Destan Dönemi Türk şiirini ve koşuk türünün genel özelliklerini açıklar.",
+   "norm": "destan dönemi türk şiirini ve koşuk türünün genel özelliklerini açıklar.",
+   "kaynak": "okulizyon",
+   "konu_id": "edebiyat_10_u01_k01",
+   "konu": "Koşuk",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k01",
+   "konu": "Koşuk",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k01",
+   "konu": "Koşuk",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k01",
+   "konu": "Koşuk",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k01",
+   "konu": "Koşuk",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Sav",
+   "norm": "sav",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k02",
+   "konu": "Sav",
+   "topic_key": "Türk Dili ve Edebiyatı > Sav",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k02",
+   "konu": "Sav",
+   "topic_key": "Türk Dili ve Edebiyatı > Sav",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k02",
+   "konu": "Sav",
+   "topic_key": "Türk Dili ve Edebiyatı > Sav",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k02",
+   "konu": "Sav",
+   "topic_key": "Türk Dili ve Edebiyatı > Sav",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k02",
+   "konu": "Sav",
+   "topic_key": "Türk Dili ve Edebiyatı > Sav",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Türkü",
+   "norm": "türkü",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k03",
+   "konu": "Türkü",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Türkü türünün genel özelliklerini belirler.",
+   "norm": "türkü türünün genel özelliklerini belirler.",
+   "kaynak": "okulizyon",
+   "konu_id": "edebiyat_10_u01_k03",
+   "konu": "Türkü",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k03",
+   "konu": "Türkü",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k03",
+   "konu": "Türkü",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k03",
+   "konu": "Türkü",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k03",
+   "konu": "Türkü",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Koşma",
+   "norm": "koşma",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k04",
+   "konu": "Koşma",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Halk şiirini tanımlar, halk şiiri altında koşma türünün genel özelliklerini kavrar.",
+   "norm": "halk şiirini tanımlar, halk şiiri altında koşma türünün genel özelliklerini kavrar.",
+   "kaynak": "okulizyon",
+   "konu_id": "edebiyat_10_u01_k04",
+   "konu": "Koşma",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k04",
+   "konu": "Koşma",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k04",
+   "konu": "Koşma",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k04",
+   "konu": "Koşma",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Sözün Ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“sözün ezgisi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u01_k04",
+   "konu": "Koşma",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Masal",
+   "norm": "masal",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k05",
+   "konu": "Masal",
+   "topic_key": "Türk Dili ve Edebiyatı > Masal",
+   "kodlar": [
+    "TDE1.1",
+    "TDE1.2",
+    "TDE1.3",
+    "TDE1.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Dinlemeyi/İzlemeyi Yönetebilme",
+   "norm": "dinlemeyi/izlemeyi yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u01_k05",
+   "konu": "Masal",
+   "topic_key": "Türk Dili ve Edebiyatı > Masal",
+   "kodlar": [
+    "TDE1.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u01_k05",
+   "konu": "Masal",
+   "topic_key": "Türk Dili ve Edebiyatı > Masal",
+   "kodlar": [
+    "TDE1.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u01_k05",
+   "konu": "Masal",
+   "topic_key": "Türk Dili ve Edebiyatı > Masal",
+   "kodlar": [
+    "TDE1.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u01_k05",
+   "konu": "Masal",
+   "topic_key": "Türk Dili ve Edebiyatı > Masal",
+   "kodlar": [
+    "TDE1.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "İsimler (Adlar)",
+   "norm": "isimler (adlar)",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k06",
+   "konu": "İsimler (Adlar)",
+   "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "İsim Tamlamaları",
+   "norm": "isim tamlamaları",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k07",
+   "konu": "İsim Tamlamaları",
+   "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Sıfatlar (Ön Adlar)",
+   "norm": "sıfatlar (ön adlar)",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k08",
+   "konu": "Sıfatlar (Ön Adlar)",
+   "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Sıfat Tamlamaları",
+   "norm": "sıfat tamlamaları",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u01_k09",
+   "konu": "Sıfat Tamlamaları",
+   "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Gazel",
+   "norm": "gazel",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k01",
+   "konu": "Gazel",
+   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k01",
+   "konu": "Gazel",
+   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k01",
+   "konu": "Gazel",
+   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k01",
+   "konu": "Gazel",
+   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k01",
+   "konu": "Gazel",
+   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Kaside",
+   "norm": "kaside",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k02",
+   "konu": "Kaside",
+   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k02",
+   "konu": "Kaside",
+   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k02",
+   "konu": "Kaside",
+   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k02",
+   "konu": "Kaside",
+   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k02",
+   "konu": "Kaside",
+   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Mersiye",
+   "norm": "mersiye",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k03",
+   "konu": "Mersiye",
+   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k03",
+   "konu": "Mersiye",
+   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k03",
+   "konu": "Mersiye",
+   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k03",
+   "konu": "Mersiye",
+   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k03",
+   "konu": "Mersiye",
+   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Saf Şiir",
+   "norm": "saf şiir",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k04",
+   "konu": "Saf Şiir",
+   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde okumayı yönetebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k04",
+   "konu": "Saf Şiir",
+   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlerde anlam oluşturabilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k04",
+   "konu": "Saf Şiir",
+   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinleri çözümleyebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k04",
+   "konu": "Saf Şiir",
+   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "“Kelimelerin Ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "norm": "“kelimelerin ritmi” temasında ele alınan metinlere yönelik okuma sürecini değerlendirebilme",
+   "kaynak": "odsgm",
+   "konu_id": "edebiyat_10_u02_k04",
+   "konu": "Saf Şiir",
+   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Zamir (Adıl)",
+   "norm": "zamir (adıl)",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k05",
+   "konu": "Zamir (Adıl)",
+   "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Edat (İlgeç)",
+   "norm": "edat (ilgeç)",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k06",
+   "konu": "Edat (İlgeç)",
+   "topic_key": "Türk Dili ve Edebiyatı > Edat (İlgeç)",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Bağlaç",
+   "norm": "bağlaç",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k07",
+   "konu": "Bağlaç",
+   "topic_key": "Türk Dili ve Edebiyatı > Bağlaç",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Ünlem",
+   "norm": "ünlem",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k08",
+   "konu": "Ünlem",
+   "topic_key": "Türk Dili ve Edebiyatı > Ünlem",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlamına Göre Cümleler",
+   "norm": "anlamına göre cümleler",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u02_k09",
+   "konu": "Anlamına Göre Cümleler",
+   "topic_key": "Türk Dili ve Edebiyatı > Anlamına Göre Cümleler",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Destan",
+   "norm": "destan",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u03_k01",
+   "konu": "Destan",
+   "topic_key": "Türk Dili ve Edebiyatı > Destan",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Okumayı Yönetebilme",
+   "norm": "okumayı yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k01",
+   "konu": "Destan",
+   "topic_key": "Türk Dili ve Edebiyatı > Destan",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k01",
+   "konu": "Destan",
+   "topic_key": "Türk Dili ve Edebiyatı > Destan",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k01",
+   "konu": "Destan",
+   "topic_key": "Türk Dili ve Edebiyatı > Destan",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k01",
+   "konu": "Destan",
+   "topic_key": "Türk Dili ve Edebiyatı > Destan",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Mesnevi",
+   "norm": "mesnevi",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u03_k02",
+   "konu": "Mesnevi",
+   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Okumayı Yönetebilme",
+   "norm": "okumayı yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k02",
+   "konu": "Mesnevi",
+   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k02",
+   "konu": "Mesnevi",
+   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k02",
+   "konu": "Mesnevi",
+   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k02",
+   "konu": "Mesnevi",
+   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Halk Hikâyesi",
+   "norm": "halk hikâyesi",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u03_k03",
+   "konu": "Halk Hikâyesi",
+   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Okumayı Yönetebilme",
+   "norm": "okumayı yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k03",
+   "konu": "Halk Hikâyesi",
+   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k03",
+   "konu": "Halk Hikâyesi",
+   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k03",
+   "konu": "Halk Hikâyesi",
+   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k03",
+   "konu": "Halk Hikâyesi",
+   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Fabl",
+   "norm": "fabl",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u03_k04",
+   "konu": "Fabl",
+   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
+   "kodlar": [
+    "TDE1.1",
+    "TDE1.2",
+    "TDE1.3",
+    "TDE1.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Dinlemeyi/İzlemeyi Yönetebilme",
+   "norm": "dinlemeyi/izlemeyi yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k04",
+   "konu": "Fabl",
+   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
+   "kodlar": [
+    "TDE1.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k04",
+   "konu": "Fabl",
+   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
+   "kodlar": [
+    "TDE1.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k04",
+   "konu": "Fabl",
+   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
+   "kodlar": [
+    "TDE1.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k04",
+   "konu": "Fabl",
+   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
+   "kodlar": [
+    "TDE1.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Zarflar (Belirteçler)",
+   "norm": "zarflar (belirteçler)",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u03_k05",
+   "konu": "Zarflar (Belirteçler)",
+   "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "norm": "şiirde ahenk (ölçü, uyak, redif, aliterasyon, asonans)",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u03_k06",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Şiirde ahengi sağlayan özellikleri (uyak düzeni, uyak, redif, aliterasyon, asonans) ile ilgili çalışma yapar.",
+   "norm": "şiirde ahengi sağlayan özellikleri (uyak düzeni, uyak, redif, aliterasyon, asonans) ile ilgili çalışma yapar.",
+   "kaynak": "okulizyon",
+   "konu_id": "edebiyat_10_u03_k06",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Okumayı Yönetebilme",
+   "norm": "okumayı yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k06",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k06",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k06",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u03_k06",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Dede Korkut Hikâyeleri",
+   "norm": "dede korkut hikâyeleri",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u04_k01",
+   "konu": "Dede Korkut Hikâyeleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Okumayı Yönetebilme",
+   "norm": "okumayı yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k01",
+   "konu": "Dede Korkut Hikâyeleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k01",
+   "konu": "Dede Korkut Hikâyeleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k01",
+   "konu": "Dede Korkut Hikâyeleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k01",
+   "konu": "Dede Korkut Hikâyeleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Tanzimat Dönemi Şiiri",
+   "norm": "tanzimat dönemi şiiri",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u04_k02",
+   "konu": "Tanzimat Dönemi Şiiri",
+   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
+   "kodlar": [
+    "TDE2.1",
+    "TDE2.2",
+    "TDE2.3",
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Okumayı Yönetebilme",
+   "norm": "okumayı yönetebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k02",
+   "konu": "Tanzimat Dönemi Şiiri",
+   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
+   "kodlar": [
+    "TDE2.1"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Anlam Oluşturabilme",
+   "norm": "anlam oluşturabilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k02",
+   "konu": "Tanzimat Dönemi Şiiri",
+   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
+   "kodlar": [
+    "TDE2.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Çözümleyebilme",
+   "norm": "çözümleyebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k02",
+   "konu": "Tanzimat Dönemi Şiiri",
+   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
+   "kodlar": [
+    "TDE2.3"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Süreci Değerlendirebilme",
+   "norm": "süreci değerlendirebilme",
+   "kaynak": "tymm",
+   "konu_id": "edebiyat_10_u04_k02",
+   "konu": "Tanzimat Dönemi Şiiri",
+   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
+   "kodlar": [
+    "TDE2.4"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "coklu",
+   "coklu": true
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Fiiller (Eylemler)",
+   "norm": "fiiller (eylemler)",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u04_k03",
+   "konu": "Fiiller (Eylemler)",
+   "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Yazım Kuralları",
+   "norm": "yazım kuralları",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u04_k04",
+   "konu": "Yazım Kuralları",
+   "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Noktalama İşaretleri",
+   "norm": "noktalama işaretleri",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u04_k05",
+   "konu": "Noktalama İşaretleri",
+   "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
+  },
+  {
+   "ders": "Türk Dili ve Edebiyatı",
+   "metin": "Paragraf",
+   "norm": "paragraf",
+   "kaynak": "konu-adi",
+   "konu_id": "edebiyat_10_u04_k06",
+   "konu": "Paragraf",
+   "topic_key": "Türk Dili ve Edebiyatı > Paragraf",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "yapisal"
   }
  ],
  "eslesmeyen_metinler": [

@@ -89,8 +89,17 @@ for (const [ders, n] of Object.entries(TABAN)) {
 }
 ok("Din Kültürü'nde zorlama eşleme yok",
   konular.filter(k => k.ders === "Din Kültürü").every(k => (k.kodlar || []).length === 0));
-ok("TDE'de zorlama eşleme yok",
-  konular.filter(k => k.ders === "Türk Dili ve Edebiyatı").every(k => (k.kodlar || []).length === 0));
+// TDE artık kodlu: kodu TEMA + EKSEN belirler (beceri ekseni TDE1/2/3/4),
+// uydurma değil. Kural: kod yalnız "yapisal" dayanakla yazılır ve
+// dil bilgisi konularına (yontem "dil-bilgisi-kodsuz") hiç kod yazılmaz.
+const tdeK = konular.filter(k => k.ders === "Türk Dili ve Edebiyatı");
+ok("TDE kodları yalnız yapısal dayanakla",
+  tdeK.filter(k => (k.kodlar || []).length).every(k => k.guven === "yapisal" || k.guven === "kesin"),
+  tdeK.filter(k => (k.kodlar || []).length && !["yapisal", "kesin"].includes(k.guven)).map(k => k.konu).join(","));
+ok("TDE dil bilgisi konularına kod yazılmadı",
+  tdeK.filter(k => k.yontem === "dil-bilgisi-kodsuz").every(k => (k.kodlar || []).length === 0));
+ok("TDE'de 16 kodlu konu", tdeK.filter(k => (k.kodlar || []).length).length === 16,
+  String(tdeK.filter(k => (k.kodlar || []).length).length));
 
 // ---------- 3) Çalışma zamanı ----------
 console.log("\n== 3) OKZM çalışma zamanı ==");

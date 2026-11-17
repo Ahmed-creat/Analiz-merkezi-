@@ -17,7 +17,7 @@
 >              sorgulayabilme                                       ✔ eşleşir
 > ```
 >
-> **Yalnız Türk Dili ve Edebiyatı** eşleşmez; çünkü TYMM TDE programı
+> **Türk Dili ve Edebiyatı ayrı ele alınır**; çünkü TYMM TDE programı
 > **beceri eksenli** yazılmıştır. TYMM'de TDE çıktısı çıplak beceri adıdır:
 >
 > ```
@@ -34,6 +34,14 @@
 > Bu yüzden TDE için konu metni **Okulizyon'dan** alınır:
 > `site/content/mufredat/okulizyon_kazanim_10.json`
 > Diğer 8 ders için TYMM çıktısı doğrudan kullanılabilir.
+>
+> **UYGULAMADA ARTIK BAĞLI (27 Ekim).** TDE'nin 30 konusu için kazanım seti
+> kuruldu: `site/content/mufredat/tde_kazanim_10.json`
+> → 30 konu · 16 kodlu konu · 14 dil bilgisi (kod uydurulmadı) · 91 ayırt edici terim.
+> Konu → çıktı kodu eşlemesi **tema + beceri ekseni** ile yapılır (TYMM/ODSGM).
+> Okulizyon cümlesi → konu eşlemesi `site/konu-anahtar.js` kural tablosunda
+> 30 kurala bağlıdır. Üretici: `node scripts/tde-kazanim-uret.js`
+> Doğrulama: `node tests/dom/dom-v64-tde-kazanim.test.js` (43 doğrulama).
 
 > **Kaynak:** MEB Türkiye Yüzyılı Maarif Modeli (TYMM) 2026 öğretim programları.
 > `node scripts/kazanim-dokumu.js` üretir; elle düzenlenmez.

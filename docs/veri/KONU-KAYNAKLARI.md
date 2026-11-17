@@ -164,7 +164,7 @@ Betik: `node scripts/tde-kopru.js` → her kazanımın kanıtıyla birlikte tabl
 | 3. Dünden Bugüne | destan, mesnevi | halk hikâyesi | fabl |
 | 4. Nesillerin Mirası | Dede Korkut hikâyesi, Tanzimat şiiri | Servetifünun romanı, Fecriati şiiri | Millî Edebiyat hikâyesi |
 
-### Çözüm
+### Çözüm — uygulamaya bağlandı
 
 TDE'nin konu kazanımı **Okulizyon'dan** alınır:
 
@@ -188,7 +188,53 @@ Okulizyon ne verir:
 göstermek için eşlenir.
 
 `docs/uretim/TUM-KAZANIMLAR-10SINIF.md` TYMM çıktılarını listeler. Başındaki
-uyarı 9 dersin 8'inde eşleştiğini, yalnız TDE'de eşleşmediğini söyler.
+uyarı TDE'nin neden ayrı ele alındığını ve kazanım setine nasıl bağlandığını söyler.
+
+### TDE kazanım seti — `tde_kazanim_10.json`
+
+Diğer derslerde `kazanim_konu_10.json` + `konu_esleme.json` ne yapıyorsa, TDE'de
+bu dosya onu yapar:
+
+| Alan | Değer |
+|---|---|
+| konu | 30 (uygulamanın 30 TDE konusu, birebir aynı adlar) |
+| kodlu konu | 16 (okuma + dinleme konuları) |
+| dil bilgisi konusu | 14 — **kod yazılmadı** (TYMM çıktısı beceri eksenli) |
+| kazanım metni | 98 (kaynak etiketli) |
+| Okulizyon cümlesi | 4 (kullanıcının verdiği metinle birebir) |
+| ayırt edici terim | 91 (TYMM tema içeriği + Anahtar Kavramlar) |
+
+Kaynak etiketleri: `okulizyon` · `odsgm` · `tymm` · `konu-adi`.
+Hiçbir cümle uydurulmadı; her biri ya kullanıcının Okulizyon verisinden ya da
+MEB'in resmî metninden gelir.
+
+**Konu → çıktı kodu** eşlemesi tema + eksenle belirlenir:
+
+| Tema | Okuma konuları | Dinleme |
+|---|---|---|
+| 1. Sözün Ezgisi | Koşuk, Sav, Türkü, Koşma, Şiirde Ahenk | Masal |
+| 2. Kelimelerin Ritmi | Gazel, Kaside, Mersiye, Saf Şiir | — |
+| 3. Dünden Bugüne | Destan, Mesnevi, Halk Hikâyesi | Fabl |
+| 4. Nesillerin Mirası | Dede Korkut, Tanzimat Dönemi Şiiri | — |
+
+**2 cümle konuya bağlanmaz** (`genel_kazanimlar`): "Metindeki söz varlığının
+anlamını…" ve "Metinlerden hareketle çıkarımlar yapar." — bunlar genel okuma
+becerisidir, cümlede konu adı yoktur. Tema çıktısı TDE2.2/TDE2.3'e bağlanır,
+rastgele bir konuya yazılmaz.
+
+**Kural tablosu:** `site/konu-anahtar.js` içinde 30 TDE kuralı. Sıra önemli:
+
+```
+Koşuk  ← /destan donemi|kosu[kg]|kopuz/     (Destan'dan ÖNCE)
+Destan ← /dogal destan|yapma destan|destan|motif/
+```
+
+**Üretim ve doğrulama:**
+
+```
+node scripts/tde-kazanim-uret.js          # veri + indeks + okz-meb METIN
+node tests/dom/dom-v64-tde-kazanim.test.js   # 43 doğrulama
+```
 
 ---
 
