@@ -102,7 +102,9 @@ ok("install dosyaları tek tek ekliyor", /ASSETS\.map\(\(u\) =>\s*c\.add\(u\)\.c
 console.log("\n== 5) Sürüm damgası ==");
 const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-ok("v72 sürümü", /^v72-/.test(surum), surum);
+/* v73 sürümü damgayı ilerletti; testin amacı damganın BOŞ ve eski
+   kalmamasıdır — sabit sürüm adı değil. */
+ok("sürüm damgası v72 veya sonrası", /^v7[2-9]-|^v[89]\d/.test(surum), surum);
 ok("SW damgası sürümle aynı", cache.indexOf(surum) > 0, cache);
 
 console.log("\n" + "─".repeat(56));

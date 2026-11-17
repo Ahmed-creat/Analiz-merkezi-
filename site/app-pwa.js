@@ -1,4 +1,4 @@
-const PWA_SURUM = "v72-tema-tus-iliski-yok";
+const PWA_SURUM = "v73-metin-paragraf";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

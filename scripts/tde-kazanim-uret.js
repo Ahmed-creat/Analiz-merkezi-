@@ -121,6 +121,20 @@ const GENEL_BECERI = [
     desen: /anlatim bicimi|anlatim teknigi|dusunceyi gelistir|anlatim ozelligi|akicilik|duruluk/,
     ornekler: ["Metinde kullanılan anlatım biçimlerini belirler."],
     gerekce: "Anlatım biçimleri paragraf konusudur."
+  },
+  /* v73 — kullanıcı kuralı: "eğer genellikle metinden bahsediyorsa
+     paragrafa bağlanır". En sona yazılır: tür/dönem adı geçen cümleler
+     önceki kurallarla ya da sözlükle bağlanır, buraya konusuz kalanlar düşer. */
+  {
+    ad: "metin",
+    hedef: "Paragraf",
+    desen: /(^| )met[in][a-z]*/,   // metin · metni · metnin · metne · metinler
+    ornekler: [
+      "Metni millî, manevi ve evrensel değerlerin aktarımı bağlamında değerlendirir.",
+      "Metnin yapı unsurlarının metne olan katkısını değerlendirir.",
+      "Yazarın metni yazma amacını belirler."
+    ],
+    gerekce: "Cümlede tür/dönem adı yok ama doğrudan metin konu ediliyor; metni anlama/çözümleme anlam bilgisinin (paragraf) becerisidir."
   }
 ];
 

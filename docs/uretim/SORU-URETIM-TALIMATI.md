@@ -124,6 +124,12 @@ diye şu kural kullanıcı onayı bekliyor:
 
 Karar verilene kadar yeni dosyalar **alınmaz**.
 
+> **Kullanıcı (27 Kasım):** "Havuzu eksik olan kalmayacak zaten diğer agent
+> soru üretimine devam ediyor." → **İçerik eksiği** kapanacak. Yukarıdaki
+> A/B/C sorusu içerik eksiğiyle ilgili değil; **aynı resmî çıktının iki ayrı
+> konu başlığında görünmesi** sorunudur. Dosyalar gelince hangi başlıkta
+> duracakları sorulur, kendiliğinden karar verilmez.
+
 ---
 
 ## 3. Kaç soru üretilecek — tek kural

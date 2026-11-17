@@ -11,7 +11,7 @@ Bu dosya `scripts/tde-icerik-uret.js` tarafından **otomatik** üretilir — ell
 | PDF'ten çıkarılan madde | 1577 |
 | Sayfa aralığı olan konu | 28 / 30 |
 | Sözlük terimi (1. aşama) | 91 |
-| Genel beceri kuralı (2. aşama) | 4 |
+| Genel beceri kuralı (2. aşama) | 5 |
 
 ## Konu haritası
 
@@ -266,3 +266,4 @@ aşama çalışmadan cevap buradan gelir.
 - **ana-dusunce** → Paragraf — Konu/ana düşünce tespiti paragraf konusudur.
 - **soz-varligi** → Paragraf — 10. sınıfta sözcük-anlam havuzu Paragraf altında toplanır (ayrı konu yok).
 - **anlatim** → Paragraf — Anlatım biçimleri paragraf konusudur.
+- **metin** → Paragraf — Cümlede tür/dönem adı yok ama doğrudan metin konu ediliyor; metni anlama/çözümleme anlam bilgisinin (paragraf) becerisidir.

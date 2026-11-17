@@ -208,7 +208,16 @@
     "cikarim": /(^| )(cikarim|cikarsama|cikarimlar|sonuc cikar|anlam cikar)/,
     "ana-dusunce": /(^| )(ana dusunce|ana fikir|ana iletisi|metnin konusu|konu ve ana)/,
     "soz-varligi": /(^| )(soz varlig|sozcuklerin anlam|kelimelerin anlam|baglamdan hareketle anlam|sozcuk anlam)/,
-    "anlatim": /(^| )(anlatim bicim|anlatim teknig|dusunceyi gelistirme|anlatim ozellig)/
+    "anlatim": /(^| )(anlatim bicim|anlatim teknig|dusunceyi gelistirme|anlatim ozellig)/,
+    /* v73 — METİN KURALI
+       Kullanıcı (17 Kasım): "30 yeni konu ne? Ve eğer genellikle metinden
+       bahsediyorsa paragrafa bağlanır."
+       Cümlede tür/dönem/terim adı YOKSA ve doğrudan METNİ konu ediyorsa
+       ("metni değerlendirir", "metnin yapı unsurları", "yazarın metni yazma
+       amacı") anlam bilgisi havuzu Paragraf'tır. EN SONDA: tür adı geçen
+       cümleler yukarıdaki kesin kurallarla/sözlükle zaten bağlanmış olur,
+       buraya yalnız konusuz kalanlar düşer. */
+    "metin": /(^| )met[in][a-z]*/   // metin · metni · metnin · metne · metinde · metinler
   };
 
   function genelEsle(kazanim) {
