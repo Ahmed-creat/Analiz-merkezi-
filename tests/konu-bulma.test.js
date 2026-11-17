@@ -70,7 +70,7 @@ for (const ders of Object.keys(KONULAR["10"])) {
     if (!HB.bul(anahtar, HAVUZLAR)) kapsanmayan.push(anahtar);
   }
 }
-esit("10. sınıf konu sayısı 182", konuSayisi, 182);
+esit("10. sınıf konu sayısı 189", konuSayisi, 189);
 esit("her konuda Kısa Kontrol (havuz) var: " + (konuSayisi - HAVUZSUZ_KONULAR.length) + "/" + (konuSayisi - HAVUZSUZ_KONULAR.length), kapsanmayan.length, 0);
 ok("kapsanmayan konu listesi boş", kapsanmayan.length === 0, kapsanmayan.slice(0, 3).join(" | "));
 esit("etiket (alt beceri) kademesi çalışıyor",

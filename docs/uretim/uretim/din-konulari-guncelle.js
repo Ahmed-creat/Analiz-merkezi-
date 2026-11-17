@@ -40,6 +40,33 @@ const KONTROL = process.argv.includes("--kontrol");
    Son konu her ünitede "Kur'an'dan Mesajlar"; ayet aralığı parantezde
    verilerek aynı adlı konular ayırt edilir (uygulama başlık gösterir). */
 const DIN_KONULARI = [
+  "1.1.1 İslam'da Bilginin Yeri",
+  "1.1.2 İslam'da Bilgi Kaynakları",
+  "1.2 Allah-Âlem İlişkisi",
+  "1.3 Kur'an'dan Mesajlar",
+  "2.1 Allah'ın Varlığının Delilleri",
+  "2.1.1 Kozmolojik Delil",
+  "2.1.2 Teleolojik Delil",
+  "2.1.3 Ontolojik Delil",
+  "2.1.4 Dinî Tecrübe Delili",
+  "2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
+  "2.3 Kur'an'dan Mesajlar",
+  "3.1 İslam'ın Tevhit İlkesi",
+  "3.2 İslam'da Adalet ve Eşitlik",
+  "3.3 İslam ve Barış",
+  "3.4 Kur'an'dan Mesajlar",
+  "4.1 İnsan, Çevre ve Ahlak",
+  "4.2 Teknoloji ve Ahlak",
+  "4.3 Çevre ve Teknoloji",
+  "4.4 Kur'an'dan Mesajlar",
+  "5.1 Dinî Yorum Farklılıklarının Sebepleri",
+  "5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
+  "5.2.1 Ehlisünnet",
+  "5.2.2 Şia",
+  "5.3 Kur'an'dan Mesajlar"
+];
+
+const ESKI_LISTE = [
   "1.1 İslam'da Bilgi ve Bilginin Kaynakları",
   "1.2 Allah-Âlem İlişkisi",
   "1.3 Kur'an'dan Mesajlar (İsrâ 36, Mülk 23)",
@@ -57,24 +84,6 @@ const DIN_KONULARI = [
   "5.1 Dinî Yorum Farklılıklarının Nedenleri",
   "5.2 İtikadi-Siyasi ve Fıkhi Yorumlar",
   "5.3 Kur'an'dan Mesajlar (Hucurât 13)"
-];
-
-const ESKI_LISTE = [
-  "1.1 Kur'an-ı Kerim ve Özellikleri",
-  "1.2 Kur'an'ın Anlaşılması ve Yorumlanması",
-  "1.3 Kur'an'dan Mesajlar (Ünite 1)",
-  "2.1 İslam'ın İbadet Boyutu",
-  "2.2 Namaz ve Oruç",
-  "2.3 Hac ve Zekât",
-  "2.4 Kur'an'dan Mesajlar (Ünite 2)",
-  "3.1 İslam'ın Ahlak Boyutu",
-  "3.2 Ahlaki Davranışlar",
-  "3.3 Toplumsal Ahlak",
-  "3.4 Kur'an'dan Mesajlar (Ünite 3)",
-  "4.1 Hz. Muhammed'in Hayatı",
-  "4.2 Mekke Dönemi",
-  "4.3 Medine Dönemi",
-  "4.4 Kur'an'dan Mesajlar (Ünite 4)"
 ];
 
 let hata = 0;
@@ -144,44 +153,67 @@ const ARSIV_DIR = path.join(KOK, "arsiv", "soru_havuzlari", "din");
 
 const HAVUZ_ESLEME = {
   din_10_u01_k01: "Din Kültürü > " + DIN_KONULARI[0],
-  din_10_u01_k03: "Din Kültürü > " + DIN_KONULARI[1],
-  din_10_u02_k01: "Din Kültürü > " + DIN_KONULARI[3],
-  din_10_u02_k02: "Din Kültürü > " + DIN_KONULARI[4],
-  din_10_u03_k01: "Din Kültürü > " + DIN_KONULARI[6],
-  din_10_u03_k02: "Din Kültürü > " + DIN_KONULARI[7],
-  din_10_u03_k03: "Din Kültürü > " + DIN_KONULARI[8],
-  din_10_u04_k01: "Din Kültürü > " + DIN_KONULARI[10],
-  din_10_u04_k02: "Din Kültürü > " + DIN_KONULARI[11],
-  din_10_u04_k03: "Din Kültürü > " + DIN_KONULARI[12],
-  din_10_u05_k01: "Din Kültürü > " + DIN_KONULARI[14],
-  din_10_u05_k02: "Din Kültürü > " + DIN_KONULARI[15]
+  din_10_u01_k02: "Din Kültürü > " + DIN_KONULARI[1],
+  din_10_u01_k03: "Din Kültürü > " + DIN_KONULARI[2],
+  din_10_u02_k01: "Din Kültürü > " + DIN_KONULARI[4],
+  din_10_u02_k02: "Din Kültürü > " + DIN_KONULARI[9],
+  din_10_u03_k01: "Din Kültürü > " + DIN_KONULARI[11],
+  din_10_u03_k02: "Din Kültürü > " + DIN_KONULARI[12],
+  din_10_u03_k03: "Din Kültürü > " + DIN_KONULARI[13],
+  din_10_u04_k01: "Din Kültürü > " + DIN_KONULARI[15],
+  din_10_u04_k02: "Din Kültürü > " + DIN_KONULARI[16],
+  din_10_u04_k03: "Din Kültürü > " + DIN_KONULARI[17],
+  din_10_u05_k01: "Din Kültürü > " + DIN_KONULARI[19],
+  din_10_u05_k02: "Din Kültürü > " + DIN_KONULARI[20]
 };
 
-/* din_10_u01_k02 → din_10_u01_k01 (aynı konu, ortak soru yok) */
-function havuzBirlestir(hedefId, kaynakId) {
-  const hedefYol = path.join(HAVUZ_DIR, hedefId + ".json");
+/* din_10_u01_k01 → 1.1.1 + 1.1.2
+   Ders kitabı 1.1'i iki alt başlığa ayırıyor:
+     1.1.1 İslam'da Bilginin Yeri      → bilgi kavramı, ilim, ilmin önemi
+     1.1.2 İslam'da Bilgi Kaynakları   → sadık haber, selim akıl, salim duyular
+   Havuz iki konuyu birlikte taşıyordu; ilk 12 soru "Bilginin Yeri",
+   sonraki 15 soru "Bilgi Kaynakları" bölümüne aittir. İkiye bölünür. */
+function havuzBol(kaynakId, yeniId, ilkAdet) {
   const kaynakYol = path.join(HAVUZ_DIR, kaynakId + ".json");
-  if (!fs.existsSync(kaynakYol)) return; // zaten birleştirilmiş
-  const hedef = JSON.parse(fs.readFileSync(hedefYol, "utf8"));
+  const yeniYol = path.join(HAVUZ_DIR, yeniId + ".json");
+  if (!fs.existsSync(kaynakYol) || fs.existsSync(yeniYol)) return; // zaten bölünmüş
   const kaynak = JSON.parse(fs.readFileSync(kaynakYol, "utf8"));
-  hedef.sorular = [...hedef.sorular, ...kaynak.sorular].map((q, i) => ({
-    ...q,
-    soru_id: hedefId + "_o" + String(i + 1).padStart(2, "0")
-  }));
-  hedef.flashcards = [...hedef.flashcards, ...kaynak.flashcards].map((k, i) => ({
-    ...k,
-    id: hedefId + "_o" + String(i + 1).padStart(2, "0") + ":flashcard"
-  }));
+  const sorular = kaynak.sorular || [];
+  if (sorular.length <= ilkAdet) return;
+
+  const duzenle = (liste, onEk) => liste.map((q, i) => {
+    const no = onEk + "_o" + String(i + 1).padStart(2, "0");
+    const kart = { ...(q.flashcard || {}) };
+    return {
+      soru: { ...q, soru_id: no, flashcard: kart },
+      kart: {
+        id: no + ":flashcard",
+        front: kart.front || "",
+        back: kart.back || ""
+      }
+    };
+  });
+
+  const ilk = duzenle(sorular.slice(0, ilkAdet), kaynakId);
+  const kalan = duzenle(sorular.slice(ilkAdet), yeniId);
+
+  const yeni = {
+    ...kaynak,
+    konu_id: yeniId,
+    sorular: kalan.map(x => x.soru),
+    flashcards: kalan.map(x => x.kart)
+  };
+  kaynak.sorular = ilk.map(x => x.soru);
+  kaynak.flashcards = ilk.map(x => x.kart);
+
   if (!KONTROL) {
-    fs.writeFileSync(hedefYol, JSON.stringify(hedef, null, 2) + "\n", "utf8");
-    fs.mkdirSync(ARSIV_DIR, { recursive: true });
-    fs.renameSync(kaynakYol, path.join(ARSIV_DIR, kaynakId + ".json"));
+    fs.writeFileSync(kaynakYol, JSON.stringify(kaynak, null, 2) + "\n", "utf8");
+    fs.writeFileSync(yeniYol, JSON.stringify(yeni, null, 2) + "\n", "utf8");
   }
-  bildir("✔ birleştirildi: " + kaynakId + " (" + kaynak.sorular.length + " soru) → " + hedefId +
-    " (toplam " + hedef.sorular.length + " soru)");
+  bildir("✔ bölündü: " + kaynakId + " " + ilkAdet + " soru · " + yeniId + " " + kalan.length + " soru");
 }
 
-havuzBirlestir("din_10_u01_k01", "din_10_u01_k02");
+havuzBol("din_10_u01_k01", "din_10_u01_k02", 12);
 
 let etiket = 0;
 for (const [konuId, anahtar] of Object.entries(HAVUZ_ESLEME)) {

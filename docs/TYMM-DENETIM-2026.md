@@ -145,7 +145,7 @@ tespiti bu noktada doğrudur. Eksik olan haritalama değil, **2026 konularına a
 
 Nedenleri:
 
-- **Din Kültürü**: havuz 2018 ünite yapısında; 2026 temaları yeni. Yeni soru içeriği gerekir.
+- **Din Kültürü**: 2026-11-17'de havuzlar ders kitabının içindekilerine göre yenilendi (17 ana konu + 7 alt konu = 24 konu; ağaç `konular.js`). Kalan fark, programın 17 öğrenme çıktısı ile kitabın alt başlıkları arasındaki ayrım: çıktılar "1.1 İslam'da bilgi ve bilginin kaynaklarını çözümler" gibi bütüncül cümleler, kitap ise 1.1.1 / 1.1.2 alt başlıklarına iniyor. Ağaç kitabı izler; çıktı-konu kodu eşlemesi bu yüzden birebir değil.
 - **Türk Dili ve Edebiyatı**: program dil becerisi eksenli (TDE1.1-TDE4.4). Havuz konuları tür/gramer
   başlığı (Koşuk, Gazel, İsimler…); resmî çıktılar beceri bildirir. Kod yazmak uydurma olurdu.
 - **Coğrafya COĞ.10.6.1 / Fizik FİZ.10.3.7, FİZ.10.4.7 / Kimya KİM.10.2.7, KİM.10.2.8**: 2026'da

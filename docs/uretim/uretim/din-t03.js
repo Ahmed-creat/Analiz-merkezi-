@@ -484,4 +484,4 @@ yaz("din_10_t03_c04", KAYNAK + ", s.102-107", [
 ]);
 
 /* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
-konuBasligiYaz("din_10_t03_c04", "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Nahl 90, Nisâ 58, Bakara 208)");
+konuBasligiYaz("din_10_t03_c04", "Din Kültürü > 3.4 Kur'an'dan Mesajlar");

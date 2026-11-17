@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 309,
- "soru_sayisi": 3393,
- "flashcard_sayisi": 3393,
+ "havuz_sayisi": 316,
+ "soru_sayisi": 3453,
+ "flashcard_sayisi": 3453,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -1240,7 +1240,7 @@
     "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
    ],
    "baslik": "İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar (İsrâ 36, Mülk 23)",
+   "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.1.3",
    "uretim_durumu": "tam"
   },
@@ -1295,7 +1295,7 @@
     "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
    ],
    "baslik": "Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 2.3 Kur'an'dan Mesajlar (Haşr 22-24)",
+   "topic_key": "Din Kültürü > 2.3 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.2.3",
    "uretim_durumu": "tam"
   },
@@ -1367,7 +1367,7 @@
     "Ayetlerde verilen mesajlarla ilgili yaptığı çıkarımları kendi cümleleriyle ifade eder."
    ],
    "baslik": "Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Nahl 90, Nisâ 58, Bakara 208)",
+   "topic_key": "Din Kültürü > 3.4 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.3.4",
    "uretim_durumu": "tam"
   },
@@ -1436,7 +1436,7 @@
     "Ayette verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
    ],
    "baslik": "Rum suresinin 41. ayetinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar (Rûm 41)",
+   "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.4.4",
    "uretim_durumu": "tam"
   },
@@ -1490,7 +1490,7 @@
     "Ayette verilen mesajlarla ilgili çıkarımları kendi cümleleriyle ifade eder."
    ],
    "baslik": "Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur’an’ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 5.3 Kur'an'dan Mesajlar (Hucurât 13)",
+   "topic_key": "Din Kültürü > 5.3 Kur'an'dan Mesajlar",
    "kod": "DKAB.10.5.3",
    "uretim_durumu": "tam"
   },
@@ -1499,13 +1499,28 @@
    "ders": "Din Kültürü",
    "sinif": 10,
    "dosya": "din_10_u01_k01.json",
-   "soru_sayisi": 27,
-   "flashcard_sayisi": 27,
+   "soru_sayisi": 12,
+   "flashcard_sayisi": 12,
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "1.1 İslam'da Bilgi ve Bilginin Kaynakları",
-   "topic_key": "Din Kültürü > 1.1 İslam'da Bilgi ve Bilginin Kaynakları",
+   "baslik": "1.1.1 İslam'da Bilginin Yeri",
+   "topic_key": "Din Kültürü > 1.1.1 İslam'da Bilginin Yeri",
+   "kod": "",
+   "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_u01_k02",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u01_k02.json",
+   "soru_sayisi": 15,
+   "flashcard_sayisi": 15,
+   "etiketler": [
+    "Genel konu becerisi"
+   ],
+   "baslik": "1.1.2 İslam'da Bilgi Kaynakları",
+   "topic_key": "Din Kültürü > 1.1.2 İslam'da Bilgi Kaynakları",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1551,6 +1566,70 @@
    ],
    "baslik": "2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
    "topic_key": "Din Kültürü > 2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
+   "kod": "",
+   "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_u02_k05",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k05.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Kozmolojik delilin dayandığı temel öncülü belirler.",
+    "Evrenin sonradanlığı ile yaratıcı fikri arasındaki ilişkiyi açıklar."
+   ],
+   "baslik": "2.1.1 Kozmolojik Delil",
+   "topic_key": "Din Kültürü > 2.1.1 Kozmolojik Delil",
+   "kod": "",
+   "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_u02_k06",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k06.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Evrendeki düzen örneklerini delille ilişkilendirir.",
+    "Gaye ve nizam kavramlarını ayırt eder."
+   ],
+   "baslik": "2.1.2 Teleolojik Delil",
+   "topic_key": "Din Kültürü > 2.1.2 Teleolojik Delil",
+   "kod": "",
+   "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_u02_k07",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k07.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ontolojik delilin mantığını açıklar.",
+    "Delilin sınırlılığını değerlendirir."
+   ],
+   "baslik": "2.1.3 Ontolojik Delil",
+   "topic_key": "Din Kültürü > 2.1.3 Ontolojik Delil",
+   "kod": "",
+   "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_u02_k08",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u02_k08.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Dinî tecrübenin delil olarak nasıl kullanıldığını açıklar.",
+    "Dinî tecrübenin sınırlılığını değerlendirir."
+   ],
+   "baslik": "2.1.4 Dinî Tecrübe Delili",
+   "topic_key": "Din Kültürü > 2.1.4 Dinî Tecrübe Delili",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1639,8 +1718,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "4.3 Çevre ve Teknoloji Etkileşimi",
-   "topic_key": "Din Kültürü > 4.3 Çevre ve Teknoloji Etkileşimi",
+   "baslik": "4.3 Çevre ve Teknoloji",
+   "topic_key": "Din Kültürü > 4.3 Çevre ve Teknoloji",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1654,8 +1733,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "5.1 Dinî Yorum Farklılıklarının Nedenleri",
-   "topic_key": "Din Kültürü > 5.1 Dinî Yorum Farklılıklarının Nedenleri",
+   "baslik": "5.1 Dinî Yorum Farklılıklarının Sebepleri",
+   "topic_key": "Din Kültürü > 5.1 Dinî Yorum Farklılıklarının Sebepleri",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1669,8 +1748,40 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "5.2 İtikadi-Siyasi ve Fıkhi Yorumlar",
-   "topic_key": "Din Kültürü > 5.2 İtikadi-Siyasi ve Fıkhi Yorumlar",
+   "baslik": "5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
+   "topic_key": "Din Kültürü > 5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
+   "kod": "",
+   "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_u05_k03",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u05_k03.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Ehlisünnet kavramını ve dayanaklarını açıklar.",
+    "Ehlisünnet çizgisindeki itikadi ve fıkhi yorumları ayırt eder."
+   ],
+   "baslik": "5.2.1 Ehlisünnet",
+   "topic_key": "Din Kültürü > 5.2.1 Ehlisünnet",
+   "kod": "",
+   "uretim_durumu": "eski-sema"
+  },
+  {
+   "konu_id": "din_10_u05_k04",
+   "ders": "Din Kültürü",
+   "sinif": 10,
+   "dosya": "din_10_u05_k04.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "Şia'nın imamet anlayışını açıklar.",
+    "Şia içindeki fıkhi yorumları ayırt eder."
+   ],
+   "baslik": "5.2.2 Şia",
+   "topic_key": "Din Kültürü > 5.2.2 Şia",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },

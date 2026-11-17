@@ -375,4 +375,4 @@ yaz("din_10_t02_c03", KAYNAK + ", s.69-72", [
 ]);
 
 /* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
-konuBasligiYaz("din_10_t02_c03", "Din Kültürü > 2.3 Kur'an'dan Mesajlar (Haşr 22-24)");
+konuBasligiYaz("din_10_t02_c03", "Din Kültürü > 2.3 Kur'an'dan Mesajlar");

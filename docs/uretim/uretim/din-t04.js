@@ -529,4 +529,4 @@ yaz("din_10_t04_c04", KAYNAK + ", s.132-134", [
 ]);
 
 /* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
-konuBasligiYaz("din_10_t04_c04", "Din Kültürü > 4.4 Kur'an'dan Mesajlar (Rûm 41)");
+konuBasligiYaz("din_10_t04_c04", "Din Kültürü > 4.4 Kur'an'dan Mesajlar");

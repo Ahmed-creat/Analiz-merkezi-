@@ -391,4 +391,4 @@ yaz("din_10_t05_c03", KAYNAK + ", s.159-163", [
 ]);
 
 /* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
-konuBasligiYaz("din_10_t05_c03", "Din Kültürü > 5.3 Kur'an'dan Mesajlar (Hucurât 13)");
+konuBasligiYaz("din_10_t05_c03", "Din Kültürü > 5.3 Kur'an'dan Mesajlar");
