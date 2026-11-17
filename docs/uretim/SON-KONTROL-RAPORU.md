@@ -9,7 +9,7 @@
 
 | Kapı | Sonuç |
 | --- | --- |
-| `havuz-son-kontrol.js` (tüm dosyalar) | 316 dosya · **0 hata** · 54 üslup uyarısı · başlık eşleşmesi 179/189 |
+| `havuz-son-kontrol.js` (tüm dosyalar) | 316 dosya · **0 hata** · **0 üslup uyarısı** · başlık eşleşmesi 179/189 |
 | `havuz-denetle.js --tumu` (plan şeması) | 142 dosya · **0 hata · 0 uyarı** |
 | `soru-uret-dogrula.js` | 316 dosya (142 geçerli · 174 konu havuzu) · soru/kart eşi tam · görselli 146 · plan dışı 0 · **TÜM KURALLAR GEÇTİ** |
 | `havuz-index-uret.js --plan --kontrol` | 316 havuz · 3.453 soru · kapsanan **142/158** |
@@ -149,7 +149,7 @@ tamamında Kısa Kontrol havuzu var; Din Kültürü 24/24 başlık eşleşti.
 | --- | --- | --- |
 | 1 | **9 konuda birebir başlık eşleşmesi yok** | Biyoloji 1.3, 1.6, 2.5, 2.7, 2.8 · Kimya 1.2.2, 3.1.1 · Tarih 2.2, 2.4. Bunlar **havuzsuz değil**: plan şemalı havuzları var, ancak `topic_key`'leri kazanım cümlesi (ör. "1.3 Fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapabilme"), ağaç başlığı değil. Uygulama normalize ederek buluyor (test 75/75). Tutarlılık için din'de yapıldığı gibi bu 9 havuzun da başlığı yazılabilir. |
 | 2 | **TDE Paragraf** | Ağaçta konu var, havuz **bilinçli olarak üretilmedi** (kullanıcı talimatı: "uygulamada paragraf sorusu soramayız"). Dosya `arsiv/soru_havuzlari/edebiyat/edebiyat_10_u04_k06.json`. |
-| 3 | **54 üslup uyarısı** | Doğru şık diğerlerinden belirgin uzun; cevap metinden okunabiliyor. |
+| 3 | **Üslup uyarıları (kapandı)** | Doğru şıkkın belirgin uzun olması 54 soruda düzeltildi (`docs/uretim/uretim/yama-sik-uzunluk.js`): doğru şık kısaltıldı veya çeldiriciler aynı ayrıntı düzeyine getirildi. `havuz-son-kontrol` artık **0 uyarı**. |
 | 4 | **`kim_10_t02_c08` hedef 10, soru 11** | Fazla soru hata değil (`≥ hedef`). |
 | 5 | **`kazanim_konu_10.json` ve `konu_esleme.json` bayat** | Üreticileri yeniden çalıştırıldığında 10 bin satırlık fark ve eşleme kalitesi değişimi doğuyor; ayrı bir iş olarak ele alınmalı. Şimdilik yalnız arşiv izleri temizlendi. |
 
@@ -170,6 +170,9 @@ tamamında Kısa Kontrol havuzu var; Din Kültürü 24/24 başlık eşleşti.
   alt başlıklara böler (idempotent).
 - `docs/uretim/uretim/din-t06-deliller.js` — 2.1.1–2.1.4 delil havuzları.
 - `docs/uretim/uretim/din-t07-yorumlar.js` — 5.2.1 Ehlisünnet · 5.2.2 Şia.
+- `docs/uretim/uretim/yama-sik-uzunluk.js` — doğru şıkkı uzunlukla ele veren
+  54 sorunun şıklarını yeniler (`--kontrol` yalnız bakar, kuralı kendisi de
+  doğrular; `dogru_index` değişmez).
 - `docs/uretim/yazicilar/yaz.js` → `konuBasligiYaz()` — plan şemalı bir havuza
   Bilgi Bankası konu başlığı yazar.
 - `scripts/arsiv-kayit-temizle.js` — arşive taşınan havuzların üretilen

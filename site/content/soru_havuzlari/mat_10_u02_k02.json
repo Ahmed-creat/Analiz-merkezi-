@@ -105,7 +105,7 @@
       "metin": "Bir iş merkezinde kullanılan görev planlama aracını kullanan ekiplerin işleri daha erken tamamladığı bir grafikte görülüyor. Rapor, aracın tamamlanma süresini kesin olarak kısalttığını ileri sürüyor. Bu yoruma yönelik en uygun değerlendirme hangisidir?",
       "secenekler": [
         "Grafik, aracın süreyi kesin olarak kısalttığını kanıtlar.",
-        "Grafik bir dağılımı gösterir; neden-sonuç yorumu için veri toplama biçimi ve olası başka etkenler de incelenmelidir.",
+        "Dağılım nedensellik göstermez; başka etkenler incelenmeli.",
         "Kategorik veriler grafikle karşılaştırılamaz.",
         "Bütün ekiplerin iş yükü aynı olmak zorundadır."
       ],
@@ -145,7 +145,7 @@
         "Çevrim içi kayıt yaptırmak her kişinin gösteriye gelmesini sağlar.",
         "Etkinlik alanında kayıt yaptıranların tamamı gösteriye gelmemiştir.",
         "Kayıt yöntemi katılımı kesin olarak belirler.",
-        "Bu veride çevrim içi kayıt grubunun katılım oranı (%75), etkinlik alanında kayıt grubundan (%50) yüksektir; tek başına nedensellik göstermez."
+        "Çevrim içi grupta katılım %75, diğerinde %50; nedensellik yok."
       ],
       "dogru_index": 3,
       "cozum": "Çevrim içi kayıt grubunda 63/84 = %75, etkinlik alanında kayıt grubunda 44/88 = %50 bulunur. İlk grubun oranı bu veride daha yüksektir; fark tek başına kayıt yönteminin katılıma neden olduğunu kanıtlamaz.",
