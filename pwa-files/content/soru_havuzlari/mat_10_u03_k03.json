@@ -199,6 +199,82 @@
         "back": "Rakamları toplamı 9."
       },
       "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
+    },
+    {
+      "soru_id": "mat_10_u03_k03_o11",
+      "alt_beceri": "Bölünebilme kurallarını açıklar.",
+      "metin": "Bir doğal sayının 6 ile tam bölünebilmesi için hangi iki sayı ile tam bölünmesi yeterlidir?",
+      "secenekler": [
+        "2 ve 3",
+        "3 ve 4",
+        "2 ve 5",
+        "4 ve 9"
+      ],
+      "dogru_index": 0,
+      "cozum": "6 = 2·3 ve 2 ile 3 aralarında asal olduğundan sayının hem 2 hem 3 ile tam bölünmesi 6 ile bölünmesini garanti eder (s.161-165).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "6 ile bölünebilme kuralı nedir?",
+        "back": "Sayı 2 ve 3 ile tam bölünüyorsa 6 ile de tam bölünür."
+      },
+      "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
+    },
+    {
+      "soru_id": "mat_10_u03_k03_o12",
+      "alt_beceri": "Bölünebilme kurallarını açıklar.",
+      "metin": "Bir doğal sayının 10 ile bölümünden kalan hangi basamağındaki rakama eşittir?",
+      "secenekler": [
+        "Onlar basamağındaki rakama",
+        "Rakamlarının toplamına",
+        "Birler basamağındaki rakama",
+        "Son iki basamağının oluşturduğu sayıya"
+      ],
+      "dogru_index": 2,
+      "cozum": "10’un katları birler basamağı 0 olan sayılardır; kalan doğrudan birler basamağındaki rakamdır (s.162-164).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "10 ile bölümünden kalan neye eşittir?",
+        "back": "Sayının birler basamağındaki rakama."
+      },
+      "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
+    },
+    {
+      "soru_id": "mat_10_u03_k03_o13",
+      "alt_beceri": "Bölümden kalanı kuralla hesaplar.",
+      "metin": "2345 sayısının 9 ile bölümünden kalan kaçtır?",
+      "secenekler": [
+        "4",
+        "3",
+        "6",
+        "5"
+      ],
+      "dogru_index": 3,
+      "cozum": "Rakamlar toplamı 2+3+4+5 = 14, 14’ün 9 ile bölümünden kalan 5’tir; sayının 9 ile bölümünden kalan da 5 olur (s.165-169).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "9 ile bölümünden kalan nasıl bulunur?",
+        "back": "Rakamlar toplamının 9 ile bölümünden kalanına bakılır."
+      },
+      "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
+    },
+    {
+      "soru_id": "mat_10_u03_k03_o14",
+      "alt_beceri": "Bölümden kalanı kuralla hesaplar.",
+      "metin": "Bir x doğal sayısının 3 ile bölümünden kalan 2, 4 ile bölümünden kalan 3’tür. x’in 12 ile bölümünden kalan kaçtır?",
+      "secenekler": [
+        "5",
+        "11",
+        "7",
+        "9"
+      ],
+      "dogru_index": 1,
+      "cozum": "x ≡ 2 (mod 3) ve x ≡ 3 (mod 4) koşullarını sağlayan en küçük sayı 11’dir; 3 ile 4 aralarında asal olduğundan kalan 12’ye göre 11’dir (s.169-173).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki ayrı bölümden kalan biliniyorsa birleşik kalan nasıl bulunur?",
+        "back": "Koşulları sağlayan en küçük sayı bulunur; bölenler aralarında asalsa kalan EKOK’a göre tektir."
+      },
+      "kazanim": "Bölünebilme özelliklerini kullanarak bir doğal sayının bölümünden kalanı bulur."
     }
   ],
   "flashcards": [
@@ -251,6 +327,26 @@
       "id": "mat_10_u03_k03_o10:flashcard",
       "front": "531 neden 9'a bölünür?",
       "back": "Rakamları toplamı 9."
+    },
+    {
+      "id": "mat_10_u03_k03_o11:flashcard",
+      "front": "6 ile bölünebilme kuralı nedir?",
+      "back": "Sayı 2 ve 3 ile tam bölünüyorsa 6 ile de tam bölünür."
+    },
+    {
+      "id": "mat_10_u03_k03_o12:flashcard",
+      "front": "10 ile bölümünden kalan neye eşittir?",
+      "back": "Sayının birler basamağındaki rakama."
+    },
+    {
+      "id": "mat_10_u03_k03_o13:flashcard",
+      "front": "9 ile bölümünden kalan nasıl bulunur?",
+      "back": "Rakamlar toplamının 9 ile bölümünden kalanına bakılır."
+    },
+    {
+      "id": "mat_10_u03_k03_o14:flashcard",
+      "front": "İki ayrı bölümden kalan biliniyorsa birleşik kalan nasıl bulunur?",
+      "back": "Koşulları sağlayan en küçük sayı bulunur; bölenler aralarında asalsa kalan EKOK’a göre tektir."
     }
   ]
 }

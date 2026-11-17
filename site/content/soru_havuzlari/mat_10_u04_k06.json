@@ -55,8 +55,8 @@
       "secenekler": [
         "(8, 12)",
         "(−∞, 8) ∪ (12, ∞)",
-        "[8, 12]",
-        "R"
+        "[8, 14]",
+        "ℝ"
       ],
       "dogru_index": 0,
       "cozum": "Kollar aşağı baktığından fonksiyon kökler arasında pozitiftir: (8, 12) (s.287).",
@@ -72,12 +72,12 @@
       "alt_beceri": "Problemi fonksiyonla modeller.",
       "metin": "Aynı fonksiyon için f(x) ≤ 0 eşitsizliğinin çözüm kümesi hangisidir?",
       "secenekler": [
-        "(8, 12)",
-        "[8, 12]",
         "(−∞, 8] ∪ [12, ∞)",
+        "(8, 12)",
+        "[12, ∞)",
         "Boş küme"
       ],
-      "dogru_index": 2,
+      "dogru_index": 0,
       "cozum": "Kökler dışında fonksiyon negatif veya sıfırdır: (−∞, 8] ∪ [12, ∞) (s.287).",
       "zorluk": "deneme",
       "flashcard": {
@@ -187,7 +187,7 @@
       "metin": "x² − 4 < 0 eşitsizliğinin çözüm aralığı hangisidir?",
       "secenekler": [
         "(−∞, −2) ∪ (2, ∞)",
-        "[−2, 2]",
+        "[−4, 4]",
         "(0, 4)",
         "(−2, 2)"
       ],
@@ -197,6 +197,196 @@
       "flashcard": {
         "front": "x²−4<0 nerede sağlanır?",
         "back": "−2 < x < 2"
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o11",
+      "alt_beceri": "Problemi fonksiyonla modeller.",
+      "metin": "Bir bahçenin çevresi 40 metredir. Kısa kenarı x, uzun kenarı x + 4 metre olduğuna göre çevreyi veren denklem hangisidir?",
+      "secenekler": [
+        "2x + 2(x + 4) = 40",
+        "x + (x + 4) = 40",
+        "4x = 40",
+        "x(x + 4) = 40"
+      ],
+      "dogru_index": 0,
+      "cozum": "Dikdörtgenin çevresi iki kısa ve iki uzun kenarın toplamıdır: 2x + 2(x + 4) = 40 (s.284-290).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dikdörtgenin çevre formülü nedir?",
+        "back": "Çevre = 2·(kısa kenar) + 2·(uzun kenar) = 2(a + b)."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o12",
+      "alt_beceri": "Problemi fonksiyonla modeller.",
+      "metin": "Fiyatı 80 TL olan bir ürüne %x indirim yapıldıktan sonra 60 TL ödenmiştir. Bu durumu veren denklem hangisidir?",
+      "secenekler": [
+        "80 − x = 60",
+        "80·x = 60",
+        "80·(1 − x/100) = 60",
+        "80 + x/100 = 60"
+      ],
+      "dogru_index": 2,
+      "cozum": "İndirimden sonraki fiyat 80·(1 − x/100) olur; ödenen tutar 60 TL olduğundan 80·(1 − x/100) = 60 denklemi kurulur (s.290-296).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "%x indirimden sonra fiyat hangi çarpanla hesaplanır?",
+        "back": "Fiyat · (1 − x/100)."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o13",
+      "alt_beceri": "Problemi fonksiyonla modeller.",
+      "metin": "Dikdörtgen biçimindeki bir levhanın alanı 24 cm²’dir. Kısa kenarı x cm, uzun kenarı x + 2 cm olduğuna göre alanı veren denklem hangisidir?",
+      "secenekler": [
+        "2(x + x + 2) = 24",
+        "x + (x + 2) = 24",
+        "x² + 2 = 24",
+        "x(x + 2) = 24"
+      ],
+      "dogru_index": 3,
+      "cozum": "Dikdörtgenin alanı kenar uzunluklarının çarpımıdır: x·(x + 2) = 24 (s.284-290).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dikdörtgenin alan formülü nedir?",
+        "back": "Alan = kısa kenar · uzun kenar."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o14",
+      "alt_beceri": "Problemi fonksiyonla modeller.",
+      "metin": "Sabit 60 km/sa hızla t saatte 240 km yol alan bir aracın hareketini veren denklem hangisidir?",
+      "secenekler": [
+        "60 + t = 240",
+        "60·t = 240",
+        "t/60 = 240",
+        "240·t = 60"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yol = hız · zaman bağıntısından 60·t = 240 denklemi elde edilir (s.290-296).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yol, hız ve zaman arasındaki bağıntı nedir?",
+        "back": "Yol = hız · zaman."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o15",
+      "alt_beceri": "Denklem ve eşitsizlikleri çözerek yorumlar.",
+      "metin": "Bir sayının karesinin 9 fazlası 25’e eşittir. Sayı pozitif olduğuna göre sayı kaçtır?",
+      "secenekler": [
+        "4",
+        "5",
+        "3",
+        "8"
+      ],
+      "dogru_index": 0,
+      "cozum": "Denklem x² + 9 = 25 → x² = 16; pozitif çözüm x = 4’tür (s.296-300).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "x² = 16 denkleminin çözümleri nelerdir?",
+        "back": "x = 4 ve x = −4."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o16",
+      "alt_beceri": "Denklem ve eşitsizlikleri çözerek yorumlar.",
+      "metin": "Yerden atılan bir topun yüksekliği h(t) = −5t² + 10t bağıntısıyla veriliyor (h metre, t saniye). Top hangi t değerinde yere düşer (t > 0)?",
+      "secenekler": [
+        "1",
+        "5",
+        "2",
+        "10"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yere düşme anında h(t) = 0’dır: −5t² + 10t = 0 → 5t(2 − t) = 0; t > 0 için t = 2 saniye (s.296-302).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yükseklik bağıntısında yere düşme anı nasıl bulunur?",
+        "back": "Yükseklik sıfıra eşitlenir ve denklem çözülür."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o17",
+      "alt_beceri": "Denklem ve eşitsizlikleri çözerek yorumlar.",
+      "metin": "Bir atölyede günlük maliyet C(x) = x² − 20x + 120 bağıntısıyla veriliyor (TL cinsinden, x üretim miktarı). Maliyetin en düşük olduğu üretim miktarı kaçtır?",
+      "secenekler": [
+        "20",
+        "10",
+        "5",
+        "0"
+      ],
+      "dogru_index": 1,
+      "cozum": "C karesel fonksiyonunun tepe noktası apsisindedir: x = 20 / 2 = 10; maliyet bu üretim miktarında en küçüktür (s.300-305).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel maliyet fonksiyonunda en düşük maliyet nerede oluşur?",
+        "back": "Tepe noktasının apsisinde; a > 0 olduğu için tepe minimumdur."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o18",
+      "alt_beceri": "Denklem ve eşitsizlikleri çözerek yorumlar.",
+      "metin": "√(x − 1) = 3 denkleminin çözümü kaçtır?",
+      "secenekler": [
+        "8",
+        "9",
+        "4",
+        "10"
+      ],
+      "dogru_index": 3,
+      "cozum": "Her iki tarafın karesi alınır: x − 1 = 9 → x = 10; sağlama yapıldığında √9 = 3 olduğu görülür (s.284-292).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karekök içeren denklem hangi adımla çözülür?",
+        "back": "Her iki tarafın karesi alınır, sonra çözüm sağlaması yapılır."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o19",
+      "alt_beceri": "Denklem ve eşitsizlikleri çözerek yorumlar.",
+      "metin": "1 / (x − 2) = 4 denkleminin çözümü kaçtır?",
+      "secenekler": [
+        "9/4",
+        "4",
+        "1/4",
+        "3"
+      ],
+      "dogru_index": 0,
+      "cozum": "İçler dışlar çarpımıyla 4(x − 2) = 1 → 4x − 8 = 1 → x = 9/4 olur (s.292-298).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "1/(x − r) = c denklemi nasıl çözülür?",
+        "back": "İçler dışlar çarpımı yapılarak x yalnız bırakılır."
+      },
+      "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o20",
+      "alt_beceri": "Denklem ve eşitsizlikleri çözerek yorumlar.",
+      "metin": "x² − 2x − 8 ≥ 0 eşitsizliğinin çözüm kümesi aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "[−2, 4]",
+        "(−∞, −4] ∪ [2, ∞)",
+        "(−∞, −2] ∪ [4, ∞)",
+        "ℝ"
+      ],
+      "dogru_index": 2,
+      "cozum": "x² − 2x − 8 = (x − 4)(x + 2) kökleri −2 ve 4’tür; a > 0 olduğundan işaret köklerin dışında pozitiftir: (−∞, −2] ∪ [4, ∞) (s.300-305).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kökleri −2 ve 4, baş katsayısı pozitif olan eşitsizlik hangi aralıkta sağlanır?",
+        "back": "Köklerin dışında: (−∞, −2] ∪ [4, ∞)."
       },
       "kazanim": "Gerçek yaşam problemlerini fonksiyonlarla modelleyip denklem ve eşitsizlik çözer."
     }
@@ -251,6 +441,56 @@
       "id": "mat_10_u04_k06_o10:flashcard",
       "front": "x²−4<0 nerede sağlanır?",
       "back": "−2 < x < 2"
+    },
+    {
+      "id": "mat_10_u04_k06_o11:flashcard",
+      "front": "Dikdörtgenin çevre formülü nedir?",
+      "back": "Çevre = 2·(kısa kenar) + 2·(uzun kenar) = 2(a + b)."
+    },
+    {
+      "id": "mat_10_u04_k06_o12:flashcard",
+      "front": "%x indirimden sonra fiyat hangi çarpanla hesaplanır?",
+      "back": "Fiyat · (1 − x/100)."
+    },
+    {
+      "id": "mat_10_u04_k06_o13:flashcard",
+      "front": "Dikdörtgenin alan formülü nedir?",
+      "back": "Alan = kısa kenar · uzun kenar."
+    },
+    {
+      "id": "mat_10_u04_k06_o14:flashcard",
+      "front": "Yol, hız ve zaman arasındaki bağıntı nedir?",
+      "back": "Yol = hız · zaman."
+    },
+    {
+      "id": "mat_10_u04_k06_o15:flashcard",
+      "front": "x² = 16 denkleminin çözümleri nelerdir?",
+      "back": "x = 4 ve x = −4."
+    },
+    {
+      "id": "mat_10_u04_k06_o16:flashcard",
+      "front": "Yükseklik bağıntısında yere düşme anı nasıl bulunur?",
+      "back": "Yükseklik sıfıra eşitlenir ve denklem çözülür."
+    },
+    {
+      "id": "mat_10_u04_k06_o17:flashcard",
+      "front": "Karesel maliyet fonksiyonunda en düşük maliyet nerede oluşur?",
+      "back": "Tepe noktasının apsisinde; a > 0 olduğu için tepe minimumdur."
+    },
+    {
+      "id": "mat_10_u04_k06_o18:flashcard",
+      "front": "Karekök içeren denklem hangi adımla çözülür?",
+      "back": "Her iki tarafın karesi alınır, sonra çözüm sağlaması yapılır."
+    },
+    {
+      "id": "mat_10_u04_k06_o19:flashcard",
+      "front": "1/(x − r) = c denklemi nasıl çözülür?",
+      "back": "İçler dışlar çarpımı yapılarak x yalnız bırakılır."
+    },
+    {
+      "id": "mat_10_u04_k06_o20:flashcard",
+      "front": "Kökleri −2 ve 4, baş katsayısı pozitif olan eşitsizlik hangi aralıkta sağlanır?",
+      "back": "Köklerin dışında: (−∞, −2] ∪ [4, ∞)."
     }
   ]
 }

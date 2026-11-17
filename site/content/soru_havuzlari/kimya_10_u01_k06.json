@@ -199,6 +199,82 @@
         "back": "Evet."
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o11",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit sıcaklıkta 3 atm basınçta 5 L hacim kaplayan bir gazın basıncı 5 atm’ye çıkarılırsa hacmi kaç litre olur?",
+      "secenekler": [
+        "3 L",
+        "5 L",
+        "2 L",
+        "8 L"
+      ],
+      "dogru_index": 0,
+      "cozum": "Boyle Yasası’na göre sabit sıcaklıkta P₁V₁ = P₂V₂ olur. 3 · 5 = 5 · V₂ eşitliğinden V₂ = 3 L bulunur (s.89).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boyle Yasası'nın bağıntısı nedir?",
+        "back": "Sabit sıcaklıkta P₁V₁ = P₂V₂; basınç ile hacim ters orantılıdır."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o12",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit basınç altında 300 K sıcaklıkta 2 L hacim kaplayan bir gazın sıcaklığı 600 K’a çıkarılırsa hacmi kaç litre olur?",
+      "secenekler": [
+        "1 L",
+        "2 L",
+        "4 L",
+        "6 L"
+      ],
+      "dogru_index": 2,
+      "cozum": "Charles Yasası’na göre sabit basınçta V₁ / T₁ = V₂ / T₂ olur. 2 / 300 = V₂ / 600 eşitliğinden V₂ = 4 L bulunur (s.90).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Charles Yasası'nda hacim ile mutlak sıcaklık arasındaki ilişki nedir?",
+        "back": "Doğru orantılıdır: sabit basınçta V₁ / T₁ = V₂ / T₂."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o13",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit hacimli bir kapta 273 K sıcaklıkta 2 atm basınç yapan bir gazın sıcaklığı 546 K’a çıkarılırsa basıncı kaç atmosfer olur?",
+      "secenekler": [
+        "1 atm",
+        "2 atm",
+        "6 atm",
+        "4 atm"
+      ],
+      "dogru_index": 3,
+      "cozum": "Gay Lussac Yasası’na göre sabit hacimde P₁ / T₁ = P₂ / T₂ olur. 2 / 273 = P₂ / 546 eşitliğinden P₂ = 4 atm bulunur (s.91).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gay Lussac Yasası'nın bağıntısı nedir?",
+        "back": "Sabit hacimde P₁ / T₁ = P₂ / T₂; basınç mutlak sıcaklıkla doğru orantılıdır."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o14",
+      "alt_beceri": "Gazların özelliklerini ve birimlerini açıklar.",
+      "metin": "Gaz taneciklerinin kap çeperlerine çarpması sonucu oluşan nicelik aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "Hacim",
+        "Basınç",
+        "Mol sayısı",
+        "Yoğunluk"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kinetik moleküler teoriye göre gaz tanecikleri her yöne hareket ederken kap çeperlerine çarpar; bu çarpma etkisi basınç olarak ölçülür (s.87).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz basıncının kinetik moleküler teoriye göre nedeni nedir?",
+        "back": "Taneciklerin kap çeperlerine sürekli çarpması."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
     }
   ],
   "flashcards": [
@@ -251,6 +327,26 @@
       "id": "kimya_10_u01_k06_o10:flashcard",
       "front": "Gazlar kabın tamamını doldurur mu?",
       "back": "Evet."
+    },
+    {
+      "id": "kimya_10_u01_k06_o11:flashcard",
+      "front": "Boyle Yasası'nın bağıntısı nedir?",
+      "back": "Sabit sıcaklıkta P₁V₁ = P₂V₂; basınç ile hacim ters orantılıdır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o12:flashcard",
+      "front": "Charles Yasası'nda hacim ile mutlak sıcaklık arasındaki ilişki nedir?",
+      "back": "Doğru orantılıdır: sabit basınçta V₁ / T₁ = V₂ / T₂."
+    },
+    {
+      "id": "kimya_10_u01_k06_o13:flashcard",
+      "front": "Gay Lussac Yasası'nın bağıntısı nedir?",
+      "back": "Sabit hacimde P₁ / T₁ = P₂ / T₂; basınç mutlak sıcaklıkla doğru orantılıdır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o14:flashcard",
+      "front": "Gaz basıncının kinetik moleküler teoriye göre nedeni nedir?",
+      "back": "Taneciklerin kap çeperlerine sürekli çarpması."
     }
   ]
 }

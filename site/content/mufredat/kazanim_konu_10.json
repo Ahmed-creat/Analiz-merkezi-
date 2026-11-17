@@ -1270,19 +1270,19 @@
       "konu": "3.7 Topraklamanın Önemi",
       "tema": 3,
       "kodlar": [
-        "FİZ.10.3.6"
+        "FİZ.10.3.7"
       ],
       "guven": "kesin",
-      "yontem": "kazanim-metni",
-      "skor": 0.833,
+      "yontem": "elle-dogrulama",
+      "skor": 1,
       "uyari": "",
-      "gerekce": "",
+      "gerekce": "Kitabın 3.7 başlığı doğrudan topraklamanın önemini sorgulatır; 2026 programında bu çıktı FİZ.10.3.7 olarak 3.6'dan ayrı tanımlanmıştır (5 süreç).",
       "kazanim_metinleri": 1,
       "metin_kodlari": [
         {
-          "metin": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
-          "kod": "FİZ.10.3.6",
-          "skor": 0.833
+          "metin": "Topraklama olayının önemini sorgulayabilme",
+          "kod": "FİZ.10.3.7",
+          "skor": 1
         }
       ]
     },
@@ -1406,15 +1406,21 @@
       "konu": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
       "tema": 4,
       "kodlar": [
-        "FİZ.10.4.6"
+        "FİZ.10.4.7"
       ],
       "guven": "kesin",
       "yontem": "elle-dogrulama",
-      "skor": 0,
+      "skor": 1,
       "uyari": "",
-      "gerekce": "Sismograf ve sismik izolatör modelleri aynı çıktının (FİZ.10.4.6) model oluşturma boyutudur.",
-      "kazanim_metinleri": 0,
-      "metin_kodlari": []
+      "gerekce": "Depremle ilgili bilimsel model oluşturma (sismograf, sismik izolatör) programda ayrı çıktı olarak FİZ.10.4.7 kodundadır; 4.6.2 havuzu bu çıktıya bağlanır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "Depremle ilgili bilimsel model oluşturabilme",
+          "kod": "FİZ.10.4.7",
+          "skor": 1
+        }
+      ]
     },
     {
       "konu_id": "kimya_10_u01_k01",

@@ -199,6 +199,82 @@
         "back": "24 dakika sonra."
       },
       "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o11",
+      "alt_beceri": "EBOB ve EKOK kavramlarını açıklar.",
+      "metin": "En büyük ortak böleni 1 olan iki doğal sayıya ne ad verilir?",
+      "secenekler": [
+        "Aralarında asal sayılar",
+        "Eşit sayılar",
+        "Bileşik sayılar",
+        "Çift sayılar"
+      ],
+      "dogru_index": 0,
+      "cozum": "1’den başka ortak böleni olmayan, yani EBOB’u 1 olan sayılara aralarında asal sayılar denir (s.149-152).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aralarında asal sayıların EBOB’u kaçtır?",
+        "back": "1."
+      },
+      "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o12",
+      "alt_beceri": "EBOB-EKOK problemlerini çözer.",
+      "metin": "36 ve 60 sayılarının en büyük ortak böleni (EBOB) kaçtır?",
+      "secenekler": [
+        "6",
+        "18",
+        "12",
+        "24"
+      ],
+      "dogru_index": 2,
+      "cozum": "36 = 2²·3², 60 = 2²·3·5 olduğundan ortak asal çarpanların en küçük üslüleri alınır: 2²·3 = 12 (s.152-156).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpanlara ayırarak EBOB nasıl bulunur?",
+        "back": "Ortak asal çarpanların en küçük üslü kuvvetleri çarpılır."
+      },
+      "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o13",
+      "alt_beceri": "EBOB-EKOK problemlerini çözer.",
+      "metin": "15 ve 20 sayılarının en küçük ortak katı (EKOK) kaçtır?",
+      "secenekler": [
+        "30",
+        "45",
+        "300",
+        "60"
+      ],
+      "dogru_index": 3,
+      "cozum": "15 = 3·5, 20 = 2²·5 olduğundan tüm asal çarpanların en büyük üslüleri alınır: 2²·3·5 = 60 (s.156-159).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpanlara ayırarak EKOK nasıl bulunur?",
+        "back": "Tüm asal çarpanların en büyük üslü kuvvetleri çarpılır."
+      },
+      "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
+    },
+    {
+      "soru_id": "mat_10_u03_k02_o14",
+      "alt_beceri": "EBOB-EKOK problemlerini çözer.",
+      "metin": "Kenar uzunlukları 36 cm ve 60 cm olan dikdörtgen biçimindeki bir masa yüzeyi, eşit ve en büyük kare fayanslarla boşluksuz kaplanacaktır. Bir fayansın kenar uzunluğu kaç santimetredir?",
+      "secenekler": [
+        "6 cm",
+        "12 cm",
+        "18 cm",
+        "24 cm"
+      ],
+      "dogru_index": 1,
+      "cozum": "Her iki kenarı da tam bölen en büyük uzunluk EBOB’dur: EBOB(36, 60) = 12 cm (s.152-156).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir dikdörtgen eşit karelere ayrılırken kenar uzunluğu hangi kavramla bulunur?",
+        "back": "Kısa ve uzun kenarın EBOB’u ile."
+      },
+      "kazanim": "İki veya daha fazla doğal sayının EBOB ve EKOK'unu bulur, problem çözer."
     }
   ],
   "flashcards": [
@@ -251,6 +327,26 @@
       "id": "mat_10_u03_k02_o10:flashcard",
       "front": "6 ve 8 dakikalık ziller ne zaman birlikte çalar?",
       "back": "24 dakika sonra."
+    },
+    {
+      "id": "mat_10_u03_k02_o11:flashcard",
+      "front": "Aralarında asal sayıların EBOB’u kaçtır?",
+      "back": "1."
+    },
+    {
+      "id": "mat_10_u03_k02_o12:flashcard",
+      "front": "Asal çarpanlara ayırarak EBOB nasıl bulunur?",
+      "back": "Ortak asal çarpanların en küçük üslü kuvvetleri çarpılır."
+    },
+    {
+      "id": "mat_10_u03_k02_o13:flashcard",
+      "front": "Asal çarpanlara ayırarak EKOK nasıl bulunur?",
+      "back": "Tüm asal çarpanların en büyük üslü kuvvetleri çarpılır."
+    },
+    {
+      "id": "mat_10_u03_k02_o14:flashcard",
+      "front": "Bir dikdörtgen eşit karelere ayrılırken kenar uzunluğu hangi kavramla bulunur?",
+      "back": "Kısa ve uzun kenarın EBOB’u ile."
     }
   ]
 }
