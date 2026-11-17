@@ -2,286 +2,303 @@
   "konu_id": "din_10_u04_k02",
   "sinif": 10,
   "ders": "Din Kültürü",
-  "kaynak_dosya": "10. Sınıf din json.zip",
+  "tema": 4,
+  "tema_adi": "Din, Çevre ve Teknoloji",
+  "baslik": "4.2 Teknoloji ve Ahlak",
+  "topic_key": "Din Kültürü > 4.2 Teknoloji ve Ahlak",
+  "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar.",
+  "kaynak": "Din Kültürü 10 ders kitabı, s.122-126",
+  "kaynak_dosya": "din-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "din_10_u04_k02_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "İnsanların maddi çevrelerini değiştirmek için geliştirdikleri araçlar ve bu araçlara ilişkin bilgiler hangi kavramı oluşturur?",
+      "alt_beceri": "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+      "metin": "İnsanın maddi çevresini değiştirmek amacıyla geliştirdiği araç gereçler ve bunlara ilişkin bilgilerin tümüne ne ad verilir?",
       "secenekler": [
+        "Sanat",
         "Teknoloji",
-        "Çevre ahlakı",
-        "Dinî yorum",
-        "Esmayıhüsna"
+        "Bilim",
+        "Ahlak"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak teknoloji kavramını çevreyi kontrol edip değiştirmek amacıyla geliştirilen araçlar ve ilgili bilgiler olarak tanımlar.",
+      "dogru_index": 1,
+      "cozum": "Teknoloji, araç gereçler ve bunlara ilişkin bilgilerin tümüdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknoloji kavramını açıklayın.",
-        "back": "Teknoloji, insanın maddi çevresini kontrol edip değiştirmek için geliştirdiği araç gereçler ve bunlara ilişkin bilgilerin tümüdür."
-      }
+        "front": "Teknoloji nedir?",
+        "back": "İnsanın çevresini değiştirmek için geliştirdiği araç gereçler ve bilgilerin tümü."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir yenilik insanların bilgiye erişimini ve iş verimliliğini artırırken günlük yaşamlarını da kolaylaştırıyor. Bu, teknolojinin hangi yönünü gösterir?",
+      "alt_beceri": "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+      "metin": "Teknoloji kavramının Türkçedeki karşılığı hangisidir?",
       "secenekler": [
-        "Teknolojinin yalnızca zarar vermesini",
-        "Yaşama kolaylık sağlamasını",
-        "Bilginin gereksizleşmesini",
-        "İnsan sorumluluğunun ortadan kalkmasını"
+        "Doğa bilimi",
+        "Toplum bilimi",
+        "Varlık bilimi",
+        "Uygulayım bilimi"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak teknolojinin iletişimden ulaşıma kadar çeşitli alanlarda kolaylık sağlayabildiğini belirtir.",
+      "dogru_index": 3,
+      "cozum": "Teknoloji Türkçede \"uygulayım bilimi\" olarak adlandırılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknolojik gelişmeler insan yaşamına hangi kolaylıkları sağlayabilir?",
-        "back": "İletişim, bilgiye ulaşma, iş verimliliği, yaşam kalitesi, ulaşım ve ekonomi alanlarında kolaylık sağlayabilir."
-      }
+        "front": "Teknolojinin Türkçe karşılığı nedir?",
+        "back": "Uygulayım bilimi."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kullanıcı teknolojiye aşırı bağımlı hâle geliyor ve çevresiyle ilişkileri zayıflıyor. Kaynakta bu hangi riskle ilişkilidir?",
+      "alt_beceri": "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+      "metin": "Teknolojinin doğru kullanılmadığında ortaya çıkardığı olumsuzluklara hangisi örnektir?",
       "secenekler": [
-        "Bilgiye erişimin kolaylaşmasıyla",
-        "İş verimliliğinin artmasıyla",
-        "Bağımlılık ve sosyal izolasyonla",
-        "Yaşam kalitesinin iyileşmesiyle"
+        "Bağımlılık ve sosyal izolasyon",
+        "Bilgiye erişimin kolaylaşması",
+        "İş verimliliğinin artması",
+        "Ulaşımın hızlanması"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak teknolojinin yanlış kullanımının bağımlılık ve sosyal izolasyon gibi olumsuzluklara yol açabileceğini söyler.",
+      "dogru_index": 0,
+      "cozum": "Bağımlılık, veri güvenliği ihlali, işsizlik ve sosyal izolasyon teknolojinin yanlış kullanımının sonuçlarıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknolojinin yanlış kullanımı hangi olumsuzluklara yol açabilir?",
-        "back": "Bağımlılık, veri güvenliği ihlali, işsizlik, sağlık ve güvenlik sorunları, sosyal izolasyon ve çevre kirliliği ortaya çıkabilir."
-      }
+        "front": "Teknolojinin yanlış kullanımının sonucu nedir?",
+        "back": "Bağımlılık, veri güvenliği ihlali, işsizlik, sosyal izolasyon."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Yeni bir araç tasarlanırken yalnızca çalışması değil insanlara faydalı ve güvenli olması da gözetiliyor. Bu, kimin ahlaki sorumluluğudur?",
+      "alt_beceri": "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+      "metin": "Teknolojinin olumsuz etkilerinin azaltılmasında hangi unsurun işlevi vurgulanır?",
       "secenekler": [
-        "Yalnızca kullanıcıların",
-        "Sadece denetleyicilerin",
-        "Teknolojiden etkilenenlerin",
-        "Teknolojiyi geliştirenlerin"
+        "Rekabet",
+        "Sermaye",
+        "Ahlaki kurallar",
+        "Hız"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak teknolojiyi geliştirenlerin insanlığa fayda, kolaylık ve güvenlik sağlamayı amaçlamaları gerektiğini belirtir.",
+      "dogru_index": 2,
+      "cozum": "Hem geliştirenler hem kullanıcılar ahlaki unsurlara uymalıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknoloji geliştirenlerin ahlaki sorumluluğu nedir?",
-        "back": "Geliştirilen teknolojinin insanlığa faydalı, hayatı kolaylaştırıcı ve güvenli olmasını amaçlamalıdırlar."
-      }
+        "front": "Teknolojinin olumsuz etkilerini azaltan unsur nedir?",
+        "back": "Ahlaki kurallara uyulması."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir çevrim içi toplulukta bazı üyeler, bir katılımcıyı hedef alan aşağılayıcı yorumlar yazıyor. Başka bir kullanıcı bu yorumlara katılmayıp kişiyi küçük düşürmeyen bir dil kullanıyor. Hangi sorumluluğu gözetiyor?",
+      "alt_beceri": "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+      "metin": "Teknoloji geliştirenlerin taşıması gereken amaç hangisidir?",
       "secenekler": [
-        "Siber zorbalık ve nefret söyleminden kaçınmayı",
-        "Veri güvenliğini önemsememeyi",
-        "Başkalarının özel bilgilerini yaymayı",
-        "Teknolojiyi sınırsız kullanmayı"
+        "Üretimi en kısa sürede artırmak",
+        "Pazar payını büyütmek",
+        "Rakiplerinden önce davranmak",
+        "İnsanlığa faydalı ve güvenli ürünler ortaya koymak"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak kullanıcıların siber zorbalık ve nefret söyleminden uzak durmasını ister; hedef gösteren ve aşağılayan paylaşımlara katılmamak bu sorumluluğa uygundur.",
+      "dogru_index": 3,
+      "cozum": "Geliştiriciler, teknolojinin faydalı, kolaylaştırıcı ve güvenli olmasını amaçlamalıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknoloji kullanıcılarının hangi davranışlardan kaçınması gerekir?",
-        "back": "Siber zorbalık, yanlış bilgi paylaşımı ve nefret söyleminden kaçınmalıdırlar."
-      }
+        "front": "Teknoloji geliştirenin amacı ne olmalıdır?",
+        "back": "İnsanlığa faydalı, güvenli ve hayatı kolaylaştıran ürünler."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir uygulama, kullanıcıların özel bilgilerine yetkisiz erişimi engelleyen önlemler alıyor. Hangi etik ilkeyi gözetiyor?",
+      "alt_beceri": "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+      "metin": "Kullanıcıların kaçınması gereken davranışlar hangi seçenekte verilmiştir?",
       "secenekler": [
-        "Ayrımcılığı",
-        "Mahremiyeti",
-        "Tüketim bağımlılığını",
-        "Siyasi meşruiyeti"
+        "Araştırma yapmak ve kaynak taramak",
+        "Siber zorbalık, yanlış bilgi paylaşımı ve nefret söylemi",
+        "Çevrim içi derslere katılmak",
+        "İşlerini dijital araçlarla planlamak"
       ],
       "dogru_index": 1,
-      "cozum": "Mahremiyet kişisel bilgilerin korunmasını ve izinsiz erişimin önlenmesini gerektirir. Kullanıcılar da başkalarının verilerini elde edip yaymamalıdır.",
+      "cozum": "Kullanıcılar siber zorbalık, yanlış bilgi ve nefret söyleminden uzak durmalıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknolojide mahremiyet ilkesi neyi gerektirir?",
-        "back": "Kişisel ve özel bilgilerin gizli tutulmasını, izinsiz erişime karşı korunmasını ve başkalarının verilerinin izinsiz elde edilip paylaşılmamasını gerektirir."
-      }
+        "front": "Teknoloji kullanıcısı hangi davranışlardan kaçınmalıdır?",
+        "back": "Siber zorbalık, yanlış bilgi paylaşımı ve nefret söylemi."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir hizmet sağlayıcı kişilerin kimlik ve özel yaşam bilgilerine yetkisiz erişilmesini önleyecek tedbirler alıyor. Kaynağa göre hangi yükümlülüğü yerine getiriyor?",
+      "alt_beceri": "Teknolojinin olumlu ve olumsuz etkilerini ahlakla ilişkilendirir.",
+      "metin": "Kişisel Verilerin Korunması Kanunu'nun numarası ve yürürlüğe girdiği yıl hangisidir?",
       "secenekler": [
-        "Kişisel bilgileri yayımlama yükümlülüğünü",
-        "Veri güvenliğini kullanıcıya bırakmayı",
-        "Verileri koruma ve mahremiyet yükümlülüğünü",
-        "Bilgileri izinsiz kullanmayı"
+        "6698 sayılı kanun, 2016",
+        "657 sayılı kanun, 1965",
+        "5237 sayılı kanun, 2004",
+        "2820 sayılı kanun, 1983"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak teknoloji geliştiricilerinin kişisel verileri gizli tutup izinsiz erişimlere karşı önlem alması gerektiğini belirtir.",
+      "dogru_index": 0,
+      "cozum": "6698 sayılı kanun 7 Nisan 2016 tarihinde yürürlüğe girmiştir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknoloji geliştirenlerin veri güvenliğiyle ilgili görevi nedir?",
-        "back": "Önemli kişisel verileri gizli tutmak ve izinsiz erişimlere karşı uygun güvenlik önlemleri almak."
-      }
+        "front": "Kişisel Verilerin Korunması Kanunu kaç numaralıdır?",
+        "back": "6698 sayılı kanun (2016)."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir etkinlik sorumlusu, katılımcıların telefon numaralarını izinsiz biçimde açık bir çevrim içi grupta paylaşmıyor. Bu davranış hangi ilkeye uygundur?",
+      "alt_beceri": "Teknoloji kullanımında ahlaki sorumluluğun gereklerini yorumlar.",
+      "metin": "Hiroşima ve Nagazaki'ye atom bombası atılması teknoloji-ahlak ilişkisi açısından neyi gösterir?",
       "secenekler": [
-        "Nefret söylemine",
-        "Siber zorbalığa",
-        "Veri ihlaline",
-        "Mahremiyete ve sorumluluğa"
+        "Teknolojinin her zaman faydalı olduğunu",
+        "Savaşın teknolojiyi geliştirdiğini",
+        "Teknolojinin ahlaki sorumluluktan bağımsız kullanılamayacağını",
+        "Bilimsel bilginin sınırlı olduğunu"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak kullanıcıların başkalarına ait verileri elde etme ve yayma davranışlarından hem gerçek hem sanal ortamlarda uzak durmasını ister; iletişim bilgilerini izinsiz paylaşmamak bu ilkeyi gözetir.",
+      "dogru_index": 2,
+      "cozum": "Örnek, teknolojinin insanlığa zarar verecek biçimde kullanılabildiğini gösterir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kullanıcılar başkalarının kişisel verileri karşısında nasıl davranmalıdır?",
-        "back": "Başkalarına ait bilgileri izinsiz elde etmekten ve yaymaktan hem gerçek yaşamda hem sanal ortamlarda kaçınmalıdır."
-      }
+        "front": "Atom bombası örneği neyi gösterir?",
+        "back": "Teknolojinin ahlaki sorumlulukla kullanılması gerektiğini."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sınıf sohbetine kaynağı belirsiz bir haber düşüyor. Bir öğrenci, doğruluğunu kontrol etmeden mesajı başkalarına iletmiyor. Bu davranış hangi anlayışla uyumludur?",
+      "alt_beceri": "Teknoloji kullanımında ahlaki sorumluluğun gereklerini yorumlar.",
+      "metin": "Uzaktan gerçekleştirilen robotik ameliyat örneği teknolojinin hangi yönünü gösterir?",
       "secenekler": [
-        "Ahlaki ilkelerin dijital ortamda da geçerli olmasıyla",
-        "Sanal ortamda sorumluluk bulunmamasıyla",
-        "Mahremiyetin yalnızca gerçek hayata ait olmasıyla",
-        "Teknolojinin ahlakı geçersiz kılmasıyla"
+        "Çevre kirliliğini artırdığını",
+        "İnsan hayatını kolaylaştıran imkânlar sunduğunu",
+        "İşsizliği zorunlu kıldığını",
+        "Veri güvenliğini ortadan kaldırdığını"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynak dinî ve ahlaki ilkelerin sosyal medya için de geçerli olduğunu vurgular. Dijital ortamda da yanlış bilgi paylaşmamak ve davranışların sorumluluğunu üstlenmek gerekir.",
+      "dogru_index": 1,
+      "cozum": "Uzaktan ameliyat, teknolojinin sağlık alanında sağladığı faydaya örnektir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ahlaki kurallar sosyal medya ve dijital ortamlar için nasıl geçerlidir?",
-        "back": "Günlük hayatta sakınılması gereken yalan, iftira, hırsızlık ve mahremiyet ihlali dijital ortamlarda da sakınılması gereken davranışlardır."
-      }
+        "front": "Uzaktan ameliyat örneği neyi gösterir?",
+        "back": "Teknolojinin hayatı kolaylaştıran faydalarını."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kullanıcı çevrim içi ortamda yaptığı paylaşımların sonuçlarını üstlenmesi gerektiğini kabul ediyor. Bu hangi ilkeyi yansıtır?",
+      "alt_beceri": "Teknoloji kullanımında ahlaki sorumluluğun gereklerini yorumlar.",
+      "metin": "Teknolojinin doğru kullanımı için bireye düşen sorumluluk hangisidir?",
       "secenekler": [
-        "İzinsiz erişim hakkını",
-        "Sorumluluk bilincini",
-        "Ahlaki kuralların askıya alınmasını",
-        "Bilginin kesinliğini"
+        "Her yeni teknolojiyi hemen edinmek",
+        "Sosyal medyada daha çok paylaşım yapmak",
+        "Teknolojiyi eğlence aracı olarak görmek",
+        "Kullanım amacını ahlaki ölçütlerle sorgulamak"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak, insanın teknolojik ortamlarda yaptığı davranışlardan da sorumlu olduğunu ve teknolojiyi doğru kullanması gerektiğini söyler.",
+      "dogru_index": 3,
+      "cozum": "Birey, teknolojiyi kullanırken ahlaki ölçütleri gözetmelidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dijital ortamda davranışların sorumluluğu kime aittir?",
-        "back": "Teknolojiyi kullanan kişi yaptığı davranışlardan da sorumludur; teknolojiyi her alanda doğru kullanmalıdır."
-      }
+        "front": "Teknolojinin doğru kullanımı için ne gerekir?",
+        "back": "Kullanım amacının ahlaki ölçütlerle sorgulanması."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kurum yeni bir teknolojiyi geliştirirken insanlara fayda ve güvenliği göz önünde bulundurup olası zararları azaltmaya çalışıyor. Hangi ilişkiyi gözetiyor?",
+      "alt_beceri": "Teknoloji kullanımında ahlaki sorumluluğun gereklerini yorumlar.",
+      "metin": "Teknoloji kaynaklı veri güvenliği ihlallerinin önlenmesi hangi bilinçle ilişkilidir?",
       "secenekler": [
-        "Teknolojinin ahlaktan bağımsızlığını",
-        "Kullanıcıların sorumluluksuzluğunu",
-        "Teknoloji ile ahlak arasındaki ilişkiyi",
-        "Mahremiyetin gereksizliğini"
+        "Kişisel verilerin korunması bilinciyle",
+        "Daha fazla uygulama yüklemekle",
+        "Şifreleri paylaşmakla",
+        "Hesapları ortak kullanmakla"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak teknolojinin geliştirilmesi ve kullanımında ahlaki unsurların olumsuz etkileri azaltabileceğini belirtir.",
+      "dogru_index": 0,
+      "cozum": "Kişisel verilerin korunması, hukuki ve ahlaki bir sorumluluktur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknoloji ve ahlak arasındaki ilişkiyi açıklayın.",
-        "back": "Ahlaki ilkeler teknolojinin geliştirilme ve kullanılma biçimini yönlendirmeli; böylece insanlara zarar verebilecek sonuçlar azaltılmalıdır."
-      }
+        "front": "Veri güvenliği ihlali nasıl önlenir?",
+        "back": "Kişisel verilerin korunması bilinci ve hukuki düzenlemelere uymakla."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     },
     {
       "soru_id": "din_10_u04_k02_o12",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kullanıcı içerik paylaşmadan önce doğruluğunu kontrol ediyor, başkalarının özel bilgilerini koruyor ve kırıcı davranışlardan kaçınıyor. Hangi yaklaşımı benimsemiştir?",
+      "alt_beceri": "Teknoloji kullanımında ahlaki sorumluluğun gereklerini yorumlar.",
+      "metin": "Teknolojiyi hem geliştirenlerin hem kullanıcıların ahlaki ilkelere uyması hangi sonucu doğurur?",
       "secenekler": [
-        "Siber zorbalığı",
-        "Mahremiyet ihlalini",
-        "Yanlış bilgi yaymayı",
-        "Ahlaklı teknoloji kullanımını"
+        "Teknolojik gelişmenin durmasını",
+        "Maliyetlerin artmasını",
+        "Ortaya çıkabilecek olumsuzlukların önüne geçilmesini",
+        "Kullanımın yasaklanmasını"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak doğru bilgi paylaşmayı, mahremiyete dikkat etmeyi ve teknolojik davranışlardan sorumlu olmayı ahlaklı kullanımın parçası sayar.",
+      "dogru_index": 2,
+      "cozum": "Ahlaki unsurlara uyulması, teknolojinin zararlarını sınırlar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Teknolojiyi ahlaki ilkelere uygun kullanmayı günlük davranışta nasıl gösterebiliriz?",
-        "back": "İnsanlara faydayı ve güvenliği gözeterek, doğru bilgi paylaşarak, mahremiyeti koruyarak ve çevrim içi davranışların sorumluluğunu üstlenerek."
-      }
+        "front": "Ahlaki ilkelere uyulmasının sonucu nedir?",
+        "back": "Teknolojinin olumsuz etkilerinin önüne geçilmesi."
+      },
+      "kazanim": "Teknolojinin ahlaki sorumlulukla kullanılmasının önemini açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "din_10_u04_k02_o01:flashcard",
-      "front": "Teknoloji kavramını açıklayın.",
-      "back": "Teknoloji, insanın maddi çevresini kontrol edip değiştirmek için geliştirdiği araç gereçler ve bunlara ilişkin bilgilerin tümüdür."
+      "front": "Teknoloji nedir?",
+      "back": "İnsanın çevresini değiştirmek için geliştirdiği araç gereçler ve bilgilerin tümü."
     },
     {
       "id": "din_10_u04_k02_o02:flashcard",
-      "front": "Teknolojik gelişmeler insan yaşamına hangi kolaylıkları sağlayabilir?",
-      "back": "İletişim, bilgiye ulaşma, iş verimliliği, yaşam kalitesi, ulaşım ve ekonomi alanlarında kolaylık sağlayabilir."
+      "front": "Teknolojinin Türkçe karşılığı nedir?",
+      "back": "Uygulayım bilimi."
     },
     {
       "id": "din_10_u04_k02_o03:flashcard",
-      "front": "Teknolojinin yanlış kullanımı hangi olumsuzluklara yol açabilir?",
-      "back": "Bağımlılık, veri güvenliği ihlali, işsizlik, sağlık ve güvenlik sorunları, sosyal izolasyon ve çevre kirliliği ortaya çıkabilir."
+      "front": "Teknolojinin yanlış kullanımının sonucu nedir?",
+      "back": "Bağımlılık, veri güvenliği ihlali, işsizlik, sosyal izolasyon."
     },
     {
       "id": "din_10_u04_k02_o04:flashcard",
-      "front": "Teknoloji geliştirenlerin ahlaki sorumluluğu nedir?",
-      "back": "Geliştirilen teknolojinin insanlığa faydalı, hayatı kolaylaştırıcı ve güvenli olmasını amaçlamalıdırlar."
+      "front": "Teknolojinin olumsuz etkilerini azaltan unsur nedir?",
+      "back": "Ahlaki kurallara uyulması."
     },
     {
       "id": "din_10_u04_k02_o05:flashcard",
-      "front": "Teknoloji kullanıcılarının hangi davranışlardan kaçınması gerekir?",
-      "back": "Siber zorbalık, yanlış bilgi paylaşımı ve nefret söyleminden kaçınmalıdırlar."
+      "front": "Teknoloji geliştirenin amacı ne olmalıdır?",
+      "back": "İnsanlığa faydalı, güvenli ve hayatı kolaylaştıran ürünler."
     },
     {
       "id": "din_10_u04_k02_o06:flashcard",
-      "front": "Teknolojide mahremiyet ilkesi neyi gerektirir?",
-      "back": "Kişisel ve özel bilgilerin gizli tutulmasını, izinsiz erişime karşı korunmasını ve başkalarının verilerinin izinsiz elde edilip paylaşılmamasını gerektirir."
+      "front": "Teknoloji kullanıcısı hangi davranışlardan kaçınmalıdır?",
+      "back": "Siber zorbalık, yanlış bilgi paylaşımı ve nefret söylemi."
     },
     {
       "id": "din_10_u04_k02_o07:flashcard",
-      "front": "Teknoloji geliştirenlerin veri güvenliğiyle ilgili görevi nedir?",
-      "back": "Önemli kişisel verileri gizli tutmak ve izinsiz erişimlere karşı uygun güvenlik önlemleri almak."
+      "front": "Kişisel Verilerin Korunması Kanunu kaç numaralıdır?",
+      "back": "6698 sayılı kanun (2016)."
     },
     {
       "id": "din_10_u04_k02_o08:flashcard",
-      "front": "Kullanıcılar başkalarının kişisel verileri karşısında nasıl davranmalıdır?",
-      "back": "Başkalarına ait bilgileri izinsiz elde etmekten ve yaymaktan hem gerçek yaşamda hem sanal ortamlarda kaçınmalıdır."
+      "front": "Atom bombası örneği neyi gösterir?",
+      "back": "Teknolojinin ahlaki sorumlulukla kullanılması gerektiğini."
     },
     {
       "id": "din_10_u04_k02_o09:flashcard",
-      "front": "Ahlaki kurallar sosyal medya ve dijital ortamlar için nasıl geçerlidir?",
-      "back": "Günlük hayatta sakınılması gereken yalan, iftira, hırsızlık ve mahremiyet ihlali dijital ortamlarda da sakınılması gereken davranışlardır."
+      "front": "Uzaktan ameliyat örneği neyi gösterir?",
+      "back": "Teknolojinin hayatı kolaylaştıran faydalarını."
     },
     {
       "id": "din_10_u04_k02_o10:flashcard",
-      "front": "Dijital ortamda davranışların sorumluluğu kime aittir?",
-      "back": "Teknolojiyi kullanan kişi yaptığı davranışlardan da sorumludur; teknolojiyi her alanda doğru kullanmalıdır."
+      "front": "Teknolojinin doğru kullanımı için ne gerekir?",
+      "back": "Kullanım amacının ahlaki ölçütlerle sorgulanması."
     },
     {
       "id": "din_10_u04_k02_o11:flashcard",
-      "front": "Teknoloji ve ahlak arasındaki ilişkiyi açıklayın.",
-      "back": "Ahlaki ilkeler teknolojinin geliştirilme ve kullanılma biçimini yönlendirmeli; böylece insanlara zarar verebilecek sonuçlar azaltılmalıdır."
+      "front": "Veri güvenliği ihlali nasıl önlenir?",
+      "back": "Kişisel verilerin korunması bilinci ve hukuki düzenlemelere uymakla."
     },
     {
       "id": "din_10_u04_k02_o12:flashcard",
-      "front": "Teknolojiyi ahlaki ilkelere uygun kullanmayı günlük davranışta nasıl gösterebiliriz?",
-      "back": "İnsanlara faydayı ve güvenliği gözeterek, doğru bilgi paylaşarak, mahremiyeti koruyarak ve çevrim içi davranışların sorumluluğunu üstlenerek."
+      "front": "Ahlaki ilkelere uyulmasının sonucu nedir?",
+      "back": "Teknolojinin olumsuz etkilerinin önüne geçilmesi."
     }
-  ],
-  "topic_key": "Din Kültürü > 4.2 Mekke Dönemi"
+  ]
 }
