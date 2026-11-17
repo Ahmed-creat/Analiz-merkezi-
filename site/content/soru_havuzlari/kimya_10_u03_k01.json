@@ -53,7 +53,7 @@
       "alt_beceri": "Makro ve mikro ölçek kavramlarını açıklar.",
       "metin": "Atom ekonomisi neyi ifade eder?",
       "secenekler": [
-        "Tepkimeye giren atomların ne kadarının istenen üründe yer aldığını",
+        "Giren atomların ürüne geçme oranını",
         "Tepkimenin hızını",
         "Kullanılan su miktarını",
         "Deneyin süresini"
@@ -62,7 +62,7 @@
       "cozum": "Atom ekonomisi, çıkış maddesindeki atomların ne kadarının istenen üründe yer aldığını gösteren verimlilik yorumudur (s.240).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Atom ekonomisi nedir?",
+        "front": "Atom ekonomisinin ölçtüğü oran nedir?",
         "back": "Atomların ürüne geçme oranı."
       },
       "kazanim": "Makro ve mikro ölçekli deneyleri atom ekonomisi ve su ayak izi açısından karşılaştırır."
@@ -72,16 +72,16 @@
       "alt_beceri": "Makro ve mikro ölçek kavramlarını açıklar.",
       "metin": "Kitaba göre su ayak izi neyi ifade eder?",
       "secenekler": [
-        "Suyun sertliğini",
-        "Sudaki iyon miktarını",
-        "Bir ürün veya etkinlik için harcanan toplam su miktarını",
-        "Buharlaşma hızını"
+        "Suyun sertlik derecesini",
+        "Sudaki iyon derişimini",
+        "Bir ürün için harcanan toplam su miktarını",
+        "Buharlaşma hızının değerini"
       ],
       "dogru_index": 2,
       "cozum": "Su ayak izi, bireyin veya üretimin dolaylı ve dolaysız toplam su tüketimini ifade eder (s.240).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Su ayak izi hangi tüketimi kapsar?",
+        "front": "Su ayak izinin tanımı nedir?",
         "back": "Dolaylı ve dolaysız toplam su tüketimini."
       },
       "kazanim": "Makro ve mikro ölçekli deneyleri atom ekonomisi ve su ayak izi açısından karşılaştırır."
@@ -111,7 +111,7 @@
       "metin": "Atom ekonomisi %100 olan bir tepkime için hangisi doğrudur?",
       "secenekler": [
         "Hiç ürün oluşmaz",
-        "Tepkenlerdeki tüm atomlar istenen ürüne geçer",
+        "Tüm atomlar ürüne geçer",
         "Yan ürün çoktur",
         "Tepkime gerçekleşmez"
       ],
@@ -119,7 +119,7 @@
       "cozum": "Atom ekonomisi %100 ise istenmeyen yan ürün yoktur; tüm atomlar üründe yer alır (s.240).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Atom ekonomisi %100 ne demek?",
+        "front": "Atom ekonomisinin %100 olması ne demektir?",
         "back": "Tüm atomlar üründe."
       },
       "kazanim": "Makro ve mikro ölçekli deneyleri atom ekonomisi ve su ayak izi açısından karşılaştırır."
@@ -127,7 +127,7 @@
     {
       "soru_id": "kimya_10_u03_k01_o07",
       "alt_beceri": "Atom ekonomisi ve su ayak izini yorumlar.",
-      "metin": "Deney tasarımında bağımlı değişken nedir?",
+      "metin": "Bir deneyde araştırmacı sıcaklığı 20 °C'den 40 °C'ye çıkarıp çözünme süresini ölçüyor. Bu deneyde bağımlı değişken nedir?",
       "secenekler": [
         "Ölçülen ve değişimi izlenen değişken",
         "Araştırmacının değiştirdiği değişken",
@@ -138,26 +138,26 @@
       "cozum": "Bağımlı değişken, bağımsız değişkene bağlı olarak ölçülen değişkendir; kontrol değişkenleri sabit tutulur (s.190, s.239-241).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bağımsız değişken nedir?",
-        "back": "Araştırmacının kendi değiştirdiği değişken."
+        "front": "Bağımsız ve bağımlı değişken arasındaki fark nedir?",
+        "back": "Bağımsız değişkeni araştırmacı değiştirir; bağımlı değişken buna bağlı olarak ölçülür."
       },
       "kazanim": "Makro ve mikro ölçekli deneyleri atom ekonomisi ve su ayak izi açısından karşılaştırır."
     },
     {
       "soru_id": "kimya_10_u03_k01_o08",
       "alt_beceri": "Atom ekonomisi ve su ayak izini yorumlar.",
-      "metin": "Sürdürülebilirlik açısından deneylerde öncelikli hedef nedir?",
+      "metin": "Bir deneyde 5 farklı kimyasal yerine 1 kimyasalla aynı sonuç alınıyor. Sürdürülebilirlik açısından bu tasarımın önceliği nedir?",
       "secenekler": [
-        "Daha çok kimyasal kullanmak",
-        "Deneyi uzatmak",
-        "Kimyasal ve su tüketimini azaltıp atığı en aza indirmek",
-        "Atığı doğaya bırakmak"
+        "Daha çok kimyasal tüketmek",
+        "Kimyasal ve su tüketimini azaltmak",
+        "Deney süresini uzatmak",
+        "Atığı doğrudan doğaya bırakmak"
       ],
-      "dogru_index": 2,
+      "dogru_index": 1,
       "cozum": "Kitaba göre deneylerde kaynak tüketimini ve atığı azaltmak, sürdürülebilirliğe katkı sağlar (s.238-241).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Deneylerde sürdürülebilirlik nasıl sağlanır?",
+        "front": "Sürdürülebilir deney tasarımının ölçütü nedir?",
         "back": "Az kimyasal, az su, az atık."
       },
       "kazanim": "Makro ve mikro ölçekli deneyleri atom ekonomisi ve su ayak izi açısından karşılaştırır."
@@ -167,16 +167,16 @@
       "alt_beceri": "Atom ekonomisi ve su ayak izini yorumlar.",
       "metin": "Aynı deney hem makro hem mikro ölçekte yapıldığında hangi sonuç beklenir?",
       "secenekler": [
-        "Gözlem tamamen farklı olur",
         "Gözlem benzer olur, tüketilen madde miktarı farklı olur",
+        "Gözlem tamamen farklı olur",
         "Mikro ölçekte tepkime olmaz",
         "Makro ölçekte ürün oluşmaz"
       ],
-      "dogru_index": 1,
+      "dogru_index": 0,
       "cozum": "Ölçek değişse de kimyasal olay aynıdır; mikro ölçekte daha az madde kullanılır (s.238-241).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ölçek değişince gözlem değişir mi?",
+        "front": "Ölçeğin kimyasal gözleme etkisi nedir?",
         "back": "Kimyasal olay aynı, madde miktarı farklı."
       },
       "kazanim": "Makro ve mikro ölçekli deneyleri atom ekonomisi ve su ayak izi açısından karşılaştırır."
@@ -189,13 +189,13 @@
         "Bol çözücü kullanan tasarım",
         "Atığı lavaboya döken tasarım",
         "Tek kullanımlık bol malzemeli tasarım",
-        "Küçük ölçekli, az çözücü gerektiren ve atığı geri kazanılabilen tasarım"
+        "Az çözücü kullanan, atığı geri kazanılan tasarım"
       ],
       "dogru_index": 3,
       "cozum": "Yeşil kimya, kimyasal ve çözücü tüketimini azaltan, atığı önleyen tasarımları önceler (s.237-241).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yeşil kimyada tercih ne?",
+        "front": "Yeşil kimyanın tercih ettiği tasarım nedir?",
         "back": "Az madde, az atık, geri kazanım."
       },
       "kazanim": "Makro ve mikro ölçekli deneyleri atom ekonomisi ve su ayak izi açısından karşılaştırır."
@@ -214,12 +214,12 @@
     },
     {
       "id": "kimya_10_u03_k01_o03:flashcard",
-      "front": "Atom ekonomisi nedir?",
+      "front": "Atom ekonomisinin ölçtüğü oran nedir?",
       "back": "Atomların ürüne geçme oranı."
     },
     {
       "id": "kimya_10_u03_k01_o04:flashcard",
-      "front": "Su ayak izi hangi tüketimi kapsar?",
+      "front": "Su ayak izinin tanımı nedir?",
       "back": "Dolaylı ve dolaysız toplam su tüketimini."
     },
     {
@@ -229,27 +229,27 @@
     },
     {
       "id": "kimya_10_u03_k01_o06:flashcard",
-      "front": "Atom ekonomisi %100 ne demek?",
+      "front": "Atom ekonomisinin %100 olması ne demektir?",
       "back": "Tüm atomlar üründe."
     },
     {
       "id": "kimya_10_u03_k01_o07:flashcard",
-      "front": "Bağımsız değişken nedir?",
-      "back": "Araştırmacının kendi değiştirdiği değişken."
+      "front": "Bağımsız ve bağımlı değişken arasındaki fark nedir?",
+      "back": "Bağımsız değişkeni araştırmacı değiştirir; bağımlı değişken buna bağlı olarak ölçülür."
     },
     {
       "id": "kimya_10_u03_k01_o08:flashcard",
-      "front": "Deneylerde sürdürülebilirlik nasıl sağlanır?",
+      "front": "Sürdürülebilir deney tasarımının ölçütü nedir?",
       "back": "Az kimyasal, az su, az atık."
     },
     {
       "id": "kimya_10_u03_k01_o09:flashcard",
-      "front": "Ölçek değişince gözlem değişir mi?",
+      "front": "Ölçeğin kimyasal gözleme etkisi nedir?",
       "back": "Kimyasal olay aynı, madde miktarı farklı."
     },
     {
       "id": "kimya_10_u03_k01_o10:flashcard",
-      "front": "Yeşil kimyada tercih ne?",
+      "front": "Yeşil kimyanın tercih ettiği tasarım nedir?",
       "back": "Az madde, az atık, geri kazanım."
     }
   ]

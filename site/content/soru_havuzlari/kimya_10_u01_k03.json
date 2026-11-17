@@ -24,7 +24,7 @@
       "cozum": "Bir mol, 6,02 · 10²³ tanecik içerir (Avogadro sayısı) (s.50-57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 mol kaç taneciktir?",
+        "front": "Avogadro sayısının değeri nedir?",
         "back": "6,02 · 10²³"
       },
       "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
@@ -51,18 +51,18 @@
     {
       "soru_id": "kimya_10_u01_k03_o03",
       "alt_beceri": "Avogadro sayısı ile mol ilişkisini açıklar.",
-      "metin": "Mol kavramının kimyada kullanılma nedeni nedir?",
+      "metin": "Bir öğrenci 10²³ tane atomu tek tek sayamayacağı için madde miktarını başka bir yolla ifade etmek istiyor. Mol kavramının bunu sağlayan yönü nedir?",
       "secenekler": [
-        "Tanecikleri tek tek saymak yerine belirli sayıda tanecikle çalışmayı sağlaması",
-        "Kütleyi ortadan kaldırması",
-        "Sıcaklığı ölçmesi",
-        "Hacmi sabitlemesi"
+        "Tanecikleri saymadan miktar belirtmeyi sağlaması",
+        "Kütleyi ortadan kaldırmayı amaçlaması",
+        "Sıcaklığı doğrudan ölçmeyi sağlaması",
+        "Hacmi sabit tutmayı sağlaması"
       ],
       "dogru_index": 0,
       "cozum": "Atomları tek tek saymak pratik olmadığından mol, madde miktarını belirli sayıda tanecikle ilişkilendirir (s.50-51, s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mol neden kullanılır?",
+        "front": "Molün tanımı nedir?",
         "back": "Tanecikleri saymak yerine miktarı ifade etmek için."
       },
       "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
@@ -81,7 +81,7 @@
       "cozum": "MA = 1 + 14 + 3·16 = 63 g/mol; n = 126/63 = 2 mol (kitabın örneği, s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "126 g HNO3 kaç moldür?",
+        "front": "Mol kütlesi (MA) nasıl hesaplanır?",
         "back": "2 mol"
       },
       "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
@@ -100,8 +100,8 @@
       "cozum": "n = N/NA = 12,04·10²³ / 6,02·10²³ = 2 mol (s.57).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "12,04·10²³ tanecik kaç moldür?",
-        "back": "2 mol"
+        "front": "n = N / NA bağıntısı hangi niceliği verir?",
+        "back": "Tanecik sayısı verilen örnekte mol sayısını verir."
       },
       "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
@@ -119,8 +119,8 @@
       "cozum": "n = 108/108 = 1 mol (kitaptaki 1 mol = 108 g Ag bilgisi, s.54).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "n = m/MA bağıntısındaki MA neyi gösterir?",
-        "back": "Mol kütlesini (g/mol)."
+        "front": "Mol kütlesinin birimi nedir?",
+        "back": "Gram/mol (g/mol)."
       },
       "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
@@ -150,15 +150,15 @@
       "secenekler": [
         "Kütleleri eşittir",
         "Atom sayıları farklıdır",
-        "Aynı sayıda atom içerirler, kütleleri farklıdır",
-        "İkisi de 12 g'dır"
+        "Atom sayıları eşit, kütleleri farklıdır",
+        "İkisinin kütlesi de 12 g'dır"
       ],
       "dogru_index": 2,
       "cozum": "Kitaptaki temsilî görsele göre farklı elementlerin birer molleri aynı sayıda atom içerir; kütleleri mol kütlesine göre değişir (1 mol C = 12 g, 1 mol Cu = 63,5 g) (s.54).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 mol C ile 1 mol Cu'nun atom sayısı eşit mi?",
-        "back": "Evet; kütleleri farklıdır."
+        "front": "Mol sayısı ile tanecik sayısı arasındaki ilişki nedir?",
+        "back": "Aynı mol sayısındaki maddeler aynı sayıda tanecik içerir; kütleleri mol kütlesine göre değişir."
       },
       "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
     },
@@ -176,7 +176,7 @@
       "cozum": "N = n · NA = 2 · 6,02·10²³ = 12,04·10²³ molekül (s.57-59).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "2 mol su kaç moleküldür?",
+        "front": "Tanecik sayısı nasıl hesaplanır?",
         "back": "12,04 · 10²³"
       },
       "kazanim": "Mol, kütle ve tanecik sayısı arasındaki ilişkiyi kullanarak hesaplama yapar."
@@ -204,7 +204,7 @@
   "flashcards": [
     {
       "id": "kimya_10_u01_k03_o01:flashcard",
-      "front": "1 mol kaç taneciktir?",
+      "front": "Avogadro sayısının değeri nedir?",
       "back": "6,02 · 10²³"
     },
     {
@@ -214,23 +214,23 @@
     },
     {
       "id": "kimya_10_u01_k03_o03:flashcard",
-      "front": "Mol neden kullanılır?",
+      "front": "Molün tanımı nedir?",
       "back": "Tanecikleri saymak yerine miktarı ifade etmek için."
     },
     {
       "id": "kimya_10_u01_k03_o04:flashcard",
-      "front": "126 g HNO3 kaç moldür?",
+      "front": "Mol kütlesi (MA) nasıl hesaplanır?",
       "back": "2 mol"
     },
     {
       "id": "kimya_10_u01_k03_o05:flashcard",
-      "front": "12,04·10²³ tanecik kaç moldür?",
-      "back": "2 mol"
+      "front": "n = N / NA bağıntısı hangi niceliği verir?",
+      "back": "Tanecik sayısı verilen örnekte mol sayısını verir."
     },
     {
       "id": "kimya_10_u01_k03_o06:flashcard",
-      "front": "n = m/MA bağıntısındaki MA neyi gösterir?",
-      "back": "Mol kütlesini (g/mol)."
+      "front": "Mol kütlesinin birimi nedir?",
+      "back": "Gram/mol (g/mol)."
     },
     {
       "id": "kimya_10_u01_k03_o07:flashcard",
@@ -239,12 +239,12 @@
     },
     {
       "id": "kimya_10_u01_k03_o08:flashcard",
-      "front": "1 mol C ile 1 mol Cu'nun atom sayısı eşit mi?",
-      "back": "Evet; kütleleri farklıdır."
+      "front": "Mol sayısı ile tanecik sayısı arasındaki ilişki nedir?",
+      "back": "Aynı mol sayısındaki maddeler aynı sayıda tanecik içerir; kütleleri mol kütlesine göre değişir."
     },
     {
       "id": "kimya_10_u01_k03_o09:flashcard",
-      "front": "2 mol su kaç moleküldür?",
+      "front": "Tanecik sayısı nasıl hesaplanır?",
       "back": "12,04 · 10²³"
     },
     {

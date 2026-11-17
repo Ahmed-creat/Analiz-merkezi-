@@ -16,7 +16,7 @@
       "metin": "Kitaba göre çözünme süreci kaç temel aşamada gerçekleşir?",
       "secenekler": [
         "İki: ısıtma ve karıştırma",
-        "Üç: çözünenin kristalinden çıkması, çözücüde boşluk oluşması, taneciklerin boşluğa yerleşmesi",
+        "Üç: kristalden çıkma, boşluk oluşumu, yerleşme",
         "Dört: erime, kaynama, soğuma, süzme",
         "Tek: çözünenin çözücüye eklenmesi"
       ],
@@ -32,7 +32,7 @@
     {
       "soru_id": "kimya_10_u02_k01_o02",
       "alt_beceri": "Çözünme sürecinin aşamalarını sıralar.",
-      "metin": "Çözünme sürecinin ilk aşaması nedir?",
+      "metin": "Bir şeker kristali suya atıldığında ilk 2 saniyede yüzeyinden tanecikler ayrılıyor. Çözünme sürecinin bu ilk aşamasında ne olur?",
       "secenekler": [
         "Çözücü moleküllerinin buharlaşması",
         "Çözeltinin soğuması",
@@ -62,7 +62,7 @@
       "cozum": "Kitaba göre tamamen çözünmeyen bir ilaç mide-bağırsak kanalında tam olarak emilemez; bu yüzden çözünürlük farmakolojide temel konudur (s.151).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İlaç neden çözünmelidir?",
+        "front": "Çözünürlüğün farmakolojideki önemi nedir?",
         "back": "Emilebilmesi için."
       },
       "kazanim": "Çözünme sürecinin aşamalarını tanecik düzeyinde açıklar."
@@ -72,29 +72,29 @@
       "alt_beceri": "Çözünmede etkili etkileşimleri yorumlar.",
       "metin": "Şekerin suda çözünmesi sırasında çözücüde boşluk oluşması için ne gerekir?",
       "secenekler": [
-        "Suyun kaynaması",
-        "Şekerin erimesi",
-        "Su molekülleri arasındaki etkileşimlerin bir kısmının kopması",
-        "Basıncın sıfır olması"
+        "Suyun kaynamaya başlaması",
+        "Şekerin eriyip yok olması",
+        "Su molekülleri arası bağların kopması",
+        "Basıncın sıfıra düşmesi"
       ],
       "dogru_index": 2,
       "cozum": "Çözücüde boşluk oluşması, çözücü tanecikleri arasındaki etkileşimlerin bir kısmının kopmasını gerektirir (s.151-153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çözücüde boşluk nasıl oluşur?",
-        "back": "Çözücü tanecikleri arası etkileşimler kopar."
+        "front": "Çözücü tanecikleri arası etkileşimlerin kopmasının sonucu nedir?",
+        "back": "Çözücüde, çözünen taneciklerin yerleşebileceği boşluklar oluşur."
       },
       "kazanim": "Çözünme sürecinin aşamalarını tanecik düzeyinde açıklar."
     },
     {
       "soru_id": "kimya_10_u02_k01_o05",
       "alt_beceri": "Çözünmede etkili etkileşimleri yorumlar.",
-      "metin": "Çözünme sırasında çözünen ile çözücü tanecikleri arasında yeni etkileşimler oluşur. Bu durumun sonucu nedir?",
+      "metin": "Çözünme sırasında çözünen ile çözücü tanecikleri arasında yeni etkileşimler oluşuyor; 2 maddenin karışması kabın sıcaklığını değiştirebiliyor. Bu etkileşimlerin enerji açısından sonucu nedir?",
       "secenekler": [
         "Kütle yok olur",
         "Tanecik sayısı azalır",
         "Çözelti her zaman ısınır",
-        "Enerji açığa çıkabilir ya da enerji alınabilir"
+        "Enerji açığa çıkar ya da alınır"
       ],
       "dogru_index": 3,
       "cozum": "Tanecikler arası yeni etkileşimler enerji alışverişine yol açar; bazı çözünmeler ısı verir, bazıları ısı alır (s.153).",
@@ -111,7 +111,7 @@
       "metin": "İyonik bir katı suda çözünürken su molekülleri iyonların çevresini sarar. Bu olaya ne denir?",
       "secenekler": [
         "Efüzyon",
-        "Hidratasyon (solvatasyon)",
+        "Hidratasyon",
         "Difüzyon",
         "Nötralleşme"
       ],
@@ -138,7 +138,7 @@
       "cozum": "Karıştırma ve yüzey alanının artırılması taneciklerin çözücüyle temasını artırarak çözünmeyi hızlandırır (s.153-155).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çözünmeyi ne hızlandırır?",
+        "front": "Karıştırma ve yüzey alanının çözünme hızına etkisi nedir?",
         "back": "Karıştırma, küçük parçalar, sıcaklık."
       },
       "kazanim": "Çözünme sürecinin aşamalarını tanecik düzeyinde açıklar."
@@ -157,7 +157,7 @@
       "cozum": "Çözünmede çözünen tanecikleri çözücü içinde homojen olarak dağılır (s.151-153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çözeltide tanecikler nasıldır?",
+        "front": "Çözeltideki tanecik dağılımının özelliği nedir?",
         "back": "Homojen dağılmış."
       },
       "kazanim": "Çözünme sürecinin aşamalarını tanecik düzeyinde açıklar."
@@ -168,7 +168,7 @@
       "metin": "Suya tuz eklendiğinde taneciklerin kristalden ayrılması için gereken enerji nereden sağlanır?",
       "secenekler": [
         "Yalnız kaptan",
-        "Çözücü-tanecik etkileşimlerinden ve ortamdan",
+        "Çözücü etkileşimleri ve ortamdan",
         "Taneciklerin kütlesinden",
         "Havadan"
       ],
@@ -176,7 +176,7 @@
       "cozum": "Kristalden ayrılma enerji gerektirir; bu enerji çözücü-çözünen etkileşimleriyle ve ortamdan karşılanır (s.151-153).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kristali ayırma enerjisi nereden gelir?",
+        "front": "Kristalden ayrılma enerjisinin kaynağı nedir?",
         "back": "Çözücü etkileşimleri ve ortamdan."
       },
       "kazanim": "Çözünme sürecinin aşamalarını tanecik düzeyinde açıklar."
@@ -195,7 +195,7 @@
       "cozum": "Toz hâlinde yüzey alanı büyük olduğundan çözünme daha hızlıdır (s.153-155).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yüzey alanı çözünme hızını nasıl etkiler?",
+        "front": "Yüzey alanı ile çözünme hızı arasındaki ilişki nedir?",
         "back": "Yüzey alanı büyüdükçe çözünme hızlanır."
       },
       "kazanim": "Çözünme sürecinin aşamalarını tanecik düzeyinde açıklar."
@@ -214,13 +214,13 @@
     },
     {
       "id": "kimya_10_u02_k01_o03:flashcard",
-      "front": "İlaç neden çözünmelidir?",
+      "front": "Çözünürlüğün farmakolojideki önemi nedir?",
       "back": "Emilebilmesi için."
     },
     {
       "id": "kimya_10_u02_k01_o04:flashcard",
-      "front": "Çözücüde boşluk nasıl oluşur?",
-      "back": "Çözücü tanecikleri arası etkileşimler kopar."
+      "front": "Çözücü tanecikleri arası etkileşimlerin kopmasının sonucu nedir?",
+      "back": "Çözücüde, çözünen taneciklerin yerleşebileceği boşluklar oluşur."
     },
     {
       "id": "kimya_10_u02_k01_o05:flashcard",
@@ -234,22 +234,22 @@
     },
     {
       "id": "kimya_10_u02_k01_o07:flashcard",
-      "front": "Çözünmeyi ne hızlandırır?",
+      "front": "Karıştırma ve yüzey alanının çözünme hızına etkisi nedir?",
       "back": "Karıştırma, küçük parçalar, sıcaklık."
     },
     {
       "id": "kimya_10_u02_k01_o08:flashcard",
-      "front": "Çözeltide tanecikler nasıldır?",
+      "front": "Çözeltideki tanecik dağılımının özelliği nedir?",
       "back": "Homojen dağılmış."
     },
     {
       "id": "kimya_10_u02_k01_o09:flashcard",
-      "front": "Kristali ayırma enerjisi nereden gelir?",
+      "front": "Kristalden ayrılma enerjisinin kaynağı nedir?",
       "back": "Çözücü etkileşimleri ve ortamdan."
     },
     {
       "id": "kimya_10_u02_k01_o10:flashcard",
-      "front": "Yüzey alanı çözünme hızını nasıl etkiler?",
+      "front": "Yüzey alanı ile çözünme hızı arasındaki ilişki nedir?",
       "back": "Yüzey alanı büyüdükçe çözünme hızlanır."
     }
   ]

@@ -15,10 +15,10 @@
       "alt_beceri": "Çözünürlük kavramını açıklar.",
       "metin": "Belirli sıcaklık ve basınçta çözünürlük nasıl tanımlanır?",
       "secenekler": [
-        "Çözeltinin kaynama noktası",
-        "Belirli sıcaklık ve basınçta 100 g çözücüde çözünebilen maksimum madde miktarı",
-        "Çözücünün buhar basıncı",
-        "Çözünenin mol sayısı"
+        "Çözeltinin kaynama noktası değeri",
+        "100 g çözücüde çözünen maksimum madde miktarı",
+        "Çözücünün buhar basıncı değeri",
+        "Çözünenin mol sayısı değeri"
       ],
       "dogru_index": 1,
       "cozum": "Çözünürlük, belirli sıcaklık ve basınçta 100 g çözücüde çözünebilen maksimum madde miktarıdır (g/100 g çözücü) (s.181-183).",
@@ -62,7 +62,7 @@
       "cozum": "Çözünürlük maddenin cinsine bağlıdır; bu yüzden farklı katılar farklı miktarlarda çözünür (s.181-183).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çözünürlük neden maddeye göre değişir?",
+        "front": "Çözünürlüğü belirleyen madde özelliği nedir?",
         "back": "Madde cinsi etkilidir."
       },
       "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
@@ -81,7 +81,7 @@
       "cozum": "100 g suda 40 g ise 200 g suda 80 g çözünür (s.181-183).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "40 g/100 g ise 200 g suda kaç g?",
+        "front": "Çözünürlük değerinden çözünen miktarı nasıl bulunur?",
         "back": "80 g"
       },
       "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
@@ -91,16 +91,16 @@
       "alt_beceri": "Çözünürlük verilerini yorumlar.",
       "metin": "100 g suda 30 g madde çözündüğünde doymuş çözelti elde ediliyorsa çözünürlük kaç g/100 g su'dur?",
       "secenekler": [
+        "30",
         "70",
         "130",
-        "3",
-        "30"
+        "3"
       ],
-      "dogru_index": 3,
+      "dogru_index": 0,
       "cozum": "Doymuş çözeltide çözünen miktarı çözünürlüğü verir: 30 g/100 g su (s.181-183).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "100 g suda 30 g ile doyuyorsa çözünürlük kaçtır?",
+        "front": "Doymuş çözeltiden çözünürlük nasıl bulunur?",
         "back": "30 g/100 g su"
       },
       "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
@@ -119,7 +119,7 @@
       "cozum": "Yavaş soğutmada kristal büyümesi için zaman kaldığından iri kristaller oluşur; akide şekeri böyle yapılır (s.179-180).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yavaş soğutmada kristal nasıl olur?",
+        "front": "Yavaş soğutmanın kristal boyutuna etkisi nedir?",
         "back": "İri kristaller."
       },
       "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
@@ -138,7 +138,7 @@
       "cozum": "Eğrinin altında kalan çözelti daha fazla madde çözebilir; doymamıştır (s.183, s.199).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Eğrinin altındaki nokta hangi çözelti?",
+        "front": "Doymamış çözeltinin çözünürlük eğrisindeki yeri nedir?",
         "back": "Doymamış."
       },
       "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
@@ -167,17 +167,17 @@
       "alt_beceri": "Çözünürlük verilerini yorumlar.",
       "metin": "Çözünürlük birimi genellikle nasıl ifade edilir?",
       "secenekler": [
-        "mol / L",
-        "g çözünen / 100 g çözücü",
-        "mg / L",
-        "g / mL"
+        "Mol sayısı / litre",
+        "Miligram / litre",
+        "Gram / mililitre",
+        "Gram çözünen / 100 g çözücü"
       ],
-      "dogru_index": 1,
+      "dogru_index": 3,
       "cozum": "Katıların çözünürlüğü genellikle 100 g çözücüde çözünen gram miktarı olarak verilir (s.181).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çözünürlük birimi nedir?",
-        "back": "g/100 g çözücü"
+        "front": "Çözünürlüğün g/100 g çözücü ile ifadesinin anlamı nedir?",
+        "back": "100 g çözücüde çözünen maddenin gram cinsinden miktarı."
       },
       "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
     },
@@ -214,27 +214,27 @@
     },
     {
       "id": "kimya_10_u02_k05_o03:flashcard",
-      "front": "Çözünürlük neden maddeye göre değişir?",
+      "front": "Çözünürlüğü belirleyen madde özelliği nedir?",
       "back": "Madde cinsi etkilidir."
     },
     {
       "id": "kimya_10_u02_k05_o04:flashcard",
-      "front": "40 g/100 g ise 200 g suda kaç g?",
+      "front": "Çözünürlük değerinden çözünen miktarı nasıl bulunur?",
       "back": "80 g"
     },
     {
       "id": "kimya_10_u02_k05_o05:flashcard",
-      "front": "100 g suda 30 g ile doyuyorsa çözünürlük kaçtır?",
+      "front": "Doymuş çözeltiden çözünürlük nasıl bulunur?",
       "back": "30 g/100 g su"
     },
     {
       "id": "kimya_10_u02_k05_o06:flashcard",
-      "front": "Yavaş soğutmada kristal nasıl olur?",
+      "front": "Yavaş soğutmanın kristal boyutuna etkisi nedir?",
       "back": "İri kristaller."
     },
     {
       "id": "kimya_10_u02_k05_o07:flashcard",
-      "front": "Eğrinin altındaki nokta hangi çözelti?",
+      "front": "Doymamış çözeltinin çözünürlük eğrisindeki yeri nedir?",
       "back": "Doymamış."
     },
     {
@@ -244,8 +244,8 @@
     },
     {
       "id": "kimya_10_u02_k05_o09:flashcard",
-      "front": "Çözünürlük birimi nedir?",
-      "back": "g/100 g çözücü"
+      "front": "Çözünürlüğün g/100 g çözücü ile ifadesinin anlamı nedir?",
+      "back": "100 g çözücüde çözünen maddenin gram cinsinden miktarı."
     },
     {
       "id": "kimya_10_u02_k05_o10:flashcard",

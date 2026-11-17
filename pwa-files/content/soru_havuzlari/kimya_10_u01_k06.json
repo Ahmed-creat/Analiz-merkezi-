@@ -24,7 +24,7 @@
       "cozum": "Kitaba göre deniz seviyesinde açık hava basıncı 1 atmosfer (atm) kabul edilir (s.81).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 atmosfer kaç mmHg'dir?",
+        "front": "Atmosfer basıncının cmHg karşılığı nedir?",
         "back": "76 cmHg = 760 mmHg."
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
@@ -43,7 +43,7 @@
       "cozum": "Kitaptaki dönüşüme göre 1 atm = 76 cmHg = 760 mmHg = 101 325 Pa = 760 torr (s.88).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 atm kaç mmHg'dir?",
+        "front": "Basınç birimlerinin birbirine dönüşümü nedir?",
         "back": "760 mmHg"
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
@@ -62,7 +62,7 @@
       "cozum": "Sabit sıcaklıkta basınç ile hacim ters orantılıdır: PV = sabit, P1V1 = P2V2 (s.89).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Boyle Yasası'nda P ile V nasıl değişir?",
+        "front": "Boyle Yasası'nın tanımı nedir?",
         "back": "Ters orantılı."
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
@@ -81,7 +81,7 @@
       "cozum": "P1V1 = P2V2 → 2·4 = P2·1 → P2 = 8 atm (kitabın örneği, s.89).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "2 atm 4 L → 1 L'de kaç atm?",
+        "front": "Sabit sıcaklıkta basınç ile hacmin çarpımı ne olur?",
         "back": "8 atm"
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
@@ -100,7 +100,7 @@
       "cozum": "T1 = 273 + 27 = 300 K; 1/300 = 3/T2 → T2 = 900 K → 900 − 273 = 627 °C (s.91).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "27 °C 1 atm → 3 atm kaç °C olur?",
+        "front": "Gay Lussac Yasası'nda basınç ile sıcaklık arasındaki ilişki nedir?",
         "back": "627 °C (900 K)"
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
@@ -157,7 +157,7 @@
       "cozum": "4·x = 6·2 → x = 3 L (kitabın grafikli örneği, s.94).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "4 atm'de x, 6 atm'de 2 L ise x kaçtır?",
+        "front": "Ters orantı grafiğinde P·V çarpımının sabitliği ne demektir?",
         "back": "3 L"
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
@@ -195,7 +195,7 @@
       "cozum": "Gazlar bulundukları kabın hacmini tamamen doldurur ve şeklini alır (s.81).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazlar kabın tamamını doldurur mu?",
+        "front": "Gazların kabı tamamen doldurmasının nedeni nedir?",
         "back": "Evet."
       },
       "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
@@ -280,27 +280,27 @@
   "flashcards": [
     {
       "id": "kimya_10_u01_k06_o01:flashcard",
-      "front": "1 atmosfer kaç mmHg'dir?",
+      "front": "Atmosfer basıncının cmHg karşılığı nedir?",
       "back": "76 cmHg = 760 mmHg."
     },
     {
       "id": "kimya_10_u01_k06_o02:flashcard",
-      "front": "1 atm kaç mmHg'dir?",
+      "front": "Basınç birimlerinin birbirine dönüşümü nedir?",
       "back": "760 mmHg"
     },
     {
       "id": "kimya_10_u01_k06_o03:flashcard",
-      "front": "Boyle Yasası'nda P ile V nasıl değişir?",
+      "front": "Boyle Yasası'nın tanımı nedir?",
       "back": "Ters orantılı."
     },
     {
       "id": "kimya_10_u01_k06_o04:flashcard",
-      "front": "2 atm 4 L → 1 L'de kaç atm?",
+      "front": "Sabit sıcaklıkta basınç ile hacmin çarpımı ne olur?",
       "back": "8 atm"
     },
     {
       "id": "kimya_10_u01_k06_o05:flashcard",
-      "front": "27 °C 1 atm → 3 atm kaç °C olur?",
+      "front": "Gay Lussac Yasası'nda basınç ile sıcaklık arasındaki ilişki nedir?",
       "back": "627 °C (900 K)"
     },
     {
@@ -315,7 +315,7 @@
     },
     {
       "id": "kimya_10_u01_k06_o08:flashcard",
-      "front": "4 atm'de x, 6 atm'de 2 L ise x kaçtır?",
+      "front": "Ters orantı grafiğinde P·V çarpımının sabitliği ne demektir?",
       "back": "3 L"
     },
     {
@@ -325,7 +325,7 @@
     },
     {
       "id": "kimya_10_u01_k06_o10:flashcard",
-      "front": "Gazlar kabın tamamını doldurur mu?",
+      "front": "Gazların kabı tamamen doldurmasının nedeni nedir?",
       "back": "Evet."
     },
     {

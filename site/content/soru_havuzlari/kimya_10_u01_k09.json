@@ -16,7 +16,7 @@
       "metin": "Bir gazın başka gaz molekülleriyle kendiliğinden karışması hangi kavramla adlandırılır?",
       "secenekler": [
         "Gazın küçük bir delikten kaçması",
-        "Gaz moleküllerinin başka gaz molekülleriyle yavaş yavaş karışması",
+        "Gaz moleküllerinin birbiriyle yavaşça karışması",
         "Gazın sıvılaşması",
         "Gazın kabı ısıtması"
       ],
@@ -81,7 +81,7 @@
       "cozum": "vU/vV = √(90/10) = √9 = 3 (kitabın sorusu, s.106).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "M=10 ve M=90 ise hız oranı kaçtır?",
+        "front": "Graham Yasası'nda hız oranı nasıl hesaplanır?",
         "back": "3"
       },
       "kazanim": "Difüzyon ve efüzyonu ayırt eder; Graham Yasası ile yayılma hızlarını karşılaştırır."
@@ -100,7 +100,7 @@
       "cozum": "vH2/vO2 = √(32/2) = √16 = 4 (s.110-111).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "H2/O2 hız oranı kaçtır?",
+        "front": "Hız oranının mol kütleleriyle ilişkisi nedir?",
         "back": "4"
       },
       "kazanim": "Difüzyon ve efüzyonu ayırt eder; Graham Yasası ile yayılma hızlarını karşılaştırır."
@@ -138,7 +138,7 @@
       "cozum": "Kitapta parfüm örneği, moleküllerin yavaş yavaş karışması yani difüzyon için verilir (s.110).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Parfüm kokusunun yayılması nedir?",
+        "front": "Difüzyonun tanımı nedir?",
         "back": "Difüzyon."
       },
       "kazanim": "Difüzyon ve efüzyonu ayırt eder; Graham Yasası ile yayılma hızlarını karşılaştırır."
@@ -150,14 +150,14 @@
       "secenekler": [
         "Buzdolabının soğutması",
         "Sabun üretimi",
-        "Kütle spektrometrisinde iyonların ayrılması",
+        "Kütle spektrometrisi",
         "Cam üfleme"
       ],
       "dogru_index": 2,
       "cozum": "Kitapta efüzyonun kütle spektrometrisi, vakum teknolojisi ve yarı iletken üretiminde kullanıldığı belirtilir (s.111-112).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Efüzyon hangi teknolojide kullanılır?",
+        "front": "Efüzyonun teknolojideki kullanım alanları nedir?",
         "back": "Kütle spektrometrisi, vakum, yarı iletken."
       },
       "kazanim": "Difüzyon ve efüzyonu ayırt eder; Graham Yasası ile yayılma hızlarını karşılaştırır."
@@ -176,7 +176,7 @@
       "cozum": "Hız mol kütlesinin kareköküyle ters orantılı olduğundan küçük mol kütleli gaz daha hızlı yayılır (s.110-111).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Küçük mol kütleli gaz daha mı hızlı?",
+        "front": "Mol kütlesinin yayılma hızına etkisi nedir?",
         "back": "Evet."
       },
       "kazanim": "Difüzyon ve efüzyonu ayırt eder; Graham Yasası ile yayılma hızlarını karşılaştırır."
@@ -219,12 +219,12 @@
     },
     {
       "id": "kimya_10_u01_k09_o04:flashcard",
-      "front": "M=10 ve M=90 ise hız oranı kaçtır?",
+      "front": "Graham Yasası'nda hız oranı nasıl hesaplanır?",
       "back": "3"
     },
     {
       "id": "kimya_10_u01_k09_o05:flashcard",
-      "front": "H2/O2 hız oranı kaçtır?",
+      "front": "Hız oranının mol kütleleriyle ilişkisi nedir?",
       "back": "4"
     },
     {
@@ -234,17 +234,17 @@
     },
     {
       "id": "kimya_10_u01_k09_o07:flashcard",
-      "front": "Parfüm kokusunun yayılması nedir?",
+      "front": "Difüzyonun tanımı nedir?",
       "back": "Difüzyon."
     },
     {
       "id": "kimya_10_u01_k09_o08:flashcard",
-      "front": "Efüzyon hangi teknolojide kullanılır?",
+      "front": "Efüzyonun teknolojideki kullanım alanları nedir?",
       "back": "Kütle spektrometrisi, vakum, yarı iletken."
     },
     {
       "id": "kimya_10_u01_k09_o09:flashcard",
-      "front": "Küçük mol kütleli gaz daha mı hızlı?",
+      "front": "Mol kütlesinin yayılma hızına etkisi nedir?",
       "back": "Evet."
     },
     {

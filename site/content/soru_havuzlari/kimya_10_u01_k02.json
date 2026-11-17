@@ -13,10 +13,10 @@
     {
       "soru_id": "kimya_10_u01_k02_o01",
       "alt_beceri": "Tepkime türlerini örnekleriyle açıklar.",
-      "metin": "Kimyasal tepkimelerin türlere ayrılmasının temel yararı nedir?",
+      "metin": "Bir öğrenci, girdiği maddelerden hangi ürünün oluşacağını önceden kestirmek için 3 farklı tepkimeyi türlere ayırıyor. Bu sınıflandırmanın temel yararı nedir?",
       "secenekler": [
         "Tepkimeyi durdurmak",
-        "Hangi ürünün oluşacağının ve tepkimenin nasıl gerçekleşeceğinin tahmin edilebilmesi",
+        "Ürünün ve sürecin tahmin edilebilmesi",
         "Kütleyi artırmak",
         "Sıcaklığı sabitlemek"
       ],
@@ -24,7 +24,7 @@
       "cozum": "Kitaba göre sınıflandırma sayesinde hangi ürünün oluşacağı ve tepkimenin nasıl gerçekleşeceği tahmin edilebilir (s.35).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tepkimeleri sınıflandırmanın yararı nedir?",
+        "front": "Tepkime türlerini bilmenin sağladığı kolaylık nedir?",
         "back": "Ürün ve sürecin tahmin edilebilmesi."
       },
       "kazanim": "Çökelme, indirgenme-yükseltgenme ve asit-baz tepkimelerini ayırt eder, net iyon denklemini yazar."
@@ -62,7 +62,7 @@
       "cozum": "H⁺(suda) + OH⁻(suda) → H2O(s) net iyon denklemi nötralleşme tepkimesidir (s.44).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "H⁺ + OH⁻ → H2O hangi tepkimedir?",
+        "front": "Nötralleşme tepkimesinin net iyon denklemi nedir?",
         "back": "Nötralleşme."
       },
       "kazanim": "Çökelme, indirgenme-yükseltgenme ve asit-baz tepkimelerini ayırt eder, net iyon denklemini yazar."
@@ -100,7 +100,7 @@
       "cozum": "Kitapta klor iyonlarının gümüş iyonlarıyla birleşerek beyaz renkli gümüş klorür (AgCl) katısı çöktürdüğü belirtilir (s.41).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "AgNO3 + Cl⁻ tepkimesinde hangi çökelek oluşur?",
+        "front": "Gümüş iyonu ile klorür iyonunun oluşturduğu çökeleğin formülü nedir?",
         "back": "AgCl (beyaz)."
       },
       "kazanim": "Çökelme, indirgenme-yükseltgenme ve asit-baz tepkimelerini ayırt eder, net iyon denklemini yazar."
@@ -119,7 +119,7 @@
       "cozum": "Na⁺ ve Cl⁻ seyirci iyonlardır; sadeleştirildiğinde H⁺ + OH⁻ → H2O kalır (s.44).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "HCl + NaOH net iyon denklemi nedir?",
+        "front": "Seyirci iyonlar sadeleştirildiğinde kalan denklem nedir?",
         "back": "H⁺ + OH⁻ → H2O"
       },
       "kazanim": "Çökelme, indirgenme-yükseltgenme ve asit-baz tepkimelerini ayırt eder, net iyon denklemini yazar."
@@ -157,8 +157,8 @@
       "cozum": "Mg, Mg²⁺'ye dönüşerek elektron verir; elektron veren madde yükseltgenir (s.41-42).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mg + HCl tepkimesinde hangi madde yükseltgenir?",
-        "back": "Mg (elektron verir)."
+        "front": "Yükseltgenmenin tanımı nedir?",
+        "back": "Mg elektron vererek Mg²⁺'ye dönüşür; elektron veren madde yükseltgenir."
       },
       "kazanim": "Çökelme, indirgenme-yükseltgenme ve asit-baz tepkimelerini ayırt eder, net iyon denklemini yazar."
     },
@@ -168,7 +168,7 @@
       "metin": "Aşağıdaki tepkimelerden hangisi çökelme tepkimesidir?",
       "secenekler": [
         "CH4 + 2O2 → CO2 + 2H2O",
-        "BaCl2(suda) + Na2SO4(suda) → BaSO4(k) + 2NaCl(suda)",
+        "BaCl2 + Na2SO4 → BaSO4(k) + 2NaCl",
         "H⁺ + OH⁻ → H2O",
         "CaCO3 → CaO + CO2"
       ],
@@ -176,7 +176,7 @@
       "cozum": "Suda çözünmeyen BaSO4 katısının oluşması çökelmedir (s.39-41).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çökelme tepkimesine örnek ver.",
+        "front": "Suda çözünmeyen katı oluşumu hangi tepkime türünün işaretidir?",
         "back": "BaCl2 + Na2SO4 → BaSO4(k) + 2NaCl"
       },
       "kazanim": "Çökelme, indirgenme-yükseltgenme ve asit-baz tepkimelerini ayırt eder, net iyon denklemini yazar."
@@ -189,13 +189,13 @@
         "Çözeltiyi ısıtmak için",
         "Gaz üretmek için",
         "Kütleyi ölçmek için",
-        "Çözeltideki iyonların varlığını belirlemek için"
+        "İyonların varlığını belirlemek için"
       ],
       "dogru_index": 3,
       "cozum": "Kitaba göre çökelme sonucu oluşan katıdan yola çıkılarak çözeltideki iyonlar tespit edilir (s.41).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Çökelme tepkimesi analitik kimyada neye yarar?",
+        "front": "Çökelme tepkimesinin analitik kimyadaki işlevi nedir?",
         "back": "İyon tespitine."
       },
       "kazanim": "Çökelme, indirgenme-yükseltgenme ve asit-baz tepkimelerini ayırt eder, net iyon denklemini yazar."
@@ -204,7 +204,7 @@
   "flashcards": [
     {
       "id": "kimya_10_u01_k02_o01:flashcard",
-      "front": "Tepkimeleri sınıflandırmanın yararı nedir?",
+      "front": "Tepkime türlerini bilmenin sağladığı kolaylık nedir?",
       "back": "Ürün ve sürecin tahmin edilebilmesi."
     },
     {
@@ -214,7 +214,7 @@
     },
     {
       "id": "kimya_10_u01_k02_o03:flashcard",
-      "front": "H⁺ + OH⁻ → H2O hangi tepkimedir?",
+      "front": "Nötralleşme tepkimesinin net iyon denklemi nedir?",
       "back": "Nötralleşme."
     },
     {
@@ -224,12 +224,12 @@
     },
     {
       "id": "kimya_10_u01_k02_o05:flashcard",
-      "front": "AgNO3 + Cl⁻ tepkimesinde hangi çökelek oluşur?",
+      "front": "Gümüş iyonu ile klorür iyonunun oluşturduğu çökeleğin formülü nedir?",
       "back": "AgCl (beyaz)."
     },
     {
       "id": "kimya_10_u01_k02_o06:flashcard",
-      "front": "HCl + NaOH net iyon denklemi nedir?",
+      "front": "Seyirci iyonlar sadeleştirildiğinde kalan denklem nedir?",
       "back": "H⁺ + OH⁻ → H2O"
     },
     {
@@ -239,17 +239,17 @@
     },
     {
       "id": "kimya_10_u01_k02_o08:flashcard",
-      "front": "Mg + HCl tepkimesinde hangi madde yükseltgenir?",
-      "back": "Mg (elektron verir)."
+      "front": "Yükseltgenmenin tanımı nedir?",
+      "back": "Mg elektron vererek Mg²⁺'ye dönüşür; elektron veren madde yükseltgenir."
     },
     {
       "id": "kimya_10_u01_k02_o09:flashcard",
-      "front": "Çökelme tepkimesine örnek ver.",
+      "front": "Suda çözünmeyen katı oluşumu hangi tepkime türünün işaretidir?",
       "back": "BaCl2 + Na2SO4 → BaSO4(k) + 2NaCl"
     },
     {
       "id": "kimya_10_u01_k02_o10:flashcard",
-      "front": "Çökelme tepkimesi analitik kimyada neye yarar?",
+      "front": "Çökelme tepkimesinin analitik kimyadaki işlevi nedir?",
       "back": "İyon tespitine."
     }
   ]

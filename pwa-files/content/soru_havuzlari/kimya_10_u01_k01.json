@@ -15,16 +15,16 @@
       "alt_beceri": "Kimyasal değişimin göstergelerini ayırt eder.",
       "metin": "Kitaba göre kimyasal değişim nasıl tanımlanır?",
       "secenekler": [
-        "Yalnızca hâl değişimi",
-        "Maddelerin iç yapılarında ve bileşenlerinde meydana gelen değişim",
-        "Yalnızca sıcaklık değişimi",
+        "Yalnızca hâl değişimi görülmesi",
+        "İç yapı ve bileşenlerin değişmesi",
+        "Yalnızca sıcaklık değişimi yaşanması",
         "Maddenin kütlesinin azalması"
       ],
       "dogru_index": 1,
       "cozum": "Kimyasal değişim, maddelerin iç yapıları ve bileşenlerinde meydana gelen değişimdir; madde kimliğini kaybeder, bağlar yeniden düzenlenir (s.25).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kimyasal değişim nedir?",
+        "front": "Kimyasal değişimde yeni madde oluşumunun nedeni nedir?",
         "back": "İç yapı ve bileşenlerin değişmesi; yeni madde oluşur."
       },
       "kazanim": "Kimyasal değişimi gözlemlenebilir göstergeleriyle açıklar ve tepkime denklemini tepken-ürün ilişkisiyle yorumlar."
@@ -37,13 +37,13 @@
         "Renk değişimi",
         "Gaz çıkışı",
         "Çökelme",
-        "Kütlenin her zaman azalması"
+        "Kütlenin azalması"
       ],
       "dogru_index": 3,
       "cozum": "Kitapta gösterge olarak renk, koku, gaz çıkışı, katı oluşumu, ışık, enerji, pH ve iletkenlik değişimi sayılır; kütle korunur (s.25-26).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kimyasal değişimin göstergeleri nelerdir?",
+        "front": "Renk değişimi, gaz çıkışı ve çökelme neyin işaretidir?",
         "back": "Renk, koku, gaz çıkışı, katı oluşumu, ışık, enerji, pH, iletkenlik."
       },
       "kazanim": "Kimyasal değişimi gözlemlenebilir göstergeleriyle açıklar ve tepkime denklemini tepken-ürün ilişkisiyle yorumlar."
@@ -81,7 +81,7 @@
       "cozum": "Okun solundaki maddeler tepkenler (tepkimeye girenler), sağdakiler ürünlerdir (s.25).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Okun solundaki maddelere ne denir?",
+        "front": "Tepken kavramının tanımı nedir?",
         "back": "Tepkenler."
       },
       "kazanim": "Kimyasal değişimi gözlemlenebilir göstergeleriyle açıklar ve tepkime denklemini tepken-ürün ilişkisiyle yorumlar."
@@ -119,7 +119,7 @@
       "cozum": "Okun sağındaki CaCl2, H2O ve CO2 ürünlerdir; CaCO3 ile HCl tepkenlerdir (s.25).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "CaCO3 + HCl tepkimesinin ürünleri nelerdir?",
+        "front": "CaCO3 + 2HCl tepkimesinde oluşan ürünlerin formülü nedir?",
         "back": "CaCl2, H2O ve CO2."
       },
       "kazanim": "Kimyasal değişimi gözlemlenebilir göstergeleriyle açıklar ve tepkime denklemini tepken-ürün ilişkisiyle yorumlar."
@@ -157,7 +157,7 @@
       "cozum": "Paslanmada yüzeyde kızıl-kahverengi yeni katı oluşur; renk değişimi ve katı oluşumu kimyasal değişim göstergesidir (s.25-26).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paslanmada hangi göstergeler görülür?",
+        "front": "Demirin paslanması hangi değişim türünün işaretidir?",
         "back": "Renk değişimi ve katı oluşumu."
       },
       "kazanim": "Kimyasal değişimi gözlemlenebilir göstergeleriyle açıklar ve tepkime denklemini tepken-ürün ilişkisiyle yorumlar."
@@ -176,7 +176,7 @@
       "cozum": "Kitap, Lavoisier'in kütlenin korunumu çalışmalarına dayanarak kimyasal tepkimelerde toplam kütlenin korunduğunu vurgular (s.68).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yanmada kütle gerçekten azalır mı?",
+        "front": "Kütlenin korunumu yasasının gereği nedir?",
         "back": "Hayır; gaz ürünler uzaklaşır, toplam kütle korunur."
       },
       "kazanim": "Kimyasal değişimi gözlemlenebilir göstergeleriyle açıklar ve tepkime denklemini tepken-ürün ilişkisiyle yorumlar."
@@ -204,12 +204,12 @@
   "flashcards": [
     {
       "id": "kimya_10_u01_k01_o01:flashcard",
-      "front": "Kimyasal değişim nedir?",
+      "front": "Kimyasal değişimde yeni madde oluşumunun nedeni nedir?",
       "back": "İç yapı ve bileşenlerin değişmesi; yeni madde oluşur."
     },
     {
       "id": "kimya_10_u01_k01_o02:flashcard",
-      "front": "Kimyasal değişimin göstergeleri nelerdir?",
+      "front": "Renk değişimi, gaz çıkışı ve çökelme neyin işaretidir?",
       "back": "Renk, koku, gaz çıkışı, katı oluşumu, ışık, enerji, pH, iletkenlik."
     },
     {
@@ -219,7 +219,7 @@
     },
     {
       "id": "kimya_10_u01_k01_o04:flashcard",
-      "front": "Okun solundaki maddelere ne denir?",
+      "front": "Tepken kavramının tanımı nedir?",
       "back": "Tepkenler."
     },
     {
@@ -229,7 +229,7 @@
     },
     {
       "id": "kimya_10_u01_k01_o06:flashcard",
-      "front": "CaCO3 + HCl tepkimesinin ürünleri nelerdir?",
+      "front": "CaCO3 + 2HCl tepkimesinde oluşan ürünlerin formülü nedir?",
       "back": "CaCl2, H2O ve CO2."
     },
     {
@@ -239,12 +239,12 @@
     },
     {
       "id": "kimya_10_u01_k01_o08:flashcard",
-      "front": "Paslanmada hangi göstergeler görülür?",
+      "front": "Demirin paslanması hangi değişim türünün işaretidir?",
       "back": "Renk değişimi ve katı oluşumu."
     },
     {
       "id": "kimya_10_u01_k01_o09:flashcard",
-      "front": "Yanmada kütle gerçekten azalır mı?",
+      "front": "Kütlenin korunumu yasasının gereği nedir?",
       "back": "Hayır; gaz ürünler uzaklaşır, toplam kütle korunur."
     },
     {

@@ -24,7 +24,7 @@
       "cozum": "Denkleştirmede her elementin atom sayısı iki tarafta eşitlenir; molekül ve tanecik sayısı korunmayabilir (s.64-65).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Denkleştirmede ne korunur?",
+        "front": "Atom sayısının korunumu nedir?",
         "back": "Elementlerin atom sayısı."
       },
       "kazanim": "Kimyasal tepkime denklemlerini en küçük tam sayı katsayılarla denkleştirir."
@@ -43,7 +43,7 @@
       "cozum": "Kitapta denkleştirmenin en uygun ve en küçük tam sayılarla yapılması istenir (s.65).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Katsayılar nasıl seçilir?",
+        "front": "Denklem katsayılarının seçim kuralı nedir?",
         "back": "En küçük tam sayılar."
       },
       "kazanim": "Kimyasal tepkime denklemlerini en küçük tam sayı katsayılarla denkleştirir."
@@ -62,7 +62,7 @@
       "cozum": "Katsayılar tepken ve ürünlerin hangi oranlarda birleştiğini, yani mol oranlarını gösterir (s.64-65).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Katsayılar neyi gösterir?",
+        "front": "Katsayıların mol oranıyla ilişkisi nedir?",
         "back": "Mol oranlarını."
       },
       "kazanim": "Kimyasal tepkime denklemlerini en küçük tam sayı katsayılarla denkleştirir."
@@ -81,7 +81,7 @@
       "cozum": "Solda 4 H ve 2 O, sağda 4 H ve 2 O olacak biçimde 2H2 + O2 → 2H2O yazılır (s.64-66).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "H2 + O2 → H2O nasıl denkleştirilir?",
+        "front": "Su oluşumunda H2 ile O2'nin birleşme oranı nedir?",
         "back": "2H2 + O2 → 2H2O"
       },
       "kazanim": "Kimyasal tepkime denklemlerini en küçük tam sayı katsayılarla denkleştirir."
@@ -169,8 +169,8 @@
       "secenekler": [
         "Metaller",
         "Oksijen ve hidrojen",
-        "Karbon",
-        "Azot"
+        "Karbon ve azot",
+        "Soy gazlar"
       ],
       "dogru_index": 1,
       "cozum": "Kitaptaki tartışmada denkleştirmenin daha az basamakla bitmesi için oksijen ve hidrojenin sona bırakılması önerilir (s.64).",
@@ -195,7 +195,7 @@
       "cozum": "Katsayı oranı H2:O2 = 2:1 olduğundan 4 mol H2 için 2 mol O2 gerekir (s.64-65).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "4 mol H2 için kaç mol O2 gerekir?",
+        "front": "Katsayı oranından mol oranı nasıl bulunur?",
         "back": "2 mol"
       },
       "kazanim": "Kimyasal tepkime denklemlerini en küçük tam sayı katsayılarla denkleştirir."
@@ -204,22 +204,22 @@
   "flashcards": [
     {
       "id": "kimya_10_u01_k04_o01:flashcard",
-      "front": "Denkleştirmede ne korunur?",
+      "front": "Atom sayısının korunumu nedir?",
       "back": "Elementlerin atom sayısı."
     },
     {
       "id": "kimya_10_u01_k04_o02:flashcard",
-      "front": "Katsayılar nasıl seçilir?",
+      "front": "Denklem katsayılarının seçim kuralı nedir?",
       "back": "En küçük tam sayılar."
     },
     {
       "id": "kimya_10_u01_k04_o03:flashcard",
-      "front": "Katsayılar neyi gösterir?",
+      "front": "Katsayıların mol oranıyla ilişkisi nedir?",
       "back": "Mol oranlarını."
     },
     {
       "id": "kimya_10_u01_k04_o04:flashcard",
-      "front": "H2 + O2 → H2O nasıl denkleştirilir?",
+      "front": "Su oluşumunda H2 ile O2'nin birleşme oranı nedir?",
       "back": "2H2 + O2 → 2H2O"
     },
     {
@@ -249,7 +249,7 @@
     },
     {
       "id": "kimya_10_u01_k04_o10:flashcard",
-      "front": "4 mol H2 için kaç mol O2 gerekir?",
+      "front": "Katsayı oranından mol oranı nasıl bulunur?",
       "back": "2 mol"
     }
   ]

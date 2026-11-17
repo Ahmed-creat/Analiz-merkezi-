@@ -24,7 +24,7 @@
       "cozum": "Çoğu katının çözünürlüğü sıcaklıkla artar (s.184-188).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Katılarda sıcaklık çözünürlüğü nasıl etkiler?",
+        "front": "Katıların çözünürlüğünün sıcaklıkla ilişkisi nedir?",
         "back": "Artırır."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -43,8 +43,8 @@
       "cozum": "Gazların çözünürlüğü sıcaklık arttıkça azalır; bu nedenle ısınan sularda çözünmüş oksijen azalır (s.184-190).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazlarda sıcaklık çözünürlüğü nasıl etkiler?",
-        "back": "Azaltır."
+        "front": "Isınan suda çözünmüş oksijenin azalmasının nedeni nedir?",
+        "back": "Gazların çözünürlüğü sıcaklık arttıkça azalır."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
     },
@@ -62,7 +62,7 @@
       "cozum": "Basınç arttıkça gazın sıvıdaki çözünürlüğü artar (s.186-190).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazlarda basınç çözünürlüğü nasıl etkiler?",
+        "front": "Basınç artışının gaz çözünürlüğüne etkisi nedir?",
         "back": "Artırır."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -70,7 +70,7 @@
     {
       "soru_id": "kimya_10_u02_k06_o04",
       "alt_beceri": "Günlük yaşam olaylarını çözünürlükle açıklar.",
-      "metin": "Kuzey denizlerinde balıkçılığın gelişmiş olmasının nedeni nedir?",
+      "metin": "Kuzey denizlerinde su sıcaklığı 4 °C civarındadır ve balıkçılık gelişmiştir. Bunun nedeni nedir?",
       "secenekler": [
         "Suyun tuzluluğunun sıfır olması",
         "Basıncın çok yüksek olması",
@@ -81,7 +81,7 @@
       "cozum": "Kitaba göre Kuzey denizlerinde suda çözünmüş oksijen fazladır; bu da balıkçılığı geliştirmiştir (s.184).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kuzey denizlerinde balık neden çok?",
+        "front": "Soğuk suda çözünmüş oksijenin fazla olmasının sonucu nedir?",
         "back": "Soğuk suda O2 çözünürlüğü yüksek."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -100,7 +100,7 @@
       "cozum": "Kapak açılınca basınç düşer, CO2'nin çözünürlüğü azalır ve gaz kabarcıkları çıkar (s.184-190).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazlı içecek açılınca neden gaz çıkar?",
+        "front": "Basınç azalmasının gaz çözünürlüğüne etkisi nedir?",
         "back": "Basınç düşer, çözünürlük azalır."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -108,18 +108,18 @@
     {
       "soru_id": "kimya_10_u02_k06_o06",
       "alt_beceri": "Günlük yaşam olaylarını çözünürlükle açıklar.",
-      "metin": "Şeker pancarından şeker elde edilirken sıcak su kullanılmasının nedeni nedir?",
+      "metin": "Şeker pancarından şeker elde edilirken 70 °C'lik sıcak su kullanılıyor. Bunun nedeni nedir?",
       "secenekler": [
-        "Suyun buharlaşması",
-        "Sıcaklık arttıkça şekerin çözünürlüğünün artması",
-        "Şekerin bozunması",
-        "Basıncın artması"
+        "Suyun buharlaşıp kaybolması",
+        "Sıcaklıkla şeker çözünürlüğünün artması",
+        "Şekerin bozunup kararması",
+        "Basıncın hızla artması"
       ],
       "dogru_index": 1,
       "cozum": "Sıcaklık artışı katı şekerin çözünürlüğünü artırdığından pancardaki şekerin büyük kısmı alınabilir (s.184).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Pancar işleminde neden sıcak su?",
+        "front": "Sıcak suyun pancardaki şekeri çözme etkisi nedir?",
         "back": "Şeker çözünürlüğü artar."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -127,7 +127,7 @@
     {
       "soru_id": "kimya_10_u02_k06_o07",
       "alt_beceri": "Günlük yaşam olaylarını çözünürlükle açıklar.",
-      "metin": "Asitli içeceklerin üzerinde 'Soğuk içiniz.' yazmasının nedeni nedir?",
+      "metin": "Asitli içeceklerin üzerinde “4 °C'de içiniz.” yazıyor. Bunun nedeni nedir?",
       "secenekler": [
         "Sıcaklık artınca çözünmüş CO2 miktarı azalacağı için",
         "Soğuk daha tatlı olduğu için",
@@ -138,7 +138,7 @@
       "cozum": "Sıcaklık arttıkça gazların çözünürlüğü azalır; içecek ısınırsa CO2 kaçar (s.184-186).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gazlı içecek neden soğuk içilir?",
+        "front": "Düşük sıcaklığın CO2 çözünürlüğüne etkisi nedir?",
         "back": "Sıcakta CO2 çözünürlüğü azalır."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -146,18 +146,18 @@
     {
       "soru_id": "kimya_10_u02_k06_o08",
       "alt_beceri": "Günlük yaşam olaylarını çözünürlükle açıklar.",
-      "metin": "Dalgıçların derin dalışlarda normal hava yerine özel karışım kullanmasının nedeni nedir?",
+      "metin": "Bir dalgıç 40 m derinliğe inerken normal hava yerine özel karışım kullanıyor. Bunun nedeni nedir?",
       "secenekler": [
-        "Oksijenin azalması",
-        "Suyun sıcak olması",
-        "Derinlikte basınç arttığı için azotun kanda çözünürlüğünün artması",
-        "Havanın kuruması"
+        "Oksijen oranının azalması",
+        "Suyun çok sıcak olması",
+        "Basınç artınca azotun kanda çözünmesi",
+        "Havanın neminde kuruma"
       ],
       "dogru_index": 2,
       "cozum": "Derinlikte basınç arttıkça azot kanda daha çok çözünür; bu yüzden özel karışımlar kullanılır (s.184).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Derinde azot çözünürlüğü neden artar?",
+        "front": "Basınç artışının kandaki azot çözünürlüğüne etkisi nedir?",
         "back": "Basınç artar."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -176,7 +176,7 @@
       "cozum": "Kitapta çözünürlüğe madde cinsi, sıcaklık ve basıncın etki ettiği belirtilir (s.184-191).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Madde cinsi çözünürlüğü nasıl etkiler?",
+        "front": "Maddenin cinsinin çözünürlüğe etkisi nedir?",
         "back": "Her maddenin kendine özgü çözünürlüğü vardır."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -195,7 +195,7 @@
       "cozum": "Aynı çözücüde farklı maddelerin farklı çözünürlükte olması maddenin cinsinden kaynaklanır (s.184).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "NaCl ve CaCO3 çözünürlük farkı neden?",
+        "front": "Aynı çözücüde farklı çözünürlüklerin nedeni nedir?",
         "back": "Madde cinsi."
       },
       "kazanim": "Sıcaklık, basınç ve madde cinsinin çözünürlüğe etkisini açıklar."
@@ -204,52 +204,52 @@
   "flashcards": [
     {
       "id": "kimya_10_u02_k06_o01:flashcard",
-      "front": "Katılarda sıcaklık çözünürlüğü nasıl etkiler?",
+      "front": "Katıların çözünürlüğünün sıcaklıkla ilişkisi nedir?",
       "back": "Artırır."
     },
     {
       "id": "kimya_10_u02_k06_o02:flashcard",
-      "front": "Gazlarda sıcaklık çözünürlüğü nasıl etkiler?",
-      "back": "Azaltır."
+      "front": "Isınan suda çözünmüş oksijenin azalmasının nedeni nedir?",
+      "back": "Gazların çözünürlüğü sıcaklık arttıkça azalır."
     },
     {
       "id": "kimya_10_u02_k06_o03:flashcard",
-      "front": "Gazlarda basınç çözünürlüğü nasıl etkiler?",
+      "front": "Basınç artışının gaz çözünürlüğüne etkisi nedir?",
       "back": "Artırır."
     },
     {
       "id": "kimya_10_u02_k06_o04:flashcard",
-      "front": "Kuzey denizlerinde balık neden çok?",
+      "front": "Soğuk suda çözünmüş oksijenin fazla olmasının sonucu nedir?",
       "back": "Soğuk suda O2 çözünürlüğü yüksek."
     },
     {
       "id": "kimya_10_u02_k06_o05:flashcard",
-      "front": "Gazlı içecek açılınca neden gaz çıkar?",
+      "front": "Basınç azalmasının gaz çözünürlüğüne etkisi nedir?",
       "back": "Basınç düşer, çözünürlük azalır."
     },
     {
       "id": "kimya_10_u02_k06_o06:flashcard",
-      "front": "Pancar işleminde neden sıcak su?",
+      "front": "Sıcak suyun pancardaki şekeri çözme etkisi nedir?",
       "back": "Şeker çözünürlüğü artar."
     },
     {
       "id": "kimya_10_u02_k06_o07:flashcard",
-      "front": "Gazlı içecek neden soğuk içilir?",
+      "front": "Düşük sıcaklığın CO2 çözünürlüğüne etkisi nedir?",
       "back": "Sıcakta CO2 çözünürlüğü azalır."
     },
     {
       "id": "kimya_10_u02_k06_o08:flashcard",
-      "front": "Derinde azot çözünürlüğü neden artar?",
+      "front": "Basınç artışının kandaki azot çözünürlüğüne etkisi nedir?",
       "back": "Basınç artar."
     },
     {
       "id": "kimya_10_u02_k06_o09:flashcard",
-      "front": "Madde cinsi çözünürlüğü nasıl etkiler?",
+      "front": "Maddenin cinsinin çözünürlüğe etkisi nedir?",
       "back": "Her maddenin kendine özgü çözünürlüğü vardır."
     },
     {
       "id": "kimya_10_u02_k06_o10:flashcard",
-      "front": "NaCl ve CaCO3 çözünürlük farkı neden?",
+      "front": "Aynı çözücüde farklı çözünürlüklerin nedeni nedir?",
       "back": "Madde cinsi."
     }
   ]

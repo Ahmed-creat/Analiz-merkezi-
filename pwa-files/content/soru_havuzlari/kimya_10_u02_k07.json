@@ -24,7 +24,7 @@
       "cozum": "İyonlarına ayrışarak elektrik ileten çözeltiler elektrolit çözeltidir (s.197).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Elektrolit çözeltiler neden elektrik iletir?",
+        "front": "Elektrolit çözeltilerde iletkenliğin kaynağı nedir?",
         "back": "Serbest iyon içerdikleri için."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -43,7 +43,7 @@
       "cozum": "Doymamış çözelti, çözücünün daha fazla madde çözebildiği çözeltidir (s.197-199).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Daha fazla madde çözebilen çözelti nedir?",
+        "front": "Doymamış çözeltinin tanımı nedir?",
         "back": "Doymamış."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -53,7 +53,7 @@
       "alt_beceri": "Elektrolit ve elektrolit olmayan çözeltileri ayırt eder.",
       "metin": "Aşırı doymuş çözelti için hangisi doğrudur?",
       "secenekler": [
-        "Kararsızdır ve koşullar değişince çökelme görülebilir",
+        "Kararsızdır, çökelme görülebilir",
         "Kararlıdır ve çökelme görülmez",
         "Elektrolit değildir",
         "Saf çözücüdür"
@@ -62,7 +62,7 @@
       "cozum": "Aşırı doymuş çözelti normalde çözünebilecek maksimumdan fazlasını içerir; kararsızdır ve çökelme gözlenebilir (s.199).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aşırı doymuş çözelti kararlı mı?",
+        "front": "Aşırı doymuş çözeltinin kararsızlığının nedeni nedir?",
         "back": "Hayır, kararsız."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -81,7 +81,7 @@
       "cozum": "Şeker moleküler çözündüğü ve iyon oluşturmadığı için elektrolit değildir (s.197).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Şeker çözeltisi neden elektriği iletmez?",
+        "front": "Elektrolit olmayan çözeltide iyon durumu nedir?",
         "back": "Moleküler çözündüğü için serbest iyon yoktur."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -94,13 +94,13 @@
         "Sürekli çökelme olur",
         "Elektrolit değildir",
         "Doymamıştır",
-        "Katı miktarı değişmez, çökelme görülmez"
+        "Katı miktarı değişmez"
       ],
       "dogru_index": 3,
       "cozum": "Doymuş çözelti katısıyla dengededir; katı miktarı değişmez ve çökelme görülmez (s.199).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Doymuş çözeltide katı miktarı değişir mi?",
+        "front": "Doymuş çözeltide katısıyla denge ne demektir?",
         "back": "Değişmez."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -138,7 +138,7 @@
       "cozum": "Sülfürik asit iyonlarına ayrıştığından elektrolit çözeltidir ve aküde iletkenliği sağlar (s.192).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Akü asidi hangi tür çözelti?",
+        "front": "Sülfürik asidin iyonlaşmasının aküdeki işlevi nedir?",
         "back": "Elektrolit."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -148,16 +148,16 @@
       "alt_beceri": "Doymamış, doymuş ve aşırı doymuş çözeltileri karşılaştırır.",
       "metin": "Doymamış bir çözelti nasıl doymuş hâle getirilebilir?",
       "secenekler": [
-        "Suyu artırarak",
-        "Basıncı düşürerek",
-        "Çözünen eklemeye devam ederek veya çözücüyü buharlaştırarak",
-        "Kabı büyüterek"
+        "Çözücü suyu artırarak",
+        "Kabın basıncını düşürerek",
+        "Çözünen ekleyip çözücüyü buharlaştırarak",
+        "Kabı daha büyük seçerek"
       ],
       "dogru_index": 2,
       "cozum": "Çözünen eklenmesi veya çözücünün buharlaştırılması çözeltiyi doyma noktasına getirir (s.199).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Doymamış çözelti nasıl doyurulur?",
+        "front": "Doyma noktasına ulaşmanın yolları nedir?",
         "back": "Çözünen ekleyerek veya çözücü buharlaştırarak."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -165,7 +165,7 @@
     {
       "soru_id": "kimya_10_u02_k07_o09",
       "alt_beceri": "Doymamış, doymuş ve aşırı doymuş çözeltileri karşılaştırır.",
-      "metin": "Elektrolit olmayan çözeltilerde elektrik iletiminin görülmemesinin nedeni nedir?",
+      "metin": "Bir şeker çözeltisi 2 elektrot arasına konduğunda ampul yanmıyor. İletim görülmemesinin nedeni nedir?",
       "secenekler": [
         "Suyun olmaması",
         "Serbest iyon bulunmaması",
@@ -176,7 +176,7 @@
       "cozum": "İletkenlik serbest iyonlarla sağlanır; moleküler çözünmede iyon oluşmadığından iletim olmaz (s.197).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Elektrolit olmayan çözelti neden iletmez?",
+        "front": "İletkenliğin serbest iyonlara bağlılığı nedir?",
         "back": "Serbest iyon yok."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -195,7 +195,7 @@
       "cozum": "Tuz iyonlarına ayrışır (elektrolit), şeker moleküler çözünür (elektrolit değil) (s.197).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tuz ve şeker çözeltisi iletkenlik bakımından?",
+        "front": "İyonik ve moleküler çözünmenin iletkenliğe etkisi nedir?",
         "back": "Tuz iletir, şeker iletmez."
       },
       "kazanim": "Çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır."
@@ -204,27 +204,27 @@
   "flashcards": [
     {
       "id": "kimya_10_u02_k07_o01:flashcard",
-      "front": "Elektrolit çözeltiler neden elektrik iletir?",
+      "front": "Elektrolit çözeltilerde iletkenliğin kaynağı nedir?",
       "back": "Serbest iyon içerdikleri için."
     },
     {
       "id": "kimya_10_u02_k07_o02:flashcard",
-      "front": "Daha fazla madde çözebilen çözelti nedir?",
+      "front": "Doymamış çözeltinin tanımı nedir?",
       "back": "Doymamış."
     },
     {
       "id": "kimya_10_u02_k07_o03:flashcard",
-      "front": "Aşırı doymuş çözelti kararlı mı?",
+      "front": "Aşırı doymuş çözeltinin kararsızlığının nedeni nedir?",
       "back": "Hayır, kararsız."
     },
     {
       "id": "kimya_10_u02_k07_o04:flashcard",
-      "front": "Şeker çözeltisi neden elektriği iletmez?",
+      "front": "Elektrolit olmayan çözeltide iyon durumu nedir?",
       "back": "Moleküler çözündüğü için serbest iyon yoktur."
     },
     {
       "id": "kimya_10_u02_k07_o05:flashcard",
-      "front": "Doymuş çözeltide katı miktarı değişir mi?",
+      "front": "Doymuş çözeltide katısıyla denge ne demektir?",
       "back": "Değişmez."
     },
     {
@@ -234,22 +234,22 @@
     },
     {
       "id": "kimya_10_u02_k07_o07:flashcard",
-      "front": "Akü asidi hangi tür çözelti?",
+      "front": "Sülfürik asidin iyonlaşmasının aküdeki işlevi nedir?",
       "back": "Elektrolit."
     },
     {
       "id": "kimya_10_u02_k07_o08:flashcard",
-      "front": "Doymamış çözelti nasıl doyurulur?",
+      "front": "Doyma noktasına ulaşmanın yolları nedir?",
       "back": "Çözünen ekleyerek veya çözücü buharlaştırarak."
     },
     {
       "id": "kimya_10_u02_k07_o09:flashcard",
-      "front": "Elektrolit olmayan çözelti neden iletmez?",
+      "front": "İletkenliğin serbest iyonlara bağlılığı nedir?",
       "back": "Serbest iyon yok."
     },
     {
       "id": "kimya_10_u02_k07_o10:flashcard",
-      "front": "Tuz ve şeker çözeltisi iletkenlik bakımından?",
+      "front": "İyonik ve moleküler çözünmenin iletkenliğe etkisi nedir?",
       "back": "Tuz iletir, şeker iletmez."
     }
   ]

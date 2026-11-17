@@ -37,13 +37,13 @@
         "Bir litre çözeltideki mol sayısını",
         "Çözeltinin yoğunluğunu",
         "Çözünenin kütlece yüzdesini",
-        "Bir litre çözeltide çözünen maddenin miligram cinsinden kütlesini"
+        "Bir litre çözeltide mg cinsinden çözünen kütlesi"
       ],
       "dogru_index": 3,
       "cozum": "1 L (veya 1 kg) çözeltide çözünen maddenin mg cinsinden kütlesine ppm denir (s.175).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "ppm neyi ifade eder?",
+        "front": "ppm'in mg/L karşılığı nedir?",
         "back": "1 L çözeltide mg cinsinden çözünen."
       },
       "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
@@ -72,16 +72,16 @@
       "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
       "metin": "2 L çözeltide 0,5 mol çözünen madde varsa molaritesi kaç mol/L'dir?",
       "secenekler": [
-        "0,5",
-        "1",
-        "0,25",
-        "4"
+        "0,125 mol/L",
+        "0,25 mol/L",
+        "2 mol/L",
+        "4 mol/L"
       ],
-      "dogru_index": 2,
+      "dogru_index": 1,
       "cozum": "M = n/V = 0,5/2 = 0,25 mol/L (s.174).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "0,5 mol / 2 L kaç M'dir?",
+        "front": "Molarite nasıl hesaplanır?",
         "back": "0,25 M"
       },
       "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
@@ -100,7 +100,7 @@
       "cozum": "n = M·V = 0,5·4 = 2 mol (s.174).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "0,5 M 4 L'de kaç mol?",
+        "front": "Molariteden mol sayısı nasıl bulunur?",
         "back": "2 mol"
       },
       "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
@@ -119,7 +119,7 @@
       "cozum": "1 L'de 4 mg → 4 ppm (s.175).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 L'de 4 mg kaç ppm?",
+        "front": "ppm derişimi nasıl hesaplanır?",
         "back": "4 ppm"
       },
       "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
@@ -138,7 +138,7 @@
       "cozum": "1000 cm³ = 1 L; 1 L'de 380 mg → 380 ppm (kitaptaki tablo, s.175-176).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1000 cm³'te 380 mg CO2 kaç ppm?",
+        "front": "Hacim ve mg bilgisinden ppm nasıl bulunur?",
         "back": "380 ppm"
       },
       "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
@@ -157,7 +157,7 @@
       "cozum": "n = 10·0,1 = 1 mol; V = n/M = 1/0,1 = 10 L (kitabın kontrol noktası, s.177).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "10 M 100 mL'den 0,1 M kaç L olur?",
+        "front": "Seyreltme hesabında M1V1 = M2V2 bağıntısı nedir?",
         "back": "10 L"
       },
       "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
@@ -167,16 +167,16 @@
       "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
       "metin": "1 M 50 mL çözelti su ile 250 mL'ye tamamlanırsa yeni derişim kaç M olur?",
       "secenekler": [
-        "0,5",
         "0,2",
+        "0,5",
         "1",
         "5"
       ],
-      "dogru_index": 1,
+      "dogru_index": 0,
       "cozum": "M1V1 = M2V2 → 1·50 = M2·250 → M2 = 0,2 M (s.177-178).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 M 50 mL → 250 mL kaç M?",
+        "front": "Seyreltmede yeni derişim nasıl bulunur?",
         "back": "0,2 M"
       },
       "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
@@ -209,7 +209,7 @@
     },
     {
       "id": "kimya_10_u02_k04_o02:flashcard",
-      "front": "ppm neyi ifade eder?",
+      "front": "ppm'in mg/L karşılığı nedir?",
       "back": "1 L çözeltide mg cinsinden çözünen."
     },
     {
@@ -219,32 +219,32 @@
     },
     {
       "id": "kimya_10_u02_k04_o04:flashcard",
-      "front": "0,5 mol / 2 L kaç M'dir?",
+      "front": "Molarite nasıl hesaplanır?",
       "back": "0,25 M"
     },
     {
       "id": "kimya_10_u02_k04_o05:flashcard",
-      "front": "0,5 M 4 L'de kaç mol?",
+      "front": "Molariteden mol sayısı nasıl bulunur?",
       "back": "2 mol"
     },
     {
       "id": "kimya_10_u02_k04_o06:flashcard",
-      "front": "1 L'de 4 mg kaç ppm?",
+      "front": "ppm derişimi nasıl hesaplanır?",
       "back": "4 ppm"
     },
     {
       "id": "kimya_10_u02_k04_o07:flashcard",
-      "front": "1000 cm³'te 380 mg CO2 kaç ppm?",
+      "front": "Hacim ve mg bilgisinden ppm nasıl bulunur?",
       "back": "380 ppm"
     },
     {
       "id": "kimya_10_u02_k04_o08:flashcard",
-      "front": "10 M 100 mL'den 0,1 M kaç L olur?",
+      "front": "Seyreltme hesabında M1V1 = M2V2 bağıntısı nedir?",
       "back": "10 L"
     },
     {
       "id": "kimya_10_u02_k04_o09:flashcard",
-      "front": "1 M 50 mL → 250 mL kaç M?",
+      "front": "Seyreltmede yeni derişim nasıl bulunur?",
       "back": "0,2 M"
     },
     {
