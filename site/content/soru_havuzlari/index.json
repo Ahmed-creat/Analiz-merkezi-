@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 224,
- "soru_sayisi": 2384,
- "flashcard_sayisi": 2384,
+ "havuz_sayisi": 225,
+ "soru_sayisi": 2394,
+ "flashcard_sayisi": 2394,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": null,
@@ -3496,6 +3496,22 @@
    "uretim_durumu": "plansiz"
   },
   {
+   "konu_id": "tar_10_u01_k01",
+   "ders": "Tarih",
+   "sinif": 10,
+   "dosya": "tar_10_u01_k01.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
+   "etiketler": [
+    "1040-1299 arasındaki askerî mücadelelerin neden ve sonuçlarını açıklar.",
+    "Mücadelelerin Türk tarihinin seyrine etkisini çözümler."
+   ],
+   "baslik": "1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
+   "topic_key": "Tarih > 1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
+   "kod": "",
+   "uretim_durumu": "plansiz"
+  },
+  {
    "konu_id": "tarih_10_u01_k01",
    "ders": "Tarih",
    "sinif": 10,
@@ -3505,8 +3521,8 @@
    "etiketler": [
     "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler"
    ],
-   "baslik": "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler",
-   "topic_key": "Tarih > 1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
+   "baslik": "Türkistan'dan Türkiye'ye: Önemli Askerî Mücadeleler (1040-1299)",
+   "topic_key": "Tarih > Türkistan'dan Türkiye'ye: Önemli Askerî Mücadeleler (1040-1299)",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
