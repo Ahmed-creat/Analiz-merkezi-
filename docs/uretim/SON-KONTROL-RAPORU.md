@@ -9,14 +9,14 @@
 
 | Kapı | Sonuç |
 | --- | --- |
-| `havuz-son-kontrol.js` (tüm dosyalar) | 316 dosya · **0 hata** · **0 üslup uyarısı** · başlık eşleşmesi 179/189 |
+| `havuz-son-kontrol.js` (tüm dosyalar) | 316 dosya · **0 hata** · **0 üslup uyarısı** · başlık eşleşmesi 188/189 |
 | `havuz-denetle.js --tumu` (plan şeması) | 142 dosya · **0 hata · 0 uyarı** |
 | `soru-uret-dogrula.js` | 316 dosya (142 geçerli · 174 konu havuzu) · soru/kart eşi tam · görselli 146 · plan dışı 0 · **TÜM KURALLAR GEÇTİ** |
 | `havuz-index-uret.js --plan --kontrol` | 316 havuz · 3.453 soru · kapsanan **142/158** |
 | `npm run -s validate:pools` | hepsi geçerli |
-| `npm run -s test:hepsi` | **67/67** + konu bulma 75/75 |
+| `npm run -s test:hepsi` | **67/67** + konu bulma 76/76 |
 | `durum.js` | TDE 29/29 konu · 290 soru · toplam 171/171 havuz · 1.789/1.788 soru · kart 1:1 |
-| `npm run -s test:konubulma` | **75/75** — 189 konunun tamamında Kısa Kontrol havuzu bulunuyor |
+| `npm run -s test:konubulma` | **76/76** — 189 konunun tamamında Kısa Kontrol havuzu bulunuyor |
 
 **Kritik not:** `havuz-denetle.js --tumu` ve `soru-uret-dogrula.js` yalnız plan
 şemalı havuzları denetler. 171 eski şemalı konu havuzu bu iki kapının dışında
@@ -140,14 +140,14 @@ Plan şemalı 12 havuz (`din_10_tNN_cNN`) kazanım bazlı kalır; ünite sonunda
 6. Yeni müfredatta karşılığı olmayan 3 havuz arşivde: `din_10_u02_k03`,
    `din_10_u02_k04`, `din_10_u03_k04`.
 
-Sonuç: `npm run -s test:konubulma` → **75/75**, 10. sınıf **189** konunun
+Sonuç: `npm run -s test:konubulma` → **76/76**, 10. sınıf **189** konunun
 tamamında Kısa Kontrol havuzu var; Din Kültürü 24/24 başlık eşleşti.
 
 ## 5. Açık konular
 
 | # | Konu | Durum |
 | --- | --- | --- |
-| 1 | **9 konuda birebir başlık eşleşmesi yok** | Biyoloji 1.3, 1.6, 2.5, 2.7, 2.8 · Kimya 1.2.2, 3.1.1 · Tarih 2.2, 2.4. Bunlar **havuzsuz değil**: plan şemalı havuzları var, ancak `topic_key`'leri kazanım cümlesi (ör. "1.3 Fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapabilme"), ağaç başlığı değil. Uygulama normalize ederek buluyor (test 75/75). Tutarlılık için din'de yapıldığı gibi bu 9 havuzun da başlığı yazılabilir. |
+| 1 | **Başlık eşleşmesi (kapandı)** | 9 konuda (Biyoloji 1.3, 1.6, 2.5, 2.7, 2.8 · Kimya 1.2.2, 3.1.1 · Tarih 2.2, 2.4) plan havuzunun `topic_key`'i kazanım cümlesiydi. Konu adları zaten ağaçta olduğu için havuz başlıkları bu adlarla eşitlendi (`docs/uretim/uretim/konu-basligi-esle.js`; Tarih 2.2/2.4 için `tarih-t02.js`). Ağaç kapsamı **188/189**; kalan tek konu Paragraf (bilinçli). |
 | 2 | **TDE Paragraf** | Ağaçta konu var, havuz **bilinçli olarak üretilmedi** (kullanıcı talimatı: "uygulamada paragraf sorusu soramayız"). Dosya `arsiv/soru_havuzlari/edebiyat/edebiyat_10_u04_k06.json`. |
 | 3 | **Üslup uyarıları (kapandı)** | Doğru şıkkın belirgin uzun olması 54 soruda düzeltildi (`docs/uretim/uretim/yama-sik-uzunluk.js`): doğru şık kısaltıldı veya çeldiriciler aynı ayrıntı düzeyine getirildi. `havuz-son-kontrol` artık **0 uyarı**. |
 | 4 | **`kim_10_t02_c08` hedef 10, soru 11** | Fazla soru hata değil (`≥ hedef`). |
@@ -170,6 +170,8 @@ tamamında Kısa Kontrol havuzu var; Din Kültürü 24/24 başlık eşleşti.
   alt başlıklara böler (idempotent).
 - `docs/uretim/uretim/din-t06-deliller.js` — 2.1.1–2.1.4 delil havuzları.
 - `docs/uretim/uretim/din-t07-yorumlar.js` — 5.2.1 Ehlisünnet · 5.2.2 Şia.
+- `docs/uretim/uretim/konu-basligi-esle.js` — plan havuzlarının `topic_key`'ini
+  ağaç başlığıyla eşitler; başlık ağaçta yoksa yazmaz, hata verir.
 - `docs/uretim/uretim/yama-sik-uzunluk.js` — doğru şıkkı uzunlukla ele veren
   54 sorunun şıklarını yeniler (`--kontrol` yalnız bakar, kuralı kendisi de
   doğrular; `dogru_index` değişmez).
