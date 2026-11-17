@@ -100,8 +100,18 @@ function kitap(slug) {
   return k;
 }
 
-function katla(s) {
+/* TDE ders notları PDF'i bozuk font eşlemesiyle geldi (Ġ, Ģ, ġ).
+   Metni karşılaştırmadan önce bunları gerçek harflere çeviririz. */
+function fontDuzelt(s) {
   return String(s || "")
+    .replace(/\u0120/g, "İ")
+    .replace(/\u0122/g, "Ş")
+    .replace(/\u0121/g, "ş")
+    .replace(/\uf0b7/g, "•");
+}
+
+function katla(s) {
+  return fontDuzelt(s)
     .toLocaleLowerCase("tr")
     .replace(/ı/g, "i")
     .replace(/ş/g, "s")
@@ -120,7 +130,7 @@ function sadeless(s) {
 }
 
 function kelimeler(metin) {
-  return String(metin || "")
+  return fontDuzelt(metin || "")
     .split(/[^0-9A-Za-zÇĞİÖŞÜçğıöşü]+/)
     .filter(Boolean);
 }

@@ -103,4 +103,89 @@ function yaz(konu_id, kaynak, items) {
   return havuz;
 }
 
-module.exports = { yaz };
+/* ============================================================
+   yazKonu — PLAN DIŞI (konu ağacı) havuzu yazar.
+   ------------------------------------------------------------
+   Neden? Uygulamanın Bilgi Bankası müfredat ağacının konuları
+   (ör. "Türk Dili ve Edebiyatı > Koşuk") MEB çıktı koduna birebir
+   oturmuyor; 158 çıktılık planda karşılığı yok. Ama öğrenci o
+   konudan Kısa Kontrol açabilmeli. Bu yüzden havuz konu_id'si
+   <ders>_10_uNN_kNN kalır, içerik konuya göre üretilir.
+
+   Fark: alt_beceri = plan.surec değil, konuya özel beceri listesi
+   (beceriler[]); her beceriye >= 2 soru şartı korunur.
+
+   Kullanım:
+     const { yazKonu } = require("../yazicilar/yaz.js");
+     yazKonu({ konu_id, ders, tema, tema_adi, baslik, kaynak,
+               kaynak_dosya, beceriler: [...], items: [...] });
+   ============================================================ */
+function yazKonu(o) {
+  const konu_id = String(o.konu_id || "").trim();
+  if (!konu_id) throw new Error("yazKonu: konu_id yok");
+  const beceriler = Array.isArray(o.beceriler) ? o.beceriler : [];
+  if (beceriler.length < 2) throw new Error(konu_id + ": en az 2 beceri gerekli");
+  const items = Array.isArray(o.items) ? o.items : [];
+  if (items.length < 10) throw new Error(konu_id + ": en az 10 soru gerekli (var: " + items.length + ")");
+
+  const sayim = new Map();
+  const sorular = items.map((it, i) => {
+    const no = konu_id + "_o" + ikiHaneli(i + 1);
+    const bi = Number(it.bi);
+    if (!Number.isInteger(bi) || bi < 0 || bi >= beceriler.length) throw new Error(no + ": bi geçersiz (" + it.bi + ")");
+    if (!Array.isArray(it.secenekler) || it.secenekler.length !== 4) throw new Error(no + ": 4 seçenek gerekli");
+    if (!Array.isArray(it.fc) || it.fc.length !== 2) throw new Error(no + ": fc [ön, arka] gerekli");
+    sayim.set(bi, (sayim.get(bi) || 0) + 1);
+
+    const dogruMetin = it.secenekler[it.dogru || 0];
+    const digerleri = it.secenekler.filter((s, j) => j !== (it.dogru || 0));
+    const yer = DENGE[i % DENGE.length];
+    const secenekler = digerleri.slice();
+    secenekler.splice(yer, 0, dogruMetin);
+
+    const soru = {
+      soru_id: no,
+      alt_beceri: beceriler[bi],
+      metin: it.metin,
+      secenekler,
+      dogru_index: yer,
+      cozum: it.cozum,
+      zorluk: "deneme"
+    };
+    if (it.gorsel) soru.gorsel = it.gorsel;
+    soru.flashcard = { front: it.fc[0], back: it.fc[1] };
+    if (o.kazanim) soru.kazanim = o.kazanim;
+    return soru;
+  });
+
+  for (let bi = 0; bi < beceriler.length; bi++) {
+    const n = sayim.get(bi) || 0;
+    if (n < 2) throw new Error(konu_id + ": \"" + beceriler[bi] + "\" için " + n + " soru (en az 2)");
+  }
+
+  const havuz = {
+    konu_id,
+    sinif: Number(o.sinif) || 10,
+    ders: o.ders || "Türk Dili ve Edebiyatı",
+    tema: o.tema == null ? 0 : Number(o.tema),
+    tema_adi: o.tema_adi || "",
+    baslik: o.baslik || "",
+    topic_key: (o.ders || "Türk Dili ve Edebiyatı") + " > " + (o.baslik || ""),
+    kazanim: o.kazanim || "",
+    kaynak: o.kaynak || "",
+    kaynak_dosya: o.kaynak_dosya || "",
+    sorular,
+    flashcards: sorular.map((s) => ({
+      id: s.soru_id + ":flashcard",
+      front: s.flashcard.front,
+      back: s.flashcard.back
+    }))
+  };
+
+  fs.mkdirSync(HAVUZ_DIZIN, { recursive: true });
+  fs.writeFileSync(path.join(HAVUZ_DIZIN, konu_id + ".json"), JSON.stringify(havuz, null, 2) + "\n", "utf8");
+  console.log(konu_id + " → " + sorular.length + " soru, " + beceriler.length + " beceri");
+  return havuz;
+}
+
+module.exports = { yaz, yazKonu };

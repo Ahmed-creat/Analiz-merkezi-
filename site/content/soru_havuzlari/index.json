@@ -2,8 +2,8 @@
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
  "havuz_sayisi": 314,
- "soru_sayisi": 3455,
- "flashcard_sayisi": 3455,
+ "soru_sayisi": 3454,
+ "flashcard_sayisi": 3454,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -1745,7 +1745,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Koşuğun oluştuğu sözlü dönemi ve söylenme ortamını belirler.",
+    "Koşuğun biçim, ölçü ve dil özelliklerini çözümler.",
+    "Koşuğu koşma ve gazel gibi benzer türlerle karşılaştırır."
    ],
    "baslik": "Koşuk",
    "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
@@ -1760,7 +1762,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Savın tanımını ve sözlü dönemdeki yerini belirler.",
+    "Sav örneklerinin anlamını çözümler.",
+    "Savı divan edebiyatındaki karşılığıyla ilişkilendirir."
    ],
    "baslik": "Sav",
    "topic_key": "Türk Dili ve Edebiyatı > Sav",
@@ -1775,7 +1779,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Türkünün bent ve kavuştak bölümlerini belirler.",
+    "Türkünün ölçü, uyak ve ezgi özelliklerini çözümler.",
+    "Türküyü şarkı ve koşma gibi türlerle karşılaştırır."
    ],
    "baslik": "Türkü",
    "topic_key": "Türk Dili ve Edebiyatı > Türkü",
@@ -1787,10 +1793,12 @@
    "ders": "Türk Dili ve Edebiyatı",
    "sinif": 10,
    "dosya": "edebiyat_10_u01_k04.json",
-   "soru_sayisi": 11,
-   "flashcard_sayisi": 11,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Koşmanın biçim ve söyleyiş özelliklerini belirler.",
+    "Koşmayı konularına göre sınıflandırır.",
+    "Koşmayı koşuk, gazel ve ağıtla ilişkilendirir."
    ],
    "baslik": "Koşma",
    "topic_key": "Türk Dili ve Edebiyatı > Koşma",
@@ -1805,7 +1813,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Masalın tanımını ve temel özelliklerini belirler.",
+    "Masalın bölümlerini ve kalıplaşmış sözlerini çözümler.",
+    "Masalı kaynak eserler ve kahramanlar üzerinden yorumlar."
    ],
    "baslik": "Masal",
    "topic_key": "Türk Dili ve Edebiyatı > Masal",

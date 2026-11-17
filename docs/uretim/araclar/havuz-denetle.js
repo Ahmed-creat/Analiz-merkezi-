@@ -16,6 +16,7 @@
      node docs/uretim/araclar/havuz-denetle.js <dosya.json> [...]
      node docs/uretim/araclar/havuz-denetle.js --tumu          # yeni şemalı tüm havuzlar
      node docs/uretim/araclar/havuz-denetle.js --ders Fizik
+     node docs/uretim/araclar/havuz-denetle.js --konu          # konu ağacı havuzları (yeni şema)
 
    Çıkış kodu: hata varsa 1, yoksa 0. Uyarılar çıkış kodunu etkilemez.
    ============================================================ */
@@ -93,7 +94,18 @@ function denetle(dosya) {
 
   const konuId = String(pool.konu_id || "").trim();
   const plan = planKonu.get(konuId);
-  if (!plan) H("konu_id planda yok: " + JSON.stringify(konuId));
+  /* Konu ağacı havuzu: uygulamanın Bilgi Bankası konuları (ör. Koşuk).
+     MEB çıktı kodu yoktur, plan karşılığı yoktur — bu yüzden plan
+     denetimi yerine konu sözleşmesi denetlenir. */
+  const KONU_SEMA = /_10_u\d+_k\d+$/;
+  const konuHavuzu = !plan && KONU_SEMA.test(konuId);
+  if (!plan && !konuHavuzu) H("konu_id planda yok: " + JSON.stringify(konuId));
+  if (konuHavuzu) {
+    if (!String(pool.baslik || "").trim() && !String(pool.topic_key || "").trim()) {
+      H("konu havuzunda baslik/topic_key yok (uygulama havuzu başlıkla bulur)");
+    }
+    if (!String(pool.kazanim || "").trim()) W("konu havuzunda kazanim alanı yok (konu kazanımı yazılmalı)");
+  }
   if (konuId && path.basename(dosya) !== konuId + ".json") H("dosya adı konu_id ile uyuşmuyor");
 
   if (plan) {
@@ -130,6 +142,13 @@ function denetle(dosya) {
   for (const [norm, metin] of beklenen) {
     const n = say.get(norm) || 0;
     if (n < 2) H("süreç bileşenine " + n + " soru (en az 2): " + metin.slice(0, 60));
+  }
+  if (konuHavuzu) {
+    /* Plansız havuzda süreç listesi yok; kural aynı: her beceriye >= 2 soru. */
+    if (say.size < 2) H("konu havuzunda en az 2 ayrı alt_beceri olmalı (var: " + say.size + ")");
+    for (const [norm, n] of say) {
+      if (n < 2) H("alt_beceriye " + n + " soru (en az 2): " + norm.slice(0, 60));
+    }
   }
 
   const digerleri = digerHavuzlar(dosya);
@@ -304,6 +323,10 @@ function denetle(dosya) {
 /* ---- hedef dosyalar ---- */
 let hedefler = [];
 const tumu = args.includes("--tumu");
+/* --konu : konu ağacı havuzları (u/k şeması) — yalnız YENİ şemalı
+   olanlar, yani kazanim alanı yazılmış olanlar denetlenir. Eski
+   şemalı konu havuzları (kazanim alanı yok) geçiş döneminde korunur. */
+const konu = args.includes("--konu");
 const dersArg = args.indexOf("--ders") >= 0 ? args[args.indexOf("--ders") + 1] : null;
 if (tumu || dersArg) {
   const istenen = dersArg ? U.plan.filter(c => c.ders.toLocaleLowerCase("tr") === String(dersArg).toLocaleLowerCase("tr")) : U.plan;
@@ -311,12 +334,21 @@ if (tumu || dersArg) {
     const p = path.join(HAVUZ_DIR, c.dosya);
     if (fs.existsSync(p)) hedefler.push(p);
   }
+} else if (konu) {
+  for (const f of fs.readdirSync(HAVUZ_DIR)) {
+    if (!/_10_u\d+_k\d+\.json$/.test(f)) continue;
+    const p = path.join(HAVUZ_DIR, f);
+    try {
+      const pool = JSON.parse(fs.readFileSync(p, "utf8"));
+      if (String(pool.kazanim || "").trim()) hedefler.push(p);
+    } catch (e) { /* bozuk JSON'u resmî doğrulayıcı yakalar */ }
+  }
 } else {
   hedefler = args.filter(a => !a.startsWith("--")).map(a => (path.isAbsolute(a) ? a : path.join(KOK, a)));
 }
 if (!hedefler.length) {
   console.error("Denetlenecek dosya yok.");
-  console.error("Kullanım: node docs/uretim/araclar/havuz-denetle.js <dosya.json> | --tumu | --ders <Ders>");
+  console.error("Kullanım: node docs/uretim/araclar/havuz-denetle.js <dosya.json> | --tumu | --ders <Ders> | --konu");
   process.exit(2);
 }
 
