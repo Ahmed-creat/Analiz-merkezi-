@@ -199,6 +199,103 @@
         "back": "Tüketimde yerli ürünleri seçerek ülke içi üretimi ve istihdamı desteklemek."
       },
       "kazanim": "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik ve diyagram hazırlar."
+    },
+    {
+      "soru_id": "cogr_10_u05_k03_o11",
+      "alt_beceri": "Sektörel verilerden yararlanarak Türkiye ekonomisini yorumlar.",
+      "metin": "Grafikte Türkiye'de çalışan nüfusun ekonomik sektörlere dağılımı verilmiştir. 1990-2024 arasında payı en çok artan sektör hangisidir?",
+      "secenekler": [
+        "Üçüncül sektör",
+        "Birincil sektör",
+        "İkincil sektör",
+        "İnşaat sektörü"
+      ],
+      "dogru_index": 0,
+      "cozum": "Grafik 5.3'te üçüncül sektörün payı 1990'da %32,9 iken 2024'te %57,9'a çıkmıştır; artış en yüksektir (s.157).",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Yıllar",
+        "yEkseni": "Çalışan nüfus (%)",
+        "seriler": [
+          {
+            "ad": "Birincil",
+            "noktalar": [
+              [
+                1990,
+                46.8
+              ],
+              [
+                2018,
+                18.4
+              ],
+              [
+                2024,
+                14.8
+              ]
+            ]
+          },
+          {
+            "ad": "İkincil",
+            "noktalar": [
+              [
+                1990,
+                20.3
+              ],
+              [
+                2018,
+                26.7
+              ],
+              [
+                2024,
+                27.3
+              ]
+            ]
+          },
+          {
+            "ad": "Üçüncül",
+            "noktalar": [
+              [
+                1990,
+                32.9
+              ],
+              [
+                2018,
+                54.9
+              ],
+              [
+                2024,
+                57.9
+              ]
+            ]
+          }
+        ],
+        "izgara": true
+      },
+      "flashcard": {
+        "front": "Üçüncül sektör nedir?",
+        "back": "Hizmet alanındaki faaliyetleri kapsayan ekonomik sektör."
+      },
+      "kazanim": "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik ve diyagram hazırlar."
+    },
+    {
+      "soru_id": "cogr_10_u05_k03_o12",
+      "alt_beceri": "Türkiye'de sektörlerin tarihsel dönüşümünü açıklar.",
+      "metin": "Türkiye ekonomisi 1980'li yıllardan itibaren hangi ekonomi modeline geçmiştir?",
+      "secenekler": [
+        "Devletçi model",
+        "İthal ikame modeli",
+        "İhracat odaklı model",
+        "Karma planlama modeli"
+      ],
+      "dogru_index": 2,
+      "cozum": "1980'li yıllardan itibaren Türkiye ekonomisi ihracat odaklı yeni bir ekonomi modeline geçmiştir (s.157).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İhracat odaklı model nedir?",
+        "back": "Üretimin dış satıma yönlendirildiği ekonomi modeli."
+      },
+      "kazanim": "Ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik ve diyagram hazırlar."
     }
   ],
   "flashcards": [
@@ -251,6 +348,16 @@
       "id": "cogr_10_u05_k03_o10:flashcard",
       "front": "Yerli üretim tercihi nedir?",
       "back": "Tüketimde yerli ürünleri seçerek ülke içi üretimi ve istihdamı desteklemek."
+    },
+    {
+      "id": "cogr_10_u05_k03_o11:flashcard",
+      "front": "Üçüncül sektör nedir?",
+      "back": "Hizmet alanındaki faaliyetleri kapsayan ekonomik sektör."
+    },
+    {
+      "id": "cogr_10_u05_k03_o12:flashcard",
+      "front": "İhracat odaklı model nedir?",
+      "back": "Üretimin dış satıma yönlendirildiği ekonomi modeli."
     }
   ]
 }

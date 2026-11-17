@@ -314,6 +314,20 @@ yazKonu({
       ],
       cozum: "Çalışma; hazırlık ve planlama, sahada uygulama, raporlama ve sunma, arazi çalışması başlıklı kontrol listesiyle değerlendirilir (s.98).",
       fc: ["Kontrol listesi nedir?", "Saha çalışması ölçütlerinin evet-hayır biçiminde işaretlendiği değerlendirme aracı."]
+    },
+    {
+      bi: 0,
+      metin: "Saha çalışmasında gezi güzergâhının belirlenmesi, taslak planın hazırlanması ve eşyaların temin edilmesi hangi aşamada yapılır?",
+      secenekler: ["Hazırlık ve planlama", "Sahada uygulama", "Raporlama ve sunma", "Değerlendirme"],
+      cozum: "Güzergâh, taslak gezi planı ve malzeme listesi saha çalışmasının hazırlık ve planlama aşamasında belirlenir (s.97).",
+      fc: ["Hazırlık ve planlama aşaması nedir?", "Güzergâh, gezi planı ve malzemenin hazırlandığı aşama."]
+    },
+    {
+      bi: 1,
+      metin: "Saha çalışmasında ürün dosyası hazırlamanın amacı hangisidir?",
+      secenekler: ["Verilerle öngörüleri bir araya getirip paylaşmak", "Gezide kullanılacak malzemeleri listelemek", "Gözlem yapılan yerlerin haritasını çizmek", "Saha öncesi izin belgelerini toplamak"],
+      cozum: "Elde edilen veriler ve öngörüler bir araya getirilerek ürün dosyası oluşturulur ve arkadaşlarla paylaşılır (s.97).",
+      fc: ["Ürün dosyası nedir?", "Saha verileriyle öngörüleri bir araya getiren çalışma dosyası."]
     }
   ]
 });

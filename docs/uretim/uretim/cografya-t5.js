@@ -435,6 +435,31 @@ yazKonu({
       ],
       cozum: "Yerli üretimin tercih edilmesi, ekonomik sektörlerdeki istihdamı ve yurt içi hasılayı destekler (s.158).",
       fc: ["Yerli üretim tercihi nedir?", "Tüketimde yerli ürünleri seçerek ülke içi üretimi ve istihdamı desteklemek."]
+    },
+    {
+      bi: 1,
+      metin: "Grafikte Türkiye'de çalışan nüfusun ekonomik sektörlere dağılımı verilmiştir. 1990-2024 arasında payı en çok artan sektör hangisidir?",
+      secenekler: ["Üçüncül sektör", "Birincil sektör", "İkincil sektör", "İnşaat sektörü"],
+      gorsel: {
+        tip: "grafik",
+        xEkseni: "Yıllar",
+        yEkseni: "Çalışan nüfus (%)",
+        seriler: [
+          { ad: "Birincil", noktalar: [[1990, 46.8], [2018, 18.4], [2024, 14.8]] },
+          { ad: "İkincil", noktalar: [[1990, 20.3], [2018, 26.7], [2024, 27.3]] },
+          { ad: "Üçüncül", noktalar: [[1990, 32.9], [2018, 54.9], [2024, 57.9]] }
+        ],
+        izgara: true
+      },
+      cozum: "Grafik 5.3'te üçüncül sektörün payı 1990'da %32,9 iken 2024'te %57,9'a çıkmıştır; artış en yüksektir (s.157).",
+      fc: ["Üçüncül sektör nedir?", "Hizmet alanındaki faaliyetleri kapsayan ekonomik sektör."]
+    },
+    {
+      bi: 0,
+      metin: "Türkiye ekonomisi 1980'li yıllardan itibaren hangi ekonomi modeline geçmiştir?",
+      secenekler: ["İhracat odaklı model", "Devletçi model", "İthal ikame modeli", "Karma planlama modeli"],
+      cozum: "1980'li yıllardan itibaren Türkiye ekonomisi ihracat odaklı yeni bir ekonomi modeline geçmiştir (s.157).",
+      fc: ["İhracat odaklı model nedir?", "Üretimin dış satıma yönlendirildiği ekonomi modeli."]
     }
   ]
 });

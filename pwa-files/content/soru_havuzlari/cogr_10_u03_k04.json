@@ -199,6 +199,44 @@
         "back": "Saha çalışması ölçütlerinin evet-hayır biçiminde işaretlendiği değerlendirme aracı."
       },
       "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
+    },
+    {
+      "soru_id": "cogr_10_u03_k04_o11",
+      "alt_beceri": "Saha çalışmasının aşamalarını ve hazırlık adımlarını açıklar.",
+      "metin": "Saha çalışmasında gezi güzergâhının belirlenmesi, taslak planın hazırlanması ve eşyaların temin edilmesi hangi aşamada yapılır?",
+      "secenekler": [
+        "Hazırlık ve planlama",
+        "Sahada uygulama",
+        "Raporlama ve sunma",
+        "Değerlendirme"
+      ],
+      "dogru_index": 0,
+      "cozum": "Güzergâh, taslak gezi planı ve malzeme listesi saha çalışmasının hazırlık ve planlama aşamasında belirlenir (s.97).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hazırlık ve planlama aşaması nedir?",
+        "back": "Güzergâh, gezi planı ve malzemenin hazırlandığı aşama."
+      },
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
+    },
+    {
+      "soru_id": "cogr_10_u03_k04_o12",
+      "alt_beceri": "Saha gözlemlerini çözümleyip öngörü ve ürün dosyasına dönüştürür.",
+      "metin": "Saha çalışmasında ürün dosyası hazırlamanın amacı hangisidir?",
+      "secenekler": [
+        "Gezide kullanılacak malzemeleri listelemek",
+        "Gözlem yapılan yerlerin haritasını çizmek",
+        "Verilerle öngörüleri bir araya getirip paylaşmak",
+        "Saha öncesi izin belgelerini toplamak"
+      ],
+      "dogru_index": 2,
+      "cozum": "Elde edilen veriler ve öngörüler bir araya getirilerek ürün dosyası oluşturulur ve arkadaşlarla paylaşılır (s.97).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ürün dosyası nedir?",
+        "back": "Saha verileriyle öngörüleri bir araya getiren çalışma dosyası."
+      },
+      "kazanim": "Yeryüzünü şekillendiren süreçleri saha/sanal saha çalışmalarıyla araştırır."
     }
   ],
   "flashcards": [
@@ -251,6 +289,16 @@
       "id": "cogr_10_u03_k04_o10:flashcard",
       "front": "Kontrol listesi nedir?",
       "back": "Saha çalışması ölçütlerinin evet-hayır biçiminde işaretlendiği değerlendirme aracı."
+    },
+    {
+      "id": "cogr_10_u03_k04_o11:flashcard",
+      "front": "Hazırlık ve planlama aşaması nedir?",
+      "back": "Güzergâh, gezi planı ve malzemenin hazırlandığı aşama."
+    },
+    {
+      "id": "cogr_10_u03_k04_o12:flashcard",
+      "front": "Ürün dosyası nedir?",
+      "back": "Saha verileriyle öngörüleri bir araya getiren çalışma dosyası."
     }
   ]
 }

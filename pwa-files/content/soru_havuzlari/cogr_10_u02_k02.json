@@ -199,6 +199,82 @@
         "back": "Amaç, hangi verinin toplanacağını ve gösterileceğini belirler."
       },
       "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o11",
+      "alt_beceri": "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+      "metin": "Okul, ev ve lokanta gibi şekli ve sınırları küçük olan mekânsal verilerin gösteriminde hangi sembol kullanılır?",
+      "secenekler": [
+        "Nokta",
+        "Çizgi",
+        "Alan",
+        "Yüzey"
+      ],
+      "dogru_index": 0,
+      "cozum": "Şekli ve sınırları küçük olan mekânsal veriler (okul, ev, lokanta) haritada nokta sembolüyle gösterilir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Nokta sembolü nedir?",
+        "back": "Şekli ve sınırları küçük mekânsal verilerin haritada gösterimi."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o12",
+      "alt_beceri": "Mekânsal veri ile mekânsal olmayan veriyi ayırt eder.",
+      "metin": "Akarsu ve yol gibi uzunluğu öne çıkan mekânsal verilerin gösteriminde hangi sembol kullanılır?",
+      "secenekler": [
+        "Nokta",
+        "Alan",
+        "Çizgi",
+        "Lejant"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yol ve akarsu gibi uzanan mekânsal veriler haritada çizgi sembolüyle gösterilir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çizgi sembolü nedir?",
+        "back": "Yol ve akarsu gibi uzanan mekânsal verilerin gösterimi."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o13",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Bir öğrencinin adı, doğum yeri ve okuduğu bölüm gibi bilgiler mekânsal veri açısından nasıl adlandırılır?",
+      "secenekler": [
+        "Mekânsal veri",
+        "Vektör veri",
+        "Raster veri",
+        "Mekânsal olmayan veri"
+      ],
+      "dogru_index": 3,
+      "cozum": "Konum bildirmeyen, bir özellik hakkında tanıtıcı bilgi veren veriler mekânsal olmayan veridir (s.37).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal olmayan veri nedir?",
+        "back": "Konum bildirmeyen, tanıtıcı bilgi veren veri."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
+    },
+    {
+      "soru_id": "cogr_10_u02_k02_o14",
+      "alt_beceri": "Mekânsal verileri nokta, çizgi ve alan sembolleriyle haritaya aktarır.",
+      "metin": "Uydu görüntüsü üzerine nokta, çizgi ve alan olarak eklenen harita verilerine ne ad verilir?",
+      "secenekler": [
+        "Raster veri",
+        "Vektör veri",
+        "Lejant",
+        "Ölçek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Uydu görüntüsü üzerinde nokta, çizgi ve alan biçiminde tanımlanan veriler vektör veri olarak adlandırılır (s.38).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Vektör veri nedir?",
+        "back": "Nokta, çizgi ve alan olarak tanımlanan harita verisi."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturur."
     }
   ],
   "flashcards": [
@@ -251,6 +327,26 @@
       "id": "cogr_10_u02_k02_o10:flashcard",
       "front": "Harita amacı ile veri seçimi arasındaki ilişki nedir?",
       "back": "Amaç, hangi verinin toplanacağını ve gösterileceğini belirler."
+    },
+    {
+      "id": "cogr_10_u02_k02_o11:flashcard",
+      "front": "Nokta sembolü nedir?",
+      "back": "Şekli ve sınırları küçük mekânsal verilerin haritada gösterimi."
+    },
+    {
+      "id": "cogr_10_u02_k02_o12:flashcard",
+      "front": "Çizgi sembolü nedir?",
+      "back": "Yol ve akarsu gibi uzanan mekânsal verilerin gösterimi."
+    },
+    {
+      "id": "cogr_10_u02_k02_o13:flashcard",
+      "front": "Mekânsal olmayan veri nedir?",
+      "back": "Konum bildirmeyen, tanıtıcı bilgi veren veri."
+    },
+    {
+      "id": "cogr_10_u02_k02_o14:flashcard",
+      "front": "Vektör veri nedir?",
+      "back": "Nokta, çizgi ve alan olarak tanımlanan harita verisi."
     }
   ]
 }

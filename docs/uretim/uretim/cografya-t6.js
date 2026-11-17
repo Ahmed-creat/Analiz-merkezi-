@@ -424,6 +424,28 @@ yazKonu({
       ],
       cozum: "Afetlerden korunma uygulamalarındaki temel belirleyici etken mekânın özellikleridir; coğrafi özellikler, mimari durum ve bina yapısı bunlar arasındadır (s.187).",
       fc: ["Mekâna göre önlem nedir?", "Yerel coğrafi koşullara uygun korunma yönteminin seçilmesi."]
+    },
+    {
+      bi: 0,
+      metin: "Tabloda iki yerleşmenin deprem açısından bazı özellikleri verilmiştir. Tablodaki özelliklerden hangisi deprem tehlikesini artırır?",
+      secenekler: ["Fay hattına 3 km mesafede bulunması", "Zeminin sağlam kaya olması", "Denizden uzak iç kesimde yer alması", "Fay hattına 40 km mesafede bulunması"],
+      gorsel: {
+        tip: "tablo",
+        basliklar: ["Yerleşme", "Fay hattına uzaklık", "Zemin", "Konum"],
+        satirlar: [
+          ["A", "3 km", "Gevşek dolgu", "Deniz kıyısı, dik yamaç önü"],
+          ["B", "40 km", "Sağlam kaya", "İç kesim"]
+        ]
+      },
+      cozum: "Fay hatlarına yakın, gevşek zeminli ve dik yamaç önündeki yerleşmelerde deprem tehlikesi artar; tabloda bu özellikler A yerleşmesinde birleşir (s.185).",
+      fc: ["Deprem tehlikesi nedir?", "Depremin yol açabileceği zarar olasılığı."]
+    },
+    {
+      bi: 1,
+      metin: "Deprem riski altındaki büyük bir şehrin başka bölgeye taşınmasının en önemli sınırlılığı hangisidir?",
+      secenekler: ["Taşımanın ekonomik ve sosyal maliyetinin çok yüksek olması", "Yeni bölgede yeterli su kaynağı bulunmaması", "Taşınan kentin ikliminin daha sert olması", "Ulaşım ağının kent içinde kalması"],
+      cozum: "Binlerce binanın bulunduğu büyük şehirleri başka bölgeye taşımanın ekonomik, sosyal ve çevresel boyutları çok büyüktür; bu yüzden taşıma imkânı yok denecek kadar azdır (s.186).",
+      fc: ["Yerleşim taşıma nedir?", "Riskli yerleşmenin güvenli bölgeye aktarılması."]
     }
   ]
 });

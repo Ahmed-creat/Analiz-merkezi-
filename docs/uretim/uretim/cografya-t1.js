@@ -423,6 +423,34 @@ yazKonu({
       ],
       cozum: "Etkinlikte önce haritanın amacı belirlenmekte, ardından amaca uygun mekânsal veriler toplanıp sembollerle tasnif edilmektedir (s.37).",
       fc: ["Harita amacı ile veri seçimi arasındaki ilişki nedir?", "Amaç, hangi verinin toplanacağını ve gösterileceğini belirler."]
+    },
+    {
+      bi: 0,
+      metin: "Okul, ev ve lokanta gibi şekli ve sınırları küçük olan mekânsal verilerin gösteriminde hangi sembol kullanılır?",
+      secenekler: ["Nokta", "Çizgi", "Alan", "Yüzey"],
+      cozum: "Şekli ve sınırları küçük olan mekânsal veriler (okul, ev, lokanta) haritada nokta sembolüyle gösterilir (s.37).",
+      fc: ["Nokta sembolü nedir?", "Şekli ve sınırları küçük mekânsal verilerin haritada gösterimi."]
+    },
+    {
+      bi: 0,
+      metin: "Akarsu ve yol gibi uzunluğu öne çıkan mekânsal verilerin gösteriminde hangi sembol kullanılır?",
+      secenekler: ["Çizgi", "Nokta", "Alan", "Lejant"],
+      cozum: "Yol ve akarsu gibi uzanan mekânsal veriler haritada çizgi sembolüyle gösterilir (s.37).",
+      fc: ["Çizgi sembolü nedir?", "Yol ve akarsu gibi uzanan mekânsal verilerin gösterimi."]
+    },
+    {
+      bi: 1,
+      metin: "Bir öğrencinin adı, doğum yeri ve okuduğu bölüm gibi bilgiler mekânsal veri açısından nasıl adlandırılır?",
+      secenekler: ["Mekânsal olmayan veri", "Mekânsal veri", "Vektör veri", "Raster veri"],
+      cozum: "Konum bildirmeyen, bir özellik hakkında tanıtıcı bilgi veren veriler mekânsal olmayan veridir (s.37).",
+      fc: ["Mekânsal olmayan veri nedir?", "Konum bildirmeyen, tanıtıcı bilgi veren veri."]
+    },
+    {
+      bi: 1,
+      metin: "Uydu görüntüsü üzerine nokta, çizgi ve alan olarak eklenen harita verilerine ne ad verilir?",
+      secenekler: ["Vektör veri", "Raster veri", "Lejant", "Ölçek"],
+      cozum: "Uydu görüntüsü üzerinde nokta, çizgi ve alan biçiminde tanımlanan veriler vektör veri olarak adlandırılır (s.38).",
+      fc: ["Vektör veri nedir?", "Nokta, çizgi ve alan olarak tanımlanan harita verisi."]
     }
   ]
 });

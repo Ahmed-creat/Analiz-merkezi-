@@ -199,6 +199,67 @@
         "back": "Yerel coğrafi koşullara uygun korunma yönteminin seçilmesi."
       },
       "kazanim": "Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verir."
+    },
+    {
+      "soru_id": "cogr_10_u06_k03_o11",
+      "alt_beceri": "Afet yönetiminin aşamalarını ve risk azaltma adımlarını açıklar.",
+      "metin": "Tabloda iki yerleşmenin deprem açısından bazı özellikleri verilmiştir. Tablodaki özelliklerden hangisi deprem tehlikesini artırır?",
+      "secenekler": [
+        "Fay hattına 3 km mesafede bulunması",
+        "Zeminin sağlam kaya olması",
+        "Denizden uzak iç kesimde yer alması",
+        "Fay hattına 40 km mesafede bulunması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Fay hatlarına yakın, gevşek zeminli ve dik yamaç önündeki yerleşmelerde deprem tehlikesi artar; tabloda bu özellikler A yerleşmesinde birleşir (s.185).",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Yerleşme",
+          "Fay hattına uzaklık",
+          "Zemin",
+          "Konum"
+        ],
+        "satirlar": [
+          [
+            "A",
+            "3 km",
+            "Gevşek dolgu",
+            "Deniz kıyısı, dik yamaç önü"
+          ],
+          [
+            "B",
+            "40 km",
+            "Sağlam kaya",
+            "İç kesim"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Deprem tehlikesi nedir?",
+        "back": "Depremin yol açabileceği zarar olasılığı."
+      },
+      "kazanim": "Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verir."
+    },
+    {
+      "soru_id": "cogr_10_u06_k03_o12",
+      "alt_beceri": "Fiziksel-yapısal ve yapısal olmayan korunma önlemlerini çözümler.",
+      "metin": "Deprem riski altındaki büyük bir şehrin başka bölgeye taşınmasının en önemli sınırlılığı hangisidir?",
+      "secenekler": [
+        "Yeni bölgede yeterli su kaynağı bulunmaması",
+        "Taşınan kentin ikliminin daha sert olması",
+        "Taşımanın ekonomik ve sosyal maliyetinin çok yüksek olması",
+        "Ulaşım ağının kent içinde kalması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Binlerce binanın bulunduğu büyük şehirleri başka bölgeye taşımanın ekonomik, sosyal ve çevresel boyutları çok büyüktür; bu yüzden taşıma imkânı yok denecek kadar azdır (s.186).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yerleşim taşıma nedir?",
+        "back": "Riskli yerleşmenin güvenli bölgeye aktarılması."
+      },
+      "kazanim": "Mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verir."
     }
   ],
   "flashcards": [
@@ -251,6 +312,16 @@
       "id": "cogr_10_u06_k03_o10:flashcard",
       "front": "Mekâna göre önlem nedir?",
       "back": "Yerel coğrafi koşullara uygun korunma yönteminin seçilmesi."
+    },
+    {
+      "id": "cogr_10_u06_k03_o11:flashcard",
+      "front": "Deprem tehlikesi nedir?",
+      "back": "Depremin yol açabileceği zarar olasılığı."
+    },
+    {
+      "id": "cogr_10_u06_k03_o12:flashcard",
+      "front": "Yerleşim taşıma nedir?",
+      "back": "Riskli yerleşmenin güvenli bölgeye aktarılması."
     }
   ]
 }
