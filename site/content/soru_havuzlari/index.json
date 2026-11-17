@@ -2,8 +2,8 @@
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
  "havuz_sayisi": 313,
- "soru_sayisi": 3444,
- "flashcard_sayisi": 3444,
+ "soru_sayisi": 3423,
+ "flashcard_sayisi": 3423,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -2051,7 +2051,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Destanın tanımını, oluşum evrelerini ve türlerini belirler.",
+    "Türk destanlarını dönemlerine ve milletlerine göre sınıflandırır.",
+    "Destanlardaki motifleri ve tipleri çözümler."
    ],
    "baslik": "Destan",
    "topic_key": "Türk Dili ve Edebiyatı > Destan",
@@ -2066,7 +2068,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Mesnevinin kafiye düzeni, beyit sayısı ve ölçü özelliklerini belirler.",
+    "Hamse geleneğini ve bu geleneğe katkıları ayırt eder.",
+    "Mesnevinin bölümlerini ve bu bölümlerin işlevini çözümler."
    ],
    "baslik": "Mesnevi",
    "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
@@ -2081,7 +2085,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Halk hikâyesinin oluşum ortamını ve anlatım biçimini belirler.",
+    "Halk hikâyesinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+    "Halk hikâyesini destan ve masaldan ayırt eder."
    ],
    "baslik": "Halk Hikâyesi",
    "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
@@ -2096,7 +2102,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Fablın tanımını, kahraman özelliklerini ve iletisini belirler.",
+    "Fablın yapı unsurlarını ve plânını çözümler.",
+    "Fablın Türk ve dünya edebiyatındaki örneklerini ayırt eder."
    ],
    "baslik": "Fabl",
    "topic_key": "Türk Dili ve Edebiyatı > Fabl",
@@ -2111,7 +2119,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Zarfları türlerine göre sınıflandırır.",
+    "Zarfı sıfat ve edat gibi benzer türlerden ayırt eder.",
+    "Zarfları yapı bakımından çözümler."
    ],
    "baslik": "Zarflar (Belirteçler)",
    "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)",
@@ -2126,8 +2136,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Uyak ve Redif",
-    "Ölçü ve Ahenk Ögeleri"
+    "Ahengi sağlayan ses ögelerini (aliterasyon, asonans, vurgu) belirler.",
+    "Hece, aruz ve serbest ölçünün kurallarını ayırt eder.",
+    "Uyak türlerini ve kafiye şemalarını çözümler."
    ],
    "baslik": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
    "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
@@ -2139,10 +2150,12 @@
    "ders": "Türk Dili ve Edebiyatı",
    "sinif": 10,
    "dosya": "edebiyat_10_u04_k01.json",
-   "soru_sayisi": 11,
-   "flashcard_sayisi": 11,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Eserin edebiyat tarihindeki yerini ve yazıya geçirilme sürecini belirler.",
+    "Eserin nüshalarını ve bu nüshaların özelliklerini ayırt eder.",
+    "Hikâyelerin konu, dil ve didaktik özelliklerini çözümler."
    ],
    "baslik": "Dede Korkut Hikâyeleri",
    "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
@@ -2154,10 +2167,12 @@
    "ders": "Türk Dili ve Edebiyatı",
    "sinif": 10,
    "dosya": "edebiyat_10_u04_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Tanzimat I. dönem şiirinin sanat anlayışını ve getirdiği kavramları belirler.",
+    "Tanzimat II. dönem şiirinin sanat anlayışını ve konularını çözümler.",
+    "İki dönemi dil, biçim ve içerik bakımından karşılaştırır."
    ],
    "baslik": "Tanzimat Dönemi Şiiri",
    "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
@@ -2169,10 +2184,12 @@
    "ders": "Türk Dili ve Edebiyatı",
    "sinif": 10,
    "dosya": "edebiyat_10_u04_k03.json",
-   "soru_sayisi": 16,
-   "flashcard_sayisi": 16,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Fiilleri anlam özelliklerine göre sınıflandırır.",
+    "Haber ve dilek kiplerini, kişi eklerini çözümler.",
+    "Basit, türemiş ve birleşik fiilleri ayırt eder."
    ],
    "baslik": "Fiiller (Eylemler)",
    "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)",
@@ -2184,10 +2201,12 @@
    "ders": "Türk Dili ve Edebiyatı",
    "sinif": 10,
    "dosya": "edebiyat_10_u04_k04.json",
-   "soru_sayisi": 16,
-   "flashcard_sayisi": 16,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Büyük harfin kullanıldığı ve kullanılmadığı yerleri ayırt eder.",
+    "Sayıların ve eklerin yazımını uygular.",
+    "Bağlaç ve soru ekinin yazımını kuralla eşleştirir."
    ],
    "baslik": "Yazım Kuralları",
    "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları",
@@ -2199,10 +2218,12 @@
    "ders": "Türk Dili ve Edebiyatı",
    "sinif": 10,
    "dosya": "edebiyat_10_u04_k05.json",
-   "soru_sayisi": 16,
-   "flashcard_sayisi": 16,
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Nokta, virgül ve noktalı virgülün işlevlerini belirler.",
+    "Kesme, tırnak ve üç noktanın kullanım yerlerini ayırt eder.",
+    "Noktalama işaretlerinin kullanılmadığı yerleri çözümler."
    ],
    "baslik": "Noktalama İşaretleri",
    "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri",

@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u03_k05",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 3,
+  "tema_adi": "Dünden Bugüne",
+  "baslik": "Zarflar (Belirteç)",
+  "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteç)",
+  "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.123-129",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u03_k05_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözcük, eylemin ne zaman ve nasıl yapıldığını ya da niteliğin derecesini bildiriyor. Bu sözcük türünün adı nedir?",
-      "secenekler": [
-        "Zarf",
-        "İsim",
-        "Bağlaç",
-        "Ünlem"
-      ],
-      "dogru_index": 0,
-      "cozum": "Fiil, fiilimsi, sıfat veya başka bir zarfı belirten sözcük zarftır. İsim adlandırır; bağlaç ise sözcük ve cümleleri birbirine bağlar.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Zarfı tanımla ve hangi sözcük türlerini belirtebildiğini yaz.",
-        "back": "Zarf; fiil, fiilimsi, sıfat ya da başka bir zarfı çeşitli yönlerden belirten sözcüktür."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir teknisyen cihazı sessizce çalıştırdı cümlesinde sessizce sözcüğü çalıştırma eyleminin yapılışını açıklıyor. Sözcüğün görevini belirt.",
-      "secenekler": [
-        "Zaman zarfı",
-        "Durum (niteleme) zarfı",
-        "Soru zamiri",
-        "İşaret sıfatı"
-      ],
-      "dogru_index": 1,
-      "cozum": "Sessizce, eylemin nasıl yapıldığını bildirdiği için durum/niteleme zarfıdır. Zaman zarfı eylemin ne zaman gerçekleştiğini söyler.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Eyleme nasıl sorusu sorulduğunda cevap veren zarf türünü tanımla.",
-        "back": "Eylemin ya da fiilimsinin yapılış biçimini bildiren durum, özellikle niteleme zarfıdır."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kütüphane ekibi yarın katalog güncellemesi yapacak cümlesinde yarın sözcüğü hangi bilgi türünü verir?",
-      "secenekler": [
-        "Yer-yön",
-        "Miktar",
-        "Zaman",
-        "Soru"
-      ],
-      "dogru_index": 2,
-      "cozum": "Yarın, eylemin gerçekleşeceği zamanı bildirir. Bu nedenle zaman zarfıdır; yer-yön ve miktar bilgisi vermez.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Eylemin ne zaman gerçekleştiğini bildiren zarf türü nedir?",
-        "back": "Zaman zarfı."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir editör metni çok dikkatli incelemiş cümlesinde çok sözcüğü dikkatli sözcüğünün derecesini artırıyor. Çok hangi görevde kullanılmıştır?",
-      "secenekler": [
-        "Yer-yön zarfı",
-        "Soru zarfı",
-        "İlgi zamiri",
-        "Miktar zarfı"
-      ],
-      "dogru_index": 3,
-      "cozum": "Çok, dikkatli sıfatının derecesini artırır ve miktar zarfıdır. Soru zarfı soru yoluyla eylemi belirler.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Bir eylemin, sıfatın ya da başka bir zarfın miktarını ve derecesini bildiren zarfa ne denir?",
-        "back": "Miktar (nicelik/derecelendirme) zarfı."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözcük içeri yönelme bildirirken -e eki alınca cümlede ad görevi kazanıyor. Bu değişim yer-yön sözcüklerinin hangi özelliğiyle açıklanır?",
-      "secenekler": [
-        "Durum eki aldıklarında isimleşebilmeleriyle",
-        "Her zaman fiil olmalarıyla",
-        "Yalnızca soru anlamı taşımalarıyla",
-        "Zorunlu olarak bağlaç olmalarıyla"
-      ],
-      "dogru_index": 0,
-      "cozum": "İçeri, dışarı, aşağı gibi yer-yön sözcükleri durum eki aldıklarında isim olur. Ek almadan eylemin yönünü belirttiklerinde zarf görevindedir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Yer-yön zarflarının isim görevine geçmesinde hangi biçimsel değişiklik etkili olur?",
-        "back": "Ad durum eklerinden birini almaları."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir görevli neden başvurunun geciktiğini soruyor; neden sözcüğü gecikme eylemini sorguluyor. Bu sözcüğün görevini adlandır.",
-      "secenekler": [
-        "Soru sıfatı",
-        "Soru zarfı",
-        "Soru zamiri",
-        "Bağlaç"
-      ],
-      "dogru_index": 1,
-      "cozum": "Neden sözcüğü eylemi soru yoluyla belirttiğinden soru zarfıdır. Bir adı belirleseydi soru sıfatı, adın yerine geçseydi soru zamiri olurdu.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Eylem ya da fiilimsiye soru yoluyla bilgi veren zarf türü nedir?",
-        "back": "Soru zarfı."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sınıflandırmada bir sözcük yapılış biçimini, bir diğeri zamanı, bir başkası derecelendirmeyi bildiriyor. Zarfların beş ana grubunu tamamla.",
-      "secenekler": [
-        "Kişi, işaret, belgisiz, soru ve dönüşlülük",
-        "Niteleme, belirtme, sayı, işaret ve soru",
-        "Durum, zaman, miktar, yer-yön ve soru",
-        "Kılış, durum, oluş, kip ve kişi"
-      ],
-      "dogru_index": 2,
-      "cozum": "Kaynakta zarflar durum, zaman, miktar, yer-yön ve soru başlıklarında sınıflandırılır. Diğer seçenekler zamir, sıfat veya fiil alt türlerini karıştırır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Zarflar anlam özelliklerine göre hangi beş ana grupta incelenir?",
-        "back": "Durum, zaman, miktar, yer-yön ve soru zarfları."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede dün sözcüğü hiç ek almadan eylemin zamanını belirtiyor. Yapısına göre nasıl sınıflandırılır?",
-      "secenekler": [
-        "Türemiş zarf",
-        "Birleşik zarf",
-        "Öbekleşmiş zarf",
-        "Basit zarf"
-      ],
-      "dogru_index": 3,
-      "cozum": "Ek almamış kök hâlindeki zarf basit zarftır. Yapım eki alanlar türemiş, birden fazla kelimeyle kurulanlar birleşik veya öbekleşmiş olabilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Kök hâlinde olup hiç ek almamış zarfa yapısına göre ne denir?",
-        "back": "Basit zarf."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede zaman anlamı taşıyan iki sözcüklü bir kalıp birlikte eylemi belirtiyor. Bu yapı, zarfların kuruluşuna göre hangi gruptadır?",
-      "secenekler": [
-        "Öbekleşmiş zarf",
-        "Basit zarf",
-        "Tek kök zarf",
-        "Belirtisiz isim tamlaması"
-      ],
-      "dogru_index": 0,
-      "cozum": "Birden fazla sözcüğün ikileme, edat grubu veya zarf-fiil grubu biçiminde birleşmesi öbekleşmiş zarf oluşturabilir. Tek kök basit zarftır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Birden fazla sözcüğün bir araya gelmesiyle kurulan zarf öbeğine ne denir?",
-        "back": "Öbekleşmiş zarf."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u03_k05_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir incelemede aynı güzel sözcüğü bir cümlede gün adını, başka bir cümlede konuşma eylemini niteliyor. Eylemi nitelediği kullanımda görev nedir?",
+      "alt_beceri": "Zarfları türlerine göre sınıflandırır.",
+      "metin": "\"Arkadaşım İngilizceyi hızlı öğrendi.\" cümlesinde \"hızlı\" sözcüğü eylemin nasıl gerçekleştiğini belirtmiştir. Bu sözcük hangi görevdedir?",
       "secenekler": [
         "Sıfat",
         "Zarf",
-        "İsim",
-        "Bağlaç"
+        "Edat",
+        "Zamir"
       ],
       "dogru_index": 1,
-      "cozum": "Sözcük güzel günler yapısında ismi belirttiği için sıfat, güzel konuştu yapısında eylemi belirttiği için zarftır. Görevi çevresindeki sözcük ilişkisi belirler.",
+      "cozum": "Fiilleri, fiilimsileri, sıfatları ya da kendi türünden sözcükleri değişik yönlerden belirten sözcükler zarftır; \"nasıl öğrendi?\" sorusunun cevabı niteleme zarfıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir sözcüğün zarf mı sıfat mı olduğunu ayırırken hangi dil bilgisi ilişkisine bakılır?",
-        "back": "Sözcüğün adı mı yoksa fiili/fiilimsiyi mi belirttiğine bakılır; ismi belirtirse sıfat, eylemi belirtirse zarf olur."
-      }
+        "front": "Zarf nedir?",
+        "back": "Fiil, fiilimsi, sıfat ya da zarfların anlamını belirten sözcüktür."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o02",
+      "alt_beceri": "Zarfları türlerine göre sınıflandırır.",
+      "metin": "\"Güzel bakan güzel görür.\" cümlesinde \"güzel\" sözcüğü eylemin nasıl yapıldığını bildirirken, \"Güzel günler göreceğiz çocuklar.\" cümlesinde bir adı nitelemektedir. İlk cümledeki görev hangisidir?",
+      "secenekler": [
+        "Sıfat görevi",
+        "Edat görevi",
+        "İsim görevi",
+        "Niteleme zarfı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Fiile sorulan \"nasıl\" sorusunun cevabı niteleme zarfıdır; isme sorulan \"nasıl\" sorusunun cevabı ise sıfattır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Niteleme zarfı nedir?",
+        "back": "Fiile sorulan \"nasıl\" sorusunun cevabı olan zarftır: hızlı öğrendi, güzel bakan."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o03",
+      "alt_beceri": "Zarfı sıfat ve edat gibi benzer türlerden ayırt eder.",
+      "metin": "Bir öğrenci \"Kendimi henüz sınav için hazır hissetmiyorum.\" cümlesindeki \"henüz\" sözcüğünü incelemiştir. Bu sözcük eylemi hangi bakımdan sınırlandırmıştır?",
+      "secenekler": [
+        "Zaman",
+        "Miktar",
+        "Yer",
+        "Durum"
+      ],
+      "dogru_index": 0,
+      "cozum": "Eylem ve eylemsileri zaman bakımından sınırlayan zarflar zaman zarfıdır; \"henüz, yarın, dün, şimdi\" gibi sözcükler zaman zarfıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Zaman zarfı nedir?",
+        "back": "Eylem ve eylemsileri zaman bakımından sınırlayan zarftır: yarın, dün, henüz, şimdi."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o04",
+      "alt_beceri": "Zarfı sıfat ve edat gibi benzer türlerden ayırt eder.",
+      "metin": "Zaman bildiren bazı sözcükler \"-in\" eki alarak zarf görevi kazanır: yazın, kışın, güzün. \"Yazın yaylaya çıkarız.\" cümlesinde bu ek hangi görevi üstlenmiştir?",
+      "secenekler": [
+        "Sıfat yapmıştır",
+        "İsim tamlaması kurmuştur",
+        "Zaman zarfı yapmıştır",
+        "Edat grubu oluşturmuştur"
+      ],
+      "dogru_index": 2,
+      "cozum": "\"-in\" eki zaman isimlerine gelerek zaman zarfı yapar: yazın, kışın, ilkin, güzün.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "\"-in\" ekinin zarf yapma görevi nedir?",
+        "back": "Zaman isimlerine gelerek zaman zarfı yapar: yazın, kışın, güzün."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o05",
+      "alt_beceri": "Zarfları türlerine göre sınıflandırır.",
+      "metin": "\"Başarılı olabilmek için çok çalışmalıyım.\" cümlesinde \"çok\" sözcüğü eylemin derecesini belirtir ve \"ne kadar\" sorusuna cevap verir. Bu sözcük hangi zarftır?",
+      "secenekler": [
+        "Zaman zarfı",
+        "Durum zarfı",
+        "Soru zarfı",
+        "Miktar zarfı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Eylemleri, sıfatları ya da zarfları azlık-çokluk bakımından sınırlayan zarflar miktar zarfıdır; çok, pek, en, daha, biraz, fazla gibi.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Miktar zarfı nedir?",
+        "back": "Eylem, sıfat ya da zarfları azlık-çokluk bakımından belirleyen zarftır: çok, pek, en, daha."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o06",
+      "alt_beceri": "Zarfı sıfat ve edat gibi benzer türlerden ayırt eder.",
+      "metin": "\"Bana neden soğuk davranıyorsun?\" cümlesinde \"neden\" sözcüğü eylemi soru yoluyla belirtmiştir. Bu sözcüğün görevi hangisidir?",
+      "secenekler": [
+        "Soru zamiri",
+        "Soru zarfı",
+        "Soru sıfatı",
+        "Miktar zarfı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Eylem ve eylemsileri soru yoluyla belirten zarflar soru zarfıdır: nasıl, niçin, neden, ne zaman, ne kadar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Soru zarfı nedir?",
+        "back": "Eylem ve eylemsileri soru yoluyla belirten zarftır: nasıl, niçin, ne zaman."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o07",
+      "alt_beceri": "Zarfları türlerine göre sınıflandırır.",
+      "metin": "\"Elbet bir gün buluşacağız.\" ve \"Seni asla unutmayacağım.\" cümlelerinde kullanılan sözcükler eylemin gerçekleşeceğine dair kesinlik bildirir. Bu sözcükler hangi zarf türüdür?",
+      "secenekler": [
+        "Kesinlik zarfı",
+        "Dilek zarfı",
+        "Yineleme zarfı",
+        "Sınırlama zarfı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Elbet, elbette, asla, şüphesiz, mutlaka gibi sözcükler kesinlik zarfıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kesinlik zarfı nedir?",
+        "back": "Eylemin kesin olarak gerçekleşeceğini bildiren zarftır: elbet, asla, mutlaka."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o08",
+      "alt_beceri": "Zarfı sıfat ve edat gibi benzer türlerden ayırt eder.",
+      "metin": "\"Askerler teker teker nöbet yerlerine dağıldılar.\" cümlesinde eylem dağılım bildiren bir sözcükle belirtilmiştir. Bu sözcük hangi zarf türüdür?",
+      "secenekler": [
+        "Miktar zarfı",
+        "Yineleme zarfı",
+        "Üleştirme zarfı",
+        "Durum zarfı"
+      ],
+      "dogru_index": 2,
+      "cozum": "\"Beşer beşer, ikişer ikişer, teker teker\" gibi dağılım bildiren sözcükler üleştirme zarfıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üleştirme zarfı nedir?",
+        "back": "Eylemin dağılımını bildiren zarftır: beşer beşer, ikişer ikişer, teker teker."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o09",
+      "alt_beceri": "Zarfları yapı bakımından çözümler.",
+      "metin": "Zarflar yapı bakımından basit, türemiş, birleşik ve öbekleşmiş olarak ayrılır. \"Akşama doğru, ikide bir, arada sırada\" gibi zarflar hangi yapıdadır?",
+      "secenekler": [
+        "Birleşik zarf",
+        "Öbekleşmiş zarf",
+        "Türemiş zarf",
+        "Basit zarf"
+      ],
+      "dogru_index": 1,
+      "cozum": "Birden fazla kelimenin ikileme, edat grubu ya da zarf-fiil grubu yoluyla bir araya gelmesiyle oluşan zarflar öbekleşmiştir; \"bugün, biraz, birdenbire\" ise birleşiktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Öbekleşmiş zarf nedir?",
+        "back": "Birden fazla kelimenin öbekleşmesiyle oluşan zarftır: akşama doğru, ikide bir."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u03_k05_o10",
+      "alt_beceri": "Zarfları yapı bakımından çözümler.",
+      "metin": "\"Keşke bu günleri o da görebilseydi.\" ve \"Umarım güzel bir haber alırsın.\" cümlelerinde kullanılan sözcükler bir dileği anlatır. Bu sözcükler hangi zarf türüdür?",
+      "secenekler": [
+        "Kesinlik zarfı",
+        "Varsayım zarfı",
+        "Yanıt zarfı",
+        "Dilek zarfı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Keşke, inşallah, umarım, yeter ki, bari gibi sözcükler dilek ve beklenti zarfıdır; varsayım zarfı ise \"diyelim ki, tut ki\" ile kurulur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dilek zarfı nedir?",
+        "back": "Bir dilek ya da beklenti anlatan zarftır: keşke, inşallah, umarım."
+      },
+      "kazanim": "Zarfları tür, işlev ve yapı bakımından çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u03_k05_o01:flashcard",
-      "front": "Zarfı tanımla ve hangi sözcük türlerini belirtebildiğini yaz.",
-      "back": "Zarf; fiil, fiilimsi, sıfat ya da başka bir zarfı çeşitli yönlerden belirten sözcüktür."
+      "front": "Zarf nedir?",
+      "back": "Fiil, fiilimsi, sıfat ya da zarfların anlamını belirten sözcüktür."
     },
     {
       "id": "edebiyat_10_u03_k05_o02:flashcard",
-      "front": "Eyleme nasıl sorusu sorulduğunda cevap veren zarf türünü tanımla.",
-      "back": "Eylemin ya da fiilimsinin yapılış biçimini bildiren durum, özellikle niteleme zarfıdır."
+      "front": "Niteleme zarfı nedir?",
+      "back": "Fiile sorulan \"nasıl\" sorusunun cevabı olan zarftır: hızlı öğrendi, güzel bakan."
     },
     {
       "id": "edebiyat_10_u03_k05_o03:flashcard",
-      "front": "Eylemin ne zaman gerçekleştiğini bildiren zarf türü nedir?",
-      "back": "Zaman zarfı."
+      "front": "Zaman zarfı nedir?",
+      "back": "Eylem ve eylemsileri zaman bakımından sınırlayan zarftır: yarın, dün, henüz, şimdi."
     },
     {
       "id": "edebiyat_10_u03_k05_o04:flashcard",
-      "front": "Bir eylemin, sıfatın ya da başka bir zarfın miktarını ve derecesini bildiren zarfa ne denir?",
-      "back": "Miktar (nicelik/derecelendirme) zarfı."
+      "front": "\"-in\" ekinin zarf yapma görevi nedir?",
+      "back": "Zaman isimlerine gelerek zaman zarfı yapar: yazın, kışın, güzün."
     },
     {
       "id": "edebiyat_10_u03_k05_o05:flashcard",
-      "front": "Yer-yön zarflarının isim görevine geçmesinde hangi biçimsel değişiklik etkili olur?",
-      "back": "Ad durum eklerinden birini almaları."
+      "front": "Miktar zarfı nedir?",
+      "back": "Eylem, sıfat ya da zarfları azlık-çokluk bakımından belirleyen zarftır: çok, pek, en, daha."
     },
     {
       "id": "edebiyat_10_u03_k05_o06:flashcard",
-      "front": "Eylem ya da fiilimsiye soru yoluyla bilgi veren zarf türü nedir?",
-      "back": "Soru zarfı."
+      "front": "Soru zarfı nedir?",
+      "back": "Eylem ve eylemsileri soru yoluyla belirten zarftır: nasıl, niçin, ne zaman."
     },
     {
       "id": "edebiyat_10_u03_k05_o07:flashcard",
-      "front": "Zarflar anlam özelliklerine göre hangi beş ana grupta incelenir?",
-      "back": "Durum, zaman, miktar, yer-yön ve soru zarfları."
+      "front": "Kesinlik zarfı nedir?",
+      "back": "Eylemin kesin olarak gerçekleşeceğini bildiren zarftır: elbet, asla, mutlaka."
     },
     {
       "id": "edebiyat_10_u03_k05_o08:flashcard",
-      "front": "Kök hâlinde olup hiç ek almamış zarfa yapısına göre ne denir?",
-      "back": "Basit zarf."
+      "front": "Üleştirme zarfı nedir?",
+      "back": "Eylemin dağılımını bildiren zarftır: beşer beşer, ikişer ikişer, teker teker."
     },
     {
       "id": "edebiyat_10_u03_k05_o09:flashcard",
-      "front": "Birden fazla sözcüğün bir araya gelmesiyle kurulan zarf öbeğine ne denir?",
-      "back": "Öbekleşmiş zarf."
+      "front": "Öbekleşmiş zarf nedir?",
+      "back": "Birden fazla kelimenin öbekleşmesiyle oluşan zarftır: akşama doğru, ikide bir."
     },
     {
       "id": "edebiyat_10_u03_k05_o10:flashcard",
-      "front": "Bir sözcüğün zarf mı sıfat mı olduğunu ayırırken hangi dil bilgisi ilişkisine bakılır?",
-      "back": "Sözcüğün adı mı yoksa fiili/fiilimsiyi mi belirttiğine bakılır; ismi belirtirse sıfat, eylemi belirtirse zarf olur."
+      "front": "Dilek zarfı nedir?",
+      "back": "Bir dilek ya da beklenti anlatan zarftır: keşke, inşallah, umarım."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)"
+  ]
 }

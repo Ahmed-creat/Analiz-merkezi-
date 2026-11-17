@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u03_k03",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 3,
+  "tema_adi": "Dünden Bugüne",
+  "baslik": "Halk Hikâyesi",
+  "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+  "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.118-121",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u03_k03_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıcı olayları düzyazıyla sürdürürken kahramanların duygularını saz eşliğinde şiirle dile getiriyor. Bu anlatım biçimi hangi türe uygundur?",
+      "alt_beceri": "Halk hikâyesinin oluşum ortamını ve anlatım biçimini belirler.",
+      "metin": "16. asırdan itibaren âşıkların saz eşliğinde, nazım-nesir karışık bir ifadeyle dinleyicilere anlattığı, yer yer masal ve destan özellikleri taşıyan hikâyeler hangi türdür?",
       "secenekler": [
+        "Destan türü",
         "Halk hikâyesi",
-        "Mesnevi",
-        "Makale",
-        "Günlük"
+        "Fabl türü",
+        "Mesnevi türü"
       ],
-      "dogru_index": 0,
-      "cozum": "Halk hikâyelerinde nesir ve nazım bir arada kullanılır; olay anlatımı düzyazı, duygu ve konuşmalar şiir olabilir. Mesnevi yalnız şiir biçiminde yazılır.",
+      "dogru_index": 1,
+      "cozum": "Âşıkların saz eşliğinde nazım-nesir karışık anlattığı, nesilden nesile aktarılan hikâyeler halk hikâyesidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyelerinin nazım-nesir düzenini açıkla.",
-        "back": "Olayların anlatıldığı bölümler nesir, duygu ve konuşmaların öne çıktığı bölümler nazım biçiminde aktarılır."
-      }
+        "front": "Halk hikâyesi nedir?",
+        "back": "Âşıkların saz eşliğinde nazım-nesir karışık anlattığı, anonim halk anlatısıdır."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir edebiyat kronolojisinde saz eşliğinde anlatılan halk hikâyelerinin görülmeye başladığı dönem soruluyor. Başlangıç yüzyılını yaz.",
+      "alt_beceri": "Halk hikâyesinin oluşum ortamını ve anlatım biçimini belirler.",
+      "metin": "Türk edebiyatında halk hikâyelerinin ilk örneği kabul edilen eser hangisidir?",
       "secenekler": [
-        "8. yüzyıl",
-        "16. yüzyıl",
-        "11. yüzyıl",
-        "19. yüzyıl"
+        "Köroğlu Destanı",
+        "Harnâme",
+        "Mantıku't-Tayr",
+        "Dede Korkut Hikâyeleri"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynağa göre halk hikâyeleri Türk edebiyatında 16. yüzyıldan itibaren görülmeye başlar. Diğer tarihler bu başlangıç için verilmemiştir.",
+      "dogru_index": 3,
+      "cozum": "Halk hikâyelerinin ilk örneği Dede Korkut Hikâyeleridir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyeleri Türk edebiyatında hangi yüzyıldan itibaren görülür?",
-        "back": "16. yüzyıldan itibaren."
-      }
+        "front": "Halk hikâyesinin ilk örneği nedir?",
+        "back": "Dede Korkut Hikâyeleridir."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıcı, dinleyicilerin karşısında saz çalarak uzun bir hikâye aktarıyor; başka bir ortamda bunu meddah üstleniyor. Bu anlatıcılar hangi türe hizmet eder?",
+      "alt_beceri": "Halk hikâyesinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+      "metin": "Bir halk hikâyesinde anlatıcı, hikâyenin geçtiği yer ve zamanı, kahramanları ve ailelerini kalıplaşmış cümlelerle tanıtmıştır. Bu bölüm hangisidir?",
       "secenekler": [
-        "Divan gazeline",
-        "Bilimsel makaleye",
-        "Halk hikâyesine",
-        "Resmî yazışmaya"
+        "Döşeme",
+        "Fasıl",
+        "Efsane",
+        "Sonuç ve dua"
       ],
-      "dogru_index": 2,
-      "cozum": "Halk hikâyelerini çoğunlukla saz çalan âşıklar ve meddahlar anlatır. Gazel okuyan kişiye gazelhan denir; bilimsel makale ve resmî yazışma bu sözlü geleneğe ait değildir.",
+      "dogru_index": 0,
+      "cozum": "Manzum veya mensur kalıplaşmış bir giriş olan döşemede hikâyenin yeri, zamanı, kahramanları ve aileleri tanıtılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyelerinin geleneksel anlatıcıları kimlerdir?",
-        "back": "Çoğunlukla saz çalan âşıklar ve meddahlar."
-      }
+        "front": "Döşeme nedir?",
+        "back": "Halk hikâyesinde yer, zaman, kahraman ve ailelerin tanıtıldığı kalıplaşmış giriştir."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözlü anlatıda kahraman, sevdiğine kavuşmak için engellerle karşılaşıyor; başka anlatılarda yiğitlik veya dinî konular işleniyor. Bu çeşitlilik hangi türün içeriğini gösterir?",
+      "alt_beceri": "Halk hikâyesinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+      "metin": "Bir âşık, hikâyeye başlamadan önce dinleyiciyi hazırlamak için divani söylemiş, ardından cinaslı bir türkü ve tekerleme okumuştur. Bu bölüm hangisidir?",
       "secenekler": [
-        "Savın",
-        "Mersiyenin",
-        "Naatın",
-        "Halk hikâyesinin"
+        "Döşeme",
+        "Efsane",
+        "Fasıl",
+        "Hikâyenin asıl konusu"
       ],
-      "dogru_index": 3,
-      "cozum": "Halk hikâyelerinde aşk ve kahramanlık yaygındır; dinî konular da işlenebilir. Sav özlü söz, mersiye yas şiiri, naat ise övgü türüdür.",
+      "dogru_index": 2,
+      "cozum": "Halk hikâyesinin fasıl bölümünde âşık divani, cinaslı türkü ve olağanüstü konulu bir tekerleme söyler.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyelerinde en yaygın işlenen konu kümeleri nelerdir?",
-        "back": "Aşk, kahramanlık ve dinî konular."
-      }
+        "front": "Fasıl nedir?",
+        "back": "Âşığın divani, cinaslı türkü ve tekerleme söyleyerek dinleyiciyi hazırladığı bölümdür."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir edebiyat akış şemasında destan anlatısının ardından halk hikâyesi, onun ardından modern hikâye yer alıyor. Bu sıranın anlattığı gelişimi açıkla.",
+      "alt_beceri": "Halk hikâyesini destan ve masaldan ayırt eder.",
+      "metin": "Bir hikâyenin sonunda, vuslatın gerçekleşmediği durumlarda sevgililerin öbür dünyada kavuşacaklarına işaret edilmiştir. Bu bölüm hangisidir?",
       "secenekler": [
-        "Halk hikâyesi destandan doğmuş ve modern hikâyeden önceki geçiş türü olmuştur.",
-        "Modern hikâye destandan önce ortaya çıkmıştır.",
-        "Halk hikâyesi mesnevinin başka adıdır.",
-        "Destan halk hikâyesinden sonra ortaya çıkmıştır."
+        "Dua",
+        "Fasıl",
+        "Döşeme",
+        "Efsane"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaynağa göre halk hikâyesi destan geleneğinden doğar ve daha sonra modern hikâyeye yerini bırakır. Seçeneklerdeki ters sıralama bu gelişimi bozuyor.",
+      "dogru_index": 3,
+      "cozum": "Hikâye ile ilgisi olmayan efsane bölümünde, vuslatın gerçekleşmediği hikâyelerde öbür dünyada vuslat olacağına işaret edilir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyeleri ile destan geleneği arasındaki gelişim ilişkisini yaz.",
-        "back": "Halk hikâyeleri destan geleneğinden doğmuş; daha sonra yerini modern hikâyeye bırakmıştır."
-      }
+        "front": "Halk hikâyesinde efsane bölümü nedir?",
+        "back": "Vuslatın gerçekleşmediği hikâyelerde öbür dünyada vuslata işaret eden bölümdür."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatı, destandaki ölçüde olağanüstü olaylar içermez; yerleri masaldan daha somut, romandan daha yüzeysel verir. Bu özellikler hangi türe işaret eder?",
+      "alt_beceri": "Halk hikâyesinin oluşum ortamını ve anlatım biçimini belirler.",
+      "metin": "Halk hikâyelerinde anlatıcı geçmişe ve geleceğe vakıf, her şeyi bilen bir konumdadır. Bu anlatım özelliği hangisidir?",
       "secenekler": [
-        "Destan",
-        "Halk hikâyesi",
-        "Modern roman",
-        "Bilim kurgu makalesi"
+        "Kahraman bakış açısı",
+        "İlahi bakış açısı",
+        "Gözlemci bakış açısı",
+        "İç konuşma"
       ],
       "dogru_index": 1,
-      "cozum": "Halk hikâyesinde olağanüstülük destana göre daha kısıtlı, mekân ise masal/destana göre daha belirgindir; modern roman kadar ayrıntılı değildir.",
+      "cozum": "Hikâyelerin çoğu ilahi bakış açısıyla anlatılır; anlatıcı tüm olanlara, geçmişe ve geleceğe vakıftır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyelerindeki mekân ve olağanüstülük, destan ve modern romana göre nasıl değerlendirilir?",
-        "back": "Olağanüstülük destana göre azalır; mekân destan ve masala göre belirginleşir, modern roman ve hikâyeye göre yüzeysel kalır."
-      }
+        "front": "İlahi bakış açısı nedir?",
+        "back": "Anlatıcının geçmişe ve geleceğe vakıf, her şeyi bilen konumda olmasıdır."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anlatıcı önce dinleyiciyi hazırlıyor, sonra giriş yapıyor, ana olayı anlatıp dua ediyor ve sonunda bir efsane ekliyor. Bu bölüm düzeni hangi anlatı türüne aittir?",
+      "alt_beceri": "Halk hikâyesinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+      "metin": "Halk hikâyeleri destanlardan pek çok yönüyle ayrılır. Aşağıdakilerden hangisi bu ayrımın bir yönüdür?",
       "secenekler": [
-        "Fabl",
-        "Masal",
-        "Halk hikâyesine",
-        "Kaside"
+        "Tarihî bir vakanın olmasının şart olmaması",
+        "Konuların tamamen olağanüstü olması",
+        "Dilin ağır ve sanatlı olması",
+        "Yazarının her zaman bilinmesi"
       ],
-      "dogru_index": 2,
-      "cozum": "Fasıl, döşeme, asıl konu, sonuç-dua ve efsane halk hikâyesinin genel beş bölümüdür. Fabl ve masal farklı planlara sahiptir.",
+      "dogru_index": 0,
+      "cozum": "Halk hikâyelerinde tarihî bir vakanın olması şart değildir; nazım-nesir karışıktır, gerçekçiliğe daha çok yer verilir, aşk maceraları öne çıkar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyesinin beş temel bölümünü sırayla yaz.",
-        "back": "Fasıl, döşeme, hikâyenin asıl konusu, sonuç ve dua, efsane."
-      }
+        "front": "Halk hikâyesinin destandan ayrılan yönleri nedir?",
+        "back": "Tarihî vaka şartı yoktur; nazım-nesir karışıktır, aşk maceraları öne çıkar."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir sözlü anlatının kalıplaşmış girişinde olay başlamadan önce kişiler ve çevre dinleyiciye tanıtılıyor. Halk hikâyesinin bu girişi nasıl adlandırılır?",
+      "alt_beceri": "Halk hikâyesinin bölümlerini ve bu bölümlerin işlevini çözümler.",
+      "metin": "Aynı hikâyenin farklı yörelerde değişik biçimlerde anlatıldığı görülmüştür. Bu durumun temel nedeni hangisidir?",
       "secenekler": [
-        "Fasıl",
-        "Sonuç ve dua",
-        "Efsane",
-        "Döşeme"
+        "Hikâyelerin yazıyla yayılması",
+        "Her hikâyenin tek anlatıcısı olması",
+        "Âşıkların kendi yorum ve üslubunu katması",
+        "Hikâyelerin dili ağırlaştırması"
       ],
-      "dogru_index": 3,
-      "cozum": "Döşeme, yer-zaman ve kahramanların tanıtıldığı kalıplaşmış giriş bölümüdür. Fasıl dinleyiciyi hazırlar; sonuç-dua ve efsane sona yakındır.",
+      "dogru_index": 2,
+      "cozum": "Âşıklar hikâyeyi anlatırken kendi yorumlarını, hayal güçlerini ve üsluplarını kattığı için aynı hikâyenin farklı varyantları ortaya çıkar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyesinin döşeme bölümünde hangi bilgiler tanıtılır?",
-        "back": "Hikâyenin geçtiği yer ve zaman, kahramanlar ve aileleri tanıtılır."
-      }
+        "front": "Halk hikâyesinde varyant nedir?",
+        "back": "Aynı hikâyenin âşıkların yorumuyla farklı yörelerde aldığı değişik biçimlerdir."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Farklı âşıklar aynı anlatıya kendi üsluplarını ve yorumlarını katarak küçük değişiklikler yapıyor. Aynı hikâyenin bu yerel biçimleri nasıl adlandırılır?",
+      "alt_beceri": "Halk hikâyesini destan ve masaldan ayırt eder.",
+      "metin": "Kahramanlık hikâyeleri içinde önemli bir yer tutan ve 13. yüzyıl Türk edebiyatında önemli örnekler veren tür hangisidir?",
       "secenekler": [
-        "Varyantlar",
-        "Hamseler",
-        "Mahlaslar",
-        "Redifler"
+        "Hamse geleneği",
+        "Hz. Ali Cenknameleri",
+        "Tezkire türü",
+        "Şehrengiz türü"
       ],
-      "dogru_index": 0,
-      "cozum": "Âşıkların yorum ve üsluplarıyla aynı hikâyenin değişen anlatımları varyantları oluşturur. Hamse, mahlas ve redif başka edebiyat terimleridir.",
+      "dogru_index": 1,
+      "cozum": "Hz. Ali Cenknameleri, Türk destan geleneğinin İslami devresinin ürünüdür ve 13. yüzyılda önemli örnekler vermiştir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyesi anlatımında aynı anlatının farklı yörelerde değişen biçimlerine ne denir?",
-        "back": "Varyant."
-      }
+        "front": "Cenkname nedir?",
+        "back": "Hz. Ali'nin kahramanlıklarını anlatan, İslami dönem destan geleneğinin ürünü hikâyelerdir."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u03_k03_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir araştırmacı, bir anlatının hem düzyazı hem şiir içerdiğini, diğer uzun anlatının ise beyitlerle ve bilinen bir şairce yazıldığını saptıyor. İlk anlatı hangisidir?",
+      "alt_beceri": "Halk hikâyesini destan ve masaldan ayırt eder.",
+      "metin": "Halk hikâyeleri anonim olduğu hâlde yazarı bilinen mesneviden ayrılır. Halk hikâyelerinin anonim sayılmasının nedeni hangisidir?",
       "secenekler": [
-        "Mesnevi",
-        "Halk hikâyesi",
-        "Gazel",
-        "Kaside"
+        "Tek bir âşık tarafından yazılmaları",
+        "Saray çevresinde üretilmeleri",
+        "Aruzla yazılmaları",
+        "Halkın ortak malı olmaları"
       ],
-      "dogru_index": 1,
-      "cozum": "Halk hikâyesi nazım-nesir karışık ve anonim aktarılır; mesnevi yalnız şiir biçiminde, söyleyeni belli olacak şekilde yazılır. Gazel ve kaside de Divan şiiri biçimleridir.",
+      "dogru_index": 3,
+      "cozum": "Halk hikâyeleri herhangi bir yazara değil halkın ortak malına ait olduğu için anonimdir ve dönemin zihniyetini yansıtır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Halk hikâyelerinin mesnevilerden önemli farkını yaz.",
-        "back": "Halk hikâyeleri nazım-nesir karışık ve çoğunlukla anonimdir; mesneviler yalnız şiirle yazılır ve söyleyeni bellidir."
-      }
+        "front": "Halk hikâyesinin anonimlik nedeni nedir?",
+        "back": "Halkın ortak malı olmalarıdır; tek bir yazarı yoktur."
+      },
+      "kazanim": "Halk hikâyesinin anlatım özelliklerini, bölümlerini ve destandan ayrılan yönlerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u03_k03_o01:flashcard",
-      "front": "Halk hikâyelerinin nazım-nesir düzenini açıkla.",
-      "back": "Olayların anlatıldığı bölümler nesir, duygu ve konuşmaların öne çıktığı bölümler nazım biçiminde aktarılır."
+      "front": "Halk hikâyesi nedir?",
+      "back": "Âşıkların saz eşliğinde nazım-nesir karışık anlattığı, anonim halk anlatısıdır."
     },
     {
       "id": "edebiyat_10_u03_k03_o02:flashcard",
-      "front": "Halk hikâyeleri Türk edebiyatında hangi yüzyıldan itibaren görülür?",
-      "back": "16. yüzyıldan itibaren."
+      "front": "Halk hikâyesinin ilk örneği nedir?",
+      "back": "Dede Korkut Hikâyeleridir."
     },
     {
       "id": "edebiyat_10_u03_k03_o03:flashcard",
-      "front": "Halk hikâyelerinin geleneksel anlatıcıları kimlerdir?",
-      "back": "Çoğunlukla saz çalan âşıklar ve meddahlar."
+      "front": "Döşeme nedir?",
+      "back": "Halk hikâyesinde yer, zaman, kahraman ve ailelerin tanıtıldığı kalıplaşmış giriştir."
     },
     {
       "id": "edebiyat_10_u03_k03_o04:flashcard",
-      "front": "Halk hikâyelerinde en yaygın işlenen konu kümeleri nelerdir?",
-      "back": "Aşk, kahramanlık ve dinî konular."
+      "front": "Fasıl nedir?",
+      "back": "Âşığın divani, cinaslı türkü ve tekerleme söyleyerek dinleyiciyi hazırladığı bölümdür."
     },
     {
       "id": "edebiyat_10_u03_k03_o05:flashcard",
-      "front": "Halk hikâyeleri ile destan geleneği arasındaki gelişim ilişkisini yaz.",
-      "back": "Halk hikâyeleri destan geleneğinden doğmuş; daha sonra yerini modern hikâyeye bırakmıştır."
+      "front": "Halk hikâyesinde efsane bölümü nedir?",
+      "back": "Vuslatın gerçekleşmediği hikâyelerde öbür dünyada vuslata işaret eden bölümdür."
     },
     {
       "id": "edebiyat_10_u03_k03_o06:flashcard",
-      "front": "Halk hikâyelerindeki mekân ve olağanüstülük, destan ve modern romana göre nasıl değerlendirilir?",
-      "back": "Olağanüstülük destana göre azalır; mekân destan ve masala göre belirginleşir, modern roman ve hikâyeye göre yüzeysel kalır."
+      "front": "İlahi bakış açısı nedir?",
+      "back": "Anlatıcının geçmişe ve geleceğe vakıf, her şeyi bilen konumda olmasıdır."
     },
     {
       "id": "edebiyat_10_u03_k03_o07:flashcard",
-      "front": "Halk hikâyesinin beş temel bölümünü sırayla yaz.",
-      "back": "Fasıl, döşeme, hikâyenin asıl konusu, sonuç ve dua, efsane."
+      "front": "Halk hikâyesinin destandan ayrılan yönleri nedir?",
+      "back": "Tarihî vaka şartı yoktur; nazım-nesir karışıktır, aşk maceraları öne çıkar."
     },
     {
       "id": "edebiyat_10_u03_k03_o08:flashcard",
-      "front": "Halk hikâyesinin döşeme bölümünde hangi bilgiler tanıtılır?",
-      "back": "Hikâyenin geçtiği yer ve zaman, kahramanlar ve aileleri tanıtılır."
+      "front": "Halk hikâyesinde varyant nedir?",
+      "back": "Aynı hikâyenin âşıkların yorumuyla farklı yörelerde aldığı değişik biçimlerdir."
     },
     {
       "id": "edebiyat_10_u03_k03_o09:flashcard",
-      "front": "Halk hikâyesi anlatımında aynı anlatının farklı yörelerde değişen biçimlerine ne denir?",
-      "back": "Varyant."
+      "front": "Cenkname nedir?",
+      "back": "Hz. Ali'nin kahramanlıklarını anlatan, İslami dönem destan geleneğinin ürünü hikâyelerdir."
     },
     {
       "id": "edebiyat_10_u03_k03_o10:flashcard",
-      "front": "Halk hikâyelerinin mesnevilerden önemli farkını yaz.",
-      "back": "Halk hikâyeleri nazım-nesir karışık ve çoğunlukla anonimdir; mesneviler yalnız şiirle yazılır ve söyleyeni bellidir."
+      "front": "Halk hikâyesinin anonimlik nedeni nedir?",
+      "back": "Halkın ortak malı olmalarıdır; tek bir yazarı yoktur."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi"
+  ]
 }

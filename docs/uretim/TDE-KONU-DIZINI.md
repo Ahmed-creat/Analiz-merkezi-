@@ -42,17 +42,17 @@ Aksi hâlde "KoĢuk" gibi aramalar tutmaz.
 | 16 | `edebiyat_10_u02_k07` | Bağlaç | DN s.104-107 | ✅ 10+10 · `tde-t02-dil.js` |
 | 17 | `edebiyat_10_u02_k08` | Ünlem | DN s.108 | ✅ 10+10 · `tde-t02-dil.js` |
 | 18 | `edebiyat_10_u02_k09` | Anlamına Göre Cümleler | DN s.68-70 | ✅ 10+10 · `tde-t02-dil.js` |
-| 19 | `edebiyat_10_u03_k01` | Destan | DN s.110-116 | ⬜ bekliyor |
-| 20 | `edebiyat_10_u03_k02` | Mesnevi | DN s.117-118 | ⬜ bekliyor |
-| 21 | `edebiyat_10_u03_k03` | Halk Hikâyesi | DN s.118-121 | ⬜ bekliyor |
-| 22 | `edebiyat_10_u03_k04` | Fabl | DN s.121-123 | ⬜ bekliyor |
-| 23 | `edebiyat_10_u03_k05` | Zarflar (Belirteçler) | DN s.123-129 | ⬜ bekliyor |
-| 24 | `edebiyat_10_u03_k06` | Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans) | DN s.24-33 | ⬜ bekliyor |
-| 25 | `edebiyat_10_u04_k01` | Dede Korkut Hikâyeleri | DN s.131-132 | ⬜ bekliyor |
-| 26 | `edebiyat_10_u04_k02` | Tanzimat Dönemi Şiiri | DN s.133 | ⬜ bekliyor |
-| 27 | `edebiyat_10_u04_k03` | Fiiller (Eylemler) | DN s.134-147 | ⬜ bekliyor |
-| 28 | `edebiyat_10_u04_k04` | Yazım Kuralları | **YK** s.1-31 | ⬜ bekliyor |
-| 29 | `edebiyat_10_u04_k05` | Noktalama İşaretleri | **Nİ** s.1-12 | ⬜ bekliyor |
+| 19 | `edebiyat_10_u03_k01` | Destan | DN s.110-116 | ✅ 10+10 · `tde-t03.js` |
+| 20 | `edebiyat_10_u03_k02` | Mesnevi | DN s.117-118 | ✅ 10+10 · `tde-t03.js` |
+| 21 | `edebiyat_10_u03_k03` | Halk Hikâyesi | DN s.118-121 | ✅ 10+10 · `tde-t03.js` |
+| 22 | `edebiyat_10_u03_k04` | Fabl | DN s.121-122 | ✅ 10+10 · `tde-t03.js` |
+| 23 | `edebiyat_10_u03_k05` | Zarflar (Belirteçler) | DN s.123-129 | ✅ 10+10 · `tde-t03-dil.js` |
+| 24 | `edebiyat_10_u03_k06` | Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans) | DN s.24-33 | ✅ 10+10 · `tde-t03-dil.js` |
+| 25 | `edebiyat_10_u04_k01` | Dede Korkut Hikâyeleri | DN s.131-132 | ✅ 10+10 · `tde-t04.js` |
+| 26 | `edebiyat_10_u04_k02` | Tanzimat Dönemi Şiiri | DN s.133 | ✅ 10+10 · `tde-t04.js` |
+| 27 | `edebiyat_10_u04_k03` | Fiiller (Eylemler) | DN s.134-147 | ✅ 10+10 · `tde-t04.js` |
+| 28 | `edebiyat_10_u04_k04` | Yazım Kuralları | **YK** s.1-31 | ✅ 10+10 · `tde-t04-yazim.js` |
+| 29 | `edebiyat_10_u04_k05` | Noktalama İşaretleri | **Nİ** s.1-12 | ✅ 10+10 · `tde-t04-yazim.js` |
 | 30 | `edebiyat_10_u04_k06` | Paragraf | — | ⛔ **havuz üretilmeyecek** (uygulamada paragraf sorusu sorulamıyor; eski havuz `arsiv/soru_havuzlari/edebiyat/` altında) |
 
 Not: `konu_kayit_defteri.json` içinde ayrıca `muf_10_turk_dili_ve_edebiyat_01..29` kayıtları var; bunlar
