@@ -154,7 +154,11 @@ ok("havuz eşleme kesin fonksiyonu var", ENGINE.indexOf("function havuzEsle(topi
 // artık KULLANILIYOR; ama yalnız (a) TEK eşleşme varsa ve (b) havuzun
 // `sinif` etiketi öğrencinin sınıfıyla AYNIYSA. Böylece başka sınıfın/konunun
 // sorusu gösterilmez. Tahminî eşleme (__okzKonuPoolEsle) hâlâ yasak.
-ok("HB eşlemesi sınıf kilidiyle kullanılıyor", /HB\.bul\(ham, uygun\)/.test(ENGINE) && /String\(h\.sinif \|\| ""\) === sinif/.test(ENGINE));
+// v76 — sınıf kilidi artık YALNIZ HB dalında değil, havuzEsle'nin TÜM
+// eşleme yollarında (birebir topic_key / başlık / HB / EK_ESLEME) geçerli.
+ok("HB eşlemesi sınıf kilidiyle kullanılıyor", /HB\.bul\(ham, evren\)/.test(ENGINE) && /const evren = sinif \? liste\.filter/.test(ENGINE));
+ok("sınıf kilidi ilk kurallarda da geçerli (9. sınıf 10. sınıf havuzuna bağlanmaz)",
+  /evren\[i\]\.topic_key/.test(ENGINE) && /evren\.find\(function \(h\) \{ return h && String\(h\.konu_id\) === EK_ESLEME\[ham\]/.test(ENGINE));
 ok("tahminî eşleme (__okzKonuPoolEsle) KULLANILMIYOR", !/__okzKonuPoolEsle/.test(ENGINE));
 ok("elle ek eşleme tablosu var (EK_ESLEME)", ENGINE.indexOf("EK_ESLEME") > 0);
 ok('"undefined" havuz kimliği geçersiz sayılıyor', ENGINE.indexOf('ham === "undefined"') > 0);

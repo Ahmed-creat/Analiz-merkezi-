@@ -40,7 +40,7 @@ const ROADMAP_STEPS = [
   { title: "Karışık Pratik", desc: "" }
 ];
 
-function ciz(state, step, pool) {
+function ciz(state, step, pool, havuzVar) {
   const selectedTopicKey = "Matematik > Üslü Sayılar";
   const tstate = { step: step };
   const attr = (x) => String(x);
@@ -48,11 +48,14 @@ function ciz(state, step, pool) {
   const icon = (n) => "[" + n + "]";
   const APRX = "'";
   const havuzIdCoz = () => pool;
+  // v76 — blok artık konuHavuzuVar() ile "havuz kesin yok" bilgisini de kullanır
+  // (true / false / null). Varsayılan: bilinmiyor (null) → eski davranış.
+  const konuHavuzuVar = () => (havuzVar === undefined ? null : havuzVar);
   const fn = new Function(
-    "state", "tstate", "selectedTopicKey", "ROADMAP_STEPS", "havuzIdCoz", "attr", "esc", "icon", "APRX",
+    "state", "tstate", "selectedTopicKey", "ROADMAP_STEPS", "havuzIdCoz", "konuHavuzuVar", "attr", "esc", "icon", "APRX",
     "var html = '';\n" + BLOK + "\nreturn html;"
   );
-  return fn(state, tstate, selectedTopicKey, ROADMAP_STEPS, havuzIdCoz, attr, esc, icon, APRX);
+  return fn(state, tstate, selectedTopicKey, ROADMAP_STEPS, havuzIdCoz, konuHavuzuVar, attr, esc, icon, APRX);
 }
 
 const HAVUZ = "mat_10_u01_k01";
@@ -88,11 +91,18 @@ console.log("\n== 3) Kısa kontrol bitince TAMAMLANDI ==");
   ok("kilit metni yok", h.indexOf("Önce 5 soruluk kontrolü bitir") < 0);
 }
 
-console.log("\n== 4) Havuzu olmayan konu kilitlenmez ==");
+console.log("\n== 4) Havuzu olmayan konu kilitlenmez + 5. adım HİÇ çizilmez ==");
 {
-  const h = ciz({ bkt_state: {} }, 4, null);
-  ok("havuz yok notu", h.indexOf("soru havuzu yok") >= 0);
+  // v76 — KULLANICI: "Havuz yok ise direkt kart veya soru düğmesi olmasın,
+  // açılmasın." Havuzu olmayan konuda 5. adım satırı, "5 soruluk kontrole
+  // başla" düğmesi ve "soru havuzu yok" notu çizilmez; konu 4 adımla
+  // tamamlanır (kilit yok).
+  const h = ciz({ bkt_state: {} }, 4, null, false);
+  ok("5. adım satırı YOK", h.indexOf("Kısa Kontrol (5 soru)") < 0);
+  ok("'soru havuzu yok' notu YOK", h.indexOf("soru havuzu yok") < 0);
+  ok("başlık '4 adım'", h.indexOf("· 4 adım") >= 0);
   ok("tamamla düğmesi AÇIK", h.indexOf("Konuyu Tamamlandı Olarak İşaretle") >= 0);
+  ok("kilit metni YOK", h.indexOf("Önce 5 soruluk kontrolü bitir") < 0);
 }
 
 console.log("\n== 5) completeTopic kapısı ==");

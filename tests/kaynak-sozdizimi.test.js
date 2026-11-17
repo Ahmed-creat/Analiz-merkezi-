@@ -116,8 +116,10 @@ ok("havuzEsle tanımlı", ENGINE.indexOf("function havuzEsle(topicKey, havuzlar)
 // v39 — kural değişti: HB artık SINIF KİLİDİYLE kullanılıyor (aynı sınıf +
 // tek eşleşme). Serbest benzerlik/tahmin hâlâ yasak: sınıf filtresi olmadan
 // HB.bul çağrısı varsa test kırılır.
+// v76 — sınıf kilidi havuzEsle'nin BAŞINDA kurulur (evren); böylece birebir
+// topic_key / başlık / HB / EK_ESLEME yollarının hepsi sınıf kilidine uyar.
 ok("HB.bul yalnız sınıf kilidiyle kullanılıyor",
-  /HB\.bul\(ham, uygun\)/.test(ENGINE) && /String\(h\.sinif \|\| ""\) === sinif/.test(ENGINE));
+  /HB\.bul\(ham, evren\)/.test(ENGINE) && /const evren = sinif \? liste\.filter\(h => h && \(!h\.sinif \|\| String\(h\.sinif\) === sinif\)\) : liste;/.test(ENGINE));
 ok("__okzKonuPoolEsle (tahmini eşleme) kullanılmıyor", !/__okzKonuPoolEsle/.test(ENGINE));
 ok("ders geneli fallback YOK", !/sameLesson/.test(ENGINE) && !/aynı dersin havuzuna düş/.test(ENGINE));
 

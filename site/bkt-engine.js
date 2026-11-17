@@ -620,12 +620,22 @@
     const liste = Array.isArray(havuzlar) ? havuzlar : [];
     const ham = String(topicKey == null ? "" : topicKey);
     if (!ham || ham === "undefined" || ham === "null" || !liste.length) return null;
-    for (let i = 0; i < liste.length; i++) {
-      if (liste[i] && String(liste[i].topic_key) === ham) return liste[i];
+    // v76 — SINIF KİLİDİ EN BAŞTA. Kullanıcı: "Havuz yok ise direkt kart veya
+    // soru düğmesi olmasın." 9. sınıfın konu adları 10. sınıfla birebir
+    // olabildiği için (TDE) ilk iki kural sınıf kilidini ATLIYORDU: 9. sınıf
+    // konusu 10. sınıf havuzuna bağlanıp "havuz var" görünüyordu. Artık
+    // öğrencinin sınıfı biliniyorsa yalnız aynı sınıfın (ya da sınıfı
+    // yazılmamış) havuzları arasında aranır.
+    let sinif = "";
+    try { const st = ensureStore(); sinif = String((st && st.user && st.user.grade) || ""); } catch (e) { sinif = ""; }
+    const evren = sinif ? liste.filter(h => h && (!h.sinif || String(h.sinif) === sinif)) : liste;
+    if (!evren.length) return null;
+    for (let i = 0; i < evren.length; i++) {
+      if (evren[i] && String(evren[i].topic_key) === ham) return evren[i];
     }
     const ders = sadeles(dersParcasi(ham));
     const konu = konuParcasi(ham);
-    const ayniDers = liste.filter(h => h && (!ders || sadeles(h.ders) === ders));
+    const ayniDers = evren.filter(h => h && (!ders || sadeles(h.ders) === ders));
     for (let i = 0; i < ayniDers.length; i++) {
       if (sadeles(havuzBasligi(ayniDers[i])) === sadeles(konu)) return ayniDers[i];
     }
@@ -644,15 +654,12 @@
         // 10. sınıf havuzuna bağlanmaz (eski hata: "1.4 Kur'an'dan Mesajlar"
         // 10. sınıfın havuzuna düşüyordu). Yalnız öğrencinin sınıfıyla
         // aynı `sinif` etiketli havuzlar arasında aranır.
-        let sinif = "";
-        try { const st = ensureStore(); sinif = String((st && st.user && st.user.grade) || ""); } catch (e2) { sinif = ""; }
-        const uygun = sinif ? liste.filter(function (h) { return h && String(h.sinif || "") === sinif; }) : [];
-        const hb = uygun.length ? window.HB.bul(ham, uygun) : null;
+        const hb = evren.length ? window.HB.bul(ham, evren) : null;
         if (hb && hb.konu_id) return hb;
       }
     } catch (e) { /* HB yoksa aşağıdaki elle eşlemeye düşer */ }
     if (EK_ESLEME[ham]) {
-      const secili = liste.find(function (h) { return h && String(h.konu_id) === EK_ESLEME[ham]; });
+      const secili = evren.find(function (h) { return h && String(h.konu_id) === EK_ESLEME[ham]; });
       if (secili) return secili;
     }
     // Başka konu/ders/sınıfın sorusu yine GÖSTERİLMEZ: eşleşme yoksa null.
@@ -679,6 +686,16 @@
     if (kesin) return kesin;
     if (kayitli && havuzDogrula(topicKey, kayitli)) return String(kayitli);
     return null;
+  };
+  // v76 — "BU KONUNUN SORU HAVUZU VAR MI?" ÜÇ DURUMLU
+  // Kullanıcı: "Havuz yok ise direkt kart veya soru düğmesi olmasın, açılmasın."
+  //   true  → havuz var (düğmeler çizilir)
+  //   false → manifest YÜKLENDİ ve bu konuya ait havuz YOK (düğme hiç çizilmez)
+  //   null  → manifest henüz yüklenmedi; karar verme, düğmeyi gizleme.
+  // (Manifest geç gelirse Bilgi Bankası yeniden çizilir — bkz. loadPoolManifest.)
+  window.__havuzVarMi = function (topicKey) {
+    if (!poolManifest || !Array.isArray(poolManifest.havuzlar) || !poolManifest.havuzlar.length) return null;
+    return !!resolvePoolId(topicKey);
   };
   function loadPool(topicId) {
     if (!topicId) return Promise.resolve(null);

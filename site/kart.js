@@ -289,14 +289,27 @@
         document.head.appendChild(st);
       }
 
+      // v76 — KULLANICI: "kart açılıyor ve soru havuzu yok diyor, kart
+      // kapatılmıyor." KÖK NEDEN: aşağıdaki boş dal kapatma dinleyicisi
+      // BAĞLANMADAN `bitir()` ile dönüyordu; × ve arka plan tıklaması
+      // çalışmıyor, pencere ekranda kilitli kalıyordu. Artık:
+      //   1) havuzu/kartı olmayan konuda PENCERE HİÇ AÇILMAZ,
+      //   2) açılsa bile kapatma her koşulda bağlanır (aşağıdaki kapatBagla).
+      function kapatBagla() {
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal || (e.target.closest && e.target.closest("[data-kart-kapat]"))) kapat();
+        });
+        document.addEventListener("keydown", function escKapat(e) {
+          if (e.key !== "Escape") return;
+          // Pencere zaten kapandıysa dinleyiciyi bırak (birikmesin).
+          if (!document.getElementById(MODAL_ID)) { document.removeEventListener("keydown", escKapat); return; }
+          kapat();
+          document.removeEventListener("keydown", escKapat);
+        });
+      }
       if (!liste.length) {
-        kutu.innerHTML =
-          '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px;">' +
-          '<b style="font-size:15px;">Tekrar Kartları</b>' +
-          '<button type="button" data-kart-kapat style="min-width:44px;min-height:44px;border:0;background:none;font-size:22px;cursor:pointer;color:inherit;">×</button></div>' +
-          '<p style="font-size:13px;line-height:1.55;margin:0;">Bu konuyla birebir eşleşen kart bulunamadı. Başka konunun kartları gösterilmez.</p>' +
-          '<p style="font-size:12px;opacity:.7;margin:8px 0 0;">Kartlar, konu onaylandığında Bilgi Bankası maddelerinden üretilir. Kısa Kontrol buradan açılmaz — o Konu Takibi\'nde.</p>';
-        return bitir({ ok: false, kartSayisi: 0 });
+        // Pencere açmıyoruz: çağıran taraf (tekrarKartBasla) tekrarı yazar.
+        return { ok: false, kartSayisi: 0 };
       }
 
       var i = 0, acik = false;
@@ -399,8 +412,10 @@
         e.preventDefault();
         cevir();
       });
+      // Kapatma (× / arka plan / Esc) TEK yerde: kapatBagla(). Kart turu
+      // bitince de aynı dinleyici kullanılır — pencere asla kilitli kalmaz.
+      kapatBagla();
       modal.addEventListener("click", function (e) {
-        if (e.target === modal || e.target.closest("[data-kart-kapat]")) { kapat(); return; }
         if (e.target.closest("[data-kart-cevir]") || e.target.closest("[data-kart-goster]")) { cevir(); return; }
         if (e.target.closest("[data-kart-tekrar]")) {
           tur = liste.filter(function (k) {

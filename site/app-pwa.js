@@ -1,4 +1,4 @@
-const PWA_SURUM = "v75-havuz192";
+const PWA_SURUM = "v76-havuzsuz";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

@@ -4269,7 +4269,11 @@ function gunlukGorevler() {
   }
 
   // 5) Tekrar kartları (hafıza gücü düşük konular)
-  const kart = ms.rows.filter(r => r.pct < 60).slice(0, 6);
+  // v76 — KULLANICI: "Havuz yok ise direkt kart ... düğmesi olmasın."
+  // Havuzu ve kişisel kartı olmayan konu göreve hiç girmez; düğme çizilmez.
+  const kart = ms.rows.filter(r => r.pct < 60)
+    .filter(r => kartDurumHizli(r.key).sayi > 0 || konuHavuzuVar(r.key) === true)
+    .slice(0, 6);
   if (kart.length) {
     liste.push({
       id: "kart", tur: "kart", icon: "layers", onem: 2,
@@ -4628,9 +4632,15 @@ function renderTracking(container) {
       const tekrarZamani = !!(r && r.due);
       let tekrarDugme = "";
       if (r) {
+        // v76 — kartı olmayan konuda "kartlar zorunlu" yazılmaz: o konuda
+        // kart penceresi hiç açılmaz, tekrar doğrudan yazılır.
+        const kartVarSatir = kartDurumHizli(r.key).sayi > 0 || konuHavuzuVar(r.key) === true;
         if (tekrarZamani) {
-          tekrarDugme = '<button class="btn btn-sm btn-danger w-full" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:42px;">' +
-            icon("flame", 13) + " Tekrar Ettim · kartlar zorunlu</button>";
+          tekrarDugme = kartVarSatir
+            ? '<button class="btn btn-sm btn-danger w-full" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:42px;">' +
+              icon("flame", 13) + " Tekrar Ettim · kartlar zorunlu</button>"
+            : '<button class="btn btn-sm btn-danger w-full" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:42px;">' +
+              icon("flame", 13) + " Tekrar Ettim</button>";
         } else {
           tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="earlyReview" data-topic="' + attr(r.key) + '" style="min-height:38px;opacity:.85;">' +
             icon("fast-forward", 13) + " Erken Tekrar</button>";
@@ -5067,7 +5077,11 @@ function konuTamamMi(topicKey) {
   return !!(m && m.completedAt);
 }
 function tamamlanmamisUyar(topicKey) {
-  toast("Bu konu 5 adımlı çalışmayı tamamlamadı — önce Bilgi Bankası'nda adımları ve 5 soruluk kısa kontrolü bitir.", "warning");
+  // v76 — havuzu olmayan konuda 5. adım yok; mesaj 4 adımı söyler.
+  const besVar = konuHavuzuVar(topicKey) !== false;
+  toast(besVar
+    ? "Bu konu 5 adımlı çalışmayı tamamlamadı — önce Bilgi Bankası'nda adımları ve 5 soruluk kısa kontrolü bitir."
+    : "Bu konu 4 adımlı çalışmayı tamamlamadı — önce Bilgi Bankası'nda adımları bitir.", "warning");
   try { navigate("knowledge"); selectKnowledgeTopic(topicKey); } catch (e) { /* */ }
 }
 // v42 — TEKRAR YOLU TEK KURAL:
@@ -5108,7 +5122,8 @@ function reviewTopic(topicKey, erken) {
         // Gerçekten kartı olmayan konu kilitlenmesin.
         markReviewed(topicKey, false);
         navigate("tracking");
-        toast("Tekrar kaydedildi (bu konunun kartı yok); hafıza barı %100.", "success");
+        // v76 — kartı olmayan konuda "kart yok" uyarısı gösterilmez.
+        toast("Tekrar kaydedildi; hafıza barı %100.", "success");
       }
     }).catch(function () {
       markReviewed(topicKey, false); navigate("tracking");
@@ -5136,8 +5151,10 @@ function tekrarKartBasla(topicKey) {
   const yaz = function (kartli) {
     markReviewed(topicKey, erken);
     navigate("tracking");
+    // v76 — havuzu olmayan konuda kart penceresi hiç açılmaz; kullanıcıya
+    // "kart yok" gibi bir uyarı da gösterilmez, tekrar sessizce yazılır.
     toast((erken ? "Erken tekrar kaydedildi" : "Tekrar kaydedildi") +
-      (kartli ? "" : " (bu konunun kartı yok)") + "; hafıza barı %100.", "success");
+      "; hafıza barı %100.", "success");
   };
   // Bugün kart turu zaten bittiyse kart istemeyiz; tekrarı doğrudan yaz.
   if (kartDurumHizli(topicKey).tamam) { yaz(true); return; }
@@ -5850,8 +5867,12 @@ function soruCozumDetay(examIdx, ders, qno, topicKey) {
     h += "</div>";
   }
   h += '<div style="display:flex;flex-direction:column;gap:8px;">';
-  // 1) BİRİNCİL: aynı konudan 5 soru — kısır döngü yok, yerinde çözüm
-  h += '<button type="button" class="btn btn-primary w-full" data-soru-pratik="' + attr(String(topicKey || "")) + '" style="min-height:48px;">' + icon("pencil-line", 15) + ' Bu konudan 5 soru çöz</button>';
+  // 1) BİRİNCİL: aynı konudan 5 soru — kısır döngü yok, yerinde çözüm.
+  // v76 — KULLANICI: "Havuz yok ise direkt kart veya soru düğmesi olmasın."
+  // Havuzu olmayan konuda düğme hiç çizilmez (tıklayınca uyarı vermek yok).
+  if (konuHavuzuVar(topicKey) !== false) {
+    h += '<button type="button" class="btn btn-primary w-full" data-soru-pratik="' + attr(String(topicKey || "")) + '" style="min-height:48px;">' + icon("pencil-line", 15) + ' Bu konudan 5 soru çöz</button>';
+  }
   // 2) Varsa gerçek video
   if (video) h += '<a href="' + attr(video) + '" target="_blank" rel="noopener" class="btn btn-ghost w-full" style="min-height:48px;justify-content:center;">' + icon("play", 15) + ' Videoyu aç</a>';
   // 3) Okulizyon sayfası: NE OLDUĞU AÇIKÇA YAZAR (sürpriz giriş ekranı yok)
@@ -5891,6 +5912,17 @@ function havuzIdCoz(topicKey, kayitli) {
   return null;
 }
 
+// v76 — KONUNUN SORU HAVUZU VAR MI?  true / false / null (bilinmiyor)
+// Kullanıcı: "Havuz yok ise direkt kart veya soru düğmesi olmasın, açılmasın."
+// null (manifest henüz yüklenmedi) → düğme çizilir; manifest gelince ekran
+// yeniden çizilir (bkt-engine loadPoolManifest).
+function konuHavuzuVar(topicKey) {
+  try {
+    if (typeof window.__havuzVarMi === "function") return window.__havuzVarMi(topicKey);
+  } catch (e) { /* motor yoksa bilinmiyor */ }
+  return null;
+}
+
 function renderKnowledge(container) {
   const tree = CURRICULUM[state.user.grade || "9"] || {};
   const dl = daysLeftToExam();
@@ -5913,7 +5945,13 @@ function renderKnowledge(container) {
         const key = lesson + " > " + topic;
         const mem = state.memory[key];
         const done = mem && mem.completedAt;
-        const status = done ? '<span class="badge badge-success">' + icon("check", 10) + " %" + getMemoryStrength(key) + "</span>" : (state.topics[key] && state.topics[key].step > 0 ? '<span class="badge badge-info">ADIM ' + state.topics[key].step + "</span>" : "");
+        /* v76 — "YAKINDA" ROZETİ. 9. sınıfın soru havuzu henüz yok; kullanıcı
+           "Uygulamada 'yakında' olarak işaretle" dedi. Rozet yalnız 9. sınıfta
+           ve havuzun OLMADIĞI kesinleştiğinde çizilir (manifest yüklenmeden
+           hiçbir şey yazılmaz). Düğme değildir; tıklanınca hiçbir şey açılmaz. */
+        const yakinda = (String(state.user.grade || "9") === "9" && konuHavuzuVar(key) === false)
+          ? '<span class="badge" style="background:var(--bg-canvas);color:var(--text-muted);border:1px solid var(--border-card);font-size:9.5px;">YAKINDA</span>' : "";
+        const status = done ? '<span class="badge badge-success">' + icon("check", 10) + " %" + getMemoryStrength(key) + "</span>" : (state.topics[key] && state.topics[key].step > 0 ? '<span class="badge badge-info">ADIM ' + state.topics[key].step + "</span>" : yakinda);
         html += '<button class="tree-child ' + (selectedTopicKey === key ? "active" : "") + '" data-act="selectTopic" data-topic="' + attr(key) + '"><span>' + esc(topic) + "</span>" + status + "</button>";
       });
       html += "</div>";
@@ -5948,8 +5986,12 @@ function renderKnowledge(container) {
     const bktEntry = state.bkt_state && state.bkt_state[selectedTopicKey];
     const bktPercent = bktEntry && bktEntry.gozlem_sayisi >= 5 ? Math.round(Number(bktEntry.L || 0) * 100) : null;
 
+    // v76 — Havuzu olmayan konu (9. sınıf) "YAKINDA" olarak işaretlenir;
+    // hata/uyarı gibi değil, nötr bir rozet olarak.
+    const konuYakinda = konuHavuzuVar(selectedTopicKey) === false
+      ? ' <span class="badge" style="background:var(--bg-canvas);color:var(--text-muted);border:1px solid var(--border-card);font-size:10px;vertical-align:middle;">YAKINDA</span>' : "";
     html += '<div class="bento-card" style="margin-bottom:16px;"><div class="flex items-center justify-between" style="flex-wrap:wrap;gap:8px;"><div><span class="badge badge-info">' + esc(p.lesson) + "</span>" +
-      '<h3 style="font-size:18px;font-weight:700;margin-top:6px;">' + esc(p.topic) + "</h3></div>" +
+      '<h3 style="font-size:18px;font-weight:700;margin-top:6px;">' + esc(p.topic) + konuYakinda + "</h3></div>" +
       '<span class="badge" style="background:' + diff.color + '22;color:' + diff.color + ';">Soru önerisi: ' + diff.level + (diff.rate !== null ? " (başarı %" + diff.rate + ")" : "") + "</span></div></div>";
 
     // v72 — "İlişkili konular" kartı KALDIRILDI.
@@ -5963,10 +6005,14 @@ function renderKnowledge(container) {
       // zamanı gelmemişse Erken Tekrar, zamanı geldiğinde Tekrar Ettim yazsın ve
       // tıklayınca kart açılsın." Etiket tekrar gününe göre değişir, davranış aynı.
       const tekrarZamani = !!(nr && nr.date && parseDay(nr.date) <= parseDay(todayStr()));
-      const tekrarDugme =
+      // v76 — Havuzu OLMAYAN ve kişisel kartı da OLMAYAN konuda kart düğmesi
+      // çizilmez (kullanıcı: "Havuz yok ise direkt kart veya soru düğmesi
+      // olmasın, açılmasın"). Kişisel kart varsa (deneme hatasından) düğme kalır.
+      const kartVar = (kartDurumHizli(selectedTopicKey).sayi > 0) || (konuHavuzuVar(selectedTopicKey) === true);
+      const tekrarDugme = kartVar ?
         '<button class="btn ' + (tekrarZamani ? "btn-success" : "btn-primary") + ' btn-sm" data-act="tekrarKart" data-topic="' +
         attr(selectedTopicKey) + '" style="min-height:48px;">' +
-        icon(tekrarZamani ? "refresh-cw" : "fast-forward", 14) + (tekrarZamani ? " Tekrar Ettim" : " Erken Tekrar") + "</button>";
+        icon(tekrarZamani ? "refresh-cw" : "fast-forward", 14) + (tekrarZamani ? " Tekrar Ettim" : " Erken Tekrar") + "</button>" : "";
       // v35.6: kontrol testi yapılmadıysa EN ÜSTTE belirgin kart (keşfedilebilir olsun)
       const bktKayit = (state.bkt_state && state.bkt_state[selectedTopicKey]) || {};
       const havuzKontrol = havuzIdCoz(selectedTopicKey, bktKayit.pool_id);
@@ -6043,7 +6089,14 @@ function renderKnowledge(container) {
       const bktKayitAdim = (state.bkt_state && state.bkt_state[selectedTopicKey]) || {};
       const kontrolHavuz = havuzIdCoz(selectedTopicKey, bktKayitAdim.pool_id);
       const kisaBitti = !!bktKayitAdim.son_kisa_kontrol;
-      html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("map", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + ' Çalışma Yol Haritası <span class="text-xs text-muted" style="font-weight:600;">· 5 adım</span></h3>';
+      // v76 — KULLANICI: "Havuz yok ise ... açılmasın." Havuzu olmayan konuda
+      // 5. adım (kısa kontrol) HİÇ ÇİZİLMEZ; "soru havuzu yok" notu da
+      // yazılmaz. Konu 4 adımla tamamlanır ve kilit oluşmaz.
+      const havuzDurum = (typeof konuHavuzuVar === "function") ? konuHavuzuVar(selectedTopicKey) : (kontrolHavuz ? true : null);
+      // Havuz KESİN varsa 5 adım; KESİN yoksa 4 adım. Manifest henüz
+      // yüklenmediyse (null) yalnız kayıtlı/çözülebilen havuz varsa 5 adım.
+      const besAdim = havuzDurum === true || (havuzDurum === null && !!kontrolHavuz);
+      html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("map", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + ' Çalışma Yol Haritası <span class="text-xs text-muted" style="font-weight:600;">· ' + (besAdim ? "5" : "4") + ' adım</span></h3>';
       ROADMAP_STEPS.forEach((st, i) => {
         const isDone = tstate.step > i;
         const isActive = tstate.step === i;
@@ -6056,7 +6109,8 @@ function renderKnowledge(container) {
         else if (isDone) html += '<span class="badge badge-success" style="margin-top:8px;">TAMAMLANDI</span>';
         html += "</div></div>";
       });
-      // 5. ADIM — Kısa Kontrol (5 soru)
+      // 5. ADIM — Kısa Kontrol (5 soru) · yalnız havuzu olan konuda
+      if (besAdim) {
       html += '<div class="roadmap-step ' + (kisaBitti ? "completed" : (adimBitti ? "active" : "locked")) + '">' +
         '<div class="step-number">' + (kisaBitti ? icon("check", 15) : 5) + "</div>" +
         '<div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:14px;">Kısa Kontrol (5 soru)' + (!adimBitti ? " " + icon("lock", 12, "opacity:0.5;") : "") + "</div>" +
@@ -6065,10 +6119,9 @@ function renderKnowledge(container) {
         html += '<span class="badge badge-success" style="margin-top:8px;">TAMAMLANDI' + (bktKayitAdim.son_kisa_kontrol_dogru != null ? " · " + bktKayitAdim.son_kisa_kontrol_dogru + "/" + (bktKayitAdim.son_kisa_kontrol_toplam || 5) : "") + "</span>";
       } else if (adimBitti && kontrolHavuz) {
         html += '<button class="btn btn-sm btn-primary" style="margin-top:8px;" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(kontrolHavuz) + '" data-bkt-mode="precheck">' + icon("clipboard-check", 13) + " 5 soruluk kontrole başla</button>";
-      } else if (adimBitti) {
-        html += '<div class="text-xs text-muted" style="margin-top:6px;">Bu konunun soru havuzu yok — 5. adım atlanır.</div>';
       }
       html += "</div></div>";
+      }
       if (adimBitti) {
         const kilit = !!kontrolHavuz && !kisaBitti;
         html += '<button class="btn ' + (kilit ? "btn-ghost" : "btn-success") + ' w-full" style="margin-top:6px;" data-act="completeTopic" data-topic="' + attr(selectedTopicKey) + '">' + icon(kilit ? "lock" : "check-circle-2", 16) + " " + (kilit ? "Önce 5 soruluk kontrolü bitir" : "Konuyu Tamamlandı Olarak İşaretle") + "</button>";
@@ -6120,7 +6173,8 @@ function completeTopic(key) {
   // v41 — 5. ADIM KAPISI. Kullanıcı: "konu 5 adımlı çalışmayı tamamlamadı ise
   // hafıza gücü bölümüne gidemez, tekrar kartı da olamaz." Bu yüzden konu
   // ancak 5 soruluk kısa kontrol yapıldıktan sonra tamamlanır. Soru havuzu
-  // olmayan konularda 5. adım atlanır (yoksa konu sonsuza kilitli kalırdı).
+  // olmayan konularda kısa kontrol adımı HİÇ YOKTUR; konu 4 adımla tamamlanır
+  // (yoksa konu sonsuza kilitli kalırdı).
   const bktKayit = (state.bkt_state && state.bkt_state[key]) || {};
   const kontrolHavuz = havuzIdCoz(key, bktKayit.pool_id);
   if (kontrolHavuz && !bktKayit.son_kisa_kontrol) {

@@ -77,12 +77,15 @@ function kart(ms, bkt, limit, st) {
   const kdh = kartDurumHizliUret(durum, () => BUGUN);
   const kartDurumHizli = k => kdh(k);
   const window = { AnalizBKT: { konuDurumlari: () => bkt } };
+  // v76 — "kartlar zorunlu" yalnız kartı/havuzu olan konuda yazılır; blok bu
+  // bilgiyi konuHavuzuVar() ile alır. Testte havuz = BKT kaydındaki poolId.
+  const konuHavuzuVar = k => !!((bkt && bkt[k] && bkt[k].poolId)) ;
   const fn = new Function("html", "ms", "memoryLimit", "window", "icon", "esc", "attr",
     "memoryColor", "memoryKademe", "HAFIZA_SKALA", "fmtDate", "splitKey", "MEMORY_CRITICAL", "MEMORY_WARNING",
-    "state", "todayStr", "kartDurumHizli", "hafizaKartToplam",
+    "state", "todayStr", "kartDurumHizli", "hafizaKartToplam", "konuHavuzuVar",
     "return (function(){\n" + blok + "\nreturn html; })();");
   return fn("", ms, limit || 10, window, icon, esc, attr, memoryColor, memoryKademe, HAFIZA_SKALA, fmtDate, splitKey,
-    MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli, hafizaKartToplam);
+    MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli, hafizaKartToplam, konuHavuzuVar);
 }
 
 const MS = {
@@ -180,6 +183,14 @@ console.log("\n== 3b) v42 — kart istenmesi TEK kurala bağlı (tekrar günü) 
   const stBos = { flashcards: { cards: [] }, tekrarKartlari: {} };
   const cBos = kart(MS, BKT, 10, stBos);
   ok("kart defteri boşken de günü gelen konu kart ister", cBos.indexOf("kartlar zorunlu") >= 0);
+
+  // v76 — KULLANICI: "Havuz yok ise direkt kart veya soru düğmesi olmasın."
+  // Havuzu da kişisel kartı da olmayan konuda "kartlar zorunlu" YAZMAZ.
+  const BKT_HAVUZSUZ = {
+    "Matematik > 1.1 Trigonometri": { key: "Matematik > 1.1 Trigonometri", onayli: false, yeterlilik: 62, gozlem: 7, poolId: null, precheck: false }
+  };
+  const cHavuzsuz = kart(MS, BKT_HAVUZSUZ);
+  ok("havuzsuz konuda 'kartlar zorunlu' YOK", cHavuzsuz.indexOf("kartlar zorunlu") < 0);
 
   ok("5 soru düğmesi yine YOK", c.indexOf("data-bkt-test") < 0);
   ok("ders ayracı KALDIRILDI", c.indexOf("ders-ayrac") < 0);
