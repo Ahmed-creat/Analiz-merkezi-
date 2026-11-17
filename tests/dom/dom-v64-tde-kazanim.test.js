@@ -30,6 +30,7 @@ const KK = R("site/content/mufredat/kazanim_konu_10.json");
 const KA = require(path.join(KOK, "site/konu-anahtar.js"));
 const OKZK = require(path.join(KOK, "site/okz-konu.js"));
 const OKZM = require(path.join(KOK, "site/okz-meb.js"));
+const OKZTDE = require(path.join(KOK, "site/okz-tde.js"));
 const TDE = "Türk Dili ve Edebiyatı";
 
 /* ---- uygulamanın gerçek eşleştirme fonksiyonunu dosyadan al ---- */
@@ -61,6 +62,7 @@ globalThis.OKZM = OKZM;
 globalThis.KA = KA;
 globalThis.OKZK = OKZK;
 globalThis.OKZK_IDX = OKZ_IDX;
+globalThis.OKZTDE = OKZTDE;
 globalThis.okzStore = () => ({});
 globalThis.okzBilinenDersler = () => ["Türk Dili ve Edebiyatı"];
 globalThis.window_OKZ = globalThis.OKZ = require(path.join(KOK, "site/okz-normalize.js"));
@@ -136,12 +138,18 @@ ok("eşleşen 4 cümle TDE2.x kodu taşıyor",
     return !r.kod || /^TDE/.test(r.kod);
   }));
 
+/* v70 — 2. AŞAMA: cümlede tür/dönem adı yoksa genel beceri kuralı
+   devreye girer ve **Paragraf**'a yönlendirir (kaynak "genel").
+   Uydurma bir konu değil: Paragraf o becerinin 10. sınıftaki konusu. */
 const genel = ["Metindeki söz varlığının anlamını bağlamdan hareketle belirler.",
   "Metinlerden hareketle çıkarımlar yapar."];
 for (const c of genel) {
   const r = konuBul(c);
-  ok("genel beceri uydurma konuya BAĞLANMIYOR: " + c.slice(0, 34), !r || !r.konu, r ? r.konu : "");
+  ok("genel beceri → Paragraf (2. aşama): " + c.slice(0, 30), r && r.konu === "Paragraf" && r.kaynak === "genel",
+    r ? r.konu + "/" + r.kaynak : "eşleşmedi");
 }
+ok("genel beceri 1. aşamayı EZMEZ (koşuk → Koşuk)",
+  (konuBul("Koşuk dörtlüklerle söylenen bir türdür, çıkarım yapmayı gerektirir.") || {}).konu === "Koşuk");
 ok("2 genel cümle kayıtta ama konusuz olarak işaretli",
   TDED.genel_kazanimlar.length === 2 && TDED.genel_kazanimlar.every((x) => x.neden_konusuz));
 

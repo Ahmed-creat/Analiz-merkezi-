@@ -1,4 +1,4 @@
-const PWA_SURUM = "v69-surec-kazanim";
+const PWA_SURUM = "v70-ogrenen-sozluk";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -939,6 +939,7 @@ function listenAuth() {
     if (event === "SIGNED_OUT" || !session) {
       currentUser = null;
       window.currentUser = null;
+      try { OKZ_CACHE = Object.create(null); OKZ_CACHE_YUKLENDI = false; } catch (e) {}
       window.__bulutYuklenenKullanici = null;
       setAuthLabel(false);
       return;
@@ -959,6 +960,9 @@ async function oturumUygula(session) {
   setAuthLabel(true, kim);
   // Giriş yapıldığı anda Okulizyon kuyruğunu dene (eskiden yalnız "internet geri geldi" olayında deniyordu)
   setTimeout(function () { try { if (typeof state !== "undefined") okzKuyrukCek(true); } catch (e) {} }, 1200);
+  // v70 — öğrenen sözlüğü (kazanim_konu_cache) yükle: aynı kazanım cümlesi
+  // ikinci kez geldiğinde kurallar/vektör çalışmadan konu buradan gelir.
+  setTimeout(function () { try { okzCacheYukle(); } catch (e) {} }, 900);
   if (!yeniKullanici && window.__bulutYuklenenKullanici === user.id) return; // token yenilemede tekrar yükleme
   window.__bulutYuklenenKullanici = user.id;
   if (typeof state === "undefined") return; // state henüz hazır değil (index.html yükleniyor)
@@ -1545,24 +1549,165 @@ function okzKonuBul(ders, kazanim) {
   // 2) ELLE BAKILMIŞ KURAL TABLOSU (site/konu-anahtar.js)
   // Kazanım cümlesinde konunun ayırt edici kavramı geçiyorsa ("açıortay",
   // "mol", "ahenk"…) doğrudan konuya bağlanır. İndeks yüklenmeden de çalışır.
+  // v70 — ÖĞRENEN SÖZLÜK (3. aşama önbelleği)
+  // Bu cümle daha önce çözüldüyse (kural/sözlük/genel/vektör) hiçbir aşama
+  // çalışmaz; cevap Supabase'deki kazanim_konu_cache'ten gelir.
+  const onbellek = okzCacheBul(kanon, kazanim);
+  if (onbellek) return onbellek;
   if (window.KA && typeof window.KA.esle === "function") {
     const kural = window.KA.esle(kazanim, kanon);
     if (kural && kural.konu) {
-      return { konu: kural.konu, topicKey: kanon + " > " + kural.konu, kaynak: "kural" };
+      okzCacheYaz(kanon, kazanim, kural.konu, "kural", 0.9, {});
+      return { konu: kural.konu, topicKey: kanon + " > " + kural.konu, kaynak: "kural", asama: 1 };
     }
   }
-  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return null;
+  // v70 — AŞAMA 1: TDE konu adı/anahtar kelime sözlüğü (91 terim)
+  // "kavuştak" → Türkü, "matla" → Gazel, "tegazzül" → Kaside…
+  // Türkçe ekler tanınır (koşuğun → koşuk); ek olmayan harf dizisi eşleşmez
+  // (çatışma ≠ çatı). Yalnız Türk Dili ve Edebiyatı için çalışır.
+  if (okzTdeMi(kanon) && window.OKZTDE && typeof window.OKZTDE.sozlukEsle === "function") {
+    const soz = window.OKZTDE.sozlukEsle(kazanim);
+    if (soz && soz.konu) {
+      okzCacheYaz(kanon, kazanim, soz.konu, "kural", 0.9, { terim: soz.terim });
+      return { konu: soz.konu, topicKey: kanon + " > " + soz.konu, kaynak: "sozluk", asama: 1, terim: soz.terim };
+    }
+  }
+  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return okzTdeYedek(kanon, kazanim);
   const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
-  if (r && r.guven === "kesin") return { konu: r.konu, topicKey: r.topicKey, kaynak: "kesin" };
+  if (r && r.guven === "kesin") {
+    okzCacheYaz(kanon, kazanim, r.konu, "kural", 0.85, { topicKey: r.topicKey });
+    return { konu: r.konu, topicKey: r.topicKey, kaynak: "kesin" };
+  }
   // Güçlü öneri: kullanıcıyı 26 satır seçmekten kurtarır (ÖLÇÜLÜ).
   if (typeof window.OKZK.adaylar === "function") {
     const aday = window.OKZK.adaylar(kazanim, kanon, OKZK_IDX, 2) || [];
     const birinci = aday[0], ikinci = aday[1];
     if (birinci && birinci.skor >= OKZ_OTO_ESIK && (!ikinci || birinci.skor - ikinci.skor >= OKZ_OTO_FARK)) {
+      okzCacheYaz(kanon, kazanim, birinci.konu, "vektor", birinci.skor, { topicKey: birinci.topicKey });
       return { konu: birinci.konu, topicKey: birinci.topicKey, kaynak: "oto", skor: birinci.skor };
     }
   }
+  return okzTdeYedek(kanon, kazanim);
+}
+
+// TDE 2./3. AŞAMA — sözlük ve indeks tutmadığında devreye girer.
+//   2) genel beceri  → Paragraf   (çıkarım, ana düşünce, söz varlığı, anlatım)
+//   3) vektör        → konuya özgü benzerlik (TF-IDF kapsam, eşikli)
+// İkisi de yalnız TDE için ve yalnız yukarıdaki katmanlar boş döndüğünde.
+function okzTdeYedek(kanon, kazanim) {
+  if (!okzTdeMi(kanon) || !window.OKZTDE) return null;
+  if (typeof window.OKZTDE.genelEsle === "function") {
+    const g = window.OKZTDE.genelEsle(kazanim);
+    if (g && g.konu) {
+      // güven "genel": kesin değil — kayıt yazılır ama güven düşük tutulur.
+      okzCacheYaz(kanon, kazanim, g.konu, "genel", 0.45, { kural: g.kural });
+      return { konu: g.konu, topicKey: kanon + " > " + g.konu, kaynak: "genel", asama: 2, kural: g.kural };
+    }
+  }
+  if (typeof window.OKZTDE.vektorEsle === "function") {
+    const v = window.OKZTDE.vektorEsle(kazanim);
+    if (v && v.konu) {
+      okzCacheYaz(kanon, kazanim, v.konu, "vektor", v.skor, { skor: v.skor, fark: v.fark });
+      return { konu: v.konu, topicKey: kanon + " > " + v.konu, kaynak: "vektor", asama: 3, skor: v.skor };
+    }
+  }
   return null;
+}
+
+function okzTdeMi(ders) {
+  return /edebiyat|tde|turkce|turk dili/i.test(String(ders || ""));
+}
+
+/* ------------------------------------------------------------
+   KAZANIM → KONU ÖĞRENEN SÖZLÜK (Supabase: kazanim_konu_cache)
+   ------------------------------------------------------------
+   Okulizyon aynı kazanım cümlesini her denemede tekrar gönderir.
+   Bir kez çözülen cümle (hangi aşamada çözülürse çözülsün) tabloya
+   yazılır; sonraki çözümde hiçbir kural/vektör çalışmaz, cevap
+   doğrudan buradan gelir. Böylece:
+     • aynı cümle için tekrar hesap/LLM maliyeti yok
+     • öğrenci bir eşlemeyi düzelttiğinde (elle harita) o kayıt öncelikli
+   Tablo yoksa/oturum kapalıysa uygulama sessizce yerel bellekle çalışır.
+   ------------------------------------------------------------ */
+let OKZ_CACHE = Object.create(null);
+let OKZ_CACHE_YUKLENDI = false;
+
+function okzMetinNorm(metin) {
+  return String(metin == null ? "" : metin)
+    .replace(/ı/g, "i").replace(/İ/g, "i").replace(/I/g, "i")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 320);
+}
+
+function okzCacheAnahtar(ders, metin) {
+  return String(ders || "") + "|" + okzMetinNorm(metin);
+}
+
+function okzCacheBul(ders, kazanim) {
+  const k = okzCacheAnahtar(ders, kazanim);
+  const e = OKZ_CACHE[k];
+  if (!e || !e.konu) return null;
+  return {
+    konu: e.konu,
+    topicKey: e.topicKey || (String(ders) + " > " + e.konu),
+    kaynak: "cache",
+    asama: e.asama || 0,
+    guven: e.guven,
+    kod: e.kod || ""
+  };
+}
+
+function okzCacheYaz(ders, kazanim, konu, kaynak, guven, ek) {
+  if (!konu || !kazanim) return;
+  const k = okzCacheAnahtar(ders, kazanim);
+  const eski = OKZ_CACHE[k];
+  // daha güvenilir kayıt varsa üzerine yazma
+  if (eski && (Number(eski.guven) || 0) > (Number(guven) || 0)) return;
+  const e = {
+    konu: String(konu),
+    topicKey: (ek && ek.topicKey) || (String(ders) + " > " + konu),
+    kaynak: kaynak,
+    guven: Number(guven) || 0,
+    asama: kaynak === "kural" ? 1 : (kaynak === "genel" ? 2 : (kaynak === "vektor" ? 3 : 0)),
+    kod: (ek && ek.kod) || ""
+  };
+  OKZ_CACHE[k] = e;
+  if (typeof sb === "undefined" || !sb || !currentUser) return;
+  try {
+    sb.from("kazanim_konu_cache").upsert({
+      ders: String(ders),
+      metin_norm: okzMetinNorm(kazanim),
+      konu: e.konu,
+      topic_key: e.topicKey,
+      kaynak: kaynak,
+      guven: e.guven,
+      olusturan: currentUser.id
+    }, { onConflict: "ders,metin_norm" }).then(function (r) {
+      if (r && r.error) return;
+    }, function () { });
+  } catch (err) { /* sessiz: önbellek yazılamazsa eşleştirme yine çalışır */ }
+}
+
+function okzCacheYukle() {
+  if (OKZ_CACHE_YUKLENDI || typeof sb === "undefined" || !sb) return Promise.resolve(OKZ_CACHE);
+  OKZ_CACHE_YUKLENDI = true;
+  return sb.from("kazanim_konu_cache")
+    .select("ders,metin_norm,konu,topic_key,kaynak,guven")
+    .limit(5000)
+    .then(function (r) {
+      if (r && r.error) { OKZ_CACHE_YUKLENDI = false; return OKZ_CACHE; }
+      (r.data || []).forEach(function (x) {
+        OKZ_CACHE[String(x.ders) + "|" + x.metin_norm] = {
+          konu: x.konu, topicKey: x.topic_key, kaynak: x.kaynak,
+          guven: Number(x.guven) || 0, asama: 0
+        };
+      });
+      return OKZ_CACHE;
+    }, function () { OKZ_CACHE_YUKLENDI = false; return OKZ_CACHE; });
 }
 // Hata kaydını uygulamanın diline çevir: ders kanonik, konu konu başlığı
 function okzKayitKonu(ders, kazanim) {

@@ -5543,6 +5543,32 @@ function renderKnowledge(container) {
       '<h3 style="font-size:18px;font-weight:700;margin-top:6px;">' + esc(p.topic) + "</h3></div>" +
       '<span class="badge" style="background:' + diff.color + '22;color:' + diff.color + ';">Soru önerisi: ' + diff.level + (diff.rate !== null ? " (başarı %" + diff.rate + ")" : "") + "</span></div></div>";
 
+    // v70 — MÜFREDAT İLİŞKİLERİ (site/okz-tde-veri.js)
+    // Ders notundan (10 Edebiyat, 149 s.) çıkarılan "bu konu neyle ilişkili"
+    // haritası. Amaç: öğrenci konuyu tek başına değil ağıyla görsün.
+    if (window.OKZTDE && typeof window.OKZTDE.iliski === "function") {
+      const iliskiler = window.OKZTDE.iliski(p.topic) || [];
+      if (iliskiler.length) {
+        const TUR = {
+          "ayni-donem": "Aynı dönem", "devam": "Devamı", "koken": "Kökü",
+          "onkosul": "Ön koşul", "karistirilir": "Karıştırılır", "karsit": "Karşıtı",
+          "ayni-gelenek": "Aynı gelenek", "ayni-grup": "Aynı grup", "icerik": "İçerik bağı",
+          "donem": "Dönem", "ayni-beceri": "Aynı beceri", "ilgili": "İlgili"
+        };
+        html += '<div class="bento-card" style="margin-bottom:16px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">' +
+          icon("git-branch", 16, "vertical-align:-3px;margin-right:6px;color:var(--brand-blue);") + " İlişkili konular</h3>" +
+          '<p class="text-xs text-muted" style="margin:0 0 10px;">Ders notundaki müfredat bağı: aynı konuyu başka hangi başlıkla birlikte okumalısın?</p>' +
+          '<div style="display:flex;flex-direction:column;gap:6px;">';
+        iliskiler.forEach(function (x) {
+          html += '<button class="tree-child" style="align-items:flex-start;text-align:left;flex-direction:column;gap:2px;" data-act="selectTopic" data-topic="' + attr(p.lesson + " > " + x.konu) + '">' +
+            '<span style="font-weight:600;">' + esc(x.konu) +
+            ' <span class="badge" style="font-size:10px;background:var(--memory-indigo-bg);color:var(--memory-indigo);">' + esc(TUR[x.tur] || x.tur) + "</span></span>" +
+            '<span class="text-xs text-muted" style="line-height:1.35;">' + esc(x.neden) + "</span></button>";
+        });
+        html += "</div></div>";
+      }
+    }
+
     if (done) {
       const pct = getMemoryStrength(selectedTopicKey);
       const nr = nextReviewInfo(selectedTopicKey);
@@ -6327,6 +6353,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="push-bildirim.js"></script>
 <script src="okz-konu.js"></script>
 <script src="okz-meb.js"></script>
+<script src="okz-tde-veri.js"></script>
+<script src="okz-tde.js"></script>
 <script src="konu-anahtar.js"></script>
 <script src="havuz-bul.js"></script>
 <!-- BKT motoru: yeterlilik/tekrar hesabı, havuz→soru akışı, flashcard, ilişki grafı.

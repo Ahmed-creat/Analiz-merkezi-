@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261031-v69-surec-kazanim";
+const CACHE = "analiz-merkezi-v-20261031-v70-ogrenen-sozluk";
 const ASSETS = [
   "./",
   "./index.html",
@@ -15,6 +15,8 @@ const ASSETS = [
   "./okz-normalize.js",
   "./okz-konu.js",
   "./okz-meb.js",
+  "./okz-tde-veri.js",
+  "./okz-tde.js",
  "./konu-anahtar.js",
  "./havuz-bul.js",
   "./veri-sikistir.js",

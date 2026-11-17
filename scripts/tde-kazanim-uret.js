@@ -83,6 +83,47 @@ const KONU = {
   edebiyat_10_u04_k06: { eksen: "dil-bilgisi", ayirt: ["paragraf", "anlatım biçimi", "anlatım tekniği", "düşünceyi geliştirme"] }
 };
 
+/* ------------------------------------------------------------
+   2. AŞAMA — GENEL BECERİ CÜMLELERİ (fallback)
+   Yayınevi kazanım cümlesinde belirli bir tür/dönem adı geçmiyorsa
+   cümle "anlam bilgisi" havuzuna yönlenir. 10. sınıf master konu
+   listesinde bu alanı karşılayan TEK konu var: "Paragraf".
+   (9. sınıfta "Sözcüğün Anlam Özellikleri", "Anlatım Biçimleri" ayrı
+   konular; 10. sınıfta havuzu yok. Uydurma konu açmıyoruz.)
+   Bu eşleşmeler KESİN DEĞİL: guven "genel" olarak işaretlenir ve
+   öğrenci Profil → Konu Eşlemesi'nden tek dokunuşla değiştirebilir.
+   ------------------------------------------------------------ */
+const GENEL_BECERI = [
+  {
+    ad: "cikarim",
+    hedef: "Paragraf",
+    desen: /cikarim|sonuc cikar|tahmin|anlamlandir|yorumla/,
+    ornekler: ["Metinlerden hareketle çıkarımlar yapar."],
+    gerekce: "Cümlede tür/dönem adı yok; çıkarım anlam bilgisinin (paragraf) becerisidir."
+  },
+  {
+    ad: "ana-dusunce",
+    hedef: "Paragraf",
+    desen: /ana dusunce|ana fikir|metnin konu|konusunu belir|temasini belir|yardimci dusunce/,
+    ornekler: ["Metnin konusunu ve ana düşüncesini belirler."],
+    gerekce: "Konu/ana düşünce tespiti paragraf konusudur."
+  },
+  {
+    ad: "soz-varligi",
+    hedef: "Paragraf",
+    desen: /soz varlig|sozcuk.*anlam|kelime.*anlam|baglamdan.*anlam|anlamini belirle/,
+    ornekler: ["Metindeki söz varlığının anlamını bağlamdan hareketle belirler."],
+    gerekce: "10. sınıfta sözcük-anlam havuzu Paragraf altında toplanır (ayrı konu yok)."
+  },
+  {
+    ad: "anlatim",
+    hedef: "Paragraf",
+    desen: /anlatim bicimi|anlatim teknigi|dusunceyi gelistir|anlatim ozelligi|akicilik|duruluk/,
+    ornekler: ["Metinde kullanılan anlatım biçimlerini belirler."],
+    gerekce: "Anlatım biçimleri paragraf konusudur."
+  }
+];
+
 /* Tema numarası → Okulizyon havuzu (u01…u04) eşleşmesi konu_id'den gelir. */
 const temaNo = (konu_id) => Number(String(konu_id).split("_u")[1].slice(0, 2));
 
@@ -207,6 +248,18 @@ function uret() {
       "konu-adi": "Okulizyon konu ağacındaki konu başlığı.",
       "tema-terim": "TYMM tema sayfasının Anahtar Kavramlar listesi."
     },
+    genel_beceri: {
+      aciklama:
+        "2. aşama: cümlede tür/dönem adı yoksa anlam bilgisi havuzuna yönlendirilir. " +
+        "guven 'genel' — kesin değil, öğrenci tek dokunuşla değiştirebilir.",
+      hedef_konu: "Paragraf",
+      kurallar: GENEL_BECERI
+    },
+    sozluk: Object.fromEntries(
+      konular.flatMap((k) =>
+        k.ayirt_edici_terimler.map((t) => [String(t).toLocaleLowerCase("tr-TR"), k.konu])
+      )
+    ),
     genel_kazanimlar: (OKULIZYON_METIN.__genel || []).map((m) => ({
       metin: m,
       kaynak: "okulizyon",

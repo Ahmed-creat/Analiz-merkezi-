@@ -59,7 +59,7 @@ ok("“her sabah” yerine günde iki kez yazıyor", /Günde iki kez \(sabah ve 
 
 console.log("\n== 5) Sürüm damgası ==");
 const pwaSurum = (APP.match(/PWA_SURUM = "(v[^"]+)"/) || [])[1] || "";
-ok("uygulama sürümü v63 veya üstü (sade-profil hattı)", /^v6[3-9]/.test(pwaSurum));
+ok("uygulama sürümü v63 veya üstü (sade-profil hattı)", Number((pwaSurum.match(/^v(\d+)/) || [])[1]) >= 63);
 ok("SW önbelleği aynı sürüm damgasını taşıyor", !!pwaSurum && SW.indexOf("-" + pwaSurum) > 0);
 
 console.log("\n" + "─".repeat(56));

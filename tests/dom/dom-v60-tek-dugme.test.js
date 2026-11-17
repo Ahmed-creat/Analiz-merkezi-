@@ -67,7 +67,10 @@ ok("açılış temizliği test işaretini silmiyor",
   !/indexOf\("am_push_test_gonderildi"\) === 0/.test(APP));
 ok("izin ilk verildiğinde bir kez test (kanal kanıtı) korunuyor",
   /if \(r && r\.ok\) \{\s*\n\s*const t = await testBirKez\(\);/.test(PUSH));
-ok("sürüm damgası güncel (v60+)", /PWA_SURUM = "v6[0-9]-/.test(APP));
+ok("sürüm damgası güncel (v60+)", (function () {
+  const m = (APP.match(/PWA_SURUM = "v(\d+)-/) || [])[1];
+  return Number(m) >= 60;
+})());
 
 console.log("\n== 5) Sunucu: cihaz beyanına kadar tekrar ==");
 ok("cihaz onayı aranıyor", /t\.gosterildi is true/.test(SQL) && /t\.baslik = hat_baslik/.test(SQL));
