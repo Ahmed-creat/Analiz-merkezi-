@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u02_k05",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 2,
+  "tema_adi": "Divan Şiiri ve Saf Şiir",
+  "baslik": "Zamir (Adıl)",
+  "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)",
+  "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.92-98",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u02_k05_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir metinde aynı adı tekrar etmemek için önce söylenmiş kişi ya da varlığın yerini başka bir sözcük alıyor. Bu sözcük türü hangisidir?",
+      "alt_beceri": "Sözcük hâlindeki zamirleri türlerine göre sınıflandırır.",
+      "metin": "Bir konuşmada \"Ben yarın seninle geleceğim.\" denildiğinde konuşan kişi kendi adı yerine \"ben\", karşısındakinin adı yerine \"sen\" sözcüğünü kullanmıştır. Bu iki sözcük hangi zamir türüne girer?",
       "secenekler": [
-        "Zamir",
-        "Sıfat",
-        "Zarf",
-        "Bağlaç"
+        "İşaret zamiri",
+        "Kişi zamiri",
+        "Belgisiz zamir",
+        "Soru zamiri"
       ],
-      "dogru_index": 0,
-      "cozum": "Zamirler adların ya da daha önce anılan sözlerin yerini tutar; ek hâlinde de bulunabilir. Sıfat adla birlikte onu belirtir, zamir ise adın yerine geçer.",
+      "dogru_index": 1,
+      "cozum": "Kişi adları yerine kullanılan ben, sen, o, biz, siz, onlar kişi (şahıs) zamiridir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Zamir (adıl) nedir?",
-        "back": "Adların ya da daha önce sözü edilen söz gruplarının yerini geçici olarak tutan sözcük veya ektir."
-      }
+        "front": "Kişi zamiri nedir?",
+        "back": "Kişi adları yerine kullanılan zamirdir: ben, sen, o, biz, siz, onlar."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k05_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir konuşmacı ben, sen, biz ve onlar sözcüklerini kişi adlarını yinelememek için kullanıyor. Bu sözcükler hangi zamir türündedir?",
+      "alt_beceri": "Sözcük hâlindeki zamirleri türlerine göre sınıflandırır.",
+      "metin": "Bir metinde geçen \"herkes, kimse, bazıları, başkası\" sözcükleri, hangi adın yerini tuttukları tam olarak belli olmayan sözcüklerdir. Bu sözcükler hangi zamir türüdür?",
       "secenekler": [
-        "İşaret zamiri",
         "Kişi zamiri",
-        "Belgisiz sıfat",
-        "Soru zarfı"
+        "Dönüşlülük zamiri",
+        "İlgi zamiri",
+        "Belgisiz zamir"
       ],
-      "dogru_index": 1,
-      "cozum": "Ben, sen, o, biz, siz, onlar kişi adlarının yerine kullanılır ve kişi zamiridir. İşaret zamirleri varlıkları gösterir.",
+      "dogru_index": 3,
+      "cozum": "Hangi adın yerini tuttuğu tam olarak belli olmayan zamirler belgisiz zamirdir; herkes, kimse, biri, çoğu, başkası gibi.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kişi adlarının yerine kullanılan zamirlere ne denir?",
-        "back": "Kişi (şahıs) zamirleri."
-      }
+        "front": "Belgisiz zamir nedir?",
+        "back": "Hangi adın yerini tuttuğu tam olarak belli olmayan zamirdir: herkes, kimse, biri, çoğu."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k05_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir konuşmacı, masadaki iki dosyayı gösterip bu sözcüğünü adını söylemeden kullanıyor. Bu sözcük hangi görevde?",
+      "alt_beceri": "Ek hâlindeki zamirleri (ilgi, iyelik) ayırt eder.",
+      "metin": "\"Böylesini görmedim.\" cümlesinde \"böylesini\" sözcüğü, bir adı belirtmeden o adın yerini tutmaktadır. Bu sözcük hangi görevde kullanılmıştır?",
       "secenekler": [
-        "İşaret sıfatı",
-        "Niteleme sıfatı",
         "İşaret zamiri",
-        "Zarf"
+        "İşaret sıfatı",
+        "Soru zamiri",
+        "Belgisiz zamir"
       ],
-      "dogru_index": 2,
-      "cozum": "Bu, gösterdiği adla birlikte kullanılmadan onun yerine geçiyorsa işaret zamiridir. Bir adla birlikte gelseydi işaret sıfatı olurdu.",
+      "dogru_index": 0,
+      "cozum": "Adın yerini tutan \"böylesi\" işaret zamiridir. \"Böyle ferman etti\" örneğinde ise bir durumu belirttiği için durum zarfı olur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir adı göstermeyip onun yerine geçen bu, şu, o sözcüklerine ne denir?",
-        "back": "İşaret zamiri."
-      }
+        "front": "İşaret zamiri nedir?",
+        "back": "Varlıkları işaret yoluyla karşılayan, adın yerini tutan zamirdir: bu, şu, o, böylesi."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k05_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede bazıları sözcüğü, hangi kişilerin kastedildiğini tek tek belirtmeden bir topluluğu karşılıyor. Bu zamir türü hangisidir?",
+      "alt_beceri": "Ek hâlindeki zamirleri (ilgi, iyelik) ayırt eder.",
+      "metin": "\"Olaydan sonra hiçbiri beni aramadı.\" cümlesinde \"hiçbiri\" sözcüğü tek başına bir adın yerini tutmaktadır; \"hiçbir şeyden çekmedi\" örneğinde ise bir adı niteler. İlk cümledeki görevi hangisidir?",
       "secenekler": [
-        "Kişi zamiri",
-        "Soru zamiri",
-        "İlgi zamiri",
-        "Belgisiz zamir"
-      ],
-      "dogru_index": 3,
-      "cozum": "Belgisiz zamirler hangi adın yerini tuttukları tam olarak belli olmayan sözcüklerdir. Soru zamiri ise adın yerini soru yoluyla tutar.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Hangi adı karşıladığı kesin belli olmayan zamirlere ne denir?",
-        "back": "Belgisiz zamir."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u02_k05_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir gruptaki kişilerden hangisinin seçildiğini öğrenmek isteyen kişi hangisi sözcüğünü adın yerine kullanıyor. Bu kullanım nedir?",
-      "secenekler": [
-        "Soru zamiri",
-        "Soru sıfatı",
-        "Soru zarfı",
-        "Bağlaç"
-      ],
-      "dogru_index": 0,
-      "cozum": "Hangisi sözcüğü bir adın yerini tutarak soru soruyorsa soru zamiridir. Ardından bir isim gelseydi soru sıfatı olurdu.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Adın yerini soru yoluyla tutan sözcüklere ne denir?",
-        "back": "Soru zamiri."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u02_k05_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi, işi başka birine değil bizzat kendisine yaptığını vurgulamak için kendi sözcüğünü kullanıyor. Bu sözcük hangi zamir türüdür?",
-      "secenekler": [
-        "İşaret zamiri",
-        "Dönüşlülük zamiri",
-        "İlgi zamiri",
-        "Belgisiz zamir"
-      ],
-      "dogru_index": 1,
-      "cozum": "Kendi sözcüğü dönüşlülük zamiridir; iyelik ve durum ekleri alabilir. İşaret ve ilgi zamirleri farklı yapıdadır.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Türkçedeki dönüşlülük zamirini yaz.",
-        "back": "Kendi."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u02_k05_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir notta Aylin'in çizimi sade, Bora'nınki ayrıntılı deniyor. Bora'nınki sözcüğündeki -ki hangi zamirdir?",
-      "secenekler": [
-        "İşaret zamiri",
-        "Soru zamiri",
-        "İlgi zamiri",
+        "Belgisiz sıfat",
+        "İyelik zamiri",
+        "Belgisiz zamir",
         "Kişi zamiri"
       ],
       "dogru_index": 2,
-      "cozum": "Adın yerini tutan ve bitişik yazılan -ki ilgi zamiridir. Bu ek, kullanıldığı her durumda zamir olmayabilir; sözcüğü sıfat da yapabilir.",
+      "cozum": "İyelik eki almış \"hiçbiri\" adın yerini tuttuğu için belgisiz zamirdir; eki almadığında bir adla tamlama kurup sıfat olur (hiçbir şey).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Adların yerini tutan -ki ekine ne denir?",
-        "back": "İlgi zamiri."
-      }
+        "front": "Belgisiz sözcüğün zamir olma koşulu nedir?",
+        "back": "Adın yerini tuttuğunda zamir, bir adı nitelediğinde sıfat olur: hiçbiri (zamir) – hiçbir şey (sıfat)."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k05_o05",
+      "alt_beceri": "Ek hâlindeki zamirleri (ilgi, iyelik) ayırt eder.",
+      "metin": "\"Bu yaz hangisine gideceksiniz?\" cümlesinde soru yoluyla bir adın yerini tutan bir sözcük kullanılmıştır. Bu sözcüğün görevi hangisidir?",
+      "secenekler": [
+        "Soru sıfatı",
+        "Soru zarfı",
+        "Belgisiz zamir",
+        "Soru zamiri"
+      ],
+      "dogru_index": 3,
+      "cozum": "Soru yoluyla adın yerini tutan sözcükler soru zamiridir: hangisi, neleri, kimi. Bir adı nitelediğinde soru sıfatı (ne tür müzik), \"niçin\" anlamıyla kullanıldığında soru zarfı olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Soru zamiri nedir?",
+        "back": "Soru yoluyla adın yerini tutan zamirdir: kim, ne, hangisi, neleri."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k05_o06",
+      "alt_beceri": "Ek hâlindeki zamirleri (ilgi, iyelik) ayırt eder.",
+      "metin": "\"Bu işin tamamını ben kendim yaptım.\" cümlesinde \"kendim\" sözcüğü, işi yapan kişiyi pekiştirmek için kullanılmıştır. Bu sözcük hangi zamirdir?",
+      "secenekler": [
+        "Kişi zamiri",
+        "Dönüşlülük zamiri",
+        "İşaret zamiri",
+        "İlgi zamiri"
+      ],
+      "dogru_index": 1,
+      "cozum": "Dönüşlülük zamiri \"kendi\" sözcüğüdür; iyelik eki alarak kendim, kendin, kendileri biçimlerine girer ve pekiştirmeli özne kurar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dönüşlülük zamiri nedir?",
+        "back": "\"Kendi\" sözcüğüdür; iyelik eki alarak kendim, kendin, kendileri biçimlerine girer."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u02_k05_o07",
+      "alt_beceri": "Zamirleri yapı bakımından çözümler ve benzer türlerden ayırır.",
+      "metin": "\"Bizimki bugün yine sinirliydi.\" cümlesinde \"-ki\" eki, belirtili isim tamlamasında tamlanan durumundaki adın yerini tutmuştur. Bu ekin görevi hangisidir?",
+      "secenekler": [
+        "İlgi zamiri",
+        "İyelik zamiri",
+        "Yapım eki",
+        "Durum eki"
+      ],
+      "dogru_index": 0,
+      "cozum": "Adların yerini tutan \"-ki\" eki ilgi zamiridir ve tamlayana bitişik yazılır: bizimki, sizinki, benimki.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İlgi zamiri nedir?",
+        "back": "Adların yerini tutan \"-ki\" ekidir; tamlayana bitişik yazılır: bizimki, sizinki."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k05_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir adın sonundaki ek, eşyanın konuşan kişiye ait olduğunu bildiriyor. Kaynağın zamir başlıklarından hangisi bu görevi açıklar?",
+      "alt_beceri": "Zamirleri yapı bakımından çözümler ve benzer türlerden ayırır.",
+      "metin": "Bir öğrenci \"(Onun) Bilgisayarı benim bilgisayarımdan hızlıydı.\" cümlesindeki eki iyelik eki sayarken, \"Bilgisayarı kullanmayı hiç öğrenemedi.\" cümlesindeki eki belirtme hâl eki saymıştır. Öğrenci bu ayrımı hangi ölçüte dayandırmıştır?",
       "secenekler": [
-        "Soru zamiri",
-        "İşaret zamiri",
-        "Dönüşlülük zamiri",
-        "İyelik zamiri"
+        "Ekin ünlüyle mi ünsüzle mi başladığına",
+        "Sözcüğün cümledeki yerine",
+        "Ekin bulunduğu ada \"onun\" getirilip anlam kontrol edilmesine",
+        "Ekin çokluk eki alıp almamasına"
       ],
-      "dogru_index": 3,
-      "cozum": "İyelik ekleri varlığın kime ya da neye ait olduğunu bildirir. Sözcük hâlindeki soru, işaret ve dönüşlülük zamirleri bu sahiplik işlevini üstlenmez.",
+      "dogru_index": 2,
+      "cozum": "3. tekil iyelik eki ile belirtme hâl eki karıştırılmamalıdır: ekin alındığı ada \"onun, onların\" getirilir; anlam bozulmuyorsa iyelik, bozuluyorsa hâl ekidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir varlığın kime ya da neye ait olduğunu bildiren ekler hangi zamir başlığında ele alınır?",
-        "back": "İyelik zamiri (iyelik eki)."
-      }
+        "front": "İyelik eki ile belirtme hâl ekinin ayrımı nedir?",
+        "back": "Ekin bulunduğu ada \"onun, onların\" getirilir; anlam bozulmuyorsa iyelik, bozuluyorsa hâl ekidir."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k05_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bu dosya bugün teslim edilecek cümlesinde bu sözcüğünden sonra bir ad geliyor. Bu sözcüğün görevi nedir?",
+      "alt_beceri": "Sözcük hâlindeki zamirleri türlerine göre sınıflandırır.",
+      "metin": "\"Öteki beriki, şundan bundan, falan filan, herhangi biri\" gibi birden fazla sözcüğün değişik yollarla öbekleşmesiyle kurulan zamirler hangi yapıdadır?",
       "secenekler": [
-        "İşaret sıfatı",
-        "İşaret zamiri",
-        "Kişi zamiri",
-        "Soru zamiri"
+        "Basit zamir",
+        "Öbekleşmiş zamir",
+        "Birleşik zamir",
+        "Ek hâlinde zamir"
       ],
-      "dogru_index": 0,
-      "cozum": "Bu, bir adı birlikte kullanarak belirttiğinde işaret sıfatıdır. Adın yerini tek başına tutarsa işaret zamiri olur.",
+      "dogru_index": 1,
+      "cozum": "Birden fazla sözcüğün öbekleşmesiyle kurulan zamirler öbekleşmiş zamirdir. Tek kelimeden oluşanlar basit, hiçbiri ve birçoğu gibi bitişik yazılanlar birleşiktir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bu, şu ve o bir isimle birlikte kullanıldığında çoğunlukla hangi görevde olur?",
-        "back": "İşaret sıfatı."
-      }
+        "front": "Öbekleşmiş zamir nedir?",
+        "back": "Birden fazla sözcüğün öbekleşmesiyle kurulan zamirdir: öteki beriki, falan filan."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k05_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi, masada bırakılan nesnenin ne olduğunu soruyor ve ne sözcüğü doğrudan o nesnenin adının yerini tutuyor. Bu kullanım nedir?",
+      "alt_beceri": "Sözcük hâlindeki zamirleri türlerine göre sınıflandırır.",
+      "metin": "Bir metinde \"ben, sen, o\" sözcükleri yerine \"beni, bana, bende, benden\" biçimleri kullanılmıştır. Bu kullanım zamirlerin hangi özelliğini gösterir?",
       "secenekler": [
-        "Soru sıfatı",
-        "Soru zamiri",
-        "Soru zarfı",
-        "Bağlaç"
+        "Yalnız tamlayan olabilmeleri",
+        "Cümlede yüklem olamamaları",
+        "Yapım eki alamamaları",
+        "İsim çekim eklerini alabilmeleri"
       ],
-      "dogru_index": 1,
-      "cozum": "Ne sözcüğü adın yerini tutarak soruluyorsa soru zamiridir. Bir adla birlikte kullanılırsa soru sıfatı, eylemi belirtirse soru zarfı olabilir.",
+      "dogru_index": 3,
+      "cozum": "Zamirler geçici olarak ismin yerini tuttuğu için isim çekim eklerini alabilir: beni, bana, bende, benden; onlar, bunlar; bendim, odur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ne sözcüğü bir adın yerini tutarsa hangi zamir türü olur?",
-        "back": "Soru zamiri."
-      }
+        "front": "Zamirlerin çekim özelliği nedir?",
+        "back": "İsmin yerini geçici tuttuğu için isim çekim eklerini alabilir: beni, bana, onlar, bendim."
+      },
+      "kazanim": "Zamirleri tür, yapı ve işlev bakımından çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u02_k05_o01:flashcard",
-      "front": "Zamir (adıl) nedir?",
-      "back": "Adların ya da daha önce sözü edilen söz gruplarının yerini geçici olarak tutan sözcük veya ektir."
+      "front": "Kişi zamiri nedir?",
+      "back": "Kişi adları yerine kullanılan zamirdir: ben, sen, o, biz, siz, onlar."
     },
     {
       "id": "edebiyat_10_u02_k05_o02:flashcard",
-      "front": "Kişi adlarının yerine kullanılan zamirlere ne denir?",
-      "back": "Kişi (şahıs) zamirleri."
+      "front": "Belgisiz zamir nedir?",
+      "back": "Hangi adın yerini tuttuğu tam olarak belli olmayan zamirdir: herkes, kimse, biri, çoğu."
     },
     {
       "id": "edebiyat_10_u02_k05_o03:flashcard",
-      "front": "Bir adı göstermeyip onun yerine geçen bu, şu, o sözcüklerine ne denir?",
-      "back": "İşaret zamiri."
+      "front": "İşaret zamiri nedir?",
+      "back": "Varlıkları işaret yoluyla karşılayan, adın yerini tutan zamirdir: bu, şu, o, böylesi."
     },
     {
       "id": "edebiyat_10_u02_k05_o04:flashcard",
-      "front": "Hangi adı karşıladığı kesin belli olmayan zamirlere ne denir?",
-      "back": "Belgisiz zamir."
+      "front": "Belgisiz sözcüğün zamir olma koşulu nedir?",
+      "back": "Adın yerini tuttuğunda zamir, bir adı nitelediğinde sıfat olur: hiçbiri (zamir) – hiçbir şey (sıfat)."
     },
     {
       "id": "edebiyat_10_u02_k05_o05:flashcard",
-      "front": "Adın yerini soru yoluyla tutan sözcüklere ne denir?",
-      "back": "Soru zamiri."
+      "front": "Soru zamiri nedir?",
+      "back": "Soru yoluyla adın yerini tutan zamirdir: kim, ne, hangisi, neleri."
     },
     {
       "id": "edebiyat_10_u02_k05_o06:flashcard",
-      "front": "Türkçedeki dönüşlülük zamirini yaz.",
-      "back": "Kendi."
+      "front": "Dönüşlülük zamiri nedir?",
+      "back": "\"Kendi\" sözcüğüdür; iyelik eki alarak kendim, kendin, kendileri biçimlerine girer."
     },
     {
       "id": "edebiyat_10_u02_k05_o07:flashcard",
-      "front": "Adların yerini tutan -ki ekine ne denir?",
-      "back": "İlgi zamiri."
+      "front": "İlgi zamiri nedir?",
+      "back": "Adların yerini tutan \"-ki\" ekidir; tamlayana bitişik yazılır: bizimki, sizinki."
     },
     {
       "id": "edebiyat_10_u02_k05_o08:flashcard",
-      "front": "Bir varlığın kime ya da neye ait olduğunu bildiren ekler hangi zamir başlığında ele alınır?",
-      "back": "İyelik zamiri (iyelik eki)."
+      "front": "İyelik eki ile belirtme hâl ekinin ayrımı nedir?",
+      "back": "Ekin bulunduğu ada \"onun, onların\" getirilir; anlam bozulmuyorsa iyelik, bozuluyorsa hâl ekidir."
     },
     {
       "id": "edebiyat_10_u02_k05_o09:flashcard",
-      "front": "Bu, şu ve o bir isimle birlikte kullanıldığında çoğunlukla hangi görevde olur?",
-      "back": "İşaret sıfatı."
+      "front": "Öbekleşmiş zamir nedir?",
+      "back": "Birden fazla sözcüğün öbekleşmesiyle kurulan zamirdir: öteki beriki, falan filan."
     },
     {
       "id": "edebiyat_10_u02_k05_o10:flashcard",
-      "front": "Ne sözcüğü bir adın yerini tutarsa hangi zamir türü olur?",
-      "back": "Soru zamiri."
+      "front": "Zamirlerin çekim özelliği nedir?",
+      "back": "İsmin yerini geçici tuttuğu için isim çekim eklerini alabilir: beni, bana, onlar, bendim."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)"
+  ]
 }

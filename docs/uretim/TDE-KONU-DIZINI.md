@@ -37,11 +37,11 @@ Aksi hâlde "KoĢuk" gibi aramalar tutmaz.
 | 11 | `edebiyat_10_u02_k02` | Kaside | DN s.75-77 | ✅ 10+10 · `tde-t02.js` |
 | 12 | `edebiyat_10_u02_k03` | Mersiye | DN s.79 | ✅ 10+10 · `tde-t02.js` |
 | 13 | `edebiyat_10_u02_k04` | Saf Şiir | DN s.79-85 | ✅ 10+10 · `tde-t02.js` |
-| 14 | `edebiyat_10_u02_k05` | Zamir (Adıl) | DN s.92-98 | ⬜ bekliyor |
-| 15 | `edebiyat_10_u02_k06` | Edat (İlgeç) | DN s.99-103 | ⬜ bekliyor |
-| 16 | `edebiyat_10_u02_k07` | Bağlaç | DN s.104-107 | ⬜ bekliyor |
-| 17 | `edebiyat_10_u02_k08` | Ünlem | DN s.108 | ⬜ bekliyor |
-| 18 | `edebiyat_10_u02_k09` | Anlamına Göre Cümleler | DN s.68-70 | ⬜ bekliyor |
+| 14 | `edebiyat_10_u02_k05` | Zamir (Adıl) | DN s.92-98 | ✅ 10+10 · `tde-t02-dil.js` |
+| 15 | `edebiyat_10_u02_k06` | Edat (İlgeç) | DN s.99-103 | ✅ 10+10 · `tde-t02-dil.js` |
+| 16 | `edebiyat_10_u02_k07` | Bağlaç | DN s.104-107 | ✅ 10+10 · `tde-t02-dil.js` |
+| 17 | `edebiyat_10_u02_k08` | Ünlem | DN s.108 | ✅ 10+10 · `tde-t02-dil.js` |
+| 18 | `edebiyat_10_u02_k09` | Anlamına Göre Cümleler | DN s.68-70 | ✅ 10+10 · `tde-t02-dil.js` |
 | 19 | `edebiyat_10_u03_k01` | Destan | DN s.110-116 | ⬜ bekliyor |
 | 20 | `edebiyat_10_u03_k02` | Mesnevi | DN s.117-118 | ⬜ bekliyor |
 | 21 | `edebiyat_10_u03_k03` | Halk Hikâyesi | DN s.118-121 | ⬜ bekliyor |
