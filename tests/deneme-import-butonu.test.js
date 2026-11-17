@@ -46,6 +46,13 @@ const IMPORT_KOD = fonksiyonCikar("importData");
 function ortam(kur) {
   const toastlar = [];
   let kaydedildi = 0;
+  /* sahte localStorage: sınıf arşivleri (analizmerkezi_v6_g9 / _g10) */
+  const depo = Object.assign({}, kur.depo || {});
+  const localStorage = {
+    getItem: (k) => (k in depo ? depo[k] : null),
+    setItem: (k, v) => { depo[k] = String(v); },
+    removeItem: (k) => { delete depo[k]; }
+  };
   const ctx = {
     console,
     JSON,
@@ -93,12 +100,13 @@ function ortam(kur) {
     renderExamChart: () => {},
     toast: (m, t) => toastlar.push({ m, t }),
     currentPage: "exams",
+    localStorage,
     window: {}
   };
   ctx.window = { AnalizBKT: { processNewRecords: () => { ctx.bktCalisti = (ctx.bktCalisti || 0) + 1; } } };
   vm.createContext(ctx);
   vm.runInContext(IMPORT_KOD, ctx, { filename: "importData" });
-  return { ctx, toastlar, kaydetSayisi: () => kaydedildi };
+  return { ctx, toastlar, kaydetSayisi: () => kaydedildi, depo };
 }
 
 /* Mevcut kullanıcı verisi: konu takibi, hafıza, BKT, profil dolu */
@@ -172,6 +180,33 @@ function calistir(dosya) {
   ok("ikinci yüklemede sınav sayısı 8", iki.state.exams.length === 8, String(iki.state.exams.length));
   ok("'zaten vardı' bildirimi", iki.toastlar.some(t => /zaten vardı|Yeni deneme yok/.test(t.m)),
     iki.toastlar.map(t => t.m).join(" | "));
+
+  // ---------- 4b) BAŞKA SINIF: 10. sınıf hesabında 9. sınıf dosyası ----------
+  // KULLANICI: "istediğim öğrencinin içe aktarma jsonunu düzgün şekilde
+  // yapmadın." Eski kod bu denemeleri SAYIP ATIYORDU (ne cari hesaba ne
+  // arşive yazıyordu) → içe aktarma sonuçsuz kalıyordu.
+  console.log("\n== 4b) 10. sınıf hesabında 9. sınıf dosyası arşive yazılır ==");
+  const onuncu = JSON.parse(JSON.stringify(MEVCUT));
+  onuncu.user.grade = "10";
+  const { ctx: c5, toastlar: t5, depo: d5 } = ortam({ state: onuncu, dosyaMetni: JSON.stringify(VERI) });
+  c5.importData({ files: [{}], value: "" });
+  await new Promise(r => setTimeout(r, 10));
+  ok("cari hesaba HİÇ deneme eklenmedi", c5.state.exams.length === 1, String(c5.state.exams.length));
+  ok("9. sınıf arşivi oluştu", !!d5["analizmerkezi_v6_g9"], Object.keys(d5).join(","));
+  const ars9 = JSON.parse(d5["analizmerkezi_v6_g9"] || "{}");
+  ok("arşivde 7 deneme var", (ars9.exams || []).length === 7, String((ars9.exams || []).length));
+  ok("arşiv sınıfı 9", String(ars9.user && ars9.user.grade) === "9", String(ars9.user && ars9.user.grade));
+  ok("denemeler grade=9 taşıyor", (ars9.exams || []).every(e => String(e.grade) === "9"));
+  ok("tarihe göre sıralı", (ars9.exams || []).every((e, i, a) => i === 0 || String(a[i - 1].date) <= String(e.date)));
+  ok("bildirim arşivi söylüyor", t5.some(t => /9\. sınıf hesabına 7/.test(t.m)), t5.map(t => t.m).join(" | "));
+  ok("cari hesabın konu takibi bozulmadı", !!(c5.state.topics && c5.state.topics["Matematik > Üslü Sayılar"]));
+  // ikinci kez: mükerrer yok
+  const input5 = { files: [{}], value: "" };
+  c5.importData(input5);
+  await new Promise(r => setTimeout(r, 10));
+  ok("tekrar yükleme arşive mükerrer eklemiyor",
+    (JSON.parse(d5["analizmerkezi_v6_g9"]).exams || []).length === 7,
+    String((JSON.parse(d5["analizmerkezi_v6_g9"]).exams || []).length));
 
   // ---------- 5) normal yedek dosyası hâlâ tam değişim ----------
   console.log("\n== 5) _mod'suz dosya eski davranışta ==");

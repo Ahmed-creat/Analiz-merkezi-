@@ -35,9 +35,13 @@ ok("mükerrer anahtarı sınıf içeriyor", /const anahtar = \(e\) => e\.grade \
 ok("diğer sınıflar taranıyor", /const digerSiniflar = \["9", "10"\]\.filter\(g => g !== buSinif\)/.test(HTML));
 ok("arşivdeki denemeler mükerrer kümesine giriyor", /digerSiniflar\.forEach\(x => x\.s\.exams\.forEach/.test(HTML));
 
-console.log("\n== 3) Başka sınıfın denemesi bu hesaba yazılmaz ==");
-ok("sınıf farkı kontrol ediliyor", /if \(sinif !== buSinif\) \{ baskaSinif\+\+; return; \}/.test(HTML));
-ok("kullanıcıya bildiriliyor", /baskaSinif \+ " başka sınıfa ait/.test(HTML));
+console.log("\n== 3) Başka sınıfın denemesi bu hesaba YAZILMAZ, kendi arşivine yazılır ==");
+// v71 — eski davranış denemeyi SAYIP ATIYORDU (veri kaybı). Kullanıcı:
+// "istediğim öğrencinin içe aktarma jsonunu düzgün şekilde yapmadın."
+ok("sınıf farkı kontrol ediliyor", /if \(sinif !== buSinif\) \{/.test(HTML));
+ok("başka sınıfın denemesi cari hesaba eklenmiyor", /if \(sinif !== buSinif\) \{[\s\S]{0,400}?return;/.test(HTML));
+ok("kendi sınıf arşivine yazılıyor", /arsivAl\(sinif\)/.test(HTML) && /localStorage\.setItem\("analizmerkezi_v6_g" \+ g/.test(HTML));
+ok("kullanıcıya bildiriliyor", /sınıf hesabına/.test(HTML));
 ok("uyarı tonu kullanılıyor", /\(baskaSinif \? "warning" : "info"\)/.test(HTML));
 
 console.log("\n== 4) Listede yabancı sınıf etiketlenir ==");

@@ -1840,16 +1840,49 @@ function importData(input) {
         (state.exams || []).forEach(e => e && varOlan.add(anahtar({ grade: String(e.grade || buSinif), name: e.name, date: e.date })));
         digerSiniflar.forEach(x => x.s.exams.forEach(e => e && varOlan.add(anahtar({ grade: String(e.grade || x.g), name: e.name, date: e.date }))));
 
+        /* v71 — BAŞKA SINIFIN DENEMESİ ARTIK ATILMIYOR.
+           KULLANICI: "istediğim öğrencinin içe aktarma jsonunu düzgün şekilde
+           yapmadın." 9. sınıf denemeleri, hesap 10. sınıftayken içe aktarılınca
+           sadece "başka sınıfa ait" denip ÇÖPE gidiyordu; ne 9. sınıf hesabına
+           ne arşive yazılıyordu. Artık o sınıfın arşivine (analizmerkezi_v6_gN)
+           yazılır: 9. sınıfa geçildiğinde denemeler yerinde durur. */
+        const arsivDurum = {};   // "9" / "10" → o sınıfın durum nesnesi
+        const arsivAl = (g) => {
+          if (arsivDurum[g]) return arsivDurum[g];
+          let s2 = null;
+          try { s2 = JSON.parse(localStorage.getItem("analizmerkezi_v6_g" + g) || "null"); } catch (e) { s2 = null; }
+          if (!s2 || typeof s2 !== "object") s2 = freshState();
+          if (!s2.exams || !Array.isArray(s2.exams)) s2.exams = [];
+          if (!s2.user || typeof s2.user !== "object") s2.user = freshState().user;
+          s2.user.grade = g;
+          arsivDurum[g] = s2;
+          return s2;
+        };
         let eklenen = 0, atlanan = 0, baskaSinif = 0;
+        const sinifAdlari = {};
         gelen.forEach(ex => {
           if (!ex || !ex.name) return;
           const sinif = String(ex.grade || kaynakSinif);
           const k = anahtar({ grade: sinif, name: ex.name, date: ex.date });
           if (varOlan.has(k)) { atlanan++; return; }
-          /* Başka sınıfa ait deneme bu hesaba YAZILMAZ — yoksa "bu sınıfta
-             yok" diye yeni deneme gibi görünür. */
-          if (sinif !== buSinif) { baskaSinif++; return; }
+          if (sinif !== buSinif) {
+            // BAŞKA SINIF: kendi hesabının arşivine yazılır.
+            const ars = arsivAl(sinif);
+            const varMi = ars.exams.some(e => e && anahtar({ grade: sinif, name: e.name, date: e.date }) === k);
+            if (varMi) { atlanan++; return; }
+            ex.grade = sinif;
+            ars.exams.push(ex);
+            ars.exams.sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+            varOlan.add(k);
+            baskaSinif++;
+            sinifAdlari[sinif] = (sinifAdlari[sinif] || 0) + 1;
+            return;
+          }
+          ex.grade = sinif;
           state.exams.push(ex); varOlan.add(k); eklenen++;
+        });
+        Object.keys(arsivDurum).forEach(g => {
+          try { localStorage.setItem("analizmerkezi_v6_g" + g, JSON.stringify(arsivDurum[g])); } catch (e) { }
         });
         state.exams.sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
         saveState();
@@ -1860,7 +1893,10 @@ function importData(input) {
         const parca = [];
         if (eklenen) parca.push(eklenen + " deneme eklendi");
         if (atlanan) parca.push(atlanan + " zaten vardı");
-        if (baskaSinif) parca.push(baskaSinif + " başka sınıfa ait (" + kaynakSinif + ". sınıf) — bu hesaba eklenmedi");
+        if (baskaSinif) {
+          const detay = Object.keys(sinifAdlari).map(g => g + ". sınıf hesabına " + sinifAdlari[g]).join(", ");
+          parca.push(detay + " yazıldı — o sınıfa geçince göreceksin (bu hesaba karışmadı)");
+        }
         toast(parca.length ? parca.join(" · ") + "." : "Yeni deneme yok — hepsi zaten kayıtlı.",
           eklenen ? "success" : (baskaSinif ? "warning" : "info"));
         input.value = "";   // aynı dosya yeniden seçilebilsin
