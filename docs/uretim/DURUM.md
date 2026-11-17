@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-17 18:42 (UTC)
+> Güncelleme: 2026-11-17 19:23 (UTC)
 
 ## Ders bazında
 
@@ -12,11 +12,11 @@
 | Fizik | 20/22 | 200 | 220 | 200 | 10 |
 | Kimya | 20/21 | 180 | 214 | 180 | 0 |
 | Biyoloji | 19/19 | 192 | 190 | 192 | 0 |
-| Tarih | 14/14 | 140 | 140 | 140 | 5 |
+| Tarih | 14/14 | 140 | 140 | 140 | 3 |
 | Coğrafya | 14/18 | 191 | 190 | 191 | 0 |
 | Felsefe | 10/10 | 100 | 100 | 100 | 0 |
 | Din Kültürü | 17/17 | 170 | 170 | 170 | 0 |
-| **TOPLAM** | **156/171** | **1673** | **1788** | **1673** | **61** |
+| **TOPLAM** | **156/171** | **1673** | **1788** | **1673** | **59** |
 
 İlerleme: **%94** (1673/1788 soru) · kart 1:1 ✔
 

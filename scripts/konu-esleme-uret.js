@@ -34,8 +34,29 @@ function oku(p) {
   return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
+/* MEB kazanım cümleleri: konu_id → resmî çıktı metinleri.
+   Okulizyon kazanım metnini birebir bu cümlelerle verdiği için arama
+   metninde resmî çıktı da bulunmalı; yoksa eşleşme yalnız başlık
+   sözcüklerine kalıyor ve öneri güveni düşüyor. */
+function kazanimMetinleri() {
+  const yol = path.join(KOK, "site", "content", "mufredat", "kazanim_konu_10.json");
+  const meb = path.join(KOK, "site", "content", "mufredat", "meb_kazanim_10.json");
+  const harita = new Map();
+  if (!fs.existsSync(yol) || !fs.existsSync(meb)) return harita;
+  const kodlar = new Map();
+  for (const c of oku(meb).ciktilar || []) {
+    if (c && c.kod && c.kazanim) kodlar.set(c.kod, String(c.kazanim).trim());
+  }
+  for (const k of oku(yol).konular || []) {
+    const metinler = (k.kodlar || []).map(kod => kodlar.get(kod)).filter(Boolean);
+    if (metinler.length) harita.set(k.konu_id, metinler);
+  }
+  return harita;
+}
+
 function uret() {
   const manifest = oku(MANIFEST);
+  const kazanimlar = kazanimMetinleri();
   const havuzlar = Array.isArray(manifest.havuzlar) ? manifest.havuzlar : [];
   const kayitlar = [];
   let altBeceriSayisi = 0;
@@ -73,7 +94,7 @@ function uret() {
       konu: konu,
       soru: Number(h.soru_sayisi) || 0,
       // Arama metni (tek alan: tarayıcıda tek geçiş yeter)
-      metin: [konu, h.baslik || "", ...(h.etiketler || []), ...alt]
+      metin: [konu, h.baslik || "", ...(kazanimlar.get(h.konu_id) || []), ...(h.etiketler || []), ...alt]
         .filter(Boolean)
         .join(" · ")
     });

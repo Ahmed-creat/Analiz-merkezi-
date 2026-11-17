@@ -696,7 +696,7 @@ yazKonu({
 yazKonu({
   konu_id: "tar_10_u02_k07",
   ders: DERS, tema: 2, tema_adi: "Beylikten Devlete Osmanlı (1299-1453)",
-  baslik: "2.3 Beylikten Devlete Ordu, Toprak ve Hukuk Sistemi",
+  baslik: "2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
   kazanim: "Beylikten devlete geçiş sürecinde Osmanlı ordu, toprak ve hukuk sistemlerinin işleyişini ve birbirleriyle ilişkisini çözümler.",
   kaynak: kaynak("140-155"),
   kaynak_dosya: DOSYA,
@@ -796,7 +796,7 @@ yazKonu({
 yazKonu({
   konu_id: "tar_10_u02_k08",
   ders: DERS, tema: 2, tema_adi: "Beylikten Devlete Osmanlı (1299-1453)",
-  baslik: "2.4 Osmanlı Devleti'nin İskân ve İstimâlet Politikası",
+  baslik: "2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
   kazanim: "Osmanlı Devleti'nin fethedilen topraklarda kalıcı olmak için uyguladığı iskân ve istimâlet politikalarını çözümler.",
   kaynak: kaynak("156-171"),
   kaynak_dosya: DOSYA,
@@ -1024,6 +1024,560 @@ yazKonu({
       secenekler: ["II. Murad Dönemi", "Orhan Bey Dönemi", "Yıldırım Bayezid Dönemi", "I. Mehmet Dönemi"],
       cozum: "İznik Medresesi'nin açılışından sonra başlayan Arapça ve Farsçadan Türkçeye tercüme hareketi II. Murad Dönemi'nde zirveye ulaşmıştır (s.185).",
       fc: ["Tercüme hareketi nedir?", "Arapça ve Farsça eserlerin Türkçeye kazandırılması süreci."]
+    }
+  ]
+});
+
+yazKonu({
+  konu_id: "tar_10_u03_k10",
+  ders: DERS, tema: 3, tema_adi: "Cihan Devleti Osmanlı (1453-1683)",
+  baslik: "3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
+  kazanim: "1453-1683 yılları arasındaki siyasi ve askerî gelişmelerin Osmanlı Devleti'ni cihan devleti hâline getirme sürecine etkisini değerlendirir.",
+  kaynak: kaynak("208-234"),
+  kaynak_dosya: DOSYA,
+  beceriler: [
+    "1453-1683 arasındaki siyasi ve askerî gelişmeleri açıklar.",
+    "Fetihlerin Osmanlı'nın cihan devleti konumuna etkisini çözümler."
+  ],
+  items: [
+    {
+      bi: 0,
+      metin: "İstanbul'un fethi hazırlıklarında Boğaz'ın en dar yerine inşa edilen Rumeli (Boğazkesen) Hisarı'nın amacı hangisidir?",
+      secenekler: [
+        "Boğazı kontrol altına alıp denizden gelecek yardımları engellemek",
+        "Şehre karadan yapılacak taarruz için üs olmak",
+        "Haliç'in girişini zincirle kapatmak",
+        "Donanmayı karadan Haliç'e indirmek"
+      ],
+      cozum: "Anadolu Hisarı'nın karşısına Rumeli (Boğazkesen) Hisarı inşa edilerek İstanbul Boğazı kontrol altına alınmış ve Doğu Roma'ya deniz yoluyla gelebilecek yardımlar engellenmiştir (s.211).",
+      fc: ["Boğazkesen Hisarı nedir?", "İstanbul'un fethi öncesi Boğaz kontrolü için yapılan hisar."]
+    },
+    {
+      bi: 0,
+      metin: "İstanbul'un 29 Mayıs 1453'te fethedilmesinin dünya tarihi açısından sonucu hangisidir?",
+      secenekler: [
+        "1123 yıllık Doğu Roma İmparatorluğu'nun ortadan kalkması",
+        "Haçlı Seferleri'nin başlaması",
+        "Bizans'ın başkentini İznik'e taşıması",
+        "Ortodoks Kilisesi'nin kapatılması"
+      ],
+      cozum: "Fetihle 1123 yıllık Doğu Roma İmparatorluğu ortadan kalkmış, II. Mehmet İslam dünyasında Fatih ünvanıyla anılmıştır (s.218).",
+      fc: ["Fatih ünvanı nedir?", "İstanbul'u fethedip Doğu Roma'yı yıkan II. Mehmet'e verilen ünvan."]
+    },
+    {
+      bi: 0,
+      metin: "1473'te Akkoyunlu Hükümdarı Uzun Hasan'a karşı kazanılan savaş hangisidir?",
+      secenekler: ["Otlukbeli", "Çaldıran", "Mercidabık", "Niğbolu"],
+      cozum: "Otlukbeli Savaşı'nda (1473) Akkoyunlu Devleti yenilgiye uğratılmış, Fırat'a kadar olan bölgeler Osmanlı hâkimiyetine girmiştir (s.216).",
+      fc: ["Otlukbeli Savaşı nedir?", "1473'te Akkoyunlulara karşı kazanılan, Doğu Anadolu güvenliğini sağlayan savaş."]
+    },
+    {
+      bi: 0,
+      metin: "Kırım'ın 1475'te Osmanlı hâkimiyetine alınmasının stratejik önemi hangisidir?",
+      secenekler: [
+        "Karadeniz hâkimiyetinin pekişmesi ve kuzey sınırlarının korunması",
+        "Akdeniz'de Venedik'e üstünlük sağlanması",
+        "Haliç'in denetim altına alınması",
+        "Mısır ticaret yollarının kapanması"
+      ],
+      cozum: "Kırım, Karadeniz hâkimiyeti için stratejik konumdaydı; kuzeyde savunma alanı oluşturarak imparatorluğun sınırlarını Ruslara ve Leh-Litvanyalılara karşı korumuştur (s.217).",
+      fc: ["Kırım'ın Osmanlı için önemi nedir?", "Karadeniz hâkimiyeti ve kuzey sınırlarının güvenliği."]
+    },
+    {
+      bi: 0,
+      metin: "1514'te Safevi ordusunun yenilgiye uğratıldığı savaş hangisidir?",
+      secenekler: ["Çaldıran", "Otlukbeli", "Ridaniye", "Mohaç"],
+      cozum: "Çaldıran Savaşı'nda top ve tüfek kullanan Osmanlı ordusu, yalnız süvarilerden oluşan Safevi ordusunu bozguna uğratmıştır (s.221).",
+      fc: ["Çaldıran Savaşı'nın sonucu nedir?", "Doğu Anadolu'nun Osmanlı'ya katılması ve Safevi tehdidinin kısmen kalkması."]
+    },
+    {
+      bi: 0,
+      metin: "Yavuz Sultan Selim'in Mısır seferi sonunda Mekke ve Medine'nin koruyuculuğunu ifade eden unvanı hangisidir?",
+      secenekler: ["Hâdimü'l-Haremeyn", "Sultanü'l-berr ve'l-bahr", "Şehinşah", "Emîrü'l-ümerâ"],
+      cozum: "Resmî belgelerde Yavuz Sultan Selim, Mekke ve Medine'nin koruyucusu (hizmetçisi) anlamında hâdimü'l-Haremeyn unvanıyla anılmıştır (s.221).",
+      fc: ["Hâdimü'l-Haremeyn ne demektir?", "Mekke ve Medine'nin hizmetçisi, koruyucusu anlamında unvan."]
+    },
+    {
+      bi: 1,
+      metin: "1492'de İspanya'dan sürülen Yahudilerin Osmanlı ülkesine kabul edilmesi hangi değerin göstergesidir?",
+      secenekler: [
+        "Zulüm altındaki insanlara kucak açan hoşgörü ve adalet anlayışının",
+        "Yalnız ticari kazanç hedefinin",
+        "Askerî güç gösterisi yapılmasının",
+        "Avrupa devletleriyle ittifak kurulmasının"
+      ],
+      cozum: "Osmanlılar yalnız Müslümanlara değil zulüm altındaki Yahudilere de yardım eli uzatmış, İstanbul ve Selanik gibi şehirlere yerleştirmiştir (s.219-220).",
+      fc: ["1492 Yahudi göçü nedir?", "İspanya'dan sürülen Yahudilerin Osmanlı topraklarına kabul edilmesi."]
+    },
+    {
+      bi: 1,
+      metin: "Mohaç Savaşı (1526) sonrasında Osmanlı'nın Orta Avrupa'daki asıl rakibi hangi hanedan olmuştur?",
+      secenekler: ["Habsburglar", "Capet Hanedanı", "Romanovlar", "Piast Hanedanı"],
+      cozum: "Mohaç sonrasında Macarların yerini Habsburglar almış, Macaristan toprakları üzerinde Osmanlılarla Habsburglar arasında 150 yıl sürecek mücadele başlamıştır (s.224).",
+      fc: ["Habsburg Hanedanı nedir?", "Kutsal Roma-Germen İmparatorluğu'nu yöneten Avusturya kökenli hanedan."]
+    },
+    {
+      bi: 1,
+      metin: "Preveze Deniz Savaşı'nın (1538) Osmanlı denizciliği açısından sonucu hangisidir?",
+      secenekler: [
+        "Akdeniz'de üstünlüğün Osmanlı'ya geçmesi",
+        "Osmanlı donanmasının tümüyle yok olması",
+        "Kıbrıs'ın Venedik'e bırakılması",
+        "Karadeniz ticaretinin durması"
+      ],
+      cozum: "Preveze'de kazanılan zaferle Hristiyan dünyası Akdeniz'deki hâkimiyetini kaybetmiş, Osmanlılar tam anlamıyla deniz siyasetinin içine girmiştir (s.227).",
+      fc: ["Preveze Deniz Savaşı nedir?", "1538'de Barbaros'un müttefik Haçlı donanmasını yendiği deniz savaşı."]
+    },
+    {
+      bi: 1,
+      metin: "Tabloda 1453-1683 yılları arasında imzalanan bazı antlaşmalar ve sonuçları verilmiştir. Bugünkü Türkiye-Irak sınırının temelini oluşturan antlaşma hangisidir?",
+      secenekler: ["Kasr-ı Şirin", "Bucaş", "Ferhat Paşa", "Amasya"],
+      gorsel: {
+        tip: "tablo",
+        basliklar: ["Antlaşma", "Yıl", "Sonuç"],
+        satirlar: [
+          ["Amasya", "1555", "İran sınırında geçici bir denge kuruldu"],
+          ["Ferhat Paşa", "1590", "Doğuda en geniş sınırlara ulaşıldı"],
+          ["Zitvatorok", "1606", "Avusturya ile eşit statüde antlaşma yapıldı"],
+          ["Kasr-ı Şirin", "1639", "Doğu sınırı bugünkü Türkiye-Irak hattına oturdu"]
+        ]
+      },
+      cozum: "Kasr-ı Şirin Antlaşması'yla Irak toprakları Bağdat dâhil Osmanlı'da kalmış, Revan ve Azerbaycan Safevilere bırakılmış; tablodaki bu sonuç doğu sınırının esasını oluşturmuştur (s.231).",
+      fc: ["Kasr-ı Şirin Antlaşması nedir?", "1639'da Osmanlı-Safevi sınırını belirleyen antlaşma."]
+    }
+  ]
+});
+
+yazKonu({
+  konu_id: "tar_10_u03_k11",
+  ders: DERS, tema: 3, tema_adi: "Cihan Devleti Osmanlı (1453-1683)",
+  baslik: "3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
+  kazanim: "1453-1683 yılları arasında Osmanlı Devleti'nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliği değerlendirir.",
+  kaynak: kaynak("235-256"),
+  kaynak_dosya: DOSYA,
+  beceriler: [
+    "Merkez ve taşra yönetimi ile divanın işleyişini açıklar.",
+    "Yönetim ve veraset uygulamalarındaki değişimin etkilerini çözümler."
+  ],
+  items: [
+    {
+      bi: 0,
+      metin: "Fatih Sultan Mehmet'in yönetim teşkilatını yeniden düzenlediği ve geleneksel uygulamaları yazılı hâle getirdiği düzenleme hangisidir?",
+      secenekler: [
+        "Fatih Kanunnamesi",
+        "Tanzimat Fermanı",
+        "Sened-i İttifak",
+        "Kanun-i Esasi"
+      ],
+      cozum: "Fatih Kanunnamesi'yle yönetim teşkilatı yeniden organize edilip sağlamlaştırılmış, gelenekleşmiş uygulamalar değişiklik ve düzenlemelerle yazılı hâle getirilmiştir (s.240).",
+      fc: ["Fatih Kanunnamesi nedir?", "Yönetim teşkilatı ve protokolü yazılı hâle getiren düzenleme."]
+    },
+    {
+      bi: 0,
+      metin: "Dîvân-ı Hümâyunda padişahın onayladığı belgelere tuğra çekme yetkisi hangi görevliye aittir?",
+      secenekler: ["Nişancı", "Defterdar", "Kazasker", "Veziriazam"],
+      cozum: "Nişancı, divanda kendisine sunulan ve padişahın onayladığı belgelerin altına padişahın tuğrasını çekerdi (s.247).",
+      fc: ["Tuğra nedir?", "Padişahın adını ve unvanını içeren özgün imza/nişan."]
+    },
+    {
+      bi: 0,
+      metin: "Osmanlı Devleti'nde mali işlerin yürütülmesinden sorumlu divan üyesi hangisidir?",
+      secenekler: ["Defterdar", "Nişancı", "Şeyhülislam", "Yeniçeri ağası"],
+      cozum: "Defterdar mali işleri yürütürdü; Fatih Kanunnamesi'ne göre maliyede padişah adına emir yazma yetkisi defterdarlara verilmiştir (s.243, 247).",
+      fc: ["Defterdar nedir?", "Devletin gelir ve giderlerini tutan maliye görevlisi."]
+    },
+    {
+      bi: 0,
+      metin: "Osmanlı Devleti'nde eğitim ve hukuk işlerini denetleyen divan üyesi hangisidir?",
+      secenekler: ["Şeyhülislam", "Veziriazam", "Kaptan paşa", "Kazasker"],
+      cozum: "Divanda şeyhülislam eğitim ve hukuk işleriyle ilgili yetkilere sahipti; kazaskerler ise yargısal konularda görev yapardı (s.236, 247).",
+      fc: ["Şeyhülislam nedir?", "Dini ve hukuki konularda en yüksek yetkili görevli."]
+    },
+    {
+      bi: 0,
+      metin: "Şehzadelerin on bir-on iki yaşlarında sancak beyi olarak gönderildiği uygulamanın amacı hangisidir?",
+      secenekler: [
+        "Yönetim tecrübesi kazanmalarını sağlamak",
+        "Askerlikten uzak durmalarını sağlamak",
+        "Tahta çıkma haklarını kaldırmak",
+        "Doğrudan veziriazam olmalarını sağlamak"
+      ],
+      cozum: "Şehzadeler merkezden ve birbirlerinden uzak şekilde, annelerinin ve lalalarının gözetiminde sancaklarda yönetim tecrübesi kazanırdı (s.242).",
+      fc: ["Sancağa çıkma nedir?", "Şehzadelerin yönetim tecrübesi için sancaklara gönderilmesi."]
+    },
+    {
+      bi: 1,
+      metin: "Fatih Dönemi'nde veziriazamların güçlü Türk aileleri yerine kul sınıfından seçilmesinin temel amacı hangisidir?",
+      secenekler: [
+        "Merkezî otoriteyi güçlendirip padişaha bağlı bir bürokrasi kurmak",
+        "Taşradaki Türkmen beylerini memnun etmek",
+        "Divan toplantılarını kaldırmak",
+        "Yeniçeri Ocağı'nı denetimden çıkarmak"
+      ],
+      cozum: "Fatih, devşirme kökenli kullarını valilerden vergi tahsildarlarına kadar her kademede görevlendirerek merkezî ve mutlak bir yönetim kurmuştur (s.241, 243).",
+      fc: ["Kul sınıfı nedir?", "Devşirme yoluyla yetiştirilip devlet görevine getirilen sınıf."]
+    },
+    {
+      bi: 1,
+      metin: "Fatih Kanunnamesi'ndeki kardeş katli maddesinin dayanağı hangisidir?",
+      secenekler: [
+        "\"Nizam-ı âlem için\" devletin düzeninin korunması",
+        "Tımarlı sipahilerin talebi",
+        "Şeyhülislamın fetvası",
+        "Yeniçerilerin ocak kanunu"
+      ],
+      cozum: "Kanunnamede yer alan \"Her kimesneye evladımdan saltanat müyesser ola, karındaşların nizam-ı âlem için katl itmek münasiptir.\" maddesi kardeş katlini yasallaştırmıştır (s.243).",
+      fc: ["Nizam-ı âlem nedir?", "Devlet ve toplum düzeninin korunması anlayışı."]
+    },
+    {
+      bi: 1,
+      metin: "I. Ahmet Dönemi'nde uygulanmaya başlanan ekber ve erşed sistemi neyi ifade eder?",
+      secenekler: [
+        "Hanedanın en büyük ve en olgun üyesinin tahta çıkmasını",
+        "Padişahın oğlunun tahta çıkmasını",
+        "Yeniçerilerin padişah seçmesini",
+        "Divanın padişahı belirlemesini"
+      ],
+      cozum: "Ekber ve erşed sistemi, en büyük şehzadenin tahta çıkması esasına dayanır; bu sistemle taht kavgaları azalmış ancak şehzadeler saray içinde dış dünyadan kopuk yaşamıştır (s.248).",
+      fc: ["Ekber ve erşed nedir?", "Hanedanın en büyük ve olgun üyesinin tahta geçmesi kuralı."]
+    },
+    {
+      bi: 1,
+      metin: "Sancağa çıkma uygulamasının kaldırılmasının ortaya çıkardığı durum hangisidir?",
+      secenekler: [
+        "Şehzadelerin saray içinde dış dünyadan kopuk yaşadığı kafes sistemi",
+        "Şehzadelerin divan üyesi olması",
+        "Taht kavgalarının artarak sürmesi",
+        "Şehzadelerin ordu komutanı olması"
+      ],
+      cozum: "Sancağa çıkma uygulamasının bitmesi ve ekberiyetin benimsenmesiyle kafes sistemi ortaya çıkmış, şehzadeler saray içinde dış dünyadan kopuk yaşamıştır (s.248).",
+      fc: ["Kafes sistemi nedir?", "Şehzadelerin sarayda dış dünyadan kopuk tutulması uygulaması."]
+    },
+    {
+      bi: 1,
+      metin: "Cülus töreninde devlet adamlarının yeni sultana biat etmesinin işlevi hangisidir?",
+      secenekler: [
+        "Yeni padişahın meşruiyetinin kabul edilmesi",
+        "Divanın kapatılması",
+        "Şehzadelerin sancağa gönderilmesi",
+        "Yeniçerilerin maaşlarının kesilmesi"
+      ],
+      cozum: "1421'den itibaren tahta çıkıştaki en önemli unsur, devlet ileri gelenlerinin yeni padişaha biat ederek onun meşruiyetini kabul etmesi olmuştur (s.242).",
+      fc: ["Biat nedir?", "Yeni hükümdarın egemenliğini kabul edip bağlılık bildirme."]
+    }
+  ]
+});
+
+yazKonu({
+  konu_id: "tar_10_u03_k12",
+  ders: DERS, tema: 3, tema_adi: "Cihan Devleti Osmanlı (1453-1683)",
+  baslik: "3.3 Avrupalıların Sömürgeci Politikaları",
+  kazanim: "XV-XVIII. yüzyıllardaki coğrafi keşiflerin, sömürgeciliğin ve Avrupa'daki düşünsel dönüşümün dünya tarihine etkilerini değerlendirir.",
+  kaynak: kaynak("257-269"),
+  kaynak_dosya: DOSYA,
+  beceriler: [
+    "Keşif ve sömürgecilik faaliyetlerinin nedenlerini açıklar.",
+    "Sömürgeciliğin ve düşünsel dönüşümün etkilerini çözümler."
+  ],
+  items: [
+    {
+      bi: 0,
+      metin: "Avrupalıları yeni ticaret yolları aramaya iten temel neden hangisidir?",
+      secenekler: [
+        "İpek ve Baharat yollarının Müslüman devletlerin kontrolünde olması",
+        "Avrupa'da tarımın tamamen bitmesi",
+        "Akdeniz limanlarının depremle yıkılması",
+        "Kâğıt ve barutun Avrupa'da bilinmemesi"
+      ],
+      cozum: "Osmanlı ve diğer Müslüman devletlerin ticaret yollarını kontrol etmesi Avrupa'nın doğu ticaretini zorlaştırmış, maliyetleri artırmış ve yeni yol arayışına yol açmıştır (s.259).",
+      fc: ["Baharat Yolu nedir?", "Doğu'dan Avrupa'ya baharat taşıyan tarihî ticaret güzergâhı."]
+    },
+    {
+      bi: 0,
+      metin: "1488'de Ümit Burnu'nu keşfederek Hindistan'a giden deniz yolu için önemli bir adım atan denizci kimdir?",
+      secenekler: ["Bartolomeu Dias", "Vasco de Gama", "Kristof Kolomb", "Pedro Alvares Cabral"],
+      cozum: "Bartolomeu Dias'ın 1488'de Ümit Burnu'nu keşfetmesi, Hindistan'a giden deniz yolu için dönüm noktası olmuştur (s.260).",
+      fc: ["Ümit Burnu nedir?", "Afrika'nın güney ucundaki, Hindistan yolunu açan deniz geçidi."]
+    },
+    {
+      bi: 0,
+      metin: "1498'de Ümit Burnu'nu geçerek Hindistan'ın Kalikut Limanı'na ulaşan denizci kimdir?",
+      secenekler: ["Vasco de Gama", "Bartolomeu Dias", "Ferdinand Magellan", "James Cook"],
+      cozum: "Vasco de Gama'nın 1498'de Kalikut'a ulaşması Portekiz'in baharat ticaretinde ve sömürgecilik faaliyetlerinde güç kazanmasını sağlamıştır (s.260).",
+      fc: ["Kalikut nedir?", "Hindistan'ın batı kıyısında, baharat ticaretinin önemli limanı."]
+    },
+    {
+      bi: 0,
+      metin: "İspanya'nın köle ticaretini Portekizli ve Hollandalı tüccarlara bırakırken kullandığı lisans sistemine ne ad verilir?",
+      secenekler: ["Asiento", "Kapitülasyon", "Mukataa", "Encomienda"],
+      cozum: "İspanyollar köle ticaretinin büyük bölümünü Portekizli ve Hollandalı tüccarlara devrederken asiento adı verilen bir sistemle bu tüccarlara lisans vermiştir (s.262).",
+      fc: ["Asiento nedir?", "İspanya'nın köle ticareti için tüccarlara verdiği lisans."]
+    },
+    {
+      bi: 0,
+      metin: "Rönesans'ın doğduğu ve Medici ailesinin sanatçıları desteklediği İtalyan şehri hangisidir?",
+      secenekler: ["Floransa", "Venedik", "Napoli", "Milano"],
+      cozum: "Rönesans 15. yüzyılın başlarında Floransa'da başlamış; Medici ailesi Michelangelo, Leonardo da Vinci gibi sanatçıları desteklemiştir (s.265-266).",
+      fc: ["Medici ailesi nedir?", "Floransa'da bankacılıkla zenginleşip sanatçıları destekleyen aile."]
+    },
+    {
+      bi: 1,
+      metin: "Kolomb'un keşiflerinin ardından Amerika'daki İnka ve Aztek uygarlıklarının yıkılmasının temel nedeni hangisidir?",
+      secenekler: [
+        "Altın ve gümüş kaynaklarının sömürülmesi amacıyla yapılan işgaller",
+        "Bölgede yazının hiç kullanılmaması",
+        "Yerli halkların göçebe olması",
+        "Avrupalıların bölgeyi hiç tanımaması"
+      ],
+      cozum: "Kolomb'un Amerika'ya ulaşması sonrasında İnka ve Aztekler gibi büyük uygarlıklar yıkılmış, değerli madenlerin sömürülmesiyle İspanya Avrupa'nın en büyük ekonomik gücü hâline gelmiştir (s.261).",
+      fc: ["Sömürgecilik nedir?", "Bir devletin başka toprakları işgal edip kaynaklarını kendi çıkarına kullanması."]
+    },
+    {
+      bi: 1,
+      metin: "Atlantik köle ticaretinde en fazla kölenin götürüldüğü bölge hangisidir?",
+      secenekler: ["Brezilya", "Kuzey Amerika", "Küba", "Filipinler"],
+      cozum: "Afrika'dan kaçırılan insanların yaklaşık %40'ı Portekiz sömürgesi Brezilya'ya götürülmüş, böylece Brezilya köle ticaretinin en büyük alıcısı olmuştur (s.263).",
+      fc: ["Transatlantik köle ticareti nedir?", "Afrikalıların zorla Amerika kıtasına taşınıp köle olarak çalıştırılması."]
+    },
+    {
+      bi: 1,
+      metin: "Hümanizm akımının temel özelliği hangisidir?",
+      secenekler: [
+        "Hayatın merkezine toplum yerine insanı koyması",
+        "Kilise öğretilerini tartışılmaz kabul etmesi",
+        "Sanatta yalnız dinî konuların işlenmesini istemesi",
+        "Ticaretin tümüyle yasaklanmasını savunması"
+      ],
+      cozum: "Hümanizm, değer ölçüsü olarak insanı temel alan, insanın her yönden gelişmesini savunan ve Rönesans'ı şekillendiren akımdır (s.264).",
+      fc: ["Hümanizm nedir?", "İnsanı değer ölçüsü kabul eden düşünce akımı."]
+    },
+    {
+      bi: 1,
+      metin: "Gutenberg'in geliştirdiği matbaanın Avrupa'da yol açtığı sonuç hangisidir?",
+      secenekler: [
+        "Okuma eyleminin kilise mensuplarının dışına taşıp topluma yayılması",
+        "El yazması kitapların değerinin artıp çoğalması",
+        "Latincenin kiliselerde yasaklanması",
+        "Üniversitelerin kapanıp eğitimin durması"
+      ],
+      cozum: "Matbaa sayesinde okuma eylemi kilise mensuplarının faaliyeti olmaktan çıkmış, özgür düşünce gelişmiş ve bilimsel araştırmalar çeşitlenmiştir (s.267).",
+      fc: ["Matbaa nedir?", "Hareketli harflerle seri kitap basımını sağlayan buluş."]
+    },
+    {
+      bi: 1,
+      metin: "1517'de doksan beş maddelik bildiriyi yayımlayarak Reform hareketini başlatan kişi kimdir?",
+      secenekler: ["Martin Luther", "Johannes Gutenberg", "Niccolo Machiavelli", "Galileo Galilei"],
+      cozum: "Alman keşiş ve ilahiyatçı Martin Luther, Wittenberg Şatosu'ndaki kilisenin kapısına doksan beş maddelik bildiriyi asarak Reform hareketini başlatmıştır (s.268).",
+      fc: ["Reform nedir?", "Katolik Kilisesi'nin uygulamalarına karşı başlayan yeniden düzenleme hareketi."]
+    }
+  ]
+});
+
+yazKonu({
+  konu_id: "tar_10_u03_k13",
+  ders: DERS, tema: 3, tema_adi: "Cihan Devleti Osmanlı (1453-1683)",
+  baslik: "3.4 Osmanlı Devleti'nde İsyanlar",
+  kazanim: "1453-1683 yılları arasında Osmanlı Devleti'nde yaşanan isyanların nedenlerini ve devlet yapısına etkilerini değerlendirir.",
+  kaynak: kaynak("270-283"),
+  kaynak_dosya: DOSYA,
+  beceriler: [
+    "İsyanların nedenlerini ve türlerini açıklar.",
+    "İsyanların merkezî otorite ve toplum düzenine etkisini çözümler."
+  ],
+  items: [
+    {
+      bi: 0,
+      metin: "Celâli İsyanları adı hangi olaydan hareketle kullanılmaya başlanmıştır?",
+      secenekler: [
+        "1519'da Tokat civarında isyan eden Bozoklu Şeyh Celâl'den",
+        "1446'daki Buçuktepe Vakası'ndan",
+        "1511'deki Şahkulu İsyanı'ndan",
+        "1622'de Genç Osman'ın katlinden"
+      ],
+      cozum: "Yavuz Sultan Selim Dönemi'nde kendini mehdi ilan eden Bozoklu Şeyh Celâl'in 1519'da çıkardığı isyandan hareketle dönemin isyanlarına Celâli İsyanları adı verilmiştir (s.277).",
+      fc: ["Celâli İsyanları nedir?", "XVI-XVII. yüzyıllarda Anadolu'da çıkan ayaklanmaların genel adı."]
+    },
+    {
+      bi: 0,
+      metin: "Osmanlı tarihindeki ilk yeniçeri isyanı hangisidir?",
+      secenekler: ["Buçuktepe Vakası", "Beylerbeyi Vakası", "Çınar Vakası", "Şahkulu İsyanı"],
+      cozum: "Osmanlı tarihindeki ilk yeniçeri isyanı 1446'da gerçekleşen Buçuktepe Vakası'dır; akçenin değerinin düşürülmesi huzursuzluğu artırmıştır (s.274).",
+      fc: ["Buçuktepe Vakası nedir?", "1446'da yaşanan ilk yeniçeri isyanı."]
+    },
+    {
+      bi: 0,
+      metin: "Yeniçerilerin isyanlarını yemek kazanlarını devirerek başlatması hangi deyimle anılır?",
+      secenekler: ["Kazan kaldırma", "Çift bozma", "Kafes usulü", "Beşik ulemalığı"],
+      cozum: "Yeniçeriler isyanlarını yemek kazanlarını devirerek başlatmış, bu durum tarihte \"kazan kaldırma\" olarak adlandırılmıştır (s.274).",
+      fc: ["Kazan kaldırma nedir?", "Yeniçerilerin kazan devirerek isyan başlatması."]
+    },
+    {
+      bi: 0,
+      metin: "Tabloda Osmanlı akçesinin gümüş içeriği ve kur değerinin yıllara göre değişimi verilmiştir. Akçenin değerli maden içeriğinin bu biçimde düşürülmesine ne ad verilir?",
+      secenekler: ["Tağşiş", "İltizam", "Müsadere", "Mukataa"],
+      gorsel: {
+        tip: "tablo",
+        basliklar: ["Yıl", "Gümüş içeriği (gr)", "Kur değeri (1 duka = akçe)"],
+        satirlar: [
+          ["1481", "0,77", "114,9"],
+          ["1588", "0,38", "45,0"],
+          ["1669", "0,23", "24,0"]
+        ]
+      },
+      cozum: "Tablo 3.6'daki düşüş, devletin dolaşımdaki sikkeleri toplayıp içindeki değerli maden oranını azaltarak yeniden basmasının sonucudur; bu uygulamaya tağşiş denir ve III. Murad Dönemi'nde isyana yol açmıştır (s.273-275).",
+      fc: ["Tağşiş nedir?", "Sikkenin içindeki değerli maden oranının düşürülmesi."]
+    },
+    {
+      bi: 0,
+      metin: "Vergi toplama işinin açık artırmayla belirlenen kişilere devredilmesine ne ad verilir?",
+      secenekler: ["İltizam", "Tımar", "Çifthane", "Avarız"],
+      cozum: "İltizam sisteminde devlet, vergi toplama işini mültezim adı verilen kişilere 1-3 yıllığına devrederdi (s.277).",
+      fc: ["Mültezim nedir?", "Vergi toplama hakkını açık artırmayla alan kişi."]
+    },
+    {
+      bi: 1,
+      metin: "XVI. yüzyıl sonlarında tımarlı sipahilerin sayısının azalmasında etkili olan gelişme hangisidir?",
+      secenekler: [
+        "Ateşli silahlarla donatılmış ücretli askerlerin orduda kullanılması",
+        "Tımar gelirlerinin sürekli artması",
+        "Sipahilerin vergiden muaf tutulması",
+        "Çifthane sisteminin kaldırılması"
+      ],
+      cozum: "Ateşli silahlara ve modern savaş taktiklerine uyum sağlayamayan tımarlı sipahiler yerlerini sekban, sarıca ve levent gibi ücretli askerlere bırakmıştır (s.276).",
+      fc: ["Sekban nedir?", "Tımarlı sipahilerin yerini alan ücretli, ateşli silahlı asker."]
+    },
+    {
+      bi: 1,
+      metin: "1622'de yeniçerilerin ve sipahilerin birleşerek sarayı basması sonucunda hangi padişah katledilmiştir?",
+      secenekler: ["II. Osman (Genç Osman)", "IV. Murad", "I. Mustafa", "III. Mehmet"],
+      cozum: "Yeniçeri Ocağı'nı kaldırma ve başkenti Anadolu'ya taşıma planı duyulan Genç Osman, 1622'de sarayı basan isyancılar tarafından Yedikule zindanlarında katledilmiştir (s.275-276).",
+      fc: ["Genç Osman'ın ıslahat planı nedir?", "Yeniçeri Ocağı'nı kaldırıp disiplinli bir ordu kurmak."]
+    },
+    {
+      bi: 1,
+      metin: "IV. Mehmet Dönemi'nde devlet görevlilerinin idam edilip teşhir edilmesiyle anılan olay hangisidir?",
+      secenekler: ["Çınar Vakası", "Beylerbeyi Vakası", "Buçuktepe Vakası", "Vaka-i Vakvakiye Olayı'nın sonucu"],
+      cozum: "Mali kriz ve düşük ayarlı akçe nedeniyle ayaklanan yeniçeri ve sipahiler otuz kişinin idamını istemiş, idam edilenlerin teşhir edilmesi nedeniyle olay Çınar Vakası olarak anılmıştır (s.276).",
+      fc: ["Çınar Vakası nedir?", "IV. Mehmet Dönemi'nde isyancıların istediği idamların yapıldığı olay."]
+    },
+    {
+      bi: 1,
+      metin: "Celâli İsyanları sırasında köylülerin topraklarını terk ederek şehirlere göç etmesine ne ad verilir?",
+      secenekler: ["Büyük Kaçgun", "Çift bozma", "Kazan kaldırma", "Sürgün"],
+      cozum: "Tarım arazilerini terk eden köylü sınıfının şehirlere göç etmesiyle yaşanan geniş çaplı göç hareketine Büyük Kaçgun denmiştir (s.278).",
+      fc: ["Büyük Kaçgun nedir?", "Celâli isyanları sırasında köylülerin şehirlere göç etmesi."]
+    },
+    {
+      bi: 1,
+      metin: "Medrese öğrencilerinin isyanlarına yol açan \"beşik ulemalığı\" uygulaması neyi ifade eder?",
+      secenekler: [
+        "İlmiye mensuplarının çocuklarının kadılık ve müderrislik kadrolarına atanmasını",
+        "Medreselerde eğitimin tümüyle ücretsiz hâle getirilmesini",
+        "Medrese öğrencilerinin sancaklara gönderilmesini",
+        "Kadıların divan toplantılarına katılıp oy kullanmasını"
+      ],
+      cozum: "Beşik ulemalığı, ilmiye sınıfına mensup kişilerin erkek çocuklarının küçük yaşta kadılık, müftülük ve müderrislik kadrolarına atanmasıdır; bu durum suhte isyanlarının nedenleri arasındadır (s.279).",
+      fc: ["Suhte isyanları nedir?", "Medrese öğrencilerinin eşkıyalığa varan ayaklanmaları."]
+    }
+  ]
+});
+
+yazKonu({
+  konu_id: "tar_10_u03_k14",
+  ders: DERS, tema: 3, tema_adi: "Cihan Devleti Osmanlı (1453-1683)",
+  baslik: "3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
+  kazanim: "1453-1683 yılları arasında Osmanlı Devleti'nde bilim, kültür, eğitim ve sanat alanlarındaki gelişmeleri ve bunların ortak kültürel mirasa katkısını değerlendirir.",
+  kaynak: kaynak("284-317"),
+  kaynak_dosya: DOSYA,
+  beceriler: [
+    "Bilim, eğitim ve sanat kurumları ile önemli temsilcilerini açıklar.",
+    "Osmanlı bilim ve sanat birikiminin kültürel mirasa etkisini çözümler."
+  ],
+  items: [
+    {
+      bi: 0,
+      metin: "Fatih Sultan Mehmet'in hocalığını yapan, tıp alanında eserler veren ve İstanbul'un fethinde manevi desteğiyle öne çıkan âlim kimdir?",
+      secenekler: ["Akşemseddin", "Ali Kuşçu", "Sabuncuoğlu Şerefeddin", "Takıyyüddin er-Râsıd"],
+      cozum: "Akşemseddin hem Fatih'in hocası hem de tıp alanında eser veren bir âlimdir; kuşatmanın sıkıntılı anlarında padişaha yazdığı mektuplarla manevi güç vermiştir (s.299-300).",
+      fc: ["Akşemseddin'in alanı nedir?", "Tıp ve tasavvuf; Fatih'in hocalığını da yapmıştır."]
+    },
+    {
+      bi: 0,
+      metin: "1577'den itibaren Tophane sırtlarında kurduğu rasathanede gözlemler yapan müneccimbaşı kimdir?",
+      secenekler: ["Takıyyüddin er-Râsıd", "Ali Kuşçu", "Kâtip Çelebi", "Matrakçı Nasuh"],
+      cozum: "II. Selim tarafından müneccimbaşılığa tayin edilen Takıyyüddin er-Râsıd, Galata Kulesi'ndeki gözlemlerini 1577'den sonra Tophane sırtlarındaki rasathanede sürdürmüştür (s.290).",
+      fc: ["Rasathane nedir?", "Gök gözlemleri yapılan, astronomi aletlerinin bulunduğu kurum."]
+    },
+    {
+      bi: 0,
+      metin: "Tabloda Osmanlı bilim ve sanat hayatından kişiler, eserleri ve alanlarıyla verilmiştir. Klasik Türk müziği alanında eser veren kişi hangisidir?",
+      secenekler: ["Itri (Buhurizade Mustafa)", "Piri Reis", "Takıyyüddin er-Râsıd", "Akşemseddin"],
+      gorsel: {
+        tip: "tablo",
+        basliklar: ["Kişi", "Eser", "Alan"],
+        satirlar: [
+          ["Piri Reis", "Kitab-ı Bahriye", "Denizcilik"],
+          ["Takıyyüddin er-Râsıd", "Tophane rasathane gözlemleri", "Astronomi"],
+          ["Itri", "Segâh Bayram Tekbiri", "Müzik"],
+          ["Akşemseddin", "Tıp risaleleri", "Tıp"]
+        ]
+      },
+      cozum: "Tabloda Segâh Bayram Tekbiri adlı eseriyle Itri klasik Türk müziği alanında yer alır; Piri Reis denizcilik, Takıyyüddin er-Râsıd astronomi, Akşemseddin ise tıp alanındadır (s.290, 301).",
+      fc: ["Kitab-ı Bahriye nedir?", "Piri Reis'in Akdeniz liman ve kıyılarını anlatan eseri."]
+    },
+    {
+      bi: 0,
+      metin: "1462-1469 yılları arasında Fatih Sultan Mehmet tarafından yaptırılan ve akli-naklî bilimlerin birlikte okutulduğu medrese hangisidir?",
+      secenekler: ["Sahn-ı Semân Medreseleri", "Süleymaniye Medreseleri", "İznik Orhaniye Medresesi", "Haliliye Medresesi"],
+      cozum: "Sahn-ı Semân Medreselerinde akli ve naklî bilimler birlikte okutulmuş, Osmanlı yükseköğretim hayatında yeni bir dönem başlamıştır (s.292).",
+      fc: ["Sahn-ı Semân nedir?", "Fatih'in kurduğu, akli ve nakli bilimler okutan yüksek medreseler."]
+    },
+    {
+      bi: 0,
+      metin: "Klasik Türk müziğinin kurucusu kabul edilen ve Segâh Bayram Tekbiri'ni besteleyen sanatçı kimdir?",
+      secenekler: ["Itri (Buhurizade Mustafa)", "Nabi (Yusuf Nabi)", "Matrakçı Nasuh Bey", "Kâtip Çelebi (Mustafa)"],
+      cozum: "Buhurizade Mustafa Efendi (Itri), klasik Türk müziğinin kurucusu kabul edilir; Segâh Bayram Tekbiri dünyanın dört bir yanında okunmaya devam etmektedir (s.286-287).",
+      fc: ["Segâh Bayram Tekbiri nedir?", "Itri'nin bayram ve önemli günlerde okunan tekbir bestesi."]
+    },
+    {
+      bi: 1,
+      metin: "Fatih Dönemi'nde İstanbul'a getirilerek astronomi ve matematik çalışmalarına destek verilen âlim kimdir?",
+      secenekler: ["Ali Kuşçu", "Akşemseddin", "Sabuncuoğlu Şerefeddin", "Nabi"],
+      cozum: "Fatih, Semerkant'ta yetişen astronomi bilgini Ali Kuşçu'yu İstanbul'a getirterek ona geniş çalışma imkânları sunmuştur (s.217, 290).",
+      fc: ["Ali Kuşçu'nun alanı nedir?", "Astronomi ve matematik çalışmaları."]
+    },
+    {
+      bi: 1,
+      metin: "1551-1557 yılları arasında Kanuni Sultan Süleyman tarafından yaptırılan ve medrese sisteminde önemli düzenlemelere konu olan kurum hangisidir?",
+      secenekler: ["Süleymaniye Medreseleri", "Sahn-ı Semân Medreseleri", "Sırçalı Medrese", "Darulkurra"],
+      cozum: "Süleymaniye Medreselerinin hizmete girmesiyle medrese sisteminde önemli düzenlemeler yapılmış; bu kurumlarda Osmanlı merkez ve taşra görevlileri yetiştirilmiştir (s.292).",
+      fc: ["Süleymaniye Medreseleri nedir?", "Kanuni Dönemi'nde kurulan, medrese sistemini düzenleyen kurumlar."]
+    },
+    {
+      bi: 1,
+      metin: "Topkapı Sarayı'nda saray için çalışan sanatkârların bağlı olduğu teşkilata ne ad verilir?",
+      secenekler: ["Ehl-i hiref", "Ehl-i zanaat", "Nakkaşhane", "Mehterhane"],
+      cozum: "Saray için çalışan sanatkârlar, Topkapı Sarayı'nda ehl-i hiref adlı teşkilat bünyesinde faaliyetlerini yürütürdü (s.293).",
+      fc: ["Ehl-i hiref nedir?", "Saray için çalışan sanatkârların bağlı olduğu teşkilat."]
+    },
+    {
+      bi: 1,
+      metin: "Osmanlı Devleti'nde resmî törenlerde, seferlerde ve savaş öncesinde icra edilen askerî müziğe ne ad verilir?",
+      secenekler: ["Mehter", "Segâh", "Kâr", "Peşrev"],
+      cozum: "Resmî törenlerde, bayramlarda, seferlerde ve savaş öncesinde yaygın olarak mehter icra edilir, müziğin eğitimi için mehterhaneler inşa edilirdi (s.293).",
+      fc: ["Mehter nedir?", "Osmanlı'da resmî tören ve seferlerde çalınan askerî müzik."]
+    },
+    {
+      bi: 1,
+      metin: "Osmanlı bilim ve sanat birikiminin günümüz açısından önemi hangisinde doğru ifade edilmiştir?",
+      secenekler: [
+        "Osmanlı topraklarındaki ülkelerin ve Türkiye'nin ortak kültürel mirasını oluşturması",
+        "Yalnız İstanbul'da yaşayan toplulukları ilgilendiren yerel bir birikim olması",
+        "Yalnız askerî alandaki düzenlemelerle sınırlı kalması",
+        "Dönemin saray çevresiyle sınırlı, halka ulaşmayan bir çaba olması"
+      ],
+      cozum: "Osmanlı Dönemi'nde bilim, kültür, eğitim ve sanat alanlarında yapılan faaliyetler, bugün Osmanlı topraklarında varlığını sürdüren ülkelerin ve Türkiye'nin ortak kültürel mirasıdır (s.287).",
+      fc: ["Ortak kültürel miras nedir?", "Osmanlı coğrafyasındaki halkların birlikte ürettiği ve devraldığı kültürel birikim."]
     }
   ]
 });

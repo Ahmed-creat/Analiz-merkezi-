@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 233,
- "soru_sayisi": 2474,
- "flashcard_sayisi": 2474,
+ "havuz_sayisi": 214,
+ "soru_sayisi": 2252,
+ "flashcard_sayisi": 2252,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": null,
@@ -3251,251 +3251,6 @@
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "tar_10_t01_c01",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t01_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Türk tarihinin seyrini değiştiren önemli askerî mücadeleleri tarih şeridi üzerinde sıralar.",
-    "Türk tarihinin seyrini değiştiren önemli askerî mücadelelerin özelliklerini belirler.",
-    "Türk tarihinin seyrini değiştiren önemli askerî mücadelelerin etkilerini benzerlik ve farklılıkları açısından listeler."
-   ],
-   "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte 1040-1299 yılları arasında meydana VE SÜREÇ BİLEŞENLERİ gelen önemli askerî mücadelelerin Türk tarihinin seyrine etkilerini karşılaştırabilme",
-   "topic_key": "Tarih > 1.1 Türkistan’dan Türkiye’ye uzanan süreçte 1040-1299 yılları arasında meydana VE SÜREÇ BİLEŞENLERİ gelen önemli askerî mücadelelerin Türk tarihinin seyrine etkilerini karşılaştırabilme",
-   "kod": "TAR.10.1.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t01_c02",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t01_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği sağlayan unsurları inceler.",
-    "Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliğin etkilediği unsurları inceler.",
-    "Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliğin kurumlara etkilerini sorgular.",
-    "Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliğin neden ve sonuçlarını açıklar."
-   ],
-   "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlayabilme",
-   "topic_key": "Tarih > 1.2 Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlayabilme",
-   "kod": "TAR.10.1.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t01_c03",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t01_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişki hakkında merak ettiği konuları belirler.",
-    "İlgili konular hakkında sorular sorar.",
-    "Farklı kaynaklar üzerinden konuya ilişkin bilgi toplar.",
-    "Topladığı bilgilerin doğruluğunu değerlendirir.",
-    "Topladığı bilgiler üzerinden Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişki hakkında çıkarım yapar."
-   ],
-   "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgulayabilme",
-   "topic_key": "Tarih > 1.3 Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgulayabilme",
-   "kod": "TAR.10.1.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t01_c04",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t01_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Türk-İslam medeniyeti ile Batı medeniyetinin bilim, kültür, eğitim ve sanat anlayışını karşılaştırır.",
-    "Türkistan’dan Türkiye’ye uzanan süreçte Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmelerin Anadolu’nun Türkleşme ve İslamlaşma sürecine etkisine ilişkin kanıtları kullanarak yargıda bulunur.",
-    "Hoca Ahmed Yesevi, Kaşgarlı Mahmud, Ömer Hayyam, Cezeri, İbnülarabi, Mevlana Celaleddin Rumi, Hacı Bektaş Veli, Yunus Emre ve İbni Bibi’nin düşünceleri veya eserleri hakkında insanlığın ortak mirasına katkıları bakımından yargıda bulunur."
-   ],
-   "baslik": "Türkistan’dan Türkiye’ye uzanan süreçte Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmeleri Anadolu’nun Türkleşme ve İslamlaşma sürecine etkisi açısından değerlendirebilme",
-   "topic_key": "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
-   "kod": "TAR.10.1.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t02_c01",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t02_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Tarihçilerin Osmanlı Devleti’nin kuruluşuna dair öne sürdüğü farklı görüşlerin benzer ve farklı yönlerini belirler.",
-    "Tarihçilerin Osmanlı Devleti’nin kuruluşuna dair öne sürdüğü görüşlerin güçlü ve zayıf yönleri ile tutarsızlıklarını tespit eder.",
-    "Tarihçilerin Osmanlı Devleti’nin kuruluşuna dair öne sürdüğü görüşleri gerekçeleriyle çürütür veya kabul eder."
-   ],
-   "baslik": "Osmanlı Devleti’nin kuruluşuna dair farklı görüşleri tartışabilme VE SÜREÇ BİLEŞENLERİ",
-   "topic_key": "Tarih > 2.1 Osmanlı Devleti’nin kuruluşuna dair farklı görüşleri tartışabilme VE SÜREÇ BİLEŞENLERİ",
-   "kod": "TAR.10.2.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t02_c02",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t02_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Osmanlı Devleti’nin Anadolu ve Rumeli’de gerçekleştirdiği siyasi ve askerî mücadeleleri farklı kaynakları karşılaştırarak inceler.",
-    "Osmanlı Devleti’nin Anadolu ve Rumeli’de gerçekleştirdiği siyasi ve askerî mücadelelere ilişkin farklı kaynaklardaki bilgi ve bakış açılarını görsel bir forma dönüştürür.",
-    "Osmanlı Devleti’nin Anadolu ve Rumeli’de gerçekleştirdiği siyasi ve askerî mücadeleleri verilen kaynaklara dayanarak kendi cümleleriyle ifade eder."
-   ],
-   "baslik": "1299-1453 yılları arasında Osmanlı Devleti’nin Anadolu ve Rumeli’de gerçekleştirdiği siyasi ve askerî mücadeleleri yorumlayabilme",
-   "topic_key": "Tarih > 2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
-   "kod": "TAR.10.2.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t02_c03",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t02_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Osmanlı Beyliği’nin devletleşmesini sağlayan sistemlerin özelliklerini belirler.",
-    "Osmanlı Beyliği’nin devletleşmesini sağlayan sistemler arasındaki ilişkiyi belirler."
-   ],
-   "baslik": "Osmanlı Devleti’nin ordu, hukuk ve toprak sistemi ile devletleşme süreci arasındaki ilişkiyi çözümleyebilme",
-   "topic_key": "Tarih > 2.3 Osmanlı Devleti’nin ordu, hukuk ve toprak sistemi ile devletleşme süreci arasındaki ilişkiyi çözümleyebilme",
-   "kod": "TAR.10.2.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t02_c04",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t02_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Osmanlı Devleti’nin fethettiği topraklarda uyguladığı iskân ve istimalet politikalarına yönelik kaynaklardaki farklı bakış açılarının nedenlerine dair sorular sorar.",
-    "Osmanlı Devleti’nin fethettiği topraklarda uyguladığı iskân ve istimalet politikalarına ilişkin kaynaklardaki bilgilerin sınırlılıkları hakkında çıkarım yapar.",
-    "Osmanlı Devleti’nin fethettiği topraklarda uyguladığı iskân ve istimalet politikalarına yönelik kaynaklara dayalı çıkarım yapar."
-   ],
-   "baslik": "Osmanlı Devleti’nin fethettiği topraklarda kalıcı olabilmek için izlediği politikaları sorgulayabilme",
-   "topic_key": "Tarih > 2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
-   "kod": "TAR.10.2.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t02_c05",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t02_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin etkilerini fark eder.",
-    "Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında ilk Türk-İslam devletlerindeki benzer deneyimleri inceler.",
-    "Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin rolüne ilişkin fikir üretir."
-   ],
-   "baslik": "Osmanlı Devleti’nin ilim ve irfan geleneğinin oluşmasında şehir, kurum ve şahsiyetlerin etkilerine dair fikirler üretebilme",
-   "topic_key": "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
-   "kod": "TAR.10.2.5",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t03_c01",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t03_c01.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "1453-1683 yılları arasındaki siyasi ve askerî mücadeleleri belirler.",
-    "1453-1683 yılları arasındaki siyasi ve askerî mücadeleler ile Osmanlı Devleti’nin cihan devleti hâline gelmesini ilişkilendirir.",
-    "1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin sonucunda bir cihan devleti hâline gelen Osmanlı Devleti’nin politikaları hakkında özgün bir içerik oluşturur."
-   ],
-   "baslik": "1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti’nin VE SÜREÇ BİLEŞENLERİ cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilme",
-   "topic_key": "Tarih > 3.1 1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti’nin VE SÜREÇ BİLEŞENLERİ cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilme",
-   "kod": "TAR.10.3.1",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t03_c02",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t03_c02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliği kaynaklar üzerinden inceler.",
-    "1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişimle ilgili farklı kaynaklardaki bilgileri tablo yaparak gösterir.",
-    "1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişimleri birden çok kaynaktaki kanıtlara dayanarak ifade eder."
-   ],
-   "baslik": "1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliğe ilişkin kaynakları yorumlayabilme",
-   "topic_key": "Tarih > 3.2 1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliğe ilişkin kaynakları yorumlayabilme",
-   "kod": "TAR.10.3.2",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t03_c03",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t03_c03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Avrupalıların sömürgeci politikalarını kaynaklara dayanarak çözümler.",
-    "Avrupalıların sömürgeci politikalarıyla ilgili olarak dönemin koşullarını fark eder.",
-    "Avrupalıların sömürgeci politikalarının günümüze etkilerini açıklar.",
-    "Avrupalıların sömürgeci politikalarının etkilerini dönemin koşulları içinde açıklar."
-   ],
-   "baslik": "Avrupalıların sömürgeci politikalarının etkilerini tarihsel bağlamı içerisinde değerlendirebilme",
-   "topic_key": "Tarih > 3.3 Avrupalıların sömürgeci politikalarının etkilerini tarihsel bağlamı içerisinde değerlendirebilme",
-   "kod": "TAR.10.3.3",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t03_c04",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t03_c04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçları konusunda bireylerin farklı görüşlerde olabileceğini fark eder.",
-    "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçları konusunda kendi görüşüyle diğer bireylerin görüşlerini karşılaştırır.",
-    "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların nedenlerine ilişkin mevcut görüşlerden hareketle dönemin şartlarını göz önünde bulundurarak isyanların önlenmesine yönelik olası çözümler önerir.",
-    "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanları ve bunlara karşı alınan önlemlere ilişkin farklı görüş ve düşünceleri değerlendirerek grubun görüşünü ifade eder. 45",
-    "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçlarına ilişkin farklı görüş ve düşünceleri değerlendirerek kendi görüşünü gözden geçirir."
-   ],
-   "baslik": "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçlarını müzakere edebilme",
-   "topic_key": "Tarih > 3.4 1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçlarını müzakere edebilme",
-   "kod": "TAR.10.3.4",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tar_10_t03_c05",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tar_10_t03_c05.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Araştırmasında belirlediği kaynaklardan 1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin bilgi toplar.",
-    "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin belirlediği kaynakları inceleyerek araştırmasına dair bilgileri tespit eder.",
-    "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin kullanacağı kaynakların sınırlılığını sorgular.",
-    "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin kaynaklardan araştırmasına uygun olarak belirlediği bilgileri yorumlar.",
-    "1453-1683 yılları arasında bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin kanıtlara dayanarak oluşturduğu araştırmasını paylaşır."
-   ],
-   "baslik": "1453-1683 yılları arasında Osmanlı Devleti’nde bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin oluşturduğu özgün ürünleri paylaşabilme",
-   "topic_key": "Tarih > 3.5 1453-1683 yılları arasında Osmanlı Devleti’nde bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin oluşturduğu özgün ürünleri paylaşabilme",
-   "kod": "TAR.10.3.5",
-   "uretim_durumu": "plansiz"
-  },
-  {
    "konu_id": "tar_10_u01_k01",
    "ders": "Tarih",
    "sinif": 10,
@@ -3602,8 +3357,8 @@
     "Ordu, toprak ve hukuk kurumlarının işleyişini açıklar.",
     "Tımar ve devşirme uygulamalarının merkezî otoriteye etkisini çözümler."
    ],
-   "baslik": "2.3 Beylikten Devlete Ordu, Toprak ve Hukuk Sistemi",
-   "topic_key": "Tarih > 2.3 Beylikten Devlete Ordu, Toprak ve Hukuk Sistemi",
+   "baslik": "2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
+   "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3618,8 +3373,8 @@
     "İskân ve istimâlet politikalarının amaç ve yöntemlerini açıklar.",
     "Bu politikaların Rumeli'de kalıcılığa etkisini kaynaklar üzerinden çözümler."
    ],
-   "baslik": "2.4 Osmanlı Devleti'nin İskân ve İstimâlet Politikası",
-   "topic_key": "Tarih > 2.4 Osmanlı Devleti'nin İskân ve İstimâlet Politikası",
+   "baslik": "2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
+   "topic_key": "Tarih > 2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
@@ -3640,153 +3395,81 @@
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "tarih_10_u01_k01",
+   "konu_id": "tar_10_u03_k10",
    "ders": "Tarih",
    "sinif": 10,
-   "dosya": "tarih_10_u01_k01.json",
+   "dosya": "tar_10_u03_k10.json",
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler"
+    "1453-1683 arasındaki siyasi ve askerî gelişmeleri açıklar.",
+    "Fetihlerin Osmanlı'nın cihan devleti konumuna etkisini çözümler."
    ],
-   "baslik": "Türkistan'dan Türkiye'ye: Önemli Askerî Mücadeleler (1040-1299)",
-   "topic_key": "Tarih > Türkistan'dan Türkiye'ye: Önemli Askerî Mücadeleler (1040-1299)",
-   "kod": "",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tarih_10_u01_k02",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tarih_10_u01_k02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim"
-   ],
-   "baslik": "Türkistan'dan Türkiye'ye: Devlet ve Ordu Teşkilatları",
-   "topic_key": "Tarih > Türkistan'dan Türkiye'ye: Devlet ve Ordu Teşkilatları",
-   "kod": "",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tarih_10_u01_k03",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tarih_10_u01_k03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri"
-   ],
-   "baslik": "Türkistan'dan Türkiye'ye: Sosyoekonomik Hayat, Ahilik ve Şehirleşme",
-   "topic_key": "Tarih > Türkistan'dan Türkiye'ye: Sosyoekonomik Hayat, Ahilik ve Şehirleşme",
-   "kod": "",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tarih_10_u02_k01",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tarih_10_u02_k01.json",
-   "soru_sayisi": 16,
-   "flashcard_sayisi": 16,
-   "etiketler": [
-    "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
-    "2.2. Beylikten Devlete Siyasi ve Askerî Gelişmeler",
-    "2.4. Osmanlı Devleti’nin İskân ve İstimalet Politikası"
-   ],
-   "baslik": "Beylikten Devlete Osmanlı Siyaseti (1299-1453)",
-   "topic_key": "Tarih > Beylikten Devlete Osmanlı Siyaseti (1299-1453)",
-   "kod": "",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tarih_10_u02_k02",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tarih_10_u02_k02.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi"
-   ],
-   "baslik": "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi",
-   "topic_key": "Tarih > 2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
-   "kod": "",
-   "uretim_durumu": "plansiz"
-  },
-  {
-   "konu_id": "tarih_10_u03_k01",
-   "ders": "Tarih",
-   "sinif": 10,
-   "dosya": "tarih_10_u03_k01.json",
-   "soru_sayisi": 19,
-   "flashcard_sayisi": 19,
-   "etiketler": [
-    "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi"
-   ],
-   "baslik": "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi",
+   "baslik": "3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
    "topic_key": "Tarih > 3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "tarih_10_u03_k02",
+   "konu_id": "tar_10_u03_k11",
    "ders": "Tarih",
    "sinif": 10,
-   "dosya": "tarih_10_u03_k02.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "dosya": "tar_10_u03_k11.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim"
+    "Merkez ve taşra yönetimi ile divanın işleyişini açıklar.",
+    "Yönetim ve veraset uygulamalarındaki değişimin etkilerini çözümler."
    ],
-   "baslik": "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim",
+   "baslik": "3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
    "topic_key": "Tarih > 3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "tarih_10_u03_k03",
+   "konu_id": "tar_10_u03_k12",
    "ders": "Tarih",
    "sinif": 10,
-   "dosya": "tarih_10_u03_k03.json",
-   "soru_sayisi": 15,
-   "flashcard_sayisi": 15,
+   "dosya": "tar_10_u03_k12.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "3.3. Avrupalıların Sömürgeci Politikaları"
+    "Keşif ve sömürgecilik faaliyetlerinin nedenlerini açıklar.",
+    "Sömürgeciliğin ve düşünsel dönüşümün etkilerini çözümler."
    ],
-   "baslik": "3.3. Avrupalıların Sömürgeci Politikaları",
+   "baslik": "3.3 Avrupalıların Sömürgeci Politikaları",
    "topic_key": "Tarih > 3.3 Avrupalıların Sömürgeci Politikaları",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "tarih_10_u03_k04",
+   "konu_id": "tar_10_u03_k13",
    "ders": "Tarih",
    "sinif": 10,
-   "dosya": "tarih_10_u03_k04.json",
-   "soru_sayisi": 15,
-   "flashcard_sayisi": 15,
+   "dosya": "tar_10_u03_k13.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "3.4. Osmanlı Devleti’nde İsyanlar"
+    "İsyanların nedenlerini ve türlerini açıklar.",
+    "İsyanların merkezî otorite ve toplum düzenine etkisini çözümler."
    ],
-   "baslik": "3.4. Osmanlı Devleti’nde İsyanlar",
+   "baslik": "3.4 Osmanlı Devleti'nde İsyanlar",
    "topic_key": "Tarih > 3.4 Osmanlı Devleti'nde İsyanlar",
    "kod": "",
    "uretim_durumu": "plansiz"
   },
   {
-   "konu_id": "tarih_10_u03_k05",
+   "konu_id": "tar_10_u03_k14",
    "ders": "Tarih",
    "sinif": 10,
-   "dosya": "tarih_10_u03_k05.json",
-   "soru_sayisi": 15,
-   "flashcard_sayisi": 15,
+   "dosya": "tar_10_u03_k14.json",
+   "soru_sayisi": 10,
+   "flashcard_sayisi": 10,
    "etiketler": [
-    "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat"
+    "Bilim, eğitim ve sanat kurumları ile önemli temsilcilerini açıklar.",
+    "Osmanlı bilim ve sanat birikiminin kültürel mirasa etkisini çözümler."
    ],
-   "baslik": "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat",
+   "baslik": "3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
    "topic_key": "Tarih > 3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
    "kod": "",
    "uretim_durumu": "plansiz"

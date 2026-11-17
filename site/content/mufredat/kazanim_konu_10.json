@@ -11,13 +11,13 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 176,
-  "eslesen_konu": 132,
+  "konu": 180,
+  "eslesen_konu": 136,
   "oneri_konu": 0,
   "eslesmeyen_konu": 44,
-  "metin": 116,
-  "metin_tek_konu": 110,
-  "metin_kodlu": 115,
+  "metin": 118,
+  "metin_tek_konu": 112,
+  "metin_kodlu": 117,
   "ders_bazli": {
    "Biyoloji": {
     "konu": 19,
@@ -47,7 +47,7 @@
     "kesin": 0,
     "yapisal": 0,
     "orta": 0,
-    "yok": 16,
+    "yok": 12,
     "metin": 0,
     "metin_tek_konu": 0,
     "metin_kodlu": 0
@@ -66,10 +66,10 @@
    "Fizik": {
     "konu": 25,
     "cikti": 22,
-    "kesin": 9,
+    "kesin": 12,
     "yapisal": 11,
     "orta": 0,
-    "yok": 1,
+    "yok": 2,
     "metin": 24,
     "metin_tek_konu": 20,
     "metin_kodlu": 23
@@ -97,15 +97,15 @@
     "metin_kodlu": 21
    },
    "Tarih": {
-    "konu": 10,
+    "konu": 14,
     "cikti": 14,
-    "kesin": 10,
-    "yapisal": 2,
+    "kesin": 11,
+    "yapisal": 3,
     "orta": 0,
     "yok": 0,
-    "metin": 12,
-    "metin_tek_konu": 12,
-    "metin_kodlu": 12
+    "metin": 14,
+    "metin_tek_konu": 14,
+    "metin_kodlu": 14
    },
    "Türk Dili ve Edebiyatı": {
     "konu": 29,
@@ -113,7 +113,7 @@
     "kesin": 0,
     "yapisal": 0,
     "orta": 0,
-    "yok": 30,
+    "yok": 29,
     "metin": 0,
     "metin_tek_konu": 0,
     "metin_kodlu": 0
@@ -3200,7 +3200,7 @@
    ]
   },
   {
-   "konu_id": "tarih_10_u01_k01",
+   "konu_id": "tar_10_u01_k01",
    "ders": "Tarih",
    "konu": "1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
    "tema": 1,
@@ -3213,16 +3213,10 @@
    "uyari": "",
    "gerekce": "",
    "kazanim_metinleri": 1,
-   "metin_kodlari": [
-    {
-     "metin": "Türkistan’dan Türkiye’ye uzanan süreçte 1040-1299 yılları arasında meydana gelen önemli askerî mücadelelerin Türk tarihinin seyrine etkilerini karşılaştırabilmeniz,",
-     "kod": "TAR.10.1.1",
-     "skor": 0.947
-    }
-   ]
+   "metin_kodlari": []
   },
   {
-   "konu_id": "tarih_10_u01_k02",
+   "konu_id": "tar_10_u01_k02",
    "ders": "Tarih",
    "konu": "1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
    "tema": 1,
@@ -3237,14 +3231,14 @@
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "Türkistan’dan Türkiye’ye uzanan süreçte Türklerde devlet ve ordu teşkilatlarında meydana gelen değişim ve sürekliliği yorumlayabilmeniz,",
+     "metin": "Türkistan'dan Türkiye'ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlar.",
      "kod": "TAR.10.1.2",
      "skor": 1
     }
    ]
   },
   {
-   "konu_id": "tarih_10_u01_k03",
+   "konu_id": "tar_10_u01_k03",
    "ders": "Tarih",
    "konu": "1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
    "tema": 1,
@@ -3259,48 +3253,68 @@
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "Türkistan’dan Türkiye’ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgulayabilmeniz,",
+     "metin": "Türkistan'dan Türkiye'ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgular.",
      "kod": "TAR.10.1.3",
      "skor": 1
     }
    ]
   },
   {
-   "konu_id": "tarih_10_u02_k01",
+   "konu_id": "tar_10_u01_k04",
+   "ders": "Tarih",
+   "konu": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+   "tema": 1,
+   "kodlar": [
+    "TAR.10.1.4"
+   ],
+   "guven": "kesin",
+   "yontem": "kazanim-metni",
+   "skor": 0.865,
+   "uyari": "",
+   "gerekce": "",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": [
+    {
+     "metin": "Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmeleri Anadolu'nun Türkleşme ve İslamlaşma sürecine etkisi açısından değerlendirir.",
+     "kod": "TAR.10.1.4",
+     "skor": 0.865
+    }
+   ]
+  },
+  {
+   "konu_id": "tar_10_u02_k05",
    "ders": "Tarih",
    "konu": "2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
    "tema": 2,
    "kodlar": [
-    "TAR.10.2.1",
-    "TAR.10.2.2",
-    "TAR.10.2.4"
+    "TAR.10.2.1"
    ],
    "guven": "kesin",
    "yontem": "kazanim-metni",
    "skor": 1,
    "uyari": "",
    "gerekce": "",
-   "kazanim_metinleri": 3,
-   "metin_kodlari": [
-    {
-     "metin": "Osmanlı Devleti’nin kuruluşuna dair farklı görüşleri tartışabilmeniz,",
-     "kod": "TAR.10.2.1",
-     "skor": 0.889
-    },
-    {
-     "metin": "1299-1453 yılları arasında Osmanlı Devleti’nin Anadolu ve Rumeli’de gerçekleştirdiği siyasi ve askerî mücadeleleri yorumlayabilmeniz,",
-     "kod": "TAR.10.2.2",
-     "skor": 1
-    },
-    {
-     "metin": "Osmanlı Devleti’nin fethettiği topraklarda kalıcı olabilmek için izlediği politikaları sorgulayabilmeniz,",
-     "kod": "TAR.10.2.4",
-     "skor": 1
-    }
-   ]
+   "kazanim_metinleri": 1,
+   "metin_kodlari": []
   },
   {
-   "konu_id": "tarih_10_u02_k02",
+   "konu_id": "tar_10_u02_k06",
+   "ders": "Tarih",
+   "konu": "2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+   "tema": 2,
+   "kodlar": [
+    "TAR.10.2.2"
+   ],
+   "guven": "yapisal",
+   "yontem": "sira",
+   "skor": 0.333,
+   "uyari": "",
+   "gerekce": "",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": []
+  },
+  {
+   "konu_id": "tar_10_u02_k07",
    "ders": "Tarih",
    "konu": "2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
    "tema": 2,
@@ -3313,16 +3327,42 @@
    "uyari": "",
    "gerekce": "",
    "kazanim_metinleri": 1,
-   "metin_kodlari": [
-    {
-     "metin": "Osmanlı Devleti’nin ordu, hukuk ve toprak sistemleri ile devletleşme süreci arasındaki ilişkiyi çözümleyebilmeniz,",
-     "kod": "TAR.10.2.3",
-     "skor": 1
-    }
-   ]
+   "metin_kodlari": []
   },
   {
-   "konu_id": "tarih_10_u03_k01",
+   "konu_id": "tar_10_u02_k08",
+   "ders": "Tarih",
+   "konu": "2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
+   "tema": 2,
+   "kodlar": [
+    "TAR.10.2.4"
+   ],
+   "guven": "yapisal",
+   "yontem": "sira",
+   "skor": 0.5,
+   "uyari": "",
+   "gerekce": "",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": []
+  },
+  {
+   "konu_id": "tar_10_u02_k09",
+   "ders": "Tarih",
+   "konu": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+   "tema": 2,
+   "kodlar": [
+    "TAR.10.2.5"
+   ],
+   "guven": "yapisal",
+   "yontem": "baslik-geciyor",
+   "skor": 1,
+   "uyari": "",
+   "gerekce": "",
+   "kazanim_metinleri": 1,
+   "metin_kodlari": []
+  },
+  {
+   "konu_id": "tar_10_u03_k10",
    "ders": "Tarih",
    "konu": "3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
    "tema": 3,
@@ -3335,16 +3375,10 @@
    "uyari": "",
    "gerekce": "",
    "kazanim_metinleri": 1,
-   "metin_kodlari": [
-    {
-     "metin": "1453-1683 yılları arasındaki siyasi ve askerî mücadelelerin Osmanlı Devleti’nin cihan devleti hâline gelmesindeki rolüne ilişkin özgün fikirler üretebilmeniz,",
-     "kod": "TAR.10.3.1",
-     "skor": 0.947
-    }
-   ]
+   "metin_kodlari": []
   },
   {
-   "konu_id": "tarih_10_u03_k02",
+   "konu_id": "tar_10_u03_k11",
    "ders": "Tarih",
    "konu": "3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
    "tema": 3,
@@ -3359,14 +3393,14 @@
    "kazanim_metinleri": 1,
    "metin_kodlari": [
     {
-     "metin": "1453-1683 yılları arasında Osmanlı Devleti’nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliğe ilişkin kaynakları yorumlayabilmeniz,",
+     "metin": "1453-1683 yılları arasında Osmanlı Devleti'nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliği değerlendirir.",
      "kod": "TAR.10.3.2",
-     "skor": 1
+     "skor": 0.897
     }
    ]
   },
   {
-   "konu_id": "tarih_10_u03_k03",
+   "konu_id": "tar_10_u03_k12",
    "ders": "Tarih",
    "konu": "3.3 Avrupalıların Sömürgeci Politikaları",
    "tema": 3,
@@ -3379,16 +3413,10 @@
    "uyari": "",
    "gerekce": "",
    "kazanim_metinleri": 1,
-   "metin_kodlari": [
-    {
-     "metin": "Avrupalıların sömürgeci politikalarının etkilerini tarihsel bağlamı içerisinde değerlendirebilmeniz,",
-     "kod": "TAR.10.3.3",
-     "skor": 1
-    }
-   ]
+   "metin_kodlari": []
   },
   {
-   "konu_id": "tarih_10_u03_k04",
+   "konu_id": "tar_10_u03_k13",
    "ders": "Tarih",
    "konu": "3.4 Osmanlı Devleti'nde İsyanlar",
    "tema": 3,
@@ -3401,16 +3429,10 @@
    "uyari": "",
    "gerekce": "",
    "kazanim_metinleri": 1,
-   "metin_kodlari": [
-    {
-     "metin": "1453-1683 yılları arasında Osmanlı Devleti’nde gerçekleşen önemli isyanların neden ve sonuçlarını müzakere edebilmeniz,",
-     "kod": "TAR.10.3.4",
-     "skor": 1
-    }
-   ]
+   "metin_kodlari": []
   },
   {
-   "konu_id": "tarih_10_u03_k05",
+   "konu_id": "tar_10_u03_k14",
    "ders": "Tarih",
    "konu": "3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
    "tema": 3,
@@ -3423,13 +3445,7 @@
    "uyari": "",
    "gerekce": "",
    "kazanim_metinleri": 1,
-   "metin_kodlari": [
-    {
-     "metin": "1453-1683 yılları arasında Osmanlı Devleti’nde bilim, kültür, eğitim ve sanat alanlarında ortaya çıkan gelişmelere ilişkin oluşturduğunuz özgün ürünleri paylaşabilmeniz",
-     "kod": "TAR.10.3.5",
-     "skor": 1
-    }
-   ]
+   "metin_kodlari": []
   }
  ],
  "metin_esleme": [

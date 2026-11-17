@@ -3434,61 +3434,85 @@
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u01_k01",
-      "konu_adi": "Türkistan'dan Türkiye'ye: Önemli Askerî Mücadeleler (1040-1299)",
+      "konu_id": "tar_10_u01_k01",
+      "konu_adi": "Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u01_k02",
-      "konu_adi": "Türkistan'dan Türkiye'ye: Devlet ve Ordu Teşkilatları",
+      "konu_id": "tar_10_u01_k02",
+      "konu_adi": "Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u01_k03",
-      "konu_adi": "Türkistan'dan Türkiye'ye: Sosyoekonomik Hayat, Ahilik ve Şehirleşme",
+      "konu_id": "tar_10_u01_k03",
+      "konu_adi": "Türklerde Sosyoekonomik Hayat ve Şehirleşme",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u02_k01",
-      "konu_adi": "Beylikten Devlete Osmanlı Siyaseti (1299-1453)",
+      "konu_id": "tar_10_u01_k04",
+      "konu_adi": "Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u02_k02",
-      "konu_adi": "Osmanlı Askerî ve Eyalet Teşkilatının Kuruluşu (Tımar ve Kapıkulu Sistemi)",
+      "konu_id": "tar_10_u02_k05",
+      "konu_adi": "Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u03_k01",
+      "konu_id": "tar_10_u02_k06",
+      "konu_adi": "Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+      "sinif": 10,
+      "ders": "Tarih"
+    },
+    {
+      "konu_id": "tar_10_u02_k07",
+      "konu_adi": "Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
+      "sinif": 10,
+      "ders": "Tarih"
+    },
+    {
+      "konu_id": "tar_10_u02_k08",
+      "konu_adi": "Osmanlı Devleti'nin İskân ve İstimalet Politikası",
+      "sinif": 10,
+      "ders": "Tarih"
+    },
+    {
+      "konu_id": "tar_10_u02_k09",
+      "konu_adi": "Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+      "sinif": 10,
+      "ders": "Tarih"
+    },
+    {
+      "konu_id": "tar_10_u03_k10",
       "konu_adi": "Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u03_k02",
-      "konu_adi": "Osmanlı Devleti'nde Yönetim ve Merkez Teşkilatı (Divan-ı Hümayun)",
+      "konu_id": "tar_10_u03_k11",
+      "konu_adi": "Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u03_k03",
-      "konu_adi": "Avrupalıların Sömürgeci Politikaları ve Osmanlı Akdeniz Hâkimiyeti",
+      "konu_id": "tar_10_u03_k12",
+      "konu_adi": "Avrupalıların Sömürgeci Politikaları",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u03_k04",
-      "konu_adi": "Osmanlı Devleti'nde Sosyal Düzen ve İsyanlar (Celali ve Yeniçeri İsyanları)",
+      "konu_id": "tar_10_u03_k13",
+      "konu_adi": "Osmanlı Devleti'nde İsyanlar",
       "sinif": 10,
       "ders": "Tarih"
     },
     {
-      "konu_id": "tarih_10_u03_k05",
+      "konu_id": "tar_10_u03_k14",
       "konu_adi": "Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
       "sinif": 10,
       "ders": "Tarih"
@@ -4724,166 +4748,6 @@
         "konu_adi": "7.2 Bayes Teoremi",
         "sinif": 10,
         "ders": "Matematik"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u01_k01",
-      "existing": {
-        "konu_id": "tarih_10_u01_k01",
-        "konu_adi": "Türkistan'dan Türkiye'ye: Önemli Askerî Mücadeleler (1040-1299)",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u01_k01",
-        "konu_adi": "1.1. Türkistan’dan Türkiye’ye Uzanan Süreçte Meydana Gelen Önemli Askerî Mücadeleler",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u01_k02",
-      "existing": {
-        "konu_id": "tarih_10_u01_k02",
-        "konu_adi": "Türkistan'dan Türkiye'ye: Devlet ve Ordu Teşkilatları",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u01_k02",
-        "konu_adi": "1.2. Türkistan’dan Türkiye’ye Uzanan Süreçte Türk Devlet ve Ordu Teşkilatında Meydana Gelen Değişim",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u01_k03",
-      "existing": {
-        "konu_id": "tarih_10_u01_k03",
-        "konu_adi": "Türkistan'dan Türkiye'ye: Sosyoekonomik Hayat, Ahilik ve Şehirleşme",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u01_k03",
-        "konu_adi": "1.3. Türkistan’dan Türkiye’ye Uzanan Süreçte Türklerin Sosyal Yaşamları ve Ekonomik Faaliyetleri",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u02_k01",
-      "existing": {
-        "konu_id": "tarih_10_u02_k01",
-        "konu_adi": "Beylikten Devlete Osmanlı Siyaseti (1299-1453)",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u02_k01",
-        "konu_adi": "2.1. Osmanlı Devleti’nin Kuruluşuna Dair Görüşler",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u02_k02",
-      "existing": {
-        "konu_id": "tarih_10_u02_k02",
-        "konu_adi": "Osmanlı Askerî ve Eyalet Teşkilatının Kuruluşu (Tımar ve Kapıkulu Sistemi)",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u02_k02",
-        "konu_adi": "2.3. Osmanlı Devleti’nde Ordu, Hukuk ve Toprak Sistemi",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u03_k01",
-      "existing": {
-        "konu_id": "tarih_10_u03_k01",
-        "konu_adi": "Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u03_k01",
-        "konu_adi": "3.1. Osmanlı Devleti’nin Cihan Devleti Hâline Gelmesi",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u03_k02",
-      "existing": {
-        "konu_id": "tarih_10_u03_k02",
-        "konu_adi": "Osmanlı Devleti'nde Yönetim ve Merkez Teşkilatı (Divan-ı Hümayun)",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u03_k02",
-        "konu_adi": "3.2. Osmanlı Devleti’nin Yönetim ve Ordu Yapısında Değişim",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u03_k03",
-      "existing": {
-        "konu_id": "tarih_10_u03_k03",
-        "konu_adi": "Avrupalıların Sömürgeci Politikaları ve Osmanlı Akdeniz Hâkimiyeti",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u03_k03",
-        "konu_adi": "3.3. Avrupalıların Sömürgeci Politikaları",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u03_k04",
-      "existing": {
-        "konu_id": "tarih_10_u03_k04",
-        "konu_adi": "Osmanlı Devleti'nde Sosyal Düzen ve İsyanlar (Celali ve Yeniçeri İsyanları)",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u03_k04",
-        "konu_adi": "3.4. Osmanlı Devleti’nde İsyanlar",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "tarih_10_u03_k05",
-      "existing": {
-        "konu_id": "tarih_10_u03_k05",
-        "konu_adi": "Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
-        "sinif": 10,
-        "ders": "Tarih"
-      },
-      "incoming": {
-        "konu_id": "tarih_10_u03_k05",
-        "konu_adi": "3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat",
-        "sinif": 10,
-        "ders": "Tarih"
       },
       "source": "pool"
     }
