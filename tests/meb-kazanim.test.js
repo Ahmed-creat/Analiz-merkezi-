@@ -68,7 +68,10 @@ ok("her eşlenen kod resmî tabloda var", bozukKod.length === 0, bozukKod.slice(
 const havuzDosyalari = fs.readdirSync(path.join(KOK, "site/content/soru_havuzlari"))
   .filter(a => a.endsWith(".json") && a !== "index.json");
 const konuIdKumesi = new Set(havuzDosyalari.map(a => a.replace(/\.json$/, "")));
-const bozukKonu = konular.filter(k => !konuIdKumesi.has(k.konu_id)).map(k => k.konu_id);
+// Bilinçli istisna: Paragraf havuzu üretilmedi (kullanıcı kararı); eski havuz
+// arsiv/soru_havuzlari/edebiyat/ altında duruyor — bkz. arsiv/README.md.
+const HAVUZSUZ = new Set(["edebiyat_10_u04_k06"]);
+const bozukKonu = konular.filter(k => !HAVUZSUZ.has(k.konu_id) && !konuIdKumesi.has(k.konu_id)).map(k => k.konu_id);
 ok("her konu_id gerçek bir havuz", bozukKonu.length === 0, bozukKonu.slice(0, 4).join(","));
 
 const dersKarismasi = konular.flatMap(k => (k.kodlar || [])

@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 314,
- "soru_sayisi": 3454,
- "flashcard_sayisi": 3454,
+ "havuz_sayisi": 313,
+ "soru_sayisi": 3444,
+ "flashcard_sayisi": 3444,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -1830,7 +1830,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "İsmi türleri bakımından sınıflandırır.",
+    "İsmin yapısını (basit, türemiş, birleşik) çözümler.",
+    "İsim çekim eklerinin işlevini ayırt eder."
    ],
    "baslik": "İsimler (Adlar)",
    "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)",
@@ -1845,7 +1847,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "İsim tamlaması türlerini ayırt eder.",
+    "Tamlamalarda ek ve kaynaştırma harfi kullanımını çözümler.",
+    "İsim tamlamasını sıfat tamlamasından ve zincirleme yapıdan ayırır."
    ],
    "baslik": "İsim Tamlamaları",
    "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları",
@@ -1860,7 +1864,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Niteleme ve belirtme sıfatlarını ayırt eder.",
+    "Sıfatların özelliklerini (adlaşma, pekiştirme, küçültme, derecelendirme) çözümler.",
+    "Sıfatların yapısını belirler."
    ],
    "baslik": "Sıfatlar (Ön Adlar)",
    "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)",
@@ -1875,7 +1881,9 @@
    "soru_sayisi": 10,
    "flashcard_sayisi": 10,
    "etiketler": [
-    "Genel konu becerisi"
+    "Sıfat tamlamasının kuruluşunu belirler.",
+    "Sıfat tamlamasının cümledeki görevini çözümler.",
+    "Sıfat tamlamasını adlaşmış sıfattan ve isim tamlamasından ayırır."
    ],
    "baslik": "Sıfat Tamlamaları",
    "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları",
@@ -2180,22 +2188,6 @@
    ],
    "baslik": "Noktalama İşaretleri",
    "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "edebiyat_10_u04_k06",
-   "ders": "Türk Dili ve Edebiyatı",
-   "sinif": 10,
-   "dosya": "edebiyat_10_u04_k06.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Paragrafın Yapısı",
-    "Anlatım ve Düşünceyi Geliştirme"
-   ],
-   "baslik": "Paragraf",
-   "topic_key": "Türk Dili ve Edebiyatı > Paragraf",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },

@@ -5,6 +5,8 @@
 > Uygulamadaki 30 havuz kimliği (`edebiyat_10_uNN_kNN`) bu sıraya birebir oturur; havuz kimlikleri **değiştirilmez**
 > (Bilgi Bankası havuzu `topic_key`/başlıkla bulur, kimlik değişirse eski kayıtlar kopar).
 > Hedef: her konu için **10 soru + 10 kart**, içerik ders notlarından.
+> **Paragraf konusundan havuz üretilmez** (kullanıcı kararı: uygulamada paragraf sorusu sorulamıyor).
+> Değiştirilen eski havuzlar silinmez, `arsiv/soru_havuzlari/edebiyat/` altına taşınır (bkz. `arsiv/README.md`).
 
 ## Kaynaklar
 
@@ -27,10 +29,10 @@ Aksi hâlde "KoĢuk" gibi aramalar tutmaz.
 | 3 | `edebiyat_10_u01_k03` | Türkü | DN s.14-15 | ✅ 10+10 · `tde-t01.js` |
 | 4 | `edebiyat_10_u01_k04` | Koşma | DN s.17-18 | ✅ 10+10 · `tde-t01.js` |
 | 5 | `edebiyat_10_u01_k05` | Masal | DN s.19-21 | ✅ 10+10 · `tde-t01.js` |
-| 6 | `edebiyat_10_u01_k06` | İsimler (Adlar) | DN s.40-49 | ⬜ bekliyor |
-| 7 | `edebiyat_10_u01_k07` | İsim Tamlamaları | DN s.62-65 | ⬜ bekliyor |
-| 8 | `edebiyat_10_u01_k08` | Sıfatlar (Ön Adlar) | DN s.50-61 | ⬜ bekliyor |
-| 9 | `edebiyat_10_u01_k09` | Sıfat Tamlamaları | DN s.66-67 | ⬜ bekliyor |
+| 6 | `edebiyat_10_u01_k06` | İsimler (Adlar) | DN s.40-49 | ✅ 10+10 · `tde-t01-dil.js` |
+| 7 | `edebiyat_10_u01_k07` | İsim Tamlamaları | DN s.46-48, 62-65 | ✅ 10+10 · `tde-t01-dil.js` |
+| 8 | `edebiyat_10_u01_k08` | Sıfatlar (Ön Adlar) | DN s.50-61 | ✅ 10+10 · `tde-t01-dil.js` |
+| 9 | `edebiyat_10_u01_k09` | Sıfat Tamlamaları | DN s.65-67 | ✅ 10+10 · `tde-t01-dil.js` |
 | 10 | `edebiyat_10_u02_k01` | Gazel | DN s.74-75 | ⬜ bekliyor |
 | 11 | `edebiyat_10_u02_k02` | Kaside | DN s.75-79 | ⬜ bekliyor |
 | 12 | `edebiyat_10_u02_k03` | Mersiye | DN s.79 | ⬜ bekliyor |
@@ -51,7 +53,7 @@ Aksi hâlde "KoĢuk" gibi aramalar tutmaz.
 | 27 | `edebiyat_10_u04_k03` | Fiiller (Eylemler) | DN s.134-147 | ⬜ bekliyor |
 | 28 | `edebiyat_10_u04_k04` | Yazım Kuralları | **YK** s.1-31 | ⬜ bekliyor |
 | 29 | `edebiyat_10_u04_k05` | Noktalama İşaretleri | **Nİ** s.1-12 | ⬜ bekliyor |
-| 30 | `edebiyat_10_u04_k06` | Paragraf | DN s.86-91 | ⬜ bekliyor |
+| 30 | `edebiyat_10_u04_k06` | Paragraf | — | ⛔ **havuz üretilmeyecek** (uygulamada paragraf sorusu sorulamıyor; eski havuz `arsiv/soru_havuzlari/edebiyat/` altında) |
 
 Not: `konu_kayit_defteri.json` içinde ayrıca `muf_10_turk_dili_ve_edebiyat_01..29` kayıtları var; bunlar
 aynı konuların müfredat kopyasıdır ve **havuz dosyası yoktur**. Havuzlar `edebiyat_10_uNN_kNN` kimliğiyle üretilir.

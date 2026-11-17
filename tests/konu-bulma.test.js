@@ -57,15 +57,21 @@ esit("ders uyuşmazsa null", HB.bul("Fizik > Destan", HAVUZLAR), null);
 // ---------- 2b) KISA KONTROL KAPSAMASI (her konuda çıkmalı) ----------
 console.log("\n== 2b) Kapsama ==");
 const { KONULAR } = require(path.join(KOK, "konular.js"));
+// Bilinçli istisna: Paragraf konusundan soru havuzu ÜRETİLMEZ (kullanıcı
+// kararı: uygulamada paragraf sorusu sorulamıyor). Eski havuz silinmedi,
+// arsiv/soru_havuzlari/edebiyat/ altına taşındı — bkz. arsiv/README.md.
+const HAVUZSUZ_KONULAR = ["Türk Dili ve Edebiyatı > Paragraf"];
 let konuSayisi = 0; const kapsanmayan = [];
 for (const ders of Object.keys(KONULAR["10"])) {
   for (const konu of KONULAR["10"][ders]) {
     konuSayisi++;
-    if (!HB.bul(ders + " > " + konu, HAVUZLAR)) kapsanmayan.push(ders + " > " + konu);
+    const anahtar = ders + " > " + konu;
+    if (HAVUZSUZ_KONULAR.includes(anahtar)) continue;
+    if (!HB.bul(anahtar, HAVUZLAR)) kapsanmayan.push(anahtar);
   }
 }
 esit("10. sınıf konu sayısı 180", konuSayisi, 180);
-esit("her konuda Kısa Kontrol (havuz) var: 180/180", kapsanmayan.length, 0);
+esit("her konuda Kısa Kontrol (havuz) var: " + (konuSayisi - HAVUZSUZ_KONULAR.length) + "/" + (konuSayisi - HAVUZSUZ_KONULAR.length), kapsanmayan.length, 0);
 ok("kapsanmayan konu listesi boş", kapsanmayan.length === 0, kapsanmayan.slice(0, 3).join(" | "));
 esit("etiket (alt beceri) kademesi çalışıyor",
   (HB.bul("Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi", HAVUZLAR) || {}).konu_id,
