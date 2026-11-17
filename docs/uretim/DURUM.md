@@ -1,28 +1,62 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-17 13:27 (UTC)
+> Güncelleme: 2026-11-17 18:42 (UTC)
 
 ## Ders bazında
 
 | Ders | Havuz (tamam/toplam) | Soru | Hedef | Kart | Görselli soru |
 | --- | --- | --- | --- | --- | --- |
 | Türk Dili ve Edebiyatı | 29/29 (konu) | 290 | 290 | 290 | 0 |
-| Matematik | 21/21 | 274 | 274 | 274 | 22 |
-| Fizik | 22/22 | 220 | 220 | 220 | 27 |
-| Kimya | 21/21 | 215 | 214 | 215 | 46 |
-| Biyoloji | 19/19 | 190 | 190 | 190 | 38 |
+| Matematik | 13/21 | 210 | 274 | 210 | 46 |
+| Fizik | 20/22 | 200 | 220 | 200 | 10 |
+| Kimya | 20/21 | 180 | 214 | 180 | 0 |
+| Biyoloji | 19/19 | 192 | 190 | 192 | 0 |
 | Tarih | 14/14 | 140 | 140 | 140 | 5 |
-| Coğrafya | 18/18 | 190 | 190 | 190 | 8 |
+| Coğrafya | 14/18 | 191 | 190 | 191 | 0 |
 | Felsefe | 10/10 | 100 | 100 | 100 | 0 |
 | Din Kültürü | 17/17 | 170 | 170 | 170 | 0 |
-| **TOPLAM** | **171/171** | **1789** | **1788** | **1789** | **146** |
+| **TOPLAM** | **156/171** | **1673** | **1788** | **1673** | **61** |
 
-İlerleme: **%100** (1789/1788 soru) · kart 1:1 ✔
+İlerleme: **%94** (1673/1788 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 
-Yok — plan çıktılarının tamamı tamam 🎉 (TDE konu havuzlarıyla karşılandı)
+
+### Matematik
+
+| konu_id | kod | hedef soru | durum |
+| --- | --- | --- | --- |
+| `mat_10_t02_c01` | MAT.10.2.1 | 16 | eksik (10 soru, 10 kart · `mat_10_u02_k01.json`) |
+| `mat_10_t03_c02` | MAT.10.3.2 | 14 | eksik (10 soru, 10 kart · `mat_10_u03_k02.json`) |
+| `mat_10_t03_c03` | MAT.10.3.3 | 14 | eksik (10 soru, 10 kart · `mat_10_u03_k03.json`) |
+| `mat_10_t04_c02` | MAT.10.4.2 | 24 | eksik (10 soru, 10 kart · `mat_10_u04_k02.json`) |
+| `mat_10_t04_c03` | MAT.10.4.3 | 12 | eksik (10 soru, 10 kart · `mat_10_u04_k03.json`) |
+| `mat_10_t04_c04` | MAT.10.4.4 | 24 | eksik (10 soru, 10 kart · `mat_10_u04_k04.json`) |
+| `mat_10_t04_c06` | MAT.10.4.6 | 20 | eksik (10 soru, 10 kart · `mat_10_u04_k06.json`) |
+| `mat_10_t05_c01` | MAT.10.5.1 | 20 | eksik (10 soru, 10 kart · `mat_10_u05_k01.json`) |
+
+### Fizik
+
+| konu_id | kod | hedef soru | durum |
+| --- | --- | --- | --- |
+| `fiz_10_t03_c07` | FİZ.10.3.7 | 10 | havuz yok |
+| `fiz_10_t04_c07` | FİZ.10.4.7 | 10 | havuz yok |
+
+### Kimya
+
+| konu_id | kod | hedef soru | durum |
+| --- | --- | --- | --- |
+| `kim_10_t01_c09` | KİM.10.1.9 | 14 | eksik (10 soru, 10 kart · `kimya_10_u01_k06.json`) |
+
+### Coğrafya
+
+| konu_id | kod | hedef soru | durum |
+| --- | --- | --- | --- |
+| `cogr_10_t02_c02` | COĞ.10.2.2 | 14 | eksik (10 soru, 10 kart · `cogr_10_u02_k02.json`) |
+| `cogr_10_t03_c04` | COĞ.10.3.4 | 12 | eksik (10 soru, 10 kart · `cogr_10_u03_k04.json`) |
+| `cogr_10_t05_c03` | COĞ.10.5.3 | 12 | eksik (10 soru, 10 kart · `cogr_10_u05_k03.json`) |
+| `cogr_10_t06_c03` | COĞ.10.6.3 | 12 | eksik (10 soru, 10 kart · `cogr_10_u06_k03.json`) |
 
 ## Kapı komutları
 

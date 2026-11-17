@@ -234,9 +234,15 @@ $ node docs/uretim/uretim/cografya-tur2-guncelle.js
 1. **Tarih → Din → Felsefe → TDE** — aynı iki betik yöntemi (`<ders>-t*.js` + `tur2-guncelle` + `tur2-veri-esle`).
 2. Son tur: ağaç/kayıt defteri/arşiv/kapılar/rapor + `main` ile birleştirme kararı (kullanıcıya).
 
-**Bilinen açık (bu turun kapsamı dışında):** `docs/uretim/araclar/durum.js` panosu hâlâ **plan şemasındaki
-dosya adlarını** (`mat_10_t01_c01.json`, `cogr_10_t06_c02.json` …) arıyor. Kitaptan yazılan havuzlar
-`uNN_kNN` adına geçtiği için betik yeniden çalıştırıldığında Matematik/Fizik/Kimya/Biyoloji/Coğrafya satırlarını
-0 gösteriyor. Bu yüzden `DURUM.md` bu turda **yeniden üretilmedi** (eski hâli korundu); pano, `uretim-veri.js`
-plan kayıtları `konu_id` üzerinden okunacak şekilde düzeltildiğinde güncellenecek. Kapıların hiçbiri bu panoya
-bağlı değil — `test:hepsi`, `validate:pools`, `havuz-denetle` ve `havuz-index-uret` canlı dosyaları okuyor.
+**Pano (`DURUM.md`) düzeltildi.** `docs/uretim/araclar/durum.js` havuzları hâlâ plan şemasındaki eski
+dosya adlarıyla (`cogr_10_t06_c02.json`) arıyordu; ders kitabından yazılan havuzlar `uNN_kNN` adına geçtiği
+için pano Matematik/Fizik/Kimya/Biyoloji/Coğrafya satırlarını 0 gösteriyordu. Araç artık sırayla plan adını,
+sonra `kazanim_konu_10.json` üzerinden kazanım kodu → canlı havuz dosyasını çözüyor ve soru/kart toplamını
+dosya bazında tekilleştiriyor (aynı havuz birden çok plan kaydını karşılayabiliyor). Pano yeniden üretildi:
+224 canlı havuzun 18'i Coğrafya, toplam **1673/1788** soru · kart 1:1.
+
+Pano bu düzeltmeyle bir de şunu görünür kıldı (bilinçli karar, kapatılmadı): plan hedefi
+`max(10, 2 × süreç)` olduğu için bazı konularda hedef 12-16'ya çıkıyor; Coğrafya'da dört havuz plan hedefinin
+2-4 soru altında (`u02_k02` 10/14, `u03_k04` 10/12, `u05_k03` 10/12, `u06_k03` 10/12). Bu havuzlara sayı
+tutturmak için dolgu soru eklenmedi; kitap bölümü kısa olduğu için nitelikli soru sayısı 10'da kaldı.
+

@@ -17,9 +17,37 @@ const HAVUZ = path.join(KOK, "site", "content", "soru_havuzlari");
 const HEDEF = path.join(KOK, "docs", "uretim", "DURUM.md");
 const konsol = process.argv.includes("--konsol");
 
+/* ---- HAVUZ DOSYASI ÇÖZÜMÜ ------------------------------------------
+   Plan kayıtları 2018 şemasının dosya adlarını taşır (cogr_10_t01_c01.json).
+   Dersler ders kitabından yeniden yazılınca havuzlar konu_id adını aldı
+   (cogr_10_u01_k01.json) ve plan adları diskte kalmadı. Bu yüzden dosya
+   adı doğrudan aranmaz; sırayla:
+     1) plan kaydının kendi dosya adı (varsa),
+     2) kazanım→konu eşlemesinden (kazanim_konu_10.json) kod ile bulunan
+        canlı havuz dosyası,
+     3) hiçbiri yoksa "yok".
+   Böylece pano, havuzların adı ne olursa olsun doğru sayıyı gösterir. */
+const KAZANIM_DOSYA = path.join(KOK, "site", "content", "mufredat", "kazanim_konu_10.json");
+const KOD_HAVUZ = new Map();          /* kazanım kodu → canlı havuz dosyası */
+try {
+  const K = JSON.parse(fs.readFileSync(KAZANIM_DOSYA, "utf8"));
+  for (const k of (K.konular || [])) {
+    const ad = String(k.konu_id || "") + ".json";
+    if (!fs.existsSync(path.join(HAVUZ, ad))) continue;
+    for (const kod of (k.kodlar || [])) if (!KOD_HAVUZ.has(kod)) KOD_HAVUZ.set(kod, ad);
+  }
+} catch (e) { /* eşleme yoksa yalnız plan adıyla çalışılır */ }
+
+function havuzDosyasi(kayit) {
+  if (kayit.dosya && fs.existsSync(path.join(HAVUZ, kayit.dosya))) return kayit.dosya;
+  const es = KOD_HAVUZ.get(kayit.kod);
+  return es || null;
+}
+
 function havuz(kayit) {
-  const p = path.join(HAVUZ, kayit.dosya);
-  if (!fs.existsSync(p)) return { durum: "yok", soru: 0, kart: 0, gorselli: 0 };
+  const ad = havuzDosyasi(kayit);
+  if (!ad) return { durum: "yok", dosya: null, soru: 0, kart: 0, gorselli: 0 };
+  const p = path.join(HAVUZ, ad);
   try {
     const pool = JSON.parse(fs.readFileSync(p, "utf8"));
     const s = Array.isArray(pool.sorular) ? pool.sorular : [];
@@ -27,11 +55,12 @@ function havuz(kayit) {
     const tamam = s.length >= kayit.hedef_soru && k.length === s.length;
     return {
       durum: tamam ? "tamam" : "eksik",
+      dosya: ad,
       soru: s.length, kart: k.length,
       gorselli: s.filter(q => q && q.gorsel).length
     };
   } catch (e) {
-    return { durum: "bozuk", soru: 0, kart: 0, gorselli: 0 };
+    return { durum: "bozuk", dosya: ad, soru: 0, kart: 0, gorselli: 0 };
   }
 }
 
@@ -81,10 +110,14 @@ for (const ders of U.DERS_SIRA) {
   const liste = U.plan.filter(c => c.ders === ders);
   const d = liste.map(havuz);
   const tam = d.filter(x => x.durum === "tamam").length;
-  const soru = d.reduce((a, b) => a + b.soru, 0);
-  const kart = d.reduce((a, b) => a + b.kart, 0);
+  /* Aynı havuz birden çok plan kaydını karşılayabilir: soru/kart
+     toplamı DOSYA bazında tekilleştirilir, çift sayılmaz. */
+  const tekDosya = new Map();
+  d.forEach(x => { if (x.dosya && !tekDosya.has(x.dosya)) tekDosya.set(x.dosya, x); });
+  const soru = [...tekDosya.values()].reduce((a, b) => a + b.soru, 0);
+  const kart = [...tekDosya.values()].reduce((a, b) => a + b.kart, 0);
   const hedef = liste.reduce((a, b) => a + b.hedef_soru, 0);
-  const gorsel = d.reduce((a, b) => a + b.gorselli, 0);
+  const gorsel = [...tekDosya.values()].reduce((a, b) => a + b.gorselli, 0);
   satirlar.push("| " + ders + " | " + tam + "/" + liste.length + " | " + soru + " | " + hedef +
     " | " + kart + " | " + gorsel + " |");
   T.tamam += tam; T.havuz += liste.length; T.soru += soru; T.hedef += hedef;
@@ -115,7 +148,8 @@ else {
       satirlar.push("| --- | --- | --- | --- |");
     }
     satirlar.push("| `" + e.c.konu_id + "` | " + e.c.kod + " | " + e.c.hedef_soru + " | " +
-      (e.d.durum === "yok" ? "yok" : e.d.durum + " (" + e.d.soru + " soru, " + e.d.kart + " kart)") + " |");
+      (e.d.durum === "yok" ? "havuz yok"
+        : e.d.durum + " (" + e.d.soru + " soru, " + e.d.kart + " kart · `" + e.d.dosya + "`)") + " |");
   }
 }
 satirlar.push("");
