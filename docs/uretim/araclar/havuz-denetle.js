@@ -352,6 +352,23 @@ if (tumu || dersArg) {
     const ad = planDosyasi(c);
     if (ad) hedefler.push(path.join(HAVUZ_DIR, ad));
   }
+  /* Plan köprüsü bir kazanım kodunu tek havuzla eşler; bir dersin
+     canlı havuzları plan kayıtlarından FAZLA olabilir (ör. Felsefe 23
+     havuz / 10 plan kaydı, TDE 29 / 16). Bu yüzden --tumu ve --ders
+     hedefleri plan çözümüne ek olarak diskteki tüm canlı havuzları
+     kapsar; aksi hâlde eşlenmeyen havuzlar denetim dışında kalıyordu. */
+  const dersKucuk = dersArg ? String(dersArg).toLocaleLowerCase("tr") : null;
+  for (const f of fs.readdirSync(HAVUZ_DIR)) {
+    if (!f.endsWith(".json") || f === "index.json") continue;
+    const p = path.join(HAVUZ_DIR, f);
+    try {
+      const pool = JSON.parse(fs.readFileSync(p, "utf8"));
+      if (!Array.isArray(pool.sorular) || !pool.sorular.length) continue;
+      if (dersKucuk && String(pool.ders || "").toLocaleLowerCase("tr") !== dersKucuk) continue;
+      hedefler.push(p);
+    } catch (e) { /* bozuk JSON'u resmî doğrulayıcı yakalar */ }
+  }
+  hedefler = [...new Set(hedefler)];
 } else if (konu) {
   for (const f of fs.readdirSync(HAVUZ_DIR)) {
     if (!/_10_u\d+_k\d+\.json$/.test(f)) continue;
