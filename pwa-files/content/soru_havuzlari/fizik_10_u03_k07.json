@@ -32,18 +32,18 @@
     {
       "soru_id": "fizik_10_u03_k07_o02",
       "alt_beceri": "Topraklamanın ne olduğunu ve amacını açıklar.",
-      "metin": "Topraklamanın temel amacı nedir?",
+      "metin": "Bir iş yerinde makine gövdesinden kaçak akım oluştuğunda çalışanın çarpılmaması için topraklama hattı kurulmuştur. Topraklamanın temel amacı nedir?",
       "secenekler": [
-        "Akımı artırmak",
+        "Devredeki akımı artırmak",
         "Enerji tasarrufu sağlamak",
-        "Direnci ölçmek",
-        "Elektrik kaçağında can ve mal güvenliğini korumak"
+        "Toprağın direncini ölçmek",
+        "Kaçakta can ve mal güvenliğini korumak"
       ],
       "dogru_index": 3,
       "cozum": "Topraklama, kaçak akımı toprağa yönlendirerek kişinin çarpılmasını önler (s.254-255).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Topraklama neden yapılır?",
+        "front": "Topraklı sistemin can güvenliğine katkısı nedir?",
         "back": "Kaçak akımda güvenliği sağlamak için."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -53,16 +53,16 @@
       "alt_beceri": "Topraklamanın ne olduğunu ve amacını açıklar.",
       "metin": "Elektrik kaçağı (kaçak akım) aşağıdakilerden hangisiyle açıklanır?",
       "secenekler": [
-        "Akımın cihaz dışına istenmeyen yola çıkması",
-        "Akımın kesilmesi",
-        "Gerilimin düşmesi",
-        "Direncin artması"
+        "Akımın tamamen kesilmesi",
+        "Akımın istenmeyen yola sapması",
+        "Gerilimin ani düşmesi",
+        "Toprak direncinin artması"
       ],
-      "dogru_index": 0,
+      "dogru_index": 1,
       "cozum": "Yalıtımın bozulmasıyla akımın gövdeye/çevreye geçmesi kaçak olarak adlandırılır (s.254).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kaçak akım nasıl oluşur?",
+        "front": "Kaçak akımın tanımı nedir?",
         "back": "Yalıtım bozulunca akım cihaz gövdesine geçer."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -81,7 +81,7 @@
       "cozum": "Kaçak akımın toprağa gidecek yolu yoksa gövdeye dokunan kişi üzerinden devresini tamamlar (s.255).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Topraksız cihazda kaçak olursa ne olur?",
+        "front": "Kaçak anında gövdeye dokunan kişiyi bekleyen tehlike nedir?",
         "back": "Kişi çarpılabilir."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -100,7 +100,7 @@
       "cozum": "Topraklama, kaçak anında akımın güvenli yoldan toprağa gitmesini sağlar (s.255).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Topraklama ne zaman devreye girer?",
+        "front": "Topraklamanın işe yaradığı an nedir?",
         "back": "Kaçak akım oluştuğunda."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -119,7 +119,7 @@
       "cozum": "I = V/R = 220/2000 = 0,11 A (kitaptaki hesap, s.256).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "220 V'a 2000 Ω ile dokunulursa akım kaç A'dır?",
+        "front": "Gerilim ve vücut direncinden akım nasıl bulunur?",
         "back": "0,11 A"
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -127,18 +127,18 @@
     {
       "soru_id": "fizik_10_u03_k07_o07",
       "alt_beceri": "Kaçak akımın can güvenliği üzerindeki etkisini yorumlar.",
-      "metin": "Çok küçük akımların bile tehlikeli olmasının temel nedeni nedir?",
+      "metin": "Bir kişi yalnızca 30 mA'lik bir akımla bile kaslarını denetleyemez hâle gelebilir. Çok küçük akımların bile tehlikeli olmasının temel nedeni nedir?",
       "secenekler": [
-        "Vücut direncinin küçük olması ve akımın sinir-kas sistemini etkilemesi",
-        "Vücudun gerilimi artırması",
-        "Vücudun yalıtkan olması",
-        "Akımın yön değiştirmesi"
+        "Vücudun gerilimi yükseltmesi",
+        "İç direncin küçük olması ve sinir-kas etkisi",
+        "Vücudun yalıtkan davranması",
+        "Akımın sürekli yön değiştirmesi"
       ],
-      "dogru_index": 0,
+      "dogru_index": 1,
       "cozum": "Kitapta 0,1 A dolayındaki akımın bile kalp ritmini bozabilecek düzeyde tehlikeli olduğu belirtilir (s.255-256).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Küçük akım neden tehlikelidir?",
+        "front": "Sinir-kas sistemi üzerindeki akım etkisi nedir?",
         "back": "Sinir ve kalp işlevini bozar."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -157,7 +157,7 @@
       "cozum": "Akım en küçük dirençli yolu (toprak hattı) seçtiği için kişi korunur (s.255).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Toprak hattı kaçakta ne yapar?",
+        "front": "Toprak hattının kaçak anındaki işlevi nedir?",
         "back": "Akımı toprağa taşır, kişiyi korur."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -167,16 +167,16 @@
       "alt_beceri": "Kaçak akımın can güvenliği üzerindeki etkisini yorumlar.",
       "metin": "Banyo ve mutfak gibi ıslak yerlerde topraklamanın önemi neden daha yüksektir?",
       "secenekler": [
-        "Gerilim yükselir",
-        "Islaklık vücut direncini azalttığı için akım artar",
-        "Direnç artar",
-        "Akım azalır"
+        "Islaklık vücut direncini düşürür",
+        "Şebeke gerilimi yükselir",
+        "Toprak direnci artar",
+        "Kaçak akım azalır"
       ],
-      "dogru_index": 1,
+      "dogru_index": 0,
       "cozum": "Islak zemin ve deri direnci düşürür; aynı gerilimde vücuttan geçen akım büyür (s.252, s.256).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Islak ortamda elektrik neden daha tehlikelidir?",
+        "front": "Islak ortamın tehlikeyi artırmasının nedeni nedir?",
         "back": "Direnç düşer, akım artar."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -186,16 +186,16 @@
       "alt_beceri": "Kaçak akımın can güvenliği üzerindeki etkisini yorumlar.",
       "metin": "Topraklaması yapılmamış bir buzdolabına dokunan kişi için hangisi doğrudur?",
       "secenekler": [
-        "Akım hiç geçmez",
-        "Yalnız ışık oluşur",
+        "Gövdeden akım hiç geçmez",
+        "Yalnız kıvılcım ve ışık oluşur",
         "Cihaz otomatik kapanır",
-        "Kaçak varsa akım kişi üzerinden toprağa akar"
+        "Akım kişi üzerinden toprağa akar"
       ],
       "dogru_index": 3,
       "cozum": "Toprak hattı olmadığından devre kişi üzerinden tamamlanır ve çarpılma riski doğar (s.255).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Topraksız cihazda kaçak varsa akım nereden geçer?",
+        "front": "Kaçak akımın toprağa akması ne demektir?",
         "back": "Kişi üzerinden."
       },
       "kazanim": "Topraklamanın işlevini ve elektrik güvenliğindeki önemini açıklar."
@@ -209,47 +209,47 @@
     },
     {
       "id": "fizik_10_u03_k07_o02:flashcard",
-      "front": "Topraklama neden yapılır?",
+      "front": "Topraklı sistemin can güvenliğine katkısı nedir?",
       "back": "Kaçak akımda güvenliği sağlamak için."
     },
     {
       "id": "fizik_10_u03_k07_o03:flashcard",
-      "front": "Kaçak akım nasıl oluşur?",
+      "front": "Kaçak akımın tanımı nedir?",
       "back": "Yalıtım bozulunca akım cihaz gövdesine geçer."
     },
     {
       "id": "fizik_10_u03_k07_o04:flashcard",
-      "front": "Topraksız cihazda kaçak olursa ne olur?",
+      "front": "Kaçak anında gövdeye dokunan kişiyi bekleyen tehlike nedir?",
       "back": "Kişi çarpılabilir."
     },
     {
       "id": "fizik_10_u03_k07_o05:flashcard",
-      "front": "Topraklama ne zaman devreye girer?",
+      "front": "Topraklamanın işe yaradığı an nedir?",
       "back": "Kaçak akım oluştuğunda."
     },
     {
       "id": "fizik_10_u03_k07_o06:flashcard",
-      "front": "220 V'a 2000 Ω ile dokunulursa akım kaç A'dır?",
+      "front": "Gerilim ve vücut direncinden akım nasıl bulunur?",
       "back": "0,11 A"
     },
     {
       "id": "fizik_10_u03_k07_o07:flashcard",
-      "front": "Küçük akım neden tehlikelidir?",
+      "front": "Sinir-kas sistemi üzerindeki akım etkisi nedir?",
       "back": "Sinir ve kalp işlevini bozar."
     },
     {
       "id": "fizik_10_u03_k07_o08:flashcard",
-      "front": "Toprak hattı kaçakta ne yapar?",
+      "front": "Toprak hattının kaçak anındaki işlevi nedir?",
       "back": "Akımı toprağa taşır, kişiyi korur."
     },
     {
       "id": "fizik_10_u03_k07_o09:flashcard",
-      "front": "Islak ortamda elektrik neden daha tehlikelidir?",
+      "front": "Islak ortamın tehlikeyi artırmasının nedeni nedir?",
       "back": "Direnç düşer, akım artar."
     },
     {
       "id": "fizik_10_u03_k07_o10:flashcard",
-      "front": "Topraksız cihazda kaçak varsa akım nereden geçer?",
+      "front": "Kaçak akımın toprağa akması ne demektir?",
       "back": "Kişi üzerinden."
     }
   ]

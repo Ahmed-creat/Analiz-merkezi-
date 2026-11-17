@@ -24,7 +24,7 @@
       "cozum": "Kitapta yer çekimi ivmesi g sembolüyle gösterilir (s.62).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yer çekimi ivmesinin sembolü nedir?",
+        "front": "g sembolü hangi büyüklüğü gösterir?",
         "back": "g"
       },
       "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
@@ -32,7 +32,7 @@
     {
       "soru_id": "fizik_10_u01_k07_o02",
       "alt_beceri": "Yer çekimi ivmesini ve yönünü açıklar.",
-      "metin": "Yer çekimi ivmesinin SI'daki birimi nedir?",
+      "metin": "Yer çekimi ivmesi g ≈ 9,8 m/s²'dir. Bu büyüklüğün SI'daki birimi nedir?",
       "secenekler": [
         "N",
         "kg·m/s",
@@ -81,7 +81,7 @@
       "cozum": "Yer çekimi ivmesi yönü de olan vektörel bir büyüklüktür (s.62-63).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yer çekimi ivmesi skaler mi vektörel mi?",
+        "front": "Yer çekimi ivmesinin vektörel olması ne demektir?",
         "back": "Vektörel."
       },
       "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
@@ -100,8 +100,8 @@
       "cozum": "Kitapta yeryüzüne yakın yerlerde yer çekimi ivmesinin sabit kabul edildiği yazılıdır (s.63).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yeryüzüne yakın yerde g nasıl kabul edilir?",
-        "back": "Sabit."
+        "front": "Serbest düşen cisimlerin ivmesinin büyüklüğü nedir?",
+        "back": "Yeryüzüne yakın yerlerde sabit kabul edilir (g ≈ 9,8 m/s²)."
       },
       "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
     },
@@ -119,8 +119,8 @@
       "cozum": "Sürtünme ihmal edildiğinde cisimler aynı yer çekimi ivmesiyle hareket ettiği için aynı anda düşer (s.63, s.65).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Havasız ortamda ağır ve hafif cisim aynı anda düşer mi?",
-        "back": "Evet; ivme kütleden bağımsızdır."
+        "front": "Düşme süresinin kütleden bağımsız olması ne demektir?",
+        "back": "Hava sürtünmesi ihmal edilirse farklı kütleli cisimler aynı sürede düşer."
       },
       "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
     },
@@ -138,7 +138,7 @@
       "cozum": "Kitaptaki tablo ve yorum: cisimler eşit zaman aralıklarında eşit hıza sahip olur (s.64-65).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Serbest düşmede hız artışı kütleye bağlı mıdır?",
+        "front": "Serbest düşmede hız artışının kütleyle ilişkisi nedir?",
         "back": "Değildir; eşit zaman aralıklarında eşit hız kazanılır."
       },
       "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
@@ -146,7 +146,7 @@
     {
       "soru_id": "fizik_10_u01_k07_o08",
       "alt_beceri": "Serbest düşmede kütle-ivme ilişkisini yorumlar.",
-      "metin": "Sürtünmenin ihmal edildiği ortamda serbest düşen bir cisme etki eden net kuvvet nedir?",
+      "metin": "Sürtünmenin ihmal edildiği ortamda 2 kg'lık cisim serbest bırakılıyor. Cisme etki eden net kuvvet nedir?",
       "secenekler": [
         "Hava direnci",
         "Yüzey tepki kuvveti",
@@ -176,7 +176,7 @@
       "cozum": "Ay'da hava direnci oluşturacak atmosfer olmadığı için tüy ve çekiç aynı anda düşer (s.65).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ay'da tüy ve çekiç neden aynı anda düşer?",
+        "front": "Hava direncinin bulunmadığı ortamda düşmenin özelliği nedir?",
         "back": "Hava direnci yok; ivme her iki cisimde de aynıdır."
       },
       "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
@@ -204,7 +204,7 @@
   "flashcards": [
     {
       "id": "fizik_10_u01_k07_o01:flashcard",
-      "front": "Yer çekimi ivmesinin sembolü nedir?",
+      "front": "g sembolü hangi büyüklüğü gösterir?",
       "back": "g"
     },
     {
@@ -219,22 +219,22 @@
     },
     {
       "id": "fizik_10_u01_k07_o04:flashcard",
-      "front": "Yer çekimi ivmesi skaler mi vektörel mi?",
+      "front": "Yer çekimi ivmesinin vektörel olması ne demektir?",
       "back": "Vektörel."
     },
     {
       "id": "fizik_10_u01_k07_o05:flashcard",
-      "front": "Yeryüzüne yakın yerde g nasıl kabul edilir?",
-      "back": "Sabit."
+      "front": "Serbest düşen cisimlerin ivmesinin büyüklüğü nedir?",
+      "back": "Yeryüzüne yakın yerlerde sabit kabul edilir (g ≈ 9,8 m/s²)."
     },
     {
       "id": "fizik_10_u01_k07_o06:flashcard",
-      "front": "Havasız ortamda ağır ve hafif cisim aynı anda düşer mi?",
-      "back": "Evet; ivme kütleden bağımsızdır."
+      "front": "Düşme süresinin kütleden bağımsız olması ne demektir?",
+      "back": "Hava sürtünmesi ihmal edilirse farklı kütleli cisimler aynı sürede düşer."
     },
     {
       "id": "fizik_10_u01_k07_o07:flashcard",
-      "front": "Serbest düşmede hız artışı kütleye bağlı mıdır?",
+      "front": "Serbest düşmede hız artışının kütleyle ilişkisi nedir?",
       "back": "Değildir; eşit zaman aralıklarında eşit hız kazanılır."
     },
     {
@@ -244,7 +244,7 @@
     },
     {
       "id": "fizik_10_u01_k07_o09:flashcard",
-      "front": "Ay'da tüy ve çekiç neden aynı anda düşer?",
+      "front": "Hava direncinin bulunmadığı ortamda düşmenin özelliği nedir?",
       "back": "Hava direnci yok; ivme her iki cisimde de aynıdır."
     },
     {

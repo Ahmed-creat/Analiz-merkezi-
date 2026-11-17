@@ -24,7 +24,7 @@
       "cozum": "Yatay doğrultuda kuvvet olmadığından cisim yatay hızıyla düzgün doğrusal hareket eder (s.81-82).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yatay atışta yatay hız neden sabit kalır?",
+        "front": "Yatay doğrultuda net kuvvet bulunmamasının sonucu nedir?",
         "back": "Yatay doğrultuda net kuvvet yoktur."
       },
       "kazanim": "İki boyutta sabit ivmeli hareketin bileşenlerini çözümler; yatay ve eğik atışı hesaplar."
@@ -43,8 +43,8 @@
       "cozum": "Düşey hareket serbest düşmedir; süre h = ½·g·t² ile yüksekliğe bağlıdır (s.82).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yatay atışta uçuş süresini ne belirler?",
-        "back": "Atıldığı yükseklik."
+        "front": "Uçuş süresi ile yükseklik arasındaki ilişki nedir?",
+        "back": "Süre yalnız atıldığı yüksekliğe bağlıdır: h = ½·g·t²."
       },
       "kazanim": "İki boyutta sabit ivmeli hareketin bileşenlerini çözümler; yatay ve eğik atışı hesaplar."
     },
@@ -62,7 +62,7 @@
       "cozum": "45 = ½·10·t² → t² = 9 → t = 3 s (s.82'deki model).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "45 m'den yatay atılan cisim kaç s'de düşer?",
+        "front": "Yatay atışta düşme süresi nasıl hesaplanır?",
         "back": "3 s (yüksekliğe bağlıdır)."
       },
       "kazanim": "İki boyutta sabit ivmeli hareketin bileşenlerini çözümler; yatay ve eğik atışı hesaplar."
@@ -157,7 +157,7 @@
       "cozum": "Çıkış süresi v₀y/g, iniş süresi de aynı olduğundan uçuş süresi 2·v₀y/g'dir (s.87).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Eğik atışta uçuş süresi modeli nedir?",
+        "front": "t = 2·v₀y/g bağıntısının anlamı nedir?",
         "back": "t = 2·v₀y/g"
       },
       "kazanim": "İki boyutta sabit ivmeli hareketin bileşenlerini çözümler; yatay ve eğik atışı hesaplar."
@@ -176,8 +176,8 @@
       "cozum": "Maksimum yükseklikte düşey hız sıfır olur; yatay hız v₀x olarak devam eder (s.87).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Eğik atışta tepe noktasında düşey hız kaçtır?",
-        "back": "Sıfır."
+        "front": "Tepe noktasında düşey hızın sıfır olmasının nedeni nedir?",
+        "back": "Düşey hız azalarak sıfırlanır; cisim o anda yalnız yatay hızla ilerler."
       },
       "kazanim": "İki boyutta sabit ivmeli hareketin bileşenlerini çözümler; yatay ve eğik atışı hesaplar."
     },
@@ -195,7 +195,7 @@
       "cozum": "İki cisim de düşeyde aynı serbest düşme hareketini yapar; yatay atılanın bileşke çarpma hızı daha büyüktür (s.82-83).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yatay atılan cisim neden diğeriyle aynı anda düşer?",
+        "front": "Yatay atılan ve serbest bırakılan cisimlerin aynı anda düşmesinin nedeni nedir?",
         "back": "Düşey hareketleri aynıdır (serbest düşme)."
       },
       "kazanim": "İki boyutta sabit ivmeli hareketin bileşenlerini çözümler; yatay ve eğik atışı hesaplar."
@@ -204,17 +204,17 @@
   "flashcards": [
     {
       "id": "fizik_10_u01_k09_o01:flashcard",
-      "front": "Yatay atışta yatay hız neden sabit kalır?",
+      "front": "Yatay doğrultuda net kuvvet bulunmamasının sonucu nedir?",
       "back": "Yatay doğrultuda net kuvvet yoktur."
     },
     {
       "id": "fizik_10_u01_k09_o02:flashcard",
-      "front": "Yatay atışta uçuş süresini ne belirler?",
-      "back": "Atıldığı yükseklik."
+      "front": "Uçuş süresi ile yükseklik arasındaki ilişki nedir?",
+      "back": "Süre yalnız atıldığı yüksekliğe bağlıdır: h = ½·g·t²."
     },
     {
       "id": "fizik_10_u01_k09_o03:flashcard",
-      "front": "45 m'den yatay atılan cisim kaç s'de düşer?",
+      "front": "Yatay atışta düşme süresi nasıl hesaplanır?",
       "back": "3 s (yüksekliğe bağlıdır)."
     },
     {
@@ -239,17 +239,17 @@
     },
     {
       "id": "fizik_10_u01_k09_o08:flashcard",
-      "front": "Eğik atışta uçuş süresi modeli nedir?",
+      "front": "t = 2·v₀y/g bağıntısının anlamı nedir?",
       "back": "t = 2·v₀y/g"
     },
     {
       "id": "fizik_10_u01_k09_o09:flashcard",
-      "front": "Eğik atışta tepe noktasında düşey hız kaçtır?",
-      "back": "Sıfır."
+      "front": "Tepe noktasında düşey hızın sıfır olmasının nedeni nedir?",
+      "back": "Düşey hız azalarak sıfırlanır; cisim o anda yalnız yatay hızla ilerler."
     },
     {
       "id": "fizik_10_u01_k09_o10:flashcard",
-      "front": "Yatay atılan cisim neden diğeriyle aynı anda düşer?",
+      "front": "Yatay atılan ve serbest bırakılan cisimlerin aynı anda düşmesinin nedeni nedir?",
       "back": "Düşey hareketleri aynıdır (serbest düşme)."
     }
   ]

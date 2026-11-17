@@ -62,7 +62,7 @@
       "cozum": "Dalga boyu λ ile gösterilir ve uzunluk birimi metre ile ölçülür (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dalga boyu hangi birimle ölçülür?",
+        "front": "λ sembolünün birimi nedir?",
         "back": "Metre."
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
@@ -89,7 +89,7 @@
     {
       "soru_id": "fizik_10_u04_k01_o05",
       "alt_beceri": "Dalga hareketine ait temel kavramları tanımlar.",
-      "metin": "Periyot ile frekans arasındaki ilişki nedir?",
+      "metin": "Bir hareket 0,25 s'de bir tekrarlanıyorsa frekansı 4 Hz'tir. Periyot ile frekans arasındaki ilişki nedir?",
       "secenekler": [
         "f = T",
         "f = T²",
@@ -100,7 +100,7 @@
       "cozum": "Periyot bir tam titreşim süresi, frekans saniyedeki titreşim sayısıdır; f = 1/T (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Frekansı 5 Hz olan bir hareketin periyodu kaç saniyedir?",
+        "front": "f = 1/T bağıntısının anlamı nedir?",
         "back": "T = 1 / f = 1 / 5 = 0,2 s."
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
@@ -119,7 +119,7 @@
       "cozum": "λ = v/f = 340/440 ≈ 0,77 m (kitaptaki 440 Hz örneği, s.281).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "340 m/s ve 440 Hz için dalga boyu kaç m'dir?",
+        "front": "Sürat ve frekanstan dalga boyu nasıl bulunur?",
         "back": "Yaklaşık 0,77 m"
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
@@ -138,7 +138,7 @@
       "cozum": "v = λ·f = 2·5 = 10 m/s (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "λ = 2 m, f = 5 Hz ise sürat kaç m/s'dir?",
+        "front": "Dalga süratinin bağıntısı nedir?",
         "back": "10 m/s"
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
@@ -148,16 +148,16 @@
       "alt_beceri": "Dalga boyu, frekans ve sürat arasındaki ilişkiyi kullanarak hesap yapar.",
       "metin": "Yayılma sürati 20 m/s, dalga boyu 4 m olan dalganın periyodu kaç s'dir?",
       "secenekler": [
-        "5",
-        "80",
-        "0,2",
-        "4"
+        "5 s",
+        "80 s",
+        "0,2 s",
+        "4 s"
       ],
       "dogru_index": 2,
       "cozum": "f = v/λ = 20/4 = 5 Hz; T = 1/f = 0,2 s (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "v = 20 m/s, λ = 4 m ise periyot kaç s'dir?",
+        "front": "Periyot, dalga boyu ve süratten nasıl bulunur?",
         "back": "0,2 s"
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
@@ -176,7 +176,7 @@
       "cozum": "Kitapta genliğin dalganın taşıdığı enerjinin bir ölçüsü olduğu belirtilir (s.279).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Genlik neyin ölçüsüdür?",
+        "front": "Genliğin taşınan enerjiyle ilişkisi nedir?",
         "back": "Taşınan enerjinin."
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
@@ -195,7 +195,7 @@
       "cozum": "v = λ·f bağıntısında f sabitse λ arttıkça v artar (s.280).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Frekans sabitken dalga boyu artarsa sürat ne olur?",
+        "front": "Süratin dalga boyuyla doğru orantılı olması ne demektir?",
         "back": "Artar."
       },
       "kazanim": "Dalga, genlik, dalga boyu, periyot ve frekans kavramlarını kullanarak dalga hareketini açıklar."
@@ -214,7 +214,7 @@
     },
     {
       "id": "fizik_10_u04_k01_o03:flashcard",
-      "front": "Dalga boyu hangi birimle ölçülür?",
+      "front": "λ sembolünün birimi nedir?",
       "back": "Metre."
     },
     {
@@ -224,32 +224,32 @@
     },
     {
       "id": "fizik_10_u04_k01_o05:flashcard",
-      "front": "Frekansı 5 Hz olan bir hareketin periyodu kaç saniyedir?",
+      "front": "f = 1/T bağıntısının anlamı nedir?",
       "back": "T = 1 / f = 1 / 5 = 0,2 s."
     },
     {
       "id": "fizik_10_u04_k01_o06:flashcard",
-      "front": "340 m/s ve 440 Hz için dalga boyu kaç m'dir?",
+      "front": "Sürat ve frekanstan dalga boyu nasıl bulunur?",
       "back": "Yaklaşık 0,77 m"
     },
     {
       "id": "fizik_10_u04_k01_o07:flashcard",
-      "front": "λ = 2 m, f = 5 Hz ise sürat kaç m/s'dir?",
+      "front": "Dalga süratinin bağıntısı nedir?",
       "back": "10 m/s"
     },
     {
       "id": "fizik_10_u04_k01_o08:flashcard",
-      "front": "v = 20 m/s, λ = 4 m ise periyot kaç s'dir?",
+      "front": "Periyot, dalga boyu ve süratten nasıl bulunur?",
       "back": "0,2 s"
     },
     {
       "id": "fizik_10_u04_k01_o09:flashcard",
-      "front": "Genlik neyin ölçüsüdür?",
+      "front": "Genliğin taşınan enerjiyle ilişkisi nedir?",
       "back": "Taşınan enerjinin."
     },
     {
       "id": "fizik_10_u04_k01_o10:flashcard",
-      "front": "Frekans sabitken dalga boyu artarsa sürat ne olur?",
+      "front": "Süratin dalga boyuyla doğru orantılı olması ne demektir?",
       "back": "Artar."
     }
   ]

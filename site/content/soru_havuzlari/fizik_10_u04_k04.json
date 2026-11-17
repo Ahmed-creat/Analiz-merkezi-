@@ -15,16 +15,16 @@
       "alt_beceri": "Periyodik hareketi ve sarkaç türlerini açıklar.",
       "metin": "Periyodik hareket nasıl tanımlanır?",
       "secenekler": [
-        "Sabit hızlı hareket",
-        "Denge noktası etrafında düzenli olarak tekrarlanan hareket",
+        "Sabit hızlı doğrusal hareket",
+        "Düzenli aralıklarla tekrarlanan hareket",
         "Tek yönlü hızlanan hareket",
-        "Duran hâl"
+        "Hiç hareket etmeyen duran hâl"
       ],
       "dogru_index": 1,
       "cozum": "Kitapta periyodik hareket, denge noktası etrafında düzenli tekrarlanan hareket olarak tanımlanır (s.301, s.308).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Periyodik hareket nedir?",
+        "front": "Düzenli tekrarın tanımı nedir?",
         "back": "Denge noktası etrafında düzenli tekrar eden hareket."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -62,7 +62,7 @@
       "cozum": "Kitapta basit sarkacın periyodunun kütleye bağlı olmadığı açıkça belirtilir (s.306, s.308).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kütle değişince sarkaç periyodu değişir mi?",
+        "front": "Sarkaç periyodunun kütleden bağımsız olması ne demektir?",
         "back": "Hayır, değişmez."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -81,7 +81,7 @@
       "cozum": "Kitaba göre yay sarkacının periyodu kütleye ve yay sabitine bağlıdır, çekim ivmesine bağlı değildir (s.308).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yay sarkacı periyodu g'ye bağlı mı?",
+        "front": "Yay sarkacı periyodunu belirleyen nicelikler nedir?",
         "back": "Hayır, bağlı değildir."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -100,7 +100,7 @@
       "cozum": "Kitapta düşeyle yapılan açının 10°'den küçük olması koşuluyla hareketin periyodik olduğu belirtilir (s.304).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Basit sarkaç hangi açıya kadar periyodik sayılır?",
+        "front": "Küçük açı sınırının değeri nedir?",
         "back": "10°'den küçük açılarda."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -119,7 +119,7 @@
       "cozum": "Kitaptaki tabloda uzunluk arttıkça periyot artmaktadır (s.306).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Uzunluk artarsa sarkaç periyodu ne olur?",
+        "front": "Periyodun ip uzunluğuyla artması ne demektir?",
         "back": "Artar."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -138,7 +138,7 @@
       "cozum": "Periyot kütleye bağlı olmadığından değişmez, 1,2 s kalır (s.306-307).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kütle artarsa sarkaç periyodu kaç s olur?",
+        "front": "Kütle artışının periyoda etkisi nedir?",
         "back": "Değişmez, 1,2 s."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -157,7 +157,7 @@
       "cozum": "T ∝ √l olduğundan uzunluk azalırsa periyot azalır (s.304-305).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İp kısalırsa sarkaç hızlanır mı?",
+        "front": "İp kısalmasının periyoda etkisi nedir?",
         "back": "Evet, periyot azalır."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -176,7 +176,7 @@
       "cozum": "T ∝ √m olduğundan kütle artarsa yay sarkacının periyodu artar (s.308).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yay sarkacında kütle artarsa periyot ne olur?",
+        "front": "Yay sarkacında periyodu büyüten etken nedir?",
         "back": "Artar."
       },
       "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
@@ -204,7 +204,7 @@
   "flashcards": [
     {
       "id": "fizik_10_u04_k04_o01:flashcard",
-      "front": "Periyodik hareket nedir?",
+      "front": "Düzenli tekrarın tanımı nedir?",
       "back": "Denge noktası etrafında düzenli tekrar eden hareket."
     },
     {
@@ -214,37 +214,37 @@
     },
     {
       "id": "fizik_10_u04_k04_o03:flashcard",
-      "front": "Kütle değişince sarkaç periyodu değişir mi?",
+      "front": "Sarkaç periyodunun kütleden bağımsız olması ne demektir?",
       "back": "Hayır, değişmez."
     },
     {
       "id": "fizik_10_u04_k04_o04:flashcard",
-      "front": "Yay sarkacı periyodu g'ye bağlı mı?",
+      "front": "Yay sarkacı periyodunu belirleyen nicelikler nedir?",
       "back": "Hayır, bağlı değildir."
     },
     {
       "id": "fizik_10_u04_k04_o05:flashcard",
-      "front": "Basit sarkaç hangi açıya kadar periyodik sayılır?",
+      "front": "Küçük açı sınırının değeri nedir?",
       "back": "10°'den küçük açılarda."
     },
     {
       "id": "fizik_10_u04_k04_o06:flashcard",
-      "front": "Uzunluk artarsa sarkaç periyodu ne olur?",
+      "front": "Periyodun ip uzunluğuyla artması ne demektir?",
       "back": "Artar."
     },
     {
       "id": "fizik_10_u04_k04_o07:flashcard",
-      "front": "Kütle artarsa sarkaç periyodu kaç s olur?",
+      "front": "Kütle artışının periyoda etkisi nedir?",
       "back": "Değişmez, 1,2 s."
     },
     {
       "id": "fizik_10_u04_k04_o08:flashcard",
-      "front": "İp kısalırsa sarkaç hızlanır mı?",
+      "front": "İp kısalmasının periyoda etkisi nedir?",
       "back": "Evet, periyot azalır."
     },
     {
       "id": "fizik_10_u04_k04_o09:flashcard",
-      "front": "Yay sarkacında kütle artarsa periyot ne olur?",
+      "front": "Yay sarkacında periyodu büyüten etken nedir?",
       "back": "Artar."
     },
     {

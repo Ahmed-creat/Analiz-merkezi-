@@ -13,7 +13,7 @@
     {
       "soru_id": "fizik_10_u03_k01_o01",
       "alt_beceri": "Devre elemanlarını ve işlevlerini tanır.",
-      "metin": "Direncin SI'daki birimi nedir?",
+      "metin": "Bir iletkenin uçları arasındaki gerilim 6 V, üzerinden geçen akım 2 A ise direnci 3 Ω'dur. Direncin SI'daki birimi nedir?",
       "secenekler": [
         "Volt (V)",
         "Ohm (Ω)",
@@ -62,7 +62,7 @@
       "cozum": "Anahtar, devredeki akım yolunu açıp kapatarak devreyi çalıştırır veya durdurur (s.201-202).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Devreyi açıp kapatan eleman nedir?",
+        "front": "Anahtarın devredeki işlevi nedir?",
         "back": "Anahtar."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
@@ -81,7 +81,7 @@
       "cozum": "Kitaba göre telin direnci uzunluğuna, kesit alanına ve cinsine bağlıdır (s.204-205).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tel direnci nelere bağlıdır?",
+        "front": "Tel direncinin bağlı olduğu nicelikler nedir?",
         "back": "Uzunluk, kesit alanı, maddenin cinsi."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
@@ -100,7 +100,7 @@
       "cozum": "Kitapta pompa üretece, vana anahtara, kireçlenmiş boru dirence, boru iletken tele benzetilir (s.201).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Su analojisinde pompa neye benzetilir?",
+        "front": "Analojide pompanın temsil ettiği eleman nedir?",
         "back": "Üretece."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
@@ -176,7 +176,7 @@
       "cozum": "Dar boruda suyun akışı zorlaşır; benzer biçimde daralan kesit direnci artırır (s.201).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Analojide daralan boru neyi temsil eder?",
+        "front": "Analojide incelen borunun temsil ettiği büyüklük nedir?",
         "back": "Direnci."
       },
       "kazanim": "Basit elektrik devresinin elemanlarını tanır; akım, potansiyel fark ve direnci ilişkilendirir."
@@ -184,7 +184,7 @@
     {
       "soru_id": "fizik_10_u03_k01_o10",
       "alt_beceri": "Ölçüm araçlarını ve temel elektriksel büyüklükleri ilişkilendirir.",
-      "metin": "Potansiyel farkın birimi nedir?",
+      "metin": "Bir pilin uçları arasındaki gerilim 1,5 V'tur. Potansiyel farkın birimi nedir?",
       "secenekler": [
         "Amper",
         "Ohm",
@@ -214,17 +214,17 @@
     },
     {
       "id": "fizik_10_u03_k01_o03:flashcard",
-      "front": "Devreyi açıp kapatan eleman nedir?",
+      "front": "Anahtarın devredeki işlevi nedir?",
       "back": "Anahtar."
     },
     {
       "id": "fizik_10_u03_k01_o04:flashcard",
-      "front": "Tel direnci nelere bağlıdır?",
+      "front": "Tel direncinin bağlı olduğu nicelikler nedir?",
       "back": "Uzunluk, kesit alanı, maddenin cinsi."
     },
     {
       "id": "fizik_10_u03_k01_o05:flashcard",
-      "front": "Su analojisinde pompa neye benzetilir?",
+      "front": "Analojide pompanın temsil ettiği eleman nedir?",
       "back": "Üretece."
     },
     {
@@ -244,7 +244,7 @@
     },
     {
       "id": "fizik_10_u03_k01_o09:flashcard",
-      "front": "Analojide daralan boru neyi temsil eder?",
+      "front": "Analojide incelen borunun temsil ettiği büyüklük nedir?",
       "back": "Direnci."
     },
     {

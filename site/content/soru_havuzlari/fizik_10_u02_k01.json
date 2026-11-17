@@ -16,7 +16,7 @@
       "metin": "Fiziksel anlamda iş nasıl tanımlanır?",
       "secenekler": [
         "Kuvvet ile zamanın çarpımı",
-        "Kuvvet ile kuvvet doğrultusundaki yer değiştirmenin çarpımı",
+        "Kuvvet ile yer değiştirmenin çarpımı",
         "Kütle ile hızın çarpımı",
         "Kuvvetin hıza oranı"
       ],
@@ -32,7 +32,7 @@
     {
       "soru_id": "fizik_10_u02_k01_o02",
       "alt_beceri": "İş kavramını, birimini ve koşullarını açıklar.",
-      "metin": "İşin SI birim sistemindeki birimi aşağıdakilerden hangisidir?",
+      "metin": "SI birim sisteminde işin birimine hangi ad verilir?",
       "secenekler": [
         "Newton",
         "Watt",
@@ -81,7 +81,7 @@
       "cozum": "Kitapta işin skaler bir büyüklük olduğu ve W ile gösterildiği belirtilir (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İşin skaler olması ne anlama gelir?",
+        "front": "İşin skaler bir büyüklük olması ne demektir?",
         "back": "Yalnız büyüklüğü vardır, yönü yoktur."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
@@ -100,7 +100,7 @@
       "cozum": "İş için kuvvet doğrultusunda yer değiştirme gerekir; yer değiştirme yoksa iş sıfırdır (s.116).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yer değiştirme yoksa iş kaçtır?",
+        "front": "Yer değiştirme yokken işin değeri nedir?",
         "back": "Sıfır."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
@@ -119,7 +119,7 @@
       "cozum": "W = F·Δx = 20·3 = 60 J (s.116'daki model).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "20 N kuvvet 3 m yol boyunca kaç J iş yapar?",
+        "front": "İş nasıl hesaplanır?",
         "back": "60 J"
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
@@ -138,7 +138,7 @@
       "cozum": "Kitapta yapılan işin F-x grafiğinin altında kalan alandan bulunduğu belirtilir (s.117).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "F-x grafiğinde alan neyi verir?",
+        "front": "İşin F-x grafiğinden okunma yolu nedir?",
         "back": "Yapılan işi."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
@@ -157,7 +157,7 @@
       "cozum": "Alan = 40 N · 10 m = 400 J (s.117'deki alan yöntemi).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kuvvet-yol ilişkisinde yapılan iş hangi geometrik büyüklüğe karşılık gelir?",
+        "front": "F-x grafiğinin altındaki alan ile iş arasındaki ilişki nedir?",
         "back": "Kuvvet-yol grafiğinin altında kalan alana."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
@@ -176,7 +176,7 @@
       "cozum": "Ters yönde etki eden kuvvet negatif iş yapar; sürtünme buna örnektir (s.117-118).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sürtünme kuvvetinin yaptığı iş neden negatiftir?",
+        "front": "Sürtünmenin yaptığı işin işareti nedir?",
         "back": "Yer değiştirmeye ters yönde etki eder."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
@@ -195,7 +195,7 @@
       "cozum": "Kitapta kuvvetin yaptığı işin yolun şeklinden bağımsız olduğu, üç farklı yolda da işin eşit çıktığı gösterilir (s.118).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İş yolun şekline bağlı mıdır?",
+        "front": "İşin yolun şekline bağlı olmaması ne demektir?",
         "back": "Bağlı değildir."
       },
       "kazanim": "İş kavramını kuvvet-yer değiştirme grafiğinden yararlanarak açıklar."
@@ -219,37 +219,37 @@
     },
     {
       "id": "fizik_10_u02_k01_o04:flashcard",
-      "front": "İşin skaler olması ne anlama gelir?",
+      "front": "İşin skaler bir büyüklük olması ne demektir?",
       "back": "Yalnız büyüklüğü vardır, yönü yoktur."
     },
     {
       "id": "fizik_10_u02_k01_o05:flashcard",
-      "front": "Yer değiştirme yoksa iş kaçtır?",
+      "front": "Yer değiştirme yokken işin değeri nedir?",
       "back": "Sıfır."
     },
     {
       "id": "fizik_10_u02_k01_o06:flashcard",
-      "front": "20 N kuvvet 3 m yol boyunca kaç J iş yapar?",
+      "front": "İş nasıl hesaplanır?",
       "back": "60 J"
     },
     {
       "id": "fizik_10_u02_k01_o07:flashcard",
-      "front": "F-x grafiğinde alan neyi verir?",
+      "front": "İşin F-x grafiğinden okunma yolu nedir?",
       "back": "Yapılan işi."
     },
     {
       "id": "fizik_10_u02_k01_o08:flashcard",
-      "front": "Kuvvet-yol ilişkisinde yapılan iş hangi geometrik büyüklüğe karşılık gelir?",
+      "front": "F-x grafiğinin altındaki alan ile iş arasındaki ilişki nedir?",
       "back": "Kuvvet-yol grafiğinin altında kalan alana."
     },
     {
       "id": "fizik_10_u02_k01_o09:flashcard",
-      "front": "Sürtünme kuvvetinin yaptığı iş neden negatiftir?",
+      "front": "Sürtünmenin yaptığı işin işareti nedir?",
       "back": "Yer değiştirmeye ters yönde etki eder."
     },
     {
       "id": "fizik_10_u02_k01_o10:flashcard",
-      "front": "İş yolun şekline bağlı mıdır?",
+      "front": "İşin yolun şekline bağlı olmaması ne demektir?",
       "back": "Bağlı değildir."
     }
   ]

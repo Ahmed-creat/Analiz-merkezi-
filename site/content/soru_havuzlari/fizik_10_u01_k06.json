@@ -24,7 +24,7 @@
       "cozum": "Kitapta c-t grafiğinin eğiminden v = v₀ + a·t modeli elde edilir (s.51).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sabit ivmeli harekette hız modeli nedir?",
+        "front": "v = v₀ + a·t bağıntısının anlamı nedir?",
         "back": "v = v₀ + a·t"
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -43,7 +43,7 @@
       "cozum": "Kitapta x = v₀·t + ½·a·t² modeli verilir (s.51).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yer değiştirme modeli nedir?",
+        "front": "x = v₀·t + ½·a·t² bağıntısının anlamı nedir?",
         "back": "x = v₀·t + ½·a·t²"
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -62,7 +62,7 @@
       "cozum": "v = v₀ + a·t = 2 + 4·5 = 22 m/s (s.49'daki değerlendirme sorusu).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "v₀=2, a=4 m/s², t=5 s ise hız kaçtır?",
+        "front": "İlk hız, ivme ve süreden son hız nasıl bulunur?",
         "back": "22 m/s"
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -81,7 +81,7 @@
       "cozum": "x = 2·5 + ½·4·5² = 10 + 50 = 60 m (s.49'daki değerlendirme sorusu).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "v₀=2, a=4 m/s², 5 s'de yer değiştirme kaçtır?",
+        "front": "Sabit ivmede yer değiştirme nasıl hesaplanır?",
         "back": "60 m"
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -100,7 +100,7 @@
       "cozum": "x = ½·a·t² = ½·2·100 = 100 m (s.50'deki değerlendirme sorusu).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Durgun hâlden 2 m/s² ile 10 s'de alınan yol kaçtır?",
+        "front": "Durgun hâlden hızlanan cisimde alınan yol nasıl bulunur?",
         "back": "100 m"
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -119,7 +119,7 @@
       "cozum": "Kitapta Δx = ((v + v₀)/2)·t modeli verilir (s.51).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ortalama hızla yer değiştirme modeli nedir?",
+        "front": "Δx = ((v + v₀)/2)·t bağıntısının anlamı nedir?",
         "back": "Δx = (v + v₀)/2 · t"
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -157,7 +157,7 @@
       "cozum": "12 + 36 + 60 = 108 m; kitapta koşucunun toplam yer değiştirmesi 108 m'dir (s.52).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "12+36+60 m yer değiştirmelerin toplamı kaçtır?",
+        "front": "Hız-zaman grafiğindeki alanların toplamı hangi niceliği verir?",
         "back": "108 m"
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -176,7 +176,7 @@
       "cozum": "Hız düzgün arttığı için x-t grafiği parabol biçimindedir (s.50, Grafik 1.3).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sabit ivmeli harekette x-t grafiği nasıldır?",
+        "front": "Sabit ivmeli harekette x-t grafiğinin biçimi nasıldır?",
         "back": "Parabol."
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -195,7 +195,7 @@
       "cozum": "İvme sabit olduğundan a-t grafiği yatay eksene paralel bir doğrudur (s.50, Grafik 1.3).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "a-t grafiğindeki yatay doğru neyi gösterir?",
+        "front": "İvme-zaman grafiğinin yatay olması ne demektir?",
         "back": "İvmenin zamanla değişmediğini, yani sabit ivmeyi."
       },
       "kazanim": "Yatay doğrultuda sabit ivmeli hareketin modellerini ve grafiklerini kullanır."
@@ -204,32 +204,32 @@
   "flashcards": [
     {
       "id": "fizik_10_u01_k06_o01:flashcard",
-      "front": "Sabit ivmeli harekette hız modeli nedir?",
+      "front": "v = v₀ + a·t bağıntısının anlamı nedir?",
       "back": "v = v₀ + a·t"
     },
     {
       "id": "fizik_10_u01_k06_o02:flashcard",
-      "front": "Yer değiştirme modeli nedir?",
+      "front": "x = v₀·t + ½·a·t² bağıntısının anlamı nedir?",
       "back": "x = v₀·t + ½·a·t²"
     },
     {
       "id": "fizik_10_u01_k06_o03:flashcard",
-      "front": "v₀=2, a=4 m/s², t=5 s ise hız kaçtır?",
+      "front": "İlk hız, ivme ve süreden son hız nasıl bulunur?",
       "back": "22 m/s"
     },
     {
       "id": "fizik_10_u01_k06_o04:flashcard",
-      "front": "v₀=2, a=4 m/s², 5 s'de yer değiştirme kaçtır?",
+      "front": "Sabit ivmede yer değiştirme nasıl hesaplanır?",
       "back": "60 m"
     },
     {
       "id": "fizik_10_u01_k06_o05:flashcard",
-      "front": "Durgun hâlden 2 m/s² ile 10 s'de alınan yol kaçtır?",
+      "front": "Durgun hâlden hızlanan cisimde alınan yol nasıl bulunur?",
       "back": "100 m"
     },
     {
       "id": "fizik_10_u01_k06_o06:flashcard",
-      "front": "Ortalama hızla yer değiştirme modeli nedir?",
+      "front": "Δx = ((v + v₀)/2)·t bağıntısının anlamı nedir?",
       "back": "Δx = (v + v₀)/2 · t"
     },
     {
@@ -239,17 +239,17 @@
     },
     {
       "id": "fizik_10_u01_k06_o08:flashcard",
-      "front": "12+36+60 m yer değiştirmelerin toplamı kaçtır?",
+      "front": "Hız-zaman grafiğindeki alanların toplamı hangi niceliği verir?",
       "back": "108 m"
     },
     {
       "id": "fizik_10_u01_k06_o09:flashcard",
-      "front": "Sabit ivmeli harekette x-t grafiği nasıldır?",
+      "front": "Sabit ivmeli harekette x-t grafiğinin biçimi nasıldır?",
       "back": "Parabol."
     },
     {
       "id": "fizik_10_u01_k06_o10:flashcard",
-      "front": "a-t grafiğindeki yatay doğru neyi gösterir?",
+      "front": "İvme-zaman grafiğinin yatay olması ne demektir?",
       "back": "İvmenin zamanla değişmediğini, yani sabit ivmeyi."
     }
   ]

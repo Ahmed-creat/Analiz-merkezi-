@@ -24,7 +24,7 @@
       "cozum": "Kömür, fosil (mineral) yakıt olup tükenme hızı oluşum hızından çok fazladır (s.172-173).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kömür yenilenebilir mi?",
+        "front": "Kömürün enerji kaynağı sınıfı nedir?",
         "back": "Hayır, yenilenemeyen fosil yakıttır."
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -43,7 +43,7 @@
       "cozum": "Rüzgâr sürekli devam eden doğal süreçlerden elde edilen yenilenebilir kaynaktır (s.172).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Rüzgâr yenilenebilir mi?",
+        "front": "Rüzgârın enerji kaynağı sınıfı nedir?",
         "back": "Evet."
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -81,7 +81,7 @@
       "cozum": "Kitapta yenilenemeyen kaynaklar fosil yakıtlar ve nükleer enerji olarak verilir; nükleer yakıt rezervi sınırlıdır (s.172-174).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Uranyum neden tükenebilir bir yakıt sayılır?",
+        "front": "Uranyumun yenilenemeyen kaynak sayılması ne demektir?",
         "back": "Rezervleri sınırlıdır; kendini yenilemesi mümkün değildir."
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -100,7 +100,7 @@
       "cozum": "Kitaba göre en yüksek verim A harfiyle gösterilir; G'ye gidildikçe verim azalır (s.183).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Enerji etiketinde A sınıfı neyi gösterir?",
+        "front": "Enerji sınıfı etiketinde A harfinin anlamı nedir?",
         "back": "En yüksek verimliliği, yani aynı iş için en az enerji tüketimini."
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -110,16 +110,16 @@
       "alt_beceri": "Kaynakların çevresel etkisini ve verimini yorumlar.",
       "metin": "Kitaba göre 1 kg uranyumdan elde edilebilen elektrik enerjisi yaklaşık kaç kWh'tir?",
       "secenekler": [
-        "4,5",
-        "50.000",
-        "3",
-        "500"
+        "4,5 kWh",
+        "3 kWh",
+        "50.000 kWh",
+        "500 kWh"
       ],
-      "dogru_index": 1,
+      "dogru_index": 2,
       "cozum": "Kitapta 1 kg kömürden 3 kWh, 1 kg petrolden 4,5 kWh, 1 kg uranyumdan 50.000 kWh elektrik elde edildiği yazılıdır (s.174).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 kg uranyumdan kaç kWh elektrik elde edilir?",
+        "front": "Yakıt türlerinin elektrik verimi karşılaştırması nedir?",
         "back": "Yaklaşık 50.000 kWh"
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -138,7 +138,7 @@
       "cozum": "Kitapta 1 kg kömürden 3 kWh, 1 kg petrolden 4,5 kWh elektrik elde edildiği belirtilir (s.174).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "1 kg petrol ve 1 kg kömür kaç kWh verir?",
+        "front": "Petrol ile kömürün kWh verimi arasındaki fark nedir?",
         "back": "4,5 kWh ve 3 kWh"
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -146,18 +146,18 @@
     {
       "soru_id": "fizik_10_u02_k04_o08",
       "alt_beceri": "Kaynakların çevresel etkisini ve verimini yorumlar.",
-      "metin": "Nükleer santrallerin havayı en az kirleten santraller arasında sayılmasının nedeni nedir?",
+      "metin": "Nükleer santraller işletme sırasında sera gazı salmıyor ama radyoaktif atık üretiyor. Havayı en az kirleten santraller arasında sayılmalarının nedeni nedir?",
       "secenekler": [
         "Kömür kullanmaları",
         "Hiç atık üretmemeleri",
-        "İşletmede sera gazı emisyonu oluşturmaması",
+        "Sera gazı emisyonu oluşturmaması",
         "Su tüketmemeleri"
       ],
       "dogru_index": 2,
       "cozum": "Kitapta nükleer santrallerin işletim sırasında sera gazı emisyonuna neden olmadığı, radyoaktif atıkların denetimli saklanmasının önemli olduğu belirtilir (s.174).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Nükleer santral sera gazı salar mı?",
+        "front": "Nükleer santrallerin emisyon durumu nedir?",
         "back": "İşletmede salmaz; radyoaktif atık sorunu vardır."
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -167,10 +167,10 @@
       "alt_beceri": "Kaynakların çevresel etkisini ve verimini yorumlar.",
       "metin": "Güneş ışığını doğrudan elektrik enerjisine dönüştüren sistemlere ne denir?",
       "secenekler": [
-        "Jeneratör",
+        "Elektrik jeneratörü",
         "Fotovoltaik sistem",
-        "Türbin",
-        "Reaktör"
+        "Buhar türbini",
+        "Nükleer reaktör"
       ],
       "dogru_index": 1,
       "cozum": "Güneş panelleri fotovoltaik sistem olarak adlandırılır (s.176).",
@@ -195,7 +195,7 @@
       "cozum": "Enerji ve Tabii Kaynaklar Bakanlığının 2023 verilerine göre bu oran %57,7'dir (s.173).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "2023'te Türkiye elektriğinin yüzde kaçı fosil yakıttan?",
+        "front": "Türkiye'de elektrik üretiminde fosil yakıtların payı nedir?",
         "back": "%57,7"
       },
       "kazanim": "Enerji kaynaklarını sınıflandırır; sürdürülebilirlik ve verim açısından karşılaştırır."
@@ -204,12 +204,12 @@
   "flashcards": [
     {
       "id": "fizik_10_u02_k04_o01:flashcard",
-      "front": "Kömür yenilenebilir mi?",
+      "front": "Kömürün enerji kaynağı sınıfı nedir?",
       "back": "Hayır, yenilenemeyen fosil yakıttır."
     },
     {
       "id": "fizik_10_u02_k04_o02:flashcard",
-      "front": "Rüzgâr yenilenebilir mi?",
+      "front": "Rüzgârın enerji kaynağı sınıfı nedir?",
       "back": "Evet."
     },
     {
@@ -219,27 +219,27 @@
     },
     {
       "id": "fizik_10_u02_k04_o04:flashcard",
-      "front": "Uranyum neden tükenebilir bir yakıt sayılır?",
+      "front": "Uranyumun yenilenemeyen kaynak sayılması ne demektir?",
       "back": "Rezervleri sınırlıdır; kendini yenilemesi mümkün değildir."
     },
     {
       "id": "fizik_10_u02_k04_o05:flashcard",
-      "front": "Enerji etiketinde A sınıfı neyi gösterir?",
+      "front": "Enerji sınıfı etiketinde A harfinin anlamı nedir?",
       "back": "En yüksek verimliliği, yani aynı iş için en az enerji tüketimini."
     },
     {
       "id": "fizik_10_u02_k04_o06:flashcard",
-      "front": "1 kg uranyumdan kaç kWh elektrik elde edilir?",
+      "front": "Yakıt türlerinin elektrik verimi karşılaştırması nedir?",
       "back": "Yaklaşık 50.000 kWh"
     },
     {
       "id": "fizik_10_u02_k04_o07:flashcard",
-      "front": "1 kg petrol ve 1 kg kömür kaç kWh verir?",
+      "front": "Petrol ile kömürün kWh verimi arasındaki fark nedir?",
       "back": "4,5 kWh ve 3 kWh"
     },
     {
       "id": "fizik_10_u02_k04_o08:flashcard",
-      "front": "Nükleer santral sera gazı salar mı?",
+      "front": "Nükleer santrallerin emisyon durumu nedir?",
       "back": "İşletmede salmaz; radyoaktif atık sorunu vardır."
     },
     {
@@ -249,7 +249,7 @@
     },
     {
       "id": "fizik_10_u02_k04_o10:flashcard",
-      "front": "2023'te Türkiye elektriğinin yüzde kaçı fosil yakıttan?",
+      "front": "Türkiye'de elektrik üretiminde fosil yakıtların payı nedir?",
       "back": "%57,7"
     }
   ]

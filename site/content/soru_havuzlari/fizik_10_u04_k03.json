@@ -24,7 +24,7 @@
       "cozum": "Kitaptaki etkinlikte derinlik arttıkça su dalgalarının süratinin arttığı görülür (s.292-293).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Su dalgasının sürati neye bağlıdır?",
+        "front": "Su dalgasında derinliğin sürate etkisi nedir?",
         "back": "Ortamın derinliğine."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -43,7 +43,7 @@
       "cozum": "Tanecikler arası bağların güçlü olduğu katılarda ses en hızlı yayılır (s.294).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ses en hızlı hangi ortamda yayılır?",
+        "front": "Katı ortamın ses hızına etkisi nedir?",
         "back": "Katıda."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -51,7 +51,7 @@
     {
       "soru_id": "fizik_10_u04_k03_o03",
       "alt_beceri": "Yayılma süratini etkileyen etmenleri açıklar.",
-      "metin": "Bir dalganın yayılma süratini belirleyen temel etmen nedir?",
+      "metin": "Aynı kaynaktan çıkan 2 dalga farklı ortamlara girince süratleri değişir. Bir dalganın yayılma süratini belirleyen temel etmen nedir?",
       "secenekler": [
         "Yayıldığı ortamın özellikleri",
         "Kaynağın genliği",
@@ -62,7 +62,7 @@
       "cozum": "Sürat ortamın özelliklerine bağlıdır; kaynak yalnız frekansı belirler (s.293-294).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dalga süratini ne belirler?",
+        "front": "Süratin ortam özelliklerine bağlı olması ne demektir?",
         "back": "Ortamın özellikleri."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -100,7 +100,7 @@
       "cozum": "Sürat ortama bağlı olduğundan aynı ortamda farklı frekanslı dalgaların sürati eşittir; frekans değişince dalga boyu değişir (s.293).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aynı ortamda farklı frekanslı dalgaların sürati eşit midir?",
+        "front": "Süratin frekanstan bağımsız olması ne demektir?",
         "back": "Evet, eşittir."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -108,7 +108,7 @@
     {
       "soru_id": "fizik_10_u04_k03_o06",
       "alt_beceri": "Deneysel verilerden sonuç çıkarır.",
-      "metin": "Derin ortamdan sığ ortama geçen su dalgasının sürati nasıl değişir?",
+      "metin": "Derinliği 20 cm olan ortamdan derinliği 5 cm olan ortama geçen su dalgasının sürati nasıl değişir?",
       "secenekler": [
         "Artar",
         "Azalır",
@@ -119,7 +119,7 @@
       "cozum": "Derinlik azaldıkça sürat azalır; kitaptaki gözlemler bunu destekler (s.292-293, s.318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sığ ortama geçen su dalgası hızlanır mı?",
+        "front": "Derin ortamdan sığ ortama geçişte süratin azalmasının nedeni nedir?",
         "back": "Hayır, yavaşlar."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -157,7 +157,7 @@
       "cozum": "Frekans kaynağa bağlıdır; ortam değişse de değişmez, sürat ve dalga boyu değişir (s.293, s.318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ortam değişince hangi özellik sabit kalır?",
+        "front": "Frekansın ortamlar arasında korunması ne demektir?",
         "back": "Frekans."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -176,7 +176,7 @@
       "cozum": "Kitapta yayın gerginliği arttıkça dalga süratinin arttığı belirtilir (s.294).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gergin yayda dalga hızlanır mı?",
+        "front": "Yay gerginliğinin dalga süratine etkisi nedir?",
         "back": "Evet, gerginlik artarsa sürat artar."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -195,7 +195,7 @@
       "cozum": "Frekanslar aynı olduğu hâlde sürat farklıysa tek değişken derinliktir (kitaptaki 4.15. soru, s.315).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aynı frekansta sürat neden farklı olur?",
+        "front": "Derinlik farkının sürate yansıması nedir?",
         "back": "Derinlik farklı olduğu için."
       },
       "kazanim": "Dalgaların yayılma süratini etkileyen etmenleri deney ve gözlemlere dayanarak açıklar."
@@ -204,17 +204,17 @@
   "flashcards": [
     {
       "id": "fizik_10_u04_k03_o01:flashcard",
-      "front": "Su dalgasının sürati neye bağlıdır?",
+      "front": "Su dalgasında derinliğin sürate etkisi nedir?",
       "back": "Ortamın derinliğine."
     },
     {
       "id": "fizik_10_u04_k03_o02:flashcard",
-      "front": "Ses en hızlı hangi ortamda yayılır?",
+      "front": "Katı ortamın ses hızına etkisi nedir?",
       "back": "Katıda."
     },
     {
       "id": "fizik_10_u04_k03_o03:flashcard",
-      "front": "Dalga süratini ne belirler?",
+      "front": "Süratin ortam özelliklerine bağlı olması ne demektir?",
       "back": "Ortamın özellikleri."
     },
     {
@@ -224,12 +224,12 @@
     },
     {
       "id": "fizik_10_u04_k03_o05:flashcard",
-      "front": "Aynı ortamda farklı frekanslı dalgaların sürati eşit midir?",
+      "front": "Süratin frekanstan bağımsız olması ne demektir?",
       "back": "Evet, eşittir."
     },
     {
       "id": "fizik_10_u04_k03_o06:flashcard",
-      "front": "Sığ ortama geçen su dalgası hızlanır mı?",
+      "front": "Derin ortamdan sığ ortama geçişte süratin azalmasının nedeni nedir?",
       "back": "Hayır, yavaşlar."
     },
     {
@@ -239,17 +239,17 @@
     },
     {
       "id": "fizik_10_u04_k03_o08:flashcard",
-      "front": "Ortam değişince hangi özellik sabit kalır?",
+      "front": "Frekansın ortamlar arasında korunması ne demektir?",
       "back": "Frekans."
     },
     {
       "id": "fizik_10_u04_k03_o09:flashcard",
-      "front": "Gergin yayda dalga hızlanır mı?",
+      "front": "Yay gerginliğinin dalga süratine etkisi nedir?",
       "back": "Evet, gerginlik artarsa sürat artar."
     },
     {
       "id": "fizik_10_u04_k03_o10:flashcard",
-      "front": "Aynı frekansta sürat neden farklı olur?",
+      "front": "Derinlik farkının sürate yansıması nedir?",
       "back": "Derinlik farklı olduğu için."
     }
   ]

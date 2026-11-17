@@ -43,7 +43,7 @@
       "cozum": "V = I·R; birimi volttur (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ohm Yasası'nın modeli nedir?",
+        "front": "V = I·R bağıntısının anlamı nedir?",
         "back": "V = I·R"
       },
       "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
@@ -89,7 +89,7 @@
     {
       "soru_id": "fizik_10_u03_k03_o05",
       "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
-      "metin": "Direnç sabitken akım ile potansiyel fark arasındaki ilişki nedir?",
+      "metin": "Bir iletkenin direnci 4 Ω'da sabit tutulup gerilim 4 V'tan 8 V'a çıkarıldığında akım 1 A'dan 2 A'ya çıkıyor. Akım ile potansiyel fark arasındaki ilişki nedir?",
       "secenekler": [
         "Ters orantılı",
         "Karesel",
@@ -119,7 +119,7 @@
       "cozum": "I = V/R = 12/6 = 2 A (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "12 V, 6 Ω için akım kaç A'dır?",
+        "front": "Verilen gerilim ve dirençten akım nasıl hesaplanır?",
         "back": "2 A"
       },
       "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
@@ -138,7 +138,7 @@
       "cozum": "V = I·R = 3·4 = 12 V (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "3 A ve 4 Ω için gerilim kaç V'tur?",
+        "front": "Akım ile direnç çarpımının karşılığı nedir?",
         "back": "12 V"
       },
       "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
@@ -157,7 +157,7 @@
       "cozum": "R = V/I = 20/4 = 5 Ω (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "20 V'ta 4 A geçen direnç kaç Ω'dur?",
+        "front": "Gerilim ve akımdan direnç nasıl bulunur?",
         "back": "5 Ω"
       },
       "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
@@ -195,7 +195,7 @@
       "cozum": "V = I·R = 2·10 = 20 V (s.218).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "10 Ω ve 2 A için gerilim kaç V'tur?",
+        "front": "Potansiyel farkın bağıntısı nedir?",
         "back": "20 V"
       },
       "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
@@ -209,7 +209,7 @@
     },
     {
       "id": "fizik_10_u03_k03_o02:flashcard",
-      "front": "Ohm Yasası'nın modeli nedir?",
+      "front": "V = I·R bağıntısının anlamı nedir?",
       "back": "V = I·R"
     },
     {
@@ -229,17 +229,17 @@
     },
     {
       "id": "fizik_10_u03_k03_o06:flashcard",
-      "front": "12 V, 6 Ω için akım kaç A'dır?",
+      "front": "Verilen gerilim ve dirençten akım nasıl hesaplanır?",
       "back": "2 A"
     },
     {
       "id": "fizik_10_u03_k03_o07:flashcard",
-      "front": "3 A ve 4 Ω için gerilim kaç V'tur?",
+      "front": "Akım ile direnç çarpımının karşılığı nedir?",
       "back": "12 V"
     },
     {
       "id": "fizik_10_u03_k03_o08:flashcard",
-      "front": "20 V'ta 4 A geçen direnç kaç Ω'dur?",
+      "front": "Gerilim ve akımdan direnç nasıl bulunur?",
       "back": "5 Ω"
     },
     {
@@ -249,7 +249,7 @@
     },
     {
       "id": "fizik_10_u03_k03_o10:flashcard",
-      "front": "10 Ω ve 2 A için gerilim kaç V'tur?",
+      "front": "Potansiyel farkın bağıntısı nedir?",
       "back": "20 V"
     }
   ]

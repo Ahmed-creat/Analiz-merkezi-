@@ -34,16 +34,16 @@
       "alt_beceri": "Bağlama türlerini ve eşdeğer direnci açıklar.",
       "metin": "Paralel bağlı dirençlerde hangi nicelik her kolda eşittir?",
       "secenekler": [
-        "Akım",
-        "Direnç",
-        "Güç",
-        "Potansiyel fark"
+        "Akım şiddeti",
+        "Direnç değeri",
+        "Harcanan güç",
+        "Gerilim"
       ],
       "dogru_index": 3,
       "cozum": "Paralel kolların uçları aynı noktalara bağlı olduğundan potansiyel farkları eşittir (s.230).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paralel bağlamada hangi nicelik eşittir?",
+        "front": "Paralel kollarda gerilimin eşit olması ne demektir?",
         "back": "Potansiyel fark."
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -62,7 +62,7 @@
       "cozum": "Seri devrede akımın geçebileceği tek yol vardır; akım her elemanında aynıdır (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri devrede akım değişir mi?",
+        "front": "Seri devrede akımın her dirençte aynı olması ne demektir?",
         "back": "Hayır, her yerde aynıdır."
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -81,7 +81,7 @@
       "cozum": "Ana kol akımı, paralel kollardan geçen akımların toplamına eşittir (s.230).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paralel devrede ana kol akımı nedir?",
+        "front": "Ana kol akımı ile kol akımları arasındaki ilişki nedir?",
         "back": "Kolların akımları toplamı."
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -100,7 +100,7 @@
       "cozum": "Toplama yapıldığı için eşdeğer direnç en büyük dirençten de büyüktür (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri eşdeğer direnç büyür mü?",
+        "front": "Seri eşdeğer direncin her dirençten büyük olması ne demektir?",
         "back": "Evet, dirençler toplanır."
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -119,7 +119,7 @@
       "cozum": "R_eş = 3 + 5 = 8 Ω (s.229).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "3 Ω + 5 Ω seri bağlanırsa kaç Ω olur?",
+        "front": "Seri bağlamada eşdeğer direnç nasıl hesaplanır?",
         "back": "8 Ω"
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -138,7 +138,7 @@
       "cozum": "1/R_eş = 1/6 + 1/3 = 1/2 → R_eş = 2 Ω (s.230).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki direnç paralel bağlandığında eşdeğer direnç hangi sınırlar arasında olur?",
+        "front": "Birden çok kolun tek dirence indirgenmesi nedir?",
         "back": "Her iki dirençten de küçüktür; 6 Ω ∥ 3 Ω = 2 Ω."
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -157,7 +157,7 @@
       "cozum": "Seri devrede akım her yerde aynıdır: I = 30/5 = 6 A (kitaptaki 3.6. soru, s.232).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "5 Ω'da 30 V varsa seri devrede akım kaç A'dır?",
+        "front": "Seri devrede akımın bulunması için kullanılan oran nedir?",
         "back": "6 A"
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -176,7 +176,7 @@
       "cozum": "R_eş = 3 + 4 + 5 = 12 Ω; V = I·R_eş = 6·12 = 72 V (s.232).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "3-4-5 Ω seri devrede 6 A için üreteç gerilimi kaç V'tur?",
+        "front": "Kaynak gerilimi ile direnç gerilimlerinin ilişkisi nedir?",
         "back": "72 V"
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -195,7 +195,7 @@
       "cozum": "Paralel kollarda V = 12 V: I1 = 12/6 = 2 A, I2 = 12/3 = 4 A (s.235).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "12 V'ta 6 Ω ve 3 Ω paralel kolların akımları kaç A'dır?",
+        "front": "Paralel kolların akım paylaşımı nedir?",
         "back": "2 A ve 4 A"
       },
       "kazanim": "Dirençlerin seri, paralel ve birleşik bağlanmasında eşdeğer direnç ve akım-potansiyel fark ilişkilerini kullanır."
@@ -209,47 +209,47 @@
     },
     {
       "id": "fizik_10_u03_k04_o02:flashcard",
-      "front": "Paralel bağlamada hangi nicelik eşittir?",
+      "front": "Paralel kollarda gerilimin eşit olması ne demektir?",
       "back": "Potansiyel fark."
     },
     {
       "id": "fizik_10_u03_k04_o03:flashcard",
-      "front": "Seri devrede akım değişir mi?",
+      "front": "Seri devrede akımın her dirençte aynı olması ne demektir?",
       "back": "Hayır, her yerde aynıdır."
     },
     {
       "id": "fizik_10_u03_k04_o04:flashcard",
-      "front": "Paralel devrede ana kol akımı nedir?",
+      "front": "Ana kol akımı ile kol akımları arasındaki ilişki nedir?",
       "back": "Kolların akımları toplamı."
     },
     {
       "id": "fizik_10_u03_k04_o05:flashcard",
-      "front": "Seri eşdeğer direnç büyür mü?",
+      "front": "Seri eşdeğer direncin her dirençten büyük olması ne demektir?",
       "back": "Evet, dirençler toplanır."
     },
     {
       "id": "fizik_10_u03_k04_o06:flashcard",
-      "front": "3 Ω + 5 Ω seri bağlanırsa kaç Ω olur?",
+      "front": "Seri bağlamada eşdeğer direnç nasıl hesaplanır?",
       "back": "8 Ω"
     },
     {
       "id": "fizik_10_u03_k04_o07:flashcard",
-      "front": "İki direnç paralel bağlandığında eşdeğer direnç hangi sınırlar arasında olur?",
+      "front": "Birden çok kolun tek dirence indirgenmesi nedir?",
       "back": "Her iki dirençten de küçüktür; 6 Ω ∥ 3 Ω = 2 Ω."
     },
     {
       "id": "fizik_10_u03_k04_o08:flashcard",
-      "front": "5 Ω'da 30 V varsa seri devrede akım kaç A'dır?",
+      "front": "Seri devrede akımın bulunması için kullanılan oran nedir?",
       "back": "6 A"
     },
     {
       "id": "fizik_10_u03_k04_o09:flashcard",
-      "front": "3-4-5 Ω seri devrede 6 A için üreteç gerilimi kaç V'tur?",
+      "front": "Kaynak gerilimi ile direnç gerilimlerinin ilişkisi nedir?",
       "back": "72 V"
     },
     {
       "id": "fizik_10_u03_k04_o10:flashcard",
-      "front": "12 V'ta 6 Ω ve 3 Ω paralel kolların akımları kaç A'dır?",
+      "front": "Paralel kolların akım paylaşımı nedir?",
       "back": "2 A ve 4 A"
     }
   ]

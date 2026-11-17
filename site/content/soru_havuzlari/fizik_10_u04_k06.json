@@ -15,10 +15,10 @@
       "alt_beceri": "Rezonansı tanımlar ve örneklendirir.",
       "metin": "Rezonans olayı aşağıdakilerden hangisiyle tanımlanır?",
       "secenekler": [
-        "Genliğin sürekli azalması",
-        "Dış etkinin frekansının sistemin doğal frekansına eşit olmasıyla genliğin büyümesi",
-        "Frekansın sıfırlanması",
-        "Dalganın engelden yansıması"
+        "Genliğin sürekli azalıp sönmesi",
+        "Doğal frekansa eşit dış etkiyle genliğin büyümesi",
+        "Frekansın tamamen sıfırlanması",
+        "Dalganın engelden geri yansıması"
       ],
       "dogru_index": 1,
       "cozum": "Kitapta rezonans, dışarıdan gelen etkinin frekansı ile sistemin doğal frekansının eşit olması sonucu genliğin sürekli artması olarak tanımlanır (s.325).",
@@ -62,7 +62,7 @@
       "cozum": "Kitapta köprüde rezonans oluşursa titreşimlerin çökmeye neden olabileceği yazılıdır (s.326).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Köprüde rezonans neden tehlikelidir?",
+        "front": "Rezonansın yapıya zarar vermesinin nedeni nedir?",
         "back": "Yapı çökebilir."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
@@ -70,7 +70,7 @@
     {
       "soru_id": "fizik_10_u04_k06_o04",
       "alt_beceri": "Rezonansı tanımlar ve örneklendirir.",
-      "metin": "Deprem dalgalarının diğer adı nedir?",
+      "metin": "Deprem sırasında yer kabuğunda yayılan 2 tür dalgaya verilen ortak ad nedir?",
       "secenekler": [
         "Elektromanyetik dalgalar",
         "Ses dalgaları",
@@ -81,7 +81,7 @@
       "cozum": "Kitapta deprem dalgalarına sismik dalgalar da denildiği belirtilir (s.326).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Deprem dalgasına ne denir?",
+        "front": "Sismik dalgaların tanımı nedir?",
         "back": "Sismik dalga."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
@@ -100,7 +100,7 @@
       "cozum": "Kitapta bu kırılma hatları fay hattı olarak adlandırılır (s.326).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kırılma hattına ne denir?",
+        "front": "Fay hattının tanımı nedir?",
         "back": "Fay hattı."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
@@ -127,18 +127,18 @@
     {
       "soru_id": "fizik_10_u04_k06_o07",
       "alt_beceri": "Depremle ilgili kavramları ayırt eder.",
-      "metin": "Depremde merkez üssü ile odak noktası arasındaki ilişki nedir?",
+      "metin": "Bir depremde kırılma yerin 10 km derinliğinde gerçekleşmiştir. Merkez üssü ile odak noktası arasındaki ilişki nedir?",
       "secenekler": [
-        "Odak noktasının yeryüzündeki en yakın noktası",
-        "Depremin büyüklüğü",
-        "Fayın uzunluğu",
+        "Depremin magnitüd değeri",
+        "Odağın yüzeydeki en yakın noktası",
+        "Fay hattının uzunluğu",
         "Sismografın bulunduğu yer"
       ],
-      "dogru_index": 0,
+      "dogru_index": 1,
       "cozum": "Merkez üssü, odak noktasının yüzeye en yakın noktası olup etkilerin en yoğun hissedildiği yerdir (s.326).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Odağın yeryüzündeki iz düşümüne ne ad verilir?",
+        "front": "Merkez üssünün tanımı nedir?",
         "back": "Merkez üssü (episantr)."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
@@ -167,16 +167,16 @@
       "alt_beceri": "Depremle ilgili kavramları ayırt eder.",
       "metin": "Deprem şiddeti hangi ölçek kullanılarak derecelendirilir?",
       "secenekler": [
-        "Ohm ölçeği",
-        "Değiştirilmiş Mercalli ölçeği (I-XII)",
-        "Hertz ölçeği",
-        "Newton ölçeği"
+        "Değiştirilmiş Mercalli ölçeği",
+        "Ohm direnç ölçeği",
+        "Hertz frekans ölçeği",
+        "Newton kuvvet ölçeği"
       ],
-      "dogru_index": 1,
+      "dogru_index": 0,
       "cozum": "Kitapta şiddetin Değiştirilmiş Mercalli (MMI) ölçeğiyle I'den XII'ye derecelendirildiği yazılıdır (s.327).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Değiştirilmiş Mercalli ölçeği neyi derecelendirir?",
+        "front": "Değiştirilmiş Mercalli ölçeğinin ölçtüğü nedir?",
         "back": "Depremin yüzeydeki etkisini (şiddetini) I-XII arasında."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
@@ -186,16 +186,16 @@
       "alt_beceri": "Depremle ilgili kavramları ayırt eder.",
       "metin": "Depremin şiddeti hangi etmenlere bağlıdır?",
       "secenekler": [
-        "Yalnız büyüklük",
-        "Yalnız fay uzunluğu",
-        "Yalnız depremin saati",
-        "Odağa uzaklık, zemin koşulları ve yapı dayanıklılığı"
+        "Yalnızca deprem büyüklüğü",
+        "Yalnızca fayın uzunluğu",
+        "Yalnızca depremin saati",
+        "Odak uzaklığı, zemin ve yapı dayanıklılığı"
       ],
       "dogru_index": 3,
       "cozum": "Kitapta şiddetin odağa uzaklık, zemin koşulları ve yapıların dayanıklılığına bağlı olduğu belirtilir (s.327).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Şiddet nelere bağlıdır?",
+        "front": "Şiddeti belirleyen etmenler nedir?",
         "back": "Uzaklık, zemin, yapı dayanıklılığı."
       },
       "kazanim": "Rezonansı açıklar; depremle ilgili kavramları (odak, merkez üssü, büyüklük, şiddet) ayırt eder."
@@ -214,17 +214,17 @@
     },
     {
       "id": "fizik_10_u04_k06_o03:flashcard",
-      "front": "Köprüde rezonans neden tehlikelidir?",
+      "front": "Rezonansın yapıya zarar vermesinin nedeni nedir?",
       "back": "Yapı çökebilir."
     },
     {
       "id": "fizik_10_u04_k06_o04:flashcard",
-      "front": "Deprem dalgasına ne denir?",
+      "front": "Sismik dalgaların tanımı nedir?",
       "back": "Sismik dalga."
     },
     {
       "id": "fizik_10_u04_k06_o05:flashcard",
-      "front": "Kırılma hattına ne denir?",
+      "front": "Fay hattının tanımı nedir?",
       "back": "Fay hattı."
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "id": "fizik_10_u04_k06_o07:flashcard",
-      "front": "Odağın yeryüzündeki iz düşümüne ne ad verilir?",
+      "front": "Merkez üssünün tanımı nedir?",
       "back": "Merkez üssü (episantr)."
     },
     {
@@ -244,12 +244,12 @@
     },
     {
       "id": "fizik_10_u04_k06_o09:flashcard",
-      "front": "Değiştirilmiş Mercalli ölçeği neyi derecelendirir?",
+      "front": "Değiştirilmiş Mercalli ölçeğinin ölçtüğü nedir?",
       "back": "Depremin yüzeydeki etkisini (şiddetini) I-XII arasında."
     },
     {
       "id": "fizik_10_u04_k06_o10:flashcard",
-      "front": "Şiddet nelere bağlıdır?",
+      "front": "Şiddeti belirleyen etmenler nedir?",
       "back": "Uzaklık, zemin, yapı dayanıklılığı."
     }
   ]

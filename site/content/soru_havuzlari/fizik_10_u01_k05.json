@@ -43,7 +43,7 @@
       "cozum": "Kitapta ivme, hız değişiminin zamana oranı olarak a = Δv/Δt modeliyle verilir (s.36).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İvmenin matematiksel modeli nedir?",
+        "front": "a = Δv/Δt bağıntısının anlamı nedir?",
         "back": "a = Δv/Δt"
       },
       "kazanim": "İvme ile hız değişimi arasındaki ilişkiyi açıklar."
@@ -62,8 +62,8 @@
       "cozum": "Kitaptaki örnekte her 1 s'de 5 m/s hızlanan aracın ivmesi 5 m/s² bulunur (s.36).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Her saniye 5 m/s hızlanan aracın ivmesi kaçtır?",
-        "back": "5 m/s²"
+        "front": "İvmenin birimi nedir?",
+        "back": "m/s² (metre bölü saniye kare)."
       },
       "kazanim": "İvme ile hız değişimi arasındaki ilişkiyi açıklar."
     },
@@ -81,8 +81,8 @@
       "cozum": "Her saniye 4 m/s artan hız 6 s'de 24 m/s olur; kitaptaki çözümde v = 4 · 6 = 24 m/s bulunur (s.36).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "4 m/s² ivmeyle 6 s'de ulaşılan hız kaçtır?",
-        "back": "24 m/s"
+        "front": "Sabit ivmede son hız nasıl bulunur?",
+        "back": "v = v₀ + a·t bağıntısıyla; ilk hız sıfırsa v = a·t olur."
       },
       "kazanim": "İvme ile hız değişimi arasındaki ilişkiyi açıklar."
     },
@@ -100,7 +100,7 @@
       "cozum": "Kitaptaki çözümde hız değişmediği için a = (18 − 18)/1 = 0 bulunur (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hızı değişmeyen aracın ivmesi kaçtır?",
+        "front": "Hız değişimi sıfırsa ivme ne olur?",
         "back": "Sıfır."
       },
       "kazanim": "İvme ile hız değişimi arasındaki ilişkiyi açıklar."
@@ -119,8 +119,8 @@
       "cozum": "a = (12 − 18)/1 = −6 m/s²; hız azaldığı için ivme negatiftir (s.37).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hızı 18'den 12'ye düşen aracın ivmesi kaçtır?",
-        "back": "−6 m/s²"
+        "front": "Hız azalırken ivmenin işareti nedir?",
+        "back": "Negatiftir; ivme hareket yönüne zıttır."
       },
       "kazanim": "İvme ile hız değişimi arasındaki ilişkiyi açıklar."
     },
@@ -195,8 +195,8 @@
       "cozum": "Kitaptaki 1.9. soruda L aracı için son hız 10 + (−2)·3 = 4 m/s bulunur (s.40).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "10 m/s hızla giden araç −2 m/s² ile 3 s'de kaç m/s olur?",
-        "back": "4 m/s"
+        "front": "İlk hız, ivme ve süre verildiğinde son hız nasıl hesaplanır?",
+        "back": "v = v₀ + a·t bağıntısıyla; 10 + (−2)·3 = 4 m/s."
       },
       "kazanim": "İvme ile hız değişimi arasındaki ilişkiyi açıklar."
     }
@@ -209,28 +209,28 @@
     },
     {
       "id": "fizik_10_u01_k05_o02:flashcard",
-      "front": "İvmenin matematiksel modeli nedir?",
+      "front": "a = Δv/Δt bağıntısının anlamı nedir?",
       "back": "a = Δv/Δt"
     },
     {
       "id": "fizik_10_u01_k05_o03:flashcard",
-      "front": "Her saniye 5 m/s hızlanan aracın ivmesi kaçtır?",
-      "back": "5 m/s²"
+      "front": "İvmenin birimi nedir?",
+      "back": "m/s² (metre bölü saniye kare)."
     },
     {
       "id": "fizik_10_u01_k05_o04:flashcard",
-      "front": "4 m/s² ivmeyle 6 s'de ulaşılan hız kaçtır?",
-      "back": "24 m/s"
+      "front": "Sabit ivmede son hız nasıl bulunur?",
+      "back": "v = v₀ + a·t bağıntısıyla; ilk hız sıfırsa v = a·t olur."
     },
     {
       "id": "fizik_10_u01_k05_o05:flashcard",
-      "front": "Hızı değişmeyen aracın ivmesi kaçtır?",
+      "front": "Hız değişimi sıfırsa ivme ne olur?",
       "back": "Sıfır."
     },
     {
       "id": "fizik_10_u01_k05_o06:flashcard",
-      "front": "Hızı 18'den 12'ye düşen aracın ivmesi kaçtır?",
-      "back": "−6 m/s²"
+      "front": "Hız azalırken ivmenin işareti nedir?",
+      "back": "Negatiftir; ivme hareket yönüne zıttır."
     },
     {
       "id": "fizik_10_u01_k05_o07:flashcard",
@@ -249,8 +249,8 @@
     },
     {
       "id": "fizik_10_u01_k05_o10:flashcard",
-      "front": "10 m/s hızla giden araç −2 m/s² ile 3 s'de kaç m/s olur?",
-      "back": "4 m/s"
+      "front": "İlk hız, ivme ve süre verildiğinde son hız nasıl hesaplanır?",
+      "back": "v = v₀ + a·t bağıntısıyla; 10 + (−2)·3 = 4 m/s."
     }
   ]
 }

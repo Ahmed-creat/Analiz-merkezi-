@@ -24,7 +24,7 @@
       "cozum": "Seri bağlı üreteçlerin potansiyel farkları toplanır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri üreteçlerin toplam gerilimi nasıl bulunur?",
+        "front": "Seri üreteçlerde gerilimlerin toplanması ne demektir?",
         "back": "Toplanır."
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -43,7 +43,7 @@
       "cozum": "Düz seri bağlamada bir üretecin (+) kutbu diğerinin (−) kutbuna bağlanır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Seri bağlamada kutuplar nasıl birleşir?",
+        "front": "Düz seri bağlamanın kutup kuralı nedir?",
         "back": "Zıt kutuplar uç uca."
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -62,7 +62,7 @@
       "cozum": "Paralel bağlamada potansiyel fark değişmez, üreteçlerin toplam akım verme süresi/kapasitesi artar (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paralel bağlı özdeş üreteçlerin sağladığı toplam gerilim nasıl değişir?",
+        "front": "Özdeş üreteçlerin paralel bağlanmasının sağladığı avantaj nedir?",
         "back": "Değişmez, bir üretecin gerilimine eşit kalır; akım verme kapasitesi artar."
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -81,7 +81,7 @@
       "cozum": "Paralel bağlı özdeş üreteçlerin potansiyel farkı bir üretecin potansiyel farkına eşittir (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paralel özdeş pillerde gerilim değişir mi?",
+        "front": "Paralel bağlı özdeş pillerde gerilimin değişmemesi ne demektir?",
         "back": "Değişmez."
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -119,7 +119,7 @@
       "cozum": "10 + 15 + 20 = 45 V (kitaptaki VKL örneği, s.245).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "10+15+20 V seri bağlanırsa toplam kaç V olur?",
+        "front": "Düz seri bağlı üreteçlerin gerilim hesabı nedir?",
         "back": "45 V"
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -138,7 +138,7 @@
       "cozum": "Ters bağlamada potansiyel farklar çıkarılır: 15 − 10 = 5 V (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Biri ters bağlı 15 V ve 10 V'ta toplam gerilim kaç V'tur?",
+        "front": "Ters bağlı üreteçte toplam gerilim nedir?",
         "back": "5 V"
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -157,7 +157,7 @@
       "cozum": "Seri bağlamada toplanır: 1,5 + 1,5 = 3 V (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İki 1,5 V pil seri bağlanırsa kaç V olur?",
+        "front": "İki özdeş pil seri bağlanınca gerilimin katlanması ne demektir?",
         "back": "3 V"
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -176,7 +176,7 @@
       "cozum": "Paralel bağlamada potansiyel fark değişmez, 1,5 V olarak kalır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Paralel iki 1,5 V pilde gerilim kaç V olur?",
+        "front": "Özdeş pillerin paralel bağlanmasında gerilim nedir?",
         "back": "1,5 V"
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -195,7 +195,7 @@
       "cozum": "Ters bağlanan üreteç toplamdan çıkarıldığı için toplam potansiyel fark azalır (s.244).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir üreteç ters bağlanırsa toplam gerilim ne olur?",
+        "front": "Ters bağlı üretecin toplam gerilime etkisi nedir?",
         "back": "Azalır."
       },
       "kazanim": "Üreteçlerin seri ve paralel bağlanmasının devreye etkisini açıklar."
@@ -204,22 +204,22 @@
   "flashcards": [
     {
       "id": "fizik_10_u03_k05_o01:flashcard",
-      "front": "Seri üreteçlerin toplam gerilimi nasıl bulunur?",
+      "front": "Seri üreteçlerde gerilimlerin toplanması ne demektir?",
       "back": "Toplanır."
     },
     {
       "id": "fizik_10_u03_k05_o02:flashcard",
-      "front": "Seri bağlamada kutuplar nasıl birleşir?",
+      "front": "Düz seri bağlamanın kutup kuralı nedir?",
       "back": "Zıt kutuplar uç uca."
     },
     {
       "id": "fizik_10_u03_k05_o03:flashcard",
-      "front": "Paralel bağlı özdeş üreteçlerin sağladığı toplam gerilim nasıl değişir?",
+      "front": "Özdeş üreteçlerin paralel bağlanmasının sağladığı avantaj nedir?",
       "back": "Değişmez, bir üretecin gerilimine eşit kalır; akım verme kapasitesi artar."
     },
     {
       "id": "fizik_10_u03_k05_o04:flashcard",
-      "front": "Paralel özdeş pillerde gerilim değişir mi?",
+      "front": "Paralel bağlı özdeş pillerde gerilimin değişmemesi ne demektir?",
       "back": "Değişmez."
     },
     {
@@ -229,27 +229,27 @@
     },
     {
       "id": "fizik_10_u03_k05_o06:flashcard",
-      "front": "10+15+20 V seri bağlanırsa toplam kaç V olur?",
+      "front": "Düz seri bağlı üreteçlerin gerilim hesabı nedir?",
       "back": "45 V"
     },
     {
       "id": "fizik_10_u03_k05_o07:flashcard",
-      "front": "Biri ters bağlı 15 V ve 10 V'ta toplam gerilim kaç V'tur?",
+      "front": "Ters bağlı üreteçte toplam gerilim nedir?",
       "back": "5 V"
     },
     {
       "id": "fizik_10_u03_k05_o08:flashcard",
-      "front": "İki 1,5 V pil seri bağlanırsa kaç V olur?",
+      "front": "İki özdeş pil seri bağlanınca gerilimin katlanması ne demektir?",
       "back": "3 V"
     },
     {
       "id": "fizik_10_u03_k05_o09:flashcard",
-      "front": "Paralel iki 1,5 V pilde gerilim kaç V olur?",
+      "front": "Özdeş pillerin paralel bağlanmasında gerilim nedir?",
       "back": "1,5 V"
     },
     {
       "id": "fizik_10_u03_k05_o10:flashcard",
-      "front": "Bir üreteç ters bağlanırsa toplam gerilim ne olur?",
+      "front": "Ters bağlı üretecin toplam gerilime etkisi nedir?",
       "back": "Azalır."
     }
   ]

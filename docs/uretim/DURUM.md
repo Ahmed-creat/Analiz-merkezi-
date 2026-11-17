@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-17 21:56 (UTC)
+> Güncelleme: 2026-11-17 22:22 (UTC)
 
 ## Ders bazında
 

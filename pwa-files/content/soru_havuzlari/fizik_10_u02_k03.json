@@ -62,7 +62,7 @@
       "cozum": "Kitapta kinetik enerji EK = ½·m·v² olarak verilir (s.168).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kinetik enerji modeli nedir?",
+        "front": "EK = ½·m·v² bağıntısının anlamı nedir?",
         "back": "EK = ½·m·v²"
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -70,7 +70,7 @@
     {
       "soru_id": "fizik_10_u02_k03_o04",
       "alt_beceri": "Mekanik enerjinin bileşenlerini ve korunumunu açıklar.",
-      "metin": "İş ile kinetik enerji arasındaki ilişki nedir?",
+      "metin": "Bir cisme etki eden net kuvvet 12 J iş yapıyor ve cismin kinetik enerjisi 12 J artıyor. İş ile kinetik enerji arasındaki ilişki nedir?",
       "secenekler": [
         "İş kinetik enerjinin yarısıdır",
         "İkisi bağımsızdır",
@@ -81,7 +81,7 @@
       "cozum": "İş-kinetik enerji teoremine göre W_net = ΔEK'dir (s.164).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İş-kinetik enerji teoremi ne der?",
+        "front": "İş-kinetik enerji teoreminin anlamı nedir?",
         "back": "W_net = ΔEK"
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -100,7 +100,7 @@
       "cozum": "Enerji kaybı olmadığından potansiyel enerji kinetiğe dönüşür, toplam sabit kalır (s.168-169).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sürtünmesiz düşmede mekanik enerji korunur mu?",
+        "front": "Mekanik enerjinin korunum koşulu nedir?",
         "back": "Evet, korunur."
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -119,7 +119,7 @@
       "cozum": "EP = m·g·h = 4·10·5 = 200 J (kitaptaki koli örneği, s.168).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "4 kg, 5 m yükseklikte kaç J potansiyel enerji vardır?",
+        "front": "Potansiyel enerji nasıl hesaplanır?",
         "back": "200 J"
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -138,7 +138,7 @@
       "cozum": "EK = ½·m·v² = ½·2·100 = 100 J (s.168'deki model).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "2 kg, 10 m/s için kinetik enerji kaç J'dür?",
+        "front": "Kinetik enerji nasıl hesaplanır?",
         "back": "100 J"
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -157,7 +157,7 @@
       "cozum": "m·g·h = ½·m·v² → 4·10·5 = ½·4·v² → v² = 100 → v = 10 m/s (s.168).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "5 m'den düşen cismin hızı kaç m/s'dir? (g=10)",
+        "front": "Yükseklikten düşen cismin hızı nasıl bulunur?",
         "back": "10 m/s"
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -167,16 +167,16 @@
       "alt_beceri": "Kinetik ve potansiyel enerji hesaplar.",
       "metin": "Sürtünmeli yüzeyde kayan cismin mekanik enerjisi için hangisi doğrudur?",
       "secenekler": [
-        "Korunur",
-        "Bir kısmı ısıya dönüştüğü için azalır",
-        "Artar",
+        "Korunur ve sabit kalır",
+        "Bir kısmı ısıya dönüşür",
+        "Sürekli artar",
         "Değişmez ve ısı oluşmaz"
       ],
       "dogru_index": 1,
       "cozum": "Sürtünme kuvveti negatif iş yapar; mekanik enerjinin bir kısmı ısıya dönüşür (s.168).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Sürtünmeli harekette mekanik enerji neden azalır?",
+        "front": "Sürtünmeli harekette mekanik enerjinin azalma nedeni nedir?",
         "back": "Bir kısmı ısıya dönüşür."
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -195,7 +195,7 @@
       "cozum": "Esnek cisimlerin sıkıştırılması veya gerilmesiyle esneklik potansiyel enerjisi depolanır (s.162-163).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gerilmiş yayda hangi enerji depolanır?",
+        "front": "Gerilmiş yayda depolanan enerji nedir?",
         "back": "Esneklik potansiyel enerjisi."
       },
       "kazanim": "Kinetik ve potansiyel enerjiyi hesaplar; mekanik enerjinin korunumunu açıklar."
@@ -214,42 +214,42 @@
     },
     {
       "id": "fizik_10_u02_k03_o03:flashcard",
-      "front": "Kinetik enerji modeli nedir?",
+      "front": "EK = ½·m·v² bağıntısının anlamı nedir?",
       "back": "EK = ½·m·v²"
     },
     {
       "id": "fizik_10_u02_k03_o04:flashcard",
-      "front": "İş-kinetik enerji teoremi ne der?",
+      "front": "İş-kinetik enerji teoreminin anlamı nedir?",
       "back": "W_net = ΔEK"
     },
     {
       "id": "fizik_10_u02_k03_o05:flashcard",
-      "front": "Sürtünmesiz düşmede mekanik enerji korunur mu?",
+      "front": "Mekanik enerjinin korunum koşulu nedir?",
       "back": "Evet, korunur."
     },
     {
       "id": "fizik_10_u02_k03_o06:flashcard",
-      "front": "4 kg, 5 m yükseklikte kaç J potansiyel enerji vardır?",
+      "front": "Potansiyel enerji nasıl hesaplanır?",
       "back": "200 J"
     },
     {
       "id": "fizik_10_u02_k03_o07:flashcard",
-      "front": "2 kg, 10 m/s için kinetik enerji kaç J'dür?",
+      "front": "Kinetik enerji nasıl hesaplanır?",
       "back": "100 J"
     },
     {
       "id": "fizik_10_u02_k03_o08:flashcard",
-      "front": "5 m'den düşen cismin hızı kaç m/s'dir? (g=10)",
+      "front": "Yükseklikten düşen cismin hızı nasıl bulunur?",
       "back": "10 m/s"
     },
     {
       "id": "fizik_10_u02_k03_o09:flashcard",
-      "front": "Sürtünmeli harekette mekanik enerji neden azalır?",
+      "front": "Sürtünmeli harekette mekanik enerjinin azalma nedeni nedir?",
       "back": "Bir kısmı ısıya dönüşür."
     },
     {
       "id": "fizik_10_u02_k03_o10:flashcard",
-      "front": "Gerilmiş yayda hangi enerji depolanır?",
+      "front": "Gerilmiş yayda depolanan enerji nedir?",
       "back": "Esneklik potansiyel enerjisi."
     }
   ]

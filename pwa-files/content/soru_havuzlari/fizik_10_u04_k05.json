@@ -62,7 +62,7 @@
       "cozum": "Gelme açısı, gelen dalganın ilerleme doğrultusunun normalle yaptığı açıdır (s.312).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Gelme açısı nerede ölçülür?",
+        "front": "Gelme açısının tanımı nedir?",
         "back": "Normal ile gelen dalga doğrultusu arasında."
       },
       "kazanim": "Su dalgalarında yansıma ve kırılma olaylarını yasalarıyla açıklar."
@@ -81,7 +81,7 @@
       "cozum": "Kitapta bu mesafenin en az 17 m olması gerektiği belirtilir (s.316).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yankı için en az kaç m gerekir?",
+        "front": "17 m kuralının anlamı nedir?",
         "back": "17 m"
       },
       "kazanim": "Su dalgalarında yansıma ve kırılma olaylarını yasalarıyla açıklar."
@@ -108,7 +108,7 @@
     {
       "soru_id": "fizik_10_u04_k05_o06",
       "alt_beceri": "Kırılma olayında sürat, dalga boyu ve yön değişimini yorumlar.",
-      "metin": "Derin ortamdan sığ ortama geçen su dalgasının yayılma sürati nasıl değişir?",
+      "metin": "Derinliği 40 cm olan havuzdan derinliği 10 cm olan kısma geçen su dalgasının yayılma sürati nasıl değişir?",
       "secenekler": [
         "Artar",
         "Azalır",
@@ -119,7 +119,7 @@
       "cozum": "Sığ ortamda sürat azalır; dalga normale yaklaşarak kırılır (s.318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Derinden sığa geçen dalga yavaşlar mı?",
+        "front": "Süratin ortam derinliğiyle azalması ne demektir?",
         "back": "Evet, sürat azalır."
       },
       "kazanim": "Su dalgalarında yansıma ve kırılma olaylarını yasalarıyla açıklar."
@@ -138,7 +138,7 @@
       "cozum": "Yavaşlayan dalga normale yaklaşacak biçimde kırılır (s.318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yavaşlayan dalga normale ne yapar?",
+        "front": "Normale yaklaşmanın nedeni nedir?",
         "back": "Yaklaşır."
       },
       "kazanim": "Su dalgalarında yansıma ve kırılma olaylarını yasalarıyla açıklar."
@@ -157,7 +157,7 @@
       "cozum": "Frekans kaynağa bağlıdır; ortam değişse de sabit kalır (s.318).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Kırılmada hangi nicelik sabittir?",
+        "front": "Kırılmada frekansın korunması ne demektir?",
         "back": "Frekans."
       },
       "kazanim": "Su dalgalarında yansıma ve kırılma olaylarını yasalarıyla açıklar."
@@ -195,7 +195,7 @@
       "cozum": "Yansımada ortam aynı kaldığından sürat, frekans ve dalga boyu değişmez; yalnız yön değişir (s.312).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yansımada ne değişir?",
+        "front": "Yansımada ilerleme yönünün değişmesi ne demektir?",
         "back": "Yalnız ilerleme yönü."
       },
       "kazanim": "Su dalgalarında yansıma ve kırılma olaylarını yasalarıyla açıklar."
@@ -214,12 +214,12 @@
     },
     {
       "id": "fizik_10_u04_k05_o03:flashcard",
-      "front": "Gelme açısı nerede ölçülür?",
+      "front": "Gelme açısının tanımı nedir?",
       "back": "Normal ile gelen dalga doğrultusu arasında."
     },
     {
       "id": "fizik_10_u04_k05_o04:flashcard",
-      "front": "Yankı için en az kaç m gerekir?",
+      "front": "17 m kuralının anlamı nedir?",
       "back": "17 m"
     },
     {
@@ -229,17 +229,17 @@
     },
     {
       "id": "fizik_10_u04_k05_o06:flashcard",
-      "front": "Derinden sığa geçen dalga yavaşlar mı?",
+      "front": "Süratin ortam derinliğiyle azalması ne demektir?",
       "back": "Evet, sürat azalır."
     },
     {
       "id": "fizik_10_u04_k05_o07:flashcard",
-      "front": "Yavaşlayan dalga normale ne yapar?",
+      "front": "Normale yaklaşmanın nedeni nedir?",
       "back": "Yaklaşır."
     },
     {
       "id": "fizik_10_u04_k05_o08:flashcard",
-      "front": "Kırılmada hangi nicelik sabittir?",
+      "front": "Kırılmada frekansın korunması ne demektir?",
       "back": "Frekans."
     },
     {
@@ -249,7 +249,7 @@
     },
     {
       "id": "fizik_10_u04_k05_o10:flashcard",
-      "front": "Yansımada ne değişir?",
+      "front": "Yansımada ilerleme yönünün değişmesi ne demektir?",
       "back": "Yalnız ilerleme yönü."
     }
   ]
