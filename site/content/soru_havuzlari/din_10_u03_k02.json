@@ -2,356 +2,375 @@
   "konu_id": "din_10_u03_k02",
   "sinif": 10,
   "ders": "Din Kültürü",
-  "kaynak_dosya": "10. Sınıf din json.zip",
+  "tema": 3,
+  "tema_adi": "İslam'ın Evrensel Mesajları",
+  "baslik": "3.2 İslam'da Adalet ve Eşitlik",
+  "topic_key": "Din Kültürü > 3.2 İslam'da Adalet ve Eşitlik",
+  "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar.",
+  "kaynak": "Din Kültürü 10 ders kitabı, s.85-89",
+  "kaynak_dosya": "din-10.pdf (MEB, 2025)",
   "sorular": [
     {
       "soru_id": "din_10_u03_k02_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir yönetici karar verirken kişilerin hakkını gözetip herkese hakkaniyetli muamele ediyor. Hangi ilkeye uygun davranıyor?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "Adaletin tanımları arasında hangisi yer alır?",
       "secenekler": [
-        "Adalete",
-        "Ayrıcalığa",
-        "Önyargıya",
-        "Tarafsızlığı reddetmeye"
+        "Herkesi aynı sonuca ulaştırmak",
+        "Hak sahibine hakkını vermek",
+        "Cezaları kaldırmak",
+        "Anlaşmaları yenilemek"
       ],
-      "dogru_index": 0,
-      "cozum": "Adalet hak sahibine hakkını vermeyi ve hakkaniyetli davranmayı ifade eder. Ayrıcalık ve önyargı adaletle bağdaşmaz.",
+      "dogru_index": 1,
+      "cozum": "Adalet; doğruluk, eşitlik, hakkı gözetme ve hak sahibine hakkını verme anlamlarına gelir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Adalet kavramını İslam’ın evrensel mesajı açısından açıklayın.",
-        "back": "Adalet hakkı gözetmek, herkese hakkını vermek, dengeli ve hukuka uygun davranmaktır."
-      }
+        "front": "Adalet nedir?",
+        "back": "Doğruluk, eşitlik ve hak sahibine hakkını verme."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir iş yeri ürünlerini eksik ölçmeden, doğru tartıp müşteriye veriyor. Kaynakta adaletin hangi alanına örnek olur?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "\"Adalet, her şeyi layık olduğu yere koymaktır.\" sözü hangi esere aittir?",
       "secenekler": [
-        "Yalnız hukuki alana",
-        "Ekonomik alandaki adalete",
-        "Sadece dinî yoruma",
-        "Estetik değerlendirmeye"
+        "Divan-ı Hikmet",
+        "Mukaddime",
+        "Kelile ve Dimne",
+        "Mesnevî"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak ekonomik alanda ölçü ve tartının doğru kullanılmasını adaletle ilişkilendirir. Hukuk ve toplumsal alanlarda adalet başka biçimlerde görünür.",
+      "dogru_index": 3,
+      "cozum": "Söz, Mevlânâ'nın Mesnevî'sinde yer alır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Adalet hukuk, ekonomi ve toplum alanlarında nasıl uygulanır?",
-        "back": "Hukukta kanunlara uygunluk ve eşitlik; ekonomide ölçü ve tartıyı doğru kullanma; toplumda insanlar arasında ayrım yapmama biçiminde görülür."
-      }
+        "front": "Mesnevî'de adalet nasıl tanımlanır?",
+        "back": "Her şeyi layık olduğu yere koymak olarak."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir toplulukta hakların korunması ve kararların hakkaniyetle verilmesi insanların güvenini artırıyor. Bu ilkenin toplumsal işlevi nedir?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "Ekonomik alanda adaletin karşılığı hangisidir?",
       "secenekler": [
-        "Ayrımcılığı artırması",
-        "Haksızlığı meşru kılması",
-        "Huzur ve düzeni desteklemesi",
-        "Toplumsal güveni ortadan kaldırması"
+        "Ölçü ve tartıyı doğru kullanmak",
+        "Kazancı artırmak için fiyat yükseltmek",
+        "Ticareti sınırlandırmak",
+        "Borçlanmayı yasaklamak"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak, toplumun huzur ve düzeninin adaletle sağlandığını; haksızlığın ise kargaşaya neden olabildiğini vurgular.",
+      "dogru_index": 0,
+      "cozum": "Ekonomik alanda adalet, ölçü ve tartıda doğruluğu gerektirir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Adalet toplum düzeni ve huzuru için neden önemlidir?",
-        "back": "Adalet güvenli ve huzurlu yaşamı destekler; haksızlık ve adaletsizlik toplumsal huzursuzluk ve kargaşaya yol açabilir."
-      }
+        "front": "Ekonomik alanda adalet nedir?",
+        "back": "Ölçü ve tartıyı doğru kullanmak."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir açıklama Allah’ın iyilik yapanlara karşılığını fazlasıyla verdiğini, kötülüğün karşılığını ise zulmetmeden verdiğini belirtiyor. Hangi isimle ilişkilidir?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "Hz. Peygamber'in peygamberlik öncesinde haksızlıklarla mücadele etmek üzere katıldığı topluluk hangisidir?",
       "secenekler": [
-        "Melik",
-        "Musavvir",
-        "Tevvab",
-        "Adl"
+        "Dârünnedve",
+        "Suffe",
+        "Hilfülfudul",
+        "Mele-i a'lâ"
       ],
-      "dogru_index": 3,
-      "cozum": "Adl Allah’ın adil oluşunu ifade eder. Kaynak iyiliğe karşılığın fazlasıyla, kötülüğe karşılığın ise misliyle verildiğini aktarır.",
+      "dogru_index": 2,
+      "cozum": "Hilfülfudul, haksızlıklara karşı kurulan bir topluluktur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Allah’ın Adl ismi neyi ifade eder?",
-        "back": "Allah’ın mutlak adalet sahibi olduğunu ve herkese hak ettiği şekilde muamele ettiğini ifade eder."
-      }
+        "front": "Hilfülfudul nedir?",
+        "back": "Haksızlıklarla mücadele için kurulan topluluk."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kurum, kişilerin dili veya toplumsal konumu nedeniyle farklı haklara sahip olmasını reddediyor. Hangi ilkeyi gözetiyor?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "Allah'ın her varlığa yaratılışına uygun imkân ve kabiliyet bahşetmesini ifade eden ismi hangisidir?",
       "secenekler": [
-        "Eşitliği",
-        "Liyakati",
-        "Emaneti",
-        "Ahde vefayı"
+        "Melik",
+        "Rezzak",
+        "Kuddüs",
+        "Adl"
       ],
-      "dogru_index": 0,
-      "cozum": "Eşitlik herkesin aynı hak ve saygıya sahip olmasını ve uygulamaların ayrımcı olmamasını gerektirir.",
+      "dogru_index": 3,
+      "cozum": "Adl ismi, Allah'ın adil olmasını ve herkese hakkını vermesini ifade eder.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Eşitlik ilkesi hangi hak ve muamele anlayışını savunur?",
-        "back": "İnsanların aynı temel haklara ve saygıya sahip olduğunu, kanunların ve uygulamaların ayrımcı olmaması gerektiğini savunur."
-      }
+        "front": "Adl ismi ne demektir?",
+        "back": "Allah'ın adil olması; her varlığa hakkını ve kabiliyetini vermesi."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir görevli yaptığı seçimlerin sonuçlarını açıklıyor ve sorumluluğunu kabul ediyor. Hangi adalet ilkesine uygun davranıyor?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "Enam suresi 160. ayete göre bir iyiliğin karşılığı nedir?",
       "secenekler": [
-        "Şeffaflığı reddetmeye",
-        "Hesap verebilirliğe",
-        "Hakkaniyeti yok saymaya",
-        "Ayrıcalığa"
+        "Yarısı",
+        "On katı",
+        "Aynısı",
+        "Yüz katı"
       ],
       "dogru_index": 1,
-      "cozum": "Hesap verebilirlik kararların ve sonuçlarının sorumluluğunu taşımayı gerektirir. Kaynağa göre bu ilke olmadan adalet tam sağlanamaz.",
+      "cozum": "Ayet, iyiliğe on kat karşılık verileceğini, kötülüğün ise misliyle cezalandırılacağını bildirir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hesap verebilirlik ilkesi ne anlama gelir?",
-        "back": "Kişinin aldığı kararlardan ve bu kararların sonuçlarından sorumlu olması, gerektiğinde hesap verebilmesidir."
-      }
+        "front": "İyiliğin karşılığı kaç kattır?",
+        "back": "On katı (Enam suresi 160. ayet)."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir değerlendirme kurulu, adayları yakınlıklarına göre değil aynı ölçütlerle ele alıyor. Hangi ilkeyi uyguluyor?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "İnsanların eşit doğduğu gerçeğinden hareketle herkese aynı hakların tanınmasını ifade eden adalet ilkesi hangisidir?",
       "secenekler": [
-        "Emaneti",
-        "Ahde vefayı",
-        "Tarafsızlığı",
-        "Öznel yargıyı"
+        "Eşitlik",
+        "Liyakat",
+        "Şeffaflık",
+        "Emanet"
       ],
-      "dogru_index": 2,
-      "cozum": "Tarafsızlık, kişilere kimlikleri ya da yakınlıkları nedeniyle ayrıcalık tanımamayı gerektirir.",
+      "dogru_index": 0,
+      "cozum": "Eşitlik ilkesi, kanun ve uygulamaların ayrımcı olmamasını gerektirir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tarafsızlık ilkesi adaletin sağlanmasına nasıl katkı verir?",
-        "back": "Dil, ırk, cinsiyet, din veya mezhep gibi nedenlerle ayrım yapmayı ve kişilere ayrıcalık tanımayı önler."
-      }
+        "front": "Eşitlik ilkesi nedir?",
+        "back": "Herkesin aynı haklara sahip olması, ayrımcılık yapılmaması."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir karar süreci açıkça duyuruluyor ve denetlenebilecek kayıtlar tutuluyor. Bu hangi adalet ilkesinin göstergesidir?",
+      "alt_beceri": "Adaletin tanımını, alanlarını ve ilkelerini açıklar.",
+      "metin": "Kararların sonuçlarından sorumlu olmayı ifade eden adalet ilkesi hangisidir?",
       "secenekler": [
-        "Gizliliğin",
-        "Ayrımcılığın",
-        "İmtiyazın",
-        "Şeffaflığın"
+        "Ahde vefa",
+        "Hakkaniyet",
+        "Hesap verebilirlik",
+        "Tarafsızlık"
       ],
-      "dogru_index": 3,
-      "cozum": "Şeffaflık süreçlerin açık ve denetlenebilir olmasını sağlar; kaynak bunun adalet algısını güçlendirdiğini belirtir.",
+      "dogru_index": 2,
+      "cozum": "Hesap verebilirlik, alınan kararların sonuçlarından sorumlu olmayı gerektirir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Şeffaflık ilkesi neyi güvence altına alır?",
-        "back": "Süreçlerin açıklık, dürüstlük, erişilebilirlik ve denetlenebilirlik içinde yürütülmesini sağlar."
-      }
+        "front": "Hesap verebilirlik nedir?",
+        "back": "Alınan kararların ve sonuçlarının sorumluluğunu üstlenmek."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir görev, yakınlık ilişkisine göre değil bilgi, başarı ve yetenek ölçütleriyle veriliyor. Hangi ilke gözetiliyor?",
+      "alt_beceri": "Adalet ilkelerini örnek durumlarla ilişkilendirir.",
+      "metin": "Dil, ırk, cinsiyet ve mezhep gibi nedenlerle ayrım yapılmamasını ifade eden ilke hangisidir?",
       "secenekler": [
         "Liyakat",
-        "Eşitliği bozma",
-        "Emaneti kötüye kullanma",
-        "Hesap vermekten kaçınma"
+        "Tarafsızlık",
+        "Emanet",
+        "Dürüstlük"
       ],
-      "dogru_index": 0,
-      "cozum": "Liyakat, görevi yapabilme yeterliliğini esas alır ve yetki-sorumlulukların hak edenlere verilmesini öngörür.",
+      "dogru_index": 1,
+      "cozum": "Tarafsızlık, hiçbir kişiye veya zümreye ayrıcalık tanınmamasını ifade eder.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Liyakat ilkesi neyi ifade eder?",
-        "back": "Görevi başarıyla yapabilme yeterliliğine göre yetki ve sorumlulukların hak eden kişilere verilmesini ifade eder."
-      }
+        "front": "Tarafsızlık nedir?",
+        "back": "Ayrım yapılmaması, hiçbir kişiye ayrıcalık tanınmaması."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi kendisine geçici olarak bırakılan bir değeri koruyup sahibine geri veriyor. Hangi adalet ilkesiyle davranıyor?",
+      "alt_beceri": "Adalet ilkelerini örnek durumlarla ilişkilendirir.",
+      "metin": "Bir sürecin açıklık, dürüstlük ve denetlenebilirlik ilkeleriyle yürütülmesini sağlayan ilke hangisidir?",
       "secenekler": [
-        "Şeffaflık ilkesini reddederek",
-        "Emanet ilkesiyle",
-        "Liyakati yok sayarak",
-        "Ayrıcalık tanıyarak"
+        "Ahde vefa",
+        "Hakkaniyet",
+        "Eşitlik",
+        "Şeffaflık"
       ],
-      "dogru_index": 1,
-      "cozum": "Emanet, sahibine geri verilmek üzere alınan değerleri korumayı ve kamu görevlerini sorumlulukla yürütmeyi kapsar.",
+      "dogru_index": 3,
+      "cozum": "Şeffaflık, adalet algısını güçlendirir ve denetlenebilirliği sağlar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Emanet ilkesi adaletle nasıl ilişkilidir?",
-        "back": "Korunması ve sahibine iade edilmesi gereken maddi veya manevi değeri gözetir; kamu görevlerini de emanet bilinciyle yürütmeyi gerektirir."
-      }
+        "front": "Şeffaflık nedir?",
+        "back": "Açıklık, dürüstlük ve denetlenebilirlik ilkesi."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o11",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir çalışan, kendisi için olumsuz sonuç doğurabilecek olsa da raporunda gerçeği saklamıyor. Hangi ilkeye uygun davranıyor?",
+      "alt_beceri": "Adalet ilkelerini örnek durumlarla ilişkilendirir.",
+      "metin": "Görevi başarıyla yapabilme yetisine göre yetki verilmesini öngören ilke hangisidir?",
       "secenekler": [
-        "Ayrımcılığa",
-        "Gizli bilgi toplamaya",
-        "Dürüstlüğe",
-        "Haksız ayrıcalığa"
+        "Liyakat",
+        "Eşitlik",
+        "Emanet",
+        "Tarafsızlık"
       ],
-      "dogru_index": 2,
-      "cozum": "Dürüstlük gerçeği söylemek ve doğru davranmaktır. Kaynak, adaletin sağlanması ve sürdürülmesi için bu ilkeyi önemli görür.",
+      "dogru_index": 0,
+      "cozum": "Liyakat, yeterlilik ilkesidir; görevler ehil kişilere verilmelidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Dürüstlük ilkesi adaletin sürdürülmesine nasıl katkı sağlar?",
-        "back": "Gerçeği söylemeyi ve doğru davranmayı gerektirir; insanların sorumluluklarını yerine getirmesini destekler."
-      }
+        "front": "Liyakat nedir?",
+        "back": "Yeterlilik; görevi başarıyla yapabilme yetisine göre yetki verilmesi."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o12",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "İki farklı durum, kendi koşulları dikkate alınarak ve hak edene uygun karar verilerek çözümleniyor. Hangi ilke uygulanıyor?",
+      "alt_beceri": "Adalet ilkelerini örnek durumlarla ilişkilendirir.",
+      "metin": "Rüşvet almamak ve adaleti olumsuz etkileyecek davranışlardan uzak durmak hangi ilkeyle ilgilidir?",
       "secenekler": [
-        "Ayrımcılık",
-        "Mütevatir haber",
-        "Kör eşitleme",
-        "Hakkaniyet"
+        "Liyakat",
+        "Şeffaflık",
+        "Emanet",
+        "Eşitlik"
       ],
-      "dogru_index": 3,
-      "cozum": "Hakkaniyet, olayın özelliklerini ve bireysel farklılıkları dikkate alarak hakkı olana uygun karar vermeyi ifade eder.",
+      "dogru_index": 2,
+      "cozum": "Devletin makamları da emanettir; rüşvet emanet ilkesine aykırıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Hakkaniyet kavramı görev ve ödül paylaşımında neyi gözetir?",
-        "back": "Bireysel farklılıkları dikkate alarak görev, sorumluluk veya ödülü yalnızca hak edene vermeyi ve olaya uygun karar almayı gözetir."
-      }
+        "front": "Emanet ilkesi nedir?",
+        "back": "Korunması istenen maddi ve manevi değerlere sahip çıkmak."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o13",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "İki taraf, üzerinde anlaştıkları yükümlülükleri yerine getirerek aralarındaki güveni koruyor. Hangi ilke öne çıkar?",
+      "alt_beceri": "Adalet ilkelerini örnek durumlarla ilişkilendirir.",
+      "metin": "Gerçeği söylemek ve ahlaki değerlere uygun davranmak hangi ilkenin gereğidir?",
       "secenekler": [
         "Ahde vefa",
-        "Liyakat",
-        "Eşitlik",
-        "Adl"
+        "Hakkaniyet",
+        "Tarafsızlık",
+        "Dürüstlük"
       ],
-      "dogru_index": 0,
-      "cozum": "Ahde vefa söz ve anlaşmalara sadık kalmayı ifade eder; toplumda güven ve barışı destekler.",
+      "dogru_index": 3,
+      "cozum": "Dürüstlük, adaletin sağlanması ve sürdürülmesi için hayati önemdedir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Ahde vefa ilkesi ne anlama gelir?",
-        "back": "Allah’a ve insanlara verilen sözleri yerine getirmeyi ve yapılan anlaşmalara sadık kalmayı ifade eder."
-      }
+        "front": "Dürüstlük nedir?",
+        "back": "Gerçeği söylemek, doğru davranmak ve ahlaki değerlere uymak."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o14",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir topluluk, insanın dini veya kökeni ne olursa olsun temel haklarını koruyor. Hangi ilkeyi gözetiyor?",
+      "alt_beceri": "Adalet ilkelerini örnek durumlarla ilişkilendirir.",
+      "metin": "Ödül ve sorumluluk paylaşımında bireysel farklılıkları gözeterek hakkı olana razı olma durumu hangisidir?",
       "secenekler": [
-        "Liyakati ortadan kaldırmayı",
-        "İnsanın saygınlığını",
-        "Ayrıcalıklı muameleyi",
-        "Hesap verebilirliği reddetmeyi"
+        "Eşitlik",
+        "Hakkaniyet",
+        "Şeffaflık",
+        "Emanet"
       ],
       "dogru_index": 1,
-      "cozum": "Kaynak insanın sırf insan olması nedeniyle saygın ve dokunulmaz olduğunu, temel hak ve özgürlüklerinin herkes için geçerli olduğunu belirtir.",
+      "cozum": "Hakkaniyet, her olayın kendi özelliklerine göre değerlendirilmesini sağlar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İnsanın saygınlığı ve temel hakları İslam’da nasıl değerlendirilir?",
-        "back": "İnsan yalnızca insan olduğu için saygın ve dokunulmaz kabul edilir; yaşama, vicdan özgürlüğü, aile ve mülkiyet gibi hakları korunur."
-      }
+        "front": "Hakkaniyet nedir?",
+        "back": "Bireysel farklılıkları gözeterek hakkı olana razı olma durumu."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     },
     {
       "soru_id": "din_10_u03_k02_o15",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir kişi, başkalarına adaletli davranmayı ve sorumluluk bilinciyle yaşamayı değer ölçüsü sayıyor; soy veya zenginliği üstünlük nedeni görmüyor. Hangi anlayışı yansıtır?",
+      "alt_beceri": "Adalet ilkelerini örnek durumlarla ilişkilendirir.",
+      "metin": "Nisa suresi 58. ayette Müslümanlara verilen iki emir hangisidir?",
       "secenekler": [
-        "Soy üstünlüğünü",
-        "Zenginliğe dayalı ayrıcalığı",
-        "Takva ve adalet temelli eşitliği",
-        "Tarafsızlıktan vazgeçmeyi"
+        "Emanetleri ehline vermek ve adaletle hükmetmek",
+        "Zekât vermek ve oruç tutmak",
+        "Ticareti sürdürmek ve borcu ödemek",
+        "Barış yapmak ve anlaşma imzalamak"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynak insanlar arasında ırk, imkân veya sosyal konumdan kaynaklanan üstünlüğü reddeder; takvayı sorumluluk bilinciyle ilişkilendirir.",
+      "dogru_index": 0,
+      "cozum": "Ayet, emanetlerin ehline verilmesini ve adaletle hükmedilmesini emreder.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Takva ve adalet, insanlar arasındaki üstünlük anlayışını nasıl etkiler?",
-        "back": "İslam’a göre ırk, zenginlik veya toplumsal konum üstünlük ölçüsü değildir; üstünlük takva ve sorumluluk bilinciyle ilişkilendirilir."
-      }
+        "front": "Nisa suresi 58. ayetin emirleri nedir?",
+        "back": "Emanetleri ehline vermek ve adaletle hükmetmek."
+      },
+      "kazanim": "İslam'ın adalet ve eşitlik anlayışını ilkeleriyle açıklar."
     }
   ],
   "flashcards": [
     {
       "id": "din_10_u03_k02_o01:flashcard",
-      "front": "Adalet kavramını İslam’ın evrensel mesajı açısından açıklayın.",
-      "back": "Adalet hakkı gözetmek, herkese hakkını vermek, dengeli ve hukuka uygun davranmaktır."
+      "front": "Adalet nedir?",
+      "back": "Doğruluk, eşitlik ve hak sahibine hakkını verme."
     },
     {
       "id": "din_10_u03_k02_o02:flashcard",
-      "front": "Adalet hukuk, ekonomi ve toplum alanlarında nasıl uygulanır?",
-      "back": "Hukukta kanunlara uygunluk ve eşitlik; ekonomide ölçü ve tartıyı doğru kullanma; toplumda insanlar arasında ayrım yapmama biçiminde görülür."
+      "front": "Mesnevî'de adalet nasıl tanımlanır?",
+      "back": "Her şeyi layık olduğu yere koymak olarak."
     },
     {
       "id": "din_10_u03_k02_o03:flashcard",
-      "front": "Adalet toplum düzeni ve huzuru için neden önemlidir?",
-      "back": "Adalet güvenli ve huzurlu yaşamı destekler; haksızlık ve adaletsizlik toplumsal huzursuzluk ve kargaşaya yol açabilir."
+      "front": "Ekonomik alanda adalet nedir?",
+      "back": "Ölçü ve tartıyı doğru kullanmak."
     },
     {
       "id": "din_10_u03_k02_o04:flashcard",
-      "front": "Allah’ın Adl ismi neyi ifade eder?",
-      "back": "Allah’ın mutlak adalet sahibi olduğunu ve herkese hak ettiği şekilde muamele ettiğini ifade eder."
+      "front": "Hilfülfudul nedir?",
+      "back": "Haksızlıklarla mücadele için kurulan topluluk."
     },
     {
       "id": "din_10_u03_k02_o05:flashcard",
-      "front": "Eşitlik ilkesi hangi hak ve muamele anlayışını savunur?",
-      "back": "İnsanların aynı temel haklara ve saygıya sahip olduğunu, kanunların ve uygulamaların ayrımcı olmaması gerektiğini savunur."
+      "front": "Adl ismi ne demektir?",
+      "back": "Allah'ın adil olması; her varlığa hakkını ve kabiliyetini vermesi."
     },
     {
       "id": "din_10_u03_k02_o06:flashcard",
-      "front": "Hesap verebilirlik ilkesi ne anlama gelir?",
-      "back": "Kişinin aldığı kararlardan ve bu kararların sonuçlarından sorumlu olması, gerektiğinde hesap verebilmesidir."
+      "front": "İyiliğin karşılığı kaç kattır?",
+      "back": "On katı (Enam suresi 160. ayet)."
     },
     {
       "id": "din_10_u03_k02_o07:flashcard",
-      "front": "Tarafsızlık ilkesi adaletin sağlanmasına nasıl katkı verir?",
-      "back": "Dil, ırk, cinsiyet, din veya mezhep gibi nedenlerle ayrım yapmayı ve kişilere ayrıcalık tanımayı önler."
+      "front": "Eşitlik ilkesi nedir?",
+      "back": "Herkesin aynı haklara sahip olması, ayrımcılık yapılmaması."
     },
     {
       "id": "din_10_u03_k02_o08:flashcard",
-      "front": "Şeffaflık ilkesi neyi güvence altına alır?",
-      "back": "Süreçlerin açıklık, dürüstlük, erişilebilirlik ve denetlenebilirlik içinde yürütülmesini sağlar."
+      "front": "Hesap verebilirlik nedir?",
+      "back": "Alınan kararların ve sonuçlarının sorumluluğunu üstlenmek."
     },
     {
       "id": "din_10_u03_k02_o09:flashcard",
-      "front": "Liyakat ilkesi neyi ifade eder?",
-      "back": "Görevi başarıyla yapabilme yeterliliğine göre yetki ve sorumlulukların hak eden kişilere verilmesini ifade eder."
+      "front": "Tarafsızlık nedir?",
+      "back": "Ayrım yapılmaması, hiçbir kişiye ayrıcalık tanınmaması."
     },
     {
       "id": "din_10_u03_k02_o10:flashcard",
-      "front": "Emanet ilkesi adaletle nasıl ilişkilidir?",
-      "back": "Korunması ve sahibine iade edilmesi gereken maddi veya manevi değeri gözetir; kamu görevlerini de emanet bilinciyle yürütmeyi gerektirir."
+      "front": "Şeffaflık nedir?",
+      "back": "Açıklık, dürüstlük ve denetlenebilirlik ilkesi."
     },
     {
       "id": "din_10_u03_k02_o11:flashcard",
-      "front": "Dürüstlük ilkesi adaletin sürdürülmesine nasıl katkı sağlar?",
-      "back": "Gerçeği söylemeyi ve doğru davranmayı gerektirir; insanların sorumluluklarını yerine getirmesini destekler."
+      "front": "Liyakat nedir?",
+      "back": "Yeterlilik; görevi başarıyla yapabilme yetisine göre yetki verilmesi."
     },
     {
       "id": "din_10_u03_k02_o12:flashcard",
-      "front": "Hakkaniyet kavramı görev ve ödül paylaşımında neyi gözetir?",
-      "back": "Bireysel farklılıkları dikkate alarak görev, sorumluluk veya ödülü yalnızca hak edene vermeyi ve olaya uygun karar almayı gözetir."
+      "front": "Emanet ilkesi nedir?",
+      "back": "Korunması istenen maddi ve manevi değerlere sahip çıkmak."
     },
     {
       "id": "din_10_u03_k02_o13:flashcard",
-      "front": "Ahde vefa ilkesi ne anlama gelir?",
-      "back": "Allah’a ve insanlara verilen sözleri yerine getirmeyi ve yapılan anlaşmalara sadık kalmayı ifade eder."
+      "front": "Dürüstlük nedir?",
+      "back": "Gerçeği söylemek, doğru davranmak ve ahlaki değerlere uymak."
     },
     {
       "id": "din_10_u03_k02_o14:flashcard",
-      "front": "İnsanın saygınlığı ve temel hakları İslam’da nasıl değerlendirilir?",
-      "back": "İnsan yalnızca insan olduğu için saygın ve dokunulmaz kabul edilir; yaşama, vicdan özgürlüğü, aile ve mülkiyet gibi hakları korunur."
+      "front": "Hakkaniyet nedir?",
+      "back": "Bireysel farklılıkları gözeterek hakkı olana razı olma durumu."
     },
     {
       "id": "din_10_u03_k02_o15:flashcard",
-      "front": "Takva ve adalet, insanlar arasındaki üstünlük anlayışını nasıl etkiler?",
-      "back": "İslam’a göre ırk, zenginlik veya toplumsal konum üstünlük ölçüsü değildir; üstünlük takva ve sorumluluk bilinciyle ilişkilendirilir."
+      "front": "Nisa suresi 58. ayetin emirleri nedir?",
+      "back": "Emanetleri ehline vermek ve adaletle hükmetmek."
     }
-  ],
-  "topic_key": "Din Kültürü > 3.2 İslam'da Adalet ve Eşitlik",
-  "baslik": "3.2 İslam'da Adalet ve Eşitlik"
+  ]
 }
