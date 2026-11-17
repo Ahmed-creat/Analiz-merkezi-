@@ -13,6 +13,8 @@ const OKZ = require("../site/okz-normalize.js");
 const KOK = path.join(__dirname, "..");
 const INDEKS_VERISI = JSON.parse(fs.readFileSync(path.join(KOK, "site", "content", "konu_esleme.json"), "utf8"));
 const indeks = OKZK.indeksKur(INDEKS_VERISI);
+const HAVUZ_ADEDI = fs.readdirSync(path.join(KOK, "site", "content", "soru_havuzlari"))
+  .filter((a) => a.endsWith(".json") && a !== "index.json").length;
 
 let gecen = 0, kalan = 0;
 const hatalar = [];
@@ -45,7 +47,7 @@ esit("numarasiz: başlık numarası atılır", OKZK.numarasiz("1.1.3 mol kavrami
 
 // ---------- 2) İndeks ----------
 console.log("\n== 2) İndeks ==");
-esit("indeks: 214 havuz", indeks.N, 214);
+esit("indeks: havuz sayısı dosyalarla aynı", indeks.N, HAVUZ_ADEDI);
 esit("indeks: sürüm aktarılır", indeks.surum, INDEKS_VERISI.surum);
 const matKonulari = OKZK.konular("Matematik", indeks);
 ok("konular: Matematik listelenir", matKonulari.length >= 20, String(matKonulari.length));

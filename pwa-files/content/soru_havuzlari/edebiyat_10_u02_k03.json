@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u02_k03",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 2,
+  "tema_adi": "Divan Şiiri ve Saf Şiir",
+  "baslik": "Mersiye",
+  "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+  "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.79",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u02_k03_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şair, kaybettiği bir kişinin ardından duyduğu acıyı şiirle anlatıyor. Divan edebiyatındaki bu nazım türü hangisidir?",
+      "alt_beceri": "Mersiyeyi tanımı ve yazılış amacı bakımından belirler.",
+      "metin": "Bir divan şairi, ölen bir devlet büyüğünün ardından duyduğu üzüntüyü ve yas duygularını dile getiren bir şiir yazmıştır. Bu nazım türü hangisidir?",
       "secenekler": [
+        "Kaside",
         "Mersiye",
-        "Methiye",
-        "Şehrengiz",
-        "Tevhit"
+        "Gazel",
+        "Mesnevi"
       ],
-      "dogru_index": 0,
-      "cozum": "Mersiye, ölen kişinin ardından duyulan üzüntüyü anlatan yas şiiridir. Methiye övgü, şehrengiz şehir güzellikleri, tevhit ise Allah'ın birliği konusundadır.",
+      "dogru_index": 1,
+      "cozum": "Ölen kişilerin ardından söylenen yas şiirlerine mersiye denir; divan edebiyatında bir nazım türüdür.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiye hangi olay üzerine duyulan duyguları dile getirir?",
-        "back": "Ölümün ardından duyulan üzüntü ve yası."
-      }
+        "front": "Mersiye nedir?",
+        "back": "Ölen kişilerin ardından söylenen yas şiirleridir."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir karşılaştırma çizelgesinde ölüm üzerine söylenen Divan şiiri türü ile eski Türk sözlü şiiri eşleştiriliyor. Mersiyenin eski Türk şiirindeki karşılığı hangisidir?",
+      "alt_beceri": "Mersiyeyi tanımı ve yazılış amacı bakımından belirler.",
+      "metin": "İslamiyet öncesi Türk edebiyatında ölümün ardından duyulan acıyı anlatan şiirlere ayrı bir ad verilmiştir. Bu ad hangisidir?",
       "secenekler": [
-        "Koşuk",
-        "Sagu",
         "Sav",
-        "Gazel"
+        "Koşuk",
+        "Ağıt",
+        "Sagu"
       ],
-      "dogru_index": 1,
-      "cozum": "Mersiyenin İslamiyet öncesi edebiyattaki karşılığı sagu olarak verilir. Koşuk lirik şiir, sav ise atasözü niteliğinde özlü sözdür.",
+      "dogru_index": 3,
+      "cozum": "İslamiyet öncesi edebiyatta yas şiirlerinin adı sagudur; sav atasözü niteliğindeki sözlerdir, koşuk ise av ve toy şiiridir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiyenin İslamiyet öncesi Türk şiirindeki karşılığı nedir?",
-        "back": "Sagu."
-      }
+        "front": "Sagu nedir?",
+        "back": "İslamiyet öncesi Türk edebiyatında ölümün ardından söylenen yas şiirleridir."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir halk ozanı, ölümün ardından duyulan acıyı ezgiyle dile getiriyor. Bu türün Divan şiirindeki karşılığı nasıl adlandırılır?",
+      "alt_beceri": "Mersiyeyi tanımı ve yazılış amacı bakımından belirler.",
+      "metin": "Halk edebiyatında ölen bir kişinin ardından yakılan yas şiirleri ayrı bir adla anılır. Bu ad hangisidir?",
       "secenekler": [
-        "Koçaklama",
-        "Güzelleme",
-        "Mersiye",
+        "Ağıt",
+        "Sagu",
+        "Mani",
         "Türkü"
       ],
-      "dogru_index": 2,
-      "cozum": "Ölüm acısını anlatan halk şiiri ağıt, Divan edebiyatındaki karşılığı mersiyedir. Koçaklama yiğitlik, güzelleme ise lirik konular üzerinedir.",
+      "dogru_index": 0,
+      "cozum": "Halk edebiyatında ölümün ardından yakılan yas şiirlerine ağıt denir; divan edebiyatındaki karşılığı mersiyedir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiyenin halk edebiyatındaki karşılığı nedir?",
-        "back": "Ağıt."
-      }
+        "front": "Ağıt nedir?",
+        "back": "Halk edebiyatında ölen kişinin ardından yakılan yas şiirleridir."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir Divan şiiri uzmanı, yas şiirlerinde sık kullanılan nazım şekillerini not ediyor. Kaynağa göre hangi ikili uygundur?",
+      "alt_beceri": "Ölüm temasının İslamiyet öncesi ve halk edebiyatındaki karşılıklarını eşleştirir.",
+      "metin": "Mersiyeler, yas duygusunun uzun ve ağır anlatımına elverişli nazım şekilleriyle yazılır. Mersiyede hangi nazım şekilleri kullanılır?",
       "secenekler": [
-        "Koşma ve türkü",
-        "Gazel ve mesnevi",
-        "Sav ve sagu",
-        "Terkib-i bent ve kaside"
+        "Gazel ve şarkı",
+        "Tuyuğ ve rubai",
+        "Terkib-i bend ve kaside",
+        "Mesnevi ve sone"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynağa göre mersiyeler genellikle terkib-i bent ve kaside nazım şekliyle yazılır. Ağıt ve sagu ise içerik bakımından karşılık olan türlerdir.",
+      "dogru_index": 2,
+      "cozum": "Mersiyeler genellikle terkib-i bend ve kaside nazım şekilleriyle yazılır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiyeler genellikle hangi nazım şekilleriyle yazılır?",
-        "back": "Terkib-i bent ve kasideyle."
-      }
+        "front": "Mersiyede kullanılan nazım şekilleri nedir?",
+        "back": "Genellikle terkib-i bend ve kaside nazım şekilleridir."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şiir kişiyi överken başka bir şiir onun ölümünden duyulan acıyı anlatıyor. Bu iki şiir türü sırasıyla nasıl adlandırılır?",
+      "alt_beceri": "Ölüm temasının İslamiyet öncesi ve halk edebiyatındaki karşılıklarını eşleştirir.",
+      "metin": "Germiyan Beyi Süleyman Şah 1387'de öldüğünde ardından bir yas şiiri yazılmış; bu şiir Anadolu Türk edebiyatında türünün ilk örneği kabul edilmiştir. Bu şiir hangi olay üzerine yazılmıştır?",
       "secenekler": [
-        "Methiye ve mersiye",
-        "Mersiye ve methiye",
-        "Tevhit ve naat",
-        "Şehrengiz ve hicviye"
+        "Bir padişahın tahta çıkışı",
+        "Bir şehrin güzelliği",
+        "Bir seferin zaferi",
+        "Bir beyin ölümü"
       ],
-      "dogru_index": 0,
-      "cozum": "Övgü amaçlı şiir methiye, ölümün ardından yazılan yas şiiri mersiyedir. Bu nedenle sıralama methiye-mersiyedir.",
+      "dogru_index": 3,
+      "cozum": "Germiyan Beyi Süleyman Şah'ın ölümü üzerine Ahmedi'nin yazdığı mersiye, Anadolu Türk edebiyatında ilk mersiye örneği kabul edilir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiye ile methiye arasındaki konu farkı nedir?",
-        "back": "Mersiye yas ve ölümü, methiye bir kişiyi övmeyi işler."
-      }
+        "front": "Anadolu'da ilk mersiye örneği nedir?",
+        "back": "Ahmedi'nin Germiyan Beyi Süleyman Şah için yazdığı mersiyedir."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir anma töreninde, kaybedilen kişinin iyilikleri ve onun yokluğunda hissedilen özlem şiirle aktarılıyor. Bu metin hangi amaçla yazılmıştır?",
+      "alt_beceri": "Ölüm temasının İslamiyet öncesi ve halk edebiyatındaki karşılıklarını eşleştirir.",
+      "metin": "Edebiyatımızda önemli bir yer tutan 'Kanuni Mersiyesi' Kanuni Sultan Süleyman'ın ölümü üzerine yazılmıştır. Bu eser kime aittir?",
       "secenekler": [
-        "Bir yöneticiyi göreve çağırmak",
-        "Yas ve anma duygusunu dile getirmek",
-        "Bir şehri tanıtmak",
-        "Toplumsal bir düşünceyi kanıtlamak"
+        "Ahmedi",
+        "Baki",
+        "Nef'i",
+        "Fuzuli"
       ],
       "dogru_index": 1,
-      "cozum": "Mersiye ölüm ardından duyulan üzüntüyü ve ölen kişiye ilişkin anmayı şiirle ifade eder. Şehir tanıtımı şehrengiz, yöneticiyi övme methiye konusudur.",
+      "cozum": "Baki'nin Kanuni için yazdığı 'Kanuni Mersiyesi' edebiyatımızda önemli bir yer tutar.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiyenin temel amacı nedir?",
-        "back": "Ölen kişiyi anmak ve ardından duyulan acıyı dile getirmek."
-      }
+        "front": "Baki'nin ünlü mersiyesi nedir?",
+        "back": "Kanuni Mersiyesi'dir; Kanuni Sultan Süleyman'ın ölümü üzerine yazmıştır."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir edebiyat tarihçisi, Anadolu Türk edebiyatındaki ilk mersiyeyi Germiyan Beyi için yazılan eser olarak kaydediyor. Bu eserin şairi kimdir?",
+      "alt_beceri": "Mersiyenin önemli şairlerini ve örnek eserlerini ayırt eder.",
+      "metin": "Kanuni Sultan Süleyman'ın oğlu Şehzade Mustafa'nın hazin ölümü üzerine bir mersiye yazılmış ve bu şiir edebiyatımızda meşhur olmuştur. Bu şiir hangisidir?",
       "secenekler": [
-        "Bâkî",
-        "Taşlıcalı Yahya",
-        "Ahmedî",
-        "Meâlî"
+        "Taşlıcalı Yahya'nın mersiyesi",
+        "Kanuni Mersiyesi",
+        "Mersiye-yi Gürbe",
+        "Süleyman Şah mersiyesi"
       ],
-      "dogru_index": 2,
-      "cozum": "Kaynağa göre Germiyan Beyi Süleyman Şah için mersiye yazan Ahmedî'nin eseri Anadolu Türk edebiyatındaki ilk mersiye örneği sayılır. Diğer şairler kaynakta farklı mersiyelerle anılır.",
+      "dogru_index": 0,
+      "cozum": "Şehzade Mustafa'nın ölümü için Taşlıcalı Yahya'nın yazdığı mersiye meşhurdur. Kanuni Mersiyesi babası için Baki'nin yazdığı eserdir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Anadolu Türk edebiyatındaki ilk mersiye örneği için hangi şair ve kişi anılır?",
-        "back": "Ahmedî'nin Germiyan Beyi Süleyman Şah için yazdığı mersiye ilk örnek sayılır."
-      }
+        "front": "Şehzade Mustafa mersiyesi nedir?",
+        "back": "Taşlıcalı Yahya'nın Şehzade Mustafa'nın ölümü üzerine yazdığı mersiyedir."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir divan şairi, kaybettiği bir ustanın ardından duyduğu acıyı şiirle anlatıyor. Bu şiir, Divan edebiyatında konu bakımından hangi nazım türüyle adlandırılır?",
+      "alt_beceri": "Ölüm temasının İslamiyet öncesi ve halk edebiyatındaki karşılıklarını eşleştirir.",
+      "metin": "16. yüzyıl şairi Meâlî'nin 'Mersiye-yi Gürbe' adlı manzumesi, dünya edebiyatında türünün en güzel örneklerinden sayılır. Bu eser hangi varlık için yazılmıştır?",
       "secenekler": [
-        "Kaside",
-        "Methiye",
-        "Ağıt",
-        "Mersiye"
+        "Ölen oğlu",
+        "Ölen padişah",
+        "Ölen kedisi",
+        "Ölen atı"
       ],
-      "dogru_index": 3,
-      "cozum": "Divan edebiyatında ölüm ardından duyulan acıyı anlatan şiir mersiye adını alır. Ağıt halk edebiyatındaki karşılığıdır; kaside bir nazım biçimi, methiye ise övgü şiiridir.",
+      "dogru_index": 2,
+      "cozum": "Mersiye-yi Gürbe 'kedi mersiyesi' anlamına gelir; şair ölen kedisinin özelliklerini mübalağalı bir üslupla anlatmıştır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bâkî'nin Kanuni için yazdığı ünlü mersiyenin adı nedir?",
-        "back": "Kanuni Mersiyesi."
-      }
+        "front": "Mersiye-yi Gürbe nedir?",
+        "back": "Meâlî'nin ölen kedisi için yazdığı mersiyedir; kedi mersiyesi diye de anılır."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir şiirin hem biçimi kaside hem konusu ölüm yası olabilir. Bu durumda kaside ve mersiye terimleri neyi karşılar?",
+      "alt_beceri": "Mersiyenin önemli şairlerini ve örnek eserlerini ayırt eder.",
+      "metin": "Bir şiirin işlediği konuya göre aldığı ad 'nazım türü' olarak tanımlanır. Bu tanıma göre mersiye hangi kavramla nitelendirilir?",
       "secenekler": [
-        "Kaside biçimi, mersiye konu türünü",
-        "İkisi de yalnız ölçü adını",
-        "Kaside konu türünü, mersiye nazım birimini",
-        "İkisi de aynı anlamdaki kafiye şemasını"
+        "Nazım biçimi",
+        "Nazım türü",
+        "Ölçü kalıbı",
+        "Kafiye düzeni"
       ],
-      "dogru_index": 0,
-      "cozum": "Kaside nazım biçimini, mersiye ise şiirin konusuna göre aldığı nazım türünü belirtir. Bir şiir biçim ve konu bakımından iki terimle birlikte tanımlanabilir.",
+      "dogru_index": 1,
+      "cozum": "Konuya göre belirlenen ad nazım türüdür; mersiye ölüm konusunu işlediği için nazım türüdür. Kaside ve gazel ise nazım biçimidir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiye, kasideden hangi bakımdan ayrılır?",
-        "back": "Mersiye konuya göre adlandırılan nazım türü; kaside ise nazım biçimidir."
-      }
+        "front": "Nazım türü nedir?",
+        "back": "Bir şiirin işlediği konuya göre aldığı addır; mersiye, naat, tevhit gibi."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u02_k03_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir edebî türün genellikle ölen kişilerin ardından yazıldığı, fakat kaynakta çok nadir olarak başka canlılar için de örneklendiği belirtiliyor. Bu tür hangisidir?",
+      "alt_beceri": "Mersiyenin önemli şairlerini ve örnek eserlerini ayırt eder.",
+      "metin": "Ölüm teması, Türk edebiyatının farklı dönemlerinde farklı adlarla karşılanmıştır. Buna göre doğru eşleştirme hangisidir?",
       "secenekler": [
-        "Methiye",
-        "Mersiye",
-        "Şehrengiz",
-        "Tevhit"
+        "Koşuk – türkü – gazel",
+        "Sav – mani – kaside",
+        "Destan – koşma – şarkı",
+        "Sagu – ağıt – mersiye"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak, mersiyelerin genellikle ölen kişiler için yazıldığını, çok nadir örneklerde ölen hayvan için de kaleme alındığını belirtir. Bu nedenle konu alanı yalnız insanla sınırlandırılmamıştır.",
+      "dogru_index": 3,
+      "cozum": "Ölüm teması İslamiyet öncesinde sagu, halk edebiyatında ağıt, divan edebiyatında mersiye adını alır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Mersiyenin konu alanını genişleten nadir örnekler hangi yönü gösterir?",
-        "back": "Çok nadir de olsa ölen hayvanlar için de mersiye yazılmıştır; tür yalnızca insan ölümüyle sınırlı değildir."
-      }
+        "front": "Ölüm temasının dönemlere göre adları nedir?",
+        "back": "İslamiyet öncesi sagu, halk edebiyatı ağıt, divan edebiyatı mersiye."
+      },
+      "kazanim": "Mersiyenin tanımını, dönemlerdeki karşılıklarını ve önemli örneklerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u02_k03_o01:flashcard",
-      "front": "Mersiye hangi olay üzerine duyulan duyguları dile getirir?",
-      "back": "Ölümün ardından duyulan üzüntü ve yası."
+      "front": "Mersiye nedir?",
+      "back": "Ölen kişilerin ardından söylenen yas şiirleridir."
     },
     {
       "id": "edebiyat_10_u02_k03_o02:flashcard",
-      "front": "Mersiyenin İslamiyet öncesi Türk şiirindeki karşılığı nedir?",
-      "back": "Sagu."
+      "front": "Sagu nedir?",
+      "back": "İslamiyet öncesi Türk edebiyatında ölümün ardından söylenen yas şiirleridir."
     },
     {
       "id": "edebiyat_10_u02_k03_o03:flashcard",
-      "front": "Mersiyenin halk edebiyatındaki karşılığı nedir?",
-      "back": "Ağıt."
+      "front": "Ağıt nedir?",
+      "back": "Halk edebiyatında ölen kişinin ardından yakılan yas şiirleridir."
     },
     {
       "id": "edebiyat_10_u02_k03_o04:flashcard",
-      "front": "Mersiyeler genellikle hangi nazım şekilleriyle yazılır?",
-      "back": "Terkib-i bent ve kasideyle."
+      "front": "Mersiyede kullanılan nazım şekilleri nedir?",
+      "back": "Genellikle terkib-i bend ve kaside nazım şekilleridir."
     },
     {
       "id": "edebiyat_10_u02_k03_o05:flashcard",
-      "front": "Mersiye ile methiye arasındaki konu farkı nedir?",
-      "back": "Mersiye yas ve ölümü, methiye bir kişiyi övmeyi işler."
+      "front": "Anadolu'da ilk mersiye örneği nedir?",
+      "back": "Ahmedi'nin Germiyan Beyi Süleyman Şah için yazdığı mersiyedir."
     },
     {
       "id": "edebiyat_10_u02_k03_o06:flashcard",
-      "front": "Mersiyenin temel amacı nedir?",
-      "back": "Ölen kişiyi anmak ve ardından duyulan acıyı dile getirmek."
+      "front": "Baki'nin ünlü mersiyesi nedir?",
+      "back": "Kanuni Mersiyesi'dir; Kanuni Sultan Süleyman'ın ölümü üzerine yazmıştır."
     },
     {
       "id": "edebiyat_10_u02_k03_o07:flashcard",
-      "front": "Anadolu Türk edebiyatındaki ilk mersiye örneği için hangi şair ve kişi anılır?",
-      "back": "Ahmedî'nin Germiyan Beyi Süleyman Şah için yazdığı mersiye ilk örnek sayılır."
+      "front": "Şehzade Mustafa mersiyesi nedir?",
+      "back": "Taşlıcalı Yahya'nın Şehzade Mustafa'nın ölümü üzerine yazdığı mersiyedir."
     },
     {
       "id": "edebiyat_10_u02_k03_o08:flashcard",
-      "front": "Bâkî'nin Kanuni için yazdığı ünlü mersiyenin adı nedir?",
-      "back": "Kanuni Mersiyesi."
+      "front": "Mersiye-yi Gürbe nedir?",
+      "back": "Meâlî'nin ölen kedisi için yazdığı mersiyedir; kedi mersiyesi diye de anılır."
     },
     {
       "id": "edebiyat_10_u02_k03_o09:flashcard",
-      "front": "Mersiye, kasideden hangi bakımdan ayrılır?",
-      "back": "Mersiye konuya göre adlandırılan nazım türü; kaside ise nazım biçimidir."
+      "front": "Nazım türü nedir?",
+      "back": "Bir şiirin işlediği konuya göre aldığı addır; mersiye, naat, tevhit gibi."
     },
     {
       "id": "edebiyat_10_u02_k03_o10:flashcard",
-      "front": "Mersiyenin konu alanını genişleten nadir örnekler hangi yönü gösterir?",
-      "back": "Çok nadir de olsa ölen hayvanlar için de mersiye yazılmıştır; tür yalnızca insan ölümüyle sınırlı değildir."
+      "front": "Ölüm temasının dönemlere göre adları nedir?",
+      "back": "İslamiyet öncesi sagu, halk edebiyatı ağıt, divan edebiyatı mersiye."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > Mersiye"
+  ]
 }

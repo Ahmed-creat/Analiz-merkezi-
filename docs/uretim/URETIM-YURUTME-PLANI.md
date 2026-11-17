@@ -287,3 +287,25 @@ Faz 10 kapanış: 158/158 · 1.686 soru · 1.686 kart
 ```
 
 Kapanış kabul şartları: talimat §10'daki 11 maddenin tamamı + `DURUM.md` panosunda 158/158.
+
+---
+
+## 0.1 Karar — TEK havuz yapısı: U (konu ağacı) şeması
+
+17 Kasım 2026'da iki adlandırma ailesinin birlikte yaşaması kaldırıldı:
+
+| Yapı | Örnek | Durum |
+| --- | --- | --- |
+| **U — konu ağacı** (`ders_10_uNN_kNN`) | `din_10_u03_k02.json` | **Tek geçerli yapı** (192 havuz) |
+| T — plan tema/çıktı (`ders_10_tNN_cNN`) | `din_10_t03_c02.json` | Kaldırıldı; 22 havuz `arsiv/soru_havuzlari/<ders>/t-*` altında |
+
+- Plan kayıtları (158) artık **kazanım kodu → konu** eşlemesiyle
+  (`site/content/mufredat/kazanim_konu_10.json`) canlı U havuzlarına bağlanır;
+  panos da bu eşlemeyi kullanır (`docs/uretim/araclar/durum.js`).
+- Din Kültürü 17 T havuzu: 5'i U'ya taşındı (1.3, 2.3, 3.4, 4.4, 5.3 → u01_k04,
+  u02_k07, u03_k04, u04_k04, u05_k05), 12'si arşivlendi (içerikleri U'da var).
+- Felsefe 10 T havuzu arşivlendi (aynı konular `fel_10_u*` havuzlarında).
+- Din `u02` konu numaraları kitap sırasına göre yeniden dizildi
+  (2.1.1→k02 … 2.1.4→k05, 2.2→k06, 2.3→k07).
+- Göç aracı: `docs/uretim/araclar/t2u-birlestir.js` · SW önbellek eşitleyici:
+  `docs/uretim/araclar/sw-precache-esitle.js`.

@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u01_k06",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 1,
+  "tema_adi": "Sözün Ezgisi",
+  "baslik": "İsimler (Adlar)",
+  "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)",
+  "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.40-49",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u01_k06_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede hem elle tutulur varlıklar hem de sevinç gibi soyut kavramlar adlandırılıyor. Bu sözcük türü genel olarak nasıl tanımlanır?",
+      "alt_beceri": "İsmi türleri bakımından sınıflandırır.",
+      "metin": "Bir metinde \"Marmara Denizi\", \"Türk Dil Kurumu\" ve \"29 Ekim Cumhuriyet Bayramı\" gibi adlar geçmektedir. Bu adların ortak özelliği hangisidir?",
       "secenekler": [
-        "Varlıkları, duygu ve düşünceleri karşılayan isim",
-        "Eylemin zamanını bildiren fiil",
-        "İsmi niteleyen sıfat",
-        "Eylemi belirten zarf"
+        "Bir türün tamamını karşılamaları",
+        "Tek bir varlığı göstermeleri",
+        "Çokluk ekiyle kurulmaları",
+        "Beş duyuyla algılanamamaları"
       ],
-      "dogru_index": 0,
-      "cozum": "İsimler varlıkları, duygu ve düşünceleri karşılar. Eylem fiille; adın nitelenmesi sıfatla; eylemin belirtilmesi zarfla ilgilidir.",
+      "dogru_index": 1,
+      "cozum": "Bilinen tek bir varlığı gösteren adlar özel isimdir. Yer, kurum ve bayram adları özel isim sayılır; bir türün tamamını karşılayan adlar ise cins isimdir.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İsim (ad) nedir?",
-        "back": "Canlı-cansız varlıkları, duygu ve düşünceleri karşılayan sözcüktür."
-      }
+        "front": "Özel isim nedir?",
+        "back": "Bilinen tek bir varlığı gösteren; kişi, yer, kurum, eser, bayram gibi adlardır."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k06_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir okulun adı belirli bir kurumu tekil biçimde gösteriyor. Bu adın türü hangisidir?",
+      "alt_beceri": "İsmi türleri bakımından sınıflandırır.",
+      "metin": "\"Sürü, ordu, meclis, aile\" sözcükleri çokluk eki almadıkları hâlde birden çok varlığı karşılar. Bu sözcükler hangi isim türüne girer?",
       "secenekler": [
-        "Cins isim",
-        "Özel isim",
+        "Çoğul isim",
         "Soyut isim",
+        "Cins isim",
         "Topluluk ismi"
       ],
-      "dogru_index": 1,
-      "cozum": "Belirli tek bir varlığı gösteren ad özel isimdir. Cins isim aynı türden birçok varlığı karşılar.",
+      "dogru_index": 3,
+      "cozum": "Çokluk eki almadığı hâlde tekil görünüp birden çok varlığı karşılayan isimler topluluk ismidir. Çoğul isim, -ler/-lar ekiyle kurulur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tek bir varlığı özel olarak gösteren adlara ne denir?",
-        "back": "Özel isim."
-      }
+        "front": "Topluluk ismi nedir?",
+        "back": "Çokluk eki almadığı hâlde birden çok varlığı karşılayan, tekil görünüşlü isimdir; sürü, ordu, meclis gibi."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k06_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir metinde tek bir sandalye değil, tür olarak bütün sandalyelerden söz ediliyor. Kullanılan adın türü nedir?",
+      "alt_beceri": "İsmi türleri bakımından sınıflandırır.",
+      "metin": "Bir öğrenci \"rüzgâr, sevgi, oksijen, gözlük\" sözcüklerini somut ve soyut olarak ayırmaktadır. Bu sözcüklerden hangisi soyut isimdir?",
       "secenekler": [
-        "Özel isim",
-        "Soyut isim",
-        "Cins isim",
-        "Birleşik isim"
+        "Sevgi",
+        "Rüzgâr",
+        "Oksijen",
+        "Gözlük"
       ],
-      "dogru_index": 2,
-      "cozum": "Cins isim aynı türdeki varlıkları karşılar. Özel isim tek bir varlığı belirgin biçimde gösterir.",
+      "dogru_index": 0,
+      "cozum": "Beş duyu organıyla algılanamayan varlıkların adı soyuttur. Sevgi duygu adı olduğu için soyut; rüzgâr, oksijen ve gözlük algılanabilir olduğu için somuttur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Aynı türden birçok varlığı karşılayan adlara ne denir?",
-        "back": "Cins (tür) ismi."
-      }
+        "front": "Soyut isim nedir?",
+        "back": "Beş duyu organıyla algılanamayan; sevgi, akıl, üzüntü, cömertlik gibi varlıkların adıdır."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k06_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrenci kahve aromasını koklayıp metal yüzeyin pürüzlülüğünü dokunarak algılıyor. Bu adlar oluşlarına göre hangi gruptadır?",
+      "alt_beceri": "İsmi türleri bakımından sınıflandırır.",
+      "metin": "\"Bütün sınıf bu duruma üzüldü.\" cümlesinde \"sınıf\" sözcüğü topluluk ismi, \"Bugün sınıf boyanacak.\" cümlesinde ise tekil isimdir. Bu ayrımın nedeni hangisidir?",
       "secenekler": [
-        "Soyut isim",
-        "Topluluk ismi",
-        "Türemiş isim",
-        "Somut isim"
+        "İlkinde çokluk ekinin kullanılması",
+        "İkincisinde sözcüğün yapım eki alması",
+        "İlkinde odadaki öğrencilerin, ikincisinde odanın düşünülmesi",
+        "İkincisinde sözcüğün özel isim olması"
       ],
-      "dogru_index": 3,
-      "cozum": "Koku ve pürüzlülük duyularla algılanabildiğinden bu adlar somut isimdir. Soyut isimler beş duyu ile algılanamaz.",
+      "dogru_index": 2,
+      "cozum": "Ad aktarması yoluyla bir tür adı topluluk adı olabilir: öğrenciler düşünülürse topluluk, oda (bina) düşünülürse tekil isim olur. Çokluk eki iki cümlede de yoktur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Beş duyu organıyla algılanabilen isimlere ne denir?",
-        "back": "Somut isim."
-      }
+        "front": "Topluluk adının ad aktarmasıyla kullanımı nedir?",
+        "back": "Ad aktarması yoluyla, adın içindeki insan topluluğu düşünüldüğünde topluluk adı olur."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k06_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir metindeki cesaret ve merak sözcükleri elle tutulmuyor, duyularla doğrudan algılanmıyor. Bu adlar hangi türdedir?",
+      "alt_beceri": "İsmin yapısını (basit, türemiş, birleşik) çözümler.",
+      "metin": "\"Kalemlik, simitçi, yolcu\" sözcükleri yapı bakımından hangi grupta yer alır?",
       "secenekler": [
-        "Soyut isim",
-        "Somut isim",
-        "Çoğul isim",
-        "Birleşik isim"
-      ],
-      "dogru_index": 0,
-      "cozum": "Cesaret ve merak gibi kavramlar soyuttur; beş duyu ile algılanamaz. Somut adlar duyularla algılanabilir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Madde hâlinde olmayan, beş duyu ile algılanamayan adlara ne denir?",
-        "back": "Soyut isim."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u01_k06_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir cümlede çokluk eki almayan tekil biçimli bir ad, bir topluluğun bütün üyelerini karşılıyor. Bu kullanım hangi isim türüne örnektir?",
-      "secenekler": [
-        "Tekil isim",
-        "Topluluk ismi",
-        "Özel isim",
-        "Soyut isim"
-      ],
-      "dogru_index": 1,
-      "cozum": "Çokluk eki almayan tekil biçimli bir ad, birden fazla üyeyi topluca karşılıyorsa topluluk ismidir. Sözcüğün biçimce tekil olması bu anlamı değiştirmez.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Çokluk eki almadan birden fazla varlığı karşılayan isim türü nedir?",
-        "back": "Topluluk ismi."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u01_k06_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir metinde yapım eki almamış ve başka bir sözcükle birleşmemiş olan dal sözcüğü kullanılıyor. Yapısına göre bu isim hangisidir?",
-      "secenekler": [
-        "Türemiş isim",
+        "Basit isim",
         "Birleşik isim",
-        "Basit isim",
-        "Topluluk ismi"
-      ],
-      "dogru_index": 2,
-      "cozum": "Tek kök hâlinde bulunan, yapım eki almamış isim basittir. Türemiş isim yapım eki, birleşik isim ise birden fazla sözcük içerir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "Yapım eki almamış, tek kök hâlindeki isme ne denir?",
-        "back": "Basit isim."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u01_k06_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir köke yapım eki eklenerek yeni bir varlık adı oluşturuluyor. Ortaya çıkan isim yapısına göre hangi gruptadır?",
-      "secenekler": [
-        "Basit isim",
-        "Belirtili isim tamlaması",
         "Topluluk ismi",
         "Türemiş isim"
       ],
       "dogru_index": 3,
-      "cozum": "Yapım ekiyle yeni anlamda isim türetilmişse türemiş isim oluşur. Basit isim yapım eki almaz; isim tamlaması bir söz öbeğidir.",
+      "cozum": "Kök hâlindeki bir isme yapım eki getirilerek oluşturulan isimler türemiş isimdir. Basit isim yapım eki almaz, birleşik isim ise iki sözcüğün birleşmesiyle oluşur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Yapım ekiyle yeni bir ad oluşturulmuşsa bu isim yapısına göre nasıl sınıflandırılır?",
-        "back": "Türemiş isim."
-      }
+        "front": "Türemiş isim nedir?",
+        "back": "Basit bir isme yapım eki getirilerek ya da fiil köküne isim yapım eki getirilerek oluşan isimdir."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u01_k06_o06",
+      "alt_beceri": "İsmin yapısını (basit, türemiş, birleşik) çözümler.",
+      "metin": "\"Biçerdöver, dedikodu, gecekondu, bilgisayar\" sözcükleri yapı bakımından hangi grupta yer alır?",
+      "secenekler": [
+        "Basit isim",
+        "Birleşik isim",
+        "Türemiş isim",
+        "Cins isim"
+      ],
+      "dogru_index": 1,
+      "cozum": "En az iki sözcüğün bir araya gelmesiyle oluşan isimler birleşik isimdir. Biçerdöver ve dedikodu iki eylemin, gecekondu ve bilgisayar ad ile eylemin birleşmesiyle oluşmuştur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birleşik ismin oluşum yolları nedir?",
+        "back": "İki adın, bir ad ile bir eylemin ya da iki eylemin yan yana gelmesiyle oluşur."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u01_k06_o07",
+      "alt_beceri": "İsmin yapısını (basit, türemiş, birleşik) çözümler.",
+      "metin": "\"Masanın ayağı kırıldı.\" cümlesindeki \"masanın\" sözcüğü yapı bakımından hangi gruptadır?",
+      "secenekler": [
+        "Basit isim",
+        "Türemiş isim",
+        "Birleşik isim",
+        "Adlaşmış isim"
+      ],
+      "dogru_index": 0,
+      "cozum": "\"Masa\" kökü yapım eki almamıştır; aldığı -nın eki ilgi (çekim) ekidir. Çekim eki bir ismi türemiş yapmaz, bu yüzden sözcük basit isimdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Basit isim nedir?",
+        "back": "Çekim ekleri sözcüğün anlamını ve türünü değiştirmediği için isim basit kalır."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u01_k06_o08",
+      "alt_beceri": "İsim çekim eklerinin işlevini ayırt eder.",
+      "metin": "\"Köyü güzelmiş.\" ve \"Köyü gezdiler.\" cümlelerinde geçen -ü eki için hangisi doğrudur?",
+      "secenekler": [
+        "İlkinde belirtme hâli, ikincisinde iyelik eki",
+        "İkisinde de belirtme hâl eki",
+        "İlkinde iyelik, ikincisinde belirtme hâl eki",
+        "İkisinde de iyelik eki"
+      ],
+      "dogru_index": 2,
+      "cozum": "Sözcüğün başına \"onun\" getirilebiliyorsa iyelik ekidir: onun köyü güzelmiş. \"Köyü gezdiler\" cümlesinde ise -ü belirtme (yükleme) hâl ekidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İyelik eki ile belirtme hâl ekinin ayrımı nedir?",
+        "back": "Sözcüğün başına \"onun\" getirilebiliyorsa iyelik eki, getirilemiyorsa belirtme hâl ekidir."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k06_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "İki sözcüğün kaynaşmasıyla tek bir varlık adı oluşuyor. Bu ad yapısına göre nasıl adlandırılır?",
+      "alt_beceri": "İsim çekim eklerinin işlevini ayırt eder.",
+      "metin": "\"Çocuklardan biri bahçeye girdi.\" cümlesinde -den eki hangi görevde kullanılmıştır?",
       "secenekler": [
-        "Birleşik isim",
-        "Basit isim",
-        "Tekil isim",
-        "Soyut isim"
+        "İsmi cümlede yüklem yapmıştır.",
+        "Tamlayan ekinin yerini tutmuştur.",
+        "İsme çokluk anlamı katmıştır.",
+        "Bir sıfat tamlaması kurmuştur."
       ],
-      "dogru_index": 0,
-      "cozum": "Birden fazla sözcüğün birleşmesiyle oluşan ad birleşik isimdir. Tekil-çoğul ve somut-soyut ayrımları yapıyla ilgili değildir.",
+      "dogru_index": 1,
+      "cozum": "Ders notunda -den ekinin belirtili isim tamlamalarındaki tamlayan eki -ın/-in/-un/-ün yerini tutabildiği belirtilir: çocuklardan biri = çocukların biri.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "En az iki sözcüğün birleşmesiyle kurulan isim nedir?",
-        "back": "Birleşik isim."
-      }
+        "front": "-den ekinin tamlayan eki yerine kullanımı nedir?",
+        "back": "Belirtili isim tamlamalarında: \"yolculardan birkaçı\" = \"yolcuların birkaçı\"."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k06_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir konuşmacı, küçük bir nesneyi belirtmek için -cik eki kullanıyor; başka bir yerde aynı tür ek yakınlık ve şefkat hissettiriyor. Bu ekler hangi anlamları verebilir?",
+      "alt_beceri": "İsim çekim eklerinin işlevini ayırt eder.",
+      "metin": "\"Öğrencilerin hediyeleri verildi.\" cümlesindeki \"hediyeleri\" sözcüğü hangi eki almıştır?",
       "secenekler": [
-        "Yalnızca çoğulluk",
-        "Küçüklük, sevgi veya acıma",
-        "Her zaman özel ad yapma",
-        "Sadece zaman bildirme"
+        "Çokluk eki ve üçüncü tekil kişi iyelik eki",
+        "Belirtme hâl eki",
+        "İlgi eki",
+        "Üçüncü çoğul kişi iyelik eki"
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynak, küçültme eklerinin küçüklüğün yanında sevgi ya da acıma anlamı da katabileceğini belirtir. Bu eklerin tek işlevi çoğul veya zaman bildirmek değildir.",
+      "dogru_index": 3,
+      "cozum": "Tamlayan (öğrencilerin) çoğul olduğu için -leri eki üçüncü çoğul kişi iyelik ekidir. Tamlayan tekil olsaydı aynı ek çokluk eki + üçüncü tekil kişi iyelik olurdu.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "-cik, -cek, -ceğiz ekleri isimlere hangi anlamları katabilir?",
-        "back": "Küçüklük; bağlama göre sevgi ya da acıma anlamı."
-      }
+        "front": "Üçüncü çoğul kişi iyelik ekinin işlevi nedir?",
+        "back": "Eklendiği sözcüğün değil, tamlayanın çoğul olduğunu belirtir: onların hediyeleri."
+      },
+      "kazanim": "İsimleri tür, yapı ve çekim ekleri bakımından çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u01_k06_o01:flashcard",
-      "front": "İsim (ad) nedir?",
-      "back": "Canlı-cansız varlıkları, duygu ve düşünceleri karşılayan sözcüktür."
+      "front": "Özel isim nedir?",
+      "back": "Bilinen tek bir varlığı gösteren; kişi, yer, kurum, eser, bayram gibi adlardır."
     },
     {
       "id": "edebiyat_10_u01_k06_o02:flashcard",
-      "front": "Tek bir varlığı özel olarak gösteren adlara ne denir?",
-      "back": "Özel isim."
+      "front": "Topluluk ismi nedir?",
+      "back": "Çokluk eki almadığı hâlde birden çok varlığı karşılayan, tekil görünüşlü isimdir; sürü, ordu, meclis gibi."
     },
     {
       "id": "edebiyat_10_u01_k06_o03:flashcard",
-      "front": "Aynı türden birçok varlığı karşılayan adlara ne denir?",
-      "back": "Cins (tür) ismi."
+      "front": "Soyut isim nedir?",
+      "back": "Beş duyu organıyla algılanamayan; sevgi, akıl, üzüntü, cömertlik gibi varlıkların adıdır."
     },
     {
       "id": "edebiyat_10_u01_k06_o04:flashcard",
-      "front": "Beş duyu organıyla algılanabilen isimlere ne denir?",
-      "back": "Somut isim."
+      "front": "Topluluk adının ad aktarmasıyla kullanımı nedir?",
+      "back": "Ad aktarması yoluyla, adın içindeki insan topluluğu düşünüldüğünde topluluk adı olur."
     },
     {
       "id": "edebiyat_10_u01_k06_o05:flashcard",
-      "front": "Madde hâlinde olmayan, beş duyu ile algılanamayan adlara ne denir?",
-      "back": "Soyut isim."
+      "front": "Türemiş isim nedir?",
+      "back": "Basit bir isme yapım eki getirilerek ya da fiil köküne isim yapım eki getirilerek oluşan isimdir."
     },
     {
       "id": "edebiyat_10_u01_k06_o06:flashcard",
-      "front": "Çokluk eki almadan birden fazla varlığı karşılayan isim türü nedir?",
-      "back": "Topluluk ismi."
+      "front": "Birleşik ismin oluşum yolları nedir?",
+      "back": "İki adın, bir ad ile bir eylemin ya da iki eylemin yan yana gelmesiyle oluşur."
     },
     {
       "id": "edebiyat_10_u01_k06_o07:flashcard",
-      "front": "Yapım eki almamış, tek kök hâlindeki isme ne denir?",
-      "back": "Basit isim."
+      "front": "Basit isim nedir?",
+      "back": "Çekim ekleri sözcüğün anlamını ve türünü değiştirmediği için isim basit kalır."
     },
     {
       "id": "edebiyat_10_u01_k06_o08:flashcard",
-      "front": "Yapım ekiyle yeni bir ad oluşturulmuşsa bu isim yapısına göre nasıl sınıflandırılır?",
-      "back": "Türemiş isim."
+      "front": "İyelik eki ile belirtme hâl ekinin ayrımı nedir?",
+      "back": "Sözcüğün başına \"onun\" getirilebiliyorsa iyelik eki, getirilemiyorsa belirtme hâl ekidir."
     },
     {
       "id": "edebiyat_10_u01_k06_o09:flashcard",
-      "front": "En az iki sözcüğün birleşmesiyle kurulan isim nedir?",
-      "back": "Birleşik isim."
+      "front": "-den ekinin tamlayan eki yerine kullanımı nedir?",
+      "back": "Belirtili isim tamlamalarında: \"yolculardan birkaçı\" = \"yolcuların birkaçı\"."
     },
     {
       "id": "edebiyat_10_u01_k06_o10:flashcard",
-      "front": "-cik, -cek, -ceğiz ekleri isimlere hangi anlamları katabilir?",
-      "back": "Küçüklük; bağlama göre sevgi ya da acıma anlamı."
+      "front": "Üçüncü çoğul kişi iyelik ekinin işlevi nedir?",
+      "back": "Eklendiği sözcüğün değil, tamlayanın çoğul olduğunu belirtir: onların hediyeleri."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)"
+  ]
 }

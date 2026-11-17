@@ -1,7 +1,7 @@
 # Üretim Durumu (otomatik)
 
 > Bu dosya `node docs/uretim/araclar/durum.js` ile üretilir — **elle düzenlenmez**.
-> Güncelleme: 2026-11-17 20:03 (UTC)
+> Güncelleme: 2026-11-17 20:18 (UTC)
 
 ## Ders bazında
 
@@ -14,11 +14,11 @@
 | Biyoloji | 19/19 | 192 | 190 | 192 | 0 |
 | Tarih | 14/14 | 140 | 140 | 140 | 3 |
 | Coğrafya | 18/18 | 201 | 190 | 201 | 2 |
-| Felsefe | 10/10 | 100 | 100 | 100 | 0 |
-| Din Kültürü | 17/17 | 170 | 170 | 170 | 0 |
-| **TOPLAM** | **160/171** | **1683** | **1788** | **1683** | **61** |
+| Felsefe | 10/10 | 122 | 100 | 122 | 0 |
+| Din Kültürü | 17/17 | 209 | 170 | 209 | 0 |
+| **TOPLAM** | **160/171** | **1744** | **1788** | **1744** | **61** |
 
-İlerleme: **%94** (1683/1788 soru) · kart 1:1 ✔
+İlerleme: **%98** (1744/1788 soru) · kart 1:1 ✔
 
 ## Eksik havuzlar
 

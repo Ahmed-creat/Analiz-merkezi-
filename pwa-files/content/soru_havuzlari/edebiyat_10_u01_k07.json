@@ -2,240 +2,255 @@
   "konu_id": "edebiyat_10_u01_k07",
   "sinif": 10,
   "ders": "Türk Dili ve Edebiyatı",
-  "kaynak_dosya": "10. Sınıf edebiyat json.zip",
+  "tema": 1,
+  "tema_adi": "Sözün Ezgisi",
+  "baslik": "İsim Tamlamaları",
+  "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları",
+  "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme.",
+  "kaynak": "10. sınıf TDE ders notları (Mustafa Çiftçi), s.46-48, 62-65",
+  "kaynak_dosya": "10.Edebiyat.Ders.notlari.Yeni.Mufredat.pdf",
   "sorular": [
     {
       "soru_id": "edebiyat_10_u01_k07_o01",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir söz öbeğinde iki ad arasında aitlik ya da bağlantı anlamı kuruluyor. Bu yapı genel olarak nasıl adlandırılır?",
+      "alt_beceri": "İsim tamlaması türlerini ayırt eder.",
+      "metin": "\"Öğrenciler sınav sonuçlarını merak ediyormuş.\" cümlesindeki \"sınav sonuçlarını\" söz grubu hangi tamlama türüdür?",
       "secenekler": [
-        "İsim tamlaması",
-        "Sıfat tamlaması",
-        "Fiil grubu",
-        "Ünlem grubu"
-      ],
-      "dogru_index": 0,
-      "cozum": "İsim tamlaması en az iki ismin tamlayan-tamlanan ilişkisiyle kurduğu söz öbeğidir. Sıfat tamlamasında ise sıfat bir adı niteler ya da belirtir.",
-      "zorluk": "deneme",
-      "flashcard": {
-        "front": "İsim tamlaması nasıl oluşur?",
-        "back": "En az iki isim, tamlayan ve tamlanan ilişkisi kurar."
-      }
-    },
-    {
-      "soru_id": "edebiyat_10_u01_k07_o02",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Yeni kurulan bir söz öbeğinde ilk isim ilgi eki, ikinci isim iyelik eki taşıyor. Bu isim tamlaması türü nedir?",
-      "secenekler": [
-        "Belirtisiz isim tamlaması",
         "Belirtili isim tamlaması",
+        "Belirtisiz isim tamlaması",
         "Takısız isim tamlaması",
         "Sıfat tamlaması"
       ],
       "dogru_index": 1,
-      "cozum": "Belirtili isim tamlamasında tamlayan da tamlanan da ek alır. Yalnız tamlananın ek alması belirtisiz tamlamayı gösterir.",
+      "cozum": "Yalnızca tamlananın ek aldığı (-ları) tamlamalar belirtisiz isim tamlamasıdır. Belirtili tamlamada tamlayan da ilgi eki alır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Belirtili isim tamlamasında hangi ögeler ek alır?",
-        "back": "Hem tamlayan ilgi eki hem tamlanan iyelik eki alır."
-      }
+        "front": "Belirtisiz isim tamlaması nedir?",
+        "back": "Yalnızca tamlananın iyelik eki aldığı, tamlayanın ek almadığı isim tamlamasıdır."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
+    },
+    {
+      "soru_id": "edebiyat_10_u01_k07_o02",
+      "alt_beceri": "İsim tamlaması türlerini ayırt eder.",
+      "metin": "\"Bebeğin yüzü çok sevimliydi.\" cümlesindeki tamlama hangi türdendir?",
+      "secenekler": [
+        "Belirtisiz isim tamlaması",
+        "Takısız isim tamlaması",
+        "Zincirleme isim tamlaması",
+        "Belirtili isim tamlaması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Hem tamlayan (-in) hem tamlanan (-ü) ek aldığı için tamlama belirtilidir. Belirtisizde yalnızca tamlanan ek alır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Belirtili isim tamlaması nedir?",
+        "back": "Tamlayanın ilgi, tamlananın iyelik eki aldığı isim tamlamasıdır: bebeğin yüzü gibi."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o03",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir atölyenin adı olan tasarım atölyesi söz öbeğinde yalnızca ikinci isim iyelik eki taşır. Bu hangi tamlama türüdür?",
+      "alt_beceri": "İsim tamlaması türlerini ayırt eder.",
+      "metin": "\"Deri ceket\", \"demir kapı\" ve \"cam kavanoz\" söz gruplarında tamlayan, tamlananın neyden yapıldığını bildirir; iki sözcük de ek almaz. Bu gruplar hangi tamlama türüdür?",
       "secenekler": [
-        "Belirtili isim tamlaması",
         "Takısız isim tamlaması",
+        "Belirtili isim tamlaması",
         "Belirtisiz isim tamlaması",
-        "Zincirleme isim tamlaması"
+        "Sıfat tamlaması"
       ],
-      "dogru_index": 2,
-      "cozum": "Belirtisiz isim tamlamasında yalnız tamlanan ek alır. Her iki unsurun ek alması belirtili, ikisinin de almaması takısız tamlamadır.",
+      "dogru_index": 0,
+      "cozum": "Tamlayanın da tamlananın da ek almadığı, tamlayanın neyden yapıldığını ya da neye benzediğini bildirdiği gruplar takısız isim tamlamasıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Belirtisiz isim tamlamasında ek durumu nasıldır?",
-        "back": "Tamlayan ek almaz; tamlanan iyelik eki alır."
-      }
+        "front": "Takısız isim tamlaması nedir?",
+        "back": "İki sözcüğün de ek almadığı, tamlayanın maddeyi ya da benzetmeyi bildirdiği tamlamadır: deri ceket, elma yanak."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o04",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir söz öbeğinde iki isim de ek almadan, ilk isim ikinci varlığın maddesini ya da benzerliğini bildiriyor. Kaynağın sınıflandırmasına göre bu yapı hangisidir?",
+      "alt_beceri": "İsim tamlaması türlerini ayırt eder.",
+      "metin": "\"Masa örtüsünün kenarı yıpranmıştı.\" cümlesindeki tamlama hangi türdendir?",
       "secenekler": [
-        "Belirtili isim tamlaması",
-        "Zincirleme isim tamlaması",
         "Belirtisiz isim tamlaması",
-        "Takısız isim tamlaması"
+        "Takısız isim tamlaması",
+        "Zincirleme isim tamlaması",
+        "Sıfat tamlaması"
       ],
-      "dogru_index": 3,
-      "cozum": "Kaynak, iki unsurun da ek almadığı bu yapıları takısız isim tamlaması olarak ele alır; ayrıca bu sınıflandırmanın tartışmalı olduğunu not eder. Diğer tamlamalarda ek düzeni farklıdır.",
+      "dogru_index": 2,
+      "cozum": "Tamlayanı (masa örtüsünün) kendi içinde bir isim tamlaması olduğu için yapı zincirlemedir; ikiden fazla isim (masa, örtü, kenar) bir aradadır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Tamlayan ve tamlanan ek almadan kurulan isim tamlaması türü nedir?",
-        "back": "Takısız isim tamlaması; kaynak bu sınıflandırmanın tartışmalı olduğunu belirtir."
-      }
+        "front": "Zincirleme isim tamlaması nedir?",
+        "back": "İkiden fazla isimden oluşan; tamlayanın, tamlananın ya da ikisinin kendi içinde tamlama oluşturduğu tamlamadır."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o05",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir yapı adının içinde bir isim tamlaması daha bulunuyor ve toplamda ikiden fazla isim ilişkileniyor. Bu yapı nasıl adlandırılır?",
+      "alt_beceri": "İsim tamlaması türlerini ayırt eder.",
+      "metin": "\"Evin mutfak dolabı\" söz grubunda tamlanan kendi içinde bir tamlama oluşturmuştur. Bu grup hangi tamlama türüdür?",
       "secenekler": [
-        "Zincirleme isim tamlaması",
+        "Belirtili isim tamlaması",
+        "Belirtisiz isim tamlaması",
         "Takısız isim tamlaması",
-        "Sıfat tamlaması",
-        "Belirtisiz isim tamlaması"
+        "Zincirleme isim tamlaması"
       ],
-      "dogru_index": 0,
-      "cozum": "Tamlayan ya da tamlanan kendi içinde isim tamlaması oluşturuyorsa zincirleme tamlama kurulur. İki isimle sınırlı basit bir yapı bu gruba girmez.",
+      "dogru_index": 3,
+      "cozum": "\"Mutfak dolabı\" belirtisiz bir tamlamadır ve bu tamlama \"evin\" tamlayanıyla birleşerek zincirleme isim tamlaması oluşturur.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İkiden fazla isim ögesiyle kurulan ve içinde başka tamlamalar bulunan yapı nedir?",
-        "back": "Zincirleme isim tamlaması."
-      }
+        "front": "Tamlananı tamlama olan yapının türü nedir?",
+        "back": "Zincirleme isim tamlamasıdır: evin mutfak dolabı gibi."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o06",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir öğrenci, birinci çoğul kişi zamiriyle kurulan belirtili isim tamlamasında doğru tamlayan biçimini seçiyor. Hangi biçim kullanılmalıdır?",
+      "alt_beceri": "Tamlamalarda ek ve kaynaştırma harfi kullanımını çözümler.",
+      "metin": "\"Suyun sesi\" ve \"neyin nesi\" tamlamalarında kaynaştırma ünsüzü olarak hangi harf kullanılır?",
       "secenekler": [
-        "Bizin",
-        "Bizim",
-        "Bize",
-        "Bizler"
+        "n",
+        "y",
+        "s",
+        "ş"
       ],
       "dogru_index": 1,
-      "cozum": "Kaynağa göre ben ve biz zamirleri tamlayan eki olarak -in yerine -im alır: benim, bizim. Bizin ve bize bu tamlayan biçimi değildir.",
+      "cozum": "İsim tamlamalarında genellikle n kaynaştırma ünsüzü kullanılır; ancak su ve ne sözcükleri tamlama kurduğunda y kaynaştırma ünsüzü alır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Belirtili isim tamlamasında ben ve biz zamirleri tamlayan eki olarak hangi biçimleri alır?",
-        "back": "Benim ve bizim biçimlerinde -im eki kullanılır."
-      }
+        "front": "Tamlamada y kaynaştırma ünsüzü alan sözcükler nedir?",
+        "back": "Su ve ne sözcükleri: suyun sesi, neyin nesi."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o07",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir söz öbeğinde ilk olarak nitelik bildiren bir sıfat, ardından iki isimli bir ad grubu geliyor. Üst yapının türü ne olur?",
+      "alt_beceri": "Tamlamalarda ek ve kaynaştırma harfi kullanımını çözümler.",
+      "metin": "\"Genç kızın sarı saçları\" söz grubunda tamlayan ve tamlanan sıfat almıştır. Bu grubun tamlama türü hangisidir?",
       "secenekler": [
-        "Yalnız belirtili isim tamlaması",
-        "Zincirleme isim tamlaması",
+        "Belirtili isim tamlaması",
         "Sıfat tamlaması",
-        "Bağlaç grubu"
+        "Takısız isim tamlaması",
+        "Belirtisiz isim tamlaması"
       ],
-      "dogru_index": 2,
-      "cozum": "Sıfat, kendisinden sonra gelen isim öbeğini nitelerse üst düzeyde sıfat tamlaması kurulur. İçerideki belirtisiz isim tamlaması da kendi yapısını korur.",
+      "dogru_index": 0,
+      "cozum": "Tamlayan da tamlanan da ilgi ve iyelik eki aldığı için yapı belirtili isim tamlamasıdır; sıfatlar tamlamanın içinde yer alır, türünü değiştirmez.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Bir belirtisiz isim tamlamasının önüne sıfat geldiğinde hangi yapı oluşur?",
-        "back": "Sıfat tamlaması oluşur; belirtisiz isim tamlaması onun içinde kalabilir."
-      }
+        "front": "Belirtili isim tamlamasında sıfatın yeri nedir?",
+        "back": "Bulunabilir; tamlayan da tamlanan da sıfat alabilir: genç kızın sarı saçları."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o08",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir incelemede tamlayanla tamlanan arasına niteleyici bir sözcük girmiş, fakat üçüncü bir isim ögesi oluşmamış. Bu yapı neden otomatik olarak zincirleme sayılmaz?",
+      "alt_beceri": "İsim tamlamasını sıfat tamlamasından ve zincirleme yapıdan ayırır.",
+      "metin": "\"İnek sütü\" belirtisiz isim tamlamasının başına \"taze\" sıfatı getirilerek \"taze inek sütü\" grubu kurulmuştur. Bu değişiklikle hangisi oluşur?",
       "secenekler": [
-        "Çünkü tamlamalarda sıfat hiç kullanılamaz.",
-        "Çünkü zincirleme tamlamada iki isim bulunamaz.",
-        "Çünkü tamlayan ilgi eki alamaz.",
-        "Çünkü yalnız sıfatın araya girmesi yeni bir isim tamlaması kurmaz."
+        "Belirtili isim tamlaması",
+        "Takısız isim tamlaması",
+        "Sıfat tamlaması",
+        "Zincirleme isim tamlaması"
       ],
-      "dogru_index": 3,
-      "cozum": "Zincirleme tamlamada tamlayan ya da tamlanan kendi içinde bir isim tamlaması oluşturur. Araya sıfat girmesi tek başına bu koşulu sağlamaz.",
+      "dogru_index": 2,
+      "cozum": "Belirtisiz isim tamlamasına getirilen sıfat tüm tamlamanın sıfatı olur ve yapı sıfat tamlamasına dönüşür: taze (inek sütü).",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Zincirleme tamlamayı sıfat girmiş belirtili tamlamadan ayıran ölçüt nedir?",
-        "back": "Zincirlemede ikiden fazla isim ilişkisi bulunur; sıfatın araya girmesi tek başına zincirleme yapmaz."
-      }
+        "front": "Belirtisiz isim tamlaması sıfat aldığında ne olur?",
+        "back": "Getirilen sıfat tüm tamlamayı nitelediği için yapı sıfat tamlamasına dönüşür."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o09",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir belge, bir kurumun arşiv bölümüyle ilgili adlandırılıyor ve sözcükler aitlik bağlantısıyla birleşiyor. Bu söz öbeğinde hangi ilişki temel alınır?",
+      "alt_beceri": "İsim tamlamasını sıfat tamlamasından ve zincirleme yapıdan ayırır.",
+      "metin": "\"Zeytin göz\" ile \"siyah göz\" grupları karşılaştırıldığında hangisi doğrudur?",
       "secenekler": [
-        "Tamlayan-tamlanan ilişkisi",
-        "Yalnızca eylem-zaman ilişkisi",
-        "Özne-yüklem ilişkisi",
-        "Soru-cevap ilişkisi"
+        "İlki sıfat tamlaması, ikincisi takısız isim tamlamasıdır.",
+        "İlki takısız isim tamlaması, ikincisi sıfat tamlamasıdır.",
+        "İkisi de belirtili isim tamlamasıdır.",
+        "İkisi de sıfat tamlamasıdır."
       ],
-      "dogru_index": 0,
-      "cozum": "İsim tamlaması en az iki isim arasında tamlayan-tamlanan, çoğunlukla sahiplik/bağlantı ilişkisi kurar. Özne-yüklem ilişkisi cümlenin yüklem yapısına aittir.",
+      "dogru_index": 1,
+      "cozum": "Benzetme yoluyla kurulan ve ek almayan \"zeytin göz\" takısız isim tamlamasıdır; \"siyah\" nitelik bildirdiği için \"siyah göz\" sıfat tamlamasıdır.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "İsim tamlamasında tamlayan ve tamlanan hangi temel ilişkiyi kurar?",
-        "back": "Bir ismin başka bir isimle sahiplik ya da bağlantı ilişkisi kurmasını."
-      }
+        "front": "Takısız isim tamlaması ile sıfat tamlamasının ayrımı nedir?",
+        "back": "Tamlayan madde ya da benzetme bildiriyorsa takısız isim tamlaması, nitelik bildiriyorsa sıfat tamlamasıdır."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     },
     {
       "soru_id": "edebiyat_10_u01_k07_o10",
-      "alt_beceri": "Genel konu becerisi",
-      "metin": "Bir tasarımcı, bir ad öbeğinin ilk isminin ikinci nesnenin malzemesini veya benzetildiği varlığı anlattığını açıklıyor. Hangi anlam ilişkileri söz konusudur?",
+      "alt_beceri": "İsim tamlamasını sıfat tamlamasından ve zincirleme yapıdan ayırır.",
+      "metin": "\"Yolculardan birkaçı otobüse yetişemedi.\" cümlesinde \"yolculardan\" sözcüğü hangi görevde kullanılmıştır?",
       "secenekler": [
-        "Zaman ve koşul",
-        "Madde ve benzerlik",
-        "Kişi ve sayı",
-        "Neden ve sonuç"
+        "Sıfat tamlamasının tamlayanı olmuştur.",
+        "Takısız tamlama kurmuştur.",
+        "Yüklem olmuştur.",
+        "Tamlayan ekinin yerini tutan -den eki almıştır."
       ],
-      "dogru_index": 1,
-      "cozum": "Kaynakta takısız isim tamlamasında tamlayan, tamlananın neyden yapıldığını ya da neye benzediğini bildirebilir. Diğer seçenekler farklı dil bilgisi ilişkileridir.",
+      "dogru_index": 3,
+      "cozum": "Ders notuna göre kimi durumlarda tamlayan eki -in yerine -den durum eki kullanılır: yolculardan birkaçı = yolcuların birkaçı.",
       "zorluk": "deneme",
       "flashcard": {
-        "front": "Takısız isim tamlamasında tamlayan hangi iki tür anlamı verebilir?",
-        "back": "Tamlananın yapıldığı maddeyi ya da benzediği şeyi."
-      }
+        "front": "Tamlayan eki yerine kullanılabilen ek nedir?",
+        "back": "-den durum eki kullanılabilir: işçilerden hangisi = işçilerin hangisi."
+      },
+      "kazanim": "İsim tamlamalarının türlerini, eklerini ve kuruluş özelliklerini çözümleyebilme."
     }
   ],
   "flashcards": [
     {
       "id": "edebiyat_10_u01_k07_o01:flashcard",
-      "front": "İsim tamlaması nasıl oluşur?",
-      "back": "En az iki isim, tamlayan ve tamlanan ilişkisi kurar."
+      "front": "Belirtisiz isim tamlaması nedir?",
+      "back": "Yalnızca tamlananın iyelik eki aldığı, tamlayanın ek almadığı isim tamlamasıdır."
     },
     {
       "id": "edebiyat_10_u01_k07_o02:flashcard",
-      "front": "Belirtili isim tamlamasında hangi ögeler ek alır?",
-      "back": "Hem tamlayan ilgi eki hem tamlanan iyelik eki alır."
+      "front": "Belirtili isim tamlaması nedir?",
+      "back": "Tamlayanın ilgi, tamlananın iyelik eki aldığı isim tamlamasıdır: bebeğin yüzü gibi."
     },
     {
       "id": "edebiyat_10_u01_k07_o03:flashcard",
-      "front": "Belirtisiz isim tamlamasında ek durumu nasıldır?",
-      "back": "Tamlayan ek almaz; tamlanan iyelik eki alır."
+      "front": "Takısız isim tamlaması nedir?",
+      "back": "İki sözcüğün de ek almadığı, tamlayanın maddeyi ya da benzetmeyi bildirdiği tamlamadır: deri ceket, elma yanak."
     },
     {
       "id": "edebiyat_10_u01_k07_o04:flashcard",
-      "front": "Tamlayan ve tamlanan ek almadan kurulan isim tamlaması türü nedir?",
-      "back": "Takısız isim tamlaması; kaynak bu sınıflandırmanın tartışmalı olduğunu belirtir."
+      "front": "Zincirleme isim tamlaması nedir?",
+      "back": "İkiden fazla isimden oluşan; tamlayanın, tamlananın ya da ikisinin kendi içinde tamlama oluşturduğu tamlamadır."
     },
     {
       "id": "edebiyat_10_u01_k07_o05:flashcard",
-      "front": "İkiden fazla isim ögesiyle kurulan ve içinde başka tamlamalar bulunan yapı nedir?",
-      "back": "Zincirleme isim tamlaması."
+      "front": "Tamlananı tamlama olan yapının türü nedir?",
+      "back": "Zincirleme isim tamlamasıdır: evin mutfak dolabı gibi."
     },
     {
       "id": "edebiyat_10_u01_k07_o06:flashcard",
-      "front": "Belirtili isim tamlamasında ben ve biz zamirleri tamlayan eki olarak hangi biçimleri alır?",
-      "back": "Benim ve bizim biçimlerinde -im eki kullanılır."
+      "front": "Tamlamada y kaynaştırma ünsüzü alan sözcükler nedir?",
+      "back": "Su ve ne sözcükleri: suyun sesi, neyin nesi."
     },
     {
       "id": "edebiyat_10_u01_k07_o07:flashcard",
-      "front": "Bir belirtisiz isim tamlamasının önüne sıfat geldiğinde hangi yapı oluşur?",
-      "back": "Sıfat tamlaması oluşur; belirtisiz isim tamlaması onun içinde kalabilir."
+      "front": "Belirtili isim tamlamasında sıfatın yeri nedir?",
+      "back": "Bulunabilir; tamlayan da tamlanan da sıfat alabilir: genç kızın sarı saçları."
     },
     {
       "id": "edebiyat_10_u01_k07_o08:flashcard",
-      "front": "Zincirleme tamlamayı sıfat girmiş belirtili tamlamadan ayıran ölçüt nedir?",
-      "back": "Zincirlemede ikiden fazla isim ilişkisi bulunur; sıfatın araya girmesi tek başına zincirleme yapmaz."
+      "front": "Belirtisiz isim tamlaması sıfat aldığında ne olur?",
+      "back": "Getirilen sıfat tüm tamlamayı nitelediği için yapı sıfat tamlamasına dönüşür."
     },
     {
       "id": "edebiyat_10_u01_k07_o09:flashcard",
-      "front": "İsim tamlamasında tamlayan ve tamlanan hangi temel ilişkiyi kurar?",
-      "back": "Bir ismin başka bir isimle sahiplik ya da bağlantı ilişkisi kurmasını."
+      "front": "Takısız isim tamlaması ile sıfat tamlamasının ayrımı nedir?",
+      "back": "Tamlayan madde ya da benzetme bildiriyorsa takısız isim tamlaması, nitelik bildiriyorsa sıfat tamlamasıdır."
     },
     {
       "id": "edebiyat_10_u01_k07_o10:flashcard",
-      "front": "Takısız isim tamlamasında tamlayan hangi iki tür anlamı verebilir?",
-      "back": "Tamlananın yapıldığı maddeyi ya da benzediği şeyi."
+      "front": "Tamlayan eki yerine kullanılabilen ek nedir?",
+      "back": "-den durum eki kullanılabilir: işçilerden hangisi = işçilerin hangisi."
     }
-  ],
-  "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları"
+  ]
 }

@@ -60,7 +60,9 @@ ok("Biyoloji kaynağı MEB PDF", /mufredat\.meb\.gov\.tr/.test(RESMI.kaynaklar["
 // ---------- 2) Eşleme dosyası ----------
 console.log("\n== 2) Konu eşleme dosyası ==");
 const konular = ESL.konular || [];
-esit("havuz sayısı 180", konular.length, 180);
+const HAVUZ_SAYISI = fs.readdirSync(path.join(KOK, "site/content/soru_havuzlari"))
+  .filter(a => a.endsWith(".json") && a !== "index.json").length;
+esit("eşleme kaydı = havuz sayısı", konular.length, HAVUZ_SAYISI);
 const kodKumesi = new Set(kodlar);
 const bozukKod = konular.flatMap(k => (k.kodlar || []).filter(kod => !kodKumesi.has(kod)).map(kod => k.konu_id + ":" + kod));
 ok("her eşlenen kod resmî tabloda var", bozukKod.length === 0, bozukKod.slice(0, 4).join(","));
@@ -80,7 +82,7 @@ const dersKarismasi = konular.flatMap(k => (k.kodlar || [])
 ok("ders dışı kod yok", dersKarismasi.length === 0, dersKarismasi.slice(0, 4).join(","));
 
 const guvenler = new Set(konular.map(k => k.guven));
-ok("güven değerleri tanımlı", Array.from(guvenler).every(g => ["kesin", "yapisal", "orta", "yok"].includes(g)), Array.from(guvenler).join(","));
+ok("güven değerleri tanımlı", Array.from(guvenler).every(g => ["kesin", "yapisal", "orta", "yok", "elle"].includes(g)), Array.from(guvenler).join(","));
 ok("'yok' kayıtlarında kod yok", konular.filter(k => k.guven === "yok").every(k => (k.kodlar || []).length === 0));
 ok("'kesin' kayıtlarda kod var", konular.filter(k => k.guven === "kesin").every(k => (k.kodlar || []).length > 0));
 
@@ -90,8 +92,13 @@ for (const [ders, n] of Object.entries(TABAN)) {
   const kesin = konular.filter(k => k.ders === ders && k.guven === "kesin").length;
   ok(ders + " kesin eşleşme tabanı (≥" + n + ")", kesin >= n, "gelen: " + kesin);
 }
-ok("Din Kültürü'nde zorlama eşleme yok",
-  konular.filter(k => k.ders === "Din Kültürü").every(k => (k.kodlar || []).length === 0));
+/* Din Kültürü, kitabın içindekiler ağacıyla birebir eşlendi (tur-2):
+   her Din havuzunun bir kaydı var, her kaydın canlı bir havuzu var. */
+const dinKonular = konular.filter(k => k.ders === "Din Kültürü");
+const dinHavuzlar = havuzDosyalari.filter(a => /^din_10_/.test(a)).map(a => a.replace(/\.json$/, ""));
+ok("Din Kültürü kayıtları havuz ağacıyla birebir",
+  dinKonular.length === dinHavuzlar.length && dinHavuzlar.every(id => dinKonular.some(k => k.konu_id === id)),
+  "kayıt: " + dinKonular.length + " · havuz: " + dinHavuzlar.length);
 ok("TDE'de zorlama eşleme yok",
   konular.filter(k => k.ders === "Türk Dili ve Edebiyatı").every(k => (k.kodlar || []).length === 0));
 

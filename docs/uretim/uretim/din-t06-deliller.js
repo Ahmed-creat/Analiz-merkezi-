@@ -26,7 +26,7 @@ const kaynak = s => "MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025),
 
 /* ------------------------------------------------------------ 2.1.1 */
 yazKonu({
-  konu_id: "din_10_u02_k05",
+  konu_id: "din_10_u02_k02",
   ders: DERS,
   tema: 2,
   tema_adi: TEMA_ADI,
@@ -60,7 +60,7 @@ yazKonu({
       ],
       cozum:
         "Kozmolojik delil, evrenin sonradan var olduğu ve her sonradan var olanın bir sebebi bulunduğu öncülüne dayanır; diğer seçenekler başka delillere aittir.",
-      fc: ["Kozmolojik delilin öncülü nedir?", "Evren sonradan var olmuştur; her sonradan var olanın bir varlık sebebi vardır."]
+      fc: ["Evrenin sonradanlığı neyi gerektirir?", "Bir varlık sebebini, dolayısıyla bir yaratıcıyı gerektirir."]
     },
     {
       bi: 0,
@@ -164,7 +164,7 @@ yazKonu({
 
 /* ------------------------------------------------------------ 2.1.2 */
 yazKonu({
-  konu_id: "din_10_u02_k06",
+  konu_id: "din_10_u02_k03",
   ders: DERS,
   tema: 2,
   tema_adi: TEMA_ADI,
@@ -286,7 +286,7 @@ yazKonu({
 
 /* ------------------------------------------------------------ 2.1.3 */
 yazKonu({
-  konu_id: "din_10_u02_k07",
+  konu_id: "din_10_u02_k04",
   ders: DERS,
   tema: 2,
   tema_adi: TEMA_ADI,
@@ -342,7 +342,7 @@ yazKonu({
       ],
       cozum:
         "Delile yönelik temel itiraz, düşüncedeki bir kavramdan gerçek varlığa geçilemeyeceği itirazıdır.",
-      fc: ["Ontolojik delile yöneltilen itiraz nedir?", "Zihindeki bir kavramdan gerçek varlığa geçilemeyeceği itirazı."]
+      fc: ["Zihindeki kavramdan varlığa geçiş neden tartışmalıdır?", "Kavramın zihinde bulunması, onun gerçekte var olduğunu göstermez."]
     },
     {
       bi: 0,
@@ -384,7 +384,7 @@ yazKonu({
       ],
       cozum:
         "Ontolojik delil zihinsel kavramdan, teleolojik delil evrendeki düzen ve amaçtan yola çıkar.",
-      fc: ["Kavramdan hareket eden delil hangisidir?", "Ontolojik delil; düzenden hareket eden teleolojik delildir."]
+      fc: ["Ontolojik delilin hareket noktası nedir?", "Zihindeki yetkin varlık kavramı; düzenden hareket eden ise teleolojik delildir."]
     },
     {
       bi: 1,
@@ -428,7 +428,7 @@ yazKonu({
 
 /* ------------------------------------------------------------ 2.1.4 */
 yazKonu({
-  konu_id: "din_10_u02_k08",
+  konu_id: "din_10_u02_k05",
   ders: DERS,
   tema: 2,
   tema_adi: TEMA_ADI,
@@ -484,7 +484,7 @@ yazKonu({
       ],
       cozum:
         "Delile yönelik itiraz, öznel deneyimin başkaları için doğrulanabilir bir kanıt sayılamayacağı noktasındadır.",
-      fc: ["Dinî tecrübe deliline yöneltilen itiraz nedir?", "Öznel yaşantının herkes için geçerli kanıt olamayacağı itirazı."]
+      fc: ["Öznel yaşantı niçin kanıt sayılmaz?", "Herkes için geçerli ve aktarılabilir bir kanıt oluşturmadığı için."]
     },
     {
       bi: 0,
@@ -535,7 +535,7 @@ yazKonu({
       secenekler: ["Dinî tecrübe delilini", "Ontolojik delili", "Kozmolojik delili", "Hudûs delilini"],
       cozum:
         "Kişinin kendi yaşantısını kanıt sayması dinî tecrübe delilinin temel yaklaşımıdır.",
-      fc: ["Kendi yaşantısını kanıt sayan delil hangisidir?", "Dinî tecrübe delili."]
+      fc: ["Dinî tecrübe delilinin kanıtı nedir?", "İnananın kendi manevi yaşantısı ve yaratıcıyla iletişim hissi."]
     },
     {
       bi: 1,
@@ -563,7 +563,7 @@ yazKonu({
       ],
       cozum:
         "Ontolojik delil kavramdan, dinî tecrübe delili kişisel yaşantıdan hareket eder; ikisi de doğa gözlemine dayanmaz.",
-      fc: ["Ontolojik ve dinî tecrübe delillerinin ortak yönü nedir?", "Doğa gözlemine dayanmamaları; kavram ve yaşantıdan hareket etmeleri."]
+      fc: ["Kavram ve yaşantı temelli deliller hangileridir?", "Ontolojik delil (kavram) ve dinî tecrübe delili (yaşantı)."]
     }
   ]
 });
