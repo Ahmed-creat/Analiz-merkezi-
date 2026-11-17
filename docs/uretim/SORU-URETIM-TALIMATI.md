@@ -10,6 +10,33 @@
 > §8 başlığı **"Görsel — isteğe bağlı değil, soru başına karar"** ise güncel.
 > Bu satırlar yoksa eski sürümdesin (2 dosyalık ilk paket 480 satırdı, bu sürüm 610+).
 
+> ## v72 DURUM — 17 Kasım 2026 (önce bunu oku)
+>
+> **Kullanıcı:** *"Soru üretimini başka ajan yapacak. Sen edebiyat için soru mu
+> hazırladın? Kendin hangi derslerden soru ürettin, onları sil."*
+>
+> Uygulama ajanının kendi yazdığı **20 havuz / 200 soru** silindi
+> (`kaynak_dosya: "elle yazıldı (v35.2/v35.3)"` damgalı olanlar).
+> Havuz sayısı **172 → 152**, soru **1.956 → 1.756**.
+>
+> **Havuzu boş kalan 20 konu** (öncelikli iş emri — bunlar için havuz YOK):
+>
+> | Ders | Konu |
+> |---|---|
+> | Biyoloji | 1.8 Besinlerin Solunuma Katılma Yolları · 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler · 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar |
+> | Coğrafya | 4.2 Yerleşmelerin Fonksiyonları · 5.2 Ekonomik Sektörler ve Gelişmişlik · 5.3 Türkiye Ekonomisinin Sektörel Dağılımı · 6.2 Afetlere Dirençli Yaşam Alanları · 6.3 Afetlerden Korunma · 6.4 Afet Bilinci · 7.1 Türk Kültürünün Mekânsal Özellikleri |
+> | Din Kültürü | 2.3 Hac ve Zekât · 2.4 Kur'an'dan Mesajlar (Ünite 2) · 3.4 Kur'an'dan Mesajlar (Ünite 3) |
+> | Kimya | 2.1.6 Çözünürlüğe Etki Eden Faktörler · 2.1.7 Çözeltilerin Sınıflandırılması · 2.1.8 Koligatif Özellikler |
+> | Tarih | 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat · 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği |
+> | **TDE** | **Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)** · **Paragraf** |
+>
+> TDE'nin kalan 28 konusunun havuzu **kullanıcının kendi zip'lerinden** gelir;
+> bunlar silinmedi. Kullanıcı "sadece edebiyat kaldı" dediyse öncelik **TDE'nin
+> 2 konusu**dur (Şiirde Ahenk, Paragraf).
+>
+> Ölçüm notu: aşağıdaki "172 havuz / 1.956 soru" satırları **v72 öncesi**
+> ölçümdür; güncel sayı **152 havuz / 1.756 soru**dur.
+
 > Bu **tek** talimat dosyasıdır: yöntem, kurallar, JSON şeması, dal/PR akışı,
 > kabul testleri — hepsi burada. Kazanım verisi ayrı dosyada:
 > **`docs/uretim/TUM-KAZANIMLAR-10SINIF.md`**

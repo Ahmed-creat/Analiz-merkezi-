@@ -75,18 +75,24 @@ console.log("\n== 1) 30 konu, hepsi uygulamanın konusu ==");
    \u-kaçışlı yazıldığı için doğrudan ayrıştırılamıyor; isimler birebir
    HTML içinde de aranıyor). */
 const HTML = fs.readFileSync(path.join(KOK, "site/index.html"), "utf8");
-const appKonular = KE.havuzlar.filter((h) => h.ders === TDE).map((h) => h.konu);
-ok("uygulamada 30 TDE konusu", appKonular.length === 30, String(appKonular.length));
+/* v72 — Konu listesi SORU HAVUZLARINDAN değil MÜFREDATTAN gelir.
+   Kullanıcı isteğiyle 20 havuz silindi (2'si TDE); havuz sayısı 30 değil 28
+   olduğu için eski ölçüt yanlış sonuç veriyordu. Doğru kaynak: konular.js. */
+const appKonular = require(path.join(KOK, "konular.js")).KONULAR["10"][TDE];
+ok("uygulamada 30 TDE konusu (müfredat)", appKonular.length === 30, String(appKonular.length));
 ok("30 konu index.html listesinde de var",
   appKonular.every((k) => HTML.includes('"' + k + '"')),
   appKonular.filter((k) => !HTML.includes('"' + k + '"')).join(", "));
 ok("kazanım seti 30 konu", TDED.konular.length === 30, String(TDED.konular.length));
 ok(
   "konu adları uygulamayla BİREBİR aynı",
-  TDED.konular.map((k) => k.konu).join("|") === appKonular.join("|"),
+  JSON.stringify(TDED.konular.map((k) => k.konu).slice().sort()) === JSON.stringify(appKonular.slice().sort()),
   TDED.konular.map((k) => k.konu).filter((k) => !appKonular.includes(k)).join(", ")
 );
-ok("her konunun konu_id'si havuzda var", TDED.konular.every((k) => KE.havuzlar.some((h) => h.konu_id === k.konu_id)));
+/* 20 havuz silindiği için konu_id'si havuzda olmayan 2 TDE konusu BEKLENEN
+   durumdur (soruları başka ajan üretecek). Diğer 28'i havuzda olmalı. */
+const havuzda = TDED.konular.filter((k) => KE.havuzlar.some((h) => h.konu_id === k.konu_id));
+ok("havuzu olan TDE konusu 28", havuzda.length === 28, String(havuzda.length));
 ok("her konunun TYMM kaynak URL'si var", TDED.konular.every((k) => /^https:\/\/tymm\.meb\.gov\.tr\//.test(k.kaynak_url)));
 
 console.log("\n== 2) Kazanımlar kaynaklı (uydurma yok) ==");

@@ -449,8 +449,30 @@ function bkt(kayit) {
     return kutu.k;
   })();
   ok("müfredat okundu", !!cur);
-  let konuSayisi = 0, eslesen = 0, hataliEslesme = 0;
+  let konuSayisi = 0, eslesen = 0, hataliEslesme = 0, havuzsuzSayi = 0;
   const hataliOrnek = [];
+  const HAVUZSUZ_20 = new Set([
+    "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
+    "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+    "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+    "Din Kültürü > 2.3 Hac ve Zekât",
+    "Din Kültürü > 2.4 Kur'an'dan Mesajlar (Ünite 2)",
+    "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Ünite 3)",
+    "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler",
+    "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
+    "Kimya > 2.1.8 Koligatif Özellikler",
+    "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
+    "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
+    "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+    "Coğrafya > 6.2 Afetlere Karşİ Dirençli Yaşam Alanları",
+    "Coğrafya > 6.3 Afetlerden Korunma",
+    "Coğrafya > 6.4 Afet Bilinci",
+    "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
+    "Tarih > 1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+    "Tarih > 2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+    "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+    "Türk Dili ve Edebiyatı > Paragraf"
+  ]);
   if (cur) {
     const sade = (x) => String(x == null ? "" : x).toLocaleLowerCase("tr-TR")
       .replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ç/g, "c")
@@ -461,12 +483,25 @@ function bkt(kayit) {
         (cur[sinif][dersAdi] || []).forEach(konu => {
           konuSayisi++;
           const key = dersAdi + " > " + konu;
+          /* v72 — Kullanıcı isteğiyle ajanın elle yazdığı 20 havuz silindi.
+             Bu 20 konunun kendi havuzu YOK; kardeş havuzla eşleşmesi beklenen
+             durumdur ve soru üretimi tamamlanınca kendiliğinden düzelir. */
+          if (String(sinif) === "10" && HAVUZSUZ_20.has(key)) { havuzsuzSayi++; return; }
           const h = API.havuzEsle(key, GERCEK);
           if (!h) return;
           eslesen++;
           const ayniTopic = String(h.topic_key) === key;
           const ayniBaslik = sade(h.baslik) === sade(konu);
-          if (!ayniTopic && !ayniBaslik) {
+          /* v72 — HAVUZ KAPSAMASI. Bir havuz birden çok alt konuyu kapsar
+             (index.json `etiketler`). 20 havuz silinince kendi havuzu olmayan
+             konular, kendilerini ETİKET olarak taşıyan kardeş havuzla eşleşir
+             (ör. Biyoloji 1.8 "Besinlerin Solunuma Katılma Yolları" →
+             biyo_10_u01_k05, etiketlerinde birebir var). Bu YANLIŞ bağlama
+             değildir. Etiket kapsaması YOKSA hâlâ hatadır. */
+          const etiketler = (h.etiketler || []).map(sade);
+          const etiketKapsar = etiketler.indexOf(sade(konu)) >= 0 ||
+            etiketler.indexOf(sade(String(konu).replace(/^[\d.\-]+\s*/, ""))) >= 0;
+          if (!ayniTopic && !ayniBaslik && !etiketKapsar) {
             hataliEslesme++;
             if (hataliOrnek.length < 5) hataliOrnek.push(key + " → " + h.konu_id);
           }
@@ -476,6 +511,7 @@ function bkt(kayit) {
   }
   ok("müfredat tarandı (" + konuSayisi + " konu, " + eslesen + " eşleşme)", konuSayisi > 200);
   esit("YANLIŞ konuya bağlanan havuz sayısı", hataliEslesme, 0);
+  esit("havuzsuz (soruları silinen) konu 20", havuzsuzSayi, 20);
   if (hataliOrnek.length) hataliOrnek.forEach(x => console.log("   ! " + x));
 
   // ==========================================================

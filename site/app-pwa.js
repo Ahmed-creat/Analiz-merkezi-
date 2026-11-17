@@ -1,4 +1,4 @@
-const PWA_SURUM = "v71-sinif-arsiv";
+const PWA_SURUM = "v72-tema-tus-iliski-yok";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)

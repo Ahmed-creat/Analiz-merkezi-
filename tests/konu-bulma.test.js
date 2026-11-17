@@ -34,7 +34,18 @@ const HAVUZLAR = MANIFEST.havuzlar || [];
 
 // ---------- 1) Manifest: baslik alanı ----------
 console.log("\n== 1) Havuz manifesti ==");
-esit("havuz sayısı 172", HAVUZLAR.length, 172);
+// v72 — kullanıcı: "Kendin hangi derslerden soru ürettin onları sil."
+// Ajanın elle yazdığı 20 havuz (v35.2/v35.3 damgalı) silindi.
+// 172 - 20 = 152. Kalan havuzların tamamı kullanıcının zip'lerinden gelir.
+esit("havuz sayısı 152", HAVUZLAR.length, 152);
+const ELLE_YAZILAN = ["biyo_10_u01_k08","biyo_10_u02_k05","biyo_10_u02_k06","cogr_10_u04_k02",
+  "cogr_10_u05_k02","cogr_10_u05_k03","cogr_10_u06_k02","cogr_10_u06_k03","cogr_10_u06_k04",
+  "cogr_10_u07_k01","din_10_u02_k03","din_10_u02_k04","din_10_u03_k04","edebiyat_10_u03_k06",
+  "edebiyat_10_u04_k06","kimya_10_u02_k06","kimya_10_u02_k07","kimya_10_u02_k08",
+  "tarih_10_u01_k04","tarih_10_u02_k05"];
+ok("elle yazılmış havuz kalmadı", HAVUZLAR.every(h => ELLE_YAZILAN.indexOf(h.konu_id) < 0),
+  HAVUZLAR.filter(h => ELLE_YAZILAN.indexOf(h.konu_id) >= 0).map(h => h.konu_id).join(","));
+ok("havuzların kaynağı kullanıcı zip'i", HAVUZLAR.every(h => /json\.zip$/.test(String(h.kaynak_dosya || h.kaynak || "json.zip"))));
 ok("her havuzda baslik var", HAVUZLAR.every(h => h.baslik && String(h.baslik).trim()), HAVUZLAR.filter(h => !h.baslik).map(h => h.konu_id).slice(0, 5).join(","));
 ok("her havuzda baslik dolu", HAVUZLAR.every(h => String(h.baslik || "").trim().length > 0), HAVUZLAR.filter(h => !String(h.baslik || "").trim()).map(h => h.konu_id).slice(0,3).join(","));
 ok("Kimya havuzunda baslik dolu", !!HB.bul("Kimya > 1.1.3 Mol Kavramı", HAVUZLAR));
@@ -63,8 +74,10 @@ for (const ders of Object.keys(KONULAR["10"])) {
   }
 }
 esit("10. sınıf konu sayısı 180", konuSayisi, 180);
-esit("her konuda Kısa Kontrol (havuz) var: 180/180", kapsanmayan.length, 0);
-ok("kapsanmayan konu listesi boş", kapsanmayan.length === 0, kapsanmayan.slice(0, 3).join(" | "));
+// Silinen 20 havuz bu 20 konuya aitti → artık Kısa Kontrol yok.
+// Başka ajan soru üretim talimatıyla bunları dolduracak.
+esit("havuzsuz konu sayısı 20 (silinen havuzlar)", kapsanmayan.length, 20);
+ok("kapsanan konu 160/180", konuSayisi - kapsanmayan.length === 160, String(konuSayisi - kapsanmayan.length));
 esit("etiket (alt beceri) kademesi çalışıyor",
   (HB.bul("Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi", HAVUZLAR) || {}).konu_id,
   "biyo_10_u02_k04");
@@ -106,9 +119,14 @@ ORNEKLER.forEach(([ders, kazanim]) => {
   if (!kural) return;
   const h = HB.bul(ders + " > " + kural.konu, HAVUZLAR);
   if (h) bulunan++;
+  // "Şiirde Ahenk" havuzu elle yazılmıştı ve silindi → bu örnek havuzsuz kalır.
+  if (kural.konu.indexOf("Şiirde Ahenk") === 0) {
+    ok("elle yazılan havuz silindi: " + kural.konu.slice(0, 30), !h, ders + " > " + kural.konu);
+    return;
+  }
   ok("havuz bulundu: " + kural.konu.slice(0, 30), !!h, ders + " > " + kural.konu);
 });
-ok("örneklerin çoğu havuza bağlandı", bulunan >= ORNEKLER.length - 1, bulunan + "/" + ORNEKLER.length);
+ok("örneklerin çoğu havuza bağlandı", bulunan >= ORNEKLER.length - 2, bulunan + "/" + ORNEKLER.length);
 
 // ---------- 5) app-pwa bağlantısı ----------
 console.log("\n== 5) Uygulama bağlantısı ==");

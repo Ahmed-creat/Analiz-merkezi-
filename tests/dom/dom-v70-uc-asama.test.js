@@ -167,8 +167,14 @@ ok("okz-tde-veri.js birebir üretilmiş", modulUret(TDED) === oku("site/okz-tde-
   "scripts/tde-icerik-uret.js yeniden çalıştırılmalı");
 ok("ilişki raporu (docs) birebir üretilmiş", raporUret(TDED) === oku("docs/uretim/TDE-MUFREDAT-ILISKILERI.md"),
   "scripts/tde-icerik-uret.js yeniden çalıştırılmalı");
-ok("Bilgi Bankası ilişkili konuları gösteriyor",
-  /İlişkili konular/.test(HTML) && /OKZTDE\.iliski\(p\.topic\)/.test(HTML));
+/* v72 — KULLANICI: "İlişkili konu kartını kaldır."
+   Kart artık ÇİZİLMİYOR. Veri ve modül yerinde kalır (Okulizyon eşleştirmesi
+   aynı dosyaları kullanıyor); yalnız konu detayındaki kart kaldırıldı. */
+ok("Bilgi Bankası ilişkili konular kartı KALDIRILDI",
+  !/OKZTDE\.iliski\(p\.topic\)/.test(HTML) && /İlişkili konular" kartı KALDIRILDI/.test(HTML));
+ok("ilişki verisi silinmedi (30 konu, 108 ilişki)",
+  (TDED.konular || []).length === 30 &&
+  (TDED.konular || []).reduce((a, k) => a + (k.iliskili_konular || []).length, 0) === 108);
 ok("index.html modülleri yüklüyor",
   HTML.indexOf('<script src="okz-tde-veri.js"></script>') > 0 && HTML.indexOf('<script src="okz-tde.js"></script>') > 0);
 ok("service worker modülleri önbelleğe alıyor",
@@ -177,8 +183,11 @@ ok("SW sürümü PWA_SURUM ile aynı", (function () {
   const m = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1];
   return !!m && SW.indexOf("analiz-merkezi-v-20261031-" + m) > 0;
 })());
+/* v72 — havuz sayısı 30 değil 28 (2 Elle yazılmış havuz silindi).
+   Doğru kaynak: müfredat (konular.js). */
 ok("uygulama konu listesiyle aynı 30 konu",
-  VERI.konular.map((k) => k.konu).join("|") === KE.havuzlar.filter((h) => h.ders === TDE).map((h) => h.konu).join("|"));
+  JSON.stringify(VERI.konular.map((k) => k.konu).slice().sort()) ===
+  JSON.stringify(require(path.join(KOK, "konular.js")).KONULAR["10"][TDE].slice().sort()));
 
 console.log("\n" + "─".repeat(64));
 if (hata.length) {

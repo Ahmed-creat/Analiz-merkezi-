@@ -289,13 +289,36 @@ Bu durumda **veri kırpılmaz**; çelişki kök düzeyindeki `_tutarsizliklar`
 dizisine ve sınavın `uyarilar[]` alanına yazılır. Test, beyanlı sınavlarda
 aritmetik toleransını gevşetir — beyansız bir sapma **testi düşürür**.
 
+### GENEL satır ⇔ ders dökümü çelişkisi (v2 kuralı)
+
+Belgenin GENEL satırı ile ders dökümü aynı sınavı farklı gösteriyorsa
+**GENEL satır esastır** (kullanıcı talimatı, 17 Kas 2026: *"genel satırı baz al
+ve jsonu ona göre hazırla"*).
+
+Uygulama yolu:
+
+1. Genel satırın D/Y/B ve neti alınır.
+2. Ders dökümü ile genel satır arasındaki fark `Δd + Δy + Δb = 0` olacak şekilde
+   hesaplanır; net farkı **0** olmalıdır (`Δd − Δy/4 = 0`). Değilse veri yazılmaz,
+   kullanıcıya sorulur.
+3. Fark, **en çok boşu (B) olan ders satırına** uygulanır — okuma sapması en çok
+   orada birikir. Dersin toplam soru sayısı ve neti değişmez.
+4. `kazanim_farki[ders].baslik` yeni D/Y/B ile güncellenir; `liste` (belgede yazılı
+   kazanımlar) **aynen kalır** — kayıt uydurulmaz.
+5. Sınavın `uyarilar[]` alanına ve `_tutarsizliklar` kaydına `cozum` bloğu yazılır:
+   `{esas:"genel", genel, ders_toplami_once, uygulanan_ders, once, sonra, net_degisti:false}`.
+
+Uygulanmış hâli: `pdf9-02` (82/14/24 · Matematik 8/2/20 → 9/6/15) ve
+`pdf9-06` (73/22/25 · Matematik 13/5/12 → 12/1/17). İkisinde de sınav neti ve
+toplam soru sayısı değişmedi.
+
 ---
 
 ## 5. Kontrol
 
 ```bash
 node tests/deneme-ice-aktarma.test.js     # 564 doğrulama
-node tests/deneme-import-butonu.test.js   # 26 doğrulama
+node tests/deneme-import-butonu.test.js   # 35 doğrulama
 # veya ikisi birden:
 npm run -s test:deneme
 ```

@@ -204,6 +204,16 @@ function temaTerimleri(konu_id, ayirt) {
   return { anahtar_kavramlar: anahtar, konuya_ait: ilgili };
 }
 
+/* Havuzu silinmiş konuların ADI (havuz dosyasındaki topic_key'den alındı). */
+const AD_ACIL = {
+  edebiyat_10_u03_k06: "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+  edebiyat_10_u04_k06: "Paragraf"
+};
+/* Müfredat adı eşlemesi: konu_id → 10. sınıf TDE konu adı (konular.js).
+   Sıra birebir olmadığı için ada göre değil, konu_id sırasıyla eşlenen
+   SABİT tablo kullanılır; tablo yoksa boş kalır. */
+const MUFREDAT_KONU = {};
+
 function uret() {
   const h = JSON.parse(fs.readFileSync(path.join(KOK, "site/content/konu_esleme.json"), "utf8"));
   const havuz = {};
@@ -213,7 +223,11 @@ function uret() {
     const bilgi = KONU[konu_id];
     const tema = ICERIK.temalar.find((x) => x.no === temaNo(konu_id));
     const hav = havuz[konu_id];
-    const konu = (hav && hav.konu) || konu_id;
+    /* v72 — SORU HAVUZU SİLİNMİŞ OLABİLİR. Kullanıcı isteğiyle ajanın elle
+       yazdığı 20 havuz kaldırıldı (2'si TDE). Havuz yoksa konu adı konu_id'ye
+       düşüp VERİYİ BOZUYORDU. Ad artık konular.js müfredat listesinden
+       (10. sınıf TDE) eşlenir; bulunamazsa AD_ACIL listesine bakılır. */
+    const konu = (hav && hav.konu) || AD_ACIL[konu_id] || (MUFREDAT_KONU[konu_id]) || konu_id;
     const { anahtar_kavramlar, konuya_ait } = temaTerimleri(konu_id, bilgi.ayirt);
     const kz = kazanimlar(konu_id, konu, bilgi.eksen);
     return {

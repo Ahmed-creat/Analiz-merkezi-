@@ -43,9 +43,13 @@ document.documentElement.setAttribute("data-theme",t);})();
        · yıkıcı eylem (sil, sıfırla)                              → KIRMIZI
      Mavi yalnız bilgi/vurgu (ikon, rozet, bağlantı); eylem yüzeyi ASLA mavi
      ya da siyah değil. Beyaz yazı için koyu yeşil (4,6:1 AA). */
-  --action-bg: linear-gradient(135deg, #047857 0%, #059669 100%);
+  /* v72 — KULLANICI: "Tuşların rengi uygulamanın temasına uygun değil."
+     Tema markası Royal Blue (--brand-gradient #2563EB→#3B82F6).
+     Eylem tuşu artık tema rengiyle aynı; yeşil yalnız "doğru/başarı"
+     anlamında (btn-success) kalıyor. */
+  --action-bg: var(--brand-gradient);
   --action-fg: #FFFFFF;
-  --action-shadow: 0 4px 14px -4px rgba(4,120,87,0.45);
+  --action-shadow: 0 4px 14px -4px rgba(37,99,235,0.42);
   /* Semantik (tema.pdf: renk + pastel zemin çiftleri) */
   --semantic-success: #10B981; --semantic-success-bg: #ECFDF5;
   --semantic-error:   #EF4444;   --semantic-error-bg:   #FEF2F2;
@@ -83,9 +87,9 @@ document.documentElement.setAttribute("data-theme",t);})();
   --brand-blue: #3B82F6;           /* okunabilir mavi vurgu */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
   /* v62 — koyu temada eylem yüzeyi Geist yeşili; yazı koyu (yüksek kontrast) */
-  --action-bg: linear-gradient(135deg, #0CCA93 0%, #10E0A4 100%);
-  --action-fg: #04231C;
-  --action-shadow: 0 4px 14px -4px rgba(12,202,147,0.35);
+  --action-bg: var(--brand-gradient);
+  --action-fg: #FFFFFF;
+  --action-shadow: 0 4px 14px -4px rgba(37,99,235,0.45);
   --semantic-success: #0CCA93; --semantic-success-bg: #04231C;   /* Geist yeşili */
   --semantic-error:   #F04452;   --semantic-error-bg:   #2A0D10;
   --semantic-warning: #F5A623;   --semantic-warning-bg: #2A1D04;
@@ -111,9 +115,9 @@ document.documentElement.setAttribute("data-theme",t);})();
   --brand-blue: #3B82F6;           /* okunabilir mavi vurgu */
   --brand-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
   /* v62 — koyu temada eylem yüzeyi Geist yeşili; yazı koyu (yüksek kontrast) */
-  --action-bg: linear-gradient(135deg, #0CCA93 0%, #10E0A4 100%);
-  --action-fg: #04231C;
-  --action-shadow: 0 4px 14px -4px rgba(12,202,147,0.35);
+  --action-bg: var(--brand-gradient);
+  --action-fg: #FFFFFF;
+  --action-shadow: 0 4px 14px -4px rgba(37,99,235,0.45);
   --semantic-success: #0CCA93; --semantic-success-bg: #04231C;   /* Geist yeşili */
   --semantic-error:   #F04452;   --semantic-error-bg:   #2A0D10;
   --semantic-warning: #F5A623;   --semantic-warning-bg: #2A1D04;
@@ -5579,31 +5583,9 @@ function renderKnowledge(container) {
       '<h3 style="font-size:18px;font-weight:700;margin-top:6px;">' + esc(p.topic) + "</h3></div>" +
       '<span class="badge" style="background:' + diff.color + '22;color:' + diff.color + ';">Soru önerisi: ' + diff.level + (diff.rate !== null ? " (başarı %" + diff.rate + ")" : "") + "</span></div></div>";
 
-    // v70 — MÜFREDAT İLİŞKİLERİ (site/okz-tde-veri.js)
-    // Ders notundan (10 Edebiyat, 149 s.) çıkarılan "bu konu neyle ilişkili"
-    // haritası. Amaç: öğrenci konuyu tek başına değil ağıyla görsün.
-    if (window.OKZTDE && typeof window.OKZTDE.iliski === "function") {
-      const iliskiler = window.OKZTDE.iliski(p.topic) || [];
-      if (iliskiler.length) {
-        const TUR = {
-          "ayni-donem": "Aynı dönem", "devam": "Devamı", "koken": "Kökü",
-          "onkosul": "Ön koşul", "karistirilir": "Karıştırılır", "karsit": "Karşıtı",
-          "ayni-gelenek": "Aynı gelenek", "ayni-grup": "Aynı grup", "icerik": "İçerik bağı",
-          "donem": "Dönem", "ayni-beceri": "Aynı beceri", "ilgili": "İlgili"
-        };
-        html += '<div class="bento-card" style="margin-bottom:16px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">' +
-          icon("git-branch", 16, "vertical-align:-3px;margin-right:6px;color:var(--brand-blue);") + " İlişkili konular</h3>" +
-          '<p class="text-xs text-muted" style="margin:0 0 10px;">Ders notundaki müfredat bağı: aynı konuyu başka hangi başlıkla birlikte okumalısın?</p>' +
-          '<div style="display:flex;flex-direction:column;gap:6px;">';
-        iliskiler.forEach(function (x) {
-          html += '<button class="tree-child" style="align-items:flex-start;text-align:left;flex-direction:column;gap:2px;" data-act="selectTopic" data-topic="' + attr(p.lesson + " > " + x.konu) + '">' +
-            '<span style="font-weight:600;">' + esc(x.konu) +
-            ' <span class="badge" style="font-size:10px;background:var(--memory-indigo-bg);color:var(--memory-indigo);">' + esc(TUR[x.tur] || x.tur) + "</span></span>" +
-            '<span class="text-xs text-muted" style="line-height:1.35;">' + esc(x.neden) + "</span></button>";
-        });
-        html += "</div></div>";
-      }
-    }
+    // v72 — "İlişkili konular" kartı KALDIRILDI.
+    // KULLANICI: "İlişkili konu kartını kaldır." Veri (tde_kazanim_10.json,
+    // okz-tde-veri.js) duruyor; yalnız konu detayındaki kart çizilmiyor.
 
     if (done) {
       const pct = getMemoryStrength(selectedTopicKey);

@@ -46,32 +46,25 @@ ok("geçmişe girilen değer = kabul edilen değer", /b\.history\.push\(\{ date:
 ok("giriş alanında max var", /max="' \+ \(b\.pages - b\.read\) \+ '"/.test(HTML));
 ok("kitap eklerken tam sayı sınırı", /Number\.isInteger\(pages\)/.test(HTML) && /pages > 10000/.test(HTML));
 
-console.log("\n== 3) Önemli tuşlar: mavi ve siyah DEĞİL, duruma göre yeşil/kırmızı ==");
-
-/* Tema bloklarını ayır: her --action-bg tanımı ayrı değerlendirilir. */
+console.log("\n== 3) Eylem tuşları TEMA renginde (v72) ==");
+/* v72 — KULLANICI: "Tuşların rengi uygulamanın temasına uygun değil."
+   Önceki kural (yeşil) kullanıcı tarafından geri alındı: uygulamanın
+   markası Royal Blue; eylem tuşu tema gradyanını kullanır.
+   Yeşil/kırmızı yalnız ANLAM taşıyan yerlerde (btn-success / btn-danger). */
 const actionBg = [...HTML.matchAll(/--action-bg:\s*([^;]+);/g)].map(m => m[1].trim());
 ok("eylem yüzeyi tanımlı", actionBg.length >= 2, actionBg.length + " tanım");
+ok("eylem yüzeyi tema gradyanı (var(--brand-gradient))",
+  actionBg.every(b => /var\(--brand-gradient\)/.test(b)), actionBg.join(" | "));
 
 const HEX = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
-const yesilMi = (hex) => { const [r, g, b] = HEX(hex); return g > 90 && g > r + 30 && g > b + 10; };
 const siyahMi = (hex) => { const [r, g, b] = HEX(hex); return r < 70 && g < 70 && b < 80; };
-const maviMi = (hex) => { const [r, g, b] = HEX(hex); return b > 140 && b > r + 40 && b > g + 20; };
 
-let hepsiYesil = true, siyahVar = false, maviVar = false;
-for (const bg of actionBg) {
-  const renkler = [...bg.matchAll(/#[0-9A-Fa-f]{6}/g)].map(m => m[0]);
-  if (!renkler.length) { hepsiYesil = false; continue; }
-  for (const r of renkler) {
-    if (!yesilMi(r)) hepsiYesil = false;
-    if (siyahMi(r)) siyahVar = true;
-    if (maviMi(r)) maviVar = true;
-  }
-}
-ok("eylem yüzeyi YEŞİL (açık + koyu tema)", hepsiYesil, actionBg.join(" | "));
-ok("eylem yüzeyi siyah DEĞİL", !siyahVar, actionBg.join(" | "));
-ok("eylem yüzeyi mavi DEĞİL", !maviVar, actionBg.join(" | "));
+// Marka gradyanı siyah olmamalı (eski v63 tuşu siyahtı).
+const brand = (HTML.match(/--brand-gradient:\s*([^;]+);/) || [])[1] || "";
+const brandRenkler = [...brand.matchAll(/#[0-9A-Fa-f]{6}/g)].map(m => m[0]);
+ok("marka gradyanı tanımlı", brandRenkler.length >= 2, brand);
+ok("marka rengi siyah değil", brandRenkler.every(r => !siyahMi(r)), brandRenkler.join(","));
 ok("btn-primary eylem rengini kullanıyor", /\.btn-primary \{ background: var\(--action-bg\)/.test(HTML));
-ok("btn-primary marka mavisini kullanmıyor", !/\.btn-primary \{ background: var\(--brand-gradient\)/.test(HTML));
 
 /* Yıkıcı eylemler KIRMIZI olmalı (durumuna göre yeşil ya da kırmızı). */
 const yikici = [...HTML.matchAll(/<button class="([^"]*)" data-act="confirmReset"/g)].map(m => m[1]);

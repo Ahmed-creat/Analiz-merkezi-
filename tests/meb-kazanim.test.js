@@ -60,7 +60,9 @@ ok("Biyoloji kaynağı MEB PDF", /mufredat\.meb\.gov\.tr/.test(RESMI.kaynaklar["
 // ---------- 2) Eşleme dosyası ----------
 console.log("\n== 2) Konu eşleme dosyası ==");
 const konular = ESL.konular || [];
-esit("havuz sayısı 172", konular.length, 172);
+// Müfredat ağacı 172 konu (konular.js) — havuzdan bağımsızdır.
+// Havuzlar 152: ajanın elle yazdığı 20 havuz kullanıcı isteğiyle silindi.
+esit("müfredat konusu 172", konular.length, 172);
 const kodKumesi = new Set(kodlar);
 const bozukKod = konular.flatMap(k => (k.kodlar || []).filter(kod => !kodKumesi.has(kod)).map(kod => k.konu_id + ":" + kod));
 ok("her eşlenen kod resmî tabloda var", bozukKod.length === 0, bozukKod.slice(0, 4).join(","));
@@ -68,8 +70,17 @@ ok("her eşlenen kod resmî tabloda var", bozukKod.length === 0, bozukKod.slice(
 const havuzDosyalari = fs.readdirSync(path.join(KOK, "site/content/soru_havuzlari"))
   .filter(a => a.endsWith(".json") && a !== "index.json");
 const konuIdKumesi = new Set(havuzDosyalari.map(a => a.replace(/\.json$/, "")));
-const bozukKonu = konular.filter(k => !konuIdKumesi.has(k.konu_id)).map(k => k.konu_id);
-ok("her konu_id gerçek bir havuz", bozukKonu.length === 0, bozukKonu.slice(0, 4).join(","));
+// 20 konunun havuzu silindi → havuzsuz kalması BEKLENEN durum.
+// Başka ajan soru üretim talimatıyla dolduracak.
+const HAVUZSUZ = new Set(["biyo_10_u01_k08","biyo_10_u02_k05","biyo_10_u02_k06","cogr_10_u04_k02",
+  "cogr_10_u05_k02","cogr_10_u05_k03","cogr_10_u06_k02","cogr_10_u06_k03","cogr_10_u06_k04",
+  "cogr_10_u07_k01","din_10_u02_k03","din_10_u02_k04","din_10_u03_k04","edebiyat_10_u03_k06",
+  "edebiyat_10_u04_k06","kimya_10_u02_k06","kimya_10_u02_k07","kimya_10_u02_k08",
+  "tarih_10_u01_k04","tarih_10_u02_k05"]);
+const bozukKonu = konular.filter(k => !konuIdKumesi.has(k.konu_id) && !HAVUZSUZ.has(k.konu_id)).map(k => k.konu_id);
+ok("her konu_id gerçek bir havuz (20 silinen hariç)", bozukKonu.length === 0, bozukKonu.slice(0, 4).join(","));
+esit("havuz dosyası 152", konuIdKumesi.size, 152);
+esit("havuzsuz konu 20", konular.filter(k => HAVUZSUZ.has(k.konu_id)).length, 20);
 
 const dersKarismasi = konular.flatMap(k => (k.kodlar || [])
   .filter(kod => !kod.startsWith({ "Biyoloji": "BİY", "Coğrafya": "COĞ", "Din Kültürü": "DKAB", "Felsefe": "FEL", "Fizik": "FİZ", "Kimya": "KİM", "Matematik": "MAT", "Tarih": "TAR", "Türk Dili ve Edebiyatı": "TDE" }[k.ders] || "@@"))
