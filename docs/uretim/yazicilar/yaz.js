@@ -104,6 +104,28 @@ function yaz(konu_id, kaynak, items) {
 }
 
 /* ============================================================
+   konuBasligiYaz — plan havuzuna Bilgi Bankası konu başlığı ekler.
+   ------------------------------------------------------------
+   Plan şemalı havuzun topic_key'i normalde kazanım metninden türer:
+     "Din Kültürü > 1.3 İsra suresinin 36 ve Mülk suresinin 23. ..."
+   Uygulama ise havuzu KONU BAŞLIĞIYLA arar. Kazanım metni ile konu
+   başlığı ayrı düştüğünde (ör. "1.3 Kur'an'dan Mesajlar") öğrenci
+   o konuda havuz bulamaz. Bu yardımcı, havuzun dosyasına konu
+   başlığını yazar; manifest üreticisi bu alanı esas alır.
+
+   Kullanım (üretici dosyanın sonunda):
+     konuBasligiYaz("din_10_t01_c03", "Din Kültürü > 1.3 Kur'an'dan Mesajlar (İsrâ 36, Mülk 23)");
+   ============================================================ */
+function konuBasligiYaz(konu_id, topic_key) {
+  const yol = path.join(HAVUZ_DIZIN, konu_id + ".json");
+  if (!fs.existsSync(yol)) throw new Error("konuBasligiYaz: havuz yok: " + konu_id);
+  const havuz = JSON.parse(fs.readFileSync(yol, "utf8"));
+  havuz.topic_key = String(topic_key);
+  fs.writeFileSync(yol, JSON.stringify(havuz, null, 2) + "\n", "utf8");
+  console.log(konu_id + " → konu başlığı: " + topic_key);
+}
+
+/* ============================================================
    yazKonu — PLAN DIŞI (konu ağacı) havuzu yazar.
    ------------------------------------------------------------
    Neden? Uygulamanın Bilgi Bankası müfredat ağacının konuları
@@ -188,4 +210,4 @@ function yazKonu(o) {
   return havuz;
 }
 
-module.exports = { yaz, yazKonu };
+module.exports = { yaz, yazKonu, konuBasligiYaz };

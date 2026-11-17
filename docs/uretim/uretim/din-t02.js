@@ -3,7 +3,7 @@
    Kaynak: MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025). */
 "use strict";
 
-const { yaz } = require("../yazicilar/yaz.js");
+const { yaz, konuBasligiYaz } = require("../yazicilar/yaz.js");
 
 const KAYNAK = "MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025)";
 
@@ -373,3 +373,6 @@ yaz("din_10_t02_c03", KAYNAK + ", s.69-72", [
     fc: ["Ayetlerden çıkarılan mesajın ifade ölçütü nedir?", "Ayetin içeriğine bağlı, açık ve kendi cümleleriyle özgün biçimde ifade edilmiş olmasıdır."]
   }
 ]);
+
+/* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
+konuBasligiYaz("din_10_t02_c03", "Din Kültürü > 2.3 Kur'an'dan Mesajlar (Haşr 22-24)");

@@ -1,9 +1,9 @@
 {
  "sinif": 10,
  "aciklama": "10. sınıf soru havuzu manifesti. scripts/havuz-index-uret.js üretir; elle düzenlenmez. Uygulama havuzu bu dosyadan bulur (site/bkt-engine.js).",
- "havuz_sayisi": 313,
- "soru_sayisi": 3423,
- "flashcard_sayisi": 3423,
+ "havuz_sayisi": 309,
+ "soru_sayisi": 3393,
+ "flashcard_sayisi": 3393,
  "kaynak_commit": "7183e93495823a2f72c3a7368133c3b6344495a1",
  "kaynak_arşiv_sayisi": 9,
  "uretim_plani": {
@@ -1240,7 +1240,7 @@
     "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
    ],
    "baslik": "İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 1.3 İsra suresinin 36 ve Mülk suresinin 23. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar (İsrâ 36, Mülk 23)",
    "kod": "DKAB.10.1.3",
    "uretim_durumu": "tam"
   },
@@ -1295,7 +1295,7 @@
     "Ayetlerde verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
    ],
    "baslik": "Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 2.3 Haşr suresinin 22-24. ayetlerindeki mesajları anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 2.3 Kur'an'dan Mesajlar (Haşr 22-24)",
    "kod": "DKAB.10.2.3",
    "uretim_durumu": "tam"
   },
@@ -1367,7 +1367,7 @@
     "Ayetlerde verilen mesajlarla ilgili yaptığı çıkarımları kendi cümleleriyle ifade eder."
    ],
    "baslik": "Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 3.4 Nahl suresinin 90, Nisa suresinin 58 ve Bakara suresinin 208. ayetlerinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Nahl 90, Nisâ 58, Bakara 208)",
    "kod": "DKAB.10.3.4",
    "uretim_durumu": "tam"
   },
@@ -1436,7 +1436,7 @@
     "Ayette verilen mesajlarla ilgili çıkarımlarını kendi cümleleriyle ifade eder."
    ],
    "baslik": "Rum suresinin 41. ayetinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 4.4 Rum suresinin 41. ayetinin mesajlarını anlamak için Kur’an-ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar (Rûm 41)",
    "kod": "DKAB.10.4.4",
    "uretim_durumu": "tam"
   },
@@ -1490,7 +1490,7 @@
     "Ayette verilen mesajlarla ilgili çıkarımları kendi cümleleriyle ifade eder."
    ],
    "baslik": "Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur’an’ı Kerim meallerine başvurabilme",
-   "topic_key": "Din Kültürü > 5.3 Hucurat suresinin 13. ayetinin mesajlarını anlamak için Kur’an’ı Kerim meallerine başvurabilme",
+   "topic_key": "Din Kültürü > 5.3 Kur'an'dan Mesajlar (Hucurât 13)",
    "kod": "DKAB.10.5.3",
    "uretim_durumu": "tam"
   },
@@ -1499,28 +1499,13 @@
    "ders": "Din Kültürü",
    "sinif": 10,
    "dosya": "din_10_u01_k01.json",
-   "soru_sayisi": 12,
-   "flashcard_sayisi": 12,
+   "soru_sayisi": 27,
+   "flashcard_sayisi": 27,
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "1.1 Kur'an-ı Kerim ve Özellikleri",
-   "topic_key": "Din Kültürü > 1.1 Kur'an-ı Kerim ve Özellikleri",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "din_10_u01_k02",
-   "ders": "Din Kültürü",
-   "sinif": 10,
-   "dosya": "din_10_u01_k02.json",
-   "soru_sayisi": 15,
-   "flashcard_sayisi": 15,
-   "etiketler": [
-    "Genel konu becerisi"
-   ],
-   "baslik": "1.2 Kur'an'ın Anlaşılması ve Yorumlanması",
-   "topic_key": "Din Kültürü > 1.2 Kur'an'ın Anlaşılması ve Yorumlanması",
+   "baslik": "1.1 İslam'da Bilgi ve Bilginin Kaynakları",
+   "topic_key": "Din Kültürü > 1.1 İslam'da Bilgi ve Bilginin Kaynakları",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1534,8 +1519,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "1.3 Kur'an'dan Mesajlar (Ünite 1)",
-   "topic_key": "Din Kültürü > 1.3 Kur'an'dan Mesajlar (Ünite 1)",
+   "baslik": "1.2 Allah-Âlem İlişkisi",
+   "topic_key": "Din Kültürü > 1.2 Allah-Âlem İlişkisi",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1549,8 +1534,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "2.1 İslam'ın İbadet Boyutu",
-   "topic_key": "Din Kültürü > 2.1 İslam'ın İbadet Boyutu",
+   "baslik": "2.1 Allah'ın Varlığının Delilleri",
+   "topic_key": "Din Kültürü > 2.1 Allah'ın Varlığının Delilleri",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1564,40 +1549,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "2.2 Namaz ve Oruç",
-   "topic_key": "Din Kültürü > 2.2 Namaz ve Oruç",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "din_10_u02_k03",
-   "ders": "Din Kültürü",
-   "sinif": 10,
-   "dosya": "din_10_u02_k03.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Hac",
-    "Zekât"
-   ],
-   "baslik": "2.3 Hac ve Zekât",
-   "topic_key": "Din Kültürü > 2.3 Hac ve Zekât",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "din_10_u02_k04",
-   "ders": "Din Kültürü",
-   "sinif": 10,
-   "dosya": "din_10_u02_k04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Kur'an'ın Ana Konuları",
-    "İbadet ve Ahlak Mesajları"
-   ],
-   "baslik": "2.4 Kur'an'dan Mesajlar (Ünite 2)",
-   "topic_key": "Din Kültürü > 2.4 Kur'an'dan Mesajlar (Ünite 2)",
+   "baslik": "2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
+   "topic_key": "Din Kültürü > 2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1611,8 +1564,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "3.1 İslam'ın Ahlak Boyutu",
-   "topic_key": "Din Kültürü > 3.1 İslam'ın Ahlak Boyutu",
+   "baslik": "3.1 İslam'ın Tevhit İlkesi",
+   "topic_key": "Din Kültürü > 3.1 İslam'ın Tevhit İlkesi",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1626,8 +1579,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "3.2 Ahlaki Davranışlar",
-   "topic_key": "Din Kültürü > 3.2 Ahlaki Davranışlar",
+   "baslik": "3.2 İslam'da Adalet ve Eşitlik",
+   "topic_key": "Din Kültürü > 3.2 İslam'da Adalet ve Eşitlik",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1641,24 +1594,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "3.3 Toplumsal Ahlak",
-   "topic_key": "Din Kültürü > 3.3 Toplumsal Ahlak",
-   "kod": "",
-   "uretim_durumu": "eski-sema"
-  },
-  {
-   "konu_id": "din_10_u03_k04",
-   "ders": "Din Kültürü",
-   "sinif": 10,
-   "dosya": "din_10_u03_k04.json",
-   "soru_sayisi": 10,
-   "flashcard_sayisi": 10,
-   "etiketler": [
-    "Ahlaki İlkeler",
-    "Toplumsal Ahlak"
-   ],
-   "baslik": "3.4 Kur'an'dan Mesajlar (Ünite 3)",
-   "topic_key": "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Ünite 3)",
+   "baslik": "3.3 İslam ve Barış",
+   "topic_key": "Din Kültürü > 3.3 İslam ve Barış",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1672,8 +1609,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "4.1 Hz. Muhammed'in Hayatı",
-   "topic_key": "Din Kültürü > 4.1 Hz. Muhammed'in Hayatı",
+   "baslik": "4.1 İnsan, Çevre ve Ahlak",
+   "topic_key": "Din Kültürü > 4.1 İnsan, Çevre ve Ahlak",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1687,8 +1624,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "4.2 Mekke Dönemi",
-   "topic_key": "Din Kültürü > 4.2 Mekke Dönemi",
+   "baslik": "4.2 Teknoloji ve Ahlak",
+   "topic_key": "Din Kültürü > 4.2 Teknoloji ve Ahlak",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1702,8 +1639,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "4.3 Medine Dönemi",
-   "topic_key": "Din Kültürü > 4.3 Medine Dönemi",
+   "baslik": "4.3 Çevre ve Teknoloji Etkileşimi",
+   "topic_key": "Din Kültürü > 4.3 Çevre ve Teknoloji Etkileşimi",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1717,8 +1654,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "Dinî Yorum Farklılıklarının Nedenleri",
-   "topic_key": "Din Kültürü > Dinî Yorum Farklılıklarının Nedenleri",
+   "baslik": "5.1 Dinî Yorum Farklılıklarının Nedenleri",
+   "topic_key": "Din Kültürü > 5.1 Dinî Yorum Farklılıklarının Nedenleri",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },
@@ -1732,8 +1669,8 @@
    "etiketler": [
     "Genel konu becerisi"
    ],
-   "baslik": "4.4 Kur'an'dan Mesajlar (Ünite 4)",
-   "topic_key": "Din Kültürü > 4.4 Kur'an'dan Mesajlar (Ünite 4)",
+   "baslik": "5.2 İtikadi-Siyasi ve Fıkhi Yorumlar",
+   "topic_key": "Din Kültürü > 5.2 İtikadi-Siyasi ve Fıkhi Yorumlar",
    "kod": "",
    "uretim_durumu": "eski-sema"
   },

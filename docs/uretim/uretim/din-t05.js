@@ -4,7 +4,7 @@
    Kaynak: MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025). */
 "use strict";
 
-const { yaz } = require("../yazicilar/yaz.js");
+const { yaz, konuBasligiYaz } = require("../yazicilar/yaz.js");
 
 const KAYNAK = "MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025)";
 
@@ -389,3 +389,6 @@ yaz("din_10_t05_c03", KAYNAK + ", s.159-163", [
     fc: ["Ayetin başlık olarak özeti nedir?", "Farklılıklar tanışmak içindir; üstünlük takvadadır."]
   }
 ]);
+
+/* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
+konuBasligiYaz("din_10_t05_c03", "Din Kültürü > 5.3 Kur'an'dan Mesajlar (Hucurât 13)");

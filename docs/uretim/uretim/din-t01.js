@@ -4,7 +4,7 @@
    Sayfa numaraları basılı sayfadır (JSON sayfa = basılı sayfa). */
 "use strict";
 
-const { yaz } = require("../yazicilar/yaz.js");
+const { yaz, konuBasligiYaz } = require("../yazicilar/yaz.js");
 
 const KAYNAK = "MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025)";
 
@@ -369,3 +369,6 @@ yaz("din_10_t01_c03", KAYNAK + ", s.31-33", [
     fc: ["Şükrün tanımı nedir?", "Allah’ın verdiği nimetleri fark edip O’na yönelmek ve nimetleri yerinde kullanmaktır."]
   }
 ]);
+
+/* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
+konuBasligiYaz("din_10_t01_c03", "Din Kültürü > 1.3 Kur'an'dan Mesajlar (İsrâ 36, Mülk 23)");

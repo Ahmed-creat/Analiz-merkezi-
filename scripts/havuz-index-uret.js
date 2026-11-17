@@ -124,9 +124,11 @@ for (const dosya of dosyalar) {
     etiketler: altBeceriler.slice(0, 6).length
       ? altBeceriler.slice(0, 6)
       : (eski && eski.etiketler) || [],
-    baslik: (p ? p.kazanim : "") || (eski && eski.baslik) || altBeceriler[0] || "",
+    // Plan şemalı havuzun başlığı plandan; konu havuzunun başlığı kendi
+    // dosyasından (yoksa önceki manifest) gelir.
+    baslik: (p ? p.kazanim : "") || String(pool.baslik || (eski && eski.baslik) || altBeceriler[0] || ""),
     topic_key: p
-      ? topicKey(p.kod, p.ders, p.kazanim)
+      ? String(pool.topic_key || "") || topicKey(p.kod, p.ders, p.kazanim)
       // Havuz dosyası asıl kaynaktır; üretici düzeltmesi (ör. ağaçtaki
       // resmî başlık) manifestteki eski değeri de günceller.
       : String(pool.topic_key || (eski && eski.topic_key) || ""),

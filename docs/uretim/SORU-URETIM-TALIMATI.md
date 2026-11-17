@@ -546,8 +546,11 @@ node scripts/havuz-index-uret.js --plan
 # 3) Uygulama kuralları (bkt-engine validatePool ile aynı)
 npm run -s validate:pools
 
-# 3b) TÜM dersler, TÜM dosyalar (plan + eski şema, 313 dosya)
+# 3b) TÜM dersler, TÜM dosyalar (plan + eski şema)
 node docs/uretim/araclar/havuz-son-kontrol.js
+
+# 3c) Arşive taşınan havuzların üretilen indekslerdeki izlerini temizle
+node scripts/arsiv-kayit-temizle.js
 
 # 4) Testler
 node tests/question-pools.test.js

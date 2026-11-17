@@ -24,3 +24,5 @@ arsiv/soru_havuzlari/<ders>/<konu_id>.json
 | --- | --- | --- |
 | TDE | `edebiyat/edebiyat_10_u01_k01.json` … `u01_k05.json` | 2026-11-17'de ders notlarından yeni 10+10 soruyla değiştirildi (eski metin 2018 ünite şeması, `kaynak_dosya: "10. Sınıf edebiyat json.zip"`). |
 | TDE | `edebiyat/edebiyat_10_u04_k06.json` (Paragraf) | **Paragraf konusundan soru havuzu üretilmeyecek.** Uygulamada paragraf sorusu sorulamıyor; havuz kaldırıldı, dosya silinmedi. |
+| Din Kültürü | `din/din_10_u01_k02.json` | "Bilginin kaynakları" konusu, `din_10_u01_k01` ile aynı başlığa (1.1 İslam'da Bilgi ve Bilginin Kaynakları) düştü. 15 sorusu `din_10_u01_k01`'e taşındı (havuz 27 soru), dosya izlenebilirlik için burada (2026-11-17). |
+| Din Kültürü | `din/din_10_u02_k03.json` (Hac ve Zekât), `din_10_u02_k04.json` (Kur'an'ın ana konuları), `din_10_u03_k04.json` (Ahlakın temel kaynağı) | 2025-2026 MEB ders kitabının (TYMM) içindekilerinde karşılığı yok. Ağaç ders kitabına göre yenilenirken havuzlar yayımdan çıkarıldı, dosyalar silinmedi. |

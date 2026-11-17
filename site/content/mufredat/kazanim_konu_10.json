@@ -11,7 +11,7 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 172,
+  "konu": 167,
   "eslesen_konu": 122,
   "oneri_konu": 0,
   "eslesmeyen_konu": 50,
@@ -42,7 +42,7 @@
     "metin_kodlu": 17
    },
    "Din Kültürü": {
-    "konu": 16,
+    "konu": 12,
     "cikti": 17,
     "kesin": 0,
     "yapisal": 0,
@@ -108,7 +108,7 @@
     "metin_kodlu": 12
    },
    "Türk Dili ve Edebiyatı": {
-    "konu": 30,
+    "konu": 29,
     "cikti": 16,
     "kesin": 0,
     "yapisal": 0,
@@ -808,20 +808,6 @@
    "metin_kodlari": []
   },
   {
-   "konu_id": "din_10_u01_k02",
-   "ders": "Din Kültürü",
-   "konu": "1.2 Kur'an'ın Anlaşılması ve Yorumlanması",
-   "tema": 1,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "yapi-farkli",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "Havuz 2018 ünite yapısında (Kur'an, ibadet, ahlak, Hz. Muhammed, yorumlar); 2026 TYMM üniteleri farklı. Konu bazlı eşleme yapılmadı.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
    "konu_id": "din_10_u01_k03",
    "ders": "Din Kültürü",
    "konu": "1.3 Kur'an'dan Mesajlar (Ünite 1)",
@@ -864,34 +850,6 @@
    "metin_kodlari": []
   },
   {
-   "konu_id": "din_10_u02_k03",
-   "ders": "Din Kültürü",
-   "konu": "2.3 Hac ve Zekât",
-   "tema": 2,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "yapi-farkli",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "Havuz 2018 ünite yapısında (Kur'an, ibadet, ahlak, Hz. Muhammed, yorumlar); 2026 TYMM üniteleri farklı. Konu bazlı eşleme yapılmadı.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "din_10_u02_k04",
-   "ders": "Din Kültürü",
-   "konu": "2.4 Kur'an'dan Mesajlar (Ünite 2)",
-   "tema": 2,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "yapi-farkli",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "Havuz 2018 ünite yapısında (Kur'an, ibadet, ahlak, Hz. Muhammed, yorumlar); 2026 TYMM üniteleri farklı. Konu bazlı eşleme yapılmadı.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
    "konu_id": "din_10_u03_k01",
    "ders": "Din Kültürü",
    "konu": "3.1 İslam'ın Ahlak Boyutu",
@@ -923,20 +881,6 @@
    "konu_id": "din_10_u03_k03",
    "ders": "Din Kültürü",
    "konu": "3.3 Toplumsal Ahlak",
-   "tema": 3,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "yapi-farkli",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "Havuz 2018 ünite yapısında (Kur'an, ibadet, ahlak, Hz. Muhammed, yorumlar); 2026 TYMM üniteleri farklı. Konu bazlı eşleme yapılmadı.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "din_10_u03_k04",
-   "ders": "Din Kültürü",
-   "konu": "3.4 Kur'an'dan Mesajlar (Ünite 3)",
    "tema": 3,
    "kodlar": [],
    "guven": "yok",
@@ -1413,20 +1357,6 @@
    "konu_id": "edebiyat_10_u04_k05",
    "ders": "Türk Dili ve Edebiyatı",
    "konu": "Noktalama İşaretleri",
-   "tema": 4,
-   "kodlar": [],
-   "guven": "yok",
-   "yontem": "beceri-eksenli",
-   "skor": 0,
-   "uyari": "",
-   "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
-   "kazanim_metinleri": 0,
-   "metin_kodlari": []
-  },
-  {
-   "konu_id": "edebiyat_10_u04_k06",
-   "ders": "Türk Dili ve Edebiyatı",
-   "konu": "Paragraf",
    "tema": 4,
    "kodlar": [],
    "guven": "yok",

@@ -3,7 +3,7 @@
    Kaynak: MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025). */
 "use strict";
 
-const { yaz } = require("../yazicilar/yaz.js");
+const { yaz, konuBasligiYaz } = require("../yazicilar/yaz.js");
 
 const KAYNAK = "MEB Din Kültürü ve Ahlak Bilgisi 10 ders kitabı (2025)";
 
@@ -482,3 +482,6 @@ yaz("din_10_t03_c04", KAYNAK + ", s.102-107", [
     fc: ["Teslimiyetin tanımı nedir?", "Allah’ın emirlerine gönülden boyun eğip gereğince davranmaktır."]
   }
 ]);
+
+/* Uygulama bu havuzu konu başlığıyla arar (bkz. yaz.js · konuBasligiYaz). */
+konuBasligiYaz("din_10_t03_c04", "Din Kültürü > 3.4 Kur'an'dan Mesajlar (Nahl 90, Nisâ 58, Bakara 208)");

@@ -198,9 +198,12 @@ const yaz = (baslik, liste) => {
 yaz("HATALAR", hatalar);
 yaz("UYARILAR", uyarilar);
 
-if (!kapsamsiz.length) console.log("\nhavuzsuz ağaç konusu yok.");
+if (!kapsamsiz.length) console.log("\nher ağaç konusunun birebir başlıklı havuzu var.");
 else {
-  console.log("\nhavuzsuz ağaç konusu (" + kapsamsiz.length + ") — kabul edilen istisnalar: Paragraf");
+  console.log("\nBAŞLIK eşleşmesi olmayan ağaç konusu (" + kapsamsiz.length + ")");
+  console.log("  (not: plan şemalı havuzlar topic_key olarak kazanım cümlesi taşır;");
+  console.log("   uygulama bu havuzları normalize ederek bulur — içerik yok demek değildir.");
+  console.log("   Uygulama düzeyinde kapsam `npm run -s test:konubulma` ile doğrulanır.)");
   kapsamsiz.forEach(k => console.log("  · " + k));
 }
 
