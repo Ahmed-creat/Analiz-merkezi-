@@ -76,7 +76,7 @@ for (const ders of Object.keys(KONULAR["10"])) {
     if (!HB.bul(anahtar, HAVUZLAR)) kapsanmayan.push(anahtar);
   }
 }
-esit("10. sınıf konu sayısı 189", konuSayisi, 189);
+esit("10. sınıf konu sayısı 191", konuSayisi, 191);
 esit("her konuda Kısa Kontrol (havuz) var: " + (konuSayisi - HAVUZSUZ_KONULAR.length) + "/" + (konuSayisi - HAVUZSUZ_KONULAR.length), kapsanmayan.length, 0);
 ok("kapsanmayan konu listesi boş", kapsanmayan.length === 0, kapsanmayan.slice(0, 3).join(" | "));
 esit("plan havuzu konu başlığıyla eşleşiyor (2.7)",
@@ -96,7 +96,7 @@ const ORNEKLER = [
   ["Matematik", "Üçgenin bir kenarı ve o kenara ait yüksekliğindeki değişimin üçgenin alanındaki değişime etkisine dair varsayımlarda bulunur.",
     "1.3 Üçgende Alan"],
   ["Fizik", "Yatay doğrultuda sabit ivmeyle hareket eden cisimlerin hareketine ilişkin grafikleri ve matematiksel modeller arasındaki ilişkiyi kendi cümleleriyle yeniden ifade eder.",
-    "1.2 Bir Boyutta Sabit İvmeli Hareket"],
+    "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi"],
   ["Kimya", "Maddelerin miktarını ifade etmek için ölçülebilir (kütle, tanecik sayısı vb.) özellikleri belirler.",
     "1.1.3 Mol Kavramı"],
   ["Kimya", "Tepkime türlerinin (çökelme, indirgenme-yükseltgenme, asit-baz) oluşum sürecine ilişkin gözlemlenebilir göstergeleri (renk değişimi, çökelek oluşumu) tanımlar.",

@@ -1,7 +1,7 @@
 {
  "surum": "2026-10-28",
  "aciklama": "Okulizyon kazanım metinlerini uygulamanın konu başlıklarına eşlemek için arama indeksi. scripts/konu-esleme-uret.js üretir; elle düzenlenmez.",
- "havuz_sayisi": 152,
+ "havuz_sayisi": 154,
  "alt_beceri_sayisi": 258,
  "havuzlar": [
   {
@@ -277,6 +277,238 @@
    "metin": "4.4 Kur'an'dan Mesajlar (Ünite 4) · 4.4 Kur'an'dan Mesajlar (Ünite 4) · Genel konu becerisi"
   },
   {
+   "konu_id": "edebiyat_10_u01_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
+   "konu": "Koşuk",
+   "soru": 10,
+   "metin": "Koşuk · Koşuk · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Sav",
+   "konu": "Sav",
+   "soru": 10,
+   "metin": "Sav · Sav · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
+   "konu": "Türkü",
+   "soru": 10,
+   "metin": "Türkü · Türkü · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
+   "konu": "Koşma",
+   "soru": 11,
+   "metin": "Koşma · Koşma · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Masal",
+   "konu": "Masal",
+   "soru": 10,
+   "metin": "Masal · Masal · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)",
+   "konu": "İsimler (Adlar)",
+   "soru": 10,
+   "metin": "İsimler (Adlar) · İsimler (Adlar) · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k07",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları",
+   "konu": "İsim Tamlamaları",
+   "soru": 10,
+   "metin": "İsim Tamlamaları · İsim Tamlamaları · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k08",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)",
+   "konu": "Sıfatlar (Ön Adlar)",
+   "soru": 10,
+   "metin": "Sıfatlar (Ön Adlar) · Sıfatlar (Ön Adlar) · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u01_k09",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları",
+   "konu": "Sıfat Tamlamaları",
+   "soru": 10,
+   "metin": "Sıfat Tamlamaları · Sıfat Tamlamaları · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
+   "konu": "Gazel",
+   "soru": 10,
+   "metin": "Gazel · Gazel · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
+   "konu": "Kaside",
+   "soru": 10,
+   "metin": "Kaside · Kaside · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
+   "konu": "Mersiye",
+   "soru": 10,
+   "metin": "Mersiye · Mersiye · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
+   "konu": "Saf Şiir",
+   "soru": 10,
+   "metin": "Saf Şiir · Saf Şiir · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)",
+   "konu": "Zamir (Adıl)",
+   "soru": 10,
+   "metin": "Zamir (Adıl) · Zamir (Adıl) · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Edat (İlgeç)",
+   "konu": "Edat (İlgeç)",
+   "soru": 10,
+   "metin": "Edat (İlgeç) · Edat (İlgeç) · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k07",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Bağlaç",
+   "konu": "Bağlaç",
+   "soru": 10,
+   "metin": "Bağlaç · Bağlaç · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k08",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Ünlem",
+   "konu": "Ünlem",
+   "soru": 10,
+   "metin": "Ünlem · Ünlem · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u02_k09",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Anlamına Göre Cümleler",
+   "konu": "Anlamına Göre Cümleler",
+   "soru": 10,
+   "metin": "Anlamına Göre Cümleler · Anlamına Göre Cümleler · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Destan",
+   "konu": "Destan",
+   "soru": 10,
+   "metin": "Destan · Destan · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
+   "konu": "Mesnevi",
+   "soru": 10,
+   "metin": "Mesnevi · Mesnevi · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
+   "konu": "Halk Hikâyesi",
+   "soru": 10,
+   "metin": "Halk Hikâyesi · Halk Hikâyesi · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
+   "konu": "Fabl",
+   "soru": 10,
+   "metin": "Fabl · Fabl · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)",
+   "konu": "Zarflar (Belirteçler)",
+   "soru": 10,
+   "metin": "Zarflar (Belirteçler) · Zarflar (Belirteçler) · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u03_k06",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+   "soru": 10,
+   "metin": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans) · Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans) · Uyak ve Redif · Ölçü ve Ahenk Ögeleri"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k01",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
+   "konu": "Dede Korkut Hikâyeleri",
+   "soru": 11,
+   "metin": "Dede Korkut Hikâyeleri · Dede Korkut Hikâyeleri · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k02",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
+   "konu": "Tanzimat Dönemi Şiiri",
+   "soru": 12,
+   "metin": "Tanzimat Dönemi Şiiri · Tanzimat Dönemi Şiiri · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k03",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)",
+   "konu": "Fiiller (Eylemler)",
+   "soru": 16,
+   "metin": "Fiiller (Eylemler) · Fiiller (Eylemler) · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k04",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları",
+   "konu": "Yazım Kuralları",
+   "soru": 16,
+   "metin": "Yazım Kuralları · Yazım Kuralları · Genel konu becerisi"
+  },
+  {
+   "konu_id": "edebiyat_10_u04_k05",
+   "ders": "Türk Dili ve Edebiyatı",
+   "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri",
+   "konu": "Noktalama İşaretleri",
+   "soru": 16,
+   "metin": "Noktalama İşaretleri · Noktalama İşaretleri · Genel konu becerisi"
+  },
+  {
    "konu_id": "fel_10_u01_k01",
    "ders": "Felsefe",
    "topic_key": "Felsefe > 1.1 Felsefenin Anlamı",
@@ -469,28 +701,44 @@
    "metin": "1.1 Sabit Hızlı Hareket · 1.1 Sabit Hızlı Hareket · yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,"
   },
   {
-   "konu_id": "fizik_10_u01_k02",
+   "konu_id": "fizik_10_u01_k05",
    "ders": "Fizik",
-   "topic_key": "Fizik > 1.2 Bir Boyutta Sabit İvmeli Hareket",
-   "konu": "1.2 Bir Boyutta Sabit İvmeli Hareket",
-   "soru": 12,
-   "metin": "1.2 Bir Boyutta Sabit İvmeli Hareket · 1.2 Bir Boyutta Sabit İvmeli Hareket · A) İvme ve Hız Değişimi Arasındaki İlişki · B) Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi · A) İvme ve Hız Değişimi Arasındaki İlişki · B) Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi"
-  },
-  {
-   "konu_id": "fizik_10_u01_k03",
-   "ders": "Fizik",
-   "topic_key": "Fizik > 1.3 Serbest Düşme",
-   "konu": "1.3 Serbest Düşme",
+   "topic_key": "Fizik > 1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+   "konu": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
    "soru": 10,
-   "metin": "1.3 Serbest Düşme · 1.3 Serbest Düşme · A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme · B) Serbest Düşme Hareketi · A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme · B) Serbest Düşme Hareketi"
+   "metin": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki · A) İvme ve Hız Değişimi Arasındaki İlişki · 1.2.1 İvme ve Hız Değişimi Arasındaki İlişki"
   },
   {
-   "konu_id": "fizik_10_u01_k04",
+   "konu_id": "fizik_10_u01_k06",
+   "ders": "Fizik",
+   "topic_key": "Fizik > 1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "konu": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "soru": 10,
+   "metin": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi · B) Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi · 1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi"
+  },
+  {
+   "konu_id": "fizik_10_u01_k07",
+   "ders": "Fizik",
+   "topic_key": "Fizik > 1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+   "konu": "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+   "soru": 10,
+   "metin": "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme · A) Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme · 1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme"
+  },
+  {
+   "konu_id": "fizik_10_u01_k08",
+   "ders": "Fizik",
+   "topic_key": "Fizik > 1.3.2 Serbest Düşme Hareketi",
+   "konu": "1.3.2 Serbest Düşme Hareketi",
+   "soru": 10,
+   "metin": "1.3.2 Serbest Düşme Hareketi · B) Serbest Düşme Hareketi · 1.3.2 Serbest Düşme Hareketi"
+  },
+  {
+   "konu_id": "fizik_10_u01_k09",
    "ders": "Fizik",
    "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket",
    "konu": "1.4 İki Boyutta Sabit İvmeli Hareket",
    "soru": 10,
-   "metin": "1.4 İki Boyutta Sabit İvmeli Hareket · 1.4 İki Boyutta Sabit İvmeli Hareket · matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz"
+   "metin": "1.4 İki Boyutta Sabit İvmeli Hareket · 1.4 İki Boyutta Sabit İvmeli Hareket · 1.4 İki Boyutta Sabit İvmeli Hareket"
   },
   {
    "konu_id": "fizik_10_u02_k01",
@@ -987,238 +1235,6 @@
    "konu": "3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
    "soru": 15,
    "metin": "3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat · 3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat · 3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat · 3.5. Osmanlı Devleti’nde Bilim, Kültür, Eğitim ve Sanat"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k01",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Koşuk",
-   "konu": "Koşuk",
-   "soru": 10,
-   "metin": "Koşuk · Koşuk · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k02",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Sav",
-   "konu": "Sav",
-   "soru": 10,
-   "metin": "Sav · Sav · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k03",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Türkü",
-   "konu": "Türkü",
-   "soru": 10,
-   "metin": "Türkü · Türkü · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k04",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Koşma",
-   "konu": "Koşma",
-   "soru": 11,
-   "metin": "Koşma · Koşma · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k05",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Masal",
-   "konu": "Masal",
-   "soru": 10,
-   "metin": "Masal · Masal · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k06",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > İsimler (Adlar)",
-   "konu": "İsimler (Adlar)",
-   "soru": 10,
-   "metin": "İsimler (Adlar) · İsimler (Adlar) · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k07",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > İsim Tamlamaları",
-   "konu": "İsim Tamlamaları",
-   "soru": 10,
-   "metin": "İsim Tamlamaları · İsim Tamlamaları · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k08",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Sıfatlar (Ön Adlar)",
-   "konu": "Sıfatlar (Ön Adlar)",
-   "soru": 10,
-   "metin": "Sıfatlar (Ön Adlar) · Sıfatlar (Ön Adlar) · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u01_k09",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Sıfat Tamlamaları",
-   "konu": "Sıfat Tamlamaları",
-   "soru": 10,
-   "metin": "Sıfat Tamlamaları · Sıfat Tamlamaları · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k01",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Gazel",
-   "konu": "Gazel",
-   "soru": 10,
-   "metin": "Gazel · Gazel · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k02",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Kaside",
-   "konu": "Kaside",
-   "soru": 10,
-   "metin": "Kaside · Kaside · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k03",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Mersiye",
-   "konu": "Mersiye",
-   "soru": 10,
-   "metin": "Mersiye · Mersiye · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k04",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
-   "konu": "Saf Şiir",
-   "soru": 10,
-   "metin": "Saf Şiir · Saf Şiir · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k05",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Zamir (Adıl)",
-   "konu": "Zamir (Adıl)",
-   "soru": 10,
-   "metin": "Zamir (Adıl) · Zamir (Adıl) · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k06",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Edat (İlgeç)",
-   "konu": "Edat (İlgeç)",
-   "soru": 10,
-   "metin": "Edat (İlgeç) · Edat (İlgeç) · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k07",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Bağlaç",
-   "konu": "Bağlaç",
-   "soru": 10,
-   "metin": "Bağlaç · Bağlaç · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k08",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Ünlem",
-   "konu": "Ünlem",
-   "soru": 10,
-   "metin": "Ünlem · Ünlem · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u02_k09",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Anlamına Göre Cümleler",
-   "konu": "Anlamına Göre Cümleler",
-   "soru": 10,
-   "metin": "Anlamına Göre Cümleler · Anlamına Göre Cümleler · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u03_k01",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Destan",
-   "konu": "Destan",
-   "soru": 10,
-   "metin": "Destan · Destan · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u03_k02",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Mesnevi",
-   "konu": "Mesnevi",
-   "soru": 10,
-   "metin": "Mesnevi · Mesnevi · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u03_k03",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Halk Hikâyesi",
-   "konu": "Halk Hikâyesi",
-   "soru": 10,
-   "metin": "Halk Hikâyesi · Halk Hikâyesi · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u03_k04",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Fabl",
-   "konu": "Fabl",
-   "soru": 10,
-   "metin": "Fabl · Fabl · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u03_k05",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Zarflar (Belirteçler)",
-   "konu": "Zarflar (Belirteçler)",
-   "soru": 10,
-   "metin": "Zarflar (Belirteçler) · Zarflar (Belirteçler) · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u03_k06",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
-   "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
-   "soru": 10,
-   "metin": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans) · Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans) · Uyak ve Redif · Ölçü ve Ahenk Ögeleri"
-  },
-  {
-   "konu_id": "edebiyat_10_u04_k01",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Dede Korkut Hikâyeleri",
-   "konu": "Dede Korkut Hikâyeleri",
-   "soru": 11,
-   "metin": "Dede Korkut Hikâyeleri · Dede Korkut Hikâyeleri · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u04_k02",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Tanzimat Dönemi Şiiri",
-   "konu": "Tanzimat Dönemi Şiiri",
-   "soru": 12,
-   "metin": "Tanzimat Dönemi Şiiri · Tanzimat Dönemi Şiiri · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u04_k03",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Fiiller (Eylemler)",
-   "konu": "Fiiller (Eylemler)",
-   "soru": 16,
-   "metin": "Fiiller (Eylemler) · Fiiller (Eylemler) · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u04_k04",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Yazım Kuralları",
-   "konu": "Yazım Kuralları",
-   "soru": 16,
-   "metin": "Yazım Kuralları · Yazım Kuralları · Genel konu becerisi"
-  },
-  {
-   "konu_id": "edebiyat_10_u04_k05",
-   "ders": "Türk Dili ve Edebiyatı",
-   "topic_key": "Türk Dili ve Edebiyatı > Noktalama İşaretleri",
-   "konu": "Noktalama İşaretleri",
-   "soru": 16,
-   "metin": "Noktalama İşaretleri · Noktalama İşaretleri · Genel konu becerisi"
   }
  ]
 }

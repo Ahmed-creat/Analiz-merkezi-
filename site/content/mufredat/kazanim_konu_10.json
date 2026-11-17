@@ -11,8 +11,8 @@
  "ozet": {
   "ders": 9,
   "cikti": 158,
-  "konu": 152,
-  "eslesen_konu": 122,
+  "konu": 154,
+  "eslesen_konu": 110,
   "oneri_konu": 0,
   "eslesmeyen_konu": 50,
   "metin": 113,
@@ -64,7 +64,7 @@
     "metin_kodlu": 0
    },
    "Fizik": {
-    "konu": 21,
+    "konu": 23,
     "cikti": 22,
     "kesin": 9,
     "yapisal": 11,
@@ -1592,9 +1592,9 @@
    "metin_kodlari": []
   },
   {
-   "konu_id": "fizik_10_u01_k02",
+   "konu_id": "fizik_10_u01_k05",
    "ders": "Fizik",
-   "konu": "1.2 Bir Boyutta Sabit İvmeli Hareket",
+   "konu": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
    "tema": 1,
    "kodlar": [
     "FİZ.10.1.2"
@@ -1603,26 +1603,56 @@
    "yontem": "elle-dogrulama",
    "skor": 0,
    "uyari": "",
-   "gerekce": "2026 programı tema 1: sabit ivmeli hareketin ivme-hız ilişkisi çıktısı.",
-   "kazanim_metinleri": 2,
+   "gerekce": "2026 programı tema 1: sabit ivmeli harekette ivme-hız değişimi ilişkisi çıktısı (FİZ.10.1.2).",
+   "kazanim_metinleri": 0,
    "metin_kodlari": []
   },
   {
-   "konu_id": "fizik_10_u01_k03",
+   "konu_id": "fizik_10_u01_k06",
    "ders": "Fizik",
-   "konu": "1.3 Serbest Düşme",
+   "konu": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "tema": 1,
+   "kodlar": [
+    "FİZ.10.1.2"
+   ],
+   "guven": "yapisal",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Yatay doğrultudaki hareket grafikleri ve matematiksel modelleri FİZ.10.1.2 çıktısının kapsamındadır.",
+   "kazanim_metinleri": 0,
+   "metin_kodlari": []
+  },
+  {
+   "konu_id": "fizik_10_u01_k07",
+   "ders": "Fizik",
+   "konu": "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
    "tema": 1,
    "kodlar": [],
    "guven": "yok",
    "yontem": "elle-dogrulama",
    "skor": 0,
    "uyari": "",
-   "gerekce": "Serbest düşme 2026 programında 11. sınıfa taşındı (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok.",
-   "kazanim_metinleri": 1,
+   "gerekce": "Serbest düşme/yer çekimi ivmesi 2026 programında 11. sınıfa taşındı (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok.",
+   "kazanim_metinleri": 0,
    "metin_kodlari": []
   },
   {
-   "konu_id": "fizik_10_u01_k04",
+   "konu_id": "fizik_10_u01_k08",
+   "ders": "Fizik",
+   "konu": "1.3.2 Serbest Düşme Hareketi",
+   "tema": 1,
+   "kodlar": [],
+   "guven": "yok",
+   "yontem": "elle-dogrulama",
+   "skor": 0,
+   "uyari": "",
+   "gerekce": "Serbest düşmenin matematiksel modelleri 2026 programında 11. sınıfta (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok.",
+   "kazanim_metinleri": 0,
+   "metin_kodlari": []
+  },
+  {
+   "konu_id": "fizik_10_u01_k09",
    "ders": "Fizik",
    "konu": "1.4 İki Boyutta Sabit İvmeli Hareket",
    "tema": 1,
@@ -1633,8 +1663,8 @@
    "yontem": "elle-dogrulama",
    "skor": 0,
    "uyari": "",
-   "gerekce": "2026 programında 'iki boyutta sabit ivmeli hareket' yerine yatay doğrultuda sabit ivmeli hareket grafikleri çıktısı (FİZ.10.1.3).",
-   "kazanim_metinleri": 1,
+   "gerekce": "İki boyutta sabit ivmeli hareketin modelleri ve grafiksel dönüşümleri FİZ.10.1.3 çıktısına bağlandı.",
+   "kazanim_metinleri": 0,
    "metin_kodlari": []
   },
   {
@@ -3480,56 +3510,6 @@
   },
   {
    "ders": "Fizik",
-   "metin": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
-   "norm": "ivme ve hiz degisimi arasindaki iliskiyi yorumla",
-   "konu_id": "fizik_10_u01_k02",
-   "konu": "1.2 Bir Boyutta Sabit İvmeli Hareket",
-   "topic_key": "Fizik > 1.2 Bir Boyutta Sabit İvmeli Hareket",
-   "kodlar": [
-    "FİZ.10.1.2"
-   ],
-   "kod_guven": "yapisal",
-   "konu_guven": "kesin"
-  },
-  {
-   "ders": "Fizik",
-   "metin": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
-   "norm": "yatay dogrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumla",
-   "konu_id": "fizik_10_u01_k02",
-   "konu": "1.2 Bir Boyutta Sabit İvmeli Hareket",
-   "topic_key": "Fizik > 1.2 Bir Boyutta Sabit İvmeli Hareket",
-   "kodlar": [
-    "FİZ.10.1.2"
-   ],
-   "kod_guven": "yapisal",
-   "konu_guven": "kesin"
-  },
-  {
-   "ders": "Fizik",
-   "metin": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,",
-   "norm": "serbest dusmeye yonelik matematiksel hesaplamalari yap",
-   "konu_id": "fizik_10_u01_k03",
-   "konu": "1.3 Serbest Düşme",
-   "topic_key": "Fizik > 1.3 Serbest Düşme",
-   "kodlar": [],
-   "kod_guven": "yok",
-   "konu_guven": "kesin"
-  },
-  {
-   "ders": "Fizik",
-   "metin": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
-   "norm": "matematiksel modelleri ve grafiksel donusumleri iki boyutta sabit ivmeli harekete yonelik problem durumlarina cozum getirmek icin kullan",
-   "konu_id": "fizik_10_u01_k04",
-   "konu": "1.4 İki Boyutta Sabit İvmeli Hareket",
-   "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket",
-   "kodlar": [
-    "FİZ.10.1.3"
-   ],
-   "kod_guven": "yapisal",
-   "konu_guven": "kesin"
-  },
-  {
-   "ders": "Fizik",
    "metin": "yapılan işin büyüklüğünü hesaplayabilmeniz,",
    "norm": "yapilan isin buyuklugunu hesapla",
    "konu_id": "fizik_10_u02_k01",
@@ -4456,6 +4436,56 @@
     "TAR.10.3.5"
    ],
    "kod_guven": "kesin",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Fizik",
+   "metin": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+   "norm": "ivme ve hiz degisimi arasindaki iliskiyi yorumla",
+   "konu_id": "fizik_10_u01_k05",
+   "konu": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+   "topic_key": "Fizik > 1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+   "kodlar": [
+    "FİZ.10.1.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Fizik",
+   "metin": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+   "norm": "yatay dogrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumla",
+   "konu_id": "fizik_10_u01_k06",
+   "konu": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "topic_key": "Fizik > 1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "kodlar": [
+    "FİZ.10.1.2"
+   ],
+   "kod_guven": "yapisal",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Fizik",
+   "metin": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,",
+   "norm": "serbest dusmeye yonelik matematiksel hesaplamalari yap",
+   "konu_id": "fizik_10_u01_k08",
+   "konu": "1.3.2 Serbest Düşme Hareketi",
+   "topic_key": "Fizik > 1.3.2 Serbest Düşme Hareketi",
+   "kodlar": [],
+   "kod_guven": "yok",
+   "konu_guven": "kesin"
+  },
+  {
+   "ders": "Fizik",
+   "metin": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+   "norm": "matematiksel modelleri ve grafiksel donusumleri iki boyutta sabit ivmeli harekete yonelik problem durumlarina cozum getirmek icin kullan",
+   "konu_id": "fizik_10_u01_k09",
+   "konu": "1.4 İki Boyutta Sabit İvmeli Hareket",
+   "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket",
+   "kodlar": [
+    "FİZ.10.1.3"
+   ],
+   "kod_guven": "yapisal",
    "konu_guven": "kesin"
   }
  ],

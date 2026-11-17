@@ -740,19 +740,31 @@
       "ders": "Fizik"
     },
     {
-      "konu_id": "fizik_10_u01_k02",
-      "konu_adi": "Bir Boyutta Sabit İvmeli Hareket",
+      "konu_id": "fizik_10_u01_k05",
+      "konu_adi": "İvme ve Hız Değişimi Arasındaki İlişki",
       "sinif": 10,
       "ders": "Fizik"
     },
     {
-      "konu_id": "fizik_10_u01_k03",
-      "konu_adi": "Serbest Düşme",
+      "konu_id": "fizik_10_u01_k06",
+      "konu_adi": "Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
       "sinif": 10,
       "ders": "Fizik"
     },
     {
-      "konu_id": "fizik_10_u01_k04",
+      "konu_id": "fizik_10_u01_k07",
+      "konu_adi": "Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "sinif": 10,
+      "ders": "Fizik"
+    },
+    {
+      "konu_id": "fizik_10_u01_k08",
+      "konu_adi": "Serbest Düşme Hareketi",
+      "sinif": 10,
+      "ders": "Fizik"
+    },
+    {
+      "konu_id": "fizik_10_u01_k09",
       "konu_adi": "İki Boyutta Sabit İvmeli Hareket",
       "sinif": 10,
       "ders": "Fizik"
@@ -771,7 +783,7 @@
     },
     {
       "konu_id": "fizik_10_u02_k03",
-      "konu_adi": "Mekanik Enerji ve Korunumu",
+      "konu_adi": "Mekanik Enerji",
       "sinif": 10,
       "ders": "Fizik"
     },
@@ -789,7 +801,7 @@
     },
     {
       "konu_id": "fizik_10_u03_k02",
-      "konu_adi": "Elektrik Akımı ve Potansiyel Fark",
+      "konu_adi": "Elektrik Akımı",
       "sinif": 10,
       "ders": "Fizik"
     },
@@ -813,7 +825,7 @@
     },
     {
       "konu_id": "fizik_10_u03_k06",
-      "konu_adi": "Elektrik Akımının Tehlikeleri ve Alınması Gereken Önlemler",
+      "konu_adi": "Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
       "sinif": 10,
       "ders": "Fizik"
     },
@@ -3902,54 +3914,6 @@
       "incoming": {
         "konu_id": "fizik_10_u01_k01",
         "konu_adi": "1.1 Sabit Hızlı Hareket",
-        "sinif": 10,
-        "ders": "Fizik"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "fizik_10_u01_k02",
-      "existing": {
-        "konu_id": "fizik_10_u01_k02",
-        "konu_adi": "Bir Boyutta Sabit İvmeli Hareket",
-        "sinif": 10,
-        "ders": "Fizik"
-      },
-      "incoming": {
-        "konu_id": "fizik_10_u01_k02",
-        "konu_adi": "1.2 Bir Boyutta Sabit İvmeli Hareket",
-        "sinif": 10,
-        "ders": "Fizik"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "fizik_10_u01_k03",
-      "existing": {
-        "konu_id": "fizik_10_u01_k03",
-        "konu_adi": "Serbest Düşme",
-        "sinif": 10,
-        "ders": "Fizik"
-      },
-      "incoming": {
-        "konu_id": "fizik_10_u01_k03",
-        "konu_adi": "1.3 Serbest Düşme",
-        "sinif": 10,
-        "ders": "Fizik"
-      },
-      "source": "pool"
-    },
-    {
-      "konu_id": "fizik_10_u01_k04",
-      "existing": {
-        "konu_id": "fizik_10_u01_k04",
-        "konu_adi": "İki Boyutta Sabit İvmeli Hareket",
-        "sinif": 10,
-        "ders": "Fizik"
-      },
-      "incoming": {
-        "konu_id": "fizik_10_u01_k04",
-        "konu_adi": "1.4 İki Boyutta Sabit İvmeli Hareket",
         "sinif": 10,
         "ders": "Fizik"
       },

@@ -200,8 +200,10 @@ const KONULAR = {
   ],
   "Fizik": [
    "1.1 Sabit Hızlı Hareket",
-   "1.2 Bir Boyutta Sabit İvmeli Hareket",
-   "1.3 Serbest Düşme",
+   "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+   "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+   "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+   "1.3.2 Serbest Düşme Hareketi",
    "1.4 İki Boyutta Sabit İvmeli Hareket",
    "2.1 İş, Enerji ve Güç",
    "2.2 Enerji Biçimleri",

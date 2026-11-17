@@ -491,21 +491,35 @@
       "unite": "1. Ünite: Kuvvet ve Hareket"
     },
     {
-      "konu_id": "fizik_10_u01_k02",
-      "konu_adi": "Bir Boyutta Sabit İvmeli Hareket",
+      "konu_id": "fizik_10_u01_k05",
+      "konu_adi": "İvme ve Hız Değişimi Arasındaki İlişki",
       "sinif": 10,
       "ders": "Fizik",
       "unite": "1. Ünite: Kuvvet ve Hareket"
     },
     {
-      "konu_id": "fizik_10_u01_k03",
-      "konu_adi": "Serbest Düşme",
+      "konu_id": "fizik_10_u01_k06",
+      "konu_adi": "Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
       "sinif": 10,
       "ders": "Fizik",
       "unite": "1. Ünite: Kuvvet ve Hareket"
     },
     {
-      "konu_id": "fizik_10_u01_k04",
+      "konu_id": "fizik_10_u01_k07",
+      "konu_adi": "Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "sinif": 10,
+      "ders": "Fizik",
+      "unite": "1. Ünite: Kuvvet ve Hareket"
+    },
+    {
+      "konu_id": "fizik_10_u01_k08",
+      "konu_adi": "Serbest Düşme Hareketi",
+      "sinif": 10,
+      "ders": "Fizik",
+      "unite": "1. Ünite: Kuvvet ve Hareket"
+    },
+    {
+      "konu_id": "fizik_10_u01_k09",
       "konu_adi": "İki Boyutta Sabit İvmeli Hareket",
       "sinif": 10,
       "ders": "Fizik",
@@ -1516,49 +1530,49 @@
     },
     {
       "kaynak_konu_id": "fizik_09_u02_k05",
-      "hedef_konu_id": "fizik_10_u01_k02",
+      "hedef_konu_id": "fizik_10_u01_k05",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.95,
       "gerekce": "Sabit ivmeli harekette ivme ile hız değişimi arasındaki matematiksel ilişkiyi kurmak ve a-t, v-t, x-t grafik dönüşümlerini yapabilmek için 9. sınıf ivme tanımı zorunludur."
     },
     {
       "kaynak_konu_id": "fizik_10_u01_k01",
-      "hedef_konu_id": "fizik_10_u01_k02",
+      "hedef_konu_id": "fizik_10_u01_k05",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.9,
       "gerekce": "Hızın zamanla değiştiği ivmeli hareketi kavrayabilmek için öncelikle hızın sabit olduğu referans durumun ve v-t grafiğinde alan hesabının bilinmesi zorunludur."
     },
     {
-      "kaynak_konu_id": "fizik_10_u01_k02",
-      "hedef_konu_id": "fizik_10_u01_k03",
+      "kaynak_konu_id": "fizik_10_u01_k05",
+      "hedef_konu_id": "fizik_10_u01_k07",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.95,
       "gerekce": "Serbest düşme hareketi, düşey doğrultuda yer çekimi ivmesi (g) etkisindeki sabit ivmeli hareket olduğundan bir boyutta sabit ivmeli hareket denklemleri ve grafiksel türevleri doğrudan uygulanmak zorundadır."
     },
     {
       "kaynak_konu_id": "fizik_09_u02_k04",
-      "hedef_konu_id": "fizik_10_u01_k03",
+      "hedef_konu_id": "fizik_10_u01_k07",
       "iliski_tipi": "YUMUSAK_TRANSFER",
       "agirlik": 0.4,
       "gerekce": "Serbest düşen cisimlere etki eden tek kuvvetin kütle çekim kuvveti olduğunu kavramayı ve g ivmesinin fiziksel kaynağını anlamlandırmayı kolaylaştırır."
     },
     {
       "kaynak_konu_id": "fizik_09_u02_k03",
-      "hedef_konu_id": "fizik_10_u01_k04",
+      "hedef_konu_id": "fizik_10_u01_k09",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.95,
       "gerekce": "İki boyutta sabit ivmeli harekette (eğik/yatay atışlar) ilk hız vektörünü yatay ve düşey bileşenlerine ayırabilmek için 9. sınıftaki vektörlerin bileşenlerine ayrılması metodu zorunludur."
     },
     {
       "kaynak_konu_id": "fizik_10_u01_k01",
-      "hedef_konu_id": "fizik_10_u01_k04",
+      "hedef_konu_id": "fizik_10_u01_k09",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.9,
       "gerekce": "Yatay atış hareketinde cismin yatay eksendeki hareketinin sabit hızlı hareket olduğunu analiz etmek zorunludur."
     },
     {
-      "kaynak_konu_id": "fizik_10_u01_k03",
-      "hedef_konu_id": "fizik_10_u01_k04",
+      "kaynak_konu_id": "fizik_10_u01_k07",
+      "hedef_konu_id": "fizik_10_u01_k09",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.9,
       "gerekce": "Atış hareketlerinde cismin düşey doğrultudaki hareketinin serbest düşme veya düşeyde sabit ivmeli hareket bağıntılarıyla modellendiğini bilmek zorunludur."
@@ -1585,7 +1599,7 @@
       "gerekce": "Farklı enerji biçimlerini (kinetik, potansiyel, elektrik vb.) karşılaştırabilmek ve enerji dönüşüm süreçlerini analiz edebilmek için iş-enerji teoremi bilinmelidir."
     },
     {
-      "kaynak_konu_id": "fizik_10_u01_k02",
+      "kaynak_konu_id": "fizik_10_u01_k05",
       "hedef_konu_id": "fizik_10_u02_k03",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.85,
@@ -1676,7 +1690,7 @@
       "gerekce": "Yay sarkacı ve basit sarkacın periyot hesaplamalarında periyot, frekans ve denge konumu kavramları zorunludur."
     },
     {
-      "kaynak_konu_id": "fizik_10_u01_k03",
+      "kaynak_konu_id": "fizik_10_u01_k07",
       "hedef_konu_id": "fizik_10_u04_k04",
       "iliski_tipi": "YUMUSAK_TRANSFER",
       "agirlik": 0.45,
@@ -2153,7 +2167,7 @@
     },
     {
       "kaynak_konu_id": "mat_10_u01_k01",
-      "hedef_konu_id": "fizik_10_u01_k04",
+      "hedef_konu_id": "fizik_10_u01_k09",
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.95,
       "gerekce": "Eğik atış sorularında ilk hız vektörünü v_x = v_0 * cos(theta) ve v_y = v_0 * sin(theta) şeklinde ayırıp uçuş süresi ve menzil hesaplamak için trigonometri zorunludur."
@@ -2192,6 +2206,34 @@
       "iliski_tipi": "SERT_ONKOSUL",
       "agirlik": 0.85,
       "gerekce": "Elektrik akımının metallerde serbest elektronlar, sıvı çözeltilerde (elektrolitlerde) ise serbest iyonlar (Na+, Cl-) aracılığıyla iletildiğini anlamak için iyonik bağlı maddelerin çözünme mekanizması zorunludur."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u01_k05",
+      "hedef_konu_id": "fizik_10_u01_k06",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "İvme ile hız değişimi arasındaki ilişki kurulmadan yatay doğrultuda sabit ivmeli hareketin modelleri (v = v₀ + a·t, x = v₀·t + ½·a·t²) anlaşılamaz."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u01_k06",
+      "hedef_konu_id": "fizik_10_u01_k07",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Yatay doğrultuda sabit ivmeli hareketin modelleri ve grafikleri bilinmeden düşey doğrultudaki yer çekimi ivmesiyle hareket çözümlenemez."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u01_k07",
+      "hedef_konu_id": "fizik_10_u01_k08",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Yer çekimi ivmesinin (g) tanımı ve kütleden bağımsızlığı bilinmeden serbest düşme hareketinin matematiksel modelleri ve grafikleri yorumlanamaz."
+    },
+    {
+      "kaynak_konu_id": "fizik_10_u01_k08",
+      "hedef_konu_id": "fizik_10_u01_k09",
+      "iliski_tipi": "SERT_ONKOSUL",
+      "agirlik": 0.9,
+      "gerekce": "Düşey doğrultudaki serbest düşme hareketi bilinmeden iki boyutta sabit ivmeli hareketin düşey bileşeni çözümlenemez."
     }
   ]
 }

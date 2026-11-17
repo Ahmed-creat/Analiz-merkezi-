@@ -213,9 +213,11 @@ function numaraUyumlu(konuAdi, tema) {
    Otomatik katman bu satırları üretemiyor (program yeniden yapılandırılmış
    ya da eşleşme tek bir başlık kanıtıyla sınırlı); gerekçe zorunlu. */
 const ELLE = {
-  fizik_10_u01_k02: { kodlar: ["FİZ.10.1.2"], gerekce: "2026 programı tema 1: sabit ivmeli hareketin ivme-hız ilişkisi çıktısı." },
-  fizik_10_u01_k04: { kodlar: ["FİZ.10.1.3"], gerekce: "2026 programında 'iki boyutta sabit ivmeli hareket' yerine yatay doğrultuda sabit ivmeli hareket grafikleri çıktısı (FİZ.10.1.3)." },
-  fizik_10_u01_k03: { kodlar: [], gerekce: "Serbest düşme 2026 programında 11. sınıfa taşındı (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok." },
+  fizik_10_u01_k05: { kodlar: ["FİZ.10.1.2"], gerekce: "2026 programı tema 1: sabit ivmeli harekette ivme-hız değişimi ilişkisi çıktısı (FİZ.10.1.2)." },
+  fizik_10_u01_k06: { kodlar: ["FİZ.10.1.2"], gerekce: "Yatay doğrultudaki hareket grafikleri ve matematiksel modelleri FİZ.10.1.2 çıktısının kapsamındadır." },
+  fizik_10_u01_k07: { kodlar: [], gerekce: "Serbest düşme/yer çekimi ivmesi 2026 programında 11. sınıfa taşındı (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok." },
+  fizik_10_u01_k08: { kodlar: [], gerekce: "Serbest düşmenin matematiksel modelleri 2026 programında 11. sınıfta (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok." },
+  fizik_10_u01_k09: { kodlar: ["FİZ.10.1.3"], gerekce: "İki boyutta sabit ivmeli hareketin modelleri ve grafiksel dönüşümleri FİZ.10.1.3 çıktısına bağlandı." },
   fizik_10_u02_k01: { kodlar: ["FİZ.10.2.1", "FİZ.10.2.2"], gerekce: "Konu iş-enerji-güç bütününü kapsıyor; 2026'da iş grafiği (10.2.1) ve iş-enerji-güç çıkarımı (10.2.2) ayrı çıktı." },
   biyo_10_u02_k06: { kodlar: ["BİY.10.2.6"], gerekce: "Konu başlığı 'sürdürülebilirliği kısıtlayan durumlar'; çıktı gözleme dayalı tahmin (BİY.10.2.6)." },
 };

@@ -1,0 +1,256 @@
+{
+  "konu_id": "fizik_10_u01_k08",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 1,
+  "tema_adi": "Kuvvet ve Hareket",
+  "baslik": "1.3.2 Serbest Düşme Hareketi",
+  "topic_key": "Fizik > 1.3.2 Serbest Düşme Hareketi",
+  "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar.",
+  "kaynak": "Fizik 10 ders kitabı, s.67-77",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u01_k08_o01",
+      "alt_beceri": "Serbest düşme hareketini matematiksel modellerle hesaplar.",
+      "metin": "İlk hızı sıfır olan bir cisim h yüksekliğinden serbest bırakılıyor. Düşme süresi hangi modelle hesaplanır?",
+      "secenekler": [
+        "t = h/g",
+        "t = √(2h/g)",
+        "t = g·h",
+        "t = √(h/2g)"
+      ],
+      "dogru_index": 1,
+      "cozum": "h = ½·g·t² modelinden t = √(2h/g) elde edilir (s.71, s.81).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşmede süre modeli nedir?",
+        "back": "t = √(2h/g)"
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o02",
+      "alt_beceri": "Serbest düşme hareketini matematiksel modellerle hesaplar.",
+      "metin": "Yerden 20 m yükseklikteki kattan ilk hızı sıfır olarak bırakılan top yere kaç saniyede çarpar? (g = 10 m/s²)",
+      "secenekler": [
+        "1 s",
+        "4 s",
+        "20 s",
+        "2 s"
+      ],
+      "dogru_index": 3,
+      "cozum": "20 = ½·10·t² → t² = 4 → t = 2 s (kitaptaki Feryal örneği, s.70).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "20 m'den bırakılan top kaç s'de düşer? (g=10)",
+        "back": "2 s"
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o03",
+      "alt_beceri": "Serbest düşme hareketini matematiksel modellerle hesaplar.",
+      "metin": "Aynı topun yere çarpma hızı kaç m/s olur? (g = 10 m/s²)",
+      "secenekler": [
+        "20 m/s",
+        "10 m/s",
+        "40 m/s",
+        "2 m/s"
+      ],
+      "dogru_index": 0,
+      "cozum": "v = g·t = 10·2 = 20 m/s (kitaptaki Feryal örneği, s.70).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "2 s düşen cismin çarpma hızı kaçtır? (g=10)",
+        "back": "20 m/s"
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o04",
+      "alt_beceri": "Serbest düşme hareketini matematiksel modellerle hesaplar.",
+      "metin": "İlk hızı sıfır olan serbest düşmede hızın büyüklüğü hangi modelle bulunur?",
+      "secenekler": [
+        "v = g/t",
+        "v = h/t",
+        "v = g·t",
+        "v = 2·g·t"
+      ],
+      "dogru_index": 2,
+      "cozum": "İlk hız sıfır olduğunda hızın büyüklüğü v = g·t modeliyle bulunur (s.71).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşmede hız modeli nedir?",
+        "back": "v = g·t"
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o05",
+      "alt_beceri": "Serbest düşme hareketini matematiksel modellerle hesaplar.",
+      "metin": "Kuyuya düşen taşın suya çarpma sesi 2,3 s sonra duyulmuştur. Hava sürtünmesi ve sesin gecikmesi ihmal edilirse kuyunun derinliği yaklaşık kaç m'dir? (g = 10 m/s²)",
+      "secenekler": [
+        "23 m",
+        "11,5 m",
+        "46 m",
+        "26,5 m"
+      ],
+      "dogru_index": 3,
+      "cozum": "h = ½·10·(2,3)² = 5 · 5,29 ≈ 26,5 m (kitaptaki 1.18. soru, s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "2,3 s'de düşen taşın aldığı yol yaklaşık kaç m'dir?",
+        "back": "Yaklaşık 26,5 m"
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o06",
+      "alt_beceri": "Serbest düşme hareketini matematiksel modellerle hesaplar.",
+      "metin": "Aynı taşın suya çarptığı andaki hızının büyüklüğü yaklaşık kaç m/s'dir? (g = 10 m/s²)",
+      "secenekler": [
+        "2,3 m/s",
+        "23 m/s",
+        "46 m/s",
+        "10 m/s"
+      ],
+      "dogru_index": 1,
+      "cozum": "v = g·t = 10 · 2,3 = 23 m/s (kitaptaki 1.18. soru, s.66).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "2,3 s düşen taşın hızı kaç m/s'dir?",
+        "back": "23 m/s"
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o07",
+      "alt_beceri": "Serbest düşme hareketinin grafiklerini yorumlar.",
+      "metin": "İlk hızı sıfır olan serbest düşme hareketinin hız-zaman grafiği nasıldır?",
+      "secenekler": [
+        "Orijinden geçen artan doğru",
+        "Yatay eksene paralel doğru",
+        "Azalan doğru",
+        "Parabol"
+      ],
+      "dogru_index": 0,
+      "cozum": "Hız düzgün arttığı için grafik orijinden geçen eğimli bir doğrudur (s.71, Grafik 1.6).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşmede c-t grafiği nasıldır?",
+        "back": "Orijinden geçen artan doğru."
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o08",
+      "alt_beceri": "Serbest düşme hareketinin grafiklerini yorumlar.",
+      "metin": "Serbest düşen cismin ivme-zaman grafiği nasıldır?",
+      "secenekler": [
+        "Orijinden geçen doğru",
+        "Parabol",
+        "Yatay eksene paralel doğru",
+        "Azalan eğri"
+      ],
+      "dogru_index": 2,
+      "cozum": "İvme sabit ve g büyüklüğünde olduğundan grafik yatay eksene paralel bir doğrudur (s.71, Grafik 1.6c).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşmede a-t grafiği nasıldır?",
+        "back": "Yatay eksene paralel doğru."
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o09",
+      "alt_beceri": "Serbest düşme hareketinin grafiklerini yorumlar.",
+      "metin": "Yukarı doğru atılan bir cisim için hangisi doğrudur?",
+      "secenekler": [
+        "Tepe noktasında ivmesi sıfırdır",
+        "Tepe noktasında hızı sıfırdır",
+        "Tepe noktasında ivmesi yön değiştirir",
+        "Hızı sabit kalır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Cisim tepe noktasında bir an durur (hız sıfır) ama ivmesi yine g'dir (s.72, Grafik 1.8).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yukarı atılan cisim tepe noktasında ne olur?",
+        "back": "Hızı sıfır olur; ivmesi yine g'dir."
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k08_o10",
+      "alt_beceri": "Serbest düşme hareketinin grafiklerini yorumlar.",
+      "metin": "Hareketlinin hız-zaman grafiğinin altında kalan alan neyi verir?",
+      "secenekler": [
+        "İvmeyi",
+        "Kuvveti",
+        "Kütleyi",
+        "Yer değiştirmeyi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitapta c-t grafiği ile eksen arasında kalan alanın yer değiştirmeyi verdiği kullanılır (s.50, s.73).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "c-t grafiğinde alan neyi verir?",
+        "back": "Yer değiştirmeyi."
+      },
+      "kazanim": "Serbest düşme hareketini matematiksel modellerle hesaplar ve grafiklerini yorumlar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u01_k08_o01:flashcard",
+      "front": "Serbest düşmede süre modeli nedir?",
+      "back": "t = √(2h/g)"
+    },
+    {
+      "id": "fizik_10_u01_k08_o02:flashcard",
+      "front": "20 m'den bırakılan top kaç s'de düşer? (g=10)",
+      "back": "2 s"
+    },
+    {
+      "id": "fizik_10_u01_k08_o03:flashcard",
+      "front": "2 s düşen cismin çarpma hızı kaçtır? (g=10)",
+      "back": "20 m/s"
+    },
+    {
+      "id": "fizik_10_u01_k08_o04:flashcard",
+      "front": "Serbest düşmede hız modeli nedir?",
+      "back": "v = g·t"
+    },
+    {
+      "id": "fizik_10_u01_k08_o05:flashcard",
+      "front": "2,3 s'de düşen taşın aldığı yol yaklaşık kaç m'dir?",
+      "back": "Yaklaşık 26,5 m"
+    },
+    {
+      "id": "fizik_10_u01_k08_o06:flashcard",
+      "front": "2,3 s düşen taşın hızı kaç m/s'dir?",
+      "back": "23 m/s"
+    },
+    {
+      "id": "fizik_10_u01_k08_o07:flashcard",
+      "front": "Serbest düşmede c-t grafiği nasıldır?",
+      "back": "Orijinden geçen artan doğru."
+    },
+    {
+      "id": "fizik_10_u01_k08_o08:flashcard",
+      "front": "Serbest düşmede a-t grafiği nasıldır?",
+      "back": "Yatay eksene paralel doğru."
+    },
+    {
+      "id": "fizik_10_u01_k08_o09:flashcard",
+      "front": "Yukarı atılan cisim tepe noktasında ne olur?",
+      "back": "Hızı sıfır olur; ivmesi yine g'dir."
+    },
+    {
+      "id": "fizik_10_u01_k08_o10:flashcard",
+      "front": "c-t grafiğinde alan neyi verir?",
+      "back": "Yer değiştirmeyi."
+    }
+  ]
+}
