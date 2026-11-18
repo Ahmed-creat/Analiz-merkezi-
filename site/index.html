@@ -1200,7 +1200,7 @@ select.dd-native {
 
   <div style="margin-top:20px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">GERİ BİLDİRİM</div>
-    <p class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Bir sorun ya da önerin varsa yaz. Soruyla ilgiliyse soru ekranındaki “Bu soruda hata var” düğmesini kullan.</p>
+    <p class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Bir sorun ya da önerin varsa yaz. Soruyla ilgiliyse soru ekranındaki “Soruda hata mı var?” düğmesini kullan.</p>
     <textarea id="geri-bildirim-metin" class="input" rows="3" maxlength="1000" placeholder="Örn: Fizik 1.3 havuzundaki 4. sorunun cevabı yanlış görünüyor." style="width:100%;min-height:78px;resize:vertical;font-size:13px;"></textarea>
     <button class="btn btn-primary w-full" data-act="geriBildirimGonder" style="margin-top:8px;min-height:44px;"><i data-lucide="send" style="width:15px;height:15px;"></i> Geri Bildirimi Gönder</button>
     <div id="geri-bildirim-sonuc" class="text-xs text-muted" style="margin-top:6px;line-height:1.5;"></div>
@@ -2439,6 +2439,16 @@ function markReviewed(topicKey, early) {
 function resetTopicMemory(topicKey) {
   state.memory[topicKey] = { lastReview: null, reviewCount: 0, completedAt: null, schedule: {} };
   state.topics[topicKey] = { step: 0, completedAt: null, preTest: false };
+  // v77 — KULLANICI: "konu çalışmasını sıfırlayınca kısa kontrol geri gelmiyor."
+  // KÖK NEDEN: sıfırlama yalnız hafıza + adımları temizliyordu; motorun konu
+  // kaydı (state.bkt_state) olduğu gibi kalıyordu. İçinde `son_kisa_kontrol`
+  // durduğu için 5. adım "TAMAMLANDI" görünüyor, `precheck_due` yüzünden kısa
+  // kontrol KISA_ARALIK_GUN boyunca kapalı kalıyordu. Artık sıfırlama konunun
+  // BKT kaydını da siler: 4 adım bitince 5. adım (kısa kontrol) YENİDEN çıkar.
+  if (state.bkt_state) delete state.bkt_state[topicKey];
+  if (Array.isArray(state.mini_test_kuyrugu)) {
+    state.mini_test_kuyrugu = state.mini_test_kuyrugu.filter(function (x) { return !x || x.topicKey !== topicKey; });
+  }
   saveState();
 }
 
@@ -2811,6 +2821,26 @@ function yerelSistemBildirimi(n) {
 // gösterilmediyse aynı hatırlatma YEREL sistem bildirimi olarak gösterilir.
 // Böylece "bildirim gelmedi" durumu kalmaz: en geç uygulamayı açtığında,
 // TEST değil GERÇEK hatırlatmayı görürsün.
+// v77 — TELAFİ PENCERESİ = GERÇEK BİLDİRİM SAATLERİ.
+// KULLANICI: "Uygulama 02.53'te açıldığında 'Günaydın! Tekrar Zamanı',
+// 14.11'de açıldığında 'Akşam tekrarı seni bekliyor' gösteriliyor. Vardiya
+// kontrolünü gerçek bildirim saatleriyle uyumlu hâle getir; planlanan
+// saatlerden ÖNCE yerel telafi bildirimi gönderme."
+// KÖK NEDEN: eski kod yalnız "saat < 14 mü?" diye bakıyordu; sabah vardiyası
+// gece 00:00'dan itibaren "gelmiş" sayılıyor, akşam vardiyası da 14:00'te
+// başlıyordu. Oysa sunucudaki gerçek program (supabase 0002_webpush_tetikle):
+//   • SABAH vardiyası  → 07:35 (tekrar 13:05), 14:00'te kapanır
+//   • AKŞAM vardiyası  → 19:30 (tekrar 21:35)
+// Telafi artık bu saatlerden ÖNCE hiçbir şey göstermez:
+//   00:00–07:34 → yok · 07:35–13:59 → sabah · 14:00–19:29 → yok · 19:30+ → akşam
+const TELAFI_PENCERE = { sabahIlk: 7 * 60 + 35, sabahSon: 14 * 60, aksamIlk: 19 * 60 + 30 };
+function telafiVardiyasi(d) {
+  const dk = (Number(d && d.getHours()) || 0) * 60 + (Number(d && d.getMinutes()) || 0);
+  if (dk >= TELAFI_PENCERE.aksamIlk) return "a";                       // 19:30 sonrası: akşam
+  if (dk >= TELAFI_PENCERE.sabahIlk && dk < TELAFI_PENCERE.sabahSon) return "s"; // 07:35–13:59: sabah
+  return null;                                                          // planlanan saatten önce
+}
+
 function hatirlatmaTelafisi() {
   try {
     if (typeof Notification === "undefined" || Notification.permission !== "granted") return;
@@ -2818,7 +2848,9 @@ function hatirlatmaTelafisi() {
     const due = (typeof dueReviews === "function") ? dueReviews() : [];
     if (!due.length) return;
     const d = new Date();
-    const vardiya = d.getHours() < 14 ? "s" : "a";
+    // v77 — vardiya GERÇEK saat penceresinden; pencere yoksa telafi yok.
+    const vardiya = telafiVardiyasi(d);
+    if (!vardiya) return;
     const anahtar = "am_telafi_" + todayStr() + "_" + vardiya;
     try { if (localStorage.getItem(anahtar)) return; } catch (e) { return; }
     const baslik = vardiya === "s" ? "Günaydın! Tekrar Zamanı" : "Akşam tekrarı seni bekliyor";
@@ -3180,7 +3212,7 @@ function requestNotifPermission() {
         window.__amCihazBildirimTesti().then(function (t) {
           if (typeof toast !== "function") return;
           if (t && t.gorunur) toast("Bildirimler açıldı — cihazda bir bildirim gösterdim ✓", "success");
-          else if (t && t.gorunur === false) toast("Bu cihaz bildirimi GÖSTERMİYOR. Ayarlar → Uygulamalar → Chrome → Bildirimler açık mı? Rahatsız etmeyin kapalı mı?", "error");
+          else if (t && t.gorunur === false) toast("Bu cihaz bildirim göstermiyor. Telefon ayarlarından Chrome bildirimlerini aç, Rahatsız etmeyin modunu kapat.", "error");
         }).catch(function () { });
       }
     } catch (e) { /* */ }
@@ -3199,7 +3231,7 @@ function requestNotifPermission() {
         const kanal = (window.__amSonKanalTesti ? window.__amSonKanalTesti() : null);
         const cihazGostermiyor = !!(kanal && kanal.gorunur === false);
         if (typeof toast === "function") {
-          if (cihazGostermiyor) toast("Sunucu bildirimi gönderdi ama bu cihaz göstermiyor. Telefon: Ayarlar → Uygulamalar → Chrome → Bildirimler + Rahatsız etmeyin.", "error");
+          if (cihazGostermiyor) toast("Sunucu bildirimi gönderdi ancak bu cihaz göstermiyor. Telefon ayarlarından Chrome bildirimlerini ve Rahatsız etmeyin modunu denetle.", "error");
           else toast(testGitti
             ? "Bildirimler açıldı. Bu cihaza bir deneme bildirimi gönderildi."
             : "Bildirimler açık — uygulama kapalıyken de haber vereceğim.", "success");
@@ -3903,7 +3935,7 @@ const TANITIM_ADIMLARI = [
   { icon: "graduation-cap", renk: "#059669", baslik: "Dersler · Bilgi Bankası", metin: "Dersleri buradan çalışırsın. Bir konu 5 adımdır: ön test, aktif çalışma, çözümlü örnek, karışık pratik ve 5 soruluk kısa kontrol. 5 adım bitmeden konu hafıza takibine girmez." },
   { icon: "brain", renk: "var(--memory-indigo)", baslik: "Konu Takibi", metin: "Hafıza gücünü ve tekrar günlerini burada görürsün. Tekrar bekleyenler en üstte, tekrar günü en uzak olan en altta. Renk yeşilden kırmızıya iner." },
   { icon: "settings", renk: "var(--semantic-warning)", baslik: "Ayarlar", metin: "Tema (açık/koyu), sınıf (9/10), bildirim izni, yedekleme ve geri bildirim burada." },
-  { icon: "message-square", renk: "#DC2626", baslik: "Geri bildirim", metin: "Soruda hata mı var? Soru ekranındaki “Bu soruda hata var”a bas. Genel öneri/sorun için Ayarlar → Geri Bildirim." }
+  { icon: "message-square", renk: "#DC2626", baslik: "Geri bildirim", metin: "Bir soruda ya da kartta hata olduğunu düşünüyorsan ekrandaki “Soruda hata mı var?” düğmesine bas. Genel öneri ve sorunlar için Ayarlar → Geri Bildirim." }
 ];
 
 // v42 — AÇILIŞ EKRANI ("Başla" düğmesi) yalnız İLK açılışta.
@@ -3955,7 +3987,7 @@ const HELP_MODULES = [
   { icon: "pen-tool", color: "var(--semantic-error)", title: "Soru Bankası", text: "Günlük çözümlerini gir. <b>Toplam Çözülen</b> yazınca boş sayısı kendiliğinden hesaplanır (Boş = Toplam − Doğru − Yanlış). Doğru, yanlış ve boş için konu ve neden satırları açılır." },
   { icon: "check-square", color: "#059669", title: "Günlük Görevler", text: "Her gün çalışarak serini (streak) büyüt. Haftada 1 kez seri dondurma hakkın var: bir günü boş geçsen bile serin bozulmaz." },
   { icon: "bell-ring", color: "#0EA5E9", title: "Bildirimler", text: "İzni Ayarlar → Bildirim İzni İste ile ver; izin verdiğin an bu cihaza bir deneme bildirimi gelir. Sonrasında gün içinde tekrar ve görev hatırlatmaları alırsın." },
-  { icon: "message-square", color: "#DC2626", title: "Geri Bildirim", text: "Bir soruda hata mı var? Kısa kontrol veya kart ekranındaki “Bu soruda hata var” düğmesine bas — soru bize olduğu gibi iletilir. Genel öneri ve sorunlar için Ayarlar → Geri Bildirim bölümünü kullan." }
+  { icon: "message-square", color: "#DC2626", title: "Geri Bildirim", text: "Bir soruda hata mı var? Kısa kontrol veya kart ekranındaki “Soruda hata mı var?” düğmesine bas — soru bize olduğu gibi iletilir. Genel öneri ve sorunlar için Ayarlar → Geri Bildirim bölümünü kullan." }
 ];
 
 function openHelp() {
@@ -5168,8 +5200,10 @@ function tekrarKartBasla(topicKey) {
 }
 window.tekrarKartBasla = tekrarKartBasla;
 function resetTopic(topicKey) {
-  openConfirm("Konu 'Tamamlandı' statüsünden çıkacak, hafıza sıfırlanacak ve 0. Adım'a döneceksin. Emin misin?", () => {
-    resetTopicMemory(topicKey); saveState(); toast("Konu sıfırlandı.", "warning"); navigate("tracking");
+  openConfirm("Bu konu 0. adıma dönecek: çalışma adımları, hafıza kaydı ve kısa kontrol geçmişi sıfırlanacak. Kart kayıtların korunur. Emin misin?", () => {
+    resetTopicMemory(topicKey); saveState();
+    toast("Konu sıfırlandı — 4 adım ve kısa kontrol yeniden açıldı.", "warning");
+    navigate("tracking");
   });
 }
 
@@ -5889,7 +5923,7 @@ function soruCozumDetay(examIdx, ders, qno, topicKey) {
       const kayitli = state.bkt_state && state.bkt_state[k] && state.bkt_state[k].pool_id;
       // v35.7 — kayıtlı kimlik eski sürümden YANLIŞ kalmış olabilir; doğrula.
       const havuz = havuzIdCoz(k, kayitli);
-      if (!havuz) { toast("Bu konu için soru havuzu bulunamadı.", "warning"); return; }
+      if (!havuz) { toast("Bu konu için soru havuzu tanımlı değil.", "warning"); return; }
       if (state.bkt_state && state.bkt_state[k] && !state.bkt_state[k].pool_id) state.bkt_state[k].pool_id = havuz;
       if (window.AnalizBKT && typeof window.AnalizBKT.openMiniTest === "function") window.AnalizBKT.openMiniTest(k, havuz, { mode: "learning" });
     }
@@ -6271,7 +6305,7 @@ function renderQuestionBank(container) {
       const idx = state.questions.length - 1 - ri;
       const noLog = (q.errorLogs || []).length === 0 && (q.w + q.e) > 0;
       return '<div class="list-row"><div style="flex:1;min-width:0;"><div style="font-weight:600;font-size:13px;">' + esc(q.lesson) + '</div>' +
-        '<div class="text-xs text-muted tabular">' + fmtDate(q.date) + " · " + q.total + " soru · D" + q.d + "/Y" + q.w + "/B" + qbBos(q) + (noLog ? ' · <span style="color:var(--on-warning-bg-soft);">⚠ hata kaydı girilmedi</span>' : "") + "</div></div>" +
+        '<div class="text-xs text-muted tabular">' + fmtDate(q.date) + " · " + q.total + " soru · D" + q.d + "/Y" + q.w + "/B" + qbBos(q) + (noLog ? ' · <span style="color:var(--on-warning-bg-soft);">hata kaydı girilmedi</span>' : "") + "</div></div>" +
         '<button class="icon-btn" data-act="deleteQB" data-idx="' + idx + '" style="min-width:48px;min-height:48px;">' + icon("trash-2", 15, "color:var(--semantic-error);") + "</button></div>";
     }).join("");
   } else {

@@ -202,7 +202,10 @@
     if (!s) return;
     var r = kayit(topicKey);
     var bugunT = bugun();
-    var toplam = liste.length || 1;
+    // v77 — hatalı bildirilen kartlar deftere ve orana GİRMEZ.
+    var hataliSayi = Number(sonuc.hatali) || 0;
+    var toplam = Math.max(0, liste.length - hataliSayi);
+    if (!toplam) { kaydet(); return; }   // tüm kartlar hatalı: tur sayılmaz
     var bilinen = sonuc.bildi;
     r.gorulen = (Number(r.gorulen) || 0) + toplam;
     r.bildi = (Number(r.bildi) || 0) + sonuc.bildi;
@@ -215,10 +218,17 @@
     if (A && typeof A.flashcardReview === "function" && nesne(s.flashcards) && dizi(s.flashcards.cards)) {
       dizi(s.flashcards.cards).forEach(function (c) {
         if (!c || c.topicKey !== topicKey) return;
-        var i = sonuc.detay.indexOf(c.front);
-        // detay: [{front, bildi}] — aynı ön yüz birden fazla kartta olmaz
-        if (i < 0) return;
-        try { A.flashcardReview(c.id, sonuc.detay[i].bildi ? "Bildi" : "Bilemedi"); } catch (e) { /* */ }
+        // v77 — KÖK NEDEN: eskiden detayda `indexOf(c.front)` aranıyordu; dizi
+        // nesne tuttuğu için HER ZAMAN -1 dönüyor, motorun kart defteri hiç
+        // güncellenmiyordu (S/due/hafıza düşüşü işlemiyordu). Artık ön yüz
+        // karşılaştırılır; hata bildirilen kart deftere "Bilemedi" de yazmaz.
+        for (var di = 0; di < sonuc.detay.length; di++) {
+          var dd = sonuc.detay[di];
+          if (!dd || dd.front !== c.front) continue;
+          if (dd.hata) return;      // hatalı kart: gözlem üretilmez
+          try { A.flashcardReview(c.id, dd.bildi ? "Bildi" : "Bilemedi"); } catch (e) { /* */ }
+          return;
+        }
       });
     }
 
@@ -313,7 +323,9 @@
       }
 
       var i = 0, acik = false;
-      var sonuc = { bildi: 0, bilemedi: 0, detay: [] };
+      // v77 — "hatali": kartta hata bildirildi → bu kart o turda DEĞERLENDİRİLMEZ
+      // (kısa kontroldeki v49 kuralının aynısı: hatalı soru puanlamaya girmez).
+      var sonuc = { bildi: 0, bilemedi: 0, hatali: 0, detay: [] };
       var sadeceBilemedi = Array.isArray(o.sadece) ? o.sadece.slice() : null;
       var tur = sadeceBilemedi ? sadeceBilemedi : liste;
 
@@ -351,9 +363,10 @@
               '<button type="button" class="btn btn-sm btn-danger" data-kart-puan="bilemedi" style="min-height:50px;">Bilemedim</button>' +
               '<button type="button" class="btn btn-sm btn-success" data-kart-puan="bildi" style="min-height:50px;">Bildim</button></div>' +
               '<button type="button" class="btn btn-ghost w-full" data-kart-cevir style="margin-top:8px;min-height:42px;">Kartı geri çevir</button>' +
-              // v41 — kullanıcı: "öğrenci soruda hata var ise 'soru hatalı' ya tıklar,
-              // bize şu soru hatalı mesajı gelir". Kart da aynı geri bildirimi gönderir.
-              '<button type="button" class="btn btn-ghost w-full" data-kart-sikayet style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">⚠ Bu kartta hata var</button>'
+              // v77 — KULLANICI: "'soru hatalı' yazıyor ya onu düzeltelim; bu daha
+              // çok uyarı gibi. 'Soruda hata mı var?' yapalım." Etiket artık suçlayıcı
+              // değil, soru biçiminde ve nötr.
+              '<button type="button" class="btn btn-ghost w-full" data-kart-sikayet title="Kart hatalı görünüyorsa bildir — o kart bu turda değerlendirilmez." style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">Soruda hata mı var?</button>'
             : '<button type="button" class="btn btn-primary w-full" data-kart-goster style="margin-top:12px;min-height:50px;">Kartı çevir</button>' +
               '<div style="font-size:11.5px;opacity:.65;margin-top:6px;text-align:center;">Önce zihninden cevapla, sonra karta dokun. (Boşluk tuşu da çevirir.)</div>');
       }
@@ -381,8 +394,10 @@
       }
 
       function bitisCiz() {
-        var oran = tur.length ? sonuc.bildi / tur.length : 0;
-        var tamam = oran >= OTURUM_ESIGI;
+        // v77 — hatalı bildirilen kart paydaya GİRMEZ (kısa kontrol v49 kuralı).
+        var gecerli = Math.max(0, tur.length - sonuc.hatali);
+        var oran = gecerli ? sonuc.bildi / gecerli : 0;
+        var tamam = gecerli > 0 && oran >= OTURUM_ESIGI;
         sonucuIsle(topicKey, sonuc, tur);
         kutu.innerHTML =
           '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">' +
@@ -391,9 +406,12 @@
           '<div style="font-size:14px;line-height:1.9;">' +
           "<div>Bildim: <b>" + sonuc.bildi + "</b></div>" +
           "<div>Bilemedim: <b>" + sonuc.bilemedi + "</b></div>" +
+          (sonuc.hatali ? '<div style="font-size:12.5px;opacity:.75;">Hata bildirildi: <b>' + sonuc.hatali + "</b> (değerlendirmeye alınmadı)</div>" : "") +
           '<div style="margin-top:6px;font-weight:700;color:' + (tamam ? "var(--semantic-success,#16A34A)" : "var(--semantic-warning,#F5A623)") + ';">' +
-          (tamam ? "✓ Günün tekrarı tamamlandı (≥ %70)" : "✗ Tekrar tamamlanmadı — en az %70 bilmen gerekiyor") + "</div>" +
-          (tamam ? "" : '<div style="font-size:12px;opacity:.75;margin-top:4px;">Bilemediklerin yarın yeniden sorulacak; tekrar günü kapanmadı.</div>') +
+          (tamam ? "Günün tekrarı tamamlandı (≥ %70)"
+                 : gecerli === 0 ? "Tüm kartlar hata olarak bildirildi — bu tur değerlendirilmedi"
+                 : "Tekrar tamamlanmadı — en az %70 doğru gerekiyor") + "</div>" +
+          (tamam || gecerli === 0 ? "" : '<div style="font-size:12px;opacity:.75;margin-top:4px;">Bilemediklerin yarın yeniden sorulacak; tekrar günü kapanmadı.</div>') +
           "</div>" +
           '<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">' +
           (!tamam && sonuc.bilemedi ? '<button type="button" class="btn btn-primary" data-kart-tekrar style="min-height:46px;">Bilemediklerimi tekrar sor (' + sonuc.bilemedi + ")</button>" : "") +
@@ -422,17 +440,37 @@
             return sonuc.detay.some(function (d) { return !d.bildi && d.front === k.front; });
           });
           if (!tur.length) return;
-          sonuc = { bildi: 0, bilemedi: 0, detay: [] };
+          sonuc = { bildi: 0, bilemedi: 0, hatali: 0, detay: [] };
           i = 0; acik = false; ciz(); return;
         }
+        // v77 — KULLANICI: "flashcard'a da hatalı soruya tıklayınca ona göre
+        // değerlendirme yapsın." Eskiden düğme yalnız geri bildirim gönderiyor,
+        // kartı ne değerlendiriyor ne de ilerletiyordu (ekran takılı kalıyordu).
+        // Yeni davranış — kısa kontroldeki kuralla AYNI:
+        //   • bildirim gönderilir,
+        //   • kart "hatalı" sayılır: ne bildim ne bilemedim; tur puanına GİRMEZ,
+        //   • sıradaki karta geçilir; tur sonunda kaç kartın hatalı olduğu yazar.
         if (e.target.closest("[data-kart-sikayet]")) {
-          if (typeof window.__amGeriBildirim !== "function") return;
-          window.__amGeriBildirim({
-            tur: "soru",
-            konu: String(topicKey || ""),
-            soru_metni: String((tur[i] && tur[i].front) || "").slice(0, 1000),
-            mesaj: "Kart hatası · cevap: " + String((tur[i] && tur[i].back) || "").slice(0, 300)
-          });
+          var hk = tur[i] || {};
+          try {
+            if (typeof window.__amGeriBildirim === "function") {
+              window.__amGeriBildirim({
+                tur: "soru",
+                konu: String(topicKey || ""),
+                soru_metni: String(hk.front || "").slice(0, 1000),
+                mesaj: "Kartta hata bildirildi. Ön yüz: " + String(hk.front || "").slice(0, 300) +
+                  " | Arka yüz: " + String(hk.back || "").slice(0, 300)
+              });
+            }
+          } catch (err) { /* bildirim gitmese de tur devam eder */ }
+          sonuc.hatali++;
+          sonuc.detay.push({ front: hk.front, bildi: false, hata: true });
+          if (typeof window.toast === "function") {
+            window.toast("Hata bildirimin iletildi. Bu kart turda değerlendirilmedi.", "info");
+          }
+          i++;
+          acik = false;
+          ciz();
           return;
         }
         var p = e.target.closest("[data-kart-puan]");
@@ -450,13 +488,16 @@
   migrate();
   window.AmKart = {
     ac: ac, kartlar: kartlar, sayi: sayi, kayit: kayit, kapat: kapat,
-    // v41 — kart ekranından "bu kartta hata var" geri bildirimi
+    // v41 — kart ekranından "soruda hata mı var?" geri bildirimi.
+    // v77 — metin profesyonelleştirildi: "Kart hatası:" yerine ne olduğunu
+    // söyleyen tek cümle + içerik.
     sikayet: function (topicKey, on, arka) {
       try {
         if (typeof window.__amGeriBildirim !== "function") return Promise.resolve({ ok: false });
         return window.__amGeriBildirim({
           tur: "soru", konu: String(topicKey || ""), soru_metni: String(on || "").slice(0, 1000),
-          mesaj: "Kart hatası: " + String(on || "").slice(0, 300) + " | Cevap: " + String(arka || "").slice(0, 300)
+          mesaj: "Kartta hata bildirildi. Ön yüz: " + String(on || "").slice(0, 300) +
+            " | Arka yüz: " + String(arka || "").slice(0, 300)
         });
       } catch (e) { return Promise.resolve({ ok: false }); }
     },

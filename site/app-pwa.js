@@ -1,4 +1,4 @@
-const PWA_SURUM = "v76-havuzsuz";
+const PWA_SURUM = "v77-duzeltme";
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -157,7 +157,7 @@ async function amKanalTestiCalistir() {
   if (typeof toast === "function") {
     if (t && t.gorunur) toast("Cihaz bildirimi gösteriyor ✓ Bu cihaza hatırlatmalar düşecek.", "success");
     else if (t && /izin/.test(String(t.neden || ""))) toast("Önce bildirim izni ver: Ayarlar → Bildirim İzni İste.", "warning");
-    else toast("Bu cihaz bildirimi GÖSTERMİYOR. Telefon ayarları → Uygulamalar → Chrome → Bildirimler'i aç, Rahatsız etmeyin'i kapat, sonra tekrar dene.", "error");
+    else toast("Bu cihaz bildirim göstermiyor. Telefon ayarlarından Chrome bildirimlerini aç, Rahatsız etmeyin modunu kapat ve tekrar dene.", "error");
   }
   await pushTeshisYaz();
 }
@@ -226,9 +226,9 @@ async function pushTeshisYaz() {
     // kullanıcıdan tek satırla öğrenmeyi sağlar.
     const kanal = (window.__amSonKanalTesti ? window.__amSonKanalTesti() : null);
     if (kanal && kanal.gorunur === false) {
-      metin += " · CİHAZ BİLDİRİM GÖSTERMİYOR (kanal testi: " +
+      metin += " · Cihaz bildirim göstermiyor (kanal testi: " +
         new Date(kanal.zaman).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) +
-        "). Android: Ayarlar → Uygulamalar → Chrome → Bildirimler açık mı? Rahatsız etmeyin kapalı mı?";
+        "). Telefon ayarlarından Chrome bildirimlerini ve Rahatsız etmeyin modunu denetle.";
     } else if (kanal && kanal.gorunur === true) {
       metin += " · Kanal testi: cihaz bildirimi gösteriyor.";
     }

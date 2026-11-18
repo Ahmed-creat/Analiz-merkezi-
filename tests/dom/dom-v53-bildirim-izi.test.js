@@ -49,7 +49,8 @@ ok("gösterimden sonra getNotifications ile doğrulanıyor",
   /sayi = \(await kayit\.getNotifications\(\{ tag: etiket \}\)\)\.length/.test(APP));
 ok("görünmediyse ok:false dönüyor", /ok: gorunur/.test(APP));
 ok("sonuç cihazda saklanıyor", /am_bildirim_kanal_testi/.test(APP));
-ok("profil satırı 'cihaz göstermiyor' diyebiliyor", /CİHAZ BİLDİRİM GÖSTERMİYOR/.test(APP));
+// v77 — metin profesyonelleştirildi: bağıran büyük harf yerine normal cümle.
+ok("profil satırı 'cihaz göstermiyor' diyebiliyor", /Cihaz bildirim göstermiyor/.test(APP));
 // v63 — düğme KALDIRILDI (kullanıcı: "profesyonel uygulamalarda öyle bir şey
 // yok"); kanal ölçümü arka planda aynen sürüyor.
 ok("kanal testi düğmesi profilden kaldırıldı", !/data-act="amKanalTesti"/.test(APP));

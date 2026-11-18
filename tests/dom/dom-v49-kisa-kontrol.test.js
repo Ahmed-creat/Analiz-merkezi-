@@ -133,7 +133,8 @@ console.log("\n== 3) Arayüz: hatalı soru satırında neden kutusu yok ==");
 {
   ok("showMiniResult hatalı listesini okuyor", /hataliListe/.test(BKT));
   ok("hatalı satırda neden sorusu koşullu (!ok && !hatali)", /if \(!ok && !hatali\)/.test(BKT));
-  ok("hatalı satır etiketi var", /Hatalı \(hesaba katılmadı\)/.test(BKT));
+  // v77 — etiket profesyonelleştirildi: "Hata bildirildi (değerlendirilmedi)".
+  ok("hatalı satır etiketi var", /Hata bildirildi \(değerlendirilmedi\)/.test(BKT));
   ok("tıklamada işaretleniyor (_bktHatali)", /modal\._bktHatali\[sira\] = true/.test(BKT));
   ok("işaretlenince sonuç ekranı tazeleniyor", /showMiniResult\(modal, modal\._bktDraft\)/.test(BKT));
   ok("completeMiniTestReasons hatalıyı dışlıyor", /filter\(i => !hataliMi\(i\)\)/.test(BKT));

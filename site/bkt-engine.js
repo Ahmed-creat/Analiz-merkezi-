@@ -859,11 +859,11 @@
            : 'Cevabını değiştirebilirsin.') + '</div>';
     // v41 — KULLANICI: "öğrenci soruda hata var ise soru hatalı mı? ya tıklar,
     // bize şu soru hatalı mesajı gelir." Her sorunun altında bu düğme var.
-    // v49 — "Bu soruda hata var" denildiyse: bu soru puanlamaya katılmaz, neden sorulmaz.
+    // v49 — "Soruda hata mı var?" denildiyse: bu soru puanlamaya katılmaz, neden sorulmaz.
     const buHatali = !!(modal._bktHatali && modal._bktHatali[i]);
     h += buHatali
-      ? '<div class="text-xs" style="margin-top:6px;line-height:1.45;color:var(--on-warning-bg,#92400E);">Bu soru hatalı olarak bildirildi — puanlamaya katılmaz, neden sorulmaz.</div>'
-      : '<button type="button" class="btn btn-ghost w-full" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">⚠ Bu soruda hata var</button>';
+      ? '<div class="text-xs" style="margin-top:6px;line-height:1.45;color:var(--on-warning-bg,#92400E);">Bu soru için hata bildirimi yapıldı — değerlendirmeye alınmaz, neden sorulmaz.</div>'
+      : '<button type="button" class="btn btn-ghost w-full" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:38px;font-size:11.5px;opacity:.85;">Soruda hata mı var?</button>';
     h += '<div id="bkt-test-message" class="text-xs" style="min-height:18px;margin-top:8px;"></div></div>';
     modal.innerHTML = h;
   }
@@ -961,18 +961,18 @@
     const renk = puan >= 80 ? "var(--semantic-success)" : puan >= 40 ? "var(--semantic-warning)" : "var(--semantic-error)";
     let html = '<div style="width:100%;max-width:600px;max-height:90vh;overflow:auto;background:var(--bg-card,#fff);color:var(--text-main,#16213A);border-radius:16px;padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><strong>Sonuçlar</strong><button type="button" data-bkt-close-test style="min-width:48px;min-height:48px;border:0;background:none;color:inherit;font-size:20px;">×</button></div>' +
       '<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;"><b class="tabular" style="font-size:32px;color:' + renk + ';">' + draft.correct + '/' + gecerli + '</b><span class="text-sm text-muted">doğru · %' + puan + '</span></div>' +
-      (hataliListe.length ? '<p class="text-xs text-muted" style="margin-bottom:6px;">' + hataliListe.length + ' soru hatalı olarak bildirildi — bu sorular için neden sorulmaz, puanlamaya katılmaz.</p>' : '') +
+      (hataliListe.length ? '<p class="text-xs text-muted" style="margin-bottom:6px;">' + hataliListe.length + ' soru için hata bildirimi yapıldı — bu sorular değerlendirmeye alınmaz, neden sorulmaz.</p>' : '') +
       '<p class="text-xs text-muted" style="margin-bottom:8px;">Yanlışların nedenini seç — kayıt buna göre işlenecek.</p>';
     questions.forEach((q, i) => {
       const ham = draft.answers[i];
       const bosMu = ham == null || String(ham) === "";
       const ok = !bosMu && Number(ham) === Number(q.dogru_index);
       const hatali = hataliMi(i);
-      const etiket = hatali ? "Hatalı (hesaba katılmadı)" : ok ? "Doğru" : bosMu ? "Boş" : "Yanlış";
+      const etiket = hatali ? "Hata bildirildi (değerlendirilmedi)" : ok ? "Doğru" : bosMu ? "Boş" : "Yanlış";
       const renk = hatali ? "var(--text-muted,#64748B)" : ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)";
       html += '<div style="border-top:1px solid var(--border-card);padding:10px 0;font-size:12px;"><b style="color:' + renk + ';">' + (i + 1) + ". " + etiket + "</b>" + miniSoruTam(q, ham) +
-        (hatali ? '<div class="text-xs text-muted" style="margin-top:6px;">Bu soru hatalı olarak bildirildi — neden sorulmaz, puanlamaya katılmaz.</div>'
-                : '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">⚠ Bu soruda hata var</button>') +
+        (hatali ? '<div class="text-xs text-muted" style="margin-top:6px;">Bu soru için hata bildirimi yapıldı — değerlendirmeye alınmaz, neden sorulmaz.</div>'
+                : '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">Soruda hata mı var?</button>') +
         '<div class="text-muted" style="margin-top:6px;">Çözüm: ' + safeText(q.cozum) + "</div>";
       // Yanlış ve boş için AYRI neden listesi. Hatalı bildirilen soruda neden SORULMAZ.
       if (!ok && !hatali) html += '<label style="display:block;margin-top:7px;">' + (bosMu ? "Neden boş bıraktın?" : "Neden yanlış yaptın?") +
@@ -994,7 +994,7 @@
     const result = submitMiniTest({ konu_id: modal._bktTopicKey, pool_id: modal._bktPoolId, questions: modal._bktQuestions, answers: answers, mode: modal._bktMode, hatali: hatali });
     if (result.reason === "all_flagged") {
       const msg = modal.querySelector("#bkt-test-message");
-      if (msg) msg.textContent = "Tüm sorular hatalı olarak bildirildi — bu kontrol sayılmadı, tekrar açılacak.";
+      if (msg) msg.textContent = "Tüm sorular için hata bildirimi yapıldı — bu kontrol değerlendirilmedi, yeniden açılacak.";
       return;
     }
     if (result.needsReasons) showMiniResult(modal, result);
@@ -1046,10 +1046,10 @@
       const ok = !bosMu && Number(cevap) === Number(q.dogru_index);
       const hatali = hataliMi(i);
       h += '<div style="border-top:1px solid var(--border-card);padding:9px 0;font-size:12.5px;">' +
-        '<b style="color:' + (hatali ? "var(--text-muted,#64748B)" : ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)") + ';">' + (i + 1) + ". " + (hatali ? "Hatalı (hesaba katılmadı)" : ok ? "Doğru" : bosMu ? "Boş" : "Yanlış") + "</b>" +
+        '<b style="color:' + (hatali ? "var(--text-muted,#64748B)" : ok ? "var(--semantic-success)" : bosMu ? "var(--semantic-warning)" : "var(--semantic-error)") + ';">' + (i + 1) + ". " + (hatali ? "Hata bildirildi (değerlendirilmedi)" : ok ? "Doğru" : bosMu ? "Boş" : "Yanlış") + "</b>" +
         miniSoruTam(q, cevap) +
         '<div class="text-muted" style="margin-top:4px;line-height:1.45;">' + safeText(q.cozum) + "</div>" +
-        '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">⚠ Bu soruda hata var</button></div>';
+        '<button type="button" class="btn btn-ghost" data-bkt-sikayet="' + i + '" style="margin-top:6px;min-height:34px;font-size:11px;opacity:.85;">Soruda hata mı var?</button></div>';
     });
     h += '<button type="button" data-bkt-close-test class="btn btn-primary w-full" style="min-height:48px;margin-top:12px;">Kapat</button></div>';
     modal.innerHTML = h;
@@ -1061,7 +1061,7 @@
     const reasons = data.reasons || {}; const wrongIndexes = []; const bosIndexes = [];
     // v49 — KULLANICI: "kullanıcı kısa kontrolde 'soru hatalı' derse yine de boş
     // nedeni istiyor. Hata varsa neden sormasın. Ve çözdüğü soru üzerinden hesapla."
-    // → "Bu soruda hata var" denilen soru: neden sorulmaz, puanlamaya girmez,
+    // → "Soruda hata mı var?" denilen soru: neden sorulmaz, puanlamaya girmez,
     //   BKT'ye gözlem yazmaz. Puan yalnız gerçekten çözülen sorular üzerinden.
     const hatali = (Array.isArray(data.hatali) ? data.hatali : []).map(Number).filter(i => i >= 0 && i < questions.length);
     const hataliMi = i => hatali.indexOf(i) >= 0;
@@ -1389,7 +1389,7 @@
       const testButton = event.target.closest("[data-bkt-test]");
       if (testButton) { openMiniTest(testButton.dataset.bktTest, testButton.dataset.bktPool, { mode: testButton.dataset.bktMode || "learning" }); return; }
       if (event.target.closest("[data-bkt-close-test]")) { closeMiniTest(); return; }
-      // v41 — "Bu soruda hata var": soru metni + konu + havuz bize iletilir.
+      // v41 — "Soruda hata mı var?": soru metni + konu + havuz bize iletilir.
       const sikayet = event.target.closest("[data-bkt-sikayet]");
       if (sikayet) {
         const modal = document.getElementById("bkt-test-modal");
