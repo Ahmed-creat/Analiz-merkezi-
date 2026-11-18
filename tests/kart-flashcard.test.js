@@ -37,28 +37,37 @@ function sahteDom() {
   function el(tag) {
     const e = {
       tagName: tag, id: "", style: { cssText: "" }, _html: "", cocuklar: [],
+      /* G-13 — kart.js `document.head.appendChild(stil)` ve `classList` de
+         kullanıyor; sahte DOM'da eksik oldukları için test çöküyordu. */
+      classList: { _s: new Set(), add(c) { this._s.add(c); }, remove(c) { this._s.delete(c); }, toggle() {}, contains(c) { return this._s.has(c); } },
       set innerHTML(v) { this._html = String(v); },
       get innerHTML() { return this._html; },
       set textContent(v) { this._html = String(v); },
       get textContent() { return this._html; },
-      appendChild(c) { this.cocuklar.push(c); return c; },
+      appendChild(c) { if (c && typeof c === "object") c._ebeveyn = this; this.cocuklar.push(c); return c; },
       remove() {
         const i = dinleyiciler.findIndex(l => l.el === this);
         if (i >= 0) dinleyiciler.splice(i, 1);
         if (this._ebeveyn) { const j = this._ebeveyn.cocuklar.indexOf(this); if (j >= 0) this._ebeveyn.cocuklar.splice(j, 1); }
       },
-      addEventListener(ad, fn) { dinleyiciler.push({ el: this, ad: ad, fn: fn }); }
+      addEventListener(ad, fn) { dinleyiciler.push({ el: this, ad: ad, fn: fn }); },
+      querySelector() { return null; },
+      querySelectorAll() { return []; },
+      closest() { return null; }
     };
     return e;
   }
   const body = el("body");
   const document = {
     body: body,
+    head: el("head"),
     createElement: t => el(t),
     getElementById: id => {
       if (id === "kart-modal") return body.cocuklar.find(c => c.id === id) || null;
       return null;
-    }
+    },
+    addEventListener() {},
+    removeEventListener() {}
   };
   // body.appendChild sırasında modal id'si ata: kart.js modal.id = MODAL_ID yapar
   return { document: document, body: body, dinleyiciler: dinleyiciler, el: el };
@@ -69,6 +78,12 @@ function sahteDom() {
  * GERÇEKTEN o düğmedir. `closest()` yalnız bu özniteliği tanır — böylece
  * "Kartı çevir"e basınca kapat düğmesine basılmış sayılmaz.
  */
+/* kart.js çevirmeyi 190 ms'lik CSS geçişiyle yapar; düğmeler (Bildim/
+   Bilemedim) ancak arka yüz açıldıktan SONRA çizilir. Test bu yüzden
+   tıklamalar arasında animasyonu BEKLER (G-13: eski test 0 ms bekliyordu). */
+const CEVIR_MS = 220;
+const bekle = (ms) => new Promise(r => setTimeout(r, ms === undefined ? CEVIR_MS : ms));
+
 function tikla(dinleyiciler, modal, oznitelik, deger) {
   const ic = modal.cocuklar[0] ? modal.cocuklar[0].innerHTML : "";
   if (!new RegExp(oznitelik + '(?=[\\s>=]|$)').test(ic)) return false; // ekranda o düğme yok
@@ -152,19 +167,22 @@ function kartYap(topicKey, adet, hataAdet) {
     ok("kart penceresi açıldı", !!modal);
     const ic0 = modal.cocuklar[0].innerHTML;
     ok("ön yüz görünüyor", ic0.includes("Ön 0"), ic0.slice(0, 60));
-    // İki yüz de DOM'da durur (gerçek çevirme böyle çalışır) ama arka yüz
-    // backface-visibility:hidden + rotateY(180deg) ile GÖRÜNMEZ.
-    ok("kart sahnesi var (perspective)", ic0.includes("perspective:1200px"));
-    ok("iç katman preserve-3d", ic0.includes("preserve-3d"));
-    ok("arka yüz gizli (backface-visibility)", ic0.includes("backface-visibility:hidden"));
-    ok("arka yüz 180° çevrili", /kart-arka[^>]*rotateY\(180deg\)/.test(ic0));
-    ok("kart ön yüzde (rotateY(0deg))", ic0.includes("rotateY(0deg)"));
+    /* v38 — KULLANICI: "kart iki yerde de var, biri mavi diğeri beyaz" ve
+       "dönme animasyonu yok". 3B preserve-3d + backface-visibility bazı
+       Android/Safari sürümlerinde İKİ yüzü aynı anda gösteriyordu. Bu yüzden
+       v38'de TEK YÜZ + 190 ms'lik 90° dönüş tasarımına geçildi. Test artık
+       bu GERÇEK davranışı ölçer (eski 3B beklentileri bayattı — G-13). */
+    const stil = (dom.document.head.cocuklar[0] || {}).textContent || "";
+    ok("kart sahnesi var (perspective)", stil.indexOf("perspective:1200px") >= 0);
+    ok("tek yüz çizilir (iki yüz aynı anda YOK)", ic0.includes("Ön 0") && !ic0.includes("Arka 0"));
+    ok("dönüş 90° ara adımda (iki yüz görünmez)", /\.kart-ic\.cevir\{transform:rotateY\(90deg\);\}/.test(stil));
     ok("'Kartı çevir' düğmesi var", ic0.includes("data-kart-goster"));
     ok("çevirmeden Bildim/Bilemedim YOK", !ic0.includes("data-kart-puan"));
 
     tikla(dom.dinleyiciler, modal, "data-kart-goster");
+    await bekle();
     const ic1 = modal.cocuklar[0].innerHTML;
-    ok("çevirince kart 180° döndü", ic1.includes("rotateY(180deg)"));
+    ok("çevirince arka yüz çizildi (ön yüz DOM'dan çıktı)", ic1.includes("Arka 0") && !ic1.includes("Ön 0"));
     ok("çevirince arka yüz içeriği görünür", ic1.includes("Arka 0"));
     ok("'ARKA YÜZ' etiketi var", ic1.includes("ARKA YÜZ"));
     ok("Bildim düğmesi", ic1.includes('data-kart-puan="bildi"'));
@@ -172,7 +190,9 @@ function kartYap(topicKey, adet, hataAdet) {
     ok("'Zorlandım' düğmesi YOK (rapor §5.1: iki düğme)", !ic1.includes("Zorlandım"));
     // Klasik davranış: karta tekrar dokununca geri döner.
     tikla(dom.dinleyiciler, modal, "data-kart-goster");
-    ok("karta tekrar dokununca geri döner", modal.cocuklar[0].innerHTML.includes("rotateY(0deg)"));
+    await bekle();
+    const geri = modal.cocuklar[0].innerHTML;
+    ok("karta tekrar dokununca ön yüze döner", geri.includes("Ön 0") && !geri.includes("Arka 0"));
     // Kartın kendisinde de çevir düğmesi var (erişilebilirlik).
     ok("çevirmeli kartta 'geri çevir' düğmesi", ic1.includes("data-kart-cevir"));
   }
@@ -189,6 +209,7 @@ function kartYap(topicKey, adet, hataAdet) {
     const modal = k.dom.body.cocuklar.find(c => c.id === "kart-modal");
     for (let i = 0; i < toplam; i++) {
       tikla(k.dom.dinleyiciler, modal, "data-kart-goster");
+      await bekle();                                    // çevirme animasyonu
       tikla(k.dom.dinleyiciler, modal, "data-kart-puan", i < bilinen ? "bildi" : "bilemedi");
     }
     await p;
@@ -233,6 +254,36 @@ function kartYap(topicKey, adet, hataAdet) {
     ok("kartı olmayan konu zorunlu değil", d2.zorunlu === false);
   }
 
+  // ---------- 5b) G-05: motor köprüsü TEK yazım ----------
+  console.log("\n== 5b) 'Bilemediklerimi tekrar sor' ikinci turunda mükerrer YOK ==");
+  {
+    const st = bosState();
+    st.flashcards.cards = kartYap(K, 2, 0);
+    const k = kartKur(st);
+    k.A.ac(K);
+    await bekle(0);
+    const modal = k.dom.body.cocuklar.find(c => c.id === "kart-modal");
+    // İki kartı da bilemedim → tur bitişinde "tekrar sor" düğmesi çıkar
+    for (let i = 0; i < 2; i++) {
+      tikla(k.dom.dinleyiciler, modal, "data-kart-goster");
+      await bekle();
+      tikla(k.dom.dinleyiciler, modal, "data-kart-puan", "bilemedi");
+    }
+    ok("motora 2 kart yazıldı", k.s.__reviewCagri.length === 2, String(k.s.__reviewCagri.length));
+    ok("ikisi de 'Bilemedi'", k.s.__reviewCagri.every(c => c.rating === "Bilemedi"));
+    ok("tekrar sor düğmesi var", (modal.cocuklar[0].innerHTML || "").indexOf("data-kart-tekrar") >= 0);
+    const once = k.s.__reviewCagri.length;
+    tikla(k.dom.dinleyiciler, modal, "data-kart-tekrar");
+    await bekle();
+    for (let i = 0; i < 2; i++) {
+      tikla(k.dom.dinleyiciler, modal, "data-kart-goster");
+      await bekle();
+      tikla(k.dom.dinleyiciler, modal, "data-kart-puan", "bildi");
+    }
+    ok("ikinci turda motora MÜKERRER yazım yok", k.s.__reviewCagri.length === once,
+      once + " → " + k.s.__reviewCagri.length);
+  }
+
   // ---------- 6) Bölüm ayrımı: kart ekranı Kısa Kontrol açmaz ----------
   console.log("\n== 6) Kart ekranı Kısa Kontrol (5 soru) AÇMAZ ==");
   {
@@ -240,7 +291,11 @@ function kartYap(topicKey, adet, hataAdet) {
     ok("kart.js mini test açmıyor", !/openMiniTest|submitMiniTest|data-bkt-test/.test(kaynak));
     ok("kart.js 'Kısa Kontrol' düğmesi basmıyor", !/data-act="bktTest"|bkt-control/.test(kaynak));
     const idx = fs.readFileSync(path.join(KOK, "site", "index.html"), "utf8");
-    ok("Konu Takibi'nde Kısa Kontrol ayrı düğme", /bkt-control/.test(idx) && /data-act="kartBasla"/.test(idx));
+    /* v78 — yüzey artık: Bilgi Bankası konu sayfasında 5. ADIM
+       (data-bkt-test) + tekrar kartı düğmesi (data-act="tekrarKart").
+       v60'ta üç ayrı tekrar düğmesi tek düğmeye indirilmişti (kartBasla yok). */
+    ok("Kısa Kontrol ayrı yerde (5. adım)", /data-bkt-test=/.test(idx) && /data-bkt-mode="precheck"/.test(idx));
+    ok("tekrar kartı düğmesi tek ve ayrı", (idx.match(/data-act="tekrarKart"/g) || []).length >= 1 && idx.indexOf('data-act="kartBasla"') < 0);
   }
 
   console.log("\n" + "─".repeat(58));

@@ -197,6 +197,12 @@
    * Bilemedi → bar artmaz, S çarpılmaz, günün tekrarı SAYILMAZ.
    * Oturum ≥ %70 bildiyse gün tamamlanır.
    */
+  /* G-05 — MOTOR KÖPRÜSÜ TEK KEZ. KULLANICI: "Bilemediklerimi tekrar sor"
+     ikinci turu aynı kart için `flashcardReview`'ı YENİDEN çağırıyordu; motor
+     S baskısını (aralık çarpanı) iki kez uyguluyordu. Artık tur oturumu
+     boyunca işlenen kart kimlikleri tutulur; ikinci turda atlanır. */
+  var motoraYazilan = {};
+
   function sonucuIsle(topicKey, sonuc, liste) {
     var s = durum();
     if (!s) return;
@@ -222,10 +228,12 @@
         // nesne tuttuğu için HER ZAMAN -1 dönüyor, motorun kart defteri hiç
         // güncellenmiyordu (S/due/hafıza düşüşü işlemiyordu). Artık ön yüz
         // karşılaştırılır; hata bildirilen kart deftere "Bilemedi" de yazmaz.
+        if (motoraYazilan[c.id]) return;   // G-05: bu tur oturumunda motora yazıldı
         for (var di = 0; di < sonuc.detay.length; di++) {
           var dd = sonuc.detay[di];
           if (!dd || dd.front !== c.front) continue;
           if (dd.hata) return;      // hatalı kart: gözlem üretilmez
+          motoraYazilan[c.id] = 1;
           try { A.flashcardReview(c.id, dd.bildi ? "Bildi" : "Bilemedi"); } catch (e) { /* */ }
           return;
         }
