@@ -1,6 +1,7 @@
 # v86 — Okulizyon: defter kalktı, ölçü Denemelerim · "tümüne" gerçekten tümüne
 
-**Yayın:** `v86-denemelerim-karsilastir` · **Kod commit:** (aşağıda)
+**Yayın:** `v86-denemelerim-karsilastir` · **Kod commit:** `4f68ae1`
+**Vercel:** `dpl_ERL9wr9a6gZQTmvuwjJDTHJKP3WL` — READY / **PROMOTED** (production) · https://analiz-merkezi.vercel.app
 **Test:** `test:hepsi` **EXIT 0 / 0 ✗** (v86 yeni testi 28/28 · kuyruk 42/42 · olukod 17/17 · v79 36/36 · dom-v84 39/39)
 
 ---
@@ -47,6 +48,25 @@ yanlışlar** (ya da **bütün boşlar**) tek dokunuşta işaretlenir. Kural kor
 
 Aynen bu: **Denemelerim zaten doğrunun kendisi.** İkinci bir "işlendi" listesi tutmak, iki
 listenin çelişmesi demekti — bu hatanın kaynağı buydu. Artık tek ölçü var.
+
+## Yayın sonrası canlı doğrulama
+
+| Ne | Beklenen | Canlıda |
+|---|---|---|
+| Ana sayfa alt bilgi | "Analiz Merkezi v86-denemelerim-karsilastir" | ✓ |
+| `sw.js` | `CACHE = "analiz-merkezi-v-20261027-v86-denemelerim-karsilastir"` | ✓ |
+
+> Not: tarayıcıda **bir kez kapat-aç** (ya da sayfayı yenile). Service worker ağ-öncelikli
+> çalıştığı için çevrimiçiyken yeni dosyayı hemen alır.
+
+### Sınamak için (senin adımların)
+
+1. Ayarlar → **Tüm verileri sil**.
+2. Profil → Okulizyon → **Şimdi dene** (ya da denemelerim sayfasını aç; çekim kendiliğinden).
+3. Artık "aynı" demez: denemeler **Denemelerim'e yeniden yazılır** ve yeşil şeritte
+   "Okulizyon'dan N deneme eklendi" görünür.
+4. Denemelerim → **Nedenleri seç** → "Yanlışların tümüne → Konu eksiği" de. 25'ten fazla
+   bekleyen olsa da **hepsi** işaretlenir; boşlar için "Boşların tümüne" ayrı çalışır.
 
 ## Dokunulmayanlar
 
