@@ -6020,6 +6020,17 @@ function konuHavuzuVar(topicKey) {
   return null;
 }
 
+// v78 — HAVUZU OLMAYAN KONULARIN GEREKÇESİ (tek kaynak).
+// KULLANICI: "Paragraf havuzu asla üretilmeyecek — uygulamada nasıl paragraf
+// sorulsun ki?" Paragraf soruları Türkçe/TDE denemelerinde metinle birlikte
+// gelir; uygulamanın 5 soruluk kısa kontrol formatına uygun DEĞİL. Bu yüzden
+// Paragraf havuzu kalıcı istisnadır: konu 4 adımla çalışır, 5. adım çizilmez,
+// ölçüm aracı da bunu eksik saymaz (bkz. docs/uretim/araclar/konu-havuz-kapsam.js).
+const HAVUZSUZ_GEREKCE = {
+  "Türk Dili ve Edebiyatı > Paragraf": "Paragraf soruları denemede metinle gelir; uygulamada 5 soruluk kısa kontrol olarak sorulmaz. Bu konu 4 adımla tamamlanır."
+};
+function havuzsuzGerekce(topicKey) { return HAVUZSUZ_GEREKCE[String(topicKey || "")] || ""; }
+
 // v78 — KART/5. ADIM GÖSTERİM KAPISI (tek yer).
 // KULLANICI KARARI: "9. sınıflarda havuz olmayacak, kısa kontrol veya kart da
 // gözükmeyecek. 10. sınıfta olduğu gibi çalışacak."
@@ -6207,6 +6218,11 @@ function renderKnowledge(container) {
       // Havuz KESİN varsa 5 adım; KESİN yoksa 4 adım. Manifest henüz
       // yüklenmediyse (null) yalnız kayıtlı/çözülebilen havuz varsa 5 adım.
       const besAdim = havuzDurum === true || (havuzDurum === null && !!kontrolHavuz);
+      const gerekce = havuzsuzGerekce(selectedTopicKey);
+      if (!besAdim && gerekce) {
+        html += '<div class="validation-msg" style="background:var(--bg-canvas);color:var(--text-muted);margin-bottom:10px;">' +
+          icon("info", 14) + " " + esc(gerekce) + "</div>";
+      }
       html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">' + icon("map", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + ' Çalışma Yol Haritası <span class="text-xs text-muted" style="font-weight:600;">· ' + (besAdim ? "5" : "4") + ' adım</span></h3>';
       ROADMAP_STEPS.forEach((st, i) => {
         const isDone = tstate.step > i;
