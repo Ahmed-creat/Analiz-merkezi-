@@ -19,7 +19,7 @@
      • secenekler[0] DOĞRU cevaptır; denge için otomatik taşınır (DENGE).
      • bi, havuzdaki mevcut alt_beceri sırasına göredir (0,1,...).
      • soru_id ve kart id'si havuzun son numarasından devam eder.
-     • Yazım hem site/ hem pwa-files/ kopyasına yapılır.
+     • Yazım YALNIZ site/content/soru_havuzlari (tek kaynak, v78 G-15).
    ============================================================ */
 "use strict";
 
@@ -28,7 +28,6 @@ const path = require("path");
 
 const KOK = path.resolve(__dirname, "../../..");
 const SITE = path.join(KOK, "site/content/soru_havuzlari");
-const PWA = path.join(KOK, "pwa-files/content/soru_havuzlari");
 const DENGE = [1, 3, 0, 2, 3, 1, 0, 2];
 const kuru = process.argv.includes("--kuru");
 const specYolu = process.argv[2];
@@ -140,8 +139,6 @@ for (const hedef of spec) {
   if (hedef.kaynak && !j.kaynak) j.kaynak = hedef.kaynak;
   if (!kuru) {
     fs.writeFileSync(p, JSON.stringify(j, null, 2) + "\n", "utf8");
-    const pwaP = path.join(PWA, hedef.konu_id + ".json");
-    if (fs.existsSync(pwaP)) fs.writeFileSync(pwaP, JSON.stringify(j, null, 2) + "\n", "utf8");
   }
   const say = {};
   sorular.forEach(q => { say[q.alt_beceri] = (say[q.alt_beceri] || 0) + 1; });

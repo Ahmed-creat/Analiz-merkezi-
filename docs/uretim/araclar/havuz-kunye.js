@@ -24,8 +24,8 @@ const fs = require("fs");
 const path = require("path");
 
 const KOK = path.resolve(__dirname, "../../..");
+// v78 (G-15) — tek kaynak: site/content/soru_havuzlari
 const SITE = path.join(KOK, "site/content/soru_havuzlari");
-const PWA = path.join(KOK, "pwa-files/content/soru_havuzlari");
 const KAZANIM = path.join(KOK, "site/content/mufredat/kazanim_konu_10.json");
 const PROGRAM = path.join(KOK, "site/content/mufredat/meb_kazanim_10.json");
 const KITAP_DIR = path.join(KOK, "docs/uretim/.kitap-metin");
@@ -135,8 +135,6 @@ havuzlar.forEach((h, i) => {
 
   if (!kuru) {
     fs.writeFileSync(h.p, JSON.stringify(j, null, 2) + "\n", "utf8");
-    const pwaP = path.join(PWA, h.f);
-    if (fs.existsSync(pwaP)) fs.writeFileSync(pwaP, JSON.stringify(j, null, 2) + "\n", "utf8");
   }
 });
 

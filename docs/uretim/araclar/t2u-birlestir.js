@@ -21,8 +21,8 @@ const fs = require("fs");
 const path = require("path");
 
 const KOK = path.resolve(__dirname, "../../..");
+// v78 (G-15) — tek kaynak: site/content/soru_havuzlari
 const SITE = path.join(KOK, "site/content/soru_havuzlari");
-const PWA = path.join(KOK, "pwa-files/content/soru_havuzlari");
 const KAZANIM = path.join(KOK, "site/content/mufredat/kazanim_konu_10.json");
 const kuru = process.argv.includes("--kuru");
 
@@ -101,7 +101,6 @@ for (const ad of dosyalar) {
   if (!j.kaynak_dosya && DERS_DOSYA[j.ders]) j.kaynak_dosya = DERS_DOSYA[j.ders];
   if (JSON.stringify(j) !== once) {
     yaz(p, j);
-    yaz(path.join(PWA, ad), j);
     duzeltilen++;
   }
 }
@@ -147,9 +146,8 @@ if (K.ozet && typeof K.ozet === "object") K.ozet.konu_sayisi = K.konular.length;
 if (!kuru) fs.writeFileSync(KAZANIM, JSON.stringify(K, null, 2) + "\n", "utf8");
 console.log("kazanım eşlemesi: Din kayıt " + (DIN_AGAC.length) + " (güncellenen " + guncel + ", yeni " + eklenen + ") · toplam konu " + K.konular.length);
 
-/* PWA tarafına kazanım dosyasının kopyası varsa eşitle */
-const pwaK = path.join(KOK, "pwa-files/content/mufredat/kazanim_konu_10.json");
-if (!kuru && fs.existsSync(pwaK)) fs.writeFileSync(pwaK, JSON.stringify(K, null, 2) + "\n", "utf8");
+/* v78 (G-15) — pwa-files kopyası silindi; kazanım dosyasının tek kaynağı
+   site/content/mufredat/kazanim_konu_10.json (KAZANIM sabiti). */
 /* ---- 3) Kayıt defterinden arşivlenen T havuzlarının izlerini düşür ----- */
 const DEFTERLER = [
   path.join(KOK, "content/mufredat/konu_kayit_defteri.json"),

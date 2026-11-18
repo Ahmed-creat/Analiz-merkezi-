@@ -20,8 +20,9 @@ const fs = require("fs");
 const path = require("path");
 
 const KOK = path.resolve(__dirname, "../../..");
+// v78 (G-15) — TEK KAYNAK: yalnız site/content/soru_havuzlari. Eski pwa-files
+// kopyası silindi; çift yazım yok (aynı havuz iki yerde ayrışabiliyordu).
 const SITE = path.join(KOK, "site/content/soru_havuzlari");
-const PWA = path.join(KOK, "pwa-files/content/soru_havuzlari");
 const kuru = process.argv.includes("--kuru");
 
 const YORUM = /(yorumla|değerlendir|ilişki|örnek|neden|niçin|sonuç|çıkarım|karşılaştır|tartış|eleştir|nasıl etkiler|hangi durum|senaryo)/i;
@@ -66,8 +67,6 @@ for (const ad of fs.readdirSync(SITE)) {
 
   if (!kuru) {
     fs.writeFileSync(p, JSON.stringify(j, null, 2) + "\n", "utf8");
-    const pwaP = path.join(PWA, ad);
-    if (fs.existsSync(pwaP)) fs.writeFileSync(pwaP, JSON.stringify(j, null, 2) + "\n", "utf8");
   }
   duzeltilen++; soruSayisi += sorular.length;
   console.log(ad, "→", say[0] + "/" + say[1]);
