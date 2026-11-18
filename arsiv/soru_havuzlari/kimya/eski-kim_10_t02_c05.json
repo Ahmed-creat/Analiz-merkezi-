@@ -1,0 +1,359 @@
+{
+  "konu_id": "kim_10_t02_c05",
+  "kod": "KİM.10.2.5",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.185-192",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t02_c05_o01",
+      "alt_beceri": "Katı ve gazların saf sudaki çözünürlüğüne etki eden faktörlere ilişkin ölçütler (madde cinsi, sıcaklık ve basınç) belirler.",
+      "metin": "Tabloda üç maddenin çözünürlüğünün sıcaklıkla değişimi özetlenmiştir. Buna göre katıların çözünürlüğü için hangi ölçüt doğrudur?",
+      "secenekler": [
+        "Bütün katıların çözünürlüğü sıcaklıkla aynı oranda artar.",
+        "Katılarda sıcaklık etkisi maddeye göre değişir; genellikle çözünürlük artar.",
+        "Katıların çözünürlüğü sıcaklıktan hiç etkilenmez.",
+        "Katılarda çözünürlüğü belirleyen tek etken basınçtır."
+      ],
+      "dogru_index": 1,
+      "cozum": "KNO3'ün çözünürlüğü sıcaklıkla belirgin artarken NaCl'de değişim çok azdır, Ce2(SO4)3'te ise azalır. Bu nedenle sıcaklık etkisi madde cinsine göre değişir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "Sıcaklıkla değişim"
+        ],
+        "satirlar": [
+          [
+            "KNO3",
+            "belirgin artar"
+          ],
+          [
+            "NaCl",
+            "çok az artar"
+          ],
+          [
+            "Ce2(SO4)3",
+            "azalır"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Sıcaklık artışının katı çözünürlüğüne genel etkisi nedir?",
+        "back": "Genellikle sıcaklık arttıkça artar; ancak bazı katılarda değişim az ya da ters yönlüdür."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o02",
+      "alt_beceri": "Katı ve gazların saf sudaki çözünürlüğüne etki eden faktörlere ilişkin ölçütler (madde cinsi, sıcaklık ve basınç) belirler.",
+      "metin": "Gazların sudaki çözünürlüğü ile sıcaklık arasındaki ilişki için hangisi doğrudur?",
+      "secenekler": [
+        "Sıcaklık arttıkça gaz tanecikleri yavaşlar ve çözünürlük artar.",
+        "Sıcaklık gazların çözünürlüğünü etkilemez; yalnızca basınç etkiler.",
+        "Sıcaklık arttıkça gazların çözünürlüğü önce artar, sonra sabit kalır.",
+        "Sıcaklık arttıkça gazın kinetik enerjisi artar, gaz çözeltiyi terk eder ve çözünürlük azalır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sıcaklık arttığında gaz taneciklerinin kinetik enerjisi artar; tanecikler sıvıyı terk etme eğilimi gösterir. Bu nedenle gazların çözünürlüğü sıcaklıkla ters orantılıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gazlı içeceklerin soğuk içilmesi önerilmesinin nedeni nedir?",
+        "back": "Sıcaklık düştükçe CO2'nin çözünürlüğü artar, gaz içecekte daha uzun süre kalır."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o03",
+      "alt_beceri": "Katı ve gazların saf sudaki çözünürlüğüne etki eden faktörlere ilişkin ölçütler (madde cinsi, sıcaklık ve basınç) belirler.",
+      "metin": "Basıncın çözünürlüğe etkisi için hangisi doğrudur?",
+      "secenekler": [
+        "Katı ve sıvılarda etkisi ihmal edilir; gazlarda basınç arttıkça çözünürlük artar.",
+        "Katılarda basınç arttıkça çözünürlük belirgin artar, gazlarda etkisi yoktur.",
+        "Basınç bütün maddelerin çözünürlüğünü aynı oranda etkiler.",
+        "Basınç arttıkça gazların çözünürlüğü azalır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Katı ve sıvılarda basıncın çözünürlüğe etkisi ihmal edilir. Gazlarda ise basınç arttıkça birim yüzeye çarpan tanecik sayısı artar ve çözünürlük yükselir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gazların çözünürlüğünün basınçla değişimi nedir?",
+        "back": "Basınç arttıkça gazların çözünürlüğü artar."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o04",
+      "alt_beceri": "Çözünürlük ile ilgili seçtiği verileri değişkenler arası ilişkileri belirleyecek şekilde düzenler.",
+      "metin": "Grafikte deniz suyunda çözünmüş oksijen miktarının derinliğe göre değişimi kış ve yaz için verilmiştir. Buna göre yazın çözünmüş oksijen miktarının daha düşük olmasının nedeni hangisidir?",
+      "secenekler": [
+        "Yazın su basıncı arttığı için oksijen suda daha çok çözünür.",
+        "Yazın oksijen mol kütlesi değiştiği için çözünürlük azalır.",
+        "Yazın su sıcaklığı yüksek olduğu için oksijenin çözünürlüğü azalır.",
+        "Derinlik arttıkça sıcaklık yükseldiği için oksijen çözünürlüğü azalır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Gazların çözünürlüğü sıcaklıkla ters orantılıdır. Yaz aylarında su sıcaklığı daha yüksek olduğu için çözünmüş oksijen miktarı kışa göre daha düşüktür; bu durum balık yaşamını da etkiler.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Derinlik (m)",
+        "yEkseni": "O2 (mg/L)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "Kış",
+            "noktalar": [
+              [
+                0,
+                11
+              ],
+              [
+                10,
+                10
+              ],
+              [
+                20,
+                9
+              ],
+              [
+                30,
+                8
+              ],
+              [
+                40,
+                7
+              ]
+            ]
+          },
+          {
+            "ad": "Yaz",
+            "noktalar": [
+              [
+                0,
+                8
+              ],
+              [
+                10,
+                7
+              ],
+              [
+                20,
+                6
+              ],
+              [
+                30,
+                5
+              ],
+              [
+                40,
+                4
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Termal kirlenmenin çözünmüş oksijene etkisi nedir?",
+        "back": "Su sıcaklığını artırdığı için oksijenin çözünürlüğünü düşürür ve sucul canlıları olumsuz etkiler."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o05",
+      "alt_beceri": "Çözünürlük ile ilgili seçtiği verileri değişkenler arası ilişkileri belirleyecek şekilde düzenler.",
+      "metin": "KNO3 ve NaCl karışımı, çözünürlük farkından yararlanılarak saflaştırılacaktır. Bu işlem için seçilen yöntem hangisidir?",
+      "secenekler": [
+        "Karışımı süzerek NaCl'ü çözeltiden ayırma",
+        "Karışımı buharlaştırıp iki katıyı birlikte toplama",
+        "Karışıma asit ekleyerek NaCl'ü çöktürme",
+        "Sıcak suda çözüp soğutarak KNO3'ü kristallendirme"
+      ],
+      "dogru_index": 3,
+      "cozum": "KNO3'ün çözünürlüğü sıcaklıkla belirgin artarken NaCl'ünki çok az değişir. Karışım sıcak suda çözülüp soğutulduğunda KNO3 kristallenir, NaCl çözeltide kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlük farkının kullanım amacı nedir?",
+        "back": "Karışımların saflaştırılmasında ve bileşenlerin ayrılmasında (kristallendirme) kullanılır."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o06",
+      "alt_beceri": "Çözünürlük ile ilgili seçtiği verileri değişkenler arası ilişkileri belirleyecek şekilde düzenler.",
+      "metin": "Bir öğrenci sıcaklığın gazların çözünürlüğüne etkisini araştırmış ve verileri tabloya kaydetmiştir. Tablodaki verilere göre bağımlı değişken hangisidir?",
+      "secenekler": [
+        "Sıcaklık değeri (°C)",
+        "Çözünen oksijen miktarı (mg/L)",
+        "Suyun hacmi (mL)",
+        "Kabın şekli ve boyutu"
+      ],
+      "dogru_index": 1,
+      "cozum": "Araştırmacı sıcaklığı değiştirdiği için sıcaklık bağımsız değişkendir. Sıcaklığa bağlı olarak ölçülen çözünen oksijen miktarı ise bağımlı değişkendir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Deney",
+          "Sıcaklık",
+          "Çözünen O2"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "10 °C",
+            "11 mg/L"
+          ],
+          [
+            "II",
+            "20 °C",
+            "9 mg/L"
+          ],
+          [
+            "III",
+            "30 °C",
+            "7 mg/L"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Bağımlı değişken nedir?",
+        "back": "Bağımsız değişkene bağlı olarak ölçülen, değişimi izlenen değişkendir."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o07",
+      "alt_beceri": "Çözünürlüğe etki eden faktörleri veriye dayalı açıklar.",
+      "metin": "Dalış tüplerinde basınç yüksek tutulduğunda kanda daha fazla azot çözünür. Bu durum hangi ilişkiyle açıklanır?",
+      "secenekler": [
+        "Gazların çözünürlüğü basınç arttıkça artar.",
+        "Gazların çözünürlüğü basınç arttıkça azalır.",
+        "Basınç yalnızca katıların çözünürlüğünü artırır.",
+        "Basıncın gaz çözünürlüğüne etkisi yoktur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Basınç arttıkça sıvı yüzeyine çarpan gaz tanecik sayısı artar ve çözünme artar. Yüksek basınçta kanda çözünen azot, basınç hızla düşünce kabarcık oluşturur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Vurgun olayının çözünürlükle ilişkisi nedir?",
+        "back": "Yüksek basınçta çözünen azot, basınç düşünce çözünürlüğü azaldığı için gaz kabarcığı hâlinde açığa çıkar."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o08",
+      "alt_beceri": "Çözünürlüğe etki eden faktörleri veriye dayalı açıklar.",
+      "metin": "Şeker pancarından şeker üretiminde pancar sıcak suyla işlenmektedir. Bu uygulamanın çözünürlükle ilişkisi hangisidir?",
+      "secenekler": [
+        "Sıcaklık arttıkça şekerin çözünürlüğü azaldığı için şeker kristalleşir.",
+        "Sıcak su basıncı artırdığı için şeker katı hâlde ayrılır.",
+        "Sıcaklık arttıkça şekerin suda çözünürlüğü arttığı için daha çok şeker alınır.",
+        "Sıcaklık şekerin mol kütlesini değiştirdiği için çözünme artar."
+      ],
+      "dogru_index": 2,
+      "cozum": "Katıların çözünürlüğü genellikle sıcaklıkla artar. Sıcak su kullanıldığında pancardaki şeker daha fazla çözünür ve özütlemeyle daha çok şeker elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Özütleme (ekstraksiyon) nedir?",
+        "back": "Sıcaklık arttıkça çözünürlük ve çözünme hızı arttığı için daha fazla madde çözünür."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o09",
+      "alt_beceri": "Katı ve gazların saf sudaki çözünürlüğüne etki eden faktörlere ilişkin ölçütler (madde cinsi, sıcaklık ve basınç) belirler.",
+      "metin": "Çözünürlüğe etki eden faktörlere ilişkin ölçütler belirlenirken hangisi kullanılmaz?",
+      "secenekler": [
+        "Maddenin cinsi ve tanecik yapısı",
+        "Çözeltinin bulunduğu kabın rengi",
+        "Ortamın sıcaklığı ve basıncı",
+        "Çözücünün türü ve miktarı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözünürlük madde cinsi, sıcaklık ve basınç ile ilişkilendirilir. Kabın rengi çözünürlüğü etkilemeyen biçimsel bir özelliktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Madde cinsinin çözünürlüğe etkisi nedir?",
+        "back": "Madde cinsi, sıcaklık ve basınçtır (basıncın etkisi gazlarda belirgindir)."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c05_o10",
+      "alt_beceri": "Çözünürlük ile ilgili seçtiği verileri değişkenler arası ilişkileri belirleyecek şekilde düzenler.",
+      "metin": "Çözünürlük verileri düzenlenirken aynı tabloya 'maddenin fiziksel hâli' sütununun eklenmesi neden yararlıdır?",
+      "secenekler": [
+        "Tablodaki sayıların toplamını hesaplamayı kolaylaştırır.",
+        "Çözeltinin rengini belirlemeye yardımcı olur.",
+        "Kabın hacmini hesaplamak için gereklidir.",
+        "Katı ve gazların sıcaklıkla farklı yönde değiştiğini ayırt etmeyi sağlar."
+      ],
+      "dogru_index": 3,
+      "cozum": "Katıların çözünürlüğü sıcaklıkla genellikle artarken gazlarınki azalır. Fiziksel hâl sütunu bu karşıtlığı veri düzeninde görünür kılar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Katı ve gazların sıcaklıkla çözünürlük değişiminin karşılaştırması nedir?",
+        "back": "Katılarda genellikle artar, gazlarda azalır."
+      },
+      "kazanim": "Çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t02_c05_o01:flashcard",
+      "front": "Sıcaklık artışının katı çözünürlüğüne genel etkisi nedir?",
+      "back": "Genellikle sıcaklık arttıkça artar; ancak bazı katılarda değişim az ya da ters yönlüdür."
+    },
+    {
+      "id": "kim_10_t02_c05_o02:flashcard",
+      "front": "Gazlı içeceklerin soğuk içilmesi önerilmesinin nedeni nedir?",
+      "back": "Sıcaklık düştükçe CO2'nin çözünürlüğü artar, gaz içecekte daha uzun süre kalır."
+    },
+    {
+      "id": "kim_10_t02_c05_o03:flashcard",
+      "front": "Gazların çözünürlüğünün basınçla değişimi nedir?",
+      "back": "Basınç arttıkça gazların çözünürlüğü artar."
+    },
+    {
+      "id": "kim_10_t02_c05_o04:flashcard",
+      "front": "Termal kirlenmenin çözünmüş oksijene etkisi nedir?",
+      "back": "Su sıcaklığını artırdığı için oksijenin çözünürlüğünü düşürür ve sucul canlıları olumsuz etkiler."
+    },
+    {
+      "id": "kim_10_t02_c05_o05:flashcard",
+      "front": "Çözünürlük farkının kullanım amacı nedir?",
+      "back": "Karışımların saflaştırılmasında ve bileşenlerin ayrılmasında (kristallendirme) kullanılır."
+    },
+    {
+      "id": "kim_10_t02_c05_o06:flashcard",
+      "front": "Bağımlı değişken nedir?",
+      "back": "Bağımsız değişkene bağlı olarak ölçülen, değişimi izlenen değişkendir."
+    },
+    {
+      "id": "kim_10_t02_c05_o07:flashcard",
+      "front": "Vurgun olayının çözünürlükle ilişkisi nedir?",
+      "back": "Yüksek basınçta çözünen azot, basınç düşünce çözünürlüğü azaldığı için gaz kabarcığı hâlinde açığa çıkar."
+    },
+    {
+      "id": "kim_10_t02_c05_o08:flashcard",
+      "front": "Özütleme (ekstraksiyon) nedir?",
+      "back": "Sıcaklık arttıkça çözünürlük ve çözünme hızı arttığı için daha fazla madde çözünür."
+    },
+    {
+      "id": "kim_10_t02_c05_o09:flashcard",
+      "front": "Madde cinsinin çözünürlüğe etkisi nedir?",
+      "back": "Madde cinsi, sıcaklık ve basınçtır (basıncın etkisi gazlarda belirgindir)."
+    },
+    {
+      "id": "kim_10_t02_c05_o10:flashcard",
+      "front": "Katı ve gazların sıcaklıkla çözünürlük değişiminin karşılaştırması nedir?",
+      "back": "Katılarda genellikle artar, gazlarda azalır."
+    }
+  ],
+  "topic_key": "Kimya > 2.1.6 Çözünürlğe Etki Eden Faktörler"
+}

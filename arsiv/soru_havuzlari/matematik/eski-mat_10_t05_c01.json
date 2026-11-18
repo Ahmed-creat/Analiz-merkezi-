@@ -1,0 +1,494 @@
+{
+  "konu_id": "mat_10_t05_c01",
+  "kod": "MAT.10.5.1",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 5,
+  "tema_adi": "Sayma, Algoritma ve Bilişim",
+  "kazanim": "Sayma stratejileri kullanarak problem çözebilme",
+  "kaynak": "Matematik 10 ders kitabı, s.310-338",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t05_c01_o01",
+      "alt_beceri": "Verilen sayma problemindeki sayılacak nesneleri belirler.",
+      "metin": "Bir öğrencinin 3 farklı gömleği ve 4 farklı pantolonu vardır. Bu öğrenci gömleklerinden birini veya pantolonlarından birini kaç farklı biçimde seçebilir?",
+      "secenekler": [
+        "12",
+        "7",
+        "3",
+        "4"
+      ],
+      "dogru_index": 1,
+      "cozum": "Seçenekler ayrık olduğu için toplama kuralı uygulanır: 3 + 4 = 7 farklı seçim yapılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Toplama kuralı nedir?",
+        "back": "Ayrık seçeneklerden birinin seçilmesi durumunda seçenek sayılarının toplanmasıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o02",
+      "alt_beceri": "Verilen sayma problemindeki sayılacak nesneleri belirler.",
+      "metin": "Bir torbada 5 kırmızı ve 3 mavi top vardır. Torbadan bir top çekildiğinde kaç farklı sonuç elde edilebilir?",
+      "secenekler": [
+        "15",
+        "2",
+        "5",
+        "8"
+      ],
+      "dogru_index": 3,
+      "cozum": "Tek bir top çekileceği için seçenekler ayrıktır ve toplanır: 5 + 3 = 8 farklı top çekilebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Toplama kuralının uygulanma koşulu nedir?",
+        "back": "Durumların aynı anda gerçekleşemeyecek biçimde ayrık olmasıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o03",
+      "alt_beceri": "Sayma problemlerinde yer alan nesneler arasındaki ilişkileri belirler.",
+      "metin": "3 farklı gömlek ve 4 farklı pantolondan bir gömlek ile bir pantolon birlikte kaç farklı biçimde giyilebilir?",
+      "secenekler": [
+        "12",
+        "7",
+        "24",
+        "16"
+      ],
+      "dogru_index": 0,
+      "cozum": "Her gömlek için 4 pantolon seçeneği vardır. Çarpma kuralı uygulandığında 3 · 4 = 12 farklı kombinasyon elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çarpma kuralı nedir?",
+        "back": "Birbirini izleyen seçimlerde seçenek sayılarının çarpılmasıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o04",
+      "alt_beceri": "Sayma problemlerinde yer alan nesneler arasındaki ilişkileri belirler.",
+      "metin": "Bir şifrenin ilk karakteri A, B, C, D harflerinden biri, sonraki iki karakter ise 0-9 rakamlarından herhangi biri olacaktır. Karakterler tekrar edebildiğine göre kaç farklı şifre oluşturulabilir?",
+      "secenekler": [
+        "120",
+        "1000",
+        "400",
+        "64"
+      ],
+      "dogru_index": 2,
+      "cozum": "İlk karakter için 4, diğerleri için 10 seçenek vardır: 4 · 10 · 10 = 400 farklı şifre oluşturulur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tekrara izin verilen seçimlerde seçenek sayısının durumu nedir?",
+        "back": "Her adımda seçenek sayısı aynı kalır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o05",
+      "alt_beceri": "Problem durumlarındaki sözel ifadeleri görsel temsillere dönüştürür.",
+      "metin": "Bir restoranda 2 çeşit çorba ve 3 çeşit ana yemek bulunmaktadır. Bir çorba ve bir ana yemekten oluşan menü ağaç diyagramıyla listelenecektir. Buna göre kaç farklı menü vardır?",
+      "secenekler": [
+        "5",
+        "8",
+        "9",
+        "6"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ağaç diyagramında her çorba dalından 3 ana yemek dalı çıkar. Toplam dal sayısı 2 · 3 = 6 olup 6 menü listelenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ağaç diyagramı nedir?",
+        "back": "Seçeneklerin dallar biçiminde gösterildiği sistematik sayma aracıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o06",
+      "alt_beceri": "Problem durumlarındaki sözel ifadeleri görsel temsillere dönüştürür.",
+      "metin": "A, B, C, D harfleri kullanılarak harfleri farklı iki harfli kaç farklı kod oluşturulabilir?",
+      "secenekler": [
+        "16",
+        "12",
+        "6",
+        "8"
+      ],
+      "dogru_index": 1,
+      "cozum": "İlk harf için 4, ikinci harf için kalan 3 seçenek vardır: 4 · 3 = 12 kod oluşturulur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tekrarsız seçimde seçenek sayısının azalma kuralı nedir?",
+        "back": "Kullanılan eleman çıkarıldığı için her adımda bir azalır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o07",
+      "alt_beceri": "Problem durumlarını onlara eş olan başka problem durumlarıyla ya da uygun görsel, tablo veya cebirsel temsillerle yeniden ifade eder.",
+      "metin": "5! = 5 · 4 · 3 · 2 · 1 olduğuna göre 5! ifadesinin değeri kaçtır?",
+      "secenekler": [
+        "120",
+        "24",
+        "60",
+        "720"
+      ],
+      "dogru_index": 0,
+      "cozum": "5! = 5 · 4 · 3 · 2 · 1 = 120 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Faktöriyel nedir?",
+        "back": "1'den n'ye kadar doğal sayıların çarpımıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o08",
+      "alt_beceri": "Problem durumlarını onlara eş olan başka problem durumlarıyla ya da uygun görsel, tablo veya cebirsel temsillerle yeniden ifade eder.",
+      "metin": "6!/4! işleminin sonucu kaçtır?",
+      "secenekler": [
+        "2",
+        "12",
+        "30",
+        "24"
+      ],
+      "dogru_index": 2,
+      "cozum": "6!/4! = (6 · 5 · 4!)/4! = 6 · 5 = 30 bulunur; ortak çarpanlar sadeleşir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Faktöriyel içeren oranın sadeleştirme kuralı nedir?",
+        "back": "Büyük faktöriyel, küçük faktöriyelin çarpanlarına ayrılarak sadeleştirilir."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o09",
+      "alt_beceri": "Sayma problemlerindeki farklı durumlara uygun çözüm stratejisi oluşturur.",
+      "metin": "4 farklı kitap bir rafa yan yana kaç farklı sırada dizilebilir?",
+      "secenekler": [
+        "12",
+        "24",
+        "16",
+        "4"
+      ],
+      "dogru_index": 1,
+      "cozum": "4 farklı nesnenin sıralanış sayısı 4! = 24'tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Permütasyon nedir?",
+        "back": "Nesnelerin sırasının önemli olduğu dizilişlerin sayısıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o10",
+      "alt_beceri": "Sayma problemlerindeki farklı durumlara uygun çözüm stratejisi oluşturur.",
+      "metin": "5 kişi bir sıraya kaç farklı biçimde oturabilir?",
+      "secenekler": [
+        "25",
+        "60",
+        "24",
+        "120"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sıra önemli olduğundan permütasyon kullanılır: 5! = 120 farklı oturma düzeni vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıralama problemlerinin kavramı nedir?",
+        "back": "Permütasyondur."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o11",
+      "alt_beceri": "Seçtiği çözüm stratejisini kullanır.",
+      "metin": "P(5, 2) ifadesinin değeri kaçtır?",
+      "secenekler": [
+        "10",
+        "20",
+        "25",
+        "60"
+      ],
+      "dogru_index": 1,
+      "cozum": "P(5, 2) = 5!/(5 − 2)! = 5 · 4 = 20 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(n, r) formülü nedir?",
+        "back": "n!/(n − r)! biçimindeki ifadedir."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o12",
+      "alt_beceri": "Seçtiği çözüm stratejisini kullanır.",
+      "metin": "P(6, 3) ifadesinin değeri kaçtır?",
+      "secenekler": [
+        "20",
+        "216",
+        "18",
+        "120"
+      ],
+      "dogru_index": 3,
+      "cozum": "P(6, 3) = 6 · 5 · 4 = 120 bulunur; ilk üç çarpan alınır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(n, r) ifadesinin çarpan sayısı nedir?",
+        "back": "n'den başlayarak r tane ardışık çarpandır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o13",
+      "alt_beceri": "f) Seçtiği çözüm stratejisini kontrol eder.",
+      "metin": "ANNE kelimesinin harfleri yer değiştirilerek anlamlı ya da anlamsız kaç farklı 4 harfli dizi oluşturulabilir?",
+      "secenekler": [
+        "12",
+        "24",
+        "6",
+        "8"
+      ],
+      "dogru_index": 0,
+      "cozum": "ANNE'de N harfi iki kez geçer. Tekrarlı permütasyonla 4!/2! = 24/2 = 12 farklı dizi elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tekrarlı permütasyon nedir?",
+        "back": "Aynı harflerin yer değiştirmesinin yeni bir dizi oluşturmadığı permütasyondur."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o14",
+      "alt_beceri": "f) Seçtiği çözüm stratejisini kontrol eder.",
+      "metin": "KELEBEK kelimesinin harfleriyle kaç farklı 7 harfli dizi oluşturulabilir?",
+      "secenekler": [
+        "5040",
+        "210",
+        "420",
+        "840"
+      ],
+      "dogru_index": 2,
+      "cozum": "KELEBEK'te E üç, K iki kez geçer. Tekrarlı permütasyonla 7!/(3! · 2!) = 5040/12 = 420 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tekrarlı permütasyon formülü nedir?",
+        "back": "Toplam harf sayısının faktöriyelinin, tekrar eden harflerin faktöriyellerine bölümüdür."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o15",
+      "alt_beceri": "g) Sayma problemlerindeki olası çözüm stratejilerini gözden geçirir.",
+      "metin": "C(5, 2) ifadesinin değeri kaçtır?",
+      "secenekler": [
+        "20",
+        "7",
+        "15",
+        "10"
+      ],
+      "dogru_index": 3,
+      "cozum": "C(5, 2) = 5!/(2! · 3!) = (5 · 4)/(2 · 1) = 10 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kombinasyon nedir?",
+        "back": "Sıranın önemli olmadığı seçimlerin sayısıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o16",
+      "alt_beceri": "g) Sayma problemlerindeki olası çözüm stratejilerini gözden geçirir.",
+      "metin": "C(6, 3) ifadesinin değeri kaçtır?",
+      "secenekler": [
+        "120",
+        "20",
+        "18",
+        "10"
+      ],
+      "dogru_index": 1,
+      "cozum": "C(6, 3) = (6 · 5 · 4)/(3 · 2 · 1) = 120/6 = 20 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "C(n, r) ile P(n, r) arasındaki ilişki nedir?",
+        "back": "C(n, r) = P(n, r)/r! eşitliğidir."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o17",
+      "alt_beceri": "ğ) Sayma problemlerinde çözüme ulaştıran stratejilere yönelik çıkarımlar yapar.",
+      "metin": "5 kişilik bir gruptan bir başkan ve bir başkan yardımcısı seçilecektir. Seçim kaç farklı biçimde yapılabilir?",
+      "secenekler": [
+        "20",
+        "10",
+        "25",
+        "5"
+      ],
+      "dogru_index": 0,
+      "cozum": "Görevler farklı olduğu için sıra önemlidir: P(5, 2) = 5 · 4 = 20 farklı seçim yapılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıranın önemli olduğu durum nedir?",
+        "back": "Seçilenlerin farklı görevlere atanması durumudur."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o18",
+      "alt_beceri": "ğ) Sayma problemlerinde çözüme ulaştıran stratejilere yönelik çıkarımlar yapar.",
+      "metin": "8 kişilik bir gruptan 3 kişilik bir komisyon kaç farklı biçimde oluşturulabilir?",
+      "secenekler": [
+        "336",
+        "24",
+        "56",
+        "120"
+      ],
+      "dogru_index": 2,
+      "cozum": "Komisyonda görev ayrımı olmadığı için sıra önemsizdir: C(8, 3) = 56 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Komisyon seçiminin kavramı nedir?",
+        "back": "Sıra önemsiz olduğu için kombinasyondur."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o19",
+      "alt_beceri": "h) Sayma problemlerinde çözüme ulaştıran stratejilere yönelik çıkarımları değerlendirir.",
+      "metin": "Bir rafta 3 farklı matematik ve 2 farklı fizik kitabı vardır. Matematik kitapları yan yana olmak koşuluyla kitaplar kaç farklı sırada dizilebilir?",
+      "secenekler": [
+        "12",
+        "36",
+        "120",
+        "24"
+      ],
+      "dogru_index": 1,
+      "cozum": "Matematik kitapları tek blok gibi düşünülürse blok ile 2 fizik kitabı 3! biçimde sıralanır. Blok içindeki matematik kitapları da 3! sırada dizilir: 3! · 3! = 36.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yan yana olma koşulunun çözümü nedir?",
+        "back": "Koşullu nesneler tek blok kabul edilip blok içi sıralama eklenir."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c01_o20",
+      "alt_beceri": "h) Sayma problemlerinde çözüme ulaştıran stratejilere yönelik çıkarımları değerlendirir.",
+      "metin": "5 kız ve 4 erkek öğrenci arasından 2 kız ve 1 erkekten oluşan bir ekip kaç farklı biçimde seçilebilir?",
+      "secenekler": [
+        "20",
+        "60",
+        "120",
+        "40"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kızlar C(5, 2) = 10, erkek C(4, 1) = 4 biçimde seçilir. Çarpma kuralıyla 10 · 4 = 40 ekip oluşturulur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birlikte seçim problemlerinin kuralı nedir?",
+        "back": "Gruplar ayrı ayrı seçilip sonuçların çarpılmasıdır."
+      },
+      "kazanim": "Sayma stratejileri kullanarak problem çözebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t05_c01_o01:flashcard",
+      "front": "Toplama kuralı nedir?",
+      "back": "Ayrık seçeneklerden birinin seçilmesi durumunda seçenek sayılarının toplanmasıdır."
+    },
+    {
+      "id": "mat_10_t05_c01_o02:flashcard",
+      "front": "Toplama kuralının uygulanma koşulu nedir?",
+      "back": "Durumların aynı anda gerçekleşemeyecek biçimde ayrık olmasıdır."
+    },
+    {
+      "id": "mat_10_t05_c01_o03:flashcard",
+      "front": "Çarpma kuralı nedir?",
+      "back": "Birbirini izleyen seçimlerde seçenek sayılarının çarpılmasıdır."
+    },
+    {
+      "id": "mat_10_t05_c01_o04:flashcard",
+      "front": "Tekrara izin verilen seçimlerde seçenek sayısının durumu nedir?",
+      "back": "Her adımda seçenek sayısı aynı kalır."
+    },
+    {
+      "id": "mat_10_t05_c01_o05:flashcard",
+      "front": "Ağaç diyagramı nedir?",
+      "back": "Seçeneklerin dallar biçiminde gösterildiği sistematik sayma aracıdır."
+    },
+    {
+      "id": "mat_10_t05_c01_o06:flashcard",
+      "front": "Tekrarsız seçimde seçenek sayısının azalma kuralı nedir?",
+      "back": "Kullanılan eleman çıkarıldığı için her adımda bir azalır."
+    },
+    {
+      "id": "mat_10_t05_c01_o07:flashcard",
+      "front": "Faktöriyel nedir?",
+      "back": "1'den n'ye kadar doğal sayıların çarpımıdır."
+    },
+    {
+      "id": "mat_10_t05_c01_o08:flashcard",
+      "front": "Faktöriyel içeren oranın sadeleştirme kuralı nedir?",
+      "back": "Büyük faktöriyel, küçük faktöriyelin çarpanlarına ayrılarak sadeleştirilir."
+    },
+    {
+      "id": "mat_10_t05_c01_o09:flashcard",
+      "front": "Permütasyon nedir?",
+      "back": "Nesnelerin sırasının önemli olduğu dizilişlerin sayısıdır."
+    },
+    {
+      "id": "mat_10_t05_c01_o10:flashcard",
+      "front": "Sıralama problemlerinin kavramı nedir?",
+      "back": "Permütasyondur."
+    },
+    {
+      "id": "mat_10_t05_c01_o11:flashcard",
+      "front": "P(n, r) formülü nedir?",
+      "back": "n!/(n − r)! biçimindeki ifadedir."
+    },
+    {
+      "id": "mat_10_t05_c01_o12:flashcard",
+      "front": "P(n, r) ifadesinin çarpan sayısı nedir?",
+      "back": "n'den başlayarak r tane ardışık çarpandır."
+    },
+    {
+      "id": "mat_10_t05_c01_o13:flashcard",
+      "front": "Tekrarlı permütasyon nedir?",
+      "back": "Aynı harflerin yer değiştirmesinin yeni bir dizi oluşturmadığı permütasyondur."
+    },
+    {
+      "id": "mat_10_t05_c01_o14:flashcard",
+      "front": "Tekrarlı permütasyon formülü nedir?",
+      "back": "Toplam harf sayısının faktöriyelinin, tekrar eden harflerin faktöriyellerine bölümüdür."
+    },
+    {
+      "id": "mat_10_t05_c01_o15:flashcard",
+      "front": "Kombinasyon nedir?",
+      "back": "Sıranın önemli olmadığı seçimlerin sayısıdır."
+    },
+    {
+      "id": "mat_10_t05_c01_o16:flashcard",
+      "front": "C(n, r) ile P(n, r) arasındaki ilişki nedir?",
+      "back": "C(n, r) = P(n, r)/r! eşitliğidir."
+    },
+    {
+      "id": "mat_10_t05_c01_o17:flashcard",
+      "front": "Sıranın önemli olduğu durum nedir?",
+      "back": "Seçilenlerin farklı görevlere atanması durumudur."
+    },
+    {
+      "id": "mat_10_t05_c01_o18:flashcard",
+      "front": "Komisyon seçiminin kavramı nedir?",
+      "back": "Sıra önemsiz olduğu için kombinasyondur."
+    },
+    {
+      "id": "mat_10_t05_c01_o19:flashcard",
+      "front": "Yan yana olma koşulunun çözümü nedir?",
+      "back": "Koşullu nesneler tek blok kabul edilip blok içi sıralama eklenir."
+    },
+    {
+      "id": "mat_10_t05_c01_o20:flashcard",
+      "front": "Birlikte seçim problemlerinin kuralı nedir?",
+      "back": "Gruplar ayrı ayrı seçilip sonuçların çarpılmasıdır."
+    }
+  ]
+}

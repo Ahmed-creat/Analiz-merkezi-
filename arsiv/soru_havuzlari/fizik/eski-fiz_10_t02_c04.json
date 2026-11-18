@@ -1,0 +1,283 @@
+{
+  "konu_id": "fiz_10_t02_c04",
+  "kod": "FİZ.10.2.4",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 2,
+  "tema_adi": "Enerji",
+  "kazanim": "Mekanik enerjiyi çözümleyebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.156-171",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t02_c04_o01",
+      "alt_beceri": "Mekanik enerjiye ilişkin bileşenleri belirler.",
+      "metin": "Sürtünmelerin ihmal edildiği eğik düzlemde serbest bırakılan bir koli kayarak aşağı inmektedir. Kolinin mekanik enerjisinin bileşenleri hangileridir?",
+      "secenekler": [
+        "Yalnızca kinetik enerji",
+        "Yalnızca yer çekimi potansiyel enerjisi",
+        "Kinetik enerji ile yer çekimi potansiyel enerjisi",
+        "Kimyasal enerji ile nükleer enerji"
+      ],
+      "dogru_index": 2,
+      "cozum": "Mekanik enerji, kinetik enerji ile potansiyel enerjinin toplamıdır. Kayan kolide hem hareketten kaynaklanan kinetik hem de yüksekliğe bağlı potansiyel enerji bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik enerjinin matematiksel modelini yazınız.",
+        "back": "E_M = E_K + E_P."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o02",
+      "alt_beceri": "Mekanik enerjiye ilişkin bileşenleri belirler.",
+      "metin": "Yayın ucuna bağlı bir cisim dengeden çekilip serbest bırakılmış ve sürtünmesiz yatay düzlemde salınmaya başlamıştır. Bu sistemin mekanik enerjisi hangi bileşenlerden oluşur?",
+      "secenekler": [
+        "Kinetik enerji ile esneklik potansiyel enerjisi",
+        "Yalnızca kimyasal enerji",
+        "Yalnızca ısı enerjisi",
+        "Kinetik enerji ile nükleer enerji"
+      ],
+      "dogru_index": 0,
+      "cozum": "Yayın sıkışması ya da gerilmesi esneklik potansiyel enerjisi depolar; cisim hareket ettikçe kinetik enerji kazanır. Sistemin mekanik enerjisi bu iki bileşenden oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Esneklik potansiyel enerjisi ile yay sabiti arasındaki ilişki nedir?",
+        "back": "Yay sabiti arttıkça aynı sıkışma miktarında depolanan enerji artar."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o03",
+      "alt_beceri": "Mekanik enerjiye ilişkin bileşenleri belirler.",
+      "metin": "Salıncakta sallanan bir çocuk en yüksek nokta olan A'dan en alt nokta olan B'ye doğru inerken enerji bileşenlerinde hangi değişim görülür?",
+      "secenekler": [
+        "Potansiyel enerjisi artar, kinetik enerjisi azalır.",
+        "Mekanik enerjisi sürekli artar.",
+        "Her iki enerjisi de değişmez.",
+        "Kinetik enerjisi artar, potansiyel enerjisi azalır."
+      ],
+      "dogru_index": 3,
+      "cozum": "A'dan B'ye inerken yükseklik azaldığı için potansiyel enerji azalır, hız arttığı için kinetik enerji artar. Sürtünme ihmal edilirse toplam mekanik enerji korunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aşağı doğru hareket eden cisimde enerji dönüşümü nedir?",
+        "back": "Potansiyel enerji azalır, kinetik enerji artar."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o04",
+      "alt_beceri": "Mekanik enerjiye ilişkin bileşenleri belirler.",
+      "metin": "Sürtünmesi önemsenmeyen bir ortamda hareket eden cismin mekanik enerjisi için hangisi doğrudur?",
+      "secenekler": [
+        "Hareket boyunca sürekli artar.",
+        "Korunur; kinetik ve potansiyel enerjiler birbirine dönüşür.",
+        "Hareket boyunca sürekli azalır ve ısıya dönüşür.",
+        "Yalnızca kinetik enerjiden oluşur, potansiyel enerji bulunmaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Enerji kayıplarının bulunmadığı ideal sistemlerde mekanik enerji korunur. Bu sırada kinetik ve potansiyel enerjiler birbirine dönüşür, toplamları değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik enerjinin korunumunun geçerli olduğu koşul nedir?",
+        "back": "Sürtünme gibi enerji kayıplarının bulunmadığı ideal sistemlerde geçerlidir."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o05",
+      "alt_beceri": "Mekanik enerjiye ilişkin bileşenleri belirler.",
+      "metin": "Bir çocuk yerden 5 m yükseklikteki kaydırağın tepesinde hareketsiz durmaktadır. Yer seviyesi referans alındığında çocuğun mekanik enerjisi hangi bileşenden oluşur?",
+      "secenekler": [
+        "Yalnızca kinetik enerjiden",
+        "Kinetik ve esneklik potansiyel enerjisinden",
+        "Yalnızca yer çekimi potansiyel enerjisinden",
+        "Yalnızca ısı enerjisinden"
+      ],
+      "dogru_index": 2,
+      "cozum": "Çocuk hareketsiz olduğu için kinetik enerjisi sıfırdır. Yerden yüksekte bulunduğundan mekanik enerjisi yalnızca yer çekimi potansiyel enerjisinden oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yer çekimi potansiyel enerjisinin sıfır kabul edildiği düzlemin adı nedir?",
+        "back": "Referans (sıfır) düzlemi."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o06",
+      "alt_beceri": "Mekanik enerjiyle ilgili bileşenler arasındaki matematiksel ilişkiyi belirler.",
+      "metin": "Kütlesi 4 kg olan bir koli, 5 m yükseklikten sürtünmesiz eğik düzlem boyunca kayarak yatay zemine ulaşmıştır (g = 10 m/s²). Kolinin zemine ulaştığı andaki hızı kaç m/s'dir?",
+      "secenekler": [
+        "5",
+        "10",
+        "20",
+        "50"
+      ],
+      "dogru_index": 1,
+      "cozum": "Mekanik enerji korunur: m·g·h = ½·m·v². Sadeleştirildiğinde v² = 2·g·h = 2 · 10 · 5 = 100 ve v = 10 m/s bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sürtünmesiz eğik düzlemde kayan cismin hızını veren bağıntı nedir?",
+        "back": "m·g·h = ½·m·v² eşitliğinden v = √(2·g·h)."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o07",
+      "alt_beceri": "Mekanik enerjiyle ilgili bileşenler arasındaki matematiksel ilişkiyi belirler.",
+      "metin": "Bir cisim 20 m yükseklikten serbest bırakılmıştır (g = 10 m/s², hava sürtünmesi ihmal). Cisim 5 m yüksekliğe geldiğinde kinetik enerjisinin potansiyel enerjisine oranı kaçtır?",
+      "secenekler": [
+        "1",
+        "2",
+        "1/3",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "Cisim 20 m'den 5 m'ye indiğinde 15 m'lik yükseklik kaybı kinetik enerjiye dönüşür. EK = m·g·15, EP = m·g·5 olduğundan oran 15/5 = 3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik enerji korunurken kinetik ve potansiyel enerji arasındaki ilişki nedir?",
+        "back": "Biri azalırken diğeri artar; toplamları sabit kalır."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o08",
+      "alt_beceri": "Mekanik enerjiyle ilgili bileşenler arasındaki matematiksel ilişkiyi belirler.",
+      "metin": "Sürtünmeli eğik düzlemde kayan bir koli yatay zemine ulaştığında mekanik enerjisi için hangisi doğrudur?",
+      "secenekler": [
+        "Sürtünme negatif iş yaptığı için mekanik enerjisi azalır.",
+        "Mekanik enerjisi değişmez.",
+        "Sürtünme pozitif iş yaptığı için mekanik enerjisi artar.",
+        "Mekanik enerjisinin tamamı ısıya dönüşerek yok olur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Sürtünme kuvveti harekete ters yönde olduğundan negatif iş yapar; bu durumda mekanik enerjinin bir kısmı ısıya dönüşür ve mekanik enerji azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sürtünmeli sistemde mekanik enerjinin değişimi nedir?",
+        "back": "Sürtünme negatif iş yaptığı için mekanik enerji azalır."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o09",
+      "alt_beceri": "Mekanik enerjiyle ilgili bileşenler arasındaki matematiksel ilişkiyi belirler.",
+      "metin": "Sürtünmelerin ihmal edildiği bir ortamda üç cismin kütlesi, yerden yüksekliği ve hızı tabloya kaydedilmiştir (g = 10 m/s²). Tablodaki verilere göre hangi cismin mekanik enerjisi en büyüktür?",
+      "secenekler": [
+        "K cismi",
+        "L cismi",
+        "M cismi",
+        "Üç cismin mekanik enerjisi eşittir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Mekanik enerji E_M = m·g·h + ½·m·v² ile hesaplanır. K: 100 J, L: 60 + 24 = 84 J, M: 200 J bulunur. En büyük mekanik enerji M cismine aittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik enerji hesabında kullanılan bileşenler nedir?",
+        "back": "Yer çekimi potansiyel enerjisi (m·g·h) ve kinetik enerji (½·m·v²)."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Cisim",
+          "m (kg)",
+          "h (m)",
+          "v (m/s)"
+        ],
+        "satirlar": [
+          [
+            "K",
+            "2",
+            "5",
+            "0"
+          ],
+          [
+            "L",
+            "3",
+            "2",
+            "4"
+          ],
+          [
+            "M",
+            "2",
+            "10",
+            "0"
+          ]
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t02_c04_o10",
+      "alt_beceri": "Mekanik enerjiyle ilgili bileşenler arasındaki matematiksel ilişkiyi belirler.",
+      "metin": "Durmakta olan 2 kg kütleli bir cisme net 10 N büyüklüğünde kuvvet 4 m boyunca etki etmiştir. Cismin kazandığı kinetik enerji kaç joule'dür?",
+      "secenekler": [
+        "20",
+        "40",
+        "80",
+        "8"
+      ],
+      "dogru_index": 1,
+      "cozum": "İş-kinetik enerji teoremine göre kazanılan kinetik enerji net kuvvetin yaptığı işe eşittir: 10 N · 4 m = 40 J.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Net iş ile kinetik enerji değişimi arasındaki ilişkiyi yazınız.",
+        "back": "W_net = ΔE_K = E_K(son) − E_K(ilk)."
+      },
+      "kazanim": "Mekanik enerjiyi çözümleyebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t02_c04_o01:flashcard",
+      "front": "Mekanik enerjinin matematiksel modelini yazınız.",
+      "back": "E_M = E_K + E_P."
+    },
+    {
+      "id": "fiz_10_t02_c04_o02:flashcard",
+      "front": "Esneklik potansiyel enerjisi ile yay sabiti arasındaki ilişki nedir?",
+      "back": "Yay sabiti arttıkça aynı sıkışma miktarında depolanan enerji artar."
+    },
+    {
+      "id": "fiz_10_t02_c04_o03:flashcard",
+      "front": "Aşağı doğru hareket eden cisimde enerji dönüşümü nedir?",
+      "back": "Potansiyel enerji azalır, kinetik enerji artar."
+    },
+    {
+      "id": "fiz_10_t02_c04_o04:flashcard",
+      "front": "Mekanik enerjinin korunumunun geçerli olduğu koşul nedir?",
+      "back": "Sürtünme gibi enerji kayıplarının bulunmadığı ideal sistemlerde geçerlidir."
+    },
+    {
+      "id": "fiz_10_t02_c04_o05:flashcard",
+      "front": "Yer çekimi potansiyel enerjisinin sıfır kabul edildiği düzlemin adı nedir?",
+      "back": "Referans (sıfır) düzlemi."
+    },
+    {
+      "id": "fiz_10_t02_c04_o06:flashcard",
+      "front": "Sürtünmesiz eğik düzlemde kayan cismin hızını veren bağıntı nedir?",
+      "back": "m·g·h = ½·m·v² eşitliğinden v = √(2·g·h)."
+    },
+    {
+      "id": "fiz_10_t02_c04_o07:flashcard",
+      "front": "Mekanik enerji korunurken kinetik ve potansiyel enerji arasındaki ilişki nedir?",
+      "back": "Biri azalırken diğeri artar; toplamları sabit kalır."
+    },
+    {
+      "id": "fiz_10_t02_c04_o08:flashcard",
+      "front": "Sürtünmeli sistemde mekanik enerjinin değişimi nedir?",
+      "back": "Sürtünme negatif iş yaptığı için mekanik enerji azalır."
+    },
+    {
+      "id": "fiz_10_t02_c04_o09:flashcard",
+      "front": "Mekanik enerji hesabında kullanılan bileşenler nedir?",
+      "back": "Yer çekimi potansiyel enerjisi (m·g·h) ve kinetik enerji (½·m·v²)."
+    },
+    {
+      "id": "fiz_10_t02_c04_o10:flashcard",
+      "front": "Net iş ile kinetik enerji değişimi arasındaki ilişkiyi yazınız.",
+      "back": "W_net = ΔE_K = E_K(son) − E_K(ilk)."
+    }
+  ]
+}

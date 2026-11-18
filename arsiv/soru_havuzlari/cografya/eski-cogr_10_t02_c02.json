@@ -1,0 +1,350 @@
+{
+  "konu_id": "cogr_10_t02_c02",
+  "kod": "COĞ.10.2.2",
+  "sinif": 10,
+  "ders": "Coğrafya",
+  "tema": 2,
+  "tema_adi": "Mekânsal Bilgi Teknolojileri",
+  "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme",
+  "kaynak": "Coğrafya 10 ders kitabı, s.37-40",
+  "sorular": [
+    {
+      "soru_id": "cogr_10_t02_c02_o01",
+      "alt_beceri": "Oluşturacağı haritanın amacını belirler.",
+      "metin": "Bir öğrenci grubu yakın çevreleri için harita oluşturacaktır. Çalışmanın ilk adımında hangi belirleme yapılmalıdır?",
+      "secenekler": [
+        "Haritanın baskı sayısı",
+        "Haritanın hangi amaçla kullanılacağı",
+        "Kullanılacak kalemin rengi",
+        "Haritanın kâğıt boyutu"
+      ],
+      "dogru_index": 1,
+      "cozum": "Haritanın amacı; hangi verilerin toplanacağını, haritanın türünü ve sembollerini belirler. Bu nedenle ilk adım amaç belirlemedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Harita oluşturmada amaç belirleme nedir?",
+        "back": "Haritanın hangi soruya yanıt vereceğinin önceden saptanmasıdır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o02",
+      "alt_beceri": "Oluşturacağı haritanın amacını belirler.",
+      "metin": "Okul çevresindeki afet ve acil durum toplanma alanlarını gösterecek bir harita hazırlanacaktır. Bu haritanın amacı hangisidir?",
+      "secenekler": [
+        "Okuldaki ders programını göstermek",
+        "Bölgedeki yağış miktarını göstermek",
+        "Öğrenci sayılarını göstermek",
+        "Afet anında güvenli toplanma noktalarını göstermek"
+      ],
+      "dogru_index": 3,
+      "cozum": "Toplanma alanlarını gösteren harita, afet anında yönlendirme amacı taşır. Amaç, haritaya aktarılacak verileri de sınırlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tematik harita amacı nedir?",
+        "back": "Belirli bir konunun mekândaki dağılımını göstermektir."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o03",
+      "alt_beceri": "Oluşturacağı harita için gerekli olan yöntemler ve araç gereci kullanır.",
+      "metin": "Yakın çevre haritası hazırlanırken 1/1.000 ölçek yerine 1/25.000 ölçek seçilmiştir. Bu seçimin sonucu hangisidir?",
+      "secenekler": [
+        "Ayrıntının azalması, kapsanan alanın genişlemesi",
+        "Ayrıntının artması, kapsanan alanın daralması",
+        "Haritanın ölçeğinin değişmemesi",
+        "Haritada yalnızca yolların gösterilmesi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Paydası büyük olan ölçek daha küçük ölçektir. Küçük ölçekli haritalar geniş alanı gösterir ancak ayrıntı azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Küçük ölçekli harita nedir?",
+        "back": "Geniş alanı az ayrıntıyla gösteren haritadır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o04",
+      "alt_beceri": "Oluşturacağı harita için gerekli olan yöntemler ve araç gereci kullanır.",
+      "metin": "Sahada toplanan noktaların koordinatları dijital ortama aktarılırken hangi araç kullanılır?",
+      "secenekler": [
+        "Barometre (basınç ölçer)",
+        "Termometre (sıcaklık ölçer)",
+        "Küresel Konumlama Sistemi",
+        "Higrometre (nem ölçücü)"
+      ],
+      "dogru_index": 2,
+      "cozum": "GPS alıcıları noktaların enlem, boylam ve yükselti değerlerini verir. Bu değerler haritaya işlenerek mekânsal veri oluşturulur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "GPS nedir?",
+        "back": "Uydu sinyalleriyle konum belirleyen sistemdir."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o05",
+      "alt_beceri": "Oluşturacağı haritaya ekleyeceği verileri toplar.",
+      "metin": "Bir harita çalışmasında 'okul binası' ve 'öğrenci sayısı' bilgileri toplanmıştır. Bu bilgilerden hangisi mekânsal veridir?",
+      "secenekler": [
+        "Okulun öğrenci sayısı",
+        "Okulun kuruluş yılı",
+        "Okulun adı",
+        "Okul binasının konumu"
+      ],
+      "dogru_index": 3,
+      "cozum": "Mekânsal veri bir özelliğin nerede olduğunu belirtir. Bina konumu haritada gösterilebilir; öğrenci sayısı ise tanıtıcı (mekânsal olmayan) veridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal veri nedir?",
+        "back": "Bir özelliğin konumunu ifade eden veridir."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o06",
+      "alt_beceri": "Oluşturacağı haritaya ekleyeceği verileri toplar.",
+      "metin": "Mahalle haritası için park, konut ve iş yeri konumları toplanacaktır. Bu verilerin elde edilmesinde hangi kaynak en uygundur?",
+      "secenekler": [
+        "Sadece ders kitabı",
+        "Dijital harita uygulamaları ve saha gözlemi",
+        "Yalnızca hava durumu bülteni",
+        "Sadece nüfus sayımı sonuçları"
+      ],
+      "dogru_index": 1,
+      "cozum": "Güncel mekânsal veriler dijital harita uygulamalarından ve saha gözleminden elde edilir. Nüfus sayımı tek başına konum bilgisi vermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal veri kaynağı nedir?",
+        "back": "Konum bilgisini sağlayan uydu görüntüsü, dijital harita ya da saha ölçümüdür."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o07",
+      "alt_beceri": "Oluşturacağı haritanın türünü belirler.",
+      "metin": "Otoyol, akarsu ve orman alanı hazırlanan haritaya aktarılacaktır. Buna göre kullanılacak semboller sırasıyla hangisidir?",
+      "secenekler": [
+        "Çizgi, çizgi, alan",
+        "Nokta, çizgi, alan",
+        "Alan, nokta, çizgi",
+        "Çizgi, alan, nokta"
+      ],
+      "dogru_index": 0,
+      "cozum": "Yol ve akarsu uzunluğu olan unsurlar olduğu için çizgiyle; orman sınırları belirgin ve geniş olduğu için alanla gösterilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Haritada çizgi sembolü nedir?",
+        "back": "Yol, akarsu gibi uzunluğu olan unsurların gösterimidir."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o08",
+      "alt_beceri": "Oluşturacağı haritanın türünü belirler.",
+      "metin": "Bir ilçedeki tarım alanlarının mahallelere göre dağılımı gösterilecektir. Bu amaç için en uygun harita türü hangisidir?",
+      "secenekler": [
+        "Yalnızca yükseltiyi gösteren fiziki harita",
+        "Ulaşım ağını gösteren harita",
+        "Alanları oranla gösteren tematik harita",
+        "İdari sınır haritası"
+      ],
+      "dogru_index": 2,
+      "cozum": "Belirli bir temanın mekândaki dağılımını göstermek için tematik harita kullanılır. Tarım alanı oranları renk ya da tarama ile gösterilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tematik harita nedir?",
+        "back": "Belirli bir konunun mekândaki dağılımını gösteren haritadır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o09",
+      "alt_beceri": "Verileri haritaya işler ve haritanın bileşenlerini oluşturur.",
+      "metin": "Hazırlanan haritanın başlık, lejant, ölçek ve yön oku bileşenleri bulunmaktadır. Bu unsurların işlevi hangisidir?",
+      "secenekler": [
+        "Haritanın renk sayısını artırmak",
+        "Haritanın okunmasını ve doğru yorumlanmasını sağlamak",
+        "Haritanın boyutunu büyütmek",
+        "Haritadaki veri sayısını azaltmak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Başlık konuyu, lejant sembolleri, ölçek uzaklıkları, yön oku ise yönü açıklar. Bu bileşenler haritanın anlaşılması için zorunludur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Harita bileşenleri nedir?",
+        "back": "Başlık, lejant, ölçek ve yön oku gibi haritayı açıklayan unsurlardır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o10",
+      "alt_beceri": "Verileri haritaya işler ve haritanın bileşenlerini oluşturur.",
+      "metin": "Toplanan noktalar haritaya işlenirken önce koordinatlar aktarılmış, ardından semboller yerleştirilmiştir. Bu sıralamanın gerekçesi hangisidir?",
+      "secenekler": [
+        "Semboller konumdan önce yerleştirilemez.",
+        "Koordinatlar sonradan düzeltilebilir.",
+        "Sembol seçimi ölçeğe bağlı değildir.",
+        "Sembolün doğru yere yerleşmesi konum bilgisine bağlıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sembol ancak doğru konum bilgisiyle anlamlı olur. Bu nedenle koordinat aktarımı sembol yerleştirmeden önce yapılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Veri işleme sırası nedir?",
+        "back": "Önce konum bilgisinin aktarılması, sonra sembollerin yerleştirilmesidir."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o11",
+      "alt_beceri": "Oluşturduğu haritayı amacına uygun biçimde kullanır.",
+      "metin": "Hazırlanan tahliye haritası afet tatbikatında kullanılmıştır. Tatbikat sırasında haritanın işlevi hangisidir?",
+      "secenekler": [
+        "Bölgedeki yağış miktarını ölçmek",
+        "Toplanma alanına giden güvenli güzergâhı göstermek",
+        "Binaların yapım yılını belirlemek",
+        "Nüfusun yaş dağılımını göstermek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tahliye haritası çıkış yollarını ve toplanma alanlarını göstererek tatbikatın doğru yürütülmesini sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tahliye haritası nedir?",
+        "back": "Afet anında güvenli çıkış yollarını ve toplanma alanlarını gösteren haritadır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o12",
+      "alt_beceri": "Oluşturduğu haritayı amacına uygun biçimde kullanır.",
+      "metin": "1/25.000 ölçekli harita üzerinde iki nokta arasındaki uzaklık 4 cm'dir. Buna göre bu iki nokta arasındaki gerçek uzaklık kaç kilometredir?",
+      "secenekler": [
+        "4",
+        "10",
+        "2,5",
+        "1"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ölçek paydası 25.000 olduğundan 4 cm gerçekte 4 · 25.000 = 100.000 cm eder. 100.000 cm = 1 km bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ölçek hesabı nedir?",
+        "back": "Harita uzunluğunun ölçek paydasıyla çarpılmasıdır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o13",
+      "alt_beceri": "f) Oluşturduğu haritayı ihtiyaç duyduğunda tekrar kullanır.",
+      "metin": "Bir mahalle haritası hazırlandıktan iki yıl sonra yeni bir okul açılmıştır. Haritanın kullanılabilirliği için ne yapılmalıdır?",
+      "secenekler": [
+        "Harita güncel verilerle yenilenmelidir.",
+        "Harita olduğu gibi kullanılmaya devam etmelidir.",
+        "Harita tamamen imha edilmelidir.",
+        "Yeni okul haritaya işlenmeden arşivlenmelidir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Haritalar güncelliğini yitirdiğinde yanıltıcı olur. Yeni okul gibi değişiklikler haritaya işlenerek güncel tutulmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Harita güncelliği nedir?",
+        "back": "Haritanın gösterdiği verilerin güncel durumla uyumlu olmasıdır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c02_o14",
+      "alt_beceri": "f) Oluşturduğu haritayı ihtiyaç duyduğunda tekrar kullanır.",
+      "metin": "Bir kurum, hazırladığı haritayı katmanlar hâlinde saklayıp farklı çalışmalarda yeniden kullanmaktadır. Bu yaklaşımın sağladığı yarar hangisidir?",
+      "secenekler": [
+        "Haritanın ölçeğinin her kullanımda büyümesi",
+        "Verilerin her seferinde silinmesi",
+        "Verilerin tekrar toplanmasını önleyerek zaman ve emek tasarrufu sağlaması",
+        "Haritanın yalnızca bir kez kullanılabilmesi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Katmanlı yapı, aynı verilerin farklı amaçlarla yeniden kullanılmasını sağlar ve tekrar veri toplama maliyetini düşürür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Katmanlı harita nedir?",
+        "back": "Farklı veri gruplarının ayrı katmanlarda saklandığı haritadır."
+      },
+      "kazanim": "Mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "cogr_10_t02_c02_o01:flashcard",
+      "front": "Harita oluşturmada amaç belirleme nedir?",
+      "back": "Haritanın hangi soruya yanıt vereceğinin önceden saptanmasıdır."
+    },
+    {
+      "id": "cogr_10_t02_c02_o02:flashcard",
+      "front": "Tematik harita amacı nedir?",
+      "back": "Belirli bir konunun mekândaki dağılımını göstermektir."
+    },
+    {
+      "id": "cogr_10_t02_c02_o03:flashcard",
+      "front": "Küçük ölçekli harita nedir?",
+      "back": "Geniş alanı az ayrıntıyla gösteren haritadır."
+    },
+    {
+      "id": "cogr_10_t02_c02_o04:flashcard",
+      "front": "GPS nedir?",
+      "back": "Uydu sinyalleriyle konum belirleyen sistemdir."
+    },
+    {
+      "id": "cogr_10_t02_c02_o05:flashcard",
+      "front": "Mekânsal veri nedir?",
+      "back": "Bir özelliğin konumunu ifade eden veridir."
+    },
+    {
+      "id": "cogr_10_t02_c02_o06:flashcard",
+      "front": "Mekânsal veri kaynağı nedir?",
+      "back": "Konum bilgisini sağlayan uydu görüntüsü, dijital harita ya da saha ölçümüdür."
+    },
+    {
+      "id": "cogr_10_t02_c02_o07:flashcard",
+      "front": "Haritada çizgi sembolü nedir?",
+      "back": "Yol, akarsu gibi uzunluğu olan unsurların gösterimidir."
+    },
+    {
+      "id": "cogr_10_t02_c02_o08:flashcard",
+      "front": "Tematik harita nedir?",
+      "back": "Belirli bir konunun mekândaki dağılımını gösteren haritadır."
+    },
+    {
+      "id": "cogr_10_t02_c02_o09:flashcard",
+      "front": "Harita bileşenleri nedir?",
+      "back": "Başlık, lejant, ölçek ve yön oku gibi haritayı açıklayan unsurlardır."
+    },
+    {
+      "id": "cogr_10_t02_c02_o10:flashcard",
+      "front": "Veri işleme sırası nedir?",
+      "back": "Önce konum bilgisinin aktarılması, sonra sembollerin yerleştirilmesidir."
+    },
+    {
+      "id": "cogr_10_t02_c02_o11:flashcard",
+      "front": "Tahliye haritası nedir?",
+      "back": "Afet anında güvenli çıkış yollarını ve toplanma alanlarını gösteren haritadır."
+    },
+    {
+      "id": "cogr_10_t02_c02_o12:flashcard",
+      "front": "Ölçek hesabı nedir?",
+      "back": "Harita uzunluğunun ölçek paydasıyla çarpılmasıdır."
+    },
+    {
+      "id": "cogr_10_t02_c02_o13:flashcard",
+      "front": "Harita güncelliği nedir?",
+      "back": "Haritanın gösterdiği verilerin güncel durumla uyumlu olmasıdır."
+    },
+    {
+      "id": "cogr_10_t02_c02_o14:flashcard",
+      "front": "Katmanlı harita nedir?",
+      "back": "Farklı veri gruplarının ayrı katmanlarda saklandığı haritadır."
+    }
+  ]
+}

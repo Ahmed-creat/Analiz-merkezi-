@@ -1,0 +1,254 @@
+{
+  "konu_id": "fiz_10_t04_c01",
+  "kod": "FİZ.10.4.1",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 4,
+  "tema_adi": "Dalgalar",
+  "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.275-283",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t04_c01_o01",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerini gözden geçirir.",
+      "metin": "Aşağıdaki günlük hayat gözlemlerinden hangisi periyodik harekete örnektir?",
+      "secenekler": [
+        "Bir aracın trafikte hızlanıp yavaşlaması",
+        "Rüzgârla sürüklenen bir yaprağın hareketi",
+        "Saat sarkacının düzenli aralıklarla ileri geri salınması",
+        "Bir topun yokuştan bir kez yuvarlanması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Periyodik hareket, eşit zaman aralıklarıyla kendini tekrar eden harekettir. Sarkacın düzenli salınımı bu tanıma uyar; diğer hareketler tekrarlanmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Periyodik hareketin tanımını yazınız.",
+        "back": "Eşit zaman aralıklarıyla kendini tekrar eden harekettir."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o02",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerini gözden geçirir.",
+      "metin": "Bir öğrenci salıncakta sallanırken salınımın düzenli aralıklarla tekrarlandığını fark etmiştir. Bu gözlem için hangisi doğrudur?",
+      "secenekler": [
+        "Hareket eşit zaman aralıklarında tekrarlandığı için periyodiktir.",
+        "Hareket tekrarlandığı için hızı sürekli artar.",
+        "Hareket periyodik değildir; çünkü salıncak bir süre sonra durur.",
+        "Hareketin periyodu salıncağın rengine bağlıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Salınım eşit zaman aralıklarında tekrarlandığı için periyodik harekettir. Periyodik hareketin sürmesi için dışarıdan enerji verilmesi gerekebilir ancak bu durum hareketin periyodik olmasını değiştirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Periyodun tanımını yazınız.",
+        "back": "Bir tam salınımın gerçekleşmesi için geçen süredir."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o03",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerini gözden geçirir.",
+      "metin": "Seyircilerin sırayla ayağa kalkıp oturmasıyla yapılan Meksika dalgası ile su dalgası ve yay dalgası karşılaştırıldığında ortak özellik hangisidir?",
+      "secenekler": [
+        "Üçünde de ortamın tamamı kalıcı olarak yer değiştirir.",
+        "Üçünde de enerji bir noktadan diğerine iletilir.",
+        "Üçünde de hareket rastgele aralıklarla tekrarlanır.",
+        "Üçünde de yalnızca enine titreşim görülür."
+      ],
+      "dogru_index": 1,
+      "cozum": "Dalga hareketinde ortamın maddesi kalıcı olarak taşınmaz; yalnızca enerji bir noktadan diğerine iletilir. Meksika dalgasında da su ve yay dalgasında da enerji iletilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dalga hareketinde taşınan nicelik nedir?",
+        "back": "Enerji taşınır; ortamın maddesi kalıcı olarak yer değiştirmez."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o04",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerinden çıkarım yapar.",
+      "metin": "Bir sarkaç 20 saniyede 10 tam salınım yapmıştır. Sarkacın periyodu kaç saniyedir?",
+      "secenekler": [
+        "0,5",
+        "2",
+        "10",
+        "200"
+      ],
+      "dogru_index": 1,
+      "cozum": "Periyot, bir tam salınımın süresidir: T = t / n = 20 s / 10 = 2 s bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Periyot ile frekans arasındaki ilişki nedir?",
+        "back": "Ters orantılıdır: f = 1 / T."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o05",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerinden çıkarım yapar.",
+      "metin": "Dinlenme hâlindeki bir kişinin kalbi dakikada 72 kez atmaktadır. Kalp atışının frekansı kaç hertzdir?",
+      "secenekler": [
+        "1,2",
+        "72",
+        "0,83",
+        "60"
+      ],
+      "dogru_index": 0,
+      "cozum": "Frekans birim zamandaki tekrar sayısıdır. 1 dakika 60 saniyedir; f = 72 / 60 = 1,2 Hz bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Frekansın tanımını yazınız.",
+        "back": "Birim zamandaki titreşim (salınım) sayısıdır."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o06",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerinden çıkarım yapar.",
+      "metin": "Periyodu 0,5 saniye olan bir titreşimin frekansı kaç hertzdir?",
+      "secenekler": [
+        "0,5",
+        "4",
+        "1",
+        "2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Frekans periyodun tersidir: f = 1 / T = 1 / 0,5 = 2 Hz bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Frekansın birimi nedir?",
+        "back": "Hertz (Hz); 1 Hz = 1/s."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o07",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerinden ulaştığı çıkarımı değerlendirir.",
+      "metin": "Bir öğrenci 'Sarkacın uzunluğu artırıldığında periyodu artar.' çıkarımını yapmıştır. Bu çıkarımı değerlendirmek için hangisi en uygundur?",
+      "secenekler": [
+        "Çıkarımı olduğu gibi ezberlemek",
+        "Çıkarımı arkadaşlarına sormadan doğru kabul etmek",
+        "Farklı uzunluklarda sarkaçlarla deney yapıp periyotları ölçmek",
+        "Sarkaç ipinin rengini değiştirerek denemek"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bir çıkarımın geçerliliği ölçmeyle sınanır. Uzunluk değiştirilerek periyodun ölçülmesi, değişkenler arasındaki ilişkiyi doğrudan test eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir çıkarımın sınanması için temel kural nedir?",
+        "back": "Değişkenler kontrol edilerek ölçüm yapılmalı ve sonuçlar karşılaştırılmalıdır."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o08",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerinden ulaştığı çıkarımı değerlendirir.",
+      "metin": "Bir öğrenci 'Sarkacın periyodu genliğine bağlı değildir.' çıkarımında bulunmuştur. Bu çıkarımın değerlendirilmesi için hangi ölçüm yapılmalıdır?",
+      "secenekler": [
+        "Farklı genliklerde salınım yaptırıp periyotların karşılaştırılması",
+        "Sarkacın kütlesinin artırılıp periyodun hiç ölçülmemesi",
+        "Yalnızca bir kez salınımın gözlenmesi",
+        "Sarkacın durdurulup yeniden serbest bırakılmaması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Genliğin periyoda etkisini sınamak için genlik değiştirilirken periyot ölçülmelidir. Ölçüm yapılmadan verilen karar çıkarımı doğrulamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Periyodu güvenilir biçimde ölçmenin kuralı nedir?",
+        "back": "Çok sayıda salınımın süresi ölçülüp salınım sayısına bölünür."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o09",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerinden ulaştığı çıkarımı değerlendirir.",
+      "metin": "Bir öğrenci 'Her tekrarlanan hareket periyodiktir.' çıkarımını yapmıştır. Bu çıkarım için hangisi doğrudur?",
+      "secenekler": [
+        "Doğrudur; her tekrar periyodik harekettir.",
+        "Doğrudur; periyodik hareket her zaman hızlanarak sürer.",
+        "Bu çıkarım hiçbir koşulda değerlendirilemez.",
+        "Eksiktir; periyodik hareketin eşit zaman aralıklarıyla tekrarlanması gerekir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Periyodik hareket yalnızca tekrar etmekle tanımlanmaz; tekrarın eşit zaman aralıklarında gerçekleşmesi gerekir. Bu nedenle çıkarım eksiktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Periyodik hareketin ayırt edici özelliği nedir?",
+        "back": "Tekrarın eşit zaman aralıklarında (aynı periyotla) gerçekleşmesi."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    },
+    {
+      "soru_id": "fiz_10_t04_c01_o10",
+      "alt_beceri": "Periyodik hareketlere ilişkin deneyimlerinden ulaştığı çıkarımı değerlendirir.",
+      "metin": "Bir öğrenci sarkacın 5 tam salınım süresini ölçüp bu değeri 5'e bölmüştür. Bu yöntemin amacı nedir?",
+      "secenekler": [
+        "Salınım genliğini artırmak",
+        "Ölçüm hatasını azaltarak periyodu daha güvenilir bulmak",
+        "Sarkacın frekansını artırmak",
+        "Salınım sayısını azaltmak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Birden çok salınımın toplam süresi ölçülüp salınım sayısına bölündüğünde tepki süresinden kaynaklanan hata azalır ve periyot daha güvenilir bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Titreşim hareketinin tanımını yazınız.",
+        "back": "Cismin denge konumu etrafında yaptığı ileri geri (salınım) hareketidir."
+      },
+      "kazanim": "Periyodik hareketlere ilişkin deneyimlerini yansıtabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t04_c01_o01:flashcard",
+      "front": "Periyodik hareketin tanımını yazınız.",
+      "back": "Eşit zaman aralıklarıyla kendini tekrar eden harekettir."
+    },
+    {
+      "id": "fiz_10_t04_c01_o02:flashcard",
+      "front": "Periyodun tanımını yazınız.",
+      "back": "Bir tam salınımın gerçekleşmesi için geçen süredir."
+    },
+    {
+      "id": "fiz_10_t04_c01_o03:flashcard",
+      "front": "Dalga hareketinde taşınan nicelik nedir?",
+      "back": "Enerji taşınır; ortamın maddesi kalıcı olarak yer değiştirmez."
+    },
+    {
+      "id": "fiz_10_t04_c01_o04:flashcard",
+      "front": "Periyot ile frekans arasındaki ilişki nedir?",
+      "back": "Ters orantılıdır: f = 1 / T."
+    },
+    {
+      "id": "fiz_10_t04_c01_o05:flashcard",
+      "front": "Frekansın tanımını yazınız.",
+      "back": "Birim zamandaki titreşim (salınım) sayısıdır."
+    },
+    {
+      "id": "fiz_10_t04_c01_o06:flashcard",
+      "front": "Frekansın birimi nedir?",
+      "back": "Hertz (Hz); 1 Hz = 1/s."
+    },
+    {
+      "id": "fiz_10_t04_c01_o07:flashcard",
+      "front": "Bir çıkarımın sınanması için temel kural nedir?",
+      "back": "Değişkenler kontrol edilerek ölçüm yapılmalı ve sonuçlar karşılaştırılmalıdır."
+    },
+    {
+      "id": "fiz_10_t04_c01_o08:flashcard",
+      "front": "Periyodu güvenilir biçimde ölçmenin kuralı nedir?",
+      "back": "Çok sayıda salınımın süresi ölçülüp salınım sayısına bölünür."
+    },
+    {
+      "id": "fiz_10_t04_c01_o09:flashcard",
+      "front": "Periyodik hareketin ayırt edici özelliği nedir?",
+      "back": "Tekrarın eşit zaman aralıklarında (aynı periyotla) gerçekleşmesi."
+    },
+    {
+      "id": "fiz_10_t04_c01_o10:flashcard",
+      "front": "Titreşim hareketinin tanımını yazınız.",
+      "back": "Cismin denge konumu etrafında yaptığı ileri geri (salınım) hareketidir."
+    }
+  ]
+}

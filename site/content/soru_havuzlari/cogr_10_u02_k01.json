@@ -1,0 +1,256 @@
+{
+  "konu_id": "cogr_10_u02_k01",
+  "sinif": 10,
+  "ders": "Coğrafya",
+  "tema": 2,
+  "tema_adi": "Mekânsal Bilgi Teknolojileri",
+  "baslik": "2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
+  "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
+  "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler.",
+  "kaynak": "Coğrafya 10 ders kitabı, s.31-36",
+  "kaynak_dosya": "cografya-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "cogr_10_u02_k01_o01",
+      "alt_beceri": "CBS ve uzaktan algılamanın uygulama alanlarını örneklerle açıklar.",
+      "metin": "CBS ve uzaktan algılama teknolojilerinin temel işlevi hangisidir?",
+      "secenekler": [
+        "Yalnızca kâğıt haritaların basımını hızlandırmak",
+        "Mekânsal verilerden coğrafi bilgi toplamak, analiz etmek, görüntülemek ve kullanmak",
+        "Yalnızca nüfus sayım formlarını saklamak",
+        "İklim olaylarını laboratuvarda deneyle üretmek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Uzaktan algılama ve CBS, mekânsal verilerden elde edilen coğrafi bilgilerin toplanması, analizi, görüntülenmesi ve kullanılmasını sağlar (s.31).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Coğrafi Bilgi Sistemleri nedir?",
+        "back": "Mekânsal veriyi toplayan, analiz eden, görüntüleyen ve kullanan teknoloji bütünü."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o02",
+      "alt_beceri": "CBS ve uzaktan algılamanın uygulama alanlarını örneklerle açıklar.",
+      "metin": "Ormansızlaşma ve çölleşme gibi çevresel tehditlerin belirlenmesi, CBS'nin hangi kullanım alanına girer?",
+      "secenekler": [
+        "Tarım uygulamaları",
+        "Kentsel büyüme izleme",
+        "Su arzının planlanması",
+        "Çevresel analizler"
+      ],
+      "dogru_index": 3,
+      "cozum": "Doğal kaynakların yönetimi, arazi kullanımı değişimlerinin izlenmesi, ormansızlaşma ve çölleşmenin belirlenmesi çevresel analizler başlığındadır (s.31).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çevresel analiz nedir?",
+        "back": "Arazi kullanımı değişimi ve çevresel tehditlerin CBS ile izlenip belirlenmesi."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o03",
+      "alt_beceri": "CBS ve uzaktan algılamanın uygulama alanlarını örneklerle açıklar.",
+      "metin": "Bitki örtüsü analizi, verimlilik değerlendirmesi ve tarımsal su kullanımının optimize edilmesi hangi alandaki uygulamalardır?",
+      "secenekler": [
+        "Tarım uygulamaları",
+        "Afet yönetimi",
+        "Şehir yönetimi",
+        "Çevre koruma"
+      ],
+      "dogru_index": 0,
+      "cozum": "Tarım alanlarının izlenmesi, bitki örtüsü analizi, verimlilik değerlendirmeleri ve sulama optimizasyonu tarım uygulamalarıdır (s.31).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tarımda CBS kullanımı nedir?",
+        "back": "Tarım alanlarının izlenmesi, verim ve sulama planlaması."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o04",
+      "alt_beceri": "CBS ve uzaktan algılamanın uygulama alanlarını örneklerle açıklar.",
+      "metin": "Kentsel büyümenin izlenmesi, altyapı yönetimi ve ulaşım planlaması CBS'nin hangi alanına örnektir?",
+      "secenekler": [
+        "Tarım uygulamaları",
+        "Çevresel analizler",
+        "Şehir yönetimi",
+        "Afet yönetimi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kentsel büyüme izleme, altyapı yönetimi ve ulaşım planlaması şehir yönetimi alanında değerlendirilir (s.31).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Şehir yönetimi uygulamaları nedir?",
+        "back": "Kentsel büyümenin izlenmesi, altyapı ve ulaşımın CBS ile planlanması."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o05",
+      "alt_beceri": "CBS ve uzaktan algılamanın uygulama alanlarını örneklerle açıklar.",
+      "metin": "Su kalitesinin izlenmesi ve su kaynaklarının haritalanması hangi uygulama alanına yöneliktir?",
+      "secenekler": [
+        "Habitat izleme",
+        "Arazi kullanımı değişimi",
+        "İklim modellemesi",
+        "Su kaynakları yönetimi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Su kalitesinin izlenmesi, su kaynaklarının haritalanması ve su arzının planlanması su kaynakları yönetimi uygulamalarıdır (s.31).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su kaynakları yönetimi nedir?",
+        "back": "Su kalitesinin izlenmesi, kaynakların haritalanması ve su arzının planlanması."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o06",
+      "alt_beceri": "AYDES'in bileşenlerini ve afet yönetimindeki işlevini çözümler.",
+      "metin": "AYDES'in geliştirilmesinden sorumlu kurum hangisidir?",
+      "secenekler": [
+        "Türkiye Bilimsel ve Teknolojik Araştırma Kurumu",
+        "Afet ve Acil Durum Yönetimi Başkanlığı (AFAD)",
+        "Meteoroloji Genel Müdürlüğü",
+        "Tapu ve Kadastro Genel Müdürlüğü"
+      ],
+      "dogru_index": 1,
+      "cozum": "AYDES, T.C. İçişleri Bakanlığı Afet ve Acil Durum Yönetimi Başkanlığı (AFAD) tarafından geliştirilmiştir (s.32).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karar destek sistemi nedir?",
+        "back": "Afet ve acil durumlarda kaynakları yönetip karar süreçlerini destekleyen web tabanlı uygulama."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o07",
+      "alt_beceri": "AYDES'in bileşenlerini ve afet yönetimindeki işlevini çözümler.",
+      "metin": "AYDES'in üç ana bileşeni hangileridir?",
+      "secenekler": [
+        "Olay Komuta, Mekânsal Bilgi ve İyileştirme Sistemleri",
+        "Harita Araçları, Coğrafi Analiz ve Rota Araçları",
+        "Konum, Zaman ve Hareket kavramları",
+        "Nokta, Çizgi ve Alan sembolleri"
+      ],
+      "dogru_index": 0,
+      "cozum": "AYDES; Olay Komuta Sistemi, Mekânsal Bilgi Sistemi ve İyileştirme Sistemi olarak üç ana bileşenden oluşur (s.32).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "AYDES nedir?",
+        "back": "AFAD'ın web tabanlı afet yönetim ve karar destek sistemi."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o08",
+      "alt_beceri": "AYDES'in bileşenlerini ve afet yönetimindeki işlevini çözümler.",
+      "metin": "Bir afet anında olay bildirimlerinin ekiplere SMS ve e-posta ile iletilmesi AYDES'in hangi bileşeninin işidir?",
+      "secenekler": [
+        "İyileştirme Sistemi",
+        "Mekânsal Bilgi Sistemi",
+        "Olay Komuta Sistemi",
+        "Altlık harita servisi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Olay Komuta Sistemi, afet anında bildirimlerin ekiplere iletilmesini ve hizmet gruplarının iletişimde kalmasını sağlar (s.33).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Olay Komuta Sistemi'nin işlevi nedir?",
+        "back": "Afet ve acil durumlarda hazırlık, müdahale ve iletişimin yönetilmesini sağlar."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o09",
+      "alt_beceri": "AYDES'in bileşenlerini ve afet yönetimindeki işlevini çözümler.",
+      "metin": "AYDES'in Mekânsal Bilgi Sistemi bileşeninin afet yönetimindeki işlevi hangisidir?",
+      "secenekler": [
+        "Hasar tespitinden sonra hak sahipliğini belirlemek",
+        "Afet öncesi, esnası ve sonrasında mekânsal sorgu ve analizle hızlı karar verilmesini sağlamak",
+        "Sadece depremlerin büyüklüğünü ölçmek",
+        "Ekiplerin telefon numaralarını arşivlemek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Mekânsal Bilgi Sistemi, CBS teknolojileriyle mekânsal sorgu ve analiz yapılmasına ve hızlı karar verilmesine imkân tanır (s.34).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal Bilgi Sistemi nedir?",
+        "back": "Afet verisini CBS ile sorgulayıp analiz ederek karar desteği üreten bileşendir."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    },
+    {
+      "soru_id": "cogr_10_u02_k01_o10",
+      "alt_beceri": "AYDES'in bileşenlerini ve afet yönetimindeki işlevini çözümler.",
+      "metin": "Hasar tespit, hak sahipliği ve yer seçimi gibi afet sonrası süreçler AYDES'in hangi bileşeninde yürütülür?",
+      "secenekler": [
+        "Olay Komuta Sistemi",
+        "Mekânsal Bilgi Sistemi",
+        "Altlık yönetim aracı",
+        "İyileştirme Sistemi"
+      ],
+      "dogru_index": 3,
+      "cozum": "İyileştirme Sistemi, afet sonrası iyileştirme çalışmalarının CBS destekli yürütülmesini ve bu süreçlerin aksamamasını hedefler (s.35).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İyileştirme Sistemi nedir?",
+        "back": "Afet sonrası hasar tespiti ve hak sahipliği süreçlerini CBS destekli yürüten bileşendir."
+      },
+      "kazanim": "CBS ve uzaktan algılamaya yönelik uygulama alanlarını özetler."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "cogr_10_u02_k01_o01:flashcard",
+      "front": "Coğrafi Bilgi Sistemleri nedir?",
+      "back": "Mekânsal veriyi toplayan, analiz eden, görüntüleyen ve kullanan teknoloji bütünü."
+    },
+    {
+      "id": "cogr_10_u02_k01_o02:flashcard",
+      "front": "Çevresel analiz nedir?",
+      "back": "Arazi kullanımı değişimi ve çevresel tehditlerin CBS ile izlenip belirlenmesi."
+    },
+    {
+      "id": "cogr_10_u02_k01_o03:flashcard",
+      "front": "Tarımda CBS kullanımı nedir?",
+      "back": "Tarım alanlarının izlenmesi, verim ve sulama planlaması."
+    },
+    {
+      "id": "cogr_10_u02_k01_o04:flashcard",
+      "front": "Şehir yönetimi uygulamaları nedir?",
+      "back": "Kentsel büyümenin izlenmesi, altyapı ve ulaşımın CBS ile planlanması."
+    },
+    {
+      "id": "cogr_10_u02_k01_o05:flashcard",
+      "front": "Su kaynakları yönetimi nedir?",
+      "back": "Su kalitesinin izlenmesi, kaynakların haritalanması ve su arzının planlanması."
+    },
+    {
+      "id": "cogr_10_u02_k01_o06:flashcard",
+      "front": "Karar destek sistemi nedir?",
+      "back": "Afet ve acil durumlarda kaynakları yönetip karar süreçlerini destekleyen web tabanlı uygulama."
+    },
+    {
+      "id": "cogr_10_u02_k01_o07:flashcard",
+      "front": "AYDES nedir?",
+      "back": "AFAD'ın web tabanlı afet yönetim ve karar destek sistemi."
+    },
+    {
+      "id": "cogr_10_u02_k01_o08:flashcard",
+      "front": "Olay Komuta Sistemi'nin işlevi nedir?",
+      "back": "Afet ve acil durumlarda hazırlık, müdahale ve iletişimin yönetilmesini sağlar."
+    },
+    {
+      "id": "cogr_10_u02_k01_o09:flashcard",
+      "front": "Mekânsal Bilgi Sistemi nedir?",
+      "back": "Afet verisini CBS ile sorgulayıp analiz ederek karar desteği üreten bileşendir."
+    },
+    {
+      "id": "cogr_10_u02_k01_o10:flashcard",
+      "front": "İyileştirme Sistemi nedir?",
+      "back": "Afet sonrası hasar tespiti ve hak sahipliği süreçlerini CBS destekli yürüten bileşendir."
+    }
+  ]
+}

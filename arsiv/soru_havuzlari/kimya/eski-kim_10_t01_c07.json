@@ -1,0 +1,284 @@
+{
+  "konu_id": "kim_10_t01_c07",
+  "kod": "KİM.10.1.7",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme",
+  "kaynak": "Kimya 10 ders kitabı, s.69-77",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c07_o01",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünlerin katsayıları ile mol sayıları arasındaki ilişkileri belirler.",
+      "metin": "Fe2O3(k) + 3CO(g) → 2Fe(k) + 3CO2(g) tepkimesinde maddelerin kütleleri tabloda verilmiştir. Buna göre maddelerin mol sayıları arasındaki oran ile denklemdeki katsayılar arasında nasıl bir ilişki vardır?",
+      "secenekler": [
+        "Mol sayıları 1 : 1 : 1 : 1 oranındadır; kütleler eşit paylaşılmıştır.",
+        "Mol sayıları 1 : 3 : 2 : 3 oranındadır; bu oran katsayılarla aynıdır.",
+        "Mol sayıları kütlelerle ters orantılıdır; katsayılarla ilişkisi yoktur.",
+        "Mol sayıları 2 : 3 : 1 : 3 oranındadır; katsayıların tersidir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Mol sayıları kütlenin mol kütlesine bölümüyle bulunur: 160/160 = 1, 84/28 = 3, 112/56 = 2, 132/44 = 3. Bulunan 1:3:2:3 oranı denklemdeki katsayılarla birebir aynıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "Kütle (g)",
+          "MA"
+        ],
+        "satirlar": [
+          [
+            "Fe2O3",
+            "160",
+            "160"
+          ],
+          [
+            "CO",
+            "84",
+            "28"
+          ],
+          [
+            "Fe",
+            "112",
+            "56"
+          ],
+          [
+            "CO2",
+            "132",
+            "44"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Stokiyometrik katsayı nedir?",
+        "back": "Denkleştirilmiş bir tepkimede tepken ve ürünlerin hangi mol oranında tepkimeye girdiğini gösteren katsayılardır."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o02",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkileri kurar.",
+      "metin": "Fe2O3(k) + 3CO(g) → 2Fe(k) + 3CO2(g) tepkimesine göre 2 mol Fe2O3 tamamen tepkimeye girdiğinde kaç mol CO harcanır?",
+      "secenekler": [
+        "3 mol",
+        "4 mol",
+        "2 mol",
+        "6 mol"
+      ],
+      "dogru_index": 3,
+      "cozum": "Denklemde 1 mol Fe2O3 ile 3 mol CO tepkimeye girer. Orantıyla 2 mol Fe2O3 için 6 mol CO harcanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Katsayı oranının mol hesabındaki önemi nedir?",
+        "back": "Tepken ve ürünlerin mol sayıları, katsayıların oluşturduğu oran üzerinden hesaplanır."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o03",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkileri kurar.",
+      "metin": "Fe2O3(k) + 3CO(g) → 2Fe(k) + 3CO2(g) tepkimesinde 1,5 mol CO tamamen harcandığında kaç gram Fe2O3 kullanılmış olur? (Fe2O3: 160 g/mol)",
+      "secenekler": [
+        "80 g",
+        "160 g",
+        "240 g",
+        "120 g"
+      ],
+      "dogru_index": 0,
+      "cozum": "3 mol CO için 1 mol Fe2O3 gerekir; 1,5 mol CO için 0,5 mol Fe2O3 harcanır. m = 0,5 · 160 = 80 g bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol oranından kütle hesabına geçişte kullanılan bağıntı nedir?",
+        "back": "Önce katsayı oranıyla mol sayısı bulunur, sonra mol kütlesiyle çarpılarak kütle hesaplanır."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o04",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkilere yönelik çıkarım yapar.",
+      "metin": "Fe2O3(k) + 3CO(g) → 2Fe(k) + 3CO2(g) tepkimesine göre 1 mol demir elde etmek için kaç tane CO molekülü kullanılmalıdır? (NA = 6,02·10²³)",
+      "secenekler": [
+        "6,02·10²³",
+        "1,806·10²⁴",
+        "9,03·10²³",
+        "3,01·10²³"
+      ],
+      "dogru_index": 2,
+      "cozum": "2 mol Fe için 3 mol CO gerekir; 1 mol Fe için 1,5 mol CO kullanılır. 1,5 · 6,02·10²³ = 9,03·10²³ tane molekül bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol sayısının tanecik sayısına çevrilme bağıntısı nedir?",
+        "back": "Mol sayısı Avogadro sayısıyla çarpılır (N = n · NA)."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o05",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkileri kurar.",
+      "metin": "Zn(k) + 2HCl(suda) → ZnCl2(suda) + H2(g) tepkimesine göre 260 g çinko ve 146 g HCl tepkimeye sokuluyor. Buna göre tepkime sonunda hangi maddeden kaç gram artar? (Zn: 65, H: 1, Cl: 35,5 g/mol)",
+      "secenekler": [
+        "65 g çinko artar; HCl tamamen biter.",
+        "146 g HCl artar; çinko tamamen biter.",
+        "Hiçbir madde artmaz; tepkime artansızdır.",
+        "130 g çinko artar; HCl tamamen biter."
+      ],
+      "dogru_index": 3,
+      "cozum": "260 g Zn 4 mol, 146 g HCl 4 moldür. 4 mol HCl ancak 2 mol Zn ile tepkimeye girer; 2 mol Zn (130 g) artar. Biten HCl sınırlayıcı bileşendir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sınırlayıcı bileşen nedir?",
+        "back": "Artansız tükenen, ürün miktarını belirleyen tepkendir."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o06",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkilere yönelik çıkarım yapar.",
+      "metin": "4NH3(g) + 3O2(g) → 2N2(g) + 6H2O(s) tepkimesine göre 1 mol NH3 ve 0,75 mol O2 tepkimeye girdiğinde 5,6 g N2 elde ediliyor. Buna göre tepkimenin yüzde verimi kaçtır? (N: 14 g/mol)",
+      "secenekler": [
+        "%60",
+        "%40",
+        "%80",
+        "%20"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tam verimde 0,5 mol N2 oluşur; bu 0,5 · 28 = 14 g'dır. Gerçek verim 5,6 g olduğundan yüzde verim = (5,6/14)·100 = %40 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yüzde verim nasıl hesaplanır?",
+        "back": "Gerçek verimin teorik verime oranının 100 ile çarpımıdır."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o07",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünlerin katsayıları ile mol sayıları arasındaki ilişkileri belirler.",
+      "metin": "2Al(k) + 3BaO(k) → Al2O3(k) + 3Ba(k) tepkimesine göre 2 mol Al2O3 elde etmek için kaç gram alüminyum tepkimeye girmelidir? (Al: 27 g/mol)",
+      "secenekler": [
+        "108 g",
+        "54 g",
+        "216 g",
+        "27 g"
+      ],
+      "dogru_index": 0,
+      "cozum": "1 mol Al2O3 için 2 mol Al gerekir; 2 mol Al2O3 için 4 mol Al harcanır. m = 4 · 27 = 108 g bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Katsayılar tepkenlerin mol sayıları arasındaki ilişkiyi nasıl verir?",
+        "back": "Katsayılar doğrudan mol sayıları oranını gösterir."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o08",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkilere yönelik çıkarım yapar.",
+      "metin": "CaCO3(k) → CaO(k) + CO2(g) tepkimesinde 200 g kireç taşı kullanılarak 88,8 g Ca(OH)2 elde edilmiştir (CaO'nun su ile tepkimesi tam verimlidir). Buna göre tepkimenin yüzde verimi kaçtır? (CaCO3: 100, Ca(OH)2: 74 g/mol)",
+      "secenekler": [
+        "%74",
+        "%88,8",
+        "%60",
+        "%40"
+      ],
+      "dogru_index": 2,
+      "cozum": "200 g CaCO3 2 moldür ve tam verimde 2 mol Ca(OH)2 (148 g) oluşmalıdır. Gerçekte 88,8 g (1,2 mol) elde edildiğinden verim = (1,2/2)·100 = %60'tır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Teorik verim nedir?",
+        "back": "Sınırlayıcı bileşenin tamamen tükendiği varsayımıyla hesaplanan ürün miktarıdır."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o09",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünler arasındaki stokiyometrik ilişkileri kurar.",
+      "metin": "6NH4ClO4(k) + 10Al(k) → 5Al2O3(k) + 3N2(g) + 6HCl(g) + 9H2O(g) tepkimesine göre 675 g alüminyum ile tepkimeye girmesi gereken NH4ClO4 kaç gramdır? (H: 1, N: 14, O: 16, Al: 27, Cl: 35,5 g/mol)",
+      "secenekler": [
+        "1176,25 g",
+        "1762,5 g",
+        "2352,5 g",
+        "882 g"
+      ],
+      "dogru_index": 1,
+      "cozum": "675 g Al 675/27 = 25 moldür. 10 mol Al için 6 mol NH4ClO4 gerekir; 25 mol Al için 15 mol gerekir. MA = 117,5 g/mol olduğundan m = 15 · 117,5 = 1762,5 g bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Amonyum perkloratın formülü nedir?",
+        "back": "NH4ClO4 biçimindedir; mol kütlesi 117,5 g/mol'dür."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c07_o10",
+      "alt_beceri": "Denkleştirilmiş kimyasal tepkimelerde tepken ve ürünlerin katsayıları ile mol sayıları arasındaki ilişkileri belirler.",
+      "metin": "2H2(g) + O2(g) → 2H2O(g) denklemi için aşağıdaki yorumlardan hangisi denklemin katsayılarına uygundur?",
+      "secenekler": [
+        "2 g hidrojen 1 g oksijenle birleşerek 2 g su oluşturur.",
+        "2 tane hidrojen atomu 1 tane oksijen atomuyla birleşerek 2 molekül su verir.",
+        "2 litre hidrojen 1 litre oksijenle birleşerek 2 litre su verir.",
+        "2 mol hidrojen 1 mol oksijenle birleşerek 2 mol su oluşturur."
+      ],
+      "dogru_index": 3,
+      "cozum": "Katsayılar mol sayılarını gösterir: 2 mol H2 + 1 mol O2 → 2 mol H2O. Kütleler ise 4 g + 32 g = 36 g olur; katsayılar doğrudan kütle değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Denklem katsayılarının belirttiği nicelik nedir?",
+        "back": "Mol sayılarını belirtir; kütle veya hacim değil."
+      },
+      "kazanim": "Kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c07_o01:flashcard",
+      "front": "Stokiyometrik katsayı nedir?",
+      "back": "Denkleştirilmiş bir tepkimede tepken ve ürünlerin hangi mol oranında tepkimeye girdiğini gösteren katsayılardır."
+    },
+    {
+      "id": "kim_10_t01_c07_o02:flashcard",
+      "front": "Katsayı oranının mol hesabındaki önemi nedir?",
+      "back": "Tepken ve ürünlerin mol sayıları, katsayıların oluşturduğu oran üzerinden hesaplanır."
+    },
+    {
+      "id": "kim_10_t01_c07_o03:flashcard",
+      "front": "Mol oranından kütle hesabına geçişte kullanılan bağıntı nedir?",
+      "back": "Önce katsayı oranıyla mol sayısı bulunur, sonra mol kütlesiyle çarpılarak kütle hesaplanır."
+    },
+    {
+      "id": "kim_10_t01_c07_o04:flashcard",
+      "front": "Mol sayısının tanecik sayısına çevrilme bağıntısı nedir?",
+      "back": "Mol sayısı Avogadro sayısıyla çarpılır (N = n · NA)."
+    },
+    {
+      "id": "kim_10_t01_c07_o05:flashcard",
+      "front": "Sınırlayıcı bileşen nedir?",
+      "back": "Artansız tükenen, ürün miktarını belirleyen tepkendir."
+    },
+    {
+      "id": "kim_10_t01_c07_o06:flashcard",
+      "front": "Yüzde verim nasıl hesaplanır?",
+      "back": "Gerçek verimin teorik verime oranının 100 ile çarpımıdır."
+    },
+    {
+      "id": "kim_10_t01_c07_o07:flashcard",
+      "front": "Katsayılar tepkenlerin mol sayıları arasındaki ilişkiyi nasıl verir?",
+      "back": "Katsayılar doğrudan mol sayıları oranını gösterir."
+    },
+    {
+      "id": "kim_10_t01_c07_o08:flashcard",
+      "front": "Teorik verim nedir?",
+      "back": "Sınırlayıcı bileşenin tamamen tükendiği varsayımıyla hesaplanan ürün miktarıdır."
+    },
+    {
+      "id": "kim_10_t01_c07_o09:flashcard",
+      "front": "Amonyum perkloratın formülü nedir?",
+      "back": "NH4ClO4 biçimindedir; mol kütlesi 117,5 g/mol'dür."
+    },
+    {
+      "id": "kim_10_t01_c07_o10:flashcard",
+      "front": "Denklem katsayılarının belirttiği nicelik nedir?",
+      "back": "Mol sayılarını belirtir; kütle veya hacim değil."
+    }
+  ]
+}

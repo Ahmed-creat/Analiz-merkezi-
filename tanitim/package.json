@@ -1,0 +1,21 @@
+{
+  "name": "analiz-merkezi-tanitim",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Analiz Merkezi tanitim videosu (Remotion)",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts AnaVideo out/tanitim.mp4",
+    "stills": "remotion still src/index.ts AnaVideo out/poster.png --frame=60",
+    "types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@remotion/cli": "^4.0.544",
+    "@sparticuz/chromium": "^153.0.0",
+    "puppeteer-core": "^25.18.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.544"
+  }
+}

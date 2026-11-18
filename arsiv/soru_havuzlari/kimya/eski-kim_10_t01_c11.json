@@ -1,0 +1,279 @@
+{
+  "konu_id": "kim_10_t01_c11",
+  "kod": "KİM.10.1.11",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.107-120",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c11_o01",
+      "alt_beceri": "Efüzyon ve difüzyon ile ilgili deney tasarlar.",
+      "metin": "Thomas Graham'ın gözenekli tıpa ile kapatılmış cam tüpünde hidrojen gazı varken tüpteki su seviyesi yükselmektedir. Bu gözlem deneyin hangi özelliğini gösterir?",
+      "secenekler": [
+        "Hidrojenin suda çözünerek tüpteki suyu yukarı çektiğini",
+        "Hidrojenin tüpten, havanın tüpe girmesinden daha hızlı çıktığını",
+        "Havanın hidrojenden daha hızlı hareket ettiğini",
+        "Tüpteki gazın kimyasal tepkimeyle tükendiğini"
+      ],
+      "dogru_index": 1,
+      "cozum": "İçteki gaz dışarıya daha hızlı çıkarsa tüp içindeki basınç düşer ve su seviyesi yükselir. Hidrojen mol kütlesi küçük olduğu için hızlı efüzyona uğrar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyon nedir?",
+        "back": "Gaz moleküllerinin bulundukları kabın küçük bir deliğinden dışarıya doğru yayılmasıdır."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o02",
+      "alt_beceri": "Efüzyon ve difüzyon ile ilgili deney tasarlar.",
+      "metin": "Bir öğrenci, farklı gazların yayılma hızını karşılaştırmak için deney tasarlayacaktır. Bu deneyde bağımlı ve bağımsız değişkenler hangileri olmalıdır?",
+      "secenekler": [
+        "Bağımsız değişken sıcaklık, bağımlı değişken kabın rengidir.",
+        "Bağımsız değişken süre, bağımlı değişken gazın türüdür.",
+        "Bağımsız değişken basınç, bağımlı değişken deliğin şeklidir.",
+        "Bağımsız değişken gazın türü, bağımlı değişken yayılma süresidir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Gaz türü araştırmacı tarafından değiştirilir; yayılma süresi ise bu değişime bağlı olarak ölçülür. Sıcaklık, basınç ve delik boyutu kontrol değişkenidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kontrol değişkeni nedir?",
+        "back": "Deneyde sabit tutulan, sonucu etkilememesi için değiştirilmeyen değişkendir."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o03",
+      "alt_beceri": "Efüzyon ve difüzyon ile ilgili deney tasarlar.",
+      "metin": "Aynı sıcaklıktaki helyum (He: 4 g/mol) ve argon (Ar: 40 g/mol) gazları aynı büyüklükteki balonlara doldurulmuştur. 12 saat sonra helyum balonunun belirgin biçimde daha çok söndüğü gözlenmiştir. Bu gözlemin nedeni hangisidir?",
+      "secenekler": [
+        "Helyumun mol kütlesi küçük olduğu için daha hızlı yayılır.",
+        "Argonun mol kütlesi küçük olduğu için balondan daha hızlı kaçar.",
+        "Helyum kimyasal olarak tepkimeye girip balon içinde tükenir.",
+        "Argon balonun iç yüzeyine yapışarak hacmini korur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Graham yasasına göre yayılma hızı mol kütlesinin kareköküyle ters orantılıdır. √(40/4) ≈ 3,2 kat daha hızlı olduğu için helyum balonu daha çok söner.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Graham difüzyon yasası nedir?",
+        "back": "Aynı koşullarda gazların yayılma hızının mol kütlelerinin kareköküyle ters orantılı olmasıdır."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o04",
+      "alt_beceri": "Efüzyon ve difüzyon ile ilgili deney tasarlar.",
+      "metin": "Cam borunun uçlarında NH3 ve HCl gazları bulunmaktadır. Musluklar aynı anda açıldığında beyaz duman hangi uca daha yakın oluşur? (NH3: 17, HCl: 36,5 g/mol)",
+      "secenekler": [
+        "NH3 ucuna daha yakın; çünkü HCl daha hafif ve hızlıdır.",
+        "Tam ortada; çünkü iki gazın hızı eşittir.",
+        "HCl ucuna daha yakın; çünkü NH3 daha hafif ve hızlıdır.",
+        "Belirlenemez; çünkü hızlar yalnızca sıcaklığa bağlıdır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Hız oranı √(36,5/17) ≈ 1,46'dır. NH3 daha hızlı yol aldığı için karşılaşma HCl ucuna daha yakın bir noktada gerçekleşir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Difüzyon nedir?",
+        "back": "Gaz moleküllerinin başka gaz molekülleriyle yavaş yavaş karışarak yüksek derişimden düşük derişime yayılmasıdır."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o05",
+      "alt_beceri": "Deney sonuçlarını günlük hayattaki durumları açıklamak için kullanır.",
+      "metin": "Bir odada parfüm şişesi açıldığında kokunun kısa sürede odanın her yerine yayılması hangi süreçle açıklanır?",
+      "secenekler": [
+        "Efüzyon; moleküller küçük bir delikten hızla dışarı kaçar.",
+        "Çökelme; koku molekülleri dibe çökerek yayılır.",
+        "Nötralleşme; koku molekülleri havadaki gazlarla tepkimeye girer.",
+        "Difüzyon; moleküller yüksek derişimden düşük derişime doğru yayılır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Parfüm molekülleri buharlaşarak hava molekülleriyle çarpışa çarpışa yayılır ve homojen derişime ulaşır. Bu süreç difüzyondur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Difüzyon hızını etkileyen etkenler nedir?",
+        "back": "Sıcaklık, tanecik boyutu ve moleküllerin yapısından etkilenir."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o06",
+      "alt_beceri": "Efüzyon ve difüzyon ile ilgili deney tasarlar.",
+      "metin": "Aşağıdaki tabloda aynı koşullarda dört gazın mol kütlesi verilmiştir. Buna göre aynı delikten en hızlı efüzyona uğrayan gaz hangisidir?",
+      "secenekler": [
+        "He",
+        "H2",
+        "N2",
+        "CO2"
+      ],
+      "dogru_index": 1,
+      "cozum": "Graham yasasına göre yayılma hızı mol kütlesi küçük olan gazda büyüktür. En küçük mol kütlesine (2 g/mol) sahip H2 en hızlı efüzyona uğrar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Gaz",
+          "MA (g/mol)"
+        ],
+        "satirlar": [
+          [
+            "H2",
+            "2"
+          ],
+          [
+            "He",
+            "4"
+          ],
+          [
+            "N2",
+            "28"
+          ],
+          [
+            "CO2",
+            "44"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Efüzyon hızını belirleyen nicelik nedir?",
+        "back": "Gazın mol kütlesidir; mol kütlesi küçüldükçe hız artar."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o07",
+      "alt_beceri": "Deney sonuçlarını günlük hayattaki durumları açıklamak için kullanır.",
+      "metin": "Doğal gaz sızıntılarının fark edilmesi için gaza metil merkaptan eklenir. Bu uygulamanın dayandığı temel süreç hangisidir?",
+      "secenekler": [
+        "Merkaptan moleküllerinin havada difüzyonla yayılması",
+        "Merkaptan moleküllerinin delikten efüzyonla kaçması",
+        "Merkaptanın doğal gazla kimyasal tepkimeye girmesi",
+        "Merkaptanın yoğunluğunun havadan büyük olması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Koku molekülleri havada difüzyonla yayılarak çok düşük derişimlerde bile algılanabilir. Sızıntının fark edilmesi bu yayılma sayesinde gerçekleşir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyon ile difüzyon arasındaki fark nedir?",
+        "back": "Efüzyon küçük bir delikten dışa yayılmadır ve genellikle daha hızlıdır; difüzyon gazların geniş alanda homojen karışmasıdır."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o08",
+      "alt_beceri": "Deney sonuçlarını günlük hayattaki durumları açıklamak için kullanır.",
+      "metin": "Kütle spektrometrisinde iyonların kütle-yük oranlarına göre ayrılmasında gazların hangi özelliğinden yararlanılır?",
+      "secenekler": [
+        "Gazların kimyasal tepkimeye girme eğilimlerinin farklı olmasından",
+        "Gazların renklerinin kütleyle doğru orantılı olmasından",
+        "Farklı kütledeki taneciklerin farklı hızlarla hareket etmesinden",
+        "Gazların sıcaklığa hiç tepki vermemesinden"
+      ],
+      "dogru_index": 2,
+      "cozum": "Graham yasasına göre hız mol kütlesine bağlıdır; hafif tanecikler daha hızlı hareket eder. Kütle spektrometrisi bu hız farkını kullanarak ayırma yapar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyonun uygulama alanları nedir?",
+        "back": "Kütle spektrometrisi, vakum teknolojisi ve ince film üretimi gibi alanlardır."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o09",
+      "alt_beceri": "Deney sonuçlarını günlük hayattaki durumları açıklamak için kullanır.",
+      "metin": "Kan şekerinin ölçümünde kullanılan bazı cihazlar ilacın vücutta belirli hızda salınmasını sağlar. Bu tür uygulamalarda gaz ve sıvı moleküllerinin hangi özelliğinden yararlanılır?",
+      "secenekler": [
+        "Moleküllerin yalnızca yüksek basınçta hareket edebilmesinden",
+        "Moleküllerin derişim farkı nedeniyle difüzyonla hareket etmesinden",
+        "Moleküllerin kütle çekimiyle dibe çökelmesinden",
+        "Moleküllerin kimyasal olarak parçalanıp koku vermesinden"
+      ],
+      "dogru_index": 1,
+      "cozum": "Difüzyon, moleküllerin derişim farkı nedeniyle yavaş ve denetimli hareketini sağlar. İlaç salınımı ve hücre zarından madde geçişi bu ilkeye dayanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Difüzyonun biyolojik sistemlerdeki rolü nedir?",
+        "back": "Gazların ve besin ögelerinin hücre zarından geçişini sağlar."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c11_o10",
+      "alt_beceri": "Efüzyon ve difüzyon ile ilgili deney tasarlar.",
+      "metin": "Bir kaptaki gazın çok küçük bir delikten dışarı kaçması ile geniş bir alanda başka bir gazla karışması karşılaştırıldığında hangisi doğrudur?",
+      "secenekler": [
+        "Difüzyon her zaman efüzyondan daha hızlıdır.",
+        "İki sürecin hızı her koşulda birbirine eşittir.",
+        "Efüzyon yalnızca sıvılarda, difüzyon yalnızca gazlarda gözlenir.",
+        "Deliğe bağlı efüzyon genellikle difüzyondan daha hızlıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Efüzyonda moleküller dar bir alandan geçtiği için süreç hızlıdır. Difüzyon ise gazların geniş alanda homojen karışmasını gerektirdiği için daha uzun sürer.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Efüzyonun delik boyutuna bağlılığı nedir?",
+        "back": "Delik çok küçükse efüzyon gerçekleşmeyebilir; delik büyükse süreç difüzyona dönüşür."
+      },
+      "kazanim": "Gazların farklı ortamlarda yayılmasına ilişkin deney yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c11_o01:flashcard",
+      "front": "Efüzyon nedir?",
+      "back": "Gaz moleküllerinin bulundukları kabın küçük bir deliğinden dışarıya doğru yayılmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c11_o02:flashcard",
+      "front": "Kontrol değişkeni nedir?",
+      "back": "Deneyde sabit tutulan, sonucu etkilememesi için değiştirilmeyen değişkendir."
+    },
+    {
+      "id": "kim_10_t01_c11_o03:flashcard",
+      "front": "Graham difüzyon yasası nedir?",
+      "back": "Aynı koşullarda gazların yayılma hızının mol kütlelerinin kareköküyle ters orantılı olmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c11_o04:flashcard",
+      "front": "Difüzyon nedir?",
+      "back": "Gaz moleküllerinin başka gaz molekülleriyle yavaş yavaş karışarak yüksek derişimden düşük derişime yayılmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c11_o05:flashcard",
+      "front": "Difüzyon hızını etkileyen etkenler nedir?",
+      "back": "Sıcaklık, tanecik boyutu ve moleküllerin yapısından etkilenir."
+    },
+    {
+      "id": "kim_10_t01_c11_o06:flashcard",
+      "front": "Efüzyon hızını belirleyen nicelik nedir?",
+      "back": "Gazın mol kütlesidir; mol kütlesi küçüldükçe hız artar."
+    },
+    {
+      "id": "kim_10_t01_c11_o07:flashcard",
+      "front": "Efüzyon ile difüzyon arasındaki fark nedir?",
+      "back": "Efüzyon küçük bir delikten dışa yayılmadır ve genellikle daha hızlıdır; difüzyon gazların geniş alanda homojen karışmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c11_o08:flashcard",
+      "front": "Efüzyonun uygulama alanları nedir?",
+      "back": "Kütle spektrometrisi, vakum teknolojisi ve ince film üretimi gibi alanlardır."
+    },
+    {
+      "id": "kim_10_t01_c11_o09:flashcard",
+      "front": "Difüzyonun biyolojik sistemlerdeki rolü nedir?",
+      "back": "Gazların ve besin ögelerinin hücre zarından geçişini sağlar."
+    },
+    {
+      "id": "kim_10_t01_c11_o10:flashcard",
+      "front": "Efüzyonun delik boyutuna bağlılığı nedir?",
+      "back": "Delik çok küçükse efüzyon gerçekleşmeyebilir; delik büyükse süreç difüzyona dönüşür."
+    }
+  ]
+}

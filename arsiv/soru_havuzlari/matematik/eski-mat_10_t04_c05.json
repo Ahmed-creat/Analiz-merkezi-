@@ -1,0 +1,254 @@
+{
+  "konu_id": "mat_10_t04_c05",
+  "kod": "MAT.10.4.5",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.264-283",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t04_c05_o01",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilebilen fonksiyonlar üzerinden bir fonksiyonun ters fonksiyonuna ilişkin varsayımlarda bulunur.",
+      "metin": "Bir fonksiyonun tersinin fonksiyon olabilmesi için hangi koşul gereklidir?",
+      "secenekler": [
+        "Fonksiyonun artan olması",
+        "Fonksiyonun birebir ve örten olması",
+        "Tanım kümesinin gerçek sayılar olması",
+        "Grafiğinin orijinden geçmesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ters fonksiyonun da bir fonksiyon olması için her görüntü değerine tek bir tanım değeri karşılık gelmelidir. Bu da birebir ve örten olma koşuluyla sağlanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters fonksiyon nedir?",
+        "back": "Tanım ve görüntü kümelerini yer değiştiren fonksiyondur."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o02",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilebilen fonksiyonlar üzerinden bir fonksiyonun ters fonksiyonuna ilişkin varsayımlarda bulunur.",
+      "metin": "f fonksiyonu tanım kümesindeki iki farklı elemanı aynı değere eşliyorsa bu fonksiyonun tersi için hangisi doğrudur?",
+      "secenekler": [
+        "Ters fonksiyon her zaman artandır.",
+        "Ters fonksiyonun tanım kümesi boş olur.",
+        "Ters fonksiyon aynı fonksiyondur.",
+        "Ters fonksiyon fonksiyon olmaz."
+      ],
+      "dogru_index": 3,
+      "cozum": "Aynı görüntü değerine iki farklı tanım elemanı karşılık geliyorsa ters bağıntı bir fonksiyon olamaz; birebirlik bozulmuştur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birebir fonksiyon nedir?",
+        "back": "Tanım kümesindeki farklı elemanları farklı değerlere eşleyen fonksiyondur."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o03",
+      "alt_beceri": "Varsayımlarından yararlanıp farklı durumlarla ilgili örüntüleri listeleyerek referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarına ilişkin genellemeler yapar.",
+      "metin": "f(x) = 3x − 6 fonksiyonunun tersi hangisidir?",
+      "secenekler": [
+        "f⁻¹(x) = (x + 6)/3",
+        "f⁻¹(x) = (x − 6)/3",
+        "f⁻¹(x) = 3x + 6",
+        "f⁻¹(x) = 1/(3x − 6)"
+      ],
+      "dogru_index": 0,
+      "cozum": "y = 3x − 6 eşitliğinde x yalnız bırakılır: x = (y + 6)/3. Değişkenler yer değiştirildiğinde f⁻¹(x) = (x + 6)/3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters fonksiyon cebirsel olarak nasıl bulunur?",
+        "back": "y = f(x) eşitliğinde x yalnız bırakılıp değişkenler yer değiştirilir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o04",
+      "alt_beceri": "Varsayımlarından yararlanıp farklı durumlarla ilgili örüntüleri listeleyerek referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarına ilişkin genellemeler yapar.",
+      "metin": "f(x) = 2x + 5 olduğuna göre f⁻¹(11) kaçtır?",
+      "secenekler": [
+        "2",
+        "8",
+        "3",
+        "5,5"
+      ],
+      "dogru_index": 2,
+      "cozum": "f⁻¹(11) değeri f(x) = 11 yapan x'tir: 2x + 5 = 11 ise x = 3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters fonksiyon değeri nasıl hesaplanır?",
+        "back": "Ters fonksiyona verilen değeri, fonksiyonda görüntü olarak kabul edip x bulunur."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o05",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarıyla ilişkisine dair varsayımları ile genellemelerini karşılaştırır.",
+      "metin": "f(x) = (x − 1)/2 fonksiyonunun tersi hangisidir?",
+      "secenekler": [
+        "f⁻¹(x) = 2x − 1",
+        "f⁻¹(x) = (x + 1)/2",
+        "f⁻¹(x) = x/2 + 1",
+        "f⁻¹(x) = 2x + 1"
+      ],
+      "dogru_index": 3,
+      "cozum": "y = (x − 1)/2 ise 2y = x − 1 ve x = 2y + 1 olur. Değişkenler yer değiştirildiğinde f⁻¹(x) = 2x + 1 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters fonksiyonla asıl fonksiyonun bileşkesi nedir?",
+        "back": "Birim fonksiyondur: f(f⁻¹(x)) = x."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o06",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarıyla ilişkisine dair varsayımları ile genellemelerini karşılaştırır.",
+      "metin": "f(x) = (2x + 1)/(x − 3) fonksiyonunun tersi hangisidir?",
+      "secenekler": [
+        "(3x − 1)/(x + 2)",
+        "(3x + 1)/(x − 2)",
+        "(x + 3)/(2x − 1)",
+        "(2x − 1)/(x + 3)"
+      ],
+      "dogru_index": 1,
+      "cozum": "y(x − 3) = 2x + 1 yazılırsa yx − 3y = 2x + 1 ve x(y − 2) = 3y + 1 olur. Buradan x = (3y + 1)/(y − 2) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rasyonel fonksiyonun tersinin türü nedir?",
+        "back": "Yine rasyonel bir fonksiyondur."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o07",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyon ilişkisine ait önermeleri matematiksel olarak doğrulanabilecek şekilde sunar.",
+      "metin": "f(x) = √x (x ≥ 0) fonksiyonunun tersi hangisidir?",
+      "secenekler": [
+        "f⁻¹(x) = x², x ≥ 0",
+        "f⁻¹(x) = x², x ∈ ℝ",
+        "f⁻¹(x) = √x",
+        "f⁻¹(x) = 1/x²"
+      ],
+      "dogru_index": 0,
+      "cozum": "y = √x ise x = y² olur. Görüntü kümesi negatif olmadığından ters fonksiyon f⁻¹(x) = x², x ≥ 0 biçimindedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters fonksiyonun görüntü kümesi nedir?",
+        "back": "Asıl fonksiyonun tanım kümesidir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o08",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyon ilişkisine ait önermeleri matematiksel olarak doğrulanabilecek şekilde sunar.",
+      "metin": "f(x) = x³ + 2 fonksiyonu için f(f⁻¹(9)) kaçtır?",
+      "secenekler": [
+        "3",
+        "2",
+        "9",
+        "11"
+      ],
+      "dogru_index": 2,
+      "cozum": "Ters fonksiyon tanımı gereği f(f⁻¹(a)) = a'dır. Bu nedenle sonuç doğrudan 9 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters fonksiyonun tanım bağıntısı nedir?",
+        "back": "f(f⁻¹(x)) = x ve f⁻¹(f(x)) = x eşitlikleridir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o09",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarına ait elde edilen önermeleri fonksiyonların nitel özellikleri bağlamında değerlendirir. 105",
+      "metin": "Santigrat sıcaklığı, Fahrenhayt cinsinden f(F) = 5(F − 32)/9 fonksiyonuyla hesaplanmaktadır. Santigrat 20 °C olduğunda Fahrenhayt kaç derecedir?",
+      "secenekler": [
+        "52",
+        "68",
+        "72",
+        "60"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ters fonksiyon f⁻¹(C) = 1,8C + 32'dir. C = 20 için 1,8 · 20 + 32 = 36 + 32 = 68 °F bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birim dönüştürmede ters fonksiyon ne işe yarar?",
+        "back": "Bir birimden diğerine geri dönüşü sağlar."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c05_o10",
+      "alt_beceri": "Referans fonksiyonlar ve bunlardan türetilen fonksiyonların ters fonksiyonlarına ait elde edilen önermeleri fonksiyonların nitel özellikleri bağlamında değerlendirir. 105",
+      "metin": "Bir mağazada fiyatlar KDV eklenerek F(x) = 1,2x fonksiyonuyla hesaplanmaktadır. KDV'li fiyatı 96 TL olan ürünün KDV'siz fiyatı kaç TL'dir?",
+      "secenekler": [
+        "76",
+        "84",
+        "72",
+        "80"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ters fonksiyon f⁻¹(x) = x/1,2'dir. f⁻¹(96) = 96/1,2 = 80 TL bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yüzde artış modeli hangi fonksiyonla ifade edilir?",
+        "back": "Değerin (1 + oran) çarpanıyla çarpıldığı doğrusal fonksiyonla."
+      },
+      "kazanim": "Doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t04_c05_o01:flashcard",
+      "front": "Ters fonksiyon nedir?",
+      "back": "Tanım ve görüntü kümelerini yer değiştiren fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c05_o02:flashcard",
+      "front": "Birebir fonksiyon nedir?",
+      "back": "Tanım kümesindeki farklı elemanları farklı değerlere eşleyen fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c05_o03:flashcard",
+      "front": "Ters fonksiyon cebirsel olarak nasıl bulunur?",
+      "back": "y = f(x) eşitliğinde x yalnız bırakılıp değişkenler yer değiştirilir."
+    },
+    {
+      "id": "mat_10_t04_c05_o04:flashcard",
+      "front": "Ters fonksiyon değeri nasıl hesaplanır?",
+      "back": "Ters fonksiyona verilen değeri, fonksiyonda görüntü olarak kabul edip x bulunur."
+    },
+    {
+      "id": "mat_10_t04_c05_o05:flashcard",
+      "front": "Ters fonksiyonla asıl fonksiyonun bileşkesi nedir?",
+      "back": "Birim fonksiyondur: f(f⁻¹(x)) = x."
+    },
+    {
+      "id": "mat_10_t04_c05_o06:flashcard",
+      "front": "Rasyonel fonksiyonun tersinin türü nedir?",
+      "back": "Yine rasyonel bir fonksiyondur."
+    },
+    {
+      "id": "mat_10_t04_c05_o07:flashcard",
+      "front": "Ters fonksiyonun görüntü kümesi nedir?",
+      "back": "Asıl fonksiyonun tanım kümesidir."
+    },
+    {
+      "id": "mat_10_t04_c05_o08:flashcard",
+      "front": "Ters fonksiyonun tanım bağıntısı nedir?",
+      "back": "f(f⁻¹(x)) = x ve f⁻¹(f(x)) = x eşitlikleridir."
+    },
+    {
+      "id": "mat_10_t04_c05_o09:flashcard",
+      "front": "Birim dönüştürmede ters fonksiyon ne işe yarar?",
+      "back": "Bir birimden diğerine geri dönüşü sağlar."
+    },
+    {
+      "id": "mat_10_t04_c05_o10:flashcard",
+      "front": "Yüzde artış modeli hangi fonksiyonla ifade edilir?",
+      "back": "Değerin (1 + oran) çarpanıyla çarpıldığı doğrusal fonksiyonla."
+    }
+  ]
+}

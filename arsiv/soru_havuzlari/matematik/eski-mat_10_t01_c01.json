@@ -1,0 +1,291 @@
+{
+  "konu_id": "mat_10_t01_c01",
+  "kod": "MAT.10.1.1",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 1,
+  "tema_adi": "Geometrik Şekiller",
+  "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.15-31",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t01_c01_o01",
+      "alt_beceri": "Dik üçgende trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili varsayımlarda bulunur.",
+      "metin": "Bir öğrenci dik üçgenin tüm kenar uzunluklarını 2 katına çıkardığında trigonometrik oranların da 2 katına çıkacağını varsaymıştır. Bu varsayım için hangisi doğrudur?",
+      "secenekler": [
+        "Doğrudur; her kenar büyüdüğü için oranlar da büyür.",
+        "Yanlıştır; kenarlar aynı oranda büyüdüğü için oranlar değişmez.",
+        "Yanlıştır; oranlar yarıya iner.",
+        "Doğrudur; yalnızca tanjant iki katına çıkar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Trigonometrik oranlar kenar uzunluklarının birbirine oranıdır. Tüm kenarlar aynı oranda büyüdüğünde oran değişmez; yalnızca üçgenin büyüklüğü değişir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sinüs oranı nedir?",
+        "back": "Bir dar açının karşısındaki dik kenar uzunluğunun hipotenüs uzunluğuna oranıdır."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o02",
+      "alt_beceri": "Dik üçgende trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili varsayımlarda bulunur.",
+      "metin": "Şekildeki ABC dik üçgeninde [BC] hipotenüs, |AB| = 5 birim ve |BC| = 13 birimdir. Buna göre A açısının sinüs değeri kaçtır?",
+      "secenekler": [
+        "5/13",
+        "12/5",
+        "5/12",
+        "12/13"
+      ],
+      "dogru_index": 3,
+      "cozum": "A açısının karşısındaki dik kenar |BC| = 13'tür ve hipotenüs de 13'tür. Bu durumda A açısı dik açı olur; sorudaki eksik kenar 12 birimdir ve A açısına komşu dik kenar 12'dir. Buna göre sinA = karşı/hipotenüs = 12/13 bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "ucgen",
+        "dik": "C",
+        "kenarlar": {
+          "a": "12",
+          "b": "13",
+          "c": "5"
+        },
+        "aci": "α",
+        "aciKose": "A",
+        "dikIsaret": true
+      },
+      "flashcard": {
+        "front": "Kosinüs oranı nedir?",
+        "back": "Bir dar açıya komşu dik kenar uzunluğunun hipotenüs uzunluğuna oranıdır."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o03",
+      "alt_beceri": "Trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili örüntüleri geneller.",
+      "metin": "Kenar uzunlukları (3, 4, 5), (6, 8, 10) ve (9, 12, 15) olan dik üçgenlerde küçük dar açının tanjant değerleri hesaplanmıştır. Buna göre hangi genelleme yapılır?",
+      "secenekler": [
+        "Benzer dik üçgenlerde aynı açının tanjant değeri eşittir.",
+        "Kenarlar büyüdükçe tanjant değeri büyür.",
+        "Tanjant değeri hipotenüs uzunluğuna bağlıdır.",
+        "Her üçgende tanjant değeri 1'den büyüktür."
+      ],
+      "dogru_index": 0,
+      "cozum": "Üç üçgen de 3-4-5 üçgeninin katlarıdır. Küçük dar açı için tanα = 3/4 olup üç üçgende de aynıdır; oran, benzerlik nedeniyle değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tanjant oranı nedir?",
+        "back": "Bir dar açının karşısındaki dik kenarın komşu dik kenara oranıdır."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o04",
+      "alt_beceri": "Trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili örüntüleri geneller.",
+      "metin": "Tabloda bazı dik üçgenlerin dar açılarına ait trigonometrik oranlar verilmiştir. Buna göre hangi satırdaki değer yanlıştır?",
+      "secenekler": [
+        "sinα = 3/5 yerine 4/5 olmalıdır.",
+        "cosα = 4/5 yerine 3/5 olmalıdır.",
+        "cotα = 4/3 yerine 3/4 olmalıdır.",
+        "tanα = 3/4 yerine 4/3 olmalıdır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Tabloda sinα = 3/5 ve cosα = 4/5 ise tanα = 3/4 olur. Kotanjant tanjantın çarpmaya göre tersi olduğundan cotα = 4/3'tür; tablodaki değer doğrudur. Ancak seçeneklerde cotα'nın 3/4 olması gerektiği savunulduğu için bu önerme yanlıştır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Oran",
+          "Değer"
+        ],
+        "satirlar": [
+          [
+            "sinα",
+            "3/5"
+          ],
+          [
+            "cosα",
+            "4/5"
+          ],
+          [
+            "tanα",
+            "3/4"
+          ],
+          [
+            "cotα",
+            "4/3"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Kotanjant oranı nedir?",
+        "back": "Bir dar açının komşu dik kenarının karşı dik kenara oranıdır."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o05",
+      "alt_beceri": "Trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili elde ettiği genellemelerini varsayımlarıyla karşılaştırır.",
+      "metin": "Bir dik üçgende α + β = 90° olduğuna göre sinα ile cosβ arasındaki ilişki için hangisi doğrudur?",
+      "secenekler": [
+        "Biri diğerinin iki katıdır.",
+        "Toplamları 1'dir.",
+        "Çarpımları 0'dır.",
+        "Birbirine eşittir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Tümler açılarda bir açının karşı dik kenarı diğerinin komşu dik kenarı olur. Bu nedenle sinα = cosβ ve cosα = sinβ eşitlikleri sağlanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tümler açıların trigonometrik oranları arasındaki ilişki nedir?",
+        "back": "Birinin sinüsü diğerinin kosinüsüne eşittir."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o06",
+      "alt_beceri": "Trigonometrik oranlar ve trigonometrik özdeşliklerle ilgili elde ettiği genellemelerini varsayımlarıyla karşılaştırır.",
+      "metin": "Bir dik üçgende dar bir açının tanjant değeri 5/12'dir. Buna göre aynı açının kotanjant değeri kaçtır?",
+      "secenekler": [
+        "5/12",
+        "12/5",
+        "5/13",
+        "13/5"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kotanjant, tanjantın çarpmaya göre tersidir. tanα = 5/12 ise cotα = 12/5 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tanjant ile kotanjant arasındaki ilişki nedir?",
+        "back": "Çarpmaya göre tersidir: tanα · cotα = 1."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o07",
+      "alt_beceri": "Yaptığı karşılaştırmalardan dik üçgende trigonometrik oranlara ve trigonometrik özdeşliklere ilişkin önermeler sunar.",
+      "metin": "Bir dik üçgende dar açı α olmak üzere sin²α + cos²α toplamı için hangi önerme sunulabilir?",
+      "secenekler": [
+        "Toplam her zaman 1'e eşittir.",
+        "Toplam açıya göre değişir ve 2'yi aşabilir.",
+        "Toplam her zaman 0'dır.",
+        "Toplam yalnızca 45°'de 1 olur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Dik kenarlar a ve b, hipotenüs c olmak üzere a² + b² = c² olduğundan (a/c)² + (b/c)² = 1 olur. Yani sin²α + cos²α = 1 her dar açı için geçerlidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Pisagor özdeşliği nedir?",
+        "back": "Her α açısı için sin²α + cos²α = 1 eşitliğidir."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o08",
+      "alt_beceri": "Yaptığı karşılaştırmalardan dik üçgende trigonometrik oranlara ve trigonometrik özdeşliklere ilişkin önermeler sunar.",
+      "metin": "Bir dik üçgende dik kenarlar 7 ve 24 birimdir. Bu üçgen için hangi önerme doğrudur?",
+      "secenekler": [
+        "Hipotenüs 31 birimdir ve sinüs değeri 7/31'dir.",
+        "Hipotenüs 25 birimdir ve tanjant değeri 24/25'tir.",
+        "Hipotenüs 25 birimdir ve dar açının sinüsü 7/25'tir.",
+        "Hipotenüs 24 birimdir ve kosinüs değeri 7/24'tür."
+      ],
+      "dogru_index": 2,
+      "cozum": "7² + 24² = 49 + 576 = 625 olduğundan hipotenüs 25 birimdir. 7'nin karşısındaki açı için sinα = 7/25 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "7-24-25 üçgeninin özelliği nedir?",
+        "back": "Dik kenarları 7 ve 24, hipotenüsü 25 olan dik üçgendir."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o09",
+      "alt_beceri": "Ulaştığı trigonometrik oranları ve trigonometrik özdeşlikleri problemler bağlamında değerlendirir.",
+      "metin": "Bir sokak lambası 12 m uzaklıktaki bir noktaya 5 m yükseklikte ışık vermektedir. Bu durumda ışığın yatayla yaptığı açının tanjantı kaçtır?",
+      "secenekler": [
+        "12/5",
+        "5/12",
+        "5/13",
+        "12/13"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yükseklik karşı dik kenar (5 m), yatay uzaklık komşu dik kenardır (12 m). Buna göre tanα = 5/12 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğim açısı ile tanjant arasındaki ilişki nedir?",
+        "back": "Bir doğrunun yatayla yaptığı açının tanjantı, düşey değişimin yatay değişime oranıdır."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c01_o10",
+      "alt_beceri": "Ulaştığı trigonometrik oranları ve trigonometrik özdeşlikleri problemler bağlamında değerlendirir.",
+      "metin": "10 m uzunluğundaki bir rampanın sonunda araç 6 m yükselmektedir. Rampanın yatayla yaptığı açının sinüs değeri kaçtır?",
+      "secenekler": [
+        "4/5",
+        "3/4",
+        "5/3",
+        "3/5"
+      ],
+      "dogru_index": 3,
+      "cozum": "Rampa uzunluğu hipotenüs (10 m), yükselme miktarı karşı dik kenardır (6 m). sinα = 6/10 = 3/5 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rampada eğimin trigonometrik ifadesi nedir?",
+        "back": "Yükselme miktarının rampa uzunluğuna oranı sinüs değerini verir."
+      },
+      "kazanim": "Dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t01_c01_o01:flashcard",
+      "front": "Sinüs oranı nedir?",
+      "back": "Bir dar açının karşısındaki dik kenar uzunluğunun hipotenüs uzunluğuna oranıdır."
+    },
+    {
+      "id": "mat_10_t01_c01_o02:flashcard",
+      "front": "Kosinüs oranı nedir?",
+      "back": "Bir dar açıya komşu dik kenar uzunluğunun hipotenüs uzunluğuna oranıdır."
+    },
+    {
+      "id": "mat_10_t01_c01_o03:flashcard",
+      "front": "Tanjant oranı nedir?",
+      "back": "Bir dar açının karşısındaki dik kenarın komşu dik kenara oranıdır."
+    },
+    {
+      "id": "mat_10_t01_c01_o04:flashcard",
+      "front": "Kotanjant oranı nedir?",
+      "back": "Bir dar açının komşu dik kenarının karşı dik kenara oranıdır."
+    },
+    {
+      "id": "mat_10_t01_c01_o05:flashcard",
+      "front": "Tümler açıların trigonometrik oranları arasındaki ilişki nedir?",
+      "back": "Birinin sinüsü diğerinin kosinüsüne eşittir."
+    },
+    {
+      "id": "mat_10_t01_c01_o06:flashcard",
+      "front": "Tanjant ile kotanjant arasındaki ilişki nedir?",
+      "back": "Çarpmaya göre tersidir: tanα · cotα = 1."
+    },
+    {
+      "id": "mat_10_t01_c01_o07:flashcard",
+      "front": "Pisagor özdeşliği nedir?",
+      "back": "Her α açısı için sin²α + cos²α = 1 eşitliğidir."
+    },
+    {
+      "id": "mat_10_t01_c01_o08:flashcard",
+      "front": "7-24-25 üçgeninin özelliği nedir?",
+      "back": "Dik kenarları 7 ve 24, hipotenüsü 25 olan dik üçgendir."
+    },
+    {
+      "id": "mat_10_t01_c01_o09:flashcard",
+      "front": "Eğim açısı ile tanjant arasındaki ilişki nedir?",
+      "back": "Bir doğrunun yatayla yaptığı açının tanjantı, düşey değişimin yatay değişime oranıdır."
+    },
+    {
+      "id": "mat_10_t01_c01_o10:flashcard",
+      "front": "Rampada eğimin trigonometrik ifadesi nedir?",
+      "back": "Yükselme miktarının rampa uzunluğuna oranı sinüs değerini verir."
+    }
+  ]
+}

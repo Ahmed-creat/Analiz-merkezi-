@@ -1,0 +1,175 @@
+{
+  "rects": {
+    "navBilgi": {
+      "x": 14,
+      "y": 525,
+      "w": 233,
+      "h": 48
+    },
+    "navTakip": {
+      "x": 14,
+      "y": 335,
+      "w": 233,
+      "h": 48
+    },
+    "navGorevler": {
+      "x": 14,
+      "y": 231,
+      "w": 233,
+      "h": 48
+    },
+    "navDenemeler": {
+      "x": 14,
+      "y": 283,
+      "w": 233,
+      "h": 48
+    },
+    "navSoruBankasi": {
+      "x": 14,
+      "y": 577,
+      "w": 233,
+      "h": 48
+    },
+    "navKitaplik": {
+      "x": 14,
+      "y": 387,
+      "w": 233,
+      "h": 48
+    },
+    "navAnaSayfa": {
+      "x": 14,
+      "y": 179,
+      "w": 233,
+      "h": 48
+    },
+    "dersBiyoloji": {
+      "x": 307,
+      "y": 181,
+      "w": 294,
+      "h": 44
+    },
+    "adimTamamla0": {
+      "x": 730,
+      "y": 365,
+      "w": 111,
+      "h": 36
+    },
+    "adimTamamla1": {
+      "x": 730,
+      "y": 481,
+      "w": 111,
+      "h": 36
+    },
+    "adimTamamla2": {
+      "x": 730,
+      "y": 597,
+      "w": 111,
+      "h": 36
+    },
+    "adimTamamla3": {
+      "x": 730,
+      "y": 714,
+      "w": 111,
+      "h": 36
+    },
+    "kisaKontrolBaslat": {
+      "x": 730,
+      "y": 847,
+      "w": 215,
+      "h": 36
+    },
+    "testModal": {
+      "x": 0,
+      "y": 0,
+      "w": 1920,
+      "h": 1080
+    },
+    "nedenleriKaydet": {
+      "x": 680,
+      "y": 2002,
+      "w": 560,
+      "h": 48
+    },
+    "konuyuTamamla": {
+      "x": 663,
+      "y": 904,
+      "w": 834,
+      "h": 48
+    },
+    "takipKart": {
+      "x": 286,
+      "y": 150,
+      "w": 1232,
+      "h": 173
+    },
+    "denemeFormuAc": {
+      "x": 286,
+      "y": 112,
+      "w": 174,
+      "h": 36
+    }
+  },
+  "adimlar": [
+    "tik OK: tanıtım kapat",
+    "tik OK: hoş geldin: başlayalım",
+    "kullanıcı: {\"name\":\"\",\"grade\":\"10\",\"joined\":null}",
+    "ekran: 01-ana-sayfa",
+    "tik OK: Bilgi Bankası",
+    "ekran: 02-bilgi-bankasi",
+    "tik OK: Biyoloji aç",
+    "ilk konu: Biyoloji > 1.1 Canlılık İçin Enerjinin Önemi",
+    "ekran: 03-agac-acik",
+    "tik OK: konu seç",
+    "ekran: 04-konu-panel",
+    "adım tamamlandı: 0",
+    "adım tamamlandı: 1",
+    "adım tamamlandı: 2",
+    "adım tamamlandı: 3",
+    "ekran: 05-dort-adim",
+    "tik OK: kısa kontrole başla",
+    "soru: {\"i\":0,\"dogru\":1,\"adet\":4,\"metin\":\"Kış uykusuna yatan bir kirpi, kış boyunca besin bulamadığı h\"}",
+    "ekran: 06-kisa-kontrol-soru",
+    "tik OK: şık 1",
+    "tik OK: sonraki soru",
+    "soru: {\"i\":1,\"dogru\":3,\"adet\":4,\"metin\":\"Bir çocuğun koşması, bir karıncanın tohum taşıması ve bir ku\"}",
+    "tik OK: şık 3",
+    "tik OK: sonraki soru",
+    "soru: {\"i\":2,\"dogru\":0,\"adet\":4,\"metin\":\"Yeşil bir bitkide güneş enerjisi, fotosentez sonucunda hangi\"}",
+    "tik OK: şık 1",
+    "tik OK: sonraki soru",
+    "soru: {\"i\":3,\"dogru\":2,\"adet\":4,\"metin\":\"Kitap, şarj edilen elektrikli otomobil örneğiyle enerjinin h\"}",
+    "tik OK: şık 2",
+    "tik OK: sonraki soru",
+    "soru: {\"i\":4,\"dogru\":3,\"adet\":4,\"metin\":\"ATP üç fosfat grubu taşıyan bir nükleotittir. Bu yapıdaki fo\"}",
+    "tik OK: şık 3",
+    "tik OK: testi bitir",
+    "ekran: 07-neden-sec",
+    "ekran: 08-neden-secildi",
+    "tik OK: nedenleri kaydet",
+    "ekran: 09-sonuc",
+    "tik OK: testi kapat",
+    "ekran: 10-adim5-bitti",
+    "tik OK: konuyu tamamla",
+    "ekran: 11-konu-tamamlandi",
+    "tik OK: Konu Takibi",
+    "ekran: 12-konu-takibi",
+    "tik OK: Günlük Görevler",
+    "ekran: 13-gunluk-gorevler",
+    "tik OK: Denemelerim",
+    "ekran: 14-denemelerim",
+    "tik OK: deneme formu",
+    "ekran: 15-deneme-formu",
+    "tik OK: Soru Bankası",
+    "ekran: 16-soru-bankasi",
+    "tik OK: Kitaplık",
+    "ekran: 17-kitaplik",
+    "tik OK: Planlama",
+    "ekran: 18-planlama",
+    "tik OK: Ana Sayfa",
+    "ekran: 19-ana-sayfa-sonra"
+  ],
+  "hatalar": [
+    "console: Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "console: Failed to load resource: net::ERR_CONNECTION_CLOSED"
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "konu_id": "mat_10_t01_c04",
+  "kod": "MAT.10.1.4",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 1,
+  "tema_adi": "Geometrik Şekiller",
+  "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.76-88",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t01_c04_o01",
+      "alt_beceri": "Üçgende sinüs ve kosinüs teoremlerine ilişkin farklı doğrulama veya ispatları kullanır.",
+      "metin": "Bir ABC üçgeninde kenar uzunlukları a, b, c ve karşı açılar A, B, C olmak üzere sinüs teoreminin ifadesi hangisidir?",
+      "secenekler": [
+        "a·sinA = b·sinB = c·sinC",
+        "a/sinA = b/sinB = c/sinC",
+        "a/sinA + b/sinB = c/sinC",
+        "a²/sinA = b²/sinB"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sinüs teoremine göre her kenarın karşı açının sinüsüne oranı sabittir ve bu oran 2R'ye (çevrel çemberin çapı) eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sinüs teoremi nedir?",
+        "back": "Bir üçgende kenarların karşı açıların sinüslerine oranının eşit olmasıdır."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o02",
+      "alt_beceri": "Üçgende sinüs ve kosinüs teoremlerine ilişkin farklı doğrulama veya ispatları kullanır.",
+      "metin": "Bir ABC üçgeninde kosinüs teoreminin ifadesi hangisinde doğru verilmiştir?",
+      "secenekler": [
+        "a² = b² + c² + 2bc·cosA",
+        "a = b + c − 2bc·cosA",
+        "a² = b² − c² + 2bc·sinA",
+        "a² = b² + c² − 2bc·cosA"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kosinüs teoremi a² = b² + c² − 2bc·cosA biçimindedir. A = 90° olduğunda cosA = 0 olur ve bağıntı Pisagor teoremine dönüşür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kosinüs teoremi nedir?",
+        "back": "Bir kenarın karesinin, diğer iki kenarın kareleri toplamından iki kenar çarpımı ile aralarındaki açının kosinüsünün çarpımının çıkarılmasıyla bulunmasıdır."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o03",
+      "alt_beceri": "Üçgende sinüs ve kosinüs teoremlerine ilişkin farklı doğrulama veya ispatları kullanır.",
+      "metin": "Bir üçgende iki açı ölçüsü ve bir kenar uzunluğu bilinmektedir. Bu verilerle hangi teorem doğrudan kullanılabilir?",
+      "secenekler": [
+        "Sinüs teoremi",
+        "Kosinüs teoremi",
+        "Pisagor teoremi",
+        "Thales teoremi"
+      ],
+      "dogru_index": 0,
+      "cozum": "İki açı bilindiğinde üçüncü açı da bulunur. Bir kenar verildiğinde sinüs teoremiyle diğer kenarlar hesaplanabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sinüs teoreminin kullanıldığı veri durumu nedir?",
+        "back": "İki açı ile bir kenarın ya da iki kenar ile bir açının verildiği durumdur."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o04",
+      "alt_beceri": "Üçgende sinüs ve kosinüs teoremlerine ilişkin farklı doğrulama veya ispatları kullanır.",
+      "metin": "Bir üçgende iki kenar uzunluğu ve bu kenarlar arasındaki açı bilinmektedir. Üçüncü kenarı bulmak için hangi teorem kullanılır?",
+      "secenekler": [
+        "Sinüs teoremi",
+        "Pisagor teoremi",
+        "Kosinüs teoremi",
+        "Açıortay teoremi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Aralarındaki açı bilinen iki kenardan üçüncü kenar kosinüs teoremiyle bulunur. Üç kenar verildiğinde de açılar aynı teoremle hesaplanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kosinüs teoreminin kullanıldığı veri durumu nedir?",
+        "back": "İki kenar ile aralarındaki açının ya da üç kenarın verildiği durumdur."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o05",
+      "alt_beceri": "Üçgende sinüs ve kosinüs teoremlerine ilişkin farklı doğrulama veya ispatları kullanır.",
+      "metin": "Bir üçgende en uzun kenarın karşısındaki açı geniş açı ise kosinüs değeri için hangisi doğrudur?",
+      "secenekler": [
+        "Kosinüs değeri 1'e eşittir.",
+        "Kosinüs değeri 0'dır.",
+        "Kosinüs değeri pozitiftir.",
+        "Kosinüs değeri negatiftir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Geniş açıların kosinüsü negatiftir. Kosinüs teoreminde bu değer çıkarıldığı için karşı kenarın karesi diğer iki kenarın kareleri toplamından büyük olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Geniş açının kosinüs değeri nedir?",
+        "back": "Negatiftir; açı 90°'yi geçtiğinde kosinüs işaret değiştirir."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o06",
+      "alt_beceri": "Yapılan doğrulama veya ispatları yeni durumlara uyarlayarak değerlendirir.",
+      "metin": "Bir üçgende b = 7 birim, c = 8 birim ve aralarındaki açı A = 60°'dir. Buna göre a kenarı kaç birimdir?",
+      "secenekler": [
+        "√113",
+        "√57",
+        "√105",
+        "√65"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kosinüs teoremine göre a² = 49 + 64 − 2 · 7 · 8 · cos60° = 113 − 56 = 57 bulunur. Buna göre a = √57 birimdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "60°'nin kosinüs değeri nedir?",
+        "back": "1/2'dir."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o07",
+      "alt_beceri": "Yapılan doğrulama veya ispatları yeni durumlara uyarlayarak değerlendirir.",
+      "metin": "Bir üçgende a = 6 birim, A = 30° ve B = 45°'dir. Buna göre b kenarı kaç birimdir?",
+      "secenekler": [
+        "6√2",
+        "3√2",
+        "6√3",
+        "12"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sinüs teoremine göre b/sin45° = a/sin30° yazılır. b = 6 · (√2/2) / (1/2) = 6√2 birim bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "45° ve 30°'nin sinüs değerleri nedir?",
+        "back": "sin45° = √2/2, sin30° = 1/2'dir."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o08",
+      "alt_beceri": "Yapılan doğrulama veya ispatları yeni durumlara uyarlayarak değerlendirir.",
+      "metin": "Kenar uzunlukları 5, 7 ve 8 birim olan bir üçgende 5 birimlik kenarın karşısındaki açının kosinüs değeri kaçtır?",
+      "secenekler": [
+        "1/2",
+        "3/7",
+        "11/14",
+        "13/14"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kosinüs teoremine göre 25 = 49 + 64 − 2 · 7 · 8 · cosA yazılır. Buradan 112 · cosA = 88 ve cosA = 88/112 = 11/14 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üç kenarı verilen üçgende açı nasıl bulunur?",
+        "back": "Kosinüs teoremi kullanılarak açının kosinüs değeri hesaplanır."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o09",
+      "alt_beceri": "Yapılan doğrulama veya ispatları yeni durumlara uyarlayarak değerlendirir.",
+      "metin": "Bir üçgende a = 8 birim ve A = 30°'dir. Bu üçgenin çevrel çemberinin yarıçapı kaç birimdir?",
+      "secenekler": [
+        "4",
+        "8",
+        "16",
+        "12"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sinüs teoremine göre a/sinA = 2R'dir. 8/(1/2) = 16 = 2R olduğundan R = 8 birim bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sinüs teoremindeki sabit oranın karşılığı nedir?",
+        "back": "Çevrel çemberin yarıçapının iki katına (2R) eşittir."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c04_o10",
+      "alt_beceri": "Yapılan doğrulama veya ispatları yeni durumlara uyarlayarak değerlendirir.",
+      "metin": "Bir üçgende iki kenar ve bu kenarlardan birinin karşısındaki açı verilmiştir. Yapılan hesaplamada iki farklı üçgen elde edilmiştir. Bu durumun değerlendirmesi hangisidir?",
+      "secenekler": [
+        "Sinüs teoremi böyle durumlarda kullanılamaz.",
+        "İki çözümden her zaman büyük olanı geçerlidir.",
+        "Üç kenar bilinmediği için çözüm yoktur.",
+        "Verilen açı dar ve karşı kenar kısa olduğunda iki çözüm olabilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sinüs teoreminde sinüs değeri iki farklı açıya karşılık gelebilir (α ve 180° − α). Bu nedenle verilen koşullarda iki farklı üçgen oluşabilir; her iki çözüm de incelenmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sinüs teoreminde iki çözüm durumu nedir?",
+        "back": "Verilen açının dar olması ve karşı kenarın kısa olması durumunda iki farklı üçgenin oluşabilmesidir."
+      },
+      "kazanim": "Sinüs ve kosinüs teoremlerini doğrulayabilme veya ispatlayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t01_c04_o01:flashcard",
+      "front": "Sinüs teoremi nedir?",
+      "back": "Bir üçgende kenarların karşı açıların sinüslerine oranının eşit olmasıdır."
+    },
+    {
+      "id": "mat_10_t01_c04_o02:flashcard",
+      "front": "Kosinüs teoremi nedir?",
+      "back": "Bir kenarın karesinin, diğer iki kenarın kareleri toplamından iki kenar çarpımı ile aralarındaki açının kosinüsünün çarpımının çıkarılmasıyla bulunmasıdır."
+    },
+    {
+      "id": "mat_10_t01_c04_o03:flashcard",
+      "front": "Sinüs teoreminin kullanıldığı veri durumu nedir?",
+      "back": "İki açı ile bir kenarın ya da iki kenar ile bir açının verildiği durumdur."
+    },
+    {
+      "id": "mat_10_t01_c04_o04:flashcard",
+      "front": "Kosinüs teoreminin kullanıldığı veri durumu nedir?",
+      "back": "İki kenar ile aralarındaki açının ya da üç kenarın verildiği durumdur."
+    },
+    {
+      "id": "mat_10_t01_c04_o05:flashcard",
+      "front": "Geniş açının kosinüs değeri nedir?",
+      "back": "Negatiftir; açı 90°'yi geçtiğinde kosinüs işaret değiştirir."
+    },
+    {
+      "id": "mat_10_t01_c04_o06:flashcard",
+      "front": "60°'nin kosinüs değeri nedir?",
+      "back": "1/2'dir."
+    },
+    {
+      "id": "mat_10_t01_c04_o07:flashcard",
+      "front": "45° ve 30°'nin sinüs değerleri nedir?",
+      "back": "sin45° = √2/2, sin30° = 1/2'dir."
+    },
+    {
+      "id": "mat_10_t01_c04_o08:flashcard",
+      "front": "Üç kenarı verilen üçgende açı nasıl bulunur?",
+      "back": "Kosinüs teoremi kullanılarak açının kosinüs değeri hesaplanır."
+    },
+    {
+      "id": "mat_10_t01_c04_o09:flashcard",
+      "front": "Sinüs teoremindeki sabit oranın karşılığı nedir?",
+      "back": "Çevrel çemberin yarıçapının iki katına (2R) eşittir."
+    },
+    {
+      "id": "mat_10_t01_c04_o10:flashcard",
+      "front": "Sinüs teoreminde iki çözüm durumu nedir?",
+      "back": "Verilen açının dar olması ve karşı kenarın kısa olması durumunda iki farklı üçgenin oluşabilmesidir."
+    }
+  ]
+}

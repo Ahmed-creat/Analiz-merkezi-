@@ -1,0 +1,256 @@
+{
+  "konu_id": "fizik_10_u03_k03",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "baslik": "3.3 Ohm Yasası",
+  "topic_key": "Fizik > 3.3 Ohm Yasası",
+  "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar.",
+  "kaynak": "Fizik 10 ders kitabı, s.215-222",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u03_k03_o01",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Ohm Yasası hangi ilişkiyi ifade eder?",
+      "secenekler": [
+        "Potansiyel fark ile akımın çarpımı sabittir",
+        "Sabit sıcaklıkta potansiyel farkın akıma oranı sabittir",
+        "Akımın potansiyel farka oranı sürekli artar",
+        "Direnç zamana bağlıdır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitapta sabit sıcaklıkta V/I oranının sabit kaldığı ve bu sabitin direnci verdiği belirtilir (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ohm Yasası'nın temel ifadesi nedir?",
+        "back": "V/I = R (sabit sıcaklıkta)."
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o02",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Ohm Yasası'nın matematiksel modeli hangisidir?",
+      "secenekler": [
+        "V = I/R",
+        "V = R/I",
+        "I = V·R",
+        "V = I·R"
+      ],
+      "dogru_index": 3,
+      "cozum": "V = I·R; birimi volttur (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "V = I·R bağıntısının anlamı nedir?",
+        "back": "V = I·R"
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o03",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Potansiyel fark-akım grafiğinin eğimi neyi verir?",
+      "secenekler": [
+        "Direnci",
+        "Gücü",
+        "Yükü",
+        "Zamanı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kitaptaki etkinlikte V-I grafiğinin eğiminin direnci verdiği bulunur (s.216-217).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Direnç, gerilim ile akım arasındaki ilişkiden nasıl elde edilir?",
+        "back": "Gerilim-akım doğrusunun eğimi direnci verir: R = V / I."
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o04",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Aynı iletkende potansiyel fark artırılırsa akım nasıl değişir?",
+      "secenekler": [
+        "Azalır",
+        "Değişmez",
+        "Doğru orantılı olarak artar",
+        "Önce artar sonra azalır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Direnç sabitken I = V/R olduğundan V ile I doğru orantılıdır (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gerilim artarsa akım ne olur?",
+        "back": "Doğru orantılı artar."
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o05",
+      "alt_beceri": "Ohm Yasası'nı ve grafik yorumunu açıklar.",
+      "metin": "Bir iletkenin direnci 4 Ω'da sabit tutulup gerilim 4 V'tan 8 V'a çıkarıldığında akım 1 A'dan 2 A'ya çıkıyor. Akım ile potansiyel fark arasındaki ilişki nedir?",
+      "secenekler": [
+        "Ters orantılı",
+        "Karesel",
+        "Bağımsız",
+        "Doğru orantılı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ohm Yasası'na göre V arttıkça I aynı oranda artar (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akım ile gerilim arasındaki orantı nedir?",
+        "back": "Doğru orantı."
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o06",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Uçları arasındaki potansiyel fark 12 V olan 6 Ω'luk dirençten kaç amper akım geçer?",
+      "secenekler": [
+        "72",
+        "2",
+        "0,5",
+        "18"
+      ],
+      "dogru_index": 1,
+      "cozum": "I = V/R = 12/6 = 2 A (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Verilen gerilim ve dirençten akım nasıl hesaplanır?",
+        "back": "2 A"
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o07",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Üzerinden 3 A akım geçen 4 Ω'luk direncin uçları arasındaki potansiyel fark kaç V'tur?",
+      "secenekler": [
+        "12",
+        "7",
+        "0,75",
+        "1,33"
+      ],
+      "dogru_index": 0,
+      "cozum": "V = I·R = 3·4 = 12 V (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akım ile direnç çarpımının karşılığı nedir?",
+        "back": "12 V"
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o08",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Uçları arasındaki potansiyel fark 20 V olan dirençten 4 A akım geçiyor. Direnç kaç Ω'dur?",
+      "secenekler": [
+        "80",
+        "0,2",
+        "5",
+        "24"
+      ],
+      "dogru_index": 2,
+      "cozum": "R = V/I = 20/4 = 5 Ω (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gerilim ve akımdan direnç nasıl bulunur?",
+        "back": "5 Ω"
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o09",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "Potansiyel fark sabitken direnç iki katına çıkarılırsa akım nasıl değişir?",
+      "secenekler": [
+        "İki katına çıkar",
+        "Yarıya iner",
+        "Değişmez",
+        "Dört katına çıkar"
+      ],
+      "dogru_index": 1,
+      "cozum": "I = V/R olduğundan R iki katına çıkarsa I yarıya iner; akım dirençle ters orantılıdır (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Direnç artarsa akım ne olur?",
+        "back": "Ters orantılı azalır."
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u03_k03_o10",
+      "alt_beceri": "Potansiyel fark, akım ve direnç hesaplar.",
+      "metin": "10 Ω'luk dirençten 2 A akım geçiyor. Direncin uçları arasındaki potansiyel fark kaç V'tur?",
+      "secenekler": [
+        "5",
+        "12",
+        "0,2",
+        "20"
+      ],
+      "dogru_index": 3,
+      "cozum": "V = I·R = 2·10 = 20 V (s.218).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Potansiyel farkın bağıntısı nedir?",
+        "back": "20 V"
+      },
+      "kazanim": "Ohm Yasası'nı kullanarak potansiyel fark, akım ve direnç arasındaki ilişkiyi açıklar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u03_k03_o01:flashcard",
+      "front": "Ohm Yasası'nın temel ifadesi nedir?",
+      "back": "V/I = R (sabit sıcaklıkta)."
+    },
+    {
+      "id": "fizik_10_u03_k03_o02:flashcard",
+      "front": "V = I·R bağıntısının anlamı nedir?",
+      "back": "V = I·R"
+    },
+    {
+      "id": "fizik_10_u03_k03_o03:flashcard",
+      "front": "Direnç, gerilim ile akım arasındaki ilişkiden nasıl elde edilir?",
+      "back": "Gerilim-akım doğrusunun eğimi direnci verir: R = V / I."
+    },
+    {
+      "id": "fizik_10_u03_k03_o04:flashcard",
+      "front": "Gerilim artarsa akım ne olur?",
+      "back": "Doğru orantılı artar."
+    },
+    {
+      "id": "fizik_10_u03_k03_o05:flashcard",
+      "front": "Akım ile gerilim arasındaki orantı nedir?",
+      "back": "Doğru orantı."
+    },
+    {
+      "id": "fizik_10_u03_k03_o06:flashcard",
+      "front": "Verilen gerilim ve dirençten akım nasıl hesaplanır?",
+      "back": "2 A"
+    },
+    {
+      "id": "fizik_10_u03_k03_o07:flashcard",
+      "front": "Akım ile direnç çarpımının karşılığı nedir?",
+      "back": "12 V"
+    },
+    {
+      "id": "fizik_10_u03_k03_o08:flashcard",
+      "front": "Gerilim ve akımdan direnç nasıl bulunur?",
+      "back": "5 Ω"
+    },
+    {
+      "id": "fizik_10_u03_k03_o09:flashcard",
+      "front": "Direnç artarsa akım ne olur?",
+      "back": "Ters orantılı azalır."
+    },
+    {
+      "id": "fizik_10_u03_k03_o10:flashcard",
+      "front": "Potansiyel farkın bağıntısı nedir?",
+      "back": "20 V"
+    }
+  ]
+}

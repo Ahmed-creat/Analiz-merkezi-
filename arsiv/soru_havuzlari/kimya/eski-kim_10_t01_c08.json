@@ -1,0 +1,311 @@
+{
+  "konu_id": "kim_10_t01_c08",
+  "kod": "KİM.10.1.8",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.78-93",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c08_o01",
+      "alt_beceri": "Gazların özelliklerinin (hacim, basınç, genleşme, sıkıştırılabilirlik, karışabilirlik ve yoğunluk) farkını ortaya koyar.",
+      "metin": "Tabloda katı, sıvı ve gaz hâllerine ait bazı özellikler işaretlenmiştir. Buna göre yalnızca gaz hâline özgü olan özellik hangisidir?",
+      "secenekler": [
+        "Belli bir hacminin bulunması",
+        "Sıkıştırılabilir olması ve yoğunluğunun en az olması",
+        "Belli bir şeklinin bulunması",
+        "Tanecikli yapıda olması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gazlar tanecikleri arasındaki boşluk çok büyük olduğu için kolayca sıkıştırılır ve yoğunlukları en azdır. Tanecikli yapı ise üç hâl için de geçerlidir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Özellik",
+          "Katı",
+          "Sıvı",
+          "Gaz"
+        ],
+        "satirlar": [
+          [
+            "Belli hacmi var",
+            "✓",
+            "✓",
+            "–"
+          ],
+          [
+            "Belli şekli var",
+            "✓",
+            "–",
+            "–"
+          ],
+          [
+            "Sıkıştırılabilir",
+            "–",
+            "–",
+            "✓"
+          ],
+          [
+            "Yoğunluğu en az",
+            "–",
+            "–",
+            "✓"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Gazların sıkıştırılabilmesinin nedeni nedir?",
+        "back": "Tanecikleri arasındaki boşluğun katı ve sıvılara göre çok büyük olmasıdır."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o02",
+      "alt_beceri": "Gazların özelliklerinin (hacim, basınç, genleşme, sıkıştırılabilirlik, karışabilirlik ve yoğunluk) farkını ortaya koyar.",
+      "metin": "Gazlarla ilgili hesaplamalarda kullanılan normal şartlar altında (NŞA) sıcaklık ve basınç değerleri hangisidir?",
+      "secenekler": [
+        "25 °C (298 K) sıcaklık ve 1 atm basınç",
+        "0 °C (273 K) sıcaklık ve 2 atm basınç",
+        "20 °C (293 K) sıcaklık ve 760 atm basınç",
+        "0 °C (273 K) sıcaklık ve 1 atm basınç"
+      ],
+      "dogru_index": 3,
+      "cozum": "IUPAC normal şartları 0 °C (273,15 K) sıcaklık ve 1 atm (100 kPa) basınç olarak kabul eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mutlak sıcaklık nedir?",
+        "back": "Gazların kelvin cinsinden sıcaklığıdır; T(K) = t(°C) + 273 bağıntısıyla bulunur."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o03",
+      "alt_beceri": "Gazların özelliklerine ilişkin veri toplar ve kaydeder.",
+      "metin": "Bir simülasyonda kaba 25 tane gaz taneciği konularak kabın uzunluğu önce 5 nm, sonra 10 nm yapılmıştır. Tablodaki verilere göre birim hacimdeki tanecik sayısı (yoğunluk) için hangi sonuca ulaşılır?",
+      "secenekler": [
+        "Hacim artarken tanecik sayısı sabit kaldığı için yoğunluk azalır.",
+        "Hacim artarken tanecik sayısı da arttığı için yoğunluk değişmez.",
+        "Hacim artışı taneciklerin kütlesini artırdığı için yoğunluk artar.",
+        "Uzunluk değişimi yoğunluğu etkilemez; yoğunluk yalnızca sıcaklığa bağlıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Yoğunluk birim hacimdeki tanecik sayısıdır. Tanecik sayısı 25'te sabitken hacim büyüdükçe birim hacme düşen tanecik sayısı azalır; yoğunluk düşer.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Uzunluk",
+          "Tanecik"
+        ],
+        "satirlar": [
+          [
+            "5 nm",
+            "25"
+          ],
+          [
+            "10 nm",
+            "25"
+          ],
+          [
+            "15 nm",
+            "25"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Gaz yoğunluğu birim hacimde neyi ifade eder?",
+        "back": "Birim hacimdeki tanecik sayısını (ya da kütleyi) ifade eder."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o04",
+      "alt_beceri": "Topladığı veriler üzerinden gazların özelliklerine (basınç, hacim, sıcaklık ve madde miktarı) ilişkin keşfettiği örüntüleri tanecikli model ile açıklar.",
+      "metin": "Kapalı bir kaptaki gazın çeperlere basınç uygulaması, tanecikli model ile nasıl açıklanır?",
+      "secenekler": [
+        "Taneciklerin birbirine yapışarak çepere tutunması basınç oluşturur.",
+        "Taneciklerin kütle çekimi çeperleri içeri doğru iter.",
+        "Sürekli hareket eden taneciklerin çeperlere çarpması kuvvet oluşturur.",
+        "Taneciklerin kimyasal tepkimeye girmesi çeperlerde basınç yaratır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Kinetik moleküler teoriye göre gaz tanecikleri her yöne sürekli hareket eder ve kabın çeperlerine çarpar. Çarpma sayısı ve şiddeti arttıkça basınç artar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz basıncının tanımı nedir?",
+        "back": "Gaz taneciklerinin kabın birim yüzeyine uyguladığı dik kuvvettir."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o05",
+      "alt_beceri": "Gazların özelliklerine ilişkin veri toplar ve kaydeder.",
+      "metin": "Bir gaz örneği ısıtıldığında basıncı ve hacmi değişmektedir. Bu değişimin tanecik düzeyindeki nedeni hangisidir?",
+      "secenekler": [
+        "Taneciklerin kütlesi artar, bu nedenle çeperlere daha çok kuvvet uygular.",
+        "Tanecik sayısı artar ve gazın kimyasal yapısı değişir.",
+        "Tanecikler arasındaki çekim kuvveti artarak gazı sıkıştırır.",
+        "Ortalama kinetik enerji artar, tanecikler hızlanır ve daha sık çarpar."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sıcaklık taneciklerin ortalama kinetik enerjisinin ölçüsüdür. Isıtılan gazda tanecikler hızlanır, çeperlere daha sık ve daha şiddetli çarpar; basınç ve hacim bu nedenle değişir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tanecik düzeyinde sıcaklığın tanımı nedir?",
+        "back": "Taneciklerin ortalama kinetik enerjisinin ölçüsüdür."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o06",
+      "alt_beceri": "Gazların özelliklerinin (hacim, basınç, genleşme, sıkıştırılabilirlik, karışabilirlik ve yoğunluk) farkını ortaya koyar.",
+      "metin": "Gazların sıvılara göre çok daha kolay genleşmesi ve sıkıştırılması hangi özellikleriyle açıklanır?",
+      "secenekler": [
+        "Taneciklerinin kütlelerinin sıvılara göre daha büyük olması",
+        "Tanecikleri arasındaki boşluğun büyük ve hareketlerinin serbest olması",
+        "Taneciklerinin birbirine güçlü elektrostatik bağlarla bağlı olması",
+        "Taneciklerinin kimyasal olarak kararlı olmaması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gaz tanecikleri arasındaki boşluk çok büyük, tanecikler arası çekim çok zayıftır. Bu nedenle tanecikler serbestçe hareket eder, gaz kolayca genleşir ve sıkıştırılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Genleşme nedir?",
+        "back": "Maddenin sıcaklık artışıyla hacminin büyümesidir."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o07",
+      "alt_beceri": "Topladığı veriler üzerinden gazların özelliklerine (basınç, hacim, sıcaklık ve madde miktarı) ilişkin keşfettiği örüntüleri tanecikli model ile açıklar.",
+      "metin": "Bir kaba eşit sayıda mavi ve kırmızı gaz taneciği konulduğunda karışımın her tarafında her iki renk de gözlenmiştir. Bu gözlem nasıl açıklanır?",
+      "secenekler": [
+        "Gaz tanecikleri birbirinden bağımsız hareket ettiği için homojen karışım oluşur.",
+        "Renkli tanecikler kütle çekimiyle ayrı bölgelerde toplandığı için heterojendir.",
+        "Tanecikler birbiriyle tepkimeye girerek yeni bir renk oluşturmuştur.",
+        "Her gaz yalnızca kendi bölmesinde kaldığı için karışma gerçekleşmemiştir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Gaz tanecikleri arasındaki boşluk büyük ve aralarındaki çekim zayıftır; serbest hareketle her oranda homojen karışırlar. Karışımın her yerinde iki renk de görülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gazların karışabilirlik özelliği nedir?",
+        "back": "Gazların birbiri içinde her oranda homojen olarak karışabilmesidir."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o08",
+      "alt_beceri": "Gazların özelliklerine ilişkin veri toplar ve kaydeder.",
+      "metin": "Dalgıçlar 200 atm basınçla doldurulmuş tüpler kullanır ve yüzeye yavaş çıkarlar. Bu uygulamanın gerekçesi hangisidir?",
+      "secenekler": [
+        "Basınç artışı kandaki oksijen miktarını sıfıra düşürdüğü için yavaş çıkılır.",
+        "Yüksek basınçta su buharı kana geçerek kanı seyrelttiği için yavaş çıkılır.",
+        "Basınç hızla düşerse kanda çözünmüş azot gaz kabarcıkları oluşup damarları tıkayabilir.",
+        "Basınç düşüşü tüpün hacmini artırarak dalgıcın yükselmesini engeller."
+      ],
+      "dogru_index": 2,
+      "cozum": "Yüksek basınçta kanda çözünen azot, basınç hızla azalınca gaz kabarcığına dönüşür (vurgun). Bu nedenle yüzeye yavaş çıkılır; tedavide hasta tekrar yüksek basınçlı ortama alınır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Vurgun nedir?",
+        "back": "Basıncın hızla düşmesiyle kanda çözünmüş gazların kabarcık oluşturmasıdır."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o09",
+      "alt_beceri": "Gazların özelliklerinin (hacim, basınç, genleşme, sıkıştırılabilirlik, karışabilirlik ve yoğunluk) farkını ortaya koyar.",
+      "metin": "Aynı koşullarda eşit mol sayıda CO2, He ve H2 gazlarıyla aynı büyüklükteki balonlar doldurulmuştur. Buna göre balonların hacimleri için hangisi doğrudur?",
+      "secenekler": [
+        "Mol kütlesi en büyük olan CO2 en büyük hacmi kaplar.",
+        "Aynı sıcaklık ve basınçta eşit mol gaz eşit hacim kaplar; hacimler eşittir.",
+        "Mol kütlesi en küçük olan H2 en büyük hacmi kaplar.",
+        "Gazların hacmi yalnızca balonun rengine bağlı olarak değişir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Avogadro yasasına göre aynı sıcaklık ve basınçta eşit mol sayıda gaz eşit hacim kaplar. Tanecik türü ve mol kütlesi hacmi değiştirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro yasasının tanımı nedir?",
+        "back": "Sabit sıcaklık ve basınçta gazın mol sayısı ile hacminin doğru orantılı olduğunu."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c08_o10",
+      "alt_beceri": "Topladığı veriler üzerinden gazların özelliklerine (basınç, hacim, sıcaklık ve madde miktarı) ilişkin keşfettiği örüntüleri tanecikli model ile açıklar.",
+      "metin": "Karbon dioksit 20 °C sıcaklıkta 67 atm basınç altında sıvı, 1 atm basınçta ise gaz hâlindedir. Bu bilgi gazlar için hangi sonucu destekler?",
+      "secenekler": [
+        "Sıcaklık değişmeden basınç artışı gazın kütlesini azaltarak sıvılaştırır.",
+        "Gazlar yalnızca düşük basınçta sıvı hâle geçebilir.",
+        "Basıncın hâl değişimine etkisi yoktur; yalnızca sıcaklık belirleyicidir.",
+        "Yeterince yüksek basınç, tanecikleri birbirine yaklaştırarak gazın sıvılaşmasını sağlar."
+      ],
+      "dogru_index": 3,
+      "cozum": "Basınç artırıldığında tanecikler birbirine yaklaşır ve aralarındaki çekim etkili olmaya başlar; gaz sıvılaşabilir. Bu nedenle yüksek basınç sıvılaşmayı kolaylaştırır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gazların sıvılaşmasını kolaylaştıran değişkenler nedir?",
+        "back": "Basıncın artırılması ve sıcaklığın düşürülmesidir."
+      },
+      "kazanim": "Gazların özelliklerine ilişkin bilimsel gözlem yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c08_o01:flashcard",
+      "front": "Gazların sıkıştırılabilmesinin nedeni nedir?",
+      "back": "Tanecikleri arasındaki boşluğun katı ve sıvılara göre çok büyük olmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c08_o02:flashcard",
+      "front": "Mutlak sıcaklık nedir?",
+      "back": "Gazların kelvin cinsinden sıcaklığıdır; T(K) = t(°C) + 273 bağıntısıyla bulunur."
+    },
+    {
+      "id": "kim_10_t01_c08_o03:flashcard",
+      "front": "Gaz yoğunluğu birim hacimde neyi ifade eder?",
+      "back": "Birim hacimdeki tanecik sayısını (ya da kütleyi) ifade eder."
+    },
+    {
+      "id": "kim_10_t01_c08_o04:flashcard",
+      "front": "Gaz basıncının tanımı nedir?",
+      "back": "Gaz taneciklerinin kabın birim yüzeyine uyguladığı dik kuvvettir."
+    },
+    {
+      "id": "kim_10_t01_c08_o05:flashcard",
+      "front": "Tanecik düzeyinde sıcaklığın tanımı nedir?",
+      "back": "Taneciklerin ortalama kinetik enerjisinin ölçüsüdür."
+    },
+    {
+      "id": "kim_10_t01_c08_o06:flashcard",
+      "front": "Genleşme nedir?",
+      "back": "Maddenin sıcaklık artışıyla hacminin büyümesidir."
+    },
+    {
+      "id": "kim_10_t01_c08_o07:flashcard",
+      "front": "Gazların karışabilirlik özelliği nedir?",
+      "back": "Gazların birbiri içinde her oranda homojen olarak karışabilmesidir."
+    },
+    {
+      "id": "kim_10_t01_c08_o08:flashcard",
+      "front": "Vurgun nedir?",
+      "back": "Basıncın hızla düşmesiyle kanda çözünmüş gazların kabarcık oluşturmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c08_o09:flashcard",
+      "front": "Avogadro yasasının tanımı nedir?",
+      "back": "Sabit sıcaklık ve basınçta gazın mol sayısı ile hacminin doğru orantılı olduğunu."
+    },
+    {
+      "id": "kim_10_t01_c08_o10:flashcard",
+      "front": "Gazların sıvılaşmasını kolaylaştıran değişkenler nedir?",
+      "back": "Basıncın artırılması ve sıcaklığın düşürülmesidir."
+    }
+  ],
+  "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi"
+}

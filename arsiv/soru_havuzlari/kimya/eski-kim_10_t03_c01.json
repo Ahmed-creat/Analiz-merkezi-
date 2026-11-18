@@ -1,0 +1,320 @@
+{
+  "konu_id": "kim_10_t03_c01",
+  "kod": "KİM.10.3.1",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 3,
+  "tema_adi": "Sürdürülebilirlik",
+  "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme",
+  "kaynak": "Kimya 10 ders kitabı, s.238-247",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t03_c01_o01",
+      "alt_beceri": "Makro ve mikro ölçekli deneylerin ekosisteme etkilerine ilişkin ölçütler (kimyasal madde miktarı, su miktarı ve kimyasal kirlilik miktarı) belirler.",
+      "metin": "Tabloda aynı deneyin makro ve mikro ölçekte kullanılan malzeme miktarları verilmiştir. Buna göre ekosisteme etkiyi değerlendirmek için hangi ölçütler kullanılabilir?",
+      "secenekler": [
+        "Kullanılan beherglasın büyüklüğü ve rengi",
+        "Kullanılan kimyasal miktarı, su miktarı ve oluşan kimyasal kirlilik",
+        "Deneyin yapıldığı günün tarihi ve saati",
+        "Deneyi yapan öğrenci sayısı ve sınıfın sıcaklığı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Makro ve mikro ölçek karşılaştırılırken kimyasal madde miktarı, kullanılan toplam su miktarı ve oluşan kimyasal kirlilik miktarı ölçüt olarak alınır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Ölçek",
+          "Sirke",
+          "NaHCO3"
+        ],
+        "satirlar": [
+          [
+            "Makro",
+            "100 mL",
+            "10 g"
+          ],
+          [
+            "Mikro",
+            "1 mL",
+            "0,1 g"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Makro ölçekli deney nedir?",
+        "back": "Kullanılan kimyasal madde miktarının yüksek olduğu deney türüdür."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o02",
+      "alt_beceri": "Makro ve mikro ölçekli deneylerin ekosisteme etkilerine ilişkin ölçütler (kimyasal madde miktarı, su miktarı ve kimyasal kirlilik miktarı) belirler.",
+      "metin": "Bir bireyin tükettiği mal ve hizmetlerin üretimi için kullanılan toplam temiz su miktarını ifade eden kavram hangisidir?",
+      "secenekler": [
+        "Atom ekonomisi",
+        "Karbon ayak izi",
+        "Verim yüzdesi",
+        "Su ayak izi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Su ayak izi, mal ve hizmet üretimi için kullanılan toplam temiz su tüketiminin göstergesidir. Atom ekonomisi ise tepkimede atomların ürüne geçme oranıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su ayak izi nedir?",
+        "back": "Bireyin veya toplumun tükettiği mal ve hizmetlerin üretimi için kullanılan toplam temiz su tüketiminin göstergesidir."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o03",
+      "alt_beceri": "Makro ve mikro ölçekli deneylerin ekosisteme etkilerine ilişkin ölçütler (kimyasal madde miktarı, su miktarı ve kimyasal kirlilik miktarı) belirler.",
+      "metin": "Tabloda yeşil kimya ilkeleri ve uygulama örnekleri verilmiştir. Buna göre hangi satırda ilke ile örnek uyumlu değildir?",
+      "secenekler": [
+        "IV. satır",
+        "I. satır",
+        "II. satır",
+        "III. satır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kataliz ilkesi, tepkimeyi daha az enerjiyle ve daha verimli yürütmeyi amaçlar. Atık miktarını artıran çözücü kullanımı bu ilkeyle çelişir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "İlke",
+          "Örnek"
+        ],
+        "satirlar": [
+          [
+            "Atığın önlenmesi",
+            "Mikro ölçekli deney"
+          ],
+          [
+            "Enerji verimliliği",
+            "Oda sıcaklığında tepkime"
+          ],
+          [
+            "Yenilenebilir ham madde",
+            "Biyobozunur plastik"
+          ],
+          [
+            "Kataliz",
+            "Atık miktarını artıran çözücü"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Yeşil kimya nedir?",
+        "back": "Tehlikeli maddelerin kullanımını ve oluşumunu azaltmayı hedefleyen kimyasal ürün ve süreç tasarımıdır."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o04",
+      "alt_beceri": "Kimyasal tepkimelerle ilgili makro ve mikro ölçekli deneyleri gerçekleştirirken belirlediği ölçütler temelinde ölçümler yapar.",
+      "metin": "Aynı çökelme deneyi makro ve mikro ölçekte yapılmış; kullanılan su ve kimyasal miktarları tabloda verilmiştir. Tablodaki değerlere göre mikro ölçekli deney için hangi ölçüm sonucu doğrudur?",
+      "secenekler": [
+        "Mikro ölçekte kimyasal miktarı artmış, su miktarı değişmemiştir.",
+        "İki deneyde kullanılan kimyasal miktarı eşittir; yalnızca kap farklıdır.",
+        "Mikro ölçekte kimyasal miktarı yaklaşık 100 kat, su miktarı yaklaşık 110 kat azalmıştır.",
+        "Mikro ölçekte su miktarı artmış, kimyasal miktarı azalmıştır."
+      ],
+      "dogru_index": 2,
+      "cozum": "10 g / 0,1 g = 100 kat, 110 mL / 1 mL = 110 kat azalma vardır. Mikro ölçek, aynı gözlemin çok daha az madde ve suyla yapılmasını sağlar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Ölçek",
+          "Su",
+          "Kimyasal"
+        ],
+        "satirlar": [
+          [
+            "Makro",
+            "110 mL",
+            "10 g"
+          ],
+          [
+            "Mikro",
+            "1 mL",
+            "0,1 g"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Mikro ölçekli deneyin temel avantajı nedir?",
+        "back": "Çok küçük miktarlarla çalışıldığı için kimyasal ve su tüketimi ile atık miktarı azalır."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o05",
+      "alt_beceri": "Kimyasal tepkimelerle ilgili makro ve mikro ölçekli deneyleri gerçekleştirirken belirlediği ölçütler temelinde ölçümler yapar.",
+      "metin": "Makro ve mikro ölçekli deneylerin su ayak izi karşılaştırılırken ölçüme hangi kalemlerin eklenmesi doğru olur?",
+      "secenekler": [
+        "Yalnızca deney sırasında kullanılan su",
+        "Yalnızca deney malzemelerinin fiyatı",
+        "Yalnızca öğrencilerin kullandığı eldiven sayısı",
+        "Deneyde kullanılan su ile deney sonrası temizlikte kullanılan su"
+      ],
+      "dogru_index": 3,
+      "cozum": "Su ayak izi toplam su tüketimini ifade eder. Bu nedenle deney sırasında kullanılan su ile cam malzemelerin temizliğinde kullanılan su birlikte ölçülmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su ayak izi hesabının kapsamı nedir?",
+        "back": "Üretim ve kullanım sürecindeki toplam temiz su tüketimi dikkate alınır."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o06",
+      "alt_beceri": "Kimyasal tepkimelerle ilgili makro ve mikro ölçekli deneyleri gerçekleştirirken belirlediği ölçütler temelinde ölçümler yapar.",
+      "metin": "Bir tepkimede çıkış maddesindeki atomların ne kadarının istenen ürüne geçtiğini gösteren kavram hangisidir?",
+      "secenekler": [
+        "Su ayak izi",
+        "Atom ekonomisi",
+        "Karbon ayak izi",
+        "Koligatif özellik"
+      ],
+      "dogru_index": 1,
+      "cozum": "Atom ekonomisi, tepkenlerdeki atomların istenen üründe yer alma oranıdır ve madde israfını azaltmak amacıyla kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yüksek atom ekonomisinin anlamı nedir?",
+        "back": "Tepkimeye giren atomların büyük bölümünün istenen üründe yer alması, yani daha az atık oluşmasıdır."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o07",
+      "alt_beceri": "Ölçme sonuçlarından hareketle makro ve mikro ölçekli deneylerin etkilerine ilişkin belirlediği ölçütleri karşılaştırır.",
+      "metin": "Aynı deney iki ölçekte yapılmıştır: makro ölçekte 10 g kimyasal ve 110 mL su, mikro ölçekte 0,1 g kimyasal ve 1 mL su kullanılmıştır. Karşılaştırma sonucunda hangi yargıya varılır?",
+      "secenekler": [
+        "Mikro ölçekli deneyin kimyasal kirlilik ve su ayak izi daha düşüktür.",
+        "Makro ölçekli deney daha az kimyasal kullandığı için avantajlıdır.",
+        "Her iki deneyin ekosisteme etkisi aynıdır; ölçek fark etmez.",
+        "Mikro ölçekli deneyde daha fazla kimyasal atık oluşur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Mikro ölçekte kullanılan kimyasal ve su miktarı çok daha azdır. Bu nedenle oluşan kimyasal kirlilik ve su ayak izi de düşük olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ölçek değiştirmenin ekosisteme etkisi nedir?",
+        "back": "Madde ve su tüketimi azaldığı için kirlilik ve doğal kaynak kullanımı azalır."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o08",
+      "alt_beceri": "Ölçme sonuçlarından hareketle makro ve mikro ölçekli deneylerin etkilerine ilişkin belirlediği ölçütleri karşılaştırır.",
+      "metin": "Mikro ölçekli bir deneyde su tüketimi makro ölçeğe göre 50 kat azalmıştır. Makro ölçekte 250 mL su kullanıldığına göre mikro ölçekte kaç mL su kullanılmıştır?",
+      "secenekler": [
+        "50 mL",
+        "25 mL",
+        "5 mL",
+        "0,5 mL"
+      ],
+      "dogru_index": 2,
+      "cozum": "250 mL / 50 = 5 mL bulunur. Bu azalma doğrudan su ayak izinin ve atık su miktarının düşmesi anlamına gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su ayak izini azaltmanın yolu nedir?",
+        "back": "Kullanılan toplam su miktarını azaltmak, geri kazanmak ve damıtma gibi süreçleri iyileştirmektir."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o09",
+      "alt_beceri": "Makro ve mikro ölçekli deneylerin ekosisteme etkileri hakkında yargıya varır.",
+      "metin": "Bir öğretmen aynı kazanımı mikro ölçekli deneyle vermeyi tercih etmektedir. Bu tercihin dayanağı hangisidir?",
+      "secenekler": [
+        "Mikro ölçekli deneylerde gözlem her zaman daha belirgindir.",
+        "Kazanım aynı kalırken kimyasal tüketimi ve kirlilik azalır.",
+        "Mikro ölçekli deneylerde malzeme maliyeti daha yüksektir.",
+        "Mikro ölçekli deneylerde güvenlik önlemi gerekmez."
+      ],
+      "dogru_index": 1,
+      "cozum": "Mikro ölçekli deneyler aynı gözlemin daha az kimyasalla yapılmasını sağlar; böylece atık ve kirlilik azalır. Ancak gözlem daha zor olabilir ve güvenlik önlemleri yine gereklidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mikro ölçekli deneylerin sınırlılığı nedir?",
+        "back": "Küçük miktarlar nedeniyle gözlem ve ölçüm daha zor olabilir; hassas malzeme gerekebilir."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c01_o10",
+      "alt_beceri": "Makro ve mikro ölçekli deneylerin ekosisteme etkileri hakkında yargıya varır.",
+      "metin": "Bir öğrenci mikro ölçekli deneylerin her zaman tercih edilmesi gerektiğini söylemektedir. Bu yargıyı değerlendirmek için hangi gerekçe kullanılmalıdır?",
+      "secenekler": [
+        "Mikro ölçekli deneylerde kimyasal atık daha fazla olduğu için tercih edilmez.",
+        "Makro ölçekli deneylerde su tüketimi daha az olduğu için üstündür.",
+        "Ölçek seçimi tamamen öğrenci sayısına bağlıdır; bilimsel ölçüt yoktur.",
+        "Gözlenebilirlik ve ölçüm hassasiyeti yetersizse makro ölçek gerekebilir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Mikro ölçek çevresel açıdan avantajlıdır; ancak gözlem ve ölçümün yeterli olmadığı durumlarda daha büyük ölçek gerekebilir. Ölçek seçimi kazanıma ve ölçüm gereksinimine göre yapılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Deney ölçeği seçiminin ölçütleri nedir?",
+        "back": "Kazanım, gözlenebilirlik, ölçüm hassasiyeti, güvenlik ve çevresel etki birlikte değerlendirilir."
+      },
+      "kazanim": "Kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t03_c01_o01:flashcard",
+      "front": "Makro ölçekli deney nedir?",
+      "back": "Kullanılan kimyasal madde miktarının yüksek olduğu deney türüdür."
+    },
+    {
+      "id": "kim_10_t03_c01_o02:flashcard",
+      "front": "Su ayak izi nedir?",
+      "back": "Bireyin veya toplumun tükettiği mal ve hizmetlerin üretimi için kullanılan toplam temiz su tüketiminin göstergesidir."
+    },
+    {
+      "id": "kim_10_t03_c01_o03:flashcard",
+      "front": "Yeşil kimya nedir?",
+      "back": "Tehlikeli maddelerin kullanımını ve oluşumunu azaltmayı hedefleyen kimyasal ürün ve süreç tasarımıdır."
+    },
+    {
+      "id": "kim_10_t03_c01_o04:flashcard",
+      "front": "Mikro ölçekli deneyin temel avantajı nedir?",
+      "back": "Çok küçük miktarlarla çalışıldığı için kimyasal ve su tüketimi ile atık miktarı azalır."
+    },
+    {
+      "id": "kim_10_t03_c01_o05:flashcard",
+      "front": "Su ayak izi hesabının kapsamı nedir?",
+      "back": "Üretim ve kullanım sürecindeki toplam temiz su tüketimi dikkate alınır."
+    },
+    {
+      "id": "kim_10_t03_c01_o06:flashcard",
+      "front": "Yüksek atom ekonomisinin anlamı nedir?",
+      "back": "Tepkimeye giren atomların büyük bölümünün istenen üründe yer alması, yani daha az atık oluşmasıdır."
+    },
+    {
+      "id": "kim_10_t03_c01_o07:flashcard",
+      "front": "Ölçek değiştirmenin ekosisteme etkisi nedir?",
+      "back": "Madde ve su tüketimi azaldığı için kirlilik ve doğal kaynak kullanımı azalır."
+    },
+    {
+      "id": "kim_10_t03_c01_o08:flashcard",
+      "front": "Su ayak izini azaltmanın yolu nedir?",
+      "back": "Kullanılan toplam su miktarını azaltmak, geri kazanmak ve damıtma gibi süreçleri iyileştirmektir."
+    },
+    {
+      "id": "kim_10_t03_c01_o09:flashcard",
+      "front": "Mikro ölçekli deneylerin sınırlılığı nedir?",
+      "back": "Küçük miktarlar nedeniyle gözlem ve ölçüm daha zor olabilir; hassas malzeme gerekebilir."
+    },
+    {
+      "id": "kim_10_t03_c01_o10:flashcard",
+      "front": "Deney ölçeği seçiminin ölçütleri nedir?",
+      "back": "Kazanım, gözlenebilirlik, ölçüm hassasiyeti, güvenlik ve çevresel etki birlikte değerlendirilir."
+    }
+  ],
+  "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler"
+}

@@ -1,0 +1,254 @@
+{
+  "konu_id": "mat_10_t05_c02",
+  "kod": "MAT.10.5.2",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 5,
+  "tema_adi": "Sayma, Algoritma ve Bilişim",
+  "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.339-351",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t05_c02_o01",
+      "alt_beceri": "Karşılaşılan problem durumlarındaki cebirsel ve fonksiyonel işlemlerin algoritmik yapısını ortaya koyar.",
+      "metin": "Bir algoritmanın tanımı için hangisi doğrudur?",
+      "secenekler": [
+        "Her adımı serbestçe değiştirilebilen tahminlerdir.",
+        "Sonlu sayıda, kesin ve sıralı adımlardan oluşan çözüm yoludur.",
+        "Yalnızca bilgisayar programlarında kullanılan komutlardır.",
+        "Sonucu kişiye göre değişen yöntemlerdir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Algoritma, bir problemi çözmek için izlenen sonlu, kesin ve sıralı adımlar bütünüdür. Adımların herkes için aynı sonucu vermesi gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Algoritmanın temel özellikleri nedir?",
+        "back": "Sonluluk, kesinlik, sıralılık ve aynı girdiye aynı çıktıyı vermesidir."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o02",
+      "alt_beceri": "Karşılaşılan problem durumlarındaki cebirsel ve fonksiyonel işlemlerin algoritmik yapısını ortaya koyar.",
+      "metin": "Bir öğrenci sınıf arkadaşlarına 'istediğiniz sayıyı söyleyin, ben sonucu tahmin edeceğim' diyen bir yöntem önermiştir. Bu yöntemin algoritma sayılmama nedeni hangisidir?",
+      "secenekler": [
+        "Çok kısa olması",
+        "Yazılı olarak verilmemesi",
+        "Birden fazla kişiyle denenmesi",
+        "Adımların kesin olmaması ve sonucun öngörülememesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Algoritmada her adım kesin olmalı ve aynı girdi her zaman aynı çıktıyı vermelidir. Tahmine dayalı yöntem bu koşulu sağlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Algoritmada kesinlik nedir?",
+        "back": "Her adımın açık ve tek anlamlı olmasıdır."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o03",
+      "alt_beceri": "Karşılaşılan problem durumlarındaki cebirsel ve fonksiyonel işlemlerin algoritmik yapısını ortaya koyar.",
+      "metin": "Akış şemasında koşul (karar) ifadesi hangi sembolle gösterilir?",
+      "secenekler": [
+        "Eşkenar dörtgen",
+        "Dikdörtgen",
+        "Oval",
+        "Paralelkenar"
+      ],
+      "dogru_index": 0,
+      "cozum": "Akış şemalarında karar noktaları eşkenar dörtgenle, işlemler dikdörtgenle, başlangıç ve bitiş oval ile gösterilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akış şeması nedir?",
+        "back": "Algoritmanın adımlarının sembollerle gösterildiği şemadır."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o04",
+      "alt_beceri": "Karşılaşılan problem durumlarındaki cebirsel ve fonksiyonel işlemlerin algoritmik yapısını ortaya koyar.",
+      "metin": "Bir akış şemasında hesaplama ve atama işlemleri hangi sembolle gösterilir?",
+      "secenekler": [
+        "Eşkenar dörtgen",
+        "Oval",
+        "Dikdörtgen",
+        "Baklava dilimi"
+      ],
+      "dogru_index": 2,
+      "cozum": "İşlem adımları dikdörtgen içinde yazılır. Karar ifadeleri ise eşkenar dörtgen (baklava dilimi) ile gösterilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akış şemasında başlangıç ve bitiş sembolü nedir?",
+        "back": "Oval semboldür."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o05",
+      "alt_beceri": "Ön bilgilerini kullanarak cebirsel ve fonksiyonel yapılar ile bu yapıların algoritmaları arasında uyumlu bir bütün oluşturur.",
+      "metin": "5, 2, 4, 1 dizisi küçükten büyüğe sıralanırken ilk iki eleman karşılaştırılıp yer değiştiriliyor, ardından ikinci ve üçüncü eleman karşılaştırılıyor. Buna göre ilk iki karşılaştırma sonunda dizi hangi hâle gelir?",
+      "secenekler": [
+        "2, 5, 4, 1",
+        "1, 2, 4, 5",
+        "2, 4, 1, 5",
+        "2, 4, 5, 1"
+      ],
+      "dogru_index": 3,
+      "cozum": "İlk karşılaştırmada 5 ile 2 yer değiştirir: 2, 5, 4, 1. İkinci karşılaştırmada 5 ile 4 yer değiştirir: 2, 4, 5, 1.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karşılaştırmalı sıralama nedir?",
+        "back": "Elemanların ikili karşılaştırılıp gerekirse yer değiştirildiği sıralamadır."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o06",
+      "alt_beceri": "Ön bilgilerini kullanarak cebirsel ve fonksiyonel yapılar ile bu yapıların algoritmaları arasında uyumlu bir bütün oluşturur.",
+      "metin": "Üç sayının en büyüğünü bulan bir algoritmada, sayılar arasında en az kaç karşılaştırma yapılması gerekir?",
+      "secenekler": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "dogru_index": 1,
+      "cozum": "Önce birinci ile ikinci karşılaştırılır, büyük olan üçüncü ile karşılaştırılır. En az 2 karşılaştırma yeterlidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "En büyük elemanı bulmada karşılaştırma sayısı nedir?",
+        "back": "n eleman için en az n − 1 karşılaştırma gerekir."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o07",
+      "alt_beceri": "Ön bilgilerini kullanarak cebirsel ve fonksiyonel yapılar ile bu yapıların algoritmaları arasında uyumlu bir bütün oluşturur.",
+      "metin": "Bir algoritmada 'Eğer sıcaklık 20 °C'nin altındaysa mont giy, değilse mont giyme' adımı bulunmaktadır. Bu adım hangi yapıyı örnekler?",
+      "secenekler": [
+        "Koşul yapısı",
+        "Döngü yapısı",
+        "Sıralama yapısı",
+        "Giriş yapısı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Bir durumun doğru ya da yanlış olmasına göre farklı adımların izlenmesi koşul (karar) yapısıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşul yapısı nedir?",
+        "back": "Bir ölçütün sağlanıp sağlanmamasına göre farklı adımların çalıştırıldığı yapıdır."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o08",
+      "alt_beceri": "Ön bilgilerini kullanarak cebirsel ve fonksiyonel yapılar ile bu yapıların algoritmaları arasında uyumlu bir bütün oluşturur.",
+      "metin": "1'den 10'a kadar sayıları ekrana yazdıran bir algoritmada döngü kaç kez çalışır?",
+      "secenekler": [
+        "9",
+        "11",
+        "10",
+        "1"
+      ],
+      "dogru_index": 2,
+      "cozum": "Sayaç 1'den başlayıp 10'a kadar her adımda bir arttığı için döngü gövdesi 10 kez çalışır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Döngü nedir?",
+        "back": "Belirli bir koşul sağlandığı sürece adımların yinelenmesidir."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o09",
+      "alt_beceri": "Ön bilgilerini kullanarak cebirsel ve fonksiyonel yapılar ile bu yapıların algoritmaları arasında uyumlu bir bütün oluşturur.",
+      "metin": "Bir algoritmada 'toplam = 0; her sayı için toplam = toplam + sayı' adımları verilmiştir. Girdi 0 olduğunda çıktı için hangisi doğrudur?",
+      "secenekler": [
+        "Algoritma hata verir.",
+        "Toplam değişmeden 0 olarak kalır.",
+        "Toplam 1 olur.",
+        "Döngü hiç çalışmaz ve sonuç tanımsızdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "0 eklemek toplamı değiştirmez. Algoritma 0 girdisinde de doğru çalışır ve toplam 0 kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Algoritmada sınır durum testi nedir?",
+        "back": "Sıfır, boş küme gibi uç girdilerle algoritmanın denenmesidir."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    },
+    {
+      "soru_id": "mat_10_t05_c02_o10",
+      "alt_beceri": "Ön bilgilerini kullanarak cebirsel ve fonksiyonel yapılar ile bu yapıların algoritmaları arasında uyumlu bir bütün oluşturur.",
+      "metin": "Bir algoritmanın adımları 'toplam = 0; sayı = 1; toplam = toplam + sayı' biçiminde yazılmış ve 5'e kadar toplama yapması beklenmiştir. Algoritmada hangi eksiklik vardır?",
+      "secenekler": [
+        "Toplam değişkeni gereksizdir.",
+        "Başlangıç değeri yanlış seçilmiştir.",
+        "Algoritma çok kısa yazılmıştır.",
+        "Sayıyı artıran ve tekrar sağlayan döngü adımı yoktur."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sayı yalnızca 1 değerini aldığı için toplam hep 1 olur. 1'den 5'e kadar toplamak için sayıyı artıran ve koşula bağlı tekrar eden döngü gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Algoritmada döngü değişkeni nedir?",
+        "back": "Her yinelemede değeri güncellenen sayaç değişkenidir."
+      },
+      "kazanim": "Cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t05_c02_o01:flashcard",
+      "front": "Algoritmanın temel özellikleri nedir?",
+      "back": "Sonluluk, kesinlik, sıralılık ve aynı girdiye aynı çıktıyı vermesidir."
+    },
+    {
+      "id": "mat_10_t05_c02_o02:flashcard",
+      "front": "Algoritmada kesinlik nedir?",
+      "back": "Her adımın açık ve tek anlamlı olmasıdır."
+    },
+    {
+      "id": "mat_10_t05_c02_o03:flashcard",
+      "front": "Akış şeması nedir?",
+      "back": "Algoritmanın adımlarının sembollerle gösterildiği şemadır."
+    },
+    {
+      "id": "mat_10_t05_c02_o04:flashcard",
+      "front": "Akış şemasında başlangıç ve bitiş sembolü nedir?",
+      "back": "Oval semboldür."
+    },
+    {
+      "id": "mat_10_t05_c02_o05:flashcard",
+      "front": "Karşılaştırmalı sıralama nedir?",
+      "back": "Elemanların ikili karşılaştırılıp gerekirse yer değiştirildiği sıralamadır."
+    },
+    {
+      "id": "mat_10_t05_c02_o06:flashcard",
+      "front": "En büyük elemanı bulmada karşılaştırma sayısı nedir?",
+      "back": "n eleman için en az n − 1 karşılaştırma gerekir."
+    },
+    {
+      "id": "mat_10_t05_c02_o07:flashcard",
+      "front": "Koşul yapısı nedir?",
+      "back": "Bir ölçütün sağlanıp sağlanmamasına göre farklı adımların çalıştırıldığı yapıdır."
+    },
+    {
+      "id": "mat_10_t05_c02_o08:flashcard",
+      "front": "Döngü nedir?",
+      "back": "Belirli bir koşul sağlandığı sürece adımların yinelenmesidir."
+    },
+    {
+      "id": "mat_10_t05_c02_o09:flashcard",
+      "front": "Algoritmada sınır durum testi nedir?",
+      "back": "Sıfır, boş küme gibi uç girdilerle algoritmanın denenmesidir."
+    },
+    {
+      "id": "mat_10_t05_c02_o10:flashcard",
+      "front": "Algoritmada döngü değişkeni nedir?",
+      "back": "Her yinelemede değeri güncellenen sayaç değişkenidir."
+    }
+  ]
+}

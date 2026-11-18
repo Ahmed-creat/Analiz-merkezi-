@@ -1,0 +1,321 @@
+{
+  "konu_id": "fiz_10_t01_c02",
+  "kod": "FİZ.10.1.2",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 1,
+  "tema_adi": "Kuvvet ve Hareket",
+  "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.34-41",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t01_c02_o01",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
+      "metin": "Bir tren durağan hâlden kalkarak her saniye hızını 3 m/s artırmaktadır. Trenin 8 saniye sonundaki hızının büyüklüğü kaç m/s olur?",
+      "secenekler": [
+        "24",
+        "11",
+        "8",
+        "3"
+      ],
+      "dogru_index": 0,
+      "cozum": "Hız her saniye 3 m/s arttığına göre ivme 3 m/s²'dir. v = v0 + a · t = 0 + 3 · 8 = 24 m/s bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İvmeyi tanımlayınız.",
+        "back": "Hızın birim zamanda meydana gelen değişimidir; vektörel bir büyüklüktür."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o02",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
+      "metin": "Düz bir yolda 25 m/s hızla gitmekte olan bir kamyon, kırmızı ışığı görünce 5 saniyede düzgün yavaşlayarak durmuştur. Kamyonun ivmesi için hangisi doğrudur?",
+      "secenekler": [
+        "İvmesi +5 m/s²'dir.",
+        "İvmesi sıfırdır.",
+        "İvmesi −5 m/s²'dir.",
+        "İvmesi −0,2 m/s²'dir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Hız değişimi 0 − 25 = −25 m/s, geçen zaman 5 s'dir. a = Δv / Δt = −5 m/s² bulunur; yavaşlayan harekette ivme negatiftir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İvmenin matematiksel modelini yazınız.",
+        "back": "a = Δv / Δt = (v_son − v_ilk) / (t_son − t_ilk)."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o03",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
+      "metin": "Bir bisikletli 2 saniyede hızını 6 m/s'den 14 m/s'ye çıkarmış, sonraki 2 saniye boyunca 14 m/s hızla sabit hareket etmiştir. Bisikletlinin ilk 2 saniyedeki ivmesi ile sonraki 2 saniyedeki ivmesi için hangisi doğrudur?",
+      "secenekler": [
+        "İkisi de 4 m/s²'dir.",
+        "İlki 4 m/s², ikincisi 0'dır.",
+        "İlki 0, ikincisi 4 m/s²'dir.",
+        "İkisi de 0'dır."
+      ],
+      "dogru_index": 1,
+      "cozum": "İlk aralıkta a = (14 − 6) / 2 = 4 m/s²'dir. İkinci aralıkta hız değişmediği için ivme sıfırdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hız değişimini tanımlayınız.",
+        "back": "Cismin son hızı ile ilk hızı arasındaki farktır: Δv = v_son − v_ilk."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o04",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
+      "metin": "Şekildeki hız-zaman grafiği bir cismin 4 saniyelik hareketine aittir. Cismin (0-2) s zaman aralığındaki ivmesinin büyüklüğü kaç m/s²'dir?",
+      "secenekler": [
+        "4",
+        "1",
+        "8",
+        "16"
+      ],
+      "dogru_index": 0,
+      "cozum": "İvme, hız-zaman grafiğinin eğimidir: (8 − 0) / (2 − 0) = 4 m/s². (2-4) s aralığında hız sabit olduğu için bu aralıkta ivme sıfırdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hız-zaman grafiğinin eğimi hangi niceliği verir?",
+        "back": "İvmeyi verir."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                4,
+                8
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o05",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi keşfeder.",
+      "metin": "Şekildeki hız-zaman grafiği düz bir yolda hareket eden bir cisme aittir. Cismin (0-4) s zaman aralığındaki ivmesi için hangisi doğrudur?",
+      "secenekler": [
+        "İvme +5 m/s² olup hareketle aynı yöndedir.",
+        "İvme sıfırdır; cisim sabit hızlı hareket eder.",
+        "İvme −5 m/s² olup hareket yönüne zıttır.",
+        "İvme −20 m/s² olup çok büyüktür."
+      ],
+      "dogru_index": 2,
+      "cozum": "Grafiğin eğimi ivmeyi verir: (0 − 20) / (4 − 0) = −5 m/s². Negatif işaret ivmenin hareket yönüne zıt olduğunu, yani cismin yavaşladığını gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Negatif ivmenin anlamı nedir?",
+        "back": "İvmenin hareket yönüne zıt olduğunu, yani cismin yavaşladığını gösterir."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "v (m/s)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "v",
+            "noktalar": [
+              [
+                0,
+                20
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o06",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi geneller.",
+      "metin": "Bir otomobil 3 saniyede hızını 12 m/s'den 30 m/s'ye çıkarmıştır. Otomobilin ivmesinin büyüklüğü kaç m/s²'dir?",
+      "secenekler": [
+        "3",
+        "6",
+        "9",
+        "14"
+      ],
+      "dogru_index": 1,
+      "cozum": "Hız değişimi 30 − 12 = 18 m/s, geçen zaman 3 s'dir. a = 18 m/s / 3 s = 6 m/s² bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İvmenin SI birim sistemindeki birimi nedir?",
+        "back": "m/s²; ivme vektörel bir büyüklüktür."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o07",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi geneller.",
+      "metin": "İlk hızının büyüklüğü 5 m/s olan bir cisim 2 m/s² büyüklüğünde sabit ivmeyle 6 saniye hızlanmıştır. Cismin son hızının büyüklüğü kaç m/s'dir?",
+      "secenekler": [
+        "7",
+        "12",
+        "13",
+        "17"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sabit ivmeli harekette v = v0 + a · t modeli kullanılır: 5 + 2 · 6 = 17 m/s.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit ivmeli harekette son hız hangi modelle bulunur?",
+        "back": "v = v0 + a · t modeliyle."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o08",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi geneller.",
+      "metin": "Hızının büyüklüğü 18 m/s olan bir araç 3 saniye boyunca 3 m/s² büyüklüğünde sabit ivmeyle yavaşlamıştır. Aracın 3. saniye sonundaki hızının büyüklüğü kaç m/s'dir?",
+      "secenekler": [
+        "9",
+        "12",
+        "15",
+        "21"
+      ],
+      "dogru_index": 0,
+      "cozum": "Yavaşlayan hareket için v = v0 − a · t yazılır: 18 − 3 · 3 = 9 m/s bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yavaşlayan harekette son hız hangi modelle bulunur?",
+        "back": "v = v0 − a · t modeliyle."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o09",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi geneller.",
+      "metin": "Şekildeki ivme-zaman grafiği bir cisme aittir. Cismin (0-4) s zaman aralığındaki hız değişimi kaç m/s'dir?",
+      "secenekler": [
+        "3",
+        "4",
+        "7",
+        "12"
+      ],
+      "dogru_index": 3,
+      "cozum": "İvme-zaman grafiğinde grafik ile eksen arasındaki alan hız değişimini verir: 3 m/s² · 4 s = 12 m/s.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İvme-zaman grafiğinde alan hangi niceliği verir?",
+        "back": "Hız değişimini verir."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "t (s)",
+        "yEkseni": "a (m/s²)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "a",
+            "noktalar": [
+              [
+                0,
+                3
+              ],
+              [
+                4,
+                3
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t01_c02_o10",
+      "alt_beceri": "İvme ve hız değişimi arasındaki ilişkiyi geneller.",
+      "metin": "İlk hızının büyüklüğü 20 m/s olan bir cisim sabit ivmeyle 4 saniyede durmuştur. Bu cismin ivmesi ve 2. saniye sonundaki hızı için hangisi doğrudur?",
+      "secenekler": [
+        "İvme −5 m/s², 2. saniyedeki hızı 15 m/s",
+        "İvme −5 m/s², 2. saniyedeki hızı 10 m/s",
+        "İvme −4 m/s², 2. saniyedeki hızı 12 m/s",
+        "İvme +5 m/s², 2. saniyedeki hızı 30 m/s"
+      ],
+      "dogru_index": 1,
+      "cozum": "a = (0 − 20) / 4 = −5 m/s²'dir. 2. saniyede hız 20 − 5 · 2 = 10 m/s olur; cisim 4 saniyede durduğu için bu değer pozitiftir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birim zamandaki hız değişimi sabitse ivme için ne söylenir?",
+        "back": "İvmenin büyüklüğü sabittir."
+      },
+      "kazanim": "İvme ve hız değişimi arasındaki ilişkiye yönelik tümevarımsal akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t01_c02_o01:flashcard",
+      "front": "İvmeyi tanımlayınız.",
+      "back": "Hızın birim zamanda meydana gelen değişimidir; vektörel bir büyüklüktür."
+    },
+    {
+      "id": "fiz_10_t01_c02_o02:flashcard",
+      "front": "İvmenin matematiksel modelini yazınız.",
+      "back": "a = Δv / Δt = (v_son − v_ilk) / (t_son − t_ilk)."
+    },
+    {
+      "id": "fiz_10_t01_c02_o03:flashcard",
+      "front": "Hız değişimini tanımlayınız.",
+      "back": "Cismin son hızı ile ilk hızı arasındaki farktır: Δv = v_son − v_ilk."
+    },
+    {
+      "id": "fiz_10_t01_c02_o04:flashcard",
+      "front": "Hız-zaman grafiğinin eğimi hangi niceliği verir?",
+      "back": "İvmeyi verir."
+    },
+    {
+      "id": "fiz_10_t01_c02_o05:flashcard",
+      "front": "Negatif ivmenin anlamı nedir?",
+      "back": "İvmenin hareket yönüne zıt olduğunu, yani cismin yavaşladığını gösterir."
+    },
+    {
+      "id": "fiz_10_t01_c02_o06:flashcard",
+      "front": "İvmenin SI birim sistemindeki birimi nedir?",
+      "back": "m/s²; ivme vektörel bir büyüklüktür."
+    },
+    {
+      "id": "fiz_10_t01_c02_o07:flashcard",
+      "front": "Sabit ivmeli harekette son hız hangi modelle bulunur?",
+      "back": "v = v0 + a · t modeliyle."
+    },
+    {
+      "id": "fiz_10_t01_c02_o08:flashcard",
+      "front": "Yavaşlayan harekette son hız hangi modelle bulunur?",
+      "back": "v = v0 − a · t modeliyle."
+    },
+    {
+      "id": "fiz_10_t01_c02_o09:flashcard",
+      "front": "İvme-zaman grafiğinde alan hangi niceliği verir?",
+      "back": "Hız değişimini verir."
+    },
+    {
+      "id": "fiz_10_t01_c02_o10:flashcard",
+      "front": "Birim zamandaki hız değişimi sabitse ivme için ne söylenir?",
+      "back": "İvmenin büyüklüğü sabittir."
+    }
+  ]
+}

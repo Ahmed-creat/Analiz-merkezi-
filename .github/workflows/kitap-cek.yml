@@ -1,0 +1,115 @@
+name: Kitap Çek
+
+# KÖPRÜ İŞ AKIŞI
+# Sandbox yalnızca github.com / api.github.com / codeload.github.com'a çıkabiliyor.
+# Bu iş akışı GitHub runner'ının açık internetini kullanır:
+#   1) release asset olarak yüklenen ders kitabı PDF'lerini indirir
+#   2) pdftotext ile sayfa sayfa metne çevirir (JSON)
+#   3) metni `kitap-kaynak` adlı GEÇİCİ dala commit eder (PDF repoya girmez)
+# Sandbox tarafı metni `git fetch origin kitap-kaynak` ile alır, sonra dal silinir.
+#
+# Tetikleme: pull_request (başlığında "[kitap]" geçen PR) ya da workflow_dispatch
+# Girdi listesi: docs/uretim/kopru-kitaplar.txt  →  <slug>|<release asset adı>
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Yalnız bu dersi çevir (boş = tümü). Örn: cografya"
+        required: false
+        default: ""
+  pull_request:
+    types: [opened, reopened, labeled]
+
+permissions:
+  contents: write
+
+jobs:
+  cek:
+    # Her push'ta çalışmasın: yalnız "[kitap]" başlıklı PR açıldığında/yeniden açıldığında
+    # ya da PR'a `kitap-cek` etiketi eklendiğinde. Yeni kitap geldiğinde etiket eklemek yeter.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.action == 'opened' && contains(github.event.pull_request.title, '[kitap]')) ||
+      (github.event.action == 'reopened' && contains(github.event.pull_request.title, '[kitap]')) ||
+      (github.event.action == 'labeled' && github.event.label.name == 'kitap-cek')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ETIKET: derskitaplari
+      # Tek ders çekmek için: workflow_dispatch girdisi (boşsa tüm liste)
+      SLUG_FILTRE: ${{ github.event.inputs.slug }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Araçları hazırla
+        run: |
+          set -euo pipefail
+          command -v pdftotext >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+          pdftotext -v 2>&1 | head -1
+
+      - name: Kitapları indir ve metne çevir
+        run: |
+          set -euo pipefail
+          mkdir -p cikti
+          while IFS='|' read -r SLUG ASSET; do
+            [ -z "${SLUG:-}" ] && continue
+            case "$SLUG" in \#*) continue ;; esac
+            if [ -n "${SLUG_FILTRE:-}" ] && [ "$SLUG" != "$SLUG_FILTRE" ]; then continue; fi
+            echo "=== $SLUG ← $ASSET ==="
+            if ! gh release download "$ETIKET" --pattern "$ASSET" --dir indirilen --clobber; then
+              echo "::warning::$ASSET indirilemedi (release'te yok?)"
+              continue
+            fi
+            PDF="indirilen/$ASSET"
+            echo "boyut: $(stat -c%s "$PDF") bayt"
+            pdfinfo "$PDF" 2>/dev/null | grep -E 'Pages|Title|Creator' || true
+            pdftotext -layout -enc UTF-8 "$PDF" "cikti/$SLUG.txt"
+            python3 - "$SLUG" "cikti/$SLUG.txt" "cikti/$SLUG.json" "$ASSET" "$(sha256sum "$PDF" | cut -d' ' -f1)" <<'PY'
+          import json, sys, re
+          slug, txt, out, asset, sha = sys.argv[1:6]
+          ham = open(txt, encoding="utf-8", errors="replace").read()
+          sayfalar = ham.split("\f")
+          if sayfalar and not sayfalar[-1].strip():
+              sayfalar = sayfalar[:-1]
+          def temizle(t):
+              t = t.replace("\u00ad", "")
+              t = re.sub(r"[ \t]+", " ", t)
+              t = re.sub(r"\n{3,}", "\n\n", t)
+              return t.strip()
+          kayit = []
+          for i, s in enumerate(sayfalar, start=1):
+              m = temizle(s)
+              kayit.append({"s": i, "metin": m, "kr": len(m)})
+          kisa = [x["s"] for x in kayit if x["kr"] < 200]
+          veri = {"slug": slug, "parcalar": [{"dosya": asset, "sha256": sha, "sayfa": len(kayit)}],
+                  "sayfa_sayisi": len(kayit), "sayfalar": kayit}
+          json.dump(veri, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          print("  sayfa: %d · toplam kr: %d · zayıf sayfa: %d %s"
+                % (len(kayit), sum(x["kr"] for x in kayit), len(kisa), kisa[:20]))
+          open("rapor.txt", "a", encoding="utf-8").write(
+              "%s · %s · %d sayfa · %d kr · zayıf %d\n" % (slug, asset, len(kayit),
+                                                          sum(x["kr"] for x in kayit), len(kisa)))
+          PY
+            rm -f "$PDF" "cikti/$SLUG.txt"
+          done < docs/uretim/kopru-kitaplar.txt
+          echo "--- özet ---"
+          cat rapor.txt || true
+          ls -la cikti
+
+      - name: Metni geçici dala gönder
+        run: |
+          set -euo pipefail
+          git config --global user.name "kitap-koprusu[bot]"
+          git config --global user.email "actions@users.noreply.github.com"
+          D=$(mktemp -d)
+          cp cikti/*.json "$D"/ 2>/dev/null || true
+          cp rapor.txt "$D"/rapor.txt 2>/dev/null || true
+          cd "$D"
+          git init -q
+          git add -A
+          git commit -q -m "kitap metinleri: $(date -u +%F)"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            HEAD:refs/heads/kitap-kaynak
+          echo "dal gönderildi: kitap-kaynak"

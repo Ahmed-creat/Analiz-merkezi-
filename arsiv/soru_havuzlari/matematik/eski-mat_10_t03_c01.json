@@ -1,0 +1,254 @@
+{
+  "konu_id": "mat_10_t03_c01",
+  "kod": "MAT.10.3.1",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 3,
+  "tema_adi": "Sayılar",
+  "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.140-148",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t03_c01_o01",
+      "alt_beceri": "Bir doğal sayının asal çarpanları ve bölenleri hakkında varsayımlarda bulunur.",
+      "metin": "İki basamaklı en büyük asal sayı kaçtır?",
+      "secenekler": [
+        "91",
+        "97",
+        "93",
+        "99"
+      ],
+      "dogru_index": 1,
+      "cozum": "99, 93, 96 gibi tek ve bileşik sayılar elenir. 97 yalnızca 1'e ve kendisine bölündüğü için iki basamaklı en büyük asal sayıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal sayı nedir?",
+        "back": "Yalnızca 1'e ve kendisine bölünebilen 1'den büyük doğal sayıdır."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o02",
+      "alt_beceri": "Bir doğal sayının asal çarpanları ve bölenleri hakkında varsayımlarda bulunur.",
+      "metin": "180 sayısının asal çarpanlarına ayrılmış biçimi hangisidir?",
+      "secenekler": [
+        "2 · 3² · 10",
+        "2³ · 3 · 5",
+        "2² · 3 · 15",
+        "2² · 3² · 5"
+      ],
+      "dogru_index": 3,
+      "cozum": "180 = 2 · 90 = 2 · 2 · 45 = 2² · 3 · 15 = 2² · 3 · 3 · 5 = 2² · 3² · 5 bulunur. 10 ve 15 asal olmadığı için diğer seçenekler asal çarpanlara ayrılmış biçim değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpanlara ayırma nedir?",
+        "back": "Bir sayının yalnızca asal sayıların çarpımı biçiminde yazılmasıdır."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o03",
+      "alt_beceri": "Farklı örneklerden elde ettiği örüntüleri listeleyerek bir doğal sayının asal çarpanları ve bölenleri hakkındaki varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "84 sayısı çarpan ağacı yöntemiyle asal çarpanlarına ayrılmıştır: 84 = 2 · 42, 42 = 2 · 21, 21 = 3 · 7. Buna göre 84'ün asal çarpanlarının toplamı kaçtır?",
+      "secenekler": [
+        "12",
+        "10",
+        "14",
+        "21"
+      ],
+      "dogru_index": 0,
+      "cozum": "84 = 2² · 3 · 7 olduğundan asal çarpanlar 2, 3 ve 7'dir. Toplamları 2 + 3 + 7 = 12 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çarpan ağacı yöntemi nedir?",
+        "back": "Sayının dallara ayrılarak yalnızca asal çarpanlara indirgendiği gösterimdir."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o04",
+      "alt_beceri": "Farklı örneklerden elde ettiği örüntüleri listeleyerek bir doğal sayının asal çarpanları ve bölenleri hakkındaki varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "360 sayısı bölen listesi yöntemiyle ayrıştırılmıştır: 360 ÷ 2 = 180, 180 ÷ 2 = 90, 90 ÷ 2 = 45, 45 ÷ 3 = 15, 15 ÷ 3 = 5. Buna göre 360'ın asal çarpanlarına ayrılmış biçimi hangisidir?",
+      "secenekler": [
+        "2² · 3³ · 5",
+        "2³ · 3 · 5²",
+        "2³ · 3² · 5",
+        "2⁴ · 3 · 5"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bölen listesinde 2 üç kez, 3 iki kez kullanılmıştır. Son kalan 5 de asal olduğundan 360 = 2³ · 3² · 5 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bölen listesi yöntemi nedir?",
+        "back": "Sayının sırasıyla en küçük asal bölenlerine bölünerek listelendiği yöntemdir."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o05",
+      "alt_beceri": "Oluşturduğu genellemelerin varsayımlarını karşılayıp karşılamadığını örneklerle sınar.",
+      "metin": "72 sayısının pozitif tam bölenlerinin sayısı kaçtır?",
+      "secenekler": [
+        "10",
+        "9",
+        "15",
+        "12"
+      ],
+      "dogru_index": 3,
+      "cozum": "72 = 2³ · 3² olduğundan bölen sayısı (3 + 1)(2 + 1) = 4 · 3 = 12 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Pozitif bölen sayısının formülü nedir?",
+        "back": "Asal çarpanların üslerinin birer fazlasının çarpımıdır."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o06",
+      "alt_beceri": "Oluşturduğu genellemelerin varsayımlarını karşılayıp karşılamadığını örneklerle sınar.",
+      "metin": "200 sayısının pozitif tam bölenlerinin sayısı kaçtır?",
+      "secenekler": [
+        "8",
+        "12",
+        "10",
+        "16"
+      ],
+      "dogru_index": 1,
+      "cozum": "200 = 2³ · 5² olduğundan bölen sayısı (3 + 1)(2 + 1) = 4 · 3 = 12 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bölen sayısı formülünün gerekçesi nedir?",
+        "back": "Her asal çarpanın 0'dan üs değerine kadar seçilebilmesidir."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o07",
+      "alt_beceri": "Bir doğal sayının asal çarpanları ve bölenleri ile ilgili ulaştığı sonuçlara yönelik matematiksel önermeler sunar.",
+      "metin": "36 sayısının pozitif tam bölenlerinin toplamı kaçtır?",
+      "secenekler": [
+        "91",
+        "84",
+        "96",
+        "108"
+      ],
+      "dogru_index": 0,
+      "cozum": "36'nın pozitif bölenleri 1, 2, 3, 4, 6, 9, 12, 18 ve 36'dır. Toplamları 1 + 2 + 3 + 4 + 6 + 9 + 12 + 18 + 36 = 91 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bölen toplamı ile bölen sayısı arasındaki fark nedir?",
+        "back": "Toplam bölenlerin değerlerini, sayı ise adedini verir."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o08",
+      "alt_beceri": "Bir doğal sayının asal çarpanları ve bölenleri ile ilgili ulaştığı sonuçlara yönelik matematiksel önermeler sunar.",
+      "metin": "12 sayısının kaç tane pozitif tam böleni vardır?",
+      "secenekler": [
+        "5",
+        "4",
+        "6",
+        "8"
+      ],
+      "dogru_index": 2,
+      "cozum": "12 = 2² · 3 olduğundan bölen sayısı (2 + 1)(1 + 1) = 6 bulunur. Bölenler 1, 2, 3, 4, 6 ve 12'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tam bölen nedir?",
+        "back": "Bir sayıyı kalansız bölen sayıdır."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o09",
+      "alt_beceri": "Elde ettiği önermelerin gerçek yaşam durumları içeren problemlerdeki kullanışlılığını değerlendirir.",
+      "metin": "Asal çarpanları yalnızca 2 ve 5 olan, 50'den küçük en büyük doğal sayı kaçtır?",
+      "secenekler": [
+        "48",
+        "40",
+        "45",
+        "32"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sayı 2ᵃ · 5ᵇ biçiminde olmalıdır. 40 = 2³ · 5, 32 = 2⁵, 25 = 5², 45 = 3² · 5 olur. 45'te 3 çarpanı bulunduğundan elenir; 50'den küçük en büyük sayı 40'tır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üslü çarpan gösteriminin avantajı nedir?",
+        "back": "Sayıyı kısa ve asal çarpanlarına ayrılmış biçimde yazmayı sağlar."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t03_c01_o10",
+      "alt_beceri": "Elde ettiği önermelerin gerçek yaşam durumları içeren problemlerdeki kullanışlılığını değerlendirir.",
+      "metin": "Bir sayının asal çarpanlara ayrılmış biçimi 2² · 3 · 5² dir. Buna göre bu sayı kaçtır?",
+      "secenekler": [
+        "150",
+        "240",
+        "600",
+        "300"
+      ],
+      "dogru_index": 3,
+      "cozum": "2² = 4, 5² = 25 olduğundan 4 · 3 · 25 = 300 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asal çarpan biçiminden sayının kendisi nasıl bulunur?",
+        "back": "Üslü çarpanların değerleri hesaplanıp çarpılarak."
+      },
+      "kazanim": "Bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t03_c01_o01:flashcard",
+      "front": "Asal sayı nedir?",
+      "back": "Yalnızca 1'e ve kendisine bölünebilen 1'den büyük doğal sayıdır."
+    },
+    {
+      "id": "mat_10_t03_c01_o02:flashcard",
+      "front": "Asal çarpanlara ayırma nedir?",
+      "back": "Bir sayının yalnızca asal sayıların çarpımı biçiminde yazılmasıdır."
+    },
+    {
+      "id": "mat_10_t03_c01_o03:flashcard",
+      "front": "Çarpan ağacı yöntemi nedir?",
+      "back": "Sayının dallara ayrılarak yalnızca asal çarpanlara indirgendiği gösterimdir."
+    },
+    {
+      "id": "mat_10_t03_c01_o04:flashcard",
+      "front": "Bölen listesi yöntemi nedir?",
+      "back": "Sayının sırasıyla en küçük asal bölenlerine bölünerek listelendiği yöntemdir."
+    },
+    {
+      "id": "mat_10_t03_c01_o05:flashcard",
+      "front": "Pozitif bölen sayısının formülü nedir?",
+      "back": "Asal çarpanların üslerinin birer fazlasının çarpımıdır."
+    },
+    {
+      "id": "mat_10_t03_c01_o06:flashcard",
+      "front": "Bölen sayısı formülünün gerekçesi nedir?",
+      "back": "Her asal çarpanın 0'dan üs değerine kadar seçilebilmesidir."
+    },
+    {
+      "id": "mat_10_t03_c01_o07:flashcard",
+      "front": "Bölen toplamı ile bölen sayısı arasındaki fark nedir?",
+      "back": "Toplam bölenlerin değerlerini, sayı ise adedini verir."
+    },
+    {
+      "id": "mat_10_t03_c01_o08:flashcard",
+      "front": "Tam bölen nedir?",
+      "back": "Bir sayıyı kalansız bölen sayıdır."
+    },
+    {
+      "id": "mat_10_t03_c01_o09:flashcard",
+      "front": "Üslü çarpan gösteriminin avantajı nedir?",
+      "back": "Sayıyı kısa ve asal çarpanlarına ayrılmış biçimde yazmayı sağlar."
+    },
+    {
+      "id": "mat_10_t03_c01_o10:flashcard",
+      "front": "Asal çarpan biçiminden sayının kendisi nasıl bulunur?",
+      "back": "Üslü çarpanların değerleri hesaplanıp çarpılarak."
+    }
+  ]
+}

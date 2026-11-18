@@ -1,0 +1,309 @@
+{
+  "konu_id": "fiz_10_t02_c01",
+  "kod": "FİZ.10.2.1",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 2,
+  "tema_adi": "Enerji",
+  "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme",
+  "kaynak": "Fizik 10 ders kitabı, s.111-127",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t02_c01_o01",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişkiyi matematiksel olarak modeller.",
+      "metin": "Şekildeki F-x grafiğinde bir cisme 4 m boyunca 6 N büyüklüğünde sabit kuvvet etki etmiştir. Cisim üzerinde yapılan iş kaç J'dür?",
+      "secenekler": [
+        "1,5",
+        "10",
+        "24",
+        "48"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kuvvet-yer değiştirme grafiğinde grafik ile eksen arasındaki alan işi verir: 6 N · 4 m = 24 J.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İşin matematiksel modelini yazınız.",
+        "back": "W = F_net · Δx; kuvvet ile kuvvet doğrultusundaki yer değiştirmenin çarpımı."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x (m)",
+        "yEkseni": "F (N)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "F",
+            "noktalar": [
+              [
+                0,
+                6
+              ],
+              [
+                4,
+                6
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o02",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişkiyi matematiksel olarak modeller.",
+      "metin": "Bir cisme hareket yönünde 20 N büyüklüğünde net kuvvet uygulanmış ve cisim bu doğrultuda 3 m yer değiştirmiştir. Cisim üzerinde yapılan iş kaç J'dür?",
+      "secenekler": [
+        "60",
+        "23",
+        "6,7",
+        "180"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kuvvet ile yer değiştirme aynı doğrultuda olduğu için W = F · Δx = 20 N · 3 m = 60 J bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İşin SI birimindeki birimi nedir?",
+        "back": "Joule (J); 1 J = 1 N · m."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o03",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişkiyi matematiksel olarak modeller.",
+      "metin": "Hareket hâlindeki bir cisme hareketine ters yönde 15 N büyüklüğünde sürtünme kuvveti etki ederken cisim 4 m yer değiştirmiştir. Sürtünme kuvvetinin yaptığı iş için hangisi doğrudur?",
+      "secenekler": [
+        "60 J'lük pozitif iş yapmıştır.",
+        "4 J'lük pozitif iş yapmıştır.",
+        "Hiç iş yapmamıştır.",
+        "−60 J, yani negatif iş yapmıştır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Kuvvet yer değiştirmeye ters yönde olduğu için yapılan iş negatiftir: W = −15 N · 4 m = −60 J. Bu durumda cisim yavaşlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Pozitif işin anlamı nedir?",
+        "back": "Kuvvet yer değiştirmeyle aynı yöndeyse iş pozitiftir ve cisim hızlanır."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o04",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişkiyi matematiksel olarak modeller.",
+      "metin": "Bir vinç 500 N büyüklüğünde kuvvetle bir yükü düşey doğrultuda 6 m yukarı kaldırmıştır. Vinç bu sırada yük üzerinde kaç joule iş yapmıştır?",
+      "secenekler": [
+        "83",
+        "3000",
+        "506",
+        "6000"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kuvvet ile yer değiştirme aynı doğrultuda (düşey) olduğundan W = 500 N · 6 m = 3000 J bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Negatif işin anlamı nedir?",
+        "back": "Kuvvet yer değiştirmeye ters yöndeyse iş negatiftir ve cisim yavaşlar."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o05",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişkiyi matematiksel olarak modeller.",
+      "metin": "Bir cisme uygulanan kuvvet ile cismin yer değiştirmesi birbirine dik doğrultudadır. Bu durumda yapılan iş için hangisi doğrudur?",
+      "secenekler": [
+        "İş en büyük değerini alır.",
+        "İş negatif olur.",
+        "İş yapılmaz.",
+        "İş, kuvvet ile yer değiştirmenin toplamıdır."
+      ],
+      "dogru_index": 2,
+      "cozum": "İş yapılabilmesi için kuvvetin yer değiştirme yönünde bileşeni bulunmalıdır. Kuvvet dik olduğunda bu bileşen sıfırdır; dolayısıyla iş yapılmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kuvvet ile yer değiştirme dik ise işin büyüklüğü nedir?",
+        "back": "Sıfırdır; kuvvetin yer değiştirme yönünde bileşeni yoktur."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o06",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişki hakkında genelleme yapar.",
+      "metin": "Şekildeki F-x grafiğinde cisim (0-4) m aralığında 10 N, (4-6) m aralığında ise hareketine ters yönde 5 N büyüklüğünde kuvvetin etkisinde kalmıştır. Cisim üzerinde yapılan net iş kaç J'dür?",
+      "secenekler": [
+        "50",
+        "40",
+        "10",
+        "30"
+      ],
+      "dogru_index": 3,
+      "cozum": "Pozitif bölgedeki alan 10 N · 4 m = 40 J, negatif bölgedeki alan 5 N · 2 m = 10 J'dir. Net iş 40 − 10 = 30 J bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "F-x grafiğinden iş nasıl bulunur?",
+        "back": "Grafik ile yatay eksen arasında kalan alan hesaplanarak."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x (m)",
+        "yEkseni": "F (N)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "F",
+            "noktalar": [
+              [
+                0,
+                10
+              ],
+              [
+                4,
+                10
+              ]
+            ]
+          },
+          {
+            "ad": "F (ters yön)",
+            "noktalar": [
+              [
+                4,
+                -5
+              ],
+              [
+                6,
+                -5
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o07",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişki hakkında genelleme yapar.",
+      "metin": "Bir cisme önce 8 N büyüklüğünde kuvvet 5 m boyunca, ardından aynı yönde 4 N büyüklüğünde kuvvet 5 m boyunca etki etmiştir. Toplam yapılan iş kaç J'dür?",
+      "secenekler": [
+        "60",
+        "12",
+        "30",
+        "100"
+      ],
+      "dogru_index": 0,
+      "cozum": "İlk aralıkta 8 · 5 = 40 J, ikinci aralıkta 4 · 5 = 20 J iş yapılır. Toplam iş 40 + 20 = 60 J bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "F-x grafiğinde eksenin altındaki alan hangi niceliği verir?",
+        "back": "Negatif işi verir."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o08",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişki hakkında genelleme yapar.",
+      "metin": "Aynı büyüklükte kuvvet uygulanan iki cisimden biri düz, diğeri kıvrımlı bir yoldan aynı yer değiştirmeyi yapmıştır. Kuvvetin yaptığı işler için hangisi doğrudur?",
+      "secenekler": [
+        "Kıvrımlı yolda daha fazla iş yapılır.",
+        "Düz yolda daha fazla iş yapılır.",
+        "Her iki durumda yapılan iş eşittir; iş yolun şeklinden bağımsızdır.",
+        "Yalnızca kıvrımlı yolda iş yapılır."
+      ],
+      "dogru_index": 2,
+      "cozum": "İş, kuvvet ile kuvvet doğrultusundaki yer değiştirmenin çarpımıdır; izlenen yolun şekli işi değiştirmez. Bu nedenle iki durumda yapılan iş eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İş ile yol arasındaki ilişki nedir?",
+        "back": "İş yolun şekline bağlı değildir; kuvvet ve yer değiştirme belirleyicidir."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o09",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişki hakkında genelleme yapar.",
+      "metin": "12 N büyüklüğündeki kuvvet bir cisme yatayla 60° açı yapacak biçimde uygulanmış ve cisim yatayda 5 m yer değiştirmiştir. Kuvvetin yatay bileşeni 6 N olduğuna göre yapılan iş kaç J'dür?",
+      "secenekler": [
+        "60",
+        "30",
+        "15",
+        "90"
+      ],
+      "dogru_index": 1,
+      "cozum": "İş yapan bileşen, yer değiştirme doğrultusundaki bileşendir: 6 N · 5 m = 30 J. Kuvvetin tamamı (12 N) değil, yatay bileşeni kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğik uygulanan kuvvetin yaptığı iş nasıl hesaplanır?",
+        "back": "Kuvvetin yer değiştirme doğrultusundaki bileşeni ile yer değiştirme çarpılarak."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    },
+    {
+      "soru_id": "fiz_10_t02_c01_o10",
+      "alt_beceri": "Kuvvet, yer değiştirme ve iş arasındaki ilişki hakkında genelleme yapar.",
+      "metin": "Sabit 10 N büyüklüğündeki kuvvetle 0-5 m aralığında itilen bir cisim, 5-8 m aralığında hareketine ters yönde 10 N büyüklüğünde kuvvete maruz kalmıştır. Net iş kaç J'dür?",
+      "secenekler": [
+        "80",
+        "20",
+        "50",
+        "0"
+      ],
+      "dogru_index": 1,
+      "cozum": "İlk aralıkta 10 · 5 = 50 J pozitif iş, ikinci aralıkta 10 · 3 = 30 J negatif iş yapılır. Net iş 50 − 30 = 20 J bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Net işin hesaplanma kuralı nedir?",
+        "back": "Pozitif işler toplanır, negatif işler çıkarılır: W_net = W1 + W2 − W3."
+      },
+      "kazanim": "Kuvvet-yer değiştirme grafiği kullanılarak iş ile ilgili tümevarımsal akıl yürütebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t02_c01_o01:flashcard",
+      "front": "İşin matematiksel modelini yazınız.",
+      "back": "W = F_net · Δx; kuvvet ile kuvvet doğrultusundaki yer değiştirmenin çarpımı."
+    },
+    {
+      "id": "fiz_10_t02_c01_o02:flashcard",
+      "front": "İşin SI birimindeki birimi nedir?",
+      "back": "Joule (J); 1 J = 1 N · m."
+    },
+    {
+      "id": "fiz_10_t02_c01_o03:flashcard",
+      "front": "Pozitif işin anlamı nedir?",
+      "back": "Kuvvet yer değiştirmeyle aynı yöndeyse iş pozitiftir ve cisim hızlanır."
+    },
+    {
+      "id": "fiz_10_t02_c01_o04:flashcard",
+      "front": "Negatif işin anlamı nedir?",
+      "back": "Kuvvet yer değiştirmeye ters yöndeyse iş negatiftir ve cisim yavaşlar."
+    },
+    {
+      "id": "fiz_10_t02_c01_o05:flashcard",
+      "front": "Kuvvet ile yer değiştirme dik ise işin büyüklüğü nedir?",
+      "back": "Sıfırdır; kuvvetin yer değiştirme yönünde bileşeni yoktur."
+    },
+    {
+      "id": "fiz_10_t02_c01_o06:flashcard",
+      "front": "F-x grafiğinden iş nasıl bulunur?",
+      "back": "Grafik ile yatay eksen arasında kalan alan hesaplanarak."
+    },
+    {
+      "id": "fiz_10_t02_c01_o07:flashcard",
+      "front": "F-x grafiğinde eksenin altındaki alan hangi niceliği verir?",
+      "back": "Negatif işi verir."
+    },
+    {
+      "id": "fiz_10_t02_c01_o08:flashcard",
+      "front": "İş ile yol arasındaki ilişki nedir?",
+      "back": "İş yolun şekline bağlı değildir; kuvvet ve yer değiştirme belirleyicidir."
+    },
+    {
+      "id": "fiz_10_t02_c01_o09:flashcard",
+      "front": "Eğik uygulanan kuvvetin yaptığı iş nasıl hesaplanır?",
+      "back": "Kuvvetin yer değiştirme doğrultusundaki bileşeni ile yer değiştirme çarpılarak."
+    },
+    {
+      "id": "fiz_10_t02_c01_o10:flashcard",
+      "front": "Net işin hesaplanma kuralı nedir?",
+      "back": "Pozitif işler toplanır, negatif işler çıkarılır: W_net = W1 + W2 − W3."
+    }
+  ]
+}

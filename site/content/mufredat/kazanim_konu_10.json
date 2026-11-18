@@ -1,0 +1,5199 @@
+{
+  "surum": "2026-10-27",
+  "kaynak": "site/content/mufredat/meb_kazanim_10.json",
+  "uretici": "scripts/meb-kazanim-uret.js",
+  "katmanlar": {
+    "kesin": "Okulizyon kazanım metni resmî çıktı cümlesine indirgendi (Dice ≥ .80) — otomatik.",
+    "yapisal": "Metin yok/farklı; ünite no = MEB tema no, konu sırası = çıktı sırası — otomatik.",
+    "orta": "Yalnız başlık benzerliği — otomatik uygulanmaz, onay ister.",
+    "yok": "Kanıt yetersiz — kod yazılmadı."
+  },
+  "ozet": {
+    "ders": 9,
+    "cikti": 158,
+    "konu": 192,
+    "eslesen_konu": 136,
+    "oneri_konu": 0,
+    "eslesmeyen_konu": 44,
+    "metin": 118,
+    "metin_tek_konu": 112,
+    "metin_kodlu": 117,
+    "ders_bazli": {
+      "Biyoloji": {
+        "konu": 19,
+        "cikti": 19,
+        "kesin": 19,
+        "yapisal": 0,
+        "orta": 0,
+        "yok": 0,
+        "metin": 19,
+        "metin_tek_konu": 19,
+        "metin_kodlu": 19
+      },
+      "Coğrafya": {
+        "konu": 18,
+        "cikti": 18,
+        "kesin": 18,
+        "yapisal": 0,
+        "orta": 0,
+        "yok": 0,
+        "metin": 18,
+        "metin_tek_konu": 18,
+        "metin_kodlu": 18
+      },
+      "Din Kültürü": {
+        "konu": 24,
+        "cikti": 17,
+        "kesin": 0,
+        "yapisal": 0,
+        "orta": 0,
+        "yok": 12,
+        "metin": 0,
+        "metin_tek_konu": 0,
+        "metin_kodlu": 0
+      },
+      "Felsefe": {
+        "konu": 23,
+        "cikti": 10,
+        "kesin": 0,
+        "yapisal": 22,
+        "orta": 0,
+        "yok": 1,
+        "metin": 0,
+        "metin_tek_konu": 0,
+        "metin_kodlu": 0
+      },
+      "Fizik": {
+        "konu": 25,
+        "cikti": 22,
+        "kesin": 12,
+        "yapisal": 11,
+        "orta": 0,
+        "yok": 2,
+        "metin": 24,
+        "metin_tek_konu": 20,
+        "metin_kodlu": 23
+      },
+      "Kimya": {
+        "konu": 19,
+        "cikti": 21,
+        "kesin": 19,
+        "yapisal": 0,
+        "orta": 0,
+        "yok": 0,
+        "metin": 22,
+        "metin_tek_konu": 20,
+        "metin_kodlu": 22
+      },
+      "Matematik": {
+        "konu": 21,
+        "cikti": 21,
+        "kesin": 21,
+        "yapisal": 0,
+        "orta": 0,
+        "yok": 0,
+        "metin": 21,
+        "metin_tek_konu": 21,
+        "metin_kodlu": 21
+      },
+      "Tarih": {
+        "konu": 14,
+        "cikti": 14,
+        "kesin": 11,
+        "yapisal": 3,
+        "orta": 0,
+        "yok": 0,
+        "metin": 14,
+        "metin_tek_konu": 14,
+        "metin_kodlu": 14
+      },
+      "Türk Dili ve Edebiyatı": {
+        "konu": 29,
+        "cikti": 16,
+        "kesin": 0,
+        "yapisal": 0,
+        "orta": 0,
+        "yok": 29,
+        "metin": 0,
+        "metin_tek_konu": 0,
+        "metin_kodlu": 0
+      }
+    },
+    "konu_sayisi": 192
+  },
+  "konular": [
+    {
+      "konu_id": "edebiyat_10_u01_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Koşuk",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Sav",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Türkü",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Koşma",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Masal",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k06",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "İsimler (Adlar)",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k07",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "İsim Tamlamaları",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k08",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Sıfatlar (Ön Adlar)",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u01_k09",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Sıfat Tamlamaları",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Gazel",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Kaside",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Mersiye",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Saf Şiir",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Zamir (Adıl)",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k06",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Edat (İlgeç)",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k07",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Bağlaç",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k08",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Ünlem",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u02_k09",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Anlamına Göre Cümleler",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Destan",
+      "tema": 3,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Mesnevi",
+      "tema": 3,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Halk Hikâyesi",
+      "tema": 3,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Fabl",
+      "tema": 3,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Zarflar (Belirteçler)",
+      "tema": 3,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u03_k06",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+      "tema": 3,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k01",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Dede Korkut Hikâyeleri",
+      "tema": 4,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k02",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Tanzimat Dönemi Şiiri",
+      "tema": 4,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k03",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Fiiller (Eylemler)",
+      "tema": 4,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k04",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Yazım Kuralları",
+      "tema": 4,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "edebiyat_10_u04_k05",
+      "ders": "Türk Dili ve Edebiyatı",
+      "konu": "Noktalama İşaretleri",
+      "tema": 4,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "beceri-eksenli",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "TDE programı dil becerisi eksenli (TDE1.1-TDE4.4); tür/gramer konusu resmî çıktıyla birebir eşlenemez.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "mat_10_u01_k01",
+      "ders": "Matematik",
+      "konu": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
+      "tema": 1,
+      "kodlar": [
+        "MAT.10.1.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+          "kod": "MAT.10.1.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u01_k02",
+      "ders": "Matematik",
+      "konu": "1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
+      "tema": 1,
+      "kodlar": [
+        "MAT.10.1.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+          "kod": "MAT.10.1.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u01_k03",
+      "ders": "Matematik",
+      "konu": "1.3 Üçgende Alan",
+      "tema": 1,
+      "kodlar": [
+        "MAT.10.1.3"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+          "kod": "MAT.10.1.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u01_k04",
+      "ders": "Matematik",
+      "konu": "1.4 Sinüs ve Kosinüs Teoremleri",
+      "tema": 1,
+      "kodlar": [
+        "MAT.10.1.4"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+          "kod": "MAT.10.1.4",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u02_k01",
+      "ders": "Matematik",
+      "konu": "2.1 İki Kategorik Değişkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+      "tema": 2,
+      "kodlar": [
+        "MAT.10.2.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1. bölümü iki kategorik değişkenin ilişkililiğini içeren istatistiksel problemi oluşturma, veri toplama, analiz ve yorumlama sürecini verir (s.98-127); MAT.10.2.1 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+          "kod": "MAT.10.2.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u02_k02",
+      "ders": "Matematik",
+      "konu": "2.2 Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verilerin İlişkililiğine Dayalı İstatistiksel Sonuç veya Yorumları Tartışma",
+      "tema": 2,
+      "kodlar": [
+        "MAT.10.2.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.2. bölümü başkalarının ürettiği iki kategorik değişkenli verilere dayalı sonuç/yorumları tartışmayı verir (s.128-132); MAT.10.2.2 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+          "kod": "MAT.10.2.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u03_k01",
+      "ders": "Matematik",
+      "konu": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
+      "tema": 3,
+      "kodlar": [
+        "MAT.10.3.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+          "kod": "MAT.10.3.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u03_k02",
+      "ders": "Matematik",
+      "konu": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
+      "tema": 3,
+      "kodlar": [
+        "MAT.10.3.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+          "kod": "MAT.10.3.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u03_k03",
+      "ders": "Matematik",
+      "konu": "3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
+      "tema": 3,
+      "kodlar": [
+        "MAT.10.3.3"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilmeniz",
+          "kod": "MAT.10.3.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u04_k01",
+      "ders": "Matematik",
+      "konu": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+      "tema": 4,
+      "kodlar": [
+        "MAT.10.4.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+          "kod": "MAT.10.4.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u04_k02",
+      "ders": "Matematik",
+      "konu": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
+      "tema": 4,
+      "kodlar": [
+        "MAT.10.4.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 4.2. bölümü karesel fonksiyonun tepe noktası, simetri ekseni, işareti ve köklerini inceler (s.197-223); MAT.10.4.2 çıktısı doğrudan bu bölümdür.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "mat_10_u04_k03",
+      "ders": "Matematik",
+      "konu": "4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
+      "tema": 4,
+      "kodlar": [
+        "MAT.10.4.3"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 4.3. bölümü karekök fonksiyonunun tanım/görüntü kümesi ve nitel özelliklerini verir (s.224-242); MAT.10.4.3 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "mat_10_u04_k04",
+      "ders": "Matematik",
+      "konu": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+      "tema": 4,
+      "kodlar": [
+        "MAT.10.4.4"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 4.4. bölümü rasyonel referans fonksiyonunu ve nitel özelliklerini verir (s.243-263); MAT.10.4.4 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "mat_10_u04_k05",
+      "ders": "Matematik",
+      "konu": "4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+      "tema": 4,
+      "kodlar": [
+        "MAT.10.4.5"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 4.5. bölümü referans fonksiyonlardan türetilen fonksiyonların terslerini verir (s.264-283); MAT.10.4.5 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
+          "kod": "MAT.10.4.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u04_k06",
+      "ders": "Matematik",
+      "konu": "4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+      "tema": 4,
+      "kodlar": [
+        "MAT.10.4.6"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 4.6. bölümü fonksiyonlarla ifade edilebilen denklem ve eşitsizlik problemlerinin çözümünü verir (s.284-305); MAT.10.4.6 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+          "kod": "MAT.10.4.6",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u05_k01",
+      "ders": "Matematik",
+      "konu": "5.1 Sayma Stratejileri",
+      "tema": 5,
+      "kodlar": [
+        "MAT.10.5.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "sayma stratejileri kullanarak problem çözebilmeniz,",
+          "kod": "MAT.10.5.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u05_k02",
+      "ders": "Matematik",
+      "konu": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
+      "tema": 5,
+      "kodlar": [
+        "MAT.10.5.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+          "kod": "MAT.10.5.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u06_k01",
+      "ders": "Matematik",
+      "konu": "6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+      "tema": 6,
+      "kodlar": [
+        "MAT.10.6.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 6.1. bölümü iki nokta arasındaki uzaklık ile bir doğru parçasını belli oranda bölmeyi birlikte verir (s.359-371); MAT.10.6.1 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+          "kod": "MAT.10.6.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u06_k02",
+      "ders": "Matematik",
+      "konu": "6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+      "tema": 6,
+      "kodlar": [
+        "MAT.10.6.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 6.2. bölümü doğrunun eğimi, denklemi ve paralel/dik eğim ilişkilerini verir (s.372-384); MAT.10.6.2 çıktısıdır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+          "kod": "MAT.10.6.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u07_k01",
+      "ders": "Matematik",
+      "konu": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+      "tema": 7,
+      "kodlar": [
+        "MAT.10.7.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "koşullu olasılık ile çıkarım yapabilmeniz,",
+          "kod": "MAT.10.7.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "mat_10_u07_k02",
+      "ders": "Matematik",
+      "konu": "7.2 Bayes Teoremi",
+      "tema": 7,
+      "kodlar": [
+        "MAT.10.7.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın ilgili bölümü yeniden yazıldı; künye kitap sayfalarıyla doğrulandı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+          "kod": "MAT.10.7.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u01_k01",
+      "ders": "Fizik",
+      "konu": "1.1 Sabit Hızlı Hareket",
+      "tema": 1,
+      "kodlar": [
+        "FİZ.10.1.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u01_k05",
+      "ders": "Fizik",
+      "konu": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+      "tema": 1,
+      "kodlar": [
+        "FİZ.10.1.2"
+      ],
+      "guven": "yapisal",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "2026 programı tema 1: sabit ivmeli harekette ivme-hız değişimi ilişkisi çıktısı (FİZ.10.1.2).",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u01_k06",
+      "ders": "Fizik",
+      "konu": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+      "tema": 1,
+      "kodlar": [
+        "FİZ.10.1.2"
+      ],
+      "guven": "yapisal",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Yatay doğrultudaki hareket grafikleri ve matematiksel modelleri FİZ.10.1.2 çıktısının kapsamındadır.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u01_k07",
+      "ders": "Fizik",
+      "konu": "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Serbest düşme/yer çekimi ivmesi 2026 programında 11. sınıfa taşındı (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u01_k08",
+      "ders": "Fizik",
+      "konu": "1.3.2 Serbest Düşme Hareketi",
+      "tema": 1,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Serbest düşmenin matematiksel modelleri 2026 programında 11. sınıfta (FİZ.11.1.1, FİZ.11.1.2); 10. sınıfta karşılığı yok.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u01_k09",
+      "ders": "Fizik",
+      "konu": "1.4 İki Boyutta Sabit İvmeli Hareket",
+      "tema": 1,
+      "kodlar": [
+        "FİZ.10.1.3"
+      ],
+      "guven": "yapisal",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "İki boyutta sabit ivmeli hareketin modelleri ve grafiksel dönüşümleri FİZ.10.1.3 çıktısına bağlandı.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u02_k01",
+      "ders": "Fizik",
+      "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "tema": 2,
+      "kodlar": [
+        "FİZ.10.2.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1-A alt başlığı iş kavramını F-x grafiği üzerinden kurar; 2026 programındaki iş çıktısı FİZ.10.2.1'dir.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u02_k02",
+      "ders": "Fizik",
+      "konu": "2.2 Enerji Biçimleri",
+      "tema": 2,
+      "kodlar": [
+        "FİZ.10.2.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "enerji biçimlerini karşılaştırabilmeniz,",
+          "kod": "FİZ.10.2.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u02_k03",
+      "ders": "Fizik",
+      "konu": "2.3 Mekanik Enerji",
+      "tema": 2,
+      "kodlar": [
+        "FİZ.10.2.4"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u02_k04",
+      "ders": "Fizik",
+      "konu": "2.4 Enerji Kaynakları",
+      "tema": 2,
+      "kodlar": [
+        "FİZ.10.2.5"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "yenilenebilen ve yenilenemeyen enerji kaynaklarını karşılaştırabilmeniz",
+          "kod": "FİZ.10.2.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u02_k05",
+      "ders": "Fizik",
+      "konu": "2.1.2 İş, Enerji ve Güç Kavramları Arasındaki İlişki",
+      "tema": 2,
+      "kodlar": [
+        "FİZ.10.2.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1-B alt başlığı iş-enerji-güç ilişkisini ve güç hesabını kurar; karşılığı FİZ.10.2.2'dir.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u03_k01",
+      "ders": "Fizik",
+      "konu": "3.1 Basit Elektrik Devreleri",
+      "tema": 3,
+      "kodlar": [
+        "FİZ.10.3.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u03_k02",
+      "ders": "Fizik",
+      "konu": "3.2 Elektrik Akımı",
+      "tema": 3,
+      "kodlar": [
+        "FİZ.10.3.2"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u03_k03",
+      "ders": "Fizik",
+      "konu": "3.3 Ohm Yasası",
+      "tema": 3,
+      "kodlar": [
+        "FİZ.10.3.3"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u03_k04",
+      "ders": "Fizik",
+      "konu": "3.4 Dirençlerin Bağlanması",
+      "tema": 3,
+      "kodlar": [
+        "FİZ.10.3.4"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u03_k05",
+      "ders": "Fizik",
+      "konu": "3.5 Üreteçlerin Bağlanması",
+      "tema": 3,
+      "kodlar": [
+        "FİZ.10.3.5"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
+          "kod": "FİZ.10.3.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u03_k06",
+      "ders": "Fizik",
+      "konu": "3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
+      "tema": 3,
+      "kodlar": [
+        "FİZ.10.3.6"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 0.833,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+          "kod": "FİZ.10.3.6",
+          "skor": 0.833
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u03_k07",
+      "ders": "Fizik",
+      "konu": "3.7 Topraklamanın Önemi",
+      "tema": 3,
+      "kodlar": [
+        "FİZ.10.3.7"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 3.7 başlığı doğrudan topraklamanın önemini sorgulatır; 2026 programında bu çıktı FİZ.10.3.7 olarak 3.6'dan ayrı tanımlanmıştır (5 süreç).",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "Topraklama olayının önemini sorgulayabilme",
+          "kod": "FİZ.10.3.7",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u04_k01",
+      "ders": "Fizik",
+      "konu": "4.1 Dalgaların Temel Kavramları",
+      "tema": 4,
+      "kodlar": [
+        "FİZ.10.4.2"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u04_k02",
+      "ders": "Fizik",
+      "konu": "4.2 Dalgaların Sınıflandırılması",
+      "tema": 4,
+      "kodlar": [
+        "FİZ.10.4.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+          "kod": "FİZ.10.4.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u04_k03",
+      "ders": "Fizik",
+      "konu": "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
+      "tema": 4,
+      "kodlar": [
+        "FİZ.10.4.4"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 0.8,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+          "kod": "FİZ.10.4.4",
+          "skor": 0.8
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u04_k04",
+      "ders": "Fizik",
+      "konu": "4.4 Periyodik Hareketler",
+      "tema": 4,
+      "kodlar": [
+        "FİZ.10.4.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "periyodik hareketlere ilişkin deneyimlerinizi yansıtabilmeniz,",
+          "kod": "FİZ.10.4.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fizik_10_u04_k05",
+      "ders": "Fizik",
+      "konu": "4.5 Su Dalgalarında Yansıma ve Kırılma",
+      "tema": 4,
+      "kodlar": [
+        "FİZ.10.4.5"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u04_k06",
+      "ders": "Fizik",
+      "konu": "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+      "tema": 4,
+      "kodlar": [
+        "FİZ.10.4.6"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 4.6-A alt başlığı rezonans ile depremin odak/merkez üssü/büyüklük/şiddet kavramlarını verir; FİZ.10.4.6 kapsamındadır.",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fizik_10_u04_k07",
+      "ders": "Fizik",
+      "konu": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+      "tema": 4,
+      "kodlar": [
+        "FİZ.10.4.7"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Depremle ilgili bilimsel model oluşturma (sismograf, sismik izolatör) programda ayrı çıktı olarak FİZ.10.4.7 kodundadır; 4.6.2 havuzu bu çıktıya bağlanır.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "Depremle ilgili bilimsel model oluşturabilme",
+          "kod": "FİZ.10.4.7",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k01",
+      "ders": "Kimya",
+      "konu": "1.1.1 Kimyasal Tepkimelerin Oluşumu",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.1",
+        "KİM.10.1.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.1.1 bölümü kimyasal değişimin kanıtlarını ve tepkimenin oluşumunu tanecik modeliyle verir (s.21-34); KİM.10.1.1-1.2.",
+      "kazanim_metinleri": 2,
+      "metin_kodlari": [
+        {
+          "metin": "kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilmeniz",
+          "kod": "KİM.10.1.1",
+          "skor": 1
+        },
+        {
+          "metin": "kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilmeniz",
+          "kod": "KİM.10.1.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k02",
+      "ders": "Kimya",
+      "konu": "1.1.2 Kimyasal Tepkime Türleri",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.3"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.1.2 bölümü yanma, asit-baz, çökelme ve redoks tepkimelerini gözlemlenebilir göstergelerle sınıflandırır (s.35-46); KİM.10.1.3.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz",
+          "kod": "KİM.10.1.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k03",
+      "ders": "Kimya",
+      "konu": "1.1.3 Mol Kavramı",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.4",
+        "KİM.10.1.5"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.1.3 bölümü mol kavramını ve saf maddelerin ölçülebilir özellikleriyle (m, MA, N_A) ilişkisini verir (s.47-60); KİM.10.1.4-1.5.",
+      "kazanim_metinleri": 2,
+      "metin_kodlari": [
+        {
+          "metin": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz",
+          "kod": "KİM.10.1.4",
+          "skor": 1
+        },
+        {
+          "metin": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz",
+          "kod": "KİM.10.1.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k04",
+      "ders": "Kimya",
+      "konu": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.6"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.1.4 bölümü denklemlerdeki tanecik sayısı tutarsızlıklarını denkleştirmeyle giderir (s.61-67); KİM.10.1.6.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz",
+          "kod": "KİM.10.1.6",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k05",
+      "ders": "Kimya",
+      "konu": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.7"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.1.5 bölümü mol oranlarıyla stokiyometrik hesaplamaları ve verim problemlerini verir (s.68-76); KİM.10.1.7.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz",
+          "kod": "KİM.10.1.7",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k06",
+      "ders": "Kimya",
+      "konu": "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.8",
+        "KİM.10.1.9"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.2.1 bölümü gazların ölçülebilir özelliklerini ve Boyle-Charles-Avogadro yasalarını verir (s.77-93); KİM.10.1.8-1.9.",
+      "kazanim_metinleri": 2,
+      "metin_kodlari": [
+        {
+          "metin": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz",
+          "kod": "KİM.10.1.8",
+          "skor": 1
+        },
+        {
+          "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz",
+          "kod": "KİM.10.1.9",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k07",
+      "ders": "Kimya",
+      "konu": "1.2.2 Gazların Kinetik Moleküler Teorisi",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.9"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.2.2 bölümü gazların özelliklerini kinetik moleküler teoriyle açıklar (s.94-97); KİM.10.1.9'un model ayağı.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz",
+          "kod": "KİM.10.1.9",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k08",
+      "ders": "Kimya",
+      "konu": "1.2.3 İdeal Gaz Yasası",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.10"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.2.3 bölümü ideal gaz denklemini ve R sabitini tümevarımla kurar (s.98-105); KİM.10.1.10.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz",
+          "kod": "KİM.10.1.10",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u01_k09",
+      "ders": "Kimya",
+      "konu": "1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+      "tema": 1,
+      "kodlar": [
+        "KİM.10.1.11"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 1.2.4 bölümü gazların farklı ortamlarda yayılmasını (difüzyon-efüzyon) deney ve Graham yasasıyla verir (s.106-113); KİM.10.1.11.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz",
+          "kod": "KİM.10.1.11",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k01",
+      "ders": "Kimya",
+      "konu": "2.1.1 Çözünme Süreci",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.1 bölümü çözünme sürecini üç aşamada ve tanecik düzeyinde modeller (s.151-155); KİM.10.2.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz",
+          "kod": "KİM.10.2.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k02",
+      "ders": "Kimya",
+      "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.2 bölümü maddelerin birbiri içinde çözünebilirliğini polarite kanıtlarıyla açıklar (s.156-163); KİM.10.2.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz",
+          "kod": "KİM.10.2.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k03",
+      "ders": "Kimya",
+      "konu": "2.1.3 Çözünme Olayının Sınıflandırılması",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.3"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.3 bölümü çözünmeyi iyonik/moleküler ve fiziksel/kimyasal olarak sınıflandırır (s.164-171); KİM.10.2.3.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çözünme olayını sınıflandırabilmeniz",
+          "kod": "KİM.10.2.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k04",
+      "ders": "Kimya",
+      "konu": "2.1.4 Derişim Birimleri (Molarite, ppm)",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.7"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.4 bölümü molarite, ppm ve seyreltme hesaplarını verir (s.172-178); KİM.10.2.7.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilmeniz",
+          "kod": "KİM.10.2.7",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k05",
+      "ders": "Kimya",
+      "konu": "2.1.5 Çözünürlük",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.4"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.5 bölümü çözünürlük kavramını 100 g çözücüde çözünen miktar olarak tanımlar (s.179-183); KİM.10.2.4.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz",
+          "kod": "KİM.10.2.4",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k06",
+      "ders": "Kimya",
+      "konu": "2.1.6 Çözünürlüğe Etki Eden Faktörler",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.5"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.6 bölümü madde cinsi, sıcaklık ve basıncın çözünürlüğe etkisini kanıtlarla verir (s.184-191); KİM.10.2.5.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilmeniz",
+          "kod": "KİM.10.2.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k07",
+      "ders": "Kimya",
+      "konu": "2.1.7 Çözeltilerin Sınıflandırılması",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.6"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.7 bölümü çözeltileri elektrolitlik ve doygunluk bakımından sınıflandırır (s.192-201); KİM.10.2.6.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çözeltileri sınıflandırabilmeniz",
+          "kod": "KİM.10.2.6",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u02_k08",
+      "ders": "Kimya",
+      "konu": "2.1.8 Koligatif Özellikler",
+      "tema": 2,
+      "kodlar": [
+        "KİM.10.2.8"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1.8 bölümü tanecik sayısının kaynama/donma noktasına etkisini koligatif özelliklerle verir (s.202-210); KİM.10.2.8.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilmeniz",
+          "kod": "KİM.10.2.8",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u03_k01",
+      "ders": "Kimya",
+      "konu": "3.1.1 Makro ve Mikro Ölçekli Deneyler",
+      "tema": 3,
+      "kodlar": [
+        "KİM.10.3.1"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 3.1.1 bölümü makro/mikro ölçekli deneyleri atom ekonomisi ve su ayak iziyle karşılaştırır (s.238-246); KİM.10.3.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz",
+          "kod": "KİM.10.3.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "kimya_10_u03_k02",
+      "ders": "Kimya",
+      "konu": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "tema": 3,
+      "kodlar": [
+        "KİM.10.3.2"
+      ],
+      "guven": "kesin",
+      "yontem": "elle-dogrulama",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "Kitabın 3.1.2 bölümü atmosferdeki tepkimeleri (sera etkisi, asit yağmuru, ozon) küresel sorunlarla ilişkilendirir (s.247-255); KİM.10.3.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz",
+          "kod": "KİM.10.3.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k01",
+      "ders": "Biyoloji",
+      "konu": "1.1 Canlılık İçin Enerjinin Önemi",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.1 bölümü canlılık için enerjinin gerekliliğini, ATP'nin yapısını ve enerji aktarımındaki rolünü verir (s.16-20); BİY.10.1.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulamanız",
+          "kod": "BİY.10.1.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k02",
+      "ders": "Biyoloji",
+      "konu": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.2 bölümü fotosentez reaksiyonlarını bilimsel model üzerinden açıklar (s.21-26); BİY.10.1.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız",
+          "kod": "BİY.10.1.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k03",
+      "ders": "Biyoloji",
+      "konu": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.3 bölümü fotosentezde kullanılan ve üretilen maddeleri deney düzenekleriyle verir (s.27-31); BİY.10.1.3.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız",
+          "kod": "BİY.10.1.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k04",
+      "ders": "Biyoloji",
+      "konu": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.4"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.4 bölümü kemosentezi kemosentetik canlı örnekleriyle açıklar (s.32-36); BİY.10.1.4.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "kemosentez hakkında bilgi toplamanız",
+          "kod": "BİY.10.1.4",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k05",
+      "ders": "Biyoloji",
+      "konu": "1.5 Sindirim",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.5"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.5 bölümü canlılarda sindirim çeşitlerini ve yapılarını sınıflandırır (s.37-39); BİY.10.1.5.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız",
+          "kod": "BİY.10.1.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k06",
+      "ders": "Biyoloji",
+      "konu": "1.6 İnsanda Sindirim",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.6"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.6 bölümü insanda sindirim, emilim ve taşıma süreçlerini verir (s.40-47); BİY.10.1.6.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız",
+          "kod": "BİY.10.1.6",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k07",
+      "ders": "Biyoloji",
+      "konu": "1.7 Hücresel Solunum",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.7"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.7 bölümü hücresel solunum reaksiyonlarını model üzerinden açıklar (s.48-55); BİY.10.1.7.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız",
+          "kod": "BİY.10.1.7",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k08",
+      "ders": "Biyoloji",
+      "konu": "1.8 Besinlerin Solunuma Katılma Yolları",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.8"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.8 bölümü besinlerin solunuma katılma yollarını ve farklı besin gruplarının enerji eldesini karşılaştırır (s.57-62); BİY.10.1.8.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız",
+          "kod": "BİY.10.1.8",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k09",
+      "ders": "Biyoloji",
+      "konu": "1.9 Fermantasyon",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.9"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.9 bölümü fermantasyonu deneylerle (hamur, yoğurt) verir (s.63-66); BİY.10.1.9.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "fermantasyon ile ilgili deney yapmanız",
+          "kod": "BİY.10.1.9",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u01_k10",
+      "ders": "Biyoloji",
+      "konu": "1.10 Enerji-Metabolizma İlişkisi",
+      "tema": 1,
+      "kodlar": [
+        "BİY.10.1.10"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.10 bölümü besinlerden elde edilen enerjinin metabolik süreçlere katkısını verir (s.67-70); BİY.10.1.10.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapmanız",
+          "kod": "BİY.10.1.10",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k01",
+      "ders": "Biyoloji",
+      "konu": "2.1 Ekosistemin Bileşenleri",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1 bölümü ekosistemin canlı ve cansız bileşenlerini hiyerarşi içinde verir (s.100-106); BİY.10.2.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz",
+          "kod": "BİY.10.2.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k02",
+      "ders": "Biyoloji",
+      "konu": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.2 bölümü komünite ve popülasyondaki etkileşimleri (rekabet, av-avcı, simbiyoz, süksesyon) verir (s.107-121); BİY.10.2.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz",
+          "kod": "BİY.10.2.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k03",
+      "ders": "Biyoloji",
+      "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.3 bölümü besin zinciri/ağı, enerji piramidi ve biyolojik birikimi verir (s.123-131); BİY.10.2.3.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz",
+          "kod": "BİY.10.2.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k04",
+      "ders": "Biyoloji",
+      "konu": "2.4 Madde Döngüleri",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.4"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.4 bölümü su, karbon ve azot döngülerini model üzerinden verir (s.132-138); BİY.10.2.4.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "madde döngüleri ile ilgili bilimsel model oluşturabilmeniz",
+          "kod": "BİY.10.2.4",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k05",
+      "ders": "Biyoloji",
+      "konu": "2.5 Ekolojik Sürdürülebilirliğin Önemi",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.5"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.5 bölümü ekolojik sürdürülebilirliğin önemini net sıfır ve sıfır enerjili bina örnekleriyle verir (s.139-141); BİY.10.2.5.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ekolojik sürdürülebilirliğin önemini yorumlayabilmeniz",
+          "kod": "BİY.10.2.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k06",
+      "ders": "Biyoloji",
+      "konu": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.6"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.6 bölümü sürdürülebilirliği kısıtlayan durumları (habitat kaybı, kirlilik türleri) verir (s.143-152); BİY.10.2.6.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çevrenizde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilmeniz",
+          "kod": "BİY.10.2.6",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k07",
+      "ders": "Biyoloji",
+      "konu": "2.7 Ekolojik Ayak İzinin Küçültülmesi",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.7"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.7 bölümü ekolojik, karbon ve su ayak izini küçültme yollarını verir (s.155-157); BİY.10.2.7.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilmeniz",
+          "kod": "BİY.10.2.7",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k08",
+      "ders": "Biyoloji",
+      "konu": "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.8"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.8 bölümü doğal kaynak ve biyoçeşitlilik koruma çalışmalarını (tür, alan, alan dışı) verir (s.160-166); BİY.10.2.8.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilmeniz",
+          "kod": "BİY.10.2.8",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "biyo_10_u02_k09",
+      "ders": "Biyoloji",
+      "konu": "2.9 Atık Yönetimi",
+      "tema": 2,
+      "kodlar": [
+        "BİY.10.2.9"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.9 bölümü atık yönetimini ve bertaraf yöntemlerini verir (s.168-174); BİY.10.2.9.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "çevrenizde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilmeniz",
+          "kod": "BİY.10.2.9",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "tar_10_u01_k01",
+      "ders": "Tarih",
+      "konu": "1.1 Önemli Askerî Mücadelelerin Türk Tarihinin Seyrine Etkileri",
+      "tema": 1,
+      "kodlar": [
+        "TAR.10.1.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 0.947,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u01_k02",
+      "ders": "Tarih",
+      "konu": "1.2 Türkistan'dan Türkiye'ye Türklerde Devlet ve Ordu Teşkilatları",
+      "tema": 1,
+      "kodlar": [
+        "TAR.10.1.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "Türkistan'dan Türkiye'ye uzanan süreçte Türklerde devlet ve ordu teşkilatında meydana gelen değişim ve sürekliliği yorumlar.",
+          "kod": "TAR.10.1.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "tar_10_u01_k03",
+      "ders": "Tarih",
+      "konu": "1.3 Türklerde Sosyoekonomik Hayat ve Şehirleşme",
+      "tema": 1,
+      "kodlar": [
+        "TAR.10.1.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "Türkistan'dan Türkiye'ye uzanan süreçte Türklerin sosyoekonomik faaliyetleri ile yerleşme ve şehirleşme anlayışları arasındaki ilişkiyi sorgular.",
+          "kod": "TAR.10.1.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "tar_10_u01_k04",
+      "ders": "Tarih",
+      "konu": "1.4 Türk-İslam Medeniyetinde Bilim, Kültür, Eğitim ve Sanat",
+      "tema": 1,
+      "kodlar": [
+        "TAR.10.1.4"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 0.865,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "Türk-İslam medeniyetinde bilim, kültür, eğitim ve sanat alanlarında meydana gelen gelişmeleri Anadolu'nun Türkleşme ve İslamlaşma sürecine etkisi açısından değerlendirir.",
+          "kod": "TAR.10.1.4",
+          "skor": 0.865
+        }
+      ]
+    },
+    {
+      "konu_id": "tar_10_u02_k05",
+      "ders": "Tarih",
+      "konu": "2.1 Osmanlı Devleti'nin Kuruluşuna Dair Görüşler",
+      "tema": 2,
+      "kodlar": [
+        "TAR.10.2.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u02_k06",
+      "ders": "Tarih",
+      "konu": "2.2 Beylikten Devlete Siyasi ve Askerî Gelişmeler",
+      "tema": 2,
+      "kodlar": [
+        "TAR.10.2.2"
+      ],
+      "guven": "yapisal",
+      "yontem": "sira",
+      "skor": 0.333,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u02_k07",
+      "ders": "Tarih",
+      "konu": "2.3 Osmanlı Devleti'nde Ordu, Hukuk ve Toprak Sistemi",
+      "tema": 2,
+      "kodlar": [
+        "TAR.10.2.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u02_k08",
+      "ders": "Tarih",
+      "konu": "2.4 Osmanlı Devleti'nin İskân ve İstimalet Politikası",
+      "tema": 2,
+      "kodlar": [
+        "TAR.10.2.4"
+      ],
+      "guven": "yapisal",
+      "yontem": "sira",
+      "skor": 0.5,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u02_k09",
+      "ders": "Tarih",
+      "konu": "2.5 Osmanlı Devleti'nin İlim ve İrfan Geleneği",
+      "tema": 2,
+      "kodlar": [
+        "TAR.10.2.5"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u03_k10",
+      "ders": "Tarih",
+      "konu": "3.1 Osmanlı Devleti'nin Cihan Devleti Hâline Gelmesi",
+      "tema": 3,
+      "kodlar": [
+        "TAR.10.3.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 0.947,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u03_k11",
+      "ders": "Tarih",
+      "konu": "3.2 Osmanlı Devleti'nin Yönetim ve Ordu Yapısında Değişim",
+      "tema": 3,
+      "kodlar": [
+        "TAR.10.3.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "1453-1683 yılları arasında Osmanlı Devleti'nin yönetim ve ordu yapısında meydana gelen değişim ve sürekliliği değerlendirir.",
+          "kod": "TAR.10.3.2",
+          "skor": 0.897
+        }
+      ]
+    },
+    {
+      "konu_id": "tar_10_u03_k12",
+      "ders": "Tarih",
+      "konu": "3.3 Avrupalıların Sömürgeci Politikaları",
+      "tema": 3,
+      "kodlar": [
+        "TAR.10.3.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u03_k13",
+      "ders": "Tarih",
+      "konu": "3.4 Osmanlı Devleti'nde İsyanlar",
+      "tema": 3,
+      "kodlar": [
+        "TAR.10.3.4"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "tar_10_u03_k14",
+      "ders": "Tarih",
+      "konu": "3.5 Osmanlı Devleti'nde Bilim, Kültür, Eğitim ve Sanat",
+      "tema": 3,
+      "kodlar": [
+        "TAR.10.3.5"
+      ],
+      "guven": "kesin",
+      "yontem": "kazanim-metni",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "cogr_10_u01_k01",
+      "ders": "Coğrafya",
+      "konu": "1.1 Coğrafi Bakış",
+      "tema": 1,
+      "kodlar": [
+        "COĞ.10.1.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 1.1 bölümü coğrafyanın konu, bölüm ve ilkelerini örnek olay/olgu üzerinden verir (s.15-24); COĞ.10.1.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilmeniz",
+          "kod": "COĞ.10.1.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u02_k01",
+      "ders": "Coğrafya",
+      "konu": "2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
+      "tema": 2,
+      "kodlar": [
+        "COĞ.10.2.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.1 bölümü CBS ve uzaktan algılamanın uygulama alanlarını örneklerle verir (s.31-36); COĞ.10.2.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilmeniz",
+          "kod": "COĞ.10.2.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u02_k02",
+      "ders": "Coğrafya",
+      "konu": "2.2 Mekânsal Verilerin Haritalara Aktarılması",
+      "tema": 2,
+      "kodlar": [
+        "COĞ.10.2.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 2.2 bölümü vektör veri ve katman mantığıyla mekânsal verilerin haritalara aktarılmasını verir (s.37-40); COĞ.10.2.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilmeniz",
+          "kod": "COĞ.10.2.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u03_k01",
+      "ders": "Coğrafya",
+      "konu": "3.1 Tektonik Süreçler",
+      "tema": 3,
+      "kodlar": [
+        "COĞ.10.3.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 3.1 bölümü levha tektoniği, kıta oluşumu ve tektonik olayların yer şekillerine etkisini verir (s.49-69); COĞ.10.3.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "yerkürenin tektonik yapısını çözümleyebilmeniz",
+          "kod": "COĞ.10.3.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u03_k02",
+      "ders": "Coğrafya",
+      "konu": "3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
+      "tema": 3,
+      "kodlar": [
+        "COĞ.10.3.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 3.2 bölümü iklim ile kayaç yapısının aşınma ve çözünme süreçlerine etkisini verir (s.70-75); COĞ.10.3.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilmeniz",
+          "kod": "COĞ.10.3.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u03_k03",
+      "ders": "Coğrafya",
+      "konu": "3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
+      "tema": 3,
+      "kodlar": [
+        "COĞ.10.3.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 3.3 bölümü aşınma, taşınma ve biriktirme süreçleriyle oluşan yer şekillerini verir (s.76-96); COĞ.10.3.3.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilmeniz",
+          "kod": "COĞ.10.3.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u03_k04",
+      "ders": "Coğrafya",
+      "konu": "3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
+      "tema": 3,
+      "kodlar": [
+        "COĞ.10.3.4"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 3.4 bölümü yeryüzü şekillerini saha/sanal saha çalışmasıyla araştırma basamaklarını verir (s.97-98); COĞ.10.3.4.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilmeniz",
+          "kod": "COĞ.10.3.4",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u03_k05",
+      "ders": "Coğrafya",
+      "konu": "3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
+      "tema": 3,
+      "kodlar": [
+        "COĞ.10.3.5"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 3.5 bölümü yakın çevredeki yer şekilleri ile beşerî faaliyetler arasındaki etkileşimi verir (s.99-107); COĞ.10.3.5.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz",
+          "kod": "COĞ.10.3.5",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u04_k01",
+      "ders": "Coğrafya",
+      "konu": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+      "tema": 4,
+      "kodlar": [
+        "COĞ.10.4.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 4.1 bölümü yerleşme yeri seçimi ve gelişiminde etkili coğrafi faktörleri verir (s.121-129); COĞ.10.4.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilmeniz",
+          "kod": "COĞ.10.4.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u04_k02",
+      "ders": "Coğrafya",
+      "konu": "4.2 Yerleşmelerin Fonksiyonları",
+      "tema": 4,
+      "kodlar": [
+        "COĞ.10.4.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 4.2 bölümü yerleşmelerin fonksiyonlarına göre sınıflandırılmasını verir (s.130-135); COĞ.10.4.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
+          "kod": "COĞ.10.4.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u05_k01",
+      "ders": "Coğrafya",
+      "konu": "5.1 Ekonomik Faaliyetlerin Özellikleri",
+      "tema": 5,
+      "kodlar": [
+        "COĞ.10.5.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 5.1 bölümü ekonomik faaliyetlerin sektörlere göre sınıflandırılmasını verir (s.145-152); COĞ.10.5.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ekonomik faaliyetleri sektörlere göre sınıflandırabilmeniz",
+          "kod": "COĞ.10.5.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u05_k02",
+      "ders": "Coğrafya",
+      "konu": "5.2 Ekonomik Sektörler ve Gelişmişlik",
+      "tema": 5,
+      "kodlar": [
+        "COĞ.10.5.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 5.2 bölümü sektörel dağılım tablo ve grafikleri üzerinden ülkeleri karşılaştırır (s.153-156); COĞ.10.5.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden farklı gelişmişlik seviyesine sahip ülkeleri karşılaştırabilmeniz",
+          "kod": "COĞ.10.5.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u05_k03",
+      "ders": "Coğrafya",
+      "konu": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+      "tema": 5,
+      "kodlar": [
+        "COĞ.10.5.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 5.3 bölümü Türkiye ekonomisinin sektörel dağılımını verilerle verir (s.157-159); COĞ.10.5.3.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilmeniz",
+          "kod": "COĞ.10.5.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u06_k01",
+      "ders": "Coğrafya",
+      "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+      "tema": 6,
+      "kodlar": [
+        "COĞ.10.6.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 6.1 bölümü afetlerle mücadelede iyi uygulama örneklerini verir (s.171-179); COĞ.10.6.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "afetlerle mücadelede iyi uygulama örneklerini sorgulayabilmeniz",
+          "kod": "COĞ.10.6.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u06_k02",
+      "ders": "Coğrafya",
+      "konu": "6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+      "tema": 6,
+      "kodlar": [
+        "COĞ.10.6.2"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 6.2 bölümü afete dirençli yaşam alanlarının coğrafi koşullarını verir (s.180-184); COĞ.10.6.2.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilmeniz",
+          "kod": "COĞ.10.6.2",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u06_k03",
+      "ders": "Coğrafya",
+      "konu": "6.3 Afetlerden Korunma",
+      "tema": 6,
+      "kodlar": [
+        "COĞ.10.6.3"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 6.3 bölümü mekân özelliklerine göre korunma uygulamalarını verir (s.185-189); COĞ.10.6.3.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilmeniz",
+          "kod": "COĞ.10.6.3",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u06_k04",
+      "ders": "Coğrafya",
+      "konu": "6.4 Afet Bilinci",
+      "tema": 6,
+      "kodlar": [
+        "COĞ.10.6.4"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 6.4 bölümü afet bilinci oluşturmanın faydalarını verir (s.190-195); COĞ.10.6.4.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarını yansıtabilmeniz",
+          "kod": "COĞ.10.6.4",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "cogr_10_u07_k01",
+      "ders": "Coğrafya",
+      "konu": "7.1 Türk Kültürünün Mekânsal Özellikleri",
+      "tema": 7,
+      "kodlar": [
+        "COĞ.10.7.1"
+      ],
+      "guven": "kesin",
+      "yontem": "kitap-bolumu",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın 7.1 bölümü Türk dünyasının ortak kültürel özelliklerini ve kültürel mirasını verir (s.203-221); COĞ.10.7.1.",
+      "kazanim_metinleri": 1,
+      "metin_kodlari": [
+        {
+          "metin": "türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilmeniz",
+          "kod": "COĞ.10.7.1",
+          "skor": 1
+        }
+      ]
+    },
+    {
+      "konu_id": "fel_10_u01_k01",
+      "ders": "Felsefe",
+      "konu": "1.1 Felsefenin Anlamı",
+      "tema": 1,
+      "kodlar": [
+        "FEL.10.1.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u01_k02",
+      "ders": "Felsefe",
+      "konu": "1.2 Felsefi Düşüncenin Gelişimi",
+      "tema": 1,
+      "kodlar": [
+        "FEL.10.1.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.444,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u01_k03",
+      "ders": "Felsefe",
+      "konu": "1.3 Felsefi Düşüncenin Özellikleri",
+      "tema": 1,
+      "kodlar": [
+        "FEL.10.1.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.222,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u01_k04",
+      "ders": "Felsefe",
+      "konu": "1.4 Felsefi Soruların Temel Özellikleri",
+      "tema": 1,
+      "kodlar": [
+        "FEL.10.1.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.222,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u01_k05",
+      "ders": "Felsefe",
+      "konu": "1.5 Felsefenin Diğer Alanlarla İlişkisi",
+      "tema": 1,
+      "kodlar": [
+        "FEL.10.1.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.222,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u01_k06",
+      "ders": "Felsefe",
+      "konu": "1.6 Felsefenin Bireysel ve Toplumsal İşlevi",
+      "tema": 1,
+      "kodlar": [
+        "FEL.10.1.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.4,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u02_k01",
+      "ders": "Felsefe",
+      "konu": "2.1 Düşünme ve Dil İlişkisi",
+      "tema": 2,
+      "kodlar": [
+        "FEL.10.2.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u02_k02",
+      "ders": "Felsefe",
+      "konu": "2.2 Mantık ve Argümantasyonun Temel Kavramları",
+      "tema": 2,
+      "kodlar": [
+        "FEL.10.2.2"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u02_k03",
+      "ders": "Felsefe",
+      "konu": "2.3 Argümantasyonun Yapısı",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "kanit-yok",
+      "skor": 0,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u03_k01",
+      "ders": "Felsefe",
+      "konu": "3.1 Varlık Felsefesinin Konusu ve Temel Kavramları",
+      "tema": 3,
+      "kodlar": [
+        "FEL.10.3.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u03_k02",
+      "ders": "Felsefe",
+      "konu": "3.2 Varlık Felsefesinin Temel Problemleri (Varlığın Var Olup Olmadığı, Varlığın Ne Olduğu)",
+      "tema": 3,
+      "kodlar": [
+        "FEL.10.3.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.4,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u04_k01",
+      "ders": "Felsefe",
+      "konu": "4.1 Bilgi Felsefesinin Konusu ve Temel Kavramları",
+      "tema": 4,
+      "kodlar": [
+        "FEL.10.4.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u04_k02",
+      "ders": "Felsefe",
+      "konu": "4.2 Bilgi Felsefesinin Temel Problemleri (Bilginin İmkânı, Kaynağı ve Doğruluk Ölçütleri)",
+      "tema": 4,
+      "kodlar": [
+        "FEL.10.4.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.4,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u05_k01",
+      "ders": "Felsefe",
+      "konu": "5.1 Ahlak Felsefesinin Konusu ve Temel Kavramları",
+      "tema": 5,
+      "kodlar": [
+        "FEL.10.5.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u05_k02",
+      "ders": "Felsefe",
+      "konu": "5.2 Ahlak Felsefesinin Temel Problemleri (Evrensel Ahlak Yasasının İmkânı, Özgürlük-Sorumluluk İlişkisi)",
+      "tema": 5,
+      "kodlar": [
+        "FEL.10.5.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.353,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u06_k01",
+      "ders": "Felsefe",
+      "konu": "6.1 Estetik ve Sanat Felsefesinin Konusu ve Temel Kavramları",
+      "tema": 6,
+      "kodlar": [
+        "FEL.10.6.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u06_k02",
+      "ders": "Felsefe",
+      "konu": "6.2 Estetik ve Sanat Felsefesinin Temel Problemleri (Güzellik ve Ortak Estetik Yargıların İmkânı)",
+      "tema": 6,
+      "kodlar": [
+        "FEL.10.6.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.471,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u07_k01",
+      "ders": "Felsefe",
+      "konu": "7.1 Siyaset Felsefesinin Konusu ve Temel Kavramları",
+      "tema": 7,
+      "kodlar": [
+        "FEL.10.7.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u07_k02",
+      "ders": "Felsefe",
+      "konu": "7.2 Siyaset Felsefesinin Temel Problemleri (Devletin Kökeni, İktidarın Kaynağı ve Meşruiyeti, İdeal Düzen ve Ütopyalar)",
+      "tema": 7,
+      "kodlar": [
+        "FEL.10.7.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.333,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u08_k01",
+      "ders": "Felsefe",
+      "konu": "8.1 Din Felsefesinin Konusu ve Temel Kavramları",
+      "tema": 8,
+      "kodlar": [
+        "FEL.10.8.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u08_k02",
+      "ders": "Felsefe",
+      "konu": "8.2 Din Felsefesinin Temel Problemleri (Tanrı'nın Varlığına İlişkin Görüşler, Tanrı'nın Varlığına Yönelik Kanıtlamalar, Evrenin Sonluluğu ve Sonsuzluğu, Ruhun Ölümsüzlüğü)",
+      "tema": 8,
+      "kodlar": [
+        "FEL.10.8.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.261,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u09_k01",
+      "ders": "Felsefe",
+      "konu": "9.1 Bilim Felsefesinin Konusu ve Temel Kavramları",
+      "tema": 9,
+      "kodlar": [
+        "FEL.10.9.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "baslik-geciyor",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "fel_10_u09_k02",
+      "ders": "Felsefe",
+      "konu": "9.2 Bilim Felsefesinin Temel Problemleri (Bilimin Ne Olduğu, Bilimin Yöntemi)",
+      "tema": 9,
+      "kodlar": [
+        "FEL.10.9.1"
+      ],
+      "guven": "yapisal",
+      "yontem": "tek-cikti",
+      "skor": 0.364,
+      "uyari": "",
+      "gerekce": "",
+      "kazanim_metinleri": 0,
+      "metin_kodlari": []
+    },
+    {
+      "konu_id": "din_10_u01_k01",
+      "ders": "Din Kültürü",
+      "konu": "1.1.1 İslam'da Bilginin Yeri",
+      "tema": 1,
+      "kodlar": [
+        "DKAB.10.1.1"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.13-17)."
+    },
+    {
+      "konu_id": "din_10_u01_k02",
+      "ders": "Din Kültürü",
+      "konu": "1.1.2 İslam'da Bilgi Kaynakları",
+      "tema": 1,
+      "kodlar": [
+        "DKAB.10.1.1"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.18-21)."
+    },
+    {
+      "konu_id": "din_10_u01_k03",
+      "ders": "Din Kültürü",
+      "konu": "1.2 Allah-Âlem İlişkisi",
+      "tema": 1,
+      "kodlar": [
+        "DKAB.10.1.2"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.23-27)."
+    },
+    {
+      "konu_id": "din_10_u01_k04",
+      "ders": "Din Kültürü",
+      "konu": "1.3 Kur'an'dan Mesajlar",
+      "tema": 1,
+      "kodlar": [
+        "DKAB.10.1.3"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.31-33)."
+    },
+    {
+      "konu_id": "din_10_u02_k01",
+      "ders": "Din Kültürü",
+      "konu": "2.1 Allah'ın Varlığının Delilleri",
+      "tema": 2,
+      "kodlar": [
+        "DKAB.10.2.1"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.45-55)."
+    },
+    {
+      "konu_id": "din_10_u02_k02",
+      "ders": "Din Kültürü",
+      "konu": "2.1.1 Kozmolojik Delil",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "yapi-farkli",
+      "skor": 0,
+      "uyari": "Kitapta alt başlık; resmî kazanım kodu üst konuda.",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.46-51)."
+    },
+    {
+      "konu_id": "din_10_u02_k03",
+      "ders": "Din Kültürü",
+      "konu": "2.1.2 Teleolojik Delil",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "yapi-farkli",
+      "skor": 0,
+      "uyari": "Kitapta alt başlık; resmî kazanım kodu üst konuda.",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.51-54)."
+    },
+    {
+      "konu_id": "din_10_u02_k04",
+      "ders": "Din Kültürü",
+      "konu": "2.1.3 Ontolojik Delil",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "yapi-farkli",
+      "skor": 0,
+      "uyari": "Kitapta alt başlık; resmî kazanım kodu üst konuda.",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.54-55)."
+    },
+    {
+      "konu_id": "din_10_u02_k05",
+      "ders": "Din Kültürü",
+      "konu": "2.1.4 Dinî Tecrübe Delili",
+      "tema": 2,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "yapi-farkli",
+      "skor": 0,
+      "uyari": "Kitapta alt başlık; resmî kazanım kodu üst konuda.",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.55-57)."
+    },
+    {
+      "konu_id": "din_10_u02_k06",
+      "ders": "Din Kültürü",
+      "konu": "2.2 Allah'ı İsim ve Sıfatlarıyla Tanımak",
+      "tema": 2,
+      "kodlar": [
+        "DKAB.10.2.2"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.57-67)."
+    },
+    {
+      "konu_id": "din_10_u02_k07",
+      "ders": "Din Kültürü",
+      "konu": "2.3 Kur'an'dan Mesajlar",
+      "tema": 2,
+      "kodlar": [
+        "DKAB.10.2.3"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.69-72)."
+    },
+    {
+      "konu_id": "din_10_u03_k01",
+      "ders": "Din Kültürü",
+      "konu": "3.1 İslam'ın Tevhit İlkesi",
+      "tema": 3,
+      "kodlar": [
+        "DKAB.10.3.1"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.81-84)."
+    },
+    {
+      "konu_id": "din_10_u03_k02",
+      "ders": "Din Kültürü",
+      "konu": "3.2 İslam'da Adalet ve Eşitlik",
+      "tema": 3,
+      "kodlar": [
+        "DKAB.10.3.2"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.85-89)."
+    },
+    {
+      "konu_id": "din_10_u03_k03",
+      "ders": "Din Kültürü",
+      "konu": "3.3 İslam ve Barış",
+      "tema": 3,
+      "kodlar": [
+        "DKAB.10.3.3"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.95-101)."
+    },
+    {
+      "konu_id": "din_10_u03_k04",
+      "ders": "Din Kültürü",
+      "konu": "3.4 Kur'an'dan Mesajlar",
+      "tema": 3,
+      "kodlar": [
+        "DKAB.10.3.4"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.102-107)."
+    },
+    {
+      "konu_id": "din_10_u04_k01",
+      "ders": "Din Kültürü",
+      "konu": "4.1 İnsan, Çevre ve Ahlak",
+      "tema": 4,
+      "kodlar": [
+        "DKAB.10.4.1"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.115-122)."
+    },
+    {
+      "konu_id": "din_10_u04_k02",
+      "ders": "Din Kültürü",
+      "konu": "4.2 Teknoloji ve Ahlak",
+      "tema": 4,
+      "kodlar": [
+        "DKAB.10.4.2"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.122-126)."
+    },
+    {
+      "konu_id": "din_10_u04_k03",
+      "ders": "Din Kültürü",
+      "konu": "4.3 Çevre ve Teknoloji",
+      "tema": 4,
+      "kodlar": [
+        "DKAB.10.4.3"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.126-130)."
+    },
+    {
+      "konu_id": "din_10_u04_k04",
+      "ders": "Din Kültürü",
+      "konu": "4.4 Kur'an'dan Mesajlar",
+      "tema": 4,
+      "kodlar": [
+        "DKAB.10.4.4"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.132-134)."
+    },
+    {
+      "konu_id": "din_10_u05_k01",
+      "ders": "Din Kültürü",
+      "konu": "5.1 Dinî Yorum Farklılıklarının Sebepleri",
+      "tema": 5,
+      "kodlar": [
+        "DKAB.10.5.1"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.143-148)."
+    },
+    {
+      "konu_id": "din_10_u05_k02",
+      "ders": "Din Kültürü",
+      "konu": "5.2 İslam Düşüncesinde İtikadi-Siyasi ve Fıkhi Yorumlar",
+      "tema": 5,
+      "kodlar": [
+        "DKAB.10.5.2"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.149-158)."
+    },
+    {
+      "konu_id": "din_10_u05_k03",
+      "ders": "Din Kültürü",
+      "konu": "5.2.1 Ehlisünnet",
+      "tema": 5,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "yapi-farkli",
+      "skor": 0,
+      "uyari": "Kitapta alt başlık; resmî kazanım kodu üst konuda.",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.153-156)."
+    },
+    {
+      "konu_id": "din_10_u05_k04",
+      "ders": "Din Kültürü",
+      "konu": "5.2.2 Şia",
+      "tema": 5,
+      "kodlar": [],
+      "guven": "yok",
+      "yontem": "yapi-farkli",
+      "skor": 0,
+      "uyari": "Kitapta alt başlık; resmî kazanım kodu üst konuda.",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.156-158)."
+    },
+    {
+      "konu_id": "din_10_u05_k05",
+      "ders": "Din Kültürü",
+      "konu": "5.3 Kur'an'dan Mesajlar",
+      "tema": 5,
+      "kodlar": [
+        "DKAB.10.5.3"
+      ],
+      "guven": "elle",
+      "yontem": "elle-esleme",
+      "skor": 1,
+      "uyari": "",
+      "gerekce": "Kitabın içindekiler ağacındaki bölüm başlığı esas alındı (tur-2, kitap sayfaları: s.159-163)."
+    }
+  ],
+  "metin_esleme": [
+    {
+      "ders": "Biyoloji",
+      "metin": "canlıların yaşamına devam edebilmesi için enerjinin gerekliliğini sorgulamanız,",
+      "norm": "canlilarin yasamina devam edebilmesi icin enerjinin gerekliligini sorgula",
+      "konu_id": "biyo_10_u01_k01",
+      "konu": "1.1 Canlılık İçin Enerjinin Önemi",
+      "topic_key": "Biyoloji > 1.1 Canlılık İçin Enerjinin Önemi",
+      "kodlar": [
+        "BİY.10.1.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "fotosentez reaksiyonlarıyla ilgili bilimsel model oluşturmanız,",
+      "norm": "fotosentez reaksiyonlariyla ilgili bilimsel model olustur",
+      "konu_id": "biyo_10_u01_k02",
+      "konu": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+      "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+      "kodlar": [
+        "BİY.10.1.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "fotosentezde kullanılan ve üretilen maddelerle ilgili deney yapmanız,",
+      "norm": "fotosentezde kullanilan ve uretilen maddelerle ilgili deney yap",
+      "konu_id": "biyo_10_u01_k03",
+      "konu": "1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+      "topic_key": "Biyoloji > 1.3 Fotosentezde Kullanılan ve Üretilen Maddeler",
+      "kodlar": [
+        "BİY.10.1.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "kemosentez hakkında bilgi toplamanız,",
+      "norm": "kemosentez hakkinda bilgi topla",
+      "konu_id": "biyo_10_u01_k04",
+      "konu": "1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+      "topic_key": "Biyoloji > 1.4 Işık Enerjisi Kullanılmadan Besin Sentezi (Kemosentez)",
+      "kodlar": [
+        "BİY.10.1.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,",
+      "norm": "canlilarda sindirim cesitlerini ve yapilarini siniflandir",
+      "konu_id": "biyo_10_u01_k05",
+      "konu": "1.5 Sindirim",
+      "topic_key": "Biyoloji > 1.5 Sindirim",
+      "kodlar": [
+        "BİY.10.1.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,",
+      "norm": "insanda enerji eldesi icin sindirim emilim ve tasima sureclerinin gerekliligi ile ilgili bilimsel cikarim yap",
+      "konu_id": "biyo_10_u01_k06",
+      "konu": "1.6 İnsanda Sindirim",
+      "topic_key": "Biyoloji > 1.6 İnsanda Sindirim",
+      "kodlar": [
+        "BİY.10.1.6"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturmanız,",
+      "norm": "hucresel solunum reaksiyonlariyla ilgili bilimsel model olustur",
+      "konu_id": "biyo_10_u01_k07",
+      "konu": "1.7 Hücresel Solunum",
+      "topic_key": "Biyoloji > 1.7 Hücresel Solunum",
+      "kodlar": [
+        "BİY.10.1.7"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "farklı besin gruplarının enerji eldesi süreçlerini karşılaştırmanız,",
+      "norm": "farkli besin gruplarinin enerji eldesi sureclerini karsilastir",
+      "konu_id": "biyo_10_u01_k08",
+      "konu": "1.8 Besinlerin Solunuma Katılma Yolları",
+      "topic_key": "Biyoloji > 1.8 Besinlerin Solunuma Katılma Yolları",
+      "kodlar": [
+        "BİY.10.1.8"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "fermantasyon ile ilgili deney yapmanız,",
+      "norm": "fermantasyon ile ilgili deney yap",
+      "konu_id": "biyo_10_u01_k09",
+      "konu": "1.9 Fermantasyon",
+      "topic_key": "Biyoloji > 1.9 Fermantasyon",
+      "kodlar": [
+        "BİY.10.1.9"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "besinlerden elde edilen enerjinin canlının metabolik süreçlerine katkısı ile ilgili bilimsel çıkarım yapmanız,",
+      "norm": "besinlerden elde edilen enerjinin canlinin metabolik sureclerine katkisi ile ilgili bilimsel cikarim yap",
+      "konu_id": "biyo_10_u01_k10",
+      "konu": "1.10 Enerji-Metabolizma İlişkisi",
+      "topic_key": "Biyoloji > 1.10 Enerji-Metabolizma İlişkisi",
+      "kodlar": [
+        "BİY.10.1.10"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "ekosistemin cansız ve canlı bileşenleri arasındaki ilişkileri çözümleyebilmeniz,",
+      "norm": "ekosistemin cansiz ve canli bilesenleri arasindaki iliskileri cozumle",
+      "konu_id": "biyo_10_u02_k01",
+      "konu": "2.1 Ekosistemin Bileşenleri",
+      "topic_key": "Biyoloji > 2.1 Ekosistemin Bileşenleri",
+      "kodlar": [
+        "BİY.10.2.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,",
+      "norm": "komunitelerde ve populasyonlarda gorulen etkilesimleri ve degisimleri sorgula",
+      "konu_id": "biyo_10_u02_k02",
+      "konu": "2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+      "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler",
+      "kodlar": [
+        "BİY.10.2.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,",
+      "norm": "ekosistemdeki enerji akisiyla ilgili tumevarimsal akil yurut",
+      "konu_id": "biyo_10_u02_k03",
+      "konu": "2.3 Ekosistemdeki Madde ve Enerji Akışı",
+      "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı",
+      "kodlar": [
+        "BİY.10.2.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "madde döngüleri ile ilgili bilimsel model oluşturabilmeniz,",
+      "norm": "madde donguleri ile ilgili bilimsel model olustur",
+      "konu_id": "biyo_10_u02_k04",
+      "konu": "2.4 Madde Döngüleri",
+      "topic_key": "Biyoloji > 2.4 Madde Döngüleri",
+      "kodlar": [
+        "BİY.10.2.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "ekolojik sürdürülebilirliğin önemini yorumlayabilmeniz,",
+      "norm": "ekolojik surdurulebilirligin onemini yorumla",
+      "konu_id": "biyo_10_u02_k05",
+      "konu": "2.5 Ekolojik Sürdürülebilirliğin Önemi",
+      "topic_key": "Biyoloji > 2.5 Ekolojik Sürdürülebilirliğin Önemi",
+      "kodlar": [
+        "BİY.10.2.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "çevrenizde sürdürülebilirliği kısıtlayan durumlarla ilgili gözleme dayalı tahmin yapabilmeniz,",
+      "norm": "cevrenizde surdurulebilirligi kisitlayan durumlarla ilgili gozleme dayali tahmin yap",
+      "konu_id": "biyo_10_u02_k06",
+      "konu": "2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+      "topic_key": "Biyoloji > 2.6 Ekolojik Sürdürülebilirliği Kısıtlayan Durumlar",
+      "kodlar": [
+        "BİY.10.2.6"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "ekolojik ayak izini küçültebilme yollarını bilimsel olarak sorgulayabilmeniz,",
+      "norm": "ekolojik ayak izini kucultebilme yollarini bilimsel olarak sorgula",
+      "konu_id": "biyo_10_u02_k07",
+      "konu": "2.7 Ekolojik Ayak İzinin Küçültülmesi",
+      "topic_key": "Biyoloji > 2.7 Ekolojik Ayak İzinin Küçültülmesi",
+      "kodlar": [
+        "BİY.10.2.7"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "doğal kaynakların ve biyoçeşitliliğin korunması için alınan önlemleri sorgulayabilmeniz,",
+      "norm": "dogal kaynaklarin ve biyocesitliligin korunmasi icin alinan onlemleri sorgula",
+      "konu_id": "biyo_10_u02_k08",
+      "konu": "2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+      "topic_key": "Biyoloji > 2.8 Doğal Kaynakların ve Biyoçeşitliliğin Korunması",
+      "kodlar": [
+        "BİY.10.2.8"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Biyoloji",
+      "metin": "çevrenizde atık yönetimi konusunda yapılan çalışmalarla ilgili bilgi toplayabilmeniz,",
+      "norm": "cevrenizde atik yonetimi konusunda yapilan calismalarla ilgili bilgi topla",
+      "konu_id": "biyo_10_u02_k09",
+      "konu": "2.9 Atık Yönetimi",
+      "topic_key": "Biyoloji > 2.9 Atık Yönetimi",
+      "kodlar": [
+        "BİY.10.2.9"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "örnek olay, olgu ve/veya mekânı coğrafyanın temel kavramları ile ilişkilendirebilmeniz,",
+      "norm": "ornek olay olgu ve veya mekani cografyanin temel kavramlari ile iliskilendir",
+      "konu_id": "cogr_10_u01_k01",
+      "konu": "1.1 Coğrafi Bakış",
+      "topic_key": "Coğrafya > 1.1 Coğrafi Bakış",
+      "kodlar": [
+        "COĞ.10.1.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilmeniz,",
+      "norm": "ornek uygulamalar uzerinden cbs ve uzaktan algilamanin kullanim alanlarini ozetle",
+      "konu_id": "cogr_10_u02_k01",
+      "konu": "2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
+      "topic_key": "Coğrafya > 2.1 CBS ve Uzaktan Algılamanın Uygulama Alanları",
+      "kodlar": [
+        "COĞ.10.2.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "mekânsal bilgi teknolojilerini kullanarak altlık haritalar üzerinde mekânsal veriler oluşturabilmeniz,",
+      "norm": "mekansal bilgi teknolojilerini kullanarak altlik haritalar uzerinde mekansal veriler olustur",
+      "konu_id": "cogr_10_u02_k02",
+      "konu": "2.2 Mekânsal Verilerin Haritalara Aktarılması",
+      "topic_key": "Coğrafya > 2.2 Mekânsal Verilerin Haritalara Aktarılması",
+      "kodlar": [
+        "COĞ.10.2.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yerkürenin tektonik yapısını çözümleyebilmeniz,",
+      "norm": "yerkurenin tektonik yapisini cozumle",
+      "konu_id": "cogr_10_u03_k01",
+      "konu": "3.1 Tektonik Süreçler",
+      "topic_key": "Coğrafya > 3.1 Tektonik Süreçler",
+      "kodlar": [
+        "COĞ.10.3.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçleri ile iklim ve kayaç özellikleri arasındaki ilişkileri yapılandırabilmeniz,",
+      "norm": "yeryuzu sekillerinin olusumunda etkili olan asinma ve cozunme surecleri ile iklim ve kayac ozellikleri arasindaki iliskileri yapilandir",
+      "konu_id": "cogr_10_u03_k02",
+      "konu": "3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
+      "topic_key": "Coğrafya > 3.2 İklim ve Kayaç Yapısının Aşınma ve Çözünme Süreçlerine Etkisi",
+      "kodlar": [
+        "COĞ.10.3.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yeryüzü şekillerinin oluşumunu aşınım ve birikim süreçleri açısından çözümleyebilmeniz,",
+      "norm": "yeryuzu sekillerinin olusumunu asinim ve birikim surecleri acisindan cozumle",
+      "konu_id": "cogr_10_u03_k03",
+      "konu": "3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
+      "topic_key": "Coğrafya > 3.3 Aşınma, Taşınma ve Biriktirme Süreçlerinin Yeryüzünün Şekillenmesine Etkisi",
+      "kodlar": [
+        "COĞ.10.3.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yeryüzü şekillerinin oluşumunda doğal süreçlerin etkilerini saha/sanal saha çalışmalarıyla araştırabilmeniz,",
+      "norm": "yeryuzu sekillerinin olusumunda dogal sureclerin etkilerini saha sanal saha calismalariyla arastir",
+      "konu_id": "cogr_10_u03_k04",
+      "konu": "3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
+      "topic_key": "Coğrafya > 3.4 Yeryüzü Şekilleri ile İlgili Gözlem ve Saha Çalışması",
+      "kodlar": [
+        "COĞ.10.3.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yakın çevresindeki yeryüzü şekilleri ile beşerî faaliyetler arasındaki etkileşimi sorgulayabilmeniz,",
+      "norm": "yakin cevresindeki yeryuzu sekilleri ile beseri faaliyetler arasindaki etkilesimi sorgula",
+      "konu_id": "cogr_10_u03_k05",
+      "konu": "3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
+      "topic_key": "Coğrafya > 3.5 Yeryüzü Şekilleri ile Beşerî Faaliyetler Arasındaki Etkileşim",
+      "kodlar": [
+        "COĞ.10.3.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yerleşme yeri seçiminde ve yerleşmelerin gelişiminde etkili olan coğrafi faktörleri sorgulayabilmeniz,",
+      "norm": "yerlesme yeri seciminde ve yerlesmelerin gelisiminde etkili olan cografi faktorleri sorgula",
+      "konu_id": "cogr_10_u04_k01",
+      "konu": "4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+      "topic_key": "Coğrafya > 4.1 Yerleşmelerin Kuruluşu ve Gelişimi",
+      "kodlar": [
+        "COĞ.10.4.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "türkiye ve dünyadaki yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz,",
+      "norm": "turkiye ve dunyadaki yerlesmeleri fonksiyonlarina gore siniflandir",
+      "konu_id": "cogr_10_u04_k02",
+      "konu": "4.2 Yerleşmelerin Fonksiyonları",
+      "topic_key": "Coğrafya > 4.2 Yerleşmelerin Fonksiyonları",
+      "kodlar": [
+        "COĞ.10.4.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "ekonomik faaliyetleri sektörlere göre sınıflandırabilmeniz,",
+      "norm": "ekonomik faaliyetleri sektorlere gore siniflandir",
+      "konu_id": "cogr_10_u05_k01",
+      "konu": "5.1 Ekonomik Faaliyetlerin Özellikleri",
+      "topic_key": "Coğrafya > 5.1 Ekonomik Faaliyetlerin Özellikleri",
+      "kodlar": [
+        "COĞ.10.5.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "ekonomik sektörlerin dağılımını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden farklı gelişmişlik seviyesine sahip ülkeleri karşılaştırabilmeniz,",
+      "norm": "ekonomik sektorlerin dagilimini gosteren tablo grafik sekil ve veya diyagramlar uzerinden farkli gelismislik seviyesine sahip ulkeleri karsilastir",
+      "konu_id": "cogr_10_u05_k02",
+      "konu": "5.2 Ekonomik Sektörler ve Gelişmişlik",
+      "topic_key": "Coğrafya > 5.2 Ekonomik Sektörler ve Gelişmişlik",
+      "kodlar": [
+        "COĞ.10.5.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "ekonomik sektörlerin Türkiye ekonomisindeki yeri ve önemini gösteren tablo, grafik, şekil ve/veya diyagram hazırlayabilmeniz,",
+      "norm": "ekonomik sektorlerin turkiye ekonomisindeki yeri ve onemini gosteren tablo grafik sekil ve veya diyagram hazirla",
+      "konu_id": "cogr_10_u05_k03",
+      "konu": "5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+      "topic_key": "Coğrafya > 5.3 Türkiye Ekonomisinin Sektörel Dağılımı",
+      "kodlar": [
+        "COĞ.10.5.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "afetlerle mücadelede iyi uygulama örneklerini sorgulayabilmeniz,",
+      "norm": "afetlerle mucadelede iyi uygulama orneklerini sorgula",
+      "konu_id": "cogr_10_u06_k01",
+      "konu": "6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+      "topic_key": "Coğrafya > 6.1 Afetlerle Mücadelede İyi Uygulama Örnekleri",
+      "kodlar": [
+        "COĞ.10.6.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "afete dirençli yaşam alanlarının coğrafi koşullarını çözümleyebilmeniz,",
+      "norm": "afete direncli yasam alanlarinin cografi kosullarini cozumle",
+      "konu_id": "cogr_10_u06_k02",
+      "konu": "6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+      "topic_key": "Coğrafya > 6.2 Afetlere Karşı Dirençli Yaşam Alanları",
+      "kodlar": [
+        "COĞ.10.6.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "mekânın özelliklerine göre afetlerden korunma uygulamalarına karar verebilmeniz,",
+      "norm": "mekanin ozelliklerine gore afetlerden korunma uygulamalarina karar ver",
+      "konu_id": "cogr_10_u06_k03",
+      "konu": "6.3 Afetlerden Korunma",
+      "topic_key": "Coğrafya > 6.3 Afetlerden Korunma",
+      "kodlar": [
+        "COĞ.10.6.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "afetlerden korunma amacı ile afet bilinci oluşturmanın faydalarını yansıtabilmeniz,",
+      "norm": "afetlerden korunma amaci ile afet bilinci olusturmanin faydalarini yansit",
+      "konu_id": "cogr_10_u06_k04",
+      "konu": "6.4 Afet Bilinci",
+      "topic_key": "Coğrafya > 6.4 Afet Bilinci",
+      "kodlar": [
+        "COĞ.10.6.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "türk dünyasının ortak kültürel özellikleri hakkında analojik çıkarım yapabilmeniz,",
+      "norm": "turk dunyasinin ortak kulturel ozellikleri hakkinda analojik cikarim yap",
+      "konu_id": "cogr_10_u07_k01",
+      "konu": "7.1 Türk Kültürünün Mekânsal Özellikleri",
+      "topic_key": "Coğrafya > 7.1 Türk Kültürünün Mekânsal Özellikleri",
+      "kodlar": [
+        "COĞ.10.7.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "norm": "yatay dogrultuda sabit hizli ve sabit ivmeli hareketi acikla",
+      "konu_id": "fizik_10_u01_k01",
+      "konu": "1.1 Sabit Hızlı Hareket",
+      "topic_key": "Fizik > 1.1 Sabit Hızlı Hareket",
+      "kodlar": [
+        "FİZ.10.1.1"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "yapılan işin büyüklüğünü hesaplayabilmeniz,",
+      "norm": "yapilan isin buyuklugunu hesapla",
+      "konu_id": "fizik_10_u02_k01",
+      "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "kodlar": [
+        "FİZ.10.2.1"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "iş, enerji ve güç arasındaki ilişkiye yönelik çıkarım yapabilmeniz,",
+      "norm": "is enerji ve guc arasindaki iliskiye yonelik cikarim yap",
+      "konu_id": "fizik_10_u02_k01",
+      "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "kodlar": [
+        "FİZ.10.2.1"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "güç hesapları yapabilmeniz,",
+      "norm": "guc hesaplari yap",
+      "konu_id": "fizik_10_u02_k01",
+      "konu": "2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "topic_key": "Fizik > 2.1.1 Kuvvet-Yer Değiştirme Grafiği Kullanılarak İş Kavramının Tanımlanması",
+      "kodlar": [
+        "FİZ.10.2.1"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "enerji biçimlerini karşılaştırabilmeniz,",
+      "norm": "enerji bicimlerini karsilastir",
+      "konu_id": "fizik_10_u02_k02",
+      "konu": "2.2 Enerji Biçimleri",
+      "topic_key": "Fizik > 2.2 Enerji Biçimleri",
+      "kodlar": [
+        "FİZ.10.2.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "norm": "mekanik enerji ile ilgili hesaplamalar yap",
+      "konu_id": "fizik_10_u02_k03",
+      "konu": "2.3 Mekanik Enerji",
+      "topic_key": "Fizik > 2.3 Mekanik Enerji",
+      "kodlar": [
+        "FİZ.10.2.4"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "yenilenebilen ve yenilenemeyen enerji kaynaklarını karşılaştırabilmeniz",
+      "norm": "yenilenebilen ve yenilenemeyen enerji kaynaklarini karsilastir",
+      "konu_id": "fizik_10_u02_k04",
+      "konu": "2.4 Enerji Kaynakları",
+      "topic_key": "Fizik > 2.4 Enerji Kaynakları",
+      "kodlar": [
+        "FİZ.10.2.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "norm": "basit elektrik devresinde potansiyel fark elektrik akimi ve direnc kavramlarini tanimlayabilmeniz ve elektrik akimi kavramini cozumle",
+      "konu_id": "fizik_10_u03_k01",
+      "konu": "3.1 Basit Elektrik Devreleri",
+      "topic_key": "Fizik > 3.1 Basit Elektrik Devreleri",
+      "kodlar": [
+        "FİZ.10.3.1"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "norm": "potansiyel fark direnc ve elektrik akimini olcebilmeniz ve bu kavramlar arasindaki iliskiyi analiz edebil",
+      "konu_id": "fizik_10_u03_k02",
+      "konu": "3.2 Elektrik Akımı",
+      "topic_key": "Fizik > 3.2 Elektrik Akımı",
+      "kodlar": [
+        "FİZ.10.3.2"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "coklu",
+      "coklu": true
+    },
+    {
+      "ders": "Fizik",
+      "metin": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "norm": "potansiyel fark direnc ve elektrik akimini olcebilmeniz ve bu kavramlar arasindaki iliskiyi analiz edebil",
+      "konu_id": "fizik_10_u03_k03",
+      "konu": "3.3 Ohm Yasası",
+      "topic_key": "Fizik > 3.3 Ohm Yasası",
+      "kodlar": [
+        "FİZ.10.3.3"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "coklu",
+      "coklu": true
+    },
+    {
+      "ders": "Fizik",
+      "metin": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
+      "norm": "esdeger direncin buyuklugunu hesapla",
+      "konu_id": "fizik_10_u03_k04",
+      "konu": "3.4 Dirençlerin Bağlanması",
+      "topic_key": "Fizik > 3.4 Dirençlerin Bağlanması",
+      "kodlar": [
+        "FİZ.10.3.4"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "üreteçlerin bağlanma türüne göre devreye sağladığı potansiyel farka ilişkin çıkarım yapabilmeniz,",
+      "norm": "ureteclerin baglanma turune gore devreye sagladigi potansiyel farka iliskin cikarim yap",
+      "konu_id": "fizik_10_u03_k05",
+      "konu": "3.5 Üreteçlerin Bağlanması",
+      "topic_key": "Fizik > 3.5 Üreteçlerin Bağlanması",
+      "kodlar": [
+        "FİZ.10.3.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "norm": "elektrik akiminin olusturabilecegi tehlikelere karsi alinmasi gereken onlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayinin onemini sorgula",
+      "konu_id": "fizik_10_u03_k06",
+      "konu": "3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
+      "topic_key": "Fizik > 3.6 Elektrik Akımının Oluşturabileceği Tehlikelere Karşı Alınması Gereken Önlemler",
+      "kodlar": [
+        "FİZ.10.3.6"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "coklu",
+      "coklu": true
+    },
+    {
+      "ders": "Fizik",
+      "metin": "elektrik akımının oluşturabileceği tehlikelere karşı alınması gereken önlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayının önemini sorgulayabilmeniz",
+      "norm": "elektrik akiminin olusturabilecegi tehlikelere karsi alinmasi gereken onlemlerle ilgili bilgi toplayabilmeniz ve topraklama olayinin onemini sorgula",
+      "konu_id": "fizik_10_u03_k07",
+      "konu": "3.7 Topraklamanın Önemi",
+      "topic_key": "Fizik > 3.7 Topraklamanın Önemi",
+      "kodlar": [
+        "FİZ.10.3.6"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "coklu",
+      "coklu": true
+    },
+    {
+      "ders": "Fizik",
+      "metin": "dalgaların temel kavramlarını tanımlayabilmeniz,",
+      "norm": "dalgalarin temel kavramlarini tanimla",
+      "konu_id": "fizik_10_u04_k01",
+      "konu": "4.1 Dalgaların Temel Kavramları",
+      "topic_key": "Fizik > 4.1 Dalgaların Temel Kavramları",
+      "kodlar": [
+        "FİZ.10.4.2"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "dalgaları özelliklerine göre sınıflandırabilmeniz,",
+      "norm": "dalgalari ozelliklerine gore siniflandir",
+      "konu_id": "fizik_10_u04_k02",
+      "konu": "4.2 Dalgaların Sınıflandırılması",
+      "topic_key": "Fizik > 4.2 Dalgaların Sınıflandırılması",
+      "kodlar": [
+        "FİZ.10.4.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "dalgaların yayılma süratini etkileyen etmenleri gözlemleyebilmeniz,",
+      "norm": "dalgalarin yayilma suratini etkileyen etmenleri gozlemle",
+      "konu_id": "fizik_10_u04_k03",
+      "konu": "4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
+      "topic_key": "Fizik > 4.3 Dalgaların Yayılma Süratini Etkileyen Etmenler",
+      "kodlar": [
+        "FİZ.10.4.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "periyodik hareketlere ilişkin deneyimlerinizi yansıtabilmeniz,",
+      "norm": "periyodik hareketlere iliskin deneyimlerinizi yansit",
+      "konu_id": "fizik_10_u04_k04",
+      "konu": "4.4 Periyodik Hareketler",
+      "topic_key": "Fizik > 4.4 Periyodik Hareketler",
+      "kodlar": [
+        "FİZ.10.4.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "norm": "su dalgalarinda yansima ve kirilma olaylarina iliskin cikarimlar yap",
+      "konu_id": "fizik_10_u04_k05",
+      "konu": "4.5 Su Dalgalarında Yansıma ve Kırılma",
+      "topic_key": "Fizik > 4.5 Su Dalgalarında Yansıma ve Kırılma",
+      "kodlar": [
+        "FİZ.10.4.5"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz",
+      "norm": "rezonans ve depreme iliskin kavramlar uzerinden depremi sorgula",
+      "konu_id": "fizik_10_u04_k06",
+      "konu": "4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+      "topic_key": "Fizik > 4.6.1 Rezonans ve Depremle İlgili Kavramlar",
+      "kodlar": [
+        "FİZ.10.4.6"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "kimyasal değişimlere ilişkin kanıtları belirlemeye yönelik bilimsel gözlem yapabilmeniz,",
+      "norm": "kimyasal degisimlere iliskin kanitlari belirlemeye yonelik bilimsel gozlem yap",
+      "konu_id": "kimya_10_u01_k01",
+      "konu": "1.1.1 Kimyasal Tepkimelerin Oluşumu",
+      "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu",
+      "kodlar": [
+        "KİM.10.1.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilmeniz,",
+      "norm": "kimyasal tepkimelerin olusumunu aciklamak icin bilimsel model olustur",
+      "konu_id": "kimya_10_u01_k01",
+      "konu": "1.1.1 Kimyasal Tepkimelerin Oluşumu",
+      "topic_key": "Kimya > 1.1.1 Kimyasal Tepkimelerin Oluşumu",
+      "kodlar": [
+        "KİM.10.1.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,",
+      "norm": "kimyasal tepkime turlerinin olusum surecine iliskin bilimsel gozlem yap",
+      "konu_id": "kimya_10_u01_k02",
+      "konu": "1.1.2 Kimyasal Tepkime Türleri",
+      "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri",
+      "kodlar": [
+        "KİM.10.1.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "mol kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "norm": "mol kavramina iliskin operasyonel tanimlama yap",
+      "konu_id": "kimya_10_u01_k03",
+      "konu": "1.1.3 Mol Kavramı",
+      "topic_key": "Kimya > 1.1.3 Mol Kavramı",
+      "kodlar": [
+        "KİM.10.1.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "saf maddelerin ölçülebilir özellikleri arasındaki ilişkileri belirlemeye yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "norm": "saf maddelerin olculebilir ozellikleri arasindaki iliskileri belirlemeye yonelik tumdengelimsel akil yurut",
+      "konu_id": "kimya_10_u01_k03",
+      "konu": "1.1.3 Mol Kavramı",
+      "topic_key": "Kimya > 1.1.3 Mol Kavramı",
+      "kodlar": [
+        "KİM.10.1.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "kimyasal tepkime denklemlerinde tanecik sayılarının tutarsızlıklarına ilişkin çelişkiyi giderebilmeniz,",
+      "norm": "kimyasal tepkime denklemlerinde tanecik sayilarinin tutarsizliklarina iliskin celiskiyi gider",
+      "konu_id": "kimya_10_u01_k04",
+      "konu": "1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
+      "topic_key": "Kimya > 1.1.4 Kimyasal Tepkime Denklemlerinin Denkleştirilmesi",
+      "kodlar": [
+        "KİM.10.1.6"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "kimyasal tepkimelerde stokiyometrik ilişkilere yönelik tümdengelimsel akıl yürütebilmeniz,",
+      "norm": "kimyasal tepkimelerde stokiyometrik iliskilere yonelik tumdengelimsel akil yurut",
+      "konu_id": "kimya_10_u01_k05",
+      "konu": "1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
+      "topic_key": "Kimya > 1.1.5 Kimyasal (Stokiyometrik) Hesaplamalar",
+      "kodlar": [
+        "KİM.10.1.7"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "gazların özelliklerine ilişkin bilimsel gözlem yapabilmeniz,",
+      "norm": "gazlarin ozelliklerine iliskin bilimsel gozlem yap",
+      "konu_id": "kimya_10_u01_k06",
+      "konu": "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+      "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+      "kodlar": [
+        "KİM.10.1.8"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,",
+      "norm": "gazlarin ozellikleri arasindaki iliskileri bilimsel sorgula",
+      "konu_id": "kimya_10_u01_k06",
+      "konu": "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+      "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+      "kodlar": [
+        "KİM.10.1.9"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "coklu"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilmeniz,",
+      "norm": "gazlarin ozellikleri arasindaki iliskileri bilimsel sorgula",
+      "konu_id": "kimya_10_u01_k07",
+      "konu": "1.2.2 Gazların Kinetik Moleküler Teorisi",
+      "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
+      "kodlar": [
+        "KİM.10.1.9"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "coklu"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "ideal gaz eşitliğini tümevarımsal akıl yürütme yoluyla oluşturabilmeniz,",
+      "norm": "ideal gaz esitligini tumevarimsal akil yurutme yoluyla olustur",
+      "konu_id": "kimya_10_u01_k08",
+      "konu": "1.2.3 İdeal Gaz Yasası",
+      "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası",
+      "kodlar": [
+        "KİM.10.1.10"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "gazların farklı ortamlarda yayılmasına ilişkin deney yapabilmeniz,",
+      "norm": "gazlarin farkli ortamlarda yayilmasina iliskin deney yap",
+      "konu_id": "kimya_10_u01_k09",
+      "konu": "1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+      "topic_key": "Kimya > 1.2.4 Graham Difüzyon ve Efüzyon Yasası",
+      "kodlar": [
+        "KİM.10.1.11"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,",
+      "norm": "cozunme surecine iliskin bilimsel model olustur",
+      "konu_id": "kimya_10_u02_k01",
+      "konu": "2.1.1 Çözünme Süreci",
+      "topic_key": "Kimya > 2.1.1 Çözünme Süreci",
+      "kodlar": [
+        "KİM.10.2.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,",
+      "norm": "farkli maddelerin birbiri icinde cozunebilirligini kanit kullanarak acikla",
+      "konu_id": "kimya_10_u02_k02",
+      "konu": "2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "kodlar": [
+        "KİM.10.2.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "çözünme olayını sınıflandırabilmeniz,",
+      "norm": "cozunme olayini siniflandir",
+      "konu_id": "kimya_10_u02_k03",
+      "konu": "2.1.3 Çözünme Olayının Sınıflandırılması",
+      "topic_key": "Kimya > 2.1.3 Çözünme Olayının Sınıflandırılması",
+      "kodlar": [
+        "KİM.10.2.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "çözeltilerin molar derişimine ilişkin tümevarımsal akıl yürütebilmeniz,",
+      "norm": "cozeltilerin molar derisimine iliskin tumevarimsal akil yurut",
+      "konu_id": "kimya_10_u02_k04",
+      "konu": "2.1.4 Derişim Birimleri (Molarite, ppm)",
+      "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
+      "kodlar": [
+        "KİM.10.2.7"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "çözünürlük kavramına ilişkin operasyonel tanımlama yapabilmeniz,",
+      "norm": "cozunurluk kavramina iliskin operasyonel tanimlama yap",
+      "konu_id": "kimya_10_u02_k05",
+      "konu": "2.1.5 Çözünürlük",
+      "topic_key": "Kimya > 2.1.5 Çözünürlük",
+      "kodlar": [
+        "KİM.10.2.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "çözünürlüğe etki eden faktörleri belirlemeye yönelik kanıt kullanabilmeniz,",
+      "norm": "cozunurluge etki eden faktorleri belirlemeye yonelik kanit kullan",
+      "konu_id": "kimya_10_u02_k06",
+      "konu": "2.1.6 Çözünürlüğe Etki Eden Faktörler",
+      "topic_key": "Kimya > 2.1.6 Çözünürlüğe Etki Eden Faktörler",
+      "kodlar": [
+        "KİM.10.2.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "çözeltileri sınıflandırabilmeniz,",
+      "norm": "cozeltileri siniflandir",
+      "konu_id": "kimya_10_u02_k07",
+      "konu": "2.1.7 Çözeltilerin Sınıflandırılması",
+      "topic_key": "Kimya > 2.1.7 Çözeltilerin Sınıflandırılması",
+      "kodlar": [
+        "KİM.10.2.6"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "çözünen maddenin tanecik sayısının çözeltilerin kaynama ve donma noktasına etkisini belirlemeye yönelik hipotez oluşturabilmeniz,",
+      "norm": "cozunen maddenin tanecik sayisinin cozeltilerin kaynama ve donma noktasina etkisini belirlemeye yonelik hipotez olustur",
+      "konu_id": "kimya_10_u02_k08",
+      "konu": "2.1.8 Koligatif Özellikler",
+      "topic_key": "Kimya > 2.1.8 Koligatif Özellikler",
+      "kodlar": [
+        "KİM.10.2.8"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,",
+      "norm": "kimya dersinde mikro olcekli deney tercih etmenin sonuclarini ekosistem acisindan degerlendir",
+      "konu_id": "kimya_10_u03_k01",
+      "konu": "3.1.1 Makro ve Mikro Ölçekli Deneyler",
+      "topic_key": "Kimya > 3.1.1 Makro ve Mikro Ölçekli Deneyler",
+      "kodlar": [
+        "KİM.10.3.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Kimya",
+      "metin": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz,",
+      "norm": "kimyasal tepkimeler sonucunda atmosferin dogasindaki degisimin ekosisteme etkilerine yonelik problem coz",
+      "konu_id": "kimya_10_u03_k02",
+      "konu": "3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "kodlar": [
+        "KİM.10.3.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "dik üçgende trigonometrik oranlara (sinüs, kosinüs, tanjant, kotanjant) ve trigonometrik özdeşliklere ilişkin çıkarım yapabilmeniz,",
+      "norm": "dik ucgende trigonometrik oranlara sinus kosinus tanjant kotanjant ve trigonometrik ozdesliklere iliskin cikarim yap",
+      "konu_id": "mat_10_u01_k01",
+      "konu": "1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
+      "topic_key": "Matematik > 1.1 Dik Üçgende Trigonometrik Oranlar ve Trigonometrik Özdeşlikler",
+      "kodlar": [
+        "MAT.10.1.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilmeniz,",
+      "norm": "ucgenin yardimci elemanlarinin ozellikleri ile ilgili cikarim yap",
+      "konu_id": "mat_10_u01_k02",
+      "konu": "1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
+      "topic_key": "Matematik > 1.2 Üçgende Yardımcı Elemanlar ve Bunlar Arasındaki İlişkiler",
+      "kodlar": [
+        "MAT.10.1.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilmeniz,",
+      "norm": "ucgenin bir kenari ve o kenara ait yuksekliginin degisimine bagli olarak alaninin degisimine iliskin cikarim yap",
+      "konu_id": "mat_10_u01_k03",
+      "konu": "1.3 Üçgende Alan",
+      "topic_key": "Matematik > 1.3 Üçgende Alan",
+      "kodlar": [
+        "MAT.10.1.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "sinüs ve kosinüs teoremlerini doğrulayabilmeniz veya ispatlayabilmeniz",
+      "norm": "sinus ve kosinus teoremlerini dogrulayabilmeniz veya ispatla",
+      "konu_id": "mat_10_u01_k04",
+      "konu": "1.4 Sinüs ve Kosinüs Teoremleri",
+      "topic_key": "Matematik > 1.4 Sinüs ve Kosinüs Teoremleri",
+      "kodlar": [
+        "MAT.10.1.4"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "norm": "iki kategorik degiskenli veri ile calisabilmeniz ve iki kategorik degisken arasindaki iliskililige dayali karar ver",
+      "konu_id": "mat_10_u02_k01",
+      "konu": "2.1 İki Kategorik Değişkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+      "topic_key": "Matematik > 2.1 İki Kategorik Değişkenin İlişkililiğini İçeren İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+      "kodlar": [
+        "MAT.10.2.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "norm": "baskalari tarafindan olusturulan iki kategorik degiskenli verilerin iliskililigine dayali istatistiksel sonuc veya yorumlari tartis",
+      "konu_id": "mat_10_u02_k02",
+      "konu": "2.2 Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verilerin İlişkililiğine Dayalı İstatistiksel Sonuç veya Yorumları Tartışma",
+      "topic_key": "Matematik > 2.2 Başkaları Tarafından Oluşturulan İki Kategorik Değişkenli Verilerin İlişkililiğine Dayalı İstatistiksel Sonuç veya Yorumları Tartışma",
+      "kodlar": [
+        "MAT.10.2.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "bir doğal sayı ile asal çarpanları ve bölenleri arasındaki ilişkilere dair çıkarım yapabilmeniz,",
+      "norm": "bir dogal sayi ile asal carpanlari ve bolenleri arasindaki iliskilere dair cikarim yap",
+      "konu_id": "mat_10_u03_k01",
+      "konu": "3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
+      "topic_key": "Matematik > 3.1 Bir Doğal Sayı ile Asal Çarpanları ve Bölenleri Arasındaki İlişkiler",
+      "kodlar": [
+        "MAT.10.3.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "birden çok doğal sayının ortak bölenleriyle bunların en büyüğü ve ortak katlarıyla bunların en küçüğü arasındaki ilişkilere dair muhakeme yapabilmeniz,",
+      "norm": "birden cok dogal sayinin ortak bolenleriyle bunlarin en buyugu ve ortak katlariyla bunlarin en kucugu arasindaki iliskilere dair muhakeme yap",
+      "konu_id": "mat_10_u03_k02",
+      "konu": "3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
+      "topic_key": "Matematik > 3.2 En Büyük Ortak Bölen-En Küçük Ortak Kat",
+      "kodlar": [
+        "MAT.10.3.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "bir doğal sayının belirli doğal sayılara bölümünden kalanlarına dair muhakeme yapabilmeniz",
+      "norm": "bir dogal sayinin belirli dogal sayilara bolumunden kalanlarina dair muhakeme yap",
+      "konu_id": "mat_10_u03_k03",
+      "konu": "3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
+      "topic_key": "Matematik > 3.3 Bölünebilme Özelliklerini Kullanarak Kalan Bulma",
+      "kodlar": [
+        "MAT.10.3.3"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "norm": "gercek sayilarda fonksiyon olma sartlari ile gercek sayilarda tanimli fonksiyonlarin nitel ozelliklerini matematiksel temsillerle degerlendir",
+      "konu_id": "mat_10_u04_k01",
+      "konu": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+      "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+      "kodlar": [
+        "MAT.10.4.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "norm": "gercek sayilarda f x x seklinde tanimli karesel referans fonksiyonun nitel ozellikleri ile bu fonksiyondan turetilen karesel fonksiyonlarin nitel ozelliklerine iliskin matematiksel muhakeme yap",
+      "konu_id": "mat_10_u04_k02",
+      "konu": "4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
+      "topic_key": "Matematik > 4.2 Gerçek Sayılarda Tanımlı Karesel Fonksiyonlar ve Nitel Özellikleri",
+      "kodlar": [
+        "MAT.10.4.2"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "gerçek sayılarda f(x) = √x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karekök fonksiyonlarının nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "norm": "gercek sayilarda f x x x 0 seklinde tanimli karekok referans fonksiyonun nitel ozellikleri ile bu fonksiyondan turetilen karekok fonksiyonlarinin nitel ozelliklerine iliskin matematiksel muhakeme yap",
+      "konu_id": "mat_10_u04_k03",
+      "konu": "4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
+      "topic_key": "Matematik > 4.3 Gerçek Sayılarda Tanımlı Karekök Fonksiyonlar ve Nitel Özellikleri",
+      "kodlar": [
+        "MAT.10.4.3"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "norm": "gercek sayilarda f x 1 x x 0 seklinde tanimli rasyonel referans fonksiyonun nitel ozellikleri ile bu fonksiyondan turetilen rasyonel fonksiyonlarin nitel ozelliklerine iliskin matematiksel muhakeme yap",
+      "konu_id": "mat_10_u04_k04",
+      "konu": "4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+      "topic_key": "Matematik > 4.4 Gerçek Sayılarda Tanımlı Rasyonel Fonksiyonlar ve Nitel Özellikleri",
+      "kodlar": [
+        "MAT.10.4.4"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "doğrusal, karesel, karekök ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan türetilebilen fonksiyonların ters fonksiyonlarına dair çıkarım yapabilmeniz,",
+      "norm": "dogrusal karesel karekok ve rasyonel referans fonksiyonlar ile bu fonksiyonlardan turetilebilen fonksiyonlarin ters fonksiyonlarina dair cikarim yap",
+      "konu_id": "mat_10_u04_k05",
+      "konu": "4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+      "topic_key": "Matematik > 4.5 Doğrusal, Karesel, Karekök ve Rasyonel Referans Fonksiyonlar ile Bu Fonksiyonlardan Türetilebilen Fonksiyonların Ters Fonksiyonları",
+      "kodlar": [
+        "MAT.10.4.5"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "norm": "dogrusal karesel karekok rasyonel referans fonksiyonlar ve bunlardan turetilen fonksiyonlarla ifade edilebilen denklem ve esitsizlikler iceren problemleri coz",
+      "konu_id": "mat_10_u04_k06",
+      "konu": "4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+      "topic_key": "Matematik > 4.6 Doğrusal, Karesel, Karekök, Rasyonel Referans Fonksiyonlar ve Bunlardan Türetilen Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+      "kodlar": [
+        "MAT.10.4.6"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "sayma stratejileri kullanarak problem çözebilmeniz,",
+      "norm": "sayma stratejileri kullanarak problem coz",
+      "konu_id": "mat_10_u05_k01",
+      "konu": "5.1 Sayma Stratejileri",
+      "topic_key": "Matematik > 5.1 Sayma Stratejileri",
+      "kodlar": [
+        "MAT.10.5.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "norm": "cebirsel ve fonksiyonel islemleri algoritmik bir dille yapilandir",
+      "konu_id": "mat_10_u05_k02",
+      "konu": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
+      "topic_key": "Matematik > 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
+      "kodlar": [
+        "MAT.10.5.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "norm": "dik koordinat sisteminde iki nokta arasindaki uzaklikla ve bir dogru parcasini belli oranda bolen bir noktanin koordinatlariyla ilgili cikarim yap",
+      "konu_id": "mat_10_u06_k01",
+      "konu": "6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+      "topic_key": "Matematik > 6.1 Dik Koordinat Sisteminde İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+      "kodlar": [
+        "MAT.10.6.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "norm": "dik koordinat sistemini dogrunun ozelliklerini incelemek ve dogru ile ilgili problemleri cozebilmek icin uygun bir temsil araci olarak kullan",
+      "konu_id": "mat_10_u06_k02",
+      "konu": "6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+      "topic_key": "Matematik > 6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+      "kodlar": [
+        "MAT.10.6.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "koşullu olasılık ile çıkarım yapabilmeniz,",
+      "norm": "kosullu olasilik ile cikarim yap",
+      "konu_id": "mat_10_u07_k01",
+      "konu": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+      "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+      "kodlar": [
+        "MAT.10.7.1"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Matematik",
+      "metin": "bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilmeniz",
+      "norm": "bir olayin gerceklesmesinin diger bir olayin meydana gelmesine bagli oldugu durumlarin olasiligini mevcut bilgiye veriye dayali tahmin edebil",
+      "konu_id": "mat_10_u07_k02",
+      "konu": "7.2 Bayes Teoremi",
+      "topic_key": "Matematik > 7.2 Bayes Teoremi",
+      "kodlar": [
+        "MAT.10.7.2"
+      ],
+      "kod_guven": "kesin",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "norm": "ivme ve hiz degisimi arasindaki iliskiyi yorumla",
+      "konu_id": "fizik_10_u01_k05",
+      "konu": "1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+      "topic_key": "Fizik > 1.2.1 İvme ve Hız Değişimi Arasındaki İlişki",
+      "kodlar": [
+        "FİZ.10.1.2"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "norm": "yatay dogrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumla",
+      "konu_id": "fizik_10_u01_k06",
+      "konu": "1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+      "topic_key": "Fizik > 1.2.2 Yatay Doğrultuda Sabit İvmeyle Hareket Eden Cisimlerin Hareketi",
+      "kodlar": [
+        "FİZ.10.1.2"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,",
+      "norm": "serbest dusmeye yonelik matematiksel hesaplamalari yap",
+      "konu_id": "fizik_10_u01_k08",
+      "konu": "1.3.2 Serbest Düşme Hareketi",
+      "topic_key": "Fizik > 1.3.2 Serbest Düşme Hareketi",
+      "kodlar": [],
+      "kod_guven": "yok",
+      "konu_guven": "kesin"
+    },
+    {
+      "ders": "Fizik",
+      "metin": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "norm": "matematiksel modelleri ve grafiksel donusumleri iki boyutta sabit ivmeli harekete yonelik problem durumlarina cozum getirmek icin kullan",
+      "konu_id": "fizik_10_u01_k09",
+      "konu": "1.4 İki Boyutta Sabit İvmeli Hareket",
+      "topic_key": "Fizik > 1.4 İki Boyutta Sabit İvmeli Hareket",
+      "kodlar": [
+        "FİZ.10.1.3"
+      ],
+      "kod_guven": "yapisal",
+      "konu_guven": "kesin"
+    }
+  ],
+  "eslesmeyen_metinler": [
+    {
+      "ders": "Coğrafya",
+      "metin": "coğrafyanın konum, zaman, mekân, hareket, bölge, sürdürülebilirlik gibi temel kavramları çerçevesinde örnek olay, olgu veya mekândan yararlanarak coğrafi bakış açısı kazanabilmeniz",
+      "konu_id": "cogr_10_u01_k01",
+      "konu_kodlari": [
+        "COĞ.10.1.1"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "mekânsal verilerin haritalara aktarılmasında kullanılan vektör veri yapısını harita oluşturma yoluyla kazanabilmeniz",
+      "konu_id": "cogr_10_u02_k02",
+      "konu_kodlari": [
+        "COĞ.10.2.2"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "levha tektoniğinin sistemsel süreci ve bu süreci oluşturan bileşenleri çözümleyebilmeniz,",
+      "konu_id": "cogr_10_u03_k01",
+      "konu_kodlari": [
+        "COĞ.10.3.1"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yeryüzünü şekillendiren süreçler ile yeryüzü şekillerinin oluşumunda etkili olan aşınma ve çözünme süreçlerinin iklim ve kayaç özellikleriyle ilişkisini anlamlandırabilmeniz,",
+      "konu_id": "cogr_10_u03_k02",
+      "konu_kodlari": [
+        "COĞ.10.3.2"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yeryüzü şekillerinin oluşumunda aşınma, taşınma ve biriktirme süreçlerinin etkisini belirleyebilmeniz,",
+      "konu_id": "cogr_10_u03_k03",
+      "konu_kodlari": [
+        "COĞ.10.3.3"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "yerleşmeleri fonksiyonlarına göre sınıflandırabilmeniz",
+      "konu_id": "cogr_10_u04_k01",
+      "konu_kodlari": [
+        "COĞ.10.4.1"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "ekonomik faaliyetlerin özelliklerinden yola çıkarak bu faaliyet alanlarını birincil, ikincil, üçüncül, dördüncül ve beşincil sektörler şeklinde sınıflandırabilmeniz,",
+      "konu_id": "cogr_10_u05_k01",
+      "konu_kodlari": [
+        "COĞ.10.5.1"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "ülke ekonomilerinin sektörel yapısını gösteren tablo, grafik, şekil ve/veya diyagramlar üzerinden ülkelerin gelişmişlik düzeylerini karşılaştırabilmeniz,",
+      "konu_id": "cogr_10_u05_k01",
+      "konu_kodlari": [
+        "COĞ.10.5.1"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "ekonomik faaliyetlerin Türkiye ekonomisindeki yeri ve önemini hazırlanan tablo, grafik, şekil ve/veya diyagramlar üzerinden anlaşılır hâle getirebilmeniz",
+      "konu_id": "cogr_10_u05_k01",
+      "konu_kodlari": [
+        "COĞ.10.5.1"
+      ]
+    },
+    {
+      "ders": "Coğrafya",
+      "metin": "farklı ülkelerin afetle mücadele uygulamalarını sorgulayabilmeniz,",
+      "konu_id": "cogr_10_u06_k01",
+      "konu_kodlari": [
+        "COĞ.10.6.2",
+        "COĞ.10.6.3",
+        "COĞ.10.6.4"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "yatay doğrultuda sabit hızlı ve sabit ivmeli hareketi açıklamanız,",
+      "konu_id": "fizik_10_u01_k01",
+      "konu_kodlari": [
+        "FİZ.10.1.1"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "ivme ve hız değişimi arasındaki ilişkiyi yorumlayabilmeniz,",
+      "konu_id": "fizik_10_u01_k02",
+      "konu_kodlari": [
+        "FİZ.10.1.2"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "yatay doğrultuda sabit ivmeli hareket grafiklerinden elde edilen matematiksel modelleri yorumlayabilmeniz,",
+      "konu_id": "fizik_10_u01_k02",
+      "konu_kodlari": [
+        "FİZ.10.1.2"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "serbest düşmeye yönelik matematiksel hesaplamaları yapabilmeniz,",
+      "konu_id": "fizik_10_u01_k03",
+      "konu_kodlari": []
+    },
+    {
+      "ders": "Fizik",
+      "metin": "matematiksel modelleri ve grafiksel dönüşümleri iki boyutta sabit ivmeli harekete yönelik problem durumlarına çözüm getirmek için kullanabilmeniz",
+      "konu_id": "fizik_10_u01_k04",
+      "konu_kodlari": [
+        "FİZ.10.1.3"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "yapılan işin büyüklüğünü hesaplayabilmeniz,",
+      "konu_id": "fizik_10_u02_k01",
+      "konu_kodlari": [
+        "FİZ.10.2.1",
+        "FİZ.10.2.2"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "iş, enerji ve güç arasındaki ilişkiye yönelik çıkarım yapabilmeniz,",
+      "konu_id": "fizik_10_u02_k01",
+      "konu_kodlari": [
+        "FİZ.10.2.1",
+        "FİZ.10.2.2"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "güç hesapları yapabilmeniz,",
+      "konu_id": "fizik_10_u02_k01",
+      "konu_kodlari": [
+        "FİZ.10.2.1",
+        "FİZ.10.2.2"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "mekanik enerji ile ilgili hesaplamalar yapabilmeniz,",
+      "konu_id": "fizik_10_u02_k03",
+      "konu_kodlari": [
+        "FİZ.10.2.4"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "basit elektrik devresinde potansiyel fark, elektrik akımı ve direnç kavramlarını tanımlayabilmeniz ve elektrik akımı kavramını çözümleyebilmeniz,",
+      "konu_id": "fizik_10_u03_k01",
+      "konu_kodlari": [
+        "FİZ.10.3.1"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "konu_id": "fizik_10_u03_k02",
+      "konu_kodlari": [
+        "FİZ.10.3.2"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "konu_id": "fizik_10_u03_k03",
+      "konu_kodlari": [
+        "FİZ.10.3.3"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "eşdeğer direncin büyüklüğünü hesaplayabilmeniz,",
+      "konu_id": "fizik_10_u03_k04",
+      "konu_kodlari": [
+        "FİZ.10.3.4"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "dalgaların temel kavramlarını tanımlayabilmeniz,",
+      "konu_id": "fizik_10_u04_k01",
+      "konu_kodlari": [
+        "FİZ.10.4.2"
+      ]
+    },
+    {
+      "ders": "Fizik",
+      "metin": "su dalgalarında yansıma ve kırılma olaylarına ilişkin çıkarımlar yapabilmeniz,",
+      "konu_id": "fizik_10_u04_k05",
+      "konu_kodlari": [
+        "FİZ.10.4.5"
+      ]
+    },
+    {
+      "ders": "Matematik",
+      "metin": "gerçek sayılarda f(x) = x² şeklinde tanımlı karesel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karesel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "konu_id": "mat_10_u04_k02",
+      "konu_kodlari": [
+        "MAT.10.4.2"
+      ]
+    },
+    {
+      "ders": "Matematik",
+      "metin": "gerçek sayılarda f(x) = √x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen karekök fonksiyonlarının nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "konu_id": "mat_10_u04_k03",
+      "konu_kodlari": [
+        "MAT.10.4.3"
+      ]
+    },
+    {
+      "ders": "Matematik",
+      "metin": "gerçek sayılarda f(x) = 1/x (x ≠ 0) şeklinde tanımlı rasyonel referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen rasyonel fonksiyonların nitel özelliklerine ilişkin matematiksel muhakeme yapabilmeniz,",
+      "konu_id": "mat_10_u04_k04",
+      "konu_kodlari": [
+        "MAT.10.4.4"
+      ]
+    }
+  ]
+}

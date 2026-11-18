@@ -1,0 +1,285 @@
+{
+  "konu_id": "biyo_10_t01_c06",
+  "kod": "BİY.10.1.6",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.49-56",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t01_c06_o01",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin niteliklerini tanımlar.",
+      "metin": "Bir öğrenci ince bağırsak kesitini incelerken sindirilmiş glikoz moleküllerinin villuslardaki kılcal damarlara geçtiğini gözlemlemiştir. Bu moleküllerin sindirim kanalından kana geçişine verilen ad nedir?",
+      "secenekler": [
+        "Sindirim",
+        "Emilim",
+        "Taşıma",
+        "Sindirim öz suyu"
+      ],
+      "dogru_index": 1,
+      "cozum": "Emilim, sindirilmiş besinlerin sindirim kanalından kana geçişidir. Taşıma ise emilen maddelerin dolaşım sistemiyle hücrelere ulaştırılmasıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Emilim nedir?",
+        "back": "Sindirilmiş besinlerin sindirim kanalından kana geçişidir."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o02",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin niteliklerini tanımlar.",
+      "metin": "İnce bağırsağın iç yüzeyinde bulunan villus ve mikrovillusların temel işlevi hangisidir?",
+      "secenekler": [
+        "Besinleri mekanik olarak öğütmek",
+        "Mide asidini nötralize etmek",
+        "Safra sıvısı üretmek",
+        "Emilim yüzey alanını artırmak"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kıvrımlar, villuslar ve mikrovilluslar ince bağırsağın yüzey alanını büyük ölçüde artırarak emilimi hızlandırır. Villus içinde kılcal kan ve lenf damarları bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Villus nedir?",
+        "back": "İnce bağırsak iç yüzeyinde emilim yüzeyini artıran parmak şeklindeki çıkıntılardır."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o03",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin niteliklerini tanımlar.",
+      "metin": "İnsanda sindirim kanalının bölümleri, besinin izlediği yol bakımından hangisinde doğru sıralanmıştır?",
+      "secenekler": [
+        "Ağız → yutak → yemek borusu → mide → ince bağırsak → kalın bağırsak → anüs",
+        "Ağız → yemek borusu → mide → kalın bağırsak → ince bağırsak → anüs",
+        "Ağız → mide → yutak → ince bağırsak → kalın bağırsak → anüs",
+        "Ağız → yutak → mide → yemek borusu → ince bağırsak → anüs"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sindirim kanalı ağız, yutak, yemek borusu, mide, ince bağırsak, kalın bağırsak ve anüsten oluşur. Karaciğer, pankreas ve safra kesesi yardımcı organlardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sindirim sisteminin yardımcı organlarının listesi nedir?",
+        "back": "Karaciğer, pankreas ve safra kesesidir."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o04",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin besinlerden enerji eldesi için gerekliliğiyle ilgili bilgileri/verileri toplar ve kaydeder.",
+      "metin": "Tabloda besinlerin kimyasal sindirim bölgeleri verilmiştir. Buna göre hangi satırda bölge yanlış belirtilmiştir?",
+      "secenekler": [
+        "I. satır",
+        "II. satır",
+        "III. satır",
+        "IV. satır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Nötral yağların kimyasal sindirimi ince bağırsakta gerçekleşir; ağızda yağ sindirimi yoktur. Bu nedenle III. satır hatalıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Besin",
+          "Bölge",
+          "Yapı birimi"
+        ],
+        "satirlar": [
+          [
+            "Karbohidrat",
+            "Ağız, ince bağırsak",
+            "Monosakkarit"
+          ],
+          [
+            "Protein",
+            "Mide, ince bağırsak",
+            "Amino asit"
+          ],
+          [
+            "Nötral yağ",
+            "Ağız, ince bağırsak",
+            "Yağ asidi, gliserol"
+          ],
+          [
+            "Protein",
+            "İnce bağırsak",
+            "Amino asit"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Yağların kimyasal sindiriminin gerçekleştiği yer nedir?",
+        "back": "İnce bağırsakta gerçekleşir; yağ asidi ve gliserole parçalanır."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o05",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin besinlerden enerji eldesi için gerekliliğiyle ilgili bilgileri/verileri toplar ve kaydeder.",
+      "metin": "Karaciğerden salgılanan safra sıvısının yağların sindirimine katkısı hangisidir?",
+      "secenekler": [
+        "Yağları doğrudan glikoz ve gliserole parçalar.",
+        "Mideden gelen asitli içeriği nötralize eder.",
+        "Proteinleri amino asitlere ayırır.",
+        "Yağları küçük damlacıklara ayırarak enzimlerin etki yüzeyini artırır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Safra sıvısı yağları mekanik olarak küçük damlacıklara ayırır; böylece yağ sindirim enzimlerinin etki edebileceği yüzey alanı artar. Safranın kendisi enzim değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Safra sıvısının işlevi nedir?",
+        "back": "Yağları küçük damlacıklara ayırarak yağ sindirim enzimlerinin etki yüzeyini artırır."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o06",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin besinlerden enerji eldesi için gerekliliğiyle ilgili bilgileri/verileri toplar ve kaydeder.",
+      "metin": "Pankreas öz suyunun bikarbonat iyonları bakımından zengin olmasının nedeni hangisidir?",
+      "secenekler": [
+        "İnce bağırsakta asitliği daha da artırmak",
+        "Mideden ince bağırsağa geçen asitli içeriği nötralize etmek",
+        "Yağları doğrudan emilime hazırlamak",
+        "Kalın bağırsakta su emilimini durdurmak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Pankreas öz suyu bikarbonatça zengindir ve mideden gelen asitli içeriği nötralize eder. Böylece ince bağırsak enzimlerinin çalışabileceği uygun pH sağlanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Pankreas öz suyunun içeriği nedir?",
+        "back": "Sindirim enzimleri ve asitli içeriği nötralize eden bikarbonat iyonları içerir."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o07",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin besinlerden enerji eldesi için gerekliliğiyle ilgili topladığı bilgileri/verileri yorumlar ve değerlendirir.",
+      "metin": "Bir hastada safra kanalı tıkanmıştır. Bu durumda yağların sindiriminde hangi sorun beklenir?",
+      "secenekler": [
+        "Yağ damlacıkları küçülmediği için enzimlerin etki yüzeyi azalır.",
+        "Yağlar midede sindirilmeye başlar.",
+        "Yağ asitleri doğrudan mideye emilir.",
+        "Yağ sindirimi hızlanır ve tamamlanır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Safra yağları küçük damlacıklara ayırdığı için sindirimi kolaylaştırır. Kanal tıkanınca safra ince bağırsağa ulaşamaz, yüzey alanı azalır ve yağ sindirimi zorlaşır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Safra üretiminin gerçekleştiği organ nedir?",
+        "back": "Karaciğerde üretilir, safra kesesinde depolanır."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o08",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin besinlerden enerji eldesi için gerekliliğiyle ilgili topladığı bilgileri/verileri yorumlar ve değerlendirir.",
+      "metin": "Midede HCl ve sindirim enzimleri bulunmasına rağmen midenin kendi duvarının sindirilmemesinin nedeni hangisidir?",
+      "secenekler": [
+        "Midede enzim bulunmaması",
+        "Mide öz suyunun bazik olması",
+        "Mide iç duvarının mukus tabakasıyla kaplı olması",
+        "Mide duvarında protein bulunmaması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Mide iç duvarını kaplayan hücreler mukus salgılar ve bu tabaka midenin kendi dokusunun sindirilmesini engeller.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mide öz suyunun içeriği nedir?",
+        "back": "HCl, sindirim enzimleri ve mukus içerir."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o09",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin besinlerden enerji eldesi için gerekliliğiyle ilgili topladığı bilgileri/verileri yorumlar ve değerlendirir.",
+      "metin": "Yağ sindirimi sonucu oluşan yağ asidi ve gliserol, epitel hücrelerinde yeniden trigliserite dönüştürülerek şilomikron hâlinde lenf kılcallarına verilir. Bu durumun sonucu hangisidir?",
+      "secenekler": [
+        "Yağlar sindirilmeden kalın bağırsağa geçer.",
+        "Yağlar ve yağda çözünen vitaminler lenf yoluyla taşınır.",
+        "Yağ asitleri doğrudan mideye geri döner.",
+        "Trigliseritler kanda çözünmeden kalır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Şilomikronlar villus içindeki lenf kılcallarına, oradan kan dolaşımına katılır. Yağda çözünen A, D, E ve K vitaminleri de lenf yoluyla taşınır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Şilomikron nedir?",
+        "back": "Yağ asidi ve gliserolün epitel hücrelerinde trigliserite dönüşerek protein ve kolesterolle oluşturduğu taşıma yapısıdır."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c06_o10",
+      "alt_beceri": "İnsanda sindirim, emilim ve taşıma süreçlerinin niteliklerini tanımlar.",
+      "metin": "Karbohidratların kimyasal sindiriminin başladığı yer ve burada etkili olan salgı hangisinde doğru verilmiştir?",
+      "secenekler": [
+        "Mide — safra sıvısı",
+        "İnce bağırsak — HCl",
+        "Kalın bağırsak — pepsin",
+        "Ağız — tükürük salgısındaki amilaz"
+      ],
+      "dogru_index": 3,
+      "cozum": "Karbohidratların sindirimi ağızda tükürük salgısındaki amilaz enzimiyle başlar, ince bağırsakta tamamlanır. Safra yağlarla, HCl proteinlerle ilgilidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karbohidrat sindiriminin başladığı yer nedir?",
+        "back": "Ağızda tükürük salgısındaki enzimlerle başlar."
+      },
+      "kazanim": "İnsanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t01_c06_o01:flashcard",
+      "front": "Emilim nedir?",
+      "back": "Sindirilmiş besinlerin sindirim kanalından kana geçişidir."
+    },
+    {
+      "id": "biyo_10_t01_c06_o02:flashcard",
+      "front": "Villus nedir?",
+      "back": "İnce bağırsak iç yüzeyinde emilim yüzeyini artıran parmak şeklindeki çıkıntılardır."
+    },
+    {
+      "id": "biyo_10_t01_c06_o03:flashcard",
+      "front": "Sindirim sisteminin yardımcı organlarının listesi nedir?",
+      "back": "Karaciğer, pankreas ve safra kesesidir."
+    },
+    {
+      "id": "biyo_10_t01_c06_o04:flashcard",
+      "front": "Yağların kimyasal sindiriminin gerçekleştiği yer nedir?",
+      "back": "İnce bağırsakta gerçekleşir; yağ asidi ve gliserole parçalanır."
+    },
+    {
+      "id": "biyo_10_t01_c06_o05:flashcard",
+      "front": "Safra sıvısının işlevi nedir?",
+      "back": "Yağları küçük damlacıklara ayırarak yağ sindirim enzimlerinin etki yüzeyini artırır."
+    },
+    {
+      "id": "biyo_10_t01_c06_o06:flashcard",
+      "front": "Pankreas öz suyunun içeriği nedir?",
+      "back": "Sindirim enzimleri ve asitli içeriği nötralize eden bikarbonat iyonları içerir."
+    },
+    {
+      "id": "biyo_10_t01_c06_o07:flashcard",
+      "front": "Safra üretiminin gerçekleştiği organ nedir?",
+      "back": "Karaciğerde üretilir, safra kesesinde depolanır."
+    },
+    {
+      "id": "biyo_10_t01_c06_o08:flashcard",
+      "front": "Mide öz suyunun içeriği nedir?",
+      "back": "HCl, sindirim enzimleri ve mukus içerir."
+    },
+    {
+      "id": "biyo_10_t01_c06_o09:flashcard",
+      "front": "Şilomikron nedir?",
+      "back": "Yağ asidi ve gliserolün epitel hücrelerinde trigliserite dönüşerek protein ve kolesterolle oluşturduğu taşıma yapısıdır."
+    },
+    {
+      "id": "biyo_10_t01_c06_o10:flashcard",
+      "front": "Karbohidrat sindiriminin başladığı yer nedir?",
+      "back": "Ağızda tükürük salgısındaki enzimlerle başlar."
+    }
+  ],
+  "topic_key": "Biyoloji > 1.6 İnsanda Sindirim"
+}

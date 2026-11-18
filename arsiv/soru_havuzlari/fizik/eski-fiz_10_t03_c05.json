@@ -1,0 +1,289 @@
+{
+  "konu_id": "fiz_10_t03_c05",
+  "kod": "FİZ.10.3.5",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 3,
+  "tema_adi": "Elektrik",
+  "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme",
+  "kaynak": "Fizik 10 ders kitabı, s.243-250",
+  "sorular": [
+    {
+      "soru_id": "fiz_10_t03_c05_o01",
+      "alt_beceri": "Üreteçlerin seri ve paralel bağlanma türlerini tanımlar.",
+      "metin": "Üreteçlerin seri bağlanması için hangisi doğrudur?",
+      "secenekler": [
+        "Üreteçlerin uç uca bağlanmasıdır.",
+        "Üreteçlerin aynı kutuplarının birbirine bağlanmasıdır.",
+        "Üreteçlerin paralel bağlanmasıyla aynı anlama gelir.",
+        "Üreteçlerin tek başına kullanılmasıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Üreteçlerin uç uca bağlanmasına seri bağlanma denir. Zıt kutupların birbirine bağlanmasıyla oluşan seri bağlanma düz seri bağlanma olarak adlandırılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üreteçlerin seri ya da paralel bağlanma gerekçesi nedir?",
+        "back": "Gereken potansiyel fark ya da akım tek üreteçle karşılanamadığında bağlanırlar."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o02",
+      "alt_beceri": "Üreteçlerin seri ve paralel bağlanma türlerini tanımlar.",
+      "metin": "Paralel bağlı özdeş üreteçler için hangisi doğrudur?",
+      "secenekler": [
+        "Devrenin potansiyel farkı üreteç sayısıyla birlikte artar.",
+        "Üreteçlerin tükenme süresi kısalır.",
+        "K-L noktaları arasındaki potansiyel fark tek üretecin potansiyel farkına eşittir.",
+        "Devreden hiç akım geçmez."
+      ],
+      "dogru_index": 2,
+      "cozum": "Paralel bağlı özdeş üreteçlerde K-L noktaları arasındaki potansiyel fark tek bir üretecin potansiyel farkına eşittir; üreteç sayısı potansiyel farkı değiştirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üreteçlerin paralel bağlanmasının tanımını yazınız.",
+        "back": "Üreteçlerin aynı kutuplarının kendi aralarında birbirine bağlanmasıdır."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o03",
+      "alt_beceri": "Üreteçlerin seri ve paralel bağlanma türlerini tanımlar.",
+      "metin": "Düz seri bağlı özdeş üreteçler için hangisi doğrudur?",
+      "secenekler": [
+        "Toplam potansiyel fark azalarak devreyi zayıflatır.",
+        "Toplam potansiyel fark hiçbir biçimde değişmez.",
+        "Ana kol akımı azalarak lamba söner.",
+        "Toplam potansiyel fark, üreteçlerin potansiyel farkları toplamına eşittir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Düz seri bağlamada üreteçlerin potansiyel farkları aynı yönde olduğundan toplanır: V_KL = V1 + V2 + V3.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düz seri bağlamanın tanımını yazınız.",
+        "back": "Üreteçlerin zıt kutuplarının birbirine bağlanmasıyla oluşan seri bağlamadır."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o04",
+      "alt_beceri": "Üreteçlerin seri ve paralel bağlanması durumunda devrenin potansiyel fark, ana kol akımı ve üreteçlerin tükenme süreleri arasındaki ilişkiyi belirlemek üzere veri toplayarak kaydeder.",
+      "metin": "Her birinin potansiyel farkı 1,5 V olan dört özdeş pil düz seri bağlanmıştır. K-L noktaları arasındaki potansiyel fark kaç V olur?",
+      "secenekler": [
+        "1,5",
+        "6",
+        "4",
+        "0,375"
+      ],
+      "dogru_index": 1,
+      "cozum": "Düz seri bağlamada potansiyel farklar toplanır: 1,5 + 1,5 + 1,5 + 1,5 = 6 V bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri bağlı üreteçlerde potansiyel farklar arasındaki ilişki nedir?",
+        "back": "Potansiyel farklar toplanır; toplam, tek üreteçten büyüktür."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o05",
+      "alt_beceri": "Üreteçlerin seri ve paralel bağlanması durumunda devrenin potansiyel fark, ana kol akımı ve üreteçlerin tükenme süreleri arasındaki ilişkiyi belirlemek üzere veri toplayarak kaydeder.",
+      "metin": "Bir öğrenci özdeş pillerle dört farklı devre kurup lambanın uçları arasındaki potansiyel farkı, akımı ve pillerin tükenme süresini ölçmüştür. Tablodaki verilere göre hangi sonuç çıkarılır?",
+      "secenekler": [
+        "Seri bağlamada V ve akım artar; paralelde V sabit kalırken süre uzar.",
+        "Seri bağlamada potansiyel fark hiç değişmez.",
+        "Paralel bağlamada potansiyel fark iki katına çıkar.",
+        "Pillerin tükenme süresi bağlama türünden etkilenmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Tabloda seri bağlanan pil sayısı arttıkça potansiyel fark ve akımın arttığı görülür. Paralel bağlamada potansiyel fark tek pilinki kadar kalır ancak tükenme süresi iki katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel bağlı özdeş pillerde tükenme süresinin kuralı nedir?",
+        "back": "Pil sayısı arttıkça devre daha uzun süre çalışır."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Devre",
+          "V (V)",
+          "I (A)",
+          "Tükenme (s)"
+        ],
+        "satirlar": [
+          [
+            "Bir pil",
+            "3",
+            "0,3",
+            "600"
+          ],
+          [
+            "İki pil düz seri",
+            "6",
+            "0,6",
+            "600"
+          ],
+          [
+            "Üç pil düz seri",
+            "9",
+            "0,9",
+            "600"
+          ],
+          [
+            "İki pil paralel",
+            "3",
+            "0,6",
+            "1200"
+          ]
+        ]
+      }
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o06",
+      "alt_beceri": "Üreteçlerin seri ve paralel bağlanması durumunda devrenin potansiyel fark, ana kol akımı ve üreteçlerin tükenme süreleri arasındaki ilişkiyi belirlemek üzere veri toplayarak kaydeder.",
+      "metin": "Aynı kutupları birbirine gelecek biçimde ters seri bağlanan 20 V ve 8 V değerindeki iki üreteç için K-L noktaları arasındaki potansiyel fark kaç V olur?",
+      "secenekler": [
+        "28",
+        "20",
+        "12",
+        "2,5"
+      ],
+      "dogru_index": 2,
+      "cozum": "Ters bağlamada potansiyel farklar zıt yönlü olduğu için çıkarılır: 20 − 8 = 12 V bulunur. Akımın yönü büyük potansiyel farklı üretecin yönündedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters seri bağlanan iki üreteçte toplam potansiyel fark nasıl bulunur?",
+        "back": "Büyük potansiyel farktan küçüğü çıkarılarak."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o07",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak değerlendirir.",
+      "metin": "El fenerinde iki pilin seri düz bağlanması ile paralel bağlanması karşılaştırıldığında lambanın parlaklığı için hangisi doğrudur?",
+      "secenekler": [
+        "Paralel bağlamada potansiyel fark arttığı için lamba daha parlak yanar.",
+        "İki durumda da lamba aynı parlaklıkta yanar.",
+        "Seri bağlamada potansiyel fark düştüğü için lamba söner.",
+        "Seri düz bağlamada potansiyel fark arttığı için lamba daha parlak yanar."
+      ],
+      "dogru_index": 3,
+      "cozum": "Düz seri bağlamada toplam potansiyel fark arttığı için lamba üzerinden geçen akım artar ve lamba daha parlak yanar. Paralel bağlamada potansiyel fark tek pilinki kadar kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri düz bağlamanın devreye etkisi nedir?",
+        "back": "Toplam potansiyel fark artar; devreden geçen akım ve lamba parlaklığı artar."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o08",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak değerlendirir.",
+      "metin": "Paralel bağlı özdeş üreteçlerin sağladığı avantaj için hangisi doğrudur?",
+      "secenekler": [
+        "Devrenin potansiyel farkını artırır.",
+        "Devrenin daha uzun süre çalışmasını sağlar.",
+        "Ana kol akımını azaltır.",
+        "Üreteçlerin tükenme süresini kısaltır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Paralel bağlamada potansiyel fark artmaz ancak üreteçler birlikte akım sağladığı için devre daha uzun süre çalışır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel bağlamanın üreteç ömrüne etkisi nedir?",
+        "back": "Özdeş üreteçler paralel bağlandığında devre daha uzun süre çalışır."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o09",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak değerlendirir.",
+      "metin": "8 V ile çalışan bir cihaz için elde yalnızca 2 V değerindeki özdeş piller bulunmaktadır. Cihazın çalışması için bu pillerden kaç tanesi düz seri bağlanmalıdır?",
+      "secenekler": [
+        "4",
+        "2",
+        "6",
+        "16"
+      ],
+      "dogru_index": 0,
+      "cozum": "Düz seri bağlamada potansiyel farklar toplandığından 2 V · 4 = 8 V elde edilir; dört pil düz seri bağlanmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seri bağlamanın gerekli olduğu durum nedir?",
+        "back": "Gereken potansiyel fark tek üreteçle karşılanamadığında."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    },
+    {
+      "soru_id": "fiz_10_t03_c05_o10",
+      "alt_beceri": "Elde ettiği verileri yorumlayarak değerlendirir.",
+      "metin": "Üreteçlerin seri mi paralel mi bağlanacağına karar verirken hangisi doğrudur?",
+      "secenekler": [
+        "Her koşulda seri bağlama tercih edilmelidir.",
+        "Her koşulda paralel bağlama tercih edilmelidir.",
+        "Cihazın ihtiyaç duyduğu potansiyel fark ve akım dikkate alınmalıdır.",
+        "Üreteçlerin fiziksel büyüklüğü tek ölçüttür."
+      ],
+      "dogru_index": 2,
+      "cozum": "Devrenin ihtiyaç duyduğu potansiyel fark tek üreteçle karşılanamıyorsa seri, akım karşılanamıyorsa paralel bağlama yapılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel bağlamanın tercih edildiği durum nedir?",
+        "back": "Gereken akım tek üreteçle karşılanamadığında."
+      },
+      "kazanim": "Üreteçlerin bağlanma türüne göre devreye sağladıkları potansiyel farka ilişkin bilimsel çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fiz_10_t03_c05_o01:flashcard",
+      "front": "Üreteçlerin seri ya da paralel bağlanma gerekçesi nedir?",
+      "back": "Gereken potansiyel fark ya da akım tek üreteçle karşılanamadığında bağlanırlar."
+    },
+    {
+      "id": "fiz_10_t03_c05_o02:flashcard",
+      "front": "Üreteçlerin paralel bağlanmasının tanımını yazınız.",
+      "back": "Üreteçlerin aynı kutuplarının kendi aralarında birbirine bağlanmasıdır."
+    },
+    {
+      "id": "fiz_10_t03_c05_o03:flashcard",
+      "front": "Düz seri bağlamanın tanımını yazınız.",
+      "back": "Üreteçlerin zıt kutuplarının birbirine bağlanmasıyla oluşan seri bağlamadır."
+    },
+    {
+      "id": "fiz_10_t03_c05_o04:flashcard",
+      "front": "Seri bağlı üreteçlerde potansiyel farklar arasındaki ilişki nedir?",
+      "back": "Potansiyel farklar toplanır; toplam, tek üreteçten büyüktür."
+    },
+    {
+      "id": "fiz_10_t03_c05_o05:flashcard",
+      "front": "Paralel bağlı özdeş pillerde tükenme süresinin kuralı nedir?",
+      "back": "Pil sayısı arttıkça devre daha uzun süre çalışır."
+    },
+    {
+      "id": "fiz_10_t03_c05_o06:flashcard",
+      "front": "Ters seri bağlanan iki üreteçte toplam potansiyel fark nasıl bulunur?",
+      "back": "Büyük potansiyel farktan küçüğü çıkarılarak."
+    },
+    {
+      "id": "fiz_10_t03_c05_o07:flashcard",
+      "front": "Seri düz bağlamanın devreye etkisi nedir?",
+      "back": "Toplam potansiyel fark artar; devreden geçen akım ve lamba parlaklığı artar."
+    },
+    {
+      "id": "fiz_10_t03_c05_o08:flashcard",
+      "front": "Paralel bağlamanın üreteç ömrüne etkisi nedir?",
+      "back": "Özdeş üreteçler paralel bağlandığında devre daha uzun süre çalışır."
+    },
+    {
+      "id": "fiz_10_t03_c05_o09:flashcard",
+      "front": "Seri bağlamanın gerekli olduğu durum nedir?",
+      "back": "Gereken potansiyel fark tek üreteçle karşılanamadığında."
+    },
+    {
+      "id": "fiz_10_t03_c05_o10:flashcard",
+      "front": "Paralel bağlamanın tercih edildiği durum nedir?",
+      "back": "Gereken akım tek üreteçle karşılanamadığında."
+    }
+  ]
+}

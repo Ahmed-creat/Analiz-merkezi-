@@ -2,7 +2,7 @@
   "name": "analiz-merkezi-functions",
   "description": "Uygulama kapalıyken FCM push bildirimi gönderen zamanlanmış fonksiyonlar",
   "engines": {
-    "node": "20"
+    "node": "24.x"
   },
   "main": "index.js",
   "dependencies": {
@@ -12,5 +12,49 @@
     "playwright": "1.49.1",
     "tesseract.js": "^5.1.0"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "validate:pools": "node scripts/validate-pools.js",
+    "test:bkt": "node tests/bkt-engine.test.js && node tests/bkt-panel.test.js",
+    "test:curriculum": "node tests/curriculum.test.js",
+    "test:pools": "node tests/question-pools.test.js",
+    "validate:ids": "node scripts/validate-ids.js",
+    "defter:esitle": "node docs/uretim/araclar/kayit-defteri-esitle.js",
+    "test:okz": "node tests/okulizyon-cekici.test.js",
+    "test:mesaj": "node tests/mesaj.test.js && node tests/mesaj-ui.test.js",
+    "test:mesaj-ui": "node tests/mesaj-ui.test.js",
+    "test:ders": "node tests/okz-normalize.test.js && node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
+    "test:meb": "node tests/meb-kazanim.test.js",
+    "test:kuyruk": "node tests/okz-kuyruk.test.js",
+    "test:birlestir": "node tests/birlestir.test.js",
+    "test:gorsel": "node tests/gorsel-video.test.js",
+    "test:yuk": "node tests/okz-yuk.test.js",
+    "test:konubulma": "node tests/konu-bulma.test.js",
+    "test:hepsi": "npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:mesaj && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk && npm run -s test:konubulma && npm run -s test:kokeksik && npm run -s test:bildirim && npm run -s test:davranis && npm run -s test:v42 && npm run -s test:dom && npm run -s test:v44 && npm run -s test:tymm && npm run -s test:meb && npm run -s test:uretim",
+    "test:konu": "node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
+    "esleme:uret": "node scripts/konu-esleme-uret.js",
+    "test:bildirim": "node tests/bildirim.test.js",
+    "test:kokeksik": "node tests/kok-eksik.test.js",
+    "test:davranis": "node tests/kisa-kontrol.test.js && node tests/sekıl-tutarlilik.test.js && node tests/birlesik-kart.test.js && node tests/v37-davranis.test.js && node tests/kaynak-sozdizimi.test.js && node tests/bildirim-otomatik.test.js && node tests/gorev-hatirlat.test.js && node tests/v42-kural.test.js && node tests/bes-adim.test.js",
+    "test:kart": "node tests/birlesik-kart.test.js",
+    "test:sekil": "node tests/sekıl-tutarlilik.test.js",
+    "test:bktdavranis": "node tests/bkt-davranis.test.js",
+    "test:bildirimTeshis": "node tests/bildirim-teshis.test.js",
+    "test:kartflash": "node tests/kart-flashcard.test.js",
+    "test:sikistir": "node tests/veri-sikistir.test.js",
+    "test:v37": "node tests/v37-davranis.test.js",
+    "test:v42": "node tests/v42-kural.test.js",
+    "test:dom": "node tests/dom/dom-acilis.test.js && node tests/dom/dom-okz-secim.test.js && node tests/dom/dom-giris-duzeltme.test.js && node tests/dom/dom-v49-kisa-kontrol.test.js && node tests/dom/dom-v51-cikis.test.js && node tests/dom/dom-v52-yerlesim.test.js && node tests/dom/dom-v53-bildirim-izi.test.js && node tests/dom/dom-v60-tek-dugme.test.js && node tests/dom/dom-v61-telafi-renk.test.js && node tests/dom/dom-v62-kapali-bildirim.test.js && node tests/dom/dom-v63-sade-profil.test.js",
+    "test:v44": "node tests/v44-bildirim-depo.test.js",
+    "rapor:meb": "node scripts/meb-rapor.js",
+    "test:tymm": "node tests/tymm-capraz.test.js",
+    "denetim:tymm": "node scripts/tymm-denetim.js",
+    "uretim:dogrula": "node scripts/soru-uret-dogrula.js",
+    "havuz:index": "node scripts/havuz-index-uret.js",
+    "test:uretim": "node tests/soru-uretim-plani.test.js",
+    "uretim:dokum": "node scripts/kazanim-dokumu.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
 }

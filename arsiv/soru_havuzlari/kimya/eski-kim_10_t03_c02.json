@@ -1,0 +1,312 @@
+{
+  "konu_id": "kim_10_t03_c02",
+  "kod": "KİM.10.3.2",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 3,
+  "tema_adi": "Sürdürülebilirlik",
+  "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme",
+  "kaynak": "Kimya 10 ders kitabı, s.248-260",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t03_c02_o01",
+      "alt_beceri": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problemleri (hava kirliliği, ozon azalımı, asit yağmurları, sera etkisi, küresel ısınma vb.) belirler.",
+      "metin": "Bir bölgede kömür yakıtlı santral bacasından çıkan SO2 gazı, yağmur sularıyla birleşerek göllerdeki canlıları olumsuz etkilemektedir. Bu olayda belirlenmesi gereken problem hangisidir?",
+      "secenekler": [
+        "Ozon tabakasının incelmesi ve UV artışı",
+        "Asit yağmurları ve bunun sucul ekosisteme etkisi",
+        "Sera etkisi ve küresel ısınma",
+        "Toprak erozyonu ve çölleşme"
+      ],
+      "dogru_index": 1,
+      "cozum": "SO2'nin suda çözünerek asidik yağış oluşturması asit yağmurları problemidir. Bu yağışlar göl sularının pH'ını düşürerek canlıları etkiler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asit yağmurlarının başlıca nedeni nedir?",
+        "back": "SO2 ve NOx gazlarının atmosferde su buharıyla asit oluşturmasıdır."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o02",
+      "alt_beceri": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problemleri (hava kirliliği, ozon azalımı, asit yağmurları, sera etkisi, küresel ısınma vb.) belirler.",
+      "metin": "Atmosferin doğasındaki değişimler balık kılçığı diyagramında başlıklar hâlinde gruplandırılmıştır. Buna göre 'Güneş'ten gelen zararlı ışınların artması' hangi problem başlığı altında yer alır?",
+      "secenekler": [
+        "Asit yağmurları",
+        "Sera etkisi",
+        "Toprak kirliliği",
+        "Ozon azalımı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Stratosferdeki ozon UV ışınlarını tutar. Ozon derişimi azaldığında zararlı ışınlar yeryüzüne daha fazla ulaşır; bu nedenle problem ozon azalımıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ozon tabakasının işlevi nedir?",
+        "back": "Stratosferde bulunan ozon, Güneş'ten gelen zararlı UV ışınlarını tutar."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o03",
+      "alt_beceri": "Belirlediği problemlerin ekosistem (canlı, cansız, sucul sistem, toprak, hava, sağlık vb.) üzerindeki etkilerini özetler.",
+      "metin": "Tabloda hava kirliliği kaynakları verilmiştir. Buna göre hangi kaynak yapay kaynaklar arasında yer alır?",
+      "secenekler": [
+        "Ulaşım",
+        "Yanardağ faaliyetleri",
+        "Orman yangınları",
+        "Çöl tozları"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ulaşım, ısıtma ve sanayi yapay kaynaklardır. Yanardağ faaliyetleri, orman yangınları ve çöl tozları doğal kaynaklar arasında sayılır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Kaynak",
+          "Tür"
+        ],
+        "satirlar": [
+          [
+            "Yanardağ faaliyetleri",
+            "doğal"
+          ],
+          [
+            "Orman yangınları",
+            "doğal"
+          ],
+          [
+            "Ulaşım",
+            "yapay"
+          ],
+          [
+            "Çöl tozları",
+            "doğal"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Hava kirliliği nedir?",
+        "back": "Canlıları olumsuz etkileyen, doğal dengeyi bozan maddelerin atmosferde normalden fazla bulunmasıdır."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o04",
+      "alt_beceri": "Belirlediği problemlerin ekosistem (canlı, cansız, sucul sistem, toprak, hava, sağlık vb.) üzerindeki etkilerini özetler.",
+      "metin": "Ozon tabakasının incelmesi sonucunda ekosistemde oluşan etkiler için hangisi doğrudur?",
+      "secenekler": [
+        "UV ışını atmosferde tutulur ve yeryüzüne hiç ulaşmaz.",
+        "Atmosferdeki oksijen miktarı sıfıra düşer, solunum durur.",
+        "Yeryüzüne ulaşan UV ışını artar; cilt hastalıkları ve canlılarda zarar görülür.",
+        "Ozon azalması yalnızca denizlerde sıcaklık artışına neden olur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Ozon UV ışınlarını soğurur. Ozon derişimi azalınca yeryüzüne daha çok UV ulaşır; bu durum cilt hastalıkları, göz hasarı ve bitkilerde verim kaybı gibi etkilere yol açar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ozon azalımının nedeni nedir?",
+        "back": "CFC türleri ve azot oksitler gibi ozonu parçalayan gazların stratosferde artmasıdır."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o05",
+      "alt_beceri": "Problemlerin çözümüne yönelik veriye dayalı tahminlerde bulunur.",
+      "metin": "Grafikte bir ülkenin yıllara göre kükürt dioksit salımı verilmiştir. Grafikteki değişime dayanarak asit yağmurları için hangi tahmin yapılabilir?",
+      "secenekler": [
+        "Salım azaldığı için asit yağmurlarının artması beklenir.",
+        "Grafik asit yağmurlarıyla ilgili tahmin yapmaya elverişli değildir.",
+        "Salım değişmediği için asit yağmurları aynı kalır.",
+        "Salım azaldığı için asit yağmurlarının etkisinin azalması beklenir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Grafikte SO2 salımı 2000'de 2000 bin tondan 2020'de 400 bin tona düşmüştür. Asit yağmurlarının temel nedeni SO2 olduğu için etkisinin azalması beklenir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Yıl",
+        "yEkseni": "SO2 (bin ton)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "SO2",
+            "noktalar": [
+              [
+                2000,
+                2000
+              ],
+              [
+                2005,
+                1500
+              ],
+              [
+                2010,
+                1000
+              ],
+              [
+                2015,
+                600
+              ],
+              [
+                2020,
+                400
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Veriye dayalı tahmin nedir?",
+        "back": "Ölçülen verilerdeki eğilimden yararlanarak gelecekteki durum hakkında gerekçeli öngörüde bulunmaktır."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o06",
+      "alt_beceri": "Problemlerin çözümüne yönelik veriye dayalı tahminlerde bulunur.",
+      "metin": "CFC gazlarının kullanımı uluslararası anlaşmalarla sınırlandırılmıştır. Buna göre uzun vadede ozon derişimi için hangi tahmin yapılabilir?",
+      "secenekler": [
+        "CFC kullanımı azalsa da ozon derişimi sürekli azalmaya devam eder.",
+        "Ozonu parçalayan gazlar azalacağı için ozon derişiminin artması beklenir.",
+        "CFC gazları ozonla tepkimeye girmediği için tahmin yapılamaz.",
+        "Ozon derişimi yalnızca sıcaklığa bağlı olduğu için değişmez."
+      ],
+      "dogru_index": 1,
+      "cozum": "Ozon kaybının nedeni CFC kaynaklı klor radikalleridir. Bu gazların salımı azaldıkça parçalanma hızı düşer ve doğal ozon oluşumu-tüketimi dengesi yeniden kurulur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "CFC nedir?",
+        "back": "Kloroflorokarbon; stratosferde klor radikali oluşturarak ozonu parçalayan gaz grubudur."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o07",
+      "alt_beceri": "Problemin çözümüne yönelik önermeler üzerinden akıl yürütür.",
+      "metin": "Bir öğrenci 'fosil yakıt yerine yenilenebilir enerji kullanılırsa sera etkisi azalır' önerisinde bulunmuştur. Bu önerinin akıl yürütme zinciri hangisidir?",
+      "secenekler": [
+        "Fosil yakıt azalır → CO2 salımı azalır → sera etkisi zayıflar.",
+        "Fosil yakıt azalır → ozon artar → sera etkisi artar.",
+        "Yenilenebilir enerji → SO2 artar → asit yağmuru artar.",
+        "Yenilenebilir enerji → su buharı azalır → sera etkisi artar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Sera etkisini artıran başlıca gaz CO2'dir ve fosil yakıt yanmasıyla açığa çıkar. Yenilenebilir kaynak kullanımı CO2 salımını azaltarak sera etkisini zayıflatır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sera etkisi nedir?",
+        "back": "Atmosferde biriken gazların Dünya'dan yayılan ısının bir kısmını tutup geri yansıtarak yüzeyi ısıtmasıdır."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o08",
+      "alt_beceri": "Problemin çözümüne yönelik önermeler üzerinden akıl yürütür.",
+      "metin": "Atmosferdeki değişimlere yönelik öneriler değerlendirilirken hangi ölçüt en uygundur?",
+      "secenekler": [
+        "Önerinin kısa ve anlaşılır bir cümle olması",
+        "Öneriyi yazan kişinin sınıfı ve not ortalaması",
+        "Önerinin problemi kaynağında azaltıp azaltmadığı ve uygulanabilirliği",
+        "Önerinin görsel olarak sunulup sunulmadığı"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bir önerinin değeri, problemi kaynağında çözüp çözmediği, ölçülebilir sonuç üretip üretmediği ve uygulanabilir olup olmadığıyla değerlendirilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözüm önerisinin değerlendirilme ölçütleri nedir?",
+        "back": "Problemi kaynağında azaltması, uygulanabilir olması ve veriye dayanması ölçütlerine göre."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o09",
+      "alt_beceri": "Problemin çözümüne ilişkin değerlendirmelerde bulunur.",
+      "metin": "Sera etkisi ile küresel ısınma arasındaki ilişki için hangisi doğrudur?",
+      "secenekler": [
+        "Sera etkisi ile küresel ısınma birbirinden bağımsız olaylardır.",
+        "Sera etkisi doğal bir süreçtir; sera gazlarının artması küresel ısınmaya yol açar.",
+        "Küresel ısınma sera etkisini tamamen ortadan kaldırır.",
+        "Sera etkisi yalnızca kutuplarda görülen bir olaydır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Sera etkisi atmosferin doğal ısıtma mekanizmasıdır. Ancak CO2, CH4, N2O gibi gazların derişimi artınca tutulan ısı çoğalır ve Dünya'nın ortalama sıcaklığı yükselir; bu küresel ısınmadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sera gazlarının listesi nedir?",
+        "back": "CO2, CH4, N2O, CFC türleri ve su buharı gibi gazlardır."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    },
+    {
+      "soru_id": "kim_10_t03_c02_o10",
+      "alt_beceri": "Problemin çözümüne ilişkin değerlendirmelerde bulunur.",
+      "metin": "Karbon döngüsünde insan faaliyetlerinin etkisini değerlendirmek için hangi gözlem en doğrudan kanıttır?",
+      "secenekler": [
+        "Denizlerdeki tuzluluk oranının mevsime göre değişmesi",
+        "Toprağın mineral içeriğinin bölgeye göre farklı olması",
+        "Rüzgâr hızının gün içinde değişmesi",
+        "Fosil yakıt kullanımının artmasıyla atmosferdeki CO2 derişiminin artması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Karbon döngüsünde fosil yakıt yakılması, yangınlar ve volkanlar atmosfere karbon salar. Fosil yakıt kullanımının artışıyla CO2 derişiminin artması insan etkisinin doğrudan kanıtıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karbon döngüsü nedir?",
+        "back": "Karbonun atmosfer, canlılar, okyanus ve yer kabuğu arasında sürekli hareket ettiği döngüdür."
+      },
+      "kazanim": "Kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t03_c02_o01:flashcard",
+      "front": "Asit yağmurlarının başlıca nedeni nedir?",
+      "back": "SO2 ve NOx gazlarının atmosferde su buharıyla asit oluşturmasıdır."
+    },
+    {
+      "id": "kim_10_t03_c02_o02:flashcard",
+      "front": "Ozon tabakasının işlevi nedir?",
+      "back": "Stratosferde bulunan ozon, Güneş'ten gelen zararlı UV ışınlarını tutar."
+    },
+    {
+      "id": "kim_10_t03_c02_o03:flashcard",
+      "front": "Hava kirliliği nedir?",
+      "back": "Canlıları olumsuz etkileyen, doğal dengeyi bozan maddelerin atmosferde normalden fazla bulunmasıdır."
+    },
+    {
+      "id": "kim_10_t03_c02_o04:flashcard",
+      "front": "Ozon azalımının nedeni nedir?",
+      "back": "CFC türleri ve azot oksitler gibi ozonu parçalayan gazların stratosferde artmasıdır."
+    },
+    {
+      "id": "kim_10_t03_c02_o05:flashcard",
+      "front": "Veriye dayalı tahmin nedir?",
+      "back": "Ölçülen verilerdeki eğilimden yararlanarak gelecekteki durum hakkında gerekçeli öngörüde bulunmaktır."
+    },
+    {
+      "id": "kim_10_t03_c02_o06:flashcard",
+      "front": "CFC nedir?",
+      "back": "Kloroflorokarbon; stratosferde klor radikali oluşturarak ozonu parçalayan gaz grubudur."
+    },
+    {
+      "id": "kim_10_t03_c02_o07:flashcard",
+      "front": "Sera etkisi nedir?",
+      "back": "Atmosferde biriken gazların Dünya'dan yayılan ısının bir kısmını tutup geri yansıtarak yüzeyi ısıtmasıdır."
+    },
+    {
+      "id": "kim_10_t03_c02_o08:flashcard",
+      "front": "Çözüm önerisinin değerlendirilme ölçütleri nedir?",
+      "back": "Problemi kaynağında azaltması, uygulanabilir olması ve veriye dayanması ölçütlerine göre."
+    },
+    {
+      "id": "kim_10_t03_c02_o09:flashcard",
+      "front": "Sera gazlarının listesi nedir?",
+      "back": "CO2, CH4, N2O, CFC türleri ve su buharı gibi gazlardır."
+    },
+    {
+      "id": "kim_10_t03_c02_o10:flashcard",
+      "front": "Karbon döngüsü nedir?",
+      "back": "Karbonun atmosfer, canlılar, okyanus ve yer kabuğu arasında sürekli hareket ettiği döngüdür."
+    }
+  ]
+}

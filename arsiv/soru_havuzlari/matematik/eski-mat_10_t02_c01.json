@@ -1,0 +1,531 @@
+{
+  "konu_id": "mat_10_t02_c01",
+  "kod": "MAT.10.2.1",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 2,
+  "tema_adi": "İstatistiksel Araştırma Süreci",
+  "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme",
+  "kaynak": "Matematik 10 ders kitabı, s.94-127",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t02_c01_o01",
+      "alt_beceri": "İki kategorik değişkenli veriye dayalı, istatistiksel araştırma gerektiren gerçek yaşam durumlarını belirler.",
+      "metin": "Bir öğrenci istatistiksel araştırma için iki kategorik değişken seçecektir. Buna göre hangi ikili iki kategorik değişkene örnektir?",
+      "secenekler": [
+        "Öğrencilerin boyu ile ağırlığı",
+        "Öğrencilerin cinsiyeti ile en sevdikleri ders",
+        "Geçen süre ile alınan yol",
+        "Sıcaklık ile satılan dondurma sayısı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kategorik değişkenler gruplara ayıran, ölçümle ifade edilmeyen değişkenlerdir. Cinsiyet ve sevilen ders kategoriktir; boy, ağırlık, süre ve sıcaklık sayısal değişkenlerdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kategorik değişken nedir?",
+        "back": "Ölçümle değil, gruplara ayırmayla ifade edilen değişkendir."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o02",
+      "alt_beceri": "İki kategorik değişkenli veriye dayalı, istatistiksel araştırma gerektiren gerçek yaşam durumlarını belirler.",
+      "metin": "Bir okulda 'kantin kullanımı' araştırılmak istenmektedir. Bu araştırmada iki kategorik değişkenli veriye dayalı çalışma için hangi değişken çifti uygundur?",
+      "secenekler": [
+        "Kantinde harcanan para ile öğrencinin yaşı",
+        "Öğrencinin boyu ile kantini kullanma sıklığı",
+        "Teneffüs süresi ile satılan tost sayısı",
+        "Sınıf düzeyi ile kantini kullanma sıklığı"
+      ],
+      "dogru_index": 3,
+      "cozum": "İki kategorik değişkenle çalışılabilmesi için her iki değişkenin de gruplara ayrılabilmesi gerekir. Sınıf düzeyi ve kullanma sıklığı kategoriktir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kategorik değişkenli veri nedir?",
+        "back": "Her iki değişkenin de gruplara ayrılarak kaydedildiği veridir."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o03",
+      "alt_beceri": "Bağlam içerisinde iki kategorik değişken arasındaki ilişkililiğe odaklanan araştırma soruları oluşturur.",
+      "metin": "Bir öğrenci 'kız öğrencilerle erkek öğrencilerin spor yapma oranları arasında fark var mıdır?' sorusunu araştırmaktadır. Bu sorunun iki kategorik değişkeni hangileridir?",
+      "secenekler": [
+        "Cinsiyet ve spor yapma durumu",
+        "Yaş ve spor süresi",
+        "Boy ve kilo",
+        "Sınıf ve not ortalaması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Araştırma sorusunda cinsiyet (kız/erkek) ve spor yapma durumu (yapar/yapmaz) olmak üzere iki kategorik değişken vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Araştırma sorusunun kategorik değişkenleri nedir?",
+        "back": "Soru içinde gruplara ayıran iki değişkendir."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o04",
+      "alt_beceri": "Bağlam içerisinde iki kategorik değişken arasındaki ilişkililiğe odaklanan araştırma soruları oluşturur.",
+      "metin": "Bir AR-GE birimi, öğrencilerin ders çalışma biçimi ile sınav başarısı arasında ilişki olup olmadığını inceleyecektir. Hangi araştırma sorusu iki kategorik değişkene uygundur?",
+      "secenekler": [
+        "Günde kaç saat çalışıldığı ile başarı puanı arasında ilişki var mıdır?",
+        "Sınav puanı ile sınav süresi arasında ilişki var mıdır?",
+        "Çalışma biçimi (grup/yalnız) ile başarı düzeyi (yüksek/düşük) arasında ilişki var mıdır?",
+        "Çalışma süresi ile uyku süresi arasında ilişki var mıdır?"
+      ],
+      "dogru_index": 2,
+      "cozum": "Çalışma biçimi ve başarı düzeyi kategorik (gruplara ayrılmış) değişkenlerdir. Süre ve puan ifadeleri sayısal değişkenlerdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kategorik ve sayısal değişken arasındaki fark nedir?",
+        "back": "Kategorik değişken gruplara ayırır, sayısal değişken ölçüm değeri alır."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o05",
+      "alt_beceri": "İki kategorik değişkenli veri toplamak/elde etmek için plan yapar.",
+      "metin": "Bir öğrenci okulundaki öğrencilerin 'kahvaltı yapma' ve 'öğle yemeğinde kantini kullanma' durumlarını inceleyecektir. Buna göre veri toplama planı için hangisi uygun değildir?",
+      "secenekler": [
+        "Her sınıf düzeyinden rastgele öğrenci seçmek",
+        "Anket sorularını iki kategorili hazırlamak",
+        "Verileri sınıf düzeyi sütunuyla birlikte kaydetmek",
+        "Yalnızca kendi sınıfındaki 3 öğrenciden veri toplamak"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sonuçların okulu temsil edebilmesi için örneklem yeterli büyüklükte ve rastgele seçilmelidir. Üç öğrenciden toplanan veri okulu temsil etmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Örneklem nedir?",
+        "back": "Araştırma evrenini temsil etmek üzere seçilen alt gruptur."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o06",
+      "alt_beceri": "İki kategorik değişkenli veri toplamak/elde etmek için plan yapar.",
+      "metin": "Bir araştırmada iki kategorik değişkenli veri toplanacaktır. Veri toplama planında hangi bilgi yer almalıdır?",
+      "secenekler": [
+        "Araştırmacının en sevdiği renk",
+        "Kimden, ne zaman ve hangi yöntemle veri toplanacağı",
+        "Kullanılan kalemin markası",
+        "Sınıfın duvar rengi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Veri toplama planı evren ve örneklemi, zamanı, yöntemi (anket, gözlem) ve kayıt biçimini içerir. Bu bilgiler araştırmanın güvenilirliğini sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Veri toplama planı nedir?",
+        "back": "Verinin kimden, ne zaman ve hangi yöntemle toplanacağını belirleyen plandır."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o07",
+      "alt_beceri": "İki kategorik değişkenli verileri toplayarak/elde ederek analize hazırlar.",
+      "metin": "120 öğrenciye uygulanan ankette 72 öğrenci kahvaltı yaptığını, 48 öğrenci yapmadığını belirtmiştir. Veriler çapraz tabloya işlenirken toplam satırına hangi değer yazılır?",
+      "secenekler": [
+        "120",
+        "72",
+        "48",
+        "24"
+      ],
+      "dogru_index": 0,
+      "cozum": "Çapraz tabloda kenar toplamları marjinal frekansları verir. 72 + 48 = 120 olduğundan toplam satırı 120 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çapraz tablo nedir?",
+        "back": "İki kategorik değişkenin birlikte frekanslarını gösteren tablodur."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o08",
+      "alt_beceri": "İki kategorik değişkenli verileri toplayarak/elde ederek analize hazırlar.",
+      "metin": "Tabloda iki kategorik değişkene ait frekanslar verilmiştir. Buna göre tabloda boş bırakılan hücreye hangi değer yazılmalıdır?",
+      "secenekler": [
+        "45",
+        "40",
+        "50",
+        "60"
+      ],
+      "dogru_index": 2,
+      "cozum": "Erkek satırının toplamı 80, kitap okuyan erkek sayısı 30'dur. Buna göre okumayan erkek sayısı 80 − 30 = 50 bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "",
+          "Kitap okur",
+          "Okumaz",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "Kız",
+            "45",
+            "35",
+            "80"
+          ],
+          [
+            "Erkek",
+            "30",
+            "?",
+            "80"
+          ],
+          [
+            "Toplam",
+            "75",
+            "85",
+            "160"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Eksik frekans değerinin bulunma kuralı nedir?",
+        "back": "Satır ya da sütun toplamından bilinen değerlerin çıkarılmasıyla."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o09",
+      "alt_beceri": "Araştırma sorusu bağlamında toplanan/elde edilen iki kategorik değişkenli verileri analiz etmek için görselleştirme ve/veya özetleme (toplam satır veya sütunlardaki göreli sıklıkları gösteren iki yönlü tablo, koşullu göreli sıklıkları gösteren sütun grafikleri, koşullu göreli sıklıklar gibi) araçlarından uygun olanı seçer.",
+      "metin": "İki kategorik değişkenin birlikte dağılımını göstermek için hangi görsel araç en uygundur?",
+      "secenekler": [
+        "Kutu grafiği ya da serpme grafiği",
+        "Çapraz tablo ya da yığılmış sütun grafiği",
+        "Histogram ya da kutu grafiği",
+        "Serpme grafiği ya da histogram"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kategorik değişkenlerin birlikte dağılımı çapraz tablo veya yığılmış/sütun grafikleriyle gösterilir. Serpme grafiği ve histogram sayısal veriler için uygundur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kategorik verinin görselleştirme araçları nedir?",
+        "back": "Sütun grafiği, daire grafiği ve çapraz tablodur."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o10",
+      "alt_beceri": "Araştırma sorusu bağlamında toplanan/elde edilen iki kategorik değişkenli verileri analiz etmek için görselleştirme ve/veya özetleme (toplam satır veya sütunlardaki göreli sıklıkları gösteren iki yönlü tablo, koşullu göreli sıklıkları gösteren sütun grafikleri, koşullu göreli sıklıklar gibi) araçlarından uygun olanı seçer.",
+      "metin": "Tabloda bir sınıfın müzik türü tercihi ile cinsiyeti verilmiştir. Bu veriyi görselleştirmek için hangi araç uygun değildir?",
+      "secenekler": [
+        "Yığılmış sütun grafiği",
+        "Çapraz tablo",
+        "Daire grafiği",
+        "Serpme grafiği"
+      ],
+      "dogru_index": 3,
+      "cozum": "Serpme grafiği iki sayısal değişken arasındaki ilişkiyi gösterir. Kategorik veriler için sütun grafiği, daire grafiği veya çapraz tablo uygundur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "",
+          "Pop",
+          "Rock",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "Kız",
+            "18",
+            "12",
+            "30"
+          ],
+          [
+            "Erkek",
+            "10",
+            "20",
+            "30"
+          ],
+          [
+            "Toplam",
+            "28",
+            "32",
+            "60"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Serpme grafiğinin kullanım amacı nedir?",
+        "back": "İki sayısal değişken arasındaki ilişkiyi göstermek için."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o11",
+      "alt_beceri": "Araştırma sorusu bağlamında toplanan/elde edilen verileri belirlediği araçlarla analiz eder.",
+      "metin": "Tablodaki verilere göre kız öğrenciler arasında pop müzik tercih edenlerin oranı yüzde kaçtır?",
+      "secenekler": [
+        "%30",
+        "%60",
+        "%64",
+        "%36"
+      ],
+      "dogru_index": 1,
+      "cozum": "Koşullu yüzde, satır toplamına göre hesaplanır: 18/30 = 0,6 olduğundan %60 bulunur. %64 ise tüm öğrenciler içindeki paydır (18/60 = %30 değil; 18/28 yanlış paydadır).",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "",
+          "Pop",
+          "Rock",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "Kız",
+            "18",
+            "12",
+            "30"
+          ],
+          [
+            "Erkek",
+            "10",
+            "20",
+            "30"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Koşullu yüzde nedir?",
+        "back": "Bir kategorideki değerin, o kategorinin toplamına oranıdır."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o12",
+      "alt_beceri": "Araştırma sorusu bağlamında toplanan/elde edilen verileri belirlediği araçlarla analiz eder.",
+      "metin": "Tabloda iki kategorik değişkene ait frekanslar verilmiştir. Buna göre spora katılanların tüm öğrenciler içindeki payı yüzde kaçtır?",
+      "secenekler": [
+        "%60",
+        "%40",
+        "%25",
+        "%50"
+      ],
+      "dogru_index": 3,
+      "cozum": "Marjinal yüzde, sütun toplamının genel toplama oranıdır: 100/200 = 0,5 olduğundan %50 bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "",
+          "Spora katılır",
+          "Katılmaz",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "Kadın",
+            "60",
+            "40",
+            "100"
+          ],
+          [
+            "Erkek",
+            "40",
+            "60",
+            "100"
+          ],
+          [
+            "Toplam",
+            "100",
+            "100",
+            "200"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Marjinal yüzde nedir?",
+        "back": "Bir değişkenin toplam frekansının genel toplama oranıdır."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o13",
+      "alt_beceri": "f) İki kategorik değişkenli veri dağılımlarına dayalı istatistiksel araştırmadan hareketle elde edilen bulguları yorumlayarak sonuç çıkarır.",
+      "metin": "Tablodaki verilere göre kadınlarda spora katılma oranı %60, erkeklerde %40'tır. Bu bulgu için hangi yorum yapılabilir?",
+      "secenekler": [
+        "Cinsiyet ile spora katılma arasında bir ilişki olduğu düşünülebilir.",
+        "Cinsiyet ile spora katılma arasında ilişki yoktur.",
+        "Spora katılanların tamamı kadındır.",
+        "Erkeklerin tamamı spora katılmaktadır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Koşullu yüzdeler arasında belirgin fark vardır (%60 ile %40). Bu fark, iki kategorik değişken arasında ilişki olabileceğini gösterir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "",
+          "Spora katılır",
+          "Katılmaz",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "Kadın",
+            "60",
+            "40",
+            "100"
+          ],
+          [
+            "Erkek",
+            "40",
+            "60",
+            "100"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Kategorik değişkenler arasındaki ilişkinin ölçütü nedir?",
+        "back": "Koşullu yüzdeler arasındaki farktır."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o14",
+      "alt_beceri": "f) İki kategorik değişkenli veri dağılımlarına dayalı istatistiksel araştırmadan hareketle elde edilen bulguları yorumlayarak sonuç çıkarır.",
+      "metin": "Bir araştırmada kız ve erkek öğrencilerin kitap okuma oranları sırasıyla %55 ve %53 bulunmuştur. Bu bulgu için hangi yorum uygundur?",
+      "secenekler": [
+        "Kız öğrenciler kesinlikle daha çok kitap okur.",
+        "Erkek öğrenciler hiç kitap okumaz.",
+        "Oranlar birbirine çok yakın olduğu için belirgin bir ilişki görülmemektedir.",
+        "İki değişken arasında güçlü bir ilişki vardır."
+      ],
+      "dogru_index": 2,
+      "cozum": "%55 ile %53 arasındaki fark çok küçüktür. Koşullu yüzdeler birbirine yakın olduğunda değişkenler arasında belirgin ilişki görülmediği söylenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu yüzdeler yakın olduğunda ne söylenir?",
+        "back": "Değişkenler arasında belirgin bir ilişki görülmediği söylenir."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o15",
+      "alt_beceri": "g) İki kategorik değişkenli veri dağılımlarına dayalı istatistiksel araştırmadan hareketle elde edilen sonuçları araştırma sorusu bağlamında değerlendirir.",
+      "metin": "Bir okulda yapılan araştırmada spor yapan öğrencilerin ders başarısının daha yüksek olduğu bulunmuştur. Bu sonuçtan çıkarılabilecek en uygun ifade hangisidir?",
+      "secenekler": [
+        "Spor yapmak başarıyı kesin olarak artırır.",
+        "Başarılı öğrenciler kesinlikle spor yapar.",
+        "Araştırma sonuçları genellenemez; ilişki yoktur.",
+        "Spor yapma ile başarı arasında ilişki vardır; ancak bu ilişki nedensellik göstermez."
+      ],
+      "dogru_index": 3,
+      "cozum": "Gözleme dayalı araştırmalar ilişki gösterebilir ancak tek başına nedensellik kanıtlamaz. Başka etkenler (beslenme, uyku, çalışma düzeni) sonucu etkileyebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İlişki ile nedensellik arasındaki fark nedir?",
+        "back": "İlişki değişkenlerin birlikte değişmesidir; nedensellik birinin diğerini doğrudan etkilemesidir."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    },
+    {
+      "soru_id": "mat_10_t02_c01_o16",
+      "alt_beceri": "g) İki kategorik değişkenli veri dağılımlarına dayalı istatistiksel araştırmadan hareketle elde edilen sonuçları araştırma sorusu bağlamında değerlendirir.",
+      "metin": "Bir araştırmada 30 öğrenciden toplanan verilerle okul geneli için sonuç çıkarılmıştır. Bu sonuç için hangi değerlendirme doğrudur?",
+      "secenekler": [
+        "Örneklem büyük olduğu için sonuç kesindir.",
+        "Örneklem küçük olduğu için okul geneline genelleme güvenilir değildir.",
+        "Örneklem büyüklüğü sonucu etkilemez.",
+        "30 öğrenci okulun tamamını temsil eder."
+      ],
+      "dogru_index": 1,
+      "cozum": "Genelleme yapılabilmesi için örneklemin evreni temsil etmesi gerekir. 30 öğrencilik küçük bir örneklem okul geneli hakkında güvenilir sonuç vermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Genelleme yapılabilmesi için örneklemin özelliği nedir?",
+        "back": "Evreni yeterli büyüklükte ve yansız biçimde temsil etmelidir."
+      },
+      "kazanim": "İki kategorik değişkenli veri ile çalışabilme ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t02_c01_o01:flashcard",
+      "front": "Kategorik değişken nedir?",
+      "back": "Ölçümle değil, gruplara ayırmayla ifade edilen değişkendir."
+    },
+    {
+      "id": "mat_10_t02_c01_o02:flashcard",
+      "front": "İki kategorik değişkenli veri nedir?",
+      "back": "Her iki değişkenin de gruplara ayrılarak kaydedildiği veridir."
+    },
+    {
+      "id": "mat_10_t02_c01_o03:flashcard",
+      "front": "Araştırma sorusunun kategorik değişkenleri nedir?",
+      "back": "Soru içinde gruplara ayıran iki değişkendir."
+    },
+    {
+      "id": "mat_10_t02_c01_o04:flashcard",
+      "front": "Kategorik ve sayısal değişken arasındaki fark nedir?",
+      "back": "Kategorik değişken gruplara ayırır, sayısal değişken ölçüm değeri alır."
+    },
+    {
+      "id": "mat_10_t02_c01_o05:flashcard",
+      "front": "Örneklem nedir?",
+      "back": "Araştırma evrenini temsil etmek üzere seçilen alt gruptur."
+    },
+    {
+      "id": "mat_10_t02_c01_o06:flashcard",
+      "front": "Veri toplama planı nedir?",
+      "back": "Verinin kimden, ne zaman ve hangi yöntemle toplanacağını belirleyen plandır."
+    },
+    {
+      "id": "mat_10_t02_c01_o07:flashcard",
+      "front": "Çapraz tablo nedir?",
+      "back": "İki kategorik değişkenin birlikte frekanslarını gösteren tablodur."
+    },
+    {
+      "id": "mat_10_t02_c01_o08:flashcard",
+      "front": "Eksik frekans değerinin bulunma kuralı nedir?",
+      "back": "Satır ya da sütun toplamından bilinen değerlerin çıkarılmasıyla."
+    },
+    {
+      "id": "mat_10_t02_c01_o09:flashcard",
+      "front": "Kategorik verinin görselleştirme araçları nedir?",
+      "back": "Sütun grafiği, daire grafiği ve çapraz tablodur."
+    },
+    {
+      "id": "mat_10_t02_c01_o10:flashcard",
+      "front": "Serpme grafiğinin kullanım amacı nedir?",
+      "back": "İki sayısal değişken arasındaki ilişkiyi göstermek için."
+    },
+    {
+      "id": "mat_10_t02_c01_o11:flashcard",
+      "front": "Koşullu yüzde nedir?",
+      "back": "Bir kategorideki değerin, o kategorinin toplamına oranıdır."
+    },
+    {
+      "id": "mat_10_t02_c01_o12:flashcard",
+      "front": "Marjinal yüzde nedir?",
+      "back": "Bir değişkenin toplam frekansının genel toplama oranıdır."
+    },
+    {
+      "id": "mat_10_t02_c01_o13:flashcard",
+      "front": "Kategorik değişkenler arasındaki ilişkinin ölçütü nedir?",
+      "back": "Koşullu yüzdeler arasındaki farktır."
+    },
+    {
+      "id": "mat_10_t02_c01_o14:flashcard",
+      "front": "Koşullu yüzdeler yakın olduğunda ne söylenir?",
+      "back": "Değişkenler arasında belirgin bir ilişki görülmediği söylenir."
+    },
+    {
+      "id": "mat_10_t02_c01_o15:flashcard",
+      "front": "İlişki ile nedensellik arasındaki fark nedir?",
+      "back": "İlişki değişkenlerin birlikte değişmesidir; nedensellik birinin diğerini doğrudan etkilemesidir."
+    },
+    {
+      "id": "mat_10_t02_c01_o16:flashcard",
+      "front": "Genelleme yapılabilmesi için örneklemin özelliği nedir?",
+      "back": "Evreni yeterli büyüklükte ve yansız biçimde temsil etmelidir."
+    }
+  ]
+}

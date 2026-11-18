@@ -1,0 +1,560 @@
+{
+  "konu_id": "mat_10_t04_c06",
+  "kod": "MAT.10.4.6",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme",
+  "kaynak": "Matematik 10 ders kitabı, s.284-305",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t04_c06_o01",
+      "alt_beceri": "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklere ilişkin matematiksel bileşenleri (nitel özellikleri ile cebirsel ve grafik temsilleri) belirler.",
+      "metin": "Bir sayının 3 katının 5 fazlası 26'dır. Buna göre bu sayı kaçtır?",
+      "secenekler": [
+        "8",
+        "7",
+        "6",
+        "9"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sayı x ile gösterilirse 3x + 5 = 26 denklemi kurulur. 3x = 21 olduğundan x = 7 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sözel ifadenin denkleme çevrilmesi nedir?",
+        "back": "Bilinmeyenin harfle gösterilip işlemlerin sırasıyla yazılmasıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o02",
+      "alt_beceri": "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklere ilişkin matematiksel bileşenleri (nitel özellikleri ile cebirsel ve grafik temsilleri) belirler.",
+      "metin": "Anne 38, kızı 10 yaşındadır. Kaç yıl sonra annenin yaşı kızının yaşının 3 katı olur?",
+      "secenekler": [
+        "5",
+        "6",
+        "3",
+        "4"
+      ],
+      "dogru_index": 3,
+      "cozum": "x yıl sonra 38 + x = 3(10 + x) olur. 38 + x = 30 + 3x eşitliğinden 8 = 2x ve x = 4 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yaş probleminde değişken seçimi nedir?",
+        "back": "Geçen yıl sayısının x alınmasıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o03",
+      "alt_beceri": "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklere ilişkin matematiksel bileşenlerin aralarındaki ilişkileri belirler.",
+      "metin": "Bir sayının 2 katının 7 fazlası en az 15'tir. Bu koşulu sağlayan en küçük tam sayı kaçtır?",
+      "secenekler": [
+        "4",
+        "3",
+        "5",
+        "8"
+      ],
+      "dogru_index": 0,
+      "cozum": "2x + 7 ≥ 15 eşitsizliğinden 2x ≥ 8 ve x ≥ 4 bulunur. En küçük tam sayı 4'tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eşitsizlik yönünün değişme koşulu nedir?",
+        "back": "Negatif sayıyla çarpma ya da bölme yapılmasıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o04",
+      "alt_beceri": "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklere ilişkin matematiksel bileşenlerin aralarındaki ilişkileri belirler.",
+      "metin": "Cebinde 50 TL olan bir öğrenci her gün 6 TL harcamaktadır. Kaçıncı günün sonunda parası 20 TL'nin altına düşer?",
+      "secenekler": [
+        "5",
+        "7",
+        "6",
+        "4"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kalan para 50 − 6g < 20 eşitsizliğiyle modellenir. Buradan 6g > 30 ve g > 5 olur; ilk tam sayı 6'dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Azalma modelinde eşitsizlik nasıl kurulur?",
+        "back": "Başlangıç değerinden günlük azalma çıkarılıp sınırla karşılaştırılır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o05",
+      "alt_beceri": "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklerin problem bağlamındaki temsillerini farklı temsillere dönüştürür.",
+      "metin": "Kısa kenarı x, uzun kenarı x + 2 olan dikdörtgenin alanı 24 cm²'dir. Buna göre kısa kenar kaç santimetredir?",
+      "secenekler": [
+        "3",
+        "6",
+        "5",
+        "4"
+      ],
+      "dogru_index": 3,
+      "cozum": "x(x + 2) = 24 denklemi x² + 2x − 24 = 0 biçimine gelir. Çarpanlara ayrıldığında (x + 6)(x − 4) = 0 ve uzunluk pozitif olduğundan x = 4 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Alan probleminin denklem türü nedir?",
+        "back": "Kenarlar çarpımından oluşan karesel denklemdir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o06",
+      "alt_beceri": "Bu fonksiyonlarla ifade edilebilen denklem ve eşitsizliklerin problem bağlamındaki temsillerini farklı temsillere dönüştürür.",
+      "metin": "Ardışık iki pozitif tam sayının çarpımı 56'dır. Buna göre küçük sayı kaçtır?",
+      "secenekler": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sayılar x ve x + 1 alınırsa x(x + 1) = 56 denklemi elde edilir. x² + x − 56 = (x + 8)(x − 7) = 0 olduğundan x = 7 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ardışık tam sayıların gösterimi nedir?",
+        "back": "x ve x + 1 biçimidir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o07",
+      "alt_beceri": "Dönüştürdüğü temsillerin problem bağlamındaki anlamını ifade eder.",
+      "metin": "x² − 5x + 6 < 0 eşitsizliğinin çözüm kümesi hangisidir?",
+      "secenekler": [
+        "(2, 3)",
+        "(−∞, 2)",
+        "(3, ∞)",
+        "(−∞, 2) ∪ (3, ∞)"
+      ],
+      "dogru_index": 0,
+      "cozum": "x² − 5x + 6 = (x − 2)(x − 3) olduğundan kökler 2 ve 3'tür. Kollar yukarı bakan parabol kökler arasında negatif olduğundan çözüm (2, 3) aralığıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel eşitsizlikte işaret incelemesi nedir?",
+        "back": "Parabolün kökler arasında ve dışında aldığı işaretin belirlenmesidir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o08",
+      "alt_beceri": "Dönüştürdüğü temsillerin problem bağlamındaki anlamını ifade eder.",
+      "metin": "x² − 9 ≥ 0 eşitsizliğinin çözüm kümesi hangisidir?",
+      "secenekler": [
+        "(−3, 3) ∪ (3, ∞)",
+        "(−∞, −3) ∪ (−3, 3)",
+        "(−∞, −3] ∪ [3, ∞)",
+        "(−∞, 3) ∪ (3, ∞)"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kökler −3 ve 3'tür. Parabol kolları yukarı baktığından köklerin dışında pozitif, aralarında negatiftir; sıfıra eşitlik de dâhil edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel eşitsizlikte sınır değerlerin dâhil edilme koşulu nedir?",
+        "back": "Eşitsizlik ≥ ya da ≤ olduğunda dâhil edilmesidir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o09",
+      "alt_beceri": "Elde ettiği ve yorumladığı farklı temsillerden yararlanarak problemin çözümü için strateji oluşturur.",
+      "metin": "Bir havuzu iki musluk birlikte 6 saatte doldurmaktadır. Musluklardan biri tek başına 10 saatte doldurduğuna göre diğeri tek başına kaç saatte doldurur?",
+      "secenekler": [
+        "12",
+        "15",
+        "16",
+        "20"
+      ],
+      "dogru_index": 1,
+      "cozum": "Diğer musluğun süresi x olsun: 1/10 + 1/x = 1/6 yazılır. Ortak paydada 6x + 60 = 10x olur ve x = 15 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birlikte doldurma denklemi nedir?",
+        "back": "Birim zamanda dolan miktarların toplamının birlikte süreye eşitlenmesidir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o10",
+      "alt_beceri": "Elde ettiği ve yorumladığı farklı temsillerden yararlanarak problemin çözümü için strateji oluşturur.",
+      "metin": "Bir kesrin paydası payından 3 fazladır. Bu kesir 2/3'e eşit olduğuna göre pay kaçtır?",
+      "secenekler": [
+        "5",
+        "8",
+        "9",
+        "6"
+      ],
+      "dogru_index": 3,
+      "cozum": "Pay x alınırsa x/(x + 3) = 2/3 denklemi kurulur. İçler dışlar çarpımıyla 3x = 2x + 6 ve x = 6 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kesir problemi hangi denklemle modellenir?",
+        "back": "Pay ve payda arasındaki ilişki yazılıp eşitlik kurularak."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o11",
+      "alt_beceri": "Belirlediği stratejiyi kullanır.",
+      "metin": "İki sayının toplamı 12, farkı 4'tür. Buna göre bu sayıların çarpımı kaçtır?",
+      "secenekler": [
+        "28",
+        "32",
+        "36",
+        "48"
+      ],
+      "dogru_index": 1,
+      "cozum": "x + y = 12 ve x − y = 4 denklemleri taraf tarafa toplanırsa 2x = 16 ve x = 8 olur. y = 4 olduğundan çarpım 32 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki bilinmeyenli denklem sisteminin çözüm yöntemleri nedir?",
+        "back": "Yerine koyma ya da taraf tarafa toplamadır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o12",
+      "alt_beceri": "Belirlediği stratejiyi kullanır.",
+      "metin": "Bir sınıfta kız ve erkek öğrenci sayılarının toplamı 30, farkı 6'dır. Kız sayısı erkeklerden fazla olduğuna göre erkek öğrenci sayısı kaçtır?",
+      "secenekler": [
+        "18",
+        "15",
+        "10",
+        "12"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kız − erkek = 6 ve kız + erkek = 30 denklemleri kullanılır. Toplamdan çıkarma yapılırsa 2 · erkek = 24 ve erkek = 12 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Toplam ve fark verildiğinde küçük sayı nasıl bulunur?",
+        "back": "Toplamdan fark çıkarılıp ikiye bölünerek."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o13",
+      "alt_beceri": "f) Elde ettiği çözümü farklı yöntemleri kullanarak doğrular.",
+      "metin": "Bir işi 3 işçi 8 günde bitirmektedir. Aynı hızla çalışan 4 işçi bu işi kaç günde bitirir?",
+      "secenekler": [
+        "6",
+        "7",
+        "5",
+        "4"
+      ],
+      "dogru_index": 0,
+      "cozum": "İşçi sayısı ile süre ters orantılıdır: 3 · 8 = 4 · x eşitliğinden x = 6 gün bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters orantı bağıntısı nedir?",
+        "back": "İki niceliğin çarpımının sabit kalmasıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o14",
+      "alt_beceri": "f) Elde ettiği çözümü farklı yöntemleri kullanarak doğrular.",
+      "metin": "Aynı hızla çalışan 5 makine bir siparişi 12 saatte hazırlamaktadır. Makine sayısı 6'ya çıkarılırsa sipariş kaç saatte hazırlanır?",
+      "secenekler": [
+        "9",
+        "11",
+        "10",
+        "14"
+      ],
+      "dogru_index": 2,
+      "cozum": "Makine sayısı ile süre ters orantılıdır: 5 · 12 = 6 · x eşitliğinden x = 10 saat bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters orantıda sabit olan çarpım nedir?",
+        "back": "Niceliklerin çarpımıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o15",
+      "alt_beceri": "g) Problemin olası çözüm stratejilerini gözden geçirir.",
+      "metin": "400 TL'ye alınan bir ürün %25 kârla satılmaktadır. Ürünün satış fiyatı kaç TL'dir?",
+      "secenekler": [
+        "425",
+        "450",
+        "480",
+        "500"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kâr, alış fiyatının %25'i kadardır: 400 · 0,25 = 100 TL. Satış fiyatı 400 + 100 = 500 TL bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kâr oranının hesaplandığı tutar nedir?",
+        "back": "Alış fiyatıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o16",
+      "alt_beceri": "g) Problemin olası çözüm stratejilerini gözden geçirir.",
+      "metin": "Etiket fiyatı 250 TL olan bir ürüne %20 indirim uygulanmıştır. İndirimli fiyat kaç TL'dir?",
+      "secenekler": [
+        "230",
+        "200",
+        "220",
+        "180"
+      ],
+      "dogru_index": 1,
+      "cozum": "İndirim tutarı 250 · 0,20 = 50 TL'dir. İndirimli fiyat 250 − 50 = 200 TL bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İndirimli fiyatın çarpanı nedir?",
+        "back": "Fiyatın (1 − indirim oranı) ile çarpımıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o17",
+      "alt_beceri": "ğ) Problemin olası çözüm stratejilerinin farklı problem durumlarında kullanımı ile ilgili çıkarımlar yapar.",
+      "metin": "Aralarında 240 km bulunan iki şehirden aynı anda karşılıklı olarak 70 km/sa ve 50 km/sa hızla iki araç yola çıkmıştır. Araçlar kaç saat sonra karşılaşır?",
+      "secenekler": [
+        "2",
+        "3",
+        "4",
+        "2,5"
+      ],
+      "dogru_index": 0,
+      "cozum": "Karşılaşma süresi, yolun hızlar toplamına bölünmesiyle bulunur: 240/(70 + 50) = 240/120 = 2 saat.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karşılaşma probleminin bağıntısı nedir?",
+        "back": "Yolun hızlar toplamına bölünmesidir."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o18",
+      "alt_beceri": "ğ) Problemin olası çözüm stratejilerinin farklı problem durumlarında kullanımı ile ilgili çıkarımlar yapar.",
+      "metin": "Bir araç 120 km'lik yolu gidişte 60 km/sa, dönüşte 40 km/sa hızla almıştır. Bu aracın ortalama hızı kaç km/sa'tir?",
+      "secenekler": [
+        "50",
+        "45",
+        "48",
+        "52"
+      ],
+      "dogru_index": 2,
+      "cozum": "Gidiş 2 saat, dönüş 3 saat sürer; toplam 240 km yol 5 saatte alınır. Ortalama hız 240/5 = 48 km/sa bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortalama hız nedir?",
+        "back": "Toplam yolun toplam süreye oranıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o19",
+      "alt_beceri": "h) Çıkarımlarının geçerliliğini sözel, cebirsel ve grafiksel argümanlarla değerlendirir.",
+      "metin": "Grafikte f(x) = x² − 4x + 3 fonksiyonunun grafiği verilmiştir. Grafiğe göre f(x) = 0 denkleminin çözümleri hangileridir?",
+      "secenekler": [
+        "−1 ve −3",
+        "1 ve 3",
+        "0 ve 4",
+        "2 ve 3"
+      ],
+      "dogru_index": 1,
+      "cozum": "f(x) = 0 olduğunda grafik x eksenini keser. Grafikte kesişim noktaları x = 1 ve x = 3 olduğundan çözümler 1 ve 3'tür.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x",
+        "yEkseni": "f(x)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "f",
+            "noktalar": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                4,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Denklemin grafikle çözümü nedir?",
+        "back": "Grafiğin x eksenini kestiği noktaların apsislerinin bulunmasıdır."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    },
+    {
+      "soru_id": "mat_10_t04_c06_o20",
+      "alt_beceri": "h) Çıkarımlarının geçerliliğini sözel, cebirsel ve grafiksel argümanlarla değerlendirir.",
+      "metin": "Grafikte f(x) = x² − 4x + 3 fonksiyonunun grafiği verilmiştir. Grafiğe göre f(x) < 0 eşitsizliğinin çözüm kümesi hangisidir?",
+      "secenekler": [
+        "(−∞, 1)",
+        "(3, ∞)",
+        "(−∞, 1) ∪ (3, ∞)",
+        "(1, 3)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Grafik x ekseninin altında yalnızca 1 ile 3 arasında kalır. Bu nedenle f(x) < 0 koşulu (1, 3) aralığında sağlanır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x",
+        "yEkseni": "f(x)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "f",
+            "noktalar": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                4,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "f(x) < 0 bölgesinin konumu nedir?",
+        "back": "x ekseninin altında kalan bölümdür."
+      },
+      "kazanim": "Doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t04_c06_o01:flashcard",
+      "front": "Sözel ifadenin denkleme çevrilmesi nedir?",
+      "back": "Bilinmeyenin harfle gösterilip işlemlerin sırasıyla yazılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o02:flashcard",
+      "front": "Yaş probleminde değişken seçimi nedir?",
+      "back": "Geçen yıl sayısının x alınmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o03:flashcard",
+      "front": "Eşitsizlik yönünün değişme koşulu nedir?",
+      "back": "Negatif sayıyla çarpma ya da bölme yapılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o04:flashcard",
+      "front": "Azalma modelinde eşitsizlik nasıl kurulur?",
+      "back": "Başlangıç değerinden günlük azalma çıkarılıp sınırla karşılaştırılır."
+    },
+    {
+      "id": "mat_10_t04_c06_o05:flashcard",
+      "front": "Alan probleminin denklem türü nedir?",
+      "back": "Kenarlar çarpımından oluşan karesel denklemdir."
+    },
+    {
+      "id": "mat_10_t04_c06_o06:flashcard",
+      "front": "Ardışık tam sayıların gösterimi nedir?",
+      "back": "x ve x + 1 biçimidir."
+    },
+    {
+      "id": "mat_10_t04_c06_o07:flashcard",
+      "front": "Karesel eşitsizlikte işaret incelemesi nedir?",
+      "back": "Parabolün kökler arasında ve dışında aldığı işaretin belirlenmesidir."
+    },
+    {
+      "id": "mat_10_t04_c06_o08:flashcard",
+      "front": "Karesel eşitsizlikte sınır değerlerin dâhil edilme koşulu nedir?",
+      "back": "Eşitsizlik ≥ ya da ≤ olduğunda dâhil edilmesidir."
+    },
+    {
+      "id": "mat_10_t04_c06_o09:flashcard",
+      "front": "Birlikte doldurma denklemi nedir?",
+      "back": "Birim zamanda dolan miktarların toplamının birlikte süreye eşitlenmesidir."
+    },
+    {
+      "id": "mat_10_t04_c06_o10:flashcard",
+      "front": "Kesir problemi hangi denklemle modellenir?",
+      "back": "Pay ve payda arasındaki ilişki yazılıp eşitlik kurularak."
+    },
+    {
+      "id": "mat_10_t04_c06_o11:flashcard",
+      "front": "İki bilinmeyenli denklem sisteminin çözüm yöntemleri nedir?",
+      "back": "Yerine koyma ya da taraf tarafa toplamadır."
+    },
+    {
+      "id": "mat_10_t04_c06_o12:flashcard",
+      "front": "Toplam ve fark verildiğinde küçük sayı nasıl bulunur?",
+      "back": "Toplamdan fark çıkarılıp ikiye bölünerek."
+    },
+    {
+      "id": "mat_10_t04_c06_o13:flashcard",
+      "front": "Ters orantı bağıntısı nedir?",
+      "back": "İki niceliğin çarpımının sabit kalmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o14:flashcard",
+      "front": "Ters orantıda sabit olan çarpım nedir?",
+      "back": "Niceliklerin çarpımıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o15:flashcard",
+      "front": "Kâr oranının hesaplandığı tutar nedir?",
+      "back": "Alış fiyatıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o16:flashcard",
+      "front": "İndirimli fiyatın çarpanı nedir?",
+      "back": "Fiyatın (1 − indirim oranı) ile çarpımıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o17:flashcard",
+      "front": "Karşılaşma probleminin bağıntısı nedir?",
+      "back": "Yolun hızlar toplamına bölünmesidir."
+    },
+    {
+      "id": "mat_10_t04_c06_o18:flashcard",
+      "front": "Ortalama hız nedir?",
+      "back": "Toplam yolun toplam süreye oranıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o19:flashcard",
+      "front": "Denklemin grafikle çözümü nedir?",
+      "back": "Grafiğin x eksenini kestiği noktaların apsislerinin bulunmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c06_o20:flashcard",
+      "front": "f(x) < 0 bölgesinin konumu nedir?",
+      "back": "x ekseninin altında kalan bölümdür."
+    }
+  ]
+}

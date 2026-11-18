@@ -1,0 +1,254 @@
+{
+  "konu_id": "mat_10_t07_c02",
+  "kod": "MAT.10.7.2",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 7,
+  "tema_adi": "Veriden Olasılığa",
+  "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme",
+  "kaynak": "Matematik 10 ders kitabı, s.404-408",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t07_c02_o01",
+      "alt_beceri": "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin mevcut bilgileri kullanır.",
+      "metin": "Bir testin duyarlılığı %90 olarak bilinmektedir. Buna karşılık testi pozitif çıkan 100 kişiden kaçının gerçekten hasta olduğu hesaplanmak istenmektedir. Bu ters yönlü olasılık hesabı hangi yöntemle yapılır?",
+      "secenekler": [
+        "Permütasyon",
+        "Bayes teoremi",
+        "Aritmetik ortalama",
+        "Diskriminant"
+      ],
+      "dogru_index": 1,
+      "cozum": "Elde P(pozitif | hasta) varken P(hasta | pozitif) istenmektedir. Bu ters yönlü hesap, toplam olasılıkla birlikte Bayes teoremi kullanılarak yapılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bayes teoreminin temel bağıntısı nedir?",
+        "back": "P(A|B) = P(B|A)·P(A)/P(B) eşitliğidir."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o02",
+      "alt_beceri": "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin mevcut bilgileri kullanır.",
+      "metin": "Bir öğrenci Bayes hesabında paydaya yalnızca P(A₁)·P(B|A₁) ifadesini yazmıştır. Bu yaklaşımdaki temel sorun hangisidir?",
+      "secenekler": [
+        "Payda her zaman 1'e eşit olmalıdır.",
+        "Pay yerine payda yazılması gerekirdi.",
+        "Bayes hesabında payda kullanılmaz.",
+        "Payda tüm yolların olasılık toplamını içermelidir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Bayes teoreminde payda, sonucun tüm olası yollardan gelme olasılıklarının toplamıdır. Tek bir dal yazılırsa sonuç yanlış çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters koşullu olasılık nedir?",
+        "back": "P(B|A) bilinirken P(A|B) olasılığının hesaplanmasıdır."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o03",
+      "alt_beceri": "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin mevcut bilgileri kullanır.",
+      "metin": "Bayes teoreminde 'önsel olasılık' hangi anlama gelir?",
+      "secenekler": [
+        "Yeni bilgi elde edilmeden önceki olasılık",
+        "Deney sonrasında hesaplanan olasılık",
+        "Koşullu olasılığın paydası",
+        "Örnek uzayın eleman sayısı"
+      ],
+      "dogru_index": 0,
+      "cozum": "Önsel olasılık, gözlem ya da test sonucu bilinmeden önce olaya verilen olasılıktır. Bayes teoreminde bu değer güncellenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sonsal olasılık nedir?",
+        "back": "Yeni bilgi kullanıldıktan sonra güncellenen olasılıktır."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o04",
+      "alt_beceri": "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin mevcut bilgileri kullanır.",
+      "metin": "A₁ ve A₂ olayları örnek uzayı ikiye ayırıyorsa bir B olayının olasılığı hangi ifadeyle hesaplanır?",
+      "secenekler": [
+        "P(B) = P(A₁) + P(A₂)",
+        "P(B) = P(B|A₁) · P(B|A₂)",
+        "P(B) = P(A₁)·P(B|A₁) + P(A₂)·P(B|A₂)",
+        "P(B) = P(A₁ ∩ A₂)"
+      ],
+      "dogru_index": 2,
+      "cozum": "Toplam olasılık kuralına göre B olayı, her bir ayrık durumdaki katkıların toplamıdır. Bu nedenle dal olasılıkları çarpılıp toplanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Toplam olasılık kuralı nedir?",
+        "back": "Ayrık durumların olasılıkları ile koşullu olasılıklarının çarpımlarının toplamıdır."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o05",
+      "alt_beceri": "Mevcut bilgileri kullanarak Bayes teoremine dayalı hesaplama yapar.",
+      "metin": "Bir fabrikada üretimin %60'ı A, %40'ı B makinesinde yapılmaktadır. A'nın hatalı üretim oranı %2, B'nin %5'tir. Rastgele seçilen hatalı bir ürünün A makinesinde üretilmiş olma olasılığı kaçtır?",
+      "secenekler": [
+        "0,6",
+        "0,4",
+        "0,02",
+        "0,375"
+      ],
+      "dogru_index": 3,
+      "cozum": "A'dan hatalı gelme olasılığı 0,6 · 0,02 = 0,012; B'den 0,4 · 0,05 = 0,02'dir. Hatalı ürünün A'dan gelme olasılığı 0,012/(0,012 + 0,02) = 0,375 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bayes hesabında paydanın anlamı nedir?",
+        "back": "İncelenen sonucun tüm yollardan gelme toplam olasılığıdır."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o06",
+      "alt_beceri": "Mevcut bilgileri kullanarak Bayes teoremine dayalı hesaplama yapar.",
+      "metin": "Bir atölyede üretimin 3/5'i M1, 2/5'i M2 makinesinde yapılmaktadır. M1'in kusurlu oranı %1, M2'nin %4'tür. Kusurlu bir ürünün M1'de üretilmiş olma olasılığı kaçtır?",
+      "secenekler": [
+        "3/8",
+        "3/11",
+        "1/4",
+        "2/5"
+      ],
+      "dogru_index": 1,
+      "cozum": "M1 katkısı (3/5)(1/100) = 3/500, M2 katkısı (2/5)(4/100) = 8/500'dür. Olasılık 3/(3 + 8) = 3/11 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bayes hesabında dalların katkısı nasıl bulunur?",
+        "back": "Dal olasılığı ile koşullu olasılığın çarpılmasıyla."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o07",
+      "alt_beceri": "Mevcut bilgileri kullanarak Bayes teoremine dayalı hesaplama yapar.",
+      "metin": "Bir ağaç diyagramında A dalının olasılığı 0,6, bu dalda hata oluşma olasılığı 0,02'dir. Bir ürünün hem A dalından hem hatalı olma olasılığı kaçtır?",
+      "secenekler": [
+        "0,012",
+        "0,02",
+        "0,6",
+        "0,32"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ağaç diyagramında bir yolun olasılığı, yol üzerindeki olasılıkların çarpımıdır: 0,6 · 0,02 = 0,012.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ağaç diyagramında yol olasılığı nedir?",
+        "back": "Yol üzerindeki olasılıkların çarpımıdır."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o08",
+      "alt_beceri": "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin ileriye yönelik yargıda bulunur.",
+      "metin": "Bir hastalığın toplumdaki görülme oranı %10'dur. Test, hastaların %90'ında pozitif sonuç verirken sağlıklı kişilerin %10'unda da pozitif çıkmaktadır. Testi pozitif olan bir kişinin gerçekten hasta olma olasılığı kaçtır?",
+      "secenekler": [
+        "0,9",
+        "0,1",
+        "0,5",
+        "0,18"
+      ],
+      "dogru_index": 2,
+      "cozum": "Hasta ve pozitif: 0,1 · 0,9 = 0,09; sağlıklı ve pozitif: 0,9 · 0,1 = 0,09'dur. Olasılık 0,09/(0,09 + 0,09) = 0,5 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yanlış pozitif nedir?",
+        "back": "Sağlıklı bir kişide testin pozitif çıkmasıdır."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o09",
+      "alt_beceri": "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin ileriye yönelik yargıda bulunur.",
+      "metin": "Gelen e-postaların %40'ı spamdır. Spam e-postaların %90'ında 'bedava' kelimesi geçerken normal e-postaların %10'unda geçmektedir. 'Bedava' kelimesi geçen bir e-postanın spam olma olasılığı kaçtır?",
+      "secenekler": [
+        "3/7",
+        "6/7",
+        "9/10",
+        "2/3"
+      ],
+      "dogru_index": 1,
+      "cozum": "Spam ve bedava: 0,4 · 0,9 = 0,36; normal ve bedava: 0,6 · 0,1 = 0,06'dır. Olasılık 0,36/(0,36 + 0,06) = 0,36/0,42 = 6/7 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bayes hesabında pay ve paydanın anlamı nedir?",
+        "back": "Pay incelenen yolu, payda tüm yolların toplamını gösterir."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    },
+    {
+      "soru_id": "mat_10_t07_c02_o10",
+      "alt_beceri": "Bayes teoreminin kullanıldığı gerçek yaşam durumlarına ilişkin ileriye yönelik yargıda bulunur.",
+      "metin": "Bir okulda öğrencilerin %70'i A şubesindedir. A şubesinde geçme oranı %80, B şubesinde %90'dır. Geçtiği bilinen bir öğrencinin A şubesinden olma olasılığı kaçtır?",
+      "secenekler": [
+        "7/10",
+        "8/9",
+        "0,56",
+        "56/83"
+      ],
+      "dogru_index": 3,
+      "cozum": "A ve geçme: 0,7 · 0,8 = 0,56; B ve geçme: 0,3 · 0,9 = 0,27'dir. Olasılık 0,56/(0,56 + 0,27) = 56/83 ≈ 0,675 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bayes sonucunun yüzdeye dönüştürülmesi nedir?",
+        "back": "Olasılık değerinin 100 ile çarpılmasıdır."
+      },
+      "kazanim": "Bir olayın gerçekleşmesinin diğer bir olayın meydana gelmesine bağlı olduğu durumların olasılığını mevcut bilgiye/veriye dayalı tahmin edebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t07_c02_o01:flashcard",
+      "front": "Bayes teoreminin temel bağıntısı nedir?",
+      "back": "P(A|B) = P(B|A)·P(A)/P(B) eşitliğidir."
+    },
+    {
+      "id": "mat_10_t07_c02_o02:flashcard",
+      "front": "Ters koşullu olasılık nedir?",
+      "back": "P(B|A) bilinirken P(A|B) olasılığının hesaplanmasıdır."
+    },
+    {
+      "id": "mat_10_t07_c02_o03:flashcard",
+      "front": "Sonsal olasılık nedir?",
+      "back": "Yeni bilgi kullanıldıktan sonra güncellenen olasılıktır."
+    },
+    {
+      "id": "mat_10_t07_c02_o04:flashcard",
+      "front": "Toplam olasılık kuralı nedir?",
+      "back": "Ayrık durumların olasılıkları ile koşullu olasılıklarının çarpımlarının toplamıdır."
+    },
+    {
+      "id": "mat_10_t07_c02_o05:flashcard",
+      "front": "Bayes hesabında paydanın anlamı nedir?",
+      "back": "İncelenen sonucun tüm yollardan gelme toplam olasılığıdır."
+    },
+    {
+      "id": "mat_10_t07_c02_o06:flashcard",
+      "front": "Bayes hesabında dalların katkısı nasıl bulunur?",
+      "back": "Dal olasılığı ile koşullu olasılığın çarpılmasıyla."
+    },
+    {
+      "id": "mat_10_t07_c02_o07:flashcard",
+      "front": "Ağaç diyagramında yol olasılığı nedir?",
+      "back": "Yol üzerindeki olasılıkların çarpımıdır."
+    },
+    {
+      "id": "mat_10_t07_c02_o08:flashcard",
+      "front": "Yanlış pozitif nedir?",
+      "back": "Sağlıklı bir kişide testin pozitif çıkmasıdır."
+    },
+    {
+      "id": "mat_10_t07_c02_o09:flashcard",
+      "front": "Bayes hesabında pay ve paydanın anlamı nedir?",
+      "back": "Pay incelenen yolu, payda tüm yolların toplamını gösterir."
+    },
+    {
+      "id": "mat_10_t07_c02_o10:flashcard",
+      "front": "Bayes sonucunun yüzdeye dönüştürülmesi nedir?",
+      "back": "Olasılık değerinin 100 ile çarpılmasıdır."
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "konu_id": "kim_10_t01_c09",
+  "kod": "KİM.10.1.9",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.86-100",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c09_o01",
+      "alt_beceri": "Gazların hacim, basınç, sıcaklık ve madde miktarı değişkenleri arasındaki ilişkilere yönelik araştırılabilir sorular oluşturur.",
+      "metin": "Bir öğrenci gazların davranışını incelemek için araştırma sorusu yazacaktır. Buna göre hangi soru deneyle sınanabilir niteliktedir?",
+      "secenekler": [
+        "Gazlar neden bu kadar ilginç ve güzel görünür?",
+        "Sabit sıcaklıkta basınç artırılırsa gazın hacmi nasıl değişir?",
+        "Gaz yasalarını kim bulmuştur ve neden önemlidir?",
+        "Gazlar gelecekte hangi alanlarda daha çok kullanılacaktır?"
+      ],
+      "dogru_index": 1,
+      "cozum": "Araştırılabilir soru, ölçülebilir değişkenler arasında sınanabilir bir ilişki kurar. Basınç-hacim ilişkisi deneyle ölçülüp grafiğe geçirilebilir; diğer seçenekler ölçüm gerektirmeyen yorum sorularıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Araştırılabilir sorunun özelliği nedir?",
+        "back": "Ölçülebilir değişkenler arasında deneyle sınanabilir bir ilişki kurmasıdır."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o02",
+      "alt_beceri": "Gazların hacim, basınç, sıcaklık ve madde miktarı değişkenleri arasındaki ilişkilere yönelik araştırılabilir sorular oluşturur.",
+      "metin": "Bir öğrenci 'sıcak hava balonları ısıtıldığında yükselir' gözleminden yola çıkarak araştırma sorusu oluşturacaktır. Bu gözlemi sınamak için en uygun soru hangisidir?",
+      "secenekler": [
+        "Balonların renkleri yükselme hızını etkiler mi?",
+        "Balon yapımında hangi kumaş türü daha dayanıklıdır?",
+        "Sıcak hava balonu ilk kez hangi ülkede uçurulmuştur?",
+        "Sabit basınçta sıcaklık arttıkça gazın hacmi nasıl değişir?"
+      ],
+      "dogru_index": 3,
+      "cozum": "Isınan havanın balonu yükseltmesi, hacim ve yoğunluk değişimiyle ilgilidir. Sabit basınçta sıcaklıkla hacmin nasıl değiştiği ölçülebilir değişkenlerle sınanabilir (Charles yasası).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Charles yasası hangi değişkenler arasındaki ilişkidir?",
+        "back": "Sabit basınçta hacim ile mutlak sıcaklık arasındaki doğru orantı ilişkisidir."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o03",
+      "alt_beceri": "Değişkenler arasındaki ilişkiyi belirlemek üzere hipotez kurar.",
+      "metin": "Bir öğrenci, sabit sıcaklıkta bir gazın basıncı artırıldığında hacminin azalacağı hipotezini kurmuştur. Bu hipotezi test eden deneyde bağımlı ve bağımsız değişkenler hangileridir?",
+      "secenekler": [
+        "Bağımsız değişken basınç, bağımlı değişken hacimdir.",
+        "Bağımsız değişken hacim, bağımlı değişken sıcaklıktır.",
+        "Bağımsız değişken sıcaklık, bağımlı değişken mol sayısıdır.",
+        "Bağımsız değişken mol sayısı, bağımlı değişken basınçtır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Araştırmacı basıncı kendisi değiştirdiği için bağımsız değişken basınçtır. Basınca bağlı olarak ölçülen hacim bağımlı değişken; sıcaklık ve mol sayısı ise kontrol değişkenidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağımsız değişken nedir?",
+        "back": "Araştırmacının kasıtlı olarak değiştirdiği değişkendir."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o04",
+      "alt_beceri": "Değişkenler arasındaki ilişkiyi belirlemek üzere hipotez kurar.",
+      "metin": "Gaz yasalarıyla ilgili aşağıdaki hipotezlerden hangisi deneysel verilerle çelişir?",
+      "secenekler": [
+        "Sabit basınçta gazın sıcaklığı artırılırsa hacmi de artar.",
+        "Sabit sıcaklıkta gazın basıncı artırılırsa hacmi azalır.",
+        "Sabit sıcaklık ve basınçta mol sayısı artırılırsa hacmi azalır.",
+        "Sabit hacimde gazın sıcaklığı artırılırsa basıncı artar."
+      ],
+      "dogru_index": 2,
+      "cozum": "Avogadro yasasına göre sabit sıcaklık ve basınçta mol sayısı arttıkça hacim de artar. Son seçenekteki 'hacim azalır' ifadesi gözlemlerle çelişir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro yasasının bağıntısı nedir?",
+        "back": "V1/n1 = V2/n2; sabit sıcaklık ve basınçta V ile n doğru orantılıdır."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o05",
+      "alt_beceri": "Basınç, hacim, sıcaklık ve madde miktarı arasındaki ikili ilişkileri gösteren gaz yasalarına yönelik araştırma planlar ve planladığı araştırmayı gerçekleştirir.",
+      "metin": "Boyle yasasını deneysel olarak göstermek isteyen bir öğrenci pistonlu bir şırınga kullanacaktır. Bu araştırmada kontrol değişkenleri hangileri olmalıdır?",
+      "secenekler": [
+        "Basınç ve hacim birlikte değiştirilmelidir.",
+        "Sıcaklık sürekli artırılmalı, mol sayısı serbest bırakılmalıdır.",
+        "Yalnızca pistonun kesit alanı sabit tutulmalıdır.",
+        "Sıcaklık ve gazın mol sayısı sabit tutulmalıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Boyle yasası basınç ile hacim arasındaki ilişkiyi sabit sıcaklık ve sabit miktarda gaz için tanımlar. Bu nedenle sıcaklık ve mol sayısı kontrol değişkenidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boyle yasasının bağıntısı nedir?",
+        "back": "P1V1 = P2V2; sabit sıcaklıkta basınç ile hacim ters orantılıdır."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o06",
+      "alt_beceri": "Basınç, hacim, sıcaklık ve madde miktarı arasındaki ikili ilişkileri gösteren gaz yasalarına yönelik araştırma planlar ve planladığı araştırmayı gerçekleştirir.",
+      "metin": "İçinde argon bulunan kapalı bir akkor ampul 27 °C sıcaklıkta 190 mmHg basınç göstermektedir. Ampul ısıtılarak 327 °C'ye çıkarıldığında basınç kaç atm olur?",
+      "secenekler": [
+        "1 atm",
+        "0,5 atm",
+        "0,25 atm",
+        "2 atm"
+      ],
+      "dogru_index": 1,
+      "cozum": "Hacim sabit olduğundan P1/T1 = P2/T2 kullanılır. T1 = 300 K, T2 = 600 K; P2 = 190 · 600/300 = 380 mmHg bulunur. 380 mmHg = 0,5 atm'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gay Lussac yasasının bağıntısı nedir?",
+        "back": "P1/T1 = P2/T2; sabit hacimde basınç mutlak sıcaklıkla doğru orantılıdır."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o07",
+      "alt_beceri": "Çizdiği grafikler üzerinden matematiksel modeller önerir.",
+      "metin": "Sabit sıcaklıkta belirli bir miktar gazın basınç-hacim grafiği verilmiştir. Grafikten yararlanarak P·V çarpımının kaç L·atm olduğu bulunacaktır. Buna göre çarpım kaçtır?",
+      "secenekler": [
+        "12",
+        "6",
+        "8",
+        "24"
+      ],
+      "dogru_index": 0,
+      "cozum": "Her nokta için basınç ile hacim çarpılırsa 2·6 = 12, 3·4 = 12, 4·3 = 12, 6·2 = 12 bulunur. Çarpım sabittir ve Boyle yasasının k = PV sabitini verir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "P (atm)",
+        "yEkseni": "V (L)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "V",
+            "noktalar": [
+              [
+                2,
+                6
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                6,
+                2
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Boyle yasasında PV çarpımının anlamı nedir?",
+        "back": "Sabit sıcaklıkta gaz miktarına bağlı olarak değişmeyen sabit değeri gösterir."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o08",
+      "alt_beceri": "Çizdiği grafikler üzerinden matematiksel modeller önerir.",
+      "metin": "Sabit basınç altında ısıtılan bir gazın hacim-sıcaklık grafiği verilmiştir. Grafikteki doğru doğrusal olduğuna göre 900 K sıcaklıkta gazın hacmi kaç litre olur?",
+      "secenekler": [
+        "5 L",
+        "8 L",
+        "6 L",
+        "4,5 L"
+      ],
+      "dogru_index": 2,
+      "cozum": "Grafikten V/T oranı 2/300 = 4/600 = 1/150 L/K bulunur. 900 K için V = 900/150 = 6 L olur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "T (K)",
+        "yEkseni": "V (L)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "V",
+            "noktalar": [
+              [
+                300,
+                2
+              ],
+              [
+                600,
+                4
+              ],
+              [
+                750,
+                5
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Charles yasasında V/T oranının anlamı nedir?",
+        "back": "Sabit basınç ve miktarda gaz için değişmeyen oranı (sabit k) ifade eder."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o09",
+      "alt_beceri": "Elde ettiği grafiksel ve matematiksel modelleri kullanarak gazlara ilişkin değişkenler (P, V, T ve",
+      "metin": "Sabit sıcaklıkta 4 litre hacim kaplayan bir gazın basıncı 2 atm'dir. Gazın hacmi 1 litreye düşürülürse basıncı kaç atm olur?",
+      "secenekler": [
+        "4 atm",
+        "8 atm",
+        "2 atm",
+        "0,5 atm"
+      ],
+      "dogru_index": 1,
+      "cozum": "Boyle yasasına göre P1V1 = P2V2: 2·4 = P2·1 olduğundan P2 = 8 atm bulunur. Hacim dörtte bire inerken basınç dört katına çıkmıştır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hacim azalırken basıncın artmasının nedeni nedir?",
+        "back": "Aynı sayıda tanecik daha küçük hacimde daha sık çarptığı için basınç artar."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o10",
+      "alt_beceri": "Elde ettiği grafiksel ve matematiksel modelleri kullanarak gazlara ilişkin değişkenler (P, V, T ve",
+      "metin": "Sabit basınçlı bir kapta 2 litre hacim kaplayan gazın sıcaklığı 127 °C'dir. Gazın hacminin 4 litre olması için sıcaklık kaç °C'ye çıkarılmalıdır?",
+      "secenekler": [
+        "254 °C",
+        "800 °C",
+        "327 °C",
+        "527 °C"
+      ],
+      "dogru_index": 3,
+      "cozum": "T1 = 127 + 273 = 400 K. V1/T1 = V2/T2 → 2/400 = 4/T2 → T2 = 800 K = 527 °C bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Celcius sıcaklığının kelvine çevrilme bağıntısı nedir?",
+        "back": "T(K) = t(°C) + 273 bağıntısıyla çevrilir."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o11",
+      "alt_beceri": "n) arasındaki ilişkileri açıklar.",
+      "metin": "Sabit sıcaklık ve basınçta bir gazın 1 molü 30 litre hacim kaplamaktadır. Bu gazın mol sayısı 0,5 mole düşürülürse hacmi kaç litre olur?",
+      "secenekler": [
+        "30 L",
+        "60 L",
+        "15 L",
+        "7,5 L"
+      ],
+      "dogru_index": 2,
+      "cozum": "Avogadro yasasına göre V1/n1 = V2/n2: 30/1 = V2/0,5 olduğundan V2 = 15 L bulunur. Mol sayısı yarıya inince hacim de yarıya iner.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro yasasında hacim ile mol sayısı arasındaki ilişki nedir?",
+        "back": "Sabit sıcaklık ve basınçta hacim mol sayısıyla doğru orantılıdır."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o12",
+      "alt_beceri": "n) arasındaki ilişkileri açıklar.",
+      "metin": "Aynı sıcaklık ve basınçta 1 litrelik kaplara ayrı ayrı oksijen ve helyum gazı doldurulmuştur. Buna göre kaplardaki gazların mol sayıları için hangisi doğrudur?",
+      "secenekler": [
+        "Mol sayıları eşittir; çünkü eşit hacimde eşit sayıda tanecik bulunur.",
+        "Helyumun mol sayısı daha fazladır; çünkü atom kütlesi küçüktür.",
+        "Oksijenin mol sayısı daha fazladır; çünkü molekülü iki atomludur.",
+        "Mol sayıları karşılaştırılamaz; gazın türü bilinmeden hesap yapılamaz."
+      ],
+      "dogru_index": 0,
+      "cozum": "Avogadro hipotezine göre aynı sıcaklık ve basınçta eşit hacimler eşit sayıda tanecik içerir. Bu nedenle 1 litredeki mol sayıları eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro hipotezinin ifadesi nedir?",
+        "back": "Aynı sıcaklık ve basınçta eşit hacimdeki gazlar eşit sayıda tanecik içerir."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o13",
+      "alt_beceri": "Gaz yasalarını kinetik moleküler teori ile değerlendirir.",
+      "metin": "Sabit sıcaklıkta gazın hacmi azaltıldığında basıncın artması kinetik moleküler teori ile nasıl açıklanır?",
+      "secenekler": [
+        "Taneciklerin ortalama kinetik enerjisi azaldığı için basınç artar.",
+        "Taneciklerin kütlesi arttığı için çeperlere daha çok kuvvet uygulanır.",
+        "Tanecikler arasındaki kimyasal bağlar koparak gaz oluşur.",
+        "Tanecikler birim yüzeye daha sık çarptığı için basınç artar."
+      ],
+      "dogru_index": 3,
+      "cozum": "Sıcaklık sabit olduğu için taneciklerin hızı değişmez. Hacim küçülünce birim hacimdeki tanecik sayısı artar, çeperlere çarpma sıklığı yükselir ve basınç artar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kinetik moleküler teori nedir?",
+        "back": "Gaz taneciklerinin hareketini inceleyerek basınç ve sıcaklık gibi özellikleri açıklayan teoridir."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c09_o14",
+      "alt_beceri": "Gaz yasalarını kinetik moleküler teori ile değerlendirir.",
+      "metin": "Sabit basınçta ısıtılan gazın hacminin artması kinetik moleküler teori ile nasıl açıklanır?",
+      "secenekler": [
+        "Sıcaklıkla tanecik sayısı artar; gazın hacmi bu yüzden büyür.",
+        "Sıcaklıkla taneciklerin ortalama hızı artar; sabit basınç için hacim büyümek zorundadır.",
+        "Sıcaklıkla tanecikler arasındaki çekim güçlenir ve gaz genişler.",
+        "Sıcaklıkla taneciklerin kütlesi artar ve gaz daha çok yer kaplar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Isıtılan gazda tanecikler hızlanır ve çeperlere daha sık çarpar. Pistonlu kapta basınç sabit kalsın diye hacim artar; tanecik sayısı ve kütlesi değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıcaklık artışının taneciklere etkisi nedir?",
+        "back": "Ortalama kinetik enerjileri ve hızları artar."
+      },
+      "kazanim": "Gazların özellikleri arasındaki ilişkileri bilimsel sorgulayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c09_o01:flashcard",
+      "front": "Araştırılabilir sorunun özelliği nedir?",
+      "back": "Ölçülebilir değişkenler arasında deneyle sınanabilir bir ilişki kurmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c09_o02:flashcard",
+      "front": "Charles yasası hangi değişkenler arasındaki ilişkidir?",
+      "back": "Sabit basınçta hacim ile mutlak sıcaklık arasındaki doğru orantı ilişkisidir."
+    },
+    {
+      "id": "kim_10_t01_c09_o03:flashcard",
+      "front": "Bağımsız değişken nedir?",
+      "back": "Araştırmacının kasıtlı olarak değiştirdiği değişkendir."
+    },
+    {
+      "id": "kim_10_t01_c09_o04:flashcard",
+      "front": "Avogadro yasasının bağıntısı nedir?",
+      "back": "V1/n1 = V2/n2; sabit sıcaklık ve basınçta V ile n doğru orantılıdır."
+    },
+    {
+      "id": "kim_10_t01_c09_o05:flashcard",
+      "front": "Boyle yasasının bağıntısı nedir?",
+      "back": "P1V1 = P2V2; sabit sıcaklıkta basınç ile hacim ters orantılıdır."
+    },
+    {
+      "id": "kim_10_t01_c09_o06:flashcard",
+      "front": "Gay Lussac yasasının bağıntısı nedir?",
+      "back": "P1/T1 = P2/T2; sabit hacimde basınç mutlak sıcaklıkla doğru orantılıdır."
+    },
+    {
+      "id": "kim_10_t01_c09_o07:flashcard",
+      "front": "Boyle yasasında PV çarpımının anlamı nedir?",
+      "back": "Sabit sıcaklıkta gaz miktarına bağlı olarak değişmeyen sabit değeri gösterir."
+    },
+    {
+      "id": "kim_10_t01_c09_o08:flashcard",
+      "front": "Charles yasasında V/T oranının anlamı nedir?",
+      "back": "Sabit basınç ve miktarda gaz için değişmeyen oranı (sabit k) ifade eder."
+    },
+    {
+      "id": "kim_10_t01_c09_o09:flashcard",
+      "front": "Hacim azalırken basıncın artmasının nedeni nedir?",
+      "back": "Aynı sayıda tanecik daha küçük hacimde daha sık çarptığı için basınç artar."
+    },
+    {
+      "id": "kim_10_t01_c09_o10:flashcard",
+      "front": "Celcius sıcaklığının kelvine çevrilme bağıntısı nedir?",
+      "back": "T(K) = t(°C) + 273 bağıntısıyla çevrilir."
+    },
+    {
+      "id": "kim_10_t01_c09_o11:flashcard",
+      "front": "Avogadro yasasında hacim ile mol sayısı arasındaki ilişki nedir?",
+      "back": "Sabit sıcaklık ve basınçta hacim mol sayısıyla doğru orantılıdır."
+    },
+    {
+      "id": "kim_10_t01_c09_o12:flashcard",
+      "front": "Avogadro hipotezinin ifadesi nedir?",
+      "back": "Aynı sıcaklık ve basınçta eşit hacimdeki gazlar eşit sayıda tanecik içerir."
+    },
+    {
+      "id": "kim_10_t01_c09_o13:flashcard",
+      "front": "Kinetik moleküler teori nedir?",
+      "back": "Gaz taneciklerinin hareketini inceleyerek basınç ve sıcaklık gibi özellikleri açıklayan teoridir."
+    },
+    {
+      "id": "kim_10_t01_c09_o14:flashcard",
+      "front": "Sıcaklık artışının taneciklere etkisi nedir?",
+      "back": "Ortalama kinetik enerjileri ve hızları artar."
+    }
+  ]
+}

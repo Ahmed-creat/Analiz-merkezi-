@@ -1,0 +1,355 @@
+{
+  "konu_id": "kim_10_t01_c02",
+  "kod": "KİM.10.1.2",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.28-33",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t01_c02_o01",
+      "alt_beceri": "Taneciklerin yeniden düzenlenmesi temelinde kimyasal tepkimelerin oluşumu için önerdiği modeli farklı kimyasal tepkimelerin oluşum süreçlerini ince­leyerek sınar.",
+      "metin": "Tabloda dört öğrenci modelindeki atom sayıları verilmiştir. Bu modellerden hangisi tepkime öncesi ve sonrasında atom sayısını korumadığı için sınama sonucunda reddedilir?",
+      "secenekler": [
+        "I. model",
+        "III. model",
+        "II. model",
+        "IV. model"
+      ],
+      "dogru_index": 1,
+      "cozum": "III. modelde tepkime öncesinde 4 hidrojen ve 2 oksijen atomu varken sonrasında 2 hidrojen ve 2 oksijen gösterilmiştir. Atom sayısı korunmadığı için model bilimsel ölçütlere uymaz.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Model",
+          "Tepkime öncesi",
+          "Tepkime sonrası"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "Fe:1 S:1",
+            "Fe:1 S:1"
+          ],
+          [
+            "II",
+            "H:2 F:2",
+            "H:2 F:2"
+          ],
+          [
+            "III",
+            "H:4 O:2",
+            "H:2 O:2"
+          ],
+          [
+            "IV",
+            "C:2 O:4",
+            "C:2 O:4"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Bir tanecik modelinin geçerli olması için hangi temel koşul sağlanmalıdır?",
+        "back": "Tepkime öncesi ve sonrasında her elementin atom sayısı eşit olmalıdır."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o02",
+      "alt_beceri": "Taneciklerin yeniden düzenlenmesi temelinde kimyasal tepkimelerin oluşumu için önerdiği modeli farklı kimyasal tepkimelerin oluşum süreçlerini ince­leyerek sınar.",
+      "metin": "Tabloda C2H5OH molekülünün dört farklı gösterimi tanımlanmıştır. Buna göre hangi satırda uzay-dolgu modeli tanımlanmıştır?",
+      "secenekler": [
+        "I. gösterim",
+        "III. gösterim",
+        "IV. gösterim",
+        "II. gösterim"
+      ],
+      "dogru_index": 3,
+      "cozum": "Uzay-dolgu modelinde atomlar kürelerle temsil edilir; bağları gösteren çubuklar yoktur ve küreler atom boyutlarını oransal olarak yansıtacak biçimde birbirine yapışıktır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Gösterim",
+          "Tanım"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "Atomlar küre, bağlar çubuk"
+          ],
+          [
+            "II",
+            "Atomlar yapışık küre, çubuk yok"
+          ],
+          [
+            "III",
+            "Değerlik elektronu noktalarla"
+          ],
+          [
+            "IV",
+            "Karbonlar köşede, çizgi bağ"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Top-çubuk modeli ile uzay-dolgu modeli arasındaki fark nedir?",
+        "back": "Top-çubuk modelinde bağlar çubukla gösterilir ve küreler arasında boşluk vardır; uzay-dolgu modelinde çubuk yoktur, küreler yapışıktır ve boyut oranlıdır."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o03",
+      "alt_beceri": "Sınama sürecinde elde ettiği kanıtlara uygun olarak modelini geliştirir.",
+      "metin": "Bir öğrenci CH4(g) + 2O2(g) → CO2(g) + 2H2O(s) tepkimesini modellerken ürün tarafına yalnızca CO2 taneciklerini çizmiştir. Modelini geliştirmek için öğrencinin yapması gereken en uygun değişiklik hangisidir?",
+      "secenekler": [
+        "Ürün tarafına iki su molekülü ekleyip hidrojen atomlarının sayısını eşitlemek",
+        "Tepken tarafına bir metan molekülü daha ekleyip oksijen sayısını artırmak",
+        "Karbon dioksit molekülünü ikiye ayırıp karbon atomlarını ayrı göstermek",
+        "Modeldeki bütün tanecikleri aynı renkte çizerek gösterimi sadeleştirmek"
+      ],
+      "dogru_index": 0,
+      "cozum": "Tepkenlerde 4 hidrojen atomu vardır; bunlar ürün tarafında 2H2O içinde yer alır. Ürüne iki su molekülü eklenince H ve O atomlarının sayısı korunur ve model denkleme uygun hâle gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Model geliştirmede hangi ölçüt esas alınır?",
+        "back": "Modelin gözlem ve kanıtlarla uyuşması; özellikle atom sayısının korunması ve taneciklerin doğru gösterilmesi."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o04",
+      "alt_beceri": "Sınama sürecinde elde ettiği kanıtlara uygun olarak modelini geliştirir.",
+      "metin": "NO(g) + O3(g) → NO2(g) + O2(g) tepkimesinin modelinde bir öğrenci NO2 yerine N2O4 tanecikleri çizmiştir. Bu modelin sınanması sırasında hangi kanıt öğrencinin modelini çürütür?",
+      "secenekler": [
+        "Tepkenlerde oksijen atomlarının bulunması ve renkli olması",
+        "Tepkimenin gaz fazında gerçekleşmesi ve kapalı kapta olması",
+        "Ürün tarafındaki azot atomu sayısının tepkenlerdekinden fazla olması",
+        "Tepkenlerin iki farklı molekülden oluşması ve moleküllerin hareketli olması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tepkenlerde toplam 1 azot atomu vardır. N2O4 iki azot içerdiği için modelde ürün tarafında azot sayısı artmış olur; bu durum kütlenin korunumuyla çelişir ve modeli çürütür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kütlenin korunumu kanununun tanımı nedir?",
+        "back": "Tepkimeye giren maddelerin toplam kütlesinin, oluşan ürünlerin toplam kütlesine eşit olduğunu."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o05",
+      "alt_beceri": "Taneciklerin yeniden düzenlenmesi temelinde kimyasal tepkimelerin oluşumu için önerdiği modeli farklı kimyasal tepkimelerin oluşum süreçlerini ince­leyerek sınar.",
+      "metin": "4Al(k) + 3O2(g) → 2Al2O3(k) tepkimesi alt mikroskobik seviyede modellenecektir. Buna göre modelde tepken tarafında kaç tanecik gösterilmelidir?",
+      "secenekler": [
+        "2 alüminyum atomu ve 3 oksijen atomu",
+        "4 alüminyum molekülü ve 6 oksijen atomu",
+        "2 alüminyum atomu ve 2 oksijen molekülü",
+        "4 alüminyum atomu ve 3 oksijen molekülü"
+      ],
+      "dogru_index": 3,
+      "cozum": "Denklemin katsayıları 4Al ve 3O2'dir. Alt mikro modelde 4 alüminyum atomu ile 3 oksijen molekülü (her biri iki oksijen atomu içerir) gösterilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "O2 ile O arasındaki fark nedir?",
+        "back": "O tek bir oksijen atomunu, O2 ise iki oksijen atomundan oluşan oksijen molekülünü gösterir."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o06",
+      "alt_beceri": "Sınama sürecinde elde ettiği kanıtlara uygun olarak modelini geliştirir.",
+      "metin": "Bir öğrenci tuzun suda çözünmesini modellerken yalnızca iyonları çizmiş, su moleküllerini göstermemiştir. Bu modelin geliştirilmesi için hangi gerekçe doğrudur?",
+      "secenekler": [
+        "Su molekülleri tepkimeye girerek yeni iyonlar oluşturduğu için mutlaka çizilmelidir.",
+        "İyonların su molekülleri tarafından sarılması çözünmenin temel basamağıdır; modelde gösterilmelidir.",
+        "Su molekülleri yalnızca çözeltinin rengini belirlediği için görsel açıdan gereklidir.",
+        "İyonlar suda hareket edemediği için su molekülleri hareketi sağlayan tek taneciktir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözünmede su molekülleri iyonların çevresini sararak (hidratlaşma) onları kristalden ayırır. Bu basamak gösterilmediğinde model süreci eksik açıklar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hidratlaşma nedir?",
+        "back": "Suda çözünen iyonların çevresinin su molekülleri tarafından sarılmasıdır."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o07",
+      "alt_beceri": "Sınama sürecinde elde ettiği kanıtlara uygun olarak modelini geliştirir.",
+      "metin": "Bir öğrenci tepkime modelini animasyonla karşılaştırırken modelinde taneciklerin yalnızca birbirine yaklaştığını, bağların kopmadığını fark etmiştir. Bu fark modele nasıl yansıtılmalıdır?",
+      "secenekler": [
+        "Tepkenlerdeki bağların kopması ve ürünlerde yeni bağların oluşması aşamalı olarak gösterilmeli.",
+        "Tanecikler arasındaki uzaklık artırılarak tepkimenin ısı aldığı belirtilmeli.",
+        "Modelde tanecik sayısı azaltılarak çarpışma olasılığı düşürülmeli.",
+        "Tanecikler aynı yöne hareket ettirilerek tepkimenin tek yönlü olduğu vurgulanmalı."
+      ],
+      "dogru_index": 0,
+      "cozum": "Kimyasal tepkimede tanecikler arasındaki bağlar kopar ve atomlar yeniden düzenlenerek yeni bağlar oluşur. Modelde bu iki basamağın gösterilmesi modeli bilimsel gösterime yaklaştırır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kimyasal tepkimede bağlara ne olur?",
+        "back": "Tepkenlerdeki bağlar kopar, atomlar yeniden düzenlenir ve ürünlerde yeni bağlar oluşur."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o08",
+      "alt_beceri": "Taneciklerin yeniden düzenlenmesi temelinde kimyasal tepkimelerin oluşumu için önerdiği modeli farklı kimyasal tepkimelerin oluşum süreçlerini ince­leyerek sınar.",
+      "metin": "Tabloda üç gösterim örneği verilmiştir. Buna göre hangi örnek sembolik seviyeye aittir?",
+      "secenekler": [
+        "I. örnek",
+        "III. örnek",
+        "II. örnek",
+        "I ve III. örnekler"
+      ],
+      "dogru_index": 2,
+      "cozum": "Sembolik gösterimde sembol, formül, denklem veya grafik kullanılır. Fe2O3 · nH2O bir formüldür; paslanma olayı makroskobik, tanecikler ise alt mikroskobik seviyededir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Örnek",
+          "Gösterim"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "Demirin paslanması"
+          ],
+          [
+            "II",
+            "Fe2O3 · nH2O formülü"
+          ],
+          [
+            "III",
+            "Demir ve oksijen tanecikleri"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Sembolik gösterim nedir?",
+        "back": "Sembol, formül, denklem ve grafiklerle makroskobik ile alt mikroskobik seviye arasında ilişki kuran gösterimdir."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o09",
+      "alt_beceri": "Sınama sürecinde elde ettiği kanıtlara uygun olarak modelini geliştirir.",
+      "metin": "Na(k) + 1/2Cl2(g) → NaCl(k) tepkimesinin modelinde sodyum atomunun bir elektronunu klora verdiği gösterilmek isteniyor. Bu aktarım modelde nasıl gösterilmelidir?",
+      "secenekler": [
+        "Na ve Cl tanecikleri üst üste çizilip tek bir tanecik gibi gösterilmeli.",
+        "Na tanesinden Cl tanesine bir elektronun geçişi okla gösterilmeli ve iyon yükleri belirtilmeli.",
+        "Her iki tanecik de nötr olarak çizilip aralarına bağ çubuğu konulmalı.",
+        "Cl tanesinden Na tanesine iki elektron geçişi gösterilerek yükler eşitlenmeli."
+      ],
+      "dogru_index": 1,
+      "cozum": "İyonik bağ oluşumunda Na atomu bir elektron vererek Na+ iyonuna, Cl atomu bu elektronu alarak Cl- iyonuna dönüşür. Modelde elektron geçişi ve iyon yükleri gösterilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İyonik bağın oluşumu nasıl tanımlanır?",
+        "back": "Elektron alışverişiyle oluşan zıt yüklü iyonların elektrostatik çekimiyle oluşur."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "kim_10_t01_c02_o10",
+      "alt_beceri": "Taneciklerin yeniden düzenlenmesi temelinde kimyasal tepkimelerin oluşumu için önerdiği modeli farklı kimyasal tepkimelerin oluşum süreçlerini ince­leyerek sınar.",
+      "metin": "Tabloda bir öğrencinin modeli ile bilimsel modelin karşılaştırması yer almaktadır. Buna göre hangi satırdaki fark modelin gerçekten geliştirilmesini gerektirir?",
+      "secenekler": [
+        "I. satır",
+        "III. satır",
+        "IV. satır",
+        "II. satır"
+      ],
+      "dogru_index": 3,
+      "cozum": "Atom yarıçapları elementten elemente değişir. Tüm atomları aynı çapta göstermek modelin bilimsel içeriğini bozar; renk, ok rengi ve yerleşim ise biçimsel ayrıntıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Karşılaştırma",
+          "Öğrenci modeli"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "Tanecikleri renklidir"
+          ],
+          [
+            "II",
+            "Atom çapları eşit çizilmiştir"
+          ],
+          [
+            "III",
+            "Oklar kırmızı renktedir"
+          ],
+          [
+            "IV",
+            "Kutular yatay yerleşmiştir"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Tanecik modelinde atomların boyutu neden önemlidir?",
+        "back": "Atom yarıçapları farklı olduğu için boyutların oransal gösterilmesi modelin bilimsel doğruluğunu artırır."
+      },
+      "kazanim": "Kimyasal tepkimelerin oluşumunu açıklamak için bilimsel model oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t01_c02_o01:flashcard",
+      "front": "Bir tanecik modelinin geçerli olması için hangi temel koşul sağlanmalıdır?",
+      "back": "Tepkime öncesi ve sonrasında her elementin atom sayısı eşit olmalıdır."
+    },
+    {
+      "id": "kim_10_t01_c02_o02:flashcard",
+      "front": "Top-çubuk modeli ile uzay-dolgu modeli arasındaki fark nedir?",
+      "back": "Top-çubuk modelinde bağlar çubukla gösterilir ve küreler arasında boşluk vardır; uzay-dolgu modelinde çubuk yoktur, küreler yapışıktır ve boyut oranlıdır."
+    },
+    {
+      "id": "kim_10_t01_c02_o03:flashcard",
+      "front": "Model geliştirmede hangi ölçüt esas alınır?",
+      "back": "Modelin gözlem ve kanıtlarla uyuşması; özellikle atom sayısının korunması ve taneciklerin doğru gösterilmesi."
+    },
+    {
+      "id": "kim_10_t01_c02_o04:flashcard",
+      "front": "Kütlenin korunumu kanununun tanımı nedir?",
+      "back": "Tepkimeye giren maddelerin toplam kütlesinin, oluşan ürünlerin toplam kütlesine eşit olduğunu."
+    },
+    {
+      "id": "kim_10_t01_c02_o05:flashcard",
+      "front": "O2 ile O arasındaki fark nedir?",
+      "back": "O tek bir oksijen atomunu, O2 ise iki oksijen atomundan oluşan oksijen molekülünü gösterir."
+    },
+    {
+      "id": "kim_10_t01_c02_o06:flashcard",
+      "front": "Hidratlaşma nedir?",
+      "back": "Suda çözünen iyonların çevresinin su molekülleri tarafından sarılmasıdır."
+    },
+    {
+      "id": "kim_10_t01_c02_o07:flashcard",
+      "front": "Kimyasal tepkimede bağlara ne olur?",
+      "back": "Tepkenlerdeki bağlar kopar, atomlar yeniden düzenlenir ve ürünlerde yeni bağlar oluşur."
+    },
+    {
+      "id": "kim_10_t01_c02_o08:flashcard",
+      "front": "Sembolik gösterim nedir?",
+      "back": "Sembol, formül, denklem ve grafiklerle makroskobik ile alt mikroskobik seviye arasında ilişki kuran gösterimdir."
+    },
+    {
+      "id": "kim_10_t01_c02_o09:flashcard",
+      "front": "İyonik bağın oluşumu nasıl tanımlanır?",
+      "back": "Elektron alışverişiyle oluşan zıt yüklü iyonların elektrostatik çekimiyle oluşur."
+    },
+    {
+      "id": "kim_10_t01_c02_o10:flashcard",
+      "front": "Tanecik modelinde atomların boyutu neden önemlidir?",
+      "back": "Atom yarıçapları farklı olduğu için boyutların oransal gösterilmesi modelin bilimsel doğruluğunu artırır."
+    }
+  ]
+}

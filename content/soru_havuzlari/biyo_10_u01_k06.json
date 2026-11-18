@@ -1,0 +1,251 @@
+{
+  "konu_id": "biyo_10_u01_k06",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k06_o01",
+      "alt_beceri": "Fermantasyon",
+      "metin": "Fermantasyonda NADH'deki elektron ve hidrojenler farklı alıcılara aktarıldığında hangi molekül yeniden oluşur?",
+      "secenekler": [
+        "NAD⁺",
+        "ATP",
+        "NADH",
+        "Karbondioksit"
+      ],
+      "dogru_index": 0,
+      "cozum": "Elektron ve hidrojenlerin aktarılması NAD⁺'ı yeniler; böylece glikoliz ve ATP üretimi sürdürülebilir. NADH ise hidrojen taşıyan indirgenmiş biçimdir, yenilenen molekül değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyonun gerçekleştiği hücresel bölümü ve oksijen ile ETS kullanımını belirtiniz.",
+        "back": "Ökaryot ve prokaryot hücrelerin sitoplazmasında gerçekleşir; oksijen ve ETS kullanılmaz. Glikolizle oluşan piruvat farklı son ürünlere dönüşür."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o02",
+      "alt_beceri": "Fermantasyon",
+      "metin": "İki mikroorganizmadan biri fermantasyonda etil alkol, diğeri laktik asit oluşturuyor. Bu fermantasyonlara verilen adlar hangi özelliğe dayanır?",
+      "secenekler": [
+        "Gerçekleştikleri hücre bölümü",
+        "Oluşan son ürünün çeşidi",
+        "Başlangıçta kullanılan hücre sayısı",
+        "Ortam sıcaklığının sabit kalması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fermantasyon, oluşan son ürün çeşidine göre adlandırılır; bu nedenle etil alkol ve laktik asit fermantasyonu adları kullanılır. Hücre bölümü adlandırmayı belirlemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyonda NAD⁺'ın yeniden oluşması, glikoliz ve ATP üretiminin sürmesini nasıl sağlar?",
+        "back": "NADH'deki elektron ve hidrojenler farklı alıcılara aktarılınca NAD⁺ yenilenir; bu, glikoliz tepkimelerinin devam etmesini sağlar."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o03",
+      "alt_beceri": "Fermantasyon",
+      "metin": "Bir üretici, canlı mikroorganizmalar içeren fermente yulaf içeceğini probiyotik olarak sunuyor. Ürünle ilgili hangi ifade bilimsel açıdan en uygundur?",
+      "secenekler": [
+        "Bağırsak mikrobiyotasını tamamen yok ettiği belirtilir.",
+        "Yalnızca glikoz sağladığı ve mikroorganizmalarla ilişki kurmadığı belirtilir.",
+        "Sağlıklı bağırsak mikrobiyotasıyla ilişkilendirilebilir ve sindirim sağlığına katkı gösterebilir.",
+        "Bütün bağırsak hastalıklarını kesin olarak iyileştirdiği belirtilir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Canlı mikroorganizma içeren probiyotik ürünler sağlıklı bağırsak mikrobiyotasıyla ve sindirim sağlığına olası katkılarıyla ilişkilendirilebilir. Bu, bütün hastalıkları kesin olarak iyileştirdikleri anlamına gelmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Canlı kültür içeren yeni bir yulaf içeceği probiyotik olarak tanıtılıyor. Bu nitelik bağırsak mikrobiyotasıyla nasıl ilişkilendirilebilir?",
+        "back": "Canlı mikroorganizmalar sağlıklı bağırsak mikrobiyotasıyla ilişkilendirilebilir; bu tür ürünler sindirim sağlığına olumlu katkı gösterebilir."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o04",
+      "alt_beceri": "Fermantasyon",
+      "metin": "Bir ham madde, mikroorganizmaların kontrollü büyümesi ve enzimatik işlemlerle yiyecek ya da içeceğe dönüştürülüyor. Bu üretim süreci nasıl adlandırılır?",
+      "secenekler": [
+        "Damıtma",
+        "Dondurarak saklama",
+        "Mekanik sindirim",
+        "Fermantasyon"
+      ],
+      "dogru_index": 3,
+      "cozum": "Fermantasyonda mikroorganizmaların metabolik faaliyetleri ve enzimleri ham maddenin yiyecek ya da içeceğe dönüşmesini sağlar. Damıtma ve dondurma fermantasyonun kendisi değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fermantasyonu fermente besin üretimi açısından tanımlayınız.",
+        "back": "Mikroorganizmaların kontrollü büyümesi ve enzimatik işlemlerle ham maddenin yiyecek ya da içeceğe dönüştürülmesiyle gerçekleşir."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o05",
+      "alt_beceri": "Etil Alkol Fermantasyonu",
+      "metin": "Şekerli meyve özünden fermente içecek üretilen kapalı tankta maya etil alkol fermantasyonu yapıyor. Tankta gaz birikmesi ve basıncın artmasına hangi ürün neden olur?",
+      "secenekler": [
+        "Karbondioksit (CO₂) gazı",
+        "Tüketilen oksijen",
+        "Laktik asit",
+        "Asetil-CoA"
+      ],
+      "dogru_index": 0,
+      "cozum": "Etil alkol fermantasyonunda piruvattan CO₂ ayrılır. Kapalı fermantasyon tankındaki gaz birikimi ve basınç artışı bu karbondioksitten kaynaklanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Etil alkol fermantasyonunda piruvattan etil alkol oluşana kadar gerçekleşen iki basamağı sıralayınız.",
+        "back": "Piruvattan CO₂ ayrılarak asetaldehit oluşur; ardından asetaldehit NADH ile indirgenerek etil alkole dönüşür ve NAD⁺ yenilenir."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o06",
+      "alt_beceri": "Etil Alkol Fermantasyonu",
+      "metin": "Etil alkol fermantasyonunun ikinci basamağında asetaldehit NADH ile indirgenince hangi ürün oluşur?",
+      "secenekler": [
+        "Laktik asit",
+        "Etil alkol",
+        "Piruvat",
+        "Asetil-CoA"
+      ],
+      "dogru_index": 1,
+      "cozum": "Asetaldehit NADH kullanılarak etil alkole indirgenir; bu sırada glikolizin sürmesi için NAD⁺ yenilenir. Laktik asit farklı fermantasyon çeşidinin son ürünüdür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Etil alkol fermantasyonunda asetaldehit, NADH ve NAD⁺ arasındaki ilişki nedir?",
+        "back": "Asetaldehit NADH’den elektron/hidrojen alarak etil alkole indirgenir; NADH oksitlenip NAD⁺ hâline gelir. Yenilenen NAD⁺ glikolizin sürmesine katkı sağlar."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o07",
+      "alt_beceri": "Etil Alkol Fermantasyonu",
+      "metin": "Yenilenebilir yakıt üretimini inceleyen bir pilot düzende, tek hücreli ökaryotlar şekerli çözeltiden etil alkol oluşturuyor. Bu mikroorganizmalar hangi gruptadır?",
+      "secenekler": [
+        "Yalnızca yeşil bitkilerin yaprakları",
+        "Memelilerin olgun alyuvarları",
+        "Maya mantarları",
+        "Tüm hayvan hücreleri"
+      ],
+      "dogru_index": 2,
+      "cozum": "Mayalar tek hücreli ökaryot mantarlardır ve etil alkol fermantasyonu yapabilir. Bu süreçte etil alkolle birlikte CO₂ de oluşabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Etil alkol fermantasyonunu gerçekleştirebilen mikroorganizma gruplarından birini ve bu sürecin ürünlerini belirtiniz.",
+        "back": "Maya mantarları etil alkol fermantasyonu yapabilir; süreçte etil alkol ve CO₂ oluşur."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o08",
+      "alt_beceri": "Laktik Asit Fermantasyonu",
+      "metin": "Bir kültürde üç glikoz molekülünün her biri laktik asit fermantasyonuna giriyor. Glikolizden glikoz başına net 2 ATP kazanıldığına göre toplam net ATP kaçtır?",
+      "secenekler": [
+        "8 ATP",
+        "2 ATP",
+        "4 ATP",
+        "6 ATP"
+      ],
+      "dogru_index": 3,
+      "cozum": "Laktik asit fermantasyonunda ATP glikoliz sırasında üretilir ve glikoz başına net kazanç 2 ATP’dir. Üç glikoz için toplam net kazanç 6 ATP olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Laktik asit fermantasyonunda piruvatın son ürüne dönüşümünü ve NAD⁺ yenilenmesini açıklayınız.",
+        "back": "Piruvat, NADH'nin hidrojenlerini alarak laktik aside dönüşür; NADH'den NAD⁺ yeniden oluştuğu için glikoliz sürdürülebilir."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o09",
+      "alt_beceri": "Laktik Asit Fermantasyonu",
+      "metin": "Kapalı bir kültürde bazı bakteriler oksijen sınırlıyken piruvatı laktata dönüştürerek NAD⁺ yeniliyor. Bu yolla hangi süreçte ATP üretimi sürer?",
+      "secenekler": [
+        "Laktik asit fermantasyonu",
+        "Yalnızca fotosentez",
+        "Etil alkol fermantasyonu",
+        "Kemosentez"
+      ],
+      "dogru_index": 0,
+      "cozum": "Laktik asit fermantasyonunda NADH, piruvata hidrojen aktarır ve NAD⁺ yeniden oluşur. Böylece glikoliz devam ederek ATP üretir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksijen sunumunun yetersiz kaldığı bir hücrede laktik asit fermantasyonu glikolizin sürmesine nasıl yardım eder?",
+        "back": "Piruvat, NADH’den hidrojen alarak laktata dönüşürken NAD⁺ yenilenir. Böylece glikoliz ve sınırlı ATP üretimi devam edebilir."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k06_o10",
+      "alt_beceri": "Laktik Asit Fermantasyonu",
+      "metin": "Bir bakteri kültüründe piruvat doğrudan laktata dönüşüyor ve süreçte CO₂ çıkışı gözlenmiyor. Hangi metabolik yol açıklanmıştır?",
+      "secenekler": [
+        "Etil alkol fermantasyonu",
+        "Laktik asit fermantasyonu",
+        "Oksijenli solunum",
+        "Fotosentez"
+      ],
+      "dogru_index": 1,
+      "cozum": "Laktik asit fermantasyonunda piruvat laktata dönüşür ve CO₂ çıkışı görülmez. Etil alkol fermantasyonunda ise CO₂ oluşabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Laktik asit fermantasyonunda karbondioksit çıkışı olup olmadığını belirtiniz.",
+        "back": "Laktik asit fermantasyonunda CO₂ çıkışı görülmez."
+      },
+      "kazanim": "fermantasyon ile ilgili deney yapmanız,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k06_o01:flashcard",
+      "front": "Fermantasyonun gerçekleştiği hücresel bölümü ve oksijen ile ETS kullanımını belirtiniz.",
+      "back": "Ökaryot ve prokaryot hücrelerin sitoplazmasında gerçekleşir; oksijen ve ETS kullanılmaz. Glikolizle oluşan piruvat farklı son ürünlere dönüşür."
+    },
+    {
+      "id": "biyo_10_u01_k06_o02:flashcard",
+      "front": "Fermantasyonda NAD⁺'ın yeniden oluşması, glikoliz ve ATP üretiminin sürmesini nasıl sağlar?",
+      "back": "NADH'deki elektron ve hidrojenler farklı alıcılara aktarılınca NAD⁺ yenilenir; bu, glikoliz tepkimelerinin devam etmesini sağlar."
+    },
+    {
+      "id": "biyo_10_u01_k06_o03:flashcard",
+      "front": "Canlı kültür içeren yeni bir yulaf içeceği probiyotik olarak tanıtılıyor. Bu nitelik bağırsak mikrobiyotasıyla nasıl ilişkilendirilebilir?",
+      "back": "Canlı mikroorganizmalar sağlıklı bağırsak mikrobiyotasıyla ilişkilendirilebilir; bu tür ürünler sindirim sağlığına olumlu katkı gösterebilir."
+    },
+    {
+      "id": "biyo_10_u01_k06_o04:flashcard",
+      "front": "Fermantasyonu fermente besin üretimi açısından tanımlayınız.",
+      "back": "Mikroorganizmaların kontrollü büyümesi ve enzimatik işlemlerle ham maddenin yiyecek ya da içeceğe dönüştürülmesiyle gerçekleşir."
+    },
+    {
+      "id": "biyo_10_u01_k06_o05:flashcard",
+      "front": "Etil alkol fermantasyonunda piruvattan etil alkol oluşana kadar gerçekleşen iki basamağı sıralayınız.",
+      "back": "Piruvattan CO₂ ayrılarak asetaldehit oluşur; ardından asetaldehit NADH ile indirgenerek etil alkole dönüşür ve NAD⁺ yenilenir."
+    },
+    {
+      "id": "biyo_10_u01_k06_o06:flashcard",
+      "front": "Etil alkol fermantasyonunda asetaldehit, NADH ve NAD⁺ arasındaki ilişki nedir?",
+      "back": "Asetaldehit NADH’den elektron/hidrojen alarak etil alkole indirgenir; NADH oksitlenip NAD⁺ hâline gelir. Yenilenen NAD⁺ glikolizin sürmesine katkı sağlar."
+    },
+    {
+      "id": "biyo_10_u01_k06_o07:flashcard",
+      "front": "Etil alkol fermantasyonunu gerçekleştirebilen mikroorganizma gruplarından birini ve bu sürecin ürünlerini belirtiniz.",
+      "back": "Maya mantarları etil alkol fermantasyonu yapabilir; süreçte etil alkol ve CO₂ oluşur."
+    },
+    {
+      "id": "biyo_10_u01_k06_o08:flashcard",
+      "front": "Laktik asit fermantasyonunda piruvatın son ürüne dönüşümünü ve NAD⁺ yenilenmesini açıklayınız.",
+      "back": "Piruvat, NADH'nin hidrojenlerini alarak laktik aside dönüşür; NADH'den NAD⁺ yeniden oluştuğu için glikoliz sürdürülebilir."
+    },
+    {
+      "id": "biyo_10_u01_k06_o09:flashcard",
+      "front": "Oksijen sunumunun yetersiz kaldığı bir hücrede laktik asit fermantasyonu glikolizin sürmesine nasıl yardım eder?",
+      "back": "Piruvat, NADH’den hidrojen alarak laktata dönüşürken NAD⁺ yenilenir. Böylece glikoliz ve sınırlı ATP üretimi devam edebilir."
+    },
+    {
+      "id": "biyo_10_u01_k06_o10:flashcard",
+      "front": "Laktik asit fermantasyonunda karbondioksit çıkışı olup olmadığını belirtiniz.",
+      "back": "Laktik asit fermantasyonunda CO₂ çıkışı görülmez."
+    }
+  ],
+  "topic_key": "Biyoloji > 1.9 Fermantasyon"
+}

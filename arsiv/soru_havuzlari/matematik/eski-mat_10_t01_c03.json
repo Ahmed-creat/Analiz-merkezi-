@@ -1,0 +1,279 @@
+{
+  "konu_id": "mat_10_t01_c03",
+  "kod": "MAT.10.1.3",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 1,
+  "tema_adi": "Geometrik Şekiller",
+  "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.59-75",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t01_c03_o01",
+      "alt_beceri": "Üçgenin bir kenarı ve o kenara ait yüksekliğindeki değişimin üçgenin alanındaki değişime etkisine dair varsayımlarda bulunur.",
+      "metin": "Bir üçgenin taban uzunluğu sabit tutulup o tabana ait yükseklik 2 katına çıkarılırsa alan için hangi varsayım yapılabilir?",
+      "secenekler": [
+        "Alan 4 katına çıkar.",
+        "Alan 2 katına çıkar.",
+        "Alan değişmez.",
+        "Alan yarıya iner."
+      ],
+      "dogru_index": 1,
+      "cozum": "Üçgenin alanı taban ile yüksekliğin çarpımının yarısıdır. Taban sabitken yükseklik 2 katına çıkarsa alan da 2 katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üçgenin alan bağıntısı nedir?",
+        "back": "Taban uzunluğu ile o tabana ait yüksekliğin çarpımının yarısıdır."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o02",
+      "alt_beceri": "Üçgenin bir kenarı ve o kenara ait yüksekliğindeki değişimin üçgenin alanındaki değişime etkisine dair varsayımlarda bulunur.",
+      "metin": "Bir üçgenin hem tabanı hem de o tabana ait yüksekliği 2 katına çıkarılırsa alan kaç katına çıkar?",
+      "secenekler": [
+        "2 katına",
+        "8 katına",
+        "Değişmez",
+        "4 katına"
+      ],
+      "dogru_index": 3,
+      "cozum": "Alan = (taban · yükseklik)/2 olduğundan her iki uzunluk 2 katına çıktığında alan 2 · 2 = 4 katına çıkar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Alanın taban ve yükseklikle ilişkisi nedir?",
+        "back": "Taban ve yüksekliğin çarpımıyla doğru orantılıdır."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o03",
+      "alt_beceri": "Farklı üçgenlerdeki gözlemlerinden yararlanarak varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "Tabloda aynı tabana sahip üç üçgenin yükseklik ve alan değerleri verilmiştir. Buna göre tablo hangi değerle tamamlanmalıdır?",
+      "secenekler": [
+        "60",
+        "48",
+        "36",
+        "50"
+      ],
+      "dogru_index": 0,
+      "cozum": "Taban sabittir ve alan yükseklikle doğru orantılıdır. Yükseklik 4 iken alan 20 ise 12 iken alan 3 · 20 = 60 cm² olur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Üçgen",
+          "Yükseklik (cm)",
+          "Alan (cm2)"
+        ],
+        "satirlar": [
+          [
+            "I",
+            "4",
+            "20"
+          ],
+          [
+            "II",
+            "8",
+            "40"
+          ],
+          [
+            "III",
+            "12",
+            "?"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Aynı tabanlı üçgenlerde alan-yükseklik ilişkisi nedir?",
+        "back": "Alan, yükseklikle doğru orantılıdır."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o04",
+      "alt_beceri": "Farklı üçgenlerdeki gözlemlerinden yararlanarak varsayımlarına yönelik örüntüleri geneller.",
+      "metin": "Aynı tabana sahip üç üçgenin yükseklikleri 3, 6 ve 9 birimdir. Bu üçgenlerin alanları arasındaki örüntü hangisidir?",
+      "secenekler": [
+        "1 : 4 : 9 oranındadır.",
+        "1 : 3 : 6 oranındadır.",
+        "1 : 2 : 3 oranındadır.",
+        "Tüm alanlar eşittir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Taban sabit olduğundan alanlar yüksekliklerle doğru orantılıdır. Yükseklikler 3, 6, 9 olduğu için alanlar 1 : 2 : 3 oranındadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tabanları eşit üçgenlerde alanların karşılaştırılma ölçütü nedir?",
+        "back": "Yüksekliklerinin oranına göre karşılaştırılır."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o05",
+      "alt_beceri": "Genellemelerini varsayımlarıyla karşılaştırır.",
+      "metin": "Taban uzunluğu ve o tabana ait yüksekliği aynı olan farklı biçimdeki iki üçgen karşılaştırıldığında hangi sonuç elde edilir?",
+      "secenekler": [
+        "Daha eğik olan üçgenin alanı daha büyüktür.",
+        "Daha dar olan üçgenin alanı daha büyüktür.",
+        "Alanlar arasında ilişki kurulamaz.",
+        "Alanları birbirine eşittir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Alan yalnızca taban uzunluğuna ve o tabana ait yüksekliğe bağlıdır. Taban ve yükseklik aynı olduğunda üçgenin biçimi değişse de alan değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Alanı belirleyen elemanlar nedir?",
+        "back": "Taban uzunluğu ve o tabana ait yüksekliktir."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o06",
+      "alt_beceri": "Genellemelerini varsayımlarıyla karşılaştırır.",
+      "metin": "Dik kenarları 3 cm ve 4 cm olan bir dik üçgende hipotenüse ait yükseklik kaç cm'dir?",
+      "secenekler": [
+        "2,5",
+        "2,4",
+        "3,6",
+        "1,2"
+      ],
+      "dogru_index": 1,
+      "cozum": "Hipotenüs √(3² + 4²) = 5 cm'dir. Alan iki yolla yazılır: (3 · 4)/2 = (5 · h)/2. Buradan h = 12/5 = 2,4 cm bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hipotenüse ait yükseklik nasıl bulunur?",
+        "back": "Dik kenarların çarpımının hipotenüse bölünmesiyle bulunur."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o07",
+      "alt_beceri": "Elde ettiği genellemelerden üçgenin alanının hangi elemanlara göre değiştiğine ilişkin önermeler sunar.",
+      "metin": "Kenar uzunlukları a ve b, aralarındaki açı C olan bir üçgen için hangi önerme sunulabilir?",
+      "secenekler": [
+        "Alan, (1/2) · a · b · sinC bağıntısıyla bulunur.",
+        "Alan, a · b · cosC bağıntısıyla bulunur.",
+        "Alan yalnızca taban ve yükseklikle bulunabilir.",
+        "Alan, (a + b) · sinC bağıntısıyla bulunur."
+      ],
+      "dogru_index": 0,
+      "cozum": "Bir kenara ait yükseklik, diğer kenar ile açının sinüsünün çarpımıdır. Bu nedenle alan (1/2) · a · b · sinC olarak ifade edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kenar ve aralarındaki açıyla alan bağıntısı nedir?",
+        "back": "Alan = (1/2) · a · b · sinC'dir."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o08",
+      "alt_beceri": "Elde ettiği genellemelerden üçgenin alanının hangi elemanlara göre değiştiğine ilişkin önermeler sunar.",
+      "metin": "Bir kenar uzunluğu a olan eşkenar üçgenin alanı için hangi önerme doğrudur?",
+      "secenekler": [
+        "Alan, a²/2 bağıntısıyla bulunur.",
+        "Alan, a²√3/2 bağıntısıyla bulunur.",
+        "Alan, a²√3/4 bağıntısıyla bulunur.",
+        "Alan, 3a/4 bağıntısıyla bulunur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Eşkenar üçgende yükseklik a√3/2'dir. Alan = (1/2) · a · (a√3/2) = a²√3/4 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eşkenar üçgenin alanı nedir?",
+        "back": "Kenar uzunluğunun karesi çarpı √3'ün dörtte biridir."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o09",
+      "alt_beceri": "Önermeleri gerçek yaşam problemleri bağlamında değerlendirir.",
+      "metin": "Üçgen biçimindeki bir arsanın bir kenarı 40 m, bu kenara ait yüksekliği 25 m'dir. Arsanın metrekaresi 120 TL olduğuna göre arsanın değeri kaç TL'dir?",
+      "secenekler": [
+        "120.000 TL",
+        "60.000 TL",
+        "30.000 TL",
+        "75.000 TL"
+      ],
+      "dogru_index": 1,
+      "cozum": "Alan = (40 · 25)/2 = 500 m² bulunur. Değer = 500 · 120 = 60.000 TL'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Arazi değeri alanla nasıl hesaplanır?",
+        "back": "Alan (m²) ile metrekare fiyatının çarpımıyla hesaplanır."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c03_o10",
+      "alt_beceri": "Önermeleri gerçek yaşam problemleri bağlamında değerlendirir.",
+      "metin": "Taban uzunlukları eşit iki yelkenin yükseklikleri 4 m ve 6 m'dir. Yüksekliği 4 m olan yelkenin maliyeti 18.000 TL ise yüksekliği 6 m olan yelkenin maliyeti kaç TL'dir?",
+      "secenekler": [
+        "24.000 TL",
+        "36.000 TL",
+        "30.000 TL",
+        "27.000 TL"
+      ],
+      "dogru_index": 3,
+      "cozum": "Taban eşit olduğundan maliyet yükseklikle doğru orantılıdır. 4 m için 18.000 TL ise 6 m için 18.000 · (6/4) = 27.000 TL bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tabanları eşit yelkenlerde maliyetin değişim ölçütü nedir?",
+        "back": "Yükseklikleriyle doğru orantılı olarak değişir."
+      },
+      "kazanim": "Üçgenin bir kenarı ve o kenara ait yüksekliğinin değişimine bağlı olarak alanının değişimine ilişkin çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t01_c03_o01:flashcard",
+      "front": "Üçgenin alan bağıntısı nedir?",
+      "back": "Taban uzunluğu ile o tabana ait yüksekliğin çarpımının yarısıdır."
+    },
+    {
+      "id": "mat_10_t01_c03_o02:flashcard",
+      "front": "Alanın taban ve yükseklikle ilişkisi nedir?",
+      "back": "Taban ve yüksekliğin çarpımıyla doğru orantılıdır."
+    },
+    {
+      "id": "mat_10_t01_c03_o03:flashcard",
+      "front": "Aynı tabanlı üçgenlerde alan-yükseklik ilişkisi nedir?",
+      "back": "Alan, yükseklikle doğru orantılıdır."
+    },
+    {
+      "id": "mat_10_t01_c03_o04:flashcard",
+      "front": "Tabanları eşit üçgenlerde alanların karşılaştırılma ölçütü nedir?",
+      "back": "Yüksekliklerinin oranına göre karşılaştırılır."
+    },
+    {
+      "id": "mat_10_t01_c03_o05:flashcard",
+      "front": "Alanı belirleyen elemanlar nedir?",
+      "back": "Taban uzunluğu ve o tabana ait yüksekliktir."
+    },
+    {
+      "id": "mat_10_t01_c03_o06:flashcard",
+      "front": "Hipotenüse ait yükseklik nasıl bulunur?",
+      "back": "Dik kenarların çarpımının hipotenüse bölünmesiyle bulunur."
+    },
+    {
+      "id": "mat_10_t01_c03_o07:flashcard",
+      "front": "İki kenar ve aralarındaki açıyla alan bağıntısı nedir?",
+      "back": "Alan = (1/2) · a · b · sinC'dir."
+    },
+    {
+      "id": "mat_10_t01_c03_o08:flashcard",
+      "front": "Eşkenar üçgenin alanı nedir?",
+      "back": "Kenar uzunluğunun karesi çarpı √3'ün dörtte biridir."
+    },
+    {
+      "id": "mat_10_t01_c03_o09:flashcard",
+      "front": "Arazi değeri alanla nasıl hesaplanır?",
+      "back": "Alan (m²) ile metrekare fiyatının çarpımıyla hesaplanır."
+    },
+    {
+      "id": "mat_10_t01_c03_o10:flashcard",
+      "front": "Tabanları eşit yelkenlerde maliyetin değişim ölçütü nedir?",
+      "back": "Yükseklikleriyle doğru orantılı olarak değişir."
+    }
+  ]
+}

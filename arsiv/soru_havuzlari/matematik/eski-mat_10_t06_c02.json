@@ -1,0 +1,279 @@
+{
+  "konu_id": "mat_10_t06_c02",
+  "kod": "MAT.10.6.2",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 6,
+  "tema_adi": "Analitik İnceleme",
+  "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.372-384",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t06_c02_o01",
+      "alt_beceri": "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede araç olarak tanır.",
+      "metin": "Bir doğrunun eğimi için hangi ifade doğrudur?",
+      "secenekler": [
+        "Yatay değişimin düşey değişime oranıdır.",
+        "Düşey değişimin yatay değişime oranıdır.",
+        "Doğrunun x eksenini kestiği noktadır.",
+        "Doğrunun uzunluğudur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Eğim, doğrunun ne kadar dik olduğunu gösterir ve düşey değişimin yatay değişime oranı olarak tanımlanır: m = (y₂ − y₁)/(x₂ − x₁).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğim nedir?",
+        "back": "Düşey değişimin yatay değişime oranıdır."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o02",
+      "alt_beceri": "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede araç olarak tanır.",
+      "metin": "Grafikte bir d doğrusu verilmiştir. Buna göre doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "1",
+        "1/2",
+        "4",
+        "2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Doğru (0, 1) ve (2, 5) noktalarından geçer. Eğim = (5 − 1)/(2 − 0) = 4/2 = 2 bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "x",
+        "yEkseni": "y",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "d",
+            "noktalar": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                4,
+                9
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Eğim hesabında nokta seçiminin önemi nedir?",
+        "back": "Doğru üzerindeki herhangi iki noktanın aynı sonucu vermesidir."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o03",
+      "alt_beceri": "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede araç olarak tanır.",
+      "metin": "A(1, 2) ve B(4, 8) noktalarından geçen doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "2",
+        "6",
+        "1/2",
+        "3"
+      ],
+      "dogru_index": 0,
+      "cozum": "m = (8 − 2)/(4 − 1) = 6/3 = 2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğim formülü nedir?",
+        "back": "(y₂ − y₁)/(x₂ − x₁) ifadesidir."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o04",
+      "alt_beceri": "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede araç olarak tanır.",
+      "metin": "x = 3 doğrusunun eğimi için hangisi doğrudur?",
+      "secenekler": [
+        "Sıfırdır.",
+        "1'dir.",
+        "Tanımsızdır.",
+        "3'tür."
+      ],
+      "dogru_index": 2,
+      "cozum": "Düşey doğrularda yatay değişim sıfırdır ve sıfıra bölme tanımsız olduğundan eğim tanımsızdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatay doğrunun eğimi nedir?",
+        "back": "Sıfırdır."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o05",
+      "alt_beceri": "Karşılaştığı problem durumlarında dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede uygun bir temsil aracı olarak seçer.",
+      "metin": "Eğimi 2 olan ve y eksenini (0, −1) noktasında kesen doğrunun denklemi hangisidir?",
+      "secenekler": [
+        "y = 2x + 1",
+        "y = −2x − 1",
+        "y = x − 2",
+        "y = 2x − 1"
+      ],
+      "dogru_index": 3,
+      "cozum": "Eğim-kesim biçimi y = mx + b'dir. m = 2 ve b = −1 olduğundan denklem y = 2x − 1 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğim-kesim biçimi nedir?",
+        "back": "y = mx + b biçimindeki doğru denklemidir."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o06",
+      "alt_beceri": "Karşılaştığı problem durumlarında dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede uygun bir temsil aracı olarak seçer.",
+      "metin": "A(1, 1) ve B(3, 5) noktalarından geçen doğrunun denklemi hangisidir?",
+      "secenekler": [
+        "y = 2x + 1",
+        "y = 2x − 1",
+        "y = x + 2",
+        "y = 4x − 3"
+      ],
+      "dogru_index": 1,
+      "cozum": "Eğim (5 − 1)/(3 − 1) = 2'dir. y − 1 = 2(x − 1) yazılırsa y = 2x − 1 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki noktası bilinen doğrunun denklemi nedir?",
+        "back": "Eğim bulunup bir nokta denklemde yerine yazılarak elde edilir."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o07",
+      "alt_beceri": "Karşılaştığı problem durumlarında dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını belirlemede uygun bir temsil aracı olarak seçer.",
+      "metin": "2x + 3y − 6 = 0 doğrusunun eğimi kaçtır?",
+      "secenekler": [
+        "−2/3",
+        "2/3",
+        "−3/2",
+        "2"
+      ],
+      "dogru_index": 0,
+      "cozum": "y yalnız bırakılırsa y = (−2/3)x + 2 olur. x'in katsayısı eğimi verdiğinden m = −2/3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doğru denkleminin genel biçimi nedir?",
+        "back": "Ax + By + C = 0 biçimidir."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o08",
+      "alt_beceri": "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını temsil etme aracı olarak kullanır.",
+      "metin": "y = 2x + 1 doğrusuna paralel olan bir doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "−2",
+        "−1/2",
+        "2",
+        "1/2"
+      ],
+      "dogru_index": 2,
+      "cozum": "Paralel doğruların eğimleri eşittir. Bu nedenle aranan eğim 2'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel doğruların eğimleri arasındaki ilişki nedir?",
+        "back": "Eğimleri birbirine eşittir."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o09",
+      "alt_beceri": "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını temsil etme aracı olarak kullanır.",
+      "metin": "y = 2x + 1 doğrusuna dik olan bir doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "1/2",
+        "−1/2",
+        "2",
+        "−2"
+      ],
+      "dogru_index": 1,
+      "cozum": "Dik doğruların eğimleri çarpımı −1'dir. 2 · m = −1 olduğundan m = −1/2 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik doğruların eğimleri arasındaki bağıntı nedir?",
+        "back": "Eğimlerin çarpımı −1'dir."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    },
+    {
+      "soru_id": "mat_10_t06_c02_o10",
+      "alt_beceri": "Dik koordinat sistemini doğrunun eğim açısını, eğimini ve doğruların birbirlerine göre konumlarını temsil etme aracı olarak kullanır.",
+      "metin": "y = x + 1 ve y = −x + 5 doğrularının kesişim noktası hangisidir?",
+      "secenekler": [
+        "(3, 2)",
+        "(1, 2)",
+        "(4, 1)",
+        "(2, 3)"
+      ],
+      "dogru_index": 3,
+      "cozum": "x + 1 = −x + 5 eşitliğinden 2x = 4 ve x = 2 bulunur. y = 2 + 1 = 3 olduğundan kesişim noktası (2, 3)'tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki doğrunun kesişim noktası nasıl bulunur?",
+        "back": "Denklemler ortak çözülerek."
+      },
+      "kazanim": "Dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t06_c02_o01:flashcard",
+      "front": "Eğim nedir?",
+      "back": "Düşey değişimin yatay değişime oranıdır."
+    },
+    {
+      "id": "mat_10_t06_c02_o02:flashcard",
+      "front": "Eğim hesabında nokta seçiminin önemi nedir?",
+      "back": "Doğru üzerindeki herhangi iki noktanın aynı sonucu vermesidir."
+    },
+    {
+      "id": "mat_10_t06_c02_o03:flashcard",
+      "front": "Eğim formülü nedir?",
+      "back": "(y₂ − y₁)/(x₂ − x₁) ifadesidir."
+    },
+    {
+      "id": "mat_10_t06_c02_o04:flashcard",
+      "front": "Yatay doğrunun eğimi nedir?",
+      "back": "Sıfırdır."
+    },
+    {
+      "id": "mat_10_t06_c02_o05:flashcard",
+      "front": "Eğim-kesim biçimi nedir?",
+      "back": "y = mx + b biçimindeki doğru denklemidir."
+    },
+    {
+      "id": "mat_10_t06_c02_o06:flashcard",
+      "front": "İki noktası bilinen doğrunun denklemi nedir?",
+      "back": "Eğim bulunup bir nokta denklemde yerine yazılarak elde edilir."
+    },
+    {
+      "id": "mat_10_t06_c02_o07:flashcard",
+      "front": "Doğru denkleminin genel biçimi nedir?",
+      "back": "Ax + By + C = 0 biçimidir."
+    },
+    {
+      "id": "mat_10_t06_c02_o08:flashcard",
+      "front": "Paralel doğruların eğimleri arasındaki ilişki nedir?",
+      "back": "Eğimleri birbirine eşittir."
+    },
+    {
+      "id": "mat_10_t06_c02_o09:flashcard",
+      "front": "Dik doğruların eğimleri arasındaki bağıntı nedir?",
+      "back": "Eğimlerin çarpımı −1'dir."
+    },
+    {
+      "id": "mat_10_t06_c02_o10:flashcard",
+      "front": "İki doğrunun kesişim noktası nasıl bulunur?",
+      "back": "Denklemler ortak çözülerek."
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "konu_id": "cogr_10_t02_c01",
+  "kod": "COĞ.10.2.1",
+  "sinif": 10,
+  "ders": "Coğrafya",
+  "tema": 2,
+  "tema_adi": "Mekânsal Bilgi Teknolojileri",
+  "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme",
+  "kaynak": "Coğrafya 10 ders kitabı, s.31-36",
+  "sorular": [
+    {
+      "soru_id": "cogr_10_t02_c01_o01",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını çözümler.",
+      "metin": "Coğrafi Bilgi Sistemleri (CBS) ile uzaktan algılama, mekânsal verilerden elde edilen bilgiler üzerinde hangi işlemleri yapar?",
+      "secenekler": [
+        "Yalnızca ölçüm yapma",
+        "Toplama, analiz etme, görüntüleme ve kullanma",
+        "Yalnızca yazılı metin oluşturma",
+        "Yalnızca fotoğraf çekme"
+      ],
+      "dogru_index": 1,
+      "cozum": "Mekânsal bilgi teknolojileri verilerin toplanması, analizi, görüntülenmesi ve karar süreçlerinde kullanılmasını sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "CBS nedir?",
+        "back": "Mekânsal verilerin toplanması, analizi ve görüntülenmesini sağlayan sistemdir."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o02",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını çözümler.",
+      "metin": "Uydu görüntüleri yardımıyla orman yangını sonrası yanan alanların sınırları belirlenmektedir. Bu çalışma hangi teknolojinin kullanımına örnektir?",
+      "secenekler": [
+        "Klasik ölçüm",
+        "Nüfus sayımı",
+        "Anket uygulaması",
+        "Uzaktan algılama"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yeryüzüne temasta bulunmadan uydu ya da hava araçlarıyla görüntü alınması ve yorumlanması uzaktan algılamadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Uzaktan algılama nedir?",
+        "back": "Yeryüzünün temassız biçimde algılayıcılarla görüntülenmesidir."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o03",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını çözümler.",
+      "metin": "Afet Yönetim ve Karar Destek Sistemi (AYDES) üç ana bileşenden oluşur. Bu bileşenlerden biri aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "Olay Komuta Sistemi",
+        "Nüfus Kayıt Sistemi",
+        "Tarım Destek Sistemi",
+        "Eğitim Bilgi Sistemi"
+      ],
+      "dogru_index": 0,
+      "cozum": "AYDES; Olay Komuta Sistemi, Mekânsal Bilgi Sistemi ve İyileştirme Sistemi olmak üzere üç ana bileşenden oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "AYDES nedir?",
+        "back": "Afet ve acil durumlarda kaynakları yöneten web tabanlı karar destek sistemidir."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o04",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını çözümler.",
+      "metin": "Türkiye Afet Müdahale Planı (TAMP) kapsamında hizmet gruplarının hazırlık ve müdahale süreçleri tek bir sistemde yönetilmektedir. Bu sistemin bilişim altyapısı hangisidir?",
+      "secenekler": [
+        "TÜİK",
+        "Meteoroloji Genel Müdürlüğü",
+        "AYDES",
+        "e-Okul"
+      ],
+      "dogru_index": 2,
+      "cozum": "AYDES, Türkiye Afet Müdahale Planı'nın bilişim altyapısıdır; olay bildirimleri ve ekip yönlendirmeleri bu sistem üzerinden yapılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "TAMP nedir?",
+        "back": "Afetlere müdahalede görev ve hizmet gruplarını belirleyen ulusal plandır."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o05",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını sınıflandırır.",
+      "metin": "Bir belediye, kentin büyüme yönünü ve yeni yapılaşma alanlarını uydu görüntüleriyle izlemektedir. Bu uygulama mekânsal bilgi teknolojilerinin hangi alanına girer?",
+      "secenekler": [
+        "Tarım uygulamaları",
+        "Nüfus planlaması",
+        "Eğitim planlaması",
+        "Şehir yönetimi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kentsel büyümenin izlenmesi, altyapı yönetimi ve ulaşım planlaması şehir yönetimi uygulamaları arasındadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekânsal bilgi teknolojilerinin şehir yönetimi alanı nedir?",
+        "back": "Kentsel büyüme, altyapı ve ulaşım planlamasında kullanılmasıdır."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o06",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını sınıflandırır.",
+      "metin": "Bir çiftçi, tarlasının verimliliğini uzaktan algılama ile izleyip sulama programını buna göre düzenlemektedir. Bu uygulama hangi alana örnektir?",
+      "secenekler": [
+        "Şehir yönetimi",
+        "Tarım uygulamaları",
+        "Afet yönetimi",
+        "Enerji planlaması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bitki örtüsü analizi, verimlilik değerlendirmesi ve tarımsal su kullanımının düzenlenmesi tarım uygulamalarıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tarımsal uzaktan algılama nedir?",
+        "back": "Bitki örtüsü ve verimliliğin uydu verileriyle izlenmesidir."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o07",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını sınıflandırır.",
+      "metin": "Deprem sonrası hasar tespiti için ekiplerin bölgeye yönlendirilmesi ve kaynakların dağıtılması hangi sistem üzerinden yürütülür?",
+      "secenekler": [
+        "AYDES",
+        "CBS tabanlı eğitim portalı",
+        "Meteoroloji uyarı sistemi",
+        "Nüfus müdürlüğü kayıtları"
+      ],
+      "dogru_index": 0,
+      "cozum": "Afet ve acil durumlarda olay bildirimi, ekip yönlendirmesi ve kaynak yönetimi AYDES üzerinden yapılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Afet yönetiminde karar destek sistemi nedir?",
+        "back": "Afet anında kaynak ve ekip yönetimini sağlayan yazılım altyapısıdır."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o08",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını yorumlar.",
+      "metin": "Bir ilde taşkın risk haritası hazırlanmış, dere yataklarına yakın yerleşim alanları kırmızı renkle gösterilmiştir. Bu haritanın sağladığı yarar hangisidir?",
+      "secenekler": [
+        "Bölgedeki yağış miktarını artırması",
+        "Dere yataklarının kurumasını sağlaması",
+        "Riskli alanlarda yapılaşmanın sınırlandırılmasına yardımcı olması",
+        "Nüfus artış hızını düşürmesi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Risk haritaları hangi alanların tehlikeli olduğunu göstererek imar kararlarında ve tahliye planlarında kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Risk haritası nedir?",
+        "back": "Bir tehlikeye maruz alanların dağılımını gösteren haritadır."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o09",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını yorumlar.",
+      "metin": "Uzaktan algılama ile bir göldeki su alanı değişimi yıllar boyunca izlenmiştir. Elde edilen veriler için hangi yorum yapılabilir?",
+      "secenekler": [
+        "Göldeki balık sayısı doğrudan sayılabilir.",
+        "Göl alanındaki değişimin zamana bağlı eğilimi görülebilir.",
+        "Gölün kimyasal yapısı ayrıntısıyla belirlenir.",
+        "Göl çevresindeki köylerin nüfusu ölçülebilir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Farklı tarihli görüntülerin karşılaştırılması alan değişiminin yönünü ve hızını ortaya koyar. Bu, izleme çalışmalarının temel yararıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Zamansal izleme nedir?",
+        "back": "Aynı alanın farklı tarihlerdeki verilerinin karşılaştırılmasıdır."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    },
+    {
+      "soru_id": "cogr_10_t02_c01_o10",
+      "alt_beceri": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını yorumlar.",
+      "metin": "Mekânsal bilgi teknolojileri kullanılarak kişilerin konum verileri toplanmaktadır. Bu durumda hangi ilke öne çıkar?",
+      "secenekler": [
+        "Verilerin sınırsız paylaşılması",
+        "Konum verilerinin herkese açık olması",
+        "Veri toplamanın yasaklanması",
+        "Kişisel verilerin gizliliğinin korunması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Konum verileri kişisel veri niteliği taşıdığından toplanması ve paylaşılması sırasında gizlilik ilkelerine uyulması gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kişisel veri gizliliği nedir?",
+        "back": "Kişiye ait verilerin izinsiz toplanmaması ve paylaşılmamasıdır."
+      },
+      "kazanim": "Örnek uygulamalar üzerinden CBS ve uzaktan algılamanın kullanım alanlarını özetleyebilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "cogr_10_t02_c01_o01:flashcard",
+      "front": "CBS nedir?",
+      "back": "Mekânsal verilerin toplanması, analizi ve görüntülenmesini sağlayan sistemdir."
+    },
+    {
+      "id": "cogr_10_t02_c01_o02:flashcard",
+      "front": "Uzaktan algılama nedir?",
+      "back": "Yeryüzünün temassız biçimde algılayıcılarla görüntülenmesidir."
+    },
+    {
+      "id": "cogr_10_t02_c01_o03:flashcard",
+      "front": "AYDES nedir?",
+      "back": "Afet ve acil durumlarda kaynakları yöneten web tabanlı karar destek sistemidir."
+    },
+    {
+      "id": "cogr_10_t02_c01_o04:flashcard",
+      "front": "TAMP nedir?",
+      "back": "Afetlere müdahalede görev ve hizmet gruplarını belirleyen ulusal plandır."
+    },
+    {
+      "id": "cogr_10_t02_c01_o05:flashcard",
+      "front": "Mekânsal bilgi teknolojilerinin şehir yönetimi alanı nedir?",
+      "back": "Kentsel büyüme, altyapı ve ulaşım planlamasında kullanılmasıdır."
+    },
+    {
+      "id": "cogr_10_t02_c01_o06:flashcard",
+      "front": "Tarımsal uzaktan algılama nedir?",
+      "back": "Bitki örtüsü ve verimliliğin uydu verileriyle izlenmesidir."
+    },
+    {
+      "id": "cogr_10_t02_c01_o07:flashcard",
+      "front": "Afet yönetiminde karar destek sistemi nedir?",
+      "back": "Afet anında kaynak ve ekip yönetimini sağlayan yazılım altyapısıdır."
+    },
+    {
+      "id": "cogr_10_t02_c01_o08:flashcard",
+      "front": "Risk haritası nedir?",
+      "back": "Bir tehlikeye maruz alanların dağılımını gösteren haritadır."
+    },
+    {
+      "id": "cogr_10_t02_c01_o09:flashcard",
+      "front": "Zamansal izleme nedir?",
+      "back": "Aynı alanın farklı tarihlerdeki verilerinin karşılaştırılmasıdır."
+    },
+    {
+      "id": "cogr_10_t02_c01_o10:flashcard",
+      "front": "Kişisel veri gizliliği nedir?",
+      "back": "Kişiye ait verilerin izinsiz toplanmaması ve paylaşılmamasıdır."
+    }
+  ]
+}

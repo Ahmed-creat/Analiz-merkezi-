@@ -1,0 +1,323 @@
+{
+  "konu_id": "biyo_10_t01_c07",
+  "kod": "BİY.10.1.7",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.55-63",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t01_c07_o01",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Hücresel solunumun işleyişini gösteren bir model hazırlayan öğrenci, sürecin üç ana aşamasını hangisinde doğru sıralamıştır?",
+      "secenekler": [
+        "Krebs döngüsü → Glikoliz → Elektron taşıma sistemi",
+        "Glikoliz → Krebs döngüsü → Elektron taşıma sistemi",
+        "Glikoliz → Elektron taşıma sistemi → Krebs döngüsü",
+        "Elektron taşıma sistemi → Krebs döngüsü → Glikoliz"
+      ],
+      "dogru_index": 1,
+      "cozum": "Oksijenli solunum glikoliz ile başlar, piruvat Asetil-CoA'ya dönüşür, Krebs döngüsü gerçekleşir ve NADH/FADH2'deki elektronlar ETS'de kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksijenli solunumun aşamaları nedir?",
+        "back": "Glikoliz, Krebs döngüsü ve elektron taşıma sistemi (ETS) evresidir."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o02",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Bir öğrenci modelinde glikoliz evresini mitokondri içinde göstermiştir. Modelin düzeltilmesi için hangi bilgi kullanılmalıdır?",
+      "secenekler": [
+        "Glikoliz çekirdekte gerçekleşir.",
+        "Glikoliz yalnızca bitki hücrelerinde görülür.",
+        "Glikoliz ETS'den sonra gerçekleşir.",
+        "Glikoliz sitoplazmada gerçekleşir; mitokondride değil."
+      ],
+      "dogru_index": 3,
+      "cozum": "Ökaryotlarda glikoliz sitoplazmada başlar ve piruvat mitokondriye taşınır. Krebs döngüsü ile ETS mitokondride gerçekleşir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Glikolizin gerçekleştiği yer nedir?",
+        "back": "Sitoplazmada gerçekleşir; oksijen kullanılmaz."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o03",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişi ile ilgili oluşturduğu modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniden yapılandırır.",
+      "metin": "Tabloda oksijenli solunum evrelerine ait bilgiler verilmiştir. Buna göre hangi satırdaki bilgi yanlıştır?",
+      "secenekler": [
+        "IV. satır",
+        "I. satır",
+        "II. satır",
+        "III. satır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Glikoliz sitoplazmada gerçekleşir ve ürünü 2 piruvattır. Asetil-CoA, piruvatın mitokondriye taşınmasından sonra oluşur; bu nedenle IV. satır hatalıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Evre",
+          "Yer",
+          "Ürün"
+        ],
+        "satirlar": [
+          [
+            "Glikoliz",
+            "Sitoplazma",
+            "2 piruvat, 2 NADH"
+          ],
+          [
+            "Krebs döngüsü",
+            "Mitokondri",
+            "CO2, NADH, FADH2, ATP"
+          ],
+          [
+            "ETS",
+            "Mitokondri kristası",
+            "H2O ve ATP"
+          ],
+          [
+            "Glikoliz",
+            "Mitokondri matriksi",
+            "2 Asetil-CoA"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Asetil-CoA'nın oluşum yolu nedir?",
+        "back": "Piruvatın mitokondriye taşınıp bir CO2 çıkışı ve NADH oluşumuyla dönüşmesiyle oluşur."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o04",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişi ile ilgili oluşturduğu modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniden yapılandırır.",
+      "metin": "Şemada hücresel solunumun aşamaları ve madde akışı gösterilmiştir. Buna göre bir glikoz molekülünün Krebs döngüsünde açığa çıkardığı CO2 miktarı kaçtır?",
+      "secenekler": [
+        "2 CO2",
+        "6 CO2",
+        "4 CO2",
+        "12 CO2"
+      ],
+      "dogru_index": 2,
+      "cozum": "Her piruvat bir CO2 çıkışıyla Asetil-CoA'ya dönüşür (2 CO2). Krebs döngüsü her glikoz için iki kez çalışır ve döngüde toplam 4 CO2 çıkar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "sema",
+        "kutular": [
+          {
+            "metin": "Glikoz (6C)"
+          },
+          {
+            "metin": "2 Piruvat (3C)"
+          },
+          {
+            "metin": "2 Asetil-CoA (2C)"
+          },
+          {
+            "metin": "Krebs döngüsü"
+          }
+        ],
+        "oklar": true
+      },
+      "flashcard": {
+        "front": "Bir glikoz için Krebs döngüsünün gerçekleşme sayısı nedir?",
+        "back": "İki kez gerçekleşir; her döngüde 2 CO2 açığa çıkar."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o05",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişi ile ilgili oluşturduğu modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniden yapılandırır.",
+      "metin": "Elektron taşıma sisteminde oksijenin görevi hangisinde doğru verilmiştir?",
+      "secenekler": [
+        "Glikozun piruvata parçalanmasını sağlar.",
+        "Krebs döngüsünde CO2 çıkışını başlatır.",
+        "NADH'ın ATP'ye dönüşmesini engeller.",
+        "Elektronların son alıcısı olarak suyun oluşmasını sağlar."
+      ],
+      "dogru_index": 3,
+      "cozum": "ETS'de elektronlar son olarak oksijene aktarılır; oksijen hidrojenle birleşerek su oluşur. Bu sırada açığa çıkan enerjiyle çok miktarda ATP sentezlenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ETS'de oksijenin işlevi nedir?",
+        "back": "Elektronların son alıcısıdır; hidrojenle birleşerek su oluşturur."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o06",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişi ile ilgili oluşturduğu modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniden yapılandırır.",
+      "metin": "Glikoliz evresinde 4 ATP sentezlenmiş, başlangıçta 2 ATP harcanmıştır. Buna göre glikolizde net ATP kazancı kaçtır?",
+      "secenekler": [
+        "4 ATP",
+        "2 ATP",
+        "6 ATP",
+        "0 ATP"
+      ],
+      "dogru_index": 1,
+      "cozum": "4 ATP üretilir, 2 ATP harcanır; net kazanç 4 - 2 = 2 ATP'dir. Ayrıca 2 NADH ve 2 piruvat oluşur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Glikolizin net ATP kazancı nedir?",
+        "back": "2 ATP'dir; ayrıca 2 NADH ve 2 piruvat oluşur."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o07",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Öğrenci modelinde Krebs döngüsünü sitoplazmada göstermiş, arkadaşları bunun yanlış olduğunu söylemiştir. Modelin yenilenmesi için hangi kanıt kullanılmalıdır?",
+      "secenekler": [
+        "Krebs döngüsü enzimlerinin mitokondri matriksinde bulunması",
+        "Krebs döngüsünün ışık gerektirmesi",
+        "Krebs döngüsünün çekirdek zarında gerçekleşmesi",
+        "Krebs döngüsünün yalnızca prokaryotlarda görülmesi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Krebs döngüsü enzimleri mitokondri matriksinde bulunur. Bu nedenle döngü mitokondride gerçekleşir; model buna göre yenilenmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Krebs döngüsünün gerçekleştiği yer nedir?",
+        "back": "Mitokondri matriksinde gerçekleşir."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o08",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişi ile ilgili oluşturduğu modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniden yapılandırır.",
+      "metin": "Tabloda bir glikoz molekülünün oksijenli solunumunda açığa çıkan indirgeyici moleküller verilmiştir. Buna göre toplam NADH sayısı kaçtır?",
+      "secenekler": [
+        "8 NADH",
+        "6 NADH",
+        "10 NADH",
+        "12 NADH"
+      ],
+      "dogru_index": 2,
+      "cozum": "Glikolizde 2, piruvat oksidasyonunda 2, Krebs döngüsünde 6 NADH oluşur; toplam 2 + 2 + 6 = 10 NADH'tır. Ayrıca Krebs'te 2 FADH2 oluşur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Evre",
+          "NADH"
+        ],
+        "satirlar": [
+          [
+            "Glikoliz",
+            "2"
+          ],
+          [
+            "Piruvat oksidasyonu",
+            "2"
+          ],
+          [
+            "Krebs döngüsü",
+            "6"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "FADH2'nin oluştuğu evre nedir?",
+        "back": "Krebs döngüsünde oluşur; bir glikoz için 2 FADH2 açığa çıkar."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o09",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişini açıklamak için model önerir.",
+      "metin": "Hücresel solunum modelinde NADH ve FADH2 moleküllerinin gösterilmemesi modelin hangi yönünü eksik bırakır?",
+      "secenekler": [
+        "Glikozun karbon sayısını",
+        "Elektronların ETS'ye taşınma basamağını",
+        "Suyun fotolizini",
+        "Karbondioksitin atmosfere salınmasını"
+      ],
+      "dogru_index": 1,
+      "cozum": "NADH ve FADH2, evrelerde açığa çıkan elektronları ETS'ye taşır. Bu moleküller gösterilmezse ATP üretiminin ETS ile ilişkisi modelde eksik kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "NADH ve FADH2'nin işlevi nedir?",
+        "back": "Evrelerde açığa çıkan elektronları elektron taşıma sistemine taşır."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t01_c07_o10",
+      "alt_beceri": "Hücresel solunum reaksiyonlarının işleyişi ile ilgili oluşturduğu modeli bilimsel modellerle karşılaştır ve elde ettiği kanıtlarla modelini yeniden yapılandırır.",
+      "metin": "Prokaryot bir canlıda oksijenli solunumun gerçekleştiği yer hangisidir?",
+      "secenekler": [
+        "Mitokondri matriksi",
+        "Çekirdek zarı",
+        "Kloroplast stroması",
+        "Sitoplazma ve hücre zarının iç yüzeyi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Prokaryotlarda mitokondri bulunmaz. Oksijenli solunum sitoplazmada başlar ve hücre zarının içe katlanmış bölümlerinde tamamlanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Oksijenli solunumun görüldüğü canlılar nedir?",
+        "back": "Bazı prokaryotlarda ve tüm ökaryotlarda görülür."
+      },
+      "kazanim": "Hücresel solunum reaksiyonlarıyla ilgili bilimsel model oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t01_c07_o01:flashcard",
+      "front": "Oksijenli solunumun aşamaları nedir?",
+      "back": "Glikoliz, Krebs döngüsü ve elektron taşıma sistemi (ETS) evresidir."
+    },
+    {
+      "id": "biyo_10_t01_c07_o02:flashcard",
+      "front": "Glikolizin gerçekleştiği yer nedir?",
+      "back": "Sitoplazmada gerçekleşir; oksijen kullanılmaz."
+    },
+    {
+      "id": "biyo_10_t01_c07_o03:flashcard",
+      "front": "Asetil-CoA'nın oluşum yolu nedir?",
+      "back": "Piruvatın mitokondriye taşınıp bir CO2 çıkışı ve NADH oluşumuyla dönüşmesiyle oluşur."
+    },
+    {
+      "id": "biyo_10_t01_c07_o04:flashcard",
+      "front": "Bir glikoz için Krebs döngüsünün gerçekleşme sayısı nedir?",
+      "back": "İki kez gerçekleşir; her döngüde 2 CO2 açığa çıkar."
+    },
+    {
+      "id": "biyo_10_t01_c07_o05:flashcard",
+      "front": "ETS'de oksijenin işlevi nedir?",
+      "back": "Elektronların son alıcısıdır; hidrojenle birleşerek su oluşturur."
+    },
+    {
+      "id": "biyo_10_t01_c07_o06:flashcard",
+      "front": "Glikolizin net ATP kazancı nedir?",
+      "back": "2 ATP'dir; ayrıca 2 NADH ve 2 piruvat oluşur."
+    },
+    {
+      "id": "biyo_10_t01_c07_o07:flashcard",
+      "front": "Krebs döngüsünün gerçekleştiği yer nedir?",
+      "back": "Mitokondri matriksinde gerçekleşir."
+    },
+    {
+      "id": "biyo_10_t01_c07_o08:flashcard",
+      "front": "FADH2'nin oluştuğu evre nedir?",
+      "back": "Krebs döngüsünde oluşur; bir glikoz için 2 FADH2 açığa çıkar."
+    },
+    {
+      "id": "biyo_10_t01_c07_o09:flashcard",
+      "front": "NADH ve FADH2'nin işlevi nedir?",
+      "back": "Evrelerde açığa çıkan elektronları elektron taşıma sistemine taşır."
+    },
+    {
+      "id": "biyo_10_t01_c07_o10:flashcard",
+      "front": "Oksijenli solunumun görüldüğü canlılar nedir?",
+      "back": "Bazı prokaryotlarda ve tüm ökaryotlarda görülür."
+    }
+  ]
+}

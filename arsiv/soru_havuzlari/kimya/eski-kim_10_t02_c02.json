@@ -1,0 +1,329 @@
+{
+  "konu_id": "kim_10_t02_c02",
+  "kod": "KİM.10.2.2",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme",
+  "kaynak": "Kimya 10 ders kitabı, s.157-164",
+  "sorular": [
+    {
+      "soru_id": "kim_10_t02_c02_o01",
+      "alt_beceri": "Farklı maddelerin birbiri içinde çözünmesi ya da çözünmemesi durumuna ilişkin ölçütler (çözücü ve çözünenin polar/apolar veya iyonik/moleküler olması) belirler.",
+      "metin": "Tabloda altı karışımın suda ve benzende çözünme durumları verilmiştir. Buna göre çözünme ile ilgili hangi ölçüt belirlenebilir?",
+      "secenekler": [
+        "Yalnızca iyonik maddeler suda çözünür; moleküller hiç çözünmez.",
+        "Yapısı benzeyen maddeler birbiri içinde çözünür.",
+        "Çözünme için maddelerin iyonik olması zorunludur.",
+        "Çözünme tamamen maddenin rengine ve yoğunluğuna bağlıdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "İyonik NaCl ve polar şeker polar suda çözünürken apolar iyot suda çözünmez, apolar benzende çözünür. Ölçüt, çözücü ve çözünenin yapısının benzemesidir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Karışım",
+          "Sonuç"
+        ],
+        "satirlar": [
+          [
+            "NaCl + su",
+            "çözünür"
+          ],
+          [
+            "Şeker + su",
+            "çözünür"
+          ],
+          [
+            "I2 + su",
+            "çözünmez"
+          ],
+          [
+            "I2 + benzen",
+            "çözünür"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Polar madde nedir?",
+        "back": "Yük dağılımı simetrik olmayan, kısmi pozitif ve negatif uçları bulunan moleküldür."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o02",
+      "alt_beceri": "Farklı maddelerin birbiri içinde çözünmesi ya da çözünmemesi durumuna ilişkin ölçütler (çözücü ve çözünenin polar/apolar veya iyonik/moleküler olması) belirler.",
+      "metin": "İyot (I2) suda çözünmediği hâlde benzende (C6H6) çözünmektedir. Bu durumun nedeni hangisidir?",
+      "secenekler": [
+        "İyot polar olduğu için polar benzen molekülleriyle etkileşir.",
+        "Benzen iyonik yapılı olduğu için iyodu iyonlarına ayırır.",
+        "İyot suda çözünür; yalnızca gözlem hatası yapılmıştır.",
+        "İyot apolar olduğu için apolar benzenle etkileşerek çözünür."
+      ],
+      "dogru_index": 3,
+      "cozum": "İyot apolar bir moleküldür; apolar benzen molekülleriyle London etkileşimleri kurar. Polar su molekülleriyle yeterli etkileşim kurmadığı için suda çözünmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Apolar madde nedir?",
+        "back": "Yük dağılımı simetrik olan, kısmi yük uçları bulunmayan moleküldür."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o03",
+      "alt_beceri": "Çözünme sürecine yönelik verileri kullanarak çözünme ya da çözünmeme durumlarını açıklayacak şekilde veri seti oluşturur.",
+      "metin": "Bir öğrenci 'NaCl benzende çözünmez' gözlemini kaydetmiştir. Bu veriyi kanıta dönüştürmek için hangi ek bilgi gereklidir?",
+      "secenekler": [
+        "NaCl'nin iyonik, benzenin apolar olduğunun belirtilmesi",
+        "NaCl'nin rengi ve benzenin kokusunun yazılması",
+        "Karışımın hangi kapta yapıldığının kaydedilmesi",
+        "Benzenden kaç damla kullanıldığının söylenmesi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Gözlemi kanıta dönüştüren şey açıklamadır: iyonik bir katı apolar bir çözücüde çözünmez. Yapı bilgisi verilmediğinde gözlem yalnızca kayıt olarak kalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kanıt ile gözlem arasındaki ilişki nedir?",
+        "back": "Gözlem duyularla kaydedilen veridir; kanıt ise bu verinin bilimsel açıklamayla desteklenmesidir."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o04",
+      "alt_beceri": "Çözünme sürecine yönelik verileri kullanarak çözünme ya da çözünmeme durumlarını açıklayacak şekilde veri seti oluşturur.",
+      "metin": "Tabloda dört maddenin yapısı verilmiştir. Buna göre hangi maddenin suda iyi çözünmesi beklenir?",
+      "secenekler": [
+        "C6H14",
+        "I2",
+        "KCl",
+        "C6H6"
+      ],
+      "dogru_index": 2,
+      "cozum": "Su polar bir çözücüdür; iyonik KCl suda iyon-dipol etkileşimleriyle çözünür. Apolar maddeler (hekzan, iyot, benzen) suda çözünmez.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "Yapı"
+        ],
+        "satirlar": [
+          [
+            "KCl",
+            "iyonik"
+          ],
+          [
+            "C6H14",
+            "apolar"
+          ],
+          [
+            "I2",
+            "apolar"
+          ],
+          [
+            "C6H6",
+            "apolar"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "İyonik bileşiklerin suda çözünmesinin nedeni nedir?",
+        "back": "Suyun kısmi yüklü uçlarıyla iyonlar arasında iyon-dipol etkileşimleri oluştuğu için."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o05",
+      "alt_beceri": "Farklı maddelerin birbiri içinde çözünme ya da çözünmeme durumunu kanıtlara dayalı olarak açıklar.",
+      "metin": "Yağda çözünen A, D ve K vitaminleri apolar yapılıdır; C vitamini ise polar ve hidrofiliktir. Bu bilgilere göre hangi açıklama doğrudur?",
+      "secenekler": [
+        "A, D, K vitaminleri suda çözünür; C vitamini yalnızca yağda çözünür.",
+        "Vitaminlerin çözünürlüğü yalnızca moleküllerinin büyüklüğüne bağlıdır.",
+        "Tüm vitaminler hem suda hem yağda eşit oranda çözünür.",
+        "A, D, K vitaminleri yağlı dokularda, C vitamini ise su içeren ortamlarda dağılır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Apolar yapılı vitaminler yağda, polar yapılı C vitamini suda çözünür. Suda çözünen vitaminler vücuttan hızla atılır; yağda çözünenler dokularda depolanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hidrofilik ve hidrofobik nedir?",
+        "back": "Hidrofilik suyu seven (polar) yapı, hidrofobik ise suyu sevmeyen (apolar) yapı anlamına gelir."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o06",
+      "alt_beceri": "Farklı maddelerin birbiri içinde çözünmesi ya da çözünmemesi durumuna ilişkin ölçütler (çözücü ve çözünenin polar/apolar veya iyonik/moleküler olması) belirler.",
+      "metin": "Etanol (C2H5OH) suyla her oranda karışabildiği gibi yağları da çözebilmektedir. Bu durum etanolün hangi özelliğinden kaynaklanır?",
+      "secenekler": [
+        "Yalnızca iyonik bağlardan oluşmasından",
+        "Polar -OH grubu ile apolar karbon zincirini birlikte içermesinden",
+        "Apolar yapısının tamamen baskın olmasından",
+        "Suda iyonlaşarak gaz çıkarmasından"
+      ],
+      "dogru_index": 1,
+      "cozum": "Etanoldeki -OH grubu su ile hidrojen bağı kurar, karbon zinciri ise yağ gibi apolar maddelerle etkileşir. Bu amfifilik yapı her iki ortamda da çözünmesini sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Amfifilik molekül nedir?",
+        "back": "Aynı yapı içinde hem polar hem apolar bölge bulunduran moleküldür."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o07",
+      "alt_beceri": "Farklı maddelerin birbiri içinde çözünme ya da çözünmeme durumunu kanıtlara dayalı olarak açıklar.",
+      "metin": "Sabun molekülü suda yağ lekesini uzaklaştırmaktadır. Bu olay çözünme ilişkisi temelinde nasıl açıklanır?",
+      "secenekler": [
+        "Apolar kuyruk yağa, polar baş suya yönelerek leke misel içine alınır.",
+        "Sabun molekülleri yağı iyonlarına ayırarak gaz hâline getirir.",
+        "Sabun suda çözünmeyen bir katı oluşturarak lekeyi kaplar.",
+        "Sabun yalnızca suyu çözerek yağın yüzeyde kalmasını sağlar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Sabunun apolar kuyruğu yağ moleküllerine, polar başı suya yönelir. Oluşan misel yağı su içinde dağıtılabilir hâle getirir ve leke uzaklaşır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Misel nedir?",
+        "back": "Sabun gibi amfifilik moleküllerin apolar kuyruklarını içe, polar başlarını dışa çevirerek oluşturduğu küme."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o08",
+      "alt_beceri": "Çözünme sürecine yönelik verileri kullanarak çözünme ya da çözünmeme durumlarını açıklayacak şekilde veri seti oluşturur.",
+      "metin": "Tabloda üç maddenin su ve karbon tetraklorür (CCl4) içindeki çözünürlüğü verilmiştir. Buna göre hangi veri seti 'benzer benzeri çözer' çıkarımını destekler?",
+      "secenekler": [
+        "Naftalin suda çözünmediği için çözünürlük yalnızca sıcaklığa bağlıdır.",
+        "Metanol her iki çözücüde de çözündüğü için çıkarım geçersizdir.",
+        "NaCl suda, naftalin CCl4'te çözünür; polar-polar ve apolar-apolar eşleşir.",
+        "NaCl CCl4'te çözünmediği için iyonik maddeler hiç çözünmez."
+      ],
+      "dogru_index": 2,
+      "cozum": "İyonik NaCl polar suda, apolar naftalin apolar CCl4'te çözünür. Bu eşleşme yapı benzerliğinin çözünürlüğü belirlediğini gösterir; metanol ise amfifilik olduğu için iki ortamda da çözünür.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Madde",
+          "Su",
+          "CCl4"
+        ],
+        "satirlar": [
+          [
+            "NaCl",
+            "çözünür",
+            "çözünmez"
+          ],
+          [
+            "C10H8",
+            "çözünmez",
+            "çözünür"
+          ],
+          [
+            "CH3OH",
+            "çözünür",
+            "çözünür"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Naftalinin yapısı nedir?",
+        "back": "C10H8 formülüne sahip apolar bir moleküldür."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o09",
+      "alt_beceri": "Çözünme sürecine yönelik verileri kullanarak çözünme ya da çözünmeme durumlarını açıklayacak şekilde veri seti oluşturur.",
+      "metin": "Bir öğrenci çözünürlük verilerini düzenlerken tabloya 'çözücünün polar/apolar olması' sütununu eklemiştir. Bu sütunun veri setine katkısı nedir?",
+      "secenekler": [
+        "Yalnızca tablonun görsel düzenini güzelleştirir, bilimsel katkısı yoktur.",
+        "Çözünme durumunu çözücünün yapısıyla ilişkilendirerek karşılaştırma yapmayı sağlar.",
+        "Çözünen miktarını doğrudan gram cinsinden hesaplamayı sağlar.",
+        "Sıcaklığın çözünürlüğe etkisini tek başına ölçmeyi sağlar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözücünün yapısı sütunu, aynı çözünürlük sonucunun neden oluştuğunu yapı benzerliği üzerinden açıklamaya yarar. Böylece veriler karşılaştırılabilir ve çıkarım yapılabilir hâle gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Veri seti düzenlemenin amacı nedir?",
+        "back": "Değişkenler arasındaki ilişkileri görünür kılarak karşılaştırma ve çıkarım yapmayı kolaylaştırmaktır."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    },
+    {
+      "soru_id": "kim_10_t02_c02_o10",
+      "alt_beceri": "Farklı maddelerin birbiri içinde çözünme ya da çözünmeme durumunu kanıtlara dayalı olarak açıklar.",
+      "metin": "Kuru temizlemede su yerine perkloroetilen gibi apolar çözücüler kullanılmaktadır. Bu tercihin nedeni hangisidir?",
+      "secenekler": [
+        "Perkloroetilen suda çözünmeyen iyonik bir bileşiktir.",
+        "Apolar çözücüler yalnızca iyonik maddeleri çözebilir.",
+        "Su apolar maddeleri daha iyi çözdüğü için kuru temizleme gerekir.",
+        "Yağ ve kir apolar olduğu için apolar çözücüde çözünür."
+      ],
+      "dogru_index": 3,
+      "cozum": "Yağ ve kir apolar yapılıdır; apolar çözücülerde iyi çözünür. Polar su bu lekeleri çözemediği için kuru temizlemede apolar çözücü kullanılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlük kuralı nedir?",
+        "back": "Polar maddeler polar çözücülerde, apolar maddeler apolar çözücülerde çözünür."
+      },
+      "kazanim": "Farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kim_10_t02_c02_o01:flashcard",
+      "front": "Polar madde nedir?",
+      "back": "Yük dağılımı simetrik olmayan, kısmi pozitif ve negatif uçları bulunan moleküldür."
+    },
+    {
+      "id": "kim_10_t02_c02_o02:flashcard",
+      "front": "Apolar madde nedir?",
+      "back": "Yük dağılımı simetrik olan, kısmi yük uçları bulunmayan moleküldür."
+    },
+    {
+      "id": "kim_10_t02_c02_o03:flashcard",
+      "front": "Kanıt ile gözlem arasındaki ilişki nedir?",
+      "back": "Gözlem duyularla kaydedilen veridir; kanıt ise bu verinin bilimsel açıklamayla desteklenmesidir."
+    },
+    {
+      "id": "kim_10_t02_c02_o04:flashcard",
+      "front": "İyonik bileşiklerin suda çözünmesinin nedeni nedir?",
+      "back": "Suyun kısmi yüklü uçlarıyla iyonlar arasında iyon-dipol etkileşimleri oluştuğu için."
+    },
+    {
+      "id": "kim_10_t02_c02_o05:flashcard",
+      "front": "Hidrofilik ve hidrofobik nedir?",
+      "back": "Hidrofilik suyu seven (polar) yapı, hidrofobik ise suyu sevmeyen (apolar) yapı anlamına gelir."
+    },
+    {
+      "id": "kim_10_t02_c02_o06:flashcard",
+      "front": "Amfifilik molekül nedir?",
+      "back": "Aynı yapı içinde hem polar hem apolar bölge bulunduran moleküldür."
+    },
+    {
+      "id": "kim_10_t02_c02_o07:flashcard",
+      "front": "Misel nedir?",
+      "back": "Sabun gibi amfifilik moleküllerin apolar kuyruklarını içe, polar başlarını dışa çevirerek oluşturduğu küme."
+    },
+    {
+      "id": "kim_10_t02_c02_o08:flashcard",
+      "front": "Naftalinin yapısı nedir?",
+      "back": "C10H8 formülüne sahip apolar bir moleküldür."
+    },
+    {
+      "id": "kim_10_t02_c02_o09:flashcard",
+      "front": "Veri seti düzenlemenin amacı nedir?",
+      "back": "Değişkenler arasındaki ilişkileri görünür kılarak karşılaştırma ve çıkarım yapmayı kolaylaştırmaktır."
+    },
+    {
+      "id": "kim_10_t02_c02_o10:flashcard",
+      "front": "Çözünürlük kuralı nedir?",
+      "back": "Polar maddeler polar çözücülerde, apolar maddeler apolar çözücülerde çözünür."
+    }
+  ]
+}

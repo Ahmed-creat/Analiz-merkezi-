@@ -1,0 +1,334 @@
+{
+  "konu_id": "mat_10_t01_c02",
+  "kod": "MAT.10.1.2",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 1,
+  "tema_adi": "Geometrik Şekiller",
+  "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme",
+  "kaynak": "Matematik 10 ders kitabı, s.32-58",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t01_c02_o01",
+      "alt_beceri": "Üçgende iç ve dış açıortayların, kenarortayların, kenar orta dikmelerin ve yüksekliklerin özelliklerine ilişkin varsayımda bulunur.",
+      "metin": "Bir üçgende iç açıortayın karşı kenarda ayırdığı parçaların oranı ile ilgili hangi varsayım kurulabilir?",
+      "secenekler": [
+        "Parçalar her zaman birbirine eşittir.",
+        "Parçaların oranı, açıyı oluşturan kenar uzunluklarının oranına eşittir.",
+        "Parçaların oranı açının ölçüsüne eşittir.",
+        "Parçaların toplamı her zaman hipotenüse eşittir."
+      ],
+      "dogru_index": 1,
+      "cozum": "İç açıortay teoremine göre açıortayın karşı kenarda ayırdığı parçaların oranı, açıyı oluşturan kenarların oranına eşittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İç açıortay teoremi nedir?",
+        "back": "Bir iç açıortayın karşı kenarda ayırdığı parçaların oranı, komşu kenarların oranına eşittir."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o02",
+      "alt_beceri": "Üçgende iç ve dış açıortayların, kenarortayların, kenar orta dikmelerin ve yüksekliklerin özelliklerine ilişkin varsayımda bulunur.",
+      "metin": "Bir üçgenin kenarortayları ile ilgili hangi varsayım doğrudur?",
+      "secenekler": [
+        "Kenarortaylar hiç kesişmez.",
+        "Kenarortaylar yalnızca dik üçgende çizilebilir.",
+        "Kenarortaylar kenarları iki eşit parçaya bölemez.",
+        "Kenarortaylar tek bir noktada kesişir ve bu nokta ağırlık merkezidir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Kenarortay bir köşeyi karşı kenarın orta noktasına birleştirir. Üç kenarortay tek noktada kesişir; bu nokta üçgenin ağırlık merkezidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kenarortay nedir?",
+        "back": "Bir köşeyi karşı kenarın orta noktasına birleştiren doğru parçasıdır."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o03",
+      "alt_beceri": "Farklı üçgen örneklerini inceleyerek varsayımlarına ilişkin örüntüleri geneller.",
+      "metin": "Şekilde ABC üçgeninde [AD] iç açıortay, |AB| = 6 birim, |AC| = 9 birim ve |BC| = 15 birimdir. Buna göre |BD| kaç birimdir?",
+      "secenekler": [
+        "6 birim",
+        "9 birim",
+        "5 birim",
+        "7,5 birim"
+      ],
+      "dogru_index": 0,
+      "cozum": "İç açıortay teoremine göre |BD|/|DC| = |AB|/|AC| = 6/9 = 2/3'tür. |BC| = 15 olduğundan |BD| = 15 · 2/5 = 6 birim bulunur.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "geometri",
+        "noktalar": {
+          "A": [
+            150,
+            40
+          ],
+          "B": [
+            40,
+            230
+          ],
+          "C": [
+            330,
+            230
+          ],
+          "D": [
+            185,
+            230
+          ]
+        },
+        "kenarlar": [
+          {
+            "a": "A",
+            "b": "B",
+            "etiket": "6"
+          },
+          {
+            "a": "A",
+            "b": "C",
+            "etiket": "9"
+          },
+          {
+            "a": "B",
+            "b": "C",
+            "etiket": "15"
+          }
+        ],
+        "acilar": [
+          {
+            "kose": "A",
+            "etiket": "α",
+            "a": "B",
+            "b": "C"
+          }
+        ],
+        "cizgiler": [
+          {
+            "a": "A",
+            "b": "D",
+            "etiket": "açıortay",
+            "kesikli": true
+          }
+        ],
+        "not": "AD iç açıortay"
+      },
+      "flashcard": {
+        "front": "Açıortay teoreminin oranı nedir?",
+        "back": "|BD|/|DC| = |AB|/|AC| eşitliğidir."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o04",
+      "alt_beceri": "Farklı üçgen örneklerini inceleyerek varsayımlarına ilişkin örüntüleri geneller.",
+      "metin": "Tabloda yardımcı elemanlar ve kesişim noktaları verilmiştir. Buna göre hangi satırda eşleştirme yanlıştır?",
+      "secenekler": [
+        "I. satır",
+        "II. satır",
+        "IV. satır",
+        "III. satır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yükseklikler diklik merkezinde (ortosentr) kesişir; ağırlık merkezi kenarortayların kesişimidir. Bu nedenle IV. satır hatalıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Eleman",
+          "Kesişim noktası"
+        ],
+        "satirlar": [
+          [
+            "Kenarortay",
+            "Ağırlık merkezi"
+          ],
+          [
+            "İç açıortay",
+            "İç teğet çemberin merkezi"
+          ],
+          [
+            "Kenar orta dikme",
+            "Çevrel çemberin merkezi"
+          ],
+          [
+            "Yükseklik",
+            "Ağırlık merkezi"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Yüksekliklerin kesişim noktası nedir?",
+        "back": "Diklik merkezi (ortosentr) adını alır."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o05",
+      "alt_beceri": "Üçgenin yardımcı elemanlarıyla ilgili genellemelerini varsayımlarıyla karşılaştırır.",
+      "metin": "Eşkenar bir üçgende yardımcı elemanlar karşılaştırıldığında hangi sonuç elde edilir?",
+      "secenekler": [
+        "Yalnızca yükseklikler çakışıktır.",
+        "Hiçbir yardımcı eleman çakışık değildir.",
+        "Yalnızca kenar orta dikmeler çakışıktır.",
+        "Açıortay, kenarortay, yükseklik ve kenar orta dikme çakışıktır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Eşkenar üçgende her kenara ait açıortay, kenarortay ve yükseklik aynı doğru parçasıdır. Kenar orta dikmeler de aynı noktada kesişir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eşkenar üçgende merkezlerin durumu nedir?",
+        "back": "Açıortay, kenarortay ve yükseklik çakışıktır; merkezler aynı noktadadır."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o06",
+      "alt_beceri": "Üçgenin yardımcı elemanlarıyla ilgili genellemelerini varsayımlarıyla karşılaştırır.",
+      "metin": "Dik bir üçgende hipotenüse ait kenarortayın uzunluğu ile hipotenüs karşılaştırıldığında hangi ilişki bulunur?",
+      "secenekler": [
+        "Kenarortay, hipotenüse eşittir.",
+        "Kenarortay, hipotenüsün yarısına eşittir.",
+        "Kenarortay, hipotenüsün iki katıdır.",
+        "Kenarortay ile hipotenüs arasında sabit oran yoktur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Dik üçgende hipotenüse ait kenarortay, hipotenüsü iki eşit parçaya böler ve uzunluğu hipotenüsün yarısıdır. Bu özellik çevrel çemberin merkezinin hipotenüsün orta noktası olmasından kaynaklanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik üçgende çevrel çemberin merkezinin yeri nedir?",
+        "back": "Hipotenüs uzunluğunun yarısıdır."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o07",
+      "alt_beceri": "Elde ettiği genellemelerden hareketle yardımcı elemanların özelliklerine ilişkin önermeler sunar.",
+      "metin": "Bir üçgenin kenar orta dikmeleri için hangi önerme sunulabilir?",
+      "secenekler": [
+        "Üç kenar orta dikme tek noktada kesişir ve bu nokta köşelere eşit uzaklıktadır.",
+        "Kenar orta dikmeler kenarları dik kesmez.",
+        "Kenar orta dikmeler yalnızca dar açılı üçgende çizilir.",
+        "Kesişim noktası kenarlara eşit uzaklıktadır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Kenar orta dikmeler üçgenin çevrel çemberinin merkezinde kesişir. Bu merkez üç köşeye eşit uzaklıktadır; kenarlara eşit uzaklık iç teğet çemberin merkezine aittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kenar orta dikme nedir?",
+        "back": "Bir kenarın orta noktasından geçen ve o kenara dik olan doğrudur."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o08",
+      "alt_beceri": "Elde ettiği genellemelerden hareketle yardımcı elemanların özelliklerine ilişkin önermeler sunar.",
+      "metin": "Bir üçgenin iç açıortayları ile ilgili hangi önerme doğrudur?",
+      "secenekler": [
+        "İç açıortaylar köşelere eşit uzaklıkta kesişir.",
+        "İç açıortaylar yalnızca ikizkenar üçgende kesişir.",
+        "İç açıortaylar tek noktada kesişir ve bu nokta kenarlara eşit uzaklıktadır.",
+        "İç açıortayların kesişim noktası her zaman üçgenin dışındadır."
+      ],
+      "dogru_index": 2,
+      "cozum": "İç açıortayların kesişim noktası iç teğet çemberin merkezidir ve bu nokta üç kenara eşit uzaklıktadır. Köşelere eşit uzaklık çevrel merkeze aittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İç teğet çemberin merkezi nasıl bulunur?",
+        "back": "İç açıortayların kesişim noktası olarak bulunur."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o09",
+      "alt_beceri": "Üçgenin yardımcı elemanlarıyla ilgili önermeleri problemler bağlamında değerlendirir.",
+      "metin": "Bir inşaat alanında ip, bir üçgenin iki kenarını eşit açıyla ikiye ayıracak biçimde gerginleştirilmiştir. Bu ipin üçgenin kenarında oluşturduğu parçalar 8 m ve 12 m'dir. Açıyı oluşturan kenarlardan biri 16 m ise diğeri kaç metredir?",
+      "secenekler": [
+        "20 m",
+        "24 m",
+        "18 m",
+        "12 m"
+      ],
+      "dogru_index": 1,
+      "cozum": "İç açıortay teoremine göre parçaların oranı komşu kenarların oranına eşittir: 8/12 = 16/x. Buradan 8x = 192 ve x = 24 m bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Açıortay teoreminin verdiği oran nedir?",
+        "back": "Karşı kenarda ayrılan parçaların oranını komşu kenarların oranına eşitler."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    },
+    {
+      "soru_id": "mat_10_t01_c02_o10",
+      "alt_beceri": "Üçgenin yardımcı elemanlarıyla ilgili önermeleri problemler bağlamında değerlendirir.",
+      "metin": "Bir dik üçgende hipotenüs uzunluğu 20 cm'dir. Bu üçgenin dik köşesinden hipotenüse çizilen kenarortay kaç cm'dir?",
+      "secenekler": [
+        "20 cm",
+        "40 cm",
+        "5 cm",
+        "10 cm"
+      ],
+      "dogru_index": 3,
+      "cozum": "Dik üçgende hipotenüse ait kenarortay hipotenüsün yarısı kadardır. Buna göre uzunluk 20/2 = 10 cm bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik üçgende hipotenüse ait kenarortayın özelliği nedir?",
+        "back": "Hipotenüsü iki eşit parçaya böler ve uzunluğu hipotenüsün yarısıdır."
+      },
+      "kazanim": "Üçgenin yardımcı elemanlarının özellikleri ile ilgili çıkarım yapabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t01_c02_o01:flashcard",
+      "front": "İç açıortay teoremi nedir?",
+      "back": "Bir iç açıortayın karşı kenarda ayırdığı parçaların oranı, komşu kenarların oranına eşittir."
+    },
+    {
+      "id": "mat_10_t01_c02_o02:flashcard",
+      "front": "Kenarortay nedir?",
+      "back": "Bir köşeyi karşı kenarın orta noktasına birleştiren doğru parçasıdır."
+    },
+    {
+      "id": "mat_10_t01_c02_o03:flashcard",
+      "front": "Açıortay teoreminin oranı nedir?",
+      "back": "|BD|/|DC| = |AB|/|AC| eşitliğidir."
+    },
+    {
+      "id": "mat_10_t01_c02_o04:flashcard",
+      "front": "Yüksekliklerin kesişim noktası nedir?",
+      "back": "Diklik merkezi (ortosentr) adını alır."
+    },
+    {
+      "id": "mat_10_t01_c02_o05:flashcard",
+      "front": "Eşkenar üçgende merkezlerin durumu nedir?",
+      "back": "Açıortay, kenarortay ve yükseklik çakışıktır; merkezler aynı noktadadır."
+    },
+    {
+      "id": "mat_10_t01_c02_o06:flashcard",
+      "front": "Dik üçgende çevrel çemberin merkezinin yeri nedir?",
+      "back": "Hipotenüs uzunluğunun yarısıdır."
+    },
+    {
+      "id": "mat_10_t01_c02_o07:flashcard",
+      "front": "Kenar orta dikme nedir?",
+      "back": "Bir kenarın orta noktasından geçen ve o kenara dik olan doğrudur."
+    },
+    {
+      "id": "mat_10_t01_c02_o08:flashcard",
+      "front": "İç teğet çemberin merkezi nasıl bulunur?",
+      "back": "İç açıortayların kesişim noktası olarak bulunur."
+    },
+    {
+      "id": "mat_10_t01_c02_o09:flashcard",
+      "front": "Açıortay teoreminin verdiği oran nedir?",
+      "back": "Karşı kenarda ayrılan parçaların oranını komşu kenarların oranına eşitler."
+    },
+    {
+      "id": "mat_10_t01_c02_o10:flashcard",
+      "front": "Dik üçgende hipotenüse ait kenarortayın özelliği nedir?",
+      "back": "Hipotenüsü iki eşit parçaya böler ve uzunluğu hipotenüsün yarısıdır."
+    }
+  ]
+}

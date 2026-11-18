@@ -1,0 +1,300 @@
+{
+  "konu_id": "biyo_10_t02_c04",
+  "kod": "BİY.10.2.4",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 2,
+  "tema_adi": "Ekoloji",
+  "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.132-139",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t02_c04_o01",
+      "alt_beceri": "Madde döngülerinin işleyişini açıklamak için model önerir.",
+      "metin": "Bir öğrenci suyun yeryüzü ile atmosfer arasındaki dolanımını göstereceği bir model hazırlayacaktır. Modelinde hangi süreçleri göstermelidir?",
+      "secenekler": [
+        "Fotosentez, solunum ve sindirim",
+        "Buharlaşma, yoğuşma, yağış ve terleme",
+        "Glikoliz, Krebs ve ETS",
+        "Nitrifikasyon ve denitrifikasyon"
+      ],
+      "dogru_index": 1,
+      "cozum": "Su döngüsü buharlaşma, yoğuşma, yağış ve terleme olaylarıyla gerçekleşir. Su, yeryüzü ile atmosfer arasında katı, sıvı ve gaz hâlde dolanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su döngüsü nedir?",
+        "back": "Suyun yeryüzü ile atmosfer arasındaki sürekli dolanımıdır."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o02",
+      "alt_beceri": "Madde döngülerinin işleyişini açıklamak için model önerir.",
+      "metin": "Karbon döngüsünü modelleyen öğrenci, atmosferdeki karbonun canlıların yapısına geçtiği basamağı göstermelidir. Bu basamak hangisidir?",
+      "secenekler": [
+        "Solunum",
+        "Yanma",
+        "Ayrışma",
+        "Fotosentez"
+      ],
+      "dogru_index": 3,
+      "cozum": "Fotosentezde atmosferdeki CO2 organik bileşiklerin yapısına katılır. Solunum, yanma ve ayrışma ise karbonu atmosfere geri verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karbon döngüsü nedir?",
+        "back": "Karbonun atmosfer, canlılar, toprak ve okyanuslar arasındaki sürekli dolaşımıdır."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o03",
+      "alt_beceri": "Madde döngülerinin işleyişini açıklamak için model önerir.",
+      "metin": "Azot döngüsü modelinde topraktaki azotun bitkilerin kullanabileceği forma dönüşmesi gösterilecektir. Bu dönüşümü sağlayan canlılar hangileridir?",
+      "secenekler": [
+        "Azot bağlayıcı ve nitrifikasyon bakterileri",
+        "Fotosentez yapan su bitkileri ve algler",
+        "Otçul memeliler ve otçul kuşlar",
+        "Mantarların hifleri ve miselleri"
+      ],
+      "dogru_index": 0,
+      "cozum": "Havadaki azot doğrudan bitkilerce kullanılamaz. Azot bağlayıcı bakteriler ve nitrifikasyon bakterileri azotu amonyum ve nitrat gibi kullanılabilir formlara çevirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Azot döngüsü nedir?",
+        "back": "Azotun atmosfer, toprak, su ve canlılar arasındaki dolaşımıdır."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o04",
+      "alt_beceri": "Madde döngülerinin işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştırır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Tabloda madde döngülerindeki olaylar ve etkileri verilmiştir. Buna göre hangi satırda eşleştirme yanlıştır?",
+      "secenekler": [
+        "I. satır",
+        "II. satır",
+        "IV. satır",
+        "III. satır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Buharlaşma su döngüsüne ait bir olaydır ve CO2 miktarını azaltmaz. Karbon döngüsünde CO2 fotosentezle alınır, solunum ve yanmayla atmosfere verilir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Olay",
+          "Etki"
+        ],
+        "satirlar": [
+          [
+            "Fotosentez",
+            "CO2 atmosferden alınır"
+          ],
+          [
+            "Solunum",
+            "CO2 atmosfere verilir"
+          ],
+          [
+            "Fosil yakıt yanması",
+            "Atmosferdeki CO2 artar"
+          ],
+          [
+            "Buharlaşma",
+            "Atmosferdeki CO2 azalır"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Karbonun atmosfere geri verilme yolları nedir?",
+        "back": "Solunum, ayrışma, yanma ve volkanik faaliyetlerle verilir."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o05",
+      "alt_beceri": "Madde döngülerinin işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştırır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Azot döngüsünde atmosferdeki N2 gazının bitkilerin kullanabileceği forma dönüşmesine verilen ad nedir?",
+      "secenekler": [
+        "Denitrifikasyon",
+        "Ötrofikasyon",
+        "Süksesyon",
+        "Azot fiksasyonu"
+      ],
+      "dogru_index": 3,
+      "cozum": "Azot fiksasyonu, atmosferdeki N2'nin amonyum gibi kullanılabilir forma dönüştürülmesidir. Denitrifikasyon ise azotu tekrar atmosfere kazandırır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Azot fiksasyonu nedir?",
+        "back": "Atmosferdeki N2 gazının canlıların kullanabileceği azotlu bileşiklere dönüştürülmesidir."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o06",
+      "alt_beceri": "Madde döngülerinin işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştırır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Yıldırım ve şimşeklerin azot döngüsündeki rolü hangisinde doğru verilmiştir?",
+      "secenekler": [
+        "Topraktaki azotu atmosfere vererek döngüyü durdurur.",
+        "Yüksek enerjiyle atmosferik azotu oksitleyerek kullanılabilir forma dönüştürür.",
+        "Azotu doğrudan glikoza çevirir.",
+        "Suyun buharlaşmasını sağlayarak azot üretir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Yıldırım ve şimşeklerin yüksek enerjisi atmosferik azotu oksitlere dönüştürür. Bu bileşikler yağışla toprağa iner ve bitkiler için kullanılabilir hâle gelir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Azot döngüsünde fiziksel etkenler nedir?",
+        "back": "Yıldırım ve şimşekler gibi yüksek enerjili olaylardır."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o07",
+      "alt_beceri": "Madde döngülerinin işleyişini açıklamak için model önerir.",
+      "metin": "Biyosfer-2 deneyinde kapalı alandaki oksijen oranı %14'e düşmüş, karbondioksit derişimi artmıştır. Bu sonuç modelin hangi yönünün eksik olduğunu gösterir?",
+      "secenekler": [
+        "Karbon ve oksijen döngülerinin dengeli işletilemediğini",
+        "Suyun hiç buharlaşmadığını",
+        "Azotun döngüye hiç girmediğini",
+        "Enerji akışının tek yönlü olduğunu"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kapalı sistemde oksijenin azalıp CO2'nin artması, fotosentez ile solunum arasındaki dengenin kurulamadığını gösterir. Madde döngüleri dengeli işlemezse yaşam sürdürülemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Madde döngülerinin ekosistem için önemi nedir?",
+        "back": "Canlı ve cansız ortam arasında maddelerin sürekli yeniden kullanılmasını sağlayarak yaşamın sürekliliğini korur."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o08",
+      "alt_beceri": "Madde döngülerinin işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştırır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Bir öğrenci karbon döngüsü modelinde yalnızca fotosentezi göstermiş, solunum ve yanmayı göstermemiştir. Modelin bilimsel modelle karşılaştırılması sonucu hangi fark belirlenir?",
+      "secenekler": [
+        "Modelde karbonun canlıya geçişi eksiktir.",
+        "Modelde oksijen hiç yer almamıştır.",
+        "Modelde karbonun atmosfere geri dönüş basamakları eksiktir.",
+        "Model bilimsel modelle tamamen aynıdır."
+      ],
+      "dogru_index": 2,
+      "cozum": "Karbon döngüsünde CO2 fotosentezle alınır; solunum, ayrışma ve yanma ile atmosfere geri verilir. Geri dönüş basamakları gösterilmezse döngü tamamlanmamış olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karbon döngüsünü tamamlayan basamaklar nedir?",
+        "back": "Fotosentezle alım; solunum, ayrışma ve yanma ile atmosfere geri verilme basamaklarıdır."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o09",
+      "alt_beceri": "Madde döngülerinin işleyişi ile ilgili önerdiği modeli bilimsel modellerle karşılaştırır ve elde ettiği kanıtlarla modelini yeniler.",
+      "metin": "Tabloda canlıların azot döngüsündeki görevleri verilmiştir. Buna göre hangi canlı grubu azotu atmosfere geri kazandırır?",
+      "secenekler": [
+        "Azot bağlayıcı bakteri",
+        "Denitrifikasyon bakterisi",
+        "Nitrifikasyon bakterisi",
+        "Bitkiler"
+      ],
+      "dogru_index": 1,
+      "cozum": "Denitrifikasyon bakterileri nitratı azot gazına çevirerek azotu atmosfere kazandırır. Azot bağlayıcı ve nitrifikasyon bakterileri azotu kullanılabilir forma sokar.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Canlı",
+          "Görev"
+        ],
+        "satirlar": [
+          [
+            "Azot bağlayıcı bakteri",
+            "N2'yi bağlar"
+          ],
+          [
+            "Nitrifikasyon bakterisi",
+            "Amonyumu nitrata çevirir"
+          ],
+          [
+            "Denitrifikasyon bakterisi",
+            "Nitratı N2'ye çevirir"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Denitrifikasyon nedir?",
+        "back": "Nitratın azot gazına dönüştürülerek atmosfere verilmesidir."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c04_o10",
+      "alt_beceri": "Madde döngülerinin işleyişini açıklamak için model önerir.",
+      "metin": "Madde döngülerini karşılaştıran öğrenci, su döngüsünün diğerlerinden farkını hangi ölçütle belirleyebilir?",
+      "secenekler": [
+        "Suyun yalnızca canlılarda bulunması",
+        "Suyun döngüye hiç girmemesi",
+        "Suyun yalnızca atmosferde kalması",
+        "Suyun döngüde kimyasal yapısının değişmemesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Su döngüsünde su fiziksel hâl değiştirir; kimyasal yapısı değişmez. Karbon ve azot döngülerinde ise elementler farklı kimyasal bileşikler arasında yer değiştirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su döngüsünün temel özelliği nedir?",
+        "back": "Suyun fiziksel hâl değiştirerek atmosfer ile yeryüzü arasında dolanmasıdır."
+      },
+      "kazanim": "Madde döngüleri ile ilgili bilimsel model oluşturabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t02_c04_o01:flashcard",
+      "front": "Su döngüsü nedir?",
+      "back": "Suyun yeryüzü ile atmosfer arasındaki sürekli dolanımıdır."
+    },
+    {
+      "id": "biyo_10_t02_c04_o02:flashcard",
+      "front": "Karbon döngüsü nedir?",
+      "back": "Karbonun atmosfer, canlılar, toprak ve okyanuslar arasındaki sürekli dolaşımıdır."
+    },
+    {
+      "id": "biyo_10_t02_c04_o03:flashcard",
+      "front": "Azot döngüsü nedir?",
+      "back": "Azotun atmosfer, toprak, su ve canlılar arasındaki dolaşımıdır."
+    },
+    {
+      "id": "biyo_10_t02_c04_o04:flashcard",
+      "front": "Karbonun atmosfere geri verilme yolları nedir?",
+      "back": "Solunum, ayrışma, yanma ve volkanik faaliyetlerle verilir."
+    },
+    {
+      "id": "biyo_10_t02_c04_o05:flashcard",
+      "front": "Azot fiksasyonu nedir?",
+      "back": "Atmosferdeki N2 gazının canlıların kullanabileceği azotlu bileşiklere dönüştürülmesidir."
+    },
+    {
+      "id": "biyo_10_t02_c04_o06:flashcard",
+      "front": "Azot döngüsünde fiziksel etkenler nedir?",
+      "back": "Yıldırım ve şimşekler gibi yüksek enerjili olaylardır."
+    },
+    {
+      "id": "biyo_10_t02_c04_o07:flashcard",
+      "front": "Madde döngülerinin ekosistem için önemi nedir?",
+      "back": "Canlı ve cansız ortam arasında maddelerin sürekli yeniden kullanılmasını sağlayarak yaşamın sürekliliğini korur."
+    },
+    {
+      "id": "biyo_10_t02_c04_o08:flashcard",
+      "front": "Karbon döngüsünü tamamlayan basamaklar nedir?",
+      "back": "Fotosentezle alım; solunum, ayrışma ve yanma ile atmosfere geri verilme basamaklarıdır."
+    },
+    {
+      "id": "biyo_10_t02_c04_o09:flashcard",
+      "front": "Denitrifikasyon nedir?",
+      "back": "Nitratın azot gazına dönüştürülerek atmosfere verilmesidir."
+    },
+    {
+      "id": "biyo_10_t02_c04_o10:flashcard",
+      "front": "Su döngüsünün temel özelliği nedir?",
+      "back": "Suyun fiziksel hâl değiştirerek atmosfer ile yeryüzü arasında dolanmasıdır."
+    }
+  ]
+}

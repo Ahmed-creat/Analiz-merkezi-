@@ -1,0 +1,302 @@
+{
+  "konu_id": "mat_10_t04_c03",
+  "kod": "MAT.10.4.3",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±",
+  "kaynak": "Matematik 10 ders kitabı, s.224-242",
+  "sorular": [
+    {
+      "soru_id": "mat_10_t04_c03_o01",
+      "alt_beceri": "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karekök fonksiyonlarının nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "metin": "f(x) = √(x − 4) fonksiyonunun tanım kümesi hangisidir?",
+      "secenekler": [
+        "[−4, ∞)",
+        "[4, ∞)",
+        "[3, ∞)",
+        "ℝ"
+      ],
+      "dogru_index": 1,
+      "cozum": "Karekök içindeki ifade negatif olamaz: x − 4 ≥ 0 ise x ≥ 4 olur. 4 değeri de tanımlı olduğundan küme [4, ∞) biçiminde yazılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karekök fonksiyonunda tanım kısıtının nedeni nedir?",
+        "back": "Kök içinin negatif olamamasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o02",
+      "alt_beceri": "r) ± k (a, r, k ∈ ℝ, a ≠ 0)) karekök fonksiyonlarının nitel özelliklerine ilişkin matematiksel muhakeme yapabilme",
+      "metin": "f(x) = √(3x − 12) fonksiyonunun tanım kümesi hangisidir?",
+      "secenekler": [
+        "[12, ∞)",
+        "[3, ∞)",
+        "(−∞, 4]",
+        "[4, ∞)"
+      ],
+      "dogru_index": 3,
+      "cozum": "3x − 12 ≥ 0 eşitsizliğinden 3x ≥ 12 ve x ≥ 4 bulunur. Tanım kümesi [4, ∞) olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karekök içindeki ifadenin negatif olmama koşulu nedir?",
+        "back": "İfadenin sıfıra eşit ya da sıfırdan büyük olmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o03",
+      "alt_beceri": "Karekök referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
+      "metin": "√81 + √49 işleminin sonucu kaçtır?",
+      "secenekler": [
+        "16",
+        "11",
+        "130",
+        "18"
+      ],
+      "dogru_index": 0,
+      "cozum": "√81 = 9 ve √49 = 7 olduğundan toplam 9 + 7 = 16 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kareköklü sayılarda toplamanın doğrudan yapılma koşulu nedir?",
+        "back": "Kök içlerinin aynı olmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o04",
+      "alt_beceri": "Karekök referans fonksiyonun nitel özelliklerini (tanım kümesi, görüntü kümesi, işareti, artanlığı-azalanlığı, maksimum-minimum noktaları, sıfırları, bire birliği, tekliği-çiftliği, örtenliği) matematiksel temsilleri kullanarak belirler.",
+      "metin": "√0,25 ifadesinin değeri kaçtır?",
+      "secenekler": [
+        "0,05",
+        "0,25",
+        "0,5",
+        "1,5"
+      ],
+      "dogru_index": 2,
+      "cozum": "√0,25 = √(1/4) = 1/2 = 0,5 bulunur. Karekök sonucu her zaman verilen sayıdan küçük ya da eşit değildir, ancak 1'den küçük pozitif sayılarda sonuç büyür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ondalık sayının karekökü nasıl hesaplanır?",
+        "back": "Ondalık sayı kesre çevrilerek karekökü alınır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o05",
+      "alt_beceri": "Karekök referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
+      "metin": "f(x) = √x fonksiyonunun görüntü kümesi hangisidir?",
+      "secenekler": [
+        "[1, ∞)",
+        "(0, 1)",
+        "[−1, ∞)",
+        "[0, ∞)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Karekök değeri hiçbir zaman negatif olamaz ve x = 0 için 0 değerini alır. Bu nedenle görüntü kümesi [0, ∞) olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karekök değerinin işareti nedir?",
+        "back": "Hiçbir zaman negatif olmayan, sıfıra eşit olabilen değerdir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o06",
+      "alt_beceri": "Karekök referans fonksiyonun nitel özellikleri ile matematiksel temsilleri arasındaki ilişkileri belirler.",
+      "metin": "f(x) = √x + 3 fonksiyonu için f(16) kaçtır?",
+      "secenekler": [
+        "4",
+        "7",
+        "19",
+        "7,5"
+      ],
+      "dogru_index": 1,
+      "cozum": "√16 = 4 olduğundan f(16) = 4 + 3 = 7 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karekök fonksiyonuna eklenen sabitin etkisi nedir?",
+        "back": "Grafiği düşey olarak öteler."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o07",
+      "alt_beceri": "Karekök referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer karekök fonksiyonlarına dönüştürür.",
+      "metin": "f(x) = √(a − x) fonksiyonu x = 7 için tanımlı olduğuna göre a sayısı en az kaçtır?",
+      "secenekler": [
+        "7",
+        "0",
+        "14",
+        "1"
+      ],
+      "dogru_index": 0,
+      "cozum": "Tanımlı olması için a − x ≥ 0, yani a ≥ x = 7 olmalıdır. En küçük değer 7'dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karekök fonksiyonunda parametrenin tanım kümesine etkisi nedir?",
+        "back": "Kök içini negatif yapmayacak biçimde sınırlamasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o08",
+      "alt_beceri": "Karekök referans fonksiyonu grafik ve cebirsel temsili üzerinde yapılan işlemlerle diğer karekök fonksiyonlarına dönüştürür.",
+      "metin": "f(x) = √(x − 2) + √(5 − x) fonksiyonunun tanım kümesinde kaç tam sayı vardır?",
+      "secenekler": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "dogru_index": 2,
+      "cozum": "x − 2 ≥ 0 ise x ≥ 2; 5 − x ≥ 0 ise x ≤ 5 olur. Tanım kümesi [2, 5] olup 2, 3, 4, 5 olmak üzere 4 tam sayı içerir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kareköklü ifadenin tanım kümesi nedir?",
+        "back": "Her bir kök içini negatif yapmayan değerlerin kesişimidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o09",
+      "alt_beceri": "Karekök referans fonksiyon ile elde ettiği karekök fonksiyonlarının grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
+      "metin": "√(x + 5) = 3 denkleminin çözümü kaçtır?",
+      "secenekler": [
+        "−4",
+        "4",
+        "9",
+        "14"
+      ],
+      "dogru_index": 1,
+      "cozum": "Her iki tarafın karesi alınırsa x + 5 = 9 ve x = 4 bulunur. Sağlama: √9 = 3 olduğundan çözüm doğrudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kareköklü denklemin çözüm yöntemi nedir?",
+        "back": "Her iki tarafın karesinin alınması ve sağlama yapılmasıdır."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o10",
+      "alt_beceri": "Karekök referans fonksiyon ile elde ettiği karekök fonksiyonlarının grafik ve cebirsel temsilleri arasındaki ilişkiyi ifade eder.",
+      "metin": "√(2x − 3) = 5 denklemini sağlayan x değeri kaçtır?",
+      "secenekler": [
+        "11",
+        "4",
+        "28",
+        "14"
+      ],
+      "dogru_index": 3,
+      "cozum": "İki tarafın karesi alındığında 2x − 3 = 25 olur. Buradan 2x = 28 ve x = 14 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kare almanın sağlama gerektirme nedeni nedir?",
+        "back": "Dışarıdan gelen yanlış kökler oluşturabilmesidir."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o11",
+      "alt_beceri": "Karekök referans fonksiyonun nitel özelliklerinden hareketle diğer karekök fonksiyonlarının nitel özellikleri hakkında varsayımlarda bulunur. 104",
+      "metin": "Serbest bırakılan bir cismin düşme süresi t = √(h/5) bağıntısıyla verilmektedir (h metre, t saniye). 45 metreden düşen bir cisim yere kaç saniyede ulaşır?",
+      "secenekler": [
+        "9",
+        "3",
+        "4,5",
+        "5"
+      ],
+      "dogru_index": 1,
+      "cozum": "t = √(45/5) = √9 = 3 saniye bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşme süresi modeli hangi fonksiyonla ifade edilir?",
+        "back": "Yüksekliğin kareköküyle orantılı bir karekök fonksiyonuyla."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    },
+    {
+      "soru_id": "mat_10_t04_c03_o12",
+      "alt_beceri": "Karekök referans fonksiyonun nitel özelliklerinden hareketle diğer karekök fonksiyonlarının nitel özellikleri hakkında varsayımlarda bulunur. 104",
+      "metin": "Düşme süresi t = √(h/5) bağıntısıyla hesaplanmaktadır. Yüksekliği 20 metre olan bir noktadan bırakılan cisim yere kaç saniyede ulaşır?",
+      "secenekler": [
+        "4",
+        "1,5",
+        "10",
+        "2"
+      ],
+      "dogru_index": 3,
+      "cozum": "t = √(20/5) = √4 = 2 saniye bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karekök modelinde yükseklik dört katına çıkarsa süre nasıl değişir?",
+        "back": "Süre iki katına çıkar."
+      },
+      "kazanim": "Gerçek sayılarda f(x) = x (x ≥ 0) şeklinde tanımlı karekök referans fonksiyonun nitel özellikleri ile bu fonksiyondan türetilen (g(x) = a ∙ f(x ±"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_t04_c03_o01:flashcard",
+      "front": "Karekök fonksiyonunda tanım kısıtının nedeni nedir?",
+      "back": "Kök içinin negatif olamamasıdır."
+    },
+    {
+      "id": "mat_10_t04_c03_o02:flashcard",
+      "front": "Karekök içindeki ifadenin negatif olmama koşulu nedir?",
+      "back": "İfadenin sıfıra eşit ya da sıfırdan büyük olmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c03_o03:flashcard",
+      "front": "Kareköklü sayılarda toplamanın doğrudan yapılma koşulu nedir?",
+      "back": "Kök içlerinin aynı olmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c03_o04:flashcard",
+      "front": "Ondalık sayının karekökü nasıl hesaplanır?",
+      "back": "Ondalık sayı kesre çevrilerek karekökü alınır."
+    },
+    {
+      "id": "mat_10_t04_c03_o05:flashcard",
+      "front": "Karekök değerinin işareti nedir?",
+      "back": "Hiçbir zaman negatif olmayan, sıfıra eşit olabilen değerdir."
+    },
+    {
+      "id": "mat_10_t04_c03_o06:flashcard",
+      "front": "Karekök fonksiyonuna eklenen sabitin etkisi nedir?",
+      "back": "Grafiği düşey olarak öteler."
+    },
+    {
+      "id": "mat_10_t04_c03_o07:flashcard",
+      "front": "Karekök fonksiyonunda parametrenin tanım kümesine etkisi nedir?",
+      "back": "Kök içini negatif yapmayacak biçimde sınırlamasıdır."
+    },
+    {
+      "id": "mat_10_t04_c03_o08:flashcard",
+      "front": "İki kareköklü ifadenin tanım kümesi nedir?",
+      "back": "Her bir kök içini negatif yapmayan değerlerin kesişimidir."
+    },
+    {
+      "id": "mat_10_t04_c03_o09:flashcard",
+      "front": "Kareköklü denklemin çözüm yöntemi nedir?",
+      "back": "Her iki tarafın karesinin alınması ve sağlama yapılmasıdır."
+    },
+    {
+      "id": "mat_10_t04_c03_o10:flashcard",
+      "front": "Kare almanın sağlama gerektirme nedeni nedir?",
+      "back": "Dışarıdan gelen yanlış kökler oluşturabilmesidir."
+    },
+    {
+      "id": "mat_10_t04_c03_o11:flashcard",
+      "front": "Düşme süresi modeli hangi fonksiyonla ifade edilir?",
+      "back": "Yüksekliğin kareköküyle orantılı bir karekök fonksiyonuyla."
+    },
+    {
+      "id": "mat_10_t04_c03_o12:flashcard",
+      "front": "Karekök modelinde yükseklik dört katına çıkarsa süre nasıl değişir?",
+      "back": "Süre iki katına çıkar."
+    }
+  ]
+}

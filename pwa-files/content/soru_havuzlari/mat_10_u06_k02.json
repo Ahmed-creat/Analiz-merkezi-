@@ -1,0 +1,256 @@
+{
+  "konu_id": "mat_10_u06_k02",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 6,
+  "tema_adi": "Analitik İnceleme",
+  "baslik": "6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+  "topic_key": "Matematik > 6.2 Dik Koordinat Sisteminde Doğrunun Özellikleri ve Analitik İncelenmesi",
+  "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır.",
+  "kaynak": "Matematik 10 ders kitabı, s.372-384",
+  "kaynak_dosya": "matematik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u06_k02_o01",
+      "alt_beceri": "Doğrunun eğimini hesaplar.",
+      "metin": "A(x₁, y₁) ve B(x₂, y₂) noktalarından geçen doğrunun eğimi hangi bağıntıyla bulunur?",
+      "secenekler": [
+        "(x₂ − x₁)/(y₂ − y₁)",
+        "(y₂ − y₁)/(x₂ − x₁)",
+        "(y₂ + y₁)/(x₂ + x₁)",
+        "y₂ − y₁"
+      ],
+      "dogru_index": 1,
+      "cozum": "Eğim, dikey değişimin yatay değişime oranıdır (s.372-375).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki noktadan eğim nasıl bulunur?",
+        "back": "(y₂−y₁)/(x₂−x₁)"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o02",
+      "alt_beceri": "Doğrunun eğimini hesaplar.",
+      "metin": "Birbirine paralel iki doğrunun eğimleri için hangisi doğrudur?",
+      "secenekler": [
+        "Çarpımları −1'dir",
+        "Toplamları 0'dır",
+        "Biri diğerinin iki katıdır",
+        "Eşittir"
+      ],
+      "dogru_index": 3,
+      "cozum": "Paralel doğruların eğimleri eşittir (s.376-380).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel doğrularda eğimler arasındaki ilişki nedir?",
+        "back": "Eşittir."
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o03",
+      "alt_beceri": "Doğrunun eğimini hesaplar.",
+      "metin": "Birbirine dik iki doğrunun eğimleri için hangisi doğrudur?",
+      "secenekler": [
+        "Çarpımları −1'dir",
+        "Eşittir",
+        "Toplamları 1'dir",
+        "Biri sıfırdır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Dik doğruların eğimleri çarpımı −1'dir (m₁·m₂ = −1) (s.380-382).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik doğrularda eğim çarpımının değeri nedir?",
+        "back": "−1"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o04",
+      "alt_beceri": "Doğru denklemini yazar, eğim ilişkilerini kullanır.",
+      "metin": "A(1, 2) ve B(4, 8) noktalarından geçen doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "1/2",
+        "−2",
+        "2",
+        "6"
+      ],
+      "dogru_index": 2,
+      "cozum": "(8 − 2)/(4 − 1) = 6/3 = 2 (s.372-375).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki noktadan eğim hesabının uygulanışı nedir?",
+        "back": "2"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o05",
+      "alt_beceri": "Doğru denklemini yazar, eğim ilişkilerini kullanır.",
+      "metin": "Eğimi 3 olan ve (0, −2) noktasından geçen doğrunun denklemi hangisidir?",
+      "secenekler": [
+        "y = 3x + 2",
+        "y = −2x + 3",
+        "y = 2x − 3",
+        "y = 3x − 2"
+      ],
+      "dogru_index": 3,
+      "cozum": "y = mx + n → −2 = 3·0 + n → n = −2 → y = 3x − 2 (s.375-378).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğim 3, (0,−2) → denklem nedir?",
+        "back": "y = 3x − 2"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o06",
+      "alt_beceri": "Doğru denklemini yazar, eğim ilişkilerini kullanır.",
+      "metin": "y = 2x + 5 doğrusuna paralel olan doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "−1/2",
+        "2",
+        "5",
+        "1/2"
+      ],
+      "dogru_index": 1,
+      "cozum": "Paralel doğruların eğimleri eşit olduğundan eğim 2'dir (s.376-380).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Paralel doğruya geçerken eğim ne olur?",
+        "back": "2"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o07",
+      "alt_beceri": "Doğru denklemini yazar, eğim ilişkilerini kullanır.",
+      "metin": "y = 2x + 5 doğrusuna dik olan doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "−1/2",
+        "2",
+        "1/2",
+        "−2"
+      ],
+      "dogru_index": 0,
+      "cozum": "m₁·m₂ = −1 → 2·m₂ = −1 → m₂ = −1/2 (s.380-382).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik doğruya geçerken eğim ne olur?",
+        "back": "−1/2"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o08",
+      "alt_beceri": "Doğru denklemini yazar, eğim ilişkilerini kullanır.",
+      "metin": "(2, 3) ve (5, 3) noktalarından geçen doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "3",
+        "Tanımsız",
+        "0",
+        "1"
+      ],
+      "dogru_index": 2,
+      "cozum": "(3 − 3)/(5 − 2) = 0; doğru x eksenine paraleldir (s.372-375).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yatay doğrunun eğiminin değeri nedir?",
+        "back": "0"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o09",
+      "alt_beceri": "Doğru denklemini yazar, eğim ilişkilerini kullanır.",
+      "metin": "x = 4 doğrusunun eğimi için hangisi doğrudur?",
+      "secenekler": [
+        "0'dır",
+        "Tanımsızdır",
+        "1'dir",
+        "4'tür"
+      ],
+      "dogru_index": 1,
+      "cozum": "Düşey doğrularda yatay değişim sıfırdır; eğim tanımsızdır (s.374-376).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşey doğrunun eğimi için geçerli olan nedir?",
+        "back": "Tanımsız."
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o10",
+      "alt_beceri": "Doğru denklemini yazar, eğim ilişkilerini kullanır.",
+      "metin": "Eğimi −1/3 olan doğruya dik olan doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "−3",
+        "1/3",
+        "−1/3",
+        "3"
+      ],
+      "dogru_index": 3,
+      "cozum": "m₁·m₂ = −1 → (−1/3)·m₂ = −1 → m₂ = 3 (s.380-382).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik eğimin hesabı nedir?",
+        "back": "3"
+      },
+      "kazanim": "Doğrunun eğimini ve denklemini bulur; paralel ve dik doğruların eğim ilişkisini kullanır."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u06_k02_o01:flashcard",
+      "front": "İki noktadan eğim nasıl bulunur?",
+      "back": "(y₂−y₁)/(x₂−x₁)"
+    },
+    {
+      "id": "mat_10_u06_k02_o02:flashcard",
+      "front": "Paralel doğrularda eğimler arasındaki ilişki nedir?",
+      "back": "Eşittir."
+    },
+    {
+      "id": "mat_10_u06_k02_o03:flashcard",
+      "front": "Dik doğrularda eğim çarpımının değeri nedir?",
+      "back": "−1"
+    },
+    {
+      "id": "mat_10_u06_k02_o04:flashcard",
+      "front": "İki noktadan eğim hesabının uygulanışı nedir?",
+      "back": "2"
+    },
+    {
+      "id": "mat_10_u06_k02_o05:flashcard",
+      "front": "Eğim 3, (0,−2) → denklem nedir?",
+      "back": "y = 3x − 2"
+    },
+    {
+      "id": "mat_10_u06_k02_o06:flashcard",
+      "front": "Paralel doğruya geçerken eğim ne olur?",
+      "back": "2"
+    },
+    {
+      "id": "mat_10_u06_k02_o07:flashcard",
+      "front": "Dik doğruya geçerken eğim ne olur?",
+      "back": "−1/2"
+    },
+    {
+      "id": "mat_10_u06_k02_o08:flashcard",
+      "front": "Yatay doğrunun eğiminin değeri nedir?",
+      "back": "0"
+    },
+    {
+      "id": "mat_10_u06_k02_o09:flashcard",
+      "front": "Düşey doğrunun eğimi için geçerli olan nedir?",
+      "back": "Tanımsız."
+    },
+    {
+      "id": "mat_10_u06_k02_o10:flashcard",
+      "front": "Dik eğimin hesabı nedir?",
+      "back": "3"
+    }
+  ]
+}

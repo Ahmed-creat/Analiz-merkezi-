@@ -1,0 +1,371 @@
+{
+  "konu_id": "biyo_10_t02_c02",
+  "kod": "BİY.10.2.2",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 2,
+  "tema_adi": "Ekoloji",
+  "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme",
+  "kaynak": "Biyoloji 10 ders kitabı, s.107-123",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_t02_c02_o01",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimleri ve değişimleri tanımlar.",
+      "metin": "Bir araştırmacı, koru alanındaki tüm meşe ağaçlarının birey sayısını ve yaş dağılımını kaydetmiştir. Bu araştırmanın konusu olan topluluk hangisidir?",
+      "secenekler": [
+        "Komünite",
+        "Popülasyon",
+        "Ekosistem",
+        "Biyosfer"
+      ],
+      "dogru_index": 1,
+      "cozum": "Popülasyon, belli bir alanda yaşayan aynı türe ait bireylerin topluluğudur. Komünite ise o alanda etkileşim hâlindeki tüm türlerin topluluğudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Popülasyon nedir?",
+        "back": "Belli bir alanda yaşayan aynı türe ait bireylerin oluşturduğu topluluktur."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o02",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimleri ve değişimleri tanımlar.",
+      "metin": "Tabloda ekolojik organizasyon düzeyleri verilmiştir. Buna göre küçükten büyüğe doğru sıralama hangisinde doğrudur?",
+      "secenekler": [
+        "Komünite → popülasyon → organizma → ekosistem",
+        "Ekosistem → komünite → popülasyon → organizma",
+        "Popülasyon → organizma → ekosistem → komünite",
+        "Organizma → popülasyon → komünite → ekosistem"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ekolojik organizasyon düzeyleri organizma, popülasyon, komünite, ekosistem ve biyosfer biçiminde küçükten büyüğe sıralanır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Düzey",
+          "İçerik"
+        ],
+        "satirlar": [
+          [
+            "Organizma",
+            "Tek birey"
+          ],
+          [
+            "Popülasyon",
+            "Aynı tür bireyleri"
+          ],
+          [
+            "Komünite",
+            "Farklı türlerin topluluğu"
+          ],
+          [
+            "Ekosistem",
+            "Canlı ve cansız çevre"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Komünite nedir?",
+        "back": "Belirli bir alanda etkileşim hâlinde bulunan tüm türlerin oluşturduğu topluluktur."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o03",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili sorular sorar.",
+      "metin": "Kızıl tilki popülasyonunda uyuz hastalığı nedeniyle birey sayısı azalmıştır. Bu azalmanın yaban tavşanı sayısına etkisi için hangi soru araştırılabilir?",
+      "secenekler": [
+        "Avcı sayısı azalınca av popülasyonunun büyüklüğü artar mı?",
+        "Tilkilerin tüy rengi mevsime göre değişir mi?",
+        "Tavşanların kulak uzunluğu bölgeye göre farklı mıdır?",
+        "Uyuz hastalığı hangi yılda keşfedilmiştir?"
+      ],
+      "dogru_index": 0,
+      "cozum": "Tilki, tavşanın avcısıdır. Avcı baskısı azaldığında av popülasyonunun artması beklenir; bu ilişki sınanabilir bir araştırma sorusudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Av-avcı ilişkisi nedir?",
+        "back": "Bir türün diğeriyle beslenerek onun birey sayısını etkilediği etkileşimdir."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o04",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili sorular sorar.",
+      "metin": "Gause deneyinde ekolojik nişleri örtüşen iki Paramesyum türü aynı ortamda yetiştirildiğinde bir süre sonra türlerden biri azalmıştır. Bu deneyle hangi soruya cevap aranmıştır?",
+      "secenekler": [
+        "Paramesyumlar hangi sıcaklıkta en hızlı bölünür?",
+        "İki türün hücre zarı yapısı aynı mıdır?",
+        "Ekolojik nişleri örtüşen türler arasında rekabet nasıl sonuçlanır?",
+        "Paramesyumlar ışıkta mı karanlıkta mı daha çok çoğalır?"
+      ],
+      "dogru_index": 2,
+      "cozum": "Gause, nişleri örtüşen türler arasındaki rekabeti incelemiştir. Aynı kaynaklar için yarışan türlerden biri ortamdan çekilir ya da yok olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ekolojik niş nedir?",
+        "back": "Bir türün yaşamını sürdürmek için yaptığı faaliyetlerin, ilişkilerinin ve ekosistemdeki işlevinin bütünüdür."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o05",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili bilgi toplar.",
+      "metin": "Komünitelerde türler arasındaki etkileşimleri incelemek isteyen öğrenci, hangi veriyi toplamalıdır?",
+      "secenekler": [
+        "Bölgedeki insanların yaş ortalamasını",
+        "Çevredeki binaların kat sayısını",
+        "Bölgede satılan ürünlerin fiyatını",
+        "Türlerin besin, alan ve barınma kaynaklarını paylaşma biçimini"
+      ],
+      "dogru_index": 3,
+      "cozum": "Türler arası etkileşimler besin, alan, sıcaklık ve barınma kaynaklarının paylaşımıyla ilgilidir. Bu bilgiler rekabet, av-avcı ve simbiyotik ilişkilerin anlaşılmasını sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Türler arası etkileşimlerin ortaya çıkma nedeni nedir?",
+        "back": "Türlerin aynı habitat ve benzer ekolojik nişleri paylaşmasıdır."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o06",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili bilgi toplar.",
+      "metin": "Tabloda simbiyotik ilişki türleri ve tanımları verilmiştir. Buna göre hangi satırda tanım yanlıştır?",
+      "secenekler": [
+        "I. satır",
+        "IV. satır",
+        "II. satır",
+        "III. satır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kommensalizmde biri yarar görürken diğeri etkilenmez. İki türün de zarar gördüğü bir simbiyotik ilişki tanımlanmamıştır; IV. satır hatalıdır.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "İlişki",
+          "Tanım"
+        ],
+        "satirlar": [
+          [
+            "Mutualizm",
+            "İki tür de yarar görür"
+          ],
+          [
+            "Parazitizm",
+            "Biri yarar, diğeri zarar görür"
+          ],
+          [
+            "Amensalizm",
+            "Biri engellenir, diğeri etkilenmez"
+          ],
+          [
+            "Kommensalizm",
+            "İki tür de zarar görür"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Kommensalizm nedir?",
+        "back": "İki türden birinin yarar gördüğü, diğerinin etkilenmediği ortak yaşam biçimidir."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o07",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili topladığı bilgilerin doğruluğunu değerlendirir.",
+      "metin": "Bir kaynak, kar baykuşu ile lemming arasındaki ilişkiyi mutualizm olarak tanımlamıştır. Bu bilginin doğruluğunu değerlendirmek için hangi kanıt kullanılmalıdır?",
+      "secenekler": [
+        "Kar baykuşunun lemming ile beslenmesi",
+        "Lemminglerin kutup bölgesinde yaşaması",
+        "Kar baykuşunun görme keskinliği",
+        "Lemminglerin üreme mevsimi"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kar baykuşu lemming ile beslenir; bu av-avcı ilişkisidir ve lemming zarar görür. Mutualizmde iki türün de yarar görmesi gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mutualizm nedir?",
+        "back": "İki türün de karşılıklı yarar sağladığı ortak yaşam biçimidir."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o08",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili topladığı bilgilerin doğruluğunu değerlendirir.",
+      "metin": "Bir bölgede tür çeşitliliğinin yüksek olduğu öne sürülmektedir. Bu bilginin doğruluğu için hangi ölçüm uygun olur?",
+      "secenekler": [
+        "Bölgedeki ağaçların ortalama yüksekliğinin ölçülmesi",
+        "Bölgenin yüzey alanının hesaplanması",
+        "Bölgede kaydedilen tür sayısının ve birey sayılarının karşılaştırılması",
+        "Bölgede yaşayan insan sayısının sayılması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tür çeşitliliği bölgedeki tür sayısı ve türlerin birey sayılarının dengeli dağılımıyla değerlendirilir. Yalnızca alan ya da yükseklik ölçümü çeşitliliği göstermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tür çeşitliliği nedir?",
+        "back": "Bir alanda bulunan farklı türlerin sayısı ve bu türlerin birey sayılarının dağılımıdır."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o09",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili topladığı bilgiler üzerinden çıkarım yapar.",
+      "metin": "Grafikte vaşak ve kar tavşanı sayılarının yıllara göre değişimi verilmiştir. Buna göre grafikten hangi çıkarım yapılabilir?",
+      "secenekler": [
+        "İki türün sayısı birbirinden bağımsız değişir.",
+        "Avcı sayısındaki artış bir süre sonra av sayısını azaltır.",
+        "Vaşak sayısı arttıkça tavşan sayısı da sürekli artar.",
+        "Tavşan sayısı vaşak sayısını hiç etkilemez."
+      ],
+      "dogru_index": 1,
+      "cozum": "Tavşan sayısı arttığında vaşak besin bulduğu için çoğalır; vaşak arttığında av baskısı artar ve tavşan sayısı düşer. Sayılar birbirini izleyen dalgalanma gösterir.",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "grafik",
+        "xEkseni": "Yıl",
+        "yEkseni": "Birey sayısı (bin)",
+        "izgara": true,
+        "seriler": [
+          {
+            "ad": "Kar tavşanı",
+            "noktalar": [
+              [
+                1850,
+                60
+              ],
+              [
+                1860,
+                100
+              ],
+              [
+                1870,
+                40
+              ],
+              [
+                1880,
+                90
+              ],
+              [
+                1890,
+                30
+              ],
+              [
+                1900,
+                80
+              ]
+            ]
+          },
+          {
+            "ad": "Vaşak",
+            "noktalar": [
+              [
+                1850,
+                20
+              ],
+              [
+                1860,
+                45
+              ],
+              [
+                1870,
+                15
+              ],
+              [
+                1880,
+                40
+              ],
+              [
+                1890,
+                12
+              ],
+              [
+                1900,
+                35
+              ]
+            ]
+          }
+        ]
+      },
+      "flashcard": {
+        "front": "Av-avcı ilişkisinde sayıların dalgalanmasının nedeni nedir?",
+        "back": "Av sayısı avcıyı besler, avcı sayısı arttığında av azalır; bu karşılıklı etki dalgalanma oluşturur."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    },
+    {
+      "soru_id": "biyo_10_t02_c02_o10",
+      "alt_beceri": "Popülasyon, komünite ve ekosistemlerde görülen etkileşimler ve değişimlerle ilgili topladığı bilgiler üzerinden çıkarım yapar.",
+      "metin": "Bir orman yangınından sonra bölgede önce otsu bitkiler ve likenler, yıllar içinde çalılar, en sonunda olgun çam ve meşeler görülmüştür. Bu sıralı değişim hangi kavramla açıklanır?",
+      "secenekler": [
+        "Popülasyon yoğunluğu",
+        "Taşıma kapasitesi",
+        "Biyolojik birikim",
+        "Süksesyon"
+      ],
+      "dogru_index": 3,
+      "cozum": "Süksesyon, bir bölgedeki türlerin zaman içinde sıralı olarak birbirinin yerini almasıdır. Yangın sonrası öncü türlerden olgun ormana doğru gelişim buna örnektir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Süksesyon nedir?",
+        "back": "Bir bölgede türlerin zaman içinde sıralı olarak birbirinin yerini almasıdır."
+      },
+      "kazanim": "Komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilme"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_t02_c02_o01:flashcard",
+      "front": "Popülasyon nedir?",
+      "back": "Belli bir alanda yaşayan aynı türe ait bireylerin oluşturduğu topluluktur."
+    },
+    {
+      "id": "biyo_10_t02_c02_o02:flashcard",
+      "front": "Komünite nedir?",
+      "back": "Belirli bir alanda etkileşim hâlinde bulunan tüm türlerin oluşturduğu topluluktur."
+    },
+    {
+      "id": "biyo_10_t02_c02_o03:flashcard",
+      "front": "Av-avcı ilişkisi nedir?",
+      "back": "Bir türün diğeriyle beslenerek onun birey sayısını etkilediği etkileşimdir."
+    },
+    {
+      "id": "biyo_10_t02_c02_o04:flashcard",
+      "front": "Ekolojik niş nedir?",
+      "back": "Bir türün yaşamını sürdürmek için yaptığı faaliyetlerin, ilişkilerinin ve ekosistemdeki işlevinin bütünüdür."
+    },
+    {
+      "id": "biyo_10_t02_c02_o05:flashcard",
+      "front": "Türler arası etkileşimlerin ortaya çıkma nedeni nedir?",
+      "back": "Türlerin aynı habitat ve benzer ekolojik nişleri paylaşmasıdır."
+    },
+    {
+      "id": "biyo_10_t02_c02_o06:flashcard",
+      "front": "Kommensalizm nedir?",
+      "back": "İki türden birinin yarar gördüğü, diğerinin etkilenmediği ortak yaşam biçimidir."
+    },
+    {
+      "id": "biyo_10_t02_c02_o07:flashcard",
+      "front": "Mutualizm nedir?",
+      "back": "İki türün de karşılıklı yarar sağladığı ortak yaşam biçimidir."
+    },
+    {
+      "id": "biyo_10_t02_c02_o08:flashcard",
+      "front": "Tür çeşitliliği nedir?",
+      "back": "Bir alanda bulunan farklı türlerin sayısı ve bu türlerin birey sayılarının dağılımıdır."
+    },
+    {
+      "id": "biyo_10_t02_c02_o09:flashcard",
+      "front": "Av-avcı ilişkisinde sayıların dalgalanmasının nedeni nedir?",
+      "back": "Av sayısı avcıyı besler, avcı sayısı arttığında av azalır; bu karşılıklı etki dalgalanma oluşturur."
+    },
+    {
+      "id": "biyo_10_t02_c02_o10:flashcard",
+      "front": "Süksesyon nedir?",
+      "back": "Bir bölgede türlerin zaman içinde sıralı olarak birbirinin yerini almasıdır."
+    }
+  ],
+  "topic_key": "Biyoloji > 2.2 Komünitelerde ve Popülasyonlarda Görülen Etkileşimler ve Değişimler"
+}

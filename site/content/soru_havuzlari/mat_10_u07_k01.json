@@ -1,0 +1,279 @@
+{
+  "konu_id": "mat_10_u07_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 7,
+  "tema_adi": "Veriden Olasılığa",
+  "baslik": "7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+  "topic_key": "Matematik > 7.1 Koşullu Olasılık, Bağımlı ve Bağımsız Olaylar",
+  "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler.",
+  "kaynak": "Matematik 10 ders kitabı, s.393-403",
+  "kaynak_dosya": "matematik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u07_k01_o01",
+      "alt_beceri": "Koşullu olasılık kavramını açıklar ve hesaplar.",
+      "metin": "Koşullu olasılık P(A|B) neyi ifade eder?",
+      "secenekler": [
+        "A ve B'nin birlikte olasılığını",
+        "B olayı gerçekleştiğinde A olayının olasılığını",
+        "A'nın tümleyeninin olasılığını",
+        "B'nin A'dan bağımsız olasılığını"
+      ],
+      "dogru_index": 1,
+      "cozum": "P(A|B), B olayı gerçekleştiği bilindiğinde A olayının olasılığıdır (s.394-396).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "P(A|B) ne demektir?",
+        "back": "B verildiğinde A'nın olasılığı."
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o02",
+      "alt_beceri": "Koşullu olasılık kavramını açıklar ve hesaplar.",
+      "metin": "P(A|B) hangi bağıntıyla hesaplanır? (P(B) > 0)",
+      "secenekler": [
+        "P(A)·P(B)",
+        "P(A ∪ B)/P(A)",
+        "P(B)/P(A)",
+        "P(A ∩ B)/P(B)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Koşullu olasılık, kesişimin B'nin olasılığına oranıdır (s.396).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu olasılık formülü nedir?",
+        "back": "P(A∩B)/P(B)"
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o03",
+      "alt_beceri": "Koşullu olasılık kavramını açıklar ve hesaplar.",
+      "metin": "Bir torbadan top çekilip geri konmadan ikinci top çekildiğinde olaylar için hangisi doğrudur?",
+      "secenekler": [
+        "Bağımlıdır, ikinci çekiliş etkilenir",
+        "Bağımsızdır, hiç etkilenmez",
+        "Her zaman 1/2 olur",
+        "Olasılık tanımsız olur"
+      ],
+      "dogru_index": 0,
+      "cozum": "Geri konmadan çekilişte örnek uzay değişir; olaylar bağımlıdır (s.394-397).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Geri konmadan çekilişte olayların bağımlılığı nedir?",
+        "back": "Evet, bağımlı olur."
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o04",
+      "alt_beceri": "Bağımlı ve bağımsız olayları ayırt eder.",
+      "metin": "İçinde 5 beyaz, 3 siyah top olan torbadan geri konmadan iki top çekiliyor. İlk topun beyaz olduğu bilindiğinde ikincisinin de beyaz olma olasılığı kaçtır?",
+      "secenekler": [
+        "5/8",
+        "4/8",
+        "4/7",
+        "3/7"
+      ],
+      "dogru_index": 2,
+      "cozum": "İlk beyaz çekildikten sonra 4 beyaz, 7 top kalır → 4/7 (s.394-397).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Geri konmayan çekilişte olasılık nasıl hesaplanır?",
+        "back": "4/7"
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o05",
+      "alt_beceri": "Bağımlı ve bağımsız olayları ayırt eder.",
+      "metin": "İki kez para atılıyor. En az birinin yazı olduğu bilindiğinde ikisinin de yazı olma olasılığı kaçtır?",
+      "secenekler": [
+        "1/4",
+        "1/2",
+        "2/3",
+        "1/3"
+      ],
+      "dogru_index": 3,
+      "cozum": "En az bir yazı: {YY, YT, TY}; bunlardan YY → 1/3 (s.396-397).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu olasılıkta örnek uzayın daralması ne demektir?",
+        "back": "1/3"
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o06",
+      "alt_beceri": "Bağımlı ve bağımsız olayları ayırt eder.",
+      "metin": "Bir zar atılıyor. Gelen sayının tek olduğu bilindiğinde sayının 3'ten büyük olma olasılığı kaçtır?",
+      "secenekler": [
+        "2/3",
+        "1/3",
+        "1/2",
+        "1/6"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tek sayılar {1, 3, 5}; 3'ten büyük olan {5} → 1/3 (s.396-399).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşul verildiğinde örnek uzayın yeni hâli nedir?",
+        "back": "Verilen koşula uyan durumlarla sınırlanır; tek sayılar {1, 3, 5} olur."
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o07",
+      "alt_beceri": "Bağımlı ve bağımsız olayları ayırt eder.",
+      "metin": "Şekildeki çizelgede görülen fırıncı günde 200 buğday, 300 çavdar ekmeği üretiyor. Buğdayın 1/4'ünü, çavdarın 2/5'ini B marketine gönderiyor. Seçilen bir ekmeğin B marketine gideceği bilindiğine göre buğday ekmeği olma olasılığı kaçtır?",
+      "secenekler": [
+        "5/17",
+        "1/4",
+        "2/5",
+        "50/300"
+      ],
+      "dogru_index": 0,
+      "cozum": "B'ye giden buğday 200·1/4 = 50, çavdar 300·2/5 = 120, toplam 170 → 50/170 = 5/17 (kitabın 3. örneği, s.396).",
+      "zorluk": "deneme",
+      "gorsel": {
+        "tip": "tablo",
+        "basliklar": [
+          "Market",
+          "Buğday",
+          "Çavdar",
+          "Toplam"
+        ],
+        "satirlar": [
+          [
+            "B",
+            "50",
+            "120",
+            "170"
+          ],
+          [
+            "A",
+            "150",
+            "180",
+            "330"
+          ]
+        ]
+      },
+      "flashcard": {
+        "front": "Ağırlıklı oranla koşullu olasılık nasıl bulunur?",
+        "back": "5/17"
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o08",
+      "alt_beceri": "Bağımlı ve bağımsız olayları ayırt eder.",
+      "metin": "P(A ∩ B) = 0,12 ve P(B) = 0,4 ise P(A|B) kaçtır?",
+      "secenekler": [
+        "0,48",
+        "0,12",
+        "0,3",
+        "0,4"
+      ],
+      "dogru_index": 2,
+      "cozum": "P(A|B) = 0,12/0,4 = 0,3 (s.396).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kesişim ve B olasılığından koşullu sonuç nedir?",
+        "back": "0,3"
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o09",
+      "alt_beceri": "Koşullu olasılık kavramını açıklar ve hesaplar.",
+      "metin": "Bağımsız iki olay için P(A ∩ B) hangisine eşittir?",
+      "secenekler": [
+        "P(A) + P(B)",
+        "P(A)·P(B)",
+        "P(A|B)",
+        "P(A) − P(B)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bağımsız olaylarda kesişimin olasılığı olasılıkların çarpımıdır; ayrıca P(A|B) = P(A) olur (s.404-406).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağımsız olaylarda kesişim kuralı nedir?",
+        "back": "P(A)·P(B)"
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    },
+    {
+      "soru_id": "mat_10_u07_k01_o10",
+      "alt_beceri": "Bağımlı ve bağımsız olayları ayırt eder.",
+      "metin": "P(A) = 0,5 ve P(B) = 0,4 olan bağımsız olaylar için P(A ∩ B) kaçtır?",
+      "secenekler": [
+        "0,9",
+        "0,1",
+        "0,45",
+        "0,2"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bağımsız olaylarda kesişimin olasılığı, olasılıkların çarpımına eşittir: P(A ∩ B) = 0,5 · 0,4 = 0,2.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bağımsız olaylarda çarpım kuralının sonucu nedir?",
+        "back": "0,2"
+      },
+      "kazanim": "Koşullu olasılığı hesaplar; olayların bağımlı ya da bağımsız olduğunu belirler."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u07_k01_o01:flashcard",
+      "front": "P(A|B) ne demektir?",
+      "back": "B verildiğinde A'nın olasılığı."
+    },
+    {
+      "id": "mat_10_u07_k01_o02:flashcard",
+      "front": "Koşullu olasılık formülü nedir?",
+      "back": "P(A∩B)/P(B)"
+    },
+    {
+      "id": "mat_10_u07_k01_o03:flashcard",
+      "front": "Geri konmadan çekilişte olayların bağımlılığı nedir?",
+      "back": "Evet, bağımlı olur."
+    },
+    {
+      "id": "mat_10_u07_k01_o04:flashcard",
+      "front": "Geri konmayan çekilişte olasılık nasıl hesaplanır?",
+      "back": "4/7"
+    },
+    {
+      "id": "mat_10_u07_k01_o05:flashcard",
+      "front": "Koşullu olasılıkta örnek uzayın daralması ne demektir?",
+      "back": "1/3"
+    },
+    {
+      "id": "mat_10_u07_k01_o06:flashcard",
+      "front": "Koşul verildiğinde örnek uzayın yeni hâli nedir?",
+      "back": "Verilen koşula uyan durumlarla sınırlanır; tek sayılar {1, 3, 5} olur."
+    },
+    {
+      "id": "mat_10_u07_k01_o07:flashcard",
+      "front": "Ağırlıklı oranla koşullu olasılık nasıl bulunur?",
+      "back": "5/17"
+    },
+    {
+      "id": "mat_10_u07_k01_o08:flashcard",
+      "front": "Kesişim ve B olasılığından koşullu sonuç nedir?",
+      "back": "0,3"
+    },
+    {
+      "id": "mat_10_u07_k01_o09:flashcard",
+      "front": "Bağımsız olaylarda kesişim kuralı nedir?",
+      "back": "P(A)·P(B)"
+    },
+    {
+      "id": "mat_10_u07_k01_o10:flashcard",
+      "front": "Bağımsız olaylarda çarpım kuralının sonucu nedir?",
+      "back": "0,2"
+    }
+  ]
+}
