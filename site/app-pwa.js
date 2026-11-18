@@ -1971,21 +1971,16 @@ function initOkulizyonUI() {
     }
     else if (a === "okzListeYenile") { toast("Listeler yenileniyor…", "info"); okzListeTazele("il", true).then(() => { if (OKZ_SECIM.il.kod) return okzListeTazele("ilce", true); }).then(() => { if (OKZ_SECIM.ilce.kod) return okzListeTazele("okul", true); }); }
     else if (a === "okzAnalizKaydet") okzAnalizKaydet();
-    else if (a === "okzHepsi") okzHepsiUygula(el.dataset.reason);
     else if (a === "okzYeniden") okzYenidenAktar(el.dataset.i);
     else if (a === "okzSonucGuncelle") okzSonucuYaz(el.dataset.ad, el.dataset.tarih);
-    else if (a === "okzKonuEsle") okzKonuEsleKaydet();
-    else if (a === "okzHizliNedenSec") {
-      document.querySelectorAll(".okz-hizli-chip").forEach(c => {
-        const sec = c.dataset.reason === el.dataset.reason;
-        c.dataset.secili = sec ? "1" : "0";
-        c.style.border = "1px solid " + (sec ? "#2563EB" : "rgba(0,0,0,0.18)");
-        c.style.background = sec ? "rgba(37,99,235,0.12)" : "none";
-        c.style.fontWeight = sec ? "700" : "400";
-      });
-      window.__okzHizliNeden = el.dataset.reason;
+    /* v78 (G-08) — "Analiz bekliyor" artık bir SAYFA DEĞİL: denemeler
+       Denemelerim'de duruyor, liste orada açılıyor. */
+    else if (a === "okzGitDenemeler") {
+      try { if (typeof closeAllModals === "function") closeAllModals(); } catch (e) { /* */ }
+      const pm = document.getElementById("pwa-okz-modal"); if (pm) pm.style.display = "none";
+      try { navigate("exams"); } catch (e) { /* */ }
     }
-    else if (a === "okzHizliIsle") okzAnalizKaydet(window.__okzHizliNeden || "KONU EKSİKLİĞİ");
+    else if (a === "okzKonuEsle") okzKonuEsleKaydet();
     else if (a === "okzYoksay") okzYoksay([{ anahtar: el.dataset.key, hash: el.dataset.hash }]);
     else if (a === "okzHepsiniYoksay") okzHepsiniYoksay();
     else if (a === "okzDefteriTemizle") { okzDefterTemizle(); renderProfileModal(); toast("Yoksayılan kayıtlar geri alındı — sonraki çekimde yeniden gelir.", "info"); }
@@ -1993,8 +1988,86 @@ function initOkulizyonUI() {
   okzBadge();
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
+/* ============================================================
+   v78 (G-08) — OKULİZYON DENEMELERİ DOĞRUDAN "DENEMELERİM"E
+   ------------------------------------------------------------
+   KULLANICI: "okulizyondan gelen denemeler profildeki analiz bekliyor
+   kısmında olmasın, direk denemelerim bölümünde olsun. Analiz bekliyor'a
+   tıkladığında orada liste görünsün."
+
+   ESKİ AKIŞ (kök neden): çekim sonuçları `state.okulizyon.pending`
+   kuyruğunda duruyordu; Denemelerim'e ancak modalda neden seçilip
+   "kaydet"e basılınca giriyordu. "Hızlı kaydet" yolu ise errorLogs: []
+   yazdığı için deneme Denemelerim'de görünse bile konu analizi hiç
+   doğmuyordu ("Okulizyon hatasız ama analiz yok").
+   YENİ AKIŞ: deneme ÇEKİLDİĞİ AN Denemelerim'e düşer; her yanlış/boş soru
+   konu + soru no + video ile errorLogs'a yazılır, `type` BOŞ bırakılır.
+   Neden seçimi Denemelerim'de (denemenin altında) yapılır. Boş nedenli
+   satır motorda GÖZLEM SAYILMAZ (eşik gevşemez); neden yazılınca işlenir.
+   ============================================================ */
+// Denemelerim'de "Analiz bekliyor" = neden seçilmemiş hata satırı sayısı.
+function okzBekleyenSatirlar() {
+  return (state.exams || []).reduce(function (a, ex) {
+    return a + ((ex && ex.errorLogs) ? ex.errorLogs.filter(function (l) { return l && !l.type; }).length : 0);
+  }, 0);
+}
+
+// Okulizyon satırlarını DENEME HATA KAYDINA çevirir (neden boş).
+// `okzKayitKonu` kazanım cümlesini uygulamanın konusuna eşler; eşlenemezse
+// kazanım metni konu olarak yazılır (uydurma yok).
+function okzSatirLoglari(ex) {
+  return (ex && Array.isArray(ex.rows) ? ex.rows : []).map(function (row, j) {
+    var k = okzKayitKonu(row.lesson, row.topic);
+    var log = {
+      qno: row.qno || (j + 1), lesson: k.lesson, topic: k.topic, kazanim: k.kazanim,
+      type: "", date: (ex && ex.date) || todayStr()
+    };
+    if (row.video) log.video = row.video;
+    if (row.videoVar || row.video) log.videoVar = true;
+    if (row.status === "e") log.status = "e";
+    return log;
+  });
+}
+
+// Denemeyi Denemelerim'e yazar (varsa günceller). Kullanıcının daha önce
+// girdiği NEDENLER korunur: mevcut kayıtta işlenmiş satır varsa dokunulmaz.
+function okzDenemeyeYaz(ex, lessons) {
+  var ad = "Okulizyon: " + ((ex && ex.name) || "Sınav");
+  var tarih = (ex && ex.date) || todayStr();
+  var oz = okzOzet(lessons || {});
+  var idx = (state.exams || []).findIndex(function (e) { return e && e.name === ad && String(e.date || "") === String(tarih); });
+  if (idx >= 0) {
+    var mev = state.exams[idx];
+    mev.lessons = lessons || mev.lessons;
+    mev.total = oz.soru;
+    mev.net = oz.net;
+    if (ex && ex.url) mev.okulizyonUrl = ex.url;
+    var islenmis = (mev.errorLogs || []).some(function (l) { return l && l.type; });
+    if (!islenmis && (!mev.errorLogs || !mev.errorLogs.length)) mev.errorLogs = okzSatirLoglari(ex);
+    return idx;
+  }
+  var kayit = {
+    id: (typeof uid === "function" ? uid() : "okz" + Date.now() + Math.random().toString(36).slice(2, 7)),
+    name: ad, date: tarih, lessons: lessons || {}, errorLogs: okzSatirLoglari(ex),
+    total: oz.soru, net: oz.net, okulizyonUrl: (ex && ex.url) || "", okzKaynak: true
+  };
+  state.exams.push(kayit);
+  return state.exams.length - 1;
+}
+
+// Denemeyi "işlendi" defterine yaz: bir daha kuyruğa gelmez.
+function okzIsaretle(ex) {
+  var st = okzStore();
+  var anahtar = okzKey(ex);
+  if (!st.importedKeys.includes(anahtar)) st.importedKeys.push(anahtar);
+  st.aktarilan = st.aktarilan || {};
+  st.aktarilan[anahtar] = okzHash(ex);
+  okzDefterIkili(ex, window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex));
+}
+
 function okzBadge() {
-  const n = okzStore().pending.reduce((a, ex) => a + (ex.rows || []).length, 0);
+  /* v78 (G-08) — sayaç artık DENEMELERİM'deki neden bekleyen satırlar. */
+  const n = okzBekleyenSatirlar();
   document.querySelectorAll(".pwa-okz-badge").forEach(b => {
     b.style.display = n > 0 ? "inline-block" : "none";
     b.textContent = n > 0 ? String(n) : "";
@@ -2038,18 +2111,18 @@ function okzDersTablosu(lessons) {
   return html;
 }
 // "Son çekilen sonuç" bölümünden tek dokunuşla kaydı güncelle
-function okzSonucuYaz(ad, tarih) {
+// v78 (G-08) — KÖK NEDEN: bu yol `errorLogs: []` yazıyordu. Deneme
+// Denemelerim'e düşüyordu ama konu analizi HİÇ doğmuyordu (Acil
+// Çalışılacaklar boş). Artık satırlar gerçek konu + soru no ile yazılır,
+// neden boş bırakılır (Denemelerim'de seçilir).
+async function okzSonucuYaz(ad, tarih) {
   const st = okzStore();
   const sn = (st.sonSonuc || []).find(x => ("Okulizyon: " + (x.name || "Sınav")) === ad && String(x.date || "") === String(tarih || ""));
   if (!sn) return toast("Sonuç bulunamadı — yeniden çek.", "error");
+  try { await okzkYukle(); } catch (e) { /* eşleme indeksi yoksa kazanım metni yazılır */ }
   const lessons = window.OKZ ? window.OKZ.birlestir(sn.lessons, okzBilinenDersler()) : sn.lessons;
   const oz = okzOzet(lessons);
-  const idx = state.exams.findIndex(e => e && e.name === ad && String(e.date || "") === String(tarih || ""));
-  if (idx >= 0) {
-    state.exams[idx] = Object.assign({}, state.exams[idx], { lessons: lessons, total: oz.soru, net: oz.net });
-  } else {
-    state.exams.push({ id: (typeof uid === "function" ? uid() : "okz" + Date.now()), name: ad, date: tarih || todayStr(), lessons: lessons, errorLogs: [], total: oz.soru, net: oz.net });
-  }
+  okzDenemeyeYaz({ name: sn.name || "Sınav", date: sn.date || tarih, lessons: lessons, rows: sn.rows || [], url: sn.url || "" }, lessons);
   st.guncellenen = (st.guncellenen || []).filter(x => okzKey(x.exam) !== (sn.name + "|" + (sn.date || "")));
   saveState();
   renderOkzModal();
@@ -2059,20 +2132,16 @@ function okzSonucuYaz(ad, tarih) {
 }
 
 // Okulizyon'da sonucu değişen sınavı uygulamadaki kayda yansıt
-function okzYenidenAktar(i) {
+async function okzYenidenAktar(i) {
   const st = okzStore();
   const g = (st.guncellenen || [])[Number(i)];
   if (!g) return;
   const ex = g.exam;
+  try { await okzkYukle(); } catch (e) { /* */ }
   const lessons = window.OKZ ? window.OKZ.birlestir(ex.lessons, okzBilinenDersler()) : (ex.lessons || {});
   const oz = okzOzet(lessons);
   const ad = "Okulizyon: " + (ex.name || "Sınav");
-  const idx = state.exams.findIndex(e => e.name === ad && String(e.date || "") === String(ex.date || ""));
-  if (idx >= 0) {
-    state.exams[idx] = Object.assign({}, state.exams[idx], { lessons: lessons, total: oz.soru, net: oz.net });
-  } else {
-    state.exams.push({ id: (typeof uid === "function" ? uid() : "okz" + Date.now()), name: ad, date: ex.date || todayStr(), lessons: lessons, errorLogs: [], total: oz.soru, net: oz.net });
-  }
+  okzDenemeyeYaz({ name: ex.name || "Sınav", date: ex.date, lessons: lessons, rows: ex.rows || [], url: ex.url || "" }, lessons);
   st.aktarilan = st.aktarilan || {};
   st.aktarilan[g.key] = g.hash;
   st.guncellenen = (st.guncellenen || []).filter(x => x.key !== g.key);
@@ -2143,7 +2212,7 @@ function renderOkzModal() {
         html += '<button data-act="okzSonucGuncelle" data-ad="' + escHtml(ad) + '" data-tarih="' + escHtml(sn.date) + '" class="btn btn-primary btn-sm" style="margin-top:6px;">Kaydı bu sonuçla güncelle</button>';
       }
       if (!varOlan && (sn.satir || 0) > 0) {
-        html += '<div style="font-size:11px;opacity:0.7;margin-top:4px;">Aşağıdaki “Analiz Bekliyor” bölümünden nedenlerini seçip işleyebilirsin.</div>';
+        html += '<div style="font-size:11px;opacity:0.7;margin-top:4px;">Nedenlerini Denemelerim\'de seçebilirsin.</div>';
       }
       html += "</div>";
     });
@@ -2161,61 +2230,20 @@ function renderOkzModal() {
       html += "</div>";
     });
   }
-  // B) ANALİZ BEKLİYOR
-  const bekleyen = st.pending.filter(ex => (ex.rows || []).length);
-  if (bekleyen.length) {
-    html += '<div style="font-weight:800;font-size:14.5px;margin-bottom:6px;">⏳ Analiz Bekliyor (' + bekleyen.reduce((a, ex) => a + ex.rows.length, 0) + ' soru)</div>';
-    // TEK DOKUNUŞ: soru başına neden seçmek zorunda değilsin. Sınavın tamamı
-    // için bir neden seç, gerisini uygulama yapsın (konu eşlemesi otomatik).
-    html += '<div style="border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.06);border-radius:12px;padding:10px;margin-bottom:10px;">';
-    html += '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">⚡ Tüm yanlış/boşlar için tek neden seç</div>';
-    html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;" id="okz-hizli-nedenler">' +
-      ["KONUEKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik"].map((r, k) =>
-        '<button data-act="okzHizliNedenSec" data-reason="' + escHtml(r) + '" class="okz-hizli-chip" data-secili="' + (k === 0 ? "1" : "0") + '" style="font-size:11.5px;padding:7px 10px;min-height:40px;border-radius:99px;border:1px solid ' + (k === 0 ? "#2563EB" : "rgba(0,0,0,0.18)") + ';background:' + (k === 0 ? "rgba(37,99,235,0.12)" : "none") + ';color:inherit;cursor:pointer;font-weight:' + (k === 0 ? "700" : "400") + ';">' + r + '</button>').join("") +
+  /* v78 (G-08) — PROFİLDE KUYRUK YOK.
+     KULLANICI: "okulizyondan gelen denemeler profildeki analiz bekliyor
+     kısmında olmasın, direk denemelerim bölümünde olsun. Analiz bekliyor'a
+     tıkladığında orada liste görünsün." Denemeler çekildiği an Denemelerim'e
+     yazıldığı için burada liste tutulmaz; yalnız sayaç + götürücü düğme var. */
+  const bekleyenSayi = okzBekleyenSatirlar();
+  if (bekleyenSayi > 0) {
+    html += '<div style="font-weight:800;font-size:14.5px;margin:14px 0 6px;">⏳ Analiz Bekliyor (' + bekleyenSayi + ' soru)</div>';
+    html += '<div style="border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.06);border-radius:12px;padding:12px;margin-bottom:10px;font-size:12.5px;line-height:1.55;">' +
+      'Bu sorular <b>Denemelerim</b> sayfasında, ait oldukları denemenin altında duruyor. Nedenleri orada tek tek (ya da tek tuşla tümüne) seçersin; seçtiğin an Acil Çalışılacaklar ve öncelik listesi oluşur.' +
+      '<button data-act="okzGitDenemeler" class="btn btn-primary w-full" style="margin-top:10px;font-weight:700;">Denemelerim\'de aç</button>' +
       '</div>';
-    html += '<button data-act="okzHizliIsle" class="btn btn-primary w-full" style="font-weight:700;">Bu nedenle tümünü işle</button>';
-    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:6px;line-height:1.4;">Konular otomatik eşlenir; emin olunamayanlar için hazır öneri sunulur.</div>';
-    html += '</div>';
-    html += '<div style="font-size:11.5px;opacity:0.75;margin-bottom:8px;">İstersen soru soru da düzenleyebilirsin.</div>';
-    bekleyen.forEach((ex, i) => {
-      html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:12px;padding:10px;margin-bottom:10px;">';
-      html += '<div style="font-weight:700;font-size:13.5px;margin-bottom:6px;">' + escHtml(ex.name) + (ex.date ? ' <span style="opacity:0.6;font-weight:400;">· ' + escHtml(ex.date) + "</span>" : "") + "</div>";
-      html += okzDersTablosu(ex.lessons);
-      // Okulizyon videoyu doğrudan adresle vermiyor; çözüm düğmeleri sınav
-      // sayfasında. Bağlantı yoksa düğme ÇİZİLMEZ (boş vaat yok).
-      const okzSinavUrl = (function () {
-        try { const u = window.VC && window.VC.normalize ? window.VC.normalize(ex.url || ex.okulizyonUrl || "") : String(ex.url || ""); return u; } catch (e) { return ""; }
-      })();
-      if (okzSinavUrl) {
-        html += '<a href="' + escHtml(okzSinavUrl) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="margin:2px 0 6px;display:inline-flex;gap:5px;align-items:center;min-height:38px;">▶ Okulizyon\'da sınavı ve çözümleri aç</a>';
-      }
-      html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' + OKZ_NEDENLER.slice(0, 3).map(r => '<button data-act="okzHepsi" data-reason="' + escHtml(r) + '" style="font-size:10.5px;padding:4px 8px;border-radius:99px;border:1px solid rgba(0,0,0,0.15);background:none;cursor:pointer;color:inherit;">tümü: ' + r + "</button>").join("")
-        + '<button data-act="okzYoksay" data-key="' + escHtml(okzKey(ex)) + '" data-hash="' + escHtml(window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex)) + '" style="font-size:10.5px;padding:4px 8px;border-radius:99px;border:1px solid rgba(0,0,0,0.15);background:none;cursor:pointer;color:#B45309;">bu sınavı yoksay</button>'
-        + "</div>";
-      // Soru soru neden seçimi İSTEĞE BAĞLI ve varsayılan kapalı:
-      // 21 soruluk sınavda 21 açılır kutu göstermek öğrenciyi boğuyordu.
-      html += '<details style="margin-top:6px;"><summary style="cursor:pointer;font-size:11.5px;opacity:0.75;padding:4px 0;">Soruları tek tek düzenle (isteğe bağlı · ' + ex.rows.length + ' soru)</summary>';
-      ex.rows.forEach((row, j) => {
-        html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid rgba(0,0,0,0.07);">';
-        html += '<span style="min-width:26px;font-size:11px;opacity:0.6;">#' + (row.qno || j + 1) + "</span>";
-        const satirVideo = (function () {
-          try { if (window.VC && window.VC.normalize) return window.VC.normalize(row.video || ""); } catch (e) { /* */ }
-          return "";
-        })();
-        const satirLink = satirVideo || ((row.videoVar || satirVideo) && okzSinavUrl ? okzSinavUrl : "");
-        html += '<div style="flex:1;min-width:0;"><div style="font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(row.topic) + '</div><div style="font-size:10.5px;opacity:0.6;">' + escHtml(row.lesson) + " · " + (row.status === "e" ? "BOŞ" : "YANLIŞ") + (satirLink ? " · çözüm var" : "") + "</div></div>";
-        if (satirLink) html += '<a href="' + escHtml(satirLink) + '" target="_blank" rel="noopener" title="Çözümü aç" style="min-width:40px;min-height:40px;display:flex;align-items:center;justify-content:center;border-radius:9px;border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.08);color:#1D4ED8;text-decoration:none;font-size:13px;">▶</a>';
-        html += '<select class="okz-reason" data-i="' + i + '" data-j="' + j + '" style="max-width:42%;padding:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.2);background:var(--bg,#F6F8FC);color:inherit;font-size:11.5px;"><option value="">Atla</option>' + OKZ_NEDENLER.map(r => '<option value="' + escHtml(r) + '">' + r + "</option>").join("") + "</select>";
-        html += "</div>";
-      });
-      html += "</details>";
-      html += "</div>";
-    });
-    html += '<button data-act="okzAnalizKaydet" class="btn btn-primary w-full" style="font-weight:700;">Seçilenleri Deneme Olarak Kaydet</button>';
-    html += '<button data-act="okzHepsiniYoksay" class="btn btn-ghost w-full btn-sm" style="margin-top:8px;border:1px solid rgba(0,0,0,0.15);opacity:0.85;">Analiz etmeyeceğim — hepsini yoksay</button>';
-    html += '<div style="font-size:10.5px;opacity:0.6;margin-top:6px;line-height:1.45;">İşaretlediğin sınavlar bir daha sorulmaz.</div>';
   } else {
-    html += '<div style="border:1px dashed rgba(0,0,0,0.2);border-radius:12px;padding:16px;text-align:center;font-size:13px;opacity:0.75;">Analiz bekleyen soru yok. Sınav sonuçların her sabah 07:00 otomatik çekilir.</div>';
+    html += '<div style="border:1px dashed rgba(0,0,0,0.2);border-radius:12px;padding:16px;text-align:center;font-size:13px;opacity:0.75;margin-bottom:10px;">Analiz bekleyen soru yok. Sınav sonuçların her sabah 07:00 otomatik çekilir; çekilen denemeler doğrudan Denemelerim\'e eklenir.</div>';
   }
   // C) Okul duyuruları
   if (st.duyurular && st.duyurular.length) {
@@ -2254,9 +2282,6 @@ function okzSaveBilgi() {
   // Kaydettikten hemen sonra gerçek çekimi dene (tek dokunuşla sonuç)
   setTimeout(function () { try { okzSunucuCek(); } catch (e) {} }, 500);
 }
-function okzHepsiUygula(reason) {
-  document.querySelectorAll(".okz-reason").forEach(sel => { sel.value = reason; });
-}
 let okzCekSuruyor = false;
 async function okzKuyrukCek(zorla) {
   if (typeof state === "undefined") return;                 // uygulama durumu henüz hazır değil
@@ -2289,9 +2314,12 @@ async function okzKuyrukCek(zorla) {
     st.sonCekim = data.pulled_at || null;
     const gelen = okzNormalize(data.exams || []);
     // Son çekilen sonucu HER ZAMAN sakla/göster (yeni olsun olmasın)
+    // v78 (G-08) — satırlar da saklanır: "tek dokunuşla kaydet" yolu
+    // konu analizi üretebilsin (eskiden yalnız SAYI tutuluyordu).
     st.sonSonuc = gelen.map(ex => ({
       name: ex.name || "", date: ex.date || "", lessons: ex.lessons || {},
-      satir: (ex.rows || []).length, toplam: ex.toplam || null
+      satir: (ex.rows || []).length, toplam: ex.toplam || null,
+      rows: ex.rows || [], url: ex.url || ""
     }));
     // --- Gerçek duruma göre karar ver (kayıt defterine değil) ---
     // Defter: daha önce işlenen/yoksayılan sınavlar kuyruğa geri konmaz
@@ -2304,16 +2332,27 @@ async function okzKuyrukCek(zorla) {
     st.importedKeys = (st.importedKeys || []).filter(k => gecerliAnahtarlar.includes(k));
     gecerliAnahtarlar.forEach(k => { if (!st.importedKeys.includes(k)) st.importedKeys.push(k); });
     st.guncellenen = degisen;
-    st.pending = yeni;
+    /* v78 (G-08) — ÇEKİLEN DENEMELER DOĞRUDAN DENEMELERİM'E YAZILIR.
+       Kuyrukta bekletilmez; kullanıcı profilde "Analiz Bekliyor" aramaz.
+       Her yanlış/boş satır konu + soru no + video ile errorLogs'a girer,
+       neden (type) BOŞ kalır → Denemelerim'de seçilir. Boş neden motorda
+       gözlem sayılmaz; neden yazılınca işlenir (eşik gevşemez). */
+    try { await okzkYukle(); } catch (e) { /* eşleme yoksa kazanım metni yazılır */ }
+    yeni.forEach(function (ex) {
+      const dersler = window.OKZ ? window.OKZ.birlestir(ex.lessons || {}, okzBilinenDersler()) : (ex.lessons || {});
+      okzDenemeyeYaz(ex, dersler);
+      okzIsaretle(ex);
+    });
+    st.pending = [];
     const n = yeni.reduce((a, ex) => a + (ex.rows || []).length, 0);
     const guncelMi = pulledAt > (st.pulledAt || 0);
     if (guncelMi) st.pulledAt = pulledAt;
     saveState();
     if (n > 0) {
-      addNotification({ title: "Okulizyon: " + n + " soru Analiz Bekliyor", body: yeni.map(e => e.name).join(", ").slice(0, 140), kind: "info", topicKey: "okz@" + data.pulled_at });
+      addNotification({ title: "Okulizyon: " + n + " soru Denemelerim'e eklendi", body: yeni.map(e => e.name).join(", ").slice(0, 140), kind: "info", topicKey: "okz@" + data.pulled_at });
       okzBadge();
-      if (guncelMi) openConfirm("Okulizyon'dan " + n + " soru geldi (Analiz Bekliyor). Şimdi nedenlerini seçmek ister misin?", openOkzModal);
-      okzDurum("ok", "Okulizyon'dan " + gelen.length + " sınav okundu · " + n + " hatalı/boş soru Analiz Bekliyor kuyruğunda.");
+      if (guncelMi) openConfirm("Okulizyon'dan " + yeni.length + " deneme Denemelerim'e eklendi (" + n + " yanlış/boş soru). Nedenlerini Denemelerim'de seçebilirsin. Şimdi açayım mı?", function () { navigate("exams"); });
+      okzDurum("ok", "Okulizyon'dan " + gelen.length + " sınav okundu · " + yeni.length + " deneme Denemelerim'e yazıldı (" + n + " soru neden bekliyor).");
     } else if (degisen.length) {
       okzDurum("ok", gelen.length + " sınav okundu · " + degisen.length + " sınavın sonucu Okulizyon'da DEĞİŞMİŞ — aşağıdan güncelleyebilirsin.");
     } else if (gelen.length) {
@@ -2367,63 +2406,44 @@ function okzDuyurularToSchoolExams(duyurular) {
   return eklenen;
 }
 window.okzDuyurularToSchoolExams = okzDuyurularToSchoolExams;
-async function okzAnalizKaydet(tekNeden) {
-  // Kazanım → konu başlığı eşlemesi için indeksin yüklü olması gerekir
-  await okzkYukle();
-  const st = okzStore();
+/* ============================================================
+   v78 (G-08) — NEDEN SEÇİMİ ARTIK DENEMELERİM'DE
+   ------------------------------------------------------------
+   KULLANICI: "denemeler direk denemelerim bölümünde olsun. Analiz
+   bekliyor'a tıkladığında orada liste görünsün."
+   Okulizyon satırları Denemelerim'e `type: ""` ile yazıldığı için neden
+   seçimi burada yapılır: index.html denemenin altında satır satır
+   `<select data-okz-neden data-i="deneme" data-j="satır">` çizer.
+   Bu fonksiyon seçilen nedenleri kayda yazar; kayıt BKT motoruna
+   saveState sarmalayıcısıyla girer (boş neden gözlem sayılmaz).
+   `tekNeden` verilirse o denemenin TÜM bekleyen satırlarına uygulanır.
+   ============================================================ */
+async function okzAnalizKaydet(tekNeden, denemeIdx) {
   const secimler = {};
-  if (!tekNeden) document.querySelectorAll(".okz-reason").forEach(sel => { secimler[sel.dataset.i + ":" + sel.dataset.j] = sel.value; });
-  let eklenen = 0, islenen = 0;
-  st.pending.forEach((ex, i) => {
-    const logs = [];
-    (ex.rows || []).forEach((row, j) => {
-      const r = tekNeden || secimler[i + ":" + j];
-      if (r) {
-        // Ders adını uygulamanın adına çevir, kazanımı konu başlığına eşle
-        const k = okzKayitKonu(row.lesson, row.topic);
-        const log = { qno: row.qno || j + 1, lesson: k.lesson, topic: k.topic, kazanim: k.kazanim, type: r, date: ex.date || todayStr() };
-        // Video çözüm izi: Okulizyon sınav tablosunun ilk sütunu.
-        if (row.video) log.video = row.video;
-        if (row.videoVar || row.video) log.videoVar = true;
-        if (row.status === "e") log.status = "e";
-        logs.push(log);
-      }
-    });
-    if (!logs.length) return;
-    const hamDersler = ex.lessons && Object.keys(ex.lessons).length ? ex.lessons : {};
-    const lessons = window.OKZ ? window.OKZ.birlestir(hamDersler, okzBilinenDersler()) : hamDersler;
-    let d = 0, w = 0;
-    Object.values(lessons).forEach(v => { d += Number(v.d) || 0; w += Number(v.w) || 0; });
-    const total = logs.length + d + w; // en azından log sayısı
-    const net = typeof netOf === "function" ? Math.round(netOf(d, w) * 100) / 100 : Math.round((d - w / 4) * 100) / 100;
-    state.exams.push({
-      id: (typeof uid === "function" ? uid() : "okz" + Date.now() + Math.random().toString(36).slice(2, 7)),
-      name: "Okulizyon: " + (ex.name || "Sınav"),
-      date: ex.date || todayStr(),
-      lessons: lessons,
-      errorLogs: logs,
-      total: Object.keys(lessons).length ? d + w + Object.values(lessons).reduce((a, v) => a + (Number(v.e) || 0), 0) : total,
-      net: net,
-      // Bu sınavın Okulizyon'daki sonuç sayfası (video düğmeleri orada)
-      okulizyonUrl: ex.url || ""
-    });
-    eklenen += logs.length; islenen++;
-    const anahtar = okzKey(ex);
-    if (!st.importedKeys.includes(anahtar)) st.importedKeys.push(anahtar);
-    st.aktarilan = st.aktarilan || {};
-    st.aktarilan[anahtar] = okzHash(ex);
-    // Kalıcı defter: bu sınav bu içerikle işlendi (silinse bile geri gelmez)
-    okzDefterIkili(ex, window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex));
+  document.querySelectorAll(".okz-reason").forEach(function (sel) {
+    secimler[sel.dataset.i + ":" + sel.dataset.j] = sel.value;
   });
-  st.pending = st.pending.filter(ex => st.importedKeys.includes(okzKey(ex)) ? false : true);
-  saveState();
+  const hedef = (denemeIdx === undefined || denemeIdx === null) ? null : Number(denemeIdx);
+  let yazilan = 0;
+  (state.exams || []).forEach(function (ex, i) {
+    if (hedef !== null && i !== hedef) return;
+    if (!ex || !Array.isArray(ex.errorLogs)) return;
+    ex.errorLogs.forEach(function (log, j) {
+      if (!log || log.type) return;                  // nedeni yazılmış satıra dokunma
+      const sec = tekNeden || secimler[i + ":" + j];
+      if (!sec) return;
+      log.type = sec; yazilan++;
+    });
+  });
+  if (!yazilan) { toast("Seçim yok — en az bir nedene bas ya da satırlardan seç.", "info"); return 0; }
+  saveState();                                       // BKT: neden yazılan satırlar işlenir
   okzBadge();
-  closeOkzModal();
-  navigate(currentPage);
-  if (typeof renderExamChart === "function") renderExamChart();
-  if (window.lucide && lucide.createIcons) lucide.createIcons();
-  toast(islenen ? "✓ " + islenen + " sınav işlendi (" + eklenen + " hata kaydı) — Konu Takibi ve öncelik listesi güncellendi!" : "Önce en az bir soru için neden seç.", islenen ? "success" : "error");
+  try { if (typeof renderExams === "function") renderExams(document.getElementById("main-content")); } catch (e) { /* */ }
+  toast(yazilan + " sorunun nedeni kaydedildi; analiz oluştu.", "success");
+  return yazilan;
 }
+window.__okzNedenKaydet = function (denemeIdx) { return okzAnalizKaydet(null, denemeIdx); };
+window.__okzBekleyenSatirlar = okzBekleyenSatirlar;
 // Profil (hesap + Okulizyon bilgileri) ve Okulizyon kuyruğu arayüzlerini kur.
 // NOT: initAuthUI burada çağrılmazsa Profil'e hiçbir yerden ulaşılamaz (giriş/Okulizyon görünmez).
 function pwaArayuzKur() {

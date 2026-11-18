@@ -135,9 +135,10 @@ console.log("\n== 5) Uygulama bağlantısı ==");
 ok("okzKonuBul kural tablosunu kullanıyor", APP.indexOf('window.KA && typeof window.KA.esle === "function"') > 0);
 ok("kural eşleşmesi 'kural' kaynağıyla işaretli", APP.indexOf('kaynak: "kural"') > 0);
 ok("kural, konu anahtarını Ders > Konu üretiyor", APP.indexOf('topicKey: kanon + " > " + kural.konu') > 0);
-ok("kuyrukta sınav çözüm bağlantısı var", APP.indexOf("sınavı ve çözümleri aç") > 0);
-ok("satır bazında çözüm bağlantısı var", APP.indexOf("çözüm var") > 0);
-ok("bağlantı yalnız adres varsa çiziliyor", APP.indexOf("if (okzSinavUrl)") > 0);
+// v78 (G-08) — kuyruk modalı kapandı; bu bağlantılar DENEMELERİM'de yaşıyor.
+ok("Denemelerim'de sınav çözüm bağlantısı var", HTML.indexOf("sınavı ve çözümleri aç") > 0);
+ok("satır bazında çözüm bağlantısı var", HTML.indexOf("çözüm var") > 0);
+ok("bağlantı yalnız adres varsa çiziliyor", /sonEx\.okulizyonUrl\s*\n?\s*\?/.test(HTML) || HTML.indexOf("(sonEx.okulizyonUrl") > 0);
 
 // ---------- 6) Kısa Kontrol düzeltmesi ----------
 console.log("\n== 6) Kısa Kontrol (v35.7: yalnız o konunun havuzu, 5 soru) ==");

@@ -140,7 +140,10 @@ ok("Denemelerim'de 'Yapamadığın Sorular' bölümü KALDIRILDI", HTML.indexOf(
 ok("kaldırılan bölümün satır üreteci de gitti", HTML.indexOf('data-exam-soru="') < 0);
 ok("video-cozum.js sayfaya yükleniyor", HTML.indexOf('src="video-cozum.js"') > 0);
 ok("içe aktarımda video alanı taşınıyor", APP.indexOf("row.videoVar || row.video") > 0);
-ok("sınav adresi kayda yazılıyor", APP.indexOf("okulizyonUrl: ex.url") > 0);
+/* v78 (G-08) — deneme yazımı tek yardımcıya taşındı; adres yine kayda girer
+   (okulizyonUrl), biçim "(ex && ex.url) || ''" oldu. İkisi de kabul. */
+ok("sınav adresi kayda yazılıyor",
+  APP.indexOf("okulizyonUrl: ex.url") > 0 || /okulizyonUrl:\s*\(?\s*ex\s*&&\s*ex\.url\)?/.test(APP));
 ok("service worker yeni dosyaları önbelleğe alıyor", fs.readFileSync(path.join(KOK, "site", "sw.js"), "utf8").indexOf('"./gorsel.js"') > 0);
 
 // ---------- 6) Okulizyon ayrıştırıcısı video sütununu atlamıyor ----------

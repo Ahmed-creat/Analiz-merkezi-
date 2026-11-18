@@ -282,6 +282,15 @@
     (Array.isArray(record.errorLogs) ? record.errorLogs : []).forEach(function (error, i) {
       const id = prefix + ":error:" + i;
       const reason = normalizeReason(error.type || error.reason);
+      /* v78 (G-08) — NEDENİ HENÜZ SEÇİLMEMİŞ SATIR İŞLENMİŞ SAYILMAZ.
+         KÖK NEDEN: Okulizyon'dan gelen satırlar Denemelerim'e neden boş
+         olarak yazılıyor (kullanıcı nedenleri sonra seçiyor). Eski kod
+         nedeni boş satırı da `bkt_processed_records`'a yazıyordu; kullanıcı
+         neden seçtiğinde kayıt "işlendi" göründüğü için BKT gözlemi HİÇ
+         oluşmuyordu. Artık neden boşsa hiçbir şey işaretlenmez; neden
+         yazılınca satır normal şekilde işlenir. (Sessiz yutma yok,
+         eşik gevşetme yok: boş neden zaten gözlem sayılmaz.) */
+      if (!reason) return;
       if (["Konuyu Bilmiyordum", "KONU EKSİKLİĞİ", "ANLAMADIM"].includes(reason)) {
         const key = topicKey(error.konu_id || error.topic, error.lesson);
         majorErrors[key] = (majorErrors[key] || 0) + 1;

@@ -23,25 +23,31 @@ function esit(ad, g, b) { return ok(ad, g === b, "gelen: " + JSON.stringify(g) +
 
 const KOK = path.join(__dirname, "..");
 const APP = fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8");
+const HTML = fs.readFileSync(path.join(KOK, "site", "index.html"), "utf8");
 const OKZK = require(path.join(KOK, "site", "okz-konu.js"));
 const IDX = OKZK.indeksKur(require(path.join(KOK, "site", "content", "konu_esleme.json")));
 
-// ---------- 1) Tek dokunuş ----------
+// ---------- 1) Tek dokunuş (v78/G-08: liste DENEMELERİM'de) ----------
+// KULLANICI: "denemeler direk denemelerim bölümünde olsun; analiz bekliyor'a
+// tıkladığında orada liste görünsün." Kuyruk modalı kaldırıldı; tek dokunuş
+// artık Denemelerim'de: "tümü: <neden>" düğmesi tüm bekleyen satırlara yazar.
 console.log("\n== 1) Tek dokunuş ==");
-ok("hızlı neden çubuğu var", APP.indexOf("okz-hizli-nedenler") > 0);
-ok("üç hazır neden düğmesi", (APP.match(/data-act=\\"okzHizliNedenSec\\"/g) || []).length === 1 || APP.indexOf('data-act="okzHizliNedenSec"') > 0);
-// v35.8 — "Süre yetmedi" nedeni kaldırıldı; hızlı neden çubuğu geçerli nedenlerle.
-ok("hızlı nedenlerde KONUEKSİKLİĞİ var", /\["KONUEKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası\/Dikkatsizlik"\]/.test(APP));
-ok("hızlı nedenlerde 'süre yetmedi' YOK", !/SÜRE YETMEDİ|SÜREYETMEDİ/.test(APP));
-ok("tek düğme: 'Bu nedenle tümünü işle'", APP.indexOf("okzHizliIsle") > 0);
-ok("tek neden tüm satırlara uygulanıyor", /async function okzAnalizKaydet\(tekNeden\)[\s\S]{0,1600}const r = tekNeden \|\| secimler/.test(APP));
-ok("hızlı işle tek nedenle çağırıyor", /okzAnalizKaydet\(window\.__okzHizliNeden \|\| "KONU EKSİKLİĞİ"\)/.test(APP));
+ok("Denemelerim'de 'tümü' neden düğmeleri var", HTML.indexOf('data-act="okzNedenHepsi"') > 0);
+ok("üçten az olmayan hazır neden düğmesi", /nedenler\.slice\(0, 4\)\.map/.test(HTML));
+ok("hazır nedenler uygulamanın kendi listesinden (KONUEKSİKLİĞİ dâhil)",
+  /WRONG_REASONS\.concat\(EMPTY_REASONS\)/.test(HTML) && /KONUEKSİKLİĞİ/.test(HTML));
+ok("'süre yetmedi' hızlı seçeneklerde YOK", !/SÜRE YETMEDİ|SÜREYETMEDİ/.test(APP));
+ok("tek neden tüm satırlara uygulanıyor",
+  /async function okzAnalizKaydet\(tekNeden, denemeIdx\)[\s\S]{0,1200}const sec = tekNeden \|\| secimler/.test(APP));
+ok("kaydet düğmesi tek çağrı yapıyor", /data-act="okzNedenKaydet"/.test(HTML) && /window\.__okzNedenKaydet/.test(HTML));
+ok("eski kuyruk hızlı işle kaldırıldı (ölü kod yok)", APP.indexOf("okzHizliIsle") < 0 && APP.indexOf("okzHizliNedenSec") < 0);
 
-// ---------- 2) Soru soru düzenleme kapalı ----------
-console.log("\n== 2) Soru soru düzenleme ==");
-ok("soru listesi <details> içinde", /<details style="margin-top:6px;"><summary[^>]*>Soruları tek tek düzenle \(isteğe bağlı/.test(APP));
-ok("açıklama 'isteğe bağlı' diyor", APP.indexOf("Soru soru neden seçimi İSTEĞE BAĞLI") > 0);
-ok("21 soru için 21 açılır kutu görünmüyor", APP.indexOf("ex.rows.forEach((row, j) => {\n        html += '<div style=\"display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid rgba(0,0,0,0.07);\">'") > 0);
+// ---------- 2) Liste: yalnız NEDEN BEKLEYEN satırlar, sınırlı ----------
+console.log("\n== 2) Soru listesi ==");
+ok("liste yalnız neden bekleyen satırlar", /\.filter\(x => x\.l && !x\.l\.type\)/.test(HTML));
+ok("açıklama: neden seçilmeyen analize girmez", HTML.indexOf("Neden seçilmeyen soru analize GİRMEZ") > 0);
+ok("liste 25 satırla sınırlı (yük)", /bekleyen\.slice\(0, 25\)/.test(HTML));
+ok("kalan satır sayısı yazılıyor", /bekleyen\.length - 25/.test(HTML));
 
 // ---------- 3) Konu eşlemesi: hazır öneri ----------
 console.log("\n== 3) Konu eşlemesi otomasyonu ==");
@@ -71,7 +77,8 @@ ok("otomatik eşleşenler için öğrenci seçim yapmıyor", APP.indexOf("Belirs
 
 // ---------- 5) Gerileme koruması ----------
 console.log("\n== 5) Gerileme koruması ==");
-ok("tek dokunuş kaldırılmadı", APP.indexOf('data-act="okzHizliIsle"') > 0);
+// v78 (G-08) — tek dokunuş kuyruktan Denemelerim'e taşındı; koruma orada.
+ok("tek dokunuş kaldırılmadı (Denemelerim)", HTML.indexOf('data-act="okzNedenHepsi"') > 0);
 ok("neden listesi hâlâ 7 seçenekli", /const OKZ_NEDENLER = \[[\s\S]{0,400}\]/.test(APP));
 ok("işlenen sınav defteri korunuyor", APP.indexOf("importedKeys") > 0);
 
