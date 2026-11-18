@@ -4311,7 +4311,15 @@ function gunlukGorevler() {
       aksiyon: "bktTest", hedef: kisa[0], hedefPool: bkt[kisa[0]].poolId, hedefMod: "precheck", dugme: "5 soru"
     });
   }
-  const ogr = Object.keys(bkt).filter(k => bkt[k].ogrenmeTesti && bkt[k].poolId);
+  /* G-07 — AYNI GÜN İKİ 5 SORULUK TEST ÇIKMAZ (tek yön: kısa kontrol öncelikli).
+     KÖK NEDEN: completeTopic kısa kontrolü `precheck_due = bugün + 3` ile,
+     öğrenme testini de `learning_test_due = bugün + 3` ile kuruyordu. İkisi de
+     AYNI havuzdan 5 soru olduğu için aynı konu aynı gün iki görev üretiyordu.
+     (Kullanıcı: "kısa kontrolü çalışma adımına ekledik" — evet, 5. adım odur;
+     öğrenme testi ondan AYRI bir BKT göreviydi, bu yüzden çakışma gerçekti.)
+     Kural: konu bugün KISA KONTROL listesindeyse öğrenme testi görevi
+     yazılmaz; kendi due günü gelince (yarın) tek görev olarak çıkar. */
+  const ogr = Object.keys(bkt).filter(k => bkt[k].ogrenmeTesti && bkt[k].poolId && kisa.indexOf(k) < 0);
   if (ogr.length) {
     liste.push({
       id: "ogrenmetesti", tur: "kisa", icon: "clipboard-list", onem: 1,
