@@ -15,7 +15,7 @@
   "private": true,
   "scripts": {
     "validate:pools": "node scripts/validate-pools.js",
-    "test:bkt": "node tests/bkt-engine.test.js && node tests/bkt-panel.test.js",
+    "test:bkt": "node tests/bkt-engine.test.js && node tests/bkt-panel.test.js && node tests/bkt-silme-koruma.test.js",
     "test:curriculum": "node tests/curriculum.test.js",
     "test:pools": "node tests/question-pools.test.js",
     "validate:ids": "node scripts/validate-ids.js",

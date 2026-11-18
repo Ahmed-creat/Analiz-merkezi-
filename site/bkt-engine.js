@@ -321,10 +321,42 @@
     return count;
   }
 
+  // G-03 — SİLMEDE KORUNAN KULLANICI ALANLARI.
+  // KÖK NEDEN: bir deneme/soru silinince rebuildAfterDeletion tüm bkt_state'i
+  // sıfırlıyordu. `migrateExisting()` yalnız deneme/soru HATALARINDAN türeyen
+  // alanları (L, gozlem_sayisi, onay_durumu, hata_gecmisi, tarihler) yeniden
+  // yazabildiği için kullanıcı eyleminden doğan alanlar KALICI olarak
+  // kayboluyordu: onaylı konu onaysız kalıyor ("Yeterlilik: —"), kısa kontrol
+  // damgası (son_kisa_kontrol*, precheck_due) silindiği için 5. adım bir daha
+  // açılmıyordu.
+  // KURAL: türetilmiş alanlar sıfırlanır, KULLANICI İLERLEMESİ korunur.
+  const KORUNAN_ALANLAR = [
+    "onay_durumu", "son_kisa_kontrol", "son_kisa_kontrol_dogru",
+    "son_kisa_kontrol_toplam", "son_kisa_kontrol_gecti", "precheck_due",
+    "study_completed_at", "learning_test_due", "learning_test_locked_until",
+    "pool_id", "graph_topic_id"
+  ];
   function rebuildAfterDeletion(s) {
+    // 1) Korunacak alanların yedeği (silmeden ÖNCE).
+    const yedek = {};
+    Object.keys(s.bkt_state || {}).forEach(function (k) {
+      const e = s.bkt_state[k] || {}, t = {};
+      KORUNAN_ALANLAR.forEach(function (f) { if (e[f] !== undefined) t[f] = e[f]; });
+      yedek[k] = t;
+    });
+    // 2) Türetilmiş durumu sıfırla, kayıtlardan yeniden üret.
     s.bkt_state = {}; s.bkt_processed_records = {}; s.bkt_migration_done = false;
     migrateExisting();
+    // 3) Kullanıcı ilerlemesini geri yaz (kaydı kalmayan konu da korunur).
+    Object.keys(yedek).forEach(function (k) {
+      const e = getEntry(k, true);
+      if (!e) return;
+      Object.keys(yedek[k]).forEach(function (f) { e[f] = yedek[k][f]; });
+    });
     s.bkt_migration_done = true;
+    // NOT: burada saveState ÇAĞRILMAZ — çağıran (processNewRecords) akışın
+    // sonunda tek kez kaydeder; içeride çağırmak sarmalayıcı üzerinden bu
+    // fonksiyonu yeniden tetikleyip sonsuz döngü riski doğuruyordu.
     return true;
   }
   function syncDeletedRecords() {
