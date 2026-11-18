@@ -4682,15 +4682,22 @@ function renderExams(container) {
      kaldıkça görünür; hepsi cevaplanınca kendiliğinden kalkar. */
   const yp = (typeof window.__okzYeniParti === "function") ? window.__okzYeniParti() : null;
   const bekleyenS = (typeof window.__okzBekleyenSatirlar === "function") ? (window.__okzBekleyenSatirlar() || 0) : 0;
-  if (yp && bekleyenS > 0) {
-    const adlar = (yp.adlar || []).filter(Boolean);
+  /* v85 — KULLANICI: "düğmeye basılınca açılıyor ama hala altta da duruyor."
+     Satır listesi sayfadan KALKTI; neden seçimi yalnız PENCEREDE. Bu şerit
+     bir liste değil, ÖZET + giriş noktasıdır: kaç soru neden bekliyor ve
+     nerede seçileceği. Neden bekleyen soru kaldıkça görünür. */
+  if (bekleyenS > 0) {
+    const adlar = (yp && yp.adlar ? yp.adlar : []).filter(Boolean);
+    const baslik = (yp && yp.denemeler)
+      ? "Okulizyon'dan " + yp.denemeler + " deneme eklendi"
+      : "Okulizyon denemelerinde neden bekleyen sorular var";
     html += '<div class="bento-card" id="okz-yeni-serit" style="margin-bottom:16px;border-left:4px solid #16A34A;background:rgba(22,163,74,0.07);">' +
       '<div style="display:flex;gap:8px;align-items:flex-start;">' +
         '<span style="width:9px;height:9px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,0.22);margin-top:6px;flex:0 0 auto;"></span>' +
         '<div style="min-width:0;flex:1;">' +
-          '<div style="font-weight:700;font-size:13.5px;">Okulizyon\'dan ' + yp.denemeler + ' deneme eklendi</div>' +
+          '<div style="font-weight:700;font-size:13.5px;">' + esc(baslik) + "</div>" +
           (adlar.length ? '<div class="text-xs text-muted" style="margin-top:2px;">' + esc(adlar.join(", ")) + "</div>" : "") +
-          '<div class="text-xs text-muted" style="margin-top:4px;line-height:1.5;">' + bekleyenS + " soru neden bekliyor. Aşağıdaki <b>“Analiz bekliyor”</b> bölümünde her sorunun nedenini seç → konu analizi o anda oluşur.</div>" +
+          '<div class="text-xs text-muted" style="margin-top:4px;line-height:1.5;">' + bekleyenS + " soru neden bekliyor. <b>Nedenleri seç</b>e bas: her sorunun nedenini seçtiğin pencere açılır → konu analizi o anda oluşur.</div>" +
           '<button class="btn btn-sm btn-primary" data-act="okzNedenSec" style="margin-top:8px;">' + icon("chevron-right", 14) + " Nedenleri seç</button>" +
         "</div>" +
       "</div></div>";
@@ -4771,26 +4778,12 @@ function renderExams(container) {
       html += '<div class="dt-satir' + (v ? "" : " bos") + '" data-exam-ders="' + attr(l) + '" style="scroll-margin-top:80px;"><span>' + esc(l) + "</span><span class='d'>" + (v ? v.d : "—") + "</span><span class='w'>" + (v ? v.w : "—") + "</span><span>" + (v ? v.e : "—") + "</span><b class='tabular'>" + net + "</b></div>";
     });
     html += "</div></div>";
-    /* v78 (G-08) — ANALİZ BEKLİYOR: neden seçimi DENEMELERİM'de.
-       KULLANICI: "denemeler direk denemelerim bölümünde olsun; analiz
-       bekliyor'a tıkladığında orada liste görünsün." Okulizyon'dan gelen
-       her yanlış/boş satır konu + soru no ile burada listelenir; neden
-       seçilince BKT gözlemi doğar, Acil Çalışılacaklar dolar. */
-    const secIdx = examDetailIdx !== null ? examDetailIdx : state.exams.length - 1;
-    /* v84 — KULLANICI: "Denemede nedenleri seç diyince liste açılsın."
-       Liste artık TEK yerde üretilir (okzNedenListesiHtml) ve iki yerde
-       gösterilir: (a) Denemelerim'deki "Analiz bekliyor" kartı, (b) "Nedenleri
-       seç" düğmesinin açtığı PENCERE. İki kopya ayrışmaz. */
-    const nedenListesi = okzNedenListesiHtml(sonEx, secIdx);
-    if (nedenListesi.adet) {
-      html += '<div class="bento-card" id="analiz-bekliyor" style="margin-top:16px;">' +
-        '<h3 style="font-size:15px;font-weight:700;margin-bottom:6px;">' + icon("clipboard-list", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") +
-        " Analiz bekliyor · " + nedenListesi.adet + " soru</h3>" +
-        '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu sorular Okulizyon denemesinden geldi. Nedenini seç → konu analizi (Acil Çalışılacaklar) oluşur. Neden seçilmeyen soru analize GİRMEZ.</p>' +
-        nedenListesi.html +
-        '<button class="btn btn-sm btn-ghost w-full" data-act="okzNedenSec" data-idx="' + secIdx + '" style="margin-top:8px;border:1px solid var(--border-card);">' + icon("maximize-2", 14) + " Listeyi pencerede aç</button>" +
-        "</div>";
-    }
+    /* v85 — KULLANICI: "Tmm düğmeye basılınca açılıyor ama hala altta da duruyor."
+       HAKLI: liste iki yerde birden çiziliyordu (sayfadaki kart + pencere).
+       Artık neden seçimi TEK yerde: PENCERE (okzNedenModalAc).
+       Sayfada yalnız ÖZET şerit kalır (yukarıda), satır listesi kalmaz.
+       Neden bekleyen denemeyi açan yol: satırdaki "analiz bekliyor (N) →"
+       düğmesi veya yeşil şeritteki "Nedenleri seç" — ikisi de pencereyi açar. */
   }
 
   container.innerHTML = html;
@@ -5091,14 +5084,18 @@ function examDetailSelect(idx, git) {
   renderExams(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
   /* v79 — KULLANICI: "denemelerimde analiz bekleyen deneme tuşa basılınca
-     açılacaktı." Satıra basınca detay sayfanın ALTINDA açılıyordu; kullanıcı
-     ekranda hiçbir şeyin değişmediğini görüyordu. Artık seçilen denemede neden
-     bekleyen satır varsa doğrudan o karta, yoksa ders detayına kaydırılır. */
+     açılacaktı." v85 — sayfadaki liste kartı kaldırıldığı için artık
+     KAYDIRMA yok: neden bekleyen satır varsa liste PENCEREDE açılır
+     (kullanıcı: "düğmeye basılınca liste açılsın"). Açık istek
+     ("ders-detay") varsa yalnız ders detayına kaydırılır. */
   setTimeout(function () {
     const ex = state.exams[examDetailIdx !== null ? examDetailIdx : state.exams.length - 1];
     const bekleyenVar = !!(ex && (ex.errorLogs || []).some(l => l && !l.type));
-    const hedefId = git || (bekleyenVar ? "analiz-bekliyor" : "ders-detay");
-    const hedef = document.getElementById(hedefId) || document.getElementById("ders-detay");
+    if (git !== "ders-detay" && bekleyenVar && typeof okzNedenModalAc === "function") {
+      okzNedenModalAc(examDetailIdx !== null ? examDetailIdx : state.exams.length - 1);
+      return;
+    }
+    const hedef = document.getElementById("ders-detay");
     if (!hedef) return;
     try { hedef.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) { /* */ }
     hedef.classList.add("video-hedef");
@@ -7094,7 +7091,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // v79 — satırdaki "analiz bekliyor (N) →" düğmesi doğrudan listeyi açar
       /* v84 — satırdaki "analiz bekliyor (N) →" düğmesi: liste PENCEREDE açılır
          (kullanıcı: "nedenleri seç diyince liste açılsın"). */
-      case "examAnaliz": examDetailSelect(Number(el.dataset.idx), "analiz-bekliyor"); okzNedenModalAc(Number(el.dataset.idx)); break;
+      case "examAnaliz": examDetailSelect(Number(el.dataset.idx)); break;   // v85 — bekleyen varsa liste PENCEREDE açılır
       // v78 (G-08) — neden seçimi Denemelerim'de
       case "okzNedenKaydet": {
         const i = Number(el.dataset.idx);

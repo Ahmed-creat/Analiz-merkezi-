@@ -63,38 +63,46 @@ console.log("\n== 2) Denemelerim'de tuş → liste açılıyor ==");
   ok("satırda 'analiz bekliyor (N) →' DÜĞMESİ var",
     /data-act="examAnaliz" data-idx="/.test(HTML));
   ok("düğme yanlış denemeyi seçmiyor (satırın kendi idx'i)", /data-act="examAnaliz" data-idx="' \+ idx \+ '/.test(HTML));
-  ok("examAnaliz işleyicisi var", /case "examAnaliz": examDetailSelect\(Number\(el\.dataset\.idx\), "analiz-bekliyor"\)/.test(HTML));
+  /* v85 — KULLANICI: "düğmeye basılınca açılıyor ama hala altta da duruyor."
+     Sayfadaki liste kartı KALDIRILDI; neden seçimi yalnız PENCEREDE.
+     Ölçüt aynı: tuşa basınca liste açılır (artık pencere olarak). */
+  ok("examAnaliz işleyicisi var", /case "examAnaliz": examDetailSelect\(Number\(el\.dataset\.idx\)\)/.test(HTML));
+  ok("liste penceresi tanımlı", /function okzNedenModalAc\(idx\)/.test(HTML));
+  ok("sayfada satır listesi kalmadı", !/id="analiz-bekliyor"/.test(HTML));
   ok("examDetailSelect kaydırıyor", /hedef\.scrollIntoView\(\{ behavior: "smooth", block: "start" \}\)/.test(HTML));
-  ok("bekleyen varsa analiz kartına iner", /const hedefId = git \|\| \(bekleyenVar \? "analiz-bekliyor" : "ders-detay"\)/.test(HTML));
-  ok("bekleyen yoksa ders detayına iner (boşa kaydırma yok)", /bekleyenVar \? "analiz-bekliyor" : "ders-detay"/.test(HTML));
+  ok("bekleyen varsa PENCERE açılır", /if \(git !== "ders-detay" && bekleyenVar && typeof okzNedenModalAc === "function"\)/.test(HTML));
+  ok("bekleyen yoksa ders detayına iner", /const hedef = document\.getElementById\("ders-detay"\)/.test(HTML));
 
   /* GERÇEK davranış: examDetailSelect koşturulur, kaydırılan öğe okunur. */
   const govde = fonksiyonAl("examDetailSelect");
   const kaydirilan = [];
+  const acilan = [];
   const ogeler = {
+    /* v85 — liste kartı yok; yerine pencere açılıyor. */
     "analiz-bekliyor": { id: "analiz-bekliyor", classList: { add() {}, remove() {} }, scrollIntoView() { kaydirilan.push("analiz-bekliyor"); } },
     "ders-detay": { id: "ders-detay", classList: { add() {}, remove() {} }, scrollIntoView() { kaydirilan.push("ders-detay"); } }
   };
   function kos(exams, git) {
-    kaydirilan.length = 0;
+    kaydirilan.length = 0; acilan.length = 0;
     const sb = {
       state: { exams: exams },
       examDetailIdx: null,
       renderExams() {}, window: { lucide: null }, lucide: null,
       document: { getElementById: id => ogeler[id] || null, querySelectorAll: () => [] },
       setTimeout: (fn) => fn(),
-      Number, String
+      Number, String,
+      okzNedenModalAc(idx) { acilan.push(idx); }
     };
     vm.createContext(sb);
     vm.runInContext(govde + "\nthis.sec = examDetailSelect;", sb);
     sb.sec(git === undefined ? (exams.length - 1) : null, git);
   }
   kos([{ name: "A", errorLogs: [{ qno: 1, type: "" }] }]);
-  ok("neden bekleyen denemede ANALİZ kartına kaydırıyor", kaydirilan[0] === "analiz-bekliyor", String(kaydirilan));
+  ok("neden bekleyen denemede LİSTE (pencere) açılıyor", acilan.length === 1 && kaydirilan.length === 0, "pencere:" + acilan + " kaydırma:" + kaydirilan);
   kos([{ name: "B", errorLogs: [{ qno: 1, type: "ANLAMADIM" }] }]);
   ok("bekleyen yokken ders detayına kaydırıyor", kaydirilan[0] === "ders-detay", String(kaydirilan));
   kos([{ name: "C", errorLogs: [{ qno: 1, type: "" }] }], "ders-detay");
-  ok("açık istek varsa ona uyar", kaydirilan[0] === "ders-detay", String(kaydirilan));
+  ok("açık istek (ders-detay) varsa pencere açılmaz", acilan.length === 0 && kaydirilan[0] === "ders-detay", "pencere:" + acilan);
 }
 
 // ---------------------------------------------------------------
@@ -160,14 +168,16 @@ console.log("\n== 3) Yanlış ve boş AYRI neden listeleri ==");
 }
 
 // ---------------------------------------------------------------
-console.log("\n== 4) Kart normal deneme kartı görünümünde ==");
+console.log("\n== 4) Liste TEK yerde: pencere (sayfada kart yok) ==");
 {
-  const kart = HTML.slice(HTML.indexOf('id="analiz-bekliyor"') - 60, HTML.indexOf('id="analiz-bekliyor"') + 500);
-  ok("bento-card sınıfı kullanılıyor", /class="bento-card" id="analiz-bekliyor"/.test(HTML));
-  ok("turuncu kenar/arka plan kalktı",
-    HTML.indexOf('id="analiz-bekliyor" style="margin-top:16px;border:1px solid rgba(180,83,9') < 0);
-  ok("başlık ikonu marka renginde", /icon\("clipboard-list", 16, "vertical-align:middle;margin-right:6px;color:var\(--brand-blue\);"\)/.test(kart) ||
-    /clipboard-list[^\n]{0,120}brand-blue/.test(kart));
+  /* v85 — KULLANICI: "düğmeye basılınca açılıyor ama hala altta da duruyor."
+     Sayfada liste kartı/select KALMAZ; yalnız özet şerit + pencere. */
+  ok("sayfada analiz kartı YOK", !/id="analiz-bekliyor"/.test(HTML));
+  ok("sayfada neden select'i üretilmiyor", (HTML.match(/class="okz-reason"/g) || []).length === 1);
+  ok("liste penceresi (modal) var", /id="neden-modal"/.test(HTML) && /id="neden-modal-govde"/.test(HTML));
+  ok("özet şerit duruyor", /id="okz-yeni-serit"/.test(HTML));
+  ok("şeritten pencereye gidiş var", /data-act="okzNedenSec"/.test(HTML));
+  ok("turuncu vurgu kalmadı (normal bento-card)", HTML.indexOf('border:1px solid rgba(180,83,9') < 0);
   ok("satır içi sayaç da turuncu değil", HTML.indexOf('color:#B45309;">analiz bekliyor') < 0);
 }
 

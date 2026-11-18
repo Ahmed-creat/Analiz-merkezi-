@@ -64,8 +64,11 @@ ok("okzBadge noktayı tazeliyor", /function okzBadge\(\)[\s\S]{0,220}okzYeniPart
 ok("okundu köprüsü var", /window\.__okzYeniPartiGoruldu = function/.test(APP));
 ok("parti köprüsü var (sayfa şeridi okur)", /window\.__okzYeniParti = function/.test(APP));
 ok("Denemelerim açılınca nokta sönüyor", /page === "exams"[\s\S]{0,200}__okzYeniPartiGoruldu/.test(HTML));
-ok("sayfada yeşil bilgi şeridi var", /id="okz-yeni-serit"/.test(HTML) && /Okulizyon\\'dan ' \+ yp\.denemeler \+ ' deneme eklendi/.test(HTML));
-ok("şeritte kullanıcıya ne yapacağı yazıyor", /soru neden bekliyor[\s\S]{0,200}Analiz bekliyor/.test(HTML));
+/* v85 — şerit metni yeniParti yoksa da bilgi verir; başlık iki biçimde kurulur. */
+ok("sayfada yeşil bilgi şeridi var", /id="okz-yeni-serit"/.test(HTML) && /"Okulizyon\'dan " \+ yp\.denemeler \+ " deneme eklendi"/.test(HTML));
+/* v85 — satır listesi sayfadan kalktı; şerit ÖZET + giriş noktasıdır.
+   Ölçüt aynı: kaç soru beklediği + nerede seçileceği yazılı. */
+ok("şeritte kullanıcıya ne yapacağı yazıyor", /soru neden bekliyor[\s\S]{0,220}Nedenleri seç/.test(HTML));
 ok("\"Nedenleri seç\" düğmesi neden bekleyen denemeye götürüyor", /data-act="okzNedenSec"/.test(HTML) && /case "okzNedenSec"/.test(HTML));
 
 /* ---------- 3) Nokta mantığı: çiz, tekrar çizme, okundu → sön ---------- */
@@ -159,7 +162,10 @@ ok("deneme gelmediyse (0 soru) nokta yok", bos.dot && bos.dot.style.display === 
   ok("şerit Denemelerim'de çiziliyor", !!serit);
   ok("kaç deneme geldiği yazılı", !!serit && serit.textContent.includes("Okulizyon'dan 1 deneme eklendi"));
   ok("kaç soru beklediği yazılı", !!serit && /2 soru neden bekliyor/.test(serit.textContent));
-  ok("nerede seçileceği yazılı", !!serit && serit.textContent.includes("Analiz bekliyor"));
+  ok("nerede seçileceği yazılı", !!serit && /Nedenleri seç/.test(serit.textContent));
+  /* v85 — KULLANICI: "düğmeye basılınca açılıyor ama hala altta da duruyor."
+     Sayfada satır listesi KALMAZ; seçim yalnız pencerede. */
+  ok("sayfada satır listesi KALMADI (yalnız pencere)", d.querySelectorAll(".okz-reason").length === 0 && !d.getElementById("analiz-bekliyor"));
   ok("Denemelerim açılınca nokta okundu işaretleniyor", w.__gorulduCagrildi === true);
 
   console.log("\n== 5) Ayarlar: geri bildirim kutusu KAPALI duruyor ==");

@@ -39,11 +39,14 @@ const bekle = (ms) => new Promise(r => setTimeout(r, ms));
 /* ---------- 1) KAYNAK: liste tek yerde, pencereye bağlı ---------- */
 console.log("\n== 1) Neden listesi tek kaynak ==");
 ok("okzNedenListesiHtml() tanımlı", /function okzNedenListesiHtml\(ex, secIdx\)/.test(HTML));
-ok("renderExams listeyi bu fonksiyondan alıyor", /const nedenListesi = okzNedenListesiHtml\(sonEx, secIdx\)/.test(HTML));
+/* v85 — sayfadaki kart kalktı; listeyi PENCERE bu fonksiyondan alıyor. */
+ok("pencere listeyi bu fonksiyondan alıyor", /const liste = okzNedenListesiHtml\(ex, secIdx\)/.test(HTML));
 const okzReasonKurulum = (HTML.match(/class="okz-reason"/g) || []).length;
 ok("satır (select.okz-reason) TEK yerde üretiliyor", okzReasonKurulum === 1, "bulunan: " + okzReasonKurulum);
-ok("sayfa kartı #analiz-bekliyor duruyor", /id="analiz-bekliyor"/.test(HTML));
-ok("karttan pencereye geçiş düğmesi var", /data-act="okzNedenSec" data-idx="/.test(HTML));
+/* v85 — KULLANICI: "düğmeye basılınca açılıyor ama hala altta da duruyor."
+   Sayfadaki liste kartı KALDIRILDI: liste yalnız pencerede. */
+ok("sayfada liste kartı YOK (tekrar yok)", !/id="analiz-bekliyor"/.test(HTML));
+ok("yeşil şeritten pencereye geçiş düğmesi var", /data-act="okzNedenSec"/.test(HTML) && /id="okz-yeni-serit"/.test(HTML));
 
 console.log("\n== 2) Pencere (modal) var ==");
 ok("#neden-modal işaretlemesi var", /id="neden-modal"/.test(HTML) && /class="modal-overlay"/.test(HTML));
@@ -55,7 +58,10 @@ ok("okzNedenModalTazele() tanımlı", /function okzNedenModalTazele\(idx\)/.test
 console.log("\n== 3) Düğmeler pencereyi açıyor ==");
 const secCase = HTML.slice(HTML.indexOf('case "okzNedenSec"'), HTML.indexOf('case "okzNedenSec"') + 900);
 ok('"Nedenleri seç" → okzNedenModalAc()', /okzNedenModalAc\(hedef\)/.test(secCase));
-ok('satırdaki "analiz bekliyor" → okzNedenModalAc()', /case "examAnaliz":[\s\S]{0,160}okzNedenModalAc\(Number\(el\.dataset\.idx\)\)/.test(HTML));
+/* v85 — satır düğmesi examDetailSelect'e gider; o da bekleyen varsa pencereyi açar. */
+ok('satırdaki "analiz bekliyor" → pencere açan yola gidiyor',
+  /case "examAnaliz": examDetailSelect\(Number\(el\.dataset\.idx\)\)/.test(HTML) &&
+  /if \(git !== "ders-detay" && bekleyenVar && typeof okzNedenModalAc === "function"\) \{[\s\S]{0,120}okzNedenModalAc\(/.test(HTML));
 ok("kaydet → pencere tazeleniyor", /case "okzNedenKaydet":[\s\S]{0,320}okzNedenModalTazele\(i\)/.test(HTML));
 ok("tümüne → pencere tazeleniyor", /case "okzNedenHepsi":[\s\S]{0,700}okzNedenModalTazele\(i2\)/.test(HTML));
 
