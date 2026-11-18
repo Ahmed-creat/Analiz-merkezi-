@@ -63,13 +63,17 @@ ok("açıklama: neden seçilmeyen analize girmez", HTML.indexOf("Neden seçilmey
 ok("liste 25 satırla sınırlı (yük)", /bekleyen\.slice\(0, 25\)/.test(HTML));
 ok("kalan satır sayısı yazılıyor", /bekleyen\.length - 25/.test(HTML));
 
-// ---------- 3) Konu eşlemesi: hazır öneri ----------
-console.log("\n== 3) Konu eşlemesi otomasyonu ==");
-ok("her satırda en iyi öneri ön seçili", /const secili = oneri \? oneri\.topicKey : "";/.test(APP) && /\(k\.topicKey === secili \? " selected" : ""\)/.test(APP));
-ok("eşleme listesi katlanır (<details>)", APP.indexOf("<details id=\"okz-konu-esleme\"") > 0);
-ok("tek düğmeyle onay: 'Önerileri kabul et ve eşle'", APP.indexOf("Önerileri kabul et ve eşle") > 0);
-ok("eşleme yalnız eşlenmemişler için", APP.indexOf("function okzEslenmemisKonular") > 0);
-ok("eşlenmişler listede tekrar etmiyor", /if \(r && r\.guven === "kesin"\) return;/.test(APP));
+// ---------- 3) Konu eşlemesi: TAMAMEN OTOMATİK (v82) ----------
+// KULLANICI (18 Kas): "Neden hâlâ okulizyon konu eşleşmesi var profilde?
+// HANİ otomatik sorunsuzdu!" Profil'deki elle eşleme paneli KALDIRILDI.
+console.log("\n== 3) Konu eşlemesi otomatik ==");
+ok("profilde elle eşleme paneli YOK", APP.indexOf('id="okz-konu-esleme"') < 0);
+ok("'Önerileri kabul et ve eşle' düğmesi YOK", APP.indexOf('>Önerileri kabul et ve eşle<') < 0 && APP.indexOf('data-act="okzKonuEsle"') < 0);
+ok("eşlenmemiş listesi kodu YOK (ölü kod yok)", APP.indexOf("function okzEslenmemisKonular") < 0);
+ok("eşleme açılışta kendiliğinden çalışıyor", APP.indexOf("okzKonulariOnar(true).then(") > 0);
+ok("MEB resmî çıktı kodu katmanı kullanılıyor", /MEBM\.ucBul\(kazanim, kanon\)/.test(APP) && /MEBM\.uygulamaKonu\(/.test(APP));
+ok("her çekimde eşleme otomatik (indeks çekimden önce yükleniyor)", /try \{ await okzkYukle\(\); \} catch[\s\S]{0,400}okzDenemeyeYaz\(/.test(APP));
+ok("kazanım → konu dönüşümü tek yerde", /function okzKayitKonu\(ders, kazanim\)/.test(APP) && /topic: e \? e\.konu : String\(kazanim \|\| ""\)/.test(APP));
 
 // ---------- 4) Gerçek eşleme: 26 kayıtta kaç karar ----------
 console.log("\n== 4) Örnek yük ===");

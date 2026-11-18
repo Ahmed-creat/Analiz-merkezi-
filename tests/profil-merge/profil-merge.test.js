@@ -105,6 +105,11 @@ bekle("il seçimi Gaziantep", (document.getElementById("okz-il") || {}).value ==
    Profilde 'Analiz Bekliyor' adı, sayacı ve "N soru bekliyor" yazısı YOK. */
 bekle("profilde 'soru bekliyor' sayacı YOK", !/soru bekliyor/.test(icerik));
 bekle("profilde 'Analiz Bekliyor' yazısı YOK", !/Analiz Bekliyor/.test(icerik));
+/* v82 — KULLANICI: "Neden hâlâ okulizyon konu eşleşmesi var profilde?"
+   Elle eşleme paneli profilden TAMAMEN kalktı; eşleme otomatik. */
+bekle("profilde 'Konu Eşlemesi' paneli YOK", !/KONU EŞLEMESİ|Konu eşlemesi/i.test(icerik));
+bekle("profilde 'Önerileri kabul et ve eşle' YOK", !icerik.includes("Önerileri kabul et ve eşle"));
+bekle("profilde konu seçim kutuları YOK", !icerik.includes("data-okz-konu"));
 /* Sürüm damgası artık ELLE yazılmıyor: PWA_SURUM'dan gelir (G-12). */
 window.surumEtiketiYaz();
 const surumEl = document.getElementById("am-surum");

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v81-surum-guncel";
+const PWA_SURUM = "v82-oto-esleme";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -802,13 +802,14 @@ function renderProfileModal() {
   }
   html += '</div>';
 
-  // B2) OKULİZYON KONU EŞLEMESİ (kazanım → konu başlığı)
-  // Tek bir bölüm hatası Profil penceresini bozmasın
-  try { html += okzKonuEslemeHtml(); } catch (e) { console.warn("Konu eşlemesi bölümü basılamadı:", e); }
-  if (!OKZK_IDX) okzkYukle().then(() => {
-    const pm = document.getElementById("pwa-profile-modal");
-    if (pm && pm.style.display === "flex") renderProfileModal();
-  });
+  /* v82 — KULLANICI: "Neden hâlâ okulizyon konu eşleşmesi var profilde?
+     HANİ otomatik sorunsuzdu!" HAKLI: elle eşleme paneli profilden KALDIRILDI.
+     Kazanım → konu eşlemesi tamamen OTOMATİK yürür (açılışta ve her çekimde
+     okzKonulariOnar): MEB resmî çıktı kodu (okz-meb.js) → uygulama konusu,
+     kesin başlık geçişi, TDE sözlüğü, öğrenen önbellek. Öğrenciye seçim
+     yaptırılmaz; bu yüzden burada gösterilecek bir liste de yok.
+     Eski sürümlerde kaydedilmiş elle eşlemeler (konuHaritasi) okunmaya devam
+     eder — veri kaybı olmaz. */
 
   // v41 — KULLANICI: "Uygulamada öğrenciyi ilgilendirmeyen yazıları sil.
   // Mesela teknik yazılar vb. Bildirim çalıştığına göre test bildirimi, cihaz
@@ -1840,113 +1841,18 @@ function okzKonulariOnar(sessiz) {
   }).catch(() => 0);
 }
 
-// Henüz eşlenmemiş kazanımlar (Profil → Konu Eşlemesi listesi)
-function okzEslenmemisKonular() {
-  const harita = okzKonuHaritasi();
-  const gorulen = Object.create(null);
-  const liste = [];
-  window.__okzOtoEslenen = [];
-  const ekle = (ders, kazanim) => {
-    if (!ders || !kazanim) return;
-    const kanon = okzDersKanonik(ders);
-    const anahtar = okzHaritaAnahtar(kanon, kazanim);
-    if (gorulen[anahtar]) return;
-    gorulen[anahtar] = 1;
-    if (harita[anahtar]) return;
-    if (OKZK_IDX && window.OKZK) {
-      const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
-      if (r && r.guven === "kesin") return;
-      // Güçlü öneri varsa satır açma; kullanıcı yalnız belirsizleri görsün
-      const o = okzKonuBul(kanon, kazanim);
-      if (o && o.kaynak === "oto") { window.__okzOtoEslenen.push({ ders: kanon, kazanim: kazanim, konu: o.konu }); return; }
-    }
-    const oneriler = OKZK_IDX && window.OKZK ? window.OKZK.adaylar(kazanim, kanon, OKZK_IDX, 3) : [];
-    liste.push({ ders: kanon, kazanim: kazanim, oneriler: oneriler });
-  };
-  try {
-    (Array.isArray(state.exams) ? state.exams : []).forEach(ex => {
-      (Array.isArray(ex && ex.errorLogs) ? ex.errorLogs : []).forEach(l => l && ekle(l.lesson, l.kazanim || l.topic));
-    });
-  } catch (e) { /* durum hazır değilse boş liste */ }
-  return liste;
-}
-
-// Seçilen eşlemeleri kaydet: haritaya yaz + kayıtları onar
-async function okzKonuEsleKaydet() {
-  await okzkYukle();
-  const harita = okzKonuHaritasi();
-  let say = 0;
-  document.querySelectorAll("[data-okz-konu]").forEach(sel => {
-    const ders = sel.dataset.okzDers || "";
-    const kazanim = sel.dataset.okzKazanim || "";
-    const secim = sel.value;
-    if (!ders || !kazanim || !secim) return;
-    harita[okzHaritaAnahtar(ders, kazanim)] = secim;
-    say++;
-  });
-  if (!say) return toast("Hiç konu seçilmedi.", "info");
-  saveState();
-  const degisen = await okzKonulariOnar(true);
-  renderProfileModal();
-  toast(say + " eşleme kaydedildi" + (degisen ? " · " + degisen + " kayıt birleştirildi" : "") + ".", "success");
-}
-
-// Konu eşlemesi arayüzünü bas (Profil penceresi)
-// KURAL: Öneri yalnız GÜÇLÜ ise (>=0.35) hazır seçili gelir; zayıf öneri
-// kutuya yazılmaz, yanlış eşleşme kazara kaydedilmesin.
-const OKZ_ONERI_ESIK = 0.35;
-function okzKonuEslemeHtml() {
-  const eksik = okzEslenmemisKonular();
-  const harita = okzKonuHaritasi();
-  const elleSayi = Object.keys(harita).length;
-  let h = '<details id="okz-konu-esleme" ' + (eksik.length ? 'open' : '') + ' style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;"><summary style="cursor:pointer;font-size:12.5px;font-weight:700;">Okulizyon konu eşlemesi' + (eksik.length ? ' · ' + eksik.length + ' bekliyor' : ' ✓') + '</summary>';
-  h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKULİZYON KONU EŞLEMESİ</div>' + (elleSayi ? '<span style="font-size:10.5px;opacity:0.6;">' + elleSayi + ' eşleme kayıtlı</span>' : '') + '</div>';
-  h += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:8px;">Okulizyon\'daki kazanımları uygulamadaki konu başlıklarıyla eşleştir. Eşleşmeyen kazanımların soru havuzu açılmaz. Bir kez yapman yeterli — sonraki çekimlerde otomatik uygulanır.</div>';
-  if (!eksik.length) {
-    h += '<div style="font-size:12px;color:#16A34A;font-weight:600;">✓ Tüm konular eşlendi — soru havuzu bağlı.</div></details>';
-    return h;
-  }
-  const oto = Array.isArray(window.__okzOtoEslenen) ? window.__okzOtoEslenen : [];
-  if (oto.length) {
-    h += '<details style="border:1px solid rgba(22,163,74,0.35);background:rgba(22,163,74,0.06);border-radius:10px;padding:8px;margin-bottom:8px;">';
-    h += '<summary style="cursor:pointer;font-size:11.5px;font-weight:700;color:#15803D;">✓ ' + oto.length + ' kazanım otomatik eşlendi (kontrol etmek için aç)</summary>';
-    h += '<div style="margin-top:6px;display:grid;gap:4px;">' + oto.slice(0, 30).map(x =>
-      '<div style="font-size:10.5px;opacity:0.8;line-height:1.35;">' + escHtml(String(x.kazanim).slice(0, 80)) + ' → <b>' + escHtml(x.konu) + '</b></div>').join("") + '</div>';
-    h += '</details>';
-  }
-  if (!eksik.length && oto.length) {
-    h += '<div style="font-size:11px;opacity:0.7;margin-bottom:6px;">Belirsiz kazanım kalmadı — seçim yapmana gerek yok.</div>';
-  }
-  h += '<div style="font-size:11.5px;font-weight:700;color:#B45309;margin-bottom:4px;">' + eksik.length + ' kazanım bekliyor</div>';
-  h += '<div style="font-size:11px;opacity:0.7;line-height:1.45;margin-bottom:8px;">Her satır hazır öneriyle gelir; dokunman yeterli. Gerekirse listeden değiştir.</div>';
-  let sonDers = "";
-  h += '<div style="display:grid;gap:8px;">';
-  eksik.forEach((x, i) => {
-    const konular = OKZK_IDX && window.OKZK ? window.OKZK.konular(x.ders, OKZK_IDX) : [];
-    const oneri = x.oneriler && x.oneriler[0];
-    // Öğrenciyi 26 satırlık seçimle yormamak için HER satır en iyi öneriyle
-    // hazır gelir. Emin olmadığımızda bunu açıkça yazarız; yanlışsa değiştirir.
-    const guclu = oneri && oneri.skor >= OKZ_ONERI_ESIK;
-    const secili = oneri ? oneri.topicKey : "";
-    if (x.ders !== sonDers) {
-      sonDers = x.ders;
-      h += '<div style="font-size:11px;font-weight:800;opacity:0.55;margin-top:4px;">' + escHtml(x.ders) + '</div>';
-    }
-    let opts = '<option value="">— konu seç —</option>';
-    opts += konular.map(k => '<option value="' + escHtml(k.topicKey) + '"' + (k.topicKey === secili ? " selected" : "") + '>' + escHtml(k.konu) + '</option>').join("");
-    h += '<div style="border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:8px;">';
-    h += '<div style="font-size:11px;opacity:0.75;line-height:1.4;margin-bottom:6px;">' + escHtml(String(x.kazanim).slice(0, 140)) + '</div>';
-    h += '<select data-okz-konu="' + i + '" data-okz-ders="' + escHtml(x.ders) + '" data-okz-kazanim="' + escHtml(x.kazanim) + '" style="width:100%;box-sizing:border-box;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:12.5px;">' + opts + '</select>';
-    if (oneri && oneri.skor > 0) {
-      h += '<div style="font-size:10.5px;opacity:0.6;margin-top:3px;">Öneri (%' + Math.round(oneri.skor * 100) + '): ' + escHtml(oneri.konu) + (guclu ? ' — hazır seçildi' : ' — emin değilim; yanlışsa listeden değiştir') + '</div>';
-    }
-    h += '</div>';
-  });
-  h += '</div>';
-  h += '<button data-act="okzKonuEsle" class="btn btn-primary btn-sm" style="margin-top:10px;">Önerileri kabul et ve eşle</button>';
-  h += '</details>';
-  return h;
-}
+/* v82 — ELLE EŞLEME ARAYÜZÜ KALDIRILDI (kullanıcı: "HANİ otomatik sorunsuzdu").
+   Burada duran okzEslenmemisKonular / okzKonuEsleKaydet / okzKonuEslemeHtml,
+   Profil'de "Okulizyon konu eşlemesi · N bekliyor" listesi çiziyor ve öğrenciye
+   "Önerileri kabul et ve eşle" dedirtiyordu. Oysa eşleme zaten otomatik:
+     • okzKonulariOnar açılışta + her çekimde çalışır
+     • okz-meb.js resmî çıktı KODU → uygulama konusu (deterministik)
+     • kesin başlık geçişi (okz-konu.js), TDE sözlüğü (okz-tde.js), öğrenen
+       önbellek (kazanim_konu_cache)
+   Ölçüm (tests/okz-konu-entegrasyon.test.js): Okulizyon'un gerçek kazanım
+   örneklerinin 36/36'sı eşleşir, 34'ü soru havuzuna bağlanır; kalan 2 Din
+   Kültürü kazanımı MEB başlığına yazılır (2018 programı havuzu yok).
+   Eski sürümlerde kaydedilmiş elle eşlemeler (konuHaritasi) okunmaya devam eder. */
 
 // Sınavın içerik parmak izi: Okulizyon verisi değişirse yakalanır
 function okzHash(ex) {
@@ -1991,7 +1897,8 @@ function initOkulizyonUI() {
     else if (a === "okzSonucGuncelle") okzSonucuYaz(el.dataset.ad, el.dataset.tarih);
     /* v79 — okzGitDenemeler KALDIRILDI: profildeki "Analiz Bekliyor" bölümü ve
        "Denemelerim'de aç" götürücüsü yok; düğmesiz kalan eylem ölü kod olurdu. */
-    else if (a === "okzKonuEsle") okzKonuEsleKaydet();
+    /* v82 — okzKonuEsle (profildeki elle eşleme düğmesi) KALDIRILDI:
+       eşleme otomatik, düğmesiz eylem ölü kod olurdu. */
     /* v78 (G-10) — okzYoksay / okzHepsiniYoksay: düğmeleri kuyruk listesiyle
        birlikte kalktı, kendileri de kaldırıldı (ölü kod yok). Defter sıfırlama
        KALDI: sınavı Denemelerim'den silip yeniden çekmek isteyene kurtarma yolu

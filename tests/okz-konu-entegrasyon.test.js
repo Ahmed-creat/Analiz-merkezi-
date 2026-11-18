@@ -16,6 +16,11 @@ const KOK = path.join(__dirname, "..");
 const APP = fs.readFileSync(path.join(KOK, "site", "app-pwa.js"), "utf8");
 const OKZK = require("../site/okz-konu.js");
 const OKZ = require("../site/okz-normalize.js");
+// okz-meb.js yüklenirken globalThis.OKZM yazar (klasik script davranışı).
+// Testin 1-6. bölümleri OKZM'SİZ ortamı ölçtüğü için hemen temizlenir;
+// 7b bölümü modülü window'a AÇIKÇA verir.
+const OKZM = require("../site/okz-meb.js");
+try { delete globalThis.OKZM; } catch (e) { /* */ }
 
 let gecen = 0, kalan = 0;
 const hatalar = [];
@@ -43,7 +48,7 @@ function ortam(state) {
   const fn = new Function(
     "window", "document", "fetch", "state", "okzStore", "okzBilinenDersler",
     "saveState", "toast", "navigate", "currentPage", "escHtml",
-    BLOK + "\nreturn { okzkYukle, okzKonuBul, okzKayitKonu, okzKonulariOnar, okzEslenmemisKonular, okzKonuHaritasi, okzHaritaAnahtar, okzbktBirlestir, okzKonuEslemeHtml };"
+    BLOK + "\nreturn { okzkYukle, okzKonuBul, okzKayitKonu, okzKonulariOnar, okzKonuHaritasi, okzHaritaAnahtar, okzbktBirlestir };"
   );
   const api = fn(
     window,
@@ -201,17 +206,52 @@ function durumKur() {
   ok("eşlenen konu havuzda var", INDEKS_VERISI.havuzlar.some((h) => h.topic_key === ucgenAnahtar));
   ok("kazanım anahtarı kalmadı", !Object.keys(state.bkt_state).some((k) => k.indexOf("açıortayların") > 0));
 
-  // ---------- 7) Eşlenmemişler listesi (arayüz) ----------
-  console.log("\n== 7) Arayüz listesi ==");
-  const eksik = o.api.okzEslenmemisKonular();
-  ok("eşlenmemişler listeleniyor", Array.isArray(eksik));
-  ok("listede artık 'Türkçe' dersi yok (kanonikleşti)", eksik.every((x) => x.ders !== "Türkçe"));
-  ok("her satırda öneri dizisi var", eksik.every((x) => Array.isArray(x.oneriler)));
-  const html = o.api.okzKonuEslemeHtml();
-  ok("arayüz HTML üretiyor", typeof html === "string" && html.indexOf("OKULİZYON KONU EŞLEMESİ") > 0);
-  ok("arayüzde kaydet düğmesi var", html.indexOf('data-act="okzKonuEsle"') > 0);
-  ok("arayüzde seçim kutuları var", html.indexOf("data-okz-konu") > 0);
-  ok("arayüzde kazanım metni kaçışlı basılıyor (XSS)", html.indexOf("<script") < 0);
+  // ---------- 7) Profilde ELLE eşleme arayüzü YOK (kullanıcı isteği) ----------
+  console.log("\n== 7) Elle eşleme arayüzü kaldırıldı ==");
+  const KOD = APP.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+  ok("okzKonuEslemeHtml kaldırıldı (ölü kod yok)", KOD.indexOf("okzKonuEslemeHtml") < 0);
+  ok("okzEslenmemisKonular kaldırıldı", KOD.indexOf("okzEslenmemisKonular") < 0);
+  ok("okzKonuEsleKaydet kaldırıldı", KOD.indexOf("okzKonuEsleKaydet") < 0);
+  ok("'Önerileri kabul et ve eşle' düğmesi yok", KOD.indexOf("Önerileri kabul et ve eşle") < 0);
+  ok("'OKULİZYON KONU EŞLEMESİ' başlığı yok", KOD.indexOf("OKULİZYON KONU EŞLEMESİ") < 0);
+  ok("düğmesiz 'okzKonuEsle' eylemi yok", KOD.indexOf('a === "okzKonuEsle"') < 0);
+  ok("eşleme yine de otomatik çalışıyor (açılışta)", APP.indexOf("okzKonulariOnar(true).then(") > 0);
+  ok("eski elle eşlemeler okunmaya devam ediyor", KOD.indexOf("okzKonuHaritasi()[okzHaritaAnahtar(kanon, kazanim)]") > 0);
+
+  // ---------- 7b) OTOMATİK eşleme: Okulizyon'un GERÇEK kazanım metinleri ----
+  // window.OKZM (site/okz-meb.js) GERÇEK sayfada olduğu gibi verilir; ölçüm
+  // kullanıcının 16 Kasım'da gönderdiği 36 gerçek kazanım cümlesiyle yapılır.
+  console.log("\n== 7b) Otomatik eşleme (gerçek kazanım metinleri) ==");
+  {
+    const winTam = { OKZ: OKZ, OKZK: OKZK, OKZM: OKZM };
+    const fnTam = new Function(
+      "window", "document", "fetch", "state", "okzStore", "okzBilinenDersler",
+      "saveState", "toast", "navigate", "currentPage", "escHtml",
+      BLOK + "\nreturn { okzkYukle, okzKayitKonu };"
+    );
+    const st2 = { exams: [], okulizyon: { importedKeys: [], pending: [], aktarilan: {}, guncellenen: [], konuHaritasi: {} } };
+    const apiTam = fnTam(winTam, { querySelectorAll: () => [] },
+      () => Promise.resolve({ ok: true, json: () => Promise.resolve(INDEKS_VERISI) }),
+      st2, () => st2.okulizyon, () => BILINEN, () => { }, () => { }, () => { }, "tracking",
+      (s) => String(s == null ? "" : s));
+    await apiTam.okzkYukle();
+    const ORNEKLER = require("./fixtures/okulizyon-kazanim-ornekleri.js");
+    const havuzlu = new Set(INDEKS_VERISI.havuzlar.map((h) => h.topic_key));
+    let eslenen = 0, bagli = 0;
+    const eksik = [];
+    for (const [kazanim, ders] of ORNEKLER) {
+      const y = apiTam.okzKayitKonu(ders, kazanim);
+      if (!y.eslendi) { eksik.push([ders, kazanim]); continue; }
+      eslenen++;
+      if (havuzlu.has(y.lesson + " > " + y.topic)) bagli++;
+    }
+    ok("gerçek kazanımların TAMAMI otomatik eşleşiyor", eslenen === ORNEKLER.length,
+      eslenen + "/" + ORNEKLER.length + " · eksik: " + JSON.stringify(eksik.slice(0, 3)));
+    ok("en az 34 kazanım soru havuzuna bağlı", bagli >= 34, "bağlı: " + bagli + "/" + ORNEKLER.length);
+    ok("hiçbir kayıt ham kazanım metninde kalmıyor (panel gerekmez)", eslenen === ORNEKLER.length);
+    const m1 = apiTam.okzKayitKonu("Coğrafya", "Örnek olay, olgu ve/veya mekânın temel coğrafi koşullarını tanımlar.");
+    esit("yanlış aday değil, MEB kodu kazanır", m1.topic, "1.1 Coğrafi Bakış");
+  }
 
   // ---------- 8) BKT birleştirme matematiği ----------
   console.log("\n== 8) Birleştirme matematiği ==");
