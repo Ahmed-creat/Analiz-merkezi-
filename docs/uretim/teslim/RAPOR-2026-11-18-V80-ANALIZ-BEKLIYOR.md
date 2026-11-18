@@ -1,8 +1,8 @@
 # RAPOR — 18 Kasım · 40. tur · "Analiz Bekliyor" düzeltmeleri · TOPLU YAYIN (v80)
 
-**Tarih:** 2026-11-18 · **Dal:** `arena/cc4de070-analiz-merkezi` · **Bitiş commit'i:** `72b1361`
-**Yayın:** `dpl_EPQJuYvSVN3gLgB6nCGZDHBV6BDu` → **PROMOTED** · https://analiz-merkezi.vercel.app
-**Sürüm damgası:** `v80-analiz-bekliyor` (PWA_SURUM ↔ SW CACHE `analiz-merkezi-v-20261118-v80-analiz-bekliyor`)
+**Tarih:** 2026-11-18 · **Dal:** `arena/cc4de070-analiz-merkezi` · **Bitiş commit'i:** `1903621`
+**Yayın:** `dpl_HxmTHfspQzzddyMY8kVR4Udp7bQf` → **PROMOTED** (önceki: `dpl_EPQJuYvSVN3gLgB6nCGZDHBV6BDu`) · https://analiz-merkezi.vercel.app
+**Sürüm damgası:** `v81-surum-guncel` (PWA_SURUM ↔ SW CACHE `analiz-merkezi-v-20261118-v81-surum-guncel`)
 
 Kullanıcı (18 Kasım, 4 madde):
 1. *"Profilden analiz bekliyor'u kaldırmamışsın."*
@@ -59,18 +59,26 @@ Metin aramıyor; davranışı koşturuyor:
 | `npm run -s test:pools` | **192 havuz / 2.110 soru** |
 | `npm run -s okz:kapsam` | 192 + 1 istisna (paragraf havuzu — kalıcı istisna) |
 
+### 4. madde sonrası ek düzeltme — alt bilgi sürümü (v81)
+
+Kullanıcı *"Herşeyin güncel olduğundan emin olun"* dediği için canlı sayfa kontrol edildi: sayfa alt bilgisi hâlâ **"Analiz Merkezi v5.1"** yazıyordu (G-12'de yalnız Ayarlar altındaki etiket damgaya bağlanmıştı).
+- `index.html` alt bilgisi: `Analiz Merkezi <span id="am-surum-alt" data-am-surum="1">v5.1</span> · …`
+- `surumEtiketiYaz()` artık `#am-surum` **ve** tüm `[data-am-surum]` öğelerini `PWA_SURUM` ile dolduruyor.
+- Test: "alt bilgi sürüm damgasına bağlı", "elle yazılmış 'Analiz Merkezi v5.1' kalmadı" (`v78-kalan-duzeltmeler` → **34/34**), jsdom'da alt bilgi damgası (`profil-merge` → **48/48**).
+
 ---
 
 ## 3) Yayın ve canlı doğrulama
 
-- Commit `72b1361` → GitHub dalına push edildi.
-- Vercel **production** deployment: `dpl_EPQJuYvSVN3gLgB6nCGZDHBV6BDu` · `READY` · `readySubstate: PROMOTED` · alias `analiz-merkezi.vercel.app` atandı.
+- Commitler `72b1361` (4 madde) ve `1903621` (alt bilgi sürümü) → GitHub dalına push edildi.
+- Vercel **production** deployment: `dpl_EPQJuYvSVN3gLgB6nCGZDHBV6BDu` (v80) ve son olarak `dpl_HxmTHfspQzzddyMY8kVR4Udp7bQf` (v81) · `READY` · `readySubstate: PROMOTED` · alias `analiz-merkezi.vercel.app` atandı.
 - Canlı kontroller (`fetch_page`):
 
 | URL | Beklenen | Görülen |
 |---|---|---|
-| `/sw.js` | `CACHE = analiz-merkezi-v-…-v80-analiz-bekliyor` | ✅ |
-| `/app-pwa.js` satır 1 | `const PWA_SURUM = "v80-analiz-bekliyor"` | ✅ |
+| `/sw.js` | `CACHE = analiz-merkezi-v-…-v81-surum-guncel` | ✅ |
+| `/app-pwa.js` satır 1 | `const PWA_SURUM = "v81-surum-guncel"` | ✅ |
+| `/app-pwa.js` sürüm işlevi | `querySelectorAll("[data-am-surum]")` ile alt bilgi de dolduruluyor | ✅ |
 | `/app-pwa.js` profil bölümü | "Okulizyon sonuçları" düğmesi var; "Analiz Bekliyor"/"soru bekliyor" **yok** | ✅ |
 | `/app-pwa.js` okz penceresi | bekleyen bloğu ve götürücü **yok** (yalnız duyurular + defter sıfırlama) | ✅ |
 
@@ -86,4 +94,4 @@ Metin aramıyor; davranışı koşturuyor:
 
 ## 5) Kullanıcıya tek cümlelik özet
 
-Profilde "Analiz Bekliyor" adı, sayacı ve "N soru bekliyor" yazısı tamamen kalktı; Denemelerim'de satırdaki "analiz bekliyor (N) →" düğmesi o denemenin listesini açıp ekrana getiriyor; yanlış ve boş artık ayrı neden listeleri kullanıyor ve "tümü" karşı türe yazmıyor; kart normal deneme kartı görünümünde. Sürüm `v80`, canlıda doğrulandı.
+Profilde "Analiz Bekliyor" adı, sayacı ve "N soru bekliyor" yazısı tamamen kalktı; Denemelerim'de satırdaki "analiz bekliyor (N) →" düğmesi o denemenin listesini açıp ekrana getiriyor; yanlış ve boş artık ayrı neden listeleri kullanıyor ve "tümü" karşı türe yazmıyor; kart normal deneme kartı görünümünde; alt bilgideki elle yazılmış "v5.1" de kalktı. Sürüm `v81-surum-guncel`, canlıda doğrulandı.
