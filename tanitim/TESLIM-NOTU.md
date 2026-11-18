@@ -6,7 +6,9 @@ Tarih: 2026-11-18 · Dal: `arena/4cc1805b-analiz-merkezi`
 
 | Dosya | Açıklama |
 |-------|----------|
-| `teslim/Analiz-Merkezi-tanitim-v2.mp4` | 1920×1080 · 30 fps · H.264 · **79,07 sn** · 2372 kare · 1619 kb/s · **16 MB** · ses yok |
+| `teslim/Analiz-Merkezi-tanitim-filmi.mp4` | **Tanıtım filmi (lansman):** problem → bilim → ürün. 1920×1080 · 30 fps · H.264 · **86,8 sn** · 2604 kare · ses yok. Yapım notu: `TANITIM-NOTU.md` |
+| `teslim/poster-filmi.png` | Filmin kapak karesi |
+| `teslim/Analiz-Merkezi-tanitim-v2.mp4` | **Kullanım videosu:** tek kesintisiz gerçek akış. 1920×1080 · 30 fps · H.264 · **79,07 sn** · 2372 kare · **16 MB** · ses yok |
 | `teslim/poster.png` | Kapak karesi |
 | `teslim/Analiz-Merkezi-tanitim.mp4` | İlk sürüm (v1, 72,5 sn) — arşiv olarak duruyor |
 | `src/` | Remotion kaynağı: açılış · akış (kamera/imleç/altyazı) · kapanış |
