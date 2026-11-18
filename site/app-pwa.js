@@ -1,4 +1,4 @@
-const PWA_SURUM = "v88-silinen-geri-gelmez";
+const PWA_SURUM = "v90-bildirim-ikon-baslik";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -2072,6 +2072,32 @@ function okzIsaretle(ex) {
   /* v86 — burada deftere YAZILMAZ: "işlendi" bilgisi Denemelerim'in kendisidir. */
 }
 
+/* v90 — KULLANICI: "Yeni deneme çekerse 'yeni deneme sonucun var' deyip onu
+   analiz etmesini söylesin."
+   Bildirim TARAYICIDAN gönderilmez (gizli anahtar olmaz): veritabanındaki
+   `bildirim_deneme_kuyruk` RPC'sine bir satır bırakılır; 5 dakikada bir
+   çalışan iş kuyruğu boşaltıp push'u gönderir. Uygulama kapalıyken de düşer,
+   sessiz saatte (TR 21–06) bekler, aynı sınav iki kez bildirilmez. */
+function okzDenemeBildirimKuyruk(yeniListe) {
+  try {
+    if (!sb || !currentUser || typeof sb.rpc !== "function") return;
+    (yeniListe || []).slice(0, 3).forEach(function (ex) {
+      const ad = String((ex && ex.name) || "Deneme").replace(/^Okulizyon:\s*/i, "");
+      const net = (ex && Number(ex.net)) ? Number(ex.net).toFixed(1).replace(/\.0$/, "") : "";
+      const anahtar = "deneme:" + (typeof okzKey === "function" ? okzKey(ex) : ad);
+      const govde = ad + (net ? " · " + net + " net" : "") +
+        ". Sonucu senin için analiz edeyim mi? Aç, birlikte bakalım.";
+      sb.rpc("bildirim_deneme_kuyruk", {
+        p_anahtar: anahtar,
+        p_baslik: "Yeni deneme sonucun var",
+        p_govde: govde.slice(0, 180)
+      }).then(function (r) {
+        if (r && r.error) { /* bildirim kuyruğu sessizce atlanır, akış bozulmaz */ }
+      }).catch(function () { /* */ });
+    });
+  } catch (e) { /* */ }
+}
+
 /* v83 — "Okulizyon'dan yeni deneme geldi" işareti.
    Neden ayrı bir alan: neden bekleyen satır sayısı KALICI bir durum (kullanıcı
    hepsine neden yazana kadar sürer), yeşil nokta ise GEÇİCİ bir "yeni içerik"
@@ -2433,6 +2459,7 @@ async function okzKuyrukCek(zorla) {
       /* v86 — Denemelerim'e GERÇEKTEN yeni deneme yazıldıysa yeşil nokta yanar
          (sıfırlama sonrası yeniden çekim de "yeni"dir; kullanıcı görsün). */
       okzYeniPartiIsaretle(yeni, n);
+      okzDenemeBildirimKuyruk(yeni);
       okzBadge();
       toast("Okulizyon: " + yeni.length + " deneme Denemelerim'e eklendi · " + n + " soru neden bekliyor.", "success");
       okzDurum("ok", "Okulizyon'dan " + gelen.length + " sınav okundu · " + yeni.length + " deneme Denemelerim'e yazıldı (" + n + " soru neden bekliyor).");
