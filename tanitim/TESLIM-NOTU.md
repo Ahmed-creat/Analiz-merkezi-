@@ -1,4 +1,4 @@
-# Teslim notu — Analiz Merkezi tanıtım videosu
+# Teslim notu — Analiz Merkezi tanıtım videosu (v2)
 
 Tarih: 2026-11-18 · Dal: `arena/4cc1805b-analiz-merkezi`
 
@@ -6,67 +6,77 @@ Tarih: 2026-11-18 · Dal: `arena/4cc1805b-analiz-merkezi`
 
 | Dosya | Açıklama |
 |-------|----------|
-| `teslim/Analiz-Merkezi-tanitim.mp4` | 1920×1080 · 30 fps · H.264 (High) · 72,50 s · 2175 kare · 3169 kb/s · 28,7 MB |
-| `teslim/poster.png` | Kapak karesi (kapanış) |
-| `src/` | Remotion kaynak kodu (6 sahne + bileşenler + tema) |
-| `public/ekran/*.png` | Uygulamadan alınan 19 gerçek ekran görüntüsü (3840×2160) |
-| `public/fonts/`, `public/logo.png` | Inter yazı tipleri (Türkçe karakterli) ve uygulamanın kendi simgesi |
-| `scripts/yakala.js` | Ekranları uygulamadan otomatik çeken betik |
-| `scripts/yakalama-kaydi.json` | Yakalama sırasında ölçülen düğme koordinatları (imleç hedefleri) |
+| `teslim/Analiz-Merkezi-tanitim-v2.mp4` | 1920×1080 · 30 fps · H.264 · **79,07 sn** · 2372 kare · 1619 kb/s · **16 MB** · ses yok |
+| `teslim/poster.png` | Kapak karesi |
+| `teslim/Analiz-Merkezi-tanitim.mp4` | İlk sürüm (v1, 72,5 sn) — arşiv olarak duruyor |
+| `src/` | Remotion kaynağı: açılış · akış (kamera/imleç/altyazı) · kapanış |
+| `public/kayit/kayit.mp4` | Gerçek arayüzden yakalanan akış (71,3 sn, 2138 kare) |
+| `public/kayit/akis.json` | Kare → imleç konumu, tık anları ve altyazı olayları |
+| `scripts/akis-kare.js` | Akışı kare kare yakalayan betik (gerçek tıklamalarla) |
+| `scripts/mock-veri.js` | Ekranları dolduran gerçekçi öğrenci verisi (localStorage tohumu) |
 
 ## Hangi sürümden çekildi
 
-Ekranlar **dal ucundaki** uygulamadan alındı:
+Videodaki arayüz **`arena/cc4de070-analiz-merkezi` dalının ucu `c48f51e` (v83)**.
+Vercel'de yayında olan sürümün aynısı.
 
 ```bash
-git archive origin/arena/4cc1805b-analiz-merkezi site | tar -x -C /tmp/site-yeni
+git fetch origin arena/cc4de070-analiz-merkezi
+git archive FETCH_HEAD site | tar -x -C /tmp/site-son
+python3 -m http.server 8081 --directory /tmp/site-son/site
 ```
 
-- Dal ucunda `site/content/soru_havuzlari` altında **192 havuz / 2110 soru** var; manifestin
-  gösterdiği 192 dosyanın tamamı mevcut (`eksik dosya: 0`).
-- Çalışma ağacındaki `site/` klasöründe 36 havuz dosyası eksikti; video bu yüzden
-  önce yanlış (eski) sürümden çekilmişti, ardından **dal ucundan yeniden çekildi**.
-- Arayüz kodu (`index.html`, `bkt-engine.js`, `kart.js`, `app-pwa.js`) iki sürümde birebir
-  aynı; fark yalnızca soru havuzu dosyalarında.
+Uygulama kaynak dosyalarına **dokunulmadı**; tüm iş `tanitim/` altında.
+
+## Videoda ne anlatılıyor (tek kesintisiz akış)
+
+| # | Adım | Ne görünüyor |
+|---|------|--------------|
+| — | Açılış | Marka + “Deneme analizi → günlük çalışma planı” |
+| 1 | Ana sayfa | 5 deneme · 774 soru · ort. net 67,45 · net gelişimi ve ders başarı grafikleri |
+| 2 | Denemelerim | Okulizyon’dan çekilmiş 2 deneme + manuel giriş formu |
+| 3 | Deneme girişi | TDE 27/3, Matematik 23/7 yazılıyor; her yanlış için **konu + neden** satırları |
+| 4 | Analiz | Kayıt sonrası Acil Çalışılacaklar listesinin kurulması |
+| 5 | Çalış | “Çalış” → 5 adımlı çalışma yol haritası, adımlar tek tek tamamlanıyor |
+| 6 | Kısa kontrol | Gerçek 5 soruluk kontrol (Biyoloji · fotosentez), yanlışın nedeni seçiliyor |
+| 7 | Konu tamam | “Tamamlandı — hafıza takibinde”, tekrar takvimi kuruluyor |
+| 8 | Bildirim | Bildirim merkezi: “Yeni Konu Tamamlandı … ilk tekrar 19.11.2026” |
+| 9 | Tekrar | “Tekrar Ettim · kartlar zorunlu” → kart turu (Bildim/Bilemedim) |
+| 10 | Kapanış | “Her yanlış, bir sonraki adım.” + canlı adres |
 
 ## Ekranların gerçekliği
 
-- Videoda görünen her ekran uygulamanın kendisinden alındı; elle çizilmiş arayüz yok.
-- Videodaki sayılar (%100 hafıza, %90 yeterlilik, sıradaki tekrar 19.11.2026, 2 günlük seri)
-  yakalama sırasında **gerçek tıklamalarla** üretildi: 10. sınıf Biyoloji 1.1 konusu seçildi,
-  dört adım tamamlandı, 5 soruluk kısa kontrole gerçekten girildi (4 doğru, 1 yanlış →
-  yanlışın nedeni seçildi), konu tamamlandı ve hafıza kartı oluştu.
-- Uydurma istatistik, sahte grafik, olmayan özellik yok. Boş olan bölümler (ör. Acil
-  Çalışılacaklar listesi) olduğu gibi gösterildi; anlatım metni mekanizmayı anlatır.
-- Uygulama kaynak dosyalarına dokunulmadı; tüm üretim `tanitim/` altında.
+- Her kare **gerçek uygulamadan** alınan ekran görüntüsüdür; çizilmiş arayüz, uydurma
+  grafik veya olmayan özellik yok.
+- Sayılar gerçek veriden geliyor: `scripts/mock-veri.js` 10. sınıf müfredatına uygun
+  **5 deneme, 12 soru çözümü, 3 kitap, 6 hafıza kaydı, 4 bildirim, 12 günlük seri**
+  yazıyor (localStorage `analizmerkezi_v6`, uygulama şemasıyla birebir).
+- Akış sırasındaki tüm tıklamalar gerçek: “Yeni Deneme Ekle”, ders ders doğru/yanlış,
+  konu+neden seçimi, “Denemeyi Kaydet”, “Çalış”, 4 adım, 5 soruluk kısa kontrol,
+  neden seçimi, “Konuyu tamamla”, bildirim, “Tekrar Ettim” ve 4 kart oylaması.
+- Boş durum ekranı yok; her ekran dolu veriyle açılıyor.
 
-## Kurgu
+## Yöntem (neden ham ekran kaydı değil)
 
-| # | Sahne | Süre | Not |
-|---|-------|------|-----|
-| 1 | Açılış | 5,0 s | Gerçek simge, dönen halka, marka adı |
-| 2 | Problem | 8,0 s | Üç problem kartı, sıralı giriş |
-| 3 | Genel görünüm | 7,0 s | Ana Sayfa, yavaş zoom, modül etiketleri |
-| 4 | Özellikler | 39,5 s | Altı özellik; zoom, vurgu halkası, sanal imleç ve tıklama dalgası |
-| 5 | Modüller | 6,0 s | Altı ekran, 3B eğimli ızgara |
-| 6 | Kapanış | 7,0 s | "Eksiklerini gör. Planını kur. Tekrarı kaçırma." + logo |
+Bu ortamda kare üretimi ölçüldü:
 
-Teknik: koyu lacivert zemin, Inter (uygulamanın kendi yazı tipi), sahne başına 8–18 karelik
-yumuşak karartma, alt şeritte özellik ilerleme çubuğu, kamera kaydırmaları kenarlarda
-boşluk bırakmayacak şekilde sınırlandırıldı.
+| Yöntem | Ölçüm |
+|---|---|
+| CDP screencast (`page.screencast`) | **0–2 kare/sn** (akıcı değil) |
+| Tek kare ekran görüntüsü (1080p) | **194 ms** |
 
-## Kalite kontrol
+Neden: uygulamadaki gizli modal katmanlarında `backdrop-filter: blur(4px)` var; tarayıcı
+bunları gizliyken de yazılımda bulanıklaştırıyor, boyama saniyelere çıkıyor.
 
-- Kare önizlemeleri tek tek incelendi (sahne başları, geçişler, imleç tıklamaları).
-- Türkçe karakterler doğru (ı, İ, ş, ğ, ç, ö, ü) — Inter `latin-ext` alt kümesi gömülü.
-- Yazılar en küçük planda bile okunur (özellik sahnelerinde ekran kartı 1421 px,
-  yakınlaşma 1,24–1,42 arası).
-- Çıktı `ffprobe` ile doğrulandı: 1920×1080, 30 fps, 2175 kare, süre 72,50 s, H.264 High, 3169 kb/s.
-- 8 noktadan kare alınıp kontakt sayfada kontrol edildi (sahne başları, geçişler, imleç, kapanış).
+Çözüm: **kare yakalama hızını video hızından ayırmak.** Betik uygulamayı gerçek
+tıklamalarla sürüyor, her karede küçük bir adım ilerletiyor (kaydırma ~15 px, yazma
+1 karakter, imleç interpolasyonu) ve her adımda ekran görüntüsü alıyor; kareler 30 fps’te
+oynatılıyor. Böylece hareket akıcı, içerik gerçek kalıyor. Kamera yakınlaştırmaları, imleç,
+tık dalgası, adım rozeti ve altyazılar Remotion’da ekleniyor.
 
 ## Bilinen sınırlar
 
-- Ses yok (video sessiz; istenirse ayrıca seslendirme/ müzik eklenebilir).
-- Deneme/net grafiği sahnesinde grafik boş görünüyor: uygulamada grafik ancak en az 2
-  deneme girildikten sonra çizilir; videoda uydurma deneme verisi girilmedi.
-- Yeniden render bu ortamda ~35–45 dakika sürer (2 çekirdek, yazılım OpenGL).
+- **Ses yok.** Sentetik tık sesleri istenirse `out/kayit.mp4` + `akis.json` tık anlarından
+  birkaç dakikada eklenebilir; müzik dosyası ayrıca gerekiyor.
+- Akış 1920×1080 yakalandı; kamera en fazla 1,18× yakınlaştırıyor (kaynak ölçek sınırı).
+- Videoda yalnız tek öğrenci senaryosu (10. sınıf, TYT deneme düzeni) var.

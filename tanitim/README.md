@@ -1,109 +1,90 @@
-# Analiz Merkezi — tanıtım videosu (Remotion)
+# Analiz Merkezi — tanıtım videosu (v2)
 
-1920×1080 · 30 fps · 72,5 saniye · Türkçe. Uygulamanın **kendi arayüzüyle** çekilmiş
-gerçek ekran görüntüleri üzerine kurulu, kodla üretilen bir tanıtım filmi.
+1920×1080 · 30 fps · **79 sn** · Türkçe · ses yok.
+Videodaki **her kare uygulamanın kendisinden** alınmıştır (arayüz v83, dal ucu
+`arena/cc4de070-analiz-merkezi` @ `c48f51e`). Elle çizilmiş arayüz yok.
 
-Videoda gösterilen her ekran `../site/` altındaki canlı uygulamadan alınır. Uygulama
-kaynak dosyalarına **hiç dokunulmaz**; tüm iş bu klasörde durur.
+Uygulama kaynak dosyalarına **hiç dokunulmaz**; tüm iş bu klasörde durur.
+
+## Neden “gerçek ekran kaydı” değil?
+
+Bu ortamda tarayıcı kare üretimi ölçüldü: CDP screencast **0–2 kare/sn** veriyor
+(uygulamadaki gizli modal katmanlarında `backdrop-filter: blur(4px)` yazılım boyamasını
+saniyelere çıkarıyor). Tek kare ekran görüntüsü ise **194 ms** (1080p).
+
+Bu yüzden kare yakalama hızı video hızından ayrıldı: betik uygulamayı gerçek tıklamalarla
+sürüyor, her karede küçük bir adım ilerletiyor ve ekran görüntüsü alıyor. Kareler 30 fps’te
+oynatıldığı için hareket akıcı, içerik gerçek oluyor.
+
+```
+uygulama (gerçek tıklamalar)  →  scripts/akis-kare.js  →  2138 kare (30 fps)
+        →  out/kayit.mp4  →  Remotion (kamera · imleç · tık dalgası · altyazı)  →  MP4
+```
 
 ## Sahne haritası
 
-| # | Sahne | Süre | İçerik |
-|---|-------|------|--------|
-| 1 | Açılış | 5,0 s | Uygulamanın gerçek simgesi, marka adı, alt başlık |
-| 2 | Problem | 8,0 s | Eksik konu görünmüyor · net gelişimi ölçülemiyor · tekrarlar düzensiz |
-| 3 | Genel görünüm | 7,0 s | Ana Sayfa ekranı, yavaş kamera kayması, modül etiketleri |
-| 4 | Özellikler | 39,5 s | Altı özellik, gerçek ekranlarda zoom + imleç tıklamaları |
-| 5 | Modüller | 6,0 s | Altı ekran bir arada (kaydırmalı ızgara) |
-| 6 | Kapanış | 7,0 s | Marka mesajı + kapanış logosu |
+| Bölüm | Kare | Süre | İçerik |
+|-------|------|------|--------|
+| Açılış | 0–96 | 3,2 s | Marka + “Deneme analizi → günlük çalışma planı” |
+| Akış | 96–2234 | 71,3 s | Tek kesintisiz gerçek kullanım akışı (aşağıdaki tablo) |
+| Kapanış | 2234–2372 | 4,6 s | “Her yanlış, bir sonraki adım.” + canlı adres |
 
-Özellik sahneleri (her biri gerçek ekranla):
+Akış olayları (`public/kayit/akis.json` → `olaylar`):
 
-1. **Sınav ve net analizi** — Denemelerim → Yeni deneme formu
-2. **Konu eksikleri ve öncelik puanı** — yanlış nedeni seçimi → Konu Takibi / Acil Çalışılacaklar
-3. **Aralıklı tekrar** — tamamlanan konu paneli → hafıza kartı ("Erken Tekrar" tıklaması)
-4. **Beş adımlı konu çalışması** — çalışma yol haritası → 5. adım → Kısa Kontrol sorusu → sonuç
-5. **Günlük plan ve görevler** — Günlük Görevler → Planlama
-6. **Soru bankası ve kitaplık** — Soru Bankası → Kitaplık
+| Olay | Adım | Altyazı |
+|------|------|---------|
+| `acilis` | – | Beş deneme, 774 soru, 138 sayfa — hepsi tek ekranda |
+| `ana-sayfa-grafik` | – | Net gelişimi · ders başarı oranı · acil konular |
+| `denemelerim` | 1 | Okulizyon’dan otomatik çekim ya da manuel giriş |
+| `deneme-formu` | 2 | Yeni deneme: ders ders doğru, yanlış, boş |
+| `hata-satirlari` | 3 | Her yanlış için konu + neden — kör nokta burada çıkıyor |
+| `deneme-kayit` | 3 | Kayıt anında Acil Çalışılacaklar listesi kurulur |
+| `acil-liste` | 4 | Acil Çalışılacaklar: en çok net getirecek konu en üstte |
+| `calis` | 4 | Çalış: beş adım, tek tek |
+| `kisa-kontrol` | 5 | Beş soruluk kısa kontrol: gerçekten öğrendin mi? |
+| `neden` | 5 | Yanlışın nedeni kayda geçer — sonraki öncelik buna göre |
+| `konu-tamam` | 5 | Konu tamam → tekrar takvimi kurulur |
+| `bildirim` | 6 | Tekrar zamanı gelince bildirim düşer |
+| `tekrar` | 6 | Tekrar günü geldiyse kart zorunlu |
+| `hafiza-yenilendi` | 6 | Tekrar yapıldı: hafıza barı yükseldi |
+| `kapanis` | – | Bugün ne çalışacağın tek ekranda: Analiz Merkezi |
 
 ## Dosya düzeni
 
 ```
-tanitim/
-  src/
-    index.ts                Remotion girişi
-    Root.tsx                Kompozisyonlar (AnaVideo + sahne sahne önizleme)
-    anaVideo.tsx            Zaman çizelgesi (tek video, altı sahne)
-    fontlar.ts              Inter woff2 yüklemesi (render bekletilir)
-    sahne/                  S1–S6 sahne bileşenleri + OzellikSahnesi
-    bilesenler/             Zemin, Ekran (kamera), Imlec, Yazi (tipografi/perde)
-    veri/                   Tema ve ekran/koordinat tabloları
-  scripts/
-    yakala.js               Uygulamayı açar, gerçek tıklamalarla ilerler, ekranları çeker
-    al2-extract.js          Chromium için eksik sistem kütüphanelerini açar
-    yakalama-kaydi.json     Yakalanan ekranların koordinat kaydı (imleç için)
-  public/
-    ekran/*.png             Uygulamadan alınan 3840×2160 görüntüler (19 adet)
-    fonts/*.woff2           Inter (400/600/700/800, latin-ext → Türkçe karakterler)
-    logo.png                Uygulamanın kendi simgesi (site/icons/icon-512.png)
-  out/                      Render çıktısı (depoya girmez)
+scripts/akis-kare.js      akışı kare kare yakalar (mock veri + gerçek tıklamalar)
+scripts/mock-veri.js      ekranları dolduran öğrenci verisi (localStorage tohumu)
+scripts/mufredat10.json   10. sınıf ders → konu listesi (mock veri tutarlılığı)
+public/kayit/kayit.mp4    yakalanan akış (71,3 sn · 2138 kare · 6,1 MB)
+public/kayit/akis.json    kare → imleç, tık anları, altyazı olayları
+src/akis/Akis.tsx         kamera + imleç + tık dalgası + altyazı kartı
+src/sahne/Acilis.tsx      açılış
+src/sahne/Kapanis.tsx     kapanış
+src/veri/tema.ts          marka renkleri
 ```
 
-## Ekranları yeniden yakalamak
-
-**Önemli:** çalışma ağacındaki `../site/` her zaman dal ucundaki sürüm olmayabilir.
-Bu videoda kullanılan görüntüler, soru havuzlarının aktarıldığı **dal ucundan**
-(`arena/4cc1805b-analiz-merkezi`) alınan sürümden çekildi:
+## Komutlar
 
 ```bash
-git archive origin/arena/4cc1805b-analiz-merkezi site | tar -x -C /tmp/site-yeni
-python3 -m http.server 8080 --bind 0.0.0.0 --directory /tmp/site-yeni/site   # 1. terminal
-node scripts/yakala.js                                                       # 2. terminal
+# 1) Uygulamayı servis et (v83, dal ucu)
+git fetch origin arena/cc4de070-analiz-merkezi
+git archive FETCH_HEAD site | tar -x -C /tmp/site-son
+python3 -m http.server 8081 --directory /tmp/site-son/site
+
+# 2) Akışı kare kare yakala  (~2,5 dk, 2138 kare)
+LD_LIBRARY_PATH=/tmp/chromium-libs/lib node scripts/akis-kare.js
+
+# 3) Kareleri videoya çevir
+ffmpeg -framerate 30 -i /tmp/kareler/f%05d.jpg -c:v libx264 -crf 17 -pix_fmt yuv420p out/kayit.mp4
+cp out/kayit.mp4 public/kayit/kayit.mp4
+
+# 4) Render  (~13 dk, 2372 kare)
+LD_LIBRARY_PATH=/tmp/chromium-libs/lib npx remotion render src/index.ts AnaVideo out/tanitim-v2.mp4 --concurrency=2
 ```
 
-Çalışma ağacındaki `site/` klasöründe 36 havuz dosyası eksikti (dal ucunda 192 havuz /
-2110 soru tam). Bu yüzden görüntüler dal ucundan yeniden çekildi.
+Önizleme: `npm run studio` · Kare kontrolü: `npx remotion still src/index.ts AnaVideo out/kare.png --frame=760`
 
-`yakala.js` uygulamayı tarayıcıda açar, hoş geldin katmanını kapatır, 10. sınıf
-Biyoloji 1.1 konusunu seçer, dört adımı tamamlar, **5 soruluk kısa kontrole gerçekten
-girer** (4 doğru 1 yanlış → yanlış nedeni seçilir), konuyu tamamlar ve sonra sırayla
-Konu Takibi, Günlük Görevler, Denemelerim, Soru Bankası, Kitaplık ve Planlama
-ekranlarını çeker. Böylece videoda görünen sayılar (%100 hafıza, %90 yeterlilik,
-19.11.2026 tekrar tarihi, 2 günlük seri) ekranda **gerçekten tıklanarak** üretilmiş
-verilerdir; hiçbir grafik veya istatistik elle yazılmamıştır.
+## Ses
 
-Yakalama sonrası ekranlar zaten 2× ölçekli (3840×2160) olduğu için yakınlaşmalar
-kayıpsız kalır.
-
-## Videoyu üretmek
-
-```bash
-npm install
-npx remotion studio src/index.ts            # canlı önizleme
-npm run render                              # out/tanitim.mp4
-npx remotion still src/index.ts AnaVideo out/poster.png --frame=2120
-```
-
-### Bu ortama özgü notlar
-
-Sistemde tarayıcı ve `libnss3` gibi kütüphaneler bulunmadığı için:
-
-```bash
-node scripts/al2-extract.js                       # al2023.tar.br → /tmp/chromium-libs
-export LD_LIBRARY_PATH=/tmp/chromium-libs/lib
-export CHROMIUM_PATH=$(node -e "import('@sparticuz/chromium').then(async m=>{console.log(await m.default.executablePath())})")
-```
-
-`remotion.config.ts` tarayıcıyı `CHROMIUM_PATH` (varsayılan `/tmp/chromium`) üzerinden
-kullanır, yazılım OpenGL (`swangle`) ile çalışır ve eşzamanlılığı 2 tutar.
-2 çekirdekli makinede tam render ~35 dakikadır.
-
-## Kurgu notları
-
-- Zemin koyu lacivert; ışık kütleleri ve ızgara çok yavaş kayar (hazır şablon hissi yok).
-- Her sahne 8–18 karelik yumuşak karartmayla girer/çıkar.
-- Kamera hareketleri `zoom` + `odak` çiftleriyle tanımlıdır; kenarlarda boşluk
-  görünmemesi için kaydırma sınırlanır (`Ekran.tsx`).
-- İmleç, ekran görüntüsüyle aynı koordinat uzayında çalışır (`Imlec.tsx`); tıklama
-  anında dalga ve hafif basma animasyonu vardır.
-- Alt şeritte altı özelliğin ilerleme çubuğu bulunur.
+Video sessiz teslim edildi. Tık sesleri istenirse `akis.json` içindeki `tikler` dizisi
+(tık başına kare numarası) doğrudan ses yerleştirmede kullanılabilir.
