@@ -1,5 +1,11 @@
 # Test Bulguları — Analiz Merkezi — 2026-10-12
 
+> **TARİHSEL BELGE (G-12).** Bu rapor 12 Ekim 2026'daki durumu anlatır; içindeki
+> sayılar (152 havuz / 1.756 soru, `pwa-files/` yolları) **artık geçerli değil**.
+> Güncel: **192 havuz / 2.110 soru**, tek kaynak `site/content/soru_havuzlari`,
+> `pwa-files/` kaldırıldı (v78 · G-15). Uygulanan düzeltmeler ve güncel ölçümler
+> için: `docs/uretim/teslim/RAPOR-2026-11-18-G04-G15-YAYIN.md`.
+
 ## Kapsam ve yöntem
 
 - İncelenen çalışma dalı: `arena/01a0dc3f-analiz-merkezi`.

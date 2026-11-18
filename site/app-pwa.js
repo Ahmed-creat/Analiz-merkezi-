@@ -1,4 +1,10 @@
 const PWA_SURUM = "v78-toplu";
+/* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
+   kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
+function surumEtiketiYaz() {
+  const el = document.getElementById("am-surum");
+  if (el) el.textContent = PWA_SURUM;
+}
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)
 // Kimlik doğrulama : Supabase Auth (e-posta/şifre + Google OAuth)
@@ -89,6 +95,7 @@ if ("serviceWorker" in navigator) {
 
 // ---- 3) GİRİŞ ARAYÜZÜ (yan menü + mobil DAHA + giriş modalı) ----
 function initAuthUI() {
+  try { surumEtiketiYaz(); } catch (e) { /* */ }
   if (window.__pwaProfileHooked) return;
   window.__pwaProfileHooked = true;
   // Giriş ve Okulizyon tek yerde: PROFİL penceresi.

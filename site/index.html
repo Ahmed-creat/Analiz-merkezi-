@@ -1249,7 +1249,7 @@ select.dd-native {
     <button class="btn btn-danger w-full" data-act="confirmReset" data-target="books" style="justify-content:flex-start;margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Kitaplığı Sil</button>
     <button class="btn btn-danger w-full" data-act="confirmReset" data-target="all" style="justify-content:flex-start;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Tüm Verileri Sıfırla</button>
   </div>
-  <div class="text-xs text-muted" style="margin-top:28px;text-align:center;">Sürüm 5.1<br>Geliştirici: Ahmed İbrahim</div>
+  <div class="text-xs text-muted" style="margin-top:28px;text-align:center;">Sürüm <span id="am-surum">5.1</span><br>Geliştirici: Ahmed İbrahim</div>
 </aside>
 
 <!-- ===== MOBİL ÜST BAR — bildirim + ayarlar YUKARI SOLDA (dikey + yatay mod) ===== -->
@@ -2503,12 +2503,17 @@ function resetTopicMemory(topicKey) {
 // Hafıza istatistikleri (Modül B / Ana Sayfa)
 function memoryStats() {
   const keys = Object.keys(state.memory).filter(k => state.memory[k].completedAt);
-  let sum = 0, waiting = 0, critical = 0;
+  /* G-09 — TEK KAYNAK: "Tekrar Bekleyen" sayısı dueReviews() kümesinden gelir.
+     Ana Sayfa dueReviews().length yazıyordu, Bilgi Bankası ms.waiting yazıyordu;
+     iki hesap ayrışabiliyordu (dueReviews completedAt şartı aramaz). Artık aynı
+     küme kullanılıyor → iki ekran aynı sayıyı gösterir. */
+  const dueSet = new Set(dueReviews().map(r => r.topicKey));
+  let sum = 0, critical = 0;
+  const waiting = dueSet.size;
   const rows = keys.map(key => {
     const pct = getMemoryStrength(key);
     const nr = nextReviewInfo(key);
-    const due = dueReviews().some(r => r.topicKey === key);
-    if (due) waiting++;
+    const due = dueSet.has(key);
     if (pct < MEMORY_CRITICAL) critical++;
     sum += pct;
     return { key, lesson: splitKey(key).lesson, topic: splitKey(key).topic, pct, reviews: state.memory[key].reviewCount || 0, due, next: nr };
@@ -2581,21 +2586,40 @@ function calculatePriority() {
 }
 
 // Konu başarı yüzdesi: (Toplam Doğru / Toplam Soru) × 100 — son kayıtlardan
+/* G-11 — KONU düzeyinde başarı.
+   ESKİ HATA: dersin D/Y/B toplamı konuya yazılıyordu → "Soru önerisi" ve
+   Unutma İndeksi konu değil DERS başarısını gösteriyordu (uydurma sinyal).
+   YENİ: konuya ait HATA kayıtları (errorLogs: lesson + topic eşleşmesi)
+   payı kullanılır:
+     • konu hatası varsa  → 1 − (konu hatası / dersin soru sayısı)
+     • konu hatası yoksa  → ders düzeyi oranı (AÇIK YEDEK, yorumda belgeli)
+   Böylece aynı dersteki iki konu artık AYNI yüzdeyi almıyor. */
 function topicSuccessRate(topicKey) {
   const p = splitKey(topicKey);
-  let d = 0, total = 0;
+  let soru = 0, hata = 0, konuHata = 0;
+  const hatalariSay = (logs) => (logs || []).forEach(e => {
+    if (e && e.lesson === p.lesson && e.topic === p.topic) konuHata++;
+  });
   state.exams.forEach(ex => {
-    const l = ex.lessons && ex.lessons[p.lesson];
-    if (l) { d += Number(l.d) || 0; total += (Number(l.d) || 0) + (Number(l.w) || 0) + (Number(l.e) || 0); }
+    const l = (ex && ex.lessons && ex.lessons[p.lesson]) || null;
+    if (l) {
+      soru += (Number(l.d) || 0) + (Number(l.w) || 0) + (Number(l.e) || 0);
+      hata += (Number(l.w) || 0) + (Number(l.e) || 0);
+    }
+    hatalariSay(ex && ex.errorLogs);
   });
   state.questions.forEach(q => {
-    const hit = (q.errorLogs || []).some(e => e.topic === p.topic && e.lesson === p.lesson);
-    if (q.lesson === p.lesson || hit) {
-      d += Number(q.d) || 0;
-      total += (Number(q.d) || 0) + (Number(q.w) || 0) + (Number(q.e) || 0);
+    if (!q) return;
+    const logs = q.errorLogs || [];
+    if (q.lesson === p.lesson) {
+      soru += (Number(q.d) || 0) + (Number(q.w) || 0) + (Number(q.e) || 0);
+      hata += (Number(q.w) || 0) + (Number(q.e) || 0);
     }
+    hatalariSay(logs);
   });
-  return total > 0 ? Math.round((d / total) * 100) : null;
+  if (soru <= 0) return null;
+  if (konuHata > 0) return Math.max(0, Math.round((1 - konuHata / soru) * 100));
+  return Math.max(0, Math.round(((soru - hata) / soru) * 100));   // yedek: ders düzeyi
 }
 
 // Zorluk derecesi önerisi (Modül F): ≤40 TEMEL, ≤75 ORTA, >75 ZOR/YENİ NESİL
@@ -2708,11 +2732,16 @@ function examStats() {
   if (!exams.length) return { count: 0, avg: 0, best: 0, last: 0, series: [] };
   const nets = exams.map(e => e.net || 0);
   const series = exams.slice().sort((a, b) => (parseDay(a.date) || 0) - (parseDay(b.date) || 0)).map(e => ({ name: e.name, net: e.net || 0, date: e.date }));
+  /* G-11 — KULLANICI: "son deneme" yanlış denemeyi gösteriyordu. Kök neden:
+     `nets[nets.length - 1]` KAYIT SIRASINI kullanıyordu; Okulizyon'dan geriye
+     dönük çekilen bir deneme listeye sonra eklendiği için "son deneme" o
+     oluyordu. Artık tarihe göre sıralı serinin SON elemanı. */
+  const sonNet = series.length ? series[series.length - 1].net : 0;
   return {
     count: exams.length,
     avg: Math.round((nets.reduce((s, n) => s + n, 0) / nets.length) * 100) / 100,
     best: Math.max.apply(null, nets),
-    last: nets[nets.length - 1],
+    last: sonNet,
     series
   };
 }
@@ -2938,8 +2967,15 @@ function hatirlatmaTelafisi() {
 window.__amHatirlatmaTelafisi = hatirlatmaTelafisi;
 
 function addNotification(n) {
-  // Aynı bildirimi tekrar üretme
-  const dup = state.notifications.some(x => x.kind === n.kind && x.topicKey === n.topicKey && x.body === n.body);
+  /* G-09 — KULLANICI: "aynı konu için tekrar tekrar bildirim" + "yeni döngü
+     bastırılıyor". ESKİ: aynı kind+topicKey+gövde SONSUZA DEK tekti; gecikmiş
+     bir basamakta gövde aynı kaldığı için ERTESİ GÜN bildirimi hiç gelmiyordu.
+     YENİ: tekilleştirme YALNIZ AYNI GÜN içinde (döngü tarihi anahtara girer):
+     bugün bir kez, yarın yeni döngü olarak yeniden gelir. */
+  const gun = todayStr();
+  const dup = state.notifications.some(x => x && x.kind === n.kind &&
+    x.topicKey === n.topicKey && x.body === n.body &&
+    String(x.date || "").slice(0, 10) === gun);
   if (dup) return;
   state.notifications.unshift({
     id: uid(), title: n.title, body: n.body, kind: n.kind || "info",
@@ -4504,6 +4540,12 @@ function renderExams(container) {
   html += '<div class="flex justify-between text-xs text-muted tabular" style="margin-bottom:6px;"><span>Toplam Soru</span><span id="exam-total-label">0 / 120</span></div>';
   if (String(state.user.grade || "9") === "10") html += '<div class="text-xs text-muted" style="margin:-7px 0 10px;">10. sınıf deneme düzeni: TDE 30 · Sosyal 30 (Tarih 10, Coğrafya 10, Felsefe 5, Din 5) · Matematik 30 · Fen 30 · 135 dk</div>';
   html += '<div class="progress" style="margin-bottom:14px;"><div id="exam-total-bar" style="width:0%;background:var(--brand-gradient);"></div></div>';
+  /* G-11 — KULLANICI: "10 doğru giren 20 boşun nedenini doldurmak zorunda
+     kalıyor." Otomatik boş D/Y girildikçe kalanı BOŞ'a yazıyordu ve her boş
+     için konu+neden zorunluydu. Anahtar: kapatınca BOŞ elle girilir, kısmi
+     giriş serbesttir → istenen boş kadar neden sorulur. */
+  html += '<label class="text-xs text-muted" style="display:flex;align-items:center;gap:8px;margin:0 0 12px;cursor:pointer;">' +
+    '<input type="checkbox" id="exam-auto-empty" checked style="width:16px;height:16px;"> Kalan soruları otomatik BOŞ say (kapatırsan BOŞ alanını kendin girersin)</label>';
 
   Object.keys(activeLessonConfig()).forEach(lesson => {
     const cfg = activeLessonConfig()[lesson];
@@ -4924,8 +4966,8 @@ function bindExamForm() {
       }
       inp.value = v;
       vals = readLessonDWB(lesson);
-      // Boş (OTO): D + Y + B = max kuralı otomatik uygulanır
-      if (field !== "e") {
+      // Boş (OTO): D + Y + B = max kuralı otomatik uygulanır — YALNIZ anahtar açıksa
+      if (field !== "e" && autoEmptyAcik()) {
         const auto = clamp(cfg.max - vals.d - vals.w, 0, cfg.max);
         const eInput = document.querySelector('[data-exam-dwb="' + sel(lesson + "-e") + '"]');
         if (eInput) { eInput.value = auto; vals.e = auto; }
@@ -4944,6 +4986,25 @@ function bindExamForm() {
     });
   });
   updateExamTotal();
+  // G-11 — otomatik boş anahtarı değişince alanları yeniden hesapla
+  const ae = document.getElementById("exam-auto-empty");
+  if (ae) ae.addEventListener("change", () => {
+    Object.keys(activeLessonConfig()).forEach(l => {
+      const v = readLessonDWB(l);
+      if (ae.checked) {
+        const auto = clamp(activeLessonConfig()[l].max - v.d - v.w, 0, activeLessonConfig()[l].max);
+        const eInput = document.querySelector('[data-exam-dwb="' + sel(l + "-e") + '"]');
+        if (eInput) { eInput.value = auto; v.e = auto; }
+      }
+      updateExamErrorAreas(l, readLessonDWB(l));
+    });
+    updateExamTotal();
+  });
+}
+
+function autoEmptyAcik() {
+  const el = document.getElementById("exam-auto-empty");
+  return el ? !!el.checked : true;   // varsayılan: eski davranış (açık)
 }
 
 function numericWholeValue(el) {
@@ -5007,8 +5068,12 @@ function updateExamErrorAreas(lesson, vals) {
   for (let i = 0; i < need; i++) {
     const isWrong = i < vals.w;
     html += '<div class="error-log-row ' + (isWrong ? "is-wrong" : "is-empty") + '" data-row="' + i + '">' +
-      '<span class="err-badge ' + (isWrong ? "wrong" : "empty") + '">' + (isWrong ? "YANLIŞ" : "BOŞ") + '<span class="n">#' + (i + 1) + "</span></span>" +
+      '<span class="err-badge ' + (isWrong ? "wrong" : "empty") + '">' + (isWrong ? "YANLIŞ" : "BOŞ") + "</span>" +
       '<div class="err-fields">' +
+      /* G-11 — KULLANICI: "gerçek soru numarasını giremiyorum." Eskiden
+         qno = satır sırasıydı. Artık elle girilir (varsayılan sıra). */
+      '<div style="flex:.55;min-width:58px;"><span class="err-label">SORU NO</span>' +
+      '<input type="number" inputmode="numeric" min="1" data-err="' + attr(lesson) + ":" + i + ':qno" value="' + (i + 1) + '" style="padding:8px;border-radius:9px;border:1px solid var(--border-card);background:var(--bg-canvas);color:var(--text);font-size:12px;width:100%;"></div>' +
       '<div style="flex:1.4;min-width:0;"><span class="err-label">KONU SEÇ</span>' +
       '<select data-err="' + attr(lesson) + ":" + i + ':topic"><option value="">Konu Seç…</option>' +
       topics.map(tp => '<option value="' + attr(tp) + '">' + esc(tp) + "</option>").join("") + "</select></div>" +
@@ -5072,7 +5137,9 @@ function collectErrorLogs(examDate) {
   Object.keys(rows).sort().forEach((k, idx) => {
     const r = rows[k];
     const lesson = k.split(":")[0];
-    if (r.topic && r.type) logs.push({ qno: idx + 1, lesson: lesson, topic: r.topic, type: canonicalReason(r.type), date: examDate || todayStr() });
+    // G-11 — soru numarası artık KULLANICININ girdiği değer (boş/0 ise sıra).
+    const qno = Math.max(1, Number(r.qno) || (idx + 1));
+    if (r.topic && r.type) logs.push({ qno: qno, lesson: lesson, topic: r.topic, type: canonicalReason(r.type), date: examDate || todayStr() });
   });
   return logs;
 }
@@ -5097,6 +5164,12 @@ function saveExam() {
   }
   if (total === 0) return fail("En az bir derse D/Y/B girişi yap.");
   if (total > 120) return fail("Toplam soru sayısı 120'yi aşamaz.");
+
+  /* G-11 — KULLANICI: aynı denemeyi iki kez kaydedince iki satır oluşuyordu
+     (Okulizyon çekiminde G-08'de vardı, ELLE girişte yoktu). Aynı ad + tarih
+     ikinci kez kaydedilemez; kullanıcı düzeltsin diye açık mesaj. */
+  const ayni = state.exams.some(e => e && e.name === name && e.date === date);
+  if (ayni) return fail('"' + name + '" adlı deneme ' + date + " tarihinde zaten kayıtlı. Aynı denemeyi iki kez eklemek analizi bozar — farklı bir ad ya da tarih seç.");
 
   const errorLogs = collectErrorLogs(date);
   // ZORUNLU: her yanlış ve boş soru için ayrı Konu + Neden girilmeli
@@ -6360,7 +6433,10 @@ function completeTopic(key) {
   if (window.AnalizBKT && typeof window.AnalizBKT.konuDurum === "function") {
     const kd = window.AnalizBKT.konuDurum(key);
     if (kd && kd.poolId) {
-      toast("Kısa Kontrol hazır: Konu Takibi → “Kısa Kontrol · 5” düğmesi. Kendiliğinden açılmaz.", "info");
+      /* G-11 — KULLANICI: "Konu Takibi → 'Kısa Kontrol · 5' düğmesi" diyor ama
+         Konu Takibi'nde öyle bir düğme YOK. Doğru yerler: Bilgi Bankası konu
+         sayfasındaki 5. adım YA DA Günlük Görevler satırı. */
+      toast("Kısa Kontrol hazır: Bilgi Bankası → konunun 5. adımı (ya da Günlük Görevler'deki satır). Kendiliğinden açılmaz.", "info");
     }
   }
 }

@@ -1,5 +1,11 @@
 # ANALİZ MERKEZİ — PWA + Firebase Kurulum Rehberi
 
+> **TARİHSEL REHBER (G-12).** Buradaki Firebase Hosting / `pwa-files/` akışı
+> artık kullanılmıyor: yayın **Vercel** üzerinden `deploy/build.sh` ile yalnız
+> `site/` klasöründen yapılıyor ve `pwa-files/` v78'de kaldırıldı. Kurulum
+> adımları tarihsel kayıt olarak duruyor; güncel akış için `deploy/build.sh`
+> (Vercel build adımı) ve `docs/uretim/teslim/` raporlarına bak.
+
 Bu klasör, uygulamayı **telefona yüklenebilir PWA** yapan ve **Google girişi + bulut yedek + push bildirim** ekleyen yayınlama paketidir.
 
 ## Ne hazırlanmış durumda (bana düşen — tamamlandı)
