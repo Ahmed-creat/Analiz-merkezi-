@@ -2,10 +2,13 @@
 
 Üç ayrı "güncel" paket dolaşımda olduğu için özellikler tek tek karşılaştırıldı.
 
+> **Uygulamanın güncel adresi:** <https://analiz-merkezi.vercel.app/>
+> Aşağıdaki Netlify satırı yalnız o dönemin kaydıdır; yayın Vercel'e taşındı.
+
 | Sürüm | Kaynak | Soru havuzlarından soru soran mini test | Okulizyon bilgileri Profil'de | Bulut |
 | --- | --- | --- | --- | --- |
 | **v30.1** (PR #3 / `analiz-merkezi-netlify-20261012.zip` = paylaşılan Drive dosyası) | depo `site/` klasörü | ✅ var (BKT mini test, `content/soru_havuzlari/*.json`) | ❌ yan menüde ayrı buton | Firebase (bu depoda Supabase'e taşındı) |
-| **v33.1** (canlı Netlify: analizmerkezii.netlify.app) | Netlify'daki yayın | ❌ yok (`soru_havuzlari`, `secenekler`, `dogru_index` hiç geçmiyor) | ✅ var (avatar → Profil penceresi) | Firebase |
+| **v33.1** (ESKİ yayın: analizmerkezii.netlify.app — artık kullanılmıyor) | Netlify'daki yayın | ❌ yok (`soru_havuzlari`, `secenekler`, `dogru_index` hiç geçmiyor) | ✅ var (avatar → Profil penceresi) | Firebase |
 | **v34.3** (bu depo, Vercel yayını) | `site/` | ✅ var | ✅ var | Supabase |
 
 ## v34.3 — birleşik sürüm

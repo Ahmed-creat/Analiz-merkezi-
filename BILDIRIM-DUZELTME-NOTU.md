@@ -12,7 +12,7 @@ Asıl kritik istemci tarafı sorun şuydu:
 
 ## Düzeltme
 - `sw.js` içine Web Push payload'ını okuyup sistem bildirimi gösteren `push` işleyicisi eklendi.
-- Bildirime tıklanınca `https://analizmerkezii.netlify.app/` adresini açan/öne getiren `notificationclick` işleyicisi eklendi.
+- Bildirime tıklanınca uygulamanın **güncel** adresini (`https://analiz-merkezi.vercel.app/`) açan/öne getiren `notificationclick` işleyicisi eklendi.
 - `bildirim-gonder.js`, `degisiklik-kontrol.js` ve opsiyonel Cloud Functions `index.js` WebPush `fcmOptions.link`, mutlak icon/badge URL'si ve `data.url` ile güçlendirildi.
 - Eski/disabled `.github/workflows/main.yml` kaldırıldı; tek iş akışı `bildirim.yml` kaldı.
 - `analiz-merkezi-devir-teslim.zip` içindeki `site-yayin.zip` ve `guncelleme.zip` v33.1 olarak güncellendi.

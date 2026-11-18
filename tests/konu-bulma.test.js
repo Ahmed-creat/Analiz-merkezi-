@@ -138,7 +138,9 @@ ok("kural, konu anahtarını Ders > Konu üretiyor", APP.indexOf('topicKey: kano
 // v78 (G-08) — kuyruk modalı kapandı; bu bağlantılar DENEMELERİM'de yaşıyor.
 ok("Denemelerim'de sınav çözüm bağlantısı var", HTML.indexOf("sınavı ve çözümleri aç") > 0);
 ok("satır bazında çözüm bağlantısı var", HTML.indexOf("çözüm var") > 0);
-ok("bağlantı yalnız adres varsa çiziliyor", /sonEx\.okulizyonUrl\s*\n?\s*\?/.test(HTML) || HTML.indexOf("(sonEx.okulizyonUrl") > 0);
+/* v84 — liste okzNedenListesiHtml() içine taşındı; parametre adı ex. Ölçüt aynı:
+   bağlantı yalnız ADRES VARSA çiziliyor (koşullu). */
+ok("bağlantı yalnız adres varsa çiziliyor", /if \(ex && ex\.okulizyonUrl\)/.test(HTML) || /\(sonEx\.okulizyonUrl/.test(HTML));
 
 // ---------- 6) Kısa Kontrol düzeltmesi ----------
 console.log("\n== 6) Kısa Kontrol (v35.7: yalnız o konunun havuzu, 5 soru) ==");

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v83-sade-bildirim";
+const PWA_SURUM = "v84-neden-penceresi";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -2400,7 +2400,10 @@ window.okzDuyurularToSchoolExams = okzDuyurularToSchoolExams;
 async function okzAnalizKaydet(tekNeden, denemeIdx) {
   const secimler = {};
   document.querySelectorAll(".okz-reason").forEach(function (sel) {
-    secimler[sel.dataset.i + ":" + sel.dataset.j] = sel.value;
+    const k = sel.dataset.i + ":" + sel.dataset.j;
+    /* v84 — aynı satır hem Denemelerim kartında hem "Nedenleri seç" penceresinde
+       olabilir. BOŞ seçim dolu seçimi ezmez; hangi kutuda işaretlendiyse o kazanır. */
+    if (!secimler[k] || sel.value) secimler[k] = sel.value;
   });
   const hedef = (denemeIdx === undefined || denemeIdx === null) ? null : Number(denemeIdx);
   let yazilan = 0;

@@ -100,7 +100,9 @@ console.log("\n== 2) Denemelerim'de tuş → liste açılıyor ==");
 // ---------------------------------------------------------------
 console.log("\n== 3) Yanlış ve boş AYRI neden listeleri ==");
 {
-  const blok = HTML.slice(HTML.indexOf('const bekleyen = (sonEx.errorLogs'), HTML.indexOf('Nedenleri kaydet'));
+  /* v84 — liste artık okzNedenListesiHtml() içinde TEK yerde üretiliyor
+     (sayfa kartı + pencere aynı HTML'i kullanır). Ölçüt aynı: liste kuralları. */
+  const blok = HTML.slice(HTML.indexOf('const bekleyen = ((ex && ex.errorLogs)'), HTML.indexOf('Nedenleri kaydet'));
   ok("satır türü belirleniyor (status e = boş)", /bos: !!\(l && l\.status === "e"\)/.test(blok));
   ok("yanlış sayısı ayrı", /const yanlisN = bekleyen\.filter\(x => !x\.bos\)\.length/.test(blok));
   ok("boş sayısı ayrı", /const bosN = bekleyen\.filter\(x => x\.bos\)\.length/.test(blok));

@@ -165,7 +165,9 @@ const ASSETS = [
   "./content/soru_havuzlari/tarih_10_u03_k04.json",
   "./content/soru_havuzlari/tarih_10_u03_k05.json"
 ];
-const APP_URL = "https://analizmerkezii.netlify.app/";
+/* Güncel yayın adresi (eski Netlify adresi 2026-10'da bırakıldı).
+   Yayınlanan service worker site/sw.js'tir; burası depodaki eş kopyadır. */
+const APP_URL = "https://analiz-merkezi.vercel.app/";
 const ICON_URL = "./icons/icon-192.png";
 
 self.addEventListener("install", (e) => {
