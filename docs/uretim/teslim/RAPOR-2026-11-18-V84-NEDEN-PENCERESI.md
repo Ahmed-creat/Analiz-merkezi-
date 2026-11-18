@@ -1,7 +1,8 @@
 # v84 — "Nedenleri seç" listesi pencere olarak açılıyor + güncel site adresi
 
-**Yayın:** `v84-neden-penceresi`
-**Kod commit:** bu sürümün commit'i · **Test:** `tests/dom/dom-v84-neden-listesi.test.js` 39/39 · `test:hepsi` tamamı yeşil
+**Yayın:** `v84-neden-penceresi` · deploy `dpl_EJ5DnZShfyELEDumYZCsC7Dfj6n3` (READY / PROMOTED)
+**Alias:** `analiz-merkezi.vercel.app` · **Kod commit:** `32aa078`
+**Test:** `tests/dom/dom-v84-neden-listesi.test.js` 39/39 · `test:hepsi` tamamı yeşil
 
 ---
 
@@ -45,8 +46,13 @@ ile yalnız `site/` klasörünü kopyalıyor) — istenirse ayrıca silinebilir.
 
 ## Canlı doğrulama
 
-Deploy kimliği ve canlı kontrol sonuçları bu sürümün yayınından sonra rapora eklendi
-(`app-pwa.js` sürüm damgası, `sw.js` önbellek damgası, `index.html` içinde `#neden-modal`).
+| Ne | Nerede | Sonuç |
+|---|---|---|
+| Sürüm damgası | `app-pwa.js?v=84` | `const PWA_SURUM = "v84-neden-penceresi";` |
+| Önbellek damgası | `sw.js?v=84` | `analiz-merkezi-v-20261027-v84-neden-penceresi` |
+| Sayfa | `analiz-merkezi.vercel.app` | alt bilgi: "Analiz Merkezi v84-neden-penceresi" |
+| Deploy | Vercel | `dpl_EJ5DnZShfyELEDumYZCsC7Dfj6n3` READY / PROMOTED, alias atandı |
+| Pencere davranışı | `tests/dom/dom-v84-neden-listesi.test.js` | açılıyor, 2 satır listeleniyor, kaydet → tazeleniyor, iş bitince kapanıyor (39/39) |
 
 ## Dokunulmayanlar
 
