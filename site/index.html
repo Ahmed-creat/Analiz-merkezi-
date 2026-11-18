@@ -1823,6 +1823,9 @@ const REASON_WEIGHTS = {
 
 // Sistematik tekrar döngüsü (gün)
 const REVIEW_DAYS = [1, 3, 7, 14, 28];
+// G-02 — Merdiven bittikten sonraki bakım döngüsü (gün). Son basamak
+// tamamlanınca tekrar takvimi boş kalmaz; 28 günde bir bakım tekrarı kurulur.
+const REVIEW_BAKIM_GUN = 28;
 
 // Temel günlük unutma oranı; her başarılı tekrarda %10 yavaşlar (Bilimsel İvme)
 const MEMORY_BASE_DECAY = 0.16;
@@ -2027,7 +2030,7 @@ function freshState() {
     questions: [],    // {id, lesson, date, total, d, w, e, errorLogs:[{qno,lesson,topic,type}]}
     books: [],        // {id, title, author, pages, read, done, history:[{date,pages,minutes}]}
     topics: {},       // "Ders > Konu" -> {step:0-4, completedAt, preTest}
-    memory: {},       // "Ders > Konu" -> {lastReview, reviewCount, completedAt, schedule:{3:date,...}}
+    memory: {},       // "Ders > Konu" -> {lastReview, reviewCount, step, completedAt, schedule:{3:date,...}}
     notifications: [],// {id, title, body, date, read, kind, topicKey}
     badges: {},       // metricKey -> tier index (0-3)
     plan: { targetDate: null, examTime: "", schoolExams: [], targetNet: 0, dailyHours: 0, dailyReading: 0, readingMinutes: 0, rhythm: "Sabah" },
@@ -2325,21 +2328,43 @@ function currentRegime() {
   return EXAM_REGIMES.find(r => dl <= r.maxDays) || EXAM_REGIMES[EXAM_REGIMES.length - 1];
 }
 
-// Konu tamamlandığında 3-7-14-21-28 gün sonrası için hatırlatıcı kur
+// G-02 — TEKRAR MERDİVENİ (aralıklı tekrar).
+// KÖK NEDEN: eskiden `scheduleReviews` her çağrıda takvimi BUGÜNDEN yeniden
+// kuruyordu; tekrar kaydı her seferinde "1. gün" basamağını yarına atadığı için
+// konu her gün "TEKRAR BUGÜN" oluyor, 3-7-14-28 basamakları hiç görünmüyordu.
+// Çözüm: konu `mem.step` (0..REVIEW_DAYS.length) basamağını taşır; takvim
+// yalnız KALAN basamaklar için bugünden kurulur ve her tekrarda step artar.
+// Şema göçü: eski kayıtlarda `step` yok → `reviewCount` basamak sayılır.
+function tekrarAdimi(mem) {
+  if (!mem) return 0;
+  const ham = mem.step != null ? mem.step : mem.reviewCount;
+  const n = Number(ham);
+  if (!isFinite(n)) return 0;
+  return Math.min(REVIEW_DAYS.length, Math.max(0, Math.floor(n)));
+}
+
+// Konu tamamlandığında kalan basamaklar için hatırlatıcı kur (1-3-7-14-28)
 function scheduleReviews(topicKey) {
   const mem = state.memory[topicKey];
   if (!mem) return;
   const base = new Date(); base.setHours(0, 0, 0, 0);
   const dl = daysLeftToExam();
   const iv = idealReviewInterval();
+  const adim = tekrarAdimi(mem);
   mem.schedule = {};
-  REVIEW_DAYS.forEach(day => {
-    // Sınav yakınsa Cepeda oranıyla aralıklar otomatik sıklaşır
-    let effDay = day;
-    if (dl !== null && iv !== null && day > iv * 2) effDay = Math.max(1, Math.round(day * (iv / 14)));
-    const dt = new Date(base); dt.setDate(dt.getDate() + effDay);
-    mem.schedule[day] = toDayStr(dt);
-  });
+  if (adim >= REVIEW_DAYS.length) {
+    // Merdiven bitti → bakım döngüsü (tekrar takvimi boş kalmaz).
+    const dt = new Date(base); dt.setDate(dt.getDate() + REVIEW_BAKIM_GUN);
+    mem.schedule[REVIEW_BAKIM_GUN] = toDayStr(dt);
+  } else {
+    REVIEW_DAYS.slice(adim).forEach(day => {
+      // Sınav yakınsa Cepeda oranıyla aralıklar otomatik sıklaşır
+      let effDay = day;
+      if (dl !== null && iv !== null && day > iv * 2) effDay = Math.max(1, Math.round(day * (iv / 14)));
+      const dt = new Date(base); dt.setDate(dt.getDate() + effDay);
+      mem.schedule[day] = toDayStr(dt);
+    });
+  }
   saveState();
 }
 
@@ -2360,19 +2385,30 @@ function nextReviewInfo(topicKey) {
   return entries[0] || null;
 }
 
-// Zamanı gelmiş tekrarlar (bugün dahil)
+// Zamanı gelmiş tekrarlar (bugün dahil) — G-02: KONU BAŞINA TEK SATIR.
+// KÖK NEDEN: eskiden her gecikmiş basamak ayrı satır dönüyordu; Ana Sayfa
+// sayacı, bildirim üreticisi ve Bilgi Bankası sayacı aynı konuyu 2-4 kez
+// sayıyordu. Artık konunun EN ESKİ gecikmiş basamağı tek satır olarak döner.
 function dueReviews() {
   const today = parseDay(todayStr());
   const list = [];
   Object.keys(state.memory).forEach(key => {
     const mem = state.memory[key];
     if (!mem || !mem.schedule) return;
+    let en = null;
     Object.entries(mem.schedule).forEach(([day, date]) => {
       const dt = parseDay(date);
-      if (dt && dt <= today) list.push({ topicKey: key, day: Number(day), date });
+      if (!dt || dt > today) return;
+      if (!en || dt < en.dt) en = { topicKey: key, day: Number(day), date, dt };
     });
+    if (en) { delete en.dt; list.push(en); }
   });
-  return list;
+  // En eski gecikmiş tekrar önce; eşitse konu adına göre sabit sıra.
+  return list.sort((a, b) => {
+    const ta = parseDay(a.date), tb = parseDay(b.date);
+    const fa = ta ? ta.getTime() : 0, fb = tb ? tb.getTime() : 0;
+    return fa !== fb ? fa - fb : String(a.topicKey).localeCompare(String(b.topicKey), "tr");
+  });
 }
 
 // ---- FLASHCARD DURUMU (senkron özet) ---------------------------------
@@ -2395,8 +2431,16 @@ window.__kartTamamla = function (topicKey, erken) {
   if (!topicKey) return false;
   const mem = state.memory[topicKey];
   if (!mem) return false;
+  // G-02 — ERKEN TEKRAR KARARI: A (step ARTMAZ).
+  // Zamanı gelmeden tekrar edilirse merdiven ilerlemez; takvim mevcut
+  // basamaktan yeniden kurulur. Böylece "her gün erken tekrar" tıklaması
+  // 1-3-7-14-28 disiplinini atlatamaz. Zamanı gelen tekrarda step artar.
+  // NOT: basamak, reviewCount artırılmadan ÖNCE okunur (eski kayıtta step
+  // yoksa göç kaynağı reviewCount'tur; sonradan okumak bir basamak atlatır).
+  const adimKart = tekrarAdimi(mem);
   mem.lastReview = new Date().toISOString();
   mem.reviewCount = (mem.reviewCount || 0) + 1;
+  mem.step = erken ? adimKart : Math.min(REVIEW_DAYS.length, adimKart + 1);
   scheduleReviews(topicKey);
   addNotification({
     title: erken ? "Erken Tekrar (kartlarla) Tamamlandı" : "Tekrar Tamamlandı (kartlarla)",
@@ -2421,9 +2465,13 @@ window.__kartTamamla = function (topicKey, erken) {
 function markReviewed(topicKey, early) {
   const mem = state.memory[topicKey];
   if (!mem) return;
+  // G-02 — ERKEN TEKRAR KARARI: A (step ARTMAZ); günü gelen tekrarda step artar.
+  // Yeniden program: KALAN basamaklar, sınav yakınsa Cepeda oranıyla sıklaşmış.
+  // Basamak reviewCount artırılmadan önce okunur (göç kaynağı reviewCount).
+  const adimTekrar = tekrarAdimi(mem);
   mem.lastReview = new Date().toISOString();
   mem.reviewCount = (mem.reviewCount || 0) + 1;
-  // Yeniden program: temel döngü + sınav yakınsa sıklaştırılmış
+  mem.step = early ? adimTekrar : Math.min(REVIEW_DAYS.length, adimTekrar + 1);
   scheduleReviews(topicKey);
   saveState();
   evaluateBadges();
@@ -2437,7 +2485,7 @@ function markReviewed(topicKey, early) {
 
 // Konuyu sıfırla (Anlamadım, Baştan Başla)
 function resetTopicMemory(topicKey) {
-  state.memory[topicKey] = { lastReview: null, reviewCount: 0, completedAt: null, schedule: {} };
+  state.memory[topicKey] = { lastReview: null, reviewCount: 0, completedAt: null, step: 0, schedule: {} };
   state.topics[topicKey] = { step: 0, completedAt: null, preTest: false };
   // v77 — KULLANICI: "konu çalışmasını sıfırlayınca kısa kontrol geri gelmiyor."
   // KÖK NEDEN: sıfırlama yalnız hafıza + adımları temizliyordu; motorun konu
@@ -6222,7 +6270,7 @@ function completeTopic(key) {
   }
   const now = new Date().toISOString();
   state.topics[key] = { step: ROADMAP_STEPS.length, completedAt: now };
-  state.memory[key] = { lastReview: now, reviewCount: 0, completedAt: now, schedule: {} };
+  state.memory[key] = { lastReview: now, reviewCount: 0, completedAt: now, step: 0, schedule: {} };
   scheduleReviews(key); // 3-7-14-21-28 gün sonrası için hatırlatıcılar
   state.dailyTasks.study = true;
   ensureDailyStreakCount();
