@@ -48,12 +48,15 @@ console.log("\n== 2) Tekrar kuralı: zamanı gelen kart, gelmeyen serbest ==");
 const rtBas = HTML.indexOf("function reviewTopic(");
 const rt = HTML.slice(rtBas, rtBas + 2200);
 ok("reviewTopic bulundu", rtBas > 0);
-ok("erken tekrarda KART AÇILMAZ", /if \(erken\) \{[\s\S]{0,200}?markReviewed/.test(rt) && /if \(erken\) \{[\s\S]{0,400}?return;/.test(rt));
+// v78 (G-06) — KULLANICI KARARI DEĞİŞTİ: "erken tekrarda kart açsın; Konu
+// Takibi'nde de Bilgi Bankası'nda da aynı şey." Eski kural (erken → kart
+// açılmaz) iptal; iki ekran da tekrarKartBasla ile kart turu açıyor.
+ok("erken tekrar da KART AÇAR (tek yol)", /if \(erken\) \{ tekrarKartBasla\(topicKey\); return; \}/.test(rt));
 ok("zamanı gelen tekrar GERÇEK kart listesine bakar", rt.indexOf("K.kartlar(topicKey)") > 0);
 ok("kart varsa tur açılır", rt.indexOf("K.ac(topicKey") > 0);
 ok("kart yoksa konu kilitlenmez", rt.indexOf("markReviewed(topicKey, false)") > 0);
 ok("kırmızı + zorunlu düğme metni listede", HTML.indexOf("Tekrar Ettim · kartlar zorunlu") > 0);
-ok("günü gelmeyen konuda Erken Tekrar", HTML.indexOf('data-act="earlyReview"') > 0);
+ok("günü gelmeyen konuda Erken Tekrar düğmesi", HTML.indexOf("Erken Tekrar") > 0 && HTML.indexOf('data-act="tekrarKart"') > 0);
 
 console.log("\n== 3) Okulizyon il/ilçe/okul listeleri SABİT DEĞİL ==");
 ok("sabit ilçe dizisi (ILCELER) KALMADI", APP.indexOf("const ILCELER = [") < 0);

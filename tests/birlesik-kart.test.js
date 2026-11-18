@@ -80,12 +80,16 @@ function kart(ms, bkt, limit, st) {
   // v76 — "kartlar zorunlu" yalnız kartı/havuzu olan konuda yazılır; blok bu
   // bilgiyi konuHavuzuVar() ile alır. Testte havuz = BKT kaydındaki poolId.
   const konuHavuzuVar = k => !!((bkt && bkt[k] && bkt[k].poolId)) ;
+  // v78 — blok artık kart düğmesini TEK kapıdan sorar: kartGosterilir().
+  // Bu test 10. sınıf varsayımıyla koşar (havuz VEYA kişisel kart → düğme).
+  // 9. sınıf kapısı ayrı testte: tests/v78-9sinif.test.js
+  const kartGosterilir = k => (kdh(k).sayi > 0) || konuHavuzuVar(k) === true;
   const fn = new Function("html", "ms", "memoryLimit", "window", "icon", "esc", "attr",
     "memoryColor", "memoryKademe", "HAFIZA_SKALA", "fmtDate", "splitKey", "MEMORY_CRITICAL", "MEMORY_WARNING",
-    "state", "todayStr", "kartDurumHizli", "hafizaKartToplam", "konuHavuzuVar",
+    "state", "todayStr", "kartDurumHizli", "hafizaKartToplam", "konuHavuzuVar", "kartGosterilir",
     "return (function(){\n" + blok + "\nreturn html; })();");
   return fn("", ms, limit || 10, window, icon, esc, attr, memoryColor, memoryKademe, HAFIZA_SKALA, fmtDate, splitKey,
-    MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli, hafizaKartToplam, konuHavuzuVar);
+    MEMORY_CRITICAL, MEMORY_WARNING, durum, () => BUGUN, kartDurumHizli, hafizaKartToplam, konuHavuzuVar, kartGosterilir);
 }
 
 const MS = {
@@ -176,7 +180,11 @@ console.log("\n== 3b) v42 — kart istenmesi TEK kurala bağlı (tekrar günü) 
   ok("günü GELMEYEN konuda kart istenmez", fizik.indexOf('data-act="reviewTopic"') < 0);
   ok("günü GELMEYEN konuda kart zorunluluğu yazmaz",
      fizik.indexOf("kartlar zorunlu") < 0 && fizik.indexOf("kart zorunlu") < 0 && fizik.indexOf("· kart") < 0);
-  ok("günü GELMEYEN konuda yalnız Erken Tekrar var", fizik.indexOf('data-act="earlyReview"') >= 0);
+  // v78 (G-06) — KULLANICI: "erken tekrarda kart açsın; iki ekran aynı davransın".
+  // Günü gelmeyen konuda düğme etiketi "Erken Tekrar" kalır ama AYNI yola
+  // (tekrarKart) bağlıdır: tıklanınca kart turu açılır, basamak artmaz.
+  ok("günü GELMEYEN konuda 'Erken Tekrar' düğmesi var", fizik.indexOf("Erken Tekrar") >= 0);
+  ok("günü GELMEYEN düğme kart yoluna bağlı (tekrarKart)", fizik.indexOf('data-act="tekrarKart"') >= 0);
   ok("günü GELMEYEN konu kırmızı DEĞİL", fizik.indexOf("#DC2626") < 0);
 
   // Kart defteri boş olsa da günü gelen konu kart ister (deftere bağlı değil).

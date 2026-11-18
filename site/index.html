@@ -4722,7 +4722,14 @@ function renderTracking(container) {
             : '<button class="btn btn-sm btn-danger w-full" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:42px;">' +
               icon("flame", 13) + " Tekrar Ettim</button>";
         } else {
-          tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="earlyReview" data-topic="' + attr(r.key) + '" style="min-height:38px;opacity:.85;">' +
+          /* v78 (G-06) — KULLANICI: "erken tekrarda kart açsın. Konu takibinde
+             de bilgi bankasında da aynı şey. Neden farklı davransın ki."
+             KÖK NEDEN: Konu Takibi "Erken Tekrar" düğmesi reviewTopic(...true)
+             çağırıyordu → kart AÇILMADAN tekrar yazılıyor, takvim öteleniyordu;
+             Bilgi Bankası ise tekrarKartBasla ile kart açıyordu. İki ekran iki
+             farklı davranış gösteriyordu. Artık TEK davranış: kart turu açılır.
+             (Erken turda basamak artmaz — G-02 karar A.) */
+          tekrarDugme = '<button class="btn btn-sm btn-ghost" data-act="tekrarKart" data-topic="' + attr(r.key) + '" style="min-height:38px;opacity:.85;">' +
             icon("fast-forward", 13) + " Erken Tekrar</button>";
         }
       }
@@ -5180,13 +5187,10 @@ function reviewTopic(topicKey, erken) {
     return;
   }
 
-  // 1) ERKEN TEKRAR — günü gelmedi: kart sorulmaz.
-  if (erken) {
-    markReviewed(topicKey, true);
-    navigate("tracking");
-    toast("Erken tekrar kaydedildi; hafıza barı %100. Kart istenmez çünkü tekrar günü gelmedi.", "success");
-    return;
-  }
+  // 1) ERKEN TEKRAR — v78 (G-06): iki ekran AYNI davranır, kart turu açılır.
+  // KULLANICI: "erken tekrarda kart açsın ... neden farklı davransın ki."
+  // (İç çağrı: tekrarKartBasla → kart turu → tur ≥%70 ise markReviewed(erken).)
+  if (erken) { tekrarKartBasla(topicKey); return; }
 
   // 2) TEKRAR GÜNÜ GELDİ — kart zorunlu. Kart listesi konunun havuzundan da
   //    üretilebildiği için "kart defteri" yerine GERÇEK listeye bakılır;
@@ -5203,7 +5207,7 @@ function reviewTopic(topicKey, erken) {
     K.kartlar(topicKey).then(function (liste) {
       if (liste && liste.length) {
         toast("Tekrar günü geldi: bu konu " + liste.length + " kartla tekrar edilir.", "info");
-        K.ac(topicKey, { tekrar: true }).then(function (r) {
+        K.ac(topicKey, { tekrar: true, erken: false }).then(function (r) {
           if (r && r.tamamlandi) navigate("tracking");
         });
       } else {
@@ -5223,7 +5227,8 @@ function reviewTopic(topicKey, erken) {
   navigate("tracking");
   toast("Tekrar kaydedildi; hafıza barı %100.", "success");
 }
-function earlyReview(topicKey) { reviewTopic(topicKey, true); }
+// v78 (G-06) — eski çağrı yolu korunuyor ama davranış TEK: kart turu açılır.
+function earlyReview(topicKey) { tekrarKartBasla(topicKey); }
 
 // v60 — TEK TEKRAR YOLU.
 // KULLANICI: "Tek bir tane tekrar kartı olsun; zamanı gelmemişse Erken Tekrar
