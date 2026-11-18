@@ -1,4 +1,4 @@
-const PWA_SURUM = "v86-denemelerim-karsilastir";
+const PWA_SURUM = "v88-silinen-geri-gelmez";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -787,7 +787,7 @@ function renderProfileModal() {
   html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Okulizyon sonuçları</button>';
   html += '</div>';
   // Çekim durumu: sessiz başarısızlık yerine açık bilgi
-  const OKZ_AMBER = ["giris-yok", "bos", "sifre-gerekli", "bilgi-yok", "eslesme-yok", "bekliyor"];
+  const OKZ_AMBER = ["giris-yok", "bos", "sifre-gerekli", "bilgi-yok", "eslesme-yok", "bekliyor", "elle"];
   const durumRenk = !st.durum ? "#6B7280" : (st.durum.kod === "ok" ? "#16A34A" : (OKZ_AMBER.indexOf(st.durum.kod) >= 0 ? "#B45309" : "#E11D48"));
   html += '<div style="margin-top:9px;font-size:11.5px;line-height:1.45;color:' + durumRenk + ';">'
        + '<b>Son çekim:</b> '
@@ -976,7 +976,9 @@ async function oturumUygula(session) {
   const kim = (user.email || "").split("@")[0] || "hesap";
   setAuthLabel(true, kim);
   // Giriş yapıldığı anda Okulizyon kuyruğunu dene (eskiden yalnız "internet geri geldi" olayında deniyordu)
-  setTimeout(function () { try { if (typeof state !== "undefined") okzKuyrukCek(true); } catch (e) {} }, 1200);
+  /* v88 — girişte çekim sürer ama "veriler silindi" işaretine UYAR
+     (kullanıcı sil dediyse kendiliğinden geri getirilmez). */
+  setTimeout(function () { try { if (typeof state !== "undefined") okzKuyrukCek("giris"); } catch (e) {} }, 1200);
   // v70 — öğrenen sözlüğü (kazanim_konu_cache) yükle: aynı kazanım cümlesi
   // ikinci kez geldiğinde kurallar/vektör çalışmadan konu buradan gelir.
   setTimeout(function () { try { okzCacheYukle(); } catch (e) {} }, 900);
@@ -997,7 +999,21 @@ async function oturumUygula(session) {
     if (data && data.state) {
       // v44 — uzak kaydın zamanı: kendi yazdığımızdan yeni ise üzerine yazmayız.
       sonUzakYazma = bulutZaman(data.updated_at);
+      const uzakMs = Date.parse(data.updated_at) || sonUzakYazma || 0;
       const uzakState = typeof data.state === "string" ? JSON.parse(data.state) : data.state;
+      /* v88 — cihazda "tüm veriler silindi" damgası varsa ve bulut daha eskiyse
+         buluttaki denemeler GERİ YÜKLENMEZ (kullanıcı sildi). */
+      if (okzSifirlamaGecerli(okzSifirlamaDamgasi(user.id), uzakMs)) {
+        state.exams = [];
+        state.questions = [];
+        state.okulizyon = Object.assign({}, okzStore(), { otomatikDurdu: true, sifirlandiAt: okzSifirlamaDamgasi(user.id) });
+        try { saveState(); } catch (e) { /* */ }
+        try { bulutaYaz(true); } catch (e) { /* */ }
+        navigate(currentPage);
+        if (typeof updateUserUI === "function") updateUserUI();
+        toast("Verilerin silinmiş durumda — buluttaki eski kayıt geri yüklenmedi.", "info");
+        return;
+      }
       const yerelBos = !state.exams.length && !state.questions.length && !Object.keys(state.topics).length;
       const nEx = (uzakState.exams || []).length;
       const nQ = (uzakState.questions || []).length;
@@ -1386,8 +1402,46 @@ function okzSilinenIkili(ex, hash) {
   if (kisa !== eski) okzSilinenIsaretle(kisa, hash);
 }
 
+/* ------------------------------------------------------------
+   v88 — "SİLDİM" CİHAZ DAMGASI
+   ------------------------------------------------------------
+   KULLANICI: "Tüm verileri sildim, çıkış yaptım, tekrar girdim ve bir deneme
+   geri geldi." Sıfırlama buluta yazılamadan çıkış yapılırsa, girişte buluttaki
+   ESKİ kopya geri yükleniyordu. Cihaz, sildiği ANI hesap bazında damgalar;
+   damga bulut kaydından YENİYSE bulut geri yüklenmez.
+   Damga kişisel veri değildir (yalnız zaman); çıkışta hesap anahtarıyla kalır. */
+function okzSifirlamaAnahtari(uid) {
+  return "am_sifirlandi_" + String(uid || "");
+}
+function okzSifirlamaDamgasi(uid) {
+  try { return Number(localStorage.getItem(okzSifirlamaAnahtari(uid))) || 0; } catch (e) { return 0; }
+}
+/* Saf karar: cihaz damgası bulut kaydından YENİ mi? (test edilebilir) */
+function okzSifirlamaGecerli(damga, uzakMs) {
+  return Number(damga) > 0 && Number(damga) > (Number(uzakMs) || 0);
+}
+window.__okzSifirlamaIsaretle = function (uid) {
+  try {
+    const k = uid || (currentUser && currentUser.id);
+    if (!k) return 0;
+    const t = Date.now();
+    localStorage.setItem(okzSifirlamaAnahtari(k), String(t));
+    return t;
+  } catch (e) { return 0; }
+};
+window.__okzSifirlamaTemizle = function (uid) {
+  try {
+    const k = uid || (currentUser && currentUser.id);
+    if (k) localStorage.removeItem(okzSifirlamaAnahtari(k));
+  } catch (e) { /* */ }
+};
+window.__okzSifirlamaGecerli = okzSifirlamaGecerli;
+
 function okzStore() {
   if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], aktarilan: {}, guncellenen: [], pulledAt: 0, duyurular: null, silinen: {} };
+  /* v88 — "Tüm verileri sil" sonrası OTOMATİK çekim durur. Kullanıcı sil dediyse
+     uygulama kendi kendine geri getirmez; "Şimdi dene" ile isterse getirir. */
+  if (typeof state.okulizyon.otomatikDurdu !== "boolean") state.okulizyon.otomatikDurdu = false;
   // v86 — eski çekme defteri (islenen) bir kez silinir; yerine yalnız
   // "bilerek silindi" notu tutulur. Sıfırlama sonrası diskteki not geri gelir
   // ki kullanıcının tek tek sildiği deneme kendiliğinden geri dönmesin.
@@ -1415,6 +1469,14 @@ const OKZ_SEBEP = {
 // Tarayıcıdan gerçek çekimi tetikle (Edge Function “ben” modu) → sonra kuyruğu oku
 async function okzSunucuCek() {
   if (!sb || !currentUser) return okzDurum("giris-yok", OKZ_SEBEP["giris-yok"]);
+  /* v88 — Kullanıcı AÇIKÇA istedi ("Şimdi dene" / "Okulizyon'dan çek"):
+     "sildim" durdurması kalkar, sunucudaki tüm sonuçlar yeniden içe alınır. */
+  try {
+    const st = okzStore();
+    st.otomatikDurdu = false;
+    st.sifirlandiAt = 0;
+    if (typeof window.__okzSifirlamaTemizle === "function") window.__okzSifirlamaTemizle();
+  } catch (e) { /* */ }
   const yetki = await sb.auth.getSession().then(r => r && r.data && r.data.session).catch(() => null);
   if (!yetki || !yetki.access_token) return okzDurum("giris-yok", "Oturum bulunamadı — tekrar giriş yap.");
   okzDurum("bekliyor", "Okulizyon’a bağlanılıyor…");
@@ -1879,7 +1941,13 @@ function initOkulizyonUI() {
     if (!el) return;
     const a = el.dataset.act;
     if (a === "pwaOkz") openOkzModal();
-    else if (a === "okzSimdiCek") { toast("Okulizyon sonuçları sorgulanıyor…", "info"); okzSunucuCek(); }
+    else if (a === "okzSimdiCek") {
+      /* v88 — kullanıcı çekimin SONUCUNU görmeli: pencere açıksa kapanır,
+         Denemelerim'de kalınır; sonuç gelince ekran tazelenir. */
+      try { closeProfileModal(); } catch (e) { /* */ }
+      toast("Okulizyon sonuçları sorgulanıyor… Çekince Denemelerim'de görünecek.", "info");
+      okzSunucuCek();
+    }
     else if (a === "okzClose") closeOkzModal();
     else if (a === "okzSaveBilgi") okzSaveBilgi();
     else if (a === "amKanalTesti") { amKanalTestiCalistir(); }
@@ -2244,10 +2312,16 @@ function okzSaveBilgi() {
     try { okzListeTazele("il", true); } catch (e) { /* */ }
     return;
   }
+  /* v88 — KULLANICI: "Bilgileri kaydet dedikten sonra ekran kapanmıyor; kullanıcı
+     deneme çekildiği anı göremiyor, uygulama içi bildirim kartın arkasında kalıyor."
+     Kaydet → PENCERE KAPANIR → çekim başlar → durum/toast GÖRÜNÜR.
+     (Kod eksikse pencere açık kalır: kullanıcı listeden seçmek zorunda.) */
+  try { closeProfileModal(); } catch (e) { /* */ }
   toast("Kaydedildi — şimdi Okulizyon'da aranıyor…", "info");
   okzBilgiBulutaYaz().then(function (yazildi) {
     if (yazildi === false && sb && currentUser) {
       okzDurum("hata", "Bilgiler buluta yazılamadı (bağlantı?). «Şimdi dene» ile tekrar dene.");
+      toast("Bilgiler buluta yazılamadı — «Şimdi dene» ile tekrar dene.", "warning");
       return;
     }
     try { okzSunucuCek(); } catch (e) { /* */ }
@@ -2270,10 +2344,23 @@ let okzCekSuruyor = false;
 async function okzKuyrukCek(zorla) {
   if (typeof state === "undefined") return;                 // uygulama durumu henüz hazır değil
   if (okzCekSuruyor) return;
+  /* v88 — Çağrı türleri:
+       true / "elle"  → kullanıcı istedi ("Şimdi dene"): her şeyi çeker
+       "giris"        → giriş/açılış: 5 dk sınırını atlar, "durdu"ya UYAR
+       false/undefined→ otomatik: 5 dk sınırına ve "durdu"ya uyar */
+  const elle = (zorla === true || zorla === "elle");
+  const giris = (zorla === "giris");
   const st0 = okzStore();
   const simdi = Date.now();
-  // Otomatik denemeler 5 dakikada bir; "Şimdi dene" her zaman çalışır
-  if (!zorla && st0.sonDeneme && simdi - st0.sonDeneme < 5 * 60 * 1000) return;
+  /* v88 — KULLANICI: "Tüm verileri sildim, çıkış yaptım, tekrar girdim ve bir
+     deneme geri geldi." Kök neden: sıfırlamadan sonra açılışta OTOMATİK çekim
+     sunucudaki kuyruğu yeniden içe alıyordu. Artık sıfırlama "durdu" işareti
+     bırakır: kullanıcı istemeden hiçbir deneme geri gelmez. */
+  if (!elle && st0.otomatikDurdu) {
+    return okzDurum("elle", "Verilerin silindi. Okulizyon'dan yeniden çekmek istersen «Şimdi dene»ye bas.");
+  }
+  // Otomatik denemeler 5 dakikada bir; giriş ve "Şimdi dene" her zaman çalışır
+  if (!elle && !giris && st0.sonDeneme && simdi - st0.sonDeneme < 5 * 60 * 1000) return;
   st0.sonDeneme = simdi;
 
   if (!sb) return okzDurum("bulut-yok", "Bulut bağlantısı kurulamadı. Birazdan tekrar dene.");
@@ -2373,6 +2460,16 @@ async function okzKuyrukCek(zorla) {
   } finally {
     okzCekSuruyor = false;
     okzBadge();
+    /* v88 — çekim bitince ekran TAZELENİR: Denemelerim'deki "silinmiş" kartı,
+       yeşil şerit ve profil durumu kendiliğinden güncellenir (eski sürümde
+       kullanıcı sayfayı kendisi yenilemek zorunda kalıyordu). */
+    try {
+      if (typeof currentPage !== "undefined" && currentPage === "exams" && typeof navigate === "function") navigate("exams");
+      else {
+        const pm = document.getElementById("pwa-profile-modal");
+        if (pm && pm.style.display === "flex" && typeof renderProfileModal === "function") renderProfileModal();
+      }
+    } catch (e) { /* */ }
   }
 }
 // Okul sitesinden gelen SINAV duyuruları → takvime otomatik okul sınavı
