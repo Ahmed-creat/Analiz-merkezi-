@@ -1,5 +1,5 @@
 import React from 'react';
-import {Img, interpolate, staticFile} from 'remotion';
+import {Img, OffthreadVideo, interpolate, staticFile} from 'remotion';
 
 /* ---------- yardımcılar ---------- */
 export const yum = (t: number) => {
@@ -372,3 +372,206 @@ export const Perde: React.FC<{f: number; basla: number; sure?: number; renk?: st
     <div style={{position: 'absolute', inset: 0, background: renk, opacity: p, pointerEvents: 'none'}} />
   );
 };
+
+/* ---------- film penceresi (gerçek uygulama: resim ya da video) ---------- */
+export type Kaynak = {tip: 'resim'; src: string} | {tip: 'video'; basla: number};
+
+export const Pencere: React.FC<{
+  kaynak: Kaynak;
+  s: number;
+  cx: number;
+  cy: number;
+  hiz?: number;
+  genislik: number;
+  yukseklik: number;
+  url?: string;
+  cerceve?: boolean;
+  golge?: boolean;
+}> = ({
+  kaynak,
+  s,
+  cx,
+  cy,
+  hiz = 1,
+  genislik,
+  yukseklik,
+  url = 'analiz-merkezi.vercel.app',
+  cerceve = true,
+  golge = true,
+}) => {
+  const icYukseklik = yukseklik - (cerceve ? 42 : 0);
+  return (
+    <div
+      style={{
+        width: genislik,
+        height: yukseklik,
+        borderRadius: 18,
+        overflow: 'hidden',
+        background: '#F5F7FB',
+        border: '1px solid rgba(11,18,32,0.08)',
+        boxShadow: golge
+          ? '0 2px 4px rgba(11,18,32,0.06), 0 30px 70px rgba(11,18,32,0.18), 0 90px 150px rgba(15,27,51,0.12)'
+          : undefined,
+        position: 'relative',
+      }}
+    >
+      {cerceve && (
+        <div
+          style={{
+            height: 42,
+            background: 'linear-gradient(#F2F5FA,#E9EEF7)',
+            borderBottom: '1px solid rgba(11,18,32,0.07)',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0 16px',
+            gap: 8,
+            position: 'relative',
+            zIndex: 2,
+          }}
+        >
+          {['#FF5F57', '#FEBC2E', '#28C840'].map(c => (
+            <div key={c} style={{width: 11, height: 11, borderRadius: 6, background: c, opacity: 0.85}} />
+          ))}
+          <div
+            style={{
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              textAlign: 'center',
+              fontSize: 12.5,
+              fontWeight: 600,
+              color: '#7A8AA3',
+              letterSpacing: 0.2,
+            }}
+          >
+            {url}
+          </div>
+        </div>
+      )}
+      <div style={{position: 'absolute', inset: cerceve ? '42px 0 0 0' : 0, overflow: 'hidden'}}>
+        <div
+          style={{
+            position: 'absolute',
+            left: genislik / 2 - cx * s,
+            top: icYukseklik / 2 - cy * s,
+            width: 1920 * s,
+            height: 1080 * s,
+          }}
+        >
+          {kaynak.tip === 'resim' ? (
+            <Img src={staticFile(kaynak.src)} style={{width: '100%', height: '100%'}} />
+          ) : (
+            <OffthreadVideo
+              src={staticFile('kayit/kayit.mp4')}
+              startFrom={kaynak.basla}
+              playbackRate={hiz}
+              muted
+              style={{width: '100%', height: '100%'}}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ---------- köşe markası ---------- */
+export const MarkaKose: React.FC<{op: number; koyu?: boolean; boyut?: number}> = ({
+  op,
+  koyu = true,
+  boyut = 34,
+}) => (
+  <div
+    style={{
+      position: 'absolute',
+      left: 54,
+      top: 44,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      opacity: op * 0.92,
+    }}
+  >
+    <Img
+      src={staticFile('promo/logo.png')}
+      style={{width: boyut, height: boyut, objectFit: 'contain', display: 'block'}}
+    />
+    <div
+      style={{
+        fontSize: 19,
+        fontWeight: 700,
+        letterSpacing: -0.3,
+        color: koyu ? 'rgba(236,242,255,0.82)' : '#38465C',
+      }}
+    >
+      Analiz Merkezi
+    </div>
+  </div>
+);
+
+/* ---------- anlatı kartı ---------- */
+export const Anlati: React.FC<{
+  f: number;
+  etiket: string;
+  cumleler: {basla: number; bit: number; metin: React.ReactNode}[];
+  koyu?: boolean;
+  genislik?: number;
+  sol?: number;
+  alt?: number;
+}> = ({f, etiket, cumleler, koyu = false, genislik = 760, sol = 74, alt = 74}) => (
+  <div
+    style={{
+      position: 'absolute',
+      left: sol,
+      bottom: alt,
+      width: genislik,
+      padding: '20px 26px 22px',
+      borderRadius: 18,
+      background: koyu ? 'rgba(10,15,25,0.72)' : 'rgba(255,255,255,0.975)',
+      border: koyu ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(11,18,32,0.08)',
+      boxShadow: koyu ? '0 18px 50px rgba(0,0,0,0.35)' : '0 22px 60px rgba(11,18,32,0.16)',
+      boxSizing: 'border-box',
+      minHeight: 128,
+    }}
+  >
+    <div
+      style={{
+        fontSize: 14,
+        fontWeight: 700,
+        letterSpacing: 2.6,
+        textTransform: 'uppercase',
+        color: koyu ? '#7FA8F5' : '#2563EB',
+        marginBottom: 10,
+      }}
+    >
+      {etiket}
+    </div>
+    <div style={{position: 'relative', minHeight: 76}}>
+      {cumleler.map((c, i) => {
+        const g = yum((f - c.basla) / 12);
+        const x = 1 - yum((f - (c.bit - 10)) / 10);
+        const op = Math.min(g, x);
+        return (
+          <div
+            key={i}
+            style={{
+              position: i === 0 ? 'relative' : 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              opacity: op,
+              transform: `translateY(${(1 - g) * 10}px)`,
+              fontSize: 25,
+              fontWeight: 600,
+              lineHeight: 1.42,
+              letterSpacing: -0.2,
+              color: koyu ? '#E7EEFC' : '#16233A',
+            }}
+          >
+            {c.metin}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);

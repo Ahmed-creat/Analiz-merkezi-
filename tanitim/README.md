@@ -1,12 +1,12 @@
 # Analiz Merkezi — tanıtım videoları
 
-1920×1080 · 30 fps · Türkçe · ses yok. Videolardaki **her kare uygulamanın kendisinden**
+1920×1080 · 30 fps · Türkçe. Tanıtım filmi özgün müzikli, kullanım videosu sessiz. Videolardaki **her kare uygulamanın kendisinden**
 alınmıştır (arayüz v83, dal ucu `arena/cc4de070-analiz-merkezi` @ `c48f51e`).
 Elle çizilmiş arayüz yok. Uygulama kaynak dosyalarına **hiç dokunulmaz**.
 
 | Video | Dosya | Süre | Amaç |
 |-------|-------|------|------|
-| **Tanıtım filmi** (lansman) | `teslim/Analiz-Merkezi-tanitim-filmi.mp4` | 89,5 sn | Problem → bilim → **bilimden uygulamaya köprü** → ürün. Reklam/duyuru filmi. Yapım notu: `TANITIM-NOTU.md` |
+| **Tanıtım filmi** (lansman) | `teslim/Analiz-Merkezi-tanitim-filmi.mp4` | 94,0 sn | Tek anlatı: problem → bilim **aynı sahnede gerçek ekranla** → plan → kanıt → tekrar. Özgün müzikli. Yapım notu: `TANITIM-NOTU.md` |
 | **Kullanım videosu** (v2) | `teslim/Analiz-Merkezi-tanitim-v2.mp4` | 79,1 sn | Uygulamanın gerçek kullanımı, tek kesintisiz akış. Bu README bu videoyu anlatır. |
 
 Kompozisyonlar: `Tanitim` (film) ve `AnaVideo` (kullanım) — ikisi de `src/index.ts` içinde.
