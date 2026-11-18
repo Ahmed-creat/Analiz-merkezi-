@@ -4352,7 +4352,7 @@ function gunlukGorevler() {
   // v76 — KULLANICI: "Havuz yok ise direkt kart ... düğmesi olmasın."
   // Havuzu ve kişisel kartı olmayan konu göreve hiç girmez; düğme çizilmez.
   const kart = ms.rows.filter(r => r.pct < 60)
-    .filter(r => kartDurumHizli(r.key).sayi > 0 || konuHavuzuVar(r.key) === true)
+    .filter(r => kartGosterilir(r.key))
     .slice(0, 6);
   if (kart.length) {
     liste.push({
@@ -4714,7 +4714,7 @@ function renderTracking(container) {
       if (r) {
         // v76 — kartı olmayan konuda "kartlar zorunlu" yazılmaz: o konuda
         // kart penceresi hiç açılmaz, tekrar doğrudan yazılır.
-        const kartVarSatir = kartDurumHizli(r.key).sayi > 0 || konuHavuzuVar(r.key) === true;
+        const kartVarSatir = kartGosterilir(r.key);
         if (tekrarZamani) {
           tekrarDugme = kartVarSatir
             ? '<button class="btn btn-sm btn-danger w-full" data-act="reviewTopic" data-topic="' + attr(r.key) + '" style="min-height:42px;">' +
@@ -5171,6 +5171,14 @@ function tamamlanmamisUyar(topicKey) {
 // kart zorunlu olur. Çalışma zamanı gelmediyse kart olmaz."
 function reviewTopic(topicKey, erken) {
   if (!konuTamamMi(topicKey)) { tamamlanmamisUyar(topicKey); return; }
+  // v78 — kart gösterilmeyen konuda (9. sınıf / havuzsuz) kart turu AÇILMAZ;
+  // tekrar sessizce yazılır (10. sınıf akışı bozulmaz).
+  if (!kartGosterilir(topicKey)) {
+    markReviewed(topicKey, !!erken);
+    navigate("tracking");
+    toast((erken ? "Erken tekrar kaydedildi" : "Tekrar kaydedildi") + "; hafıza barı %100.", "success");
+    return;
+  }
 
   // 1) ERKEN TEKRAR — günü gelmedi: kart sorulmaz.
   if (erken) {
@@ -5225,6 +5233,13 @@ function earlyReview(topicKey) { reviewTopic(topicKey, true); }
 //     (erken ise "erken tekrar" olarak). Kartı olmayan konu kilitlenmez.
 function tekrarKartBasla(topicKey) {
   if (!konuTamamMi(topicKey)) { tamamlanmamisUyar(topicKey); return; }
+  // v78 — kart gösterilmeyen konuda kart penceresi hiç açılmaz.
+  if (!kartGosterilir(topicKey)) {
+    markReviewed(topicKey, !(nextReviewInfo(topicKey) && nextReviewInfo(topicKey).date));
+    navigate("tracking");
+    toast("Tekrar kaydedildi; hafıza barı %100.", "success");
+    return;
+  }
   const nr = nextReviewInfo(topicKey);
   const zamaniGeldi = !!(nr && nr.date && parseDay(nr.date) <= parseDay(todayStr()));
   const erken = !zamaniGeldi;
@@ -6005,6 +6020,22 @@ function konuHavuzuVar(topicKey) {
   return null;
 }
 
+// v78 — KART/5. ADIM GÖSTERİM KAPISI (tek yer).
+// KULLANICI KARARI: "9. sınıflarda havuz olmayacak, kısa kontrol veya kart da
+// gözükmeyecek. 10. sınıfta olduğu gibi çalışacak."
+// 9. sınıfın hiçbir konusunda havuz yok (havuzların tamamı 10. sınıf) → bu
+// sınıfta kart düğmesi ve kart görevleri hiç çizilmez; konu 4 adımla çalışır,
+// tekrar takvimi/hafıza barı 10. sınıfla aynı işler.
+// 10. sınıfta: havuzu olan konu ya da kişisel (deneme hatasından doğan) kartı
+// olan konu düğmeyi alır. Havuzu da kartı da olmayan konuda düğme çizilmez.
+function kartGosterilir(topicKey) {
+  if (String(state.user.grade || "9") === "9") return false;
+  try {
+    if (kartDurumHizli(topicKey).sayi > 0) return true;
+  } catch (e) { /* */ }
+  return konuHavuzuVar(topicKey) === true;
+}
+
 function renderKnowledge(container) {
   const tree = CURRICULUM[state.user.grade || "9"] || {};
   const dl = daysLeftToExam();
@@ -6027,12 +6058,11 @@ function renderKnowledge(container) {
         const key = lesson + " > " + topic;
         const mem = state.memory[key];
         const done = mem && mem.completedAt;
-        /* v76 — "YAKINDA" ROZETİ. 9. sınıfın soru havuzu henüz yok; kullanıcı
-           "Uygulamada 'yakında' olarak işaretle" dedi. Rozet yalnız 9. sınıfta
-           ve havuzun OLMADIĞI kesinleştiğinde çizilir (manifest yüklenmeden
-           hiçbir şey yazılmaz). Düğme değildir; tıklanınca hiçbir şey açılmaz. */
-        const yakinda = (String(state.user.grade || "9") === "9" && konuHavuzuVar(key) === false)
-          ? '<span class="badge" style="background:var(--bg-canvas);color:var(--text-muted);border:1px solid var(--border-card);font-size:9.5px;">YAKINDA</span>' : "";
+        /* v78 — "YAKINDA" ROZETİ KALDIRILDI (kullanıcı: "yakında rozeti kalksın").
+           Kullanıcı kararı: 9. sınıfta soru havuzu YOK, kısa kontrol ve kart da
+           GÖSTERİLMEZ; konu 4 adımla normal çalışır (10. sınıfla aynı akış).
+           Rozet "bu konu çalışılmaz" izlenimi veriyordu; artık hiç çizilmez. */
+        const yakinda = "";
         const status = done ? '<span class="badge badge-success">' + icon("check", 10) + " %" + getMemoryStrength(key) + "</span>" : (state.topics[key] && state.topics[key].step > 0 ? '<span class="badge badge-info">ADIM ' + state.topics[key].step + "</span>" : yakinda);
         html += '<button class="tree-child ' + (selectedTopicKey === key ? "active" : "") + '" data-act="selectTopic" data-topic="' + attr(key) + '"><span>' + esc(topic) + "</span>" + status + "</button>";
       });
@@ -6068,10 +6098,9 @@ function renderKnowledge(container) {
     const bktEntry = state.bkt_state && state.bkt_state[selectedTopicKey];
     const bktPercent = bktEntry && bktEntry.gozlem_sayisi >= 5 ? Math.round(Number(bktEntry.L || 0) * 100) : null;
 
-    // v76 — Havuzu olmayan konu (9. sınıf) "YAKINDA" olarak işaretlenir;
-    // hata/uyarı gibi değil, nötr bir rozet olarak.
-    const konuYakinda = konuHavuzuVar(selectedTopicKey) === false
-      ? ' <span class="badge" style="background:var(--bg-canvas);color:var(--text-muted);border:1px solid var(--border-card);font-size:10px;vertical-align:middle;">YAKINDA</span>' : "";
+    // v78 — "YAKINDA" rozeti kaldırıldı (kullanıcı kararı). Havuzu olmayan
+    // konu da normal çalışır; yalnız 5. adım (kısa kontrol) çizilmez.
+    const konuYakinda = "";
     html += '<div class="bento-card" style="margin-bottom:16px;"><div class="flex items-center justify-between" style="flex-wrap:wrap;gap:8px;"><div><span class="badge badge-info">' + esc(p.lesson) + "</span>" +
       '<h3 style="font-size:18px;font-weight:700;margin-top:6px;">' + esc(p.topic) + konuYakinda + "</h3></div>" +
       '<span class="badge" style="background:' + diff.color + '22;color:' + diff.color + ';">Soru önerisi: ' + diff.level + (diff.rate !== null ? " (başarı %" + diff.rate + ")" : "") + "</span></div></div>";
@@ -6090,7 +6119,7 @@ function renderKnowledge(container) {
       // v76 — Havuzu OLMAYAN ve kişisel kartı da OLMAYAN konuda kart düğmesi
       // çizilmez (kullanıcı: "Havuz yok ise direkt kart veya soru düğmesi
       // olmasın, açılmasın"). Kişisel kart varsa (deneme hatasından) düğme kalır.
-      const kartVar = (kartDurumHizli(selectedTopicKey).sayi > 0) || (konuHavuzuVar(selectedTopicKey) === true);
+      const kartVar = kartGosterilir(selectedTopicKey);
       const tekrarDugme = kartVar ?
         '<button class="btn ' + (tekrarZamani ? "btn-success" : "btn-primary") + ' btn-sm" data-act="tekrarKart" data-topic="' +
         attr(selectedTopicKey) + '" style="min-height:48px;">' +
