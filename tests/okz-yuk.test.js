@@ -33,9 +33,23 @@ const IDX = OKZK.indeksKur(require(path.join(KOK, "site", "content", "konu_eslem
 // artık Denemelerim'de: "tümü: <neden>" düğmesi tüm bekleyen satırlara yazar.
 console.log("\n== 1) Tek dokunuş ==");
 ok("Denemelerim'de 'tümü' neden düğmeleri var", HTML.indexOf('data-act="okzNedenHepsi"') > 0);
-ok("üçten az olmayan hazır neden düğmesi", /nedenler\.slice\(0, 4\)\.map/.test(HTML));
+/* v79 — KULLANICI: "neden yanlış ve boş için aynı neden listesi kullanılıyor?"
+   Tek havuz KALDIRILDI: yanlışların "tümü" düğmeleri WRONG_REASONS'tan (4),
+   boşlarınki EMPTY_REASONS'tan (3) üretilir. İkisi de ≥3 hazır neden. */
+/* Düğmeler JS içinde .map ile üretiliyor: kaynakta 1 kez yazılı, ekranda N tane.
+   O yüzden "üretim yolu + liste uzunluğu" ölçülür. */
+const yanlisN = (() => { const m = /const WRONG_REASONS = \[([^\]]*)\]/.exec(HTML); return m ? (m[1].match(/"/g) || []).length / 2 : 0; })();
+const bosN = (() => { const m = /const EMPTY_REASONS = \[([^\]]*)\]/.exec(HTML); return m ? (m[1].match(/"/g) || []).length / 2 : 0; })();
+ok("yanlışlar için 3'ten az olmayan hazır neden düğmesi",
+  yanlisN >= 3 && /WRONG_REASONS\.map\(r => '<button[^']*data-okz-hedef="yanlis"/.test(HTML),
+  "WRONG_REASONS=" + yanlisN);
+ok("boşlar için 3'ten az olmayan hazır neden düğmesi",
+  bosN >= 3 && /EMPTY_REASONS\.map\(r => '<button[^']*data-okz-hedef="bos"/.test(HTML),
+  "EMPTY_REASONS=" + bosN);
 ok("hazır nedenler uygulamanın kendi listesinden (KONUEKSİKLİĞİ dâhil)",
-  /WRONG_REASONS\.concat\(EMPTY_REASONS\)/.test(HTML) && /KONUEKSİKLİĞİ/.test(HTML));
+  /EMPTY_REASONS\.map\(r => '<button[^']*data-okz-hedef="bos"/.test(HTML) && /KONUEKSİKLİĞİ/.test(HTML));
+ok("yanlış ve boş TEK havuzda birleştirilmiyor (eski hata geri dönmesin)",
+  HTML.indexOf("WRONG_REASONS.concat(EMPTY_REASONS)") < 0);
 ok("'süre yetmedi' hızlı seçeneklerde YOK", !/SÜRE YETMEDİ|SÜREYETMEDİ/.test(APP));
 ok("tek neden tüm satırlara uygulanıyor",
   /async function okzAnalizKaydet\(tekNeden, denemeIdx\)[\s\S]{0,1200}const sec = tekNeden \|\| secimler/.test(APP));

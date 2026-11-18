@@ -110,9 +110,15 @@ console.log("\n== 5) Profil: kuyruk listesi YOK, götürücü var ==");
   const son = APP.indexOf("function okzSaveBilgi()");
   const modal = APP.slice(bas, son);
   ok("modalda kuyruk listesi yok", modal.indexOf("st.pending") < 0);
-  ok("modalda 'Denemelerim'de aç' düğmesi var", modal.indexOf('data-act="okzGitDenemeler"') > 0);
-  ok("düğme Denemelerim sayfasını açıyor", /navigate\("exams"\)/.test(APP));
-  ok("sayaç neden bekleyen satırları sayıyor", /const n = okzBekleyenSatirlar\(\)/.test(APP));
+  /* v79 — KULLANICI: "profilden analiz bekliyor'u kaldırmamışsın." Artık
+     profilde 'Analiz Bekliyor' ADI, SAYACI ve götürücüsü HİÇ yok.
+     Yorumlar ayıklanır: kök neden ANLATIMI değil, KOD denetlenir. */
+  const APP_KOD = APP.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+  ok("profil penceresinde 'Analiz Bekliyor' adı yok",
+    APP_KOD.indexOf(">Analiz Bekliyor") < 0 && APP_KOD.indexOf("⏳ Analiz Bekliyor") < 0);
+  ok("profilde bekleyen sayacı yok", !/Analiz Bekliyor' \+ \(bekleyen/.test(APP_KOD) && modal.indexOf("okzBekleyenSatirlar") < 0);
+  ok("'Denemelerim'de aç' götürücüsü kalktı (düğmesiz eylem yok)", APP_KOD.indexOf("okzGitDenemeler") < 0);
+  ok("sayaç yalnız profil rozetinde kullanılıyor", /const n = okzBekleyenSatirlar\(\)/.test(APP));
   ok("okzBekleyenSatirlar yalnız boş nedenli satırları sayar", /l && !l\.type/.test(APP));
 }
 

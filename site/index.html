@@ -4583,7 +4583,7 @@ function renderExams(container) {
       const bekleyenN = (ex.errorLogs || []).filter(l => l && !l.type).length;
       return '<div class="list-row exam-row' + (secili ? " active" : "") + '" style="cursor:pointer;flex-wrap:wrap;" data-act="examDetail" data-idx="' + idx + '"><div style="flex:1;min-width:0;"><div style="font-weight:600;font-size:13px;">' + esc(ex.name) + (yabanci ? ' <span class="badge" style="background:var(--semantic-warning-bg);color:var(--on-warning-bg);font-size:10px;">' + exSinif + ". SINIF</span>" : "") + '</div>' +
         '<div class="text-xs text-muted tabular">' + fmtDate(ex.date) + " · " + ex.total + " soru · " + (ex.errorLogs || []).length + " hata kaydı" +
-          (bekleyenN ? ' · <b style="color:#B45309;">analiz bekliyor (' + bekleyenN + ")</b>" : "") + "</div></div>" +
+          (bekleyenN ? ' · <button class="btn btn-sm btn-ghost" data-act="examAnaliz" data-idx="' + idx + '" style="padding:1px 7px;font-size:11px;min-height:26px;color:var(--brand-blue);border:1px solid var(--border-card);">analiz bekliyor (' + bekleyenN + ") →</button>" : "") + "</div></div>" +
         '<span class="tabular font-bold" style="color:var(--brand-blue);">' + ex.net + "</span>" +
         '<span class="badge badge-info" style="flex-shrink:0;">DETAY</span>' +
         '<button class="icon-btn" data-act="deleteExam" data-idx="' + idx + '" style="min-width:48px;min-height:48px;">' + icon("trash-2", 15, "color:var(--semantic-error);") + "</button></div>";
@@ -4609,11 +4609,16 @@ function renderExams(container) {
        her yanlış/boş satır konu + soru no ile burada listelenir; neden
        seçilince BKT gözlemi doğar, Acil Çalışılacaklar dolar. */
     const secIdx = examDetailIdx !== null ? examDetailIdx : state.exams.length - 1;
-    const bekleyen = (sonEx.errorLogs || []).map((l, j) => ({ l: l, j: j })).filter(x => x.l && !x.l.type);
+    const bekleyen = (sonEx.errorLogs || []).map((l, j) => ({ l: l, j: j, bos: !!(l && l.status === "e") })).filter(x => x.l && !x.l.type);
     if (bekleyen.length) {
-      const nedenler = WRONG_REASONS.concat(EMPTY_REASONS).filter((v, i, a) => a.indexOf(v) === i);
-      html += '<div class="bento-card" id="analiz-bekliyor" style="margin-top:16px;border:1px solid rgba(180,83,9,0.35);background:rgba(245,158,11,0.06);">' +
-        '<h3 style="font-size:15px;font-weight:700;margin-bottom:6px;">' + icon("alert-circle", 16, "vertical-align:middle;margin-right:6px;color:#B45309;") +
+      /* v79 — KULLANICI: "neden yanlış ve boş için aynı neden listesi kullanılıyor?"
+         DOĞRU: liste tek havuzdu. Artık YANLIŞ satırında WRONG_REASONS, BOŞ
+         satırında EMPTY_REASONS (deneme formundaki aynı kural). Ayrıca
+         "tümü" düğmeleri de türe göre ayrıldı: bir liste diğerine yazılmaz. */
+      const yanlisN = bekleyen.filter(x => !x.bos).length;
+      const bosN = bekleyen.filter(x => x.bos).length;
+      html += '<div class="bento-card" id="analiz-bekliyor" style="margin-top:16px;">' +
+        '<h3 style="font-size:15px;font-weight:700;margin-bottom:6px;">' + icon("clipboard-list", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") +
         " Analiz bekliyor · " + bekleyen.length + " soru</h3>" +
         '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu sorular Okulizyon denemesinden geldi. Nedenini seç → konu analizi (Acil Çalışılacaklar) oluşur. Neden seçilmeyen soru analize GİRMEZ.</p>' +
         /* v78 — Okulizyon sınav sayfası (video çözümler orada). Adres yoksa
@@ -4621,9 +4626,14 @@ function renderExams(container) {
         (sonEx.okulizyonUrl
           ? '<a href="' + attr(sonEx.okulizyonUrl) + '" target="_blank" rel="noopener" class="btn btn-sm btn-ghost" style="margin-bottom:10px;display:inline-flex;gap:5px;align-items:center;">▶ Okulizyon\'da sınavı ve çözümleri aç</a>'
           : "") +
-        '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">' +
-        nedenler.slice(0, 4).map(r => '<button class="btn btn-sm btn-ghost" data-act="okzNedenHepsi" data-reason="' + attr(r) + '" data-idx="' + secIdx + '" style="border:1px solid var(--border-card);font-size:11.5px;">tümü: ' + esc(r) + "</button>").join("") +
-        "</div>";
+        (yanlisN ? '<div class="text-xs text-muted" style="margin-bottom:3px;">Yanlışların tümüne (' + yanlisN + "):</div>" +
+          '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">' +
+          WRONG_REASONS.map(r => '<button class="btn btn-sm btn-ghost" data-act="okzNedenHepsi" data-okz-hedef="yanlis" data-reason="' + attr(r) + '" data-idx="' + secIdx + '" style="border:1px solid var(--border-card);font-size:11.5px;">' + esc(reasonLabel(r)) + "</button>").join("") +
+          "</div>" : "") +
+        (bosN ? '<div class="text-xs text-muted" style="margin-bottom:3px;">Boşların tümüne (' + bosN + "):</div>" +
+          '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">' +
+          EMPTY_REASONS.map(r => '<button class="btn btn-sm btn-ghost" data-act="okzNedenHepsi" data-okz-hedef="bos" data-reason="' + attr(r) + '" data-idx="' + secIdx + '" style="border:1px solid var(--border-card);font-size:11.5px;">' + esc(reasonLabel(r)) + "</button>").join("") +
+          "</div>" : "");
       bekleyen.slice(0, 25).forEach(x => {
         const l = x.l;
         html += '<div class="kb-satir" style="display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--border-card);">' +
@@ -4639,8 +4649,8 @@ function renderExams(container) {
               ? '<a href="' + attr(vu) + '" target="_blank" rel="noopener" title="Çözümü aç" style="min-width:36px;min-height:36px;display:flex;align-items:center;justify-content:center;border-radius:9px;border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.08);color:#1D4ED8;text-decoration:none;font-size:12px;">▶</a>'
               : (l.video ? '<span class="text-xs text-muted" style="opacity:.7;">çözüm var</span>' : "");
           })() +
-          '<select class="okz-reason" data-i="' + secIdx + '" data-j="' + x.j + '" data-okz-neden="1" style="max-width:46%;padding:6px;border-radius:8px;border:1px solid var(--border-card);background:var(--bg-canvas);color:var(--text);font-size:11.5px;">' +
-          '<option value="">Neden?</option>' + nedenler.map(r => '<option value="' + attr(r) + '">' + esc(reasonLabel(r)) + "</option>").join("") + "</select></div>";
+          '<select class="okz-reason" data-i="' + secIdx + '" data-j="' + x.j + '" data-bos="' + (x.bos ? 1 : 0) + '" data-okz-neden="1" style="max-width:46%;padding:6px;border-radius:8px;border:1px solid var(--border-card);background:var(--bg-canvas);color:var(--text);font-size:11.5px;">' +
+          '<option value="">Neden?</option>' + (x.bos ? EMPTY_REASONS : WRONG_REASONS).map(r => '<option value="' + attr(r) + '">' + esc(reasonLabel(r)) + "</option>").join("") + "</select></div>";
       });
       if (bekleyen.length > 25) html += '<div class="text-xs text-muted" style="margin-top:6px;">+' + (bekleyen.length - 25) + " soru daha (kalanı seçtikçe listelenir)</div>";
       html += '<button class="btn btn-primary w-full" data-act="okzNedenKaydet" data-idx="' + secIdx + '" style="margin-top:10px;">Nedenleri kaydet</button></div>';
@@ -4940,10 +4950,24 @@ function videoGit(examIdx, ders, qno) {
   }, 120);
 }
 
-function examDetailSelect(idx) {
+function examDetailSelect(idx, git) {
   examDetailIdx = (idx >= 0 && idx < state.exams.length) ? idx : null;
   renderExams(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
+  /* v79 — KULLANICI: "denemelerimde analiz bekleyen deneme tuşa basılınca
+     açılacaktı." Satıra basınca detay sayfanın ALTINDA açılıyordu; kullanıcı
+     ekranda hiçbir şeyin değişmediğini görüyordu. Artık seçilen denemede neden
+     bekleyen satır varsa doğrudan o karta, yoksa ders detayına kaydırılır. */
+  setTimeout(function () {
+    const ex = state.exams[examDetailIdx !== null ? examDetailIdx : state.exams.length - 1];
+    const bekleyenVar = !!(ex && (ex.errorLogs || []).some(l => l && !l.type));
+    const hedefId = git || (bekleyenVar ? "analiz-bekliyor" : "ders-detay");
+    const hedef = document.getElementById(hedefId) || document.getElementById("ders-detay");
+    if (!hedef) return;
+    try { hedef.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) { /* */ }
+    hedef.classList.add("video-hedef");
+    setTimeout(function () { hedef.classList.remove("video-hedef"); }, 2200);
+  }, 60);
 }
 
 function bindExamForm() {
@@ -6900,6 +6924,8 @@ document.addEventListener("DOMContentLoaded", function () {
       case "saveExam": saveExam(); break;
       case "deleteExam": deleteExam(el.dataset.idx); break;
       case "examDetail": examDetailSelect(Number(el.dataset.idx)); break;
+      // v79 — satırdaki "analiz bekliyor (N) →" düğmesi doğrudan listeyi açar
+      case "examAnaliz": examDetailSelect(Number(el.dataset.idx), "analiz-bekliyor"); break;
       // v78 (G-08) — neden seçimi Denemelerim'de
       case "okzNedenKaydet": {
         const i = Number(el.dataset.idx);
@@ -6908,8 +6934,11 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
       }
       case "okzNedenHepsi": {
+        /* v79 — "tümü" YALNIZ aynı tür satırlara yazılır: yanlış listesindeki
+           bir neden boş satıra, boş listesindeki bir neden yanlışa geçmez. */
         const i2 = Number(el.dataset.idx), r = el.dataset.reason;
-        document.querySelectorAll('.okz-reason[data-i="' + i2 + '"]').forEach(sel => { sel.value = r; });
+        const hedef = el.dataset.okzHedef === "bos" ? "1" : "0";
+        document.querySelectorAll('.okz-reason[data-i="' + i2 + '"][data-bos="' + hedef + '"]').forEach(sel => { sel.value = r; });
         if (typeof window.__okzNedenKaydet === "function") window.__okzNedenKaydet(i2);
         break;
       }

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v79-kalan-fix";
+const PWA_SURUM = "v80-analiz-bekliyor";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -730,7 +730,8 @@ function renderProfileModal() {
   if (!state.settings) state.settings = {};
   const s = state.settings.okulizyon ? state.settings.okulizyon : (state.settings.okulizyon = {});
   const st = okzStore();
-  const bekleyen = st.pending.reduce((acc, ex) => acc + (ex.rows || []).length, 0);
+  /* v79 — Profilde "N soru bekliyor" SAYACI da kaldırıldı (kullanıcı isteği):
+     bekleyen nedenler Denemelerim'de görünür; profilde sayaç tutulmaz. */
   const hesapSatiri = currentUser
     ? '<div style="display:flex;align-items:center;gap:10px;"><div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">' + escHtml(profilAvatarHarfleri()) + '</div><div style="min-width:0;"><div style="font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(currentUser.email || "hesap") + '</div><div style="font-size:11.5px;color:#16A34A;font-weight:600;">☁ Bulut yedeği açık</div></div></div>'
     : '<div style="font-size:12.5px;opacity:0.8;">Giriş yapılmadı — veriler yalnız bu cihazda saklanıyor.</div>';
@@ -755,7 +756,7 @@ function renderProfileModal() {
 
   // B) OKULIZYON
   html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
-  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKULIZYON BAĞLANTISI</div>' + (bekleyen > 0 ? '<span style="font-size:11px;font-weight:700;color:#E11D48;">' + bekleyen + ' soru bekliyor</span>' : '') + '</div>';
+  html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:6px;">OKULIZYON BAĞLANTISI</div>';
   html += '<div style="font-size:11.5px;opacity:0.72;margin-bottom:10px;">Okulizyon\'daki bilgilerini bir kez gir; sınav sonuçların her sabah otomatik çekilir.</div>';
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">';
   html += inp("ad", "AD SOYAD (BÜYÜK HARF)", "AHMET YILMAZ");
@@ -775,7 +776,11 @@ function renderProfileModal() {
   html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
   html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
   html += '<button data-act="okzSimdiCek" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi dene</button>';
-  html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Analiz Bekliyor' + (bekleyen > 0 ? " (" + bekleyen + ")" : "") + '</button>';
+  /* v79 — KULLANICI: "profilden analiz bekliyor'u kaldırmamışsın." Profilde
+     'Analiz Bekliyor' ADI ve SAYACI artık YOK: neden bekleyen sorular yalnız
+     Denemelerim'de, ait oldukları denemenin altında görünür. Bu düğme yalnız
+     Okulizyon çekim sonuçlarını/duyuruları gösterir. */
+  html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Okulizyon sonuçları</button>';
   html += '</div>';
   // Çekim durumu: sessiz başarısızlık yerine açık bilgi
   const OKZ_AMBER = ["giris-yok", "bos", "sifre-gerekli", "bilgi-yok", "eslesme-yok", "bekliyor"];
@@ -1980,13 +1985,8 @@ function initOkulizyonUI() {
     else if (a === "okzAnalizKaydet") okzAnalizKaydet();
     else if (a === "okzYeniden") okzYenidenAktar(el.dataset.i);
     else if (a === "okzSonucGuncelle") okzSonucuYaz(el.dataset.ad, el.dataset.tarih);
-    /* v78 (G-08) — "Analiz bekliyor" artık bir SAYFA DEĞİL: denemeler
-       Denemelerim'de duruyor, liste orada açılıyor. */
-    else if (a === "okzGitDenemeler") {
-      try { if (typeof closeAllModals === "function") closeAllModals(); } catch (e) { /* */ }
-      const pm = document.getElementById("pwa-okz-modal"); if (pm) pm.style.display = "none";
-      try { navigate("exams"); } catch (e) { /* */ }
-    }
+    /* v79 — okzGitDenemeler KALDIRILDI: profildeki "Analiz Bekliyor" bölümü ve
+       "Denemelerim'de aç" götürücüsü yok; düğmesiz kalan eylem ölü kod olurdu. */
     else if (a === "okzKonuEsle") okzKonuEsleKaydet();
     /* v78 (G-10) — okzYoksay / okzHepsiniYoksay: düğmeleri kuyruk listesiyle
        birlikte kalktı, kendileri de kaldırıldı (ölü kod yok). Defter sıfırlama
@@ -2088,7 +2088,7 @@ function okzBadge() {
   const avatar = document.getElementById("sidebar-avatar");
   if (avatar) {
     avatar.style.boxShadow = n > 0 ? "0 0 0 3px rgba(225,29,72,0.75)" : "";
-    avatar.title = n > 0 ? "Profil — " + n + " soru Analiz Bekliyor" : "Profil";
+    avatar.title = n > 0 ? "Profil — " + n + " soruda neden seçilmedi" : "Profil";
   }
   const pm = document.getElementById("pwa-profile-modal");
   if (pm && pm.style.display === "flex") renderProfileModal();
@@ -2171,8 +2171,8 @@ function renderOkzModal() {
   const st = okzStore();
   let html = '<div style="width:100%;max-width:520px;max-height:86vh;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">';
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-weight:800;font-size:17px;">Okulizyon</div><button data-act="okzClose" style="background:none;border:0;font-size:19px;cursor:pointer;color:inherit;">✕</button></div>';
-  // A) Bağlantı bilgileri artık PROFİL penceresinde — burada yalnız kuyruk yönetilir
-  html += '<div style="font-size:12px;opacity:0.8;margin-bottom:10px;padding:10px;border:1px dashed rgba(0,0,0,0.2);border-radius:10px;">Okulizyon bilgilerini <b>Profil</b> penceresinden gir. Burada bekleyen sınav sonuçlarını işlersin.</div>';
+  // A) Bağlantı bilgileri PROFİL penceresinde; burası yalnız sonuç/duyuru görünümü.
+  html += '<div style="font-size:12px;opacity:0.8;margin-bottom:10px;padding:10px;border:1px dashed rgba(0,0,0,0.2);border-radius:10px;">Okulizyon bilgilerini <b>Profil</b> penceresinden gir. Çekilen sınavlar doğrudan <b>Denemelerim</b>\'e eklenir; nedenleri oradaki deneme kartında seçersin.</div>';
   html += '<button data-act="openProfile" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);margin-bottom:14px;">Profili Aç</button>';
   // A2) SON ÇEKİLEN SONUÇ — her zaman görünür (yeni olsun olmasın)
   const sonSonuc = Array.isArray(st.sonSonuc) ? st.sonSonuc : [];
@@ -2211,21 +2211,10 @@ function renderOkzModal() {
       html += "</div>";
     });
   }
-  /* v78 (G-08) — PROFİLDE KUYRUK YOK.
-     KULLANICI: "okulizyondan gelen denemeler profildeki analiz bekliyor
-     kısmında olmasın, direk denemelerim bölümünde olsun. Analiz bekliyor'a
-     tıkladığında orada liste görünsün." Denemeler çekildiği an Denemelerim'e
-     yazıldığı için burada liste tutulmaz; yalnız sayaç + götürücü düğme var. */
-  const bekleyenSayi = okzBekleyenSatirlar();
-  if (bekleyenSayi > 0) {
-    html += '<div style="font-weight:800;font-size:14.5px;margin:14px 0 6px;">⏳ Analiz Bekliyor (' + bekleyenSayi + ' soru)</div>';
-    html += '<div style="border:1px solid rgba(37,99,235,0.35);background:rgba(37,99,235,0.06);border-radius:12px;padding:12px;margin-bottom:10px;font-size:12.5px;line-height:1.55;">' +
-      'Bu sorular <b>Denemelerim</b> sayfasında, ait oldukları denemenin altında duruyor. Nedenleri orada tek tek (ya da tek tuşla tümüne) seçersin; seçtiğin an Acil Çalışılacaklar ve öncelik listesi oluşur.' +
-      '<button data-act="okzGitDenemeler" class="btn btn-primary w-full" style="margin-top:10px;font-weight:700;">Denemelerim\'de aç</button>' +
-      '</div>';
-  } else {
-    html += '<div style="border:1px dashed rgba(0,0,0,0.2);border-radius:12px;padding:16px;text-align:center;font-size:13px;opacity:0.75;margin-bottom:10px;">Analiz bekleyen soru yok. Sınav sonuçların her sabah 07:00 otomatik çekilir; çekilen denemeler doğrudan Denemelerim\'e eklenir.</div>';
-  }
+  /* v79 — KULLANICI: "profilden analiz bekliyor'u kaldırmamışsın."
+     "⏳ Analiz Bekliyor (N soru)" bölümü ve 'Denemelerim'de aç' götürücüsü
+     TAMAMEN KALDIRILDI. Çekilen denemeler doğrudan Denemelerim'e yazılıyor;
+     neden seçimi orada, denemenin kendi kartında. Profilde tekrar edilmez. */
   // C) Okul duyuruları
   if (st.duyurular && st.duyurular.length) {
     html += '<div style="font-weight:800;font-size:14.5px;margin:14px 0 6px;">Okul Duyuruları</div>';

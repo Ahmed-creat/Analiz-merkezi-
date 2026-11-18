@@ -101,8 +101,15 @@ bekle("OKULIZYON BAĞLANTISI bölümü var", icerik.includes("OKULIZYON BAĞLANT
 bekle("okul no alanı var", !!document.getElementById("okz-okulNo"));
 bekle("ad alanı kayıtlı değerle dolu", (document.getElementById("okz-ad") || {}).value === "AHMET İBRAHİM");
 bekle("il seçimi Gaziantep", (document.getElementById("okz-il") || {}).value === "Gaziantep");
-bekle("analiz bekliyor sayısı görünüyor", icerik.includes("1 soru bekliyor"));
-bekle("sürüm damgası görünüyor", /v34\./.test(icerik));
+/* v79 — KULLANICI: "profilden analiz bekliyor'u kaldırmamışsın."
+   Profilde 'Analiz Bekliyor' adı, sayacı ve "N soru bekliyor" yazısı YOK. */
+bekle("profilde 'soru bekliyor' sayacı YOK", !/soru bekliyor/.test(icerik));
+bekle("profilde 'Analiz Bekliyor' yazısı YOK", !/Analiz Bekliyor/.test(icerik));
+/* Sürüm damgası artık ELLE yazılmıyor: PWA_SURUM'dan gelir (G-12). */
+window.surumEtiketiYaz();
+const surumEl = document.getElementById("am-surum");
+bekle("sürüm damgası koddan yazılıyor (vNN)", !!surumEl && /^v\d{2}/.test(surumEl.textContent), surumEl && surumEl.textContent);
+bekle("eski elle yazılmış sürüm (5.1 / v34) kalmadı", !/v34\./.test(icerik) && (surumEl ? surumEl.textContent !== "5.1" : false));
 
 // kapat → başka giriş noktalarından aç
 tiklama(document.querySelector("#pwa-profile-modal [data-act='pwaProfileClose']"));
@@ -129,7 +136,11 @@ tiklama(document.querySelector("#pwa-profile-modal [data-act='pwaOkz']"));
 const okz = document.getElementById("pwa-okz-modal");
 bekle("okz penceresi açıldı", okz && okz.style.display === "flex");
 bekle("okz penceresinde form yok (Profile taşındı)", okz && !okz.innerHTML.includes('id="okz-ad"'));
-bekle("okz penceresinde kuyruk var", okz && okz.innerHTML.includes("Analiz Bekliyor"));
+/* v79 — KULLANICI: "profilden analiz bekliyor'u kaldırmamışsın."
+   Pencere artık DENEMELERİM'e göndermiyor; 'Analiz Bekliyor' adı/sayacı YOK. */
+bekle("okz penceresinde 'Analiz Bekliyor' YOK", okz && !okz.innerHTML.includes("Analiz Bekliyor"));
+bekle("okz penceresinde 'Denemelerim'de aç' götürücüsü YOK",
+  okz && !okz.innerHTML.includes("Denemelerim'de aç") && !document.querySelector("[data-act='okzGitDenemeler']"));
 bekle("okz penceresi Profile yönlendiriyor", okz && okz.innerHTML.includes("Profili Aç"));
 
 // ---------- 5) Bilgi kaydetme + badge ----------
@@ -137,8 +148,19 @@ document.getElementById("okz-okulNo").value = "9876";
 tiklama(document.querySelector("#pwa-profile-modal [data-act='okzSaveBilgi']"));
 bekle("okul no kaydedildi", window.state.settings.okulizyon.okulNo === "9876");
 bekle("saveState çağrıldı", (window.__kayitSayisi || 0) > 0);
+/* v79 — badge artık DENEMELERİM'deki neden bekleyen satırı sayar; çekim
+   kuyruğundaki (state.okulizyon.pending) sınav sayacı ŞİŞİRMEZ. */
+const badgeBos = document.querySelector("#pwa-profile-nav .pwa-okz-badge");
+bekle("kuyruktaki sınav badge'i şişirmiyor (profilde sayaç yok)",
+  badgeBos && badgeBos.style.display === "none");
+window.state.exams = [{
+  name: "TYT Deneme 3", date: "2026-10-20",
+  errorLogs: [{ qno: 1, lesson: "Matematik", topic: "Türev", type: "" }]
+}];
+window.okzBadge();
 const badge = document.querySelector("#pwa-profile-nav .pwa-okz-badge");
-bekle("yan menüdeki badge sayısı 1", badge && badge.textContent === "1" && badge.style.display === "inline-block");
+bekle("yan menüdeki badge neden bekleyen deneme satırını sayıyor (1)",
+  badge && badge.textContent === "1" && badge.style.display === "inline-block");
 
 // ---------- 6) Çekim durumu görünür mü? (sessiz başarısızlık yok) ----------
 bekle("profilede 'Son çekim' satırı var", document.getElementById("pwa-profile-modal").innerHTML.includes("Son çekim"));
