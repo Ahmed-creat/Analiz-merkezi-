@@ -1,6 +1,7 @@
 # RAPOR — 18 Kasım · 41. tur · "Profilde konu eşleşmesi ne arıyor?" → panel kaldırıldı, eşleme otomatik (v82)
 
-**Tarih:** 2026-11-18 · **Dal:** `arena/cc4de070-analiz-merkezi`
+**Tarih:** 2026-11-18 · **Dal:** `arena/cc4de070-analiz-merkezi` · **Commit:** `541260c`
+**Yayın:** `dpl_HFhQWzxXg1SGATt1CdQe7WfJuoZw` → **READY / PROMOTED** · https://analiz-merkezi.vercel.app
 **Sürüm damgası:** `v82-oto-esleme` (PWA_SURUM ↔ SW CACHE `analiz-merkezi-v-20261118-v82-oto-esleme`)
 
 Kullanıcı: *"Neden hâlâ okulizyon konu eşleşmesi var profilde? HANİ otomatik sorunsuzdu?"*
@@ -57,7 +58,15 @@ Ayrıca **tarayıcı DOM testinde** (profil-merge) profilin gerçekten açıldı
 | `validate:pools` / `test:pools` | 192/192 geçerli · **192 havuz / 2.110 soru** |
 | `okz:kapsam` | 192 + 1 istisna (paragraf havuzu) |
 
-## 5) Bilinçli olarak YAPILMAYANLAR
+## 5) Canlı doğrulama (fetch_page)
+
+| URL | Beklenen | Görülen |
+|---|---|---|
+| `/app-pwa.js` satır 1 | `const PWA_SURUM = "v82-oto-esleme"` | ✅ |
+| `/app-pwa.js` profil bölümü | "Okulizyon konu eşlemesi" paneli yok; giriş alanları + "Okulizyon sonuçları" var | ✅ |
+| `/sw.js` | `CACHE = analiz-merkezi-v-20261118-v82-oto-esleme` | ✅ |
+
+## 6) Bilinçli olarak YAPILMAYANLAR
 
 - **Din Kültürü 2 kazanımın havuzu yok** — havuz üretmek ayrı bir iş (soru üretimi başka agent); uydurma havuz yazılmadı, kazanım MEB başlığına yazılıyor.
 - Paragraf havuzu üretilmedi (kalıcı istisna) · PR #4 birleştirilmedi · eşikler/`AYT_WEIGHT`/`REVIEW_LADDER` dokunulmadı.
