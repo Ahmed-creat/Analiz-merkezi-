@@ -6,7 +6,8 @@ Tarih: 2026-11-18 · Dal: `arena/4cc1805b-analiz-merkezi`
 
 | Dosya | Açıklama |
 |-------|----------|
-| `out/tanitim.mp4` (kopyası `teslim/Analiz-Merkezi-tanitim.mp4`) | 1920×1080, 30 fps, H.264, 72,5 s |
+| `teslim/Analiz-Merkezi-tanitim.mp4` | 1920×1080 · 30 fps · H.264 (High) · 72,50 s · 2175 kare · 3169 kb/s · 28,7 MB |
+| `teslim/poster.png` | Kapak karesi (kapanış) |
 | `src/` | Remotion kaynak kodu (6 sahne + bileşenler + tema) |
 | `public/ekran/*.png` | Uygulamadan alınan 19 gerçek ekran görüntüsü (3840×2160) |
 | `public/fonts/`, `public/logo.png` | Inter yazı tipleri (Türkçe karakterli) ve uygulamanın kendi simgesi |
@@ -60,7 +61,8 @@ boşluk bırakmayacak şekilde sınırlandırıldı.
 - Türkçe karakterler doğru (ı, İ, ş, ğ, ç, ö, ü) — Inter `latin-ext` alt kümesi gömülü.
 - Yazılar en küçük planda bile okunur (özellik sahnelerinde ekran kartı 1421 px,
   yakınlaşma 1,24–1,42 arası).
-- Çıktı: `ffprobe` ile 1920×1080 / 30 fps / 2175 kare doğrulandı.
+- Çıktı `ffprobe` ile doğrulandı: 1920×1080, 30 fps, 2175 kare, süre 72,50 s, H.264 High, 3169 kb/s.
+- 8 noktadan kare alınıp kontakt sayfada kontrol edildi (sahne başları, geçişler, imleç, kapanış).
 
 ## Bilinen sınırlar
 
