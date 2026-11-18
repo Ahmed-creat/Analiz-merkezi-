@@ -1,9 +1,13 @@
-const PWA_SURUM = "v80-analiz-bekliyor";
+const PWA_SURUM = "v81-surum-guncel";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
+  /* v81 — KULLANICI: "Herşeyin güncel olduğundan emin olun." Ayarlar altındaki
+     etiket dışında ALT BİLGİ de elle "v5.1" yazıyordu; ikisi de PWA_SURUM'dan
+     doldurulur, böylece ekranda bayat sürüm kalmaz. */
   const el = document.getElementById("am-surum");
   if (el) el.textContent = PWA_SURUM;
+  document.querySelectorAll("[data-am-surum]").forEach(e => { e.textContent = PWA_SURUM; });
 }
 // ============================================================
 // ANALİZ MERKEZİ — PWA + SUPABASE KATMANI (app-pwa.js, ES module)

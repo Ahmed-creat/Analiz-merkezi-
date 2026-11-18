@@ -110,6 +110,10 @@ window.surumEtiketiYaz();
 const surumEl = document.getElementById("am-surum");
 bekle("sürüm damgası koddan yazılıyor (vNN)", !!surumEl && /^v\d{2}/.test(surumEl.textContent), surumEl && surumEl.textContent);
 bekle("eski elle yazılmış sürüm (5.1 / v34) kalmadı", !/v34\./.test(icerik) && (surumEl ? surumEl.textContent !== "5.1" : false));
+/* v81 — alt bilgi de aynı damgayı gösterir (elle yazılmış v5.1 yok). */
+const altSurum = document.getElementById("am-surum-alt");
+bekle("alt bilgi sürümü de PWA_SURUM'dan", !!altSurum && /^v\d{2}/.test(altSurum.textContent), altSurum && altSurum.textContent);
+bekle("alt bilgi metni artık 'v5.1' değil", !!altSurum && altSurum.textContent !== "v5.1");
 
 // kapat → başka giriş noktalarından aç
 tiklama(document.querySelector("#pwa-profile-modal [data-act='pwaProfileClose']"));

@@ -258,6 +258,11 @@ console.log("\n== 9) Sürüm yazısı canlı damgadan ==");
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   // Damga sabit yazılmaz (her sürümde test kırılmasın); v78 ve sonrası yeter.
   ok("damga v78 veya sonrası", /^v(7[89]|[89]\d)/.test(surum), surum);
+  /* v81 — KULLANICI: "Herşeyin güncel olduğundan emin olun." Alt bilgi de
+     elle "v5.1" yazıyordu; artık PWA_SURUM'dan doldurulur. */
+  ok("alt bilgi sürüm damgasına bağlı",
+    HTML.indexOf('data-am-surum="1"') > 0 && APP.indexOf('querySelectorAll("[data-am-surum]")') > 0);
+  ok("elle yazılmış 'Analiz Merkezi v5.1' kalmadı", HTML.indexOf("Analiz Merkezi v5.1") < 0);
 }
 
 console.log("\n" + "─".repeat(58));
