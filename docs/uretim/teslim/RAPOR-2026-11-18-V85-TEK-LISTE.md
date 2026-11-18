@@ -1,7 +1,9 @@
 # v85 — Neden listesi tek yerde: pencere
 
-**Yayın:** `v85-tek-liste` · **Kod commit:** bu sürümün commit'i
-**Test:** `dom-v84-neden-listesi` 39/39 · `v79-analiz-bekliyor` 35/35 · `dom-v83-sade-okz` 44/44 · `test:hepsi` tamamı yeşil
+**Yayın:** `v85-tek-liste` · **Kod commit:** `698b508`
+**Vercel:** `dpl_Hatti82tzpAghygSANQbnu8dJh8Z` — READY / **PROMOTED** (production)
+**Adres:** https://analiz-merkezi.vercel.app
+**Test:** `dom-v84-neden-listesi` 39/39 · `v79-analiz-bekliyor` 35/35 · `dom-v83-sade-okz` 44/44 · `test:hepsi` **EXIT 0, 0 ✗**
 
 ---
 
@@ -32,6 +34,17 @@ liste açılıyordu ama aynı satırlar sayfada da duruyordu.
 | `dom-v84-neden-listesi` | sayfada liste kartı **YOK**; pencere açılıyor, satırlar doğru, kaydet → tazele/kapat |
 | `v79-analiz-bekliyor` | tuşa basınca **pencere** açılıyor; bekleyen yoksa ders detayına iniyor; yanlış/boş listeleri ayrı |
 | `dom-v83-sade-okz` | şerit bilgi veriyor + **sayfada tek bir `okz-reason` seçimi yok** |
+
+## Canlı doğrulama (yayından sonra)
+
+| Ne | Beklenen | Canlıda |
+|---|---|---|
+| `app-pwa.js` | `PWA_SURUM = "v85-tek-liste"` | ✓ |
+| `sw.js` | `CACHE = "analiz-merkezi-v-20261027-v85-tek-liste"` | ✓ |
+| Ana sayfa alt bilgi | "Analiz Merkezi v85-tek-liste" | ✓ |
+
+Yeni sürümü görmek için uygulamayı bir kez kapatıp aç (service worker ağ-öncelikli
+çalıştığı için çevrimiçiyken güncel dosyayı hemen alır).
 
 ## Dokunulmayanlar
 
