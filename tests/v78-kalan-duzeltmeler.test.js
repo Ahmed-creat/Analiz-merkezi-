@@ -256,7 +256,8 @@ console.log("\n== 9) Sürüm yazısı canlı damgadan ==");
   ok("app-pwa etiketi PWA_SURUM ile dolduruyor", /function surumEtiketiYaz\(\)[\s\S]{0,220}PWA_SURUM/.test(APP));
   ok("açılışta çağrılıyor", /surumEtiketiYaz\(\);/.test(APP));
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
-  ok("damga v78", /^v78/.test(surum), surum);
+  // Damga sabit yazılmaz (her sürümde test kırılmasın); v78 ve sonrası yeter.
+  ok("damga v78 veya sonrası", /^v(7[89]|[89]\d)/.test(surum), surum);
 }
 
 console.log("\n" + "─".repeat(58));
