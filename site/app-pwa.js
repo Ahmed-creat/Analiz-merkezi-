@@ -1,4 +1,4 @@
-const PWA_SURUM = "v85-tek-liste";
+const PWA_SURUM = "v86-denemelerim-karsilastir";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1287,75 +1287,77 @@ async function registerFCMEski() {
 // index.html'deki WRONG_REASONS / EMPTY_REASONS'tan gelir).
 const OKZ_NEDENLER = ["KONUEKSİKLİĞİ", "ANLAMADIM", "ÇÖZÜMYOLUNUBULAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası"];
 // ------------------------------------------------------------
-// İŞLENDİ / YOKSAYILDI DEFTERİ
+// v86 — "ÇEKME DEFTERİ" KALDIRILDI (tek kural: DENEMELERİM)
 // ------------------------------------------------------------
-// Sorun: "Analiz Bekliyor" kuyruğu her çekimde sunucudan yeniden
-// kuruluyordu. Kullanıcı verileri silince (Denemelerim → sil veya
-// "Tüm Verileri Sıfırla") sınav artık Denemelerim'de olmadığı için
-// yeniden "yeni" sayılıyor ve kuyruk hiç boşalmıyordu.
+// KULLANICI: "Tüm verileri silsek de uygulama yeni Okulizyon denemesini hâlâ
+// 'aynı' diyor. Çekme defterine ne gerek var? Denemelerim'de deneme varsa
+// onunla karşılaştırsın."
+// HAKLI. Eski "işlendi/yoksayıldı defteri" kalıcıydı: "Tüm verileri sil"
+// state'i sıfırlasa bile localStorage kopyası kalıyordu. Denemelerim BOŞ
+// olduğu hâlde sınav "işlendi" sayılıyor, içe alınmıyor ve ekran "aynı"
+// diyordu.
 //
-// Çözüm: içerik parmak izine (hash) bağlı kalıcı bir defter.
-//   • kullanıcı nedenleri kaydederse  → işlendi
-//   • "Yoksay" derse                  → yoksayıldı
-// Aynı sınav + aynı içerik defterde varsa kuyruğa GERİ KONMAZ.
-// Okulizyon'da sonuç değişirse hash değişir → kendiliğinden geri gelir.
+// YENİ KURAL — tek cümle:
+//   Sınav DENEMELERİM'de duruyorsa aynı; durmuyorsa çekilir.
+// İşlenmişlik diye bir şey tutulmaz; Denemelerim zaten o bilginin kendisi.
 //
-// Defter hem state içinde (cihazlar arası eşitlenir) hem de ayrı bir
-// localStorage anahtarında tutulur; "Tüm Verileri Sıfırla" state'i
-// sıfırlasa bile localStorage kopyası kalır → sorular geri gelmez.
-const OKZ_DEFTER_KEY = "am_okz_islenen_v1";
-function okzDefterDisktenOku() {
+// Tek istisna: kullanıcı TEK bir denemeyi bilerek sildiyse 5 dakika sonra
+// geri gelmesin diye "silinen" notu tutulur. "Tüm verileri sil" bu notu da
+// temizler → sıfırdan çekim gerçekten sıfırdan olur.
+const OKZ_SILINEN_KEY = "am_okz_silinen_v1";
+const OKZ_ESKI_DEFTER_KEY = "am_okz_islenen_v1";
+const OKZ_DEFTER_KALDIRILDI = "am_okz_defter_kaldirildi_v86";
+function okzSilinenDisktenOku() {
   try {
-    const ham = localStorage.getItem(OKZ_DEFTER_KEY);
+    const ham = localStorage.getItem(OKZ_SILINEN_KEY);
     const v = ham ? JSON.parse(ham) : null;
     return v && typeof v === "object" && !Array.isArray(v) ? v : {};
   } catch (e) { return {}; }
 }
-function okzDefterDiskeYaz(harita) {
-  try { localStorage.setItem(OKZ_DEFTER_KEY, JSON.stringify(harita || {})); } catch (e) { /* kota dolu olabilir */ }
+function okzSilinenDiskeYaz(harita) {
+  try { localStorage.setItem(OKZ_SILINEN_KEY, JSON.stringify(harita || {})); } catch (e) { /* kota */ }
 }
-// Diskteki kopya + state kopyası birleşik defter
-function okzDefter() {
-  const disk = okzDefterDisktenOku();
+// Diskteki kopya + state kopyası birleşik "silinen" notu
+function okzSilinen() {
+  const disk = okzSilinenDisktenOku();
   const st = okzStore();
-  if (!st.islenen || typeof st.islenen !== "object") st.islenen = {};
-  return Object.assign({}, disk, st.islenen);
+  if (!st.silinen || typeof st.silinen !== "object") st.silinen = {};
+  return Object.assign({}, disk, st.silinen);
 }
-function okzDefterIsaretle(anahtar, hash) {
+function okzSilinenIsaretle(anahtar, hash) {
   if (!anahtar) return;
   const st = okzStore();
-  if (!st.islenen || typeof st.islenen !== "object") st.islenen = {};
-  st.islenen[anahtar] = String(hash || "");
-  okzDefterDiskeYaz(Object.assign({}, okzDefterDisktenOku(), st.islenen));
+  if (!st.silinen || typeof st.silinen !== "object") st.silinen = {};
+  st.silinen[anahtar] = String(hash || "");
+  okzSilinenDiskeYaz(Object.assign({}, okzSilinenDisktenOku(), st.silinen));
 }
-// Defterdeki kayıt sayısı. Ekranda gösterilmiyor (v50'de defter satırı kaldırıldı);
-// testler bu fonksiyonla defterin doğru yazıldığını ölçüyor.
-function okzDefterSayisi() { return Object.keys(okzDefter()).length; }
-function okzDefterTemizle() {
-  const st = okzStore();
-  st.islenen = {};
-  okzDefterDiskeYaz({});
-  try { saveState(); } catch (e) { /* */ }
+// v86 — tek seferlik temizlik: eski defter hem diskten hem state'ten silinir.
+// (Yoksa eski cihazlarda "aynı diyor" hatası sürerdi.)
+function okzEskiDefteriKaldir() {
+  try {
+    if (localStorage.getItem(OKZ_DEFTER_KALDIRILDI) === "1") return;
+    localStorage.removeItem(OKZ_ESKI_DEFTER_KEY);
+    if (typeof state !== "undefined" && state && state.okulizyon) state.okulizyon.islenen = {};
+    localStorage.setItem(OKZ_DEFTER_KALDIRILDI, "1");
+  } catch (e) { /* depo kapalıysa yapılacak bir şey yok */ }
 }
-// v46c — Okulizyon sınav kimliği. sid varsa "sid:<sid>", yoksa "ad|tarih".
-// Aynı ad+tarihli iki ayrı sınav artık tek sınav sanılmıyor.
-function okzKey(ex) {
-  if (window.OKZ && typeof window.OKZ.kararAnahtar === "function") return window.OKZ.kararAnahtar(ex);
-  const m = /[?&]sid=([^&]+)/i.exec(String((ex && (ex.url || ex.okulizyonUrl)) || ""));
-  if (m) return "sid:" + m[1];
-  return ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
-}
-// Geriye dönük anahtar: sid'e geçmeden önce yazılmış defter kayıtları ve
-// "sildim" işaretleri kaybolmasın diye ikisi BİRLİKTE yazılır.
-function okzDefterIkili(ex, hash) {
-  okzDefterIsaretle(okzKey(ex), hash);
-  const eski = ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
-  const kisa = eski.replace(/^Okulizyon:\s*/i, "");
-  okzDefterIsaretle(eski, hash);
-  if (kisa !== eski) okzDefterIsaretle(kisa, hash);
-}
-// Denemelerim'den bir Okulizyon denemesi silinirse deftere yaz:
-// "sildim" = "bir daha Analiz Bekliyor'a gelmesin". index.html → deleteExam çağırır.
+// v86 — "Tüm verileri sil" / "Denemeleri sil": silinen notu da temizlenir.
+// Böylece sıfırlama sonrası ilk çekim denemeleri YENİDEN getirir.
+window.__okzSilinenleriTemizle = function () {
+  try {
+    const st = okzStore();
+    const once = Object.keys(okzSilinen()).length;
+    st.silinen = {};
+    st.islenen = {};
+    st.pending = [];
+    okzSilinenDiskeYaz({});
+    try { localStorage.removeItem(OKZ_ESKI_DEFTER_KEY); } catch (e) { /* */ }
+    return once;
+  } catch (e) { return 0; }
+};
+// Denemelerim'den bir Okulizyon denemesi TEK TEK silinirse "silinen" notu
+// düşülür: bir sonraki çekimde geri gelmez. (Tümünü silmek bu notu temizler,
+// o yüzden sıfırlama sonrası her şey yeniden çekilir.)
 window.__okzDenemeSilindi = function (ex) {
   try {
     const ham = String((ex && ex.name) || "");
@@ -1365,33 +1367,35 @@ window.__okzDenemeSilindi = function (ex) {
     const hash = (window.OKZ && typeof window.OKZ.kararHash === "function") ? window.OKZ.kararHash(ex) : "";
     // v46c: sid anahtarı + eski "ad|tarih" anahtarı BİRLİKTE yazılır ki
     // hangi sürümde silinmiş olursa olsun sınav geri gelmesin.
-    okzDefterIkili(Object.assign({}, ex, { name: ad }), hash);
+    okzSilinenIkili(Object.assign({}, ex, { name: ad }), hash);
   } catch (e) { /* sessiz */ }
 };
-// Kullanıcı "verileri sil" dediğinde kuyruktakilerin TAMAMINI deftere yaz.
-// Mantık: silmek = "bunu istemiyorum". Böylece bir daha "Analiz Bekliyor"a düşmez.
-// index.html → executeReset("all" | "exams") bunu çağırır.
-window.__okzKuyruguDeftereYaz = function () {
-  try {
-    const st = okzStore();
-    const liste = st.pending || [];
-    liste.forEach(ex => {
-      const h = (window.OKZ && typeof window.OKZ.kararHash === "function") ? window.OKZ.kararHash(ex) : "";
-      okzDefterIkili(ex, h);
-    });
-    st.pending = [];
-    return liste.length;
-  } catch (e) { return 0; }
-};
+// v46c — Okulizyon sınav kimliği. sid varsa "sid:<sid>", yoksa "ad|tarih".
+// Aynı ad+tarihli iki ayrı sınav artık tek sınav sanılmıyor.
+function okzKey(ex) {
+  if (window.OKZ && typeof window.OKZ.kararAnahtar === "function") return window.OKZ.kararAnahtar(ex);
+  const m = /[?&]sid=([^&]+)/i.exec(String((ex && (ex.url || ex.okulizyonUrl)) || ""));
+  if (m) return "sid:" + m[1];
+  return ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
+}
+function okzSilinenIkili(ex, hash) {
+  okzSilinenIsaretle(okzKey(ex), hash);
+  const eski = ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
+  const kisa = eski.replace(/^Okulizyon:\s*/i, "");
+  okzSilinenIsaretle(eski, hash);
+  if (kisa !== eski) okzSilinenIsaretle(kisa, hash);
+}
 
 function okzStore() {
-  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], aktarilan: {}, guncellenen: [], pulledAt: 0, duyurular: null, islenen: {} };
-  // Sıfırlama sonrası diskteki defteri state'e geri getir.
-  // (okzStore her çağrıda yeni nesne kurabildiği için KOŞULSUZ birleştir.)
-  if (!state.okulizyon.islenen || typeof state.okulizyon.islenen !== "object") state.okulizyon.islenen = {};
-  const diskDefter = okzDefterDisktenOku();
-  Object.keys(diskDefter).forEach(k => {
-    if (!(k in state.okulizyon.islenen)) state.okulizyon.islenen[k] = diskDefter[k];
+  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], aktarilan: {}, guncellenen: [], pulledAt: 0, duyurular: null, silinen: {} };
+  // v86 — eski çekme defteri (islenen) bir kez silinir; yerine yalnız
+  // "bilerek silindi" notu tutulur. Sıfırlama sonrası diskteki not geri gelir
+  // ki kullanıcının tek tek sildiği deneme kendiliğinden geri dönmesin.
+  okzEskiDefteriKaldir();
+  if (!state.okulizyon.silinen || typeof state.okulizyon.silinen !== "object") state.okulizyon.silinen = {};
+  const diskSilinen = okzSilinenDisktenOku();
+  Object.keys(diskSilinen).forEach(k => {
+    if (!(k in state.okulizyon.silinen)) state.okulizyon.silinen[k] = diskSilinen[k];
   });
   if (!state.okulizyon.aktarilan) state.okulizyon.aktarilan = {};
   if (!Array.isArray(state.okulizyon.guncellenen)) state.okulizyon.guncellenen = [];
@@ -1899,15 +1903,9 @@ function initOkulizyonUI() {
        "Denemelerim'de aç" götürücüsü yok; düğmesiz kalan eylem ölü kod olurdu. */
     /* v82 — okzKonuEsle (profildeki elle eşleme düğmesi) KALDIRILDI:
        eşleme otomatik, düğmesiz eylem ölü kod olurdu. */
-    /* v78 (G-10) — okzYoksay / okzHepsiniYoksay: düğmeleri kuyruk listesiyle
-       birlikte kalktı, kendileri de kaldırıldı (ölü kod yok). Defter sıfırlama
-       KALDI: sınavı Denemelerim'den silip yeniden çekmek isteyene kurtarma yolu
-       gerekir — karşılığı aşağıdaki düğme. */
-    else if (a === "okzDefteriTemizle") {
-      okzDefterTemizle();
-      try { renderOkzModal(); } catch (e) { /* */ }
-      toast("İçe aktarma defteri sıfırlandı — sonraki çekimde sınavlar yeniden değerlendirilir.", "info");
-    }
+    /* v78 (G-10) — okzYoksay / okzHepsiniYoksay KALDIRILDI.
+       v86 — "İçe aktarma defterini sıfırla" düğmesi de KALDIRILDI: defter yok,
+       karşılaştırma yalnız Denemelerim'e göre yapılıyor. */
   });
   okzBadge();
   if (window.lucide && lucide.createIcons) lucide.createIcons();
@@ -1959,7 +1957,24 @@ function okzDenemeyeYaz(ex, lessons) {
   var ad = "Okulizyon: " + ((ex && ex.name) || "Sınav");
   var tarih = (ex && ex.date) || todayStr();
   var oz = okzOzet(lessons || {});
-  var idx = (state.exams || []).findIndex(function (e) { return e && e.name === ad && String(e.date || "") === String(tarih); });
+  /* v86 — kimlik ÖNCE sid: aynı ad + aynı tarihli iki ayrı Okulizyon sınavı
+     birbirine karışmaz (biri diğerinin üstüne yazılıp "değişmedi" görünmez). */
+  var sid = (window.OKZ && typeof window.OKZ.sidCikar === "function") ? window.OKZ.sidCikar(ex && ex.url) : "";
+  var idx = -1;
+  if (sid) {
+    idx = (state.exams || []).findIndex(function (e) {
+      return e && e.okulizyonUrl && window.OKZ && typeof window.OKZ.sidCikar === "function" &&
+        window.OKZ.sidCikar(e.okulizyonUrl) === sid;
+    });
+  }
+  if (idx < 0) {
+    idx = (state.exams || []).findIndex(function (e) {
+      if (!e || e.name !== ad || String(e.date || "") !== String(tarih)) return false;
+      var esid = (e.okulizyonUrl && window.OKZ && typeof window.OKZ.sidCikar === "function")
+        ? window.OKZ.sidCikar(e.okulizyonUrl) : "";
+      return !sid || !esid || esid === sid;   // başka sınavın sid'i → eşleşme yok
+    });
+  }
   if (idx >= 0) {
     var mev = state.exams[idx];
     mev.lessons = lessons || mev.lessons;
@@ -1986,7 +2001,7 @@ function okzIsaretle(ex) {
   if (!st.importedKeys.includes(anahtar)) st.importedKeys.push(anahtar);
   st.aktarilan = st.aktarilan || {};
   st.aktarilan[anahtar] = okzHash(ex);
-  okzDefterIkili(ex, window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex));
+  /* v86 — burada deftere YAZILMAZ: "işlendi" bilgisi Denemelerim'in kendisidir. */
 }
 
 /* v83 — "Okulizyon'dan yeni deneme geldi" işareti.
@@ -2171,11 +2186,9 @@ function renderOkzModal() {
       html += '<a href="' + escHtml(d.url) + '" target="_blank" rel="noopener" style="display:block;font-size:12.5px;padding:7px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;">' + (d.tarih ? "<b>[" + escHtml(d.tarih) + "]</b> " : "") + escHtml(d.baslik) + (d.lesson ? ' <span style="color:#16A34A;font-weight:700;">takvime eklendi</span>' : "") + "</a>";
     });
   }
-  // D) Kurtarma: içe aktarma defteri. Denemelerim'e bir kez aktarılan sınav
-  // tekrar çekilmez; sınavı silip yeniden görmek isteyen buradan sıfırlar.
-  html += '<div style="margin-top:14px;padding-top:10px;border-top:1px dashed rgba(0,0,0,0.15);font-size:11.5px;opacity:0.85;">' +
-    'Denemelerim\'e aktarılan Okulizyon sınavları bir daha çekilmez. Bir sınavı silip yeniden çekmek istersen defteri sıfırla.' +
-    '<button data-act="okzDefteriTemizle" class="btn btn-ghost btn-sm" style="margin-top:8px;border:1px solid rgba(0,0,0,0.15);width:100%;">İçe aktarma defterini sıfırla</button></div>';
+  /* v86 — KULLANICI: "Çekme defterine ne gerek var? Denemelerim'de deneme
+     varsa onunla karşılaştırsın." İçe aktarma defteri ve sıfırlama düğmesi
+     KALDIRILDI: karşılaştırmanın ölçüsü yalnız Denemelerim. */
   html += "</div>";
   m.innerHTML = html;
 }
@@ -2294,9 +2307,11 @@ async function okzKuyrukCek(zorla) {
     }));
     // --- Gerçek duruma göre karar ver (kayıt defterine değil) ---
     // Defter: daha önce işlenen/yoksayılan sınavlar kuyruğa geri konmaz
-    const defter = okzDefter();
+    /* v86 — karşılaştırmanın TEK ölçüsü Denemelerim + "bilerek silindi" notu.
+       "İşlendi defteri" yok: sıfırlama sonrası denemeler yeniden çekilir. */
+    const silinen = okzSilinen();
     const K = (window.OKZ && typeof window.OKZ.karar === "function")
-      ? window.OKZ.karar(gelen, state.exams, defter)
+      ? window.OKZ.karar(gelen, state.exams, silinen)
       : { yeni: gelen, degisen: [], gecerliAnahtarlar: [] };
     const yeni = K.yeni, degisen = K.degisen, gecerliAnahtarlar = K.gecerliAnahtarlar;
     // Kayıt defterini gerçekle hizala: Denemelerim'de olmayan anahtarlar "aktarıldı" sayılmaz
@@ -2328,7 +2343,9 @@ async function okzKuyrukCek(zorla) {
            • Denemelerim sekmesinde YEŞİL NOKTA (🟢) → yeni deneme geldi
            • Denemelerim sayfasında yeşil bilgi şeridi → kaç deneme/soru geldi
          Nokta, Denemelerim açılınca kendiliğinden söner (okundu). */
-      if (guncelMi) okzYeniPartiIsaretle(yeni, n);
+      /* v86 — Denemelerim'e GERÇEKTEN yeni deneme yazıldıysa yeşil nokta yanar
+         (sıfırlama sonrası yeniden çekim de "yeni"dir; kullanıcı görsün). */
+      okzYeniPartiIsaretle(yeni, n);
       okzBadge();
       toast("Okulizyon: " + yeni.length + " deneme Denemelerim'e eklendi · " + n + " soru neden bekliyor.", "success");
       okzDurum("ok", "Okulizyon'dan " + gelen.length + " sınav okundu · " + yeni.length + " deneme Denemelerim'e yazıldı (" + n + " soru neden bekliyor).");
@@ -2425,6 +2442,33 @@ async function okzAnalizKaydet(tekNeden, denemeIdx) {
   return yazilan;
 }
 window.__okzNedenKaydet = function (denemeIdx) { return okzAnalizKaydet(null, denemeIdx); };
+/* v86 — "Yanlışların/Boşların tümüne" düğmeleri TÜM bekleyen satırlara yazar.
+   KULLANICI: "tüm yanlışlara konu eksiği deyince hepsine değil, sadece listede
+   görünene işaretliyor; boşta da aynı sorun var."
+   KÖK NEDEN: eski yol yalnız ekrandaki <select>'leri doldurup onları okuyordu;
+   pencere ilk 25 satırı çizdiği için 25'ten sonraki satırlar boş kalıyordu.
+   ÇÖZÜM: neden doğrudan STATE'e yazılır — ekranda kaç satır göründüğünün
+   önemi yok. Yanlış nedeni boş satıra, boş nedeni yanlışa yazılmaz (v79 kuralı). */
+window.__okzNedenHepsi = function (denemeIdx, hedef, reason) {
+  try {
+    const i = Number(denemeIdx);
+    const ex = (typeof state !== "undefined" && state) ? (state.exams || [])[i] : null;
+    if (!ex || !Array.isArray(ex.errorLogs) || !reason) return 0;
+    const bosIstenen = (hedef === "bos" || hedef === "e" || hedef === "1" || hedef === 1 || hedef === true);
+    let yazilan = 0;
+    ex.errorLogs.forEach(function (log) {
+      if (!log || log.type) return;                       // nedeni yazılmış satıra dokunma
+      if ((log.status === "e") !== bosIstenen) return;    // tür karışmaz
+      log.type = reason; yazilan++;
+    });
+    if (!yazilan) return 0;
+    saveState();                                          // BKT: neden yazılan satırlar işlenir
+    okzBadge();
+    try { if (typeof renderExams === "function") renderExams(document.getElementById("main-content")); } catch (e) { /* */ }
+    toast(yazilan + " soruya “" + reason + "” yazıldı; analiz oluştu.", "success");
+    return yazilan;
+  } catch (e) { return 0; }
+};
 window.__okzBekleyenSatirlar = okzBekleyenSatirlar;
 /* v83 — Denemelerim sayfası (index.html) bu köprüyle "yeni gelen parti"yi
    yazar; ayrı ayrı okundu işaretleme, nodu söndürme burada yapılır. */

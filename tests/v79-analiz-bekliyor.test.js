@@ -120,51 +120,19 @@ console.log("\n== 3) Yanlış ve boş AYRI neden listeleri ==");
   ok("'Boşların tümüne' düğmeleri", /Boşların tümüne/.test(blok) && /data-okz-hedef="bos"/.test(blok));
   ok("tek havuzlu eski liste YOK", blok.indexOf("WRONG_REASONS.concat(EMPTY_REASONS)") < 0);
 
-  /* "tümü" GERÇEKTEN koşturulur: yalnız aynı tür select'e yazmalı. */
-  const bas = HTML.indexOf('case "okzNedenHepsi": {');
-  const bit = HTML.indexOf('case "videoGit"', bas);
-  /* süslü parantez dengesiyle gövdeyi al; sonundaki "break;" atılır */
-  let d = 0, son = -1;
-  for (let j = HTML.indexOf("{", bas); j < bit; j++) {
-    if (HTML[j] === "{") d++;
-    else if (HTML[j] === "}") { d--; if (d === 0) { son = j; break; } }
-  }
-  const hepsi = "var hepsi = (el) => {" + HTML.slice(HTML.indexOf("{", bas) + 1, son).replace(/break;\s*$/, "") + "};";
-  const yazilan = [];
-  const sb = {
-    Number, String,
-    document: {
-      querySelectorAll: sel => {
-        /* beklenen seçici: .okz-reason[data-i="3"][data-bos="1"] */
-        const m = /^\.okz-reason\[data-i="(\d+)"\]\[data-bos="(\d)"\]$/.exec(sel);
-        if (!m) return [];
-        return [{ value: "", _t: m[2] }, { value: "", _t: m[2] }];
-      }
-    },
-    window: { __okzNedenKaydet: () => { yazilan.push("kaydet"); } },
-    toast() {}
-  };
-  vm.createContext(sb);
-  vm.runInContext(hepsi, sb);
-  const secimler = [];
-  const arananlar = [];
-  sb.document.querySelectorAll = (sel) => {
-    arananlar.push(sel);
-    const m = /^\.okz-reason\[data-i="(\d+)"\]\[data-bos="(\d)"\]$/.exec(sel);
-    if (!m) return [];
-    return [{
-      _v: "",
-      get value() { return this._v; },
-      set value(x) { this._v = x; secimler.push(m[2] + ":" + x); }
-    }];
-  };
-  sb.hepsi({ dataset: { idx: "3", reason: "KONUEKSİZLİĞİ", okzHedef: "bos" } });
-  ok("boş hedefi yalnız data-bos=1 satırlarını seçti",
-    secimler.length === 1 && secimler[0] === "1:KONUEKSİZLİĞİ",
-    JSON.stringify(secimler) + " seçici=" + JSON.stringify(arananlar));
-  ok("seçici data-bos hedefini taşıyor",
-    arananlar.length === 1 && /\[data-i="3"\]\[data-bos="1"\]/.test(arananlar[0]), JSON.stringify(arananlar));
-  ok("kaydet çağrıldı", yazilan.length === 1, String(yazilan.length));
+  /* v86 — KULLANICI: "tüm yanlışlara konu eksiği deyince hepsine değil,
+     sadece listede görünene işaretliyor; boşta da aynı sorun var."
+     "tümü" artık DOM'daki 25 satıra değil, STATE'teki TÜM bekleyen satırlara
+     yazar. Davranış tests/v86-okz-karsilastir.test.js'te koşturulur; burada
+     işleyicinin köprüyü doğru argümanlarla çağırdığı ölçülür. */
+  const bas2 = HTML.indexOf('case "okzNedenHepsi": {');
+  const bit2 = HTML.indexOf('case "videoGit"', bas2);
+  const govde = HTML.slice(bas2, bit2);
+  ok("işleyici köprüyü çağırıyor", /window\.__okzNedenHepsi\(i2, el\.dataset\.okzHedef, r\)/.test(govde));
+  ok("köprü yoksa eski DOM yolu duruyor (güvenlik)", /querySelectorAll\('\.okz-reason\[data-i="' \+ i2 \+ '"\]\[data-bos="' \+ hedef \+ '"\]'\)/.test(govde));
+  ok("sonra pencere tazeleniyor", /okzNedenModalTazele\(i2\)/.test(govde));
+  ok("köprü uygulama tarafında tanımlı", /window\.__okzNedenHepsi = function \(denemeIdx, hedef, reason\)/.test(
+    require("fs").readFileSync(require("path").join(__dirname, "..", "site", "app-pwa.js"), "utf8")));
 }
 
 // ---------------------------------------------------------------

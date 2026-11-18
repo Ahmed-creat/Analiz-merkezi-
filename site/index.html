@@ -2185,10 +2185,13 @@ function confirmReset(type) {
 }
 
 function executeReset(type) {
-  // Deneme verisi silinirken Okulizyon kuyruğundakiler de kalıcı olarak kapatılır:
-  // "sildim" = "Analiz Bekliyor'a bir daha gelmesin".
+  /* v86 — KULLANICI: "Tüm verileri silsek de uygulama yeni Okulizyon denemesini
+     hâlâ 'aynı' diyor." Kök neden: sıfırlamada kuyruk "işlendi defterine"
+     yazılıyordu ve defter diskte kalıyordu. Artık defter yok; sıfırlama
+     "bilerek silindi" notunu da temizler → bir sonraki çekim denemeleri
+     Denemelerim'e YENİDEN getirir. */
   if (type === "all" || type === "exams") {
-    try { if (typeof window.__okzKuyruguDeftereYaz === "function") window.__okzKuyruguDeftereYaz(); } catch (e) { /* */ }
+    try { if (typeof window.__okzSilinenleriTemizle === "function") window.__okzSilinenleriTemizle(); } catch (e) { /* */ }
   }
   if (type === "exams") state.exams = [];
   else if (type === "questions") state.questions = [];
@@ -7103,9 +7106,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       case "okzNedenHepsi": {
         /* v79 — "tümü" YALNIZ aynı tür satırlara yazılır: yanlış listesindeki
-           bir neden boş satıra, boş listesindeki bir neden yanlışa geçmez. */
+           bir neden boş satıra, boş listesindeki bir neden yanlışa geçmez.
+           v86 — KULLANICI: "hepsine değil, sadece listede görünene işaretliyor."
+           Neden artık STATE'e yazılır: ekranda 25 satır görünse de TÜM bekleyen
+           yanlışlar (ya da boşlar) tek dokunuşta işaretlenir. */
         const i2 = Number(el.dataset.idx), r = el.dataset.reason;
         const hedef = el.dataset.okzHedef === "bos" ? "1" : "0";
+        if (typeof window.__okzNedenHepsi === "function") {
+          const n = window.__okzNedenHepsi(i2, el.dataset.okzHedef, r);
+          if (!n) toast("Bu türde neden bekleyen soru kalmadı.", "info");
+          if (typeof okzNedenModalTazele === "function") okzNedenModalTazele(i2);
+          break;
+        }
+        // Köprü yüklenmediyse (eski yol): yalnız ekrandaki satırlar.
         document.querySelectorAll('.okz-reason[data-i="' + i2 + '"][data-bos="' + hedef + '"]').forEach(sel => { sel.value = r; });
         if (typeof window.__okzNedenKaydet === "function") {
           window.__okzNedenKaydet(i2);

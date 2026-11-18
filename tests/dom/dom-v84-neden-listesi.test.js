@@ -63,7 +63,9 @@ ok('satırdaki "analiz bekliyor" → pencere açan yola gidiyor',
   /case "examAnaliz": examDetailSelect\(Number\(el\.dataset\.idx\)\)/.test(HTML) &&
   /if \(git !== "ders-detay" && bekleyenVar && typeof okzNedenModalAc === "function"\) \{[\s\S]{0,120}okzNedenModalAc\(/.test(HTML));
 ok("kaydet → pencere tazeleniyor", /case "okzNedenKaydet":[\s\S]{0,320}okzNedenModalTazele\(i\)/.test(HTML));
-ok("tümüne → pencere tazeleniyor", /case "okzNedenHepsi":[\s\S]{0,700}okzNedenModalTazele\(i2\)/.test(HTML));
+/* v86 — "tümüne" artık TÜM bekleyen satırlara yazar (köprü), sonra pencere tazelenir. */
+ok("tümüne → tüm satırlar + pencere tazeleniyor",
+  /case "okzNedenHepsi":[\s\S]{0,1400}window\.__okzNedenHepsi\(i2, el\.dataset\.okzHedef, r\)[\s\S]{0,220}okzNedenModalTazele\(i2\)/.test(HTML));
 
 console.log("\n== 4) Aynı satır iki yerde: boş seçim dolu seçimi ezmez ==");
 ok("okzAnalizKaydet dolu seçimi koruyor", /if \(!secimler\[k\] \|\| sel\.value\) secimler\[k\] = sel\.value;/.test(APP));

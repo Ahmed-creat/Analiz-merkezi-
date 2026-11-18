@@ -12,7 +12,7 @@
    Kanıtlananlar:
      1) Mükerrer büyük kart yok; 5 soruluk kontrol TEK yerden açılıyor
      2) Kuyrukla ölen okz eylemleri ne düğme ne işleyici olarak duruyor
-     3) Defter sıfırlama (kurtarma yolu) DÜĞMEYLE erişilebilir — ölü değil
+     3) v86 — çekme defteri TAMAMEN kalktı (karşılaştırma yalnız Denemelerim)
      4) Hiçbir data-act düğmesiz kalmıyor (site geneli ölü düğme nöbetçisi)
    ============================================================ */
 "use strict";
@@ -53,13 +53,17 @@ console.log("\n== 2) Kuyrukla ölen eylemler tamamen gitti ==");
 }
 
 // ---------------------------------------------------------------
-console.log("\n== 3) Defter sıfırlama: kurtarma yolu erişilebilir ==");
+console.log("\n== 3) Çekme defteri TAMAMEN kalktı (v86) ==");
 {
-  ok("okzDefterTemizle duruyor", /function okzDefterTemizle\(\)/.test(APP));
-  ok("sıfırlama düğmesi modalda", /data-act="okzDefteriTemizle"/.test(APP));
-  ok("düğmenin işleyicisi var", /a === "okzDefteriTemizle"/.test(APP));
-  ok("işleyici defteri gerçekten siliyor", /a === "okzDefteriTemizle"[\s\S]{0,200}okzDefterTemizle\(\)/.test(APP));
-  ok("modal yenileniyor (düğme kendi kendini kapatmıyor)", /a === "okzDefteriTemizle"[\s\S]{0,300}renderOkzModal\(\)/.test(APP));
+  /* KULLANICI: "Çekme defteri mi ne ona ne gerek var. Uygulama eğer
+     Denemelerim bölümünde deneme varsa onunla karşılaştırsın."
+     Defter (işlendi/yoksayıldı) ve sıfırlama düğmesi ÖLÜ KOD olarak kalmaz. */
+  ok("okzDefterTemizle yok", !/function okzDefterTemizle\(/.test(APP));
+  ok("okzDefterIsaretle yok", !/function okzDefterIsaretle\(/.test(APP));
+  ok("sıfırlama düğmesi modalda YOK", !/data-act="okzDefteriTemizle"/.test(APP));
+  ok("düğmenin işleyicisi de yok", !/a === "okzDefteriTemizle"/.test(APP));
+  ok("karşılaştırma Denemelerim'e göre yapılıyor", /const silinen = okzSilinen\(\);[\s\S]{0,160}OKZ\.karar\(gelen, state\.exams, silinen\)/.test(APP));
+  ok("sıfırlama defteri değil 'silinen' notunu temizliyor", /__okzSilinenleriTemizle/.test(HTML) && !/__okzKuyruguDeftereYaz/.test(HTML));
 }
 
 // ---------------------------------------------------------------
