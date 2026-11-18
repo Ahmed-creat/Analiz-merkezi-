@@ -1,4 +1,4 @@
-const PWA_SURUM = "v90-bildirim-ikon-baslik";
+const PWA_SURUM = "v91-bildirim-gercek-ikon";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1198,7 +1198,10 @@ function realtimeBildirim(r, sessizSistem) {
     if ("serviceWorker" in navigator && typeof Notification !== "undefined" && Notification.permission === "granted") {
       navigator.serviceWorker.ready.then((kayit) =>
         kayit.showNotification(r.baslik, {
-          body: r.metin || "", icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
+          /* v91 — KULLANICI: "büyük görsel kalkmış yerine gri daire içinde A harfi
+             var. Orda birşey olmasın." Büyük görsel alanı tamamen boş bırakılır
+             (şeffaf PNG); üst bardaki rozet ise uygulamanın GERÇEK logosu. */
+          body: r.metin || "", icon: "./icons/bildirim-bos.png", badge: "./icons/bildirim-rozet.png",
           tag: r.tur || "analiz-merkezi", data: { url: r.url || "./" }
         })
       ).catch(() => { });
@@ -1231,7 +1234,7 @@ async function cihazBildirimTesti() {
     const etiket = "am-izin-testi-" + Date.now(); // benzersiz: eski bildirimle karışmasın
     await kayit.showNotification("Bildirimler açıldı ✓", {
       body: "Bunu görüyorsan bu cihazın bildirim kanalı sağlam. Günde iki kez (sabah ve akşam) hatırlatacağım.",
-      icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: etiket, data: { url: "./" }
+      icon: "./icons/bildirim-bos.png", badge: "./icons/bildirim-rozet.png", tag: etiket, data: { url: "./" }
     });
     // Kısa bekle: bazı tarayıcılar listeyi gecikmeli günceller.
     await new Promise(function (r) { setTimeout(r, 1200); });

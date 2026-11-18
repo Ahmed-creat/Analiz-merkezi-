@@ -2,12 +2,13 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261027-v90-bildirim-ikon-baslik";
+const CACHE = "analiz-merkezi-v-20261027-v91-bildirim-gercek-ikon";
 const ASSETS = [
   "./index.html",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/bildirim-rozet.png",
+  "./icons/bildirim-bos.png",
   "./icons/icon-512.png",
   "./firebase-config.js",
   "./supabase-config.js",
@@ -234,6 +235,10 @@ const ICON_URL = "./icons/icon-192.png";
      eskiden badge'e RENKLİ 192'lik ikon verilmesinden kaynaklanıyordu.
    • icon   → büyük görsel. Kullanıcı istemiyor: artık HİÇ gönderilmiyor. */
 const ROZET_URL = "./icons/bildirim-rozet.png";
+/* Büyük görsel alanı BOŞ bırakmak için tamamen şeffaf 96×96 PNG.
+   Neden: `icon` hiç verilmezse Chrome sayfanın favicon'una düşüyor ve
+   yer tutucu "gri daire içinde harf" (ya da tarayıcı logosu) çiziyordu. */
+const BOS_GORSEL = "./icons/bildirim-bos.png";
 
 self.addEventListener("install", (e) => {
   /* v72 — KÖK NEDEN DÜZELTMESİ: `addAll` TEK bir 404'te komple reddeder;
@@ -297,20 +302,21 @@ function bildirimSecenekleri(payload) {
   const ham = (payload.fcmOptions && payload.fcmOptions.link) || data.url || payload.url || APP_URL;
   let url = APP_URL;
   try { url = new URL(ham, self.location.origin).href; } catch (e) { url = APP_URL; }
-  const icon = n.icon || data.icon || null;          // büyük görsel YOK
-  const badge = n.badge || data.badge || ROZET_URL;  // üst bar: tek renkli rozet
+  const icon = n.icon || data.icon || BOS_GORSEL;    // büyük görsel: boş (harf/daire yok)
+  const badge = n.badge || data.badge || ROZET_URL;  // üst bar: uygulama logosundan rozet
   const tag = data.key || payload.kind || payload.collapse_key || "analiz-merkezi";
   // v43 — KULLANICI: "Bildirim sadece ayarlardan dokununca geliyor."
   // Bildirim artık ekranda KALIR (requireInteraction) ve tek dokunuşluk
   // "Aç" düğmesi taşır; sessizce kaybolup gözden kaçmaz.
-  const secenek = {
-    body, badge, tag, renotify: true, requireInteraction: true,
-    vibrate: [180, 90, 180],
-    actions: [{ action: "ac", title: "Uygulamayı aç" }],
-    data: { url }
+  return {
+    title,
+    options: {
+      body, icon, badge, tag, renotify: true, requireInteraction: true,
+      vibrate: [180, 90, 180],
+      actions: [{ action: "ac", title: "Uygulamayı aç" }],
+      data: { url }
+    }
   };
-  if (icon) secenek.icon = icon;   // yalnızca gönderen açıkça isterse
-  return { title, options: secenek };
 }
 /* v35.9 — PUSH İZİ (cihaz tarafı kanıt)
    "Sunucu gönderdi (FCM 201) ama telefon göstermedi" ile "cihaza hiç

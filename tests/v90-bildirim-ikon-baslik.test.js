@@ -59,10 +59,19 @@ console.log("\n== 2) Bildirim ikonu: siyah kare yerine tek renkli rozet ==");
   ok("şeffaf zemin (RGBA)", renk === 6, "renk türü " + renk);
 
   ok("badge rozete bağlı", /const badge = n\.badge \|\| data\.badge \|\| ROZET_URL;/.test(SW));
-  ok("büyük ikon artık gönderilmiyor", /const icon = n\.icon \|\| data\.icon \|\| null;/.test(SW));
-  ok("icon yalnız açıkça istenirse ekleniyor", /if \(icon\) secenek\.icon = icon;/.test(SW));
+  ok("büyük görsel BOŞ bırakılıyor (gri daire + harf yok)", /const icon = n\.icon \|\| data\.icon \|\| BOS_GORSEL;/.test(SW));
+  ok("boş görsel tamamen şeffaf PNG", (() => {
+    const b = fs.readFileSync(path.join(KOK, "site", "icons", "bildirim-bos.png"));
+    return b.slice(1, 4).toString() === "PNG" && b[25] === 6 && b.length < 2000;
+  })());
+  ok("rozet GERÇEK uygulama logosundan üretildi (ikon-512 türevi)",
+     fs.readFileSync(path.join(KOK, "site", "icons", "bildirim-rozet.png")).length > 600);
   ok("rozet önbelleğe alındı (çevrimdışı da çalışır)", /"\.\/icons\/bildirim-rozet\.png"/.test(SW));
   ok("eski renkli 192 badge olarak KULLANILMIYOR", !/const badge = [^;]*ICON_URL/.test(SW));
+  ok("uygulama içi bildirimde de badge = rozet", /badge: "\.\/icons\/bildirim-rozet\.png"/.test(APP));
+  ok("uygulama içi bildirimde büyük görsel boş", /icon: "\.\/icons\/bildirim-bos\.png"/.test(APP));
+  ok("hiçbir yerde 192'lik ikon badge/icon olarak kalmadı", !/icon: "\.\/icons\/icon-192\.png"/.test(APP));
+  ok("favicon tanımlı (gri daire + harf yerine logo)", /rel="icon"/.test(fs.readFileSync(path.join(KOK, "site", "index.html"), "utf8")));
 }
 
 console.log("\n== 3) Yeni deneme → 'sonucun var, analiz edeyim' ==");
@@ -90,7 +99,7 @@ console.log("\n== 4) Uygulama tarafı ==");
   ok("giriş yoksa sessizce atlanır", /if \(!sb \|\| !currentUser \|\| typeof sb\.rpc !== "function"\) return;/.test(APP));
   ok("hata olsa bile çekim akışı bozulmaz", /catch\(function \(\) \{ \/\* \*\/ \}\);/.test(APP));
   ok("en çok 3 deneme bildirimi (spam yok)", /slice\(0, 3\)/.test(APP));
-  ok("sürüm damgası v90", /PWA_SURUM = "v90-bildirim-ikon-baslik"/.test(APP));
+  ok("sürüm damgası v91", /PWA_SURUM = "v91-bildirim-gercek-ikon"/.test(APP));
 }
 
 console.log("\n== 5) Eski davranışlar bozulmadı ==");
