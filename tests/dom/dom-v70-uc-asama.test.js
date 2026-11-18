@@ -179,9 +179,10 @@ ok("index.html modülleri yüklüyor",
   HTML.indexOf('<script src="okz-tde-veri.js"></script>') > 0 && HTML.indexOf('<script src="okz-tde.js"></script>') > 0);
 ok("service worker modülleri önbelleğe alıyor",
   SW.indexOf('"./okz-tde-veri.js"') > 0 && SW.indexOf('"./okz-tde.js"') > 0);
+// Tarih damgası sabit değil: her sürüm yükseltmesinde kırılmasın (v78).
 ok("SW sürümü PWA_SURUM ile aynı", (function () {
   const m = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1];
-  return !!m && SW.indexOf("analiz-merkezi-v-20261031-" + m) > 0;
+  return !!m && new RegExp("analiz-merkezi-v-[0-9]+-" + m.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(SW);
 })());
 /* v72 — havuz sayısı 30 değil 28 (2 Elle yazılmış havuz silindi).
    Doğru kaynak: müfredat (konular.js). */
