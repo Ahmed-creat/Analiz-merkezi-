@@ -81,11 +81,15 @@ k = F.kalanGorevler({ dailyTasks: { date: GUN }, bkt_state: { "A > B": { study_c
 ok("dün konu bitirmiş olmak bugünü kapatmaz", k.indexOf("konu çalış") >= 0, JSON.stringify(k));
 
 console.log("\n== 4) Fonksiyonun gönderim yolu ==");
-ok("bildirim-gonder mod=tekil ile çağrılıyor", /mod:\s*"tekil"/.test(KAYNAK));
+/* v87 — KÖK NEDEN: bildirim-gonder mod=tekil → HTTP 400 (canlı ölçüm 18 Kas 07:40).
+   Gönderim artık push-tani (web-push) kanalından; ölçüt kanalın kendisi. */
+ok("gönderim push-tani (web-push) kanalından", KAYNAK.indexOf("/functions/v1/push-tani") > 0);
+ok("ölü mod=tekil çağrısı YOK", !/mod:\s*"tekil"/.test(KAYNAK) && KAYNAK.indexOf("/functions/v1/bildirim-gonder") < 0);
 ok("x-bildirim-secret ile yetkileniyor", KAYNAK.indexOf("x-bildirim-secret") > 0);
 ok("Verify JWT gerekmez (secret ile korunuyor)", KAYNAK.indexOf("BILDIRIM_SECRET") > 0);
 ok("sessiz saat 06–21 dışında göndermez", /trSaat < 6 \|\| trSaat >= 21/.test(KAYNAK));
-ok("push_abonelikleri aktif=eq.true süzülüyor", KAYNAK.indexOf("push_abonelikleri?select=user_id,aktif&aktif=eq.true") > 0);
+ok("push_abonelikleri aktif=eq.true süzülüyor", KAYNAK.indexOf("push_abonelikleri?select=id,user_id,endpoint&aktif=eq.true") > 0);
+ok("cihaz 'gösterdim' dediyse tekrar gönderilmez", KAYNAK.indexOf("gosterildi=is.true") > 0);
 ok("görev metni 'bugünün görevleri' diyor", KAYNAK.indexOf("bugünün görevleri") > 0);
 
 console.log("\n== 5) Sabah bildirimi uygulamada da anlatılıyor ==");
