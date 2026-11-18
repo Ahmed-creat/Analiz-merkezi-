@@ -28,36 +28,21 @@ export const yasam = (
   };
 };
 
-/* ---------- marka ---------- */
+/* ---------- marka (uygulamanın orijinal logosu) ---------- */
 export const Marka: React.FC<{boyut?: number; golge?: boolean}> = ({boyut = 92, golge = true}) => (
-  <div
+  <Img
+    src={staticFile('promo/logo.png')}
     style={{
       width: boyut,
       height: boyut,
-      borderRadius: boyut * 0.28,
-      background: 'linear-gradient(140deg,#1D4ED8 0%,#2563EB 55%,#38BDF8 100%)',
-      display: 'flex',
-      alignItems: 'flex-end',
-      justifyContent: 'center',
-      gap: boyut * 0.085,
-      padding: boyut * 0.22,
-      boxSizing: 'border-box',
-      boxShadow: golge ? `0 ${boyut * 0.2}px ${boyut * 0.45}px rgba(37,99,235,0.30)` : undefined,
-      flexShrink: 0,
+      borderRadius: boyut * 0.26,
+      objectFit: 'contain',
+      display: 'block',
+      filter: golge
+        ? `drop-shadow(0 ${boyut * 0.14}px ${boyut * 0.3}px rgba(37,99,235,0.30))`
+        : undefined,
     }}
-  >
-    {[0.38, 0.62, 0.86, 1].map((h, i) => (
-      <div
-        key={i}
-        style={{
-          width: boyut * 0.1,
-          height: boyut * 0.5 * h,
-          borderRadius: boyut * 0.05,
-          background: i === 3 ? '#FFFFFF' : 'rgba(255,255,255,0.82)',
-        }}
-      />
-    ))}
-  </div>
+  />
 );
 
 /* ---------- üst etiket ---------- */

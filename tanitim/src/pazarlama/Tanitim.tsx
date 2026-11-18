@@ -23,9 +23,10 @@ export const SURE = {
   kanca: 210,
   egri: 480,
   testEtkisi: 150,
+  kopru: 165,
   reveal: 160,
-  ozellik: 204,
-  rakamlar: 150,
+  ozellik: 195,
+  dongu: 120,
   final: 230,
 };
 const OZELLIK_SAYISI = 6;
@@ -33,20 +34,29 @@ export const TANITIM_TOPLAM =
   SURE.kanca +
   SURE.egri +
   SURE.testEtkisi +
+  SURE.kopru +
   SURE.reveal +
   SURE.ozellik * OZELLIK_SAYISI +
-  SURE.rakamlar +
+  SURE.dongu +
   SURE.final;
 
 const B = {
   kanca: 0,
   egri: SURE.kanca,
   testEtkisi: SURE.kanca + SURE.egri,
-  reveal: SURE.kanca + SURE.egri + SURE.testEtkisi,
-  ozellik: SURE.kanca + SURE.egri + SURE.testEtkisi + SURE.reveal,
-  rakamlar: SURE.kanca + SURE.egri + SURE.testEtkisi + SURE.reveal + SURE.ozellik * OZELLIK_SAYISI,
+  kopru: SURE.kanca + SURE.egri + SURE.testEtkisi,
+  reveal: SURE.kanca + SURE.egri + SURE.testEtkisi + SURE.kopru,
+  ozellik: SURE.kanca + SURE.egri + SURE.testEtkisi + SURE.kopru + SURE.reveal,
+  dongu:
+    SURE.kanca + SURE.egri + SURE.testEtkisi + SURE.kopru + SURE.reveal + SURE.ozellik * OZELLIK_SAYISI,
   final:
-    SURE.kanca + SURE.egri + SURE.testEtkisi + SURE.reveal + SURE.ozellik * OZELLIK_SAYISI + SURE.rakamlar,
+    SURE.kanca +
+    SURE.egri +
+    SURE.testEtkisi +
+    SURE.kopru +
+    SURE.reveal +
+    SURE.ozellik * OZELLIK_SAYISI +
+    SURE.dongu,
 };
 
 /* ------------------------------------------------------------------ */
@@ -107,17 +117,6 @@ const Kanca: React.FC = () => {
               }}
             >
               Çok çalışıyorsun.
-            </div>
-            <div
-              style={{
-                fontSize: 30,
-                fontWeight: 600,
-                color: '#93A4C4',
-                letterSpacing: 0.4,
-                fontVariantNumeric: 'tabular-nums',
-              }}
-            >
-              774 soru · 5 deneme · 138 sayfa
             </div>
           </div>
 
@@ -302,7 +301,10 @@ const Egri: React.FC = () => {
                 );
               })}
             </div>
-            <div style={{marginTop: 24, fontSize: 21, fontWeight: 550, color: '#7C8BA8'}}>
+            <div style={{marginTop: 22, fontSize: 23, fontWeight: 650, color: '#9EC5FF', lineHeight: 1.4}}>
+              Uygulama bu takvimi senin yerine kurar.
+            </div>
+            <div style={{marginTop: 16, fontSize: 20, fontWeight: 550, color: '#7C8BA8'}}>
               Cepeda vd. 2006 meta-analizi · aralıklı tekrar
             </div>
           </div>
@@ -449,6 +451,91 @@ const TestEtkisi: React.FC = () => {
 };
 
 /* ------------------------------------------------------------------ */
+/* 3.5 · KÖPRÜ — bilimden uygulamaya                                  */
+/* ------------------------------------------------------------------ */
+const KOPRU = [
+  {bilim: 'Unutma eğrisi', uygulama: 'Tam zamanında tekrar takvimi'},
+  {bilim: 'Test etkisi', uygulama: 'Her konudan sonra 5 soruluk kısa kontrol'},
+  {bilim: 'Kök neden', uygulama: 'Her yanlışta konu + neden kaydı'},
+];
+
+const Kopru: React.FC = () => {
+  const f = useCurrentFrame();
+  const t = yasam(f, 2, SURE.kopru, 14, 12);
+  const altYazi = yum((f - 96) / 18);
+
+  return (
+    <AbsoluteFill>
+      <KoyuZemin isik="sol" />
+      <AbsoluteFill style={{padding: '104px 150px'}}>
+        <div style={{opacity: t.op, transform: `translateY(${t.y}px)`}}>
+          <Etiket op={t.op} renk="#7FA8F5">
+            Bilim → uygulama
+          </Etiket>
+          <div style={{marginTop: 30}}>
+            <Baslik
+              satirlar={[
+                'Bilim ne diyorsa,',
+                <span key="u" style={{color: '#60A5FA'}}>
+                  uygulama onu yapıyor.
+                </span>,
+              ]}
+              f={f}
+              basla={8}
+              boyut={68}
+              renk="#F3F7FF"
+            />
+          </div>
+        </div>
+
+        <div style={{position: 'absolute', left: 150, top: 430, width: 1590}}>
+          {KOPRU.map((r, i) => {
+            const p = yum((f - 26 - i * 11) / 16);
+            return (
+              <div
+                key={r.bilim}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 32,
+                  padding: '24px 0',
+                  borderTop: '1px solid rgba(255,255,255,0.10)',
+                  opacity: p,
+                  transform: `translateY(${(1 - p) * 16}px)`,
+                }}
+              >
+                <div style={{width: 290, fontSize: 25, fontWeight: 650, color: '#8FA1C0'}}>{r.bilim}</div>
+                <div style={{fontSize: 30, color: '#3B82F6', lineHeight: 1}}>→</div>
+                <div style={{fontSize: 29, fontWeight: 700, color: '#EAF1FF', letterSpacing: -0.3}}>
+                  {r.uygulama}
+                </div>
+              </div>
+            );
+          })}
+          <div style={{borderTop: '1px solid rgba(255,255,255,0.10)'}} />
+        </div>
+
+        <div
+          style={{
+            position: 'absolute',
+            left: 150,
+            bottom: 104,
+            fontSize: 26,
+            fontWeight: 600,
+            color: '#7C8BA8',
+            opacity: altYazi,
+            transform: `translateY(${(1 - altYazi) * 12}px)`,
+          }}
+        >
+          Sen denemeyi girersin; planı ve zamanlamayı uygulama kurar.
+        </div>
+      </AbsoluteFill>
+      <Gren />
+    </AbsoluteFill>
+  );
+};
+
+/* ------------------------------------------------------------------ */
 /* 4 · TANITIM / MARKA                                                */
 /* ------------------------------------------------------------------ */
 const Reveal: React.FC = () => {
@@ -470,7 +557,7 @@ const Reveal: React.FC = () => {
               opacity: logo,
             }}
           >
-            <Marka boyut={132} />
+            <Marka boyut={150} />
           </div>
           <div
             style={{
@@ -498,7 +585,7 @@ const Reveal: React.FC = () => {
             textAlign: 'center',
           }}
         >
-          Denemelerini bir çalışma planına çevirir.
+          Bilimi, günlük çalışma planına çevirir.
         </div>
 
         <div
@@ -703,53 +790,73 @@ const Ozellik: React.FC<{ayar: OzellikAyari}> = ({ayar}) => {
 };
 
 /* ------------------------------------------------------------------ */
-/* 6 · RAKAMLAR                                                       */
+/* 6 · DÖNGÜ                                                          */
 /* ------------------------------------------------------------------ */
-const Rakamlar: React.FC = () => {
+const Dongu: React.FC = () => {
   const f = useCurrentFrame();
-  const t = yasam(f, 4, SURE.rakamlar, 16, 12);
-  const kalemler = [
-    {deger: 844, sonEk: '', birim: 'soru', alt: 'çözüldü, hepsi kayıtta'},
-    {deger: 14, sonEk: '', birim: 'acil konu', alt: 'öncelik sırasına dizildi'},
-    {deger: 51, sonEk: '%', birim: 'hafıza', alt: 'tekrarlarla yükseliyor'},
-    {deger: 12, sonEk: '', birim: 'gün seri', alt: 'her gün bir adım'},
-  ];
+  const t = yasam(f, 2, SURE.dongu, 14, 12);
+  const adimlar = ['Ölç', 'Teşhis', 'Plan', 'Kanıtla', 'Tekrar'];
 
   return (
     <AbsoluteFill>
       <KoyuZemin isik="sag" />
-      <AbsoluteFill style={{padding: '110px 130px'}}>
-        <div style={{opacity: t.op, transform: `translateY(${t.y}px)`}}>
+      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
+        <div style={{opacity: t.op, transform: `translateY(${t.y}px)`, textAlign: 'center'}}>
           <Etiket op={t.op} renk="#7FA8F5">
-            Tek hesap · tek ekran
+            Her gün aynı döngü
           </Etiket>
-          <div style={{marginTop: 30}}>
-            <Baslik satirlar={['Her şey bir yerde.']} f={f} basla={10} boyut={84} renk="#F3F7FF" />
-          </div>
         </div>
 
-        <div style={{position: 'absolute', left: 118, top: 430, display: 'flex', gap: 46}}>
-          {kalemler.map((k, i) => {
-            const p = yum((f - 24 - i * 10) / 26);
+        <div
+          style={{
+            marginTop: 46,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 18,
+          }}
+        >
+          {adimlar.map((a, i) => {
+            const p = yum((f - 14 - i * 8) / 14);
             return (
-              <div key={k.birim} style={{width: 400, opacity: p, transform: `translateY(${(1 - p) * 26}px)`}}>
-                <div style={{display: 'flex', alignItems: 'baseline', gap: 14}}>
+              <div key={a} style={{display: 'flex', alignItems: 'center', gap: 18}}>
+                <div
+                  style={{
+                    opacity: p,
+                    transform: `translateY(${(1 - p) * 20}px) scale(${0.92 + 0.08 * p})`,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 10,
+                  }}
+                >
                   <div
                     style={{
-                      fontSize: 112,
-                      fontWeight: 800,
-                      letterSpacing: -6,
-                      color: '#FFFFFF',
-                      lineHeight: 1,
+                      fontSize: 18,
+                      fontWeight: 700,
+                      letterSpacing: 2.6,
+                      color: '#5C7099',
+                      fontVariantNumeric: 'tabular-nums',
                     }}
                   >
-                    <Sayac deger={k.deger} f={f} basla={26 + i * 10} sure={40} sonEk={k.sonEk} />
+                    {String(i + 1).padStart(2, '0')}
                   </div>
-                  <div style={{fontSize: 34, fontWeight: 700, color: '#7FB4FF', letterSpacing: -0.5}}>
-                    {k.birim}
+                  <div style={{fontSize: 52, fontWeight: 800, letterSpacing: -1.8, color: '#FFFFFF'}}>
+                    {a}
                   </div>
                 </div>
-                <div style={{marginTop: 16, fontSize: 23, fontWeight: 550, color: '#8FA1C0'}}>{k.alt}</div>
+                {i < adimlar.length - 1 && (
+                  <div
+                    style={{
+                      fontSize: 34,
+                      fontWeight: 300,
+                      color: '#3B82F6',
+                      opacity: yum((f - 20 - i * 8) / 14),
+                      transform: `translateY(-8px)`,
+                    }}
+                  >
+                    ›
+                  </div>
+                )}
               </div>
             );
           })}
@@ -757,16 +864,16 @@ const Rakamlar: React.FC = () => {
 
         <div
           style={{
-            position: 'absolute',
-            left: 130,
-            top: 770,
-            fontSize: 26,
+            marginTop: 60,
+            fontSize: 27,
             fontWeight: 600,
-            color: '#6C7C99',
-            opacity: yum((f - 70) / 20),
+            color: '#93A4C4',
+            opacity: yum((f - 62) / 18),
+            transform: `translateY(${(1 - yum((f - 62) / 18)) * 12}px)`,
+            textAlign: 'center',
           }}
         >
-          Beş deneme, 138 sayfa, 12 günlük seri — hepsi aynı ekranda.
+          Denemeyi girersin. Teşhisi, planı ve tekrarı uygulama kurar.
         </div>
       </AbsoluteFill>
       <Gren />
@@ -884,6 +991,9 @@ export const Tanitim: React.FC = () => (
     <Sequence from={B.testEtkisi} durationInFrames={SURE.testEtkisi}>
       <TestEtkisi />
     </Sequence>
+    <Sequence from={B.kopru} durationInFrames={SURE.kopru}>
+      <Kopru />
+    </Sequence>
     <Sequence from={B.reveal} durationInFrames={SURE.reveal}>
       <Reveal />
     </Sequence>
@@ -892,8 +1002,8 @@ export const Tanitim: React.FC = () => (
         <Ozellik ayar={a} />
       </Sequence>
     ))}
-    <Sequence from={B.rakamlar} durationInFrames={SURE.rakamlar}>
-      <Rakamlar />
+    <Sequence from={B.dongu} durationInFrames={SURE.dongu}>
+      <Dongu />
     </Sequence>
     <Sequence from={B.final} durationInFrames={SURE.final}>
       <Final />

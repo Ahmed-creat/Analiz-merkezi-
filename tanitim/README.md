@@ -6,7 +6,7 @@ Elle çizilmiş arayüz yok. Uygulama kaynak dosyalarına **hiç dokunulmaz**.
 
 | Video | Dosya | Süre | Amaç |
 |-------|-------|------|------|
-| **Tanıtım filmi** (lansman) | `teslim/Analiz-Merkezi-tanitim-filmi.mp4` | 86,8 sn | Problem → bilim → ürün. Reklam/duyuru filmi. Yapım notu: `TANITIM-NOTU.md` |
+| **Tanıtım filmi** (lansman) | `teslim/Analiz-Merkezi-tanitim-filmi.mp4` | 89,5 sn | Problem → bilim → **bilimden uygulamaya köprü** → ürün. Reklam/duyuru filmi. Yapım notu: `TANITIM-NOTU.md` |
 | **Kullanım videosu** (v2) | `teslim/Analiz-Merkezi-tanitim-v2.mp4` | 79,1 sn | Uygulamanın gerçek kullanımı, tek kesintisiz akış. Bu README bu videoyu anlatır. |
 
 Kompozisyonlar: `Tanitim` (film) ve `AnaVideo` (kullanım) — ikisi de `src/index.ts` içinde.
