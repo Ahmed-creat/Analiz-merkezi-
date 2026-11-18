@@ -178,7 +178,11 @@ ok("eski panel kalıntısı temizleniyor", /getElementById\("bkt-learning-panel"
 // v35.4: resolvePoolId IIFE İÇİNDE tanımlı; renderKnowledge dışarıda olduğu
 // için çağrı ReferenceError atıp BİLGİ BANKASI sayfasını beyaz bırakıyordu.
 // Köprü: havuzIdCoz() → window.__havuzIdCoz (IIFE içinde açılır).
-ok("konu detayında kayıtlı kimlik de doğrulanarak çözülüyor", HTML.indexOf("havuzIdCoz(selectedTopicKey, bktKayit.pool_id)") > 0);
+// v78 (G-10) — konu detayının İKİ dalı da (yol haritası / tamamlanmış konu)
+// kayıtlı havuz kimliğini havuzIdCoz ile doğrular. Değişken adı değil, DAVRANIŞ
+// ölçülür: büyük mükerrer kart kalktı, doğrulama 5. adımda sürüyor.
+ok("konu detayında kayıtlı kimlik de doğrulanarak çözülüyor",
+  /havuzIdCoz\(selectedTopicKey,\s*bktKayit(Adim)?\.pool_id\)/.test(HTML));
 ok("IIFE köprüsü açık (window.__havuzIdCoz)", ENGINE.indexOf("window.__havuzIdCoz =") > 0);
 ok("sayfa çizimi try/catch ile korunuyor", /Bu sayfa yüklenemedi/.test(HTML));
 

@@ -90,14 +90,19 @@ ok("soru sayacı gösteriliyor", /Soru ' \+ \(i \+ 1\) \+ ' \/ ' \+ qs\.length/.
 // v40 — Konu Takibi'ndeki ayrı öğrenme paneli kaldırıldı; "5 soru" etiketi
 // artık Bilgi Bankası kartında ve Günlük Görevler satırında yazılı.
 ok("5 soru etiketi kullanıcıya görünüyor",
-  /5 soruluk kısa kontrol seni bekliyor/.test(HTML) || /Öğrenme Testi · 5 soru/.test(HTML) || /MINI_SORU = 5/.test(ENGINE));
-ok("tamamlanan konuda belirgin kontrol kartı", HTML.indexOf("5 soruluk kısa kontrol seni bekliyor") > 0);
+  /5 soruluk kontrole başla/.test(HTML) || /Öğrenme Testi · 5 soru/.test(HTML) || /MINI_SORU = 5/.test(ENGINE));
+// v78 (G-10) — KULLANICI: "Kısa kontrolü çalışma adımına ekledik. Yani gerek
+// kalmadı değil mi?" DOĞRU: tamamlanmış konudaki MÜKERRER büyük kart kaldırıldı.
+// Kısa kontrolün tek yeri 5. adım; zamanı gelen kontrol Günlük Görevler
+// satırından açılıyor. Bu test artık tek yolu doğruluyor.
+ok("mükerrer 'seni bekliyor' kartı YOK", HTML.indexOf("kısa kontrol seni bekliyor") < 0);
+ok("kısa kontrol tek yoldan açılıyor (5. adım)", (HTML.match(/5 soruluk kontrole başla/g) || []).length === 1);
 // v37 — KULLANICI: "5 soru 4. adımı bitirir bitirmez zaten açılıyor" → otomatik
 // açma KALDIRILDI. Bu test artık tersini doğruluyor (davranış testi: v37-davranis).
 ok("v37: completeTopic kısa kontrolü KENDİLİĞİNDEN AÇMAZ",
   !/function completeTopic\(key\)[\s\S]{0,1800}\n\s*miniKontrolBaslat\(key\);/.test(HTML));
 ok("v37: konu bitince nerede açılacağı söylenir", /Kısa Kontrol hazır/.test(HTML));
-ok("belirgin kontrol kartı yalnız ZAMANI gelince çizilir", /kisaDue && !kisaKapali/.test(HTML));
+ok("zamanı gelen kontrol görev satırından açılıyor", /aksiyon: "bktTest"[\s\S]{0,200}hedefMod: "precheck"/.test(HTML));
 
 // ---------- 5) Görseller gerçekten çiziliyor ----------
 console.log("\n== 5) Soru görselleri ==");

@@ -88,13 +88,13 @@ function calisma(state, bugun) {
       !/^\s*miniKontrolBaslat\(/m.test(govde), "çağrı hâlâ var");
     ok("konu tamamlanınca nerede olduğu söyleniyor", /Kısa Kontrol hazır/.test(govde));
   }
-  // 1b) "seni bekliyor" kartı yalnız ZAMANI GELİNCE çizilir
+  // 1b) v78 (G-10) — "seni bekliyor" büyük kartı TAMAMEN kaldırıldı: 5 adımın
+  // 5.'si aynı işi yapıyordu (kullanıcı: "gerek kalmadı değil mi?"). Zamanı
+  // gelen kontrol tek yerden, Günlük Görevler satırından açılır.
   {
-    const bas = HTML.indexOf("const kisaDurum = (window.AnalizBKT && window.AnalizBKT.konuDurum)");
-    const son = HTML.indexOf("5 soruluk kontrole başla", bas);
-    const blok = HTML.slice(bas, son);
-    ok("bekleyen kart kisaDue koşuluna bağlı", /kisaDue\s*&&\s*!kisaKapali/.test(blok));
-    ok("kisaDue = motorun precheck'i", /const kisaDue = !!\(kisaDurum && kisaDurum\.precheck\)/.test(blok));
+    ok("mükerrer 'seni bekliyor' kartı yok", HTML.indexOf("kısa kontrol seni bekliyor") < 0);
+    ok("kisaDue/kisaKapali koşulu kalmadı", HTML.indexOf("kisaDue") < 0 && HTML.indexOf("kisaKapali") < 0);
+    ok("zamanı gelen kontrol görevden açılıyor", /hedefMod: "precheck"/.test(HTML));
   }
   // 1c) v39 — 5 soruluk test KONU TAKİBİ KARTINDAN kaldırıldı (kullanıcı:
   // "neden hem flashcard hem 5 soru orda"). Tek yeri: Günlük Görevler satırı

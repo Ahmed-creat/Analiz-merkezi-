@@ -6194,51 +6194,13 @@ function renderKnowledge(container) {
         '<button class="btn ' + (tekrarZamani ? "btn-success" : "btn-primary") + ' btn-sm" data-act="tekrarKart" data-topic="' +
         attr(selectedTopicKey) + '" style="min-height:48px;">' +
         icon(tekrarZamani ? "refresh-cw" : "fast-forward", 14) + (tekrarZamani ? " Tekrar Ettim" : " Erken Tekrar") + "</button>" : "";
-      // v35.6: kontrol testi yapılmadıysa EN ÜSTTE belirgin kart (keşfedilebilir olsun)
-      const bktKayit = (state.bkt_state && state.bkt_state[selectedTopicKey]) || {};
-      const havuzKontrol = havuzIdCoz(selectedTopicKey, bktKayit.pool_id);
-      const kisaDurum = (window.AnalizBKT && window.AnalizBKT.konuDurum) ? window.AnalizBKT.konuDurum(selectedTopicKey) : null;
-      const kisaKapali = !!(kisaDurum && kisaDurum.kisaKontrol && kisaDurum.kisaKontrol.acik === false);
-      // v37 — KULLANICI: "5 soru ... sonra tekrar o bölümde gözüküyor, ne kadar
-      // çözülse de kalkmıyor." KÖK NEDEN: bu blok "onaylanmadıysa" her zaman
-      // çiziliyordu; motorda test zamanı gelmese de kart duruyordu.
-      // Artık kart YALNIZ motorun zamanı geldiğinde (precheck_due ≤ bugün)
-      // ve son test üzerinden dinlenme süresi geçtiyse gösterilir. Test
-      // yapıldıysa hiçbir iz bırakmadan kaybolur.
-      const kisaDue = !!(kisaDurum && kisaDurum.precheck);
-      // v60 — KULLANICI: "5 soruluk kısa kontrol zaten 5. adımdı, orada
-      // çözdükten sonra neden geri geliyor?" Savunma katmanı: 5. adım BUGÜN
-      // çözüldüyse bekleyen-kontrol kartı çizilmez (motorun precheck_due'su
-      // yanlışlıkla bugüne çekilse bile kart geri gelmez).
-      const kisaBugun = !!(bktKayit.son_kisa_kontrol && String(bktKayit.son_kisa_kontrol).slice(0, 10) === todayStr());
-      // v60 — KULLANICI: "5 soruluk kısa kontrol zaten 5. adımdı, orada
-      // çözdükten sonra neden geri geliyor?" KÖK NEDEN (canlı kayıt):
-      // Biyoloji > 1.1 ... konusunda son kısa kontrol 15.11, sonuç KALDI
-      // (gecti:false) → motor sıradaki kontrolü 16.11'e atmıştı; ama
-      // completeTopic eski sürümde precheck_due'yu 15.11'e geri çekti.
-      // Sonuç: kart her gün "seni bekliyor" diye geri geliyordu.
-      // YENİ KURAL: 5. adım (kısa kontrol) BİR KEZ yapıldıysa bu büyük kart
-      // bir daha çizilmez. Kart yalnız kontrol HİÇ yapılmadıysa (5. adım
-      // gerçekten bekliyorsa) gösterilir.
-      const kisaYapildi = !!bktKayit.son_kisa_kontrol;
-      if (!kisaYapildi && bktKayit.onay_durumu !== "ONAYLANDI" && havuzKontrol && kisaDue && !kisaKapali && !kisaBugun) {
-        html += '<div class="bento-card" style="margin-bottom:16px;border:2px solid var(--brand-blue);background:linear-gradient(180deg,rgba(37,99,235,0.07),transparent);">' +
-          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">' + icon("clipboard-check", 20, "color:var(--brand-blue);") + '<b style="font-size:15px;">5 soruluk kısa kontrol seni bekliyor</b></div>' +
-          '<p class="text-xs text-muted" style="margin:0 0 10px;">Bu konuyu gerçekten öğrendin mi? Sorular tek tek, sırayla sorulur. Doğru cevap test sırasında gösterilmez.</p>' +
-          '<button class="btn btn-primary w-full" data-bkt-test="' + attr(selectedTopicKey) + '" data-bkt-pool="' + attr(havuzKontrol) + '" data-bkt-mode="precheck" style="min-height:48px;">' + icon("play", 15) + " 5 soruluk kontrole başla</button></div>";
-      } else if (false) {
-        // v38 — KULLANICI: "5 tekrar sorusu hiç gitmiyor".
-        // Buradaki "Kısa Kontrol planlandı / Sıradaki kontrol: …" kartı her
-        // onaysız konuda kalıcı olarak duruyordu; kısa kontrol çözülse bile
-        // bölümden kalkmıyordu. KALDIRILDI: zamanı gelmeyen kontrol için
-        // hiçbir kart çizilmez, konu satırında da iz bırakmaz.
-      }
-      // v40 — KULLANICI: "Kısa kontrol yok ise soru havuzu yok mu diyor. Eğer
-      // kontrol yok ise bir şey göstermesin."
-      // KÖK NEDEN: Buradaki "soru havuzu henüz eklenmemiş" notu, havuz VAR ama
-      // kontrolün ZAMANI GELMEMİŞ olsa bile çiziliyordu. Yani neredeyse her
-      // konuda "havuz yok" yazıyordu. Artık not YALNIZ havuz gerçekten yoksa
-      // (havuzKontrol boş) çizilir; havuz varsa hiçbir şey gösterilmez.
+      // v78 (G-10) — KULLANICI: "Kısa kontrolü çalışma adımına ekledik. Yani
+      // gerek kalmadı değil mi?" DOĞRU: 5 soruluk kısa kontrol artık YALNIZ
+      // çalışma yol haritasının 5. adımında. Buradaki büyük "5 soruluk kısa
+      // kontrol seni bekliyor" kartı 5. adımla MÜKERRERDİ (aynı ekranda iki
+      // "5 soru") ve tamamlanmış konuda kontrol zamanı gelince geri geliyordu.
+      // KALDIRILDI. Zamanı gelen kontrol Günlük Görevler satırından açılır
+      // (aksiyon "bktTest" · hedefMod "precheck") — tek yol, tek düğme.
       html += '<div class="bento-card" style="margin-bottom:16px;">' +
         '<div class="flex items-center gap-2" style="margin-bottom:10px;">' + icon("check-circle-2", 22, "color:var(--semantic-success);") +
         '<b style="font-size:14px;">Tamamland' + APRX + ' — hafıza takibinde</b></div>' +

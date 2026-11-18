@@ -56,10 +56,14 @@ ok("completeTopic artık koşulsuz bugüne çekmiyor",
   /if \(entry\.son_kisa_kontrol\)[\s\S]{0,260}addDays\(entry\.son_kisa_kontrol, aralik\)/.test(BKT));
 ok("geçtiyse KISA_ARALIK_GUN, kaldıysa 1 gün",
   /entry\.son_kisa_kontrol_gecti === false \? 1 : KISA_ARALIK_GUN/.test(BKT));
-ok("arayüzde aynı gün koruması var", /const kisaBugun =/.test(HTML));
-ok("bekleyen kart aynı gün çizilmez", /kisaDue && !kisaKapali && !kisaBugun/.test(HTML));
-ok("kontrol BİR KEZ yapıldıysa büyük kart hiç çizilmez", /const kisaYapildi = !!bktKayit\.son_kisa_kontrol;/.test(HTML));
-ok("kart yalnız 'hiç yapılmadı' ise gösterilir", /if \(!kisaYapildi && bktKayit\.onay_durumu !== "ONAYLANDI"/.test(HTML));
+// v78 (G-10) — KULLANICI: "Kısa kontrolü çalışma adımına ekledik. Yani gerek
+// kalmadı değil mi?" 5. adım aynı işi yaptığı için tamamlanmış konudaki büyük
+// "seni bekliyor" kartı KALDIRILDI. v60'taki "aynı gün çizilmesin" korumaları
+// artık gereksiz: çizilecek kart yok. Yerine geri gelmeme garantisi 5. adımda.
+ok("mükerrer bekleyen kart kaldırıldı (G-10)", HTML.indexOf("kisa kontrol seni bekliyor") < 0);
+ok("aynı gün koruması kodda iz bırakmadı", HTML.indexOf("kisaBugun") < 0 && HTML.indexOf("kisaYapildi") < 0);
+ok("5. adım bir kez yapıldıysa TAMAMLANDI kalır", /const kisaBitti = !!bktKayitAdim\.son_kisa_kontrol;/.test(HTML));
+ok("5. adım düğmesi yalnız hiç yapılmadıysa çizilir", /else if \(adimBitti && kontrolHavuz\)/.test(HTML));
 
 console.log("\n== 4) Açılışta test bildirimi YOK ==");
 ok("otomatik() test göndermiyor", !/await testBirKez\(\)/.test(PUSH.split("async function otomatik")[1] || ""));

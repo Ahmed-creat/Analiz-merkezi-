@@ -1981,9 +1981,15 @@ function initOkulizyonUI() {
       try { navigate("exams"); } catch (e) { /* */ }
     }
     else if (a === "okzKonuEsle") okzKonuEsleKaydet();
-    else if (a === "okzYoksay") okzYoksay([{ anahtar: el.dataset.key, hash: el.dataset.hash }]);
-    else if (a === "okzHepsiniYoksay") okzHepsiniYoksay();
-    else if (a === "okzDefteriTemizle") { okzDefterTemizle(); renderProfileModal(); toast("Yoksayılan kayıtlar geri alındı — sonraki çekimde yeniden gelir.", "info"); }
+    /* v78 (G-10) — okzYoksay / okzHepsiniYoksay: düğmeleri kuyruk listesiyle
+       birlikte kalktı, kendileri de kaldırıldı (ölü kod yok). Defter sıfırlama
+       KALDI: sınavı Denemelerim'den silip yeniden çekmek isteyene kurtarma yolu
+       gerekir — karşılığı aşağıdaki düğme. */
+    else if (a === "okzDefteriTemizle") {
+      okzDefterTemizle();
+      try { renderOkzModal(); } catch (e) { /* */ }
+      toast("İçe aktarma defteri sıfırlandı — sonraki çekimde sınavlar yeniden değerlendirilir.", "info");
+    }
   });
   okzBadge();
   if (window.lucide && lucide.createIcons) lucide.createIcons();
@@ -2152,38 +2158,6 @@ async function okzYenidenAktar(i) {
   toast("Güncellendi — " + (ex.name || "sınav") + " · net " + oz.net + " · " + oz.soru + " soru.", "success");
 }
 
-// Kuyruktaki sınavları kalıcı olarak yoksay (içerik değişirse geri gelir)
-function okzYoksay(liste) {
-  let say = 0;
-  (liste || []).forEach(x => {
-    if (!x || !x.anahtar) return;
-    okzDefterIsaretle(x.anahtar, x.hash);
-    say++;
-  });
-  if (!say) return;
-  const st = okzStore();
-  const anahtarlar = (liste || []).map(x => x && x.anahtar);
-  st.pending = (st.pending || []).filter(ex => !anahtarlar.includes(okzKey(ex)));
-  try { saveState(); } catch (e) { /* */ }
-  okzBadge();
-  renderOkzModal();
-  const kalan = (st.pending || []).reduce((a, ex) => a + (ex.rows || []).length, 0);
-  if (kalan > 0) toast("Yoksayıldı. " + kalan + " soru kaldı.", "info");
-  else toast("Tamam — bir daha gelmeyecek.", "success");
-}
-function okzHepsiniYoksay() {
-  const st = okzStore();
-  const liste = (st.pending || []).map(ex => ({
-    anahtar: okzKey(ex),
-    hash: window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex)
-  }));
-  if (!liste.length) return toast("Yoksayılacak sınav yok.", "info");
-  const toplam = (st.pending || []).reduce((a, ex) => a + (ex.rows || []).length, 0);
-  openConfirm(toplam + " soru yoksayılacak ve bir daha gösterilmeyecek. Emin misin?", function () {
-    okzYoksay(liste);
-  });
-}
-
 function renderOkzModal() {
   const m = document.getElementById("pwa-okz-modal");
   const s = state.settings && state.settings.okulizyon ? state.settings.okulizyon : {};
@@ -2252,6 +2226,11 @@ function renderOkzModal() {
       html += '<a href="' + escHtml(d.url) + '" target="_blank" rel="noopener" style="display:block;font-size:12.5px;padding:7px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;">' + (d.tarih ? "<b>[" + escHtml(d.tarih) + "]</b> " : "") + escHtml(d.baslik) + (d.lesson ? ' <span style="color:#16A34A;font-weight:700;">takvime eklendi</span>' : "") + "</a>";
     });
   }
+  // D) Kurtarma: içe aktarma defteri. Denemelerim'e bir kez aktarılan sınav
+  // tekrar çekilmez; sınavı silip yeniden görmek isteyen buradan sıfırlar.
+  html += '<div style="margin-top:14px;padding-top:10px;border-top:1px dashed rgba(0,0,0,0.15);font-size:11.5px;opacity:0.85;">' +
+    'Denemelerim\'e aktarılan Okulizyon sınavları bir daha çekilmez. Bir sınavı silip yeniden çekmek istersen defteri sıfırla.' +
+    '<button data-act="okzDefteriTemizle" class="btn btn-ghost btn-sm" style="margin-top:8px;border:1px solid rgba(0,0,0,0.15);width:100%;">İçe aktarma defterini sıfırla</button></div>';
   html += "</div>";
   m.innerHTML = html;
 }
