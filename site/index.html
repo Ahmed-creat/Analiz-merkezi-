@@ -1200,10 +1200,21 @@ select.dd-native {
 
   <div style="margin-top:20px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">GERİ BİLDİRİM</div>
-    <p class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Bir sorun ya da önerin varsa yaz. Soruyla ilgiliyse soru ekranındaki “Soruda hata mı var?” düğmesini kullan.</p>
-    <textarea id="geri-bildirim-metin" class="input" rows="3" maxlength="1000" placeholder="Örn: Fizik 1.3 havuzundaki 4. sorunun cevabı yanlış görünüyor." style="width:100%;min-height:78px;resize:vertical;font-size:13px;"></textarea>
-    <button class="btn btn-primary w-full" data-act="geriBildirimGonder" style="margin-top:8px;min-height:44px;"><i data-lucide="send" style="width:15px;height:15px;"></i> Geri Bildirimi Gönder</button>
-    <div id="geri-bildirim-sonuc" class="text-xs text-muted" style="margin-top:6px;line-height:1.5;"></div>
+    <!-- v83 — KULLANICI: "Geri bildirim bölümünde düzelt. Hiçbir profesyonel
+         uygulamada veri bildirim kutusu öyle açık durmaz."
+         Eski hâli: Ayarlar her açıldığında boş bir TEXTAREA + "Gönder"
+         düğmesi duruyordu (form ekranı gibi görünüyordu). Artık kapalı bir
+         satır var; yazmak isteyen "Geri bildirim yaz"a basınca açılır.
+         Gönderim yolu aynı: geriBildirimFormGonder(). -->
+    <button class="btn btn-ghost w-full" data-act="geriBildirimAc" id="geri-bildirim-ac" style="justify-content:flex-start;">
+      <i data-lucide="message-square" style="width:16px;height:16px;"></i> Geri bildirim yaz
+    </button>
+    <div id="geri-bildirim-kutu" hidden style="margin-top:8px;">
+      <p class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Bir sorun ya da önerin varsa yaz. Soruyla ilgiliyse soru ekranındaki “Soruda hata mı var?” düğmesini kullan.</p>
+      <textarea id="geri-bildirim-metin" class="input" rows="3" maxlength="1000" placeholder="Örn: Fizik 1.3 havuzundaki 4. sorunun cevabı yanlış görünüyor." style="width:100%;min-height:78px;resize:vertical;font-size:13px;"></textarea>
+      <button class="btn btn-primary w-full" data-act="geriBildirimGonder" style="margin-top:8px;min-height:44px;"><i data-lucide="send" style="width:15px;height:15px;"></i> Geri Bildirimi Gönder</button>
+      <div id="geri-bildirim-sonuc" class="text-xs text-muted" style="margin-top:6px;line-height:1.5;"></div>
+    </div>
   </div>
   <div style="margin-top:16px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">SINIF</div>
@@ -1231,7 +1242,7 @@ select.dd-native {
          atarsa FCM mesajı cihaza hiç inmez ve TTL dolunca düşer.
          Ölçüm (16 Kas): 07:35 push 201 aldı, cihazda tek satır bile yok. -->
     <p id="bildirim-uyku-notu" class="text-xs" style="margin-top:8px;line-height:1.5;color:var(--text-muted);display:none;">
-      <strong>Tablet bildirimleri gecikiyorsa:</strong> Ayarlar → Pil → Arka plan kullanım sınırları → <em>Uyuyan uygulamalar</em> / <em>Derin uykudaki uygulamalar</em> listesinden <strong>Chrome</strong>'u çıkar, sonra Ayarlar → Uygulamalar → Chrome → Pil → <em>Kısıtlanmamış</em> seç.
+      <strong>Cihaz bildirimleri gecikiyorsa:</strong> Ayarlar → Pil → Arka plan kullanım sınırları → <em>Uyuyan uygulamalar</em> / <em>Derin uykudaki uygulamalar</em> listesinden <strong>Chrome</strong>'u çıkar, sonra Ayarlar → Uygulamalar → Chrome → Pil → <em>Kısıtlanmamış</em> seç.
     </p>
   </div>
   <div style="margin-top:24px;">
@@ -1255,7 +1266,12 @@ select.dd-native {
 <!-- ===== MOBİL ÜST BAR — bildirim + ayarlar YUKARI SOLDA (dikey + yatay mod) ===== -->
 <header class="mobile-topbar">
   <div class="flex items-center gap-2" style="min-width:0;">
-    <img src="data:image/webp;base64,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" alt="logo" style="width:30px;height:30px;object-fit:cover;border-radius:8px;">
+    <!-- v83 — KULLANICI: "dikey yani mobilde yukarıda öğrencinin adının yanında
+         uygulama simgesi var; onu profil simgesine çevir." Uygulama logosu
+         (base64 webp) yerine PROFİL avatarı: baş harfler + profile git.
+         Logo yan menüde (sb-brand) duruyor; orada yeri doğru. -->
+    <button id="topbar-avatar" data-act="openProfile" title="Profil" aria-label="Profil"
+      style="width:32px;height:32px;border-radius:50%;border:0;padding:0;flex:0 0 auto;cursor:pointer;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(29,78,216,0.35);">👤</button>
     <span style="font-weight:700;font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" id="topbar-name">Analiz Merkezi</span>
   </div>
   <div class="flex items-center gap-2" style="flex-shrink:0;">
@@ -3544,6 +3560,12 @@ function yonKilidiDene() {
 
 function navigate(page) {
   currentPage = page;
+  /* v83 — Okulizyon'dan yeni deneme geldiğini gösteren YEŞİL NOKTA,
+     Denemelerim bir kez açılınca söner (okundu). Bilgi şeridi ise neden
+     bekleyen soru kaldıkça durur; ikisi ayrı iş. */
+  if (page === "exams" && typeof window.__okzYeniPartiGoruldu === "function") {
+    try { window.__okzYeniPartiGoruldu(); } catch (e) { /* */ }
+  }
   document.querySelectorAll(".nav-item, .bottom-nav-item").forEach(el => el.classList.toggle("active", el.dataset.nav === page));
   const content = document.getElementById("main-content");
   content.classList.remove("fade-in"); void content.offsetWidth; content.classList.add("fade-in");
@@ -3769,10 +3791,21 @@ function toast(msg, type) {
   setTimeout(() => { el.classList.add("hide"); setTimeout(() => el.remove(), 320); }, 3500);
 }
 
+/* v83 — Mobil üst bardaki profil avatarı: adın BAŞ HARFLERİ (👤 yerine).
+   Ad yoksa 👤 kalır; hiçbir yerde "Misafir" yazmıyoruz, baş harf uydurmuyoruz. */
+function avatarHarfleri(ad) {
+  const p = String(ad || "").trim().split(/[\s._-]+/).filter(Boolean);
+  if (!p.length) return "👤";
+  const ilk = p[0].charAt(0);
+  const son = p.length > 1 ? p[p.length - 1].charAt(0) : "";
+  return (ilk + son).toLocaleUpperCase("tr-TR");
+}
 function updateUserUI() {
   document.getElementById("sidebar-user-name").textContent = state.user.name || "Misafir";
   document.getElementById("sidebar-user-grade").textContent = state.user.grade ? state.user.grade + ". Sınıf" : "-";
   document.getElementById("topbar-name").textContent = state.user.name || "Analiz Merkezi";
+  const tav = document.getElementById("topbar-avatar");
+  if (tav) tav.textContent = avatarHarfleri(state.user.name);
   document.getElementById("sidebar-streak").textContent = state.streak.count;
   document.getElementById("topbar-streak").textContent = state.streak.count;
   const gEl = document.getElementById("topbar-grade");
@@ -3982,9 +4015,16 @@ async function geriBildirimFormGonder() {
   const r = await geriBildirimGonder({ tur: "genel", mesaj: metin });
   if (alan) alan.value = "";
   if (kutu) kutu.textContent = r.ok
-    ? "Gönderildi — teşekkürler. Her mesajı okuyoruz."
+    ? ""
     : "Şu an gönderilemedi; mesaj cihazda saklandı, bağlantı gelince gönderilecek.";
-  if (typeof toast === "function" && r.ok) toast("Geri bildirimin gönderildi.", "success");
+  if (r.ok) {
+    /* v83 — gönderim başarılıysa kutu KAPANIR: form ekranı gibi açık kalmaz. */
+    const k = document.getElementById("geri-bildirim-kutu");
+    const b = document.getElementById("geri-bildirim-ac");
+    if (k) k.hidden = true;
+    if (b) b.style.display = "";
+    if (typeof toast === "function") toast("Geri bildirimin gönderildi — teşekkürler.", "success");
+  }
 }
 
 // v41 — 5. adım (5 soruluk kısa kontrol) bitince Bilgi Bankası panelini
@@ -4527,6 +4567,27 @@ function renderExams(container) {
   const st = examStats();
   let html = '<div class="top-bar" style="margin-bottom:14px;"><h2 style="font-size:20px;font-weight:700;">' + icon("clipboard-list", 22, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Denemelerim</h2>" +
     '<button class="btn btn-primary btn-sm" data-act="toggleExamForm">' + icon(examFormOpen ? "x" : "plus", 15) + " " + (examFormOpen ? "Formu Kapat" : "Yeni Deneme Ekle") + "</button></div>";
+
+  /* v83 — KULLANICI: "Okulizyon'dan geldiğinde Denemelerim bölümünde bir yeşil
+     bildirim noktası koy 🟢, kullanıcı oradan anlar; gerekli bilgiyi orada yaz."
+     Nokta sekmelerde (yan menü + alt menü); BİLGİ burada: kaç deneme geldi,
+     kaç soru neden bekliyor ve nerede seçileceği. Şerit, neden bekleyen soru
+     kaldıkça görünür; hepsi cevaplanınca kendiliğinden kalkar. */
+  const yp = (typeof window.__okzYeniParti === "function") ? window.__okzYeniParti() : null;
+  const bekleyenS = (typeof window.__okzBekleyenSatirlar === "function") ? (window.__okzBekleyenSatirlar() || 0) : 0;
+  if (yp && bekleyenS > 0) {
+    const adlar = (yp.adlar || []).filter(Boolean);
+    html += '<div class="bento-card" id="okz-yeni-serit" style="margin-bottom:16px;border-left:4px solid #16A34A;background:rgba(22,163,74,0.07);">' +
+      '<div style="display:flex;gap:8px;align-items:flex-start;">' +
+        '<span style="width:9px;height:9px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,0.22);margin-top:6px;flex:0 0 auto;"></span>' +
+        '<div style="min-width:0;flex:1;">' +
+          '<div style="font-weight:700;font-size:13.5px;">Okulizyon\'dan ' + yp.denemeler + ' deneme eklendi</div>' +
+          (adlar.length ? '<div class="text-xs text-muted" style="margin-top:2px;">' + esc(adlar.join(", ")) + "</div>" : "") +
+          '<div class="text-xs text-muted" style="margin-top:4px;line-height:1.5;">' + bekleyenS + " soru neden bekliyor. Aşağıdaki <b>“Analiz bekliyor”</b> bölümünde her sorunun nedenini seç → konu analizi o anda oluşur.</div>" +
+          '<button class="btn btn-sm btn-primary" data-act="okzNedenSec" style="margin-top:8px;">' + icon("chevron-right", 14) + " Nedenleri seç</button>" +
+        "</div>" +
+      "</div></div>";
+  }
 
   // Özet kartları (4 kutu)
   html += '<div class="stat-grid" style="margin-bottom:20px;">' + statBox("Toplam Deneme", st.count) + statBox("Ortalama Net", st.avg || "-") + statBox("En Yüksek Net", st.best || "-") + statBox("Son Net", st.last || "-") + "</div>";
@@ -6893,6 +6954,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       case "toggleBookForm": bookFormOpen = !bookFormOpen; renderLibrary(document.getElementById("main-content")); window.scrollTo({ top: 0 }); break;
       case "toggleExamForm": examFormOpen = !examFormOpen; renderExams(document.getElementById("main-content")); window.scrollTo({ top: 0 }); break;
+      /* v83 — Denemelerim'deki yeşil şeridin "Nedenleri seç" düğmesi:
+         neden bekleyen EN YENİ denemeyi seçip "Analiz bekliyor" kartına götürür. */
+      case "okzNedenSec": {
+        let hedef = -1;
+        for (let i = (state.exams || []).length - 1; i >= 0; i--) {
+          const ex = state.exams[i];
+          if (ex && (ex.errorLogs || []).some(l => l && !l.type)) { hedef = i; break; }
+        }
+        if (hedef < 0) { toast("Neden bekleyen soru yok.", "info"); break; }
+        examDetailIdx = hedef;
+        renderExams(document.getElementById("main-content"));
+        const kart = document.getElementById("analiz-bekliyor");
+        if (kart && kart.scrollIntoView) kart.scrollIntoView({ behavior: "smooth", block: "start" });
+        break;
+      }
       case "toggleQBForm": qbFormOpen = !qbFormOpen; renderQuestionBank(document.getElementById("main-content")); window.scrollTo({ top: 0 }); break;
       case "openMore": toggleMoreSheet(); break;
       case "openSettings": closeAllModals(); closeMoreSheet(); openSettings(); break;
@@ -6903,6 +6979,19 @@ document.addEventListener("DOMContentLoaded", function () {
       case "tanitimKapat": tanitimKapat(false); break;
       case "tanitimKilavuz": tanitimKapat(true); break;
       case "geriBildirimGonder": geriBildirimFormGonder(); break;
+      /* v83 — Geri bildirim kutusu KAPALI durur; bu düğme açar/kapatır. */
+      case "geriBildirimAc": {
+        const kutu = document.getElementById("geri-bildirim-kutu");
+        if (!kutu) break;
+        kutu.hidden = !kutu.hidden;
+        const acDugme = document.getElementById("geri-bildirim-ac");
+        if (acDugme) acDugme.style.display = kutu.hidden ? "" : "none";
+        if (!kutu.hidden) {
+          const ta = document.getElementById("geri-bildirim-metin");
+          if (ta) setTimeout(function () { try { ta.focus(); } catch (e) {} }, 60);
+        }
+        break;
+      }
       case "openNotif": renderNotifList(); openModal("notif-modal"); break;
       case "markAllRead": state.notifications.forEach(function (n) { n.read = true; }); saveState(); renderNotifList(); updateBellBadges(); break;
       case "toggleNotifPermission": requestNotifPermission(); break;

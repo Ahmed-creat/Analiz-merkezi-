@@ -67,7 +67,10 @@ ok("il/ilçe/okul seçimleri canlı listeden", APP.indexOf('okzSecim("il", "İL"
 ok("liste sunucudan çekiliyor", APP.indexOf("/functions/v1/okulizyon-liste") > 0);
 ok("İL değişince İLÇE tazelenir", /if \(rol === "il"\)[\s\S]{0,600}?okzListeTazele\("ilce"\)/.test(APP));
 ok("İLÇE değişince OKUL tazelenir", /if \(rol === "ilce"\)[\s\S]{0,400}?okzListeTazele\("okul"\)/.test(APP));
-ok("seçilen KODLAR saklanıyor", APP.indexOf("ilkodu: secKod(\"il\")") > 0 && APP.indexOf("ilcekodu: secKod(\"ilce\")") > 0 && APP.indexOf("kurumkodu: secKod(\"okul\")") > 0);
+/* v83 — kod artık doğrudan secKod() ile yazılmıyor: aynı AD korunuyorsa
+   liste yüklenmediğinde ESKİ KOD korunur (kodSec). Ölçüt aynı: seçimden
+   gelen kodlar ayarlara YAZILIR. */
+ok("seçilen KODLAR saklanıyor", /ilkodu: ilkodu/.test(APP) && /ilcekodu: ilcekodu/.test(APP) && /kurumkodu: kurumkodu/.test(APP) && /const ilkodu = kodSec\("il"/.test(APP) && /const ilcekodu = kodSec\("ilce"/.test(APP) && /const kurumkodu = kodSec\("okul"/.test(APP));
 ok("excel benzeri isim tahmini yerine kod kullanılıyor", CEK.indexOf("if (kimlik.ilcekodu) ilcekodu") > 0);
 
 console.log("\n== 4) okulizyon-liste fonksiyonu ==");

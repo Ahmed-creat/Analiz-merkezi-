@@ -1,4 +1,4 @@
-const PWA_SURUM = "v82-oto-esleme";
+const PWA_SURUM = "v83-sade-bildirim";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1989,9 +1989,47 @@ function okzIsaretle(ex) {
   okzDefterIkili(ex, window.OKZ && window.OKZ.kararHash ? window.OKZ.kararHash(ex) : okzHash(ex));
 }
 
+/* v83 — "Okulizyon'dan yeni deneme geldi" işareti.
+   Neden ayrı bir alan: neden bekleyen satır sayısı KALICI bir durum (kullanıcı
+   hepsine neden yazana kadar sürer), yeşil nokta ise GEÇİCİ bir "yeni içerik"
+   işaretidir — Denemelerim bir kez açılınca söner. İkisi karıştırılmaz. */
+function okzYeniPartiIsaretle(denemeler, sorular) {
+  try {
+    const st = okzStore();
+    st.yeniParti = {
+      zaman: Date.now(),
+      denemeler: (denemeler || []).length,
+      sorular: Number(sorular) || 0,
+      adlar: (denemeler || []).map(e => (e && e.name) || "").filter(Boolean).slice(0, 3),
+      goruldu: false
+    };
+  } catch (e) { /* */ }
+}
+/* Denemelerim sekmesindeki yeşil nokta (yan menü + mobil alt menü). */
+function okzYeniPartiNoktasi() {
+  let gorunsun = false, ipucu = "Okulizyon'dan yeni deneme geldi";
+  try {
+    const p = (typeof state !== "undefined" && state) ? okzStore().yeniParti : null;
+    gorunsun = !!(p && !p.goruldu && Number(p.sorular) > 0);
+    if (gorunsun && p.denemeler) ipucu = "Okulizyon: " + p.denemeler + " yeni deneme · " + p.sorular + " soru neden bekliyor";
+  } catch (e) { gorunsun = false; }
+  document.querySelectorAll('[data-nav="exams"]').forEach(function (btn) {
+    let d = btn.querySelector(".pwa-yeni-nokta");
+    if (!d) {
+      d = document.createElement("span");
+      d.className = "pwa-yeni-nokta";
+      d.style.cssText = "display:none;width:8px;height:8px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,0.22);margin-left:6px;vertical-align:middle;";
+      const etiket = btn.querySelector("span");
+      if (etiket) etiket.appendChild(d); else btn.appendChild(d);
+    }
+    d.title = ipucu;
+    d.style.display = gorunsun ? "inline-block" : "none";
+  });
+}
 function okzBadge() {
   /* v78 (G-08) — sayaç artık DENEMELERİM'deki neden bekleyen satırlar. */
   const n = okzBekleyenSatirlar();
+  try { okzYeniPartiNoktasi(); } catch (e) { /* */ }
   document.querySelectorAll(".pwa-okz-badge").forEach(b => {
     b.style.display = n > 0 ? "inline-block" : "none";
     b.textContent = n > 0 ? String(n) : "";
@@ -2141,6 +2179,17 @@ function renderOkzModal() {
   html += "</div>";
   m.innerHTML = html;
 }
+/* v83 — KULLANICI: "Okulizyon bilgilerini ilk girdiğimizde çekmiyor, şimdi
+   deneye tıklayınca çekiyor."
+   KÖK NEDEN (ölçüldü): kenar fonksiyon `okulizyon-cek` bilgileri BULUTTAKİ
+   app_states.state.settings.okulizyon'dan okuyor. saveState() buluta 1,5 sn
+   GECİKMELİ yazıyor; eski kod 500 ms sonra çekimi başlatıyordu → sunucu ESKİ
+   (ya da hiç olmayan) bilgiyi görüp "bilgi-yok" dönüyordu. Kullanıcı ancak
+   yazma tamamlandıktan sonra "Şimdi dene"ye basınca sonuç alıyordu.
+   ÇÖZÜM: kaydet → bulut yazımı BEKLENİR → sonra çekim.
+   Ayrıca il/ilçe/okul KODU yoksa Okulizyon'a giriş yapılamaz (site koddan
+   giriş istiyor); o durumda "kaydedildi" denip sessizce çekim denenmez,
+   kullanıcıya ne yapacağı yazılır. */
 function okzSaveBilgi() {
   const al = k => { const el = document.getElementById("okz-" + k); return el ? (el.value || "").trim() : ""; };
   const ad = al("ad").toLocaleUpperCase("tr-TR"); // sitedeki gibi BÜYÜK HARF
@@ -2148,25 +2197,61 @@ function okzSaveBilgi() {
   // v43 — seçilen Okulizyon KODLARI durumdan okunur (DOM'a bağlı değil).
   const secKod = (rol) => (OKZ_SECIM[rol] && OKZ_SECIM[rol].kod) || "";
   if (!al("il") || !al("ilce") || !al("okulAdi")) { toast("İl, ilçe ve okulu Okulizyon listesinden seç.", "error"); return; }
-  if (!secKod("il") || !secKod("ilce") || !secKod("okul")) {
-    // Liste ağdan gelmediyse isimle kaydetmeye izin ver ama sessiz kalma.
-    toast("Seçtiğin il/ilçe/okulun kodu alınamadı — “Listeyi yenile”ye basıp tekrar seç.", "warning");
-  }
+  /* Kod koruma: liste o an yüklenmediyse seçim kodu boş gelir. Aynı AD daha
+     önce kodla kaydedilmişse ESKİ KOD KORUNUR — aksi hâlde çalışan bir bağlantı
+     bir kez "kaydet"e basmakla bozulurdu. Farklı ad seçildiyse kodu yok sayılır
+     (yanlış kurum koduyla giriş denenmez). */
+  const eski = (state.settings && state.settings.okulizyon) || {};
+  const kodSec = function (rol, adAlani, adAnahtari, kodAnahtari) {
+    const yeniKod = secKod(rol);
+    if (yeniKod) return yeniKod;
+    const secilenAd = al(adAlani);
+    return (secilenAd && secilenAd === (eski[adAnahtari] || "")) ? (eski[kodAnahtari] || "") : "";
+  };
+  const ilkodu = kodSec("il", "il", "il", "ilkodu");
+  const ilcekodu = kodSec("ilce", "ilce", "ilce", "ilcekodu");
+  const kurumkodu = kodSec("okul", "okulAdi", "okulAdi", "kurumkodu");
+  const kodEksik = !ilkodu || !ilcekodu || !kurumkodu;
   state.settings.okulizyon = {
     ad: ad, okulNo: al("okulNo"),
     sinif: al("sinif") || "9",
-    il: al("il"), ilkodu: secKod("il"),
-    ilce: al("ilce"), ilcekodu: secKod("ilce"),
-    okulAdi: al("okulAdi"), kurumkodu: secKod("okul")
+    il: al("il"), ilkodu: ilkodu,
+    ilce: al("ilce"), ilcekodu: ilcekodu,
+    okulAdi: al("okulAdi"), kurumkodu: kurumkodu
   };
   const sifreEl = document.getElementById("okz-sifre");
   if (sifreEl && sifreEl.value) state.settings.okulizyon.sifre = sifreEl.value;
   saveState();
   const pm = document.getElementById("pwa-profile-modal");
   if (pm && pm.style.display === "flex") renderProfileModal();
+  if (kodEksik) {
+    // Adlar kaydedildi; giriş için gereken KODLAR yok → çekim denemesi boşa gider.
+    toast("Eksik: il/ilçe/okulu listeden seç (Okulizyon girişi kodla yapılıyor).", "warning");
+    okzDurum("bilgi-yok", "İl/ilçe/okul listeden seçilmeden Okulizyon'a girilemez — listeden seçip «Bilgileri Kaydet»e tekrar bas.");
+    try { okzListeTazele("il", true); } catch (e) { /* */ }
+    return;
+  }
   toast("Kaydedildi — şimdi Okulizyon'da aranıyor…", "info");
-  // Kaydettikten hemen sonra gerçek çekimi dene (tek dokunuşla sonuç)
-  setTimeout(function () { try { okzSunucuCek(); } catch (e) {} }, 500);
+  okzBilgiBulutaYaz().then(function (yazildi) {
+    if (yazildi === false && sb && currentUser) {
+      okzDurum("hata", "Bilgiler buluta yazılamadı (bağlantı?). «Şimdi dene» ile tekrar dene.");
+      return;
+    }
+    try { okzSunucuCek(); } catch (e) { /* */ }
+  });
+}
+/* Bulut yazımını BEKLE (tek yazıcı: bulutaYaz). Bekleyen gecikmeli yazma
+   varsa iptal edilir; böylece çekimden ÖNCE tam olarak bir yazma tamamlanır. */
+async function okzBilgiBulutaYaz() {
+  try {
+    if (typeof bulutaYaz !== "function" || !sb || !currentUser) return null;
+    if (yazmaZamanlayici) { clearTimeout(yazmaZamanlayici); yazmaZamanlayici = null; }
+    // Süren bir yazma varsa ÖNCE o biter: aksi hâlde ESKİ durum buluta gider ve
+    // çekim yine eski bilgiyi görür (aynı hatanın ikinci yolu).
+    for (let i = 0; i < 20 && yazmaUcusu; i++) { try { await yazmaUcusu; } catch (e) { /* */ } }
+    const r = await bulutaYaz(true);
+    return !!(r && r.ok);
+  } catch (e) { return false; }
 }
 let okzCekSuruyor = false;
 async function okzKuyrukCek(zorla) {
@@ -2236,8 +2321,16 @@ async function okzKuyrukCek(zorla) {
     saveState();
     if (n > 0) {
       addNotification({ title: "Okulizyon: " + n + " soru Denemelerim'e eklendi", body: yeni.map(e => e.name).join(", ").slice(0, 140), kind: "info", topicKey: "okz@" + data.pulled_at });
+      /* v83 — KULLANICI: "deneme eklendiğinde gelen uyarı çok saçma… Hem sil ne
+         alaka, sile tıkladığında açılıyor." HAKLI: "Şimdi açayım mı?" sorusu
+         SİLME penceresiydi (Dikkat! · İptal · Sil) ve "Sil"e basınca Denemelerim
+         açılıyordu. Bu pencere TAMAMEN KALDIRILDI. Yeni bilgi yolu:
+           • Denemelerim sekmesinde YEŞİL NOKTA (🟢) → yeni deneme geldi
+           • Denemelerim sayfasında yeşil bilgi şeridi → kaç deneme/soru geldi
+         Nokta, Denemelerim açılınca kendiliğinden söner (okundu). */
+      if (guncelMi) okzYeniPartiIsaretle(yeni, n);
       okzBadge();
-      if (guncelMi) openConfirm("Okulizyon'dan " + yeni.length + " deneme Denemelerim'e eklendi (" + n + " yanlış/boş soru). Nedenlerini Denemelerim'de seçebilirsin. Şimdi açayım mı?", function () { navigate("exams"); });
+      toast("Okulizyon: " + yeni.length + " deneme Denemelerim'e eklendi · " + n + " soru neden bekliyor.", "success");
       okzDurum("ok", "Okulizyon'dan " + gelen.length + " sınav okundu · " + yeni.length + " deneme Denemelerim'e yazıldı (" + n + " soru neden bekliyor).");
     } else if (degisen.length) {
       okzDurum("ok", gelen.length + " sınav okundu · " + degisen.length + " sınavın sonucu Okulizyon'da DEĞİŞMİŞ — aşağıdan güncelleyebilirsin.");
@@ -2330,6 +2423,26 @@ async function okzAnalizKaydet(tekNeden, denemeIdx) {
 }
 window.__okzNedenKaydet = function (denemeIdx) { return okzAnalizKaydet(null, denemeIdx); };
 window.__okzBekleyenSatirlar = okzBekleyenSatirlar;
+/* v83 — Denemelerim sayfası (index.html) bu köprüyle "yeni gelen parti"yi
+   yazar; ayrı ayrı okundu işaretleme, nodu söndürme burada yapılır. */
+window.__okzYeniParti = function () {
+  try {
+    if (typeof state === "undefined" || !state) return null;
+    const p = okzStore().yeniParti;
+    if (!p) return null;
+    return { denemeler: Number(p.denemeler) || 0, sorular: Number(p.sorular) || 0, adlar: p.adlar || [], zaman: p.zaman || 0, goruldu: !!p.goruldu };
+  } catch (e) { return null; }
+};
+window.__okzYeniPartiGoruldu = function () {
+  try {
+    if (typeof state === "undefined" || !state) return;
+    const st = okzStore();
+    if (!st.yeniParti || st.yeniParti.goruldu) return;
+    st.yeniParti.goruldu = true;
+    saveState();
+    okzBadge();
+  } catch (e) { /* */ }
+};
 // Profil (hesap + Okulizyon bilgileri) ve Okulizyon kuyruğu arayüzlerini kur.
 // NOT: initAuthUI burada çağrılmazsa Profil'e hiçbir yerden ulaşılamaz (giriş/Okulizyon görünmez).
 function pwaArayuzKur() {
