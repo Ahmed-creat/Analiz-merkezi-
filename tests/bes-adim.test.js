@@ -51,11 +51,14 @@ function ciz(state, step, pool, havuzVar) {
   // v76 — blok artık konuHavuzuVar() ile "havuz kesin yok" bilgisini de kullanır
   // (true / false / null). Varsayılan: bilinmiyor (null) → eski davranış.
   const konuHavuzuVar = () => (havuzVar === undefined ? null : havuzVar);
+  // v78 — blok, havuzu olmayan konuda (Paragraf gibi belgelenmiş istisna)
+  // gerekçe notunu havuzsuzGerekce() ile sorar. Testte gerekçe yok.
+  const havuzsuzGerekce = () => "";
   const fn = new Function(
-    "state", "tstate", "selectedTopicKey", "ROADMAP_STEPS", "havuzIdCoz", "konuHavuzuVar", "attr", "esc", "icon", "APRX",
+    "state", "tstate", "selectedTopicKey", "ROADMAP_STEPS", "havuzIdCoz", "konuHavuzuVar", "attr", "esc", "icon", "APRX", "havuzsuzGerekce",
     "var html = '';\n" + BLOK + "\nreturn html;"
   );
-  return fn(state, tstate, selectedTopicKey, ROADMAP_STEPS, havuzIdCoz, konuHavuzuVar, attr, esc, icon, APRX);
+  return fn(state, tstate, selectedTopicKey, ROADMAP_STEPS, havuzIdCoz, konuHavuzuVar, attr, esc, icon, APRX, havuzsuzGerekce);
 }
 
 const HAVUZ = "mat_10_u01_k01";
