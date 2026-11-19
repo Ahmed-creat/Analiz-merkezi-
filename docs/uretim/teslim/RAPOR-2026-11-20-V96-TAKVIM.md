@@ -1,6 +1,6 @@
 # v96 — Hazırlık bitiş kuralı, sınav gecesi/sabahı, renkli takvim
 
-**Tarih:** 20 Kasım 2026 · **Sürüm:** `v96-tekrar-takvim` · **Dal:** `arena/cc4de070-analiz-merkezi`
+**Tarih:** 20 Kasım 2026 · **Sürüm:** `v96b-gercek-konu` · **Dal:** `arena/cc4de070-analiz-merkezi`
 
 ## Kullanıcının geri bildirimi (birebir)
 
@@ -43,8 +43,28 @@ Yeni fonksiyon `sinavYakinlari()`; her sınav (okul + deneme) için iki satır:
 
 | Satır | Tarih | Metin |
 |---|---|---|
-| Sınav gecesi | sınav − 1 gün | "Sınav gecesi: <ders> · son bakış" — 30 dk yanlış defteri, yeni konu yok |
-| Sınav sabahı | sınav günü | "Sınav sabahı: <ders> · 15 dk göz atma" — formül/anahtar kelime |
+| Sınav gecesi | sınav − 1 gün | "Sınav gecesi: <ders> · son bakış" — 30 dk, **gerçek konu adlarıyla** |
+| Sınav sabahı | sınav günü | "Sınav sabahı: <ders> · 15 dk göz atma" — aynı konular |
+
+**v96b — kullanıcı düzeltmesi:** *"Yanlış defteri ne? Uygulamada öyle bir şey
+geçmiyor ki."* Haklıydı: "yanlış defteri" uygulamada var olmayan bir şeydi.
+Metin artık **gerçek veriyi konu adıyla** gösteriyor:
+
+1. **Denemelerim'de hata olarak işaretlediğin konular** (varsa) →
+   "Denemelerim'de yanlış yaptığın konular: Noktalama İşaretleri, Şiirde Ahenk,
+   Koşuk. 30 dakika bunlara bak, sonra erken uyu."
+2. Yoksa **o sınav için seçtiğin konular** →
+   "Sınav için seçtiğin konular: Vektörler, Kuvvet."
+3. İkisi de yoksa **konu uydurulmaz** → "Bu ders için kayıtlı hata ya da konu
+   yok." + kısa tekrar önerisi.
+
+Deneme sınavında ders ayrımı yapılmaz; en zayıf konular "Matematik: Üçgende
+Yardımcı Elemanlar" biçiminde gelir.
+
+Ayrıca uygulamada görünen tüm "yanlış defteri / formül turu" ifadeleri kaldırıldı
+(`EXAM_REGIMES`, sınav −1 bildirimi, günlük görev, gün detayı, hazırlık
+bildirimi). Test, **yorumlar ayıklanmış görünen metinde** bu ifadelerin
+geçmediğini doğrular.
 
 Bu satırlar: takvimde **kendi rengiyle**, gün detayında, Günlük Görevler'de ve
 bildirimde (uygulama içi + tarayıcı) görünür. Geçmiş sınav için satır üretilmez.
@@ -102,22 +122,24 @@ TDE örneği (21 konu → 7 oturum, sınav 14 Ocak 2027):
 
 | Test | Sonuç |
 |---|---|
-| `tests/v96-tekrar-takvim.test.js` (yeni) | **60/60 ✓** |
+| `tests/v96-tekrar-takvim.test.js` (yeni) | **70/70 ✓** |
 | `tests/v95-hazirlik-plani.test.js` (v96 kuralına güncellendi) | **48/48 ✓** |
 | `tests/v37-davranis.test.js` (harness: yeni fonksiyonlar) | **53/53 ✓** |
 | `npm run -s test:hepsi` | **EXIT=0** |
 
 v96 testi davranışı ölçer: hiçbir oturum sınavdan 3 günden yakın değil, son
 oturum `son` ve metni "yazılı örnek senaryo", gece/sabah satırları doğru
-tarihte, `prepDays` tamamen yok, takvim çıktısı 7 farklı renkte blok üretiyor.
+tarihte **ve gerçek konu adı taşıyor**, konu yoksa uydurulmuyor, `prepDays`
+tamamen yok, takvim çıktısı 7 farklı renkte blok üretiyor, ekranda "yanlış
+defteri" geçmiyor.
 
 ## Değişen dosyalar
 
 - `site/index.html` — bitiş kuralı, son tur, `sinavYakinlari()`, `CAL_RENK`,
   renkli takvim ızgarası + CSS, gün detayı, günlük görev, bildirim
 - `site/app-pwa.js` — okulizyon sınav kaydından hazırlık günü alanı çıkarıldı;
-  `PWA_SURUM = "v96-tekrar-takvim"`
-- `site/sw.js` — önbellek `analiz-merkezi-v-20261027-v96-tekrar-takvim`
+  `PWA_SURUM = "v96b-gercek-konu"`
+- `site/sw.js` — önbellek `analiz-merkezi-v-20261027-v96b-gercek-konu`
 - `tests/v96-tekrar-takvim.test.js` (yeni), `tests/v95-…` (güncellendi),
   `tests/v37-…` (harness güncellendi)
 - `package.json` — `test:v96`, `test:hepsi` zincirine eklendi

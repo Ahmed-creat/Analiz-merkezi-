@@ -86,7 +86,8 @@ function senaryo() {
         { id: "fel", lesson: "Felsefe", date: "2027-01-08", topics: ders("Felsefe", 13) },
         { id: "cog", lesson: "Coğrafya", date: "2027-01-12", topics: ders("Coğrafya", 7) },
         { id: "din", lesson: "Din Kültürü", date: "2027-01-13", topics: ders("Din Kültürü", 12) },
-        { id: "tde", lesson: "Türk Dili ve Edebiyatı", date: "2027-01-14", topics: tde }
+        // hata günlüğünde ders adı "TDE" geçtiği için ders adı aynı (eşleşme)
+        { id: "tde", lesson: "TDE", date: "2027-01-14", topics: tde }
       ]
     },
     exams: [{
@@ -102,8 +103,13 @@ function senaryo() {
 }
 
 function kutu(state, bugun) {
+  // Hata kaydı motoru (topicLearnedAfter → collectErrorStats → calculatePriority)
+  // burada; hazırlık konuları gerçek hata günlüğünden gelir (v95 ile aynı imza).
   const govde = [
     SABITLER,
+    fnCikar("topicLearnedAfter"),
+    fnCikar("collectErrorStats"),
+    fnCikar("calculatePriority"),
     fnCikar("hazirlikZayifKonular"),
     fnCikar("hazirlikOturumSayisi"),
     fnCikar("hazirlikGunSeti"),
@@ -117,6 +123,13 @@ function kutu(state, bugun) {
   return g(state, () => bugun, parseDay, toDayStr, splitKey,
     x => x || "", () => 0.5, () => 50, () => { });
 }
+
+// Kullanıcıya GÖRÜNEN metin: JS yorumları çıkarılır (yorumda kullanıcının
+// kendi cümlesini alıntılamak serbest, ekranda görünmez).
+const GORUNEN = HTML
+  .replace(/\/\*[\s\S]*?\*\//g, " ")
+  .replace(/^\s*\/\/.*$/gm, " ")
+  .replace(/\s\/\/\s[^"'\n]*$/gm, " ");
 
 const F = kutu(senaryo(), BUGUN);
 const plan = F.hazirlikPlani();
@@ -196,6 +209,47 @@ console.log("\n== 3) Sınav gecesi + sınav sabahı çalışması ==");
     /sinavYakinlari\(\)\.filter\(p => p\.date === todayStr\(\)\)/.test(HTML) && /sınavı gecesi · son bakış/.test(HTML));
   ok("bildirim de aynı kaynaktan",
     /sinavYakinlari\(\)\.filter\(p => p\.date === bugun\)/.test(HTML));
+}
+
+console.log("\n== 3b) 'Yanlış defteri' YOK: metin gerçek konu adı taşır ==");
+{
+  // KULLANICI: "Yanlış defteri ne? Uygulamada öyle bir şey geçmiyor ki."
+  ok("ekranda 'yanlış defteri' diye bir şey geçmiyor",
+    !/yanlış defteri|yanlış soru defteri/i.test(GORUNEN));
+  ok("'formül turu' gibi uydurma tur adı da yok",
+    !/formül turu|Formül turu/i.test(GORUNEN));
+  const yakin = F.sinavYakinlari();
+  const tdeGece = yakin.find(p => p.examId === "tde" && p.tip === "gece");
+  const tdeSabah = yakin.find(p => p.examId === "tde" && p.tip === "sabah");
+  const denGece = yakin.find(p => p.examId === "deneme" && p.tip === "gece");
+  ok("gece metni GERÇEK konu adı taşıyor (Şiirde Ahenk/ Koşuk)",
+    /Şiirde Ahenk/.test(tdeGece.detay) && /Koşuk/.test(tdeGece.detay), tdeGece.detay);
+  ok("gece metni nereden geldiğini söylüyor (Denemelerim)",
+    /Denemelerim'de yanlış yaptığın konular/.test(tdeGece.detay), tdeGece.detay);
+  ok("sabah metni de aynı konuları tekrar ediyor",
+    /Şiirde Ahenk/.test(tdeSabah.detay), tdeSabah.detay);
+  ok("gece satırı konuları veri olarak taşıyor", Array.isArray(tdeGece.konular) && tdeGece.konular.length > 0,
+    JSON.stringify(tdeGece.konular));
+  ok("deneme gecesi tüm derslerden gerçek konu alıyor",
+    /Matematik: /.test(denGece.detay) || /Şiirde Ahenk/.test(denGece.detay), denGece.detay);
+  ok("bildirim metni de konu adı taşıyor", /Şiirde Ahenk/.test(tdeGece.bildirim), tdeGece.bildirim);
+
+  // Konu yoksa UYDURMA yok
+  const bos = kutu({
+    plan: { schoolExams: [{ id: "b", lesson: "Fizik", date: "2026-12-10", topics: [] }] },
+    exams: [], questions: [], memory: {}, topics: {}
+  }, BUGUN).sinavYakinlari();
+  const bg = bos.find(p => p.tip === "gece");
+  ok("konu/hata yoksa 'kayıtlı hata yok' denir, konu uydurulmaz",
+    /kayıtlı hata ya da konu yok/.test(bg.detay) && bg.konular.length === 0, bg.detay);
+
+  // Sınav kapsamı varsa, o kapsam gösterilir (gerçek seçim)
+  const kap = kutu({
+    plan: { schoolExams: [{ id: "k", lesson: "Fizik", date: "2026-12-10", topics: ["Fizik > Vektörler", "Fizik > Kuvvet"] }] },
+    exams: [], questions: [], memory: {}, topics: {}
+  }, BUGUN).sinavYakinlari().find(p => p.tip === "gece");
+  ok("hata yoksa sınav için seçilen konular gösterilir",
+    /Sınav için seçtiğin konular: Vektörler, Kuvvet/.test(kap.detay), kap.detay);
 }
 
 console.log("\n== 4) Okulizyon: öğretmen çalışma günü vermiyor → karışıklık kalktı ==");

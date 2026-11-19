@@ -1863,7 +1863,7 @@ const MEMORY_WARNING = 40;            // < %40 -> Kritik uyarı rozeti
 
 // Sınava kalan süreye oranlı rejim tablosu (Cepeda vd. 2008, %10-20 kuralı)
 const EXAM_REGIMES = [
-  { maxDays: 6, label: "< 7 Gün (Son Hafta)", interval: "1 - 2 günde bir", focus: "%0 Yeni / %100 Hata Taraması", action: "Yeni konu kilitli. Formül hatırlama + yanlış soru defteri." },
+  { maxDays: 6, label: "< 7 Gün (Son Hafta)", interval: "1 - 2 günde bir", focus: "%0 Yeni / %100 Hata Taraması", action: "Yeni konu kilitli. Tekrar kartları + hata taraması." },
   { maxDays: 30, label: "7 - 30 Gün (Son Ay)", interval: "3 - 6 günde bir", focus: "%15 Yeni / %85 Pratik", action: "Sadece hata noktalarına odaklan + genel deneme." },
   { maxDays: 120, label: "30 - 120 Gün (1-4 Ay)", interval: "7 - 14 günde bir", focus: "%40 Yeni / %60 Test", action: "Sıklaştırılmış tekrar ve karıştırarak çalışma." },
   { maxDays: Infinity, label: "> 120 Gün (4+ Ay)", interval: "21 - 30 günde bir", focus: "%70 Yeni Konu / %30 Tekrar", action: "Geniş aralıklı tekrar ve şema inşası." }
@@ -3293,10 +3293,10 @@ function processDueNotifications() {
     if (dl2 === 1) {
       addNotification({
         title: "YARIN SINAV!",
-        body: "Bugün sadece formül hatırlama + yanlış soru defteri. Erken uyu, iyi şanslar!",
+        body: "Bugün yeni konu yok: hata kayıtlarına ve tekrar kartlarına bak. Erken uyu, iyi şanslar!",
         kind: "critical", topicKey: "exam@1"
       });
-      notifyBrowser("Analiz Merkezi: Yarın sınav!", "Bugün hafif tut — formüller ve yanlış defteri.");
+      notifyBrowser("Analiz Merkezi: Yarın sınav!", "Bugün hafif tut — hata kayıtları ve tekrar kartları.");
     }
     /* v95 — ESKİ: sabit −7/−3/−1 günlerinde "Genel tekrar / Eksik kapatma /
        Formül turu" metinleri. Hazırlık bildirimi artık takvimle AYNI kaynaktan
@@ -4632,7 +4632,7 @@ function gunlukGorevler() {
     liste.push({
       id: "hazirlik", tur: "hazirlik", icon: "shield-check", onem: 1,
       baslik: h0.ders + " sınavına hazırlık" + (h0.gunOnce ? " · sınavdan " + h0.gunOnce + " gün" : ""),
-      aciklama: (adlar.length ? adlar.slice(0, 3).join(" · ") + (adlar.length > 3 ? " …" : "") : "Son tur: yanlış defteri + formüller") +
+      aciklama: (adlar.length ? adlar.slice(0, 3).join(" · ") + (adlar.length > 3 ? " …" : "") : "Son tur: sınav konularını bir kez gözden geçir") +
         (digerleri ? " · ayrıca " + digerleri : ""),
       sayfa: "planning", dugme: "Takvim"
     });
@@ -6355,40 +6355,88 @@ function hazirlikPlani() {
 // Hazırlık oturumları sınavdan 3 gün önce BİTİYOR; sınavın kendisinden önceki
 // akşam (son bakış) ve sınav sabahı (15 dk göz atma) ayrı kısa çalışmalardır.
 // Takvimde kendi rengiyle, günlük görevde ve bildirimde ayrı satır olarak çıkar.
+// v96b — KULLANICI: "Yanlış defteri ne? Uygulamada öyle bir şey geçmiyor ki."
+// HAKLI: metin artık uydurma bir defter değil, uygulamanın GERÇEK verisini
+// KONU ADIYLA gösterir:
+//   1) Denemelerim'de hata olarak işaretlediğin konular (hata kaydı)
+//   2) yoksa o sınav için seçtiğin konular (sınav kapsamı)
+// İkisi de yoksa hiç konu uydurulmaz; kısa bir hatırlatma yazılır.
 function sinavYakinlari() {
   const cikti = [];
   const bugunD = parseDay(todayStr());
   if (!bugunD) return cikti;
-  const ekle = (tarih, kaynak, id, ders) => {
+  // ders → hata kaydındaki konu adları (en zayıf önce)
+  const hataKonulari = {};
+  try {
+    hazirlikZayifKonular().forEach(z => {
+      const p = splitKey(z.key);
+      if (!p.lesson || !p.topic) return;
+      (hataKonulari[p.lesson] = hataKonulari[p.lesson] || []).push(p.topic);
+    });
+  } catch (e) { /* hata kaydı okunamazsa sınav kapsamı kullanılır */ }
+  // Gerçek konu listesi: önce hata kaydı, sonra sınav kapsamı, yoksa boş.
+  // Deneme tüm dersleri kapsadığı için ders ayrımı yapılmaz; hata kaydındaki
+  // en zayıf konular "Ders: Konu" olarak gelir.
+  const tumHatalar = [];
+  try {
+    hazirlikZayifKonular().forEach(z => {
+      const q = splitKey(z.key);
+      if (q.lesson && q.topic) tumHatalar.push(q.lesson + ": " + q.topic);
+    });
+  } catch (e) { /* yok */ }
+  const konuSec = (ders, kapsam) => {
+    if (ders === "Deneme" && tumHatalar.length) {
+      return { adlar: Array.from(new Set(tumHatalar)).slice(0, 3), kaynak: "hata" };
+    }
+    const hata = Array.from(new Set(hataKonulari[ders] || []));
+    if (hata.length) return { adlar: hata.slice(0, 3), kaynak: "hata" };
+    const kap = Array.from(new Set((kapsam || []).map(k => splitKey(k).topic)));
+    if (kap.length) return { adlar: kap.slice(0, 3), kaynak: "kapsam" };
+    return { adlar: [], kaynak: "" };
+  };
+  const ekle = (tarih, kaynak, id, ders, kapsam) => {
     const d = parseDay(tarih);
     if (!d || isNaN(d)) return;
     const ds = toDayStr(d);
     const oncekiD = new Date(d.getTime());
     oncekiD.setDate(oncekiD.getDate() - 1);
+    const sec = konuSec(ders, kapsam);
+    const adlar = sec.adlar;
+    // Konu listesinin nereden geldiği açıkça yazılır (uydurma yok).
+    const geceKonu = adlar.length
+      ? (sec.kaynak === "hata"
+        ? "Denemelerim'de yanlış yaptığın konular: " + adlar.join(", ") + "."
+        : "Sınav için seçtiğin konular: " + adlar.join(", ") + ".")
+      : "Bu ders için kayıtlı hata ya da konu yok.";
+    const sabahKonu = adlar.length ? "Son bir kez şunlara göz at: " + adlar.join(", ") + "." : "";
     if (oncekiD >= bugunD) {
       cikti.push({
         date: toDayStr(oncekiD), tip: "gece", kaynak: kaynak, examId: id, ders: ders, sinavTarihi: ds,
+        konular: adlar,
         etiket: "Sınav gecesi: " + ders + " · son bakış",
-        detay: "Yarın " + ders + " sınavı var: bugün yeni konu açma. Yanlış defterin ve kısa özetle 30 dakika son bakış, sonra erken uyu.",
-        bildirim: ders + " sınavı yarın — bu akşam yalnız son bakış (30 dk), yeni konu yok."
+        detay: "Yarın " + ders + " sınavı var, bugün yeni konu açma. " + geceKonu +
+          (adlar.length ? " 30 dakika bunlara bak, sonra erken uyu." : " 30 dakika kısa bir tekrar yap, sonra erken uyu."),
+        bildirim: ders + " sınavı yarın — bu akşam 30 dk" + (adlar.length ? ": " + adlar.join(", ") : " kısa tekrar") + "."
       });
     }
     if (d >= bugunD) {
       cikti.push({
         date: ds, tip: "sabah", kaynak: kaynak, examId: id, ders: ders, sinavTarihi: ds,
+        konular: adlar,
         etiket: "Sınav sabahı: " + ders + " · 15 dk göz atma",
-        detay: "Bu sabah " + ders + " sınavı var: formül ve anahtar kelime kartlarına 15 dakika göz at, yeni soru çözme, sınava odaklan.",
-        bildirim: ders + " sınavı bu sabah — 15 dk formül/anahtar kelime göz atması, sonra sınav."
+        detay: "Bu sabah " + ders + " sınavı var. 15 dakika yeter, yeni soru çözme. " +
+          (sabahKonu || "Kısa bir göz atma yap ve sınava odaklan."),
+        bildirim: ders + " sınavı bu sabah — 15 dk" + (adlar.length ? ": " + adlar.join(", ") : " kısa göz atma") + "."
       });
     }
   };
   const p = state.plan || {};
   if (p.targetDate) {
-    ekle(p.targetDate, "deneme", "deneme", "Deneme");
+    ekle(p.targetDate, "deneme", "deneme", "Deneme", []);
   }
   (p.schoolExams || []).forEach(se => {
     if (!se || !se.date || !se.lesson) return;
-    ekle(se.date, "okul", se.id, se.lesson);
+    ekle(se.date, "okul", se.id, se.lesson, se.topics || []);
   });
   return cikti.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
 }
@@ -6402,7 +6450,7 @@ function hazirlikBildirimMetni(liste) {
     const konular = (p.konular || []).slice(0, 3).map(x => splitKey(x).topic);
     const ek = (p.konular || []).length > 3 ? " +" + (p.konular.length - 3) : "";
     return (p.son ? "SON TUR — " : "") + p.ders + (p.gunOnce ? " (sınavdan " + p.gunOnce + " gün)" : "") + ": " +
-      (konular.length ? konular.join(", ") + ek : "yanlış defteri + formüller") +
+      (konular.length ? konular.join(", ") + ek : "konu listesi boş — sınav konularını gözden geçir") +
       (p.son ? " + yazılı örnek senaryo" : "");
   }).join(" | ");
   return {
@@ -6686,7 +6734,7 @@ function renderCalDetailHTML(events) {
         ? "SON TUR: konular burada bitiyor (sınavdan en az 3 gün önce). Bugün konu tekrarı + yazılı örnek senaryoları çöz; yeni konu açma."
         : (konular.length
           ? "Bugünün konuları: hata günlüğüne ve hafıza gücüne göre en zayıf " + konular.length + " konu seçildi."
-          : "Bugün için konu seçilmedi: yanlış defterini ve formülleri gözden geçir.");
+          : "Bu oturum için seçilmiş konu yok: sınav konularını bir kez gözden geçir.");
       const basRenk = e.son ? "#C2185B" : "var(--on-warning-bg)";
       const kenar = e.son ? "rgba(194,24,91,0.45)" : "rgba(245,166,35,0.4)";
       h += '<div class="cd-box" style="border-color:' + kenar + ';"><div style="font-weight:800;font-size:13px;color:' + basRenk + ';">' + icon(e.son ? "pen-line" : "shield-check", 14, "vertical-align:-2px;") + " " + (e.son ? "Son tekrar + yazılı örnek senaryo: " : "Sınava Hazırlık: ") + esc(e.etiket.replace(/^Son tekrar \+ yazılı örnek senaryo: /, "").replace(/^Sınava hazırlık: /, "")) + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
