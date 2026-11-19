@@ -192,7 +192,7 @@ başlık/açıklama/bildirim dili:
 | Takvim bloğu (son) | `Deneme öncesi son tekrar` |
 | Gün detayı başlığı | `Deneme hazırlığı · 2 konu (3/9)` + `(denemeye 19 gün)` |
 | Gün detayı (son) | `Deneme öncesi son tekrar (9/9) (denemeye 3 gün)` |
-| Gün detayı açıklaması | "Bu oturumda denemede yanlış yaptığın konular çalışılır." / son: "Denemeye 3 gün kaldı… **yazılı örnek yok, deneme test sınavıdır**." |
+| Gün detayı açıklaması | "Bu oturumda denemede yanlış yaptığın konular çalışılır." / son: "Denemeye 3 gün kaldı. Bugün yeni konu açma: yanlış yaptığın konuların son tekrarı + hızlı soru taraması." |
 | Bildirim | `Deneme (denemeye 15 gün) — 3 konu: …` · son: `… — SON TEKRAR …` |
 | Uygulama içi bildirim | `Deneme hazırlığı · denemeye 15 gün` |
 
@@ -244,3 +244,28 @@ oturum sırası (1/9) · plan kutusu ve İvme Ölçer satırı · gün detayı
 "denemeye N gün" der, "sınavdan" demez.
 
 Sürüm: `PWA_SURUM = "v98-deneme-plani"`, SW `analiz-merkezi-v-20261027-v98-deneme-plani`.
+
+## v98b — Düzeltme cümlesi uygulamaya YAZILMAZ
+
+KULLANICI (20 Kas 2026):
+> "yazılı örnek yok, deneme test sınavıdır mi? Ya şu hatayı her ai yapıyor.
+> Prompttaki düzeltme ifadelerini uygulamaya eklemeyi bırakın... yazılı örnek
+> yoksa yok. Niye öğrenciye yok diyorsun? O biliyor zaten."
+
+Kural: **kullanıcının düzeltmesi uygulamanın metnine dönüşmez.** Uygulama
+"şu yok / şu değil / şu gerekli" demez; yalnız **ne yapılacağını** söyler.
+Yok olan şey sessizce yok olur.
+
+| Önce (kaldırıldı) | Sonra |
+|---|---|
+| "…son tekrarı + hızlı soru taraması **(yazılı örnek yok, deneme test sınavıdır)**." | "…son tekrarı + hızlı soru taraması." |
+| "Hedef 95 net · **henüz deneme yok**; ilk denemeni ekleyince ölçüm başlar." | "Hedef 95 net · ilk denemeni ekle, haftalık ölçüm başlasın." |
+| "…**Ölçülen ivme için ikinci deneme gerekli.**" | "…İkinci denemeyi ekle, ölçülen ivme de karşılaştırılsın." |
+| İvme Ölçer: "Ölçülen ivme için **iki deneme gerekli** — sonraki denemeden sonra burada görünür." | "İkinci denemeden sonra ölçülen ivme de burada." |
+
+Test (v96 dosyası, bölüm 8/f): kaynakta **yorumlar ayıklanmış** hâlde
+`deneme test sınavıdır`, `yazılı örnek yok`, `uydurma yok`, `iki deneme gerekli`
+ifadeleri geçmez; deneme son tekrar kutusunda `yok`, `değil`, `sınavıdır`
+geçmez ve metin eylemi söyler. Toplam **117/117**.
+
+Sürüm: `PWA_SURUM = "v98b-sade-dil"`, SW `analiz-merkezi-v-20261027-v98b-sade-dil`.

@@ -494,14 +494,38 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
     ok("deneme gün detayında 'sınavdan' GEÇMEZ", !/sınavdan/.test(orta), orta.slice(0, 200));
     // Aynı gün okul sınavı hazırlığı da olabilir → yalnız DENEME kutusuna bak.
     const denKutu = son2.split('class="cd-box"').filter(x => /Deneme öncesi son tekrar/.test(x))[0] || "";
-    // "yazılı örnek yok, deneme test sınavıdır" İSTENEN metin → yasak olan
-    // ifade "yazılı örnek senaryo" (okul sınavı dili).
+    // KULLANICI (20 Kas 2026): "yazılı örnek yoksa yok. Niye öğrenciye yok
+    // diyorsun? O biliyor zaten." → uygulama DÜZELTME CÜMLESİ yazmaz.
     ok("deneme son tekrar kutusunda 'yazılı örnek senaryo' GEÇMEZ", denKutu.length > 0 && !/yazılı örnek senaryo/.test(denKutu),
       denKutu.slice(0, 250));
-    ok("deneme son tekrarında 'deneme test sınavıdır' açıklaması var", /deneme test sınavıdır/.test(denKutu), denKutu.slice(0, 250));
+    ok("deneme son tekrarı 'yok / değil / test sınavıdır' demez", denKutu.length > 0 &&
+      !/yok\b/i.test(denKutu) && !/sınavıdır/i.test(denKutu) && !/değil/i.test(denKutu),
+      denKutu.slice(0, 250));
+    ok("deneme son tekrarı ne YAPILACAĞINI söyler",
+      /Bugün yeni konu açma/.test(denKutu) && /son tekrarı/.test(denKutu), denKutu.slice(0, 250));
     ok("deneme oturum sırası görünür (1/N)", /1\/\d+/.test(orta), orta.slice(0, 160));
     ok("deneme bildirimi 'denemeye N gün' diyor", /^Deneme \(denemeye \d+ gün\)/.test(den2[0].bildirim), den2[0].bildirim);
     ok("deneme bildiriminde 'yazılı örnek senaryo' YOK", !/yazılı örnek senaryo/.test(den2[0].bildirim + den2[den2.length - 1].bildirim));
+  }
+
+  // (f) GENEL KURAL: düzeltme ifadesi uygulamaya yazılmaz.
+  //     KULLANICI: "Prompttaki düzeltme ifadelerini uygulamaya eklemeyi
+  //     bırakın... yazılı örnek yoksa yok."
+  {
+    const YORUMSUZ = HTML
+      .replace(/\/\*[\s\S]*?\*\//g, " ")
+      .split("\n").map(x => x.replace(/^\s*\/\/.*$/, "").replace(/\s\/\/\s.*$/, "")).join("\n");
+    const YASAK = [
+      ["deneme test sınavıdır", /deneme test sınavıdır/i],
+      ["yazılı örnek yok", /yazılı örnek yok/i],
+      ["uydurma yok", /uydurma yok/i],
+      ["iki deneme gerekli", /iki deneme gerekli/i]
+    ];
+    YASAK.forEach(([ad, re]) => {
+      const m = YORUMSUZ.match(re);
+      ok("ekranda düzeltme cümlesi yok: '" + ad + "'", !m,
+        m ? YORUMSUZ.slice(Math.max(0, m.index - 60), m.index + 80) : "");
+    });
   }
 
   // (d) Planlama kartında hedef/ivme özeti görünüyor
@@ -511,8 +535,10 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
     ok("kartta haftada kaç konu yazıyor", /haftada ~/.test(HTML));
     ok("kartta hataların kaçta kaçı kapsandığı yazıyor", /hataların <b>/.test(HTML));
     ok("İvme Ölçer ÖLÇÜLEN ivmeyi de gösteriyor", /net\/hafta ölçülen ivme/.test(HTML));
-    ok("ikinci deneme yoksa 'iki deneme gerekli' denir (uydurma yok)",
-      /Ölçülen ivme için iki deneme gerekli/.test(HTML));
+    // KULLANICI: eksik veriyi "yok / gerekli" diye yüzüne vurmak yok; ne
+    // yapılacağı söylenir.
+    ok("ikinci deneme yoksa eyleme dönük tek satır yazılır",
+      /İkinci denemeden sonra ölçülen ivme de burada/.test(HTML));
   }
 }
 
