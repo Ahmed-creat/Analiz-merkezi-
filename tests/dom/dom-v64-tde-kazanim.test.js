@@ -233,7 +233,10 @@ ok("okz-meb: başka dersin kaydı bozulmadı", OKZM.konuBul(
 console.log("\n== 7) Özet ==");
 ok("özet: 30 konu", TDED.ozet.konu === 30);
 ok("özet: 4 okulizyon cümlesi", TDED.ozet.okulizyon_cumlesi === 4);
-ok("özet: 91 ayırt edici terim", TDED.ozet.terim === 91, String(TDED.ozet.terim));
+ok("özet: 92 ayırt edici terim", TDED.ozet.terim === 92, String(TDED.ozet.terim));
+/* v92 — kullanıcı: "saf şiir ayrı bir konu". Genel şiir kazanımı Saf Şiir'e düşmez. */
+ok("genel şiir kazanımı (mazmun/imge/edebî sanat) Saf Şiir'e düşmez",
+  (KA.esle("Şiirdeki mazmun, imge ve edebî sanatları belirleyerek bunların anlama katkısını değerlendirir.", TDE) || {}).konu === "Gazel");
 
 console.log("\n" + "─".repeat(64));
 if (hata.length) {

@@ -37,7 +37,7 @@
 >
 > **UYGULAMADA ARTIK BAĞLI (27 Ekim).** TDE'nin 30 konusu için kazanım seti
 > kuruldu: `site/content/mufredat/tde_kazanim_10.json`
-> → 30 konu · 16 kodlu konu · 14 dil bilgisi (kod uydurulmadı) · 91 ayırt edici terim.
+> → 30 konu · 16 kodlu konu · 14 dil bilgisi (kod uydurulmadı) · 92 ayırt edici terim.
 > Konu → çıktı kodu eşlemesi **tema + beceri ekseni** ile yapılır (TYMM/ODSGM).
 > Okulizyon cümlesi → konu eşlemesi `site/konu-anahtar.js` kural tablosunda
 > 30 kurala bağlıdır. Üretici: `node scripts/tde-kazanim-uret.js`

@@ -41,7 +41,7 @@ const MIG = oku("supabase/migrations/0005_kazanim_konu_cache.sql");
 
 /* ------------------------------------------------------------ */
 console.log("\n== 1) Üç aşama gerçekten ayrı ==");
-ok("1. aşama: sözlük 91 terim", Object.keys(VERI.sozluk).length === 91, String(Object.keys(VERI.sozluk).length));
+ok("1. aşama: sözlük 92 terim", Object.keys(VERI.sozluk).length === 92, String(Object.keys(VERI.sozluk).length));
 ok("1. aşama: 'kavuştak' → Türkü", (OKZTDE.sozlukEsle("Kavuştakların türküdeki işlevini açıklar.") || {}).konu === "Türkü");
 ok("1. aşama: 'matla' → Gazel", (OKZTDE.sozlukEsle("Beytin ilk beytine matla denir.") || {}).konu === "Gazel");
 ok("1. aşama: Türkçe ek tanınır (koşuğun → Koşuk)",

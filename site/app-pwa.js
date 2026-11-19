@@ -1,4 +1,4 @@
-const PWA_SURUM = "v91-bildirim-gercek-ikon";
+const PWA_SURUM = "v92-saf-siir-ayri-konu";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1659,8 +1659,19 @@ function okzKonuBul(ders, kazanim) {
   // v70 — ÖĞRENEN SÖZLÜK (3. aşama önbelleği)
   // Bu cümle daha önce çözüldüyse (kural/sözlük/genel/vektör) hiçbir aşama
   // çalışmaz; cevap Supabase'deki kazanim_konu_cache'ten gelir.
+  /* v92 — BAYAT OTOMATİK ÖNBELLEK
+     kazanim_konu_cache satırı, eşleme kuralının YAZILDIĞI GÜNKÜ hâliyle
+     oluşur. Kural düzeltildiğinde (ör. "şiirdeki mazmun, imge ve edebî
+     sanatlar" artık Saf Şiir'e değil Gazel'e bağlanıyor) eski satır yeni
+     kuralı gölgeliyordu. Kural katmanından ("kural") gelen kayıt yerel
+     kuralla çelişiyorsa yerel kural kazanır ve önbellek tazelenir.
+     Elle/LLM kayıtlarına ("elle", "llm") DOKUNULMAZ; onlar öğrenci kararı. */
+  let eskiOnbellek = null;
   const onbellek = okzCacheBul(kanon, kazanim);
-  if (onbellek) return onbellek;
+  if (onbellek) {
+    if (!okzOnbellekEskidi(kanon, kazanim, onbellek)) return onbellek;
+    eskiOnbellek = onbellek;   // yerel katmanlar boş dönerse son çare
+  }
   if (window.KA && typeof window.KA.esle === "function") {
     const kural = window.KA.esle(kazanim, kanon);
     if (kural && kural.konu) {
@@ -1668,7 +1679,7 @@ function okzKonuBul(ders, kazanim) {
       return { konu: kural.konu, topicKey: kanon + " > " + kural.konu, kaynak: "kural", asama: 1 };
     }
   }
-  // v70 — AŞAMA 1: TDE konu adı/anahtar kelime sözlüğü (91 terim)
+  // v70 — AŞAMA 1: TDE konu adı/anahtar kelime sözlüğü (v92: 92 terim)
   // "kavuştak" → Türkü, "matla" → Gazel, "tegazzül" → Kaside…
   // Türkçe ekler tanınır (koşuğun → koşuk); ek olmayan harf dizisi eşleşmez
   // (çatışma ≠ çatı). Yalnız Türk Dili ve Edebiyatı için çalışır.
@@ -1679,7 +1690,7 @@ function okzKonuBul(ders, kazanim) {
       return { konu: soz.konu, topicKey: kanon + " > " + soz.konu, kaynak: "sozluk", asama: 1, terim: soz.terim };
     }
   }
-  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return okzTdeYedek(kanon, kazanim) || mebYedek;
+  if (!OKZK_IDX || !window.OKZK || typeof window.OKZK.esle !== "function") return okzTdeYedek(kanon, kazanim) || mebYedek || eskiOnbellek;
   const r = window.OKZK.esle(kazanim, kanon, OKZK_IDX);
   if (r && r.guven === "kesin") {
     okzCacheYaz(kanon, kazanim, r.konu, "kural", 0.85, { topicKey: r.topicKey });
@@ -1694,7 +1705,24 @@ function okzKonuBul(ders, kazanim) {
       return { konu: birinci.konu, topicKey: birinci.topicKey, kaynak: "oto", skor: birinci.skor };
     }
   }
-  return okzTdeYedek(kanon, kazanim) || mebYedek;
+  return okzTdeYedek(kanon, kazanim) || mebYedek || eskiOnbellek;
+}
+
+/* v92 — bayat otomatik önbellek denetimi (okzKonuBul'dan çağrılır).
+   Yalnız kaynak "kural" (uygulamanın kendi kuralı) kayıtları için çalışır:
+   yerel kural/sözlük farklı bir konu üretiyorsa önbellek bayattır. */
+function okzOnbellekEskidi(kanon, kazanim, onbellek) {
+  if (!onbellek || onbellek.asilKaynak !== "kural") return false;
+  let yerel = "";
+  if (window.KA && typeof window.KA.esle === "function") {
+    const k = window.KA.esle(kazanim, kanon);
+    if (k && k.konu) yerel = k.konu;
+  }
+  if (!yerel && okzTdeMi(kanon) && window.OKZTDE && typeof window.OKZTDE.sozlukEsle === "function") {
+    const s = window.OKZTDE.sozlukEsle(kazanim);
+    if (s && s.konu) yerel = s.konu;
+  }
+  return !!yerel && yerel !== onbellek.konu;
 }
 
 // TDE 2./3. AŞAMA — sözlük ve indeks tutmadığında devreye girer.
@@ -1762,6 +1790,10 @@ function okzCacheBul(ders, kazanim) {
     konu: e.konu,
     topicKey: e.topicKey || (String(ders) + " > " + e.konu),
     kaynak: "cache",
+    /* v92 — satırı hangi katman yazdı ("kural"/"genel"/"vektor"/"elle"/"llm").
+       Bayat kural denetimi bunu kullanır; dışa dönen "kaynak" alanı "cache"
+       olarak kalır (eski davranış/testler bozulmasın). */
+    asilKaynak: e.kaynak || "",
     asama: e.asama || 0,
     guven: e.guven,
     kod: e.kod || ""

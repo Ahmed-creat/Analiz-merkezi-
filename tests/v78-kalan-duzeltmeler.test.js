@@ -218,11 +218,17 @@ console.log("\n== 7) İki ekran aynı 'Tekrar Bekleyen' sayısı ==");
 // ---------------------------------------------------------------
 console.log("\n== 8) Bildirim: gün içinde tek, ertesi gün yeni ==");
 {
+  /* v92 — test sabit 18 Kasım'a bağlıydı; addNotification kaydı GERÇEK
+     tarihle (new Date) yazdığı için makine saati 18 Kasım olmadığında
+     tekilleştirme hiç tutmuyor ve test yanlış kırmızı veriyordu.
+     Gün artık çalışma anından türetilir; sınanan davranış aynı. */
+  const GUN = new Date().toISOString().slice(0, 10);
+  const YARIN = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
   const govde = fonksiyonAl("addNotification");
   const kayit = [];
   const sb = {
     state: { notifications: [] },
-    todayStr: () => "2026-11-18",
+    todayStr: () => GUN,
     uid: () => "id" + (kayit.length + 1),
     saveState() {}, updateBellBadges() {}, yerelSistemBildirimi() {}
   };
@@ -234,12 +240,12 @@ console.log("\n== 8) Bildirim: gün içinde tek, ertesi gün yeni ==");
   ok("aynı gün iki kez üretilmedi", sb.state.notifications.length === 1, String(sb.state.notifications.length));
 
   // ertesi gün: aynı konu, aynı gövde ama yeni döngü
-  sb.state.notifications[0].date = "2026-11-18T08:00:00.000Z";
+  sb.state.notifications[0].date = GUN + "T08:00:00.000Z";
   sb.ekle(Object.assign({}, n));   // hâlâ 18 Kasım → bastırılır
   ok("aynı gün ikinci çağrı bastırıldı", sb.state.notifications.length === 1, String(sb.state.notifications.length));
   const eski = govde.replace(/const gun = todayStr\(\);/,
-    'const gun = "2026-11-19";');
-  const sb2 = { state: { notifications: sb.state.notifications }, todayStr: () => "2026-11-19",
+    'const gun = "' + YARIN + '";');
+  const sb2 = { state: { notifications: sb.state.notifications }, todayStr: () => YARIN,
     uid: () => "y1", saveState() {}, updateBellBadges() {}, yerelSistemBildirimi() {} };
   vm.createContext(sb2);
   vm.runInContext(eski + "\nthis.ekle = addNotification;", sb2);

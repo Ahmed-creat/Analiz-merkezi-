@@ -573,7 +573,46 @@ function modulUret(d) {
   ].join("\n");
 }
 
-if (require.main === module) {
+/* ------------------------------------------------------------
+   v92 — SÖZLÜK TAZELEME (node scripts/tde-icerik-uret.js --sozluk)
+   ------------------------------------------------------------
+   Ayırt edici terim listesi değiştiğinde (scripts/tde-kazanim-uret.js)
+   tarayıcı veri modülünün "sozluk" bölümü de tazelenmelidir. PDF metni
+   olmadan konu/kavram/ilişki verisi yeniden üretilemez (içerik boşalır);
+   bu kip YALNIZ sözlüğü değiştirir, gerisini olduğu gibi korur.
+   ------------------------------------------------------------ */
+function sozlukTazele() {
+  const d = JSON.parse(fs.readFileSync(DOSYA, "utf8"));
+  const mevcut = require(VERI_MODUL);
+  mevcut.sozluk = d.sozluk;
+  const metin = [
+    "/* ============================================================",
+    "   TDE EŞLEME VERİSİ (site/okz-tde-veri.js)",
+    "   ------------------------------------------------------------",
+    "   OTOMATİK ÜRETİLDİ — ELLE DÜZENLEMEYİN.",
+    "   Üretici : scripts/tde-icerik-uret.js",
+    "   Kaynak  : site/content/mufredat/tde_kazanim_10.json",
+    "             (" + d.kaynak_pdf.dosya + ", " + d.kaynak_pdf.sayfa + " sayfa)",
+    "   İçerik  : " + mevcut.konular.length + " konu · " + Object.keys(d.sozluk).length + " terim sözlüğü · " +
+      mevcut.genel.kurallar.length + " genel beceri kuralı · " + mevcut.ozet.iliski + " ilişki",
+    "   Kullanan: site/okz-tde.js (1./2./3. aşama eşleştirme motoru)",
+    "   ============================================================ */",
+    "(function (kok) {",
+    "  \"use strict\";",
+    "  var VERI = " + JSON.stringify(mevcut) + ";",
+    "  if (typeof module !== \"undefined\" && module.exports) module.exports = VERI;",
+    "  kok.OKZTDE_VERI = VERI;",
+    "})(typeof globalThis !== \"undefined\" ? globalThis : this);",
+    ""
+  ].join("\n");
+  fs.writeFileSync(VERI_MODUL, metin);
+  console.log("sözlük tazelendi — " + Object.keys(d.sozluk).length + " terim");
+  return mevcut;
+}
+
+if (require.main === module && process.argv.indexOf("--sozluk") >= 0) {
+  sozlukTazele();
+} else if (require.main === module) {
   const yol = process.argv[2] || "/tmp/tde-temiz.txt";
   const d = uret(yol);
   console.log("\n== TDE MÜFREDAT İLİŞKİLERİ ==");

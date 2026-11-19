@@ -97,6 +97,7 @@
   "gazel": "Gazel",
   "matla": "Gazel",
   "makta": "Gazel",
+  "mazmun": "Gazel",
   "kaside": "Kaside",
   "methiye": "Kaside",
   "nesib": "Kaside",
@@ -104,9 +105,9 @@
   "tegazzül": "Kaside",
   "mersiye": "Mersiye",
   "saf şiir": "Saf Şiir",
-  "imge": "Saf Şiir",
-  "mazmun": "Saf Şiir",
-  "edebî sanat": "Saf Şiir",
+  "öz şiir": "Saf Şiir",
+  "simgecilik": "Saf Şiir",
+  "sembolizm": "Saf Şiir",
   "zamir": "Zamir (Adıl)",
   "adıl": "Zamir (Adıl)",
   "edat": "Edat (İlgeç)",
@@ -183,7 +184,7 @@
   "genel_okulizyon_cumlesi": 2,
   "kodlu_konu": 16,
   "dil_bilgisi_konu": 14,
-  "terim": 91
+  "terim": 92
  },
  "konular": [
   {
@@ -1454,7 +1455,8 @@
    "ayirt_edici_terimler": [
     "gazel",
     "matla",
-    "makta"
+    "makta",
+    "mazmun"
    ],
    "kazanimlar": [
     {
@@ -1893,9 +1895,9 @@
    ],
    "ayirt_edici_terimler": [
     "saf şiir",
-    "imge",
-    "mazmun",
-    "edebî sanat"
+    "öz şiir",
+    "simgecilik",
+    "sembolizm"
    ],
    "kazanimlar": [
     {

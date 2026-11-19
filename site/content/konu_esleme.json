@@ -2,7 +2,7 @@
  "surum": "2026-10-27",
  "aciklama": "Okulizyon kazanım metni → konu başlığı arama indeksi. TDE metinleri site/content/mufredat/tde_kazanim_10.json'dan üretilir (scripts/tde-kazanim-uret.js).",
  "havuz_sayisi": 192,
- "alt_beceri_sayisi": 1686,
+ "alt_beceri_sayisi": 1687,
  "havuzlar": [
   {
    "konu_id": "biyo_10_u01_k01",
@@ -570,7 +570,7 @@
    "topic_key": "Türk Dili ve Edebiyatı > Gazel",
    "konu": "Gazel",
    "soru": 10,
-   "metin": "Gazel · gazel · matla · makta"
+   "metin": "Gazel · gazel · matla · makta · mazmun"
   },
   {
    "konu_id": "edebiyat_10_u02_k02",
@@ -594,7 +594,7 @@
    "topic_key": "Türk Dili ve Edebiyatı > Saf Şiir",
    "konu": "Saf Şiir",
    "soru": 10,
-   "metin": "Saf Şiir · saf şiir · imge · mazmun · edebî sanat"
+   "metin": "Saf Şiir · saf şiir · öz şiir · simgecilik · sembolizm"
   },
   {
    "konu_id": "edebiyat_10_u02_k05",

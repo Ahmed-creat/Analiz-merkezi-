@@ -58,10 +58,20 @@ const KONU = {
   edebiyat_10_u01_k08: { eksen: "dil-bilgisi", ayirt: ["sıfat", "ön ad", "niteleme sıfatı", "belirtme sıfatı"] },
   edebiyat_10_u01_k09: { eksen: "dil-bilgisi", ayirt: ["sıfat tamlaması"] },
 
-  edebiyat_10_u02_k01: { eksen: "okuma", ayirt: ["gazel", "matla", "makta"] },
+  /* v92 — "mazmun" buraya alındı: divan şiirinin kalıplaşmış imge dünyasının
+     terimidir (ders notu: "Saf şiir, gazelin kalıplaşmış mazmun dünyasına
+     tepki olarak doğar"). Genel şiir kazanımında mazmun geçiyorsa doğru konu
+     gazeldir, Saf Şiir değil. */
+  edebiyat_10_u02_k01: { eksen: "okuma", ayirt: ["gazel", "matla", "makta", "mazmun"] },
   edebiyat_10_u02_k02: { eksen: "okuma", ayirt: ["kaside", "methiye", "nesib", "fahriye", "tegazzül"] },
   edebiyat_10_u02_k03: { eksen: "okuma", ayirt: ["mersiye"] },
-  edebiyat_10_u02_k04: { eksen: "okuma", ayirt: ["saf şiir", "imge", "mazmun", "edebî sanat"] },
+  /* v92 — SAF ŞİİR AYRI BİR KONUDUR (kullanıcı, 18 Kasım).
+     "imge", "mazmun", "edebî sanat" genel şiir bilgisinin terimleridir; her
+     şiir sorusunda geçebilir. Bunlar Saf Şiir'in ayırt edici terimi değildi ve
+     Okulizyon'un "şiirdeki mazmun, imge ve edebî sanatları belirler" kazanımı
+     yanlışlıkla Saf Şiir'e bağlanıyordu. Saf Şiir yalnızca adı veya akımı
+     (simgecilik/sembolizm) geçen cümleye bağlanır; mazmun gazel konusuna gider. */
+  edebiyat_10_u02_k04: { eksen: "okuma", ayirt: ["saf şiir", "öz şiir", "simgecilik", "sembolizm"] },
   edebiyat_10_u02_k05: { eksen: "dil-bilgisi", ayirt: ["zamir", "adıl"] },
   edebiyat_10_u02_k06: { eksen: "dil-bilgisi", ayirt: ["edat", "ilgeç"] },
   edebiyat_10_u02_k07: { eksen: "dil-bilgisi", ayirt: ["bağlaç"] },

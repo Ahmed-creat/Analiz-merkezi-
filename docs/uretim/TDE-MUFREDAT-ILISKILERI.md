@@ -10,7 +10,7 @@ Bu dosya `scripts/tde-icerik-uret.js` tarafından **otomatik** üretilir — ell
 | İlişki | 108 |
 | PDF'ten çıkarılan madde | 1577 |
 | Sayfa aralığı olan konu | 28 / 30 |
-| Sözlük terimi (1. aşama) | 91 |
+| Sözlük terimi (1. aşama) | 92 |
 | Genel beceri kuralı (2. aşama) | 5 |
 
 ## Konu haritası

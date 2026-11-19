@@ -130,10 +130,18 @@
     { ders: TDE, konu: "Dede Korkut Hikâyeleri", desen: /dede korkut/ },
     { ders: TDE, konu: "Tanzimat Dönemi Şiiri",
       desen: /tanzimat|namik kemal|ziya pasa|sinasi|abdulhak hamit/ },
-    { ders: TDE, konu: "Gazel", desen: /gazel|(^| )matla( |$)|(^| )makta( |$)/ },
+    /* v92 — SAF ŞİİR AYRI KONU (kullanıcı, 18 Kasım): yalnızca adı/akımı geçen
+       cümle Saf Şiir'e bağlanır. "imge", "mazmun", "edebî sanat" genel şiir
+       bilgisi terimleridir; Okulizyon'un "şiirdeki mazmun, imge ve edebî
+       sanatları belirler" kazanımı bu yüzden yanlışlıkla Saf Şiir'e düşüyordu.
+       Kural GAZEL'den ÖNCE: cümlede hem "saf şiir" hem "mazmun" geçerse
+       doğru cevap Saf Şiir'dir. */
+    { ders: TDE, konu: "Saf Şiir", desen: /saf siir|oz siir|simgeci|semboliz/ },
+    /* "mazmun" divan şiirinin kalıplaşmış imge dünyasıdır (ders notu: saf şiir
+       gazelin mazmun dünyasına tepki olarak doğar) → Gazel. */
+    { ders: TDE, konu: "Gazel", desen: /gazel|(^| )matla( |$)|(^| )makta( |$)|mazmun/ },
     { ders: TDE, konu: "Kaside", desen: /kaside|methiye|nesib|fahriye|tegazzul/ },
     { ders: TDE, konu: "Mersiye", desen: /mersiye/ },
-    { ders: TDE, konu: "Saf Şiir", desen: /saf siir|imge|mazmun|edebi sanat/ },
     { ders: TDE, konu: "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
       desen: /aheng|uyak|redif|aliterasyon|asonans|kafiye|olcu|aruz|durak|ritim/ },
     // Dil bilgisi — tamlama kuralları, tek kelimelik kurallardan ÖNCE
