@@ -119,7 +119,8 @@ function kutu(state, bugun) {
     fnCikar("hazirlikPlani"),
     fnCikar("sinavYakinlari"),
     "\nreturn { hazirlikPlani: hazirlikPlani, sinavYakinlari: sinavYakinlari," +
-    " hazirlikGunSeti: hazirlikGunSeti, hazirlikOturumSayisi: hazirlikOturumSayisi };"
+    " hazirlikGunSeti: hazirlikGunSeti, hazirlikOturumSayisi: hazirlikOturumSayisi," +
+    " denemeIvmeCumlesi: denemeIvmeCumlesi };"
   ].join("\n");
   const g = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
     "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState", govde);
@@ -365,8 +366,11 @@ console.log("\n== 7) Gün detayı başlığı: YALNIZ tür + ders (konu tekrarı
   ok("konular yine alttaki listede duruyor",
     /Son tekrar konuları \(\d+\):/.test(son) && /cd-row/.test(son));
 
-  // normal hazırlık günü
-  const haz = D.gun("2026-12-21");
+  // normal hazırlık günü — v99: oturumlar artık ELDEKİ TÜM günlere yayılıyor,
+  // bu yüzden tarih sabitlenmez; plandan gerçek bir TDE çalışma günü seçilir.
+  const tdeGunler = F.hazirlikPlani().filter(p => p.examId === "tde" && !p.son)
+    .map(p => p.date).sort();
+  const haz = D.gun(tdeGunler[tdeGunler.length - 1]);
   ok("hazırlık başlığı 'Sınava hazırlık: <ders>'",
     /Sınava hazırlık: TDE\b/.test(haz), (haz.match(/Sınava hazırlık[^<]{0,120}/) || [""])[0]);
   ok("hazırlık başlığında konu adı yok", !/Sınava hazırlık: TDE · /.test(haz));
@@ -459,7 +463,17 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
     ok("30 hata konusunun TAMAMI planda", hepsi.size === 30, hepsi.size);
     ok("her oturumda en çok 3 konu", den.every(p => p.konular.length <= 3),
       den.map(p => p.konular.length).join(","));
-    ok("oturum sayısı konu sayısıyla uyumlu (10 oturum)", den.length === 10, den.length);
+    // v99 — son oturum TEKRAR olduğu için 30 konu = 10 çalışma + 1 son tekrar.
+    ok("oturum sayısı konu sayısıyla uyumlu (10 çalışma + 1 son tekrar = 11)", den.length === 11, den.length);
+    const sonDen = den[den.length - 1];
+    const calisilan = new Set(den.filter(p => !p.tekrar).flatMap(p => p.konular));
+    ok("son tekrar YENİ konu taşımaz (hepsi daha önce çalışıldı)",
+      sonDen.tekrar === true && sonDen.konular.every(k => calisilan.has(k)),
+      sonDen.konular.join(" | "));
+    ok("konuların tamamı ÇALIŞMA oturumlarında", calisilan.size === 30, calisilan.size);
+    ok("çalışma oturumu 3, son tekrar 3 konu taşır",
+      den.filter(p => !p.tekrar).every(p => p.konular.length === 3) && sonDen.konular.length === 3,
+      den.map(p => p.konular.length).join(","));
     ok("kapsama bilgisi kayıtta (30/30)", den[0].kapsananHata === 30 && den[0].hataSayisi === 30,
       den[0].kapsananHata + "/" + den[0].hataSayisi);
     ok("'sonraki tura kaldı' uyarısı yok", !den.some(p => p.kalanKonu > 0));
@@ -491,7 +505,9 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
     const den2 = X2.plan().filter(p => p.kaynak === "deneme");
     const orta = X2.gun(den2[0].date), son2 = X2.gun(den2[den2.length - 1].date);
     ok("deneme gün detayı 'denemeye N gün' diyor", /denemeye \d+ gün/.test(orta), orta.slice(0, 200));
-    ok("deneme gün detayında 'sınavdan' GEÇMEZ", !/sınavdan/.test(orta), orta.slice(0, 200));
+    const ortaKutu = orta.split('class="cd-box"').filter(x => /Deneme hazırlığı/.test(x))[0] || "";
+    ok("deneme kutusunda 'sınavdan' GEÇMEZ", ortaKutu.length > 0 && !/sınavdan/.test(ortaKutu),
+      ortaKutu.slice(0, 200));
     // Aynı gün okul sınavı hazırlığı da olabilir → yalnız DENEME kutusuna bak.
     const denKutu = son2.split('class="cd-box"').filter(x => /Deneme öncesi son tekrar/.test(x))[0] || "";
     // KULLANICI (20 Kas 2026): "yazılı örnek yoksa yok. Niye öğrenciye yok
@@ -541,6 +557,73 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
       /İkinci denemeden sonra ölçülen ivme de burada/.test(HTML));
   }
 }
+
+console.log("\n== 9) Boş günler kullanılır + ivme TEK sayı (v99) ==");
+{
+  // (a) Gün seti ELDEKİ TÜM günlere yayılır: ilk oturum yarın, son oturum −3.
+  //     KULLANICI: "öğrencinin boş günleri varsa neden görevler yayılmıyor?"
+  const set = F.hazirlikGunSeti(9, 30);
+  ok("9 oturum 9 farklı gün", new Set(set).size === 9, set.join(","));
+  ok("en erken oturum YARIN (sınav − 29)", Math.max.apply(null, set) === 29, set.join(","));
+  ok("son oturum sınavdan 3 gün önce", Math.min.apply(null, set) === 3, set.join(","));
+  ok("gün seti sınavdan 3 günden yakına inmez", set.every(x => x >= 3));
+
+  // (b) Gerçek planda ilk oturum bugünden 3 günden sonraya atılmaz.
+  const planDen = plan.filter(p => p.examId === "deneme").sort((a, b) => (a.date < b.date ? -1 : 1));
+  const ilk = planDen[0], sonP = planDen[planDen.length - 1];
+  const gunFark = ds => Math.round((parseDay(ds) - parseDay(BUGUN)) / 86400000);
+  ok("deneme planı YARIN başlıyor (boş gün bırakmıyor)", gunFark(ilk.date) <= 3, ilk.date);
+  ok("deneme planı denemeden 3 gün önce bitiyor", sonP.gunOnce === 3, sonP.gunOnce);
+  const bosluk = planDen.slice(1).map((p, i) => gunFark(p.date) - gunFark(planDen[i].date));
+  // Eşit aralık: ardışık oturumlar arası boşluk birbirine yakın olmalı
+  // (eskiden hepsi son 2n güne sıkışıyordu, başta 9 gün bomboş kalıyordu).
+  ok("oturumlar EŞİT aralıkla yayılıyor (en büyük − en küçük boşluk ≤ 2 gün)",
+    Math.max.apply(null, bosluk) - Math.min.apply(null, bosluk) <= 2, bosluk.join(","));
+  ok("ilk oturum ile son oturum arası tüm pencere kullanılıyor",
+    (gunFark(sonP.date) - gunFark(ilk.date)) >= Math.max(1, sonP.gunOnce - 3) - 1,
+    gunFark(ilk.date) + " → " + gunFark(sonP.date));
+
+  // (c) İvme Ölçer ile plan AYNI sayıyı söyler (4.08 ≠ 3.5 çelişkisi gitti).
+  //     KULLANICI: "İvme Ölçer +4.08 diyor, tekrarda ivme 3.5 diyor."
+  const g2 = new Function("state", "todayStr", "parseDay", "toDayStr",
+    [
+      SABITLER,
+      fnCikar("examStats"),
+      fnCikar("denemeIvmesi"),
+      fnCikar("denemeIvmeCumlesi"),
+      fnCikar("weeklyMomentum"),
+      "function daysLeftToExam() { return 30; }",
+      "return { mom: weeklyMomentum(), v: denemeIvmesi() };"
+    ].join("\n"));
+  const s5 = senaryo();
+  s5.exams = [{ id: "d1", date: "2026-10-27", net: 77.5, errorLogs: [] }];
+  s5.plan.targetNet = 95;
+  s5.plan.targetDate = "2026-12-20";
+  const R = g2(s5, () => BUGUN, parseDay, toDayStr);
+  ok("İvme Ölçer = plandaki gereken ivme", R.mom.weekly === R.v.gerekenIvme,
+    R.mom.weekly + " ≠ " + R.v.gerekenIvme);
+  ok("hafta YUKARI yuvarlanmıyor (4.3, 5 değil)", R.mom.weeks === 4.3, R.mom.weeks);
+  ok("gereken ivme 4.08 (17.5 net / 4.3 hafta)", R.v.gerekenIvme === 4.08, R.v.gerekenIvme);
+  ok("cümle sade aritmetik gösteriyor",
+    /\+17.5 net kaldı · 30 gün \(4.3 hafta\) → haftada \+4.08 net gerekiyor/.test(denemeCumle(R.v)),
+    denemeCumle(R.v));
+  ok("İvme Ölçer 'net/hafta gereken ivme' diyor", /net\/hafta gereken ivme/.test(HTML));
+  ok("eski 'haftalık net artışı hedefi' ifadesi kalmadı", !/haftalık net artışı hedefi/.test(GORUNEN));
+  ok("İvme Ölçer 'Son Net' gösteriyor (ortalama değil)", /statBox\("Son Net"/.test(HTML));
+
+  // (d) Okul sınavı hazırlığı sınav haftasına yakın kalır (7 hafta önce başlamaz)
+  const okulSet = F.hazirlikGunSeti(4, 60, "okul");
+  ok("okul hazırlığı en fazla ~3 hafta önce başlar", Math.max.apply(null, okulSet) <= 21, okulSet.join(","));
+  ok("okul hazırlığı yine −3 günde biter", Math.min.apply(null, okulSet) === 3, okulSet.join(","));
+  const denSet = F.hazirlikGunSeti(7, 30, "deneme");
+  ok("deneme hazırlığı YARINDAN başlar (tüm boş günler kullanılır)",
+    Math.max.apply(null, denSet) === 29, denSet.join(","));
+
+  // (e) Plan kutusu: tekrar oturumu konu sayısını şişirmez
+  ok("plan kutusu 'çalışma + son tekrar' yazıyor", /çalışma" \+|\+ " \+ tekrarSay/.test(HTML) || /son tekrar" \+ " · "/.test(HTML));
+  ok("konu sayısı TEKİL (Set) hesaplanıyor", /new Set\(denPlan\.reduce/.test(HTML));
+}
+function denemeCumle(v) { return F.denemeIvmeCumlesi(v); }
 
 console.log("\n" + "─".repeat(56));
 if (kalan) {

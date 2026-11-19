@@ -269,3 +269,64 @@ ifadeleri geçmez; deneme son tekrar kutusunda `yok`, `değil`, `sınavıdır`
 geçmez ve metin eylemi söyler. Toplam **117/117**.
 
 Sürüm: `PWA_SURUM = "v98b-sade-dil"`, SW `analiz-merkezi-v-20261027-v98b-sade-dil`.
+
+## v99 — Boş günler kullanılır · tek ivme sayısı · son tekrar = tekrar
+
+KULLANICI (20 Kas 2026):
+> "1) öğrencinin boş günleri varsa neden görevler yayılmıyor? 2) son tekrarda
+> yeni konu açma diyor ama o gün 3 konu çalış diyor. … Ve sorun şu ivme ölçer:
+> +4.08 haftalık net artışı hedefi diyor, tekrarda ivme 3.5 diyor. Ve haftalık 4
+> ise denemeye çalışmaya 5 hafta önce başlaması gerekmiyor mu? Yoksa birbiriyle
+> çelişiyor"
+
+### 1) Boş günler artık kullanılıyor
+`hazirlikGunSeti()` yayılımı **2n günle** sınırlıydı: sınav 30 gün sonraysa ilk
+9 gün bomboş kalıyor, 9 oturum son 18 güne sıkışıyordu.
+
+| | Önce | Sonra |
+|---|---|---|
+| Deneme planı | ilk oturum denemeden 21 gün önce (bugünden 9 gün sonra) | **ilk oturum YARIN**, son oturum −3 |
+| Oturum aralığı | sona doğru sıkışık | **eşit aralık** (30 gün / 7 oturum ≈ 4-5 gün) |
+| Okul sınavı | son 2n güne sıkışık | sınava **en fazla 21 gün** kala başlar (7 hafta önce "sınava hazırlık" yazmaz) |
+
+Yerleşim sırası: (1) hedef gün, (2) daha erken gün, (3) **daha geç gün** (sınav−3'ü
+geçmeden). Böylece tüm sınavların ilk oturumu aynı güne (yarına) yığılmıyor;
+günde en çok 2 oturum, aynı sınava aynı gün tek oturum.
+
+### 2) Son tekrar = TEKRAR (yeni konu değil)
+Metin "yeni konu açma" derken liste yeni konular gösteriyordu. Artık:
+- Konular **çalışma oturumlarına** dağıtılır (6 çalışma × 3 konu = 18).
+- Son oturum (−3 gün) **daha önce çalışılmış en zayıf 3 konunun tekrarıdır**;
+  `tekrar: true` bayrağı taşır, listede başlık **"Son tekrar edilecek konular (3)"**.
+- Oturum sayısı: `çalışma + 1` (30 konu → 10 + 1 = 11).
+
+### 3) İvme TEK sayı — 4.08 ≠ 3.5 çelişkisi bitti
+İki ayrı hesap vardı: İvme Ölçer **ortalama net + yukarı yuvarlanmış hafta**
+(17.5 / 4.29 = 4.08, "5 hafta"), plan **son net + ceil hafta** (17.5 / 5 = 3.5).
+
+Tek hesap: **hedef − son net = kalan net · kalan gün ÷ 7 = hafta · kalan net ÷
+hafta = haftada gereken net.** `weeklyMomentum()` artık `denemeIvmesi()`'ni
+kullanır; yukarı yuvarlama yok (30 gün = **4,3 hafta**), bölme tam hafta ile.
+
+```
+İvme Ölçer : +4.08 net/hafta gereken ivme · 30 gün = 4.3 hafta · hedefe 17.5 net
+             Son Net 77.5 · Hedef Net 95 · Kalan Gün 30
+Cümle      : Hedef 95 net · son net 77.5 → +17.5 net kaldı · 30 gün (4.3 hafta)
+             → haftada +4.08 net gerekiyor.
+```
+
+Kullanıcının "haftalık 4 ise 5 hafta önce başlaması gerekmiyor mu?" sorusunun
+cevabı: 5 değil **4,3 hafta** var; 17.5 net ÷ 4,3 hafta = **haftada 4.08 net**.
+Sayı artık her yerde (İvme Ölçer, plan kutusu, gün detayı, üst mesaj) aynı.
+
+### 4) Plan kutusu
+`Deneme hazırlık planı: 6 çalışma + 1 son tekrar · 18 konu · hataların 18/18
+konusu kapsanıyor · haftada ~5 konu` — konu sayısı **tekil** (tekrar oturumu
+sayıyı şişirmez).
+
+### 5) Test
+`tests/v96-tekrar-takvim.test.js` → **140/140** (bölüm 9: boş gün yok, eşit
+aralık, okul ≤ 21 gün, İvme Ölçer = plan sayısı, 4.3 hafta, 4.08).
+`test:hepsi` EXIT=0 · v95 48/48 · v37 53/53 · sw 24/24.
+
+Sürüm: `PWA_SURUM = "v99-tek-ivme-yayilim"`.
