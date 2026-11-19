@@ -166,8 +166,11 @@ console.log("\n== 5) Sunucu: bayat önbellek satırını silen migration ==");
 console.log("\n== 6) Sürüm damgası ==");
 {
   const SW = oku("site/sw.js");
-  ok("PWA sürümü v94+", /const PWA_SURUM = "v9[4-9]/.test(APP), (APP.match(/const PWA_SURUM = "[^"]+"/) || [])[0]);
-  ok("service worker cache v94+", /v9[4-9][a-z]?-[a-z-]+/.test(SW), (SW.match(/const CACHE = "[^"]+"/) || [])[0]);
+  // v100 — sürüm üç haneye çıktı; sayı okunur.
+  ok("PWA sürümü v94+", Number((APP.match(/const PWA_SURUM = "v(\d+)/) || [])[1]) >= 94,
+    (APP.match(/const PWA_SURUM = "[^"]+"/) || [])[0]);
+  ok("service worker cache v94+", Number((SW.match(/v-\d{8}-v(\d+)/) || [])[1]) >= 94,
+    (SW.match(/const CACHE = "[^"]+"/) || [])[0]);
 }
 
 console.log("\n" + "─".repeat(64));

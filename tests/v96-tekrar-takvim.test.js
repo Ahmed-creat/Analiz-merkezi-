@@ -408,9 +408,12 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
       son.etiket + " | " + son.bildirim);
     ok("deneme son oturumu 'Deneme öncesi son tekrar'",
       /^Deneme öncesi son tekrar/.test(son.etiket), son.etiket);
-    ok("deneme oturumları 'Deneme hazırlığı' dilini kullanıyor",
-      den.filter(p => !p.son).every(p => /^Deneme hazırlığı/.test(p.etiket)),
+    // v100 — konu yetmediği günler "Deneme tekrarı" olur (yeni konu değil).
+    ok("deneme oturumları 'Deneme hazırlığı' / 'Deneme tekrarı' dili kullanıyor",
+      den.filter(p => !p.son).every(p => /^Deneme (hazırlığı|tekrarı)/.test(p.etiket)),
       den.map(p => p.etiket).join(" | "));
+    ok("tekrar oturumu etiketi 'Deneme tekrarı' der",
+      den.filter(p => p.tekrar && !p.son).every(p => /^Deneme tekrarı/.test(p.etiket)));
     ok("okul sınavında 'yazılı örnek senaryo' KALIYOR",
       plan.filter(p => p.kaynak === "okul" && p.son).every(p => /yazılı örnek senaryo/.test(p.etiket)));
   }
@@ -464,15 +467,20 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
     ok("her oturumda en çok 3 konu", den.every(p => p.konular.length <= 3),
       den.map(p => p.konular.length).join(","));
     // v99 — son oturum TEKRAR olduğu için 30 konu = 10 çalışma + 1 son tekrar.
-    ok("oturum sayısı konu sayısıyla uyumlu (10 çalışma + 1 son tekrar = 11)", den.length === 11, den.length);
+    // v100 — KULLANICI: "boş gün olmasın, günde 3 yerine 2 veya 1 çalışılabilir."
+    // Oturum sayısı PENCEREYE eşitlenir (30 gün kaldı → 27 gün dolu).
+    ok("oturum sayısı pencereyi dolduruyor (27)", den.length === 27, den.length);
     const sonDen = den[den.length - 1];
     const calisilan = new Set(den.filter(p => !p.tekrar).flatMap(p => p.konular));
     ok("son tekrar YENİ konu taşımaz (hepsi daha önce çalışıldı)",
       sonDen.tekrar === true && sonDen.konular.every(k => calisilan.has(k)),
       sonDen.konular.join(" | "));
     ok("konuların tamamı ÇALIŞMA oturumlarında", calisilan.size === 30, calisilan.size);
-    ok("çalışma oturumu 3, son tekrar 3 konu taşır",
-      den.filter(p => !p.tekrar).every(p => p.konular.length === 3) && sonDen.konular.length === 3,
+    ok("oturum başına konu 1-3 arası (konu azsa 1'e iner)",
+      den.every(p => p.konular.length >= 1 && p.konular.length <= 3),
+      den.map(p => p.konular.length).join(","));
+    ok("30 konu 26 çalışma oturumuna yayılır (1-2 konu/gün)",
+      den.filter(p => !p.tekrar && !p.son).every(p => p.konular.length <= 2),
       den.map(p => p.konular.length).join(","));
     ok("kapsama bilgisi kayıtta (30/30)", den[0].kapsananHata === 30 && den[0].hataSayisi === 30,
       den[0].kapsananHata + "/" + den[0].hataSayisi);
@@ -624,6 +632,78 @@ console.log("\n== 9) Boş günler kullanılır + ivme TEK sayı (v99) ==");
   ok("konu sayısı TEKİL (Set) hesaplanıyor", /new Set\(denPlan\.reduce/.test(HTML));
 }
 function denemeCumle(v) { return F.denemeIvmeCumlesi(v); }
+
+console.log("\n== 10) BOŞ GÜN YOK: plan pencerenin her gününü doldurur (v100) ==");
+{
+  // KULLANICI: "yine çok fazla boş gün oluyor. Bu kadar boş ise günde 3 konu
+  // yerine 2 veya 1 de çalışabilmeli, neden boş günü olsun ki."
+  const hata18 = [];
+  const ders = ["Matematik", "Fizik", "Kimya", "Biyoloji", "Felsefe", "Coğrafya"];
+  for (let i = 1; i <= 18; i++) {
+    hata18.push({ lesson: ders[i % ders.length], topic: "Konu " + i, type: "Konuyu Bilmiyordum", date: "2026-10-27" });
+  }
+  const s10 = senaryo();
+  s10.plan.schoolExams = [];                       // yalnız deneme
+  s10.plan.targetDate = "2026-12-20";              // 30 gün kaldı
+  s10.exams = [{ id: "d1", date: "2026-10-27", net: 77.5, errorLogs: hata18 }];
+  s10.questions = []; s10.memory = {};
+  const P = kutu(s10, BUGUN).hazirlikPlani().filter(p => p.examId === "deneme")
+    .sort((a, b) => (a.date < b.date ? -1 : 1));
+  const gunDs = ds => Math.round((parseDay(ds) - parseDay(BUGUN)) / 86400000);
+
+  ok("18 konu için 27 oturum (yarın → deneme−3)", P.length === 27, P.length);
+  ok("ilk oturum YARIN (boş gün beklemez)", gunDs(P[0].date) === 1, P[0].date);
+  ok("son oturum denemeden 3 gün önce", P[P.length - 1].gunOnce === 3, P[P.length - 1].gunOnce);
+
+  // Günler ARASINDA boşluk yok: her gün tam 1 oturum.
+  const bosluk = P.slice(1).map((p, i) => gunDs(p.date) - gunDs(P[i].date));
+  ok("oturumlar HER GÜN (boşluk yok)", bosluk.every(x => x === 1), bosluk.join(","));
+  ok("pencere 27 günün tamamı dolu", new Set(P.map(p => p.date)).size === 27);
+
+  // Konu azsa oturum başına konu 3'ten 1'e iner.
+  ok("oturum başına konu 1-3", P.every(p => p.konular.length >= 1 && p.konular.length <= 3),
+    P.map(p => p.konular.length).join(","));
+  ok("çoğu oturum 1 konu (3 değil)", P.filter(p => p.konular.length === 1).length >= 15,
+    P.map(p => p.konular.length).join(","));
+
+  // Konu yetmeyen günler TEKRAR oturumu olur; yeni konu uydurulmaz.
+  const tekrarlar = P.filter(p => p.tekrar && !p.son);
+  ok("konu yetmeyen günler 'Deneme tekrarı' olur", tekrarlar.length >= 8, tekrarlar.length);
+  const oncekiKonular = new Set();
+  let tekrarGecerli = true;
+  P.forEach(p => {
+    if (p.tekrar && !p.son) {
+      if (!p.konular.length || !p.konular.every(k => oncekiKonular.has(k))) tekrarGecerli = false;
+    } else {
+      p.konular.forEach(k => oncekiKonular.add(k));
+    }
+  });
+  ok("tekrar oturumları DAHA ÖNCE çalışılmış konuları tekrar eder", tekrarGecerli);
+  ok("tekrar gününde 'Çalışılacak konular' değil 'Tekrar edilecek konular' denir",
+    /Tekrar edilecek konular/.test(HTML));
+
+  // Konu çok azsa (3 konu) plan günleri doldurmak için abartılmaz.
+  const s11 = senaryo();
+  s11.plan.schoolExams = [];
+  s11.exams = [{ id: "d1", date: "2026-10-27", net: 77.5, errorLogs: [
+    { lesson: "Matematik", topic: "A", type: "Konuyu Bilmiyordum", date: "2026-10-27" },
+    { lesson: "Fizik", topic: "B", type: "Konuyu Bilmiyordum", date: "2026-10-27" },
+    { lesson: "Kimya", topic: "C", type: "Konuyu Bilmiyordum", date: "2026-10-27" }
+  ] }];
+  s11.questions = []; s11.memory = {};
+  const P2 = kutu(s11, BUGUN).hazirlikPlani().filter(p => p.examId === "deneme");
+  ok("3 konuda oturum abartılmaz (≤ 5)", P2.length <= 5, P2.length);
+
+  // Deneme hazırlığı 30 günden erken başlamaz (3 ay sonraki sınav için).
+  const s12 = senaryo();
+  s12.plan.schoolExams = [];
+  s12.plan.targetDate = "2027-02-20";
+  s12.exams = [{ id: "d1", date: "2026-10-27", net: 77.5, errorLogs: hata18 }];
+  s12.questions = []; s12.memory = {};
+  const P3 = kutu(s12, BUGUN).hazirlikPlani().filter(p => p.examId === "deneme");
+  const ilkGun = Math.round((parseDay(P3[0].date) - parseDay(BUGUN)) / 86400000);
+  ok("uzak sınavda hazırlık son 30 güne yayılır", ilkGun >= 58, ilkGun + ". gün");
+}
 
 console.log("\n" + "─".repeat(56));
 if (kalan) {

@@ -263,7 +263,9 @@ console.log("\n== 9) Sürüm yazısı canlı damgadan ==");
   ok("açılışta çağrılıyor", /surumEtiketiYaz\(\);/.test(APP));
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   // Damga sabit yazılmaz (her sürümde test kırılmasın); v78 ve sonrası yeter.
-  ok("damga v78 veya sonrası", /^v(7[89]|[89]\d)/.test(surum), surum);
+  // v100 — sürüm numarası üç haneye çıktı (v100-her-gun-plan): sayı okunur.
+  const surumNo = Number((surum.match(/^v(\d+)/) || [])[1] || 0);
+  ok("damga v78 veya sonrası", surumNo >= 78, surum);
   /* v81 — KULLANICI: "Herşeyin güncel olduğundan emin olun." Alt bilgi de
      elle "v5.1" yazıyordu; artık PWA_SURUM'dan doldurulur. */
   ok("alt bilgi sürüm damgasına bağlı",

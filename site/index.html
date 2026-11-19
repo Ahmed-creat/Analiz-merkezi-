@@ -6009,7 +6009,7 @@ function renderPlanning(container) {
         const haftaKonu = Math.ceil(konuSay / hafta);
         html += '<div class="text-xs" style="margin-top:8px;padding:8px 10px;border-radius:9px;background:color-mix(in srgb, var(--brand-blue) 8%, transparent);line-height:1.6;">' +
           '<b>' + icon("calendar-check", 12, "vertical-align:-2px;") + " Deneme hazırlık planı:</b> " + calismaSay + " çalışma" +
-          (tekrarSay ? " + " + tekrarSay + " son tekrar" : "") + " · " + konuSay + " konu" +
+          (tekrarSay ? " + " + tekrarSay + " tekrar" : "") + " · " + konuSay + " konu" +
           (hataSay != null ? " · hataların <b>" + kapsanan + "/" + hataSay + "</b> konusu kapsanıyor" : "") +
           (haftaKonu ? " · haftada ~" + haftaKonu + " konu" : "") +
           (denPlan[0] && denPlan[0].kalanKonu ? ' · <b style="color:var(--semantic-error);">' + denPlan[0].kalanKonu + " konu sonraki tura kaldı</b>" : "") +
@@ -6254,8 +6254,12 @@ const HAZIRLIK_BITIS_GUN = 3;
 // (gerçek sınır: hedefe kalan gün); hafıza kaynaklı zayıf konular yalnız yer
 // kalırsa eklenir. İvme gerideyse oturum başına konu 3'ten 2'ye düşürülür
 // (daha sık tekrar, daha çok oturum).
-const HAZIRLIK_DENEME_OTURUM_TAVAN = 20; // hataların tamamı sığsın diye yüksek;
-                                        // gerçek sınır hedefe kalan gün (pencere)
+// v100 — KULLANICI: "yine çok fazla boş gün oluyor. Bu kadar boş ise günde 3
+// konu yerine 2 veya 1 de çalışabilmeli, neden boş günü olsun ki." Oturum sayısı
+// ARTIK PENCEREYE EŞİTLENİR: yarın ile deneme−3 arasındaki her gün bir oturum.
+// Konu azsa oturum başına konu 3 → 2 → 1 düşer (dağıtım otomatik).
+const HAZIRLIK_DENEME_OTURUM_TAVAN = 40;
+const HAZIRLIK_DENEME_PENCERE = 30;   // deneme hazırlığı en fazla son 30 gün
 const HAZIRLIK_IVME_GERIDE_KONU = 2; // ivme gerideyse oturum başına konu (daha sık tekrar)
 
 // Uygulamanın GERÇEKTEN bildiği zayıf konular (uydurma yok).
@@ -6312,7 +6316,19 @@ function hazirlikOturumSayisi(konuSayisi, kalanGun, kaynak, oturumKonu) {
      diyor." Denemede son oturum YENİ konu taşımaz: son oturum, daha önce
      çalışılmış en zayıf konuların TEKRARIDIR. Bu yüzden çalışma oturumlarının
      üstüne 1 son tekrar oturumu eklenir (tavan içinde). */
-  if (kaynak === "deneme") return Math.max(1, Math.min(calisma + 1, tavan));
+  if (kaynak === "deneme") {
+    /* v100 — Denemede plan pencereyi DOLDURUR: her gün bir oturum.
+       Konu sayısı günlere yetmiyorsa oturum başına konu 3 → 2 → 1 düşer ve
+       araya TEKRAR oturumları girer; böylece boş gün kalmaz.
+       18 konu / 27 gün → 27 oturum (her gün 1 konu + tekrarlar).
+       Konu çok azsa (ör. 3 konu) günleri doldurmak için abartılmaz:
+       en çok çalışma × 3 oturum. */
+    /* Oturum = konu sayısı + her 2 konuya 1 TEKRAR oturumu (+son tekrar
+       ayrı). 18 konu → 27 oturum = 27 günün tamamı dolu. Konu çoksa pencere
+       sınırı (tavan) devreye girer, oturum başına konu 2-3'e çıkar. */
+    const hedef = Math.min(tavan, Math.max(calisma + 1, konuSayisi + Math.ceil(konuSayisi / 2)));
+    return Math.max(1, hedef);
+  }
   return Math.max(1, Math.min(calisma, tavan));
 }
 
@@ -6333,8 +6349,11 @@ function hazirlikGunSeti(n, kalanGun, kaynak) {
   // Deneme hedefi uzun vadeli: plan YARINDAN başlayıp sınava kadar tüm günleri
   // kullanır. Okul sınavında ise konular sınav haftasına yakın çalışılır
   // (en fazla 21 gün önce) — 7 hafta önceden "sınava hazırlık" yazmasın.
-  const enErkenDeneme = Math.max(enGec, kalan - 1);       // yarın
-  const enErkenOkul = Math.max(enGec, Math.min(kalan - 1, Math.max(21, n + 1)));
+  // v100 — deneme hazırlığı en fazla SON 30 GÜNE yayılır: sınav 3 ay sonraysa
+  // "her gün deneme hazırlığı" anlamsız olur. 30 gün ve daha yakınsa YARINDAN
+  // başlar (boş gün kalmaz).
+  const enErkenDeneme = Math.max(enGec, Math.min(kalan - 1, HAZIRLIK_DENEME_PENCERE));
+  const enErkenOkul = Math.max(enGec, Math.min(kalan - 1, Math.max(14, n + 1)));
   const enErken = (kaynak === "okul") ? enErkenOkul : enErkenDeneme;
   const yayilim = Math.max(1, enErken - enGec);
   const set = [];
@@ -6527,17 +6546,69 @@ function hazirlikPlani() {
     // v99 — denemede SON oturum yeni konu taşımaz: daha önce çalışılmış en
     // zayıf konuların tekrarıdır (metin ile liste çelişmesin).
     const tekrarVar = !!sv.sonTekrar && yerel.length > 1;
-    const calismaOturum = tekrarVar ? yerel.length - 1 : yerel.length;
-    const bolum = calismaOturum ? Math.ceil(sv.konular.length / calismaOturum) : 0;
-    yerel.forEach((k, i) => {
-      const sonuncu = (i === yerel.length - 1);
-      k.konular = (tekrarVar && sonuncu)
-        ? sv.konular.slice(0, Math.max(1, sv.oturumKonu || HAZIRLIK_OTURUM_KONU))
-        : sv.konular.slice(i * bolum, i * bolum + bolum);
-      k.tekrar = (tekrarVar && sonuncu);
-      k.son = sonuncu;
-      k.tekOturum = (yerel.length === 1);
-    });
+    const boy = Math.max(1, sv.oturumKonu || HAZIRLIK_OTURUM_KONU);
+    if (tekrarVar) {
+      /* v100 — DENEME: boş gün bırakma.
+         Pencere (yarın → deneme−3) oturum sayısı kadar güne yayıldı.
+         Konular bu günlere EŞİT dağıtılır (1-3 konu); konu yetmediği günler
+         YENİ konu değil, daha önce çalışılan konuların TEKRARIDIR.
+         Son oturum her zaman "son tekrar"dır. */
+      const sonI = yerel.length - 1;
+      const havuz = sv.konular;
+      const calismaSay = Math.max(1, Math.min(havuz.length, sonI));
+      const tekrarSay = Math.max(0, sonI - calismaSay);
+      // Tekrar oturumları zaman çizelgesine EŞİT aralıkla serpilir.
+      const tip = new Array(sonI).fill("calisma");
+      for (let t = 1; t <= tekrarSay; t++) {
+        let idx = Math.round(t * (sonI - 1) / (tekrarSay + 1));
+        idx = Math.max(0, Math.min(sonI - 1, idx));
+        while (idx < sonI - 1 && tip[idx] !== "calisma") idx++;
+        while (idx > 0 && tip[idx] !== "calisma") idx--;
+        if (tip[idx] === "calisma") tip[idx] = "tekrar";
+      }
+      // Konular çalışma oturumlarına eşit dağıtılır (kalan günlere 1 fazla).
+      const calismaSlot = [];
+      for (let i = 0; i < sonI; i++) if (tip[i] === "calisma") calismaSlot.push(i);
+      const taban = calismaSay ? Math.floor(havuz.length / calismaSlot.length) : 0;
+      const artan = calismaSay ? havuz.length % calismaSlot.length : 0;
+      let idx = 0;
+      calismaSlot.forEach((slot, j) => {
+        const n = taban + (j < artan ? 1 : 0);
+        yerel[slot].konular = havuz.slice(idx, idx + n);
+        idx += n;
+      });
+      // Tekrar oturumu: kendinden ÖNCEKİ çalışma oturumlarının konularını
+      // tekrar eder (en yeniden geriye doğru, aralık artarak).
+      let tNo = 0;
+      for (let i = 0; i < sonI; i++) {
+        if (tip[i] !== "tekrar") continue;
+        const onceki = calismaSlot.filter(x => x < i);
+        if (!onceki.length) {           // hiç çalışma yoksa: en zayıf konular
+          yerel[i].konular = havuz.slice(0, boy);
+        } else {
+          const geri = 1 + (tNo % Math.min(3, onceki.length));
+          const kaynak = onceki[Math.max(0, onceki.length - geri)];
+          yerel[i].konular = yerel[kaynak].konular.slice(0, boy);
+        }
+        tNo++;
+      }
+      yerel.forEach((k, i) => {
+        k.tekrar = (i === sonI) ? true : (tip[i] === "tekrar");
+        k.son = (i === sonI);
+        k.tekOturum = (yerel.length === 1);
+      });
+      // Son tekrar: en zayıf konuların son bakışı.
+      yerel[sonI].konular = havuz.slice(0, boy);
+    } else {
+      const calismaOturum = yerel.length;
+      const bolum = calismaOturum ? Math.ceil(sv.konular.length / calismaOturum) : 0;
+      yerel.forEach((k, i) => {
+        k.konular = sv.konular.slice(i * bolum, i * bolum + bolum);
+        k.tekrar = false;
+        k.son = (i === yerel.length - 1);
+        k.tekOturum = (yerel.length === 1);
+      });
+    }
   });
 
   // v98 — aynı sınavın oturum sırası (deneme etiketinde "2/6" görünsün)
@@ -6565,8 +6636,9 @@ function hazirlikPlani() {
     const denemeMi = k.kaynak === "deneme";
     const adlar = k.konular.slice(0, 2).map(x => splitKey(x).topic).join(", ");
     const ek = k.konular.length > 2 ? " +" + (k.konular.length - 2) : "";
+    // v100 — tekrar oturumları "Deneme tekrarı" der (yeni konu değil, tekrar).
     const baslik = denemeMi
-      ? (sonMu ? "Deneme öncesi son tekrar" : "Deneme hazırlığı")
+      ? (sonMu ? "Deneme öncesi son tekrar" : (k.tekrar ? "Deneme tekrarı" : "Deneme hazırlığı"))
       : (sonBaslik ? "Son tekrar + yazılı örnek senaryo" : "Sınava hazırlık");
     const etiket = baslik + (denemeMi ? "" : ": " + k.ders) +
       (denemeMi ? (sonMu ? " (" + k.oturumSira + "/" + k.oturumToplam + ")" : ": " + k.konular.length + " konu · " + k.oturumSira + "/" + k.oturumToplam) : "") +
@@ -6792,7 +6864,8 @@ function calendarEventMap() {
       kisa: k.kaynak === "deneme"
         ? (k.son && !k.tekOturum
             ? "Deneme öncesi son tekrar"
-            : "Deneme hazırlığı · " + k.konular.length + " konu (" + k.oturumSira + "/" + k.oturumToplam + ")")
+            : (k.tekrar ? "Deneme tekrarı" : "Deneme hazırlığı") + " · " + k.konular.length +
+              " konu (" + k.oturumSira + "/" + k.oturumToplam + ")")
         : (k.son && !k.tekOturum ? "Son konu tekrarı: " : "Sınava hazırlık: ") + k.ders,
       kaynak: k.kaynak, examId: k.examId,
       ders: k.ders, gunOnce: k.gunOnce, konular: k.konular, detay: k.detay,
@@ -7021,18 +7094,22 @@ function renderCalDetailHTML(events) {
       const denemeMi = e.kaynak === "deneme";
       const yazili = !denemeMi;
       const baslik = denemeMi
-        ? (e.son ? "Deneme öncesi son tekrar" : "Deneme hazırlığı · " + konular.length + " konu") +
+        ? (e.son ? "Deneme öncesi son tekrar"
+                 : (e.tekrar ? "Deneme tekrarı · " : "Deneme hazırlığı · ") + konular.length + " konu") +
           (e.oturumToplam ? " (" + (e.oturumSira || 1) + "/" + e.oturumToplam + ")" : "")
         : (e.son ? "Son konu tekrarı + yazılı örnek senaryo: " : "Sınava hazırlık: ") + esc(e.ders || "");
       const aciklama2 = denemeMi
         ? (e.son
             ? "Denemeye " + (e.gunOnce || 3) + " gün kaldı. Bugün yeni konu açma: daha önce çalıştığın en zayıf konuların son tekrarı + hızlı soru taraması."
-            : "Bu oturumda denemede yanlış yaptığın konular çalışılır.")
+            : (e.tekrar
+                ? "Bugün yeni konu yok: birkaç gün önce çalıştığın konuları tekrar ediyorsun (kalıcılık için)."
+                : "Bu oturumda denemede yanlış yaptığın konular çalışılır."))
         : aciklama;
       h += '<div class="cd-box" style="border-color:' + kenar + ';"><div style="font-weight:800;font-size:13px;color:' + basRenk + ';">' + icon(e.son ? "pen-line" : "shield-check", 14, "vertical-align:-2px;") + " " + baslik + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
         '<div class="text-xs text-muted" style="margin-top:2px;">' + aciklama2 + "</div>" +
         (denemeMi && e.denemeBilgi ? '<div class="text-xs" style="margin-top:4px;color:var(--brand-blue);font-weight:600;">' + esc(e.denemeBilgi) + "</div>" : "") +
-        (konular.length ? konuListesi((e.son ? (denemeMi ? "Son tekrar edilecek konular" : "Son tekrar konuları") : "Çalışılacak konular") + " (" + konular.length + "):", konular) : "") + "</div>";
+        (konular.length ? konuListesi((e.son ? (denemeMi ? "Son tekrar edilecek konular" : "Son tekrar konuları")
+          : (e.tekrar ? "Tekrar edilecek konular" : "Çalışılacak konular")) + " (" + konular.length + "):", konular) : "") + "</div>";
     }
     if (e.tip === "gece" || e.tip === "sabah") {
       // v96 — sınav gecesi / sınav sabahı: kısa çalışma, kendi rengiyle.

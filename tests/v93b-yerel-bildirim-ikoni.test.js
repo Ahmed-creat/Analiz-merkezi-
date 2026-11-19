@@ -44,6 +44,13 @@ function ok(ad, kosul, ek) {
   console.log("  ✗ " + ad + (ek ? " → " + ek : ""));
   return false;
 }
+// v100 — sürüm numarası üç haneye çıktı (v100-...); sayı okunur, harf sabit değil.
+function surumNoEnAz(metin, esik, ekDesen) {
+  const m = metin.match(/v(\d+)(?:[a-z]\d*)?-[a-z0-9-]+/) || metin.match(/v(\d+)/);
+  const no = m ? Number(m[1]) : 0;
+  const ekOk = !ekDesen || ekDesen.test(metin);
+  return no >= esik && ekOk;
+}
 
 console.log("\n== 1) Yerel bildirim görselleri push ile AYNI ==");
 {
@@ -103,8 +110,8 @@ console.log("\n== 4) Gece sessizliği (sunucu 21–06 susuyor, uygulama da sussu
 
 console.log("\n== 5) Sürüm damgası (kullanıcı yeni sürümü görsün) ==");
 {
-  ok("PWA sürümü v93b+", /const PWA_SURUM = "v9[3-9][a-z]?-[a-z-]+";/.test(APP), (APP.match(/PWA_SURUM = "([^"]+)"/)||[])[1]);
-  ok("service worker cache v93b+", /v9[3-9][a-z]?-[a-z-]+/.test(SW), (SW.match(/const CACHE = "([^"]+)"/)||[])[1]);
+  ok("PWA sürümü v93b+", surumNoEnAz(APP, 93, /-[a-z-]+";/), (APP.match(/PWA_SURUM = "([^"]+)"/)||[])[1]);
+  ok("service worker cache v93b+", surumNoEnAz(SW, 93, /-[a-z-]+/), (SW.match(/const CACHE = "([^"]+)"/)||[])[1]);
 }
 
 console.log("\n" + "─".repeat(58));

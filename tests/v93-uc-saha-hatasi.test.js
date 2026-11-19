@@ -37,6 +37,13 @@ const SQL11 = fs.readFileSync(path.join(KOK, "supabase", "migrations", "0011_den
 let gecen = 0, kalan = 0;
 const hatalar = [];
 function ok(ad, kosul, ek) { if (kosul) gecen++; else { kalan++; hatalar.push(ad + (ek ? " → " + ek : "")); } }
+// v100 — sürüm numarası üç haneye çıktı (v100-...); sayı okunur, harf sabit değil.
+function surumNoEnAz(metin, esik, ekDesen) {
+  const m = metin.match(/v(\d+)(?:[a-z]\d*)?-[a-z0-9-]+/) || metin.match(/v(\d+)/);
+  const no = m ? Number(m[1]) : 0;
+  const ekOk = !ekDesen || ekDesen.test(metin);
+  return no >= esik && ekOk;
+}
 function esit(ad, gelen, beklenen) { ok(ad, JSON.stringify(gelen) === JSON.stringify(beklenen), "gelen: " + JSON.stringify(gelen) + " · beklenen: " + JSON.stringify(beklenen)); }
 
 // ------------------------------------------------------------
@@ -165,8 +172,8 @@ console.log("\n== 7) Bildirim garantisi (sunucu / 0010) ==");
 
 console.log("\n== 8) Sürüm damgası ==");
 {
-  ok("PWA sürümü v93+", /const PWA_SURUM = "v9[3-9]/.test(APP));
-  ok("service worker cache v93+", /v9[3-9][a-z]?-[a-z-]+/.test(SW));
+  ok("PWA sürümü v93+", surumNoEnAz(APP, 93));
+  ok("service worker cache v93+", surumNoEnAz(SW, 93));
   const mHtml = /v93-bildirim-garantisi/.test(HTML) || true;
   ok("html'de eski v92 damgası kalmadı", !/v92-saf-siir-ayri-konu/.test(HTML), mHtml ? "" : "");
 }

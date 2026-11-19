@@ -330,3 +330,88 @@ aralık, okul ≤ 21 gün, İvme Ölçer = plan sayısı, 4.3 hafta, 4.08).
 `test:hepsi` EXIT=0 · v95 48/48 · v37 53/53 · sw 24/24.
 
 Sürüm: `PWA_SURUM = "v99-tek-ivme-yayilim"`.
+
+---
+
+## v100 — "Eğer bu kadar boş ise günde 3 konu yerine 2 veya 1 de çalışabilmeli"
+
+Kullanıcı (67): **"Sen anlamamışsın ki yine çok fazla boş gün oluyor. Eğer bu
+kadar boş ise günde 3 konu yerine 2 veya 1 de çalışabilmeli, neden boş günü
+olsun ki."**
+
+### 1) Kök neden: oturum sayısı konu sayısına bağlıydı
+v99'da deneme hazırlığı **günde 3 konu** varsayıp `oturum = çalışma + 1`
+üretiyordu: 18 konu → **7 oturum**. 30 günlük pencereye 7 oturum serpilince
+aralıklar 2-3 güne çıkıyor, yani **boş gün** kalıyordu. Sorun "3 konu"da değil,
+oturum sayısının pencereden bağımsız hesaplanmasındaydı.
+
+### 2) Yeni kural: oturum sayısı = pencereyi dolduracak sayı
+`hazirlikOturumSayisi()` (deneme):
+
+```
+hedef = konuSayisi + ceil(konuSayisi / 2)      // 18 → 27
+oturum = min(HAZIRLIK_DENEME_OTURUM_TAVAN,     // 40
+             max(calisma + 1, hedef))
+```
+
+18 konu → **27 oturum**; pencere 30 gün → 27 oturum **her güne bir tane**,
+boşluk yok. Konu sayısı güne yetmediğinde **günde 3 konu yerine 1-2 konu**
+çalışılır; yetmediği yerde oturum **tekrar oturumu** olur (yeni konu açılmaz).
+
+### 3) Dağıtım: çalışma / tekrar ayrımı
+`tip[]` dizisi tutulur: ilk `çalışma` oturumu yeni konular (eşit paylaşım,
+taban + artan: 18 konu / 18 çalışma → çoğu gün **1 konu**), kalan oturumlar
+**tekrar**: daha önce çalışılmış konulardan geriye doğru seçilir; son oturum
+`Deneme öncesi son tekrar` ilk `boy` (en zayıf) konuyu tekrar eder.
+
+Etiketler:
+```
+çalışma günü : Deneme hazırlığı: 1 konu · 5/27
+tekrar günü  : Deneme tekrarı: 1 konu · 4/27
+son gün      : Deneme öncesi son tekrar (27/27)
+```
+Tekrar gününün açıklaması: *"Bugün yeni konu yok: birkaç gün önce çalıştığın
+konuları tekrar ediyorsun (kalıcılık için)."* — liste başlığı **"Tekrar
+edilecek konular"** (v66 kuralı: yeni konu açma denip konu listelemek yok;
+tekrar listesi adıyla tekrar).
+
+### 4) Uzak sınav: 3 ay boyunca "deneme hazırlığı" olmaz
+`HAZIRLIK_DENEME_PENCERE = 30` — deneme 30 günden uzaksa hazırlık **son 30
+güne** sıkışır (`enErkenDeneme = min(kalan − 1, 30)`); sınav 30 günden yakınsa
+zaten yarın başlar. Okul sınavı penceresi 21 → **14 gün** (`max(14, n + 1)`)
+yapıldı: 9 okul sınavı artık 14 güne sığar, daha erken "hazırlık" yazmaz.
+
+### 5) Plan kutusu (18 hata konusu, 30 gün)
+```
+Deneme hazırlık planı: 18 çalışma + 9 tekrar · 18 konu
+hataların 18/18 konusu kapsanıyor · haftada ~5 konu
+İlk oturum: 21.11.2026 · son oturum: 17.12.2026 (denemeden 3 gün önce)
+```
+Konu sayısı **18** (tekrar oturumları sayıyı şişirmez), çalışma + tekrar ayrı
+gösterilir.
+
+### 6) Ölçüm (bugün 20.11.2026, 18 hata konusu, son net 77.5, hedef 95)
+| Senaryo | Sonuç |
+|---|---|
+| 30 gün | **27 oturum**, 21.11 → 17.12, **boşluk hep 1 (her gün)**; 18 çalışma + 9 tekrar; oturum başına 1-3 konu (çoğu 1) |
+| Kısa pencere (9 gün) | 6 oturum, her gün, **3 konu/oturum** (15 konu) |
+| Uzak sınav (92 gün) | 27 oturum **yalnız son 30 günde** (21.01.2027 → 17.02.2027) |
+
+İvme cümlesi v99'dan değişmedi: **tek değer** — *"Hedef 95 net · son net 77.5 →
++17.5 net kaldı · 30 gün (4.3 hafta) → haftada +4.08 net gerekiyor."*
+
+### 7) Test
+`tests/v96-tekrar-takvim.test.js` → **154/154**; bölüm 8 v100 tasarımına göre
+güncellendi (27 oturum, oturum başına 1-3 konu, `hazırlığı|tekrarı`), **bölüm
+10** eklendi: boş gün yok (27 oturum her gün), yarın başlar, −3 günde biter,
+tekrar oturumları daha önce çalışılmış konuları tekrar eder, 3 konuluk günde
+≤5 oturum, 92 günlük pencerede ilk oturum ≥58. gün.
+
+Üç haneli sürüm numarası için eski testlerdeki sabit `v9x` regexleri
+**sayıya** çevrildi (v72 · v78 · v93 · v93b · v94): eşik gevşetmesi değil,
+damga biçimi artık `v100-…` (v100 ≥ v94 ✓).
+
+`test:hepsi` **EXIT=0** · v96 154/154 · v95 48/48 · v37 53/53 · sw 24/24 ·
+sözdizimi 40/40.
+
+Sürüm: `PWA_SURUM = "v100-her-gun-plan"`.

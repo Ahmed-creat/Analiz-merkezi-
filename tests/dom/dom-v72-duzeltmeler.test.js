@@ -97,7 +97,8 @@ const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
 const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
 /* v73 sürümü damgayı ilerletti; testin amacı damganın BOŞ ve eski
    kalmamasıdır — sabit sürüm adı değil. */
-ok("sürüm damgası v72 veya sonrası", /^v7[2-9]-|^v[89]\d/.test(surum), surum);
+/* v100 — sürüm numarası üç haneye çıktı (v100-...); sayı okunur. */
+ok("sürüm damgası v72 veya sonrası", Number((surum.match(/^v(\d+)/) || [])[1] || 0) >= 72, surum);
 ok("SW damgası sürümle aynı", cache.indexOf(surum) > 0, cache);
 
 console.log("\n" + "─".repeat(56));
