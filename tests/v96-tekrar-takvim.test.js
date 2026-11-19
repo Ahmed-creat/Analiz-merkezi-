@@ -332,6 +332,61 @@ console.log("\n== 6) Takvim ÇIKTISI gerçekten renkli blok üretiyor (davranı�
     JSON.stringify(Object.keys(olaylar["2027-01-13"] || [])));
 }
 
+console.log("\n== 7) Gün detayı başlığı: YALNIZ tür + ders (konu tekrarı yok) ==");
+{
+  // KULLANICI: "başlıklara neden konuları yazıyorsun ki, zaten konular altta
+  // yazıyor. 'Son konu tekrarı: MATEMATİK', 'Sınava hazırlık: Din Kültürü'."
+  const g = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
+    "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState", "icon", "esc", "attr",
+    [
+      "let calSelected = null;",
+      SABITLER, RENK_BLOGU, fnCikar("calRenk"),
+      fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"), fnCikar("hazirlikGunSeti"),
+      fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"), fnCikar("calendarEventMap"),
+      fnCikar("renderCalDetailHTML"),
+      "\nreturn { gun: function (ds) { calSelected = ds; return renderCalDetailHTML(calendarEventMap()); } };"
+    ].join("\n"));
+  const s3 = senaryo();
+  const D = g(s3, () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { },
+    n => "[" + n + "]", x => String(x == null ? "" : x), x => String(x == null ? "" : x));
+
+  // son tur günü (TDE sınavı 2027-01-14 → son oturum 2027-01-11)
+  const son = D.gun("2027-01-11");
+  ok("son tur başlığı 'Son konu tekrarı + yazılı örnek senaryo: <ders>'",
+    /Son konu tekrarı \+ yazılı örnek senaryo: TDE\b/.test(son),
+    (son.match(/Son konu tekrarı[^<]{0,140}/) || [""])[0]);
+  ok("başlıkta konu adı YOK (başlık satırında ' · ' ile konu sıralanmıyor)",
+    !/Son konu tekrarı \+ yazılı örnek senaryo: TDE · /.test(son));
+  ok("konular yine alttaki listede duruyor",
+    /Son tekrar konuları \(\d+\):/.test(son) && /cd-row/.test(son));
+
+  // normal hazırlık günü
+  const haz = D.gun("2026-12-21");
+  ok("hazırlık başlığı 'Sınava hazırlık: <ders>'",
+    /Sınava hazırlık: TDE\b/.test(haz), (haz.match(/Sınava hazırlık[^<]{0,120}/) || [""])[0]);
+  ok("hazırlık başlığında konu adı yok", !/Sınava hazırlık: TDE · /.test(haz));
+  ok("hazırlık açıklaması 'hata günlüğü' gibi uydurma terim kullanmıyor",
+    !/hata günlüğü/i.test(haz) && /Denemelerim'deki hatalarına/.test(haz));
+
+  // Takvim bloğu ile gün detayı AYNI başlık dilini kullanır (v97).
+  const harita = (function () {
+    const h = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
+      "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState",
+      [SABITLER, fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"),
+       fnCikar("hazirlikGunSeti"), fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"),
+       fnCikar("calendarEventMap"), "\nreturn calendarEventMap();"].join("\n"));
+    return h(senaryo(), () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { });
+  })();
+  const tumEtiketler = Object.values(harita).flat().map(e => e.kisa || e.etiket).join(" | ");
+  ok("takvim bloğunda 'Son konu tekrarı: TDE'", tumEtiketler.indexOf("Son konu tekrarı: TDE") >= 0,
+    tumEtiketler.slice(0, 200));
+  ok("takvim bloğunda 'Sınava hazırlık: TDE'", tumEtiketler.indexOf("Sınava hazırlık: TDE") >= 0);
+  ok("takvim bloğunda 'Sınav gecesi: TDE'", tumEtiketler.indexOf("Sınav gecesi: TDE") >= 0);
+  ok("takvim bloğunda 'Sınav sabahı: TDE'", tumEtiketler.indexOf("Sınav sabahı: TDE") >= 0);
+  ok("takvim bloğunda eski kısa 'Gece:'/'Sabah:' etiketi kalmadı",
+    !/\bGece: |\bSabah: /.test(tumEtiketler), tumEtiketler.slice(0, 200));
+}
+
 console.log("\n" + "─".repeat(56));
 if (kalan) {
   hatalar.forEach(x => console.log(" ✗ " + x));

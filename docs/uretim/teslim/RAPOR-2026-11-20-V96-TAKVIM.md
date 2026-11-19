@@ -1,6 +1,6 @@
 # v96 — Hazırlık bitiş kuralı, sınav gecesi/sabahı, renkli takvim
 
-**Tarih:** 20 Kasım 2026 · **Sürüm:** `v96b-gercek-konu` · **Dal:** `arena/cc4de070-analiz-merkezi`
+**Tarih:** 20 Kasım 2026 · **Sürüm:** `v97-sade-baslik` · **Dal:** `arena/cc4de070-analiz-merkezi`
 
 ## Kullanıcının geri bildirimi (birebir)
 
@@ -122,7 +122,7 @@ TDE örneği (21 konu → 7 oturum, sınav 14 Ocak 2027):
 
 | Test | Sonuç |
 |---|---|
-| `tests/v96-tekrar-takvim.test.js` (yeni) | **70/70 ✓** |
+| `tests/v96-tekrar-takvim.test.js` (yeni) | **81/81 ✓** |
 | `tests/v95-hazirlik-plani.test.js` (v96 kuralına güncellendi) | **48/48 ✓** |
 | `tests/v37-davranis.test.js` (harness: yeni fonksiyonlar) | **53/53 ✓** |
 | `npm run -s test:hepsi` | **EXIT=0** |
@@ -143,3 +143,31 @@ defteri" geçmiyor.
 - `tests/v96-tekrar-takvim.test.js` (yeni), `tests/v95-…` (güncellendi),
   `tests/v37-…` (harness güncellendi)
 - `package.json` — `test:v96`, `test:hepsi` zincirine eklendi
+
+## v97 — Başlıklarda konu adı YOK (kullanıcı düzeltmesi)
+
+KULLANICI (20 Kas 2026, ekran görüntüsü):
+> "Başlıklara neden konuları yazıyorsun ki, zaten konular altta yazıyor.
+> **Son konu tekrarı: MATEMATİK**, **Sınava hazırlık: Din Kültürü** vb yazsın
+> başlıkta."
+
+Önce başlık, etiketin tamamını (`Sınava hazırlık: Din Kültürü · 1.3 Kur'an'dan
+Mesajlar, 2.1 Allah'ın Varlığının Delilleri +1`) basıyordu; konular hemen
+altındaki listede bir kez daha görünüyordu. Artık başlık **yalnız tür + ders**:
+
+| Yer | Yeni başlık |
+|---|---|
+| Gün detayı (son tur) | `Son konu tekrarı + yazılı örnek senaryo: Türk Dili ve Edebiyatı (sınavdan 3 gün önce)` |
+| Gün detayı (hazırlık) | `Sınava hazırlık: Din Kültürü (sınavdan 9 gün önce)` |
+| Takvim bloğu | `Son konu tekrarı: Matematik` / `Sınava hazırlık: Din Kültürü` |
+| Takvim bloğu (sınav öncesi) | `Sınav gecesi: Biyoloji` / `Sınav sabahı: Biyoloji` (eski `Gece:` / `Sabah:` kısaltmaları kalktı) |
+| Konu tekrarı bloğu | `Konu tekrarı · N konu` |
+
+Konular **yalnız alttaki listede** görünür (`Son tekrar konuları (2):`,
+`Çalışılacak konular (3):`). Ayrıca hazırlık açıklamasındaki "hata günlüğü"
+terimi de kaldırıldı → "Denemelerim'deki hatalarına ve hafıza gücüne göre
+seçilen en zayıf N konu."
+
+Test (v96 dosyası, bölüm 7): gün detayı başlığında konu adı geçmediği, konuların
+alttaki listede durduğu, takvim bloğu ile gün detayının AYNI başlık dilini
+kullandığı doğrulanır.

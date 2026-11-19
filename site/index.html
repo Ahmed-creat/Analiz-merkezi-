@@ -6505,7 +6505,7 @@ function calendarEventMap() {
     put(d, {
       tip: "tek",
       etiket: "Konu tekrarı · " + adlar + (liste.length > 2 ? " +" + (liste.length - 2) : ""),
-      kisa: "Tekrar · " + liste.length + " konu",
+      kisa: "Konu tekrarı · " + liste.length + " konu",
       detay: liste.length + " konu (" + Array.from(new Set(liste.map(x => x.day + ". gün"))).join(", ") + ")",
       sira: 3
     });
@@ -6527,7 +6527,11 @@ function calendarEventMap() {
   //    v96 — son oturum "son tekrar + yazılı örnek senaryo" olarak işaretlenir.
   hazirlikPlani().forEach(k => {
     put(k.date, {
-      tip: "hazirlik", etiket: k.etiket, kisa: (k.son ? "Son tekrar: " : "Hazırlık: ") + k.ders, kaynak: k.kaynak, examId: k.examId,
+      // v97 — takvim bloğu ve gün detayı AYNI başlık dilini kullanır:
+      // "Son konu tekrarı: Matematik" / "Sınava hazırlık: Din Kültürü"
+      tip: "hazirlik", etiket: k.etiket,
+      kisa: (k.son && !k.tekOturum ? "Son konu tekrarı: " : "Sınava hazırlık: ") + k.ders,
+      kaynak: k.kaynak, examId: k.examId,
       ders: k.ders, gunOnce: k.gunOnce, konular: k.konular, detay: k.detay,
       son: !!k.son, tekOturum: !!k.tekOturum, sira: k.son ? 2.5 : 2
     });
@@ -6535,7 +6539,9 @@ function calendarEventMap() {
   // 5) v96 — SINAV GECESİ / SABAHI: kendi rengiyle ayrı satır
   sinavYakinlari().forEach(k => {
     put(k.date, {
-      tip: k.tip, etiket: k.etiket, kisa: (k.tip === "gece" ? "Gece: " : "Sabah: ") + k.ders, kaynak: k.kaynak, examId: k.examId, ders: k.ders,
+      tip: k.tip, etiket: k.etiket,
+      kisa: (k.tip === "gece" ? "Sınav gecesi: " : "Sınav sabahı: ") + k.ders,
+      kaynak: k.kaynak, examId: k.examId, ders: k.ders,
       detay: k.detay, bildirim: k.bildirim, sira: k.tip === "gece" ? 4 : 0.5
     });
   });
@@ -6733,11 +6739,15 @@ function renderCalDetailHTML(events) {
       const aciklama = e.son
         ? "SON TUR: konular burada bitiyor (sınavdan en az 3 gün önce). Bugün konu tekrarı + yazılı örnek senaryoları çöz; yeni konu açma."
         : (konular.length
-          ? "Bugünün konuları: hata günlüğüne ve hafıza gücüne göre en zayıf " + konular.length + " konu seçildi."
+          ? "Bugünün konuları: Denemelerim'deki hatalarına ve hafıza gücüne göre seçilen en zayıf " + konular.length + " konu."
           : "Bu oturum için seçilmiş konu yok: sınav konularını bir kez gözden geçir.");
       const basRenk = e.son ? "#C2185B" : "var(--on-warning-bg)";
       const kenar = e.son ? "rgba(194,24,91,0.45)" : "rgba(245,166,35,0.4)";
-      h += '<div class="cd-box" style="border-color:' + kenar + ';"><div style="font-weight:800;font-size:13px;color:' + basRenk + ';">' + icon(e.son ? "pen-line" : "shield-check", 14, "vertical-align:-2px;") + " " + (e.son ? "Son tekrar + yazılı örnek senaryo: " : "Sınava Hazırlık: ") + esc(e.etiket.replace(/^Son tekrar \+ yazılı örnek senaryo: /, "").replace(/^Sınava hazırlık: /, "")) + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
+      // v97 — KULLANICI: "başlıklara neden konuları yazıyorsun ki, zaten konular
+      // altta yazıyor. 'Son konu tekrarı: MATEMATİK', 'Sınava hazırlık: Din
+      // Kültürü' yazsın başlıkta." Başlık artık YALNIZ tür + ders adı taşır;
+      // konu adları alttaki listede kalır (tekrar yok).
+      h += '<div class="cd-box" style="border-color:' + kenar + ';"><div style="font-weight:800;font-size:13px;color:' + basRenk + ';">' + icon(e.son ? "pen-line" : "shield-check", 14, "vertical-align:-2px;") + " " + (e.son ? "Son konu tekrarı + yazılı örnek senaryo: " : "Sınava hazırlık: ") + esc(e.ders || "") + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
         '<div class="text-xs text-muted" style="margin-top:2px;">' + aciklama + "</div>" +
         (konular.length ? konuListesi((e.son ? "Son tekrar konuları" : "Çalışılacak konular") + " (" + konular.length + "):", konular) : "") + "</div>";
     }
