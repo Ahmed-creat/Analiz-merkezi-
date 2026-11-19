@@ -47,6 +47,7 @@ function ok(ad, kosul, ek) {
   return false;
 }
 const bekle = (ms) => new Promise(r => setTimeout(r, ms));
+const bildirimSayisi = (w) => Number(w.eval("(state.notifications || []).length"));
 
 /* Kullanıcının canlı hesabı: 9. sınıf + iki kopya Okulizyon denemesi */
 function durum(kopyali) {
@@ -217,9 +218,10 @@ async function ac(state, ayar) {
        Burada o çağrıyı YAKALAYIP seçenekleri ölçüyoruz. */
     const yakalanan = [];
     const { dom, w } = await ac(durum(false), { izin: "granted", bildirimYakala: yakalanan });
+    // Gündüz (15:00) → sistem bildirimi gösterilir
     w.eval(`(function () {
       try { Object.defineProperty(document, "visibilityState", { configurable: true, get: function () { return "hidden"; } }); } catch (e) {}
-      yerelSistemBildirimi({ title: "Akşam: bugün seni bekleyenler", body: "2 görev", kind: "garanti" });
+      yerelSistemBildirimi({ title: "Akşam: bugün seni bekleyenler", body: "2 görev", kind: "garanti" }, new Date(2026, 10, 19, 15, 0, 0));
     })()`);
     await bekle(400);
     ok("yerel gösterim çağrıldı", yakalanan.length > 0, "adet: " + yakalanan.length);
@@ -227,6 +229,21 @@ async function ac(state, ayar) {
     ok("büyük görsel BOŞ görsel", /bildirim-bos\.png$/.test(String(sec.icon || "")), String(sec.icon));
     ok("rozet tek renkli rozet", /bildirim-rozet\.png$/.test(String(sec.badge || "")), String(sec.badge));
     ok("uygulama ikonu (icon-192) KULLANILMIYOR", !/icon-192/.test(String(sec.icon || "") + String(sec.badge || "")));
+
+    /* v93c — GECE SESSİZLİĞİ: sunucu 21–06 susuyor; uygulama da sussun.
+       (Kullanıcı 21:14'te sistem bildirimi aldı.) Sistem bildirimi yok ama
+       uygulama içi listede kayıt KALIR — kullanıcı açınca görür. */
+    const onceSayi = yakalanan.length;
+    const listeOnce = bildirimSayisi(w);
+    w.eval(`yerelSistemBildirimi({ title: "Gece testi", body: "3 görev", kind: "garanti" }, new Date(2026, 10, 19, 3, 0, 0))`);
+    await bekle(250);
+    ok("gece (03:00) SİSTEM bildirimi gösterilmiyor", yakalanan.length === onceSayi, "yeni çağrı: " + (yakalanan.length - onceSayi));
+
+    // Aynı içerik uygulama içi listeye düşer (addNotification → yerelSistemBildirimi)
+    w.eval(`addNotification({ title: "Gece testi", body: "3 görev", kind: "garanti", topicKey: "gece" })`);
+    await bekle(250);
+    ok("gece doğan bildirim UYGULAMA İÇİ listede duruyor",
+      bildirimSayisi(w) === listeOnce + 1, listeOnce + " → " + bildirimSayisi(w));
     dom.window.close();
   }
 

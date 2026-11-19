@@ -2942,11 +2942,13 @@ function coachMessages() {
    "bildirim-bos.png" (boş büyük görsel) + "bildirim-rozet.png" (tek renkli
    küçük rozet) kullanıyor — o yüzden orada sorun yoktu.
    DÜZELTME: iki yerel yol da push ile AYNI görselleri kullanır. */
-function yerelSistemBildirimi(n) {
+function yerelSistemBildirimi(n, simdi) {
   try {
     if (typeof document === "undefined" || document.visibilityState !== "hidden") return;
     if (typeof Notification === "undefined" || Notification.permission !== "granted") return;
     if (!("serviceWorker" in navigator)) return;
+    // v93c — gece sistem bildirimi yok (uygulama içi kayıt yukarıda eklendi)
+    if (sessizSaatMi(simdi)) return;
     const gunAnahtari = "am_yerel_sys_" + todayStr();
     let m = {};
     try { m = JSON.parse(localStorage.getItem(gunAnahtari) || "{}") || {}; } catch (e) { m = {}; }
@@ -3005,6 +3007,19 @@ const TELAFI_PENCERE = { sabahIlk: 7 * 60 + 35, sabahSon: 14 * 60, aksamIlk: 19 
    'Akşam: bugün seni bekleyenler'de yok"). */
 const BILDIRIM_GORSEL = "./icons/bildirim-bos.png";   // büyük görsel: BOŞ
 const BILDIRIM_ROZET = "./icons/bildirim-rozet.png";  // üst bar: tek renkli rozet
+
+/* v93c — GECE SESSİZLİĞİ UYGULAMADA DA GEÇERLİ.
+   Sunucu 21:00–06:00 arası push GÖNDERMİYOR (0010). Uygulama ise 21:11'de
+   sistem bildirimi gösterdi (kullanıcı: "3 dk önce 'Bugün seni bekleyenler'
+   geldi"). Ayrıca sekme gece açık kalırsa gün dönümünde (00:0x) yeni gün
+   anahtarı yüzünden kendiliğinden bildirim doğuyordu.
+   Kural: SİSTEM bildirimi (ses/titreşim) 06:00–20:59 arasında gösterilir;
+   gece üretilenler yalnız uygulama içi listede kalır (kaybolmaz, sessizdir). */
+function sessizSaatMi(d) {
+  const h = Number((d || new Date()).getHours());
+  return h < 6 || h >= 21;
+}
+
 function telafiVardiyasi(d) {
   const dk = (Number(d && d.getHours()) || 0) * 60 + (Number(d && d.getMinutes()) || 0);
   if (dk >= TELAFI_PENCERE.aksamIlk) return "a";                       // 19:30 sonrası: akşam
@@ -3022,6 +3037,8 @@ function hatirlatmaTelafisi() {
     // v77 — vardiya GERÇEK saat penceresinden; pencere yoksa telafi yok.
     const vardiya = telafiVardiyasi(d);
     if (!vardiya) return;
+    // v93c — 21:00–06:00 arası sistem bildirimi yok (sunucu da susuyor)
+    if (sessizSaatMi(d)) return;
     const anahtar = "am_telafi_" + todayStr() + "_" + vardiya;
     try { if (localStorage.getItem(anahtar)) return; } catch (e) { return; }
     const baslik = vardiya === "s" ? "Günaydın! Tekrar Zamanı" : "Akşam tekrarı seni bekliyor";

@@ -59,7 +59,7 @@ ok("sahte başarı mesajı kaldırıldı (index.html)", !/if \(t && t\.ok && typ
 ok("index.html cihaz göstermiyorsa hata diyor", /cihazGostermiyor/.test(HTML));
 
 console.log("\n== 6) Yerel yedek yol + teşhis (v56) ==");
-ok("arka planda yerel sistem bildirimi var", /function yerelSistemBildirimi\(n\)/.test(HTML));
+ok("arka planda yerel sistem bildirimi var", /function yerelSistemBildirimi\(n, simdi\)/.test(HTML));
 ok("yalnız sekme gizliyken gösteriyor", /document\.visibilityState !== "hidden"\) return/.test(HTML));
 ok("günlük tekilleştirme var", /am_yerel_sys_/.test(HTML));
 ok("push izi bugün aynı başlığı gösterdiyse atlıyor", /iz\.baslik === String\(n\.title/.test(HTML));

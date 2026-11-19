@@ -190,3 +190,40 @@ Aynı kullanıcı iki bildirimi farklı gördü çünkü **iki ayrı kod yolu** 
 - Eski testlerdeki sürüm regex'leri `v93b` gibi harf ekini de kabul edecek
   şekilde güncellendi (v60 · v62 · v90).
 - `npm run -s test:hepsi` → ✅
+
+---
+
+# Ek — v93c · Gece sessizliği ve 0011'in uygulanması
+
+## 1) Gece sessizliği uygulamada da geçerli
+
+Sunucu `webpush_tetikle` 21:00–06:00 arası **push göndermiyor**. Uygulamanın
+kendi gösterdiği sistem bildirimi ise saat tanımıyordu:
+- Kullanıcı 21:11'de (sessiz saatte) sistem bildirimi aldı.
+- Sekme gece açık kalırsa gün dönümünde (00:0x) `am_garanti_<gün>` anahtarı
+  değiştiği için kendiliğinden yeni bildirim doğuyordu.
+
+**Kural artık tek:** `sessizSaatMi()` → 06:00–20:59 dışında **sistem** bildirimi
+gösterilmez. Bildirim silinmez: uygulama içi listede kalır, kullanıcı açınca
+görür. `hatirlatmaTelafisi` de aynı kapıyı kullanır.
+
+## 2) `0011` gerçek migration olarak uygulandı
+
+Deneme mükerrer temizliği daha önce yalnız elle çalıştırılmıştı. Dosya
+`create_migration` ile **kayıtlı migration** olarak da uygulandı (`idempotent`).
+Sonrası doğrulama:
+
+| Kullanıcı | Deneme | Nedeni işlenmiş kopya | Toplam neden satırı |
+|---|---|---|---|
+| 28b0142f | 1 | evet | 39 |
+| 7490b2fb | 1 | evet | 39 |
+| a75d89b0 | 1 | hayır (kendi eksiği) | 39 |
+
+Mükerrer grup **yok**.
+
+## Testler
+
+- `tests/v93b-yerel-bildirim-ikoni.test.js` — 23/23 (görseller + gece kapısı)
+- `tests/dom/dom-v93-uc-duzeltme.test.js` — 32/32 (15:00'te sistem bildirimi
+  gösterilir; **03:00'te gösterilmez**, uygulama içi kayıt durur)
+- `npm run -s test:hepsi` → ✅

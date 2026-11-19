@@ -50,7 +50,7 @@ console.log("\n== 1) Yerel bildirim görselleri push ile AYNI ==");
   ok("boş büyük görsel sabiti var", /const BILDIRIM_GORSEL = "\.\/icons\/bildirim-bos\.png";/.test(HTML));
   ok("tek renkli rozet sabiti var", /const BILDIRIM_ROZET = "\.\/icons\/bildirim-rozet\.png";/.test(HTML));
   ok("yerelSistemBildirimi boş görsel + rozet kullanıyor",
-    /function yerelSistemBildirimi\(n\)[\s\S]{0,1400}icon: BILDIRIM_GORSEL, badge: BILDIRIM_ROZET/.test(HTML));
+    /function yerelSistemBildirimi\(n, simdi\)[\s\S]{0,1600}icon: BILDIRIM_GORSEL, badge: BILDIRIM_ROZET/.test(HTML));
   ok("hatırlatma telafisi de aynı görselleri kullanıyor",
     /function hatirlatmaTelafisi\(\)[\s\S]{0,2600}icon: BILDIRIM_GORSEL, badge: BILDIRIM_ROZET/.test(HTML));
   ok("notifyBrowser de aynı görselleri kullanıyor",
@@ -88,10 +88,23 @@ console.log("\n== 3) Aynı içerik iki kez gösterilmiyor (başlık vardiyaya ba
   ok("bildirim türü için ikon eşlemesi var", /garanti: "bell-ring"/.test(HTML));
 }
 
-console.log("\n== 4) Sürüm damgası (kullanıcı yeni sürümü görsün) ==");
+console.log("\n== 4) Gece sessizliği (sunucu 21–06 susuyor, uygulama da sussun) ==");
 {
-  ok("PWA sürümü v93b", /const PWA_SURUM = "v93b-bildirim-ikoni";/.test(APP));
-  ok("service worker cache v93b", /v93b-bildirim-ikoni/.test(SW));
+  ok("sessizSaatMi yardımcısı var", /function sessizSaatMi\(d\) \{/.test(HTML));
+  ok("06:00–20:59 dışında sistem bildirimi gösterilmiyor",
+    /function yerelSistemBildirimi\(n, simdi\)[\s\S]{0,600}if \(sessizSaatMi\(simdi\)\) return;/.test(HTML));
+  ok("uygulama içi kayıt silinmiyor (bildirim listede kalır)",
+    /yerelSistemBildirimi\(n\);\s*\/\/ v56/.test(HTML));
+  const SQL10 = fs.readFileSync(path.join(KOK, "supabase", "migrations", "0010_bildirim_garantisi.sql"), "utf8");
+  ok("hatırlatma telafisi de gece susuyor",
+    /const vardiya = telafiVardiyasi\(d\);\s*\n\s*if \(!vardiya\) return;\s*\n[\s\S]{0,160}if \(sessizSaatMi\(d\)\) return;/.test(HTML));
+  ok("sunucu da aynı pencereyi kullanıyor", /saat < 6 or saat >= 21/.test(SQL10));
+}
+
+console.log("\n== 5) Sürüm damgası (kullanıcı yeni sürümü görsün) ==");
+{
+  ok("PWA sürümü v93b+", /const PWA_SURUM = "v93[b-z]?-[a-z-]+";/.test(APP), (APP.match(/PWA_SURUM = "([^"]+)"/)||[])[1]);
+  ok("service worker cache v93b+", /v93[b-z]?-[a-z-]+/.test(SW), (SW.match(/const CACHE = "([^"]+)"/)||[])[1]);
 }
 
 console.log("\n" + "─".repeat(58));
