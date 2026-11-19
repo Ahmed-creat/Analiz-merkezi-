@@ -3286,10 +3286,10 @@ function processDueNotifications() {
     if (dl2 === 30) {
       addNotification({
         title: "Sınava 30 Gün Kaldı",
-        body: "Son 1 ay — takvimde sınava hazırlık tekrar günleri (1 hafta / 3 gün / 1 gün önce) otomatik işaretlendi.",
+        body: "Son 1 ay — hazırlık oturumları eksik konularına göre takvime işlendi (günde en çok 2 oturum).",
         kind: "exam", topicKey: "exam@30"
       });
-      notifyBrowser("Analiz Merkezi: Sınava 30 gün", "Son ay planı hazırlanıyor — hazırlık tekrarlarını takvime işledik.");
+      notifyBrowser("Analiz Merkezi: Sınava 30 gün", "Son ay planı hazırlanıyor — hazırlık günleri konu sayına göre işlendi.");
     }
     if (dl2 === 7) {
       addNotification({
@@ -3307,23 +3307,9 @@ function processDueNotifications() {
       });
       notifyBrowser("Analiz Merkezi: Yarın sınav!", "Bugün hafif tut — formüller ve yanlış defteri.");
     }
-    // Sınava hazırlık tekrarı günleri (sınav − 7 / − 3 / − 1)
-    const kapsamN = (state.plan.examTopics || []).length;
-    const preps = [
-      { gun: 7, ad: "Genel tekrar haftası", not: "Sınava 1 hafta kaldı" + (kapsamN ? " — sınav kapsamındaki " + kapsamN + " konuyu hızlı tur ile tarama" : "") + ". Konu başına 10 dakika ayır." },
-      { gun: 3, ad: "Eksik kapatma günü", not: "Sınava 3 gün kaldı — sınav kapsamından en zayıf konularını seçip sadece eksik noktalara odaklan." },
-      { gun: 1, ad: "Formül turu günü", not: "Sınav yarın! Formül kartları + yanlış soru defterindeki son hataları son kez tekrar et. Erken uyu." }
-    ];
-    preps.forEach(p => {
-      if (dl2 === p.gun) {
-        addNotification({
-          title: "Sınava Hazırlık: " + p.ad + (kapsamN ? " (" + kapsamN + " konu)" : ""),
-          body: p.not + " Ayrıntılar: Planlama → Çalışma Takvimi.",
-          kind: "prep", topicKey: "prep@" + p.gun
-        });
-        notifyBrowser("Analiz Merkezi: " + p.ad, p.not);
-      }
-    });
+    /* v95 — ESKİ: sabit −7/−3/−1 günlerinde "Genel tekrar / Eksik kapatma /
+       Formül turu" metinleri. Hazırlık bildirimi artık takvimle AYNI kaynaktan
+       (hazirlikPlani) üretilir → aşağıdaki 5b bloğu. */
   }
 
   // 6) GÜNLÜK TAKVİM ÖZETİ: "Bugün şunlar var" — takvimdeki önemli günler
@@ -3336,16 +3322,11 @@ function processDueNotifications() {
     if (se.date === bugun) bugunOlaylar.push(se.lesson + " sınavı" + (se.time ? " (" + se.time + ")" : ""));
   });
   const hazirlıkBugun = [];
-  if (state.plan.targetDate) {
-    const dl3 = daysLeftToExam();
-    if (dl3 === 7) hazirlıkBugun.push("denemeye hazırlık: genel tekrar");
-    if (dl3 === 3) hazirlıkBugun.push("denemeye hazırlık: eksik kapatma");
-    if (dl3 === 1) hazirlıkBugun.push("denemeye hazırlık: formül turu");
-  }
-  (state.plan.schoolExams || []).forEach(se => {
-    const f = se.date ? Math.round((parseDay(se.date) - parseDay(bugun)) / 86400000) : null;
-    if (f === 3) hazirlıkBugun.push(se.lesson + " sınavına hazırlık: eksik kapatma");
-    if (f === 1) hazirlıkBugun.push(se.lesson + " sınavına hazırlık: formül turu");
+  // v95 — HAZIRLIK: takvimle AYNI kaynaktan (hazirlikPlani). Sabit
+  // "−7/−3/−1" günleri YOK; plan konu sayısına göre üretilir.
+  const planBugun = hazirlikPlani().filter(p => p.date === bugun);
+  planBugun.forEach(p => {
+    hazirlıkBugun.push(p.ders + " hazırlığı" + (p.konular && p.konular.length ? " (" + p.konular.length + " konu)" : ""));
   });
   if (bugunOlaylar.length || hazirlıkBugun.length) {
     const parcalar = bugunOlaylar.concat(hazirlıkBugun);
@@ -3355,6 +3336,20 @@ function processDueNotifications() {
       kind: "daily", topicKey: "daily@" + bugun
     });
   }
+
+  // 6b) v95 — SINAVA HAZIRLIK BİLDİRİMİ (kullanıcı: "bu hazırlıkları
+  // bildirimle bildirmeli" + "direkt konu önermeli"). Metin plandan gelir:
+  // hangi ders, kaç gün kaldı, hangi KONULAR. Sunucu push'u da aynı metni
+  // state.plan.hazirlikPlani üzerinden gönderir (migration 0013).
+  if (planBugun.length) {
+    const m = hazirlikBildirimMetni(planBugun);
+    if (m) {
+      addNotification({ title: m.title, body: m.body, kind: "prep", topicKey: m.topicKey });
+      notifyBrowser("Analiz Merkezi: " + m.title, m.body);
+    }
+  }
+  // Planı buluta yaz: uygulama kapalıyken de push'ta aynı hazırlık görünsün.
+  hazirlikPlaniKaydet();
 
   // 7) OKUL SINAVI hatırlatmaları: arifesi ("yarın") + günü
   (state.plan.schoolExams || []).forEach(se => {
@@ -4622,6 +4617,24 @@ function gunlukGorevler() {
       aciklama: (yakin.gun === 0 ? "Sınav BUGÜN" : yakin.gun + " gün kaldı") +
         (yakin.se.topics && yakin.se.topics.length ? " · " + yakin.se.topics.length + " konu" : ""),
       sayfa: "planning", dugme: "Planlama"
+    });
+  }
+
+  /* 3b) v95 — BUGÜNÜN SINAVA HAZIRLIK OTURUMU.
+     KULLANICI: "uygun bir çalışma programı yapabilmeli" + "direk konu önermeli".
+     Görev, takvimle AYNI kaynaktan (hazirlikPlani) gelir: hangi ders, kaç gün
+     kaldı, hangi konular. Plan yoksa satır çizilmez (uydurma görev yok). */
+  const bugunHazirlik = (typeof hazirlikPlani === "function") ? hazirlikPlani().filter(p => p.date === todayStr()) : [];
+  if (bugunHazirlik.length && !bugunCalismaVarMi()) {
+    const h0 = bugunHazirlik[0];
+    const adlar = (h0.konular || []).map(k => splitKey(k).topic);
+    const digerleri = bugunHazirlik.slice(1).map(p => p.ders).join(", ");
+    liste.push({
+      id: "hazirlik", tur: "hazirlik", icon: "shield-check", onem: 1,
+      baslik: h0.ders + " sınavına hazırlık" + (h0.gunOnce ? " · sınavdan " + h0.gunOnce + " gün" : ""),
+      aciklama: (adlar.length ? adlar.slice(0, 3).join(" · ") + (adlar.length > 3 ? " …" : "") : "Son tur: yanlış defteri + formüller") +
+        (digerleri ? " · ayrıca " + digerleri : ""),
+      sayfa: "planning", dugme: "Takvim"
     });
   }
 
@@ -6020,24 +6033,33 @@ function renderPlanning(container) {
 let calCursor = null; // null = içinde bulunulan ay
 
 // ===== OKUL SINAVLARI (tek ders + seçilen konular) =====
-// Okul sınavı TEK derstendir; istenen konular seçilir. Sınava hazırlık
-// tekrarları (1 hafta / 3 gün / 1 gün önce) bu konulara çalışır.
+// Okul sınavı TEK derstendir; istenen konular seçilir. v95 — hazırlık günleri
+// sabit değil: seçilen konu sayısına göre hazirlikPlani() üretir ve her sınavın
+// altında KAÇ OTURUM / HANGİ GÜNLER olduğu görünür (kullanıcı "neye göre?"
+// diye soruyordu → kural ve sonuç ekranda).
 let schoolFormLesson = "";
 
 function renderSchoolExamsHTML() {
   const exams = state.plan.schoolExams || [];
+  const hazPlan = (typeof hazirlikPlani === "function") ? hazirlikPlani() : [];
   // v35.9 — form varsayılan KAPALI; "Sınav Ekle"ye basınca açılır.
   let h = '<div class="bento-card" style="margin-top:16px;"><div class="flex items-center justify-between" style="gap:8px;flex-wrap:wrap;"><h3 style="font-size:15px;font-weight:700;margin:0;">' + icon("graduation-cap", 16, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Okul Sınavları</h3>" +
     '<button class="btn btn-sm ' + (planOkulFormAcik ? "btn-ghost" : "btn-primary") + '" data-act="togglePlanOkulForm">' + icon(planOkulFormAcik ? "x" : "plus", 13) + " " + (planOkulFormAcik ? "Kapat" : "Sınav Ekle") + "</button></div>" +
-    '<p class="text-xs text-muted" style="margin:4px 0 10px;">Her okul sınavı tek derstendir; sınavda çıkacakını düşündüğün konuları seç — hazırlık tekrarları bunlara göre çalışır.</p>';
+    '<p class="text-xs text-muted" style="margin:4px 0 10px;">Her okul sınavı tek derstendir; sınavda çıkacakını düşündüğün konuları seç — hazırlık günleri bu konu sayısına göre planlanır (oturum başına 3 konu, günde en çok 2 oturum).</p>';
   if (exams.length) {
     h += exams.map(se => {
       const gun = gunFarki(se.date);
       const kalan = gun === null ? "" : gun === 0 ? "BUGÜN" : gun === 1 ? "YARIN" : gun + " gün kaldı";
+      const oturumlar = hazPlan.filter(x => x.kaynak === "okul" && x.examId === se.id);
+      const hazirSatir = oturumlar.length
+        ? '<div class="text-xs text-muted tabular" style="margin-top:2px;">Hazırlık: <b>' + oturumlar.length + " oturum</b> · " +
+          fmtDate(oturumlar[0].date) + (oturumlar.length > 1 ? " → " + fmtDate(oturumlar[oturumlar.length - 1].date) : "") + "</div>"
+        : "";
       return '<div class="list-row" style="align-items:center;"><div style="flex:1;min-width:0;">' +
         '<div style="font-weight:700;font-size:13px;">' + esc(se.lesson) + ' Sınavı</div>' +
         '<div class="text-xs text-muted tabular">' + fmtDate(se.date) + (se.time ? " · " + se.time : "") + " · " + (se.topics ? se.topics.length : 0) + " konu" + (kalan ? " · <b>" + kalan + "</b>" : "") + "</div>" +
         (se.topics && se.topics.length ? '<div class="text-xs text-muted" style="margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + se.topics.map(t => esc(splitKey(t).topic)).join(", ") + "</div>" : "") +
+        hazirSatir +
         "</div>" +
         '<button class="icon-btn" data-act="delSchoolExam" data-id="' + attr(se.id) + '" style="min-width:48px;min-height:48px;">' + icon("trash-2", 15, "color:var(--semantic-error);") + "</button></div>";
     }).join("");
@@ -6086,10 +6108,14 @@ function addSchoolExam() {
   if (!lesson || !date) { toast("Okul sınavı için ders ve tarih seç.", "error"); return; }
   if (!topics.length) { toast("En az bir konu seç — hazırlık tekrarları bu konulara çalışır.", "error"); return; }
   state.plan.schoolExams = state.plan.schoolExams || [];
-  state.plan.schoolExams.push({ id: uid(), lesson: lesson, date: date, time: time || "", topics: topics });
+  const yeniId = uid();
+  state.plan.schoolExams.push({ id: yeniId, lesson: lesson, date: date, time: time || "", topics: topics });
   saveState();
   schoolFormLesson = "";
-  toast(lesson + " sınavı eklendi (" + topics.length + " konu) — hazırlık günleri takvime işlendi.", "success");
+  // v95 — kullanıcıya GERÇEK plan söylenir (kaç hazırlık oturumu üretildi).
+  const oturum = (typeof hazirlikPlani === "function" ? hazirlikPlani() : [])
+    .filter(x => x.kaynak === "okul" && x.examId === yeniId).length;
+  toast(lesson + " sınavı eklendi (" + topics.length + " konu) — " + oturum + " hazırlık oturumu takvime işlendi.", "success");
   renderPlanning(document.getElementById("main-content"));
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
@@ -6104,6 +6130,223 @@ function delSchoolExam(id) {
 
 
 function calMonthLabel(d) { return d.toLocaleDateString("tr-TR", { month: "long", year: "numeric" }); }
+
+/* ============================================================
+   v95 — SINAVA HAZIRLIK PLANI (TEK KAYNAK)
+   ------------------------------------------------------------
+   KULLANICI (20 Kas 2026, geri bildirim):
+     "uygulama neye göre sınava hazırlık günlerini belirliyor? Mesela okul
+      sınavı için ilk çalışma gününü 3 gün önce seçmiş, bu çok saçma yetişmez
+      ki. Deneme için sadece 'eksik kapatma' yazıyor, oysaki nerede eksik
+      olduğumuzu biliyor — direkt konu önermeli. Bir günde 4-5 tane sınav
+      hazırlığı yapılamaz. Bu hazırlıkları bildirimle bildirmeli."
+
+   ESKİ (v94): gün seti SABİTTİ — deneme sınav−7/−3/−1, okul sınav−3/−1 —
+   ve etiketler ("Genel tekrar", "Eksik kapatma", "Formül turu") konu
+   içermiyordu. 21 konuluk bir okul sınavında 3 gün kala başlamak yetişmez.
+
+   YENİ — gün seti GERÇEK KAPSAMDAN üretilir:
+     • oturum başına en çok 3 konu → konu sayısı arttıkça oturum artar
+       (21 konu → 7 oturum), en çok 8 oturum
+     • son oturum her zaman sınavdan 1 gün önce; kalanı seyrekleşerek
+       GERİYE yayılır (okul sınavı artık −3 güne sıkışmaz)
+     • günde en çok 2 hazırlık oturumu; yer yoksa daha ERKEN güne taşınır
+       ("bir günde 4-5 sınav hazırlığı yapılamaz")
+     • geçmiş güne plan yazılmaz; sınav bugün/geçmişse hazırlık üretilmez
+     • kapsam hiç yoksa uydurma plan yok → klasik 2 (okul) / 3 (deneme) gün
+     • her oturum GERÇEK konu listesi taşır: sınav kapsamı ∩ hata günlüğü
+       (calculatePriority) + hafızası zayıf/gecikmiş konular — "kazanım
+       uydurulmaz" kuralı gereği yalnız uygulamanın bildiği konular
+   Aynı plan; takvim, gün detayı, planlama kartı, uygulama içi bildirim ve
+   (state.plan.hazirlikPlani üzerinden) sunucu push'u tarafından kullanılır.
+   ============================================================ */
+const HAZIRLIK_GUN_TAVAN = 2;     // bir günde en çok 2 hazırlık oturumu
+const HAZIRLIK_OTURUM_KONU = 3;   // oturum başına konu sayısı
+const HAZIRLIK_OTURUM_TAVAN = 8;  // sınav başına en çok oturum
+
+// Uygulamanın GERÇEKTEN bildiği zayıf konular (uydurma yok).
+// 1) hata günlüğü → calculatePriority (deneme hatası 1.5x, test 1.0x)
+// 2) hafıza → hiç tekrar edilmemiş / gücü düşmüş konular (hata puanından sonra)
+function hazirlikZayifKonular() {
+  const liste = [], gorulen = {};
+  if (Array.isArray(state.exams) && Array.isArray(state.questions) && typeof calculatePriority === "function") {
+    try {
+      calculatePriority().forEach(satir => {
+        const key = satir[0], puan = Number(satir[1]) || 0;
+        if (!key || gorulen[key] || puan <= 0) return;
+        gorulen[key] = 1;
+        liste.push({ key: key, puan: 1000 + puan, kaynak: "hata" });
+      });
+    } catch (e) { /* eksik alan: hata günlüğü yok sayılır */ }
+  }
+  const bugunD = parseDay(todayStr());
+  Object.keys(state.memory || {}).forEach(key => {
+    if (gorulen[key]) return;
+    const mem = state.memory[key];
+    if (!mem || !mem.completedAt) return;
+    let gecikmis = false;
+    Object.keys(mem.schedule || {}).forEach(g => {
+      const d = parseDay(mem.schedule[g]);
+      if (d && bugunD && d <= bugunD) gecikmis = true;
+    });
+    const guc = typeof getMemoryStrength === "function" ? (Number(getMemoryStrength(key)) || 0) : 0;
+    let puan = 0;
+    if (gecikmis) puan = 300;                        // günü geçmiş tekrar
+    else if (!mem.reviewCount) puan = 250;           // hiç tekrar edilmemiş
+    else if (guc < 50) puan = 200;                   // hafıza gücü düşük
+    if (!puan) return;
+    gorulen[key] = 1;
+    liste.push({ key: key, puan: puan, kaynak: gecikmis ? "tekrar" : "hafiza" });
+  });
+  return liste.sort((a, b) => b.puan - a.puan);
+}
+
+// Oturum sayısı: konu sayısı / 3 (en az 1); kapsam yoksa eski gün sayısı.
+function hazirlikOturumSayisi(konuSayisi, kalanGun, kaynak) {
+  const tavan = Math.max(1, Math.min(HAZIRLIK_OTURUM_TAVAN, (Number(kalanGun) || 2) - 1));
+  if (!konuSayisi) return Math.min(kaynak === "deneme" ? 3 : 2, tavan);
+  return Math.max(1, Math.min(Math.ceil(konuSayisi / HAZIRLIK_OTURUM_KONU), tavan));
+}
+
+// Sınavdan KAÇ GÜN ÖNCE listesi — büyükten küçüğe (erken → geç).
+// Son oturum daima 1 (sınavdan bir gün önce), kalanı seyrekleşerek geriye.
+function hazirlikGunSeti(n, kalanGun) {
+  n = Math.max(1, Math.floor(Number(n)) || 1);
+  if (n === 1) return [1];
+  const sinir = Math.max(1, (Number(kalanGun) || 2) - 1);
+  const yayilim = Math.max(1, Math.min(sinir, Math.max(n + 1, 2 * n)));
+  const set = [];
+  for (let i = 0; i < n; i++) set.push(1 + Math.round(i * (yayilim - 1) / (n - 1)));
+  return Array.from(new Set(set)).sort((a, b) => b - a);
+}
+
+// Planın kendisi. Dönen her satır: {date, ders, kaynak, examId, gunOnce,
+// konular[], etiket, detay, bildirim}
+function hazirlikPlani() {
+  const cikti = [];
+  const bugunD = parseDay(todayStr());
+  if (!bugunD) return cikti;
+  const p = state.plan || {};
+  const zayif = hazirlikZayifKonular();
+  const puanMap = {};
+  zayif.forEach(z => { if (puanMap[z.key] === undefined) puanMap[z.key] = z.puan; });
+  const oncelik = keys => keys.slice().sort((a, b) => (puanMap[b] || 0) - (puanMap[a] || 0));
+
+  const sinavlar = [];
+  if (p.targetDate) {
+    sinavlar.push({
+      kaynak: "deneme", id: "deneme", ders: "Deneme", tarih: p.targetDate,
+      konular: zayif.slice(0, HAZIRLIK_OTURUM_TAVAN * HAZIRLIK_OTURUM_KONU).map(z => z.key)
+    });
+  }
+  (p.schoolExams || []).forEach(se => {
+    if (!se || !se.date || !se.lesson) return;
+    const kapsam = Array.isArray(se.topics) ? se.topics.filter(k => typeof k === "string" && k.indexOf(" > ") > 0) : [];
+    let konular = oncelik(kapsam);
+    if (!konular.length) {
+      // Kapsam seçilmemiş (ör. okul sitesinden otomatik gelen sınav):
+      // o dersin GERÇEK zayıf konuları önerilir — uydurma konu yok.
+      konular = oncelik(zayif.filter(z => splitKey(z.key).lesson === se.lesson).map(z => z.key)).slice(0, 6);
+    }
+    sinavlar.push({ kaynak: "okul", id: se.id, ders: se.lesson, tarih: se.date, konular: konular });
+  });
+
+  const dolu = {};                  // gün → hazırlık oturumu sayısı
+  const al = ds => dolu[ds] || 0;
+  const kayitlar = [];
+  sinavlar.forEach(sv => {
+    const d0 = parseDay(sv.tarih);
+    if (!d0) return;
+    const kalanGun = Math.round((d0 - bugunD) / 86400000);
+    if (kalanGun <= 0) return;      // sınav bugün/geçmiş → hazırlık yok
+    const n = hazirlikOturumSayisi(sv.konular.length, kalanGun, sv.kaynak);
+    const yerel = [];
+    hazirlikGunSeti(n, kalanGun).forEach(o => {
+      const hedef = new Date(d0.getTime());
+      hedef.setDate(hedef.getDate() - o);
+      let secilen = null;
+      // Aranan gün doluysa DAHA ERKEN güne taşı (sınava daha çok zaman kalsın);
+      // bugünden önceye ve 45 günden fazla geriye yazılmaz. Aynı sınavın başka
+      // oturumu olan güne de yazılmaz (7 oturum 4'e düşmesin — oturumlar ayrı).
+      for (let k = 0; k <= 45; k++) {
+        const d = new Date(hedef.getTime());
+        d.setDate(d.getDate() - k);
+        if (d <= bugunD) break;
+        const ds = toDayStr(d);
+        if (al(ds) < HAZIRLIK_GUN_TAVAN && !yerel.some(x => x.ds === ds)) { secilen = ds; break; }
+      }
+      if (!secilen) secilen = toDayStr(hedef);   // yer yoksa tavan aşılır (geçmişe yazmaktan iyidir)
+      let kayit = yerel.filter(x => x.ds === secilen)[0];
+      if (!kayit) {
+        kayit = { ds: secilen, tarih: sv.tarih, kaynak: sv.kaynak, examId: sv.id, ders: sv.ders, konular: [] };
+        yerel.push(kayit); kayitlar.push(kayit);
+        dolu[secilen] = al(secilen) + 1;
+      }
+    });
+    // Konular tarih sırasıyla dağıtılır: en zayıf konular EN ERKEN oturuma
+    // (tekrar etmeye zaman kalsın), son oturumda da bir tur yapılır.
+    yerel.sort((a, b) => (a.ds < b.ds ? -1 : a.ds > b.ds ? 1 : 0));
+    const bolum = yerel.length ? Math.ceil(sv.konular.length / yerel.length) : 0;
+    yerel.forEach((k, i) => { k.konular = sv.konular.slice(i * bolum, i * bolum + bolum); });
+  });
+
+  kayitlar.forEach(k => {
+    const d0 = parseDay(k.tarih), ds = parseDay(k.ds);
+    const gunOnce = (d0 && ds) ? Math.round((d0 - ds) / 86400000) : null;
+    const adlar = k.konular.slice(0, 2).map(x => splitKey(x).topic).join(", ");
+    const ek = k.konular.length > 2 ? " +" + (k.konular.length - 2) : "";
+    cikti.push({
+      date: k.ds, tip: "hazirlik", kaynak: k.kaynak, examId: k.examId, ders: k.ders,
+      gunOnce: gunOnce, konular: k.konular,
+      etiket: "Sınava hazırlık: " + k.ders + (adlar ? " · " + adlar + ek : ""),
+      detay: k.konular.map(x => splitKey(x).topic).join(" · "),
+      bildirim: k.ders + " (sınavdan " + gunOnce + " gün)" + (adlar ? ": " + adlar + ek : "")
+    });
+  });
+  return cikti.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+}
+
+// Günün hazırlık bildirimi — uygulama içi + tarayıcı bildirimi TEK metinden.
+// Hazırlık listeden değil, planın kendisinden üretilir (tek kaynak).
+function hazirlikBildirimMetni(liste) {
+  if (!Array.isArray(liste) || !liste.length) return null;
+  const ilk = liste.slice(0, 2);
+  const govde = ilk.map(p => {
+    const konular = (p.konular || []).slice(0, 3).map(x => splitKey(x).topic);
+    const ek = (p.konular || []).length > 3 ? " +" + (p.konular.length - 3) : "";
+    return p.ders + (p.gunOnce ? " (sınavdan " + p.gunOnce + " gün)" : "") + ": " +
+      (konular.length ? konular.join(", ") + ek : "son tur — yanlış defteri + formüller");
+  }).join(" | ");
+  return {
+    title: "Bugün hazırlık: " + ilk.map(p => p.ders).join(" · ") + (liste.length > 2 ? " +" + (liste.length - 2) : ""),
+    body: govde + " · Planlama → Çalışma Takvimi.",
+    topicKey: "prep@" + liste[0].date
+  };
+}
+
+// Planı state'e yaz (push bildirimi sunucuda aynı metni görsün diye).
+// Yalnız İÇERİK DEĞİŞTİYSE yazar → her açılışta gereksiz kayıt yok.
+function hazirlikPlaniKaydet(plan) {
+  try {
+    if (!state.plan) state.plan = {};
+    const p = state.plan;
+    // Yalnız push'un ihtiyacı olan alanlar yazılır (konu DİZİSİ değil, hazır
+    // metin): state şişmesin — kota daha önce dolmuştu.
+    const yeni = (Array.isArray(plan) ? plan : hazirlikPlani()).map(k => ({
+      date: k.date, ders: k.ders, kaynak: k.kaynak, gunOnce: k.gunOnce, bildirim: k.bildirim
+    }));
+    const eski = JSON.stringify(p.hazirlikPlani || []);
+    if (JSON.stringify(yeni) === eski) return false;
+    state.plan.hazirlikPlani = yeni;
+    saveState();
+    return true;
+  } catch (e) { return false; }
+}
+
+// Okul sitesinden gelen sınavlar için gün seti (app-pwa.js çağırır).
+function schoolPrepDaysFor(kalanGun, konuSayisi) {
+  return hazirlikGunSeti(hazirlikOturumSayisi(Number(konuSayisi) || 0, kalanGun, "okul"), kalanGun);
+}
 
 function calendarEventMap() {
   const map = {}; // "YYYY-MM-DD" -> [{tip, etiket}]
@@ -6131,25 +6374,24 @@ function calendarEventMap() {
       sira: 3
     });
   });
-  // 2) DENEME sınavı + hazırlık tekrarları
-  const tgt = state.plan.targetDate ? parseDay(state.plan.targetDate) : null;
+  // 2) DENEME sınavı
+  const plan = state.plan || {};
+  const tgt = plan.targetDate ? parseDay(plan.targetDate) : null;
   if (tgt && !isNaN(tgt)) {
-    put(toDayStr(tgt), { tip: "deneme", etiket: "Sınav: Deneme" + (state.plan.examTime ? " · " + state.plan.examTime : ""), saat: state.plan.examTime || "", kaynak: "deneme", sira: 1 });
-    [[7, "Genel tekrar"], [3, "Eksik kapatma"], [1, "Formül turu"]].forEach(([gun, ad]) => {
-      const d = new Date(tgt.getTime());
-      d.setDate(d.getDate() - gun);
-      put(toDayStr(d), { tip: "hazirlik", etiket: "Sınava hazırlık: Deneme · " + ad, kaynak: "deneme", prepAd: ad, sira: 2 });
-    });
+    put(toDayStr(tgt), { tip: "deneme", etiket: "Sınav: Deneme" + (plan.examTime ? " · " + plan.examTime : ""), saat: plan.examTime || "", kaynak: "deneme", sira: 1 });
   }
-  // 3) OKUL SINAVLARI (tek ders): sınav günü + hazırlık tekrarları
-  (state.plan.schoolExams || []).forEach(se => {
+  // 3) OKUL SINAVLARI (tek ders): sınav günü
+  (plan.schoolExams || []).forEach(se => {
     const d0 = parseDay(se.date);
     if (!d0 || isNaN(d0)) return;
     put(se.date, { tip: "sinav", etiket: "Sınav: " + se.lesson, saat: se.time || "", kaynak: "okul", examId: se.id, ders: se.lesson, sira: 0 });
-    [[3, "Eksik kapatma"], [1, "Formül turu"]].forEach(([gun, ad]) => {
-      const d = new Date(d0.getTime());
-      d.setDate(d.getDate() - gun);
-      put(toDayStr(d), { tip: "hazirlik", etiket: "Sınava hazırlık: " + se.lesson + " · " + ad, kaynak: "okul", examId: se.id, prepAd: ad, ders: se.lesson, sira: 2 });
+  });
+  // 4) SINAVA HAZIRLIK — v95: günler sabit değil, hazirlikPlani()'ndan gelir
+  //    (konu sayısına göre yayılır, günde en çok 2 oturum, konu listesi taşır).
+  hazirlikPlani().forEach(k => {
+    put(k.date, {
+      tip: "hazirlik", etiket: k.etiket, kaynak: k.kaynak, examId: k.examId,
+      ders: k.ders, gunOnce: k.gunOnce, konular: k.konular, detay: k.detay, sira: 2
     });
   });
   return map;
@@ -6206,6 +6448,9 @@ function renderCalendarHTML() {
   h += renderCalDetailHTML(events);
   h += renderAgendaHTML(events);
   h += '<p class="text-xs text-muted" style="margin-top:10px;">Güne dokun: o günün sınavı, tekrarları ve konuları burada görünür.</p>';
+  // v95 — kullanıcı: "uygulama neye göre sınava hazırlık günlerini belirliyor?"
+  // Kural görünür olsun: gün sayısı konu sayısından, günde en çok 2 oturum.
+  h += '<p class="text-xs text-muted" style="margin-top:6px;">' + icon("info", 12, "vertical-align:-2px;") + " Hazırlık günleri seçtiğin konu sayısından üretilir: oturum başına 3 konu, günde en çok 2 oturum, son oturum sınavdan 1 gün önce.</p>";
   h += '<p class="text-xs text-muted" style="margin-top:6px;">Bu ay: <b>' + tekSay + "</b> tekrar günü" + (hazSay ? " · <b>" + hazSay + "</b> hazırlık tekrarı" : "") + (sinSay ? " · <b>" + sinSay + "</b> sınav günü" : "") + ".</p>";
   h += "</div>";
   return h;
@@ -6320,13 +6565,16 @@ function renderCalDetailHTML(events) {
         konuListesi("Sınav konuları (" + (se.topics || []).length + "):", se.topics || []) + "</div>";
     }
     if (e.tip === "hazirlik") {
-      const okul = e.kaynak === "okul" ? (okulById[e.examId] || null) : null;
-      const gunBilgi = e.prepAd === "Genel tekrar" ? "sınavdan 1 hafta önce" : e.prepAd === "Eksik kapatma" ? "sınavdan 3 gün önce" : "sınavdan 1 gün önce";
-      const aciklama = e.prepAd === "Genel tekrar" ? "Tüm konuları hızlı tur ile tarama günü." :
-        e.prepAd === "Eksik kapatma" ? "En zayıf konuları seçip eksik noktaları kapatma günü." : "Formüller + yanlış soru defterini son kez tekrar etme günü.";
+      // v95 — açıklama artık SABİT etiketlere ("Genel tekrar" vb.) değil,
+      // planın gerçek verisine bağlı: kaç gün kaldı + hangi konular.
+      const gunBilgi = e.gunOnce ? "sınavdan " + e.gunOnce + " gün önce" : "";
+      const konular = Array.isArray(e.konular) ? e.konular : [];
+      const aciklama = konular.length
+        ? "Bugünün konuları: hata günlüğüne ve hafıza gücüne göre en zayıf " + konular.length + " konu seçildi."
+        : "Kapsam seçilmediği için son tur: yanlış defterini ve formülleri gözden geçir.";
       h += '<div class="cd-box" style="border-color:rgba(245,166,35,0.4);"><div style="font-weight:800;font-size:13px;color:var(--on-warning-bg);">' + icon("shield-check", 14, "vertical-align:-2px;") + " Sınava Hazırlık: " + esc(e.etiket) + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
         '<div class="text-xs text-muted" style="margin-top:2px;">' + aciklama + "</div>" +
-        (okul && okul.topics && okul.topics.length ? konuListesi("Çalışılacak konular (" + okul.topics.length + "):", okul.topics) : "") + "</div>";
+        (konular.length ? konuListesi("Çalışılacak konular (" + konular.length + "):", konular) : "") + "</div>";
     }
   });
 

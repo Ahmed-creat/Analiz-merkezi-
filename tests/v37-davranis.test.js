@@ -60,8 +60,16 @@ const icon = (n) => "[" + n + "]";
 
 const BUGUN = "2026-10-29";
 
+/* v95 — hazırlık günleri artık hazirlikPlani()'ndan gelir (sabit −7/−3/−1
+   yok). Bu fonksiyonlar aynı kapsamda çalışsın diye birlikte çıkarılır;
+   HAZIRLIK_* sabitleri dosyadan okunur (kopya sabit yok, kaynak tektir). */
+const HAZIRLIK_SABITLERI = HTML.split("\n").filter(x => /^const HAZIRLIK_/.test(x)).join("\n");
+
 function agenda(state, bugun) {
   const g = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey", "icon", "esc", "attr",
+    HAZIRLIK_SABITLERI + "\n" +
+    fnCikar("hazirlikZayifKonular") + "\n" + fnCikar("hazirlikOturumSayisi") + "\n" +
+    fnCikar("hazirlikGunSeti") + "\n" + fnCikar("hazirlikPlani") + "\n" +
     fnCikar("calendarEventMap") + "\n" + fnCikar("renderAgendaHTML") +
     "\nreturn renderAgendaHTML(calendarEventMap());");
   return g(state, () => bugun || BUGUN, parseDay, toDayStr,
