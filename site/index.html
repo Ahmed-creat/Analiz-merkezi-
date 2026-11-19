@@ -4631,7 +4631,8 @@ function gunlukGorevler() {
     const digerleri = bugunHazirlik.slice(1).map(p => p.ders).join(", ");
     liste.push({
       id: "hazirlik", tur: "hazirlik", icon: "shield-check", onem: 1,
-      baslik: h0.ders + " sınavına hazırlık" + (h0.gunOnce ? " · sınavdan " + h0.gunOnce + " gün" : ""),
+      baslik: (h0.kaynak === "deneme" ? "Deneme hazırlığı" : h0.ders + " sınavına hazırlık") +
+        (h0.gunOnce ? (h0.kaynak === "deneme" ? " · denemeye " + h0.gunOnce + " gün" : " · sınavdan " + h0.gunOnce + " gün") : ""),
       aciklama: (adlar.length ? adlar.slice(0, 3).join(" · ") + (adlar.length > 3 ? " …" : "") : "Son tur: sınav konularını bir kez gözden geçir") +
         (digerleri ? " · ayrıca " + digerleri : ""),
       sayfa: "planning", dugme: "Takvim"
@@ -5977,6 +5978,33 @@ function renderPlanning(container) {
       " · Hedef net: <b>" + (p.targetNet || "—") + "</b> · Günlük çalışma: <b>" + (p.dailyHours || "—") + " sa</b>" +
       (p.dailyReading ? " · Okuma: <b>" + p.dailyReading + " sayfa</b>" : "");
     html += '<p class="text-xs text-muted" style="margin:2px 0 0;line-height:1.6;">' + ozet + "</p>";
+    // v98 — KULLANICI: "Deneme hazırlıkları hedef net ve ivme ölçere göre
+    // planlanmalı; hangi konuları bitirmeli, haftalık ivmesi ne kadar?"
+    // Planın kendisi burada özetlenir (uydurma değil: hazirlikPlani + denemeIvmesi).
+    try {
+      const denPlan = (typeof hazirlikPlani === "function") ? hazirlikPlani().filter(x => x.kaynak === "deneme") : [];
+      if (denPlan.length && typeof denemeIvmesi === "function") {
+        const v = denemeIvmesi();
+        const konuSay = denPlan.reduce((a, x) => a + (x.konular ? x.konular.length : 0), 0);
+        const kapsanan = denPlan[0] ? denPlan[0].kapsananHata : null;
+        const hataSay = denPlan[0] ? denPlan[0].hataSayisi : null;
+        // Haftalık yük planın GERÇEK penceresine göre: ilk oturumdan son oturuma
+        // kaç hafta var (hedef tarihe kadar değil — oturumlar 3 gün önce bitiyor).
+        const sonOturum = denPlan[denPlan.length - 1];
+        const ilkOturum = denPlan[0];
+        const pencereGun = Math.max(1, Math.round((parseDay(sonOturum.date) - parseDay(ilkOturum.date)) / 86400000) + 1);
+        const hafta = Math.max(1, Math.ceil(pencereGun / 7));
+        const haftaKonu = Math.ceil(konuSay / hafta);
+        html += '<div class="text-xs" style="margin-top:8px;padding:8px 10px;border-radius:9px;background:color-mix(in srgb, var(--brand-blue) 8%, transparent);line-height:1.6;">' +
+          '<b>' + icon("calendar-check", 12, "vertical-align:-2px;") + " Deneme hazırlık planı:</b> " + denPlan.length + " oturum · " + konuSay + " konu" +
+          (hataSay != null ? " · hataların <b>" + kapsanan + "/" + hataSay + "</b> konusu kapsanıyor" : "") +
+          (haftaKonu ? " · haftada ~" + haftaKonu + " konu" : "") +
+          (denPlan[0] && denPlan[0].kalanKonu ? ' · <b style="color:var(--semantic-error);">' + denPlan[0].kalanKonu + " konu sonraki tura kaldı</b>" : "") +
+          (denPlan[0] ? '<br>İlk oturum: <b>' + esc(fmtDate(denPlan[0].date)) + "</b> · son oturum: <b>" + esc(fmtDate(denPlan[denPlan.length - 1].date)) + "</b> (denemeden 3 gün önce)" : "") +
+          (typeof denemeIvmeCumlesi === "function" ? "<br>" + esc(denemeIvmeCumlesi(v)) : "") +
+          "</div>";
+      }
+    } catch (e) { /* plan yoksa özet çizilmez */ }
   } else {
   html += '<p class="text-xs text-muted" style="margin:2px 0 10px;">TYT denemelerin için hedef tarih, saat ve net — deneme tüm dersleri kapsar.</p>';
   html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;">' +
@@ -6001,7 +6029,22 @@ function renderPlanning(container) {
     const tempo = mom.weekly <= 1 ? "Rahat tempo — istikrar yeterli." : mom.weekly <= 3 ? "Orta tempoda ivme gerekli." : "Yüksek tempo — her hafta net artışı ŞART.";
     html += '<p class="text-xs text-muted">' + esc(tempo) + "</p>" +
       '<div class="flex items-center gap-2"><span class="text-2xl font-bold tabular" style="color:var(--brand-blue);">+' + mom.weekly + '</span><span class="text-xs text-muted">haftalık net artışı hedefi</span></div>' +
-      '<div class="stat-grid" style="margin-top:10px;">' + statBox("Mevcut Ort.", mom.current) + statBox("Hedef Net", mom.target) + statBox("Kalan Hafta", mom.weeks) + "</div>";
+      '<div class="stat-grid" style="margin-top:10px;">' + statBox("Mevcut Ort.", mom.current) + statBox("Hedef Net", mom.target) + statBox("Kalan Hafta", mom.weeks) + "</div>" +
+      // v98 — KULLANICI: "haftalık ivmesi ne kadar?" ÖLÇÜLEN ivme de gösterilir
+      // (son iki denemenin net farkı / geçen hafta). Veri yoksa uydurulmaz.
+      (function () {
+        try {
+          const v = (typeof denemeIvmesi === "function") ? denemeIvmesi() : null;
+          if (!v || v.olculenIvme == null) {
+            return '<p class="text-xs text-muted" style="margin-top:8px;">Ölçülen ivme için iki deneme gerekli — sonraki denemeden sonra burada görünür.</p>';
+          }
+          const renk = v.durum === "geride" ? "var(--semantic-error)" : "var(--semantic-success)";
+          return '<p class="text-xs" style="margin-top:8px;color:' + renk + ';font-weight:700;">' +
+            (v.olculenIvme >= 0 ? "+" : "") + v.olculenIvme + " net/hafta ölçülen ivme" +
+            (v.gerekenIvme != null ? " · gereken +" + v.gerekenIvme : "") +
+            " → " + (v.durum === "geride" ? "GERİDE" : "YOLUNDA") + "</p>";
+        } catch (e) { return ""; }
+      })();
   } else {
     html += '<p class="text-sm text-muted">Hedef net ve en az 1 deneme gerekli. Formül: (HedefNet − MevcutOrt) / KalanHafta.</p>';
   }
@@ -6189,6 +6232,14 @@ const HAZIRLIK_OTURUM_TAVAN = 8;  // sınav başına en çok oturum
 // bitmeli; son gün son konu tekrarı ve yazılı örnek senaryoları çözülsün."
 // Bu yüzden hiçbir hazırlık oturumu sınavdan 3 günden yakına yazılmaz.
 const HAZIRLIK_BITIS_GUN = 3;
+// v98 — KULLANICI: "sonraki denemeye kadar öğrencinin hatası olan TÜM konuları
+// çalışması gerekmiyor mu?" Deneme oturumları hataların TAMAMINI kapsar
+// (gerçek sınır: hedefe kalan gün); hafıza kaynaklı zayıf konular yalnız yer
+// kalırsa eklenir. İvme gerideyse oturum başına konu 3'ten 2'ye düşürülür
+// (daha sık tekrar, daha çok oturum).
+const HAZIRLIK_DENEME_OTURUM_TAVAN = 20; // hataların tamamı sığsın diye yüksek;
+                                        // gerçek sınır hedefe kalan gün (pencere)
+const HAZIRLIK_IVME_GERIDE_KONU = 2; // ivme gerideyse oturum başına konu (daha sık tekrar)
 
 // Uygulamanın GERÇEKTEN bildiği zayıf konular (uydurma yok).
 // 1) hata günlüğü → calculatePriority (deneme hatası 1.5x, test 1.0x)
@@ -6227,15 +6278,19 @@ function hazirlikZayifKonular() {
   return liste.sort((a, b) => b.puan - a.puan);
 }
 
-// Oturum sayısı: konu sayısı / 3 (en az 1); kapsam yoksa eski gün sayısı.
+// Oturum sayısı: konu sayısı / oturum başına konu (en az 1).
 // v96 — konular sınavdan en az 3 gün önce bitmeli: pencere = kalan − 3.
 // Sınava 3 günden az kaldıysa hazırlık oturumu ÜRETİLMEZ (0).
-function hazirlikOturumSayisi(konuSayisi, kalanGun, kaynak) {
+// v98 — deneme oturumları hataların tamamını kapsar (tavan 12), okul 8'de kalır.
+// Oturum başına konu varsayılan 3; ivme geride olan denemede 2'ye düşer.
+function hazirlikOturumSayisi(konuSayisi, kalanGun, kaynak, oturumKonu) {
   const pencere = (Number(kalanGun) || 0) - HAZIRLIK_BITIS_GUN;
   if (pencere < 1) return 0;
-  const tavan = Math.max(1, Math.min(HAZIRLIK_OTURUM_TAVAN, pencere));
+  const tavanSecim = kaynak === "deneme" ? HAZIRLIK_DENEME_OTURUM_TAVAN : HAZIRLIK_OTURUM_TAVAN;
+  const tavan = Math.max(1, Math.min(tavanSecim, pencere));
+  const boy = Math.max(1, Number(oturumKonu) || HAZIRLIK_OTURUM_KONU);
   if (!konuSayisi) return Math.min(kaynak === "deneme" ? 3 : 2, tavan);
-  return Math.max(1, Math.min(Math.ceil(konuSayisi / HAZIRLIK_OTURUM_KONU), tavan));
+  return Math.max(1, Math.min(Math.ceil(konuSayisi / boy), tavan));
 }
 
 // Sınavdan KAÇ GÜN ÖNCE listesi — büyükten küçüğe (erken → geç).
@@ -6254,6 +6309,75 @@ function hazirlikGunSeti(n, kalanGun) {
   return Array.from(new Set(set)).sort((a, b) => b - a);
 }
 
+// ===== v98 — DENEME HEDEFİ + İVME =====================================
+// KULLANICI: "Deneme hazırlıkları öğrencinin deneme hedefi ve ivme ölçerine
+// göre planlanmalı. Hedeflediği nete ulaşmak için hangi konuları bitirmeli,
+// haftalık ivmesi ne kadar, bunlara göre olmalı."
+// Hesap (uydurma yok, yalnız kayıtlı denemelerden):
+//   son net          = en yeni denemenin neti
+//   ölçülen ivme     = (son net − önceki net) × 7 / iki deneme arası gün
+//   gereken net      = hedef net − son net
+//   gereken ivme     = gereken net / kalan hafta
+//   durum            = ölçülen ≥ gereken → "yolunda", değilse "geride"
+function denemeIvmesi() {
+  const p = state.plan || {};
+  const hedef = Number(p.targetNet) || 0;
+  const liste = (Array.isArray(state.exams) ? state.exams : [])
+    .filter(e => e && e.date && e.net != null && !isNaN(Number(e.net)))
+    .slice().sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+  const son = liste.length ? liste[liste.length - 1] : null;
+  const onceki = liste.length > 1 ? liste[liste.length - 2] : null;
+  const sonNet = son ? Math.round(Number(son.net) * 100) / 100 : null;
+  const oncekiNet = onceki ? Math.round(Number(onceki.net) * 100) / 100 : null;
+  let olculenIvme = null;
+  if (son && onceki) {
+    const gun = Math.round((parseDay(son.date) - parseDay(onceki.date)) / 86400000);
+    if (gun > 0) olculenIvme = Math.round(((sonNet - oncekiNet) * 7 / gun) * 100) / 100;
+  }
+  const bugunD = parseDay(todayStr());
+  const hedefD = p.targetDate ? parseDay(p.targetDate) : null;
+  const kalanGun = (hedefD && bugunD) ? Math.round((hedefD - bugunD) / 86400000) : null;
+  const kalanHafta = (kalanGun != null && kalanGun > 0) ? Math.max(1, Math.ceil(kalanGun / 7)) : null;
+  const gerekenNet = (hedef && sonNet != null) ? Math.round((hedef - sonNet) * 100) / 100 : null;
+  const gerekenIvme = (gerekenNet != null && kalanHafta) ? Math.round((gerekenNet / kalanHafta) * 100) / 100 : null;
+  let durum = "veri-yok";
+  if (gerekenIvme != null) {
+    if (olculenIvme == null) durum = "ivme-bilinmiyor";
+    else durum = olculenIvme >= gerekenIvme ? "yolunda" : "geride";
+  }
+  return {
+    hedef: hedef, sonNet: sonNet, oncekiNet: oncekiNet,
+    sonTarih: son ? son.date : null,
+    netFark: (sonNet != null && oncekiNet != null) ? Math.round((sonNet - oncekiNet) * 100) / 100 : null,
+    olculenIvme: olculenIvme, kalanGun: kalanGun, kalanHafta: kalanHafta,
+    gerekenNet: gerekenNet, gerekenIvme: gerekenIvme,
+    durum: durum, denemeSayisi: liste.length
+  };
+}
+
+// Durumun öğrenciye söylenen tek cümlesi (uydurma yok: veri yoksa "yok" der).
+function denemeIvmeCumlesi(v) {
+  if (!v) return "";
+  if (v.durum === "veri-yok") {
+    if (!v.hedef) return "Deneme hedefine net girilince ivme hesaplanır.";
+    return "Hedef " + v.hedef + " net · henüz deneme yok; ilk denemeni ekleyince ölçüm başlar.";
+  }
+  if (v.sonNet == null) return "İvme için Denemelerim'e net gir.";
+  if (v.gerekenIvme == null) return "Hedef net " + v.hedef + " · son net " + v.sonNet + " · hedef tarihi girilince haftalık tempo hesaplanır.";
+  if (v.durum === "ivme-bilinmiyor") {
+    return "Hedef " + v.hedef + " net · son net " + v.sonNet + " · gereken ivme +" + v.gerekenIvme +
+      " net/hafta (" + v.kalanHafta + " hafta). Ölçülen ivme için ikinci deneme gerekli.";
+  }
+  if (v.durum === "yolunda") {
+    return "Hedef " + v.hedef + " net · son net " + v.sonNet + " · gereken +" + v.gerekenIvme +
+      " net/hafta · ölçülen " + (v.olculenIvme >= 0 ? "+" : "") + v.olculenIvme + " net/hafta → yolunda.";
+  }
+  return "Hedef " + v.hedef + " net · son net " + v.sonNet + " · gereken +" + v.gerekenIvme +
+    " net/hafta · ölçülen " + (v.olculenIvme >= 0 ? "+" : "") + v.olculenIvme +
+    " net/hafta → GERİDE. Bu yüzden hazırlık oturumları daha sık (oturum başına " +
+    HAZIRLIK_IVME_GERIDE_KONU + " konu).";
+}
+
 // Planın kendisi. Dönen her satır: {date, ders, kaynak, examId, gunOnce,
 // konular[], etiket, detay, bildirim}
 function hazirlikPlani() {
@@ -6267,10 +6391,31 @@ function hazirlikPlani() {
   const oncelik = keys => keys.slice().sort((a, b) => (puanMap[b] || 0) - (puanMap[a] || 0));
 
   const sinavlar = [];
+  // v98 — DENEME: hedef net + ivme ölçere göre plan.
+  //   • TÜM hata konuları kapsanır (kullanıcı: "hatası olan tüm konuları
+  //     çalışması gerekmiyor mu?"); hafıza kaynaklı zayıflar yer kalırsa eklenir
+  //   • ivme gerideyse oturum başına konu 2'ye düşer → daha çok oturum, daha
+  //     sık tekrar (aynı konu daha çok güne yayılır)
+  //   • oturum sayısı hedef tarihe kalan güne ve deneme tavanına (12) göre
+  const ivme = (typeof denemeIvmesi === "function") ? denemeIvmesi() : null;
   if (p.targetDate) {
+    const hataKonu = zayif.filter(z => z.kaynak === "hata").map(z => z.key);
+    const digerKonu = zayif.filter(z => z.kaynak !== "hata").map(z => z.key);
+    const hepsi = hataKonu.concat(digerKonu);
+    const d0 = parseDay(p.targetDate);
+    const kalanD = d0 ? Math.round((d0 - bugunD) / 86400000) : 0;
+    const geride = !!(ivme && ivme.durum === "geride");
+    const boy = geride ? HAZIRLIK_IVME_GERIDE_KONU : HAZIRLIK_OTURUM_KONU;
+    const oturum = hazirlikOturumSayisi(hepsi.length, kalanD, "deneme", boy);
+    const kapasite = oturum * boy;
+    const konular = hepsi.slice(0, kapasite);
     sinavlar.push({
       kaynak: "deneme", id: "deneme", ders: "Deneme", tarih: p.targetDate,
-      konular: zayif.slice(0, HAZIRLIK_OTURUM_TAVAN * HAZIRLIK_OTURUM_KONU).map(z => z.key)
+      konular: konular,
+      oturumKonu: boy,
+      hataSayisi: hataKonu.length,
+      kapsananHata: konular.filter(k => hataKonu.indexOf(k) >= 0).length,
+      kalanKonu: Math.max(0, hepsi.length - konular.length)
     });
   }
   (p.schoolExams || []).forEach(se => {
@@ -6293,7 +6438,7 @@ function hazirlikPlani() {
     if (!d0) return;
     const kalanGun = Math.round((d0 - bugunD) / 86400000);
     if (kalanGun <= 0) return;      // sınav bugün/geçmiş → hazırlık yok
-    const n = hazirlikOturumSayisi(sv.konular.length, kalanGun, sv.kaynak);
+    const n = hazirlikOturumSayisi(sv.konular.length, kalanGun, sv.kaynak, sv.oturumKonu);
     const yerel = [];
     hazirlikGunSeti(n, kalanGun).forEach(o => {
       const hedef = new Date(d0.getTime());
@@ -6312,7 +6457,11 @@ function hazirlikPlani() {
       if (!secilen) secilen = toDayStr(hedef);   // yer yoksa tavan aşılır (geçmişe yazmaktan iyidir)
       let kayit = yerel.filter(x => x.ds === secilen)[0];
       if (!kayit) {
-        kayit = { ds: secilen, tarih: sv.tarih, kaynak: sv.kaynak, examId: sv.id, ders: sv.ders, konular: [] };
+        kayit = {
+          ds: secilen, tarih: sv.tarih, kaynak: sv.kaynak, examId: sv.id, ders: sv.ders, konular: [],
+          oturumKonu: sv.oturumKonu, hataSayisi: sv.hataSayisi, kapsananHata: sv.kapsananHata,
+          kalanKonu: sv.kalanKonu, tumKonu: sv.konular.length
+        };
         yerel.push(kayit); kayitlar.push(kayit);
         dolu[secilen] = al(secilen) + 1;
       }
@@ -6329,6 +6478,17 @@ function hazirlikPlani() {
     });
   });
 
+  // v98 — aynı sınavın oturum sırası (deneme etiketinde "2/6" görünsün)
+  const siraMap = {};
+  kayitlar.slice().sort((a, b) => (a.ds < b.ds ? -1 : a.ds > b.ds ? 1 : 0)).forEach(k => {
+    if (!siraMap[k.examId]) {
+      siraMap[k.examId] = { n: 0, toplam: kayitlar.filter(x => x.examId === k.examId).length };
+    }
+    siraMap[k.examId].n += 1;
+    k.oturumSira = siraMap[k.examId].n;
+    k.oturumToplam = siraMap[k.examId].toplam;
+  });
+
   kayitlar.forEach(k => {
     const d0 = parseDay(k.tarih), ds = parseDay(k.ds);
     const gunOnce = (d0 && ds) ? Math.round((d0 - ds) / 86400000) : null;
@@ -6336,15 +6496,47 @@ function hazirlikPlani() {
     // v96 — tek oturumluk küçük sınavda o oturum hem çalışma hem son turdur;
     // başlık yine "Sınava hazırlık" olarak kalır (yanlış "son tekrar" demesin).
     const sonBaslik = sonMu && !k.tekOturum;
+    // v98 — KULLANICI: "Denemede yazılı örnek soruları yok." Deneme test
+    // sınavıdır: son oturum "Deneme öncesi son tekrar" der, yazılı örnek
+    // senaryo YALNIZ okul (yazılı) sınavlarında geçer.
+    const yazili = k.kaynak === "okul";
+    const denemeMi = k.kaynak === "deneme";
     const adlar = k.konular.slice(0, 2).map(x => splitKey(x).topic).join(", ");
     const ek = k.konular.length > 2 ? " +" + (k.konular.length - 2) : "";
+    const baslik = denemeMi
+      ? (sonMu ? "Deneme öncesi son tekrar" : "Deneme hazırlığı")
+      : (sonBaslik ? "Son tekrar + yazılı örnek senaryo" : "Sınava hazırlık");
+    const etiket = baslik + (denemeMi ? "" : ": " + k.ders) +
+      (denemeMi ? (sonMu ? " (" + k.oturumSira + "/" + k.oturumToplam + ")" : ": " + k.konular.length + " konu · " + k.oturumSira + "/" + k.oturumToplam) : "") +
+      (adlar && !denemeMi ? " · " + adlar + ek : "") +
+      (!denemeMi && sonMu && k.tekOturum ? " · yazılı örnek senaryo" : "");
+    // Deneme detayı: hedef + ivme cümlesi de yazılır (plana göre plan).
+    const denemeEk = denemeMi
+      ? (function () {
+          const kapsam = "Hataların " + (k.kapsananHata || 0) + "/" + (k.hataSayisi || 0) + " konusu bu planda";
+          const kalan = k.kalanKonu ? " · " + k.kalanKonu + " konu sonraki tura kaldı" : "";
+          // İvme cümlesi her oturumda tekrarlanmaz: ilk ve son oturumda yazılır.
+          const ilkMi = (k.oturumSira === 1);
+          const v = (ilkMi || sonMu) && (typeof denemeIvmesi === "function") ? denemeIvmesi() : null;
+          const cumle = (v && typeof denemeIvmeCumlesi === "function") ? denemeIvmeCumlesi(v) : "";
+          return kapsam + kalan + (cumle ? " · " + cumle : "");
+        })()
+      : "";
     cikti.push({
       date: k.ds, tip: "hazirlik", kaynak: k.kaynak, examId: k.examId, ders: k.ders,
       gunOnce: gunOnce, konular: k.konular, son: sonMu, tekOturum: !!k.tekOturum,
-      etiket: (sonBaslik ? "Son tekrar + yazılı örnek senaryo: " : "Sınava hazırlık: ") + k.ders + (adlar ? " · " + adlar + ek : "") +
-        (sonMu && k.tekOturum ? " · yazılı örnek senaryo" : ""),
-      detay: k.konular.map(x => splitKey(x).topic).join(" · ") + (sonMu ? " · yazılı örnek senaryo çözümü" : ""),
-      bildirim: k.ders + " (sınavdan " + gunOnce + " gün)" + (sonMu ? " — SON TEKRAR + yazılı örnek senaryo" : "") + (adlar ? ": " + adlar + ek : "")
+      oturumSira: k.oturumSira, oturumToplam: k.oturumToplam,
+      yazili: yazili, oturumKonu: k.oturumKonu || HAZIRLIK_OTURUM_KONU,
+      hataSayisi: k.hataSayisi, kapsananHata: k.kapsananHata, kalanKonu: k.kalanKonu,
+      etiket: etiket,
+      detay: (denemeMi
+        ? k.konular.map(x => splitKey(x).topic).join(" · ")
+        : k.konular.map(x => splitKey(x).topic).join(" · ")) + (sonMu && yazili ? " · yazılı örnek senaryo çözümü" : ""),
+      denemeBilgi: denemeEk,
+      bildirim: (denemeMi
+        ? "Deneme (denemeye " + gunOnce + " gün) — " + (sonMu ? "SON TEKRAR" : k.konular.length + " konu")
+        : k.ders + " (sınavdan " + gunOnce + " gün)" + (sonMu ? " — SON TEKRAR + yazılı örnek senaryo" : "")) +
+        (adlar ? ": " + adlar + ek : "")
     });
   });
   return cikti.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
@@ -6449,9 +6641,11 @@ function hazirlikBildirimMetni(liste) {
   const govde = ilk.map(p => {
     const konular = (p.konular || []).slice(0, 3).map(x => splitKey(x).topic);
     const ek = (p.konular || []).length > 3 ? " +" + (p.konular.length - 3) : "";
-    return (p.son ? "SON TUR — " : "") + p.ders + (p.gunOnce ? " (sınavdan " + p.gunOnce + " gün)" : "") + ": " +
+    const denemeMi = p.kaynak === "deneme";
+    return (p.son && !denemeMi ? "SON TUR — " : (denemeMi ? "Deneme hazırlığı — " : "")) + p.ders +
+      (p.gunOnce ? (denemeMi ? " (denemeye " + p.gunOnce + " gün)" : " (sınavdan " + p.gunOnce + " gün)") : "") + ": " +
       (konular.length ? konular.join(", ") + ek : "konu listesi boş — sınav konularını gözden geçir") +
-      (p.son ? " + yazılı örnek senaryo" : "");
+      (p.son && !denemeMi ? " + yazılı örnek senaryo" : "");
   }).join(" | ");
   return {
     title: "Bugün hazırlık: " + ilk.map(p => p.ders).join(" · ") + (liste.length > 2 ? " +" + (liste.length - 2) : ""),
@@ -6530,9 +6724,16 @@ function calendarEventMap() {
       // v97 — takvim bloğu ve gün detayı AYNI başlık dilini kullanır:
       // "Son konu tekrarı: Matematik" / "Sınava hazırlık: Din Kültürü"
       tip: "hazirlik", etiket: k.etiket,
-      kisa: (k.son && !k.tekOturum ? "Son konu tekrarı: " : "Sınava hazırlık: ") + k.ders,
+      // v98 — deneme test sınavıdır: "Deneme hazırlığı · N konu" /
+      // "Deneme öncesi son tekrar"; yazılı örnek senaryo YALNIZ okul sınavında.
+      kisa: k.kaynak === "deneme"
+        ? (k.son && !k.tekOturum
+            ? "Deneme öncesi son tekrar"
+            : "Deneme hazırlığı · " + k.konular.length + " konu (" + k.oturumSira + "/" + k.oturumToplam + ")")
+        : (k.son && !k.tekOturum ? "Son konu tekrarı: " : "Sınava hazırlık: ") + k.ders,
       kaynak: k.kaynak, examId: k.examId,
       ders: k.ders, gunOnce: k.gunOnce, konular: k.konular, detay: k.detay,
+      oturumSira: k.oturumSira, oturumToplam: k.oturumToplam, denemeBilgi: k.denemeBilgi,
       son: !!k.son, tekOturum: !!k.tekOturum, sira: k.son ? 2.5 : 2
     });
   });
@@ -6734,7 +6935,10 @@ function renderCalDetailHTML(events) {
       // v95 — açıklama artık SABİT etiketlere ("Genel tekrar" vb.) değil,
       // planın gerçek verisine bağlı: kaç gün kaldı + hangi konular.
       // v96 — son oturum "son tekrar + yazılı örnek senaryo" turudur.
-      const gunBilgi = e.gunOnce ? "sınavdan " + e.gunOnce + " gün önce" : "";
+      // v98 — denemede "sınavdan" değil "denemeye" denir (deneme test sınavı).
+      const gunBilgi = e.gunOnce
+        ? (e.kaynak === "deneme" ? "denemeye " + e.gunOnce + " gün" : "sınavdan " + e.gunOnce + " gün önce")
+        : "";
       const konular = Array.isArray(e.konular) ? e.konular : [];
       const aciklama = e.son
         ? "SON TUR: konular burada bitiyor (sınavdan en az 3 gün önce). Bugün konu tekrarı + yazılı örnek senaryoları çöz; yeni konu açma."
@@ -6747,9 +6951,24 @@ function renderCalDetailHTML(events) {
       // altta yazıyor. 'Son konu tekrarı: MATEMATİK', 'Sınava hazırlık: Din
       // Kültürü' yazsın başlıkta." Başlık artık YALNIZ tür + ders adı taşır;
       // konu adları alttaki listede kalır (tekrar yok).
-      h += '<div class="cd-box" style="border-color:' + kenar + ';"><div style="font-weight:800;font-size:13px;color:' + basRenk + ';">' + icon(e.son ? "pen-line" : "shield-check", 14, "vertical-align:-2px;") + " " + (e.son ? "Son konu tekrarı + yazılı örnek senaryo: " : "Sınava hazırlık: ") + esc(e.ders || "") + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
-        '<div class="text-xs text-muted" style="margin-top:2px;">' + aciklama + "</div>" +
-        (konular.length ? konuListesi((e.son ? "Son tekrar konuları" : "Çalışılacak konular") + " (" + konular.length + "):", konular) : "") + "</div>";
+      // v98 — başlık YALNIZ tür + ders (konular altta). Deneme test sınavıdır:
+      // "Deneme hazırlığı · N konu" / "Deneme öncesi son tekrar"; "yazılı örnek
+      // senaryo" YALNIZ okul (yazılı) sınavlarında geçer.
+      const denemeMi = e.kaynak === "deneme";
+      const yazili = !denemeMi;
+      const baslik = denemeMi
+        ? (e.son ? "Deneme öncesi son tekrar" : "Deneme hazırlığı · " + konular.length + " konu") +
+          (e.oturumToplam ? " (" + (e.oturumSira || 1) + "/" + e.oturumToplam + ")" : "")
+        : (e.son ? "Son konu tekrarı + yazılı örnek senaryo: " : "Sınava hazırlık: ") + esc(e.ders || "");
+      const aciklama2 = denemeMi
+        ? (e.son
+            ? "Denemeye " + (e.gunOnce || 3) + " gün kaldı. Bugün yeni konu açma: yanlış yaptığın konuların son tekrarı + hızlı soru taraması (yazılı örnek yok, deneme test sınavıdır)."
+            : "Bu oturumda denemede yanlış yaptığın konular çalışılır.")
+        : aciklama;
+      h += '<div class="cd-box" style="border-color:' + kenar + ';"><div style="font-weight:800;font-size:13px;color:' + basRenk + ';">' + icon(e.son ? "pen-line" : "shield-check", 14, "vertical-align:-2px;") + " " + baslik + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
+        '<div class="text-xs text-muted" style="margin-top:2px;">' + aciklama2 + "</div>" +
+        (denemeMi && e.denemeBilgi ? '<div class="text-xs" style="margin-top:4px;color:var(--brand-blue);font-weight:600;">' + esc(e.denemeBilgi) + "</div>" : "") +
+        (konular.length ? konuListesi((!denemeMi && e.son ? "Son tekrar konuları" : "Çalışılacak konular") + " (" + konular.length + "):", konular) : "") + "</div>";
     }
     if (e.tip === "gece" || e.tip === "sabah") {
       // v96 — sınav gecesi / sınav sabahı: kısa çalışma, kendi rengiyle.

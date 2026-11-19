@@ -113,6 +113,9 @@ function kutu(state, bugun) {
     fnCikar("hazirlikZayifKonular"),
     fnCikar("hazirlikOturumSayisi"),
     fnCikar("hazirlikGunSeti"),
+    // v98 — deneme planı hedef net + ivmeye göre kurulur
+    fnCikar("denemeIvmesi"),
+    fnCikar("denemeIvmeCumlesi"),
     fnCikar("hazirlikPlani"),
     fnCikar("sinavYakinlari"),
     "\nreturn { hazirlikPlani: hazirlikPlani, sinavYakinlari: sinavYakinlari," +
@@ -179,7 +182,7 @@ console.log("\n== 2) Son gün: son konu tekrarı + yazılı örnek senaryo ==");
     "\nreturn { plan: hazirlikPlani, metin: hazirlikBildirimMetni };");
   const s2 = senaryo();
   const X = g(s2, () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { });
-  const sonGun = X.plan().filter(p => p.son)[0];
+  const sonGun = X.plan().filter(p => p.son && p.kaynak === "okul")[0];
   const m = X.metin([sonGun]);
   ok("bildirim 'SON TUR' diyor", /SON TUR — /.test(m.body), m.body);
   ok("bildirim yazılı örnek senaryoyu da söylüyor", /yazılı örnek senaryo/.test(m.body), m.body);
@@ -295,6 +298,7 @@ console.log("\n== 6) Takvim ÇIKTISI gerçekten renkli blok üretiyor (davranı�
       SABITLER, RENK_BLOGU,
       fnCikar("calRenk"),
       fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"), fnCikar("hazirlikGunSeti"),
+      fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
       fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"), fnCikar("calendarEventMap"),
       fnCikar("renderCalendarHTML"),
       "\nreturn { ay: function (y, m) { calCursor = new Date(y, m, 1); }," +
@@ -342,6 +346,7 @@ console.log("\n== 7) Gün detayı başlığı: YALNIZ tür + ders (konu tekrarı
       "let calSelected = null;",
       SABITLER, RENK_BLOGU, fnCikar("calRenk"),
       fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"), fnCikar("hazirlikGunSeti"),
+      fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
       fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"), fnCikar("calendarEventMap"),
       fnCikar("renderCalDetailHTML"),
       "\nreturn { gun: function (ds) { calSelected = ds; return renderCalDetailHTML(calendarEventMap()); } };"
@@ -373,7 +378,8 @@ console.log("\n== 7) Gün detayı başlığı: YALNIZ tür + ders (konu tekrarı
     const h = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
       "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState",
       [SABITLER, fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"),
-       fnCikar("hazirlikGunSeti"), fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"),
+       fnCikar("hazirlikGunSeti"), fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
+       fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"),
        fnCikar("calendarEventMap"), "\nreturn calendarEventMap();"].join("\n"));
     return h(senaryo(), () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { });
   })();
@@ -385,6 +391,129 @@ console.log("\n== 7) Gün detayı başlığı: YALNIZ tür + ders (konu tekrarı
   ok("takvim bloğunda 'Sınav sabahı: TDE'", tumEtiketler.indexOf("Sınav sabahı: TDE") >= 0);
   ok("takvim bloğunda eski kısa 'Gece:'/'Sabah:' etiketi kalmadı",
     !/\bGece: |\bSabah: /.test(tumEtiketler), tumEtiketler.slice(0, 200));
+}
+
+console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar kapsanır ==");
+{
+  // (a) Deneme son oturumu "yazılı örnek senaryo" DEMEZ (deneme test sınavıdır).
+  {
+    const den = plan.filter(p => p.examId === "deneme").sort((a, b) => (a.date < b.date ? -1 : 1));
+    const son = den[den.length - 1];
+    ok("deneme son oturumunda 'yazılı örnek' YOK",
+      !/yazılı örnek/i.test(son.etiket + " " + son.detay + " " + son.bildirim),
+      son.etiket + " | " + son.bildirim);
+    ok("deneme son oturumu 'Deneme öncesi son tekrar'",
+      /^Deneme öncesi son tekrar/.test(son.etiket), son.etiket);
+    ok("deneme oturumları 'Deneme hazırlığı' dilini kullanıyor",
+      den.filter(p => !p.son).every(p => /^Deneme hazırlığı/.test(p.etiket)),
+      den.map(p => p.etiket).join(" | "));
+    ok("okul sınavında 'yazılı örnek senaryo' KALIYOR",
+      plan.filter(p => p.kaynak === "okul" && p.son).every(p => /yazılı örnek senaryo/.test(p.etiket)));
+  }
+
+  // (b) Hedef net + ivme hesabı gerçek veriden
+  {
+    const s2 = senaryo();
+    // iki deneme: 60 → 62 net, 30 gün ara; hedef 95, hedefe 30 gün
+    s2.exams = [
+      { name: "D1", date: "2026-10-01", net: 60, errorLogs: [] },
+      { name: "D2", date: "2026-10-31", net: 62, errorLogs: [] }
+    ];
+    s2.plan.targetNet = 95;
+    const G = kutu(s2, BUGUN);
+    const v = (function () {
+      const h = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
+        "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState",
+        SABITLER + "\n" + fnCikar("denemeIvmesi") + "\n" + fnCikar("denemeIvmeCumlesi") +
+        "\nreturn { v: denemeIvmesi(), c: denemeIvmeCumlesi(denemeIvmesi()) };");
+      return h(s2, () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { });
+    })();
+    ok("son net = 62", v.v.sonNet === 62, v.v.sonNet);
+    ok("hedef net = 95", v.v.hedef === 95, v.v.hedef);
+    ok("gereken net = +33", v.v.gerekenNet === 33, v.v.gerekenNet);
+    ok("ölçülen ivme = +0.47 net/hafta (2 net / 30 gün)",
+      Math.abs(v.v.olculenIvme - 0.47) < 0.01, v.v.olculenIvme);
+    ok("kalan hafta hesaplandı", v.v.kalanHafta >= 4, v.v.kalanHafta);
+    ok("gereken ivme > ölçülen → durum GERİDE", v.v.durum === "geride", v.v.durum);
+    ok("ivme cümlesi hedefi, son neti ve gereken tempoyu söylüyor",
+      /Hedef 95 net/.test(v.c) && /son net 62/.test(v.c) && /net\/hafta/.test(v.c), v.c);
+    ok("ivme cümlesi GERİDE diyor ve oturum başına 2 konuyu açıklıyor",
+      /GERİDE/.test(v.c) && /oturum başına 2 konu/.test(v.c), v.c);
+    ok("geride ivmede plan oturum başına 2 konuya iner",
+      G.hazirlikPlani().filter(p => p.examId === "deneme").every(p => p.oturumKonu === 2),
+      G.hazirlikPlani().filter(p => p.examId === "deneme").map(p => p.oturumKonu).join(","));
+  }
+
+  // (c) Hataların TAMAMI kapsanır (30 farklı konu → 30 konu plana girer)
+  {
+    const s3 = senaryo();
+    const hatalar = [];
+    for (let i = 1; i <= 30; i++) {
+      hatalar.push({ lesson: i % 2 ? "Matematik" : "Fizik", topic: "Hata " + i, type: "Konuyu Bilmiyordum", date: "2026-10-27" });
+    }
+    s3.exams = [{ name: "D", date: "2026-10-27", net: 77.5, errorLogs: hatalar }];
+    s3.memory = {}; s3.questions = [];
+    const G = kutu(s3, BUGUN);
+    const den = G.hazirlikPlani().filter(p => p.examId === "deneme");
+    const hepsi = new Set(den.flatMap(p => p.konular));
+    ok("30 hata konusunun TAMAMI planda", hepsi.size === 30, hepsi.size);
+    ok("her oturumda en çok 3 konu", den.every(p => p.konular.length <= 3),
+      den.map(p => p.konular.length).join(","));
+    ok("oturum sayısı konu sayısıyla uyumlu (10 oturum)", den.length === 10, den.length);
+    ok("kapsama bilgisi kayıtta (30/30)", den[0].kapsananHata === 30 && den[0].hataSayisi === 30,
+      den[0].kapsananHata + "/" + den[0].hataSayisi);
+    ok("'sonraki tura kaldı' uyarısı yok", !den.some(p => p.kalanKonu > 0));
+    ok("deneme oturumları sınavdan en az 3 gün önce",
+      den.every(p => p.gunOnce >= 3), den.map(p => p.gunOnce).join(","));
+  }
+
+  // (e) Gün detayı dili: denemede "denemeye N gün", okulda "sınavdan N gün"
+  {
+    const g2 = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
+      "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState", "icon", "esc", "attr",
+      [
+        "let calSelected = null;",
+        SABITLER, RENK_BLOGU, fnCikar("calRenk"),
+        fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"), fnCikar("hazirlikGunSeti"),
+        fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
+        fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"), fnCikar("calendarEventMap"),
+        fnCikar("renderCalDetailHTML"),
+        "\nreturn { plan: hazirlikPlani, gun: function (ds) { calSelected = ds; return renderCalDetailHTML(calendarEventMap()); } };"
+      ].join("\n"));
+    const s4 = senaryo();
+    s4.exams = [
+      { id: "d1", date: "2026-10-01", net: 60, errorLogs: [] },
+      { id: "d2", date: "2026-10-31", net: 62, errorLogs: [] }
+    ];
+    s4.plan.targetNet = 95;
+    const X2 = g2(s4, () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { },
+      (n, sz, st) => '<i data-i="' + n + '"></i>', x => String(x == null ? "" : x), x => String(x == null ? "" : x));
+    const den2 = X2.plan().filter(p => p.kaynak === "deneme");
+    const orta = X2.gun(den2[0].date), son2 = X2.gun(den2[den2.length - 1].date);
+    ok("deneme gün detayı 'denemeye N gün' diyor", /denemeye \d+ gün/.test(orta), orta.slice(0, 200));
+    ok("deneme gün detayında 'sınavdan' GEÇMEZ", !/sınavdan/.test(orta), orta.slice(0, 200));
+    // Aynı gün okul sınavı hazırlığı da olabilir → yalnız DENEME kutusuna bak.
+    const denKutu = son2.split('class="cd-box"').filter(x => /Deneme öncesi son tekrar/.test(x))[0] || "";
+    // "yazılı örnek yok, deneme test sınavıdır" İSTENEN metin → yasak olan
+    // ifade "yazılı örnek senaryo" (okul sınavı dili).
+    ok("deneme son tekrar kutusunda 'yazılı örnek senaryo' GEÇMEZ", denKutu.length > 0 && !/yazılı örnek senaryo/.test(denKutu),
+      denKutu.slice(0, 250));
+    ok("deneme son tekrarında 'deneme test sınavıdır' açıklaması var", /deneme test sınavıdır/.test(denKutu), denKutu.slice(0, 250));
+    ok("deneme oturum sırası görünür (1/N)", /1\/\d+/.test(orta), orta.slice(0, 160));
+    ok("deneme bildirimi 'denemeye N gün' diyor", /^Deneme \(denemeye \d+ gün\)/.test(den2[0].bildirim), den2[0].bildirim);
+    ok("deneme bildiriminde 'yazılı örnek senaryo' YOK", !/yazılı örnek senaryo/.test(den2[0].bildirim + den2[den2.length - 1].bildirim));
+  }
+
+  // (d) Planlama kartında hedef/ivme özeti görünüyor
+  {
+    ok("Deneme Hedefi kartında hazırlık planı özeti var",
+      /Deneme hazırlık planı:/.test(HTML));
+    ok("kartta haftada kaç konu yazıyor", /haftada ~/.test(HTML));
+    ok("kartta hataların kaçta kaçı kapsandığı yazıyor", /hataların <b>/.test(HTML));
+    ok("İvme Ölçer ÖLÇÜLEN ivmeyi de gösteriyor", /net\/hafta ölçülen ivme/.test(HTML));
+    ok("ikinci deneme yoksa 'iki deneme gerekli' denir (uydurma yok)",
+      /Ölçülen ivme için iki deneme gerekli/.test(HTML));
+  }
 }
 
 console.log("\n" + "─".repeat(56));

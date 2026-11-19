@@ -171,3 +171,76 @@ seçilen en zayıf N konu."
 Test (v96 dosyası, bölüm 7): gün detayı başlığında konu adı geçmediği, konuların
 alttaki listede durduğu, takvim bloğu ile gün detayının AYNI başlık dilini
 kullandığı doğrulanır.
+
+## v98 — Denemede yazılı örnek YOK + hazırlık hedef net ve ivmeye göre
+
+KULLANICI (20 Kas 2026):
+> "Denemede yazılı örnek soruları yok. Ve şunu da gözden kaçırmayalım.
+> Deneme hazırlıkları öğrencinin deneme hedefi ve ivme ölçerine göre
+> planlanmalı. Hedeflediği nete ulaşmak için hangi konuları bitirmeli,
+> haftalık ivmesi ne kadar bunlara göre olmalı. Ve sonraki denemeye kadar
+> öğrencinin hatası olan tüm konuları çalışması gerekmiyor mu?"
+
+### 1) Deneme = test sınavı: yazılı örnek senaryo YOK
+
+"Yazılı örnek senaryo" yalnız **okul (yazılı) sınavında** kalır. Denemede
+başlık/açıklama/bildirim dili:
+
+| Yer | Metin |
+|---|---|
+| Takvim bloğu (hazırlık) | `Deneme hazırlığı · 2 konu (3/9)` |
+| Takvim bloğu (son) | `Deneme öncesi son tekrar` |
+| Gün detayı başlığı | `Deneme hazırlığı · 2 konu (3/9)` + `(denemeye 19 gün)` |
+| Gün detayı (son) | `Deneme öncesi son tekrar (9/9) (denemeye 3 gün)` |
+| Gün detayı açıklaması | "Bu oturumda denemede yanlış yaptığın konular çalışılır." / son: "Denemeye 3 gün kaldı… **yazılı örnek yok, deneme test sınavıdır**." |
+| Bildirim | `Deneme (denemeye 15 gün) — 3 konu: …` · son: `… — SON TEKRAR …` |
+| Uygulama içi bildirim | `Deneme hazırlığı · denemeye 15 gün` |
+
+Okul sınavı dili değişmedi: `Son konu tekrarı + yazılı örnek senaryo: <ders> (sınavdan 3 gün önce)`.
+
+### 2) `denemeIvmesi()` — hedef net ve ivme ölçer (yalnız kayıtlı denemeler)
+
+```
+son net        = en yeni denemenin neti
+önceki net     = bir önceki denemenin neti
+ölçülen ivme   = (son − önceki) × 7 / iki deneme arası gün      (net/hafta)
+gereken net    = hedef net − son net
+kalan hafta    = ceil(hedefe kalan gün / 7)
+gereken ivme   = gereken net / kalan hafta
+durum          = veri-yok | ivme-bilinmiyor | yolunda | geride
+```
+
+- İkinci deneme yoksa **uydurulmaz**: "Ölçülen ivme için iki deneme gerekli."
+- Hedef net/tarih yoksa: "Deneme hedefine net girilince ivme hesaplanır."
+- **İvme Ölçer** kartında artık ölçülen ivme de yazıyor:
+  `+0.47 net/hafta ölçülen ivme · gereken +6.6 → GERİDE` (yeşil/kırmızı).
+
+### 3) Hazırlık planı: hedefe göre konu + haftalık yük
+
+- **TÜM hata konuları** plana girer (`Denemelerim` hata kayıtları), en zayıf
+  konular **en erken** oturuma yazılır → tekrar etmeye zaman kalır.
+- Hafıza kaynaklı (tekrar/hafıza) zayıflar **yalnız yer kalırsa** eklenir.
+- Oturum başına konu: normalde **3**, ivme **geride** ise **2** (daha sık tekrar,
+  daha çok oturum). Deneme tavanı 12 → **20 oturum** (gerçek sınır hedefe kalan gün).
+- Konular denemeden **en az 3 gün önce** biter; son oturum "son tekrar".
+- Sığmayan konu olursa `kalanKonu` ile "N konu sonraki tura kaldı" (kırmızı).
+
+**Deneme Hedefi kartı (kapalı özet) — plan kutusu:**
+
+```
+Deneme hazırlık planı: 9 oturum · 18 konu · hataların 18/18 konusu kapsanıyor · haftada ~6 konu
+İlk oturum: 29.11.2026 · son oturum: 17.12.2026 (denemeden 3 gün önce)
+Hedef 95 net · son net 62 · gereken +6.6 net/hafta · ölçülen +0.47 net/hafta → GERİDE.
+```
+
+`haftada ~N konu` = planın gerçek penceresi (ilk oturum → son oturum) üzerinden.
+
+### 4) Test
+
+`tests/v96-tekrar-takvim.test.js` bölüm 8 (28 yeni assert, toplam **112/112**):
+denemede yazılı örnek yok · okulda var · ölçülen/gereken ivme · "geride"
+durumunda oturum başına 2 konu · 30 hata konusunun **tamamı** planda ·
+oturum sırası (1/9) · plan kutusu ve İvme Ölçer satırı · gün detayı
+"denemeye N gün" der, "sınavdan" demez.
+
+Sürüm: `PWA_SURUM = "v98-deneme-plani"`, SW `analiz-merkezi-v-20261027-v98-deneme-plani`.
