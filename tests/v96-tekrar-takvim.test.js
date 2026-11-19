@@ -705,6 +705,82 @@ console.log("\n== 10) BOŞ GÜN YOK: plan pencerenin her gününü doldurur (v10
   ok("uzak sınavda hazırlık son 30 güne yayılır", ilkGun >= 58, ilkGun + ". gün");
 }
 
+console.log("\n== 11) TEKRAR GÜNÜ EN ÇOK HATALI KONU + GÜNLÜK YÜK (v101) ==");
+{
+  // KULLANICI: "Deneme tekrarı günlerinde en çok yanlış yaptığı konuları
+  // çalışsın. Birde şeyi hesapla öğrenci her bu deneme hazırlığında konuyu
+  // çalışsa bunun tekrarları da olacak ya, yoğun oluyor mu?"
+  // Hata SAYISI farklı 8 konu: 6,5,4,3,2,2,1,1
+  const sayilar = { "Mat > A": 6, "Fiz > B": 5, "Kim > C": 4, "Bio > D": 3, "Fel > E": 2, "Cog > F": 2, "Tar > G": 1, "Din > H": 1 };
+  const hata11 = [];
+  Object.keys(sayilar).forEach(k => {
+    const [lesson, topic] = k.split(" > ");
+    for (let i = 0; i < sayilar[k]; i++) hata11.push({ lesson, topic, type: "Konuyu Bilmiyordum", date: "2026-10-27" });
+  });
+  const s11 = senaryo();
+  s11.plan.schoolExams = [];
+  s11.plan.targetDate = "2026-12-20";              // 30 gün kaldı
+  s11.exams = [{ id: "d1", date: "2026-10-27", net: 77.5, errorLogs: hata11 }];
+  s11.questions = []; s11.memory = {};
+  const P = kutu(s11, BUGUN).hazirlikPlani().filter(p => p.examId === "deneme")
+    .sort((a, b) => (a.date < b.date ? -1 : 1));
+  const adet = k => sayilar[k] || 0;
+  const calisma = P.filter(p => !p.tekrar && !p.son);
+  const tekrarP = P.filter(p => p.tekrar && !p.son);
+  const sonP = P[P.length - 1];
+  const calismaSayilari = calisma.reduce((a, p) => a.concat(p.konular.map(adet)), []);
+
+  ok("tekrar oturumu var", tekrarP.length >= 2, tekrarP.length);
+  // Tekrar günleri, EN ÇOK hatalı K konuyu kapsar (K = tekrar oturumu sayısı):
+  // her gün bir sonraki en hatalı konuya geçer, aynı konu yığılmaz.
+  const tekrarKonulari = [];
+  tekrarP.forEach(p => p.konular.forEach(k => { if (tekrarKonulari.indexOf(k) < 0) tekrarKonulari.push(k); }));
+  const ilkTekrarSayi = Math.max(...tekrarKonulari.map(adet));
+  ok("ilk tekrar günü EN ÇOK yanlış yapılan konu", tekrarP.length > 0 && tekrarP[0].konular.every(k => adet(k) === 6),
+    tekrarP[0].konular.map(adet).join(","));
+  const enIyiK = Object.keys(sayilar).map(adet).sort((a, b) => b - a).slice(0, tekrarKonulari.length);
+  ok("tekrar günleri yalnız en çok hatalı K konuyu kapsar",
+    tekrarKonulari.map(adet).sort((a, b) => b - a).join(",") === enIyiK.join(","),
+    tekrarKonulari.map(adet).join(",") + " ≠ " + enIyiK.join(","));
+  ok("aynı konu tekrar günlerine yığılmaz", new Set(tekrarKonulari).size === tekrarKonulari.length);
+
+  // Tekrar günleri hata sayısına göre AZALAN sırayla ilerler (hiç yığılmaz).
+  const tekrarSayilari = tekrarP.reduce((a, p) => a.concat(p.konular.map(adet)), []);
+  ok("tekrar günleri hata sayısına göre azalan",
+    tekrarSayilari.every((n, i) => i === 0 || n <= tekrarSayilari[i - 1]), tekrarSayilari.join(","));
+
+  // Tekrar günü, çalışma günüyle AYNI ağırlıkta (1 konu) — 3 konu yığılmaz.
+  ok("tekrar günü çalışma günüyle aynı boyda", tekrarP.every(p => p.konular.length === calisma[0].konular.length),
+    tekrarP.map(p => p.konular.length).join(","));
+  ok("tekrar günü 1 konu (yığılma yok)", tekrarP.every(p => p.konular.length === 1),
+    tekrarP.map(p => p.konular.length).join(","));
+
+  // Son tekrar = EN ÇOK hatalı konular.
+  const enIyi3 = Object.keys(sayilar).map(adet).sort((a, b) => b - a).slice(0, sonP.konular.length);
+  ok("son tekrar en çok hatalı konularla yapılır",
+    sonP.konular.map(adet).join(",") === enIyi3.join(","), sonP.konular.map(adet).join(","));
+
+  // Konu başına hata sayısı planda taşınır (gün detayında "· 4 hata" yazar).
+  ok("planda konu başına hata sayısı var",
+    P.every(p => Array.isArray(p.hataAdetleri) && p.hataAdetleri.length === p.konular.length));
+  ok("hata sayıları gerçek kayıtla aynı",
+    P.every(p => p.konular.every((k, i) => p.hataAdetleri[i] === adet(k))));
+
+  // GÜNLÜK YÜK: aynı konu hem hazırlıkta hem tekrar listesinde iki kez yazılmaz.
+  ok("gün detayı hazırlık konusunu tekrar listesinde TEKRARLAMAZ",
+    /bugunHazirlik\.has\(key\)/.test(HTML));
+  ok("gün detayında 'Bugünün yükü' sayısı var", /Bugünün yükü:/.test(GORUNEN));
+  ok("yük = yeni konu + hazırlık tekrarı + konu tekrarları",
+    /const yuk = hazYeni \+ hazTekrarSay \+ tekrarlar\.length;/.test(HTML));
+  ok("yük dökümü üç parçalı yazılır", /" yeni konu"/.test(HTML) && /" hazırlık tekrarı"/.test(HTML) && /" konu tekrarı"/.test(HTML));
+
+  // TEKRAR GÜNÜ ÇALIŞMA GÜNÜNDEN AĞIR DEĞİL: hazırlık tarafında günlük yük ≤ 3.
+  const gunlukHaz = {};
+  P.forEach(p => { gunlukHaz[p.date] = (gunlukHaz[p.date] || 0) + p.konular.length; });
+  ok("hazırlık yükü günde ≤ 3 konu", Object.values(gunlukHaz).every(n => n <= 3),
+    Object.values(gunlukHaz).join(","));
+}
+
 console.log("\n" + "─".repeat(56));
 if (kalan) {
   hatalar.forEach(x => console.log(" ✗ " + x));

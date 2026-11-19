@@ -1,4 +1,4 @@
-const PWA_SURUM = "v100-her-gun-plan";
+const PWA_SURUM = "v101-hatali-tekrar";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {

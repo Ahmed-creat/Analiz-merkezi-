@@ -6273,7 +6273,14 @@ function hazirlikZayifKonular() {
         const key = satir[0], puan = Number(satir[1]) || 0;
         if (!key || gorulen[key] || puan <= 0) return;
         gorulen[key] = 1;
-        liste.push({ key: key, puan: 1000 + puan, kaynak: "hata" });
+        // v101 — KULLANICI: "Deneme tekrarı günlerinde en çok yanlış yaptığı
+        // konuları çalışsın." Konunun GERÇEK hata sayısı da taşınır; plan önce
+        // SAYIYA, eşitse puana bakar (puan ders ağırlığıyla şişebiliyor).
+        liste.push({
+          key: key, puan: 1000 + puan,
+          sayi: Number(satir[2] && satir[2].count) || 0,
+          kaynak: "hata"
+        });
       });
     } catch (e) { /* eksik alan: hata günlüğü yok sayılır */ }
   }
@@ -6445,7 +6452,11 @@ function hazirlikPlani() {
   const p = state.plan || {};
   const zayif = hazirlikZayifKonular();
   const puanMap = {};
-  zayif.forEach(z => { if (puanMap[z.key] === undefined) puanMap[z.key] = z.puan; });
+  const adetMap = {};               // v101 — konunun GERÇEK hata sayısı
+  zayif.forEach(z => {
+    if (puanMap[z.key] === undefined) puanMap[z.key] = z.puan;
+    if (adetMap[z.key] === undefined) adetMap[z.key] = Number(z.sayi) || 0;
+  });
   const oncelik = keys => keys.slice().sort((a, b) => (puanMap[b] || 0) - (puanMap[a] || 0));
 
   const sinavlar = [];
@@ -6457,7 +6468,10 @@ function hazirlikPlani() {
   //   • oturum sayısı hedef tarihe kalan güne ve deneme tavanına (12) göre
   const ivme = (typeof denemeIvmesi === "function") ? denemeIvmesi() : null;
   if (p.targetDate) {
-    const hataKonu = zayif.filter(z => z.kaynak === "hata").map(z => z.key);
+    // v101 — en çok yanlış yapılan konu havuzun BAŞINDA: erken çalışılır,
+    // tekrar oturumlarına ve son tekrara önce girer.
+    const hataKonu = zayif.filter(z => z.kaynak === "hata").map(z => z.key)
+      .sort((a, b) => (adetMap[b] || 0) - (adetMap[a] || 0) || (puanMap[b] || 0) - (puanMap[a] || 0));
     const digerKonu = zayif.filter(z => z.kaynak !== "hata").map(z => z.key);
     const hepsi = hataKonu.concat(digerKonu);
     const d0 = parseDay(p.targetDate);
@@ -6577,20 +6591,48 @@ function hazirlikPlani() {
         yerel[slot].konular = havuz.slice(idx, idx + n);
         idx += n;
       });
-      // Tekrar oturumu: kendinden ÖNCEKİ çalışma oturumlarının konularını
-      // tekrar eder (en yeniden geriye doğru, aralık artarak).
-      let tNo = 0;
+      /* v101 — KULLANICI: "Deneme tekrarı günlerinde en çok yanlış yaptığı
+         konuları çalışsın." Tekrar oturumu artık rastgele değil, HATA SAYISINA
+         göre seçer:
+           1) yalnız o güne kadar ÇALIŞILMIŞ konular arasından seçilir,
+           2) sıra: en çok hata → puan → havuzdaki sıra,
+           3) aynı konu üst üste yığılmasın diye her tur BİR SONRAKİ en hatalı
+              konuya geçer; konular bir kez tekrar edildikten sonra başa döner.
+         Böylece tekrar günlerinde hep en çok yanlış yapılan konular çalışılır. */
+      // Tekrar günü, çalışma günüyle AYNI ağırlıkta olsun: 18 konu / 18 çalışma
+      // → tekrar günü 1 konu (eskiden 3 konu yığılıyordu).
+      const tekrarBoy = Math.max(1, Math.min(boy, Math.ceil(havuz.length / Math.max(1, calismaSay))));
+      const tekrarSayac = {};          // konu → kaç kez tekrar oturumuna girdi
+      const sonTekrarlar = [];         // son tekrarda çıkan konular (üst üste olmasın)
       for (let i = 0; i < sonI; i++) {
         if (tip[i] !== "tekrar") continue;
         const onceki = calismaSlot.filter(x => x < i);
-        if (!onceki.length) {           // hiç çalışma yoksa: en zayıf konular
-          yerel[i].konular = havuz.slice(0, boy);
-        } else {
-          const geri = 1 + (tNo % Math.min(3, onceki.length));
-          const kaynak = onceki[Math.max(0, onceki.length - geri)];
-          yerel[i].konular = yerel[kaynak].konular.slice(0, boy);
+        // O güne kadar çalışılmış konular (havuz sırası = zayıflık sırası).
+        const kapsanan = [];
+        onceki.forEach(slot => (yerel[slot].konular || []).forEach(k => {
+          const idx = havuz.indexOf(k);
+          if (idx >= 0 && kapsanan.indexOf(idx) < 0) kapsanan.push(idx);
+        }));
+        if (!kapsanan.length) {
+          // Henüz hiç konu çalışılmadıysa: en çok yanlış yapılanlar.
+          yerel[i].konular = havuz.slice(0, tekrarBoy);
+          yerel[i].konular.forEach(k => { tekrarSayac[k] = (tekrarSayac[k] || 0) + 1; });
+          continue;
         }
-        tNo++;
+        const sirali = kapsanan.slice().sort((a, b) =>
+          (tekrarSayac[havuz[a]] || 0) - (tekrarSayac[havuz[b]] || 0) ||
+          (adetMap[havuz[b]] || 0) - (adetMap[havuz[a]] || 0) ||
+          (puanMap[havuz[b]] || 0) - (puanMap[havuz[a]] || 0) ||
+          (a - b));
+        // Son tekrarda çıkan konular, başka aday varken atlanır.
+        const taze = sirali.filter(idx => sonTekrarlar.indexOf(havuz[idx]) < 0);
+        const secilenler = (taze.length >= Math.min(tekrarBoy, sirali.length) ? taze : sirali).slice(0, tekrarBoy);
+        secilenler.forEach(idx => {
+          tekrarSayac[havuz[idx]] = (tekrarSayac[havuz[idx]] || 0) + 1;
+          sonTekrarlar.push(havuz[idx]);
+        });
+        while (sonTekrarlar.length > 2) sonTekrarlar.shift();
+        yerel[i].konular = secilenler.map(idx => havuz[idx]);
       }
       yerel.forEach((k, i) => {
         k.tekrar = (i === sonI) ? true : (tip[i] === "tekrar");
@@ -6663,6 +6705,8 @@ function hazirlikPlani() {
       oturumSira: k.oturumSira, oturumToplam: k.oturumToplam,
       yazili: yazili, oturumKonu: k.oturumKonu || HAZIRLIK_OTURUM_KONU,
       hataSayisi: k.hataSayisi, kapsananHata: k.kapsananHata, kalanKonu: k.kalanKonu,
+      // v101 — listede "· 4 hata" yazabilmek için konu başına hata sayısı
+      hataAdetleri: (k.konular || []).map(x => adetMap[x] || 0),
       etiket: etiket,
       detay: (denemeMi
         ? k.konular.map(x => splitKey(x).topic).join(" · ")
@@ -6870,7 +6914,7 @@ function calendarEventMap() {
       kaynak: k.kaynak, examId: k.examId,
       ders: k.ders, gunOnce: k.gunOnce, konular: k.konular, detay: k.detay,
       oturumSira: k.oturumSira, oturumToplam: k.oturumToplam, denemeBilgi: k.denemeBilgi,
-      tekrar: !!k.tekrar,
+      tekrar: !!k.tekrar, hataAdetleri: k.hataAdetleri,
       son: !!k.son, tekOturum: !!k.tekOturum, sira: k.son ? 2.5 : 2
     });
   });
@@ -7052,9 +7096,15 @@ function renderCalDetailHTML(events) {
 
   const okulById = {};
   (state.plan.schoolExams || []).forEach(se => { okulById[se.id] = se; });
-  const konuListesi = (baslik2, topics) =>
+  // v101 — adetler verilirse konunun yanına "· 4 hata" yazılır (tekrar
+  // günlerinde "en çok yanlış yaptığın konu" olduğu görünsün).
+  const konuListesi = (baslik2, topics, adetler) =>
     '<div class="text-xs text-muted" style="margin-top:2px;">' + baslik2 + "</div>" +
-    '<div style="margin-top:4px;">' + topics.map(k => '<div class="cd-row">' + icon("book-open", 12, "flex-shrink:0;color:var(--brand-blue);") + "<span>" + esc(splitKey(k).topic) + "</span></div>").join("") + "</div>";
+    '<div style="margin-top:4px;">' + topics.map((k, i) =>
+      '<div class="cd-row">' + icon("book-open", 12, "flex-shrink:0;color:var(--brand-blue);") +
+      "<span>" + esc(splitKey(k).topic) +
+      (adetler && Number(adetler[i]) > 0 ? ' <span class="text-xs text-muted">· ' + adetler[i] + " hata</span>" : "") +
+      "</span></div>").join("") + "</div>";
 
   evs.forEach(e => {
     if ((e.tip === "sinav" || e.tip === "deneme") && e.kaynak === "deneme") {
@@ -7102,14 +7152,15 @@ function renderCalDetailHTML(events) {
         ? (e.son
             ? "Denemeye " + (e.gunOnce || 3) + " gün kaldı. Bugün yeni konu açma: daha önce çalıştığın en zayıf konuların son tekrarı + hızlı soru taraması."
             : (e.tekrar
-                ? "Bugün yeni konu yok: birkaç gün önce çalıştığın konuları tekrar ediyorsun (kalıcılık için)."
+                ? "Bugün yeni konu yok: denemede en çok yanlış yaptığın konuları tekrar ediyorsun (kalıcılık için)."
                 : "Bu oturumda denemede yanlış yaptığın konular çalışılır."))
         : aciklama;
       h += '<div class="cd-box" style="border-color:' + kenar + ';"><div style="font-weight:800;font-size:13px;color:' + basRenk + ';">' + icon(e.son ? "pen-line" : "shield-check", 14, "vertical-align:-2px;") + " " + baslik + ' <span class="text-xs text-muted font-normal">(' + gunBilgi + ")</span></div>" +
         '<div class="text-xs text-muted" style="margin-top:2px;">' + aciklama2 + "</div>" +
         (denemeMi && e.denemeBilgi ? '<div class="text-xs" style="margin-top:4px;color:var(--brand-blue);font-weight:600;">' + esc(e.denemeBilgi) + "</div>" : "") +
         (konular.length ? konuListesi((e.son ? (denemeMi ? "Son tekrar edilecek konular" : "Son tekrar konuları")
-          : (e.tekrar ? "Tekrar edilecek konular" : "Çalışılacak konular")) + " (" + konular.length + "):", konular) : "") + "</div>";
+          : (e.tekrar ? "Tekrar edilecek konular" : "Çalışılacak konular")) + " (" + konular.length + "):",
+          konular, denemeMi ? e.hataAdetleri : null) : "") + "</div>";
     }
     if (e.tip === "gece" || e.tip === "sabah") {
       // v96 — sınav gecesi / sınav sabahı: kısa çalışma, kendi rengiyle.
@@ -7120,10 +7171,18 @@ function renderCalDetailHTML(events) {
     }
   });
 
-  // O günün konu tekrarları (3/7/14/21/28. gün)
+  // O günün konu tekrarları (1/3/7/14/28. gün)
+  // v101 — KULLANICI: "...bunun tekrarları da olacak ya, yoğun oluyor mu?"
+  // Aynı gün hazırlık oturumunda çalışılan konu, tekrar listesinde TEKRAR
+  // YAZILMAZ: öğrenci onu o gün zaten çalışıyor (gün iki iş gibi görünmesin).
+  const bugunHazirlik = new Set();
+  (evs || []).forEach(e => {
+    if (e && e.tip === "hazirlik" && Array.isArray(e.konular)) e.konular.forEach(k => bugunHazirlik.add(k));
+  });
   const tekrarlar = [];
   Object.keys(state.memory).forEach(key => {
     const mem = state.memory[key];
+    if (bugunHazirlik.has(key)) return;
     if (mem && mem.schedule) Object.entries(mem.schedule).forEach(([gun, tarih]) => { if (tarih === ds) tekrarlar.push({ key: key, gun: Number(gun) }); });
   });
   tekrarlar.sort((a, b2) => splitKey(a.key).lesson.localeCompare(splitKey(b2.key).lesson, "tr"));
@@ -7133,6 +7192,24 @@ function renderCalDetailHTML(events) {
         const p = splitKey(t2.key);
         return '<div class="cd-row">' + icon("rotate-cw", 12, "flex-shrink:0;color:var(--memory-indigo);") + "<span><b>" + esc(p.lesson) + ":</b> " + esc(p.topic) + ' <span class="text-xs text-muted">— ' + t2.gun + ". gün tekrarı</span></span></div>";
       }).join("") + "</div></div>";
+  }
+  // v101 — GÜNLÜK YÜK: "bunun tekrarları da olacak ya, yoğun oluyor mu?" sorusu
+  // gün bazında SAYIYLA cevaplanır (hazırlık konuları + konu tekrarları).
+  let hazYeni = 0, hazTekrarSay = 0;
+  (evs || []).forEach(e => {
+    if (!e || e.tip !== "hazirlik" || !Array.isArray(e.konular)) return;
+    if (e.tekrar || e.son) hazTekrarSay += e.konular.length;
+    else hazYeni += e.konular.length;
+  });
+  const yuk = hazYeni + hazTekrarSay + tekrarlar.length;
+  if (yuk) {
+    const parca = [];
+    if (hazYeni) parca.push(hazYeni + " yeni konu");
+    if (hazTekrarSay) parca.push(hazTekrarSay + " hazırlık tekrarı");
+    if (tekrarlar.length) parca.push(tekrarlar.length + " konu tekrarı");
+    h += '<div class="text-xs text-muted" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">' +
+      icon("gauge", 13, "vertical-align:-2px;") + " Bugünün yükü: <b>" + yuk + " madde</b> — " +
+      parca.join(" + ") + ".</div>";
   }
   if (!evs.length && !tekrarlar.length) {
     h += '<div class="text-xs text-muted">' + icon("calendar-x", 13, "vertical-align:-2px;") + " Bu gün için kayıtlı sınav ya da tekrar yok.</div>";

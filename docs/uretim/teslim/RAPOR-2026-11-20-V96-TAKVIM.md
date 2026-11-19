@@ -415,3 +415,83 @@ damga biçimi artık `v100-…` (v100 ≥ v94 ✓).
 sözdizimi 40/40.
 
 Sürüm: `PWA_SURUM = "v100-her-gun-plan"`.
+
+---
+
+## v101 — "Tekrar günlerinde en çok yanlış yaptığı konular" + yoğunluk hesabı
+
+Kullanıcı (68): **"Deneme tekrarı günlerinde encok yanlış yaptığı konuları
+çalışsın. Birde şeyi hesapla öğrenci her bu deneme hazırlığında konuyu çalışsa
+bunun tekrarlarida olacak ya yoğun oluyor mu"**
+
+### 1) Tekrar günü artık HATA SAYISINA göre seçer
+v100'de tekrar günü, daha önce çalışılmış bir oturumun konularını kopyalıyordu
+(sıra rastgeleydi). v101'de seçim üç kurala bağlandı:
+
+1. yalnız o güne kadar **çalışılmış** konular arasından seçilir (uydurma yok),
+2. sıra: **en çok hata** → puan → havuz sırası,
+3. aynı konu yığılmaz: her tekrar günü bir sonraki en hatalı konuya geçer;
+   konular bir kez tekrar edildikten sonra başa döner.
+
+`hazirlikZayifKonular()` artık konunun **gerçek hata sayısını** (`sayi`) taşır;
+puan (ders ağırlığıyla şişen skor) yalnız eşitlik bozucudur. Deneme havuzu da
+hata sayısına göre sıralanır → en çok yanlış yapılan konu **ilk** çalışılır ve
+**son tekrara** girer.
+
+Örnek (hata sayıları 5,4,4,4,3,3,3,3,3,2,2,2,2,2,1,1,1,1):
+```
+21.11 çalışma  Üçgende Yardımcı Elemanlar (5 hata)
+22.11 çalışma  Dik Üçgende Trigonometrik Oranlar (4)
+23.11 çalışma  Kimyasal Tepkime Türleri (4)
+24.11 TEKRAR  Üçgende Yardımcı Elemanlar (5)   ← en çok yanlış yapılan
+27.11 TEKRAR  Dik Üçgende Trigonometrik Oranlar (4)
+29.11 TEKRAR  Kimyasal Tepkime Türleri (4)
+02.12 TEKRAR  Şiirde Ahenk (4)
+...
+17.12 SON TEKRAR  Yardımcı Elemanlar (5) · Dik Üçgende Trigonometrik (4) · Kimyasal Tepkime (4)
+```
+9 tekrar günü, en çok hatalı 9 konuyu kapsar; son tekrar en hatalı 3 konudur.
+
+**Ağırlık korundu:** tekrar günü, çalışma günüyle **aynı boyda** (18 konu / 18
+çalışma → tekrar günü **1 konu**). Gün detayında konu adının yanında
+**"· 5 hata"** yazar; başlık listesi "Tekrar edilecek konular" olarak kalır.
+
+### 2) Yoğunluk hesabı (asıl soru)
+Öğrenci her hazırlık oturumunda konuyu bitirirse **1-3-7-14-28 tekrar
+merdiveni** kurulur (sınav yaklaştıkça Cepeda oranıyla sıklaşır). Plan + bu
+tekrarlar birlikte günlük yükü şöyle çıkar (30 gün, 18 hata konusu, bugün
+20.11.2026):
+
+| Ölçü | Değer |
+|---|---|
+| Planda oturum | 27 (18 çalışma + 8 tekrar + 1 son tekrar) |
+| Yeni konu | 18 |
+| Hazırlık tekrarı | 11 konu (9 tekrar günü + son tekrar 3 konu) |
+| Sırası gelen konu tekrarı (merdiven) | 81 |
+| **30 günde toplam madde** | **110** |
+| **Günde ortalama** | **3,7 madde (≈ 70 dk)** |
+| En yoğun gün | **7 madde (≈ 105 dk)** — 17.12, son tekrar günü |
+| Dağılım | 1 madde: 2 gün · 2: 7 · 3: 5 · 4: 7 · 5: 4 · 6: 4 · 7: 1 |
+
+Varsayım: yeni konu ≈ 40 dk, tekrar ≈ 15 dk. Yani **günde ~1 saat**: yoğun
+değil. Tekrar merdiveni 18 konuya 30 günde 81 temas üretiyor (konu başına ~4,5);
+bu 1-3-7-14-28 aralıklı tekrarın kendisidir, plan şişmesi değil. En yoğun gün
+son tekrar günüdür ve orada yeni konu yoktur (yalnız tekrar).
+
+### 3) Yükü artıran iki şey kaldırıldı
+- Tekrar günü 3 konu değil **1 konu** (çalışma günüyle aynı boy).
+- **Aynı gün mükerrer temas:** konu hem hazırlık oturumunda hem "Konu
+  Tekrarları" listesinde görünüyorsa tekrar listesinden **çıkarılır** — gün iki
+  kat iş gibi görünmez.
+- Gün detayının altına **"Bugünün yükü: N madde — 1 yeni konu + 1 hazırlık
+  tekrarı + 2 konu tekrarı"** satırı eklendi: öğrenci o gün ne kadar işi
+  olduğunu sayıyla görür.
+
+### 4) Test
+`tests/v96-tekrar-takvim.test.js` **169/169** (bölüm 11: ilk tekrar en hatalı
+konu · tekrar günleri yalnız en hatalı K konu · aynı konu yığılmaz · tekrar günü
+çalışma günüyle aynı boyda · son tekrar en hatalı konular · planda hata sayıları
+· mükerrer öğe yok · "Bugünün yükü" üç parçalı).
+`test:hepsi` **EXIT=0**.
+
+Sürüm: `PWA_SURUM = "v101-hatali-tekrar"`.
