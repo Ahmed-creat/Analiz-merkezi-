@@ -1,4 +1,4 @@
-const PWA_SURUM = "v95-hazirlik-plani";
+const PWA_SURUM = "v96-tekrar-takvim";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -2571,8 +2571,10 @@ function okzDuyurularToSchoolExams(duyurular) {
     state.plan.schoolExams = state.plan.schoolExams || [];
     state.plan.schoolExams.push({
       id: (typeof uid === "function" ? uid() : "ok" + Date.now() + Math.random().toString(36).slice(2, 6)),
-      lesson: d.lesson, date: d.tarih, time: "", topics: [], auto: true,
-      prepDays: typeof schoolPrepDaysFor === "function" ? schoolPrepDaysFor(Math.max(1, kalan)) : [3, 1]
+      // v96 — KULLANICI: "okulizyonda öğretmen çalışma günü vermiyor,
+      // karışıklık kalksın silelim." Sınav kaydına hazırlık GÜNÜ yazılmıyor:
+      // günler tek kaynaktan (index.html → hazirlikPlani) üretilir.
+      lesson: d.lesson, date: d.tarih, time: "", topics: [], auto: true
     });
     st.importedKeys.push(key);
     eklenen++;

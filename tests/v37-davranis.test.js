@@ -64,12 +64,20 @@ const BUGUN = "2026-10-29";
    yok). Bu fonksiyonlar aynı kapsamda çalışsın diye birlikte çıkarılır;
    HAZIRLIK_* sabitleri dosyadan okunur (kopya sabit yok, kaynak tektir). */
 const HAZIRLIK_SABITLERI = HTML.split("\n").filter(x => /^const HAZIRLIK_/.test(x)).join("\n");
+// v96 — takvim/ajanda rengi TEK kaynaktan (CAL_RENK + calRenk) gelir.
+const CAL_RENK_BLOGU = (() => {
+  const b = HTML.indexOf("const CAL_RENK = {");
+  return HTML.slice(b, HTML.indexOf("};", b) + 2);
+})();
 
 function agenda(state, bugun) {
   const g = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey", "icon", "esc", "attr",
     HAZIRLIK_SABITLERI + "\n" +
     fnCikar("hazirlikZayifKonular") + "\n" + fnCikar("hazirlikOturumSayisi") + "\n" +
     fnCikar("hazirlikGunSeti") + "\n" + fnCikar("hazirlikPlani") + "\n" +
+    // v96 — takvim artık sınav gecesi/sabahı satırlarını da üretir
+    fnCikar("sinavYakinlari") + "\n" +
+    CAL_RENK_BLOGU + "\n" + fnCikar("calRenk") + "\n" +
     fnCikar("calendarEventMap") + "\n" + fnCikar("renderAgendaHTML") +
     "\nreturn renderAgendaHTML(calendarEventMap());");
   return g(state, () => bugun || BUGUN, parseDay, toDayStr,

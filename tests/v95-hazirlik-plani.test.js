@@ -140,7 +140,9 @@ console.log("\n== 1) Okul sınavı −3 güne sıkışmıyor: gün seti konu say
   const tde = plan.filter(p => p.examId === "tde");
   ok("21 konuluk TDE için en az 5 oturum üretildi", tde.length >= 5, tde.length);
   ok("TDE oturumlarının hepsi sınavdan ÖNCE", tde.every(p => p.date < "2027-01-14"), tde.map(p => p.date).join(","));
-  ok("son TDE oturumu sınavdan 1 gün önce", tde.some(p => p.date === "2027-01-13"), tde.map(p => p.date).join(","));
+  // v96 — kural değişti: konular sınavdan EN AZ 3 gün önce biter.
+  ok("son TDE oturumu sınavdan 3 gün önce (2027-01-11)", tde.some(p => p.date === "2027-01-11"), tde.map(p => p.date).join(","));
+  ok("hiçbir TDE oturumu sınavdan 3 günden yakın değil", tde.every(p => p.gunOnce >= 3), tde.map(p => p.gunOnce).join(","));
   const enErken = tde.slice().sort((a, b) => (a.date < b.date ? -1 : 1))[0];
   const gunFark = Math.round((parseDay("2027-01-14") - parseDay(enErken.date)) / 86400000);
   ok("ilk çalışma günü sınavdan en az 7 gün önce (eski −3 yetmiyordu)", gunFark >= 7, gunFark + " gün");
@@ -222,7 +224,7 @@ console.log("\n== 6) Uydurma plan yok: kapsam yoksa klasik gün sayısı ==");
   const okul = p2.filter(p => p.examId === "x");
   const den = p2.filter(p => p.examId === "deneme");
   ok("kapsamsız okul sınavı 2 gün (eski davranış korunur)", okul.length === 2, okul.length);
-  ok("son gün sınavdan 1 gün önce", okul.some(p => p.date === "2026-12-04"), okul.map(p => p.date).join(","));
+  ok("son gün sınavdan 3 gün önce (v96 kuralı)", okul.some(p => p.date === "2026-12-02"), okul.map(p => p.date).join(","));
   ok("kapsamsız okul oturumunda konu YOK (uydurma yok)", okul.every(p => p.konular.length === 0));
   ok("kapsamsız deneme 3 gün", den.length === 3, den.length);
 
@@ -238,8 +240,9 @@ console.log("\n== 6) Uydurma plan yok: kapsam yoksa klasik gün sayısı ==");
 
 console.log("\n== 7) Kural görünür: gün seti yardımcıları ==");
 {
-  ok("gün seti sınavdan 1 gün önceyle biter", F.hazirlikGunSeti(4, 30).indexOf(1) >= 0, F.hazirlikGunSeti(4, 30).join(","));
-  ok("gün seti kalan günden ileri gitmez", F.hazirlikGunSeti(8, 5).every(x => x <= 4), F.hazirlikGunSeti(8, 5).join(","));
+  ok("gün seti sınavdan 3 gün önceyle biter (v96)", F.hazirlikGunSeti(4, 30).indexOf(3) >= 0, F.hazirlikGunSeti(4, 30).join(","));
+  ok("gün seti sınavdan 3 günden yakına inmez", F.hazirlikGunSeti(4, 30).every(x => x >= 3), F.hazirlikGunSeti(4, 30).join(","));
+  ok("sınava 3 günden az kaldıysa gün seti boş", F.hazirlikGunSeti(3, 3).length === 0, F.hazirlikGunSeti(3, 3).join(","));
   ok("oturum sayısı konu/3", F.hazirlikOturumSayisi(21, 55, "okul") === 7, F.hazirlikOturumSayisi(21, 55, "okul"));
   ok("oturum tavanı 8", F.hazirlikOturumSayisi(99, 55, "okul") === 8, F.hazirlikOturumSayisi(99, 55, "okul"));
   ok("gün tavanı 2 · oturum başına konu 3 · oturum tavanı 8 sabitleri dosyada",
@@ -262,7 +265,7 @@ console.log("\n== 8) Plan state'e yazılınca push aynı metni görür ==");
   const yazdi = f();
   ok("plan state'e yazıldı", yazdi === true && Array.isArray(s.plan.hazirlikPlani), yazdi);
   ok("kayıtta push için tarih/ders/bildirim var",
-    s.plan.hazirlikPlani.every(x => x.date && x.ders && x.bildirim && x.gunOnce >= 1));
+    s.plan.hazirlikPlani.every(x => x.date && x.ders && x.bildirim && x.gunOnce >= 3));
   ok("kayıt şişmiyor (konu dizisi yazılmaz)", s.plan.hazirlikPlani.every(x => x.konular === undefined));
   ok("bildirim metni konu adı taşıyor",
     s.plan.hazirlikPlani.some(x => /: /.test(x.bildirim)), s.plan.hazirlikPlani[0] && s.plan.hazirlikPlani[0].bildirim);
