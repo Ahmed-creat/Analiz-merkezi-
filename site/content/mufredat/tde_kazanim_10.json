@@ -97,7 +97,6 @@
   "gazel": "Gazel",
   "matla": "Gazel",
   "makta": "Gazel",
-  "mazmun": "Gazel",
   "kaside": "Kaside",
   "methiye": "Kaside",
   "nesib": "Kaside",
@@ -138,6 +137,7 @@
   "durak": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
   "aruz": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
   "ritim": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+  "mazmun": "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
   "dede korkut": "Dede Korkut Hikâyeleri",
   "tanzimat": "Tanzimat Dönemi Şiiri",
   "namık kemal": "Tanzimat Dönemi Şiiri",
@@ -1455,8 +1455,7 @@
    "ayirt_edici_terimler": [
     "gazel",
     "matla",
-    "makta",
-    "mazmun"
+    "makta"
    ],
    "kazanimlar": [
     {
@@ -3350,7 +3349,8 @@
     "ölçü",
     "durak",
     "aruz",
-    "ritim"
+    "ritim",
+    "mazmun"
    ],
    "kazanimlar": [
     {

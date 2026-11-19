@@ -137,13 +137,19 @@
        Kural GAZEL'den ÖNCE: cümlede hem "saf şiir" hem "mazmun" geçerse
        doğru cevap Saf Şiir'dir. */
     { ders: TDE, konu: "Saf Şiir", desen: /saf siir|oz siir|simgeci|semboliz/ },
-    /* "mazmun" divan şiirinin kalıplaşmış imge dünyasıdır (ders notu: saf şiir
-       gazelin mazmun dünyasına tepki olarak doğar) → Gazel. */
-    { ders: TDE, konu: "Gazel", desen: /gazel|(^| )matla( |$)|(^| )makta( |$)|mazmun/ },
+    /* v94 — MAZMUN ARTIK GAZEL'İN DEĞİL, ŞİİRDE AHENK'İN (kullanıcı, 19 Kasım):
+       "O gazele bağladığın mazmun içeren kazanım varya aslında söz sanatları
+       ile ilgiliymiş. Sen bu kazanımı şiirde ahenk e bağla."
+       Okulizyon: "Şiirdeki mazmun, imge ve edebî sanatları belirleyerek
+       bunların anlama katkısını değerlendirir." — bu bir gazel biçim bilgisi
+       (matla/makta/aruz) sorusu değil, söz sanatları bilgisidir; 10. sınıf
+       konu listesinde karşılığı Şiirde Ahenk'tir. Gazel kendi terimleriyle
+       (gazel/matla/makta) ayrışmaya devam eder. */
+    { ders: TDE, konu: "Gazel", desen: /gazel|(^| )matla( |$)|(^| )makta( |$)/ },
     { ders: TDE, konu: "Kaside", desen: /kaside|methiye|nesib|fahriye|tegazzul/ },
     { ders: TDE, konu: "Mersiye", desen: /mersiye/ },
     { ders: TDE, konu: "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
-      desen: /aheng|uyak|redif|aliterasyon|asonans|kafiye|olcu|aruz|durak|ritim/ },
+      desen: /aheng|uyak|redif|aliterasyon|asonans|kafiye|olcu|aruz|durak|ritim|mazmun|edebi sanat|soz sanat/ },
     // Dil bilgisi — tamlama kuralları, tek kelimelik kurallardan ÖNCE
     { ders: TDE, konu: "İsim Tamlamaları", desen: /isim tamlama|tamlayan|tamlanan/ },
     { ders: TDE, konu: "Sıfat Tamlamaları", desen: /sifat tamlama/ },

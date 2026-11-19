@@ -1,4 +1,4 @@
-const PWA_SURUM = "v93d-bant-metni";
+const PWA_SURUM = "v94-mazmun-soz-sanatlari";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1661,10 +1661,10 @@ function okzKonuBul(ders, kazanim) {
   // çalışmaz; cevap Supabase'deki kazanim_konu_cache'ten gelir.
   /* v92 — BAYAT OTOMATİK ÖNBELLEK
      kazanim_konu_cache satırı, eşleme kuralının YAZILDIĞI GÜNKÜ hâliyle
-     oluşur. Kural düzeltildiğinde (ör. "şiirdeki mazmun, imge ve edebî
-     sanatlar" artık Saf Şiir'e değil Gazel'e bağlanıyor) eski satır yeni
-     kuralı gölgeliyordu. Kural katmanından ("kural") gelen kayıt yerel
-     kuralla çelişiyorsa yerel kural kazanır ve önbellek tazelenir.
+     oluşur. Kural düzeltildiğinde (v92: "şiirdeki mazmun, imge ve edebî
+     sanatlar" Saf Şiir yerine doğru konuya; v94: Gazel yerine Şiirde Ahenk'e)
+     eski satır yeni kuralı gölgeliyordu. Kural katmanından ("kural") gelen
+     kayıt yerel kuralla çelişiyorsa yerel kural kazanır ve önbellek tazelenir.
      Elle/LLM kayıtlarına ("elle", "llm") DOKUNULMAZ; onlar öğrenci kararı. */
   let eskiOnbellek = null;
   const onbellek = okzCacheBul(kanon, kazanim);

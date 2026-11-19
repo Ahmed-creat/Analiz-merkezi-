@@ -103,8 +103,8 @@ console.log("\n== 4) Gece sessizliği (sunucu 21–06 susuyor, uygulama da sussu
 
 console.log("\n== 5) Sürüm damgası (kullanıcı yeni sürümü görsün) ==");
 {
-  ok("PWA sürümü v93b+", /const PWA_SURUM = "v93[b-z]?-[a-z-]+";/.test(APP), (APP.match(/PWA_SURUM = "([^"]+)"/)||[])[1]);
-  ok("service worker cache v93b+", /v93[b-z]?-[a-z-]+/.test(SW), (SW.match(/const CACHE = "([^"]+)"/)||[])[1]);
+  ok("PWA sürümü v93b+", /const PWA_SURUM = "v9[3-9][a-z]?-[a-z-]+";/.test(APP), (APP.match(/PWA_SURUM = "([^"]+)"/)||[])[1]);
+  ok("service worker cache v93b+", /v9[3-9][a-z]?-[a-z-]+/.test(SW), (SW.match(/const CACHE = "([^"]+)"/)||[])[1]);
 }
 
 console.log("\n" + "─".repeat(58));

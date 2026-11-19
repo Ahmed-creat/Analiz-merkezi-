@@ -234,9 +234,14 @@ console.log("\n== 7) Özet ==");
 ok("özet: 30 konu", TDED.ozet.konu === 30);
 ok("özet: 4 okulizyon cümlesi", TDED.ozet.okulizyon_cumlesi === 4);
 ok("özet: 92 ayırt edici terim", TDED.ozet.terim === 92, String(TDED.ozet.terim));
-/* v92 — kullanıcı: "saf şiir ayrı bir konu". Genel şiir kazanımı Saf Şiir'e düşmez. */
+/* v92 — kullanıcı: "saf şiir ayrı bir konu". Genel şiir kazanımı Saf Şiir'e düşmez.
+   v94 — kullanıcı: "mazmun içeren kazanım aslında söz sanatları ile ilgili" →
+   konu Gazel DEĞİL, Şiirde Ahenk. */
 ok("genel şiir kazanımı (mazmun/imge/edebî sanat) Saf Şiir'e düşmez",
-  (KA.esle("Şiirdeki mazmun, imge ve edebî sanatları belirleyerek bunların anlama katkısını değerlendirir.", TDE) || {}).konu === "Gazel");
+  (KA.esle("Şiirdeki mazmun, imge ve edebî sanatları belirleyerek bunların anlama katkısını değerlendirir.", TDE) || {}).konu !== "Saf Şiir");
+ok("v94 — aynı kazanım Şiirde Ahenk'e bağlandı",
+  (KA.esle("Şiirdeki mazmun, imge ve edebî sanatları belirleyerek bunların anlama katkısını değerlendirir.", TDE) || {}).konu ===
+  "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)");
 
 console.log("\n" + "─".repeat(64));
 if (hata.length) {

@@ -25,11 +25,13 @@
 
    BU TEST NEYİ KANITLAR?
      1) Veri: Saf Şiir ayırt edici terimleri artık imge/mazmun/
-        edebî sanat değil; mazmun Gazel'e bağlı.
+        edebî sanat değil. (v94: mazmun Gazel'den alınıp Şiirde
+        Ahenk'e verildi — kullanıcı düzeltmesi.)
      2) Arama indeksi (konu_esleme) ve tarayıcı sözlüğü
         (okz-tde-veri.js) veriyle senkron.
      3) Eşleme motoru (okz-tde.js) ve kural tablosu (konu-anahtar.js):
-        vaka cümlesi → Gazel; "saf şiir" geçen cümle → Saf Şiir.
+        vaka cümlesi Saf Şiir'e DÜŞMEZ; "saf şiir" geçen cümle → Saf Şiir.
+        (v94: vaka artık Şiirde Ahenk.)
      4) Uygulama: bayat "kural" önbelleği yeni kuralı gölgelemez,
         elle/LLM kayıtlarına dokunulmaz.
      5) Supabase migration 0009 bayat satırı siler.
@@ -77,8 +79,10 @@ console.log("\n== 1) Veri: Saf Şiir'in ayırt edici terimleri ==");
   ok("Saf Şiir terimlerinde mazmun YOK", saf.indexOf("mazmun") < 0);
   ok("Saf Şiir terimlerinde edebî sanat YOK", saf.indexOf("edebî sanat") < 0);
   const gazel = (konu("Gazel") || {}).ayirt_edici_terimler || [];
-  ok("mazmun Gazel'e bağlandı", gazel.indexOf("mazmun") >= 0, gazel.join(","));
-  ok("sözlük: mazmun → Gazel", TDED.sozluk["mazmun"] === "Gazel");
+  ok("mazmun Gazel'de DEĞİL (v94)", gazel.indexOf("mazmun") < 0, gazel.join(","));
+  const ahenk = (konu("Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)") || {}).ayirt_edici_terimler || [];
+  ok("sözlük: mazmun → Şiirde Ahenk", TDED.sozluk["mazmun"] === "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)");
+  ok("mazmun ahenk terimlerinde", ahenk.indexOf("mazmun") >= 0, ahenk.join(","));
   ok("sözlük: imge hiçbir konuya zorlanmıyor", TDED.sozluk["imge"] === undefined);
   ok("sözlük: edebî sanat hiçbir konuya zorlanmıyor", TDED.sozluk["edebî sanat"] === undefined);
   ok("sözlük toplam 92 terim", Object.keys(TDED.sozluk).length === 92, String(Object.keys(TDED.sozluk).length));
@@ -92,28 +96,31 @@ console.log("\n== 2) Arama indeksi ve tarayıcı sözlüğü senkron ==");
   const gazelMetin = (havuz("edebiyat_10_u02_k01") || {}).metin || "";
   ok("konu_esleme: Saf Şiir metninde imge yok", !/(^|[·\s])imge([·\s]|$)/.test(safMetin), safMetin);
   ok("konu_esleme: Saf Şiir metninde mazmun yok", !/mazmun/.test(safMetin), safMetin);
-  ok("konu_esleme: Gazel metninde mazmun var", /mazmun/.test(gazelMetin), gazelMetin);
+  ok("konu_esleme: Gazel metninde mazmun YOK (v94)", !/mazmun/.test(gazelMetin), gazelMetin);
+  const ahenkMetin = (havuz("edebiyat_10_u03_k06") || {}).metin || "";
+  ok("konu_esleme: Ahenk metninde mazmun var", /mazmun/.test(ahenkMetin), ahenkMetin);
   ok("konu_esleme: Saf Şiir akım adlarını taşıyor", /simgecilik/.test(safMetin) && /sembolizm/.test(safMetin));
   const VERI = require(path.join(KOK, "site/okz-tde-veri.js"));
   ok("okz-tde-veri sözlüğü JSON ile aynı",
     JSON.stringify(Object.entries(VERI.sozluk).sort()) === JSON.stringify(Object.entries(TDED.sozluk).sort()));
-  ok("okz-tde-veri: mazmun → Gazel", VERI.sozluk["mazmun"] === "Gazel");
+  ok("okz-tde-veri: mazmun → Şiirde Ahenk", VERI.sozluk["mazmun"] === "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)");
 }
 
 console.log("\n== 3) Eşleme: vaka cümlesi Saf Şiir'e düşmüyor ==");
 {
+  const AHENK = "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)";
   const soz = OKZTDE.sozlukEsle(VAKA);
-  ok("okz-tde 1. aşama: vaka → Gazel", soz && soz.konu === "Gazel", soz ? soz.konu + " (" + soz.terim + ")" : "yok");
+  ok("okz-tde 1. aşama: vaka → Şiirde Ahenk", soz && soz.konu === AHENK, soz ? soz.konu + " (" + soz.terim + ")" : "yok");
   const esle = OKZTDE.esle(VAKA);
   ok("okz-tde esle: vaka Saf Şiir DEĞİL", esle && esle.konu !== "Saf Şiir", esle ? esle.konu : "yok");
-  ok("okz-tde esle: vaka → Gazel", esle && esle.konu === "Gazel", esle ? esle.konu : "yok");
+  ok("okz-tde esle: vaka → Şiirde Ahenk", esle && esle.konu === AHENK, esle ? esle.konu : "yok");
   ok("okz-tde: saf şiir geçen cümle hâlâ Saf Şiir", (OKZTDE.esle(SAF) || {}).konu === "Saf Şiir");
   ok("okz-tde: öz şiir → Saf Şiir", (OKZTDE.esle("Öz şiir anlayışını sürdüren şairleri sıralar.") || {}).konu === "Saf Şiir");
   ok("okz-tde: sembolizm → Saf Şiir", (OKZTDE.esle("Sembolizmin şiir diline etkisini açıklar.") || {}).konu === "Saf Şiir");
   ok("okz-tde konu listesinde Saf Şiir var", OKZTDE.konular().indexOf("Saf Şiir") >= 0);
 
   const k = KA.esle(VAKA, TDE);
-  ok("konu-anahtar: vaka → Gazel", k && k.konu === "Gazel", k ? k.konu : "yok");
+  ok("konu-anahtar: vaka → Şiirde Ahenk", k && k.konu === AHENK, k ? k.konu : "yok");
   ok("konu-anahtar: vaka Saf Şiir DEĞİL", !k || k.konu !== "Saf Şiir");
   ok("konu-anahtar: saf şiir + mazmun → Saf Şiir (özel kural önce)", (KA.esle(SAF, TDE) || {}).konu === "Saf Şiir");
   ok("konu-anahtar: yalnız imge geçen cümle Saf Şiir'e zorlanmıyor",
@@ -123,8 +130,10 @@ console.log("\n== 3) Eşleme: vaka cümlesi Saf Şiir'e düşmüyor ==");
   const kaynak = oku("scripts/tde-kazanim-uret.js");
   ok("üretici tablo: Saf Şiir terimlerinde imge/mazmun/edebî sanat yok",
     /edebiyat_10_u02_k04: \{ eksen: "okuma", ayirt: \["saf şiir", "öz şiir", "simgecilik", "sembolizm"\] \}/.test(kaynak));
-  ok("üretici tablo: Gazel terimlerinde mazmun var",
-    /edebiyat_10_u02_k01: \{ eksen: "okuma", ayirt: \["gazel", "matla", "makta", "mazmun"\] \}/.test(kaynak));
+  ok("üretici tablo: Gazel terimlerinde mazmun YOK (v94)",
+    /edebiyat_10_u02_k01: \{ eksen: "okuma", ayirt: \["gazel", "matla", "makta"\] \}/.test(kaynak));
+  ok("üretici tablo: Ahenk terimlerinde mazmun var (v94)",
+    /edebiyat_10_u03_k06: \{ eksen: "okuma", ayirt: \[[^\]]*"mazmun"\] \}/.test(kaynak));
 }
 
 console.log("\n== 4) Bayat önbellek yeni kuralı gölgelemez ==");
@@ -150,8 +159,8 @@ console.log("\n== 4) Bayat önbellek yeni kuralı gölgelemez ==");
   globalThis.__cacheYaz(TDE, VAKA, "Saf Şiir", "kural", 0.9, {});
   ok("bayat satır gerçekten yazıldı", (globalThis.__cacheBul(TDE, VAKA) || {}).konu === "Saf Şiir");
   const r = bul(VAKA);
-  ok("uygulama: vaka artık Gazel", r && r.konu === "Gazel", r ? r.konu + "/" + r.kaynak : "yok");
-  ok("önbellek tazelendi", (globalThis.__cacheBul(TDE, VAKA) || {}).konu === "Gazel");
+  ok("uygulama: vaka artık Şiirde Ahenk", r && r.konu === "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)", r ? r.konu + "/" + r.kaynak : "yok");
+  ok("önbellek tazelendi", (globalThis.__cacheBul(TDE, VAKA) || {}).konu === "Şiirde Ahenk (Ölçü, Uyak, Redif, Aliterasyon, Asonans)");
 
   /* elle/LLM kararı ezilmez */
   const ELLE = "Metindeki mazmunu yorumlar.";
