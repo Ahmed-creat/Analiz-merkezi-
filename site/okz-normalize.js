@@ -139,13 +139,24 @@
       Object.keys(l).sort().map((k) => k + ":" + (Number(l[k].d) || 0) + "," + (Number(l[k].w) || 0) + "," + (Number(l[k].e) || 0)).join(";")].join("|");
   }
 
-  // v46c — OKULİZYON SINAV KİMLİĞİ
+  // v93 — OKULİZYON SINAV KİMLİĞİ = AD + TARİH (sid DEĞİL)
   // KULLANICI: "birden fazla varsa doğru şekilde birbirine karışmadan
   // çekilebiliyor mu?"
-  // Okulizyon her sınava tekil bir sid verir (sonuç sayfası: ?pg=yks&sid=…).
-  // Eskiden eşleştirme yalnız "ad + tarih" idi: adı ve tarihi AYNI iki sınav
-  // varsa uygulama onları tek sınav sanıp karıştırabiliyordu. Artık sid varsa
-  // kimlik odur; ad+tarih yalnız yedek (sid yoksa) kullanılır.
+  /* v93 — KULLANICI (19 Kas): "Aynı deneme bugün kendiliğinden 2. kez
+     eklendi."  ÖLÇÜM (canlı `app_states`): aynı kullanıcıda AYNI sınav iki
+     satır — "Okulizyon: 10.SINIF MAARİF İZLEME SINAVI 1" · 2026-10-27 ·
+     net 77,5 · 120 soru · 39 hata · iki AYRI `okulizyonUrl`.
+     Kök neden: v46c kimliği `sid`e bağlamıştı. Oysa Okulizyon'un sonuç
+     bağlantısındaki `sid` ( ?pg=yks&sid=… ) OTURUM jetonudur: her giriş/
+     çekimde YENİ üretilir. Aynı sınav iki çekimde iki farklı sid aldığı için
+     "başka sınav" sanılıp ikinci kez yazıldı; üstelik hata kayıtları da
+     ikiye katlandı (öncelik puanları şişti).
+     YENİ KURAL: kimlik = SINAV ADI + TARİH (+ içerik).
+       • ad + tarih aynı, içerik aynı   → AYNI sınav (mükerrer yazılmaz)
+       • ad + tarih aynı, içerik farklı → sonucu DEĞİŞMİŞ (güncelleme adayı)
+       • ad ya da tarih farklı          → yeni sınav
+     sid yalnız "aynı sayfa" bilgisidir; kimlik olarak KULLANILMAZ. */
+  // Okulizyon sonuç sayfası bağlantısından oturum jetonu (kimlik DEĞİL).
   function sidCikar(url) {
     const m = /[?&]sid=([^&]+)/i.exec(String(url || ""));
     if (!m) return "";
@@ -156,10 +167,44 @@
   function kararEskiAnahtar(ex) {
     return ((ex && ex.name) || "?") + "|" + ((ex && ex.date) || "");
   }
-  // Sınav anahtarı: sid varsa "sid:<sid>", yoksa "ad|tarih"
+  // Sınav anahtarı: her zaman "ad|tarih" (sid jetonu kimlik değildir)
   function kararAnahtar(ex) {
-    const sid = siniSid(ex);
-    return sid ? "sid:" + sid : kararEskiAnahtar(ex);
+    return kararEskiAnahtar(ex);
+  }
+
+  /* v93 — MÜKERRER DENEME TEMİZLİĞİ (elde kalmış kayıtlar).
+     Aynı ad + tarih + içerikle birden çok deneme yazılmışsa tek kayda
+     indirilir. Korunan kayıt: nedeni işlenmiş satırı en çok olan (öğrencinin
+     emeği kaybolmaz); yoksa en eskisi. İşlenmiş nedenler boş satırlara
+     taşınır. Saf fonksiyon: {exams, birlestirilen}. */
+  function yinelenenleriBirlestir(exams) {
+    const liste = Array.isArray(exams) ? exams : [];
+    const islenmis = (ex) => (Array.isArray(ex && ex.errorLogs) ? ex.errorLogs.filter((l) => l && l.type).length : 0);
+    const tutulan = [];
+    const atilan = [];
+    liste.forEach((ex) => {
+      if (!ex) { tutulan.push(ex); return; }
+      const h = kararHash(ex);
+      const i = tutulan.findIndex((t) => t && kararHash(t) === h);
+      if (i < 0) { tutulan.push(ex); return; }
+      // Aynı sınav: daha çok işlenmiş satırı olan kayıt korunur
+      const a = tutulan[i];
+      const korunan = islenmis(ex) > islenmis(a) ? ex : a;
+      const digeri = korunan === a ? ex : a;
+      // nedenleri korunan kayda taşı (konu + soru no eşleşmesiyle)
+      const kaynak = Array.isArray(digeri.errorLogs) ? digeri.errorLogs : [];
+      const hedef = Array.isArray(korunan.errorLogs) ? korunan.errorLogs : [];
+      kaynak.forEach((l) => {
+        if (!l || !l.type) return;
+        const es = hedef.find((x) => x && String(x.qno) === String(l.qno) &&
+          String(x.lesson || "") === String(l.lesson || "") && String(x.topic || "") === String(l.topic || ""));
+        if (es && !es.type) es.type = l.type;
+      });
+      if (!korunan.okulizyonUrl && digeri.okulizyonUrl) korunan.okulizyonUrl = digeri.okulizyonUrl;
+      tutulan[i] = korunan;
+      atilan.push(digeri);
+    });
+    return { exams: tutulan, birlestirilen: atilan.length };
   }
 
   /**
@@ -181,18 +226,10 @@
     // aynı sınav her çekimde "yeni" sanılıp tekrar tekrar aktarılır.
     const adaGoreBul = (ex) => liste.find((e) => e && e.name === adi(ex) &&
       (!(ex && ex.date) || !e.date || String(e.date) === String(ex.date)));
-    // v46c — ÖNCE sid: aynı sınav mı, kesin cevap. sid'ler FARKLIYSA bunlar
-    // ayrı sınavlardır (ad+tarih aynı olsa bile) → eşleştirme YAPILMAZ,
-    // yeni sınav olarak kuyruğa girer. Karışma burada engellenir.
-    const bul = (ex) => {
-      const sid = siniSid(ex);
-      if (!sid) return adaGoreBul(ex);
-      const ayniSid = liste.find((e) => e && siniSid(e) === sid);
-      if (ayniSid) return ayniSid;
-      const adaGore = adaGoreBul(ex);
-      if (adaGore && siniSid(adaGore)) return null;  // başka bir sınav
-      return adaGore;                                 // sid'siz eski kayıt: ada göre
-    };
+    // v93 — sid jetonu eşleştirmede KULLANILMAZ (her çekimde değişir).
+    // Eşleşme yalnız ad + tarih (+ içerik) ile yapılır; aynı sınav ikinci
+    // kez yeni sayılmaz.
+    const bul = (ex) => adaGoreBul(ex);
     const hash = (ex) => {
       // iki tarafı da aynı normalizasyondan geçir: ham Okulizyon adları
       // ("Matematik-1") ile uygulama adları ("Matematik") aynı hash'i versin
@@ -208,16 +245,19 @@
       const varOlan = bul(ex);
       if (varOlan) gecerliAnahtarlar.push(anahtar);
       // Bu sınav bu içerikle zaten işlendi veya yoksayıldı → kuyruğa geri koyma.
-      // v46c — ESKİ anahtar da kontrol edilir: sid'li anahtara geçmeden önce
-      // silinmiş/yoksayılmış sınavlar geri gelmesin.
+      // v93 — "silinen" notu artık ad|tarih anahtarıyla tutulur (sid anahtarı
+      // her çekimde değiştiği için silinen sınav geri geliyordu). Eski sid'li
+      // notlar da okunur: geriye dönük uyumluluk.
       if ((defter[anahtar] && defter[anahtar] === h) || (defter[eski] && defter[eski] === h)) return;
+      const sidAnahtar = siniSid(ex) ? "sid:" + siniSid(ex) : "";
+      if (sidAnahtar && defter[sidAnahtar] && defter[sidAnahtar] === h) return;
       if (!varOlan) { yeni.push(ex); return; }
       if (hash(varOlan) !== h) degisen.push({ key: ((ex.name) || "?") + "|" + (ex.date || ""), exam: ex, hash: h });
     });
     return { yeni, degisen, gecerliAnahtarlar };
   }
 
-  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt, karar, kararHash, kararAnahtar, kararEskiAnahtar, sidCikar };
+  const api = { VARSAYILAN, sade, grup, kanonik, birlestir, net, toplam, duzelt, karar, kararHash, kararAnahtar, kararEskiAnahtar, sidCikar, yinelenenleriBirlestir };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (kok) kok.OKZ = api;
 })(typeof window !== "undefined" ? window : globalThis);

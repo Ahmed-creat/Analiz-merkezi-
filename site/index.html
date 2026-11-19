@@ -2688,9 +2688,26 @@ function difficultyFor(topicKey) {
 }
 
 // Ders başarı oranları (Deneme + Soru Bankası birleşik)
+/* v93 — GRAFİKTE EKSİK DERS (kullanıcı: "bugün kaydolan kullanıcı ana
+   sayfada ders başarı grafiğinde felsefe yer almadığını söylüyor").
+   KÖK NEDEN (ölçüldü, canlı `app_states`): yeni hesabın `user.grade` = "9";
+   ders listesi bu yüzden `LESSON_CONFIG` (8 ders, Felsefe YOK) oluyordu. Oysa
+   Okulizyon'dan gelen denemede Felsefe 5 sorusuyla VAR. Grafik yalnız sabit
+   listeyi dolaştığı için Felsefe'yi sessizce düşürüyordu.
+   YENİ: grafik, sabit listenin ∪ veride GERÇEKTEN geçen dersler üzerinden
+   çizilir. Hiçbir ders kaybolmaz; veri yoksa oran da yok (uydurma yok). */
+function grafikDersleri() {
+  const liste = [];
+  const ekle = (k) => { const ad = String(k || "").trim(); if (ad && liste.indexOf(ad) < 0) liste.push(ad); };
+  Object.keys(activeLessonConfig()).forEach(ekle);
+  (state.exams || []).forEach(ex => Object.keys((ex && ex.lessons) || {}).forEach(ekle));
+  (state.questions || []).forEach(q => ekle(q && q.lesson));
+  return liste;
+}
+
 function getLessonSuccessRates() {
   const rates = {};
-  Object.keys(activeLessonConfig()).forEach(lesson => {
+  grafikDersleri().forEach(lesson => {
     let d = 0, w = 0, e = 0;
     state.exams.forEach(ex => { const l = ex.lessons && ex.lessons[lesson]; if (l) { d += Number(l.d) || 0; w += Number(l.w) || 0; e += Number(l.e) || 0; } });
     state.questions.forEach(q => { if (q.lesson === lesson) { d += Number(q.d) || 0; w += Number(q.w) || 0; e += Number(q.e) || 0; } });
@@ -3022,6 +3039,93 @@ function hatirlatmaTelafisi() {
 }
 window.__amHatirlatmaTelafisi = hatirlatmaTelafisi;
 
+/* ============================================================
+   v93 — BİLDİRİM GARANTİSİ
+   KULLANICI (19 Kas): "Bildirimler gelmiyor. Şunu anla kullanıcının
+   görevi, acil konusu, tekrarı varsa KESİN bildirim gelmeli."
+
+   Üç iş kaynağı var: GÖREV (günlük görevler) · TEKRAR (hafıza planı) ·
+   ACİL KONU (nedeni işlenmiş hata kayıtları). Eski motor bunları ayrı
+   ayrı, farklı sınırlarla duyuruyordu; biri doluysa diğeri sessizce
+   düşüyordu. Artık:
+     • Uygulama içi bildirim: üçü TEK satırda ("2 görev · 1 tekrar · 3 acil
+       konu") — push izni olmasa da kullanıcı görür.
+     • İçerik imzası değişirse (yeni acil konu/tekrar doğduysa) aynı gün
+       yeniden bildirilir; aynıysa tekrar edilmez.
+     • Sunucu tarafı aynı kuralı cron'da uygular
+       (supabase/migrations/0010_bildirim_garantisi.sql).
+   ============================================================ */
+function bekleyenIsler() {
+  const b = { gorev: 0, tekrar: 0, acil: 0, acilAdlar: [], tekrarAdlar: [] };
+  try { b.gorev = (gunlukGorevler() || []).length; } catch (e) { /* */ }
+  try {
+    const due = dueReviews() || [];
+    b.tekrar = due.length;
+    b.tekrarAdlar = due.slice(0, 3).map(x => splitKey((x && (x.key || x.topicKey)) || "").topic).filter(Boolean);
+  } catch (e) { /* */ }
+  try {
+    const pr = calculatePriority() || [];
+    b.acil = pr.length;
+    b.acilAdlar = pr.slice(0, 3).map(p => (p && p[2] && p[2].topic) || splitKey((p && p[0]) || "").topic).filter(Boolean);
+  } catch (e) { /* */ }
+  return b;
+}
+window.__amBekleyenIsler = bekleyenIsler;
+
+function bildirimGarantisi() {
+  try {
+    if (typeof state === "undefined" || !state) return 0;
+    if (!Array.isArray(state.notifications)) return 0;
+    const b = bekleyenIsler();
+    const toplam = b.gorev + b.tekrar + b.acil;
+    if (!toplam) return 0;                       // iş yoksa uydurma bildirim yok
+    const imza = [b.gorev, b.tekrar, b.acil, b.acilAdlar.join(","), b.tekrarAdlar.join(",")].join("|");
+    const gun = todayStr();
+    const anahtar = "am_garanti_" + gun;
+    let m = {};
+    try { m = JSON.parse(localStorage.getItem(anahtar) || "{}") || {}; } catch (e) { m = {}; }
+    if (m[imza]) return 0;                       // bu içerik bugün zaten bildirildi
+    const parca = [];
+    if (b.gorev) parca.push(b.gorev + " görev");
+    if (b.tekrar) parca.push(b.tekrar + " tekrar");
+    if (b.acil) parca.push(b.acil + " acil konu");
+    let ek = "";
+    if (b.acilAdlar.length) ek = " En önce: " + b.acilAdlar.join(", ") + ".";
+    else if (b.tekrarAdlar.length) ek = " Tekrar: " + b.tekrarAdlar.join(", ") + ".";
+    addNotification({
+      title: "Bugün seni bekleyenler",
+      body: parca.join(" · ") + "." + ek + " Ana sayfa → BUGÜN YAPILACAKLAR.",
+      kind: "garanti", topicKey: "garanti@" + gun + "@" + imza
+    });
+    m[imza] = Date.now();
+    try { localStorage.setItem(anahtar, JSON.stringify(m)); } catch (e) { /* kota */ }
+    return toplam;
+  } catch (e) { return 0; }
+}
+window.__amBildirimGarantisi = bildirimGarantisi;
+
+/* Push izni yoksa ve bekleyen iş varsa ana sayfada tek dokunuşluk uyarı.
+   İzin isteği kullanıcı dokunuşuyla yapılmalı; bu yüzden düğme doğrudan
+   mevcut izin akışını çağırır. */
+function bildirimIzniBandi() {
+  try {
+    if (typeof Notification === "undefined") return "";
+    if (Notification.permission === "granted") return "";   // kanal açık
+    const b = bekleyenIsler();
+    if (b.gorev + b.tekrar + b.acil === 0) return "";       // bekleyen iş yoksa uyarma
+    const t = (typeof bildirimTeshis === "function") ? bildirimTeshis() : { kod: "engelli", metin: "Bildirimler kapalı.", nasil: "" };
+    const duzeltilebilir = (t.kod === "hazir");
+    return '<div class="bento-card" style="border-left:4px solid var(--semantic-warning);margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;">' +
+      '<div style="flex:1;min-width:200px;font-size:12.5px;line-height:1.5;">' +
+      '<b>Bekleyen işin var ama bildirimler kapalı.</b> ' +
+      esc(t.metin || "Bildirimler kapalı.") +
+      (t.nasil ? ' <span style="color:var(--text-muted);">' + esc(t.nasil) + '</span>' : '') +
+      '</div>' +
+      (duzeltilebilir ? '<button class="btn btn-primary btn-sm" data-act="toggleNotifPermission">' + icon("bell", 13) + ' Bildirimleri aç</button>' : '') +
+      '</div>';
+  } catch (e) { return ""; }
+}
+
 function addNotification(n) {
   /* G-09 — KULLANICI: "aynı konu için tekrar tekrar bildirim" + "yeni döngü
      bastırılıyor". ESKİ: aynı kind+topicKey+gövde SONSUZA DEK tekti; gecikmiş
@@ -3062,7 +3166,7 @@ function renderNotifList() {
     box.innerHTML = '<div class="empty-state">' + icon("bell-off", 34) + '<div>Bildirim yok. Konu tamamladıkça tekrar hatırlatmaları buraya düşer.</div></div>';
     return;
   }
-  const icons = { review: "refresh-cw", critical: "alert-triangle", coach: "message-circle", badge: "award", memory: "brain", exam: "calendar-clock", prep: "shield-check", daily: "calendar-check", info: "info" };
+  const icons = { review: "refresh-cw", critical: "alert-triangle", coach: "message-circle", badge: "award", memory: "brain", exam: "calendar-clock", prep: "shield-check", daily: "calendar-check", garanti: "bell-ring", info: "info" };
   box.innerHTML = state.notifications.map(n =>
     '<div class="notif-card ' + (n.read ? "" : "unread") + " " + (n.kind === "critical" ? "critical" : "") + '" data-id="' + n.id + '">' +
       icon(icons[n.kind] || "info", 16, "flex-shrink:0;") +
@@ -3225,6 +3329,9 @@ function processDueNotifications() {
       });
     }
   });
+
+  // v93 — ÜÇ KAYNAK GARANTİSİ: görev + tekrar + acil konu (tek satır)
+  bildirimGarantisi();
 
   updateBellBadges();
 }
@@ -4216,6 +4323,9 @@ function renderDashboard(container) {
     '<div class="text-sm text-muted" style="margin-top:2px;">Bugün ' + new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric", weekday: "long" }) + " · " + icon(rhythm.icon, 13, "vertical-align:-2px;") + " " + esc(rhythm.key) + " ritmi</div></div>";
   html += '<button class="btn btn-ghost btn-sm" data-act="openHelp">' + icon("help-circle", 14) + " Kılavuz</button></div>";
 
+  // v93 — bildirim izni yoksa ve bekleyen iş varsa görünür uyarı
+  html += bildirimIzniBandi();
+
   // ---- KPI SATIRI (4 kart yatay) ----
   html += '<div class="stat-grid" style="margin-bottom:18px;">' +
     qkpi("SERİ", state.streak.count + " gün", "flame", "var(--semantic-warning)") +
@@ -4341,9 +4451,17 @@ function renderDashCharts() {
 // Ders başarı grafiği: her dersin SABİT rengi (trafik ışığı yerine ayrıştırıcı palet)
 const LESSON_CHART_COLORS = ["#3B82F6", "#8E4EC6", "#0D9488", "#F59E0B", "#EC4899", "#06B6D4", "#84CC16", "#F43F5E"];
 function lessonChartColor(lesson) {
+  // v93 — sabit listede olmayan ders (örn. 9. sınıf hesabında Felsefe) tek
+  // renge düşmesin: renk ders adından TÜRETİLİR (aynı ders hep aynı renk).
   const keys = Object.keys(activeLessonConfig());
-  const i = keys.indexOf(lesson);
-  return LESSON_CHART_COLORS[(i >= 0 ? i : 0) % LESSON_CHART_COLORS.length];
+  let i = keys.indexOf(lesson);
+  if (i < 0) {
+    let h = 0;
+    const ad = String(lesson || "");
+    for (let c = 0; c < ad.length; c++) h = (h * 31 + ad.charCodeAt(c)) % 100003;
+    i = h;
+  }
+  return LESSON_CHART_COLORS[i % LESSON_CHART_COLORS.length];
 }
 
 function qkpi(label, value, ic, color) {

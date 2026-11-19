@@ -1,4 +1,4 @@
-const PWA_SURUM = "v92-saf-siir-ayri-konu";
+const PWA_SURUM = "v93-bildirim-garantisi";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1888,6 +1888,12 @@ function okzbktBirlestir(hedef, kaynak) {
 function okzKonulariOnar(sessiz) {
   return okzkYukle().then(() => {
     let degisen = 0;
+    // v93 — aynı Okulizyon sınavı iki kez yazılmışsa tek kayda indir
+    // (fonksiyon yoksa — kısmi yükleme/test ortamı — onarım durmaz)
+    if (typeof okzTekrarlariBirlestir === "function") {
+      var mukerrer = okzTekrarlariBirlestir();
+      if (mukerrer > 0) degisen += mukerrer;
+    }
     // 1) Denemelerim'deki hata kayıtları
     (Array.isArray(state.exams) ? state.exams : []).forEach(ex => {
       (Array.isArray(ex && ex.errorLogs) ? ex.errorLogs : []).forEach(l => {
@@ -2060,23 +2066,23 @@ function okzDenemeyeYaz(ex, lessons) {
   var ad = "Okulizyon: " + ((ex && ex.name) || "Sınav");
   var tarih = (ex && ex.date) || todayStr();
   var oz = okzOzet(lessons || {});
-  /* v86 — kimlik ÖNCE sid: aynı ad + aynı tarihli iki ayrı Okulizyon sınavı
-     birbirine karışmaz (biri diğerinin üstüne yazılıp "değişmedi" görünmez). */
-  var sid = (window.OKZ && typeof window.OKZ.sidCikar === "function") ? window.OKZ.sidCikar(ex && ex.url) : "";
-  var idx = -1;
-  if (sid) {
-    idx = (state.exams || []).findIndex(function (e) {
-      return e && e.okulizyonUrl && window.OKZ && typeof window.OKZ.sidCikar === "function" &&
-        window.OKZ.sidCikar(e.okulizyonUrl) === sid;
-    });
-  }
+  /* v93 — KİMLİK = AD + TARİH. KULLANICI (19 Kas): "Aynı deneme bugün
+     kendiliğinden 2. kez eklendi." Kök neden: Okulizyon sonuç bağlantısındaki
+     `sid` OTURUM jetonudur; her çekimde değişir. v86 "başka sınavın sid'i →
+     eşleşme yok" dediği için aynı sınav ikinci kez yazılıyordu (canlı kanıt:
+     aynı hesapta aynı ad+tarih+net, iki ayrı URL).
+     Artık önce AD + TARİH aranır; sid yalnız ikinci bir işaret olarak kalır. */
+  var idx = (state.exams || []).findIndex(function (e) {
+    return e && e.name === ad && String(e.date || "") === String(tarih);
+  });
   if (idx < 0) {
-    idx = (state.exams || []).findIndex(function (e) {
-      if (!e || e.name !== ad || String(e.date || "") !== String(tarih)) return false;
-      var esid = (e.okulizyonUrl && window.OKZ && typeof window.OKZ.sidCikar === "function")
-        ? window.OKZ.sidCikar(e.okulizyonUrl) : "";
-      return !sid || !esid || esid === sid;   // başka sınavın sid'i → eşleşme yok
-    });
+    var sid = (window.OKZ && typeof window.OKZ.sidCikar === "function") ? window.OKZ.sidCikar(ex && ex.url) : "";
+    if (sid) {
+      idx = (state.exams || []).findIndex(function (e) {
+        return e && e.okulizyonUrl && window.OKZ && typeof window.OKZ.sidCikar === "function" &&
+          window.OKZ.sidCikar(e.okulizyonUrl) === sid;
+      });
+    }
   }
   if (idx >= 0) {
     var mev = state.exams[idx];
@@ -2095,6 +2101,21 @@ function okzDenemeyeYaz(ex, lessons) {
   };
   state.exams.push(kayit);
   return state.exams.length - 1;
+}
+
+/* v93 — MÜKERRER DENEMELERİ TEK KAYDA İNDİR.
+   Eski sürüm aynı Okulizyon sınavını iki kez yazmış olabilir (sid jetonu her
+   çekimde değiştiği için). Aynı ad + tarih + içerik → tek kayıt; nedeni
+   işlenmiş satırlar korunur. Açılışta ve her çekimden sonra çalışır. */
+function okzTekrarlariBirlestir() {
+  if (!state || !Array.isArray(state.exams) || !state.exams.length) return 0;
+  if (!window.OKZ || typeof window.OKZ.yinelenenleriBirlestir !== "function") return 0;
+  var once = state.exams.length;
+  var r = window.OKZ.yinelenenleriBirlestir(state.exams);
+  if (!r || !r.exams || r.exams.length === once) return 0;
+  state.exams = r.exams;
+  if (typeof saveState === "function") saveState();
+  return once - r.exams.length;
 }
 
 // Denemeyi "işlendi" defterine yaz: bir daha kuyruğa gelmez.
@@ -2477,6 +2498,8 @@ async function okzKuyrukCek(zorla) {
       okzDenemeyeYaz(ex, dersler);
       okzIsaretle(ex);
     });
+    // v93 — yeni yazım sonrası mükerrer kalmadığından emin ol
+    okzTekrarlariBirlestir();
     st.pending = [];
     const n = yeni.reduce((a, ex) => a + (ex.rows || []).length, 0);
     const guncelMi = pulledAt > (st.pulledAt || 0);
@@ -2654,6 +2677,12 @@ window.__okzYeniPartiGoruldu = function () {
 function pwaArayuzKur() {
   try { initAuthUI(); } catch (e) { console.warn("Profil arayüzü kurulamadı:", e); }
   try { initOkulizyonUI(); } catch (e) { console.warn("Okulizyon arayüzü kurulamadı:", e); }
+  /* v93 — KULLANICI: "Aynı deneme bugün kendiliğinden 2. kez eklendi."
+     Cihazda kalmış mükerrer kopyalar OTURUM BEKLEMEDEN birleştirilir
+     (eskiden yalnız giriş sonrası onarımda çalışıyordu). */
+  setTimeout(function () {
+    try { if (typeof okzTekrarlariBirlestir === "function") okzTekrarlariBirlestir(); } catch (e) { /* */ }
+  }, 1500);
   // Açılışta sonucu tazele: kullanıcı hiçbir şeye basmadan "Analiz Bekliyor" dolsun.
   // (Yalnız oturum açıksa; giriş yoksa sessizce geç.)
   setTimeout(function () {

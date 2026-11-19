@@ -122,11 +122,17 @@ console.log("\n== 6) Sıfırlama → her şey yeniden çekilir ==");
   ok("temizlik diski de boşaltıyor", /function \(\) \{[\s\S]{0,600}okzSilinenDiskeYaz\(\{\}\)/.test(APP));
 }
 
-console.log("\n== 7) Aynı ad+tarih, farklı Okulizyon sınavı ==");
+console.log("\n== 7) Aynı ad+tarih, farklı Okulizyon bağlantısı (v93) ==");
 {
-  ok("okzDenemeyeYaz ÖNCE sid'e bakıyor",
-    /if \(sid\) \{[\s\S]{0,300}sidCikar\(e\.okulizyonUrl\) === sid/.test(APP));
-  ok("başka sınavın sid'iyle eşleşmiyor", /return !sid \|\| !esid \|\| esid === sid;/.test(APP));
+  /* v93 — KULLANICI (19 Kas): "Aynı deneme bugün kendiliğinden 2. kez eklendi."
+     ÖLÇÜM: Okulizyon'un `?pg=yks&sid=…` jetonu OTURUM jetonudur; her çekimde
+     değişir. v86'nın "başka sınavın sid'i → eşleşme yok" kuralı aynı sınavı
+     ikinci kez yazdırıyordu (canlı kanıt: aynı ad+tarih+net, iki ayrı URL).
+     YENİ KURAL: kimlik ad + tarih (+ içerik). sid kimlik DEĞİL. */
+  ok("okzDenemeyeYaz ÖNCE ad+tarih arıyor",
+    /e\.name === ad && String\(e\.date \|\| ""\) === String\(tarih\)/.test(APP));
+  ok("sid'in veto kuralı kaldırıldı", !/return !sid \|\| !esid \|\| esid === sid;/.test(APP));
+  ok("sid yalnız ikinci işaret olarak kalıyor", /sidCikar\(e\.okulizyonUrl\) === sid/.test(APP));
 }
 
 console.log("\n" + "─".repeat(58));

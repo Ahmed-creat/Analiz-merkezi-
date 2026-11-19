@@ -179,46 +179,57 @@ const HASH = OKZ.kararHash(SINAV);
   // ============================================================
   // v46c — ÇOK SINAV: aynı ad + aynı tarih olsa bile KARIŞMAZ
   // ============================================================
-  console.log("\n== 8) Aynı ad+tarih, farklı sid → AYRI sınavlar ==");
+  console.log("\n== 8) Aynı ad+tarih, farklı sid → AYNI sınav (v93) ==");
   {
+    /* v93 — KULLANICI (19 Kas): "Aynı deneme bugün kendiliğinden 2. kez eklendi."
+       sid, Okulizyon'un OTURUM jetonudur: aynı sınavın iki çekiminde farklı
+       değer gelir. v46c'de kimliğe konduğu için aynı sınav iki kez yazıldı
+       (canlı kanıt: aynı ad+tarih+net, 1. kopya 39 nedeni işlenmiş /
+       2. kopya 0). Kimlik artık ad|tarih(+içerik); sid yalnız bağlantı bilgisi. */
     const A = Object.assign({}, SINAV, { url: "https://okulizyon.com/app2/ogrenci/?pg=yks&sid=111" });
     const B = Object.assign({}, SINAV, { url: "https://okulizyon.com/app2/ogrenci/?pg=yks&sid=222" });
-    esit("sid okunuyor", OKZ.sidCikar(A.url), "111");
-    ok("anahtar sid'e dayanıyor", OKZ.kararAnahtar(A) === "sid:111", OKZ.kararAnahtar(A));
-    ok("iki sınavın anahtarı FARKLI", OKZ.kararAnahtar(A) !== OKZ.kararAnahtar(B));
+    esit("sid hâlâ okunuyor (bağlantı için)", OKZ.sidCikar(A.url), "111");
+    esit("anahtar ad|tarih", OKZ.kararAnahtar(A), SINAV.name + "|" + SINAV.date);
+    ok("iki çekimin anahtarı AYNI", OKZ.kararAnahtar(A) === OKZ.kararAnahtar(B));
     const depoA = { name: "Okulizyon: " + A.name, date: A.date, lessons: A.lessons, okulizyonUrl: A.url };
     const k1 = OKZ.karar([B], [depoA], {});
-    esit("B yeni sınav olarak gelir (A ile karışmadı)", k1.yeni.length, 1);
+    esit("B mükerrer yazılmaz (aynı sınav)", k1.yeni.length, 0);
     esit("yanlış eşleşme 'değişmiş' üretmez", k1.degisen.length, 0);
     const k2 = OKZ.karar([A], [depoA], {});
-    esit("aynı sid tekrar 'yeni' sayılmaz", k2.yeni.length, 0);
+    esit("aynı içerik tekrar 'yeni' sayılmaz", k2.yeni.length, 0);
     const A2 = Object.assign({}, A, { lessons: { Matematik: { d: 25, w: 1, e: 4 } } });
     const k3 = OKZ.karar([A2], [depoA], {});
     esit("içerik değişince 'değişmiş' olarak görünür", k3.degisen.length, 1);
+    const C = Object.assign({}, B, { date: "2026-11-02" });
+    esit("farklı tarihli GERÇEK sınav yeni sayılır", OKZ.karar([C], [depoA], {}).yeni.length, 1);
   }
 
-  console.log("\n== 9) sid yoksa eski davranış korunur (geriye dönük) ==");
+  console.log("\n== 9) Geriye dönük: eski sid notu okunur, ama yeni sid kimlik değil ==");
   {
     const sidsiz = Object.assign({}, SINAV);
-    esit("sid yoksa anahtar ad|tarih", OKZ.kararAnahtar(sidsiz), SINAV.name + "|" + SINAV.date);
+    esit("anahtar her durumda ad|tarih", OKZ.kararAnahtar(sidsiz), SINAV.name + "|" + SINAV.date);
     const not = {};
     not[SINAV.name + "|" + SINAV.date] = OKZ.kararHash(SINAV);
     const s = Object.assign({}, SINAV, { url: "https://okulizyon.com/app2/ogrenci/?pg=yks&sid=999" });
-    esit("eski (sid'siz) silme notu geçerli", OKZ.karar([s], [], not).yeni.length, 0);
+    esit("ad|tarih silme notu sid'li çekimde de geçerli", OKZ.karar([s], [], not).yeni.length, 0);
+    /* Eski sürüm deftere "sid:<jeton>" yazıyordu. Geçiş döneminde o notlar
+       hâlâ okunmalı — yoksa güncelleme sonrası silinmiş sınavlar geri gelir. */
+    const eskiNot = {};
+    eskiNot["sid:999"] = OKZ.kararHash(s);
+    esit("eski sid notu hâlâ okunuyor (silinen geri gelmez)", OKZ.karar([s], [], eskiNot).yeni.length, 0);
   }
 
-  console.log("\n== 10) okzKey (app-pwa) sid'i okuyor ==");
+  console.log("\n== 10) okzKey (app-pwa) sid kullanmıyor ==");
   {
     const o = ortam2();
-    ok("okzKey sid'li denemede sid:...", String(o.api.okzKey({ name: "X", date: "2026-10-27", url: "https://a/?sid=77" })) === "sid:77",
-      String(o.api.okzKey({ name: "X", date: "2026-10-27", url: "https://a/?sid=77" })));
-    ok("uygulamadaki deneme (okulizyonUrl) da sid okur",
-      String(o.api.okzKey({ name: "Okulizyon: X", date: "2026-10-27", okulizyonUrl: "https://a/?pg=yks&sid=88" })) === "sid:88");
+    esit("okzKey = ad|tarih", String(o.api.okzKey({ name: "X", date: "2026-10-27", url: "https://a/?sid=77" })), "X|2026-10-27");
+    esit("okulizyonUrl'lu deneme de ad|tarih",
+      String(o.api.okzKey({ name: "Okulizyon: X", date: "2026-10-27", okulizyonUrl: "https://a/?pg=yks&sid=88" })), "Okulizyon: X|2026-10-27");
     const o2 = ortam2();
     o2.api.okzSilinenIkili({ name: "X", date: "2026-10-27", url: "https://a/?sid=55" }, "H1");
     const d = o2.api.okzSilinen();
-    ok("ikili not sid anahtarını yazdı", d["sid:55"] === "H1");
-    ok("ikili not eski anahtarı da yazdı", d["X|2026-10-27"] === "H1");
+    esit("ikili not ad|tarih anahtarını yazdı", d["X|2026-10-27"], "H1");
+    ok("sid anahtarı YAZILMIYOR", !("sid:55" in d));
   }
 
   // ---------- Sonuç ----------

@@ -43,7 +43,7 @@ console.log("\n== 1-2) Çekim: denemeler doğrudan Denemelerim'e, satırlar nede
 {
   ok("çekimde denemeler okzDenemeyeYaz ile yazılıyor",
     /yeni\.forEach\(function \(ex\) \{[\s\S]{0,300}okzDenemeyeYaz\(ex, dersler\)/.test(APP));
-  ok("kuyruk boşaltılıyor (profilde beklemiyor)", /okzIsaretle\(ex\);\s*\}\);\s*st\.pending = \[\];/.test(APP));
+  ok("kuyruk boşaltılıyor (profilde beklemiyor)", /okzIsaretle\(ex\);\s*\}[\s\S]{0,400}st\.pending = \[\];/.test(APP));
   ok("okzDenemeyeYaz errorLogs'u satırlardan kuruyor",
     /errorLogs: okzSatirLoglari\(ex\)/.test(APP));
   ok("satır kaydı tip BOŞ (neden sonra seçilir)", /type: "", date: \(ex && ex\.date\) \|\| todayStr\(\)/.test(APP));
