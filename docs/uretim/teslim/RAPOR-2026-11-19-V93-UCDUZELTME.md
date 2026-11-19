@@ -227,3 +227,28 @@ Mükerrer grup **yok**.
 - `tests/dom/dom-v93-uc-duzeltme.test.js` — 32/32 (15:00'te sistem bildirimi
   gösterilir; **03:00'te gösterilmez**, uygulama içi kayıt durur)
 - `npm run -s test:hepsi` → ✅
+
+### Ek — v93d · Bant metni (canlı teyit sırasında yakalandı)
+
+Canlı sayfa (`?v=93c`) doğrulanırken dashboard bandı şunu yazıyordu:
+
+> **Bekleyen işin var ama bildirimler kapalı.** Bildirimler kapalı. `Bildirimleri aç`
+
+Sebep: `bildirimTeshis()` izin hiç istenmemişken `{ kod:"hazir", metin:"" }` döner;
+bant `t.metin || "Bildirimler kapalı."` yedeğine düştüğü için başlıktaki cümle
+tekrar ediyordu. Ayrıca kullanıcıya ne olacağını söylemiyordu.
+
+Düzeltme (`index.html` → `bildirimIzniBandi()`):
+
+```js
+const aciklama = duzeltilebilir
+  ? "Görevin, tekrarın ya da acil konun olduğunda buradan haber vereyim. Tek dokunuş yeter."
+  : esc(t.metin || "Bildirimler bu tarayıcıda kapalı.");
+```
+
+- İzin istenmemişse: tek cümlelik davet + "Bildirimleri aç" düğmesi.
+- İzin reddedilmişse: teşhis metni + nasıl açılacağı (değişmedi).
+- Sürüm: **v93d-bant-metni** (`PWA_SURUM` + SW `CACHE`).
+- Test: `dom-v93` bölüm 7 — "Bildirimler kapalı" iki kez yazmıyor, ne yapacağını
+  söylüyor → 35/35. `v93-uc-saha-hatasi` SW cache regex'i sürüm ekine toleranslı
+  hale getirildi (`/v93[a-z]?-[a-z-]+/`) → `test:hepsi` yeşil.

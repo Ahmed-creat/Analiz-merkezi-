@@ -247,6 +247,23 @@ async function ac(state, ayar) {
     dom.window.close();
   }
 
+  // ---------------------------------------------------------
+  console.log("\n== 7) Bant metni tekrar etmiyor ==");
+  {
+    const { dom, w } = await ac(durum(false));
+    const metin = w.eval(`(function () {
+      try { Object.defineProperty(window, "Notification", { configurable: true,
+        value: Object.assign(function Notification() {}, { permission: "default", requestPermission: function () { return Promise.resolve("default"); } }) }); } catch (e) { return ""; }
+      return bildirimIzniBandi();
+    })()`);
+    ok("izin istenmemişken bant çıkıyor", /Bekleyen işin var/.test(metin));
+    ok("\"Bildirimler kapalı\" iki kez YAZMIYOR",
+      (String(metin).match(/Bildirimler kapalı/gi) || []).length <= 1, String(metin).slice(0, 160));
+    ok("ne yapacağını söylüyor", /haber vereyim|Bildirimleri aç/.test(metin));
+    dom.close ? null : null;
+    dom.window.close();
+  }
+
   console.log("\n" + "─".repeat(56));
   console.log(`v93 DOM — ${gecen}/${gecen + kalan} geçti` + (kalan ? "" : " ✓"));
   if (kalan) { hatalar.forEach(h => console.log("  ✗ " + h)); process.exit(1); }

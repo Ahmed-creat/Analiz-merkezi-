@@ -3156,12 +3156,16 @@ function bildirimIzniBandi() {
     if (Notification.permission === "granted") return "";   // kanal açık
     const b = bekleyenIsler();
     if (b.gorev + b.tekrar + b.acil === 0) return "";       // bekleyen iş yoksa uyarma
-    const t = (typeof bildirimTeshis === "function") ? bildirimTeshis() : { kod: "engelli", metin: "Bildirimler kapalı.", nasil: "" };
+    const t = (typeof bildirimTeshis === "function") ? bildirimTeshis() : { kod: "engelli", metin: "", nasil: "" };
     const duzeltilebilir = (t.kod === "hazir");
+    // İzin hiç istenmemişse ("hazir") teşhis metni boştur → cümleyi biz kurarız.
+    // Reddedilmiş/izin verilemeyen durumda teşhis metni + nasıl düzeltileceği yazılır.
+    const aciklama = duzeltilebilir
+      ? "Görevin, tekrarın ya da acil konun olduğunda buradan haber vereyim. Tek dokunuş yeter."
+      : esc(t.metin || "Bildirimler bu tarayıcıda kapalı.");
     return '<div class="bento-card" style="border-left:4px solid var(--semantic-warning);margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;">' +
       '<div style="flex:1;min-width:200px;font-size:12.5px;line-height:1.5;">' +
-      '<b>Bekleyen işin var ama bildirimler kapalı.</b> ' +
-      esc(t.metin || "Bildirimler kapalı.") +
+      '<b>Bekleyen işin var ama bildirimler kapalı.</b> ' + aciklama +
       (t.nasil ? ' <span style="color:var(--text-muted);">' + esc(t.nasil) + '</span>' : '') +
       '</div>' +
       (duzeltilebilir ? '<button class="btn btn-primary btn-sm" data-act="toggleNotifPermission">' + icon("bell", 13) + ' Bildirimleri aç</button>' : '') +
