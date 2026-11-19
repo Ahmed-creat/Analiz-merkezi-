@@ -99,8 +99,10 @@ console.log("\n== 4) Uygulama tarafı ==");
   ok("giriş yoksa sessizce atlanır", /if \(!sb \|\| !currentUser \|\| typeof sb\.rpc !== "function"\) return;/.test(APP));
   ok("hata olsa bile çekim akışı bozulmaz", /catch\(function \(\) \{ \/\* \*\/ \}\);/.test(APP));
   ok("en çok 3 deneme bildirimi (spam yok)", /slice\(0, 3\)/.test(APP));
-  /* v92 sürüm damgasını ilerletir; test damganın v91 veya sonrası olmasını ister. */
-  ok("sürüm damgası v91+", Number((APP.match(/PWA_SURUM = "v(\d+)-/) || [])[1]) >= 91);
+  /* v92/v93 sürüm damgasına harf ekleyebilir ("v93b-…"); damga v91 veya
+     sonrası olmalı, ek (a/b/c) numarayı düşürmemeli. */
+  ok("sürüm damgası v91+", Number((APP.match(/PWA_SURUM = "v(\d+)[a-z]?-/) || [])[1]) >= 91,
+    (APP.match(/PWA_SURUM = "(v[^"]+)"/) || [])[1]);
 }
 
 console.log("\n== 5) Eski davranışlar bozulmadı ==");

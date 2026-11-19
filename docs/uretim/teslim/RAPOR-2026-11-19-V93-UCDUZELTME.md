@@ -141,3 +141,52 @@ başlık **"Akşam: bugün seni bekleyenler"**.
   izin verildiği anda kurulur.
 - `0011` veri onarımı canlı veride elle uygulandı; dosya gelecekteki tekrarlar
   için duruyor (idempotent).
+
+---
+
+# Ek — v93b · Yerel bildirimin ikonu (19 Kas 21:14)
+
+**Kullanıcı:** "Şu an 3dk önce 'Bugün seni bekleyenler' adlı bir bildirim geldi ve
+bunda neden hâlâ ikon sorunu var. 'Akşam: bugün seni bekleyenler' adlı 17 dk önce
+gelen bildirimde ikon sorunu yok ama."
+
+## Ölçüm
+
+`push_teslim` (canlı):
+
+| Saat (TR) | Aşama | Başlık |
+|---|---|---|
+| 20:58 | `push` → `gosterim` ✅ | Akşam: bugün seni bekleyenler |
+| 21:11 | **yalnız `sw-acildi`** | — (push satırı YOK) |
+
+Yani 21:11'deki bildirim **sunucudan gitmedi**: uygulamanın kendisi gösterdi
+(`bildirimGarantisi` → `addNotification` → `yerelSistemBildirimi`).
+Aynı kullanıcı iki bildirimi farklı gördü çünkü **iki ayrı kod yolu** vardı:
+
+| Yol | icon | badge | Sonuç |
+|---|---|---|---|
+| Push (`sw.js`) | `bildirim-bos.png` (tamamen şeffaf) | `bildirim-rozet.png` | sorun yok |
+| Yerel (`index.html`) | `icon-192.png` (koyu uygulama ikonu) | `icon-192.png` | büyük görselde koyu kare |
+
+## Düzeltme
+
+- `BILDIRIM_GORSEL` / `BILDIRIM_ROZET` sabitleri eklendi; **bütün yerel yollar**
+  (`yerelSistemBildirimi`, `hatirlatmaTelafisi`, `notifyBrowser`) push ile aynı
+  görselleri kullanıyor.
+- Yerel bildirimin **başlığı sunucudaki vardiya başlığıyla eşitlendi**
+  (`saat < 14 → "Bugün seni bekleyenler"`, sonrası `"Akşam: bugün seni
+  bekleyenler"`). Böylece "aynı başlık 6 saat içinde gösterildiyse tekrar
+  gösterme" kapısı tutuyor: push gittikten sonra aynı içerik yerel olarak
+  ikinci kez gösterilmiyor. (Kullanıcı 20:58 push + 21:11 yerel olarak aynı
+  içeriği iki kez aldı; başlıklar farklı olduğu için kapı çalışmamıştı.)
+- Sürüm: **v93b-bildirim-ikoni** (hem `PWA_SURUM` hem `sw.js` CACHE).
+
+## Testler
+
+- `tests/v93b-yerel-bildirim-ikoni.test.js` — 18/18 (iki yolun görselleri aynı,
+  dosyalar gerçekten var, başlık vardiyaya bağlı, kapı duruyor).
+- `tests/dom/dom-v93-uc-duzeltme.test.js` — 30/30; 6. bölüm gerçek
+  `showNotification` çağrısını yakalayıp `icon`/`badge` değerlerini ölçer.
+- Eski testlerdeki sürüm regex'leri `v93b` gibi harf ekini de kabul edecek
+  şekilde güncellendi (v60 · v62 · v90).
+- `npm run -s test:hepsi` → ✅

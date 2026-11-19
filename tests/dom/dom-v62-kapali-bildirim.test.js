@@ -70,9 +70,9 @@ ok("yalnız Android'de gösterilir", /Android\/i\.test\(navigator\.userAgent/.te
 
 console.log("\n== 6) Sürüm damgaları ==");
 ok("sw önbellek v62+ (kapalı-bildirim katmanı)",
-  Number((SW.match(/const CACHE = "analiz-merkezi-v-\d+-v(\d+)-/) || [])[1]) >= 62);
+  Number((SW.match(/const CACHE = "analiz-merkezi-v-\d+-v(\d+)[a-z]?-/) || [])[1]) >= 62);
 ok("uygulama sürümü v62+ (kapalı-bildirim katmanı)",
-  Number((APP.match(/PWA_SURUM = "v(\d+)-/) || [])[1]) >= 62);
+  Number((APP.match(/PWA_SURUM = "v(\d+)[a-z]?-/) || [])[1]) >= 62);
 
 console.log("\n" + "─".repeat(56));
 console.log("v62 kapalı-bildirim testi — " + gecen + " geçti, " + hata.length + " kaldı");

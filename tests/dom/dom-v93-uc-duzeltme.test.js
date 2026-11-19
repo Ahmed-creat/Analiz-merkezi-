@@ -85,6 +85,20 @@ async function ac(state, ayar) {
       w.matchMedia = w.matchMedia || (() => ({ matches: false, addEventListener() {}, removeEventListener() {} }));
       w.scrollTo = () => {};
       w.OKZ = OKZ;                       // üretimde klasik <script> ile gelir
+      if (o.bildirimYakala) {             // serviceWorker.ready + showNotification taklidi
+        const kayit = {
+          showNotification: function (baslik, secenekler) {
+            o.bildirimYakala.push({ baslik: baslik, secenekler: secenekler });
+            return Promise.resolve();
+          }
+        };
+        Object.defineProperty(w.navigator, "serviceWorker", {
+          configurable: true,
+          value: { ready: Promise.resolve(kayit), addEventListener: function () {}, register: function () { return Promise.resolve(kayit); } }
+        });
+        // "push bugün aynı başlığı gösterdi mi" kapısı boş dönsün
+        w.caches = { open: () => Promise.resolve({ match: () => Promise.resolve(null), put: () => Promise.resolve() }) };
+      }
       if (o.izin) {                      // jsdom'da izin durumu taklit edilir
         const N = function Notification() {};
         N.permission = o.izin;
@@ -190,6 +204,29 @@ async function ac(state, ayar) {
     const { dom, w } = await ac(s);
     const notif = JSON.parse(w.eval("JSON.stringify(state.notifications)")).filter(n => n.kind === "garanti");
     ok("bekleyen iş yokken 'garanti' bildirimi üretilmedi", notif.length === 0, "adet: " + notif.length);
+    dom.window.close();
+  }
+
+  // ---------------------------------------------------------
+  console.log("\n== 6) Yerel bildirim görselleri push ile AYNI (gerçek çağrı yakalanır) ==");
+  {
+    /* KULLANICI (19 Kas 21:14): "Bugün seni bekleyenler adlı bildirimde ikon
+       sorunu var, Akşam: ... bildiriminde yok." 21:11'deki bildirim sunucudan
+       GİTMEDİ (push_teslim'de yalnız sw-acildi var) → uygulama kendisi
+       gösterdi. O yol icon olarak icon-192.png veriyordu.
+       Burada o çağrıyı YAKALAYIP seçenekleri ölçüyoruz. */
+    const yakalanan = [];
+    const { dom, w } = await ac(durum(false), { izin: "granted", bildirimYakala: yakalanan });
+    w.eval(`(function () {
+      try { Object.defineProperty(document, "visibilityState", { configurable: true, get: function () { return "hidden"; } }); } catch (e) {}
+      yerelSistemBildirimi({ title: "Akşam: bugün seni bekleyenler", body: "2 görev", kind: "garanti" });
+    })()`);
+    await bekle(400);
+    ok("yerel gösterim çağrıldı", yakalanan.length > 0, "adet: " + yakalanan.length);
+    const sec = (yakalanan[0] || {}).secenekler || {};
+    ok("büyük görsel BOŞ görsel", /bildirim-bos\.png$/.test(String(sec.icon || "")), String(sec.icon));
+    ok("rozet tek renkli rozet", /bildirim-rozet\.png$/.test(String(sec.badge || "")), String(sec.badge));
+    ok("uygulama ikonu (icon-192) KULLANILMIYOR", !/icon-192/.test(String(sec.icon || "") + String(sec.badge || "")));
     dom.window.close();
   }
 

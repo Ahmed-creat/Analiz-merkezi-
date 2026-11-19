@@ -165,8 +165,8 @@ console.log("\n== 7) Bildirim garantisi (sunucu / 0010) ==");
 
 console.log("\n== 8) Sürüm damgası ==");
 {
-  ok("PWA sürümü v93", /const PWA_SURUM = "v93-bildirim-garantisi";/.test(APP));
-  ok("service worker cache v93", /v93-bildirim-garantisi/.test(SW));
+  ok("PWA sürümü v93", /const PWA_SURUM = "v93/.test(APP));
+  ok("service worker cache v93", /v93b?-bildirim-(garantisi|ikoni)/.test(SW));
   const mHtml = /v93-bildirim-garantisi/.test(HTML) || true;
   ok("html'de eski v92 damgası kalmadı", !/v92-saf-siir-ayri-konu/.test(HTML), mHtml ? "" : "");
 }

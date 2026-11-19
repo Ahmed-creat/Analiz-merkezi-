@@ -2929,6 +2929,19 @@ function coachMessages() {
 // SW'ye ulaşmıyor) ama YEREL showNotification çalışıyordu. Uygulama arka
 // plandayken üretilen hatırlatmalar artık sistem bildirimi olarak da gösterilir;
 // böylece push kanalı aksasa bile hatırlatma gözden kaçmaz.
+/* v93b — KULLANICI (19 Kas 21:14): "Şu an 'Bugün seni bekleyenler' adlı bir
+   bildirim geldi ve bunda neden hâlâ ikon sorunu var. 'Akşam: bugün seni
+   bekleyenler' adlı 17 dk önce gelen bildirimde ikon sorunu yok ama."
+
+   ÖLÇÜM: 21:11'deki bildirim SUNUCUDAN GİTMEDİ (push_teslim'de o saatte yalnız
+   "sw-acildi" var; 20:58 push'u ise "Akşam: bugün seni bekleyenler" başlığıyla
+   kayıtlı). Yani 21:11'deki bildirim UYGULAMANIN KENDİ gösterdiği YEREL
+   bildirimdi (bildirimGarantisi → yerelSistemBildirimi).
+   Yerel yol icon olarak ./icons/icon-192.png veriyordu → Android büyük görsel
+   alanında uygulama ikonunu (koyu kare) çiziyordu. Push yolu (sw.js) ise
+   "bildirim-bos.png" (boş büyük görsel) + "bildirim-rozet.png" (tek renkli
+   küçük rozet) kullanıyor — o yüzden orada sorun yoktu.
+   DÜZELTME: iki yerel yol da push ile AYNI görselleri kullanır. */
 function yerelSistemBildirimi(n) {
   try {
     if (typeof document === "undefined" || document.visibilityState !== "hidden") return;
@@ -2951,7 +2964,7 @@ function yerelSistemBildirimi(n) {
             if (ayni) return;
             return kayit.showNotification(String(n.title || "Analiz Merkezi"), {
               body: String(n.body || ""),
-              icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
+              icon: BILDIRIM_GORSEL, badge: BILDIRIM_ROZET,
               tag: "am-yerel-" + (n.kind || "info"), data: { url: "./" }
             });
           });
@@ -2984,6 +2997,14 @@ function yerelSistemBildirimi(n) {
 // Telafi artık bu saatlerden ÖNCE hiçbir şey göstermez:
 //   00:00–07:34 → yok · 07:35–13:59 → sabah · 14:00–19:29 → yok · 19:30+ → akşam
 const TELAFI_PENCERE = { sabahIlk: 7 * 60 + 35, sabahSon: 14 * 60, aksamIlk: 19 * 60 + 30 };
+
+/* v93b — BİLDİRİM GÖRSELLERİ TEK YERDE.
+   Push yolu (sw.js) büyük görseli BOŞ, üst barı tek renkli rozet çiziyor.
+   Yerel yollar da AYNI görselleri kullanır; aksi hâlde aynı içerik iki farklı
+   görünümle geliyordu (kullanıcı: "'Bugün seni bekleyenler'de ikon sorunu var,
+   'Akşam: bugün seni bekleyenler'de yok"). */
+const BILDIRIM_GORSEL = "./icons/bildirim-bos.png";   // büyük görsel: BOŞ
+const BILDIRIM_ROZET = "./icons/bildirim-rozet.png";  // üst bar: tek renkli rozet
 function telafiVardiyasi(d) {
   const dk = (Number(d && d.getHours()) || 0) * 60 + (Number(d && d.getMinutes()) || 0);
   if (dk >= TELAFI_PENCERE.aksamIlk) return "a";                       // 19:30 sonrası: akşam
@@ -3028,7 +3049,7 @@ function hatirlatmaTelafisi() {
             return izYaz().then(function () {
               return kayit.showNotification(baslik, {
                 body: govde,
-                icon: "./icons/icon-192.png", badge: "./icons/icon-192.png",
+                icon: BILDIRIM_GORSEL, badge: BILDIRIM_ROZET,
                 tag: "am-telafi-" + vardiya, data: { url: "./" }
               });
             });
@@ -3092,8 +3113,13 @@ function bildirimGarantisi() {
     let ek = "";
     if (b.acilAdlar.length) ek = " En önce: " + b.acilAdlar.join(", ") + ".";
     else if (b.tekrarAdlar.length) ek = " Tekrar: " + b.tekrarAdlar.join(", ") + ".";
+    /* Başlık sunucudaki vardiya başlığıyla AYNI olmalı: yerel gösterim
+       "aynı başlık 6 saat içinde zaten gösterildi" kapısını kullanıyor.
+       (Kullanıcı 19 Kas'ta aynı içeriği 20:58 push + 21:11 yerel olarak iki kez
+       aldı; başlıklar farklı olduğu için kapı tutmamıştı.) */
+    const baslik = new Date().getHours() < 14 ? "Bugün seni bekleyenler" : "Akşam: bugün seni bekleyenler";
     addNotification({
-      title: "Bugün seni bekleyenler",
+      title: baslik,
       body: parca.join(" · ") + "." + ek + " Ana sayfa → BUGÜN YAPILACAKLAR.",
       kind: "garanti", topicKey: "garanti@" + gun + "@" + imza
     });
@@ -3340,7 +3366,7 @@ function processDueNotifications() {
 function notifyBrowser(title, body) {
   try {
     if (typeof Notification !== "undefined" && Notification.permission === "granted") {
-      new Notification(title, { body: body, icon: undefined });
+      new Notification(title, { body: body, icon: BILDIRIM_GORSEL, badge: BILDIRIM_ROZET });
     }
   } catch (e) { /* file:// veya izin yoksa sessizce atla */ }
 }

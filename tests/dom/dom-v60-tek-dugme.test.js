@@ -72,7 +72,7 @@ ok("açılış temizliği test işaretini silmiyor",
 ok("izin ilk verildiğinde bir kez test (kanal kanıtı) korunuyor",
   /if \(r && r\.ok\) \{\s*\n\s*const t = await testBirKez\(\);/.test(PUSH));
 ok("sürüm damgası güncel (v60+)", (function () {
-  const m = (APP.match(/PWA_SURUM = "v(\d+)-/) || [])[1];
+  const m = (APP.match(/PWA_SURUM = "v(\d+)[a-z]?-/) || [])[1];
   return Number(m) >= 60;
 })());
 

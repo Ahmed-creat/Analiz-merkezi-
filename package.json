@@ -74,7 +74,7 @@
     "test:v89": "node tests/v89-bildirim-acil-konu.test.js",
     "test:v90": "node tests/v90-bildirim-ikon-baslik.test.js",
     "test:v92": "node tests/v92-saf-siir-ayri-konu.test.js",
-    "test:v93": "node tests/v93-uc-saha-hatasi.test.js && node tests/v93-saha-testi.test.js && node tests/dom/dom-v93-uc-duzeltme.test.js"
+    "test:v93": "node tests/v93-uc-saha-hatasi.test.js && node tests/v93-saha-testi.test.js && node tests/v93b-yerel-bildirim-ikoni.test.js && node tests/dom/dom-v93-uc-duzeltme.test.js"
   },
   "devDependencies": {
     "jsdom": "^24.0.0"
