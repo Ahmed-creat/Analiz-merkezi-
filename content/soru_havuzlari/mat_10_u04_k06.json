@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u04_k06",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u04_k06_o01",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "P(x)=(3x−4)(2x+9) olarak tanımlı ifadenin açılmış biçimi hangisidir?",
+      "secenekler": [
+        "6x²+19x−36",
+        "6x²+35x−36",
+        "6x²+19x+36",
+        "6x²−19x−36"
+      ],
+      "dogru_index": 0,
+      "cozum": "Dağılma özelliğiyle P(x)=6x²+27x−8x−36 olur. Benzer terimleri birleştirince P(x)=6x²+19x−36 elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A ve B doğrusal ifadelerinin çarpımıyla tanımlanan bir niceliği karesel biçime dönüştürürken hangi cebirsel işlemi yaparsın?",
+        "back": "Dağılma özelliğiyle çarpımı açıp x², x ve sabit terimleri benzer terimleri birleştirerek düzenlersin."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o02",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "q(x)=−4x²+48x+11 karesel fonksiyonunun maksimum değer aldığı x koordinatı kaçtır?",
+      "secenekler": [
+        "4",
+        "6",
+        "−6",
+        "12"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tepe noktasının apsisi x=−b/(2a) ile bulunur. Burada a=−4 ve b=48 olduğundan x=−48/(−8)=6’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f(x)=ax²+bx+c karesel fonksiyonunun maksimum veya minimum değer aldığı x koordinatını a ve b cinsinden yaz.",
+        "back": "x=−b/(2a)"
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o03",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "h(x)=−x²+17x−42 fonksiyonunun sıfırları hangileridir?",
+      "secenekler": [
+        "−3 ve −14",
+        "5 ve 12",
+        "3 ve 14",
+        "−3 ve 14"
+      ],
+      "dogru_index": 2,
+      "cozum": "h(x)=−(x²−17x+42)=−(x−3)(x−14) biçiminde çarpanlara ayrılır. h(x)=0 eşitliğinin çözümleri x=3 ve x=14’tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir fonksiyon modelinde f(x)=0 denkleminin çözümleri genel olarak neyi gösterir?",
+        "back": "Model çıktısının sıfır olduğu girdileri; grafikte bunlar x ekseni kesişimlerinin apsisleridir."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o04",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "r(x)=2x²+6x−20 için r(x)>0 eşitsizliğinin çözüm kümesi hangisidir?",
+      "secenekler": [
+        "(−5,2)",
+        "[−5,2]",
+        "(−∞,−5]∪[2,∞)",
+        "(−∞,−5)∪(2,∞)"
+      ],
+      "dogru_index": 3,
+      "cozum": "r(x)=2(x²+3x−10)=2(x+5)(x−2) olduğundan kökler −5 ve 2’dir. Baş katsayı pozitif olduğu için ifade köklerin dışında pozitif olur; eşitsizlik sıkı olduğundan kökler alınmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir model çıktısının f(x)>0 olması, cebirsel ve grafiksel olarak neyi anlatır?",
+        "back": "Çıktı sıfırdan büyüktür; grafiğin ilgili kısmı x ekseninin üzerindedir. Bağlamda ölçülen nicelik referans düzeyini aşar."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o05",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "q(x)=−3(x−3)²+34 karesel fonksiyonunun maksimum değeri kaçtır?",
+      "secenekler": [
+        "34",
+        "3",
+        "−3",
+        "18"
+      ],
+      "dogru_index": 0,
+      "cozum": "Fonksiyon tepe noktası biçimindedir. (x−3)² en az 0 olduğundan ve katsayısı negatif olduğundan q en büyük değerini x=3 iken alır; maksimum değer 34’tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f(x)=a(x−r)²+k ve a<0 biçimindeki karesel fonksiyonun maksimum değeri ve bunu aldığı x değeri nedir?",
+        "back": "Maksimum değer k’dir ve bu değer x=r iken alınır."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o06",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "p(x)=2x²+28x+5 fonksiyonu minimum değerini hangi x koordinatında alır?",
+      "secenekler": [
+        "7",
+        "−7",
+        "−14",
+        "14"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tepe noktasının apsisi x=−b/(2a) ile bulunur. a=2 ve b=28 olduğundan x=−28/4=−7’dir; a>0 olduğu için bu nokta minimum noktasıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel bir fonksiyonun tersinin de fonksiyon olabilmesi için tanım kümesi nasıl sınırlandırılabilir?",
+        "back": "Tepe noktası apsisinin yalnız bir tarafı seçilir (x≥h ya da x≤h); böylece kare fonksiyonu bire bir olur ve tersinde tek bir karekök dalı kullanılır."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o07",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "q(x)=−3x²+42x+7 karesel fonksiyonunun maksimum değeri kaçtır?",
+      "secenekler": [
+        "147",
+        "7",
+        "154",
+        "196"
+      ],
+      "dogru_index": 2,
+      "cozum": "Maksimumun alındığı apsis x=−42/(2·(−3))=7’dir. q(7)=−3·49+42·7+7=−147+294+7=154 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir niceliği Q(x) fonksiyonu modelliyorsa x ve Q(x) genel olarak hangi rolleri üstlenir?",
+        "back": "x bağımsız değişkendir; Q(x) ise modele göre değişen bağımlı çıktıyı gösterir."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o08",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "p(x)=−2x²+28x−90 için p(x)=0 eşitliğini sağlayan x değerleri hangileridir?",
+      "secenekler": [
+        "−5 ve −9",
+        "4 ve 10",
+        "0 ve 14",
+        "5 ve 9"
+      ],
+      "dogru_index": 3,
+      "cozum": "−2x²+28x−90=−2(x²−14x+45)=−2(x−5)(x−9) olduğundan kökler x=5 ve x=9’dur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir f(x) modelinin belirli bir c çıktısını aldığı girdileri bulmak için hangi denklem kurulur?",
+        "back": "f(x)=c denklemi kurulur; çözümleri, fonksiyonun c değerini aldığı girdilerdir."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o09",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "p(x)=x²−16x+55 için p(x)<0 eşitsizliğinin çözüm aralığı hangisidir?",
+      "secenekler": [
+        "(5,11)",
+        "(−∞,5)",
+        "(11,∞)",
+        "(−∞,5)∪(11,∞)"
+      ],
+      "dogru_index": 0,
+      "cozum": "p(x)=(x−5)(x−11) olur. Parabol yukarı açıldığından ifade iki kökü arasında negatiftir; çözüm 5<x<11’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f ve g fonksiyonlarıyla modellenen iki nicelikten g’nin f’den büyük olduğu girdiler nasıl ifade edilir?",
+        "back": "g(x)>f(x) eşitsizliği kurulur; eşdeğer olarak g(x)−f(x)>0 çözülür."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o10",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "p(x)=4x²−4x−48 fonksiyonunun sıfırları hangileridir?",
+      "secenekler": [
+        "x=3 ve x=−4",
+        "x=−3 ve x=4",
+        "x=−4 ve x=3",
+        "x=−3 ve x=−4"
+      ],
+      "dogru_index": 1,
+      "cozum": "p(x)=4(x²−x−12)=4(x−4)(x+3) biçiminde çarpanlara ayrılır. p(x)=0 için x=4 veya x=−3 olmalıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir karesel ifadeyi çarpanlarına ayırdıktan sonra sıfırlarını nasıl bulursun?",
+        "back": "Çarpanlara ayrılmış ifade sıfıra eşitlenir; çarpanlardan her biri ayrı ayrı sıfıra eşitlenerek kökler bulunur."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o11",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "u(x)=5x+10 ve v(x)=x²−4x+28 fonksiyonları hangi x değerlerinde eşittir?",
+      "secenekler": [
+        "x=2 ve x=7",
+        "x=−3 ve x=−6",
+        "x=3 ve x=6",
+        "x=−2 ve x=9"
+      ],
+      "dogru_index": 2,
+      "cozum": "u(x)=v(x) eşitliği 5x+10=x²−4x+28, yani x²−9x+18=0 biçimine gelir. (x−3)(x−6)=0 olduğundan x=3 veya x=6’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki fonksiyon modeli u(x) ve v(x) aynı çıktıyı hangi girdilerde verir?",
+        "back": "u(x)=v(x) denkleminin çözümlerinde; bu girdiler grafiklerin kesişim noktalarının apsisleridir."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u04_k06_o12",
+      "alt_beceri": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz",
+      "metin": "x≥0 için f(x)=x²+30 ve g(x)=10x+6 olsun. Hangi x aralığında f(x)<g(x) olur?",
+      "secenekler": [
+        "(0,4)",
+        "[4,6]",
+        "(−∞,4)∪(6,∞)",
+        "(4,6)"
+      ],
+      "dogru_index": 3,
+      "cozum": "x²+30<10x+6 eşitsizliği x²−10x+24<0, yani (x−4)(x−6)<0 biçiminde yazılır. Çarpım kökler arasında negatif olduğundan, x≥0 koşuluyla çözüm 4<x<6’dır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki fonksiyonun f(x)<g(x) olduğu girdiler cebirsel ve grafiksel olarak nasıl belirlenir?",
+        "back": "f(x)<g(x) eşitsizliği çözülür; grafikte aynı x değerinde f eğrisinin g eğrisinin altında kaldığı aralıklar alınır."
+      },
+      "kazanim": "doğrusal, karesel, karekök, rasyonel referans fonksiyonlar ve bunlardan türetilen fonksiyonlarla ifade edilebilen denklem ve eşitsizlikler içeren problemleri çözebilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u04_k06_o01:flashcard",
+      "front": "A ve B doğrusal ifadelerinin çarpımıyla tanımlanan bir niceliği karesel biçime dönüştürürken hangi cebirsel işlemi yaparsın?",
+      "back": "Dağılma özelliğiyle çarpımı açıp x², x ve sabit terimleri benzer terimleri birleştirerek düzenlersin."
+    },
+    {
+      "id": "mat_10_u04_k06_o02:flashcard",
+      "front": "f(x)=ax²+bx+c karesel fonksiyonunun maksimum veya minimum değer aldığı x koordinatını a ve b cinsinden yaz.",
+      "back": "x=−b/(2a)"
+    },
+    {
+      "id": "mat_10_u04_k06_o03:flashcard",
+      "front": "Bir fonksiyon modelinde f(x)=0 denkleminin çözümleri genel olarak neyi gösterir?",
+      "back": "Model çıktısının sıfır olduğu girdileri; grafikte bunlar x ekseni kesişimlerinin apsisleridir."
+    },
+    {
+      "id": "mat_10_u04_k06_o04:flashcard",
+      "front": "Bir model çıktısının f(x)>0 olması, cebirsel ve grafiksel olarak neyi anlatır?",
+      "back": "Çıktı sıfırdan büyüktür; grafiğin ilgili kısmı x ekseninin üzerindedir. Bağlamda ölçülen nicelik referans düzeyini aşar."
+    },
+    {
+      "id": "mat_10_u04_k06_o05:flashcard",
+      "front": "f(x)=a(x−r)²+k ve a<0 biçimindeki karesel fonksiyonun maksimum değeri ve bunu aldığı x değeri nedir?",
+      "back": "Maksimum değer k’dir ve bu değer x=r iken alınır."
+    },
+    {
+      "id": "mat_10_u04_k06_o06:flashcard",
+      "front": "Karesel bir fonksiyonun tersinin de fonksiyon olabilmesi için tanım kümesi nasıl sınırlandırılabilir?",
+      "back": "Tepe noktası apsisinin yalnız bir tarafı seçilir (x≥h ya da x≤h); böylece kare fonksiyonu bire bir olur ve tersinde tek bir karekök dalı kullanılır."
+    },
+    {
+      "id": "mat_10_u04_k06_o07:flashcard",
+      "front": "Bir niceliği Q(x) fonksiyonu modelliyorsa x ve Q(x) genel olarak hangi rolleri üstlenir?",
+      "back": "x bağımsız değişkendir; Q(x) ise modele göre değişen bağımlı çıktıyı gösterir."
+    },
+    {
+      "id": "mat_10_u04_k06_o08:flashcard",
+      "front": "Bir f(x) modelinin belirli bir c çıktısını aldığı girdileri bulmak için hangi denklem kurulur?",
+      "back": "f(x)=c denklemi kurulur; çözümleri, fonksiyonun c değerini aldığı girdilerdir."
+    },
+    {
+      "id": "mat_10_u04_k06_o09:flashcard",
+      "front": "f ve g fonksiyonlarıyla modellenen iki nicelikten g’nin f’den büyük olduğu girdiler nasıl ifade edilir?",
+      "back": "g(x)>f(x) eşitsizliği kurulur; eşdeğer olarak g(x)−f(x)>0 çözülür."
+    },
+    {
+      "id": "mat_10_u04_k06_o10:flashcard",
+      "front": "Bir karesel ifadeyi çarpanlarına ayırdıktan sonra sıfırlarını nasıl bulursun?",
+      "back": "Çarpanlara ayrılmış ifade sıfıra eşitlenir; çarpanlardan her biri ayrı ayrı sıfıra eşitlenerek kökler bulunur."
+    },
+    {
+      "id": "mat_10_u04_k06_o11:flashcard",
+      "front": "İki fonksiyon modeli u(x) ve v(x) aynı çıktıyı hangi girdilerde verir?",
+      "back": "u(x)=v(x) denkleminin çözümlerinde; bu girdiler grafiklerin kesişim noktalarının apsisleridir."
+    },
+    {
+      "id": "mat_10_u04_k06_o12:flashcard",
+      "front": "İki fonksiyonun f(x)<g(x) olduğu girdiler cebirsel ve grafiksel olarak nasıl belirlenir?",
+      "back": "f(x)<g(x) eşitsizliği çözülür; grafikte aynı x değerinde f eğrisinin g eğrisinin altında kaldığı aralıklar alınır."
+    }
+  ],
+  "baslik": "4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü",
+  "topic_key": "Matematik > 4.6 Denklem ve Eşitsizlikler İçeren Problemlerin Çözümü"
+}

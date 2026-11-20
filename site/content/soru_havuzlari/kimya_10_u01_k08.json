@@ -1,0 +1,256 @@
+{
+  "konu_id": "kimya_10_u01_k08",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "baslik": "1.2.3 İdeal Gaz Yasası",
+  "topic_key": "Kimya > 1.2.3 İdeal Gaz Yasası",
+  "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar.",
+  "kaynak": "Kimya 10 ders kitabı, s.98-105",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u01_k08_o01",
+      "alt_beceri": "İdeal gaz denklemini ve sabitini açıklar.",
+      "metin": "İdeal gaz denklemi hangisidir?",
+      "secenekler": [
+        "PV = nT",
+        "PV = nRT",
+        "P/V = nRT",
+        "P + V = nRT"
+      ],
+      "dogru_index": 1,
+      "cozum": "İdeal gaz denklemi PV = nRT'dir; R ideal gaz sabitidir (s.100-101).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İdeal gaz denklemindeki semboller neyi gösterir?",
+        "back": "P basınç, V hacim, n mol, T sıcaklık, R gaz sabiti."
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o02",
+      "alt_beceri": "İdeal gaz denklemini ve sabitini açıklar.",
+      "metin": "İdeal gaz denkleminde sıcaklık hangi birimle kullanılmalıdır?",
+      "secenekler": [
+        "Santigrat",
+        "Fahrenhayt",
+        "Fark etmez",
+        "Kelvin (K)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Denklemde mutlak sıcaklık (K) kullanılır; °C kullanılamaz (s.101).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mutlak sıcaklık ölçeğinin birimi nedir?",
+        "back": "Kelvin."
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o03",
+      "alt_beceri": "İdeal gaz denklemini ve sabitini açıklar.",
+      "metin": "İdeal gaz denkleminde basınç atm, hacim litre alınırsa gaz sabiti R yaklaşık kaçtır?",
+      "secenekler": [
+        "0,0821 L·atm/(mol·K)",
+        "8,314 L·atm/(mol·K)",
+        "0,821 L·atm/(mol·K)",
+        "22,4 L·atm/(mol·K)"
+      ],
+      "dogru_index": 0,
+      "cozum": "R = PV/(nT) = 2·11,2/(1·273) ≈ 0,0821 L·atm/(mol·K) (s.100).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İdeal gaz sabitinin (R) değeri nedir?",
+        "back": "0,0821 L·atm/(mol·K)"
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o04",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "0 °C ve 1 atm'de 22,4 L hacim kaplayan C2H6 gazı kaç gramdır? (C:12, H:1)",
+      "secenekler": [
+        "22,4",
+        "44",
+        "30",
+        "15"
+      ],
+      "dogru_index": 2,
+      "cozum": "0 °C, 1 atm'de 22,4 L = 1 mol; MA(C2H6) = 24 + 6 = 30 g/mol → 30 g (kitabın çalışma yaprağı, s.103).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Normal koşullarda 1 mol gazın hacmi nedir?",
+        "back": "22,4 L (0 °C ve 1 atm)."
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o05",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "0 °C ve 1 atm'de 5,6 L hacim kaplayan He gazı kaç moldür?",
+      "secenekler": [
+        "0,25 mol",
+        "0,5 mol",
+        "1 mol",
+        "4 mol"
+      ],
+      "dogru_index": 0,
+      "cozum": "22,4 L = 1 mol olduğundan 5,6 L = 0,25 mol (s.103).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Normal koşullarda hacimden mol sayısı nasıl bulunur?",
+        "back": "Hacim 22,4 L/mol'e bölünür; 5,6 L ÷ 22,4 = 0,25 mol."
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o06",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "Aynı koşullarda balon en fazla 67,2 L hacme dayanıyorsa ve içinde 0,25 mol He varsa en fazla kaç mol daha He eklenebilir?",
+      "secenekler": [
+        "3",
+        "2,75",
+        "0,25",
+        "2"
+      ],
+      "dogru_index": 1,
+      "cozum": "67,2 L = 3 mol; 3 − 0,25 = 2,75 mol daha eklenebilir (s.103).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz hacmi ile mol sayısı arasındaki ilişki nedir?",
+        "back": "2,75 mol"
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o07",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "Yukarıdaki soruda eklenebilecek en fazla He kütlesi kaç gramdır? (He:4)",
+      "secenekler": [
+        "11",
+        "12",
+        "3",
+        "44"
+      ],
+      "dogru_index": 0,
+      "cozum": "2,75 mol · 4 g/mol = 11 g (s.103).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol sayısından kütle nasıl bulunur?",
+        "back": "m = n · MA; 2,75 mol He için 2,75 · 4 = 11 g."
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o08",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "1 mol ideal gaz 273 K'de 11,2 L hacim kaplıyorsa basıncı kaç atm'dir? (R = 0,0821)",
+      "secenekler": [
+        "1",
+        "0,5",
+        "2",
+        "22,4"
+      ],
+      "dogru_index": 2,
+      "cozum": "P = nRT/V = 1·0,0821·273/11,2 ≈ 2 atm (kitabın tablosu, s.100).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İdeal gaz denkleminde basınç nasıl bulunur?",
+        "back": "2 atm"
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o09",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "İdeal gaz denklemine göre n ve V sabitken mutlak sıcaklık iki katına çıkarılırsa basınç nasıl değişir?",
+      "secenekler": [
+        "Yarıya iner",
+        "İki katına çıkar",
+        "Değişmez",
+        "Dört katına çıkar"
+      ],
+      "dogru_index": 1,
+      "cozum": "PV = nRT'de n ve V sabitse P ∝ T; sıcaklık iki katına çıkarsa basınç iki katına çıkar (s.101).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "T 2 katına çıkarsa P ne olur?",
+        "back": "2 katına çıkar."
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k08_o10",
+      "alt_beceri": "İdeal gaz denklemiyle nicelik hesaplar.",
+      "metin": "Aşağıdaki gazlardan hangisi ideal gaz davranışına en yakındır?",
+      "secenekler": [
+        "Düşük sıcaklık ve yüksek basınçtaki gaz",
+        "Yoğunlaşmaya yakın gaz",
+        "Çok yüksek basınçtaki gaz",
+        "Yüksek sıcaklık ve düşük basınçtaki gaz"
+      ],
+      "dogru_index": 3,
+      "cozum": "Düşük basınç ve yüksek sıcaklıkta tanecikler arası etkileşimler önemsizleşir; gaz ideale yaklaşır (s.98-101).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İdeal davranışa yaklaşma koşulları nedir?",
+        "back": "Yüksek sıcaklık, düşük basınç."
+      },
+      "kazanim": "İdeal gaz denklemini kullanarak basınç, hacim, sıcaklık ve mol sayısı hesaplar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u01_k08_o01:flashcard",
+      "front": "İdeal gaz denklemindeki semboller neyi gösterir?",
+      "back": "P basınç, V hacim, n mol, T sıcaklık, R gaz sabiti."
+    },
+    {
+      "id": "kimya_10_u01_k08_o02:flashcard",
+      "front": "Mutlak sıcaklık ölçeğinin birimi nedir?",
+      "back": "Kelvin."
+    },
+    {
+      "id": "kimya_10_u01_k08_o03:flashcard",
+      "front": "İdeal gaz sabitinin (R) değeri nedir?",
+      "back": "0,0821 L·atm/(mol·K)"
+    },
+    {
+      "id": "kimya_10_u01_k08_o04:flashcard",
+      "front": "Normal koşullarda 1 mol gazın hacmi nedir?",
+      "back": "22,4 L (0 °C ve 1 atm)."
+    },
+    {
+      "id": "kimya_10_u01_k08_o05:flashcard",
+      "front": "Normal koşullarda hacimden mol sayısı nasıl bulunur?",
+      "back": "Hacim 22,4 L/mol'e bölünür; 5,6 L ÷ 22,4 = 0,25 mol."
+    },
+    {
+      "id": "kimya_10_u01_k08_o06:flashcard",
+      "front": "Gaz hacmi ile mol sayısı arasındaki ilişki nedir?",
+      "back": "2,75 mol"
+    },
+    {
+      "id": "kimya_10_u01_k08_o07:flashcard",
+      "front": "Mol sayısından kütle nasıl bulunur?",
+      "back": "m = n · MA; 2,75 mol He için 2,75 · 4 = 11 g."
+    },
+    {
+      "id": "kimya_10_u01_k08_o08:flashcard",
+      "front": "İdeal gaz denkleminde basınç nasıl bulunur?",
+      "back": "2 atm"
+    },
+    {
+      "id": "kimya_10_u01_k08_o09:flashcard",
+      "front": "T 2 katına çıkarsa P ne olur?",
+      "back": "2 katına çıkar."
+    },
+    {
+      "id": "kimya_10_u01_k08_o10:flashcard",
+      "front": "İdeal davranışa yaklaşma koşulları nedir?",
+      "back": "Yüksek sıcaklık, düşük basınç."
+    }
+  ]
+}

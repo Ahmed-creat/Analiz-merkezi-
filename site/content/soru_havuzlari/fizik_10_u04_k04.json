@@ -1,0 +1,256 @@
+{
+  "konu_id": "fizik_10_u04_k04",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 4,
+  "tema_adi": "Dalgalar",
+  "baslik": "4.4 Periyodik Hareketler",
+  "topic_key": "Fizik > 4.4 Periyodik Hareketler",
+  "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar.",
+  "kaynak": "Fizik 10 ders kitabı, s.300-308",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u04_k04_o01",
+      "alt_beceri": "Periyodik hareketi ve sarkaç türlerini açıklar.",
+      "metin": "Periyodik hareket nasıl tanımlanır?",
+      "secenekler": [
+        "Sabit hızlı doğrusal hareket",
+        "Düzenli aralıklarla tekrarlanan hareket",
+        "Tek yönlü hızlanan hareket",
+        "Hiç hareket etmeyen duran hâl"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitapta periyodik hareket, denge noktası etrafında düzenli tekrarlanan hareket olarak tanımlanır (s.301, s.308).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düzenli tekrarın tanımı nedir?",
+        "back": "Denge noktası etrafında düzenli tekrar eden hareket."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o02",
+      "alt_beceri": "Periyodik hareketi ve sarkaç türlerini açıklar.",
+      "metin": "Basit sarkacın periyodu hangi niceliğe bağlıdır?",
+      "secenekler": [
+        "Kütleye",
+        "Genliğin büyüklüğüne (10°'den küçük açılarda)",
+        "Ortamın rengine",
+        "İpin uzunluğuna"
+      ],
+      "dogru_index": 3,
+      "cozum": "Basit sarkacın periyodu ipin uzunluğunun kareköküyle doğru, g'nin kareköküyle ters orantılıdır (s.304, s.308).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sarkaç periyodunda kütlenin ve küçük genliğin etkisi nedir?",
+        "back": "Etkisi yoktur; periyot yalnızca ip uzunluğu ve yerçekimi ivmesiyle belirlenir."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o03",
+      "alt_beceri": "Periyodik hareketi ve sarkaç türlerini açıklar.",
+      "metin": "Basit sarkacın periyodu ipin ucundaki kütle değiştirildiğinde nasıl değişir?",
+      "secenekler": [
+        "Değişmez",
+        "Artar",
+        "Azalır",
+        "Kütlenin karesi kadar artar"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kitapta basit sarkacın periyodunun kütleye bağlı olmadığı açıkça belirtilir (s.306, s.308).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sarkaç periyodunun kütleden bağımsız olması ne demektir?",
+        "back": "Hayır, değişmez."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o04",
+      "alt_beceri": "Periyodik hareketi ve sarkaç türlerini açıklar.",
+      "metin": "Yay sarkacının periyodu hangi niceliğe bağlı değildir?",
+      "secenekler": [
+        "Kütleye",
+        "Yay sabitine",
+        "Yer çekimi ivmesine",
+        "Yayın esnekliğine"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kitaba göre yay sarkacının periyodu kütleye ve yay sabitine bağlıdır, çekim ivmesine bağlı değildir (s.308).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yay sarkacı periyodunu belirleyen nicelikler nedir?",
+        "back": "Hayır, bağlı değildir."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o05",
+      "alt_beceri": "Periyodik hareketi ve sarkaç türlerini açıklar.",
+      "metin": "Basit sarkacın periyodik hareket olarak kabul edilmesi için açının hangi sınırın altında olması gerekir?",
+      "secenekler": [
+        "45°",
+        "90°",
+        "Sınır yoktur",
+        "10°"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitapta düşeyle yapılan açının 10°'den küçük olması koşuluyla hareketin periyodik olduğu belirtilir (s.304).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Küçük açı sınırının değeri nedir?",
+        "back": "10°'den küçük açılarda."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o06",
+      "alt_beceri": "Periyodu etkileyen değişkenleri deney verileriyle yorumlar.",
+      "metin": "Deneyde ip uzunluğu 10 cm iken periyot 0,6 s, 40 cm iken 1,2 s ölçülmüştür. Uzunluk artırıldığında periyot nasıl değişmiştir?",
+      "secenekler": [
+        "Azalmıştır",
+        "Artmıştır",
+        "Değişmemiştir",
+        "Yarıya inmiştir"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitaptaki tabloda uzunluk arttıkça periyot artmaktadır (s.306).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Periyodun ip uzunluğuyla artması ne demektir?",
+        "back": "Artar."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o07",
+      "alt_beceri": "Periyodu etkileyen değişkenleri deney verileriyle yorumlar.",
+      "metin": "40 cm uzunluğundaki sarkaçta kütle 100 g'dan 250 g'a çıkarılırsa periyot ne olur?",
+      "secenekler": [
+        "1,2 s olarak kalır",
+        "1,2 s'den büyük olur",
+        "1,2 s'den küçük olur",
+        "Sıfır olur"
+      ],
+      "dogru_index": 0,
+      "cozum": "Periyot kütleye bağlı olmadığından değişmez, 1,2 s kalır (s.306-307).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kütle artışının periyoda etkisi nedir?",
+        "back": "Değişmez, 1,2 s."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o08",
+      "alt_beceri": "Periyodu etkileyen değişkenleri deney verileriyle yorumlar.",
+      "metin": "Bir sarkacın ipi kısaltılırsa periyodu nasıl değişir?",
+      "secenekler": [
+        "Artar",
+        "Değişmez",
+        "Azalır",
+        "Önce artar sonra azalır"
+      ],
+      "dogru_index": 2,
+      "cozum": "T ∝ √l olduğundan uzunluk azalırsa periyot azalır (s.304-305).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İp kısalmasının periyoda etkisi nedir?",
+        "back": "Evet, periyot azalır."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o09",
+      "alt_beceri": "Periyodu etkileyen değişkenleri deney verileriyle yorumlar.",
+      "metin": "Yay sarkacında yaya asılan kütle artırılırsa periyot nasıl değişir?",
+      "secenekler": [
+        "Azalır",
+        "Artar",
+        "Değişmez",
+        "Sıfır olur"
+      ],
+      "dogru_index": 1,
+      "cozum": "T ∝ √m olduğundan kütle artarsa yay sarkacının periyodu artar (s.308).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yay sarkacında periyodu büyüten etken nedir?",
+        "back": "Artar."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u04_k04_o10",
+      "alt_beceri": "Periyodu etkileyen değişkenleri deney verileriyle yorumlar.",
+      "metin": "Cisimlerin dışarıdan etki olmaksızın yaptıkları salınımın frekansına ne denir?",
+      "secenekler": [
+        "Rezonans frekansı",
+        "Dalga frekansı",
+        "Ölçüm frekansı",
+        "Doğal titreşim frekansı"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitapta bu frekans doğal titreşim frekansı olarak adlandırılır (s.303, s.308).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kendi kendine salınımın frekansı nedir?",
+        "back": "Doğal titreşim frekansı."
+      },
+      "kazanim": "Basit sarkaç ve yay sarkacında periyodu etkileyen değişkenleri açıklar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u04_k04_o01:flashcard",
+      "front": "Düzenli tekrarın tanımı nedir?",
+      "back": "Denge noktası etrafında düzenli tekrar eden hareket."
+    },
+    {
+      "id": "fizik_10_u04_k04_o02:flashcard",
+      "front": "Sarkaç periyodunda kütlenin ve küçük genliğin etkisi nedir?",
+      "back": "Etkisi yoktur; periyot yalnızca ip uzunluğu ve yerçekimi ivmesiyle belirlenir."
+    },
+    {
+      "id": "fizik_10_u04_k04_o03:flashcard",
+      "front": "Sarkaç periyodunun kütleden bağımsız olması ne demektir?",
+      "back": "Hayır, değişmez."
+    },
+    {
+      "id": "fizik_10_u04_k04_o04:flashcard",
+      "front": "Yay sarkacı periyodunu belirleyen nicelikler nedir?",
+      "back": "Hayır, bağlı değildir."
+    },
+    {
+      "id": "fizik_10_u04_k04_o05:flashcard",
+      "front": "Küçük açı sınırının değeri nedir?",
+      "back": "10°'den küçük açılarda."
+    },
+    {
+      "id": "fizik_10_u04_k04_o06:flashcard",
+      "front": "Periyodun ip uzunluğuyla artması ne demektir?",
+      "back": "Artar."
+    },
+    {
+      "id": "fizik_10_u04_k04_o07:flashcard",
+      "front": "Kütle artışının periyoda etkisi nedir?",
+      "back": "Değişmez, 1,2 s."
+    },
+    {
+      "id": "fizik_10_u04_k04_o08:flashcard",
+      "front": "İp kısalmasının periyoda etkisi nedir?",
+      "back": "Evet, periyot azalır."
+    },
+    {
+      "id": "fizik_10_u04_k04_o09:flashcard",
+      "front": "Yay sarkacında periyodu büyüten etken nedir?",
+      "back": "Artar."
+    },
+    {
+      "id": "fizik_10_u04_k04_o10:flashcard",
+      "front": "Kendi kendine salınımın frekansı nedir?",
+      "back": "Doğal titreşim frekansı."
+    }
+  ]
+}

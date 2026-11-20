@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u02_k01",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u02_k01_o01",
+      "alt_beceri": "Çözünme Süreci",
+      "metin": "Bir katının çözünmesinde çözücü ve çözünen taneciklerinin birbirinden ayrıldığı ilk iki basamak enerji bakımından nasıl gerçekleşir?",
+      "secenekler": [
+        "Endotermik; enerji alınır.",
+        "Ekzotermik; enerji verilir.",
+        "Enerji değişimi olmaz.",
+        "Yalnız üçüncü basamakta gerçekleşir."
+      ],
+      "dogru_index": 0,
+      "cozum": "İlk iki basamakta tanecikler arası çekim kuvvetlerini yenmek için enerji gerekir; bu basamaklar endotermiktir. Enerji açığa çıkması üçüncü basamakta tanecikler etkileştiğinde gerçekleşir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünme sürecinde çözücü ve çözünen taneciklerin geçtiği üç basamağı sıralayınız.",
+        "back": "Önce çözücü tanecikleri, sonra çözünen moleküller veya iyonlar birbirinden ayrılır. Son aşamada çözücü ve çözünen tanecikleri etkileşerek karışır."
+      },
+      "kazanim": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o02",
+      "alt_beceri": "Çözünme Süreci",
+      "metin": "Çözünme sırasında çözücü ve çözünen tanecikleri etkileşip karışırken enerji açığa çıkıyor. Bu basamak nasıl adlandırılır?",
+      "secenekler": [
+        "Endotermik",
+        "Ekzotermik",
+        "Hidratasyon",
+        "Solvatasyon"
+      ],
+      "dogru_index": 1,
+      "cozum": "Üçüncü basamakta çözücü ve çözünen tanecikleri etkileşir ve enerji açığa çıkar; bu nedenle basamak ekzotermiktir. İlk iki basamakta ise tanecikleri ayırmak için enerji alınır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünmenin ilk iki ve üçüncü basamağındaki enerji değişimlerini karşılaştırınız.",
+        "back": "Çözücü ve çözünen taneciklerinin ayrıldığı ilk iki basamak endotermiktir. Taneciklerin etkileştiği üçüncü basamak ekzotermiktir."
+      },
+      "kazanim": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o03",
+      "alt_beceri": "Çözünme Süreci",
+      "metin": "Bir çözünen taneciğin çevresinin su molekülleriyle sarılması hangi süreçtir?",
+      "secenekler": [
+        "Solvatasyon",
+        "İyon-dipol etkileşimi",
+        "Hidratasyon",
+        "Difüzyon"
+      ],
+      "dogru_index": 2,
+      "cozum": "Çözünen taneciklerin su molekülleriyle sarılması hidratasyondur. Solvatasyon, su dışındaki bir çözücü tarafından sarılmayı ifade eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hidratasyon ve solvatasyon kavramlarını çözücü bakımından ayırarak açıklayınız.",
+        "back": "Çözünen taneciklerin su molekülleriyle sarılmasına hidratasyon denir. Su dışındaki bir çözücü tarafından sarılmasına solvatasyon denir."
+      },
+      "kazanim": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o04",
+      "alt_beceri": "Çözünme Süreci",
+      "metin": "Sulu bir çözeltide miktarı az olsa bile hangi bileşen çözücü kabul edilir?",
+      "secenekler": [
+        "Çözeltideki en az miktarlı madde",
+        "Katı olan bileşen",
+        "Çözünen madde",
+        "Su"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitaba göre sulu çözeltilerde su daima çözücüdür. Diğer çözeltilerde genellikle miktarı fazla olan bileşen çözücüdür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözücü ile çözünenin görevlerini ve çözücünün çözeltiye etkisini açıklayınız.",
+        "back": "Çözücü diğer bileşeni çözer ve çözeltinin fiziksel durumunu belirler; çözünen çözücü içinde dağılan bileşendir. Sulu çözeltilerde su daima çözücüdür."
+      },
+      "kazanim": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o05",
+      "alt_beceri": "Çözünme Süreci",
+      "metin": "Suda yürüyen bir tepkimede A katısının yalnız bir bölümü çözünüyor. Çözeltideki A tanecikleriyle ilgili hangi yorum doğrudur?",
+      "secenekler": [
+        "Çözünen A tanecikleri çözelti içinde dağılır; çözünmeyen kısım çözeltide dağılmış sayılmaz.",
+        "Çözünmeyen katı da moleküller hâlinde çözeltinin her yerine eşit dağılır.",
+        "A katısının formülü suyun formülüne dönüşür.",
+        "A çözünmeden bütün çözücü tanecikleriyle aynı tür tanecik hâline gelir."
+      ],
+      "dogru_index": 0,
+      "cozum": "Çözünen bölüm çözelti içinde dağılmış tanecikler oluşturur. Çözünmeyen katı ise çözeltide dağılmış kabul edilmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sulu bir tepkimede çözünen taneciklerin çözeltide dağılması, diğer taneciklerle etkileşmelerini neden kolaylaştırır?",
+        "back": "Çözünen tanecikler çözelti içinde hareket edip diğer reaktanlarla çarpışabilir; böylece tepkimeye katılmaları kolaylaşır."
+      },
+      "kazanim": "çözünme sürecine ilişkin bilimsel model oluşturabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o06",
+      "alt_beceri": "Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "metin": "Polar bir çözücü ile apolar bir çözünen karıştırılıyor. Genellikle nasıl bir karışım beklenir?",
+      "secenekler": [
+        "Her oranda homojen çözelti",
+        "Heterojen görünüm; çözünme beklenmez.",
+        "İyon-dipol etkileşimiyle tam çözünme",
+        "Yalnız sıcaklık artınca homojen karışım"
+      ],
+      "dogru_index": 1,
+      "cozum": "Polar ve apolar maddeler arasında yeterli uyumlu etkileşim oluşmadığından homojen çözünme genellikle beklenmez. Çözünme, çözücü-çözünen etkileşimlerinin uygunluğuna bağlıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir maddenin belirli bir çözücüde çözünmesini belirleyen yapısal ve tanecikler arası etkileşim unsurlarını yazınız.",
+        "back": "Çözünme; çözücü ve çözünenin yapılarına ve çözücü-çözücü, çözünen-çözünen, çözücü-çözünen etkileşimlerine bağlıdır."
+      },
+      "kazanim": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o07",
+      "alt_beceri": "Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "metin": "Bir koku esansı laboratuvarında turunçgil kabuğundan elde edilen apolar limonen (C₁₀H₁₆), apolar heptanla (C₇H₁₆) karıştırılıyor. Çözünmeyi en çok hangi etkileşim destekler?",
+      "secenekler": [
+        "İyon-dipol etkileşimi",
+        "Kalıcı dipol-dipol etkileşimi",
+        "London kuvvetleri",
+        "Hidrojen bağı"
+      ],
+      "dogru_index": 2,
+      "cozum": "Limonen ve heptan apolar maddelerdir. Bu tür tanecikler arasındaki başlıca etkileşim London kuvvetleridir; benzer etkileşimler karışmayı destekler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Polar ve apolar maddelerin çözünürlük eğilimleri nasıl karşılaştırılır?",
+        "back": "Polar maddeler genellikle polar çözücülerde, apolar maddeler ise apolar çözücülerde daha iyi çözünür; benzer etkileşim türleri çözünmeyi destekler."
+      },
+      "kazanim": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o08",
+      "alt_beceri": "Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "metin": "Bir sera yetiştirme ortamındaki çözeltide bulunan NO₃⁻ iyonu su molekülleriyle çevreleniyor. Su moleküllerinin hangi ucu anyona yönelir?",
+      "secenekler": [
+        "Kısmi negatif yüklü oksijen ucu",
+        "Molekülün apolar bölgesi",
+        "Her iki uç eşit olasılıkla",
+        "Kısmi pozitif yüklü hidrojen uçları"
+      ],
+      "dogru_index": 3,
+      "cozum": "NO₃⁻ negatif yüklü bir anyondur. Suyun kısmi pozitif yüklü hidrojen uçları anyona yönelir; bu yönelim iyon-dipol etkileşiminin parçasıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Su moleküllerinin kısmi yüklü uçları katyonları ve anyonları nasıl sarar?",
+        "back": "Suyun kısmi negatif yüklü oksijen ucu katyonları, kısmi pozitif yüklü hidrojen uçları anyonları sarar. Bu yönelim iyon-dipol etkileşimi oluşturur."
+      },
+      "kazanim": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o09",
+      "alt_beceri": "Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "metin": "Bir tarım laboratuvarında üre (NH₂CONH₂) suda çözündürülüyor. Üre molekülleri ile su molekülleri arasında hangi etkileşim belirgindir?",
+      "secenekler": [
+        "Hidrojen bağı",
+        "İyon-dipol etkileşimi",
+        "Metalik bağ",
+        "Yalnız London kuvveti"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ürenin N–H grupları hidrojen bağı vericisi, karbonil oksijeni ise alıcısı olarak su molekülleriyle hidrojen bağları kurabilir. Bu nedenle belirgin etkileşim hidrojen bağıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Üre (NH₂CONH₂) ve su molekülleri arasında çözelti oluşurken hangi etkileşim belirgindir?",
+        "back": "Ürenin N–H ve C=O grupları su molekülleriyle hidrojen bağları kurabilir. Bu etkileşim ürenin suda dağılmasını destekler."
+      },
+      "kazanim": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k01_o10",
+      "alt_beceri": "Maddelerin Birbiri İçindeki Çözünebilirliği",
+      "metin": "Sulu ortamda kolay çözünen ve su temelli bir sıvıda taşınabilen bir bileşiğin hangi özelliğe sahip olması daha olasıdır?",
+      "secenekler": [
+        "Apolar ve hidrofobik olması",
+        "Polar ve hidrofilik olması",
+        "İyonik ve yağda çözünür olması",
+        "London kuvvetlerinin bulunmaması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Polar ve hidrofilik yapı su molekülleriyle etkileşimi destekler. Apolar ve hidrofobik maddeler su yerine apolar çözücülerde daha iyi çözünme eğilimindedir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir maddenin suda ya da yağda çözünmesini molekülün hangi yapısal özellikleri etkiler?",
+        "back": "Polar ve hidrofilik gruplar suyla etkileşimi artırır; apolar ve hidrofobik yapı ise yağ benzeri apolar ortamlarda çözünmeyi destekler."
+      },
+      "kazanim": "farklı maddelerin birbiri içinde çözünebilirliğini kanıt kullanarak açıklayabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u02_k01_o01:flashcard",
+      "front": "Çözünme sürecinde çözücü ve çözünen taneciklerin geçtiği üç basamağı sıralayınız.",
+      "back": "Önce çözücü tanecikleri, sonra çözünen moleküller veya iyonlar birbirinden ayrılır. Son aşamada çözücü ve çözünen tanecikleri etkileşerek karışır."
+    },
+    {
+      "id": "kimya_10_u02_k01_o02:flashcard",
+      "front": "Çözünmenin ilk iki ve üçüncü basamağındaki enerji değişimlerini karşılaştırınız.",
+      "back": "Çözücü ve çözünen taneciklerinin ayrıldığı ilk iki basamak endotermiktir. Taneciklerin etkileştiği üçüncü basamak ekzotermiktir."
+    },
+    {
+      "id": "kimya_10_u02_k01_o03:flashcard",
+      "front": "Hidratasyon ve solvatasyon kavramlarını çözücü bakımından ayırarak açıklayınız.",
+      "back": "Çözünen taneciklerin su molekülleriyle sarılmasına hidratasyon denir. Su dışındaki bir çözücü tarafından sarılmasına solvatasyon denir."
+    },
+    {
+      "id": "kimya_10_u02_k01_o04:flashcard",
+      "front": "Çözücü ile çözünenin görevlerini ve çözücünün çözeltiye etkisini açıklayınız.",
+      "back": "Çözücü diğer bileşeni çözer ve çözeltinin fiziksel durumunu belirler; çözünen çözücü içinde dağılan bileşendir. Sulu çözeltilerde su daima çözücüdür."
+    },
+    {
+      "id": "kimya_10_u02_k01_o05:flashcard",
+      "front": "Sulu bir tepkimede çözünen taneciklerin çözeltide dağılması, diğer taneciklerle etkileşmelerini neden kolaylaştırır?",
+      "back": "Çözünen tanecikler çözelti içinde hareket edip diğer reaktanlarla çarpışabilir; böylece tepkimeye katılmaları kolaylaşır."
+    },
+    {
+      "id": "kimya_10_u02_k01_o06:flashcard",
+      "front": "Bir maddenin belirli bir çözücüde çözünmesini belirleyen yapısal ve tanecikler arası etkileşim unsurlarını yazınız.",
+      "back": "Çözünme; çözücü ve çözünenin yapılarına ve çözücü-çözücü, çözünen-çözünen, çözücü-çözünen etkileşimlerine bağlıdır."
+    },
+    {
+      "id": "kimya_10_u02_k01_o07:flashcard",
+      "front": "Polar ve apolar maddelerin çözünürlük eğilimleri nasıl karşılaştırılır?",
+      "back": "Polar maddeler genellikle polar çözücülerde, apolar maddeler ise apolar çözücülerde daha iyi çözünür; benzer etkileşim türleri çözünmeyi destekler."
+    },
+    {
+      "id": "kimya_10_u02_k01_o08:flashcard",
+      "front": "Su moleküllerinin kısmi yüklü uçları katyonları ve anyonları nasıl sarar?",
+      "back": "Suyun kısmi negatif yüklü oksijen ucu katyonları, kısmi pozitif yüklü hidrojen uçları anyonları sarar. Bu yönelim iyon-dipol etkileşimi oluşturur."
+    },
+    {
+      "id": "kimya_10_u02_k01_o09:flashcard",
+      "front": "Üre (NH₂CONH₂) ve su molekülleri arasında çözelti oluşurken hangi etkileşim belirgindir?",
+      "back": "Ürenin N–H ve C=O grupları su molekülleriyle hidrojen bağları kurabilir. Bu etkileşim ürenin suda dağılmasını destekler."
+    },
+    {
+      "id": "kimya_10_u02_k01_o10:flashcard",
+      "front": "Bir maddenin suda ya da yağda çözünmesini molekülün hangi yapısal özellikleri etkiler?",
+      "back": "Polar ve hidrofilik gruplar suyla etkileşimi artırır; apolar ve hidrofobik yapı ise yağ benzeri apolar ortamlarda çözünmeyi destekler."
+    }
+  ],
+  "topic_key": "Kimya > 2.1.2 Maddelerin Birbiri İçindeki Çözünebilirliği"
+}

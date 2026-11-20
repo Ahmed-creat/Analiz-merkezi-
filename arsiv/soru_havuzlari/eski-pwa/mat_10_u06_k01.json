@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u06_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u06_k01_o01",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Dik koordinat sisteminde P(−8,2) ve Q(−3,14) noktaları arasındaki uzaklık kaç birimdir?",
+      "secenekler": [
+        "13",
+        "17",
+        "12",
+        "10"
+      ],
+      "dogru_index": 0,
+      "cozum": "Apsis farkı 5, ordinat farkı 12 birimdir. Uzaklık √(5²+12²)=√169=13 birim olur; 17, koordinat farklarını doğrudan toplamaktır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A(x₁, y₁) ve B(x₂, y₂) noktaları arasındaki uzaklık bağıntısını yaz.",
+        "back": "|AB| = √((x₂ − x₁)² + (y₂ − y₁)²)."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o02",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "P(−5,−3) ve Q(8,−3) noktaları aynı yatay doğru üzerindedir. |PQ| kaç birimdir?",
+      "secenekler": [
+        "8",
+        "13",
+        "10",
+        "7"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ordinatlar eşit olduğundan yatay uzaklık apsislerin farkının mutlak değeridir: |8−(−5)|=13.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A(x₁, y) ve B(x₂, y) noktalarının aynı yatay doğru üzerinde olduğu biliniyorsa |AB| nasıl bulunur?",
+        "back": "|AB| = |x₂ − x₁|."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o03",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Bir makine gövdesinin 1:250 ölçekli teknik çiziminde iki işaret arası 4 cm ölçülüyor. Gerçek uzaklık kaç metredir?",
+      "secenekler": [
+        "1 m",
+        "2,5 m",
+        "10 m",
+        "100 m"
+      ],
+      "dogru_index": 2,
+      "cozum": "1:250 ölçekte çizimdeki 1 cm gerçekte 250 cm, yani 2,5 m’dir. 4 cm için gerçek uzaklık 4×2,5=10 m olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "1:250 ölçekli bir teknik çizimde 1 cm, gerçekte kaç metreye karşılık gelir?",
+        "back": "250 cm = 2,5 m olduğundan çizimdeki 1 cm gerçekte 2,5 m’dir."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o04",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Bir rafın uçları koordinat düzleminde A(−5,1) ve B(15,11) noktalarındadır. Raf boyunca A’dan toplam uzunluğun 3/5’i kadar ilerideki sabitleme noktası C’nin koordinatları nedir?",
+      "secenekler": [
+        "(7,5)",
+        "(5,7)",
+        "(10,6)",
+        "(7,7)"
+      ],
+      "dogru_index": 3,
+      "cozum": "B−A=(20,10) olduğundan A’dan 3/5 oranında ilerleme (12,6) vektörüdür. C=A+(12,6)=(7,7) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "AB doğru parçası üzerinde A’dan B’ye doğru toplam uzunluğun r oranı kadar ilerlenen C noktasının koordinatları nasıl bulunur?",
+        "back": "C=A+r(B−A); yani C noktasının koordinatları A ve B koordinatlarının aynı oranda doğrusal ara değeridir."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o05",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "P(−6,5) ve Q(8,−3) doğru parçasının orta noktası hangisidir?",
+      "secenekler": [
+        "(1,1)",
+        "(1,−1)",
+        "(−1,1)",
+        "(2,2)"
+      ],
+      "dogru_index": 0,
+      "cozum": "Orta noktanın koordinatları uç noktaların karşılık gelen koordinatlarının ortalamasıdır: ((−6+8)/2,(5−3)/2)=(1,1).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A(x₁, y₁) ile B(x₂, y₂) doğru parçasının orta noktası M'nin koordinatlarını yaz.",
+        "back": "M = ((x₁ + x₂)/2, (y₁ + y₂)/2)."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o06",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "P(−2,1), Q(4,5) ve R(7,−3) köşeli üçgenin ağırlık merkezi hangi noktadır?",
+      "secenekler": [
+        "(3,2)",
+        "(3,1)",
+        "(1,3)",
+        "(9,3)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ağırlık merkezinin apsisi (−2+4+7)/3=3, ordinatı (1+5−3)/3=1’dir. Bu nedenle G=(3,1) olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A(x₁, y₁), B(x₂, y₂), C(x₃, y₃) köşeli üçgenin ağırlık merkezi G'nin koordinatlarını yaz.",
+        "back": "G = ((x₁ + x₂ + x₃)/3, (y₁ + y₂ + y₃)/3)."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o07",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "P(−2,1), Q(4,5) ve |QR|/|PQ|=3/2 olduğuna göre, PQ doğrusu üzerinde Q’nun ötesindeki R noktasının koordinatları nedir?",
+      "secenekler": [
+        "(11,13)",
+        "(13,9)",
+        "(13,11)",
+        "(11,11)"
+      ],
+      "dogru_index": 2,
+      "cozum": "Q−P=(6,4) olduğundan QR vektörü bunun 3/2 katı olan (9,6)’dır. R=Q+(9,6)=(13,11) bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "C, [AB] doğrusu üzerinde B'nin ötesinde ve |BC|/|AB| = k ise C'nin koordinatlarını A ve B cinsinden yaz.",
+        "back": "C = ((1 + k)x₂ − kx₁, (1 + k)y₂ − ky₁)."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o08",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Bir sahne düzeneğindeki döner kolun ucu O(−1,−4) merkezli bir çember üzerinde hareket ediyor. Kolun ucu başlangıçta P(2,0) noktasındaysa, aşağıdaki noktalardan hangisi aynı çember üzerinde olabilir?",
+      "secenekler": [
+        "Q(2,−4)",
+        "Q(1,0)",
+        "Q(−2,−1)",
+        "Q(−4,0)"
+      ],
+      "dogru_index": 3,
+      "cozum": "OP=√(3²+4²)=5 olduğundan dönme yarıçapı 5 birimdir. O ile Q(−4,0) arasındaki koordinat farkları −3 ve 4 olduğundan OQ=5; diğer seçenekler bu uzaklığı vermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir çember üzerinde hareket eden noktanın çember merkezine uzaklığı hareket boyunca nasıl değişir?",
+        "back": "Yarıçap uzunluğu sabit olduğundan merkez ile nokta arasındaki uzaklık değişmez."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o09",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Bir fabrika planında başlangıç noktasına göre bir sensör 26 birim doğuda ve 37 birim kuzeydedir. x doğu-batı, y kuzey-güney yönünü gösterdiğine göre sensörün sıralı ikilisi nedir?",
+      "secenekler": [
+        "(26,37)",
+        "(37,26)",
+        "(−26,37)",
+        "(26,−37)"
+      ],
+      "dogru_index": 0,
+      "cozum": "Doğu yönü pozitif x bileşenine, kuzey yönü pozitif y bileşenine karşılık gelir. Bu nedenle sensör (26,37) noktasındadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik koordinat düzleminde doğu-batı ve kuzey-güney doğrultularındaki yer değiştirmeler sırasıyla hangi bileşenlerle gösterilir?",
+        "back": "Doğu-batı doğrultusu apsis (x), kuzey-güney doğrultusu ordinat (y) olarak gösterilir."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o10",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Bir sahne ışıklandırma planında iki askı noktası A(−11,−9) ve B(−5,−2) koordinatlarında gösteriliyor. Aralarına düz bir destek çubuğu yerleştirilecekse çubuğun uzunluğu kaç koordinat birimidir?",
+      "secenekler": [
+        "13 birim",
+        "√85 birim",
+        "√13 birim",
+        "√74 birim"
+      ],
+      "dogru_index": 1,
+      "cozum": "Apsis farkı 6, ordinat farkı 7 birimdir. Uzaklık √(6²+7²)=√85 birim olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı iki noktayı birleştiren doğru parçası ile doğrusal olmayan başka bir yolun uzunlukları nasıl karşılaştırılır?",
+        "back": "Doğru parçası en kısa bağlantıdır; doğrusal olmayan yol daha uzundur."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o11",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Bir paketleme tesisindeki doğrusal konveyörün ilk bölümü 28 m, ikinci bölümü 49 m uzunluğundadır. İkinci bölümün birinci bölüme oranı en sade biçimde nedir?",
+      "secenekler": [
+        "4/7",
+        "5/4",
+        "7/4",
+        "2"
+      ],
+      "dogru_index": 2,
+      "cozum": "İkinci bölümün birinci bölüme oranı 49/28’dir. Pay ve payda 7’ye bölününce 7/4 elde edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki doğru parçasının uzunlukları L₁ ve L₂ olduğunda ikinci bölümün birinci bölüme oranı nasıl yazılır?",
+        "back": "L₂/L₁ olarak yazılır; uzunluklar aynı birimde ölçülüyorsa oran birimsizdir."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u06_k01_o12",
+      "alt_beceri": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,",
+      "metin": "Bir afiş tasarımında her koordinat birimi baskıda 5 mm’ye karşılık geliyor. P(−2,3) ve Q(4,11) işaretleri arasındaki düz çizgi baskıda kaç milimetredir?",
+      "secenekler": [
+        "40 mm",
+        "10 mm",
+        "25 mm",
+        "50 mm"
+      ],
+      "dogru_index": 3,
+      "cozum": "Koordinat farkları 6 ve 8 birimdir; tasarımdaki uzaklık √(6²+8²)=10 birim olur. Baskıda 10×5=50 mm’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir dijital tasarımda iki işaret arası 13 koordinat birimi, baskıda 65 mm ise bir koordinat birimi baskıda kaç milimetreyi gösterir?",
+        "back": "65/13=5 mm olduğundan her koordinat birimi baskıda 5 mm’yi gösterir."
+      },
+      "kazanim": "dik koordinat sisteminde iki nokta arasındaki uzaklıkla ve bir doğru parçasını belli oranda bölen bir noktanın koordinatlarıyla ilgili çıkarım yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u06_k01_o01:flashcard",
+      "front": "A(x₁, y₁) ve B(x₂, y₂) noktaları arasındaki uzaklık bağıntısını yaz.",
+      "back": "|AB| = √((x₂ − x₁)² + (y₂ − y₁)²)."
+    },
+    {
+      "id": "mat_10_u06_k01_o02:flashcard",
+      "front": "A(x₁, y) ve B(x₂, y) noktalarının aynı yatay doğru üzerinde olduğu biliniyorsa |AB| nasıl bulunur?",
+      "back": "|AB| = |x₂ − x₁|."
+    },
+    {
+      "id": "mat_10_u06_k01_o03:flashcard",
+      "front": "1:250 ölçekli bir teknik çizimde 1 cm, gerçekte kaç metreye karşılık gelir?",
+      "back": "250 cm = 2,5 m olduğundan çizimdeki 1 cm gerçekte 2,5 m’dir."
+    },
+    {
+      "id": "mat_10_u06_k01_o04:flashcard",
+      "front": "AB doğru parçası üzerinde A’dan B’ye doğru toplam uzunluğun r oranı kadar ilerlenen C noktasının koordinatları nasıl bulunur?",
+      "back": "C=A+r(B−A); yani C noktasının koordinatları A ve B koordinatlarının aynı oranda doğrusal ara değeridir."
+    },
+    {
+      "id": "mat_10_u06_k01_o05:flashcard",
+      "front": "A(x₁, y₁) ile B(x₂, y₂) doğru parçasının orta noktası M'nin koordinatlarını yaz.",
+      "back": "M = ((x₁ + x₂)/2, (y₁ + y₂)/2)."
+    },
+    {
+      "id": "mat_10_u06_k01_o06:flashcard",
+      "front": "A(x₁, y₁), B(x₂, y₂), C(x₃, y₃) köşeli üçgenin ağırlık merkezi G'nin koordinatlarını yaz.",
+      "back": "G = ((x₁ + x₂ + x₃)/3, (y₁ + y₂ + y₃)/3)."
+    },
+    {
+      "id": "mat_10_u06_k01_o07:flashcard",
+      "front": "C, [AB] doğrusu üzerinde B'nin ötesinde ve |BC|/|AB| = k ise C'nin koordinatlarını A ve B cinsinden yaz.",
+      "back": "C = ((1 + k)x₂ − kx₁, (1 + k)y₂ − ky₁)."
+    },
+    {
+      "id": "mat_10_u06_k01_o08:flashcard",
+      "front": "Bir çember üzerinde hareket eden noktanın çember merkezine uzaklığı hareket boyunca nasıl değişir?",
+      "back": "Yarıçap uzunluğu sabit olduğundan merkez ile nokta arasındaki uzaklık değişmez."
+    },
+    {
+      "id": "mat_10_u06_k01_o09:flashcard",
+      "front": "Dik koordinat düzleminde doğu-batı ve kuzey-güney doğrultularındaki yer değiştirmeler sırasıyla hangi bileşenlerle gösterilir?",
+      "back": "Doğu-batı doğrultusu apsis (x), kuzey-güney doğrultusu ordinat (y) olarak gösterilir."
+    },
+    {
+      "id": "mat_10_u06_k01_o10:flashcard",
+      "front": "Aynı iki noktayı birleştiren doğru parçası ile doğrusal olmayan başka bir yolun uzunlukları nasıl karşılaştırılır?",
+      "back": "Doğru parçası en kısa bağlantıdır; doğrusal olmayan yol daha uzundur."
+    },
+    {
+      "id": "mat_10_u06_k01_o11:flashcard",
+      "front": "İki doğru parçasının uzunlukları L₁ ve L₂ olduğunda ikinci bölümün birinci bölüme oranı nasıl yazılır?",
+      "back": "L₂/L₁ olarak yazılır; uzunluklar aynı birimde ölçülüyorsa oran birimsizdir."
+    },
+    {
+      "id": "mat_10_u06_k01_o12:flashcard",
+      "front": "Bir dijital tasarımda iki işaret arası 13 koordinat birimi, baskıda 65 mm ise bir koordinat birimi baskıda kaç milimetreyi gösterir?",
+      "back": "65/13=5 mm olduğundan her koordinat birimi baskıda 5 mm’yi gösterir."
+    }
+  ],
+  "baslik": "6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme",
+  "topic_key": "Matematik > 6.1 İki Nokta Arasındaki Uzaklık ve Bir Doğru Parçasını Belli Oranda Bölme"
+}

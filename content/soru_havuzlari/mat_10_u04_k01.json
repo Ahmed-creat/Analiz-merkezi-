@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u04_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u04_k01_o01",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "Bir bağıntıda x=2 girdisi hem y=4 hem de y=7 çıktısıyla eşleştiriliyor. Bu bağıntının fonksiyon olmamasının nedeni nedir?",
+      "secenekler": [
+        "Tanım kümesindeki bir x'in birden fazla y değeriyle eşleşmesi.",
+        "Farklı x değerlerinin aynı y değeriyle eşleşmesi.",
+        "Görüntü kümesinde bazı y değerlerinin bulunmaması.",
+        "Grafiğin artan ve azalan aralıklar içermesi."
+      ],
+      "dogru_index": 0,
+      "cozum": "Bir fonksiyonda her girdinin tam bir görüntüsü olmalıdır. x=2 girdisinin iki farklı çıktısı bulunduğu için bu bağıntı fonksiyon değildir; farklı girdilerin aynı çıktıya gitmesi ise mümkündür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A'dan B'ye tanımlı bir bağıntının fonksiyon olabilmesi için A'daki her x'e B'de nasıl bir karşılık verilmelidir?",
+        "back": "Her x'e B'de bir ve yalnız bir f(x) karşılığı verilmelidir."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o02",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "f(x)=3x−4, x∈[−2,5] olduğuna göre f fonksiyonunun görüntü kümesi hangisidir?",
+      "secenekler": [
+        "[−2,5]",
+        "[−10,11]",
+        "[−10,5]",
+        "(−∞,11]"
+      ],
+      "dogru_index": 1,
+      "cozum": "f doğrusal ve artan olduğundan uç noktalardaki değerleri görüntü kümesinin uçlarıdır: f(−2)=−10 ve f(5)=11. Görüntü kümesi [−10,11]’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f:A→B fonksiyonunun görüntü kümesi nasıl tanımlanır ve nasıl gösterilir?",
+        "back": "A'daki elemanların f altındaki görüntülerinin oluşturduğu kümedir; f(A) ile gösterilir."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o03",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "h(x)=2x+6 fonksiyonunun sıfırı hangi x değeridir?",
+      "secenekler": [
+        "−4",
+        "3",
+        "−3",
+        "6"
+      ],
+      "dogru_index": 2,
+      "cozum": "Fonksiyonun sıfırı h(x)=0 eşitliğini sağlayan x değeridir. 2x+6=0 denklemi çözüldüğünde x=−3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f(x)=0 eşitliğini sağlayan x'e fonksiyonun neyi denir?",
+        "back": "Fonksiyonun sıfırı denir."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o04",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "Bir f fonksiyonunun grafiği x=−2 ve x=3 noktalarında x eksenini kesiyor ve bu iki kök arasında x ekseninin altında kalıyor. f hangi aralıkta negatiftir?",
+      "secenekler": [
+        "(−2,3)",
+        "(−∞,−2)",
+        "(3,∞)",
+        "[−2,3]"
+      ],
+      "dogru_index": 0,
+      "cozum": "Grafik yalnızca −2 ile 3 arasında x ekseninin altında olduğundan f(x)<0 aralığı (−2,3) olur. Köklerde f(x)=0 olduğu için uç noktalar aralığa alınmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir fonksiyonun pozitif ya da negatif olduğu aralıkları fonksiyon değerinin hangi işaretine bakarak belirlersin?",
+        "back": "Pozitif olduğu yerde f(x)>0, negatif olduğu yerde f(x)<0'dır."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o05",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "Bir I aralığında her x₁<x₂ için f(x₁)>f(x₂) koşulu sağlanıyorsa f fonksiyonu I aralığında nasıldır?",
+      "secenekler": [
+        "Artandır",
+        "Sabit fonksiyondur",
+        "Azalandır",
+        "Bire birdir"
+      ],
+      "dogru_index": 2,
+      "cozum": "Girdi büyüdükçe fonksiyon değeri küçülüyorsa fonksiyon o aralıkta azalandır. Verilen f(x₁)>f(x₂) eşitsizliği, x₁<x₂ iken bu koşulu belirtir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir fonksiyonun bir aralıkta artan olması x>y olan girdiler için f(x) ile f(y) arasında nasıl bir ilişki gerektirir?",
+        "back": "f(x)>f(y) olmalıdır."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o06",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "Bir fonksiyon en küçük değerini −3 olarak x=2 noktasında alıyor. Minimumun alındığı nokta hangisidir?",
+      "secenekler": [
+        "(−3,2)",
+        "(2,3)",
+        "(−2,3)",
+        "(2,−3)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Nokta sıralı ikilisi (x, f(x)) biçiminde yazılır. x=2 ve minimum değer −3 olduğundan nokta (2,−3)’tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir aralıkta her x için f(x)≤f(m) ise f(m) hangi değerdir? f(x)≥f(n) koşulunda f(n) nedir?",
+        "back": "f(m) maksimum, f(n) minimum değerdir."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o07",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "Tanım kümeleri gerçek sayılar olan f(x)=x² ve g(x)=2x+1 fonksiyonları için bire birlik durumu hangisidir?",
+      "secenekler": [
+        "f ve g ikisi de bire birdir.",
+        "f bire birdir, g değildir.",
+        "f bire bir değildir, g bire birdir.",
+        "f ve g ikisi de bire bir değildir."
+      ],
+      "dogru_index": 2,
+      "cozum": "f(x)=x² bire bir değildir; örneğin f(1)=f(−1). g(x)=2x+1 doğrusal ve eğimi sıfırdan farklı olduğundan farklı girdilere farklı görüntüler verir, yani bire birdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bire bir fonksiyonda x₁≠x₂ olduğunda f(x₁) ve f(x₂) hakkında hangi koşul sağlanır?",
+        "back": "f(x₁)≠f(x₂) olur; farklı girdilerin görüntüleri farklıdır."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o08",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "f:[0,∞)→[0,∞), f(x)=x² ve g:ℝ→ℝ, g(x)=x² olarak tanımlanıyor. Örtenlik hakkında hangi yargı doğrudur?",
+      "secenekler": [
+        "f ve g örtendir.",
+        "İkisi de örten değildir.",
+        "f örten değildir; g örtendir.",
+        "f örtendir; g örten değildir."
+      ],
+      "dogru_index": 3,
+      "cozum": "f için her y≥0 değerinin √y gibi bir ön görüntüsü vardır; bu nedenle f örtendir. g’nin değer kümesi negatif olmayan sayılarla sınırlı olduğundan gerçek sayıların tamamına ulaşamaz ve örten değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "f:A→B fonksiyonunun örten olması için B'deki her y için A'da nasıl bir x bulunmalıdır?",
+        "back": "A'da y=f(x) eşitliğini sağlayan en az bir x bulunmalıdır."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o09",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "Bir fonksiyon çift olduğunda grafiği hangi doğruya göre simetriktir?",
+      "secenekler": [
+        "y ekseni",
+        "x ekseni",
+        "Orijin",
+        "y=x doğrusu"
+      ],
+      "dogru_index": 0,
+      "cozum": "Çift fonksiyon koşulu f(−x)=f(x)'tir ve bu fonksiyonun grafiği y eksenine göre simetriktir. Orijine göre simetri tek fonksiyonların grafik özelliğidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çift fonksiyonda f(−x) ile f(x) arasında hangi eşitlik vardır?",
+        "back": "f(−x)=f(x)"
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o10",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "h tek fonksiyondur ve h(3)=7’dir. Buna göre h(−3) kaçtır?",
+      "secenekler": [
+        "7",
+        "−7",
+        "0",
+        "3"
+      ],
+      "dogru_index": 1,
+      "cozum": "Tek fonksiyonlarda h(−x)=−h(x) olur. Bu nedenle h(−3)=−h(3)=−7’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tek fonksiyon için g(−x)=... eşitliğini tamamla.",
+        "back": "g(−x)=−g(x)"
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o11",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "A={−2,0,3} kümesinde tanımlı f fonksiyonu için f(−2)=−3, f(0)=5 ve f(3)=1’dir. f fonksiyonunun görüntü kümesi hangisidir?",
+      "secenekler": [
+        "{−2,0,3}",
+        "{−3,1,5}",
+        "[−3,5]",
+        "{−2,1,5}"
+      ],
+      "dogru_index": 1,
+      "cozum": "Görüntü kümesi, tanım kümesindeki girdilerin aldığı farklı fonksiyon değerlerinden oluşur. Bu değerler −3, 5 ve 1 olduğundan görüntü kümesi {−3,1,5}’tir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir fonksiyonun tanım kümesi ile görüntü kümesi neyi ifade eder?",
+        "back": "Tanım kümesi fonksiyona girdi olarak verilen x değerlerini; görüntü kümesi ise bu girdilerden elde edilen f(x) değerlerini içerir."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o12",
+      "alt_beceri": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,",
+      "metin": "f(x)=4x−11 biçiminde tanımlı bir fonksiyon için f(6) kaçtır?",
+      "secenekler": [
+        "11",
+        "12",
+        "24",
+        "13"
+      ],
+      "dogru_index": 3,
+      "cozum": "x=6 yazılır: f(6)=4×6−11=24−11=13.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir doğrusal fonksiyonu, x’e bağlı değişim hızı m ve başlangıç değeri b ile nasıl yazarsın?",
+        "back": "f(x)=mx+b biçiminde yazarım; m doğrusal değişim oranını, b ise x=0 için başlangıç değerini gösterir."
+      },
+      "kazanim": "gerçek sayılarda fonksiyon olma şartları ile gerçek sayılarda tanımlı fonksiyonların nitel özelliklerini matematiksel temsillerle değerlendirebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u04_k01_o01:flashcard",
+      "front": "A'dan B'ye tanımlı bir bağıntının fonksiyon olabilmesi için A'daki her x'e B'de nasıl bir karşılık verilmelidir?",
+      "back": "Her x'e B'de bir ve yalnız bir f(x) karşılığı verilmelidir."
+    },
+    {
+      "id": "mat_10_u04_k01_o02:flashcard",
+      "front": "f:A→B fonksiyonunun görüntü kümesi nasıl tanımlanır ve nasıl gösterilir?",
+      "back": "A'daki elemanların f altındaki görüntülerinin oluşturduğu kümedir; f(A) ile gösterilir."
+    },
+    {
+      "id": "mat_10_u04_k01_o03:flashcard",
+      "front": "f(x)=0 eşitliğini sağlayan x'e fonksiyonun neyi denir?",
+      "back": "Fonksiyonun sıfırı denir."
+    },
+    {
+      "id": "mat_10_u04_k01_o04:flashcard",
+      "front": "Bir fonksiyonun pozitif ya da negatif olduğu aralıkları fonksiyon değerinin hangi işaretine bakarak belirlersin?",
+      "back": "Pozitif olduğu yerde f(x)>0, negatif olduğu yerde f(x)<0'dır."
+    },
+    {
+      "id": "mat_10_u04_k01_o05:flashcard",
+      "front": "Bir fonksiyonun bir aralıkta artan olması x>y olan girdiler için f(x) ile f(y) arasında nasıl bir ilişki gerektirir?",
+      "back": "f(x)>f(y) olmalıdır."
+    },
+    {
+      "id": "mat_10_u04_k01_o06:flashcard",
+      "front": "Bir aralıkta her x için f(x)≤f(m) ise f(m) hangi değerdir? f(x)≥f(n) koşulunda f(n) nedir?",
+      "back": "f(m) maksimum, f(n) minimum değerdir."
+    },
+    {
+      "id": "mat_10_u04_k01_o07:flashcard",
+      "front": "Bire bir fonksiyonda x₁≠x₂ olduğunda f(x₁) ve f(x₂) hakkında hangi koşul sağlanır?",
+      "back": "f(x₁)≠f(x₂) olur; farklı girdilerin görüntüleri farklıdır."
+    },
+    {
+      "id": "mat_10_u04_k01_o08:flashcard",
+      "front": "f:A→B fonksiyonunun örten olması için B'deki her y için A'da nasıl bir x bulunmalıdır?",
+      "back": "A'da y=f(x) eşitliğini sağlayan en az bir x bulunmalıdır."
+    },
+    {
+      "id": "mat_10_u04_k01_o09:flashcard",
+      "front": "Çift fonksiyonda f(−x) ile f(x) arasında hangi eşitlik vardır?",
+      "back": "f(−x)=f(x)"
+    },
+    {
+      "id": "mat_10_u04_k01_o10:flashcard",
+      "front": "Tek fonksiyon için g(−x)=... eşitliğini tamamla.",
+      "back": "g(−x)=−g(x)"
+    },
+    {
+      "id": "mat_10_u04_k01_o11:flashcard",
+      "front": "Bir fonksiyonun tanım kümesi ile görüntü kümesi neyi ifade eder?",
+      "back": "Tanım kümesi fonksiyona girdi olarak verilen x değerlerini; görüntü kümesi ise bu girdilerden elde edilen f(x) değerlerini içerir."
+    },
+    {
+      "id": "mat_10_u04_k01_o12:flashcard",
+      "front": "Bir doğrusal fonksiyonu, x’e bağlı değişim hızı m ve başlangıç değeri b ile nasıl yazarsın?",
+      "back": "f(x)=mx+b biçiminde yazarım; m doğrusal değişim oranını, b ise x=0 için başlangıç değerini gösterir."
+    }
+  ],
+  "baslik": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+  "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri"
+}

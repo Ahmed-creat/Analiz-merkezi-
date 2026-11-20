@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u03_k02",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u03_k02_o01",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Bir iletkenin kesitinden 5 s’de 15 C yük geçiyor. Akım şiddeti kaç A’dir?",
+      "secenekler": [
+        "3 A",
+        "5 A",
+        "15 A",
+        "75 A"
+      ],
+      "dogru_index": 0,
+      "cozum": "Akım, birim zamanda geçen yük miktarıdır: I = q/t = 15/5 = 3 A. Yük ile zamanı çarpmak akımı vermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir iletken kesitinden q yükü t sürede geçerse akım şiddetini nasıl hesaplarsın?",
+        "back": "I = q/t; birimi amperdir (A)."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o02",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Bir devreden 3 A akım 4 s boyunca geçiyor. Bu sürede geçen yük kaç C olur?",
+      "secenekler": [
+        "7",
+        "12",
+        "1,3",
+        "24"
+      ],
+      "dogru_index": 1,
+      "cozum": "q = I·t = 3·4 = 12 C'dur. 7, akım ile zamanı toplamak; 1,3 ise oranı ters kurmaktır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akım ve süre biliniyorsa iletkenden geçen toplam yükü nasıl bulursun?",
+        "back": "q = I·t."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o03",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Mikroskobik bir yük algılayıcısı, bir parçacık kümesindeki net negatif yükün büyüklüğünü 4,8×10⁻¹⁷ C olarak ölçüyor. |qₑ|=1,6×10⁻¹⁹ C ise kümede kaç fazla elektron vardır?",
+      "secenekler": [
+        "30",
+        "3 000",
+        "300",
+        "3"
+      ],
+      "dogru_index": 2,
+      "cozum": "Elektron sayısı n=|q|/|qₑ|=4,8×10⁻¹⁷/(1,6×10⁻¹⁹)=3×10²=300 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir elektronun elektrik yükünün büyüklüğü ve işareti nedir?",
+        "back": "qₑ = −1,6·10⁻¹⁹ C; protonunki aynı büyüklükte, pozitif işaretlidir."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o04",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Bir metal telde elektronlar sağdan sola sürükleniyorsa elektrik akımının yönü nasıldır?",
+      "secenekler": [
+        "Sağdan sola",
+        "Yönü tanımlanamaz",
+        "Her iki yönde",
+        "Soldan sağa"
+      ],
+      "dogru_index": 3,
+      "cozum": "Metallerde geleneksel akım yönü elektron hareketine zıttır; elektronlar sağdan sola giderken akım soldan sağadır. Yük işaretini göz ardı edip yönleri aynı almak hatadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrik akımının yönünü elektronların hareketiyle karşılaştır.",
+        "back": "Metallerde elektrik akımının yönü elektronların hareket yönüne zıttır."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o05",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Bir pil ve metal şerit kullanılarak kapalı bir devre kuruluyor. Metal şerit içinde akımı oluşturan temel yük taşıyıcıları hangileridir?",
+      "secenekler": [
+        "Serbest elektronlar",
+        "Çekirdeğe bağlı protonlar",
+        "Hareketsiz atom çekirdekleri",
+        "Yalnızca pozitif iyonlar"
+      ],
+      "dogru_index": 0,
+      "cozum": "Metallerde potansiyel fark etkisiyle serbest elektronlar hareket ederek akımı oluşturur. Protonlar atom çekirdeğine bağlıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Metallerde elektrik akımını hangi yük taşıyıcılarının hareketi oluşturur?",
+        "back": "İletken içindeki serbest elektronların hareketi oluşturur."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o06",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Bir iyon iletken jelde pozitif iyonlar sola, negatif iyonlar sağa doğru sürükleniyor. Geleneksel elektrik akımının yönü hangisidir?",
+      "secenekler": [
+        "Sağa doğru",
+        "Sola doğru",
+        "İki yönde eşit",
+        "Akım oluşmaz"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sola hareket eden pozitif iyonlar sola yönlü geleneksel akım oluşturur. Sağa hareket eden negatif iyonlar da akım yönü bakımından sola katkı sağlar; bu nedenle toplam akım sola doğrudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir elektrolit çözeltisinde pozitif ve negatif iyonlar zıt yönlerde hareket ederse akım yönünü nasıl belirlersin?",
+        "back": "Geleneksel akım yönü pozitif iyonların hareket yönüyle aynıdır; negatif iyonlar ters yönde hareket ederek aynı akım yönüne katkı sağlar."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o07",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Gazların normal koşullarda yalıtkan, bazı koşullarda iletken olabilmesini sağlayan temel durum hangisidir?",
+      "secenekler": [
+        "Gaz taneciklerinin tamamen hareketsiz kalması",
+        "Gazın sıvıya dönüşmesi",
+        "Serbest elektron ve iyonların oluşup yük taşıması",
+        "Yüklerin yalnızca tüp duvarında birikmesi"
+      ],
+      "dogru_index": 2,
+      "cozum": "Normal koşullarda gazda serbest yük taşıyıcıları yetersiz olduğundan akım oluşmaz. Uygun koşullarda serbest elektronlar ve iyonlar oluşup hareket ederek akımı sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Normal koşullarda gazlar ne zaman elektrik akımını iletebilir hâle gelir?",
+        "back": "Yüksek sıcaklık ve düşük basınçta ya da güçlü elektrik alanı altında serbest elektron ve iyonlar oluştuğunda iletebilir."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o08",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Aynı 3 s zaman aralığında X iletkeninden 9 C, Y iletkeninden 6 C, Z iletkeninden 15 C yük geçiyor. Akım şiddetleri nasıl sıralanır?",
+      "secenekler": [
+        "Iₓ > Iᵧ > I𝓏",
+        "Iᵧ > I𝓏 > Iₓ",
+        "Iₓ = Iᵧ = I𝓏",
+        "I𝓏 > Iₓ > Iᵧ"
+      ],
+      "dogru_index": 3,
+      "cozum": "I=q/t olduğundan aynı sürede geçen yükü daha fazla olan iletkendeki akım daha büyüktür. 15 C>9 C>6 C olduğundan I𝓏>Iₓ>Iᵧ olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı sürede iletken kesitinden geçen toplam yük arttığında elektrik akımı nasıl değişir?",
+        "back": "Akım yük miktarıyla doğru orantılıdır; aynı sürede daha fazla yük geçerse akım büyür."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o09",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Metallerde elektriksel etki ile elektronların sürüklenme hareketi arasındaki farkı hangi seçenek doğru açıklar?",
+      "secenekler": [
+        "Elektriksel etki devre boyunca hızla yayılır; her elektronun iletkenin tamamını katetmesi gerekmez.",
+        "Her elektron tel boyunca ışık hızında ilerler.",
+        "Elektriksel etki yalnızca telin bir ucunda kalır.",
+        "Akım oluşması için iletkendeki yüklerin tamamı yok olmalıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Elektronların sürüklenme hızı düşük olsa da elektriksel etki ve enerji aktarımı iletken boyunca hızla yayılır. Bu nedenle her elektronun iletkenin tamamını katetmesi gerekmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektronların sürüklenme hızı ile elektriksel etkinin iletken boyunca yayılma hızı arasındaki fark nedir?",
+        "back": "Elektriksel etkileşim ve enerji aktarımı iletken boyunca hızla yayılır; elektronların tüm yolu katetmesi beklenmez."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    },
+    {
+      "soru_id": "fizik_10_u03_k02_o10",
+      "alt_beceri": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,",
+      "metin": "Kararlı akım taşıyan, içinde yük birikmeyen aynı iletkende farklı kesitlerden aynı süre içinde geçen yük miktarları nasıl karşılaştırılır?",
+      "secenekler": [
+        "Daha dar kesitten daha fazla yük geçer.",
+        "Eşittir.",
+        "Daha geniş kesitten daha fazla yük geçer.",
+        "İletken boyunca yük miktarı sürekli artar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Kararlı akımda iletken içinde yük birikmez. Bu nedenle aynı süre içinde her kesitten aynı toplam yük geçer; kesit alanının değişmesi bu sonucu değiştirmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı iletkenin farklı kesitlerinden aynı süre içinde geçen yük miktarlarını neden eşit beklersin?",
+        "back": "Yük iletkenin içinde birikmediği için kararlı akımda her kesitten aynı miktarda yük geçer; akım her kesitte aynıdır."
+      },
+      "kazanim": "potansiyel fark, direnç ve elektrik akımını ölçebilmeniz ve bu kavramlar arasındaki ilişkiyi analiz edebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u03_k02_o01:flashcard",
+      "front": "Bir iletken kesitinden q yükü t sürede geçerse akım şiddetini nasıl hesaplarsın?",
+      "back": "I = q/t; birimi amperdir (A)."
+    },
+    {
+      "id": "fizik_10_u03_k02_o02:flashcard",
+      "front": "Akım ve süre biliniyorsa iletkenden geçen toplam yükü nasıl bulursun?",
+      "back": "q = I·t."
+    },
+    {
+      "id": "fizik_10_u03_k02_o03:flashcard",
+      "front": "Bir elektronun elektrik yükünün büyüklüğü ve işareti nedir?",
+      "back": "qₑ = −1,6·10⁻¹⁹ C; protonunki aynı büyüklükte, pozitif işaretlidir."
+    },
+    {
+      "id": "fizik_10_u03_k02_o04:flashcard",
+      "front": "Elektrik akımının yönünü elektronların hareketiyle karşılaştır.",
+      "back": "Metallerde elektrik akımının yönü elektronların hareket yönüne zıttır."
+    },
+    {
+      "id": "fizik_10_u03_k02_o05:flashcard",
+      "front": "Metallerde elektrik akımını hangi yük taşıyıcılarının hareketi oluşturur?",
+      "back": "İletken içindeki serbest elektronların hareketi oluşturur."
+    },
+    {
+      "id": "fizik_10_u03_k02_o06:flashcard",
+      "front": "Bir elektrolit çözeltisinde pozitif ve negatif iyonlar zıt yönlerde hareket ederse akım yönünü nasıl belirlersin?",
+      "back": "Geleneksel akım yönü pozitif iyonların hareket yönüyle aynıdır; negatif iyonlar ters yönde hareket ederek aynı akım yönüne katkı sağlar."
+    },
+    {
+      "id": "fizik_10_u03_k02_o07:flashcard",
+      "front": "Normal koşullarda gazlar ne zaman elektrik akımını iletebilir hâle gelir?",
+      "back": "Yüksek sıcaklık ve düşük basınçta ya da güçlü elektrik alanı altında serbest elektron ve iyonlar oluştuğunda iletebilir."
+    },
+    {
+      "id": "fizik_10_u03_k02_o08:flashcard",
+      "front": "Aynı sürede iletken kesitinden geçen toplam yük arttığında elektrik akımı nasıl değişir?",
+      "back": "Akım yük miktarıyla doğru orantılıdır; aynı sürede daha fazla yük geçerse akım büyür."
+    },
+    {
+      "id": "fizik_10_u03_k02_o09:flashcard",
+      "front": "Elektronların sürüklenme hızı ile elektriksel etkinin iletken boyunca yayılma hızı arasındaki fark nedir?",
+      "back": "Elektriksel etkileşim ve enerji aktarımı iletken boyunca hızla yayılır; elektronların tüm yolu katetmesi beklenmez."
+    },
+    {
+      "id": "fizik_10_u03_k02_o10:flashcard",
+      "front": "Aynı iletkenin farklı kesitlerinden aynı süre içinde geçen yük miktarlarını neden eşit beklersin?",
+      "back": "Yük iletkenin içinde birikmediği için kararlı akımda her kesitten aynı miktarda yük geçer; akım her kesitte aynıdır."
+    }
+  ],
+  "baslik": "3.2 Elektrik Akımı",
+  "topic_key": "Fizik > 3.2 Elektrik Akımı"
+}

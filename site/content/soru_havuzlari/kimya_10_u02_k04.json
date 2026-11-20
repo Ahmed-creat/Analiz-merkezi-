@@ -1,0 +1,256 @@
+{
+  "konu_id": "kimya_10_u02_k04",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "baslik": "2.1.4 Derişim Birimleri (Molarite, ppm)",
+  "topic_key": "Kimya > 2.1.4 Derişim Birimleri (Molarite, ppm)",
+  "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar.",
+  "kaynak": "Kimya 10 ders kitabı, s.172-178",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u02_k04_o01",
+      "alt_beceri": "Molarite ve ppm kavramlarını açıklar.",
+      "metin": "Molarite (M) hangi bağıntıyla hesaplanır?",
+      "secenekler": [
+        "M = n · V",
+        "M = n / V",
+        "M = V / n",
+        "M = m / V"
+      ],
+      "dogru_index": 1,
+      "cozum": "Molarite, bir litre çözeltideki çözünmüş maddenin mol sayısıdır: M = n/V (V litre) (s.173-174).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Molarite bağıntısı nedir?",
+        "back": "M = n/V"
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o02",
+      "alt_beceri": "Molarite ve ppm kavramlarını açıklar.",
+      "metin": "ppm (milyonda bir derişim) neyi ifade eder?",
+      "secenekler": [
+        "Bir litre çözeltideki mol sayısını",
+        "Çözeltinin yoğunluğunu",
+        "Çözünenin kütlece yüzdesini",
+        "Bir litre çözeltide mg cinsinden çözünen kütlesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "1 L (veya 1 kg) çözeltide çözünen maddenin mg cinsinden kütlesine ppm denir (s.175).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ppm'in mg/L karşılığı nedir?",
+        "back": "1 L çözeltide mg cinsinden çözünen."
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o03",
+      "alt_beceri": "Molarite ve ppm kavramlarını açıklar.",
+      "metin": "Çok az çözünmüş madde içeren çözeltilerde hangi birim tercih edilir?",
+      "secenekler": [
+        "ppm",
+        "Molarite",
+        "Molalite",
+        "Yüzde"
+      ],
+      "dogru_index": 0,
+      "cozum": "Çözünen miktarı çok az olduğunda molarite yerine ppm kullanılır (s.175).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çok seyreltik çözeltide hangi birim?",
+        "back": "ppm."
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o04",
+      "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
+      "metin": "2 L çözeltide 0,5 mol çözünen madde varsa molaritesi kaç mol/L'dir?",
+      "secenekler": [
+        "0,125 mol/L",
+        "0,25 mol/L",
+        "2 mol/L",
+        "4 mol/L"
+      ],
+      "dogru_index": 1,
+      "cozum": "M = n/V = 0,5/2 = 0,25 mol/L (s.174).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Molarite nasıl hesaplanır?",
+        "back": "0,25 M"
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o05",
+      "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
+      "metin": "0,5 M 4 L çözeltide kaç mol çözünen vardır?",
+      "secenekler": [
+        "0,5",
+        "4",
+        "8",
+        "2"
+      ],
+      "dogru_index": 3,
+      "cozum": "n = M·V = 0,5·4 = 2 mol (s.174).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Molariteden mol sayısı nasıl bulunur?",
+        "back": "2 mol"
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o06",
+      "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
+      "metin": "1 L çözeltide 4 mg kurşun iyonu bulunan su örneğinin derişimi kaç ppm'dir?",
+      "secenekler": [
+        "0,4",
+        "4",
+        "40",
+        "400"
+      ],
+      "dogru_index": 1,
+      "cozum": "1 L'de 4 mg → 4 ppm (s.175).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "ppm derişimi nasıl hesaplanır?",
+        "back": "4 ppm"
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o07",
+      "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
+      "metin": "1000 cm³ havada 380 mg CO2 bulunuyorsa CO2 derişimi kaç ppm'dir?",
+      "secenekler": [
+        "380",
+        "38",
+        "3800",
+        "0,38"
+      ],
+      "dogru_index": 0,
+      "cozum": "1000 cm³ = 1 L; 1 L'de 380 mg → 380 ppm (kitaptaki tablo, s.175-176).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hacim ve mg bilgisinden ppm nasıl bulunur?",
+        "back": "380 ppm"
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o08",
+      "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
+      "metin": "10 M 100 mL konsantre çözeltiden 0,1 M kaç litre çözelti hazırlanabilir?",
+      "secenekler": [
+        "1",
+        "100",
+        "10",
+        "0,1"
+      ],
+      "dogru_index": 2,
+      "cozum": "n = 10·0,1 = 1 mol; V = n/M = 1/0,1 = 10 L (kitabın kontrol noktası, s.177).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seyreltme hesabında M1V1 = M2V2 bağıntısı nedir?",
+        "back": "10 L"
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o09",
+      "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
+      "metin": "1 M 50 mL çözelti su ile 250 mL'ye tamamlanırsa yeni derişim kaç M olur?",
+      "secenekler": [
+        "0,2",
+        "0,5",
+        "1",
+        "5"
+      ],
+      "dogru_index": 0,
+      "cozum": "M1V1 = M2V2 → 1·50 = M2·250 → M2 = 0,2 M (s.177-178).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seyreltmede yeni derişim nasıl bulunur?",
+        "back": "0,2 M"
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k04_o10",
+      "alt_beceri": "Derişim ve seyreltme hesaplarını yapar.",
+      "metin": "Aynı hacimdeki iki çözeltiden birim hacimde daha çok çözünen içeren için hangisi doğrudur?",
+      "secenekler": [
+        "Daha seyreltiktir",
+        "Doymuştur",
+        "Elektrolit değildir",
+        "Daha derişiktir"
+      ],
+      "dogru_index": 3,
+      "cozum": "Birim hacimde çözünen miktarı fazla olan çözelti daha derişiktir (s.174).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birim hacimde çok çözünen çözelti nasıldır?",
+        "back": "Derişik."
+      },
+      "kazanim": "Molarite ve ppm birimlerini kullanarak çözelti derişimi hesaplar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u02_k04_o01:flashcard",
+      "front": "Molarite bağıntısı nedir?",
+      "back": "M = n/V"
+    },
+    {
+      "id": "kimya_10_u02_k04_o02:flashcard",
+      "front": "ppm'in mg/L karşılığı nedir?",
+      "back": "1 L çözeltide mg cinsinden çözünen."
+    },
+    {
+      "id": "kimya_10_u02_k04_o03:flashcard",
+      "front": "Çok seyreltik çözeltide hangi birim?",
+      "back": "ppm."
+    },
+    {
+      "id": "kimya_10_u02_k04_o04:flashcard",
+      "front": "Molarite nasıl hesaplanır?",
+      "back": "0,25 M"
+    },
+    {
+      "id": "kimya_10_u02_k04_o05:flashcard",
+      "front": "Molariteden mol sayısı nasıl bulunur?",
+      "back": "2 mol"
+    },
+    {
+      "id": "kimya_10_u02_k04_o06:flashcard",
+      "front": "ppm derişimi nasıl hesaplanır?",
+      "back": "4 ppm"
+    },
+    {
+      "id": "kimya_10_u02_k04_o07:flashcard",
+      "front": "Hacim ve mg bilgisinden ppm nasıl bulunur?",
+      "back": "380 ppm"
+    },
+    {
+      "id": "kimya_10_u02_k04_o08:flashcard",
+      "front": "Seyreltme hesabında M1V1 = M2V2 bağıntısı nedir?",
+      "back": "10 L"
+    },
+    {
+      "id": "kimya_10_u02_k04_o09:flashcard",
+      "front": "Seyreltmede yeni derişim nasıl bulunur?",
+      "back": "0,2 M"
+    },
+    {
+      "id": "kimya_10_u02_k04_o10:flashcard",
+      "front": "Birim hacimde çok çözünen çözelti nasıldır?",
+      "back": "Derişik."
+    }
+  ]
+}

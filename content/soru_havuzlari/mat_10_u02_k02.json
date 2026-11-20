@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u02_k02",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u02_k02_o01",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir maker atölyesi sabah grubuna katılanların etkinlik tercihlerini göreli sıklıkla vermiştir: seramik 0,52; baskı 0,29; ahşap 0,19. Sabah grubunda en yüksek tercih hangisidir?",
+      "secenekler": [
+        "Seramik (0,52)",
+        "Baskı (0,29)",
+        "Ahşap (0,19)",
+        "Baskı ve ahşap eşit"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sabah grubundaki oranlar karşılaştırılır. En büyük değer 0,52 olduğundan en yüksek tercih seramik atölyesidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir iki yönlü göreli sıklık tablosunda belirli bir grubu sabit tutarak tercihleri karşılaştırırken hangi oranlara bakılır?",
+        "back": "Sabit tutulan gruptaki seçeneklerin koşullu göreli sıklıkları karşılaştırılır."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o02",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir montaj işletmesinin iki vardiyası, yeniden işleme gerektiren ürünlerin oranlarını kaydediyor. Akşam vardiyasında bu oran daha düşük çıkmıştır. Vardiyaları karşılaştırmadan önce hangi bilgiyi incelemek en uygundur?",
+      "secenekler": [
+        "Yalnızca oranı düşük olan vardiyanın verilerini kullanmayı",
+        "Her iki vardiyadaki ürün türlerini, denetim ölçütlerini ve veri toplama dönemini karşılaştırmayı",
+        "Vardiyalardan birinin üretim miktarını inceleme dışı bırakmayı",
+        "Ürün türleri ve kalite kontrol ölçütleri farklı olsa da oranların doğrudan karşılaştırılabileceğini varsaymayı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ürün türlerinin dağılımı, kalite kontrol ölçütleri veya gözlem dönemi farklıysa oranlar doğrudan karşılaştırılamayabilir. Önce bu koşulların iki vardiyada benzer olup olmadığı incelenmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki farklı gruptan toplanan kategorik verileri karşılaştırırken yanlı sonuçları önlemek için hangi koşulları incelersin?",
+        "back": "Grupların kimlerden oluştuğunu, verilerin hangi koşullarda ve hangi yöntemle toplandığını karşılaştırırım."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o03",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir sergiye önceden kayıt yaptıran 72 ziyaretçinin 54’ü sesli rehber kullanmıştır. Önceden kayıt yaptıranlar içinde rehber kullananların oranı yüzde kaçtır?",
+      "secenekler": [
+        "50%",
+        "70%",
+        "75%",
+        "80%"
+      ],
+      "dogru_index": 2,
+      "cozum": "Koşul önceden kayıt yaptırmış olmaktır; 54/72 × 100 = %75 bulunur. Payda olarak bütün sergi ziyaretçileri değil, kayıt yaptıran 72 kişi alınır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki grubun toplamları farklıysa sonuç oranlarını karşılaştırırken hangi sıklık türünü kullanırsın?",
+        "back": "Her grubun kendi toplamına göre hesaplanan koşullu göreli sıklığı kullanırım."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o04",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir anket, yağmur suyu deposu bulunan evlerde bahçe yetiştirme oranının daha yüksek olduğunu göstermiştir. Bir yorumcu, deponun bahçe yetiştirmeye kesin olarak neden olduğunu söylüyor. En dikkatli yorum hangisidir?",
+      "secenekler": [
+        "Depo bulunan her evde bahçe vardır.",
+        "Anket iki değişken arasında hiçbir ilişki olmadığını gösterir.",
+        "Bahçe yetiştirmek yağmur suyu deposuna kesin olarak neden olur.",
+        "Verilerde bir birliktelik görülür; bu anket tek başına neden-sonuç ilişkisini kanıtlamaz."
+      ],
+      "dogru_index": 3,
+      "cozum": "Anket, depo bulunması ile bahçe yetiştirme arasında gözlenen bir birlikteliği gösterebilir. Gözlemsel ilişki tek başına neden-sonucu kanıtlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gözlemsel verilerde iki değişken birlikte değişiyorsa, bu bulgu tek başına hangi sonucu kanıtlamaz?",
+        "back": "Bir değişkenin diğerine neden olduğunu tek başına kanıtlamaz; başka değişkenler veya seçim biçimi ilişkiyi etkileyebilir."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o05",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir raporda, belirli bir planlama uygulamasını kullanan işletmelerin siparişlerini daha hızlı tamamladığı görülüyor. Uygulamanın bu sonuca neden olduğunu değerlendirmek için hangi ek bilgi özellikle yararlı olur?",
+      "secenekler": [
+        "İşletmelerin uygulamayı kullanmadan önceki işlem süreleri ve iş hacimleri",
+        "Raporun kapak renginin ne olduğu",
+        "İşletmelerin tabela yazı tipi",
+        "Uygulamayı kullanmayan tüm işletmelerin aynı büyüklükte olduğu varsayımı"
+      ],
+      "dogru_index": 0,
+      "cozum": "İşlem süresini iş hacmi ve başlangıçtaki performans da etkileyebilir. Bu bilgileri ve grupların nasıl seçildiğini incelemek, gözlenen ilişkiyi daha dikkatli değerlendirmeyi sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir gözlemsel ilişkide alternatif açıklamaları değerlendirmek için hangi tür ek bilgileri ararsın?",
+        "back": "İlişkili olabilecek başka değişkenleri, grupların nasıl seçildiğini ve verilerin hangi koşullarda toplandığını incelerim."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o06",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir iş merkezinde kullanılan görev planlama aracını kullanan ekiplerin işleri daha erken tamamladığı bir grafikte görülüyor. Rapor, aracın tamamlanma süresini kesin olarak kısalttığını ileri sürüyor. Bu yoruma yönelik en uygun değerlendirme hangisidir?",
+      "secenekler": [
+        "Grafik, aracın süreyi kesin olarak kısalttığını kanıtlar.",
+        "Grafik bir dağılımı gösterir; neden-sonuç yorumu için veri toplama biçimi ve olası başka etkenler de incelenmelidir.",
+        "Kategorik veriler grafikle karşılaştırılamaz.",
+        "Bütün ekiplerin iş yükü aynı olmak zorundadır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Grafik gözlenen dağılımı gösterebilir; tek başına aracın süreyi kısalttığını kanıtlamaz. Grupların seçimi, iş yükü ve veri toplama koşulları da değerlendirilmelidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Başkasının oluşturduğu istatistiksel yorumu değerlendirirken hangi yöntem ve kanıt özelliklerini kontrol edersin?",
+        "back": "Veri toplama ve örnekleme yöntemini, analiz aracının uygunluğunu ve yorumun verilerle uyuşmasını kontrol ederim."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o07",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "İki kategorik değişkenli bir araştırmanın sonucu incelenirken aşağıdakilerden hangisi ilişkililik analizini yanıltabilecek olası bir sorundur?",
+      "secenekler": [
+        "Örneklemin araştırma sorusuna uygun seçilmesi",
+        "Analiz aracının amaca uygun olması",
+        "Örneklem büyüklüğünün çok küçük olması",
+        "Yorumun verilerdeki bulgularla uyumlu olması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Küçük örneklem büyüklüğü ilişkililik analizini yanıltabilir. Uygun örneklem, amaca uygun analiz aracı ve verilerle uyumlu yorum ise değerlendirmeyi destekler.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kategorik değişkenli bir sonucu incelerken kontrol edilebilecek olası hata ve yanlılık türlerini sırala.",
+        "back": "Örneklem yanlılığı, küçük örneklem, yanlış ölçüm, uygun olmayan grafik seçimi ve varsayıma dayalı yorum kontrol edilir."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o08",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir açık hava gösterisine çevrim içi kayıt yaptıran 84 kişinin 63’ü, etkinlik alanında kayıt yaptıran 88 kişinin 44’ü gösteriye gelmiştir. Verinin doğrudan desteklediği ifade hangisidir?",
+      "secenekler": [
+        "Çevrim içi kayıt yaptırmak her kişinin gösteriye gelmesini sağlar.",
+        "Etkinlik alanında kayıt yaptıranların tamamı gösteriye gelmemiştir.",
+        "Kayıt yöntemi katılımı kesin olarak belirler.",
+        "Bu veride çevrim içi kayıt grubunun katılım oranı (%75), etkinlik alanında kayıt grubundan (%50) yüksektir; tek başına nedensellik göstermez."
+      ],
+      "dogru_index": 3,
+      "cozum": "Çevrim içi kayıt grubunda 63/84 = %75, etkinlik alanında kayıt grubunda 44/88 = %50 bulunur. İlk grubun oranı bu veride daha yüksektir; fark tek başına kayıt yönteminin katılıma neden olduğunu kanıtlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir istatistiksel yorumu kabul etmek için veriler ve mantıksal dayanak bakımından hangi koşullar aranır?",
+        "back": "Yorum bulgularla uyumlu ve mantıksal temellere dayalı olmalıdır."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o09",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir yerel üretici pazarında yeniden kullanılabilir çanta getiren 104 müşterinin 65’i yerel ürün de satın almıştır. Çanta getirmeyen 96 müşterinin 48’i yerel ürün satın almıştır. İki grup arasındaki oran farkı kaç yüzde puandır?",
+      "secenekler": [
+        "12,5 yüzde puan",
+        "12,5%",
+        "25 yüzde puan",
+        "62,5%"
+      ],
+      "dogru_index": 0,
+      "cozum": "Çanta getirenlerde oran 65/104 = %62,5; getirmeyenlerde oran 48/96 = %50’dir. Fark 62,5 − 50 = 12,5 yüzde puandır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki çalışma yöntemi grubunun başarı oranlarını karşılaştırırken her grubun başarı oranını nasıl hesaplarsın?",
+        "back": "Başarılı kişi sayısını ilgili çalışma yöntemi grubunun toplamına bölerim."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o10",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir ilçe kütüphanesi kayıtlı yetişkin kullanıcılar arasından 24 kişiyi rastgele seçiyor. Rastgele seçim tek başına hangi sorunları ortadan kaldırmaz?",
+      "secenekler": [
+        "Örneklem seçimine bağlı yanlılık riskini azaltma gereğini.",
+        "Ölçüm hatalarını ve küçük örneklemden kaynaklanan belirsizliği.",
+        "Araştırma sorusunun iki değişkeni açıkça tanımlamasını.",
+        "Evrenin hangi kullanıcılar olduğunu belirleme gereğini."
+      ],
+      "dogru_index": 1,
+      "cozum": "Rastgele seçim örneklem seçimine bağlı yanlılığı azaltmaya yardım eder; ancak ölçüm hatalarını ve 24 kişilik küçük örneklemden kaynaklanan belirsizliği tek başına gidermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rastgele seçimin tek başına ortadan kaldırmadığı iki hata türünü yaz.",
+        "back": "Ölçüm hataları ve küçük örneklem sorunları rastgele seçimle kendiliğinden ortadan kalkmaz."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o11",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir topluluk müzik atölyesine 132 kişi kayıt yaptırmış, bunların 99’u ilk oturuma katılmıştır. Kayıt yaptıranlar içindeki katılım oranı yüzde kaçtır?",
+      "secenekler": [
+        "50%",
+        "60%",
+        "75%",
+        "99%"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kayıt yaptıranlar payda alınır: 99/132 × 100 = %75 bulunur. 99 kişi sayısıdır, yüzde oranı değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu göreli sıklık hesabında payda hangi gözlemlerin toplamından oluşur?",
+        "back": "Koşul olarak sabitlenen kategoriye ait toplam gözlem sayısı payda olur."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u02_k02_o12",
+      "alt_beceri": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz",
+      "metin": "Bir ev aleti onarım servisi, teknisyene arıza fotoğrafı iletilen 92 işin 69’unda onarımı ilk ziyarette tamamlamıştır. Fotoğraf iletilmeyen 76 işin 38’inde onarım ilk ziyarette tamamlanmıştır. Bu karşılaştırmanın desteklediği en dikkatli ifade hangisidir?",
+      "secenekler": [
+        "Arıza fotoğrafı göndermek her onarımın ilk ziyarette tamamlanmasını kesin olarak sağlar.",
+        "Fotoğraf göndermeyen hiçbir müşterinin onarımı ilk ziyarette tamamlanmamıştır.",
+        "İki grupta ilk ziyarette tamamlanan onarımların oranı aynıdır.",
+        "Bu veride ilk ziyarette tamamlanan onarımların oranı fotoğraf iletilen işlerde daha yüksektir; tek başına neden-sonuç göstermez."
+      ],
+      "dogru_index": 3,
+      "cozum": "Fotoğraf iletilen işlerde oran 69/92 = %75, iletilmeyenlerde 38/76 = %50’dir. Verilerde ilk gruptaki oran daha yüksektir; ancak bu gözlemsel fark fotoğraf göndermenin sonucu doğrudan yarattığını kanıtlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu oranlar iki grupta farklı çıktığında, sonuçları neden-sonuç iddiasına dönüştürmeden nasıl yorumlarsın?",
+        "back": "Verilerde gruplar arasında gözlenen bir ilişki olduğunu söyler, tek başına nedensellik kurmam."
+      },
+      "kazanim": "başkaları tarafından oluşturulan iki kategorik değişkenli verilerin ilişkililiğine dayalı istatistiksel sonuç veya yorumları tartışabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u02_k02_o01:flashcard",
+      "front": "Bir iki yönlü göreli sıklık tablosunda belirli bir grubu sabit tutarak tercihleri karşılaştırırken hangi oranlara bakılır?",
+      "back": "Sabit tutulan gruptaki seçeneklerin koşullu göreli sıklıkları karşılaştırılır."
+    },
+    {
+      "id": "mat_10_u02_k02_o02:flashcard",
+      "front": "İki farklı gruptan toplanan kategorik verileri karşılaştırırken yanlı sonuçları önlemek için hangi koşulları incelersin?",
+      "back": "Grupların kimlerden oluştuğunu, verilerin hangi koşullarda ve hangi yöntemle toplandığını karşılaştırırım."
+    },
+    {
+      "id": "mat_10_u02_k02_o03:flashcard",
+      "front": "İki grubun toplamları farklıysa sonuç oranlarını karşılaştırırken hangi sıklık türünü kullanırsın?",
+      "back": "Her grubun kendi toplamına göre hesaplanan koşullu göreli sıklığı kullanırım."
+    },
+    {
+      "id": "mat_10_u02_k02_o04:flashcard",
+      "front": "Gözlemsel verilerde iki değişken birlikte değişiyorsa, bu bulgu tek başına hangi sonucu kanıtlamaz?",
+      "back": "Bir değişkenin diğerine neden olduğunu tek başına kanıtlamaz; başka değişkenler veya seçim biçimi ilişkiyi etkileyebilir."
+    },
+    {
+      "id": "mat_10_u02_k02_o05:flashcard",
+      "front": "Bir gözlemsel ilişkide alternatif açıklamaları değerlendirmek için hangi tür ek bilgileri ararsın?",
+      "back": "İlişkili olabilecek başka değişkenleri, grupların nasıl seçildiğini ve verilerin hangi koşullarda toplandığını incelerim."
+    },
+    {
+      "id": "mat_10_u02_k02_o06:flashcard",
+      "front": "Başkasının oluşturduğu istatistiksel yorumu değerlendirirken hangi yöntem ve kanıt özelliklerini kontrol edersin?",
+      "back": "Veri toplama ve örnekleme yöntemini, analiz aracının uygunluğunu ve yorumun verilerle uyuşmasını kontrol ederim."
+    },
+    {
+      "id": "mat_10_u02_k02_o07:flashcard",
+      "front": "İki kategorik değişkenli bir sonucu incelerken kontrol edilebilecek olası hata ve yanlılık türlerini sırala.",
+      "back": "Örneklem yanlılığı, küçük örneklem, yanlış ölçüm, uygun olmayan grafik seçimi ve varsayıma dayalı yorum kontrol edilir."
+    },
+    {
+      "id": "mat_10_u02_k02_o08:flashcard",
+      "front": "Bir istatistiksel yorumu kabul etmek için veriler ve mantıksal dayanak bakımından hangi koşullar aranır?",
+      "back": "Yorum bulgularla uyumlu ve mantıksal temellere dayalı olmalıdır."
+    },
+    {
+      "id": "mat_10_u02_k02_o09:flashcard",
+      "front": "İki çalışma yöntemi grubunun başarı oranlarını karşılaştırırken her grubun başarı oranını nasıl hesaplarsın?",
+      "back": "Başarılı kişi sayısını ilgili çalışma yöntemi grubunun toplamına bölerim."
+    },
+    {
+      "id": "mat_10_u02_k02_o10:flashcard",
+      "front": "Rastgele seçimin tek başına ortadan kaldırmadığı iki hata türünü yaz.",
+      "back": "Ölçüm hataları ve küçük örneklem sorunları rastgele seçimle kendiliğinden ortadan kalkmaz."
+    },
+    {
+      "id": "mat_10_u02_k02_o11:flashcard",
+      "front": "Koşullu göreli sıklık hesabında payda hangi gözlemlerin toplamından oluşur?",
+      "back": "Koşul olarak sabitlenen kategoriye ait toplam gözlem sayısı payda olur."
+    },
+    {
+      "id": "mat_10_u02_k02_o12:flashcard",
+      "front": "Koşullu oranlar iki grupta farklı çıktığında, sonuçları neden-sonuç iddiasına dönüştürmeden nasıl yorumlarsın?",
+      "back": "Verilerde gruplar arasında gözlenen bir ilişki olduğunu söyler, tek başına nedensellik kurmam."
+    }
+  ],
+  "baslik": "2.2 İstatistiksel Sonuç veya Yorumları Tartışma",
+  "topic_key": "Matematik > 2.2 İstatistiksel Sonuç veya Yorumları Tartışma"
+}

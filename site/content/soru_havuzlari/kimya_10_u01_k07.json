@@ -1,0 +1,256 @@
+{
+  "konu_id": "kimya_10_u01_k07",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "baslik": "1.2.2 Gazların Kinetik Moleküler Teorisi",
+  "topic_key": "Kimya > 1.2.2 Gazların Kinetik Moleküler Teorisi",
+  "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar.",
+  "kaynak": "Kimya 10 ders kitabı, s.94-97",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u01_k07_o01",
+      "alt_beceri": "Kinetik moleküler teorinin varsayımlarını açıklar.",
+      "metin": "Kinetik moleküler teoriye göre gaz tanecikleri nasıl hareket eder?",
+      "secenekler": [
+        "Duran hâlde",
+        "Sürekli ve rastgele",
+        "Yalnız dikey yönde",
+        "Kabın tabanında"
+      ],
+      "dogru_index": 1,
+      "cozum": "Teoriye göre gaz tanecikleri sürekli ve rastgele hareket eder; çarpışana kadar doğrusal ilerler (s.94-95, s.107).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kinetik moleküler teorinin temel varsayımı nedir?",
+        "back": "Gaz tanecikleri sürekli ve rastgele hareket eder."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o02",
+      "alt_beceri": "Kinetik moleküler teorinin varsayımlarını açıklar.",
+      "metin": "Bir balonun içindeki 10²³ tanecik, kabın yüzeyine sürekli çarparak kuvvet oluşturuyor. Kinetik moleküler teoriye göre bu kuvvetin kaynağı nedir?",
+      "secenekler": [
+        "Taneciklerin birbirine yapışması",
+        "Kabın ısınması",
+        "Taneciklerin durması",
+        "Taneciklerin kap çeperine çarpması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Gazlar bulundukları kabın çeperlerine çarparak kuvvet oluşturur; bu kuvvet gaz basıncıdır (s.81, s.95).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz basıncının tanecik düzeyindeki nedeni nedir?",
+        "back": "Gaz basıncını."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o03",
+      "alt_beceri": "Kinetik moleküler teorinin varsayımlarını açıklar.",
+      "metin": "Aynı sıcaklıktaki farklı ideal gazların ortalama kinetik enerjileri için hangisi doğrudur?",
+      "secenekler": [
+        "Eşittir",
+        "Mol kütlesi büyük olanda büyüktür",
+        "Hacmi büyük olanda büyüktür",
+        "Basınca bağlıdır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Ortalama kinetik enerji yalnız mutlak sıcaklığa bağlıdır; aynı sıcaklıkta tüm gazlarda eşittir (s.95-96).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortalama kinetik enerjinin sıcaklıkla ilişkisi nedir?",
+        "back": "Evet, ortalama kinetik enerjiler eşittir."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o04",
+      "alt_beceri": "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar.",
+      "metin": "Bir gaz ısıtıldığında taneciklerin hızı ve basıncı nasıl değişir?",
+      "secenekler": [
+        "Hız artar, basınç azalır",
+        "Hız azalır, basınç artar",
+        "Hız artar, basınç artar",
+        "İkisi de değişmez"
+      ],
+      "dogru_index": 2,
+      "cozum": "Sıcaklık artınca taneciklerin ortalama hızı ve çepere çarpma sıklığı artar; sabit hacimde basınç yükselir (s.95-96).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıcaklık artışının gaz basıncına etkisi nedir?",
+        "back": "Tanecik hızı ve çarpma sayısı artar."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o05",
+      "alt_beceri": "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar.",
+      "metin": "Aynı sıcaklıkta H2 ve O2 gazları için hangisi doğrudur?",
+      "secenekler": [
+        "O2 molekülleri daha hızlıdır",
+        "Hızları eşittir",
+        "H2'nin kinetik enerjisi daha büyüktür",
+        "H2 molekülleri daha hızlıdır"
+      ],
+      "dogru_index": 3,
+      "cozum": "Ortalama kinetik enerjiler eşit olduğundan mol kütlesi küçük olan H2 daha hızlı hareket eder (s.96).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mol kütlesi ile tanecik hızı arasındaki ilişki nedir?",
+        "back": "H2 (mol kütlesi küçük)."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o06",
+      "alt_beceri": "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar.",
+      "metin": "Kinetik moleküler teoriye göre gaz tanecikleri arasındaki boşluklar için hangisi doğrudur?",
+      "secenekler": [
+        "Tanecik boyutuna eşittir",
+        "Tanecik boyutuna göre çok büyüktür",
+        "Yok denecek kadar azdır",
+        "Sıcaklıkla azalır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Gazlarda tanecikler arasındaki boşluklar tanecik boyutlarına göre çok büyüktür; bu yüzden gazlar sıkıştırılabilir (s.95).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tanecik boyutu ile tanecikler arası boşluk arasındaki ilişki nedir?",
+        "back": "Gazlarda tanecikler arası boşluklar tanecik boyutuna göre çok büyüktür; bu yüzden gazlar sıkıştırılabilir."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o07",
+      "alt_beceri": "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar.",
+      "metin": "Bir sıcak hava balonunun brülörü 3 dakika çalıştırılıyor ve balon yükseliyor. Bu yükselmenin nedeni nedir?",
+      "secenekler": [
+        "Isınan havanın yoğunluğunun azalması",
+        "Havanın kütlesinin artması",
+        "Balonun içindeki taneciklerin durması",
+        "Dış basıncın sıfır olması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Balondaki hava ısındıkça tanecikler arası mesafe artar, birim hacme düşen tanecik sayısı ve yoğunluk azalır; balon yükselir (s.98).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz yoğunluğunun sıcaklıkla ilişkisi nedir?",
+        "back": "Azalır; yoğunluğu küçülen hava yükselir."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o08",
+      "alt_beceri": "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar.",
+      "metin": "Kapalı kaptaki gaz soğutulursa taneciklerin ortalama kinetik enerjisi nasıl değişir?",
+      "secenekler": [
+        "Artar",
+        "Değişmez",
+        "Azalır",
+        "Önce artar sonra azalır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Ortalama kinetik enerji mutlak sıcaklıkla doğru orantılı olduğundan soğutmada azalır (s.95-96).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Soğuyan gazın KE'si ne olur?",
+        "back": "Azalır."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o09",
+      "alt_beceri": "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar.",
+      "metin": "Bir gaz örneğinin mutlak sıcaklığı iki katına çıkarılırsa ortalama kinetik enerjisi kaç katına çıkar?",
+      "secenekler": [
+        "4",
+        "2",
+        "1/2",
+        "Değişmez"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ortalama kinetik enerji mutlak sıcaklıkla doğru orantılıdır; sıcaklık iki katına çıkarsa iki katına çıkar (s.95-96).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kinetik enerjinin mutlak sıcaklığa bağlılığı nedir?",
+        "back": "2 katına."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u01_k07_o10",
+      "alt_beceri": "Gaz basıncı ve sıcaklığını tanecik düzeyinde yorumlar.",
+      "metin": "Bir pistonla 1 L gaz 0,5 L'ye kolayca sıkıştırılabiliyor. Gazların sıkıştırılabilmesinin temel nedeni nedir?",
+      "secenekler": [
+        "Taneciklerin çok büyük olması",
+        "Taneciklerin birbirine yapışması",
+        "Gazların renksiz olması",
+        "Tanecikler arasındaki büyük boşluklar"
+      ],
+      "dogru_index": 3,
+      "cozum": "Tanecikler arasındaki boşluklar büyük olduğundan basınçla tanecikler birbirine yaklaştırılabilir (s.95).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıkıştırılabilirlik ile tanecikler arası boşluk arasındaki ilişki nedir?",
+        "back": "Tanecikler arası boşluklar büyük olduğu için."
+      },
+      "kazanim": "Gazların kinetik moleküler teori varsayımlarını ve gaz basıncının kökenini açıklar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u01_k07_o01:flashcard",
+      "front": "Kinetik moleküler teorinin temel varsayımı nedir?",
+      "back": "Gaz tanecikleri sürekli ve rastgele hareket eder."
+    },
+    {
+      "id": "kimya_10_u01_k07_o02:flashcard",
+      "front": "Gaz basıncının tanecik düzeyindeki nedeni nedir?",
+      "back": "Gaz basıncını."
+    },
+    {
+      "id": "kimya_10_u01_k07_o03:flashcard",
+      "front": "Ortalama kinetik enerjinin sıcaklıkla ilişkisi nedir?",
+      "back": "Evet, ortalama kinetik enerjiler eşittir."
+    },
+    {
+      "id": "kimya_10_u01_k07_o04:flashcard",
+      "front": "Sıcaklık artışının gaz basıncına etkisi nedir?",
+      "back": "Tanecik hızı ve çarpma sayısı artar."
+    },
+    {
+      "id": "kimya_10_u01_k07_o05:flashcard",
+      "front": "Mol kütlesi ile tanecik hızı arasındaki ilişki nedir?",
+      "back": "H2 (mol kütlesi küçük)."
+    },
+    {
+      "id": "kimya_10_u01_k07_o06:flashcard",
+      "front": "Tanecik boyutu ile tanecikler arası boşluk arasındaki ilişki nedir?",
+      "back": "Gazlarda tanecikler arası boşluklar tanecik boyutuna göre çok büyüktür; bu yüzden gazlar sıkıştırılabilir."
+    },
+    {
+      "id": "kimya_10_u01_k07_o07:flashcard",
+      "front": "Gaz yoğunluğunun sıcaklıkla ilişkisi nedir?",
+      "back": "Azalır; yoğunluğu küçülen hava yükselir."
+    },
+    {
+      "id": "kimya_10_u01_k07_o08:flashcard",
+      "front": "Soğuyan gazın KE'si ne olur?",
+      "back": "Azalır."
+    },
+    {
+      "id": "kimya_10_u01_k07_o09:flashcard",
+      "front": "Kinetik enerjinin mutlak sıcaklığa bağlılığı nedir?",
+      "back": "2 katına."
+    },
+    {
+      "id": "kimya_10_u01_k07_o10:flashcard",
+      "front": "Sıkıştırılabilirlik ile tanecikler arası boşluk arasındaki ilişki nedir?",
+      "back": "Tanecikler arası boşluklar büyük olduğu için."
+    }
+  ]
+}

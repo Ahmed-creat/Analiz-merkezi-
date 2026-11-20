@@ -1,0 +1,331 @@
+{
+ "surum": "2026-10-27",
+ "ders": "Türk Dili ve Edebiyatı",
+ "sinif": 10,
+ "neden": "TYMM TDE çıktıları BECERİ adı verir (TDE2.2 — Anlam Oluşturabilme). Okulizyon ise KONU kazanımı verir (Şiirde ahengi sağlayan özellikleri … çalışma yapar). Köprü iki kanaldan kurulur: (1) İÇERİK kanalı — TYMM tema sayfasının düz metni ve Anahtar Kavramlar bölümü metin türlerini yazar (koşuk, koşma, türkü, ninni, masal …); (2) BECERİ kanalı — aynı sayfadaki TDE1.x/2.x/3.x/4.x çıktıları. Bu dosya içerik kanalını tabloya döker.",
+ "kaynak": {
+  "ad": "MEB Türkiye Yüzyılı Maarif Modeli — Türk Dili ve Edebiyatı 10. sınıf tema sayfaları",
+  "not": "Metin türleri tabloda değil, tema sayfasının 'İçerik Çerçevesi' düz metninde ve 'Anahtar Kavramlar' listesinde geçer. Birebir alındı, yorum eklenmedi."
+ },
+ "temalar": [
+  {
+   "no": 1,
+   "ad": "Sözün Ezgisi",
+   "url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/242",
+   "okuma": {
+    "ana": [
+     "koşuk",
+     "türkü"
+    ],
+    "ara": [
+     "koşma",
+     "ninni"
+    ],
+    "ciktilar": [
+     "TDE2.1",
+     "TDE2.2",
+     "TDE2.3",
+     "TDE2.4"
+    ]
+   },
+   "dinleme": {
+    "tur": [
+     "masal"
+    ],
+    "ciktilar": [
+     "TDE1.1",
+     "TDE1.2",
+     "TDE1.3",
+     "TDE1.4"
+    ]
+   },
+   "konusma": {
+    "gorev": "şiir dinletisi hazırlama ve sunma",
+    "ciktilar": [
+     "TDE3.1",
+     "TDE3.2",
+     "TDE3.3",
+     "TDE3.4"
+    ]
+   },
+   "yazma": {
+    "gorev": "dinlediği/izlediği masalı film şeridi hâline getirme",
+    "ciktilar": [
+     "TDE4.1",
+     "TDE4.2",
+     "TDE4.3",
+     "TDE4.4"
+    ]
+   },
+   "anahtar_kavramlar": [
+    "ahenk",
+    "anonim",
+    "ezgi",
+    "gelenek",
+    "kurmaca",
+    "masal anlatıcısı",
+    "masalın bölümleri",
+    "olağanüstülük",
+    "ritim",
+    "sözlü kültür",
+    "varyant",
+    "yapı unsurları"
+   ],
+   "alinti": "Okuma metinleri, türkü ve koşuk türlerinden seçilir. Dinleme/izleme metni olarak da bir masal ele alınır. … ara metin olarak koşma ve ninni türleri kullanılır.",
+   "okulizyon_durum": "metin-var",
+   "okulizyon_kaynak": "okulizyon_kazanim_10.json",
+   "okulizyon_kazanim": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "cekirdek": [
+    "destan dönemi",
+    "koşuk",
+    "koşma",
+    "türkü",
+    "ninni",
+    "masal",
+    "sözlü kültür"
+   ]
+  },
+  {
+   "no": 2,
+   "ad": "Kelimelerin Ritmi",
+   "url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/247",
+   "okuma": {
+    "ana": [
+     "gazel",
+     "saf şiir"
+    ],
+    "ara": [
+     "kaside"
+    ],
+    "ciktilar": [
+     "TDE2.1",
+     "TDE2.2",
+     "TDE2.3",
+     "TDE2.4"
+    ]
+   },
+   "dinleme": {
+    "tur": [
+     "söyleşi"
+    ],
+    "ciktilar": [
+     "TDE1.1",
+     "TDE1.2",
+     "TDE1.3",
+     "TDE1.4"
+    ]
+   },
+   "konusma": {
+    "gorev": "iz bırakmış şahsiyetin edebî yönünü tanıtan podcast (sesli blog)",
+    "ciktilar": [
+     "TDE3.1",
+     "TDE3.2",
+     "TDE3.3",
+     "TDE3.4"
+    ]
+   },
+   "yazma": {
+    "gorev": "bilgilendirici bir metni edebî metne dönüştürme",
+    "ciktilar": [
+     "TDE4.1",
+     "TDE4.2",
+     "TDE4.3",
+     "TDE4.4"
+    ]
+   },
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "ahenk unsurları",
+    "aruz",
+    "beyit",
+    "gerçeklik",
+    "imge",
+    "kafiye",
+    "ölçü",
+    "ritim",
+    "sembol"
+   ],
+   "alinti": "okuma metinleri olarak bir gazel ile Cumhuriyet Dönemi'nden şiir (saf şiir) türünde bir metin incelenir. Gazel metni incelenirken ara metin olarak kaside türünden bir şiir ele alınır. Dinleme/izleme metni olarak … söyleşi türünde çok modlu bir metin ele alınır.",
+   "okulizyon_durum": "metin-bekleniyor",
+   "okulizyon_kaynak": null,
+   "okulizyon_kazanim": [],
+   "cekirdek": [
+    "gazel",
+    "kaside",
+    "saf şiir",
+    "söyleşi",
+    "aruz",
+    "beyit",
+    "kafiye",
+    "ölçü",
+    "ahenk"
+   ]
+  },
+  {
+   "no": 3,
+   "ad": "Dünden Bugüne",
+   "url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/256",
+   "okuma": {
+    "ana": [
+     "destan",
+     "mesnevi"
+    ],
+    "ara": [
+     "halk hikâyesi"
+    ],
+    "ciktilar": [
+     "TDE2.1",
+     "TDE2.2",
+     "TDE2.3",
+     "TDE2.4"
+    ]
+   },
+   "dinleme": {
+    "tur": [
+     "fabl"
+    ],
+    "ciktilar": [
+     "TDE1.1",
+     "TDE1.2",
+     "TDE1.3",
+     "TDE1.4"
+    ]
+   },
+   "konusma": {
+    "gorev": "Türk destanlarıyla ilgili konuşma / sunum",
+    "ciktilar": [
+     "TDE3.1",
+     "TDE3.2",
+     "TDE3.3",
+     "TDE3.4"
+    ]
+   },
+   "yazma": {
+    "gorev": "fabl yazma",
+    "ciktilar": [
+     "TDE4.1",
+     "TDE4.2",
+     "TDE4.3",
+     "TDE4.4"
+    ]
+   },
+   "anahtar_kavramlar": [
+    "anlatım biçimleri",
+    "destan",
+    "didaktik üslup",
+    "doğal destan",
+    "fabl",
+    "halk hikâyesi",
+    "kurmaca",
+    "mesnevi",
+    "motif",
+    "olağanüstülük",
+    "sözlü gelenek",
+    "yapma destan"
+   ],
+   "alinti": "okuma metinleri, destan ve mesnevi türlerinden seçilir. Destan incelenirken ara metin olarak halk hikâyesi türü kullanılır. Dinleme/izleme metni olarak da fabl türünde çok modlu bir metinden yararlanılır.",
+   "okulizyon_durum": "metin-bekleniyor",
+   "okulizyon_kaynak": null,
+   "okulizyon_kazanim": [],
+   "cekirdek": [
+    "doğal destan",
+    "yapma destan",
+    "destan",
+    "mesnevi",
+    "halk hikâyesi",
+    "fabl",
+    "motif"
+   ]
+  },
+  {
+   "no": 4,
+   "ad": "Nesillerin Mirası",
+   "url": "https://tymm.meb.gov.tr/turk-dili-ve-edebiyati-dersi/unite/261",
+   "okuma": {
+    "ana": [
+     "Dede Korkut hikâyesi",
+     "Tanzimat Dönemi şiiri"
+    ],
+    "ara": [
+     "Servetifünun Dönemi romanı",
+     "Fecriati Dönemi şiiri"
+    ],
+    "ciktilar": [
+     "TDE2.1",
+     "TDE2.2",
+     "TDE2.3",
+     "TDE2.4"
+    ]
+   },
+   "dinleme": {
+    "tur": [
+     "Millî Edebiyat Dönemi hikâyesi"
+    ],
+    "ciktilar": [
+     "TDE1.1",
+     "TDE1.2",
+     "TDE1.3",
+     "TDE1.4"
+    ]
+   },
+   "konusma": {
+    "gorev": "Dede Korkut hikâyelerinden birini canlandırma",
+    "ciktilar": [
+     "TDE3.1",
+     "TDE3.2",
+     "TDE3.3",
+     "TDE3.4"
+    ]
+   },
+   "yazma": {
+    "gorev": "dinlediği/izlediği hikâyeyi şiire dönüştürme",
+    "ciktilar": [
+     "TDE4.1",
+     "TDE4.2",
+     "TDE4.3",
+     "TDE4.4"
+    ]
+   },
+   "anahtar_kavramlar": [
+    "açık ve örtük ileti",
+    "değişim",
+    "dönem",
+    "hikâye",
+    "kurmaca",
+    "millî bilinç",
+    "millî edebiyat",
+    "olağanüstülük",
+    "roman",
+    "sözlü kültür",
+    "şiir",
+    "yaşantı",
+    "yenilik"
+   ],
+   "alinti": "okuma metni olarak Dede Korkut hikâyelerinden bir örnek ve Tanzimat Dönemi'nden bir şiir seçilir, ara metin olarak Servetifünun Dönemi'nden bir roman ve Fecriati Dönemi'nden bir şiir kullanılır. Dinleme/izleme metni olarak Millî Edebiyat Dönemi'nden … bir hikâye ele alınır.",
+   "okulizyon_durum": "metin-bekleniyor",
+   "okulizyon_kaynak": null,
+   "okulizyon_kazanim": [],
+   "cekirdek": [
+    "dede korkut",
+    "tanzimat",
+    "servetifünun",
+    "fecriati",
+    "millî edebiyat",
+    "milli edebiyat",
+    "roman",
+    "hikâye"
+   ]
+  }
+ ],
+ "kopru_kurali": "Bir Okulizyon kazanımı, metninde geçen EN UZUN ÇEKİRDEK terimle tek bir temaya bağlanır. \"Destan Dönemi Türk şiiri\" ifadesi hem 'destan'(tema 3) hem 'destan dönemi'(tema 1) içerir; en uzun çekirdek 'destan dönemi' kazandığı için tema 1'e bağlanır — koşuk destan döneminin nazım birimidir. Çekirdek içermeyen kazanımlar (ahenk, söz varlığı, çıkarım) TDE2.x BECERİ çıktısına bağlanır. Hiçbir Okulizyon metni UYDURULMAZ: 'metin-bekleniyor' temasında kazanım listesi boştur."
+}

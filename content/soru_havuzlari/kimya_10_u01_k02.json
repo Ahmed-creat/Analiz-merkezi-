@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u01_k02",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u01_k02_o01",
+      "alt_beceri": "Çökelme Tepkimeleri",
+      "metin": "Bir çözeltideki X⁺ ve Y⁻ iyonları birleşerek suda çözünmeyen XY(k) katısını oluşturuyor. Bu gözlem hangi sonuca ulaşmayı sağlar?",
+      "secenekler": [
+        "Çözeltide X⁺ ve Y⁻ iyonları vardır.",
+        "Çözeltide hiç iyon bulunmaz.",
+        "Yalnızca gaz oluştuğu anlaşılır.",
+        "Katı oluşumu fiziksel değişimi kanıtlar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Suda çözünmeyen XY katısının oluşması, X⁺ ve Y⁻ iyonlarının çözeltide bulunup birleştiğini gösterir. Çökelme tepkimelerinin belirgin göstergesi katı oluşumudur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çökelme ve çökelek (çökelti) nasıl tanımlanır; çökelme tepkimesinin en belirgin göstergesi nedir?",
+        "back": "Farklı tür çözeltiler karıştırılınca oluşan katının sulu ortamda dibe çökmesine çökelme, ayrılan katıya çökelek (çökelti) denir. En belirgin gösterge katı oluşumudur."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o02",
+      "alt_beceri": "Çökelme Tepkimeleri",
+      "metin": "Bir sulu iyon modelinde X⁺, Q⁻, M⁺ ve R⁻ iyonları bulunuyor; X⁺ ile Q⁻ suda çözünmeyen XQ(k) katısını oluştururken M⁺ ve R⁻ çözeltide değişmeden kalıyor. Bu olayın net iyon denklemi hangisidir?",
+      "secenekler": [
+        "M⁺(suda) + R⁻(suda) → MR(k)",
+        "X⁺(suda) + Q⁻(suda) → XQ(k)",
+        "X⁺(suda) + M⁺(suda) → XM(k)",
+        "Q⁻(suda) + R⁻(suda) → QR(k)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Net iyon denklemi çökeleği oluşturan iyonları gösterir: X⁺(suda)+Q⁻(suda)→XQ(k).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çökelme tepkimelerinde anyon ve katyonlar nasıl bir katı oluşturur; bu tepkimeler başka hangi adla anılır?",
+        "back": "Anyonlar ve katyonlar yer değiştirip suda daha az çözünen ya da çözünmeyen bir katı oluşturur. Bu tepkimeler aynı zamanda ikili yer değiştirme tepkimesidir."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o03",
+      "alt_beceri": "Çökelme Tepkimeleri",
+      "metin": "Bir sulu iyon modelinde X⁺, Q⁻, M⁺ ve R⁻ iyonları bulunuyor; X⁺ ile Q⁻ suda çözünmeyen XQ(k) katısını oluştururken M⁺ ve R⁻ çözeltide değişmeden kalıyor. Bu modelde seyirci iyonlar hangileridir?",
+      "secenekler": [
+        "X⁺ ve Q⁻",
+        "Yalnızca X⁺",
+        "M⁺ ve R⁻",
+        "XQ(k)"
+      ],
+      "dogru_index": 2,
+      "cozum": "M⁺ ve R⁻ tepkime boyunca çözeltide değişmeden kaldığından seyirci iyonlardır; net iyon denkleminde yer almazlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Seyirci iyonları ve net iyon denklemini açıklayınız.",
+        "back": "Tepkimeye katılmayıp çözeltide kalan iyonlara seyirci iyon denir; net iyon denkleminde yer almazlar. Net iyon denklemi yalnızca tepkimeye katılan iyonları gösterir."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o04",
+      "alt_beceri": "İndirgenme-Yükseltgenme Tepkimeleri",
+      "metin": "Bir metal atomu M, iki elektron vererek M²⁺ iyonuna dönüşüyor. M için gerçekleşen olay hangisidir?",
+      "secenekler": [
+        "İndirgenme; elektron alması",
+        "Nötrleşme; proton alması",
+        "Çökelme; katı oluşturması",
+        "Yükseltgenme; elektron vermesi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Elektron veren tür yükseltgenir. M iki elektron vererek M²⁺ hâline geçtiği için yükseltgenmiştir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İndirgenme-yükseltgenme (redoks) tepkimelerinde elektron transferi ile indirgenme ve yükseltgenme arasındaki ilişkiyi açıklayınız.",
+        "back": "Elektron alma eğilimi yüksek taneciklerle elektron verme eğilimi yüksek tanecikler arasında elektron transferi olur. İndirgenme ve yükseltgenme eş zamanlı gerçekleşir; alınan ve verilen toplam elektron sayısı eşittir."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o05",
+      "alt_beceri": "İndirgenme-Yükseltgenme Tepkimeleri",
+      "metin": "T²⁺(suda) iyonları iki elektron alarak T(k) metaline dönüşüyor. T²⁺ için gerçekleşen olay hangisidir?",
+      "secenekler": [
+        "İndirgenme; elektron alma",
+        "Yükseltgenme; elektron verme",
+        "Nötralleşme; su oluşumu",
+        "Çökelme; elektron verme"
+      ],
+      "dogru_index": 0,
+      "cozum": "Elektron alan tür indirgenir. T²⁺ iyonları elektron alıp T atomlarına dönüştüğünden indirgenme gerçekleşir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektron veren ve elektron alan taneciklerin geçirdiği olayları karşılaştırınız.",
+        "back": "Elektron veren tanecik yükseltgenir; elektron alan tanecik indirgenir."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o06",
+      "alt_beceri": "İndirgenme-Yükseltgenme Tepkimeleri",
+      "metin": "Bir tepkimede M türü elektron veriyor, X türü elektron alıyor. Bu tepkime için doğru yorum hangisidir?",
+      "secenekler": [
+        "M indirgenir, X yükseltgenir.",
+        "M yükseltgenir, X indirgenir.",
+        "Elektron aktarımı olmadığı için redoks gerçekleşmez.",
+        "Yalnızca fiziksel bir değişim olur."
+      ],
+      "dogru_index": 1,
+      "cozum": "Elektron veren tür yükseltgenir, elektron alan tür indirgenir. Bu nedenle M yükseltgenirken X indirgenir ve tepkime redokstur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Redoks tepkimelerinde elektron alışverişi nasıl gerçekleşir ve yanma bu tepkimelerle nasıl ilişkilidir?",
+        "back": "Yükseltgenen tür elektron verir, indirgenen tür elektron alır. Yanma tepkimelerinde de elektron aktarımı gerçekleştiğinden yanma genellikle redokstur."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o07",
+      "alt_beceri": "Asit-Baz Tepkimeleri",
+      "metin": "X maddesi suda çözündüğünde çözeltideki OH⁻ iyonu derişimini artırıyor. Arrhenius tanımına göre X nasıl sınıflandırılır?",
+      "secenekler": [
+        "Asit; çünkü çözeltiye H⁺ verir.",
+        "Çökelti; çünkü suda az çözünür.",
+        "Baz; çünkü tepkimede OH⁻(suda) oluşur.",
+        "Nötralleşme ürünü; çünkü tuz ve su oluşur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Arrhenius tanımına göre suda çözündüğünde çözeltiye OH⁻ iyonu veren madde bazdır. Denklemde tuz ve su oluşması nötralleşme için ayrıca değerlendirilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Arrhenius asit ve baz tanımını, suda çözeltiye verdikleri iyonlara göre açıklayınız.",
+        "back": "Arrhenius’e göre suda çözündüğünde çözeltiye H⁺ iyonu veren maddeler asit, OH⁻ iyonu veren maddeler bazdır."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o08",
+      "alt_beceri": "Asit-Baz Tepkimeleri",
+      "metin": "HBr(suda) ve LiOH(suda) çözeltileri karıştırıldığında oluşan dengelenmiş tepkime denklemi hangisidir?",
+      "secenekler": [
+        "HBr(suda) + LiOH(suda) → Li₂Br(suda) + H₂O(s)",
+        "HBr(suda) + LiOH(suda) → LiBr₂(suda) + H₂O(s)",
+        "HBr(suda) + LiOH(suda) → H₂(g) + LiBr(suda)",
+        "HBr(suda) + LiOH(suda) → LiBr(suda) + H₂O(s)"
+      ],
+      "dogru_index": 3,
+      "cozum": "HBr bir asit, LiOH bir bazdır; tepkimede LiBr tuzu ve su oluşur. Denklemde H, Br, Li ve O atomları iki tarafta eşit sayıdadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sulu ortamda asit ve bazın nötralleşmesi sonucunda hangi tür maddeler oluşur?",
+        "back": "Asit ile baz tepkimeye girerek tuz ve su oluşturur. Sulu ortamda gerçekleşen bu olaya nötralleşme tepkimesi denir."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o09",
+      "alt_beceri": "Asit-Baz Tepkimeleri",
+      "metin": "Bir boya tesisinin asidik durulama suyu, sulu bir baz çözeltisiyle arıtılıyor. Tepkime sulu ortamda gerçekleşiyor; asit ve baz tepkimeye girerek çözünmüş bir tuz ile su oluşturuyor ve pH nötre yaklaşıyor. Bu olay en doğru nasıl sınıflandırılır?",
+      "secenekler": [
+        "Nötralleşme tepkimesidir; sulu ortamda tuz ve su oluşur.",
+        "Çökelme tepkimesidir; tepkimede mutlaka katı oluşmalıdır.",
+        "Redoks tepkimesidir; asit ve baz her zaman elektron aktarır.",
+        "Fiziksel çözünmedir; yeni maddeler oluşmaz."
+      ],
+      "dogru_index": 0,
+      "cozum": "Tepkime sulu ortamda asit ve baz arasında gerçekleşip tuz ile su oluşturduğundan nötralleşmedir. pH değişimi bu tepkimenin gözlenebilir göstergelerinden biridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Nötralleşme tepkimesini genel asit-baz tepkimesinden ayıran koşulu açıklayınız.",
+        "back": "Nötralleşme sulu ortamda asit ve bazın tepkimeye girerek tuz ve su oluşturmasıdır; her asit-baz tepkimesi nötralleşme değildir."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u01_k02_o10",
+      "alt_beceri": "Asit-Baz Tepkimeleri",
+      "metin": "Bir tesiste asidik işlem suyu bazik bir çözeltiyle arıtılıyor. Karıştırma öncesi pH 2,1 iken işlem sonunda 6,8 ölçülüyor. Gözlenen kimyasal değişim göstergesi hangisidir?",
+      "secenekler": [
+        "Renk değişimi",
+        "pH değişimi",
+        "Çökelti oluşumu",
+        "Sadece fiziksel biçim değişimi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Karıştırma sonrasında pH değerinin değişmesi gözlenebilir bir kimyasal değişim göstergesidir. Bu senaryoda ölçüm, asidik ortamın bazla nötrleştirilmesiyle ilişkilidir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asit-baz tepkimelerinde gözlenebilecek değişimlerden ikisini belirtiniz.",
+        "back": "pH ve enerji değişimi gözlenebilir. Karbonat içeren maddeler asitle tepkimeye girdiğinde CO₂ gazı çıkışı da görülebilir."
+      },
+      "kazanim": "kimyasal tepkime türlerinin oluşum sürecine ilişkin bilimsel gözlem yapabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u01_k02_o01:flashcard",
+      "front": "Çökelme ve çökelek (çökelti) nasıl tanımlanır; çökelme tepkimesinin en belirgin göstergesi nedir?",
+      "back": "Farklı tür çözeltiler karıştırılınca oluşan katının sulu ortamda dibe çökmesine çökelme, ayrılan katıya çökelek (çökelti) denir. En belirgin gösterge katı oluşumudur."
+    },
+    {
+      "id": "kimya_10_u01_k02_o02:flashcard",
+      "front": "Çökelme tepkimelerinde anyon ve katyonlar nasıl bir katı oluşturur; bu tepkimeler başka hangi adla anılır?",
+      "back": "Anyonlar ve katyonlar yer değiştirip suda daha az çözünen ya da çözünmeyen bir katı oluşturur. Bu tepkimeler aynı zamanda ikili yer değiştirme tepkimesidir."
+    },
+    {
+      "id": "kimya_10_u01_k02_o03:flashcard",
+      "front": "Seyirci iyonları ve net iyon denklemini açıklayınız.",
+      "back": "Tepkimeye katılmayıp çözeltide kalan iyonlara seyirci iyon denir; net iyon denkleminde yer almazlar. Net iyon denklemi yalnızca tepkimeye katılan iyonları gösterir."
+    },
+    {
+      "id": "kimya_10_u01_k02_o04:flashcard",
+      "front": "İndirgenme-yükseltgenme (redoks) tepkimelerinde elektron transferi ile indirgenme ve yükseltgenme arasındaki ilişkiyi açıklayınız.",
+      "back": "Elektron alma eğilimi yüksek taneciklerle elektron verme eğilimi yüksek tanecikler arasında elektron transferi olur. İndirgenme ve yükseltgenme eş zamanlı gerçekleşir; alınan ve verilen toplam elektron sayısı eşittir."
+    },
+    {
+      "id": "kimya_10_u01_k02_o05:flashcard",
+      "front": "Elektron veren ve elektron alan taneciklerin geçirdiği olayları karşılaştırınız.",
+      "back": "Elektron veren tanecik yükseltgenir; elektron alan tanecik indirgenir."
+    },
+    {
+      "id": "kimya_10_u01_k02_o06:flashcard",
+      "front": "Redoks tepkimelerinde elektron alışverişi nasıl gerçekleşir ve yanma bu tepkimelerle nasıl ilişkilidir?",
+      "back": "Yükseltgenen tür elektron verir, indirgenen tür elektron alır. Yanma tepkimelerinde de elektron aktarımı gerçekleştiğinden yanma genellikle redokstur."
+    },
+    {
+      "id": "kimya_10_u01_k02_o07:flashcard",
+      "front": "Arrhenius asit ve baz tanımını, suda çözeltiye verdikleri iyonlara göre açıklayınız.",
+      "back": "Arrhenius’e göre suda çözündüğünde çözeltiye H⁺ iyonu veren maddeler asit, OH⁻ iyonu veren maddeler bazdır."
+    },
+    {
+      "id": "kimya_10_u01_k02_o08:flashcard",
+      "front": "Sulu ortamda asit ve bazın nötralleşmesi sonucunda hangi tür maddeler oluşur?",
+      "back": "Asit ile baz tepkimeye girerek tuz ve su oluşturur. Sulu ortamda gerçekleşen bu olaya nötralleşme tepkimesi denir."
+    },
+    {
+      "id": "kimya_10_u01_k02_o09:flashcard",
+      "front": "Nötralleşme tepkimesini genel asit-baz tepkimesinden ayıran koşulu açıklayınız.",
+      "back": "Nötralleşme sulu ortamda asit ve bazın tepkimeye girerek tuz ve su oluşturmasıdır; her asit-baz tepkimesi nötralleşme değildir."
+    },
+    {
+      "id": "kimya_10_u01_k02_o10:flashcard",
+      "front": "Asit-baz tepkimelerinde gözlenebilecek değişimlerden ikisini belirtiniz.",
+      "back": "pH ve enerji değişimi gözlenebilir. Karbonat içeren maddeler asitle tepkimeye girdiğinde CO₂ gazı çıkışı da görülebilir."
+    }
+  ],
+  "topic_key": "Kimya > 1.1.2 Kimyasal Tepkime Türleri"
+}
