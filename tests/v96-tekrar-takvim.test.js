@@ -114,7 +114,7 @@ function kutu(state, bugun) {
     fnCikar("hazirlikOturumSayisi"),
     fnCikar("hazirlikGunSeti"),
     // v98 — deneme planı hedef net + ivmeye göre kurulur
-    fnCikar("denemeIvmesi"),
+    fnCikar("examNetDeger"), fnCikar("denemeIvmesi"),
     fnCikar("denemeIvmeCumlesi"),
     fnCikar("hazirlikPlani"),
     fnCikar("sinavYakinlari"),
@@ -299,7 +299,7 @@ console.log("\n== 6) Takvim ÇIKTISI gerçekten renkli blok üretiyor (davranı�
       SABITLER, RENK_BLOGU,
       fnCikar("calRenk"),
       fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"), fnCikar("hazirlikGunSeti"),
-      fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
+      fnCikar("examNetDeger"), fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
       fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"), fnCikar("calendarEventMap"),
       fnCikar("renderCalendarHTML"),
       "\nreturn { ay: function (y, m) { calCursor = new Date(y, m, 1); }," +
@@ -347,7 +347,7 @@ console.log("\n== 7) Gün detayı başlığı: YALNIZ tür + ders (konu tekrarı
       "let calSelected = null;",
       SABITLER, RENK_BLOGU, fnCikar("calRenk"),
       fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"), fnCikar("hazirlikGunSeti"),
-      fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
+      fnCikar("examNetDeger"), fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
       fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"), fnCikar("calendarEventMap"),
       fnCikar("renderCalDetailHTML"),
       "\nreturn { gun: function (ds) { calSelected = ds; return renderCalDetailHTML(calendarEventMap()); } };"
@@ -382,7 +382,7 @@ console.log("\n== 7) Gün detayı başlığı: YALNIZ tür + ders (konu tekrarı
     const h = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
       "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState",
       [SABITLER, fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"),
-       fnCikar("hazirlikGunSeti"), fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
+       fnCikar("hazirlikGunSeti"), fnCikar("examNetDeger"), fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
        fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"),
        fnCikar("calendarEventMap"), "\nreturn calendarEventMap();"].join("\n"));
     return h(senaryo(), () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { });
@@ -431,7 +431,7 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
     const v = (function () {
       const h = new Function("state", "todayStr", "parseDay", "toDayStr", "splitKey",
         "canonicalReason", "aytWeightOf", "getMemoryStrength", "saveState",
-        SABITLER + "\n" + fnCikar("denemeIvmesi") + "\n" + fnCikar("denemeIvmeCumlesi") +
+        SABITLER + "\n" + fnCikar("examNetDeger") + "\n" + fnCikar("denemeIvmesi") + "\n" + fnCikar("denemeIvmeCumlesi") +
         "\nreturn { v: denemeIvmesi(), c: denemeIvmeCumlesi(denemeIvmesi()) };");
       return h(s2, () => BUGUN, parseDay, toDayStr, splitKey, x => x || "", () => 0.5, () => 50, () => { });
     })();
@@ -497,7 +497,7 @@ console.log("\n== 8) DENEME: yazılı örnek yok, hedef net + ivme, TÜM hatalar
         "let calSelected = null;",
         SABITLER, RENK_BLOGU, fnCikar("calRenk"),
         fnCikar("hazirlikZayifKonular"), fnCikar("hazirlikOturumSayisi"), fnCikar("hazirlikGunSeti"),
-        fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
+        fnCikar("examNetDeger"), fnCikar("denemeIvmesi"), fnCikar("denemeIvmeCumlesi"),
         fnCikar("hazirlikPlani"), fnCikar("sinavYakinlari"), fnCikar("calendarEventMap"),
         fnCikar("renderCalDetailHTML"),
         "\nreturn { plan: hazirlikPlani, gun: function (ds) { calSelected = ds; return renderCalDetailHTML(calendarEventMap()); } };"
@@ -596,8 +596,10 @@ console.log("\n== 9) Boş günler kullanılır + ivme TEK sayı (v99) ==");
   const g2 = new Function("state", "todayStr", "parseDay", "toDayStr",
     [
       SABITLER,
+      // v102 — examStats neti examNetDeger() ile doğrular; yardımcı birlikte koşar.
+      fnCikar("examNetDeger"),
       fnCikar("examStats"),
-      fnCikar("denemeIvmesi"),
+      fnCikar("examNetDeger"), fnCikar("denemeIvmesi"),
       fnCikar("denemeIvmeCumlesi"),
       fnCikar("weeklyMomentum"),
       "function daysLeftToExam() { return 30; }",

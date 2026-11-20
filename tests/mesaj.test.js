@@ -120,6 +120,81 @@ ok("panel açılışı mesajları tazeler", /function toggleCoachPanel\(\)[\s\S]
 ok("mesaj girişi ve gönder düğmesi üretilir", /koc-girdi/.test(fs.readFileSync(DOSYA, "utf8")) && /koc-gonder/.test(fs.readFileSync(DOSYA, "utf8")));
 ok("sohbet cihazda saklanır (localStorage)", /localStorage\.setItem\(ANAHTAR/.test(fs.readFileSync(DOSYA, "utf8")));
 
+// ---- 10) v102: KOÇLUK MOTORU köprüsü (tek hesap) ----
+// Sohbet, raporu KOC_MOTOR'dan aldığında panelin sayılarını tekrarlar;
+// veri yoksa sayı UYDURMAZ ve eksiği ADIYLA söyler.
+{
+  const K = require(path.join(KOK, "site", "koc.js"));
+  ok("index.html koc.js'i mesaj.js'den ÖNCE yüklüyor",
+    html.indexOf('<script src="koc.js"></script>') > -1 &&
+    html.indexOf('<script src="koc.js"></script>') < html.indexOf('<script src="mesaj.js"></script>'));
+  ok("sohbet motoru window.KOC_MOTOR'dan okur", /kok\.KOC_MOTOR/.test(fs.readFileSync(DOSYA, "utf8")));
+
+  const st = {
+    plan: { targetDate: "2026-12-20", targetNet: 95 },
+    exams: [
+      { id: "1", name: "Deneme-1", date: "2026-10-27", net: 77.5, errorLogs: [
+        { lesson: "Matematik", topic: "Üçgende Alan", type: "Konuyu Bilmiyordum", date: "2026-10-27" },
+        { lesson: "Matematik", topic: "Üçgende Alan", type: "Konuyu Bilmiyordum", date: "2026-10-27" },
+        { lesson: "Türkçe", topic: "Şiirde Ahenk", type: "İşlem Hatası/Dikkatsizlik", date: "2026-10-27" }
+      ] },
+      { id: "2", name: "Deneme-2", date: "2026-11-15", net: 81.5, errorLogs: [
+        { lesson: "Matematik", topic: "Üçgende Alan", type: "İşlem Hatası/Dikkatsizlik", date: "2026-11-15" }
+      ] }
+    ],
+    memory: {}
+  };
+  const snap = K.snapshot(st, "2026-11-20");
+  const rapor = K.rapor(snap);
+  const mctx = { ad: "Efe", snap: snap, rapor: rapor, kalanGun: rapor.hedef.kalanGun, hedefNet: rapor.hedef.hedef };
+
+  const netY = H.kocYanit("netlerim nasıl?", mctx);
+  ok("net: raporun son netini yazar (81,5)", /81,5/.test(netY), netY.slice(0, 120));
+  ok("net: önceki deneme + fark yazılır (77,5 / +4)", /77,5/.test(netY) && /\+4 net/.test(netY), netY.slice(0, 200));
+  ok("net: hedefe kalanı yazar (13,5)", /13,5/.test(netY), netY.slice(0, 240));
+  ok("net: gereken haftalık tempoyu yazar (3,15)", /3,15/.test(netY), netY.slice(0, 260));
+
+  const konuY = H.kocYanit("hangi konuya çalışmalıyım?", mctx);
+  ok("konu: öncelik listesi motordan (Üçgende Alan)", /Üçgende Alan/.test(konuY), konuY.slice(0, 160));
+  ok("konu: gerekçe (hata sayısı) taşınır", /\d+ hatanın/.test(konuY), konuY.slice(0, 200));
+
+  const nedenY = H.kocYanit("hata nedenlerim ne?", mctx);
+  ok("neden: dağılım yüzdeleri yazılır (konu %50, işlem %50)", /Konuyu bilmiyordum 2 \(%50\)/.test(nedenY), nedenY.slice(0, 160));
+  ok("neden: baskın nedenin aksiyonu yazılır", /aksiyonu:/.test(nedenY), nedenY.slice(0, 240));
+
+  const eksikY = H.kocYanit("eksik veri ne?", mctx);
+  ok("eksik veri: tam veride 'tüm veriler tam' der", /Tüm veriler tam/.test(eksikY), eksikY.slice(0, 160));
+  ok("eksik veri sorusu konu listesine düşmez", !/Öncelik sıran/.test(eksikY), eksikY.slice(0, 120));
+
+  const bosSnap = K.snapshot({ plan: {}, exams: [] }, "2026-11-20");
+  const bosCtx = { rapor: K.rapor(bosSnap) };
+  const bosNet = H.kocYanit("netlerim nasıl?", bosCtx);
+  ok("VERİ YOK: net cevabı sayı uydurmaz", /veri yok/i.test(bosNet) && !/\d+ net/.test(bosNet), bosNet.slice(0, 160));
+  ok("VERİ YOK: eksik ADIYLA söylenir", /Deneme sonucu|deneme kaydı yok/i.test(bosNet), bosNet.slice(0, 200));
+  const bosSinav = H.kocYanit("sınava kaç gün kaldı?", bosCtx);
+  ok("VERİ YOK: kalan gün uydurulmaz", /kayıtlı değil/.test(bosSinav) && !/\d+ gün kaldı/.test(bosSinav), bosSinav.slice(0, 200));
+  const bosEksik = H.kocYanit("eksik veri ne?", bosCtx);
+  ok("VERİ YOK: eksik listesi adlarla gelir", /Sınav tarihi/.test(bosEksik) && /Hedef net/.test(bosEksik), bosEksik.slice(0, 220));
+
+  // Yeni niyetler: öneri · bugün ne çalışayım
+  const oneriY = H.kocYanit("bu hafta ne yapmalıyım?", mctx);
+  ok("öneri: gerekçe + aksiyon birlikte döner", /Gerekçe:/.test(oneriY) && /→ /.test(oneriY), oneriY.slice(0, 240));
+  ok("öneri: veriye dayanır (son deneme/ivme sayısı geçer)", /81,5|3,15|hatanın/.test(oneriY), oneriY.slice(0, 240));
+  ok("öneri: 'bugün' cevabıyla karışmaz", !/^Bugünün planı/.test(oneriY), oneriY.slice(0, 80));
+
+  const bugunCtx = Object.assign({}, mctx, { snap: K.snapshot(Object.assign({}, st, {
+    plan: Object.assign({}, st.plan, { hazirlikPlani: [{ date: "2026-11-20", ders: "Matematik", konular: ["Matematik > Üçgende Alan"], gunOnce: 30 }] })
+  }), "2026-11-20", { hazirlik: [{ date: "2026-11-20", ders: "Matematik", konular: ["Matematik > Üçgende Alan"], gunOnce: 30 }] }) });
+  const bugunY = H.kocYanit("bugün ne çalışayım?", bugunCtx);
+  ok("bugün: hazırlık planındaki oturumu söyler", /Bugünün planı/.test(bugunY) && /Üçgende Alan/.test(bugunY), bugunY.slice(0, 200));
+  const bugunY2 = H.kocYanit("bugün ne çalışayım?", mctx);
+  ok("bugün: plan yoksa en öncelikli konuyu gerekçesiyle söyler", /en öncelikli iş/.test(bugunY2) && /neden|hata/i.test(bugunY2), bugunY2.slice(0, 240));
+
+  // Panel ile sohbet aynı sayı (tek hesap)
+  const kart = K.kartlar(snap, { adet: 6 }).join(" ");
+  ok("panel ve sohbet aynı son neti yazar", /81,5/.test(kart) && /81,5/.test(netY));
+}
+
 console.log(`\nMesaj özelliği (Koçluk Hattı) testleri — ${gecen}/${gecen + kalan.length} geçti`);
 if (kalan.length) {
   console.error("\nBAŞARISIZ:");

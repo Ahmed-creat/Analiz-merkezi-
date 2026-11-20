@@ -82,8 +82,11 @@ console.log("\n== 1) Konu bitince DOĞRU yer söyleniyor ==");
 // ---------------------------------------------------------------
 console.log("\n== 2) 'Son deneme' TARİHE göre ==");
 {
-  const govde = fonksiyonAl("examStats");
+  // v102 — examStats artık neti examNetDeger() ile DOĞRULAR (kayıtta net yoksa
+  // D/Y'den hesaplar, ikisi de yoksa seriye katmaz); yardımcı da birlikte koşar.
+  const govde = fonksiyonAl("examNetDeger") + "\n" + fonksiyonAl("examStats");
   const sb = {
+    netOf: (d, w) => (Number(d) || 0) - (Number(w) || 0) / 4,
     state: {
       exams: [
         { name: "Ekim", date: "2026-10-10", net: 40 },   // eski tarih, önce kayıtlı
@@ -98,6 +101,30 @@ console.log("\n== 2) 'Son deneme' TARİHE göre ==");
   ok("son deneme = tarihi en yeni olan (60)", sb.st.last === 60, String(sb.st.last));
   ok("seri tarihe göre sıralı", sb.st.series.map(x => x.date).join(",") === "2026-10-10,2026-11-01,2026-11-15",
     sb.st.series.map(x => x.date).join(","));
+
+  // v102 — UYDURMA SIFIR YOK: neti de D/Y'si de olmayan deneme seriye/ortalamaya
+  // girmez; D/Y varsa net ondan hesaplanır (0 net gibi sayılmaz).
+  const kod = fonksiyonAl("examNetDeger") + "\n" + fonksiyonAl("examStats");
+  const kos = (exams) => {
+    const b = { netOf: (d, w) => (Number(d) || 0) - (Number(w) || 0) / 4, state: { exams }, parseDay: s => new Date(String(s).slice(0, 10) + "T00:00:00") };
+    vm.createContext(b);
+    vm.runInContext(kod + "\nthis.st = examStats();", b);
+    return b.st;
+  };
+  const karisik = kos([
+    { name: "Netsiz", date: "2026-11-05", lessons: {} },
+    { name: "DY", date: "2026-11-10", lessons: { "Matematik": { d: 10, w: 4, e: 0 } } },
+    { name: "Kayitli", date: "2026-11-01", net: 40 }
+  ]);
+  ok("netsiz deneme seriye GİRMEZ", karisik.series.length === 2, JSON.stringify(karisik.series.map(x => x.name)));
+  ok("D/Y olan deneme neti hesaplanır (9)", karisik.series.some(x => x.name === "DY" && x.net === 9), JSON.stringify(karisik.series));
+  ok("ortalama yalnız gerçek netlerle (24,5)", karisik.avg === 24.5, String(karisik.avg));
+  ok("son net tarihe göre DY (9)", karisik.last === 9, String(karisik.last));
+  ok("kayıt sayısı toplam denemeyi korur (3)", karisik.count === 3, String(karisik.count));
+
+  const hepsiNetsiz = kos([{ name: "A", date: "2026-11-05", lessons: {} }, { name: "B", date: "2026-11-06" }]);
+  ok("hiç geçerli net yoksa seri BOŞ (0 noktası uydurulmaz)", hepsiNetsiz.series.length === 0);
+  ok("hiç geçerli net yoksa ortalama 0'a bölünmez", hepsiNetsiz.avg === 0 && hepsiNetsiz.best === 0);
 }
 
 // ---------------------------------------------------------------

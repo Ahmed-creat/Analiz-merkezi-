@@ -29,7 +29,7 @@
     "test:gorsel": "node tests/gorsel-video.test.js",
     "test:yuk": "node tests/okz-yuk.test.js",
     "test:konubulma": "node tests/konu-bulma.test.js",
-    "test:hepsi": "npm run -s test:sw && npm run -s test:v78 && npm run -s test:kapsam && npm run -s test:tekyol && npm run -s test:tekgorev && npm run -s test:okzden && npm run -s test:olukod && npm run -s test:okzbekle && npm run -s test:tekkaynak && npm run -s test:kalduz && npm run -s test:kartflash && npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:tekrar && npm run -s test:havuzsuz && npm run -s test:v77 && npm run -s test:mesaj && npm run -s test:v86 && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk && npm run -s test:konubulma && npm run -s test:kokeksik && npm run -s test:v87 && npm run -s test:v88 && npm run -s test:v89 && npm run -s test:v90 && npm run -s test:v92 && npm run -s test:v93 && npm run -s test:v94 && npm run -s test:v95 && npm run -s test:v96 && npm run -s test:bildirim && npm run -s test:davranis && npm run -s test:v42 && npm run -s test:dom && npm run -s test:v44 && npm run -s test:tymm && npm run -s test:meb && npm run -s test:uretim && npm run -s test:deneme",
+    "test:hepsi": "npm run -s test:sw && npm run -s test:v78 && npm run -s test:kapsam && npm run -s test:tekyol && npm run -s test:tekgorev && npm run -s test:okzden && npm run -s test:olukod && npm run -s test:okzbekle && npm run -s test:tekkaynak && npm run -s test:kalduz && npm run -s test:kartflash && npm run -s test:ders && npm run -s test:okz && npm run -s test:bkt && npm run -s test:tekrar && npm run -s test:havuzsuz && npm run -s test:v77 && npm run -s test:koc && npm run -s test:mesaj && npm run -s test:v86 && npm run -s test:kuyruk && npm run -s test:birlestir && npm run -s test:gorsel && npm run -s test:yuk && npm run -s test:konubulma && npm run -s test:kokeksik && npm run -s test:v87 && npm run -s test:v88 && npm run -s test:v89 && npm run -s test:v90 && npm run -s test:v92 && npm run -s test:v93 && npm run -s test:v94 && npm run -s test:v95 && npm run -s test:v96 && npm run -s test:bildirim && npm run -s test:davranis && npm run -s test:v42 && npm run -s test:dom && npm run -s test:v44 && npm run -s test:tymm && npm run -s test:meb && npm run -s test:uretim && npm run -s test:deneme",
     "test:konu": "node tests/okz-konu.test.js && node tests/okz-konu-entegrasyon.test.js",
     "okz:olcum": "node scripts/okz-esleme-olcum.js",
     "esleme:uret": "node scripts/konu-esleme-uret.js",
@@ -57,7 +57,7 @@
     "okz:kapsam": "node scripts/okz-kapsam-denetle.js",
     "test:havuzsuz": "node tests/havuzsuz-konu.test.js",
     "test:v77": "node tests/v77-duzeltmeler.test.js",
-    "test:sw": "node --check site/bkt-engine.js && node --check site/kart.js && node --check site/app-pwa.js && node --check site/sw.js && node tests/sw-liste.test.js",
+    "test:sw": "node --check site/koc.js && node --check site/bkt-engine.js && node --check site/kart.js && node --check site/app-pwa.js && node --check site/sw.js && node tests/sw-liste.test.js",
     "test:tekrar": "node tests/tekrar-merdiveni.test.js",
     "test:v78": "node tests/v78-9sinif.test.js",
     "test:kapsam": "node docs/uretim/araclar/konu-havuz-kapsam.js && node tests/konu-havuz-kapsam.test.js",
@@ -77,7 +77,8 @@
     "test:v93": "node tests/v93-uc-saha-hatasi.test.js && node tests/v93-saha-testi.test.js && node tests/v93b-yerel-bildirim-ikoni.test.js && node tests/dom/dom-v93-uc-duzeltme.test.js",
     "test:v94": "node tests/v94-mazmun-soz-sanatlari.test.js",
     "test:v95": "node tests/v95-hazirlik-plani.test.js",
-    "test:v96": "node tests/v96-tekrar-takvim.test.js"
+    "test:v96": "node tests/v96-tekrar-takvim.test.js",
+    "test:koc": "node tests/koc.test.js"
   },
   "devDependencies": {
     "jsdom": "^24.0.0"

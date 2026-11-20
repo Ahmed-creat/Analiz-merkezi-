@@ -66,6 +66,8 @@ const document_ = {
 
 const depo = {};
 const window_ = {
+  // v102 — panel gibi sohbet de KOC_MOTOR'dan beslenir (tek hesap).
+  KOC_MOTOR: require(path.join(KOK, "site", "koc.js")),
   document: document_,
   localStorage: {
     getItem: (k) => (k in depo ? depo[k] : null),
@@ -129,6 +131,7 @@ ok("yazılan mesaj balonu eklendi", benim.length === 1 && benim[0].textContent =
 ok("mesaj gönderildikten sonra giriş temizlenir", girdi.value === "");
 ok("koç yanıtı geldi", robot.length === 2, robot.length + " robot balonu");
 ok("yanıt gerçek veriden (net 97,25)", /97,25/.test(govde.textContent), govde.textContent.slice(-120));
+ok("yanıt KOÇLUK MOTORU raporundan gelir (tek hesap)", /Net analizin \(kendi kayıtlarından\)/.test(govde.textContent), govde.textContent.slice(-200));
 ok("yanıt deneme adını içerir", /MAARİF İZLEME 1/.test(govde.textContent));
 
 // ---- Kalıcılık ----

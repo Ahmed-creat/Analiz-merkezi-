@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261027-v101-hatali-tekrar";
+const CACHE = "analiz-merkezi-v-20261027-v102-kocluk-motoru";
 const ASSETS = [
   "./index.html",
   "./manifest.json",
@@ -12,6 +12,7 @@ const ASSETS = [
   "./icons/icon-512.png",
   "./firebase-config.js",
   "./supabase-config.js",
+  "./koc.js",       // v102 — koçluk motoru (mesaj.js'den önce yüklenir)
   "./mesaj.js",
   "./okz-normalize.js",
   "./okz-konu.js",

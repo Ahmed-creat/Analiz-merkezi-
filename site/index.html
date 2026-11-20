@@ -2791,11 +2791,29 @@ function skyaRate() {
 // Net istatistikleri, Haftalık İvme, okuma analizi, koç mesajları
 // ============================================================
 
+/* v102 — VERİ DOĞRULAMA (kullanıcı: "deneme sonuçlarını gerçekten uygulama
+   kayıtlarından almalı"). Eskiden `e.net || 0` yazıyordu: neti girilmemiş bir
+   deneme 0 net gibi ortalamaya/grafiğe giriyordu (uydurma sayı). Artık:
+     • kayıtta net varsa o kullanılır,
+     • yoksa D/Y'den hesaplanır (kayıt gerçek, hesap şeffaf),
+     • ikisi de yoksa deneme seriye/ortalamaya KATILMAZ. */
+function examNetDeger(e) {
+  if (!e) return null;
+  const ham = (e.net === null || e.net === undefined) ? "" : String(e.net).trim().replace(",", ".");
+  if (ham !== "" && isFinite(Number(ham))) return Number(ham);
+  let d = 0, w = 0;
+  Object.keys(e.lessons || {}).forEach(k => {
+    const v = e.lessons[k] || {};
+    d += Number(v.d) || 0; w += Number(v.w) || 0;
+  });
+  return (d + w) > 0 ? Math.round(netOf(d, w) * 100) / 100 : null;
+}
 function examStats() {
   const exams = state.exams;
   if (!exams.length) return { count: 0, avg: 0, best: 0, last: 0, series: [] };
-  const nets = exams.map(e => e.net || 0);
-  const series = exams.slice().sort((a, b) => (parseDay(a.date) || 0) - (parseDay(b.date) || 0)).map(e => ({ name: e.name, net: e.net || 0, date: e.date }));
+  const gecerli = exams.filter(e => examNetDeger(e) !== null);
+  const nets = gecerli.map(examNetDeger);
+  const series = gecerli.slice().sort((a, b) => (parseDay(a.date) || 0) - (parseDay(b.date) || 0)).map(e => ({ name: e.name, net: examNetDeger(e), date: e.date }));
   /* G-11 — KULLANICI: "son deneme" yanlış denemeyi gösteriyordu. Kök neden:
      `nets[nets.length - 1]` KAYIT SIRASINI kullanıyordu; Okulizyon'dan geriye
      dönük çekilen bir deneme listeye sonra eklendiği için "son deneme" o
@@ -2803,8 +2821,8 @@ function examStats() {
   const sonNet = series.length ? series[series.length - 1].net : 0;
   return {
     count: exams.length,
-    avg: Math.round((nets.reduce((s, n) => s + n, 0) / nets.length) * 100) / 100,
-    best: Math.max.apply(null, nets),
+    avg: nets.length ? Math.round((nets.reduce((s, n) => s + n, 0) / nets.length) * 100) / 100 : 0,
+    best: nets.length ? Math.max.apply(null, nets) : 0,
     last: sonNet,
     series
   };
@@ -2813,7 +2831,10 @@ function examStats() {
 // Haftalık İvme Hedefi (Momentum): (HedefNet - MevcutOrt) / SınavaKalanHafta
 function weeklyMomentum() {
   const st = examStats();
-  if (!state.plan.targetDate || !state.plan.targetNet || st.count === 0) return null;
+  // v102 — VERİ DOĞRULAMA: neti/D-Y'si olmayan deneme 0 net gibi kullanılmaz.
+  // (Eskiden st.count>0 yetiyordu; netsiz tek deneme "0 netten 95'e" gibi
+  // uydurma bir ivme üretiyordu.)
+  if (!state.plan.targetDate || !state.plan.targetNet || !st.series.length) return null;
   const dl = daysLeftToExam();
   if (dl === null) return null;
   /* v99 — KULLANICI (ekran görüntüsü): "İvme Ölçer +4.08 diyor, tekrarda
@@ -2860,9 +2881,12 @@ function readingStats() {
 function cognitiveTrend() {
   const exams = state.exams.slice().sort((a, b) => (parseDay(a.date) || 0) - (parseDay(b.date) || 0));
   if (exams.length < COGNITIVE_CORR_MIN_EXAMS) return { ready: false, n: exams.length };
-  const half = Math.floor(exams.length / 2);
-  const firstAvg = avg(exams.slice(0, half).map(e => e.net || 0));
-  const lastAvg = avg(exams.slice(half).map(e => e.net || 0));
+  /* v102 — netsiz deneme 0 net sayılmaz (examNetDeger: kayıt → D/Y → yok). */
+  const yarim = Math.floor(exams.length / 2);
+  const ilkNets = exams.slice(0, yarim).map(examNetDeger).filter(n => n !== null);
+  const sonNets = exams.slice(yarim).map(examNetDeger).filter(n => n !== null);
+  const firstAvg = avg(ilkNets);
+  const lastAvg = avg(sonNets);
   const readingUp = readingStats().pages > 0;
   return {
     ready: true, n: exams.length,
@@ -2884,37 +2908,40 @@ function goldenHourTopics(limit) {
 }
 
 // Koçluk Hattı mesajları (dinamik analiz)
+/* v102 — KOÇLUK HATTI (panel): metinler artık BURADA üretilmez.
+   Tek kaynak site/koc.js (KOC_MOTOR). Sohbet katmanı (mesaj.js) da aynı
+   snapshot + raporu kullanır → panel ile sohbet aynı sayıyı söyler.
+   Kullanıcı şartı: sınav tarihi / hedef net / deneme netleri GERÇEK
+   kayıtlardan; veri yoksa sayı uydurulmaz, adıyla söylenir. */
+function kocEk() {
+  const okz = state.okulizyon || {};
+  let hazirlik = [];
+  try { hazirlik = (typeof hazirlikPlani === "function") ? hazirlikPlani() : []; } catch (e) { hazirlik = []; }
+  let bekleyen = 0;
+  try { bekleyen = (typeof okzBekleyenSatirlar === "function") ? okzBekleyenSatirlar() : 0; } catch (e) { bekleyen = 0; }
+  const okuma = state.reading || {};
+  return {
+    ad: (state.user && state.user.name) || "",
+    sinif: (state.user && state.user.grade) || "",
+    hazirlik: hazirlik,
+    okulizyon: { bekleyen: bekleyen, durum: okz.durum || null },
+    ayt: (typeof aytWeightOf === "function") ? aytWeightOf : null,
+    memCritical: (typeof MEMORY_CRITICAL === "number") ? MEMORY_CRITICAL : 20,
+    kalanGun: (typeof daysLeftToExam === "function") ? daysLeftToExam() : null,
+    okuma: { sayfa: Number(okuma.sayfa || okuma.pages || 0), dakika: Number(okuma.dakika || okuma.minutes || 0) }
+  };
+}
+function kocSnapshot() {
+  const motor = (typeof window !== "undefined" && window.KOC_MOTOR) || null;
+  if (!motor || typeof motor.snapshot !== "function") return null;
+  try { return motor.snapshot(state, todayStr(), kocEk()); } catch (e) { return null; }
+}
 function coachMessages() {
-  const msgs = [];
-  const st = examStats();
-  const rs = readingStats();
-  if (state.user.name) {
-    const r = RHYTHMS.find(x => x.key === state.plan.rhythm);
-    msgs.push("<b>" + (r ? r.coach : "Merhaba") + ", " + esc(state.user.name) + "!</b> Sistem mesajları hazır.");
-  }
-  if (st.count >= 3) {
-    const last3 = state.exams.slice(-3).map(e => e.net || 0);
-    const trend = last3[last3.length - 1] - last3[0];
-    const mathNets = state.exams.slice(-3).map(e => e.lessons && e.lessons["Matematik"] ? netOf(e.lessons["Matematik"].d, e.lessons["Matematik"].w) : null).filter(v => v !== null);
-    if (mathNets.length === 3) {
-      const mAvg = Math.round(avg(mathNets) * 100) / 100;
-      msgs.push("Son 3 denemede Matematik netlerin <b>" + mAvg + "</b> seviyesinde. " + (mAvg >= 10 ? "Gümüş seviyeye yükseldin, böyle devam!" : "Temel eksikleri Konu Takibi'nde önceliklendiriyorum."));
-    }
-    msgs.push("Net eğilimin: <b>" + (trend >= 0 ? "+" : "") + Math.round(trend * 100) / 100 + "</b> puan. " + (trend >= 0 ? "İvme pozitif." : "Küçük bir tekrar planı gerekiyor."));
-  } else if (st.count > 0) {
-    msgs.push("En az 3 deneme girince trend analizini açarım. Şu an " + st.count + " kayıt var.");
-  }
-  const skya = skyaRate();
-  if (skya > 30) msgs.push("Soruların <b>%" + Math.round(skya) + "</b>'inde çözüm yolunu bulamıyorsun. Önce çözümlü örneğe bak, sonra benzer soruyu kendin çöz (Kitaplık önerisine bak).");
-  const ms = memoryStats();
-  if (ms.critical > 0) msgs.push("<b>" + ms.critical + " konu</b> kritik hafıza eşiğinin (%20) altında. ACİL TEKRAR butonları Konu Takibi'nde seni bekliyor.");
-  if (rs.pages === 0 && daysSince(state.user.joined) > 3) msgs.push("Kitap okumadığın için %100 odak potansiyeline ulaşamıyorsun. Günde 15 dakikayla başla.");
-  const dl = daysLeftToExam();
-  if (dl !== null) {
-    const mom = weeklyMomentum();
-    msgs.push("Sınava <b>" + dl + " gün</b> kaldı." + (mom ? " Gereken ivme: haftada <b>+" + mom.weekly + "</b> net." : ""));
-  }
-  return msgs.slice(0, 5);
+  const motor = (typeof window !== "undefined" && window.KOC_MOTOR) || null;
+  if (!motor) return ["<b>Koç hazır değil.</b> koc.js yüklenemedi; sayfayı yenileyince tekrar dener."];
+  const snap = kocSnapshot();
+  if (!snap) return ["<b>Koç verileri okuyamadı.</b> Kayıtlar bozuk olabilir; sayfayı yenile."];
+  return motor.kartlar(snap, { adet: 6 });
 }
 
 // ============================================================
@@ -6381,16 +6408,19 @@ function hazirlikGunSeti(n, kalanGun, kaynak) {
 function denemeIvmesi() {
   const p = state.plan || {};
   const hedef = Number(p.targetNet) || 0;
+  /* v102 — VERİ DOĞRULAMA: net yalnız `e.net` değil, D/Y'den de çözülür
+     (examNetDeger). Netsiz deneme seriye girmez; ivme 0'dan uydurulmaz. */
   const liste = (Array.isArray(state.exams) ? state.exams : [])
-    .filter(e => e && e.date && e.net != null && !isNaN(Number(e.net)))
-    .slice().sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+    .map(e => ({ e: e, net: examNetDeger(e) }))
+    .filter(x => x.e && x.e.date && x.net != null && !isNaN(Number(x.net)))
+    .sort((a, b) => (a.e.date < b.e.date ? -1 : a.e.date > b.e.date ? 1 : 0));
   const son = liste.length ? liste[liste.length - 1] : null;
   const onceki = liste.length > 1 ? liste[liste.length - 2] : null;
   const sonNet = son ? Math.round(Number(son.net) * 100) / 100 : null;
   const oncekiNet = onceki ? Math.round(Number(onceki.net) * 100) / 100 : null;
   let olculenIvme = null;
   if (son && onceki) {
-    const gun = Math.round((parseDay(son.date) - parseDay(onceki.date)) / 86400000);
+    const gun = Math.round((parseDay(son.e.date) - parseDay(onceki.e.date)) / 86400000);
     if (gun > 0) olculenIvme = Math.round(((sonNet - oncekiNet) * 7 / gun) * 100) / 100;
   }
   const bugunD = parseDay(todayStr());
@@ -6411,7 +6441,7 @@ function denemeIvmesi() {
   }
   return {
     hedef: hedef, sonNet: sonNet, oncekiNet: oncekiNet,
-    sonTarih: son ? son.date : null,
+    sonTarih: son ? son.e.date : null,
     netFark: (sonNet != null && oncekiNet != null) ? Math.round((sonNet - oncekiNet) * 100) / 100 : null,
     olculenIvme: olculenIvme, kalanGun: kalanGun, kalanHafta: kalanHafta,
     gerekenNet: gerekenNet, gerekenIvme: gerekenIvme,
@@ -8316,6 +8346,9 @@ document.addEventListener("DOMContentLoaded", function () {
      window.AnalizBKT API'sini kurar; kendi IIFE'sinde çalışır, sayfayı düşürmez. -->
 <script src="bkt-engine.js" defer></script>
 <script src="kart.js" defer></script>
+<!-- v102 — KOÇLUK MOTORU: sınav tarihi / hedef net / deneme netleri ve hata
+     nedenleri TEK yerden okunur; panel ile sohbet aynı sayıyı gösterir. -->
+<script src="koc.js"></script>
 <script src="mesaj.js"></script>
 <script type="module" src="app-pwa.js"></script>
 </body>
