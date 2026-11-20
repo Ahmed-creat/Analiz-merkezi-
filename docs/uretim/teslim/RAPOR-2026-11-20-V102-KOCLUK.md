@@ -100,8 +100,8 @@ gerekçe daima **sayıyla** konuşur.
 
 ```
 npm run test:koc         # 116 kontrol (yeni)
-npm run test:mesaj       # 58 + 23 (motor köprüsü eklendi)
-npm run test:kalduz      # 41 (netsiz deneme seriye girmez)
+npm run test:mesaj       # 63 + 23 (motor köprüsü eklendi)
+npm run test:kalduz      # 46 (netsiz deneme seriye girmez + cognitiveTrend)
 npm run test:v96         # 169 (ivme/plan aynı sayı)
 npm run test:hepsi       # tamamı: EXIT 0
 ```
@@ -124,3 +124,15 @@ raporu; ayrıca `NEDEN_TABLO` anahtarlarının `index.html`
 - `tests/koc.test.js` (yeni), `tests/mesaj.test.js`, `tests/mesaj-ui.test.js`,
   `tests/v78-kalan-duzeltmeler.test.js`, `tests/v96-tekrar-takvim.test.js`
 - `onizleme-koc-v102.html` — gerçek modüllerle üretilmiş önizleme
+- `docs/MESAJ-OZELLIGI.md` — özelliğin ne olduğu, veri kaynakları, kural ve testler
+
+## Ek (kapanış yamaları)
+
+- **Yeni niyet: "bu hafta ne yapmalıyım?"** — `rapor.oneriler` maddeleri
+  numaralı, her biri **Gerekçe:** + **→ aksiyon** ile yazılır; "bugün ne
+  çalışayım" (tek gün) ile karışmaz. Veri yoksa öneri uydurulmaz, eksik veri
+  başlıkları listelenir. Yardım listesi de bu komutu gösterir.
+- **cognitiveTrend testi eklendi** (`tests/v78-kalan-duzeltmeler.test.js`, 41→46):
+  netsiz deneme ortalamaya 0 olarak girmez, iki yarı da boşsa trend 0 kalır
+  (NaN/Infinity yok), eşik 5 altında `ready:false` — eşik gevşetilmedi.
+- `npm run test:hepsi` → **EXIT 0** (tüm yamalardan sonra).
