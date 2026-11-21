@@ -2117,7 +2117,10 @@ function sikistirVeYaz() {
 function cikistaYerelTemizle() {
   try {
     ["analizmerkezi_v6", "analizmerkezi_v5", "am_tanitim_v41",
-     "am_geri_bildirim_kuyruk", "am_okz_islenen_v1", "am_bkt_panel_acik"].forEach(function (k) {
+     "am_geri_bildirim_kuyruk", "am_okz_islenen_v1", "am_bkt_panel_acik",
+     // v108 — kurulum işareti ve kilit sarma kaydı da bu cihazdan silinir;
+     // aksi hâlde başka hesap "kurulum tamam" sanıp paneli hiç görmez.
+     "am_kurulum_tam_v1", "am_kasa_sarma_v1", "am_kasa_yon_v1"].forEach(function (k) {
       localStorage.removeItem(k);
     });
     // Sınıf bazlı arşivler (analizmerkezi_v6_g9/g10) + Okulizyon önbellekleri

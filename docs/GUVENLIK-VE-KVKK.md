@@ -119,12 +119,18 @@ Kuruldu ve canlıda denendi.
 | **P1** | KVKK paketi: veli bilgilendirme + izin adımı + "verilerimi sil" düğmesi + otomatik silme süresi | Şu an hiç yok; hukuki yükümlülük |
 | **P1** | Okulizyon **devir** akışı (kod ile) | Numara el değiştirince çıkmaz sokak |
 | **P2** | Sunucu ayarları panelden: şifre politikası (en az 8 karakter + sızmış şifre denetimi + robot koruması) | Benim araçlarım bu üç alanı değiştiremiyor; panelden yapılmalı |
-| ✅ | ~~Kullanıcıyı kasayı açmaya yönlendirme~~ → **v107'de yapıldı** (§6d) | Kasa kapalıyken veri düz durur |
+| ✅ | ~~Kullanıcıyı kasayı açmaya yönlendirme~~ → **v108'de ZORUNLU yapıldı** (§6d) | Kilit kurulmadan uygulama açılmıyor |
 | **P3** | Erişim günlüğü (kim, ne zaman veriye baktı) | Denetim izi |
 
 ---
 
-## 6a. KASA (v106) — "benim görmemem" gerçekten nasıl sağlanır
+## 6a. VERİ KİLİDİ (v106 → v108) — "benim görmemem" gerçekten nasıl sağlanır
+
+> **Adlandırma (v108):** Kullanıcı *"kasa ne demek? Öğrenciye anlaşılır bir terim
+> kullan"* dedi. Kod içindeki adlar (`kasa.js`, `kasaKur`) değişmedi; **kullanıcıya
+> görünen her metin** artık şöyle: **"giriş şifresi"**, **"verilerini kilitle"**,
+> **"12 kelimelik anahtar"**. "Kasa" kelimesi arayüzde geçmiyor — `tests/kurulum-v108`
+> ve `tests/v107-*` bunu otomatik denetliyor.
 
 **Soru:** "Ad soyad, sınav sonuçları, hedef, plan takibi, kitaplar bunları neden
 şifrelenmiyor?"
@@ -243,29 +249,42 @@ Ayrımı net yapmak gerekiyor; ikisi ayrı hukuk alanı:
 
 ---
 
-## 6d. Kasa kurulum yönlendirmesi (v107)
+## 6d. ZORUNLU İLK KURULUM (v108)
 
-**Sorun:** kasa vardı ama kimse kurmuyordu. Profildeki kırmızı yazı yalnız
-pencereyi açan kullanıcıya görünüyordu; çoğu kullanıcı hiç açmıyordu.
-Ölçüm: **5 hesabın 5'i kasasız**.
+**Sorun (v107):** kasa vardı ama kurulum **isteğe bağlıydı** — «Sonra» deyip
+3 gün susturulabiliyordu. Ölçüm: **5 hesabın 5'i kasasız**, yani veriler düz metin.
 
-**Çözüm (canlı, v107):** giriş yapan ve kasası **olmayan** herkese, girişten
-~4 sn sonra **adım adım kurulum penceresi** çıkar:
+**Kullanıcı isteği (v108):** *"Yeni kayıtta zorunlu değil mi? Uygulamaya ilk
+girişte direk kayıt/giriş ekranı açılmalı. Öğrenci e-posta/şifreyle kaydolsun,
+sonra direk bilgi paneli gelsin: ad soyad, sınıf, il, ilçe, okul, okul no —
+ve o kurtarma anahtarını seçer."*
 
-1. En az 8 karakterlik kasa şifresi seç (başka yerde kullanmadığın).
-2. «Kasayı kur ve aç».
-3. Çıkan **12 kelimelik kurtarma anahtarını** kâğıda yaz / indir.
+**Çözüm (canlı, v108):** üç kapı, hepsi **zorunlu**:
 
-- «Sonra» → **3 gün** susar. Kurarsa bir daha çıkmaz. Günde en fazla bir kez.
-- Okulizyon çekimi başlarken de bir kez uyarı verilir (kasa yoksa).
-- Kasa **kapalı/kilitli** ise uyarı gizlenmez, kırmızı yazılır (v106).
-- Kurulumun tek yolu var (`kasaKurVeAnahtar`): profil düğmesi ve bu pencere
+1. **İlk açılış:** oturum yoksa giriş/kayıt ekranı **kendiliğinden** açılır.
+   Çarpı gizlenir, arka plana tıklama kapatmaz. (Hesabı olmayan kaydolur;
+   e-posta onayı açıksa Supabase onay bağlantısı gönderir.)
+2. **Kayıttan hemen sonra** tek panel açılır — **çarpısı yok**:
+   - **Adım 1 — Bilgiler:** ad soyad, okul no, sınıf, il, ilçe, okul.
+     İl/ilçe/okul **Okulizyon listelerinden** yazarak seçilir (liste gelmezse
+     ad elle yazılır). Eksik alanla «Devam» geçmez.
+   - **Adım 2 — Giriş şifresi:** en az 8 karakter, iki kez. Kilit **burada**
+     kurulur (`kasaKurVeAnahtar` → PBKDF2 310.000 + AES-256-GCM). Şifre
+     sunucuya gitmez.
+   - **Adım 3 — 12 kelimelik anahtar:** ekranda gösterilir, indirilebilir.
+     «Kâğıda yazdım» işaretlenmeden «Bitir» **çalışmaz**.
+3. **Sonraki açılışlarda** kilit yoksa aynı panel (önceden erteleme yok).
+
+- Kurulum tek yoldan yürür (`kasaKurVeAnahtar`): panel ve profildeki düğme
   **aynı** kodu kullanır — iki farklı davranış olamaz.
+- Okulizyon çekimi başlarken de bir kez uyarı verilir (kilit yoksa).
+- Kilit **kapalı/kilitli** ise uyarı gizlenmez, kırmızı yazılır (v106).
+- Çıkışta cihazdaki `am_kurulum_tam_v1` işareti de silinir (başka hesap
+  "kurulum tamam" sanıp paneli atlamasın).
 
-**Kurmazsa ne olur (dürüst):** uygulama çalışır, Okulizyon çekimi çalışır, ama
-ad soyad / sınav sonuçları / plan / kitaplar `app_states` içinde **düz metin**
-durur — veritabanına erişen okur. Okulizyon **sonuçları** ise v107'den sonra
-hiçbir hâlde sunucuda tutulmaz.
+**Kurmazsa ne olur (dürüst):** v108'den sonra bu yol **kapalı** — giriş yapan
+kullanıcı paneli tamamlamadan uygulamanın içine geçemez. Çevrimdışıysa (Supabase
+SDK yok) uygulama yerel çalışmaya devam eder, giriş ekranı zorlanmaz.
 
 **Kurarsa bedeli:** kasa şifresi **ve** kurtarma anahtarı kaybolursa veri
 kurtarılamaz (sunucu açamaz). Bildirim ve geri bildirim metinleri kasaya girmez
@@ -291,6 +310,10 @@ yazıyor ("… adresine onay bağlantısı gönderdik — bağlantıya tıklamad
 - `site/kasa.js` — **v106 kasa**: AES-256-GCM + PBKDF2(310.000) + 12 kelimelik kurtarma
 - `tests/guvenlik-v103.test.js` — **68 kontrol**; düzeltmeler geri gelirse test kırmızı olur
 - `tests/kasa-v106.test.js` — **42 kontrol** (kripto gerçekten koşturulur)
+- `tests/kurulum-v108.test.js` — **20 kontrol**; zorunlu panel GERÇEKTEN koşturulur
+  (eksik bilgiyle geçiş yok, kısa/uyuşmayan şifre reddi, onaysız bitmez)
+- `site/app-pwa.js` — **v108**: “kasa” jargonu arayüzden kaldırıldı (giriş şifresi /
+  verilerini kilitle / 12 kelimelik anahtar); ilk açılışta zorunlu giriş/kayıt ekranı
 - `tests/v107-sonuc-saklanmaz.test.js` — **43 kontrol** (sunucu yazmıyor · istemci yanıttan alıyor · kurulum yönlendirmesi)
 - `tests/v78-kalan-duzeltmeler.test.js` — kaldırılan "Kondisyon Eğilimi" geri gelirse kırmızı olur
 - `npm run test:guvenlik` · `npm run test:kasa` · `npm run test:v107` · tamamı: `npm run test:hepsi` (EXIT 0)

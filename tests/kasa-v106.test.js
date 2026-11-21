@@ -134,9 +134,9 @@ globalThis.localStorage = {
     ok("kasa kilitli durumu Türkçe açıklanıyor", /"kasa-kilitli":/.test(APP));
 
     // arayüz
-    ok("profilde KASA bölümü var", /KASA \(UÇTAN UCA ŞİFRELEME\)/.test(APP));
+    ok("profilde veri kilidi bölümü var", /VERİ KİLİDİ \(UÇTAN UCA ŞİFRELEME\)/.test(APP));
     ok("kasa kapalıyken DÜRÜST uyarı yazıyor (gizlenmiyor)", /KAPALI — veri sunucuda DÜZ duruyor/.test(APP));
-    ok("kurtarma anahtarı indirilebiliyor", /kurtarma-anahtari\.txt/.test(APP));
+    ok("anahtar kelimeleri indirilebiliyor", /anahtar-kelimeleri\.txt/.test(APP));
     ok("kasa şifresi sunucuya gönderilmiyor (yalnız kasaAc'a veriliyor)",
       !/supabase[\s\S]{0,80}kasaSifre/.test(APP) && !/body:[\s\S]{0,40}kasaSifre/.test(APP));
   }
@@ -156,7 +156,7 @@ globalThis.localStorage = {
     const APP = oku("site/app-pwa.js"), SW = oku("site/sw.js");
     const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
     const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-    ok("PWA_SURUM v107 (kasa sürümü korunuyor)", /^v107/.test(surum), surum);
+    ok("PWA_SURUM v108 (kasa sürümü korunuyor)", /^v108/.test(surum), surum);
     ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
     ok("kasa.js çevrimdışı önbellekte", /"\.\/kasa\.js"/.test(SW));
   }

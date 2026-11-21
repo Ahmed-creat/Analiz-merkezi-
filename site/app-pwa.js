@@ -1,4 +1,4 @@
-const PWA_SURUM = "v107-sonuc-saklanmaz";
+const PWA_SURUM = "v108-zorunlu-kurulum";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -155,7 +155,7 @@ function initAuthUI() {
     else if (a === "kasaKilitle") {
       try { window.__kasa.kilitle(); } catch (e) { }
       renderProfileModal();
-      toast("Kasa kilitlendi. Bulut kaydı bir sonraki açılışta şifre ister.", "info");
+      toast("Kilitlendi. Bulut kaydın bir sonraki açılışta giriş şifreni ister.", "info");
     }
     else if (a === "openProfile") openProfileModal();
     else if (a === "syncNow") { if (typeof window.__supabaseSenkronizeEt === "function") { window.__supabaseSenkronizeEt(); toast("Buluta yedekleniyor…", "info"); } }
@@ -304,7 +304,7 @@ function buildAuthModal() {
     <div style="width:100%;max-width:380px;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
         <div style="font-weight:800;font-size:18px;">Bulut Hesabı</div>
-        <button data-act="pwaAuthClose" style="background:none;border:0;cursor:pointer;font-size:20px;line-height:1;color:inherit;">✕</button>
+        <button data-act="pwaAuthClose" id="pwa-auth-close" style="background:none;border:0;cursor:pointer;font-size:20px;line-height:1;color:inherit;">✕</button>
       </div>
       <div style="font-size:12.5px;opacity:0.75;margin-bottom:14px;">Giriş yapınca verilerin hesabına otomatik yedeklenir; başka cihazdan devam edebilirsin.</div>
       <input id="pwa-email" type="email" inputmode="email" autocomplete="email" placeholder="E-posta (ör. ad@gmail.com)"
@@ -322,7 +322,9 @@ function buildAuthModal() {
       <div id="pwa-auth-google-not" style="font-size:11.5px;margin-top:8px;color:#B45309;line-height:1.4;"></div>
       <div id="pwa-auth-msg" style="font-size:12.5px;margin-top:10px;min-height:16px;"></div>
     </div>`;
-  m.addEventListener("click", (e) => { if (e.target === m) closeAuthModal(); });
+  /* v108 — kullanıcı: "Uygulamaya ilk girişte direk kayıt/giriş ekranı açılsın."
+     Giriş yoksa pencere ZORUNLUDUR: çarpı ve arka plana tıklama kapatmaz. */
+  m.addEventListener("click", (e) => { if (e.target === m && !window.__amAuthZorunlu) closeAuthModal(); });
   document.body.appendChild(m);
 }
 function openAuthModal() {
@@ -354,7 +356,29 @@ function openAuthModal() {
   });
   setTimeout(() => { const em = document.getElementById("pwa-email"); if (em) em.focus(); }, 60);
 }
-function closeAuthModal() { const m = document.getElementById("pwa-auth-modal"); if (m) m.style.display = "none"; }
+function closeAuthModal() {
+  const m = document.getElementById("pwa-auth-modal");
+  if (m) m.style.display = "none";
+  window.__amAuthZorunlu = false;
+}
+/* Zorunlu giriş: kapatma yolu yok — hesabı olan giriş yapar, olmayan kaydolur. */
+function authZorunluAc() {
+  openAuthModal();
+  window.__amAuthZorunlu = true;
+  const m = document.getElementById("pwa-auth-modal");
+  const kapat = document.getElementById("pwa-auth-close");
+  if (kapat) kapat.style.display = "none";
+  if (m) {
+    const ilk = m.firstElementChild;
+    if (ilk && !document.getElementById("pwa-auth-zorunlu-not")) {
+      const n = document.createElement("div");
+      n.id = "pwa-auth-zorunlu-not";
+      n.style.cssText = "font-size:11.5px;line-height:1.45;margin-bottom:10px;padding:8px;border-radius:9px;background:rgba(29,78,216,0.08);border:1px solid rgba(29,78,216,0.25);";
+      n.textContent = "Devam etmek için giriş yap ya da yeni kayıt oluştur. Kayıt 1 dakika sürer.";
+      ilk.insertBefore(n, ilk.children[2] || null);
+    }
+  }
+}
 function authMsgYaz(t, hata) { const el = document.getElementById("pwa-auth-msg"); if (el) { el.textContent = t; el.style.color = hata ? "#E11D48" : "#16A34A"; } }
 
 // ---- 3b) PROFİL PENCERESİ: hesap (Supabase) + Okulizyon bağlantısı ----
@@ -766,114 +790,335 @@ function kasaSarmayiStateeYaz(sarma) {
 /* Kasa kurulumunun TEK yolu: anahtarı kur + kurtarma anahtarını hemen üret.
    (Profildeki düğme ve karşılama yönlendirmesi aynı yolu kullanır.) */
 async function kasaKurVeAnahtar(sifre) {
-  if (!sifre) return { ok: false, hata: "Kasa şifresini yaz." };
-  if (sifre.length < 8) return { ok: false, hata: "Kasa şifresi en az 8 karakter olmalı." };
+  if (!sifre) return { ok: false, hata: "Giriş şifreni yaz." };
+  if (sifre.length < 8) return { ok: false, hata: "Şifre en az 8 karakter olmalı." };
+  /* v108 — VERİ KAYBI KORUMASI. kasaKur YENİ tuz üretir: açık olmayan bir
+     kilidin üzerine "yeni kilit" kurulursa buluttaki eski şifreli kayıt bir
+     daha açılamaz. Bu yüzden mevcut kilit varsa kurulum yapılmaz; önce açılır. */
+  try {
+    if (KASA.kasaVarMi() && !KASA.kasaAcikMi()) {
+      return { ok: false, hata: "Bu hesapta zaten bir kilit var. Profil → «Kilidi aç» ile aç; yeni kilit kurmak eski kaydı açılmaz hâle getirir." };
+    }
+  } catch (e) { /* */ }
   const r = await window.__kasa.kur(sifre);
-  if (!r.ok) return { ok: false, hata: r.hata || "Kasa kurulamadı." };
+  if (!r.ok) return { ok: false, hata: r.hata || "Kilit kurulamadı." };
   // Kurtarma anahtarını HEMEN üret: şifre unutulursa tek çıkış yolu bu.
   const k = window.__kasa.kurtarmaUret();
   const sarma = await window.__kasa.kurtarmaSar(k);
   kasaSarmayiStateeYaz(sarma);
-  try { localStorage.removeItem(KASA_YON_KEY); } catch (e) { /* */ }
+  try { localStorage.removeItem("am_kasa_yon_v1"); } catch (e) { /* */ }   // v108: eski erteleme kalıntısı
   return { ok: true, kelimeler: k };
 }
 async function kasaKurTiklandi() {
   const el = document.getElementById("am-kasa-yeni");
   const sifre = (el && el.value || "").trim();
   const r = await kasaKurVeAnahtar(sifre);
-  if (!r.ok) return kasaNot(r.hata || "Kasa kurulamadı.", "hata");
+  if (!r.ok) return kasaNot(r.hata || "Kilit kurulamadı.", "hata");
   if (el) el.value = "";
   renderProfileModal();
   kasaKurtarmaGoster(r.kelimeler);
-  toast("Kasa kuruldu — bundan sonra buluta yalnız şifreli kayıt gider.", "success");
+  toast("Veri kilidi açıldı — bundan sonra buluta yalnız şifreli kayıt gider.", "success");
 }
 
-/* ---------- v107 KASA KURULUM YÖNLENDİRMESİ ----------
-   KULLANICI: "Kullanıcı kasayı nasıl kuracak, kurmazsa ne olur?"
-   Kasa KURULMAMIŞSA kimse kendiliğinden bulmuyordu: profil bölümü açılınca
-   görünen kırmızı yazı yetiyordu sanılıyordu. Artık giriş yapan her kullanıcıya
-   BİR KEZ, adım adım kurulum penceresi çıkar; "sonra" derse 3 gün susar,
-   kurarsa bir daha çıkmaz. Zorla kapatılamaz ama geçilebilir: yönlendirme,
-   veri kaybettirmez. */
-const KASA_YON_KEY = "am_kasa_yon_v1";
-const KASA_YON_GUN = 3;
-function kasaYonDurumu() {
-  try { return JSON.parse(localStorage.getItem(KASA_YON_KEY) || "null") || {}; } catch (e) { return {}; }
+/* v108 — zorunlu ilk kurulum tamamlandı işareti (cihaz başına). */
+const KURULUM_TAM_KEY = "am_kurulum_tam_v1";
+
+/* ---------- v108 İLK KURULUM (ZORUNLU) ----------
+   KULLANICI: "Kasaya ne gerek var, kasa ne demek? Yeni kayıtta bu adım zorunlu
+   değil mi? Öğrenci e-posta/şifreyle kaydolsun, sonra direk bilgi paneli gelsin:
+   ad soyad, sınıf, il, ilçe, okul, okul no — sonra kurtarma anahtarı."
+   TEK panel, ÜÇ adım, atlanamaz:
+     1) Bilgiler (bu adım olmadan çekim/plan kurulamaz)
+     2) Kilit şifresi (≥8) → veri CİHAZDA şifrelenir, sunucuya girilmez
+     3) 12 kelimelik anahtar (yazmadan "Devam" açılmaz)
+   Adım 3 bitmeden panel kapanmaz; çarpı düğmesi yoktur. */
+
+// Panelin kendi kimlik alanları (profil formundan ayrı; OKZ_SECIM'i ezmez).
+let KUR_IL = { ad: "", kod: "" };   // v108: seçim değişince yeniden atanır
+let KUR_ILCE = { il: "", ad: "", kod: "", liste: [] };
+let KUR_OKUL = { ilce: "", ad: "", kod: "", liste: [] };
+let KUR_SURUYOR = {};
+
+function kurKutu(deger) { return (deger || "").replace(/[<>&"]/g, function (c) { return { "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]; }); }
+function kurGirdi(deger) { return (deger || "").replace(/[<>&"]/g, function (c) { return { "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]; }); }
+
+/* Okulizyon listeleri: okulizyon-liste uç noktası (il → ilçe → okul).
+   Panel açıkken dönen liste doğrudan panele yazılır. */
+function kurListe(rol) {
+  const cfg = (typeof SUPABASE_CONFIG !== "undefined" && SUPABASE_CONFIG) ? SUPABASE_CONFIG : null;
+  if (!cfg || !cfg.url) return Promise.resolve([]);
+  let url = cfg.url + "/functions/v1/okulizyon-liste?mod=" + (rol === "okul" ? "okul" : rol);
+  if (rol === "ilce") url += "&ilkodu=" + encodeURIComponent(KUR_IL.kod);
+  if (rol === "okul") url += "&ilcekodu=" + encodeURIComponent(KUR_ILCE.kod);
+  const anahtar = rol === "il" ? "il" : (rol === "ilce" ? "ilce:" + KUR_IL.kod : "okul:" + KUR_ILCE.kod);
+  if (KUR_SURUYOR[anahtar]) return KUR_SURUYOR[anahtar];
+  KUR_SURUYOR[anahtar] = fetch(url, { headers: { apikey: cfg.anonKey } })
+    .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
+    .then(c => {
+      const liste = (c && Array.isArray(c.liste) ? c.liste : []).filter(x => x && x.ad && x.kod);
+      delete KUR_SURUYOR[anahtar];
+      return liste;
+    })
+    .catch(() => { delete KUR_SURUYOR[anahtar]; return []; });
+  return KUR_SURUYOR[anahtar];
 }
-function kasaYonErtele(gun) {
-  try { localStorage.setItem(KASA_YON_KEY, JSON.stringify({ sonra: Date.now(), gun: gun || KASA_YON_GUN })); } catch (e) { /* */ }
+
+function kurSecimHtml(id, etiket, ipucu, deger, bekle) {
+  return '<label style="font-size:11.5px;opacity:0.85;display:block;">' + etiket +
+    '<input id="' + id + '" type="text" autocomplete="off" spellcheck="false" value="' + kurGirdi(deger) + '"' +
+    ' placeholder="' + (bekle ? "Yükleniyor…" : ipucu) + '"' + (bekle ? " disabled" : "") +
+    ' style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>' +
+    '<div id="' + id + '-liste" style="display:none;max-height:170px;overflow:auto;border:1px solid rgba(0,0,0,0.16);border-radius:9px;margin-top:4px;background:var(--bg-elev,#fff);"></div>';
 }
-/* Gösterildi işareti: erteleme yazılsa da silinmese de "1 günde bir kez" kuralı
-   buradan yürür (kullanıcı sekmeyi kapatıp açınca pencere tekrar açılmasın). */
-function kasaYonGorulduIsaretle() {
-  try {
-    const y = kasaYonDurumu();
-    y.goruldu = Date.now();
-    localStorage.setItem(KASA_YON_KEY, JSON.stringify(y));
-  } catch (e) { /* */ }
+
+function kurListeYaz(id, liste, sec) {
+  const k = document.getElementById(id + "-liste");
+  const g = document.getElementById(id);
+  if (!k) return;
+  if (g) { g.disabled = false; if (!liste.length) g.placeholder = "Liste alınamadı — yazarak devam et"; }
+  k.innerHTML = liste.slice(0, 60).map(function (x, i) {
+    return '<div data-i="' + i + '" style="padding:8px 10px;font-size:13px;cursor:pointer;border-bottom:1px solid rgba(0,0,0,0.06);">' + kurKutu(x.ad) + '</div>';
+  }).join("");
+  k.style.display = liste.length ? "block" : "none";
+  k.querySelectorAll("div[data-i]").forEach(function (d) {
+    d.addEventListener("click", function () { sec(liste[Number(d.dataset.i)]); });
+  });
 }
-function kasaYonGerekli() {
-  try {
-    if (typeof currentUser === "undefined" || !currentUser) return false;  // yalnız girişli hesap
-    if (!KASA.kasaVarMi()) {
-      const y = kasaYonDurumu();
-      if (y.sonra && Date.now() - Number(y.sonra) < (Number(y.gun) || KASA_YON_GUN) * 86400000) return false;
-      // Sayfa her açılışında üst üste çıkmasın: gösterildikten sonra 1 gün susar.
-      if (y.goruldu && Date.now() - Number(y.goruldu) < 86400000) return false;
-      return true;
-    }
-  } catch (e) { /* */ }
-  return false;
+
+/* Tek panel: kimlik → şifre → 12 kelime. Zorunlu, çarpısı yok. */
+function kurulumPaneli() {
+  const eski = document.getElementById("am-kurulum");
+  if (eski) eski.remove();
+  const s = (typeof state !== "undefined" && state && state.settings && state.settings.okulizyon) || {};
+  KUR_IL = { ad: s.il || "", kod: s.ilkodu || "" };
+  KUR_ILCE = { il: s.il || "", ad: s.ilce || "", kod: s.ilcekodu || "", liste: [] };
+  KUR_OKUL = { ilce: s.ilce || "", ad: s.okulAdi || "", kod: s.kurumkodu || "", liste: [] };
+  const d = document.createElement("div");
+  d.id = "am-kurulum";
+  d.style.cssText = "position:fixed;inset:0;z-index:9999;background:rgba(9,15,32,0.72);display:flex;align-items:center;justify-content:center;padding:14px;";
+  d.innerHTML =
+    '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;max-width:520px;width:100%;max-height:92vh;overflow:auto;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.4);">' +
+    '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:4px;">SON ADIM — ZORUNLU</div>' +
+    '<div style="font-weight:800;font-size:18px;margin-bottom:6px;">🎒 Bilgilerini tamamla</div>' +
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:14px;opacity:0.85;">Sınıfın, il/ilçe/okulun ve okul numaran olmadan sınav sonuçların getirilemez. Sonra <b>giriş şifreni</b> belirleyip verilerini kilitleyeceksin. Bu panel tamamlanmadan uygulama açılmaz.</div>' +
+
+    // 1) KİMLİK
+    '<div id="kur-adim1">' +
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
+    '<label style="font-size:11.5px;opacity:0.85;grid-column:1 / -1;">AD SOYAD (BÜYÜK HARF)<input id="kur-ad" type="text" autocomplete="name" autocapitalize="characters" placeholder="AHMET YILMAZ" value="' + kurGirdi(s.ad || "") + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;text-transform:uppercase;font-weight:600;"></label>' +
+    '<label style="font-size:11.5px;opacity:0.85;">OKUL NO<input id="kur-okulno" type="text" inputmode="numeric" placeholder="1234" value="' + kurGirdi(s.okulNo || "") + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>' +
+    '<label style="font-size:11.5px;opacity:0.85;">SINIF<select id="kur-sinif" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' +
+    ["9", "10", "11", "12"].map(function (o) { return '<option' + ((s.sinif || "9") === o ? " selected" : "") + '>' + o + '</option>'; }).join("") +
+    '</select></label>' +
+    '</div>' +
+    '<div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px;">' +
+    kurSecimHtml("kur-il", "İL", "İl yaz (ör. Gazi)", s.il || "", false) +
+    kurSecimHtml("kur-ilce", "İLÇE", s.ilkodu ? "İlçe yaz" : "Önce il seç", s.ilce || "", true) +
+    kurSecimHtml("kur-okul", "OKUL", s.ilcekodu ? "Okul yaz (ör. 19 Mayıs)" : "Önce ilçe seç", s.okulAdi || "", true) +
+    '</div>' +
+    '<div id="kur-hata1" style="display:none;font-size:12px;color:#DC2626;margin-top:8px;line-height:1.45;"></div>' +
+    '<button id="kur-ileri" style="width:100%;margin-top:12px;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;">Devam — şifre belirle</button>' +
+    '<div style="font-size:10.5px;opacity:0.7;margin-top:8px;line-height:1.45;">Listeden seçmek için yaz; sunucu listesi gelmezse adı elle yazabilirsin.</div>' +
+    '</div>' +
+
+    // 2) ŞİFRE
+    '<div id="kur-adim2" style="display:none;">' +
+    '<div style="font-weight:700;font-size:14.5px;margin-bottom:4px;">🔐 Giriş şifresi</div>' +
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Uygulamaya her girişte bu şifreyi kullanacaksın. Verilerin <b>cihazında</b> bu şifreyle şifrelenir; sunucu şifreni görmez.</div>' +
+    '<input id="kur-sifre" type="password" autocomplete="new-password" placeholder="En az 8 karakter" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
+    '<input id="kur-sifre2" type="password" autocomplete="new-password" placeholder="Şifreyi tekrar yaz" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
+    '<div id="kur-hata2" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
+    '<button id="kur-kur" style="width:100%;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;">Kilidi kur ve devam et</button>' +
+    '<div style="font-size:11.5px;color:#B45309;background:rgba(245,158,11,0.10);border:1px solid rgba(180,83,9,0.30);border-radius:10px;padding:9px;margin-top:10px;line-height:1.5;">⚠️ Bu şifre ile sonraki adımdaki 12 kelimeyi birlikte sakla. İkisi de kaybolursa veri kurtarılamaz — sunucu açamaz.</div>' +
+    '</div>' +
+
+    // 3) 12 KELİME
+    '<div id="kur-adim3" style="display:none;">' +
+    '<div style="font-weight:700;font-size:14.5px;margin-bottom:4px;">🔑 12 kelimelik anahtarın</div>' +
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Bu kelimeleri <b>kâğıda yaz</b>. Şifreni unutursan verini yalnız bu kelimeler kurtarır. Kelimeler sunucuya gönderilmez.</div>' +
+    '<div id="kur-kelimeler" style="font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.7;background:var(--bg,#F6F8FC);border:1px dashed rgba(0,0,0,0.25);border-radius:10px;padding:12px;margin-bottom:10px;word-spacing:6px;"></div>' +
+    '<button id="kur-indir" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);margin-bottom:10px;">İndir</button>' +
+    '<label style="font-size:12.5px;display:flex;gap:8px;align-items:flex-start;line-height:1.45;margin-bottom:10px;cursor:pointer;"><input id="kur-onay" type="checkbox" style="margin-top:2px;"> Kelimeleri kâğıda yazdım, güvenli bir yerde saklıyorum.</label>' +
+    '<div id="kur-hata3" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
+    '<button id="kur-bitir" disabled style="width:100%;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;opacity:0.5;cursor:not-allowed;">Bitir ve uygulamaya gir</button>' +
+    '</div>' +
+    '</div>';
+  document.body.appendChild(d);
+  kurDinleyicileri(d);
+  kurListe("il").then(function (l) { kurListeYaz("kur-il", l, function (x) { kurIlSecildi(x); }); });
+  if (KUR_IL.kod) {
+    kurListe("ilce").then(function (l) { if (!KUR_ILCE.ad) kurListeYaz("kur-ilce", l, function (x) { kurIlceSecildi(x); }); });
+  }
+  if (KUR_ILCE.kod) {
+    kurListe("okul").then(function (l) { if (!KUR_OKUL.ad) kurListeYaz("kur-okul", l, function (x) { kurOkulSecildi(x); }); });
+  }
+  setTimeout(function () { const a = document.getElementById("kur-ad"); if (a) { try { a.focus(); } catch (e) { } } }, 80);
 }
-function kasaYonlendirmeGoster() {
-  try {
-    if (!kasaYonGerekli()) return;
-    if (window.__kasaYonPencereAcik) return;
-    if (document.getElementById("am-kasa-yon")) return;
-    window.__kasaYonPencereAcik = true;
-    const d = document.createElement("div");
-    d.id = "am-kasa-yon";
-    d.style.cssText = "position:fixed;inset:0;z-index:9998;background:rgba(9,15,32,0.66);display:flex;align-items:center;justify-content:center;padding:16px;";
-    d.innerHTML =
-      '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;max-width:470px;width:100%;max-height:88vh;overflow:auto;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
-      '<div style="font-weight:800;font-size:17px;margin-bottom:6px;">🔐 Verini kilitle — 2 dakika</div>' +
-      '<div style="font-size:13px;line-height:1.55;margin-bottom:10px;">Şu an <b>ad soyadın, sınav sonuçların, planın ve kitapların sunucuda düz metin</b> duruyor. Sunucuya erişen biri bunları okuyabilir (uygulamanın sahibi dahil).</div>' +
-      '<div style="font-size:13px;line-height:1.55;margin-bottom:12px;">Kasayı kurunca bu bilgiler <b>cihazında şifrelenir</b>; sunucu yalnız anlamsız harf görür. Şifren sunucuya hiç gitmez.</div>' +
-      '<ol style="font-size:12.5px;line-height:1.6;margin:0 0 12px 18px;padding:0;">' +
-      '<li>En az 8 karakterlik bir <b>kasa şifresi</b> seç (başka yerde kullanmadığın bir şifre olsun).</li>' +
-      '<li>«Kasayı kur ve aç» düğmesine bas.</li>' +
-      '<li>Çıkan <b>12 kelimelik kurtarma anahtarını</b> kâğıda yaz veya indir.</li>' +
-      '</ol>' +
-      '<div style="font-size:11.5px;color:#B45309;background:rgba(245,158,11,0.10);border:1px solid rgba(180,83,9,0.30);border-radius:10px;padding:9px;margin-bottom:12px;line-height:1.5;">⚠️ Kasa şifresini <b>ve</b> kurtarma anahtarını kaybedersen veri kurtarılamaz — sunucu açamaz.</div>' +
-      '<input id="am-yon-sifre" type="password" autocomplete="new-password" placeholder="Kasa şifresi (en az 8 karakter)" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
-      '<div id="am-yon-hata" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
-      '<button id="am-yon-kur" style="width:100%;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;">Kasayı kur ve aç</button>' +
-      '<button id="am-yon-sonra" style="width:100%;margin-top:8px;padding:9px;border-radius:10px;border:1px solid rgba(0,0,0,0.14);background:transparent;color:inherit;font-size:12.5px;cursor:pointer;">Sonra — 3 gün hatırlatma</button>' +
-      '<div style="font-size:10.5px;opacity:0.7;margin-top:9px;line-height:1.45;">Kurmasan da uygulama çalışır; ama verin sunucuda düz metin kalır.</div>' +
-      '</div>';
-    document.body.appendChild(d);
-    window.__kasaYonPencereAcik = true;
-    kasaYonGorulduIsaretle();
-    const kapat = () => { d.remove(); window.__kasaYonPencereAcik = false; };
-    d.querySelector("#am-yon-sonra").addEventListener("click", () => { kasaYonErtele(KASA_YON_GUN); kapat(); toast("Tamam — 3 gün sonra tekrar hatırlatacağım.", "info"); });
-    d.querySelector("#am-yon-kur").addEventListener("click", async () => {
-      const sifre = (d.querySelector("#am-yon-sifre").value || "").trim();
-      const hata = d.querySelector("#am-yon-hata");
-      const r = await kasaKurVeAnahtar(sifre);
-      if (!r.ok) { hata.style.display = "block"; hata.textContent = r.hata || "Kasa kurulamadı."; return; }
-      kapat();
-      try { if (document.getElementById("pwa-profile-modal")) renderProfileModal(); } catch (e) { /* */ }
-      kasaKurtarmaGoster(r.kelimeler);
-      toast("Kasa kuruldu — bundan sonra buluta yalnız şifreli kayıt gider.", "success");
+
+function kurMetinYaz(id, metin) {
+  const k = document.getElementById(id);
+  if (!k) return;
+  k.style.display = metin ? "block" : "none";
+  k.textContent = metin || "";
+}
+
+function kurIlSecildi(x) {
+  KUR_IL = { ad: x.ad, kod: x.kod };
+  const g = document.getElementById("kur-il"); if (g) g.value = x.ad;
+  const k = document.getElementById("kur-il-liste"); if (k) k.style.display = "none";
+  KUR_ILCE = { il: x.ad, ad: "", kod: "", liste: [] };
+  KUR_OKUL = { ilce: "", ad: "", kod: "", liste: [] };
+  ["kur-ilce", "kur-okul"].forEach(function (id) { const e = document.getElementById(id); if (e) e.value = ""; });
+  const io = document.getElementById("kur-ilce"); if (io) { io.disabled = true; io.placeholder = "Yükleniyor…"; }
+  const oo = document.getElementById("kur-okul"); if (oo) { oo.disabled = true; oo.placeholder = "Önce ilçe seç"; }
+  try { okzSecimleriDoldur(); } catch (e) { /* */ }
+  kurListe("ilce").then(function (l) {
+    if (KUR_IL.kod !== x.kod) return;
+    kurListeYaz("kur-ilce", l, function (y) { kurIlceSecildi(y); });
+  });
+}
+
+function kurIlceSecildi(x) {
+  KUR_ILCE = { il: KUR_IL.ad, ad: x.ad, kod: x.kod, liste: [] };
+  const g = document.getElementById("kur-ilce"); if (g) g.value = x.ad;
+  const k = document.getElementById("kur-ilce-liste"); if (k) k.style.display = "none";
+  KUR_OKUL = { ilce: x.ad, ad: "", kod: "", liste: [] };
+  const o = document.getElementById("kur-okul"); if (o) { o.value = ""; o.disabled = true; o.placeholder = "Yükleniyor…"; }
+  kurListe("okul").then(function (l) {
+    if (KUR_ILCE.kod !== x.kod) return;
+    kurListeYaz("kur-okul", l, function (y) { kurOkulSecildi(y); });
+  });
+}
+
+function kurOkulSecildi(x) {
+  KUR_OKUL = { ilce: KUR_ILCE.ad, ad: x.ad, kod: x.kod, liste: [] };
+  const g = document.getElementById("kur-okul"); if (g) g.value = x.ad;
+  const k = document.getElementById("kur-okul-liste"); if (k) k.style.display = "none";
+}
+
+function kurDinleyicileri(d) {
+  // İl/ilçe/okul: yazdıkça süz (sunucu listesi geldiyse).
+  const listeler = { il: [] };
+  kurListe("il").then(function (l) { listeler.il = l; });
+  (function arama(id, kaynak, sec) {
+    const g = document.getElementById(id);
+    const k = document.getElementById(id + "-liste");
+    if (!g || !k) return;
+    g.addEventListener("input", function () {
+      const q = (g.value || "").toLocaleLowerCase("tr-TR").trim();
+      if (!q) { k.style.display = "none"; return; }
+      const l = (kaynak() || []).filter(function (x) {
+        return String(x.ad).toLocaleLowerCase("tr-TR").indexOf(q) >= 0;
+      });
+      if (!l.length) { k.style.display = "none"; return; }
+      kurListeYaz(id, l, sec);
     });
-    const inp = d.querySelector("#am-yon-sifre");
-    if (inp) setTimeout(() => { try { inp.focus(); } catch (e) {} }, 80);
-  } catch (e) { window.__kasaYonPencereAcik = false; console.warn("Kasa yönlendirmesi:", e); }
+    g.addEventListener("blur", function () { setTimeout(function () { k.style.display = "none"; }, 220); });
+  })("kur-il", function () { return listeler.il; }, function (x) { kurIlSecildi(x); });
+
+  d.querySelector("#kur-ileri").addEventListener("click", function () {
+    const ad = (d.querySelector("#kur-ad").value || "").trim().toLocaleUpperCase("tr-TR");
+    const okulNo = (d.querySelector("#kur-okulno").value || "").trim();
+    const sinif = (d.querySelector("#kur-sinif").value || "9").trim();
+    const il = (d.querySelector("#kur-il").value || "").trim();
+    const ilce = (d.querySelector("#kur-ilce").value || "").trim();
+    const okul = (d.querySelector("#kur-okul").value || "").trim();
+    if (!ad) return kurMetinYaz("kur-hata1", "Ad soyadını yaz.");
+    if (!okulNo) return kurMetinYaz("kur-hata1", "Okul numaranı yaz.");
+    if (!il || !ilce || !okul) return kurMetinYaz("kur-hata1", "İl, ilçe ve okulunu yaz (listeden seçebilirsin).");
+    // Seçim listeden gelmediyse ad yazılmış olabilir: kod yoksa ad kaydedilir,
+    // kod gerektiğinde profilden liste seçimi tamamlanır.
+    if (il !== KUR_IL.ad) KUR_IL = { ad: il, kod: "" };
+    if (ilce !== KUR_ILCE.ad) KUR_ILCE = { il: il, ad: ilce, kod: KUR_ILCE.ad === ilce ? KUR_ILCE.kod : "" };
+    if (okul !== KUR_OKUL.ad) KUR_OKUL = { ilce: ilce, ad: okul, kod: KUR_OKUL.ad === okul ? KUR_OKUL.kod : "" };
+    try {
+      if (!state.settings) state.settings = {};
+      state.settings.okulizyon = {
+        ad: ad, okulNo: okulNo, sinif: sinif,
+        il: KUR_IL.ad, ilkodu: KUR_IL.kod || "",
+        ilce: KUR_ILCE.ad, ilcekodu: KUR_ILCE.kod || "",
+        okulAdi: KUR_OKUL.ad, kurumkodu: KUR_OKUL.kod || ""
+      };
+      if (typeof saveState === "function") saveState();
+    } catch (e) { /* */ }
+    kurMetinYaz("kur-hata1", "");
+    d.querySelector("#kur-adim1").style.display = "none";
+    d.querySelector("#kur-adim2").style.display = "block";
+    setTimeout(function () { const f = d.querySelector("#kur-sifre"); if (f) { try { f.focus(); } catch (e) { } } }, 60);
+  });
+
+  d.querySelector("#kur-kur").addEventListener("click", async function () {
+    const s1 = (d.querySelector("#kur-sifre").value || "").trim();
+    const s2 = (d.querySelector("#kur-sifre2").value || "").trim();
+    if (s1.length < 8) return kurMetinYaz("kur-hata2", "Şifre en az 8 karakter olmalı.");
+    if (s1 !== s2) return kurMetinYaz("kur-hata2", "İki şifre aynı değil.");
+    kurMetinYaz("kur-hata2", "");
+    const b = d.querySelector("#kur-kur");
+    b.disabled = true; b.textContent = "Kuruluyor…";
+    const r = await kasaKurVeAnahtar(s1);
+    if (!r.ok) {
+      b.disabled = false; b.textContent = "Kilidi kur ve devam et";
+      return kurMetinYaz("kur-hata2", r.hata || "Kilit kurulamadı.");
+    }
+    window.__kurKelimeler = r.kelimeler;
+    d.querySelector("#kur-kelimeler").textContent = r.kelimeler;
+    d.querySelector("#kur-adim2").style.display = "none";
+    d.querySelector("#kur-adim3").style.display = "block";
+    const onay = d.querySelector("#kur-onay");
+    const bitir = d.querySelector("#kur-bitir");
+    onay.addEventListener("change", function () {
+      bitir.disabled = !onay.checked;
+      bitir.style.opacity = onay.checked ? "1" : "0.5";
+      bitir.style.cursor = onay.checked ? "pointer" : "not-allowed";
+    });
+  });
+
+  d.querySelector("#kur-indir").addEventListener("click", function () {
+    try {
+      const metin = "ANALIZ MERKEZI - 12 KELIMELIK ANAHTAR\n\n" + (window.__kurKelimeler || "") +
+        "\n\nBu kelimeler olmadan, giris sifresi unutulursa veri kurtarilamaz.\n";
+      const blob = new Blob([metin], { type: "text/plain;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "analiz-merkezi-anahtar-kelimeleri.txt";
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+    } catch (e) { /* */ }
+  });
+
+  d.querySelector("#kur-bitir").addEventListener("click", function () {
+    const onay = d.querySelector("#kur-onay");
+    if (!onay || !onay.checked) return kurMetinYaz("kur-hata3", "Önce «kâğıda yazdım» kutusunu işaretle.");
+    try { localStorage.setItem(KURULUM_TAM_KEY, "1"); } catch (e) { /* */ }
+    d.remove();
+    toast("Kurulum tamam — verilerin artık şifreli. Hoş geldin!", "success");
+    try { if (document.getElementById("pwa-profile-modal")) renderProfileModal(); } catch (e) { /* */ }
+    try { okzBilgiBulutaYaz(); } catch (e) { /* */ }
+  });
 }
+
+async function kurulumGerekli() {
+  if (typeof currentUser === "undefined" || !currentUser) return false;
+  try { if (KASA.kasaAcikMi()) return false; } catch (e) { /* */ }
+  /* v108 — kilit VARSA ama kapalıysa (başka cihazda kurulmuş) kurulum paneli
+     ÇIKMAZ: doğru yol şifreyle açmaktır. Yeni kilit kurmak eski kaydı bozar. */
+  try { if (KASA.kasaVarMi()) return false; } catch (e) { /* */ }
+  try { if (localStorage.getItem(KURULUM_TAM_KEY) === "1" && KASA.kasaVarMi()) return false; } catch (e) { /* */ }
+  return true;
+}
+
+async function kurulumAkisi() {
+  try {
+    if (!(await kurulumGerekli())) return false;
+    setTimeout(function () { try { if (!document.getElementById("am-kurulum")) kurulumPaneli(); } catch (e) { console.warn("Kurulum paneli:", e); } }, 700);
+    return true;
+  } catch (e) { return false; }
+}
+
 async function kasaAcTiklandi() {
   const el = document.getElementById("am-kasa-yeni");
   const sifre = (el && el.value || "").trim();
-  if (!sifre) return kasaNot("Kasa şifresini yaz.", "hata");
+  if (!sifre) return kasaNot("Giriş şifreni yaz.", "hata");
   try {
     let tuz = "";
     try {
@@ -881,13 +1126,13 @@ async function kasaAcTiklandi() {
       const ham = data && (typeof data.state === "string" ? JSON.parse(data.state) : data.state);
       tuz = window.__kasa.tuzAl(ham);
     } catch (e) { /* */ }
-    if (!tuz) return kasaNot("Bu hesapta şifreli kayıt yok — önce kasayı kur.", "hata");
+    if (!tuz) return kasaNot("Bu hesapta şifreli kayıt yok — önce kilidi kur.", "hata");
     const r = await window.__kasa.ac(sifre, tuz);
     if (!r.ok) return kasaNot(r.hata || "Açılamadı.", "hata");
     if (el) el.value = "";
     renderProfileModal();
-    toast("Kasa açıldı.", "success");
-  } catch (e) { kasaNot("Kasa açılamadı: " + String((e && e.message) || e), "hata"); }
+    toast("Kilit açıldı.", "success");
+  } catch (e) { kasaNot("Kilit açılamadı: " + String((e && e.message) || e), "hata"); }
 }
 function kasaKurtarmaGoster(kelimeler) {
   const eski = document.getElementById("am-kasa-kurtarma");
@@ -896,8 +1141,8 @@ function kasaKurtarmaGoster(kelimeler) {
   d.id = "am-kasa-kurtarma";
   d.style.cssText = "position:fixed;inset:0;z-index:9997;background:rgba(9,15,32,0.62);display:flex;align-items:center;justify-content:center;padding:16px;";
   d.innerHTML = '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:460px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
-    '<div style="font-weight:800;font-size:16px;margin-bottom:6px;">🔑 Kurtarma anahtarın</div>' +
-    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;">Bu 12 kelimeyi <b>kâğıda yaz</b> veya şifre yöneticine kaydet. Kasa şifreni unutursan verini <b>yalnız bu kelimeler</b> kurtarır. Kelimeler sunucuya gönderilmez.</div>' +
+    '<div style="font-weight:800;font-size:16px;margin-bottom:6px;">🔑 12 kelimelik anahtarın</div>' +
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;">Bu 12 kelimeyi <b>kâğıda yaz</b> veya şifre yöneticine kaydet. Giriş şifreni unutursan verini <b>yalnız bu kelimeler</b> kurtarır. Kelimeler sunucuya gönderilmez.</div>' +
     '<div style="font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.7;background:var(--bg,#F6F8FC);border:1px dashed rgba(0,0,0,0.25);border-radius:10px;padding:12px;margin-bottom:10px;word-spacing:6px;">' + escHtml(kelimeler) + '</div>' +
     '<div style="display:flex;gap:8px;flex-wrap:wrap;"><button id="am-kk-indir" class="btn btn-primary btn-sm">Kopyala / indir</button><button id="am-kk-kapat" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kaydettim, kapat</button></div>' +
     '</div>';
@@ -905,12 +1150,12 @@ function kasaKurtarmaGoster(kelimeler) {
   d.querySelector("#am-kk-kapat").addEventListener("click", () => d.remove());
   d.querySelector("#am-kk-indir").addEventListener("click", () => {
     try {
-      const metin = "ANALIZ MERKEZI - KASA KURTARMA ANAHTARI\n\n" + kelimeler +
-        "\n\nBu kelimeler olmadan, kasa sifresi unutulursa veri kurtarilamaz.\n";
+      const metin = "ANALIZ MERKEZI - 12 KELIMELIK ANAHTAR\n\n" + kelimeler +
+        "\n\nBu kelimeler olmadan, giris sifresi unutulursa veri kurtarilamaz.\n";
       const blob = new Blob([metin], { type: "text/plain;charset=utf-8" });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "analiz-merkezi-kurtarma-anahtari.txt";
+      a.download = "analiz-merkezi-anahtar-kelimeleri.txt";
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     } catch (e) { console.warn("İndirme:", e); }
@@ -918,7 +1163,7 @@ function kasaKurtarmaGoster(kelimeler) {
 }
 // Var olan kasa için YENİ kurtarma anahtarı üret (eskiyi geçersiz kılar).
 async function kasaKurtarmaIndir() {
-  if (!window.__kasa.durum().acik) { toast("Önce kasayı aç.", "warning"); return; }
+  if (!window.__kasa.durum().acik) { toast("Önce kilidi aç.", "warning"); return; }
   const k = window.__kasa.kurtarmaUret();
   const sarma = await window.__kasa.kurtarmaSar(k);
   kasaSarmayiStateeYaz(sarma);
@@ -931,7 +1176,7 @@ function kasaKurtarmaTiklandi() {
   d.id = "am-kasa-kurtarma-ac";
   d.style.cssText = "position:fixed;inset:0;z-index:9997;background:rgba(9,15,32,0.62);display:flex;align-items:center;justify-content:center;padding:16px;";
   d.innerHTML = '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:440px;width:100%;padding:20px;">' +
-    '<div style="font-weight:800;font-size:16px;margin-bottom:8px;">Kurtarma anahtarıyla aç</div>' +
+    '<div style="font-weight:800;font-size:16px;margin-bottom:8px;">12 kelimelik anahtarla aç</div>' +
     '<div style="font-size:12.5px;margin-bottom:8px;">12 kelimeyi yaz (araya boşluk koy).</div>' +
     '<textarea id="am-kk-metin" rows="3" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;"></textarea>' +
     '<div id="am-kk-hata" style="display:none;font-size:12px;color:#DC2626;margin-top:6px;"></div>' +
@@ -944,12 +1189,12 @@ function kasaKurtarmaTiklandi() {
     let sarma = null;
     try { sarma = (typeof state !== "undefined" && state && state.kasaKurtarma) || null; } catch (e) { /* */ }
     if (!sarma) { try { sarma = JSON.parse(localStorage.getItem("am_kasa_sarma_v1") || "null"); } catch (e) { /* */ } }
-    if (!sarma) { hata.style.display = "block"; hata.textContent = "Bu hesapta kurtarma kaydı yok. Kasa kurulurken üretilen anahtar gerekir."; return; }
+    if (!sarma) { hata.style.display = "block"; hata.textContent = "Bu hesapta kurtarma kaydı yok. Kilit kurulurken üretilen 12 kelime gerekir."; return; }
     const r = await window.__kasa.kurtarmaAc(k, sarma);
     if (!r.ok) { hata.style.display = "block"; hata.textContent = r.hata || "Açılamadı."; return; }
     d.remove();
     renderProfileModal();
-    toast("Kasa kurtarma anahtarıyla açıldı.", "success");
+    toast("12 kelimelik anahtarla açıldı.", "success");
   });
 }
 
@@ -992,24 +1237,24 @@ function renderProfileModal() {
     const acikMetin = kd.acik ? "AÇIK — buluta yalnız şifreli kutu gider"
       : (kd.var ? "KİLİTLİ — şifre girilince bulut açılır" : "KAPALI — veri sunucuda DÜZ duruyor");
     html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
-    html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:6px;">KASA (UÇTAN UCA ŞİFRELEME)</div>';
+    html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:6px;">VERİ KİLİDİ (UÇTAN UCA ŞİFRELEME)</div>';
     html += '<div style="font-size:12px;font-weight:700;color:' + acikRenk + ';margin-bottom:8px;">' + escHtml(acikMetin) + '</div>';
     html += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:10px;">Açıkken ad soyad, sınav sonuçları, hedef, plan, konu takibi ve kitaplar <b>bu cihazda şifrelenir</b>; sunucu yalnız anlamsız harf görür. Şifren sunucuya <b>hiç gitmez</b>.</div>';
     if (!kd.acik) {
-      html += '<input id="am-kasa-yeni" type="password" autocomplete="new-password" placeholder="Kasa şifresi (en az 8 karakter)" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;">';
+      html += '<input id="am-kasa-yeni" type="password" autocomplete="new-password" placeholder="Giriş şifresi (en az 8 karakter)" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;">';
       html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
-      html += '<button data-act="kasaKur" class="btn btn-primary btn-sm">Kasayı kur ve aç</button>';
-      html += '<button data-act="kasaAcKutu" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Var olan kasayı aç</button>';
-      html += '<button data-act="kasaKurtar" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kurtarma anahtarıyla aç</button>';
+      html += '<button data-act="kasaKur" class="btn btn-primary btn-sm">Kilidi kur ve aç</button>';
+      html += '<button data-act="kasaAcKutu" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kilidi aç</button>';
+      html += '<button data-act="kasaKurtar" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">12 kelimelik anahtarla aç</button>';
       html += '</div>';
       html += '<div id="am-kasa-not" style="display:none;font-size:11.5px;line-height:1.45;margin-top:8px;"></div>';
     } else {
       html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
-      html += '<button data-act="kasaKurtarma" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kurtarma anahtarını indir (12 kelime)</button>';
-      html += '<button data-act="kasaKilitle" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kasayı kilitle</button>';
+      html += '<button data-act="kasaKurtarma" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">12 kelimelik anahtarı indir</button>';
+      html += '<button data-act="kasaKilitle" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kilitle</button>';
       html += '</div>';
     }
-    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:9px;line-height:1.45;">⚠️ Kasa şifresini unutursan verin kurtarılamaz. Kurtarma anahtarını indirip güvenli bir yerde tut.</div>';
+    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:9px;line-height:1.45;">⚠️ Giriş şifresini unutursan verin kurtarılamaz. 12 kelimelik anahtarını indirip güvenli bir yerde tut.</div>';
     html += '</div>';
   }
 
@@ -1130,7 +1375,10 @@ async function emailRegister() {
   if (error) return authMsgYaz(authMsg(error), true);
   if (data && data.session) {
     closeAuthModal();
-    toast("Kayıt oluşturuldu — verilerin artık buluta yedekleniyor.", "success");
+    toast("Kayıt oluşturuldu — şimdi bilgilerini tamamla.", "success");
+    /* v108 — kayıttan HEMEN sonra zorunlu bilgi paneli (ad soyad, sınıf,
+       il/ilçe/okul, okul no → şifre → 12 kelime). */
+    setTimeout(function () { try { kurulumAkisi(); } catch (e) { } }, 400);
   } else {
     authMsgYaz("Kayıt alındı. " + email + " adresine onay bağlantısı gönderdik — bağlantıya tıklamadan giriş yapılamaz (spam klasörünü de kontrol et).", false);
   }
@@ -1250,8 +1498,18 @@ async function oturumUygula(session) {
   /* v88 — girişte çekim sürer ama "veriler silindi" işaretine UYAR
      (kullanıcı sil dediyse kendiliğinden geri getirilmez). */
   setTimeout(function () { try { if (typeof state !== "undefined") okzKuyrukCek("giris"); } catch (e) {} }, 1200);
-  /* v107 — kasa kurulmamışsa adım adım kurulum yönlendirmesi (bir kez, 3 gün erteleme). */
-  setTimeout(function () { try { kasaYonlendirmeGoster(); } catch (e) {} }, 4000);
+  /* v108 — kilit kurulmamışsa ZORUNLU ilk kurulum paneli (erteleme yok).
+     v107'deki "3 gün sonra hatırlat" akışı kullanıcı isteğiyle kaldırıldı. */
+  setTimeout(function () { try { kurulumAkisi(); } catch (e) {} }, 600);
+  /* v108 — bu cihazda kilit VAR ama kapalı (başka cihazda kurulmuş): yeni kilit
+     kurmak eski kaydı bozar. Onun yerine okunur bir açma penceresi gösterilir.
+     «Şimdi değil» = cihazdaki veriyle devam (veri silinmez). */
+  setTimeout(function () {
+    try {
+      if (!currentUser || !KASA.kasaVarMi() || KASA.kasaAcikMi()) return;
+      kasaUyarisiGoster("kilitli");
+    } catch (e) { /* */ }
+  }, 3500);
   // v70 — öğrenen sözlüğü (kazanim_konu_cache) yükle: aynı kazanım cümlesi
   // ikinci kez geldiğinde kurallar/vektör çalışmadan konu buradan gelir.
   setTimeout(function () { try { okzCacheYukle(); } catch (e) {} }, 900);
@@ -1368,9 +1626,9 @@ let sonUzakYazma = 0;       // sunucudaki updated_at (ms)
    yeni (zarflı) kayıt → kasa açıksa çözülür, kapalıysa KİLİTLİ sayılır.
    ============================================================ */
 const KASA_MESAJ = {
-  kilitli: "Buluttaki kaydın şifreli. Açmak için kasa şifreni bir kez gir — veri sunucuda çözülmüyor, bu cihazda açılıyor.",
-  acilmadi: "Kasa şifresi bu kaydı açamadı. Şifreyi kontrol et ya da kurtarma anahtarını kullan.",
-  kapali: "Kasa kapalı: veri sunucuda DÜZ duruyor. Profil → Kasa bölümünden şifre kur."
+  kilitli: "Buluttaki kaydın şifreli. Açmak için giriş şifreni bir kez gir — veri sunucuda çözülmüyor, bu cihazda açılıyor.",
+  acilmadi: "Giriş şifresi bu kaydı açamadı. Şifreyi kontrol et ya da 12 kelimelik anahtarını kullan.",
+  kapali: "Kilit kapalı: veri sunucuda DÜZ duruyor. Profil → bölümünden şifre kur."
 };
 function kasaDurumu() {
   try {
@@ -1385,7 +1643,7 @@ function kasaDurumu() {
 async function kasaZarfHazirla(nesne) {
   if (!KASA.kasaAcikMi()) return { zarf: null, duz: nesne };
   try { return { zarf: await KASA.kasaSifrele(nesne), duz: null }; }
-  catch (e) { console.warn("Kasa şifrelemesi başarısız:", e); return { zarf: null, duz: nesne }; }
+  catch (e) { console.warn("Şifreleme başarısız:", e); return { zarf: null, duz: nesne }; }
 }
 // Buluttan gelen ham kayıt → { state, durum }
 // durum: "duz" | "cozuldu" | "kilitli" | "acilmadi"
@@ -1411,9 +1669,9 @@ function kasaUyarisiGoster(durum, tuz) {
       '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:430px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
       '<div style="font-weight:800;font-size:16px;margin-bottom:6px;">🔒 Bulut kaydın şifreli</div>' +
       '<div style="font-size:13px;line-height:1.5;margin-bottom:12px;">' + escHtml(KASA_MESAJ[durum] || KASA_MESAJ.kilitli) + '</div>' +
-      '<input id="am-kasa-sifre" type="password" autocomplete="off" placeholder="Kasa şifren" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
+      '<input id="am-kasa-sifre" type="password" autocomplete="off" placeholder="Giriş şifren" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
       '<div id="am-kasa-hata" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
-      '<button id="am-kasa-ac" style="width:100%;padding:11px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14px;cursor:pointer;">Kasayı aç</button>' +
+      '<button id="am-kasa-ac" style="width:100%;padding:11px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14px;cursor:pointer;">Kilidi aç</button>' +
       '<button id="am-kasa-gec" style="width:100%;margin-top:8px;padding:9px;border-radius:10px;border:1px solid rgba(0,0,0,0.14);background:transparent;color:inherit;font-size:12.5px;cursor:pointer;">Şimdi değil (cihazdaki veriyle devam et)</button>' +
       '<div style="font-size:11px;opacity:0.7;margin-top:10px;line-height:1.45;">Şifre sunucuya gönderilmez; yalnız bu cihazda anahtar türetmek için kullanılır.</div>' +
       '</div>';
@@ -1424,15 +1682,15 @@ function kasaUyarisiGoster(durum, tuz) {
     d.querySelector("#am-kasa-ac").addEventListener("click", async () => {
       const sifre = (d.querySelector("#am-kasa-sifre").value || "").trim();
       const hata = d.querySelector("#am-kasa-hata");
-      if (!sifre) { hata.style.display = "block"; hata.textContent = "Kasa şifresini yaz."; return; }
+      if (!sifre) { hata.style.display = "block"; hata.textContent = "Giriş şifreni yaz."; return; }
       const r = await window.__kasa.ac(sifre, tuz);
       if (!r.ok) { hata.style.display = "block"; hata.textContent = r.hata || "Açılamadı."; return; }
       kapat();
-      toast("Kasa açıldı — bulut kaydın bu cihazda çözüldü.", "success");
+      toast("Kilit açıldı — bulut kaydın bu cihazda çözüldü.", "success");
     });
     const inp = d.querySelector("#am-kasa-sifre");
     if (inp) setTimeout(() => { try { inp.focus(); } catch (e) {} }, 80);
-  } catch (e) { console.warn("Kasa uyarısı:", e); }
+  } catch (e) { console.warn("Kilit uyarısı:", e); }
 }
 window.__kasa = {
   uyari: kasaUyarisiGoster,
@@ -1473,7 +1731,7 @@ async function bulutaYaz(sessiz) {
     try {
       /* v106 — KASA: sunucuya DÜZ state değil şifreli zarf gider.
          Kasa kapalıysa (kullanıcı henüz şifre kurmadıysa) eski davranış sürer;
-         bu durum arayüzde açıkça "KASA KAPALI" diye yazar. */
+         bu durum arayüzde açıkça "KİLİT KAPALI" diye yazar. */
       /* KRİTİK: kasa KİLİTLİ ise (anahtar yok ama kayıt şifreliyse) düz yazma.
          Yoksa bir sonraki kayıt şifreli kaydın üzerine düz metin yazar ve
          kilit boşa çıkar. Kilitliyken bulut yazımı DURUR; cihaz verisi durur. */
@@ -1867,7 +2125,7 @@ function okzStore() {
 const OKZ_SEBEP = {
   "eposta-dogrulanmadi": "E-postandaki onay bağlantısına tıkla, sonra tekrar dene.",
   "kimlik-cakisma": "Bu okul numarası başka bir hesaba bağlı — kendi numaranı kullan.",
-  "kasa-kilitli": "Bulut kaydın şifreli — Profil → Kasa bölümünden kasayı aç.",
+  "kasa-kilitli": "Bulut kaydın şifreli — Profil → bölümünden kilidi aç.",
   "sifre-gerekli": "Okulizyon bu kayıt için şifre istiyor: yukarıdaki OKULİZYON ŞİFRESİ alanını doldurup “Bilgileri Kaydet”e bas, sonra “Şimdi dene”.",
   "eslesme-yok": "Okulizyon’da il/ilçe/okul eşleşmedi: Profil’deki il, ilçe ve okul adını kontrol et.",
   "red": "Okulizyon bu ad-soyad + okul no ile kayıt bulamadı: bilgileri Okulizyon’a giriş yaptığın hâliyle birebir yaz.",
@@ -2906,7 +3164,7 @@ async function okzKuyrukCek(zorla, sunucuExams) {
      Ayrıca çekim sonucu şifreli kayda yazılacağı için kasa şart. */
   if (window.__kasa && window.__kasa.durum().var && !window.__kasa.durum().acik) {
     okzCekSuruyor = false;
-    return okzDurum("kasa-kilitli", "Bulut kaydın şifreli. Okulizyon çekimi için Profil → Kasa bölümünden kasayı aç.");
+    return okzDurum("kasa-kilitli", "Bulut kaydın şifreli. Okulizyon çekimi için Profil → bölümünden kilidi aç.");
   }
   /* v107 — KASA KURULMAMIŞSA SESSİZ GEÇİLMEZ: çekim çalışır ama sonuç yalnız
      düz metin kayda ve cihaza yazılır. Profilde kırmızı uyarı zaten var; burada
@@ -2914,7 +3172,7 @@ async function okzKuyrukCek(zorla, sunucuExams) {
   try {
     if (window.__kasa && !window.__kasa.durum().var && !window.__kasaUyariVerildi) {
       window.__kasaUyariVerildi = true;
-      toast("Kasa kurulu değil: sınav sonuçların sunucuda düz metin duruyor. Profil → Kasa bölümünden kur.", "warning");
+      toast("Kilit kurulu değil: sınav sonuçların sunucuda düz metin duruyor. Profil → bölümünden kur.", "warning");
     }
   } catch (e) { /* */ }
   okzCekSuruyor = true;
@@ -3161,6 +3419,22 @@ function pwaArayuzKur() {
   setTimeout(function () {
     try { if (typeof okzTekrarlariBirlestir === "function") okzTekrarlariBirlestir(); } catch (e) { /* */ }
   }, 1500);
+  /* v108 — KULLANICI: "Uygulamaya ilk girişte direk kayıt/giriş ekranını açmalı
+     mıyız?" → Evet. Oturum yoksa giriş/kayıt ekranı KENDİLİĞİNDEN ve ZORUNLU açılır. */
+  setTimeout(function () {
+    try {
+      if (typeof window.__amSession === "function") {
+        window.__amSession().then(function (s) {
+          try { if (!s) authZorunluAc(); } catch (e) { /* */ }
+        });
+      } else if (sb) {
+        sb.auth.getSession().then(function (r) {
+          const s = r && r.data && r.data.session;
+          try { if (!s) authZorunluAc(); } catch (e) { /* */ }
+        }).catch(function () { /* */ });
+      }
+    } catch (e) { /* çevrimdışı: giriş ekranı zorlanmaz */ }
+  }, 1200);
   // Açılışta sonucu tazele: kullanıcı hiçbir şeye basmadan "Analiz Bekliyor" dolsun.
   // (Yalnız oturum açıksa; giriş yoksa sessizce geç.)
   setTimeout(function () {

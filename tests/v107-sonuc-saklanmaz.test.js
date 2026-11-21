@@ -81,37 +81,70 @@ console.log("\n== 2) İSTEMCİ: sonuç çekim yanıtından geliyor (DB'den deği
 }
 
 // ------------------------------------------------------------
-console.log("\n== 3) KASA KURULMAMIŞSA YÖNLENDİRME ==");
+console.log("\n== 3) ZORUNLU İLK KURULUM (v108) ==");
 {
-  const yon = APP.slice(APP.indexOf("const KASA_YON_KEY"), APP.indexOf("async function kasaAcTiklandi()"));
-  ok("yönlendirme anahtarı var", /const KASA_YON_KEY = "am_kasa_yon_v1";/.test(APP));
-  ok("3 gün erteleme", /const KASA_YON_GUN = 3;/.test(APP) && /kasaYonErtele\(KASA_YON_GUN\)/.test(yon));
-  ok("yalnız girişli kullanıcıya çıkar", /typeof currentUser === "undefined" \|\| !currentUser\) return false;/.test(yon));
-  ok("kasa kuruluysa çıkmaz", /if \(!KASA\.kasaVarMi\(\)\)/.test(yon));
-  ok("günde en fazla bir kez gösterilir", /y\.goruldu && Date\.now\(\) - Number\(y\.goruldu\) < 86400000/.test(yon));
-  ok("adımlar kullanıcıya yazılı (şifre ≥8 · kur · 12 kelime)",
-    /En az 8 karakterlik bir <b>kasa şifresi<\/b>/.test(yon) && /12 kelimelik kurtarma anahtarını<\/b>/.test(yon));
-  ok("kurmamanın bedeli açıkça yazılı", /sunucuda düz metin/.test(yon));
-  ok("şifre+kurtarma kaybı uyarısı var", /kurtarılamaz — sunucu açamaz/.test(yon));
-  ok("kurulum profildekiyle AYNI yolu kullanıyor", /const r = await kasaKurVeAnahtar\(sifre\);/.test(yon));
-  ok("giriş sonrası 4 sn'de tetikleniyor", /setTimeout\(function \(\) \{ try \{ kasaYonlendirmeGoster\(\); \} catch \(e\) \{\} \}, 4000\);/.test(APP));
-  ok("kapatınca bayrak düşüyor", /window\.__kasaYonPencereAcik = false; \};/.test(yon));
-  ok("kurtarma anahtarı kurulumdan hemen sonra gösteriliyor", /kasaKurtarmaGoster\(r\.kelimeler\)/.test(yon));
+  const kurulum = APP.slice(APP.indexOf("const KURULUM_TAM_KEY"), APP.indexOf("async function kasaAcTiklandi()"));
+  ok("zorunlu kurulum işareti tanımlı", /const KURULUM_TAM_KEY = "am_kurulum_tam_v1";/.test(APP));
+  ok("eski 3 gün erteleme KALDIRILDI", !/am-yon-sonra/.test(APP) && !/function kasaYonErtele/.test(APP));
+  ok("yalnız girişli kullanıcıya çıkar", /typeof currentUser === "undefined" \|\| !currentUser\) return false;/.test(kurulum));
+  ok("kilit zaten açıksa çıkmaz", /if \(KASA\.kasaAcikMi\(\)\) return false;/.test(kurulum));
+  ok("giriş sonrası zorunlu akış tetikleniyor", /setTimeout\(function \(\) \{ try \{ kurulumAkisi\(\); \} catch \(e\) \{\} \}, 600\);/.test(APP));
+  ok("kayıttan HEMEN sonra panel açılıyor", /const \{ data, error \} = await sb\.auth\.signUp[\s\S]{0,400}kurulumAkisi\(\)/.test(APP));
+  ok("tek panel üç adım", /id="kur-adim1"/.test(kurulum) && /id="kur-adim2"/.test(kurulum) && /id="kur-adim3"/.test(kurulum));
+  ok("bilgi paneli ad soyad · okul no · sınıf", /id="kur-ad"/.test(kurulum) && /id="kur-okulno"/.test(kurulum) && /id="kur-sinif"/.test(kurulum));
+  ok("bilgi paneli il · ilçe · okul (Okulizyon listeleri)", /kurSecimHtml\("kur-il"/.test(kurulum) && /kurSecimHtml\("kur-ilce"/.test(kurulum) && /kurSecimHtml\("kur-okul"/.test(kurulum));
+  ok("adım 1 boş geçilemiyor", /Ad soyadını yaz\./.test(kurulum) && /Okul numaranı yaz\./.test(kurulum) && /İl, ilçe ve okulunu yaz/.test(kurulum));
+  ok("adım 2 şifre ≥8 + tekrar", /s1\.length < 8/.test(kurulum) && /İki şifre aynı değil/.test(kurulum));
+  ok("adım 2 kilidi gerçekten kuruyor", /const r = await kasaKurVeAnahtar\(s1\);/.test(kurulum));
+  ok("adım 3: 12 kelime + indirme", /kur-kelimeler/.test(kurulum) && /anahtar-kelimeleri\.txt/.test(kurulum));
+  ok("adım 3 onaysız bitmiyor", /kur-onay/.test(kurulum) && /Önce «kâğıda yazdım» kutusunu işaretle/.test(kurulum));
+  ok("panelde kapatma (çarpı) düğmesi yok", !/id="kur-kapat"/.test(kurulum) && !/kurulum[\s\S]{0,200}?Çarpı/.test(kurulum));
+  ok("şifre kaybı uyarısı yazılı", /kurtarılamaz — sunucu açamaz/.test(kurulum));
+  ok("kurulum sonrası eski erteleme kalıntısı siliniyor", /localStorage\.removeItem\("am_kasa_yon_v1"\)/.test(APP));
+}
+
+// ------------------------------------------------------------
+console.log("\n== 3b) İLK AÇILIŞTA GİRİŞ/KAYIT EKRANI (v108) ==");
+{
+  ok("oturum yoksa giriş ekranı kendiliğinden açılıyor", /if \(!s\) authZorunluAc\(\);/.test(APP));
+  ok("zorunlu kipte çarpı gizleniyor", /kapat\.style\.display = "none";/.test(APP) && /__amAuthZorunlu = true/.test(APP));
+  ok("zorunlu kipte arka plana tıklama kapatmıyor", /e\.target === m && !window\.__amAuthZorunlu/.test(APP));
+  ok("kullanıcıya neden açıldığı yazılı", /Devam etmek için giriş yap ya da yeni kayıt oluştur/.test(APP));
+  ok("e-posta + şifre kaydı duruyor", /sb\.auth\.signUp\(\{ email: email, password: pass \}\)/.test(APP));
+}
+
+// ------------------------------------------------------------
+console.log("\n== 3c) KULLANICI METİNLERİ: 'kasa' JARGONU YOK ==");
+{
+  /* "kasa" YALNIZ kullanıcıya görünen cümlelerde aranır; am-kasa-yeni gibi
+     kimlikler tireyle ayrıldığı için dışarıda kalır. */
+  const jargon = [];
+  // Yalnız CÜMLE İÇİNDE geçen "kasa" jargonu: kelime sınırlı + büyük/küçük harf.
+  const kural = /(^|[^-\w.])[Kk]asa(\s|y|ı|i|n|c|d|\b)/;
+  // Geliştirici yorumları taranmaz (kullanıcı görmez).
+  const APP_YORUMSUZ = APP.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^\s*\/\/.*$/gm, " ");
+  (APP_YORUMSUZ.match(/toast\(\s*"[^"]*"|'[^']{10,}'|>[^<>{}]{8,}</g) || []).forEach((t) => {
+    if (!kural.test(t)) return;
+    if (/\.js|am[-_]kasa|__kasa|kasaKur|KASA_/.test(t)) return;
+    jargon.push(t);
+  });
+  ok("görünen metinlerde 'kasa' geçmiyor", jargon.length === 0, jargon.slice(0, 3).join(" | "));
+  ok("yeni terimler: 'giriş şifresi' + 'bilgilerini tamamla'", /Giriş şifresi/.test(APP) && /Bilgilerini tamamla/.test(APP));
+  ok("12 kelime artık 'anahtar'", /12 kelimelik anahtarın/.test(APP));
 }
 
 // ------------------------------------------------------------
 console.log("\n== 4) KURULUMUN TEK YOLU + DÜRÜST DURUM ==");
 {
-  const kur = APP.slice(APP.indexOf("async function kasaKurVeAnahtar(sifre)"), APP.indexOf("/* ---------- v107 KASA KURULUM YÖNLENDİRMESİ"));
+  const kur = APP.slice(APP.indexOf("async function kasaKurVeAnahtar(sifre)"), APP.indexOf("/* ---------- v108 İLK KURULUM"));
   ok("kasaKurVeAnahtar: kur + kurtarma + sarma tek yerde",
     /const r = await window\.__kasa\.kur\(sifre\);/.test(kur) &&
     /window\.__kasa\.kurtarmaUret\(\)/.test(kur) &&
     /kasaSarmayiStateeYaz\(sarma\)/.test(kur));
   ok("8 karakterden kısa şifre reddediliyor", /sifre\.length < 8/.test(kur));
-  ok("kurulum sonrası 'sonra' hatırlatması siliniyor", /localStorage\.removeItem\(KASA_YON_KEY\)/.test(kur));
   ok("profildeki düğme de aynı yolu kullanıyor", /const r = await kasaKurVeAnahtar\(sifre\);/.test(APP));
   ok("profil kasa bölümü kurulmamışsa KIRMIZI uyarı yazıyor", /KAPALI — veri sunucuda DÜZ duruyor/.test(APP));
-  ok("çekim başında da uyarı veriliyor (sessiz geçilmiyor)", /Kasa kurulu değil: sınav sonuçların sunucuda düz metin duruyor/.test(APP));
+  ok("çekim başında da uyarı veriliyor (sessiz geçilmiyor)", /Kilit kurulu değil: sınav sonuçların sunucuda düz metin duruyor/.test(APP));
   ok("kasa.js gerçek şifreleme yapıyor (AES-GCM + PBKDF2)", /AES-GCM/.test(KASA) && /PBKDF2/.test(KASA) && /310000/.test(KASA));
 }
 
@@ -135,7 +168,7 @@ console.log("\n== 6) Sürüm + önbellek ==");
 {
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-  ok("PWA_SURUM v107", /^v107/.test(surum), surum);
+  ok("PWA_SURUM v108", /^v108/.test(surum), surum);
   ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
 }
 
