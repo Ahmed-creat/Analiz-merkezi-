@@ -1915,7 +1915,13 @@ const SCHOLAR_TITLES = ["Bronze Scholar", "Silver Scholar", "Gold Scholar", "Dia
 
 const NET_RULE = { wrongDivisor: 4 }; // TYT net = Doğru - Yanlış/4
 const READING_MAX_MINUTES = 35;      // Okuma süresi tavan sınırı (dk)
-const COGNITIVE_CORR_MIN_EXAMS = 5;  // N >= 5 olmadan korelasyon üretilmez
+/* v105 — KULLANICI: "Bilişsel Kondisyon Eğilimi" KALDIRILDI
+   ("Kondisyon bu anlamadım … Tmm bunu kaldıralım"). Okuma ile deneme neti
+   arasında ilişki kurup "kondisyon" adı veren blok artık üretilmiyor:
+   okuma verisi ile sınav neti AYRI şeylerdir, ikisini birleştiren bir yorum
+   yapılmaz. Okuma istatistikleri (sayfa/hız/disiplin) ve deneme analizleri
+   kendi bölümlerinde aynen duruyor. Sabit adı bilerek korunuyor: bu isim
+   kullanılırsa testte yakalanır. */
 
 // ===== AYT DERS AĞIRLIK TABLOSU (ÖSYM/YKS resmi puan tablolarından) =====
 // 9-10. sınıf düzeyinde alan (puan türü) ayrımı YOK; her ders için AYT'deki
@@ -2877,28 +2883,10 @@ function readingStats() {
   };
 }
 
-// Bilişsel Kondisyon Eğilimi: N>=5 deneme olmadan korelasyon üretilmez (spec)
-function cognitiveTrend() {
-  const exams = state.exams.slice().sort((a, b) => (parseDay(a.date) || 0) - (parseDay(b.date) || 0));
-  if (exams.length < COGNITIVE_CORR_MIN_EXAMS) return { ready: false, n: exams.length };
-  /* v102 — netsiz deneme 0 net sayılmaz (examNetDeger: kayıt → D/Y → yok). */
-  const yarim = Math.floor(exams.length / 2);
-  const ilkNets = exams.slice(0, yarim).map(examNetDeger).filter(n => n !== null);
-  const sonNets = exams.slice(yarim).map(examNetDeger).filter(n => n !== null);
-  const firstAvg = avg(ilkNets);
-  const lastAvg = avg(sonNets);
-  const readingUp = readingStats().pages > 0;
-  return {
-    ready: true, n: exams.length,
-    trend: Math.round((lastAvg - firstAvg) * 100) / 100,
-    firstAvg: Math.round(firstAvg * 100) / 100, lastAvg: Math.round(lastAvg * 100) / 100,
-    readingUp,
-    message: readingUp && lastAvg > firstAvg
-      ? "Okuma disiplinin artarken net ortalaman yükselişe geçti: Bilişsel Kondisyon Eğilimi POZİTİF."
-      : "Net ortalaman " + (lastAvg >= firstAvg ? "yatay/seferde" : "düşüşte") + ". Günlük okuma ritmini koru; Süre ve çözüm hataları izleniyor."
-  };
-}
-function avg(arr) { return arr.length ? arr.reduce((s, v) => s + v, 0) / arr.length : 0; }
+/* v105 — "Bilişsel Kondisyon Eğilimi" hesaplayıcısı KALDIRILDI (kullanıcı
+   isteği). Okuma sayfası/hızı ile deneme netini tek bir "eğilim" cümlesinde
+   birleştirmek yanıltıcıydı; iki veri ayrı bölümlerde, kendi başına kalıyor.
+   avg() de yalnız burada kullanıldığı için kaldırıldı. */
 
 // Altın Saat: öncelik sıralamasının tepesindeki konular -> seçilen verimli dilime atanır
 function goldenHourTopics(limit) {
@@ -5825,14 +5813,13 @@ function resetTopic(topicKey) {
 
 // ============================================================
 // ANALİZ MERKEZİ v5.1 — KİTAPLIK / MODÜL C (modül: ui/library.js)
-// Disiplin Puanı + Okuma Hızı + Bilişsel Kondisyon Eğilimi (N>=5)
+// Disiplin Puanı + Okuma Hızı (v105: "Bilişsel Kondisyon Eğilimi" kaldırıldı)
 // ============================================================
 
 let bookFormOpen = false; // §6: form varsayılan kapalı — "Yeni Kitap Ekle" ile açılır
 
 function renderLibrary(container) {
   const rs = readingStats();
-  const trend = cognitiveTrend();
   const anlRate = calculateAnlamadimRate();
   const skya = skyaRate();
   const okunan = state.books.filter(b => !b.done);
@@ -5872,13 +5859,7 @@ function renderLibrary(container) {
   html += '<div class="kb-kpi"><div><b class="tabular">' + state.books.length + "</b><span>Toplam Kitap</span></div><div><b class=\"tabular\" style=\"color:var(--semantic-success);\">" + biten.length + "</b><span>Tamamlanan</span></div></div>";
   html += '<div class="kb-kpi kb-kpi2"><div><b class="tabular" style="color:var(--brand-blue);">' + rs.pages + "</b><span>Okunan Sayfa</span></div><div><b class=\"tabular\" style=\"color:var(--semantic-warning);\">" + bugun + "</b><span>Bugün</span></div></div>";
   html += '<div class="kb-satir tabular" style="flex-direction:column;align-items:flex-start;gap:4px;"><span>Disiplin Puanı: <b>%' + rs.discipline + "</b></span><span>Okuma Hızı: <b>" + (rs.speed !== null ? rs.speed + " sf/sa" : "-") + "</b></span><span>Toplam Süre: <b>" + rs.minutes + " dk</b></span></div>";
-  html += '<div class="bento-card" style="background:var(--bg-canvas);box-shadow:none;margin-top:12px;padding:12px;"><b style="font-size:12.5px;">' + icon("activity", 13, "vertical-align:-2px;color:var(--memory-indigo);") + " Bilişsel Kondisyon Eğilimi</b>";
-  if (trend.ready) {
-    html += '<p class="text-xs" style="margin-top:6px;">' + esc(trend.message) + '</p><p class="text-xs text-muted tabular" style="margin-top:4px;">İlk yarı ort. ' + trend.firstAvg + " → Son yarı ort. " + trend.lastAvg + " (N=" + trend.n + ")</p>";
-  } else {
-    html += '<p class="text-xs text-muted" style="margin-top:6px;">Korelasyon için en az <b>' + COGNITIVE_CORR_MIN_EXAMS + "</b> deneme gerekli (şu an " + trend.n + ").</p>";
-  }
-  html += "</div></div>";
+  html += "</div>"; // İstatistikler paneli kapanışı (v105 — kondisyon kartı kalktı)
 
   // SAĞ: Okunan Kitaplar (şu an) + Tamamlanan Kitaplar
   html += '<div><div class="bento-card" style="margin-bottom:14px;"><h3 style="font-size:15px;font-weight:700;margin-bottom:8px;">' + icon("book-open", 15, "vertical-align:-3px;margin-right:6px;color:var(--brand-blue);") + " Okunan Kitaplar (" + okunan.length + ")</h3>";

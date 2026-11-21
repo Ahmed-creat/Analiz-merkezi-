@@ -464,6 +464,20 @@ async function kullaniciCek(userId: string, stateJson: any): Promise<any> {
       await yaz(userId, { durum: "kimlik-cakisma", durum_mesaji: m });
       return { durum: "kimlik-cakisma", mesaj: m };
     }
+    const k = new Kavanoz(), r: any = await giris(kim, k);
+    if (r.durum !== "oturum") {
+      const msj = r.durum === "sifre-gerekli"
+        ? "Okulizyon bu kayıt için şifre istiyor — Profil → Okulizyon bölümüne şifreni yaz ve «Şimdi dene». (Şifre kaydedilmez.)"
+        : (r.mesaj || "Giriş yapılamadı");
+      await yaz(userId, { durum: r.durum, durum_mesaji: msj.slice(0, 400) });
+      return { durum: r.durum, mesaj: msj, kodlar: r.kodlar, ham: r.ham };
+    }
+    /* v105 — BAĞ, ANCAK GİRİŞ BAŞARILI OLDUKTAN SONRA YAZILIR.
+       Önceki sürüm bağı çekimden ÖNCE yazıyordu: yanlış ad/numara/okul giren
+       biri, hiç sonuç alamasa bile o okul numarasını "kapıyordu" ve gerçek
+       öğrenci kendi numarasına bağlanamıyordu (kullanıcı: "nasıl yanlış hesap
+       bağlayacak ki"). Artık sahiplik KANITI = Okulizyon girişinin açılması.
+       Giriş yapılamadıysa bağ oluşmaz; kimse kimsenin numarasını kilitleyemez. */
     if (!mevcut) {
       const b = await bagYaz(userId, String(kim.kurumkodu), String(kim.okulNo), String(kim.ad));
       if (!b.ok) {
@@ -474,14 +488,6 @@ async function kullaniciCek(userId: string, stateJson: any): Promise<any> {
         await yaz(userId, { durum: "kimlik-cakisma", durum_mesaji: m });
         return { durum: "kimlik-cakisma", mesaj: m };
       }
-    }
-    const k = new Kavanoz(), r: any = await giris(kim, k);
-    if (r.durum !== "oturum") {
-      const msj = r.durum === "sifre-gerekli"
-        ? "Okulizyon bu kayıt için şifre istiyor — Profil → Okulizyon bölümüne şifreni yaz ve «Şimdi dene». (Şifre kaydedilmez.)"
-        : (r.mesaj || "Giriş yapılamadı");
-      await yaz(userId, { durum: r.durum, durum_mesaji: msj.slice(0, 400) });
-      return { durum: r.durum, mesaj: msj, kodlar: r.kodlar, ham: r.ham };
     }
     const t = await sinavlariTopla(k);
     const dolu = t.exams.filter((e) => Object.keys(e.lessons || {}).length || (e.rows || []).length);

@@ -138,7 +138,7 @@ console.log("\n== 7) Sürüm damgası + önbellek uyumu ==");
 {
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-  ok("PWA_SURUM v103", /^v103/.test(surum), surum);
+  ok("PWA_SURUM v105", /^v105/.test(surum), surum);
   ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
 }
 
@@ -191,6 +191,20 @@ console.log("\n== 9) Okulizyon kimlik bağı: bir okul no = tek hesap ==");
     /crypto\.subtle\.digest\("SHA-256"/.test(CEK) && /adOzet\(ad\)/.test(CEK));
   ok("istemci çakışmayı Türkçe anlatıyor",
     /"kimlik-cakisma": "Bu okul numarası başka bir hesaba bağlı/.test(APP));
+
+  /* v105 — KULLANICI: "Nasıl yanlış hesap bağlayacak ki?"
+     Bağ, Okulizyon girişi AÇILDIKTAN sonra yazılmalı. Giriş başarısızsa bağ
+     oluşmamalı; yoksa yanlış ad/numara giren biri o numarayı kilitler ve
+     gerçek öğrenci kendi numarasına bağlanamaz. */
+  ok("bağ, giriş denemesinden SONRA yazılıyor (giriş başarısı = sahiplik kanıtı)",
+    !/if \(!mevcut\) \{\s*const b = await bagYaz/.test(
+      CEK.slice(CEK.indexOf("const mevcut = await bagOku"), CEK.indexOf("const k = new Kavanoz()"))) &&
+    CEK.indexOf("const k = new Kavanoz(), r: any = await giris(kim, k)") <
+      CEK.indexOf("const b = await bagYaz(userId"));
+  ok("giriş başarısızsa erken dönüş var (bağ yazılmaz)",
+    /if \(r\.durum !== "oturum"\)[\s\S]{0,600}return \{ durum: r\.durum/.test(CEK));
+  ok("bağ yazımı giriş bloğunun İÇİNDE (return'den sonra, kapanıştan önce)",
+    /if \(r\.durum !== "oturum"\)[\s\S]{0,900}if \(!mevcut\) \{\s*const b = await bagYaz/.test(CEK));
 }
 
 // ------------------------------------------------------------

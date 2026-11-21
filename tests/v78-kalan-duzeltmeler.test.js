@@ -126,39 +126,13 @@ console.log("\n== 2) 'Son deneme' TARİHE göre ==");
   ok("hiç geçerli net yoksa seri BOŞ (0 noktası uydurulmaz)", hepsiNetsiz.series.length === 0);
   ok("hiç geçerli net yoksa ortalama 0'a bölünmez", hepsiNetsiz.avg === 0 && hepsiNetsiz.best === 0);
 
-  // v102 — cognitiveTrend (Bilişsel Kondisyon Eğilimi) de 0 net UYDURMAZ:
-  // netsiz deneme ortalamaya sokulmaz; iki yarı da boşsa trend 0'a bölünmez.
-  const kogKod = fonksiyonAl("examNetDeger") + "\n" + fonksiyonAl("cognitiveTrend") + "\n" + fonksiyonAl("avg");
-  const kogKos = (exams) => {
-    const b = {
-      COGNITIVE_CORR_MIN_EXAMS: 5,   // index.html'deki sabitin aynısı (eşik gevşetilmez)
-      netOf: (d, w) => (Number(d) || 0) - (Number(w) || 0) / 4,
-      state: { exams },
-      parseDay: s => new Date(String(s).slice(0, 10) + "T00:00:00"),
-      readingStats: () => ({ pages: 0 })
-    };
-    vm.createContext(b);
-    vm.runInContext(kogKod + "\nthis.t = cognitiveTrend();", b);
-    return b.t;
-  };
-  const kog = kogKos([
-    { name: "E1", date: "2026-10-01", net: 40 },
-    { name: "E2", date: "2026-10-08", lessons: {} },      // net yok → ortalamaya girmez
-    { name: "E3", date: "2026-10-15", net: 50 },
-    { name: "E4", date: "2026-10-22", net: 60 },
-    { name: "E5", date: "2026-10-29", net: 70 }
-  ]);
-  // yarim = floor(5/2) = 2 → ilk yarı [40, netsiz] → ortalama 40 (netsiz 0 SAYILMAZ)
-  ok("cognitiveTrend: netsiz deneme 0 sayılmaz (ilk yarı 40)", kog.firstAvg === 40, String(kog.firstAvg));
-  ok("cognitiveTrend: son yarı 60 (50,60,70)", kog.lastAvg === 60, String(kog.lastAvg));
-  ok("cognitiveTrend: trend +20 net", kog.trend === 20, String(kog.trend));
-  const kogBos = kogKos([
-    { name: "B1", date: "2026-10-01" }, { name: "B2", date: "2026-10-02" },
-    { name: "B3", date: "2026-10-03" }, { name: "B4", date: "2026-10-04" }, { name: "B5", date: "2026-10-05" }
-  ]);
-  ok("cognitiveTrend: hiç net yoksa NaN/Infinity üretmez", kogBos.trend === 0 && kogBos.firstAvg === 0 && kogBos.lastAvg === 0,
-    JSON.stringify({ t: kogBos.trend, a: kogBos.firstAvg, b: kogBos.lastAvg }));
-  ok("cognitiveTrend: eşik 5 altında ready=false", kogKos([{ name: "C1", date: "2026-10-01", net: 10 }]).ready === false);
+  // v105 — KULLANICI: "Bilişsel Kondisyon Eğilimi" KALDIRILDI.
+  // Okuma verisi ile deneme netini birleştiren bu yorum bir daha üretilmemeli.
+  {
+    const gorunen = HTML.split("\n").filter(l => !/^\s*(\/\*|\*|\/\/)/.test(l)).join("\n");
+    ok("kondisyon eğilimi metni üretilmiyor", !/Bilişsel Kondisyon Eğilimi/.test(gorunen.replace(/v105[^\n]*/g, "")));
+    ok("cognitiveTrend fonksiyonu yok", !/function cognitiveTrend\s*\(/.test(gorunen));
+  }
 }
 
 // ---------------------------------------------------------------

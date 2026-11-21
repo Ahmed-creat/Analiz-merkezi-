@@ -1,4 +1,4 @@
-# Güvenlik ve KVKK — ne yapıldı, ne kaldı (v103 · 31 Ekim 2026)
+# Güvenlik ve KVKK — ne yapıldı, ne kaldı (v105 · 21 Kasım 2026)
 
 Bu belge **teknik bilmeyen** biri için yazıldı. Kısa cümleler, benzetmeler.
 
@@ -17,9 +17,10 @@ Bu belge **teknik bilmeyen** biri için yazıldı. Kısa cümleler, benzetmeler.
 - Veri **sonsuza kadar** tutulamaz → süresi dolunca silinir.
 - Bir sızıntı olursa **72 saat içinde** hem Kurul'a hem velilere haber verilir.
 
-⚠️ Sana özel: uygulamadaki **"Bilişsel Kondisyon Eğilimi"** öğrenciyi ölçen bir değerlendirme.
-KVKK Kurulu 2020'de bir okula, **veli izni ve bilgilendirme olmadan öğrencilere test
-uyguladığı için** ihlal kararı verdi. Bu ekran için veli bilgilendirmesi şart.
+✅ ~~Sana özel: uygulamadaki "Bilişsel Kondisyon Eğilimi"…~~ **v105 — KALDIRILDI.**
+Bu blok okuma verisiyle deneme netini birleştirip öğrenciye "kondisyon" yorumu yapıyordu
+(KVKK Kurulu 2020'de benzer bir "izin alınmadan test uygulama" kararı vermişti).
+Artık böyle bir yorum üretilmiyor; okuma ve deneme verileri ayrı bölümlerde kalıyor.
 
 > Bu belge hukuki danışmanlık değildir. Metinleri hukukçuya/okula göstermeden yayına almamak daha doğru.
 
@@ -33,7 +34,7 @@ Eşleştirme tablosu: her satır **kapatıldı** ve canlı veritabanında **öl�
 |---|---|---|---|
 | 1 | Uygulamanın herkese açık kimlik kartıyla "tabloyu boşalt" komutu çalıştırılabiliyordu | **Tüm öğrencilerin verisi** tek istekte silinirdi | ✅ Kapatıldı (yetki kaldırıldı) |
 | 2 | Uygulamanın arka plan işleri (bildirim gönderme) dışarıdan çalıştırılabiliyordu | Biri **tüm sınıfa** sahte bildirim yağdırabilirdi | ✅ Kapatıldı (yalnız sunucu) |
-| 3 | Birinin adı + okul no'sunu bilen, onun sonuçlarını **kendi hesabına** çekebiliyordu | Başkasının sınav sonuçları görülebilirdi | ✅ Kapatıldı (sahiplik bağı) |
+| 3 | Birinin adı + okul no'sunu bilen, onun sonuçlarını **kendi hesabına** çekebiliyordu | Başkasının sınav sonuçları görülebilirdi | ✅ Kapatıldı (sahiplik bağı) — **v105: bağ ancak Okulizyon girişi açıldıktan sonra yazılıyor** |
 | 4 | Okulizyon şifresi **düz metin** olarak (hem telefonda hem bulutta) saklanacaktı | Veritabanını gören şifreyi okurdu | ✅ Şifre artık **hiç saklanmıyor** |
 
 Yanında bulunan 2 sorun daha:
@@ -76,9 +77,14 @@ Kuruldu ve canlıda denendi.
 **Nasıl çalışıyor:**
 
 1. Öğrenci e-posta ile kayıt olur → **e-postasına gelen bağlantıya tıklamadan** uygulamaya giremez.
-2. Okulizyon bilgilerini (ad, okul no, il/ilçe/okul) girer → sistem **o numarayı bu hesaba bağlar**.
+2. Okulizyon bilgilerini (ad, okul no, il/ilçe/okul) girer. Sistem Okulizyon'a **giriş yapmayı dener**;
+   giriş **açılırsa** o numara bu hesaba bağlanır. Giriş açılmazsa **bağ oluşmaz** — yani yanlış
+   numara yazan biri o numarayı "kapamaz".
 3. Başka biri **aynı numarayı** girerse: **"Bu okul numarası başka bir hesaba bağlı — kendi numaranı kullan."** → çekim yapılmaz.
 4. Bir hesap bağlı olduğu numarayı değiştirmek isterse önce bağı kaldırması gerekir.
+
+> **v105 düzeltmesi:** Bağ eskiden çekimden **önce** yazılıyordu; yanlış ad/okul giren biri numarayı kilitleyebiliyordu.
+> Artık sıra: sahiplik kontrolü → **Okulizyon girişi** → başarılıysa bağ yazılır.
 
 **Koruma katmanları:**
 
@@ -86,7 +92,7 @@ Kuruldu ve canlıda denendi.
 |---|---|
 | E-posta doğrulaması | Sahte e-postayla hesap açıp başkasının numarasını yazmak işe yaramaz |
 | Tekillik kuralı (veritabanı) | Aynı okul + no **iki hesaba** bağlanamaz (canlıda test edildi) |
-| Sahiplik kaydı | Çekimden **önce** "bu numara senin mi" kontrol edilir |
+| Sahiplik kanıtı | Numara, ancak **Okulizyon girişi açıldıktan** sonra bu hesaba bağlanır |
 | İstemci yazamaz | Bu tabloya yalnız sunucu yazar; öğrenci kendi satırını görür |
 | Ad gizliliği | Düz ad değil, **geri çevrilemez özet** saklanır |
 
@@ -107,11 +113,29 @@ Kuruldu ve canlıda denendi.
 
 | Öncelik | İş | Neden |
 |---|---|---|
+| **P0** | `okulizyon-cek` sunucu fonksiyonunu yayına almaya **açık onay** | Aşağıdaki kutuya bak — bu yapılmadan e-posta/sahiplik korumaları sunucuda çalışmıyor |
 | **P1** | KVKK paketi: veli bilgilendirme + izin adımı + "verilerimi sil" düğmesi + otomatik silme süresi | Şu an hiç yok; hukuki yükümlülük |
 | **P1** | Okulizyon **devir** akışı (kod ile) | Numara el değiştirince çıkmaz sokak |
-| **P2** | Sunucu ayarları panelden: şifre politikası, oturum zaman aşımı, CORS adres kısıtı | Bazıları panelden, bazıları yalnız SQL/panel ile; benim araçlarımla değiştirilemedi |
+| **P2** | Sunucu ayarları panelden: şifre politikası (en az 8 karakter + sızmış şifre denetimi + robot koruması) | Benim araçlarım bu üç alanı değiştiremiyor; panelden yapılmalı |
 | **P2** | Ad-soyad / okul no / il / ilçe bilgisini kayıttan çıkarma | "Ben görmeyeyim" hedefi |
 | **P3** | Erişim günlüğü (kim, ne zaman veriye baktı) | Denetim izi |
+
+---
+
+## 6b. ⚠️ ÖNEMLİ — sunucu tarafı henüz yayında DEĞİL
+
+Ölçüm (canlı): `okulizyon-cek` sunucu fonksiyonu **sürüm 15 · 28 Ekim** tarihli.
+Yani şu an canlıda çalışan sunucu kodu **e-posta doğrulaması** ve **sahiplik bağı** denetimlerini
+**içermiyor**. Web sitesindeki (tarayıcıdaki) sürüm güncel; sunucu tarafı eski.
+
+Bunun anlamı, sade dilde:
+
+- Okulizyon bağı tablosu **kurulu ve tekillik kuralı çalışıyor** ✅
+- Ama "bir okul no = tek hesap" kuralını **uygulayan sunucu kodu yayında değil** ⏳
+- Yani şu an bir kişi, başkasının adı + okul nosunu bilirse **onun sonuçlarını çekebilir** ⚠️
+- Bu fonksiyonun yayına alınması için **senin açık onayın** gerekiyor (senin adına canlıya kod çıkarmıyorum).
+
+Onay verdiğinde: `okulizyon-cek` v16 olarak yayına alınır, sonra canlıda tekrar ölçülür.
 
 ---
 
@@ -129,5 +153,6 @@ yazıyor ("… adresine onay bağlantısı gönderdik — bağlantıya tıklamad
 - `supabase/migrations/0015_okulizyon_kimlik.sql` — sahiplik tablosu + tekillik
 - `site/app-pwa.js` — şifre saklamama, şifre kuralı, Türkçe mesajlar
 - `supabase/functions/okulizyon-cek/index.ts` — e-posta doğrulama + sahiplik denetimi
-- `tests/guvenlik-v103.test.js` — **65 kontrol**; düzeltmeler geri gelirse test kırmızı olur
+- `tests/guvenlik-v103.test.js` — **68 kontrol**; düzeltmeler geri gelirse test kırmızı olur
+- `tests/v78-kalan-duzeltmeler.test.js` — kaldırılan "Kondisyon Eğilimi" geri gelirse kırmızı olur
 - `npm run test:guvenlik` · tamamı: `npm run test:hepsi` (EXIT 0)
