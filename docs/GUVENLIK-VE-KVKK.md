@@ -1,4 +1,4 @@
-# Güvenlik ve KVKK — ne yapıldı, ne kaldı (v105 · 21 Kasım 2026)
+# Güvenlik ve KVKK — ne yapıldı, ne kaldı (v106 · 21 Kasım 2026)
 
 Bu belge **teknik bilmeyen** biri için yazıldı. Kısa cümleler, benzetmeler.
 
@@ -57,14 +57,16 @@ Yanında bulunan 2 sorun daha:
 
 ## 3. "Kullanıcı bilgilerini ben görmemeliyim" — dürüst cevap
 
-Veritabanının sahibi olarak **teknik olarak her zaman görebilirsin**. Bunu "kapatmak" mümkün değil.
+**v106 öncesi doğru cevap "teknik olarak her zaman görebilirsin" idi. Artık değil.**
+Kasa (uçtan uca şifreleme) açıkken veri cihazda şifrelenir; sunucudaki kayıt **anlamsız
+harf yığınıdır** ve anahtar sende değil, kullanıcının kasa şifresinde. Yani sen de açamazsın.
+Ayrıntı: **6a**.
 
 Yapılabilecek şey **görecek bir şey bırakmamak**:
 
 - ✅ Okulizyon şifresi **hiç istenmiyor/saklanmıyor** (yapıldı)
 - ✅ Öğrencinin **adı** artık bağ tablosunda düz yazılmıyor; yalnız **özeti** (geri çevrilemez) tutuluyor (yapıldı)
-- ⏳ Okul no / il / ilçe bilgisini kayıttan çıkarmak → **sonraki adım** (Okulizyon çekimi bunlara ihtiyaç duyuyor; ayrı tasarım gerekir)
-- ⏳ Ad-soyad yerine takma ad kullanma → sonraki adım
+- ✅ Okul no / il / ilçe / ad soyad / sınav sonuçları / plan / kitaplar → **kasa açıkken sunucuda şifreli** (v106)
 
 > Not: Şu an uygulamada **tek satır KVKK metni / veli izni yok**. Bu, sonraki adımın (KVKK paketi) konusu.
 
@@ -113,29 +115,109 @@ Kuruldu ve canlıda denendi.
 
 | Öncelik | İş | Neden |
 |---|---|---|
-| **P0** | `okulizyon-cek` sunucu fonksiyonunu yayına almaya **açık onay** | Aşağıdaki kutuya bak — bu yapılmadan e-posta/sahiplik korumaları sunucuda çalışmıyor |
 | **P1** | KVKK paketi: veli bilgilendirme + izin adımı + "verilerimi sil" düğmesi + otomatik silme süresi | Şu an hiç yok; hukuki yükümlülük |
 | **P1** | Okulizyon **devir** akışı (kod ile) | Numara el değiştirince çıkmaz sokak |
 | **P2** | Sunucu ayarları panelden: şifre politikası (en az 8 karakter + sızmış şifre denetimi + robot koruması) | Benim araçlarım bu üç alanı değiştiremiyor; panelden yapılmalı |
-| **P2** | Ad-soyad / okul no / il / ilçe bilgisini kayıttan çıkarma | "Ben görmeyeyim" hedefi |
+| **P1** | Kullanıcıyı kasayı açmaya yönlendirme (kurulum akışı + hatırlatma) | Kasa kapalıyken veri düz durur; kurulum kolay olmalı |
 | **P3** | Erişim günlüğü (kim, ne zaman veriye baktı) | Denetim izi |
 
 ---
 
-## 6b. ⚠️ ÖNEMLİ — sunucu tarafı henüz yayında DEĞİL
+## 6a. KASA (v106) — "benim görmemem" gerçekten nasıl sağlanır
 
-Ölçüm (canlı): `okulizyon-cek` sunucu fonksiyonu **sürüm 15 · 28 Ekim** tarihli.
-Yani şu an canlıda çalışan sunucu kodu **e-posta doğrulaması** ve **sahiplik bağı** denetimlerini
-**içermiyor**. Web sitesindeki (tarayıcıdaki) sürüm güncel; sunucu tarafı eski.
+**Soru:** "Ad soyad, sınav sonuçları, hedef, plan takibi, kitaplar bunları neden
+şifrelenmiyor?"
 
-Bunun anlamı, sade dilde:
+**Cevap:** artık şifreleniyor. Bu, "görmemem" hedefinin **tek teknik karşılığıdır**.
 
-- Okulizyon bağı tablosu **kurulu ve tekillik kuralı çalışıyor** ✅
-- Ama "bir okul no = tek hesap" kuralını **uygulayan sunucu kodu yayında değil** ⏳
-- Yani şu an bir kişi, başkasının adı + okul nosunu bilirse **onun sonuçlarını çekebilir** ⚠️
-- Bu fonksiyonun yayına alınması için **senin açık onayın** gerekiyor (senin adına canlıya kod çıkarmıyorum).
+### Güncel sistemlerde nasıl yapılıyor?
+"Uygulamanın sahibi göremez" iddiasının adı **sıfır bilgi (zero-knowledge)** mimaridir.
+Deseni aynıdır: veri **cihazda** şifrelenir, sunucu yalnız **şifreli kutuyu** saklar,
+anahtar sunucuya hiç gitmez. (Aynı yöntem: Mega, Tresorit, Proton, Cryptomator,
+1Password/Bitwarden'ın sıfır bilgi modu, Apple'ın "Gelişmiş Veri Koruma"sı.)
 
-Onay verdiğinde: `okulizyon-cek` v16 olarak yayına alınır, sonra canlıda tekrar ölçülür.
+Sektörde yerleşmiş kurallar ve bizim uyguladığımız:
+| Kural | Bizde |
+|---|---|
+| Anahtar kullanıcı sırrından türetilir (PBKDF2/Argon2) | PBKDF2-SHA256, 310.000 tur |
+| Veri AES-256-GCM ile şifrelenir (her yazmada yeni IV) | ✅ |
+| Tuz kayda eklenir (cihazlar arası aynı anahtar) | ✅ (`t` alanı) |
+| Kurtarma anahtarı (12 kelime) — çünkü şifre kaybı = veri kaybı | ✅ |
+| Şifre/anahtar asla sunucuya gitmez | ✅ |
+| "Şifremi unuttum" veriyi açmaz; açıkça söylenir | ✅ profilde yazıyor |
+
+### Neden "öğretmen paneli açmamak" değil?
+Önceki cümlem kötüydü: "panel açmayız" bir **güvenlik önlemi değil**, sadece bir söz.
+Panel açılmasa da veritabanına giren herkes veriyi okuyabiliyordu. Bu yüzden doğru cevap
+söz vermek değil, **matematik**: kasa açıkken veriyi sen de okuyamazsın.
+
+### Kapsam — ne şifreleniyor, ne şifrelenmiyor
+| Veri | Durum |
+|---|---|
+| Ad soyad, sınıf | ✅ kasa içinde (sınıf ayrıca `grade` kolonuna **yazılmıyor**) |
+| Sınav sonuçları / denemeler | ✅ kasa içinde (`deneme_sayisi` kolonuna **yazılmıyor**) |
+| Hedef, plan, konu takibi, hafıza | ✅ |
+| Kitaplar / okuma geçmişi | ✅ |
+| Okulizyon kimliği (okul no, il/ilçe) | ✅ kasa içinde |
+| **Bildirimler** (banner başlık/metin) | ❌ kasaya girmez — gösterilmek için üretilir (**senin isteğin**) |
+| **Geri bildirim** | ❌ kasaya girmez — **senin isteğin** |
+| E-posta adresi | ❌ giriş için Supabase Auth'ta (kasa dışı); gereken tek kimlik |
+
+### Dürüst bedeller
+1. **Şifre unutulursa veri gider** — kurtarma anahtarı yoksa. Bu, sıfır bilginin tanımıdır.
+2. **Kasa kapalıysa veri düz durur.** Uygulama bunu profilde **kırmızı** yazıyor:
+   "KAPALI — veri sunucuda DÜZ duruyor". Gizlenmiyor.
+3. Kasa **kilitliyken** bulut yazımı ve Okulizyon çekimi **durur** (şifreli kaydın üzerine
+   düz metin yazıp kilidi boşa çıkarmamak için).
+4. Eski (şifresiz) kayıtlar okunabilir; **ilk yazmada** şifreliye döner.
+
+### Ölçüm
+`tests/kasa-v106.test.js` — **42 kontrol**, kripto gerçekten koşturulur:
+şifrele→çöz, şifreli metinde ad/okul no/kitap adı **geçmiyor**, yanlış şifre reddi,
+anahtar yokken veri gösterilmemesi, başka cihazda açılması, kurtarma anahtarı,
+yanlış kurtarma reddi, kilitliyken düz yazma engeli.
+
+---
+
+## 6b. ✅ Sunucu tarafı yayında (v16)
+
+Ölçüm (canlı): `okulizyon-cek` **sürüm 16** olarak yayına alındı.
+Önceki sürüm **15 · 28 Ekim** tarihliydi ve e-posta doğrulaması ile sahiplik
+bağını **içermiyordu**. Artık içeriyor:
+
+- Doğrulanmamış e-posta ile Okulizyon çekimi **403** döner.
+- Aynı okul no ikinci hesaba **bağlanmaz** (409 `kimlik-cakisma`), çekim yapılmaz.
+- Bağ, ancak Okulizyon girişi **açıldıktan sonra** yazılır (yanlış numara kilitleyemez).
+- `run` (cron) modu yalnız `CRON_SECRET` ile; anon anahtarla tüm öğrencileri gezme yolu kapalı.
+
+Not: bu fonksiyon sunucu tarafında çalıştığı için "düz metin kayıt" okuma yolu
+hâlâ eski (şifresiz) kayıtlar için açıktır; kasa (v106) açıldıkça bu yol kendiliğinden kapanır.
+
+---
+
+## 6c. Okulizyon'dan otomatik sonuç çekmek yasal mı?
+
+Ayrımı net yapmak gerekiyor; ikisi ayrı hukuk alanı:
+
+**1) KVKK (kişisel veri) tarafı**
+- Öğrenci **kendi** sonucunu kendi kimliğiyle çekiyorsa: amaç hizmeti sağlamak → **hukuka uygun**.
+- **Herkesin** sonuçlarını toplayıp işlemek: veli izni + aydınlatma olmadan **hukuka aykırı**.
+  KVKK Kurulu'nun **02.04.2020 / 2020/255** kararı okula, veli izni olmadan öğrencilere
+  bilişsel test uyguladığı için ihlal cezası verdi.
+- Şu anki tasarım: her kullanıcı **yalnız kendi** kaydını çeker → doğru tarafta.
+
+**2) Sözleşme (okulizyon.com) tarafı**
+- Okulizyon, **MEB/e-Okul değil**, özel bir platform ("okul, öğrenci ve yayınevini
+  ölçme değerlendirme ekseninde buluşturan dijital platform" — okulizyon.com).
+- Hizmet şartları sayfası arama motorlarına açık değil (bulunamadı). **Otomatik veri
+  çekme (bot/kazıma) yasakları** bu tür platformların standart maddesidir; okumadan
+  "serbest" denemez.
+- **Sonuç:** kendi sonucunu, kendi bilgileriyle, kendi cihazın için çekmek makul;
+  **toplu/zamanlanmış çekimi artırmak** için okulun/yayınevinin **yazılı izni** gerekir.
+  Bu bir veri koruma değil **sözleşme** riskidir.
+
+**Pratik öneri:** Okulizyon'dan/okuldan yazılı izin alınana kadar otomatik çekimi
+**kullanıcının kendi «Şimdi dene» düğmesine** bağlı tutmak (zaten böyle) en güvenli yol.
 
 ---
 
@@ -153,6 +235,8 @@ yazıyor ("… adresine onay bağlantısı gönderdik — bağlantıya tıklamad
 - `supabase/migrations/0015_okulizyon_kimlik.sql` — sahiplik tablosu + tekillik
 - `site/app-pwa.js` — şifre saklamama, şifre kuralı, Türkçe mesajlar
 - `supabase/functions/okulizyon-cek/index.ts` — e-posta doğrulama + sahiplik denetimi
+- `site/kasa.js` — **v106 kasa**: AES-256-GCM + PBKDF2(310.000) + 12 kelimelik kurtarma
 - `tests/guvenlik-v103.test.js` — **68 kontrol**; düzeltmeler geri gelirse test kırmızı olur
+- `tests/kasa-v106.test.js` — **42 kontrol** (kripto gerçekten koşturulur)
 - `tests/v78-kalan-duzeltmeler.test.js` — kaldırılan "Kondisyon Eğilimi" geri gelirse kırmızı olur
-- `npm run test:guvenlik` · tamamı: `npm run test:hepsi` (EXIT 0)
+- `npm run test:guvenlik` · `npm run test:kasa` · tamamı: `npm run test:hepsi` (EXIT 0)
