@@ -1,4 +1,4 @@
-const PWA_SURUM = "v105-kimlik";
+const PWA_SURUM = "v106-kasa";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -18,6 +18,8 @@ function surumEtiketiYaz() {
 // Supabase erişilemezse uygulama tamamen çevrimdışı çalışmaya devam eder.
 // ============================================================
 import { SUPABASE_CONFIG } from "./supabase-config.js";
+/* v106 — KASA: kişisel veri buluta yazılmadan ÖNCE cihazda şifrelenir. */
+import * as KASA from "./kasa.js";
 import { FIREBASE_CONFIG, FCM_VAPID_KEY } from "./firebase-config.js";
 
 let sb = null;              // Supabase istemcisi
@@ -145,6 +147,16 @@ function initAuthUI() {
     if (!el) return;
     const a = el.dataset.act;
     if (a === "pwaAuth") { currentUser ? doSignOut() : openAuthModal(); }
+    /* v106 — KASA düğmeleri */
+    else if (a === "kasaKur") kasaKurTiklandi();
+    else if (a === "kasaAcKutu") kasaAcTiklandi();
+    else if (a === "kasaKurtar") kasaKurtarmaTiklandi();
+    else if (a === "kasaKurtarma") kasaKurtarmaIndir();
+    else if (a === "kasaKilitle") {
+      try { window.__kasa.kilitle(); } catch (e) { }
+      renderProfileModal();
+      toast("Kasa kilitlendi. Bulut kaydı bir sonraki açılışta şifre ister.", "info");
+    }
     else if (a === "openProfile") openProfileModal();
     else if (a === "syncNow") { if (typeof window.__supabaseSenkronizeEt === "function") { window.__supabaseSenkronizeEt(); toast("Buluta yedekleniyor…", "info"); } }
     else if (a === "pwaProfileClose") closeProfileModal();
@@ -730,6 +742,126 @@ function okzSecimYukle(s) {
   if (OKZ_SECIM.ilce.kod) okzListeTazele("okul");
 }
 
+/* ---------- v106 KASA İŞLEYİCİLERİ ----------
+   Kurtarma anahtarı 2 parçadır:
+     • 12 kelime  → kullanıcıda (kâğıt/şifre yöneticisi)
+     • sarma kaydı (sarma) → app_state.kasaKurtarma içinde (sunucuda, açılamaz)
+   İkisi bir araya gelince kasa anahtarı çıkar. Tek başına hiçbiri işe yaramaz.
+   Bu yüzden kurtarma başka cihazda da çalışır. */
+function kasaNot(metin, tur) {
+  const n = document.getElementById("am-kasa-not");
+  if (!n) { toast(metin, tur === "ok" ? "success" : "error"); return; }
+  n.style.display = "block";
+  n.style.color = tur === "ok" ? "#16A34A" : "#DC2626";
+  n.textContent = metin;
+}
+function kasaSarmayiStateeYaz(sarma) {
+  try {
+    if (typeof state !== "undefined" && state) {
+      state.kasaKurtarma = sarma || null;
+      if (typeof saveState === "function") saveState();
+    }
+  } catch (e) { /* */ }
+}
+async function kasaKurTiklandi() {
+  const el = document.getElementById("am-kasa-yeni");
+  const sifre = (el && el.value || "").trim();
+  if (!sifre) return kasaNot("Kasa şifresini yaz.", "hata");
+  if (sifre.length < 8) return kasaNot("Kasa şifresi en az 8 karakter olmalı.", "hata");
+  const r = await window.__kasa.kur(sifre);
+  if (!r.ok) return kasaNot(r.hata || "Kasa kurulamadı.", "hata");
+  // Kurtarma anahtarını HEMEN üret: şifre unutulursa tek çıkış yolu bu.
+  const k = window.__kasa.kurtarmaUret();
+  const sarma = await window.__kasa.kurtarmaSar(k);
+  kasaSarmayiStateeYaz(sarma);
+  if (el) el.value = "";
+  renderProfileModal();
+  kasaKurtarmaGoster(k);
+  toast("Kasa kuruldu — bundan sonra buluta yalnız şifreli kayıt gider.", "success");
+}
+async function kasaAcTiklandi() {
+  const el = document.getElementById("am-kasa-yeni");
+  const sifre = (el && el.value || "").trim();
+  if (!sifre) return kasaNot("Kasa şifresini yaz.", "hata");
+  try {
+    let tuz = "";
+    try {
+      const { data } = await sb.from("app_states").select("state").eq("user_id", currentUser.id).maybeSingle();
+      const ham = data && (typeof data.state === "string" ? JSON.parse(data.state) : data.state);
+      tuz = window.__kasa.tuzAl(ham);
+    } catch (e) { /* */ }
+    if (!tuz) return kasaNot("Bu hesapta şifreli kayıt yok — önce kasayı kur.", "hata");
+    const r = await window.__kasa.ac(sifre, tuz);
+    if (!r.ok) return kasaNot(r.hata || "Açılamadı.", "hata");
+    if (el) el.value = "";
+    renderProfileModal();
+    toast("Kasa açıldı.", "success");
+  } catch (e) { kasaNot("Kasa açılamadı: " + String((e && e.message) || e), "hata"); }
+}
+function kasaKurtarmaGoster(kelimeler) {
+  const eski = document.getElementById("am-kasa-kurtarma");
+  if (eski) eski.remove();
+  const d = document.createElement("div");
+  d.id = "am-kasa-kurtarma";
+  d.style.cssText = "position:fixed;inset:0;z-index:9997;background:rgba(9,15,32,0.62);display:flex;align-items:center;justify-content:center;padding:16px;";
+  d.innerHTML = '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:460px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
+    '<div style="font-weight:800;font-size:16px;margin-bottom:6px;">🔑 Kurtarma anahtarın</div>' +
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;">Bu 12 kelimeyi <b>kâğıda yaz</b> veya şifre yöneticine kaydet. Kasa şifreni unutursan verini <b>yalnız bu kelimeler</b> kurtarır. Kelimeler sunucuya gönderilmez.</div>' +
+    '<div style="font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.7;background:var(--bg,#F6F8FC);border:1px dashed rgba(0,0,0,0.25);border-radius:10px;padding:12px;margin-bottom:10px;word-spacing:6px;">' + escHtml(kelimeler) + '</div>' +
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;"><button id="am-kk-indir" class="btn btn-primary btn-sm">Kopyala / indir</button><button id="am-kk-kapat" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kaydettim, kapat</button></div>' +
+    '</div>';
+  document.body.appendChild(d);
+  d.querySelector("#am-kk-kapat").addEventListener("click", () => d.remove());
+  d.querySelector("#am-kk-indir").addEventListener("click", () => {
+    try {
+      const metin = "ANALIZ MERKEZI - KASA KURTARMA ANAHTARI\n\n" + kelimeler +
+        "\n\nBu kelimeler olmadan, kasa sifresi unutulursa veri kurtarilamaz.\n";
+      const blob = new Blob([metin], { type: "text/plain;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "analiz-merkezi-kurtarma-anahtari.txt";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    } catch (e) { console.warn("İndirme:", e); }
+  });
+}
+// Var olan kasa için YENİ kurtarma anahtarı üret (eskiyi geçersiz kılar).
+async function kasaKurtarmaIndir() {
+  if (!window.__kasa.durum().acik) { toast("Önce kasayı aç.", "warning"); return; }
+  const k = window.__kasa.kurtarmaUret();
+  const sarma = await window.__kasa.kurtarmaSar(k);
+  kasaSarmayiStateeYaz(sarma);
+  kasaKurtarmaGoster(k);
+}
+function kasaKurtarmaTiklandi() {
+  const eski = document.getElementById("am-kasa-kurtarma-ac");
+  if (eski) eski.remove();
+  const d = document.createElement("div");
+  d.id = "am-kasa-kurtarma-ac";
+  d.style.cssText = "position:fixed;inset:0;z-index:9997;background:rgba(9,15,32,0.62);display:flex;align-items:center;justify-content:center;padding:16px;";
+  d.innerHTML = '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:440px;width:100%;padding:20px;">' +
+    '<div style="font-weight:800;font-size:16px;margin-bottom:8px;">Kurtarma anahtarıyla aç</div>' +
+    '<div style="font-size:12.5px;margin-bottom:8px;">12 kelimeyi yaz (araya boşluk koy).</div>' +
+    '<textarea id="am-kk-metin" rows="3" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;"></textarea>' +
+    '<div id="am-kk-hata" style="display:none;font-size:12px;color:#DC2626;margin-top:6px;"></div>' +
+    '<div style="display:flex;gap:8px;margin-top:10px;"><button id="am-kk-ac" class="btn btn-primary btn-sm">Aç</button><button id="am-kk-iptal" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Vazgeç</button></div></div>';
+  document.body.appendChild(d);
+  d.querySelector("#am-kk-iptal").addEventListener("click", () => d.remove());
+  d.querySelector("#am-kk-ac").addEventListener("click", async () => {
+    const k = (d.querySelector("#am-kk-metin").value || "").trim().toLowerCase().replace(/\s+/g, " ");
+    const hata = d.querySelector("#am-kk-hata");
+    let sarma = null;
+    try { sarma = (typeof state !== "undefined" && state && state.kasaKurtarma) || null; } catch (e) { /* */ }
+    if (!sarma) { try { sarma = JSON.parse(localStorage.getItem("am_kasa_sarma_v1") || "null"); } catch (e) { /* */ } }
+    if (!sarma) { hata.style.display = "block"; hata.textContent = "Bu hesapta kurtarma kaydı yok. Kasa kurulurken üretilen anahtar gerekir."; return; }
+    const r = await window.__kasa.kurtarmaAc(k, sarma);
+    if (!r.ok) { hata.style.display = "block"; hata.textContent = r.hata || "Açılamadı."; return; }
+    d.remove();
+    renderProfileModal();
+    toast("Kasa kurtarma anahtarıyla açıldı.", "success");
+  });
+}
+
 function renderProfileModal() {
   const m = document.getElementById("pwa-profile-modal");
   if (!m) return;
@@ -759,6 +891,36 @@ function renderProfileModal() {
   html += '</div>';
   html += '<div style="font-size:11px;opacity:0.65;margin-top:8px;">Giriş yapınca verilerin cihazların arasında eşitlenir.</div>';
   html += '</div>';
+
+  /* v106 — KASA BÖLÜMÜ. Kullanıcı: "ad soyad, sınav sonuçları, hedef, plan
+     takibi, kitaplar bunları neden şifrelenmiyor?" → artık şifreleniyor.
+     Ayar GİZLENMEZ: kasa kapalıysa kırmızı çerçevede açıkça yazar. */
+  {
+    const kd = (typeof kasaDurumu === "function") ? kasaDurumu() : { acik: false, var: false };
+    const acikRenk = kd.acik ? "#16A34A" : "#DC2626";
+    const acikMetin = kd.acik ? "AÇIK — buluta yalnız şifreli kutu gider"
+      : (kd.var ? "KİLİTLİ — şifre girilince bulut açılır" : "KAPALI — veri sunucuda DÜZ duruyor");
+    html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
+    html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:6px;">KASA (UÇTAN UCA ŞİFRELEME)</div>';
+    html += '<div style="font-size:12px;font-weight:700;color:' + acikRenk + ';margin-bottom:8px;">' + escHtml(acikMetin) + '</div>';
+    html += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:10px;">Açıkken ad soyad, sınav sonuçları, hedef, plan, konu takibi ve kitaplar <b>bu cihazda şifrelenir</b>; sunucu yalnız anlamsız harf görür. Şifren sunucuya <b>hiç gitmez</b>.</div>';
+    if (!kd.acik) {
+      html += '<input id="am-kasa-yeni" type="password" autocomplete="new-password" placeholder="Kasa şifresi (en az 8 karakter)" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;">';
+      html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+      html += '<button data-act="kasaKur" class="btn btn-primary btn-sm">Kasayı kur ve aç</button>';
+      html += '<button data-act="kasaAcKutu" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Var olan kasayı aç</button>';
+      html += '<button data-act="kasaKurtar" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kurtarma anahtarıyla aç</button>';
+      html += '</div>';
+      html += '<div id="am-kasa-not" style="display:none;font-size:11.5px;line-height:1.45;margin-top:8px;"></div>';
+    } else {
+      html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+      html += '<button data-act="kasaKurtarma" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kurtarma anahtarını indir (12 kelime)</button>';
+      html += '<button data-act="kasaKilitle" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kasayı kilitle</button>';
+      html += '</div>';
+    }
+    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:9px;line-height:1.45;">⚠️ Kasa şifresini unutursan verin kurtarılamaz. Kurtarma anahtarını indirip güvenli bir yerde tut.</div>';
+    html += '</div>';
+  }
 
   // B) OKULIZYON
   html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
@@ -1021,7 +1183,16 @@ async function oturumUygula(session) {
       // v44 — uzak kaydın zamanı: kendi yazdığımızdan yeni ise üzerine yazmayız.
       sonUzakYazma = bulutZaman(data.updated_at);
       const uzakMs = Date.parse(data.updated_at) || sonUzakYazma || 0;
-      const uzakState = typeof data.state === "string" ? JSON.parse(data.state) : data.state;
+      /* v106 — KASA: buluttaki kayıt şifreli zarf olabilir. Kasa açıksa burada
+         çözülür; kapalıysa çözülmez (anahtar sunucuda/cihazda düz durmaz).
+         Bu yüzden aşağıdaki blok, kayıt açılamazsa çalışmaz. */
+      const hamUzak = typeof data.state === "string" ? JSON.parse(data.state) : data.state;
+      const kasaSonuc = await kasaKayitAc(hamUzak);
+      if (kasaSonuc.durum === "kilitli" || kasaSonuc.durum === "acilmadi") {
+        kasaUyarisiGoster(kasaSonuc.durum, kasaSonuc.tuz);
+        return; // yerel kopya korunur; hiçbir şey silinmez
+      }
+      const uzakState = kasaSonuc.state;
       /* v88 — cihazda "tüm veriler silindi" damgası varsa ve bulut daha eskiyse
          buluttaki denemeler GERİ YÜKLENMEZ (kullanıcı sildi). */
       if (okzSifirlamaGecerli(okzSifirlamaDamgasi(user.id), uzakMs)) {
@@ -1097,6 +1268,108 @@ let yazmaZamanlayici = null;
 let sonYerelDegisim = 0;    // bu cihazdaki son değişiklik (ms)
 let sonUzakYazma = 0;       // sunucudaki updated_at (ms)
 
+/* ============================================================
+   v106 — KASA KÖPRÜSÜ (site/kasa.js)
+   Sunucuya yazılan state ŞİFRELİ ZARFTIR. Sunucu açamaz.
+   Okuma sırasında: eski (düz) kayıt → olduğu gibi açılır;
+   yeni (zarflı) kayıt → kasa açıksa çözülür, kapalıysa KİLİTLİ sayılır.
+   ============================================================ */
+const KASA_MESAJ = {
+  kilitli: "Buluttaki kaydın şifreli. Açmak için kasa şifreni bir kez gir — veri sunucuda çözülmüyor, bu cihazda açılıyor.",
+  acilmadi: "Kasa şifresi bu kaydı açamadı. Şifreyi kontrol et ya da kurtarma anahtarını kullan.",
+  kapali: "Kasa kapalı: veri sunucuda DÜZ duruyor. Profil → Kasa bölümünden şifre kur."
+};
+function kasaDurumu() {
+  try {
+    return {
+      acik: KASA.kasaAcikMi(),
+      var: KASA.kasaVarMi(),
+      kurulu: KASA.kasaVarMi()
+    };
+  } catch (e) { return { acik: false, var: false, kurulu: false }; }
+}
+// Buluta yazılacak nesneyi hazırla: kasa açıksa zarf, değilse düz.
+async function kasaZarfHazirla(nesne) {
+  if (!KASA.kasaAcikMi()) return { zarf: null, duz: nesne };
+  try { return { zarf: await KASA.kasaSifrele(nesne), duz: null }; }
+  catch (e) { console.warn("Kasa şifrelemesi başarısız:", e); return { zarf: null, duz: nesne }; }
+}
+// Buluttan gelen ham kayıt → { state, durum }
+// durum: "duz" | "cozuldu" | "kilitli" | "acilmadi"
+async function kasaKayitAc(ham) {
+  if (!KASA.zarfMi(ham)) return { state: ham, durum: "duz" };
+  const r = await KASA.kasaCoz(ham);
+  if (r && r.nesne) return { state: r.nesne, durum: "cozuldu" };
+  if (r && r.kilitli) return { state: null, durum: "kilitli", tuz: KASA.zarfTuzu(ham) };
+  return { state: null, durum: "acilmadi", tuz: KASA.zarfTuzu(ham) };
+}
+/* Kasa kilitliyse kullanıcıya TEK yerde, anlaşılır bir pencere göster.
+   Veri silinmez: yerel kopya çalışmaya devam eder, bulut açılmaz. */
+function kasaUyarisiGoster(durum, tuz) {
+  try {
+    if (window.__kasaPencereAcik) return;
+    window.__kasaPencereAcik = true;
+    const eski = document.getElementById("am-kasa-uyari");
+    if (eski) eski.remove();
+    const d = document.createElement("div");
+    d.id = "am-kasa-uyari";
+    d.style.cssText = "position:fixed;inset:0;z-index:9997;background:rgba(9,15,32,0.62);display:flex;align-items:center;justify-content:center;padding:16px;";
+    d.innerHTML =
+      '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:430px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
+      '<div style="font-weight:800;font-size:16px;margin-bottom:6px;">🔒 Bulut kaydın şifreli</div>' +
+      '<div style="font-size:13px;line-height:1.5;margin-bottom:12px;">' + escHtml(KASA_MESAJ[durum] || KASA_MESAJ.kilitli) + '</div>' +
+      '<input id="am-kasa-sifre" type="password" autocomplete="off" placeholder="Kasa şifren" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
+      '<div id="am-kasa-hata" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
+      '<button id="am-kasa-ac" style="width:100%;padding:11px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14px;cursor:pointer;">Kasayı aç</button>' +
+      '<button id="am-kasa-gec" style="width:100%;margin-top:8px;padding:9px;border-radius:10px;border:1px solid rgba(0,0,0,0.14);background:transparent;color:inherit;font-size:12.5px;cursor:pointer;">Şimdi değil (cihazdaki veriyle devam et)</button>' +
+      '<div style="font-size:11px;opacity:0.7;margin-top:10px;line-height:1.45;">Şifre sunucuya gönderilmez; yalnız bu cihazda anahtar türetmek için kullanılır.</div>' +
+      '</div>';
+    document.body.appendChild(d);
+    const kapat = () => { d.remove(); window.__kasaPencereAcik = false; };
+    d.querySelector("#am-kasa-gec").addEventListener("click", kapat);
+    d.addEventListener("click", (e) => { if (e.target === d) kapat(); });
+    d.querySelector("#am-kasa-ac").addEventListener("click", async () => {
+      const sifre = (d.querySelector("#am-kasa-sifre").value || "").trim();
+      const hata = d.querySelector("#am-kasa-hata");
+      if (!sifre) { hata.style.display = "block"; hata.textContent = "Kasa şifresini yaz."; return; }
+      const r = await window.__kasa.ac(sifre, tuz);
+      if (!r.ok) { hata.style.display = "block"; hata.textContent = r.hata || "Açılamadı."; return; }
+      kapat();
+      toast("Kasa açıldı — bulut kaydın bu cihazda çözüldü.", "success");
+    });
+    const inp = d.querySelector("#am-kasa-sifre");
+    if (inp) setTimeout(() => { try { inp.focus(); } catch (e) {} }, 80);
+  } catch (e) { console.warn("Kasa uyarısı:", e); }
+}
+window.__kasa = {
+  uyari: kasaUyarisiGoster,
+  durum: kasaDurumu,
+  zarfHazirla: kasaZarfHazirla,
+  kayitAc: kasaKayitAc,
+  mesaj: KASA_MESAJ,
+  tuzAl: (z) => KASA.zarfTuzu(z),
+  kur: async (sifre) => {
+    const r = await KASA.kasaKur(sifre);
+    if (r.ok) { try { await bulutaYaz(false); } catch (e) { /* sonraki kayıtta gider */ } }
+    return r;
+  },
+  ac: async (sifre, tuz) => {
+    const r = await KASA.kasaAc(sifre, tuz);
+    if (r.ok && window.currentUser) {
+      try { await bulutYukle(window.currentUser); } catch (e) { /* */ }
+    }
+    return r;
+  },
+  kilitle: () => { KASA.kasaKilitle(); },
+  kurtarmaUret: () => KASA.kurtarmaUret(),
+  kurtarmaSar: (k) => KASA.kasaSar(k),
+  kurtarmaAc: async (k, sarma) => {
+    const r = await KASA.kasaCozKurtarma(k, sarma);
+    if (r.ok && window.currentUser) { try { await bulutYukle(window.currentUser); } catch (e) {} }
+    return r;
+  }
+};
+
 function bulutZaman(iso) { const t = iso ? Date.parse(iso) : NaN; return isNaN(t) ? 0 : t; }
 
 async function bulutaYaz(sessiz) {
@@ -1105,11 +1378,29 @@ async function bulutaYaz(sessiz) {
   if (yazmaUcusu) { yazmaBekliyor = true; return yazmaUcusu; }
   yazmaUcusu = (async () => {
     try {
+      /* v106 — KASA: sunucuya DÜZ state değil şifreli zarf gider.
+         Kasa kapalıysa (kullanıcı henüz şifre kurmadıysa) eski davranış sürer;
+         bu durum arayüzde açıkça "KASA KAPALI" diye yazar. */
+      /* KRİTİK: kasa KİLİTLİ ise (anahtar yok ama kayıt şifreliyse) düz yazma.
+         Yoksa bir sonraki kayıt şifreli kaydın üzerine düz metin yazar ve
+         kilit boşa çıkar. Kilitliyken bulut yazımı DURUR; cihaz verisi durur. */
+      let zarfTuzuVar = false;
+      try {
+        const { data: kb } = await sb.from("app_states").select("state").eq("user_id", currentUser.id).maybeSingle();
+        const hb = kb && (typeof kb.state === "string" ? JSON.parse(kb.state) : kb.state);
+        zarfTuzuVar = !!(hb && hb.__kasa);
+      } catch (e) { /* okunamazsa aşağıdaki kural geçerli */ }
+      if (zarfTuzuVar && !KASA.kasaAcikMi()) {
+        return { ok: false, neden: "kasa-kilitli" };
+      }
+      const hz = await kasaZarfHazirla(state);
       const { error } = await sb.from("app_states").upsert({
         user_id: currentUser.id,
-        state: state,
-        grade: (state.user && state.user.grade) || null,
-        deneme_sayisi: (state.exams || []).length,
+        state: hz.zarf || hz.duz,
+        /* v106 — KASA: sınıf ve deneme SAYISI da kişisel veridir ("kim, kaç
+           deneme çözmüş"). Kasa açıkken bunlar da yazılmaz. */
+        grade: KASA.kasaAcikMi() ? null : ((state.user && state.user.grade) || null),
+        deneme_sayisi: KASA.kasaAcikMi() ? null : ((state.exams || []).length),
         updated_at: new Date().toISOString()
       }, { onConflict: "user_id" });
       if (error) throw error;
@@ -1483,6 +1774,7 @@ function okzStore() {
 const OKZ_SEBEP = {
   "eposta-dogrulanmadi": "E-postandaki onay bağlantısına tıkla, sonra tekrar dene.",
   "kimlik-cakisma": "Bu okul numarası başka bir hesaba bağlı — kendi numaranı kullan.",
+  "kasa-kilitli": "Bulut kaydın şifreli — Profil → Kasa bölümünden kasayı aç.",
   "sifre-gerekli": "Okulizyon bu kayıt için şifre istiyor: yukarıdaki OKULİZYON ŞİFRESİ alanını doldurup “Bilgileri Kaydet”e bas, sonra “Şimdi dene”.",
   "eslesme-yok": "Okulizyon’da il/ilçe/okul eşleşmedi: Profil’deki il, ilçe ve okul adını kontrol et.",
   "red": "Okulizyon bu ad-soyad + okul no ile kayıt bulamadı: bilgileri Okulizyon’a giriş yaptığın hâliyle birebir yaz.",
@@ -2496,6 +2788,13 @@ async function okzKuyrukCek(zorla) {
   if (!sb) return okzDurum("bulut-yok", "Bulut bağlantısı kurulamadı. Birazdan tekrar dene.");
   if (!currentUser) return okzDurum("giris-yok", "Giriş yapılmadı — sınav sonuçları hesaba bağlı. Önce giriş yap.");
 
+  /* v106 — KASA: kayıt şifreliyse kasa açık olmadan okulizyon çekimi YAPILMAZ.
+     Neden: kimlik bilgileri şifreli kayıttan okunur; kasa kapalıyken okunamaz.
+     Ayrıca çekim sonucu şifreli kayda yazılacağı için kasa şart. */
+  if (window.__kasa && window.__kasa.durum().var && !window.__kasa.durum().acik) {
+    okzCekSuruyor = false;
+    return okzDurum("kasa-kilitli", "Bulut kaydın şifreli. Okulizyon çekimi için Profil → Kasa bölümünden kasayı aç.");
+  }
   okzCekSuruyor = true;
   okzDersleriDuzelt();
   try {

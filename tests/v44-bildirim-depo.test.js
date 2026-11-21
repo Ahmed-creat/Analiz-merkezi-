@@ -97,10 +97,17 @@ console.log("\n== 4) TEK YAZICI DAVRANIŞI (koşturularak) ==");
       }
     })
   };
+  /* v106 — bulutaYaz artık kasa zarfını hazırlıyor (KASA modülü + window
+     köprüsü). Test ortamında "kasa kapalı" davranışı taklit edilir; ölçülen
+     şey (tek yazıcı/debounce) değişmiyor. */
   const kapsam = {
     sb: sbSahte, currentUser: { id: "u1", email: "a@b.c" }, state: { exams: [] },
     setAuthLabel: () => {}, document: { getElementById: () => null },
-    console, setTimeout, clearTimeout, Date
+    console, setTimeout, clearTimeout, Date,
+    window: { __kasa: { durum: () => ({ acik: false, var: false }), uyari: () => {} } },
+    KASA: { kasaAcikMi: () => false },
+    kasaZarfHazirla: async (n) => ({ zarf: null, duz: n }),
+    kasaKayitAc: async (h) => ({ state: h, durum: "duz" })
   };
   const fn = new Function("kapsam", "with (kapsam) { " + blok + "\n return { bulutaYaz, yazmaPlanla }; }");
   const A = fn(kapsam);

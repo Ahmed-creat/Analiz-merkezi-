@@ -2,7 +2,7 @@
    AĞ ÖNCELİKLİ: çevrimiçiyse hep GÜNCEL dosya sunulur (yayınladığın
    güncelleme anında gelir), çevrimdışiyse önbellek. Sürüm damgası
    build_pwa.py ile otomatik artar (1789801981 yerine zaman damgası). */
-const CACHE = "analiz-merkezi-v-20261027-v105-kimlik";
+const CACHE = "analiz-merkezi-v-20261027-v106-kasa";
 const ASSETS = [
   "./index.html",
   "./manifest.json",
@@ -14,6 +14,8 @@ const ASSETS = [
   "./supabase-config.js",
   "./koc.js",       // v102 — koçluk motoru (mesaj.js'den önce yüklenir)
   "./mesaj.js",
+  /* v106 — kasa çevrimdışı da açılabilsin (şifreleme cihazda) */
+  "./kasa.js",
   "./okz-normalize.js",
   "./okz-konu.js",
   "./okz-meb.js",
