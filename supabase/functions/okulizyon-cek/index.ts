@@ -385,17 +385,100 @@ function kimlikOku(s: any) {
   } catch { return null; }
 }
 
+/* ------------------------------------------------------------
+   v104 — OKULİZYON KİMLİK BAĞI ("bir okul no = tek hesap")
+   Neden: eskiden sahiplik kaydı yoktu; birinin adını + okul no'sunu bilen
+   biri bunları kendi hesabına yazıp o öğrencinin sonuçlarını çekebiliyordu.
+   Kural:
+     • (kurumkodu, okul_no) çifti TABLODA TEK aktif satırdır (unique index),
+     • bağlama yalnız burada (service_role) yapılır, istemci yazamaz,
+     • başka hesaba bağlıysa 409 → çekim YAPILMAZ,
+     • düz ad saklanmaz, yalnız tuzlu SHA-256 özeti (KVKK minimizasyon).
+   ------------------------------------------------------------ */
+
+// Deno'da Web Crypto var; Node testinde de aynı API bulunur.
+const AD_TUZU = Deno.env.get("OKZ_AD_TUZU") || "analiz-merkezi-v104";
+
+async function adOzet(ad: string): Promise<string> {
+  try {
+    const veri = new TextEncoder().encode(AD_TUZU + "|" + String(ad || "").trim().toLocaleUpperCase("tr-TR"));
+    const ozet = await crypto.subtle.digest("SHA-256", veri);
+    return [...new Uint8Array(ozet)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  } catch { return ""; }
+}
+
+// Kullanıcının mevcut aktif bağı (yoksa null)
+async function bagOku(userId: string): Promise<any | null> {
+  const y = await fetch(sb("okulizyon_kimlik?select=user_id,kurumkodu,okul_no,durum&user_id=eq." + encodeURIComponent(userId) + "&durum=eq.aktif"), { headers: sbB() });
+  const d: any[] = await y.json().catch(() => []);
+  return (d && d[0]) || null;
+}
+
+// Bu (kurumkodu, okul_no) başka bir hesaba bağlı mı?
+async function bagSahibi(kurumkodu: string, okulNo: string): Promise<string | null> {
+  const q = "okulizyon_kimlik?select=user_id&durum=eq.aktif" +
+    "&kurumkodu=eq." + encodeURIComponent(kurumkodu) +
+    "&okul_no=eq." + encodeURIComponent(okulNo);
+  const y = await fetch(sb(q), { headers: sbB() });
+  const d: any[] = await y.json().catch(() => []);
+  return (d && d[0] && d[0].user_id) || null;
+}
+
+async function bagYaz(userId: string, kurumkodu: string, okulNo: string, ad: string) {
+  const ozet = await adOzet(ad);
+  const y = await fetch(sb("okulizyon_kimlik?on_conflict=user_id"), {
+    method: "POST",
+    headers: sbB({ Prefer: "resolution=merge-duplicates,return=minimal" }),
+    body: JSON.stringify({
+      user_id: userId, kurumkodu: String(kurumkodu), okul_no: String(okulNo),
+      ad_ozet: ozet || null, durum: "aktif", updated_at: new Date().toISOString()
+    })
+  });
+  return { ok: y.ok, kod: y.status, metin: y.ok ? "" : (await y.text()).slice(0, 200) };
+}
+
 async function kullaniciCek(userId: string, stateJson: any): Promise<any> {
   const kim = kimlikOku({ state: stateJson });
   if (!kim) {
     await yaz(userId, { durum: "bilgi-yok", durum_mesaji: "Profil → Okulizyon bölümünde ad soyad ve okul no kayıtlı değil." });
     return { durum: "bilgi-yok" };
   }
+  /* v104 — SAHİPLİK: kurum kodu yoksa bağ kurulamaz (yanlış okula giriş de olmaz). */
+  if (!kim.kurumkodu) {
+    const m = "Okulizyon için il/ilçe/okul listeden seçilmeli (kurum kodu yok).";
+    await yaz(userId, { durum: "bilgi-yok", durum_mesaji: m });
+    return { durum: "bilgi-yok", mesaj: m };
+  }
   try {
+    const mevcut = await bagOku(userId);
+    if (mevcut && (mevcut.kurumkodu !== String(kim.kurumkodu) || mevcut.okul_no !== String(kim.okulNo))) {
+      const m = "Bu hesap " + mevcut.okul_no + " numarasına bağlı. Farklı bir numara çekmek için önce bağı kaldır.";
+      await yaz(userId, { durum: "kimlik-cakisma", durum_mesaji: m });
+      return { durum: "kimlik-cakisma", mesaj: m };
+    }
+    const sahip = await bagSahibi(String(kim.kurumkodu), String(kim.okulNo));
+    if (sahip && sahip !== userId) {
+      /* Bu okul no BAŞKA bir hesaba bağlı → o öğrencinin sonuçları çekilmez. */
+      const m = "Bu okul numarası başka bir hesaba bağlı. Kendi numaranı kullan; " +
+        "bu numara senin ise okuldan/veliden devir onayı al.";
+      await yaz(userId, { durum: "kimlik-cakisma", durum_mesaji: m });
+      return { durum: "kimlik-cakisma", mesaj: m };
+    }
+    if (!mevcut) {
+      const b = await bagYaz(userId, String(kim.kurumkodu), String(kim.okulNo), String(kim.ad));
+      if (!b.ok) {
+        // Aynı anda iki hesap bağlanmaya çalıştıysa unique index burada yakalar.
+        const m = /23505|duplicate/i.test(b.metin)
+          ? "Bu okul numarası az önce başka bir hesaba bağlandı. Kendi numaranı kullan."
+          : "Okulizyon bağı kaydedilemedi. Birkaç dakika sonra tekrar dene.";
+        await yaz(userId, { durum: "kimlik-cakisma", durum_mesaji: m });
+        return { durum: "kimlik-cakisma", mesaj: m };
+      }
+    }
     const k = new Kavanoz(), r: any = await giris(kim, k);
     if (r.durum !== "oturum") {
       const msj = r.durum === "sifre-gerekli"
-        ? "Okulizyon bu kayıt için şifre istiyor — Profil → Okulizyon bölümüne şifreni yaz ve kaydet."
+        ? "Okulizyon bu kayıt için şifre istiyor — Profil → Okulizyon bölümüne şifreni yaz ve «Şimdi dene». (Şifre kaydedilmez.)"
         : (r.mesaj || "Giriş yapılamadı");
       await yaz(userId, { durum: r.durum, durum_mesaji: msj.slice(0, 400) });
       return { durum: r.durum, mesaj: msj, kodlar: r.kodlar, ham: r.ham };
@@ -436,9 +519,32 @@ Deno.serve(async (istek) => {
       const uy = await fetch(SURL + "/auth/v1/user", { headers: { apikey: SK, Authorization: yetki } });
       const u: any = await uy.json().catch(() => ({}));
       if (!u?.id) return json({ hata: "oturum doğrulanamadı" }, 401);
+      /* v103 — GÜVENLİK: hesabın e-postası DOĞRULANMIŞ olmalı.
+         Neden: Okulizyon bilgileri e-postaya bağlanacak (v104). Doğrulanmamış
+         e-postayla hesap açan biri başkasının adı + okul no'sunu yazıp o
+         öğrencinin sonuçlarını kendi hesabına çekebilirdi. */
+      if (!u.email_confirmed_at && !u.confirmed_at) {
+        return json({
+          durum: "eposta-dogrulanmadi",
+          hata: "E-posta doğrulanmadan Okulizyon bağlanamaz",
+          mesaj: "E-postandaki onay bağlantısına tıkla; sonra tekrar dene."
+        }, 403);
+      }
+      // v103 — şifre artık state'te saklanmıyor; yalnız bu isteğin gövdesinde gelir.
+      const ivediSifre = typeof g.sifre === "string" ? g.sifre : "";
       const sy = await fetch(sb("app_states?select=user_id,state&user_id=eq." + u.id), { headers: sbB() });
       const tek: any[] = await sy.json().catch(() => []);
-      const o = await kullaniciCek(u.id, tek[0]?.state);
+      let durumState = tek[0]?.state;
+      if (ivediSifre) {
+        // Bellekteki kopyaya ekle (DB'ye yazılmaz, istek bitince yok olur)
+        try {
+          const kopya = durumState ? JSON.parse(JSON.stringify(durumState)) : {};
+          kopya.settings = kopya.settings || {};
+          kopya.settings.okulizyon = Object.assign({}, kopya.settings.okulizyon || {}, { sifre: ivediSifre });
+          durumState = kopya;
+        } catch { /* kopyalanamazsa kayıtlı hâliyle devam */ }
+      }
+      const o = await kullaniciCek(u.id, durumState);
       return json({ mod, ...o, sureMs: Date.now() - t0 });
     }
     // ---- run: yalnız cron (Authorization: Bearer CRON_SECRET) ----

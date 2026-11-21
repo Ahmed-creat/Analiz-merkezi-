@@ -1,4 +1,4 @@
-const PWA_SURUM = "v102-kocluk-motoru";
+const PWA_SURUM = "v103-guvenlik";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -38,12 +38,14 @@ function cfgMissing() {
 const AUTH_ERR = {
   "invalid login credentials": "E-posta veya şifre hatalı.",
   "invalid_credentials": "E-posta veya şifre hatalı.",
-  "email not confirmed": "E-posta adresin henüz onaylanmadı — gelen kutundaki onay bağlantısına tıkla.",
-  "email_not_confirmed": "E-posta adresin henüz onaylanmadı — gelen kutundaki onay bağlantısına tıkla.",
+  "email_not_confirmed": "E-postanı doğrulamadan giriş yapılamaz — e-postandaki onay bağlantısına tıkla (gelen kutusu + spam klasörü).",
   "user already registered": "Bu e-posta ile zaten kayıt var — 'Giriş Yap'ı dene.",
   "already registered": "Bu e-posta ile zaten kayıt var — 'Giriş Yap'ı dene.",
-  "password should be at least": "Şifre en az 6 karakter olmalı.",
-  "weak_password": "Şifre en az 6 karakter olmalı.",
+  "password should be at least": "Şifre en az 8 karakter olmalı.",
+  "weak_password": "Şifre en az 8 karakter olmalı — büyük/küçük harf, rakam ve işaret karışık olsun.",
+  "password is too weak": "Şifre çok basit — büyük/küçük harf, rakam ve işaret karışık olsun.",
+  "leaked password": "Bu şifre daha önce bir sızıntıda görülmüş — başka bir şifre seç.",
+  "email not confirmed": "E-postanı doğrulamadan giriş yapılamaz — e-postandaki onay bağlantısına tıkla (gelen kutusu + spam klasörü).",
   "unable to validate email address": "Geçerli bir e-posta adresi gir (ör. ad@ornek.com).",
   "email_address_invalid": "Geçerli bir e-posta adresi gir (ör. ad@ornek.com).",
   "for security purposes": "Çok fazla deneme — birkaç dakika bekle, sonra tekrar dene.",
@@ -775,7 +777,9 @@ function renderProfileModal() {
   html += okzSecim("okulAdi", "OKUL", "okul", s.kurumkodu || "", s.okulAdi || "");
   html += '<div id="okz-liste-hata" style="display:none;grid-column:1 / -1;font-size:11.5px;line-height:1.45;color:#B45309;"></div>';
   html += '<div style="grid-column:1 / -1;"><button data-act="okzListeYenile" style="background:none;border:0;padding:0;font-size:11.5px;text-decoration:underline;color:#2563EB;cursor:pointer;">Listeyi yenile</button></div>';
-  html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa)<input id="okz-sifre" type="password" autocomplete="off" value="' + escHtml(s.sifre || "") + '" placeholder="Okulizyon şifresi" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>';
+  /* v103 — şifre kutusu BOŞ açılır (kayıtlı şifre yok; saklanmıyor).
+     Kullanıcı yalnız Okulizyon şifre istiyorsa doldurur, çekim bitince silinir. */
+  html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa — KAYDEDİLMEZ)<input id="okz-sifre" type="password" autocomplete="off" value="" placeholder="Yalnız bu çekim için" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"><span style="display:block;font-size:10.5px;opacity:0.75;margin-top:3px;">Güvenlik için saklanmaz; sekme kapanınca ya da çekim bitince silinir.</span></label>';
   html += '</div>';
   html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
   html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
@@ -842,6 +846,16 @@ function authAlanlari() {
   const pass = ((document.getElementById("pwa-pass") || {}).value || "");
   return { email, pass };
 }
+/* v103 — GÜVENLİK: tek şifre kuralı (tek yerden okunur).
+   Kullanıcı sade dil geri bildirimi: "şifre kuralı ne, neden reddedildi" belli olsun.
+   8 karakter + en az bir harf ve bir rakam. Sunucu tarafı (Supabase Auth)
+   politikası da aynı eşiğe çekilir; buradaki kontrol yalnız erken/okunur uyarı. */
+function sifreKurali(p) {
+  const s = String(p || "");
+  if (s.length < 8) return "Şifre en az 8 karakter olmalı.";
+  if (!/[A-Za-zÇĞİÖŞÜçğıöşü]/.test(s) || !/[0-9]/.test(s)) return "Şifre en az bir harf ve bir rakam içermeli.";
+  return "";
+}
 async function emailLogin() {
   if (!cloudReady() || !sb) return cfgMissing();
   const { email, pass } = authAlanlari();
@@ -856,7 +870,8 @@ async function emailRegister() {
   if (!cloudReady() || !sb) return cfgMissing();
   const { email, pass } = authAlanlari();
   if (!email || !pass) return authMsgYaz("E-posta ve şifreyi doldur.", true);
-  if (pass.length < 6) return authMsgYaz("Şifre en az 6 karakter olmalı.", true);
+  const sifreHata = sifreKurali(pass);
+  if (sifreHata) return authMsgYaz(sifreHata, true);
   authMsgYaz("Kayıt oluşturuluyor…", false);
   const { data, error } = await sb.auth.signUp({ email: email, password: pass });
   if (error) return authMsgYaz(authMsg(error), true);
@@ -864,7 +879,7 @@ async function emailRegister() {
     closeAuthModal();
     toast("Kayıt oluşturuldu — verilerin artık buluta yedekleniyor.", "success");
   } else {
-    authMsgYaz("Kayıt alındı. E-postana gelen onay bağlantısına tıkladıktan sonra giriş yapabilirsin.", false);
+    authMsgYaz("Kayıt alındı. " + email + " adresine onay bağlantısı gönderdik — bağlantıya tıklamadan giriş yapılamaz (spam klasörünü de kontrol et).", false);
   }
 }
 async function resetPassword() {
@@ -903,6 +918,8 @@ async function doSignOut() {
   // uygulamalarda çıkış yapınca bilgi kalmıyor."
   // 1) Son hâli buluta yazmayı dene: çıkış veri kaybına dönüşmesin.
   try { await bulutaYaz(true); } catch (e) { /* çevrimdışı: sonraki girişte birleşir */ }
+  /* v103 — bellekte duran Okulizyon şifresi de çıkışta silinir. */
+  try { if (typeof okzSifreTemizle === "function") okzSifreTemizle(); } catch (e) { /* */ }
   const { error } = await sb.auth.signOut();
   if (error) return toast(authMsg(error), "error");
   currentUser = null;
@@ -930,9 +947,10 @@ function setAuthLabel(girisli, kim) {
 function sifreYenileAkisi() {
   setTimeout(async () => {
     try {
-      const yeni = window.prompt("Yeni şifreni yaz (en az 6 karakter):");
+      const yeni = window.prompt("Yeni şifreni yaz (en az 8 karakter, harf + rakam):");
       if (!yeni) return;
-      if (yeni.length < 6) return toast("Şifre en az 6 karakter olmalı.", "error");
+      const kural = sifreKurali(yeni);
+      if (kural) return toast(kural, "error");
       const { error } = await sb.auth.updateUser({ password: yeni });
       if (error) throw error;
       toast("Şifren güncellendi — yeni şifreyle giriş yapabilirsin.", "success");
@@ -985,6 +1003,9 @@ async function oturumUygula(session) {
   if (!yeniKullanici && window.__bulutYuklenenKullanici === user.id) return; // token yenilemede tekrar yükleme
   window.__bulutYuklenenKullanici = user.id;
   if (typeof state === "undefined") return; // state henüz hazır değil (index.html yükleniyor)
+  /* v103 — GÜVENLİK: eski sürümler Okulizyon şifresini state'e (→ buluta) düz
+     metin yazıyordu. Yeni sürüm saklamıyor; kayıt yüklendiğinde kalıntıyı sil. */
+  try { if (state.settings && state.settings.okulizyon) delete state.settings.okulizyon.sifre; } catch (e) { /* */ }
   if (!state.user.name && kim) {
     state.user.name = kim;
     try { saveState(); } catch (e) {}
@@ -1460,6 +1481,8 @@ function okzStore() {
 }
 // Sunucudaki çekim durumu → kullanıcıya ne yapacağını söyleyen cümle
 const OKZ_SEBEP = {
+  "eposta-dogrulanmadi": "E-postandaki onay bağlantısına tıkla, sonra tekrar dene.",
+  "kimlik-cakisma": "Bu okul numarası başka bir hesaba bağlı — kendi numaranı kullan.",
   "sifre-gerekli": "Okulizyon bu kayıt için şifre istiyor: yukarıdaki OKULİZYON ŞİFRESİ alanını doldurup “Bilgileri Kaydet”e bas, sonra “Şimdi dene”.",
   "eslesme-yok": "Okulizyon’da il/ilçe/okul eşleşmedi: Profil’deki il, ilçe ve okul adını kontrol et.",
   "red": "Okulizyon bu ad-soyad + okul no ile kayıt bulamadı: bilgileri Okulizyon’a giriş yaptığın hâliyle birebir yaz.",
@@ -1487,14 +1510,18 @@ async function okzSunucuCek() {
     const y = await fetch(SUPABASE_CONFIG.url + "/functions/v1/okulizyon-cek", {
       method: "POST",
       headers: { "Content-Type": "application/json", apikey: SUPABASE_CONFIG.anonKey, Authorization: "Bearer " + yetki.access_token },
-      body: JSON.stringify({ mod: "ben" })
+      body: JSON.stringify({ mod: "ben", sifre: OKZ_SIFRE_BELLEK || undefined })
     });
     const c = await y.json().catch(() => ({}));
     if (!y.ok) return okzDurum("hata", "Çekici HTTP " + y.status + (c.hata ? " — " + c.hata : ""));
     if (c.durum === "ok") toast("Okulizyon: " + (c.sinav || 0) + " sınav, " + (c.satir || 0) + " soru aktarıldı.", "success");
     else okzDurum(c.durum || "red", (c.mesaj || "Sonuç alınamadı.") + (OKZ_SEBEP[c.durum] ? " → " + OKZ_SEBEP[c.durum] : ""));
   } catch (e) {
+    OKZ_SIFRE_BELLEK = "";
     return okzDurum("hata", "Çekici çağrılamadı: " + ((e && e.message) || e));
+  } finally {
+    /* v103 — şifre yalnız bu istek için kullanıldı; bellekte de bırakılmaz. */
+    OKZ_SIFRE_BELLEK = "";
   }
   return okzKuyrukCek(true);
 }
@@ -2353,6 +2380,25 @@ function renderOkzModal() {
    Ayrıca il/ilçe/okul KODU yoksa Okulizyon'a giriş yapılamaz (site koddan
    giriş istiyor); o durumda "kaydedildi" denip sessizce çekim denenmez,
    kullanıcıya ne yapacağı yazılır. */
+/* v103 — GÜVENLİK / KVKK: OKULİZYON ŞİFRESİ HİÇ SAKLANMAZ.
+   Eski davranış: şifre düz metin olarak state.settings.okulizyon.sifre'ye
+   yazılıyordu → localStorage + BULUT (app_states.state) içinde açık metin.
+   Yani veritabanına erişen biri çocuğun Okulizyon şifresini okuyabiliyordu.
+   Yeni davranış:
+     • şifre yalnız bu sekmenin BELLEĞİNDE tutulur (sayfa kapanınca gider),
+     • buluta ASLA yazılmaz; kayıttan gelen eski değer de temizlenir,
+     • "Şimdi dene" çağrısında yalnız o isteğin gövdesinde sunucuya gider,
+       sunucu da yalnız o istek süresince kullanır (saklamaz). */
+let OKZ_SIFRE_BELLEK = "";
+function okzSifreTemizle() {
+  OKZ_SIFRE_BELLEK = "";
+  try {
+    if (state && state.settings && state.settings.okulizyon && state.settings.okulizyon.sifre !== undefined) {
+      delete state.settings.okulizyon.sifre;
+      saveState();
+    }
+  } catch (e) { /* */ }
+}
 function okzSaveBilgi() {
   const al = k => { const el = document.getElementById("okz-" + k); return el ? (el.value || "").trim() : ""; };
   const ad = al("ad").toLocaleUpperCase("tr-TR"); // sitedeki gibi BÜYÜK HARF
@@ -2382,8 +2428,10 @@ function okzSaveBilgi() {
     ilce: al("ilce"), ilcekodu: ilcekodu,
     okulAdi: al("okulAdi"), kurumkodu: kurumkodu
   };
+  /* v103 — şifre state'e (dolayısıyla buluta) YAZILMAZ; yalnız bellekte. */
   const sifreEl = document.getElementById("okz-sifre");
-  if (sifreEl && sifreEl.value) state.settings.okulizyon.sifre = sifreEl.value;
+  OKZ_SIFRE_BELLEK = (sifreEl && sifreEl.value) ? sifreEl.value : OKZ_SIFRE_BELLEK;
+  try { if (state.settings.okulizyon.sifre !== undefined) delete state.settings.okulizyon.sifre; } catch (e) { /* */ }
   saveState();
   const pm = document.getElementById("pwa-profile-modal");
   if (pm && pm.style.display === "flex") renderProfileModal();
