@@ -1,4 +1,4 @@
-# Güvenlik ve KVKK — ne yapıldı, ne kaldı (v106 · 21 Kasım 2026)
+# Güvenlik ve KVKK — ne yapıldı, ne kaldı (v107 · 21 Kasım 2026)
 
 Bu belge **teknik bilmeyen** biri için yazıldı. Kısa cümleler, benzetmeler.
 
@@ -67,6 +67,7 @@ Yapılabilecek şey **görecek bir şey bırakmamak**:
 - ✅ Okulizyon şifresi **hiç istenmiyor/saklanmıyor** (yapıldı)
 - ✅ Öğrencinin **adı** artık bağ tablosunda düz yazılmıyor; yalnız **özeti** (geri çevrilemez) tutuluyor (yapıldı)
 - ✅ Okul no / il / ilçe / ad soyad / sınav sonuçları / plan / kitaplar → **kasa açıkken sunucuda şifreli** (v106)
+- ✅ Okulizyon **sınav sonuçları** artık kuyruk tablosunda **hiç saklanmıyor** (v107) — kasa kurulu olsun olmasın
 
 > Not: Şu an uygulamada **tek satır KVKK metni / veli izni yok**. Bu, sonraki adımın (KVKK paketi) konusu.
 
@@ -118,7 +119,7 @@ Kuruldu ve canlıda denendi.
 | **P1** | KVKK paketi: veli bilgilendirme + izin adımı + "verilerimi sil" düğmesi + otomatik silme süresi | Şu an hiç yok; hukuki yükümlülük |
 | **P1** | Okulizyon **devir** akışı (kod ile) | Numara el değiştirince çıkmaz sokak |
 | **P2** | Sunucu ayarları panelden: şifre politikası (en az 8 karakter + sızmış şifre denetimi + robot koruması) | Benim araçlarım bu üç alanı değiştiremiyor; panelden yapılmalı |
-| **P1** | Kullanıcıyı kasayı açmaya yönlendirme (kurulum akışı + hatırlatma) | Kasa kapalıyken veri düz durur; kurulum kolay olmalı |
+| ✅ | ~~Kullanıcıyı kasayı açmaya yönlendirme~~ → **v107'de yapıldı** (§6d) | Kasa kapalıyken veri düz durur |
 | **P3** | Erişim günlüğü (kim, ne zaman veriye baktı) | Denetim izi |
 
 ---
@@ -179,9 +180,23 @@ yanlış kurtarma reddi, kilitliyken düz yazma engeli.
 
 ---
 
-## 6b. ✅ Sunucu tarafı yayında (v16)
+## 6b. ✅ Sunucu tarafı yayında (v18) — sonuçlar artık SAKLANMIYOR (v107)
 
-Ölçüm (canlı): `okulizyon-cek` **sürüm 16** olarak yayına alındı.
+Ölçüm (canlı, 21 Kasım): `okulizyon-cek` **sürüm 18**. Önceki sürümde
+(`v15 · 28 Ekim`) e-posta doğrulaması ve sahiplik bağı **yoktu**; v16'da eklendi.
+**v17/v18 (v107) ile bir sızıntı daha kapatıldı:** çekilen sınav sonuçları
+`public.okulizyon_kuyrugu` tablosuna **düz metin** yazılıyordu (ölçüm: 5/5 satırda
+tam sınav sonucu + sınav adları). Artık:
+
+- Sınav sonuçları bu tabloya **hiç yazılmaz**; yalnız çekim **durumu** (ok /
+  sonuç yok / hata / şifre gerekli) saklanır.
+- Sonuçlar çekim **yanıtıyla cihaza** döner; kalıcı kayıt Denemelerim + (kasa
+  açıksa) uçtan uca **şifreli** `app_states` içindedir.
+- İstemcinin bu tabloya **yazma yetkisi alındı** (INSERT/UPDATE/DELETE yok,
+  yalnız kendi satırını SELECT). `anon` rolü tamamen kapatıldı.
+- Eski düz metin kayıtlar **silindi** (migration `okz_duz_sonuc_temizle_v107b`).
+
+### v16'dan beri geçerli olan kapılar
 Önceki sürüm **15 · 28 Ekim** tarihliydi ve e-posta doğrulaması ile sahiplik
 bağını **içermiyordu**. Artık içeriyor:
 
@@ -190,8 +205,10 @@ bağını **içermiyordu**. Artık içeriyor:
 - Bağ, ancak Okulizyon girişi **açıldıktan sonra** yazılır (yanlış numara kilitleyemez).
 - `run` (cron) modu yalnız `CRON_SECRET` ile; anon anahtarla tüm öğrencileri gezme yolu kapalı.
 
-Not: bu fonksiyon sunucu tarafında çalıştığı için "düz metin kayıt" okuma yolu
-hâlâ eski (şifresiz) kayıtlar için açıktır; kasa (v106) açıldıkça bu yol kendiliğinden kapanır.
+Not: `app_states` tablosundaki **eski, şifresiz** kayıtlar (kasa kurmamış
+kullanıcılar) hâlâ düz metindir; kasa kuruldukça bu yol kendiliğinden kapanır.
+Ölçüm (21 Kasım): **5 hesabın 5'i kasa kurmamış** → verileri düz duruyor.
+Bu yüzden v107'de kullanıcıya **zorunlu kurulum yönlendirmesi** eklendi (§6d).
 
 ---
 
@@ -221,6 +238,36 @@ Ayrımı net yapmak gerekiyor; ikisi ayrı hukuk alanı:
 
 ---
 
+## 6d. Kasa kurulum yönlendirmesi (v107)
+
+**Sorun:** kasa vardı ama kimse kurmuyordu. Profildeki kırmızı yazı yalnız
+pencereyi açan kullanıcıya görünüyordu; çoğu kullanıcı hiç açmıyordu.
+Ölçüm: **5 hesabın 5'i kasasız**.
+
+**Çözüm (canlı, v107):** giriş yapan ve kasası **olmayan** herkese, girişten
+~4 sn sonra **adım adım kurulum penceresi** çıkar:
+
+1. En az 8 karakterlik kasa şifresi seç (başka yerde kullanmadığın).
+2. «Kasayı kur ve aç».
+3. Çıkan **12 kelimelik kurtarma anahtarını** kâğıda yaz / indir.
+
+- «Sonra» → **3 gün** susar. Kurarsa bir daha çıkmaz. Günde en fazla bir kez.
+- Okulizyon çekimi başlarken de bir kez uyarı verilir (kasa yoksa).
+- Kasa **kapalı/kilitli** ise uyarı gizlenmez, kırmızı yazılır (v106).
+- Kurulumun tek yolu var (`kasaKurVeAnahtar`): profil düğmesi ve bu pencere
+  **aynı** kodu kullanır — iki farklı davranış olamaz.
+
+**Kurmazsa ne olur (dürüst):** uygulama çalışır, Okulizyon çekimi çalışır, ama
+ad soyad / sınav sonuçları / plan / kitaplar `app_states` içinde **düz metin**
+durur — veritabanına erişen okur. Okulizyon **sonuçları** ise v107'den sonra
+hiçbir hâlde sunucuda tutulmaz.
+
+**Kurarsa bedeli:** kasa şifresi **ve** kurtarma anahtarı kaybolursa veri
+kurtarılamaz (sunucu açamaz). Bildirim ve geri bildirim metinleri kasaya girmez
+(senin isteğin).
+
+---
+
 ## 7. Sana bir kez daha hatırlatma
 
 **E-posta doğrulaması artık zorunlu.** Veli/öğrenciler "kayıt oldum ama giremiyorum" derse
@@ -234,9 +281,11 @@ yazıyor ("… adresine onay bağlantısı gönderdik — bağlantıya tıklamad
 - `supabase/migrations/0014_guvenlik_sertlestirme.sql` — yetki kaldırma + `push_teslim` + yedek tablo
 - `supabase/migrations/0015_okulizyon_kimlik.sql` — sahiplik tablosu + tekillik
 - `site/app-pwa.js` — şifre saklamama, şifre kuralı, Türkçe mesajlar
-- `supabase/functions/okulizyon-cek/index.ts` — e-posta doğrulama + sahiplik denetimi
+- `supabase/migrations/0016_okz_duz_sonuc_temizle.sql` — **v107**: kuyruk tablosundan düz sonuç silme + yazma yetkisi kaldırma
+- `supabase/functions/okulizyon-cek/index.ts` — e-posta doğrulama + sahiplik denetimi; **v107: sonuç yazmaz, yalnız yanıtta döner**
 - `site/kasa.js` — **v106 kasa**: AES-256-GCM + PBKDF2(310.000) + 12 kelimelik kurtarma
 - `tests/guvenlik-v103.test.js` — **68 kontrol**; düzeltmeler geri gelirse test kırmızı olur
 - `tests/kasa-v106.test.js` — **42 kontrol** (kripto gerçekten koşturulur)
+- `tests/v107-sonuc-saklanmaz.test.js` — **43 kontrol** (sunucu yazmıyor · istemci yanıttan alıyor · kurulum yönlendirmesi)
 - `tests/v78-kalan-duzeltmeler.test.js` — kaldırılan "Kondisyon Eğilimi" geri gelirse kırmızı olur
-- `npm run test:guvenlik` · `npm run test:kasa` · tamamı: `npm run test:hepsi` (EXIT 0)
+- `npm run test:guvenlik` · `npm run test:kasa` · `npm run test:v107` · tamamı: `npm run test:hepsi` (EXIT 0)

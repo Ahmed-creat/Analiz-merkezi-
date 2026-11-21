@@ -8,7 +8,8 @@
 // Modlar: ben (JWT sahibinin kaydı) · run (cron, tüm kullanıcılar)
 //   Geliştirme/teşhis modları (probe/parse/test/canli) doğrulama bittikten sonra KALDIRILDI:
 //   anon anahtarı herkese açık olduğu için rastgele kimlikle başka öğrencinin sonucu okunabiliyordu.
-// Yazma: public.okulizyon_kuyrugu (user_id, exams, pulled_at, durum, durum_mesaji, ham_ozet)
+// Yazma (v107): public.okulizyon_kuyrugu YALNIZ DURUM (user_id, pulled_at, durum, durum_mesaji).
+//   Sınav sonuçları burada SAKLANMAZ: yanıtla cihaza döner, kalıcı kayıt şifreli app_states içinde.
 const TABAN = "https://okulizyon.com";
 const GIRIS = TABAN + "/app2/ogrgiris/";
 const ARAMA = [TABAN + "/ajax/ogrencigirisarama.php", TABAN + "/app2/ajax/ogrencigirisarama.php"];
@@ -492,14 +493,24 @@ async function kullaniciCek(userId: string, stateJson: any): Promise<any> {
     const t = await sinavlariTopla(k);
     const dolu = t.exams.filter((e) => Object.keys(e.lessons || {}).length || (e.rows || []).length);
     const satir = dolu.reduce((a, e) => a + (e.rows || []).length, 0);
+    /* v107 — DÜZ METİN SONUÇ ARTIK SAKLANMAZ.
+       Eski sürüm exams + ham_ozet (sınav adları, dersler, konular) alanlarını
+       düz metin olarak public.okulizyon_kuyrugu'ya yazıyordu: kullanıcının tüm
+       sınav sonuçları veritabanında okunabilir kalıyordu (ölçüm: 5/5 satır).
+       Artık yalnız DURUM saklanır; sonuçlar bu yanıtta cihaza döner ve kalıcı
+       kayıt uçtan uca şifreli app_states (kasa, v106) içinde tutulur. */
     await yaz(userId, {
-      exams: dolu, durum: dolu.length ? "ok" : "sonuc-yok",
+      durum: dolu.length ? "ok" : "sonuc-yok",
       durum_mesaji: dolu.length
         ? dolu.length + " sınav, " + satir + " hatalı/boş soru aktarıldı."
-        : "Giriş başarılı ama sonuç bulunamadı (" + t.kartSayisi + " sınav kartı, sayfa " + t.htmlBoyut + " bayt).",
-      ham_ozet: dolu.map((e) => e.name + " · " + (e.date || "-") + " · " + Object.keys(e.lessons || {}).join(", ")).join(" | ").slice(0, 1500)
+        : "Giriş başarılı ama sonuç bulunamadı (" + t.kartSayisi + " sınav kartı, sayfa " + t.htmlBoyut + " bayt)."
     });
-    return { durum: dolu.length ? "ok" : "sonuc-yok", sinav: dolu.length, satir, kart: t.kartSayisi, hatalar: t.hatalar, kodlar: r.kodlar };
+    return {
+      durum: dolu.length ? "ok" : "sonuc-yok", sinav: dolu.length, satir,
+      kart: t.kartSayisi, hatalar: t.hatalar, kodlar: r.kodlar,
+      /* Cihazın kendi şifreli kasasına yazması için: yalnız bu yanıtta. */
+      exams: dolu
+    };
   } catch (e) {
     await yaz(userId, { durum: "hata", durum_mesaji: String(e).slice(0, 400) });
     return { durum: "hata", mesaj: String(e) };
@@ -567,8 +578,13 @@ Deno.serve(async (istek) => {
     const y = await fetch(sb("app_states?select=user_id,state"), { headers: sbB() });
     if (!y.ok) return json({ hata: "app_states HTTP " + y.status }, 500);
     const liste: any[] = await y.json().catch(() => []);
+    /* v107 — cron çıktısında SINA V SONUÇLARI dönmez (düz metin sızıntısı olmasın).
+       Kullanıcı kimliği + durum kodu yeterli: özet zaten veritabanına yazıldı. */
     const ozet: any[] = [];
-    for (const s of liste) ozet.push({ user: s.user_id, ...(await kullaniciCek(s.user_id, s.state)) });
+    for (const s of liste) {
+      const r: any = await kullaniciCek(s.user_id, s.state);
+      ozet.push({ user: s.user_id, durum: r && r.durum, sinav: r && r.sinav, satir: r && r.satir });
+    }
     return json({ mod, kullanici: liste.length, ozet, sureMs: Date.now() - t0 });
   } catch (e) { return json({ hata: String(e) }, 500); }
 });

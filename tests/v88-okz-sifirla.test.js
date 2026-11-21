@@ -68,7 +68,9 @@ console.log("\n== 2) Sıfırlama: otomatik çekim durur + buluta hemen yazılır
 // ---------------------------------------------------------------
 console.log("\n== 3) Otomatik çekim durur, kullanıcı isteyince çalışır ==");
 {
-  const kc = dilim("async function okzKuyrukCek(zorla) {", "  okzCekSuruyor = true;");
+  /* v107 — imza (zorla, sunucuExams) oldu: sonuç artık yanıttan geliyor.
+     Ölçülen davranış aynı; yalnız parametre eklendi. */
+  const kc = dilim("async function okzKuyrukCek(", "  okzCekSuruyor = true;");
   ok("elle / giris çağrı türleri ayrıldı", /const elle = \(zorla === true \|\| zorla === "elle"\)/.test(kc) && /const giris = \(zorla === "giris"\)/.test(kc));
   ok("durdu ise OTOMATİK çekim yapılmaz", /if \(!elle && st0\.otomatikDurdu\)/.test(kc));
   ok("durdu mesajı kullanıcıya yolu gösterir", /«Şimdi dene»ye bas/.test(kc));

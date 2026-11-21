@@ -1,4 +1,4 @@
-const PWA_SURUM = "v106-kasa";
+const PWA_SURUM = "v107-sonuc-saklanmaz";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -763,21 +763,112 @@ function kasaSarmayiStateeYaz(sarma) {
     }
   } catch (e) { /* */ }
 }
-async function kasaKurTiklandi() {
-  const el = document.getElementById("am-kasa-yeni");
-  const sifre = (el && el.value || "").trim();
-  if (!sifre) return kasaNot("Kasa şifresini yaz.", "hata");
-  if (sifre.length < 8) return kasaNot("Kasa şifresi en az 8 karakter olmalı.", "hata");
+/* Kasa kurulumunun TEK yolu: anahtarı kur + kurtarma anahtarını hemen üret.
+   (Profildeki düğme ve karşılama yönlendirmesi aynı yolu kullanır.) */
+async function kasaKurVeAnahtar(sifre) {
+  if (!sifre) return { ok: false, hata: "Kasa şifresini yaz." };
+  if (sifre.length < 8) return { ok: false, hata: "Kasa şifresi en az 8 karakter olmalı." };
   const r = await window.__kasa.kur(sifre);
-  if (!r.ok) return kasaNot(r.hata || "Kasa kurulamadı.", "hata");
+  if (!r.ok) return { ok: false, hata: r.hata || "Kasa kurulamadı." };
   // Kurtarma anahtarını HEMEN üret: şifre unutulursa tek çıkış yolu bu.
   const k = window.__kasa.kurtarmaUret();
   const sarma = await window.__kasa.kurtarmaSar(k);
   kasaSarmayiStateeYaz(sarma);
+  try { localStorage.removeItem(KASA_YON_KEY); } catch (e) { /* */ }
+  return { ok: true, kelimeler: k };
+}
+async function kasaKurTiklandi() {
+  const el = document.getElementById("am-kasa-yeni");
+  const sifre = (el && el.value || "").trim();
+  const r = await kasaKurVeAnahtar(sifre);
+  if (!r.ok) return kasaNot(r.hata || "Kasa kurulamadı.", "hata");
   if (el) el.value = "";
   renderProfileModal();
-  kasaKurtarmaGoster(k);
+  kasaKurtarmaGoster(r.kelimeler);
   toast("Kasa kuruldu — bundan sonra buluta yalnız şifreli kayıt gider.", "success");
+}
+
+/* ---------- v107 KASA KURULUM YÖNLENDİRMESİ ----------
+   KULLANICI: "Kullanıcı kasayı nasıl kuracak, kurmazsa ne olur?"
+   Kasa KURULMAMIŞSA kimse kendiliğinden bulmuyordu: profil bölümü açılınca
+   görünen kırmızı yazı yetiyordu sanılıyordu. Artık giriş yapan her kullanıcıya
+   BİR KEZ, adım adım kurulum penceresi çıkar; "sonra" derse 3 gün susar,
+   kurarsa bir daha çıkmaz. Zorla kapatılamaz ama geçilebilir: yönlendirme,
+   veri kaybettirmez. */
+const KASA_YON_KEY = "am_kasa_yon_v1";
+const KASA_YON_GUN = 3;
+function kasaYonDurumu() {
+  try { return JSON.parse(localStorage.getItem(KASA_YON_KEY) || "null") || {}; } catch (e) { return {}; }
+}
+function kasaYonErtele(gun) {
+  try { localStorage.setItem(KASA_YON_KEY, JSON.stringify({ sonra: Date.now(), gun: gun || KASA_YON_GUN })); } catch (e) { /* */ }
+}
+/* Gösterildi işareti: erteleme yazılsa da silinmese de "1 günde bir kez" kuralı
+   buradan yürür (kullanıcı sekmeyi kapatıp açınca pencere tekrar açılmasın). */
+function kasaYonGorulduIsaretle() {
+  try {
+    const y = kasaYonDurumu();
+    y.goruldu = Date.now();
+    localStorage.setItem(KASA_YON_KEY, JSON.stringify(y));
+  } catch (e) { /* */ }
+}
+function kasaYonGerekli() {
+  try {
+    if (typeof currentUser === "undefined" || !currentUser) return false;  // yalnız girişli hesap
+    if (!KASA.kasaVarMi()) {
+      const y = kasaYonDurumu();
+      if (y.sonra && Date.now() - Number(y.sonra) < (Number(y.gun) || KASA_YON_GUN) * 86400000) return false;
+      // Sayfa her açılışında üst üste çıkmasın: gösterildikten sonra 1 gün susar.
+      if (y.goruldu && Date.now() - Number(y.goruldu) < 86400000) return false;
+      return true;
+    }
+  } catch (e) { /* */ }
+  return false;
+}
+function kasaYonlendirmeGoster() {
+  try {
+    if (!kasaYonGerekli()) return;
+    if (window.__kasaYonPencereAcik) return;
+    if (document.getElementById("am-kasa-yon")) return;
+    window.__kasaYonPencereAcik = true;
+    const d = document.createElement("div");
+    d.id = "am-kasa-yon";
+    d.style.cssText = "position:fixed;inset:0;z-index:9998;background:rgba(9,15,32,0.66);display:flex;align-items:center;justify-content:center;padding:16px;";
+    d.innerHTML =
+      '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;max-width:470px;width:100%;max-height:88vh;overflow:auto;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
+      '<div style="font-weight:800;font-size:17px;margin-bottom:6px;">🔐 Verini kilitle — 2 dakika</div>' +
+      '<div style="font-size:13px;line-height:1.55;margin-bottom:10px;">Şu an <b>ad soyadın, sınav sonuçların, planın ve kitapların sunucuda düz metin</b> duruyor. Sunucuya erişen biri bunları okuyabilir (uygulamanın sahibi dahil).</div>' +
+      '<div style="font-size:13px;line-height:1.55;margin-bottom:12px;">Kasayı kurunca bu bilgiler <b>cihazında şifrelenir</b>; sunucu yalnız anlamsız harf görür. Şifren sunucuya hiç gitmez.</div>' +
+      '<ol style="font-size:12.5px;line-height:1.6;margin:0 0 12px 18px;padding:0;">' +
+      '<li>En az 8 karakterlik bir <b>kasa şifresi</b> seç (başka yerde kullanmadığın bir şifre olsun).</li>' +
+      '<li>«Kasayı kur ve aç» düğmesine bas.</li>' +
+      '<li>Çıkan <b>12 kelimelik kurtarma anahtarını</b> kâğıda yaz veya indir.</li>' +
+      '</ol>' +
+      '<div style="font-size:11.5px;color:#B45309;background:rgba(245,158,11,0.10);border:1px solid rgba(180,83,9,0.30);border-radius:10px;padding:9px;margin-bottom:12px;line-height:1.5;">⚠️ Kasa şifresini <b>ve</b> kurtarma anahtarını kaybedersen veri kurtarılamaz — sunucu açamaz.</div>' +
+      '<input id="am-yon-sifre" type="password" autocomplete="new-password" placeholder="Kasa şifresi (en az 8 karakter)" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
+      '<div id="am-yon-hata" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
+      '<button id="am-yon-kur" style="width:100%;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;">Kasayı kur ve aç</button>' +
+      '<button id="am-yon-sonra" style="width:100%;margin-top:8px;padding:9px;border-radius:10px;border:1px solid rgba(0,0,0,0.14);background:transparent;color:inherit;font-size:12.5px;cursor:pointer;">Sonra — 3 gün hatırlatma</button>' +
+      '<div style="font-size:10.5px;opacity:0.7;margin-top:9px;line-height:1.45;">Kurmasan da uygulama çalışır; ama verin sunucuda düz metin kalır.</div>' +
+      '</div>';
+    document.body.appendChild(d);
+    window.__kasaYonPencereAcik = true;
+    kasaYonGorulduIsaretle();
+    const kapat = () => { d.remove(); window.__kasaYonPencereAcik = false; };
+    d.querySelector("#am-yon-sonra").addEventListener("click", () => { kasaYonErtele(KASA_YON_GUN); kapat(); toast("Tamam — 3 gün sonra tekrar hatırlatacağım.", "info"); });
+    d.querySelector("#am-yon-kur").addEventListener("click", async () => {
+      const sifre = (d.querySelector("#am-yon-sifre").value || "").trim();
+      const hata = d.querySelector("#am-yon-hata");
+      const r = await kasaKurVeAnahtar(sifre);
+      if (!r.ok) { hata.style.display = "block"; hata.textContent = r.hata || "Kasa kurulamadı."; return; }
+      kapat();
+      try { if (document.getElementById("pwa-profile-modal")) renderProfileModal(); } catch (e) { /* */ }
+      kasaKurtarmaGoster(r.kelimeler);
+      toast("Kasa kuruldu — bundan sonra buluta yalnız şifreli kayıt gider.", "success");
+    });
+    const inp = d.querySelector("#am-yon-sifre");
+    if (inp) setTimeout(() => { try { inp.focus(); } catch (e) {} }, 80);
+  } catch (e) { window.__kasaYonPencereAcik = false; console.warn("Kasa yönlendirmesi:", e); }
 }
 async function kasaAcTiklandi() {
   const el = document.getElementById("am-kasa-yeni");
@@ -1159,6 +1250,8 @@ async function oturumUygula(session) {
   /* v88 — girişte çekim sürer ama "veriler silindi" işaretine UYAR
      (kullanıcı sil dediyse kendiliğinden geri getirilmez). */
   setTimeout(function () { try { if (typeof state !== "undefined") okzKuyrukCek("giris"); } catch (e) {} }, 1200);
+  /* v107 — kasa kurulmamışsa adım adım kurulum yönlendirmesi (bir kez, 3 gün erteleme). */
+  setTimeout(function () { try { kasaYonlendirmeGoster(); } catch (e) {} }, 4000);
   // v70 — öğrenen sözlüğü (kazanim_konu_cache) yükle: aynı kazanım cümlesi
   // ikinci kez geldiğinde kurallar/vektör çalışmadan konu buradan gelir.
   setTimeout(function () { try { okzCacheYukle(); } catch (e) {} }, 900);
@@ -1798,6 +1891,11 @@ async function okzSunucuCek() {
   const yetki = await sb.auth.getSession().then(r => r && r.data && r.data.session).catch(() => null);
   if (!yetki || !yetki.access_token) return okzDurum("giris-yok", "Oturum bulunamadı — tekrar giriş yap.");
   okzDurum("bekliyor", "Okulizyon’a bağlanılıyor…");
+  /* v107 — Sınav sonuçları artık VERİTABANINDA SAKLANMIYOR (düz metin sızıntısı
+     kapatıldı). Sonuçlar yalnız bu yanıtta cihaza döner; kalıcı kayıt Denemelerim
+     ve (kasa açıksa) şifreli bulut kaydıdır. Bu yüzden yanıttaki `exams`
+     okzKuyrukCek'e EL İLE taşınır. */
+  let sunucuExams = null;
   try {
     const y = await fetch(SUPABASE_CONFIG.url + "/functions/v1/okulizyon-cek", {
       method: "POST",
@@ -1806,6 +1904,7 @@ async function okzSunucuCek() {
     });
     const c = await y.json().catch(() => ({}));
     if (!y.ok) return okzDurum("hata", "Çekici HTTP " + y.status + (c.hata ? " — " + c.hata : ""));
+    if (Array.isArray(c.exams) && c.exams.length) sunucuExams = c.exams;
     if (c.durum === "ok") toast("Okulizyon: " + (c.sinav || 0) + " sınav, " + (c.satir || 0) + " soru aktarıldı.", "success");
     else okzDurum(c.durum || "red", (c.mesaj || "Sonuç alınamadı.") + (OKZ_SEBEP[c.durum] ? " → " + OKZ_SEBEP[c.durum] : ""));
   } catch (e) {
@@ -1815,7 +1914,7 @@ async function okzSunucuCek() {
     /* v103 — şifre yalnız bu istek için kullanıldı; bellekte de bırakılmaz. */
     OKZ_SIFRE_BELLEK = "";
   }
-  return okzKuyrukCek(true);
+  return okzKuyrukCek(true, sunucuExams);
 }
 // Çekim sonucunu kullanıcıya görünür kıl (sessiz console.warn yerine)
 function okzDurum(kod, mesaj) {
@@ -2763,7 +2862,7 @@ async function okzBilgiBulutaYaz() {
   } catch (e) { return false; }
 }
 let okzCekSuruyor = false;
-async function okzKuyrukCek(zorla) {
+async function okzKuyrukCek(zorla, sunucuExams) {
   if (typeof state === "undefined") return;                 // uygulama durumu henüz hazır değil
   if (okzCekSuruyor) return;
   /* v88 — Çağrı türleri:
@@ -2795,6 +2894,15 @@ async function okzKuyrukCek(zorla) {
     okzCekSuruyor = false;
     return okzDurum("kasa-kilitli", "Bulut kaydın şifreli. Okulizyon çekimi için Profil → Kasa bölümünden kasayı aç.");
   }
+  /* v107 — KASA KURULMAMIŞSA SESSİZ GEÇİLMEZ: çekim çalışır ama sonuç yalnız
+     düz metin kayda ve cihaza yazılır. Profilde kırmızı uyarı zaten var; burada
+     bir kez de akışın başında söylenir ki kullanıcı \"kurdum sandım\" demesin. */
+  try {
+    if (window.__kasa && !window.__kasa.durum().var && !window.__kasaUyariVerildi) {
+      window.__kasaUyariVerildi = true;
+      toast("Kasa kurulu değil: sınav sonuçların sunucuda düz metin duruyor. Profil → Kasa bölümünden kur.", "warning");
+    }
+  } catch (e) { /* */ }
   okzCekSuruyor = true;
   okzDersleriDuzelt();
   try {
@@ -2804,15 +2912,20 @@ async function okzKuyrukCek(zorla) {
       .maybeSingle();
     if (error) return okzDurum("hata", "Sonuçlar şu an alınamadı. Birazdan tekrar dene.");
     if (!data) return okzDurum("bos", "Bu hesap için sunucuda çekilmiş sonuç yok — «Şimdi dene» ile ilk çekimi başlat.");
-    // Sunucu "giriş yapılamadı / şifre gerekli / sonuç yok" dediyse sebebi göster
-    if (data.durum && data.durum !== "ok" && !(data.exams && data.exams.length)) {
+    /* v107 — bu tablo artık yalnız DURUM tutar (exams her zaman NULL). Sınav
+       sonuçları, çekim yanıtıyla gelen `sunucuExams` üzerinden işlenir. */
+    if (data.durum && data.durum !== "ok" && !(sunucuExams && sunucuExams.length) && !(data.exams && data.exams.length)) {
       return okzDurum(data.durum, (data.durum_mesaji || "Okulizyon sonucu alınamadı.") + (OKZ_SEBEP[data.durum] ? " → " + OKZ_SEBEP[data.durum] : ""));
     }
 
     const st = okzStore();
     const pulledAt = Date.parse(data.pulled_at) || 0;
     st.sonCekim = data.pulled_at || null;
-    const gelen = okzNormalize(data.exams || []);
+    const kaynakExams = (Array.isArray(sunucuExams) && sunucuExams.length) ? sunucuExams : (data.exams || []);
+    const gelen = okzNormalize(kaynakExams);
+    /* v107 — sınav sonucu HİÇ gelmediyse "her şey güncel" DENMEZ: bu tabloda
+       sonuç saklanmadığı için boş gelmesi normaldir, "güncel" ise yanlış bilgi
+       olur. Aşağıdaki gelen.length===0 dalı bunu doğru cümleyle anlatır. */
     // Son çekilen sonucu HER ZAMAN sakla/göster (yeni olsun olmasın)
     // v78 (G-08) — satırlar da saklanır: "tek dokunuşla kaydet" yolu
     // konu analizi üretebilsin (eskiden yalnız SAYI tutuluyordu).
@@ -2874,7 +2987,9 @@ async function okzKuyrukCek(zorla) {
       okzDurum("ok", "Her şey güncel: " + gelen.length + " sınav okundu, Denemelerim'dekilerle aynı. (Son çekim: " +
         okzZaman(pulledAt || Date.now()) + ")");
     } else {
-      okzDurum("sonuc-yok", "Okulizyon'a girildi ama sınav sonucu bulunamadı (son çekim: " + okzZaman(pulledAt || Date.now()) + ").");
+      /* v107 — sonuçlar artık sunucuda saklanmadığı için "sınav sonucu yok" ile
+         "çekim yapılmadı" karışabilir; kullanıcıya yapacağı şey söylenir. */
+      okzDurum("sonuc-yok", "Okulizyon'a girildi ama sınav sonucu bulunamadı (son çekim: " + okzZaman(pulledAt || Date.now()) + "). Sonuçlar Okulizyon'da yayınlanmamış olabilir; «Şimdi dene» ile yeniden çekebilirsin.");
     }
 
     const { data: duyurular, error: dErr } = await sb.from("okul_duyurulari")
