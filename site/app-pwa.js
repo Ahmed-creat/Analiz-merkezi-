@@ -1897,10 +1897,24 @@ async function okzSunucuCek() {
      okzKuyrukCek'e EL İLE taşınır. */
   let sunucuExams = null;
   try {
+    /* v107 — KASA AÇIKKEN kimlik sunucuda okunamaz (kayıt şifreli). Okulizyon'a
+       giriş için gereken bilgi YALNIZ bu istekte gönderilir; sunucu saklamaz.
+       Kasa kapalıyken gönderilmez — gereksiz veri yolu açılmaz. */
+    let kimlik = undefined;
+    try {
+      const o = (state && state.settings && state.settings.okulizyon) || {};
+      const acik = !!(window.__kasa && window.__kasa.durum().acik);
+      if (acik && o.ad && o.okulNo && o.kurumkodu) {
+        kimlik = {
+          ad: o.ad, okulNo: o.okulNo, sinif: o.sinif || "", il: o.il || "", ilce: o.ilce || "",
+          okulAdi: o.okulAdi || "", ilkodu: o.ilkodu || "", ilcekodu: o.ilcekodu || "", kurumkodu: o.kurumkodu
+        };
+      }
+    } catch (e) { /* */ }
     const y = await fetch(SUPABASE_CONFIG.url + "/functions/v1/okulizyon-cek", {
       method: "POST",
       headers: { "Content-Type": "application/json", apikey: SUPABASE_CONFIG.anonKey, Authorization: "Bearer " + yetki.access_token },
-      body: JSON.stringify({ mod: "ben", sifre: OKZ_SIFRE_BELLEK || undefined })
+      body: JSON.stringify({ mod: "ben", sifre: OKZ_SIFRE_BELLEK || undefined, kimlik })
     });
     const c = await y.json().catch(() => ({}));
     if (!y.ok) return okzDurum("hata", "Çekici HTTP " + y.status + (c.hata ? " — " + c.hata : ""));

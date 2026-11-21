@@ -438,8 +438,17 @@ async function bagYaz(userId: string, kurumkodu: string, okulNo: string, ad: str
   return { ok: y.ok, kod: y.status, metin: y.ok ? "" : (await y.text()).slice(0, 200) };
 }
 
-async function kullaniciCek(userId: string, stateJson: any): Promise<any> {
-  const kim = kimlikOku({ state: stateJson });
+/* v107 — KİMLİK NEREDEN OKUNUR:
+   • Kasa KAPALI → app_states düz JSON: kimlik oradan okunur.
+   • Kasa AÇIK   → app_states şifreli: sunucu okuyamaz. Kimlik, isteği yapan
+     CİHAZDAN gelir (isim/number, yalnız istek süresince bellekte; SAKLANMAZ).
+     Bu, "sıfır bilgi" hedefini bozmaz: sunucuda düz metin kalmaz; Okulizyon'a
+     giriş için ad gerekli olduğundan ad istek boyunca sunucudan geçmek zorunda. */
+function kimlikGecerli(k: any) {
+  return !!(k && typeof k.ad === "string" && k.ad.trim() && k.okulNo && k.kurumkodu);
+}
+async function kullaniciCek(userId: string, stateJson: any, istekKimlik?: any): Promise<any> {
+  const kim = kimlikGecerli(istekKimlik) ? { ...istekKimlik } : kimlikOku({ state: stateJson });
   if (!kim) {
     await yaz(userId, { durum: "bilgi-yok", durum_mesaji: "Profil → Okulizyon bölümünde ad soyad ve okul no kayıtlı değil." });
     return { durum: "bilgi-yok" };
@@ -465,7 +474,23 @@ async function kullaniciCek(userId: string, stateJson: any): Promise<any> {
       await yaz(userId, { durum: "kimlik-cakisma", durum_mesaji: m });
       return { durum: "kimlik-cakisma", mesaj: m };
     }
-    const k = new Kavanoz(), r: any = await giris(kim, k);
+    /* v107 — okulizyon_kimlik ZATEN SAHİPLİK KANITIDIR (bağ ancak Okulizyon
+       girişi açıldıktan sonra yazılır, v105). Kasa açıkken sunucu şifreli
+       app_states'i okuyamadığı için kimlik oradan gelmez; bu yüzden kimlik
+       bilgisi yoksa ve aktif bağ varsa o kullanılır. Sonuçlar bağdan değil,
+       Okulizyon'a bu kimlikle giriş yapılarak alınır. */
+    const bag = mevcut || await bagOku(userId);
+    const kimEtkin = (kim && kim.kurumkodu && kim.okulNo) ? kim : (bag ? {
+      ad: String((stateJson && stateJson.settings && stateJson.settings.okulizyon && stateJson.settings.okulizyon.ad) || ""),
+      okulNo: String(bag.okul_no), sinif: "", il: "", ilce: "", okulAdi: "", sifre: "",
+      ilkodu: "", ilcekodu: "", kurumkodu: String(bag.kurumkodu)
+    } : null);
+    if (!kimEtkin) {
+      const m = "Okulizyon bilgileri bulunamadı. Profil → Okulizyon bölümünden ad soyad, okul no ve okulu seçip kaydet.";
+      await yaz(userId, { durum: "bilgi-yok", durum_mesaji: m });
+      return { durum: "bilgi-yok", mesaj: m };
+    }
+    const k = new Kavanoz(), r: any = await giris(kimEtkin, k);
     if (r.durum !== "oturum") {
       const msj = r.durum === "sifre-gerekli"
         ? "Okulizyon bu kayıt için şifre istiyor — Profil → Okulizyon bölümüne şifreni yaz ve «Şimdi dene». (Şifre kaydedilmez.)"
@@ -561,7 +586,9 @@ Deno.serve(async (istek) => {
           durumState = kopya;
         } catch { /* kopyalanamazsa kayıtlı hâliyle devam */ }
       }
-      const o = await kullaniciCek(u.id, durumState);
+      /* v107 — kasa açıksa kimlik cihazdan gelir (istekte); saklanmaz. */
+      const istekKimlik = (g && typeof g.kimlik === "object" && g.kimlik) ? g.kimlik : null;
+      const o = await kullaniciCek(u.id, durumState, istekKimlik);
       return json({ mod, ...o, sureMs: Date.now() - t0 });
     }
     // ---- run: yalnız cron (Authorization: Bearer CRON_SECRET) ----
@@ -582,6 +609,16 @@ Deno.serve(async (istek) => {
        Kullanıcı kimliği + durum kodu yeterli: özet zaten veritabanına yazıldı. */
     const ozet: any[] = [];
     for (const s of liste) {
+      /* v107 — KASA AÇIKSA cron kimlik okuyamaz (kayıt şifreli). Kimlik yoksa
+         çekim ATLANIR: kullanıcıya "bilgi-yok" durumu yazıp yanlış izlenim
+         vermeyiz (eski davranış buydu). Bu hesaplar için çekim, kasa açıkken
+         "Şimdi dene" ile cihazdan yapılır. */
+      const sKim = kimlikOku({ state: s.state });
+      if (!kimlikGecerli(sKim)) {
+        const sifreli = !!(s.state && (s.state.__kasa || (typeof s.state === "string" && s.state.indexOf("__kasa") > 0)));
+        ozet.push({ user: s.user_id, durum: sifreli ? "kasa-sifreli" : "bilgi-yok", sinav: 0, satir: 0 });
+        continue;
+      }
       const r: any = await kullaniciCek(s.user_id, s.state);
       ozet.push({ user: s.user_id, durum: r && r.durum, sinav: r && r.sinav, satir: r && r.satir });
     }

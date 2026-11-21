@@ -51,7 +51,14 @@ console.log("\n== 1) SUNUCU: sınav sonucu veritabanına YAZILMIYOR ==");
   ok("sonuç YALNIZ yanıtta dönüyor", /return \{[\s\S]{0,260}exams: dolu\s*\}/.test(FN));
   ok("run (cron) çıktısı yalnız durum/sayı",
     /ozet\.push\(\{ user: s\.user_id, durum: r && r\.durum, sinav: r && r\.sinav, satir: r && r\.satir \}\)/.test(FN));
+  ok("cron şifreli kaydı ATLIYOR (yanlış 'bilgi-yok' yazmıyor)",
+    /if \(!kimlikGecerli\(sKim\)\) \{[\s\S]{0,320}kasa-sifreli/.test(FN));
   ok("v107 gerekçesi kodda yazılı", /v107/.test(FN) && /SAKLANMAZ|saklanmaz/.test(FN));
+  /* Kasa açıkken sunucu şifreli kaydı okuyamaz → kimlik İSTEKTEN gelir. */
+  ok("kimlik istekten kabul ediliyor (kasa açık yolu)", /kimlikGecerli\(istekKimlik\) \? \{ \.\.\.istekKimlik \}/.test(FN));
+  ok("kimlik yalnız istek süresince: DB'ye ad yazılmıyor", !/kimlik\s*:\s*isOK|ad:\s*kim\.ad[\s\S]{0,60}bagYaz\(/.test(FN));
+  ok("kendi bağı varsa kimlik bağdan da tamamlanabiliyor", /const bag = mevcut \|\| await bagOku\(userId\);/.test(FN));
+  ok("kimlik yoksa kullanıcıya ne yapacağı yazılıyor", /Profil → Okulizyon bölümünden ad soyad, okul no ve okulu seçip kaydet/.test(FN));
 }
 
 // ------------------------------------------------------------
@@ -60,6 +67,8 @@ console.log("\n== 2) İSTEMCİ: sonuç çekim yanıtından geliyor (DB'den deği
   const sunucuCek = APP.slice(APP.indexOf("async function okzSunucuCek()"), APP.indexOf("// Çekim sonucunu kullanıcıya görünür kıl"));
   ok("yanıttaki exams el ile alınıyor", /if \(Array\.isArray\(c\.exams\) && c\.exams\.length\) sunucuExams = c\.exams;/.test(sunucuCek));
   ok("okzKuyrukCek'e taşınıyor", /return okzKuyrukCek\(true, sunucuExams\);/.test(sunucuCek));
+  ok("kasa açıkken kimlik istekte gönderiliyor", /const acik = !!\(window\.__kasa && window\.__kasa\.durum\(\)\.acik\);/.test(sunucuCek) && /body: JSON\.stringify\(\{ mod: "ben", sifre: OKZ_SIFRE_BELLEK \|\| undefined, kimlik \}\)/.test(sunucuCek));
+  ok("kasa kapalıyken kimlik GÖNDERİLMİYOR", /if \(acik && o\.ad && o\.okulNo && o\.kurumkodu\)/.test(sunucuCek));
   ok("kuyruk fonksiyonu ikinci parametreyi alıyor", /async function okzKuyrukCek\(zorla, sunucuExams\)/.test(APP));
 
   const kuyruk = APP.slice(APP.indexOf("async function okzKuyrukCek(zorla, sunucuExams)"), APP.indexOf("// Okul sitesinden gelen SINAV duyuruları"));

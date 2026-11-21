@@ -180,9 +180,9 @@ yanlış kurtarma reddi, kilitliyken düz yazma engeli.
 
 ---
 
-## 6b. ✅ Sunucu tarafı yayında (v18) — sonuçlar artık SAKLANMIYOR (v107)
+## 6b. ✅ Sunucu tarafı yayında (v20) — sonuçlar artık SAKLANMIYOR (v107)
 
-Ölçüm (canlı, 21 Kasım): `okulizyon-cek` **sürüm 18**. Önceki sürümde
+Ölçüm (canlı, 21 Kasım): `okulizyon-cek` **sürüm 20**. Önceki sürümde
 (`v15 · 28 Ekim`) e-posta doğrulaması ve sahiplik bağı **yoktu**; v16'da eklendi.
 **v17/v18 (v107) ile bir sızıntı daha kapatıldı:** çekilen sınav sonuçları
 `public.okulizyon_kuyrugu` tablosuna **düz metin** yazılıyordu (ölçüm: 5/5 satırda
@@ -195,6 +195,11 @@ tam sınav sonucu + sınav adları). Artık:
 - İstemcinin bu tabloya **yazma yetkisi alındı** (INSERT/UPDATE/DELETE yok,
   yalnız kendi satırını SELECT). `anon` rolü tamamen kapatıldı.
 - Eski düz metin kayıtlar **silindi** (migration `okz_duz_sonuc_temizle_v107b`).
+- **Kasa açıkken** sunucu şifreli kaydı okuyamadığı için Okulizyon kimliği
+  (ad, okul no, kodlar) **istekte** gelir; yalnız istek süresince kullanılır,
+  **saklanmaz**. Kimlik yoksa çekim yapılmaz (yanlış "bilgi yok" yazılmaz).
+- Zamanlanmış (cron) çekim, kasa açık hesapları **atlar** (`kasa-sifreli`):
+  o hesaplar için çekim, kasa açıkken "Şimdi dene" ile cihazdan yapılır.
 
 ### v16'dan beri geçerli olan kapılar
 Önceki sürüm **15 · 28 Ekim** tarihliydi ve e-posta doğrulaması ile sahiplik
