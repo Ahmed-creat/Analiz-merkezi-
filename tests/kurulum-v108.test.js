@@ -321,11 +321,13 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("yeni kullanıcıda işaret sıfırlanıyor", /window\.__bulutYuklemeBitti = false;/.test(APP));
   }
 
-  console.log("\n== 5) 👁️ ŞİFREYİ GÖSTER (kullanıcı isteği) ==");
+  console.log("\n== 5) ŞİFREYİ GÖSTER — göz ikonu (kullanıcı isteği) ==");
   {
     // Gerçek fonksiyonlar: sifreGozKur + sifreGozleriKur
+    /* v112 — ikon sabitleri (GOZ_IKON_ACIK/KAPALI) sifreGozKur'dan ÖNCE
+       tanımlı; dilim onları da kapsamalı, yoksa çalışma anında tanımsız kalır. */
     const gozKodu = APP.slice(
-      APP.indexOf("function sifreGozKur(kutu)"),
+      APP.indexOf("const GOZ_IKON_ACIK"),
       APP.indexOf("function cloudReady()")
     );
     // Şifre alanı + ebeveyn
@@ -355,7 +357,12 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("şifre alanı sarmalandı (am-sifre-kutu)", !!kutu && kutu.className === "am-sifre-kutu");
 
     const btn = (kutu && kutu.children || []).find((c) => c.className === "am-goz");
-    ok("👁️ düğmesi eklendi", !!btn && btn.textContent === "👁️");
+    /* v112 — KULLANICI: "Emoji kullanma, klasik şifre alanındaki göz ikonunu kullan."
+       İkon artık EMOJİ DEĞİL, satır içi SVG. */
+    ok("göz düğmesi eklendi", !!btn);
+    ok("ikon SVG (emoji değil)", !!btn && /^<svg /.test(btn.innerHTML || ""));
+    ok("açık göz ikonu çizili", !!btn && btn.innerHTML.indexOf("<circle") > 0);
+    ok("ikon metni/düğmede emoji yok", !/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(String(btn && btn.innerHTML)));
     ok("düğme şifre gösterme modunda (aria-pressed=false)",
       btn && btn._ozellik["aria-pressed"] === "false" && /göster/i.test(btn._ozellik["aria-label"] || ""));
     ok("alanın sağında düğmeye yer açıldı", /42px/.test(alan.style.paddingRight || ""));
@@ -363,12 +370,13 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     // Tıklayınca şifre GÖRÜNÜR
     btn._dinleyici.click[0]({ preventDefault() { }, stopPropagation() { } });
     ok("tıklayınca şifre görünür (type=text)", alan.type === "text");
-    ok("düğme 'gizle' moduna geçti", btn.textContent === "🙈" && /gizle/i.test(btn._ozellik["aria-label"]));
+    ok("düğme 'gizle' moduna geçti", /gizle/i.test(btn._ozellik["aria-label"] || ""));
+    ok("ikon üstü çizili göze döndü", /M3 3l18 18/.test(btn.innerHTML || ""));
 
     // Tekrar tıklayınca gizlenir
     btn._dinleyici.click[0]({ preventDefault() { }, stopPropagation() { } });
     ok("ikinci tıklamada yeniden gizlenir (type=password)", alan.type === "password");
-    ok("düğme 👁️'ye döndü", btn.textContent === "👁️");
+    ok("ikon açık göze döndü", /<circle/.test(btn.innerHTML || "") && !/M3 3l18 18/.test(btn.innerHTML || ""));
 
     // Değer korunuyor mu? (göz değiştirirken şifre kaybolmasın)
     ok("şifre değeri korunuyor", alan.value === "Gizli123");
@@ -376,6 +384,8 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     // İki kez kurulum düğmeyi çoğaltmaz
     gozApi.sifreGozKur(kutu);
     ok("aynı alana ikinci göz eklenmiyor", kutu.children.filter((c) => c.className === "am-goz").length === 1);
+
+    ok("uygulama kodunda göz emojisi YOK", !/👁|🙈/.test(APP));
 
     // Uygulamanın her şifre penceresinde çağrılıyor mu?
     ok("giriş ekranında kuruluyor", /try \{ sifreGozleriKur\(m\); \}/.test(APP));

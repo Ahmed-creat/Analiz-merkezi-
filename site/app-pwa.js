@@ -1,4 +1,4 @@
-const PWA_SURUM = "v111-okul-cekimi-kaldirildi";
+const PWA_SURUM = "v112-goz-ikonu";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -28,10 +28,24 @@ let currentUser = null;     // Supabase kullanıcısı
 let syncTimer = null;
 const SDK = "https://www.gstatic.com/firebasejs/10.12.2";
 
-/* v110 — KULLANICI: "Şifre ekranına 👁️ ekle ki şifreyi yazarken görebilelim."
-   Şifre alanlarını TEK yerden sarmalar: <div class="am-sifre-kutu">…👁️</div>
-   Düğme, alanın type'ını password ↔ text arasında çevirir. Her şifre alanı
-   aynı davranışı alır; tek tek düğme eklemek gerekmez. */
+/* v112 — KULLANICI: "Emoji kullanma, klasik şifre alanındaki göz ikonunu kullan."
+   Şifre alanlarını TEK yerden sarmalar: <div class="am-sifre-kutu">…[ikon]</div>
+   Düğme, alanın type'ını password ↔ text arasında çevirir.
+   İkon EMOJİ DEĞİL: satır içi SVG — açık göz / üstü çizili göz (klasik desen).
+   currentColor kullandığı için açık/koyu temaya kendiliğinden uyar. */
+
+/* Klasik "göz" (açık) ve "göz kapalı / üstü çizili" ikonları — 20×20, stroke tabanlı. */
+const GOZ_IKON_ACIK =
+  '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" ' +
+  'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+  '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>' +
+  '<circle cx="12" cy="12" r="3"/></svg>';
+const GOZ_IKON_KAPALI =
+  '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" ' +
+  'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+  '<path d="M9.9 5.2A10.6 10.6 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.4 4.2"/>' +
+  '<path d="M6.1 6.6A17.4 17.4 0 0 0 2 12s3.6 7 10 7a10.4 10.4 0 0 0 4.5-1"/>' +
+  '<path d="M3 3l18 18"/></svg>';
 function sifreGozKur(kutu) {
   if (!kutu || kutu.dataset.amGoz === "1") return;
   kutu.dataset.amGoz = "1";
@@ -47,7 +61,7 @@ function sifreGozKur(kutu) {
   btn.setAttribute("aria-label", "Şifreyi göster");
   btn.setAttribute("aria-pressed", "false");
   btn.title = "Şifreyi göster";
-  btn.textContent = "👁️";
+  btn.innerHTML = GOZ_IKON_ACIK;
   btn.style.cssText = "position:absolute;right:4px;bottom:4px;top:auto;width:34px;height:34px;border:0;border-radius:8px;background:transparent;color:inherit;font-size:16px;line-height:1;cursor:pointer;opacity:0.75;padding:0;display:flex;align-items:center;justify-content:center;";
   // Alanın dikey konumu: etiketli alanlarda düğme alan hizasında dursun.
   const ayarla = function () {
@@ -71,7 +85,7 @@ function sifreGozKur(kutu) {
     btn.title = simdi;
     btn.setAttribute("aria-pressed", acik ? "false" : "true");
     btn.style.opacity = acik ? "0.75" : "1";
-    btn.textContent = acik ? "👁️" : "🙈";
+    btn.innerHTML = acik ? GOZ_IKON_ACIK : GOZ_IKON_KAPALI;
     try { alan.focus(); } catch (err) { /* */ }
     // İmleci sona al: yazmaya kaldığı yerden devam etsin.
     try { const n = alan.value.length; alan.setSelectionRange(n, n); } catch (err) { /* */ }

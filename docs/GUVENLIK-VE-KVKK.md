@@ -292,6 +292,14 @@ otomatik ekleme, `okul-sitesi.js`, 30 dakikalık değişiklik gözcüsü
 (`degisiklik-kontrol.js`) ve iş akışı adımları **kaldırıldı**. Okul sınav
 tarihi takvime elle girilir. Veri haritası: `docs/VERILER-NEREDE.md`.
 
+**v112 — göz ikonu emoji değil (kullanıcı isteği):** *"Emoji kullanma, klasik
+şifre alanındaki göz ikonunu kullan."* Göz düğmesindeki 👁️/🙈 emojileri
+kaldırıldı; yerine **satır içi SVG** ikonlar kondu: açık göz (şifre gizli) ve
+üstü çizili göz (şifre görünür) — klasik tarayıcı/şifre yöneticisi deseni.
+İkonlar `currentColor` kullandığı için açık/koyu temaya kendiliğinden uyar,
+ekran okuyucuya `aria-label` ("Şifreyi göster/gizle") okunur, SVG'ler
+`aria-hidden`. Test: göz düğmesinde emoji olmadığı da doğrulanıyor.
+
 **v110 — 👁️ şifreyi göster (kullanıcı isteği):** *"Şifre ekranına 👁️ ekle ki
 şifreyi yazarken görebilelim."* Bütün şifre alanlarında (giriş ekranı, kurulum
 paneli ×2, profil giriş şifresi, kilitli kayıt penceresi, Okulizyon şifresi) sağ
