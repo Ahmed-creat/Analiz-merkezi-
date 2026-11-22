@@ -501,6 +501,11 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("metinde silme hakkı + profil yolu var", /Hesabımı ve tüm verilerimi kalıcı sil/.test(G));
     ok("metinde 18 yaş altı bölümü var", /18 yaş/.test(G) && /veli/.test(G));
     ok("reklam/izleme çerezi yok beyanı var", /izleme çerezi/.test(G));
+    /* v114 — DÜRÜSTLÜK: metin, kodun yapmadığı bir şeyi VAAT ETMEMELİ.
+       "izin verilmeden hesap etkinleştirilmez" yazıyordu ama kod engellemiyordu. */
+    ok("metin kodla çelişmiyor (engel vaadi yok)",
+      !/izin verilmeden hesap etkinleştirilmez/.test(G));
+    ok("veli izni sınırı açıkça yazılı", /zorunlu bir "veli izni" kutusu yoktur/.test(G));
   }
 
   console.log("\n" + "─".repeat(60));
