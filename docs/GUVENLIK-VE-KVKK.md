@@ -282,6 +282,13 @@ ve o kurtarma anahtarını seçer."*
 - Çıkışta cihazdaki `am_kurulum_tam_v1` işareti de silinir (başka hesap
   "kurulum tamam" sanıp paneli atlamasın).
 
+**v110 — 👁️ şifreyi göster (kullanıcı isteği):** *"Şifre ekranına 👁️ ekle ki
+şifreyi yazarken görebilelim."* Bütün şifre alanlarında (giriş ekranı, kurulum
+paneli ×2, profil giriş şifresi, kilitli kayıt penceresi, Okulizyon şifresi) sağ
+altta bir göz düğmesi var: basınca alan `text` olur (şifre görünür), tekrar
+basınca `password`'a döner. Değer korunur; imleç sona alınır. Göz yalnız
+**ekranda** gösterir — şifre yine sunucuya gitmez, kaydedilmez.
+
 **v109 — bilgileri zaten kayıtlı olanlar (kullanıcı isteği):** *"Zaten Okulizyon
 bilgileri kayıtlı kişilere sadece giriş şifresi bölümünü açmak gerekiyor."*
 Ad soyad + okul no + il/ilçe/okul durumda **doluysa** 1. adım hiç gösterilmez;

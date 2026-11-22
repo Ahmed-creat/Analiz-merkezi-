@@ -1,4 +1,4 @@
-const PWA_SURUM = "v109-bilgi-kayitliysa-sifre";
+const PWA_SURUM = "v110-sifre-goz";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -27,6 +27,81 @@ let fbApp = null, fbMsg = null;
 let currentUser = null;     // Supabase kullanıcısı
 let syncTimer = null;
 const SDK = "https://www.gstatic.com/firebasejs/10.12.2";
+
+/* v110 — KULLANICI: "Şifre ekranına 👁️ ekle ki şifreyi yazarken görebilelim."
+   Şifre alanlarını TEK yerden sarmalar: <div class="am-sifre-kutu">…👁️</div>
+   Düğme, alanın type'ını password ↔ text arasında çevirir. Her şifre alanı
+   aynı davranışı alır; tek tek düğme eklemek gerekmez. */
+function sifreGozKur(kutu) {
+  if (!kutu || kutu.dataset.amGoz === "1") return;
+  kutu.dataset.amGoz = "1";
+  kutu.style.position = "relative";
+  const alan = kutu.querySelector('input[type="password"], input[type="text"]');
+  if (!alan) return;
+  // Alanın sağ tarafında düğmeye yer aç (yazı düğmenin altına girmesin).
+  const mevcutSag = alan.style.paddingRight || "";
+  if (!/px$/.test(mevcutSag) || parseFloat(mevcutSag) < 40) alan.style.paddingRight = "42px";
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "am-goz";
+  btn.setAttribute("aria-label", "Şifreyi göster");
+  btn.setAttribute("aria-pressed", "false");
+  btn.title = "Şifreyi göster";
+  btn.textContent = "👁️";
+  btn.style.cssText = "position:absolute;right:4px;bottom:4px;top:auto;width:34px;height:34px;border:0;border-radius:8px;background:transparent;color:inherit;font-size:16px;line-height:1;cursor:pointer;opacity:0.75;padding:0;display:flex;align-items:center;justify-content:center;";
+  // Alanın dikey konumu: etiketli alanlarda düğme alan hizasında dursun.
+  const ayarla = function () {
+    try {
+      const k = kutu.getBoundingClientRect ? kutu.getBoundingClientRect() : null;
+      const a = alan.getBoundingClientRect ? alan.getBoundingClientRect() : null;
+      if (k && a && k.height && a.height) {
+        const ust = Math.round(a.top - k.top + (a.height - 34) / 2);
+        btn.style.top = Math.max(0, ust) + "px";
+        btn.style.bottom = "auto";
+      }
+    } catch (e) { /* */ }
+  };
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const acik = alan.type === "text";
+    alan.type = acik ? "password" : "text";
+    const simdi = acik ? "Şifreyi göster" : "Şifreyi gizle";
+    btn.setAttribute("aria-label", simdi);
+    btn.title = simdi;
+    btn.setAttribute("aria-pressed", acik ? "false" : "true");
+    btn.style.opacity = acik ? "0.75" : "1";
+    btn.textContent = acik ? "👁️" : "🙈";
+    try { alan.focus(); } catch (err) { /* */ }
+    // İmleci sona al: yazmaya kaldığı yerden devam etsin.
+    try { const n = alan.value.length; alan.setSelectionRange(n, n); } catch (err) { /* */ }
+  });
+  kutu.appendChild(btn);
+  setTimeout(ayarla, 20);
+  try { window.addEventListener("resize", ayarla); } catch (e) { /* */ }
+}
+
+/* Sayfadaki bütün şifre alanlarını (panel/modal sonradan açılsa da) sarmalar. */
+function sifreGozleriKur(kok) {
+  const kapsam = kok && kok.querySelectorAll ? kok : document;
+  const alanlar = kapsam.querySelectorAll ? kapsam.querySelectorAll('input[type="password"]') : [];
+  Array.prototype.forEach.call(alanlar, function (alan) {
+    const ebeveyn = alan.parentNode;
+    if (!ebeveyn) return;
+    if (ebeveyn.classList && ebeveyn.classList.contains("am-sifre-kutu")) { sifreGozKur(ebeveyn); return; }
+    // Alanı saran kutu: etiket varsa onun içinde, yoksa alanın hemen yerine.
+    let kutu = alan.parentNode;
+    // <label> içindeki alanlarda düğme etiket tıklamasını tetiklemesin diye
+    // sarmalayıcıyı doğrudan alanın çevresine kuruyoruz.
+    kutu = document.createElement("div");
+    kutu.className = "am-sifre-kutu";
+    kutu.style.display = "block";
+    kutu.style.position = "relative";
+    ebeveyn.insertBefore(kutu, alan);
+    kutu.appendChild(alan);
+    sifreGozKur(kutu);
+  });
+}
 
 function cloudReady() {
   return !!(SUPABASE_CONFIG && SUPABASE_CONFIG.url && SUPABASE_CONFIG.anonKey &&
@@ -324,6 +399,7 @@ function buildAuthModal() {
     </div>`;
   /* v108 — kullanıcı: "Uygulamaya ilk girişte direk kayıt/giriş ekranı açılsın."
      Giriş yoksa pencere ZORUNLUDUR: çarpı ve arka plana tıklama kapatmaz. */
+  try { sifreGozleriKur(m); } catch (e) { console.warn("Şifre gözü:", e); }
   m.addEventListener("click", (e) => { if (e.target === m && !window.__amAuthZorunlu) closeAuthModal(); });
   document.body.appendChild(m);
 }
@@ -960,6 +1036,7 @@ function kurulumPaneli() {
     '</div>' +
     '</div>';
   document.body.appendChild(d);
+  try { sifreGozleriKur(d); } catch (e) { console.warn("Şifre gözü:", e); }
   kurDinleyicileri(d);
   kurListe("il").then(function (l) { kurListeYaz("kur-il", l, function (x) { kurIlSecildi(x); }); });
   if (KUR_IL.kod) {
@@ -1363,6 +1440,7 @@ function renderProfileModal() {
 
   html += '</div>';
   m.innerHTML = html;
+  try { sifreGozleriKur(m); } catch (e) { console.warn("Şifre gözü:", e); }
   pushTeshisYaz();
   // v43 — listeler önbellekten hemen çizilir, eksik olanlar arka planda çekilir.
   okzSecimYukle(s);
@@ -1710,6 +1788,7 @@ function kasaUyarisiGoster(durum, tuz) {
       '<div style="font-size:11px;opacity:0.7;margin-top:10px;line-height:1.45;">Şifre sunucuya gönderilmez; yalnız bu cihazda anahtar türetmek için kullanılır.</div>' +
       '</div>';
     document.body.appendChild(d);
+    try { sifreGozleriKur(d); } catch (e) { console.warn("Şifre gözü:", e); }
     const kapat = () => { d.remove(); window.__kasaPencereAcik = false; };
     d.querySelector("#am-kasa-gec").addEventListener("click", kapat);
     d.addEventListener("click", (e) => { if (e.target === d) kapat(); });

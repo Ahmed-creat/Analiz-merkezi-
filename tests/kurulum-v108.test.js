@@ -44,8 +44,15 @@ function eleman(id) {
     addEventListener(olay, fn) { (this._dinleyici[olay] = this._dinleyici[olay] || []).push(fn); },
     remove() { this._silindi = true; },
     focus() { this._odak = true; },
-    setAttribute() { },
-    removeAttribute() { },
+    _ozellik: {},
+    setAttribute(k, v) { this._ozellik[k] = v; },
+    removeAttribute(k) { delete this._ozellik[k]; },
+    getAttribute(k) { return this._ozellik[k]; },
+    getBoundingClientRect() { return { top: 0, left: 0, height: 34, width: 200 }; },
+    setSelectionRange() { },
+    get classList() { return { contains: (c) => c === "am-sifre-kutu" && this.className === "am-sifre-kutu" }; },
+    insertBefore(yeni) { yeni.children.push(this); return yeni; },
+    appendChild(c) { this.children.push(c); return c; },
     insertBefore() { },
     querySelector(sec) { return belge._eleman(sec); },
     querySelectorAll() { return []; },
@@ -312,6 +319,70 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
       /window\.__bulutYuklemeBitti \|\| Date\.now\(\) > sinir/.test(APP));
     ok("yükleme bitince işaret yazılıyor", /window\.__bulutYuklemeBitti = true;/.test(APP));
     ok("yeni kullanıcıda işaret sıfırlanıyor", /window\.__bulutYuklemeBitti = false;/.test(APP));
+  }
+
+  console.log("\n== 5) 👁️ ŞİFREYİ GÖSTER (kullanıcı isteği) ==");
+  {
+    // Gerçek fonksiyonlar: sifreGozKur + sifreGozleriKur
+    const gozKodu = APP.slice(
+      APP.indexOf("function sifreGozKur(kutu)"),
+      APP.indexOf("function cloudReady()")
+    );
+    // Şifre alanı + ebeveyn
+    const alan = eleman("test-sifre");
+    alan.type = "password";
+    alan.value = "Gizli123";
+    // Sahte DOM'da kutu.querySelector gerçek alanı döndürsün (tarayıcıda
+    // selector zaten alanı bulur; burada taklit ediyoruz).
+    const gozBelge = {
+      createElement() {
+        const e = eleman("goz-" + Math.random().toString(36).slice(2, 7));
+        e.querySelector = () => alan;
+        return e;
+      },
+    };
+    const gozApi = new Function("document", "window",
+      gozKodu + "\nreturn { sifreGozKur, sifreGozleriKur };"
+    )(gozBelge, globalThis);
+
+    const ebeveyn = eleman("kapsam");
+    alan.parentNode = ebeveyn;
+    ebeveyn.insertBefore = function (yeni, once) { yeni.parentNode = this; this._eklenen = yeni; return yeni; };
+    const kapsam = { querySelectorAll: () => [alan] };
+
+    gozApi.sifreGozleriKur(kapsam);
+    const kutu = ebeveyn._eklenen;
+    ok("şifre alanı sarmalandı (am-sifre-kutu)", !!kutu && kutu.className === "am-sifre-kutu");
+
+    const btn = (kutu && kutu.children || []).find((c) => c.className === "am-goz");
+    ok("👁️ düğmesi eklendi", !!btn && btn.textContent === "👁️");
+    ok("düğme şifre gösterme modunda (aria-pressed=false)",
+      btn && btn._ozellik["aria-pressed"] === "false" && /göster/i.test(btn._ozellik["aria-label"] || ""));
+    ok("alanın sağında düğmeye yer açıldı", /42px/.test(alan.style.paddingRight || ""));
+
+    // Tıklayınca şifre GÖRÜNÜR
+    btn._dinleyici.click[0]({ preventDefault() { }, stopPropagation() { } });
+    ok("tıklayınca şifre görünür (type=text)", alan.type === "text");
+    ok("düğme 'gizle' moduna geçti", btn.textContent === "🙈" && /gizle/i.test(btn._ozellik["aria-label"]));
+
+    // Tekrar tıklayınca gizlenir
+    btn._dinleyici.click[0]({ preventDefault() { }, stopPropagation() { } });
+    ok("ikinci tıklamada yeniden gizlenir (type=password)", alan.type === "password");
+    ok("düğme 👁️'ye döndü", btn.textContent === "👁️");
+
+    // Değer korunuyor mu? (göz değiştirirken şifre kaybolmasın)
+    ok("şifre değeri korunuyor", alan.value === "Gizli123");
+
+    // İki kez kurulum düğmeyi çoğaltmaz
+    gozApi.sifreGozKur(kutu);
+    ok("aynı alana ikinci göz eklenmiyor", kutu.children.filter((c) => c.className === "am-goz").length === 1);
+
+    // Uygulamanın her şifre penceresinde çağrılıyor mu?
+    ok("giriş ekranında kuruluyor", /try \{ sifreGozleriKur\(m\); \}/.test(APP));
+    ok("kurulum panelinde kuruluyor", /try \{ sifreGozleriKur\(d\); \}/.test(APP));
+    ok("profil penceresinde kuruluyor", /m\.innerHTML = html;\s*\n\s*try \{ sifreGozleriKur\(m\); \}/.test(APP));
+    const cagriSayisi = (APP.match(/sifreGozleriKur\(/g) || []).length;
+    ok("en az 4 pencereye bağlı (tanım + 4 çağrı)", cagriSayisi >= 5, String(cagriSayisi));
   }
 
   console.log("\n" + "─".repeat(60));
