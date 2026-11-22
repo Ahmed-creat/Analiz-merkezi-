@@ -282,6 +282,16 @@ ve o kurtarma anahtarını seçer."*
 - Çıkışta cihazdaki `am_kurulum_tam_v1` işareti de silinir (başka hesap
   "kurulum tamam" sanıp paneli atlamasın).
 
+**v111 — okul sitesi çekimi kaldırıldı (kullanıcı isteği):** *"Sınav tarihleri
+için okul çekimi çalışmıyor ya bunu kaldırabiliriz ve bununla ilgili çöp kod
+kalmasın."* Ölçüm: çekici (`okul-sitesi.js`) sonucu **Firestore'a** yazıyordu,
+uygulama ise Supabase `public.okul_duyurulari` tablosundan okuyordu; o tabloya
+yazan hiçbir betik yoktu (canlıda **0 satır**) ve `okul-cekim.yml` iş akışı
+depoda hiç yoktu. Bu yüzden: istemcideki duyuru okuması + duyuru→takvim
+otomatik ekleme, `okul-sitesi.js`, 30 dakikalık değişiklik gözcüsü
+(`degisiklik-kontrol.js`) ve iş akışı adımları **kaldırıldı**. Okul sınav
+tarihi takvime elle girilir. Veri haritası: `docs/VERILER-NEREDE.md`.
+
 **v110 — 👁️ şifreyi göster (kullanıcı isteği):** *"Şifre ekranına 👁️ ekle ki
 şifreyi yazarken görebilelim."* Bütün şifre alanlarında (giriş ekranı, kurulum
 paneli ×2, profil giriş şifresi, kilitli kayıt penceresi, Okulizyon şifresi) sağ

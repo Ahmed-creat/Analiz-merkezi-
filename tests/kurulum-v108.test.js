@@ -385,6 +385,37 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("en az 4 pencereye bağlı (tanım + 4 çağrı)", cagriSayisi >= 5, String(cagriSayisi));
   }
 
+  console.log("\n== 6) OKUL SİTESİ ÇEKİMİ KALDIRILDI (v111 — kullanıcı isteği) ==");
+  {
+    /* KULLANICI: "sınav tarihleri için okul çekimi çalışmıyor; bunu kaldırabiliriz
+       ve bununla ilgili çöp kod kalmasın."
+       Neden çalışmıyordu (ölçüldü): çekici okul-sitesi.js Firestore'a yazıyordu,
+       uygulama ise Supabase public.okul_duyurulari tablosundan okuyordu; o tabloya
+       yazan HİÇBİR betik yoktu (canlıda 0 satır). Ayrıca GitHub'da okul-cekim
+       iş akışı hiç yoktu. Artık hem istemci okuması hem çekici kaldırıldı. */
+    const KOD = APP.replace(/\/\*[\s\S]*?\*\//g, "");
+    ok("okul_duyurulari tablosu artık OKUNMUYOR",
+      !/okul_duyurulari/.test(KOD));
+    ok("duyuru → takvim otomatik ekleme fonksiyonu YOK",
+      !/okzDuyurularToSchoolExams/.test(KOD));
+    ok("okulizyon state'inde duyurular alanı YOK",
+      !/duyurular: null/.test(KOD) && !/st\.duyurular/.test(KOD));
+    ok("profilden 'Okul Duyuruları' bölümü kalktı",
+      !/Okul Duyuruları/.test(KOD) && !/OKUL DUYURULARI/.test(KOD));
+
+    // Depo tarafı: çekici betikler ve iş akışı adımları silinmiş olmalı.
+    const yol = (x) => require("path").join(__dirname, "..", x);
+    const varMi = (x) => require("fs").existsSync(yol(x));
+    ok("okul-sitesi.js (Firestore çekicisi) SİLİNDİ", !varMi("okul-sitesi.js"));
+    ok("degisiklik-kontrol.js (30 dk gözcüsü) SİLİNDİ", !varMi("degisiklik-kontrol.js"));
+    ok("okul sitesi duman testi SİLİNDİ", !varMi("tests/okulizyon-okul-smoke.js"));
+    const wf = require("fs").readFileSync(yol(".github/workflows/bildirim.yml"), "utf8");
+    ok("iş akışında okul-sitesi adımı YOK", !/okul-sitesi\.js/.test(wf));
+    ok("iş akışında 30 dk gözcü adımı YOK",
+      !/degisiklik-kontrol\.js/.test(wf) && !/\*\/30 \* \* \* \*/.test(wf));
+    ok("Okulizyon çekimi iş akışında DURUYOR", /node okulizyon-cek\.js/.test(wf));
+  }
+
   console.log("\n" + "─".repeat(60));
   if (kalan) {
     console.log("\n✗ " + kalan + " kontrol kaldı (" + gecen + " geçti)");

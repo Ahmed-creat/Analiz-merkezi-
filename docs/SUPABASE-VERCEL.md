@@ -39,7 +39,7 @@ Yerel önizleme: `npx serve site` (service worker için `localhost` veya https g
 | `public.app_states` | Kullanıcı başına tek satır bulut yedeği (`state` jsonb, `grade`, `deneme_sayisi`, `updated_at`) | `auth.uid() = user_id` (select/insert/update/delete) |
 | `public.fcm_tokens` | Kullanıcıya bağlı FCM cihaz tokenları | Yalnızca kendi satırları |
 | `public.okulizyon_kuyrugu` | Okulizyon çekim servisinin bıraktığı sınav kuyruğu (`exams` jsonb, `pulled_at`) | Yalnızca kendi satırı |
-| `public.okul_duyurulari` | Okul sitesi duyuruları (`baslik`, `tarih`, `url`, `lesson`) | Giriş yapan herkes okur; yazma servis anahtarıyla |
+| `public.okul_duyurulari` | **KALDIRILDI (v111)** — tablo şemada duruyor, artık okunmuyor/yazılmıyor (0 satır). Okul sitesi çekimi kaldırıldı; okul sınav tarihi takvime elle girilir | Kullanılmıyor |
 
 Migration dosyası: `supabase/migrations/0001_analiz_merkezi_supabase_schema.sql` (panelde uygulandı).
 

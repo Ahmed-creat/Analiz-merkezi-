@@ -9,7 +9,6 @@
 name: Bildirim Motoru
 on:
   schedule:
-    - cron: "*/30 * * * *"
     - cron: "30 4 * * *"
     - cron: "30 16 * * *"
   workflow_dispatch:
@@ -19,7 +18,7 @@ on:
         type: boolean
         default: false
       cek_only:
-        description: "Yalnız Okulizyon + okul sitesi çekimini dene (bildirim göndermez)"
+        description: "Yalnız Okulizyon çekimini dene (bildirim göndermez)"
         type: boolean
         default: false
 
@@ -81,14 +80,6 @@ jobs:
           node node_modules/playwright/cli.js install chromium --with-deps
           node -e "console.log('playwright:', require('playwright/package.json').version, '✓')"
 
-      - name: Değişiklik gözcüsü (30 dk'da bir)
-        if: ${{ github.event.schedule == '*/30 * * * *' }}
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: node degisiklik-kontrol.js
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          APP_ORIGIN: https://analiz-merkezi.vercel.app
-
       - name: Okulizyon çek (sabah + elle; test koşusunda atla)
         if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
         working-directory: ${{ steps.kok.outputs.dizin }}
@@ -96,13 +87,6 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PLAYWRIGHT_BROWSERS_PATH: "0"
-
-      - name: Okul sitesi (duyuru + ders programı OCR; test koşusunda atla)
-        if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: node okul-sitesi.js
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       # v59 — GÖNDERİM BURADAN KALDIRILDI (16 Kasım 2026 kök neden ölçümü).
       #

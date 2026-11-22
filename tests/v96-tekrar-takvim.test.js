@@ -260,9 +260,15 @@ console.log("\n== 4) Okulizyon: öğretmen çalışma günü vermiyor → karı�
 {
   ok("okulizyon sınav kaydına hazırlık günü YAZILMIYOR", PWA.indexOf("prepDays") < 0);
   ok("ikinci gün hesabı (schoolPrepDaysFor) silindi", HTML.indexOf("schoolPrepDaysFor") < 0);
-  ok("okulizyon sınavı yalnız ders/tarih/konu taşıyor",
-    /lesson: d\.lesson, date: d\.tarih, time: "", topics: \[\], auto: true\s*\n\s*\}\);/.test(PWA));
-  ok("okulizyon sınavı hâlâ takvime ekleniyor", /okzDuyurularToSchoolExams/.test(PWA));
+  /* v111 — KULLANICI: "sınav tarihleri için okul çekimi çalışmıyor; kaldıralım."
+     Okul sitesi duyuru çekimi ve takvime otomatik sınav ekleme TAMAMEN
+     KALDIRILDI. Okul sınav tarihi takvime elle girilir.
+     Not: yorumlar ayıklanır — yoksa "kaldırıldı" açıklaması testi kirletir. */
+  const PWA_KOD = PWA.replace(/\/\*[\s\S]*?\*\//g, "");
+  ok("okul sitesi otomatik sınav ekleme KALDIRILDI (v111)",
+    !/okzDuyurularToSchoolExams/.test(PWA_KOD) && !/okul_duyurulari/.test(PWA_KOD));
+  ok("okul sitesi duyuru listesi/alanı kalmadı (v111)",
+    !/st\.duyurular/.test(PWA_KOD) && !/duyurular: null/.test(PWA_KOD));
 }
 
 console.log("\n== 5) Takvim: gerçekten renkli bölümler ==");

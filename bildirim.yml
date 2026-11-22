@@ -1,6 +1,6 @@
 # ============================================================
-# ANALİZ MERKEZİ — TEK İŞ AKIŞI: gözcü + okul çekimi + bildirimler
-# 30 dk: okul sitesi gözcüsü · 07:30: Okulizyon + site + tam set
+# ANALİZ MERKEZİ — TEK İŞ AKIŞI: okulizyon çekimi + bildirimler
+# v111: okul sitesi gözcüsü kaldırıldı. 07:30: Okulizyon + site + tam set
 # 19:30: kritikler · Elle Run: çekim + bildirim.
 # KENDİNE YETERLİ: package.json depoda eski/bozuk/hiç yok olursa
 # doğru sürümlerle yeniden yazar; betikleri herhangi bir klasörde bulur.
@@ -9,7 +9,6 @@
 name: Bildirim Motoru
 on:
   schedule:
-    - cron: "*/30 * * * *"
     - cron: "30 4 * * *"
     - cron: "30 16 * * *"
   workflow_dispatch:
@@ -75,13 +74,6 @@ jobs:
           node node_modules/playwright/cli.js install chromium --with-deps
           node -e "console.log('playwright:', require('playwright/package.json').version, '✓')"
 
-      - name: Değişiklik gözcüsü (30 dk'da bir)
-        if: ${{ github.event.schedule == '*/30 * * * *' }}
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: node degisiklik-kontrol.js
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-
       - name: Okulizyon çek (sabah + elle)
         if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
         working-directory: ${{ steps.kok.outputs.dizin }}
@@ -89,13 +81,6 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PLAYWRIGHT_BROWSERS_PATH: "0"
-
-      - name: Okul sitesi (duyuru + ders programı OCR)
-        if: ${{ github.event.schedule == '30 4 * * *' || github.event_name == 'workflow_dispatch' }}
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: node okul-sitesi.js
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Bildirimleri gönder (sabah tam / akşam kritik / test)
         if: ${{ github.event.schedule != '*/30 * * * *' }}

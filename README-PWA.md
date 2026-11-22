@@ -93,21 +93,11 @@ koç selamı (ritim + geri sayım) · Tekrar Zamanı Geldi (3-7-14-21-28. gün) 
 - **Cloud Functions (Blaze):** `functions/index.js` de hazır — Blaze'e geçersen `firebase deploy --only functions` ile aynı işi yapar. Gerek yok, sadece seçenek.
 - **OneSignal:** ücretsiz (10k aboneye kadar) ama yalnızz DAĞITIM servisi — hangi bildirimin gerektiğine karar veremez, yine bir zamanlayıcı gerekir. Ayrıca uygulamaya ikinci SDK + kendi service worker'ı demek. Aynı zamanlayıcıya ihtiyaç duyduğundan avantajı yok; bu yüzden FCM + GitHub Actions tercih edildi. (Israrla istenirse taşıma yapılabilir.)
 
-## OKULIZYON + OKUL SİTESİ ENTEGRASYONU 🎓
-**Akış:** Uygulamada yan menü → "Okulizyon Bağlantısı" → ad/okul no/ilçe/okul yaz → kaydet. Her sabah **07:00** GitHub Actions (`.github/workflows/okul-cekim.yml`) siteye girer, sonuçları **deterministik Cheerio koduyla** (yapay zekâ YOK) ayıklar, Firestore'a kuyruklar. Uygulamayı açınca sorular **"Analiz Bekliyor"** listesine düşer → sen sadece her soruya **neden** seçersin (Dikkat hatası / Bilgi eksikliği…) → "Kaydet" → normal deneme olarak işlenir, öncelik listesine girer. Okul sitesinin duyuruları + sınav tarihleri de aynı turla çekilir; ders programı yalnızca görsel/PDF ise **Gemini Vision** ile JSON'a çevrilir (GEMINI_API_KEY secret'ı).
+## OKULİZYON ENTEGRASYONU 🎓
+**Akış:** Uygulamada yan menü → "Okulizyon Bağlantısı" → ad/okul no/ilçe/okul yaz → kaydet. Her sabah **07:30** GitHub Actions (`.github/workflows/bildirim.yml`) Okulizyon'a girer, sonuçları tarayıcıyla (Playwright) ayıklar, Supabase'e yazar. Uygulamayı açınca denemeler doğrudan **Denemelerim**'e yazılır → sen sadece her soruya **neden** seçersin (Dikkat hatası / Bilgi eksikliği…) → "Kaydet" → normal deneme olarak işlenir, öncelik listesine girer. **v111 — okul sitesi çekimi KALDIRILDI:** okul sitesinden duyuru/sınav tarihi çekme çalışmıyordu (çekici Firestore'a yazıyordu, uygulama Supabase'den okuyordu; canlıda tablo hep 0 satırdı), kullanıcı isteğiyle tamamen kaldırıldı: `okul-sitesi.js`, `degisiklik-kontrol.js` ve iş akışı adımları silindi. Okul sınav tarihini takvime **Planlama → Takvim → Sınav ekle** ile elle gir.
 
 **Etkinleştirmek için bakan gerekenler (functions/ dosyalarında):**
 - `okulizyon-cek.js` → `OKULIZYON_CFG`: okulunuzun Okulizyon **giriş adresi** + form alan adları (+ varsa sonuç sayfası yolu)
-- `okul-sitesi.js` → `OKUL_SITESI.url`: okul sitesi adresi
-- API anahtarı GEREKMEZ (OCR kütüphanesi kullanılıyor)
-- Doğru seçicileri kesinleştirmek için: Okulizyon sonuç sayfası açıkken **Ctrl+S** ile kaydedip o HTML'i geliştiriciye ver (seçiciler birebir oturtulur — ayrıştırma zaten başlık-isimli sütun eşleme yöntemiyle şablon değişimlerine dayanıklı).
-
-## Sık sorulan## OKULIZYON + OKUL SİTESİ ENTEGRASYONU 🎓
-**Akış:** Uygulamada yan menü → "Okulizyon Bağlantısı" → ad/okul no/ilçe/okul yaz → kaydet. Her sabah **07:00** GitHub Actions (`.github/workflows/okul-cekim.yml`) siteye girer, sonuçları **deterministik Cheerio koduyla** (yapay zekâ YOK) ayıklar, Firestore'a kuyruklar. Uygulamayı açınca sorular **"Analiz Bekliyor"** listesine düşer → sen sadece her soruya **neden** seçersin (Dikkat hatası / Bilgi eksikliği…) → "Kaydet" → normal deneme olarak işlenir, öncelik listesine girer. Okul sitesinin duyuruları + sınav tarihleri de aynı turla çekilir; ders programı yalnızca görsel/PDF ise **Gemini Vision** ile JSON'a çevrilir (GEMINI_API_KEY secret'ı).
-
-**Etkinleştirmek için bakan gerekenler (functions/ dosyalarında):**
-- `okulizyon-cek.js` → `OKULIZYON_CFG`: okulunuzun Okulizyon **giriş adresi** + form alan adları (+ varsa sonuç sayfası yolu)
-- `okul-sitesi.js` → `OKUL_SITESI.url`: okul sitesi adresi
 - API anahtarı GEREKMEZ (OCR kütüphanesi kullanılıyor)
 - Doğru seçicileri kesinleştirmek için: Okulizyon sonuç sayfası açıkken **Ctrl+S** ile kaydedip o HTML'i geliştiriciye ver (seçiciler birebir oturtulur — ayrıştırma zaten başlık-isimli sütun eşleme yöntemiyle şablon değişimlerine dayanıklı).
 
@@ -148,5 +138,5 @@ Araştırma referansları: [Bilgi Sarmal 10. sınıf örnek deneme](https://onya
 ## Sık sorulan
 - **Bildirimler telefon kilideyken geliyor mu?** Evet — FCM + `firebase-messaging-sw.js` arka plan bildirimi işler (config doldurulduysa).
 - **İnternet yoksa?** Uygulama tam çalışır; bulut senkronu ve giriş devre dışı kalır, veriler cihazda (localStorage) durur.
-- **Verilerim nerede?** Kendi Firebase projende, sadece senin uid'ine kilitli (yukarıdaki kurallar). Kimse başkasının verisini okuyamaz.
+- **Verilerim nerede?** Supabase projesinde `public.app_states` tablosunda, kullanıcı başına tek satır tek JSON (`state`) olarak durur; RLS yalnız senin satırını gösterir. Okulizyon sonuçları `state.exams`, bilgiler `state.settings.okulizyon`, konu takibi `state.topics` içinde. Ayrıntılı harita: `docs/VERILER-NEREDE.md`. Kilit (uçtan uca şifreleme) açıksa `state` şifreli zarftır — sunucu da okuyamaz.
 - Kaynak kodu değiştirirsen: `analiz-merkezi-gelismui` içinde düzenle → `python3 analiz-merkezi-pwa/build_pwa.py` → yeni `index.html` hazır.

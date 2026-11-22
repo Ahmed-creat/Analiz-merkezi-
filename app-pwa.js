@@ -329,7 +329,7 @@ async function registerFCM() {
 // ---- 8) OKULIZYON ENTEGRASYONU (çek → Analiz Bekliyor → neden seç → kaydet) ----
 const OKZ_NEDENLER = ["Konuyu Bilmiyordum", "KONU EKSİKLİĞİ", "ANLAMADIM", "İşlem Hatası/Dikkatsizlik", "Kodlama/Kitapçık Hatası", "SÜRE YETMEDİ", "ÇÖZÜM YOLUNU BULAMADIM"];
 function okzStore() {
-  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], pulledAt: 0, duyurular: null };
+  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], pulledAt: 0 };
   return state.okulizyon;
 }
 function okzKey(ex) { return (ex.name || "?") + "|" + (ex.date || ""); }
@@ -430,13 +430,7 @@ function renderOkzModal() {
   } else {
     html += '<div style="border:1px dashed rgba(0,0,0,0.2);border-radius:12px;padding:16px;text-align:center;font-size:13px;opacity:0.75;">Analiz bekleyen soru yok. Sınav sonuçların her sabah 07:00 otomatik çekilir.</div>';
   }
-  // C) Okul duyuruları
-  if (st.duyurular && st.duyurular.length) {
-    html += '<div style="font-weight:800;font-size:14.5px;margin:14px 0 6px;">Okul Duyuruları</div>';
-    st.duyurular.slice(0, 6).forEach(d => {
-      html += '<a href="' + escHtml(d.url) + '" target="_blank" rel="noopener" style="display:block;font-size:12.5px;padding:7px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;">' + (d.tarih ? "<b>[" + escHtml(d.tarih) + "]</b> " : "") + escHtml(d.baslik) + (d.lesson ? ' <span style="color:#16A34A;font-weight:700;">takvime eklendi</span>' : "") + "</a>";
-    });
-  }
+  /* v111 — okul sitesi duyuru çekimi kaldırıldı (bu dosya eski kopyadır). */
   html += "</div>";
   m.innerHTML = html;
 }
@@ -476,41 +470,9 @@ async function okzKuyrukCek() {
         }
       }
     }
-    const dSnap = await getDoc(doc(fbDb, "users", currentUser.uid, "okul", "duyurular"));
-    if (dSnap.exists() && dSnap.data().duyurular) {
-      okzStore().duyurular = dSnap.data().duyurular;
-      okzDuyurularToSchoolExams(dSnap.data().duyurular);
-      saveState();
-    }
   } catch (e) { console.warn("Okulizyon kuyruk okunamadı:", e); }
 }
-// Okul sitesinden gelen SINAV duyuruları → takvime otomatik okul sınavı
-function okzDuyurularToSchoolExams(duyurular) {
-  let eklenen = 0;
-  (duyurular || []).forEach(d => {
-    if (!d.lesson || !d.tarih) return; // yalnız ders+bilinen tarihli sınav duyuruları
-    const st = okzStore();
-    const key = "okulsitesi@" + d.lesson + "@" + d.tarih;
-    if (st.importedKeys.includes(key)) return;
-    if ((state.plan.schoolExams || []).some(se => se.auto && se.lesson === d.lesson && se.date === d.tarih)) { st.importedKeys.push(key); return; }
-    const kalan = typeof parseDay === "function" && typeof todayStr === "function"
-      ? Math.round((parseDay(d.tarih) - parseDay(todayStr())) / 86400000) : 7;
-    state.plan.schoolExams = state.plan.schoolExams || [];
-    state.plan.schoolExams.push({
-      id: (typeof uid === "function" ? uid() : "ok" + Date.now() + Math.random().toString(36).slice(2, 6)),
-      lesson: d.lesson, date: d.tarih, time: "", topics: [], auto: true,
-      prepDays: typeof schoolPrepDaysFor === "function" ? schoolPrepDaysFor(Math.max(1, kalan)) : [3, 1]
-    });
-    st.importedKeys.push(key);
-    eklenen++;
-    if (typeof addNotification === "function") {
-      addNotification({ title: "Takvime eklendi: " + d.lesson + " sınavı", body: parseDay(d.tarih).toLocaleDateString("tr-TR") + " — okul sitesinden alındı; hazırlık günleri sınava kalan süreye göre işlendi. Konularını Planlama'dan seçebilirsin.", kind: "exam", topicKey: key });
-    }
-  });
-  if (eklenen && typeof toast === "function") toast("Okul sitesinden " + eklenen + " sınav tarihi takvime eklendi (hazırlık günleri oranla hesaplandı).", "success");
-  return eklenen;
-}
-window.okzDuyurularToSchoolExams = okzDuyurularToSchoolExams;
+/* v111 — okul sitesi çekimi kaldırıldı: okzDuyurularToSchoolExams silindi. */
 function okzAnalizKaydet() {
   const st = okzStore();
   const secimler = {};

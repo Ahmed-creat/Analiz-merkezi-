@@ -1,4 +1,4 @@
-const PWA_SURUM = "v110-sifre-goz";
+const PWA_SURUM = "v111-okul-cekimi-kaldirildi";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1392,7 +1392,7 @@ function renderProfileModal() {
   /* v79 — KULLANICI: "profilden analiz bekliyor'u kaldırmamışsın." Profilde
      'Analiz Bekliyor' ADI ve SAYACI artık YOK: neden bekleyen sorular yalnız
      Denemelerim'de, ait oldukları denemenin altında görünür. Bu düğme yalnız
-     Okulizyon çekim sonuçlarını/duyuruları gösterir. */
+     Okulizyon çekim sonuçlarını gösterir. */
   html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Okulizyon sonuçları</button>';
   html += '</div>';
   // Çekim durumu: sessiz başarısızlık yerine açık bilgi
@@ -1403,12 +1403,10 @@ function renderProfileModal() {
        + (st.durum ? escHtml(okzZaman(st.durum.zaman)) + " — " + escHtml(st.durum.mesaj) : "henüz denenmedi")
        + (st.sonCekim ? '<br><span style="opacity:0.75;">Son otomatik çekim: ' + escHtml(okzZaman(Date.parse(st.sonCekim) || 0)) + '</span>' : "")
        + '</div>';
-  if (st.duyurular && st.duyurular.length) {
-    html += '<div style="margin-top:12px;font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;">OKUL DUYURULARI</div>';
-    st.duyurular.slice(0, 4).forEach(d => {
-      html += '<a href="' + escHtml(d.url || "#") + '" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:6px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(d.baslik || "") + '</span><span style="opacity:0.6;white-space:nowrap;">' + escHtml(d.tarih || "") + '</span></a>';
-    });
-  }
+  /* v111 — KULLANICI: "sınav tarihleri için okul çekimi çalışmıyor, kaldıralım."
+     Okul sitesi duyuru çekimi ve buna bağlı duyuru listesi TAMAMEN KALDIRILDI
+     (çekici Firestore'a yazıyordu, uygulama hiç dolmayan bir tablodan okuyordu).
+     Okul sınav tarihi artık Planlama → Takvim'den elle girilir. */
   html += '</div>';
 
   /* v82 — KULLANICI: "Neden hâlâ okulizyon konu eşleşmesi var profilde?
@@ -2217,7 +2215,7 @@ window.__okzSifirlamaTemizle = function (uid) {
 window.__okzSifirlamaGecerli = okzSifirlamaGecerli;
 
 function okzStore() {
-  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], aktarilan: {}, guncellenen: [], pulledAt: 0, duyurular: null, silinen: {} };
+  if (!state.okulizyon) state.okulizyon = { pending: [], importedKeys: [], aktarilan: {}, guncellenen: [], pulledAt: 0, silinen: {} };
   /* v88 — "Tüm verileri sil" sonrası OTOMATİK çekim durur. Kullanıcı sil dediyse
      uygulama kendi kendine geri getirmez; "Şimdi dene" ile isterse getirir. */
   if (typeof state.okulizyon.otomatikDurdu !== "boolean") state.okulizyon.otomatikDurdu = false;
@@ -3132,13 +3130,7 @@ function renderOkzModal() {
      "⏳ Analiz Bekliyor (N soru)" bölümü ve 'Denemelerim'de aç' götürücüsü
      TAMAMEN KALDIRILDI. Çekilen denemeler doğrudan Denemelerim'e yazılıyor;
      neden seçimi orada, denemenin kendi kartında. Profilde tekrar edilmez. */
-  // C) Okul duyuruları
-  if (st.duyurular && st.duyurular.length) {
-    html += '<div style="font-weight:800;font-size:14.5px;margin:14px 0 6px;">Okul Duyuruları</div>';
-    st.duyurular.slice(0, 6).forEach(d => {
-      html += '<a href="' + escHtml(d.url) + '" target="_blank" rel="noopener" style="display:block;font-size:12.5px;padding:7px 0;border-top:1px solid rgba(0,0,0,0.07);text-decoration:none;color:inherit;">' + (d.tarih ? "<b>[" + escHtml(d.tarih) + "]</b> " : "") + escHtml(d.baslik) + (d.lesson ? ' <span style="color:#16A34A;font-weight:700;">takvime eklendi</span>' : "") + "</a>";
-    });
-  }
+  /* v111 — Okul sitesi duyuru çekimi kaldırıldı (v110 günlüğü: profil). */
   /* v86 — KULLANICI: "Çekme defterine ne gerek var? Denemelerim'de deneme
      varsa onunla karşılaştırsın." İçe aktarma defteri ve sıfırlama düğmesi
      KALDIRILDI: karşılaştırmanın ölçüsü yalnız Denemelerim. */
@@ -3377,15 +3369,8 @@ async function okzKuyrukCek(zorla, sunucuExams) {
       okzDurum("sonuc-yok", "Okulizyon'a girildi ama sınav sonucu bulunamadı (son çekim: " + okzZaman(pulledAt || Date.now()) + "). Sonuçlar Okulizyon'da yayınlanmamış olabilir; «Şimdi dene» ile yeniden çekebilirsin.");
     }
 
-    const { data: duyurular, error: dErr } = await sb.from("okul_duyurulari")
-      .select("baslik, tarih, url, lesson")
-      .order("created_at", { ascending: false })
-      .limit(20);
-    if (!dErr && duyurular && duyurular.length) {
-      okzStore().duyurular = duyurular;
-      okzDuyurularToSchoolExams(duyurular);
-      saveState();
-    }
+    /* v111 — okul_duyurulari sorgusu kaldırıldı: tabloya yazan hiçbir betik
+       yoktu, sorgu her çekimde boş dönüyordu. */
   } catch (e) {
     okzDurum("hata", String((e && e.message) || e));
     console.warn("Okulizyon kuyruğu okunamadı:", e);
@@ -3404,35 +3389,9 @@ async function okzKuyrukCek(zorla, sunucuExams) {
     } catch (e) { /* */ }
   }
 }
-// Okul sitesinden gelen SINAV duyuruları → takvime otomatik okul sınavı
-function okzDuyurularToSchoolExams(duyurular) {
-  let eklenen = 0;
-  (duyurular || []).forEach(d => {
-    if (!d.lesson || !d.tarih) return; // yalnız ders+bilinen tarihli sınav duyuruları
-    const st = okzStore();
-    const key = "okulsitesi@" + d.lesson + "@" + d.tarih;
-    if (st.importedKeys.includes(key)) return;
-    if ((state.plan.schoolExams || []).some(se => se.auto && se.lesson === d.lesson && se.date === d.tarih)) { st.importedKeys.push(key); return; }
-    const kalan = typeof parseDay === "function" && typeof todayStr === "function"
-      ? Math.round((parseDay(d.tarih) - parseDay(todayStr())) / 86400000) : 7;
-    state.plan.schoolExams = state.plan.schoolExams || [];
-    state.plan.schoolExams.push({
-      id: (typeof uid === "function" ? uid() : "ok" + Date.now() + Math.random().toString(36).slice(2, 6)),
-      // v96 — KULLANICI: "okulizyonda öğretmen çalışma günü vermiyor,
-      // karışıklık kalksın silelim." Sınav kaydına hazırlık GÜNÜ yazılmıyor:
-      // günler tek kaynaktan (index.html → hazirlikPlani) üretilir.
-      lesson: d.lesson, date: d.tarih, time: "", topics: [], auto: true
-    });
-    st.importedKeys.push(key);
-    eklenen++;
-    if (typeof addNotification === "function") {
-      addNotification({ title: "Takvime eklendi: " + d.lesson + " sınavı", body: parseDay(d.tarih).toLocaleDateString("tr-TR") + " — okul sitesinden alındı; hazırlık günleri sınava kalan süreye göre işlendi. Konularını Planlama'dan seçebilirsin.", kind: "exam", topicKey: key });
-    }
-  });
-  if (eklenen && typeof toast === "function") toast("Okul sitesinden " + eklenen + " sınav tarihi takvime eklendi (hazırlık günleri oranla hesaplandı).", "success");
-  return eklenen;
-}
-window.okzDuyurularToSchoolExams = okzDuyurularToSchoolExams;
+/* v111 — okzDuyurularToSchoolExams KALDIRILDI: okul sitesi çekimi çalışmıyordu,
+   dolayısıyla hiçbir zaman duyuru gelmiyordu. Okul sınav tarihi takvime elle
+   girilir (Planlama → Takvim → Sınav ekle). */
 /* ============================================================
    v78 (G-08) — NEDEN SEÇİMİ ARTIK DENEMELERİM'DE
    ------------------------------------------------------------
