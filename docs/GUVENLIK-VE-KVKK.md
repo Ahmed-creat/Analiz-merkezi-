@@ -116,7 +116,7 @@ Kuruldu ve canlıda denendi.
 
 | Öncelik | İş | Neden |
 |---|---|---|
-| **P1** | KVKK paketi: veli bilgilendirme + izin adımı + "verilerimi sil" düğmesi + otomatik silme süresi | Şu an hiç yok; hukuki yükümlülük |
+| **P1** | KVKK paketi: veli bilgilendirme + izin adımı + "verilerimi sil" düğmesi + otomatik silme süresi | Şu an hiç yok; hukuki yükümlülük. **Durum 2 Kasım 2026: `docs/KVKK-DURUM.md` — 4 iş bende (hesap silme, aydınlatma+veli izni, saklama süresi, envanter), 2 iş panelde (şifre ≥8, sızmış şifre denetimi)** |
 | **P1** | Okulizyon **devir** akışı (kod ile) | Numara el değiştirince çıkmaz sokak |
 | **P2** | Sunucu ayarları panelden: şifre politikası (en az 8 karakter + sızmış şifre denetimi + robot koruması) | Benim araçlarım bu üç alanı değiştiremiyor; panelden yapılmalı |
 | ✅ | ~~Kullanıcıyı kasayı açmaya yönlendirme~~ → **v108'de ZORUNLU yapıldı** (§6d) | Kilit kurulmadan uygulama açılmıyor |
