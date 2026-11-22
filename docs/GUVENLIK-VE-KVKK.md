@@ -282,6 +282,15 @@ ve o kurtarma anahtarını seçer."*
 - Çıkışta cihazdaki `am_kurulum_tam_v1` işareti de silinir (başka hesap
   "kurulum tamam" sanıp paneli atlamasın).
 
+**v109 — bilgileri zaten kayıtlı olanlar (kullanıcı isteği):** *"Zaten Okulizyon
+bilgileri kayıtlı kişilere sadece giriş şifresi bölümünü açmak gerekiyor."*
+Ad soyad + okul no + il/ilçe/okul durumda **doluysa** 1. adım hiç gösterilmez;
+panel doğrudan **giriş şifresi** adımıyla açılır ve kayıtlı bilgiler tek satır
+özet olarak yazar. 12 kelime adımı yine zorunludur (şifre kurulunca üretilir).
+- Panel, **bulut kaydı yüklendikten sonra** açılır (en fazla 6 sn bekler):
+  yoksa henüz yüklenmemiş kayıt yüzünden 1. adım gereksiz sorulurdu.
+- Bilgi eksikse (ör. okul no boş) panel eskisi gibi 3 adım sürer.
+
 **Kurmazsa ne olur (dürüst):** v108'den sonra bu yol **kapalı** — giriş yapan
 kullanıcı paneli tamamlamadan uygulamanın içine geçemez. Çevrimdışıysa (Supabase
 SDK yok) uygulama yerel çalışmaya devam eder, giriş ekranı zorlanmaz.

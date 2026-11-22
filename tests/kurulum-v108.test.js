@@ -121,7 +121,7 @@ const baglam = {
 };
 const api = new Function("baglam",
   "with (baglam) {\n" + KOD +
-  "\nreturn { kurulumPaneli, kurulumGerekli, kurulumAkisi, kurMetinYaz, KURULUM_TAM_KEY };\n}"
+  "\nreturn { kurulumPaneli, kurulumGerekli, kurulumAkisi, kurMetinYaz, kurulumBilgiVarMi, KURULUM_TAM_KEY };\n}"
 )(baglam);
 
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -181,6 +181,8 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
       "kur-onay", "kur-bitir", "kur-kur", "kur-indir", "kur-kelimeler",
       "kur-adim1", "kur-adim2", "kur-adim3", "kur-ileri", "kur-il-liste", "kur-ilce-liste", "kur-okul-liste"];
     idler.forEach((id) => { belge._ogeler[id] = eleman(id); });
+    // Bu bölüm "bilgiler EKSİK" senaryosunu ölçer: kayıtlı bilgi yok.
+    globalThis.state = { settings: {} };
     belge._ogeler["kur-sinif"].value = "9";
     belge._ogeler["kur-adim1"].style.display = "block";
     belge._ogeler["kur-adim2"].style.display = "none";
@@ -257,6 +259,59 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("onayla bitiyor + işaret yazılıyor", depo["am_kurulum_tam_v1"] === "1");
     ok("bitince panel kapanıyor", !belge._eleman("am-kurulum") || belge._eleman("am-kurulum")._silindi === true);
     ok("bitince akış artık zorunlu değil", (await api.kurulumGerekli()) === false);
+  }
+
+  console.log("\n== 3) BİLGİLER KAYITLIYSA: panel doğrudan GİRİŞ ŞİFRESİYLE açılır ==");
+  {
+    // KULLANICI: "Zaten Okulizyon bilgileri kayıtlı kişilere sadece giriş
+    // şifresi bölümünü açmak gerekiyor."
+    globalThis.KASA = { kasaVarMi: () => false, kasaAcikMi: () => false };
+    globalThis.currentUser = { id: "u2", email: "kayitli@ornek.com" };
+    globalThis.state = {
+      settings: {
+        okulizyon: {
+          ad: "ZEYNEP KAYA", okulNo: "1234", sinif: "11",
+          il: "Gaziantep", ilkodu: "27", ilce: "Şahinbey", ilcekodu: "2701",
+          okulAdi: "19 Mayıs Anadolu Lisesi", kurumkodu: "750001",
+        },
+      },
+    };
+    delete depo["am_kurulum_tam_v1"];
+
+    ok("bilgi hazır kabul ediliyor", api.kurulumBilgiVarMi() === true);
+
+    // Panelin ürettiği HTML'de 1. adım gizli, 2. adım açık olmalı.
+    let html = "";
+    const sahte = eleman("am-kurulum-sahte");
+    const gercekCreate = belge.createElement;
+    belge.createElement = function () { const e = eleman("am-kurulum"); return e; };
+    belge.body.appendChild = function (el) { html = String(el.innerHTML || ""); belge._ogeler["am-kurulum"] = el; };
+    api.kurulumPaneli();
+    belge.createElement = gercekCreate;
+
+    ok("1. adım GİZLİ (bilgiler sorulmuyor)", /id="kur-adim1" style="display:none;"/.test(html));
+    ok("2. adım AÇIK (yalnız giriş şifresi)", /id="kur-adim2">/.test(html));
+    ok("başlık 'Giriş şifreni belirle'", /Giriş şifreni belirle/.test(html));
+    ok("kayıtlı bilgiler özet olarak gösteriliyor",
+      /ZEYNEP KAYA/.test(html) && /1234/.test(html) && /19 Mayıs/.test(html));
+    ok("bilgi isteme metni YOK", !/Bilgilerini tamamla/.test(html));
+    ok("12 kelime adımı yine gizli (şifreden sonra)", /id="kur-adim3" style="display:none;"/.test(html));
+
+    // Eksik bilgi → 1. adım geri gelir
+    ok("okul no yoksa bilgi EKSİK sayılır",
+      api.kurulumBilgiVarMi({ ad: "A", okulNo: "", il: "G", ilce: "Ş", okulAdi: "X" }) === false);
+    ok("il yoksa bilgi EKSİK sayılır",
+      api.kurulumBilgiVarMi({ ad: "A", okulNo: "1", il: "", ilce: "Ş", okulAdi: "X" }) === false);
+    ok("yalnız ad+okulno yetmez (okul gerekli)",
+      api.kurulumBilgiVarMi({ ad: "A", okulNo: "1", il: "G", ilce: "Ş", okulAdi: "" }) === false);
+  }
+
+  console.log("\n== 4) Bulut kaydı bekleme (bilgi yüklenmeden adım sorulmaz) ==");
+  {
+    ok("bulut yüklemesi bitmeden panel açılmıyor",
+      /window\.__bulutYuklemeBitti \|\| Date\.now\(\) > sinir/.test(APP));
+    ok("yükleme bitince işaret yazılıyor", /window\.__bulutYuklemeBitti = true;/.test(APP));
+    ok("yeni kullanıcıda işaret sıfırlanıyor", /window\.__bulutYuklemeBitti = false;/.test(APP));
   }
 
   console.log("\n" + "─".repeat(60));

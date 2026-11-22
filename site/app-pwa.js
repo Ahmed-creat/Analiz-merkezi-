@@ -1,4 +1,4 @@
-const PWA_SURUM = "v108-zorunlu-kurulum";
+const PWA_SURUM = "v109-bilgi-kayitliysa-sifre";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -886,10 +886,23 @@ function kurListeYaz(id, liste, sec) {
 }
 
 /* Tek panel: kimlik → şifre → 12 kelime. Zorunlu, çarpısı yok. */
+/* v108b — KULLANICI: "Zaten Okulizyon bilgileri kayıtlı kişilere sadece giriş
+   şifresi bölümünü açmak gerekiyor."
+   Bilgiler (ad soyad + okul no + il/ilçe/okul) durumda VARSA 1. adım ATLANIR:
+   panel doğrudan "giriş şifresi" adımıyla açılır. Bilgiler eksikse 3 adım sürer. */
+function kurulumBilgiVarMi(okulizyon) {
+  const o = okulizyon !== undefined
+    ? okulizyon
+    : ((typeof state !== "undefined" && state && state.settings && state.settings.okulizyon) || {});
+  return !!(o && String(o.ad || "").trim() && String(o.okulNo || "").trim() &&
+    String(o.il || "").trim() && String(o.ilce || "").trim() && String(o.okulAdi || "").trim());
+}
+
 function kurulumPaneli() {
   const eski = document.getElementById("am-kurulum");
   if (eski) eski.remove();
   const s = (typeof state !== "undefined" && state && state.settings && state.settings.okulizyon) || {};
+  const bilgiVar = kurulumBilgiVarMi(s);
   KUR_IL = { ad: s.il || "", kod: s.ilkodu || "" };
   KUR_ILCE = { il: s.il || "", ad: s.ilce || "", kod: s.ilcekodu || "", liste: [] };
   KUR_OKUL = { ilce: s.ilce || "", ad: s.okulAdi || "", kod: s.kurumkodu || "", liste: [] };
@@ -899,11 +912,14 @@ function kurulumPaneli() {
   d.innerHTML =
     '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;max-width:520px;width:100%;max-height:92vh;overflow:auto;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.4);">' +
     '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:4px;">SON ADIM — ZORUNLU</div>' +
-    '<div style="font-weight:800;font-size:18px;margin-bottom:6px;">🎒 Bilgilerini tamamla</div>' +
-    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:14px;opacity:0.85;">Sınıfın, il/ilçe/okulun ve okul numaran olmadan sınav sonuçların getirilemez. Sonra <b>giriş şifreni</b> belirleyip verilerini kilitleyeceksin. Bu panel tamamlanmadan uygulama açılmaz.</div>' +
+    (bilgiVar
+      ? '<div style="font-weight:800;font-size:18px;margin-bottom:6px;">🔐 Giriş şifreni belirle</div>' +
+        '<div style="font-size:12.5px;line-height:1.5;margin-bottom:14px;opacity:0.85;">Okulizyon bilgilerin kayıtlı (<b>' + kurKutu(s.ad || "") + '</b> · ' + kurKutu(s.okulNo || "") + ' · ' + kurKutu(s.okulAdi || "") + '). Tek eksik: verilerini kilitleyecek <b>giriş şifresi</b>.</div>'
+      : '<div style="font-weight:800;font-size:18px;margin-bottom:6px;">🎒 Bilgilerini tamamla</div>' +
+        '<div style="font-size:12.5px;line-height:1.5;margin-bottom:14px;opacity:0.85;">Sınıfın, il/ilçe/okulun ve okul numaran olmadan sınav sonuçların getirilemez. Sonra <b>giriş şifreni</b> belirleyip verilerini kilitleyeceksin. Bu panel tamamlanmadan uygulama açılmaz.</div>') +
 
-    // 1) KİMLİK
-    '<div id="kur-adim1">' +
+    // 1) KİMLİK — bilgiler hazırsa hiç gösterilmez
+    '<div id="kur-adim1"' + (bilgiVar ? ' style="display:none;"' : '') + '>' +
     '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
     '<label style="font-size:11.5px;opacity:0.85;grid-column:1 / -1;">AD SOYAD (BÜYÜK HARF)<input id="kur-ad" type="text" autocomplete="name" autocapitalize="characters" placeholder="AHMET YILMAZ" value="' + kurGirdi(s.ad || "") + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;text-transform:uppercase;font-weight:600;"></label>' +
     '<label style="font-size:11.5px;opacity:0.85;">OKUL NO<input id="kur-okulno" type="text" inputmode="numeric" placeholder="1234" value="' + kurGirdi(s.okulNo || "") + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"></label>' +
@@ -921,9 +937,9 @@ function kurulumPaneli() {
     '<div style="font-size:10.5px;opacity:0.7;margin-top:8px;line-height:1.45;">Listeden seçmek için yaz; sunucu listesi gelmezse adı elle yazabilirsin.</div>' +
     '</div>' +
 
-    // 2) ŞİFRE
-    '<div id="kur-adim2" style="display:none;">' +
-    '<div style="font-weight:700;font-size:14.5px;margin-bottom:4px;">🔐 Giriş şifresi</div>' +
+    // 2) ŞİFRE — bilgiler hazırsa panel BURADAN açılır
+    '<div id="kur-adim2"' + (bilgiVar ? '' : ' style="display:none;"') + '>' +
+    (bilgiVar ? '' : '<div style="font-weight:700;font-size:14.5px;margin-bottom:4px;">🔐 Giriş şifresi</div>') +
     '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Uygulamaya her girişte bu şifreyi kullanacaksın. Verilerin <b>cihazında</b> bu şifreyle şifrelenir; sunucu şifreni görmez.</div>' +
     '<input id="kur-sifre" type="password" autocomplete="new-password" placeholder="En az 8 karakter" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
     '<input id="kur-sifre2" type="password" autocomplete="new-password" placeholder="Şifreyi tekrar yaz" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
@@ -1107,10 +1123,24 @@ async function kurulumGerekli() {
   return true;
 }
 
+/* Bulut kaydı yüklenene kadar bekle (en fazla 6 sn). Kayıt yüklendiyse
+   Okulizyon bilgileri elde olur ve panel doğrudan şifre adımıyla açılır. */
+function kurulumBulutBekle(azamiMs) {
+  const sinir = Date.now() + (azamiMs || 6000);
+  return new Promise(function (bitir) {
+    (function dene() {
+      if (window.__bulutYuklemeBitti || Date.now() > sinir) return bitir();
+      setTimeout(dene, 200);
+    })();
+  });
+}
+
 async function kurulumAkisi() {
   try {
     if (!(await kurulumGerekli())) return false;
-    setTimeout(function () { try { if (!document.getElementById("am-kurulum")) kurulumPaneli(); } catch (e) { console.warn("Kurulum paneli:", e); } }, 700);
+    kurulumBulutBekle(6000).then(function () {
+      try { if (!document.getElementById("am-kurulum")) kurulumPaneli(); } catch (e) { console.warn("Kurulum paneli:", e); }
+    });
     return true;
   } catch (e) { return false; }
 }
@@ -1515,6 +1545,9 @@ async function oturumUygula(session) {
   setTimeout(function () { try { okzCacheYukle(); } catch (e) {} }, 900);
   if (!yeniKullanici && window.__bulutYuklenenKullanici === user.id) return; // token yenilemede tekrar yükleme
   window.__bulutYuklenenKullanici = user.id;
+  /* v108b — kurulum paneli "bilgiler kayıtlı mı?" sorusunu bulut kaydı
+     yüklendikten SONRA sormak zorunda; yoksa 1. adım gereksiz açılır. */
+  window.__bulutYuklemeBitti = false;
   if (typeof state === "undefined") return; // state henüz hazır değil (index.html yükleniyor)
   /* v103 — GÜVENLİK: eski sürümler Okulizyon şifresini state'e (→ buluta) düz
      metin yazıyordu. Yeni sürüm saklamıyor; kayıt yüklendiğinde kalıntıyı sil. */
@@ -1594,6 +1627,7 @@ async function oturumUygula(session) {
       }
     }
   } catch (e) { console.warn("Bulut kaydı okunamadı:", e); }
+  window.__bulutYuklemeBitti = true;
   registerFCM();
 }
 

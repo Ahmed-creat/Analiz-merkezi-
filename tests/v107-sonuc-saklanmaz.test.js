@@ -168,7 +168,7 @@ console.log("\n== 6) Sürüm + önbellek ==");
 {
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-  ok("PWA_SURUM v108", /^v108/.test(surum), surum);
+  ok("PWA_SURUM v109", /^v109/.test(surum), surum);
   ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
 }
 
