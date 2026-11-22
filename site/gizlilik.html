@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aydınlatma Metni ve Gizlilik — Analiz Merkezi</title>
+<meta name="description" content="Analiz Merkezi kişisel verilerin işlenmesine ilişkin aydınlatma metni (KVKK m.10).">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="./icons/icon-192.png">
+<style>
+  :root{
+    --bg:#F6F8FC; --kart:#FFFFFF; --metin:#16213A; --soluk:#5B6784;
+    --cizgi:rgba(22,33,58,0.10); --vurgu:#1D4ED8; --uyari:#B45309;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0B1220; --kart:#131C2E; --metin:#E8EDF7; --soluk:#9AA7C0;
+           --cizgi:rgba(232,237,247,0.12); --vurgu:#7CA0FF; --uyari:#F1B45C; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:0; background:var(--bg); color:var(--metin);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.65; -webkit-text-size-adjust:100%;
+  }
+  .sarmal{max-width:760px; margin:0 auto; padding:28px 18px 72px;}
+  .ust{display:flex; align-items:center; gap:12px; margin-bottom:6px;}
+  .ust img{width:34px;height:34px;border-radius:9px;}
+  .ust b{font-size:15px; letter-spacing:.02em;}
+  h1{font-size:24px; line-height:1.3; margin:14px 0 6px; letter-spacing:-.01em;}
+  .alt{font-size:12.5px; color:var(--soluk); margin-bottom:22px;}
+  .kart{background:var(--kart); border:1px solid var(--cizgi); border-radius:14px; padding:18px 18px 6px; margin-bottom:16px;}
+  h2{font-size:16px; margin:22px 0 8px; letter-spacing:-.01em;}
+  h2:first-child{margin-top:4px;}
+  h3{font-size:14px; margin:16px 0 4px;}
+  p{margin:0 0 12px; font-size:14px;}
+  ul,ol{margin:0 0 12px; padding-left:20px; font-size:14px;}
+  li{margin-bottom:5px;}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin:4px 0 14px;}
+  th,td{text-align:left; padding:7px 8px; border-bottom:1px solid var(--cizgi); vertical-align:top;}
+  th{font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--soluk); font-weight:700;}
+  .not{background:rgba(29,78,216,.07); border-left:3px solid var(--vurgu); border-radius:0 8px 8px 0; padding:11px 13px; font-size:13px; margin:0 0 14px;}
+  .uyari{background:rgba(180,83,9,.09); border-left:3px solid var(--uyari); border-radius:0 8px 8px 0; padding:11px 13px; font-size:13px; margin:0 0 14px;}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12.5px; background:rgba(127,127,127,.14); padding:1px 5px; border-radius:5px;}
+  a{color:var(--vurgu);}
+  .geri{display:inline-block; margin-top:8px; font-size:13.5px; text-decoration:none; font-weight:600;}
+  footer{font-size:11.5px; color:var(--soluk); margin-top:24px; text-align:center;}
+  @media print{ body{background:#fff;color:#000} .kart{border:0;padding:0} .geri{display:none} }
+</style>
+</head>
+<body>
+<div class="sarmal">
+
+  <div class="ust">
+    <img src="./icons/icon-192.png" alt="">
+    <b>ANALİZ MERKEZİ</b>
+  </div>
+
+  <h1>Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni</h1>
+  <div class="alt">
+    Sürüm <b>2026-10-27</b> · Yürürlük: 27 Ekim 2026 ·
+    6698 sayılı KVKK m.10 kapsamında
+  </div>
+
+  <div class="kart">
+
+    <div class="not">
+      <b>Kısa özet:</b> Uygulama; ad soyad, sınıf, okul, okul numarası ve e-posta
+      adresini yalnızca sana çalışma planı hazırlamak, ilerlemeni göstermek ve
+      girişini sağlamak için işler. Denemelerin ve sonuçların cihazında
+      <b>şifrelenir</b>; sunucu bu içeriği okuyamaz. Hesabın 24 ay kullanılmazsa
+      silinir. Hesabını ve tüm verilerini istediğin an kalıcı olarak silebilirsin.
+    </div>
+
+    <h2>1. Veri sorumlusu</h2>
+    <p>
+      Bu uygulama <b>[VERİ SORUMLUSU — ad/unvan]</b> tarafından işletilmektedir.
+      İletişim: <b>[destek e-postası]</b> · <b>[açık adres]</b>.
+    </p>
+
+    <h2>2. İşlenen kişisel veriler</h2>
+    <table>
+      <tr><th>Veri</th><th>Açık mı?</th><th>Kaynak</th></tr>
+      <tr>
+        <td>E-posta adresi</td>
+        <td>Evet, açık</td>
+        <td>Kayıt sırasında sen / Google ile girişte Google</td>
+      </tr>
+      <tr>
+        <td>Ad soyad, sınıf, il / ilçe / okul, okul numarası</td>
+        <td>Kimlik özeti (hash) + şifreli</td>
+        <td>Kurulum ekranında sen</td>
+      </tr>
+      <tr>
+        <td>Okulizyon kullanıcı adı / şifresi</td>
+        <td>Şifreli (cihazda)</td>
+        <td>Sen</td>
+      </tr>
+      <tr>
+        <td>Denemeler, sınav sonuçları, yanlışlar, konu takibi, plan, görevler, kartlar</td>
+        <td>Şifreli — sunucu okuyamaz</td>
+        <td>Uygulama içi kullanımın</td>
+      </tr>
+      <tr>
+        <td>Hesap açılış zamanı, son veri yazma zamanı</td>
+        <td>Evet</td>
+        <td>Otomatik</td>
+      </tr>
+      <tr>
+        <td>Oturum jetonu (JWT), IP adresi, tarayıcı/cihaz bilgisi</td>
+        <td>Evet</td>
+        <td>Otomatik (teknik zorunluluk)</td>
+      </tr>
+      <tr>
+        <td>Bildirim aboneliği (push endpoint) ve bildirim kayıtları</td>
+        <td>Evet</td>
+        <td>Bildirime izin verdiğinde</td>
+      </tr>
+    </table>
+    <p>
+      <b>Özel nitelikli kişisel veri işlenmez</b> (sağlık, din, siyasi görüş, biyometri
+      vb. toplanmaz). Reklam ve izleme çerezi kullanılmaz.
+    </p>
+
+    <h2>3. İşleme amaçları</h2>
+    <ul>
+      <li>Hesabını oluşturmak ve girişini doğrulamak,</li>
+      <li>Çalışma planı, deneme analizi, konu takibi ve tekrar kartlarını üretmek,</li>
+      <li>İlerlemeni cihazların arasında eşitlemek (bulut yedek),</li>
+      <li>Okulizyon üzerinden sınav tarihi/duyuru bilgisini senin adına çekmek,</li>
+      <li>Talep ettiğin bildirimleri göndermek,</li>
+      <li>Hesap güvenliği, kötüye kullanımın önlenmesi ve hukuki yükümlülükler.</li>
+    </ul>
+
+    <h2>4. Hukuki sebepler (KVKK m.5)</h2>
+    <ul>
+      <li><b>Sözleşmenin kurulması/ifası</b> (m.5/2-c): hesap, eşitleme, plan üretimi.</li>
+      <li><b>Meşru menfaat</b> (m.5/2-f): güvenlik, hata ayıklama, kötüye kullanımın önlenmesi.</li>
+      <li><b>Hukuki yükümlülük</b> (m.5/2-ç): yetkili kurum taleplerine yanıt.</li>
+      <li><b>Açık rıza</b> (m.5/1): yalnızca bildirim gönderimi ve açıkça onay verdiğin
+          isteğe bağlı özellikler için; dilediğin an geri alabilirsin.</li>
+    </ul>
+
+    <h2>5. Şifreleme ve sunucunun göremediği veriler</h2>
+    <p>
+      Denemelerin, sonuçların ve notların cihazında, yalnızca senin belirlediğin
+      <b>veri kilidi şifresi</b>nden türetilen bir anahtarla (PBKDF2-SHA256,
+      310.000 tur) şifrelenir ve öyle saklanır. Anahtar sunucuya gönderilmez;
+      bu içeriği <b>biz okuyamayız</b>.
+    </p>
+    <p>
+      Buna karşılık e-posta adresin, okul numarası özetin, oturum bilgilerin ve
+      bildirim kayıtların teknik olarak işlenir. Bu nedenle şifreleme,
+      <b>aydınlatma yükümlülüğünü ortadan kaldırmaz</b>; yalnızca riski azaltır.
+    </p>
+    <div class="uyari">
+      <b>Veri kilidi şifreni kaybedersen</b> şifrelenmiş kayıtlar açılamaz. Bunu
+      önlemek için kurulumda verilen 12 kelimelik kurtarma anahtarını sakla.
+    </div>
+
+    <h2>6. Aktarım</h2>
+    <p>
+      Veriler yurt dışında bulunan sunucularda saklanır (Supabase — AB/ABD,
+      Vercel — ABD). Bu nedenle KVKK m.9 kapsamında yurt dışına aktarım söz
+      konusudur. Bildirim gönderimi için Google Firebase (FCM) kullanılır.
+      Verilerin <b>ticari amaçla üçüncü kişilere satılması veya reklam amacıyla
+      paylaşılması söz konusu değildir</b>.
+    </p>
+
+    <h2>7. Saklama süresi</h2>
+    <table>
+      <tr><th>Veri</th><th>Süre</th></tr>
+      <tr><td>Hesap ve tüm veriler</td><td><b>24 ay</b> boyunca hiç kullanılmazsa silinir</td></tr>
+      <tr><td>Silme öncesi bildirim</td><td>Silmeden ~30 gün önce (23. ay)</td></tr>
+      <tr><td>Hesap silme talebi</td><td><b>Derhal</b> ve geri alınamaz biçimde</td></tr>
+    </table>
+    <p>
+      Süre, son veri yazma tarihinden başlar. Hesabını kullanmaya devam ettiğin
+      sürece süre sıfırlanır.
+    </p>
+
+    <h2>8. Hakların (KVKK m.11)</h2>
+    <ul>
+      <li>Kişisel verilerinin işlenip işlenmediğini öğrenme,</li>
+      <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+      <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+      <li>Yurt içinde / yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
+      <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme,</li>
+      <li><b>Silinmesini veya yok edilmesini isteme</b>,</li>
+      <li>Aktarıldığı üçüncü kişilere bu işlemlerin bildirilmesini isteme,</li>
+      <li>Otomatik sistemlerle analiz sonucu aleyhine bir sonucun ortaya çıkmasına
+          itiraz etme,</li>
+      <li>Kanuna aykırı işleme nedeniyle zarara uğraman hâlinde zararın giderilmesini talep etme.</li>
+    </ul>
+    <p><b>Uygulama içinden (en hızlı yol):</b></p>
+    <ul>
+      <li><b>Verilerini indir:</b> Profil › Verilerimi indir (JSON).</li>
+      <li><b>Hesabını sil:</b> Profil › <i>Hesabımı ve tüm verilerimi kalıcı sil</i>.
+          Bu işlem hesabı, e-postayı, okul bağını ve tüm kayıtları anında siler.</li>
+      <li><b>Diğer talepler:</b> <b>[destek e-postası]</b> — en geç 30 gün içinde yanıtlanır.</li>
+    </ul>
+
+    <h2>9. Çocuklar ve veli izni (18 yaş altı)</h2>
+    <p>
+      Uygulama lise öğrencilerine yöneliktir. <b>18 yaşından küçüksen</b>, kişisel
+      verilerinin işlenmesi için velinin/vâsînin izni gerekir. Kayıt sırasında
+      18 yaşından küçük olduğunu belirtmen hâlinde bu izin istenir; izin
+      verilmeden hesap etkinleştirilmez.
+    </p>
+    <p>
+      Veli/vâsî, çocuğunun verilerine ilişkin olarak bu metnin 8. bölümündeki tüm
+      haklara sahiptir ve <b>[destek e-postası]</b> üzerinden başvurabilir.
+    </p>
+
+    <h2>10. Güvenlik tedbirleri</h2>
+    <ul>
+      <li>Uçtan uca şifreleme (kişisel içerik sunucuda okunamaz),</li>
+      <li>Veritabanı satır düzeyi güvenlik (RLS): her kullanıcı yalnız kendi satırını görür,</li>
+      <li>E-posta doğrulaması, oturum jetonu yenileme,</li>
+      <li>Şifreler hiçbir yerde saklanmaz; oturum kapatıldığında cihazdaki kişisel kayıtlar silinir,</li>
+      <li>Reklam/izleme çerezi yok, üçüncü taraf analitik yok.</li>
+    </ul>
+
+    <h2>11. Değişiklikler</h2>
+    <p>
+      Bu metin değiştiğinde sürüm numarası ve yürürlük tarihi güncellenir; önemli
+      değişiklikler uygulama içinde bildirilir. Metnin güncel sürümü her zaman bu
+      sayfadadır.
+    </p>
+
+    <a class="geri" href="./">← Uygulamaya dön</a>
+  </div>
+
+  <footer>
+    Analiz Merkezi · Aydınlatma metni sürüm 2026-10-27<br>
+    Bu metin 6698 sayılı Kişisel Verilerin Korunması Kanunu m.10 uyarınca hazırlanmıştır.
+  </footer>
+
+</div>
+</body>
+</html>

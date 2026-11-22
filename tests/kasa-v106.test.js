@@ -103,7 +103,7 @@ globalThis.localStorage = {
 
     // kısa şifre reddi
     const kisa = await K.kasaKur("1234");
-    ok("8 karakterden kısa kasa şifresi kabul edilmez", kisa.ok === false);
+    ok("6 karakterden kısa kasa şifresi kabul edilmez", kisa.ok === false);
   }
 
   // ------------------------------------------------------------
@@ -156,7 +156,7 @@ globalThis.localStorage = {
     const APP = oku("site/app-pwa.js"), SW = oku("site/sw.js");
     const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
     const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-    ok("PWA_SURUM v112 (kasa sürümü korunuyor)", /^v113/.test(surum), surum);
+    ok("PWA_SURUM v112 (kasa sürümü korunuyor)", /^v114/.test(surum), surum);
     ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
     ok("kasa.js çevrimdışı önbellekte", /"\.\/kasa\.js"/.test(SW));
   }

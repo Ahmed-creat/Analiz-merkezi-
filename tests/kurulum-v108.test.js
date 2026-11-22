@@ -100,7 +100,7 @@ globalThis.okzSecimleriDoldur = () => { };
 
 /* Kilit sahte: gerçek kripto yerine "kuruldu" der (kripto kasa-v106'da ölçülüyor). */
 globalThis.kasaKurVeAnahtar = async (sifre) => {
-  if (!sifre || sifre.length < 8) return { ok: false, hata: "Şifre en az 8 karakter olmalı." };
+  if (!sifre || sifre.length < 6) return { ok: false, hata: "Şifre en az 6 karakter olmalı." };
   globalThis.KASA = { kasaVarMi: () => true, kasaAcikMi: () => true };
   return { ok: true, kelimeler: "elma kedi yol deniz bulut kalem taş ırmak gül yaprak ay güneş" };
 };
@@ -239,7 +239,7 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     belge._ogeler["kur-sifre"].value = "kisa";
     belge._ogeler["kur-sifre2"].value = "kisa";
     await kurFn();
-    ok("kısa şifre reddedildi", /8 karakter/.test(belge._ogeler["kur-hata2"].textContent) &&
+    ok("kısa şifre reddedildi", /6 karakter/.test(belge._ogeler["kur-hata2"].textContent) &&
       belge._ogeler["kur-adim3"].style.display === "none");
 
     belge._ogeler["kur-sifre"].value = "guclu-sifre-1";
@@ -461,6 +461,46 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("süre dolunca silme fonksiyonu var", /hesap_saklama_temizle/.test(M));
     ok("silmeden önce uyarı fonksiyonu var", /hesap_saklama_uyar/.test(M));
     ok("bildirim_kuyrugu hesaba bağlanıyor (CASCADE)", /bildirim_kuyrugu_user_id_fkey/.test(M) && /on delete cascade/.test(M));
+  }
+
+  console.log("\n== 8) ŞİFRE 6 + AYDINLATMA/ONAY (v114) ==");
+  {
+    /* KULLANICI:
+       • "Bende sana diyorum ki şifreyi neden 8 yapıyoruz. 6 ise sende 6 yap."
+       • "Veli iznini neden kutucuk olarak ekliyoruz? Google ile girişte devam
+          ederek veri ve gizlilik politikalarını kabul etmiş olursunuz yetmiyor mu" */
+    const KOD = APP.replace(/\/\*[\s\S]*?\*\//g, "");
+
+    // --- Şifre 6 ---
+    ok("hesap şifresi kuralı 6", /if \(s\.length < 6\) return "Şifre en az 6 karakter/.test(KOD));
+    ok("8 karakter kuralı KALMADI", !/length < 8/.test(KOD));
+    ok("giriş alanı 'en az 6' yazıyor", /placeholder="Şifre \(en az 6 karakter\)"/.test(KOD));
+    ok("veri kilidi şifresi de 6", /sifre\.length < 6/.test(KOD) && /s1\.length < 6/.test(KOD));
+    ok("harf+rakam zorunluluğu kaldırıldı (sunucu uygulamıyor)",
+      !/en az bir harf ve bir rakam/.test(KOD));
+    ok("sıfırlama da 6", /en az 6 karakter/.test(KOD) && !/en az 8 karakter/.test(KOD));
+
+    // --- Aydınlatma / onay ---
+    ok("aydınlatma sayfası var", require("fs").existsSync(require("path").join(__dirname, "..", "site/gizlilik.html")));
+    ok("kurulumda aydınlatma bağlantısı var", /gizlilik\.html/.test(KOD));
+    ok("'devam ederek kabul' metni var", /Devam ederek/.test(KOD) && /okuduğunu kabul etmiş olursun/.test(KOD));
+    ok("Google düğmesi üstünde de kabul satırı var", /pwa-auth-onay/.test(KOD));
+    ok("ZORUNLU veli kutucuğu YOK (bloklamıyor)", !/kutuyu işaretle/.test(KOD));
+    ok("18 altı beyanı opsiyonel ve kaydediliyor", /kur-veli-beyan/.test(KOD) && /yasBeyani/.test(KOD));
+    ok("beyan sürüm + tarihle saklanıyor", /veliIzin/.test(KOD) && /surum: "2026-10-27"/.test(KOD));
+    ok("gizlilik.html service worker önbelleğinde", /gizlilik\.html/.test(require("fs").readFileSync(require("path").join(__dirname, "..", "site/sw.js"), "utf8")));
+
+    // --- Aydınlatma metni içeriği (KVKK m.10 asgari) ---
+    const G = require("fs").readFileSync(require("path").join(__dirname, "..", "site/gizlilik.html"), "utf8");
+    ok("metinde veri sorumlusu var", /Veri sorumlusu/.test(G));
+    ok("metinde işleme amaçları var", /İşleme amaçları/.test(G));
+    ok("metinde hukuki sebepler (m.5) var", /KVKK m\.5/.test(G));
+    ok("metinde aktarım (yurt dışı) var", /Aktarım/.test(G) && /yurt dışı/.test(G));
+    ok("metinde 24 ay saklama var", /24 ay/.test(G));
+    ok("metinde m.11 hakları var", /KVKK m\.11/.test(G));
+    ok("metinde silme hakkı + profil yolu var", /Hesabımı ve tüm verilerimi kalıcı sil/.test(G));
+    ok("metinde 18 yaş altı bölümü var", /18 yaş/.test(G) && /veli/.test(G));
+    ok("reklam/izleme çerezi yok beyanı var", /izleme çerezi/.test(G));
   }
 
   console.log("\n" + "─".repeat(60));

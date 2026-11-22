@@ -94,7 +94,7 @@ console.log("\n== 3) ZORUNLU İLK KURULUM (v108) ==");
   ok("bilgi paneli ad soyad · okul no · sınıf", /id="kur-ad"/.test(kurulum) && /id="kur-okulno"/.test(kurulum) && /id="kur-sinif"/.test(kurulum));
   ok("bilgi paneli il · ilçe · okul (Okulizyon listeleri)", /kurSecimHtml\("kur-il"/.test(kurulum) && /kurSecimHtml\("kur-ilce"/.test(kurulum) && /kurSecimHtml\("kur-okul"/.test(kurulum));
   ok("adım 1 boş geçilemiyor", /Ad soyadını yaz\./.test(kurulum) && /Okul numaranı yaz\./.test(kurulum) && /İl, ilçe ve okulunu yaz/.test(kurulum));
-  ok("adım 2 şifre ≥8 + tekrar", /s1\.length < 8/.test(kurulum) && /İki şifre aynı değil/.test(kurulum));
+  ok("adım 2 şifre ≥6 + tekrar", /s1\.length < 6/.test(kurulum) && /İki şifre aynı değil/.test(kurulum));
   ok("adım 2 kilidi gerçekten kuruyor", /const r = await kasaKurVeAnahtar\(s1\);/.test(kurulum));
   ok("adım 3: 12 kelime + indirme", /kur-kelimeler/.test(kurulum) && /anahtar-kelimeleri\.txt/.test(kurulum));
   ok("adım 3 onaysız bitmiyor", /kur-onay/.test(kurulum) && /Önce «kâğıda yazdım» kutusunu işaretle/.test(kurulum));
@@ -141,7 +141,7 @@ console.log("\n== 4) KURULUMUN TEK YOLU + DÜRÜST DURUM ==");
     /const r = await window\.__kasa\.kur\(sifre\);/.test(kur) &&
     /window\.__kasa\.kurtarmaUret\(\)/.test(kur) &&
     /kasaSarmayiStateeYaz\(sarma\)/.test(kur));
-  ok("8 karakterden kısa şifre reddediliyor", /sifre\.length < 8/.test(kur));
+  ok("6 karakterden kısa şifre reddediliyor", /sifre\.length < 6/.test(kur));
   ok("profildeki düğme de aynı yolu kullanıyor", /const r = await kasaKurVeAnahtar\(sifre\);/.test(APP));
   ok("profil kasa bölümü kurulmamışsa KIRMIZI uyarı yazıyor", /KAPALI — veri sunucuda DÜZ duruyor/.test(APP));
   ok("çekim başında da uyarı veriliyor (sessiz geçilmiyor)", /Kilit kurulu değil: sınav sonuçların sunucuda düz metin duruyor/.test(APP));
@@ -168,7 +168,7 @@ console.log("\n== 6) Sürüm + önbellek ==");
 {
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-  ok("PWA_SURUM v112", /^v113/.test(surum), surum);
+  ok("PWA_SURUM v112", /^v114/.test(surum), surum);
   ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
 }
 

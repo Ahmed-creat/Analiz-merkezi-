@@ -1,4 +1,4 @@
-const PWA_SURUM = "v113-hesap-silme";
+const PWA_SURUM = "v114-sifre6-onay";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -132,8 +132,8 @@ const AUTH_ERR = {
   "email_not_confirmed": "E-postanı doğrulamadan giriş yapılamaz — e-postandaki onay bağlantısına tıkla (gelen kutusu + spam klasörü).",
   "user already registered": "Bu e-posta ile zaten kayıt var — 'Giriş Yap'ı dene.",
   "already registered": "Bu e-posta ile zaten kayıt var — 'Giriş Yap'ı dene.",
-  "password should be at least": "Şifre en az 8 karakter olmalı.",
-  "weak_password": "Şifre en az 8 karakter olmalı — büyük/küçük harf, rakam ve işaret karışık olsun.",
+  "password should be at least": "Şifre en az 6 karakter olmalı.",
+  "weak_password": "Şifre en az 6 karakter olmalı.",
   "password is too weak": "Şifre çok basit — büyük/küçük harf, rakam ve işaret karışık olsun.",
   "leaked password": "Bu şifre daha önce bir sızıntıda görülmüş — başka bir şifre seç.",
   "email not confirmed": "E-postanı doğrulamadan giriş yapılamaz — e-postandaki onay bağlantısına tıkla (gelen kutusu + spam klasörü).",
@@ -399,12 +399,20 @@ function buildAuthModal() {
       <div style="font-size:12.5px;opacity:0.75;margin-bottom:14px;">Giriş yapınca verilerin hesabına otomatik yedeklenir; başka cihazdan devam edebilirsin.</div>
       <input id="pwa-email" type="email" inputmode="email" autocomplete="email" placeholder="E-posta (ör. ad@gmail.com)"
         style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:10px;">
-      <input id="pwa-pass" type="password" autocomplete="current-password" placeholder="Şifre (en az 8 karakter)"
+      <input id="pwa-pass" type="password" autocomplete="current-password" placeholder="Şifre (en az 6 karakter)"
         style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:12px;">
       <button data-act="pwaAuthLogin" class="btn btn-primary w-full" style="margin-bottom:8px;font-weight:700;">Giriş Yap</button>
       <button data-act="pwaAuthRegister" class="btn btn-ghost w-full" style="margin-bottom:6px;border:1px solid rgba(0,0,0,0.15);">Yeni Kayıt Oluştur</button>
       <button data-act="pwaAuthReset" style="background:none;border:0;cursor:pointer;font-size:12.5px;opacity:0.8;color:inherit;text-decoration:underline;">Şifremi unuttum</button>
       <div style="display:flex;align-items:center;gap:10px;margin:14px 0;opacity:0.4;font-size:12px;"><div style="flex:1;height:1px;background:currentColor;"></div>veya<div style="flex:1;height:1px;background:currentColor;"></div></div>
+      <!-- v114 — KULLANICI: "Google ile girişte devam ederek veri ve gizlilik
+           politikalarını kabul etmiş olursunuz yetmiyor mu"
+           Google'ın onay ekranı YALNIZ Google'ın kendi koşullarını kapsar;
+           bizim aydınlatma metnimizi göstermez. KVKK m.10 yükümlülüğü bize
+           ait olduğu için düğmenin hemen üstüne açık kabul satırı konur. -->
+      <div id="pwa-auth-onay" style="font-size:11.5px;line-height:1.5;opacity:0.82;margin:0 0 8px;text-align:center;">
+        Devam ederek <a href="./gizlilik.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;font-weight:600;">Aydınlatma Metni ve Gizlilik Politikası</a>'nı okuduğunu kabul etmiş olursun.
+      </div>
       <button data-act="pwaAuthGoogle" class="btn btn-ghost w-full" style="border:1px solid rgba(0,0,0,0.15);font-weight:600;">
         <svg width="16" height="16" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
         Google ile devam et
@@ -882,7 +890,7 @@ function kasaSarmayiStateeYaz(sarma) {
    (Profildeki düğme ve karşılama yönlendirmesi aynı yolu kullanır.) */
 async function kasaKurVeAnahtar(sifre) {
   if (!sifre) return { ok: false, hata: "Giriş şifreni yaz." };
-  if (sifre.length < 8) return { ok: false, hata: "Şifre en az 8 karakter olmalı." };
+  if (sifre.length < 6) return { ok: false, hata: "Giriş şifresi en az 6 karakter olmalı." };
   /* v108 — VERİ KAYBI KORUMASI. kasaKur YENİ tuz üretir: açık olmayan bir
      kilidin üzerine "yeni kilit" kurulursa buluttaki eski şifreli kayıt bir
      daha açılamaz. Bu yüzden mevcut kilit varsa kurulum yapılmaz; önce açılır. */
@@ -1024,6 +1032,31 @@ function kurulumPaneli() {
     kurSecimHtml("kur-okul", "OKUL", s.ilcekodu ? "Okul yaz (ör. 19 Mayıs)" : "Önce ilçe seç", s.okulAdi || "", true) +
     '</div>' +
     '<div id="kur-hata1" style="display:none;font-size:12px;color:#DC2626;margin-top:8px;line-height:1.45;"></div>' +
+
+    /* v114 — KULLANICI (2. itirazı): "Veli iznini neden kutucuk olarak
+       ekliyoruz? Google ile girişte devam ederek veri ve gizlilik
+       politikalarını kabul etmiş olursunuz yetmiyor mu"
+       HAKLI: ZORUNLU kutucuk KALDIRILDI (aşağıdaki §Açıklama'ya bak).
+         • Aydınlatma (KVKK m.10) = "devam ederek kabul" modeli YETERLİ.
+           Bu yüzden 18 yaş üstünde hiçbir kutu sorulmaz.
+         • 18 yaş altı için kutucuk zaten SAHİCİ değildi: kutuyu da reşit
+           olmayan kişi işaretliyor, yani "veli izni" kanıtı üretmiyordu.
+           Sahte bir kapı koymak yerine tek OPSİYONEL beyan bırakıldı.
+           Gerçek veli izni (veliye e-posta doğrulaması) ayrı iştir —
+           docs/AYDINLATMA-VE-VELI-IZNI.md §3.3. */
+    '<div style="margin-top:12px;padding:11px;border-radius:10px;background:rgba(29,78,216,0.06);border:1px solid rgba(29,78,216,0.18);">' +
+    '<label style="font-size:12px;display:flex;gap:7px;align-items:flex-start;line-height:1.45;cursor:pointer;">' +
+    '<input type="checkbox" id="kur-veli-beyan" style="margin-top:3px;flex:0 0 auto;">' +
+    '<span>18 yaşından <b>küçüğüm</b> — velimin bilgisi var</span></label>' +
+    '<div id="kur-veli-not" style="display:none;font-size:11px;line-height:1.5;margin-top:7px;opacity:0.85;">' +
+    '18 yaşından küçük olduğun için velinin/vâsînin bilgilendirilmesi gerekir. ' +
+    'Uygulamayı velinle birlikte kullanman önerilir.' +
+    '</div>' +
+    '<div style="font-size:11px;line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.08);">' +
+    'Devam ederek <a href="./gizlilik.html" target="_blank" rel="noopener" style="color:#1D4ED8;font-weight:600;">Aydınlatma Metni ve Gizlilik Politikası</a>\'nı okuduğunu kabul etmiş olursun.' +
+    '</div>' +
+    '</div>' +
+
     '<button id="kur-ileri" style="width:100%;margin-top:12px;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;">Devam — şifre belirle</button>' +
     '<div style="font-size:10.5px;opacity:0.7;margin-top:8px;line-height:1.45;">Listeden seçmek için yaz; sunucu listesi gelmezse adı elle yazabilirsin.</div>' +
     '</div>' +
@@ -1032,7 +1065,7 @@ function kurulumPaneli() {
     '<div id="kur-adim2"' + (bilgiVar ? '' : ' style="display:none;"') + '>' +
     (bilgiVar ? '' : '<div style="font-weight:700;font-size:14.5px;margin-bottom:4px;">🔐 Giriş şifresi</div>') +
     '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Uygulamaya her girişte bu şifreyi kullanacaksın. Verilerin <b>cihazında</b> bu şifreyle şifrelenir; sunucu şifreni görmez.</div>' +
-    '<input id="kur-sifre" type="password" autocomplete="new-password" placeholder="En az 8 karakter" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
+    '<input id="kur-sifre" type="password" autocomplete="new-password" placeholder="En az 6 karakter" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
     '<input id="kur-sifre2" type="password" autocomplete="new-password" placeholder="Şifreyi tekrar yaz" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
     '<div id="kur-hata2" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
     '<button id="kur-kur" style="width:100%;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;">Kilidi kur ve devam et</button>' +
@@ -1131,6 +1164,12 @@ function kurDinleyicileri(d) {
     const il = (d.querySelector("#kur-il").value || "").trim();
     const ilce = (d.querySelector("#kur-ilce").value || "").trim();
     const okul = (d.querySelector("#kur-okul").value || "").trim();
+    /* v114 — 18 altı: ENGEL YOK, yalnız beyan kaydedilir. */
+    let yasBeyani = "18ustu";
+    try {
+      const b = d.querySelector("#kur-veli-beyan");
+      if (b && b.checked) yasBeyani = "18alti";
+    } catch (e) { /* */ }
     if (!ad) return kurMetinYaz("kur-hata1", "Ad soyadını yaz.");
     if (!okulNo) return kurMetinYaz("kur-hata1", "Okul numaranı yaz.");
     if (!il || !ilce || !okul) return kurMetinYaz("kur-hata1", "İl, ilçe ve okulunu yaz (listeden seçebilirsin).");
@@ -1147,7 +1186,18 @@ function kurDinleyicileri(d) {
         ilce: KUR_ILCE.ad, ilcekodu: KUR_ILCE.kod || "",
         okulAdi: KUR_OKUL.ad, kurumkodu: KUR_OKUL.kod || ""
       };
+      /* v114 — onay kaydı: METİN SÜRÜMÜ + tarih + yaş beyanı.
+         Metin değişirse sürüm artar ve yeniden sorulur. Şifrelenmez:
+         sunucunun (ve denetimin) doğrulayabilmesi gerekir. */
+      state.settings.veliIzin = {
+        surum: "2026-10-27",
+        tarih: new Date().toISOString(),
+        yasBeyani: yasBeyani
+      };
       if (typeof saveState === "function") saveState();
+      /* Beyanı sunucuya da işaretle (RLS: yalnız kendi satırı). Hata olsa da
+         kurulum durmaz; sonraki eşitlemede tekrar denenir. */
+      try { if (typeof bulutaYaz === "function") bulutaYaz(true); } catch (e) { /* */ }
     } catch (e) { /* */ }
     kurMetinYaz("kur-hata1", "");
     d.querySelector("#kur-adim1").style.display = "none";
@@ -1158,7 +1208,7 @@ function kurDinleyicileri(d) {
   d.querySelector("#kur-kur").addEventListener("click", async function () {
     const s1 = (d.querySelector("#kur-sifre").value || "").trim();
     const s2 = (d.querySelector("#kur-sifre2").value || "").trim();
-    if (s1.length < 8) return kurMetinYaz("kur-hata2", "Şifre en az 8 karakter olmalı.");
+    if (s1.length < 6) return kurMetinYaz("kur-hata2", "Giriş şifresi en az 6 karakter olmalı.");
     if (s1 !== s2) return kurMetinYaz("kur-hata2", "İki şifre aynı değil.");
     kurMetinYaz("kur-hata2", "");
     const b = d.querySelector("#kur-kur");
@@ -1180,6 +1230,17 @@ function kurDinleyicileri(d) {
       bitir.style.cursor = onay.checked ? "pointer" : "not-allowed";
     });
   });
+
+  /* v114 — beyan işaretlenince bilgi notu görünür. Engel DEĞİL. */
+  try {
+    const beyan = d.querySelector("#kur-veli-beyan");
+    const not = d.querySelector("#kur-veli-not");
+    if (beyan && not) {
+      const yaz = function () { not.style.display = beyan.checked ? "block" : "none"; };
+      beyan.addEventListener("change", yaz);
+      yaz();
+    }
+  } catch (e) { /* */ }
 
   d.querySelector("#kur-indir").addEventListener("click", function () {
     try {
@@ -1369,7 +1430,7 @@ function renderProfileModal() {
     html += '<div style="font-size:12px;font-weight:700;color:' + acikRenk + ';margin-bottom:8px;">' + escHtml(acikMetin) + '</div>';
     html += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:10px;">Açıkken ad soyad, sınav sonuçları, hedef, plan, konu takibi ve kitaplar <b>bu cihazda şifrelenir</b>; sunucu yalnız anlamsız harf görür. Şifren sunucuya <b>hiç gitmez</b>.</div>';
     if (!kd.acik) {
-      html += '<input id="am-kasa-yeni" type="password" autocomplete="new-password" placeholder="Giriş şifresi (en az 8 karakter)" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;">';
+      html += '<input id="am-kasa-yeni" type="password" autocomplete="new-password" placeholder="Giriş şifresi (en az 6 karakter)" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;">';
       html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
       html += '<button data-act="kasaKur" class="btn btn-primary btn-sm">Kilidi kur ve aç</button>';
       html += '<button data-act="kasaAcKutu" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kilidi aç</button>';
@@ -1477,8 +1538,11 @@ function authAlanlari() {
    politikası da aynı eşiğe çekilir; buradaki kontrol yalnız erken/okunur uyarı. */
 function sifreKurali(p) {
   const s = String(p || "");
-  if (s.length < 8) return "Şifre en az 8 karakter olmalı.";
-  if (!/[A-Za-zÇĞİÖŞÜçğıöşü]/.test(s) || !/[0-9]/.test(s)) return "Şifre en az bir harf ve bir rakam içermeli.";
+  /* v114 — KULLANICI: "6 ise sende 6 yap." Sunucu politikası 6 olduğu için
+     istemci de 6'dır. HARF+RAKAM zorunluluğu KALDIRILDI: sunucu bunu
+     uygulamıyor, istemcide zorlamak sadece kullanıcıyı engellerdi.
+     (Yalnız uzunluk = sunucuyla birebir aynı kural.) */
+  if (s.length < 6) return "Şifre en az 6 karakter olmalı.";
   return "";
 }
 async function emailLogin() {
@@ -1655,7 +1719,7 @@ function setAuthLabel(girisli, kim) {
 function sifreYenileAkisi() {
   setTimeout(async () => {
     try {
-      const yeni = window.prompt("Yeni şifreni yaz (en az 8 karakter, harf + rakam):");
+      const yeni = window.prompt("Yeni şifreni yaz (en az 6 karakter):");
       if (!yeni) return;
       const kural = sifreKurali(yeni);
       if (kural) return toast(kural, "error");

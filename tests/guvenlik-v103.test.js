@@ -121,8 +121,12 @@ console.log("\n== 5) E-posta doğrulaması zorunlu (bağlamanın temeli) ==");
 console.log("\n== 6) Şifre kuralı tek yerden ==");
 {
   ok("tek kural fonksiyonu var", /function sifreKurali\(p\)/.test(APP));
-  ok("en az 8 karakter", /s\.length < 8[\s\S]{0,80}en az 8 karakter/i.test(APP));
-  ok("harf + rakam zorunlu", /\[0-9\]/.test(APP.split("function sifreKurali")[1].slice(0, 400)));
+  ok("en az 6 karakter (sunucu politikasıyla aynı)", /s\.length < 6[\s\S]{0,80}en az 6 karakter/i.test(APP));
+  /* v114 — harf+rakam zorunluluğu KALDIRILDI: sunucu politikası bunu
+     uygulamıyor (password_min_length=6). İstemcide zorlamak, API'ye doğrudan
+     giden kullanıcıyla tutarsız bir kural üretiyordu. Tek kural = uzunluk. */
+  ok("harf + rakam zorunluluğu YOK (sunucuyla aynı kural)",
+    !/\[0-9\]/.test(APP.split("function sifreKurali")[1].slice(0, 500)));
   ok("kayıtta kullanılıyor", /const sifreHata = sifreKurali\(pass\)/.test(APP));
   ok("şifre yenilemede de kullanılıyor", /const kural = sifreKurali\(yeni\)/.test(APP));
   ok("eski 6 karakter kuralı kalmadı", !/pass\.length < 6/.test(APP));
@@ -138,7 +142,7 @@ console.log("\n== 7) Sürüm damgası + önbellek uyumu ==");
 {
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-  ok("PWA_SURUM v112", /^v113/.test(surum), surum);
+  ok("PWA_SURUM v112", /^v114/.test(surum), surum);
   ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
 }
 
