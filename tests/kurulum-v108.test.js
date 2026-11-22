@@ -426,6 +426,43 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("Okulizyon çekimi iş akışında DURUYOR", /node okulizyon-cek\.js/.test(wf));
   }
 
+  console.log("\n== 7) HESAP VE VERİYİ KALICI SİL (v113 — KVKK m.7) ==");
+  {
+    /* KULLANICI: "Tmm silmeyi ekle"
+       Eski "Tüm verileri sil" yalnız cihazı ve bulut state'ini sıfırlıyordu;
+       auth.users satırı, e-posta ve okulizyon_kimlik KALIYORDU. */
+    const KOD = APP.replace(/\/\*[\s\S]*?\*\//g, "");
+    ok("profilde 'kalıcı sil' düğmesi var", /data-act="hesapSil"/.test(KOD));
+    ok("onay penceresi 'SİL' yazdırıyor", /am-hesap-sil-onay/.test(KOD) && /Onay için "SİL" yazmalısın/.test(KOD));
+    ok("geri alınamaz uyarısı yazılı", /geri alınamaz/.test(KOD));
+    ok("nelerin silineceği listeleniyor",
+      /E-posta ve hesabın/.test(KOD) && /Okulizyon bağın/.test(KOD) && /Denemeler, sınav sonuçları/.test(KOD));
+    ok("silme sunucu fonksiyonuna gidiyor", /functions\/v1\/hesap-sil/.test(KOD));
+    ok("oturum JWT'si gönderiliyor", /session\.access_token/.test(KOD) && /Authorization: "Bearer " \+ jwt/.test(KOD));
+    ok("başarıda cihaz temizlenip oturum kapanıyor",
+      /__cikisYerelTemizle/.test(KOD) && /sb\.auth\.signOut\(\)/.test(KOD));
+
+    // Sunucu fonksiyonu deposu
+    const yol = (x) => require("path").join(__dirname, "..", x);
+    const fnYolu = yol("supabase/functions/hesap-sil/index.ts");
+    ok("hesap-sil edge fonksiyonu var", require("fs").existsSync(fnYolu));
+    const FN = require("fs").readFileSync(fnYolu, "utf8");
+    ok("fonksiyon uid'yi JWT'den alıyor (başkasını silemez)",
+      /auth\/v1\/user/.test(FN) && !/g\.uid|g\.user_id/.test(FN));
+    ok("sunucu da 'SİL' onayı istiyor", /onay !== "SİL"/.test(FN));
+    ok("hesap silme admin API ile", /auth\/v1\/admin\/users\//.test(FN));
+    ok("silindiği DOĞRULANIYOR (yanlış 'silindi' demez)", /hesapKaldi/.test(FN) && /tamam: !hesapKaldi/.test(FN));
+
+    // Saklama süresi
+    const MIG = yol("supabase/migrations/0018_hesap_silme_ve_saklama.sql");
+    ok("saklama süresi göçü var", require("fs").existsSync(MIG));
+    const M = require("fs").readFileSync(MIG, "utf8");
+    ok("saklama süresi 24 ay tanımlı", /select 24 \$\$/.test(M));
+    ok("süre dolunca silme fonksiyonu var", /hesap_saklama_temizle/.test(M));
+    ok("silmeden önce uyarı fonksiyonu var", /hesap_saklama_uyar/.test(M));
+    ok("bildirim_kuyrugu hesaba bağlanıyor (CASCADE)", /bildirim_kuyrugu_user_id_fkey/.test(M) && /on delete cascade/.test(M));
+  }
+
   console.log("\n" + "─".repeat(60));
   if (kalan) {
     console.log("\n✗ " + kalan + " kontrol kaldı (" + gecen + " geçti)");

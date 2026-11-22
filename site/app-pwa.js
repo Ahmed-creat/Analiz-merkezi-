@@ -1,4 +1,4 @@
-const PWA_SURUM = "v112-goz-ikonu";
+const PWA_SURUM = "v113-hesap-silme";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -236,6 +236,7 @@ function initAuthUI() {
     if (!el) return;
     const a = el.dataset.act;
     if (a === "pwaAuth") { currentUser ? doSignOut() : openAuthModal(); }
+    else if (a === "hesapSil") hesapSilPencereAc();
     /* v106 — KASA düğmeleri */
     else if (a === "kasaKur") kasaKurTiklandi();
     else if (a === "kasaAcKutu") kasaAcTiklandi();
@@ -398,7 +399,7 @@ function buildAuthModal() {
       <div style="font-size:12.5px;opacity:0.75;margin-bottom:14px;">Giriş yapınca verilerin hesabına otomatik yedeklenir; başka cihazdan devam edebilirsin.</div>
       <input id="pwa-email" type="email" inputmode="email" autocomplete="email" placeholder="E-posta (ör. ad@gmail.com)"
         style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:10px;">
-      <input id="pwa-pass" type="password" autocomplete="current-password" placeholder="Şifre (en az 6 karakter)"
+      <input id="pwa-pass" type="password" autocomplete="current-password" placeholder="Şifre (en az 8 karakter)"
         style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:12px;">
       <button data-act="pwaAuthLogin" class="btn btn-primary w-full" style="margin-bottom:8px;font-weight:700;">Giriş Yap</button>
       <button data-act="pwaAuthRegister" class="btn btn-ghost w-full" style="margin-bottom:6px;border:1px solid rgba(0,0,0,0.15);">Yeni Kayıt Oluştur</button>
@@ -1347,6 +1348,12 @@ function renderProfileModal() {
     : '<button data-act="pwaAuth" class="btn btn-primary btn-sm">Giriş Yap / Kayıt Ol</button>';
   html += '</div>';
   html += '<div style="font-size:11px;opacity:0.65;margin-top:8px;">Giriş yapınca verilerin cihazların arasında eşitlenir.</div>';
+  /* v113 — KVKK m.7 silme hakkı: hesap + tüm veri kalıcı silinir. */
+  if (currentUser) {
+    html += '<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.08);">';
+    html += '<button data-act="hesapSil" style="background:none;border:0;padding:0;font-size:11.5px;color:#DC2626;text-decoration:underline;cursor:pointer;">Hesabımı ve tüm verilerimi kalıcı sil</button>';
+    html += '</div>';
+  }
   html += '</div>';
 
   /* v106 — KASA BÖLÜMÜ. Kullanıcı: "ad soyad, sınav sonuçları, hedef, plan
@@ -1551,6 +1558,86 @@ async function doSignOut() {
   try { if (typeof window.__cikisYerelTemizle === "function") window.__cikisYerelTemizle(); } catch (e) { console.warn("Yerel temizlik:", e); }
   setAuthLabel(false);
   toast("Çıkış yapıldı. Bu cihazdaki kayıtlar silindi — tekrar giriş yapınca geri gelir.", "success");
+}
+
+/* ============================================================
+   v113 — HESAP VE VERİYİ KALICI SİL (KVKK m.7)
+   ------------------------------------------------------------
+   KULLANICI: "Tmm silmeyi ekle"
+   NEDEN AYRI: "Tüm verileri sil" yalnız cihazı ve bulut state'ini sıfırlar;
+   e-posta, hesap ve okul no bağı KALIR. Bu fonksiyon hesabı gerçekten siler.
+   Sunucu tarafı: supabase/functions/hesap-sil (kullanıcı yalnız kendini siler).
+   Geri alınamaz → iki adımlı onay: "SİL" yazdırmak.
+   ============================================================ */
+function hesapSilPencereAc() {
+  const eski = document.getElementById("am-hesap-sil");
+  if (eski) eski.remove();
+  const d = document.createElement("div");
+  d.id = "am-hesap-sil";
+  d.style.cssText = "position:fixed;inset:0;z-index:9999;background:rgba(9,15,32,0.68);display:flex;align-items:center;justify-content:center;padding:16px;";
+  d.innerHTML =
+    '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:440px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.4);">' +
+    '<div style="font-weight:800;font-size:17px;color:#DC2626;margin-bottom:8px;">Hesabımı ve tüm verilerimi sil</div>' +
+    '<div style="font-size:13px;line-height:1.55;margin-bottom:12px;">' +
+    'Bu işlem <b>geri alınamaz</b>. Silinecekler:' +
+    '<ul style="margin:8px 0 0 18px;padding:0;line-height:1.7;">' +
+    '<li>E-posta ve hesabın</li>' +
+    '<li>Okulizyon bağın (okul no)</li>' +
+    '<li>Denemeler, sınav sonuçları, konu takibi</li>' +
+    '<li>Plan, görevler, kartlar, seri, rozetler</li>' +
+    '<li>Bildirim kayıtları ve cihaz bağlantıları</li>' +
+    '</ul></div>' +
+    '<div style="font-size:12px;line-height:1.5;margin-bottom:10px;padding:9px;border-radius:9px;background:rgba(220,38,38,0.08);color:#B91C1C;">' +
+    'Aynı okul numarasıyla yeniden kayıt olmak istersen sorun çıkmaz — bağ da silindiği için numara serbest kalır.</div>' +
+    '<label style="font-size:12px;display:block;margin-bottom:6px;">Onaylamak için <b>SİL</b> yaz:</label>' +
+    '<input id="am-hesap-sil-onay" autocomplete="off" placeholder="SİL" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.2);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:10px;">' +
+    '<div id="am-hesap-sil-hata" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
+    '<button id="am-hesap-sil-ok" style="width:100%;padding:12px;border-radius:10px;border:0;background:#DC2626;color:#fff;font-weight:700;font-size:14px;cursor:pointer;">Kalıcı olarak sil</button>' +
+    '<button id="am-hesap-sil-vazgec" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:transparent;color:inherit;font-size:13px;cursor:pointer;">Vazgeç</button>' +
+    '</div>';
+  document.body.appendChild(d);
+
+  const kapat = () => d.remove();
+  d.querySelector("#am-hesap-sil-vazgec").addEventListener("click", kapat);
+  d.addEventListener("click", (e) => { if (e.target === d) kapat(); });
+
+  d.querySelector("#am-hesap-sil-ok").addEventListener("click", async () => {
+    const onay = (d.querySelector("#am-hesap-sil-onay").value || "").trim().toLocaleUpperCase("tr-TR");
+    const hata = d.querySelector("#am-hesap-sil-hata");
+    const btn = d.querySelector("#am-hesap-sil-ok");
+    if (onay !== "SİL" && onay !== "SIL") {
+      hata.style.display = "block"; hata.textContent = 'Onay için "SİL" yazmalısın.'; return;
+    }
+    if (!sb || !currentUser) { hata.style.display = "block"; hata.textContent = "Oturum bulunamadı — tekrar giriş yap."; return; }
+    btn.disabled = true; btn.textContent = "Siliniyor…";
+    try {
+      const { data: oturum } = await sb.auth.getSession();
+      const jwt = oturum && oturum.session && oturum.session.access_token;
+      if (!jwt) throw new Error("Oturum anahtarı alınamadı — tekrar giriş yap.");
+      const r = await fetch(SUPABASE_CONFIG.url.replace(/\/$/, "") + "/functions/v1/hesap-sil", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", apikey: SUPABASE_CONFIG.anonKey, Authorization: "Bearer " + jwt },
+        body: JSON.stringify({ onay: "SİL" }),
+      });
+      const c = await r.json().catch(() => ({}));
+      if (!r.ok || !c || c.tamam !== true) {
+        throw new Error((c && (c.hata || c.mesaj)) || ("Sunucu hatası (HTTP " + r.status + ")"));
+      }
+      // Silindi: cihazdaki her şeyi temizle, oturumu kapat, giriş ekranına dön.
+      try { if (typeof window.__cikisYerelTemizle === "function") window.__cikisYerelTemizle(); } catch (e) { /* */ }
+      try { await sb.auth.signOut(); } catch (e) { /* */ }
+      try { localStorage.removeItem(KURULUM_TAM_KEY); } catch (e) { /* */ }
+      try { window.__kasa = null; } catch (e) { /* */ }
+      kapat();
+      if (typeof renderProfileModal === "function") { const pm = document.getElementById("pwa-profile-modal"); if (pm) pm.style.display = "none"; }
+      toast("Hesabın ve tüm verilerin kalıcı olarak silindi.", "success");
+      setTimeout(function () { try { location.reload(); } catch (e) { /* */ } }, 1200);
+    } catch (e) {
+      btn.disabled = false; btn.textContent = "Kalıcı olarak sil";
+      hata.style.display = "block";
+      hata.textContent = String((e && e.message) || e);
+    }
+  });
 }
 
 function setAuthLabel(girisli, kim) {
