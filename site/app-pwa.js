@@ -1,4 +1,4 @@
-const PWA_SURUM = "v115-veri-sorumlusu";
+const PWA_SURUM = "v116-iletisim";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -237,6 +237,7 @@ function initAuthUI() {
     const a = el.dataset.act;
     if (a === "pwaAuth") { currentUser ? doSignOut() : openAuthModal(); }
     else if (a === "hesapSil") hesapSilPencereAc();
+    else if (a === "iletisim") iletisimPencereAc();
     /* v106 — KASA düğmeleri */
     else if (a === "kasaKur") kasaKurTiklandi();
     else if (a === "kasaAcKutu") kasaAcTiklandi();
@@ -1412,6 +1413,7 @@ function renderProfileModal() {
   /* v113 — KVKK m.7 silme hakkı: hesap + tüm veri kalıcı silinir. */
   if (currentUser) {
     html += '<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.08);">';
+    html += '<button data-act="iletisim" style="background:none;border:0;padding:0;font-size:11.5px;color:#1D4ED8;text-decoration:underline;cursor:pointer;margin-right:14px;">Bize ulaş</button>';
     html += '<button data-act="hesapSil" style="background:none;border:0;padding:0;font-size:11.5px;color:#DC2626;text-decoration:underline;cursor:pointer;">Hesabımı ve tüm verilerimi kalıcı sil</button>';
     html += '</div>';
   }
@@ -1633,6 +1635,72 @@ async function doSignOut() {
    Sunucu tarafı: supabase/functions/hesap-sil (kullanıcı yalnız kendini siler).
    Geri alınamaz → iki adımlı onay: "SİL" yazdırmak.
    ============================================================ */
+/* ============================================================
+   v116 — GERİ BİLDİRİM / İLETİŞİM (KVKK m.13 başvuru kanalı)
+   ------------------------------------------------------------
+   NEDEN: Aydınlatma metni "bize ulaş" diyordu ama uygulamada HİÇBİR
+   iletişim kanalı yoktu. KVKK m.13 ilgili kişi başvurusu için kanal şart.
+   geri_bildirim tablosu zaten vardı (user_id, tur, mesaj, sayfa, created_at).
+   ============================================================ */
+function iletisimPencereAc() {
+  const eski = document.getElementById("am-iletisim");
+  if (eski) eski.remove();
+  const d = document.createElement("div");
+  d.id = "am-iletisim";
+  d.style.cssText = "position:fixed;inset:0;z-index:9999;background:rgba(9,15,32,0.68);display:flex;align-items:center;justify-content:center;padding:16px;";
+  d.innerHTML =
+    '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:460px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.4);">' +
+    '<div style="font-weight:800;font-size:17px;margin-bottom:6px;">Bize ulaş</div>' +
+    '<div style="font-size:12.5px;line-height:1.55;opacity:0.85;margin-bottom:12px;">' +
+    'Soru, hata bildirimi veya <b>kişisel verilerinle ilgili talep</b> (KVKK m.13) için yaz. ' +
+    'Talepler en geç <b>30 gün</b> içinde yanıtlanır.</div>' +
+    '<label style="font-size:11.5px;opacity:0.85;display:block;margin-bottom:4px;">KONU</label>' +
+    '<select id="am-ilt-tur" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:10px;">' +
+    '<option value="mesaj">Genel mesaj / öneri</option>' +
+    '<option value="hata">Hata bildirimi</option>' +
+    '<option value="kvkk">Kişisel verilerimle ilgili talep (KVKK m.13)</option>' +
+    '<option value="silme">Verilerimin silinmesini istiyorum</option>' +
+    '</select>' +
+    '<label style="font-size:11.5px;opacity:0.85;display:block;margin-bottom:4px;">MESAJIN</label>' +
+    '<textarea id="am-ilt-mesaj" rows="4" maxlength="2000" placeholder="Yaz…" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;resize:vertical;"></textarea>' +
+    '<div id="am-ilt-hata" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
+    '<button id="am-ilt-gonder" style="width:100%;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14px;cursor:pointer;">Gönder</button>' +
+    '<button id="am-ilt-iptal" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.15);background:transparent;color:inherit;font-size:13px;cursor:pointer;">Vazgeç</button>' +
+    '<div style="font-size:10.5px;opacity:0.65;line-height:1.5;margin-top:10px;">' +
+    'Mesajın sunucuda saklanır. Kendi hesabınla ilişkilendirilir (yalnız sen ve yönetici görebilir).</div>' +
+    '</div>';
+  document.body.appendChild(d);
+
+  const kapat = () => d.remove();
+  d.querySelector("#am-ilt-iptal").addEventListener("click", kapat);
+  d.addEventListener("click", (e) => { if (e.target === d) kapat(); });
+
+  d.querySelector("#am-ilt-gonder").addEventListener("click", async () => {
+    const tur = d.querySelector("#am-ilt-tur").value || "mesaj";
+    const mesaj = (d.querySelector("#am-ilt-mesaj").value || "").trim();
+    const hata = d.querySelector("#am-ilt-hata");
+    const btn = d.querySelector("#am-ilt-gonder");
+    if (mesaj.length < 5) { hata.style.display = "block"; hata.textContent = "Mesajın çok kısa — biraz daha yaz."; return; }
+    if (!cloudReady() || !sb) { hata.style.display = "block"; hata.textContent = "Sunucuya ulaşılamıyor — internet bağlantını kontrol et."; return; }
+    btn.disabled = true; btn.textContent = "Gönderiliyor…";
+    try {
+      const { error } = await sb.from("geri_bildirim").insert({
+        user_id: currentUser ? currentUser.id : null,
+        tur: tur,
+        mesaj: mesaj,
+        sayfa: "app-pwa"
+      });
+      if (error) throw error;
+      kapat();
+      toast("Mesajın iletildi — teşekkürler.", "success");
+    } catch (e) {
+      btn.disabled = false; btn.textContent = "Gönder";
+      hata.style.display = "block";
+      hata.textContent = "Gönderilemedi: " + String((e && e.message) || e);
+    }
+  });
+}
+
 function hesapSilPencereAc() {
   const eski = document.getElementById("am-hesap-sil");
   if (eski) eski.remove();

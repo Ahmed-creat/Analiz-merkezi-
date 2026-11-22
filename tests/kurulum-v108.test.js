@@ -512,6 +512,29 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
       G.indexOf("am-eksik-uyari") > -1 && G.indexOf("display = \"block\"") > -1);
   }
 
+  console.log("\n== 9) İLETİŞİM KANALI (v116 — KVKK m.13) ==");
+  {
+    /* KULLANICI: "Yok veremem. Sen bana nerden dolduracağımı soyle"
+       Metin "bize ulaş" diyordu ama uygulamada HİÇ kanal yoktu. m.13 başvurusu
+       için kanal şart; geri_bildirim tablosu vardı, arayüzü yoktu. */
+    const KOD = APP.replace(/\/\*[\s\S]*?\*\//g, "");
+    ok("iletişim penceresi var", /iletisimPencereAc/.test(KOD));
+    ok("profilden açılıyor", /data-act="iletisim"/.test(KOD));
+    ok("KVKK m.13 konusu seçilebiliyor", /KVKK m\.13/.test(KOD));
+    ok("silme talebi konusu var", /Verilerimin silinmesini istiyorum/.test(KOD));
+    ok("30 gün yanıt süresi yazılı", /30 gün/.test(KOD));
+    ok("geri_bildirim tablosuna yazıyor", /from\("geri_bildirim"\)/.test(KOD) && /\.insert\(/.test(KOD));
+    ok("girişsiz de gönderilebiliyor", /currentUser \? currentUser\.id : null/.test(KOD));
+    ok("boş mesaj reddediliyor", /mesaj\.length < 5/.test(KOD));
+    ok("hata kullanıcıya gösteriliyor", /Gönderilemedi/.test(KOD));
+
+    // Metin artık kendi kendini açıklıyor
+    const G = require("fs").readFileSync(require("path").join(__dirname, "..", "site/gizlilik.html"), "utf8");
+    ok("'veri sorumlusu 18 yaş şartı yok' açıklaması var", /KVKK bu sıfat için yaş/.test(G));
+    ok("küçük + veli temsili doğru anlatılıyor", /TMK m\.14/.test(G) && /TMK m\.16/.test(G));
+    ok("kendi adını yazabilir deniyor", /kendi adını/.test(G));
+  }
+
   console.log("\n" + "─".repeat(60));
   if (kalan) {
     console.log("\n✗ " + kalan + " kontrol kaldı (" + gecen + " geçti)");
