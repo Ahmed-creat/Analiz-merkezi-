@@ -63,6 +63,18 @@
 
   <div class="kart">
 
+    <!-- v115 — DÜRÜSTLÜK: metinde [doldurulacak] alan varsa yayına hazır
+         DEĞİLDİR. KVKK m.10 veri sorumlusunun kim olduğunu zorunlu kılar;
+         boş alanla yayına çıkmak metni geçersiz kılar. -->
+    <div id="am-eksik-uyari" style="display:none;background:rgba(180,83,9,.12);border:1px solid rgba(180,83,9,.45);border-radius:12px;padding:13px 15px;margin-bottom:16px;">
+      <div style="font-weight:800;font-size:13.5px;color:#B45309;margin-bottom:5px;">⚠️ Bu metin henüz tamamlanmadı</div>
+      <div style="font-size:12.5px;line-height:1.55;">
+        Veri sorumlusunun adı, iletişim e-postası ve adresi henüz girilmedi.
+        <b>Bu alanlar doldurulmadan metin KVKK m.10'a uygun sayılmaz.</b><br>
+        Aşağıda <b>[köşeli parantez]</b> içindeki alanlar doldurulmalıdır.
+      </div>
+    </div>
+
     <div class="not">
       <b>Kısa özet:</b> Uygulama; ad soyad, sınıf, okul, okul numarası ve e-posta
       adresini yalnızca sana çalışma planı hazırlamak, ilerlemeni göstermek ve
@@ -250,5 +262,31 @@
   </footer>
 
 </div>
+<script>
+/* v115 — Eksik alan denetimi: metinde [ ... ] kalırsa uyarı göster.
+   Boş alanla yayına çıkmayı fark edilir kılar. */
+(function () {
+  try {
+    var govde = document.querySelector(".kart");
+    if (!govde) return;
+    var metin = govde.textContent || "";
+    // Yalnızca gerçek doldurulacak alanlar: [ ... ] ve içinde büyük harf/Türkçe
+    var eksik = /\[[^\]]{3,}\]/.test(metin);
+    if (eksik) {
+      var u = document.getElementById("am-eksik-uyari");
+      if (u) u.style.display = "block";
+      // Eksik alanları görünür kıl
+      govde.querySelectorAll("b").forEach(function (b) {
+        if (/^\[[^\]]+\]$/.test((b.textContent || "").trim())) {
+          b.style.background = "rgba(180,83,9,.22)";
+          b.style.outline = "2px dashed #B45309";
+          b.style.outlineOffset = "2px";
+          b.style.borderRadius = "4px";
+        }
+      });
+    }
+  } catch (e) { /* */ }
+})();
+</script>
 </body>
 </html>

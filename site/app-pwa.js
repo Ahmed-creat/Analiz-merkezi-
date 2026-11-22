@@ -1,4 +1,4 @@
-const PWA_SURUM = "v114-sifre6-onay";
+const PWA_SURUM = "v115-veri-sorumlusu";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {

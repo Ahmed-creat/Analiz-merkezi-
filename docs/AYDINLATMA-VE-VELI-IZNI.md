@@ -121,7 +121,70 @@ sade dille yazılır ve **indirilebilir PDF** olarak sunulur.
 
 ---
 
-## 5. Hukuki uyarı
+## 5. "Veri sorumlusu 18 yaşından büyük olmak zorunda mı?"
+
+Kullanıcının sorusu: *"Ama sıkıntı şu ki veri sorumlusu 18 yaşından büyük olmak
+zorunda mı"*
+
+### 5.1 Kısa cevap
+
+**Hukuken: evet, pratikte sınır.** KVKK "veri sorumlusu 18 yaşından büyük olmalı"
+diye açık bir hüküm içermez. Ama iki ayrı katman var ve ikisi de 18 yaş sınırına
+çıkar:
+
+| Katman | Ne oluyor? | 18 yaş altı |
+|---|---|---|
+| **Yükümlülük** (m.10 aydınlatma, m.12 güvenlik, m.13 başvuru yanıtı, m.16 VERBİS, m.9 aktarım) | Doğrudan veri sorumlusuna bağlı, **yaş şartı yok** | Yükümlülük **doğar** |
+| **Sorumluluk** (m.18 idari para cezası, tazminat) | Cezanın muhatabı fiil ehliyeti aranan kişi | Küçük hakkında **idari para cezası uygulanamaz** (Kabahatler K. m.11) |
+| **Fiil ehliyeti** (TMK m.14) | 18 yaşını doldurmamış kişi küçüktür | Sözleşme, VERBİS, temsil **veli/vâsî** üzerinden |
+
+Yani küçük, yükümlülükleri **yerine getiremez** (sözleşme kuramaz, VERBİS'e
+kaydolamaz, Kurul kararına muhatap olamaz) ama veri işlemeye başladığı anda
+yükümlülükler **doğar**. Bu boşluk, hukuken "veli/vâsî temsil eder" ile kapatılır.
+
+### 5.2 Arkadaşının durumu: hangi risk gerçek?
+
+Uygulama ölçüldü (bu depo):
+
+- **Reklam yok** (`adsbygoogle/adsense` yok)
+- **Ödeme yok** (iyzico/stripe/abonelik ücreti yok)
+- **Veri satışı yok** — ticari amaç yok
+- Yalnızca eğitim amaçlı, ücretsiz, kişisel kullanım
+
+Bu tablo riski **çok** düşürür:
+
+| Risk | Durum |
+|---|---|
+| Veli şikâyeti → Kurul → idari para cezası | Ceza küçüğe verilemez; **reklam/ödeme/satış olmadığı için ticari saik yok** → pratikte çok düşük |
+| Veli "çocuğumun verisini sil" der → silinmezse | **Gerçek risk bu.** Çözüm hazır: Profil › kalıcı sil (v113) + 30 gün yanıt |
+| Yurt dışına aktarım (Supabase AB/ABD, Vercel ABD, Google) | KVKK m.9. Yükümlülük var; standart sözleşme yükü zor |
+| VERBİS | 50 çalışan / 100 M TL eşiğinin **altında** → kayıttan muaf |
+| TCK 135-140 (hukuka aykırı kaydetme/yayma) | Kasıt yok, veri satışı yok → uzak |
+| Tazminat (m.11 zararın giderilmesi) | Zarar doğarsa **küçüğün kendisi** ve velisi sorumlu olabilir → aile riski |
+
+**En büyük risk ceza değil:** veri ihlali olursa küçüğün ve ailesinin tazminat
+sorumluluğu + veliyle yaşanan anlaşmazlık. Ceza alınmaz ama aile uğraşır.
+
+### 5.3 Üç çıkış yolu
+
+| # | Yol | Ne yapar | Artı / Eksi |
+|---|---|---|---|
+| **A** | **Veli/vâsî veri sorumlusu olur** | Aydınlatma metnine velinin adı yazılır; VERBİS/temsil velide | ✅ En temiz hukuki zemin · ➖ Veli rıza göstermeli |
+| **B** | **18 yaşını bekle** | Uygulama kapalı kalır (dışarıya açılmaz), kendisi kullanır | ✅ Risk sıfır · ➖ Beklemek gerekir |
+| **C** | **Şu anki hâl** | Ücretsiz, reklamsız, kişisel/okul içi; metinde veri sorumlusu alanı boş | ✅ Hemen çalışır · ➖ Alan boş kaldıkça m.10 eksik |
+
+> **Dürüst uyarı:** Hiçbir yol "hukuki danışmanlık" değildir. Bu bir mühendislik
+> risk değerlendirmesidir; nihai karar için avukat gerekir.
+
+### 5.4 Karar verilene kadar yapılacak (kod tarafı — bende)
+
+1. `gizlilik.html` §1'deki üç `[...]` alanı **boş bırakılamaz**; doldurulmadan
+   yayına çıkılmamalı. Alan doldurulmamışsa sayfa uyarı göstersin.
+2. Reklam/ödeme eklenirse risk tablosu **tamamen değişir** → bu belge güncellenmeli.
+3. Veli talebi akışı: "çocuğumun verisi silinsin" → mevcut hesap silme yolu
+   yeterli, ama **veli olduğunu doğrulama** yok. İleride not edilmeli.
+
+## 6. Hukuki uyarı
 
 Bu dosya bir **teknik uygulama planıdır**, hukuki görüş değildir. Yayına
 geçmeden önce aydınlatma metni ve veli izni metninin bir hukukçu tarafından

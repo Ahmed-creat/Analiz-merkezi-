@@ -506,6 +506,10 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("metin kodla çelişmiyor (engel vaadi yok)",
       !/izin verilmeden hesap etkinleştirilmez/.test(G));
     ok("veli izni sınırı açıkça yazılı", /zorunlu bir "veli izni" kutusu yoktur/.test(G));
+    /* v115 — Doldurulmamış alan varsa sayfa UYARIR (boş alanla yayına çıkılmasın). */
+    ok("eksik alan uyarısı var", /am-eksik-uyari/.test(G) && /henüz tamamlanmadı/.test(G));
+    ok("eksik alan denetimi çalışıyor", G.indexOf("var eksik") > -1 &&
+      G.indexOf("am-eksik-uyari") > -1 && G.indexOf("display = \"block\"") > -1);
   }
 
   console.log("\n" + "─".repeat(60));
