@@ -172,9 +172,26 @@
 
     <h2>6. Aktarım</h2>
     <p>
-      Veriler yurt dışında bulunan sunucularda saklanır (Supabase — AB/ABD,
-      Vercel — ABD). Bu nedenle KVKK m.9 kapsamında yurt dışına aktarım söz
-      konusudur. Bildirim gönderimi için Google Firebase (FCM) kullanılır.
+      Veriler yurt dışında bulunan sunucularda saklanır. Bu, KVKK m.9 kapsamında
+      <b>yurt dışına aktarım</b>dır:
+    </p>
+    <table>
+      <tr><th>Alıcı</th><th>Nerede</th><th>Ne aktarılır</th></tr>
+      <tr><td>Supabase</td><td>Frankfurt (AB)</td><td>E-posta, kimlik özeti, şifrelenmiş kayıt</td></tr>
+      <tr><td>Vercel</td><td>ABD</td><td>Statik dosyalar, IP ve istek bilgisi</td></tr>
+      <tr><td>Google Firebase (FCM)</td><td>ABD</td><td>Bildirim jetonu (yalnız bildirime izin verirsen)</td></tr>
+    </table>
+    <div class="uyari">
+      <b>Bilmen gereken açık nokta.</b> 7499 sayılı Kanun'la 1 Haziran 2024'te
+      değişen m.9, sürekli (düzenli) yurt dışı aktarımları için
+      <b>standart sözleşme</b> imzalanmasını ve bunun imzadan sonra
+      <b>5 iş günü içinde</b> Kurul'a bildirilmesini istiyor. Açık rıza artık
+      yalnız <i>arızi</i> (tek seferlik) aktarımlar için geçerli.
+      Uygulamanın veri akışı düzenli olduğu için bu yükümlülük
+      <b>henüz yerine getirilmemiştir</b>. Bu bir güvenlik açığı değil,
+      <b>eksik belgedir</b>; ileride tamamlanması gerekir.
+    </div>
+    <p>
       Verilerin <b>ticari amaçla üçüncü kişilere satılması veya reklam amacıyla
       paylaşılması söz konusu değildir</b>.
     </p>

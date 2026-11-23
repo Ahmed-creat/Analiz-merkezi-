@@ -565,6 +565,29 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("eski 4 düğme kaldırıldı (tek akış)", !/Yeni Kayıt Oluştur/.test(APP));
   }
 
+  console.log("\n== 11) KVKK ZORUNLU / DEĞİL tablosu (v118) ==");
+  {
+    /* KULLANICI: "Yani su anda KVKK için ne zorunlu ne zorunlu degilmiş"
+       Cevap hem docs hem gizlilik.html'de yazılı olmalı ve KODLA uyuşmalı. */
+    const D = require("fs").readFileSync(require("path").join(__dirname, "..", "docs/KVKK-ZORUNLU-ZORUNLU-DEGIL.md"), "utf8");
+    ok("referans belgesi var", D.length > 3000);
+    ok("5 zorunlu madde sayılıyor", /ZORUNLU \(5 madde\)/.test(D));
+    ok("7 zorunlu olmayan madde", /ZORUNLU DEĞİL \(7 madde\)/.test(D));
+    ok("standart sözleşme eksik olarak işaretli", /standart sözleşme/i.test(D) && /EKSİK/.test(D));
+    ok("VERBİS muaf gerekçesi yazılı", /50.*100 M TL/.test(D));
+    ok("72 saat ihlal bildirimi yazılı", /72 saat/.test(D));
+    ok("30 gün yanıt süresi yazılı", /30 gün/.test(D));
+    ok("okulizyon düzeltmesi belgede", /OrbimSoft/.test(D));
+    ok("işletme hesabı istisnası (2025/2393)", /2025\/2393/.test(D));
+
+    /* Metin ile kod çelişmemeli: metin hâlâ zorunlu veli kutusu vaat etmiyor */
+    const G = require("fs").readFileSync(require("path").join(__dirname, "..", "site/gizlilik.html"), "utf8");
+    ok("gizlilikte yurt dışı aktarım tablosu var",
+      /Supabase<\/td><td>Frankfurt/.test(G) && /Vercel<\/td><td>ABD/.test(G));
+    ok("standart sözleşme eksiği metinde AÇIKÇA yazılı", /standart sözleşme/.test(G) && /yerine getirilmemiştir/.test(G));
+    ok("metin hâlâ veli kutusu vaat etmiyor", !/izin verilmeden hesap etkinleştirilmez/.test(G));
+  }
+
   console.log("\n" + "─".repeat(60));
   if (kalan) {
     console.log("\n✗ " + kalan + " kontrol kaldı (" + gecen + " geçti)");
