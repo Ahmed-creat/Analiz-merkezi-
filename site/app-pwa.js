@@ -1,4 +1,4 @@
-const PWA_SURUM = "v120-kasa-cihaz";
+const PWA_SURUM = "v121-noindex";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {

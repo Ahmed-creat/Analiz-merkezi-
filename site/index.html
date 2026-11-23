@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#F5F8FF" id="meta-theme">
+<!-- v121 — KULLANICI: "site Google arama sonuçlarında olmasın, sadece adresi
+     girince [açılsın]." Arama motorlarına KAPALI. Adresi bilen girmeye devam eder.
+     Not: robots.txt ile TAMAMEN engellemiyoruz; engellenen sayfayı Google
+     tarayamaz, tarayamadığı için de bu noindex'i göremez → başlık yine
+     sonuçlarda çıkabilir. Doğru yol: taramaya izin + noindex. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <script>
 /* Erken tema uygulaması (FOUC önler): toplam 2 tema — Açık / Koyu */
 (function(){var t=null;try{t=localStorage.getItem("am_theme");}catch(e){}
