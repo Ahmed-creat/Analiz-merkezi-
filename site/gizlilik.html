@@ -63,18 +63,6 @@
 
   <div class="kart">
 
-    <!-- v115 — DÜRÜSTLÜK: metinde [doldurulacak] alan varsa yayına hazır
-         DEĞİLDİR. KVKK m.10 veri sorumlusunun kim olduğunu zorunlu kılar;
-         boş alanla yayına çıkmak metni geçersiz kılar. -->
-    <div id="am-eksik-uyari" style="display:none;background:rgba(180,83,9,.12);border:1px solid rgba(180,83,9,.45);border-radius:12px;padding:13px 15px;margin-bottom:16px;">
-      <div style="font-weight:800;font-size:13.5px;color:#B45309;margin-bottom:5px;">⚠️ Bu metin henüz tamamlanmadı</div>
-      <div style="font-size:12.5px;line-height:1.55;">
-        Ad, e-posta ve şehir alanları henüz doldurulmadı.
-        <b>Bu alanlar doldurulmadan metin KVKK m.10'a uygun sayılmaz.</b><br>
-        Aşağıda <b>[KÖŞELİ PARANTEZ]</b> içindeki 3 alan doldurulmalı, parantezler silinmelidir.
-      </div>
-    </div>
-
     <div class="not">
       <b>Kısa özet:</b> Uygulama; ad soyad, sınıf, okul, okul numarası ve e-posta
       adresini yalnızca sana çalışma planı hazırlamak, ilerlemeni göstermek ve
@@ -84,29 +72,22 @@
     </div>
 
     <h2>1. Veri sorumlusu</h2>
-    <p>
-      Bu uygulama <b>Ahmed İbrahim</b> tarafından işletilmektedir.
-      İletişim: <b>hnekfamy8@gmail.com</b> · <b>gazianep</b>.
-    </p>
+    <table>
+      <tr><th>Veri sorumlusu</th><td><b>Ahmed İbrahim</b> — gerçek kişi</td></tr>
+      <tr><th>E-posta</th><td><b>hnekfamy8@gmail.com</b></td></tr>
+      <tr><th>Yerleşim</th><td><b>Gaziantep, Türkiye</b></td></tr>
+    </table>
     <div class="not">
-      <b>Veri sorumlusu kim, neden 18 yaş şartı yok?</b><br>
-      Veri sorumlusu, kişisel verilerin işlenme amacını ve vasıtalarını belirleyen
-      kişidir — <b>kendi uygulamasını yapan kişi</b>. KVKK bu sıfat için yaş
-      şartı koymaz. Uygulamayı sen yazdığın için veri sorumlusu <b>sensin</b>;
-      buraya <b>kendi adını</b> yazabilirsin.<br><br>
-      18 yaşından küçüksen hukuken <b>küçük</b> sayılırsın (TMK m.14): yükümlülük
-      doğar ama <b>fiil ehliyetin</b> olmadığı için seni <b>velin/vâsî temsil
-      eder</b> (TMK m.16). Bu, "veri sorumlusu olamazsın" demek değildir.
-      İki geçerli yol var, <b>ikisi de doğru</b>:
-      <ul style="margin:6px 0 0 18px;padding:0;">
-        <li><b>Kendi adın</b> (+ velinin bilgisi) — uygulamayı sen işletiyorsun.</li>
-        <li><b>Velinin adı</b> — küçük olduğun için temsilci sıfatıyla. Bu, seçtiğin
-        <b>C yolunun</b> (ücretsiz, reklamsız, kişisel kullanım) doğal sonucudur.</li>
-      </ul>
-      <br>
-      İki durumda da <b>[E-POSTA]</b> alanına gerçekten okunan bir adres
-      yazılmalıdır: KVKK m.13 başvuruları oraya gelir ve 30 gün içinde
-      yanıtlanmak zorundadır. <b>[ŞEHİR]</b> için "Gaziantep, Türkiye" yeterlidir.
+      <b>Veri sorumlusu kim?</b><br>
+      Kişisel verilerin hangi amaçla ve hangi araçlarla işleneceğine karar veren
+      kişidir (KVKK m.3/1-ı). Burada bu kişi, uygulamayı geliştirip işleten
+      <b>Ahmed İbrahim</b>'dir.<br><br>
+      <b>18 yaş altı kullanıcılar.</b> KVKK veri sorumlusu sıfatı için yaş şartı
+      koymaz. 18 yaşından küçüksen TMK m.14 uyarınca <b>küçüksün</b>; fiil
+      ehliyetine sahip olmadığın için hukuki işlemleri <b>velin/vâsî seni temsil
+      ederek</b> yapar (TMK m.16). Bu, işlemenin hukuka aykırı olduğu anlamına
+      gelmez — velinin bilgilendirilmesi ve sürece dahil edilmesi yeterlidir.
+      Ayrıntı: <a href="#cocuklar">9. bölüm</a>.
     </div>
 
     <h2>2. İşlenen kişisel veriler</h2>
@@ -228,10 +209,10 @@
       <li><b>Verilerini indir:</b> Profil › Verilerimi indir (JSON).</li>
       <li><b>Hesabını sil:</b> Profil › <i>Hesabımı ve tüm verilerimi kalıcı sil</i>.
           Bu işlem hesabı, e-postayı, okul bağını ve tüm kayıtları anında siler.</li>
-      <li><b>Diğer talepler:</b> <b>[E-POSTA]</b> — en geç 30 gün içinde yanıtlanır.</li>
+      <li><b>Diğer talepler:</b> <b>hnekfamy8@gmail.com</b> — en geç 30 gün içinde yanıtlanır.</li>
     </ul>
 
-    <h2>9. Çocuklar ve veli izni (18 yaş altı)</h2>
+    <h2 id="cocuklar">9. Çocuklar ve veli izni (18 yaş altı)</h2>
     <p>
       Uygulama lise öğrencilerine yöneliktir. <b>18 yaşından küçüksen</b>, kişisel
       verilerinin işlenmesi için velinin/vâsînin bilgilendirilmesi ve izni
@@ -252,7 +233,7 @@
     </div>
     <p>
       Veli/vâsî, çocuğunun verilerine ilişkin olarak bu metnin 8. bölümündeki tüm
-      haklara sahiptir ve <b>[E-POSTA]</b> üzerinden başvurabilir.
+      haklara sahiptir ve <b>hnekfamy8@gmail.com</b> üzerinden başvurabilir.
       Talebiniz üzerine çocuğunuzun hesabı ve tüm verileri <b>derhal ve geri
       alınamaz biçimde</b> silinir.
     </p>
@@ -282,31 +263,5 @@
   </footer>
 
 </div>
-<script>
-/* v115 — Eksik alan denetimi: metinde [ ... ] kalırsa uyarı göster.
-   Boş alanla yayına çıkmayı fark edilir kılar. */
-(function () {
-  try {
-    var govde = document.querySelector(".kart");
-    if (!govde) return;
-    var metin = govde.textContent || "";
-    // Yalnızca gerçek doldurulacak alanlar: [ ... ] ve içinde büyük harf/Türkçe
-    var eksik = /\[[^\]]{3,}\]/.test(metin);
-    if (eksik) {
-      var u = document.getElementById("am-eksik-uyari");
-      if (u) u.style.display = "block";
-      // Eksik alanları görünür kıl
-      govde.querySelectorAll("b").forEach(function (b) {
-        if (/^\[[^\]]+\]$/.test((b.textContent || "").trim())) {
-          b.style.background = "rgba(180,83,9,.22)";
-          b.style.outline = "2px dashed #B45309";
-          b.style.outlineOffset = "2px";
-          b.style.borderRadius = "4px";
-        }
-      });
-    }
-  } catch (e) { /* */ }
-})();
-</script>
 </body>
 </html>

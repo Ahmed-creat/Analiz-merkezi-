@@ -474,7 +474,9 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     // --- Şifre 6 ---
     ok("hesap şifresi kuralı 6", /if \(s\.length < 6\) return "Şifre en az 6 karakter/.test(KOD));
     ok("8 karakter kuralı KALMADI", !/length < 8/.test(KOD));
-    ok("giriş alanı 'en az 6' yazıyor", /placeholder="Şifre \(en az 6 karakter\)"/.test(KOD));
+    /* v117 — pencere yeniden tasarlandı: alanın kendi ETİKETİ var (ŞİFRE),
+       placeholder artık yalnız kuralı söylüyor. */
+    ok("giriş alanı 'en az 6' yazıyor", /placeholder="En az 6 karakter"/.test(KOD));
     ok("veri kilidi şifresi de 6", /sifre\.length < 6/.test(KOD) && /s1\.length < 6/.test(KOD));
     ok("harf+rakam zorunluluğu kaldırıldı (sunucu uygulamıyor)",
       !/en az bir harf ve bir rakam/.test(KOD));
@@ -506,10 +508,15 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("metin kodla çelişmiyor (engel vaadi yok)",
       !/izin verilmeden hesap etkinleştirilmez/.test(G));
     ok("veli izni sınırı açıkça yazılı", /zorunlu bir "veli izni" kutusu yoktur/.test(G));
-    /* v115 — Doldurulmamış alan varsa sayfa UYARIR (boş alanla yayına çıkılmasın). */
-    ok("eksik alan uyarısı var", /am-eksik-uyari/.test(G) && /henüz tamamlanmadı/.test(G));
-    ok("eksik alan denetimi çalışıyor", G.indexOf("var eksik") > -1 &&
-      G.indexOf("am-eksik-uyari") > -1 && G.indexOf("display = \"block\"") > -1);
+    /* v117 — KULLANICI: "gizlilik html'i yaptım zaten" → üç alan dolduruldu.
+       v115'in "eksik alan" uyarısı artık GEREKSİZ; kaldırıldı. Yerine daha
+       güçlü bir kontrol: metinde doldurulacak köşeli parantez KALMAMALI. */
+    ok("eksik alan uyarısı kaldırıldı (alanlar dolu)", !/am-eksik-uyari/.test(G));
+    ok("metinde doldurulacak [ALAN] kalmadı",
+      !/\[[A-ZÇĞİÖŞÜ][^\]]{2,}\]/.test(G.replace(/<script[\s\S]*?<\/script>/g, "")));
+    ok("veri sorumlusu adı yazılı", /Ahmed İbrahim/.test(G));
+    ok("KVKK m.13 e-posta adresi yazılı", /hnekfamy8@gmail\.com/.test(G));
+    ok("şehir yazılı", /Gaziantep, Türkiye/.test(G));
   }
 
   console.log("\n== 9) İLETİŞİM KANALI (v116 — KVKK m.13) ==");
@@ -530,9 +537,32 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
 
     // Metin artık kendi kendini açıklıyor
     const G = require("fs").readFileSync(require("path").join(__dirname, "..", "site/gizlilik.html"), "utf8");
-    ok("'veri sorumlusu 18 yaş şartı yok' açıklaması var", /KVKK bu sıfat için yaş/.test(G));
+    ok("'veri sorumlusu 18 yaş şartı yok' açıklaması var", /yaş şartı\s*\n?\s*koymaz/.test(G));
     ok("küçük + veli temsili doğru anlatılıyor", /TMK m\.14/.test(G) && /TMK m\.16/.test(G));
-    ok("kendi adını yazabilir deniyor", /kendi adını/.test(G));
+    ok("gerçek kişi veri sorumlusu olarak gösteriliyor", /Ahmed İbrahim<\/b> — gerçek kişi/.test(G));
+  }
+
+  console.log("\n== 10) TEK AKIŞ — giriş penceresi ve bilgi formu üst üste binmez (v117) ==");
+  {
+    /* KULLANICI: "Uygulamaya ilk girildiğinde bilgi formu hemen üstünde de
+       hesap alanı çıkıyor. Bunları daha profesyonel şekilde yap."
+       İki tam ekran katman (z-index 9999) aynı anda DOM'da olmamalı. */
+    ok("tek katman kuralı var", /function girisPaneliAcikMi/.test(APP));
+    ok("kurulum paneli hesap penceresi açıkken açılmıyor",
+      /if \(girisPaneliAcikMi\(\)\) return false;/.test(APP));
+    ok("bekleme sonrası da yeniden kontrol ediliyor",
+      /bekleme sırasında giriş açıldıysa yine girme/.test(APP));
+    ok("pencere kapanınca kurulum devralıyor",
+      /window\.__amAuthZorunlu = false;[\s\S]{0,260}kurulumAkisi\(\)/.test(APP));
+
+    /* Sekmeli hesap formu */
+    ok("iki sekme var (giriş / yeni hesap)", /pwa-tab-giris/.test(APP) && /pwa-tab-kayit/.test(APP));
+    ok("tek ana düğme sekmele değişiyor",
+      /ana\.setAttribute\("data-act", kayit \? "pwaAuthRegister" : "pwaAuthLogin"\)/.test(APP));
+    ok("başlık sekmeyle değişiyor", /Hesap oluştur/.test(APP) && /id="pwa-auth-baslik"/.test(APP));
+    ok("şifre alanı autocomplete sekmeye göre", /"new-password" : "current-password"/.test(APP));
+    ok("aydınlatma satırı hâlâ formda", /pwa-auth-onay/.test(APP) && /gizlilik\.html/.test(APP));
+    ok("eski 4 düğme kaldırıldı (tek akış)", !/Yeni Kayıt Oluştur/.test(APP));
   }
 
   console.log("\n" + "─".repeat(60));

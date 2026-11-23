@@ -102,6 +102,55 @@ ilgili kişinin (ve 18 altıysa velisinin) bilgilendirilmesi gerekir. Bu,
 
 ---
 
+## 3b. İlk giriş akışı (v117 — tek katman)
+
+**Sorun (kullanıcı bildirdi):** *"Uygulamaya ilk girildiğinde bilgi formu hemen
+üstünde de hesap alanı çıkıyor."*
+
+**Kök neden:** Giriş penceresi (`#pwa-auth-modal`, z-index 9999) açıkken oturum
+uygulanınca kurulum paneli (`#am-kurulum`, z-index 9999) de DOM'a ekleniyordu.
+İki tam ekran katman üst üste biniyordu.
+
+**Çözüm — tek kapı:**
+
+1. `girisPaneliAcikMi()` eklendi; `kurulumAkisi()` bu pencere açıkken **panel
+   açmaz**.
+2. `closeAuthModal()` kapanınca `kurulumAkisi()` çağırır → sıra bilgi formuna
+   geçer (devir).
+3. Bulut beklemesi bittikten **sonra da** yeniden kontrol edilir: bekleme
+   sırasında giriş açıldıysa panel yine açılmaz.
+
+Sonuç: aynı anda **yalnız bir** tam ekran katman. Sıra:
+
+```
+Hesap penceresi (giriş/kayıt)
+        ↓  giriş başarılı / pencere kapandı
+Bilgilerini tamamla (ad soyad, sınıf, il/ilçe/okul, okul no)
+        ↓
+Giriş şifresi (veri kilidi)
+        ↓
+12 kelimelik anahtar
+```
+
+### Hesap penceresi neden yeniden yazıldı
+
+Eski hâlde dört ayrı düğme alt alta duruyordu: *Giriş Yap*, *Yeni Kayıt
+Oluştur*, *Şifremi unuttum*, *Google ile devam et*. Öğrenci hangisinin ne
+yaptığını ayırt edemiyordu.
+
+Yeni hâl: **iki sekme + tek ana düğme.**
+
+| Sekme | Başlık | Ana düğme | Şifre alanı |
+|---|---|---|---|
+| Giriş | "Giriş yap" | "Giriş yap" | `current-password` |
+| Yeni hesap | "Hesap oluştur" | "Hesabı oluştur" | `new-password` |
+
+Sekme değişince başlık, alt yazı, düğme etiketi ve düğmenin **yaptığı iş**
+(`data-act`) birlikte değişir. "Şifremi unuttum" sağa, küçük bağlantı olarak
+taşındı; Google düğmesi "VEYA" ayırıcısının altında kaldı.
+
+---
+
 ## 4. İş listesi (kod)
 
 | # | İş | Dosya | Durum |
@@ -181,58 +230,88 @@ sorumluluğu + veliyle yaşanan anlaşmazlık. Ceza alınmaz ama aile uğraşır
 3. Veli talebi akışı: "çocuğumun verisi silinsin" → mevcut hesap silme yolu
    yeterli, ama **veli olduğunu doğrulama** yok. İleride not edilmeli.
 
-## 6. "Okulizyon veli izni istemiyor, biz neden istiyoruz?"
+## 6. Okulizyon veli izni istemiyor — biz neden istiyoruz?
 
 Kullanıcının sorusu: *"İyide okulizyonda veli izni falan istemiyor neden bizim
 uygulamaya gerek var o zaman?"*
 
-### 6.1 Önce düzeltme: biz de istemiyoruz
+> ### ⚠️ ÖNCEKİ BÖLÜMDEKİ HATA DÜZELTİLDİ
+> Bu bölümün ilk hâli Okulizyon'u **MEB'e bağlı bir kamu sistemi** sanıyor ve
+> "MEB kamu kurumu, kanuni dayanağı var" diyordu. **Bu yanlıştı.**
+> Okulizyon, **OrbimSoft**'un (SETMER Eğitim Bilişim Ltd. Şti., Ankara) özel
+> yazılım ürünüdür — `okulizyon.com` künyesi: *"© 2022-2026 Okulizyon bir
+> OrbimSoft ürünüdür."* MEB ile bağı yalnız **müşteri** ilişkisidir: okullar
+> sistemi satın alıp kullanır. Aşağıdaki karşılaştırma buna göre yazıldı.
 
-Bu soru, kullanıcının v114 öncesi tasarımı hatırlamasından kaynaklanıyor.
-**v114'te (04b) zorunlu veli izni kutusu KALDIRILDI.** Mevcut durum:
+### 6.1 Biz de istemiyoruz (v114)
 
 | Ne | Durum |
 |---|---|
 | Zorunlu veli izni kutusu | **YOK** (v114'te kaldırıldı) |
-| 18 altı beyanı | Var ama **opsiyonel**, engellemiyor |
-| "Devam ederek kabul" satırı | Var (aydınlatma) |
-| Kurulumu bloke eden bir onay | **YOK** |
+| 18 altı beyanı (`kur-veli-beyan`) | Var — **opsiyonel**, akışı engellemiyor |
+| Kurulumu bloke eden onay | **YOK** |
 
-Kod kanıtı: `site/app-pwa.js` — `kutuyu işaretle` diye bir engel **yok**;
-`kur-veli-beyan` yalnızca bir bilgi notu açıyor.
+Yani soru, v114 öncesi tasarımın hatırlanmasından doğuyor.
 
-### 6.2 Ama "okulizyon da yapmıyor" yanlış bir karşılaştırma
+### 6.2 Asıl mesele: ikisi de aynı kanunu uyguluyor
 
-Okulizyon (MEB) ile bu uygulamanın hukuki dayanağı **tamamen farklı**:
+Okulizyon da bu uygulama da **gerçek kişi/tüzel kişi** veri sorumlusudur.
+İkisi de KVKK'ya tabidir. Bu yüzden "onlar istemiyor, biz de istemeyelim"
+mantığı **hukuken doğru** — fark dayanakta değil, **işin niteliğinde**:
 
-| | Okulizyon / EBA / e-Okul | Bu uygulama |
+| | Okulizyon (OrbimSoft) | Bu uygulama |
 |---|---|---|
-| **Veri sorumlusu** | MEB / okul — **kamu kurumu** | Kullanıcı (gerçek kişi) |
-| **Hukuki sebep** | KVKK m.5/2-a "kanunlarda öngörülmesi" + m.5/2-ç "hukuki yükümlülük" | m.5/2-c sözleşme + m.5/2-f meşru menfaat |
-| **Dayanak** | 1739 s. Milli Eğitim Temel Kanunu, e-Okul yönetmeliği | Yok — ticari/kişisel hizmet |
-| **Açık rıza gerekli mi?** | **Hayır** — kanuni görev yeter | **Evet** — kanuni dayanak yok |
-| **Veli izni** | Kanun zaten zorunlu kıldığı için ayrıca istenmez | Kanuni dayanak olmadığı için **gerekir** |
+| **Veri sorumlusu** | OrbimSoft — **özel şirket** | Ahmed İbrahim — gerçek kişi |
+| **Hukuki sebep** | m.5/2-c **sözleşme** (okul/yayınevi aboneliği) | m.5/2-c sözleşme + m.5/2-f meşru menfaat |
+| **İşin niteliği** | **B2B** — okula/yayınevine hizmet | **B2C** — doğrudan öğrenciye |
+| **Açık rıza** | Gerekmez (sözleşmenin ifası) | Gerekmez (aynı sebep) |
+| **Aydınlatma (m.10)** | **Zorunlu** | **Zorunlu** |
+| **Zorunlu veli onay kutusu** | **Yok** | **Yok** |
 
-MEB kendi aydınlatma metninde dayanağı açıkça yazıyor: *"kanunlarda öngörülmesi"*
-ve *"bir hakkın tesisi/korunması"*. Yani okulizyon izin istemiyor değil —
-**kanun onun yerine izin veriyor.** Bu uygulamanın böyle bir kanuni dayanağı
-yok; bu yüzden aradaki fark "eksiklik" değil, **statü farkı**.
+**Sonuç:** İkisi de veli izni *kutusu* istemiyor. İkisi de aydınlatma metni
+yayınlamak zorunda. Okulizyon bunu `orbimsoft.com/gizliliksozlesmeleri` altında
+yapıyor; bu uygulama `site/gizlilik.html` ile yapıyor.
 
-### 6.3 Peki pratikte ne gerekiyor? (C yolu)
+### 6.3 Okulizyon'un gizlilik metninde ne var? (ölçülmüş)
 
-Kullanıcı C yolunu seçti: ücretsiz, reklamsız, kişisel kullanım. Bu durumda:
+OrbimSoft gizlilik politikası (son güncelleme 14.03.2017) şunları istiyor:
+ad, soyad, il, ilçe, okul adı, **cinsiyet**, **doğum tarihi**, **cep telefonu**,
+e-posta, sınav şifresi. Ve açıkça yazıyor: *"İstenmiş olan bu bilgiler
+uygulamanın hazırlanmış olduğu yayınevinin sınav sistemine aktarılır."*
 
-| Yükümlülük | Gerekli mi? | Neden |
+**Yani Okulizyon veli izni istemiyor ama bu uygulamadan çok daha fazla kişisel
+veri istiyor.** Kullanıcının sezgisi ("demek ki gerekmiyor") doğru sonuca
+götürüyor; yanlış olan tek şey "onlarda hiçbir yükümlülük yok" varsayımı.
+
+### 6.4 Peki bizde pratikte ne gerekiyor? (C yolu)
+
+| Yükümlülük | Gerekli mi? | Nasıl karşılandı |
 |---|---|---|
-| Aydınlatma (m.10) | **Evet** | Her veri sorumlusu için zorunlu — "devam ederek kabul" ile karşılanır |
-| Velinin bilgilendirilmesi | **Evet** | 18 altı kullanıcının velisi bilmeli |
-| Zorunlu onay kutusu | **Hayır** | v114'te kaldırıldı; kanıt değeri yoktu |
-| VERBİS | **Hayır** | 50 çalışan / 100 M TL eşiğinin altında |
-| Açık rıza (bildirim dışında) | **Hayır** | m.5/2-c ve m.5/2-f yeterli |
+| Aydınlatma metni (m.10) | **Evet** | `site/gizlilik.html` + "devam ederek kabul" |
+| Veli bilgilendirmesi (18 altı) | **Evet** | Metin §9 + opsiyonel beyan |
+| Zorunlu onay kutusu | **Hayır** | v114'te kaldırıldı — kanıt değeri yoktu |
+| VERBİS kaydı | **Hayır** | 50 çalışan / 100 M TL eşiğinin altında |
+| Açık rıza | **Hayır** | m.5/2-c ve m.5/2-f yeterli |
 
-**Sonuç:** Kullanıcının sezdiği şey doğru — uygulama, okulizyonun istemediği
-şeyi **istemiyor**. Tek fark: okulizyonun arkasında kanun var, bunun arkasında
-aydınlatma metni var.
+### 6.5 Ayrı ve daha büyük risk: otomasyon yasağı
+
+Bu, veli izni tartışmasından **bağımsız** bir konudur ve söylenmesi gerekir:
+
+`supabase/functions/okulizyon-cek` fonksiyonu, kullanıcının Okulizyon
+kullanıcı adı/şifresiyle `okulizyon.com/ajax/ogrencigiris.php` adresine
+**otomatik istek** atıyor. MEB'in 2026 tarihli yazısı okullara *"yetkisiz
+yazılım, otomasyon sistemi, veri çekme araçları ve botlar"* kullanımını
+yasaklıyor; yetkisiz erişimde idari ve hukuki süreç başlatılacağı belirtiliyor.
+
+| Risk | Açıklama |
+|---|---|
+| Hesabın kapatılması | Okulizyon tespit ederse kullanıcının okul hesabını kapatabilir |
+| Hizmet şartları | Okulizyon kullanım koşullarında otomatik erişim yasağı olabilir |
+| Sorumluluk | Şifreyi **kullanıcı** veriyor; sorumluluk önce ona, sonra geliştiriciye |
+
+**Azaltma:** Çekim yalnız kullanıcı **açıkça isterse** ve kendi şifresiyle
+yapılıyor; şifre sunucuda saklanmıyor (v103'ten beri `state`e yazılmıyor).
+Yine de bu, "izin var" demek değildir — kullanıcıya **açıkça söylenmeli**.
 
 ## 7. Hukuki uyarı
 

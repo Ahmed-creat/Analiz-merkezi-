@@ -1,4 +1,4 @@
-const PWA_SURUM = "v116-iletisim";
+const PWA_SURUM = "v117-tek-akis";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -386,44 +386,129 @@ async function pushTeshisYaz() {
   }
 }
 
+/* v117 — KULLANICI: "hesap alanı ... daha profesyonel şekilde yap"
+   Tek form, iki sekme. Sekme değişince:
+     • başlık + alt yazı değişir
+     • ana düğmenin ETİKETİ ve YAPTIĞI İŞ değişir (data-act)
+     • şifre alanının autocomplete'i değişir (tarayıcı doğru davransın)
+   Böylece "hangi düğmeye basacağım" sorusu ortadan kalkıyor. */
+let AUTH_SEKME = "giris";
+
+function authSekmeCiz(sekme) {
+  AUTH_SEKME = sekme === "kayit" ? "kayit" : "giris";
+  const kayit = AUTH_SEKME === "kayit";
+  const m = document.getElementById("pwa-auth-modal");
+  const sec = function () { return m ? m.querySelectorAll(".pwa-auth-sekme") : []; };
+  const girisBtn = document.getElementById("pwa-tab-giris");
+  const kayitBtn = document.getElementById("pwa-tab-kayit");
+  const boya = function (b, secili) {
+    if (!b) return;
+    b.setAttribute("aria-selected", secili ? "true" : "false");
+    b.style.background = secili ? "var(--bg-elev,#fff)" : "transparent";
+    b.style.fontWeight = secili ? "700" : "600";
+    b.style.opacity = secili ? "1" : "0.7";
+    b.style.boxShadow = secili ? "0 1px 4px rgba(0,0,0,0.12)" : "none";
+  };
+  boya(girisBtn, !kayit);
+  boya(kayitBtn, kayit);
+  const baslik = document.getElementById("pwa-auth-baslik");
+  const alt = document.getElementById("pwa-auth-alt");
+  if (baslik) baslik.textContent = kayit ? "Hesap oluştur" : "Giriş yap";
+  if (alt) alt.textContent = kayit
+    ? "1 dakika sürer. Sonra adın, sınıfın ve okulun sorulur."
+    : "Verilerin buluta yedeklenir, cihaz değişse de kaybolmaz.";
+  const ana = document.getElementById("pwa-auth-ana");
+  if (ana) {
+    ana.textContent = kayit ? "Hesabı oluştur" : "Giriş yap";
+    ana.setAttribute("data-act", kayit ? "pwaAuthRegister" : "pwaAuthLogin");
+  }
+  const pass = document.getElementById("pwa-pass");
+  if (pass) pass.setAttribute("autocomplete", kayit ? "new-password" : "current-password");
+  const msg = document.getElementById("pwa-auth-msg");
+  if (msg) msg.textContent = "";
+}
+
 function buildAuthModal() {
   if (document.getElementById("pwa-auth-modal")) return;
   const m = document.createElement("div");
   m.id = "pwa-auth-modal";
   m.style.cssText = "position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(10,16,32,0.6);padding:16px;";
   m.innerHTML = `
-    <div style="width:100%;max-width:380px;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-        <div style="font-weight:800;font-size:18px;">Bulut Hesabı</div>
-        <button data-act="pwaAuthClose" id="pwa-auth-close" style="background:none;border:0;cursor:pointer;font-size:20px;line-height:1;color:inherit;">✕</button>
+    <div style="width:100%;max-width:400px;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:20px;padding:0;box-shadow:0 24px 60px rgba(0,0,0,0.35);overflow:hidden;">
+
+      <!-- v117 — KULLANICI: "hesap alanı... daha profesyonel şekilde yap"
+           Tek form + iki sekme. Önceden dört ayrı düğme (Giriş / Yeni Kayıt /
+           Şifremi unuttum / Google) alt alta duruyordu; öğrenci hangisinin
+           ne yaptığını ayırt edemiyordu. Artık rol seçimi EN ÜSTTE ve tek. -->
+      <div style="background:linear-gradient(135deg,#1D4ED8,#2563EB 55%,#38BDF8);padding:20px 20px 18px;color:#fff;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+          <div style="min-width:0;">
+            <div style="font-weight:800;font-size:19px;letter-spacing:-0.01em;line-height:1.25;" id="pwa-auth-baslik">Giriş yap</div>
+            <div style="font-size:12.5px;opacity:0.9;margin-top:4px;line-height:1.45;" id="pwa-auth-alt">Verilerin buluta yedeklenir, cihaz değişse de kaybolmaz.</div>
+          </div>
+          <button data-act="pwaAuthClose" id="pwa-auth-close" aria-label="Kapat"
+            style="background:rgba(255,255,255,0.18);border:0;color:#fff;cursor:pointer;font-size:15px;line-height:1;width:30px;height:30px;border-radius:50%;flex:0 0 auto;">✕</button>
+        </div>
       </div>
-      <div style="font-size:12.5px;opacity:0.75;margin-bottom:14px;">Giriş yapınca verilerin hesabına otomatik yedeklenir; başka cihazdan devam edebilirsin.</div>
-      <input id="pwa-email" type="email" inputmode="email" autocomplete="email" placeholder="E-posta (ör. ad@gmail.com)"
-        style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:10px;">
-      <input id="pwa-pass" type="password" autocomplete="current-password" placeholder="Şifre (en az 6 karakter)"
-        style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:12px;">
-      <button data-act="pwaAuthLogin" class="btn btn-primary w-full" style="margin-bottom:8px;font-weight:700;">Giriş Yap</button>
-      <button data-act="pwaAuthRegister" class="btn btn-ghost w-full" style="margin-bottom:6px;border:1px solid rgba(0,0,0,0.15);">Yeni Kayıt Oluştur</button>
-      <button data-act="pwaAuthReset" style="background:none;border:0;cursor:pointer;font-size:12.5px;opacity:0.8;color:inherit;text-decoration:underline;">Şifremi unuttum</button>
-      <div style="display:flex;align-items:center;gap:10px;margin:14px 0;opacity:0.4;font-size:12px;"><div style="flex:1;height:1px;background:currentColor;"></div>veya<div style="flex:1;height:1px;background:currentColor;"></div></div>
-      <!-- v114 — KULLANICI: "Google ile girişte devam ederek veri ve gizlilik
-           politikalarını kabul etmiş olursunuz yetmiyor mu"
-           Google'ın onay ekranı YALNIZ Google'ın kendi koşullarını kapsar;
-           bizim aydınlatma metnimizi göstermez. KVKK m.10 yükümlülüğü bize
-           ait olduğu için düğmenin hemen üstüne açık kabul satırı konur. -->
-      <div id="pwa-auth-onay" style="font-size:11.5px;line-height:1.5;opacity:0.82;margin:0 0 8px;text-align:center;">
-        Devam ederek <a href="./gizlilik.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;font-weight:600;">Aydınlatma Metni ve Gizlilik Politikası</a>'nı okuduğunu kabul etmiş olursun.
+
+      <div style="padding:18px 20px 20px;">
+
+        <!-- Sekme şeridi -->
+        <div role="tablist" style="display:flex;background:rgba(127,127,127,0.13);border-radius:11px;padding:3px;margin-bottom:16px;">
+          <button role="tab" id="pwa-tab-giris" class="pwa-auth-sekme" aria-selected="true"
+            style="flex:1;border:0;background:var(--bg-elev,#fff);color:inherit;font-weight:700;font-size:13px;padding:9px 6px;border-radius:9px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.12);">Giriş</button>
+          <button role="tab" id="pwa-tab-kayit" class="pwa-auth-sekme" aria-selected="false"
+            style="flex:1;border:0;background:transparent;color:inherit;font-weight:600;font-size:13px;padding:9px 6px;border-radius:9px;cursor:pointer;opacity:0.7;">Yeni hesap</button>
+        </div>
+
+        <label for="pwa-email" style="display:block;font-size:11.5px;font-weight:700;letter-spacing:0.03em;opacity:0.72;margin-bottom:5px;">E-POSTA</label>
+        <input id="pwa-email" type="email" inputmode="email" autocomplete="email" placeholder="ad@gmail.com"
+          style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:12px;">
+
+        <label for="pwa-pass" style="display:block;font-size:11.5px;font-weight:700;letter-spacing:0.03em;opacity:0.72;margin-bottom:5px;">ŞİFRE</label>
+        <input id="pwa-pass" type="password" autocomplete="current-password" placeholder="En az 6 karakter"
+          style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:6px;">
+
+        <div style="text-align:right;margin-bottom:14px;">
+          <button data-act="pwaAuthReset" style="background:none;border:0;cursor:pointer;font-size:12px;opacity:0.75;color:inherit;text-decoration:underline;padding:2px;">Şifremi unuttum</button>
+        </div>
+
+        <!-- TEK ana düğme: sekme neyse onu yapar -->
+        <button id="pwa-auth-ana" data-act="pwaAuthLogin" class="btn btn-primary w-full" style="font-weight:700;font-size:14.5px;padding:12px;">Giriş yap</button>
+
+        <div style="display:flex;align-items:center;gap:10px;margin:16px 0 14px;opacity:0.35;font-size:11.5px;"><div style="flex:1;height:1px;background:currentColor;"></div>VEYA<div style="flex:1;height:1px;background:currentColor;"></div></div>
+
+        <button data-act="pwaAuthGoogle" class="btn btn-ghost w-full" style="border:1px solid rgba(0,0,0,0.15);font-weight:600;">
+          <svg width="16" height="16" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+          Google ile devam et
+        </button>
+        <div id="pwa-auth-google-not" style="font-size:11.5px;margin-top:8px;color:#B45309;line-height:1.4;"></div>
+        <div id="pwa-auth-msg" role="status" aria-live="polite" style="font-size:12.5px;margin-top:12px;min-height:16px;line-height:1.45;"></div>
+
+        <div id="pwa-auth-onay" style="font-size:11px;line-height:1.55;opacity:0.72;margin-top:14px;padding-top:13px;border-top:1px solid rgba(127,127,127,0.22);text-align:center;">
+          Devam ederek <a href="./gizlilik.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;font-weight:600;">Aydınlatma Metni ve Gizlilik Politikası</a>'nı okuduğunu kabul etmiş olursun.
+        </div>
       </div>
-      <button data-act="pwaAuthGoogle" class="btn btn-ghost w-full" style="border:1px solid rgba(0,0,0,0.15);font-weight:600;">
-        <svg width="16" height="16" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
-        Google ile devam et
-      </button>
-      <div id="pwa-auth-google-not" style="font-size:11.5px;margin-top:8px;color:#B45309;line-height:1.4;"></div>
-      <div id="pwa-auth-msg" style="font-size:12.5px;margin-top:10px;min-height:16px;"></div>
     </div>`;
+
   /* v108 — kullanıcı: "Uygulamaya ilk girişte direk kayıt/giriş ekranı açılsın."
      Giriş yoksa pencere ZORUNLUDUR: çarpı ve arka plana tıklama kapatmaz. */
   try { sifreGozleriKur(m); } catch (e) { console.warn("Şifre gözü:", e); }
+  /* v117 — sekme düğmeleri */
+  try {
+    const gb = m.querySelector("#pwa-tab-giris");
+    const kb = m.querySelector("#pwa-tab-kayit");
+    const klavye = function (b, hedef) {
+      if (!b) return;
+      b.addEventListener("click", function () { authSekmeCiz(hedef); });
+      b.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); authSekmeCiz(hedef); }
+      });
+    };
+    klavye(gb, "giris");
+    klavye(kb, "kayit");
+    authSekmeCiz("giris");
+  } catch (e) { console.warn("Sekme:", e); }
   m.addEventListener("click", (e) => { if (e.target === m && !window.__amAuthZorunlu) closeAuthModal(); });
   document.body.appendChild(m);
 }
@@ -438,6 +523,7 @@ function openAuthModal() {
     authMsgYaz("Giriş şu an kullanılamıyor. İnternet bağlantını kontrol edip tekrar dene.", true);
     try { cfgMissing(); } catch (e) {}
   }
+  try { authSekmeCiz(AUTH_SEKME); } catch (e) { /* */ }
   m.style.display = "flex";
   googleHazirMi().then(hazir => {
     const b = m.querySelector('[data-act="pwaAuthGoogle"]');
@@ -460,6 +546,9 @@ function closeAuthModal() {
   const m = document.getElementById("pwa-auth-modal");
   if (m) m.style.display = "none";
   window.__amAuthZorunlu = false;
+  /* v117 — Giriş penceresi kapandı: sıra bilgi formunda. Tek katman kuralı
+     gereği panel burada devralınır (üst üste binme olmaz). */
+  setTimeout(function () { try { kurulumAkisi(); } catch (e) { /* */ } }, 350);
 }
 /* Zorunlu giriş: kapatma yolu yok — hesabı olan giriş yapar, olmayan kaydolur. */
 function authZorunluAc() {
@@ -1289,11 +1378,31 @@ function kurulumBulutBekle(azamiMs) {
   });
 }
 
+/* v117 — KULLANICI: "Uygulamaya ilk girildiğinde bilgi formu hemen üstünde de
+   hesap alanı çıkıyor. Bunları daha profesyonel şekilde yap."
+   SORUN: oturum yokken giriş penceresi (z-index 9999) açıkken, oturum
+   uygulandığı anda kurulum paneli (yine z-index 9999) DOM'a ekleniyordu.
+   İki tam ekran katman üst üste biniyor, alttaki forma erişilemiyordu.
+   ÇÖZÜM: tek kapı. Giriş/kayıt penceresi açıkken kurulum paneli DOM'a hiç
+   eklenmez; giriş penceresi kapandığında kurulumAkisi() yeniden çağrılır. */
+function girisPaneliAcikMi() {
+  const m = document.getElementById("pwa-auth-modal");
+  if (!m) return false;
+  const g = m.style && m.style.display;
+  return g !== "none" && g !== "";
+}
+
 async function kurulumAkisi() {
   try {
     if (!(await kurulumGerekli())) return false;
+    /* Tek katman kuralı: hesap penceresi açıkken bilgi formu gösterilmez. */
+    if (girisPaneliAcikMi()) return false;
     kurulumBulutBekle(6000).then(function () {
-      try { if (!document.getElementById("am-kurulum")) kurulumPaneli(); } catch (e) { console.warn("Kurulum paneli:", e); }
+      try {
+        if (document.getElementById("am-kurulum")) return;
+        if (girisPaneliAcikMi()) return; // bekleme sırasında giriş açıldıysa yine girme
+        kurulumPaneli();
+      } catch (e) { console.warn("Kurulum paneli:", e); }
     });
     return true;
   } catch (e) { return false; }
