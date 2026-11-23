@@ -588,6 +588,42 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("metin hâlâ veli kutusu vaat etmiyor", !/izin verilmeden hesap etkinleştirilmez/.test(G));
   }
 
+  console.log("\n== 12) 72 SAAT + STANDART SÖZLEŞME rehberleri (v119) ==");
+  {
+    /* KULLANICI: "72 saatlik ihlal bildirimi ve Standart sözleşme ne niye nasıl"
+       İkisi de dosya olarak yazılmalı ve DOĞRU kanalı göstermeli. */
+    const fs = require("fs");
+    const I = fs.readFileSync(require("path").join(__dirname, "..", "docs/IHLAL-72-SAAT-PLANI.md"), "utf8");
+    const S = fs.readFileSync(require("path").join(__dirname, "..", "docs/STANDART-SOZLESME-REHBERI.md"), "utf8");
+
+    // --- 72 saat ---
+    ok("72 saat planı var", I.length > 4000);
+    ok("ne/neden/nasıl üçlüsü ayrı", /## 1\. NE\?/.test(I) && /## 2\. NİYE\?/.test(I) && /## 3\. NASIL\?/.test(I));
+    ok("resmî çevrimiçi form adresi", /ihlalbildirim\.kvkk\.gov\.tr/.test(I));
+    ok("resmî e-posta kanalı", /ihlalbildirimi@kvkk\.gov\.tr/.test(I));
+    ok("ALO 198 yardım hattı", /ALO 198/.test(I));
+    ok("2019/10 Kurul kararı dayanak", /2019\/10/.test(I));
+    ok("güvenlik kodu uyarısı var", /GÜVENLİK KODU/.test(I));
+    ok("forma kişisel veri yazılmaz uyarısı", /kişisel veriyi bu forma/.test(I) || /kişisel veri YAZMA/.test(I));
+    ok("takip bildirimi anlatılıyor", /Takip bildirimi|takip bildirimi/.test(I));
+    ok("72 saat çözme süresi değil uyarısı", /çözmek.*değil/.test(I));
+
+    // --- standart sözleşme ---
+    ok("standart sözleşme rehberi var", S.length > 5000);
+    ok("4 tip tablosu var", /Veri sorumlusu → veri sorumlusu/.test(S) && /Veri sorumlusu → veri işleyen/.test(S));
+    ok("doğru tip seçilmiş (sorumlu→işleyen)", /SEN BUNU SEÇECEKSİN/.test(S));
+    ok("üç kademe anlatılıyor", /YETERLİLİK KARARI/.test(S) && /UYGUN GÜVENCE/.test(S) && /ARIZİ/.test(S));
+    ok("5 iş günü + hangi andan", /5 iş günü/.test(S) && /[İi]mzaların tamamlandığı/.test(S));
+    ok("bildirim modülü adresi", /standartsozlesme\.kvkk\.gov\.tr/.test(S));
+    ok("GDPR DPA ile farkı tabloda", /GDPR DPA/.test(S));
+    ok("Kurul 2024/959 dayanak", /2024\/959/.test(S));
+    ok("yönetmelik m.14/5 dayanak", /14\/5/.test(S));
+    ok("sağlayıcı imzalamazsa senaryosu", /Senaryo C|Hiç cevap vermez/.test(S));
+    ok("self-host alternatifi dürüstçe yazılı", /self-host/i.test(S));
+    ok("Supabase için doldurulmuş tablo", /Supabase Inc\./.test(S) && /Frankfurt/.test(S));
+    ok("Vercel için doldurulmuş tablo", /Vercel Inc\./.test(S) && /Walnut/.test(S));
+  }
+
   console.log("\n" + "─".repeat(60));
   if (kalan) {
     console.log("\n✗ " + kalan + " kontrol kaldı (" + gecen + " geçti)");

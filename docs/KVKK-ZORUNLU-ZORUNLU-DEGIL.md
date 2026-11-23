@@ -147,8 +147,8 @@ Veli izni konusunda ikisi de aynı noktada — kutu yok.
 
 | # | İş | Süre | Zorunlu mu? |
 |---|---|---|---|
-| 1 | Standart sözleşme (Supabase + Vercel) + 5 iş günü bildirim | ~1 gün | **EVET** |
-| 2 | 72 saatlik ihlal müdahale planı (1 sayfa) | 30 dk | **EVET** |
+| 1 | Standart sözleşme (Supabase + Vercel) + 5 iş günü bildirim | ~1 gün | **EVET** → `docs/STANDART-SOZLESME-REHBERI.md` |
+| 2 | 72 saatlik ihlal müdahale planı | hazır | **EVET** → `docs/IHLAL-72-SAAT-PLANI.md` |
 | 3 | Gizlilik metninde §6'yı güncel tut | 5 dk | EVET |
 | 4 | Gerçek veli izni (veliye e-posta doğrulaması) | ~1 hafta | Hayır |
 | 5 | VERBİS | — | **Hayır — yapma** |
