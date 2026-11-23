@@ -624,6 +624,35 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("Vercel için doldurulmuş tablo", /Vercel Inc\./.test(S) && /Walnut/.test(S));
   }
 
+  console.log("\n== 13) ÖLÇEK GERÇEĞİ — 6 kullanıcı (v120) ==");
+  {
+    /* KULLANICI: "Yav ben bunu globale sürmeyeceğim ki, ve sözleşme falan
+       abartı gibi emin misin?"
+       HAKLIYDI: ilk reçete kurumsal ölçek içindi. Belge artık ölçekle hizalı
+       ve standart sözleşme 'bugün yapılacak' listesinden ÇIKARILDI. */
+    const fs = require("fs");
+    const K = fs.readFileSync(require("path").join(__dirname, "..", "docs/KVKK-ZORUNLU-ZORUNLU-DEGIL.md"), "utf8");
+    const S = fs.readFileSync(require("path").join(__dirname, "..", "docs/STANDART-SOZLESME-REHBERI.md"), "utf8");
+
+    ok("ölçek bölümü var", /GERÇEK ÖLÇEK/.test(K) && /6 kullanıcı/.test(K));
+    ok("standart sözleşme bugünkü listeden çıkarıldı",
+      /teorik — .*kimse sormuyor|teorik/.test(K));
+    ok("bugünkü iş listesi 3 madde ve 1 saat", /3 iş, toplam 1 saat/.test(K));
+    ok("2FA en ucuz sigorta olarak yazılı", /2FA/.test(K));
+    ok("eşikler yazılı (100 kullanıcı/duyuru/para)", /100.*geçerse/.test(K));
+    ok("self-host alternatifi duruyor", /self-host/.test(K));
+
+    // Rehber artık "görev" değil "referans"
+    ok("rehber 'bugün yapılacak değil' diyor", /Bugün yapılacaklar listesinde DEĞİL/.test(S));
+    ok("ne zaman açılacağı yazılı", /kullanıcı ~100/.test(S));
+    ok("'globale sürmemek' bölümü var", /globale sürmeyeceğim/.test(S));
+    ok("m.9 kişi sayısına bakmaz dürüstçe yazılı",
+      /kişi sayısına bakmaz/.test(S));
+    ok("noindex önerisi var", /noindex/.test(S));
+    ok("'yayınlamıyorum != kimse bilmiyor' dürüstlüğü",
+      /kimse bilmiyor/.test(S));
+  }
+
   console.log("\n" + "─".repeat(60));
   if (kalan) {
     console.log("\n✗ " + kalan + " kontrol kaldı (" + gecen + " geçti)");

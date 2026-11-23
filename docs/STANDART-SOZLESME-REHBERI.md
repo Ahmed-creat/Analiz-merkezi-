@@ -1,5 +1,20 @@
 # Standart sözleşme — NE / NİYE / NASIL
 
+> ## ⚠️ Bunu ne zaman okuyacaksın?
+>
+> **Bugün yapılacaklar listesinde DEĞİL.** Canlı ölçüm: **6 kullanıcı**,
+> site arama motorlarında yok, para kazanmıyor. Bu ölçekte bu dosya
+> **referanstır, görev değil**.
+>
+> **Aç** — şu üçünden biri olunca:
+> kullanıcı ~100'ü geçerse · uygulama herkese duyurulursa · para kazanırsa.
+>
+> **Sebep:** Kural kişi sayısına bakmaz — m.9 her ölçekte geçerli. Ama
+> denetim ölçek ve şikâyetle gelir. 6 kullanıcılı ücretsiz bir uygulamada
+> sözleşme kovalamak, 1 gün harcayıp büyük ihtimalle **cevap almamak**
+> demek (sağlayıcılar küçük gerçek kişilere bu metni imzalamıyor).
+> En doğru harcama: 2FA aç, adresi kaydet, işi büyüyünce yap.
+
 **En önemli gerçek:** Bu, **yurt dışındaki şirkete değil, KVK Kurumu'na**
 gönderilir. Supabase ve Vercel sana "DPA imzalarız" der ama **standart
 sözleşme Türkçe metindir ve Kurum'a bildirilir.** İkisi ayrı şeydir.
@@ -239,7 +254,39 @@ Bu, "standart sözleşme kovalamak" ile "sunucuyu taşımak" arasında bir terci
 
 ---
 
-## 6. Dayanaklar
+## 6. "Ben bunu globale sürmeyeceğim" — bu ne değiştirir?
+
+### Değiştirmediği şey
+
+KVKK m.9 **kişi sayısına bakmaz.** Yurt dışı sunucu kullanıyorsan,
+1 kullanıcıda da teknik olarak standart sözleşme konusudur.
+"Globale sürmüyorum" bir **muafiyet değil**, sadece **denetim olasılığını**
+düşüren bir gerçektir.
+
+### Değiştirdiği şey — pratikte çok şey
+
+| Soru | Cevap |
+|---|---|
+| Kim denetler? | Şikâyet, ihlal veya büyük veri hacmi olan yere gider |
+| Ben kimim? | 6 kullanıcılı, reklamsız, para kazanmayan, arama motorunda adı geçmeyen bir uygulama |
+| Kimse bana neden sorsun? | **Neredeyse kimse** |
+| Yine de yapılması gereken | Aydınlatma + güvenlik + olay olursa bildirim |
+
+### "Globale sürmemek" nasıl korunur (istersen)
+
+- Mağazaya (App Store / Play) **koymamak** — koyarsan küresel dağıtım olur
+- Bağlantıyı **yalnız tanıdıklarına** göndermek
+- Arama motorlarına **kapalı** tutmak: `<meta name="robots" content="noindex">`
+  eklemek (şu an ana sayfada yok — istersen ekleyebilirim, söyle)
+- Okul/öğretmen duyurusu yapmamak
+
+> **Dürüst not:** Teknik olarak site herkese açık bir URL'de duruyor.
+> "Yayınlamıyorum" ile "kimse bilmiyor" aynı şey değil. Ama bu ölçekte
+> ikisi arasındaki fark, pratikte kimsenin kapını çalmamasıdır.
+
+---
+
+## 7. Dayanaklar
 
 - KVKK m.9 (7499 s. Kanun ile değişik — yürürlük 1.6.2024)
 - KVKK m.9/4-c — standart sözleşme bir uygun güvencedir

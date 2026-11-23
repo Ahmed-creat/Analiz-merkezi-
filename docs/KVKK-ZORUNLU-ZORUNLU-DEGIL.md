@@ -143,15 +143,59 @@ Veli izni konusunda ikisi de aynı noktada — kutu yok.
 
 ---
 
-## 5. Yapılacaklar (öncelik sırasıyla)
+## 5. Yapılacaklar — GERÇEK ÖLÇEK (canlı: 6 kullanıcı)
 
-| # | İş | Süre | Zorunlu mu? |
+> **Sürüm 2 — düzeltme.** Önceki hâl küçük bir kişisel uygulamaya
+> kurumsal ölçek reçetesi yazıyordu. Ölçüm: **canlıda 6 kullanıcı**,
+> site arama motorlarında yok, para kazanmıyor. Buna göre yeniden yazıldı.
+
+### 5.1 Ölçek tablosu — hangi yükümlülük ne zaman gerçekten ısırır?
+
+| Yükümlülük | 6 kullanıcı (bugün) | 500 kullanıcı | 5.000+ / denetim |
 |---|---|---|---|
-| 1 | Standart sözleşme (Supabase + Vercel) + 5 iş günü bildirim | ~1 gün | **EVET** → `docs/STANDART-SOZLESME-REHBERI.md` |
-| 2 | 72 saatlik ihlal müdahale planı | hazır | **EVET** → `docs/IHLAL-72-SAAT-PLANI.md` |
-| 3 | Gizlilik metninde §6'yı güncel tut | 5 dk | EVET |
-| 4 | Gerçek veli izni (veliye e-posta doğrulaması) | ~1 hafta | Hayır |
-| 5 | VERBİS | — | **Hayır — yapma** |
+| Aydınlatma metni (m.10) | ✅ **hep gerekli** | ✅ | ✅ |
+| Veri güvenliği (m.12/1) | ✅ **hep gerekli** | ✅ | ✅ |
+| Standart sözleşme (m.9) | ⚠️ teorik — **kimse sormuyor** | risk başlar | **gerçek** |
+| İhlal bildirimi (m.12/5) | ⚠️ olay olursa, o gün | o gün | o gün |
+| VERBİS | ❌ muaf | ❌ muaf | ❌ muaf |
+
+**Neden 6 kullanıcıda standart sözleşme "teorik"?**
+Kurul ölçek bakmaz — kural teknik olarak 1 kullanıcıda da geçerli.
+Ama denetim kime gider? Şikâyet / ihlal / büyük veri hacmi olan yere gider.
+6 kullanıcılı, reklamsız, para kazanmayan, arama motorunda adı geçmeyen
+bir uygulama için bu işin öncelik sırası **en sonda**.
+
+### 5.2 Bugün yapılacak: 3 iş, toplam 1 saat
+
+| # | İş | Süre | Neden |
+|---|---|---|---|
+| 1 | Supabase + Vercel + GitHub'da **2FA aç** | 20 dk | En ucuz sigorta. 6 ihlal tipinin 3'ünü baştan önler |
+| 2 | `ihlalbildirim.kvkk.gov.tr` adresini **tarayıcıya kaydet** | 2 dk | Olay anında arama yapma |
+| 3 | Gizlilik metnini **olduğu gibi bırak** | — | Zaten güncel ve dürüst |
+
+**Bu kadar.** Standart sözleşme kovalamak bugün için doğru harcama değil.
+
+### 5.3 Ne zaman standart sözleşmeye geçeceksin?
+
+Şu üçünden **biri** olunca:
+
+- Kullanıcı sayısı **~100'ü** geçerse
+- Uygulama **herkese açık duyurulursa** (sosyal medya, okul, mağaza)
+- **Para kazanmaya** başlarsa (abonelik, reklam, bağış)
+
+O gün `docs/STANDART-SOZLESME-REHBERI.md`'yi aç — hazır.
+
+> **Not:** Supabase/Vercel'e yazacağın sözleşme talebi büyük ihtimalle
+> cevapsız kalır (gerçek kişi + 6 kullanıcı). Cevap gelmezse o iş zaten
+> ilerlemiyor demektir. 1 gün harcayıp 0 sonuç almak yerine, işi
+> eşik geçilince yap.
+
+### 5.4 Tercih edersen: sunucuyu yurt içine al
+
+Supabase'i **self-host** edip Türkiye'de bir VPS'e kurarsan yurt dışı
+aktarım **hiç doğmaz** → m.9 tamamen devre dışı. Maliyet ~5 $/ay.
+6 kullanıcı için gereksiz; ama ileride tek seferde sorunu bitirmek istersen
+bu, sözleşme kovalamaktan daha kesin bir çözüm.
 
 ---
 
