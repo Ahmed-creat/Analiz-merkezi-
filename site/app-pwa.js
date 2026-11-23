@@ -1,4 +1,4 @@
-const PWA_SURUM = "v118-kvkk-tablo";
+const PWA_SURUM = "v120-kasa-cihaz";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1730,6 +1730,9 @@ async function doSignOut() {
   window.__bulutYuklenenKullanici = null;
   // 2) Bu cihazdaki kişisel kayıtları sil (denemeler, hafıza, bekleyen
   //    Okulizyon soruları, Okulizyon adı/şifresi...).
+  /* v120 — bu cihazdaki kasa anahtarı da silinir: başka hesap/kişi
+     bu tarayıcıyı açtığında veriyi okuyamasın (v51 felsefesi). */
+  try { KASA.kasaKilitle(); } catch (e) { /* */ }
   try { if (typeof window.__cikisYerelTemizle === "function") window.__cikisYerelTemizle(); } catch (e) { console.warn("Yerel temizlik:", e); }
   setAuthLabel(false);
   toast("Çıkış yapıldı. Bu cihazdaki kayıtlar silindi — tekrar giriş yapınca geri gelir.", "success");
@@ -1955,7 +1958,13 @@ async function oturumUygula(session) {
   setTimeout(function () {
     try {
       if (!currentUser || !KASA.kasaVarMi() || KASA.kasaAcikMi()) return;
-      kasaUyarisiGoster("kilitli");
+      /* v120 — TUZ HATASI DÜZELTİLDİ. Eskiden kasaUyarisiGoster("kilitli")
+         tuz OLMADAN çağrılıyordu; "Kilidi aç" her basışta
+         "Kasa kaydı eksik (tuz yok)." veriyordu (kasa.js eski satır 94).
+         Artık tuz cihazda saklanıyor; yoksa pencereyi tuzsuz açmıyoruz. */
+      const tuz = (typeof KASA.tuzuYereldenOku === "function" ? KASA.tuzuYereldenOku() : "") || "";
+      if (!tuz) return;   // tuz bulunamadı → aşağıdaki bulut akışı zaten pencereyi açar
+      kasaUyarisiGoster("kilitli", tuz);
     } catch (e) { /* */ }
   }, 3500);
   // v70 — öğrenen sözlüğü (kazanim_konu_cache) yükle: aynı kazanım cümlesi
@@ -1967,6 +1976,10 @@ async function oturumUygula(session) {
      yüklendikten SONRA sormak zorunda; yoksa 1. adım gereksiz açılır. */
   window.__bulutYuklemeBitti = false;
   if (typeof state === "undefined") return; // state henüz hazır değil (index.html yükleniyor)
+  /* v120 — bu cihazda kayıtlı anahtar varsa ŞİFRE SORMADAN aç.
+     Bulut kaydı çözülmeden önce çalışmalı: yoksa "kilitli" penceresi
+     gereksiz açılır. Başarısızsa sessizce geç (yeni cihaz = normal akış). */
+  try { await kasaCihazdanSessizAc(); } catch (e) { /* */ }
   /* v103 — GÜVENLİK: eski sürümler Okulizyon şifresini state'e (→ buluta) düz
      metin yazıyordu. Yeni sürüm saklamıyor; kayıt yüklendiğinde kalıntıyı sil. */
   try { if (state.settings && state.settings.okulizyon) delete state.settings.okulizyon.sifre; } catch (e) { /* */ }
@@ -2078,7 +2091,7 @@ let sonUzakYazma = 0;       // sunucudaki updated_at (ms)
    yeni (zarflı) kayıt → kasa açıksa çözülür, kapalıysa KİLİTLİ sayılır.
    ============================================================ */
 const KASA_MESAJ = {
-  kilitli: "Buluttaki kaydın şifreli. Açmak için giriş şifreni bir kez gir — veri sunucuda çözülmüyor, bu cihazda açılıyor.",
+  kilitli: "Buluttaki kaydın şifreli. Açmak için giriş şifreni bir kez gir — veri sunucuda çözülmüyor, bu cihazda açılıyor. Bu cihazda bir kez girdikten sonra bir daha sorulmaz.",
   acilmadi: "Giriş şifresi bu kaydı açamadı. Şifreyi kontrol et ya da 12 kelimelik anahtarını kullan.",
   kapali: "Kilit kapalı: veri sunucuda DÜZ duruyor. Profil → bölümünden şifre kur."
 };
@@ -2175,6 +2188,23 @@ window.__kasa = {
 };
 
 function bulutZaman(iso) { const t = iso ? Date.parse(iso) : NaN; return isNaN(t) ? 0 : t; }
+
+/* v120 — SESSİZ AÇILIŞ: bu cihazda kayıtlı kasa anahtarı varsa şifre
+   SORMADAN aç (WhatsApp/Signal/Bitwarden da böyle yapar). Yalnız bu
+   cihazda daha önce doğru şifre girilmişse çalışır; yeni cihazda yoktur. */
+async function kasaCihazdanSessizAc() {
+  try {
+    if (!KASA || typeof KASA.cihezdanAc !== "function") return false;
+    if (KASA.kasaAcikMi()) return true;
+    const acildi = await KASA.cihezdanAc();
+    if (acildi) {
+      try { renderProfileModal(); } catch (e) { /* */ }
+      return true;
+    }
+  } catch (e) { /* */ }
+  return false;
+}
+window.__kasaSessizAc = kasaCihazdanSessizAc;
 
 async function bulutaYaz(sessiz) {
   if (!sb || !currentUser) return { ok: false, neden: "oturum yok" };

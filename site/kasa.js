@@ -34,8 +34,30 @@
 const KASA_SURUM = 1;
 const KASA_TUR = 310000;   // PBKDF2-SHA256 tur sayısı (kaba kuvveti pahalı yapar)
 const KASA_IPUCU = "am_kasa_ipucu_v1";   // cihazda: kasa kurulu mu (anahtar DEĞİL)
+const KASA_TUZ_YEREL = "am_kasa_tuz_v1"; // cihazda: bu hesabın tuzu (GİZLİ DEĞİL)
 
-let _anahtar = null;        // CryptoKey — yalnız bellekte
+/* v120 — CİHAZDA KALICI ANAHTAR (IndexedDB)
+   ------------------------------------------------------------
+   KULLANICI: "İyi de güncel sistemlerde şifreli bilgi varsa onlarda
+   mı her gün şifre yazıyor?" → HAYIR. WhatsApp/Signal/Bitwarden de
+   anahtarı cihazda tutar; sunucu yine göremez.
+
+   ÖNCEKİ HATA (v106): anahtar yalnız bellekteydi (_anahtar). Sayfa her
+   yenilendiğinde şifre soruluyordu; buna karşılık cihazdaki localStorage
+   kaydı DÜZ metindi. Yani en yüksek sürtünme + en düşük koruma.
+
+   ŞİMDİ: anahtar cihazda IndexedDB'de durur ama AÇIK hâlde değil:
+     • `cihaz` = AES-GCM anahtarı, extractable:false → JS kodu DIŞARI
+       ÇIKARAMAZ (tarayıcı vermez).
+     • `sarili` = kasa anahtarının o cihaz anahtarıyla sarılmış hâli.
+   Sayfa yenilenince `cihezdanAc()` açar; şifre SORULMAZ.
+   Çıkış yapınca / "Kilitle" denince cihaz anahtarı SİLİNİR.
+   ------------------------------------------------------------ */
+const IDB_AD = "am-kasa-v1";
+const IDB_DEPO = "kasa";
+const IDB_KAYIT = "anahtar";
+
+let _anahtar = null;        // CryptoKey — bellekte (sayfa açıkken)
 let _tuzB64 = "";           // bu hesabın tuzu (kayıttan gelir)
 let _anahtarTuz = "";       // anahtarın türetildiği tuz (önbellek için)
 
@@ -53,6 +75,130 @@ function b64den(s) {
   return b;
 }
 function rastgele(n) { return crypto.getRandomValues(new Uint8Array(n)); }
+
+/* ---------- cihaz deposu (IndexedDB) ---------- */
+function idbAc() {
+  return new Promise((coz, red) => {
+    try {
+      if (!globalThis.indexedDB) return red(new Error("indexedDB yok"));
+      const istek = indexedDB.open(IDB_AD, 1);
+      istek.onupgradeneeded = () => {
+        const db = istek.result;
+        if (!db.objectStoreNames.contains(IDB_DEPO)) db.createObjectStore(IDB_DEPO);
+      };
+      istek.onsuccess = () => coz(istek.result);
+      istek.onerror = () => red(istek.error || new Error("idb açılamadı"));
+    } catch (e) { red(e); }
+  });
+}
+function idbYaz(db, deger) {
+  return new Promise((coz, red) => {
+    try {
+      const t = db.transaction(IDB_DEPO, "readwrite");
+      t.objectStore(IDB_DEPO).put(deger, IDB_KAYIT);
+      t.oncomplete = () => coz(true);
+      t.onerror = () => red(t.error);
+    } catch (e) { red(e); }
+  });
+}
+function idbOku(db) {
+  return new Promise((coz, red) => {
+    try {
+      const t = db.transaction(IDB_DEPO, "readonly");
+      const i = t.objectStore(IDB_DEPO).get(IDB_KAYIT);
+      i.onsuccess = () => coz(i.result || null);
+      i.onerror = () => red(i.error);
+    } catch (e) { red(e); }
+  });
+}
+function idbSil(db) {
+  return new Promise((coz) => {
+    try {
+      const t = db.transaction(IDB_DEPO, "readwrite");
+      t.objectStore(IDB_DEPO).delete(IDB_KAYIT);
+      t.oncomplete = () => coz(true);
+      t.onerror = () => coz(false);
+    } catch (e) { coz(false); }
+  });
+}
+
+// Tuzu cihaza yaz (gizli değil; yalnız "hangi hesabın tuzu" bilgisi).
+function tuzuYereleYaz(tuzB64) {
+  try { localStorage.setItem(KASA_TUZ_YEREL, String(tuzB64 || "")); } catch (e) { /* */ }
+}
+function tuzuYereldenOku() {
+  try { return localStorage.getItem(KASA_TUZ_YEREL) || ""; } catch (e) { return ""; }
+}
+
+/* Cihazdaki kalıcı anahtarı aç: şifre SORULMADAN.
+   Dönüş: true = açıldı · false = bu cihazda kayıtlı anahtar yok */
+async function cihezdanAc() {
+  if (_anahtar) return true;
+  let db = null;
+  try {
+    db = await idbAc();
+    const kayit = await idbOku(db);
+    if (!kayit || !kayit.cihaz || !kayit.sarili) return false;
+    const ham = await crypto.subtle.decrypt(
+      { name: "AES-GCM", iv: b64den(kayit.iv) }, kayit.cihaz, b64den(kayit.sarili)
+    );
+    _anahtar = await crypto.subtle.importKey(
+      "raw", ham, { name: "AES-GCM", length: 256 }, true, ["encrypt", "decrypt"]
+    );
+    _tuzB64 = String(kayit.tuz || "");
+    _anahtarTuz = _tuzB64;
+    return true;
+  } catch (e) {
+    return false;   // bozuk/başka cihaz → şifre sorulur (veri kaybı yok)
+  } finally {
+    try { if (db) db.close(); } catch (e) { /* */ }
+  }
+}
+
+/* Açık anahtarı cihaza bağla (sayfa yenilenince şifre sorulmasın). */
+async function cihazaBagla(tuzB64) {
+  if (!_anahtar) return false;
+  let db = null;
+  try {
+    db = await idbAc();
+    /* Cihaz anahtarı: extractable FALSE → uygulama kodu bu anahtarı
+       okuyup dışarı gönderemez. Yalnız sar/çöz için kullanılır. */
+    const cihaz = await crypto.subtle.generateKey(
+      { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]
+    );
+    const ham = await crypto.subtle.exportKey("raw", _anahtar);
+    const iv = rastgele(12);
+    const sarili = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, cihaz, ham);
+    await idbYaz(db, { v: 1, tuz: String(tuzB64 || _tuzB64 || ""), cihaz, iv: b64(iv), sarili: b64(sarili) });
+    tuzuYereleYaz(tuzB64 || _tuzB64);
+    return true;
+  } catch (e) {
+    return false;   // IndexedDB yok (gizli sekme) → her açılışta şifre sorulur
+  } finally {
+    try { if (db) db.close(); } catch (e) { /* */ }
+  }
+}
+
+async function cihazBaginiKes() {
+  let db = null;
+  try {
+    db = await idbAc();
+    await idbSil(db);
+  } catch (e) { /* */ }
+  finally { try { if (db) db.close(); } catch (e) { /* */ } }
+  try { localStorage.removeItem(KASA_TUZ_YEREL); } catch (e) { /* */ }
+}
+
+/* Cihazda kayıtlı anahtar var mı? (şifre istemeden kontrol) */
+async function cihazdaAnahtarVarMi() {
+  let db = null;
+  try {
+    db = await idbAc();
+    const kayit = await idbOku(db);
+    return !!(kayit && kayit.cihaz && kayit.sarili);
+  } catch (e) { return false; }
+  finally { try { if (db) db.close(); } catch (e) { /* */ } }
+}
 
 async function anahtarTuret(sifre, tuzB64) {
   const taban = await crypto.subtle.importKey(
@@ -72,7 +218,12 @@ function kasaIsaretle() {
   try { localStorage.setItem(KASA_IPUCU, "1"); } catch (e) { /* */ }
 }
 function kasaAcikMi() { return !!_anahtar; }
-function kasaKilitle() { _anahtar = null; _anahtarTuz = ""; }
+/* v120 — "Kilitle" artık cihazdaki kalıcı anahtarı da siler; yoksa
+   sayfa yenilenince kasa kendiliğinden açılırdı (kilitleme anlamsız olurdu). */
+function kasaKilitle() {
+  _anahtar = null; _anahtarTuz = "";
+  try { cihazBaginiKes(); } catch (e) { /* */ }
+}
 
 // İLK KURULUM: yeni tuz üret, anahtarı türet. Kayıt bu tuzla şifrelenir.
 async function kasaKur(kasaSifresi) {
@@ -86,20 +237,30 @@ async function kasaKur(kasaSifresi) {
   _anahtar = await anahtarTuret(kasaSifresi, _tuzB64);
   _anahtarTuz = _tuzB64;
   kasaIsaretle();
+  /* v120 — anahtarı cihaza bağla: bu cihazda bir daha şifre sorulmaz. */
+  try { await cihazaBagla(_tuzB64); } catch (e) { /* */ }
   return { ok: true, tuz: _tuzB64 };
 }
 
-// VAR OLAN KASAYI AÇ: tuz kaydın içinden gelir (cihaz değişse de aynı).
+/* VAR OLAN KASAYI AÇ: tuz kaydın içinden gelir (cihaz değişse de aynı).
+   v120 — tuz verilmezse cihazda saklanan tuzu kullan. v106'daki hata,
+   pencere tuzu bilmeden açıldığı için HER SEFERİNDE çıkıyordu
+   (app-pwa.js:1958 tuzu geçmiyordu). Artık tuz cihazdan da gelir. */
 async function kasaAc(kasaSifresi, tuzB64) {
-  if (!tuzB64) return { ok: false, hata: "Kasa kaydı eksik (tuz yok)." };
-  if (_anahtar && _anahtarTuz === tuzB64) return { ok: true };
-  const a = await anahtarTuret(kasaSifresi, tuzB64);
+  let tuz = tuzB64 || _tuzB64 || tuzuYereldenOku();
+  if (!tuz && _anahtar) tuz = _anahtarTuz;   // anahtar zaten açıksa tuzu biliyoruz
+  if (!tuz) return { ok: false, hata: "Kasa kaydı henüz yüklenmedi. Bir saniye sonra tekrar dene." };
+  if (_anahtar && _anahtarTuz === tuz) return { ok: true };
+  const a = await anahtarTuret(kasaSifresi, tuz);
   // Doğrulama: şifre yanlışsa GCM çözme hata verir. Bunu çağıran taraf
   // (ilk kaydı çözmeye çalışarak) görür; burada yalnız anahtarı saklarız.
   _anahtar = a;
-  _tuzB64 = tuzB64;
-  _anahtarTuz = tuzB64;
+  _tuzB64 = tuz;
+  _anahtarTuz = tuz;
   kasaIsaretle();
+  tuzuYereleYaz(tuz);
+  /* v120 — doğru şifre girildi: anahtarı cihaza bağla, bir daha sorulmasın. */
+  try { await cihazaBagla(tuz); } catch (e) { /* */ }
   return { ok: true };
 }
 
@@ -175,6 +336,7 @@ async function kasaCozKurtarma(kurtarma, sarma) {
     _tuzB64 = sarma.t;
     _anahtarTuz = sarma.t;
     kasaIsaretle();
+    try { tuzuYereleYaz(sarma.t); await cihazaBagla(sarma.t); } catch (e) { /* */ }
     return { ok: true };
   } catch (e) {
     return { ok: false, hata: "Kurtarma anahtarı bu kasaya ait değil." };
@@ -186,4 +348,6 @@ export {
   kasaVarMi, kasaAcikMi, kasaKur, kasaAc, kasaKilitle,
   kasaSifrele, kasaCoz, zarfMi, zarfTuzu,
   kurtarmaUret, kasaSar, kasaCozKurtarma,
+  /* v120 — cihazda kalıcı anahtar (sayfa yenilenince şifre sorulmaz) */
+  cihezdanAc, cihazdaAnahtarVarMi, cihazBaginiKes, tuzuYereldenOku, tuzuYereleYaz,
 };
