@@ -135,3 +135,28 @@ begin
 exception when others then
   raise notice 'pg_cron kurulamadı (elle çalıştırılabilir): %', sqlerrm;
 end $$;
+
+-- ============================================================
+-- v122 — KRİTİK GÜVENLİK DÜZELTMESİ (supabase migration:
+--         v122_kritik_guvenlik_hesap_hareket)
+-- ------------------------------------------------------------
+-- SUPABASE UYARISI: auth_users_exposed
+-- "Kullanıcı verileri bir görünüm aracılığıyla ortaya çıkarılıyor."
+--
+-- SORUN: Aşağıdaki görünüm auth.users'a bağlı ve ACL'inde anon=arwdm
+-- vardı → giriş yapmamış herkes e-postaları okuyabiliyordu.
+--
+-- AYRICA: hesap_saklama_temizle / hesap_saklama_uyar SECURITY DEFINER
+-- + PUBLIC EXECUTE idi → anon anahtarıyla auth.users'tan kayıt
+-- SİLİNEBİLİRDİ. Uygulama bu fonksiyonları hiç çağırmıyor.
+--
+-- DÜZELTME (canlıya uygulandı ve ölçüldü):
+--   revoke all on public.hesap_hareket from public, anon, authenticated;
+--   grant select on public.hesap_hareket to service_role;
+--   revoke all on function public.hesap_saklama_temizle(boolean) from public, anon, authenticated;
+--   revoke all on function public.hesap_saklama_uyar(boolean)    from public, anon, authenticated;
+--
+-- KURAL: auth.* şemasına bağlı görünüm PUBLIC'e AÇILMAZ.
+--       SECURITY DEFINER fonksiyona anon/authenticated EXECUTE VERİLMEZ.
+-- Ayrıntı + ölçüm: docs/GUVENLIK-ACIGI-v122-auth-users-exposed.md
+-- ============================================================
