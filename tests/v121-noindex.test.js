@@ -104,7 +104,9 @@ console.log("\n== 5) Sürüm + önbellek ==");
   const APP = oku("site/app-pwa.js"), SW = oku("site/sw.js");
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   const cache = (SW.match(/const CACHE = "([^"]+)"/) || [])[1] || "";
-  ok("PWA_SURUM v121", /^v121/.test(surum), surum);
+  /* Sürüm numarası İLERLER (v123, v124...). Kilitlenen şey noindex'in
+     v121'den itibaren KALICI olması; sürüm adını sabitlemiyoruz. */
+  ok("PWA_SURUM v121 veya sonrası", /^v1(2[1-9]|[3-9][0-9])/.test(surum), surum);
   ok("CACHE aynı sürümle bitiyor", cache.endsWith(surum), cache);
 }
 

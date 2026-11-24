@@ -4659,6 +4659,30 @@ function gunlukGorevler() {
      Görev, takvimle AYNI kaynaktan (hazirlikPlani) gelir: hangi ders, kaç gün
      kaldı, hangi konular. Plan yoksa satır çizilmez (uydurma görev yok). */
   const bugunHazirlik = (typeof hazirlikPlani === "function") ? hazirlikPlani().filter(p => p.date === todayStr()) : [];
+  /* v123 — KAÇIRILAN (GEÇMİŞ) OTURUMLAR.
+     KULLANICI: "Çalışma takvimindeki bir görevi yapmayınca ne oluyor?"
+     ÖLÇÜM: hazirlikPlani() YALNIZ ileriye plan kuruyordu (gün <= 0 → return).
+     Yani dün yapılmayan "Türev · 4 konu" oturumu sessizce KAYBOLUYORDU;
+     konuları yalnız bir sonraki oturuma sıkışıyordu. Kimse "kaçırdın" demiyordu.
+     DÜZELTME: son 7 günün yapılmamış oturumları bugüne AKTARILIR. Suçlama yok,
+     kayıp da yok: "dünkü iş bugün burada". */
+  const kacirilan = (typeof kacirilanOturumlar === "function") ? kacirilanOturumlar() : [];
+  if (kacirilan.length && !bugunCalismaVarMi()) {
+    const k0 = kacirilan[0];
+    const kAdlar = (k0.konular || []).map(k => splitKey(k).topic);
+    const topKonu = kacirilan.reduce((n, x) => n + (x.konular || []).length, 0);
+    liste.push({
+      id: "kacirilan", tur: "hazirlik", icon: "arrow-right-circle", onem: 1,
+      baslik: (kacirilan.length === 1
+        ? "Dünkü oturum bugüne aktarıldı"
+        : kacirilan.length + " oturum bugüne aktarıldı") +
+        " · " + (k0.kaynak === "deneme" ? "Deneme" : k0.ders),
+      aciklama: (kAdlar.length ? kAdlar.slice(0, 3).join(" · ") + (kAdlar.length > 3 ? " …" : "") : "Konular bir kez gözden geçir") +
+        (topKonu > kAdlar.length ? " · toplam " + topKonu + " konu" : "") +
+        " · Takvim'de bugüne taşındı",
+      sayfa: "planning", dugme: "Takvim"
+    });
+  }
   if (bugunHazirlik.length && !bugunCalismaVarMi()) {
     const h0 = bugunHazirlik[0];
     const adlar = (h0.konular || []).map(k => splitKey(k).topic);
@@ -6464,6 +6488,105 @@ function denemeIvmeCumlesi(v) {
     HAZIRLIK_IVME_GERIDE_KONU + " konu, daha sık tekrar.";
 }
 
+/* v123 — KAÇIRILAN OTURUMLAR.
+   KULLANICI: "Çalışma takvimindeki bir görevi yapmayınca ne oluyor,
+   ne olması gerekiyor?" + "Profesyonel şekilde bildirsin."
+
+   ÖLÇÜM (v122 öncesi): hazirlikPlani() yalnız BUGÜN ve SONRASI için satır
+   üretiyordu:
+       if (kalanGun <= 0) return;     // sınav bugün/geçmiş → hazırlık yok
+   Geçmiş günler için hiçbir hesap yoktu. Yani dün yapılmayan oturumun
+   konuları sessizce kayboluyor, bir sonraki oturuma sıkışıyordu.
+
+   ÇÖZÜM: geriye dönük pencere (varsayılan 7 gün) taranır; YAPILMAMIŞ
+   oturumlar "aktarıldı" işaretiyle döner. Suçlama yok — sadece kayıp yok.
+   Sınav tarihi geçmiş olsa bile son 7 günün oturumları yakalanır.
+
+   Dönüş: [{ date, ders, kaynak, konular[], aktarildi:true, gunGecti }]
+   Tek oturum = 1 satır (kullanıcı kuralı: günlük görev listesi şişmesin). */
+const KACIRILAN_PENCERE_GUN = 7;   // kaç gün geriye bakılır
+
+function kacirilanOturumlar() {
+  const cikti = [];
+  if (typeof hazirlikPlani !== "function") return cikti;
+  /* NOT: "bugün çalışıldıysa taşıma yok" kararı ÇAĞIRAN tarafta verilir
+     (görev listesi). Fonksiyon saf kalsın ki test edilebilsin. */
+  const bugunD = parseDay(todayStr());
+  if (!bugunD) return cikti;
+
+  /* Geçmiş oturumları bulmak için hazirlikPlani()'ı BUGÜN gibi değil,
+     geçmiş bir tarihte hesaplamak gerekir. Plan saf (yan etkisiz) bir
+     hesap: state'i okur, yazmaz. Bu yüzden "bugün"ü geriye kaydırıp
+     her gün için ayrı ayrı üretip YAPILMAMIŞ olanları topluyoruz. */
+  const gercekBugun = todayStr;
+  const p = state.plan || {};
+  const sinavTarihleri = [];
+  if (p.targetDate) sinavTarihleri.push({ tarih: p.targetDate, ders: "Deneme", kaynak: "deneme" });
+  (p.schoolExams || []).forEach(se => {
+    if (se && se.date && se.lesson) sinavTarihleri.push({ tarih: se.date, ders: se.lesson, kaynak: "okul", id: se.id });
+  });
+  /* Yalnız sınavı HENÜZ GEÇMEMİŞ planların geçmiş oturumları anlamlıdır;
+     sınavı geçmiş bir plan için "hazırlık" taşımanın anlamı yok. */
+  const gecerli = sinavTarihleri.filter(sv => {
+    const d0 = parseDay(sv.tarih);
+    return d0 && (d0 - bugunD) / 86400000 > 0;
+  });
+  if (!gecerli.length) return cikti;
+
+  for (let g = 1; g <= KACIRILAN_PENCERE_GUN; g++) {
+    const d = new Date(bugunD.getTime());
+    d.setDate(d.getDate() - g);
+    const ds = toDayStr(d);
+    /* O günün planını üret: todayStr()'i o güne sabitleyip hazirlikPlani()
+       çağırıyoruz; sonra geri alıyoruz (tek yerde, try/finally). */
+    let oGun = [];
+    try {
+      todayStr = function () { return ds; };
+      oGun = hazirlikPlani().filter(x => x.date === ds);
+    } catch (e) {
+      oGun = [];
+    } finally {
+      todayStr = gercekBugun;
+    }
+    if (!oGun.length) continue;
+    /* O gün GERÇEKTEN çalışılmış mı? (tekrar kartı, konu tamamlama,
+       mini test, deneme/deneme kaydı). Çalışılmışsa taşımayız. */
+    if (oGunTarihindeCalismaVarMi(ds)) continue;
+    oGun.forEach(x => {
+      cikti.push({
+        date: ds, ders: x.ders, kaynak: x.kaynak, examId: x.examId,
+        konular: x.konular || [], gunGecti: g, aktarildi: true,
+        etiket: "Kaçırıldı → bugüne aktarıldı (" + g + " gün önce)"
+      });
+    });
+  }
+  /* En çok konu taşıyan oturum önce; en yeni gün önce. */
+  return cikti.sort((a, b) =>
+    (b.konular.length - a.konular.length) || (a.gunGecti - b.gunGecti));
+}
+
+/* Belirli bir günde herhangi bir çalışma izi var mı? (bugunCalismaVarMi'nin
+   tarih parametreli sürümü — aynı kaynakları tarar.) */
+function oGunTarihindeCalismaVarMi(gun) {
+  if (!gun) return false;
+  const t = String(gun);
+  const tp = state.topics || {};
+  for (const k of Object.keys(tp)) {
+    const x = tp[k] || {};
+    if (x.completedAt && String(x.completedAt).slice(0, 10) === t) return true;
+    if (x.son_adim_tarihi === t) return true;
+  }
+  const mts = state.mini_test_sessions || {};
+  for (const k of Object.keys(mts)) { const x = mts[k]; if (x && (x.started === t || x.bitis === t)) return true; }
+  const tk = state.tekrarKartlari || {};
+  for (const k of Object.keys(tk)) { const x = tk[k]; if (x && x.tamamlandi === t) return true; }
+  const mem = state.memory || {};
+  for (const k of Object.keys(mem)) { const m = mem[k]; if (m && m.lastReview && String(m.lastReview).slice(0, 10) === t) return true; }
+  if ((state.exams || []).some(e => String(e.date || "").slice(0, 10) === t)) return true;
+  if ((state.questions || []).some(q => String(q.date || "").slice(0, 10) === t)) return true;
+  return false;
+}
+
 // Planın kendisi. Dönen her satır: {date, ders, kaynak, examId, gunOnce,
 // konular[], etiket, detay, bildirim}
 function hazirlikPlani() {
@@ -6937,6 +7060,24 @@ function calendarEventMap() {
       oturumSira: k.oturumSira, oturumToplam: k.oturumToplam, denemeBilgi: k.denemeBilgi,
       tekrar: !!k.tekrar, hataAdetleri: k.hataAdetleri,
       son: !!k.son, tekOturum: !!k.tekOturum, sira: k.son ? 2.5 : 2
+    });
+  });
+  /* 4b) v123 — KAÇIRILAN OTURUMLAR BUGÜNE TAŞINIR.
+     KULLANICI: "Bir görevi yapmayınca ne oluyor, ne olması gerekiyor?"
+     + "Profesyonel şekilde bildirsin."
+     Geçmiş günde yapılmamış hazırlık oturumu, BUGÜNÜN bloğunda ayrı
+     satır olarak görünür ve "aktarıldı" diye açıkça yazar. Sessiz kayıp yok,
+     suçlama da yok. */
+  (typeof kacirilanOturumlar === "function" ? kacirilanOturumlar() : []).forEach((k, i) => {
+    put(todayStr(), {
+      tip: "hazirlik", etiket: k.etiket,
+      kisa: "⚠ Aktarıldı · " + (k.kaynak === "deneme" ? "Deneme" : k.ders) +
+        " · " + (k.konular || []).length + " konu",
+      kaynak: k.kaynak, examId: k.examId, ders: k.ders,
+      gunOnce: k.gunGecti, konular: k.konular,
+      detay: (k.konular || []).map(x => splitKey(x).topic).join(" · ") +
+        " — bu oturum " + k.gunGecti + " gün önce planlanmıştı, yapılmadı, bugüne aktarıldı.",
+      aktarildi: true, sira: 1.2 + i * 0.01
     });
   });
   // 5) v96 — SINAV GECESİ / SABAHI: kendi rengiyle ayrı satır
