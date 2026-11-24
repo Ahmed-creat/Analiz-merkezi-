@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u02_k05",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u02_k05_o01",
+      "alt_beceri": "Elektrolit Çözelti",
+      "metin": "SrCl₂(suda) çözeltisinde Sr²⁺ ve Cl⁻ iyonları hareket edebildiğine göre çözeltinin elektrik akımıyla ilgili özelliği nedir?",
+      "secenekler": [
+        "Elektrik akımını iletir; çözeltide hareketli iyonlar bulunur.",
+        "İletmez; suda çözünen bütün maddeler nötr molekül kalır.",
+        "Yalnız katı hâlde iletken olur.",
+        "Akım taşıyan iyon bulunmadığından iletmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "SrCl₂ suda Sr²⁺ ve Cl⁻ iyonları oluşturur. Çözeltideki hareketli iyonlar elektrik akımını taşır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrolit çözeltiyi iletkenliği ve suda çözünen maddenin tanecik yapısıyla ilişkilendiriniz.",
+        "back": "Suda iyonlarına ayrışan maddelerin çözeltileri elektrik akımını iletir; bu çözeltilere elektrolit çözelti denir. Asit, baz ve tuzların sulu çözeltileri genellikle elektrolittir."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o02",
+      "alt_beceri": "Elektrolit Çözelti",
+      "metin": "A maddesi suda hareketli iyonlar oluşturuyor; B maddesi ise iyonlaşmadan nötr moleküller hâlinde kalıyor. Hangi çözeltinin elektrolit olması beklenir?",
+      "secenekler": [
+        "Her iki çözelti de",
+        "Yalnız A çözeltisi",
+        "Yalnız B çözeltisi",
+        "Hiçbiri"
+      ],
+      "dogru_index": 1,
+      "cozum": "Elektrik akımını çözelti içindeki hareketli iyonlar taşır. A çözeltisi iyon içerdiği için elektrolittir, B çözeltisi değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir sulu çözeltinin elektrik akımını iletebilmesi tanecik düzeyinde neye bağlıdır?",
+        "back": "Çözeltide hareket edebilen iyonların bulunmasına bağlıdır; iyon miktarı ve hareketliliği iletkenliği etkiler."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o03",
+      "alt_beceri": "Elektrolit Olmayan Çözelti",
+      "metin": "İki çözünen maddeden A suda iyonlarına ayrılıyor, B ise nötr moleküller hâlinde kalıyor. Hangi çözeltinin elektrik akımını iletmesi beklenir?",
+      "secenekler": [
+        "Yalnız B çözeltisinin",
+        "İki çözelti de eşit düzeyde iletir.",
+        "Yalnız A çözeltisinin",
+        "Hiçbirinin; çözeltiler akımı iletmez."
+      ],
+      "dogru_index": 2,
+      "cozum": "A çözeltisinde hareketli iyonlar bulunduğundan akımı iletir. B çözeltisinde çözünen madde nötr moleküller hâlinde kaldığı için iyonlarla iletim gerçekleşmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Elektrolit olmayan çözeltinin elektrik akımı ve çözünen tanecikler bakımından özelliğini açıklayınız.",
+        "back": "Sulu çözeltisi elektrik akımını iletmez; çözünen madde iyonlarına ayrışmadan moleküler hâlde bulunur."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o04",
+      "alt_beceri": "Elektrolit Olmayan Çözelti",
+      "metin": "Z maddesi suda çözünüyor ancak nötr moleküller hâlinde kalıyor ve iyon oluşturmuyor. Z’nin sulu çözeltisi nasıl sınıflandırılır?",
+      "secenekler": [
+        "Güçlü elektrolit",
+        "İyonik çözelti",
+        "Yalnızca eriyik hâlde iletken",
+        "Elektrolit olmayan çözelti"
+      ],
+      "dogru_index": 3,
+      "cozum": "Elektrik akımını çözeltide hareketli iyonlar taşır. Z nötr moleküller hâlinde kaldığından çözeltisi elektrolit değildir ve akımı iletmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Suda çözünmesine rağmen iyon oluşturmayan bir maddenin çözeltisi elektrik akımını neden iletmez?",
+        "back": "Madde suda nötr moleküller hâlinde kaldığı için çözeltide akımı taşıyacak hareketli iyonlar bulunmaz."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o05",
+      "alt_beceri": "Doymamış Çözelti",
+      "metin": "Bir sera için hazırlanan 150 g sulu besin çözeltisinde 20 g N maddesi çözünmüştür; geri kalan 130 g sudur. 25 °C’ta N’nin çözünürlüğü 25 g/100 g su olduğuna göre çözelti nasıl sınıflanır?",
+      "secenekler": [
+        "Doymamış",
+        "Doymuş",
+        "Aşırı doymuş",
+        "Verilen koşullarda sınıflandırılamaz"
+      ],
+      "dogru_index": 0,
+      "cozum": "130 g su en fazla 25×1,3=32,5 g N çözebilir. Çözeltide 20 g N bulunduğundan çözünürlük sınırına ulaşılmamıştır; çözelti doymamıştır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Belirli sıcaklık ve basınçta çözünebileceği maksimum miktardan daha az çözünen içeren çözeltiyi tanımlayınız.",
+        "back": "Bu, doymamış çözeltidir."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o06",
+      "alt_beceri": "Doymamış Çözelti",
+      "metin": "Sabit sıcaklıkta doymamış R çözeltisini, çözücü miktarını değiştirmeden doymuş hâle getirmek için hangi işlem yapılabilir?",
+      "secenekler": [
+        "Su eklemek",
+        "R maddesinden eklemek",
+        "Çözeltiden R çıkarmak",
+        "Çözünen maddeyi buharlaştırmak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Doymamış çözelti çözünürlük sınırının altında çözünen içerir. Aynı sıcaklıkta R eklemek miktarı bu sınıra yaklaştırır ve ulaştırabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit sıcaklıktaki doymamış bir çözeltinin aynı çözünen bakımından doymuş hâle gelmesi için ne yapılabilir?",
+        "back": "Çözeltiye aynı çözünen maddeden eklenebilir; çözeltide çözünen miktar maksimuma ulaşınca doymuş olur."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o07",
+      "alt_beceri": "Doymuş Çözelti",
+      "metin": "Bir su bazlı kaplama tesisinde 25 °C’ta hazırlanan berrak banyonun 210 g örneği tamamen kurutulunca 60 g katkı kalıyor. Katkının bu sıcaklıktaki çözünürlüğü 40 g/100 g su olduğuna göre ilk banyo nasıl sınıflanır?",
+      "secenekler": [
+        "Doymamış",
+        "Aşırı doymuş",
+        "Doymuş",
+        "Bu verilerle sınıflandırılamaz"
+      ],
+      "dogru_index": 2,
+      "cozum": "Örnekteki su kütlesi 210−60=150 g’dır. 60 g katkı, 150 g suda çözünmüştür; bu oran 40 g/100 g suya eşittir. Çözelti çözünürlük sınırında olduğundan doymuştur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Belirli koşullarda doymuş çözeltinin çözünen madde miktarını çözünürlük sınırıyla ilişkilendiriniz.",
+        "back": "Doymuş çözelti, bulunduğu sıcaklık ve basınçta çözebileceği maksimum miktarda çözünen madde içerir."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o08",
+      "alt_beceri": "Doymuş Çözelti",
+      "metin": "25 °C’ta katısıyla dengede bulunan doymuş Q çözeltisine aynı sıcaklıkta bir miktar daha Q ekleniyor. Ne gözlenir?",
+      "secenekler": [
+        "Çözelti doymamış hâle gelir.",
+        "Çözelti derişimi artar ve eklenen Q’nun tamamı çözünür.",
+        "Çözelti aşırı doymuş olur.",
+        "Eklenen Q çözünmez; çözeltinin derişimi değişmez."
+      ],
+      "dogru_index": 3,
+      "cozum": "Doymuş çözelti aynı sıcaklıkta çözebileceği maksimum miktardadır. Eklenen Q çözünmeden kalır ve çözeltinin derişimi değişmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı sıcaklıktaki doymuş çözeltiye aynı çözünen maddeden daha fazla eklendiğinde çözünme ve derişim nasıl değişir?",
+        "back": "Eklenen madde çözünmez; çözeltinin derişimi değişmez ve fazla çözünen katı hâlde kalır."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o09",
+      "alt_beceri": "Aşırı Doymuş Çözelti",
+      "metin": "Bir kaplama laboratuvarında 20 °C’ta R maddesinin çözünürlük sınırı 27 g/100 g sudur. Bir formülasyon örneğinde aynı miktarda suda 33 g R çözünmüş hâlde bulunuyor ve henüz kristal oluşmamış. Bu örnek nasıl sınıflandırılır?",
+      "secenekler": [
+        "Aşırı doymuş çözelti",
+        "Doymamış çözelti",
+        "Doymuş çözelti",
+        "Elektrolit olmayan çözelti"
+      ],
+      "dogru_index": 0,
+      "cozum": "20 °C’ta 100 g suda çözünürlük sınırı 27 g iken 33 g R çözünmüş durumdadır. Çözelti, aynı koşullarda çözebileceğinden daha fazla çözünen içerdiği için aşırı doymuştur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aşırı doymuş çözeltinin çözünmüş madde miktarını aynı koşullardaki çözünürlükle karşılaştırınız.",
+        "back": "Aşırı doymuş çözelti, belirli sıcaklık ve basınçta çözebileceğinden daha fazla madde çözmüş olan çözeltidir."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o10",
+      "alt_beceri": "Aşırı Doymuş Çözelti",
+      "metin": "Tekrar kullanılabilir bir el ısıtıcısındaki berrak T çözeltisinin, bulunduğu sıcaklıkta çözünürlük sınırını aşan miktarda T içerdiği biliniyor. Etkinleştirme diski bükülünce kristaller oluşmaya başlıyor. Gözlenen olay en doğru nasıl açıklanır?",
+      "secenekler": [
+        "Çözünmüş T’nin tamamı çözeltide kalır; yalnızca görünüş değişir.",
+        "Çözünürlük sınırını aşan T miktarı kristallenip çöker.",
+        "Çözücü miktarı artarak çözeltiyi seyreltir.",
+        "T’nin çözünürlüğü kendiliğinden yükselir ve katı oluşumu engellenir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Aşırı doymuş çözelti kararsızdır. Etkinleştirme diskinin bükülmesi kristallenmeyi başlatır; çözünürlük sınırını aşan fazla T katı hâlde ayrılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kararsız aşırı doymuş çözelti sallanır veya içine çözünen madde eklenirse ne olabilir?",
+        "back": "Fazladan çözünmüş madde hemen çöker."
+      },
+      "kazanim": "çözeltileri sınıflandırabilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u02_k05_o01:flashcard",
+      "front": "Elektrolit çözeltiyi iletkenliği ve suda çözünen maddenin tanecik yapısıyla ilişkilendiriniz.",
+      "back": "Suda iyonlarına ayrışan maddelerin çözeltileri elektrik akımını iletir; bu çözeltilere elektrolit çözelti denir. Asit, baz ve tuzların sulu çözeltileri genellikle elektrolittir."
+    },
+    {
+      "id": "kimya_10_u02_k05_o02:flashcard",
+      "front": "Bir sulu çözeltinin elektrik akımını iletebilmesi tanecik düzeyinde neye bağlıdır?",
+      "back": "Çözeltide hareket edebilen iyonların bulunmasına bağlıdır; iyon miktarı ve hareketliliği iletkenliği etkiler."
+    },
+    {
+      "id": "kimya_10_u02_k05_o03:flashcard",
+      "front": "Elektrolit olmayan çözeltinin elektrik akımı ve çözünen tanecikler bakımından özelliğini açıklayınız.",
+      "back": "Sulu çözeltisi elektrik akımını iletmez; çözünen madde iyonlarına ayrışmadan moleküler hâlde bulunur."
+    },
+    {
+      "id": "kimya_10_u02_k05_o04:flashcard",
+      "front": "Suda çözünmesine rağmen iyon oluşturmayan bir maddenin çözeltisi elektrik akımını neden iletmez?",
+      "back": "Madde suda nötr moleküller hâlinde kaldığı için çözeltide akımı taşıyacak hareketli iyonlar bulunmaz."
+    },
+    {
+      "id": "kimya_10_u02_k05_o05:flashcard",
+      "front": "Belirli sıcaklık ve basınçta çözünebileceği maksimum miktardan daha az çözünen içeren çözeltiyi tanımlayınız.",
+      "back": "Bu, doymamış çözeltidir."
+    },
+    {
+      "id": "kimya_10_u02_k05_o06:flashcard",
+      "front": "Sabit sıcaklıktaki doymamış bir çözeltinin aynı çözünen bakımından doymuş hâle gelmesi için ne yapılabilir?",
+      "back": "Çözeltiye aynı çözünen maddeden eklenebilir; çözeltide çözünen miktar maksimuma ulaşınca doymuş olur."
+    },
+    {
+      "id": "kimya_10_u02_k05_o07:flashcard",
+      "front": "Belirli koşullarda doymuş çözeltinin çözünen madde miktarını çözünürlük sınırıyla ilişkilendiriniz.",
+      "back": "Doymuş çözelti, bulunduğu sıcaklık ve basınçta çözebileceği maksimum miktarda çözünen madde içerir."
+    },
+    {
+      "id": "kimya_10_u02_k05_o08:flashcard",
+      "front": "Aynı sıcaklıktaki doymuş çözeltiye aynı çözünen maddeden daha fazla eklendiğinde çözünme ve derişim nasıl değişir?",
+      "back": "Eklenen madde çözünmez; çözeltinin derişimi değişmez ve fazla çözünen katı hâlde kalır."
+    },
+    {
+      "id": "kimya_10_u02_k05_o09:flashcard",
+      "front": "Aşırı doymuş çözeltinin çözünmüş madde miktarını aynı koşullardaki çözünürlükle karşılaştırınız.",
+      "back": "Aşırı doymuş çözelti, belirli sıcaklık ve basınçta çözebileceğinden daha fazla madde çözmüş olan çözeltidir."
+    },
+    {
+      "id": "kimya_10_u02_k05_o10:flashcard",
+      "front": "Kararsız aşırı doymuş çözelti sallanır veya içine çözünen madde eklenirse ne olabilir?",
+      "back": "Fazladan çözünmüş madde hemen çöker."
+    }
+  ],
+  "topic_key": "Kimya > 2.1.5 Çözünürlük"
+}

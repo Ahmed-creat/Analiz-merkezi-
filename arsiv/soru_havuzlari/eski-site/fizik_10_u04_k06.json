@@ -1,0 +1,252 @@
+{
+  "konu_id": "fizik_10_u04_k06",
+  "sinif": 10,
+  "ders": "Fizik",
+  "kaynak_dosya": "10. Sınıf fizik json.zip",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u04_k06_o01",
+      "alt_beceri": "A) Rezonans ve Depremle İlgili Kavramlar",
+      "metin": "Bir yay-kütle test düzeneği periyodik bir sürücüyle titreştiriliyor. Sürücünün frekansı düzeneğin doğal frekansına eşitlendiğinde ne gözlenebilir?",
+      "secenekler": [
+        "Rezonans nedeniyle salınım genliği artabilir.",
+        "Sistem titreşimi kesin olarak durur.",
+        "Kütle yok olur ve yay sertleşir.",
+        "Dalga boşlukta mekanik olarak yayılır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Dış kuvvetin frekansı sistemin doğal frekansıyla eşleştiğinde rezonans oluşabilir; salınım genliği artma eğilimi gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir titreşim düzeneğine uygulanan periyodik kuvvetin frekansı sistemin doğal frekansıyla eşleşirse ne beklenir?",
+        "back": "Rezonans oluşur ve sistemin salınım genliği artma eğilimi gösterir."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o02",
+      "alt_beceri": "A) Rezonans ve Depremle İlgili Kavramlar",
+      "metin": "Bir üretim hattındaki destek platformunun doğal frekansı 3 Hz’dir. Yakındaki döner makine de platformu 3 Hz ile titreştiriyor. Hangi sonuç daha olasıdır?",
+      "secenekler": [
+        "Titreşimler birbirini kesin olarak yok eder.",
+        "Rezonans oluşup platformun titreşim genliği ve hasar riski artabilir.",
+        "Platform artık mekanik dalga taşıyamaz.",
+        "Doğal frekans yalnızca malzemenin rengine bağlıdır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Dış titreşimin frekansı platformun doğal frekansına eşleştiğinde rezonans oluşabilir; bu durum titreşim genliğini ve hasar riskini artırabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Makine taşıyıcıları tasarlanırken doğal titreşim frekansını neden dikkate almak gerekir?",
+        "back": "Dış titreşim frekansı taşıyıcının doğal frekansıyla eşleşirse rezonans genliği ve titreşim yükünü büyüterek hasara yol açabilir."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o03",
+      "alt_beceri": "A) Rezonans ve Depremle İlgili Kavramlar",
+      "metin": "Bir depremde yer altındaki kırılmanın başladığı nokta ile yüzeyde bu noktaya en yakın konum sırasıyla nasıl adlandırılır?",
+      "secenekler": [
+        "Merkez üssü ve odak noktası",
+        "Şiddet ve büyüklük",
+        "Odak noktası ve merkez üssü",
+        "Fay hattı ve sismogram"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kırılmanın yer altında başladığı nokta odak noktasıdır. Bu noktanın yüzeydeki en yakın konumu merkez üssü olarak adlandırılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Depremin odak noktası ile merkez üssünü konum bakımından nasıl ayırt edersin?",
+        "back": "Odak noktası yer altında kırılmanın başladığı yerdir; merkez üssü, odak noktasının yüzeydeki en yakın noktasıdır ve sarsıntı burada en yoğun hissedilir."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o04",
+      "alt_beceri": "A) Rezonans ve Depremle İlgili Kavramlar",
+      "metin": "Bir sismoloji raporu deprem kaynağında açığa çıkan enerjiyi sayısal olarak bildiriyor; saha ekibi ise bir yerleşimde hissedilen sarsıntı ve etkileri sınıflandırıyor. Bu iki ölçüm sırasıyla hangi kavramlardır?",
+      "secenekler": [
+        "Depremin şiddeti ve odak noktası",
+        "Odak noktası ve merkez üssü",
+        "Frekans ve genlik",
+        "Depremin büyüklüğü ve şiddeti"
+      ],
+      "dogru_index": 3,
+      "cozum": "Büyüklük, deprem kaynağında açığa çıkan enerjiyi ifade eder. Şiddet ise yer yüzeyinde hissedilen sarsıntı derecesi ve etkileridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Depremin büyüklüğü ile şiddetini ölçtükleri durum bakımından karşılaştır.",
+        "back": "Büyüklük, kaynağında açığa çıkan enerjiyle ilgilidir; şiddet, depremin yüzeyde hissedilme derecesini ve etkilerini belirtir."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o05",
+      "alt_beceri": "A) Rezonans ve Depremle İlgili Kavramlar",
+      "metin": "Bir afet ekibi iki ilçedeki aynı deprem etkilerini inceliyor: ilçelerden biri odak noktasına yakın ve gevşek zemin üzerinde, diğeri daha uzak ve sağlam zeminde. Farklı hissedilme ve hasar düzeylerini en iyi hangi kavram açıklar?",
+      "secenekler": [
+        "Depremin şiddeti; odak noktasına uzaklık, zemin ve yapı dayanıklılığı gibi yerel koşullara göre farklı etkiler gösterebilir.",
+        "Depremin kaynağındaki büyüklük, ilçelerin her birinde ayrı ayrı değişmiştir.",
+        "Aynı depremde her yerde hissedilen şiddet zorunlu olarak aynıdır.",
+        "Zemin ve yapı koşulları deprem etkisini değiştirmez."
+      ],
+      "dogru_index": 0,
+      "cozum": "Depremin büyüklüğü kaynağa ait ölçüdür; yerleşimlerde hissedilen şiddet ise odak noktasına uzaklık, zemin koşulları ve yapı dayanıklılığı gibi yerel etkenlerle değişebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Aynı büyüklükteki bir depremin iki yerde farklı şiddette hissedilmesine yol açabilecek etkenleri açıkla.",
+        "back": "Odak noktasına uzaklık, zemin koşulları ve yapıların dayanıklılığı hissedilen şiddeti etkiler; odak derinliği de yüzeydeki etkilerle ilişkilidir."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o06",
+      "alt_beceri": "B) Depremle İlgili Bilimsel Model Oluşturabilme",
+      "metin": "Bir sismoloji laboratuvarında yer hareketini ölçen sensörün oluşturduğu sayısal zaman kaydı inceleniyor. Sensör ile elde edilen kaydın adları sırasıyla hangileridir?",
+      "secenekler": [
+        "Sismogram ve sismograf",
+        "Sismograf ve sismogram",
+        "Odak noktası ve merkez üssü",
+        "İzolatör ve sismograf"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yer hareketlerini ölçüp kaydeden cihaz sismograf, cihazın ürettiği kayıt ise sismogramdır. Diğer seçenekler cihaz ile kaydı karıştırır ya da başka deprem kavramlarını verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sismograf ile sismogram arasındaki farkı nasıl açıklarsın?",
+        "back": "Sismograf yer hareketlerini kaydeden cihazdır; sismogram bu cihazın oluşturduğu kayıttır."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o07",
+      "alt_beceri": "B) Depremle İlgili Bilimsel Model Oluşturabilme",
+      "metin": "Bir bölgesel analiz ekibi, farklı konumlardaki deprem istasyonlarının zaman damgalı kayıtlarını bir araya getiriyor. Bu veriler hangi parametrelerin belirlenmesine yardımcı olabilir?",
+      "secenekler": [
+        "Binaların doğal frekansını otomatik olarak eşitlemek",
+        "Deprem dalgalarını durdurmak",
+        "Merkez üssü, odak derinliği ve büyüklük gibi parametreleri belirlemek",
+        "Depremin olmasını kesin olarak önceden engellemek"
+      ],
+      "dogru_index": 2,
+      "cozum": "Farklı istasyonlardan alınan kayıtlar karşılaştırılarak depremin merkez üssü, odak derinliği ve büyüklüğü gibi parametreler belirlenebilir. Bu veriler depremi engellemez ya da yapıların doğal frekansını eşitlemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birden çok sismograf istasyonundan gelen kayıtlar deprem hakkında hangi bilgilerin belirlenmesine yardım eder?",
+        "back": "Depremin merkez üssü, odak derinliği ve büyüklüğü gibi parametrelerin belirlenmesine yardımcı olur."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o08",
+      "alt_beceri": "B) Depremle İlgili Bilimsel Model Oluşturabilme",
+      "metin": "Bir kentteki sismik sensörler yer hareketini algılayıp merkezdeki uyarı ağına sinyal iletiyor; uyarı, daha kuvvetli sarsıntı gelmeden sakinlere ulaşıyor. Bu sistemin işlevi hangisidir?",
+      "secenekler": [
+        "Depremi kesin zaman ve büyüklükle günler öncesinden tahmin etmek",
+        "Deprem dalgalarını kaynağında yok etmek",
+        "Depremden etkilenen bütün binaları onarmak",
+        "Daha yıkıcı sarsıntılar ulaşmadan önce uyarı vermeye yardımcı olmak"
+      ],
+      "dogru_index": 3,
+      "cozum": "Erken uyarı sistemleri sismik kayıtları kullanarak daha yıkıcı sarsıntılar bir konuma ulaşmadan önce uyarı vermeye yardımcı olabilir; depremi günler öncesinden kesin biçimde tahmin etmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Deprem erken uyarı sistemleri sismograflardan alınan verileri nasıl kullanır?",
+        "back": "Sismik dalgalar yer yüzeyine ulaşmadan önce gelen verilerle insanları uyarmaya yardımcı olur."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o09",
+      "alt_beceri": "B) Depremle İlgili Bilimsel Model Oluşturabilme",
+      "metin": "Bir veri arşiv binasının tabanında sismik izolatörler kullanılıyor. Deprem sırasında bu katmanın temel işlevi hangisidir?",
+      "secenekler": [
+        "Zeminden üst yapıya aktarılan yatay sarsıntıyı ve dinamik yükleri azaltmaya yardımcı olmak",
+        "Binanın doğal frekansını her deprem frekansıyla eşitlemek",
+        "Temeli ve üst yapıyı rijit biçimde birleştirerek bütün hareketi aynen aktarmak",
+        "Deprem dalgalarını binaya yönlendirerek genliği artırmak"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sismik izolatörler temel ile üst yapı arasında esnek bir katman oluşturur. Böylece zemindeki hareket ve dinamik yüklerin üst yapıya aktarılmasını azaltmaya yardımcı olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sismik izolatör, deprem sırasında binaya aktarılan hareketi nasıl etkiler?",
+        "back": "Temel ile üst yapı arasında esnek bir katman oluşturarak yatay hareket ve dinamik yüklerin üst yapıya aktarılmasını azaltmaya yardımcı olur."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    },
+    {
+      "soru_id": "fizik_10_u04_k06_o10",
+      "alt_beceri": "B) Depremle İlgili Bilimsel Model Oluşturabilme",
+      "metin": "Bir mühendislik ekibi, sarsıntı altında yalıtım katmanının etkisini değerlendirmek için iki özdeş veri merkezi maketi hazırlıyor. Hangi karşılaştırma en adil ve sınanabilir olur?",
+      "secenekler": [
+        "Maketleri farklı süre ve şiddette sarsıp yalnızca dış görünüşlerine bakmak",
+        "Aynı sarsıntı koşullarında, yalnızca bir makette yalıtım katmanı kullanıp üst bölümün hareketini karşılaştırmak",
+        "İkisine de yalıtım katmanı ekleyip taban hareketini ölçmek",
+        "Maketlerin kütlesini, biçimini ve sarsıntı koşulunu aynı anda değiştirmek"
+      ],
+      "dogru_index": 1,
+      "cozum": "Adil karşılaştırmada maketler ve sarsıntı aynı tutulur; yalnızca yalıtım kullanımı değiştirilir. Üst yapının hareketi ölçülerek etki karşılaştırılabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir sismik izolatör modelinin işe yarayıp yaramadığını bilimsel olarak sınamak için nasıl bir karşılaştırma kurarsın?",
+        "back": "Aynı model binayı aynı sarsıntı koşullarında izolatörlü ve izolatörsüz deneyip üst yapının hareketini ölçer ve sonuçları karşılaştırırım."
+      },
+      "kazanim": "rezonans ve depreme ilişkin kavramlar üzerinden depremi sorgulayabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u04_k06_o01:flashcard",
+      "front": "Bir titreşim düzeneğine uygulanan periyodik kuvvetin frekansı sistemin doğal frekansıyla eşleşirse ne beklenir?",
+      "back": "Rezonans oluşur ve sistemin salınım genliği artma eğilimi gösterir."
+    },
+    {
+      "id": "fizik_10_u04_k06_o02:flashcard",
+      "front": "Makine taşıyıcıları tasarlanırken doğal titreşim frekansını neden dikkate almak gerekir?",
+      "back": "Dış titreşim frekansı taşıyıcının doğal frekansıyla eşleşirse rezonans genliği ve titreşim yükünü büyüterek hasara yol açabilir."
+    },
+    {
+      "id": "fizik_10_u04_k06_o03:flashcard",
+      "front": "Depremin odak noktası ile merkez üssünü konum bakımından nasıl ayırt edersin?",
+      "back": "Odak noktası yer altında kırılmanın başladığı yerdir; merkez üssü, odak noktasının yüzeydeki en yakın noktasıdır ve sarsıntı burada en yoğun hissedilir."
+    },
+    {
+      "id": "fizik_10_u04_k06_o04:flashcard",
+      "front": "Depremin büyüklüğü ile şiddetini ölçtükleri durum bakımından karşılaştır.",
+      "back": "Büyüklük, kaynağında açığa çıkan enerjiyle ilgilidir; şiddet, depremin yüzeyde hissedilme derecesini ve etkilerini belirtir."
+    },
+    {
+      "id": "fizik_10_u04_k06_o05:flashcard",
+      "front": "Aynı büyüklükteki bir depremin iki yerde farklı şiddette hissedilmesine yol açabilecek etkenleri açıkla.",
+      "back": "Odak noktasına uzaklık, zemin koşulları ve yapıların dayanıklılığı hissedilen şiddeti etkiler; odak derinliği de yüzeydeki etkilerle ilişkilidir."
+    },
+    {
+      "id": "fizik_10_u04_k06_o06:flashcard",
+      "front": "Sismograf ile sismogram arasındaki farkı nasıl açıklarsın?",
+      "back": "Sismograf yer hareketlerini kaydeden cihazdır; sismogram bu cihazın oluşturduğu kayıttır."
+    },
+    {
+      "id": "fizik_10_u04_k06_o07:flashcard",
+      "front": "Birden çok sismograf istasyonundan gelen kayıtlar deprem hakkında hangi bilgilerin belirlenmesine yardım eder?",
+      "back": "Depremin merkez üssü, odak derinliği ve büyüklüğü gibi parametrelerin belirlenmesine yardımcı olur."
+    },
+    {
+      "id": "fizik_10_u04_k06_o08:flashcard",
+      "front": "Deprem erken uyarı sistemleri sismograflardan alınan verileri nasıl kullanır?",
+      "back": "Sismik dalgalar yer yüzeyine ulaşmadan önce gelen verilerle insanları uyarmaya yardımcı olur."
+    },
+    {
+      "id": "fizik_10_u04_k06_o09:flashcard",
+      "front": "Sismik izolatör, deprem sırasında binaya aktarılan hareketi nasıl etkiler?",
+      "back": "Temel ile üst yapı arasında esnek bir katman oluşturarak yatay hareket ve dinamik yüklerin üst yapıya aktarılmasını azaltmaya yardımcı olur."
+    },
+    {
+      "id": "fizik_10_u04_k06_o10:flashcard",
+      "front": "Bir sismik izolatör modelinin işe yarayıp yaramadığını bilimsel olarak sınamak için nasıl bir karşılaştırma kurarsın?",
+      "back": "Aynı model binayı aynı sarsıntı koşullarında izolatörlü ve izolatörsüz deneyip üst yapının hareketini ölçer ve sonuçları karşılaştırırım."
+    }
+  ],
+  "baslik": "4.6 Rezonans ve Deprem",
+  "topic_key": "Fizik > 4.6 Rezonans ve Deprem"
+}

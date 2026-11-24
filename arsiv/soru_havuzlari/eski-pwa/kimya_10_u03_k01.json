@@ -1,0 +1,251 @@
+{
+  "konu_id": "kimya_10_u03_k01",
+  "sinif": 10,
+  "ders": "Kimya",
+  "kaynak_dosya": "10. Sınıf kimya json.zip",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u03_k01_o01",
+      "alt_beceri": "Makro ve Mikro Ölçekli Deneyler",
+      "metin": "Bir malzeme laboratuvarı yeni bir kaplama pigmentinin özelliklerini ön denemelerde karşılaştırırken her deney için yalnızca miligram düzeyinde örnek kullanıyor. Çalışma hangi ölçektedir?",
+      "secenekler": [
+        "Mikro ölçekli deney",
+        "Makro ölçekli deney",
+        "Kimyasal maddesiz gözlem",
+        "Endüstriyel üretim ölçeği"
+      ],
+      "dogru_index": 0,
+      "cozum": "Mikro ölçekte deneylerde çok az kimyasal madde kullanılır. Ön denemelerde miligram düzeyinde örnek seçilmesi bu çalışma ölçeğiyle uyumludur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Makro ve mikro ölçekli deneyleri kullanılan kimyasal madde miktarı bakımından karşılaştırınız.",
+        "back": "Makro ölçekte yüksek, mikro ölçekte çok küçük miktarlarda kimyasal madde kullanılır."
+      },
+      "kazanim": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o02",
+      "alt_beceri": "Makro ve Mikro Ölçekli Deneyler",
+      "metin": "Bir kaplama öncülü üretmek için tasarlanan iki dengelenmiş sentez yolu karşılaştırılıyor. Katsayılarla hesaba katılan toplam tepken mol kütlesi ve istenen ürünün mol kütlesi A yolu için sırasıyla 88 g/mol ve 51 g/mol; B yolu için 96 g/mol ve 74 g/mol’dür. Hangi yolun atom ekonomisi daha yüksektir?",
+      "secenekler": [
+        "A yolu",
+        "B yolu",
+        "İki yolun atom ekonomisi eşittir.",
+        "Verilen mol kütleleriyle karşılaştırma yapılamaz."
+      ],
+      "dogru_index": 1,
+      "cozum": "Atom ekonomisi, istenen ürünün katsayılı mol kütlesinin toplam tepken mol kütlesine oranıyla karşılaştırılır. A için 51/88 ≈ %58; B için 74/96 ≈ %77 olduğundan B yolu daha yüksektir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Atom ekonomisini, istenen ürün ve tepkimeye giren maddelerdeki atomlar arasındaki ilişkiyle açıklayınız.",
+        "back": "Tepkimeye giren maddelerdeki atomların istenen üründe yer alan kısmı arttıkça atom ekonomisi yükselir; bu kavram madde israfını önlemeyi amaçlar."
+      },
+      "kazanim": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o03",
+      "alt_beceri": "Makro ve Mikro Ölçekli Deneyler",
+      "metin": "Aşağıdaki uygulamalardan hangisi yeşil kimyanın atığı önleme ilkesiyle en doğrudan uyumludur?",
+      "secenekler": [
+        "Oluşan atığı çevreye bırakmak",
+        "Atığı oluştuktan sonra yalnızca depolamak",
+        "Üretim sürecini atık oluşumunu azaltacak biçimde tasarlamak",
+        "Daha fazla tehlikeli madde kullanarak üretim yapmak"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yeşil kimyada atığın önlenmesi, üretim sürecini atık ortaya çıkarmayacak veya daha az çıkaracak biçimde tasarlamayı gerektirir. Atığı çevreye bırakmak ya da yalnızca depolamak oluşumunu önlemez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yeşil kimya, kimyasal ürün ve süreçleri tasarlarken hangi amacı gözetir?",
+        "back": "Tehlikeli maddelerin kullanımını ya da oluşumunu azaltmayı hedefler."
+      },
+      "kazanim": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o04",
+      "alt_beceri": "Makro ve Mikro Ölçekli Deneyler",
+      "metin": "Bir kâğıt fabrikası, hammaddesi olan ağaçların yetiştiği arazide depolanan yağış suyunu üretim hesabına katıyor; belediye suyu ve atık seyreltme suyu bu hesaba dâhil değil. Hangi su ayak izi bileşeni ölçülüyor?",
+      "secenekler": [
+        "Mavi su ayak izi",
+        "Gri su ayak izi",
+        "Karbon ayak izi",
+        "Yeşil su ayak izi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yağışın toprakta depolanıp hammaddenin yetişmesinde kullanılan bölümü yeşil su ayak iziyle ilişkilidir. Mavi su, tatlı su kaynaklarını; gri su ise kirliliği seyreltme ihtiyacını gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mavi, yeşil ve gri su ayak izlerini kullanılan suyun kaynağı ya da işlevi bakımından ayırt ediniz.",
+        "back": "Mavi ayak izi tatlı su kaynaklarını, yeşil yağmur suyunu, gri ise kirlilik derişimini seyreltmek için kullanılan tatlı suyu ifade eder."
+      },
+      "kazanim": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o05",
+      "alt_beceri": "Makro ve Mikro Ölçekli Deneyler",
+      "metin": "Bir seramik işletmesi üretim sırasında gereksiz boş ısıtmayı önleyerek sera gazı salımını azaltıyor. En doğrudan hangi göstergeyi küçültmeye katkı sağlar?",
+      "secenekler": [
+        "Karbon ayak izini",
+        "Yeşil su ayak izini",
+        "Atom ekonomisini",
+        "Gri su ayak izini"
+      ],
+      "dogru_index": 0,
+      "cozum": "Faaliyetlerden kaynaklanan sera gazı salımlarının azaltılması karbon ayak izini küçültür. Su ayak izi ve atom ekonomisi farklı ölçütlerdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karbon ayak izini, atmosfere salınan sera gazı miktarı açısından tanımlayınız.",
+        "back": "Bir kurum, kişi ya da ülkenin faaliyetleri sonucu atmosfere salınan toplam sera gazı miktarıdır."
+      },
+      "kazanim": "kimya dersinde mikro ölçekli deney tercih etmenin sonuçlarını ekosistem açısından değerlendirebilmeniz,"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o06",
+      "alt_beceri": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "metin": "Bir izleme istasyonunda pH değeri 4,9 olan yağış ölçülüyor; doğal yağmurun pH değeri yaklaşık 5,6’dır. Bu yağış hangi çevresel sorun kapsamında değerlendirilir?",
+      "secenekler": [
+        "Ozon tabakasının oluşması",
+        "Asit yağmurları",
+        "Su ayak izinin azalması",
+        "Sera etkisinin sona ermesi"
+      ],
+      "dogru_index": 1,
+      "cozum": "pH değeri doğal yağmurun yaklaşık 5,6 olan değerinin altındadır. Bu nedenle ölçülen yağış asit yağmuru olarak değerlendirilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Asit yağmurlarının oluşumunu atmosferdeki asidik oksitler ve yağmur suyunun pH değeriyle ilişkilendiriniz.",
+        "back": "Atmosferdeki asidik oksitler su buharıyla tepkimeye girerek asit oluşturur; pH değeri 5,6'nın altına düşen yağışlar asit yağmuru sayılır."
+      },
+      "kazanim": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o07",
+      "alt_beceri": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "metin": "Bir stratosfer araştırmasında, güneş ışığına bağlı tepkimelerle oluşan A• radikalinin O₃ ile tepkimeye girip çevrimin sonunda yeniden oluştuğu belirleniyor. Bu çevrim sürdüğünde ne beklenir?",
+      "secenekler": [
+        "Atmosferdeki azotun tümünün sıvılaşması",
+        "Karbondioksitin oksijene dönüşmesi",
+        "Stratosferik ozon moleküllerinin azalması",
+        "Ozon oluşumunun her koşulda artması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Radikal çevrimin sonunda yeniden oluşabildiği için ozon moleküllerinin parçalanmasına tekrar tekrar aracılık edebilir. Çevrim sürdükçe stratosferik O₃ derişimi azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir stratosfer gözlem ağı, O₃ derişimi azalırken her tepkime çevriminden sonra yeniden oluşan A• radikalini saptıyor. Bu radikalin yeniden oluşması uzun vadeli sonucu nasıl etkiler?",
+        "back": "A• yeniden oluşabildiğinden ardışık çevrimlerde birden çok ozon molekülünün parçalanmasına aracılık eder; atmosferde O₃ derişimi düşer."
+      },
+      "kazanim": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o08",
+      "alt_beceri": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "metin": "Yeryüzünden yayılan kızılötesi enerjinin bir bölümü atmosfer gazlarınca tutulup yüzeye doğru geri yönlendiriliyor. Bu enerji aktarım olayı nedir?",
+      "secenekler": [
+        "Asit yağmuru",
+        "Ozon azalımı",
+        "Mikro ölçekli deney",
+        "Sera etkisi"
+      ],
+      "dogru_index": 3,
+      "cozum": "Atmosfer gazlarının yeryüzünden yayılan ısının bir kısmını tutup geri yönlendirmesi sera etkisidir. Sıcaklık artışı ise bu etkinin sonucu olan küresel ısınmadır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yeryüzünden uzaya yayılan kızılötesi enerjinin bir bölümü atmosferde tutulup yeniden yüzeye yönelirse hangi olay gerçekleşir?",
+        "back": "Bu olay sera etkisidir. Sera etkisinin güçlenmesi Dünya’nın ortalama sıcaklığının artmasına, yani küresel ısınmaya katkı sağlayabilir."
+      },
+      "kazanim": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o09",
+      "alt_beceri": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "metin": "Yerel bir ormanda kısa süreli yoğun polen salımı havadaki parçacık miktarını ve alerji şikâyetlerini artırıyor; olay insan etkinliği olmadan gerçekleşiyor. Bu hava kirliliği kaynağı hangi gruptadır?",
+      "secenekler": [
+        "Doğal kaynak",
+        "Ulaşım",
+        "Sanayi",
+        "Maden sahalarında kullanılan iş makineleri"
+      ],
+      "dogru_index": 0,
+      "cozum": "Bitkilerden kaynaklanan polen salımı insan etkinliği olmadan gerçekleşir. Bu nedenle doğal kaynaklı bir hava kirleticisi olarak değerlendirilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hava kirliliği canlıları ve çevreyi hangi yollarla olumsuz etkileyebilir?",
+        "back": "Atmosferdeki zararlı maddeler canlı sağlığını etkileyebilir, doğal dengeyi bozabilir ve maddi zarara yol açabilir; yoğunluklarının normal düzeyin üzerine çıkması hava kirliliği oluşturur."
+      },
+      "kazanim": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz"
+    },
+    {
+      "soru_id": "kimya_10_u03_k01_o10",
+      "alt_beceri": "Atmosferdeki Tepkimeler ve Küresel Sorunlar",
+      "metin": "Bir şehir içi lojistik ağı, yükleri birleştirip sefer planını düzenleyerek boş ve gereksiz araç yolculuklarını azaltıyor. Bu uygulamanın sera gazları bakımından en doğrudan amacı nedir?",
+      "secenekler": [
+        "Fosil yakıt kullanımını artırmak",
+        "Gereksiz seferleri azaltarak sera gazı salımını düşürmek",
+        "Araç bakımını geciktirmek",
+        "Ağaçlık alanları azaltmak"
+      ],
+      "dogru_index": 1,
+      "cozum": "Daha az ve daha verimli sefer, yakıt tüketimini ve ulaşımdan kaynaklanan sera gazı salımını azaltabilir. Bu da karbon ayak izinin küçülmesine katkı verir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sera gazı salımlarını azaltmak ve sera etkisini dengede tutmak için hangi genel önlemler alınabilir?",
+        "back": "Yenilenebilir enerji kullanımı, enerji tasarrufu, toplu taşıma ve ormanların korunması salımları azaltmaya katkı sağlayabilir."
+      },
+      "kazanim": "kimyasal tepkimeler sonucunda atmosferin doğasındaki değişimin ekosisteme etkilerine yönelik problem çözebilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u03_k01_o01:flashcard",
+      "front": "Makro ve mikro ölçekli deneyleri kullanılan kimyasal madde miktarı bakımından karşılaştırınız.",
+      "back": "Makro ölçekte yüksek, mikro ölçekte çok küçük miktarlarda kimyasal madde kullanılır."
+    },
+    {
+      "id": "kimya_10_u03_k01_o02:flashcard",
+      "front": "Atom ekonomisini, istenen ürün ve tepkimeye giren maddelerdeki atomlar arasındaki ilişkiyle açıklayınız.",
+      "back": "Tepkimeye giren maddelerdeki atomların istenen üründe yer alan kısmı arttıkça atom ekonomisi yükselir; bu kavram madde israfını önlemeyi amaçlar."
+    },
+    {
+      "id": "kimya_10_u03_k01_o03:flashcard",
+      "front": "Yeşil kimya, kimyasal ürün ve süreçleri tasarlarken hangi amacı gözetir?",
+      "back": "Tehlikeli maddelerin kullanımını ya da oluşumunu azaltmayı hedefler."
+    },
+    {
+      "id": "kimya_10_u03_k01_o04:flashcard",
+      "front": "Mavi, yeşil ve gri su ayak izlerini kullanılan suyun kaynağı ya da işlevi bakımından ayırt ediniz.",
+      "back": "Mavi ayak izi tatlı su kaynaklarını, yeşil yağmur suyunu, gri ise kirlilik derişimini seyreltmek için kullanılan tatlı suyu ifade eder."
+    },
+    {
+      "id": "kimya_10_u03_k01_o05:flashcard",
+      "front": "Karbon ayak izini, atmosfere salınan sera gazı miktarı açısından tanımlayınız.",
+      "back": "Bir kurum, kişi ya da ülkenin faaliyetleri sonucu atmosfere salınan toplam sera gazı miktarıdır."
+    },
+    {
+      "id": "kimya_10_u03_k01_o06:flashcard",
+      "front": "Asit yağmurlarının oluşumunu atmosferdeki asidik oksitler ve yağmur suyunun pH değeriyle ilişkilendiriniz.",
+      "back": "Atmosferdeki asidik oksitler su buharıyla tepkimeye girerek asit oluşturur; pH değeri 5,6'nın altına düşen yağışlar asit yağmuru sayılır."
+    },
+    {
+      "id": "kimya_10_u03_k01_o07:flashcard",
+      "front": "Bir stratosfer gözlem ağı, O₃ derişimi azalırken her tepkime çevriminden sonra yeniden oluşan A• radikalini saptıyor. Bu radikalin yeniden oluşması uzun vadeli sonucu nasıl etkiler?",
+      "back": "A• yeniden oluşabildiğinden ardışık çevrimlerde birden çok ozon molekülünün parçalanmasına aracılık eder; atmosferde O₃ derişimi düşer."
+    },
+    {
+      "id": "kimya_10_u03_k01_o08:flashcard",
+      "front": "Yeryüzünden uzaya yayılan kızılötesi enerjinin bir bölümü atmosferde tutulup yeniden yüzeye yönelirse hangi olay gerçekleşir?",
+      "back": "Bu olay sera etkisidir. Sera etkisinin güçlenmesi Dünya’nın ortalama sıcaklığının artmasına, yani küresel ısınmaya katkı sağlayabilir."
+    },
+    {
+      "id": "kimya_10_u03_k01_o09:flashcard",
+      "front": "Hava kirliliği canlıları ve çevreyi hangi yollarla olumsuz etkileyebilir?",
+      "back": "Atmosferdeki zararlı maddeler canlı sağlığını etkileyebilir, doğal dengeyi bozabilir ve maddi zarara yol açabilir; yoğunluklarının normal düzeyin üzerine çıkması hava kirliliği oluşturur."
+    },
+    {
+      "id": "kimya_10_u03_k01_o10:flashcard",
+      "front": "Sera gazı salımlarını azaltmak ve sera etkisini dengede tutmak için hangi genel önlemler alınabilir?",
+      "back": "Yenilenebilir enerji kullanımı, enerji tasarrufu, toplu taşıma ve ormanların korunması salımları azaltmaya katkı sağlayabilir."
+    }
+  ],
+  "topic_key": "Kimya > 3.1.2 Atmosferdeki Tepkimeler ve Küresel Sorunlar"
+}

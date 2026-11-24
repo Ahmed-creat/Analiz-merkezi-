@@ -1,0 +1,347 @@
+{
+  "konu_id": "biyo_10_u02_k02",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u02_k02_o01",
+      "alt_beceri": "Popülasyon, Komünite, Ekosistem",
+      "metin": "Tanımlı bir yaşam alanında aynı türe ait bireyler birlikte bulunuyor ve kendi aralarında çoğalabiliyor. Bu grup hangi ekolojik organizasyon düzeyidir?",
+      "secenekler": [
+        "Popülasyon",
+        "Komünite",
+        "Ekosistem",
+        "Biyom"
+      ],
+      "dogru_index": 0,
+      "cozum": "Aynı türün belirli bir alanda yaşayan ve birbiriyle etkileşen bireyleri popülasyonu oluşturur. Farklı türlerin popülasyonları birlikte komüniteyi meydana getirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ekolojik organizasyon düzeylerini küçük birimden büyüğe doğru sıralayınız.",
+        "back": "Organizma → popülasyon → komünite → ekosistem → biyosfer."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o02",
+      "alt_beceri": "Popülasyon, Komünite, Ekosistem",
+      "metin": "Bir kıyı çalılığında yaşayan ve birbiriyle etkileşim kuran farklı türlere ait tüm popülasyonlar hangi topluluğu oluşturur?",
+      "secenekler": [
+        "Popülasyon",
+        "Komünite",
+        "Ekosistem",
+        "Organizma"
+      ],
+      "dogru_index": 1,
+      "cozum": "Komünite, belirli bir alanda yaşayan farklı türlerin popülasyonlarından oluşur. Cansız çevre de dâhil edildiğinde daha geniş kavram olan ekosistemden söz edilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Komünite ile ekosistem arasındaki kapsam farkını açıklayınız.",
+        "back": "Komünite, belirli bir alanda etkileşim hâlindeki farklı türlerin topluluğudur; ekosistem bu canlı topluluğuyla etkileşimdeki cansız çevreyi de kapsar."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o03",
+      "alt_beceri": "Popülasyon Dinamikleri",
+      "metin": "Bir koruma alanının 6 km²’lik kesiminde aynı kuş türünden 48 birey sayılıyor. Popülasyon yoğunluğu kaç birey/km²’dir?",
+      "secenekler": [
+        "12 birey/km²",
+        "6 birey/km²",
+        "8 birey/km²",
+        "48 birey/km²"
+      ],
+      "dogru_index": 2,
+      "cozum": "Popülasyon yoğunluğu birey sayısının alan büyüklüğüne bölünmesiyle bulunur. 48 ÷ 6 = 8 birey/km² olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Popülasyon yoğunluğunu tanımlayınız ve kullanılan ölçü birimini belirtiniz.",
+        "back": "Popülasyon yoğunluğu, birim alan ya da birim hacimde bulunan birey sayısıdır; örneğin birey/km² olarak ifade edilebilir."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o04",
+      "alt_beceri": "Popülasyon Dinamikleri",
+      "metin": "Bir popülasyonda doğum ve içe göçle eklenen birey sayısı, ölüm ve dışa göçle kaybedilenlerden fazlaysa ne beklenir?",
+      "secenekler": [
+        "Popülasyon küçülür.",
+        "Popülasyon hemen yok olur.",
+        "Popülasyon büyüklüğü kesinlikle değişmez.",
+        "Popülasyon büyür."
+      ],
+      "dogru_index": 3,
+      "cozum": "Doğum ve içe göç toplamı ölüm ve dışa göç toplamını aşıyorsa popülasyon büyür. Sayılar eşit olduğunda denge görülür; bu senaryoda eşitlik yoktur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Popülasyon büyüklüğünü artıran ve azaltan olayları karşılaştırınız.",
+        "back": "Doğumlar ve içe göçler popülasyon büyüklüğünü artırır; ölümler ve dışa göçler azaltır. Bu iki toplam eşitse popülasyon dengede kalır."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o05",
+      "alt_beceri": "Komünitede Tür İçi ve Türler Arası Etkileşimler",
+      "metin": "Bir adadaki iki farklı kuş türü, sınırlı sayıdaki yuvalama kovuklarını kullanabilmek için yarışıyor. Bu etkileşim nasıl adlandırılır?",
+      "secenekler": [
+        "Türler arası rekabet",
+        "Tür içi rekabet",
+        "Mutualizm",
+        "Kommensalizm"
+      ],
+      "dogru_index": 0,
+      "cozum": "Rekabete giren bireyler farklı türlere ait olduğu için bu etkileşim türler arası rekabettir. Tür içi rekabet aynı tür bireyleri arasında görülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Tür içi ve türler arası rekabeti, rekabete giren canlıların tür sayısı bakımından karşılaştırınız.",
+        "back": "Aynı tür bireyleri arasındaki rekabet tür içi; farklı türler arasındaki rekabet türler arası rekabettir. Sınırlı kaynaklar için rekabet şiddetlenebilir."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o06",
+      "alt_beceri": "Komünitede Tür İçi ve Türler Arası Etkileşimler",
+      "metin": "Bir kuş, başka bir türe ait ağacın gövdesindeki boşluğu yuva olarak kullanıp barınak kazanıyor; ağaç ise etkilenmiyor. Bu ilişki nasıl adlandırılır?",
+      "secenekler": [
+        "Parazitizm",
+        "Kommensalizm",
+        "Amensalizm",
+        "Mutualizm"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bu ilişkide kuş fayda sağlar, ağaç ise ne yarar ne zarar görür. Böyle bir simbiyotik ilişki kommensalizmdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mutualizm, kommensalizm, amensalizm ve parazitizmde türlerin yarar-zarar durumlarını özetleyiniz.",
+        "back": "Mutualizmde iki tür yarar görür; kommensalizmde biri yarar görür, diğeri etkilenmez; amensalizmde biri zarar görür, diğeri etkilenmez; parazitizmde parazit yarar, konak zarar görür."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o07",
+      "alt_beceri": "Süksesyon",
+      "metin": "Bir taşkın sonrasında akarsu yatağında yeni bir çakıl adacığı oluşuyor. Bu alanda gelişmiş toprak ve yerleşik komünite bulunmuyor. Hangi süreç başlar?",
+      "secenekler": [
+        "Birincil süksesyon; çünkü önceki komünite eksiksiz sürmektedir.",
+        "İkincil süksesyon; çünkü toprak ve tohumlar korunmuştur.",
+        "Birincil süksesyon; çünkü gelişmiş toprak ve yerleşik komünite yoktur.",
+        "Süksesyon gerçekleşmez; çıplak kaya üzerinde canlılar yerleşemez."
+      ],
+      "dogru_index": 2,
+      "cozum": "Gelişmiş toprağın ve yerleşik komünitenin bulunmadığı yeni yüzeylerde birincil süksesyon başlar. Bu nedenle çakıl adacığında da önce öncü türlerin yerleşmesi beklenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Birincil ve ikincil süksesyonun başlangıç koşullarını karşılaştırınız.",
+        "back": "Birincil süksesyon gelişmiş toprağın ve yerleşik komünitenin bulunmadığı ortamda; ikincil süksesyon ise daha önce komünite bulunan alan bozulduğunda gerçekleşir."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o08",
+      "alt_beceri": "Süksesyon",
+      "metin": "Daha önce tarım yapılan bir arazi uzun süre işlenmedikten sonra doğal bitkilerle kaplanmaya başlıyor. Önceki bitki topluluğu ortadan kalkmış, ancak üst toprağın ve tohum bankasının bir bölümü korunmuş. Hangi süksesyon türü gerçekleşir?",
+      "secenekler": [
+        "Süksesyon gerçekleşmez; bitkiler yeniden gelişemez.",
+        "Birincil süksesyon; çünkü toprak hiç bulunmaz.",
+        "Birincil süksesyon; çünkü tohumlar korunmuştur.",
+        "İkincil süksesyon; çünkü toprak ve önceki topluluktan kalan tohumlar vardır."
+      ],
+      "dogru_index": 3,
+      "cozum": "Önceden bir komünitenin bulunduğu alanda üst toprağın ve tohum bankasının korunması ikincil süksesyona işaret eder. Bu koşullarda yeni topluluk, topraksız bir yüzeydekinden daha hızlı gelişebilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yeni açılmış bir dağ yolu yarmasındaki topraksız kaya yüzeyinde başlayan bitki topluluğu nasıl gelişir?",
+        "back": "Öncü likenler ve karayosunları yerleşip toprak oluşumuna katkı verir. Toprak geliştikçe otsu bitkiler ve çalılar, daha sonra ağaçlar yerleşir; komünite giderek karmaşıklaşır."
+      },
+      "kazanim": "komünitelerde ve popülasyonlarda görülen etkileşimleri ve değişimleri sorgulayabilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o09",
+      "alt_beceri": "Ekosistemde Madde ve Enerji Akışı",
+      "metin": "Bir kıyı gölünde algler ışığı kullanarak organik madde üretiyor; zooplankton alglerle, küçük balıklar da zooplanktonla besleniyor. Bu besin zincirinde enerji aktarımı ilk hangi canlı grubunda başlar?",
+      "secenekler": [
+        "Enerji aktarımının başladığı ilk halkada",
+        "Yalnızca son tüketiciden sonra",
+        "Ayrıştırıcıların yerine geçen son halkada",
+        "Enerji akışından bağımsız olarak"
+      ],
+      "dogru_index": 0,
+      "cozum": "Algler üreticidir; Güneş enerjisini besinlerde depolanan kimyasal enerjiye dönüştürür. Bu nedenle enerji aktarımı besin zincirinde üreticilerden başlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ekosistemde enerji akışı ile madde döngülerinin yön ve süreklilik bakımından farkını açıklayınız.",
+        "back": "Enerji üreticilerden tüketicilere doğru tek yönlü akar ve bir bölümü ısı olarak kaybolur; su, karbon ve azot gibi maddeler canlılarla çevre arasında döngüsel olarak dolaşır."
+      },
+      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o10",
+      "alt_beceri": "Ekosistemde Madde ve Enerji Akışı",
+      "metin": "Bir tür birden fazla besin zincirinde yer alıyor ve farklı türlerle beslenme ilişkileri kuruyorsa bu ilişkilerin bütünü nasıl gösterilir?",
+      "secenekler": [
+        "Tek bir popülasyon",
+        "Besin ağı",
+        "Yalnızca bir besin zinciri",
+        "Birincil süksesyon"
+      ],
+      "dogru_index": 1,
+      "cozum": "Birden fazla besin zincirinin birbirine bağlanmasıyla çok yönlü beslenme ilişkilerini gösteren besin ağı oluşur. Tek bir zincir ilişkilerin bu karmaşıklığını göstermez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Besin zinciri ile besin ağının yapı bakımından farkını açıklayınız.",
+        "back": "Besin zinciri, üreticiden tüketiciye uzanan beslenme ilişkisidir; birden fazla zincirin birbirine bağlanması daha karmaşık besin ağını oluşturur."
+      },
+      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o11",
+      "alt_beceri": "Ekolojik Piramitler",
+      "metin": "Her trofik basamaktaki canlıların toplam organik madde miktarını gösteren piramit hangisidir?",
+      "secenekler": [
+        "Enerji piramidi",
+        "Sayı piramidi",
+        "Biyokütle piramidi",
+        "Besin ağı"
+      ],
+      "dogru_index": 2,
+      "cozum": "Biyokütle piramidi trofik basamaklardaki canlıların toplam organik madde miktarını gösterir. Enerji piramidi ise kullanılabilir enerji miktarını gösterir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Enerji piramidi ile biyokütle piramidinin gösterdiği özellikleri karşılaştırınız.",
+        "back": "Enerji piramidi trofik basamaklardaki kullanılabilir enerji miktarını; biyokütle piramidi her basamaktaki canlıların toplam organik madde miktarını gösterir."
+      },
+      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o12",
+      "alt_beceri": "Ekolojik Piramitler",
+      "metin": "Bir trofik basamakta biyokütlede 2.400 kJ enerji depolanmıştır. Yaklaşık %10 aktarım kuralına göre bir üst basamağa ne kadar enerji geçer?",
+      "secenekler": [
+        "2.400 kJ",
+        "24 kJ",
+        "120 kJ",
+        "240 kJ"
+      ],
+      "dogru_index": 3,
+      "cozum": "Bir üst trofik basamağa biyokütlede depolanan enerjinin yaklaşık %10’u aktarılır. 2.400 kJ’nin %10’u 240 kJ’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ekolojik piramitte üst trofik basamağa aktarılan enerjinin yaklaşık oranını ve kullanılmayan enerjinin akıbetini açıklayınız.",
+        "back": "Bir basamaktaki biyokütle enerjisinin yaklaşık %10'u bir üst basamağa aktarılır; enerjinin çoğu solunumla ısıya dönüşür veya atıklarla uzaklaştırılır."
+      },
+      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o13",
+      "alt_beceri": "Biyolojik Birikim ve Etkileri",
+      "metin": "Besin zincirine giren ve vücuttan kolayca uzaklaştırılamayan bir zehirli maddenin miktarı genellikle hangi canlılarda daha fazla olur?",
+      "secenekler": [
+        "Besin zincirinin en altındaki üreticilerde her zaman sıfır olur.",
+        "Yalnızca ayrıştırıcılarda, diğer canlılarda hiç bulunmaz.",
+        "Üst trofik basamaklardaki canlılarda daha fazla birikir.",
+        "Besin zincirindeki tüm canlılarda daima eşit olur."
+      ],
+      "dogru_index": 2,
+      "cozum": "Besin zincirinde üst trofik basamaklara çıkıldıkça canlıların dokularında biriken zehirli madde miktarı artabilir. Bu nedenle miktarın her canlıda eşit kalması beklenmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Biyolojik birikimi, bu birikime yol açabilen madde ve canlı dokularındaki değişim bakımından tanımlayınız.",
+        "back": "Vücuttan kolayca uzaklaştırılamayan zararlı kimyasal maddelerin besin zinciri boyunca ilerleyip canlıların dokularında birikmesine biyolojik birikim denir."
+      },
+      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+    },
+    {
+      "soru_id": "biyo_10_u02_k02_o14",
+      "alt_beceri": "Biyolojik Birikim ve Etkileri",
+      "metin": "X kirleticisi çevrede yavaş parçalanıyor ve canlı dokularında birikebiliyor. Besin zinciri boyunca aktarılması hangi sonucu doğurabilir?",
+      "secenekler": [
+        "Canlı dokularında birikmeden kısa sürede tamamen yok olmasını",
+        "Üreticilerin tüm kirleticileri enerjiye dönüştürmesini",
+        "Yalnızca cansız çevrede kalıp canlılara ulaşmamasını",
+        "Besin zinciri boyunca taşınarak canlı dokularında birikmesini"
+      ],
+      "dogru_index": 3,
+      "cozum": "Yavaş parçalanan kalıcı kirleticiler canlılara geçebilir ve dokularda birikebilir; besin zincirindeki aktarım bu yükü üst trofik düzeylere taşıyabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kalıcı kirleticiler besin zinciri boyunca nasıl taşınır ve canlıların dokularında ne tür birikim oluşturabilir?",
+        "back": "Kolay parçalanmayan ve vücuttan uzaklaştırılması zor maddeler canlı dokularında birikebilir. Besin zinciri boyunca üst trofik basamaklara aktarılıp burada daha yüksek miktarlarda birikebilir."
+      },
+      "kazanim": "ekosistemdeki enerji akışıyla ilgili tümevarımsal akıl yürütebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u02_k02_o01:flashcard",
+      "front": "Ekolojik organizasyon düzeylerini küçük birimden büyüğe doğru sıralayınız.",
+      "back": "Organizma → popülasyon → komünite → ekosistem → biyosfer."
+    },
+    {
+      "id": "biyo_10_u02_k02_o02:flashcard",
+      "front": "Komünite ile ekosistem arasındaki kapsam farkını açıklayınız.",
+      "back": "Komünite, belirli bir alanda etkileşim hâlindeki farklı türlerin topluluğudur; ekosistem bu canlı topluluğuyla etkileşimdeki cansız çevreyi de kapsar."
+    },
+    {
+      "id": "biyo_10_u02_k02_o03:flashcard",
+      "front": "Popülasyon yoğunluğunu tanımlayınız ve kullanılan ölçü birimini belirtiniz.",
+      "back": "Popülasyon yoğunluğu, birim alan ya da birim hacimde bulunan birey sayısıdır; örneğin birey/km² olarak ifade edilebilir."
+    },
+    {
+      "id": "biyo_10_u02_k02_o04:flashcard",
+      "front": "Popülasyon büyüklüğünü artıran ve azaltan olayları karşılaştırınız.",
+      "back": "Doğumlar ve içe göçler popülasyon büyüklüğünü artırır; ölümler ve dışa göçler azaltır. Bu iki toplam eşitse popülasyon dengede kalır."
+    },
+    {
+      "id": "biyo_10_u02_k02_o05:flashcard",
+      "front": "Tür içi ve türler arası rekabeti, rekabete giren canlıların tür sayısı bakımından karşılaştırınız.",
+      "back": "Aynı tür bireyleri arasındaki rekabet tür içi; farklı türler arasındaki rekabet türler arası rekabettir. Sınırlı kaynaklar için rekabet şiddetlenebilir."
+    },
+    {
+      "id": "biyo_10_u02_k02_o06:flashcard",
+      "front": "Mutualizm, kommensalizm, amensalizm ve parazitizmde türlerin yarar-zarar durumlarını özetleyiniz.",
+      "back": "Mutualizmde iki tür yarar görür; kommensalizmde biri yarar görür, diğeri etkilenmez; amensalizmde biri zarar görür, diğeri etkilenmez; parazitizmde parazit yarar, konak zarar görür."
+    },
+    {
+      "id": "biyo_10_u02_k02_o07:flashcard",
+      "front": "Birincil ve ikincil süksesyonun başlangıç koşullarını karşılaştırınız.",
+      "back": "Birincil süksesyon gelişmiş toprağın ve yerleşik komünitenin bulunmadığı ortamda; ikincil süksesyon ise daha önce komünite bulunan alan bozulduğunda gerçekleşir."
+    },
+    {
+      "id": "biyo_10_u02_k02_o08:flashcard",
+      "front": "Yeni açılmış bir dağ yolu yarmasındaki topraksız kaya yüzeyinde başlayan bitki topluluğu nasıl gelişir?",
+      "back": "Öncü likenler ve karayosunları yerleşip toprak oluşumuna katkı verir. Toprak geliştikçe otsu bitkiler ve çalılar, daha sonra ağaçlar yerleşir; komünite giderek karmaşıklaşır."
+    },
+    {
+      "id": "biyo_10_u02_k02_o09:flashcard",
+      "front": "Ekosistemde enerji akışı ile madde döngülerinin yön ve süreklilik bakımından farkını açıklayınız.",
+      "back": "Enerji üreticilerden tüketicilere doğru tek yönlü akar ve bir bölümü ısı olarak kaybolur; su, karbon ve azot gibi maddeler canlılarla çevre arasında döngüsel olarak dolaşır."
+    },
+    {
+      "id": "biyo_10_u02_k02_o10:flashcard",
+      "front": "Besin zinciri ile besin ağının yapı bakımından farkını açıklayınız.",
+      "back": "Besin zinciri, üreticiden tüketiciye uzanan beslenme ilişkisidir; birden fazla zincirin birbirine bağlanması daha karmaşık besin ağını oluşturur."
+    },
+    {
+      "id": "biyo_10_u02_k02_o11:flashcard",
+      "front": "Enerji piramidi ile biyokütle piramidinin gösterdiği özellikleri karşılaştırınız.",
+      "back": "Enerji piramidi trofik basamaklardaki kullanılabilir enerji miktarını; biyokütle piramidi her basamaktaki canlıların toplam organik madde miktarını gösterir."
+    },
+    {
+      "id": "biyo_10_u02_k02_o12:flashcard",
+      "front": "Ekolojik piramitte üst trofik basamağa aktarılan enerjinin yaklaşık oranını ve kullanılmayan enerjinin akıbetini açıklayınız.",
+      "back": "Bir basamaktaki biyokütle enerjisinin yaklaşık %10'u bir üst basamağa aktarılır; enerjinin çoğu solunumla ısıya dönüşür veya atıklarla uzaklaştırılır."
+    },
+    {
+      "id": "biyo_10_u02_k02_o13:flashcard",
+      "front": "Biyolojik birikimi, bu birikime yol açabilen madde ve canlı dokularındaki değişim bakımından tanımlayınız.",
+      "back": "Vücuttan kolayca uzaklaştırılamayan zararlı kimyasal maddelerin besin zinciri boyunca ilerleyip canlıların dokularında birikmesine biyolojik birikim denir."
+    },
+    {
+      "id": "biyo_10_u02_k02_o14:flashcard",
+      "front": "Kalıcı kirleticiler besin zinciri boyunca nasıl taşınır ve canlıların dokularında ne tür birikim oluşturabilir?",
+      "back": "Kolay parçalanmayan ve vücuttan uzaklaştırılması zor maddeler canlı dokularında birikebilir. Besin zinciri boyunca üst trofik basamaklara aktarılıp burada daha yüksek miktarlarda birikebilir."
+    }
+  ],
+  "topic_key": "Biyoloji > 2.3 Ekosistemdeki Madde ve Enerji Akışı"
+}

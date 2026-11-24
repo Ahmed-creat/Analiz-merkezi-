@@ -1,5 +1,11 @@
 # ANALİZ MERKEZİ — PWA + Firebase Kurulum Rehberi
 
+> **TARİHSEL REHBER (G-12).** Buradaki Firebase Hosting / `pwa-files/` akışı
+> artık kullanılmıyor: yayın **Vercel** üzerinden `deploy/build.sh` ile yalnız
+> `site/` klasöründen yapılıyor ve `pwa-files/` v78'de kaldırıldı. Kurulum
+> adımları tarihsel kayıt olarak duruyor; güncel akış için `deploy/build.sh`
+> (Vercel build adımı) ve `docs/uretim/teslim/` raporlarına bak.
+
 Bu klasör, uygulamayı **telefona yüklenebilir PWA** yapan ve **Google girişi + bulut yedek + push bildirim** ekleyen yayınlama paketidir.
 
 ## Ne hazırlanmış durumda (bana düşen — tamamlandı)
@@ -87,26 +93,50 @@ koç selamı (ritim + geri sayım) · Tekrar Zamanı Geldi (3-7-14-21-28. gün) 
 - **Cloud Functions (Blaze):** `functions/index.js` de hazır — Blaze'e geçersen `firebase deploy --only functions` ile aynı işi yapar. Gerek yok, sadece seçenek.
 - **OneSignal:** ücretsiz (10k aboneye kadar) ama yalnızz DAĞITIM servisi — hangi bildirimin gerektiğine karar veremez, yine bir zamanlayıcı gerekir. Ayrıca uygulamaya ikinci SDK + kendi service worker'ı demek. Aynı zamanlayıcıya ihtiyaç duyduğundan avantajı yok; bu yüzden FCM + GitHub Actions tercih edildi. (Israrla istenirse taşıma yapılabilir.)
 
-## OKULIZYON + OKUL SİTESİ ENTEGRASYONU 🎓
-**Akış:** Uygulamada yan menü → "Okulizyon Bağlantısı" → ad/okul no/ilçe/okul yaz → kaydet. Her sabah **07:00** GitHub Actions (`.github/workflows/okul-cekim.yml`) siteye girer, sonuçları **deterministik Cheerio koduyla** (yapay zekâ YOK) ayıklar, Firestore'a kuyruklar. Uygulamayı açınca sorular **"Analiz Bekliyor"** listesine düşer → sen sadece her soruya **neden** seçersin (Dikkat hatası / Bilgi eksikliği…) → "Kaydet" → normal deneme olarak işlenir, öncelik listesine girer. Okul sitesinin duyuruları + sınav tarihleri de aynı turla çekilir; ders programı yalnızca görsel/PDF ise **Gemini Vision** ile JSON'a çevrilir (GEMINI_API_KEY secret'ı).
+## OKULİZYON ENTEGRASYONU 🎓
+**Akış:** Uygulamada yan menü → "Okulizyon Bağlantısı" → ad/okul no/ilçe/okul yaz → kaydet. Her sabah **07:30** GitHub Actions (`.github/workflows/bildirim.yml`) Okulizyon'a girer, sonuçları tarayıcıyla (Playwright) ayıklar, Supabase'e yazar. Uygulamayı açınca denemeler doğrudan **Denemelerim**'e yazılır → sen sadece her soruya **neden** seçersin (Dikkat hatası / Bilgi eksikliği…) → "Kaydet" → normal deneme olarak işlenir, öncelik listesine girer. **v111 — okul sitesi çekimi KALDIRILDI:** okul sitesinden duyuru/sınav tarihi çekme çalışmıyordu (çekici Firestore'a yazıyordu, uygulama Supabase'den okuyordu; canlıda tablo hep 0 satırdı), kullanıcı isteğiyle tamamen kaldırıldı: `okul-sitesi.js`, `degisiklik-kontrol.js` ve iş akışı adımları silindi. Okul sınav tarihini takvime **Planlama → Takvim → Sınav ekle** ile elle gir.
 
 **Etkinleştirmek için bakan gerekenler (functions/ dosyalarında):**
 - `okulizyon-cek.js` → `OKULIZYON_CFG`: okulunuzun Okulizyon **giriş adresi** + form alan adları (+ varsa sonuç sayfası yolu)
-- `okul-sitesi.js` → `OKUL_SITESI.url`: okul sitesi adresi
 - API anahtarı GEREKMEZ (OCR kütüphanesi kullanılıyor)
 - Doğru seçicileri kesinleştirmek için: Okulizyon sonuç sayfası açıkken **Ctrl+S** ile kaydedip o HTML'i geliştiriciye ver (seçiciler birebir oturtulur — ayrıştırma zaten başlık-isimli sütun eşleme yöntemiyle şablon değişimlerine dayanıklı).
 
-## Sık sorulan## OKULIZYON + OKUL SİTESİ ENTEGRASYONU 🎓
-**Akış:** Uygulamada yan menü → "Okulizyon Bağlantısı" → ad/okul no/ilçe/okul yaz → kaydet. Her sabah **07:00** GitHub Actions (`.github/workflows/okul-cekim.yml`) siteye girer, sonuçları **deterministik Cheerio koduyla** (yapay zekâ YOK) ayıklar, Firestore'a kuyruklar. Uygulamayı açınca sorular **"Analiz Bekliyor"** listesine düşer → sen sadece her soruya **neden** seçersin (Dikkat hatası / Bilgi eksikliği…) → "Kaydet" → normal deneme olarak işlenir, öncelik listesine girer. Okul sitesinin duyuruları + sınav tarihleri de aynı turla çekilir; ders programı yalnızca görsel/PDF ise **Gemini Vision** ile JSON'a çevrilir (GEMINI_API_KEY secret'ı).
+## Soru Havuzlarının Eklenmesi (İçerik Aşaması)
 
-**Etkinleştirmek için bakan gerekenler (functions/ dosyalarında):**
-- `okulizyon-cek.js` → `OKULIZYON_CFG`: okulunuzun Okulizyon **giriş adresi** + form alan adları (+ varsa sonuç sayfası yolu)
-- `okul-sitesi.js` → `OKUL_SITESI.url`: okul sitesi adresi
-- API anahtarı GEREKMEZ (OCR kütüphanesi kullanılıyor)
-- Doğru seçicileri kesinleştirmek için: Okulizyon sonuç sayfası açıkken **Ctrl+S** ile kaydedip o HTML'i geliştiriciye ver (seçiciler birebir oturtulur — ayrıştırma zaten başlık-isimli sütun eşleme yöntemiyle şablon değişimlerine dayanıklı).
+Uygulama motoru (BKT, mini testler, ilişki grafı ve tekrar kartları) soru havuzları olmadan da çalışır.
+Bu durumda onay yalnızca mevcut deneme ve soru girişi verileriyle bozulmuş modda değerlendirilir.
+Soru havuzları içerik güncellemesi olarak eklenir; kod değişikliği gerektirmez:
+
+- Konum: `content/soru_havuzlari/{konu_id}.json`
+- Konu başına en az 10 soru; her soru `alt_beceri` etiketli; alt beceri başına en az 2 soru
+- Sorular 4 seçenekli, deneme zorluğunda, tuzaksız; `cozum` alanı zorunlu
+- Her havuz dosyası eklendiğinde `npm run validate:pools` çalıştırılmalı
+- İlişki grafı: `content/iliski_grafi.json`; açılışta şema ve tutarlılık doğrulanır
+- Depoya alınan 9 ders havuzu: `content/soru_havuzlari/` altında 152 konu dosyası ve 1.756 soru bulunur; `index.json` manifesti ve açılışta havuz yükleme doğrulaması kullanılır
+
+## 10. Sınıf Deneme Soru Dağılımı
+
+10. sınıf genel deneme formatı uygulamada sınıf seçimine göre otomatik kullanılır:
+
+| Test / Ders | Soru |
+| --- | ---: |
+| Türk Dili ve Edebiyatı | 30 |
+| Tarih | 10 |
+| Coğrafya | 10 |
+| Felsefe | 5 |
+| Din Kültürü ve Ahlak Bilgisi | 5 |
+| Matematik | 30 |
+| Fizik | 10 |
+| Kimya | 10 |
+| Biyoloji | 10 |
+| **Toplam** | **120** |
+
+Süre **135 dakika** olarak uygulanır. Bu, yayın örneklerinde görülen 120 soruluk lise deneme düzeninin uygulamadaki varsayılanıdır. Yayınlar arasında Sosyal Bilimler alt dağılımında küçük farklar bulunabilir; örneğin bazı kitapçıklarda Tarih 11 ve Din Kültürü 4 sorudur. MEB ülke geneli ortak yazılıları bu formattan ayrıdır ve 2025-2026 kılavuzunda 10. sınıf Matematik ve Türk Dili ve Edebiyatı için 8 açık uçlu/kısa cevaplı soru ve 40 dakika belirtilmiştir.
+
+Araştırma referansları: [Bilgi Sarmal 10. sınıf örnek deneme](https://onyal.meb.k12.tr/meb_iys_dosyalar/07/03/974829/dosyalar/2023_10/10103601_BILGI-SARMAL-10.SINIF-1.DENEME-ORNEK-PDF.pdf), [lise deneme soru/süre tablosu](https://daltonegitim.com/tr/images/Sinav-Soru-ve-Sureleri.pdf), [MEB 2025-2026 ortak yazılı kılavuzu](https://odsgm.meb.gov.tr/www/milli-egitim-bakanligi-tarafindan-2025-2026-egitim-ogretim-yili-2-donem-1-ortak-yazili-sinavlarina-iliskin-kilavuz-yayimlandi/icerik/1555/tr).
 
 ## Sık sorulan
 - **Bildirimler telefon kilideyken geliyor mu?** Evet — FCM + `firebase-messaging-sw.js` arka plan bildirimi işler (config doldurulduysa).
 - **İnternet yoksa?** Uygulama tam çalışır; bulut senkronu ve giriş devre dışı kalır, veriler cihazda (localStorage) durur.
-- **Verilerim nerede?** Kendi Firebase projende, sadece senin uid'ine kilitli (yukarıdaki kurallar). Kimse başkasının verisini okuyamaz.
+- **Verilerim nerede?** Supabase projesinde `public.app_states` tablosunda, kullanıcı başına tek satır tek JSON (`state`) olarak durur; RLS yalnız senin satırını gösterir. Okulizyon sonuçları `state.exams`, bilgiler `state.settings.okulizyon`, konu takibi `state.topics` içinde. Ayrıntılı harita: `docs/VERILER-NEREDE.md`. Kilit (uçtan uca şifreleme) açıksa `state` şifreli zarftır — sunucu da okuyamaz.
 - Kaynak kodu değiştirirsen: `analiz-merkezi-gelismui` içinde düzenle → `python3 analiz-merkezi-pwa/build_pwa.py` → yeni `index.html` hazır.

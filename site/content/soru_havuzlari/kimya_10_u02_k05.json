@@ -1,0 +1,256 @@
+{
+  "konu_id": "kimya_10_u02_k05",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 2,
+  "tema_adi": "Çeşitlilik",
+  "baslik": "2.1.5 Çözünürlük",
+  "topic_key": "Kimya > 2.1.5 Çözünürlük",
+  "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar.",
+  "kaynak": "Kimya 10 ders kitabı, s.179-183",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u02_k05_o01",
+      "alt_beceri": "Çözünürlük kavramını açıklar.",
+      "metin": "Belirli sıcaklık ve basınçta çözünürlük nasıl tanımlanır?",
+      "secenekler": [
+        "Çözeltinin kaynama noktası değeri",
+        "100 g çözücüde çözünen maksimum madde miktarı",
+        "Çözücünün buhar basıncı değeri",
+        "Çözünenin mol sayısı değeri"
+      ],
+      "dogru_index": 1,
+      "cozum": "Çözünürlük, belirli sıcaklık ve basınçta 100 g çözücüde çözünebilen maksimum madde miktarıdır (g/100 g çözücü) (s.181-183).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlüğün birimi nedir?",
+        "back": "g çözünen / 100 g çözücü."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o02",
+      "alt_beceri": "Çözünürlük kavramını açıklar.",
+      "metin": "Akide şekeri yapımında şurup nasıl hazırlanır?",
+      "secenekler": [
+        "Üç ölçü suya bir ölçü şeker eklenerek",
+        "Yalnız su kaynatılarak",
+        "Şeker eritilmeden",
+        "Bir ölçü suya üç ölçü şeker eklenerek"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitaba göre akide şekeri yapılırken genellikle bir ölçü suya üç ölçü şeker kullanılır (s.179).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akide şurubunda su-şeker oranı nedir?",
+        "back": "1 ölçü suya 3 ölçü şeker."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o03",
+      "alt_beceri": "Çözünürlük kavramını açıklar.",
+      "metin": "Aynı koşullarda farklı katıların 100 g suda çözünen miktarlarının farklı olmasının temel nedeni nedir?",
+      "secenekler": [
+        "Maddenin cinsi",
+        "Kabın şekli",
+        "Karıştırma süresi",
+        "Ölçüm hatası"
+      ],
+      "dogru_index": 0,
+      "cozum": "Çözünürlük maddenin cinsine bağlıdır; bu yüzden farklı katılar farklı miktarlarda çözünür (s.181-183).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlüğü belirleyen madde özelliği nedir?",
+        "back": "Madde cinsi etkilidir."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o04",
+      "alt_beceri": "Çözünürlük verilerini yorumlar.",
+      "metin": "25 °C'ta bir katının çözünürlüğü 40 g/100 g su ise 200 g suda en fazla kaç gram çözünür?",
+      "secenekler": [
+        "40",
+        "200",
+        "80",
+        "400"
+      ],
+      "dogru_index": 2,
+      "cozum": "100 g suda 40 g ise 200 g suda 80 g çözünür (s.181-183).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlük değerinden çözünen miktarı nasıl bulunur?",
+        "back": "80 g"
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o05",
+      "alt_beceri": "Çözünürlük verilerini yorumlar.",
+      "metin": "100 g suda 30 g madde çözündüğünde doymuş çözelti elde ediliyorsa çözünürlük kaç g/100 g su'dur?",
+      "secenekler": [
+        "30",
+        "70",
+        "130",
+        "3"
+      ],
+      "dogru_index": 0,
+      "cozum": "Doymuş çözeltide çözünen miktarı çözünürlüğü verir: 30 g/100 g su (s.181-183).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doymuş çözeltiden çözünürlük nasıl bulunur?",
+        "back": "30 g/100 g su"
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o06",
+      "alt_beceri": "Çözünürlük verilerini yorumlar.",
+      "metin": "Şeker şurubu yavaş soğutulursa hangi sonuç beklenir?",
+      "secenekler": [
+        "Hiç kristal oluşmaz",
+        "İri kristaller oluşur",
+        "Şeker bozunur",
+        "Su buharlaşır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yavaş soğutmada kristal büyümesi için zaman kaldığından iri kristaller oluşur; akide şekeri böyle yapılır (s.179-180).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yavaş soğutmanın kristal boyutuna etkisi nedir?",
+        "back": "İri kristaller."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o07",
+      "alt_beceri": "Çözünürlük verilerini yorumlar.",
+      "metin": "Çözünürlük eğrisinin altındaki bölgede bulunan bir nokta hangi çözeltiyi gösterir?",
+      "secenekler": [
+        "Doymamış çözelti",
+        "Doymuş çözelti",
+        "Aşırı doymuş çözelti",
+        "Saf çözücü"
+      ],
+      "dogru_index": 0,
+      "cozum": "Eğrinin altında kalan çözelti daha fazla madde çözebilir; doymamıştır (s.183, s.199).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doymamış çözeltinin çözünürlük eğrisindeki yeri nedir?",
+        "back": "Doymamış."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o08",
+      "alt_beceri": "Çözünürlük verilerini yorumlar.",
+      "metin": "Bir katının çözünürlüğü 20 °C'ta 20 g, 60 °C'ta 60 g/100 g su ise sıcaklık artışının etkisi nedir?",
+      "secenekler": [
+        "Çözünürlük azalır",
+        "Değişmez",
+        "Çözünürlük artar",
+        "Önce artar sonra azalır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Verilerde sıcaklık arttıkça çözünürlük 20'den 60'a çıkmıştır; bu katı için çözünürlük sıcaklıkla artar (s.181-184).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sıcaklık artınca çözünürlük ne olur (bu katıda)?",
+        "back": "Artar."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o09",
+      "alt_beceri": "Çözünürlük verilerini yorumlar.",
+      "metin": "Çözünürlük birimi genellikle nasıl ifade edilir?",
+      "secenekler": [
+        "Mol sayısı / litre",
+        "Miligram / litre",
+        "Gram / mililitre",
+        "Gram çözünen / 100 g çözücü"
+      ],
+      "dogru_index": 3,
+      "cozum": "Katıların çözünürlüğü genellikle 100 g çözücüde çözünen gram miktarı olarak verilir (s.181).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Çözünürlüğün g/100 g çözücü ile ifadesinin anlamı nedir?",
+        "back": "100 g çözücüde çözünen maddenin gram cinsinden miktarı."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    },
+    {
+      "soru_id": "kimya_10_u02_k05_o10",
+      "alt_beceri": "Çözünürlük verilerini yorumlar.",
+      "metin": "Doymuş bir çözeltiye aynı sıcaklıkta biraz daha katı eklendiğinde ne gözlenir?",
+      "secenekler": [
+        "Katı tamamen çözünür",
+        "Çözelti kaynar",
+        "Çözelti donar",
+        "Katı çözünmeden dipte kalır"
+      ],
+      "dogru_index": 3,
+      "cozum": "Doymuş çözelti daha fazla madde çözemediğinden eklenen katı çözünmeden kalır (s.183, s.197).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doymuş çözeltiye katı eklenirse ne olur?",
+        "back": "Çözünmeden kalır."
+      },
+      "kazanim": "Çözünürlüğü tanımlar ve çözünürlükle doymuşluk arasındaki ilişkiyi açıklar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u02_k05_o01:flashcard",
+      "front": "Çözünürlüğün birimi nedir?",
+      "back": "g çözünen / 100 g çözücü."
+    },
+    {
+      "id": "kimya_10_u02_k05_o02:flashcard",
+      "front": "Akide şurubunda su-şeker oranı nedir?",
+      "back": "1 ölçü suya 3 ölçü şeker."
+    },
+    {
+      "id": "kimya_10_u02_k05_o03:flashcard",
+      "front": "Çözünürlüğü belirleyen madde özelliği nedir?",
+      "back": "Madde cinsi etkilidir."
+    },
+    {
+      "id": "kimya_10_u02_k05_o04:flashcard",
+      "front": "Çözünürlük değerinden çözünen miktarı nasıl bulunur?",
+      "back": "80 g"
+    },
+    {
+      "id": "kimya_10_u02_k05_o05:flashcard",
+      "front": "Doymuş çözeltiden çözünürlük nasıl bulunur?",
+      "back": "30 g/100 g su"
+    },
+    {
+      "id": "kimya_10_u02_k05_o06:flashcard",
+      "front": "Yavaş soğutmanın kristal boyutuna etkisi nedir?",
+      "back": "İri kristaller."
+    },
+    {
+      "id": "kimya_10_u02_k05_o07:flashcard",
+      "front": "Doymamış çözeltinin çözünürlük eğrisindeki yeri nedir?",
+      "back": "Doymamış."
+    },
+    {
+      "id": "kimya_10_u02_k05_o08:flashcard",
+      "front": "Sıcaklık artınca çözünürlük ne olur (bu katıda)?",
+      "back": "Artar."
+    },
+    {
+      "id": "kimya_10_u02_k05_o09:flashcard",
+      "front": "Çözünürlüğün g/100 g çözücü ile ifadesinin anlamı nedir?",
+      "back": "100 g çözücüde çözünen maddenin gram cinsinden miktarı."
+    },
+    {
+      "id": "kimya_10_u02_k05_o10:flashcard",
+      "front": "Doymuş çözeltiye katı eklenirse ne olur?",
+      "back": "Çözünmeden kalır."
+    }
+  ]
+}

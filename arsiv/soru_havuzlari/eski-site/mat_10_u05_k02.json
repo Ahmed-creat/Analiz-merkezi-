@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u05_k02",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u05_k02_o01",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Aynı doğrulama adımları çok sayıda veri kaydına uygulanacak. Her kayıt için yöntemi baştan kurmamak ve tutarlı sonuç almak için nasıl bir çözüm yolu hazırlanır?",
+      "secenekler": [
+        "Genel bir algoritma oluşturulur",
+        "Adımlar rastgele değiştirilir",
+        "Her kayda ilgisiz bir yöntem seçilir",
+        "Sonuç kontrolü kaldırılır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Aynı türden girdilere uygulanabilen genel bir algoritma, adımları tutarlı sıraya koyar ve tekrar kullanılabilir. Adımları rastgele değiştirmek aynı girdiler için farklı işlemler yapılmasına yol açabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Algoritmik yapı, karmaşık bir problemde çözüm adımlarını nasıl düzenler?",
+        "back": "Çözüm adımlarını belirli bir sıraya koyar; her adım tamamlanınca bir sonrakine geçilir."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o02",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Bir akış şeması, hesaplamadan önce kullanıcıdan n değerini almalıdır. Bu adım hangi basamakta gösterilir?",
+      "secenekler": [
+        "Koşul",
+        "Veri girişi",
+        "İşlem",
+        "Sonuç yazdır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kullanıcıdan alınan n değeri veri girişi basamağında elde edilir. İşlem basamağı alınan değerle hesaplama yapar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Akış şemasında kullanıcıdan bir değer alınmasını gösteren basamağın adını yaz.",
+        "back": "Veri girişi."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o03",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Bir algoritma “Sayı 0 ise ekrana SIFIR yazdır, değilse diğer adıma geç” biçiminde çalışıyor. Girdi 0 olduğunda hangi işlem yapılır?",
+      "secenekler": [
+        "Diğer adıma geçilir",
+        "Döngü başlatılır",
+        "Ekrana SIFIR yazdırılır",
+        "Girdi yeniden istenir"
+      ],
+      "dogru_index": 2,
+      "cozum": "Girdi 0 olduğundan “sayı 0” koşulu sağlanır ve bu koşula bağlı SIFIR yazdırma işlemi yapılır. Diğer adıma geçme seçeneği koşulun sağlanmadığı duruma aittir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Algoritmada “ise” ifadesinin görevi nedir?",
+        "back": "Belirtilen koşul sağlandığında ilgili işlemin yapılmasını sağlar."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o04",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Bir güvenli dosya aktarımı ancak dosyanın biçimi uygun, boyutu sınır içinde ve imzası doğrulanmışsa başlatılıyor. Biçim ve boyut koşulları uygun, imza doğrulaması başarısızsa aktarım başlar mı?",
+      "secenekler": [
+        "Evet; iki koşulun sağlanması yeterlidir.",
+        "Evet; imza doğrulaması aktarımı etkilemez.",
+        "Bilgi yetersizdir; biçim ve boyut koşulları bilinmiyor.",
+        "Hayır; “ve” ile bağlanan koşulların üçü de doğru olmalıdır."
+      ],
+      "dogru_index": 3,
+      "cozum": "“Ve” bağlacında tüm koşulların doğru olması gerekir. İmza doğrulaması başarısız olduğundan aktarım başlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir işlem dört koşulun tümü “ve” bağlacıyla birleştirilerek tanımlanıyorsa işlemin gerçekleşmesi için koşullar nasıl sağlanmalıdır?",
+        "back": "Dört koşulun da doğru olması gerekir."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o05",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "i=2, 38, 4 biçimindeki döngüde 2’den başlayarak 4’er artan tüm değerler işleniyor. Döngü kaç kez çalışır?",
+      "secenekler": [
+        "10",
+        "9",
+        "11",
+        "36"
+      ],
+      "dogru_index": 0,
+      "cozum": "İşlenen değerler 2, 6, 10, …, 38 olur. (38−2)/4+1=10 değer bulunduğundan döngü 10 kez çalışır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Algoritmik yapıda döngü hangi tür işlemler için kullanılır?",
+        "back": "Belirlenen koşullarda yinelenen işlemler için kullanılır."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o06",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "i=5,1,−1 biçimindeki döngü gösteriminde başlangıç, bitiş ve adım değerlerinin anlamı hangi seçenekte doğru açıklanmıştır?",
+      "secenekler": [
+        "i, 1’den başlar; 5’e kadar her adımda 1 azalır.",
+        "i, 5’ten başlar; 1’e kadar her adımda 1 azalır.",
+        "i, 5’ten başlar; −1’e kadar her adımda 1 artar.",
+        "i, −1’den başlar; 5’e kadar her adımda 1 artar."
+      ],
+      "dogru_index": 1,
+      "cozum": "Gösterimde başlangıç değeri 5, bitiş değeri 1, adım değeri −1’dir. Bu nedenle i=5, 4, 3, 2, 1 değerlerini alarak azalır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "i = a, N, b biçimindeki döngü gösteriminde i, a, N ve b neyi belirtir?",
+        "back": "i döngü değişkeni; a başlangıç, N bitiş, b artış veya azalış değeridir."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o07",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "A ve B koşulları “A ancak ve ancak B” biçiminde bağlanmıştır. A da B de yanlışsa bağlacın sonucu nedir?",
+      "secenekler": [
+        "Yanlış",
+        "Bilgi yetersizdir",
+        "Doğru",
+        "Döngü başlatılır"
+      ],
+      "dogru_index": 2,
+      "cozum": "“Ancak ve ancak” bağlacı, iki koşul aynı doğruluk değerine sahip olduğunda doğrudur; ikisi de yanlış olduğundan sonuç doğrudur. Yalnızca birinin yanlış olması durumunda sonuç yanlış olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "“Ancak ve ancak” bağlacının doğru sonuç verdiği koşulu sözle ifade et.",
+        "back": "İki koşul aynı anda doğru ya da aynı anda yanlışsa sonuç doğrudur."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o08",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Bir algoritmanın adımlarını standart şekiller ve oklarla görsel olarak göstermek isteyen öğrenci hangi gösterimi kullanmalıdır?",
+      "secenekler": [
+        "Algoritmik doğal dil",
+        "Sözde kod",
+        "Açıklayıcı paragraf",
+        "Akış şeması"
+      ],
+      "dogru_index": 3,
+      "cozum": "Adımları standart şekiller ve oklarla görsel olarak gösteren biçim akış şemasıdır. Algoritmik doğal dil ve sözde kod adımları metinle ifade eder.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir algoritmanın işleyişini ifade etmek için kullanılan üç gösterim biçimini yaz.",
+        "back": "Algoritmik doğal dil, sözde kod ve akış şeması."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o09",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "f(x)=3x−26 doğrusal fonksiyonu için ilk tahminler 4 ve 12 seçilip orta değer x₃=8 hesaplanıyor. f(8)<0 ve f(12)>0 ise işaret değişimini koruyarak bir sonraki adımda hangi aralık kullanılır?",
+      "secenekler": [
+        "[8,12]",
+        "[4,8]",
+        "[4,12]",
+        "[12,16]"
+      ],
+      "dogru_index": 0,
+      "cozum": "f(8)=−2 ve f(12)=10 olduğundan uç değerlerin işaretleri zıttır. Kökü çevreleyen yeni aralık [8,12] olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ortalama alarak yineleme yönteminde iki kök tahmininden yeni tahmin nasıl elde edilir?",
+        "back": "İki tahminin ortalaması alınır: x₃ = (x₁ + x₂) / 2."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o10",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Bir hesaplama aracı √18 için Babil metodunu x₀=4 başlangıç tahminiyle uyguluyor. İlk yeni tahmin x₁ yaklaşık kaç olur?",
+      "secenekler": [
+        "4,5",
+        "4,25",
+        "4,75",
+        "5"
+      ],
+      "dogru_index": 1,
+      "cozum": "x₁=(x₀+18/x₀)/2=(4+18/4)/2=(4+4,5)/2=4,25 olur. 4,5 yalnızca 18/4 bölümüdür, güncellenmiş tahmin değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Babil metodunda xₙ tahmininden sonraki tahmin xₙ₊₁ için kullanılan yineleme kuralını yaz.",
+        "back": "xₙ₊₁ = (xₙ + a / xₙ) / 2."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o11",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Bir depo yönetim sistemi stok referans kodu olarak 9 072 değerini alıyor. Basamak sayısı algoritması her adımda sayıyı 10’a tam bölüp bölüm sıfır olana kadar ilerlediğine göre raporlanacak basamak sayısı kaçtır?",
+      "secenekler": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "dogru_index": 2,
+      "cozum": "9 072 için ardışık tam sayı bölümleri 9072 → 907 → 90 → 9 → 0 olur; dört bölme adımı gerekir. Sistem kodun 4 basamaklı olduğunu raporlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Basamak sayısını bulan algoritmada sayının bölümünü art arda 10’a bölmek ne sağlar?",
+        "back": "Her tam sayı bölme adımında bir basamak eksilir; bölüm sıfırlanana kadar yapılan adımlar sayının basamak sayısını verir."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u05_k02_o12",
+      "alt_beceri": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz",
+      "metin": "Bir sayı denetleyicisi 96 girdisinin kendisi dışındaki pozitif bölenlerini topladığında 156 sonucunu elde ediyor. Mükemmel sayı testi hangi kararı vermelidir?",
+      "secenekler": [
+        "Mükemmeldir; çünkü bölenler toplamı sayıdan büyüktür.",
+        "Mükemmel değildir; çünkü bölenler toplamı sayıdan küçüktür.",
+        "Karar verilemez; giriş değeri belirtilmemiştir.",
+        "Mükemmel değildir; çünkü 156, 96’ya eşit değildir."
+      ],
+      "dogru_index": 3,
+      "cozum": "Mükemmel sayıda kendisi hariç pozitif bölenlerin toplamı sayının kendisine eşit olmalıdır. 156≠96 olduğundan denetleyici sayının mükemmel olmadığını bildirir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kendi hariç pozitif tam bölenlerinin toplamı kendisine eşit olan sayıya ne denir?",
+        "back": "Mükemmel sayı denir."
+      },
+      "kazanim": "cebirsel ve fonksiyonel işlemleri algoritmik bir dille yapılandırabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u05_k02_o01:flashcard",
+      "front": "Algoritmik yapı, karmaşık bir problemde çözüm adımlarını nasıl düzenler?",
+      "back": "Çözüm adımlarını belirli bir sıraya koyar; her adım tamamlanınca bir sonrakine geçilir."
+    },
+    {
+      "id": "mat_10_u05_k02_o02:flashcard",
+      "front": "Akış şemasında kullanıcıdan bir değer alınmasını gösteren basamağın adını yaz.",
+      "back": "Veri girişi."
+    },
+    {
+      "id": "mat_10_u05_k02_o03:flashcard",
+      "front": "Algoritmada “ise” ifadesinin görevi nedir?",
+      "back": "Belirtilen koşul sağlandığında ilgili işlemin yapılmasını sağlar."
+    },
+    {
+      "id": "mat_10_u05_k02_o04:flashcard",
+      "front": "Bir işlem dört koşulun tümü “ve” bağlacıyla birleştirilerek tanımlanıyorsa işlemin gerçekleşmesi için koşullar nasıl sağlanmalıdır?",
+      "back": "Dört koşulun da doğru olması gerekir."
+    },
+    {
+      "id": "mat_10_u05_k02_o05:flashcard",
+      "front": "Algoritmik yapıda döngü hangi tür işlemler için kullanılır?",
+      "back": "Belirlenen koşullarda yinelenen işlemler için kullanılır."
+    },
+    {
+      "id": "mat_10_u05_k02_o06:flashcard",
+      "front": "i = a, N, b biçimindeki döngü gösteriminde i, a, N ve b neyi belirtir?",
+      "back": "i döngü değişkeni; a başlangıç, N bitiş, b artış veya azalış değeridir."
+    },
+    {
+      "id": "mat_10_u05_k02_o07:flashcard",
+      "front": "“Ancak ve ancak” bağlacının doğru sonuç verdiği koşulu sözle ifade et.",
+      "back": "İki koşul aynı anda doğru ya da aynı anda yanlışsa sonuç doğrudur."
+    },
+    {
+      "id": "mat_10_u05_k02_o08:flashcard",
+      "front": "Bir algoritmanın işleyişini ifade etmek için kullanılan üç gösterim biçimini yaz.",
+      "back": "Algoritmik doğal dil, sözde kod ve akış şeması."
+    },
+    {
+      "id": "mat_10_u05_k02_o09:flashcard",
+      "front": "Ortalama alarak yineleme yönteminde iki kök tahmininden yeni tahmin nasıl elde edilir?",
+      "back": "İki tahminin ortalaması alınır: x₃ = (x₁ + x₂) / 2."
+    },
+    {
+      "id": "mat_10_u05_k02_o10:flashcard",
+      "front": "Babil metodunda xₙ tahmininden sonraki tahmin xₙ₊₁ için kullanılan yineleme kuralını yaz.",
+      "back": "xₙ₊₁ = (xₙ + a / xₙ) / 2."
+    },
+    {
+      "id": "mat_10_u05_k02_o11:flashcard",
+      "front": "Basamak sayısını bulan algoritmada sayının bölümünü art arda 10’a bölmek ne sağlar?",
+      "back": "Her tam sayı bölme adımında bir basamak eksilir; bölüm sıfırlanana kadar yapılan adımlar sayının basamak sayısını verir."
+    },
+    {
+      "id": "mat_10_u05_k02_o12:flashcard",
+      "front": "Kendi hariç pozitif tam bölenlerinin toplamı kendisine eşit olan sayıya ne denir?",
+      "back": "Mükemmel sayı denir."
+    }
+  ],
+  "baslik": "5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı",
+  "topic_key": "Matematik > 5.2 Cebirsel ve Fonksiyonel İşlemlerin Algoritmik Yapısı"
+}

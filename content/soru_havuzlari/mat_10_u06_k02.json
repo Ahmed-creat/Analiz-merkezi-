@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u06_k02",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u06_k02_o01",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "A(−3,1) ve B(5,11) noktalarından geçen doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "5/4",
+        "−5/4",
+        "4/5",
+        "−4/5"
+      ],
+      "dogru_index": 0,
+      "cozum": "Eğim, ordinat değişiminin apsis değişimine oranıdır: (11−1)/(5−(−3))=10/8=5/4.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A(x₁, y₁) ve B(x₂, y₂) noktalarından geçen doğrunun eğimini veren bağıntıyı yaz.",
+        "back": "m = (y₂ − y₁) / (x₂ − x₁), x₂ ≠ x₁."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o02",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "y=−3x+5 doğrusunun grafiği soldan sağa incelendiğinde nasıl ilerler?",
+      "secenekler": [
+        "Yatay ilerler",
+        "Alçalır",
+        "Yükselir",
+        "Önce yükselip sonra alçalır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Doğrunun eğimi −3 negatiftir; x arttıkça y azalır ve grafik soldan sağa alçalır. Yükselme pozitif eğimde görülür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğim pozitif olduğunda soldan sağa doğru ilerlerken doğrunun ordinatı nasıl değişir?",
+        "back": "Ordinat artar; doğru soldan sağa yükselir."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o03",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir CNC kesim tezgâhının sabit kılavuz çizgisi x=0 iken y=7 hizasından geçiyor ve x bir birim arttığında y üç birim azalıyor. Bu kılavuzun denklemi hangisidir?",
+      "secenekler": [
+        "y=3x+7",
+        "y=−3x−7",
+        "y=−3x+7",
+        "y=3x−7"
+      ],
+      "dogru_index": 2,
+      "cozum": "Eğim m=−3 ve y eksenini kestiği noktanın ordinatı 7 olduğundan y=mx+n biçiminde y=−3x+7 yazılır. Sabit terim, y eksenini kestiği ordinattır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğimi m ve y eksenini kestiği noktanın ordinatı n olan doğrunun denklemini yaz.",
+        "back": "y = mx + n."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o04",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir dijital tasarım programındaki hizalama kılavuzu y=−2x+9 doğrusu üzerindedir. Aşağıdaki işaretlerden hangisi kılavuz üzerinde bulunur?",
+      "secenekler": [
+        "P(2,4)",
+        "Q(−1,6)",
+        "R(3,1)",
+        "S(1,7)"
+      ],
+      "dogru_index": 3,
+      "cozum": "x=1 için y=−2·1+9=7 olduğundan S(1,7) kılavuz üzerindedir. Diğer noktaların ordinatları, kendi apsisleri için denklemde bulunan değerle eşleşmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir noktanın verilen doğru üzerinde olup olmadığını denklem kullanarak nasıl test edersin?",
+        "back": "Noktanın apsis ve ordinatını doğru denkleminde yerine koyar, eşitliğin sağlanıp sağlanmadığını kontrol edersin."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o05",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir grafik tasarımındaki sınır çizgisi 4x+5y=36 bağıntısıyla modelleniyor. Yatay referans eksenini (y=0) hangi apsiste keser?",
+      "secenekler": [
+        "9",
+        "−9",
+        "6",
+        "18"
+      ],
+      "dogru_index": 0,
+      "cozum": "Yatay eksen üzerindeki noktalarda y=0 olur. 4x+5·0=36 eşitliğinden x=9 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir doğrunun x eksenini kestiği noktanın apsisini bulurken denklemde y için hangi değeri kullanırsın?",
+        "back": "x eksenindeki her noktanın ordinatı 0 olduğundan y = 0 alınır."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o06",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Eğimi −3 olan bir doğruya dik ve eğimi tanımlı doğrunun eğimi kaçtır?",
+      "secenekler": [
+        "−1/3",
+        "1/3",
+        "3",
+        "−3"
+      ],
+      "dogru_index": 1,
+      "cozum": "Dik kesişen doğruların eğimleri çarpımı −1’dir. −3m=−1 olduğundan m=1/3 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dik kesişen ve eğimleri tanımlı iki doğrunun eğimleri arasında nasıl bir ilişki vardır?",
+        "back": "Eğimlerinin çarpımı −1'dir."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o07",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir paketleme hattındaki iki doğrusal kılavuz y=−2x+4 ve y=mx−11 denklemleriyle modelleniyor. Kılavuzların paralel ve farklı doğrular olması için m kaç olmalıdır?",
+      "secenekler": [
+        "2",
+        "1/2",
+        "−2",
+        "−1/2"
+      ],
+      "dogru_index": 2,
+      "cozum": "Paralel ve farklı doğruların eğimleri eşittir. İlk kılavuzun eğimi −2 olduğundan m=−2 olmalı; y ekseni kesişimleri farklı olduğu için doğrular çakışmaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Eğimleri tanımlı, birbirinden farklı iki doğrunun paralel olması için eğimleri arasında nasıl bir ilişki bulunmalıdır?",
+        "back": "Eğimleri eşit olmalıdır."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o08",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir lazer kazıma tezgâhındaki sabit kılavuz çizgisi P(−2,5) noktasından geçiyor ve eğimi 3/2’dir. Kılavuzun denklemi hangisidir?",
+      "secenekler": [
+        "y=−(3/2)x+8",
+        "y=(3/2)x−8",
+        "y=(2/3)x+8",
+        "y=(3/2)x+8"
+      ],
+      "dogru_index": 3,
+      "cozum": "Nokta-eğim biçiminde y−5=(3/2)(x+2) yazılır. Düzenlendiğinde kılavuzun denklemi y=(3/2)x+8 olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "A(x₁, y₁) noktasından geçen ve eğimi m olan doğrunun genel denklem biçimini yaz.",
+        "back": "y − y₁ = m(x − x₁)."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o09",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir optik tarayıcının hizalama çizgisi pozitif x ekseniyle 30° açı yapıyor. Çizginin eğimi nedir?",
+      "secenekler": [
+        "√3/3",
+        "√3",
+        "−√3/3",
+        "0"
+      ],
+      "dogru_index": 0,
+      "cozum": "Bir doğrunun eğimi, eğim açısının tanjantıdır. tan 30°=√3/3 olduğundan çizginin eğimi √3/3’tür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir doğrunun eğim açısı α ise eğimi m ile α arasındaki bağıntı nedir?",
+        "back": "m = tan α; α=0° için eğim 0, α=90° için eğim tanımsızdır."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o10",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir ölçüm cihazının çıkış değeri x ayarına bağlı olarak y=17x+65 doğrusal modeliyle hesaplanıyor. x=12 olduğunda çıkış değeri kaçtır?",
+      "secenekler": [
+        "204",
+        "269",
+        "65",
+        "281"
+      ],
+      "dogru_index": 1,
+      "cozum": "f(12)=17·12+65=204+65=269 bulunur. 204, sabit terim eklenmeden hesaplanan değerdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doğrusal model y=mx+n biçimindeyse m ve n hangi bilgileri temsil eder?",
+        "back": "m, x’teki bir birim değişime karşılık y’deki değişimi; n, x=0 iken y’nin değerini gösterir."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o11",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir pompa dakikada 16 L su aktarıyor. Sabit hızla 9 dakika çalışırsa kaç litre su aktarır?",
+      "secenekler": [
+        "126",
+        "16",
+        "144",
+        "160"
+      ],
+      "dogru_index": 2,
+      "cozum": "Aktarılan miktar süreyle doğru orantılıdır: 16·9=144 L. 16 L, yalnızca bir dakikada aktarılan miktardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir nicelik x ile doğru orantılı değişiyorsa, birim başına değişim r olduğunda y ile x arasındaki bağıntıyı yaz.",
+        "back": "y=rx; x’teki her birimlik artış y’yi r birim değiştirir."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    },
+    {
+      "soru_id": "mat_10_u06_k02_o12",
+      "alt_beceri": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz",
+      "metin": "Bir teknik çizimde doğrunun eğimi 7/4’tür. x değeri 4 birim arttığında y değeri kaç birim değişir?",
+      "secenekler": [
+        "4 birim",
+        "11 birim",
+        "28 birim",
+        "7 birim"
+      ],
+      "dogru_index": 3,
+      "cozum": "Eğim, y’deki değişimin x’teki değişime oranıdır. Δx=4 için Δy=(7/4)×4=7 birim olur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir doğrunun eğimi 7/4 ise x 4 birim arttığında y kaç birim değişir?",
+        "back": "y, 7 birim artar."
+      },
+      "kazanim": "dik koordinat sistemini doğrunun özelliklerini incelemek ve doğru ile ilgili problemleri çözebilmek için uygun bir temsil aracı olarak kullanabilmeniz"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u06_k02_o01:flashcard",
+      "front": "A(x₁, y₁) ve B(x₂, y₂) noktalarından geçen doğrunun eğimini veren bağıntıyı yaz.",
+      "back": "m = (y₂ − y₁) / (x₂ − x₁), x₂ ≠ x₁."
+    },
+    {
+      "id": "mat_10_u06_k02_o02:flashcard",
+      "front": "Eğim pozitif olduğunda soldan sağa doğru ilerlerken doğrunun ordinatı nasıl değişir?",
+      "back": "Ordinat artar; doğru soldan sağa yükselir."
+    },
+    {
+      "id": "mat_10_u06_k02_o03:flashcard",
+      "front": "Eğimi m ve y eksenini kestiği noktanın ordinatı n olan doğrunun denklemini yaz.",
+      "back": "y = mx + n."
+    },
+    {
+      "id": "mat_10_u06_k02_o04:flashcard",
+      "front": "Bir noktanın verilen doğru üzerinde olup olmadığını denklem kullanarak nasıl test edersin?",
+      "back": "Noktanın apsis ve ordinatını doğru denkleminde yerine koyar, eşitliğin sağlanıp sağlanmadığını kontrol edersin."
+    },
+    {
+      "id": "mat_10_u06_k02_o05:flashcard",
+      "front": "Bir doğrunun x eksenini kestiği noktanın apsisini bulurken denklemde y için hangi değeri kullanırsın?",
+      "back": "x eksenindeki her noktanın ordinatı 0 olduğundan y = 0 alınır."
+    },
+    {
+      "id": "mat_10_u06_k02_o06:flashcard",
+      "front": "Dik kesişen ve eğimleri tanımlı iki doğrunun eğimleri arasında nasıl bir ilişki vardır?",
+      "back": "Eğimlerinin çarpımı −1'dir."
+    },
+    {
+      "id": "mat_10_u06_k02_o07:flashcard",
+      "front": "Eğimleri tanımlı, birbirinden farklı iki doğrunun paralel olması için eğimleri arasında nasıl bir ilişki bulunmalıdır?",
+      "back": "Eğimleri eşit olmalıdır."
+    },
+    {
+      "id": "mat_10_u06_k02_o08:flashcard",
+      "front": "A(x₁, y₁) noktasından geçen ve eğimi m olan doğrunun genel denklem biçimini yaz.",
+      "back": "y − y₁ = m(x − x₁)."
+    },
+    {
+      "id": "mat_10_u06_k02_o09:flashcard",
+      "front": "Bir doğrunun eğim açısı α ise eğimi m ile α arasındaki bağıntı nedir?",
+      "back": "m = tan α; α=0° için eğim 0, α=90° için eğim tanımsızdır."
+    },
+    {
+      "id": "mat_10_u06_k02_o10:flashcard",
+      "front": "Doğrusal model y=mx+n biçimindeyse m ve n hangi bilgileri temsil eder?",
+      "back": "m, x’teki bir birim değişime karşılık y’deki değişimi; n, x=0 iken y’nin değerini gösterir."
+    },
+    {
+      "id": "mat_10_u06_k02_o11:flashcard",
+      "front": "Bir nicelik x ile doğru orantılı değişiyorsa, birim başına değişim r olduğunda y ile x arasındaki bağıntıyı yaz.",
+      "back": "y=rx; x’teki her birimlik artış y’yi r birim değiştirir."
+    },
+    {
+      "id": "mat_10_u06_k02_o12:flashcard",
+      "front": "Bir doğrunun eğimi 7/4 ise x 4 birim arttığında y kaç birim değişir?",
+      "back": "y, 7 birim artar."
+    }
+  ],
+  "baslik": "6.2 Doğrunun Özellikleri ve Analitik İncelenmesi",
+  "topic_key": "Matematik > 6.2 Doğrunun Özellikleri ve Analitik İncelenmesi"
+}

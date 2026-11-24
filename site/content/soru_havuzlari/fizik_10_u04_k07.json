@@ -1,0 +1,256 @@
+{
+  "konu_id": "fizik_10_u04_k07",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 4,
+  "tema_adi": "Dalgalar",
+  "baslik": "4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+  "topic_key": "Fizik > 4.6.2 Depremle İlgili Bilimsel Model Oluşturabilme",
+  "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir.",
+  "kaynak": "Fizik 10 ders kitabı, s.332-338",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u04_k07_o01",
+      "alt_beceri": "Sismoloji ve sismograf kavramlarını açıklar.",
+      "metin": "Deprem ve yer hareketlerini inceleyen bilim dalına ne denir?",
+      "secenekler": [
+        "Jeoloji",
+        "Sismoloji",
+        "Meteoroloji",
+        "Astronomi"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitapta bu bilim dalı sismoloji (deprem bilimi) olarak adlandırılır (s.332).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Deprem biliminin adı nedir?",
+        "back": "Sismoloji."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o02",
+      "alt_beceri": "Sismoloji ve sismograf kavramlarını açıklar.",
+      "metin": "Yer sarsıntılarını zamanla ilişkilendirerek kaydeden cihaza ne denir?",
+      "secenekler": [
+        "Barometre",
+        "Termometre",
+        "Voltmetre",
+        "Sismograf"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitapta bu cihaz sismograf (depremyazar) olarak tanımlanır (s.332).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Deprem kayıt cihazının adı nedir?",
+        "back": "Sismograf."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o03",
+      "alt_beceri": "Sismoloji ve sismograf kavramlarını açıklar.",
+      "metin": "Sismografların yaptığı kayda ne denir?",
+      "secenekler": [
+        "Sismogram",
+        "Diyagram",
+        "Spektrum",
+        "Histogram"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kitapta sismografların yaptığı kayıt sismogram olarak adlandırılır (s.332).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sismogramın tanımı nedir?",
+        "back": "Sismogram."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o04",
+      "alt_beceri": "Sismoloji ve sismograf kavramlarını açıklar.",
+      "metin": "Sismoloji alanında çalışan bilim insanına ne denir?",
+      "secenekler": [
+        "Jeolog",
+        "Kimyager",
+        "Sismolog",
+        "Astronom"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kitapta bu kişiler sismolog (deprem bilimci) olarak adlandırılır (s.332).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sismologun tanımı nedir?",
+        "back": "Sismolog."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o05",
+      "alt_beceri": "Sismoloji ve sismograf kavramlarını açıklar.",
+      "metin": "En basit sismograf hangi parçalardan oluşur?",
+      "secenekler": [
+        "Mıknatıs ve pil düzeneği",
+        "Ayna ve mercek sistemi",
+        "Türbin ve jeneratör",
+        "Yay, ağırlıklı çubuk ve kalem"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitapta en basit sismografın bir ucu sabitlenmiş, yayla desteklenmiş ağırlıklı çubuk ve kayıt kaleminden oluştuğu belirtilir (s.332).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Basit sismografın bileşenleri nedir?",
+        "back": "Yay, ağırlıklı çubuk, kayıt kalemi."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o06",
+      "alt_beceri": "Deprem riskine yönelik model ve çözüm önerilerini yorumlar.",
+      "metin": "Depremler yılın her günü, yerin 10 km'lerce altında gerçekleşir. Depremlerin doğrudan ölçülememesinin nedeni nedir?",
+      "secenekler": [
+        "Çok kısa sürmeleri",
+        "Yerin derinliklerinde meydana gelmeleri",
+        "Ses çıkarmamaları",
+        "Renklerinin olmaması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitapta depremlerin yerin derinliklerinde oluştuğu için doğrudan ölçülemediği, sismograflarla kaydedildiği belirtilir (s.332).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Dolaylı ölçümün gerekliliği ne demektir?",
+        "back": "Sismograf (sismometre) ile yer hareketi kaydedilir."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o07",
+      "alt_beceri": "Deprem riskine yönelik model ve çözüm önerilerini yorumlar.",
+      "metin": "Yüksek katlı bir hastane, temeline yerleştirilen 4 sismik izolatörle depreme hazırlanmıştır. Sismik izolatörlerin işlevi nedir?",
+      "secenekler": [
+        "Yapıyı depremin etkisinden korumak",
+        "Şebeke akımını kesmek",
+        "Dışarıdaki sesi yalıtmak",
+        "Gelen ışığı yansıtmak"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kitapta sismik izolatörlerin binaların yapısal güvenliğini artırarak depremin etkisinden koruduğu belirtilir (s.335).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yapıyı sarsıntıdan ayırmanın yararı nedir?",
+        "back": "Bina ile zemin arasındaki etkiyi azaltır."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o08",
+      "alt_beceri": "Deprem riskine yönelik model ve çözüm önerilerini yorumlar.",
+      "metin": "Meksiko'da merkez üssünden 320 km uzakta büyük yıkım oluşmasının temel nedeni nedir?",
+      "secenekler": [
+        "Depremin merkez üssünün şehirde olması",
+        "Binaların çok hafif olması",
+        "Göl tabanı zeminin sismik dalgaları güçlendirmesi (rezonans)",
+        "Depremin çok sığ olması"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kitaptaki örnekte göl tabanına kurulu zeminin dalgaları daha güçlü ilettiği ve binaların doğal frekansıyla rezonansa girdiği açıklanır (s.328).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Göl tabanı zeminin etkisi nedir?",
+        "back": "Zemin rezonansı büyüttü."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o09",
+      "alt_beceri": "Deprem riskine yönelik model ve çözüm önerilerini yorumlar.",
+      "metin": "Binaların doğal titreşim frekansı tasarımda neden dikkate alınır?",
+      "secenekler": [
+        "Bina daha hafif olsun diye",
+        "Frekanslar çakışırsa rezonans yıkım yapar",
+        "Maliyeti artırmak için",
+        "Dış seslerin yalıtımı için"
+      ],
+      "dogru_index": 1,
+      "cozum": "Doğal frekans zorlayıcı frekansa eşitlenirse genlik büyür; bu nedenle frekansların çakışmaması hedeflenir (s.326, s.328).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Rezonans çakışmasının önlenmesi ne demektir?",
+        "back": "Rezonans riskini önlemek için."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    },
+    {
+      "soru_id": "fizik_10_u04_k07_o10",
+      "alt_beceri": "Deprem riskine yönelik model ve çözüm önerilerini yorumlar.",
+      "metin": "Deprem riskini azaltmaya yönelik en uygun model önerisi hangisidir?",
+      "secenekler": [
+        "Yalnız deprem sonrası yardım planı",
+        "Binaların yüksekliğini artırmak",
+        "Depremi önceden durdurmaya çalışmak",
+        "Zemin etüdüne göre tasarlanmış sismik izolatörlü yapılar"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitapta depremin öngörülemezliği vurgulanır; bu nedenle riski azaltan yapısal çözümler (izolatör, zemin etüdü, dayanıklı tasarım) önerilir (s.334-336).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sismik izolatörlü yapıların risk azaltmadaki yeri nedir?",
+        "back": "Zemin etüdü + sismik izolatör + dayanıklı tasarım."
+      },
+      "kazanim": "Sismograf ve sismik izolatör gibi modelleri açıklar; deprem riskine çözüm önerileri geliştirir."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u04_k07_o01:flashcard",
+      "front": "Deprem biliminin adı nedir?",
+      "back": "Sismoloji."
+    },
+    {
+      "id": "fizik_10_u04_k07_o02:flashcard",
+      "front": "Deprem kayıt cihazının adı nedir?",
+      "back": "Sismograf."
+    },
+    {
+      "id": "fizik_10_u04_k07_o03:flashcard",
+      "front": "Sismogramın tanımı nedir?",
+      "back": "Sismogram."
+    },
+    {
+      "id": "fizik_10_u04_k07_o04:flashcard",
+      "front": "Sismologun tanımı nedir?",
+      "back": "Sismolog."
+    },
+    {
+      "id": "fizik_10_u04_k07_o05:flashcard",
+      "front": "Basit sismografın bileşenleri nedir?",
+      "back": "Yay, ağırlıklı çubuk, kayıt kalemi."
+    },
+    {
+      "id": "fizik_10_u04_k07_o06:flashcard",
+      "front": "Dolaylı ölçümün gerekliliği ne demektir?",
+      "back": "Sismograf (sismometre) ile yer hareketi kaydedilir."
+    },
+    {
+      "id": "fizik_10_u04_k07_o07:flashcard",
+      "front": "Yapıyı sarsıntıdan ayırmanın yararı nedir?",
+      "back": "Bina ile zemin arasındaki etkiyi azaltır."
+    },
+    {
+      "id": "fizik_10_u04_k07_o08:flashcard",
+      "front": "Göl tabanı zeminin etkisi nedir?",
+      "back": "Zemin rezonansı büyüttü."
+    },
+    {
+      "id": "fizik_10_u04_k07_o09:flashcard",
+      "front": "Rezonans çakışmasının önlenmesi ne demektir?",
+      "back": "Rezonans riskini önlemek için."
+    },
+    {
+      "id": "fizik_10_u04_k07_o10:flashcard",
+      "front": "Sismik izolatörlü yapıların risk azaltmadaki yeri nedir?",
+      "back": "Zemin etüdü + sismik izolatör + dayanıklı tasarım."
+    }
+  ]
+}

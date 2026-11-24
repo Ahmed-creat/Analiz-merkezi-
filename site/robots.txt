@@ -1,0 +1,41 @@
+# ============================================================
+# ANALİZ MERKEZİ — robots.txt
+# ------------------------------------------------------------
+# KULLANICI (v121): "site Google arama sonuçlarında olmasın,
+# sadece adresi girince [açılsın]."
+#
+# ÖNEMLİ TASARIM KARARI — neden "User-agent: * / Disallow: /" YAZMIYORUZ:
+#   robots.txt ile sayfayı tamamen engellersek Google sayfayı TARAYAMAZ.
+#   Tarayamadığı için de HTML içindeki <meta name="robots" content="noindex">
+#   etiketini GÖREMEZ. Sonuç: adres dışarıdan bir yerde paylaşıldıysa
+#   (link, WhatsApp, GitHub) başlık yine arama sonuçlarında çıkabilir.
+#
+#   Doğru yol: taramaya İZİN ver + noindex ver (index.html ve gizlilik.html
+#   içinde var). Böylece Google sayfayı okur, noindex'i görür ve sonuçlardan
+#   çıkarır.
+#
+# Aşağıda yalnızca zararlı/agresif botlar engellenir.
+# ============================================================
+
+# Yapay zekâ eğitim botları: içerik öğrenci verisi değil ama taransın istemiyoruz.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# Arama motorları: TARAMAYA İZİN (noindex etiketi işini yapacak)
+User-agent: *
+Allow: /

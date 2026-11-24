@@ -9,7 +9,6 @@
 name: Bildirim Motoru
 on:
   schedule:
-    - cron: "*/30 * * * *"
     - cron: "30 4 * * *"
     - cron: "30 16 * * *"
   workflow_dispatch:
@@ -19,7 +18,7 @@ on:
         type: boolean
         default: false
       cek_only:
-        description: "Yalnız Okulizyon + okul sitesi çekimini dene (bildirim göndermez)"
+        description: "Yalnız Okulizyon çekimini dene (bildirim göndermez)"
         type: boolean
         default: false
 
@@ -81,14 +80,6 @@ jobs:
           node node_modules/playwright/cli.js install chromium --with-deps
           node -e "console.log('playwright:', require('playwright/package.json').version, '✓')"
 
-      - name: Değişiklik gözcüsü (30 dk'da bir)
-        if: ${{ github.event.schedule == '*/30 * * * *' }}
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: node degisiklik-kontrol.js
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          APP_ORIGIN: https://analizmerkezii.netlify.app
-
       - name: Okulizyon çek (sabah + elle; test koşusunda atla)
         if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
         working-directory: ${{ steps.kok.outputs.dizin }}
@@ -97,19 +88,20 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PLAYWRIGHT_BROWSERS_PATH: "0"
 
-      - name: Okul sitesi (duyuru + ders programı OCR; test koşusunda atla)
-        if: ${{ github.event.schedule == '30 4 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.test != 'true') }}
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: node okul-sitesi.js
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-
-      - name: Bildirimleri gönder (sabah tam / akşam kritik / test)
-        if: ${{ github.event.schedule != '*/30 * * * *' && github.event.inputs.cek_only != 'true' }}
-        working-directory: ${{ steps.kok.outputs.dizin }}
-        run: node bildirim-gonder.js
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          TEST: ${{ github.event.inputs.test == 'true' && '1' || '0' }}
-          APP_ORIGIN: https://analizmerkezii.netlify.app
-          
+      # v59 — GÖNDERİM BURADAN KALDIRILDI (16 Kasım 2026 kök neden ölçümü).
+      #
+      # Eski yol `bildirim-gonder` (mod=run) + `node bildirim-gonder.js` (Firebase)
+      # idi. Ölçüm: FCM 201 dönüyor, Chrome gövdeyi çözemediği için push OLAYI
+      # cihaza hiç ulaşmıyordu (bkz. supabase/migrations/0002_webpush_tetikle.sql).
+      # Dahası gönderdiğini bildirim_log'a yazdığı için GÜVENİLİR yolu
+      # (public.webpush_tetikle) SUSTURABİLİYORDU; Firebase yolu ise aynı
+      # hatırlatmayı ikinci kez gönderip çift bildirim üretiyordu.
+      #
+      # Hatırlatmalar artık yalnız şu zincirden gider:
+      #   pg_cron (07:35 / 13:05 / 19:30 / 21:35 TR)
+      #     → public.webpush_tetikle()   (vardiya: sabah/akşam, tekrar yok)
+      #     → push-tani (web-push ile şifreler)
+      #     → service worker → push_teslim tablosuna "ulaştı/gösterildi" yazar
+      #
+      # Bu iş akışı yalnız ÇEKİM işlerini yapar: okulizyon, okul sitesi,
+      # değişiklik gözcüsü. Bildirim göndermez.

@@ -1,0 +1,300 @@
+{
+  "konu_id": "mat_10_u02_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "kaynak_dosya": "10. Sınıf matematik json.zip",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u02_k01_o01",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir belediye kültür merkezinde üyelik türü (öğrenci, yetişkin, ileri yaş) ile seçilen atölye (seramik, resim, ahşap) arasında ilişki olup olmadığı araştırılıyor. Araştırma sorusu hangisidir?",
+      "secenekler": [
+        "Üyelik türü ile atölye tercihi arasında bir ilişki var mıdır?",
+        "Kültür merkezine gelen bazı kişiler hangi etkinlikleri sever?",
+        "Üyelerin yaşları ile merkezde geçirdikleri dakika arasında nasıl bir ilişki vardır?",
+        "Seramik atölyesi diğerlerinden daha yararlıdır."
+      ],
+      "dogru_index": 0,
+      "cozum": "Araştırma sorusu iki kategorik değişkeni, üyelik türünü ve atölye tercihini, açıkça belirtip aralarındaki ilişkiyi sorar. B’de değişkenler belirsiz, C’de iki nicel ölçüm, D’de ise ilişki araştırma sorusu değil bir yargı vardır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kategorik değişken arasındaki ilişkiyi araştıran soru nasıl kurulmalıdır?",
+        "back": "Her iki kategorik değişkeni açıkça belirtip bu değişkenler arasında ilişki olup olmadığını sormalıdır."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o02",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir grafik iki grubun tercih oranlarını gösteriyor; ancak verilerin kimlerden, ne zaman ve hangi amaçla toplandığı belirtilmiyor. Grafiği yorumlarken hangi bilgi eksikliği özellikle önemlidir?",
+      "secenekler": [
+        "Çünkü kategorik veriler iki yönlü tabloda gösterilemez.",
+        "Çünkü bağlam, verilerin hangi koşullarda ve hangi amaçla toplandığını anlamayı sağlar.",
+        "Çünkü bir kümeli sütun grafiğinde yalnızca tek kategori bulunabilir.",
+        "Çünkü okul seviyeleri sayısal bir değişkendir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Araştırmanın amacı ve verilerin hangi koşullarda kimlerden toplandığı bağlamı oluşturur. Bağlam yoksa gruplar arasındaki farkların anlamı yanlış yorumlanabilir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İstatistiksel bir bağlam, veri dağılımını yorumlamaya nasıl yardımcı olur?",
+        "back": "Verilerin hangi koşullarda toplandığını, incelenen değişkenleri ve araştırmanın amacını açıklar; bağlam yoksa yorum yanıltıcı olabilir."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o03",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir kentteki bütün kayıtlı spor merkezi üyelerinin memnuniyeti incelenecektir. Üye listesinden kura ile seçilen 240 kişi araştırmaya katılırsa evren hangisidir?",
+      "secenekler": [
+        "Kura ile seçilen 240 kişi",
+        "Spor merkezinde o gün bulunan ziyaretçiler",
+        "Kentteki spor merkezine kayıtlı üyelerin tamamı",
+        "Yalnızca memnuniyet bildiren üyeler"
+      ],
+      "dogru_index": 2,
+      "cozum": "Evren, araştırmanın sonuçlarını hakkında bilgi vermek istediği hedef grubun tamamıdır; burada kentteki spor merkezine kayıtlı bütün üyeler evrendir. Kurayla seçilen 240 kişi örneklemdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İstatistiksel araştırmada evren ile örneklem arasındaki farkı kısaca açıkla.",
+        "back": "Evren hedef alınan grubun tamamı, örneklem ise bu gruptan seçilen katılımcılardır."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o04",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir kent müzesi, ziyaretçilerin geçici sergiler hakkındaki görüşlerini kısa bir anketle topluyor. Yanıtların gizliliğini korumak için hangi uygulama en uygundur?",
+      "secenekler": [
+        "Yanıtları ziyaretçinin adıyla birlikte paylaşmak",
+        "Anketi tamamlamayan ziyaretçilerin yanıtını kendisi adına uydurmak",
+        "Yalnızca olumlu yanıtları rapora almak",
+        "İletişim bilgilerini yanıt kayıtlarından ayrı tutup bulguları toplu ve anonim yayımlamak"
+      ],
+      "dogru_index": 3,
+      "cozum": "İletişim bilgilerini yanıt verilerinden ayrı tutmak ve yalnızca toplu, anonim bulguları yayımlamak kişiyi yanıtlarından ayırarak gizliliği korur. İsimli paylaşım gizliliği, yanıtları seçerek raporlama ise nesnelliği bozar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Katılımcıların verilerinin gizliliğini korumak için veri toplama sürecinde alınabilecek iki önlemi belirt.",
+        "back": "Katılımı gönüllü ve onaya dayalı sağlamak; kişisel bilgileri gizli tutup sonuçları anonim raporlamak."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o05",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir kültür atölyesi, ziyaretçilerin yaş grubu ile tercih ettiği etkinliği kaydediyor. 18–29 yaş grubundaki 21 kişi resim atölyesini seçtiğine göre iki yönlü tabloda “18–29 yaş / resim” hücresine hangi sıklık yazılır?",
+      "secenekler": [
+        "21",
+        "14",
+        "30",
+        "44"
+      ],
+      "dogru_index": 0,
+      "cozum": "İlgili hücre, belirtilen yaş grubunda resim atölyesini seçen kişi sayısını gösterir. Bu sayı 21 olduğundan hücre sıklığı 21’dir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki yönlü tabloda satır ve sütunlar ile bir hücredeki sıklık neyi gösterir?",
+        "back": "Satır ve sütunlar iki değişkenin kategorilerini, hücre ise bu kategorilerin kesişimindeki gözlem sayısını gösterir."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o06",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir topluluk atölyesindeki 180 katılımcının 36’sı akşam oturumunu seçmiştir. Akşam oturumunu seçenlerin tüm katılımcılar içindeki göreli sıklığı yüzde kaçtır?",
+      "secenekler": [
+        "36%",
+        "20%",
+        "25%",
+        "80%"
+      ],
+      "dogru_index": 1,
+      "cozum": "Genel göreli sıklık 36/180 × 100 = %20’dir. 36%, kişi sayısını yüzdeyle karıştırır; yüzde için toplam katılımcı sayısına bölmek gerekir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki yönlü tabloda bir hücrenin göreli sıklığını toplam gözlem sayısına göre nasıl hesaplarsın?",
+        "back": "Hücre sıklığını tablonun genel toplamına böler, yüzde isteniyorsa 100 ile çarparsın."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o07",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir etkinlikte akşam oturumuna katılan 40 kişinin 14’ü seramik çalışmasını seçmiştir. Akşam oturumuna katılanlar içinde seramiği seçenlerin koşullu göreli sıklığı yüzde kaçtır?",
+      "secenekler": [
+        "14%",
+        "40%",
+        "35%",
+        "65%"
+      ],
+      "dogru_index": 2,
+      "cozum": "Koşul akşam oturumuna katılmaktır; payda 40 alınır. 14/40 × 100 = %35 bulunur.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir sınıf seviyesi sabit tutulduğunda o sınıftaki kurs tercihlerinin koşullu göreli sıklığı nasıl bulunur?",
+        "back": "Her hücre sıklığı, o sınıf seviyesinin satır toplamına bölünür; yüzde için 100 ile çarpılır."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o08",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir ankette aile paketini seçen 96 katılımcının 24’ü 25 yaşın altındadır. Aile paketini seçenler içinde 25 yaş altındakilerin koşullu göreli sıklığı yüzde kaçtır?",
+      "secenekler": [
+        "24%",
+        "96%",
+        "75%",
+        "25%"
+      ],
+      "dogru_index": 3,
+      "cozum": "Aile paketini seçenler koşul olduğundan payda 96’dır. 24/96 × 100 = %25 bulunur; 24% genel toplamın verilmediği durumda hesaplanamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Bir kurs tercihi kategorisine göre sınıf seviyelerinin koşullu göreli sıklığı hesaplanırken hücre sıklığı hangi toplama bölünür?",
+        "back": "İlgili kurs tercihi kategorisinin sütun toplamına bölünür."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o09",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir bisiklet topluluğunda haftalık gelen üyelerin %38’i, aylık gelen üyelerin ise %61’i aynı bakım atölyesini seçmiştir. Bu oranlar arasındaki fark kaç yüzde puandır?",
+      "secenekler": [
+        "23 yüzde puan",
+        "99 yüzde puan",
+        "22 yüzde puan",
+        "61 yüzde puan"
+      ],
+      "dogru_index": 0,
+      "cozum": "İki yüzde oranı arasındaki fark 61 − 38 = 23 yüzde puandır. 61% büyük grubun oranı, 99 ise oranların toplamıdır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kümeli sütun grafiği iki kategorik değişkenin dağılımını hangi değerlerle karşılaştırmaya yarar?",
+        "back": "Bir kategorinin her düzeyinde diğer değişkenin koşullu göreli sıklıklarını, genellikle yüzde olarak karşılaştırır."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o10",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir ankette su tasarrufu aracı seçme oranı kiracılarda %42, ev sahiplerinde %67 bulunmuştur. Bu bulgulardan çıkarılabilecek en dikkatli sonuç hangisidir?",
+      "secenekler": [
+        "Ev sahibi olmak su tasarrufu aracı seçmeye kesin olarak neden olur.",
+        "Konut durumu ile araç tercihi arasında gözlenen bir ilişki vardır; bu tek başına neden-sonuç kanıtı değildir.",
+        "Kiracıların hiçbiri su tasarrufu aracı seçmemiştir.",
+        "Ev sahiplerinin tamamı aracı seçmiştir."
+      ],
+      "dogru_index": 1,
+      "cozum": "Anket, örneklemde ev sahiplerinin tercih oranının kiracılardan yüksek olduğunu gösterir. Gözlenen birliktelik tek başına konut durumunun tercihe neden olduğunu kanıtlamaz.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İki kategorik değişken arasında gözlenen ilişki, neden-sonuç bağı kurmaya tek başına yeter mi? İzin verdiği çıkarımı belirt.",
+        "back": "Hayır; gözlenen ilişki birliktelik gösterir, tek başına neden-sonuç ilişkisini kanıtlamaz."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o11",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Bir ulaşım araştırmasında yalnızca sabah vardiyasına gelenler sabit tutuluyor ve bu grubun otobüs, bisiklet ve yürüyüş tercihleri koşullu göreli sıklıklarla veriliyor. Bu yüzdelerin toplamı kaçtır?",
+      "secenekler": [
+        "90%",
+        "30%",
+        "100%",
+        "120%"
+      ],
+      "dogru_index": 2,
+      "cozum": "Sabit tutulan sabah grubu içindeki tüm ulaşım tercihleri birlikte grubun tamamını oluşturur. Bu nedenle koşullu göreli sıklıkların toplamı %100’dür.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Koşullu göreli sıklıklarda, sabit tutulan kategoriye ait diğer kategorilerin yüzdelerinin toplamı neyi gösterir?",
+        "back": "Sabit tutulan kategorinin tamamını, yani %100'ünü gösterir."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    },
+    {
+      "soru_id": "mat_10_u02_k01_o12",
+      "alt_beceri": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,",
+      "metin": "Aşağıdaki değişken çiftlerinden hangisi iki kategorik değişken arasındaki ilişkiyi incelemeye uygun değildir?",
+      "secenekler": [
+        "Etkinliğe katılım biçimi (yüz yüze/çevrim içi) ile tercih edilen oturum (sabah/akşam)",
+        "Konut türü (daire/müstakil) ile ısınma biçimi (merkezî/bireysel)",
+        "Mevsim (ilkbahar/yaz/sonbahar/kış) ile yağış durumu (yağışlı/yağışsız)",
+        "Bir paketin kütlesi (gram) ile satış fiyatı (TL)"
+      ],
+      "dogru_index": 3,
+      "cozum": "Paket kütlesi ve satış fiyatı sayısal ölçüm değerleri alan nicel değişkenlerdir. Diğer seçeneklerde değişkenler belirli kategorilere ayrılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Kategorik bir değişkeni nicel bir değişkenden ayıran özelliği kısa biçimde açıkla.",
+        "back": "Kategorik değişken, gözlemleri belirli grup veya sınıflara ayırır; nicel değişken sayısal ölçüm değerleri alır."
+      },
+      "kazanim": "iki kategorik değişkenli veri ile çalışabilmeniz ve iki kategorik değişken arasındaki ilişkililiğe dayalı karar verebilmeniz,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u02_k01_o01:flashcard",
+      "front": "İki kategorik değişken arasındaki ilişkiyi araştıran soru nasıl kurulmalıdır?",
+      "back": "Her iki kategorik değişkeni açıkça belirtip bu değişkenler arasında ilişki olup olmadığını sormalıdır."
+    },
+    {
+      "id": "mat_10_u02_k01_o02:flashcard",
+      "front": "İstatistiksel bir bağlam, veri dağılımını yorumlamaya nasıl yardımcı olur?",
+      "back": "Verilerin hangi koşullarda toplandığını, incelenen değişkenleri ve araştırmanın amacını açıklar; bağlam yoksa yorum yanıltıcı olabilir."
+    },
+    {
+      "id": "mat_10_u02_k01_o03:flashcard",
+      "front": "İstatistiksel araştırmada evren ile örneklem arasındaki farkı kısaca açıkla.",
+      "back": "Evren hedef alınan grubun tamamı, örneklem ise bu gruptan seçilen katılımcılardır."
+    },
+    {
+      "id": "mat_10_u02_k01_o04:flashcard",
+      "front": "Katılımcıların verilerinin gizliliğini korumak için veri toplama sürecinde alınabilecek iki önlemi belirt.",
+      "back": "Katılımı gönüllü ve onaya dayalı sağlamak; kişisel bilgileri gizli tutup sonuçları anonim raporlamak."
+    },
+    {
+      "id": "mat_10_u02_k01_o05:flashcard",
+      "front": "İki yönlü tabloda satır ve sütunlar ile bir hücredeki sıklık neyi gösterir?",
+      "back": "Satır ve sütunlar iki değişkenin kategorilerini, hücre ise bu kategorilerin kesişimindeki gözlem sayısını gösterir."
+    },
+    {
+      "id": "mat_10_u02_k01_o06:flashcard",
+      "front": "İki yönlü tabloda bir hücrenin göreli sıklığını toplam gözlem sayısına göre nasıl hesaplarsın?",
+      "back": "Hücre sıklığını tablonun genel toplamına böler, yüzde isteniyorsa 100 ile çarparsın."
+    },
+    {
+      "id": "mat_10_u02_k01_o07:flashcard",
+      "front": "Bir sınıf seviyesi sabit tutulduğunda o sınıftaki kurs tercihlerinin koşullu göreli sıklığı nasıl bulunur?",
+      "back": "Her hücre sıklığı, o sınıf seviyesinin satır toplamına bölünür; yüzde için 100 ile çarpılır."
+    },
+    {
+      "id": "mat_10_u02_k01_o08:flashcard",
+      "front": "Bir kurs tercihi kategorisine göre sınıf seviyelerinin koşullu göreli sıklığı hesaplanırken hücre sıklığı hangi toplama bölünür?",
+      "back": "İlgili kurs tercihi kategorisinin sütun toplamına bölünür."
+    },
+    {
+      "id": "mat_10_u02_k01_o09:flashcard",
+      "front": "Kümeli sütun grafiği iki kategorik değişkenin dağılımını hangi değerlerle karşılaştırmaya yarar?",
+      "back": "Bir kategorinin her düzeyinde diğer değişkenin koşullu göreli sıklıklarını, genellikle yüzde olarak karşılaştırır."
+    },
+    {
+      "id": "mat_10_u02_k01_o10:flashcard",
+      "front": "İki kategorik değişken arasında gözlenen ilişki, neden-sonuç bağı kurmaya tek başına yeter mi? İzin verdiği çıkarımı belirt.",
+      "back": "Hayır; gözlenen ilişki birliktelik gösterir, tek başına neden-sonuç ilişkisini kanıtlamaz."
+    },
+    {
+      "id": "mat_10_u02_k01_o11:flashcard",
+      "front": "Koşullu göreli sıklıklarda, sabit tutulan kategoriye ait diğer kategorilerin yüzdelerinin toplamı neyi gösterir?",
+      "back": "Sabit tutulan kategorinin tamamını, yani %100'ünü gösterir."
+    },
+    {
+      "id": "mat_10_u02_k01_o12:flashcard",
+      "front": "Kategorik bir değişkeni nicel bir değişkenden ayıran özelliği kısa biçimde açıkla.",
+      "back": "Kategorik değişken, gözlemleri belirli grup veya sınıflara ayırır; nicel değişken sayısal ölçüm değerleri alır."
+    }
+  ],
+  "baslik": "2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama",
+  "topic_key": "Matematik > 2.1 İstatistiksel Problemi Oluşturma, Veri Toplama, Analiz Etme ve Yorumlama"
+}

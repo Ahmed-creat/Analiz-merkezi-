@@ -1,0 +1,10 @@
+{
+  "_aciklama": "PDF'te blok başlığı OLMAYAN derslerin gerçek d/w/e dağılımını elle vermek için. Boş bırakılırsa scripts/deneme-pdf-ayikla.js dağılımı aritmetikten (kapasite oranıyla) türetir ve kaynak:'aritmetik-turetme' yazar. Buradan gelen değerler kaynak:'elle' olur.",
+  "_bicim": {
+    "sinav_no": { "Ders Adı": { "d": 0, "w": 0, "e": 0 } }
+  },
+  "_ornek": {
+    "1": { "Kimya": { "d": 7, "w": 3, "e": 0 } }
+  },
+  "sinavlar": {}
+}

@@ -1,0 +1,256 @@
+{
+  "konu_id": "fizik_10_u01_k07",
+  "sinif": 10,
+  "ders": "Fizik",
+  "tema": 1,
+  "tema_adi": "Kuvvet ve Hareket",
+  "baslik": "1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+  "topic_key": "Fizik > 1.3.1 Düşey Doğrultuda Cisimlerin Sahip Olduğu İvme",
+  "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar.",
+  "kaynak": "Fizik 10 ders kitabı, s.60-66",
+  "kaynak_dosya": "fizik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "fizik_10_u01_k07_o01",
+      "alt_beceri": "Yer çekimi ivmesini ve yönünü açıklar.",
+      "metin": "Yer çekimi ivmesi hangi sembolle gösterilir?",
+      "secenekler": [
+        "a",
+        "g",
+        "F",
+        "m"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitapta yer çekimi ivmesi g sembolüyle gösterilir (s.62).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "g sembolü hangi büyüklüğü gösterir?",
+        "back": "g"
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o02",
+      "alt_beceri": "Yer çekimi ivmesini ve yönünü açıklar.",
+      "metin": "Yer çekimi ivmesi g ≈ 9,8 m/s²'dir. Bu büyüklüğün SI'daki birimi nedir?",
+      "secenekler": [
+        "N",
+        "kg·m/s",
+        "m/s",
+        "m/s²"
+      ],
+      "dogru_index": 3,
+      "cozum": "İvmenin birimi m/s² olduğundan yer çekimi ivmesinin birimi de m/s²dir (s.62).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "m/s² hangi büyüklüğün birimidir?",
+        "back": "İvmenin; yer çekimi ivmesi g ≈ 9,8 m/s²."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o03",
+      "alt_beceri": "Yer çekimi ivmesini ve yönünü açıklar.",
+      "metin": "Yer çekimi kuvvetinin yönü neye doğrudur?",
+      "secenekler": [
+        "Dünya'nın merkezine",
+        "Dünya yüzeyine paralel",
+        "Güneş'e",
+        "Kuzey Kutbu'na"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kitapta yer çekimi kuvvetinin yönünün Dünya'nın merkezine doğru olduğu belirtilir (s.62).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Cisimlerin yere düşmesine yol açan kuvvetin yönü nedir?",
+        "back": "Dünya’nın merkezine doğru."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o04",
+      "alt_beceri": "Yer çekimi ivmesini ve yönünü açıklar.",
+      "metin": "Yer çekimi ivmesi nasıl bir büyüklüktür?",
+      "secenekler": [
+        "Skaler",
+        "Birimsiz",
+        "Vektörel",
+        "Türetilmemiş"
+      ],
+      "dogru_index": 2,
+      "cozum": "Yer çekimi ivmesi yönü de olan vektörel bir büyüklüktür (s.62-63).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yer çekimi ivmesinin vektörel olması ne demektir?",
+        "back": "Vektörel."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o05",
+      "alt_beceri": "Yer çekimi ivmesini ve yönünü açıklar.",
+      "metin": "Yeryüzüne yakın yerlerde serbest düşen cisimlerin ivmesi için hangisi doğrudur?",
+      "secenekler": [
+        "Sürekli artar",
+        "Sürekli azalır",
+        "Kütleyle değişir",
+        "Sabit kabul edilir"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitapta yeryüzüne yakın yerlerde yer çekimi ivmesinin sabit kabul edildiği yazılıdır (s.63).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşen cisimlerin ivmesinin büyüklüğü nedir?",
+        "back": "Yeryüzüne yakın yerlerde sabit kabul edilir (g ≈ 9,8 m/s²)."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o06",
+      "alt_beceri": "Serbest düşmede kütle-ivme ilişkisini yorumlar.",
+      "metin": "Hava sürtünmesinin ihmal edildiği ortamda aynı yükseklikten bırakılan farklı kütleli cisimler için hangisi doğrudur?",
+      "secenekler": [
+        "Ağır olan önce düşer",
+        "Aynı anda yere düşerler",
+        "Hafif olan önce düşer",
+        "Hacmi büyük olan önce düşer"
+      ],
+      "dogru_index": 1,
+      "cozum": "Sürtünme ihmal edildiğinde cisimler aynı yer çekimi ivmesiyle hareket ettiği için aynı anda düşer (s.63, s.65).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Düşme süresinin kütleden bağımsız olması ne demektir?",
+        "back": "Hava sürtünmesi ihmal edilirse farklı kütleli cisimler aynı sürede düşer."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o07",
+      "alt_beceri": "Serbest düşmede kütle-ivme ilişkisini yorumlar.",
+      "metin": "Bilim merkezinde pinpon topu, tenis topu ve demir bilye aynı yükseklikten serbest bırakılıyor. Hava sürtünmesi ihmal edilirse eşit zaman aralıklarında hızları için hangisi doğrudur?",
+      "secenekler": [
+        "Eşit miktarda artar",
+        "Kütleyle orantılı artar",
+        "Kütleyle ters orantılı artar",
+        "Yalnız demir bilyenin hızı artar"
+      ],
+      "dogru_index": 0,
+      "cozum": "Kitaptaki tablo ve yorum: cisimler eşit zaman aralıklarında eşit hıza sahip olur (s.64-65).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşmede hız artışının kütleyle ilişkisi nedir?",
+        "back": "Değildir; eşit zaman aralıklarında eşit hız kazanılır."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o08",
+      "alt_beceri": "Serbest düşmede kütle-ivme ilişkisini yorumlar.",
+      "metin": "Sürtünmenin ihmal edildiği ortamda 2 kg'lık cisim serbest bırakılıyor. Cisme etki eden net kuvvet nedir?",
+      "secenekler": [
+        "Hava direnci",
+        "Yüzey tepki kuvveti",
+        "Cismin ağırlığı",
+        "Net kuvvet sıfırdır"
+      ],
+      "dogru_index": 2,
+      "cozum": "Kitapta serbest düşme hareketinin yalnızca yer çekimi kuvvetinin etkisiyle gerçekleştiği belirtilir (s.63).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ağırlık ile net kuvvet arasındaki ilişki nedir?",
+        "back": "Hava direnci ihmal edilirse serbest düşen cisme etki eden net kuvvet cismin ağırlığıdır."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o09",
+      "alt_beceri": "Serbest düşmede kütle-ivme ilişkisini yorumlar.",
+      "metin": "Ay'ın atmosferi çok ince olduğundan astronotlar tüy ile çekici aynı yükseklikten serbest bırakmıştır. Bu deneyde hangisi gözlenmiştir?",
+      "secenekler": [
+        "Çekicin önce düşmesi",
+        "İkisinin aynı anda yüzeye düşmesi",
+        "Tüyün önce düşmesi",
+        "İkisinin havada asılı kalması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Ay'da hava direnci oluşturacak atmosfer olmadığı için tüy ve çekiç aynı anda düşer (s.65).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hava direncinin bulunmadığı ortamda düşmenin özelliği nedir?",
+        "back": "Hava direnci yok; ivme her iki cisimde de aynıdır."
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    },
+    {
+      "soru_id": "fizik_10_u01_k07_o10",
+      "alt_beceri": "Serbest düşmede kütle-ivme ilişkisini yorumlar.",
+      "metin": "İlk hızı sıfır olarak serbest bırakılan cisim, eşit zaman aralıklarında sırasıyla hangi oranda yol alır?",
+      "secenekler": [
+        "1 : 2 : 3",
+        "1 : 4 : 9",
+        "1 : 1 : 1",
+        "1 : 3 : 5"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitaptaki tabloda ardışık eşit zaman aralıklarında alınan yollar h, 3h, 5h bulunur (s.64-65).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Serbest düşmede ardışık eşit sürelerde alınan yolların oranı nedir?",
+        "back": "1 : 3 : 5"
+      },
+      "kazanim": "Yer çekimi ivmesini ve serbest düşmede kütle-ivme ilişkisini açıklar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fizik_10_u01_k07_o01:flashcard",
+      "front": "g sembolü hangi büyüklüğü gösterir?",
+      "back": "g"
+    },
+    {
+      "id": "fizik_10_u01_k07_o02:flashcard",
+      "front": "m/s² hangi büyüklüğün birimidir?",
+      "back": "İvmenin; yer çekimi ivmesi g ≈ 9,8 m/s²."
+    },
+    {
+      "id": "fizik_10_u01_k07_o03:flashcard",
+      "front": "Cisimlerin yere düşmesine yol açan kuvvetin yönü nedir?",
+      "back": "Dünya’nın merkezine doğru."
+    },
+    {
+      "id": "fizik_10_u01_k07_o04:flashcard",
+      "front": "Yer çekimi ivmesinin vektörel olması ne demektir?",
+      "back": "Vektörel."
+    },
+    {
+      "id": "fizik_10_u01_k07_o05:flashcard",
+      "front": "Serbest düşen cisimlerin ivmesinin büyüklüğü nedir?",
+      "back": "Yeryüzüne yakın yerlerde sabit kabul edilir (g ≈ 9,8 m/s²)."
+    },
+    {
+      "id": "fizik_10_u01_k07_o06:flashcard",
+      "front": "Düşme süresinin kütleden bağımsız olması ne demektir?",
+      "back": "Hava sürtünmesi ihmal edilirse farklı kütleli cisimler aynı sürede düşer."
+    },
+    {
+      "id": "fizik_10_u01_k07_o07:flashcard",
+      "front": "Serbest düşmede hız artışının kütleyle ilişkisi nedir?",
+      "back": "Değildir; eşit zaman aralıklarında eşit hız kazanılır."
+    },
+    {
+      "id": "fizik_10_u01_k07_o08:flashcard",
+      "front": "Ağırlık ile net kuvvet arasındaki ilişki nedir?",
+      "back": "Hava direnci ihmal edilirse serbest düşen cisme etki eden net kuvvet cismin ağırlığıdır."
+    },
+    {
+      "id": "fizik_10_u01_k07_o09:flashcard",
+      "front": "Hava direncinin bulunmadığı ortamda düşmenin özelliği nedir?",
+      "back": "Hava direnci yok; ivme her iki cisimde de aynıdır."
+    },
+    {
+      "id": "fizik_10_u01_k07_o10:flashcard",
+      "front": "Serbest düşmede ardışık eşit sürelerde alınan yolların oranı nedir?",
+      "back": "1 : 3 : 5"
+    }
+  ]
+}

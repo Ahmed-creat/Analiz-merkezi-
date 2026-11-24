@@ -1,0 +1,256 @@
+{
+  "konu_id": "mat_10_u04_k01",
+  "sinif": 10,
+  "ders": "Matematik",
+  "tema": 4,
+  "tema_adi": "Nicelikler ve Değişimler",
+  "baslik": "4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+  "topic_key": "Matematik > 4.1 Gerçek Sayılarda Tanımlı Fonksiyonların Nitel Özellikleri",
+  "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler.",
+  "kaynak": "Matematik 10 ders kitabı, s.182-196",
+  "kaynak_dosya": "matematik-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "mat_10_u04_k01_o01",
+      "alt_beceri": "Fonksiyonun temel nitel özelliklerini tanımlar.",
+      "metin": "Bir ilişkinin fonksiyon olması için hangi koşul gerekir?",
+      "secenekler": [
+        "Her elemanın iki görüntüsü olmalı",
+        "Tanım kümesindeki her elemanın yalnızca bir görüntüsü olmalı",
+        "Görüntü kümesi boş olmalı",
+        "Tanım kümesi sonlu olmalı"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitaba göre tanım kümesindeki her bir gerçek sayının değer kümesinde yalnızca bir karşılığı vardır (s.186).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fonksiyon olma şartı nedir?",
+        "back": "Her x için tek bir görüntü."
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o02",
+      "alt_beceri": "Fonksiyonun temel nitel özelliklerini tanımlar.",
+      "metin": "Bire bir fonksiyon nasıl tanımlanır?",
+      "secenekler": [
+        "Her x için aynı görüntüyü veren fonksiyon",
+        "Tanım kümesi boş olan fonksiyon",
+        "Görüntü kümesi boş olan fonksiyon",
+        "Farklı x değerleri için farklı görüntüler veren fonksiyon"
+      ],
+      "dogru_index": 3,
+      "cozum": "Farklı x'ler için f(x) değerleri de farklıysa fonksiyon bire birdir (s.186, s.226).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Her görüntünün tek bir ön görüntüsü olması ne demektir?",
+        "back": "Farklı x'ler farklı görüntü verir."
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o03",
+      "alt_beceri": "Fonksiyonun temel nitel özelliklerini tanımlar.",
+      "metin": "Örten fonksiyon neyi ifade eder?",
+      "secenekler": [
+        "Görüntü kümesinin değer kümesine eşit olması",
+        "Tanım kümesinin boş olması",
+        "Fonksiyonun sabit olması",
+        "Grafiğin doğru olması"
+      ],
+      "dogru_index": 0,
+      "cozum": "Değer kümesindeki her eleman bir görüntü ise fonksiyon örtendir (s.186, s.199).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Değer kümesinin tamamen kullanılması ne demektir?",
+        "back": "Görüntü kümesi = değer kümesi."
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o04",
+      "alt_beceri": "Fonksiyonun temel nitel özelliklerini tanımlar.",
+      "metin": "Artan fonksiyon nasıl tanımlanır?",
+      "secenekler": [
+        "x arttıkça f(x) azalan fonksiyon",
+        "Her x için aynı değeri veren fonksiyon",
+        "x arttıkça f(x) de artan fonksiyon",
+        "Tanımsız noktaları olan fonksiyon"
+      ],
+      "dogru_index": 2,
+      "cozum": "Tanım aralığında x₁ < x₂ iken f(x₁) < f(x₂) ise fonksiyon artandır (s.186-190).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "x büyüdükçe değerin büyümesi ne demektir?",
+        "back": "x artarken f(x) artar."
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o05",
+      "alt_beceri": "Verilen fonksiyonun nitel özelliklerini belirler.",
+      "metin": "Deposunda 600 litre yakıt bulunan tankerden dakikada 20 litre yakıt akmaktadır. Kalan yakıt miktarını veren fonksiyonun tanım kümesi hangisidir?",
+      "secenekler": [
+        "[0, 30]",
+        "[0, 600]",
+        "[0, 20]",
+        "(0, 60)"
+      ],
+      "dogru_index": 0,
+      "cozum": "600/20 = 30 dakikada boşalır; zaman 0 ile 30 arasındadır (s.183).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "600 L, 20 L/dk → tanım kümesi nedir?",
+        "back": "[0, 30]"
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o06",
+      "alt_beceri": "Verilen fonksiyonun nitel özelliklerini belirler.",
+      "metin": "Aynı tankerde kalan yakıt miktarının görüntü kümesi hangisidir?",
+      "secenekler": [
+        "[0, 30]",
+        "[0, 600]",
+        "[20, 600]",
+        "[600, ∞)"
+      ],
+      "dogru_index": 1,
+      "cozum": "Yakıt 600 litreden 0 litreye kadar azalır; görüntü kümesi [0, 600] olur (s.183).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Görüntü kümesinin sınırları nedir?",
+        "back": "[0, 600]"
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o07",
+      "alt_beceri": "Verilen fonksiyonun nitel özelliklerini belirler.",
+      "metin": "f(x) = 2x + 1 fonksiyonu bire bir midir?",
+      "secenekler": [
+        "Evet, bire birdir",
+        "Hayır, bire bir değildir",
+        "Yalnız pozitif x'lerde bire birdir",
+        "Belirlenemez"
+      ],
+      "dogru_index": 0,
+      "cozum": "Doğrusal fonksiyonun eğimi sıfırdan farklı olduğundan farklı x'ler farklı değerler verir (s.186-190).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doğrusal fonksiyonların bire bir olmasının nedeni nedir?",
+        "back": "Her x için farklı bir y üretmeleri; grafikleri her yatay doğruyu tek noktada keser."
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o08",
+      "alt_beceri": "Verilen fonksiyonun nitel özelliklerini belirler.",
+      "metin": "f: R → R, f(x) = x² fonksiyonu bire bir midir?",
+      "secenekler": [
+        "Evet, çünkü artandır",
+        "Evet, çünkü tanım kümesi R'dir",
+        "Hayır, çünkü f(−2) = f(2)",
+        "Belirlenemez"
+      ],
+      "dogru_index": 2,
+      "cozum": "f(−2) = f(2) = 4 olduğundan farklı x'ler aynı görüntüyü verir; fonksiyon bire bir değildir (s.199).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karesel fonksiyonun bire birlik koşulunu sağlamama nedeni nedir?",
+        "back": "f(−2) = f(2)"
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o09",
+      "alt_beceri": "Verilen fonksiyonun nitel özelliklerini belirler.",
+      "metin": "f(x) = 3x − 6 fonksiyonunun sıfırı kaçtır?",
+      "secenekler": [
+        "−2",
+        "2",
+        "6",
+        "3"
+      ],
+      "dogru_index": 1,
+      "cozum": "3x − 6 = 0 → x = 2 (s.187-190'daki sıfır incelemesi).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Doğrusal fonksiyonun sıfırının hesabı nedir?",
+        "back": "2"
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    },
+    {
+      "soru_id": "mat_10_u04_k01_o10",
+      "alt_beceri": "Verilen fonksiyonun nitel özelliklerini belirler.",
+      "metin": "Sabit fonksiyon için hangisi doğrudur?",
+      "secenekler": [
+        "Her x için farklı değerler alır",
+        "Fonksiyon bire birdir",
+        "Tanım kümesi boştur",
+        "Her x için aynı değeri alır"
+      ],
+      "dogru_index": 3,
+      "cozum": "Sabit fonksiyonda f(x) = c olduğundan tüm görüntüler aynıdır (s.187-190).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit fonksiyonun grafiğinin biçimi nasıldır?",
+        "back": "Yatay doğru."
+      },
+      "kazanim": "Fonksiyonun tanım kümesi, görüntü kümesi, işareti, artan-azalanlığı ve bire birliği gibi nitel özelliklerini inceler."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mat_10_u04_k01_o01:flashcard",
+      "front": "Fonksiyon olma şartı nedir?",
+      "back": "Her x için tek bir görüntü."
+    },
+    {
+      "id": "mat_10_u04_k01_o02:flashcard",
+      "front": "Her görüntünün tek bir ön görüntüsü olması ne demektir?",
+      "back": "Farklı x'ler farklı görüntü verir."
+    },
+    {
+      "id": "mat_10_u04_k01_o03:flashcard",
+      "front": "Değer kümesinin tamamen kullanılması ne demektir?",
+      "back": "Görüntü kümesi = değer kümesi."
+    },
+    {
+      "id": "mat_10_u04_k01_o04:flashcard",
+      "front": "x büyüdükçe değerin büyümesi ne demektir?",
+      "back": "x artarken f(x) artar."
+    },
+    {
+      "id": "mat_10_u04_k01_o05:flashcard",
+      "front": "600 L, 20 L/dk → tanım kümesi nedir?",
+      "back": "[0, 30]"
+    },
+    {
+      "id": "mat_10_u04_k01_o06:flashcard",
+      "front": "Görüntü kümesinin sınırları nedir?",
+      "back": "[0, 600]"
+    },
+    {
+      "id": "mat_10_u04_k01_o07:flashcard",
+      "front": "Doğrusal fonksiyonların bire bir olmasının nedeni nedir?",
+      "back": "Her x için farklı bir y üretmeleri; grafikleri her yatay doğruyu tek noktada keser."
+    },
+    {
+      "id": "mat_10_u04_k01_o08:flashcard",
+      "front": "Karesel fonksiyonun bire birlik koşulunu sağlamama nedeni nedir?",
+      "back": "f(−2) = f(2)"
+    },
+    {
+      "id": "mat_10_u04_k01_o09:flashcard",
+      "front": "Doğrusal fonksiyonun sıfırının hesabı nedir?",
+      "back": "2"
+    },
+    {
+      "id": "mat_10_u04_k01_o10:flashcard",
+      "front": "Sabit fonksiyonun grafiğinin biçimi nasıldır?",
+      "back": "Yatay doğru."
+    }
+  ]
+}

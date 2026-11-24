@@ -1,0 +1,256 @@
+{
+  "konu_id": "biyo_10_u01_k02",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "tema": 1,
+  "tema_adi": "Enerji",
+  "baslik": "1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+  "topic_key": "Biyoloji > 1.2 Işık Enerjisi Kullanılarak Besin Sentezi (Fotosentez)",
+  "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar.",
+  "kaynak": "Biyoloji 10 ders kitabı, s.21-31",
+  "kaynak_dosya": "biyoloji-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k02_o01",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Işığa bağlı evrede klorofilin kaybettiği elektronların yerini hangi kaynak doldurur?",
+      "secenekler": [
+        "NADPH molekülünün hidrojenleri",
+        "Suyun fotoliziyle açığa çıkan elektronlar",
+        "Karbondioksitin parçalanmasıyla açığa çıkan elektronlar",
+        "ETS'de taşınan oksijen molekülleri"
+      ],
+      "dogru_index": 1,
+      "cozum": "Uyarılan klorofil elektron kaybeder; kaybettiği elektronların yerine suyun fotolizi ile açığa çıkan elektronlar gelir ve böylece elektron açığı kapanır (s.25).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotolizin ışığa bağlı evredeki işlevi nedir?",
+        "back": "Klorofilin kaybettiği elektronları yerine koymak."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o02",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Işığa bağlı evrede üretilen hangi iki molekül Calvin döngüsünde organik madde sentezi için kullanılır?",
+      "secenekler": [
+        "ADP ve NADP⁺",
+        "Glikoz ve oksijen",
+        "PGAL ve nişasta",
+        "ATP ve NADPH"
+      ],
+      "dogru_index": 3,
+      "cozum": "Işığa bağlı evrede üretilen temel moleküller ATP ve NADPH'tır; bunlar ışıktan bağımsız evrede CO2 ile birlikte organik bileşenlerin sentezinde görev alır (s.26).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Işığa bağlı evrenin iki ürünü nedir?",
+        "back": "ATP ve NADPH."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o03",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Suyun fotolizi sırasında bir su molekülü ışık enerjisiyle parçalandığında hangi üç bileşen açığa çıkar?",
+      "secenekler": [
+        "Elektron, hidrojen iyonu ve oksijen",
+        "Elektron, karbondioksit ve su",
+        "Hidrojen iyonu, glikoz ve ATP",
+        "Oksijen, NADPH ve PGAL"
+      ],
+      "dogru_index": 0,
+      "cozum": "Fotoliz, su moleküllerinin ışık enerjisiyle elektronlar (e⁻), hidrojen iyonları (H⁺) ve oksijen (O₂) olarak ayrılmasıdır (s.25).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Fotoliz nedir?",
+        "back": "Suyun ışıkla e⁻, H⁺ ve O₂ olarak ayrılması."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o04",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Calvin döngüsünde CO2 ile birleşerek 3 karbonlu PGAL'in oluşmasını sağlayan hidrojenler hangi molekülden gelir?",
+      "secenekler": [
+        "ATP",
+        "FAD",
+        "NADPH",
+        "Klorofil"
+      ],
+      "dogru_index": 2,
+      "cozum": "Işığa bağlı evreden gelen ATP'nin defosforilasyonuyla açığa çıkan enerji kullanılarak NADPH'ın hidrojenleri ve CO2 birleştirilir, PGAL sentezlenir (s.26).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "NADPH'ın Calvin döngüsündeki işlevi nedir?",
+        "back": "CO2 ile birleşecek hidrojenleri taşımak."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o05",
+      "alt_beceri": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini model üzerinden açıklar.",
+      "metin": "Bir bitkinin kloroplast stromasında gerçekleşen evrede aşağıdakilerden hangisi doğrudan görev almaz?",
+      "secenekler": [
+        "Calvin döngüsü enzimleri",
+        "Karbondioksit",
+        "ATP",
+        "Klorofil pigmenti"
+      ],
+      "dogru_index": 3,
+      "cozum": "Işıktan bağımsız evre enzimlerin kontrolünde gerçekleşir; bu evrede klorofil ve ETS elemanları görev almaz, CO2 ve ATP tüketilir (s.26).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Calvin döngüsü nedir?",
+        "back": "Stromada enzimlerle yürüyen, CO2'den organik madde üreten evre."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o06",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Bir serada ışık şiddeti sürekli artırıldığında fotosentez hızı nasıl değişir?",
+      "secenekler": [
+        "Işık şiddetiyle aynı oranda sürekli artar",
+        "Belirli bir düzeye kadar artar, sonra sabit kalır",
+        "Işık şiddeti arttıkça sürekli azalır",
+        "Değişmez, ışık şiddetinden etkilenmez"
+      ],
+      "dogru_index": 1,
+      "cozum": "Işık şiddeti arttıkça fotosentez hızlanır; ancak diğer faktörler sabit kaldığından belirli bir seviyeden sonra fotosentez sabit hızla devam eder (s.28).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Minimum kuralı nedir?",
+        "back": "Fotosentez hızını, miktarı en az olan faktör belirler."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o07",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Klorofil; mor, mavi ve kırmızı dalga boylu ışığı güçlü soğurur. Buna göre hangi ışıkta fotosentez en düşük hızdadır?",
+      "secenekler": [
+        "Yeşil ışıkta",
+        "Mavi ışıkta",
+        "Kırmızı ışıkta",
+        "Mor ışıkta"
+      ],
+      "dogru_index": 0,
+      "cozum": "Klorofil yeşil ışığı çok az soğurduğu için fotosentez yeşil ışıkta en düşük hızda gerçekleşir (s.28).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Klorofilin soğurduğu ışık ile yaprak rengi arasındaki ilişki nedir?",
+        "back": "Soğurulmayan yeşil ışık yansıtıldığı için yaprak yeşil görünür."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o08",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Engelmann 1883'te ipliksi alg ile oksijenli solunum yapan bakterileri kullanarak hangi sonuca ulaşmıştır?",
+      "secenekler": [
+        "Bakteriler yalnızca yeşil ışık bölgesinde kümelenir",
+        "Tüm dalga boylarında oksijen çıkışı eşittir",
+        "Bakteriler mor, mavi ve kırmızı ışık bölgelerinde daha çok kümelenir",
+        "Algler ışıktan bağımsız evrede oksijen üretir"
+      ],
+      "dogru_index": 2,
+      "cozum": "Bakterilerin mor, mavi ve kırmızı ışığın düştüğü bölgelerde kümelenmesi, klorofilin bu dalga boylarını çok soğurduğunu ve fotosentezin oralarda hızlı olduğunu kanıtlar (s.29).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Engelmann deneyinin sonucu nedir?",
+        "back": "Klorofilin mor, mavi ve kırmızı ışığı çok soğurduğu kanıtlanmıştır."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o09",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Sıcaklık 35 °C'nin üzerine çıktığında fotosentez hızının düşmesinin temel nedeni nedir?",
+      "secenekler": [
+        "Klorofilin tamamen yok olması",
+        "Fotosentez enzimlerinin yapısının bozulması",
+        "Suyun fotolizinin hızlanması",
+        "CO2'nin atmosfere kaçması"
+      ],
+      "dogru_index": 1,
+      "cozum": "Fotosentez reaksiyonlarının çoğu enzimlerle yürür; 35 °C üstünde enzim yapısı bozulduğu için fotosentez yavaşlar ya da durur (s.30).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Optimum sıcaklık nedir?",
+        "back": "Enzimlerin en iyi çalıştığı sıcaklık; fotosentezde yaklaşık 33 °C."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    },
+    {
+      "soru_id": "biyo_10_u01_k02_o10",
+      "alt_beceri": "Fotosentez hızına etki eden çevresel faktörleri kanıta dayalı olarak yorumlar.",
+      "metin": "Deney ortamına NaOH veya KOH gibi CO2 tutucu bir madde konulduğunda fotosentez hızı nasıl etkilenir?",
+      "secenekler": [
+        "CO2 arttığı için hız yükselir",
+        "Enzimler denatüre olduğu için durur",
+        "Yalnızca ışığa bağlı evre hızlanır",
+        "CO2 ortamdan çekildiği için hız düşer"
+      ],
+      "dogru_index": 3,
+      "cozum": "NaOH, KOH, Ca(OH)2 ve Ba(OH)2 CO2 ile tepkimeye girerek ortamdan çeker; CO2 azalınca fotosentez hızı düşer (s.29).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "CO2 tutucusu nedir?",
+        "back": "CO2 ile tepkimeye girip ortamdan çeken bileşik (NaOH, KOH)."
+      },
+      "kazanim": "Fotosentezin ışığa bağlı ve ışıktan bağımsız evrelerini ilişkilendirerek açıklar, fotosentez hızını etkileyen çevresel faktörleri yorumlar."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k02_o01:flashcard",
+      "front": "Fotolizin ışığa bağlı evredeki işlevi nedir?",
+      "back": "Klorofilin kaybettiği elektronları yerine koymak."
+    },
+    {
+      "id": "biyo_10_u01_k02_o02:flashcard",
+      "front": "Işığa bağlı evrenin iki ürünü nedir?",
+      "back": "ATP ve NADPH."
+    },
+    {
+      "id": "biyo_10_u01_k02_o03:flashcard",
+      "front": "Fotoliz nedir?",
+      "back": "Suyun ışıkla e⁻, H⁺ ve O₂ olarak ayrılması."
+    },
+    {
+      "id": "biyo_10_u01_k02_o04:flashcard",
+      "front": "NADPH'ın Calvin döngüsündeki işlevi nedir?",
+      "back": "CO2 ile birleşecek hidrojenleri taşımak."
+    },
+    {
+      "id": "biyo_10_u01_k02_o05:flashcard",
+      "front": "Calvin döngüsü nedir?",
+      "back": "Stromada enzimlerle yürüyen, CO2'den organik madde üreten evre."
+    },
+    {
+      "id": "biyo_10_u01_k02_o06:flashcard",
+      "front": "Minimum kuralı nedir?",
+      "back": "Fotosentez hızını, miktarı en az olan faktör belirler."
+    },
+    {
+      "id": "biyo_10_u01_k02_o07:flashcard",
+      "front": "Klorofilin soğurduğu ışık ile yaprak rengi arasındaki ilişki nedir?",
+      "back": "Soğurulmayan yeşil ışık yansıtıldığı için yaprak yeşil görünür."
+    },
+    {
+      "id": "biyo_10_u01_k02_o08:flashcard",
+      "front": "Engelmann deneyinin sonucu nedir?",
+      "back": "Klorofilin mor, mavi ve kırmızı ışığı çok soğurduğu kanıtlanmıştır."
+    },
+    {
+      "id": "biyo_10_u01_k02_o09:flashcard",
+      "front": "Optimum sıcaklık nedir?",
+      "back": "Enzimlerin en iyi çalıştığı sıcaklık; fotosentezde yaklaşık 33 °C."
+    },
+    {
+      "id": "biyo_10_u01_k02_o10:flashcard",
+      "front": "CO2 tutucusu nedir?",
+      "back": "CO2 ile tepkimeye girip ortamdan çeken bileşik (NaOH, KOH)."
+    }
+  ]
+}

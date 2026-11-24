@@ -1,0 +1,352 @@
+{
+  "konu_id": "kimya_10_u01_k06",
+  "sinif": 10,
+  "ders": "Kimya",
+  "tema": 1,
+  "tema_adi": "Etkileşim",
+  "baslik": "1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+  "topic_key": "Kimya > 1.2.1 Gazların Özellikleri ve Gaz Yasaları",
+  "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular.",
+  "kaynak": "Kimya 10 ders kitabı, s.77-93",
+  "kaynak_dosya": "kimya-10.pdf (MEB, 2025)",
+  "sorular": [
+    {
+      "soru_id": "kimya_10_u01_k06_o01",
+      "alt_beceri": "Gazların özelliklerini ve birimlerini açıklar.",
+      "metin": "Deniz seviyesinde açık hava basıncı kaç atmosfer kabul edilir?",
+      "secenekler": [
+        "0,5",
+        "1",
+        "76",
+        "760"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kitaba göre deniz seviyesinde açık hava basıncı 1 atmosfer (atm) kabul edilir (s.81).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Atmosfer basıncının cmHg karşılığı nedir?",
+        "back": "76 cmHg = 760 mmHg."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o02",
+      "alt_beceri": "Gazların özelliklerini ve birimlerini açıklar.",
+      "metin": "Aşağıdaki eşitliklerden hangisi doğrudur?",
+      "secenekler": [
+        "1 atm = 76 mmHg",
+        "1 atm = 101 mmHg",
+        "1 atm = 760 Pa",
+        "1 atm = 760 mmHg"
+      ],
+      "dogru_index": 3,
+      "cozum": "Kitaptaki dönüşüme göre 1 atm = 76 cmHg = 760 mmHg = 101 325 Pa = 760 torr (s.88).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Basınç birimlerinin birbirine dönüşümü nedir?",
+        "back": "760 mmHg"
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o03",
+      "alt_beceri": "Gazların özelliklerini ve birimlerini açıklar.",
+      "metin": "Boyle Yasası'na göre sabit sıcaklıkta belirli miktar gazın basıncı ile hacmi nasıl değişir?",
+      "secenekler": [
+        "Ters orantılıdır",
+        "Doğru orantılıdır",
+        "Değişmez",
+        "Karesiyle orantılıdır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Sabit sıcaklıkta basınç ile hacim ters orantılıdır: PV = sabit, P1V1 = P2V2 (s.89).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boyle Yasası'nın tanımı nedir?",
+        "back": "Ters orantılı."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o04",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit sıcaklıkta 4 L hacimde 2 atm basınç yapan gazın hacmi 1 L'ye düşürülürse basıncı kaç atm olur?",
+      "secenekler": [
+        "2",
+        "4",
+        "8",
+        "0,5"
+      ],
+      "dogru_index": 2,
+      "cozum": "P1V1 = P2V2 → 2·4 = P2·1 → P2 = 8 atm (kitabın örneği, s.89).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit sıcaklıkta basınç ile hacmin çarpımı ne olur?",
+        "back": "8 atm"
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o05",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit hacimli kapta 27 °C'ta 1 atm basınç yapan gazın basıncını 3 atm yapmak için sıcaklık kaç °C olmalıdır?",
+      "secenekler": [
+        "900",
+        "327",
+        "300",
+        "627"
+      ],
+      "dogru_index": 3,
+      "cozum": "T1 = 273 + 27 = 300 K; 1/300 = 3/T2 → T2 = 900 K → 900 − 273 = 627 °C (s.91).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gay Lussac Yasası'nda basınç ile sıcaklık arasındaki ilişki nedir?",
+        "back": "627 °C (900 K)"
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o06",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit basınçta bir gazın hacmi sıcaklıkla nasıl değişir?",
+      "secenekler": [
+        "Ters orantılı azalır",
+        "Mutlak sıcaklıkla doğru orantılı artar",
+        "Değişmez",
+        "Sıcaklığın karesiyle orantılıdır"
+      ],
+      "dogru_index": 1,
+      "cozum": "Charles Yasası'na göre sabit basınçta V/T = sabit, yani hacim mutlak sıcaklıkla doğru orantılıdır (s.90).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Charles Yasası nedir?",
+        "back": "V/T = sabit"
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o07",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit sıcaklık ve basınçta gazın hacmi madde miktarıyla nasıl değişir?",
+      "secenekler": [
+        "Mol sayısıyla doğru orantılıdır",
+        "Mol sayısıyla ters orantılıdır",
+        "Değişmez",
+        "Mol sayısının kareköküyle orantılıdır"
+      ],
+      "dogru_index": 0,
+      "cozum": "Avogadro Yasası'na göre V ∝ n; aynı koşullarda eşit hacimde eşit sayıda tanecik bulunur (s.92).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Avogadro Yasası nedir?",
+        "back": "V ∝ n"
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o08",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit sıcaklıkta bir gazın basınç-hacim grafiğinde 4 atm'de hacim x, 6 atm'de hacim 2 L ise x kaç litredir?",
+      "secenekler": [
+        "2",
+        "4",
+        "3",
+        "12"
+      ],
+      "dogru_index": 2,
+      "cozum": "4·x = 6·2 → x = 3 L (kitabın grafikli örneği, s.94).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Ters orantı grafiğinde P·V çarpımının sabitliği ne demektir?",
+        "back": "3 L"
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o09",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit sıcaklıkta 6 atm basınçta 2 L hacim kaplayan gazın hacmi 12 L olursa basıncı kaç atm olur?",
+      "secenekler": [
+        "2",
+        "1",
+        "3",
+        "6"
+      ],
+      "dogru_index": 1,
+      "cozum": "P₁V₁ = P₂V₂ → 6·2 = y·12 → y = 1 atm (s.94).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sabit sıcaklıkta basınç ile hacim arasındaki ilişki nedir?",
+        "back": "Ters orantılıdır; P·V sabit kalır."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o10",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Gazlarla ilgili aşağıdakilerden hangisi yanlıştır?",
+      "secenekler": [
+        "Gaz tanecikleri arasında büyük boşluklar vardır",
+        "Gazlar sıkıştırılabilir",
+        "Gazlar birbiri içinde yayılır",
+        "Gazlar bulundukları kabın yalnızca bir kısmını doldurur"
+      ],
+      "dogru_index": 3,
+      "cozum": "Gazlar bulundukları kabın hacmini tamamen doldurur ve şeklini alır (s.81).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gazların kabı tamamen doldurmasının nedeni nedir?",
+        "back": "Evet."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o11",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit sıcaklıkta 3 atm basınçta 5 L hacim kaplayan bir gazın basıncı 5 atm’ye çıkarılırsa hacmi kaç litre olur?",
+      "secenekler": [
+        "3 L",
+        "5 L",
+        "2 L",
+        "8 L"
+      ],
+      "dogru_index": 0,
+      "cozum": "Boyle Yasası’na göre sabit sıcaklıkta P₁V₁ = P₂V₂ olur. 3 · 5 = 5 · V₂ eşitliğinden V₂ = 3 L bulunur (s.89).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Boyle Yasası'nın bağıntısı nedir?",
+        "back": "Sabit sıcaklıkta P₁V₁ = P₂V₂; basınç ile hacim ters orantılıdır."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o12",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit basınç altında 300 K sıcaklıkta 2 L hacim kaplayan bir gazın sıcaklığı 600 K’a çıkarılırsa hacmi kaç litre olur?",
+      "secenekler": [
+        "1 L",
+        "2 L",
+        "4 L",
+        "6 L"
+      ],
+      "dogru_index": 2,
+      "cozum": "Charles Yasası’na göre sabit basınçta V₁ / T₁ = V₂ / T₂ olur. 2 / 300 = V₂ / 600 eşitliğinden V₂ = 4 L bulunur (s.90).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Charles Yasası'nda hacim ile mutlak sıcaklık arasındaki ilişki nedir?",
+        "back": "Doğru orantılıdır: sabit basınçta V₁ / T₁ = V₂ / T₂."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o13",
+      "alt_beceri": "Gaz yasalarıyla hesaplama yapar.",
+      "metin": "Sabit hacimli bir kapta 273 K sıcaklıkta 2 atm basınç yapan bir gazın sıcaklığı 546 K’a çıkarılırsa basıncı kaç atmosfer olur?",
+      "secenekler": [
+        "1 atm",
+        "2 atm",
+        "6 atm",
+        "4 atm"
+      ],
+      "dogru_index": 3,
+      "cozum": "Gay Lussac Yasası’na göre sabit hacimde P₁ / T₁ = P₂ / T₂ olur. 2 / 273 = P₂ / 546 eşitliğinden P₂ = 4 atm bulunur (s.91).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gay Lussac Yasası'nın bağıntısı nedir?",
+        "back": "Sabit hacimde P₁ / T₁ = P₂ / T₂; basınç mutlak sıcaklıkla doğru orantılıdır."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    },
+    {
+      "soru_id": "kimya_10_u01_k06_o14",
+      "alt_beceri": "Gazların özelliklerini ve birimlerini açıklar.",
+      "metin": "Gaz taneciklerinin kap çeperlerine çarpması sonucu oluşan nicelik aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "Hacim",
+        "Basınç",
+        "Mol sayısı",
+        "Yoğunluk"
+      ],
+      "dogru_index": 1,
+      "cozum": "Kinetik moleküler teoriye göre gaz tanecikleri her yöne hareket ederken kap çeperlerine çarpar; bu çarpma etkisi basınç olarak ölçülür (s.87).",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Gaz basıncının kinetik moleküler teoriye göre nedeni nedir?",
+        "back": "Taneciklerin kap çeperlerine sürekli çarpması."
+      },
+      "kazanim": "Gazların özelliklerini açıklar; Boyle, Charles, Gay Lussac ve Avogadro yasalarını uygular."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "kimya_10_u01_k06_o01:flashcard",
+      "front": "Atmosfer basıncının cmHg karşılığı nedir?",
+      "back": "76 cmHg = 760 mmHg."
+    },
+    {
+      "id": "kimya_10_u01_k06_o02:flashcard",
+      "front": "Basınç birimlerinin birbirine dönüşümü nedir?",
+      "back": "760 mmHg"
+    },
+    {
+      "id": "kimya_10_u01_k06_o03:flashcard",
+      "front": "Boyle Yasası'nın tanımı nedir?",
+      "back": "Ters orantılı."
+    },
+    {
+      "id": "kimya_10_u01_k06_o04:flashcard",
+      "front": "Sabit sıcaklıkta basınç ile hacmin çarpımı ne olur?",
+      "back": "8 atm"
+    },
+    {
+      "id": "kimya_10_u01_k06_o05:flashcard",
+      "front": "Gay Lussac Yasası'nda basınç ile sıcaklık arasındaki ilişki nedir?",
+      "back": "627 °C (900 K)"
+    },
+    {
+      "id": "kimya_10_u01_k06_o06:flashcard",
+      "front": "Charles Yasası nedir?",
+      "back": "V/T = sabit"
+    },
+    {
+      "id": "kimya_10_u01_k06_o07:flashcard",
+      "front": "Avogadro Yasası nedir?",
+      "back": "V ∝ n"
+    },
+    {
+      "id": "kimya_10_u01_k06_o08:flashcard",
+      "front": "Ters orantı grafiğinde P·V çarpımının sabitliği ne demektir?",
+      "back": "3 L"
+    },
+    {
+      "id": "kimya_10_u01_k06_o09:flashcard",
+      "front": "Sabit sıcaklıkta basınç ile hacim arasındaki ilişki nedir?",
+      "back": "Ters orantılıdır; P·V sabit kalır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o10:flashcard",
+      "front": "Gazların kabı tamamen doldurmasının nedeni nedir?",
+      "back": "Evet."
+    },
+    {
+      "id": "kimya_10_u01_k06_o11:flashcard",
+      "front": "Boyle Yasası'nın bağıntısı nedir?",
+      "back": "Sabit sıcaklıkta P₁V₁ = P₂V₂; basınç ile hacim ters orantılıdır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o12:flashcard",
+      "front": "Charles Yasası'nda hacim ile mutlak sıcaklık arasındaki ilişki nedir?",
+      "back": "Doğru orantılıdır: sabit basınçta V₁ / T₁ = V₂ / T₂."
+    },
+    {
+      "id": "kimya_10_u01_k06_o13:flashcard",
+      "front": "Gay Lussac Yasası'nın bağıntısı nedir?",
+      "back": "Sabit hacimde P₁ / T₁ = P₂ / T₂; basınç mutlak sıcaklıkla doğru orantılıdır."
+    },
+    {
+      "id": "kimya_10_u01_k06_o14:flashcard",
+      "front": "Gaz basıncının kinetik moleküler teoriye göre nedeni nedir?",
+      "back": "Taneciklerin kap çeperlerine sürekli çarpması."
+    }
+  ]
+}

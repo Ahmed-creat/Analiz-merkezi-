@@ -1,0 +1,299 @@
+{
+  "konu_id": "biyo_10_u01_k04",
+  "sinif": 10,
+  "ders": "Biyoloji",
+  "kaynak_dosya": "10. Sınıf biyoloji json.zip",
+  "sorular": [
+    {
+      "soru_id": "biyo_10_u01_k04_o01",
+      "alt_beceri": "Sindirim",
+      "metin": "Bir besin örneği, enzim eklenmeden yalnızca fiziksel yollarla daha küçük parçalara ayrılıyor. Bu işlem hangi sindirim çeşididir?",
+      "secenekler": [
+        "Mekanik sindirim",
+        "Kimyasal sindirim",
+        "Hücre içi sindirim",
+        "Emilim"
+      ],
+      "dogru_index": 0,
+      "cozum": "Besinin enzim kullanılmadan fiziksel olarak küçük parçalara ayrılması mekanik sindirimdir. Kimyasal sindirimde büyük moleküller enzim ve suyla yapı taşlarına ayrılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Mekanik ve kimyasal sindirimi gerçekleşme biçimleri bakımından karşılaştırınız.",
+        "back": "Mekanik sindirim besinlerin fiziksel olarak küçük parçalara ayrılmasıdır ve enzim kullanılmaz. Kimyasal sindirimde büyük moleküller su ve enzimlerle hidroliz edilerek yapı taşlarına ayrılır."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o02",
+      "alt_beceri": "Sindirim",
+      "metin": "Proteinlerin kimyasal sindirimi tamamlandığında hangi küçük moleküller oluşur?",
+      "secenekler": [
+        "Monosakkaritler",
+        "Amino asitler",
+        "Yağ asitleri ve gliserol",
+        "Nükleotitler"
+      ],
+      "dogru_index": 1,
+      "cozum": "Proteinler hidrolizle amino asitlere ayrılır. Yağ asitleri ve gliserol nötral yağların, monosakkaritler ise karbohidratların sindirim ürünleridir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karbohidrat, protein ve nötral yağların kimyasal sindirim sonunda oluşan temel yapı taşlarını yazınız.",
+        "back": "Karbohidratlar monosakkaritlere, proteinler amino asitlere, nötral yağlar yağ asitleri ve gliserole parçalanır."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o03",
+      "alt_beceri": "Canlılarda Sindirim Yapıları",
+      "metin": "Bir ökaryot hücre iri bir besin parçacığını koful içine alıyor; koful lizozomla birleşince enzimler besini hücre içinde parçalıyor. Bu hangi sindirim biçimidir?",
+      "secenekler": [
+        "Mekanik sindirim",
+        "Hücre dışı sindirim",
+        "Hücre içi sindirim",
+        "Emilim"
+      ],
+      "dogru_index": 2,
+      "cozum": "Besin endositozla hücreye alınır ve lizozom enzimleriyle hücre içinde parçalanır. Bu süreç hücre içi sindirimdir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hücre içi sindirimde besin kofulunun oluşumundan yapı taşlarının sitoplazmaya geçişine kadar olan temel basamakları sıralayınız.",
+        "back": "Besin endositozla kofula alınır; koful lizozomla birleşir ve enzimler besini parçalar. Oluşan yapı taşları koful zarından sitoplazmaya geçer."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o04",
+      "alt_beceri": "Canlılarda Sindirim Yapıları",
+      "metin": "Bir çürükçül canlı besin üzerine enzim salgılıyor ve parçalanma sonrasında küçük molekülleri hücresine alıyor. Bu hangi sindirim örüntüsüdür?",
+      "secenekler": [
+        "Hücre içi sindirim",
+        "Mekanik sindirim",
+        "Emilim olmadan besin üretimi",
+        "Hücre dışı sindirim"
+      ],
+      "dogru_index": 3,
+      "cozum": "Besinin hücre dışında enzimlerle parçalanıp küçük moleküllerin hücreye alınması hücre dışı sindirimdir. Hücre içi sindirimde besin kofulu ve lizozom hücre içinde görev yapar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hücre dışı sindirimde büyük besinlerin parçalanması ve oluşan küçük moleküllerin hücreye alınması nasıl gerçekleşir?",
+        "back": "Enzimler hücre dışına salgılanarak büyük besinleri parçalar; oluşan küçük moleküller aktif veya pasif taşımayla hücre içine alınır."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o05",
+      "alt_beceri": "Diş Adaptasyonları",
+      "metin": "Etçil beslenen bir vizonun avını tutup dokuyu yırtarken uzun ve sivri köpek dişlerini kullandığı gözleniyor. Bu dişler beslenmede temel olarak hangi işe yarar?",
+      "secenekler": [
+        "Avı tutup et dokusunu yırtmayı kolaylaştırır.",
+        "Bitkisel besinleri öğütmeye yarar.",
+        "Selülozu enzim olmadan kana taşır.",
+        "Sindirilmiş maddelerin ince bağırsakta emilimini sağlar."
+      ],
+      "dogru_index": 0,
+      "cozum": "Vizonun sivri köpek dişleri avı tutup et dokusunu yırtmayı kolaylaştırır. Bu diş yapısı etçil beslenmeye uyum sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Yaprakla beslenen bir memelinin arka dişleri geniş ve çıkıntılı yüzeylidir. Bu diş yapısı beslenmeye nasıl katkı verir?",
+        "back": "Geniş azı dişleri bitkisel besinleri öğütüp parçalamayı kolaylaştırır."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o06",
+      "alt_beceri": "Diş Adaptasyonları",
+      "metin": "Hem bitkisel hem hayvansal besin tüketen bir memelinin beslenme tipi nasıl sınıflanır?",
+      "secenekler": [
+        "Otçul",
+        "Hepçil",
+        "Etçil",
+        "Ototrof"
+      ],
+      "dogru_index": 1,
+      "cozum": "Bitkisel ve hayvansal besinlerin ikisini de tüketen canlı hepçildir. Etçiller hayvansal, otçullar ise bitkisel besinlerle beslenir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Hepçil canlıların beslenme biçimini ve insan dişlerinin bu biçime uyumunu açıklayınız.",
+        "back": "Hepçiller bitkisel ve hayvansal besinlerle beslenir; insanlarda kesici, köpek ve azı dişleri farklı besinleri ısırma, koparma ve öğütmeye uyum sağlamıştır."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o07",
+      "alt_beceri": "Mide ve Bağırsak Adaptasyonları",
+      "metin": "Bir araştırmada, tek bölmeli mideli ve bitkisel liflerle beslenen bir memelinin kör bağırsağından alınan mikroorganizmalar selüloz içeren besin örneğine ekleniyor. Bu mikroorganizmalar sindirime nasıl katkı sağlar?",
+      "secenekler": [
+        "Besini glikoza dönüştürmeden depolar.",
+        "Selülozu sindirmeden doğrudan kana taşır.",
+        "Selülozu parçalayabilen enzimler üretir.",
+        "Sindirim enzimlerini etkisiz hâle getirir."
+      ],
+      "dogru_index": 2,
+      "cozum": "Tek bölmeli mideli otçulların kör bağırsağındaki mikroorganizmalar selülozu parçalayabilen enzimler üretir. Böylece memelinin kendi enzimleriyle sindiremediği bitkisel selülozun sindirimine katkı sağlanır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Geviş getiren otçulların dört bölmeli midesini oluşturan bölümleri sıralayınız.",
+        "back": "İşkembe, börkenek, kırkbayır ve şirden."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o08",
+      "alt_beceri": "Mide ve Bağırsak Adaptasyonları",
+      "metin": "Bir yaban hayatı merkezinde kütleleri benzer iki keseli memelinin beslenme uyumları karşılaştırılıyor: yaprakla beslenen koala ve hayvansal besinlerle beslenen Tazmanya canavarı. Vücut boyutuna göre sindirim kanalı hangisinde daha uzun olmalıdır ve neden?",
+      "secenekler": [
+        "Etçilinki; selülozu sindirebildiği için.",
+        "Etçilinki; et her zaman daha zor sindirildiği için.",
+        "İkisinin sindirim kanalı daima aynı uzunluktadır.",
+        "Otçulun; bitkisel besinlerin sindirimi daha uzun sürdüğü için."
+      ],
+      "dogru_index": 3,
+      "cozum": "Vücut boyutuna göre sindirim kanalı koalada, yani otçul canlıda, daha uzundur. Bitkisel besinlerin sindirimi daha uzun sürdüğünden bu yapı sindirime zaman ve emilim için daha geniş yüzey sağlar.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Vücut boyutuna göre sindirim kanalı uzunluğunu otçullar, hepçiller ve etçiller bakımından karşılaştırınız.",
+        "back": "Otçul ve hepçillerin sindirim kanalları, vücut boyutlarına göre etçillerinkinden daha uzundur; bitkisel besinlerin sindirimi daha uzun sürer."
+      },
+      "kazanim": "canlılarda sindirim çeşitlerini ve yapılarını sınıflandırmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o09",
+      "alt_beceri": "İnsanda Sindirim",
+      "metin": "İnsanda karbohidratların kimyasal sindirimi ilk olarak nerede başlar?",
+      "secenekler": [
+        "Ağızda",
+        "Midede",
+        "Kalın bağırsakta",
+        "Anüste"
+      ],
+      "dogru_index": 0,
+      "cozum": "Karbohidratların kimyasal sindirimi ağızda tükürükteki enzimlerle başlar. Mideye geçen karbohidratların sindirimi mide asidik olduğu için burada sürmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "İnsan sindirim kanalını ağızdan başlayarak sırasıyla oluşturan yapıları yazınız.",
+        "back": "Ağız, yutak, yemek borusu, mide, ince bağırsak, kalın bağırsak ve anüs sindirim kanalını oluşturur."
+      },
+      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o10",
+      "alt_beceri": "İnsanda Sindirim",
+      "metin": "Safra sıvısının yağların sindirimine katkısı nasıl açıklanır?",
+      "secenekler": [
+        "Yağları amino asitlere hidroliz eder.",
+        "Yağ damlacıklarını küçülterek enzimlerin etkileyebileceği yüzeyi artırır.",
+        "Protein sindirim enzimlerini üretir.",
+        "Yağları doğrudan kana taşır."
+      ],
+      "dogru_index": 1,
+      "cozum": "Safra yağları küçük damlacıklara ayırır; böylece sindirim enzimlerinin etki ettiği yüzey artar. Safrada sindirim enzimi bulunmaz, bu nedenle yağları doğrudan hidroliz etmez.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Karaciğer, safra kesesi ve pankreasın sindirime katkılarını karşılaştırınız.",
+        "back": "Karaciğer safra üretir, safra kesesi safrayı depolar ve ince bağırsağa salgılar; pankreas sindirim enzimleri ve bikarbonat salgılar."
+      },
+      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o11",
+      "alt_beceri": "İnsanda Emilim ve Taşınma",
+      "metin": "İnce bağırsaktaki villus ve mikrovillusların çoğalması besinlerin emilimine nasıl katkıda bulunur?",
+      "secenekler": [
+        "Besinlerin mekanik sindirimini durdurur.",
+        "Safra üretimini artırır.",
+        "Emilim için kullanılabilen yüzey alanını büyütür.",
+        "Besinleri sindirim kanalından dışarı atar."
+      ],
+      "dogru_index": 2,
+      "cozum": "Villus ve mikrovilluslar ince bağırsağın iç yüzey alanını artırarak sindirilmiş besinlerin emilimini verimli hâle getirir. Safra karaciğerde üretilir; villusların görevi değildir.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Emilimi tanımlayınız ve ince bağırsağın emilim yüzeyini büyüten yapıları belirtiniz.",
+        "back": "Emilim, sindirilmiş maddelerin sindirim kanalından kana geçmesidir. İnce bağırsağın kıvrımları, villus ve mikrovillusları emilim yüzeyini artırır."
+      },
+      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
+    },
+    {
+      "soru_id": "biyo_10_u01_k04_o12",
+      "alt_beceri": "İnsanda Emilim ve Taşınma",
+      "metin": "İnce bağırsakta emilen glikoz, amino asit ve suda çözünen vitaminler önce hangi taşıma yoluna katılır?",
+      "secenekler": [
+        "Villuslardaki lenf kılcallarına",
+        "Safra kesesine",
+        "Doğrudan kalın bağırsak boşluğuna",
+        "Villuslardaki kılcal kan damarlarına"
+      ],
+      "dogru_index": 3,
+      "cozum": "Glikoz, amino asitler ve özellikle B ve C vitaminleri villuslardaki kılcal kan damarlarına geçer. Yağların büyük kısmı ise şilomikronlarla önce lenf kılcallarına katılır.",
+      "zorluk": "deneme",
+      "flashcard": {
+        "front": "Sindirilmiş yağ ürünlerinin ince bağırsak hücrelerinden lenf ve kana taşınma yolunu özetleyiniz.",
+        "back": "Yağ asitleri ve gliserol epitel hücrelerinde yeniden trigliseritlere dönüştürülüp şilomikronları oluşturur; şilomikronlar önce lenf kılcallarına, sonra kana katılır."
+      },
+      "kazanim": "insanda enerji eldesi için sindirim, emilim ve taşıma süreçlerinin gerekliliği ile ilgili bilimsel çıkarım yapmanız,"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "biyo_10_u01_k04_o01:flashcard",
+      "front": "Mekanik ve kimyasal sindirimi gerçekleşme biçimleri bakımından karşılaştırınız.",
+      "back": "Mekanik sindirim besinlerin fiziksel olarak küçük parçalara ayrılmasıdır ve enzim kullanılmaz. Kimyasal sindirimde büyük moleküller su ve enzimlerle hidroliz edilerek yapı taşlarına ayrılır."
+    },
+    {
+      "id": "biyo_10_u01_k04_o02:flashcard",
+      "front": "Karbohidrat, protein ve nötral yağların kimyasal sindirim sonunda oluşan temel yapı taşlarını yazınız.",
+      "back": "Karbohidratlar monosakkaritlere, proteinler amino asitlere, nötral yağlar yağ asitleri ve gliserole parçalanır."
+    },
+    {
+      "id": "biyo_10_u01_k04_o03:flashcard",
+      "front": "Hücre içi sindirimde besin kofulunun oluşumundan yapı taşlarının sitoplazmaya geçişine kadar olan temel basamakları sıralayınız.",
+      "back": "Besin endositozla kofula alınır; koful lizozomla birleşir ve enzimler besini parçalar. Oluşan yapı taşları koful zarından sitoplazmaya geçer."
+    },
+    {
+      "id": "biyo_10_u01_k04_o04:flashcard",
+      "front": "Hücre dışı sindirimde büyük besinlerin parçalanması ve oluşan küçük moleküllerin hücreye alınması nasıl gerçekleşir?",
+      "back": "Enzimler hücre dışına salgılanarak büyük besinleri parçalar; oluşan küçük moleküller aktif veya pasif taşımayla hücre içine alınır."
+    },
+    {
+      "id": "biyo_10_u01_k04_o05:flashcard",
+      "front": "Yaprakla beslenen bir memelinin arka dişleri geniş ve çıkıntılı yüzeylidir. Bu diş yapısı beslenmeye nasıl katkı verir?",
+      "back": "Geniş azı dişleri bitkisel besinleri öğütüp parçalamayı kolaylaştırır."
+    },
+    {
+      "id": "biyo_10_u01_k04_o06:flashcard",
+      "front": "Hepçil canlıların beslenme biçimini ve insan dişlerinin bu biçime uyumunu açıklayınız.",
+      "back": "Hepçiller bitkisel ve hayvansal besinlerle beslenir; insanlarda kesici, köpek ve azı dişleri farklı besinleri ısırma, koparma ve öğütmeye uyum sağlamıştır."
+    },
+    {
+      "id": "biyo_10_u01_k04_o07:flashcard",
+      "front": "Geviş getiren otçulların dört bölmeli midesini oluşturan bölümleri sıralayınız.",
+      "back": "İşkembe, börkenek, kırkbayır ve şirden."
+    },
+    {
+      "id": "biyo_10_u01_k04_o08:flashcard",
+      "front": "Vücut boyutuna göre sindirim kanalı uzunluğunu otçullar, hepçiller ve etçiller bakımından karşılaştırınız.",
+      "back": "Otçul ve hepçillerin sindirim kanalları, vücut boyutlarına göre etçillerinkinden daha uzundur; bitkisel besinlerin sindirimi daha uzun sürer."
+    },
+    {
+      "id": "biyo_10_u01_k04_o09:flashcard",
+      "front": "İnsan sindirim kanalını ağızdan başlayarak sırasıyla oluşturan yapıları yazınız.",
+      "back": "Ağız, yutak, yemek borusu, mide, ince bağırsak, kalın bağırsak ve anüs sindirim kanalını oluşturur."
+    },
+    {
+      "id": "biyo_10_u01_k04_o10:flashcard",
+      "front": "Karaciğer, safra kesesi ve pankreasın sindirime katkılarını karşılaştırınız.",
+      "back": "Karaciğer safra üretir, safra kesesi safrayı depolar ve ince bağırsağa salgılar; pankreas sindirim enzimleri ve bikarbonat salgılar."
+    },
+    {
+      "id": "biyo_10_u01_k04_o11:flashcard",
+      "front": "Emilimi tanımlayınız ve ince bağırsağın emilim yüzeyini büyüten yapıları belirtiniz.",
+      "back": "Emilim, sindirilmiş maddelerin sindirim kanalından kana geçmesidir. İnce bağırsağın kıvrımları, villus ve mikrovillusları emilim yüzeyini artırır."
+    },
+    {
+      "id": "biyo_10_u01_k04_o12:flashcard",
+      "front": "Sindirilmiş yağ ürünlerinin ince bağırsak hücrelerinden lenf ve kana taşınma yolunu özetleyiniz.",
+      "back": "Yağ asitleri ve gliserol epitel hücrelerinde yeniden trigliseritlere dönüştürülüp şilomikronları oluşturur; şilomikronlar önce lenf kılcallarına, sonra kana katılır."
+    }
+  ],
+  "topic_key": "Biyoloji > 1.5 Sindirim"
+}
