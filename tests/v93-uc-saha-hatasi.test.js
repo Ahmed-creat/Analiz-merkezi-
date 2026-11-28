@@ -139,7 +139,15 @@ console.log("\n== 5) Felsefe grafikte kaybolmuyor ==");
 // ------------------------------------------------------------
 console.log("\n== 6) Bildirim garantisi (uygulama) ==");
 {
-  ok("bekleyenIsler() üç kaynağı okuyor", /function bekleyenIsler\(\)[\s\S]{0,700}gunlukGorevler[\s\S]{0,400}dueReviews[\s\S]{0,400}calculatePriority/.test(HTML));
+  /* v126 — TEK KAYNAK: sayılar GÖREV LİSTESİNDEN (gunlukGorevler) sayılır.
+     Eski hâlde gorev = listenin tamamı, tekrar ve acil ayrıca ekleniyordu →
+     bildirimdeki sayıların toplamı listedeki iş sayısını aşıyordu. Artık
+     dueReviews/calculatePriority dolaylı olarak listenin içinde; çift sayım yok. */
+  ok("bekleyenIsler() tek kaynağı (günlük görev listesi) okuyor",
+    /function bekleyenIsler\(\)[\s\S]{0,900}gunlukGorevler\(\)/.test(HTML) &&
+    /b\.toplam = b\.gorev \+ b\.tekrar \+ b\.acil/.test(HTML));
+  ok("çift sayım kaldırıldı (gorev = listenin tamamı DEĞİL)",
+    !/b\.gorev = \(gunlukGorevler\(\) \|\| \[\]\)\.length/.test(HTML));
   ok("bildirimGarantisi() var", /function bildirimGarantisi\(\)/.test(HTML));
   ok("iş yoksa bildirim YOK", /if \(!toplam\) return 0;/.test(HTML));
   ok("içerik imzasıyla tekilleştirme", /const imza = \[b\.gorev, b\.tekrar, b\.acil/.test(HTML));

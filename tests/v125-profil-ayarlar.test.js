@@ -36,13 +36,27 @@ function ok(ad, kosul, ayrinti) {
 }
 
 // ------------------------------------------------------------
-console.log("\n== 1) Görevler: 'neden değişiyor' sorusu arayüzde cevaplanıyor ==");
+console.log("\n== 1) Görev listesi = bildirimin görevleri ==");
 {
-  ok("liste değişiyor çünkü bugünün işi (açıklama var)", /Değişen kısım <b>bugünün işidir<\/b>/.test(HTML));
-  ok("sabit kalan üç çekirdek görev adıyla yazılı", /Sabit kalan kısım <b>seriyi besleyen üç çekirdek görevdir<\/b>/.test(HTML));
-  ok("üç çekirdek görev tek tek sayılıyor", /konu çalış · soru çöz · kitap oku/.test(HTML));
-  ok("rozet günün işi ile çekirdeği AYIRIYOR", /degisen \? degisen \+ " günün işi"/.test(HTML) && /cekirdekKalan \? cekirdekKalan \+ " çekirdek"/.test(HTML));
-  ok("görev üretimi gerçek durumdan (sabit liste değil)", /function gunlukGorevler\(\)/.test(HTML) && /ms\.rows\.filter\(r => r\.due\)/.test(HTML));
+  /* v126 — KULLANICI: "Görevlerde bildirim geliyor ya bunun görevleri diye
+     onlar yer alacak." Bildirimdeki üç sayı (görev · tekrar · acil) ile
+     listedeki işler AYNI kaynaktan gelmeli. */
+  ok("saçma 'değişen kısım / sabit kalan kısım' paragrafı SİLİNDİ",
+    !/Değişen kısım/.test(HTML) && !/Sabit kalan kısım/.test(HTML));
+  ok("'günün işi · çekirdek' uydurma rozet ayrımı SİLİNDİ",
+    !/günün işi/.test(HTML) && !/cekirdekKalan/.test(HTML));
+  ok("bildirimdeki 'tekrar' sayısı listede KONU KONU karşılanıyor",
+    /tekrarlar\.forEach\(\(r, i\) =>/.test(HTML) && /baslik: "Tekrar: " \+ r\.topic/.test(HTML));
+  ok("bildirimdeki 'acil konu' sayısı listede KONU KONU karşılanıyor",
+    /acilKonular\.forEach\(\(p, i\) =>/.test(HTML) && /baslik: "Acil: "/.test(HTML));
+  ok("acil kaynağı bildirimle AYNI fonksiyon (calculatePriority), kırpma yok",
+    /acilKonular = calculatePriority\(\) \|\| \[\]/.test(HTML) &&
+    !/acilKonular[^\n]*slice/.test(HTML));
+  ok("tekrar kaynağı bildirimle AYNI alan (ms.rows due)", /const tekrarlar = ms\.rows\.filter\(r => r\.due\)/.test(HTML));
+  ok("bildirim sayıları listeden sayılıyor (tek kaynak)",
+    /liste = gunlukGorevler\(\) \|\| \[\]/.test(HTML) && /b\.toplam = b\.gorev \+ b\.tekrar \+ b\.acil/.test(HTML) &&
+    !/b\.gorev = \(gunlukGorevler\(\) \|\| \[\]\)\.length/.test(HTML));
+  ok("rozet yalnız SAYI söylüyor", /gorevler\.length \+ " iş bekliyor"/.test(HTML));
 }
 
 // ------------------------------------------------------------
@@ -120,7 +134,7 @@ console.log("\n== 7) Sürüm damgası ==");
   const surum = (APP.match(/const PWA_SURUM = "([^"]+)"/) || [])[1] || "";
   const swSite = oku("site/sw.js");
   const swKok = oku("sw.js");
-  ok("PWA_SURUM v125", /^v125/.test(surum), surum);
+  ok("PWA_SURUM v125+", /^v12[5-9]/.test(surum), surum);
   ok("site/sw.js aynı damgayı taşıyor", swSite.includes(surum));
   ok("kök sw.js aynı damgayı taşıyor", swKok.includes(surum));
 }

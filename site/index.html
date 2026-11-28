@@ -3159,18 +3159,34 @@ window.__amHatirlatmaTelafisi = hatirlatmaTelafisi;
        (supabase/migrations/0010_bildirim_garantisi.sql).
    ============================================================ */
 function bekleyenIsler() {
-  const b = { gorev: 0, tekrar: 0, acil: 0, acilAdlar: [], tekrarAdlar: [] };
-  try { b.gorev = (gunlukGorevler() || []).length; } catch (e) { /* */ }
-  try {
-    const due = dueReviews() || [];
-    b.tekrar = due.length;
-    b.tekrarAdlar = due.slice(0, 3).map(x => splitKey((x && (x.key || x.topicKey)) || "").topic).filter(Boolean);
-  } catch (e) { /* */ }
-  try {
-    const pr = calculatePriority() || [];
-    b.acil = pr.length;
-    b.acilAdlar = pr.slice(0, 3).map(p => (p && p[2] && p[2].topic) || splitKey((p && p[0]) || "").topic).filter(Boolean);
-  } catch (e) { /* */ }
+  /* v126 — TEK KAYNAK: GÖREV LİSTESİ (gunlukGorevler).
+     KULLANICI: "Görevlerde bildirim geliyor ya bunun görevleri diye onlar
+     yer alacak." ESKİ HATA: gorev = gunlukGorevler().length idi — bu sayı
+     tekrar ve acil satırlarını da içeriyordu, üstüne tekrar ve acil ayrıca
+     ekleniyordu. Sonuç: "7 görev · 1 tekrar · 4 acil" cümlesi 12 iş varmış
+     gibi okunuyordu, oysa listede 7 satır vardı. Ayrıca acil listesi 5 ile
+     sınırlıyken bildirim 8 acil konu diyebiliyordu.
+     YENİ: sayılar listenin satırlarından sayılır →
+       gorev + tekrar + acil = listedeki iş sayısı.
+     Bildirimde ne yazıyorsa listede o var; fazlası ya da eksiği yok. */
+  const b = { gorev: 0, tekrar: 0, acil: 0, acilAdlar: [], tekrarAdlar: [], toplam: 0 };
+  let liste = [];
+  try { liste = gunlukGorevler() || []; } catch (e) { liste = []; }
+  liste.forEach(g => {
+    if (!g) return;
+    const baslik = String(g.baslik || "");
+    const ad = baslik.replace(/^(Tekrar|Acil):\s*/, "").trim();
+    if (g.tur === "tekrar") {
+      b.tekrar++;
+      if (ad && b.tekrarAdlar.length < 3) b.tekrarAdlar.push(ad);
+    } else if (g.tur === "kritik" && /^Acil:/.test(baslik)) {
+      b.acil++;
+      if (ad && b.acilAdlar.length < 3) b.acilAdlar.push(ad);
+    } else {
+      b.gorev++;
+    }
+  });
+  b.toplam = b.gorev + b.tekrar + b.acil;
   return b;
 }
 window.__amBekleyenIsler = bekleyenIsler;
@@ -4641,16 +4657,21 @@ function gunlukGorevler() {
     ? window.AnalizBKT.konuDurumlari() : {};
   const liste = [];
 
-  // 1) Tekrar günü gelmiş konular (hafıza motoru)
+  /* v126 — KULLANICI: "Görevlerde bildirim geliyor ya bunun görevleri diye
+     onlar yer alacak."
+     ÖLÇÜM: bildirimdeki sayılar bekleyenIsler() → {gorev, tekrar, acil}
+     üzerinden üretiliyor. Ama listede TEKRAR tek satırdı ("N konu tekrar
+     bekliyor"), yani bildirimde 4 tekrar görünürken listede 1 iş vardı.
+     Artık HER TEKRAR KONUSU kendi satırı: bildirimde ne diyorsa listede o var. */
   const tekrarlar = ms.rows.filter(r => r.due);
-  if (tekrarlar.length) {
+  tekrarlar.forEach((r, i) => {
     liste.push({
-      id: "tekrar", tur: "tekrar", icon: "refresh-cw", onem: 1,
-      baslik: tekrarlar.length + " konu tekrar bekliyor",
-      aciklama: tekrarlar.slice(0, 3).map(r => r.topic).join(" · ") + (tekrarlar.length > 3 ? " …" : ""),
+      id: "tekrar" + i, tur: "tekrar", icon: "refresh-cw", onem: 1,
+      baslik: "Tekrar: " + r.topic,
+      aciklama: (r.lesson ? r.lesson + " · " : "") + "Hafıza tekrarı zamanı geldi",
       sayfa: "tracking", dugme: "Konu Takibi"
     });
-  }
+  });
 
   // 2) 5 SORULUK TESTLER (ayrı görev — kart/tekrar ile karışmaz)
   //    a) Kısa Kontrol: motor "zamanı geldi" diyorsa
@@ -4754,6 +4775,23 @@ function gunlukGorevler() {
     });
   });
 
+  /* v126 — ACİL KONULAR: bildirimdeki "N acil konu" sayısı
+     calculatePriority() uzunluğudur. Aynı sayı listede birebir karşılanmalı:
+     her acil konu kendi satırı — kırpma YOK. Kırpma olsaydı bildirim
+     "8 acil konu" derken listede 5 satır olurdu; kullanıcı tam da bunu
+     istemedi ("bildirimin görevleri listede yer alacak"). */
+  let acilKonular = [];
+  try { acilKonular = calculatePriority() || []; } catch (e) { acilKonular = []; }
+  acilKonular.forEach((p, i) => {
+    const st = p && p[2] ? p[2] : {};
+    liste.push({
+      id: "acil" + i, tur: "kritik", icon: "alert-circle", onem: 1,
+      baslik: "Acil: " + (st.topic || splitKey(p[0] || "").topic || "konu"),
+      aciklama: (st.lesson ? st.lesson + " · " : "") + "Hata kayıtlarına göre en önce çalışılacak",
+      sayfa: "tracking", dugme: "Çalış"
+    });
+  });
+
   // 4) Nedeni işlenmemiş deneme hataları (motor bu kayıtları saymıyor)
   const nedensiz = (state.exams || []).reduce((a, ex) =>
     a + (ex.errorLogs || []).filter(l => !l.type).length, 0);
@@ -4843,28 +4881,18 @@ function renderTasks(container) {
   const gorevler = gunlukGorevler();
 
   let html = '<div class="top-bar" style="margin-bottom:14px;"><h2 style="font-size:20px;font-weight:700;">' + icon("check-square", 22, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Günlük Görevler</h2>";
-  /* v125 — rozet artık "değişen iş" ile "çekirdek" ayrımını söylüyor;
-     kullanıcı "neden hep aynı/ neden değişti" sorusunun cevabını burada görür. */
-  const degisen = gorevler.filter(g => g.onem !== 3).length;
-  const cekirdekKalan = gorevler.length - degisen;
-  const rozet = gorevler.length === 0
-    ? "bugünlük bitti"
-    : ([degisen ? degisen + " günün işi" : "", cekirdekKalan ? cekirdekKalan + " çekirdek" : ""].filter(Boolean).join(" · "));
-  html += '<span class="tagpill ' + (gorevler.length === 0 ? "ok" : "warn") + '">' + esc(rozet) + "</span></div>";
+  /* v126 — rozet sadece SAYI söyler (uydurma sınıflandırma yok). */
+  html += '<span class="tagpill ' + (gorevler.length === 0 ? "ok" : "warn") + '">' +
+    (gorevler.length === 0 ? "bugünlük bitti" : gorevler.length + " iş bekliyor") + "</span></div>";
 
   html += '<div class="ikili-grid">';
   // SOL: Bugünün listesi (sabit değil)
-  /* v125 — KULLANICI: "1 görevler neden sabit yani değişiyordu."
-     SORU İKİ PARÇALI: (a) liste neden her açılışta değişiyor, (b) neden üç
-     çekirdek görev (konu çalış · soru çöz · kitap oku) hep duruyor.
-     CEVAP ARAYÜZDE YAZILI OLSUN — kullanıcı tahmin etmesin. */
-  html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">Bugün Ne Yapmalıyım?</h3>' +
-    '<p class="text-xs text-muted" style="margin-bottom:8px;">Liste her açılışta yeniden kurulur: tekrar günü gelen konu, zamanı gelen kısa kontrol, yaklaşan sınav, eksik nedenler… Bitsin, düşsün.</p>' +
-    '<p class="text-xs" style="margin-bottom:10px;line-height:1.5;padding:8px 10px;border-radius:9px;background:color-mix(in srgb,var(--brand-blue) 8%,transparent);border:1px solid color-mix(in srgb,var(--brand-blue) 22%,transparent);">' +
-      '<b>Neden değişiyor?</b> Değişen kısım <b>bugünün işidir</b>: tekrarı gelen konu, zamanı gelen test, yaklaşan sınav. ' +
-      'Sabit kalan kısım <b>seriyi besleyen üç çekirdek görevdir</b> (konu çalış · soru çöz · kitap oku) — onlar her gün aynı kalır, çünkü her gün gerekir. ' +
-      'Bir iş bitince satır kendiliğinden düşer.' +
-    '</p>';
+  /* v126 — KULLANICI: "Ya sana saçma cümleler yazma diyorum sen hala ekliyorsun.
+     Görevlerde bildirim geliyor ya bunun görevleri diye onlar yer alacak."
+     O yüzden "neden değişiyor" ders veren paragraf SİLİNDİ. Ekran konuşmaz,
+     işi gösterir: liste doğrudan bildirimdeki üç sayıdan (görev · tekrar ·
+     acil) üretilir. */
+  html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:8px;">Bugün Ne Yapmalıyım?</h3>';
   if (gorevler.length) {
     html += gorevler.map(g => gorevSatirHTML(g)).join("");
   } else {

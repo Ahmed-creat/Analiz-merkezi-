@@ -116,9 +116,11 @@ console.log("\n== 2) Bildirim garantisi (gerçek fonksiyon koşuyor) ==");
     "function saveState() { state.kayit = (state.kayit || 0) + 1; }",
     "function updateBellBadges() {}",
     "function yerelSistemBildirimi(n) { state.sistem = (state.sistem || []); state.sistem.push(n); }",
-    "function gunlukGorevler() { return state.__gorevler || []; }",
-    "function dueReviews() { return state.__tekrarlar || []; }",
-    "function calculatePriority() { return state.__acil || []; }",
+    /* v126 — bekleyenIsler() artık GÖREV LİSTESİNİ sayıyor. Sahte liste
+       gerçek motorun ürettiği biçimde: tur + baslik. Bildirimdeki sayılar
+       bu satırlardan türetilmeli; ayrı bir dueReviews/calculatePriority
+       çağrısı YOK (çift sayım olmaz). */
+    "function gunlukGorevler() { return state.__liste || []; }",
     blokAl("function addNotification(n)"),
     blokAl("function bekleyenIsler()"),
     blokAl("function bildirimGarantisi()")
@@ -127,16 +129,25 @@ console.log("\n== 2) Bildirim garantisi (gerçek fonksiyon koşuyor) ==");
   const yeni = () => ({
     notifications: [],
     memory: {},
-    __gorevler: [{ k: "read" }, { k: "solve" }],
-    __tekrarlar: [{ topicKey: "Matematik > Üçgende Alan", day: 2, date: "2026-11-19" }],
-    __acil: [["Matematik > Üçgende Alan", 4.5, {}], ["Fizik > Vektörler", 2.0, {}], ["Tarih > Kurtuluş", 1.0, {}], ["Kimya > Bağlar", 1.0, {}]]
+    /* Listedeki satırlar: 2 normal görev · 1 tekrar · 4 acil = 7 iş.
+       Bildirim de tam olarak bunu söylemeli (çift sayım yok). */
+    __liste: [
+      { tur: "oku", baslik: "Kitap okuma" },
+      { tur: "soru", baslik: "Soru çözümü" },
+      { tur: "tekrar", baslik: "Tekrar: Üçgende Alan" },
+      { tur: "kritik", baslik: "Acil: Üçgende Alan" },
+      { tur: "kritik", baslik: "Acil: Vektörler" },
+      { tur: "kritik", baslik: "Acil: Kurtuluş" },
+      { tur: "kritik", baslik: "Acil: Bağlar" }
+    ]
   });
 
   let state = yeni();
   const PAYLASILAN = {};            // aynı cihaz → aynı localStorage
   let ctx = kosum(kod + "\nthis.__isler = bekleyenIsler(); this.__adet = bildirimGarantisi();", { state, _sayac: 0, __store: PAYLASILAN });
-  ok("üç kaynak birden okunuyor (2 görev · 1 tekrar · 4 acil)",
+  ok("liste satırları sınıflandı (2 görev · 1 tekrar · 4 acil)",
     ctx.__isler.gorev === 2 && ctx.__isler.tekrar === 1 && ctx.__isler.acil === 4, JSON.stringify(ctx.__isler));
+  esit("üç sayının toplamı listedeki iş sayısı", ctx.__isler.toplam, state.__liste.length);
   esit("tek bildirim üretildi", ctx.__adet, 7);
   esit("bildirim sayısı 1 (spam yok)", state.notifications.length, 1);
   const b = state.notifications[0] || {};
@@ -144,6 +155,10 @@ console.log("\n== 2) Bildirim garantisi (gerçek fonksiyon koşuyor) ==");
   ok("gövdede tekrar sayısı var", /1 tekrar/.test(b.body || ""), b.body);
   ok("gövdede acil konu sayısı var", /4 acil konu/.test(b.body || ""), b.body);
   ok("en önce yapılacak KONU adları var", /En önce: Üçgende Alan, Vektörler, Kurtuluş\./.test(b.body || ""), b.body);
+  ok("gövdedeki üç sayı listedeki satırları aşmıyor",
+    (Number((/^(\d+) görev/.exec(b.body) || [])[1] || 0) +
+     Number((/(\d+) tekrar/.exec(b.body) || [])[1] || 0) +
+     Number((/(\d+) acil konu/.exec(b.body) || [])[1] || 0)) === state.__liste.length, b.body);
 
   // aynı gün, aynı içerik → tekrar bildirim YOK
   const oncekiSayi = state.notifications.length;
@@ -152,19 +167,19 @@ console.log("\n== 2) Bildirim garantisi (gerçek fonksiyon koşuyor) ==");
   esit("bildirim listesi büyümedi", state.notifications.length, oncekiSayi);
 
   // yeni bir acil konu doğdu → yeniden bildirim (içerik imzası değişti)
-  state.__acil.push(["Biyoloji > Kalıtım", 3.0, {}]);
+  state.__liste.push({ tur: "kritik", baslik: "Acil: Kalıtım" });
   ctx = kosum(kod + "\nthis.__adet = bildirimGarantisi();", { state, _sayac: 20, __store: PAYLASILAN });
   ok("acil konu artınca yeniden bildirilir", ctx.__adet === 8, String(ctx.__adet));
   esit("yeni bildirim eklendi", state.notifications.length, 2);
 
   // iş yoksa bildirim yok
-  const bos = { notifications: [], memory: {}, __gorevler: [], __tekrarlar: [], __acil: [] };
+  const bos = { notifications: [], memory: {}, __liste: [] };
   ctx = kosum(kod + "\nthis.__adet = bildirimGarantisi();", { state: bos, _sayac: 30, __store: {} });
   esit("iş yoksa bildirim ÜRETİLMEZ", ctx.__adet, 0);
   esit("bildirim listesi boş kaldı", bos.notifications.length, 0);
 
   // yalnız tekrar (görev/acil yok) → yine de bildirim (eski kör nokta)
-  const sadece = { notifications: [], memory: {}, __gorevler: [], __tekrarlar: [{ topicKey: "Türk Dili ve Edebiyatı > Şiir", day: 1, date: "2026-11-19" }], __acil: [] };
+  const sadece = { notifications: [], memory: {}, __liste: [{ tur: "tekrar", baslik: "Tekrar: Şiir" }] };
   ctx = kosum(kod + "\nthis.__adet = bildirimGarantisi();", { state: sadece, _sayac: 40, __store: {} });
   esit("yalnız tekrar varsa da bildirim gelir", ctx.__adet, 1);
   ok("tekrar konusu adıyla yazılıyor", /Şiir/.test((sadece.notifications[0] || {}).body || ""), (sadece.notifications[0] || {}).body);
