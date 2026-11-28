@@ -143,7 +143,9 @@ console.log("\n== 4) KURULUMUN TEK YOLU + DÜRÜST DURUM ==");
     /kasaSarmayiStateeYaz\(sarma\)/.test(kur));
   ok("6 karakterden kısa şifre reddediliyor", /sifre\.length < 6/.test(kur));
   ok("profildeki düğme de aynı yolu kullanıyor", /const r = await kasaKurVeAnahtar\(sifre\);/.test(APP));
-  ok("profil kasa bölümü kurulmamışsa KIRMIZI uyarı yazıyor", /KAPALI — veri sunucuda DÜZ duruyor/.test(APP));
+  /* v125 — metin sadeleşti (kullanıcı: teknik cümle istemiyorum) ama
+     DÜRÜSTLÜK aynı: kilit yoksa kırmızı çerçevede açıkça yazar. */
+  ok("kasa bölümü kurulmamışsa KIRMIZI uyarı yazıyor", /KAPALI — verilerin şifreli değil/.test(APP));
   ok("çekim başında da uyarı veriliyor (sessiz geçilmiyor)", /Kilit kurulu değil: sınav sonuçların sunucuda düz metin duruyor/.test(APP));
   ok("kasa.js gerçek şifreleme yapıyor (AES-GCM + PBKDF2)", /AES-GCM/.test(KASA) && /PBKDF2/.test(KASA) && /310000/.test(KASA));
 }

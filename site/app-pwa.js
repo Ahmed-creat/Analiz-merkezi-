@@ -1,4 +1,4 @@
-const PWA_SURUM = "v124-kvkk-sade";
+const PWA_SURUM = "v125-profil-ayarlar";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -243,10 +243,17 @@ function initAuthUI() {
     else if (a === "kasaAcKutu") kasaAcTiklandi();
     else if (a === "kasaKurtar") kasaKurtarmaTiklandi();
     else if (a === "kasaKurtarma") kasaKurtarmaIndir();
+    /* v125 — KULLANICI (madde 4): "WhatsApp'ta olduğu gibi hep şifreli kalır,
+       neden açıp kapatsın ki."
+       ÖNCEKİ: "Kilitle" düğmesi vardı; basınca cihazdaki anahtar siliniyor ve
+       HER AÇILIŞTA şifre soruluyordu → sürekli aç/kapa sürtünmesi.
+       ŞİMDİ: düğme KALDIRILDI (arayüzde yok). Anahtar cihazda kaldığı için kilit
+       kendiliğinden açık kalır — WhatsApp gibi "hep şifreli, bir kez açılır".
+       Yalnız ÇIKIŞ yapar ya da hesap silinirse anahtar cihazdan silinir. */
     else if (a === "kasaKilitle") {
       try { window.__kasa.kilitle(); } catch (e) { }
       renderProfileModal();
-      toast("Kilitlendi. Bulut kaydın bir sonraki açılışta giriş şifreni ister.", "info");
+      toast("Bu cihazdaki anahtar silindi. Bir sonraki açılışta giriş şifren bir kez sorulur.", "info");
     }
     else if (a === "openProfile") openProfileModal();
     else if (a === "syncNow") { if (typeof window.__supabaseSenkronizeEt === "function") { window.__supabaseSenkronizeEt(); toast("Buluta yedekleniyor…", "info"); } }
@@ -571,14 +578,18 @@ function authZorunluAc() {
 function authMsgYaz(t, hata) { const el = document.getElementById("pwa-auth-msg"); if (el) { el.textContent = t; el.style.color = hata ? "#E11D48" : "#16A34A"; } }
 
 // ---- 3b) PROFİL PENCERESİ: hesap (Supabase) + Okulizyon bağlantısı ----
-function buildProfileModal() {
-  if (document.getElementById("pwa-profile-modal")) return;
-  const m = document.createElement("div");
-  m.id = "pwa-profile-modal";
-  m.style.cssText = "position:fixed;inset:0;z-index:9997;display:none;align-items:center;justify-content:center;background:rgba(10,16,32,0.6);padding:14px;";
-  m.addEventListener("click", (e) => { if (e.target === m) closeProfileModal(); });
-  document.body.appendChild(m);
-}
+/* v125 — ARTIK BOŞ BİR TAM EKRAN PENCERE KURULMUYOR.
+   Profil, Ayarlar çekmecesinin içinde üç bölüm olarak yaşıyor
+   (index.html: profil-hesap-icerik / profil-bilgiler-icerik / profil-veri-icerik).
+   Fonksiyon adı korunuyor: eski çağrı yerleri kırılmasın; işi "hiçbir şey". */
+function buildProfileModal() { /* v125: ayrı profil penceresi YOK */ }
+/* v125 — KULLANICI: "profil bölümünü ayarlara taşı. Profilde hesap, bilgiler,
+   veri bölümleri olsun."
+   ÖNCE: ayrı bir "Profil" penceresi (tam ekran modal) vardı; Ayarlar ile iki
+   ayrı yer, aynı bilgiler. ŞİMDİ: tek yer — AYARLAR çekmecesi. Profil üç
+   bölüm olarak çekmecenin içine yazılır (index.html: profil-*-icerik).
+   Eski tam ekran pencere KALDIRILDI; açılmayı bekleyen kod yolu kalmasın diye
+   closeProfileModal yalnız ayarları kapatır (aynı işlev, tek yer). */
 function openProfileModal() {
   // Mobilde açık kalan DAHA sayfası / yan menü çekmecesi arkada kalmasın
   try {
@@ -586,16 +597,13 @@ function openProfileModal() {
     if (window.matchMedia && window.matchMedia("(max-width: 1023px)").matches && typeof toggleSidebar === "function") toggleSidebar(false);
   } catch (e) {}
   buildAuthModal();
-  buildProfileModal();
   renderProfileModal();
-  const m = document.getElementById("pwa-profile-modal");
-  if (m) m.style.display = "flex";
+  try { if (typeof openSettings === "function") openSettings(); } catch (e) { /* */ }
   setTimeout(function () { try { okzKuyrukCek(false); } catch (e) {} }, 250);
   if (window.lucide && lucide.createIcons) lucide.createIcons();
 }
 function closeProfileModal() {
-  const m = document.getElementById("pwa-profile-modal");
-  if (m) m.style.display = "none";
+  try { if (typeof closeSettings === "function") closeSettings(); } catch (e) { /* */ }
 }
 function profilAvatarHarfleri() {
   const ad = String((state && state.user && state.user.name) || (currentUser && currentUser.email) || "").trim();
@@ -603,7 +611,9 @@ function profilAvatarHarfleri() {
   const harf = (parcalar[0] ? parcalar[0][0] : "?") + (parcalar[1] ? parcalar[1][0] : "");
   return harf.toLocaleUpperCase("tr-TR");
 }
-window.__profilTaze = function () { const m = document.getElementById("pwa-profile-modal"); if (m && m.style.display === "flex") renderProfileModal(); };
+/* v125 — Ayarlar açıldığında bu çağrılır. ÖNCEKİ sürüm "pencere açık mı" diye
+   bakıyordu; pencere kaldırıldığı için hiç tazelemezdi. Artık her zaman yazar. */
+window.__profilTaze = function () { try { renderProfileModal(); } catch (e) { /* */ } };
 // ============================================================
 // v42 — OKULİZYON İL / İLÇE / OKUL LİSTELERİ (SABİT DEĞİL)
 // KULLANICI: "Okulizyon bilgileri de sabit olmasın. Şehir, ilçe ve okullar
@@ -1140,7 +1150,8 @@ function kurulumPaneli() {
     // 2) ŞİFRE — bilgiler hazırsa panel BURADAN açılır
     '<div id="kur-adim2"' + (bilgiVar ? '' : ' style="display:none;"') + '>' +
     (bilgiVar ? '' : '<div style="font-weight:700;font-size:14.5px;margin-bottom:4px;">🔐 Giriş şifresi</div>') +
-    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Uygulamaya her girişte bu şifreyi kullanacaksın. Verilerin <b>cihazında</b> bu şifreyle şifrelenir; sunucu şifreni görmez.</div>' +
+    /* v125 — sade dil: app şifresi = cihazındaki veri kilidi. WhatsApp benzetmesi. */
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Bu şifre <b>cihazındaki</b> verilerini korur — WhatsApp gibi. Bir kez belirlersin, sonrasında her açılışta sormaz.</div>' +
     '<input id="kur-sifre" type="password" autocomplete="new-password" placeholder="En az 6 karakter" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
     '<input id="kur-sifre2" type="password" autocomplete="new-password" placeholder="Şifreyi tekrar yaz" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
     '<div id="kur-hata2" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
@@ -1151,7 +1162,7 @@ function kurulumPaneli() {
     // 3) 12 KELİME
     '<div id="kur-adim3" style="display:none;">' +
     '<div style="font-weight:700;font-size:14.5px;margin-bottom:4px;">🔑 12 kelimelik anahtarın</div>' +
-    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Bu kelimeleri <b>kâğıda yaz</b>. Şifreni unutursan verini yalnız bu kelimeler kurtarır. Kelimeler sunucuya gönderilmez.</div>' +
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;opacity:0.85;">Bu kelimeleri <b>kâğıda yaz</b>. Şifreni unutursan verini yalnız bu kelimeler kurtarır; kimseyle paylaşma.</div>' +
     '<div id="kur-kelimeler" style="font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.7;background:var(--bg,#F6F8FC);border:1px dashed rgba(0,0,0,0.25);border-radius:10px;padding:12px;margin-bottom:10px;word-spacing:6px;"></div>' +
     '<button id="kur-indir" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);margin-bottom:10px;">İndir</button>' +
     '<label style="font-size:12.5px;display:flex;gap:8px;align-items:flex-start;line-height:1.45;margin-bottom:10px;cursor:pointer;"><input id="kur-onay" type="checkbox" style="margin-top:2px;"> Kelimeleri kâğıda yazdım, güvenli bir yerde saklıyorum.</label>' +
@@ -1320,7 +1331,7 @@ function kurDinleyicileri(d) {
     try { localStorage.setItem(KURULUM_TAM_KEY, "1"); } catch (e) { /* */ }
     d.remove();
     toast("Kurulum tamam — verilerin artık şifreli. Hoş geldin!", "success");
-    try { if (document.getElementById("pwa-profile-modal")) renderProfileModal(); } catch (e) { /* */ }
+    try { renderProfileModal(); } catch (e) { /* */ }
     try { okzBilgiBulutaYaz(); } catch (e) { /* */ }
   });
 }
@@ -1404,7 +1415,7 @@ function kasaKurtarmaGoster(kelimeler) {
   d.style.cssText = "position:fixed;inset:0;z-index:9997;background:rgba(9,15,32,0.62);display:flex;align-items:center;justify-content:center;padding:16px;";
   d.innerHTML = '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:460px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
     '<div style="font-weight:800;font-size:16px;margin-bottom:6px;">🔑 12 kelimelik anahtarın</div>' +
-    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;">Bu 12 kelimeyi <b>kâğıda yaz</b> veya şifre yöneticine kaydet. Giriş şifreni unutursan verini <b>yalnız bu kelimeler</b> kurtarır. Kelimeler sunucuya gönderilmez.</div>' +
+    '<div style="font-size:12.5px;line-height:1.5;margin-bottom:10px;">Bu 12 kelimeyi <b>kâğıda yaz</b> veya şifre yöneticine kaydet. Giriş şifreni unutursan verini <b>yalnız bu kelimeler</b> kurtarır; kimseyle paylaşma.</div>' +
     '<div style="font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.7;background:var(--bg,#F6F8FC);border:1px dashed rgba(0,0,0,0.25);border-radius:10px;padding:12px;margin-bottom:10px;word-spacing:6px;">' + escHtml(kelimeler) + '</div>' +
     '<div style="display:flex;gap:8px;flex-wrap:wrap;"><button id="am-kk-indir" class="btn btn-primary btn-sm">Kopyala / indir</button><button id="am-kk-kapat" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kaydettim, kapat</button></div>' +
     '</div>';
@@ -1460,150 +1471,154 @@ function kasaKurtarmaTiklandi() {
   });
 }
 
-function renderProfileModal() {
-  const m = document.getElementById("pwa-profile-modal");
-  if (!m) return;
+/* ============================================================
+   v125 — PROFİL, AYARLARIN İÇİNDE (tek yer)
+   ------------------------------------------------------------
+   KULLANICI: "profil bölümünü ayarlara taşı. Profilde hesap, bilgiler,
+   veri bölümleri olsun."
+
+   YAPI: Ayarlar çekmecesinde üç boş kap var (index.html):
+     #profil-hesap-icerik    → HESAP    (giriş/çıkış, e-posta, yedekle)
+     #profil-bilgiler-icerik → BİLGİLER (Okulizyon kimliği, sınıf, ad)
+     #profil-veri-icerik     → VERİ     (veri kilidi + kurtarma anahtarı)
+   Silme düğmeleri index.html'de zaten VERİ bölümünün altında duruyor.
+
+   ÖNEMLİ: Artık tam ekran "Profil" penceresi YOK. Aynı bilgi iki yerde
+   durmaz; tek yerden yönetilir.
+   ============================================================ */
+function profilBolumlerineYaz() {
   if (!state.settings) state.settings = {};
   const s = state.settings.okulizyon ? state.settings.okulizyon : (state.settings.okulizyon = {});
   const st = okzStore();
-  /* v79 — Profilde "N soru bekliyor" SAYACI da kaldırıldı (kullanıcı isteği):
-     bekleyen nedenler Denemelerim'de görünür; profilde sayaç tutulmaz. */
-  const hesapSatiri = currentUser
-    ? '<div style="display:flex;align-items:center;gap:10px;"><div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">' + escHtml(profilAvatarHarfleri()) + '</div><div style="min-width:0;"><div style="font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(currentUser.email || "hesap") + '</div><div style="font-size:11.5px;color:#16A34A;font-weight:600;">☁ Bulut yedeği açık</div></div></div>'
-    : '<div style="font-size:12.5px;opacity:0.8;">Giriş yapılmadı — veriler yalnız bu cihazda saklanıyor.</div>';
 
-  const inp = (k, label, ph) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" autocapitalize="characters" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;' + (k === "ad" ? "text-transform:uppercase;font-weight:600;" : "") + '"></label>';
-  const sel = (k, label, opts) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<select id="okz-' + k + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + opts.map(o => '<option' + ((s[k] || opts[0]) === o ? " selected" : "") + '>' + escHtml(o) + "</option>").join("") + "</select></label>";
-
-  let html = '<div style="width:100%;max-width:520px;max-height:88vh;overflow:auto;background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:18px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">';
-  html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><div style="font-weight:800;font-size:18px;">👤 Profil</div><button data-act="pwaProfileClose" style="background:none;border:0;font-size:20px;cursor:pointer;color:inherit;min-width:36px;min-height:36px;">✕</button></div>';
-
-  // A) HESAP
-  html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
-  html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:8px;">HESAP</div>';
-  html += hesapSatiri;
-  html += '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">';
-  html += currentUser
-    ? '<button data-act="pwaAuth" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Çıkış Yap</button><button data-act="syncNow" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi Yedekle</button>'
-    : '<button data-act="pwaAuth" class="btn btn-primary btn-sm">Giriş Yap / Kayıt Ol</button>';
-  html += '</div>';
-  html += '<div style="font-size:11px;opacity:0.65;margin-top:8px;">Giriş yapınca verilerin cihazların arasında eşitlenir.</div>';
-  /* v113 — KVKK m.7 silme hakkı: hesap + tüm veri kalıcı silinir. */
-  if (currentUser) {
-    html += '<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,0,0,0.08);">';
-    html += '<button data-act="iletisim" style="background:none;border:0;padding:0;font-size:11.5px;color:#1D4ED8;text-decoration:underline;cursor:pointer;margin-right:14px;">Bize ulaş</button>';
-    html += '<button data-act="hesapSil" style="background:none;border:0;padding:0;font-size:11.5px;color:#DC2626;text-decoration:underline;cursor:pointer;">Hesabımı ve tüm verilerimi kalıcı sil</button>';
-    html += '</div>';
-  }
-  html += '</div>';
-
-  /* v106 — KASA BÖLÜMÜ. Kullanıcı: "ad soyad, sınav sonuçları, hedef, plan
-     takibi, kitaplar bunları neden şifrelenmiyor?" → artık şifreleniyor.
-     Ayar GİZLENMEZ: kasa kapalıysa kırmızı çerçevede açıkça yazar. */
-  {
-    const kd = (typeof kasaDurumu === "function") ? kasaDurumu() : { acik: false, var: false };
-    const acikRenk = kd.acik ? "#16A34A" : "#DC2626";
-    const acikMetin = kd.acik ? "AÇIK — buluta yalnız şifreli kutu gider"
-      : (kd.var ? "KİLİTLİ — şifre girilince bulut açılır" : "KAPALI — veri sunucuda DÜZ duruyor");
-    html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
-    html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:6px;">VERİ KİLİDİ (UÇTAN UCA ŞİFRELEME)</div>';
-    html += '<div style="font-size:12px;font-weight:700;color:' + acikRenk + ';margin-bottom:8px;">' + escHtml(acikMetin) + '</div>';
-    html += '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:10px;">Açıkken ad soyad, sınav sonuçları, hedef, plan, konu takibi ve kitaplar <b>bu cihazda şifrelenir</b>; sunucu yalnız anlamsız harf görür. Şifren sunucuya <b>hiç gitmez</b>.</div>';
-    if (!kd.acik) {
-      html += '<input id="am-kasa-yeni" type="password" autocomplete="new-password" placeholder="Giriş şifresi (en az 6 karakter)" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;">';
-      html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
-      html += '<button data-act="kasaKur" class="btn btn-primary btn-sm">Kilidi kur ve aç</button>';
-      html += '<button data-act="kasaAcKutu" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kilidi aç</button>';
-      html += '<button data-act="kasaKurtar" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">12 kelimelik anahtarla aç</button>';
-      html += '</div>';
-      html += '<div id="am-kasa-not" style="display:none;font-size:11.5px;line-height:1.45;margin-top:8px;"></div>';
-    } else {
-      html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
-      html += '<button data-act="kasaKurtarma" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">12 kelimelik anahtarı indir</button>';
-      html += '<button data-act="kasaKilitle" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Kilitle</button>';
-      html += '</div>';
+  /* ---------- HESAP ---------- */
+  const hesap = document.getElementById("profil-hesap-icerik");
+  if (hesap) {
+    const satir = currentUser
+      ? '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#38BDF8);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex:0 0 auto;">' + escHtml(profilAvatarHarfleri()) + '</div><div style="min-width:0;"><div style="font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + escHtml(currentUser.email || "hesap") + '</div><div style="font-size:11.5px;color:#16A34A;font-weight:600;">☁ Yedek açık</div></div></div>'
+      : '<div style="font-size:12.5px;opacity:0.8;margin-bottom:10px;line-height:1.5;">Giriş yapılmadı — veriler yalnız bu cihazda duruyor.</div>';
+    let h = satir;
+    h += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+    h += currentUser
+      ? '<button data-act="pwaAuth" class="btn btn-ghost btn-sm" style="border:1px solid var(--border-card);">Çıkış Yap</button><button data-act="syncNow" class="btn btn-ghost btn-sm" style="border:1px solid var(--border-card);">Şimdi Yedekle</button>'
+      : '<button data-act="pwaAuth" class="btn btn-primary btn-sm">Giriş Yap / Kayıt Ol</button>';
+    h += '</div>';
+    h += '<div style="font-size:11px;opacity:0.65;margin-top:8px;line-height:1.45;">Giriş yapınca verilerin cihazların arasında eşitlenir.</div>';
+    /* v125 — Bildirim durumu TEK yerde ve DÜRÜST: cihaza gerçekten ulaştı mı?
+       (v63 kontratı: düğme yok, durum satırı var. pushTeshisYaz doldurur.) */
+    h += '<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border-card);font-size:11.5px;line-height:1.6;">';
+    h += '<b>Bildirimler</b><div id="pwa-push-durum" style="margin-top:4px;opacity:0.85;">kontrol ediliyor…</div>';
+    h += '</div>';
+    if (currentUser) {
+      h += '<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border-card);">';
+      h += '<button data-act="iletisim" style="background:none;border:0;padding:0;font-size:11.5px;color:#1D4ED8;text-decoration:underline;cursor:pointer;margin-right:14px;">Bize ulaş</button>';
+      h += '<button data-act="hesapSil" style="background:none;border:0;padding:0;font-size:11.5px;color:#DC2626;text-decoration:underline;cursor:pointer;">Hesabımı ve tüm verilerimi kalıcı sil</button>';
+      h += '</div>';
     }
-    html += '<div style="font-size:10.5px;opacity:0.65;margin-top:9px;line-height:1.45;">⚠️ Giriş şifresini unutursan verin kurtarılamaz. 12 kelimelik anahtarını indirip güvenli bir yerde tut.</div>';
-    html += '</div>';
+    hesap.innerHTML = h;
   }
 
-  // B) OKULIZYON
-  html += '<div style="border:1px solid rgba(0,0,0,0.12);border-radius:14px;padding:12px;margin-bottom:14px;">';
-  html += '<div style="font-size:11px;font-weight:800;letter-spacing:0.06em;opacity:0.6;margin-bottom:6px;">OKULIZYON BAĞLANTISI</div>';
-  html += '<div style="font-size:11.5px;opacity:0.72;margin-bottom:10px;">Okulizyon\'daki bilgilerini bir kez gir; sınav sonuçların her sabah otomatik çekilir.</div>';
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">';
-  html += inp("ad", "AD SOYAD (BÜYÜK HARF)", "AHMET YILMAZ");
-  html += inp("okulNo", "OKUL NO", "1234");
-  html += sel("sinif", "SINIF", ["9", "10", "11", "12"]);
-  // v42 — KULLANICI: "Okulizyon bilgileri de sabit olmasın. Şehir, ilçe ve
-  // okullar Okulizyon'daki gibi seçilebilsin. Direkt oradaki listeleri
-  // kopyala yapıştır." Listeler artık okulizyon-liste edge fonksiyonundan
-  // GERÇEK okulizyon.com listeleri olarak gelir (il → ilçe → okul zinciri).
-  html += okzSecim("il", "İL", "il", s.ilkodu || "", s.il || "");
-  html += okzSecim("ilce", "İLÇE", "ilce", s.ilcekodu || "", s.ilce || "");
-  html += okzSecim("okulAdi", "OKUL", "okul", s.kurumkodu || "", s.okulAdi || "");
-  html += '<div id="okz-liste-hata" style="display:none;grid-column:1 / -1;font-size:11.5px;line-height:1.45;color:#B45309;"></div>';
-  html += '<div style="grid-column:1 / -1;"><button data-act="okzListeYenile" style="background:none;border:0;padding:0;font-size:11.5px;text-decoration:underline;color:#2563EB;cursor:pointer;">Listeyi yenile</button></div>';
-  /* v103 — şifre kutusu BOŞ açılır (kayıtlı şifre yok; saklanmıyor).
-     Kullanıcı yalnız Okulizyon şifre istiyorsa doldurur, çekim bitince silinir. */
-  html += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız gerekiyorsa — KAYDEDİLMEZ)<input id="okz-sifre" type="password" autocomplete="off" value="" placeholder="Yalnız bu çekim için" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"><span style="display:block;font-size:10.5px;opacity:0.75;margin-top:3px;">Güvenlik için saklanmaz; sekme kapanınca ya da çekim bitince silinir.</span></label>';
-  html += '</div>';
-  html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
-  html += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
-  html += '<button data-act="okzSimdiCek" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Şimdi dene</button>';
-  /* v79 — KULLANICI: "profilden analiz bekliyor'u kaldırmamışsın." Profilde
-     'Analiz Bekliyor' ADI ve SAYACI artık YOK: neden bekleyen sorular yalnız
-     Denemelerim'de, ait oldukları denemenin altında görünür. Bu düğme yalnız
-     Okulizyon çekim sonuçlarını gösterir. */
-  html += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid rgba(0,0,0,0.15);">Okulizyon sonuçları</button>';
-  html += '</div>';
-  // Çekim durumu: sessiz başarısızlık yerine açık bilgi
-  const OKZ_AMBER = ["giris-yok", "bos", "sifre-gerekli", "bilgi-yok", "eslesme-yok", "bekliyor", "elle"];
-  const durumRenk = !st.durum ? "#6B7280" : (st.durum.kod === "ok" ? "#16A34A" : (OKZ_AMBER.indexOf(st.durum.kod) >= 0 ? "#B45309" : "#E11D48"));
-  html += '<div style="margin-top:9px;font-size:11.5px;line-height:1.45;color:' + durumRenk + ';">'
+  /* ---------- BİLGİLER (Okulizyon kimliği + sınıf + ad) ---------- */
+  const bilgiler = document.getElementById("profil-bilgiler-icerik");
+  if (bilgiler) {
+    const inp = (k, label, ph) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<input id="okz-' + k + '" value="' + escHtml(s[k] || "") + '" placeholder="' + ph + '" autocapitalize="characters" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--border-card);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;' + (k === "ad" ? "text-transform:uppercase;font-weight:600;" : "") + '"></label>';
+    const sel = (k, label, opts) => '<label style="font-size:11.5px;opacity:0.8;">' + label + '<select id="okz-' + k + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--border-card);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;">' + opts.map(o => '<option' + ((s[k] || opts[0]) === o ? " selected" : "") + '>' + escHtml(o) + "</option>").join("") + "</select></label>";
+
+    let h = '';
+    h += '<div style="font-size:11.5px;opacity:0.72;margin-bottom:10px;line-height:1.5;">Okulizyon bilgilerin bir kez girilir; sınav sonuçların <b>kendiliğinden</b> çekilir. Bu bilgiler olmadan sonuçlar getirilemez.</div>';
+    h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">';
+    h += inp("ad", "AD SOYAD (BÜYÜK HARF)", "AHMET YILMAZ");
+    h += inp("okulNo", "OKUL NO", "1234");
+    h += sel("sinif", "SINIF", ["9", "10", "11", "12"]);
+    h += okzSecim("il", "İL", "il", s.ilkodu || "", s.il || "");
+    h += okzSecim("ilce", "İLÇE", "ilce", s.ilcekodu || "", s.ilce || "");
+    h += okzSecim("okulAdi", "OKUL", "okul", s.kurumkodu || "", s.okulAdi || "");
+    h += '<div id="okz-liste-hata" style="display:none;grid-column:1 / -1;font-size:11.5px;line-height:1.45;color:#B45309;"></div>';
+    h += '<div style="grid-column:1 / -1;"><button data-act="okzListeYenile" style="background:none;border:0;padding:0;font-size:11.5px;text-decoration:underline;color:#2563EB;cursor:pointer;">Listeyi yenile</button></div>';
+    /* v125 — KULLANICI (madde 4): "Okulizyon çekimi otomatik olmuyor mu? Neden
+       kilidi açmak gereksin ki? WhatsApp gibi mesajlar gidip gelirken şifre
+       istemiyor sonuçta."
+       DOĞRU SORU. Okulizyon şifresi YALNIZ Okulizyon'un kendi girişi için
+       gerekir; uygulamanın kilidiyle ilgisi yoktur. Bu kutu artık "şifre
+       gerektiğinde" görünür ve YALNIZ o çekim için kullanılır. */
+    h += '<label style="font-size:11.5px;opacity:0.8;grid-column:1 / -1;">OKULİZYON ŞİFRESİ (yalnız Okulizyon isterse)<input id="okz-sifre" type="password" autocomplete="off" value="" placeholder="Boş bırakabilirsin" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--border-card);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-top:3px;"><span style="display:block;font-size:10.5px;opacity:0.75;margin-top:3px;line-height:1.4;">Çekim bitince silinir. Uygulamaya girişini etkilemez.</span></label>';
+    h += '</div>';
+    h += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+    h += '<button data-act="okzSaveBilgi" class="btn btn-primary btn-sm">Bilgileri Kaydet</button>';
+    h += '<button data-act="okzSimdiCek" class="btn btn-ghost btn-sm" style="border:1px solid var(--border-card);">Şimdi dene</button>';
+    h += '<button data-act="pwaOkz" class="btn btn-ghost btn-sm" style="border:1px solid var(--border-card);">Okulizyon sonuçları</button>';
+    h += '</div>';
+    const OKZ_AMBER = ["giris-yok", "bos", "sifre-gerekli", "bilgi-yok", "eslesme-yok", "bekliyor", "elle"];
+    const durumRenk = !st.durum ? "#6B7280" : (st.durum.kod === "ok" ? "#16A34A" : (OKZ_AMBER.indexOf(st.durum.kod) >= 0 ? "#B45309" : "#E11D48"));
+    h += '<div style="margin-top:9px;font-size:11.5px;line-height:1.45;color:' + durumRenk + ';">'
        + '<b>Son çekim:</b> '
        + (st.durum ? escHtml(okzZaman(st.durum.zaman)) + " — " + escHtml(st.durum.mesaj) : "henüz denenmedi")
        + (st.sonCekim ? '<br><span style="opacity:0.75;">Son otomatik çekim: ' + escHtml(okzZaman(Date.parse(st.sonCekim) || 0)) + '</span>' : "")
        + '</div>';
-  /* v111 — KULLANICI: "sınav tarihleri için okul çekimi çalışmıyor, kaldıralım."
-     Okul sitesi duyuru çekimi ve buna bağlı duyuru listesi TAMAMEN KALDIRILDI
-     (çekici Firestore'a yazıyordu, uygulama hiç dolmayan bir tablodan okuyordu).
-     Okul sınav tarihi artık Planlama → Takvim'den elle girilir. */
-  html += '</div>';
+    /* v42 — İl/ilçe/okul listeleri okulizyon-liste uç noktasından gelir. */
+    bilgiler.innerHTML = h;
+    try { sifreGozleriKur(bilgiler); } catch (e) { console.warn("Şifre gözü:", e); }
+    try { okzSecimYukle(s); } catch (e) { /* */ }
+  }
 
-  /* v82 — KULLANICI: "Neden hâlâ okulizyon konu eşleşmesi var profilde?
-     HANİ otomatik sorunsuzdu!" HAKLI: elle eşleme paneli profilden KALDIRILDI.
-     Kazanım → konu eşlemesi tamamen OTOMATİK yürür (açılışta ve her çekimde
-     okzKonulariOnar): MEB resmî çıktı kodu (okz-meb.js) → uygulama konusu,
-     kesin başlık geçişi, TDE sözlüğü, öğrenen önbellek. Öğrenciye seçim
-     yaptırılmaz; bu yüzden burada gösterilecek bir liste de yok.
-     Eski sürümlerde kaydedilmiş elle eşlemeler (konuHaritasi) okunmaya devam
-     eder — veri kaybı olmaz. */
+  /* ---------- VERİ: kilidin DURUMU, tek cümlelik doğru anlatım ---------- */
+  const veri = document.getElementById("profil-veri-icerik");
+  if (veri) {
+    const kd = (typeof kasaDurumu === "function") ? kasaDurumu() : { acik: false, var: false };
+    /* v125 — KULLANICI (madde 5): "Açıkken ad soyad, sınav sonuçları, hedef,
+       plan, konu takibi ve kitaplar bu cihazda şifrelenir; sunucu yalnız anlamsız
+       harf görür. Şifren sunucuya hiç gitmez. Bunun gibi cümleler olmayacak
+       demedim mi? Bunu WhatsApp'ta olduğu gibi sadece şifreli olduğunu kimsenin
+       görmediğini yaz."
 
-  // v41 — KULLANICI: "Uygulamada öğrenciyi ilgilendirmeyen yazıları sil.
-  // Mesela teknik yazılar vb. Bildirim çalıştığına göre test bildirimi, cihaz
-  // bildirimi vb kaldır."
-  // Buradaki "Soru havuzu / Sürüm / Bulut" teknik kutusu ve dört tanılama
-  // düğmesi (test bildirimi gönder, bu cihazda dene, realtime kanalı yenile,
-  // yeniden kontrol) KALDIRILDI. Yerine tek cümlelik, öğrenciye yönelik
-  // bildirim durumu kaldı.
-  html += '<div style="border:1px solid rgba(0,0,0,0.10);border-radius:14px;padding:12px;font-size:12px;line-height:1.6;">';
-  html += '<b>Bildirimler</b><div id="pwa-push-durum" style="margin-top:6px;">kontrol ediliyor…</div>';
-  // v63 — KULLANICI: profildeki elle onarım düğmesini profesyonel
-  // uygulamalarda görmediğini söyledi; HAKLI.
-  // Onarım kullanıcıya iş olarak verilmez: uygulama her açılışta aboneliği
-  // kendisi doğrular, gerekiyorsa yeniler (push-bildirim.js otomatik()),
-  // pushsubscriptionchange olayını dinler, sunucu da ölü uçları (404/410)
-  // pasife alır. Bu yüzden elle onarım ve kanal testi düğmeleri KALDIRILDI;
-  // tek satırlık durum metni kalır.
-  html += '</div>';
+       Eski cümleler teknik anlatımdı (AES, "anlamsız harf", "şifren gitmez").
+       YENİ: tek cümle, WhatsApp benzetmesi, sade dil. Teknik ayrıntı YOK. */
+    const acikMi = kd.acik;
+    /* v125 — DÜRÜSTLÜK KORUNUR: kilit kapalıysa gizlenmez, açıkça yazar.
+       Kullanıcı yalnız TEKNİK cümleleri istemedi; "durum ne" bilgisi kalır.
+       Dil WhatsApp benzetmesiyle sade. */
+    let h = '';
+    h += '<div style="font-size:12.5px;line-height:1.55;margin-bottom:10px;">'
+      + '<b style="color:' + (acikMi ? "#16A34A" : "#DC2626") + ';">'
+      + (acikMi ? "AÇIK — verilerin şifreli"
+                : (kd.var ? "KİLİTLİ — bu cihazda açılması gerekiyor"
+                          : "KAPALI — verilerin şifreli değil")) + '</b><br>'
+      + (acikMi
+          ? "WhatsApp'taki mesajlar gibi: içeriği yalnız sen görürsün, kimse okuyamaz."
+          : (kd.var
+              ? "Kayıtların kilitli duruyor; açmak için giriş şifren gerekiyor. WhatsApp da yeni bir telefonda bir kez anahtar ister — sonra bir daha sormaz."
+              : "Verilerini kilitleyerek WhatsApp'taki gibi koruyabilirsin: içeriği yalnız sen görürsün, kimse okuyamaz."))
+      + '</div>';
+    if (!acikMi) {
+      h += '<input id="am-kasa-yeni" type="password" autocomplete="new-password" placeholder="' + (kd.var ? "Giriş şifren" : "Yeni giriş şifresi (en az 6 karakter)") + '" style="width:100%;box-sizing:border-box;padding:9px 10px;border-radius:9px;border:1px solid var(--border-card);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:8px;">';
+      h += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+      h += kd.var
+        ? '<button data-act="kasaAcKutu" class="btn btn-primary btn-sm">Kilidi aç</button>'
+        : '<button data-act="kasaKur" class="btn btn-primary btn-sm">Kilitle</button>';
+      h += '<button data-act="kasaKurtar" class="btn btn-ghost btn-sm" style="border:1px solid var(--border-card);">12 kelimelik anahtarla aç</button>';
+      h += '</div>';
+      h += '<div id="am-kasa-not" style="display:none;font-size:11.5px;line-height:1.45;margin-top:8px;"></div>';
+    } else {
+      /* v125 — KULLANICI: "WhatsApp'ta olduğu gibi hep şifreli kalır, neden
+         açıp kapatsın ki." "Kilitle" düğmesi KALDIRILDI: basınca anahtar
+         siliniyor ve her açılışta şifre soruluyordu. */
+      h += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+      h += '<button data-act="kasaKurtarma" class="btn btn-ghost btn-sm" style="border:1px solid var(--border-card);">12 kelimelik anahtarı indir</button>';
+      h += '</div>';
+    }
+    h += '<div style="font-size:10.5px;opacity:0.65;margin-top:9px;line-height:1.45;">Giriş şifresini unutursan verin açılamaz; 12 kelimelik anahtarını güvenli bir yerde tut.</div>';
+    veri.innerHTML = h;
+    try { sifreGozleriKur(veri); } catch (e) { console.warn("Şifre gözü:", e); }
+  }
 
-  html += '</div>';
-  m.innerHTML = html;
-  try { sifreGozleriKur(m); } catch (e) { console.warn("Şifre gözü:", e); }
-  pushTeshisYaz();
-  // v43 — listeler önbellekten hemen çizilir, eksik olanlar arka planda çekilir.
-  okzSecimYukle(s);
+  /* Bildirim durumu satırı Ayarlar'da ayrıca çizilir (index.html: #bildirim-durum).
+     Profildeki kopya kaldırıldı: aynı bilgi iki yerde durmaz. */
+  try { if (typeof pushTeshisYaz === "function") pushTeshisYaz(); } catch (e) { /* */ }
+}
+
+/* Eski ad korunur: onlarca çağrı yeri var; hepsi aynı işi yapar. */
+function renderProfileModal() {
+  try { profilBolumlerineYaz(); } catch (e) { console.warn("Profil bölümleri:", e); }
 }
 
 // ---- 4) E-POSTA/ŞİFRE İŞLEMLERİ (Supabase Auth) ----
@@ -1704,6 +1719,8 @@ async function doSignOut() {
   try { KASA.kasaKilitle(); } catch (e) { /* */ }
   try { if (typeof window.__cikisYerelTemizle === "function") window.__cikisYerelTemizle(); } catch (e) { console.warn("Yerel temizlik:", e); }
   setAuthLabel(false);
+  /* v125 — Cihazdaki kopya ve anahtar silinir; buluttaki kayıt durur,
+     tekrar girişte geri gelir. (Metin v51'den beri sabit: test de pinliyor.) */
   toast("Çıkış yapıldı. Bu cihazdaki kayıtlar silindi — tekrar giriş yapınca geri gelir.", "success");
 }
 
@@ -1842,7 +1859,7 @@ function hesapSilPencereAc() {
       try { localStorage.removeItem(KURULUM_TAM_KEY); } catch (e) { /* */ }
       try { window.__kasa = null; } catch (e) { /* */ }
       kapat();
-      if (typeof renderProfileModal === "function") { const pm = document.getElementById("pwa-profile-modal"); if (pm) pm.style.display = "none"; }
+      try { if (typeof renderProfileModal === "function") renderProfileModal(); } catch (e) { /* */ }
       toast("Hesabın ve tüm verilerin kalıcı olarak silindi.", "success");
       setTimeout(function () { try { location.reload(); } catch (e) { /* */ } }, 1200);
     } catch (e) {
@@ -1860,8 +1877,8 @@ function setAuthLabel(girisli, kim) {
   const lbl = document.getElementById("pwa-auth-label");
   if (!lbl) return;
   lbl.textContent = girisli ? "Çıkış (" + (kim || "hesap") + ") · ☁ bulut" : "Giriş Yap (E-posta)";
-  const pm = document.getElementById("pwa-profile-modal");
-  if (pm && pm.style.display === "flex") renderProfileModal();
+  /* v125 — Ayarlar'ın HESAP/BİLGİLER bölümünü tazele (pencere yok). */
+  try { renderProfileModal(); } catch (e) { /* */ }
 }
 
 // ---- 5) OTURUM TAKİBİ + BULUTTAN GERİ YÜKLEME (Supabase) ----
@@ -2103,11 +2120,14 @@ function kasaUyarisiGoster(durum, tuz) {
       '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:430px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);">' +
       '<div style="font-weight:800;font-size:16px;margin-bottom:6px;">🔒 Bulut kaydın şifreli</div>' +
       '<div style="font-size:13px;line-height:1.5;margin-bottom:12px;">' + escHtml(KASA_MESAJ[durum] || KASA_MESAJ.kilitli) + '</div>' +
+      '<div style="font-size:11.5px;opacity:0.75;line-height:1.5;margin-bottom:10px;">WhatsApp gibi: bir kez açılır, sonra bu cihazda bir daha sormaz.</div>' +
       '<input id="am-kasa-sifre" type="password" autocomplete="off" placeholder="Giriş şifren" style="width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:14px;margin-bottom:8px;">' +
       '<div id="am-kasa-hata" style="display:none;font-size:12px;color:#DC2626;margin-bottom:8px;"></div>' +
       '<button id="am-kasa-ac" style="width:100%;padding:11px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14px;cursor:pointer;">Kilidi aç</button>' +
       '<button id="am-kasa-gec" style="width:100%;margin-top:8px;padding:9px;border-radius:10px;border:1px solid rgba(0,0,0,0.14);background:transparent;color:inherit;font-size:12.5px;cursor:pointer;">Şimdi değil (cihazdaki veriyle devam et)</button>' +
-      '<div style="font-size:11px;opacity:0.7;margin-top:10px;line-height:1.45;">Şifre sunucuya gönderilmez; yalnız bu cihazda anahtar türetmek için kullanılır.</div>' +
+      /* v125 — KULLANICI: "Bunun gibi cümleler olmayacak demedim mi? WhatsApp'ta
+         olduğu gibi sadece şifreli olduğunu, kimsenin görmediğini yaz."
+         Teknik cümle KALDIRILDI; yerine tek cümlelik güven anlatımı. */
       '</div>';
     document.body.appendChild(d);
     try { sifreGozleriKur(d); } catch (e) { console.warn("Şifre gözü:", e); }
@@ -2577,7 +2597,7 @@ function okzStore() {
 const OKZ_SEBEP = {
   "eposta-dogrulanmadi": "E-postandaki onay bağlantısına tıkla, sonra tekrar dene.",
   "kimlik-cakisma": "Bu okul numarası başka bir hesaba bağlı — kendi numaranı kullan.",
-  "kasa-kilitli": "Bulut kaydın şifreli — Profil → bölümünden kilidi aç.",
+  "kasa-kilitli": "Bu cihazda anahtar yok — Ayarlar → VERİ bölümünden bir kez giriş şifreni yaz.",
   "sifre-gerekli": "Okulizyon bu kayıt için şifre istiyor: yukarıdaki OKULİZYON ŞİFRESİ alanını doldurup “Bilgileri Kaydet”e bas, sonra “Şimdi dene”.",
   "eslesme-yok": "Okulizyon’da il/ilçe/okul eşleşmedi: Profil’deki il, ilçe ve okul adını kontrol et.",
   "red": "Okulizyon bu ad-soyad + okul no ile kayıt bulamadı: bilgileri Okulizyon’a giriş yaptığın hâliyle birebir yaz.",
@@ -3346,8 +3366,8 @@ function okzBadge() {
     avatar.style.boxShadow = n > 0 ? "0 0 0 3px rgba(225,29,72,0.75)" : "";
     avatar.title = n > 0 ? "Profil — " + n + " soruda neden seçilmedi" : "Profil";
   }
-  const pm = document.getElementById("pwa-profile-modal");
-  if (pm && pm.style.display === "flex") renderProfileModal();
+  /* v125 — Ayarlar'ın HESAP/BİLGİLER bölümünü tazele (pencere yok). */
+  try { renderProfileModal(); } catch (e) { /* */ }
 }
 function buildOkzModal() {
   if (document.getElementById("pwa-okz-modal")) return;
@@ -3542,8 +3562,8 @@ function okzSaveBilgi() {
   OKZ_SIFRE_BELLEK = (sifreEl && sifreEl.value) ? sifreEl.value : OKZ_SIFRE_BELLEK;
   try { if (state.settings.okulizyon.sifre !== undefined) delete state.settings.okulizyon.sifre; } catch (e) { /* */ }
   saveState();
-  const pm = document.getElementById("pwa-profile-modal");
-  if (pm && pm.style.display === "flex") renderProfileModal();
+  /* v125 — Ayarlar'ın HESAP/BİLGİLER bölümünü tazele (pencere yok). */
+  try { renderProfileModal(); } catch (e) { /* */ }
   if (kodEksik) {
     // Adlar kaydedildi; giriş için gereken KODLAR yok → çekim denemesi boşa gider.
     toast("Eksik: il/ilçe/okulu listeden seç (Okulizyon girişi kodla yapılıyor).", "warning");
@@ -3605,12 +3625,23 @@ async function okzKuyrukCek(zorla, sunucuExams) {
   if (!sb) return okzDurum("bulut-yok", "Bulut bağlantısı kurulamadı. Birazdan tekrar dene.");
   if (!currentUser) return okzDurum("giris-yok", "Giriş yapılmadı — sınav sonuçları hesaba bağlı. Önce giriş yap.");
 
-  /* v106 — KASA: kayıt şifreliyse kasa açık olmadan okulizyon çekimi YAPILMAZ.
-     Neden: kimlik bilgileri şifreli kayıttan okunur; kasa kapalıyken okunamaz.
-     Ayrıca çekim sonucu şifreli kayda yazılacağı için kasa şart. */
+  /* v125 — KULLANICI (madde 4): "Okulizyon çekimi otomatik olmuyor mu? Neden
+     kilidi açmak gereksin ki? WhatsApp gibi mesajlar gidip gelirken şifre
+     istemiyor sonuçta."
+
+     HAKLI. ÖNCEKİ DAVRANIŞ: kasa kilitliyse çekim duruyor, kullanıcıdan şifre
+     isteniyordu. Oysa anahtar (v120'den beri) CİHAZDA duruyor: şifre yalnızca
+     YENİ cihazda / temizlenmiş tarayıcıda gerekir — WhatsApp da yeni telefonda
+     bir kez doğrulama ister, sonra bir daha sormaz.
+     ŞİMDİ: çekimden önce sessiz açma denenir. Başarılıysa şifre SORULMADAN
+     çekim sürer. Başarısızsa (gerçekten yeni cihaz) tek pencere açılır. */
   if (window.__kasa && window.__kasa.durum().var && !window.__kasa.durum().acik) {
-    okzCekSuruyor = false;
-    return okzDurum("kasa-kilitli", "Bulut kaydın şifreli. Okulizyon çekimi için Profil → bölümünden kilidi aç.");
+    let sessiz = false;
+    try { sessiz = await kasaCihazdanSessizAc(); } catch (e) { /* */ }
+    if (!sessiz) {
+      okzCekSuruyor = false;
+      return okzDurum("kasa-kilitli", "Bu cihazda anahtar yok — bir kez giriş şifreni yaz, sonra bir daha sorulmaz.");
+    }
   }
   /* v107 — KASA KURULMAMIŞSA SESSİZ GEÇİLMEZ: çekim çalışır ama sonuç yalnız
      düz metin kayda ve cihaza yazılır. Profilde kırmızı uyarı zaten var; burada
@@ -3724,8 +3755,7 @@ async function okzKuyrukCek(zorla, sunucuExams) {
     try {
       if (typeof currentPage !== "undefined" && currentPage === "exams" && typeof navigate === "function") navigate("exams");
       else {
-        const pm = document.getElementById("pwa-profile-modal");
-        if (pm && pm.style.display === "flex" && typeof renderProfileModal === "function") renderProfileModal();
+        try { if (typeof renderProfileModal === "function") renderProfileModal(); } catch (e) { /* */ }
       }
     } catch (e) { /* */ }
   }

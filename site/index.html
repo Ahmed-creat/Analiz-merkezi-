@@ -1214,7 +1214,17 @@ select.dd-native {
     <button class="btn btn-ghost" data-act="closeSettings" style="min-height:36px;min-width:36px;padding:6px;"><i data-lucide="x" style="width:16px;height:16px;"></i></button>
   </div>
   <button class="btn btn-ghost w-full" data-act="openHelp" style="justify-content:flex-start;"><i data-lucide="book-open" style="width:16px;height:16px;"></i> Kullanım Kılavuzu</button>
-  <button class="btn btn-ghost w-full" data-act="tanitimAc" style="justify-content:flex-start;"><i data-lucide="compass" style="width:16px;height:16px;"></i> Uygulamayı Tanı</button>
+
+  <!-- v125 — KULLANICI: "profil bölümünü ayarlara taşı. Profilde hesap, bilgiler,
+       veri bölümleri olsun." Profil artık burada; üç başlık: HESAP · BİLGİLER · VERİ. -->
+  <div class="ayar-grup" data-profil-grup="hesap" style="margin-top:20px;">
+    <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">HESAP</div>
+    <div id="profil-hesap-icerik"></div>
+  </div>
+  <div class="ayar-grup" data-profil-grup="bilgiler" style="margin-top:20px;">
+    <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">BİLGİLER</div>
+    <div id="profil-bilgiler-icerik"></div>
+  </div>
 
   <div style="margin-top:20px;">
     <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">GERİ BİLDİRİM</div>
@@ -1271,12 +1281,16 @@ select.dd-native {
       <input type="file" accept=".json" class="hidden-file" data-act-change="importData">
     </label>
   </div>
-  <div style="margin-top:24px;">
-    <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:10px;">VERİ YÖNETİMİ</div>
+  <div class="ayar-grup" data-profil-grup="veri" style="margin-top:24px;">
+    <div class="text-xs font-semibold" style="letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px;">VERİ</div>
+    <div id="profil-veri-icerik"></div>
+    <!-- v125 — KULLANICI: "ayarlardaki silme işlemleri direk hem cihaz hem bulut
+         için olsun. Ayrı ayrı olmasına gerek yok." Tek düğme, tek iş. -->
+    <div class="text-xs text-muted" style="line-height:1.5;margin-bottom:8px;">Silme işlemleri <b>cihazı ve bulutu birlikte</b> kapsar; ayrı seçim yok.</div>
     <button class="btn btn-danger w-full" data-act="confirmReset" data-target="exams" style="justify-content:flex-start;margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Denemeleri Sil</button>
     <button class="btn btn-danger w-full" data-act="confirmReset" data-target="questions" style="justify-content:flex-start;margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Soru Bankasını Sil</button>
     <button class="btn btn-danger w-full" data-act="confirmReset" data-target="books" style="justify-content:flex-start;margin-bottom:8px;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Kitaplığı Sil</button>
-    <button class="btn btn-danger w-full" data-act="confirmReset" data-target="all" style="justify-content:flex-start;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Tüm Verileri Sıfırla</button>
+    <button class="btn btn-danger w-full" data-act="confirmReset" data-target="all" style="justify-content:flex-start;"><i data-lucide="trash-2" style="width:16px;height:16px;"></i> Tüm Verileri Sıfırla (cihaz + bulut)</button>
   </div>
   <div class="text-xs text-muted" style="margin-top:28px;text-align:center;">Sürüm <span id="am-surum">5.1</span><br>Geliştirici: Ahmed İbrahim</div>
 </aside>
@@ -2185,12 +2199,19 @@ function saveState() {
   }
 }
 
+/* v125 — KULLANICI: "ayarlardaki silme işlemleri direk hem cihaz hem bulut için
+   olsun. Ayrı ayrı olmasına gerek yok."
+   ÖNCE: silme yalnız cihazdaki kopyayı boşaltıyordu; bulut yazımı gecikmeli
+   olduğu için "sildim" sanıp çıkış yapan kullanıcıya bulut ESKİ kopyayı geri
+   getirebiliyordu. ŞİMDİ: tek düğme iki yeri birlikte siler ve bulut yazımının
+   sonucu beklenir (başarısızsa sessiz kalmaz, açıkça söylenir). */
 function confirmReset(type) {
+  const kapsam = "Bu işlem <b>cihazdaki ve buluttaki</b> kopyayı birlikte siler.";
   const messages = {
-    exams: "Tüm denemeler ve hata kayıtları silinecek. Emin misin?",
-    questions: "Soru Bankası'ndaki tüm çözümler silinecek. Emin misin?",
-    books: "Kitaplığın tamamı silinecek. Emin misin?",
-    all: "TÜM VERİLER (denemeler, sorular, kitaplar, hafıza, bildirimler, rozetler) kalıcı olarak sıfırlanacak. Emin misin?"
+    exams: "Tüm denemeler ve hata kayıtları silinecek. " + kapsam + " Emin misin?",
+    questions: "Soru Bankası'ndaki tüm çözümler silinecek. " + kapsam + " Emin misin?",
+    books: "Kitaplığın tamamı silinecek. " + kapsam + " Emin misin?",
+    all: "TÜM VERİLER (denemeler, sorular, kitaplar, hafıza, rozetler) silinecek. " + kapsam + " Emin misin?"
   };
   openConfirm(messages[type] || " Emin misin?", () => executeReset(type));
 }
@@ -2225,12 +2246,31 @@ function executeReset(type) {
     try { if (typeof window.__okzSifirlamaIsaretle === "function") window.__okzSifirlamaIsaretle(); } catch (e) { /* */ }
   }
   saveState(); closeConfirm();
-  if (type === "all" || type === "exams") {
-    try { if (typeof window.__supabaseSenkronizeEt === "function") window.__supabaseSenkronizeEt(); } catch (e) { /* */ }
-    toast("Her şey silindi. Okulizyon'dan yeniden çekmek istersen Denemelerim'de «Okulizyon'dan çek»e bas.", "success");
-  } else {
-    toast("İşlem tamamlandı.", "success");
-  }
+  /* v125 — TEK İŞ: cihaz + bulut birlikte. Bulut yazımı BEKLENİR; başarısızsa
+     kullanıcıya açıkça söylenir (sessiz başarısızlık = "sildim sandım" hatası). */
+  const yaz = (typeof window.__supabaseSenkronizeEt === "function")
+    ? window.__supabaseSenkronizeEt()
+    : Promise.resolve(null);
+  Promise.resolve(yaz).then(function (r) {
+    const bulutVar = !!(currentUser && sb);
+    const bulutTamam = !!(r && r.ok);
+    const anlatim = {
+      exams: "Denemeler silindi",
+      questions: "Soru Bankası silindi",
+      books: "Kitaplık silindi",
+      all: "Tüm veriler silindi"
+    }[type] || "Silindi";
+    if (bulutVar && !bulutTamam) {
+      toast(anlatim + " bu cihazda. Buluta yazılamadı — bağlantı gelince tekrar dene.", "warning");
+    } else if (bulutVar) {
+      toast(anlatim + " — cihaz ve bulut birlikte.", "success");
+    } else {
+      toast(anlatim + " bu cihazda (giriş yapılmadığı için bulut kopyası yok).", "success");
+    }
+    if (type === "all" || type === "exams") {
+      toast("Okulizyon'dan yeniden çekmek istersen Denemelerim'de «Okulizyon'dan çek»e bas.", "info");
+    }
+  });
   navigate(currentPage);
 }
 
@@ -4001,6 +4041,9 @@ function openSettings() {
   document.getElementById("settings-drawer").classList.add("open");
   document.getElementById("settings-overlay").classList.add("show");
   try { updateBildirimDurum(); } catch (e) {}
+  /* v125 — Profil artık Ayarlar'ın içinde: HESAP · BİLGİLER · VERİ bölümleri
+     çekmece her açıldığında tazelenir (app-pwa.js → profilBolumlerineYaz). */
+  try { if (window.__profilTaze) window.__profilTaze(); } catch (e) { /* */ }
 }
 function closeSettings() { document.getElementById("settings-drawer").classList.remove("open"); document.getElementById("settings-overlay").classList.remove("show"); }
 
@@ -4800,12 +4843,28 @@ function renderTasks(container) {
   const gorevler = gunlukGorevler();
 
   let html = '<div class="top-bar" style="margin-bottom:14px;"><h2 style="font-size:20px;font-weight:700;">' + icon("check-square", 22, "vertical-align:middle;margin-right:6px;color:var(--brand-blue);") + " Günlük Görevler</h2>";
-  html += '<span class="tagpill ' + (gorevler.length === 0 ? "ok" : "warn") + '">' + (gorevler.length === 0 ? "bugünlük bitti" : gorevler.length + " iş bekliyor") + "</span></div>";
+  /* v125 — rozet artık "değişen iş" ile "çekirdek" ayrımını söylüyor;
+     kullanıcı "neden hep aynı/ neden değişti" sorusunun cevabını burada görür. */
+  const degisen = gorevler.filter(g => g.onem !== 3).length;
+  const cekirdekKalan = gorevler.length - degisen;
+  const rozet = gorevler.length === 0
+    ? "bugünlük bitti"
+    : ([degisen ? degisen + " günün işi" : "", cekirdekKalan ? cekirdekKalan + " çekirdek" : ""].filter(Boolean).join(" · "));
+  html += '<span class="tagpill ' + (gorevler.length === 0 ? "ok" : "warn") + '">' + esc(rozet) + "</span></div>";
 
   html += '<div class="ikili-grid">';
   // SOL: Bugünün listesi (sabit değil)
+  /* v125 — KULLANICI: "1 görevler neden sabit yani değişiyordu."
+     SORU İKİ PARÇALI: (a) liste neden her açılışta değişiyor, (b) neden üç
+     çekirdek görev (konu çalış · soru çöz · kitap oku) hep duruyor.
+     CEVAP ARAYÜZDE YAZILI OLSUN — kullanıcı tahmin etmesin. */
   html += '<div class="bento-card"><h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">Bugün Ne Yapmalıyım?</h3>' +
-    '<p class="text-xs text-muted" style="margin-bottom:10px;">Liste her açılışta yeniden kurulur: tekrar günü gelen konu, zamanı gelen kısa kontrol, yaklaşan sınav, eksik nedenler… Bitsin, düşsün.</p>';
+    '<p class="text-xs text-muted" style="margin-bottom:8px;">Liste her açılışta yeniden kurulur: tekrar günü gelen konu, zamanı gelen kısa kontrol, yaklaşan sınav, eksik nedenler… Bitsin, düşsün.</p>' +
+    '<p class="text-xs" style="margin-bottom:10px;line-height:1.5;padding:8px 10px;border-radius:9px;background:color-mix(in srgb,var(--brand-blue) 8%,transparent);border:1px solid color-mix(in srgb,var(--brand-blue) 22%,transparent);">' +
+      '<b>Neden değişiyor?</b> Değişen kısım <b>bugünün işidir</b>: tekrarı gelen konu, zamanı gelen test, yaklaşan sınav. ' +
+      'Sabit kalan kısım <b>seriyi besleyen üç çekirdek görevdir</b> (konu çalış · soru çöz · kitap oku) — onlar her gün aynı kalır, çünkü her gün gerekir. ' +
+      'Bir iş bitince satır kendiliğinden düşer.' +
+    '</p>';
   if (gorevler.length) {
     html += gorevler.map(g => gorevSatirHTML(g)).join("");
   } else {
@@ -8278,8 +8337,9 @@ document.addEventListener("DOMContentLoaded", function () {
       case "openSettings": closeAllModals(); closeMoreSheet(); openSettings(); break;
       case "closeSettings": closeSettings(); break;
       case "openHelp": openHelp(); break;
-      // v41 — ilk açılış tanıtımı + geri bildirim
-      case "tanitimAc": tanitimGoster(true); break;
+      /* v125 — KULLANICI: "ayarlardaki uygulamayı tanı bölümünü kaldır."
+         Düğme Ayarlar'dan KALDIRILDI; olay da kaldırıldı ki ölü yol kalmasın.
+         İlk açılış tanıtımı (tanitimGoster(false)) davranışı aynen duruyor. */
       case "tanitimKapat": tanitimKapat(false); break;
       case "tanitimKilavuz": tanitimKapat(true); break;
       case "geriBildirimGonder": geriBildirimFormGonder(); break;

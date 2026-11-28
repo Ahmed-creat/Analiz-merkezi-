@@ -390,7 +390,9 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     // Uygulamanın her şifre penceresinde çağrılıyor mu?
     ok("giriş ekranında kuruluyor", /try \{ sifreGozleriKur\(m\); \}/.test(APP));
     ok("kurulum panelinde kuruluyor", /try \{ sifreGozleriKur\(d\); \}/.test(APP));
-    ok("profil penceresinde kuruluyor", /m\.innerHTML = html;\s*\n\s*try \{ sifreGozleriKur\(m\); \}/.test(APP));
+    /* v125 — Profil pencere değil AYARLAR bölümü oldu; göz ikonu artık
+       bölüm kutularına (bilgiler/veri) kuruluyor. */
+    ok("ayarlar profil bölümünde kuruluyor", /sifreGozleriKur\(bilgiler\)/.test(APP) && /sifreGozleriKur\(veri\)/.test(APP));
     const cagriSayisi = (APP.match(/sifreGozleriKur\(/g) || []).length;
     ok("en az 4 pencereye bağlı (tanım + 4 çağrı)", cagriSayisi >= 5, String(cagriSayisi));
   }

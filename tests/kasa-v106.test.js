@@ -133,9 +133,17 @@ globalThis.localStorage = {
     ok("kasa kilitliyken okulizyon çekimi yapılmıyor", /window\.__kasa\.durum\(\)\.var && !window\.__kasa\.durum\(\)\.acik/.test(APP));
     ok("kasa kilitli durumu Türkçe açıklanıyor", /"kasa-kilitli":/.test(APP));
 
-    // arayüz
-    ok("profilde veri kilidi bölümü var", /VERİ KİLİDİ \(UÇTAN UCA ŞİFRELEME\)/.test(APP));
-    ok("kasa kapalıyken DÜRÜST uyarı yazıyor (gizlenmiyor)", /KAPALI — veri sunucuda DÜZ duruyor/.test(APP));
+    // arayüz — v125: profil Ayarlar'ın içine taşındı, bölüm adı "VERİ"
+    ok("ayarlarda VERİ bölümü var (profil buraya taşındı)", /profil-veri-icerik/.test(APP) && /data-profil-grup="veri"/.test(oku("site/index.html")));
+    ok("kasa kapalıyken DÜRÜST uyarı yazıyor (gizlenmiyor)", /KAPALI — verilerin şifreli değil/.test(APP));
+    /* v125 — KULLANICI: "Bunun gibi cümleler olmayacak demedim mi?"
+       Teknik anlatım (AES/anahtar türetme/"anlamsız harf") arayüzden kalktı. */
+    /* Yalnız KULLANICIYA GİDEN metin ölçülür; kod yorumları (blok dahil) serbest. */
+    const kullaniciMetni = APP.replace(/\/\*[\s\S]*?\*\//g, "").split("\n")
+      .filter(satir => !/^\s*\/\//.test(satir)).join("\n");
+    ok("teknik cümle arayüzden kalktı (anlamsız harf / anahtar türetme)",
+      !/anlamsız harf/.test(kullaniciMetni) && !/anahtar türetmek için kullanılır/.test(kullaniciMetni));
+    ok("WhatsApp benzetmesi var (sade dil)", /WhatsApp/.test(APP));
     ok("anahtar kelimeleri indirilebiliyor", /anahtar-kelimeleri\.txt/.test(APP));
     ok("kasa şifresi sunucuya gönderilmiyor (yalnız kasaAc'a veriliyor)",
       !/supabase[\s\S]{0,80}kasaSifre/.test(APP) && !/body:[\s\S]{0,40}kasaSifre/.test(APP));
