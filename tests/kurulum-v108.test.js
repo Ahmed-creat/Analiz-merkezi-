@@ -488,8 +488,14 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("'devam ederek kabul' metni var", /Devam ederek/.test(KOD) && /okuduğunu kabul etmiş olursun/.test(KOD));
     ok("Google düğmesi üstünde de kabul satırı var", /pwa-auth-onay/.test(KOD));
     ok("ZORUNLU veli kutucuğu YOK (bloklamıyor)", !/kutuyu işaretle/.test(KOD));
-    ok("18 altı beyanı opsiyonel ve kaydediliyor", /kur-veli-beyan/.test(KOD) && /yasBeyani/.test(KOD));
-    ok("beyan sürüm + tarihle saklanıyor", /veliIzin/.test(KOD) && /surum: "2026-10-27"/.test(KOD));
+    /* v124 — KULLANICI: "KVKK konusunda gereksiz her şeyi kaldırıyoruz."
+       Opsiyonel "18 yaşından küçüğüm" kutusu KALDIRILDI: hiçbir şeyi
+       engellemiyordu, yalnız beyan kaydediyordu → gereksiz sürtünme.
+       Bu testler kaldırılmayı KİLİTLER (geri gelmesin). */
+    ok("18 altı veli beyan kutusu KALDIRILDI", !/kur-veli-beyan/.test(KOD) && !/yasBeyani/.test(KOD));
+    ok("veliIzin kaydı KALDIRILDI", !/veliIzin/.test(KOD));
+    ok("yerine yalnız aydınlatma kaydı var", /state\.settings\.aydinlatma = \{/.test(KOD) && /surum: "2026-10-27"/.test(KOD));
+    ok("aydınlatma kaydında yaş beyanı YOK", /state\.settings\.aydinlatma = \{[\s\S]{0,200}\}/.test(KOD) && !/aydinlatma = \{[\s\S]{0,200}yasBeyani/.test(KOD));
     ok("gizlilik.html service worker önbelleğinde", /gizlilik\.html/.test(require("fs").readFileSync(require("path").join(__dirname, "..", "site/sw.js"), "utf8")));
 
     // --- Aydınlatma metni içeriği (KVKK m.10 asgari) ---
@@ -527,7 +533,10 @@ const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
     const KOD = APP.replace(/\/\*[\s\S]*?\*\//g, "");
     ok("iletişim penceresi var", /iletisimPencereAc/.test(KOD));
     ok("profilden açılıyor", /data-act="iletisim"/.test(KOD));
-    ok("KVKK m.13 konusu seçilebiliyor", /KVKK m\.13/.test(KOD));
+    /* v124 — kullanıcıya "KVKK m.13" jargonu gösterilmez; seçenek
+       "Verilerimle ilgili istek" olarak duruyor. */
+    ok("veri isteği konusu seçilebiliyor", /Verilerimle ilgili istek/.test(KOD));
+    ok("kullanıcıya KVKK madde numarası GÖSTERİLMİYOR", !/KVKK m\.13/.test(KOD));
     ok("silme talebi konusu var", /Verilerimin silinmesini istiyorum/.test(KOD));
     ok("30 gün yanıt süresi yazılı", /30 gün/.test(KOD));
     ok("geri_bildirim tablosuna yazıyor", /from\("geri_bildirim"\)/.test(KOD) && /\.insert\(/.test(KOD));

@@ -1,4 +1,4 @@
-const PWA_SURUM = "v123-kacirilan";
+const PWA_SURUM = "v124-kvkk-sade";
 /* G-12 — Ayarlar altındaki "Sürüm 5.1" ELLE yazılıydı ve yayın sürümünden
    kopmuştu (v78 yayında ama ekranda 5.1). Etiket artık PWA_SURUM'dan gelir. */
 function surumEtiketiYaz() {
@@ -1123,28 +1123,14 @@ function kurulumPaneli() {
     '</div>' +
     '<div id="kur-hata1" style="display:none;font-size:12px;color:#DC2626;margin-top:8px;line-height:1.45;"></div>' +
 
-    /* v114 — KULLANICI (2. itirazı): "Veli iznini neden kutucuk olarak
-       ekliyoruz? Google ile girişte devam ederek veri ve gizlilik
-       politikalarını kabul etmiş olursunuz yetmiyor mu"
-       HAKLI: ZORUNLU kutucuk KALDIRILDI (aşağıdaki §Açıklama'ya bak).
-         • Aydınlatma (KVKK m.10) = "devam ederek kabul" modeli YETERLİ.
-           Bu yüzden 18 yaş üstünde hiçbir kutu sorulmaz.
-         • 18 yaş altı için kutucuk zaten SAHİCİ değildi: kutuyu da reşit
-           olmayan kişi işaretliyor, yani "veli izni" kanıtı üretmiyordu.
-           Sahte bir kapı koymak yerine tek OPSİYONEL beyan bırakıldı.
-           Gerçek veli izni (veliye e-posta doğrulaması) ayrı iştir —
-           docs/AYDINLATMA-VE-VELI-IZNI.md §3.3. */
-    '<div style="margin-top:12px;padding:11px;border-radius:10px;background:rgba(29,78,216,0.06);border:1px solid rgba(29,78,216,0.18);">' +
-    '<label style="font-size:12px;display:flex;gap:7px;align-items:flex-start;line-height:1.45;cursor:pointer;">' +
-    '<input type="checkbox" id="kur-veli-beyan" style="margin-top:3px;flex:0 0 auto;">' +
-    '<span>18 yaşından <b>küçüğüm</b> — velimin bilgisi var</span></label>' +
-    '<div id="kur-veli-not" style="display:none;font-size:11px;line-height:1.5;margin-top:7px;opacity:0.85;">' +
-    '18 yaşından küçük olduğun için velinin/vâsînin bilgilendirilmesi gerekir. ' +
-    'Uygulamayı velinle birlikte kullanman önerilir.' +
-    '</div>' +
-    '<div style="font-size:11px;line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.08);">' +
+    /* v124 — KULLANICI: "KVKK konusunda gereksiz her şeyi kaldırıyoruz."
+       KALDIRILDI: opsiyonel "18 yaşından küçüğüm — velimin bilgisi var"
+       kutusu. Hiçbir şeyi engellemiyordu (sahte kapı), yalnız beyan
+       kaydediyordu. Tek satır bilgi yeterli.
+       KALDI: aydınlatma bağlantısı — KVKK m.10 AYDINLATMA, izin değil;
+       "Devam ederek okuduğunu kabul etmiş olursun" modeli geçerli. */
+    '<div style="font-size:11px;line-height:1.55;margin-top:12px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.08);opacity:0.85;">' +
     'Devam ederek <a href="./gizlilik.html" target="_blank" rel="noopener" style="color:#1D4ED8;font-weight:600;">Aydınlatma Metni ve Gizlilik Politikası</a>\'nı okuduğunu kabul etmiş olursun.' +
-    '</div>' +
     '</div>' +
 
     '<button id="kur-ileri" style="width:100%;margin-top:12px;padding:12px;border-radius:10px;border:0;background:#1D4ED8;color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;">Devam — şifre belirle</button>' +
@@ -1254,12 +1240,6 @@ function kurDinleyicileri(d) {
     const il = (d.querySelector("#kur-il").value || "").trim();
     const ilce = (d.querySelector("#kur-ilce").value || "").trim();
     const okul = (d.querySelector("#kur-okul").value || "").trim();
-    /* v114 — 18 altı: ENGEL YOK, yalnız beyan kaydedilir. */
-    let yasBeyani = "18ustu";
-    try {
-      const b = d.querySelector("#kur-veli-beyan");
-      if (b && b.checked) yasBeyani = "18alti";
-    } catch (e) { /* */ }
     if (!ad) return kurMetinYaz("kur-hata1", "Ad soyadını yaz.");
     if (!okulNo) return kurMetinYaz("kur-hata1", "Okul numaranı yaz.");
     if (!il || !ilce || !okul) return kurMetinYaz("kur-hata1", "İl, ilçe ve okulunu yaz (listeden seçebilirsin).");
@@ -1276,13 +1256,12 @@ function kurDinleyicileri(d) {
         ilce: KUR_ILCE.ad, ilcekodu: KUR_ILCE.kod || "",
         okulAdi: KUR_OKUL.ad, kurumkodu: KUR_OKUL.kod || ""
       };
-      /* v114 — onay kaydı: METİN SÜRÜMÜ + tarih + yaş beyanı.
-         Metin değişirse sürüm artar ve yeniden sorulur. Şifrelenmez:
-         sunucunun (ve denetimin) doğrulayabilmesi gerekir. */
-      state.settings.veliIzin = {
+      /* v124 — tek kayıt: aydınlatma metni sürümü + kabul tarihi.
+         Yaş beyanı KALDIRILDI (opsiyonel kutuydu, hiçbir kapı değildi).
+         Metin değişirse sürüm artar. Şifrelenmez: denetim doğrulayabilsin. */
+      state.settings.aydinlatma = {
         surum: "2026-10-27",
-        tarih: new Date().toISOString(),
-        yasBeyani: yasBeyani
+        tarih: new Date().toISOString()
       };
       if (typeof saveState === "function") saveState();
       /* Beyanı sunucuya da işaretle (RLS: yalnız kendi satırı). Hata olsa da
@@ -1321,16 +1300,6 @@ function kurDinleyicileri(d) {
     });
   });
 
-  /* v114 — beyan işaretlenince bilgi notu görünür. Engel DEĞİL. */
-  try {
-    const beyan = d.querySelector("#kur-veli-beyan");
-    const not = d.querySelector("#kur-veli-not");
-    if (beyan && not) {
-      const yaz = function () { not.style.display = beyan.checked ? "block" : "none"; };
-      beyan.addEventListener("change", yaz);
-      yaz();
-    }
-  } catch (e) { /* */ }
 
   d.querySelector("#kur-indir").addEventListener("click", function () {
     try {
@@ -1748,10 +1717,10 @@ async function doSignOut() {
    Geri alınamaz → iki adımlı onay: "SİL" yazdırmak.
    ============================================================ */
 /* ============================================================
-   v116 — GERİ BİLDİRİM / İLETİŞİM (KVKK m.13 başvuru kanalı)
+   v116 — GERİ BİLDİRİM / İLETİŞİM (veri sahibi başvuru kanalı)
    ------------------------------------------------------------
    NEDEN: Aydınlatma metni "bize ulaş" diyordu ama uygulamada HİÇBİR
-   iletişim kanalı yoktu. KVKK m.13 ilgili kişi başvurusu için kanal şart.
+   iletişim kanalı yoktu. Veri sahibinin başvuru kanalı olmalı.
    geri_bildirim tablosu zaten vardı (user_id, tur, mesaj, sayfa, created_at).
    ============================================================ */
 function iletisimPencereAc() {
@@ -1764,13 +1733,13 @@ function iletisimPencereAc() {
     '<div style="background:var(--bg-elev,#fff);color:var(--text,#16213A);border-radius:16px;max-width:460px;width:100%;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.4);">' +
     '<div style="font-weight:800;font-size:17px;margin-bottom:6px;">Bize ulaş</div>' +
     '<div style="font-size:12.5px;line-height:1.55;opacity:0.85;margin-bottom:12px;">' +
-    'Soru, hata bildirimi veya <b>kişisel verilerinle ilgili talep</b> (KVKK m.13) için yaz. ' +
-    'Talepler en geç <b>30 gün</b> içinde yanıtlanır.</div>' +
+    'Soru, hata bildirimi veya <b>verilerinle ilgili bir istek</b> için yaz. ' +
+    'En geç <b>30 gün</b> içinde yanıtlanır.</div>' +
     '<label style="font-size:11.5px;opacity:0.85;display:block;margin-bottom:4px;">KONU</label>' +
     '<select id="am-ilt-tur" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.18);background:var(--bg,#F6F8FC);color:inherit;font-size:13.5px;margin-bottom:10px;">' +
     '<option value="mesaj">Genel mesaj / öneri</option>' +
     '<option value="hata">Hata bildirimi</option>' +
-    '<option value="kvkk">Kişisel verilerimle ilgili talep (KVKK m.13)</option>' +
+    '<option value="kvkk">Verilerimle ilgili istek</option>' +
     '<option value="silme">Verilerimin silinmesini istiyorum</option>' +
     '</select>' +
     '<label style="font-size:11.5px;opacity:0.85;display:block;margin-bottom:4px;">MESAJIN</label>' +
